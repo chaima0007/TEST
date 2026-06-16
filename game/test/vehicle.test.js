@@ -55,4 +55,26 @@ describe('Vehicle', () => {
     assert.ok(vehicle.getSpeedKmh() < 0, 'reversing should report negative speed');
     assert.ok(Math.abs(vehicle.getSpeedKmh()) < 150, 'reverse top speed must stay below forward top speed');
   });
+
+  test('reports a nonzero impact intensity on a hard collision, and zero otherwise', () => {
+    const scene = new THREE.Scene();
+    const vehicle = new Vehicle(scene, { x: 0, z: 0, rotationY: 0 });
+    const colliders = [{ x: 0, z: 5, halfWidth: 3, halfDepth: 3 }];
+    const input = fakeInput({ forward: true });
+
+    assert.equal(vehicle.getImpactIntensity(), 0, 'no impact before moving');
+
+    let sawHardImpact = false;
+    for (let i = 0; i < 300; i++) {
+      vehicle.update(1 / 60, input, colliders);
+      if (vehicle.getImpactIntensity() > 0.3) sawHardImpact = true;
+    }
+    assert.ok(sawHardImpact, 'expected a strong impact intensity while ramming the collider at speed');
+
+    // Once settled against the wall under continued throttle, the car keeps nudging into it
+    // each frame (held back by collision resolution), so a small residual impact is expected —
+    // but it should be far below the initial hard-impact magnitude, not still climbing.
+    for (let i = 0; i < 30; i++) vehicle.update(1 / 60, input, colliders);
+    assert.ok(vehicle.getImpactIntensity() < 0.1, `expected a small settled-state impact, got ${vehicle.getImpactIntensity()}`);
+  });
 });

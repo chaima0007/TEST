@@ -77,10 +77,13 @@ export class Vehicle {
     this.speed = 0;
     // Current steering angle (radians), eases toward input-driven target for smoothness
     this.steerAngle = 0;
+    // 0..1, set when a collision occurs this frame (consumed by audio/FX), reset every update()
+    this._impactIntensity = 0;
   }
 
   update(dt, input, colliders) {
     if (dt <= 0) return;
+    this._impactIntensity = 0;
 
     const forward = input.get('forward');
     const back = input.get('back');
@@ -218,6 +221,9 @@ export class Vehicle {
             // Scale overall forward speed down by how much of it was driving
             // into the wall, then shave off a bit more for the "bounce".
             this.speed *= (1 - fractionInto) * (1 - RESTITUTION * 0.5);
+
+            // 8 m/s (~29 km/h) straight into a wall counts as a "hard" impact.
+            this._impactIntensity = Math.max(this._impactIntensity, clamp(velIntoWall / 8, 0, 1));
           }
         }
       }
@@ -238,5 +244,10 @@ export class Vehicle {
 
   getHeading() {
     return this.heading;
+  }
+
+  // 0..1, how hard the car hit something during the most recent update() call.
+  getImpactIntensity() {
+    return this._impactIntensity;
   }
 }

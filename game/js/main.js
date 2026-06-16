@@ -42,6 +42,11 @@ window.addEventListener('resize', () => {
 });
 
 let lastTime = performance.now();
+let lastScore = missions.getScore();
+let lastWantedLevel = wanted.level;
+let lastImpactSoundTime = -Infinity;
+const IMPACT_AUDIO_THRESHOLD = 0.08; // ignore barely-grazing contacts
+const IMPACT_AUDIO_COOLDOWN_S = 0.25; // avoid spamming the thump while grinding against a wall
 
 function animate() {
   requestAnimationFrame(animate);
@@ -59,6 +64,20 @@ function animate() {
 
   audio.setEngineIntensity(Math.min(1, Math.abs(vehicle.getSpeedKmh()) / MAX_SPEED_KMH));
   audio.setSirenActive(wanted.level > 0);
+
+  const impact = vehicle.getImpactIntensity();
+  const elapsedS = now / 1000;
+  if (impact > IMPACT_AUDIO_THRESHOLD && elapsedS - lastImpactSoundTime > IMPACT_AUDIO_COOLDOWN_S) {
+    audio.playCollision(impact);
+    lastImpactSoundTime = elapsedS;
+  }
+
+  const score = missions.getScore();
+  if (score > lastScore) audio.playUiBlip();
+  lastScore = score;
+
+  if (wanted.level !== lastWantedLevel) audio.playUiBlip();
+  lastWantedLevel = wanted.level;
 
   renderer.render(scene, camera);
 }
