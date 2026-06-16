@@ -205,7 +205,7 @@ export function createWorld(scene) {
   // Sur la route horizontale qui traverse la rangée de blocs spawnBlockJ,
   // orienté pour rouler le long de cette rue (axe X), loin des bâtiments.
   const spawnX = -HALF_CITY + ROAD_WIDTH / 2;
-  const spawnZ = blockCenter(spawnBlockJ);
+  const spawnZ = -HALF_CITY + CELL * spawnBlockJ; // ligne de route, pas le centre d'un bloc
   const spawnPoint = {
     x: spawnX,
     z: spawnZ,
