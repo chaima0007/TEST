@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moonbow SAS — Vers une infrastructure IT modernisée</title>
+<link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="arc"></span> Moonbow SAS</div>
+    <nav class="main-nav">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="./login.html">Portail infrastructure</a>
+  </header>
+
+  <section id="accueil" class="hero">
+    <h1>Moonbow SAS modernise son infrastructure IT</h1>
+    <p class="lead">
+      Entreprise de services numériques, Moonbow SAS engage la refonte de son
+      système d'information pour gagner en fiabilité, en sécurité et en
+      capacité à grandir. Découvrez le projet et la démonstration de la
+      future plateforme.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="./login.html">Voir la démo du portail</a>
+      <a class="btn btn-ghost" href="#contact">Nous contacter</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Nos axes de modernisation</h2>
+    <p class="section-lead">
+      Le projet de modernisation couvre l'ensemble du système d'information,
+      du poste de travail aux infrastructures serveurs.
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon">☁️</div>
+        <h3>Migration Cloud</h3>
+        <p>Bascule progressive des serveurs internes vers une infrastructure cloud élastique et supervisée.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔒</div>
+        <h3>Sécurité &amp; conformité</h3>
+        <p>Renforcement des accès, supervision des alertes et mise en conformité des données sensibles.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛟</div>
+        <h3>Support &amp; continuité</h3>
+        <p>Un service support outillé pour réduire les délais d'intervention et le nombre d'incidents.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Supervision en temps réel</h3>
+        <p>Un tableau de bord unique pour suivre la santé de l'infrastructure au quotidien.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos de Moonbow SAS</h2>
+    <p class="section-lead">
+      Moonbow SAS accompagne ses clients dans leurs projets numériques depuis
+      plusieurs années. Face à la croissance de son activité, l'entreprise a
+      identifié le besoin de moderniser son propre système d'information :
+      infrastructure vieillissante, dépendance à quelques serveurs critiques,
+      et besoin d'une meilleure visibilité sur la sécurité. Ce site présente
+      le contexte du projet ainsi qu'une démonstration du futur portail de
+      supervision interne.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <p class="section-lead">Une question sur le projet ? Écrivez-nous.</p>
+    <form class="form-panel" id="contact-form">
+      <label for="name">Nom</label>
+      <input id="name" name="name" type="text" required maxlength="100" />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required maxlength="150" />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required maxlength="2000"></textarea>
+
+      <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Envoyer</button>
+      <div class="form-status" id="form-status"></div>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    Moonbow SAS — Projet étudiant de modernisation IT. Démonstration, données fictives.
+  </footer>
+
+  <script src="./js/contact.js"></script>
+</body>
+</html>

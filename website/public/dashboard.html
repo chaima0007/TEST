@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tableau de bord — Infrastructure Moonbow SAS</title>
+<link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="arc"></span> Moonbow SAS</div>
+    <nav class="main-nav">
+      <a href="./index.html">Site</a>
+    </nav>
+    <div class="topbar-row">
+      <span class="hint" id="welcome"></span>
+      <button class="btn btn-ghost" id="logout-btn">Déconnexion</button>
+    </div>
+  </header>
+
+  <section>
+    <div class="topbar-row">
+      <div>
+        <h2 style="margin-bottom:4px;">État de la nouvelle infrastructure</h2>
+        <p class="section-lead" style="margin-bottom:0;">Données simulées, rafraîchies automatiquement.</p>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+      <div class="metric-card">
+        <div class="label">Disponibilité serveurs</div>
+        <div class="value good" id="m-uptime">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Migration cloud</div>
+        <div class="value" id="m-migration">—</div>
+        <div class="progress-track"><div class="progress-fill" id="m-migration-bar" style="width:0%"></div></div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Tickets ouverts</div>
+        <div class="value" id="m-tickets">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Alertes sécurité</div>
+        <div class="value" id="m-alerts">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Utilisateurs connectés</div>
+        <div class="value" id="m-users">—</div>
+      </div>
+    </div>
+    <p class="hint" id="updated-at"></p>
+  </section>
+
+  <footer class="site-footer">
+    Moonbow SAS — Projet étudiant de modernisation IT. Démonstration, données fictives.
+  </footer>
+
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>

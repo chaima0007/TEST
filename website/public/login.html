@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Connexion — Portail infrastructure Moonbow SAS</title>
+<link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="arc"></span> Moonbow SAS</div>
+    <nav class="main-nav">
+      <a href="./index.html">Retour au site</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="padding-top:56px;">
+    <h1 style="font-size:1.8rem;">Portail de supervision (démo)</h1>
+    <p class="lead">
+      Aperçu du futur portail interne montrant l'état de la nouvelle
+      infrastructure : disponibilité, migration cloud, tickets, sécurité.
+    </p>
+  </section>
+
+  <section style="padding-top:0;">
+    <form class="form-panel" id="login-form">
+      <label for="username">Identifiant</label>
+      <input id="username" name="username" type="text" required autocomplete="username" />
+
+      <label for="password">Mot de passe</label>
+      <input id="password" name="password" type="password" required autocomplete="current-password" />
+
+      <button class="btn btn-primary" type="submit" style="margin-top:18px;width:100%;">Se connecter</button>
+      <div class="form-status" id="login-status"></div>
+      <p class="hint">Démo : identifiant <strong>admin</strong>, mot de passe <strong>moonbow2026</strong></p>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    Moonbow SAS — Projet étudiant de modernisation IT. Démonstration, données fictives.
+  </footer>
+
+  <script src="./js/login.js"></script>
+</body>
+</html>
