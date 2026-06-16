@@ -23,6 +23,12 @@ describe('authentication and the protected dashboard', () => {
     assert.equal(res.status, 401);
   });
 
+  test('POST /api/login rejects non-string credentials instead of crashing', async () => {
+    const app = createApp({ dbPath: ':memory:' });
+    const res = await request(app).post('/api/login').send({ username: { foo: 1 }, password: 'x' });
+    assert.equal(res.status, 400);
+  });
+
   test('POST /api/login with the demo credentials grants access to the dashboard', async () => {
     const app = createApp({ dbPath: ':memory:' });
     const agent = request.agent(app); // keeps the session cookie across requests

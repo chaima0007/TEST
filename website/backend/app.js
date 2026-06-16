@@ -58,8 +58,11 @@ function createApp({ dbPath, sessionSecret } = {}) {
   // --- Authentification (démo portail infrastructure) ------------------------
   app.post('/api/login', loginLimiter, (req, res) => {
     const { username, password } = req.body || {};
-    const user = db.prepare('SELECT * FROM users WHERE username = ?').get(username || '');
-    if (!user || !bcrypt.compareSync(password || '', user.password_hash)) {
+    if (typeof username !== 'string' || typeof password !== 'string') {
+      return res.status(400).json({ error: 'Identifiants invalides.' });
+    }
+    const user = db.prepare('SELECT * FROM users WHERE username = ?').get(username);
+    if (!user || !bcrypt.compareSync(password, user.password_hash)) {
       return res.status(401).json({ error: 'Identifiants invalides.' });
     }
     req.session.userId = user.id;
