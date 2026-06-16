@@ -6,6 +6,7 @@
   <title>Moonbow SAS – Chaima Mhadbi</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{height:100%;}
     body{font-family:'Segoe UI',Arial,sans-serif;background:#0d1117;color:#fff;height:100vh;overflow:hidden;user-select:none;}
 
     /* ── Progress bar ── */
@@ -15,14 +16,14 @@
     #counter{position:fixed;top:16px;right:28px;font-size:13px;color:rgba(255,255,255,.4);letter-spacing:2px;z-index:999;}
 
     /* ── Slides ── */
-    .slide{display:none;position:absolute;inset:0;padding:50px 70px;flex-direction:row;align-items:center;gap:60px;animation:fadeIn .5s ease;}
+    .slide{display:none;position:absolute;inset:0;padding:50px 70px;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;gap:60px;animation:fadeIn .5s ease;overflow-y:auto;}
     .slide.active{display:flex;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
     /* ── Left text column ── */
-    .col-text{flex:1;display:flex;flex-direction:column;justify-content:center;}
+    .col-text{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;justify-content:center;}
     /* ── Right image column ── */
-    .col-img{flex:0 0 380px;display:flex;align-items:center;justify-content:center;}
+    .col-img{flex:0 1 380px;min-width:220px;display:flex;align-items:center;justify-content:center;}
 
     /* ── Cover (slide 1) full width ── */
     .cover{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0;}
@@ -36,11 +37,11 @@
     .s5{background:linear-gradient(135deg,#0d1117,#1a2a4a);flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:28px;}
 
     /* ── Typography ── */
-    .tag{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#00c6ff;margin-bottom:14px;opacity:.8;}
-    h1{font-size:52px;font-weight:900;line-height:1.1;margin-bottom:10px;background:linear-gradient(90deg,#00c6ff,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    h2{font-size:38px;font-weight:800;line-height:1.2;margin-bottom:28px;}
+    .tag{font-size:clamp(11px,1.1vw,12px);letter-spacing:3px;text-transform:uppercase;color:#00c6ff;margin-bottom:14px;opacity:.8;}
+    h1{font-size:clamp(34px,5.5vw,52px);font-weight:900;line-height:1.15;margin-bottom:10px;background:linear-gradient(90deg,#00c6ff,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    h2{font-size:clamp(26px,4vw,38px);font-weight:800;line-height:1.25;margin-bottom:28px;}
     .blue{color:#00c6ff;} .red{color:#ff6b6b;} .green{color:#51cf66;}
-    .sub{font-size:17px;color:#8ab4d4;line-height:1.6;margin-bottom:6px;}
+    .sub{font-size:clamp(15px,1.6vw,17px);color:#8ab4d4;line-height:1.6;margin-bottom:6px;}
 
     /* ── Name / date badge ── */
     .badge-row{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap;justify-content:center;}
@@ -55,9 +56,9 @@
     .card.red-card{border-color:rgba(255,107,107,.35);background:rgba(255,107,107,.06);}
     .card.green-card{border-color:rgba(81,207,102,.35);background:rgba(81,207,102,.06);}
     .card.blue-card{border-color:rgba(0,198,255,.35);background:rgba(0,198,255,.06);}
-    .card-icon{font-size:30px;flex-shrink:0;margin-top:2px;}
-    .card h3{font-size:17px;font-weight:700;margin-bottom:4px;}
-    .card p{font-size:14px;color:#8ab4d4;line-height:1.5;}
+    .card-icon{font-size:clamp(24px,2.4vw,30px);flex-shrink:0;margin-top:2px;}
+    .card h3{font-size:clamp(15px,1.6vw,17px);font-weight:700;margin-bottom:4px;}
+    .card p{font-size:clamp(13px,1.3vw,14px);color:#8ab4d4;line-height:1.5;}
 
     /* ── 3-word chips ── */
     .chips{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
@@ -77,6 +78,30 @@
     /* ── SVG image wrappers ── */
     .svg-wrap{width:100%;max-width:340px;}
     .svg-wrap svg{width:100%;height:auto;filter:drop-shadow(0 8px 32px rgba(0,0,0,.5));}
+
+    /* ── Responsive: tablets / narrow laptops / projectors ── */
+    @media (max-width:900px){
+      body{height:auto;min-height:100vh;overflow-y:auto;}
+      .slide{position:relative;padding:36px 28px 110px;gap:32px;min-height:100vh;}
+      .col-img{flex:0 1 240px;order:-1;}
+      .col-img .svg-wrap{max-width:220px;}
+      .cover .col-img{margin-bottom:18px;}
+    }
+    @media (max-width:600px){
+      .slide{padding:28px 18px 120px;}
+      h1{font-size:clamp(28px,8vw,36px);}
+      h2{font-size:clamp(22px,7vw,28px);}
+      .card{padding:14px 16px;}
+      .chips{gap:12px;}
+      .chip{padding:12px 20px;font-size:16px;}
+      .nav{padding:10px 18px;gap:12px;bottom:14px;}
+      #counter{font-size:11px;right:16px;}
+    }
+    @media (max-height:480px){
+      .slide{padding-top:20px;padding-bottom:90px;}
+      h1{font-size:30px;}
+      h2{font-size:24px;margin-bottom:16px;}
+    }
   </style>
 </head>
 <body>
@@ -207,10 +232,10 @@
         <!-- Personnes -->
         <!-- Personne 1 -->
         <circle cx="50"  cy="240" r="12" fill="#00c6ff" opacity=".8"/>
-        <rect   cx="50"  y="254" x="40" width="20" height="24" rx="4" fill="#1e3a5f"/>
+        <rect   x="40"   y="254" width="20" height="24" rx="4" fill="#1e3a5f"/>
         <!-- Personne 2 -->
         <circle cx="250" cy="240" r="12" fill="#7b2ff7" opacity=".8"/>
-        <rect   cx="250" y="254" x="240" width="20" height="24" rx="4" fill="#2a1a4a"/>
+        <rect   x="240"  y="254" width="20" height="24" rx="4" fill="#2a1a4a"/>
         <!-- Sol -->
         <rect x="0" y="278" width="300" height="22" rx="0" fill="#0d1117"/>
         <!-- Ligne décorative -->
@@ -380,8 +405,8 @@
       <ellipse cx="100" cy="158" rx="9"  ry="14" fill="#ff9900" opacity=".4"/>
       <!-- Corps fusée -->
       <path d="M 100 20 C 78 50 72 100 72 130 L 128 130 C 128 100 122 50 100 20 Z" fill="url(#rocket)"/>
-      <!-- Nez -->
-      <path d="M 100 20 C 92 36 100 20 100 20 C 100 20 108 36 100 20 Z" fill="#fff" opacity=".3"/>
+      <!-- Nez (reflet) -->
+      <path d="M 100 24 C 94 38 90 56 89 72 C 89 76 95 76 96 72 C 98 54 101 38 106 26 Z" fill="#fff" opacity=".3"/>
       <!-- Ailes -->
       <path d="M 72 130 L 50 155 L 72 148 Z" fill="#00c6ff" opacity=".7"/>
       <path d="M 128 130 L 150 155 L 128 148 Z" fill="#00c6ff" opacity=".7"/>
