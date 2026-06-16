@@ -17,7 +17,7 @@ function createApp({ dbPath, sessionSecret } = {}) {
       secret: sessionSecret || process.env.SESSION_SECRET || 'dev-only-secret-change-me',
       resave: false,
       saveUninitialized: false,
-      cookie: { maxAge: 1000 * 60 * 60 * 4 }, // 4h
+      cookie: { maxAge: 1000 * 60 * 60 * 4, sameSite: 'lax' }, // 4h
     })
   );
   app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -35,8 +35,16 @@ function createApp({ dbPath, sessionSecret } = {}) {
     message: { error: 'Trop de tentatives de connexion, réessayez plus tard.' },
   });
 
+  const contactLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 10,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: { error: 'Trop de messages envoyés, réessayez plus tard.' },
+  });
+
   // --- Contact (site vitrine) ------------------------------------------------
-  app.post('/api/contact', (req, res) => {
+  app.post('/api/contact', contactLimiter, (req, res) => {
     const { name, email, message } = req.body || {};
     if (!name || !email || !message) {
       return res.status(400).json({ error: 'Nom, email et message sont requis.' });

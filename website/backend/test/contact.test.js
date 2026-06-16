@@ -41,6 +41,18 @@ describe('POST /api/contact', () => {
     assert.ok(res.body.error);
   });
 
+  test('throttles repeated submissions from the same client', async () => {
+    const app = createApp({ dbPath: ':memory:' });
+    const agent = request.agent(app);
+    let lastRes;
+    for (let i = 0; i < 11; i++) {
+      lastRes = await agent
+        .post('/api/contact')
+        .send({ name: 'Chaima', email: 'chaima@example.com', message: 'Bonjour Moonbow' });
+    }
+    assert.equal(lastRes.status, 429);
+  });
+
   test('persists the message in the database', async () => {
     const app = createApp({ dbPath: ':memory:' });
     await request(app)
