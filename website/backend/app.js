@@ -2,7 +2,10 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
+const rateLimit = require('express-rate-limit');
 const createDb = require('./db');
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function createApp({ dbPath, sessionSecret } = {}) {
   const db = createDb(dbPath);
@@ -24,6 +27,14 @@ function createApp({ dbPath, sessionSecret } = {}) {
     return res.status(401).json({ error: 'Authentification requise.' });
   }
 
+  const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 20,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: { error: 'Trop de tentatives de connexion, réessayez plus tard.' },
+  });
+
   // --- Contact (site vitrine) ------------------------------------------------
   app.post('/api/contact', (req, res) => {
     const { name, email, message } = req.body || {};
@@ -32,6 +43,9 @@ function createApp({ dbPath, sessionSecret } = {}) {
     }
     if (name.length > 100 || email.length > 150 || message.length > 2000) {
       return res.status(400).json({ error: 'Champ trop long.' });
+    }
+    if (!EMAIL_RE.test(String(email).trim())) {
+      return res.status(400).json({ error: 'Adresse email invalide.' });
     }
     db.prepare('INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)').run(
       String(name).trim(),
@@ -42,7 +56,7 @@ function createApp({ dbPath, sessionSecret } = {}) {
   });
 
   // --- Authentification (démo portail infrastructure) ------------------------
-  app.post('/api/login', (req, res) => {
+  app.post('/api/login', loginLimiter, (req, res) => {
     const { username, password } = req.body || {};
     const user = db.prepare('SELECT * FROM users WHERE username = ?').get(username || '');
     if (!user || !bcrypt.compareSync(password || '', user.password_hash)) {

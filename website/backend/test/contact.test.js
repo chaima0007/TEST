@@ -31,6 +31,16 @@ describe('POST /api/contact', () => {
     assert.equal(res.status, 400);
   });
 
+  test('rejects a malformed email address', async () => {
+    const app = createApp({ dbPath: ':memory:' });
+    const res = await request(app)
+      .post('/api/contact')
+      .send({ name: 'Chaima', email: 'not-an-email', message: 'Bonjour Moonbow' });
+
+    assert.equal(res.status, 400);
+    assert.ok(res.body.error);
+  });
+
   test('persists the message in the database', async () => {
     const app = createApp({ dbPath: ':memory:' });
     await request(app)

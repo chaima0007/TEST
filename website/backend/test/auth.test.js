@@ -39,6 +39,17 @@ describe('authentication and the protected dashboard', () => {
     assert.ok(typeof dashRes.body.uptimePct === 'number');
   });
 
+  test('POST /api/login throttles repeated attempts from the same client', async () => {
+    const app = createApp({ dbPath: ':memory:' });
+    const agent = request.agent(app);
+
+    let lastStatus;
+    for (let i = 0; i < 21; i++) {
+      lastStatus = (await agent.post('/api/login').send({ username: 'admin', password: 'wrong' })).status;
+    }
+    assert.equal(lastStatus, 429);
+  });
+
   test('POST /api/logout ends the session and re-locks the dashboard', async () => {
     const app = createApp({ dbPath: ':memory:' });
     const agent = request.agent(app);
