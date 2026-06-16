@@ -108,8 +108,7 @@ export function createWorld(scene) {
   let buildingCount = 0;
   const targetMaxBuildings = 90;
 
-  // Marge de sécurité réservée pour le spawn (un croisement de routes calme)
-  const spawnBlockI = 0;
+  // Ligne de blocs utilisée pour positionner le spawn (rue calme, loin des bords)
   const spawnBlockJ = Math.floor(CITY_SIZE / 2);
 
   for (let i = 0; i < CITY_SIZE; i++) {
@@ -203,7 +202,7 @@ export function createWorld(scene) {
   );
 
   // --- Point de spawn -------------------------------------------------------
-  // Sur la route horizontale qui traverse le bloc (spawnBlockI, spawnBlockJ),
+  // Sur la route horizontale qui traverse la rangée de blocs spawnBlockJ,
   // orienté pour rouler le long de cette rue (axe X), loin des bâtiments.
   const spawnX = -HALF_CITY + ROAD_WIDTH / 2;
   const spawnZ = blockCenter(spawnBlockJ);
