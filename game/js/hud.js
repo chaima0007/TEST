@@ -41,6 +41,22 @@ const STYLE = `
   margin-bottom: 2px;
 }
 
+#hud-score {
+  position: fixed;
+  top: 70px;
+  left: 16px;
+  padding: 6px 14px;
+  background: rgba(10, 14, 22, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffce3d;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
 #hud-wanted {
   position: fixed;
   top: 16px;
@@ -121,6 +137,70 @@ const STYLE = `
   opacity: 1;
   transform: translate(-50%, 0);
 }
+
+#hud-pause {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 8, 12, 0.72);
+  pointer-events: none;
+  z-index: 20;
+}
+
+#hud-pause.visible {
+  display: flex;
+}
+
+#hud-pause .hud-pause-panel {
+  min-width: 280px;
+  max-width: 90vw;
+  padding: 24px 32px;
+  background: rgba(14, 18, 26, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  color: #f3f6fa;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+#hud-pause h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #9fd3ff;
+}
+
+#hud-pause ul {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+#hud-pause li span {
+  display: inline-block;
+  min-width: 110px;
+  color: #ffce3d;
+  font-weight: 700;
+}
+
+#hud-pause .hud-pause-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f3f6fa;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 10px;
+}
+
+#hud-pause .hud-pause-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #c9d6e4;
+}
 `;
 
 function injectStyle() {
@@ -145,6 +225,10 @@ export class HUD {
     this.missionEl.innerHTML = '<span class="hud-label">Objectif</span><span class="hud-mission-text">—</span>';
     this.missionTextEl = this.missionEl.querySelector('.hud-mission-text');
 
+    this.scoreEl = document.createElement('div');
+    this.scoreEl.id = 'hud-score';
+    this.scoreEl.textContent = '$0';
+
     this.wantedEl = document.createElement('div');
     this.wantedEl.id = 'hud-wanted';
     this.starEls = [];
@@ -164,15 +248,46 @@ export class HUD {
     this.toastEl = document.createElement('div');
     this.toastEl.id = 'hud-toast';
 
+    this.pauseEl = document.createElement('div');
+    this.pauseEl.id = 'hud-pause';
+    this.pauseEl.innerHTML = `
+      <div class="hud-pause-panel">
+        <h2>Pause</h2>
+        <ul>
+          <li><span>WASD / Flèches</span>Conduire</li>
+          <li><span>Espace</span>Frein à main</li>
+          <li><span>Tactile</span>Boutons à l'écran sur mobile</li>
+        </ul>
+        <div class="hud-pause-score">Score : <span class="hud-pause-score-value">0</span></div>
+        <div class="hud-pause-hint">Échap ou P pour reprendre</div>
+      </div>
+    `;
+    this.pauseScoreValueEl = this.pauseEl.querySelector('.hud-pause-score-value');
+
     this.overlay.appendChild(this.missionEl);
+    this.overlay.appendChild(this.scoreEl);
     this.overlay.appendChild(this.wantedEl);
     this.overlay.appendChild(this.speedEl);
     this.overlay.appendChild(this.toastEl);
+    this.overlay.appendChild(this.pauseEl);
     this.root.appendChild(this.overlay);
 
     this._wantedLevel = 0;
     this._toastHideTimer = null;
     this._toastRemoveTimer = null;
+    this._score = 0;
+    this._paused = false;
+
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Escape' || e.code === 'KeyP') {
+        this._togglePause();
+      }
+    });
+  }
+
+  _togglePause() {
+    this._paused = !this._paused;
+    this.pauseEl.classList.toggle('visible', this._paused);
   }
 
   setSpeed(kmh) {
@@ -182,6 +297,12 @@ export class HUD {
 
   setMission(text) {
     this.missionTextEl.textContent = text || '—';
+  }
+
+  setScore(value) {
+    this._score = Math.max(0, Math.round(value || 0));
+    this.scoreEl.textContent = `$${this._score}`;
+    this.pauseScoreValueEl.textContent = String(this._score);
   }
 
   setWanted(level) {

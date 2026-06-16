@@ -6,6 +6,10 @@ import { InputManager } from './input.js';
 import { MissionManager } from './missions.js';
 import { WantedSystem } from './police.js';
 import { HUD } from './hud.js';
+import { TrafficSystem } from './traffic.js';
+import { AudioSystem } from './audio.js';
+
+const MAX_SPEED_KMH = 150; // doit suivre vehicle.js, utilisé seulement pour le ratio audio moteur
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -28,6 +32,8 @@ const input = new InputManager();
 const hud = new HUD(document.getElementById('hud-root'));
 const missions = new MissionManager(world, hud);
 const wanted = new WantedSystem(scene, world);
+const traffic = new TrafficSystem(scene, world);
+const audio = new AudioSystem();
 
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -47,7 +53,12 @@ function animate() {
   updateFollowCamera(camera, vehicle, dt);
   missions.update(dt, vehicle);
   wanted.update(dt, vehicle, hud);
+  traffic.update(dt, vehicle.getPosition());
   hud.setSpeed(vehicle.getSpeedKmh());
+  hud.setScore(missions.getScore());
+
+  audio.setEngineIntensity(Math.min(1, Math.abs(vehicle.getSpeedKmh()) / MAX_SPEED_KMH));
+  audio.setSirenActive(wanted.level > 0);
 
   renderer.render(scene, camera);
 }
