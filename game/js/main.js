@@ -8,6 +8,7 @@ import { WantedSystem } from './police.js';
 import { HUD } from './hud.js';
 import { TrafficSystem } from './traffic.js';
 import { AudioSystem } from './audio.js';
+import { RivalSystem } from './rival.js';
 
 const MAX_SPEED_KMH = 150; // doit suivre vehicle.js, utilisé seulement pour le ratio audio moteur
 
@@ -33,6 +34,7 @@ const hud = new HUD(document.getElementById('hud-root'));
 const missions = new MissionManager(world, hud);
 const wanted = new WantedSystem(scene, world);
 const traffic = new TrafficSystem(scene, world);
+const rival = new RivalSystem(scene, world);
 const audio = new AudioSystem();
 
 window.addEventListener('resize', () => {
@@ -42,7 +44,7 @@ window.addEventListener('resize', () => {
 });
 
 let lastTime = performance.now();
-let lastScore = missions.getScore();
+let lastScore = missions.getScore() + rival.getScore();
 let lastWantedLevel = wanted.level;
 let lastImpactSoundTime = -Infinity;
 const IMPACT_AUDIO_THRESHOLD = 0.08; // ignore barely-grazing contacts
@@ -71,8 +73,10 @@ function animate() {
   missions.update(dt, vehicle);
   wanted.update(dt, vehicle, hud);
   traffic.update(dt, vehicle.getPosition());
+  rival.update(dt, vehicle, hud);
   hud.setSpeed(vehicle.getSpeedKmh());
-  hud.setScore(missions.getScore());
+  const totalScore = missions.getScore() + rival.getScore();
+  hud.setScore(totalScore);
 
   audio.setEngineIntensity(Math.min(1, Math.abs(vehicle.getSpeedKmh()) / MAX_SPEED_KMH));
   audio.setSirenActive(wanted.level > 0);
@@ -84,9 +88,8 @@ function animate() {
     lastImpactSoundTime = elapsedS;
   }
 
-  const score = missions.getScore();
-  if (score > lastScore) audio.playUiBlip();
-  lastScore = score;
+  if (totalScore > lastScore) audio.playUiBlip();
+  lastScore = totalScore;
 
   if (wanted.level !== lastWantedLevel) audio.playUiBlip();
   lastWantedLevel = wanted.level;
