@@ -22,6 +22,17 @@ Identifiants de démonstration pour le portail (`/login.html`) :
 - Identifiant : `admin`
 - Mot de passe : `moonbow2026`
 
+## Tests
+
+```bash
+cd backend
+npm test
+```
+
+Suite de tests automatisés (`node --test` + `supertest`), exécutée sur une
+base SQLite en mémoire : formulaire de contact, authentification/session,
+et forme des métriques du tableau de bord.
+
 ## Déploiement
 
 Pas encore déployé en ligne (pas de nom de domaine / hébergement choisi).
