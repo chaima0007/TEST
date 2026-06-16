@@ -1,0 +1,9 @@
+{
+  "name": "moonbow-gta-prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pretest": "node scripts/setup-three-shim.mjs",
+    "test": "node --test"
+  }
+}
