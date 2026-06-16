@@ -343,6 +343,30 @@ export class TrafficSystem {
     return Math.hypot(dx, dz);
   }
 
+  // AABBs for active traffic cars and pedestrians, in the same {x, z,
+  // halfWidth, halfDepth} shape as world.colliders, so the player vehicle's
+  // existing building-collision code can also treat traffic as solid instead
+  // of letting the player drive straight through it. Traffic cars only ever
+  // face along X or Z (see TrafficCar), so an axis-aligned box is exact.
+  getColliders() {
+    const list = [];
+    for (const car of this.cars) {
+      if (!car.active) continue;
+      const halfLength = 2.0; // half of the 4.0m car mesh length
+      const halfWidthM = 0.9; // half of the 1.8m car mesh width
+      if (car.axis === 'x') {
+        list.push({ x: car.mesh.position.x, z: car.mesh.position.z, halfWidth: halfLength, halfDepth: halfWidthM });
+      } else {
+        list.push({ x: car.mesh.position.x, z: car.mesh.position.z, halfWidth: halfWidthM, halfDepth: halfLength });
+      }
+    }
+    for (const ped of this.pedestrians) {
+      if (!ped.active) continue;
+      list.push({ x: ped.mesh.position.x, z: ped.mesh.position.z, halfWidth: PED_RADIUS, halfDepth: PED_RADIUS });
+    }
+    return list;
+  }
+
   dispose() {
     for (const car of this.cars) car.dispose(this.scene);
     for (const ped of this.pedestrians) ped.dispose(this.scene);

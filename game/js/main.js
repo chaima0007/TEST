@@ -63,7 +63,10 @@ function animate() {
     return;
   }
 
-  vehicle.update(dt, input, world.colliders);
+  // One-frame-stale traffic positions are an acceptable trade-off here: it
+  // avoids reordering the whole loop just to let the player collide with
+  // cars/pedestrians instead of driving straight through them.
+  vehicle.update(dt, input, world.colliders.concat(traffic.getColliders()));
   updateFollowCamera(camera, vehicle, dt);
   missions.update(dt, vehicle);
   wanted.update(dt, vehicle, hud);
