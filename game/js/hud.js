@@ -290,6 +290,10 @@ export class HUD {
     this.pauseEl.classList.toggle('visible', this._paused);
   }
 
+  isPaused() {
+    return this._paused;
+  }
+
   setSpeed(kmh) {
     const value = Math.max(0, Math.round(kmh || 0));
     this.speedValueEl.textContent = String(value);

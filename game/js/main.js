@@ -54,6 +54,15 @@ function animate() {
   const dt = Math.min((now - lastTime) / 1000, 0.05);
   lastTime = now;
 
+  if (hud.isPaused()) {
+    // Freeze gameplay entirely while the pause overlay is up: no movement,
+    // no mission timers ticking down, no police chase, no engine/siren audio.
+    audio.setEngineIntensity(0);
+    audio.setSirenActive(false);
+    renderer.render(scene, camera);
+    return;
+  }
+
   vehicle.update(dt, input, world.colliders);
   updateFollowCamera(camera, vehicle, dt);
   missions.update(dt, vehicle);
