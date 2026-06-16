@@ -216,5 +216,12 @@ export function createWorld(scene) {
     colliders,
     spawnPoint,
     missionLocations,
+    // Lignes de routes (mêmes coordonnées que roadXs/roadZs ci-dessus), exposées
+    // pour les systèmes d'IA simple (trafic, piétons) qui doivent savoir où sont
+    // les rues sans dupliquer la formule de grille.
+    roadLines: {
+      xs: roadXs.slice(),
+      zs: roadZs.slice(),
+    },
   };
 }
