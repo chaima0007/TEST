@@ -26,7 +26,7 @@ function Toggle({ value, onChange }: ToggleProps) {
   );
 }
 
-type NavSection = "profile" | "notifications" | "api";
+type NavSection = "profile" | "notifications" | "api" | "compliance" | "support";
 
 const NAV_ITEMS: { key: NavSection; label: string; icon: React.ReactNode }[] = [
   {
@@ -58,6 +58,27 @@ const NAV_ITEMS: { key: NavSection; label: string; icon: React.ReactNode }[] = [
       </svg>
     ),
   },
+  {
+    key: "compliance",
+    label: "Conformité",
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+        <path d="M8 2L3 4.5v4C3 11.5 5.2 13.8 8 14.5c2.8-.7 5-3 5-6v-4L8 2z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+        <path d="M5.5 8l2 2 3-3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    key: "support",
+    label: "Support dédié",
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.4" />
+        <path d="M5.5 6.5a2.5 2.5 0 015 0c0 1.5-1.5 2-2.5 2.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        <circle cx="8" cy="12" r="0.75" fill="currentColor" />
+      </svg>
+    ),
+  },
 ];
 
 export default function SettingsPage() {
@@ -74,6 +95,8 @@ export default function SettingsPage() {
     profile: useRef<HTMLDivElement>(null),
     notifications: useRef<HTMLDivElement>(null),
     api: useRef<HTMLDivElement>(null),
+    compliance: useRef<HTMLDivElement>(null),
+    support: useRef<HTMLDivElement>(null),
   };
 
   const handleSave = async () => {
@@ -174,6 +197,20 @@ export default function SettingsPage() {
                 <p className="text-sm text-slate-500">{form.email}</p>
                 <p className="text-xs text-slate-400 mt-0.5">{form.company}</p>
               </div>
+            </div>
+
+            {/* Plan badge */}
+            <div className="flex items-center justify-between bg-indigo-50 border border-indigo-100 rounded-xl px-4 py-3 mb-6">
+              <div>
+                <p className="text-xs font-semibold text-indigo-500 uppercase tracking-widest mb-0.5">Plan actuel</p>
+                <p className="text-sm font-bold text-indigo-900">Performance — 2 490€/mois</p>
+              </div>
+              <a
+                href="#"
+                className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors whitespace-nowrap"
+              >
+                Changer de plan →
+              </a>
             </div>
 
             {/* Form fields */}
@@ -292,6 +329,81 @@ export default function SettingsPage() {
                 Régénérer la clé
               </button>
               <p className="text-xs text-slate-400">Une nouvelle clé sera générée et l&apos;ancienne sera invalidée.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Conformité & Sécurité section */}
+        <div ref={sectionRefs.compliance} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-slate-100">
+            <h3 className="font-semibold text-slate-900">Conformité &amp; Sécurité</h3>
+            <p className="text-xs text-slate-400 mt-0.5">Certifications et garanties de conformité de votre compte</p>
+          </div>
+          <div className="p-6">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "RGPD", icon: "✓" },
+                { label: "ISO 27001", icon: "✓" },
+                { label: "SOC 2 Type II", icon: "✓" },
+                { label: "Hébergement EU", icon: "✓" },
+              ].map((badge) => (
+                <div
+                  key={badge.label}
+                  className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg px-3.5 py-2 text-sm font-semibold"
+                >
+                  <span className="w-4 h-4 rounded-full bg-emerald-500 text-white text-xs flex items-center justify-center font-bold flex-shrink-0">
+                    {badge.icon}
+                  </span>
+                  {badge.label}
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-400 mt-4 leading-relaxed">
+              Vos données sont hébergées exclusivement dans des datacenters certifiés situés dans l&apos;Union Européenne.
+              CompeteIQ est audité annuellement par un tiers indépendant accrédité.
+            </p>
+          </div>
+        </div>
+
+        {/* Support dédié section */}
+        <div ref={sectionRefs.support} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <div className="px-6 py-4 border-b border-slate-100">
+            <h3 className="font-semibold text-slate-900">Support dédié</h3>
+            <p className="text-xs text-slate-400 mt-0.5">Votre interlocuteur privilégié chez CompeteIQ</p>
+          </div>
+          <div className="p-6">
+            <div className="flex items-center gap-4 mb-5">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg flex-shrink-0 shadow-sm select-none">
+                MD
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900 text-sm">Marie Dubois</p>
+                <p className="text-xs text-indigo-600 font-medium">Customer Success Manager</p>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-sm text-slate-700">
+                <svg className="w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                  <rect x="1" y="4" width="14" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
+                  <path d="M1 5.5l7 4.5 7-4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                </svg>
+                <a href="mailto:m.dubois@competeiq.io" className="text-indigo-600 hover:text-indigo-800 transition-colors font-medium">
+                  m.dubois@competeiq.io
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-slate-700">
+                <svg className="w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 2h3l1.5 3.5-1.5 1a8 8 0 004 4l1-1.5L14.5 10V13c0 .6-.5 1-1 .9C4.8 12.5 1 7 2.1 3.5A1 1 0 013 2z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+                </svg>
+                <span className="font-medium">+33 1 82 88 XX XX</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-slate-500">
+                <svg className="w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.4" />
+                  <path d="M8 5v3.5l2 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span>Disponible du lundi au vendredi, 9h–18h CET</span>
+              </div>
             </div>
           </div>
         </div>
