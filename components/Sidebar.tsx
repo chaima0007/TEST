@@ -140,6 +140,15 @@ function IconFlask({ className }: { className?: string }) {
   );
 }
 
+function IconSector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+      <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+    </svg>
+  );
+}
+
 function IconPipeline({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -256,6 +265,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/live", label: "Activité Live", icon: IconLive },
       { href: "/dashboard/prospects", label: "Prospects", icon: IconTarget },
       { href: "/dashboard/pipeline", label: "Pipeline", icon: IconPipeline },
+      { href: "/dashboard/sectors", label: "Secteurs", icon: IconSector },
       { href: "/dashboard/finance", label: "Finance", icon: IconFinance },
       { href: "/dashboard/negotiations", label: "Négociations", icon: IconHandshake },
       { href: "/dashboard/abtesting", label: "A/B Testing", icon: IconFlask },
