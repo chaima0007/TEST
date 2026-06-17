@@ -54,6 +54,7 @@ export class AudioSystem {
       this._buildSiren();
       this._buildDrift();
       this._buildChase();
+      this._buildReverb();
 
       for (const evt of this._gestureEvents) {
         window.addEventListener(evt, this._onFirstGesture, { once: false, passive: true });
@@ -453,6 +454,38 @@ export class AudioSystem {
       };
     } catch (err) {
       // Never let a failed one-shot break gameplay.
+    }
+  }
+
+  // --- Urban reverb -------------------------------------------------------
+  // Three fixed delay taps simulate sound bouncing between city buildings.
+  // Tap delays model reflections at ~27 m, ~55 m, and ~95 m (speed of sound
+  // ~340 m/s → 80 ms / 162 ms / 280 ms). Wet gains are kept low so the
+  // reverb is felt rather than heard consciously.
+  _buildReverb() {
+    if (!this._ctx) return;
+    const ctx = this._ctx;
+    const dest = ctx.destination;
+    try {
+      const taps = [
+        { delayS: 0.080, gain: 0.11 }, // near building wall (~27 m)
+        { delayS: 0.162, gain: 0.065 }, // across-street echo (~55 m)
+        { delayS: 0.280, gain: 0.035 }, // distant canyon bounce (~95 m)
+      ];
+      this._reverbWets = [];
+      for (const tap of taps) {
+        const del = ctx.createDelay(0.5);
+        del.delayTime.value = tap.delayS;
+        const wet = ctx.createGain();
+        wet.gain.value = tap.gain;
+        // master → delay → wet gain → destination (parallel to dry path)
+        this._master.connect(del);
+        del.connect(wet);
+        wet.connect(dest);
+        this._reverbWets.push(wet);
+      }
+    } catch (err) {
+      // Reverb is cosmetic — never let it break the game.
     }
   }
 

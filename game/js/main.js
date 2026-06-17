@@ -20,6 +20,7 @@ import { SpeedCamSystem } from './speedcam.js';
 import { SkidMarkSystem } from './skidmarks.js';
 import { DetectiveSystem } from './detective.js';
 import { MonetizationAgent } from './monetization.js';
+import { LODManager } from './lod.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -60,6 +61,7 @@ const skids    = new SkidMarkSystem(scene);
 const speedCams  = new SpeedCamSystem(scene, world);
 const detective  = new DetectiveSystem(scene, world);
 const monetization = new MonetizationAgent(hud);
+const lod = new LODManager();
 
 // Score persistant (localStorage)
 const HS_KEY = 'moonbow_highscore';
@@ -110,6 +112,8 @@ function animate() {
     return;
   }
 
+  lod.tick();
+
   // --- Systèmes environnementaux ---
   dayCycle.update(dt);
   weather.update(dt, vehicle.getPosition());
@@ -122,7 +126,7 @@ function animate() {
   updateFollowCamera(camera, vehicle, dt);
   missions.update(dt, vehicle);
   wanted.update(dt, vehicle, hud);
-  traffic.update(dt, vehicle.getPosition());
+  traffic.update(dt, vehicle.getPosition(), wanted.level, lod);
   rival.update(dt, vehicle, hud);
   fantome.update(dt, vehicle, hud, dayCycle.isNight());
   detective.update(dt, vehicle, hud, wanted.level);
@@ -288,6 +292,12 @@ function animate() {
 
   if (wanted.level !== lastWantedLevel) audio.playUiBlip();
   lastWantedLevel = wanted.level;
+
+  // Velocity motion blur: CSS filter scales with speed above 110 km/h.
+  // Max 2.8 px at top speed — felt rather than seen.
+  const absSpd = Math.abs(vehicle.getSpeedKmh());
+  const blurPx = absSpd > 110 ? ((absSpd - 110) / 40) * 2.8 : 0;
+  renderer.domElement.style.filter = blurPx > 0.15 ? `blur(${blurPx.toFixed(2)}px)` : '';
 
   renderer.render(scene, camera);
 }

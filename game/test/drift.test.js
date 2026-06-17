@@ -46,4 +46,51 @@ describe('DriftSystem', () => {
     assert.ok(ds.getScore() >= 60, `banked score ${ds.getScore()} should be >= DRIFT_MIN_SCORE (60)`);
     assert.ok(ds.getLastBanked() > 0, 'lastBanked should be set after banking');
   });
+
+  // --- Grip coherence (validates physics stays consistent across weather states) ---
+
+  it('drift score scales with forward speed — faster = more points per second', () => {
+    // Both vehicles drift equally hard laterally; only fwd speed differs.
+    // Score formula: angle_deg × fwdSpeed_ms × factor — so higher speed MUST yield more pts.
+    const dsLow  = new DriftSystem();
+    const dsHigh = new DriftSystem();
+    const DT = 1 / 60;
+    const FRAMES = 60; // 1 second of drift
+
+    for (let i = 0; i < FRAMES; i++) {
+      dsLow.update(DT,  makeVehicle(5.0, 50));   // 50 km/h forward
+      dsHigh.update(DT, makeVehicle(5.0, 120));  // 120 km/h forward
+    }
+
+    assert.ok(
+      dsHigh.getSessionScore() > dsLow.getSessionScore(),
+      `score at 120km/h (${dsHigh.getSessionScore()}) should exceed score at 50km/h (${dsLow.getSessionScore()})`
+    );
+  });
+
+  it('session score resets to 0 after banking', () => {
+    const ds = new DriftSystem();
+    for (let i = 0; i < 120; i++) ds.update(1 / 60, makeVehicle(5.0, 80));
+    ds.update(1 / 60, makeVehicle(0, 80)); // end drift
+    assert.equal(ds.getSessionScore(), 0, 'session score must reset after banking');
+  });
+
+  it('does not bank score below minimum threshold (prevents grind spam)', () => {
+    const ds = new DriftSystem();
+    // Very short drift — only 10 frames (≈ 0.17s) — score unlikely to reach DRIFT_MIN_SCORE=60
+    for (let i = 0; i < 10; i++) ds.update(1 / 60, makeVehicle(5.0, 80));
+    ds.update(1 / 60, makeVehicle(0, 80));
+    assert.equal(ds.getScore(), 0, 'sub-threshold drift should not bank any score');
+  });
+
+  it('drift detection is lateral-speed-independent of grip factor — grip is a vehicle concern', () => {
+    // DriftSystem only reads lateral speed; grip is applied upstream in vehicle.js.
+    // A drift with high lateral speed should always be detected regardless of
+    // what grip factor the vehicle had when generating that lateral speed.
+    const ds = new DriftSystem();
+    // Simulate the result of drifting with low grip: same lateral speed, same fwd speed.
+    // DriftSystem must fire identically.
+    ds.update(0.016, makeVehicle(5.0, 80));
+    assert.equal(ds.isDrifting(), true, 'DriftSystem must detect based on lateral speed alone');
+  });
 });

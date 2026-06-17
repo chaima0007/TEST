@@ -120,6 +120,13 @@ class TrafficCar {
     scene.add(this.mesh);
     this.speed = CAR_SPEED_RANGE[0] + Math.random() * (CAR_SPEED_RANGE[1] - CAR_SPEED_RANGE[0]);
     this.active = false;
+
+    // AI Drives — independent needs that create emergent behaviour
+    // urgency : 0=calm  1=late/stressed → drives faster, less gap
+    // caution : 0=bold  1=nervous      → slows near police, brakes earlier
+    this._urgency    = Math.random();
+    this._caution    = Math.random() * 0.25;
+    this._urgencyVel = (Math.random() - 0.5) * 0.004; // Wiener drift direction
   }
 
   // (Ré)apparaît sur une ligne de route au hasard, à bonne distance du
@@ -161,23 +168,49 @@ class TrafficCar {
     }
   }
 
+  // Evolve urgency/caution drives. Called every frame the car is updated.
+  // wantedLevel 0-5 raises caution toward police presence.
+  _updateDrives(dt, wantedLevel) {
+    // Urgency does a bounded random walk (Wiener process with reflection)
+    this._urgency = clamp(
+      this._urgency + this._urgencyVel + (Math.random() - 0.5) * 0.003,
+      0, 1
+    );
+    // Gently reverse direction when near extremes so it doesn't rail
+    if (this._urgency > 0.9 || this._urgency < 0.1) this._urgencyVel *= -1;
+
+    // Caution ramps up toward wantedLevel / 5 with inertia
+    const targetCaution = (wantedLevel / 5) * 0.9;
+    this._caution += (targetCaution - this._caution) * Math.min(1, dt * 0.5);
+    this._caution = clamp(this._caution, 0, 1);
+  }
+
   // playerPos: {x, z} optionnel — si fourni, la voiture ralentit si le joueur
   // est juste devant elle dans son sens de marche (comportement de suivi).
-  update(dt, playerPos = null) {
+  // wantedLevel influences caution; used by _updateDrives.
+  update(dt, playerPos = null, wantedLevel = 0) {
     if (!this.active) return;
     const { xs, zs } = this.roadLines;
     const crossLines = this.axis === 'x' ? zs : xs;
 
-    let effectiveSpeed = this.speed;
+    this._updateDrives(dt, wantedLevel);
+
+    // Drives multiplier: urgency pushes speed up, caution pulls it down.
+    // Net range: ~0.63× (calm+nervous near police) to ~1.45× (stressed+bold)
+    const driveMult = (1 + this._urgency * 0.45) * (1 - this._caution * 0.38);
+
+    let effectiveSpeed = this.speed * driveMult;
     if (playerPos) {
       // Distance et position relative du joueur sur l'axe de déplacement.
       const movingPlayer = this.axis === 'x' ? playerPos.x : playerPos.z;
       const fixedPlayer  = this.axis === 'x' ? playerPos.z : playerPos.x;
       const fixedDist = Math.abs(fixedPlayer - this.fixedCoord);
       const aheadDist = (movingPlayer - this.moving) * this.dir;
-      if (fixedDist < 3.5 && aheadDist > 0 && aheadDist < CAR_FOLLOW_DIST) {
+      // Cautious drivers keep a wider gap (followDist scales with caution)
+      const followDist = CAR_FOLLOW_DIST * (1 + this._caution * 0.6);
+      if (fixedDist < 3.5 && aheadDist > 0 && aheadDist < followDist) {
         // Joueur devant dans la même voie : vitesse progressivement réduite.
-        effectiveSpeed *= clamp(aheadDist / CAR_FOLLOW_DIST, 0.15, 1);
+        effectiveSpeed *= clamp(aheadDist / followDist, 0.15, 1);
       }
     }
 
@@ -383,12 +416,30 @@ export class TrafficSystem {
     return { xs: lines.slice(), zs: lines.slice() };
   }
 
-  update(dt, playerPos) {
+  // wantedLevel: current police level (0-5) fed to AI drives.
+  // lod: LODManager instance — if provided, distant cars update less often.
+  update(dt, playerPos, wantedLevel = 0, lod = null) {
     if (!playerPos) return;
     this._syncEntities(playerPos);
 
-    for (const car of this.cars) car.update(dt, playerPos);
-    for (const ped of this.pedestrians) ped.update(dt, this.colliders, playerPos);
+    for (let i = 0; i < this.cars.length; i++) {
+      const car = this.cars[i];
+      if (!car.active) continue;
+      if (lod) {
+        const dist = this._distTo(car.mesh.position, playerPos);
+        if (!lod.shouldUpdate(dist, i)) continue;
+      }
+      car.update(dt, playerPos, wantedLevel);
+    }
+    for (let i = 0; i < this.pedestrians.length; i++) {
+      const ped = this.pedestrians[i];
+      if (!ped.active) continue;
+      if (lod) {
+        const dist = this._distTo(ped.mesh.position, playerPos);
+        if (!lod.shouldUpdate(dist, i + this.cars.length)) continue;
+      }
+      ped.update(dt, this.colliders, playerPos);
+    }
   }
 
   // Despawn/respawn des entités trop loin du joueur, pour garder un nombre
