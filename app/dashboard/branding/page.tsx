@@ -42,6 +42,36 @@ function IconCheck({ className }: { className?: string }) {
   );
 }
 
+function IconDownload({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor">
+      <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function downloadTxt(filename: string, content: string) {
+  const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function ExportButton({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className="inline-flex items-center gap-1.5 text-[12px] font-medium px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-colors"
+    >
+      <IconDownload className="w-3.5 h-3.5" />
+      {label}
+    </button>
+  );
+}
+
 // ── Copy button ───────────────────────────────────────────────────────────────
 
 function CopyButton({ text, label = "Copier" }: { text: string; label?: string }) {
@@ -341,9 +371,24 @@ export default function BrandingPage() {
         <>
           {tab === "linkedin" && (
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-[12px] text-slate-500 bg-blue-50 border border-blue-100 rounded-lg px-4 py-2.5">
-                <IconLinkedIn className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                <span>Cliquez sur <strong>"Copier le post"</strong> puis collez directement dans LinkedIn. Chaque post est formaté pour le fil LinkedIn mobile et desktop.</span>
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 text-[12px] text-slate-500 bg-blue-50 border border-blue-100 rounded-lg px-4 py-2.5 flex-1">
+                  <IconLinkedIn className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                  <span>Cliquez sur <strong>"Copier le post"</strong> puis collez directement dans LinkedIn. Chaque post est formaté pour le fil LinkedIn mobile et desktop.</span>
+                </div>
+                {data && (
+                  <ExportButton
+                    label="Exporter tout (.txt)"
+                    onClick={() => {
+                      const content = data.linkedin_posts
+                        .map((p, i) =>
+                          `═══ POST ${i + 1} — ${p.title} ═══\n\n${p.hook}\n\n${p.body}\n\n${p.hashtags.map((h) => `#${h}`).join(" ")}`
+                        )
+                        .join("\n\n" + "─".repeat(60) + "\n\n");
+                      downloadTxt("linkedin-posts-swarm.txt", content);
+                    }}
+                  />
+                )}
               </div>
               {data?.linkedin_posts.map((p) => <PostCard key={p.post_id} post={p} />)}
             </div>
@@ -351,9 +396,24 @@ export default function BrandingPage() {
 
           {tab === "cv" && (
             <div className="space-y-4">
-              <div className="flex items-center gap-2 text-[12px] text-slate-500 bg-pink-50 border border-pink-100 rounded-lg px-4 py-2.5">
-                <span className="text-pink-500 flex-shrink-0">✨</span>
-                <span>Entrées CV au format <strong>STAR</strong> avec keywords ATS intégrés. Copiez chaque section dans votre CV Word, Canva ou LinkedIn.</span>
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 text-[12px] text-slate-500 bg-pink-50 border border-pink-100 rounded-lg px-4 py-2.5 flex-1">
+                  <span className="text-pink-500 flex-shrink-0">✨</span>
+                  <span>Entrées CV au format <strong>STAR</strong> avec keywords ATS intégrés. Copiez chaque section dans votre CV Word, Canva ou LinkedIn.</span>
+                </div>
+                {data && (
+                  <ExportButton
+                    label="Exporter CV (.txt)"
+                    onClick={() => {
+                      const content = data.cv_entries
+                        .map((e) =>
+                          `[${e.category.toUpperCase()}] ${e.title} — ${e.period}\n\n${e.bullets.map((b) => `• ${b}`).join("\n")}\n\nMots-clés ATS : ${e.keywords.join(", ")}`
+                        )
+                        .join("\n\n" + "─".repeat(60) + "\n\n");
+                      downloadTxt("cv-swarm-architect.txt", content);
+                    }}
+                  />
+                )}
               </div>
               {data?.cv_entries.map((e) => <CVCard key={e.entry_id} entry={e} />)}
             </div>
