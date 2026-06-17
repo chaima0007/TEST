@@ -19,6 +19,7 @@ import { TireSmokeSystem, SparkSystem } from './particles.js';
 import { SpeedCamSystem } from './speedcam.js';
 import { SkidMarkSystem } from './skidmarks.js';
 import { DetectiveSystem } from './detective.js';
+import { MonetizationAgent } from './monetization.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -58,6 +59,7 @@ const sparks   = new SparkSystem(scene);
 const skids    = new SkidMarkSystem(scene);
 const speedCams  = new SpeedCamSystem(scene, world);
 const detective  = new DetectiveSystem(scene, world);
+const monetization = new MonetizationAgent(hud);
 
 // Score persistant (localStorage)
 const HS_KEY = 'moonbow_highscore';
@@ -113,6 +115,8 @@ function animate() {
   combo.update(dt, playerPos, traffic.getCarPositions());
   drift.update(dt, vehicle);
   nitro.update(dt, playerPos, input);
+  const boostNow  = nitro.isBoostActive();
+  const nitroFired = boostNow && !lastBoostActive;
   smoke.update(dt, vehicle, drift.isDrifting());
   skids.update(dt, vehicle, drift.isDrifting());
   sparks.update(dt);
@@ -143,7 +147,15 @@ function animate() {
 
   hud.setSpeed(vehicle.getSpeedKmh());
 
-  const totalScore = missions.getScore() + rival.getScore() + combo.getScore() + fantome.getScore() + drift.getScore();
+  const baseScore = missions.getScore() + rival.getScore() + combo.getScore() + fantome.getScore() + drift.getScore();
+  const monoBonus = monetization.update(
+    dt, vehicle, wanted.level, drift,
+    nitroFired,
+    detective.popEscaped(),
+    fantome.popWin(),
+    baseScore
+  );
+  const totalScore = baseScore + monoBonus;
   hud.setScore(totalScore);
 
   // --- Panneau agents temps réel ---
@@ -166,6 +178,7 @@ function animate() {
   const grip = weather.getGripFactor();
   const meteoState = `${weather.getWeatherId()} | Adherence ${Math.round(grip * 100)}%`;
 
+  const dailyStatus = monetization.getDailyStatus();
   hud.updateAgents({
     spectre: {
       active: rival.active,
@@ -205,10 +218,15 @@ function animate() {
       bar: drift.isDrifting() ? Math.min(1, drift.getSessionScore() / 300) : combo.getMultiplier() / 5,
       color: drift.isDrifting() ? '#ff6622' : combo.getMultiplier() >= 3 ? '#ff9944' : '#55cc88',
     },
+    monetisation: {
+      active: dailyStatus.pct < 1,
+      status: `${dailyStatus.label} | ${dailyStatus.text}`,
+      bar: dailyStatus.pct,
+      color: dailyStatus.pct >= 1 ? '#44ff88' : '#ffaa00',
+    },
   });
 
-  const boostNow = nitro.isBoostActive();
-  if (boostNow && !lastBoostActive) audio.playNitro();
+  if (nitroFired) audio.playNitro();
   lastBoostActive = boostNow;
   hud.setNitro(nitro.getCharges(), boostNow);
   hud.setDrift(drift.isDrifting(), drift.getDriftAngle(), drift.getSessionScore());

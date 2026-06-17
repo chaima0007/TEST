@@ -145,10 +145,23 @@ export class FantomeSystem {
     this._fantomePos = new THREE.Vector3();
     this._fantomeHeading = 0;
     this._fantomeSpeed = 0;
+    this._winFlag = false;
   }
+
+  // Public property aliases expected by main.js
+  get active() { return this._active; }
+  get mesh() { return this._fantomeMesh; }
+  get _speed() { return this._fantomeSpeed; }
 
   getScore() {
     return this._score;
+  }
+
+  // Returns true once after the player wins a race, then resets.
+  popWin() {
+    if (!this._winFlag) return false;
+    this._winFlag = false;
+    return true;
   }
 
   update(dt, vehicle, hud, isNight) {
@@ -244,6 +257,7 @@ export class FantomeSystem {
   _playerWins(hud) {
     this._winsCount += 1;
     this._score += 600;
+    this._winFlag = true;
 
     if (hud && hud.showDialogue) {
       hud.showDialogue("La Fantome", pick(DIALOGUES.win));

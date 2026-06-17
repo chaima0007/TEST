@@ -395,6 +395,109 @@ const STYLE = `
   border-radius: 2px;
   transition: width 0.3s ease;
 }
+
+.agent-card.monetisation { border-left-color: #ffaa00; }
+
+#hud-achievement {
+  position: fixed;
+  bottom: 290px;
+  right: 22px;
+  min-width: 200px;
+  max-width: 240px;
+  padding: 10px 14px;
+  background: rgba(10, 8, 4, 0.85);
+  border: 1px solid #ffaa00;
+  border-left: 4px solid #ffaa00;
+  border-radius: 8px;
+  color: #fff8e1;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  box-shadow: 0 0 16px rgba(255,170,0,0.35);
+  transform: translateX(120%);
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+  pointer-events: none;
+}
+
+#hud-achievement.visible {
+  transform: translateX(0);
+}
+
+#hud-achievement .ach-title {
+  display: block;
+  font-size: 10px;
+  color: #ffaa00;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+#hud-achievement .ach-reward {
+  font-size: 11px;
+  color: #ffce3d;
+  margin-top: 4px;
+  display: block;
+}
+
+#hud-share-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.55);
+  z-index: 50;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#hud-share-modal.visible { opacity: 1; }
+
+#hud-share-modal .share-panel {
+  padding: 28px 36px;
+  background: rgba(12,14,20,0.96);
+  border: 1px solid rgba(255,170,0,0.4);
+  border-radius: 14px;
+  color: #f3f6fa;
+  text-align: center;
+  max-width: 360px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+
+#hud-share-modal h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffaa00;
+  letter-spacing: 0.5px;
+}
+
+#hud-share-modal p {
+  font-size: 14px;
+  color: #c9d6e4;
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+#hud-share-modal .share-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: #ffaa00;
+  color: #0a0c12;
+  font-weight: 800;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 6px;
+  letter-spacing: 0.5px;
+  pointer-events: auto;
+}
+
+#hud-share-modal .share-btn:hover { background: #ffc333; }
+#hud-share-modal .share-btn.secondary { background: rgba(255,255,255,0.12); color: #c9d6e4; }
+#hud-share-modal .share-btn.secondary:hover { background: rgba(255,255,255,0.2); }
 `;
 
 function injectStyle() {
@@ -482,12 +585,13 @@ export class HUD {
     this.agentsEl.id = 'hud-agents';
     this._agentCards = {};
     const agentDefs = [
-      { id: 'spectre',   name: 'Le Spectre',   cls: 'spectre'   },
-      { id: 'fantome',   name: 'La Fantome',   cls: 'fantome'   },
-      { id: 'detective', name: 'Le Detectif',  cls: 'detective' },
-      { id: 'police',    name: 'Police',       cls: 'police'    },
-      { id: 'meteo',     name: 'Meteo',        cls: 'meteo'     },
-      { id: 'trafic',    name: 'Trafic',       cls: 'trafic'    },
+      { id: 'spectre',      name: 'Le Spectre',     cls: 'spectre'      },
+      { id: 'fantome',      name: 'La Fantome',     cls: 'fantome'      },
+      { id: 'detective',    name: 'Le Detectif',    cls: 'detective'    },
+      { id: 'police',       name: 'Police',         cls: 'police'       },
+      { id: 'meteo',        name: 'Meteo',          cls: 'meteo'        },
+      { id: 'trafic',       name: 'Trafic',         cls: 'trafic'       },
+      { id: 'monetisation', name: 'Defi du Jour',   cls: 'monetisation' },
     ];
     for (const def of agentDefs) {
       const card = document.createElement('div');
@@ -525,10 +629,36 @@ export class HUD {
     this.driftEl.id = 'hud-drift';
     this.driftEl.textContent = '';
 
+    // Achievement popup
+    this._achEl = document.createElement('div');
+    this._achEl.id = 'hud-achievement';
+    this._achEl.innerHTML = '<span class="ach-title">ACHIEVEMENT</span><span class="ach-name"></span><span class="ach-reward"></span>';
+    this._achNameEl   = this._achEl.querySelector('.ach-name');
+    this._achRewardEl = this._achEl.querySelector('.ach-reward');
+    this._achQueue    = [];
+    this._achTimer    = null;
+
+    // Share modal
+    this._shareModal = document.createElement('div');
+    this._shareModal.id = 'hud-share-modal';
+    this._shareModal.innerHTML = `
+      <div class="share-panel">
+        <h3>PARTAGE TON SCORE !</h3>
+        <p class="share-text"></p>
+        <div>
+          <span class="share-btn share-action">🎮 Partager</span>
+          <span class="share-btn secondary share-close">Plus tard</span>
+        </div>
+      </div>`;
+    this._sharePanelText  = this._shareModal.querySelector('.share-text');
+    this._shareModal.querySelector('.share-close').addEventListener('click', () => this._hideShareModal());
+    document.body.appendChild(this._shareModal);
+
     this.overlay.appendChild(this.clockEl);
     this.overlay.appendChild(this.agentsEl);
     this.overlay.appendChild(this.nitroEl);
     this.overlay.appendChild(this.driftEl);
+    this.overlay.appendChild(this._achEl);
     this.root.appendChild(this.overlay);
 
     this._wantedLevel = 0;
@@ -824,5 +954,36 @@ export class HUD {
     ctx.strokeStyle = 'rgba(255,255,255,0.22)';
     ctx.lineWidth = 2;
     ctx.stroke();
+  }
+
+  // Queue-based achievement popup. Shows one at a time for 3.5 s.
+  showAchievement(label, reward) {
+    this._achQueue.push({ label, reward });
+    if (!this._achTimer) this._flushAchievement();
+  }
+
+  _flushAchievement() {
+    if (!this._achQueue.length) { this._achTimer = null; return; }
+    const { label, reward } = this._achQueue.shift();
+    this._achNameEl.textContent = label;
+    this._achRewardEl.textContent = `+$${reward}`;
+    this._achEl.classList.add('visible');
+    this._achTimer = setTimeout(() => {
+      this._achEl.classList.remove('visible');
+      setTimeout(() => this._flushAchievement(), 400);
+    }, 3500);
+  }
+
+  showSharePrompt(text, onShare) {
+    this._sharePanelText.textContent = text;
+    const btn = this._shareModal.querySelector('.share-action');
+    btn.onclick = () => { onShare(); this._hideShareModal(); };
+    this._shareModal.classList.add('visible');
+    this._shareModal.style.pointerEvents = 'auto';
+  }
+
+  _hideShareModal() {
+    this._shareModal.classList.remove('visible');
+    this._shareModal.style.pointerEvents = 'none';
   }
 }

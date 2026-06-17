@@ -72,10 +72,18 @@ export class DetectiveSystem {
     this._shakeTimer = 0;
     this._speed = 0;
     this._heading = 0;
+    this._escapedFlag = false;
   }
 
   isTailing() {
     return this._tailTimer > 1.5;
+  }
+
+  // Returns true once after the detective loses the player's trail.
+  popEscaped() {
+    if (!this._escapedFlag) return false;
+    this._escapedFlag = false;
+    return true;
   }
 
   _spawn(playerPos, hud) {
@@ -184,6 +192,7 @@ export class DetectiveSystem {
     if (playerSpeedKmh > LOSE_SPEED_KMH) {
       this._shakeTimer += dt;
       if (this._shakeTimer >= SHAKE_TIME_S) {
+        this._escapedFlag = true;
         this._despawn(hud, 'LE DETECTIF : piste perdue.');
         return false;
       }
