@@ -140,6 +140,14 @@ function IconFlask({ className }: { className?: string }) {
   );
 }
 
+function IconPipeline({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zm0 4a1 1 0 000 2h7a1 1 0 100-2H3zm0 4a1 1 0 100 2h4a1 1 0 100-2H3zm12-4a3 3 0 11-6 0 3 3 0 016 0zm-1.5 0a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0zM17 13a2 2 0 11-4 0 2 2 0 014 0z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconEmail({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -247,6 +255,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/swarm", label: "50 Agents Swarm", icon: IconSwarm },
       { href: "/dashboard/live", label: "Activité Live", icon: IconLive },
       { href: "/dashboard/prospects", label: "Prospects", icon: IconTarget },
+      { href: "/dashboard/pipeline", label: "Pipeline", icon: IconPipeline },
       { href: "/dashboard/finance", label: "Finance", icon: IconFinance },
       { href: "/dashboard/negotiations", label: "Négociations", icon: IconHandshake },
       { href: "/dashboard/abtesting", label: "A/B Testing", icon: IconFlask },
