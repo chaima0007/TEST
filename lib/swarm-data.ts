@@ -107,6 +107,16 @@ const AGENT_ROLES: Record<string, { role: string; isManager: boolean }> = {
   "5.7": { role: "Infra — Health Monitor", isManager: false },
   "5.8": { role: "Infra — Queue Manager", isManager: false },
   "5.9": { role: "Infra — Logs & Analytics", isManager: false },
+  "6.0": { role: "Directeur Personal Branding", isManager: true },
+  "6.1": { role: "Rédacteur Posts LinkedIn", isManager: false },
+  "6.2": { role: "Rédacteur CV & Profil", isManager: false },
+  "6.3": { role: "Rédacteur Études de Cas", isManager: false },
+  "6.4": { role: "Rédacteur Portfolio Web", isManager: false },
+  "6.5": { role: "Veilleur Tendances LinkedIn", isManager: false },
+  "6.6": { role: "Ghostwriter Commentaires LinkedIn", isManager: false },
+  "6.7": { role: "Rédacteur Articles Long-Format", isManager: false },
+  "6.8": { role: "Coordinateur Calendrier Éditorial", isManager: false },
+  "6.9": { role: "Analyste Performance Contenu", isManager: false },
 };
 
 const STATUS_POOL: AgentStatus[] = ["active", "active", "active", "idle", "active", "active", "idle", "active", "active", "error"];
@@ -184,6 +194,16 @@ export const DIVISIONS: Division[] = [
     kpiValue: "2 237",
     kpiUnit: "€",
   },
+  {
+    id: 6,
+    name: "Personal Branding",
+    color: "#EC4899",
+    emoji: "✨",
+    agents: makeAgents(6),
+    kpi: "Impressions est.",
+    kpiValue: "94k",
+    kpiUnit: "LinkedIn",
+  },
 ];
 
 export const SWARM_METRICS: SwarmMetrics = {
@@ -194,8 +214,8 @@ export const SWARM_METRICS: SwarmMetrics = {
   paidJobs: 15,
   conversionRate: 4.8,
   avgDealSize: 164,
-  agentsActive: 38,
-  agentsIdle: 10,
+  agentsActive: 47,
+  agentsIdle: 11,
   agentsError: 2,
 };
 
