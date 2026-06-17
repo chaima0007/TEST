@@ -203,6 +203,215 @@ Et vous, qu'est-ce que votre dernier projet vous a appris sur vous ? 👇`,
     generated_at: "2026-06-17T14:00:00Z",
     source_event: "cv_milestone",
   },
+  {
+    post_id: "li_client_feedback",
+    title: "Post 6 — Commentaire client qui m'a changé",
+    hook: "Un client m'a dit : \"votre agent IA était plus empathique que mon banquier\". Je n'ai pas su quoi répondre.",
+    body: `C'était un artisan plombier. 58 ans. Jamais à l'aise avec la technologie.
+Il avait reçu un email de mon agent 2.2 — le copywriter "voisin bienveillant".
+Il m'a rappelé lui-même, ce qui n'arrive presque jamais.
+
+"Vous savez, j'ai eu un problème de trésorerie l'an dernier.
+J'ai appelé ma banque. Ils m'ont envoyé un formulaire.
+Votre email, il m'a parlé comme un être humain."
+
+Il a payé 129€. Son site charge maintenant en 1,1 secondes.
+Mais ce n'est pas ça qui m'a marqué.
+
+C'est cette phrase qui tourne dans ma tête depuis :
+Une machine peut-elle être plus humaine qu'un humain
+quand cet humain est enfermé dans des process et des KPI ?
+
+Je ne dis pas que l'IA remplace l'empathie.
+Je dis qu'elle nous force à la formaliser.
+À l'écrire. À la programmer. À la prioriser.
+
+Et peut-être que ce processus nous rappelle
+ce que l'empathie devrait être dans chaque interaction.
+
+Pas un luxe. Pas du temps perdu.
+Une compétence humaine fondamentale.
+
+Que pensez-vous de cette phrase ? 👇`,
+    hashtags: ["Empathie", "IA", "HumanFirst", "AgentsIA", "Automatisation", "Entrepreneuriat", "Humanité", "FutureOfWork", "Leadership"],
+    char_count: 1180,
+    impressions_estimate: 11200,
+    generated_at: "2026-06-17T15:00:00Z",
+    source_event: "client_feedback",
+  },
+  {
+    post_id: "li_lessons_learned",
+    title: "Post 7 — 3 erreurs que j'ai faites en construisant mes agents IA",
+    hook: "J'ai fait 3 erreurs monumentales en construisant mon essaim de 50 agents IA. Voici lesquelles — pour que vous ne les répétiez pas.",
+    body: `On ne parle jamais des erreurs. On parle des succès.
+Aujourd'hui je fais l'inverse.
+
+❌ ERREUR 1 : Trop de features trop vite.
+
+Semaine 1 : j'ai voulu tout automatiser d'un coup.
+Prospection + rédaction + négociation + livraison + facturation.
+Résultat : un système ingérable, des bugs partout, zéro vente.
+
+La leçon : commencer par UN seul flux end-to-end qui fonctionne.
+Ensuite seulement, ajouter des couches.
+
+❌ ERREUR 2 : Oublier l'empathie dans les prompts.
+
+Mes premiers emails d'agents étaient... froids.
+Efficaces techniquement. Humainement nuls.
+Taux de réponse : 0,8%.
+
+Quand j'ai réécrit les backstories avec de la chaleur humaine,
+le taux est passé à 23%.
+
+La leçon : un agent IA reproduit EXACTEMENT ce que vous lui donnez.
+Donnez-lui de l'empathie, il en produira.
+
+❌ ERREUR 3 : Ne pas documenter.
+
+Après 3 semaines de travail intense, je ne me souvenais plus
+pourquoi j'avais fait certains choix d'architecture.
+J'ai refait deux fois le même travail.
+
+La leçon : documenter en temps réel. D'où la Division 6 — 10 agents
+dont le seul rôle est de capturer ce qui se passe.
+
+Ces trois erreurs m'ont coûté 10 jours.
+Elles m'ont appris plus que les 50 agents réunis.
+
+Quelle erreur vous a le plus coûté — et le plus appris ? 👇`,
+    hashtags: ["AgentsIA", "IA", "Entrepreneuriat", "Apprentissage", "Erreurs", "Growth", "Automatisation", "CrewAI", "LessonsLearned"],
+    char_count: 1320,
+    impressions_estimate: 13500,
+    generated_at: "2026-06-17T16:00:00Z",
+    source_event: "lessons_learned",
+  },
+  {
+    post_id: "li_pricing_system",
+    title: "Post 8 — Comment je fixe le prix d'une réparation web en 8 secondes",
+    hook: "Je vais vous révéler ma grille tarifaire complète. Parce que la transparence, c'est la meilleure stratégie commerciale.",
+    body: `Mon agent 5.1 fixe le prix d'une réparation web en 8 secondes.
+Voici exactement comment.
+
+La grille :
+
+🔨 Artisans & Bâtiment → 129€
+🍽️ Restauration & Hôtellerie → 149€
+🏥 Médical & Cabinets de Soin → 189€
+🏠 Immobilier → 169€
+🚗 Garages & Concessionnaires → 159€
+⚖️ Juridique & Comptabilité → 199€
+🏫 Écoles & Formations → 139€
+🛒 E-commerce Local → 179€
+
+La logique derrière ? Pas le hasard.
+
+VALEUR PERÇUE × URGENCE × CAPACITÉ À PAYER
+
+Un cabinet médical a plus de clients à perdre par jour
+qu'une association sportive.
+Un restaurant comprend immédiatement ce que vaut
+une réservation manquée.
+Un cabinet juridique est habitué à payer pour l'expertise.
+
+Ce n'est pas du pricing prédateur.
+C'est du pricing empathique.
+Fixer le bon prix au bon client,
+c'est lui montrer qu'on comprend sa réalité.
+
+Et vous ? Comment fixez-vous vos tarifs ? 👇`,
+    hashtags: ["Pricing", "Tarification", "Entrepreneuriat", "PME", "IA", "Automatisation", "Vente", "AgentsIA", "Business"],
+    char_count: 1050,
+    impressions_estimate: 14800,
+    generated_at: "2026-06-17T17:00:00Z",
+    source_event: "pricing_system",
+  },
+  {
+    post_id: "li_rgpd_story",
+    title: "Post 9 — Mon agent 5.4 a bloqué 23 emails illégaux ce mois-ci",
+    hook: "Mon agent IA a bloqué 23 de mes propres emails ce mois-ci. Et c'est la meilleure chose qui pouvait m'arriver.",
+    body: `L'agent 5.4 s'appelle "Officier de Conformité RGPD".
+Son seul rôle : lire chaque email AVANT qu'il parte.
+Et bloquer tout ce qui n'est pas conforme.
+
+Ce mois-ci, il a bloqué 23 emails.
+
+Pourquoi ?
+→ 11 emails : lien de désinscription absent ou cassé
+→ 7 emails : formulation trop agressive ("Vous perdez de l'argent chaque seconde !")
+→ 5 emails : adresses collectées sans consentement explicite vérifiable
+
+Ces 23 emails auraient pu me valoir une mise en demeure CNIL.
+Ou pire : détruire la confiance de prospects que je n'avais
+pas encore eu le temps de convaincre.
+
+Ce que j'ai appris :
+
+La conformité RGPD n'est pas une contrainte.
+C'est une promesse faite à vos prospects :
+"Je respecte votre boîte mail. Je mérite votre confiance."
+
+Dans un monde noyé sous les spams, c'est un avantage concurrentiel.
+
+Les chiffres du mois :
+✅ 312 emails envoyés
+🚫 23 bloqués par l'agent 5.4
+📊 Taux de conformité : 92,6%
+📈 Taux de réponse : 23% (vs 2% marché)
+
+La corrélation n'est pas un hasard.
+On répond plus aux emails qu'on respecte.
+
+Vous automatisez votre prospection ? Avez-vous un garde-fou RGPD ? 👇`,
+    hashtags: ["RGPD", "Conformité", "IA", "AgentsIA", "Prospection", "EmailMarketing", "CNIL", "Automatisation", "EthiqueIA"],
+    char_count: 1290,
+    impressions_estimate: 10400,
+    generated_at: "2026-06-17T18:00:00Z",
+    source_event: "rgpd_story",
+  },
+  {
+    post_id: "li_agent_design",
+    title: "Post 10 — Pourquoi j'ai nommé mes agents avec des backstories",
+    hook: "J'ai fait un A/B test bizarre : un agent avec une identité vs un agent sans. Les résultats m'ont stupéfié.",
+    body: `Au départ, mes agents s'appelaient "Agent_Email_01" et "Agent_Email_02".
+Leurs prompts : "Tu rédiges des emails de prospection. Sois convaincant."
+
+Résultat : des emails corrects. Génériques. Sans âme.
+
+Puis j'ai fait quelque chose d'inhabituel.
+
+J'ai donné une identité à chacun.
+
+Agent 2.1 est devenu "Le Factuel" :
+"Ancien journaliste data, tu ne jures que par les chiffres.
+Tu n'utilises jamais d'adjectifs sans preuve."
+
+Agent 2.2 est devenu "L'Amical" :
+"Ex-community manager, fils de voisin bienveillant,
+tu signales un bug comme on prévient un ami."
+
+A/B test sur 200 emails chaque :
+
+Agent sans identité : 1,2% de taux de réponse
+Agent avec backstory : 4,7% de taux de réponse
+
++291% de performance. Même modèle. Même température.
+Juste... une identité.
+
+Mon hypothèse : quand vous donnez un rôle précis à un LLM,
+il mobilise des patterns d'écriture cohérents avec ce rôle.
+La cohérence stylistique crée la confiance.
+
+Et la confiance, c'est ce qui fait répondre.
+
+Est-ce que vous donnez des backstories à vos agents ?
+Ou juste des instructions ? 👇`,
+    hashtags: ["AgentsIA", "PromptEngineering", "IA", "LLM", "CrewAI", "Automatisation", "DesignIA", "PersonalBranding", "ABTest", "Innovation"],
+    char_count: 1240,
+    impressions_estimate: 16300,
+    generated_at: "2026-06-17T19:00:00Z",
+    source_event: "agent_design",
+  },
 ];
 
 export const CV_ENTRIES: CVEntry[] = [

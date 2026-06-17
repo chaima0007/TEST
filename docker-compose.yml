@@ -1,0 +1,54 @@
+services:
+  nextjs:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    command: sh -c "npm ci && npm run build && npm run start"
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - SWARM_API_URL=http://swarm-api:8001
+    depends_on:
+      - swarm-api
+    networks:
+      - swarm-net
+    restart: unless-stopped
+
+  swarm-api:
+    image: python:3.12-slim
+    working_dir: /app/swarm
+    volumes:
+      - ./swarm:/app/swarm
+    command: sh -c "pip install --no-cache-dir -r requirements.txt && uvicorn api_server:app --host 0.0.0.0 --port 8001"
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./swarm/.env.example
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+    networks:
+      - swarm-net
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - swarm-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  swarm-net:
+    driver: bridge
