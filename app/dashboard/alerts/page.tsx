@@ -8,8 +8,8 @@ interface Alert {
   message: string;
   isRead: boolean;
   competitorId: string | null;
-  userId: string;
-  createdAt: string;
+  competitorName?: string;
+  date: string;
 }
 
 const alertTypeIcons: Record<string, string> = {
@@ -170,7 +170,7 @@ export default function AlertsPage() {
                     )}
                   </div>
                   <p className="text-sm text-slate-800 leading-relaxed">{alert.message}</p>
-                  <p className="text-xs text-slate-400 mt-1">{formatDate(alert.createdAt)}</p>
+                  <p className="text-xs text-slate-400 mt-1">{alert.competitorName && <span className="font-medium">{alert.competitorName} · </span>}{formatDate(alert.date)}</p>
                 </div>
                 {!alert.isRead && (
                   <button

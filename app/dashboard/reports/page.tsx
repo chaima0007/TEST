@@ -7,7 +7,7 @@ interface Report {
   title: string;
   description: string;
   pages: number;
-  userId: string;
+  status: string;
   createdAt: string;
 }
 
@@ -105,7 +105,7 @@ export default function ReportsPage() {
                     📊
                   </div>
                   <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium">
-                    Prêt
+                    {r.status === "ready" ? "Prêt" : r.status}
                   </span>
                 </div>
                 <h3 className="font-semibold text-slate-900 text-sm mb-1">{r.title}</h3>
