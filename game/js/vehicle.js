@@ -73,12 +73,14 @@ export class Vehicle {
 
     scene.add(this.mesh);
 
-    // Forward speed along the car's own facing direction (signed: + forward, - reverse)
     this.speed = 0;
-    // Current steering angle (radians), eases toward input-driven target for smoothness
     this.steerAngle = 0;
-    // 0..1, set when a collision occurs this frame (consumed by audio/FX), reset every update()
     this._impactIntensity = 0;
+    this._gripFactor = 1.0;
+  }
+
+  setGripFactor(f) {
+    this._gripFactor = Math.max(0.1, Math.min(1.0, f));
   }
 
   update(dt, input, colliders) {
@@ -103,8 +105,8 @@ export class Vehicle {
         this.speed -= ACCEL * 0.7 * dt;
       }
     } else {
-      // No throttle input: natural engine/rolling friction decelerates toward 0
-      const drop = NATURAL_FRICTION * dt;
+      // No throttle input: less grip = less rolling friction (car slides longer on wet road)
+      const drop = NATURAL_FRICTION * this._gripFactor * dt;
       if (Math.abs(this.speed) <= drop) {
         this.speed = 0;
       } else {
@@ -112,9 +114,9 @@ export class Vehicle {
       }
     }
 
-    // Handbrake: strong extra deceleration regardless of throttle state
+    // Handbrake: reduced effectiveness on wet/slippery surfaces
     if (handbrake) {
-      const drop = HANDBRAKE_DECEL * dt;
+      const drop = HANDBRAKE_DECEL * this._gripFactor * dt;
       if (Math.abs(this.speed) <= drop) {
         this.speed = 0;
       } else {
@@ -136,7 +138,7 @@ export class Vehicle {
     if (left) steerInput += 1;
     if (right) steerInput -= 1;
 
-    const targetSteer = steerInput * MAX_STEER_ANGLE * steerAuthority;
+    const targetSteer = steerInput * MAX_STEER_ANGLE * steerAuthority * this._gripFactor;
     const steerDelta = clamp(targetSteer - this.steerAngle, -MAX_STEER_RATE * dt, MAX_STEER_RATE * dt);
     this.steerAngle += steerDelta;
 

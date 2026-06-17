@@ -31,6 +31,10 @@ const CAR_TOP_SPEED_KMH = {
 const CAR_TURN_RATE = 1.6; // rad/s, taux de rotation plafonné (IA simple)
 const CAR_ACCEL_KMH_PER_S = 60; // accélération vers la vitesse cible
 
+const HELI_ALTITUDE = 25;
+const HELI_MAX_SPEED_H = 28; // m/s horizontal
+const HELI_ACCEL_FACTOR = 3.5; // lerp rate toward desired velocity
+
 function carCountForLevel(level) {
   if (level <= 0) return 0;
   if (level <= 2) return 1;
@@ -85,6 +89,122 @@ function buildPoliceCarMesh() {
   group.userData.blueLight = blueLight;
 
   return group;
+}
+
+function buildHelicopterMesh() {
+  const group = new THREE.Group();
+  const bodyMat   = new THREE.MeshStandardMaterial({ color: 0x1a1a2a, metalness: 0.5, roughness: 0.4 });
+  const whiteMat  = new THREE.MeshStandardMaterial({ color: 0xf0f2f8 });
+  const rotorMat  = new THREE.MeshStandardMaterial({ color: 0x111111, transparent: true, opacity: 0.75 });
+  const glassMat  = new THREE.MeshStandardMaterial({ color: 0x223344, transparent: true, opacity: 0.4 });
+  const spotMat   = new THREE.MeshStandardMaterial({ color: 0xffffcc, emissive: 0xffffcc, emissiveIntensity: 2.0 });
+  const navRedMat = new THREE.MeshStandardMaterial({ color: 0xff2222, emissive: 0xff0000, emissiveIntensity: 1.5 });
+  const navWhtMat = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0.8 });
+
+  const body = new THREE.Mesh(new THREE.BoxGeometry(1.8, 1.0, 4.5), bodyMat);
+  group.add(body);
+  const stripe = new THREE.Mesh(new THREE.BoxGeometry(1.85, 0.22, 4.55), whiteMat);
+  stripe.position.y = 0.2;
+  group.add(stripe);
+  const cockpit = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.9, 1.5), glassMat);
+  cockpit.position.set(0, 0.1, 1.6);
+  group.add(cockpit);
+  const tailBoom = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.5, 3.2), bodyMat);
+  tailBoom.position.set(0, 0.15, -3.6);
+  group.add(tailBoom);
+  const fin = new THREE.Mesh(new THREE.BoxGeometry(0.12, 1.0, 1.1), bodyMat);
+  fin.position.set(0, 0.75, -4.8);
+  group.add(fin);
+  const tailRotor = new THREE.Mesh(new THREE.BoxGeometry(0.1, 1.6, 0.18), rotorMat);
+  tailRotor.position.set(0.38, 0.75, -5.0);
+  group.add(tailRotor);
+
+  const rotorHub = new THREE.Group();
+  rotorHub.position.y = 0.65;
+  const blade1 = new THREE.Mesh(new THREE.BoxGeometry(7.5, 0.06, 0.38), rotorMat);
+  const blade2 = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.06, 7.5), rotorMat);
+  rotorHub.add(blade1, blade2);
+  group.add(rotorHub);
+  group.userData.rotorHub = rotorHub;
+
+  const skidMat = new THREE.MeshStandardMaterial({ color: 0x222222 });
+  const skidGeo = new THREE.BoxGeometry(0.14, 0.12, 4.0);
+  for (const side of [-1.1, 1.1]) {
+    group.add(Object.assign(new THREE.Mesh(skidGeo, skidMat), { position: new THREE.Vector3(side, -0.65, 0) }));
+    for (const z of [-1.2, 1.2]) {
+      group.add(Object.assign(new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.55, 0.1), skidMat), { position: new THREE.Vector3(side, -0.3, z) }));
+    }
+  }
+
+  const navRed = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.2), navRedMat);
+  navRed.position.set(-0.92, 0, 2.2);
+  const navWht = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.2, 0.2), navWhtMat);
+  navWht.position.set(0, -0.58, -4.9);
+  group.add(navRed, navWht);
+  group.userData.navRed = navRed;
+  group.userData.navWht = navWht;
+
+  const spotLens = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.18, 0.38), spotMat);
+  spotLens.position.set(0, -0.72, 1.0);
+  group.add(spotLens);
+
+  return group;
+}
+
+class Helicopter {
+  constructor(scene, playerPos) {
+    this.scene = scene;
+    this.mesh = buildHelicopterMesh();
+    this.heading = 0;
+    this._velX = 0;
+    this._velZ = 0;
+    this._blinkT = 0;
+
+    this.mesh.position.set(playerPos.x + 15, HELI_ALTITUDE, playerPos.z + 15);
+    scene.add(this.mesh);
+
+    this.spotlight = new THREE.PointLight(0xffffaa, 3.0, 50, 1.2);
+    this.spotlight.position.copy(this.mesh.position);
+    scene.add(this.spotlight);
+  }
+
+  update(dt, targetPos) {
+    this._blinkT += dt;
+    const blink = Math.sin(this._blinkT * 2.2) > 0;
+    this.mesh.userData.navRed.material.emissiveIntensity = blink ? 1.8 : 0.05;
+    this.mesh.userData.navWht.material.emissiveIntensity = blink ? 0.05 : 1.2;
+    if (this.mesh.userData.rotorHub) {
+      this.mesh.userData.rotorHub.rotation.y += dt * 18;
+    }
+
+    const dx = targetPos.x - this.mesh.position.x;
+    const dz = targetPos.z - this.mesh.position.z;
+    const distH = Math.hypot(dx, dz);
+    const desiredVX = distH > 4 ? (dx / distH) * HELI_MAX_SPEED_H : 0;
+    const desiredVZ = distH > 4 ? (dz / distH) * HELI_MAX_SPEED_H : 0;
+    const lerpRate = Math.min(1, dt * HELI_ACCEL_FACTOR);
+    this._velX += (desiredVX - this._velX) * lerpRate;
+    this._velZ += (desiredVZ - this._velZ) * lerpRate;
+
+    this.mesh.position.x += this._velX * dt;
+    this.mesh.position.z += this._velZ * dt;
+    this.mesh.position.y = HELI_ALTITUDE;
+
+    const spd = Math.hypot(this._velX, this._velZ);
+    if (spd > 0.5) this.heading = Math.atan2(this._velX, this._velZ);
+    this.mesh.rotation.y = this.heading;
+    this.mesh.rotation.z = Math.min(0.18, spd / HELI_MAX_SPEED_H * 0.28) * Math.sign(this._velX);
+
+    this.spotlight.position.set(this.mesh.position.x, this.mesh.position.y - 6, this.mesh.position.z);
+  }
+
+  dispose() {
+    this.scene.remove(this.mesh);
+    this.mesh.traverse((o) => { if (o.geometry) o.geometry.dispose(); if (o.material) o.material.dispose(); });
+    this.scene.remove(this.spotlight);
+    this.spotlight.dispose();
+    this.mesh = null;
+  }
 }
 
 class PoliceCar {
@@ -151,6 +271,7 @@ export class WantedSystem {
     this._cleanTimer = 0;
     this._crashCooldown = 0;
     this._prevSpeedKmh = 0;
+    this._helicopter = null;
 
     this.cars = [];
   }
@@ -161,6 +282,18 @@ export class WantedSystem {
     this.level = clamped;
     if (hud) hud.setWanted(this.level);
     this._syncCarCount();
+    // Hélicoptère : déployé à partir de 4 étoiles
+    if (clamped >= 4 && !this._helicopter && this._lastPlayerPos) {
+      this._helicopter = new Helicopter(this.scene, this._lastPlayerPos);
+      if (hud) hud.showMessage('NIVEAU 4 — Hélicoptère déployé !', 2500);
+    } else if (clamped < 4 && this._helicopter) {
+      this._helicopter.dispose();
+      this._helicopter = null;
+    }
+  }
+
+  getHelicopterActive() {
+    return this._helicopter !== null;
   }
 
   _syncCarCount() {
@@ -246,6 +379,9 @@ export class WantedSystem {
 
     for (const car of this.cars) {
       car.update(dt, pos, this.level);
+    }
+    if (this._helicopter) {
+      this._helicopter.update(dt, pos);
     }
   }
 }

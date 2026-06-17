@@ -248,6 +248,93 @@ const STYLE = `
 #hud-combo.visible {
   opacity: 1;
 }
+
+#hud-clock {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 18px;
+  background: rgba(10, 14, 22, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #f3f6fa;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#hud-clock .hud-weather-icon {
+  font-size: 16px;
+}
+
+#hud-agents {
+  position: fixed;
+  top: 70px;
+  right: 16px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  pointer-events: none;
+}
+
+.agent-card {
+  padding: 6px 10px;
+  background: rgba(8, 10, 18, 0.72);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: 3px solid #444;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #c9d6e4;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.agent-card.active {
+  opacity: 1;
+}
+
+.agent-card.inactive {
+  opacity: 0.45;
+}
+
+.agent-card .agent-name {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.agent-card .agent-status {
+  color: #f3f6fa;
+  font-size: 10px;
+}
+
+.agent-card.spectre  { border-left-color: #aa33ff; }
+.agent-card.fantome  { border-left-color: #ffd700; }
+.agent-card.police   { border-left-color: #4488ff; }
+.agent-card.meteo    { border-left-color: #44aaff; }
+.agent-card.trafic   { border-left-color: #55cc88; }
+
+.agent-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.agent-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
 `;
 
 function injectStyle() {
@@ -322,6 +409,36 @@ export class HUD {
     this.comboEl = document.createElement('div');
     this.comboEl.id = 'hud-combo';
 
+    // Horloge + météo (centre haut)
+    this.clockEl = document.createElement('div');
+    this.clockEl.id = 'hud-clock';
+    this.clockEl.innerHTML = '<span class="hud-weather-icon">☀️</span><span class="hud-clock-time">06:00</span>';
+    this._clockTimeEl = this.clockEl.querySelector('.hud-clock-time');
+    this._weatherIconEl = this.clockEl.querySelector('.hud-weather-icon');
+
+    // Panneau agents (droite, sous les étoiles)
+    this.agentsEl = document.createElement('div');
+    this.agentsEl.id = 'hud-agents';
+    this._agentCards = {};
+    const agentDefs = [
+      { id: 'spectre', name: 'Le Spectre', cls: 'spectre' },
+      { id: 'fantome', name: 'La Fantome', cls: 'fantome' },
+      { id: 'police',  name: 'Police',     cls: 'police'  },
+      { id: 'meteo',   name: 'Meteo',      cls: 'meteo'   },
+      { id: 'trafic',  name: 'Trafic',     cls: 'trafic'  },
+    ];
+    for (const def of agentDefs) {
+      const card = document.createElement('div');
+      card.className = `agent-card inactive ${def.cls}`;
+      card.innerHTML = `<span class="agent-name">${def.name}</span><span class="agent-status">—</span><div class="agent-bar"><div class="agent-bar-fill" style="width:0%;background:#888"></div></div>`;
+      this.agentsEl.appendChild(card);
+      this._agentCards[def.id] = {
+        el: card,
+        statusEl: card.querySelector('.agent-status'),
+        barEl: card.querySelector('.agent-bar-fill'),
+      };
+    }
+
     this.overlay.appendChild(this.missionEl);
     this.overlay.appendChild(this.scoreEl);
     this.overlay.appendChild(this.wantedEl);
@@ -330,6 +447,8 @@ export class HUD {
     this.overlay.appendChild(this.pauseEl);
     this.overlay.appendChild(this.radarCanvas);
     this.overlay.appendChild(this.comboEl);
+    this.overlay.appendChild(this.clockEl);
+    this.overlay.appendChild(this.agentsEl);
     this.root.appendChild(this.overlay);
 
     this._wantedLevel = 0;
@@ -421,6 +540,29 @@ export class HUD {
     }, Math.max(0, durationMs) + 300);
   }
 
+  setTime(timeString) {
+    if (this._clockTimeEl) this._clockTimeEl.textContent = timeString;
+  }
+
+  setWeather(weatherId) {
+    const icons = { CLEAR: '☀️', CLOUDY: '☁️', RAIN: '🌧️', STORM: '⛈️' };
+    if (this._weatherIconEl) this._weatherIconEl.textContent = icons[weatherId] || '☀️';
+  }
+
+  // Mise à jour du panneau agents — appelé chaque frame
+  // agents: { spectre, fantome, police, meteo, trafic }
+  // Chaque entrée : { status: string, bar: 0-1, color: '#hex', active: bool }
+  updateAgents(agents) {
+    for (const [id, data] of Object.entries(agents)) {
+      const card = this._agentCards[id];
+      if (!card) continue;
+      card.el.className = `agent-card ${id} ${data.active ? 'active' : 'inactive'}`;
+      card.statusEl.textContent = data.status || '—';
+      card.barEl.style.width = `${Math.round((data.bar || 0) * 100)}%`;
+      card.barEl.style.background = data.color || '#888';
+    }
+  }
+
   // mult: number 1-5 (1 = hidden, >1 = visible badge)
   setCombo(mult) {
     if (mult <= 1) {
@@ -434,7 +576,7 @@ export class HUD {
   // Heading-up radar: forward = up, player always centered.
   // opts: { playerPos{x,z}, playerHeading, target{targetX,targetZ}|null,
   //         policeCars[{x,z}], rivalPos{x,z}|null }
-  updateRadar({ playerPos, playerHeading, target = null, policeCars = [], rivalPos = null }) {
+  updateRadar({ playerPos, playerHeading, target = null, policeCars = [], rivalPos = null, fantomePos = null, checkpointPos = null }) {
     const ctx = this._radarCtx;
     const size = this._radarSize;
     const center = size / 2;
@@ -497,6 +639,42 @@ export class HUD {
       ctx.lineWidth = 1.5;
       ctx.fill();
       ctx.stroke();
+    }
+
+    // La Fantôme (point doré)
+    if (fantomePos) {
+      const f = toCanvas(fantomePos.x, fantomePos.z);
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffd700';
+      ctx.strokeStyle = '#fff8a0';
+      ctx.lineWidth = 1.5;
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    // Checkpoint de la Fantôme (étoile blanche)
+    if (checkpointPos) {
+      const c = toCanvas(checkpointPos.x, checkpointPos.z);
+      ctx.beginPath();
+      ctx.arc(c.x, c.y, 6, 0, Math.PI * 2);
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(c.x, c.y - 6);
+      ctx.lineTo(c.x + 2, c.y - 2);
+      ctx.lineTo(c.x + 6, c.y - 2);
+      ctx.lineTo(c.x + 3, c.y + 1);
+      ctx.lineTo(c.x + 4, c.y + 5);
+      ctx.lineTo(c.x, c.y + 3);
+      ctx.lineTo(c.x - 4, c.y + 5);
+      ctx.lineTo(c.x - 3, c.y + 1);
+      ctx.lineTo(c.x - 6, c.y - 2);
+      ctx.lineTo(c.x - 2, c.y - 2);
+      ctx.closePath();
+      ctx.fillStyle = '#ffd700';
+      ctx.fill();
     }
 
     // Player (yellow triangle pointing up — always centered, heading already baked into projection)
