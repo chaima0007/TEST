@@ -40,6 +40,9 @@ from intelligence.conversion_funnel import ConversionFunnelTracker, FunnelStage
 from intelligence.negotiation_manager import (
     NegotiationManager, OfferParty, ConcessionType, NegotiationStatus,
 )
+from intelligence.invoice_manager import (
+    InvoiceManager, InvoiceStatus, PaymentMethod,
+)
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -90,6 +93,7 @@ _objection_handler = ObjectionHandler()
 _template_renderer = TemplateRenderer()
 _funnel_tracker = ConversionFunnelTracker()
 _negotiation_manager = NegotiationManager()
+_invoice_manager = InvoiceManager()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1154,6 +1158,109 @@ def neg_sector_summary():
 @app.delete("/negotiations/reset", tags=["Negotiations"])
 def neg_reset():
     _negotiation_manager.reset()
+    return {"status": "reset"}
+
+
+# ── Invoice routes ────────────────────────────────────────────────────────────
+
+class InvoiceCreateReq(BaseModel):
+    prospect_id:  str
+    company_name: str
+    sector:       str = ""
+    amount_ht:    float
+    tva_pct:      float = 20.0
+    due_days:     int = 30
+    notes:        str = ""
+
+
+class InvoicePaymentReq(BaseModel):
+    invoice_id: str
+    amount:     float
+    method:     str = "stripe"
+    reference:  str = ""
+
+
+@app.post("/invoices", tags=["Invoices"])
+def invoice_create(req: InvoiceCreateReq):
+    inv = _invoice_manager.create(
+        req.prospect_id, req.company_name, req.sector,
+        req.amount_ht, req.tva_pct, req.due_days, req.notes,
+    )
+    return inv.to_dict()
+
+
+@app.get("/invoices", tags=["Invoices"])
+def invoice_list(status: Optional[str] = None):
+    if status:
+        try:
+            s = InvoiceStatus(status)
+        except ValueError:
+            raise HTTPException(status_code=422, detail=f"Unknown status: {status!r}")
+        return [i.to_dict() for i in _invoice_manager.by_status(s)]
+    return [i.to_dict() for i in _invoice_manager.all_invoices()]
+
+
+@app.get("/invoices/{invoice_id}", tags=["Invoices"])
+def invoice_get(invoice_id: str):
+    inv = _invoice_manager.get(invoice_id)
+    if not inv:
+        raise HTTPException(status_code=404, detail="Invoice not found")
+    return inv.to_dict()
+
+
+@app.post("/invoices/{invoice_id}/send", tags=["Invoices"])
+def invoice_send(invoice_id: str):
+    ok = _invoice_manager.send(invoice_id)
+    if not ok:
+        raise HTTPException(status_code=400, detail="Cannot send (not DRAFT or not found)")
+    return _invoice_manager.get(invoice_id).to_dict()
+
+
+@app.post("/invoices/{invoice_id}/cancel", tags=["Invoices"])
+def invoice_cancel(invoice_id: str):
+    ok = _invoice_manager.cancel(invoice_id)
+    if not ok:
+        raise HTTPException(status_code=400, detail="Cannot cancel")
+    return _invoice_manager.get(invoice_id).to_dict()
+
+
+@app.post("/invoices/payment", tags=["Invoices"])
+def invoice_payment(req: InvoicePaymentReq):
+    try:
+        method = PaymentMethod(req.method)
+    except ValueError:
+        raise HTTPException(status_code=422, detail=f"Unknown method: {req.method!r}")
+    pay = _invoice_manager.record_payment(req.invoice_id, req.amount, method, req.reference)
+    if not pay:
+        raise HTTPException(status_code=400, detail="Cannot record payment")
+    return _invoice_manager.get(req.invoice_id).to_dict()
+
+
+@app.post("/invoices/refresh-overdue", tags=["Invoices"])
+def invoice_refresh_overdue():
+    count = _invoice_manager.refresh_overdue()
+    return {"updated": count}
+
+
+@app.get("/invoices/summary", tags=["Invoices"])
+def invoice_summary():
+    _invoice_manager.refresh_overdue()
+    return _invoice_manager.summary()
+
+
+@app.get("/invoices/sectors", tags=["Invoices"])
+def invoice_sector_summary():
+    return _invoice_manager.sector_summary()
+
+
+@app.get("/invoices/methods", tags=["Invoices"])
+def invoice_payment_methods():
+    return _invoice_manager.payment_method_breakdown()
+
+
+@app.delete("/invoices/reset", tags=["Invoices"])
+def invoice_reset():
+    _invoice_manager.reset()
     return {"status": "reset"}
 
 
