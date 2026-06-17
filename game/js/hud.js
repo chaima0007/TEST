@@ -660,7 +660,7 @@ export class HUD {
   // Heading-up radar: forward = up, player always centered.
   // opts: { playerPos{x,z}, playerHeading, target{targetX,targetZ}|null,
   //         policeCars[{x,z}], rivalPos{x,z}|null }
-  updateRadar({ playerPos, playerHeading, target = null, policeCars = [], rivalPos = null, fantomePos = null, checkpointPos = null }) {
+  updateRadar({ playerPos, playerHeading, target = null, policeCars = [], rivalPos = null, fantomePos = null, checkpointPos = null, speedCams = [], nitroCapsules = [] }) {
     const ctx = this._radarCtx;
     const size = this._radarSize;
     const center = size / 2;
@@ -759,6 +759,29 @@ export class HUD {
       ctx.closePath();
       ctx.fillStyle = '#ffd700';
       ctx.fill();
+    }
+
+    // Caméras radar (points jaunes)
+    for (const cam of speedCams) {
+      const c = toCanvas(cam.x, cam.z);
+      if (c.x < 0 || c.x > size || c.y < 0 || c.y > size) continue;
+      ctx.beginPath();
+      ctx.arc(c.x, c.y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffcc00';
+      ctx.fill();
+    }
+
+    // Capsules nitro (points cyan)
+    for (const n of nitroCapsules) {
+      const c = toCanvas(n.x, n.z);
+      if (c.x < 0 || c.x > size || c.y < 0 || c.y > size) continue;
+      ctx.beginPath();
+      ctx.arc(c.x, c.y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = '#00eeff';
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1;
+      ctx.fill();
+      ctx.stroke();
     }
 
     // Player (yellow triangle pointing up — always centered, heading already baked into projection)

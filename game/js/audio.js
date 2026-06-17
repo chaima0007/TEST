@@ -27,13 +27,11 @@ export class AudioSystem {
     this._master = null;
     this._disposed = false;
 
-    // Persistent engine drone nodes (created once, reused every frame).
     this._engine = null;
-
-    // Persistent siren nodes (created once; gain is ramped to 0 when idle so
-    // we don't tear down/rebuild oscillators on every toggle).
     this._siren = null;
     this._sirenActive = false;
+    this._drift = null;   // tire screech oscillator
+    this._chase = null;   // chase/tension music layer
 
     // Bound listener refs so we can remove them on dispose().
     this._onFirstGesture = this._onFirstGesture.bind(this);
@@ -54,6 +52,8 @@ export class AudioSystem {
 
       this._buildEngine();
       this._buildSiren();
+      this._buildDrift();
+      this._buildChase();
 
       for (const evt of this._gestureEvents) {
         window.addEventListener(evt, this._onFirstGesture, { once: false, passive: true });
@@ -228,6 +228,88 @@ export class AudioSystem {
     }
   }
 
+  // --- Drift screech -------------------------------------------------------
+
+  _buildDrift() {
+    const ctx = this._ctx;
+    // White noise through a band-pass filter = tire screech
+    const bufLen = ctx.sampleRate * 2;
+    const buf = ctx.createBuffer(1, bufLen, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < bufLen; i++) data[i] = Math.random() * 2 - 1;
+
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    src.loop = true;
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.value = 280;
+    filter.Q.value = 3.5;
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+
+    src.connect(filter);
+    filter.connect(gain);
+    gain.connect(this._master);
+    try { src.start(); } catch (e) { /* silent */ }
+    this._drift = { src, filter, gain };
+  }
+
+  setDriftActive(active) {
+    if (!this._ctx || !this._drift) return;
+    const now = this._ctx.currentTime;
+    try {
+      const target = active ? 0.18 : 0;
+      this._drift.gain.gain.setTargetAtTime(target, now, 0.06);
+      if (active) this._drift.filter.frequency.setTargetAtTime(280 + Math.random() * 80, now, 0.1);
+    } catch (e) { /* ignore */ }
+  }
+
+  // --- Chase music (tension drone) ----------------------------------------
+
+  _buildChase() {
+    const ctx = this._ctx;
+    const osc1 = ctx.createOscillator();
+    osc1.type = 'sawtooth';
+    osc1.frequency.value = 65;
+
+    const osc2 = ctx.createOscillator();
+    osc2.type = 'square';
+    osc2.frequency.value = 98;
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 180;
+    filter.Q.value = 1.2;
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+
+    osc1.connect(filter);
+    osc2.connect(filter);
+    filter.connect(gain);
+    gain.connect(this._master);
+    try { osc1.start(); osc2.start(); } catch (e) { /* silent */ }
+    this._chase = { osc1, osc2, filter, gain };
+  }
+
+  // intensity 0-1 (wanted.level / 5)
+  setChaseIntensity(intensity) {
+    if (!this._ctx || !this._chase) return;
+    const now = this._ctx.currentTime;
+    try {
+      const vol = clamp01(intensity) * 0.07;
+      this._chase.gain.gain.setTargetAtTime(vol, now, 0.3);
+      const f1 = 65 + intensity * 45;
+      const f2 = 98 + intensity * 60;
+      this._chase.osc1.frequency.setTargetAtTime(f1, now, 0.5);
+      this._chase.osc2.frequency.setTargetAtTime(f2, now, 0.5);
+      this._chase.filter.frequency.setTargetAtTime(180 + intensity * 400, now, 0.3);
+    } catch (e) { /* ignore */ }
+  }
+
   // --- One-shot SFX -------------------------------------------------------
 
   // Short noise/thump for car-vs-building collisions. intensity 0..1 scales
@@ -308,6 +390,34 @@ export class AudioSystem {
     } catch (err) {
       // Never let a failed one-shot break gameplay.
     }
+  }
+
+  playNitro() {
+    if (!this._ctx) return;
+    const ctx = this._ctx;
+    const now = ctx.currentTime;
+    try {
+      const osc = ctx.createOscillator();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(80, now);
+      osc.frequency.exponentialRampToValueAtTime(400, now + 0.25);
+
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'highpass';
+      filter.frequency.value = 200;
+
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(0.22, now + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.32);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(this._master);
+      osc.start(now);
+      osc.stop(now + 0.35);
+      osc.onended = () => { try { osc.disconnect(); filter.disconnect(); gain.disconnect(); } catch(e){} };
+    } catch (e) { /* ignore */ }
   }
 
   // Short, subtle UI click/notification blip for mission complete /

@@ -25,6 +25,8 @@ const TOUCH_STYLE = `
 .tc-gas.active{background:rgba(81,207,102,.55);border-color:#51cf66;}
 .tc-brake{background:rgba(255,107,107,.18);}
 .tc-brake.active{background:rgba(255,107,107,.55);border-color:#ff6b6b;}
+.tc-nitro{background:rgba(0,220,255,.18);}
+.tc-nitro.active{background:rgba(0,220,255,.6);border-color:#00dcff;}
 `;
 
 function isTouchDevice() {
@@ -34,7 +36,7 @@ function isTouchDevice() {
 export class InputManager {
   constructor() {
     this.codes = new Set();
-    this.touch = { forward: false, back: false, left: false, right: false, brake: false };
+    this.touch = { forward: false, back: false, left: false, right: false, brake: false, nitro: false };
 
     window.addEventListener('keydown', (e) => this.codes.add(e.code));
     window.addEventListener('keyup', (e) => this.codes.delete(e.code));
@@ -62,6 +64,7 @@ export class InputManager {
       <div class="tc-pedals">
         <button class="tc-btn tc-gas" data-action="forward">▲</button>
         <button class="tc-btn tc-brake" data-action="back">▼</button>
+        <button class="tc-btn tc-nitro" data-action="nitro">N</button>
       </div>
     `;
     document.body.appendChild(layer);

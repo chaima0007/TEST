@@ -15,6 +15,8 @@ import { WeatherSystem } from './weather.js';
 import { FantomeSystem } from './fantome.js';
 import { DriftSystem } from './drift.js';
 import { NitroSystem } from './nitro.js';
+import { TireSmokeSystem } from './particles.js';
+import { SpeedCamSystem } from './speedcam.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -47,8 +49,10 @@ const audio = new AudioSystem();
 const dayCycle = new DayCycle(scene, sun, ambientLight);
 const weather = new WeatherSystem(scene);
 const fantome = new FantomeSystem(scene, world);
-const drift = new DriftSystem();
-const nitro = new NitroSystem(scene);
+const drift  = new DriftSystem();
+const nitro  = new NitroSystem(scene);
+const smoke  = new TireSmokeSystem(scene);
+const speedCams = new SpeedCamSystem(scene, world);
 
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -58,6 +62,7 @@ window.addEventListener('resize', () => {
 
 let lastTime = performance.now();
 let lastScore = 0;
+let lastBoostActive = false;
 let lastWantedLevel = wanted.level;
 let cameraShake = 0;
 let lastImpactSoundTime = -Infinity;
@@ -97,6 +102,10 @@ function animate() {
   combo.update(dt, playerPos, traffic.getCarPositions());
   drift.update(dt, vehicle);
   nitro.update(dt, playerPos, input);
+  smoke.update(dt, vehicle, drift.isDrifting());
+
+  const camViolation = speedCams.update(dt, vehicle, hud);
+  if (camViolation && wanted.level < 5) wanted._setLevel(wanted.level + 1, hud);
 
   // Lampadaires : s'allument la nuit
   const nightIntensity = dayCycle.isNight() ? 1.4 : 0;
@@ -115,6 +124,8 @@ function animate() {
     rivalPos: rival.active && rival.mesh ? { x: rival.mesh.position.x, z: rival.mesh.position.z } : null,
     fantomePos: fantome.active && fantome.mesh ? { x: fantome.mesh.position.x, z: fantome.mesh.position.z } : null,
     checkpointPos: fantome.active && fantome._checkpointPos ? fantome._checkpointPos : null,
+    speedCams: speedCams.getCameraPositions(),
+    nitroCapsules: nitro._capsules.map(c => ({ x: c.x, z: c.z })),
   });
 
   hud.setSpeed(vehicle.getSpeedKmh());
@@ -173,12 +184,17 @@ function animate() {
     },
   });
 
-  hud.setNitro(nitro.getCharges(), nitro.isBoostActive());
+  const boostNow = nitro.isBoostActive();
+  if (boostNow && !lastBoostActive) audio.playNitro();
+  lastBoostActive = boostNow;
+  hud.setNitro(nitro.getCharges(), boostNow);
   hud.setDrift(drift.isDrifting(), drift.getDriftAngle(), drift.getSessionScore());
 
   // --- Audio ---
   audio.setEngineIntensity(Math.min(1, Math.abs(vehicle.getSpeedKmh()) / MAX_SPEED_KMH));
   audio.setSirenActive(wanted.level > 0);
+  audio.setDriftActive(drift.isDrifting());
+  audio.setChaseIntensity(wanted.level / 5);
 
   const impact = vehicle.getImpactIntensity();
   const elapsedS = now / 1000;
