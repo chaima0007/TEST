@@ -89,23 +89,23 @@ const features = [
 const plans = [
   {
     name: "Starter",
-    price: "29",
-    desc: "Parfait pour démarrer votre veille concurrentielle.",
-    features: ["5 concurrents suivis", "Alertes email", "Rapports mensuels", "Tableau de bord", "Support communauté"],
+    price: "39",
+    desc: "Parfait pour démarrer votre veille concurrentielle. Essai 14 jours gratuit.",
+    features: ["5 concurrents suivis", "Alertes email", "Rapports mensuels", "Tableau de bord", "Support communauté", "Alertes IA basiques", "Export CSV"],
     popular: false,
   },
   {
     name: "Pro",
     price: "79",
     desc: "Pour les équipes qui veulent garder une longueur d'avance.",
-    features: ["20 concurrents suivis", "Alertes temps réel", "Rapports illimités", "API Access", "Export PDF & CSV", "Support prioritaire"],
+    features: ["20 concurrents suivis", "Alertes temps réel", "Rapports illimités", "API Access", "Export PDF & CSV", "Support prioritaire", "Insights IA avancés", "Analyse prédictive des prix"],
     popular: true,
   },
   {
     name: "Enterprise",
-    price: "199",
+    price: "249",
     desc: "Pour les grandes organisations avec des besoins avancés.",
-    features: ["Concurrents illimités", "Alertes personnalisées", "Rapports sur mesure", "Support dédié 24/7", "SSO & SAML", "SLA 99,9%", "Onboarding guidé"],
+    features: ["Concurrents illimités", "Alertes personnalisées", "Rapports sur mesure", "Support dédié 24/7", "SSO & SAML", "SLA 99,9%", "Onboarding guidé", "CSM dédié", "Rapports personnalisés"],
     popular: false,
   },
 ];
