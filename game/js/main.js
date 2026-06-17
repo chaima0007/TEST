@@ -9,6 +9,7 @@ import { HUD } from './hud.js';
 import { TrafficSystem } from './traffic.js';
 import { AudioSystem } from './audio.js';
 import { RivalSystem } from './rival.js';
+import { ComboSystem } from './combo.js';
 
 const MAX_SPEED_KMH = 150; // doit suivre vehicle.js, utilisé seulement pour le ratio audio moteur
 
@@ -35,6 +36,7 @@ const missions = new MissionManager(world, hud);
 const wanted = new WantedSystem(scene, world);
 const traffic = new TrafficSystem(scene, world);
 const rival = new RivalSystem(scene, world);
+const combo = new ComboSystem();
 const audio = new AudioSystem();
 
 window.addEventListener('resize', () => {
@@ -44,8 +46,9 @@ window.addEventListener('resize', () => {
 });
 
 let lastTime = performance.now();
-let lastScore = missions.getScore() + rival.getScore();
+let lastScore = missions.getScore() + rival.getScore() + combo.getScore();
 let lastWantedLevel = wanted.level;
+let cameraShake = 0;
 let lastImpactSoundTime = -Infinity;
 const IMPACT_AUDIO_THRESHOLD = 0.08; // ignore barely-grazing contacts
 const IMPACT_AUDIO_COOLDOWN_S = 0.25; // avoid spamming the thump while grinding against a wall
@@ -74,8 +77,20 @@ function animate() {
   wanted.update(dt, vehicle, hud);
   traffic.update(dt, vehicle.getPosition());
   rival.update(dt, vehicle, hud);
+
+  const playerPos = vehicle.getPosition();
+  combo.update(dt, playerPos, traffic.getCarPositions());
+  hud.setCombo(combo.getMultiplier());
+  hud.updateRadar({
+    playerPos,
+    playerHeading: vehicle.getHeading(),
+    target: missions.getCurrentMission(),
+    policeCars: wanted.cars.map((c) => ({ x: c.mesh.position.x, z: c.mesh.position.z })),
+    rivalPos: rival.active && rival.mesh ? { x: rival.mesh.position.x, z: rival.mesh.position.z } : null,
+  });
+
   hud.setSpeed(vehicle.getSpeedKmh());
-  const totalScore = missions.getScore() + rival.getScore();
+  const totalScore = missions.getScore() + rival.getScore() + combo.getScore();
   hud.setScore(totalScore);
 
   audio.setEngineIntensity(Math.min(1, Math.abs(vehicle.getSpeedKmh()) / MAX_SPEED_KMH));
@@ -86,10 +101,20 @@ function animate() {
   if (impact > IMPACT_AUDIO_THRESHOLD && elapsedS - lastImpactSoundTime > IMPACT_AUDIO_COOLDOWN_S) {
     audio.playCollision(impact);
     lastImpactSoundTime = elapsedS;
+    cameraShake = Math.min(1, cameraShake + impact * 0.7);
+  }
+  if (cameraShake > 0.001) {
+    camera.position.x += (Math.random() - 0.5) * cameraShake * 1.8;
+    camera.position.y += Math.random() * cameraShake * 0.8;
+    camera.position.z += (Math.random() - 0.5) * cameraShake * 1.8;
+    cameraShake *= 0.78; // décroissance exponentielle par frame
+  } else {
+    cameraShake = 0;
   }
 
   if (totalScore > lastScore) audio.playUiBlip();
   lastScore = totalScore;
+
 
   if (wanted.level !== lastWantedLevel) audio.playUiBlip();
   lastWantedLevel = wanted.level;

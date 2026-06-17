@@ -343,6 +343,10 @@ export class TrafficSystem {
     return Math.hypot(dx, dz);
   }
 
+  getCarPositions() {
+    return this.cars.filter((c) => c.active).map((c) => ({ x: c.mesh.position.x, z: c.mesh.position.z }));
+  }
+
   // AABBs for active traffic cars and pedestrians, in the same {x, z,
   // halfWidth, halfDepth} shape as world.colliders, so the player vehicle's
   // existing building-collision code can also treat traffic as solid instead

@@ -201,6 +201,35 @@ const STYLE = `
   font-size: 12px;
   color: #c9d6e4;
 }
+
+#hud-radar {
+  position: fixed;
+  bottom: 22px;
+  left: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.18), 0 4px 16px rgba(0,0,0,0.5);
+}
+
+#hud-combo {
+  position: fixed;
+  bottom: 200px;
+  left: 22px;
+  padding: 4px 12px;
+  background: rgba(10,14,22,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  color: #ffce3d;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#hud-combo.visible {
+  opacity: 1;
+}
 `;
 
 function injectStyle() {
@@ -264,12 +293,25 @@ export class HUD {
     `;
     this.pauseScoreValueEl = this.pauseEl.querySelector('.hud-pause-score-value');
 
+    const RADAR_SIZE = 160;
+    this.radarCanvas = document.createElement('canvas');
+    this.radarCanvas.id = 'hud-radar';
+    this.radarCanvas.width = RADAR_SIZE;
+    this.radarCanvas.height = RADAR_SIZE;
+    this._radarCtx = this.radarCanvas.getContext('2d');
+    this._radarSize = RADAR_SIZE;
+
+    this.comboEl = document.createElement('div');
+    this.comboEl.id = 'hud-combo';
+
     this.overlay.appendChild(this.missionEl);
     this.overlay.appendChild(this.scoreEl);
     this.overlay.appendChild(this.wantedEl);
     this.overlay.appendChild(this.speedEl);
     this.overlay.appendChild(this.toastEl);
     this.overlay.appendChild(this.pauseEl);
+    this.overlay.appendChild(this.radarCanvas);
+    this.overlay.appendChild(this.comboEl);
     this.root.appendChild(this.overlay);
 
     this._wantedLevel = 0;
@@ -339,5 +381,103 @@ export class HUD {
     this._toastRemoveTimer = setTimeout(() => {
       this.toastEl.textContent = '';
     }, Math.max(0, durationMs) + 300);
+  }
+
+  // mult: number 1-5 (1 = hidden, >1 = visible badge)
+  setCombo(mult) {
+    if (mult <= 1) {
+      this.comboEl.classList.remove('visible');
+    } else {
+      this.comboEl.textContent = `COMBO x${mult}`;
+      this.comboEl.classList.add('visible');
+    }
+  }
+
+  // Heading-up radar: forward = up, player always centered.
+  // opts: { playerPos{x,z}, playerHeading, target{targetX,targetZ}|null,
+  //         policeCars[{x,z}], rivalPos{x,z}|null }
+  updateRadar({ playerPos, playerHeading, target = null, policeCars = [], rivalPos = null }) {
+    const ctx = this._radarCtx;
+    const size = this._radarSize;
+    const center = size / 2;
+    const worldRadius = 90; // world metres shown at canvas edge
+    const scale = center / worldRadius;
+
+    ctx.clearRect(0, 0, size, size);
+
+    // Background disc
+    ctx.beginPath();
+    ctx.arc(center, center, center, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(8,10,16,0.78)';
+    ctx.fill();
+
+    // Faint crosshairs for orientation
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(center, 2); ctx.lineTo(center, size - 2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(2, center); ctx.lineTo(size - 2, center); ctx.stroke();
+
+    // Project a world (x,z) to canvas (px,py) relative to player, heading-up.
+    const toCanvas = (wx, wz) => {
+      const dx = wx - playerPos.x;
+      const dz = wz - playerPos.z;
+      const cosH = Math.cos(playerHeading);
+      const sinH = Math.sin(playerHeading);
+      // right component → canvas x, forward component → canvas -y (up)
+      return {
+        x: center + (dx * cosH - dz * sinH) * scale,
+        y: center - (dx * sinH + dz * cosH) * scale,
+      };
+    };
+
+    // Mission target (blue dot)
+    if (target) {
+      const t = toCanvas(target.targetX, target.targetZ);
+      ctx.beginPath();
+      ctx.arc(t.x, t.y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#4fc3f7';
+      ctx.fill();
+    }
+
+    // Police cars (red dots)
+    for (const car of policeCars) {
+      const c = toCanvas(car.x, car.z);
+      if (c.x < 0 || c.x > size || c.y < 0 || c.y > size) continue;
+      ctx.beginPath();
+      ctx.arc(c.x, c.y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = '#ff4444';
+      ctx.fill();
+    }
+
+    // Le Spectre (violet dot)
+    if (rivalPos) {
+      const r = toCanvas(rivalPos.x, rivalPos.z);
+      ctx.beginPath();
+      ctx.arc(r.x, r.y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = '#aa33ff';
+      ctx.strokeStyle = '#cc88ff';
+      ctx.lineWidth = 1.5;
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    // Player (yellow triangle pointing up — always centered, heading already baked into projection)
+    ctx.save();
+    ctx.translate(center, center);
+    ctx.beginPath();
+    ctx.moveTo(0, -8);
+    ctx.lineTo(5.5, 6);
+    ctx.lineTo(-5.5, 6);
+    ctx.closePath();
+    ctx.fillStyle = '#ffce3d';
+    ctx.fill();
+    ctx.restore();
+
+    // Outer ring
+    ctx.beginPath();
+    ctx.arc(center, center, center - 1, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
   }
 }
