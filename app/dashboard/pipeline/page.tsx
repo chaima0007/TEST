@@ -62,10 +62,24 @@ export default function PipelinePage() {
 
   const handleRun = async () => {
     setRunning(true);
-    await fetch("/api/pipeline/run", { method: "POST" });
-    const fresh = await loadRuns();
-    if (fresh[0]) await loadDetail(fresh[0].id);
-    setRunning(false);
+    try {
+      await fetch("/api/pipeline/run", { method: "POST" });
+      const fresh = await loadRuns();
+      if (fresh[0]) await loadDetail(fresh[0].id);
+    } finally {
+      setRunning(false);
+    }
+  };
+
+  const handleResume = async (runId: string) => {
+    setRunning(true);
+    try {
+      await fetch(`/api/pipeline/runs/${runId}/resume`, { method: "POST" });
+      await loadRuns();
+      await loadDetail(runId);
+    } finally {
+      setRunning(false);
+    }
   };
 
   const handleMatch = async (matchId: string, action: "approve" | "reject", reason?: string) => {
@@ -176,7 +190,16 @@ export default function PipelinePage() {
                     </div>
                   ))}
                   {selected.error && (
-                    <p className="text-[12px] text-[#D83B01] bg-red-50 rounded-md px-3 py-2">{selected.error}</p>
+                    <div className="flex items-center justify-between gap-3 bg-red-50 rounded-md px-3 py-2">
+                      <p className="text-[12px] text-[#D83B01]">{selected.error}</p>
+                      <button
+                        onClick={() => handleResume(selected.id)}
+                        disabled={running}
+                        className="text-[12px] font-medium px-3 py-1 rounded-md bg-white text-[#D83B01] border border-red-200 hover:bg-red-100 transition-colors disabled:opacity-60 flex-shrink-0"
+                      >
+                        {running ? "…" : "Reprendre"}
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
