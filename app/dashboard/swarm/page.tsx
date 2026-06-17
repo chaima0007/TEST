@@ -349,6 +349,7 @@ export default function SwarmPage() {
   const [activeTab, setActiveTab] = useState<"overview" | "divisions" | "jobs" | "simulation">(
     "overview"
   );
+  const [triggerState, setTriggerState] = useState<"idle" | "running" | "done">("idle");
 
   useEffect(() => {
     fetch("/api/swarm")
@@ -359,6 +360,15 @@ export default function SwarmPage() {
       })
       .catch(() => setLoading(false));
   }, []);
+
+  const triggerCycle = async () => {
+    setTriggerState("running");
+    try {
+      await fetch("/api/swarm", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "trigger_cycle" }) });
+    } catch {}
+    setTimeout(() => setTriggerState("done"), 800);
+    setTimeout(() => setTriggerState("idle"), 3500);
+  };
 
   const m = data?.metrics;
 
@@ -381,7 +391,7 @@ export default function SwarmPage() {
             5 divisions opérationnelles · Orchestration LangGraph + CrewAI
           </p>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <span className="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
             {m?.agentsActive ?? "—"} agents actifs
@@ -392,6 +402,19 @@ export default function SwarmPage() {
               {m.agentsError} erreur{m.agentsError > 1 ? "s" : ""}
             </span>
           ) : null}
+          <button
+            onClick={triggerCycle}
+            disabled={triggerState === "running"}
+            className={`text-[12px] font-semibold px-4 py-2 rounded-lg transition-all ${
+              triggerState === "done"
+                ? "bg-green-500 text-white"
+                : triggerState === "running"
+                ? "bg-blue-400 text-white cursor-not-allowed opacity-80"
+                : "bg-blue-600 hover:bg-blue-700 text-white"
+            }`}
+          >
+            {triggerState === "running" ? "⚡ Lancement…" : triggerState === "done" ? "✓ Cycle lancé !" : "⚡ Lancer un cycle"}
+          </button>
         </div>
       </div>
 
