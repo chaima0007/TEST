@@ -29,10 +29,13 @@ def make_fiche(
         name=name,
         sector=sector,
         website=website,
-        contact_email="contact@plomberie-martin.fr",
         pagespeed_score=pagespeed_score,
+        mobile_responsive=False,
         load_time_ms=load_time_ms,
-        issues=["Performance mobile critique", "Score PageSpeed < 50"],
+        contact_email="contact@plomberie-martin.fr",
+        contact_name="M. Martin",
+        agent_source="1.1",
+        detected_issues=["Performance mobile critique", "Score PageSpeed < 50"],
     )
 
 

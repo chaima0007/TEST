@@ -15,6 +15,7 @@ from crewai import Crew, Process, Task
 from config import DIVISION_1
 from agents.base import SwarmAgent
 from agents.tools import resolve_tools
+from intelligence.prospect_enricher import ProspectEnricher
 
 logger = logging.getLogger("Division1")
 
@@ -59,6 +60,7 @@ class Division1Detection:
         self.agents = [SwarmAgent(cfg, resolve_tools(cfg.tools)) for cfg in DIVISION_1]
         self.manager = next(a for a in self.agents if a.is_manager)
         self.scouts = [a for a in self.agents if not a.is_manager]
+        self.enricher = ProspectEnricher()
         logger.info(f"Division 1 initialised — Manager: {self.manager.id}, Scouts: {[s.id for s in self.scouts]}")
 
     def build_crew(self) -> Crew:
@@ -118,8 +120,14 @@ class Division1Detection:
                 seen.add(f.website)
                 unique.append(f)
 
-        unique.sort(key=lambda f: f.pagespeed_score)
-        logger.info(f"[Div1] Detection complete — {len(unique)} unique prospects")
+        # Enrich and sort by priority score (Tier A first)
+        enriched = self.enricher.enrich_batch(unique)
+        # Re-sort original fiches by the enriched priority order
+        priority_map = {e.company_id: e.priority_score for e in enriched}
+        unique.sort(key=lambda f: priority_map.get(f.company_id, 0), reverse=True)
+
+        tier_a = sum(1 for e in enriched if e.tier == "A")
+        logger.info(f"[Div1] Detection complete — {len(unique)} unique prospects ({tier_a} Tier A)")
         return unique
 
     async def _scout_sector(self, agent: SwarmAgent, sector: str) -> List[ProspectFiche]:

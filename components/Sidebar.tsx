@@ -107,6 +107,14 @@ function IconHandshake({ className }: { className?: string }) {
   );
 }
 
+function IconTarget({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 100-8 4 4 0 000 8zm0-2a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconFinance({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -229,6 +237,7 @@ const navSections: NavSection[] = [
     items: [
       { href: "/dashboard/swarm", label: "50 Agents Swarm", icon: IconSwarm },
       { href: "/dashboard/live", label: "Activité Live", icon: IconLive },
+      { href: "/dashboard/prospects", label: "Prospects", icon: IconTarget },
       { href: "/dashboard/finance", label: "Finance", icon: IconFinance },
       { href: "/dashboard/negotiations", label: "Négociations", icon: IconHandshake },
       { href: "/dashboard/abtesting", label: "A/B Testing", icon: IconFlask },
