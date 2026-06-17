@@ -199,6 +199,14 @@ function IconSequence({ className }: { className?: string }) {
   );
 }
 
+function IconInvoice({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm4.707 5.707a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L7.414 11H13a1 1 0 100-2H7.414l2.293-2.293z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconFunnel({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -316,6 +324,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/quotes", label: "Devis", icon: IconQuote },
       { href: "/dashboard/sequences", label: "Séquences Outreach", icon: IconSequence },
       { href: "/dashboard/funnel", label: "Funnel de Conversion", icon: IconFunnel },
+      { href: "/dashboard/invoices", label: "Factures", icon: IconInvoice },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
