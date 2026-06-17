@@ -34,6 +34,8 @@ from intelligence.deduplication_engine import DeduplicationEngine, SuppressionRe
 from intelligence.prospect_memory import ProspectMemory, MessageDirection, DealStage
 from intelligence.pricing_engine import PricingEngine
 from intelligence.outreach_sequencer import OutreachSequencer, StopReason as SeqStopReason
+from intelligence.objection_handler import ObjectionHandler, ObjectionType as ObjType, RebuttalOutcome
+from intelligence.template_renderer import TemplateRenderer
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -80,6 +82,8 @@ _prospect_memory = ProspectMemory()
 _report_generator = ReportGenerator()
 _pricing_engine = PricingEngine()
 _outreach_sequencer = OutreachSequencer()
+_objection_handler = ObjectionHandler()
+_template_renderer = TemplateRenderer()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -868,6 +872,101 @@ def get_all_due():
 @app.get("/sequences/summary", tags=["Outreach"])
 def sequences_summary():
     return _outreach_sequencer.summary()
+
+
+# ── Objection Handler ─────────────────────────────────────────────────────────
+
+class ObjectionRecommendRequest(BaseModel):
+    objection: str
+    sector: str = ""
+    exclude_ids: List[str] = []
+
+
+class RecordOutcomeRequest(BaseModel):
+    rebuttal_id:  str
+    prospect_id:  str
+    objection:    str
+    outcome:      str
+    sector:       str = ""
+    notes:        str = ""
+
+
+@app.get("/objections/rebuttals", tags=["Objections"])
+def list_rebuttals():
+    return [r.to_dict() for r in _objection_handler.all_rebuttals()]
+
+
+@app.post("/objections/recommend", tags=["Objections"])
+def recommend_rebuttal(req: ObjectionRecommendRequest):
+    r = _objection_handler.recommend(req.objection, sector=req.sector, exclude_ids=req.exclude_ids)
+    if not r:
+        raise HTTPException(status_code=404, detail="No rebuttal found")
+    return r.to_dict()
+
+
+@app.post("/objections/outcome", tags=["Objections"])
+def record_outcome(req: RecordOutcomeRequest):
+    rec = _objection_handler.record_outcome(
+        req.rebuttal_id, req.prospect_id, req.objection, req.outcome,
+        sector=req.sector, notes=req.notes,
+    )
+    return rec.to_dict()
+
+
+@app.get("/objections/effectiveness", tags=["Objections"])
+def objection_effectiveness():
+    return _objection_handler.effectiveness_report()
+
+
+@app.get("/objections/summary", tags=["Objections"])
+def objection_summary():
+    return _objection_handler.summary()
+
+
+# ── Template Renderer ─────────────────────────────────────────────────────────
+
+class RenderRequest(BaseModel):
+    template_id: str
+    variables:   Dict[str, str] = {}
+    variant_key: str = "A"
+    strict:      bool = False
+
+
+@app.get("/templates", tags=["Templates"])
+def list_templates(tag: Optional[str] = None):
+    return [t.to_dict() for t in _template_renderer.list_templates(tag=tag)]
+
+
+@app.get("/templates/{template_id}", tags=["Templates"])
+def get_template(template_id: str):
+    t = _template_renderer.get(template_id)
+    if not t:
+        raise HTTPException(status_code=404, detail="Template not found")
+    return t.to_dict()
+
+
+@app.post("/templates/render", tags=["Templates"])
+def render_template(req: RenderRequest):
+    try:
+        msg = _template_renderer.render(
+            req.template_id, variables=req.variables,
+            variant_key=req.variant_key, strict=req.strict,
+        )
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    return msg.to_dict()
+
+
+@app.get("/templates/stats/summary", tags=["Templates"])
+def template_stats_summary():
+    return _template_renderer.summary()
+
+
+@app.get("/templates/stats/top", tags=["Templates"])
+def template_top_open_rate(n: int = 5):
+    return [s.to_dict() for s in _template_renderer.top_by_open_rate(n=n)]
 
 
 if __name__ == "__main__":
