@@ -32,6 +32,8 @@ from intelligence.lead_scorer import LeadScorer
 from intelligence.campaign_scheduler import CampaignScheduler
 from intelligence.deduplication_engine import DeduplicationEngine, SuppressionReason
 from intelligence.prospect_memory import ProspectMemory, MessageDirection, DealStage
+from intelligence.pricing_engine import PricingEngine
+from intelligence.outreach_sequencer import OutreachSequencer, StopReason as SeqStopReason
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -76,6 +78,8 @@ _campaign_scheduler = CampaignScheduler()
 _dedup_engine = DeduplicationEngine()
 _prospect_memory = ProspectMemory()
 _report_generator = ReportGenerator()
+_pricing_engine = PricingEngine()
+_outreach_sequencer = OutreachSequencer()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -705,6 +709,165 @@ def reports_summary():
         "best_cycle": _report_generator.best_cycle().cycle_id if _report_generator.best_cycle() else None,
         "table": _report_generator.generate_summary_table(n=5),
     }
+
+
+# ── Pricing Engine ────────────────────────────────────────────────────────────
+
+class QuoteRequest(BaseModel):
+    prospect_id: str
+    company_name: str
+    sector: str
+    pagespeed_score: int
+    load_time_ms: int
+    mobile_responsive: bool
+    issue_count: int = 0
+    force_package: Optional[str] = None
+    discount_pct: float = 0.0
+    urgency: bool = False
+
+
+class BatchQuoteRequest(BaseModel):
+    prospects: List[Dict[str, Any]]
+    default_discount_pct: float = 0.0
+
+
+@app.post("/pricing/quote", tags=["Pricing"])
+def generate_quote(req: QuoteRequest):
+    q = _pricing_engine.generate_quote(
+        prospect_id=req.prospect_id,
+        company_name=req.company_name,
+        sector=req.sector,
+        pagespeed_score=req.pagespeed_score,
+        load_time_ms=req.load_time_ms,
+        mobile_responsive=req.mobile_responsive,
+        issue_count=req.issue_count,
+        force_package=req.force_package,
+        discount_pct=req.discount_pct,
+        urgency=req.urgency,
+    )
+    return q.to_dict()
+
+
+@app.post("/pricing/batch", tags=["Pricing"])
+def price_batch(req: BatchQuoteRequest):
+    quotes = _pricing_engine.price_batch(req.prospects, default_discount_pct=req.default_discount_pct)
+    return {
+        "count": len(quotes),
+        "quotes": [q.to_dict() for q in quotes],
+    }
+
+
+@app.get("/pricing/quote/{prospect_id}", tags=["Pricing"])
+def get_quote(prospect_id: str):
+    q = _pricing_engine.get_quote(prospect_id)
+    if not q:
+        raise HTTPException(status_code=404, detail="Quote not found")
+    return q.to_dict()
+
+
+@app.get("/pricing/summary", tags=["Pricing"])
+def pricing_summary():
+    return {
+        "source": "live",
+        "summary": _pricing_engine.summary(),
+        "quotes": [q.to_dict() for q in _pricing_engine.top_quotes(n=50)],
+    }
+
+
+@app.get("/pricing/top", tags=["Pricing"])
+def top_quotes(n: int = 10):
+    return [q.to_dict() for q in _pricing_engine.top_quotes(n=n)]
+
+
+@app.delete("/pricing/reset", tags=["Pricing"])
+def reset_pricing():
+    _pricing_engine.reset()
+    return {"status": "ok", "message": "Pricing engine reset"}
+
+
+# ── Outreach Sequencer ────────────────────────────────────────────────────────
+
+class EnrollRequest(BaseModel):
+    prospect_id: str
+    sequence_id: str
+    start_at: Optional[str] = None   # ISO datetime, defaults to now
+
+
+class StopEnrollmentRequest(BaseModel):
+    reason: str = "manual"           # manual | reply_received | opt_out | converted
+
+
+@app.get("/sequences", tags=["Outreach"])
+def list_sequences():
+    return [s.to_dict() for s in _outreach_sequencer.list_sequences()]
+
+
+@app.get("/sequences/{sequence_id}", tags=["Outreach"])
+def get_sequence(sequence_id: str):
+    s = _outreach_sequencer.get_sequence(sequence_id)
+    if not s:
+        raise HTTPException(status_code=404, detail="Sequence not found")
+    return s.to_dict()
+
+
+@app.post("/sequences/enroll", tags=["Outreach"])
+def enroll_prospect(req: EnrollRequest):
+    start_at = datetime.fromisoformat(req.start_at) if req.start_at else None
+    enr = _outreach_sequencer.enroll(req.prospect_id, req.sequence_id, start_at=start_at)
+    return enr.to_dict()
+
+
+@app.get("/sequences/enrollment/{enrollment_id}", tags=["Outreach"])
+def get_enrollment(enrollment_id: str):
+    enr = _outreach_sequencer.get_enrollment(enrollment_id)
+    if not enr:
+        raise HTTPException(status_code=404, detail="Enrollment not found")
+    return enr.to_dict()
+
+
+@app.get("/sequences/prospect/{prospect_id}", tags=["Outreach"])
+def prospect_sequence_summary(prospect_id: str):
+    return _outreach_sequencer.prospect_summary(prospect_id)
+
+
+@app.post("/sequences/enrollment/{enrollment_id}/stop", tags=["Outreach"])
+def stop_enrollment(enrollment_id: str, req: StopEnrollmentRequest):
+    try:
+        reason = SeqStopReason(req.reason)
+    except ValueError:
+        reason = SeqStopReason.MANUAL
+    ok = _outreach_sequencer.stop_enrollment(enrollment_id, reason)
+    return {"stopped": ok}
+
+
+@app.post("/sequences/enrollment/{enrollment_id}/pause", tags=["Outreach"])
+def pause_enrollment(enrollment_id: str):
+    return {"paused": _outreach_sequencer.pause_enrollment(enrollment_id)}
+
+
+@app.post("/sequences/enrollment/{enrollment_id}/resume", tags=["Outreach"])
+def resume_enrollment(enrollment_id: str):
+    return {"resumed": _outreach_sequencer.resume_enrollment(enrollment_id)}
+
+
+@app.post("/sequences/prospect/{prospect_id}/reply", tags=["Outreach"])
+def handle_reply(prospect_id: str):
+    stopped = _outreach_sequencer.handle_reply(prospect_id)
+    return {"sequences_stopped": stopped}
+
+
+@app.get("/sequences/due", tags=["Outreach"])
+def get_all_due():
+    due = _outreach_sequencer.get_all_due()
+    return [
+        {"enrollment_id": enr.enrollment_id, "prospect_id": enr.prospect_id, "step": rec.to_dict()}
+        for enr, rec in due
+    ]
+
+
+@app.get("/sequences/summary", tags=["Outreach"])
+def sequences_summary():
+    return _outreach_sequencer.summary()
 
 
 if __name__ == "__main__":
