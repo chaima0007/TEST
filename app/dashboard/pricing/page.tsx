@@ -62,8 +62,9 @@ export default function PricingPage() {
             <tbody className="divide-y divide-slate-100">
               {competitors.map((c) => {
                 const entry = c.pricing[0];
-                const prev = c.priceHistory[10];
-                const curr = c.priceHistory[11];
+                const len = c.priceHistory.length;
+                const prev = c.priceHistory[Math.max(0, len - 2)];
+                const curr = c.priceHistory[len - 1];
                 const trend = curr > prev ? "up" : curr < prev ? "down" : "stable";
                 return (
                   <tr key={c.id} className="hover:bg-slate-50">

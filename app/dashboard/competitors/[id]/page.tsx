@@ -8,6 +8,12 @@ import { useToast } from "@/components/Toast";
 
 type ThreatLevel = "high" | "medium" | "low";
 
+function formatShortDate(dateStr: string) {
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return dateStr;
+  return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+}
+
 const newsTypeColors: Record<string, string> = {
   product: "bg-indigo-100 text-indigo-700",
   pricing: "bg-amber-100 text-amber-700",
@@ -44,7 +50,7 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
     threatLevel: competitor.threatLevel as ThreatLevel,
   });
 
-  const maxPrice = Math.max(...competitor.priceHistory);
+  const maxPrice = competitor.priceHistory.length ? Math.max(...competitor.priceHistory) : 0;
 
   const handleDelete = async () => {
     setDeleting(true);
@@ -249,6 +255,7 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                     f.quality === "Excellent" ? "bg-emerald-100 text-emerald-700" :
                     f.quality === "Bien" ? "bg-indigo-100 text-indigo-700" :
+                    f.quality === "Moyen" ? "bg-amber-100 text-amber-700" :
                     "bg-slate-100 text-slate-600"
                   }`}>
                     {f.quality}
@@ -327,7 +334,7 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
                 {newsTypeLabels[n.type] || n.type}
               </span>
               <p className="text-sm text-slate-700 flex-1 leading-relaxed">{n.title}</p>
-              <span className="text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">{n.date}</span>
+              <span className="text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">{formatShortDate(n.date)}</span>
             </div>
           ))}
         </div>
