@@ -13,6 +13,12 @@ from typing import Any, Dict, List, Optional, TypedDict
 from langgraph.graph import END, StateGraph
 
 from config import ALL_AGENTS, DIVISION_METADATA, AgentConfig
+from intelligence.ab_tester import ABTester
+from intelligence.sentiment_router import SentimentRouter
+
+# Module-level singletons shared across cycle calls
+_ab_tester = ABTester()
+_sentiment_router = SentimentRouter(use_llm=False)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(name)s] %(message)s")
 logger = logging.getLogger("Orchestrator")
@@ -80,6 +86,7 @@ class SwarmState(TypedDict):
     revenue_today: float
     errors: List[str]
     division_status: Dict[int, str]
+    branding_content: Dict[str, Any]  # Division 6 output
 
 
 # ── Division node factories ──────────────────────────────────────────────────
@@ -108,6 +115,8 @@ def make_division_node(division_id: int, agents: List[AgentConfig]):
                 state = await _run_production(state, workers)
             elif division_id == 5:
                 state = await _run_finance_compliance(state, workers)
+            elif division_id == 6:
+                state = await _run_branding(state, workers)
 
             state["division_status"][division_id] = "success"
             logger.info(f"[Div {division_id}] Completed successfully")
@@ -157,10 +166,13 @@ async def _scout_sector(agent: AgentConfig) -> List[ProspectFiche]:
 
 
 async def _run_outreach(state: SwarmState, workers: List[AgentConfig]) -> SwarmState:
-    """Agents 2.1–2.9 draft personalised cold emails using different tones."""
+    """Agents 2.1–2.9 draft personalised cold emails — tone selected by Thompson Sampling."""
     fiches = state["fiches_detected"]
-    for idx, fiche in enumerate(fiches[:45]):
-        worker = workers[idx % len(workers)]
+    for fiche in fiches[:45]:
+        # Thompson Sampling picks the best tone for this prospect's sector
+        agent_id = _ab_tester.select_agent(sector=fiche.get("sector", ""))
+        worker = next((w for w in workers if w.id == agent_id), workers[0])
+        _ab_tester.record_result(agent_id, sent=True)
         record = OutreachRecord(
             company_id=fiche["company_id"],
             fiche=fiche,
@@ -171,7 +183,7 @@ async def _run_outreach(state: SwarmState, workers: List[AgentConfig]) -> SwarmS
             sent_at=None,
         )
         state["outreach_queue"].append(record)
-    logger.info(f"[Div2] {len(state['outreach_queue'])} emails drafted")
+    logger.info(f"[Div2] {len(state['outreach_queue'])} emails drafted via Thompson Sampling")
     return state
 
 
@@ -211,6 +223,14 @@ async def _run_negotiation(state: SwarmState, workers: List[AgentConfig]) -> Swa
     ]
 
     for reply in simulated_replies:
+        # Auto-detect sentiment from raw text using SentimentRouter
+        if reply.get("message"):
+            sentiment_result = _sentiment_router.analyze(reply["message"])
+            reply["sentiment"] = sentiment_result.sentiment
+            logger.info(
+                f"[Div3] Auto-sentiment: {sentiment_result.sentiment} "
+                f"(conf={sentiment_result.confidence:.2f})"
+            )
         negotiator = _route_to_negotiator(reply["sentiment"], workers)
         thread = NegotiationThread(
             company_id=reply["company_id"],
@@ -273,11 +293,32 @@ async def _run_finance_compliance(state: SwarmState, workers: List[AgentConfig])
     return state
 
 
+async def _run_branding(state: SwarmState, workers: List[AgentConfig]) -> SwarmState:
+    """Agent 6.0 + team observe cycle results and generate branding content."""
+    metrics = {
+        "prospects": len(state["fiches_detected"]),
+        "emails": len(state["outreach_queue"]),
+        "negotiations": len(state["negotiation_threads"]),
+        "revenue": round(state["revenue_today"], 0),
+    }
+    from divisions.division_6_branding import Division6Branding
+    div6 = Division6Branding()
+    post = div6.generate_linkedin_post(trigger="cycle_complete", metrics=metrics)
+    state["branding_content"] = {
+        "linkedin_post": post.to_dict(),
+        "cv_entries_count": len(div6.get_cv_entries()),
+        "case_studies_count": len(div6.get_case_studies()),
+        "cycle_metrics": metrics,
+    }
+    logger.info(f"[Div6] LinkedIn post generated — {post.char_count} chars, {post.impressions_estimate} est. impressions")
+    return state
+
+
 # ── Graph assembly ───────────────────────────────────────────────────────────
 
 def build_swarm_graph() -> StateGraph:
-    """Build the LangGraph state machine connecting all 5 divisions."""
-    from config import DIVISION_1, DIVISION_2, DIVISION_3, DIVISION_4, DIVISION_5
+    """Build the LangGraph state machine connecting all 6 divisions."""
+    from config import DIVISION_1, DIVISION_2, DIVISION_3, DIVISION_4, DIVISION_5, DIVISION_6
 
     workflow = StateGraph(SwarmState)
 
@@ -286,13 +327,16 @@ def build_swarm_graph() -> StateGraph:
     workflow.add_node("division_3", make_division_node(3, DIVISION_3))
     workflow.add_node("division_4", make_division_node(4, DIVISION_4))
     workflow.add_node("division_5", make_division_node(5, DIVISION_5))
+    workflow.add_node("division_6", make_division_node(6, DIVISION_6))
 
+    # Flow: Detect → Outreach → RGPD/Finance → Negotiate → Produce → Brand
     workflow.set_entry_point("division_1")
     workflow.add_edge("division_1", "division_2")
     workflow.add_edge("division_2", "division_5")
     workflow.add_edge("division_5", "division_3")
     workflow.add_edge("division_3", "division_4")
-    workflow.add_edge("division_4", END)
+    workflow.add_edge("division_4", "division_6")
+    workflow.add_edge("division_6", END)
 
     return workflow.compile()
 
@@ -310,7 +354,8 @@ async def run_cycle() -> SwarmState:
         "production_jobs": [],
         "revenue_today": 0.0,
         "errors": [],
-        "division_status": {1: "pending", 2: "pending", 3: "pending", 4: "pending", 5: "pending"},
+        "division_status": {1: "pending", 2: "pending", 3: "pending", 4: "pending", 5: "pending", 6: "pending"},
+        "branding_content": {},
     }
 
     logger.info(f"Starting swarm cycle {initial['cycle_id']} with {len(ALL_AGENTS)} agents")
