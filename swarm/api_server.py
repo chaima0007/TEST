@@ -36,6 +36,7 @@ from intelligence.pricing_engine import PricingEngine
 from intelligence.outreach_sequencer import OutreachSequencer, StopReason as SeqStopReason
 from intelligence.objection_handler import ObjectionHandler, ObjectionType as ObjType, RebuttalOutcome
 from intelligence.template_renderer import TemplateRenderer
+from intelligence.conversion_funnel import ConversionFunnelTracker, FunnelStage
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -84,6 +85,7 @@ _pricing_engine = PricingEngine()
 _outreach_sequencer = OutreachSequencer()
 _objection_handler = ObjectionHandler()
 _template_renderer = TemplateRenderer()
+_funnel_tracker = ConversionFunnelTracker()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -967,6 +969,75 @@ def template_stats_summary():
 @app.get("/templates/stats/top", tags=["Templates"])
 def template_top_open_rate(n: int = 5):
     return [s.to_dict() for s in _template_renderer.top_by_open_rate(n=n)]
+
+
+# ── Conversion Funnel ─────────────────────────────────────────────────────────
+
+class FunnelAddRequest(BaseModel):
+    prospect_id:  str
+    company_name: str
+    sector:       str = ""
+
+
+class FunnelAdvanceRequest(BaseModel):
+    prospect_id: str
+    new_stage:   str
+    quote_value: Optional[float] = None
+
+
+@app.post("/funnel/prospects", tags=["Funnel"])
+def funnel_add_prospect(req: FunnelAddRequest):
+    rec = _funnel_tracker.add_prospect(req.prospect_id, req.company_name, req.sector)
+    return rec.to_dict()
+
+
+@app.post("/funnel/advance", tags=["Funnel"])
+def funnel_advance(req: FunnelAdvanceRequest):
+    try:
+        stage = FunnelStage(req.new_stage)
+    except ValueError:
+        raise HTTPException(status_code=422, detail=f"Unknown stage: {req.new_stage!r}")
+    ok = _funnel_tracker.advance(req.prospect_id, stage, quote_value=req.quote_value)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Prospect not found")
+    return _funnel_tracker.get(req.prospect_id).to_dict()
+
+
+@app.get("/funnel/prospects/{prospect_id}", tags=["Funnel"])
+def funnel_get_prospect(prospect_id: str):
+    rec = _funnel_tracker.get(prospect_id)
+    if not rec:
+        raise HTTPException(status_code=404, detail="Prospect not found in funnel")
+    return rec.to_dict()
+
+
+@app.get("/funnel/stage/{stage}", tags=["Funnel"])
+def funnel_by_stage(stage: str):
+    try:
+        s = FunnelStage(stage)
+    except ValueError:
+        raise HTTPException(status_code=422, detail=f"Unknown stage: {stage!r}")
+    return [r.to_dict() for r in _funnel_tracker.by_stage(s)]
+
+
+@app.get("/funnel/report", tags=["Funnel"])
+def funnel_stage_report():
+    return [t.to_dict() for t in _funnel_tracker.stage_report()]
+
+
+@app.get("/funnel/top", tags=["Funnel"])
+def funnel_top_prospects(n: int = 10):
+    return [r.to_dict() for r in _funnel_tracker.top_prospects(n=n)]
+
+
+@app.get("/funnel/sectors", tags=["Funnel"])
+def funnel_sector_summary():
+    return _funnel_tracker.sector_summary()
+
+
+@app.get("/funnel/summary", tags=["Funnel"])
+def funnel_summary():
+    return _funnel_tracker.summary()
 
 
 if __name__ == "__main__":
