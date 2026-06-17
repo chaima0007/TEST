@@ -59,12 +59,16 @@ function buildCarMesh() {
     group.add(wheel);
   }
 
+  // Attach body material ref so Vehicle can recolor it
+  group._bodyMat = bodyMat;
+
   return group;
 }
 
 export class Vehicle {
   constructor(scene, spawnPoint) {
     this.mesh = buildCarMesh();
+    this._bodyMat = this.mesh._bodyMat;
 
     const sp = spawnPoint || { x: 0, z: 0, rotationY: 0 };
     this.mesh.position.set(sp.x, 0, sp.z);
@@ -80,6 +84,22 @@ export class Vehicle {
     this._lateralSpeed = 0; // sideways slide velocity (m/s)
     this._handbrakeActive = false;
     this._boostMultiplier = 1.0; // set externally by nitro system
+
+    // Restore saved color from localStorage (browser only)
+    if (typeof localStorage !== 'undefined') {
+      const saved = localStorage.getItem('moonbow_car_color');
+      if (saved && this._bodyMat) this._bodyMat.color.setHex(parseInt(saved, 16));
+    }
+  }
+
+  // Change body color and persist the choice.
+  setBodyColor(hexInt) {
+    if (this._bodyMat) {
+      this._bodyMat.color.setHex(hexInt);
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('moonbow_car_color', hexInt.toString(16).padStart(6, '0'));
+      }
+    }
   }
 
   setGripFactor(f) {

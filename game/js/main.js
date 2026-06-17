@@ -21,6 +21,7 @@ import { SkidMarkSystem } from './skidmarks.js';
 import { DetectiveSystem } from './detective.js';
 import { MonetizationAgent } from './monetization.js';
 import { LODManager } from './lod.js';
+import { ArchitectSystem } from './architect.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -59,9 +60,27 @@ const smoke    = new TireSmokeSystem(scene);
 const sparks   = new SparkSystem(scene);
 const skids    = new SkidMarkSystem(scene);
 const speedCams  = new SpeedCamSystem(scene, world);
-const detective  = new DetectiveSystem(scene, world);
+const detective    = new DetectiveSystem(scene, world);
+const architect    = new ArchitectSystem(scene, world);
 const monetization = new MonetizationAgent(hud);
 const lod = new LODManager();
+
+// Colour picker wired once — swatches from monetization unlocks
+const ALL_COLORS = [
+  { color: 0x2255cc, name: 'Bleu Standard',  scoreReq: 0     },
+  { color: 0xff2244, name: 'Rouge Turbo',     scoreReq: 2000  },
+  { color: 0x00ff88, name: 'Vert Néon',       scoreReq: 5000  },
+  { color: 0xffd700, name: 'Or Champion',     scoreReq: 10000 },
+  { color: 0xff00ff, name: 'Rose Fantôme',    scoreReq: 25000 },
+  { color: 0x00eeff, name: 'Cyan Nitro',      scoreReq: 50000 },
+];
+function refreshColorPicker() {
+  const maxScore = parseInt(localStorage.getItem('moonbow_highscore') || '0', 10);
+  const currentHex = parseInt(localStorage.getItem('moonbow_car_color') || '2255cc', 16);
+  const options = ALL_COLORS.map(c => ({ ...c, locked: c.scoreReq > maxScore }));
+  hud.setColorOptions(options, currentHex, (hex) => vehicle.setBodyColor(hex));
+}
+refreshColorPicker();
 
 // Score persistant (localStorage)
 const HS_KEY = 'moonbow_highscore';
@@ -163,6 +182,7 @@ function animate() {
     checkpointPos: fantome.active && fantome._checkpointPos ? fantome._checkpointPos : null,
     speedCams: speedCams.getCameraPositions(),
     nitroCapsules: nitro._capsules.map(c => ({ x: c.x, z: c.z })),
+    architectPos: architect.getPosition(),
   });
 
   hud.setSpeed(vehicle.getSpeedKmh());
@@ -177,6 +197,10 @@ function animate() {
   );
   const totalScore = baseScore + monoBonus;
   hud.setScore(totalScore);
+
+  // L'Architecte reacts to the player's actual score this frame
+  const archResult = architect.update(dt, vehicle, hud, wanted, totalScore);
+  if (archResult.raisedWanted && wanted.level < 5) wanted._setLevel(wanted.level + 1, hud);
 
   // --- Panneau agents temps réel ---
   const spectreState = rival.active
@@ -250,6 +274,14 @@ function animate() {
       bar: 1,
       color: '#00c8ff',
     },
+    architecte: {
+      active: architect.active,
+      status: architect.active
+        ? `EN CHASSE | dist ${Math.round(Math.hypot(playerPos.x - architect.mesh.position.x, playerPos.z - architect.mesh.position.z))}m`
+        : totalScore >= 15000 ? `ALERTE — $${totalScore.toLocaleString()} atteint` : `Seuil $15 000 | Actuel $${totalScore.toLocaleString()}`,
+      bar: architect.active ? 1 : Math.min(1, totalScore / 15000),
+      color: architect.active ? '#ff0022' : '#880011',
+    },
   });
 
   if (nitroFired) audio.playNitro();
@@ -288,6 +320,8 @@ function animate() {
     highScore = totalScore;
     localStorage.setItem(HS_KEY, String(highScore));
     hud.setRecord(highScore);
+    HUD.submitScore(highScore);
+    refreshColorPicker(); // unlock new swatches when record broken
   }
 
   if (wanted.level !== lastWantedLevel) audio.playUiBlip();

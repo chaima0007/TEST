@@ -228,6 +228,62 @@ const STYLE = `
   color: #c9d6e4;
 }
 
+#hud-pause .hud-pause-section-title {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9fd3ff;
+  margin: 14px 0 6px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 10px;
+}
+
+.hud-color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+
+.hud-color-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  border: 2px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.15s ease;
+  pointer-events: auto;
+}
+
+.hud-color-swatch:hover { transform: scale(1.15); }
+.hud-color-swatch.selected { border-color: #ffffff; box-shadow: 0 0 8px rgba(255,255,255,0.5); }
+.hud-color-swatch.locked { opacity: 0.25; cursor: default; }
+
+.hud-leaderboard {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.hud-leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #c9d6e4;
+}
+
+.hud-leaderboard li:first-child { color: #ffce3d; font-weight: 800; }
+.hud-leaderboard li:nth-child(2) { color: #c0c0c0; font-weight: 700; }
+.hud-leaderboard li:nth-child(3) { color: #cd7f32; font-weight: 700; }
+
+.hud-leaderboard .lb-rank { color: var(--rank-color, #5a6a7a); min-width: 22px; }
+.hud-leaderboard .lb-score { font-weight: 700; color: #ffce3d; }
+.hud-leaderboard .lb-date { font-size: 10px; color: #5a6a7a; }
+
 #hud-radar {
   position: fixed;
   bottom: 22px;
@@ -398,6 +454,7 @@ const STYLE = `
 
 .agent-card.monetisation { border-left-color: #ffaa00; }
 .agent-card.nexus        { border-left-color: #00c8ff; background: rgba(0,200,255,0.04); }
+.agent-card.architecte   { border-left-color: #ff0022; background: rgba(255,0,34,0.04); }
 
 #hud-achievement {
   position: fixed;
@@ -555,13 +612,23 @@ export class HUD {
         <ul>
           <li><span>WASD / Flèches</span>Conduire</li>
           <li><span>Espace</span>Frein à main</li>
-          <li><span>Tactile</span>Boutons à l'écran sur mobile</li>
+          <li><span>N</span>Nitro</li>
+          <li><span>Tactile</span>Boutons mobiles</li>
         </ul>
         <div class="hud-pause-score">Score : <span class="hud-pause-score-value">0</span></div>
+
+        <div class="hud-pause-section-title">COULEUR VÉHICULE</div>
+        <div class="hud-color-picker" id="hud-color-picker"></div>
+
+        <div class="hud-pause-section-title">TOP SCORES</div>
+        <ol class="hud-leaderboard" id="hud-leaderboard"></ol>
+
         <div class="hud-pause-hint">Échap ou P pour reprendre</div>
       </div>
     `;
     this.pauseScoreValueEl = this.pauseEl.querySelector('.hud-pause-score-value');
+    this._colorPickerEl = this.pauseEl.querySelector('#hud-color-picker');
+    this._leaderboardEl = this.pauseEl.querySelector('#hud-leaderboard');
 
     const RADAR_SIZE = 160;
     this.radarCanvas = document.createElement('canvas');
@@ -594,6 +661,7 @@ export class HUD {
       { id: 'trafic',       name: 'Trafic',         cls: 'trafic'       },
       { id: 'monetisation', name: 'Defi du Jour',   cls: 'monetisation' },
       { id: 'nexus',        name: 'NEXUS — Agent',  cls: 'nexus'        },
+      { id: 'architecte',   name: "L'Architecte",   cls: 'architecte'   },
     ];
     for (const def of agentDefs) {
       const card = document.createElement('div');
@@ -679,6 +747,7 @@ export class HUD {
   _togglePause() {
     this._paused = !this._paused;
     this.pauseEl.classList.toggle('visible', this._paused);
+    if (this._paused) this._refreshLeaderboard();
   }
 
   isPaused() {
@@ -814,7 +883,7 @@ export class HUD {
   // Heading-up radar: forward = up, player always centered.
   // opts: { playerPos{x,z}, playerHeading, target{targetX,targetZ}|null,
   //         policeCars[{x,z}], rivalPos{x,z}|null }
-  updateRadar({ playerPos, playerHeading, target = null, policeCars = [], rivalPos = null, fantomePos = null, checkpointPos = null, speedCams = [], nitroCapsules = [] }) {
+  updateRadar({ playerPos, playerHeading, target = null, policeCars = [], rivalPos = null, fantomePos = null, checkpointPos = null, speedCams = [], nitroCapsules = [], architectPos = null }) {
     const ctx = this._radarCtx;
     const size = this._radarSize;
     const center = size / 2;
@@ -925,6 +994,20 @@ export class HUD {
       ctx.fill();
     }
 
+    // L'Architecte (diamant rouge pulsant)
+    if (architectPos) {
+      const a = toCanvas(architectPos.x, architectPos.z);
+      const r = 6;
+      ctx.save();
+      ctx.translate(a.x, a.y);
+      ctx.rotate(Math.PI / 4);
+      ctx.fillStyle = '#ff0022';
+      ctx.shadowColor = '#ff0022';
+      ctx.shadowBlur = 8;
+      ctx.fillRect(-r / 2, -r / 2, r, r);
+      ctx.restore();
+    }
+
     // Capsules nitro (points cyan)
     for (const n of nitroCapsules) {
       const c = toCanvas(n.x, n.z);
@@ -956,6 +1039,59 @@ export class HUD {
     ctx.strokeStyle = 'rgba(255,255,255,0.22)';
     ctx.lineWidth = 2;
     ctx.stroke();
+  }
+
+  // Color picker — colors: [{color:hexInt, name:str, locked:bool}]
+  // onSelect: function(hexInt)
+  setColorOptions(colors, currentColor, onSelect) {
+    if (!this._colorPickerEl) return;
+    this._colorPickerEl.innerHTML = '';
+    for (const c of colors) {
+      const swatch = document.createElement('div');
+      swatch.className = 'hud-color-swatch' + (c.locked ? ' locked' : '') + (c.color === currentColor ? ' selected' : '');
+      swatch.style.background = `#${c.color.toString(16).padStart(6, '0')}`;
+      swatch.title = c.locked ? `${c.name} (verrouillé)` : c.name;
+      if (!c.locked) {
+        swatch.addEventListener('click', () => {
+          this._colorPickerEl.querySelectorAll('.hud-color-swatch').forEach(s => s.classList.remove('selected'));
+          swatch.classList.add('selected');
+          onSelect(c.color);
+        });
+      }
+      this._colorPickerEl.appendChild(swatch);
+    }
+  }
+
+  _refreshLeaderboard() {
+    if (!this._leaderboardEl) return;
+    const LS_KEY = 'moonbow_leaderboard';
+    const entries = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+    this._leaderboardEl.innerHTML = '';
+    if (!entries.length) {
+      const li = document.createElement('li');
+      li.textContent = 'Aucun score enregistré';
+      li.style.color = '#5a6a7a';
+      this._leaderboardEl.appendChild(li);
+      return;
+    }
+    const medals = ['🥇', '🥈', '🥉'];
+    entries.slice(0, 7).forEach((e, i) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span class="lb-rank">${medals[i] || `${i+1}.`}</span><span>$${e.score.toLocaleString()}</span><span class="lb-date">${e.date}</span>`;
+      this._leaderboardEl.appendChild(li);
+    });
+  }
+
+  // Call at end of session to record the score.
+  static submitScore(score) {
+    if (!score || score <= 0) return;
+    const LS_KEY = 'moonbow_leaderboard';
+    const entries = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+    const d = new Date();
+    const date = `${d.getDate()}/${d.getMonth()+1}`;
+    entries.push({ score, date });
+    entries.sort((a, b) => b.score - a.score);
+    localStorage.setItem(LS_KEY, JSON.stringify(entries.slice(0, 10)));
   }
 
   // Queue-based achievement popup. Shows one at a time for 3.5 s.
