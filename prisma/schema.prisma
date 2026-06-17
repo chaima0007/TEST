@@ -95,3 +95,63 @@ model Report {
   user        User     @relation(fields: [userId], references: [id])
   createdAt   DateTime @default(now())
 }
+
+// ── Swarm Intelligence Models ─────────────────────────────────────────────────
+
+model SwarmCycle {
+  id               String        @id @default(cuid())
+  cycleKey         String        @unique
+  startedAt        DateTime      @default(now())
+  completedAt      DateTime?
+  prospectsFound   Int           @default(0)
+  emailsSent       Int           @default(0)
+  revenueEur       Float         @default(0)
+  errors           String?
+  divisionStatuses String?
+  jobs             SwarmJob[]
+}
+
+model SwarmJob {
+  id              String      @id @default(cuid())
+  companyId       String
+  companyName     String
+  sector          String
+  website         String?
+  stage           String      @default("detection")
+  assignedAgent   String?
+  quoteEur        Float?
+  stripeLink      String?
+  paymentConfirmed Boolean    @default(false)
+  status          String      @default("pending")
+  deliverableUrl  String?
+  cycleId         String?
+  cycle           SwarmCycle? @relation(fields: [cycleId], references: [id])
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model SwarmProspect {
+  id              String   @id @default(cuid())
+  companyId       String   @unique
+  name            String
+  sector          String
+  website         String
+  pagespeedScore  Int      @default(0)
+  loadTimeMs      Int      @default(0)
+  mobileResponsive Boolean @default(false)
+  contactEmail    String?
+  agentSource     String?
+  blacklisted     Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model SwarmTransaction {
+  id            String   @id @default(cuid())
+  companyId     String
+  companyName   String
+  sector        String
+  amountEur     Float
+  stripeChargeId String  @unique
+  refunded      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}
