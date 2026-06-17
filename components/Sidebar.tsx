@@ -166,6 +166,15 @@ function IconEmail({ className }: { className?: string }) {
   );
 }
 
+function IconMemory({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M9 9a2 2 0 114 0 2 2 0 01-4 0z" />
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a4 4 0 00-3.446 6.032l-2.261 2.26a1 1 0 101.414 1.415l2.261-2.261A4 4 0 1011 5z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconCalendar({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -279,6 +288,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/abtesting", label: "A/B Testing", icon: IconFlask },
       { href: "/dashboard/tracking", label: "Email Tracking", icon: IconEmail },
       { href: "/dashboard/campaigns", label: "Campagnes", icon: IconCalendar },
+      { href: "/dashboard/memory", label: "Mémoire Prospects", icon: IconMemory },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
