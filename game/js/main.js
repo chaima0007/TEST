@@ -15,8 +15,9 @@ import { WeatherSystem } from './weather.js';
 import { FantomeSystem } from './fantome.js';
 import { DriftSystem } from './drift.js';
 import { NitroSystem } from './nitro.js';
-import { TireSmokeSystem } from './particles.js';
+import { TireSmokeSystem, SparkSystem } from './particles.js';
 import { SpeedCamSystem } from './speedcam.js';
+import { SkidMarkSystem } from './skidmarks.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -51,8 +52,15 @@ const weather = new WeatherSystem(scene);
 const fantome = new FantomeSystem(scene, world);
 const drift  = new DriftSystem();
 const nitro  = new NitroSystem(scene);
-const smoke  = new TireSmokeSystem(scene);
+const smoke    = new TireSmokeSystem(scene);
+const sparks   = new SparkSystem(scene);
+const skids    = new SkidMarkSystem(scene);
 const speedCams = new SpeedCamSystem(scene, world);
+
+// Score persistant (localStorage)
+const HS_KEY = 'moonbow_highscore';
+let highScore = parseInt(localStorage.getItem(HS_KEY) || '0', 10);
+hud.setRecord(highScore);
 
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -103,6 +111,8 @@ function animate() {
   drift.update(dt, vehicle);
   nitro.update(dt, playerPos, input);
   smoke.update(dt, vehicle, drift.isDrifting());
+  skids.update(dt, vehicle, drift.isDrifting());
+  sparks.update(dt);
 
   const camViolation = speedCams.update(dt, vehicle, hud);
   if (camViolation && wanted.level < 5) wanted._setLevel(wanted.level + 1, hud);
@@ -202,6 +212,7 @@ function animate() {
     audio.playCollision(impact);
     lastImpactSoundTime = elapsedS;
     cameraShake = Math.min(1, cameraShake + impact * 0.7);
+    if (impact > 0.35) sparks.emit(playerPos.x, playerPos.z, impact);
   }
   if (cameraShake > 0.001) {
     camera.position.x += (Math.random() - 0.5) * cameraShake * 1.8;
@@ -214,6 +225,13 @@ function animate() {
 
   if (totalScore > lastScore) audio.playUiBlip();
   lastScore = totalScore;
+
+  // Record localStorage
+  if (totalScore > highScore) {
+    highScore = totalScore;
+    localStorage.setItem(HS_KEY, String(highScore));
+    hud.setRecord(highScore);
+  }
 
   if (wanted.level !== lastWantedLevel) audio.playUiBlip();
   lastWantedLevel = wanted.level;

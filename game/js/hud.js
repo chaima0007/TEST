@@ -57,6 +57,14 @@ const STYLE = `
   backdrop-filter: blur(2px);
 }
 
+.hud-record {
+  font-size: 10px;
+  font-weight: 600;
+  color: #aaffaa;
+  margin-left: 8px;
+  opacity: 0.75;
+}
+
 #hud-wanted {
   position: fixed;
   top: 16px;
@@ -412,7 +420,8 @@ export class HUD {
 
     this.scoreEl = document.createElement('div');
     this.scoreEl.id = 'hud-score';
-    this.scoreEl.textContent = '$0';
+    this.scoreEl.innerHTML = '$0 <span class="hud-record" id="hud-record-text"></span>';
+    this._recordEl = this.scoreEl.querySelector('#hud-record-text');
 
     this.wantedEl = document.createElement('div');
     this.wantedEl.id = 'hud-wanted';
@@ -559,11 +568,22 @@ export class HUD {
     this.missionTextEl.textContent = text || '—';
   }
 
+  setRecord(record) {
+    if (this._recordEl) {
+      this._recordEl.textContent = record > 0 ? `RECORD $${record}` : '';
+    }
+  }
+
   setScore(value) {
     const next = Math.max(0, Math.round(value || 0));
     const delta = next - this._score;
     this._score = next;
-    this.scoreEl.textContent = `$${this._score}`;
+    const scoreText = `$${this._score}`;
+    if (this._recordEl) {
+      this.scoreEl.firstChild.textContent = scoreText;
+    } else {
+      this.scoreEl.textContent = scoreText;
+    }
     this.pauseScoreValueEl.textContent = String(this._score);
     // Animation score delta : un "+N" qui monte et disparaît
     if (delta > 0) this._showScoreDelta(`+${delta}`);

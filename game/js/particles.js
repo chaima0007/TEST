@@ -112,3 +112,61 @@ export class TireSmokeSystem {
     this._lifetimes[slot] = PARTICLE_LIFETIME;
   }
 }
+
+// Étincelles oranges/jaunes émises lors d'une collision forte
+const MAX_SPARKS = 120;
+const SPARK_LIFETIME = 0.55;
+
+export class SparkSystem {
+  constructor(scene) {
+    this._pos = new Float32Array(MAX_SPARKS * 3);
+    this._vel = new Float32Array(MAX_SPARKS * 3);
+    this._life = new Float32Array(MAX_SPARKS);
+    for (let i = 0; i < MAX_SPARKS; i++) this._pos[i * 3 + 1] = -100;
+
+    const geo = new THREE.BufferGeometry();
+    const attr = new THREE.BufferAttribute(this._pos, 3);
+    attr.setUsage(THREE.DynamicDrawUsage);
+    geo.setAttribute('position', attr);
+    const mat = new THREE.PointsMaterial({ color: 0xff8800, size: 0.55, transparent: true, opacity: 0.9, depthWrite: false, sizeAttenuation: true });
+    this._points = new THREE.Points(geo, mat);
+    scene.add(this._points);
+  }
+
+  // Emit burst at world position (x, y, z), intensity 0-1
+  emit(x, z, intensity) {
+    const count = Math.round(6 + intensity * 22);
+    const speed = 4 + intensity * 10;
+    for (let i = 0; i < count; i++) {
+      let slot = -1;
+      for (let j = 0; j < MAX_SPARKS; j++) {
+        if (this._life[j] <= 0) { slot = j; break; }
+      }
+      if (slot === -1) break;
+      const p = slot * 3;
+      this._pos[p]     = x;
+      this._pos[p + 1] = 0.6;
+      this._pos[p + 2] = z;
+      const angle = Math.random() * Math.PI * 2;
+      const vUp   = 1.5 + Math.random() * 3;
+      this._vel[p]     = Math.cos(angle) * speed * Math.random();
+      this._vel[p + 1] = vUp;
+      this._vel[p + 2] = Math.sin(angle) * speed * Math.random();
+      this._life[slot] = SPARK_LIFETIME * (0.5 + Math.random() * 0.5);
+    }
+  }
+
+  update(dt) {
+    for (let i = 0; i < MAX_SPARKS; i++) {
+      if (this._life[i] <= 0) continue;
+      this._life[i] -= dt;
+      const p = i * 3;
+      this._pos[p]     += this._vel[p] * dt;
+      this._pos[p + 1] += this._vel[p + 1] * dt;
+      this._pos[p + 2] += this._vel[p + 2] * dt;
+      this._vel[p + 1] -= 9.8 * dt; // gravity
+      if (this._life[i] <= 0) this._pos[p + 1] = -100;
+    }
+    this._points.geometry.attributes.position.needsUpdate = true;
+  }
+}
