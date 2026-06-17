@@ -140,6 +140,15 @@ function IconFlask({ className }: { className?: string }) {
   );
 }
 
+function IconEmail({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+    </svg>
+  );
+}
+
 function IconSwarm({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -241,6 +250,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/finance", label: "Finance", icon: IconFinance },
       { href: "/dashboard/negotiations", label: "Négociations", icon: IconHandshake },
       { href: "/dashboard/abtesting", label: "A/B Testing", icon: IconFlask },
+      { href: "/dashboard/tracking", label: "Email Tracking", icon: IconEmail },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
