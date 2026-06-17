@@ -67,7 +67,6 @@ export default function SettingsPage() {
   const [notifications, setNotifications] = useState({
     pricing: true, features: true, acquisitions: false, weekly: true, monthly: true,
   });
-  const [apiKeyVisible, setApiKeyVisible] = useState(false);
   const [activeSection, setActiveSection] = useState<NavSection>("profile");
   const [deleteConfirm, setDeleteConfirm] = useState(false);
 
@@ -268,23 +267,6 @@ export default function SettingsPage() {
                 <code className="flex-1 text-xs font-mono text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2.5 select-all overflow-hidden text-ellipsis whitespace-nowrap">
                   {MASKED_API_KEY}
                 </code>
-                <button
-                  onClick={() => setApiKeyVisible((v) => !v)}
-                  title={apiKeyVisible ? "Masquer" : "Révéler"}
-                  className="flex-shrink-0 p-2.5 border border-slate-200 rounded-lg text-slate-500 hover:bg-white hover:text-slate-800 hover:border-slate-300 transition-all bg-white"
-                >
-                  {apiKeyVisible ? (
-                    <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                      <path d="M2 2l12 12M6.5 6.7A2 2 0 0010 10" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-                      <path d="M4.5 4.9C3 6 2 8 2 8s2.5 5 6 5a6 6 0 002.6-.6M7 3.1C7.3 3 7.7 3 8 3c3.5 0 6 5 6 5s-.7 1.4-1.9 2.7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-                    </svg>
-                  ) : (
-                    <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                      <ellipse cx="8" cy="8" rx="6" ry="5" stroke="currentColor" strokeWidth="1.4" />
-                      <circle cx="8" cy="8" r="2" stroke="currentColor" strokeWidth="1.4" />
-                    </svg>
-                  )}
-                </button>
                 <button
                   onClick={copyApiKey}
                   className="flex-shrink-0 p-2.5 border border-slate-200 rounded-lg text-slate-500 hover:bg-white hover:text-slate-800 hover:border-slate-300 transition-all bg-white"

@@ -578,7 +578,8 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
                       className="absolute left-0 top-5 w-3.5 h-3.5 rounded-full border-2 border-white ring-2 flex-shrink-0 shadow-sm"
                       style={{
                         backgroundColor: competitor.color,
-                        ringColor: competitor.color + "40",
+                        outline: `2px solid ${competitor.color}40`,
+                        outlineOffset: "1px",
                       }}
                     />
 
