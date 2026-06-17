@@ -15,6 +15,7 @@ from config import DIVISION_2
 from agents.base import SwarmAgent
 from agents.tools import resolve_tools
 from divisions.division_1_detection import ProspectFiche
+from intelligence.ab_tester import ABTester
 
 logger = logging.getLogger("Division2")
 
@@ -74,12 +75,6 @@ EMAIL_TEMPLATES = {
 }
 
 
-def _select_tone(fiche: ProspectFiche, index: int) -> str:
-    """Round-robin tone selection for A/B testing across sectors."""
-    tones = list(TONE_ASSIGNMENTS.values())
-    return tones[index % len(tones)]
-
-
 def _draft_email(fiche: ProspectFiche, agent_id: str) -> str:
     template = EMAIL_TEMPLATES.get(agent_id, EMAIL_TEMPLATES["2.2"])
     return template.format(
@@ -94,13 +89,15 @@ class Division2Redaction:
     """
     Manager 2.0 distributes prospect fiches to 9 copywriters (2.1–2.9).
     Each copywriter applies a distinct psychological angle.
+    Thompson Sampling (via ABTester) picks the winning tone per prospect.
     """
 
     def __init__(self):
         self.agents = [SwarmAgent(cfg, resolve_tools(cfg.tools)) for cfg in DIVISION_2]
         self.manager = next(a for a in self.agents if a.is_manager)
         self.writers = [a for a in self.agents if not a.is_manager]
-        logger.info(f"Division 2 initialised — {len(self.writers)} copywriters ready")
+        self.ab_tester = ABTester()
+        logger.info(f"Division 2 initialised — {len(self.writers)} copywriters + ABTester ready")
 
     def build_crew(self, fiches: List[ProspectFiche]) -> Crew:
         tasks = []
@@ -140,12 +137,13 @@ class Division2Redaction:
         )
 
     def draft_all(self, fiches: List[ProspectFiche]) -> List[OutreachRecord]:
-        """Draft personalised emails for each prospect fiche."""
+        """Draft personalised emails for each prospect fiche using Thompson Sampling."""
         records: List[OutreachRecord] = []
-        for i, fiche in enumerate(fiches):
-            agent_id = _select_tone(fiche, i)
-            writer = next((w for w in self.writers if w.id == agent_id), self.writers[i % len(self.writers)])
+        for fiche in fiches:
+            agent_id = self.ab_tester.select_agent(sector=fiche.sector)
+            writer = next((w for w in self.writers if w.id == agent_id), self.writers[0])
             draft = _draft_email(fiche, writer.id)
+            self.ab_tester.record_result(agent_id, sent=True)
             records.append(OutreachRecord(
                 company_id=fiche.company_id,
                 fiche=fiche,
@@ -153,5 +151,13 @@ class Division2Redaction:
                 tone=writer.config.role,
                 copywriter_agent=writer.id,
             ))
-        logger.info(f"[Div2] {len(records)} emails drafted across {len(self.writers)} tones")
+        logger.info(f"[Div2] {len(records)} emails drafted — ABTester winner: {self.ab_tester.get_winner()}")
         return records
+
+    def record_reply(self, agent_id: str, opened: bool = False, replied: bool = False, paid: bool = False) -> None:
+        """Feed reply outcome back to the A/B tester to update Thompson posteriors."""
+        self.ab_tester.record_result(agent_id, sent=False, opened=opened, replied=replied, paid=paid)
+
+    def get_ab_report(self) -> dict:
+        """Return the current A/B test performance report."""
+        return self.ab_tester.get_report()
