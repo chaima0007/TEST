@@ -224,7 +224,7 @@ export default function ComparePage() {
                     <span className="absolute text-sm font-bold text-slate-800">{s.score}%</span>
                   </div>
                   {i === 0 && selected.length > 1 && (
-                    <p className="text-xs text-amber-500 font-semibold mb-1">🏆 #1 global</p>
+                    <p className="text-xs text-amber-500 font-semibold mb-1"><span aria-hidden="true">🏆</span> #1 global</p>
                   )}
                   <p className="text-sm font-semibold text-slate-800">{s.name}</p>
                   <p className="text-xs text-slate-400 mt-0.5">

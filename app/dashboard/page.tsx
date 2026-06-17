@@ -304,7 +304,7 @@ export default function DashboardPage() {
             <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide text-right">Action</span>
           </div>
 
-          <div className="divide-y divide-slate-50">
+          <div className="divide-y divide-slate-100">
             {loading
               ? [...Array(3)].map((_, i) => (
                   <div key={i} className="grid grid-cols-[1fr_auto_auto_auto] gap-x-3 items-center px-5 py-3.5 animate-pulse">
@@ -383,7 +383,7 @@ export default function DashboardPage() {
                   </div>
                 ))}
               </div>
-            ) : stats?.recentAlerts.length === 0 ? (
+            ) : stats?.recentAlerts?.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-8 text-center">
                 <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center mb-2">
                   <IconBell className="w-5 h-5 text-[#107C10]" />
@@ -409,7 +409,8 @@ export default function DashboardPage() {
                           <span className="w-2 h-2 rounded-full bg-[#0078D4] flex-shrink-0 mt-1.5" />
                         </div>
                         <div className="flex items-center gap-2 mt-1">
-                          <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${meta.dot} bg-opacity-15 text-slate-600`}>
+                          <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">
+                            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${meta.dot}`} />
                             {meta.label}
                           </span>
                           <span className="text-[11px] text-slate-400">{formatRelativeTime(a.createdAt)}</span>
