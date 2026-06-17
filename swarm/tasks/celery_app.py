@@ -85,42 +85,29 @@ def run_swarm_cycle(self):
 
 
 @app.task(name="tasks.celery_app.send_outreach_email")
-def send_outreach_email(company_id: str, email: str, subject: str, body: str):
-    """Sends a single RGPD-compliant outreach email via SMTP."""
-    import smtplib
-    from email.mime.text import MIMEText
-    from divisions.division_5_finance import Division5Finance
+def send_outreach_email(
+    company_id: str,
+    email: str,
+    subject: str,
+    body: str,
+    unsubscribe_url: str = "",
+):
+    """Sends a single RGPD-compliant outreach email via EmailSender."""
+    from exporters.email_sender import EmailSender
 
-    _fin = Division5Finance()
-    if not _fin.validate_email_rgpd(email):
-        logger.warning("RGPD block: %s refused for %s", email, company_id)
-        return {"status": "blocked", "reason": "rgpd"}
-
-    host = os.getenv("SMTP_HOST", "")
-    port = int(os.getenv("SMTP_PORT", "587"))
-    user = os.getenv("SMTP_USER", "")
-    password = os.getenv("SMTP_PASSWORD", "")
-
-    if not host:
-        logger.info("SMTP not configured — email to %s skipped (dev mode)", email)
-        return {"status": "skipped", "reason": "no_smtp"}
-
-    msg = MIMEText(body, "html", "utf-8")
-    msg["Subject"] = subject
-    msg["From"] = user
-    msg["To"] = email
-    msg["List-Unsubscribe"] = f"<mailto:{user}?subject=unsubscribe&body={company_id}>"
-
-    try:
-        with smtplib.SMTP(host, port) as smtp:
-            smtp.starttls()
-            smtp.login(user, password)
-            smtp.send_message(msg)
-        logger.info("Email sent to %s for company %s", email, company_id)
-        return {"status": "sent"}
-    except Exception as exc:
-        logger.error("Email failed: %s", exc)
-        return {"status": "error", "error": str(exc)}
+    sender = EmailSender(rate_limit_per_minute=120)
+    result = sender.send(
+        to_email=email,
+        subject=subject,
+        body=body,
+        unsubscribe_url=unsubscribe_url or None,
+    )
+    if result.success:
+        logger.info("Email sent to %s for company %s (id=%s)", email, company_id, result.message_id)
+        return {"status": "sent", "message_id": result.message_id}
+    else:
+        logger.warning("Email failed for %s: %s", company_id, result.error)
+        return {"status": "blocked" if "RGPD" in (result.error or "") else "error", "error": result.error}
 
 
 @app.task(name="tasks.celery_app.generate_nightly_report")
