@@ -199,6 +199,14 @@ function IconSequence({ className }: { className?: string }) {
   );
 }
 
+function IconFunnel({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-.293.707L13 9.414V15a1 1 0 01-.553.894l-4 2A1 1 0 017 17V9.414L3.293 5.707A1 1 0 013 5V3z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconSwarm({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -307,6 +315,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/memory", label: "Mémoire Prospects", icon: IconMemory },
       { href: "/dashboard/quotes", label: "Devis", icon: IconQuote },
       { href: "/dashboard/sequences", label: "Séquences Outreach", icon: IconSequence },
+      { href: "/dashboard/funnel", label: "Funnel de Conversion", icon: IconFunnel },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
