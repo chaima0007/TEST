@@ -23,6 +23,7 @@ from rich import box
 from config import ALL_AGENTS, DIVISION_METADATA
 from orchestrator import run_cycle
 from simulation import run_negotiation_simulation
+from exporters.pdf_report import generate_pdf_report, generate_text_report
 
 console = Console()
 
@@ -96,6 +97,7 @@ async def main():
     parser.add_argument("--status", action="store_true", help="Affiche la cartographie des 50 agents")
     parser.add_argument("--simulate-sale", action="store_true", help="Simule dialogue Agent 3.5 ↔ 5.1")
     parser.add_argument("--output-json", type=str, help="Exporte les résultats en JSON vers ce fichier")
+    parser.add_argument("--output-pdf", type=str, help="Génère un rapport PDF/HTML dans ce dossier")
     args = parser.parse_args()
 
     print_banner()
@@ -116,6 +118,9 @@ async def main():
             if args.output_json:
                 with open(args.output_json, "w") as f:
                     json.dump(state, f, indent=2, default=str)
+            if args.output_pdf:
+                path = generate_pdf_report(state, output_dir=args.output_pdf)
+                console.print(f"[green]Rapport généré : {path}[/green]")
             console.print("[dim]Prochain cycle dans 3600s...[/dim]")
             await asyncio.sleep(3600)
     else:
@@ -124,6 +129,9 @@ async def main():
         if args.output_json:
             with open(args.output_json, "w") as f:
                 json.dump(state, f, indent=2, default=str)
+        if args.output_pdf:
+            path = generate_pdf_report(state, output_dir=args.output_pdf)
+            console.print(f"[green]Rapport généré : {path}[/green]")
 
 
 if __name__ == "__main__":
