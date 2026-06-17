@@ -346,10 +346,11 @@ function Skeleton({ className }: { className?: string }) {
 export default function SwarmPage() {
   const [data, setData] = useState<SwarmData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<"overview" | "divisions" | "jobs" | "simulation">(
+  const [activeTab, setActiveTab] = useState<"overview" | "divisions" | "jobs" | "simulation" | "history">(
     "overview"
   );
   const [triggerState, setTriggerState] = useState<"idle" | "running" | "done">("idle");
+  const [history, setHistory] = useState<{ cycles: any[]; transactions: any[]; prospects: any[] } | null>(null);
 
   useEffect(() => {
     fetch("/api/swarm")
@@ -377,7 +378,15 @@ export default function SwarmPage() {
     { key: "divisions", label: "Divisions (5×10)" },
     { key: "jobs", label: "File de jobs" },
     { key: "simulation", label: "Simulation Vente" },
+    { key: "history", label: "Historique DB" },
   ] as const;
+
+  const loadHistory = () => {
+    if (history) return;
+    fetch("/api/swarm/history")
+      .then((r) => r.json())
+      .then(setHistory);
+  };
 
   return (
     <div className="space-y-5 pb-10">
@@ -435,12 +444,12 @@ export default function SwarmPage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-1 border-b border-slate-200">
+      <div className="flex gap-1 border-b border-slate-200 overflow-x-auto">
         {TABS.map((tab) => (
           <button
             key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
-            className={`px-4 py-2 text-[13px] font-medium transition-colors border-b-2 -mb-px ${
+            onClick={() => { setActiveTab(tab.key as typeof activeTab); if (tab.key === "history") loadHistory(); }}
+            className={`px-4 py-2 text-[13px] font-medium transition-colors border-b-2 -mb-px whitespace-nowrap ${
               activeTab === tab.key
                 ? "border-blue-600 text-blue-600"
                 : "border-transparent text-slate-500 hover:text-slate-700"
@@ -566,6 +575,107 @@ export default function SwarmPage() {
 
           {activeTab === "simulation" && data && (
             <SimulationPanel messages={data.simulation} />
+          )}
+
+          {activeTab === "history" && (
+            <div className="space-y-6">
+              {!history ? (
+                <div className="text-center py-10 text-slate-400 text-sm">Chargement de l'historique…</div>
+              ) : (
+                <>
+                  {/* Cycles */}
+                  <div>
+                    <h3 className="text-[13px] font-semibold text-slate-700 mb-3">Cycles SwarmCycle ({history.cycles.length})</h3>
+                    <div className="space-y-2">
+                      {history.cycles.map((c: any) => (
+                        <div key={c.id} className="bg-white rounded-lg border border-slate-200 px-4 py-3 flex items-center gap-4">
+                          <div className="flex-1">
+                            <p className="text-[12px] font-semibold text-slate-900 font-mono">{c.cycleKey}</p>
+                            <p className="text-[11px] text-slate-400 mt-0.5">
+                              {new Date(c.startedAt).toLocaleString("fr-FR")}
+                              {c.completedAt && ` → ${new Date(c.completedAt).toLocaleString("fr-FR")}`}
+                            </p>
+                          </div>
+                          <div className="text-right flex-shrink-0 grid grid-cols-3 gap-4">
+                            <div>
+                              <p className="text-[15px] font-bold text-blue-600">{c.prospectsFound}</p>
+                              <p className="text-[9px] text-slate-400">prospects</p>
+                            </div>
+                            <div>
+                              <p className="text-[15px] font-bold text-purple-600">{c.emailsSent}</p>
+                              <p className="text-[9px] text-slate-400">emails</p>
+                            </div>
+                            <div>
+                              <p className="text-[15px] font-bold text-green-600">{c.revenueEur}€</p>
+                              <p className="text-[9px] text-slate-400">CA</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Transactions */}
+                  <div>
+                    <h3 className="text-[13px] font-semibold text-slate-700 mb-3">Transactions ({history.transactions.length})</h3>
+                    <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+                      <table className="w-full text-[12px]">
+                        <thead className="bg-slate-50 border-b border-slate-100">
+                          <tr>
+                            {["Entreprise", "Secteur", "Montant", "Stripe ID", "Date"].map((h) => (
+                              <th key={h} className="text-left px-4 py-2 text-[11px] font-semibold text-slate-500">{h}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {history.transactions.map((t: any) => (
+                            <tr key={t.id} className="border-b border-slate-50 hover:bg-slate-50">
+                              <td className="px-4 py-2.5 font-medium text-slate-900">{t.companyName}</td>
+                              <td className="px-4 py-2.5 text-slate-500">{t.sector}</td>
+                              <td className="px-4 py-2.5 font-bold text-green-600">{t.amountEur}€</td>
+                              <td className="px-4 py-2.5 font-mono text-slate-400 text-[10px]">{t.stripeChargeId}</td>
+                              <td className="px-4 py-2.5 text-slate-400">{new Date(t.createdAt).toLocaleDateString("fr-FR")}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* Prospects */}
+                  <div>
+                    <h3 className="text-[13px] font-semibold text-slate-700 mb-3">Prospects détectés ({history.prospects.length})</h3>
+                    <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+                      <table className="w-full text-[12px]">
+                        <thead className="bg-slate-50 border-b border-slate-100">
+                          <tr>
+                            {["Entreprise", "Secteur", "PageSpeed", "Chargement", "Agent", "Mobile"].map((h) => (
+                              <th key={h} className="text-left px-4 py-2 text-[11px] font-semibold text-slate-500">{h}</th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {history.prospects.map((p: any) => (
+                            <tr key={p.id} className="border-b border-slate-50 hover:bg-slate-50">
+                              <td className="px-4 py-2.5 font-medium text-slate-900">{p.name}</td>
+                              <td className="px-4 py-2.5 text-slate-500">{p.sector}</td>
+                              <td className="px-4 py-2.5">
+                                <span className={`font-bold ${p.pagespeedScore < 30 ? "text-red-500" : p.pagespeedScore < 60 ? "text-amber-500" : "text-green-500"}`}>
+                                  {p.pagespeedScore}/100
+                                </span>
+                              </td>
+                              <td className="px-4 py-2.5 text-slate-500">{(p.loadTimeMs / 1000).toFixed(1)}s</td>
+                              <td className="px-4 py-2.5 font-mono text-slate-400 text-[10px]">Agent {p.agentSource}</td>
+                              <td className="px-4 py-2.5">{p.mobileResponsive ? "✓" : <span className="text-red-400">✗</span>}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           )}
         </>
       )}
