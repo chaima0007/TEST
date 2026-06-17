@@ -81,6 +81,22 @@ let lastImpactSoundTime = -Infinity;
 const IMPACT_AUDIO_THRESHOLD = 0.08;
 const IMPACT_AUDIO_COOLDOWN_S = 0.25;
 
+// NEXUS status — résume ce que les systèmes font en temps réel
+const _nexusPhrases = [
+  (v, d, w, dc, wx) => `Physique véhicule ${Math.round(Math.abs(v.getSpeedKmh()))} km/h`,
+  (v, d, w, dc, wx) => d.isDrifting() ? `Drift actif — calcul score +${d.getSessionScore()}` : `Moteur IA trafic actif`,
+  (v, d, w, dc, wx) => w.level > 0 ? `Police niveau ${w.level} — pathfinding actif` : `Surveillance réseau calme`,
+  (v, d, w, dc, wx) => `Météo ${wx.getWeatherId()} — adhérence ${Math.round(wx.getGripFactor()*100)}%`,
+  (v, d, w, dc, wx) => dc.isNight() ? `Mode nuit — lampadaires + Fantôme` : `Cycle jour ${dc.getTimeString()}`,
+];
+let _nexusIdx = 0;
+let _nexusFlip = 0;
+function _nexusStatus(vehicle, drift, wanted, dayCycle, weather) {
+  _nexusFlip += 1;
+  if (_nexusFlip > 180) { _nexusFlip = 0; _nexusIdx = (_nexusIdx + 1) % _nexusPhrases.length; }
+  return _nexusPhrases[_nexusIdx](vehicle, drift, wanted, dayCycle, weather);
+}
+
 function animate() {
   requestAnimationFrame(animate);
   const now = performance.now();
@@ -223,6 +239,12 @@ function animate() {
       status: `${dailyStatus.label} | ${dailyStatus.text}`,
       bar: dailyStatus.pct,
       color: dailyStatus.pct >= 1 ? '#44ff88' : '#ffaa00',
+    },
+    nexus: {
+      active: true,
+      status: _nexusStatus(vehicle, drift, wanted, dayCycle, weather),
+      bar: 1,
+      color: '#00c8ff',
     },
   });
 

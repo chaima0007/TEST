@@ -397,6 +397,7 @@ const STYLE = `
 }
 
 .agent-card.monetisation { border-left-color: #ffaa00; }
+.agent-card.nexus        { border-left-color: #00c8ff; background: rgba(0,200,255,0.04); }
 
 #hud-achievement {
   position: fixed;
@@ -592,6 +593,7 @@ export class HUD {
       { id: 'meteo',        name: 'Meteo',          cls: 'meteo'        },
       { id: 'trafic',       name: 'Trafic',         cls: 'trafic'       },
       { id: 'monetisation', name: 'Defi du Jour',   cls: 'monetisation' },
+      { id: 'nexus',        name: 'NEXUS — Agent',  cls: 'nexus'        },
     ];
     for (const def of agentDefs) {
       const card = document.createElement('div');

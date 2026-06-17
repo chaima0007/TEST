@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NEXUS — Tableau de Bord Agent IA</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --bg:     #08090f;
+    --panel:  #0d1020;
+    --border: rgba(0,200,255,0.18);
+    --cyan:   #00c8ff;
+    --gold:   #ffaa00;
+    --green:  #44ff99;
+    --purple: #aa55ff;
+    --red:    #ff4455;
+    --text:   #c9d6e4;
+    --dim:    #5a6a7a;
+  }
+  html,body{width:100%;min-height:100%;background:var(--bg);font-family:'Segoe UI',Arial,sans-serif;color:var(--text);}
+
+  /* ── HEADER ── */
+  header{
+    display:flex;align-items:center;gap:20px;
+    padding:28px 36px 20px;
+    border-bottom:1px solid var(--border);
+    background:linear-gradient(135deg,rgba(0,200,255,0.04),transparent);
+  }
+  .nexus-logo{
+    width:56px;height:56px;border-radius:14px;
+    background:linear-gradient(135deg,#001a26,#003040);
+    border:2px solid var(--cyan);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;font-weight:900;color:var(--cyan);
+    letter-spacing:-1px;
+    box-shadow:0 0 20px rgba(0,200,255,0.25);
+    flex-shrink:0;
+  }
+  .nexus-info h1{font-size:26px;font-weight:900;color:#fff;letter-spacing:1px;}
+  .nexus-info .sub{font-size:12px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+  .nexus-status-dot{
+    margin-left:auto;display:flex;align-items:center;gap:10px;
+    font-size:12px;font-weight:700;color:var(--green);letter-spacing:1px;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--green);animation:pulse-dot 1.4s ease infinite;}
+  @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(68,255,153,0.6);}50%{box-shadow:0 0 0 7px rgba(68,255,153,0);}}
+
+  /* ── GRID ── */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;padding:24px 36px;}
+
+  /* ── CARD ── */
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px 20px;
+    position:relative;overflow:hidden;
+  }
+  .card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:var(--accent,var(--cyan));opacity:0.7;
+  }
+  .card-title{
+    font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    color:var(--accent,var(--cyan));margin-bottom:10px;
+  }
+  .card-value{font-size:32px;font-weight:900;color:#fff;line-height:1;}
+  .card-desc{font-size:12px;color:var(--dim);margin-top:5px;}
+
+  /* ── SYSTEM LIST ── */
+  .system-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+  .system-item{
+    display:flex;align-items:center;gap:10px;
+    padding:8px 10px;border-radius:7px;
+    background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);
+    font-size:12px;
+  }
+  .sys-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .sys-name{font-weight:700;color:#e8f0ff;flex:1;}
+  .sys-tag{
+    font-size:10px;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:0.5px;
+    background:rgba(68,255,153,0.12);color:var(--green);border:1px solid rgba(68,255,153,0.25);
+  }
+  .sys-tag.wip{background:rgba(255,170,0,0.12);color:var(--gold);border-color:rgba(255,170,0,0.25);}
+  .sys-tag.new{background:rgba(170,85,255,0.15);color:var(--purple);border-color:rgba(170,85,255,0.3);}
+
+  /* ── LOG ── */
+  .log-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .log-item{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:11.5px;padding:7px 10px;border-radius:6px;
+    background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);
+  }
+  .log-time{color:var(--dim);font-size:10px;flex-shrink:0;padding-top:1px;width:48px;}
+  .log-msg{color:var(--text);}
+  .log-msg strong{color:#fff;}
+
+  /* ── BAR ── */
+  .bar-wrap{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-top:10px;}
+  .bar-fill{height:100%;border-radius:3px;background:var(--accent,var(--cyan));transition:width 1s ease;}
+
+  /* ── ACHIEVEMENT LIST ── */
+  .ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+  .ach-item{
+    padding:7px 9px;border-radius:7px;
+    background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+    font-size:11px;
+  }
+  .ach-icon{font-size:16px;display:block;margin-bottom:3px;}
+  .ach-name{font-weight:700;color:#fff;font-size:11px;}
+  .ach-pts{color:var(--gold);font-size:10px;margin-top:1px;}
+
+  /* ── FULL-WIDTH ── */
+  .full{grid-column:1/-1;}
+
+  /* ── FOOTER ── */
+  footer{text-align:center;padding:28px;font-size:11px;color:var(--dim);border-top:1px solid var(--border);margin-top:10px;}
+  footer span{color:var(--cyan);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nexus-logo">NX</div>
+  <div class="nexus-info">
+    <h1>NEXUS</h1>
+    <div class="sub">Agent IA développeur — Open City</div>
+  </div>
+  <div class="nexus-status-dot">
+    <div class="dot"></div>
+    ACTIF &amp; EN CONSTRUCTION
+  </div>
+</header>
+
+<div class="grid">
+
+  <!-- Stats rapides -->
+  <div class="card" style="--accent:#00c8ff">
+    <div class="card-title">Systèmes construits</div>
+    <div class="card-value">21</div>
+    <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
+  </div>
+
+  <div class="card" style="--accent:#44ff99">
+    <div class="card-title">Tests passés</div>
+    <div class="card-value">56 / 56</div>
+    <div class="card-desc">0 échec — couverture totale</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--green)"></div></div>
+  </div>
+
+  <div class="card" style="--accent:#ffaa00">
+    <div class="card-title">Agents IA en jeu</div>
+    <div class="card-value">7</div>
+    <div class="card-desc">Le Spectre · La Fantôme · Le Détectif · Police · Météo · Trafic · Monétisation</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:87.5%;background:var(--gold)"></div></div>
+  </div>
+
+  <div class="card" style="--accent:#aa55ff">
+    <div class="card-title">Achievements joueur</div>
+    <div class="card-value">12</div>
+    <div class="card-desc">Débloquables + défis quotidiens + couleurs</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:80%;background:var(--purple)"></div></div>
+  </div>
+
+  <!-- Systèmes -->
+  <div class="card full" style="--accent:#00c8ff">
+    <div class="card-title">Tous les systèmes — état actuel</div>
+    <ul class="system-list">
+      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">Vehicle Physics</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">World Generation (5×5 grid, 90 bâtiments)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Camera Follow + Shake</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Le Spectre — rival IA (HUNT / TAUNT)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffd700"></span><span class="sys-name">La Fantôme — course nocturne</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#cc4444"></span><span class="sys-name">Le Détectif — filature undercover</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#4488ff"></span><span class="sys-name">Police + Hélicoptère + Roadblocks</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44aaff"></span><span class="sys-name">Météo (4 états, pluie 1 500 particules)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#55cc88"></span><span class="sys-name">Traffic IA — personnalités (5 types)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff6622"></span><span class="sys-name">Drift Physics + Score + Fumée pneus</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00eeff"></span><span class="sys-name">Nitro System (3 charges, capsules)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff8800"></span><span class="sys-name">Étincelles (collision forte)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#111111;border:1px solid #444"></span><span class="sys-name">Traces de pneus (180 quads décals)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffcc00"></span><span class="sys-name">Caméras radar (7 fixes, sanction wanted)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#9fd3ff"></span><span class="sys-name">Cycle jour/nuit (9 keyframes, 5 min)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff9944"></span><span class="sys-name">Combo Multiplier</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Missions (livraisons)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#5566ff"></span><span class="sys-name">Audio procédural (moteur, sirène, drift, nitro)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#88aaff"></span><span class="sys-name">HUD complet + Radar + Panneau agents</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffaa00"></span><span class="sys-name">MonetizationAgent (achievements, défis, partage)</span><span class="sys-tag new">NOUVEAU</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">NEXUS Dashboard (cette page)</span><span class="sys-tag new">NOUVEAU</span></li>
+    </ul>
+  </div>
+
+  <!-- Journal d'activité -->
+  <div class="card full" style="--accent:#aa55ff">
+    <div class="card-title">Journal NEXUS — Dernières actions</div>
+    <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 8</span><span class="log-msg"><strong>MonetizationAgent</strong> — 12 achievements, défis quotidiens, partage social, 6 couleurs à débloquer</span></li>
+      <li class="log-item"><span class="log-time">Ronde 7</span><span class="log-msg"><strong>DetectiveSystem</strong> — popEscaped() + FantomeSystem — getters public (bug radar corrigé)</span></li>
+      <li class="log-item"><span class="log-time">Ronde 6</span><span class="log-msg"><strong>Le Détectif</strong> — filature undercover, piste perdue à 118+ km/h pendant 3s</span></li>
+      <li class="log-item"><span class="log-time">Ronde 5</span><span class="log-msg"><strong>SkidMarkSystem</strong> — 180 décals persistants y=0.025, pool recyclable</span></li>
+      <li class="log-item"><span class="log-time">Ronde 4</span><span class="log-msg"><strong>SpeedCamSystem</strong> — 7 caméras, flash lens, sanction wanted +1 au-dessus 80 km/h</span></li>
+      <li class="log-item"><span class="log-time">Ronde 3</span><span class="log-msg"><strong>NitroSystem</strong> — 3 charges collectibles, boost 1.55×, capsules cyan sur route</span></li>
+      <li class="log-item"><span class="log-time">Ronde 2</span><span class="log-msg"><strong>DriftSystem</strong> — vélocité latérale, banque de score, fumée pneus Float32Array</span></li>
+      <li class="log-item"><span class="log-time">Ronde 1</span><span class="log-msg"><strong>Base GTA</strong> — monde 5×5, véhicule, police, trafic, mission, HUD, audio procédural</span></li>
+    </ul>
+  </div>
+
+  <!-- Achievements -->
+  <div class="card" style="--accent:#ffaa00">
+    <div class="card-title">Achievements disponibles en jeu</div>
+    <div class="ach-grid">
+      <div class="ach-item"><span class="ach-icon">🏎️</span><span class="ach-name">Premier Drift</span><div class="ach-pts">+$50</div></div>
+      <div class="ach-item"><span class="ach-icon">⚡</span><span class="ach-name">Vitesse Folle</span><div class="ach-pts">+$100</div></div>
+      <div class="ach-item"><span class="ach-icon">🌀</span><span class="ach-name">Roi du Drift</span><div class="ach-pts">+$200</div></div>
+      <div class="ach-item"><span class="ach-icon">⭐</span><span class="ach-name">Ennemi Public N°1</span><div class="ach-pts">+$500</div></div>
+      <div class="ach-item"><span class="ach-icon">💰</span><span class="ach-name">Légende des Rues</span><div class="ach-pts">+$2 000</div></div>
+      <div class="ach-item"><span class="ach-icon">🔷</span><span class="ach-name">Accélération Pure</span><div class="ach-pts">+$100</div></div>
+      <div class="ach-item"><span class="ach-icon">👁️</span><span class="ach-name">Introuvable</span><div class="ach-pts">+$300</div></div>
+      <div class="ach-item"><span class="ach-icon">👻</span><span class="ach-name">Fantôme Vaincu</span><div class="ach-pts">+$400</div></div>
+    </div>
+  </div>
+
+  <!-- Prochaine mission NEXUS -->
+  <div class="card" style="--accent:#00c8ff">
+    <div class="card-title">Prochaine construction — NEXUS</div>
+    <ul class="system-list">
+      <li class="system-item"><span class="sys-dot" style="background:#ffaa00"></span><span class="sys-name">Système de personnalisation véhicule</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Leaderboard local + partage score</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Progression niveaux / districts</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff4455"></span><span class="sys-name">Boss final — L'Architecte</span><span class="sys-tag wip">Planifié</span></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
+  Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma
+</footer>
+
+<script>
+  // Horloge live
+  function tick() {
+    const now = new Date();
+    const t = now.toLocaleTimeString('fr-FR');
+    document.title = `NEXUS — ${t}`;
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
