@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-
-const DEMO_USER_EMAIL = "demo@competeiq.com";
-
-async function getDemoUser() {
-  return prisma.user.findUnique({ where: { email: DEMO_USER_EMAIL } });
-}
+import { getDemoUser } from "@/lib/auth";
 
 export async function GET() {
   const user = await getDemoUser();
