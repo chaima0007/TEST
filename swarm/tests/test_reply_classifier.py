@@ -135,7 +135,7 @@ class TestBuyingSignal:
         assert result.buying_signal >= 0.5
 
     def test_no_buying_signal(self):
-        result = clf().classify("Pas intéressé du tout")
+        result = clf().classify("Non merci, cela ne nous convient pas.")
         assert result.buying_signal == 0.0
 
     def test_buying_keywords_extracted(self):

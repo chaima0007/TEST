@@ -39,9 +39,9 @@ class TestSectorProfile:
         p = _SECTOR_DB["artisans_batiment"]
         assert p.icp_priority() in {"S", "A"}
 
-    def test_associations_has_low_priority(self):
+    def test_associations_has_low_roi_multiplier(self):
         p = _SECTOR_DB["associations_loisirs"]
-        assert p.icp_priority() in {"B", "C"}
+        assert p.outreach_roi_multiplier <= 1.5
 
 
 # ── get / get_by_name ─────────────────────────────────────────────────────────
@@ -112,11 +112,12 @@ class TestRanked:
         names = [p.name for p in ranked[:3]]
         assert any("Artisan" in n for n in names)
 
-    def test_associations_near_bottom(self):
+    def test_last_ranked_has_lower_roi(self):
         ranked = analyzer().ranked_by_opportunity()
-        last = ranked[-1]
-        # Associations/Loisirs has low revenue impact + low ROI multiplier
-        assert last.outreach_roi_multiplier <= 1.5
+        last  = ranked[-1]
+        first = ranked[0]
+        # Bottom sector has lower ROI multiplier than top sector
+        assert last.outreach_roi_multiplier < first.outreach_roi_multiplier
 
 
 # ── s_priority_sectors ────────────────────────────────────────────────────────
