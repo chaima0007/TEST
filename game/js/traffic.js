@@ -17,11 +17,25 @@ const PEDESTRIAN_COUNT = 12;
 
 const CAR_SPEED_RANGE = [6, 11]; // m/s, ~22-40 km/h en ville
 const LANE_OFFSET = 2.4; // décalage par rapport à la ligne centrale de la route (sens de circulation)
+const CAR_FOLLOW_DIST = 14; // m — distance devant laquelle une voiture commence à ralentir pour le joueur
 
 const PED_SPEED_RANGE = [0.8, 1.6]; // m/s, marche lente
 const PED_TURN_RATE = 2.2; // rad/s, rotation plafonnée comme les voitures de police
 const PED_RADIUS = 0.4; // rayon approximatif pour le test de collision avec les bâtiments
 const PED_SIDEWALK_MARGIN = 1.0; // marge gardée par rapport au bord des bâtiments
+const PED_SCATTER_RADIUS = 9; // m — en-dessous, le piéton prend peur et s'enfuit
+
+// Cinq types de personnalité : chaque piéton se voit assigner l'un d'eux à
+// sa création et conserve ces traits pour toute sa durée de vie, ce qui
+// crée une foule visuellement variée dont chaque individu a un comportement
+// reconnaissable.
+const PERSONALITIES = [
+  { name: 'TOURISTE',    speedMult: 0.65, turnMult: 1.0, panicMult: 1.2, pauseChance: 0.025 },
+  { name: 'PRESSÉ',      speedMult: 1.6,  turnMult: 2.5, panicMult: 2.0, pauseChance: 0.003 },
+  { name: 'JOGGEUR',     speedMult: 2.4,  turnMult: 1.8, panicMult: 1.4, pauseChance: 0.001 },
+  { name: 'NERVEUX',     speedMult: 1.0,  turnMult: 3.5, panicMult: 3.5, pauseChance: 0.04  },
+  { name: 'COSTAUD',     speedMult: 0.9,  turnMult: 0.7, panicMult: 0.6, pauseChance: 0.008 },
+];
 
 const carColors = [0x2255cc, 0xcc8822, 0x227744, 0x999999, 0xaa3344, 0x445566, 0xddcc55];
 
@@ -147,12 +161,27 @@ class TrafficCar {
     }
   }
 
-  update(dt) {
+  // playerPos: {x, z} optionnel — si fourni, la voiture ralentit si le joueur
+  // est juste devant elle dans son sens de marche (comportement de suivi).
+  update(dt, playerPos = null) {
     if (!this.active) return;
     const { xs, zs } = this.roadLines;
     const crossLines = this.axis === 'x' ? zs : xs;
 
-    this.moving += this.dir * this.speed * dt;
+    let effectiveSpeed = this.speed;
+    if (playerPos) {
+      // Distance et position relative du joueur sur l'axe de déplacement.
+      const movingPlayer = this.axis === 'x' ? playerPos.x : playerPos.z;
+      const fixedPlayer  = this.axis === 'x' ? playerPos.z : playerPos.x;
+      const fixedDist = Math.abs(fixedPlayer - this.fixedCoord);
+      const aheadDist = (movingPlayer - this.moving) * this.dir;
+      if (fixedDist < 3.5 && aheadDist > 0 && aheadDist < CAR_FOLLOW_DIST) {
+        // Joueur devant dans la même voie : vitesse progressivement réduite.
+        effectiveSpeed *= clamp(aheadDist / CAR_FOLLOW_DIST, 0.15, 1);
+      }
+    }
+
+    this.moving += this.dir * effectiveSpeed * dt;
 
     // Carrefour le plus proche sur la ligne perpendiculaire : si on vient de
     // le franchir, on choisit (au hasard) de continuer tout droit ou de
@@ -191,9 +220,12 @@ class Pedestrian {
   constructor(scene) {
     this.mesh = buildPedestrianMesh();
     scene.add(this.mesh);
-    this.speed = PED_SPEED_RANGE[0] + Math.random() * (PED_SPEED_RANGE[1] - PED_SPEED_RANGE[0]);
+    this.personality = PERSONALITIES[Math.floor(Math.random() * PERSONALITIES.length)];
+    this.speed = (PED_SPEED_RANGE[0] + Math.random() * (PED_SPEED_RANGE[1] - PED_SPEED_RANGE[0])) * this.personality.speedMult;
     this.heading = Math.random() * Math.PI * 2;
     this.active = false;
+    this._pauseTimer = 0; // > 0 : le piéton est à l'arrêt momentanément
+    this._panicking = false;
   }
 
   respawnNear(playerPos, colliders) {
@@ -231,8 +263,49 @@ class Pedestrian {
     return false;
   }
 
-  update(dt, colliders) {
+  // playerPos: {x, z} optionnel — si fourni, le piéton réagit à la proximité
+  // du véhicule du joueur selon sa personnalité.
+  update(dt, colliders, playerPos = null) {
     if (!this.active) return;
+    const p = this.personality;
+
+    // --- Réaction au joueur : fuite si trop proche --------------------
+    if (playerPos) {
+      const pdx = this.mesh.position.x - playerPos.x;
+      const pdz = this.mesh.position.z - playerPos.z;
+      const distToPlayer = Math.hypot(pdx, pdz);
+      if (distToPlayer < PED_SCATTER_RADIUS) {
+        this._panicking = true;
+        this._pauseTimer = 0;
+        // Tourner dos au véhicule
+        const awayAngle = Math.atan2(pdx, pdz);
+        let diff = awayAngle - this.heading;
+        diff = Math.atan2(Math.sin(diff), Math.cos(diff));
+        const maxTurn = PED_TURN_RATE * p.turnMult * dt * 6;
+        this.heading += clamp(diff, -maxTurn, maxTurn);
+        this.mesh.rotation.y = this.heading;
+        // Sprint
+        const panicSpeed = this.speed * p.panicMult;
+        const nx = this.mesh.position.x + Math.sin(this.heading) * panicSpeed * dt;
+        const nz = this.mesh.position.z + Math.cos(this.heading) * panicSpeed * dt;
+        if (!this._collides(nx, nz, colliders) && Math.abs(nx) < CITY_HALF_SIZE - 2 && Math.abs(nz) < CITY_HALF_SIZE - 2) {
+          this.mesh.position.x = nx;
+          this.mesh.position.z = nz;
+        }
+        return;
+      }
+    }
+    this._panicking = false;
+
+    // --- Pause aléatoire (personnalité : le touriste s'arrête souvent) --
+    if (this._pauseTimer > 0) {
+      this._pauseTimer -= dt;
+      return;
+    }
+    if (Math.random() < p.pauseChance) {
+      this._pauseTimer = 0.8 + Math.random() * 1.5;
+      return;
+    }
 
     const dirX = Math.sin(this.heading);
     const dirZ = Math.cos(this.heading);
@@ -245,26 +318,23 @@ class Pedestrian {
       Math.abs(nextZ) > CITY_HALF_SIZE - 2;
 
     if (blocked) {
-      // Bâtiment (ou bord de ville) en vue : on choisit une nouvelle direction
-      // au hasard plutôt que de faire de la résolution physique (cf. consigne :
-      // les piétons peuvent simplement se détourner).
       const targetHeading = Math.random() * Math.PI * 2;
       let diff = targetHeading - this.heading;
       diff = Math.atan2(Math.sin(diff), Math.cos(diff));
-      const maxTurn = PED_TURN_RATE * dt * 8; // tourne plus vite qu'en marche normale pour éviter de "coller" au mur
+      const maxTurn = PED_TURN_RATE * p.turnMult * dt * 8;
       this.heading += clamp(diff, -maxTurn, maxTurn);
       this.mesh.rotation.y = this.heading;
       return;
     }
 
-    // Petite dérive aléatoire de direction pour une marche moins robotique.
-    if (Math.random() < 0.02) {
+    // Dérive aléatoire selon la personnalité (le nerveux change souvent de direction)
+    if (Math.random() < 0.01 * p.turnMult) {
       this._wanderTarget = this.heading + (Math.random() * 2 - 1) * 1.2;
     }
     if (this._wanderTarget !== undefined) {
       let diff = this._wanderTarget - this.heading;
       diff = Math.atan2(Math.sin(diff), Math.cos(diff));
-      const maxTurn = PED_TURN_RATE * dt;
+      const maxTurn = PED_TURN_RATE * p.turnMult * dt;
       this.heading += clamp(diff, -maxTurn, maxTurn);
     }
 
@@ -317,8 +387,8 @@ export class TrafficSystem {
     if (!playerPos) return;
     this._syncEntities(playerPos);
 
-    for (const car of this.cars) car.update(dt);
-    for (const ped of this.pedestrians) ped.update(dt, this.colliders);
+    for (const car of this.cars) car.update(dt, playerPos);
+    for (const ped of this.pedestrians) ped.update(dt, this.colliders, playerPos);
   }
 
   // Despawn/respawn des entités trop loin du joueur, pour garder un nombre

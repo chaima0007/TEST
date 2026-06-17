@@ -114,6 +114,24 @@ const STYLE = `
   color: #c9d6e4;
 }
 
+.score-delta {
+  position: fixed;
+  right: 22px;
+  bottom: 110px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #51cf66;
+  text-shadow: 0 0 8px rgba(81,207,102,0.8);
+  pointer-events: none;
+  animation: score-fly 1.4s ease-out forwards;
+}
+
+@keyframes score-fly {
+  0%   { opacity: 1; transform: translateY(0);    }
+  70%  { opacity: 1; transform: translateY(-28px); }
+  100% { opacity: 0; transform: translateY(-48px); }
+}
+
 #hud-toast {
   position: fixed;
   top: 22%;
@@ -339,6 +357,14 @@ export class HUD {
   setSpeed(kmh) {
     const value = Math.max(0, Math.round(kmh || 0));
     this.speedValueEl.textContent = String(value);
+    // Couleur dynamique : vert → orange → rouge (façon GTA V / NFS)
+    const color = value < 80 ? '#51cf66' : value < 120 ? '#ffa94d' : '#ff4444';
+    this.speedValueEl.style.color = color;
+    if (value > 120) {
+      this.speedValueEl.style.textShadow = `0 0 12px ${color}`;
+    } else {
+      this.speedValueEl.style.textShadow = '0 1px 3px rgba(0,0,0,0.7)';
+    }
   }
 
   setMission(text) {
@@ -346,9 +372,21 @@ export class HUD {
   }
 
   setScore(value) {
-    this._score = Math.max(0, Math.round(value || 0));
+    const next = Math.max(0, Math.round(value || 0));
+    const delta = next - this._score;
+    this._score = next;
     this.scoreEl.textContent = `$${this._score}`;
     this.pauseScoreValueEl.textContent = String(this._score);
+    // Animation score delta : un "+N" qui monte et disparaît
+    if (delta > 0) this._showScoreDelta(`+${delta}`);
+  }
+
+  _showScoreDelta(text) {
+    const el = document.createElement('div');
+    el.className = 'score-delta';
+    el.textContent = text;
+    document.body.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
   }
 
   setWanted(level) {

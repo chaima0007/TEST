@@ -21,11 +21,25 @@ const SPAWN_DIST_MAX = 55;
 const TAUNT_INTERVAL_MIN_S = 6;
 const TAUNT_INTERVAL_MAX_S = 10;
 const BONUS_ESCAPE = 400;
+const TAUNT_ORBIT_RADIUS = 8; // m — distance autour du joueur pendant l'état TAUNT
+const TAUNT_ORBIT_DURATION_S = 3.5; // durée de l'orbite avant de reprendre la chasse
+const REVENGE_COOLDOWN_REDUCTION = 8; // s de moins par fuite subie (Le Spectre revient plus vite s'il a honte)
 
-const TAUNTS = [
-  'Le Spectre : « Essaie de me suivre… »',
-  'Le Spectre : « Trop lent ! »',
-  'Le Spectre : « On verra qui craque le premier. »',
+// Trois pools de répliques selon l'état émotionnel du Spectre.
+const TAUNTS_HUNT = [
+  "Le Spectre : « Tu ne peux pas m’échapper… »",
+  'Le Spectre : « Cours, cours ! »',
+  'Le Spectre : « Intéressant. »',
+];
+const TAUNTS_CLOSE = [
+  "Le Spectre : « Je t’ai ! »",
+  'Le Spectre : « Trop facile. »',
+  'Le Spectre : « Joli essai. »',
+];
+const TAUNTS_ANGRY = [
+  "Le Spectre : « Tu m’as eu une fois. Une seule ! »",
+  'Le Spectre : « Revanche ! »',
+  'Le Spectre : « Cette fois, tu ne passeras pas. »',
 ];
 
 function clamp(v, min, max) {
@@ -83,6 +97,11 @@ function buildRivalMesh() {
   return group;
 }
 
+// États de Le Spectre : HUNT (chasse directe), TAUNT (orbite provocatrice autour
+// du joueur quand il est très près), RETREAT (recul après avoir été semé).
+const STATE_HUNT   = 'HUNT';
+const STATE_TAUNT  = 'TAUNT';
+
 export class RivalSystem {
   constructor(scene, world) {
     this.scene = scene;
@@ -91,15 +110,29 @@ export class RivalSystem {
     this.mesh = null;
     this.speedKmh = 0;
     this.heading = 0;
+    this._state = STATE_HUNT;
+    this._orbitAngle = 0; // angle courant lors de l'orbite TAUNT
+    this._orbitTimer = 0;
     this._score = 0;
     this._catchTimer = 0;
     this._tauntTimer = 0;
     this._challengeTimeLeft = 0;
     this._cooldown = SPAWN_COOLDOWN_MIN_S + Math.random() * (SPAWN_COOLDOWN_MAX_S - SPAWN_COOLDOWN_MIN_S);
+    // Mémoire entre les rencontres : Le Spectre adapte son comportement.
+    this._timesEscaped = 0; // nombre de fois que le joueur l'a semé
+    this._timesCaught = 0;  // nombre de fois qu'il a rattrapé le joueur
   }
 
   getScore() {
     return this._score;
+  }
+
+  // Réplique contextuelle selon l'état émotionnel et la distance.
+  _pickTaunt(dist) {
+    let pool = TAUNTS_HUNT;
+    if (this._timesEscaped > 0) pool = TAUNTS_ANGRY;
+    if (dist < 12)              pool = TAUNTS_CLOSE;
+    return pool[Math.floor(Math.random() * pool.length)];
   }
 
   update(dt, vehicle, hud) {
@@ -121,10 +154,45 @@ export class RivalSystem {
     const dz = pos.z - this.mesh.position.z;
     const dist = Math.hypot(dx, dz);
 
-    // Close-range tracking: a wide turning radius at speed would otherwise
-    // make the car overshoot a slow/stationary target and orbit around it
-    // forever instead of actually catching up (turning radius ~= v / turnRate).
-    // Tighten the turn and shed speed well before CATCH_RADIUS so it can lock on.
+    // --- Machine d'états --------------------------------------------------
+    // TAUNT : Le Spectre est très proche — il orbite autour du joueur pour
+    //         le narguer avant de reprendre la chasse.
+    if (this._state === STATE_TAUNT) {
+      this._orbitAngle += 1.8 * dt; // vitesse angulaire de l'orbite
+      this._orbitTimer -= dt;
+
+      const tx = pos.x + Math.sin(this._orbitAngle) * TAUNT_ORBIT_RADIUS;
+      const tz = pos.z + Math.cos(this._orbitAngle) * TAUNT_ORBIT_RADIUS;
+      const odx = tx - this.mesh.position.x;
+      const odz = tz - this.mesh.position.z;
+      const desiredH = Math.atan2(odx, odz);
+      let diff = desiredH - this.heading;
+      diff = Math.atan2(Math.sin(diff), Math.cos(diff));
+      this.heading += clamp(diff, -TURN_RATE * 3 * dt, TURN_RATE * 3 * dt);
+      this.mesh.rotation.y = this.heading;
+      this.speedKmh = Math.min(TOP_SPEED_KMH * 0.25, this.speedKmh + ACCEL_KMH_PER_S * dt);
+      const speedMs = (this.speedKmh / 3.6) * dt;
+      this.mesh.position.x += Math.sin(this.heading) * speedMs;
+      this.mesh.position.z += Math.cos(this.heading) * speedMs;
+
+      if (this._orbitTimer <= 0) this._state = STATE_HUNT; // reprend la chasse
+      if (this._tauntTimer <= 0 && hud) {
+        hud.showMessage(this._pickTaunt(dist), 1800);
+        this._tauntTimer = TAUNT_INTERVAL_MIN_S;
+      }
+      if (this._challengeTimeLeft <= 0) { this._escaped(hud); return; }
+      return;
+    }
+
+    // --- HUNT : poursuite directe -----------------------------------------
+    // Transition vers TAUNT si Le Spectre est très proche mais n'a pas encore
+    // capturé le joueur — il orbite pour montrer qu'il contrôle la situation.
+    if (dist < CATCH_RADIUS * 1.8 && dist > CATCH_RADIUS && this._state === STATE_HUNT) {
+      this._state = STATE_TAUNT;
+      this._orbitTimer = TAUNT_ORBIT_DURATION_S;
+      this._orbitAngle = Math.atan2(this.mesh.position.x - pos.x, this.mesh.position.z - pos.z);
+    }
+
     const closing = dist < 10;
     const desiredHeading = Math.atan2(dx, dz);
     let diff = desiredHeading - this.heading;
@@ -157,7 +225,7 @@ export class RivalSystem {
     }
 
     if (this._tauntTimer <= 0 && hud) {
-      hud.showMessage(TAUNTS[Math.floor(Math.random() * TAUNTS.length)], 1800);
+      hud.showMessage(this._pickTaunt(dist), 1800);
       this._tauntTimer = TAUNT_INTERVAL_MIN_S + Math.random() * (TAUNT_INTERVAL_MAX_S - TAUNT_INTERVAL_MIN_S);
     }
 
@@ -199,17 +267,25 @@ export class RivalSystem {
       this.mesh = null;
     }
     this.active = false;
-    this._cooldown = SPAWN_COOLDOWN_MIN_S + Math.random() * (SPAWN_COOLDOWN_MAX_S - SPAWN_COOLDOWN_MIN_S);
+    this._state = STATE_HUNT;
+    // Plus Le Spectre a été semé, plus il revient vite (honte → rage).
+    const angerReduction = Math.min(this._timesEscaped * REVENGE_COOLDOWN_REDUCTION, SPAWN_COOLDOWN_MIN_S - 8);
+    this._cooldown = Math.max(8, SPAWN_COOLDOWN_MIN_S - angerReduction + Math.random() * (SPAWN_COOLDOWN_MAX_S - SPAWN_COOLDOWN_MIN_S) * 0.5);
   }
 
   _escaped(hud) {
+    this._timesEscaped++;
     this._score += BONUS_ESCAPE;
-    if (hud) hud.showMessage(`Vous avez semé LE SPECTRE ! (+${BONUS_ESCAPE})`, 2800);
+    const msg = this._timesEscaped > 1
+      ? `Le Spectre humilié x${this._timesEscaped} ! (+${BONUS_ESCAPE}) Il revient plus vite…`
+      : `Vous avez semé LE SPECTRE ! (+${BONUS_ESCAPE})`;
+    if (hud) hud.showMessage(msg, 2800);
     this._despawn();
   }
 
   _caught(hud) {
-    if (hud) hud.showMessage('LE SPECTRE vous a rattrapé... à la prochaine !', 2800);
+    this._timesCaught++;
+    if (hud) hud.showMessage('LE SPECTRE vous a rattrapé… il reviendra.', 2800);
     this._despawn();
   }
 }
