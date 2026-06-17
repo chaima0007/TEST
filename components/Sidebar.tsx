@@ -191,6 +191,14 @@ function IconQuote({ className }: { className?: string }) {
   );
 }
 
+function IconSequence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 4a1 1 0 011-1h1a1 1 0 010 2H3a1 1 0 01-1-1zm4 0a1 1 0 011-1h10a1 1 0 110 2H7a1 1 0 01-1-1zM2 9a1 1 0 011-1h1a1 1 0 010 2H3a1 1 0 01-1-1zm4 0a1 1 0 011-1h10a1 1 0 110 2H7a1 1 0 01-1-1zM2 14a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm4 0a1 1 0 011-1h10a1 1 0 110 2H7a1 1 0 01-1-1z" />
+    </svg>
+  );
+}
+
 function IconSwarm({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -298,6 +306,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/campaigns", label: "Campagnes", icon: IconCalendar },
       { href: "/dashboard/memory", label: "Mémoire Prospects", icon: IconMemory },
       { href: "/dashboard/quotes", label: "Devis", icon: IconQuote },
+      { href: "/dashboard/sequences", label: "Séquences Outreach", icon: IconSequence },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
