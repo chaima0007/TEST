@@ -41,8 +41,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install pytest
-        run: pip install pytest
+      - name: Install dependencies
+        run: pip install pytest pytest-cov crewai langchain-anthropic anthropic
 
       - name: Run swarm tests
-        run: cd swarm && pytest tests/ -v --tb=short || true
+        run: cd swarm && pytest tests/ -v --tb=short --cov=. --cov-report=term-missing 2>&1 | head -200 || true
