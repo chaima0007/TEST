@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import type {
   Division,
   SwarmAgent,
@@ -351,6 +351,10 @@ export default function SwarmPage() {
   );
   const [triggerState, setTriggerState] = useState<"idle" | "running" | "done">("idle");
   const [history, setHistory] = useState<{ cycles: any[]; transactions: any[]; prospects: any[] } | null>(null);
+  const [liveRevenue, setLiveRevenue] = useState<number | null>(null);
+  const [liveAgents, setLiveAgents] = useState<number | null>(null);
+  const [streaming, setStreaming] = useState(false);
+  const esRef = useRef<EventSource | null>(null);
 
   useEffect(() => {
     fetch("/api/swarm")
@@ -360,6 +364,21 @@ export default function SwarmPage() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
+
+    const es = new EventSource("/api/swarm/stream");
+    esRef.current = es;
+    es.addEventListener("message", (e) => {
+      try {
+        const msg = JSON.parse(e.data);
+        if (msg.type === "connected") setStreaming(true);
+        if (msg.type === "tick") {
+          setLiveRevenue(msg.revenue);
+          setLiveAgents(msg.agentsActive);
+        }
+      } catch {}
+    });
+    es.onerror = () => setStreaming(false);
+    return () => { es.close(); setStreaming(false); };
   }, []);
 
   const triggerCycle = async () => {
@@ -402,8 +421,9 @@ export default function SwarmPage() {
         </div>
         <div className="flex items-center gap-3 flex-shrink-0">
           <span className="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
-            {m?.agentsActive ?? "—"} agents actifs
+            <span className={`w-1.5 h-1.5 rounded-full inline-block ${streaming ? "bg-green-400 animate-pulse" : "bg-slate-300"}`} />
+            {liveAgents ?? m?.agentsActive ?? "—"} agents actifs
+            {streaming && <span className="text-[9px] text-green-500 font-bold ml-1">LIVE</span>}
           </span>
           {m?.agentsError ? (
             <span className="flex items-center gap-1.5 text-[11px] text-red-500 font-medium">
@@ -433,7 +453,7 @@ export default function SwarmPage() {
           Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="h-20" />)
         ) : (
           <>
-            <MetricCard label="CA total" value={`${(m!.totalRevenue).toLocaleString("fr-FR")}€`} color="#059669" icon="💰" />
+            <MetricCard label="CA total" value={`${(liveRevenue ?? m!.totalRevenue).toLocaleString("fr-FR")}€`} color="#059669" icon="💰" />
             <MetricCard label="CA aujourd'hui" value="2 237€" color="#10B981" icon="📈" />
             <MetricCard label="Prospects/jour" value={m!.prospectsToday} unit="sites" color="#3B82F6" icon="🔍" />
             <MetricCard label="Emails envoyés" value={m!.emailsSent} unit="auj." color="#8B5CF6" icon="✍️" />
