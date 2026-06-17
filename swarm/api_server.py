@@ -23,6 +23,7 @@ from divisions.division_2_redaction import Division2Redaction
 from divisions.division_3_negotiation import Division3Negotiation, NegotiationThread
 from divisions.division_4_production import Division4Production
 from divisions.division_5_finance import Division5Finance
+from divisions.division_6_branding import Division6Branding
 from webhooks.stripe import stripe_router
 
 logging.basicConfig(level=logging.INFO)
@@ -50,6 +51,7 @@ _div2 = Division2Redaction()
 _div3 = Division3Negotiation()
 _div4 = Division4Production()
 _div5 = Division5Finance()
+_div6 = Division6Branding()
 
 # In-memory store (replace with Redis/DB in production)
 _active_threads: Dict[str, NegotiationThread] = {}
@@ -139,14 +141,16 @@ def _agent_status(agent_id: str, division: int) -> AgentStatusOut:
 def _division_status(div_id: int) -> DivisionStatusOut:
     meta = DIVISION_METADATA[div_id]
     agents = [_agent_status(f"{div_id}.{i}", div_id) for i in range(10)]
+    posts_count = len(_div6.get_all_content().get("linkedin_posts", []))
     kpi_map = {
         1: ("Prospects/jour", 847),
         2: ("Emails envoyés", 312),
         3: ("Taux de réponse", "23.4%"),
         4: ("Livrables/h", 7),
         5: ("CA aujourd'hui", f"{_div5.get_revenue():.0f}€"),
+        6: ("Posts LinkedIn", posts_count),
     }
-    kpi_label, kpi_value = kpi_map[div_id]
+    kpi_label, kpi_value = kpi_map.get(div_id, ("—", "—"))
     return DivisionStatusOut(
         id=div_id,
         name=meta["name"],
@@ -183,7 +187,7 @@ def get_status():
         revenue_today=_div5.get_revenue(),
         transactions_today=_div5.get_transaction_count(),
         active_threads=len([t for t in _active_threads.values() if not t.closed]),
-        divisions=[_division_status(i) for i in range(1, 6)],
+        divisions=[_division_status(i) for i in range(1, 7)],
     )
 
 
@@ -299,6 +303,20 @@ def get_financial_report():
 def process_opt_out(domain: str):
     _div5.process_opt_out(domain)
     return {"status": "blacklisted", "domain": domain}
+
+
+@app.get("/branding/content", tags=["Branding"])
+def get_branding_content():
+    """Division 6 — LinkedIn posts, CV entries, and case studies."""
+    return _div6.get_all_content()
+
+
+@app.post("/branding/generate", tags=["Branding"])
+def generate_branding_content(trigger: str = "cycle_complete"):
+    """Division 6 — Generate a new LinkedIn post for the given event trigger."""
+    metrics = {"prospects": 847, "emails": 312, "negotiations": 28, "revenue": 2237}
+    post = _div6.generate_linkedin_post(trigger=trigger, metrics=metrics)
+    return post.to_dict()
 
 
 @app.get("/abtesting/report", tags=["Intelligence"])
