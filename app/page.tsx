@@ -59,10 +59,10 @@ export default function Home() {
             <a href="#pricing" className="hover:text-slate-900">Tarifs</a>
           </div>
           <Link
-            href="/dashboard"
+            href="/login"
             className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
           >
-            Accéder au Dashboard
+            Se connecter
           </Link>
         </div>
       </nav>
@@ -81,7 +81,7 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/dashboard"
+            href="/login"
             className="bg-indigo-600 text-white px-8 py-3.5 rounded-lg text-base font-semibold hover:bg-indigo-700 transition-colors"
           >
             Commencer gratuitement

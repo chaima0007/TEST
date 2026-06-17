@@ -1,0 +1,97 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id          String       @id @default(cuid())
+  email       String       @unique
+  name        String
+  password    String
+  company     String?
+  createdAt   DateTime     @default(now())
+  competitors Competitor[]
+  alerts      Alert[]
+  reports     Report[]
+}
+
+model Competitor {
+  id          String        @id @default(cuid())
+  name        String
+  website     String
+  industry    String
+  description String
+  threatLevel String        @default("medium")
+  logo        String
+  color       String        @default("#4F46E5")
+  founded     Int?
+  employees   String?
+  revenue     String?
+  marketShare Float         @default(0)
+  lastUpdated String
+  userId      String
+  user        User          @relation(fields: [userId], references: [id])
+  pricingPlans PricingPlan[]
+  features    Feature[]
+  news        CompetitorNews[]
+  alerts      Alert[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model PricingPlan {
+  id           String     @id @default(cuid())
+  name         String
+  price        Float
+  currency     String     @default("€")
+  interval     String     @default("mois")
+  features     String
+  competitorId String
+  competitor   Competitor @relation(fields: [competitorId], references: [id], onDelete: Cascade)
+}
+
+model Feature {
+  id           String     @id @default(cuid())
+  name         String
+  available    Boolean    @default(true)
+  quality      String     @default("Bien")
+  competitorId String
+  competitor   Competitor @relation(fields: [competitorId], references: [id], onDelete: Cascade)
+}
+
+model CompetitorNews {
+  id           String     @id @default(cuid())
+  date         String
+  title        String
+  type         String
+  competitorId String
+  competitor   Competitor @relation(fields: [competitorId], references: [id], onDelete: Cascade)
+}
+
+model Alert {
+  id           String     @id @default(cuid())
+  type         String
+  message      String
+  isRead       Boolean    @default(false)
+  competitorId String?
+  competitor   Competitor? @relation(fields: [competitorId], references: [id], onDelete: SetNull)
+  userId       String
+  user         User       @relation(fields: [userId], references: [id])
+  createdAt    DateTime   @default(now())
+}
+
+model Report {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  pages       Int      @default(10)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now())
+}
