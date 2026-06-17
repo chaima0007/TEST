@@ -12,6 +12,7 @@ from typing import Dict, List, Optional
 from config import DIVISION_3
 from agents.base import SwarmAgent
 from agents.tools import resolve_tools
+from intelligence.sentiment_router import SentimentRouter
 
 logger = logging.getLogger("Division3")
 
@@ -69,12 +70,34 @@ class Division3Negotiation:
         self.agents = [SwarmAgent(cfg, resolve_tools(cfg.tools)) for cfg in DIVISION_3]
         self.manager = next(a for a in self.agents if a.is_manager)
         self.negotiators = {a.id: a for a in self.agents if not a.is_manager}
+        self.sentiment_router = SentimentRouter()
         logger.info(f"Division 3 initialised — {len(self.negotiators)} negotiators ready")
 
     def route(self, sentiment: str) -> SwarmAgent:
         """Route an inbound reply to the appropriate negotiator."""
         target_id = SENTIMENT_ROUTING.get(sentiment, "3.5")
         return self.negotiators.get(target_id, self.negotiators["3.5"])
+
+    def analyze_and_open_thread(
+        self,
+        company_id: str,
+        prospect_name: str,
+        sector: str,
+        initial_message: str,
+    ) -> NegotiationThread:
+        """Analyze raw prospect text, detect sentiment, then open a routed thread."""
+        result = self.sentiment_router.analyze(initial_message)
+        logger.info(
+            f"[Div3] Sentiment detected: {result.sentiment} "
+            f"(confidence={result.confidence:.2f}, keywords={result.keywords_matched})"
+        )
+        return self.open_thread(
+            company_id=company_id,
+            prospect_name=prospect_name,
+            sector=sector,
+            initial_message=initial_message,
+            sentiment=result.sentiment,
+        )
 
     def open_thread(
         self,

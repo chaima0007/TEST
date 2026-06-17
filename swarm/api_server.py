@@ -110,7 +110,7 @@ class InboundReplyIn(BaseModel):
     prospect_name: str
     sector: str
     message: str
-    sentiment: str
+    sentiment: Optional[str] = None  # if omitted, auto-detected by SentimentRouter
 
 
 class PaymentConfirmIn(BaseModel):
@@ -232,13 +232,21 @@ def handle_inbound_reply(payload: InboundReplyIn):
     if _div5.is_blacklisted(payload.company_id):
         return {"status": "blacklisted", "action": "ignored"}
 
-    thread = _div3.open_thread(
-        company_id=payload.company_id,
-        prospect_name=payload.prospect_name,
-        sector=payload.sector,
-        initial_message=payload.message,
-        sentiment=payload.sentiment,
-    )
+    if payload.sentiment:
+        thread = _div3.open_thread(
+            company_id=payload.company_id,
+            prospect_name=payload.prospect_name,
+            sector=payload.sector,
+            initial_message=payload.message,
+            sentiment=payload.sentiment,
+        )
+    else:
+        thread = _div3.analyze_and_open_thread(
+            company_id=payload.company_id,
+            prospect_name=payload.prospect_name,
+            sector=payload.sector,
+            initial_message=payload.message,
+        )
 
     stripe_link = _div5.create_stripe_link(payload.company_id, payload.sector)
     thread.stripe_link = stripe_link.url
@@ -291,6 +299,19 @@ def get_financial_report():
 def process_opt_out(domain: str):
     _div5.process_opt_out(domain)
     return {"status": "blacklisted", "domain": domain}
+
+
+@app.get("/abtesting/report", tags=["Intelligence"])
+def get_ab_report():
+    """Division 2 — Current A/B test performance across 9 copywriting tones."""
+    return _div2.get_ab_report()
+
+
+@app.post("/abtesting/record", tags=["Intelligence"])
+def record_ab_result(agent_id: str, opened: bool = False, replied: bool = False, paid: bool = False):
+    """Feed email outcome back to Thompson Sampling posteriors."""
+    _div2.record_reply(agent_id, opened=opened, replied=replied, paid=paid)
+    return {"status": "recorded", "agent_id": agent_id}
 
 
 @app.get("/agents", tags=["Agents"])
