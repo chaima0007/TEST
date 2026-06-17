@@ -77,6 +77,9 @@ export class Vehicle {
     this.steerAngle = 0;
     this._impactIntensity = 0;
     this._gripFactor = 1.0;
+    this._lateralSpeed = 0; // sideways slide velocity (m/s)
+    this._handbrakeActive = false;
+    this._boostMultiplier = 1.0; // set externally by nitro system
   }
 
   setGripFactor(f) {
@@ -124,7 +127,26 @@ export class Vehicle {
       }
     }
 
-    this.speed = clamp(this.speed, -MAX_REVERSE_MS, MAX_SPEED_MS);
+    this.speed = clamp(this.speed, -MAX_REVERSE_MS, MAX_SPEED_MS * this._boostMultiplier);
+
+    // Drift/slide model: handbrake + steering builds lateral velocity
+    this._handbrakeActive = handbrake;
+    const LATERAL_BUILDUP = 9;
+    const LATERAL_GRIP = 14;
+    let steerInputVal = 0;
+    if (left) steerInputVal += 1;
+    if (right) steerInputVal -= 1;
+    if (handbrake && Math.abs(this.speed) > 8) {
+      this._lateralSpeed -= steerInputVal * LATERAL_BUILDUP * dt * this._gripFactor;
+    } else {
+      const lateralDrop = LATERAL_GRIP * dt;
+      if (Math.abs(this._lateralSpeed) <= lateralDrop) {
+        this._lateralSpeed = 0;
+      } else {
+        this._lateralSpeed -= Math.sign(this._lateralSpeed) * lateralDrop;
+      }
+    }
+    this._lateralSpeed = clamp(this._lateralSpeed, -MAX_SPEED_MS * 0.45, MAX_SPEED_MS * 0.45);
 
     // --- Steering --------------------------------------------------------
     // Steering authority scales down at low speed so the car can't spin in
@@ -165,8 +187,10 @@ export class Vehicle {
     const dirX = Math.sin(this.heading);
     const dirZ = Math.cos(this.heading);
 
-    let nextX = this.mesh.position.x + dirX * this.speed * dt;
-    let nextZ = this.mesh.position.z + dirZ * this.speed * dt;
+    const perpX = Math.cos(this.heading);
+    const perpZ = -Math.sin(this.heading);
+    let nextX = this.mesh.position.x + dirX * this.speed * dt + perpX * this._lateralSpeed * dt;
+    let nextZ = this.mesh.position.z + dirZ * this.speed * dt + perpZ * this._lateralSpeed * dt;
 
     // --- Collision resolution: treat car as a circle vs AABB colliders ---
     if (colliders && colliders.length) {
@@ -252,4 +276,8 @@ export class Vehicle {
   getImpactIntensity() {
     return this._impactIntensity;
   }
+
+  getLateralSpeed() { return this._lateralSpeed; }
+  isHandbraking()   { return this._handbrakeActive; }
+  setBoostMultiplier(m) { this._boostMultiplier = Math.max(1.0, Math.min(2.0, m)); }
 }

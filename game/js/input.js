@@ -4,6 +4,7 @@ const KEYMAP = {
   left: ['KeyA', 'ArrowLeft'],
   right: ['KeyD', 'ArrowRight'],
   brake: ['Space'],
+  nitro: ['KeyN'],
 };
 
 const TOUCH_STYLE = `

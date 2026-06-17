@@ -13,6 +13,8 @@ import { ComboSystem } from './combo.js';
 import { DayCycle } from './daycycle.js';
 import { WeatherSystem } from './weather.js';
 import { FantomeSystem } from './fantome.js';
+import { DriftSystem } from './drift.js';
+import { NitroSystem } from './nitro.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -45,6 +47,8 @@ const audio = new AudioSystem();
 const dayCycle = new DayCycle(scene, sun, ambientLight);
 const weather = new WeatherSystem(scene);
 const fantome = new FantomeSystem(scene, world);
+const drift = new DriftSystem();
+const nitro = new NitroSystem(scene);
 
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -79,7 +83,9 @@ function animate() {
   vehicle.setGripFactor(weather.getGripFactor());
 
   // --- Gameplay ---
-  vehicle.update(dt, input, world.colliders.concat(traffic.getColliders()));
+  // Nitro boost + grip
+  vehicle.setBoostMultiplier(nitro.getBoostMultiplier());
+  vehicle.update(dt, input, world.colliders.concat(traffic.getColliders(), wanted.getRoadblockColliders()));
   updateFollowCamera(camera, vehicle, dt);
   missions.update(dt, vehicle);
   wanted.update(dt, vehicle, hud);
@@ -89,6 +95,12 @@ function animate() {
 
   const playerPos = vehicle.getPosition();
   combo.update(dt, playerPos, traffic.getCarPositions());
+  drift.update(dt, vehicle);
+  nitro.update(dt, playerPos, input);
+
+  // Lampadaires : s'allument la nuit
+  const nightIntensity = dayCycle.isNight() ? 1.4 : 0;
+  for (const lamp of world.streetLamps) lamp.material.emissiveIntensity = nightIntensity;
 
   // --- HUD ---
   hud.setCombo(combo.getMultiplier());
@@ -107,7 +119,7 @@ function animate() {
 
   hud.setSpeed(vehicle.getSpeedKmh());
 
-  const totalScore = missions.getScore() + rival.getScore() + combo.getScore() + fantome.getScore();
+  const totalScore = missions.getScore() + rival.getScore() + combo.getScore() + fantome.getScore() + drift.getScore();
   hud.setScore(totalScore);
 
   // --- Panneau agents temps réel ---
@@ -153,11 +165,16 @@ function animate() {
     },
     trafic: {
       active: true,
-      status: `Combo x${combo.getMultiplier()} | ${Math.round(vehicle.getSpeedKmh())} km/h`,
-      bar: combo.getMultiplier() / 5,
-      color: combo.getMultiplier() >= 3 ? '#ff9944' : '#55cc88',
+      status: drift.isDrifting()
+        ? `DRIFT ${Math.round(drift.getDriftAngle())}° +${drift.getSessionScore()}`
+        : `Combo x${combo.getMultiplier()} | ${Math.round(vehicle.getSpeedKmh())} km/h`,
+      bar: drift.isDrifting() ? Math.min(1, drift.getSessionScore() / 300) : combo.getMultiplier() / 5,
+      color: drift.isDrifting() ? '#ff6622' : combo.getMultiplier() >= 3 ? '#ff9944' : '#55cc88',
     },
   });
+
+  hud.setNitro(nitro.getCharges(), nitro.isBoostActive());
+  hud.setDrift(drift.isDrifting(), drift.getDriftAngle(), drift.getSessionScore());
 
   // --- Audio ---
   audio.setEngineIntensity(Math.min(1, Math.abs(vehicle.getSpeedKmh()) / MAX_SPEED_KMH));

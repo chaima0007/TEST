@@ -207,6 +207,69 @@ class Helicopter {
   }
 }
 
+function buildBarrierMesh() {
+  const group = new THREE.Group();
+  const orangeMat = new THREE.MeshStandardMaterial({ color: 0xff6600, emissive: 0xff3300, emissiveIntensity: 0.3 });
+  const whiteMat  = new THREE.MeshStandardMaterial({ color: 0xeeeeee });
+  const baseMat   = new THREE.MeshStandardMaterial({ color: 0x222222 });
+
+  const bar = new THREE.Mesh(new THREE.BoxGeometry(4.0, 1.0, 0.3), orangeMat);
+  bar.position.y = 0.8;
+  group.add(bar);
+  for (const xOff of [-1.5, 0, 1.5]) {
+    const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.02, 0.32), whiteMat);
+    stripe.position.set(xOff, 0.8, 0);
+    group.add(stripe);
+  }
+  const base = new THREE.Mesh(new THREE.BoxGeometry(4.2, 0.2, 0.6), baseMat);
+  base.position.y = 0.1;
+  group.add(base);
+  return group;
+}
+
+class Roadblock {
+  constructor(scene, playerPos, playerHeading) {
+    this.scene = scene;
+    this.barriers = [];
+    this.colliders = [];
+    this.timer = 50;
+
+    const angle = playerHeading + (Math.random() - 0.5) * 0.4;
+    const dist  = 55 + Math.random() * 25;
+    const cx = playerPos.x + Math.sin(angle) * dist;
+    const cz = playerPos.z + Math.cos(angle) * dist;
+
+    const count  = 2 + Math.floor(Math.random() * 2); // 2-3 barrières
+    const perpX  = Math.cos(angle);
+    const perpZ  = -Math.sin(angle);
+    const SPACING = 3.8;
+
+    for (let i = 0; i < count; i++) {
+      const off = (i - (count - 1) / 2) * SPACING;
+      const bx = cx + perpX * off;
+      const bz = cz + perpZ * off;
+
+      const mesh = buildBarrierMesh();
+      mesh.position.set(bx, 0, bz);
+      mesh.rotation.y = angle + Math.PI / 2;
+      scene.add(mesh);
+      this.barriers.push(mesh);
+      this.colliders.push({ x: bx, z: bz, halfWidth: 2.1, halfDepth: 0.5 });
+    }
+  }
+
+  getColliders() { return this.colliders; }
+
+  dispose() {
+    for (const mesh of this.barriers) {
+      this.scene.remove(mesh);
+      mesh.traverse((o) => { if (o.geometry) o.geometry.dispose(); if (o.material) o.material.dispose(); });
+    }
+    this.barriers = [];
+    this.colliders = [];
+  }
+}
+
 class PoliceCar {
   constructor(scene, x, z, heading) {
     this.mesh = buildPoliceCarMesh();
@@ -272,6 +335,9 @@ export class WantedSystem {
     this._crashCooldown = 0;
     this._prevSpeedKmh = 0;
     this._helicopter = null;
+    this._roadblocks = [];
+    this._extraRoadblockTimer = 0;
+    this._lastPlayerHeading = 0;
 
     this.cars = [];
   }
@@ -279,6 +345,7 @@ export class WantedSystem {
   _setLevel(newLevel, hud) {
     const clamped = Math.max(0, Math.min(MAX_LEVEL, newLevel));
     if (clamped === this.level) return;
+    const prevLevel = this.level;
     this.level = clamped;
     if (hud) hud.setWanted(this.level);
     this._syncCarCount();
@@ -289,6 +356,13 @@ export class WantedSystem {
     } else if (clamped < 4 && this._helicopter) {
       this._helicopter.dispose();
       this._helicopter = null;
+    }
+    // Barrages : spawn au passage de 2→3, clear si on descend sous 3
+    if (clamped >= 3 && prevLevel < 3 && this._lastPlayerPos) {
+      this._roadblocks.push(new Roadblock(this.scene, this._lastPlayerPos, this._lastPlayerHeading));
+    } else if (clamped < 3) {
+      for (const rb of this._roadblocks) rb.dispose();
+      this._roadblocks = [];
     }
   }
 
@@ -331,6 +405,7 @@ export class WantedSystem {
 
     const pos = vehicle.getPosition();
     this._lastPlayerPos = pos;
+    this._lastPlayerHeading = typeof vehicle.getHeading === 'function' ? vehicle.getHeading() : 0;
     const speedKmh = typeof vehicle.getSpeedKmh === 'function' ? vehicle.getSpeedKmh() : 0;
 
     this._crashCooldown = Math.max(0, this._crashCooldown - dt);
@@ -383,5 +458,29 @@ export class WantedSystem {
     if (this._helicopter) {
       this._helicopter.update(dt, pos);
     }
+
+    // Barrages : timer + spawn supplémentaire au niveau 5
+    for (let i = this._roadblocks.length - 1; i >= 0; i--) {
+      this._roadblocks[i].timer -= dt;
+      if (this._roadblocks[i].timer <= 0) {
+        this._roadblocks[i].dispose();
+        this._roadblocks.splice(i, 1);
+      }
+    }
+    if (this.level === 5 && this._lastPlayerPos) {
+      this._extraRoadblockTimer += dt;
+      if (this._extraRoadblockTimer >= 22) {
+        this._roadblocks.push(new Roadblock(this.scene, this._lastPlayerPos, this._lastPlayerHeading));
+        this._extraRoadblockTimer = 0;
+      }
+    } else {
+      this._extraRoadblockTimer = 0;
+    }
+  }
+
+  getRoadblockColliders() {
+    const result = [];
+    for (const rb of this._roadblocks) result.push(...rb.getColliders());
+    return result;
   }
 }

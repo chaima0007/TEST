@@ -172,12 +172,11 @@ export function createWorld(scene) {
   const poleGeo = new THREE.BoxGeometry(0.25, 5, 0.25);
   const poleMat = new THREE.MeshLambertMaterial({ color: 0x33363b });
   const lampGeo = new THREE.BoxGeometry(0.6, 0.3, 0.6);
-  const lampMat = new THREE.MeshLambertMaterial({ color: 0xfff3c4 });
+  // MeshStandardMaterial pour activer l'emissive la nuit
+  const streetLamps = [];
 
   for (let i = 0; i <= CITY_SIZE; i++) {
     for (let j = 0; j <= CITY_SIZE; j++) {
-      // Un lampadaire à certains carrefours, en retrait du croisement
-      // (placé sur le trottoir, pas sur la route elle-même).
       if ((i + j) % 2 !== 0) continue;
       const x = -HALF_CITY + CELL * i + ROAD_WIDTH / 2 + 0.8;
       const z = -HALF_CITY + CELL * j + ROAD_WIDTH / 2 + 0.8;
@@ -186,9 +185,11 @@ export function createWorld(scene) {
       pole.position.set(x, 2.5, z);
       scene.add(pole);
 
+      const lampMat = new THREE.MeshStandardMaterial({ color: 0xfff3c4, emissive: 0xffee99, emissiveIntensity: 0 });
       const lamp = new THREE.Mesh(lampGeo, lampMat);
       lamp.position.set(x, 5, z);
       scene.add(lamp);
+      streetLamps.push(lamp);
     }
   }
 
@@ -216,9 +217,7 @@ export function createWorld(scene) {
     colliders,
     spawnPoint,
     missionLocations,
-    // Lignes de routes (mêmes coordonnées que roadXs/roadZs ci-dessus), exposées
-    // pour les systèmes d'IA simple (trafic, piétons) qui doivent savoir où sont
-    // les rues sans dupliquer la formule de grille.
+    streetLamps, // MeshStandardMaterial refs — main.js met emissiveIntensity la nuit
     roadLines: {
       xs: roadXs.slice(),
       zs: roadZs.slice(),

@@ -249,6 +249,57 @@ const STYLE = `
   opacity: 1;
 }
 
+#hud-nitro {
+  position: fixed;
+  bottom: 170px;
+  right: 22px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.nitro-charge {
+  width: 14px;
+  height: 28px;
+  border-radius: 3px;
+  background: rgba(0, 200, 255, 0.25);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nitro-charge.full {
+  background: rgba(0, 220, 255, 0.85);
+  box-shadow: 0 0 8px rgba(0, 220, 255, 0.8);
+}
+
+.nitro-charge.boost {
+  background: rgba(0, 255, 200, 1);
+  box-shadow: 0 0 14px rgba(0, 255, 200, 1);
+  animation: nitro-pulse 0.25s ease infinite alternate;
+}
+
+@keyframes nitro-pulse {
+  0%  { box-shadow: 0 0 8px rgba(0,255,200,0.8); }
+  100%{ box-shadow: 0 0 20px rgba(0,255,200,1); }
+}
+
+#hud-drift {
+  position: fixed;
+  bottom: 130px;
+  right: 22px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #ff6622;
+  text-shadow: 0 0 10px rgba(255,102,34,0.9);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  letter-spacing: 1px;
+}
+
+#hud-drift.active {
+  opacity: 1;
+}
+
 #hud-clock {
   position: fixed;
   top: 16px;
@@ -447,8 +498,26 @@ export class HUD {
     this.overlay.appendChild(this.pauseEl);
     this.overlay.appendChild(this.radarCanvas);
     this.overlay.appendChild(this.comboEl);
+    // Nitro charges UI
+    this.nitroEl = document.createElement('div');
+    this.nitroEl.id = 'hud-nitro';
+    this._nitroChargeEls = [];
+    for (let i = 0; i < 3; i++) {
+      const c = document.createElement('div');
+      c.className = 'nitro-charge';
+      this.nitroEl.appendChild(c);
+      this._nitroChargeEls.push(c);
+    }
+
+    // Drift indicator
+    this.driftEl = document.createElement('div');
+    this.driftEl.id = 'hud-drift';
+    this.driftEl.textContent = '';
+
     this.overlay.appendChild(this.clockEl);
     this.overlay.appendChild(this.agentsEl);
+    this.overlay.appendChild(this.nitroEl);
+    this.overlay.appendChild(this.driftEl);
     this.root.appendChild(this.overlay);
 
     this._wantedLevel = 0;
@@ -538,6 +607,21 @@ export class HUD {
     this._toastRemoveTimer = setTimeout(() => {
       this.toastEl.textContent = '';
     }, Math.max(0, durationMs) + 300);
+  }
+
+  setNitro(charges, boostActive) {
+    this._nitroChargeEls.forEach((el, i) => {
+      el.className = 'nitro-charge' + (i < charges ? (boostActive ? ' boost' : ' full') : '');
+    });
+  }
+
+  setDrift(isDrifting, angleDeg, sessionScore) {
+    if (isDrifting) {
+      this.driftEl.textContent = `DRIFT ${Math.round(angleDeg)}°  +${sessionScore}`;
+      this.driftEl.classList.add('active');
+    } else {
+      this.driftEl.classList.remove('active');
+    }
   }
 
   setTime(timeString) {
