@@ -7,6 +7,13 @@ import { competitors } from "@/lib/data";
 import { useToast } from "@/components/Toast";
 
 type ThreatLevel = "high" | "medium" | "low";
+type TabId = "apercu" | "fonctionnalites" | "tarifs" | "actualites";
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return dateStr;
+  return d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+}
 
 function formatShortDate(dateStr: string) {
   const d = new Date(dateStr);
@@ -14,26 +21,38 @@ function formatShortDate(dateStr: string) {
   return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
 }
 
-const newsTypeColors: Record<string, string> = {
-  product: "bg-indigo-100 text-indigo-700",
-  pricing: "bg-amber-100 text-amber-700",
-  acquisition: "bg-rose-100 text-rose-700",
-  partnership: "bg-emerald-100 text-emerald-700",
+const newsTypeConfig: Record<string, { label: string; cls: string }> = {
+  product:     { label: "Produit",      cls: "bg-indigo-50 text-indigo-700 border border-indigo-100" },
+  pricing:     { label: "Tarifs",       cls: "bg-amber-50 text-amber-700 border border-amber-100" },
+  acquisition: { label: "Acquisition",  cls: "bg-rose-50 text-rose-700 border border-rose-100" },
+  partnership: { label: "Partenariat",  cls: "bg-emerald-50 text-emerald-700 border border-emerald-100" },
 };
 
-const newsTypeLabels: Record<string, string> = {
-  product: "Produit", pricing: "Tarifs", acquisition: "Acquisition", partnership: "Partenariat",
+const threatConfig: Record<ThreatLevel, { label: string; badge: string; dot: string; ring: string }> = {
+  high:   { label: "Menace Élevée",  badge: "bg-red-50 text-red-700 border border-red-200",     dot: "bg-red-500",     ring: "ring-red-200" },
+  medium: { label: "Menace Moyenne", badge: "bg-amber-50 text-amber-700 border border-amber-200", dot: "bg-amber-500",   ring: "ring-amber-200" },
+  low:    { label: "Menace Faible",  badge: "bg-emerald-50 text-emerald-700 border border-emerald-200", dot: "bg-emerald-500", ring: "ring-emerald-200" },
 };
 
-const threatLabels: Record<ThreatLevel, string> = { high: "Élevée", medium: "Moyenne", low: "Faible" };
-const threatColors: Record<ThreatLevel, string> = {
-  high: "bg-red-100 text-red-700", medium: "bg-amber-100 text-amber-700", low: "bg-emerald-100 text-emerald-700",
+const qualityConfig: Record<string, string> = {
+  Excellent: "bg-emerald-50 text-emerald-700 border border-emerald-100",
+  Bien:      "bg-indigo-50 text-indigo-700 border border-indigo-100",
+  Moyen:     "bg-amber-50 text-amber-700 border border-amber-100",
 };
+
+const tabs: { id: TabId; label: string }[] = [
+  { id: "apercu",         label: "Aperçu" },
+  { id: "fonctionnalites", label: "Fonctionnalités" },
+  { id: "tarifs",         label: "Tarifs" },
+  { id: "actualites",     label: "Actualités" },
+];
 
 export default function CompetitorDetailPage(props: PageProps<"/dashboard/competitors/[id]">) {
   const { id } = use(props.params);
   const router = useRouter();
   const { toast } = useToast();
+
+  const [activeTab, setActiveTab] = useState<TabId>("apercu");
   const [deleting, setDeleting] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
@@ -50,7 +69,11 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
     threatLevel: competitor.threatLevel as ThreatLevel,
   });
 
-  const maxPrice = competitor.priceHistory.length ? Math.max(...competitor.priceHistory) : 0;
+  const threatLevel = competitor.threatLevel as ThreatLevel;
+  const threat = threatConfig[threatLevel];
+  const priceHistory = competitor.priceHistory;
+  const maxPrice = priceHistory.length ? Math.max(...priceHistory) : 0;
+  const minPrice = priceHistory.length ? Math.min(...priceHistory) : 0;
 
   const handleDelete = async () => {
     setDeleting(true);
@@ -93,38 +116,32 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
     }
   };
 
-  const threatLevel = competitor.threatLevel as ThreatLevel;
+  const months = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jun", "Jul", "Aoû", "Sep", "Oct", "Nov", "Déc"];
 
   return (
     <div className="space-y-6">
-      {/* Header bar */}
-      <div className="flex items-center justify-between flex-wrap gap-2">
-        <Link href="/dashboard/competitors" className="text-sm text-slate-500 hover:text-slate-900 flex items-center gap-1 transition-colors">
-          ← Retour aux concurrents
-        </Link>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setShowEdit(true)}
-            className="text-sm text-indigo-600 border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50 px-3 py-1.5 rounded-lg transition-colors"
-          >
-            Modifier
-          </button>
-          <button
-            onClick={() => setShowConfirm(true)}
-            className="text-sm text-red-500 hover:text-red-700 border border-red-200 hover:border-red-400 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors"
-          >
-            Supprimer
-          </button>
-        </div>
-      </div>
 
       {/* Edit modal */}
       {showEdit && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+          onClick={(e) => { if (e.target === e.currentTarget) setShowEdit(false); }}
+        >
           <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl w-full max-w-md">
             <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
-              <h3 className="font-semibold text-slate-900">Modifier {competitor.name}</h3>
-              <button onClick={() => setShowEdit(false)} className="text-slate-400 hover:text-slate-600 text-xl leading-none transition-colors">×</button>
+              <div>
+                <h3 className="font-semibold text-slate-900">Modifier {competitor.name}</h3>
+                <p className="text-xs text-slate-400 mt-0.5">Modifiez les informations du concurrent</p>
+              </div>
+              <button
+                onClick={() => setShowEdit(false)}
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <line x1="1" y1="1" x2="13" y2="13" />
+                  <line x1="13" y1="1" x2="1" y2="13" />
+                </svg>
+              </button>
             </div>
             <form onSubmit={handleEdit} className="p-6 space-y-4">
               {[
@@ -133,7 +150,7 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
                 { label: "Secteur", key: "industry" as const, type: "text", required: false },
               ].map((f) => (
                 <div key={f.key}>
-                  <label className="block text-xs font-medium text-slate-600 mb-1">
+                  <label className="block text-xs font-medium text-slate-600 mb-1.5">
                     {f.label}{f.required && <span className="text-red-500 ml-0.5">*</span>}
                   </label>
                   <input
@@ -141,25 +158,25 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
                     value={editForm[f.key]}
                     onChange={(e) => setEditForm((prev) => ({ ...prev, [f.key]: e.target.value }))}
                     required={f.required}
-                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
                   />
                 </div>
               ))}
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">Description</label>
+                <label className="block text-xs font-medium text-slate-600 mb-1.5">Description</label>
                 <textarea
                   value={editForm.description}
                   onChange={(e) => setEditForm((prev) => ({ ...prev, description: e.target.value }))}
                   rows={2}
-                  className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                  className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none transition-shadow"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-slate-600 mb-1">Niveau de menace</label>
+                <label className="block text-xs font-medium text-slate-600 mb-1.5">Niveau de menace</label>
                 <select
                   value={editForm.threatLevel}
                   onChange={(e) => setEditForm((prev) => ({ ...prev, threatLevel: e.target.value as ThreatLevel }))}
-                  className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white transition-shadow"
                 >
                   <option value="low">Faible</option>
                   <option value="medium">Moyenne</option>
@@ -167,11 +184,19 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
                 </select>
               </div>
               <div className="flex gap-3 pt-1">
-                <button type="submit" disabled={saving} className="flex-1 bg-indigo-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-indigo-700 disabled:opacity-60 flex items-center justify-center gap-2 transition-colors">
-                  {saving && <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="flex-1 bg-indigo-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-indigo-700 disabled:opacity-60 flex items-center justify-center gap-2 transition-colors"
+                >
+                  {saving && <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
                   {saving ? "Sauvegarde..." : "Sauvegarder"}
                 </button>
-                <button type="button" onClick={() => setShowEdit(false)} className="flex-1 border border-slate-200 text-slate-600 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-colors">
+                <button
+                  type="button"
+                  onClick={() => setShowEdit(false)}
+                  className="px-4 border border-slate-200 text-slate-600 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-colors"
+                >
                   Annuler
                 </button>
               </div>
@@ -180,21 +205,36 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
         </div>
       )}
 
-      {/* Delete confirmation */}
+      {/* Delete confirmation modal */}
       {showConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+          onClick={(e) => { if (e.target === e.currentTarget && !deleting) setShowConfirm(false); }}
+        >
           <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl w-full max-w-sm p-6 text-center">
-            <div className="text-4xl mb-4">⚠️</div>
-            <h3 className="font-semibold text-slate-900 mb-2">Supprimer {competitor.name} ?</h3>
-            <p className="text-sm text-slate-500 mb-6">
-              Cette action est irréversible. Toutes les données associées seront supprimées.
+            <div className="w-12 h-12 rounded-full bg-red-50 border border-red-100 flex items-center justify-center mx-auto mb-4">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#dc2626" strokeWidth="2" strokeLinecap="round">
+                <path d="M10 6v4M10 14h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="font-semibold text-slate-900 mb-1.5">Supprimer {competitor.name} ?</h3>
+            <p className="text-sm text-slate-500 mb-6 leading-relaxed">
+              Cette action est irréversible. Toutes les données associées à ce concurrent seront supprimées définitivement.
             </p>
             <div className="flex gap-3">
-              <button onClick={handleDelete} disabled={deleting} className="flex-1 bg-red-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 disabled:opacity-60 flex items-center justify-center gap-2 transition-colors">
-                {deleting && <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
-                {deleting ? "Suppression..." : "Supprimer"}
+              <button
+                onClick={handleDelete}
+                disabled={deleting}
+                className="flex-1 bg-red-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 disabled:opacity-60 flex items-center justify-center gap-2 transition-colors"
+              >
+                {deleting && <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
+                {deleting ? "Suppression..." : "Supprimer définitivement"}
               </button>
-              <button onClick={() => setShowConfirm(false)} disabled={deleting} className="flex-1 border border-slate-200 text-slate-600 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-colors">
+              <button
+                onClick={() => setShowConfirm(false)}
+                disabled={deleting}
+                className="px-4 border border-slate-200 text-slate-600 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 disabled:opacity-60 transition-colors"
+              >
                 Annuler
               </button>
             </div>
@@ -202,145 +242,369 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
         </div>
       )}
 
-      {/* Header card */}
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
-        <div className="flex items-start gap-4">
+      {/* Top nav */}
+      <div className="flex items-center justify-between flex-wrap gap-2">
+        <Link
+          href="/dashboard/competitors"
+          className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-900 transition-colors"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 1L3 7l6 6" />
+          </svg>
+          Retour aux concurrents
+        </Link>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setShowEdit(true)}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50 px-3 py-1.5 rounded-lg transition-colors"
+          >
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M8.5 1.5l2 2-7 7H1.5v-2l7-7z" />
+            </svg>
+            Modifier
+          </button>
+          <button
+            onClick={() => setShowConfirm(true)}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-red-500 border border-red-200 hover:border-red-400 hover:bg-red-50 px-3 py-1.5 rounded-lg transition-colors"
+          >
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1.5 3h9M4 3V2h4v1M5 5.5v4M7 5.5v4M2.5 3l.75 7.5h5.5L9.5 3" />
+            </svg>
+            Supprimer
+          </button>
+        </div>
+      </div>
+
+      {/* Profile header card */}
+      <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div className="flex items-start gap-5 flex-wrap sm:flex-nowrap">
+          {/* Logo */}
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0"
+            className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-xl font-bold flex-shrink-0 shadow-md"
             style={{ backgroundColor: competitor.color }}
           >
             {competitor.logo}
           </div>
+
+          {/* Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 flex-wrap">
-              <h2 className="text-2xl font-bold text-slate-900">{competitor.name}</h2>
-              <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${threatColors[threatLevel]}`}>
-                Menace {threatLabels[threatLevel]}
+              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">{competitor.name}</h2>
+              <span className={`inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full ${threat.badge}`}>
+                <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${threat.dot} ${threatLevel === "high" ? "animate-pulse" : ""}`} />
+                {threat.label}
               </span>
-              <a href={/^https?:\/\//.test(competitor.website) ? competitor.website : `https://${competitor.website}`}
-                className="text-sm text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer"
-                onClick={(e) => { try { new URL(/^https?:\/\//.test(competitor.website) ? competitor.website : `https://${competitor.website}`); } catch { e.preventDefault(); } }}>
-                {competitor.website} ↗
+            </div>
+            <div className="flex items-center gap-1.5 mt-1.5">
+              <a
+                href={/^https?:\/\//.test(competitor.website) ? competitor.website : `https://${competitor.website}`}
+                className="text-sm text-indigo-600 hover:text-indigo-800 hover:underline inline-flex items-center gap-1 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {competitor.website}
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 9L9 2M5 2h4v4" />
+                </svg>
               </a>
             </div>
-            <p className="text-slate-500 mt-1.5 text-sm leading-relaxed">{competitor.description}</p>
-            <div className="flex flex-wrap gap-x-6 gap-y-1 mt-3">
+            <p className="text-slate-500 mt-2 text-sm leading-relaxed max-w-2xl">{competitor.description}</p>
+            <div className="flex flex-wrap gap-x-6 gap-y-1.5 mt-3">
               {[
                 { label: "Fondé en", value: competitor.founded },
                 { label: "Employés", value: competitor.employees },
                 { label: "Revenue", value: competitor.revenue },
                 { label: "Part de marché", value: `${competitor.marketShare}%` },
               ].map((d) => (
-                <span key={d.label} className="text-xs text-slate-500">
-                  <span className="font-medium text-slate-700">{d.label}</span> {d.value}
+                <div key={d.label} className="text-xs text-slate-500">
+                  <span className="text-slate-400">{d.label} </span>
+                  <span className="font-semibold text-slate-700">{d.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Last updated — top right */}
+          <div className="text-right flex-shrink-0 hidden sm:block">
+            <p className="text-[10px] text-slate-400 uppercase tracking-wide">Dernière MAJ</p>
+            <p className="text-xs font-medium text-slate-600 mt-0.5">{formatDate(competitor.lastUpdated)}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="border-b border-slate-200">
+        <nav className="flex gap-0 -mb-px overflow-x-auto">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-5 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
+                activeTab === tab.id
+                  ? "border-indigo-600 text-indigo-600"
+                  : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      {/* Tab: Apercu */}
+      {activeTab === "apercu" && (
+        <div className="space-y-6">
+          {/* Key stats */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: "Part de marché", value: `${competitor.marketShare}%`, sub: "du marché total", color: "text-indigo-600" },
+              { label: "Employés", value: competitor.employees, sub: "effectif mondial", color: "text-slate-700" },
+              { label: "Revenue annuel", value: competitor.revenue, sub: "chiffre d'affaires", color: "text-emerald-600" },
+              { label: "Fondé en", value: String(competitor.founded), sub: `${2026 - competitor.founded} ans d'existence`, color: "text-slate-700" },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-white rounded-xl border border-slate-200 p-4 hover:shadow-sm transition-shadow">
+                <p className="text-xs text-slate-400 mb-1">{stat.label}</p>
+                <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+                <p className="text-xs text-slate-400 mt-0.5">{stat.sub}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Description card */}
+          <div className="bg-white rounded-xl border border-slate-200 p-5">
+            <h3 className="font-semibold text-slate-900 mb-3">À propos</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">{competitor.description}</p>
+          </div>
+
+          {/* Price chart */}
+          <div className="bg-white rounded-xl border border-slate-200 p-5">
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h3 className="font-semibold text-slate-900">Évolution du prix</h3>
+                <p className="text-xs text-slate-400 mt-0.5">12 derniers mois</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-slate-400">Prix actuel</p>
+                <p className="text-lg font-bold text-slate-900 mt-0.5">
+                  {priceHistory[priceHistory.length - 1]}€
+                  <span className="text-xs font-normal text-slate-400">/mois</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Chart */}
+            <div className="relative">
+              <div className="flex items-end gap-1 h-36">
+                {priceHistory.map((price, i) => {
+                  const range = maxPrice - minPrice || 1;
+                  const heightPct = Math.max(8, Math.round(((price - minPrice) / range) * 72) + 20);
+                  const isLast = i === priceHistory.length - 1;
+                  const prevPrice = i > 0 ? priceHistory[i - 1] : price;
+                  const isUp = price > prevPrice;
+                  const isDown = price < prevPrice;
+                  return (
+                    <div key={i} className="flex-1 flex flex-col items-center gap-1 group relative">
+                      <div
+                        className="w-full rounded-t transition-all duration-300"
+                        style={{
+                          height: `${heightPct}%`,
+                          backgroundColor: competitor.color,
+                          opacity: isLast ? 1 : 0.25 + (i / (priceHistory.length - 1)) * 0.65,
+                        }}
+                      />
+                      <span className="text-[9px] text-slate-400 hidden sm:block">{months[i]}</span>
+                      {/* Tooltip */}
+                      <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                        <div className="bg-slate-800 text-white text-[10px] font-medium px-2 py-1 rounded-lg shadow-lg whitespace-nowrap flex items-center gap-1">
+                          {isUp && <span className="text-red-400">+</span>}
+                          {isDown && <span className="text-emerald-400">-</span>}
+                          {price}€
+                        </div>
+                        <div className="w-2 h-2 bg-slate-800 rotate-45 mx-auto -mt-1" />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-50 text-xs text-slate-400">
+              <span>Min : <span className="font-semibold text-slate-600">{minPrice}€</span></span>
+              <div className="flex items-center gap-1">
+                <span className="text-slate-300">Variation 12 mois :</span>
+                {(() => {
+                  const change = priceHistory[priceHistory.length - 1] - priceHistory[0];
+                  const pct = priceHistory[0] ? Math.round((change / priceHistory[0]) * 100) : 0;
+                  return (
+                    <span className={`font-semibold ${change > 0 ? "text-red-600" : change < 0 ? "text-emerald-600" : "text-slate-600"}`}>
+                      {change > 0 ? "+" : ""}{pct}%
+                    </span>
+                  );
+                })()}
+              </div>
+              <span>Max : <span className="font-semibold text-slate-600">{maxPrice}€</span></span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab: Fonctionnalites */}
+      {activeTab === "fonctionnalites" && (
+        <div className="bg-white rounded-xl border border-slate-200 p-5">
+          <div className="flex items-center justify-between mb-5">
+            <div>
+              <h3 className="font-semibold text-slate-900">Fonctionnalités</h3>
+              <p className="text-xs text-slate-400 mt-0.5">
+                {competitor.features.filter((f) => f.available).length} disponibles sur {competitor.features.length}
+              </p>
+            </div>
+            <div className="flex items-center gap-3 flex-wrap">
+              {[
+                { label: "Excellent", cls: "bg-emerald-50 text-emerald-700 border border-emerald-100" },
+                { label: "Bien",      cls: "bg-indigo-50 text-indigo-700 border border-indigo-100" },
+                { label: "Moyen",     cls: "bg-amber-50 text-amber-700 border border-amber-100" },
+              ].map((q) => (
+                <span key={q.label} className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${q.cls}`}>
+                  {q.label}
                 </span>
               ))}
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-6">
-        {/* Features */}
-        <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <h3 className="font-semibold text-slate-900 mb-4">Fonctionnalités</h3>
-          <div className="divide-y divide-slate-50">
+          <div className="grid sm:grid-cols-2 gap-2">
             {competitor.features.map((f) => (
-              <div key={f.name} className="flex items-center justify-between py-2.5">
-                <div className="flex items-center gap-2">
-                  <span className={`text-base ${f.available ? "text-emerald-500" : "text-slate-300"}`}>
-                    {f.available ? "✓" : "✗"}
-                  </span>
-                  <span className="text-sm text-slate-700">{f.name}</span>
-                </div>
-                {f.available && (
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                    f.quality === "Excellent" ? "bg-emerald-100 text-emerald-700" :
-                    f.quality === "Bien" ? "bg-indigo-100 text-indigo-700" :
-                    f.quality === "Moyen" ? "bg-amber-100 text-amber-700" :
-                    "bg-slate-100 text-slate-600"
+              <div
+                key={f.name}
+                className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-colors ${
+                  f.available
+                    ? "bg-white border-slate-200 hover:border-slate-300"
+                    : "bg-slate-50/50 border-slate-100"
+                }`}
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <span className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[11px] font-bold ${
+                    f.available ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-400"
                   }`}>
+                    {f.available ? "✓" : "✕"}
+                  </span>
+                  <span className={`text-sm truncate ${f.available ? "text-slate-800" : "text-slate-400 line-through"}`}>
+                    {f.name}
+                  </span>
+                </div>
+                {f.available && f.quality && f.quality !== "-" ? (
+                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0 ml-2 ${qualityConfig[f.quality] || "bg-slate-100 text-slate-600"}`}>
                     {f.quality}
                   </span>
-                )}
+                ) : !f.available ? (
+                  <span className="text-xs text-slate-300 flex-shrink-0 ml-2">Indisponible</span>
+                ) : null}
               </div>
             ))}
           </div>
         </div>
+      )}
 
-        {/* Price history */}
-        <div className="bg-white rounded-xl border border-slate-200 p-5">
-          <h3 className="font-semibold text-slate-900 mb-4">Évolution du prix — 12 mois</h3>
-          <div className="flex items-end gap-1.5 h-36 mb-2">
-            {competitor.priceHistory.map((price, i) => {
-              const minPrice = Math.min(...competitor.priceHistory);
-              const range = maxPrice - minPrice || 1;
-              const height = Math.max(10, Math.round(((price - minPrice) / range) * 80) + 20);
-              const months = ["Jan", "Fév", "Mar", "Avr", "Mai", "Jun", "Jul", "Aoû", "Sep", "Oct", "Nov", "Déc"];
-              const isLast = i === competitor.priceHistory.length - 1;
+      {/* Tab: Tarifs */}
+      {activeTab === "tarifs" && (
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="font-semibold text-slate-900">Plans tarifaires</h3>
+              <p className="text-xs text-slate-400 mt-0.5">{competitor.pricing.length} plans disponibles</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {competitor.pricing.map((plan, i) => {
+              const isPopular = i === 1;
               return (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1 group relative">
-                  <div
-                    className="w-full rounded-t transition-all"
-                    style={{ height: `${height}%`, backgroundColor: competitor.color, opacity: isLast ? 1 : 0.35 + (i / 11) * 0.55 }}
-                  />
-                  <span className="text-[9px] text-slate-400 hidden sm:block">{months[i]}</span>
-                  <div className="absolute -top-7 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                    {price}€
+                <div
+                  key={plan.name}
+                  className={`bg-white rounded-xl border p-5 flex flex-col hover:shadow-md transition-all ${
+                    isPopular
+                      ? "border-indigo-300 ring-2 ring-indigo-100 shadow-sm"
+                      : "border-slate-200"
+                  }`}
+                >
+                  {isPopular && (
+                    <div className="inline-flex items-center gap-1 text-[10px] font-semibold text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-full self-start mb-3">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><path d="M5 1l1.2 2.5L9 4l-2 1.9.5 2.7L5 7.3 2.5 8.6 3 5.9 1 4l2.8-.5L5 1z"/></svg>
+                      Populaire
+                    </div>
+                  )}
+                  <h4 className="font-semibold text-slate-800 mb-1">{plan.name}</h4>
+                  <div className="flex items-baseline gap-1 mb-4">
+                    {plan.price === 0 ? (
+                      <span className="text-2xl font-bold text-emerald-600">Gratuit</span>
+                    ) : (
+                      <>
+                        <span className="text-3xl font-bold text-slate-900">{plan.price}</span>
+                        <span className="text-sm text-slate-400">{plan.currency}/{plan.interval}</span>
+                      </>
+                    )}
                   </div>
+                  <ul className="space-y-2 flex-1">
+                    {plan.features.map((feat) => (
+                      <li key={feat} className="flex items-start gap-2 text-xs text-slate-600">
+                        <span className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-[10px]">✓</span>
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}
           </div>
-          <div className="flex items-center justify-between text-xs text-slate-400 mt-1">
-            <span>Min: {Math.min(...competitor.priceHistory)}€</span>
-            <span>Actuel: <span className="font-semibold text-slate-700">{competitor.priceHistory[competitor.priceHistory.length - 1]}€/mois</span></span>
-            <span>Max: {maxPrice}€</span>
+        </div>
+      )}
+
+      {/* Tab: Actualites */}
+      {activeTab === "actualites" && (
+        <div className="bg-white rounded-xl border border-slate-200 p-5">
+          <div className="flex items-center justify-between mb-5">
+            <div>
+              <h3 className="font-semibold text-slate-900">Actualités récentes</h3>
+              <p className="text-xs text-slate-400 mt-0.5">{competitor.news.length} événement{competitor.news.length > 1 ? "s" : ""} enregistré{competitor.news.length > 1 ? "s" : ""}</p>
+            </div>
           </div>
-        </div>
-      </div>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-slate-100" />
+            <div className="space-y-0">
+              {competitor.news.map((n, i) => {
+                const cfg = newsTypeConfig[n.type] || { label: n.type, cls: "bg-slate-100 text-slate-600 border border-slate-200" };
+                return (
+                  <div key={i} className="flex items-start gap-4 relative pl-6 py-4 group">
+                    {/* Timeline dot */}
+                    <div
+                      className="absolute left-0 top-5 w-3.5 h-3.5 rounded-full border-2 border-white ring-2 flex-shrink-0 shadow-sm"
+                      style={{
+                        backgroundColor: competitor.color,
+                        ringColor: competitor.color + "40",
+                      }}
+                    />
 
-      {/* Pricing plans */}
-      <div className="bg-white rounded-xl border border-slate-200 p-5">
-        <h3 className="font-semibold text-slate-900 mb-4">Plans tarifaires</h3>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {competitor.pricing.map((plan, i) => (
-            <div key={plan.name} className={`border rounded-xl p-4 ${i === 1 ? "border-indigo-300 ring-1 ring-indigo-200" : "border-slate-200"} hover:shadow-sm transition-shadow`}>
-              {i === 1 && <div className="text-xs text-indigo-600 font-semibold mb-2">Populaire</div>}
-              <h4 className="font-semibold text-slate-800 text-sm mb-1">{plan.name}</h4>
-              <div className="flex items-baseline gap-0.5 mb-3">
-                {plan.price === 0
-                  ? <span className="text-xl font-bold text-emerald-600">Gratuit</span>
-                  : <><span className="text-2xl font-bold text-slate-900">{plan.price}</span><span className="text-sm text-slate-400">{plan.currency}/{plan.interval}</span></>
-                }
-              </div>
-              <ul className="space-y-1.5">
-                {plan.features.map((f) => (
-                  <li key={f} className="text-xs text-slate-500 flex items-center gap-1.5">
-                    <span className="text-emerald-500">✓</span> {f}
-                  </li>
-                ))}
-              </ul>
+                    <div className="flex-1 min-w-0 bg-slate-50/0 group-hover:bg-slate-50 rounded-lg px-0 transition-colors">
+                      <div className="flex items-start justify-between gap-3 flex-wrap">
+                        <div className="flex items-start gap-2.5 flex-wrap">
+                          <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full flex-shrink-0 ${cfg.cls}`}>
+                            {cfg.label}
+                          </span>
+                          <p className="text-sm text-slate-800 leading-relaxed">{n.title}</p>
+                        </div>
+                        <span className="text-xs text-slate-400 whitespace-nowrap flex-shrink-0">{formatShortDate(n.date)}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* News */}
-      <div className="bg-white rounded-xl border border-slate-200 p-5">
-        <h3 className="font-semibold text-slate-900 mb-4">Actualités récentes</h3>
-        <div className="divide-y divide-slate-50">
-          {competitor.news.map((n, i) => (
-            <div key={i} className="flex items-start gap-3 py-3">
-              <span className={`text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5 ${newsTypeColors[n.type] || "bg-slate-100 text-slate-600"}`}>
-                {newsTypeLabels[n.type] || n.type}
-              </span>
-              <p className="text-sm text-slate-700 flex-1 leading-relaxed">{n.title}</p>
-              <span className="text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">{formatShortDate(n.date)}</span>
+          </div>
+          {competitor.news.length === 0 && (
+            <div className="text-center py-10">
+              <p className="text-sm text-slate-400">Aucune actualité enregistrée pour ce concurrent.</p>
             </div>
-          ))}
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }
