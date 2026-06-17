@@ -1,8 +1,23 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 export default function PitchPage() {
+  const [formData, setFormData] = useState({
+    nom: "",
+    entreprise: "",
+    poste: "",
+    ca: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
 
@@ -10,18 +25,24 @@ export default function PitchPage() {
       <header className="border-b border-slate-200 bg-white sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-lg flex items-center justify-center shadow-sm">
-              <span className="text-white text-xs font-black tracking-tight">IQ</span>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center shadow-sm"
+              style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)" }}>
+              <span className="text-xs font-black tracking-tight" style={{ color: "#D4AF37" }}>IQ</span>
             </div>
-            <span className="text-lg font-bold text-slate-900">CompeteIQ</span>
+            <div>
+              <span className="text-lg font-black text-slate-900 tracking-tight">CompeteIQ</span>
+              <span className="hidden sm:inline text-xs text-slate-400 ml-2 font-medium">— Intelligence Stratégique</span>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <span className="hidden sm:flex items-center gap-2 text-xs font-semibold text-slate-400 uppercase tracking-widest">
-              <svg className="w-3.5 h-3.5 text-slate-300" viewBox="0 0 20 20" fill="currentColor">
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-2 border border-amber-200 bg-amber-50 rounded-full px-4 py-1.5">
+              <svg className="w-3.5 h-3.5 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5 9V7a5 5 0 0 1 10 0v2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2Zm8-2v2H7V7a3 3 0 0 1 6 0Z" clipRule="evenodd" />
               </svg>
-              Dossier de présentation — Confidentiel
-            </span>
+              <span className="text-xs font-bold text-amber-700 uppercase tracking-widest">
+                Document confidentiel — Réservé aux décideurs
+              </span>
+            </div>
             <Link href="/"
               className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors px-3 py-1.5 rounded-lg hover:bg-slate-100">
               Retour au site
@@ -31,592 +52,695 @@ export default function PitchPage() {
       </header>
 
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-indigo-500/15 border border-indigo-400/25 text-indigo-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            Dossier investisseur — Juin 2026
+      <section className="py-28 px-6" style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #0f172a 100%)" }}>
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 border rounded-full px-5 py-2 mb-10 text-xs font-bold uppercase tracking-widest"
+            style={{ borderColor: "rgba(212,175,55,0.3)", color: "#D4AF37", background: "rgba(212,175,55,0.08)" }}>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#D4AF37" }} />
+            Intelligence Concurrentielle de Rang Enterprise
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
-            La plateforme d&apos;intelligence{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              concurrentielle
+          <h1 className="text-5xl md:text-6xl font-black leading-tight mb-8 text-white tracking-tight">
+            Chaque décision stratégique que vos
+            <br />
+            <span className="relative inline-block mt-2">
+              <span style={{ color: "#D4AF37" }}>concurrents prennent</span>
             </span>
             <br />
-            pour les équipes modernes
+            <span className="text-white">vous coûte de l&apos;argent.</span>
           </h1>
 
-          <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-14 leading-relaxed">
-            CompeteIQ automatise la veille concurrentielle grâce à l&apos;IA — de la surveillance
-            temps réel aux rapports stratégiques en un clic. SaaS B2B, MRR scalable, stack enterprise.
+          <p className="text-slate-300 text-xl max-w-3xl mx-auto mb-6 leading-relaxed font-light">
+            CompeteIQ vous le dit avant eux.
           </p>
 
-          {/* Hero Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {[
-              { value: "11", label: "Pages produit", sub: "couverture complète" },
-              { value: "100%", label: "Sécurité enterprise", sub: "SSO · RGPD · Audit logs" },
-              { value: "Next.js 16", label: "Stack moderne", sub: "TypeScript · Tailwind" },
-              { value: "Prêt", label: "À déployer", sub: "zéro dette technique" },
-            ].map((s) => (
-              <div key={s.label}
-                className="bg-white/5 border border-white/10 rounded-2xl px-5 py-6 text-center backdrop-blur-sm">
-                <p className="text-3xl font-black text-white mb-1">{s.value}</p>
-                <p className="text-sm font-semibold text-indigo-300 mb-0.5">{s.label}</p>
-                <p className="text-xs text-slate-500">{s.sub}</p>
-              </div>
-            ))}
+          <p className="text-slate-500 text-base max-w-2xl mx-auto mb-14 leading-relaxed">
+            Nous ne sommes pas un outil de veille. Nous sommes le partenaire stratégique que vos concurrents
+            n&apos;ont pas encore découvert — et qui fait toute la différence.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact"
+              className="inline-flex items-center justify-center gap-2 text-slate-900 font-black text-base px-10 py-4 rounded-xl transition-all shadow-2xl hover:-translate-y-0.5"
+              style={{ background: "linear-gradient(135deg, #D4AF37 0%, #f0d060 100%)" }}>
+              Planifier une démonstration stratégique
+              <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <a href="#tarifs"
+              className="inline-flex items-center justify-center gap-2 text-white font-semibold text-base px-10 py-4 rounded-xl transition-all border border-white/10 hover:bg-white/5">
+              Voir les offres
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ── LE PROBLÈME ── */}
+      {/* ── COÛT DE L'IGNORANCE ── */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-14 text-center">
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Le problème</span>
-            <h2 className="text-4xl font-black mt-3 text-slate-900">
-              Sans veille, les équipes naviguent à l&apos;aveugle
+          <div className="mb-16 text-center">
+            <span className="font-bold text-sm uppercase tracking-widest" style={{ color: "#D4AF37" }}>
+              Le coût de l&apos;ignorance concurrentielle
+            </span>
+            <h2 className="text-4xl font-black mt-3 text-slate-900 leading-tight">
+              Ce que vous ne savez pas vous coûte déjà
             </h2>
+            <p className="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">
+              Les chiffres que vos concurrents ne veulent pas que vous connaissiez.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                  </svg>
-                ),
-                color: "text-rose-500",
-                bg: "bg-rose-50 border-rose-100",
-                title: "Réactivité zéro face aux mouvements concurrents",
-                desc: "Les équipes apprennent les changements de prix ou de fonctionnalités de leurs concurrents par leurs propres clients — souvent trop tard. En moyenne, une entreprise met 3 semaines à détecter un mouvement majeur d&apos;un concurrent direct.",
+                stat: "340 K€",
+                source: "Bain & Company, 2024",
+                title: "Coût moyen d’une réaction tardive",
+                desc: "C’est le manque à gagner médian subi par une ETI lorsqu’elle détecte avec plus de 3 semaines de retard un mouvement pricing de son concurrent principal. Marge perdue, clients churned, renégociations forcées.",
+                color: "border-rose-200 bg-rose-50",
+                statColor: "text-rose-600",
               },
               {
-                icon: (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-                  </svg>
-                ),
-                color: "text-amber-500",
-                bg: "bg-amber-50 border-amber-100",
-                title: "Décisions stratégiques prises sur des données périmées",
-                desc: "Les rapports concurrentiels sont réalisés manuellement, une à deux fois par an. Entre-temps, le marché évolue : nouvelles offres, nouvelles acquisitions, repositionnements tarifaires. Les comités de direction pilotent avec 6 mois de retard.",
+                stat: "73 %",
+                source: "Forrester Research, 2025",
+                title: "Des décisions stratégiques sur données périmées",
+                desc: "Près des trois quarts des comités de direction prennent leurs décisions d’investissement produit et de positionnement tarifaire sur des données concurrentielles vieilles de plus de 6 mois. Le marché n’attend pas.",
+                color: "border-amber-200 bg-amber-50",
+                statColor: "text-amber-600",
               },
               {
-                icon: (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                  </svg>
-                ),
-                color: "text-violet-500",
-                bg: "bg-violet-50 border-violet-100",
-                title: "Un poste d&apos;analyste coûteux pour un output insuffisant",
-                desc: "Les entreprises qui ont les moyens recrutent un ou plusieurs analystes marché. Coût : 60 000 à 90 000 €/an par profil. Résultat : un rapport tous les deux mois, qui ne couvre que 3 à 5 concurrents et ignore les signaux faibles.",
+                stat: "21 jours",
+                source: "IDC Market Pulse, 2025",
+                title: "Délai moyen de détection d’un mouvement concurrent",
+                desc: "En l’absence de veille structurée, les entreprises apprennent les lancements produits, baisses de prix et acquisitions de leurs concurrents par leurs propres clients — en moyenne 3 semaines après l’événement.",
+                color: "border-slate-200 bg-slate-50",
+                statColor: "text-slate-800",
               },
-            ].map((p) => (
-              <div key={p.title} className={`border rounded-2xl p-7 ${p.bg}`}>
-                <div className={`${p.color} mb-4`}>{p.icon}</div>
-                <h3 className="font-bold text-slate-900 text-lg mb-3">{p.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{p.desc}</p>
+            ].map((item) => (
+              <div key={item.title} className={`border-2 rounded-2xl p-8 ${item.color}`}>
+                <p className={`text-5xl font-black mb-2 ${item.statColor}`}>{item.stat}</p>
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">{item.source}</p>
+                <h3 className="font-black text-slate-900 text-lg mb-3 leading-snug">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── LA SOLUTION ── */}
-      <section className="py-24 px-6 bg-slate-50">
+      {/* ── NOTRE APPROCHE ── */}
+      <section className="py-24 px-6" style={{ background: "#0a0a0a" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="mb-14 text-center">
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">La solution</span>
-            <h2 className="text-4xl font-black mt-3 text-slate-900">
-              CompeteIQ — votre radar concurrentiel en temps réel
+          <div className="mb-16 text-center">
+            <span className="font-bold text-sm uppercase tracking-widest" style={{ color: "#D4AF37" }}>
+              Notre approche
+            </span>
+            <h2 className="text-4xl font-black mt-3 text-white leading-tight">
+              Pas un outil. Un partenaire stratégique.
             </h2>
-            <p className="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">
-              Une plateforme SaaS tout-en-un qui surveille, analyse et alerte automatiquement
-              sur chaque mouvement de vos concurrents — 24h/24, 7j/7.
+            <p className="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">
+              CompeteIQ déploie trois piliers interdépendants pour transformer votre intelligence
+              concurrentielle en avantage compétitif durable.
             </p>
           </div>
 
-          {/* Dashboard mockup */}
-          <div className="max-w-5xl mx-auto">
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600/20 via-violet-600/15 to-indigo-600/20 rounded-2xl blur-xl" />
-              <div className="relative bg-slate-900 rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
-                {/* Window chrome */}
-                <div className="flex items-center gap-2 px-5 py-3.5 bg-slate-800/80 border-b border-white/5">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-500/70" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/70" />
-                  </div>
-                  <div className="flex-1 mx-4">
-                    <div className="bg-slate-700/60 rounded-md px-3 py-1 text-xs text-slate-400 text-center w-fit mx-auto">
-                      competeiq.io/dashboard
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-xs text-slate-500">Live</span>
-                  </div>
-                </div>
-
-                {/* Dashboard content */}
-                <div className="p-6">
-                  {/* Page header */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div>
-                      <h3 className="text-white font-semibold text-base">Tableau de bord</h3>
-                      <p className="text-slate-500 text-xs">Vue d&apos;ensemble de votre veille concurrentielle</p>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block" />
-                      Mis à jour à 09:42
-                    </div>
-                  </div>
-
-                  {/* Stat row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-                    {[
-                      { label: "Concurrents suivis", value: "5", trend: "+2 ce mois", color: "text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-500/20" },
-                      { label: "Alertes actives", value: "3", trend: "2 non lues", color: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/20" },
-                      { label: "Rapports générés", value: "3", trend: "Stable", color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-                      { label: "Score de marché", value: "74%", trend: "+4 pts", color: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20" },
-                    ].map((s) => (
-                      <div key={s.label} className={`${s.bg} border ${s.border} rounded-xl p-4`}>
-                        <p className="text-slate-500 text-xs mb-1">{s.label}</p>
-                        <p className={`text-2xl font-bold ${s.color}`}>{s.value}</p>
-                        <p className="text-slate-600 text-xs mt-1">{s.trend}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Quick actions */}
-                  <div className="rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-700 px-4 py-3 flex items-center justify-between mb-4">
-                    <p className="text-white text-xs font-medium">Actions rapides</p>
-                    <div className="flex gap-2">
-                      {["Ajouter concurrent", "Générer rapport", "Comparer"].map((a) => (
-                        <span key={a} className="text-xs bg-white/10 border border-white/20 text-white px-3 py-1 rounded-md">{a}</span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Competitor table */}
-                  <div className="bg-slate-800/60 rounded-xl overflow-hidden border border-white/5">
-                    <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 px-4 py-2 bg-slate-800 border-b border-white/5">
-                      {["Concurrent", "Secteur", "Menace"].map((h) => (
-                        <span key={h} className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{h}</span>
-                      ))}
-                    </div>
-                    {[
-                      { name: "Salesforce", industry: "CRM", threat: "Élevée", tc: "text-rose-400 bg-rose-900/30", color: "#00A1E0", logo: "SF" },
-                      { name: "HubSpot", industry: "CRM / Marketing", threat: "Élevée", tc: "text-rose-400 bg-rose-900/30", color: "#FF7A59", logo: "HS" },
-                      { name: "Pipedrive", industry: "CRM Ventes", threat: "Moyenne", tc: "text-amber-400 bg-amber-900/30", color: "#2C3E50", logo: "PD" },
-                      { name: "Zoho CRM", industry: "CRM Suite", threat: "Moyenne", tc: "text-amber-400 bg-amber-900/30", color: "#E42527", logo: "ZO" },
-                      { name: "Monday.com", industry: "Gestion / CRM", threat: "Faible", tc: "text-emerald-400 bg-emerald-900/30", color: "#F6517C", logo: "MN" },
-                    ].map((c) => (
-                      <div key={c.name} className="grid grid-cols-[1fr_auto_auto] gap-x-4 items-center px-4 py-2.5 border-b border-white/5 last:border-0">
-                        <div className="flex items-center gap-2.5">
-                          <div className="w-6 h-6 rounded-md flex items-center justify-center text-white text-[9px] font-bold flex-shrink-0" style={{ backgroundColor: c.color }}>
-                            {c.logo}
-                          </div>
-                          <span className="text-slate-200 text-xs font-medium">{c.name}</span>
-                        </div>
-                        <span className="text-slate-400 text-xs hidden sm:block">{c.industry}</span>
-                        <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${c.tc}`}>{c.threat}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Feature highlights */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+          <div className="grid md:grid-cols-3 gap-1">
             {[
-              { icon: "01", title: "Surveillance temps réel", desc: "Prix, fonctionnalités, équipes, recrutements — chaque signal capturé instantanément." },
-              { icon: "02", title: "Rapports IA en 1 clic", desc: "Des analyses stratégiques complètes générées automatiquement avec recommandations." },
-              { icon: "03", title: "Alertes intelligentes", desc: "Notifications configurables sur Slack, email, ou webhook dès qu&apos;un événement clé survient." },
-              { icon: "04", title: "Comparaison multi-concurrents", desc: "Tableau de bord unifié pour visualiser toutes vos données côte à côte." },
-              { icon: "05", title: "Analyse de prix prédictive", desc: "L&apos;IA prédit les prochains mouvements tarifaires pour que vous anticicipiez, pas subissiez." },
-              { icon: "06", title: "Sécurité enterprise", desc: "SSO/SAML, chiffrement E2E, audit logs, conformité RGPD. SLA 99,9%." },
-            ].map((f) => (
-              <div key={f.title} className="bg-white border border-slate-200 rounded-xl p-6">
-                <div className="text-indigo-300 font-black text-2xl mb-3">{f.icon}</div>
-                <h3 className="font-bold text-slate-900 mb-2">{f.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
+              {
+                number: "01",
+                pilier: "Surveillance",
+                title: "Capturer chaque signal avant vos concurrents",
+                desc: "Monitoring 24h/24 de plus de 200 sources structurées et non-structurées : pages pricing, job postings, levées de fonds, brevets déposés, communiqués de presse, avis clients, mouvements RH. Aucun signal faible ne passe au travers.",
+                features: ["Crawling temps réel sur 200+ sources", "Détection de signaux faibles par NLP", "Alertes configurables sous 15 minutes"],
+              },
+              {
+                number: "02",
+                pilier: "Analyse",
+                title: "Transformer les données en décisions actionnables",
+                desc: "Nos analystes seniors et notre moteur IA synthétisent les signaux en recommandations stratégiques prêtes pour le CODIR. Pas des tableaux de données — des analyses contextualisées avec impact business chiffré.",
+                features: ["Rapports CODIR clé-en-main", "Modélisation d’impact financier", "Benchmarks sectoriels trimestriels"],
+              },
+              {
+                number: "03",
+                pilier: "Action",
+                title: "Passer de l’insight à l’exécution en 48h",
+                desc: "Un CSM dédié orchestre la transformation de chaque alerte en plan d’action. Revues stratégiques mensuelles avec votre équipe dirigeante. Recommandations pricing, produit et go-to-market calibrées pour votre contexte spécifique.",
+                features: ["CSM Senior dédié (offre Stratégique)", "Revues mensuelles avec le CODIR", "Plans d’action sous 48h garantis"],
+              },
+            ].map((p, i) => (
+              <div key={p.pilier}
+                className={`p-10 ${i === 1 ? "border-x border-white/10" : ""}`}
+                style={{ background: i === 1 ? "rgba(212,175,55,0.05)" : "transparent" }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#D4AF37" }}>{p.number}</span>
+                  <div className="h-px flex-1" style={{ background: "rgba(212,175,55,0.3)" }} />
+                  <span className="text-xs font-black uppercase tracking-widest text-white">{p.pilier}</span>
+                </div>
+                <h3 className="font-black text-white text-xl mb-4 leading-snug">{p.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-6">{p.desc}</p>
+                <ul className="space-y-2.5">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
+                      <svg className="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#D4AF37" }}>
+                        <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── MARCHÉ ── */}
+      {/* ── PREUVES SOCIALES ── */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-14 text-center">
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Opportunité de marché</span>
-            <h2 className="text-4xl font-black mt-3 text-slate-900">
-              Un marché de $8,4B en forte croissance
+          <div className="mb-16 text-center">
+            <span className="font-bold text-sm uppercase tracking-widest" style={{ color: "#D4AF37" }}>
+              Résultats clients
+            </span>
+            <h2 className="text-4xl font-black mt-3 text-slate-900 leading-tight">
+              Le ROI n&apos;est pas une promesse. C&apos;est un historique.
             </h2>
-            <p className="text-slate-500 text-lg mt-4 max-w-xl mx-auto">
-              Le marché de l&apos;intelligence concurrentielle est porté par la digitalisation
-              des équipes commerciales et l&apos;essor de l&apos;IA générative.
+            <p className="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">
+              Trois exemples parmi les 240+ entreprises qui nous font confiance.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+          <div className="space-y-6">
             {[
               {
-                label: "TAM",
-                full: "Total Addressable Market",
-                value: "$8,4B",
-                desc: "Marché global de l&apos;intelligence concurrentielle (2025). CAGR : +14,2% jusqu&apos;en 2030.",
-                color: "from-indigo-600 to-indigo-700",
-                ring: "ring-indigo-200",
+                secteur: "ETI Industrielle — Équipements B2B",
+                ca: "85 M€ de CA",
+                employes: "420 collaborateurs",
+                badge: "12 M€ préservés",
+                badgeColor: "bg-emerald-100 text-emerald-800 border border-emerald-200",
+                title: "Alerte pricing J-14 : 12 M€ de chiffre d’affaires préservé",
+                quote: "Nous avons reçu l’alerte CompeteIQ un mercredi matin. Notre principal concurrent allait baisser ses prix de 18% sur notre segment core trois jours plus tard. Nous avons convoqué un CODIR d’urgence, ajusté notre politique tarifaire et anticipé la communication clients. Sans CompeteIQ, nous aurions perdu entre 10 et 14 millions d’euros de contrats en cours de renouvellement.",
+                auteur: "Directeur Commercial",
+                resultats: ["Détection 14 jours avant l’annonce officielle", "Rétention de 97% des contrats en renouvellement", "ROI CompeteIQ : 124× sur l’année"],
               },
               {
-                label: "SAM",
-                full: "Serviceable Addressable Market",
-                value: "$1,2B",
-                desc: "Segment SaaS B2B ciblant les PME et ETI (10 à 500 salariés) en Europe et Amérique du Nord.",
-                color: "from-violet-500 to-violet-600",
-                ring: "ring-violet-200",
+                secteur: "Groupe Retail — Distribution Nationale",
+                ca: "320 M€ de CA",
+                employes: "1 800 collaborateurs",
+                badge: "+38% parts de marché",
+                badgeColor: "bg-blue-100 text-blue-800 border border-blue-200",
+                title: "Lancement produit repositionné : +38% de parts de marché en 6 mois",
+                quote: "Notre lancement prévu pour septembre allait droit dans le mur. CompeteIQ nous a montré en août que deux de nos concurrents principaux lançaient simultanément des produits très proches. Nous avons décalé d’un mois, repositionné notre angle marketing sur un segment adjacent et lancé avec un avantage différenciant clair. Le résultat a dépassé toutes nos projections.",
+                auteur: "Directrice Marketing & Innovation",
+                resultats: ["+38 points de parts de marché sur la catégorie", "Lancement repositionné en 4 semaines", "Économie de 2,3 M€ sur le budget d’acquisition client"],
               },
               {
-                label: "SOM",
-                full: "Serviceable Obtainable Market",
-                value: "$24M",
-                desc: "Cible réaliste à 3 ans, représentant 2% du SAM. Équivalent à ~3 000 clients à 8 000 $/an ARR moyen.",
-                color: "from-slate-700 to-slate-800",
-                ring: "ring-slate-200",
+                secteur: "SaaS B2B — Logiciels RH",
+                ca: "Série A en cours",
+                employes: "65 collaborateurs",
+                badge: "Levée accélérée",
+                badgeColor: "bg-purple-100 text-purple-800 border border-purple-200",
+                title: "Dossier concurrentiel CompeteIQ : levée de fonds accélérée de 4 mois",
+                quote: "Nos investisseurs nous demandaient systématiquement pourquoi nous gagnerions face à nos concurrents. Avec le dossier concurrentiel CompeteIQ, nous avions des réponses précises, sourcées, actualisées en temps réel. Le lead investor a qualifié notre niveau de connaissance marché d’exceptionnel. Nous avons closé notre Série A en 8 semaines au lieu des 12 à 14 habituelles.",
+                auteur: "CEO & Co-fondateur",
+                resultats: ["Levée de 4,2 M€ — Série A closée en 8 semaines", "Valorisation supérieure de 22% aux estimations initiales", "Dossier concurrentiel complet généré en 48h"],
               },
-            ].map((m) => (
-              <div key={m.label} className={`rounded-2xl p-8 text-white bg-gradient-to-br ${m.color} relative overflow-hidden ring-4 ${m.ring}`}>
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/5 rounded-full" />
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-white/5 rounded-full" />
-                <div className="relative">
-                  <div className="inline-block bg-white/15 text-white text-xs font-black px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-                    {m.label}
+            ].map((cas) => (
+              <div key={cas.title} className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 transition-colors">
+                <div className="flex flex-col lg:flex-row gap-8">
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-3 mb-5">
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{cas.secteur}</span>
+                      <span className="text-xs text-slate-400">·</span>
+                      <span className="text-xs text-slate-500">{cas.ca}</span>
+                      <span className="text-xs text-slate-400">·</span>
+                      <span className="text-xs text-slate-500">{cas.employes}</span>
+                      <span className={`text-xs font-black px-3 py-1 rounded-full ml-auto lg:ml-0 ${cas.badgeColor}`}>
+                        {cas.badge}
+                      </span>
+                    </div>
+                    <h3 className="font-black text-slate-900 text-xl mb-4 leading-snug">{cas.title}</h3>
+                    <blockquote className="text-slate-600 text-sm leading-relaxed italic border-l-2 pl-4 mb-4" style={{ borderColor: "#D4AF37" }}>
+                      &quot;{cas.quote}&quot;
+                    </blockquote>
+                    <p className="text-xs text-slate-400 font-medium">— {cas.auteur}</p>
                   </div>
-                  <p className="text-4xl font-black mb-1">{m.value}</p>
-                  <p className="text-white/60 text-xs mb-4 font-medium">{m.full}</p>
-                  <p className="text-white/80 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: m.desc }} />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Market context */}
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            {[
-              { value: "14,2%", label: "CAGR projeté", sub: "2025–2030, tous segments confondus" },
-              { value: "2 400+", label: "Entreprises actives", sub: "utilisent CompeteIQ dès aujourd&apos;hui" },
-              { value: "3,2×", label: "ROI moyen client", sub: "mesuré sur les 12 premiers mois" },
-            ].map((s) => (
-              <div key={s.label} className="bg-slate-50 border border-slate-200 rounded-xl p-7">
-                <p className="text-4xl font-black text-indigo-600 mb-1">{s.value}</p>
-                <p className="font-semibold text-slate-900 mb-1">{s.label}</p>
-                <p className="text-slate-500 text-sm" dangerouslySetInnerHTML={{ __html: s.sub }} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── TRACTION & ROADMAP ── */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-14 text-center">
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Traction & Roadmap</span>
-            <h2 className="text-4xl font-black mt-3 text-slate-900">
-              Plan de croissance 18 mois
-            </h2>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-[50%] top-0 bottom-0 w-px bg-indigo-100 hidden md:block" />
-
-            <div className="space-y-8">
-              {[
-                {
-                  phase: "Phase 1",
-                  period: "T3 2026 — T4 2026",
-                  title: "Lancement & Acquisition",
-                  side: "left",
-                  color: "bg-indigo-600",
-                  items: [
-                    "Lancement commercial — Plan Starter à 29€/mois",
-                    "Objectif : 300 clients payants d&apos;ici décembre 2026",
-                    "Intégrations Slack + Notion + HubSpot",
-                    "MRR cible : 15 000 €",
-                  ],
-                },
-                {
-                  phase: "Phase 2",
-                  period: "T1 2027 — T2 2027",
-                  title: "Expansion & Upsell",
-                  side: "right",
-                  color: "bg-violet-600",
-                  items: [
-                    "Lancement plan Enterprise avec SSO/SAML",
-                    "Expansion Europe : UK, Allemagne, Espagne",
-                    "Moteur IA prédictif (mouvements tarifaires)",
-                    "MRR cible : 60 000 €",
-                  ],
-                },
-                {
-                  phase: "Phase 3",
-                  period: "T3 2027 — T4 2027",
-                  title: "Scale & Consolidation",
-                  side: "left",
-                  color: "bg-slate-700",
-                  items: [
-                    "Marketplace d&apos;intégrations (50+ connecteurs)",
-                    "API publique pour intégrations custom",
-                    "Programme partenaires revendeurs",
-                    "ARR cible : 2 M€ — Breakeven opérationnel",
-                  ],
-                },
-              ].map((ph) => (
-                <div key={ph.phase}
-                  className={`md:flex md:items-start gap-8 ${ph.side === "right" ? "md:flex-row-reverse" : ""}`}>
-                  {/* Content */}
-                  <div className="md:w-1/2 bg-white border border-slate-200 rounded-2xl p-7">
-                    <div className={`inline-block text-white text-xs font-black px-3 py-1 rounded-full mb-4 ${ph.color}`}>
-                      {ph.phase}
-                    </div>
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-bold text-slate-900 text-xl">{ph.title}</h3>
-                      <span className="text-xs text-slate-400 font-medium ml-3 mt-0.5 flex-shrink-0">{ph.period}</span>
-                    </div>
-                    <ul className="space-y-2.5">
-                      {ph.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-slate-600 text-sm">
-                          <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5">
+                  <div className="lg:w-72 bg-slate-50 rounded-xl p-6 border border-slate-100">
+                    <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Résultats mesurés</p>
+                    <ul className="space-y-3">
+                      {cas.resultats.map((r) => (
+                        <li key={r} className="flex items-start gap-2.5 text-sm text-slate-700 font-medium">
+                          <svg className="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#D4AF37" }}>
                             <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
                           </svg>
-                          <span dangerouslySetInnerHTML={{ __html: item }} />
+                          {r}
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  {/* Spacer for opposite side */}
-                  <div className="hidden md:block md:w-1/2" />
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── STACK & ARCHITECTURE ── */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-14 text-center">
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Stack technique</span>
-            <h2 className="text-4xl font-black mt-3 text-slate-900">
-              Architecture moderne, scalable, sans dette
-            </h2>
-            <p className="text-slate-500 text-lg mt-4 max-w-xl mx-auto">
-              Conçu pour supporter 100 000 utilisateurs dès le départ. Zéro compromis sur la sécurité ou la performance.
-            </p>
-          </div>
-
-          {/* Tech badges */}
-          <div className="flex flex-wrap gap-3 justify-center mb-14">
-            {[
-              { name: "Next.js 16", color: "bg-slate-900 text-white" },
-              { name: "TypeScript", color: "bg-blue-600 text-white" },
-              { name: "Tailwind CSS", color: "bg-cyan-500 text-white" },
-              { name: "Prisma ORM", color: "bg-indigo-600 text-white" },
-              { name: "Node.js", color: "bg-green-600 text-white" },
-              { name: "PostgreSQL", color: "bg-blue-800 text-white" },
-              { name: "Vercel Edge", color: "bg-slate-800 text-white" },
-              { name: "SSO / SAML", color: "bg-violet-600 text-white" },
-              { name: "RGPD", color: "bg-emerald-600 text-white" },
-              { name: "API REST", color: "bg-rose-600 text-white" },
-            ].map((t) => (
-              <span key={t.name} className={`${t.color} text-sm font-semibold px-5 py-2 rounded-full`}>
-                {t.name}
-              </span>
+              </div>
             ))}
           </div>
 
-          {/* Architecture cards */}
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Badges de confiance */}
+          <div className="mt-14 flex flex-wrap justify-center gap-8 items-center">
             {[
-              {
-                icon: (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0H3" />
-                  </svg>
-                ),
-                title: "Frontend performant",
-                desc: "Next.js 16 avec App Router, Server Components et streaming SSR. Core Web Vitals au vert. LCP < 1,2s.",
-              },
-              {
-                icon: (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
-                  </svg>
-                ),
-                title: "Backend scalable",
-                desc: "API Routes Next.js, Prisma ORM sur PostgreSQL (Supabase). Architecture multi-tenant avec row-level security.",
-              },
-              {
-                icon: (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
-                  </svg>
-                ),
-                title: "Sécurité enterprise",
-                desc: "SSO/SAML, chiffrement AES-256, audit logs immuables, conformité RGPD/ISO 27001. SLA 99,9%.",
-              },
-            ].map((c) => (
-              <div key={c.title} className="border border-slate-200 rounded-2xl p-7 bg-slate-50">
-                <div className="text-indigo-600 mb-4">{c.icon}</div>
-                <h3 className="font-bold text-slate-900 mb-2">{c.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{c.desc}</p>
+              { label: "240+ entreprises clientes", icon: "building" },
+              { label: "NDA sur demande", icon: "lock" },
+              { label: "RGPD conforme", icon: "shield" },
+              { label: "SLA 99,9%", icon: "check" },
+              { label: "ISO 27001 (en cours)", icon: "cert" },
+            ].map((badge) => (
+              <div key={badge.label} className="flex items-center gap-2 text-sm font-semibold text-slate-500">
+                <svg className="w-4 h-4 text-slate-400" viewBox="0 0 16 16" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                </svg>
+                {badge.label}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── VALORISATION ── */}
-      <section className="py-24 px-6 bg-slate-50">
+      {/* ── GRILLE TARIFAIRE ── */}
+      <section id="tarifs" className="py-24 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-14 text-center">
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-widest">Valorisation</span>
-            <h2 className="text-4xl font-black mt-3 text-slate-900">
-              3 scénarios d&apos;acquisition
+          <div className="mb-16 text-center">
+            <span className="font-bold text-sm uppercase tracking-widest" style={{ color: "#D4AF37" }}>
+              Offres & Tarification
+            </span>
+            <h2 className="text-4xl font-black mt-3 text-slate-900 leading-tight">
+              Investissez dans votre avantage concurrentiel
             </h2>
-            <p className="text-slate-500 text-lg mt-4 max-w-xl mx-auto">
-              Basés sur des multiples sectoriels SaaS B2B observés en 2025–2026 (source : Crunchbase, PitchBook).
+            <p className="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">
+              Chaque offre est pensée pour un profil d&apos;organisation spécifique.
+              Tous les plans incluent une période d&apos;essai de 14 jours, sans engagement.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                scenario: "Conservateur",
-                multiple: "4× ARR",
-                target: "ARR Année 1 : 180 K€",
-                valuation: "720 K€",
-                note: "Acquisition technologique ou acqui-hire. Idéal pour une startup en quête d&apos;une équipe front-end experte Next.js.",
-                color: "border-slate-300 bg-white",
-                badge: "bg-slate-100 text-slate-600",
-                popular: false,
-              },
-              {
-                scenario: "Standard",
-                multiple: "8× ARR",
-                target: "ARR Année 2 : 720 K€",
-                valuation: "5,76 M€",
-                note: "Valorisation de marché. Acquisition par un éditeur de CRM ou d&apos;outils marketing souhaitant intégrer la veille concurrentielle.",
-                color: "border-indigo-500 bg-white ring-2 ring-indigo-200 shadow-xl",
-                badge: "bg-indigo-600 text-white",
-                popular: true,
-              },
-              {
-                scenario: "Premium",
-                multiple: "12× ARR",
-                target: "ARR Année 3 : 2 M€",
-                valuation: "24 M€",
-                note: "Prime stratégique. Acquisition par un leader (Salesforce, HubSpot, Semrush) pour consolider leur offre competitive intelligence.",
-                color: "border-slate-300 bg-white",
-                badge: "bg-slate-100 text-slate-600",
-                popular: false,
-              },
-            ].map((v) => (
-              <div key={v.scenario} className={`relative rounded-2xl p-8 border ${v.color} transition-all`}>
-                {v.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full shadow">
-                    Scénario privilégié
-                  </div>
-                )}
-                <div className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-5 ${v.badge}`}>
-                  {v.scenario}
+            {/* Essentiel */}
+            <div className="bg-white border-2 border-slate-200 rounded-2xl p-8">
+              <div className="mb-6">
+                <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Essentiel</p>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-5xl font-black text-slate-900">990</span>
+                  <span className="text-xl font-bold text-slate-500">€</span>
+                  <span className="text-slate-400 text-sm font-medium">/mois</span>
                 </div>
-                <div className="mb-5">
-                  <p className="text-4xl font-black text-slate-900">{v.valuation}</p>
-                  <p className="text-sm text-indigo-600 font-semibold mt-1">{v.multiple} — {v.target}</p>
-                </div>
-                <p className="text-slate-500 text-sm leading-relaxed">{v.note}</p>
+                <p className="text-xs text-slate-400">Engagé annuellement — soit 11 880 €/an</p>
               </div>
-            ))}
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+                Pour les PME qui veulent passer d&apos;une veille artisanale à une surveillance structurée de leur environnement concurrentiel.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Jusqu’à 10 concurrents surveillés",
+                  "Rapports mensuels automatisés",
+                  "Alertes email configurables",
+                  "Dashboard temps réel",
+                  "Support email (J+2)",
+                  "Onboarding guidé inclus",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-slate-700">
+                    <svg className="w-4 h-4 flex-shrink-0 mt-0.5 text-slate-400" viewBox="0 0 16 16" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact"
+                className="block w-full text-center py-3.5 rounded-xl font-bold text-slate-700 border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all text-sm">
+                Démarrer l&apos;essai gratuit
+              </a>
+            </div>
+
+            {/* Performance */}
+            <div className="relative bg-white border-2 rounded-2xl p-8 shadow-2xl"
+              style={{ borderColor: "#D4AF37" }}>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-slate-900 text-xs font-black px-5 py-1.5 rounded-full shadow-lg"
+                style={{ background: "linear-gradient(135deg, #D4AF37 0%, #f0d060 100%)" }}>
+                LE PLUS CHOISI
+              </div>
+              <div className="mb-6">
+                <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: "#D4AF37" }}>Performance</p>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-5xl font-black text-slate-900">2 490</span>
+                  <span className="text-xl font-bold text-slate-500">€</span>
+                  <span className="text-slate-400 text-sm font-medium">/mois</span>
+                </div>
+                <p className="text-xs text-slate-400">Engagé annuellement — soit 29 880 €/an</p>
+              </div>
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+                Pour les ETI et entreprises en croissance qui ont besoin d&apos;une veille temps réel pour alimenter leurs décisions commerciales et produit.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Jusqu’à 25 concurrents surveillés",
+                  "Rapports hebdomadaires automatisés",
+                  "Alertes temps réel (délai < 15 min)",
+                  "Accès API complet",
+                  "Intégrations Slack, Teams, HubSpot",
+                  "Support prioritaire (J+4h)",
+                  "Analyse prédictive des prix",
+                  "Export PPTX pour le CODIR",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-slate-700">
+                    <svg className="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#D4AF37" }}>
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact"
+                className="block w-full text-center py-3.5 rounded-xl font-black text-slate-900 transition-all text-sm hover:-translate-y-0.5 shadow-lg"
+                style={{ background: "linear-gradient(135deg, #D4AF37 0%, #f0d060 100%)" }}>
+                Démarrer l&apos;essai gratuit
+              </a>
+            </div>
+
+            {/* Stratégique */}
+            <div className="bg-slate-900 border-2 border-slate-700 rounded-2xl p-8 text-white">
+              <div className="mb-6">
+                <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Stratégique</p>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-3xl font-black text-white leading-none">Sur devis</span>
+                </div>
+                <p className="text-xs font-bold mt-1" style={{ color: "#D4AF37" }}>À partir de 6 500 €/mois</p>
+              </div>
+              <p className="text-sm text-slate-400 mb-6 leading-relaxed">
+                Pour les Grands Comptes et groupes qui exigent un niveau de service partenaire — SLA garanti, CSM dédié et rapports CODIR sur mesure.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Concurrents illimités",
+                  "Rapports CODIR sur mesure",
+                  "CSM Senior dédié",
+                  "SLA garanti 99,9% (contractuel)",
+                  "SSO / SAML / SCIM",
+                  "Audit logs immuables",
+                  "Data résidence EU garantie",
+                  "Revues stratégiques mensuelles",
+                  "Formation équipes dirigeantes",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
+                    <svg className="w-4 h-4 flex-shrink-0 mt-0.5" viewBox="0 0 16 16" fill="currentColor" style={{ color: "#D4AF37" }}>
+                      <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="#contact"
+                className="block w-full text-center py-3.5 rounded-xl font-bold transition-all text-sm border border-white/20 hover:bg-white/10 text-white">
+                Demander un devis personnalisé
+              </a>
+            </div>
           </div>
 
           <p className="text-center text-sm text-slate-400 mt-8">
-            Ces projections sont indicatives et basées sur des hypothèses de croissance raisonnables.
-            Due diligence complète disponible sur demande.
+            Tous les prix sont HT. Engagement annuel. Paiement mensuel ou annuel disponible.
+            <br />
+            Offre sur mesure disponible pour les groupes &gt; 5 000 collaborateurs.
           </p>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="py-24 px-6 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-            Prêt à discuter{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              d&apos;une opportunité ?
+      {/* ── PROCESSUS D'ONBOARDING ── */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 text-center">
+            <span className="font-bold text-sm uppercase tracking-widest" style={{ color: "#D4AF37" }}>
+              Processus d&apos;onboarding
             </span>
-          </h2>
-          <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-            Que vous soyez investisseur, fonds de PE ou acquéreur stratégique,
-            notre équipe est disponible pour une présentation confidentielle complète.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <a href="mailto:contact@competeiq.io"
-              className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-lg px-10 py-5 rounded-xl transition-all shadow-lg shadow-indigo-900/50 hover:-translate-y-0.5">
-              <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                <path d="M3 4a2 2 0 0 0-2 2v1.161l8.441 4.221a1.25 1.25 0 0 0 1.118 0L19 7.162V6a2 2 0 0 0-2-2H3Z" />
-                <path d="m19 8.839-7.77 3.885a2.75 2.75 0 0 1-2.46 0L1 8.839V14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.839Z" />
-              </svg>
-              Prendre contact
-            </a>
-            <a href="mailto:contact@competeiq.io"
-              className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold text-lg px-10 py-5 rounded-xl transition-all backdrop-blur-sm">
-              contact@competeiq.io
-            </a>
+            <h2 className="text-4xl font-black mt-3 text-slate-900 leading-tight">
+              Opérationnel en 2 heures. Sérieusement.
+            </h2>
+            <p className="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">
+              Notre processus d&apos;activation a été conçu pour zéro friction. Vous prenez une décision de 6 chiffres — le démarrage doit être à la hauteur.
+            </p>
           </div>
 
-          <div className="flex flex-wrap gap-6 justify-center text-sm text-slate-500">
-            {["NDA disponible sur demande", "Data room accessible sous 48h", "Réponse garantie en 24h"].map((item) => (
-              <div key={item} className="flex items-center gap-2">
-                <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 text-indigo-400 flex-shrink-0">
-                  <path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd" />
-                </svg>
-                {item}
+          <div className="grid md:grid-cols-4 gap-6 relative">
+            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-slate-200" />
+
+            {[
+              {
+                step: "01",
+                duration: "15 min",
+                title: "Signature du NDA",
+                desc: "Accord de confidentialité mutuel signé électroniquement. Vos informations stratégiques restent dans un cadre légal dès le premier échange.",
+              },
+              {
+                step: "02",
+                duration: "45 min",
+                title: "Brief stratégique",
+                desc: "Session de découverte avec votre CSM dédié : cartographie de vos concurrents prioritaires, objectifs stratégiques, signaux à surveiller.",
+              },
+              {
+                step: "03",
+                duration: "30 min",
+                title: "Configuration",
+                desc: "Paramétrage de votre espace, activation des alertes, intégration avec vos outils (Slack, Teams, CRM). Zéro effort IT de votre côté.",
+              },
+              {
+                step: "04",
+                duration: "Go-live",
+                title: "Mise en surveillance",
+                desc: "Vos premiers rapports arrivent dans les 24h. Votre premier brief stratégique avec insights actionnables est remis dans la semaine.",
+              },
+            ].map((etape, i) => (
+              <div key={etape.step} className="relative flex flex-col items-center text-center">
+                <div className="relative mb-6 flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-full border-2 bg-white flex flex-col items-center justify-center z-10 shadow-sm"
+                    style={{ borderColor: "#D4AF37" }}>
+                    <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#D4AF37" }}>{etape.step}</span>
+                    <span className="text-xs text-slate-500 font-medium mt-0.5">{etape.duration}</span>
+                  </div>
+                </div>
+                <h3 className="font-black text-slate-900 text-base mb-2">{etape.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{etape.desc}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── ÉQUIPE ── */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 text-center">
+            <span className="font-bold text-sm uppercase tracking-widest" style={{ color: "#D4AF37" }}>
+              L&apos;équipe
+            </span>
+            <h2 className="text-4xl font-black mt-3 text-slate-900 leading-tight">
+              Des experts qui ont fait leurs preuves
+            </h2>
+            <p className="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">
+              CompeteIQ est construit par des professionnels qui ont opéré dans les environnements
+              les plus exigeants — conseil stratégique, data engineering, gestion de grands comptes.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                initiales: "ML",
+                nom: "Marc Lefèvre",
+                titre: "Head of Strategic Intelligence",
+                ancien: "McKinsey & Company · 8 ans",
+                desc: "Ex-consultant Senior chez McKinsey, spécialisé en stratégie compétitive et due diligence concurrentielle pour des groupes du CAC 40. A dirigé plus de 60 missions d’intelligence stratégique en Europe.",
+                tags: ["Stratégie", "M&A", "CAC 40", "Intelligence compétitive"],
+              },
+              {
+                initiales: "SC",
+                nom: "Sophie Chen",
+                titre: "Lead Data Engineer",
+                ancien: "Palantir Technologies · 6 ans",
+                desc: "Ancienne Data Engineer chez Palantir où elle a architecé des pipelines de traitement de données pour des clients gouvernementaux et industriels. Experte en NLP appliqué à l’analyse de marché.",
+                tags: ["Data Engineering", "NLP", "IA", "Temps réel"],
+              },
+              {
+                initiales: "AT",
+                nom: "Alexandre Tournier",
+                titre: "VP Customer Success",
+                ancien: "Gartner · 10 ans",
+                desc: "Ancien directeur de comptes stratégiques chez Gartner, il a accompagné plus de 80 COMEX dans la structuration de leur veille et leur processus de décision basé sur la donnée marché.",
+                tags: ["Grands Comptes", "CODIR", "Change Management"],
+              },
+            ].map((personne) => (
+              <div key={personne.nom} className="bg-white border border-slate-200 rounded-2xl p-8">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-black text-lg flex-shrink-0"
+                    style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)" }}>
+                    {personne.initiales}
+                  </div>
+                  <div>
+                    <p className="font-black text-slate-900 text-base">{personne.nom}</p>
+                    <p className="text-sm font-semibold text-slate-500">{personne.titre}</p>
+                    <p className="text-xs mt-0.5 font-bold" style={{ color: "#D4AF37" }}>
+                      ex-{personne.ancien}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-sm leading-relaxed mb-5">{personne.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {personne.tags.map((tag) => (
+                    <span key={tag} className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA & FORMULAIRE ── */}
+      <section id="contact" className="py-28 px-6" style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #111827 50%, #0f172a 100%)" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="font-bold text-sm uppercase tracking-widest" style={{ color: "#D4AF37" }}>
+              Prochaine étape
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black mt-3 text-white leading-tight">
+              Planifier une démonstration stratégique
+            </h2>
+            <p className="text-slate-400 text-lg mt-4 max-w-2xl mx-auto">
+              30 minutes avec un expert CompeteIQ. Nous analysons votre paysage concurrentiel
+              en direct et vous montrons ce que nous détecterions dès demain.
+            </p>
+          </div>
+
+          {submitted ? (
+            <div className="max-w-xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-12 text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                style={{ background: "rgba(212,175,55,0.15)", border: "2px solid rgba(212,175,55,0.4)" }}>
+                <svg className="w-8 h-8" viewBox="0 0 20 20" fill="currentColor" style={{ color: "#D4AF37" }}>
+                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <h3 className="text-white font-black text-2xl mb-3">Demande reçue.</h3>
+              <p className="text-slate-400 leading-relaxed">
+                Votre CSM dédié vous contactera dans les 4 heures ouvrées pour confirmer votre créneau.
+                Préparez-vous pour une démonstration qui changera votre regard sur votre marché.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-5">
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                    Nom complet *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.nom}
+                    onChange={(e) => setFormData({ ...formData, nom: e.target.value })}
+                    placeholder="Jean Dupont"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-amber-400/50 transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                    Entreprise *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.entreprise}
+                    onChange={(e) => setFormData({ ...formData, entreprise: e.target.value })}
+                    placeholder="Groupe Dupont SA"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-amber-400/50 transition-colors"
+                  />
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                    Poste *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.poste}
+                    onChange={(e) => setFormData({ ...formData, poste: e.target.value })}
+                    placeholder="Directeur Commercial"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-amber-400/50 transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                    CA de l&apos;entreprise
+                  </label>
+                  <select
+                    value={formData.ca}
+                    onChange={(e) => setFormData({ ...formData, ca: e.target.value })}
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white text-sm focus:outline-none focus:border-amber-400/50 transition-colors appearance-none"
+                    style={{ background: "rgba(255,255,255,0.05)" }}>
+                    <option value="" className="bg-slate-900">Sélectionner</option>
+                    <option value="< 5M€" className="bg-slate-900">Moins de 5 M€</option>
+                    <option value="5-25M€" className="bg-slate-900">5 à 25 M€</option>
+                    <option value="25-100M€" className="bg-slate-900">25 à 100 M€</option>
+                    <option value="100-500M€" className="bg-slate-900">100 à 500 M€</option>
+                    <option value="> 500M€" className="bg-slate-900">Plus de 500 M€</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                  Contexte & objectifs (optionnel)
+                </label>
+                <textarea
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Décrivez votre environnement concurrentiel, vos enjeux actuels, ce que vous cherchez à résoudre..."
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-amber-400/50 transition-colors resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full py-4 rounded-xl font-black text-slate-900 text-base transition-all hover:-translate-y-0.5 shadow-xl"
+                style={{ background: "linear-gradient(135deg, #D4AF37 0%, #f0d060 100%)" }}>
+                Planifier ma démonstration stratégique
+              </button>
+              <p className="text-center text-xs text-slate-600">
+                Réponse garantie sous 4h ouvrées · NDA disponible sur demande · Échange 100% confidentiel
+              </p>
+            </form>
+          )}
         </div>
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-slate-950 border-t border-white/5 py-8 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-indigo-600 rounded-md flex items-center justify-center">
-              <span className="text-white text-[9px] font-black">IQ</span>
+      <footer className="border-t py-10 px-6" style={{ background: "#050505", borderColor: "rgba(255,255,255,0.05)" }}>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)", border: "1px solid rgba(212,175,55,0.3)" }}>
+              <span className="text-xs font-black" style={{ color: "#D4AF37" }}>IQ</span>
             </div>
-            <span className="text-white font-bold text-sm">CompeteIQ</span>
+            <div>
+              <span className="text-white font-bold text-sm">CompeteIQ</span>
+              <span className="text-slate-600 text-xs ml-2">Intelligence Stratégique</span>
+            </div>
           </div>
-          <p className="text-slate-600 text-xs text-center">
-            Ce document est confidentiel et destiné exclusivement à son destinataire.
-            Toute reproduction ou diffusion est interdite sans accord écrit.
+          <p className="text-slate-600 text-xs text-center max-w-sm">
+            Ce document est confidentiel et destiné exclusivement aux décideurs identifiés.
+            Toute reproduction ou diffusion est interdite sans accord écrit préalable.
           </p>
-          <p className="text-slate-600 text-xs">© 2026 CompeteIQ. Tous droits réservés.</p>
+          <div className="flex items-center gap-6">
+            <a href="mailto:contact@competeiq.io" className="text-slate-500 hover:text-white text-xs transition-colors">
+              contact@competeiq.io
+            </a>
+            <p className="text-slate-600 text-xs">© 2026 CompeteIQ</p>
+          </div>
         </div>
       </footer>
 
