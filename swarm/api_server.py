@@ -25,6 +25,12 @@ from divisions.division_4_production import Division4Production
 from divisions.division_5_finance import Division5Finance
 from divisions.division_6_branding import Division6Branding
 from webhooks.stripe import stripe_router
+from intelligence.performance_monitor import PerformanceMonitor
+from intelligence.sector_analyzer import SectorAnalyzer
+from intelligence.email_tracker import EmailTracker
+from intelligence.lead_scorer import LeadScorer
+from intelligence.campaign_scheduler import CampaignScheduler
+from intelligence.deduplication_engine import DeduplicationEngine, SuppressionReason
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("SwarmAPI")
@@ -57,6 +63,15 @@ _div6 = Division6Branding()
 _active_threads: Dict[str, NegotiationThread] = {}
 _cycle_running = False
 _last_cycle_summary: Optional[Dict] = None
+
+# Intelligence singletons
+_perf_monitor = PerformanceMonitor()
+_perf_monitor.initialize_agents()
+_sector_analyzer = SectorAnalyzer()
+_email_tracker = EmailTracker()
+_lead_scorer = LeadScorer()
+_campaign_scheduler = CampaignScheduler()
+_dedup_engine = DeduplicationEngine()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -345,6 +360,264 @@ def list_agents():
         }
         for a in ALL_AGENTS
     ]
+
+
+# ── Performance monitor ───────────────────────────────────────────────────────
+
+@app.get("/agents/health", tags=["Monitoring"])
+def agents_health():
+    """Global health summary + per-division stats for all 60 agents."""
+    divisions = [d.to_dict() for d in _perf_monitor.get_all_divisions()]
+    alerts = [a.to_dict() for a in _perf_monitor.get_alerts()]
+    return {
+        "source": "live",
+        "summary": _perf_monitor.global_summary(),
+        "divisions": divisions,
+        "alerts": alerts[:10],
+    }
+
+
+@app.post("/agents/{agent_id}/task", tags=["Monitoring"])
+def record_agent_task(agent_id: str, success: bool = True, response_time_ms: int = 0, error_msg: str = ""):
+    """Record a task outcome for an agent — updates health metrics."""
+    _perf_monitor.record_task(
+        agent_id=agent_id,
+        success=success,
+        response_time_ms=response_time_ms if response_time_ms else None,
+        error_msg=error_msg or None,
+    )
+    return {"status": "recorded", "agent_id": agent_id}
+
+
+@app.post("/agents/{agent_id}/heartbeat", tags=["Monitoring"])
+def agent_heartbeat(agent_id: str):
+    """Mark an agent alive."""
+    _perf_monitor.heartbeat(agent_id)
+    return {"status": "ok", "agent_id": agent_id}
+
+
+# ── Sector analyzer ───────────────────────────────────────────────────────────
+
+@app.get("/sectors", tags=["Intelligence"])
+def get_sectors(sort_by: str = "opportunity"):
+    """All French business sectors ranked by opportunity score."""
+    ranked = _sector_analyzer.ranked_by_opportunity()
+    return {
+        "sectors": [
+            {
+                "sector_id": s.sector_id,
+                "name": s.name,
+                "tags": s.tags,
+                "market_size_eur": s.market_size_eur,
+                "competition_density": s.competition_density,
+                "roi_multiplier": s.roi_multiplier,
+                "avg_ticket_eur": s.avg_ticket_eur,
+                "icp_priority": s.icp_priority(),
+                "recommended_volume": s.recommended_volume(),
+                "opportunity_score": round(s.roi_multiplier / s.competition_density, 3),
+            }
+            for s in ranked
+        ],
+        "total_addressable_market": _sector_analyzer.total_addressable_market(),
+        "priority_sectors": _sector_analyzer.s_priority_sectors(),
+        "weekly_plan": _sector_analyzer.weekly_outreach_plan(),
+    }
+
+
+@app.get("/sectors/{sector_name}", tags=["Intelligence"])
+def get_sector(sector_name: str):
+    """Fetch a specific sector by tag or name."""
+    profile = _sector_analyzer.get_by_name(sector_name)
+    if not profile:
+        raise HTTPException(status_code=404, detail=f"Sector '{sector_name}' not found")
+    return {
+        "sector_id": profile.sector_id,
+        "name": profile.name,
+        "tags": profile.tags,
+        "market_size_eur": profile.market_size_eur,
+        "competition_density": profile.competition_density,
+        "roi_multiplier": profile.roi_multiplier,
+        "avg_ticket_eur": profile.avg_ticket_eur,
+        "icp_priority": profile.icp_priority(),
+        "recommended_volume": profile.recommended_volume(),
+    }
+
+
+# ── Email tracking ────────────────────────────────────────────────────────────
+
+@app.get("/tracking/report", tags=["Tracking"])
+def tracking_report(n: int = 10):
+    """Email campaign performance overview."""
+    return {
+        "summary": _email_tracker.summary(),
+        "top_campaigns": [m.to_dict() for m in _email_tracker.top_campaigns(n=n)],
+        "agent_leaderboard": _email_tracker.agent_leaderboard(n=n),
+    }
+
+
+@app.post("/tracking/event", tags=["Tracking"])
+def record_tracking_event(
+    campaign_id: str,
+    agent_id: str = "",
+    opened: bool = False,
+    clicked: bool = False,
+    replied: bool = False,
+    paid: bool = False,
+):
+    """Record an email tracking event (open / click / reply / payment)."""
+    _email_tracker.track(
+        campaign_id=campaign_id,
+        agent_id=agent_id,
+        opened=opened,
+        clicked=clicked,
+        replied=replied,
+        paid=paid,
+    )
+    return {"status": "tracked", "campaign_id": campaign_id}
+
+
+@app.get("/tracking/campaign/{campaign_id}", tags=["Tracking"])
+def campaign_metrics(campaign_id: str):
+    """Metrics for a specific campaign."""
+    m = _email_tracker.get_metrics(campaign_id)
+    if not m:
+        raise HTTPException(status_code=404, detail="Campaign not found")
+    return m.to_dict()
+
+
+# ── Campaign scheduler ────────────────────────────────────────────────────────
+
+class CampaignPlanIn(BaseModel):
+    sector: str
+    total_leads: int
+    agent_id: str
+    tier_filter: str = "A"
+    priority: str = "normal"
+
+
+class MultiSectorPlanIn(BaseModel):
+    sector_volumes: Dict[str, int]
+    agent_assignments: Optional[Dict[str, str]] = None
+
+
+@app.post("/campaigns/plan", tags=["Campaigns"])
+def create_campaign_plan(payload: CampaignPlanIn):
+    """Plan a campaign for a single sector."""
+    plan = _campaign_scheduler.plan(
+        sector=payload.sector,
+        total_leads=payload.total_leads,
+        agent_id=payload.agent_id,
+        tier_filter=payload.tier_filter,
+        priority=payload.priority,
+    )
+    return plan.to_dict()
+
+
+@app.post("/campaigns/plan-multi", tags=["Campaigns"])
+def create_multi_sector_plan(payload: MultiSectorPlanIn):
+    """Plan campaigns for multiple sectors at once."""
+    plans = _campaign_scheduler.plan_multi_sector(
+        sector_volumes=payload.sector_volumes,
+        agent_assignments=payload.agent_assignments,
+    )
+    return [p.to_dict() for p in plans]
+
+
+@app.get("/campaigns/pending", tags=["Campaigns"])
+def pending_waves():
+    """Waves due to be sent now."""
+    return [w.to_dict() for w in _campaign_scheduler.pending_waves()]
+
+
+@app.get("/campaigns/summary", tags=["Campaigns"])
+def campaigns_summary():
+    return _campaign_scheduler.summary()
+
+
+@app.post("/campaigns/{plan_id}/waves/{wave_id}/done", tags=["Campaigns"])
+def mark_wave_done(plan_id: str, wave_id: str):
+    ok = _campaign_scheduler.mark_wave_done(plan_id, wave_id)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Wave not found")
+    return {"status": "done", "wave_id": wave_id}
+
+
+@app.post("/campaigns/{plan_id}/waves/{wave_id}/cancel", tags=["Campaigns"])
+def cancel_wave(plan_id: str, wave_id: str):
+    ok = _campaign_scheduler.cancel_wave(plan_id, wave_id)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Wave not found")
+    return {"status": "cancelled", "wave_id": wave_id}
+
+
+# ── Deduplication ─────────────────────────────────────────────────────────────
+
+class SuppressIn(BaseModel):
+    key: str
+    key_type: str = "email"
+    reason: str = "opt_out"
+    note: str = ""
+
+
+class CheckIn(BaseModel):
+    email: str
+    company_name: str = ""
+    city: str = ""
+    phone: str = ""
+
+
+@app.post("/dedup/check", tags=["Deduplication"])
+def dedup_check(payload: CheckIn):
+    """Check if a prospect can be contacted now."""
+    result = _dedup_engine.check(
+        email=payload.email,
+        company_name=payload.company_name,
+        city=payload.city,
+        phone=payload.phone,
+    )
+    return result.to_dict()
+
+
+@app.post("/dedup/record", tags=["Deduplication"])
+def dedup_record(payload: CheckIn, agent_id: str = "", sector: str = ""):
+    """Log that a prospect was contacted."""
+    _dedup_engine.record_contact(
+        email=payload.email,
+        company_name=payload.company_name,
+        city=payload.city,
+        phone=payload.phone,
+        agent_id=agent_id,
+        sector=sector,
+    )
+    return {"status": "recorded"}
+
+
+@app.post("/dedup/suppress", tags=["Deduplication"])
+def suppress_contact(payload: SuppressIn):
+    """Permanently suppress a contact (opt-out, bounce, spam…)."""
+    try:
+        reason = SuppressionReason(payload.reason)
+    except ValueError:
+        reason = SuppressionReason.MANUAL
+    _dedup_engine.suppress(payload.key, payload.key_type, reason, payload.note)
+    return {"status": "suppressed", "key": payload.key}
+
+
+@app.delete("/dedup/suppress/{key}", tags=["Deduplication"])
+def remove_suppression(key: str):
+    """Remove a key from the suppression list."""
+    removed = _dedup_engine.unsuppress(key)
+    if not removed:
+        raise HTTPException(status_code=404, detail="Key not in suppression list")
+    return {"status": "removed", "key": key}
+
+
+@app.get("/dedup/suppression-list", tags=["Deduplication"])
+def get_suppression_list():
+    return {
+        "entries": _dedup_engine.export_suppression_list(),
+        "summary": _dedup_engine.summary(),
+    }
 
 
 if __name__ == "__main__":
