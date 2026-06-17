@@ -65,6 +65,18 @@ function IconReports({ className }: { className?: string }) {
   );
 }
 
+function IconSwarm({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="4" r="2" />
+      <circle cx="4" cy="14" r="2" />
+      <circle cx="16" cy="14" r="2" />
+      <circle cx="10" cy="10" r="1.5" />
+      <path d="M10 6L4 12M10 6L16 12M10 6v2.5M4 12l4-1M16 12l-4-1" strokeWidth="1" stroke="currentColor" fill="none" />
+    </svg>
+  );
+}
+
 function IconSettings({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -143,6 +155,12 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitors", label: "Concurrents", icon: IconCompetitors },
       { href: "/dashboard/alerts", label: "Alertes", icon: IconAlerts, badge: 3 },
       { href: "/dashboard/reports", label: "Rapports", icon: IconReports },
+    ],
+  },
+  {
+    title: "ESSAIM IA",
+    items: [
+      { href: "/dashboard/swarm", label: "50 Agents Swarm", icon: IconSwarm },
     ],
   },
   {
