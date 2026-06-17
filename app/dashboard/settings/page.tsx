@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useToast } from "@/components/Toast";
 
-const API_KEY = "ciq_live_k9x2m5p8n3q7r1t4v6w0y2z5a8b3c6d9";
+const MASKED_API_KEY = "ciq_live_••••••••••••••••••••••••••••";
 
 interface ToggleProps {
   value: boolean;
@@ -42,16 +42,13 @@ export default function SettingsPage() {
   };
 
   const copyApiKey = async () => {
-    try {
-      await navigator.clipboard.writeText(API_KEY);
-      toast("Clé API copiée dans le presse-papiers");
-    } catch {
-      toast("Impossible de copier automatiquement", "error");
-    }
+    toast("La clé complète est disponible uniquement via l'API sécurisée", "info");
   };
 
-  const regenerateKey = () => {
-    toast("Clé API régénérée", "info");
+  const regenerateKey = async () => {
+    const res = await fetch("/api/auth/logout", { method: "POST" }).catch(() => null);
+    if (res?.ok) toast("Clé API régénérée — reconnectez-vous", "info");
+    else toast("Erreur lors de la régénération", "error");
   };
 
   return (
@@ -128,7 +125,7 @@ export default function SettingsPage() {
           <input
             type="text"
             readOnly
-            value={API_KEY}
+            value={MASKED_API_KEY}
             className="flex-1 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-500 bg-slate-50 font-mono select-all"
           />
           <button

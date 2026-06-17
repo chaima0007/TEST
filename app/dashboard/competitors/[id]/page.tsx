@@ -217,7 +217,9 @@ export default function CompetitorDetailPage(props: PageProps<"/dashboard/compet
               <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${threatColors[threatLevel]}`}>
                 Menace {threatLabels[threatLevel]}
               </span>
-              <a href={`https://${competitor.website}`} className="text-sm text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
+              <a href={/^https?:\/\//.test(competitor.website) ? competitor.website : `https://${competitor.website}`}
+                className="text-sm text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer"
+                onClick={(e) => { try { new URL(/^https?:\/\//.test(competitor.website) ? competitor.website : `https://${competitor.website}`); } catch { e.preventDefault(); } }}>
                 {competitor.website} ↗
               </a>
             </div>

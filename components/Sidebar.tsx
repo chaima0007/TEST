@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const navItems = [
@@ -16,6 +16,12 @@ const navItems = [
 
 function NavContent({ onClose }: { onClose?: () => void }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.push("/login");
+  };
   return (
     <>
       <div className="px-6 py-5 border-b border-slate-800 flex items-center justify-between">
@@ -60,9 +66,9 @@ function NavContent({ onClose }: { onClose?: () => void }) {
             <p className="text-sm text-white font-medium truncate">Demo User</p>
             <p className="text-xs text-slate-400 truncate">demo@competeiq.com</p>
           </div>
-          <Link href="/login" className="text-slate-500 hover:text-slate-300 transition-colors text-xs" title="Déconnexion">
+          <button onClick={handleLogout} className="text-slate-500 hover:text-slate-300 transition-colors text-xs" title="Déconnexion">
             ↪
-          </Link>
+          </button>
         </div>
       </div>
     </>

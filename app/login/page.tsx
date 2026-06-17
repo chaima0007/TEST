@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
-  const [email, setEmail] = useState("demo@competeiq.com");
-  const [password, setPassword] = useState("demo123");
+  const searchParams = useSearchParams();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -16,14 +18,21 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
 
-    // Demo: accept demo credentials directly
-    await new Promise((r) => setTimeout(r, 600));
-    if (email === "demo@competeiq.com" && password === "demo123") {
-      router.push("/dashboard");
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (res.ok) {
+      const next = searchParams.get("next");
+      const safePath = next && next.startsWith("/") && !next.startsWith("//") ? next : "/dashboard";
+      router.push(safePath);
     } else {
-      setError("Email ou mot de passe incorrect. Essayez demo@competeiq.com / demo123");
+      const data = await res.json().catch(() => ({})) as { error?: string };
+      setError(data.error ?? "Identifiants incorrects");
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -54,8 +63,10 @@ export default function LoginPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="votre@email.com"
                 className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 required
+                autoComplete="email"
               />
             </div>
             <div>
@@ -64,8 +75,10 @@ export default function LoginPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
                 className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 required
+                autoComplete="current-password"
               />
             </div>
             <button
@@ -73,15 +86,22 @@ export default function LoginPage() {
               disabled={loading}
               className="w-full bg-indigo-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
             >
-              {loading && <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>}
+              {loading && <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />}
               {loading ? "Connexion..." : "Se connecter"}
             </button>
           </form>
 
-          <div className="mt-4 p-3 bg-indigo-50 rounded-lg">
-            <p className="text-xs text-indigo-700 font-medium">Compte démo :</p>
-            <p className="text-xs text-indigo-600">Email : demo@competeiq.com</p>
-            <p className="text-xs text-indigo-600">Mot de passe : demo123</p>
+          {/* Demo hint — acceptable in demo mode, credentials stored server-side only */}
+          <div className="mt-4 p-3 bg-indigo-50 border border-indigo-100 rounded-lg">
+            <p className="text-xs text-indigo-700 font-semibold mb-1">Compte démo</p>
+            <p className="text-xs text-indigo-600">Utilisez le compte de démonstration pour explorer l&apos;application.</p>
+            <button
+              type="button"
+              onClick={() => { setEmail("demo@competeiq.com"); setPassword("demo123"); }}
+              className="mt-2 text-xs text-indigo-700 font-semibold hover:underline"
+            >
+              Remplir automatiquement →
+            </button>
           </div>
         </div>
 
@@ -93,5 +113,13 @@ export default function LoginPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
   );
 }
