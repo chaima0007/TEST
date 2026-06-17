@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Tarifs", href: "#pricing" },
   { label: "Ressources", href: "#stats" },
   { label: "Entreprise", href: "#trusted" },
+  { label: "Investisseurs", href: "/pitch" },
 ];
 
 const features = [
