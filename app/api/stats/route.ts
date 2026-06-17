@@ -1,33 +1,22 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
-import { getDemoUser } from "@/lib/auth";
+import { competitors, alerts, reports, stats } from "@/lib/data";
 
 export async function GET() {
-  const user = await getDemoUser();
-  if (!user) return NextResponse.json({ error: "User not found" }, { status: 404 });
-
-  const [competitorCount, alertCount, reportCount, recentAlerts, recentCompetitors] = await Promise.all([
-    prisma.competitor.count({ where: { userId: user.id } }),
-    prisma.alert.count({ where: { userId: user.id, isRead: false } }),
-    prisma.report.count({ where: { userId: user.id } }),
-    prisma.alert.findMany({
-      where: { userId: user.id, isRead: false },
-      orderBy: { createdAt: "desc" },
-      take: 3,
-    }),
-    prisma.competitor.findMany({
-      where: { userId: user.id },
-      orderBy: { createdAt: "desc" },
-      take: 5,
-      select: { id: true, name: true, industry: true, threatLevel: true, logo: true, color: true },
-    }),
-  ]);
+  const recentAlerts = alerts.filter((a) => !a.isRead).slice(0, 3);
+  const recentCompetitors = competitors.slice(0, 5).map((c) => ({
+    id: c.id,
+    name: c.name,
+    industry: c.industry,
+    threatLevel: c.threatLevel,
+    logo: c.logo,
+    color: c.color,
+  }));
 
   return NextResponse.json({
-    competitors: competitorCount,
-    alerts: alertCount,
-    reports: reportCount,
-    marketScore: 74,
+    competitors: stats.competitorsTracked,
+    alerts: stats.activeAlerts,
+    reports: reports.length,
+    marketScore: stats.marketScore,
     recentAlerts,
     recentCompetitors,
   });
