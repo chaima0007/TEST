@@ -1,5 +1,8 @@
+"use client";
+
 import { competitors } from "@/lib/data";
 import Link from "next/link";
+import { useState, useMemo } from "react";
 
 const featureNames = [
   "Intelligence Artificielle",
@@ -18,164 +21,366 @@ const qualityScore: Record<string, number> = {
 };
 
 function getFeatureForCompetitor(c: (typeof competitors)[0], featureName: string) {
-  return c.features.find((f) =>
-    f.name.toLowerCase().includes(featureName.toLowerCase().split(" ")[0].toLowerCase()) ||
-    featureName.toLowerCase().includes(f.name.toLowerCase().split(" ")[0].toLowerCase()) ||
-    f.name === featureName
+  return c.features.find(
+    (f) =>
+      f.name.toLowerCase().includes(featureName.toLowerCase().split(" ")[0].toLowerCase()) ||
+      featureName.toLowerCase().includes(f.name.toLowerCase().split(" ")[0].toLowerCase()) ||
+      f.name === featureName
   );
 }
 
-function qualityBadge(quality: string, available: boolean) {
-  if (!available) return <span className="text-slate-300 text-lg">✗</span>;
-  const colors: Record<string, string> = {
-    Excellent: "bg-emerald-100 text-emerald-700",
-    Bien: "bg-indigo-100 text-indigo-700",
-    Moyen: "bg-amber-100 text-amber-700",
-  };
-  return (
-    <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${colors[quality] || "bg-slate-100 text-slate-500"}`}>
-      {quality}
-    </span>
-  );
+function QualityBadge({ quality, available }: { quality: string; available: boolean }) {
+  if (!available)
+    return (
+      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-100">
+        <span className="text-slate-300 text-sm font-bold">✗</span>
+      </span>
+    );
+
+  if (quality === "Excellent")
+    return (
+      <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
+        <span className="text-emerald-500">✓</span> Excellent
+      </span>
+    );
+  if (quality === "Bien")
+    return (
+      <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700 border border-blue-200">
+        <span className="text-blue-400">✓</span> Bien
+      </span>
+    );
+  if (quality === "Moyen")
+    return (
+      <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 border border-amber-200">
+        <span className="text-amber-400">✓</span> Moyen
+      </span>
+    );
+
+  return <span className="text-slate-300 text-base">—</span>;
+}
+
+function getCompetitorScore(c: (typeof competitors)[0]): number {
+  const total = c.features.reduce((acc, f) => acc + (f.available ? (qualityScore[f.quality] ?? 0) : 0), 0);
+  const max = c.features.length * 3;
+  return Math.round((total / max) * 100);
+}
+
+function generateAIInsight(selected: (typeof competitors)[0][]): string {
+  if (selected.length === 0) return "";
+
+  const scored = selected.map((c) => ({ c, score: getCompetitorScore(c) })).sort((a, b) => b.score - a.score);
+  const best = scored[0];
+  const weakest = scored[scored.length - 1];
+
+  const bestFeature = best.c.features.find((f) => f.available && f.quality === "Excellent");
+  const gap = best.score - weakest.score;
+
+  if (selected.length === 1) {
+    return `${best.c.name} affiche un score global de ${best.score}%. ${
+      bestFeature ? `Son point fort : ${bestFeature.name.split("(")[0].trim()}, noté Excellent.` : ""
+    } Surveillez leurs prochaines mises à jour produit pour anticiper leurs mouvements.`;
+  }
+
+  return `${best.c.name} domine cette comparaison avec ${best.score}% — un écart de ${gap} points sur ${weakest.c.name}. ${
+    bestFeature ? `L'avantage clé : une maîtrise Excellent sur ${bestFeature.name.split("(")[0].trim()}.` : ""
+  } Pour contrer ${best.c.name}, misez sur les angles où ils restent à Moyen${
+    best.c.features.some((f) => f.quality === "Moyen") ? ` (${best.c.features.find((f) => f.quality === "Moyen")?.name.split("(")[0].trim()})` : ""
+  } ou sur une valeur prix plus compétitive.`;
 }
 
 export default function ComparePage() {
-  const scores = competitors.map((c) => {
-    const total = c.features.reduce((acc, f) => acc + (f.available ? qualityScore[f.quality] ?? 0 : 0), 0);
-    const max = c.features.length * 3;
-    return { id: c.id, name: c.name, score: Math.round((total / max) * 100) };
-  }).sort((a, b) => b.score - a.score);
+  const [selectedIds, setSelectedIds] = useState<string[]>(competitors.slice(0, 3).map((c) => c.id));
+
+  function toggleSelect(id: string) {
+    setSelectedIds((prev) => {
+      if (prev.includes(id)) return prev.filter((x) => x !== id);
+      if (prev.length >= 3) return prev;
+      return [...prev, id];
+    });
+  }
+
+  const selected = useMemo(
+    () => competitors.filter((c) => selectedIds.includes(c.id)),
+    [selectedIds]
+  );
+
+  const scores = useMemo(
+    () =>
+      selected
+        .map((c) => ({ id: c.id, name: c.name, color: c.color, score: getCompetitorScore(c) }))
+        .sort((a, b) => b.score - a.score),
+    [selected]
+  );
+
+  const bestId = scores[0]?.id ?? null;
+  const aiInsight = useMemo(() => generateAIInsight(selected), [selected]);
+
+  const featureAvailableCounts = useMemo(
+    () =>
+      featureNames.map((featureName) => ({
+        name: featureName,
+        count: selected.filter((c) => {
+          const f = getFeatureForCompetitor(c, featureName);
+          return f?.available ?? false;
+        }).length,
+      })),
+    [selected]
+  );
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-slate-900">Comparaison des fonctionnalités</h2>
-        <p className="text-slate-500 text-sm mt-1">Matrice de comparaison de tous vos concurrents</p>
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="flex flex-col gap-1">
+        <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+          Comparez vos concurrents en un coup d&apos;œil
+        </h2>
+        <p className="text-slate-500 text-sm">
+          Sélectionnez jusqu&apos;à 3 concurrents et visualisez leurs forces, leurs lacunes et vos opportunités.
+        </p>
       </div>
 
-      {/* Scores summary */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-        {scores.map((s, i) => {
-          const c = competitors.find((c) => c.id === s.id)!;
+      {/* Competitor selector pills */}
+      <div className="flex flex-wrap gap-2">
+        {competitors.map((c) => {
+          const isSelected = selectedIds.includes(c.id);
+          const isDisabled = !isSelected && selectedIds.length >= 3;
           return (
-            <div key={s.id} className="bg-white rounded-xl border border-slate-200 p-4 text-center">
-              <div className="relative inline-flex items-center justify-center mb-2">
-                <svg className="w-14 h-14 -rotate-90" viewBox="0 0 36 36">
-                  <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f1f5f9" strokeWidth="3" />
-                  <circle
-                    cx="18" cy="18" r="15.9" fill="none"
-                    stroke={c.color} strokeWidth="3"
-                    strokeDasharray={`${s.score} 100`}
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <span className="absolute text-sm font-bold text-slate-800">{s.score}%</span>
-              </div>
-              {i === 0 && <div className="text-xs text-amber-500 font-medium mb-0.5">🏆 #1</div>}
-              <p className="text-xs font-semibold text-slate-700">{s.name}</p>
-            </div>
+            <button
+              key={c.id}
+              onClick={() => !isDisabled && toggleSelect(c.id)}
+              disabled={isDisabled}
+              className={[
+                "inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-sm font-medium border transition-all",
+                isSelected
+                  ? "text-white border-transparent shadow-sm"
+                  : isDisabled
+                  ? "bg-slate-50 text-slate-300 border-slate-200 cursor-not-allowed"
+                  : "bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50 cursor-pointer",
+              ].join(" ")}
+              style={isSelected ? { backgroundColor: c.color, borderColor: c.color } : {}}
+            >
+              <span
+                className={[
+                  "w-5 h-5 rounded flex items-center justify-center text-xs font-bold",
+                  isSelected ? "bg-white/20" : "text-white",
+                ].join(" ")}
+                style={isSelected ? {} : { backgroundColor: c.color }}
+              >
+                {c.logo}
+              </span>
+              {c.name}
+              {isSelected && (
+                <span className="ml-0.5 opacity-75 text-xs">✕</span>
+              )}
+            </button>
           );
         })}
+        {selectedIds.length >= 3 && (
+          <span className="inline-flex items-center px-3 py-2 text-xs text-slate-400">
+            Maximum 3 concurrents — désélectionnez-en un pour changer.
+          </span>
+        )}
       </div>
 
-      {/* Feature matrix */}
-      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm min-w-[700px]">
-            <thead>
-              <tr className="border-b border-slate-100 bg-slate-50">
-                <th className="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase w-52">
-                  Fonctionnalité
-                </th>
-                {competitors.map((c) => (
-                  <th key={c.id} className="px-3 py-3.5 text-center">
-                    <Link href={`/dashboard/competitors/${c.id}`} className="flex flex-col items-center gap-1 hover:opacity-80">
-                      <div
-                        className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold"
-                        style={{ backgroundColor: c.color }}
-                      >
-                        {c.logo}
-                      </div>
-                      <span className="text-xs font-medium text-slate-700">{c.name.split(" ")[0]}</span>
-                    </Link>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-50">
-              {featureNames.map((featureName) => (
-                <tr key={featureName} className="hover:bg-slate-50/50">
-                  <td className="px-5 py-3.5 text-sm font-medium text-slate-700">{featureName}</td>
-                  {competitors.map((c) => {
-                    const feature = getFeatureForCompetitor(c, featureName);
-                    return (
-                      <td key={c.id} className="px-3 py-3.5 text-center">
-                        {feature
-                          ? qualityBadge(feature.quality, feature.available)
-                          : <span className="text-slate-300 text-base">—</span>
-                        }
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      {selected.length === 0 ? (
+        <div className="bg-slate-50 border border-dashed border-slate-200 rounded-xl py-16 text-center text-slate-400 text-sm">
+          Sélectionnez au moins un concurrent pour démarrer la comparaison.
         </div>
-        <div className="px-5 py-3 border-t border-slate-100 bg-slate-50 flex items-center gap-4 text-xs text-slate-500">
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-500"></span> Excellent</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-indigo-500"></span> Bien</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-500"></span> Moyen</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-slate-200"></span> Non disponible</span>
-        </div>
-      </div>
+      ) : (
+        <>
+          {/* Score cards */}
+          <div className={`grid gap-4 ${selected.length === 1 ? "grid-cols-1 max-w-xs" : selected.length === 2 ? "grid-cols-2 max-w-sm" : "grid-cols-3"}`}>
+            {scores.map((s, i) => {
+              const isBest = s.id === bestId && selected.length > 1;
+              return (
+                <div
+                  key={s.id}
+                  className={[
+                    "rounded-xl border p-5 text-center relative transition-all",
+                    isBest
+                      ? "bg-blue-50 border-blue-200 shadow-sm"
+                      : "bg-white border-slate-200",
+                  ].join(" ")}
+                >
+                  {isBest && (
+                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                      Meilleur score
+                    </span>
+                  )}
+                  <div className="relative inline-flex items-center justify-center mb-3">
+                    <svg className="w-16 h-16 -rotate-90" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f1f5f9" strokeWidth="2.5" />
+                      <circle
+                        cx="18"
+                        cy="18"
+                        r="15.9"
+                        fill="none"
+                        stroke={s.color}
+                        strokeWidth="2.5"
+                        strokeDasharray={`${s.score} 100`}
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <span className="absolute text-sm font-bold text-slate-800">{s.score}%</span>
+                  </div>
+                  {i === 0 && selected.length > 1 && (
+                    <p className="text-xs text-amber-500 font-semibold mb-1">🏆 #1 global</p>
+                  )}
+                  <p className="text-sm font-semibold text-slate-800">{s.name}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    {featureAvailableCounts.filter((f) => {
+                      const c = selected.find((cc) => cc.id === s.id)!;
+                      const feat = getFeatureForCompetitor(c, f.name);
+                      return feat?.available;
+                    }).length} / {featureNames.length} features
+                  </p>
+                </div>
+              );
+            })}
+          </div>
 
-      {/* Pricing comparison */}
-      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-        <div className="px-5 py-4 border-b border-slate-100">
-          <h3 className="font-semibold text-slate-900">Comparaison des prix d&apos;entrée</h3>
-        </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm min-w-[700px]">
-            <thead>
-              <tr className="border-b border-slate-100 bg-slate-50">
-                <th className="text-left px-5 py-3 text-xs font-semibold text-slate-500 uppercase w-52">Concurrent</th>
-                <th className="text-left px-3 py-3 text-xs font-semibold text-slate-500 uppercase">Plan le moins cher</th>
-                <th className="text-left px-3 py-3 text-xs font-semibold text-slate-500 uppercase">Prix</th>
-                <th className="text-left px-3 py-3 text-xs font-semibold text-slate-500 uppercase">Plan Premium</th>
-                <th className="text-left px-3 py-3 text-xs font-semibold text-slate-500 uppercase">Prix Premium</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-50">
-              {competitors.map((c) => {
-                const entry = c.pricing[0];
-                const top = c.pricing[c.pricing.length - 1];
-                return (
-                  <tr key={c.id} className="hover:bg-slate-50/50">
-                    <td className="px-5 py-3.5">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold"
-                          style={{ backgroundColor: c.color }}>
-                          {c.logo}
-                        </div>
-                        <span className="font-medium text-slate-800">{c.name}</span>
-                      </div>
-                    </td>
-                    <td className="px-3 py-3.5 text-slate-600">{entry.name}</td>
-                    <td className="px-3 py-3.5 font-semibold text-slate-900">
-                      {entry.price === 0 ? <span className="text-emerald-600">Gratuit</span> : `${entry.price}€/mois`}
-                    </td>
-                    <td className="px-3 py-3.5 text-slate-600">{top.name}</td>
-                    <td className="px-3 py-3.5 font-semibold text-slate-900">
-                      {top.price === 0 ? <span className="text-emerald-600">Gratuit</span> : `${top.price}€/mois`}
-                    </td>
+          {/* Feature matrix */}
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+              <div>
+                <h3 className="font-semibold text-slate-900">Matrice des fonctionnalités</h3>
+                <p className="text-xs text-slate-400 mt-0.5">La colonne la mieux notée est mise en évidence.</p>
+              </div>
+              <div className="flex items-center gap-3 text-xs text-slate-500">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Excellent
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-blue-500 inline-block"></span> Bien
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 inline-block"></span> Moyen
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-slate-200 inline-block"></span> Indisponible
+                </span>
+              </div>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm min-w-[500px]">
+                <thead>
+                  <tr className="border-b border-slate-100 bg-slate-50">
+                    <th className="text-left px-5 py-3.5 text-xs font-semibold text-slate-500 uppercase tracking-wide w-48">
+                      Fonctionnalité
+                    </th>
+                    {selected.map((c) => {
+                      const isBest = c.id === bestId && selected.length > 1;
+                      return (
+                        <th
+                          key={c.id}
+                          className={["px-4 py-3.5 text-center", isBest ? "bg-blue-50" : ""].join(" ")}
+                        >
+                          <Link
+                            href={`/dashboard/competitors/${c.id}`}
+                            className="flex flex-col items-center gap-1.5 hover:opacity-80 transition-opacity"
+                          >
+                            <div
+                              className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-sm"
+                              style={{ backgroundColor: c.color }}
+                            >
+                              {c.logo}
+                            </div>
+                            <span className="text-xs font-semibold text-slate-700">{c.name.split(" ")[0]}</span>
+                            {isBest && (
+                              <span className="text-[10px] font-semibold text-blue-600 bg-blue-100 px-1.5 py-0.5 rounded-full">
+                                Leader
+                              </span>
+                            )}
+                          </Link>
+                        </th>
+                      );
+                    })}
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </div>
+                </thead>
+                <tbody className="divide-y divide-slate-50">
+                  {featureNames.map((featureName) => (
+                    <tr key={featureName} className="hover:bg-slate-50/60 transition-colors">
+                      <td className="px-5 py-3.5 text-sm font-medium text-slate-700">{featureName}</td>
+                      {selected.map((c) => {
+                        const feature = getFeatureForCompetitor(c, featureName);
+                        const isBest = c.id === bestId && selected.length > 1;
+                        return (
+                          <td
+                            key={c.id}
+                            className={["px-4 py-3.5 text-center", isBest ? "bg-blue-50/50" : ""].join(" ")}
+                          >
+                            {feature ? (
+                              <QualityBadge quality={feature.quality} available={feature.available} />
+                            ) : (
+                              <span className="text-slate-300 text-base">—</span>
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr className="border-t-2 border-slate-100 bg-slate-50">
+                    <td className="px-5 py-3.5 text-xs font-bold text-slate-600 uppercase tracking-wide">
+                      Score global
+                    </td>
+                    {selected.map((c) => {
+                      const s = scores.find((sc) => sc.id === c.id)!;
+                      const isBest = c.id === bestId && selected.length > 1;
+                      const featCount = featureNames.filter((name) => {
+                        const f = getFeatureForCompetitor(c, name);
+                        return f?.available;
+                      }).length;
+                      return (
+                        <td
+                          key={c.id}
+                          className={["px-4 py-3.5 text-center", isBest ? "bg-blue-50" : ""].join(" ")}
+                        >
+                          <div className="flex flex-col items-center gap-0.5">
+                            <span
+                              className={[
+                                "text-base font-bold",
+                                isBest ? "text-blue-700" : "text-slate-800",
+                              ].join(" ")}
+                            >
+                              {s.score}%
+                            </span>
+                            <span className="text-xs text-slate-400">
+                              {featCount}/{featureNames.length} features
+                            </span>
+                          </div>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          {/* AI Analysis */}
+          {selected.length > 0 && (
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-5">
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white text-base font-bold shadow-sm">
+                  ✦
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-blue-900 mb-1">Analyse IA — Recommandation stratégique</p>
+                  <p className="text-sm text-blue-800 leading-relaxed">{aiInsight}</p>
+                  <p className="text-xs text-blue-400 mt-2">
+                    Basé sur les données mises à jour le{" "}
+                    {new Date(
+                      Math.max(...selected.map((c) => new Date(c.lastUpdated).getTime()))
+                    ).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }
