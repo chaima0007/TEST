@@ -13,6 +13,7 @@ from config import DIVISION_3
 from agents.base import SwarmAgent
 from agents.tools import resolve_tools
 from intelligence.sentiment_router import SentimentRouter
+from intelligence.reply_classifier import ReplyClassifier
 
 logger = logging.getLogger("Division3")
 
@@ -71,12 +72,17 @@ class Division3Negotiation:
         self.manager = next(a for a in self.agents if a.is_manager)
         self.negotiators = {a.id: a for a in self.agents if not a.is_manager}
         self.sentiment_router = SentimentRouter()
+        self.reply_classifier = ReplyClassifier()
         logger.info(f"Division 3 initialised — {len(self.negotiators)} negotiators ready")
 
     def route(self, sentiment: str) -> SwarmAgent:
         """Route an inbound reply to the appropriate negotiator."""
         target_id = SENTIMENT_ROUTING.get(sentiment, "3.5")
         return self.negotiators.get(target_id, self.negotiators["3.5"])
+
+    def classify_reply(self, text: str):
+        """Classify a prospect reply for objection type, timeline, and buying signal."""
+        return self.reply_classifier.classify(text)
 
     def analyze_and_open_thread(
         self,
