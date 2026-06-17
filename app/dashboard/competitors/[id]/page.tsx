@@ -1,5 +1,8 @@
-import { notFound } from "next/navigation";
+"use client";
+
+import { notFound, useRouter } from "next/navigation";
 import Link from "next/link";
+import { use, useState } from "react";
 import { competitors } from "@/lib/data";
 
 const newsTypeColors: Record<string, string> = {
@@ -16,19 +19,77 @@ const newsTypeLabels: Record<string, string> = {
   partnership: "Partenariat",
 };
 
-export default async function CompetitorDetailPage(props: PageProps<"/dashboard/competitors/[id]">) {
-  const { id } = await props.params;
+export default function CompetitorDetailPage(props: PageProps<"/dashboard/competitors/[id]">) {
+  const { id } = use(props.params);
+  const router = useRouter();
+  const [deleting, setDeleting] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+
   const competitor = competitors.find((c) => c.id === id);
   if (!competitor) notFound();
 
   const maxPrice = Math.max(...competitor.priceHistory);
 
+  const handleDelete = async () => {
+    setDeleting(true);
+    try {
+      const res = await fetch(`/api/competitors/${id}`, { method: "DELETE" });
+      if (res.ok) {
+        router.push("/dashboard/competitors");
+        router.refresh();
+      }
+    } catch {
+      setDeleting(false);
+      setShowConfirm(false);
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* Back */}
-      <Link href="/dashboard/competitors" className="text-sm text-slate-500 hover:text-slate-900 flex items-center gap-1">
-        ← Retour aux concurrents
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link href="/dashboard/competitors" className="text-sm text-slate-500 hover:text-slate-900 flex items-center gap-1 transition-colors">
+          ← Retour aux concurrents
+        </Link>
+        <button
+          onClick={() => setShowConfirm(true)}
+          className="text-sm text-red-500 hover:text-red-700 border border-red-200 hover:border-red-400 px-3 py-1.5 rounded-lg transition-colors"
+        >
+          Supprimer
+        </button>
+      </div>
+
+      {/* Delete confirmation modal */}
+      {showConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl w-full max-w-sm p-6 text-center">
+            <div className="text-4xl mb-4">⚠️</div>
+            <h3 className="font-semibold text-slate-900 mb-2">Supprimer {competitor.name} ?</h3>
+            <p className="text-sm text-slate-500 mb-6">
+              Cette action est irréversible. Toutes les données associées seront supprimées.
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={handleDelete}
+                disabled={deleting}
+                className="flex-1 bg-red-600 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-red-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+              >
+                {deleting && (
+                  <span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                )}
+                {deleting ? "Suppression..." : "Supprimer"}
+              </button>
+              <button
+                onClick={() => setShowConfirm(false)}
+                disabled={deleting}
+                className="flex-1 border border-slate-200 text-slate-600 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-colors"
+              >
+                Annuler
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Header */}
       <div className="bg-white rounded-xl border border-slate-200 p-6">
@@ -100,7 +161,7 @@ export default async function CompetitorDetailPage(props: PageProps<"/dashboard/
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
                   <span className="text-[9px] text-slate-400">{price}€</span>
                   <div
-                    className="w-full rounded-t-sm"
+                    className="w-full rounded-t-sm transition-all"
                     style={{ height: `${height}%`, backgroundColor: competitor.color, opacity: i === 11 ? 1 : 0.5 + (i / 11) * 0.5 }}
                   ></div>
                   <span className="text-[9px] text-slate-400">{months[i]}</span>
@@ -116,7 +177,7 @@ export default async function CompetitorDetailPage(props: PageProps<"/dashboard/
         <h3 className="font-semibold text-slate-900 mb-4">Plans tarifaires actuels</h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {competitor.pricing.map((plan) => (
-            <div key={plan.name} className="border border-slate-200 rounded-xl p-4">
+            <div key={plan.name} className="border border-slate-200 rounded-xl p-4 hover:border-indigo-300 transition-colors">
               <h4 className="font-semibold text-slate-800 text-sm mb-1">{plan.name}</h4>
               <div className="flex items-baseline gap-0.5 mb-3">
                 <span className="text-2xl font-bold text-slate-900">{plan.price}</span>

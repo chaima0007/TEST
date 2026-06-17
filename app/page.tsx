@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const features = [
   {
@@ -43,6 +46,20 @@ const plans = [
 ];
 
 export default function Home() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Nav */}
@@ -55,8 +72,8 @@ export default function Home() {
             <span className="text-lg font-bold text-slate-900">CompeteIQ</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-slate-600">
-            <a href="#features" className="hover:text-slate-900">Fonctionnalités</a>
-            <a href="#pricing" className="hover:text-slate-900">Tarifs</a>
+            <a href="#features" className="hover:text-slate-900 transition-colors">Fonctionnalités</a>
+            <a href="#pricing" className="hover:text-slate-900 transition-colors">Tarifs</a>
           </div>
           <Link
             href="/login"
@@ -68,7 +85,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
+      <section id="top" className="max-w-6xl mx-auto px-6 py-24 text-center">
         <span className="inline-block bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
           Nouveau — IA intégrée pour l&apos;analyse concurrentielle
         </span>
@@ -141,7 +158,7 @@ export default function Home() {
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((f) => (
-              <div key={f.title} className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+              <div key={f.title} className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
                 <div className="text-4xl mb-4">{f.icon}</div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{f.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
@@ -158,7 +175,7 @@ export default function Home() {
           <p className="text-slate-500 text-center mb-16">Commencez gratuitement, évoluez selon vos besoins.</p>
           <div className="grid md:grid-cols-3 gap-8">
             {plans.map((p) => (
-              <div key={p.name} className={`rounded-2xl border-2 ${p.color} p-8 relative`}>
+              <div key={p.name} className={`rounded-2xl border-2 ${p.color} p-8 relative hover:shadow-lg transition-all`}>
                 {p.badge && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                     {p.badge}
@@ -177,7 +194,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <Link
-                  href="/dashboard"
+                  href="/login"
                   className={`block text-center py-3 rounded-lg text-sm font-semibold transition-colors ${p.badge ? "bg-indigo-600 text-white hover:bg-indigo-700" : "border border-slate-200 text-slate-700 hover:bg-slate-50"}`}
                 >
                   Commencer
@@ -198,8 +215,25 @@ export default function Home() {
             <span className="text-sm font-semibold text-slate-700">CompeteIQ</span>
           </div>
           <p className="text-xs text-slate-400">© 2026 CompeteIQ. Tous droits réservés.</p>
+          <button
+            onClick={scrollToTop}
+            className="text-xs text-slate-400 hover:text-slate-600 transition-colors flex items-center gap-1"
+          >
+            ↑ Haut de page
+          </button>
         </div>
       </footer>
+
+      {/* Back to top floating button */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 w-10 h-10 bg-indigo-600 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-indigo-700 transition-all hover:scale-110"
+          aria-label="Retour en haut"
+        >
+          ↑
+        </button>
+      )}
     </div>
   );
 }
