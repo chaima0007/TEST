@@ -23,6 +23,7 @@ from divisions.division_2_redaction import Division2Redaction
 from divisions.division_3_negotiation import Division3Negotiation, NegotiationThread
 from divisions.division_4_production import Division4Production
 from divisions.division_5_finance import Division5Finance
+from webhooks.stripe import stripe_router
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("SwarmAPI")
@@ -39,6 +40,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(stripe_router, prefix="/webhooks", tags=["Webhooks"])
 
 # ── Singleton division instances ──────────────────────────────────────────────
 
