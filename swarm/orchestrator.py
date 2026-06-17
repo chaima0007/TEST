@@ -15,10 +15,21 @@ from langgraph.graph import END, StateGraph
 from config import ALL_AGENTS, DIVISION_METADATA, AgentConfig
 from intelligence.ab_tester import ABTester
 from intelligence.sentiment_router import SentimentRouter
+from intelligence.deduplication_engine import DeduplicationEngine
+from intelligence.prospect_memory import ProspectMemory, MessageDirection, DealStage
+from intelligence.performance_monitor import PerformanceMonitor
+from intelligence.campaign_scheduler import CampaignScheduler
+from exporters.report_generator import ReportGenerator, CycleReport, DivisionReport
 
 # Module-level singletons shared across cycle calls
 _ab_tester = ABTester()
 _sentiment_router = SentimentRouter(use_llm=False)
+_dedup = DeduplicationEngine()
+_memory = ProspectMemory()
+_perf = PerformanceMonitor()
+_perf.initialize_agents()
+_scheduler = CampaignScheduler()
+_reporter = ReportGenerator()
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(name)s] %(message)s")
 logger = logging.getLogger("Orchestrator")
@@ -138,9 +149,18 @@ async def _run_detection(state: SwarmState, workers: List[AgentConfig]) -> Swarm
     for worker in workers:
         tasks.append(_scout_sector(worker))
     results = await asyncio.gather(*tasks)
+    raw_count = 0
     for batch in results:
-        state["fiches_detected"].extend(batch)
-    logger.info(f"[Div1] {len(state['fiches_detected'])} prospects detected")
+        raw_count += len(batch)
+        for fiche in batch:
+            # Dedup check before adding to pipeline
+            result = _dedup.check(fiche["contact_email"], fiche["name"])
+            if result.allowed:
+                state["fiches_detected"].append(fiche)
+                _perf.record_task(fiche["agent_source"], success=True, response_time_ms=120)
+            else:
+                _perf.record_task(fiche["agent_source"], success=False, error_msg=f"dedup:{result.reason}")
+    logger.info(f"[Div1] {raw_count} detected → {len(state['fiches_detected'])} after dedup")
     return state
 
 
@@ -169,20 +189,30 @@ async def _run_outreach(state: SwarmState, workers: List[AgentConfig]) -> SwarmS
     """Agents 2.1–2.9 draft personalised cold emails — tone selected by Thompson Sampling."""
     fiches = state["fiches_detected"]
     for fiche in fiches[:45]:
-        # Thompson Sampling picks the best tone for this prospect's sector
         agent_id = _ab_tester.select_agent(sector=fiche.get("sector", ""))
         worker = next((w for w in workers if w.id == agent_id), workers[0])
         _ab_tester.record_result(agent_id, sent=True)
+        draft = _draft_email(fiche, worker)
         record = OutreachRecord(
             company_id=fiche["company_id"],
             fiche=fiche,
-            email_draft=_draft_email(fiche, worker),
+            email_draft=draft,
             tone=worker.role,
             copywriter_agent=worker.id,
             rgpd_validated=False,
             sent_at=None,
         )
         state["outreach_queue"].append(record)
+        # Log outbound message in prospect memory
+        _memory.log_outbound(
+            prospect_id=fiche["company_id"],
+            content=draft,
+            agent_id=worker.id,
+            company_name=fiche["name"],
+            sector=fiche.get("sector", ""),
+            email=fiche["contact_email"],
+        )
+        _perf.record_task(worker.id, success=True, response_time_ms=80)
     logger.info(f"[Div2] {len(state['outreach_queue'])} emails drafted via Thompson Sampling")
     return state
 
@@ -223,7 +253,6 @@ async def _run_negotiation(state: SwarmState, workers: List[AgentConfig]) -> Swa
     ]
 
     for reply in simulated_replies:
-        # Auto-detect sentiment from raw text using SentimentRouter
         if reply.get("message"):
             sentiment_result = _sentiment_router.analyze(reply["message"])
             reply["sentiment"] = sentiment_result.sentiment
@@ -243,6 +272,19 @@ async def _run_negotiation(state: SwarmState, workers: List[AgentConfig]) -> Swa
             payment_confirmed=False,
         )
         state["negotiation_threads"].append(thread)
+        # Log inbound reply in prospect memory
+        sentiment_score = 0.7 if reply["sentiment"] in ("Curieux", "Positif") else 0.3
+        _memory.log_inbound(
+            prospect_id=reply["company_id"],
+            content=reply.get("message", ""),
+            sentiment=reply["sentiment"],
+            sentiment_score=sentiment_score,
+            agent_id=negotiator.id,
+        )
+        rec = _memory.get(reply["company_id"])
+        if rec:
+            rec.advance_stage(DealStage.NEGOTIATING)
+        _perf.record_task(negotiator.id, success=True, response_time_ms=200)
 
     logger.info(f"[Div3] {len(state['negotiation_threads'])} negotiation threads active")
     return state
@@ -367,6 +409,44 @@ async def run_cycle() -> SwarmState:
         f"Emails sent: {len(final_state['outreach_queue'])} | "
         f"Revenue: {final_state['revenue_today']}€"
     )
+
+    # ── Post-cycle: record dedup + generate report ─────────────────────────────
+    for record in final_state["outreach_queue"]:
+        if record.get("rgpd_validated") and record.get("sent_at"):
+            fiche = record["fiche"]
+            _dedup.record_contact(
+                email=fiche["contact_email"],
+                company_name=fiche["name"],
+                sector=fiche.get("sector", ""),
+                agent_id=record["copywriter_agent"],
+            )
+
+    all_divs = _perf.get_all_divisions()
+    div_reports = [
+        DivisionReport(
+            division=d.division,
+            name=d.name,
+            tasks_completed=d.total_tasks,
+            tasks_failed=d.total_errors,
+            key_metric="Agents sains",
+            key_value=str(d.healthy_count),
+        )
+        for d in all_divs
+    ]
+    cycle_report = CycleReport(
+        cycle_id=final_state["cycle_id"],
+        started_at=datetime.fromisoformat(final_state["started_at"]),
+        completed_at=datetime.utcnow(),
+        prospects_detected=len(final_state["fiches_detected"]),
+        emails_sent=len(final_state["outreach_queue"]),
+        negotiations_opened=len(final_state["negotiation_threads"]),
+        payments_confirmed=sum(1 for t in final_state["negotiation_threads"] if t.get("payment_confirmed")),
+        revenue_eur=final_state["revenue_today"],
+        division_reports=div_reports,
+    )
+    _reporter.add_cycle(cycle_report)
+    logger.info(f"[Cycle] Report stored — cumulative revenue: {_reporter.cumulative_revenue():.0f}€")
+
     return final_state
 
 

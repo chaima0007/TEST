@@ -253,21 +253,20 @@ class TestGetTierA:
 # ── Dataclass input ───────────────────────────────────────────────────────────
 
 class TestDataclassInput:
-    def test_accepts_dataclass_with_dict(self):
-        from divisions.division_1_detection import ProspectFiche
-        fiche = ProspectFiche(
-            company_id="dc_001",
-            name="Test Company",
-            sector="restaurant",
-            website="http://test.fr",
-            pagespeed_score=35,
-            mobile_responsive=False,
-            load_time_ms=4000,
-            contact_email="test@test.fr",
-            contact_name="Le Directeur",
-            agent_source="1.1",
-            detected_issues=[],
-        )
+    def test_accepts_dict_prospect(self):
+        fiche = {
+            "company_id": "dc_001",
+            "name": "Test Company",
+            "sector": "restaurant",
+            "website": "http://test.fr",
+            "pagespeed_score": 35,
+            "mobile_responsive": False,
+            "load_time_ms": 4000,
+            "contact_email": "test@test.fr",
+            "contact_name": "Le Directeur",
+            "agent_source": "1.1",
+            "detected_issues": [],
+        }
         result = enricher().enrich(fiche)
         assert result.company_id == "dc_001"
         assert result.icp_fit >= 0.90

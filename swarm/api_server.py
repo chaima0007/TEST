@@ -31,6 +31,8 @@ from intelligence.email_tracker import EmailTracker
 from intelligence.lead_scorer import LeadScorer
 from intelligence.campaign_scheduler import CampaignScheduler
 from intelligence.deduplication_engine import DeduplicationEngine, SuppressionReason
+from intelligence.prospect_memory import ProspectMemory, MessageDirection, DealStage
+from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("SwarmAPI")
@@ -72,6 +74,8 @@ _email_tracker = EmailTracker()
 _lead_scorer = LeadScorer()
 _campaign_scheduler = CampaignScheduler()
 _dedup_engine = DeduplicationEngine()
+_prospect_memory = ProspectMemory()
+_report_generator = ReportGenerator()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -617,6 +621,89 @@ def get_suppression_list():
     return {
         "entries": _dedup_engine.export_suppression_list(),
         "summary": _dedup_engine.summary(),
+    }
+
+
+# ── Prospect Memory ───────────────────────────────────────────────────────────
+
+@app.get("/memory/summary", tags=["Memory"])
+def memory_summary():
+    return _prospect_memory.summary()
+
+
+@app.get("/memory/prospects", tags=["Memory"])
+def list_prospects(stage: Optional[str] = None, sector: Optional[str] = None, n: int = 50):
+    records = _prospect_memory.all_records()
+    if stage:
+        try:
+            s = DealStage(stage)
+            records = [r for r in records if r.stage == s]
+        except ValueError:
+            pass
+    if sector:
+        records = [r for r in records if sector.lower() in r.sector.lower()]
+    return {
+        "total": len(records),
+        "prospects": [r.to_dict() for r in records[:n]],
+        "summary": _prospect_memory.summary(),
+    }
+
+
+@app.get("/memory/prospects/{prospect_id}", tags=["Memory"])
+def get_prospect(prospect_id: str):
+    rec = _prospect_memory.get(prospect_id)
+    if not rec:
+        raise HTTPException(status_code=404, detail="Prospect not found")
+    return rec.to_dict()
+
+
+@app.get("/memory/cold", tags=["Memory"])
+def cold_prospects(idle_days: float = 7.0):
+    cold = _prospect_memory.cold_prospects(idle_days=idle_days)
+    return [r.to_dict() for r in cold]
+
+
+@app.get("/memory/negotiations", tags=["Memory"])
+def active_negotiations():
+    return [r.to_dict() for r in _prospect_memory.active_negotiations()]
+
+
+# ── Report Generator ──────────────────────────────────────────────────────────
+
+@app.get("/reports/last", tags=["Reports"])
+def get_last_report():
+    cycle = _report_generator.last_cycle()
+    if not cycle:
+        raise HTTPException(status_code=404, detail="No cycle report yet")
+    return cycle.to_dict()
+
+
+@app.get("/reports/last/html", tags=["Reports"])
+def get_last_report_html():
+    from fastapi.responses import HTMLResponse
+    cycle = _report_generator.last_cycle()
+    if not cycle:
+        raise HTTPException(status_code=404, detail="No cycle report yet")
+    return HTMLResponse(content=_report_generator.generate_html(cycle))
+
+
+@app.get("/reports/last/text", tags=["Reports"])
+def get_last_report_text():
+    from fastapi.responses import PlainTextResponse
+    cycle = _report_generator.last_cycle()
+    if not cycle:
+        raise HTTPException(status_code=404, detail="No cycle report yet")
+    return PlainTextResponse(content=_report_generator.generate_text(cycle))
+
+
+@app.get("/reports/summary", tags=["Reports"])
+def reports_summary():
+    return {
+        "total_cycles": len(_report_generator.all_cycles()),
+        "cumulative_revenue_eur": _report_generator.cumulative_revenue(),
+        "cumulative_emails": _report_generator.cumulative_emails(),
+        "best_cycle": _report_generator.best_cycle().cycle_id if _report_generator.best_cycle() else None,
+        "table": _report_generator.generate_summary_table(n=5),
     }
 
 

@@ -151,12 +151,12 @@ class TestQueries:
         assert len(results) == 1
 
     def test_get_events_all_when_no_filter(self):
-        t = seed(tracker(), sent=3)
+        t = seed(tracker(), sent=3, opens=0, clicks=0, replies=0)
         assert len(t.get_events()) == 3
 
     def test_get_events_filtered_by_campaign(self):
-        t = seed(tracker(), campaign_id="c1", sent=3)
-        seed(t, campaign_id="c2", sent=5)
+        t = seed(tracker(), campaign_id="c1", sent=3, opens=0, clicks=0, replies=0)
+        seed(t, campaign_id="c2", sent=5, opens=0, clicks=0, replies=0)
         assert len(t.get_events("c1")) == 3
         assert len(t.get_events("c2")) == 5
 
