@@ -376,11 +376,12 @@ const STYLE = `
   font-size: 10px;
 }
 
-.agent-card.spectre  { border-left-color: #aa33ff; }
-.agent-card.fantome  { border-left-color: #ffd700; }
-.agent-card.police   { border-left-color: #4488ff; }
-.agent-card.meteo    { border-left-color: #44aaff; }
-.agent-card.trafic   { border-left-color: #55cc88; }
+.agent-card.spectre   { border-left-color: #aa33ff; }
+.agent-card.fantome   { border-left-color: #ffd700; }
+.agent-card.detective { border-left-color: #cc4444; }
+.agent-card.police    { border-left-color: #4488ff; }
+.agent-card.meteo     { border-left-color: #44aaff; }
+.agent-card.trafic    { border-left-color: #55cc88; }
 
 .agent-bar {
   height: 3px;
@@ -481,11 +482,12 @@ export class HUD {
     this.agentsEl.id = 'hud-agents';
     this._agentCards = {};
     const agentDefs = [
-      { id: 'spectre', name: 'Le Spectre', cls: 'spectre' },
-      { id: 'fantome', name: 'La Fantome', cls: 'fantome' },
-      { id: 'police',  name: 'Police',     cls: 'police'  },
-      { id: 'meteo',   name: 'Meteo',      cls: 'meteo'   },
-      { id: 'trafic',  name: 'Trafic',     cls: 'trafic'  },
+      { id: 'spectre',   name: 'Le Spectre',   cls: 'spectre'   },
+      { id: 'fantome',   name: 'La Fantome',   cls: 'fantome'   },
+      { id: 'detective', name: 'Le Detectif',  cls: 'detective' },
+      { id: 'police',    name: 'Police',       cls: 'police'    },
+      { id: 'meteo',     name: 'Meteo',        cls: 'meteo'     },
+      { id: 'trafic',    name: 'Trafic',       cls: 'trafic'    },
     ];
     for (const def of agentDefs) {
       const card = document.createElement('div');

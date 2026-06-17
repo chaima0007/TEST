@@ -18,6 +18,7 @@ import { NitroSystem } from './nitro.js';
 import { TireSmokeSystem, SparkSystem } from './particles.js';
 import { SpeedCamSystem } from './speedcam.js';
 import { SkidMarkSystem } from './skidmarks.js';
+import { DetectiveSystem } from './detective.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -55,7 +56,8 @@ const nitro  = new NitroSystem(scene);
 const smoke    = new TireSmokeSystem(scene);
 const sparks   = new SparkSystem(scene);
 const skids    = new SkidMarkSystem(scene);
-const speedCams = new SpeedCamSystem(scene, world);
+const speedCams  = new SpeedCamSystem(scene, world);
+const detective  = new DetectiveSystem(scene, world);
 
 // Score persistant (localStorage)
 const HS_KEY = 'moonbow_highscore';
@@ -105,6 +107,7 @@ function animate() {
   traffic.update(dt, vehicle.getPosition());
   rival.update(dt, vehicle, hud);
   fantome.update(dt, vehicle, hud, dayCycle.isNight());
+  detective.update(dt, vehicle, hud, wanted.level);
 
   const playerPos = vehicle.getPosition();
   combo.update(dt, playerPos, traffic.getCarPositions());
@@ -156,6 +159,10 @@ function animate() {
     ? `Niveau ${wanted.level} | ${wanted.cars.length} voiture(s)${wanted.getHelicopterActive() ? ' + HELI' : ''}`
     : 'Calme';
 
+  const detectiveState = detective.active
+    ? (detective.isTailing() ? 'EN FILATURE - CHALEUR x2' : 'En suivi...')
+    : `Cooldown ${Math.round(Math.max(0, detective._cooldown))}s`;
+
   const grip = weather.getGripFactor();
   const meteoState = `${weather.getWeatherId()} | Adherence ${Math.round(grip * 100)}%`;
 
@@ -171,6 +178,12 @@ function animate() {
       status: fantomeState,
       bar: fantome.active ? fantome._speed / 125 : (dayCycle.isNight() ? Math.max(0, 1 - fantome._cooldown / 60) : 0),
       color: '#ffd700',
+    },
+    detective: {
+      active: detective.active,
+      status: detectiveState,
+      bar: detective.active ? (detective.isTailing() ? 1 : 0.4) : 0,
+      color: detective.isTailing() ? '#ff3333' : '#cc4444',
     },
     police: {
       active: wanted.level > 0,
