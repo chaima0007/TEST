@@ -37,6 +37,9 @@ from intelligence.outreach_sequencer import OutreachSequencer, StopReason as Seq
 from intelligence.objection_handler import ObjectionHandler, ObjectionType as ObjType, RebuttalOutcome
 from intelligence.template_renderer import TemplateRenderer
 from intelligence.conversion_funnel import ConversionFunnelTracker, FunnelStage
+from intelligence.negotiation_manager import (
+    NegotiationManager, OfferParty, ConcessionType, NegotiationStatus,
+)
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -86,6 +89,7 @@ _outreach_sequencer = OutreachSequencer()
 _objection_handler = ObjectionHandler()
 _template_renderer = TemplateRenderer()
 _funnel_tracker = ConversionFunnelTracker()
+_negotiation_manager = NegotiationManager()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1038,6 +1042,119 @@ def funnel_sector_summary():
 @app.get("/funnel/summary", tags=["Funnel"])
 def funnel_summary():
     return _funnel_tracker.summary()
+
+
+# ── Negotiation routes ────────────────────────────────────────────────────────
+
+class NegotiationOpenReq(BaseModel):
+    prospect_id:  str
+    company_name: str
+    sector:       str = ""
+    asking_price: float = 0.0
+
+
+class NegotiationOfferReq(BaseModel):
+    negotiation_id:  str
+    party:           str  # "us" | "prospect"
+    amount:          float
+    concession_type: str = "price"
+    note:            str = ""
+
+
+class NegotiationCloseReq(BaseModel):
+    negotiation_id: str
+    reason:         str = ""
+
+
+@app.post("/negotiations", tags=["Negotiations"])
+def neg_open(req: NegotiationOpenReq):
+    neg = _negotiation_manager.open(
+        req.prospect_id, req.company_name, req.sector, req.asking_price
+    )
+    return neg.to_dict()
+
+
+@app.get("/negotiations", tags=["Negotiations"])
+def neg_list(status: Optional[str] = None):
+    if status:
+        try:
+            s = NegotiationStatus(status)
+        except ValueError:
+            raise HTTPException(status_code=422, detail=f"Unknown status: {status!r}")
+        return [n.to_dict() for n in _negotiation_manager.by_status(s)]
+    return [n.to_dict() for n in _negotiation_manager.all_negotiations()]
+
+
+@app.get("/negotiations/active", tags=["Negotiations"])
+def neg_active():
+    return [n.to_dict() for n in _negotiation_manager.active()]
+
+
+@app.get("/negotiations/{negotiation_id}", tags=["Negotiations"])
+def neg_get(negotiation_id: str):
+    neg = _negotiation_manager.get(negotiation_id)
+    if not neg:
+        raise HTTPException(status_code=404, detail="Negotiation not found")
+    return neg.to_dict()
+
+
+@app.post("/negotiations/offer", tags=["Negotiations"])
+def neg_add_offer(req: NegotiationOfferReq):
+    try:
+        party = OfferParty(req.party)
+        ctype = ConcessionType(req.concession_type)
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    offer = _negotiation_manager.add_offer(req.negotiation_id, party, req.amount, ctype, req.note)
+    if not offer:
+        raise HTTPException(status_code=404, detail="Negotiation not found")
+    neg = _negotiation_manager.get(req.negotiation_id)
+    return neg.to_dict()
+
+
+@app.post("/negotiations/{negotiation_id}/agree", tags=["Negotiations"])
+def neg_agree(negotiation_id: str):
+    ok = _negotiation_manager.agree(negotiation_id)
+    if not ok:
+        raise HTTPException(status_code=400, detail="Cannot agree (already closed or not found)")
+    return _negotiation_manager.get(negotiation_id).to_dict()
+
+
+@app.post("/negotiations/{negotiation_id}/fail", tags=["Negotiations"])
+def neg_fail(negotiation_id: str, req: NegotiationCloseReq):
+    ok = _negotiation_manager.fail(negotiation_id, req.reason)
+    if not ok:
+        raise HTTPException(status_code=400, detail="Cannot fail (already closed or not found)")
+    return _negotiation_manager.get(negotiation_id).to_dict()
+
+
+@app.post("/negotiations/{negotiation_id}/abandon", tags=["Negotiations"])
+def neg_abandon(negotiation_id: str):
+    ok = _negotiation_manager.abandon(negotiation_id)
+    if not ok:
+        raise HTTPException(status_code=400, detail="Cannot abandon (already closed or not found)")
+    return _negotiation_manager.get(negotiation_id).to_dict()
+
+
+@app.get("/negotiations/prospect/{prospect_id}", tags=["Negotiations"])
+def neg_by_prospect(prospect_id: str):
+    return [n.to_dict() for n in _negotiation_manager.get_by_prospect(prospect_id)]
+
+
+@app.get("/negotiations/summary", tags=["Negotiations"])
+def neg_summary():
+    return _negotiation_manager.summary()
+
+
+@app.get("/negotiations/sectors", tags=["Negotiations"])
+def neg_sector_summary():
+    return _negotiation_manager.sector_summary()
+
+
+@app.delete("/negotiations/reset", tags=["Negotiations"])
+def neg_reset():
+    _negotiation_manager.reset()
+    return {"status": "reset"}
 
 
 if __name__ == "__main__":
