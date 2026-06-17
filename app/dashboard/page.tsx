@@ -32,7 +32,10 @@ function StatSkeleton() {
 }
 
 function formatRelativeTime(dateStr: string) {
-  const diff = Date.now() - new Date(dateStr).getTime();
+  if (!dateStr) return "Récemment";
+  const date = new Date(dateStr);
+  if (isNaN(date.getTime())) return "Récemment";
+  const diff = Date.now() - date.getTime();
   const days = Math.floor(diff / 86400000);
   if (days === 0) return "Aujourd'hui";
   if (days === 1) return "Hier";
