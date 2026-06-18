@@ -1803,6 +1803,18 @@ function IconSalesBuyerMeetingQualityIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesRepOnboardingRampIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Rocket launch — ramp acceleration */}
+      <path d="M10 2 C10 2 14 5 14 10 L10 18 L6 10 C6 5 10 2 10 2Z" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="10" cy="9" r="1.5" fill="currentColor" stroke="none"/>
+      <path d="M6 13 L4 15 L6 15 L6 17" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14 13 L16 15 L14 15 L14 17" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesQuotaAttainmentPatternIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2374,6 +2386,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-buyer-meeting-quality-intelligence-engine", label: "Meeting Quality", icon: IconSalesBuyerMeetingQualityIntelligenceEngine },
       { href: "/dashboard/sales-objection-intelligence-engine", label: "Objection Intel", icon: IconSalesObjectionIntelligenceEngine },
       { href: "/dashboard/sales-quota-attainment-pattern-intelligence-engine", label: "Quota Patterns", icon: IconSalesQuotaAttainmentPatternIntelligenceEngine },
+      { href: "/dashboard/sales-rep-onboarding-ramp-intelligence-engine", label: "Onboarding Ramp", icon: IconSalesRepOnboardingRampIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
