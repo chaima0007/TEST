@@ -1160,6 +1160,16 @@ function IconProspectEngagementVelocity({ className }: { className?: string }) {
   );
 }
 
+function IconAccountExpansionIntelligence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 10a7 7 0 1114 0A7 7 0 013 10z" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.4" />
+      <path d="M10 6v4l3 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path d="M14 2l2 2-2 2M6 2L4 4l2 2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.7" />
+    </svg>
+  );
+}
+
 function IconSalesProcessCompliance({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1385,6 +1395,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/rep-ramp-intelligence", label: "Rep Ramp Intel", icon: IconRepRampIntelligence },
       { href: "/dashboard/sales-process-compliance-monitor", label: "Process Compliance", icon: IconSalesProcessCompliance },
       { href: "/dashboard/prospect-engagement-velocity", label: "Prospect Velocity", icon: IconProspectEngagementVelocity },
+      { href: "/dashboard/account-expansion-intelligence", label: "Account Expansion", icon: IconAccountExpansionIntelligence },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
