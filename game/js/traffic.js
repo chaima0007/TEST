@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { buildDetailedCharacter, CharacterAnimator } from './characters.js';
+import { HumanPhysicsAgent } from './humanphysics.js';
 
 // TrafficSystem — vie ambiante de la ville : voitures de circulation qui
 // roulent sur la grille de rues, et piétons qui errent sur les trottoirs.
@@ -420,8 +421,10 @@ class Pedestrian {
     this.speed = (PED_SPEED_RANGE[0] + Math.random() * (PED_SPEED_RANGE[1] - PED_SPEED_RANGE[0])) * this.personality.speedMult;
     this.heading = Math.random() * Math.PI * 2;
     this.active = false;
-    this._pauseTimer = 0; // > 0 : le piéton est à l'arrêt momentanément
+    this._pauseTimer = 0;
     this._panicking = false;
+    this._angVel = 0;         // vitesse angulaire rad/s (pour HumanPhysicsAgent)
+    this._prevHeading = this.heading;
   }
 
   respawnNear(playerPos, colliders) {
@@ -461,7 +464,9 @@ class Pedestrian {
 
   // playerPos : {x, z} optionnel — réaction à la proximité du joueur.
   // pathAgent : PathClearanceAgent — contournement des autres piétons/voitures.
-  update(dt, colliders, playerPos = null, pathAgent = null) {
+  // physAgent : HumanPhysicsAgent — lean, souffle, trébuchement, regard.
+  update(dt, colliders, playerPos = null, pathAgent = null, physAgent = null) {
+    this._prevHeading = this.heading;
     if (!this.active) return;
     const p = this.personality;
 
@@ -487,7 +492,10 @@ class Pedestrian {
           this.mesh.position.z = nz;
         }
         CharacterAnimator.update(this.mesh, panicSpeed, dt);
-        return;
+      this._angVel = (this.heading - this._prevHeading) / dt;
+      if (physAgent) physAgent.update(this.mesh, panicSpeed, this._angVel, dt,
+        { stumble: distToPlayer < 1.8, headTarget: playerPos });
+      return;
       }
     }
     this._panicking = false;
@@ -496,11 +504,13 @@ class Pedestrian {
     if (this._pauseTimer > 0) {
       this._pauseTimer -= dt;
       CharacterAnimator.update(this.mesh, 0, dt);
+      if (physAgent) physAgent.update(this.mesh, 0, 0, dt, { headTarget: playerPos });
       return;
     }
     if (Math.random() < p.pauseChance) {
       this._pauseTimer = 0.8 + Math.random() * 1.5;
       CharacterAnimator.update(this.mesh, 0, dt);
+      if (physAgent) physAgent.update(this.mesh, 0, 0, dt, { headTarget: playerPos });
       return;
     }
 
@@ -522,6 +532,8 @@ class Pedestrian {
       this.heading += clamp(diff, -maxTurn, maxTurn);
       this.mesh.rotation.y = this.heading;
       CharacterAnimator.update(this.mesh, 0, dt);
+      this._angVel = (this.heading - this._prevHeading) / dt;
+      if (physAgent) physAgent.update(this.mesh, 0, this._angVel, dt, {});
       return;
     }
 
@@ -543,10 +555,11 @@ class Pedestrian {
         this.heading, 2.0, this, 0.65
       );
       if (!clear && distance < 1.3) {
-        // Dévie légèrement sur le côté pour contourner
         this.heading += (Math.random() < 0.5 ? 1 : -1) * 0.9;
         this.mesh.rotation.y = this.heading;
         CharacterAnimator.update(this.mesh, 0, dt);
+        this._angVel = (this.heading - this._prevHeading) / dt;
+        if (physAgent) physAgent.update(this.mesh, 0, this._angVel, dt, {});
         return;
       }
     }
@@ -555,6 +568,13 @@ class Pedestrian {
     this.mesh.position.z = nextZ;
     this.mesh.rotation.y = this.heading;
     CharacterAnimator.update(this.mesh, this.speed, dt);
+    this._angVel = (this.heading - this._prevHeading) / dt;
+    if (physAgent) {
+      const headTarget = playerPos &&
+        Math.hypot(nextX - playerPos.x, nextZ - playerPos.z) < 9
+        ? playerPos : null;
+      physAgent.update(this.mesh, this.speed, this._angVel, dt, { headTarget });
+    }
   }
 
   dispose(scene) {
@@ -587,6 +607,7 @@ export class TrafficSystem {
     this._pathAgent      = new PathClearanceAgent();
     this._integrityAgent = new IntegrityAgent();
     this.crowdAgent      = new CrowdAgent();
+    this.humanPhysics    = new HumanPhysicsAgent();
   }
 
   _fallbackRoadLines() {
@@ -631,7 +652,7 @@ export class TrafficSystem {
         const dist = this._distTo(ped.mesh.position, playerPos);
         if (!lod.shouldUpdate(dist, i + this.cars.length)) continue;
       }
-      ped.update(dt, this.colliders, playerPos, this._pathAgent);
+      ped.update(dt, this.colliders, playerPos, this._pathAgent, this.humanPhysics);
     }
   }
 

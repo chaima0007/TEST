@@ -23,6 +23,7 @@ import { MonetizationAgent } from './monetization.js';
 import { LODManager } from './lod.js';
 import { ArchitectSystem } from './architect.js';
 import { MusicAgent } from './music.js';
+import { DialogueAgent } from './dialogue.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -78,6 +79,7 @@ const monetization = new MonetizationAgent(hud);
 const lod = new LODManager();
 const _audioCtx = audio.getContext();
 const musicAgent = _audioCtx ? new MusicAgent(_audioCtx, _audioCtx.destination) : null;
+const dialogueAgent = new DialogueAgent();
 
 // Colour picker wired once — swatches from monetization unlocks
 const ALL_COLORS = [
@@ -342,6 +344,15 @@ function animate() {
     const apos = architect.getPosition();
     if (apos) traffic.crowdAgent.broadcast('boss', apos.x, apos.z, 35, 1.0, 5);
   }
+
+  // DialogueAgent — bulles de dialogue contextuelles au-dessus des piétons
+  dialogueAgent.update(dt, traffic.pedestrians, playerPos, camera, renderer, {
+    wantedLevel: wanted.level,
+    weatherId: weather.getWeatherId(),
+    isNight: dayCycle.isNight(),
+    architectActive: architect.active,
+    recentCrash: impact > 0.35,
+  });
   if (cameraShake > 0.001) {
     camera.position.x += (Math.random() - 0.5) * cameraShake * 1.8;
     camera.position.y += Math.random() * cameraShake * 0.8;
