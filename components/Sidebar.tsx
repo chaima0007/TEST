@@ -2594,6 +2594,19 @@ function IconSalesQuotaSandbagOvercommitIntelligenceEngine({ className }: { clas
   );
 }
 
+function IconSalesPriceSensitivityNegotiationLeverageEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Negotiation leverage: handshake with dollar split and tension arrows */}
+      <path d="M4 10 L8 10 L10 7 L12 13 L14 10 L16 10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6"/>
+      <path d="M2 14 L5 11 M18 14 L15 11" strokeLinecap="round" strokeWidth="1.2" opacity="0.5"/>
+      <circle cx="10" cy="4" r="2.5" strokeWidth="1.3"/>
+      <path d="M9 4 L9 3 M11 4 L11 5" strokeLinecap="round" strokeWidth="1.2"/>
+      <path d="M8.5 3.2 L11.5 3.2 M8.5 4.8 L11.5 4.8" strokeLinecap="round" strokeWidth="0.9" opacity="0.7"/>
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2904,6 +2917,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-onboarding-ramp-intelligence-engine", label: "Onboarding Ramp", icon: IconSalesOnboardingRampIntelligenceEngine },
       { href: "/dashboard/sales-customer-health-score-deterioration-engine", label: "Customer Health", icon: IconSalesCustomerHealthScoreDeteriorationEngine },
       { href: "/dashboard/sales-territory-imbalance-coverage-gap-engine", label: "Territory Balance", icon: IconSalesTerritoryImbalanceCoverageGapEngine },
+      { href: "/dashboard/sales-price-sensitivity-negotiation-leverage-engine", label: "Negotiation Leverage", icon: IconSalesPriceSensitivityNegotiationLeverageEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
