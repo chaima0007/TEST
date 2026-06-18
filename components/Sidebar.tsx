@@ -1223,6 +1223,17 @@ function IconRepAttritionRiskEngine({ className }: { className?: string }) {
   );
 }
 
+function IconQuotaFairnessEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2l1.5 4.5h4.5l-3.6 2.7 1.4 4.3L10 11l-3.8 2.5 1.4-4.3L4 6.5h4.5z" fill="currentColor" opacity={0.7} />
+      <path d="M3 16h6M11 16h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+      <circle cx="6" cy="16" r="1.2" fill="currentColor" opacity={0.8} />
+      <circle cx="14" cy="16" r="1.2" fill="currentColor" opacity={0.8} />
+    </svg>
+  );
+}
+
 function IconDealMultithreadingIntelligence({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1467,6 +1478,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/rep-attrition-risk-engine", label: "Rep Attrition", icon: IconRepAttritionRiskEngine },
       { href: "/dashboard/pipeline-aging-intelligence", label: "Pipeline Aging", icon: IconPipelineAgingIntelligence },
       { href: "/dashboard/deal-complexity-intelligence", label: "Deal Complexity", icon: IconDealComplexityIntelligence },
+      { href: "/dashboard/quota-fairness-engine", label: "Quota Fairness", icon: IconQuotaFairnessEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
