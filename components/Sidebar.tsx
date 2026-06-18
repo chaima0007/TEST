@@ -1861,6 +1861,16 @@ function IconSalesPipelineHealthDegradationIntelligenceEngine({ className }: { c
   );
 }
 
+function IconSalesObjectionHandlingEffectivenessIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Shield with check/cross — objection defense */}
+      <path d="M10 2 L17 5 L17 11 C17 14.5 13.5 17.5 10 19 C6.5 17.5 3 14.5 3 11 L3 5 Z" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 10 L9.5 12.5 L13 8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2477,6 +2487,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-buyer-engagement-velocity-intelligence-engine", label: "Engagement Velocity", icon: IconSalesBuyerEngagementVelocityIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-leverage-intelligence-engine", label: "Negotiation Leverage", icon: IconSalesNegotiationLeverageIntelligenceEngine },
       { href: "/dashboard/sales-pipeline-health-degradation-intelligence-engine", label: "Pipeline Health", icon: IconSalesPipelineHealthDegradationIntelligenceEngine },
+      { href: "/dashboard/sales-objection-handling-effectiveness-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingEffectivenessIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
