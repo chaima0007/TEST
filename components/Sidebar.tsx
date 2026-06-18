@@ -1190,6 +1190,16 @@ function IconCustomerReferralIntelligence({ className }: { className?: string })
   );
 }
 
+function IconRepAttritionRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="7" r="3" fill="currentColor" opacity={0.5} />
+      <path d="M5 17c0-3.314 2.239-6 5-6s5 2.686 5 6" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round" opacity="0.7" />
+      <path d="M15 5l2 2M15 7l2-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function IconDealMultithreadingIntelligence({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1431,6 +1441,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-data-integrity-monitor", label: "Data Integrity", icon: IconSalesDataIntegrityMonitor },
       { href: "/dashboard/customer-referral-intelligence", label: "Referral Intel", icon: IconCustomerReferralIntelligence },
       { href: "/dashboard/deal-multithreading-intelligence", label: "Deal Threading", icon: IconDealMultithreadingIntelligence },
+      { href: "/dashboard/rep-attrition-risk-engine", label: "Rep Attrition", icon: IconRepAttritionRiskEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
