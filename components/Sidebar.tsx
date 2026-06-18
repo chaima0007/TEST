@@ -1447,6 +1447,33 @@ function IconAccountExecutiveRampVelocityEngine({ className }: { className?: str
   );
 }
 
+function IconSalesTerritoryOverlapConflictEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M4 4h5v5H4V4z" opacity="0.4" />
+      <path d="M11 4h5v5h-5V4z" opacity="0.4" />
+      <path d="M4 11h5v5H4v-5z" opacity="0.4" />
+      <path d="M11 11h5v5h-5v-5z" opacity="0.4" />
+      <circle cx="10" cy="10" r="3.5" fill="#f87171" opacity="0.85" />
+      <path d="M8.5 10h3M10 8.5v3" stroke="white" strokeWidth="1.3" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
+function IconCustomerLTVErosionDetector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2C6.13 2 3 5.13 3 9s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7z" opacity="0.2" />
+      <path d="M10 2C6.13 2 3 5.13 3 9s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7z" fill="none" stroke="currentColor" strokeWidth="1.3" opacity="0.6" />
+      <path d="M6 9l2.5 2.5L14 6" stroke="#34d399" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.0" />
+      <path d="M7 9l1.5 2 3.5-5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8" />
+      <path d="M9 14v3M11 14v3" stroke="#f87171" strokeWidth="1.3" strokeLinecap="round" fill="none" opacity="0.7" />
+      <path d="M7.5 17h5" stroke="#f87171" strokeWidth="1.3" strokeLinecap="round" fill="none" opacity="0.7" />
+      <path d="M14 4l2-2M16 6l-2-2" stroke="#fbbf24" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconSalesRepBurnoutDisengagementEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1742,6 +1769,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-quota-gaming-detection-engine", label: "Quota Gaming", icon: IconSalesQuotaGamingDetectionEngine },
       { href: "/dashboard/deal-ghosting-risk-engine", label: "Deal Ghosting", icon: IconDealGhostingRiskEngine },
       { href: "/dashboard/account-executive-ramp-velocity-engine", label: "AE Ramp Velocity", icon: IconAccountExecutiveRampVelocityEngine },
+      { href: "/dashboard/sales-territory-overlap-conflict-engine", label: "Territory Overlap", icon: IconSalesTerritoryOverlapConflictEngine },
+      { href: "/dashboard/customer-ltv-erosion-detector", label: "LTV Erosion", icon: IconCustomerLTVErosionDetector },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
