@@ -2116,6 +2116,17 @@ function IconSalesRepRampIntelligenceEngine({ className }: { className?: string 
   );
 }
 
+function IconSalesPricingDisciplineIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Price tag with checkmark/lock — pricing discipline */}
+      <path d="M3 10 L10 3 L17 10 L10 17 Z" strokeLinejoin="round" opacity="0.6"/>
+      <path d="M7 10 L9 12 L13 8" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8"/>
+      <circle cx="10" cy="10" r="1" fill="currentColor" stroke="none" opacity="0.0"/>
+    </svg>
+  );
+}
+
 function IconSalesAccountPenetrationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2629,6 +2640,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-buyer-engagement-intelligence-engine", label: "Buyer Engagement", icon: IconSalesBuyerEngagementIntelligenceEngine },
       { href: "/dashboard/sales-conversation-intelligence-engine", label: "Conversation Intel", icon: IconSalesConversationIntelligenceEngine },
       { href: "/dashboard/sales-rep-ramp-intelligence-engine", label: "Rep Ramp", icon: IconSalesRepRampIntelligenceEngine },
+      { href: "/dashboard/sales-pricing-discipline-intelligence-engine", label: "Pricing Discipline", icon: IconSalesPricingDisciplineIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
