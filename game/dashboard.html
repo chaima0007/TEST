@@ -152,15 +152,15 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">34</div>
+    <div class="card-value">37</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
 
   <div class="card" style="--accent:#44ff99">
     <div class="card-title">Tests passés</div>
-    <div class="card-value">119 / 119</div>
-    <div class="card-desc">0 échec — 23 suites — couverture totale</div>
+    <div class="card-value">138 / 138</div>
+    <div class="card-desc">0 échec — 26 suites — couverture totale</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--green)"></div></div>
   </div>
 
@@ -263,7 +263,10 @@
       <li class="system-item"><span class="sys-dot" style="background:#00ff66"></span><span class="sys-name">DistrictSystem — 5 quartiers (Centre/Nord/Sud/Ouest/Est), fog + notification</span><span class="sys-tag chaud">CHAUD</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#00aa44"></span><span class="sys-name">GarageRepair — marqueur lumineux, réparation auto à proximité</span><span class="sys-tag">Stable</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#ddcc44"></span><span class="sys-name">StreetFurnitureSystem — 16 bollards + colliders, 15 bancs, 15 poubelles</span><span class="sys-tag chaud">CHAUD</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ff0088"></span><span class="sys-name">NeonSignSystem — 5 enseignes pulsantes, Quartier Est, sin wave</span><span class="sys-tag chaud">CHAUD</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff0088"></span><span class="sys-name">NeonSignSystem — 5 enseignes pulsantes, Quartier Est, sin wave</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff2200"></span><span class="sys-name">SignalAgent — 16 feux tricolores (cycle 20s), infractions → +wanted</span><span class="sys-tag chaud">CHAUD</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa44ff"></span><span class="sys-name">ReputationAgent — mémoire par quartier −100…+100, getMultiplier(), fuite PNJ</span><span class="sys-tag chaud">CHAUD</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff8800"></span><span class="sys-name">WitnessAgent — témoins 30s, hasNearbyWitness(), pression wanted active</span><span class="sys-tag chaud">CHAUD</span></li>
     </ul>
   </div>
 
@@ -271,6 +274,7 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 16</span><span class="log-msg"><strong>SignalAgent</strong> + <strong>ReputationAgent</strong> + <strong>WitnessAgent</strong> — feux tricolores 20s (16 croisements), mémoire de ville par quartier (-100→+100), témoins qui bloquent le cooldown wanted, 19 tests</span></li>
       <li class="log-item"><span class="log-time">Ronde 15</span><span class="log-msg"><strong>StreetFurnitureSystem</strong> + NeonSigns (Quartier Est) + Brouillard dynamique — 16 bollards, 15 bancs, 15 poubelles, 5 néons pulsants, fog serré sous la pluie, 5 tests</span></li>
       <li class="log-item"><span class="log-time">Ronde 14</span><span class="log-msg"><strong>DistrictSystem</strong> + Arbres de trottoir + Garage Repair — 5 quartiers avec ambiances, 20 arbres 3D + ombres, réparation auto au garage, 8 tests</span></li>
       <li class="log-item"><span class="log-time">Ronde 13</span><span class="log-msg"><strong>VehicleDamageSystem</strong> + <strong>RadioSystem</strong> + voitures garées — carrosserie cumulative, stations radio (touche R), 15 obstacles statiques, 9 tests</span></li>
@@ -318,7 +322,7 @@
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
   Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
-  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">34 systèmes · 119/119 tests · 12 agents IA</span>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">37 systèmes · 138/138 tests · 15 agents IA</span>
 </footer>
 
 <script>

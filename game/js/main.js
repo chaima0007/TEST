@@ -25,7 +25,10 @@ import { ArchitectSystem } from './architect.js';
 import { MusicAgent } from './music.js';
 import { DialogueAgent } from './dialogue.js';
 import { VehicleDamageSystem } from './vehicledamage.js';
-import { DistrictSystem } from './district.js';
+import { DistrictSystem }      from './district.js';
+import { SignalAgent }          from './signal.js';
+import { ReputationAgent }      from './reputation.js';
+import { WitnessAgent }         from './witness.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -84,6 +87,11 @@ const musicAgent = _audioCtx ? new MusicAgent(_audioCtx, _audioCtx.destination) 
 const dialogueAgent = new DialogueAgent();
 const vehicleDamage = new VehicleDamageSystem();
 const district     = new DistrictSystem();
+const signals      = new SignalAgent(scene, world.roadLines.xs, world.roadLines.zs);
+const reputation   = new ReputationAgent();
+const witness      = new WitnessAgent();
+let   _signalViolationTime = -Infinity;
+const SIGNAL_COOLDOWN_S    = 10;
 
 // ── RadioSystem — stations switchables avec la touche R ──────────────────────
 const RADIO_STATIONS = [
@@ -161,6 +169,11 @@ const _nexusPhrases = [
     const dmg = vehicleDamage.getDamage();
     return `${district.getCurrent().name} | Carrosserie ${dmg > 0.05 ? Math.round(dmg*100)+'%' : 'OK'} | ${RADIO_STATIONS[_radioIdx].name}`;
   },
+  (v, d, w, dc, wx) => {
+    const rep = reputation.getStatus(district.getCurrent().id);
+    const wit = witness.getWitnessCount();
+    return `Réputation ${district.getCurrent().name}: ${rep}${wit > 0 ? ` | ${wit} TÉMOIN(S) actif(s)` : ''}`;
+  },
 ];
 let _nexusIdx = 0;
 let _nexusFlip = 0;
@@ -219,6 +232,23 @@ function animate() {
   // --- DistrictSystem : changement de quartier ---
   const districtChange = district.update(playerPos.x, playerPos.z, scene.fog);
   if (districtChange) _showNotif(`${districtChange.name} — ${districtChange.desc}`);
+
+  // --- SignalAgent : feux tricolores ---
+  signals.update(dt);
+  if (signals.isViolation(playerPos.x, playerPos.z, Math.abs(vehicle.getSpeedKmh()))
+      && elapsedS - _signalViolationTime > SIGNAL_COOLDOWN_S) {
+    _signalViolationTime = elapsedS;
+    _showNotif('Feu rouge grillé !');
+    if (wanted.level < 5) wanted._setLevel(Math.min(5, wanted.level + 1), hud);
+  }
+
+  // --- ReputationAgent : crime / conduite pacifique ---
+  if (wanted.level === 0 && !drift.isDrifting()) {
+    reputation.addPeaceful(district.getCurrent().id, dt * 0.3);
+  }
+
+  // --- WitnessAgent ---
+  witness.update(dt, traffic.pedestrians);
 
   // --- Garage : réparation auto quand le joueur arrive au garage ---
   const _gp = world.garagePos;
@@ -357,9 +387,16 @@ function animate() {
         ? `DRIFT ${Math.round(drift.getDriftAngle())}° +${drift.getSessionScore()}`
         : traffic.crowdAgent.getActiveSignals() > 0
           ? `FOULE PANIQUE — ${traffic.crowdAgent.getActiveSignals()} signal(s)`
-          : `Combo x${combo.getMultiplier()} | ${Math.round(vehicle.getSpeedKmh())} km/h`,
-      bar: drift.isDrifting() ? Math.min(1, drift.getSessionScore() / 300) : combo.getMultiplier() / 5,
-      color: drift.isDrifting() ? '#ff6622' : traffic.crowdAgent.getActiveSignals() > 0 ? '#ff4422' : combo.getMultiplier() >= 3 ? '#ff9944' : '#55cc88',
+          : witness.getWitnessCount() > 0
+            ? `${witness.getWitnessCount()} TÉMOIN(S) — Rep. ${reputation.getStatus(district.getCurrent().id)}`
+            : `${district.getCurrent().name} | Combo x${combo.getMultiplier()}`,
+      bar: witness.getWitnessCount() > 0
+        ? Math.min(1, witness.getWitnessCount() / 6)
+        : drift.isDrifting() ? Math.min(1, drift.getSessionScore() / 300) : combo.getMultiplier() / 5,
+      color: witness.getWitnessCount() > 0 ? '#ff8800'
+        : drift.isDrifting() ? '#ff6622'
+        : traffic.crowdAgent.getActiveSignals() > 0 ? '#ff4422'
+        : combo.getMultiplier() >= 3 ? '#ff9944' : '#55cc88',
     },
     monetisation: {
       active: dailyStatus.pct < 1,
@@ -407,6 +444,12 @@ function animate() {
     if (impact > 0.35) {
       sparks.emit(playerPos.x, playerPos.z, impact);
       traffic.crowdAgent.broadcast('crash', playerPos.x, playerPos.z, 18, impact);
+      // Réputation et témoins
+      reputation.addCrime(district.getCurrent().id, Math.ceil(impact * 3));
+      const nearPeds = traffic.pedestrians.filter(p => p.active && p.mesh &&
+        Math.hypot(p.mesh.position.x - playerPos.x, p.mesh.position.z - playerPos.z) < 15);
+      witness.report(nearPeds, impact);
+      if (witness.hasNearbyWitness(playerPos)) _showNotif('Des témoins alertent la police !');
     }
   }
 
