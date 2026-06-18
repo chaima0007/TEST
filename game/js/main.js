@@ -47,6 +47,8 @@ import { DreamZoneAgent }      from './dreamzone.js';
 import { SoundscapeAgent }     from './soundscape.js';
 import { GlitchFXAgent }       from './glitchfx.js';
 import { CrypticAgent }        from './cryptic.js';
+import { CityEventAgent }      from './cityevent.js';
+import { SecretSystem }        from './secrets.js';
 
 const MAX_SPEED_KMH = 150;
 const MAX_SPEED_MS  = MAX_SPEED_KMH / 3.6;
@@ -145,6 +147,10 @@ const dreamzone = new DreamZoneAgent(scene);
 const soundscape = new SoundscapeAgent(_audioCtx);
 const glitchFX   = new GlitchFXAgent();
 const cryptic    = new CrypticAgent();
+
+// Ronde 25 — Ville Vivante
+const cityEvent = new CityEventAgent(scene);
+const secrets   = new SecretSystem(scene);
 
 // Sprite "!" pour les klaxons (partagé entre toutes les voitures klaxonnantes)
 const _honkSprites = new Map(); // mesh → { sprite, timer }
@@ -477,7 +483,7 @@ function animate() {
   if (camViolation && wanted.level < 5) wanted._setLevel(wanted.level + 1, hud);
 
   // Lampadaires : s'allument la nuit
-  const nightIntensity = dayCycle.isNight() ? 1.4 : 0;
+  const nightIntensity = dayCycle.isNight() && !cityEvent.isBlackout() ? 1.4 : 0;
   for (const lamp of world.streetLamps) lamp.material.emissiveIntensity = nightIntensity;
 
   // Phares + feux du joueur (nuit)
@@ -621,6 +627,19 @@ function animate() {
     dreamColor:     _dzColor,
   });
   cryptic.update(dt, backroom.isActive(), _fearNow, _monType, _dzInZone);
+
+  // --- Ronde 25 — Ville Vivante ---
+  cityEvent.update(dt, playerPos, dayCycle.isNight(), world.streetLamps);
+  const _evNotif = cityEvent.popNotif();
+  if (_evNotif) _showNotif(_evNotif);
+
+  secrets.update(dt, playerPos);
+  const _secNotif = secrets.popNotif();
+  if (_secNotif) _showNotif(_secNotif);
+  const _loreMsg = secrets.popLoreMsg();
+  if (_loreMsg) cryptic.pushImmediate(_loreMsg.msg, _loreMsg.color);
+  const _secFlash = secrets.popFlash();
+  if (_secFlash) glitchFX.triggerFlash('rgba(255,0,255,0.85)', 90, 450);
 
   // Teinte émotionnelle de la lumière ambiante
   const _tint = emotion.getColorTint();
@@ -870,6 +889,22 @@ function animate() {
           : 'En veille — prêt à corrompre la réalité',
       bar: cryptic.isActive() ? 1 : Math.min(1, _fearNow * 1.5),
       color: '#770077',
+    },
+    cityEvent: {
+      active: cityEvent.isActive(),
+      status: cityEvent.isActive()
+        ? `ÉVÉNEMENT ACTIF : ${cityEvent.getActiveEvent().toUpperCase()}`
+        : `En veille | CD explosion ${Math.round(cityEvent.getCooldown('explosion'))}s`,
+      bar: cityEvent.isActive() ? 1 : 0,
+      color: '#ff6622',
+    },
+    secrets: {
+      active: secrets.getCollected() > 0,
+      status: secrets.isComplete()
+        ? '◈◈◈ NEXUS EN ÉVEIL — 8/8 fragments'
+        : `◈ Fragments ${secrets.getCollected()}/${secrets.getTotal()} collectés`,
+      bar: secrets.getProgress(),
+      color: secrets.isComplete() ? '#ff00ff' : '#ffaa00',
     },
   });
 

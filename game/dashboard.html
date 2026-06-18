@@ -152,7 +152,7 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">58</div>
+    <div class="card-value">60</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
@@ -166,8 +166,8 @@
 
   <div class="card" style="--accent:#ffaa00">
     <div class="card-title">Agents IA en jeu</div>
-    <div class="card-value">33</div>
-    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader · Commandant · Résolveur · Backroom · Monster · DreamZone · Soundscape · GlitchFX · Cryptic</div>
+    <div class="card-value">35</div>
+    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader · Commandant · Résolveur · Backroom · Monster · DreamZone · Soundscape · GlitchFX · Cryptic · CityEvent · Secrets</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--gold)"></div></div>
   </div>
 
@@ -282,6 +282,16 @@
         <div class="agent-role">cryptic.js — messages qui brisent le 4e mur</div>
         <div class="agent-status active">Typewriter · Corruption glyphs · NEXUS corrompu</div>
       </div>
+      <div class="agent-card">
+        <div class="agent-name">CityEventAgent 💥</div>
+        <div class="agent-role">cityevent.js — événements aléatoires ville</div>
+        <div class="agent-status active">Explosion · Blackout · Météorites · Fissure dimensionnelle</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">SecretSystem ◈</div>
+        <div class="agent-role">secrets.js — 8 collectibles + lore NEXUS</div>
+        <div class="agent-status music">Sphères lumineuses · Fragments · Révélation finale</div>
+      </div>
     </div>
   </div>
 
@@ -345,6 +355,8 @@
       <li class="system-item"><span class="sys-dot" style="background:#884488"></span><span class="sys-name">SoundscapeAgent — sons procéduraux : bourdonnement néon 60Hz vacillant, battements cardiaques 55→130 BPM, grondement LFO par monstre, tonalités cristallines 528Hz + delay reverb</span><span class="sys-tag hot">IMMERSION</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#cc2244"></span><span class="sys-name">GlitchFXAgent — aberration chromatique R/B (divs décalés), bloom couleur par zone, scanlines CRT, grain de film canvas 160×120, flashs aléatoires rouge/jaune</span><span class="sys-tag hot">IMMERSION</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#770077"></span><span class="sys-name">CrypticAgent — typewriter effect + corruption de glyphs, 11 messages Backroom, 4×3 messages Monstre, 5 messages Dream, ligne NEXUS corrompue coin bas-droite</span><span class="sys-tag hot">IMMERSION</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff6622"></span><span class="sys-name">CityEventAgent — 4 événements aléatoires : Explosion (boule feu + anneau + fumée + lumière), Blackout (overlay sombre + lampadaires off 14s), Météorites nocturnes (5-8 sphères + traînes + impacts lumineux), Fissure dimensionnelle (trou noir + lueur violette + particules)</span><span class="sys-tag hot">VIVANT</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffaa00"></span><span class="sys-name">SecretSystem — 8 sphères lumineuses cachées (bob + rotation + halo + colonne de lumière), radar de proximité, compteur bas-gauche, fragments de lore → CrypticAgent, révélation finale NEXUS à 8/8 + flash magenta</span><span class="sys-tag hot">VIVANT</span></li>
     </ul>
   </div>
 
@@ -352,6 +364,7 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 25</span><span class="log-msg"><strong>CityEventAgent + SecretSystem</strong> — Ville Vivante : 4 événements aléatoires (explosion boule de feu + anneau + fumée, blackout coupure électrique 14s + overlay sombre, pluie de météorites nocturne 5-8 impacts avec traînes, fissure dimensionnelle sol noir + lueur violette + particules), 8 sphères de secrets cachées dans la ville (bob flottant, halo, colonne de lumière, radar de proximité), fragments de lore NEXUS → CrypticAgent, message final "NEXUS TE REGARDE" + flash magenta à 8/8 collectés</span></li>
       <li class="log-item"><span class="log-time">Ronde 24</span><span class="log-msg"><strong>SoundscapeAgent + GlitchFXAgent + CrypticAgent</strong> — Immersion Totale : sons procéduraux ambiants (bourdonnement néon 60Hz vacillant, battements cardiaques 55→130 BPM, grondement LFO par type de monstre, tonalités cristallines 528Hz + delay reverb), aberration chromatique R/B + bloom couleur + scanlines CRT + grain canvas + flashs, messages qui brisent le 4e mur (typewriter + corruption glyphs, ligne NEXUS corrompue, 30+ messages contextuels)</span></li>
       <li class="log-item"><span class="log-time">Ronde 23</span><span class="log-msg"><strong>BackroomAgent + MonsterAgent + DreamZoneAgent</strong> — Onirique &amp; Horreur : espace liminal jaune avec L'Entité poursuivante (fuite à 55 km/h, FogExp2 dense), 3 créatures nocturnes procédurales (L'Ombre silhouette impossible, La Bête quadrupède à épines dorsales, Le Cyclope œil géant flottant), 6 zones magiques avec particules AdditiveBlending (Jardin des Âmes, Cathédrale de Cristal, Forêt des Aiguilles, Source de Lumière [heal], Vortex Cosmique [téléport], Lac des Reflets)</span></li>
       <li class="log-item"><span class="log-time">Ronde 22</span><span class="log-msg"><strong>COMMANDANT + RÉSOLVEUR</strong> — deux agents PREMIUM : général tactique (4 plans militaires, radio intercept, Force Maximale escalade wanted), Director IA (5 situations détectées : cerné/épave/inactif/revanche/record, résolutions dynamiques, nitro d'urgence, +900 pts revanche)</span></li>
@@ -407,7 +420,7 @@
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
   Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
-  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">58 systèmes · 172/172 tests · 33 agents IA — Ronde 24 : SOUNDSCAPE + GLITCHFX + CRYPTIC IMMERSION TOTALE</span>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">60 systèmes · 172/172 tests · 35 agents IA — Ronde 25 : CITYEVENT + SECRETS VILLE VIVANTE</span>
 </footer>
 
 <script>
