@@ -183,8 +183,56 @@ export default function ComparePage() {
       </div>
 
       {selected.length === 0 ? (
-        <div className="bg-slate-50 border border-dashed border-slate-200 rounded-xl py-16 text-center text-slate-400 text-sm">
-          Sélectionnez au moins un concurrent pour démarrer la comparaison.
+        <div className="bg-slate-50 border border-dashed border-slate-200 rounded-xl py-20 flex flex-col items-center justify-center gap-5 text-center">
+          {/* Animated SVG illustration — two empty columns face to face */}
+          <svg
+            viewBox="0 0 160 100"
+            className="w-40 h-auto text-slate-300"
+            aria-hidden="true"
+          >
+            {/* Left column */}
+            <rect x="8" y="20" width="58" height="72" rx="6" fill="currentColor" opacity="0.25" />
+            <rect x="16" y="30" width="42" height="8" rx="3" fill="currentColor" opacity="0.4">
+              <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.4s" repeatCount="indefinite" />
+            </rect>
+            <rect x="16" y="46" width="30" height="6" rx="3" fill="currentColor" opacity="0.3">
+              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.4s" begin="0.4s" repeatCount="indefinite" />
+            </rect>
+            <rect x="16" y="58" width="36" height="6" rx="3" fill="currentColor" opacity="0.3">
+              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
+            </rect>
+            <rect x="16" y="70" width="24" height="6" rx="3" fill="currentColor" opacity="0.3">
+              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+            </rect>
+
+            {/* VS divider */}
+            <circle cx="80" cy="56" r="12" fill="white" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
+            <text x="80" y="60.5" textAnchor="middle" fontSize="9" fontWeight="bold" fill="currentColor" opacity="0.5">VS</text>
+
+            {/* Right column (mirrored) */}
+            <rect x="94" y="20" width="58" height="72" rx="6" fill="currentColor" opacity="0.25" />
+            <rect x="102" y="30" width="42" height="8" rx="3" fill="currentColor" opacity="0.4">
+              <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+            </rect>
+            <rect x="102" y="46" width="30" height="6" rx="3" fill="currentColor" opacity="0.3">
+              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.4s" begin="1.6s" repeatCount="indefinite" />
+            </rect>
+            <rect x="102" y="58" width="36" height="6" rx="3" fill="currentColor" opacity="0.3">
+              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.4s" begin="2.0s" repeatCount="indefinite" />
+            </rect>
+            <rect x="102" y="70" width="24" height="6" rx="3" fill="currentColor" opacity="0.3">
+              <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.4s" begin="0.4s" repeatCount="indefinite" />
+            </rect>
+          </svg>
+
+          <div className="space-y-1.5">
+            <p className="text-[15px] font-semibold text-slate-700">
+              Sélectionnez 2 concurrents pour commencer la comparaison
+            </p>
+            <p className="text-[13px] text-slate-400 max-w-sm">
+              Utilisez les pills ci-dessus pour choisir jusqu&apos;à 3 acteurs
+            </p>
+          </div>
         </div>
       ) : (
         <>

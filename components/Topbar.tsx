@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { LiveIndicator } from "@/components/LiveIndicator";
 
 // ─── Breadcrumb map ───────────────────────────────────────────────────────────
 
@@ -14,17 +15,47 @@ const breadcrumbLabels: Record<string, string> = {
   "/dashboard/alerts": "Alertes",
   "/dashboard/reports": "Rapports",
   "/dashboard/settings": "Paramètres",
+  "/dashboard/battlecards": "Battle Cards",
+  "/dashboard/signals": "Signaux Faibles",
+  "/dashboard/simulate": "Simulateur",
+  "/dashboard/radar": "Radar Clients",
+  "/dashboard/plan": "Plan de Conquête",
+  "/dashboard/success": "Simulation Succès",
 };
 
-// ─── Search suggestions (hardcoded for demo) ─────────────────────────────────
+// ─── Command palette commands ─────────────────────────────────────────────────
 
-const SUGGESTIONS = [
-  { label: "Tableau de bord", href: "/dashboard" },
-  { label: "Concurrents", href: "/dashboard/competitors" },
-  { label: "Alertes", href: "/dashboard/alerts" },
-  { label: "Rapports", href: "/dashboard/reports" },
-  { label: "Paramètres", href: "/dashboard/settings" },
+type CommandGroup = "Navigation" | "Actions rapides";
+
+interface Command {
+  id: string;
+  label: string;
+  href: string;
+  group: CommandGroup;
+}
+
+const COMMANDS: Command[] = [
+  // Navigation group
+  { id: "nav-dashboard",    label: "Tableau de bord",     href: "/dashboard",              group: "Navigation" },
+  { id: "nav-competitors",  label: "Concurrents",          href: "/dashboard/competitors",  group: "Navigation" },
+  { id: "nav-pricing",      label: "Tarification",         href: "/dashboard/pricing",      group: "Navigation" },
+  { id: "nav-alerts",       label: "Alertes",              href: "/dashboard/alerts",       group: "Navigation" },
+  { id: "nav-reports",      label: "Rapports",             href: "/dashboard/reports",      group: "Navigation" },
+  { id: "nav-compare",      label: "Comparaison",          href: "/dashboard/compare",      group: "Navigation" },
+  { id: "nav-battlecards",  label: "Battle Cards",         href: "/dashboard/battlecards",  group: "Navigation" },
+  { id: "nav-signals",      label: "Signaux Faibles",      href: "/dashboard/signals",      group: "Navigation" },
+  { id: "nav-simulate",     label: "Simulateur",           href: "/dashboard/simulate",     group: "Navigation" },
+  { id: "nav-radar",        label: "Radar Clients",        href: "/dashboard/radar",        group: "Navigation" },
+  { id: "nav-plan",         label: "Plan de Conquête",     href: "/dashboard/plan",         group: "Navigation" },
+  { id: "nav-success",      label: "Simulation Succès",    href: "/dashboard/success",      group: "Navigation" },
+  { id: "nav-settings",     label: "Paramètres",           href: "/dashboard/settings",     group: "Navigation" },
+  // Actions rapides group
+  { id: "act-report",       label: "Générer un rapport",   href: "/dashboard/reports",      group: "Actions rapides" },
+  { id: "act-alerts",       label: "Voir les alertes",     href: "/dashboard/alerts",       group: "Actions rapides" },
+  { id: "act-compare",      label: "Comparer concurrents", href: "/dashboard/compare",      group: "Actions rapides" },
 ];
+
+const GROUP_ORDER: CommandGroup[] = ["Navigation", "Actions rapides"];
 
 // ─── SVG Icons ────────────────────────────────────────────────────────────────
 
@@ -96,38 +127,110 @@ function IconLogout({ className }: { className?: string }) {
   );
 }
 
-// ─── Search modal ─────────────────────────────────────────────────────────────
+// Arrow icon for navigation items
+function IconArrow({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        d="M10.293 5.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L12.586 11H4a1 1 0 1 1 0-2h8.586l-2.293-2.293a1 1 0 0 1 0-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
 
-function SearchModal({ onClose }: { onClose: () => void }) {
+// ─── Command palette modal ─────────────────────────────────────────────────────
+
+function CommandPalette({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
   const router = useRouter();
 
+  // Filter commands by query (case-insensitive)
+  const filtered = query.trim()
+    ? COMMANDS.filter((c) =>
+        c.label.toLowerCase().includes(query.toLowerCase())
+      )
+    : COMMANDS;
+
+  // Reset active index when filtered list changes
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [query]);
+
+  // Focus input on mount
   useEffect(() => {
     inputRef.current?.focus();
+  }, []);
+
+  // Keyboard navigation
+  useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setActiveIndex((i) => (i + 1) % Math.max(filtered.length, 1));
+        return;
+      }
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setActiveIndex((i) => (i - 1 + Math.max(filtered.length, 1)) % Math.max(filtered.length, 1));
+        return;
+      }
+      if (e.key === "Enter") {
+        e.preventDefault();
+        const cmd = filtered[activeIndex];
+        if (cmd) {
+          router.push(cmd.href);
+          onClose();
+        }
+        return;
+      }
     };
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
-  }, [onClose]);
+  }, [onClose, filtered, activeIndex, router]);
 
-  const filtered = query.trim()
-    ? SUGGESTIONS.filter((s) =>
-        s.label.toLowerCase().includes(query.toLowerCase())
-      )
-    : SUGGESTIONS;
+  // Scroll active item into view
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+    const activeEl = list.querySelector("[data-active='true']");
+    if (activeEl) {
+      (activeEl as HTMLElement).scrollIntoView({ block: "nearest" });
+    }
+  }, [activeIndex]);
 
   const handleSelect = (href: string) => {
     router.push(href);
     onClose();
   };
 
+  // Group filtered commands
+  const grouped = GROUP_ORDER.reduce<Record<CommandGroup, Command[]>>(
+    (acc, group) => {
+      acc[group] = filtered.filter((c) => c.group === group);
+      return acc;
+    },
+    { Navigation: [], "Actions rapides": [] }
+  );
+
+  // Build flat list with group positions for keyboard navigation
+  const flatFiltered = filtered;
+
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4"
       aria-modal="true"
       role="dialog"
+      aria-label="Palette de commandes"
     >
       {/* Backdrop */}
       <div
@@ -143,34 +246,113 @@ function SearchModal({ onClose }: { onClose: () => void }) {
           <input
             ref={inputRef}
             type="text"
-            placeholder="Rechercher..."
+            placeholder="Rechercher une page ou une action..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="flex-1 bg-transparent text-slate-900 placeholder-slate-400 text-sm outline-none"
+            aria-autocomplete="list"
+            aria-controls="cmd-palette-list"
           />
           <kbd className="hidden sm:inline-flex items-center gap-0.5 rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[11px] font-medium text-slate-500">
             ESC
           </kbd>
         </div>
 
-        {/* Suggestions */}
-        <ul className="py-2 max-h-72 overflow-y-auto">
-          {filtered.length === 0 ? (
-            <li className="px-4 py-3 text-sm text-slate-400">Aucun résultat.</li>
+        {/* Results */}
+        <ul
+          ref={listRef}
+          id="cmd-palette-list"
+          role="listbox"
+          className="py-2 max-h-80 overflow-y-auto"
+        >
+          {flatFiltered.length === 0 ? (
+            <li className="px-4 py-6 text-sm text-slate-400 text-center">
+              Aucun résultat pour &ldquo;{query}&rdquo;
+            </li>
           ) : (
-            filtered.map((s) => (
-              <li key={s.href}>
-                <button
-                  onClick={() => handleSelect(s.href)}
-                  className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 transition-colors text-left"
-                >
-                  <IconSearch className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                  {s.label}
-                </button>
-              </li>
-            ))
+            GROUP_ORDER.map((group) => {
+              const items = grouped[group];
+              if (items.length === 0) return null;
+              const isAction = group === "Actions rapides";
+              return (
+                <li key={group} role="presentation">
+                  {/* Group header */}
+                  <div className="px-4 pt-3 pb-1">
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 select-none">
+                      {group}
+                    </span>
+                  </div>
+                  <ul role="group" aria-label={group}>
+                    {items.map((cmd) => {
+                      const flatIdx = flatFiltered.indexOf(cmd);
+                      const isActive = flatIdx === activeIndex;
+                      return (
+                        <li
+                          key={cmd.id}
+                          role="option"
+                          aria-selected={isActive}
+                          data-active={isActive ? "true" : undefined}
+                        >
+                          <button
+                            onMouseEnter={() => setActiveIndex(flatIdx)}
+                            onClick={() => handleSelect(cmd.href)}
+                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors text-left ${
+                              isActive
+                                ? "bg-indigo-50 text-indigo-700"
+                                : "text-slate-700 hover:bg-slate-50"
+                            }`}
+                          >
+                            {isAction ? (
+                              <span
+                                className={`text-base leading-none flex-shrink-0 ${
+                                  isActive ? "text-indigo-500" : "text-slate-400"
+                                }`}
+                                aria-hidden="true"
+                              >
+                                ⚡
+                              </span>
+                            ) : (
+                              <IconArrow
+                                className={`w-3.5 h-3.5 flex-shrink-0 ${
+                                  isActive ? "text-indigo-500" : "text-slate-300"
+                                }`}
+                              />
+                            )}
+                            <span className="flex-1">{cmd.label}</span>
+                            <span
+                              className={`text-[11px] font-mono truncate max-w-[140px] ${
+                                isActive ? "text-indigo-400" : "text-slate-300"
+                              }`}
+                            >
+                              {cmd.href}
+                            </span>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
+              );
+            })
           )}
         </ul>
+
+        {/* Footer hint */}
+        <div className="border-t border-slate-100 px-4 py-2 flex items-center gap-4 text-[11px] text-slate-400 select-none">
+          <span className="flex items-center gap-1">
+            <kbd className="rounded border border-slate-200 bg-slate-50 px-1 py-0.5 font-medium">↑</kbd>
+            <kbd className="rounded border border-slate-200 bg-slate-50 px-1 py-0.5 font-medium">↓</kbd>
+            naviguer
+          </span>
+          <span className="flex items-center gap-1">
+            <kbd className="rounded border border-slate-200 bg-slate-50 px-1 py-0.5 font-medium">↵</kbd>
+            ouvrir
+          </span>
+          <span className="flex items-center gap-1">
+            <kbd className="rounded border border-slate-200 bg-slate-50 px-1 py-0.5 font-medium">ESC</kbd>
+            fermer
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -199,6 +381,9 @@ function UserDropdown() {
     // Hard redirect: clears React state, router cache, and any in-memory session data
     window.location.href = "/login";
   };
+
+  // Silence unused variable warning — router kept for potential future use
+  void router;
 
   return (
     <div className="relative" ref={ref}>
@@ -260,8 +445,17 @@ function UserDropdown() {
 
 const ALERT_BADGE_COUNT = 3;
 
+// Helper: is the event target a text input field?
+function isInputFocused(): boolean {
+  const el = document.activeElement;
+  if (!el) return false;
+  const tag = el.tagName.toLowerCase();
+  return tag === "input" || tag === "textarea" || (el as HTMLElement).isContentEditable;
+}
+
 export default function Topbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [searchOpen, setSearchOpen] = useState(false);
 
   // Build breadcrumb trail
@@ -274,21 +468,50 @@ export default function Topbar() {
     crumbs.push({ label, href: path });
   }
 
-  // ⌘K / Ctrl+K global shortcut
+  // Global keyboard shortcuts
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      const meta = e.metaKey || e.ctrlKey;
+
+      // ⌘K or ⌘/ → open command palette (always, even in inputs)
+      if (meta && (e.key === "k" || e.key === "/")) {
         e.preventDefault();
         setSearchOpen(true);
+        return;
+      }
+
+      // Number shortcuts — skip when typing in an input
+      if (isInputFocused()) return;
+
+      if (meta && e.key === "1") {
+        e.preventDefault();
+        router.push("/dashboard");
+        return;
+      }
+      if (meta && e.key === "2") {
+        e.preventDefault();
+        router.push("/dashboard/competitors");
+        return;
+      }
+      if (meta && e.key === "3") {
+        e.preventDefault();
+        router.push("/dashboard/alerts");
+        return;
+      }
+      if (meta && e.key === "4") {
+        e.preventDefault();
+        router.push("/dashboard/reports");
+        return;
       }
     };
+
     document.addEventListener("keydown", handleKey);
     return () => document.removeEventListener("keydown", handleKey);
-  }, []);
+  }, [router]);
 
   return (
     <>
-      <header className="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-6 gap-4">
+      <header data-topbar="" className="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-6 gap-4">
 
         {/* ── Breadcrumb ── */}
         <nav
@@ -319,14 +542,14 @@ export default function Topbar() {
         {/* ── Right actions ── */}
         <div className="flex items-center gap-2 flex-shrink-0">
 
-          {/* Search button */}
+          {/* Search button — desktop */}
           <button
             onClick={() => setSearchOpen(true)}
             className="hidden sm:flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-500 hover:border-slate-300 hover:bg-white transition-colors"
-            aria-label="Rechercher"
+            aria-label="Ouvrir la palette de commandes"
           >
             <IconSearch className="w-4 h-4" />
-            <span className="hidden md:inline">Rechercher...</span>
+            <span className="hidden md:inline text-slate-400">Rechercher...</span>
             <kbd className="hidden md:inline-flex items-center gap-0.5 rounded border border-slate-200 bg-white px-1.5 py-0.5 text-[11px] font-medium text-slate-400">
               ⌘K
             </kbd>
@@ -359,13 +582,18 @@ export default function Topbar() {
             En ligne
           </span>
 
+          {/* Live indicator */}
+          <div className="hidden md:block">
+            <LiveIndicator />
+          </div>
+
           {/* User avatar + dropdown */}
           <UserDropdown />
         </div>
       </header>
 
-      {/* Search modal */}
-      {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
+      {/* Command palette modal */}
+      {searchOpen && <CommandPalette onClose={() => setSearchOpen(false)} />}
     </>
   );
 }

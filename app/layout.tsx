@@ -8,6 +8,12 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 export const metadata: Metadata = {
   title: "CompeteIQ — Intelligence Concurrentielle",
   description: "Suivez et analysez vos concurrents en temps réel",
+  manifest: "/manifest.json",
+  themeColor: "#4338CA",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

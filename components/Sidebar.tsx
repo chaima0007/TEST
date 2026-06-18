@@ -386,6 +386,7 @@ function DesktopSidebar() {
 
   return (
     <aside
+      data-sidebar=""
       className={`hidden md:flex flex-col flex-shrink-0 min-h-screen bg-slate-900 transition-all duration-200 ${
         collapsed ? "w-16" : "w-64"
       }`}
@@ -450,7 +451,7 @@ function MobileSidebar() {
             className="md:hidden fixed inset-0 z-40 bg-black/50"
             onClick={() => setOpen(false)}
           />
-          <aside className="md:hidden fixed inset-y-0 left-0 z-50 w-72 bg-slate-900 flex flex-col shadow-2xl">
+          <aside data-sidebar="" className="md:hidden fixed inset-y-0 left-0 z-50 w-72 bg-slate-900 flex flex-col shadow-2xl">
             <NavContent collapsed={false} onClose={() => setOpen(false)} />
           </aside>
         </>

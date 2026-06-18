@@ -88,6 +88,30 @@ function IconArrowRight({ className }: { className?: string }) {
   );
 }
 
+function IconCard({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm2 1h10v2H5V6zm0 4h4v4H5v-4zm6 0h4v4h-4v-4z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconTarget({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm0-2a4 4 0 100-8 4 4 0 000 8zm0-2a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconTrophy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1h3a1 1 0 011 1v2a4 4 0 01-3.25 3.93V12h1.25a1 1 0 110 2H7a1 1 0 110-2h1.25v-1.07A4 4 0 015 7V5a1 1 0 011-1h3V3a1 1 0 011-1zm-4 5V6h3v3a2 2 0 01-3 0zm8 0a2 2 0 01-3 0V6h3v1z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 // Stat card config with SVG icon components and trend data
 const statCardConfigs = [
   {
@@ -276,6 +300,27 @@ export default function DashboardPage() {
             >
               <IconScale className="w-4 h-4" />
               Comparer
+            </Link>
+            <Link
+              href="/dashboard/battlecards"
+              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-[13px] font-medium px-4 py-2 rounded-md hover:bg-white/20 transition-colors duration-100"
+            >
+              <IconCard className="w-4 h-4" />
+              Battle Cards
+            </Link>
+            <Link
+              href="/dashboard/plan"
+              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-[13px] font-medium px-4 py-2 rounded-md hover:bg-white/20 transition-colors duration-100"
+            >
+              <IconTarget className="w-4 h-4" />
+              Plan de Conquête
+            </Link>
+            <Link
+              href="/dashboard/success"
+              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-[13px] font-medium px-4 py-2 rounded-md hover:bg-white/20 transition-colors duration-100"
+            >
+              <IconTrophy className="w-4 h-4" />
+              Simulation Succès
             </Link>
           </div>
         </div>

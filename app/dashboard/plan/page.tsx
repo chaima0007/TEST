@@ -370,6 +370,7 @@ export default function PlanPage() {
           <div className="flex-shrink-0">
             <button
               type="button"
+              onClick={() => window.print()}
               className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold transition-all shadow-lg backdrop-blur-sm"
             >
               <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

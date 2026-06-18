@@ -40,3 +40,154 @@ body {
   background: rgba(99,102,241,0.2);
   color: #a5b4fc;
 }
+
+/* ─── Print styles ──────────────────────────────────────────────────────────── */
+
+@media print {
+  /* Force color accuracy */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Hide navigation and UI chrome */
+  [data-sidebar],
+  aside,
+  [data-topbar],
+  .fixed,
+  input[type="search"],
+  input[type="text"],
+  button:not(.print-keep) {
+    display: none !important;
+  }
+
+  /* Reset layout so content fills the full width */
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Main layout: remove flex/grid wrapper constraints */
+  .flex.min-h-screen,
+  .flex.h-screen {
+    display: block !important;
+  }
+
+  /* Content area: full width, no left margin/padding from sidebar */
+  main,
+  [class*="flex-1"],
+  .flex-1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 16pt !important;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 20mm 15mm;
+  }
+
+  /* Printed page header with CompeteIQ branding */
+  body::before {
+    content: "CompeteIQ — Intelligence Concurrentielle";
+    display: block;
+    font-size: 10pt;
+    color: #4338CA;
+    font-weight: bold;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8pt;
+    margin-bottom: 16pt;
+  }
+
+  /* Printed page footer — confidentiality notice */
+  body::after {
+    content: "Document confidentiel — " attr(data-page-title);
+    display: block;
+    font-size: 8pt;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 16pt;
+    padding-top: 8pt;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  /* Keep card backgrounds and force white for generic containers */
+  .bg-white,
+  [class*="rounded-xl"],
+  [class*="rounded-2xl"] {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Gradient headers: keep their dark background */
+  [class*="from-indigo-950"],
+  [class*="from-slate-900"] {
+    background: #1e1b4b !important;
+    color: #ffffff !important;
+  }
+
+  /* Headings: never orphaned at the bottom of a page */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+    color: #0f172a;
+  }
+
+  /* Tables: keep headers visible on each page */
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Ensure sections don't split awkwardly */
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Remove shadows — they print poorly */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Preserve coloured badges and pills */
+  [class*="bg-indigo"],
+  [class*="bg-emerald"],
+  [class*="bg-red"],
+  [class*="bg-amber"],
+  [class*="bg-blue"],
+  [class*="bg-violet"],
+  [class*="bg-orange"],
+  [class*="bg-slate-900"],
+  [class*="bg-slate-800"] {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Links: show URL after anchor text */
+  a[href]::after {
+    content: none;
+  }
+
+  /* Hide interactive-only elements */
+  [role="dialog"],
+  [aria-modal="true"],
+  .animate-pulse,
+  .animate-ping {
+    display: none !important;
+  }
+}
