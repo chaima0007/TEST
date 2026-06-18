@@ -52,6 +52,9 @@ MENU = """
   [7]  Usine de Migration        ← Moderniser du code legacy
   [8]  Suite Sécurité            ← Audit et protection données
   [9]  Agent Référence           ← Index et doc de tous tes projets
+  [10] Agent Juridique           ← Contrats, CGV, RGPD, NDA
+  [11] Agent Support Client      ← SAV 24/7, FAQ, onboarding
+  [12] Agent Chef de Projet      ← Planification, risques, rapports
 
   [s]  Voir stats & mémoire
   [0]  Quitter
@@ -92,6 +95,12 @@ if __name__ == "__main__":
             lancer("securite.py", fichier)
         elif choix == "9":
             lancer("agent_reference.py")
+        elif choix == "10":
+            lancer("agent_juridique.py")
+        elif choix == "11":
+            lancer("agent_support_client.py")
+        elif choix == "12":
+            lancer("agent_chef_projet.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
