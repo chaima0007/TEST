@@ -1320,6 +1320,30 @@ function IconWinLossPatternEngine({ className }: { className?: string }) {
   );
 }
 
+function IconSalesActivityFabricationDetector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 5a1 1 0 011-1h5a1 1 0 010 2H3a1 1 0 01-1-1zm0 5a1 1 0 011-1h5a1 1 0 010 2H3a1 1 0 01-1-1zm0 5a1 1 0 011-1h5a1 1 0 010 2H3a1 1 0 01-1-1z" opacity="0.5" />
+      <path d="M10 6h7M10 11h5M10 16h3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.35" />
+      <circle cx="16" cy="4" r="3" fill="currentColor" opacity="0.15" />
+      <path d="M14.5 4l1 1 1.5-1.5" stroke="#f87171" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="16" cy="4" r="3" stroke="#f87171" strokeWidth="0.9" fill="none" opacity="0.7" />
+    </svg>
+  );
+}
+
+function IconSalesDataAccessAnomalyEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm2 0v8h10V5H5z" clipRule="evenodd" opacity="0.5" />
+      <path d="M7 8h6M7 11h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.6" />
+      <circle cx="15" cy="15" r="3.5" fill="currentColor" opacity="0.15" />
+      <path d="M13.5 15l1 1 2-2" stroke="#f87171" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="15" cy="15" r="3.5" stroke="#f87171" strokeWidth="1" fill="none" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconRepIncentiveMisalignmentEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1554,6 +1578,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitive-win-probability-engine", label: "Win Probability", icon: IconCompetitiveWinProbabilityEngine },
       { href: "/dashboard/sales-burnout-risk-engine", label: "Burnout Risk", icon: IconSalesBurnoutRiskEngine },
       { href: "/dashboard/rep-incentive-misalignment-engine", label: "Incentive Misalign.", icon: IconRepIncentiveMisalignmentEngine },
+      { href: "/dashboard/sales-data-access-anomaly-engine", label: "Data Access Anomaly", icon: IconSalesDataAccessAnomalyEngine },
+      { href: "/dashboard/sales-activity-fabrication-detector", label: "Activity Fabrication", icon: IconSalesActivityFabricationDetector },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
