@@ -4,23 +4,26 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LiveIndicator } from "@/components/LiveIndicator";
+import { alerts } from "@/lib/data";
 
-// ─── Breadcrumb map ───────────────────────────────────────────────────────────
+// ─── Breadcrumb segment map ───────────────────────────────────────────────────
 
-const breadcrumbLabels: Record<string, string> = {
-  "/dashboard": "Tableau de bord",
-  "/dashboard/competitors": "Concurrents",
-  "/dashboard/compare": "Comparaison",
-  "/dashboard/pricing": "Tarification",
-  "/dashboard/alerts": "Alertes",
-  "/dashboard/reports": "Rapports",
-  "/dashboard/settings": "Paramètres",
-  "/dashboard/battlecards": "Battle Cards",
-  "/dashboard/signals": "Signaux Faibles",
-  "/dashboard/simulate": "Simulateur",
-  "/dashboard/radar": "Radar Clients",
-  "/dashboard/plan": "Plan de Conquête",
-  "/dashboard/success": "Simulation Succès",
+const SEGMENT_LABELS: Record<string, string> = {
+  dashboard:   "Dashboard",
+  competitors: "Concurrents",
+  compare:     "Comparaison",
+  pricing:     "Tarification",
+  alerts:      "Alertes",
+  reports:     "Rapports",
+  settings:    "Paramètres",
+  battlecards: "Battle Cards",
+  signals:     "Signaux Faibles",
+  simulate:    "Simulateur",
+  plan:        "Plan de Conquête",
+  success:     "Simulation Succès",
+  radar:       "Radar Clients",
+  commandant:  "COMMANDANT",
+  resolveur:   "RÉSOLVEUR",
 };
 
 // ─── Command palette commands ─────────────────────────────────────────────────
@@ -36,7 +39,7 @@ interface Command {
 
 const COMMANDS: Command[] = [
   // Navigation group
-  { id: "nav-dashboard",    label: "Tableau de bord",     href: "/dashboard",              group: "Navigation" },
+  { id: "nav-dashboard",    label: "Dashboard",            href: "/dashboard",              group: "Navigation" },
   { id: "nav-competitors",  label: "Concurrents",          href: "/dashboard/competitors",  group: "Navigation" },
   { id: "nav-pricing",      label: "Tarification",         href: "/dashboard/pricing",      group: "Navigation" },
   { id: "nav-alerts",       label: "Alertes",              href: "/dashboard/alerts",       group: "Navigation" },
@@ -56,6 +59,16 @@ const COMMANDS: Command[] = [
 ];
 
 const GROUP_ORDER: CommandGroup[] = ["Navigation", "Actions rapides"];
+
+// ─── Alert type colors ────────────────────────────────────────────────────────
+
+const ALERT_TYPE_COLOR: Record<string, string> = {
+  pricing:     "bg-amber-400",
+  feature:     "bg-indigo-400",
+  acquisition: "bg-red-400",
+  partnership: "bg-green-400",
+  product:     "bg-slate-400",
+};
 
 // ─── SVG Icons ────────────────────────────────────────────────────────────────
 
@@ -91,18 +104,6 @@ function IconChevronDown({ className }: { className?: string }) {
   );
 }
 
-function IconUser({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path
-        fillRule="evenodd"
-        d="M10 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-7 9a7 7 0 1 1 14 0H3z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
 function IconSettings({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -127,13 +128,24 @@ function IconLogout({ className }: { className?: string }) {
   );
 }
 
-// Arrow icon for navigation items
 function IconArrow({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
       <path
         fillRule="evenodd"
         d="M10.293 5.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L12.586 11H4a1 1 0 1 1 0-2h8.586l-2.293-2.293a1 1 0 0 1 0-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+function IconDoc({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        d="M4 4a2 2 0 0 1 2-2h4.586A2 2 0 0 1 12 2.586L15.414 6A2 2 0 0 1 16 7.414V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm2 6a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1zm1 3a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H7z"
         clipRule="evenodd"
       />
     </svg>
@@ -149,31 +161,16 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
   const listRef = useRef<HTMLUListElement>(null);
   const router = useRouter();
 
-  // Filter commands by query (case-insensitive)
   const filtered = query.trim()
-    ? COMMANDS.filter((c) =>
-        c.label.toLowerCase().includes(query.toLowerCase())
-      )
+    ? COMMANDS.filter((c) => c.label.toLowerCase().includes(query.toLowerCase()))
     : COMMANDS;
 
-  // Reset active index when filtered list changes
-  useEffect(() => {
-    setActiveIndex(0);
-  }, [query]);
+  useEffect(() => { setActiveIndex(0); }, [query]);
+  useEffect(() => { inputRef.current?.focus(); }, []);
 
-  // Focus input on mount
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
-  // Keyboard navigation
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        onClose();
-        return;
-      }
+      if (e.key === "Escape") { e.preventDefault(); onClose(); return; }
       if (e.key === "ArrowDown") {
         e.preventDefault();
         setActiveIndex((i) => (i + 1) % Math.max(filtered.length, 1));
@@ -187,10 +184,7 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
       if (e.key === "Enter") {
         e.preventDefault();
         const cmd = filtered[activeIndex];
-        if (cmd) {
-          router.push(cmd.href);
-          onClose();
-        }
+        if (cmd) { router.push(cmd.href); onClose(); }
         return;
       }
     };
@@ -198,32 +192,19 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
     return () => document.removeEventListener("keydown", handleKey);
   }, [onClose, filtered, activeIndex, router]);
 
-  // Scroll active item into view
   useEffect(() => {
     const list = listRef.current;
     if (!list) return;
     const activeEl = list.querySelector("[data-active='true']");
-    if (activeEl) {
-      (activeEl as HTMLElement).scrollIntoView({ block: "nearest" });
-    }
+    if (activeEl) (activeEl as HTMLElement).scrollIntoView({ block: "nearest" });
   }, [activeIndex]);
 
-  const handleSelect = (href: string) => {
-    router.push(href);
-    onClose();
-  };
+  const handleSelect = (href: string) => { router.push(href); onClose(); };
 
-  // Group filtered commands
   const grouped = GROUP_ORDER.reduce<Record<CommandGroup, Command[]>>(
-    (acc, group) => {
-      acc[group] = filtered.filter((c) => c.group === group);
-      return acc;
-    },
+    (acc, group) => { acc[group] = filtered.filter((c) => c.group === group); return acc; },
     { Navigation: [], "Actions rapides": [] }
   );
-
-  // Build flat list with group positions for keyboard navigation
-  const flatFiltered = filtered;
 
   return (
     <div
@@ -232,15 +213,9 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
       role="dialog"
       aria-label="Palette de commandes"
     >
-      {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
 
-      {/* Panel */}
       <div className="relative w-full max-w-lg bg-white rounded-xl shadow-2xl overflow-hidden ring-1 ring-slate-200">
-        {/* Input row */}
         <div className="flex items-center gap-3 px-4 py-3 border-b border-slate-100">
           <IconSearch className="w-5 h-5 text-slate-400 flex-shrink-0" />
           <input
@@ -258,14 +233,8 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
           </kbd>
         </div>
 
-        {/* Results */}
-        <ul
-          ref={listRef}
-          id="cmd-palette-list"
-          role="listbox"
-          className="py-2 max-h-80 overflow-y-auto"
-        >
-          {flatFiltered.length === 0 ? (
+        <ul ref={listRef} id="cmd-palette-list" role="listbox" className="py-2 max-h-80 overflow-y-auto">
+          {filtered.length === 0 ? (
             <li className="px-4 py-6 text-sm text-slate-400 text-center">
               Aucun résultat pour &ldquo;{query}&rdquo;
             </li>
@@ -276,7 +245,6 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
               const isAction = group === "Actions rapides";
               return (
                 <li key={group} role="presentation">
-                  {/* Group header */}
                   <div className="px-4 pt-3 pb-1">
                     <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 select-none">
                       {group}
@@ -284,7 +252,7 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
                   </div>
                   <ul role="group" aria-label={group}>
                     {items.map((cmd) => {
-                      const flatIdx = flatFiltered.indexOf(cmd);
+                      const flatIdx = filtered.indexOf(cmd);
                       const isActive = flatIdx === activeIndex;
                       return (
                         <li
@@ -297,33 +265,18 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
                             onMouseEnter={() => setActiveIndex(flatIdx)}
                             onClick={() => handleSelect(cmd.href)}
                             className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors text-left ${
-                              isActive
-                                ? "bg-indigo-50 text-indigo-700"
-                                : "text-slate-700 hover:bg-slate-50"
+                              isActive ? "bg-indigo-50 text-indigo-700" : "text-slate-700 hover:bg-slate-50"
                             }`}
                           >
                             {isAction ? (
-                              <span
-                                className={`text-base leading-none flex-shrink-0 ${
-                                  isActive ? "text-indigo-500" : "text-slate-400"
-                                }`}
-                                aria-hidden="true"
-                              >
+                              <span className={`text-base leading-none flex-shrink-0 ${isActive ? "text-indigo-500" : "text-slate-400"}`} aria-hidden="true">
                                 ⚡
                               </span>
                             ) : (
-                              <IconArrow
-                                className={`w-3.5 h-3.5 flex-shrink-0 ${
-                                  isActive ? "text-indigo-500" : "text-slate-300"
-                                }`}
-                              />
+                              <IconArrow className={`w-3.5 h-3.5 flex-shrink-0 ${isActive ? "text-indigo-500" : "text-slate-300"}`} />
                             )}
                             <span className="flex-1">{cmd.label}</span>
-                            <span
-                              className={`text-[11px] font-mono truncate max-w-[140px] ${
-                                isActive ? "text-indigo-400" : "text-slate-300"
-                              }`}
-                            >
+                            <span className={`text-[11px] font-mono truncate max-w-[140px] ${isActive ? "text-indigo-400" : "text-slate-300"}`}>
                               {cmd.href}
                             </span>
                           </button>
@@ -337,7 +290,6 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
           )}
         </ul>
 
-        {/* Footer hint */}
         <div className="border-t border-slate-100 px-4 py-2 flex items-center gap-4 text-[11px] text-slate-400 select-none">
           <span className="flex items-center gap-1">
             <kbd className="rounded border border-slate-200 bg-slate-50 px-1 py-0.5 font-medium">↑</kbd>
@@ -358,18 +310,109 @@ function CommandPalette({ onClose }: { onClose: () => void }) {
   );
 }
 
-// ─── User dropdown ────────────────────────────────────────────────────────────
+// ─── Notification bell dropdown ───────────────────────────────────────────────
+
+function NotificationBell() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const unreadAlerts = alerts.filter((a) => !a.isRead);
+  const unreadCount = unreadAlerts.length;
+  const recentUnread = unreadAlerts.slice(0, 4);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="relative p-2 text-slate-500 hover:text-slate-800 transition-colors rounded-lg hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1"
+        aria-label={`Alertes — ${unreadCount} non lues`}
+        aria-haspopup="true"
+        aria-expanded={open}
+      >
+        <IconBell className="w-5 h-5" />
+        {unreadCount > 0 && (
+          <span className="absolute top-1 right-1 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center leading-none">
+            {unreadCount > 9 ? "9+" : unreadCount}
+          </span>
+        )}
+      </button>
+
+      {/* Dropdown */}
+      <div
+        className={`absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-xl border border-slate-200 z-50 overflow-hidden transition-all duration-150 origin-top-right ${
+          open ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+        }`}
+        aria-hidden={!open}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100">
+          <span className="text-sm font-semibold text-slate-900">Alertes récentes</span>
+          {unreadCount > 0 && (
+            <button className="text-xs text-indigo-600 hover:text-indigo-800 font-medium transition-colors">
+              Tout marquer lu
+            </button>
+          )}
+        </div>
+
+        {/* Alert list */}
+        <div className="divide-y divide-slate-50">
+          {recentUnread.length === 0 ? (
+            <div className="px-4 py-8 text-center text-sm text-slate-400">
+              Aucune nouvelle alerte
+            </div>
+          ) : (
+            recentUnread.map((alert) => {
+              const dotColor = ALERT_TYPE_COLOR[alert.type] ?? "bg-slate-400";
+              const truncated = alert.message.length > 60
+                ? alert.message.slice(0, 60) + "…"
+                : alert.message;
+              return (
+                <div key={alert.id} className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors">
+                  <span className={`mt-1 w-2 h-2 rounded-full flex-shrink-0 ${dotColor}`} aria-hidden="true" />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs text-slate-800 leading-snug">{truncated}</p>
+                    <p className="mt-0.5 text-[11px] text-slate-400">
+                      {alert.competitorName} · {alert.date}
+                    </p>
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
+
+        {/* Footer */}
+        <div className="border-t border-slate-100 px-4 py-2.5">
+          <Link
+            href="/dashboard/alerts"
+            onClick={() => setOpen(false)}
+            className="text-xs font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
+          >
+            Voir toutes les alertes →
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── User avatar dropdown ─────────────────────────────────────────────────────
 
 function UserDropdown() {
   const [open, setOpen] = useState(false);
-  const router = useRouter();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
@@ -378,45 +421,39 @@ function UserDropdown() {
   const handleLogout = async () => {
     setOpen(false);
     await fetch("/api/auth/logout", { method: "POST" });
-    // Hard redirect: clears React state, router cache, and any in-memory session data
     window.location.href = "/login";
   };
-
-  // Silence unused variable warning — router kept for potential future use
-  void router;
 
   return (
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+        className="flex items-center gap-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1"
         aria-haspopup="true"
         aria-expanded={open}
         aria-label="Menu utilisateur"
       >
-        <div className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-          DU
+        <div className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0 select-none">
+          CM
         </div>
         <IconChevronDown className="w-3.5 h-3.5 text-slate-500 hidden sm:block" />
       </button>
 
-      {open && (
-        <div className="absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-lg ring-1 ring-slate-200 py-1 z-50">
-          {/* User info header */}
-          <div className="px-4 py-2.5 border-b border-slate-100">
-            <p className="text-sm font-semibold text-slate-900">Demo User</p>
-            <p className="text-xs text-slate-500 truncate">demo@competeiq.com</p>
-          </div>
+      {/* Dropdown */}
+      <div
+        className={`absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-slate-200 z-50 overflow-hidden transition-all duration-150 origin-top-right ${
+          open ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+        }`}
+        aria-hidden={!open}
+      >
+        {/* User info header */}
+        <div className="px-4 py-3 border-b border-slate-100">
+          <p className="text-sm font-semibold text-slate-900">Chaima Mhadbi</p>
+          <p className="text-xs text-slate-500">Administrateur</p>
+        </div>
 
-          {/* Menu items */}
-          <Link
-            href="/dashboard/settings"
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
-          >
-            <IconUser className="w-4 h-4 text-slate-400" />
-            Profil
-          </Link>
+        {/* Menu items */}
+        <div className="py-1">
           <Link
             href="/dashboard/settings"
             onClick={() => setOpen(false)}
@@ -425,9 +462,19 @@ function UserDropdown() {
             <IconSettings className="w-4 h-4 text-slate-400" />
             Paramètres
           </Link>
+          <Link
+            href="#"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
+          >
+            <IconDoc className="w-4 h-4 text-slate-400" />
+            Documentation
+          </Link>
+        </div>
 
-          <div className="my-1 border-t border-slate-100" />
+        <div className="border-t border-slate-100" />
 
+        <div className="py-1">
           <button
             onClick={handleLogout}
             className="w-full flex items-center gap-2.5 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
@@ -436,16 +483,13 @@ function UserDropdown() {
             Déconnexion
           </button>
         </div>
-      )}
+      </div>
     </div>
   );
 }
 
-// ─── Topbar ───────────────────────────────────────────────────────────────────
+// ─── Helper ───────────────────────────────────────────────────────────────────
 
-const ALERT_BADGE_COUNT = 3;
-
-// Helper: is the event target a text input field?
 function isInputFocused(): boolean {
   const el = document.activeElement;
   if (!el) return false;
@@ -453,18 +497,20 @@ function isInputFocused(): boolean {
   return tag === "input" || tag === "textarea" || (el as HTMLElement).isContentEditable;
 }
 
+// ─── Topbar ───────────────────────────────────────────────────────────────────
+
 export default function Topbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [searchOpen, setSearchOpen] = useState(false);
 
-  // Build breadcrumb trail
+  // Build breadcrumb trail from pathname segments
   const segments = pathname.split("/").filter(Boolean);
   const crumbs: { label: string; href: string }[] = [];
   let path = "";
   for (const seg of segments) {
     path += "/" + seg;
-    const label = breadcrumbLabels[path] ?? seg;
+    const label = SEGMENT_LABELS[seg] ?? seg;
     crumbs.push({ label, href: path });
   }
 
@@ -473,36 +519,18 @@ export default function Topbar() {
     const handleKey = (e: KeyboardEvent) => {
       const meta = e.metaKey || e.ctrlKey;
 
-      // ⌘K or ⌘/ → open command palette (always, even in inputs)
       if (meta && (e.key === "k" || e.key === "/")) {
         e.preventDefault();
         setSearchOpen(true);
         return;
       }
 
-      // Number shortcuts — skip when typing in an input
       if (isInputFocused()) return;
 
-      if (meta && e.key === "1") {
-        e.preventDefault();
-        router.push("/dashboard");
-        return;
-      }
-      if (meta && e.key === "2") {
-        e.preventDefault();
-        router.push("/dashboard/competitors");
-        return;
-      }
-      if (meta && e.key === "3") {
-        e.preventDefault();
-        router.push("/dashboard/alerts");
-        return;
-      }
-      if (meta && e.key === "4") {
-        e.preventDefault();
-        router.push("/dashboard/reports");
-        return;
-      }
+      if (meta && e.key === "1") { e.preventDefault(); router.push("/dashboard"); return; }
+      if (meta && e.key === "2") { e.preventDefault(); router.push("/dashboard/competitors"); return; }
+      if (meta && e.key === "3") { e.preventDefault(); router.push("/dashboard/alerts"); return; }
+      if (meta && e.key === "4") { e.preventDefault(); router.push("/dashboard/reports"); return; }
     };
 
     document.addEventListener("keydown", handleKey);
@@ -514,19 +542,23 @@ export default function Topbar() {
       <header data-topbar="" className="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-6 gap-4">
 
         {/* ── Breadcrumb ── */}
-        <nav
-          className="flex items-center gap-0 text-sm ml-12 md:ml-0 min-w-0"
-          aria-label="Fil d'Ariane"
-        >
+        <nav className="flex items-center gap-0 text-sm ml-12 md:ml-0 min-w-0" aria-label="Fil d'Ariane">
           {crumbs.map((c, i) => (
             <span key={c.href} className="flex items-center min-w-0">
               {i > 0 && (
-                <span className="mx-1.5 text-slate-300 select-none" aria-hidden="true">
+                <span className="mx-1.5 text-slate-400 select-none" aria-hidden="true">
                   /
                 </span>
               )}
               {i === crumbs.length - 1 ? (
-                <span className="font-semibold text-slate-900 truncate">{c.label}</span>
+                <span className="font-medium text-slate-900 truncate">{c.label}</span>
+              ) : i === 0 ? (
+                <Link
+                  href="/dashboard"
+                  className="text-slate-500 hover:text-slate-800 transition-colors truncate"
+                >
+                  {c.label}
+                </Link>
               ) : (
                 <Link
                   href={c.href}
@@ -564,28 +596,19 @@ export default function Topbar() {
             <IconSearch className="w-5 h-5" />
           </button>
 
-          {/* Notification bell */}
-          <Link
-            href="/dashboard/alerts"
-            className="relative p-2 text-slate-500 hover:text-slate-800 transition-colors rounded-lg hover:bg-slate-100"
-            aria-label={`Alertes — ${ALERT_BADGE_COUNT} nouvelles`}
-          >
-            <IconBell className="w-5 h-5" />
-            <span className="absolute top-1 right-1 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center leading-none">
-              {ALERT_BADGE_COUNT}
-            </span>
-          </Link>
-
-          {/* Status pill */}
-          <span className="hidden sm:flex text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full font-medium items-center gap-1.5 select-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            En ligne
+          {/* Live status pill */}
+          <span className="hidden sm:flex text-xs bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full font-medium items-center gap-1.5 select-none border border-emerald-100">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
+            Système opérationnel
           </span>
 
           {/* Live indicator */}
           <div className="hidden md:block">
             <LiveIndicator />
           </div>
+
+          {/* Notification bell with dropdown */}
+          <NotificationBell />
 
           {/* User avatar + dropdown */}
           <UserDropdown />

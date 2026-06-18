@@ -22,6 +22,7 @@ interface Competitor {
 
 type FilterTab = "Tous" | "Élevée" | "Moyenne" | "Faible";
 type ViewMode = "grid" | "list";
+type SortKey = "threatLevel" | "marketShare" | "name" | "lastUpdated";
 
 const filterToThreat: Record<FilterTab, ThreatLevel | null> = {
   "Tous": null,
@@ -30,21 +31,24 @@ const filterToThreat: Record<FilterTab, ThreatLevel | null> = {
   "Faible": "low",
 };
 
-const threatConfig: Record<ThreatLevel, { label: string; badge: string; dot: string }> = {
+const threatConfig: Record<ThreatLevel, { label: string; badge: string; dot: string; rank: number }> = {
   high: {
     label: "Élevée",
     badge: "bg-red-50 text-red-700 border border-red-200",
     dot: "bg-red-500",
+    rank: 0,
   },
   medium: {
     label: "Moyenne",
     badge: "bg-amber-50 text-amber-700 border border-amber-200",
     dot: "bg-amber-500",
+    rank: 1,
   },
   low: {
     label: "Faible",
     badge: "bg-emerald-50 text-emerald-700 border border-emerald-200",
     dot: "bg-emerald-500",
+    rank: 2,
   },
 };
 
@@ -118,12 +122,47 @@ function EmptyIllustration() {
   );
 }
 
+function exportCSV(competitors: Competitor[]) {
+  const csv = [
+    "Nom,Industrie,Menace,Part de marché,Dernière MàJ",
+    ...competitors.map(
+      (c) => `${c.name},${c.industry},${c.threatLevel},${c.marketShare}%,${c.lastUpdated}`
+    ),
+  ].join("\n");
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "concurrents.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function sortCompetitors(list: Competitor[], sortKey: SortKey): Competitor[] {
+  return [...list].sort((a, b) => {
+    switch (sortKey) {
+      case "threatLevel":
+        return threatConfig[a.threatLevel].rank - threatConfig[b.threatLevel].rank;
+      case "marketShare":
+        return b.marketShare - a.marketShare;
+      case "name":
+        return a.name.localeCompare(b.name, "fr");
+      case "lastUpdated":
+        return new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime();
+      default:
+        return 0;
+    }
+  });
+}
+
 export default function CompetitorsPage() {
   const [competitors, setCompetitors] = useState<Competitor[]>(
     initialCompetitors as Competitor[]
   );
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState<FilterTab>("Tous");
+  const [industryFilter, setIndustryFilter] = useState<string>("Tous");
+  const [sortKey, setSortKey] = useState<SortKey>("threatLevel");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const [showForm, setShowForm] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -136,17 +175,26 @@ export default function CompetitorsPage() {
     threatLevel: "medium" as ThreatLevel,
   });
 
-  const filtered = competitors.filter((c) => {
-    const q = search.toLowerCase();
-    const matchesSearch =
-      q === "" ||
-      c.name.toLowerCase().includes(q) ||
-      c.industry.toLowerCase().includes(q) ||
-      c.website.toLowerCase().includes(q);
-    const threatFilter = filterToThreat[activeFilter];
-    const matchesFilter = threatFilter === null || c.threatLevel === threatFilter;
-    return matchesSearch && matchesFilter;
-  });
+  // Unique industries
+  const allIndustries = ["Tous", ...Array.from(new Set(competitors.map((c) => c.industry)))];
+
+  const filtered = sortCompetitors(
+    competitors.filter((c) => {
+      const q = search.toLowerCase();
+      const matchesSearch =
+        q === "" ||
+        c.name.toLowerCase().includes(q) ||
+        c.industry.toLowerCase().includes(q) ||
+        c.website.toLowerCase().includes(q);
+      const threatFilter = filterToThreat[activeFilter];
+      const matchesFilter = threatFilter === null || c.threatLevel === threatFilter;
+      const matchesIndustry = industryFilter === "Tous" || c.industry === industryFilter;
+      return matchesSearch && matchesFilter && matchesIndustry;
+    }),
+    sortKey
+  );
+
+  const highThreatCount = filtered.filter((c) => c.threatLevel === "high").length;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -181,6 +229,13 @@ export default function CompetitorsPage() {
     "Faible": competitors.filter((c) => c.threatLevel === "low").length,
   };
 
+  const sortOptions: { value: SortKey; label: string }[] = [
+    { value: "threatLevel", label: "Niveau de menace" },
+    { value: "marketShare", label: "Part de marché" },
+    { value: "name", label: "Nom (A-Z)" },
+    { value: "lastUpdated", label: "Dernière mise à jour" },
+  ];
+
   return (
     <div className="space-y-6">
       {/* Page header */}
@@ -191,16 +246,29 @@ export default function CompetitorsPage() {
             <span className="font-semibold text-slate-700">{competitors.length}</span> concurrent{competitors.length > 1 ? "s" : ""} surveillé{competitors.length > 1 ? "s" : ""}
           </p>
         </div>
-        <button
-          onClick={() => { setShowForm(true); setFormError(""); }}
-          className="inline-flex items-center gap-1.5 bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 active:bg-indigo-800 transition-colors shadow-sm"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-            <line x1="7" y1="1" x2="7" y2="13" />
-            <line x1="1" y1="7" x2="13" y2="7" />
-          </svg>
-          Ajouter
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Export CSV */}
+          <button
+            onClick={() => exportCSV(filtered)}
+            className="inline-flex items-center gap-1.5 bg-white border border-slate-200 text-slate-600 px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 hover:border-slate-300 transition-colors shadow-sm"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 1v8M4 7l3 3 3-3" />
+              <path d="M2 11h10" />
+            </svg>
+            Exporter CSV
+          </button>
+          <button
+            onClick={() => { setShowForm(true); setFormError(""); }}
+            className="inline-flex items-center gap-1.5 bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 active:bg-indigo-800 transition-colors shadow-sm"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <line x1="7" y1="1" x2="7" y2="13" />
+              <line x1="1" y1="7" x2="13" y2="7" />
+            </svg>
+            Ajouter
+          </button>
+        </div>
       </div>
 
       {/* Add competitor modal */}
@@ -319,35 +387,78 @@ export default function CompetitorsPage() {
         </div>
       )}
 
-      {/* Search + Filters + View toggle */}
-      <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-        {/* Search */}
-        <div className="relative w-full sm:w-72">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
-            <SearchIcon />
-          </span>
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Rechercher un concurrent..."
-            className="w-full pl-9 pr-3 py-2 border border-slate-200 rounded-lg text-sm text-slate-700 bg-white placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
-          />
-          {search && (
-            <button
-              onClick={() => setSearch("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+      {/* Sort + Search + Filters + View toggle */}
+      <div className="flex flex-col gap-3">
+        {/* Top row: sort, search, view toggle */}
+        <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+          {/* Sort dropdown */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <label className="text-xs font-medium text-slate-500 whitespace-nowrap">Trier par :</label>
+            <select
+              value={sortKey}
+              onChange={(e) => setSortKey(e.target.value as SortKey)}
+              className="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
             >
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <line x1="1" y1="1" x2="11" y2="11" />
-                <line x1="11" y1="1" x2="1" y2="11" />
-              </svg>
+              {sortOptions.map((o) => (
+                <option key={o.value} value={o.value}>{o.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Search */}
+          <div className="relative w-full sm:w-72">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+              <SearchIcon />
+            </span>
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Rechercher un concurrent..."
+              className="w-full pl-9 pr-3 py-2 border border-slate-200 rounded-lg text-sm text-slate-700 bg-white placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
+            />
+            {search && (
+              <button
+                onClick={() => setSearch("")}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <line x1="1" y1="1" x2="11" y2="11" />
+                  <line x1="11" y1="1" x2="1" y2="11" />
+                </svg>
+              </button>
+            )}
+          </div>
+
+          {/* View toggle */}
+          <div className="flex items-center gap-0.5 border border-slate-200 rounded-lg p-0.5 bg-white ml-auto flex-shrink-0">
+            <button
+              onClick={() => setViewMode("grid")}
+              className={`p-1.5 rounded-md transition-colors ${
+                viewMode === "grid"
+                  ? "bg-slate-100 text-slate-900"
+                  : "text-slate-400 hover:text-slate-600"
+              }`}
+              title="Vue grille"
+            >
+              <GridIcon />
             </button>
-          )}
+            <button
+              onClick={() => setViewMode("list")}
+              className={`p-1.5 rounded-md transition-colors ${
+                viewMode === "list"
+                  ? "bg-slate-100 text-slate-900"
+                  : "text-slate-400 hover:text-slate-600"
+              }`}
+              title="Vue liste"
+            >
+              <ListIcon />
+            </button>
+          </div>
         </div>
 
         {/* Threat filter pills */}
-        <div className="flex items-center gap-1.5 flex-wrap flex-1">
+        <div className="flex items-center gap-1.5 flex-wrap">
           {filterTabs.map((tab) => {
             const isActive = activeFilter === tab;
             const dotColor =
@@ -378,57 +489,59 @@ export default function CompetitorsPage() {
           })}
         </div>
 
-        {/* View toggle */}
-        <div className="flex items-center gap-0.5 border border-slate-200 rounded-lg p-0.5 bg-white ml-auto sm:ml-0 flex-shrink-0">
-          <button
-            onClick={() => setViewMode("grid")}
-            className={`p-1.5 rounded-md transition-colors ${
-              viewMode === "grid"
-                ? "bg-slate-100 text-slate-900"
-                : "text-slate-400 hover:text-slate-600"
-            }`}
-            title="Vue grille"
-          >
-            <GridIcon />
-          </button>
-          <button
-            onClick={() => setViewMode("list")}
-            className={`p-1.5 rounded-md transition-colors ${
-              viewMode === "list"
-                ? "bg-slate-100 text-slate-900"
-                : "text-slate-400 hover:text-slate-600"
-            }`}
-            title="Vue liste"
-          >
-            <ListIcon />
-          </button>
+        {/* Industry filter pills */}
+        <div className="flex items-center gap-1.5 flex-wrap">
+          <span className="text-xs font-medium text-slate-400 mr-1">Secteur :</span>
+          {allIndustries.map((industry) => {
+            const isActive = industryFilter === industry;
+            return (
+              <button
+                key={industry}
+                onClick={() => setIndustryFilter(industry)}
+                className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-all border ${
+                  isActive
+                    ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                }`}
+              >
+                {industry}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Results summary */}
-      {(search || activeFilter !== "Tous") && filtered.length > 0 && (
-        <p className="text-xs text-slate-500">
-          <span className="font-semibold text-slate-700">{filtered.length}</span> résultat{filtered.length > 1 ? "s" : ""}
-          {search && <> pour &ldquo;<span className="font-medium text-slate-800">{search}</span>&rdquo;</>}
-        </p>
-      )}
+      {/* Result count */}
+      <p className="text-xs text-slate-500">
+        <span className="font-semibold text-slate-700">{filtered.length}</span> concurrent{filtered.length > 1 ? "s" : ""}
+        {highThreatCount > 0 && (
+          <>
+            <span className="mx-1.5 text-slate-300">•</span>
+            <span className="font-semibold text-red-600">{highThreatCount}</span>
+            <span className="text-slate-500"> menace{highThreatCount > 1 ? "s" : ""} élevée{highThreatCount > 1 ? "s" : ""}</span>
+          </>
+        )}
+        {search && (
+          <> pour &ldquo;<span className="font-medium text-slate-800">{search}</span>&rdquo;</>
+        )}
+      </p>
 
       {/* Empty state */}
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-24 text-center">
           <EmptyIllustration />
           <h3 className="text-base font-semibold text-slate-800 mb-1.5">
-            {search || activeFilter !== "Tous" ? "Aucun résultat trouvé" : "Aucun concurrent"}
+            {search || activeFilter !== "Tous" || industryFilter !== "Tous" ? "Aucun résultat trouvé" : "Aucun concurrent"}
           </h3>
           <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
-            {search || activeFilter !== "Tous"
+            {search || activeFilter !== "Tous" || industryFilter !== "Tous"
               ? "Essayez de modifier votre recherche ou de réinitialiser les filtres."
               : "Commencez par ajouter votre premier concurrent à surveiller."}
           </p>
           <div className="flex gap-2 mt-5">
-            {(search || activeFilter !== "Tous") && (
+            {(search || activeFilter !== "Tous" || industryFilter !== "Tous") && (
               <button
-                onClick={() => { setSearch(""); setActiveFilter("Tous"); }}
+                onClick={() => { setSearch(""); setActiveFilter("Tous"); setIndustryFilter("Tous"); }}
                 className="text-sm text-slate-600 border border-slate-200 px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors"
               >
                 Réinitialiser les filtres
@@ -517,7 +630,7 @@ export default function CompetitorsPage() {
                 <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide hidden sm:table-cell">Secteur</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Menace</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide hidden md:table-cell">Parts de marché</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide hidden lg:table-cell">Employés</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide hidden lg:table-cell">Mise à jour</th>
                 <th className="text-right px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide">Actions</th>
               </tr>
             </thead>
@@ -547,13 +660,15 @@ export default function CompetitorsPage() {
                   <td className="px-4 py-3 hidden md:table-cell w-36">
                     <MarketShareBar value={c.marketShare} />
                   </td>
-                  <td className="px-4 py-3 hidden lg:table-cell text-xs text-slate-600">{c.employees}</td>
+                  <td className="px-4 py-3 hidden lg:table-cell text-xs text-slate-500">
+                    {new Date(c.lastUpdated).toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" })}
+                  </td>
                   <td className="px-4 py-3 text-right">
                     <Link
                       href={`/dashboard/competitors/${c.id}`}
                       className="inline-flex items-center gap-1 text-xs font-medium text-indigo-600 hover:text-indigo-800 transition-colors"
                     >
-                      Voir
+                      Analyser
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M1.5 5h7M5 1.5l3.5 3.5L5 8.5" />
                       </svg>
