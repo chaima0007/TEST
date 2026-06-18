@@ -1687,6 +1687,19 @@ function IconSalesNegotiationEffectivenessIntelligenceEngine({ className }: { cl
   );
 }
 
+function IconSalesForecastSanityCheckIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Magnifying glass over bar chart — forecast sanity check */}
+      <rect x="2" y="12" width="3" height="5" rx="0.5" fill="currentColor" opacity="0.7"/>
+      <rect x="6" y="9" width="3" height="8" rx="0.5" fill="currentColor" opacity="0.85"/>
+      <rect x="10" y="6" width="3" height="11" rx="0.5" fill="currentColor"/>
+      <circle cx="15.5" cy="6" r="3" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <line x1="17.6" y1="8.1" x2="19" y2="9.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2180,6 +2193,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pipeline-hygiene-intelligence-engine", label: "Pipeline Hygiene", icon: IconSalesPipelineHygieneIntelligenceEngine },
       { href: "/dashboard/sales-buyer-intent-signal-intelligence-engine", label: "Buyer Intent", icon: IconSalesBuyerIntentSignalIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-effectiveness-intelligence-engine", label: "Negotiation Eff.", icon: IconSalesNegotiationEffectivenessIntelligenceEngine },
+      { href: "/dashboard/sales-forecast-sanity-check-intelligence-engine", label: "Forecast Sanity", icon: IconSalesForecastSanityCheckIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
