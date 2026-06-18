@@ -1765,6 +1765,18 @@ function IconSalesSocialSellingIntelligenceEngine({ className }: { className?: s
   );
 }
 
+function IconSalesCRMAdoptionIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Database with checkmark — CRM adoption */}
+      <ellipse cx="10" cy="5" rx="7" ry="2.5" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <path d="M3 5 v5 c0 1.4 3.1 2.5 7 2.5 s7-1.1 7-2.5 V5" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <path d="M3 10 v4 c0 1.4 3.1 2.5 7 2.5 s7-1.1 7-2.5 v-4" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <polyline points="7,11 9,13 13,9" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2264,6 +2276,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-email-sequence-intelligence-engine", label: "Email Sequences", icon: IconSalesEmailSequenceIntelligenceEngine },
       { href: "/dashboard/sales-multithreading-intelligence-engine", label: "Multithreading", icon: IconSalesMultithreadingIntelligenceEngine },
       { href: "/dashboard/sales-social-selling-intelligence-engine", label: "Social Selling", icon: IconSalesSocialSellingIntelligenceEngine },
+      { href: "/dashboard/sales-crm-adoption-intelligence-engine", label: "CRM Adoption", icon: IconSalesCRMAdoptionIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
