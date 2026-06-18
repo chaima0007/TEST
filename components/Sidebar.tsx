@@ -1752,6 +1752,19 @@ function IconSalesMultithreadingIntelligenceEngine({ className }: { className?: 
   );
 }
 
+function IconSalesSocialSellingIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* LinkedIn-style share/connect icon */}
+      <circle cx="4" cy="10" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <circle cx="16" cy="4" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <circle cx="16" cy="16" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <line x1="6.2" y1="8.8" x2="13.8" y2="5.2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="6.2" y1="11.2" x2="13.8" y2="14.8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2250,6 +2263,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-conversation-quality-intelligence-engine", label: "Conv. Quality", icon: IconSalesConversationQualityIntelligenceEngine },
       { href: "/dashboard/sales-email-sequence-intelligence-engine", label: "Email Sequences", icon: IconSalesEmailSequenceIntelligenceEngine },
       { href: "/dashboard/sales-multithreading-intelligence-engine", label: "Multithreading", icon: IconSalesMultithreadingIntelligenceEngine },
+      { href: "/dashboard/sales-social-selling-intelligence-engine", label: "Social Selling", icon: IconSalesSocialSellingIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
