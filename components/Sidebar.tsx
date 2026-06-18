@@ -1147,6 +1147,15 @@ function IconSettings({ className }: { className?: string }) {
   );
 }
 
+function IconRepRampIntelligence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 14l4-8 3 4 3-6 4 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path fillRule="evenodd" d="M15 3a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0V7h-1a1 1 0 110-2h1V4a1 1 0 011-1z" clipRule="evenodd" opacity="0.7" />
+    </svg>
+  );
+}
+
 function IconWinLossPatternEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1351,6 +1360,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/buying-committee-mapper", label: "Committee Map", icon: IconBuyingCommitteeMapper },
       { href: "/dashboard/objection-pattern-analyzer", label: "Objection Patterns", icon: IconObjectionPatternAnalyzer },
       { href: "/dashboard/win-loss-pattern-engine", label: "Win/Loss Patterns", icon: IconWinLossPatternEngine },
+      { href: "/dashboard/rep-ramp-intelligence", label: "Rep Ramp Intel", icon: IconRepRampIntelligence },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
