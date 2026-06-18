@@ -1849,6 +1849,18 @@ function IconSalesNegotiationLeverageIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesPipelineHealthDegradationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Stacked pipeline stages, narrowing downward — degrading pipeline */}
+      <rect x="2" y="3" width="16" height="3" rx="1" />
+      <rect x="4" y="8" width="12" height="3" rx="1" />
+      <rect x="6" y="13" width="8" height="3" rx="1" />
+      <path d="M10 16 L10 19 M8 17.5 L10 19 L12 17.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2464,6 +2476,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pricing-confidence-intelligence-engine", label: "Pricing Confidence", icon: IconSalesPricingConfidenceIntelligenceEngine },
       { href: "/dashboard/sales-buyer-engagement-velocity-intelligence-engine", label: "Engagement Velocity", icon: IconSalesBuyerEngagementVelocityIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-leverage-intelligence-engine", label: "Negotiation Leverage", icon: IconSalesNegotiationLeverageIntelligenceEngine },
+      { href: "/dashboard/sales-pipeline-health-degradation-intelligence-engine", label: "Pipeline Health", icon: IconSalesPipelineHealthDegradationIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
