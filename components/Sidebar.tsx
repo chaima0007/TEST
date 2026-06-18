@@ -1372,6 +1372,18 @@ function IconSalesForecastSandbaggingDetector({ className }: { className?: strin
   );
 }
 
+function IconCRMDataQualityRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L13 11.414V15a1 1 0 01-.553.894l-4 2A1 1 0 017 17v-5.586L3.293 7.707A1 1 0 013 7V4z" opacity="0.3" />
+      <path d="M5 4h10M5 4v2h10V4" stroke="currentColor" strokeWidth="0.8" fill="none" opacity="0.5" />
+      <circle cx="15" cy="15" r="4" fill="currentColor" opacity="0.15" />
+      <path d="M13.5 15.5l1 1 2-2" stroke="#f87171" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.9" />
+      <circle cx="15" cy="15" r="4" stroke="#f87171" strokeWidth="0.9" fill="none" opacity="0.6" />
+    </svg>
+  );
+}
+
 function IconSalesDiscountAbuseDetector({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1648,6 +1660,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-process-velocity-anomaly-engine", label: "Process Velocity", icon: IconSalesProcessVelocityAnomalyEngine },
       { href: "/dashboard/sales-forecast-sandbagging-detector", label: "Forecast Sandbagging", icon: IconSalesForecastSandbaggingDetector },
       { href: "/dashboard/sales-discount-abuse-detector", label: "Discount Abuse", icon: IconSalesDiscountAbuseDetector },
+      { href: "/dashboard/crm-data-quality-risk-engine", label: "CRM Data Quality", icon: IconCRMDataQualityRiskEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
