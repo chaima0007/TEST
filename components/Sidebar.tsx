@@ -1642,6 +1642,33 @@ function IconSalesStakeholderMappingIntelligenceEngine({ className }: { classNam
   );
 }
 
+function IconSalesPipelineContaminationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Biohazard-inspired — pipeline contamination */}
+      <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+      <path d="M10 2a8 8 0 0 1 6.9 12" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.8"/>
+      <path d="M10 2a8 8 0 0 0-6.9 12" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.8"/>
+      <path d="M3.1 14h13.8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.8"/>
+      <circle cx="10" cy="2" r="1.2" fill="currentColor" opacity="0.5"/>
+      <circle cx="3.1" cy="14" r="1.2" fill="currentColor" opacity="0.5"/>
+      <circle cx="16.9" cy="14" r="1.2" fill="currentColor" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconSalesDealMomentumIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Arrow acceleration — deal momentum */}
+      <path d="M3 10h10" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M10 6l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M3 6h5" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.5"/>
+      <path d="M3 14h5" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
 function IconSalesMultiChannelEngagementIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2670,6 +2697,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-outbound-prospecting-intelligence-engine", label: "Outbound Prospect.", icon: IconSalesOutboundProspectingIntelligenceEngine },
       { href: "/dashboard/sales-quota-attainment-intelligence-engine", label: "Quota Attainment", icon: IconSalesQuotaAttainmentIntelligenceEngine },
       { href: "/dashboard/sales-stakeholder-mapping-intelligence-engine", label: "Stakeholder Mapping", icon: IconSalesStakeholderMappingIntelligenceEngine },
+      { href: "/dashboard/sales-deal-momentum-intelligence-engine", label: "Deal Momentum", icon: IconSalesDealMomentumIntelligenceEngine },
+      { href: "/dashboard/sales-pipeline-contamination-intelligence-engine", label: "Pipeline Contam.", icon: IconSalesPipelineContaminationIntelligenceEngine },
       { href: "/dashboard/sales-deal-velocity-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityIntelligenceEngine },
       { href: "/dashboard/sales-account-penetration-intelligence-engine", label: "Acct. Penetration", icon: IconSalesAccountPenetrationIntelligenceEngine },
       { href: "/dashboard/sales-time-allocation-intelligence-engine", label: "Time Allocation", icon: IconSalesTimeAllocationIntelligenceEngine },
