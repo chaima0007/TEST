@@ -1712,6 +1712,19 @@ function IconSalesOnboardingEffectivenessIntelligenceEngine({ className }: { cla
   );
 }
 
+function IconSalesConversationQualityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Microphone with sound waves — call quality */}
+      <rect x="8" y="2" width="4" height="8" rx="2" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <path d="M5 9a5 5 0 0 0 10 0" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <line x1="10" y1="14" x2="10" y2="18" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <line x1="7" y1="18" x2="13" y2="18" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <path d="M3 7 A7 7 0 0 1 17 7" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.4"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2207,6 +2220,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-negotiation-effectiveness-intelligence-engine", label: "Negotiation Eff.", icon: IconSalesNegotiationEffectivenessIntelligenceEngine },
       { href: "/dashboard/sales-forecast-sanity-check-intelligence-engine", label: "Forecast Sanity", icon: IconSalesForecastSanityCheckIntelligenceEngine },
       { href: "/dashboard/sales-onboarding-effectiveness-intelligence-engine", label: "Rep Onboarding", icon: IconSalesOnboardingEffectivenessIntelligenceEngine },
+      { href: "/dashboard/sales-conversation-quality-intelligence-engine", label: "Conv. Quality", icon: IconSalesConversationQualityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
