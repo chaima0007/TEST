@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# claude code agent worktrees
+.claude/worktrees/
+
 /lib/generated/prisma
 dev.db
 prisma/dev.db
