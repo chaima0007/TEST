@@ -186,6 +186,8 @@ model JobMatch {
   snippet       String           @default("")
   status        String           @default("proposed") // proposed | approved | rejected
   rejectReason  String?
+  proposalDraft String?          // Rédacteur : brouillon de proposition
+  followupsDraft String?         // Négociateur : Q/R de suivi anticipées (JSON)
   analyzedJobId String
   analyzedJob   AnalyzedJob      @relation(fields: [analyzedJobId], references: [id], onDelete: Cascade)
   profileId     String

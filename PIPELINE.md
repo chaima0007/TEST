@@ -62,6 +62,24 @@ aucune casse, aucune dépendance réseau obligatoire.
 export ANTHROPIC_API_KEY=sk-...   # active l'extraction par Claude ; sinon heuristique
 ```
 
+## Agents Conseiller & Simulateur
+
+- **Simulateur** (`lib/pipeline/simulator.ts`) : probabilité de gagner chaque mission
+  + valeur attendue + simulation Monte-Carlo déterministe (revenu médian, p10/p90).
+- **Conseiller** (`lib/pipeline/advisor.ts`) : classe les opportunités, désigne la
+  priorité, rédige une recommandation. `GET /api/pipeline/runs/[id]/advice`.
+
+## Agents d'action — Rédacteur & Négociateur
+
+Au-delà de l'analyse, les agents peuvent **agir** (la validation reste humaine) :
+
+- **Rédacteur** : rédige une proposition sur-mesure.
+- **Négociateur** : prépare les réponses aux questions de suivi du recruteur.
+
+Action : `POST /api/pipeline/matches/[id]/draft` (`lib/pipeline/writer.ts`). Rédaction
+par Claude si `ANTHROPIC_API_KEY`, sinon gabarit heuristique. Bouton « Préparer le
+dossier » sur chaque proposition du dashboard.
+
 ## Reprise sur panne
 
 Un run en échec est repris depuis l'étape fautive via `POST /api/pipeline/runs/[id]/resume`

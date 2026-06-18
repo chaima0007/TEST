@@ -14,8 +14,10 @@ interface AnalyzedJob {
 }
 interface MatchRow {
   id: string; confidence: number; snippet: string; status: string;
+  proposalDraft: string | null; followupsDraft: string | null;
   analyzedJob: { title: string }; profile: { name: string };
 }
+interface Followup { question: string; answer: string; }
 interface RunDetail extends RunSummary {
   analyzed: AnalyzedJob[];
   matches: MatchRow[];
@@ -118,6 +120,18 @@ export default function PipelinePage() {
     });
     if (selected) await loadDetail(selected.id);
     await loadRuns(); // le seuil a pu bouger
+  };
+
+  // Action des agents Rédacteur + Négociateur : préparer le dossier de candidature.
+  const [drafting, setDrafting] = useState<string | null>(null);
+  const handleDraft = async (matchId: string) => {
+    setDrafting(matchId);
+    try {
+      await fetch(`/api/pipeline/matches/${matchId}/draft`, { method: "POST" });
+      if (selected) await loadDetail(selected.id);
+    } finally {
+      setDrafting(null);
+    }
   };
 
   return (
@@ -311,11 +325,45 @@ export default function PipelinePage() {
                               className="text-[12px] font-medium px-3 py-1.5 rounded-md bg-slate-50 text-slate-500 hover:bg-slate-100 transition-colors">
                               Rejeter
                             </button>
+                            <button onClick={() => handleDraft(m.id)} disabled={drafting === m.id}
+                              className="text-[12px] font-medium px-3 py-1.5 rounded-md bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors disabled:opacity-60 ml-auto">
+                              {drafting === m.id ? "Préparation…" : m.proposalDraft ? "Régénérer le dossier" : "Préparer le dossier"}
+                            </button>
                           </div>
                         ) : (
                           <span className={`inline-block mt-2 text-[11px] font-semibold px-2 py-0.5 rounded-full ${m.status === "approved" ? "bg-green-50 text-[#107C10]" : "bg-red-50 text-[#D83B01]"}`}>
                             {m.status === "approved" ? "Approuvé" : "Rejeté"}
                           </span>
+                        )}
+
+                        {/* Dossier préparé par les agents Rédacteur + Négociateur */}
+                        {m.proposalDraft && (
+                          <details className="mt-3 group">
+                            <summary className="text-[12px] font-medium text-indigo-700 cursor-pointer select-none">
+                              Dossier préparé — proposition & réponses de suivi
+                            </summary>
+                            <div className="mt-2 space-y-3">
+                              <div className="bg-slate-50 rounded-md p-3">
+                                <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-1">Proposition</p>
+                                <p className="text-[12px] text-slate-700 whitespace-pre-line leading-relaxed">{m.proposalDraft}</p>
+                              </div>
+                              {(() => {
+                                let followups: Followup[] = [];
+                                try { followups = m.followupsDraft ? JSON.parse(m.followupsDraft) : []; } catch { followups = []; }
+                                return followups.length > 0 ? (
+                                  <div className="bg-slate-50 rounded-md p-3 space-y-2">
+                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide">Réponses de suivi anticipées</p>
+                                    {followups.map((f, i) => (
+                                      <div key={i}>
+                                        <p className="text-[12px] font-medium text-slate-800">{f.question}</p>
+                                        <p className="text-[12px] text-slate-600">{f.answer}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : null;
+                              })()}
+                            </div>
+                          </details>
                         )}
                       </div>
                     ))
