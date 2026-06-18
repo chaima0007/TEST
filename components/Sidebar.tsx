@@ -2116,6 +2116,16 @@ function IconSalesRepRampIntelligenceEngine({ className }: { className?: string 
   );
 }
 
+function IconSalesObjectionHandlingIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Shield with X-then-check — objection turned to win */}
+      <path d="M10 2 L17 5 L17 10 C17 14 10 18 10 18 C10 18 3 14 3 10 L3 5 Z" strokeLinejoin="round" opacity="0.6"/>
+      <path d="M7 10 L9 12 L13 8" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8"/>
+    </svg>
+  );
+}
+
 function IconSalesPricingDisciplineIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2641,6 +2651,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-conversation-intelligence-engine", label: "Conversation Intel", icon: IconSalesConversationIntelligenceEngine },
       { href: "/dashboard/sales-rep-ramp-intelligence-engine", label: "Rep Ramp", icon: IconSalesRepRampIntelligenceEngine },
       { href: "/dashboard/sales-pricing-discipline-intelligence-engine", label: "Pricing Discipline", icon: IconSalesPricingDisciplineIntelligenceEngine },
+      { href: "/dashboard/sales-objection-handling-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
