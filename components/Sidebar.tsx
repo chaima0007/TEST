@@ -2137,6 +2137,19 @@ function IconSalesPricingDisciplineIntelligenceEngine({ className }: { className
   );
 }
 
+function IconSalesCRMDataHygieneIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Database cylinder with scan line — CRM hygiene */}
+      <ellipse cx="10" cy="5" rx="7" ry="2.2" opacity="0.7"/>
+      <path d="M3 5 L3 15 C3 16.2 6.1 17.2 10 17.2 C13.9 17.2 17 16.2 17 15 L17 5" opacity="0.6"/>
+      <ellipse cx="10" cy="15" rx="7" ry="2.2" opacity="0.4"/>
+      <path d="M6 10 L14 10" strokeLinecap="round" strokeWidth="1.8" opacity="0.9"/>
+      <path d="M8 12.5 L12 12.5" strokeLinecap="round" opacity="0.6"/>
+    </svg>
+  );
+}
+
 function IconSalesAccountPenetrationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2652,6 +2665,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-rep-ramp-intelligence-engine", label: "Rep Ramp", icon: IconSalesRepRampIntelligenceEngine },
       { href: "/dashboard/sales-pricing-discipline-intelligence-engine", label: "Pricing Discipline", icon: IconSalesPricingDisciplineIntelligenceEngine },
       { href: "/dashboard/sales-objection-handling-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingIntelligenceEngine },
+      { href: "/dashboard/sales-crm-data-hygiene-intelligence-engine", label: "CRM Hygiene", icon: IconSalesCRMDataHygieneIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
