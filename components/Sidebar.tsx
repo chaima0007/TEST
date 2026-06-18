@@ -1320,6 +1320,44 @@ function IconWinLossPatternEngine({ className }: { className?: string }) {
   );
 }
 
+function IconCustomerSentimentDecayEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 14l3-6 3 4 3-8 3 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8" />
+      <path d="M3 14l3-6 3 4 3-8 3 4" stroke="#ef4444" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.3" transform="translate(0, 2)" />
+      <path d="M2 17h16" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" fill="none" opacity="0.3" />
+      <circle cx="6" cy="8" r="1.5" fill="#f59e0b" opacity="0.8" />
+      <circle cx="9" cy="12" r="1.5" fill="#f97316" opacity="0.8" />
+      <circle cx="12" cy="4" r="1.5" fill="#ef4444" opacity="0.8" />
+      <circle cx="15" cy="8" r="1.5" fill="#f97316" opacity="0.8" />
+    </svg>
+  );
+}
+
+function IconSalesCommissionClawbackRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" opacity="0.6" />
+      <path d="M6 3l-2 2M14 3l2 2" stroke="#f87171" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.8" />
+      <path d="M3 9h2M15 9h2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.4" />
+    </svg>
+  );
+}
+
+function IconSalesProcessVelocityAnomalyEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 16l4-8 3 4 3-10 3 6 2-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.7" />
+      <circle cx="6" cy="8" r="1.2" fill="#f59e0b" opacity="0.9" />
+      <circle cx="9" cy="12" r="1.2" fill="#f97316" opacity="0.9" />
+      <circle cx="12" cy="2" r="1.2" fill="#ef4444" opacity="0.9" />
+      <circle cx="15" cy="8" r="1.2" fill="#f97316" opacity="0.9" />
+      <path d="M1 17h18" stroke="currentColor" strokeWidth="0.6" strokeLinecap="round" fill="none" opacity="0.25" />
+      <path d="M17 4l1 -1.5M18 4l-1-1.5" stroke="#ef4444" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconSalesActivityFabricationDetector({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1580,6 +1618,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/rep-incentive-misalignment-engine", label: "Incentive Misalign.", icon: IconRepIncentiveMisalignmentEngine },
       { href: "/dashboard/sales-data-access-anomaly-engine", label: "Data Access Anomaly", icon: IconSalesDataAccessAnomalyEngine },
       { href: "/dashboard/sales-activity-fabrication-detector", label: "Activity Fabrication", icon: IconSalesActivityFabricationDetector },
+      { href: "/dashboard/sales-commission-clawback-risk-engine", label: "Commission Clawback", icon: IconSalesCommissionClawbackRiskEngine },
+      { href: "/dashboard/customer-sentiment-decay-engine", label: "Sentiment Decay", icon: IconCustomerSentimentDecayEngine },
+      { href: "/dashboard/sales-process-velocity-anomaly-engine", label: "Process Velocity", icon: IconSalesProcessVelocityAnomalyEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
