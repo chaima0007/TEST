@@ -134,6 +134,26 @@ function IconSimulate({ className }: { className?: string }) {
   );
 }
 
+function IconPlan({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="2" width="11" height="14" rx="1.5" />
+      <path d="M6 13l2.5-2.5 2 2 2.5-2.5" />
+      <path d="M14 5h3M14 9h3" />
+    </svg>
+  );
+}
+
+function IconSuccess({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7 14h6M10 14v2M8 16h4" />
+      <path d="M5 3h10v5a5 5 0 01-10 0V3z" />
+      <path d="M5 6H3a2 2 0 000 4h2M15 6h2a2 2 0 010 4h-2" />
+    </svg>
+  );
+}
+
 function IconBattleCards({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
@@ -178,6 +198,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/pricing", label: "Tarification", icon: IconPricing },
       { href: "/dashboard/signals", label: "Signaux Faibles", icon: IconSignals, badge: "NEW" },
       { href: "/dashboard/simulate", label: "Simulateur", icon: IconSimulate },
+      { href: "/dashboard/plan", label: "Plan de Conquête", icon: IconPlan },
+      { href: "/dashboard/success", label: "Simulation Succès", icon: IconSuccess },
     ],
   },
   {
