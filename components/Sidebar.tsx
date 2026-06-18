@@ -2473,6 +2473,19 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesDiscountLeakageMarginErosionIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Discount leak: money draining downward with percentage tag */}
+      <circle cx="10" cy="5" r="3"/>
+      <path d="M10 8 L10 14" strokeLinecap="round" strokeWidth="1.8"/>
+      <path d="M7 12 L10 15 L13 12" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M5 16 L5 18 M8 17 L8 18 M11 16.5 L11 18 M14 16 L14 18" strokeLinecap="round" opacity="0.5"/>
+      <text x="10" y="5.5" textAnchor="middle" fontSize="3.5" fill="currentColor" stroke="none" fontWeight="bold">%</text>
+    </svg>
+  );
+}
+
 function IconSalesBuyerPersonaMismatchIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2827,6 +2840,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-rep-burnout-attrition-risk-intelligence-engine", label: "Burnout & Flight Risk", icon: IconSalesRepBurnoutAttritionRiskIntelligenceEngine },
       { href: "/dashboard/sales-deal-velocity-collapse-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityCollapseIntelligenceEngine },
       { href: "/dashboard/sales-buyer-persona-mismatch-intelligence-engine", label: "Persona Mismatch", icon: IconSalesBuyerPersonaMismatchIntelligenceEngine },
+      { href: "/dashboard/sales-discount-leakage-margin-erosion-intelligence-engine", label: "Discount Leakage", icon: IconSalesDiscountLeakageMarginErosionIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
