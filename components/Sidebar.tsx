@@ -565,6 +565,29 @@ function IconCompWinRate({ className }: { className?: string }) {
   );
 }
 
+function IconSalesRepBurnout({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2a5 5 0 100 10A5 5 0 0010 2zm0 2a3 3 0 110 6A3 3 0 0110 4z" opacity="0.5" />
+      <path d="M10 9v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      <circle cx="10" cy="14" r="1" />
+      <path d="M2 17c0-2.2 3.6-4 8-4s8 1.8 8 4" opacity="0.3" />
+      <path d="M15 4l1-1M5 4L4 3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.4" />
+    </svg>
+  );
+}
+
+function IconRevenueLeakage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V5z" clipRule="evenodd" opacity="0.5" />
+      <path d="M8 10l-3 3M15 6l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+      <circle cx="5" cy="13" r="1.5" />
+      <circle cx="12" cy="9" r="1.5" />
+    </svg>
+  );
+}
+
 function IconAccountScoring({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1115,6 +1138,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/territory-performance", label: "Territory Perf.", icon: IconTerritoryPerformance },
       { href: "/dashboard/competitive-win-rate", label: "Comp. Win Rate", icon: IconCompWinRate },
       { href: "/dashboard/account-scoring", label: "Account Scoring", icon: IconAccountScoring },
+      { href: "/dashboard/revenue-leakage", label: "Revenue Leakage", icon: IconRevenueLeakage },
+      { href: "/dashboard/sales-rep-burnout", label: "Rep Burnout", icon: IconSalesRepBurnout },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
