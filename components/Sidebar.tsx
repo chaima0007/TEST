@@ -1223,6 +1223,31 @@ function IconRepAttritionRiskEngine({ className }: { className?: string }) {
   );
 }
 
+function IconSalesCapacityPlanningEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="4" cy="14" r="2" fill="currentColor" opacity={0.5} />
+      <circle cx="9" cy="10" r="2" fill="currentColor" opacity={0.6} />
+      <circle cx="14" cy="6" r="2" fill="currentColor" opacity={0.7} />
+      <path d="M4 16h3M9 12h3M14 8h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+      <path d="M4 14L9 10L14 6" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeDasharray="2 2" fill="none" opacity="0.4" />
+    </svg>
+  );
+}
+
+function IconForecastCalibrationEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="2" y="12" width="3" height="6" rx="0.5" fill="currentColor" opacity={0.4} />
+      <rect x="6.5" y="8" width="3" height="10" rx="0.5" fill="currentColor" opacity={0.6} />
+      <rect x="11" y="4" width="3" height="14" rx="0.5" fill="currentColor" opacity={0.8} />
+      <path d="M3.5 12L8 8L12.5 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" fill="none" opacity="0.6" />
+      <circle cx="14.5" cy="4" r="1.5" fill="currentColor" opacity={0.9} />
+      <path d="M13 8l2-2M13 6l2 2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  );
+}
+
 function IconQuotaFairnessEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1479,6 +1504,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/pipeline-aging-intelligence", label: "Pipeline Aging", icon: IconPipelineAgingIntelligence },
       { href: "/dashboard/deal-complexity-intelligence", label: "Deal Complexity", icon: IconDealComplexityIntelligence },
       { href: "/dashboard/quota-fairness-engine", label: "Quota Fairness", icon: IconQuotaFairnessEngine },
+      { href: "/dashboard/forecast-calibration-engine", label: "Forecast Calibration", icon: IconForecastCalibrationEngine },
+      { href: "/dashboard/sales-capacity-planning-engine", label: "Sales Capacity", icon: IconSalesCapacityPlanningEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
