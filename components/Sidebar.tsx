@@ -1827,6 +1827,15 @@ function IconSalesPricingConfidenceIntelligenceEngine({ className }: { className
   );
 }
 
+function IconSalesBuyerEngagementVelocityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Lightning bolt with pulse — engagement velocity */}
+      <path d="M11 2 L6 11 L10 11 L9 18 L14 9 L10 9 Z" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2440,6 +2449,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-champion-stability-intelligence-engine", label: "Champion Stability", icon: IconSalesChampionStabilityIntelligenceEngine },
       { href: "/dashboard/sales-decision-criteria-alignment-intelligence-engine", label: "Criteria Alignment", icon: IconSalesDecisionCriteriaAlignmentIntelligenceEngine },
       { href: "/dashboard/sales-pricing-confidence-intelligence-engine", label: "Pricing Confidence", icon: IconSalesPricingConfidenceIntelligenceEngine },
+      { href: "/dashboard/sales-buyer-engagement-velocity-intelligence-engine", label: "Engagement Velocity", icon: IconSalesBuyerEngagementVelocityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
