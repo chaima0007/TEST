@@ -298,6 +298,15 @@ function IconPricingOptimizer({ className }: { className?: string }) {
   );
 }
 
+function IconLeadEnrichment({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-.293.707L13 9.414V15a1 1 0 01-.553.894l-4 2A1 1 0 017 17V9.414L3.293 5.707A1 1 0 013 5V4zm2 1v.586l3.707 3.707A1 1 0 019 10v6l2-1v-5a1 1 0 01.293-.707L15 5.586V5H5z" clipRule="evenodd" />
+      <path d="M15 13a1 1 0 100 2h2a1 1 0 100-2h-2zm0-3a1 1 0 100 2h2a1 1 0 100-2h-2z" />
+    </svg>
+  );
+}
+
 function IconCompetitorIntel({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -625,6 +634,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/email-sequence-optimizer", label: "Séquences Email", icon: IconEmailSequence },
       { href: "/dashboard/competitor-intelligence", label: "Intel. Concurrents", icon: IconCompetitorIntel },
       { href: "/dashboard/pricing-optimizer", label: "Optimiseur Pricing", icon: IconPricingOptimizer },
+      { href: "/dashboard/lead-enrichment", label: "Enrichissement Leads", icon: IconLeadEnrichment },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
