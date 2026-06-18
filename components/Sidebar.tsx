@@ -1630,6 +1630,19 @@ function IconSalesStakeholderMappingIntelligenceEngine({ className }: { classNam
   );
 }
 
+function IconSalesMultiChannelEngagementIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Multiple signal waves — multi-channel */}
+      <circle cx="10" cy="10" r="2" fill="currentColor"/>
+      <path d="M6 6a6 6 0 0 0 0 8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <path d="M14 6a6 6 0 0 1 0 8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <path d="M3.5 3.5a9.5 9.5 0 0 0 0 13" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.5"/>
+      <path d="M16.5 3.5a9.5 9.5 0 0 1 0 13" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
 function IconSalesRepRetentionRiskIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2130,6 +2143,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-account-penetration-intelligence-engine", label: "Acct. Penetration", icon: IconSalesAccountPenetrationIntelligenceEngine },
       { href: "/dashboard/sales-time-allocation-intelligence-engine", label: "Time Allocation", icon: IconSalesTimeAllocationIntelligenceEngine },
       { href: "/dashboard/sales-rep-retention-risk-intelligence-engine", label: "Rep Retention Risk", icon: IconSalesRepRetentionRiskIntelligenceEngine },
+      { href: "/dashboard/sales-multi-channel-engagement-intelligence-engine", label: "Multi-Channel Eng.", icon: IconSalesMultiChannelEngagementIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
