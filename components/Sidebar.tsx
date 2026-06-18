@@ -1725,6 +1725,18 @@ function IconSalesConversationQualityIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesEmailSequenceIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Envelope with send arrow — email sequence */}
+      <rect x="2" y="5" width="16" height="11" rx="2" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <polyline points="2,5 10,12 18,5" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+      <line x1="13" y1="13" x2="17" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6"/>
+      <polyline points="15,11 17,13 15,15" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2221,6 +2233,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-forecast-sanity-check-intelligence-engine", label: "Forecast Sanity", icon: IconSalesForecastSanityCheckIntelligenceEngine },
       { href: "/dashboard/sales-onboarding-effectiveness-intelligence-engine", label: "Rep Onboarding", icon: IconSalesOnboardingEffectivenessIntelligenceEngine },
       { href: "/dashboard/sales-conversation-quality-intelligence-engine", label: "Conv. Quality", icon: IconSalesConversationQualityIntelligenceEngine },
+      { href: "/dashboard/sales-email-sequence-intelligence-engine", label: "Email Sequences", icon: IconSalesEmailSequenceIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
