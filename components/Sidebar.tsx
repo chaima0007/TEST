@@ -2630,6 +2630,20 @@ function IconSalesPriceSensitivityNegotiationLeverageEngine({ className }: { cla
   );
 }
 
+function IconSalesPipelineStageInflationCrmHygieneEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* CRM hygiene: pipeline stages with inflation warning and data gap */}
+      <rect x="2" y="13" width="3" height="5" rx="0.6" fill="currentColor" stroke="none" opacity="0.5"/>
+      <rect x="6.5" y="9" width="3" height="9" rx="0.6" fill="currentColor" stroke="none" opacity="0.6"/>
+      <rect x="11" y="5" width="3" height="13" rx="0.6" fill="currentColor" stroke="none"/>
+      <path d="M15.5 2 L17 4 L15.5 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" stroke="#ef4444"/>
+      <path d="M15.5 4 L12.5 4" strokeLinecap="round" strokeWidth="1.3" stroke="#ef4444"/>
+      <circle cx="3.5" cy="10" r="1.2" fill="#f59e0b" stroke="none"/>
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2943,6 +2957,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-price-sensitivity-negotiation-leverage-engine", label: "Negotiation Leverage", icon: IconSalesPriceSensitivityNegotiationLeverageEngine },
       { href: "/dashboard/sales-proposal-quality-win-rate-intelligence-engine", label: "Proposal Quality", icon: IconSalesProposalQualityWinRateIntelligenceEngine },
       { href: "/dashboard/sales-champion-departure-relationship-continuity-engine", label: "Champion Risk", icon: IconSalesChampionDepartureRelationshipContinuityEngine },
+      { href: "/dashboard/sales-pipeline-stage-inflation-crm-hygiene-engine", label: "Pipeline Hygiene", icon: IconSalesPipelineStageInflationCrmHygieneEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
