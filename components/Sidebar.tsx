@@ -1871,6 +1871,18 @@ function IconSalesObjectionHandlingEffectivenessIntelligenceEngine({ className }
   );
 }
 
+function IconSalesDiscoveryQualityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Magnifying glass with question mark — discovery quality */}
+      <circle cx="8" cy="8" r="5"/>
+      <line x1="12" y1="12" x2="17" y2="17" strokeLinecap="round"/>
+      <path d="M6.5 7 C6.5 5.5 8 5 9 6 C9.5 6.8 9 7.5 8 8 L8 9" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="8" cy="10.5" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2488,6 +2500,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-negotiation-leverage-intelligence-engine", label: "Negotiation Leverage", icon: IconSalesNegotiationLeverageIntelligenceEngine },
       { href: "/dashboard/sales-pipeline-health-degradation-intelligence-engine", label: "Pipeline Health", icon: IconSalesPipelineHealthDegradationIntelligenceEngine },
       { href: "/dashboard/sales-objection-handling-effectiveness-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingEffectivenessIntelligenceEngine },
+      { href: "/dashboard/sales-discovery-quality-intelligence-engine", label: "Discovery Quality", icon: IconSalesDiscoveryQualityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
