@@ -290,6 +290,14 @@ function IconSalesCoach({ className }: { className?: string }) {
   );
 }
 
+function IconPricingOptimizer({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M17.707 9.293l-7-7A1 1 0 0 0 10 2H4a2 2 0 0 0-2 2v6a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414zM6 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconCompetitorIntel({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -616,6 +624,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/icp-scorer", label: "Scoring ICP", icon: IconICPScorer },
       { href: "/dashboard/email-sequence-optimizer", label: "Séquences Email", icon: IconEmailSequence },
       { href: "/dashboard/competitor-intelligence", label: "Intel. Concurrents", icon: IconCompetitorIntel },
+      { href: "/dashboard/pricing-optimizer", label: "Optimiseur Pricing", icon: IconPricingOptimizer },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
