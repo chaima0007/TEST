@@ -323,6 +323,14 @@ function IconLeadEnrichment({ className }: { className?: string }) {
   );
 }
 
+function IconPipelineVelocity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconOnboardingHealth({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -662,6 +670,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/churn-predictor", label: "Prédicteur Churn", icon: IconChurnPredictor },
       { href: "/dashboard/revenue-forecaster", label: "Forecast Revenus", icon: IconRevenueForecaster },
       { href: "/dashboard/onboarding-health", label: "Santé Onboarding", icon: IconOnboardingHealth },
+      { href: "/dashboard/pipeline-velocity", label: "Vélocité Pipeline", icon: IconPipelineVelocity },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
