@@ -60,6 +60,9 @@ MENU = """
   [15] Agent Fantôme             ← Audit silencieux, zéro trace
   [16] Agent Commandant          ← Fait travailler tous les agents en équipe
   [17] Agent Résolveur           ← Résout les problèmes de manière ultra-pro
+  [18] Agent CRM                 ← Pipeline commercial lead → client → CA
+  [19] Agent Email               ← Cold outreach + séquences + propositions
+  [20] Dashboard CEO             ← Vue exécutive revenus, KPIs, alertes
 
   [s]  Voir stats & mémoire
   [0]  Quitter
@@ -116,6 +119,12 @@ if __name__ == "__main__":
             lancer("agent_commandant.py")
         elif choix == "17":
             lancer("agent_resolveur.py")
+        elif choix == "18":
+            lancer("agent_crm.py")
+        elif choix == "19":
+            lancer("agent_email.py")
+        elif choix == "20":
+            lancer("agent_dashboard_ceo.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
