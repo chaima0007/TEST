@@ -1,2038 +1,1977 @@
 """
-Comprehensive pytest tests for SalesForecastAccuracyIntelligenceEngine.
-~300 tests covering enums, sub-scores, pattern detection, risk/severity/action,
-flags, revenue variance, signal strings, to_dict, summary, and assess_batch.
+Comprehensive pytest test suite for SalesForecastAccuracyIntelligenceEngine.
+Covers: all enum values/counts, all 22 input fields, all 15 result fields,
+to_dict 15 keys, all sub-score branches and caps, pattern detection priority
+and all 6 patterns, risk/severity thresholds, all action mappings, both flag
+conditions, revenue at risk formula, signal string, composite formula,
+assess, assess_batch, summary (empty and populated with all 13 keys), edge cases.
 """
+from __future__ import annotations
+
 import pytest
+
 from swarm.intelligence.sales_forecast_accuracy_intelligence_engine import (
-    SalesForecastAccuracyIntelligenceEngine,
-    ForecastAccuracyInput,
-    ForecastAccuracyResult,
-    ForecastRisk,
-    ForecastPattern,
-    ForecastSeverity,
     ForecastAction,
+    ForecastInput,
+    ForecastPattern,
+    ForecastResult,
+    ForecastRisk,
+    ForecastSeverity,
+    SalesForecastAccuracyIntelligenceEngine,
 )
 
 
 # ---------------------------------------------------------------------------
-# Helper
+# Helpers / fixtures
 # ---------------------------------------------------------------------------
 
-def make_input(**kwargs):
+def make_input(**overrides) -> ForecastInput:
+    """Return a low-risk ForecastInput; any field can be overridden."""
     defaults = dict(
-        rep_id="rep_test",
+        rep_id="rep-001",
         region="West",
         evaluation_period_id="Q1-2026",
-        total_forecasted_deals=10,
-        forecast_commit_count=5,
-        forecast_commit_closed_count=4,
-        forecast_upside_count=3,
-        forecast_upside_closed_count=1,
-        late_stage_slippage_count=0,
-        sandbagged_deals_identified=0,
-        avg_forecast_accuracy_pct=0.95,
-        forecast_overestimate_count=1,
-        forecast_underestimate_count=0,
-        pipeline_coverage_ratio=4.0,
-        avg_deal_age_days=30.0,
-        avg_close_date_slip_days=5.0,
-        stage_advancement_rate_pct=0.65,
-        crm_update_frequency_score=8.0,
-        manager_review_sessions_count=3,
-        multi_stakeholder_deals_pct=0.70,
-        avg_deal_size_usd=50000.0,
-        deals_closed_not_forecasted_count=0,
+        forecast_vs_actual_variance_pct=0.05,   # < 0.10  → no accuracy pts
+        over_forecast_frequency_pct=0.10,        # < 0.40  → no commit pts
+        under_forecast_frequency_pct=0.10,       # < 0.30  → no commit pts
+        commit_to_close_rate_pct=0.90,           # > 0.75  → no commit pts
+        best_case_to_close_rate_pct=0.80,
+        pipeline_to_quota_ratio=3.0,
+        late_add_to_forecast_pct=0.05,           # < 0.20  → no discipline pts
+        deals_pulled_from_forecast_pct=0.05,     # < 0.20  → no stage pts
+        avg_deal_slip_days=5.0,                  # < 14    → no stage pts
+        stage_advancement_accuracy_pct=0.90,     # > 0.75  → no stage pts
+        close_date_accuracy_within_week_pct=0.80,  # > 0.55 → no accuracy pts
+        forecast_change_frequency_per_qtr=0.5,   # < 1.5   → no discipline pts
+        upside_deals_closed_pct=0.70,
+        commit_deals_lost_pct=0.05,              # < 0.20  → no accuracy pts
+        sandbag_conversion_rate_pct=0.20,
+        multi_quarter_slip_rate_pct=0.05,        # < 0.15  → no discipline pts
+        forecast_submitted_on_time_pct=0.95,
+        total_deals_forecasted=10,
+        avg_opportunity_value_usd=50_000.0,
     )
-    defaults.update(kwargs)
-    return ForecastAccuracyInput(**defaults)
+    defaults.update(overrides)
+    return ForecastInput(**defaults)
 
 
-@pytest.fixture
-def engine():
+@pytest.fixture()
+def engine() -> SalesForecastAccuracyIntelligenceEngine:
     return SalesForecastAccuracyIntelligenceEngine()
 
 
-@pytest.fixture
-def good_input():
-    """A 'perfect' rep — minimal risk across all dimensions."""
+def low_risk_input() -> ForecastInput:
+    return make_input()
+
+
+def critical_input() -> ForecastInput:
+    """All sub-scores at maximum to guarantee composite >= 60."""
     return make_input(
-        avg_forecast_accuracy_pct=1.0,
-        forecast_commit_count=5,
-        forecast_commit_closed_count=5,
-        forecast_overestimate_count=0,
-        late_stage_slippage_count=0,
-        avg_close_date_slip_days=0.0,
-        deals_closed_not_forecasted_count=0,
-        manager_review_sessions_count=5,
-        pipeline_coverage_ratio=5.0,
-        avg_deal_age_days=20.0,
-        stage_advancement_rate_pct=0.80,
-        multi_stakeholder_deals_pct=0.80,
-        crm_update_frequency_score=9.0,
-        sandbagged_deals_identified=0,
-        forecast_underestimate_count=0,
+        forecast_vs_actual_variance_pct=0.50,       # +40 accuracy
+        commit_deals_lost_pct=0.50,                 # +35 accuracy
+        close_date_accuracy_within_week_pct=0.20,   # +25 accuracy  → accuracy=100
+        forecast_change_frequency_per_qtr=6.0,      # +40 discipline
+        late_add_to_forecast_pct=0.50,              # +35 discipline
+        multi_quarter_slip_rate_pct=0.40,           # +25 discipline → discipline=100
+        stage_advancement_accuracy_pct=0.30,        # +40 stage
+        deals_pulled_from_forecast_pct=0.40,        # +35 stage
+        avg_deal_slip_days=35.0,                    # +25 stage      → stage=100
+        commit_to_close_rate_pct=0.30,              # +45 commit
+        over_forecast_frequency_pct=0.70,           # +30 commit
+        under_forecast_frequency_pct=0.60,          # +25 commit     → commit=100
     )
 
 
-# ===========================================================================
-# 1. ENUM VALUES
-# ===========================================================================
+# ---------------------------------------------------------------------------
+# 1. Enum values and counts
+# ---------------------------------------------------------------------------
 
-class TestForecastRiskEnum:
-    def test_low_value(self):
-        assert ForecastRisk.low.value == "low"
+class TestEnums:
+    def test_forecast_risk_values(self):
+        assert set(r.value for r in ForecastRisk) == {"low", "moderate", "high", "critical"}
 
-    def test_moderate_value(self):
-        assert ForecastRisk.moderate.value == "moderate"
-
-    def test_high_value(self):
-        assert ForecastRisk.high.value == "high"
-
-    def test_critical_value(self):
-        assert ForecastRisk.critical.value == "critical"
-
-    def test_all_members(self):
-        members = {m.value for m in ForecastRisk}
-        assert members == {"low", "moderate", "high", "critical"}
-
-    def test_is_str(self):
-        assert isinstance(ForecastRisk.low, str)
-
-    def test_str_equality(self):
-        assert ForecastRisk.low == "low"
-
-    def test_count(self):
+    def test_forecast_risk_count(self):
         assert len(ForecastRisk) == 4
 
-
-class TestForecastPatternEnum:
-    def test_none_value(self):
-        assert ForecastPattern.none.value == "none"
-
-    def test_systematic_overforecast_value(self):
-        assert ForecastPattern.systematic_overforecast.value == "systematic_overforecast"
-
-    def test_sandbag_behavior_value(self):
-        assert ForecastPattern.sandbag_behavior.value == "sandbag_behavior"
-
-    def test_pipeline_gap_value(self):
-        assert ForecastPattern.pipeline_gap.value == "pipeline_gap"
-
-    def test_crm_neglect_value(self):
-        assert ForecastPattern.crm_neglect.value == "crm_neglect"
-
-    def test_stage_manipulation_value(self):
-        assert ForecastPattern.stage_manipulation.value == "stage_manipulation"
-
-    def test_all_members(self):
-        members = {m.value for m in ForecastPattern}
-        assert members == {
+    def test_forecast_pattern_values(self):
+        expected = {
             "none",
-            "systematic_overforecast",
-            "sandbag_behavior",
-            "pipeline_gap",
-            "crm_neglect",
-            "stage_manipulation",
+            "chronic_over_forecasting",
+            "chronic_under_forecasting",
+            "end_of_quarter_cliff",
+            "recency_bias_sandbagging",
+            "stage_inflation_blindspot",
         }
+        assert set(p.value for p in ForecastPattern) == expected
 
-    def test_count(self):
+    def test_forecast_pattern_count(self):
         assert len(ForecastPattern) == 6
 
-    def test_is_str(self):
-        assert isinstance(ForecastPattern.none, str)
-
-
-class TestForecastSeverityEnum:
-    def test_reliable_value(self):
-        assert ForecastSeverity.reliable.value == "reliable"
-
-    def test_variable_value(self):
-        assert ForecastSeverity.variable.value == "variable"
-
-    def test_unreliable_value(self):
-        assert ForecastSeverity.unreliable.value == "unreliable"
-
-    def test_chaotic_value(self):
-        assert ForecastSeverity.chaotic.value == "chaotic"
-
-    def test_all_members(self):
-        members = {m.value for m in ForecastSeverity}
-        assert members == {"reliable", "variable", "unreliable", "chaotic"}
-
-    def test_count(self):
-        assert len(ForecastSeverity) == 4
-
-    def test_is_str(self):
-        assert isinstance(ForecastSeverity.reliable, str)
-
-
-class TestForecastActionEnum:
-    def test_no_action_value(self):
-        assert ForecastAction.no_action.value == "no_action"
-
-    def test_forecast_recalibration_value(self):
-        assert ForecastAction.forecast_recalibration.value == "forecast_recalibration"
-
-    def test_pipeline_inspection_value(self):
-        assert ForecastAction.pipeline_inspection.value == "pipeline_inspection"
-
-    def test_crm_training_value(self):
-        assert ForecastAction.crm_training.value == "crm_training"
-
-    def test_forecast_review_cadence_value(self):
-        assert ForecastAction.forecast_review_cadence.value == "forecast_review_cadence"
-
-    def test_forecast_override_value(self):
-        assert ForecastAction.forecast_override.value == "forecast_override"
-
-    def test_all_members(self):
-        members = {m.value for m in ForecastAction}
-        assert members == {
-            "no_action",
-            "forecast_recalibration",
-            "pipeline_inspection",
-            "crm_training",
-            "forecast_review_cadence",
-            "forecast_override",
+    def test_forecast_severity_values(self):
+        assert set(s.value for s in ForecastSeverity) == {
+            "precise", "calibrating", "drifting", "unreliable"
         }
 
-    def test_count(self):
+    def test_forecast_severity_count(self):
+        assert len(ForecastSeverity) == 4
+
+    def test_forecast_action_values(self):
+        assert set(a.value for a in ForecastAction) == {
+            "no_action",
+            "forecast_calibration_coaching",
+            "pipeline_inspection_coaching",
+            "stage_criteria_coaching",
+            "commit_discipline_coaching",
+            "forecast_reset_intervention",
+        }
+
+    def test_forecast_action_count(self):
         assert len(ForecastAction) == 6
 
-    def test_is_str(self):
+    def test_enums_are_str_subclass(self):
+        assert isinstance(ForecastRisk.low, str)
+        assert isinstance(ForecastPattern.none, str)
+        assert isinstance(ForecastSeverity.precise, str)
         assert isinstance(ForecastAction.no_action, str)
 
-
-# ===========================================================================
-# 2. _forecast_accuracy_score
-# ===========================================================================
-
-class TestForecastAccuracyScore:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _score(self, **kw):
-        return self.eng._forecast_accuracy_score(make_input(**kw))
-
-    # --- accuracy deviation ---
-    def test_dev_zero_no_deviation_points(self):
-        s = self._score(avg_forecast_accuracy_pct=1.0,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5,
-                        forecast_overestimate_count=0)
-        assert s == 0.0
-
-    def test_dev_below_15_no_deviation_points(self):
-        # dev = 0.10 < 0.15
-        s = self._score(avg_forecast_accuracy_pct=0.90,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5,
-                        forecast_overestimate_count=0)
-        assert s == 0.0
-
-    def test_dev_exactly_15_adds_12(self):
-        s = self._score(avg_forecast_accuracy_pct=0.85,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5,
-                        forecast_overestimate_count=0)
-        assert s == 12.0
-
-    def test_dev_exactly_25_adds_25(self):
-        s = self._score(avg_forecast_accuracy_pct=0.75,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5,
-                        forecast_overestimate_count=0)
-        assert s == 25.0
-
-    def test_dev_exactly_40_adds_40(self):
-        s = self._score(avg_forecast_accuracy_pct=0.60,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5,
-                        forecast_overestimate_count=0)
-        assert s == 40.0
-
-    def test_dev_above_40(self):
-        s = self._score(avg_forecast_accuracy_pct=0.50,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5,
-                        forecast_overestimate_count=0)
-        assert s == 40.0
-
-    def test_dev_works_above_1_overestimate(self):
-        # avg accuracy above 1.0 (over-committed), dev = 0.20 -> 0.15 <= dev < 0.25 -> +12
-        s = self._score(avg_forecast_accuracy_pct=1.20,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5,
-                        forecast_overestimate_count=0)
-        assert s == 12.0
-
-    # --- commit accuracy ---
-    def test_commit_rate_perfect_no_points(self):
-        s = self._score(forecast_commit_count=10,
-                        forecast_commit_closed_count=10,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_overestimate_count=0)
-        assert s == 0.0
-
-    def test_commit_rate_above_85_no_points(self):
-        # 9/10 = 0.90 >= 0.85
-        s = self._score(forecast_commit_count=10,
-                        forecast_commit_closed_count=9,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_overestimate_count=0)
-        assert s == 0.0
-
-    def test_commit_rate_below_85_adds_5(self):
-        # 8/10 = 0.80, 0.70 <= 0.80 < 0.85
-        s = self._score(forecast_commit_count=10,
-                        forecast_commit_closed_count=8,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_overestimate_count=0)
-        assert s == 5.0
-
-    def test_commit_rate_below_70_adds_15(self):
-        # 6/10 = 0.60
-        s = self._score(forecast_commit_count=10,
-                        forecast_commit_closed_count=6,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_overestimate_count=0)
-        assert s == 15.0
-
-    def test_commit_rate_below_50_adds_30(self):
-        # 4/10 = 0.40
-        s = self._score(forecast_commit_count=10,
-                        forecast_commit_closed_count=4,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_overestimate_count=0)
-        assert s == 30.0
-
-    def test_commit_count_zero_uses_1_denominator(self):
-        # 0/max(0,1)=1 => commit_rate=0.0 < 0.50
-        s = self._score(forecast_commit_count=0,
-                        forecast_commit_closed_count=0,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_overestimate_count=0)
-        assert s == 30.0
-
-    # --- over-ratio ---
-    def test_over_ratio_zero_no_points(self):
-        s = self._score(forecast_overestimate_count=0,
-                        total_forecasted_deals=10,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5)
-        assert s == 0.0
-
-    def test_over_ratio_below_15_no_points(self):
-        # 1/10 = 0.10 < 0.15
-        s = self._score(forecast_overestimate_count=1,
-                        total_forecasted_deals=10,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5)
-        assert s == 0.0
-
-    def test_over_ratio_exactly_15_adds_5(self):
-        # 3/20 = 0.15
-        s = self._score(forecast_overestimate_count=3,
-                        total_forecasted_deals=20,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5)
-        assert s == 5.0
-
-    def test_over_ratio_exactly_25_adds_10(self):
-        # 5/20 = 0.25
-        s = self._score(forecast_overestimate_count=5,
-                        total_forecasted_deals=20,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5)
-        assert s == 10.0
-
-    def test_over_ratio_exactly_40_adds_20(self):
-        # 8/20 = 0.40
-        s = self._score(forecast_overestimate_count=8,
-                        total_forecasted_deals=20,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5)
-        assert s == 20.0
-
-    def test_total_forecasted_zero_uses_1_denominator(self):
-        # forecast_overestimate_count=1, total=0 -> uses max(0,1)=1, ratio=1.0 >= 0.40
-        s = self._score(forecast_overestimate_count=1,
-                        total_forecasted_deals=0,
-                        avg_forecast_accuracy_pct=1.0,
-                        forecast_commit_closed_count=5,
-                        forecast_commit_count=5)
-        assert s == 20.0
-
-    def test_capped_at_100(self):
-        # All maximums: dev>=0.40 (+40), commit<0.50 (+30), over_ratio>=0.40 (+20) = 90
-        # Let's ensure it never exceeds 100 even with extreme values
-        s = self._score(avg_forecast_accuracy_pct=0.0,
-                        forecast_commit_count=10,
-                        forecast_commit_closed_count=0,
-                        forecast_overestimate_count=10,
-                        total_forecasted_deals=10)
-        assert s <= 100.0
-
-    def test_combined_all_max(self):
-        # dev=1.0>=0.40 (+40), commit_rate=0<0.50 (+30), over_ratio=1.0>=0.40 (+20) => 90
-        s = self._score(avg_forecast_accuracy_pct=0.0,
-                        forecast_commit_count=10,
-                        forecast_commit_closed_count=0,
-                        forecast_overestimate_count=10,
-                        total_forecasted_deals=10)
-        assert s == 90.0
-
-    def test_returns_float(self):
-        s = self._score()
-        assert isinstance(s, float)
-
-
-# ===========================================================================
-# 3. _forecast_discipline_score
-# ===========================================================================
-
-class TestForecastDisciplineScore:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _score(self, **kw):
-        return self.eng._forecast_discipline_score(make_input(**kw))
-
-    # --- late stage slippage ---
-    def test_no_slippage_no_points(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 0.0
-
-    def test_slippage_1_adds_8(self):
-        s = self._score(late_stage_slippage_count=1, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 8.0
-
-    def test_slippage_2_adds_20(self):
-        s = self._score(late_stage_slippage_count=2, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 20.0
-
-    def test_slippage_4_adds_35(self):
-        s = self._score(late_stage_slippage_count=4, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 35.0
-
-    def test_slippage_10_adds_35(self):
-        s = self._score(late_stage_slippage_count=10, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 35.0
-
-    # --- close date slippage ---
-    def test_close_slip_below_10_no_points(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=5.0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 0.0
-
-    def test_close_slip_exactly_10_adds_8(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=10.0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 8.0
-
-    def test_close_slip_exactly_25_adds_18(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=25.0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 18.0
-
-    def test_close_slip_exactly_45_adds_30(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=45.0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 30.0
-
-    def test_close_slip_100_adds_30(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=100.0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 30.0
-
-    # --- unforecast closes ---
-    def test_closed_not_forecasted_0_no_points(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=5)
-        assert s == 0.0
-
-    def test_closed_not_forecasted_1_adds_5(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=1, manager_review_sessions_count=5)
-        assert s == 5.0
-
-    def test_closed_not_forecasted_2_adds_12(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=2, manager_review_sessions_count=5)
-        assert s == 12.0
-
-    def test_closed_not_forecasted_3_adds_25(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=3, manager_review_sessions_count=5)
-        assert s == 25.0
-
-    def test_closed_not_forecasted_10_adds_25(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=10, manager_review_sessions_count=5)
-        assert s == 25.0
-
-    # --- manager review ---
-    def test_manager_review_2_plus_no_points(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=2)
-        assert s == 0.0
-
-    def test_manager_review_1_adds_5(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=1)
-        assert s == 5.0
-
-    def test_manager_review_0_adds_10(self):
-        s = self._score(late_stage_slippage_count=0, avg_close_date_slip_days=0,
-                        deals_closed_not_forecasted_count=0, manager_review_sessions_count=0)
-        assert s == 10.0
-
-    def test_capped_at_100(self):
-        s = self._score(late_stage_slippage_count=10, avg_close_date_slip_days=100,
-                        deals_closed_not_forecasted_count=10, manager_review_sessions_count=0)
-        assert s <= 100.0
-
-    def test_all_max_35_plus_30_plus_25_plus_10_capped(self):
-        # 35+30+25+10=100
-        s = self._score(late_stage_slippage_count=4, avg_close_date_slip_days=45,
-                        deals_closed_not_forecasted_count=3, manager_review_sessions_count=0)
-        assert s == 100.0
-
-    def test_returns_float(self):
-        s = self._score()
-        assert isinstance(s, float)
-
-
-# ===========================================================================
-# 4. _pipeline_health_score
-# ===========================================================================
-
-class TestPipelineHealthScore:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _score(self, **kw):
-        return self.eng._pipeline_health_score(make_input(**kw))
-
-    # --- coverage ratio ---
-    def test_coverage_4_plus_no_points(self):
-        s = self._score(pipeline_coverage_ratio=4.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 0.0
-
-    def test_coverage_exactly_3_adds_8(self):
-        s = self._score(pipeline_coverage_ratio=3.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 8.0
-
-    def test_coverage_exactly_2_adds_18(self):
-        s = self._score(pipeline_coverage_ratio=2.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 18.0
-
-    def test_coverage_below_2_adds_35(self):
-        s = self._score(pipeline_coverage_ratio=1.5, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 35.0
-
-    def test_coverage_zero_adds_35(self):
-        s = self._score(pipeline_coverage_ratio=0.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 35.0
-
-    # --- deal age ---
-    def test_deal_age_below_45_no_points(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=30.0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 0.0
-
-    def test_deal_age_exactly_45_adds_5(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=45.0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 5.0
-
-    def test_deal_age_exactly_75_adds_15(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=75.0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 15.0
-
-    def test_deal_age_exactly_120_adds_25(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=120.0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 25.0
-
-    def test_deal_age_very_high_adds_25(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=365.0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80)
-        assert s == 25.0
-
-    # --- stage advancement ---
-    def test_stage_advancement_50_plus_no_points(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.50, multi_stakeholder_deals_pct=0.80)
-        assert s == 0.0
-
-    def test_stage_advancement_below_50_adds_12(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.40, multi_stakeholder_deals_pct=0.80)
-        assert s == 12.0
-
-    def test_stage_advancement_below_30_adds_25(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.20, multi_stakeholder_deals_pct=0.80)
-        assert s == 25.0
-
-    def test_stage_advancement_zero_adds_25(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.0, multi_stakeholder_deals_pct=0.80)
-        assert s == 25.0
-
-    # --- multi-stakeholder ---
-    def test_multi_stakeholder_50_plus_no_points(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.50)
-        assert s == 0.0
-
-    def test_multi_stakeholder_30_to_50_adds_8(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.40)
-        assert s == 8.0
-
-    def test_multi_stakeholder_below_30_adds_15(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.20)
-        assert s == 15.0
-
-    def test_multi_stakeholder_zero_adds_15(self):
-        s = self._score(pipeline_coverage_ratio=5.0, avg_deal_age_days=0,
-                        stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.0)
-        assert s == 15.0
-
-    def test_capped_at_100(self):
-        s = self._score(pipeline_coverage_ratio=0.0, avg_deal_age_days=365,
-                        stage_advancement_rate_pct=0.0, multi_stakeholder_deals_pct=0.0)
-        assert s <= 100.0
-
-    def test_all_max_35_25_25_15(self):
-        # 35+25+25+15=100
-        s = self._score(pipeline_coverage_ratio=0.0, avg_deal_age_days=120,
-                        stage_advancement_rate_pct=0.0, multi_stakeholder_deals_pct=0.0)
-        assert s == 100.0
-
-    def test_returns_float(self):
-        s = self._score()
-        assert isinstance(s, float)
-
-
-# ===========================================================================
-# 5. _crm_hygiene_score
-# ===========================================================================
-
-class TestCrmHygieneScore:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _score(self, **kw):
-        return self.eng._crm_hygiene_score(make_input(**kw))
-
-    # --- CRM update frequency ---
-    def test_crm_freq_7_plus_no_points(self):
-        s = self._score(crm_update_frequency_score=7.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 0.0
-
-    def test_crm_freq_exactly_7_no_points(self):
-        s = self._score(crm_update_frequency_score=7.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 0.0
-
-    def test_crm_freq_below_7_adds_10(self):
-        # 5.0 <= x < 7.0
-        s = self._score(crm_update_frequency_score=6.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 10.0
-
-    def test_crm_freq_exactly_5_adds_25(self):
-        # 3.0 <= x < 5.0
-        s = self._score(crm_update_frequency_score=4.5,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 25.0
-
-    def test_crm_freq_below_3_adds_45(self):
-        s = self._score(crm_update_frequency_score=2.9,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 45.0
-
-    def test_crm_freq_zero_adds_45(self):
-        s = self._score(crm_update_frequency_score=0.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 45.0
-
-    # --- sandbagged deals ---
-    def test_sandbag_0_no_points(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 0.0
-
-    def test_sandbag_1_adds_8(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=1, forecast_underestimate_count=0)
-        assert s == 8.0
-
-    def test_sandbag_2_adds_18(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=2, forecast_underestimate_count=0)
-        assert s == 18.0
-
-    def test_sandbag_3_adds_35(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=3, forecast_underestimate_count=0)
-        assert s == 35.0
-
-    def test_sandbag_10_adds_35(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=10, forecast_underestimate_count=0)
-        assert s == 35.0
-
-    # --- underestimate count ---
-    def test_underestimate_0_no_points(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=0)
-        assert s == 0.0
-
-    def test_underestimate_1_no_points(self):
-        # Only 2+ is counted
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=1)
-        assert s == 0.0
-
-    def test_underestimate_2_adds_10(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=2)
-        assert s == 10.0
-
-    def test_underestimate_3_adds_20(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=3)
-        assert s == 20.0
-
-    def test_underestimate_10_adds_20(self):
-        s = self._score(crm_update_frequency_score=10.0,
-                        sandbagged_deals_identified=0, forecast_underestimate_count=10)
-        assert s == 20.0
-
-    def test_capped_at_100(self):
-        s = self._score(crm_update_frequency_score=0.0,
-                        sandbagged_deals_identified=10, forecast_underestimate_count=10)
-        assert s <= 100.0
-
-    def test_all_max_45_35_20(self):
-        s = self._score(crm_update_frequency_score=0.0,
-                        sandbagged_deals_identified=3, forecast_underestimate_count=3)
-        assert s == 100.0
-
-    def test_returns_float(self):
-        s = self._score()
-        assert isinstance(s, float)
-
-
-# ===========================================================================
-# 6. PATTERN DETECTION
-# ===========================================================================
-
-class TestPatternDetection:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def assess(self, **kw):
-        return self.eng.assess(make_input(**kw))
-
-    # --- systematic_overforecast (highest priority) ---
-    def test_systematic_overforecast_detected(self):
-        # Need accuracy >= 35 and over_ratio >= 0.30
-        # accuracy >= 35 requires e.g. dev>=0.25 (+25) AND commit_rate<0.70 (+15)=40
-        # over_ratio=5/10=0.50
-        r = self.assess(
-            avg_forecast_accuracy_pct=0.70,        # dev=0.30>=0.25 -> +25
-            forecast_commit_count=10,
-            forecast_commit_closed_count=6,         # 0.60 -> +15; total acc=40
-            forecast_overestimate_count=5,
-            total_forecasted_deals=10,             # over_ratio=0.50 >= 0.30
-        )
-        assert r.forecast_pattern == ForecastPattern.systematic_overforecast
-
-    def test_systematic_overforecast_priority_over_sandbag(self):
-        # Both conditions met for overforecast and sandbag, but overforecast wins
-        r = self.assess(
-            avg_forecast_accuracy_pct=0.70,
-            forecast_commit_count=10,
-            forecast_commit_closed_count=6,
-            forecast_overestimate_count=5,
-            total_forecasted_deals=10,
-            sandbagged_deals_identified=3,
-            crm_update_frequency_score=0.0,        # crm will be very high
-        )
-        assert r.forecast_pattern == ForecastPattern.systematic_overforecast
-
-    def test_systematic_overforecast_accuracy_below_35_no_match(self):
-        # accuracy below 35 -> can't match
-        r = self.assess(
-            avg_forecast_accuracy_pct=0.95,        # dev=0.05 -> +0
-            forecast_commit_count=10,
-            forecast_commit_closed_count=10,        # commit_rate=1.0 -> +0
-            forecast_overestimate_count=5,
-            total_forecasted_deals=10,              # over_ratio=0.50 but accuracy=0
-            sandbagged_deals_identified=0,
-            crm_update_frequency_score=9.0,
-            pipeline_coverage_ratio=5.0,
-            late_stage_slippage_count=0,
-        )
-        assert r.forecast_pattern != ForecastPattern.systematic_overforecast
-
-    def test_systematic_overforecast_over_ratio_below_30_no_match(self):
-        # over_ratio=0.20 < 0.30
-        r = self.assess(
-            avg_forecast_accuracy_pct=0.70,
-            forecast_commit_count=10,
-            forecast_commit_closed_count=6,
-            forecast_overestimate_count=2,
-            total_forecasted_deals=10,
-        )
-        assert r.forecast_pattern != ForecastPattern.systematic_overforecast
-
-    # --- sandbag_behavior ---
-    def test_sandbag_behavior_detected(self):
-        # sandbagged>=2, crm>=25 (crm_freq<5.0 -> +25, sandbag=2 -> +18 = 43 >=25)
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,         # accuracy=0
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,          # over_ratio=0; accuracy won't trigger
-            sandbagged_deals_identified=2,
-            crm_update_frequency_score=3.5,         # 3<=x<5 -> +25
-            pipeline_coverage_ratio=5.0,            # pipeline low
-            late_stage_slippage_count=0,
-            avg_close_date_slip_days=0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-        )
-        assert r.forecast_pattern == ForecastPattern.sandbag_behavior
-
-    def test_sandbag_behavior_sandbag_below_2_no_match(self):
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            sandbagged_deals_identified=1,
-            crm_update_frequency_score=0.0,
-        )
-        assert r.forecast_pattern != ForecastPattern.sandbag_behavior
-
-    # --- pipeline_gap ---
-    def test_pipeline_gap_detected(self):
-        # pipeline>=35 and coverage_ratio < 2.5
-        # pipeline: coverage<2.0 (+35) => pipeline=35
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            sandbagged_deals_identified=0,
-            crm_update_frequency_score=9.0,
-            pipeline_coverage_ratio=1.5,            # <2.0 -> +35, also <2.5
-            avg_deal_age_days=0,
-            stage_advancement_rate_pct=0.80,
-            multi_stakeholder_deals_pct=0.80,
-            late_stage_slippage_count=0,
-            avg_close_date_slip_days=0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-        )
-        assert r.forecast_pattern == ForecastPattern.pipeline_gap
-
-    def test_pipeline_gap_coverage_above_2_5_no_match(self):
-        # pipeline score >=35 but coverage_ratio >=2.5 -> no match
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            sandbagged_deals_identified=0,
-            crm_update_frequency_score=9.0,
-            pipeline_coverage_ratio=3.0,            # >=2.5 -> no pipeline_gap pattern
-            avg_deal_age_days=120,                  # +25 for pipeline score
-            stage_advancement_rate_pct=0.20,        # +25
-            multi_stakeholder_deals_pct=0.20,       # +15; total pipeline ~65
-            late_stage_slippage_count=0,
-            avg_close_date_slip_days=0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-        )
-        assert r.forecast_pattern != ForecastPattern.pipeline_gap
-
-    # --- crm_neglect ---
-    def test_crm_neglect_detected(self):
-        # crm>=30 and crm_update_frequency_score<5.0
-        # crm_freq<3.0 -> +45 => crm=45 >=30
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            sandbagged_deals_identified=0,
-            crm_update_frequency_score=2.0,         # <3.0 -> +45; crm=45>=30
-            pipeline_coverage_ratio=5.0,
-            avg_deal_age_days=0,
-            stage_advancement_rate_pct=0.80,
-            multi_stakeholder_deals_pct=0.80,
-            late_stage_slippage_count=0,
-            avg_close_date_slip_days=0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-            forecast_underestimate_count=0,
-        )
-        assert r.forecast_pattern == ForecastPattern.crm_neglect
-
-    def test_crm_neglect_crm_score_5_plus_no_match(self):
-        # crm_update_frequency_score>=5.0 -> condition fails
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            sandbagged_deals_identified=0,
-            crm_update_frequency_score=5.0,
-            pipeline_coverage_ratio=5.0,
-            late_stage_slippage_count=0,
-            avg_close_date_slip_days=0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-        )
-        assert r.forecast_pattern != ForecastPattern.crm_neglect
-
-    # --- stage_manipulation ---
-    def test_stage_manipulation_detected(self):
-        # discipline>=30 and late_stage_slippage_count>=2
-        # slippage=4 -> +35; close_slip=45 -> +30; total=65>=30
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            sandbagged_deals_identified=0,
-            crm_update_frequency_score=9.0,
-            pipeline_coverage_ratio=5.0,
-            avg_deal_age_days=0,
-            stage_advancement_rate_pct=0.80,
-            multi_stakeholder_deals_pct=0.80,
-            late_stage_slippage_count=4,
-            avg_close_date_slip_days=45,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-            forecast_underestimate_count=0,
-        )
-        assert r.forecast_pattern == ForecastPattern.stage_manipulation
-
-    def test_stage_manipulation_slippage_below_2_no_match(self):
-        r = self.assess(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            sandbagged_deals_identified=0,
-            crm_update_frequency_score=9.0,
-            pipeline_coverage_ratio=5.0,
-            late_stage_slippage_count=1,
-            avg_close_date_slip_days=45,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-        )
-        assert r.forecast_pattern != ForecastPattern.stage_manipulation
-
-    # --- none ---
-    def test_none_pattern_when_all_good(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.forecast_pattern == ForecastPattern.none
-
-
-# ===========================================================================
-# 7. RISK LEVELS
-# ===========================================================================
-
-class TestRiskLevels:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def test_risk_level_low_composite_below_20(self):
-        assert self.eng._risk_level(0.0) == ForecastRisk.low
-        assert self.eng._risk_level(10.0) == ForecastRisk.low
-        assert self.eng._risk_level(19.9) == ForecastRisk.low
-
-    def test_risk_level_moderate_at_20(self):
-        assert self.eng._risk_level(20.0) == ForecastRisk.moderate
-
-    def test_risk_level_moderate_below_40(self):
-        assert self.eng._risk_level(25.0) == ForecastRisk.moderate
-        assert self.eng._risk_level(39.9) == ForecastRisk.moderate
-
-    def test_risk_level_high_at_40(self):
-        assert self.eng._risk_level(40.0) == ForecastRisk.high
-
-    def test_risk_level_high_below_60(self):
-        assert self.eng._risk_level(45.0) == ForecastRisk.high
-        assert self.eng._risk_level(59.9) == ForecastRisk.high
-
-    def test_risk_level_critical_at_60(self):
-        assert self.eng._risk_level(60.0) == ForecastRisk.critical
-
-    def test_risk_level_critical_above_60(self):
-        assert self.eng._risk_level(80.0) == ForecastRisk.critical
-        assert self.eng._risk_level(100.0) == ForecastRisk.critical
-
-
-# ===========================================================================
-# 8. SEVERITY LEVELS
-# ===========================================================================
-
-class TestSeverityLevels:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def test_reliable_below_20(self):
-        assert self.eng._severity(0.0) == ForecastSeverity.reliable
-        assert self.eng._severity(19.9) == ForecastSeverity.reliable
-
-    def test_variable_at_20(self):
-        assert self.eng._severity(20.0) == ForecastSeverity.variable
-
-    def test_variable_below_40(self):
-        assert self.eng._severity(30.0) == ForecastSeverity.variable
-        assert self.eng._severity(39.9) == ForecastSeverity.variable
-
-    def test_unreliable_at_40(self):
-        assert self.eng._severity(40.0) == ForecastSeverity.unreliable
-
-    def test_unreliable_below_60(self):
-        assert self.eng._severity(50.0) == ForecastSeverity.unreliable
-        assert self.eng._severity(59.9) == ForecastSeverity.unreliable
-
-    def test_chaotic_at_60(self):
-        assert self.eng._severity(60.0) == ForecastSeverity.chaotic
-
-    def test_chaotic_above_60(self):
-        assert self.eng._severity(75.0) == ForecastSeverity.chaotic
-        assert self.eng._severity(100.0) == ForecastSeverity.chaotic
-
-    def test_severity_matches_risk_thresholds(self):
-        # Severity and risk use same composite thresholds
-        for composite in [0, 10, 19.9, 20, 30, 39.9, 40, 50, 59.9, 60, 80, 100]:
-            risk = self.eng._risk_level(composite)
-            sev = self.eng._severity(composite)
-            if risk == ForecastRisk.low:
-                assert sev == ForecastSeverity.reliable
-            elif risk == ForecastRisk.moderate:
-                assert sev == ForecastSeverity.variable
-            elif risk == ForecastRisk.high:
-                assert sev == ForecastSeverity.unreliable
-            elif risk == ForecastRisk.critical:
-                assert sev == ForecastSeverity.chaotic
-
-
-# ===========================================================================
-# 9. ACTIONS
-# ===========================================================================
-
-class TestActions:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _action(self, risk, pattern):
-        return self.eng._action(risk, pattern)
-
-    # critical + systematic_overforecast -> forecast_override
-    def test_critical_systematic_overforecast(self):
-        assert self._action(ForecastRisk.critical, ForecastPattern.systematic_overforecast) == ForecastAction.forecast_override
-
-    # critical + pipeline_gap -> pipeline_inspection
-    def test_critical_pipeline_gap(self):
-        assert self._action(ForecastRisk.critical, ForecastPattern.pipeline_gap) == ForecastAction.pipeline_inspection
-
-    # critical + other patterns -> forecast_review_cadence
-    def test_critical_sandbag_behavior(self):
-        assert self._action(ForecastRisk.critical, ForecastPattern.sandbag_behavior) == ForecastAction.forecast_review_cadence
-
-    def test_critical_crm_neglect(self):
-        assert self._action(ForecastRisk.critical, ForecastPattern.crm_neglect) == ForecastAction.forecast_review_cadence
-
-    def test_critical_stage_manipulation(self):
-        assert self._action(ForecastRisk.critical, ForecastPattern.stage_manipulation) == ForecastAction.forecast_review_cadence
-
-    def test_critical_none(self):
-        assert self._action(ForecastRisk.critical, ForecastPattern.none) == ForecastAction.forecast_review_cadence
-
-    # high + crm_neglect -> crm_training
-    def test_high_crm_neglect(self):
-        assert self._action(ForecastRisk.high, ForecastPattern.crm_neglect) == ForecastAction.crm_training
-
-    # high + sandbag_behavior -> forecast_review_cadence
-    def test_high_sandbag_behavior(self):
-        assert self._action(ForecastRisk.high, ForecastPattern.sandbag_behavior) == ForecastAction.forecast_review_cadence
-
-    # high + other patterns -> pipeline_inspection
-    def test_high_systematic_overforecast(self):
-        assert self._action(ForecastRisk.high, ForecastPattern.systematic_overforecast) == ForecastAction.pipeline_inspection
-
-    def test_high_pipeline_gap(self):
-        assert self._action(ForecastRisk.high, ForecastPattern.pipeline_gap) == ForecastAction.pipeline_inspection
-
-    def test_high_stage_manipulation(self):
-        assert self._action(ForecastRisk.high, ForecastPattern.stage_manipulation) == ForecastAction.pipeline_inspection
-
-    def test_high_none(self):
-        assert self._action(ForecastRisk.high, ForecastPattern.none) == ForecastAction.pipeline_inspection
-
-    # moderate -> forecast_recalibration (regardless of pattern)
-    def test_moderate_none(self):
-        assert self._action(ForecastRisk.moderate, ForecastPattern.none) == ForecastAction.forecast_recalibration
-
-    def test_moderate_systematic_overforecast(self):
-        assert self._action(ForecastRisk.moderate, ForecastPattern.systematic_overforecast) == ForecastAction.forecast_recalibration
-
-    def test_moderate_pipeline_gap(self):
-        assert self._action(ForecastRisk.moderate, ForecastPattern.pipeline_gap) == ForecastAction.forecast_recalibration
-
-    def test_moderate_crm_neglect(self):
-        assert self._action(ForecastRisk.moderate, ForecastPattern.crm_neglect) == ForecastAction.forecast_recalibration
-
-    def test_moderate_sandbag_behavior(self):
-        assert self._action(ForecastRisk.moderate, ForecastPattern.sandbag_behavior) == ForecastAction.forecast_recalibration
-
-    def test_moderate_stage_manipulation(self):
-        assert self._action(ForecastRisk.moderate, ForecastPattern.stage_manipulation) == ForecastAction.forecast_recalibration
-
-    # low -> no_action (regardless of pattern)
-    def test_low_none(self):
-        assert self._action(ForecastRisk.low, ForecastPattern.none) == ForecastAction.no_action
-
-    def test_low_systematic_overforecast(self):
-        assert self._action(ForecastRisk.low, ForecastPattern.systematic_overforecast) == ForecastAction.no_action
-
-    def test_low_pipeline_gap(self):
-        assert self._action(ForecastRisk.low, ForecastPattern.pipeline_gap) == ForecastAction.no_action
-
-    def test_low_crm_neglect(self):
-        assert self._action(ForecastRisk.low, ForecastPattern.crm_neglect) == ForecastAction.no_action
-
-    def test_low_sandbag_behavior(self):
-        assert self._action(ForecastRisk.low, ForecastPattern.sandbag_behavior) == ForecastAction.no_action
-
-    def test_low_stage_manipulation(self):
-        assert self._action(ForecastRisk.low, ForecastPattern.stage_manipulation) == ForecastAction.no_action
-
-
-# ===========================================================================
-# 10. is_forecast_unreliable FLAG
-# ===========================================================================
-
-class TestIsForecastUnreliable:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _flag(self, composite, **kw):
-        return self.eng._is_forecast_unreliable(composite, make_input(**kw))
-
-    def test_false_when_all_good(self):
-        # composite<40, commit_rate>=0.50, slippage<3
-        assert self._flag(30.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=4,
-                          late_stage_slippage_count=0) is False
-
-    def test_true_when_composite_at_40(self):
-        assert self._flag(40.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=4,
-                          late_stage_slippage_count=0) is True
-
-    def test_true_when_composite_above_40(self):
-        assert self._flag(60.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=4,
-                          late_stage_slippage_count=0) is True
-
-    def test_true_when_commit_rate_below_50(self):
-        # commit_rate = 2/5 = 0.40 < 0.50
-        assert self._flag(10.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=2,
-                          late_stage_slippage_count=0) is True
-
-    def test_true_when_commit_rate_exactly_50_boundary(self):
-        # 2.5/5 = 0.50 => NOT < 0.50, so false if other conditions not met
-        assert self._flag(10.0,
-                          forecast_commit_count=4, forecast_commit_closed_count=2,
-                          late_stage_slippage_count=0) is False
-
-    def test_true_when_slippage_exactly_3(self):
-        assert self._flag(10.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=5,
-                          late_stage_slippage_count=3) is True
-
-    def test_true_when_slippage_above_3(self):
-        assert self._flag(10.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=5,
-                          late_stage_slippage_count=5) is True
-
-    def test_false_when_slippage_exactly_2(self):
-        assert self._flag(10.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=5,
-                          late_stage_slippage_count=2) is False
-
-    def test_commit_count_zero_commit_rate_zero_triggers_unreliable(self):
-        # commit_rate = 0/max(0,1) = 0 < 0.50
-        assert self._flag(10.0,
-                          forecast_commit_count=0, forecast_commit_closed_count=0,
-                          late_stage_slippage_count=0) is True
-
-    def test_all_conditions_true(self):
-        assert self._flag(50.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=1,
-                          late_stage_slippage_count=5) is True
-
-    def test_returns_bool(self):
-        result = self._flag(0.0)
-        assert isinstance(result, bool)
-
-    def test_assess_unreliable_flag_via_assess(self, engine=None):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        # Force commit_rate < 0.50
-        inp = make_input(forecast_commit_count=10, forecast_commit_closed_count=3,
-                         late_stage_slippage_count=0)
-        r = eng.assess(inp)
-        assert r.is_forecast_unreliable is True
-
-    def test_assess_reliable_flag_via_assess(self, engine=None):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        inp = make_input(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5,
-            forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            late_stage_slippage_count=0,
-            avg_close_date_slip_days=0.0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-            pipeline_coverage_ratio=5.0,
-            avg_deal_age_days=10.0,
-            stage_advancement_rate_pct=0.90,
-            multi_stakeholder_deals_pct=0.90,
-            crm_update_frequency_score=9.0,
-            sandbagged_deals_identified=0,
-            forecast_underestimate_count=0,
-        )
-        r = eng.assess(inp)
-        assert r.is_forecast_unreliable is False
-
-
-# ===========================================================================
-# 11. requires_pipeline_inspection FLAG
-# ===========================================================================
-
-class TestRequiresPipelineInspection:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _flag(self, composite, **kw):
-        return self.eng._requires_pipeline_inspection(composite, make_input(**kw))
-
-    def test_false_when_all_good(self):
-        assert self._flag(10.0,
-                          pipeline_coverage_ratio=4.0, avg_close_date_slip_days=5.0) is False
-
-    def test_true_when_composite_at_30(self):
-        assert self._flag(30.0,
-                          pipeline_coverage_ratio=4.0, avg_close_date_slip_days=5.0) is True
-
-    def test_true_when_composite_above_30(self):
-        assert self._flag(50.0,
-                          pipeline_coverage_ratio=4.0, avg_close_date_slip_days=5.0) is True
-
-    def test_true_when_coverage_below_2_5(self):
-        assert self._flag(10.0,
-                          pipeline_coverage_ratio=2.0, avg_close_date_slip_days=5.0) is True
-
-    def test_false_when_coverage_at_2_5(self):
-        # coverage == 2.5 is NOT < 2.5
-        assert self._flag(10.0,
-                          pipeline_coverage_ratio=2.5, avg_close_date_slip_days=5.0) is False
-
-    def test_true_when_close_slip_at_30(self):
-        assert self._flag(10.0,
-                          pipeline_coverage_ratio=4.0, avg_close_date_slip_days=30.0) is True
-
-    def test_true_when_close_slip_above_30(self):
-        assert self._flag(10.0,
-                          pipeline_coverage_ratio=4.0, avg_close_date_slip_days=60.0) is True
-
-    def test_false_when_close_slip_below_30(self):
-        assert self._flag(10.0,
-                          pipeline_coverage_ratio=4.0, avg_close_date_slip_days=29.9) is False
-
-    def test_all_conditions_met(self):
-        assert self._flag(35.0,
-                          pipeline_coverage_ratio=1.0, avg_close_date_slip_days=60.0) is True
-
-    def test_returns_bool(self):
-        assert isinstance(self._flag(0.0), bool)
-
-    def test_composite_exactly_29_no_trigger(self):
-        assert self._flag(29.0,
-                          pipeline_coverage_ratio=4.0, avg_close_date_slip_days=5.0) is False
-
-
-# ===========================================================================
-# 12. ESTIMATED REVENUE VARIANCE
-# ===========================================================================
-
-class TestEstimatedRevenueVariance:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _variance(self, overestimate_count, avg_deal_size, composite):
-        inp = make_input(forecast_overestimate_count=overestimate_count,
-                         avg_deal_size_usd=avg_deal_size)
-        return self.eng._estimated_revenue_variance(inp, composite)
-
-    def test_zero_overestimates(self):
-        assert self._variance(0, 50000.0, 50.0) == 0.0
-
-    def test_zero_composite(self):
-        assert self._variance(5, 50000.0, 0.0) == 0.0
-
-    def test_zero_deal_size(self):
-        assert self._variance(5, 0.0, 50.0) == 0.0
-
-    def test_basic_calculation(self):
-        # 1 * 50000 * (30/100) = 15000.0
-        assert self._variance(1, 50000.0, 30.0) == 15000.0
-
-    def test_multiple_overestimates(self):
-        # 3 * 100000 * (50/100) = 150000.0
-        assert self._variance(3, 100000.0, 50.0) == 150000.0
-
-    def test_rounding_to_2_decimals(self):
-        # 1 * 33333.33 * (10/100) = 3333.333
-        result = self._variance(1, 33333.33, 10.0)
-        assert result == round(1 * 33333.33 * 0.10, 2)
-
-    def test_composite_100(self):
-        # 2 * 50000 * 1.0 = 100000.0
-        assert self._variance(2, 50000.0, 100.0) == 100000.0
-
-    def test_result_via_assess(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        inp = make_input(forecast_overestimate_count=2, avg_deal_size_usd=10000.0,
-                         avg_forecast_accuracy_pct=1.0,
-                         forecast_commit_count=5, forecast_commit_closed_count=5)
-        r = eng.assess(inp)
-        expected = round(2 * 10000.0 * r.forecast_effectiveness_composite / 100.0, 2)
-        assert r.estimated_revenue_variance_usd == expected
-
-    def test_returns_float(self):
-        assert isinstance(self._variance(1, 50000.0, 30.0), float)
-
-
-# ===========================================================================
-# 13. SIGNAL STRING
-# ===========================================================================
-
-class TestSignalString:
-    def setup_method(self):
-        self.eng = SalesForecastAccuracyIntelligenceEngine()
-
-    def _signal(self, pattern, composite, **kw):
-        inp = make_input(**kw)
-        return self.eng._signal(inp, pattern, composite)
-
-    def test_none_pattern_composite_below_20_returns_acceptable(self):
-        s = self._signal(ForecastPattern.none, 15.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert s == "Forecast accuracy within acceptable benchmarks"
-
-    def test_none_pattern_composite_exactly_19_returns_acceptable(self):
-        s = self._signal(ForecastPattern.none, 19.9,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert s == "Forecast accuracy within acceptable benchmarks"
-
-    def test_none_pattern_composite_0_returns_acceptable(self):
-        s = self._signal(ForecastPattern.none, 0.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert s == "Forecast accuracy within acceptable benchmarks"
-
-    def test_none_pattern_composite_at_20_returns_dynamic(self):
-        # composite>=20 with none pattern => not acceptable signal
-        s = self._signal(ForecastPattern.none, 20.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert s != "Forecast accuracy within acceptable benchmarks"
-
-    def test_none_pattern_composite_below_20_with_issues_acceptable(self):
-        # Pattern=none AND composite<20 => always returns acceptable string
-        s = self._signal(ForecastPattern.none, 10.0,
-                         forecast_overestimate_count=5, late_stage_slippage_count=3,
-                         sandbagged_deals_identified=2, deals_closed_not_forecasted_count=1)
-        assert s == "Forecast accuracy within acceptable benchmarks"
-
-    def test_systematic_overforecast_label_in_signal(self):
-        s = self._signal(ForecastPattern.systematic_overforecast, 50.0,
-                         forecast_overestimate_count=3, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "Systematic overforecast" in s
-
-    def test_overestimate_count_appears_in_signal(self):
-        s = self._signal(ForecastPattern.systematic_overforecast, 50.0,
-                         forecast_overestimate_count=5, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "5 over-forecasted deals" in s
-
-    def test_late_stage_slippage_appears_in_signal(self):
-        s = self._signal(ForecastPattern.stage_manipulation, 50.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=3,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "3 late-stage slippages" in s
-
-    def test_sandbagged_appears_in_signal(self):
-        s = self._signal(ForecastPattern.sandbag_behavior, 50.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=4, deals_closed_not_forecasted_count=0)
-        assert "4 sandbagged deals" in s
-
-    def test_unforecast_closes_appears_in_signal(self):
-        s = self._signal(ForecastPattern.crm_neglect, 50.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=2)
-        assert "2 unforecast closes" in s
-
-    def test_composite_value_in_signal(self):
-        s = self._signal(ForecastPattern.systematic_overforecast, 55.0,
-                         forecast_overestimate_count=3, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "composite 55" in s
-
-    def test_no_parts_gives_quality_degrading(self):
-        # All zeros => parts list is empty => "forecast quality degrading"
-        s = self._signal(ForecastPattern.none, 25.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "forecast quality degrading" in s
-
-    def test_none_pattern_with_composite_above_20_uses_forecast_risk_label(self):
-        s = self._signal(ForecastPattern.none, 30.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "Forecast risk" in s
-
-    def test_multiple_parts_joined_by_em_dash(self):
-        s = self._signal(ForecastPattern.systematic_overforecast, 50.0,
-                         forecast_overestimate_count=3, late_stage_slippage_count=2,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        # Both "3 over-forecasted deals" and "2 late-stage slippages" should appear
-        assert "3 over-forecasted deals" in s
-        assert "2 late-stage slippages" in s
-
-    def test_pipeline_gap_label_capitalized(self):
-        s = self._signal(ForecastPattern.pipeline_gap, 50.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "Pipeline gap" in s
-
-    def test_crm_neglect_label_capitalized(self):
-        s = self._signal(ForecastPattern.crm_neglect, 50.0,
-                         forecast_overestimate_count=0, late_stage_slippage_count=0,
-                         sandbagged_deals_identified=0, deals_closed_not_forecasted_count=0)
-        assert "Crm neglect" in s
-
-    def test_returns_string(self):
-        s = self._signal(ForecastPattern.none, 10.0)
-        assert isinstance(s, str)
-
-
-# ===========================================================================
-# 14. to_dict() — exactly 15 keys
-# ===========================================================================
-
-class TestToDict:
-    def test_to_dict_returns_15_keys(self, engine, good_input):
-        r = engine.assess(good_input)
-        d = r.to_dict()
+    def test_forecast_risk_str_equality(self):
+        assert ForecastRisk.low == "low"
+        assert ForecastRisk.critical == "critical"
+
+    def test_forecast_pattern_str_equality(self):
+        assert ForecastPattern.none == "none"
+        assert ForecastPattern.stage_inflation_blindspot == "stage_inflation_blindspot"
+
+
+# ---------------------------------------------------------------------------
+# 2. ForecastInput — all 22 fields
+# ---------------------------------------------------------------------------
+
+class TestForecastInput:
+    def test_all_22_fields_present(self):
+        inp = make_input()
+        fields = [
+            "rep_id", "region", "evaluation_period_id",
+            "forecast_vs_actual_variance_pct", "over_forecast_frequency_pct",
+            "under_forecast_frequency_pct", "commit_to_close_rate_pct",
+            "best_case_to_close_rate_pct", "pipeline_to_quota_ratio",
+            "late_add_to_forecast_pct", "deals_pulled_from_forecast_pct",
+            "avg_deal_slip_days", "stage_advancement_accuracy_pct",
+            "close_date_accuracy_within_week_pct", "forecast_change_frequency_per_qtr",
+            "upside_deals_closed_pct", "commit_deals_lost_pct",
+            "sandbag_conversion_rate_pct", "multi_quarter_slip_rate_pct",
+            "forecast_submitted_on_time_pct", "total_deals_forecasted",
+            "avg_opportunity_value_usd",
+        ]
+        assert len(fields) == 22
+        for f in fields:
+            assert hasattr(inp, f), f"Missing field: {f}"
+
+    def test_field_count_is_22(self):
+        from dataclasses import fields as dc_fields
+        assert len(dc_fields(ForecastInput)) == 22
+
+    def test_string_fields(self):
+        inp = make_input()
+        assert isinstance(inp.rep_id, str)
+        assert isinstance(inp.region, str)
+        assert isinstance(inp.evaluation_period_id, str)
+
+    def test_int_field(self):
+        inp = make_input()
+        assert isinstance(inp.total_deals_forecasted, int)
+
+    def test_float_fields(self):
+        inp = make_input()
+        float_fields = [
+            "forecast_vs_actual_variance_pct", "over_forecast_frequency_pct",
+            "under_forecast_frequency_pct", "commit_to_close_rate_pct",
+            "best_case_to_close_rate_pct", "pipeline_to_quota_ratio",
+            "late_add_to_forecast_pct", "deals_pulled_from_forecast_pct",
+            "avg_deal_slip_days", "stage_advancement_accuracy_pct",
+            "close_date_accuracy_within_week_pct", "forecast_change_frequency_per_qtr",
+            "upside_deals_closed_pct", "commit_deals_lost_pct",
+            "sandbag_conversion_rate_pct", "multi_quarter_slip_rate_pct",
+            "forecast_submitted_on_time_pct", "avg_opportunity_value_usd",
+        ]
+        for f in float_fields:
+            assert isinstance(getattr(inp, f), float), f"Expected float for {f}"
+
+
+# ---------------------------------------------------------------------------
+# 3. ForecastResult — all 15 fields + to_dict 15 keys
+# ---------------------------------------------------------------------------
+
+class TestForecastResult:
+    def test_15_fields_present(self, engine):
+        result = engine.assess(low_risk_input())
+        fields = [
+            "rep_id", "region", "forecast_risk", "forecast_pattern",
+            "forecast_severity", "recommended_action", "accuracy_score",
+            "discipline_score", "stage_score", "commit_score",
+            "forecast_composite", "has_forecast_gap", "requires_forecast_coaching",
+            "estimated_revenue_at_risk_usd", "forecast_signal",
+        ]
+        assert len(fields) == 15
+        for f in fields:
+            assert hasattr(result, f), f"Missing result field: {f}"
+
+    def test_field_count_is_15(self):
+        from dataclasses import fields as dc_fields
+        assert len(dc_fields(ForecastResult)) == 15
+
+    def test_to_dict_returns_15_keys(self, engine):
+        d = engine.assess(low_risk_input()).to_dict()
         assert len(d) == 15
 
-    def test_to_dict_has_rep_id(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "rep_id" in r.to_dict()
+    def test_to_dict_exact_keys(self, engine):
+        d = engine.assess(low_risk_input()).to_dict()
+        expected_keys = {
+            "rep_id", "region", "forecast_risk", "forecast_pattern",
+            "forecast_severity", "recommended_action", "accuracy_score",
+            "discipline_score", "stage_score", "commit_score",
+            "forecast_composite", "has_forecast_gap", "requires_forecast_coaching",
+            "estimated_revenue_at_risk_usd", "forecast_signal",
+        }
+        assert set(d.keys()) == expected_keys
 
-    def test_to_dict_has_region(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "region" in r.to_dict()
-
-    def test_to_dict_has_forecast_risk(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "forecast_risk" in r.to_dict()
-
-    def test_to_dict_has_forecast_pattern(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "forecast_pattern" in r.to_dict()
-
-    def test_to_dict_has_forecast_severity(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "forecast_severity" in r.to_dict()
-
-    def test_to_dict_has_recommended_action(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "recommended_action" in r.to_dict()
-
-    def test_to_dict_has_forecast_accuracy_score(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "forecast_accuracy_score" in r.to_dict()
-
-    def test_to_dict_has_forecast_discipline_score(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "forecast_discipline_score" in r.to_dict()
-
-    def test_to_dict_has_pipeline_health_score(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "pipeline_health_score" in r.to_dict()
-
-    def test_to_dict_has_crm_hygiene_score(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "crm_hygiene_score" in r.to_dict()
-
-    def test_to_dict_has_composite(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "forecast_effectiveness_composite" in r.to_dict()
-
-    def test_to_dict_has_is_forecast_unreliable(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "is_forecast_unreliable" in r.to_dict()
-
-    def test_to_dict_has_requires_pipeline_inspection(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "requires_pipeline_inspection" in r.to_dict()
-
-    def test_to_dict_has_estimated_revenue_variance(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "estimated_revenue_variance_usd" in r.to_dict()
-
-    def test_to_dict_has_forecast_signal(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert "forecast_signal" in r.to_dict()
-
-    def test_to_dict_enum_values_are_strings(self, engine, good_input):
-        r = engine.assess(good_input)
-        d = r.to_dict()
+    def test_to_dict_enum_values_are_strings(self, engine):
+        d = engine.assess(low_risk_input()).to_dict()
         assert isinstance(d["forecast_risk"], str)
         assert isinstance(d["forecast_pattern"], str)
         assert isinstance(d["forecast_severity"], str)
         assert isinstance(d["recommended_action"], str)
 
-    def test_to_dict_rep_id_value(self, engine):
-        inp = make_input(rep_id="rep_xyz")
-        r = engine.assess(inp)
-        assert r.to_dict()["rep_id"] == "rep_xyz"
+    def test_to_dict_rep_id_and_region(self, engine):
+        inp = make_input(rep_id="rep-XYZ", region="East")
+        d = engine.assess(inp).to_dict()
+        assert d["rep_id"] == "rep-XYZ"
+        assert d["region"] == "East"
 
-    def test_to_dict_region_value(self, engine):
-        inp = make_input(region="East")
-        r = engine.assess(inp)
-        assert r.to_dict()["region"] == "East"
+    def test_to_dict_bool_values_preserved(self, engine):
+        d = engine.assess(low_risk_input()).to_dict()
+        assert isinstance(d["has_forecast_gap"], bool)
+        assert isinstance(d["requires_forecast_coaching"], bool)
 
-    def test_to_dict_returns_dict(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert isinstance(r.to_dict(), dict)
+    def test_to_dict_numeric_values(self, engine):
+        d = engine.assess(low_risk_input()).to_dict()
+        for field in ["accuracy_score", "discipline_score", "stage_score",
+                      "commit_score", "forecast_composite", "estimated_revenue_at_risk_usd"]:
+            assert isinstance(d[field], (int, float)), f"Expected numeric for {field}"
 
-    def test_to_dict_exact_keys(self, engine, good_input):
-        r = engine.assess(good_input)
-        expected_keys = {
-            "rep_id", "region", "forecast_risk", "forecast_pattern",
-            "forecast_severity", "recommended_action", "forecast_accuracy_score",
-            "forecast_discipline_score", "pipeline_health_score", "crm_hygiene_score",
-            "forecast_effectiveness_composite", "is_forecast_unreliable",
-            "requires_pipeline_inspection", "estimated_revenue_variance_usd",
-            "forecast_signal",
-        }
-        assert set(r.to_dict().keys()) == expected_keys
+    def test_to_dict_returns_dict_type(self, engine):
+        assert isinstance(engine.assess(low_risk_input()).to_dict(), dict)
 
 
-# ===========================================================================
-# 15. summary() — exactly 13 keys
-# ===========================================================================
+# ---------------------------------------------------------------------------
+# 4. Accuracy sub-score branches and cap
+# ---------------------------------------------------------------------------
 
-class TestSummary:
-    def test_empty_summary_returns_13_keys(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        s = eng.summary()
-        assert len(s) == 13
+class TestAccuracyScore:
+    """_accuracy_score: higher score = more risk."""
 
-    def test_empty_summary_total_zero(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["total"] == 0
+    def _get(self, engine, **kw) -> float:
+        return engine._accuracy_score(make_input(**kw))
 
-    def test_empty_summary_avg_composite_zero(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["avg_forecast_effectiveness_composite"] == 0.0
+    # forecast_vs_actual_variance_pct
+    def test_variance_below_10_adds_0(self, engine):
+        assert self._get(engine,
+            forecast_vs_actual_variance_pct=0.05,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 0.0
 
-    def test_empty_summary_unreliable_count_zero(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["unreliable_forecast_count"] == 0
+    def test_variance_at_10_adds_8(self, engine):
+        assert self._get(engine,
+            forecast_vs_actual_variance_pct=0.10,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 8.0
 
-    def test_empty_summary_inspection_count_zero(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["pipeline_inspection_count"] == 0
+    def test_variance_just_below_20_adds_8(self, engine):
+        assert self._get(engine,
+            forecast_vs_actual_variance_pct=0.19,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 8.0
 
-    def test_empty_summary_variance_zero(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["total_estimated_revenue_variance_usd"] == 0.0
+    def test_variance_at_20_adds_22(self, engine):
+        assert self._get(engine,
+            forecast_vs_actual_variance_pct=0.20,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 22.0
 
-    def test_empty_summary_risk_counts_empty(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["risk_counts"] == {}
+    def test_variance_just_below_40_adds_22(self, engine):
+        assert self._get(engine,
+            forecast_vs_actual_variance_pct=0.39,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 22.0
 
-    def test_empty_summary_pattern_counts_empty(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["pattern_counts"] == {}
+    def test_variance_at_40_adds_40(self, engine):
+        assert self._get(engine,
+            forecast_vs_actual_variance_pct=0.40,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 40.0
 
-    def test_empty_summary_severity_counts_empty(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["severity_counts"] == {}
+    def test_variance_above_40_still_adds_40(self, engine):
+        assert self._get(engine,
+            forecast_vs_actual_variance_pct=0.99,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 40.0
 
-    def test_empty_summary_action_counts_empty(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        assert eng.summary()["action_counts"] == {}
+    # commit_deals_lost_pct
+    def test_commit_lost_below_20_adds_0(self, engine):
+        assert self._get(engine,
+            commit_deals_lost_pct=0.10,
+            forecast_vs_actual_variance_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 0.0
 
-    def test_summary_13_keys_after_assess(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert len(eng.summary()) == 13
+    def test_commit_lost_at_20_adds_18(self, engine):
+        assert self._get(engine,
+            commit_deals_lost_pct=0.20,
+            forecast_vs_actual_variance_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 18.0
 
-    def test_summary_total_after_one_assess(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert eng.summary()["total"] == 1
+    def test_commit_lost_just_below_40_adds_18(self, engine):
+        assert self._get(engine,
+            commit_deals_lost_pct=0.39,
+            forecast_vs_actual_variance_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 18.0
 
-    def test_summary_total_after_three_assesses(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        for _ in range(3):
-            eng.assess(make_input())
-        assert eng.summary()["total"] == 3
+    def test_commit_lost_at_40_adds_35(self, engine):
+        assert self._get(engine,
+            commit_deals_lost_pct=0.40,
+            forecast_vs_actual_variance_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 35.0
 
-    def test_summary_risk_counts_populated(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        s = eng.summary()
-        assert sum(s["risk_counts"].values()) == 1
+    def test_commit_lost_above_40_still_adds_35(self, engine):
+        assert self._get(engine,
+            commit_deals_lost_pct=0.80,
+            forecast_vs_actual_variance_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80) == 35.0
 
-    def test_summary_pattern_counts_populated(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        s = eng.summary()
-        assert sum(s["pattern_counts"].values()) == 1
+    # close_date_accuracy_within_week_pct
+    def test_close_date_above_55_adds_0(self, engine):
+        assert self._get(engine,
+            close_date_accuracy_within_week_pct=0.80,
+            forecast_vs_actual_variance_pct=0.05,
+            commit_deals_lost_pct=0.05) == 0.0
 
-    def test_summary_avg_composite_is_float(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert isinstance(eng.summary()["avg_forecast_effectiveness_composite"], float)
+    def test_close_date_at_55_adds_12(self, engine):
+        assert self._get(engine,
+            close_date_accuracy_within_week_pct=0.55,
+            forecast_vs_actual_variance_pct=0.05,
+            commit_deals_lost_pct=0.05) == 12.0
 
-    def test_summary_avg_accuracy_score_is_float(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert isinstance(eng.summary()["avg_forecast_accuracy_score"], float)
+    def test_close_date_just_above_30_adds_12(self, engine):
+        assert self._get(engine,
+            close_date_accuracy_within_week_pct=0.31,
+            forecast_vs_actual_variance_pct=0.05,
+            commit_deals_lost_pct=0.05) == 12.0
 
-    def test_summary_avg_discipline_score_is_float(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert isinstance(eng.summary()["avg_forecast_discipline_score"], float)
+    def test_close_date_at_30_adds_25(self, engine):
+        assert self._get(engine,
+            close_date_accuracy_within_week_pct=0.30,
+            forecast_vs_actual_variance_pct=0.05,
+            commit_deals_lost_pct=0.05) == 25.0
 
-    def test_summary_avg_pipeline_score_is_float(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert isinstance(eng.summary()["avg_pipeline_health_score"], float)
+    def test_close_date_below_30_adds_25(self, engine):
+        assert self._get(engine,
+            close_date_accuracy_within_week_pct=0.10,
+            forecast_vs_actual_variance_pct=0.05,
+            commit_deals_lost_pct=0.05) == 25.0
 
-    def test_summary_avg_crm_score_is_float(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert isinstance(eng.summary()["avg_crm_hygiene_score"], float)
+    # cap
+    def test_accuracy_score_exactly_100(self, engine):
+        # 40 + 35 + 25 = 100
+        score = self._get(engine,
+            forecast_vs_actual_variance_pct=0.50,
+            commit_deals_lost_pct=0.50,
+            close_date_accuracy_within_week_pct=0.20)
+        assert score == 100.0
 
-    def test_summary_total_variance_is_float(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        assert isinstance(eng.summary()["total_estimated_revenue_variance_usd"], float)
-
-    def test_summary_exact_keys(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        eng.assess(make_input())
-        expected_keys = {
-            "total", "risk_counts", "pattern_counts", "severity_counts",
-            "action_counts", "avg_forecast_effectiveness_composite",
-            "unreliable_forecast_count", "pipeline_inspection_count",
-            "avg_forecast_accuracy_score", "avg_forecast_discipline_score",
-            "avg_pipeline_health_score", "avg_crm_hygiene_score",
-            "total_estimated_revenue_variance_usd",
-        }
-        assert set(eng.summary().keys()) == expected_keys
-
-    def test_summary_unreliable_count_counted_correctly(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        # Force 2 unreliable (commit_rate < 0.50) and 1 reliable
-        eng.assess(make_input(forecast_commit_count=10, forecast_commit_closed_count=2))
-        eng.assess(make_input(forecast_commit_count=10, forecast_commit_closed_count=3))
-        eng.assess(make_input(forecast_commit_count=5, forecast_commit_closed_count=5,
-                               avg_forecast_accuracy_pct=1.0,
-                               forecast_overestimate_count=0,
-                               late_stage_slippage_count=0,
-                               avg_close_date_slip_days=0.0,
-                               deals_closed_not_forecasted_count=0,
-                               manager_review_sessions_count=5,
-                               pipeline_coverage_ratio=5.0,
-                               avg_deal_age_days=10.0,
-                               stage_advancement_rate_pct=0.90,
-                               multi_stakeholder_deals_pct=0.90,
-                               crm_update_frequency_score=9.0,
-                               sandbagged_deals_identified=0,
-                               forecast_underestimate_count=0))
-        assert eng.summary()["unreliable_forecast_count"] == 2
-
-    def test_summary_total_variance_sum(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        inp1 = make_input(forecast_overestimate_count=2, avg_deal_size_usd=10000.0)
-        inp2 = make_input(forecast_overestimate_count=3, avg_deal_size_usd=20000.0)
-        r1 = eng.assess(inp1)
-        r2 = eng.assess(inp2)
-        expected = round(r1.estimated_revenue_variance_usd + r2.estimated_revenue_variance_usd, 2)
-        assert eng.summary()["total_estimated_revenue_variance_usd"] == expected
+    def test_accuracy_score_capped_at_100(self, engine):
+        score = engine._accuracy_score(make_input(
+            forecast_vs_actual_variance_pct=0.99,
+            commit_deals_lost_pct=0.99,
+            close_date_accuracy_within_week_pct=0.01))
+        assert score <= 100.0
 
 
-# ===========================================================================
-# 16. assess_batch()
-# ===========================================================================
+# ---------------------------------------------------------------------------
+# 5. Discipline sub-score branches and cap
+# ---------------------------------------------------------------------------
+
+class TestDisciplineScore:
+    def _get(self, engine, **kw) -> float:
+        return engine._discipline_score(make_input(**kw))
+
+    # forecast_change_frequency_per_qtr
+    def test_change_freq_below_15_adds_0(self, engine):
+        assert self._get(engine,
+            forecast_change_frequency_per_qtr=1.0,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05) == 0.0
+
+    def test_change_freq_at_15_adds_8(self, engine):
+        assert self._get(engine,
+            forecast_change_frequency_per_qtr=1.5,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05) == 8.0
+
+    def test_change_freq_just_below_3_adds_8(self, engine):
+        assert self._get(engine,
+            forecast_change_frequency_per_qtr=2.9,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05) == 8.0
+
+    def test_change_freq_at_3_adds_22(self, engine):
+        assert self._get(engine,
+            forecast_change_frequency_per_qtr=3.0,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05) == 22.0
+
+    def test_change_freq_just_below_5_adds_22(self, engine):
+        assert self._get(engine,
+            forecast_change_frequency_per_qtr=4.9,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05) == 22.0
+
+    def test_change_freq_at_5_adds_40(self, engine):
+        assert self._get(engine,
+            forecast_change_frequency_per_qtr=5.0,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05) == 40.0
+
+    def test_change_freq_above_5_still_adds_40(self, engine):
+        assert self._get(engine,
+            forecast_change_frequency_per_qtr=10.0,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05) == 40.0
+
+    # late_add_to_forecast_pct
+    def test_late_add_below_20_adds_0(self, engine):
+        assert self._get(engine,
+            late_add_to_forecast_pct=0.10,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05) == 0.0
+
+    def test_late_add_at_20_adds_18(self, engine):
+        assert self._get(engine,
+            late_add_to_forecast_pct=0.20,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05) == 18.0
+
+    def test_late_add_just_below_40_adds_18(self, engine):
+        assert self._get(engine,
+            late_add_to_forecast_pct=0.39,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05) == 18.0
+
+    def test_late_add_at_40_adds_35(self, engine):
+        assert self._get(engine,
+            late_add_to_forecast_pct=0.40,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05) == 35.0
+
+    def test_late_add_above_40_still_adds_35(self, engine):
+        assert self._get(engine,
+            late_add_to_forecast_pct=0.80,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05) == 35.0
+
+    # multi_quarter_slip_rate_pct
+    def test_slip_below_15_adds_0(self, engine):
+        assert self._get(engine,
+            multi_quarter_slip_rate_pct=0.10,
+            forecast_change_frequency_per_qtr=0.5,
+            late_add_to_forecast_pct=0.05) == 0.0
+
+    def test_slip_at_15_adds_12(self, engine):
+        assert self._get(engine,
+            multi_quarter_slip_rate_pct=0.15,
+            forecast_change_frequency_per_qtr=0.5,
+            late_add_to_forecast_pct=0.05) == 12.0
+
+    def test_slip_just_below_35_adds_12(self, engine):
+        assert self._get(engine,
+            multi_quarter_slip_rate_pct=0.34,
+            forecast_change_frequency_per_qtr=0.5,
+            late_add_to_forecast_pct=0.05) == 12.0
+
+    def test_slip_at_35_adds_25(self, engine):
+        assert self._get(engine,
+            multi_quarter_slip_rate_pct=0.35,
+            forecast_change_frequency_per_qtr=0.5,
+            late_add_to_forecast_pct=0.05) == 25.0
+
+    def test_slip_above_35_still_adds_25(self, engine):
+        assert self._get(engine,
+            multi_quarter_slip_rate_pct=0.80,
+            forecast_change_frequency_per_qtr=0.5,
+            late_add_to_forecast_pct=0.05) == 25.0
+
+    # cap
+    def test_discipline_score_exactly_100(self, engine):
+        # 40 + 35 + 25 = 100
+        score = self._get(engine,
+            forecast_change_frequency_per_qtr=6.0,
+            late_add_to_forecast_pct=0.50,
+            multi_quarter_slip_rate_pct=0.40)
+        assert score == 100.0
+
+    def test_discipline_score_capped_at_100(self, engine):
+        score = engine._discipline_score(make_input(
+            forecast_change_frequency_per_qtr=99.0,
+            late_add_to_forecast_pct=0.99,
+            multi_quarter_slip_rate_pct=0.99))
+        assert score <= 100.0
+
+
+# ---------------------------------------------------------------------------
+# 6. Stage sub-score branches and cap
+# ---------------------------------------------------------------------------
+
+class TestStageScore:
+    def _get(self, engine, **kw) -> float:
+        return engine._stage_score(make_input(**kw))
+
+    # stage_advancement_accuracy_pct
+    def test_stage_acc_above_75_adds_0(self, engine):
+        assert self._get(engine,
+            stage_advancement_accuracy_pct=0.80,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0) == 0.0
+
+    def test_stage_acc_at_75_adds_8(self, engine):
+        assert self._get(engine,
+            stage_advancement_accuracy_pct=0.75,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0) == 8.0
+
+    def test_stage_acc_just_above_60_adds_8(self, engine):
+        assert self._get(engine,
+            stage_advancement_accuracy_pct=0.61,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0) == 8.0
+
+    def test_stage_acc_at_60_adds_22(self, engine):
+        assert self._get(engine,
+            stage_advancement_accuracy_pct=0.60,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0) == 22.0
+
+    def test_stage_acc_just_above_40_adds_22(self, engine):
+        assert self._get(engine,
+            stage_advancement_accuracy_pct=0.41,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0) == 22.0
+
+    def test_stage_acc_at_40_adds_40(self, engine):
+        assert self._get(engine,
+            stage_advancement_accuracy_pct=0.40,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0) == 40.0
+
+    def test_stage_acc_below_40_still_adds_40(self, engine):
+        assert self._get(engine,
+            stage_advancement_accuracy_pct=0.10,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0) == 40.0
+
+    # deals_pulled_from_forecast_pct
+    def test_deals_pulled_below_20_adds_0(self, engine):
+        assert self._get(engine,
+            deals_pulled_from_forecast_pct=0.10,
+            stage_advancement_accuracy_pct=0.90,
+            avg_deal_slip_days=5.0) == 0.0
+
+    def test_deals_pulled_at_20_adds_18(self, engine):
+        assert self._get(engine,
+            deals_pulled_from_forecast_pct=0.20,
+            stage_advancement_accuracy_pct=0.90,
+            avg_deal_slip_days=5.0) == 18.0
+
+    def test_deals_pulled_just_below_35_adds_18(self, engine):
+        assert self._get(engine,
+            deals_pulled_from_forecast_pct=0.34,
+            stage_advancement_accuracy_pct=0.90,
+            avg_deal_slip_days=5.0) == 18.0
+
+    def test_deals_pulled_at_35_adds_35(self, engine):
+        assert self._get(engine,
+            deals_pulled_from_forecast_pct=0.35,
+            stage_advancement_accuracy_pct=0.90,
+            avg_deal_slip_days=5.0) == 35.0
+
+    def test_deals_pulled_above_35_still_adds_35(self, engine):
+        assert self._get(engine,
+            deals_pulled_from_forecast_pct=0.80,
+            stage_advancement_accuracy_pct=0.90,
+            avg_deal_slip_days=5.0) == 35.0
+
+    # avg_deal_slip_days
+    def test_slip_days_below_14_adds_0(self, engine):
+        assert self._get(engine,
+            avg_deal_slip_days=10.0,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05) == 0.0
+
+    def test_slip_days_at_14_adds_12(self, engine):
+        assert self._get(engine,
+            avg_deal_slip_days=14.0,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05) == 12.0
+
+    def test_slip_days_just_below_30_adds_12(self, engine):
+        assert self._get(engine,
+            avg_deal_slip_days=29.9,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05) == 12.0
+
+    def test_slip_days_at_30_adds_25(self, engine):
+        assert self._get(engine,
+            avg_deal_slip_days=30.0,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05) == 25.0
+
+    def test_slip_days_above_30_still_adds_25(self, engine):
+        assert self._get(engine,
+            avg_deal_slip_days=90.0,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05) == 25.0
+
+    # cap
+    def test_stage_score_exactly_100(self, engine):
+        # 40 + 35 + 25 = 100
+        score = self._get(engine,
+            stage_advancement_accuracy_pct=0.30,
+            deals_pulled_from_forecast_pct=0.40,
+            avg_deal_slip_days=35.0)
+        assert score == 100.0
+
+    def test_stage_score_capped_at_100(self, engine):
+        score = engine._stage_score(make_input(
+            stage_advancement_accuracy_pct=0.01,
+            deals_pulled_from_forecast_pct=0.99,
+            avg_deal_slip_days=999.0))
+        assert score <= 100.0
+
+
+# ---------------------------------------------------------------------------
+# 7. Commit sub-score branches and cap
+# ---------------------------------------------------------------------------
+
+class TestCommitScore:
+    def _get(self, engine, **kw) -> float:
+        return engine._commit_score(make_input(**kw))
+
+    # commit_to_close_rate_pct
+    def test_commit_close_above_75_adds_0(self, engine):
+        assert self._get(engine,
+            commit_to_close_rate_pct=0.80,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10) == 0.0
+
+    def test_commit_close_at_75_adds_10(self, engine):
+        assert self._get(engine,
+            commit_to_close_rate_pct=0.75,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10) == 10.0
+
+    def test_commit_close_just_above_60_adds_10(self, engine):
+        assert self._get(engine,
+            commit_to_close_rate_pct=0.61,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10) == 10.0
+
+    def test_commit_close_at_60_adds_25(self, engine):
+        assert self._get(engine,
+            commit_to_close_rate_pct=0.60,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10) == 25.0
+
+    def test_commit_close_just_above_40_adds_25(self, engine):
+        assert self._get(engine,
+            commit_to_close_rate_pct=0.41,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10) == 25.0
+
+    def test_commit_close_at_40_adds_45(self, engine):
+        assert self._get(engine,
+            commit_to_close_rate_pct=0.40,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10) == 45.0
+
+    def test_commit_close_below_40_still_adds_45(self, engine):
+        assert self._get(engine,
+            commit_to_close_rate_pct=0.10,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10) == 45.0
+
+    # over_forecast_frequency_pct
+    def test_over_forecast_below_40_adds_0(self, engine):
+        assert self._get(engine,
+            over_forecast_frequency_pct=0.30,
+            commit_to_close_rate_pct=0.90,
+            under_forecast_frequency_pct=0.10) == 0.0
+
+    def test_over_forecast_at_40_adds_15(self, engine):
+        assert self._get(engine,
+            over_forecast_frequency_pct=0.40,
+            commit_to_close_rate_pct=0.90,
+            under_forecast_frequency_pct=0.10) == 15.0
+
+    def test_over_forecast_just_below_60_adds_15(self, engine):
+        assert self._get(engine,
+            over_forecast_frequency_pct=0.59,
+            commit_to_close_rate_pct=0.90,
+            under_forecast_frequency_pct=0.10) == 15.0
+
+    def test_over_forecast_at_60_adds_30(self, engine):
+        assert self._get(engine,
+            over_forecast_frequency_pct=0.60,
+            commit_to_close_rate_pct=0.90,
+            under_forecast_frequency_pct=0.10) == 30.0
+
+    def test_over_forecast_above_60_still_adds_30(self, engine):
+        assert self._get(engine,
+            over_forecast_frequency_pct=0.90,
+            commit_to_close_rate_pct=0.90,
+            under_forecast_frequency_pct=0.10) == 30.0
+
+    # under_forecast_frequency_pct
+    def test_under_forecast_below_30_adds_0(self, engine):
+        assert self._get(engine,
+            under_forecast_frequency_pct=0.20,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10) == 0.0
+
+    def test_under_forecast_at_30_adds_12(self, engine):
+        assert self._get(engine,
+            under_forecast_frequency_pct=0.30,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10) == 12.0
+
+    def test_under_forecast_just_below_50_adds_12(self, engine):
+        assert self._get(engine,
+            under_forecast_frequency_pct=0.49,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10) == 12.0
+
+    def test_under_forecast_at_50_adds_25(self, engine):
+        assert self._get(engine,
+            under_forecast_frequency_pct=0.50,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10) == 25.0
+
+    def test_under_forecast_above_50_still_adds_25(self, engine):
+        assert self._get(engine,
+            under_forecast_frequency_pct=0.90,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10) == 25.0
+
+    # cap
+    def test_commit_score_exactly_100(self, engine):
+        # 45 + 30 + 25 = 100
+        score = self._get(engine,
+            commit_to_close_rate_pct=0.30,
+            over_forecast_frequency_pct=0.70,
+            under_forecast_frequency_pct=0.60)
+        assert score == 100.0
+
+    def test_commit_score_capped_at_100(self, engine):
+        score = engine._commit_score(make_input(
+            commit_to_close_rate_pct=0.01,
+            over_forecast_frequency_pct=0.99,
+            under_forecast_frequency_pct=0.99))
+        assert score <= 100.0
+
+
+# ---------------------------------------------------------------------------
+# 8. Composite formula and weights
+# ---------------------------------------------------------------------------
+
+class TestCompositeFormula:
+    def test_composite_weights(self, engine):
+        """accuracy*0.35 + discipline*0.25 + stage*0.25 + commit*0.15"""
+        # accuracy: variance=0.10 (+8), commit_lost=0.20 (+18), close_date=0.80 (+0) = 26
+        # discipline: change_freq=1.5 (+8), late_add=0.05 (+0), slip=0.05 (+0) = 8
+        # stage: stage_acc=0.90 (+0), deals_pulled=0.05 (+0), slip_days=5.0 (+0) = 0
+        # commit: commit_close=0.90 (+0), over_freq=0.10 (+0), under_freq=0.10 (+0) = 0
+        inp = make_input(
+            forecast_vs_actual_variance_pct=0.10,
+            commit_deals_lost_pct=0.20,
+            close_date_accuracy_within_week_pct=0.80,
+            forecast_change_frequency_per_qtr=1.5,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10,
+        )
+        result = engine.assess(inp)
+        assert result.accuracy_score == 26.0
+        assert result.discipline_score == 8.0
+        assert result.stage_score == 0.0
+        assert result.commit_score == 0.0
+        expected = round(26.0 * 0.35 + 8.0 * 0.25 + 0.0 * 0.25 + 0.0 * 0.15, 1)
+        assert result.forecast_composite == expected
+
+    def test_composite_capped_at_100(self, engine):
+        result = engine.assess(critical_input())
+        assert result.forecast_composite <= 100.0
+
+    def test_composite_all_zeros(self, engine):
+        result = engine.assess(low_risk_input())
+        assert result.forecast_composite == 0.0
+
+    def test_composite_weighted_sum_formula(self, engine):
+        # Use known-value inputs to verify weights exactly
+        # accuracy=40, discipline=40, stage=40, commit=45 but commit capped still 45
+        # composite = 40*0.35 + 40*0.25 + 40*0.25 + 45*0.15 = 14+10+10+6.75 = 40.75
+        inp = make_input(
+            forecast_vs_actual_variance_pct=0.50,   # +40 accuracy
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80,
+            forecast_change_frequency_per_qtr=5.0,  # +40 discipline
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05,
+            stage_advancement_accuracy_pct=0.40,    # +40 stage
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0,
+            commit_to_close_rate_pct=0.40,          # +45 commit
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10,
+        )
+        result = engine.assess(inp)
+        assert result.accuracy_score == 40.0
+        assert result.discipline_score == 40.0
+        assert result.stage_score == 40.0
+        assert result.commit_score == 45.0
+        expected = round(40.0 * 0.35 + 40.0 * 0.25 + 40.0 * 0.25 + 45.0 * 0.15, 1)
+        assert result.forecast_composite == expected
+
+    def test_scores_rounded_to_1dp(self, engine):
+        result = engine.assess(make_input(forecast_vs_actual_variance_pct=0.15))
+        for score in [result.accuracy_score, result.discipline_score,
+                      result.stage_score, result.commit_score,
+                      result.forecast_composite]:
+            assert round(score, 1) == score
+
+
+# ---------------------------------------------------------------------------
+# 9. Pattern detection — all 6 patterns and priority
+# ---------------------------------------------------------------------------
+
+class TestPatternDetection:
+    """
+    Priority order:
+    1. stage_inflation_blindspot
+    2. chronic_over_forecasting
+    3. end_of_quarter_cliff
+    4. recency_bias_sandbagging
+    5. chronic_under_forecasting
+    6. none
+    """
+
+    def _detect(self, engine, **kw) -> ForecastPattern:
+        inp = make_input(**kw)
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        return engine._detect_pattern(inp, acc, dis, sta, com)
+
+    # --- none ---
+    def test_no_pattern_for_healthy_rep(self, engine):
+        assert self._detect(engine) == ForecastPattern.none
+
+    # --- stage_inflation_blindspot ---
+    def test_stage_inflation_blindspot_detected(self, engine):
+        pattern = self._detect(engine,
+            stage_advancement_accuracy_pct=0.35,
+            deals_pulled_from_forecast_pct=0.30)
+        assert pattern == ForecastPattern.stage_inflation_blindspot
+
+    def test_stage_inflation_at_exact_boundaries(self, engine):
+        pattern = self._detect(engine,
+            stage_advancement_accuracy_pct=0.35,
+            deals_pulled_from_forecast_pct=0.30)
+        assert pattern == ForecastPattern.stage_inflation_blindspot
+
+    def test_stage_inflation_stage_acc_just_above_35_no_match(self, engine):
+        pattern = self._detect(engine,
+            stage_advancement_accuracy_pct=0.36,
+            deals_pulled_from_forecast_pct=0.30)
+        assert pattern != ForecastPattern.stage_inflation_blindspot
+
+    def test_stage_inflation_deals_pulled_just_below_30_no_match(self, engine):
+        pattern = self._detect(engine,
+            stage_advancement_accuracy_pct=0.35,
+            deals_pulled_from_forecast_pct=0.29)
+        assert pattern != ForecastPattern.stage_inflation_blindspot
+
+    # --- chronic_over_forecasting ---
+    def test_chronic_over_forecasting_detected(self, engine):
+        pattern = self._detect(engine,
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,   # avoid blindspot
+            deals_pulled_from_forecast_pct=0.05)
+        assert pattern == ForecastPattern.chronic_over_forecasting
+
+    def test_chronic_over_forecasting_at_exact_boundaries(self, engine):
+        pattern = self._detect(engine,
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05)
+        assert pattern == ForecastPattern.chronic_over_forecasting
+
+    def test_chronic_over_freq_just_below_55_no_match(self, engine):
+        pattern = self._detect(engine,
+            over_forecast_frequency_pct=0.54,
+            commit_deals_lost_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05)
+        assert pattern != ForecastPattern.chronic_over_forecasting
+
+    def test_chronic_over_commit_lost_just_below_30_no_match(self, engine):
+        pattern = self._detect(engine,
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.29,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05)
+        assert pattern != ForecastPattern.chronic_over_forecasting
+
+    # --- end_of_quarter_cliff ---
+    def test_end_of_quarter_cliff_detected(self, engine):
+        # discipline >= 35: change_freq=5.0 → +40 → discipline=40 >= 35
+        inp = make_input(
+            forecast_change_frequency_per_qtr=5.0,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.25,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+        )
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        assert dis >= 35.0
+        pattern = engine._detect_pattern(inp, acc, dis, sta, com)
+        assert pattern == ForecastPattern.end_of_quarter_cliff
+
+    def test_end_of_quarter_cliff_discipline_just_below_35_no_match(self, engine):
+        # discipline=22 (change_freq=3.0, no other discipline pts)
+        inp = make_input(
+            forecast_change_frequency_per_qtr=3.0,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.25,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+        )
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        # change_freq=3.0 (+22) + slip=0.25 (+12) = 34, still < 35
+        assert dis == 34.0
+        assert dis < 35.0
+        pattern = engine._detect_pattern(inp, acc, dis, sta, com)
+        assert pattern != ForecastPattern.end_of_quarter_cliff
+
+    def test_end_of_quarter_cliff_slip_just_below_25_no_match(self, engine):
+        inp = make_input(
+            forecast_change_frequency_per_qtr=5.0,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.24,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+        )
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        pattern = engine._detect_pattern(inp, acc, dis, sta, com)
+        assert pattern != ForecastPattern.end_of_quarter_cliff
+
+    # --- recency_bias_sandbagging ---
+    def test_recency_bias_sandbagging_detected(self, engine):
+        pattern = self._detect(engine,
+            sandbag_conversion_rate_pct=0.50,
+            late_add_to_forecast_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05)
+        assert pattern == ForecastPattern.recency_bias_sandbagging
+
+    def test_recency_bias_at_exact_boundaries(self, engine):
+        pattern = self._detect(engine,
+            sandbag_conversion_rate_pct=0.50,
+            late_add_to_forecast_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05)
+        assert pattern == ForecastPattern.recency_bias_sandbagging
+
+    def test_recency_bias_sandbag_just_below_50_no_match(self, engine):
+        pattern = self._detect(engine,
+            sandbag_conversion_rate_pct=0.49,
+            late_add_to_forecast_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05)
+        assert pattern != ForecastPattern.recency_bias_sandbagging
+
+    def test_recency_bias_late_add_just_below_30_no_match(self, engine):
+        pattern = self._detect(engine,
+            sandbag_conversion_rate_pct=0.50,
+            late_add_to_forecast_pct=0.29,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05)
+        assert pattern != ForecastPattern.recency_bias_sandbagging
+
+    # --- chronic_under_forecasting ---
+    def test_chronic_under_forecasting_detected(self, engine):
+        # under_freq >= 0.45 and commit_score >= 30
+        # commit_score: commit_to_close=0.60 (+25), under_freq=0.45 (+12) → commit=37
+        inp = make_input(
+            under_forecast_frequency_pct=0.45,
+            commit_to_close_rate_pct=0.60,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05,
+            sandbag_conversion_rate_pct=0.10,
+            late_add_to_forecast_pct=0.05,
+        )
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        assert com >= 30
+        pattern = engine._detect_pattern(inp, acc, dis, sta, com)
+        assert pattern == ForecastPattern.chronic_under_forecasting
+
+    def test_chronic_under_freq_just_below_45_no_match(self, engine):
+        inp = make_input(
+            under_forecast_frequency_pct=0.44,
+            commit_to_close_rate_pct=0.60,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            over_forecast_frequency_pct=0.10,
+            commit_deals_lost_pct=0.05,
+            forecast_change_frequency_per_qtr=0.5,
+            multi_quarter_slip_rate_pct=0.05,
+            sandbag_conversion_rate_pct=0.10,
+            late_add_to_forecast_pct=0.05,
+        )
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        pattern = engine._detect_pattern(inp, acc, dis, sta, com)
+        assert pattern != ForecastPattern.chronic_under_forecasting
+
+    # --- priority tests ---
+    def test_stage_inflation_overrides_chronic_over_forecasting(self, engine):
+        # Both conditions met
+        pattern = self._detect(engine,
+            stage_advancement_accuracy_pct=0.35,
+            deals_pulled_from_forecast_pct=0.30,
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.30)
+        assert pattern == ForecastPattern.stage_inflation_blindspot
+
+    def test_chronic_over_overrides_end_of_quarter(self, engine):
+        inp = make_input(
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.30,
+            forecast_change_frequency_per_qtr=5.0,
+            multi_quarter_slip_rate_pct=0.25,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            late_add_to_forecast_pct=0.05,
+        )
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        pattern = engine._detect_pattern(inp, acc, dis, sta, com)
+        assert pattern == ForecastPattern.chronic_over_forecasting
+
+    def test_stage_inflation_overrides_all_others(self, engine):
+        # All conditions simultaneously met — stage_inflation should win
+        inp = make_input(
+            stage_advancement_accuracy_pct=0.35,
+            deals_pulled_from_forecast_pct=0.30,
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.30,
+            forecast_change_frequency_per_qtr=5.0,
+            multi_quarter_slip_rate_pct=0.25,
+            sandbag_conversion_rate_pct=0.50,
+            late_add_to_forecast_pct=0.30,
+            under_forecast_frequency_pct=0.45,
+            commit_to_close_rate_pct=0.40,
+        )
+        acc = engine._accuracy_score(inp)
+        dis = engine._discipline_score(inp)
+        sta = engine._stage_score(inp)
+        com = engine._commit_score(inp)
+        pattern = engine._detect_pattern(inp, acc, dis, sta, com)
+        assert pattern == ForecastPattern.stage_inflation_blindspot
+
+
+# ---------------------------------------------------------------------------
+# 10. Risk thresholds
+# ---------------------------------------------------------------------------
+
+class TestRiskLevel:
+    def test_risk_low_at_zero(self, engine):
+        assert engine._risk_level(0.0) == ForecastRisk.low
+
+    def test_risk_low_just_below_20(self, engine):
+        assert engine._risk_level(19.9) == ForecastRisk.low
+
+    def test_risk_moderate_at_20(self, engine):
+        assert engine._risk_level(20.0) == ForecastRisk.moderate
+
+    def test_risk_moderate_just_below_40(self, engine):
+        assert engine._risk_level(39.9) == ForecastRisk.moderate
+
+    def test_risk_high_at_40(self, engine):
+        assert engine._risk_level(40.0) == ForecastRisk.high
+
+    def test_risk_high_just_below_60(self, engine):
+        assert engine._risk_level(59.9) == ForecastRisk.high
+
+    def test_risk_critical_at_60(self, engine):
+        assert engine._risk_level(60.0) == ForecastRisk.critical
+
+    def test_risk_critical_at_100(self, engine):
+        assert engine._risk_level(100.0) == ForecastRisk.critical
+
+
+# ---------------------------------------------------------------------------
+# 11. Severity thresholds
+# ---------------------------------------------------------------------------
+
+class TestSeverity:
+    def test_severity_precise_at_zero(self, engine):
+        assert engine._severity(0.0) == ForecastSeverity.precise
+
+    def test_severity_precise_just_below_20(self, engine):
+        assert engine._severity(19.9) == ForecastSeverity.precise
+
+    def test_severity_calibrating_at_20(self, engine):
+        assert engine._severity(20.0) == ForecastSeverity.calibrating
+
+    def test_severity_calibrating_just_below_40(self, engine):
+        assert engine._severity(39.9) == ForecastSeverity.calibrating
+
+    def test_severity_drifting_at_40(self, engine):
+        assert engine._severity(40.0) == ForecastSeverity.drifting
+
+    def test_severity_drifting_just_below_60(self, engine):
+        assert engine._severity(59.9) == ForecastSeverity.drifting
+
+    def test_severity_unreliable_at_60(self, engine):
+        assert engine._severity(60.0) == ForecastSeverity.unreliable
+
+    def test_severity_unreliable_at_100(self, engine):
+        assert engine._severity(100.0) == ForecastSeverity.unreliable
+
+    def test_severity_mirrors_risk_thresholds(self, engine):
+        """Risk and severity use same composite thresholds."""
+        pairs = [
+            (0.0, ForecastSeverity.precise),
+            (19.9, ForecastSeverity.precise),
+            (20.0, ForecastSeverity.calibrating),
+            (39.9, ForecastSeverity.calibrating),
+            (40.0, ForecastSeverity.drifting),
+            (59.9, ForecastSeverity.drifting),
+            (60.0, ForecastSeverity.unreliable),
+            (100.0, ForecastSeverity.unreliable),
+        ]
+        for composite, expected_sev in pairs:
+            assert engine._severity(composite) == expected_sev
+
+
+# ---------------------------------------------------------------------------
+# 12. Action mappings — all branches
+# ---------------------------------------------------------------------------
+
+class TestActionMapping:
+    # critical
+    def test_critical_stage_inflation_blindspot(self, engine):
+        assert engine._action(ForecastRisk.critical, ForecastPattern.stage_inflation_blindspot) \
+               == ForecastAction.stage_criteria_coaching
+
+    def test_critical_chronic_over_forecasting(self, engine):
+        assert engine._action(ForecastRisk.critical, ForecastPattern.chronic_over_forecasting) \
+               == ForecastAction.commit_discipline_coaching
+
+    def test_critical_end_of_quarter_cliff(self, engine):
+        assert engine._action(ForecastRisk.critical, ForecastPattern.end_of_quarter_cliff) \
+               == ForecastAction.forecast_reset_intervention
+
+    def test_critical_recency_bias_sandbagging(self, engine):
+        assert engine._action(ForecastRisk.critical, ForecastPattern.recency_bias_sandbagging) \
+               == ForecastAction.forecast_reset_intervention
+
+    def test_critical_chronic_under_forecasting(self, engine):
+        assert engine._action(ForecastRisk.critical, ForecastPattern.chronic_under_forecasting) \
+               == ForecastAction.forecast_reset_intervention
+
+    def test_critical_none(self, engine):
+        assert engine._action(ForecastRisk.critical, ForecastPattern.none) \
+               == ForecastAction.forecast_reset_intervention
+
+    # high
+    def test_high_end_of_quarter_cliff(self, engine):
+        assert engine._action(ForecastRisk.high, ForecastPattern.end_of_quarter_cliff) \
+               == ForecastAction.pipeline_inspection_coaching
+
+    def test_high_recency_bias_sandbagging(self, engine):
+        assert engine._action(ForecastRisk.high, ForecastPattern.recency_bias_sandbagging) \
+               == ForecastAction.forecast_calibration_coaching
+
+    def test_high_stage_inflation_blindspot(self, engine):
+        assert engine._action(ForecastRisk.high, ForecastPattern.stage_inflation_blindspot) \
+               == ForecastAction.commit_discipline_coaching
+
+    def test_high_chronic_over_forecasting(self, engine):
+        assert engine._action(ForecastRisk.high, ForecastPattern.chronic_over_forecasting) \
+               == ForecastAction.commit_discipline_coaching
+
+    def test_high_chronic_under_forecasting(self, engine):
+        assert engine._action(ForecastRisk.high, ForecastPattern.chronic_under_forecasting) \
+               == ForecastAction.commit_discipline_coaching
+
+    def test_high_none(self, engine):
+        assert engine._action(ForecastRisk.high, ForecastPattern.none) \
+               == ForecastAction.commit_discipline_coaching
+
+    # moderate — always forecast_calibration_coaching regardless of pattern
+    def test_moderate_all_patterns(self, engine):
+        for p in ForecastPattern:
+            assert engine._action(ForecastRisk.moderate, p) \
+                   == ForecastAction.forecast_calibration_coaching
+
+    # low — always no_action regardless of pattern
+    def test_low_all_patterns(self, engine):
+        for p in ForecastPattern:
+            assert engine._action(ForecastRisk.low, p) == ForecastAction.no_action
+
+
+# ---------------------------------------------------------------------------
+# 13. has_forecast_gap flag
+# ---------------------------------------------------------------------------
+
+class TestHasForecastGap:
+    def test_gap_via_composite_at_40(self, engine):
+        assert engine._has_forecast_gap(40.0, make_input(
+            commit_deals_lost_pct=0.05, commit_to_close_rate_pct=0.90)) is True
+
+    def test_no_gap_composite_just_below_40(self, engine):
+        assert engine._has_forecast_gap(39.9, make_input(
+            commit_deals_lost_pct=0.05, commit_to_close_rate_pct=0.90)) is False
+
+    def test_gap_via_commit_deals_lost_at_030(self, engine):
+        assert engine._has_forecast_gap(0.0, make_input(
+            commit_deals_lost_pct=0.30, commit_to_close_rate_pct=0.90)) is True
+
+    def test_no_gap_commit_deals_lost_just_below_030(self, engine):
+        assert engine._has_forecast_gap(0.0, make_input(
+            commit_deals_lost_pct=0.29, commit_to_close_rate_pct=0.90)) is False
+
+    def test_gap_via_commit_close_at_050(self, engine):
+        assert engine._has_forecast_gap(0.0, make_input(
+            commit_to_close_rate_pct=0.50, commit_deals_lost_pct=0.05)) is True
+
+    def test_no_gap_commit_close_just_above_050(self, engine):
+        assert engine._has_forecast_gap(0.0, make_input(
+            commit_to_close_rate_pct=0.51, commit_deals_lost_pct=0.05)) is False
+
+    def test_no_gap_all_conditions_false(self, engine):
+        assert engine._has_forecast_gap(10.0, make_input(
+            commit_deals_lost_pct=0.05, commit_to_close_rate_pct=0.90)) is False
+
+    def test_gap_returns_bool(self, engine):
+        result = engine._has_forecast_gap(0.0, make_input())
+        assert isinstance(result, bool)
+
+    def test_gap_all_three_conditions_true(self, engine):
+        assert engine._has_forecast_gap(50.0, make_input(
+            commit_deals_lost_pct=0.40, commit_to_close_rate_pct=0.30)) is True
+
+
+# ---------------------------------------------------------------------------
+# 14. requires_forecast_coaching flag
+# ---------------------------------------------------------------------------
+
+class TestRequiresForecastCoaching:
+    def test_coaching_via_composite_at_30(self, engine):
+        assert engine._requires_forecast_coaching(30.0, make_input(
+            forecast_vs_actual_variance_pct=0.05,
+            stage_advancement_accuracy_pct=0.90)) is True
+
+    def test_no_coaching_composite_just_below_30(self, engine):
+        assert engine._requires_forecast_coaching(29.9, make_input(
+            forecast_vs_actual_variance_pct=0.05,
+            stage_advancement_accuracy_pct=0.90)) is False
+
+    def test_coaching_via_variance_at_015(self, engine):
+        assert engine._requires_forecast_coaching(0.0, make_input(
+            forecast_vs_actual_variance_pct=0.15,
+            stage_advancement_accuracy_pct=0.90)) is True
+
+    def test_no_coaching_variance_just_below_015(self, engine):
+        assert engine._requires_forecast_coaching(0.0, make_input(
+            forecast_vs_actual_variance_pct=0.14,
+            stage_advancement_accuracy_pct=0.90)) is False
+
+    def test_coaching_via_stage_acc_at_060(self, engine):
+        assert engine._requires_forecast_coaching(0.0, make_input(
+            stage_advancement_accuracy_pct=0.60,
+            forecast_vs_actual_variance_pct=0.05)) is True
+
+    def test_no_coaching_stage_acc_just_above_060(self, engine):
+        assert engine._requires_forecast_coaching(0.0, make_input(
+            stage_advancement_accuracy_pct=0.61,
+            forecast_vs_actual_variance_pct=0.05)) is False
+
+    def test_no_coaching_all_conditions_false(self, engine):
+        assert engine._requires_forecast_coaching(10.0, make_input(
+            forecast_vs_actual_variance_pct=0.05,
+            stage_advancement_accuracy_pct=0.90)) is False
+
+    def test_coaching_returns_bool(self, engine):
+        result = engine._requires_forecast_coaching(0.0, make_input())
+        assert isinstance(result, bool)
+
+    def test_coaching_all_three_conditions_true(self, engine):
+        assert engine._requires_forecast_coaching(35.0, make_input(
+            forecast_vs_actual_variance_pct=0.20,
+            stage_advancement_accuracy_pct=0.50)) is True
+
+
+# ---------------------------------------------------------------------------
+# 15. Revenue at risk formula
+# ---------------------------------------------------------------------------
+
+class TestRevenueAtRisk:
+    def test_formula_basic(self, engine):
+        # 10 deals * $50k * 0.20 commit_lost * (50/100) = 50000
+        inp = make_input(total_deals_forecasted=10,
+                         avg_opportunity_value_usd=50_000.0,
+                         commit_deals_lost_pct=0.20)
+        result = engine._estimated_revenue_at_risk(inp, 50.0)
+        assert result == round(10 * 50_000.0 * 0.20 * 0.50, 2)
+
+    def test_formula_zero_composite(self, engine):
+        inp = make_input(total_deals_forecasted=20,
+                         avg_opportunity_value_usd=30_000.0,
+                         commit_deals_lost_pct=0.50)
+        assert engine._estimated_revenue_at_risk(inp, 0.0) == 0.0
+
+    def test_formula_zero_deals(self, engine):
+        inp = make_input(total_deals_forecasted=0,
+                         avg_opportunity_value_usd=50_000.0,
+                         commit_deals_lost_pct=0.30)
+        assert engine._estimated_revenue_at_risk(inp, 80.0) == 0.0
+
+    def test_formula_zero_commit_lost(self, engine):
+        inp = make_input(total_deals_forecasted=5,
+                         avg_opportunity_value_usd=100_000.0,
+                         commit_deals_lost_pct=0.0)
+        assert engine._estimated_revenue_at_risk(inp, 80.0) == 0.0
+
+    def test_formula_rounded_to_2_decimals(self, engine):
+        inp = make_input(total_deals_forecasted=3,
+                         avg_opportunity_value_usd=33_333.33,
+                         commit_deals_lost_pct=0.33)
+        result = engine._estimated_revenue_at_risk(inp, 33.3)
+        expected = round(3 * 33_333.33 * 0.33 * (33.3 / 100.0), 2)
+        assert result == expected
+
+    def test_formula_composite_100(self, engine):
+        inp = make_input(total_deals_forecasted=2,
+                         avg_opportunity_value_usd=50_000.0,
+                         commit_deals_lost_pct=1.0)
+        result = engine._estimated_revenue_at_risk(inp, 100.0)
+        assert result == round(2 * 50_000.0 * 1.0 * 1.0, 2)
+
+    def test_formula_matches_assess_output(self, engine):
+        inp = make_input(
+            total_deals_forecasted=5,
+            avg_opportunity_value_usd=20_000.0,
+            commit_deals_lost_pct=0.25,
+        )
+        result = engine.assess(inp)
+        expected = round(
+            5 * 20_000.0 * 0.25 * (result.forecast_composite / 100.0), 2)
+        assert result.estimated_revenue_at_risk_usd == expected
+
+    def test_formula_returns_float(self, engine):
+        result = engine._estimated_revenue_at_risk(make_input(), 50.0)
+        assert isinstance(result, float)
+
+
+# ---------------------------------------------------------------------------
+# 16. Signal string
+# ---------------------------------------------------------------------------
+
+class TestSignalString:
+    def test_healthy_signal_when_no_pattern_and_low_composite(self, engine):
+        result = engine.assess(low_risk_input())
+        assert result.forecast_composite < 20
+        assert result.forecast_pattern == ForecastPattern.none
+        assert "healthy" in result.forecast_signal.lower()
+
+    def test_healthy_signal_exact_content(self, engine):
+        result = engine.assess(low_risk_input())
+        expected = ("Forecast accuracy healthy — variance, commit discipline, "
+                    "and stage accuracy within benchmarks")
+        assert result.forecast_signal == expected
+
+    def test_signal_contains_variance_pct(self, engine):
+        result = engine.assess(critical_input())
+        # Should contain "50% forecast variance" (0.50 * 100 = 50)
+        assert "50% forecast variance" in result.forecast_signal
+
+    def test_signal_contains_commit_to_close_rate(self, engine):
+        result = engine.assess(critical_input())
+        assert "commit-to-close rate" in result.forecast_signal
+
+    def test_signal_contains_committed_deals_lost(self, engine):
+        result = engine.assess(critical_input())
+        assert "committed deals lost" in result.forecast_signal
+
+    def test_signal_contains_composite(self, engine):
+        result = engine.assess(critical_input())
+        assert "composite" in result.forecast_signal.lower()
+
+    def test_signal_includes_capitalized_pattern_label(self, engine):
+        inp = make_input(
+            stage_advancement_accuracy_pct=0.35,
+            deals_pulled_from_forecast_pct=0.30,
+            forecast_vs_actual_variance_pct=0.25,
+            commit_deals_lost_pct=0.25,
+        )
+        result = engine.assess(inp)
+        assert result.forecast_pattern == ForecastPattern.stage_inflation_blindspot
+        assert "Stage inflation blindspot" in result.forecast_signal
+
+    def test_signal_none_pattern_high_composite_uses_forecast_risk_label(self, engine):
+        # Pattern=none, composite >= 20 → label is "Forecast risk"
+        inp = make_input(
+            forecast_vs_actual_variance_pct=0.50,
+            forecast_change_frequency_per_qtr=5.0,
+            close_date_accuracy_within_week_pct=0.80,
+            commit_deals_lost_pct=0.05,
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10,
+            sandbag_conversion_rate_pct=0.10,
+        )
+        result = engine.assess(inp)
+        assert result.forecast_composite >= 20
+        assert result.forecast_pattern == ForecastPattern.none
+        assert "healthy" not in result.forecast_signal.lower()
+        assert "Forecast risk" in result.forecast_signal
+
+    def test_signal_returns_string(self, engine):
+        assert isinstance(engine.assess(low_risk_input()).forecast_signal, str)
+
+    def test_signal_chronic_over_forecasting_label(self, engine):
+        inp = make_input(
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            forecast_vs_actual_variance_pct=0.25,
+        )
+        result = engine.assess(inp)
+        if result.forecast_pattern == ForecastPattern.chronic_over_forecasting:
+            assert "Chronic over forecasting" in result.forecast_signal
+
+
+# ---------------------------------------------------------------------------
+# 17. assess() end-to-end
+# ---------------------------------------------------------------------------
+
+class TestAssessEndToEnd:
+    def test_assess_returns_forecast_result(self, engine):
+        assert isinstance(engine.assess(low_risk_input()), ForecastResult)
+
+    def test_assess_low_risk_profile(self, engine):
+        result = engine.assess(low_risk_input())
+        assert result.forecast_risk == ForecastRisk.low
+        assert result.forecast_severity == ForecastSeverity.precise
+        assert result.recommended_action == ForecastAction.no_action
+        assert result.forecast_pattern == ForecastPattern.none
+        assert result.has_forecast_gap is False
+        assert result.requires_forecast_coaching is False
+
+    def test_assess_critical_profile(self, engine):
+        result = engine.assess(critical_input())
+        assert result.forecast_risk == ForecastRisk.critical
+        assert result.forecast_severity == ForecastSeverity.unreliable
+        assert result.forecast_composite >= 60.0
+
+    def test_assess_propagates_rep_id(self, engine):
+        result = engine.assess(make_input(rep_id="rep-ABC"))
+        assert result.rep_id == "rep-ABC"
+
+    def test_assess_propagates_region(self, engine):
+        result = engine.assess(make_input(region="APAC"))
+        assert result.region == "APAC"
+
+    def test_assess_appends_to_results(self, engine):
+        engine.assess(low_risk_input())
+        engine.assess(low_risk_input())
+        assert len(engine._results) == 2
+
+    def test_assess_action_critical_stage_inflation(self, engine):
+        inp = make_input(
+            stage_advancement_accuracy_pct=0.35,
+            deals_pulled_from_forecast_pct=0.30,
+            forecast_vs_actual_variance_pct=0.50,
+            commit_deals_lost_pct=0.50,
+            close_date_accuracy_within_week_pct=0.20,
+            forecast_change_frequency_per_qtr=6.0,
+            late_add_to_forecast_pct=0.50,
+            multi_quarter_slip_rate_pct=0.40,
+            commit_to_close_rate_pct=0.30,
+            over_forecast_frequency_pct=0.70,
+            under_forecast_frequency_pct=0.60,
+        )
+        result = engine.assess(inp)
+        assert result.forecast_risk == ForecastRisk.critical
+        assert result.forecast_pattern == ForecastPattern.stage_inflation_blindspot
+        assert result.recommended_action == ForecastAction.stage_criteria_coaching
+
+    def test_assess_action_critical_chronic_over(self, engine):
+        inp = make_input(
+            over_forecast_frequency_pct=0.55,
+            commit_deals_lost_pct=0.30,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            forecast_vs_actual_variance_pct=0.50,
+            close_date_accuracy_within_week_pct=0.20,
+            forecast_change_frequency_per_qtr=6.0,
+            late_add_to_forecast_pct=0.50,
+            multi_quarter_slip_rate_pct=0.40,
+            commit_to_close_rate_pct=0.30,
+            under_forecast_frequency_pct=0.60,
+        )
+        result = engine.assess(inp)
+        assert result.forecast_risk == ForecastRisk.critical
+        assert result.forecast_pattern == ForecastPattern.chronic_over_forecasting
+        assert result.recommended_action == ForecastAction.commit_discipline_coaching
+
+    def test_assess_moderate_risk(self, engine):
+        # accuracy=22 (variance=0.25), discipline=0, stage=0, commit=0
+        # composite = 22*0.35 = 7.7 → too low for moderate
+        # Need composite in [20,40): accuracy=40+discipline=22 → 14+5.5=19.5 still < 20
+        # accuracy=40, discipline=40 → 14+10=24 → moderate
+        inp = make_input(
+            forecast_vs_actual_variance_pct=0.50,   # +40 accuracy
+            close_date_accuracy_within_week_pct=0.80,
+            commit_deals_lost_pct=0.05,
+            forecast_change_frequency_per_qtr=5.0,  # +40 discipline
+            late_add_to_forecast_pct=0.05,
+            multi_quarter_slip_rate_pct=0.05,
+            stage_advancement_accuracy_pct=0.90,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0,
+            commit_to_close_rate_pct=0.90,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10,
+            sandbag_conversion_rate_pct=0.10,
+        )
+        result = engine.assess(inp)
+        # composite = 40*0.35 + 40*0.25 = 14+10 = 24
+        assert result.forecast_composite == 24.0
+        assert result.forecast_risk == ForecastRisk.moderate
+        assert result.recommended_action == ForecastAction.forecast_calibration_coaching
+
+    def test_assess_high_risk_end_of_quarter_cliff(self, engine):
+        # discipline=75(change_freq=5+late_add=0.40), stage=40(stage_acc=0.40)
+        # accuracy=40(variance=0.50), commit=25(commit_close=0.60)
+        # composite = 40*0.35 + 75*0.25 + 40*0.25 + 25*0.15 = 14+18.75+10+3.75 = 46.5 → high
+        inp = make_input(
+            forecast_vs_actual_variance_pct=0.50,
+            commit_deals_lost_pct=0.05,
+            close_date_accuracy_within_week_pct=0.80,
+            forecast_change_frequency_per_qtr=5.0,
+            late_add_to_forecast_pct=0.40,
+            multi_quarter_slip_rate_pct=0.25,
+            stage_advancement_accuracy_pct=0.40,
+            deals_pulled_from_forecast_pct=0.05,
+            avg_deal_slip_days=5.0,
+            commit_to_close_rate_pct=0.60,
+            over_forecast_frequency_pct=0.10,
+            under_forecast_frequency_pct=0.10,
+            sandbag_conversion_rate_pct=0.10,
+        )
+        result = engine.assess(inp)
+        assert result.forecast_risk == ForecastRisk.high
+        assert result.forecast_pattern == ForecastPattern.end_of_quarter_cliff
+        assert result.recommended_action == ForecastAction.pipeline_inspection_coaching
+
+
+# ---------------------------------------------------------------------------
+# 18. assess_batch()
+# ---------------------------------------------------------------------------
 
 class TestAssessBatch:
-    def test_assess_batch_empty_list(self, engine):
-        results = engine.assess_batch([])
-        assert results == []
+    def test_batch_returns_list(self, engine):
+        results = engine.assess_batch([low_risk_input(), critical_input()])
+        assert isinstance(results, list)
+        assert len(results) == 2
 
-    def test_assess_batch_single_input(self, engine):
-        results = engine.assess_batch([make_input()])
+    def test_batch_each_element_is_forecast_result(self, engine):
+        for r in engine.assess_batch([low_risk_input(), critical_input()]):
+            assert isinstance(r, ForecastResult)
+
+    def test_batch_empty_list(self, engine):
+        assert engine.assess_batch([]) == []
+
+    def test_batch_appends_to_internal_results(self, engine):
+        engine.assess_batch([low_risk_input(), critical_input(), low_risk_input()])
+        assert len(engine._results) == 3
+
+    def test_batch_preserves_order(self, engine):
+        inputs = [make_input(rep_id=f"rep-{i}") for i in range(5)]
+        results = engine.assess_batch(inputs)
+        for i, r in enumerate(results):
+            assert r.rep_id == f"rep-{i}"
+
+    def test_batch_single_item(self, engine):
+        results = engine.assess_batch([low_risk_input()])
         assert len(results) == 1
+        assert isinstance(results[0], ForecastResult)
 
-    def test_assess_batch_multiple_inputs(self, engine):
-        inputs = [make_input(rep_id=f"rep_{i}") for i in range(5)]
-        results = engine.assess_batch(inputs)
-        assert len(results) == 5
 
-    def test_assess_batch_returns_list_of_results(self, engine):
-        inputs = [make_input()]
-        results = engine.assess_batch(inputs)
-        assert all(isinstance(r, ForecastAccuracyResult) for r in results)
+# ---------------------------------------------------------------------------
+# 19. summary() — empty
+# ---------------------------------------------------------------------------
 
-    def test_assess_batch_rep_ids_match(self, engine):
-        inputs = [make_input(rep_id="rep_A"), make_input(rep_id="rep_B")]
-        results = engine.assess_batch(inputs)
-        assert results[0].rep_id == "rep_A"
-        assert results[1].rep_id == "rep_B"
+class TestSummaryEmpty:
+    def test_summary_empty_returns_13_keys(self, engine):
+        assert len(engine.summary()) == 13
 
-    def test_assess_batch_updates_summary(self, engine):
-        inputs = [make_input() for _ in range(3)]
-        engine.assess_batch(inputs)
+    def test_summary_empty_exact_keys(self, engine):
+        expected = {
+            "total", "risk_counts", "pattern_counts", "severity_counts",
+            "action_counts", "avg_forecast_composite", "forecast_gap_count",
+            "coaching_count", "avg_accuracy_score", "avg_discipline_score",
+            "avg_stage_score", "avg_commit_score",
+            "total_estimated_revenue_at_risk_usd",
+        }
+        assert set(engine.summary().keys()) == expected
+
+    def test_summary_empty_total_is_zero(self, engine):
+        assert engine.summary()["total"] == 0
+
+    def test_summary_empty_risk_counts_empty_dict(self, engine):
+        assert engine.summary()["risk_counts"] == {}
+
+    def test_summary_empty_pattern_counts_empty_dict(self, engine):
+        assert engine.summary()["pattern_counts"] == {}
+
+    def test_summary_empty_severity_counts_empty_dict(self, engine):
+        assert engine.summary()["severity_counts"] == {}
+
+    def test_summary_empty_action_counts_empty_dict(self, engine):
+        assert engine.summary()["action_counts"] == {}
+
+    def test_summary_empty_avg_composite_zero(self, engine):
+        assert engine.summary()["avg_forecast_composite"] == 0.0
+
+    def test_summary_empty_avg_accuracy_zero(self, engine):
+        assert engine.summary()["avg_accuracy_score"] == 0.0
+
+    def test_summary_empty_avg_discipline_zero(self, engine):
+        assert engine.summary()["avg_discipline_score"] == 0.0
+
+    def test_summary_empty_avg_stage_zero(self, engine):
+        assert engine.summary()["avg_stage_score"] == 0.0
+
+    def test_summary_empty_avg_commit_zero(self, engine):
+        assert engine.summary()["avg_commit_score"] == 0.0
+
+    def test_summary_empty_gap_count_zero(self, engine):
+        assert engine.summary()["forecast_gap_count"] == 0
+
+    def test_summary_empty_coaching_count_zero(self, engine):
+        assert engine.summary()["coaching_count"] == 0
+
+    def test_summary_empty_revenue_at_risk_zero(self, engine):
+        assert engine.summary()["total_estimated_revenue_at_risk_usd"] == 0.0
+
+
+# ---------------------------------------------------------------------------
+# 20. summary() — populated (all 13 keys verified)
+# ---------------------------------------------------------------------------
+
+class TestSummaryPopulated:
+    def test_summary_13_keys(self, engine):
+        engine.assess_batch([low_risk_input(), critical_input()])
+        assert len(engine.summary()) == 13
+
+    def test_summary_exact_13_keys(self, engine):
+        engine.assess(low_risk_input())
+        expected = {
+            "total", "risk_counts", "pattern_counts", "severity_counts",
+            "action_counts", "avg_forecast_composite", "forecast_gap_count",
+            "coaching_count", "avg_accuracy_score", "avg_discipline_score",
+            "avg_stage_score", "avg_commit_score",
+            "total_estimated_revenue_at_risk_usd",
+        }
+        assert set(engine.summary().keys()) == expected
+
+    def test_summary_total(self, engine):
+        engine.assess_batch([low_risk_input(), low_risk_input(), critical_input()])
         assert engine.summary()["total"] == 3
 
-    def test_assess_batch_different_risk_levels(self, engine):
-        # One very bad, one very good
-        bad = make_input(avg_forecast_accuracy_pct=0.0,
-                         forecast_commit_count=10, forecast_commit_closed_count=0,
-                         forecast_overestimate_count=10, total_forecasted_deals=10,
-                         crm_update_frequency_score=0.0,
-                         sandbagged_deals_identified=5,
-                         late_stage_slippage_count=5,
-                         avg_close_date_slip_days=60.0,
-                         pipeline_coverage_ratio=1.0)
-        good = make_input(avg_forecast_accuracy_pct=1.0,
-                          forecast_commit_count=5, forecast_commit_closed_count=5,
-                          forecast_overestimate_count=0,
-                          crm_update_frequency_score=9.0,
-                          sandbagged_deals_identified=0,
-                          late_stage_slippage_count=0,
-                          avg_close_date_slip_days=0.0,
-                          pipeline_coverage_ratio=5.0,
-                          avg_deal_age_days=10.0,
-                          stage_advancement_rate_pct=0.90,
-                          multi_stakeholder_deals_pct=0.90,
-                          deals_closed_not_forecasted_count=0,
-                          manager_review_sessions_count=5,
-                          forecast_underestimate_count=0)
-        results = engine.assess_batch([bad, good])
-        risk_values = {r.forecast_risk for r in results}
-        assert ForecastRisk.critical in risk_values or ForecastRisk.high in risk_values
-        assert ForecastRisk.low in risk_values
+    def test_summary_risk_counts_low(self, engine):
+        engine.assess(low_risk_input())
+        assert engine.summary()["risk_counts"]["low"] == 1
 
-    def test_assess_batch_accumulates_with_prior_assessments(self, engine):
-        engine.assess(make_input())
-        engine.assess_batch([make_input(), make_input()])
-        assert engine.summary()["total"] == 3
+    def test_summary_risk_counts_critical(self, engine):
+        engine.assess(critical_input())
+        assert engine.summary()["risk_counts"]["critical"] == 1
+
+    def test_summary_risk_counts_multiple(self, engine):
+        engine.assess(low_risk_input())
+        engine.assess(critical_input())
+        s = engine.summary()
+        assert s["risk_counts"].get("low", 0) == 1
+        assert s["risk_counts"].get("critical", 0) == 1
+
+    def test_summary_pattern_counts(self, engine):
+        engine.assess(low_risk_input())
+        assert engine.summary()["pattern_counts"]["none"] == 1
+
+    def test_summary_severity_counts(self, engine):
+        engine.assess(low_risk_input())
+        assert engine.summary()["severity_counts"]["precise"] == 1
+
+    def test_summary_action_counts(self, engine):
+        engine.assess(low_risk_input())
+        assert engine.summary()["action_counts"]["no_action"] == 1
+
+    def test_summary_avg_composite(self, engine):
+        r1 = engine.assess(low_risk_input())
+        r2 = engine.assess(critical_input())
+        expected = round((r1.forecast_composite + r2.forecast_composite) / 2, 1)
+        assert engine.summary()["avg_forecast_composite"] == expected
+
+    def test_summary_avg_accuracy_score(self, engine):
+        r1 = engine.assess(low_risk_input())
+        r2 = engine.assess(critical_input())
+        expected = round((r1.accuracy_score + r2.accuracy_score) / 2, 1)
+        assert engine.summary()["avg_accuracy_score"] == expected
+
+    def test_summary_avg_discipline_score(self, engine):
+        r1 = engine.assess(low_risk_input())
+        r2 = engine.assess(critical_input())
+        expected = round((r1.discipline_score + r2.discipline_score) / 2, 1)
+        assert engine.summary()["avg_discipline_score"] == expected
+
+    def test_summary_avg_stage_score(self, engine):
+        r1 = engine.assess(low_risk_input())
+        r2 = engine.assess(critical_input())
+        expected = round((r1.stage_score + r2.stage_score) / 2, 1)
+        assert engine.summary()["avg_stage_score"] == expected
+
+    def test_summary_avg_commit_score(self, engine):
+        r1 = engine.assess(low_risk_input())
+        r2 = engine.assess(critical_input())
+        expected = round((r1.commit_score + r2.commit_score) / 2, 1)
+        assert engine.summary()["avg_commit_score"] == expected
+
+    def test_summary_forecast_gap_count(self, engine):
+        engine.assess(low_risk_input())   # no gap
+        engine.assess(critical_input())   # has gap (composite >= 40)
+        assert engine.summary()["forecast_gap_count"] >= 1
+
+    def test_summary_coaching_count(self, engine):
+        engine.assess(critical_input())
+        assert engine.summary()["coaching_count"] >= 1
+
+    def test_summary_total_revenue_at_risk(self, engine):
+        r1 = engine.assess(low_risk_input())
+        r2 = engine.assess(critical_input())
+        expected = round(r1.estimated_revenue_at_risk_usd + r2.estimated_revenue_at_risk_usd, 2)
+        assert engine.summary()["total_estimated_revenue_at_risk_usd"] == expected
+
+    def test_summary_accumulates_across_assessments(self, engine):
+        engine.assess(low_risk_input())
+        engine.summary()  # calling summary should NOT reset state
+        engine.assess(critical_input())
+        assert engine.summary()["total"] == 2
+
+    def test_summary_gap_count_none_when_all_healthy(self, engine):
+        engine.assess_batch([low_risk_input(), low_risk_input()])
+        assert engine.summary()["forecast_gap_count"] == 0
 
 
-# ===========================================================================
-# 17. EDGE CASES AND INTEGRATION
-# ===========================================================================
+# ---------------------------------------------------------------------------
+# 21. Edge cases
+# ---------------------------------------------------------------------------
 
 class TestEdgeCases:
-    def test_zero_forecasted_deals_no_crash(self, engine):
-        inp = make_input(total_forecasted_deals=0, forecast_overestimate_count=0)
-        r = engine.assess(inp)
-        assert isinstance(r, ForecastAccuracyResult)
-
-    def test_perfect_accuracy_low_risk(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.forecast_risk == ForecastRisk.low
-
-    def test_perfect_accuracy_reliable_severity(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.forecast_severity == ForecastSeverity.reliable
-
-    def test_perfect_accuracy_no_action(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.recommended_action == ForecastAction.no_action
-
-    def test_perfect_accuracy_no_pattern(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.forecast_pattern == ForecastPattern.none
-
-    def test_perfect_accuracy_acceptable_signal(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.forecast_signal == "Forecast accuracy within acceptable benchmarks"
-
-    def test_perfect_accuracy_variance_zero(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.estimated_revenue_variance_usd == 0.0
-
-    def test_worst_case_critical_risk(self, engine):
-        inp = make_input(
-            avg_forecast_accuracy_pct=0.0,
-            forecast_commit_count=10, forecast_commit_closed_count=0,
-            forecast_overestimate_count=10, total_forecasted_deals=10,
-            crm_update_frequency_score=0.0,
-            sandbagged_deals_identified=5, forecast_underestimate_count=5,
-            late_stage_slippage_count=5,
-            avg_close_date_slip_days=60.0,
-            deals_closed_not_forecasted_count=5,
-            manager_review_sessions_count=0,
-            pipeline_coverage_ratio=0.5,
-            avg_deal_age_days=200.0,
-            stage_advancement_rate_pct=0.0,
-            multi_stakeholder_deals_pct=0.0,
+    def test_all_zero_inputs_does_not_raise(self, engine):
+        """All-zero float inputs should not raise."""
+        inp = ForecastInput(
+            rep_id="zero", region="none", evaluation_period_id="Q0",
+            forecast_vs_actual_variance_pct=0.0,
+            over_forecast_frequency_pct=0.0,
+            under_forecast_frequency_pct=0.0,
+            commit_to_close_rate_pct=0.0,
+            best_case_to_close_rate_pct=0.0,
+            pipeline_to_quota_ratio=0.0,
+            late_add_to_forecast_pct=0.0,
+            deals_pulled_from_forecast_pct=0.0,
+            avg_deal_slip_days=0.0,
+            stage_advancement_accuracy_pct=0.0,
+            close_date_accuracy_within_week_pct=0.0,
+            forecast_change_frequency_per_qtr=0.0,
+            upside_deals_closed_pct=0.0,
+            commit_deals_lost_pct=0.0,
+            sandbag_conversion_rate_pct=0.0,
+            multi_quarter_slip_rate_pct=0.0,
+            forecast_submitted_on_time_pct=0.0,
+            total_deals_forecasted=0,
+            avg_opportunity_value_usd=0.0,
         )
-        r = engine.assess(inp)
-        assert r.forecast_risk == ForecastRisk.critical
+        result = engine.assess(inp)
+        assert isinstance(result, ForecastResult)
+        assert result.estimated_revenue_at_risk_usd == 0.0
 
-    def test_worst_case_chaotic_severity(self, engine):
+    def test_max_inputs_does_not_raise(self, engine):
+        """Extreme inputs should not raise and composite stays <= 100."""
         inp = make_input(
-            avg_forecast_accuracy_pct=0.0,
-            forecast_commit_count=10, forecast_commit_closed_count=0,
-            forecast_overestimate_count=10, total_forecasted_deals=10,
-            crm_update_frequency_score=0.0,
-            sandbagged_deals_identified=5, forecast_underestimate_count=5,
-            late_stage_slippage_count=5,
-            avg_close_date_slip_days=60.0,
-            deals_closed_not_forecasted_count=5,
-            manager_review_sessions_count=0,
-            pipeline_coverage_ratio=0.5,
-            avg_deal_age_days=200.0,
-            stage_advancement_rate_pct=0.0,
-            multi_stakeholder_deals_pct=0.0,
+            forecast_vs_actual_variance_pct=1.0,
+            over_forecast_frequency_pct=1.0,
+            under_forecast_frequency_pct=1.0,
+            commit_to_close_rate_pct=0.0,
+            late_add_to_forecast_pct=1.0,
+            deals_pulled_from_forecast_pct=1.0,
+            avg_deal_slip_days=999.0,
+            stage_advancement_accuracy_pct=0.0,
+            close_date_accuracy_within_week_pct=0.0,
+            forecast_change_frequency_per_qtr=99.0,
+            commit_deals_lost_pct=1.0,
+            multi_quarter_slip_rate_pct=1.0,
+            total_deals_forecasted=10_000,
+            avg_opportunity_value_usd=1_000_000.0,
         )
-        r = engine.assess(inp)
-        assert r.forecast_severity == ForecastSeverity.chaotic
+        result = engine.assess(inp)
+        assert result.forecast_composite <= 100.0
 
-    def test_worst_case_is_unreliable(self, engine):
-        inp = make_input(
-            avg_forecast_accuracy_pct=0.0,
-            forecast_commit_count=10, forecast_commit_closed_count=0,
-            forecast_overestimate_count=10, total_forecasted_deals=10,
-        )
-        r = engine.assess(inp)
-        assert r.is_forecast_unreliable is True
+    def test_zero_deals_revenue_is_zero(self, engine):
+        result = engine.assess(make_input(total_deals_forecasted=0,
+                                          commit_deals_lost_pct=0.50))
+        assert result.estimated_revenue_at_risk_usd == 0.0
 
-    def test_result_is_dataclass(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert isinstance(r, ForecastAccuracyResult)
+    def test_exact_boundary_risk_20(self, engine):
+        assert engine._risk_level(20.0) == ForecastRisk.moderate
 
-    def test_result_has_rep_id(self, engine):
-        inp = make_input(rep_id="test_rep")
-        r = engine.assess(inp)
-        assert r.rep_id == "test_rep"
+    def test_exact_boundary_risk_40(self, engine):
+        assert engine._risk_level(40.0) == ForecastRisk.high
 
-    def test_result_has_region(self, engine):
-        inp = make_input(region="Northeast")
-        r = engine.assess(inp)
-        assert r.region == "Northeast"
+    def test_exact_boundary_risk_60(self, engine):
+        assert engine._risk_level(60.0) == ForecastRisk.critical
 
-    def test_composite_between_0_and_100(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert 0.0 <= r.forecast_effectiveness_composite <= 100.0
+    def test_exact_boundary_severity_20(self, engine):
+        assert engine._severity(20.0) == ForecastSeverity.calibrating
 
-    def test_composite_between_0_and_100_worst_case(self, engine):
-        inp = make_input(
-            avg_forecast_accuracy_pct=0.0,
-            forecast_commit_count=10, forecast_commit_closed_count=0,
-            forecast_overestimate_count=10, total_forecasted_deals=10,
-            crm_update_frequency_score=0.0, sandbagged_deals_identified=10,
-            forecast_underestimate_count=10, late_stage_slippage_count=10,
-            avg_close_date_slip_days=100.0, deals_closed_not_forecasted_count=10,
-            manager_review_sessions_count=0, pipeline_coverage_ratio=0.0,
-            avg_deal_age_days=365.0, stage_advancement_rate_pct=0.0,
-            multi_stakeholder_deals_pct=0.0,
-        )
-        r = engine.assess(inp)
-        assert 0.0 <= r.forecast_effectiveness_composite <= 100.0
+    def test_exact_boundary_severity_40(self, engine):
+        assert engine._severity(40.0) == ForecastSeverity.drifting
 
-    def test_multiple_engines_independent(self):
-        eng1 = SalesForecastAccuracyIntelligenceEngine()
-        eng2 = SalesForecastAccuracyIntelligenceEngine()
-        eng1.assess(make_input())
-        assert eng2.summary()["total"] == 0
+    def test_exact_boundary_severity_60(self, engine):
+        assert engine._severity(60.0) == ForecastSeverity.unreliable
 
-    def test_composite_weighted_formula(self, engine):
-        # Verify that composite = accuracy*0.35 + discipline*0.25 + pipeline*0.25 + crm*0.15
-        inp = make_input(
-            avg_forecast_accuracy_pct=1.0,
-            forecast_commit_count=5, forecast_commit_closed_count=5,
-            forecast_overestimate_count=0,
-            late_stage_slippage_count=0,
-            avg_close_date_slip_days=0.0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-            pipeline_coverage_ratio=5.0,
-            avg_deal_age_days=10.0,
-            stage_advancement_rate_pct=0.80,
-            multi_stakeholder_deals_pct=0.80,
-            crm_update_frequency_score=9.0,
-            sandbagged_deals_identified=0,
-            forecast_underestimate_count=0,
-        )
-        r = engine.assess(inp)
-        acc = engine._forecast_accuracy_score(inp)
-        disc = engine._forecast_discipline_score(inp)
-        pipe = engine._pipeline_health_score(inp)
-        crm = engine._crm_hygiene_score(inp)
-        expected_composite = round(acc * 0.35 + disc * 0.25 + pipe * 0.25 + crm * 0.15, 1)
-        assert r.forecast_effectiveness_composite == min(expected_composite, 100.0)
+    def test_multiple_engines_are_independent(self):
+        e1 = SalesForecastAccuracyIntelligenceEngine()
+        e2 = SalesForecastAccuracyIntelligenceEngine()
+        e1.assess(low_risk_input())
+        assert len(e1._results) == 1
+        assert len(e2._results) == 0
 
-    def test_high_accuracy_boundary_composite_exactly_20(self, engine):
-        # Craft an input where composite is exactly around 20 -> moderate risk
-        # We'll check the result is moderate or close
-        inp = make_input(
-            avg_forecast_accuracy_pct=0.85,   # dev=0.15 -> +12
-            forecast_commit_count=10,
-            forecast_commit_closed_count=9,   # 0.90 > 0.85 -> +0
-            forecast_overestimate_count=1,    # ratio=0.10 < 0.15 -> +0; acc = 12
-            late_stage_slippage_count=0, avg_close_date_slip_days=0,
-            deals_closed_not_forecasted_count=0, manager_review_sessions_count=5,
-            pipeline_coverage_ratio=5.0, avg_deal_age_days=10.0,
-            stage_advancement_rate_pct=0.80, multi_stakeholder_deals_pct=0.80,
-            crm_update_frequency_score=9.0, sandbagged_deals_identified=0,
-            forecast_underestimate_count=0, total_forecasted_deals=10,
-        )
-        r = engine.assess(inp)
-        # acc=12, disc=0, pipe=0, crm=0 => composite=12*0.35=4.2 -> low
-        assert r.forecast_risk == ForecastRisk.low
+    def test_summary_called_before_any_assess(self):
+        fresh = SalesForecastAccuracyIntelligenceEngine()
+        s = fresh.summary()
+        assert s["total"] == 0
 
-    def test_region_preserved_in_result(self, engine):
-        inp = make_input(region="Pacific")
-        r = engine.assess(inp)
-        assert r.region == "Pacific"
+    def test_assess_result_stored_in_order(self, engine):
+        inputs = [make_input(rep_id=f"r{i}") for i in range(10)]
+        results = engine.assess_batch(inputs)
+        for i, r in enumerate(results):
+            assert r.rep_id == f"r{i}"
 
-    def test_engine_accumulates_results(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        for i in range(10):
-            eng.assess(make_input(rep_id=f"rep_{i}"))
-        assert eng.summary()["total"] == 10
+    def test_large_deal_count_revenue(self, engine):
+        inp = make_input(total_deals_forecasted=10_000,
+                         avg_opportunity_value_usd=1_000_000.0,
+                         commit_deals_lost_pct=0.50)
+        result = engine.assess(inp)
+        assert result.estimated_revenue_at_risk_usd >= 0.0
 
-    def test_assess_result_scores_non_negative(self, engine):
-        r = engine.assess(make_input())
-        assert r.forecast_accuracy_score >= 0.0
-        assert r.forecast_discipline_score >= 0.0
-        assert r.pipeline_health_score >= 0.0
-        assert r.crm_hygiene_score >= 0.0
+    def test_has_forecast_gap_exact_boundary_050(self, engine):
+        # commit_to_close_rate_pct == 0.50 → <= 0.50 → True
+        assert engine._has_forecast_gap(0.0, make_input(
+            commit_to_close_rate_pct=0.50, commit_deals_lost_pct=0.05)) is True
 
-    def test_forecast_result_field_types(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert isinstance(r.forecast_risk, ForecastRisk)
-        assert isinstance(r.forecast_pattern, ForecastPattern)
-        assert isinstance(r.forecast_severity, ForecastSeverity)
-        assert isinstance(r.recommended_action, ForecastAction)
-        assert isinstance(r.forecast_accuracy_score, float)
-        assert isinstance(r.forecast_discipline_score, float)
-        assert isinstance(r.pipeline_health_score, float)
-        assert isinstance(r.crm_hygiene_score, float)
-        assert isinstance(r.forecast_effectiveness_composite, float)
-        assert isinstance(r.is_forecast_unreliable, bool)
-        assert isinstance(r.requires_pipeline_inspection, bool)
-        assert isinstance(r.estimated_revenue_variance_usd, float)
-        assert isinstance(r.forecast_signal, str)
+    def test_requires_coaching_exact_boundary_060_stage(self, engine):
+        # stage_advancement_accuracy_pct == 0.60 → <= 0.60 → True
+        assert engine._requires_forecast_coaching(0.0, make_input(
+            stage_advancement_accuracy_pct=0.60,
+            forecast_vs_actual_variance_pct=0.05)) is True
 
-    def test_commit_rate_exactly_50_not_unreliable_via_commit_alone(self, engine):
-        # commit_rate = 5/10 = 0.50 (NOT < 0.50) — other conds also false
-        inp = make_input(
-            forecast_commit_count=10,
-            forecast_commit_closed_count=5,
-            late_stage_slippage_count=0,
-            avg_forecast_accuracy_pct=1.0,
-            forecast_overestimate_count=0,
-            pipeline_coverage_ratio=5.0,
-            avg_deal_age_days=10.0,
-            stage_advancement_rate_pct=0.80,
-            multi_stakeholder_deals_pct=0.80,
-            crm_update_frequency_score=9.0,
-            sandbagged_deals_identified=0,
-            forecast_underestimate_count=0,
-            avg_close_date_slip_days=0.0,
-            deals_closed_not_forecasted_count=0,
-            manager_review_sessions_count=5,
-        )
-        r = engine.assess(inp)
-        # composite should be low (<40), commit_rate=0.50 NOT <0.50, slippage=0 <3
-        assert r.is_forecast_unreliable is False
+    def test_all_scores_are_non_negative(self, engine):
+        result = engine.assess(low_risk_input())
+        assert result.accuracy_score >= 0
+        assert result.discipline_score >= 0
+        assert result.stage_score >= 0
+        assert result.commit_score >= 0
+        assert result.forecast_composite >= 0
 
-    def test_pipeline_inspection_required_on_low_coverage(self, engine):
-        inp = make_input(pipeline_coverage_ratio=1.5)
-        r = engine.assess(inp)
-        assert r.requires_pipeline_inspection is True
-
-    def test_pipeline_inspection_not_required_on_good_data(self, engine, good_input):
-        r = engine.assess(good_input)
-        assert r.requires_pipeline_inspection is False
-
-    def test_input_dataclass_fields(self):
-        inp = make_input()
-        assert hasattr(inp, 'rep_id')
-        assert hasattr(inp, 'region')
-        assert hasattr(inp, 'evaluation_period_id')
-        assert hasattr(inp, 'total_forecasted_deals')
-        assert hasattr(inp, 'avg_deal_size_usd')
-
-    def test_summary_avg_composite_matches_manual_calculation(self):
-        eng = SalesForecastAccuracyIntelligenceEngine()
-        r1 = eng.assess(make_input())
-        r2 = eng.assess(make_input())
-        s = eng.summary()
-        expected_avg = round((r1.forecast_effectiveness_composite + r2.forecast_effectiveness_composite) / 2, 1)
-        assert s["avg_forecast_effectiveness_composite"] == expected_avg
+    def test_summary_with_single_result(self, engine):
+        r = engine.assess(low_risk_input())
+        s = engine.summary()
+        assert s["total"] == 1
+        assert s["avg_forecast_composite"] == r.forecast_composite
+        assert s["avg_accuracy_score"] == r.accuracy_score
