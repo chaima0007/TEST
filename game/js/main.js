@@ -25,6 +25,7 @@ import { ArchitectSystem } from './architect.js';
 import { MusicAgent } from './music.js';
 import { DialogueAgent } from './dialogue.js';
 import { VehicleDamageSystem } from './vehicledamage.js';
+import { DistrictSystem } from './district.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -82,6 +83,7 @@ const _audioCtx = audio.getContext();
 const musicAgent = _audioCtx ? new MusicAgent(_audioCtx, _audioCtx.destination) : null;
 const dialogueAgent = new DialogueAgent();
 const vehicleDamage = new VehicleDamageSystem();
+const district     = new DistrictSystem();
 
 // ── RadioSystem — stations switchables avec la touche R ──────────────────────
 const RADIO_STATIONS = [
@@ -157,8 +159,7 @@ const _nexusPhrases = [
   (v, d, w, dc, wx) => dc.isNight() ? `Mode nuit — lampadaires + Fantôme` : `Cycle jour ${dc.getTimeString()}`,
   (v, d, w, dc, wx) => {
     const dmg = vehicleDamage.getDamage();
-    const radio = RADIO_STATIONS[_radioIdx].name;
-    return `Carrosserie ${dmg > 0.05 ? Math.round(dmg*100)+'% endommagée' : 'intacte'} | ${radio}`;
+    return `${district.getCurrent().name} | Carrosserie ${dmg > 0.05 ? Math.round(dmg*100)+'%' : 'OK'} | ${RADIO_STATIONS[_radioIdx].name}`;
   },
 ];
 let _nexusIdx = 0;
@@ -214,6 +215,19 @@ function animate() {
   detective.update(dt, vehicle, hud, wanted.level);
 
   const playerPos = vehicle.getPosition();
+
+  // --- DistrictSystem : changement de quartier ---
+  const districtChange = district.update(playerPos.x, playerPos.z, scene.fog);
+  if (districtChange) _showNotif(`${districtChange.name} — ${districtChange.desc}`);
+
+  // --- Garage : réparation auto quand le joueur arrive au garage ---
+  const _gp = world.garagePos;
+  if (vehicleDamage.getDamage() > 0 && _gp &&
+      Math.hypot(playerPos.x - _gp.x, playerPos.z - _gp.z) < 5.5) {
+    vehicleDamage.repair(vehicle._bodyMat);
+    _showNotif('Garage — véhicule réparé !');
+  }
+
   combo.update(dt, playerPos, traffic.getCarPositions());
   drift.update(dt, vehicle);
   nitro.update(dt, playerPos, input);

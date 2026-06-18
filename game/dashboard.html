@@ -152,15 +152,15 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">29</div>
+    <div class="card-value">32</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
 
   <div class="card" style="--accent:#44ff99">
     <div class="card-title">Tests passés</div>
-    <div class="card-value">106 / 106</div>
-    <div class="card-desc">0 échec — 21 suites — couverture totale</div>
+    <div class="card-value">114 / 114</div>
+    <div class="card-desc">0 échec — 22 suites — couverture totale</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--green)"></div></div>
   </div>
 
@@ -258,7 +258,10 @@
       <li class="system-item"><span class="sys-dot" style="background:#4499ff"></span><span class="sys-name">Ombres dynamiques PCFSoft — 2048×2048, frustum 320m</span><span class="sys-tag">Stable</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#ff8833"></span><span class="sys-name">VehicleDamageSystem — dégâts cumulatifs 0-1, roughness+emissive, vitesse -65%</span><span class="sys-tag chaud">CHAUD</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#ffe87a"></span><span class="sys-name">RadioSystem — 5 stations (AUTO/Néon/Sombre/Chase/Némésis), touche R</span><span class="sys-tag chaud">CHAUD</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#55bbff"></span><span class="sys-name">Voitures garées — 15 obstacles statiques avec colliders AABB</span><span class="sys-tag chaud">CHAUD</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#55bbff"></span><span class="sys-name">Voitures garées — 15 obstacles statiques avec colliders AABB</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#2d7a3a"></span><span class="sys-name">Arbres de trottoir — 20 arbres 3D castShadow (tronc + feuillage sphère)</span><span class="sys-tag chaud">CHAUD</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00ff66"></span><span class="sys-name">DistrictSystem — 5 quartiers (Centre/Nord/Sud/Ouest/Est), fog + notification</span><span class="sys-tag chaud">CHAUD</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00aa44"></span><span class="sys-name">GarageRepair — marqueur lumineux, réparation auto à proximité</span><span class="sys-tag chaud">CHAUD</span></li>
     </ul>
   </div>
 
@@ -266,6 +269,7 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 14</span><span class="log-msg"><strong>DistrictSystem</strong> + Arbres de trottoir + Garage Repair — 5 quartiers avec ambiances, 20 arbres 3D + ombres, réparation auto au garage, 8 tests</span></li>
       <li class="log-item"><span class="log-time">Ronde 13</span><span class="log-msg"><strong>VehicleDamageSystem</strong> + <strong>RadioSystem</strong> + voitures garées — carrosserie cumulative, stations radio (touche R), 15 obstacles statiques, 9 tests</span></li>
       <li class="log-item"><span class="log-time">Ronde 12</span><span class="log-msg"><strong>CrowdAgent</strong> + Ombres PCFSoft — foule réagit aux crashs/police/boss, ombres 2048px</span></li>
       <li class="log-item"><span class="log-time">Ronde 11</span><span class="log-msg"><strong>PathClearanceAgent</strong> + <strong>IntegrityAgent</strong> — voies libres, auto-réparation, 12 tests unitaires</span></li>
@@ -300,8 +304,8 @@
       <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">RadioSystem — 5 stations, touche R, override musique</span><span class="sys-tag chaud">CHAUD</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">VehicleDamageSystem — dégâts cumulatifs, emissive orange, vitesse pénalisée</span><span class="sys-tag chaud">CHAUD</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Voitures garées — 15 obstacles statiques avec colliders</span><span class="sys-tag chaud">CHAUD</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">DistrictSystem — quartiers avec ambiances distinctes</span><span class="sys-tag wip">Planifié</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Mobilier urbain — bancs, poubelles, bollards</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Bollards et mobilier urbain — bancs, poubelles, barrières</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff6644"></span><span class="sys-name">Effets météo visuels avancés — flaques, brouillard dense, neige</span><span class="sys-tag wip">Planifié</span></li>
     </ul>
   </div>
 
@@ -310,7 +314,7 @@
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
   Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
-  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">29 systèmes · 106/106 tests · 12 agents IA</span>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">32 systèmes · 114/114 tests · 12 agents IA</span>
 </footer>
 
 <script>

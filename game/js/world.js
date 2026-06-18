@@ -241,6 +241,49 @@ export function createWorld(scene) {
     }
   }
 
+  // --- Arbres de trottoir --------------------------------------------------
+  // Tronc cylindrique + sphère feuillage — pas de collider (minces + sur trottoir).
+  const trunkGeo = new THREE.CylinderGeometry(0.28, 0.35, 2.8, 7);
+  const trunkMat = new THREE.MeshLambertMaterial({ color: 0x7a5c3a });
+  const leafGeo  = new THREE.SphereGeometry(1.7, 8, 6);
+  const leafPalette = [0x2d7a3a, 0x3a8a28, 0x4a7a30];
+  const leafMats = leafPalette.map((c) => new THREE.MeshLambertMaterial({ color: c }));
+
+  function addTree(tx, tz, idx) {
+    const trunk = new THREE.Mesh(trunkGeo, trunkMat);
+    trunk.position.set(tx, 1.4, tz);
+    trunk.castShadow = true;
+    scene.add(trunk);
+    const leaves = new THREE.Mesh(leafGeo, leafMats[idx % leafMats.length]);
+    leaves.position.set(tx, 3.7, tz);
+    leaves.castShadow = true;
+    scene.add(leaves);
+  }
+
+  // Arbres le long de routes horizontales (côté +Z)
+  let _ti = 0;
+  for (const rz of [roadZs[1], roadZs[3]]) {
+    for (let bi = 0; bi < CITY_SIZE; bi++) {
+      addTree(blockCenter(bi), rz + 6.2, _ti++);
+    }
+  }
+  // Arbres le long de routes verticales (côté +X)
+  for (const rx of [roadXs[1], roadXs[3]]) {
+    for (let bi = 0; bi < CITY_SIZE; bi++) {
+      addTree(rx + 6.2, blockCenter(bi), _ti++);
+    }
+  }
+
+  // --- Marqueur Garage (sol lumineux) --------------------------------------
+  const garageX = blockCenter(0);
+  const garageZ = -HALF_CITY + ROAD_WIDTH / 2;
+  const garagePadMat = new THREE.MeshStandardMaterial({
+    color: 0x004422, emissive: 0x00ff66, emissiveIntensity: 0.55,
+  });
+  const garagePad = new THREE.Mesh(new THREE.BoxGeometry(5, 0.12, 5), garagePadMat);
+  garagePad.position.set(garageX, 0.06, garageZ);
+  scene.add(garagePad);
+
   // --- Point de spawn -------------------------------------------------------
   // Sur la route horizontale qui traverse la rangée de blocs spawnBlockJ,
   // orienté pour rouler le long de cette rue (axe X), loin des bâtiments.
@@ -256,7 +299,8 @@ export function createWorld(scene) {
     colliders,
     spawnPoint,
     missionLocations,
-    streetLamps, // MeshStandardMaterial refs — main.js met emissiveIntensity la nuit
+    streetLamps,
+    garagePos: { x: garageX, z: garageZ },
     roadLines: {
       xs: roadXs.slice(),
       zs: roadZs.slice(),
