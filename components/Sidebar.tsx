@@ -1935,6 +1935,20 @@ function IconSalesProofOfValueIntelligenceEngine({ className }: { className?: st
   );
 }
 
+function IconSalesPipelineGenerationVelocityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Rocket with pipeline funnel — generation velocity */}
+      <path d="M10 2 C10 2 13 5 13 9 L10 17 L7 9 C7 5 10 2 10 2Z" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="10" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+      <path d="M3 11 L7 13" strokeLinecap="round"/>
+      <path d="M17 11 L13 13" strokeLinecap="round"/>
+      <path d="M5 6 L3 5 L4 7" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15 6 L17 5 L16 7" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2557,6 +2571,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-negotiation-discipline-intelligence-engine", label: "Negotiation Discipline", icon: IconSalesNegotiationDisciplineIntelligenceEngine },
       { href: "/dashboard/sales-territory-whitespace-intelligence-engine", label: "Territory Whitespace", icon: IconSalesTerritoryWhitespaceIntelligenceEngine },
       { href: "/dashboard/sales-proof-of-value-intelligence-engine", label: "Proof of Value", icon: IconSalesProofOfValueIntelligenceEngine },
+      { href: "/dashboard/sales-pipeline-generation-velocity-intelligence-engine", label: "Pipeline Velocity", icon: IconSalesPipelineGenerationVelocityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
