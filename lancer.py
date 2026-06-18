@@ -64,6 +64,10 @@ MENU = """
   [19] Agent Email               ← Cold outreach + séquences + propositions
   [20] Dashboard CEO             ← Vue exécutive revenus, KPIs, alertes
   [21] Mémoire Session           ← Se souvient de tout ce qu'on a fait ensemble
+  [22] Agent Autopilot           ← Cerveau autonome — analyse et agit seul
+  [23] Agent Growth              ← Growth hacking — 0 à 10 clients en 90 jours
+  [24] Agent Empire              ← Vision 5 ans — expansion et domination
+  [25] Agent TITAN               ← 20 experts + 50 simulations — zéro erreur
 
   [s]  Voir stats & mémoire
   [0]  Quitter
@@ -128,6 +132,14 @@ if __name__ == "__main__":
             lancer("agent_dashboard_ceo.py")
         elif choix == "21":
             lancer("agent_memoire_session.py")
+        elif choix == "22":
+            lancer("agent_autopilot.py")
+        elif choix == "23":
+            lancer("agent_growth.py")
+        elif choix == "24":
+            lancer("agent_empire.py")
+        elif choix == "25":
+            lancer("agent_titan.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
