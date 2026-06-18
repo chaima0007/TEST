@@ -1556,6 +1556,28 @@ function IconSalesMeetingQualityIntelligenceEngine({ className }: { className?: 
   );
 }
 
+function IconSalesPricingNegotiationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M4 10h12M10 4v12" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" opacity="0.4" />
+      <circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M7.5 12.5c0-1 1-2 2.5-2s2.5.8 2.5 2" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M8 8c0-.6.4-1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 0 0 2h2a1 1 0 0 1 0 2" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconSalesInboundLeadResponseEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 7h4m0 0V4m0 3L3 4" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+      <path d="M5 10h10M5 13h7" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
+      <rect x="2" y="6" width="16" height="11" rx="2" fill="none" stroke="currentColor" strokeWidth="1.3" />
+      <circle cx="15" cy="8" r="1.5" fill="currentColor" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconPipelineGenerationEfficiencyEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1996,6 +2018,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-forecast-accuracy-intelligence-engine", label: "Forecast Accuracy", icon: IconSalesForecastAccuracyIntelligenceEngine },
       { href: "/dashboard/sales-account-expansion-intelligence-engine", label: "Account Expansion", icon: IconSalesAccountExpansionIntelligenceEngine },
       { href: "/dashboard/sales-meeting-quality-intelligence-engine", label: "Meeting Quality", icon: IconSalesMeetingQualityIntelligenceEngine },
+      { href: "/dashboard/sales-pricing-negotiation-intelligence-engine", label: "Pricing Negotiation", icon: IconSalesPricingNegotiationIntelligenceEngine },
+      { href: "/dashboard/sales-inbound-lead-response-engine", label: "Lead Response", icon: IconSalesInboundLeadResponseEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
