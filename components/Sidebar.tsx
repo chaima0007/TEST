@@ -1474,6 +1474,20 @@ function IconSalesRepCapacityOverloadDetector({ className }: { className?: strin
   );
 }
 
+function IconSalesObjectionPatternIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Speech bubble with X marks representing objections */}
+      <path d="M3 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8l-3 3v-3H4a1 1 0 0 1-1-1V4z"
+        fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+      <line x1="6" y1="7" x2="8" y2="9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <line x1="8" y1="7" x2="6" y2="9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <line x1="11" y1="7" x2="13" y2="9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <line x1="13" y1="7" x2="11" y2="9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function IconSalesIncentiveCompensationRiskEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1878,6 +1892,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/customer-expansion-revenue-leak-detector", label: "Expansion Revenue Leak", icon: IconCustomerExpansionRevenueLeakDetector },
       { href: "/dashboard/sales-cycle-velocity-degradation-engine", label: "Cycle Velocity", icon: IconSalesCycleVelocityDegradationEngine },
       { href: "/dashboard/sales-incentive-compensation-risk-engine", label: "Incentive Comp Risk", icon: IconSalesIncentiveCompensationRiskEngine },
+      { href: "/dashboard/sales-objection-pattern-intelligence-engine", label: "Objection Patterns", icon: IconSalesObjectionPatternIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
