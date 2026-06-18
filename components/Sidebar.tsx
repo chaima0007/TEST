@@ -1935,6 +1935,18 @@ function IconSalesProofOfValueIntelligenceEngine({ className }: { className?: st
   );
 }
 
+function IconSalesBuyerEngagementIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Signal waves from person — buyer signal reception */}
+      <circle cx="10" cy="7" r="2" fill="currentColor" stroke="none"/>
+      <path d="M7 16 C7 12.5 13 12.5 13 16" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 9.5 C4 5.5 16 5.5 16 9.5" strokeLinecap="round"/>
+      <path d="M6 3 C6 1 14 1 14 3" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesMultiThreadingIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2591,6 +2603,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-proof-of-value-intelligence-engine", label: "Proof of Value", icon: IconSalesProofOfValueIntelligenceEngine },
       { href: "/dashboard/sales-pipeline-generation-velocity-intelligence-engine", label: "Pipeline Velocity", icon: IconSalesPipelineGenerationVelocityIntelligenceEngine },
       { href: "/dashboard/sales-multi-threading-intelligence-engine", label: "Multi-Threading", icon: IconSalesMultiThreadingIntelligenceEngine },
+      { href: "/dashboard/sales-buyer-engagement-intelligence-engine", label: "Buyer Engagement", icon: IconSalesBuyerEngagementIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
