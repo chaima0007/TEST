@@ -257,6 +257,22 @@ function IconMarket({ className }: { className?: string }) {
   );
 }
 
+function IconCampaignROI({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconSalesCoach({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v1h8v-1zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-1a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v1h-3zM4.75 14.094A5.973 5.973 0 004 17v1H1v-1a3 3 0 013.75-2.906z" />
+    </svg>
+  );
+}
+
 function IconThreatIntel({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -543,6 +559,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/proposals", label: "Scoring Propositions", icon: IconProposals },
       { href: "/dashboard/threat-intel", label: "Intelligence Menaces", icon: IconThreatIntel },
       { href: "/dashboard/market-opportunities", label: "Opportunités Marché", icon: IconMarket },
+      { href: "/dashboard/sales-coach", label: "Sales Coach IA", icon: IconSalesCoach },
+      { href: "/dashboard/campaign-roi", label: "ROI Campagnes", icon: IconCampaignROI },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
