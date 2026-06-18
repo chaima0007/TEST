@@ -1935,6 +1935,24 @@ function IconSalesProofOfValueIntelligenceEngine({ className }: { className?: st
   );
 }
 
+function IconSalesMultiThreadingIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Network nodes — multi-threading stakeholder map */}
+      <circle cx="10" cy="4" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="3" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="17" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="7" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="13" cy="17" r="1.5" fill="currentColor" stroke="none"/>
+      <line x1="10" y1="5.5" x2="3" y2="10.5" strokeLinecap="round"/>
+      <line x1="10" y1="5.5" x2="17" y2="10.5" strokeLinecap="round"/>
+      <line x1="3" y1="13.5" x2="7" y2="15.5" strokeLinecap="round"/>
+      <line x1="17" y1="13.5" x2="13" y2="15.5" strokeLinecap="round"/>
+      <line x1="3" y1="12" x2="17" y2="12" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesPipelineGenerationVelocityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2572,6 +2590,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-territory-whitespace-intelligence-engine", label: "Territory Whitespace", icon: IconSalesTerritoryWhitespaceIntelligenceEngine },
       { href: "/dashboard/sales-proof-of-value-intelligence-engine", label: "Proof of Value", icon: IconSalesProofOfValueIntelligenceEngine },
       { href: "/dashboard/sales-pipeline-generation-velocity-intelligence-engine", label: "Pipeline Velocity", icon: IconSalesPipelineGenerationVelocityIntelligenceEngine },
+      { href: "/dashboard/sales-multi-threading-intelligence-engine", label: "Multi-Threading", icon: IconSalesMultiThreadingIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
