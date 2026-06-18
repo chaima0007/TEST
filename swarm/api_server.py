@@ -58,6 +58,7 @@ from intelligence.prospect_scorecard import (
     TemporalDimension, MarketFitDimension, ScorecardTier,
 )
 from intelligence.prospect_enricher import ProspectEnricher
+from intelligence.contact_timing_optimizer import ContactTimingOptimizer
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -114,6 +115,7 @@ _followup_scheduler = FollowUpScheduler()
 _workflow_orchestrator = WorkflowOrchestrator()
 _prospect_scorecard = ProspectScorecard()
 _prospect_enricher = ProspectEnricher()
+_contact_timing = ContactTimingOptimizer()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1582,6 +1584,28 @@ def enrich_batch(req: EnrichBatchReq):
 def enrich_tier_a(req: EnrichBatchReq):
     results = _prospect_enricher.get_tier_a(req.prospects)
     return {"count": len(results), "prospects": [e.to_dict() for e in results]}
+
+
+# ── Contact Timing Optimizer ──────────────────────────────────────────────────
+
+@app.get("/timing/best", tags=["Timing"])
+def timing_best(sector: str = "PME"):
+    return _contact_timing.best_window(sector).to_dict()
+
+
+@app.get("/timing/top", tags=["Timing"])
+def timing_top(sector: str = "PME", n: int = 3):
+    return [w.to_dict() for w in _contact_timing.top_windows(sector, n=n)]
+
+
+@app.get("/timing/schedule", tags=["Timing"])
+def timing_schedule(sector: str = "PME"):
+    return _contact_timing.weekly_schedule(sector)
+
+
+@app.get("/timing/summary", tags=["Timing"])
+def timing_summary():
+    return {"windows": _contact_timing.sector_summary()}
 
 
 # ── Lead Scorer ───────────────────────────────────────────────────────────────
