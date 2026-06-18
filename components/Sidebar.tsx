@@ -2093,6 +2093,29 @@ function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: 
   );
 }
 
+function IconSalesConversationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Speech bubble with sound-wave bars inside — conversation quality */}
+      <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v8a1 1 0 01-1 1H7l-4 3V4z" strokeLinejoin="round" opacity="0.7"/>
+      <path d="M7 8.5h1.5" strokeLinecap="round" strokeWidth="1.8"/>
+      <path d="M10 6.5v4" strokeLinecap="round" strokeWidth="1.8"/>
+      <path d="M12.5 7.5v2" strokeLinecap="round" strokeWidth="1.8"/>
+    </svg>
+  );
+}
+
+function IconSalesRepRampIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Staircase steps going up — rep ramp progression */}
+      <path d="M2 16 L2 12 L6 12 L6 8 L10 8 L10 5 L14 5 L14 3 L18 3" strokeLinecap="round" strokeLinejoin="round" opacity="0.8"/>
+      <circle cx="14" cy="3" r="1.5" fill="currentColor" stroke="none" opacity="0.9"/>
+      <path d="M2 18 L18 18" strokeLinecap="round" opacity="0.3"/>
+    </svg>
+  );
+}
+
 function IconSalesAccountPenetrationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2604,6 +2627,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pipeline-generation-velocity-intelligence-engine", label: "Pipeline Velocity", icon: IconSalesPipelineGenerationVelocityIntelligenceEngine },
       { href: "/dashboard/sales-multi-threading-intelligence-engine", label: "Multi-Threading", icon: IconSalesMultiThreadingIntelligenceEngine },
       { href: "/dashboard/sales-buyer-engagement-intelligence-engine", label: "Buyer Engagement", icon: IconSalesBuyerEngagementIntelligenceEngine },
+      { href: "/dashboard/sales-conversation-intelligence-engine", label: "Conversation Intel", icon: IconSalesConversationIntelligenceEngine },
+      { href: "/dashboard/sales-rep-ramp-intelligence-engine", label: "Rep Ramp", icon: IconSalesRepRampIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
