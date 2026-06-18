@@ -1803,6 +1803,17 @@ function IconSalesBuyerMeetingQualityIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesObjectionIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Shield with X — objection defense */}
+      <path d="M10 2 L17 5 L17 11 C17 14.5 13.5 17.5 10 18.5 C6.5 17.5 3 14.5 3 11 L3 5 Z" strokeLinecap="round" strokeLinejoin="round"/>
+      <line x1="7.5" y1="9" x2="12.5" y2="13" strokeLinecap="round"/>
+      <line x1="12.5" y1="9" x2="7.5" y2="13" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesNegotiationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2349,6 +2360,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-reference-intelligence-engine", label: "Ref. Evidence", icon: IconSalesReferenceIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-intelligence-engine", label: "Negotiation", icon: IconSalesNegotiationIntelligenceEngine },
       { href: "/dashboard/sales-buyer-meeting-quality-intelligence-engine", label: "Meeting Quality", icon: IconSalesBuyerMeetingQualityIntelligenceEngine },
+      { href: "/dashboard/sales-objection-intelligence-engine", label: "Objection Intel", icon: IconSalesObjectionIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
