@@ -1907,6 +1907,21 @@ function IconSalesNegotiationDisciplineIntelligenceEngine({ className }: { class
   );
 }
 
+function IconSalesTerritoryWhitespaceIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Map with target pin + whitespace dots — territory coverage */}
+      <rect x="2" y="3" width="16" height="13" rx="1.5" strokeLinejoin="round"/>
+      <circle cx="10" cy="9" r="2.5" fill="none"/>
+      <path d="M10 11.5 L10 14" strokeLinecap="round"/>
+      <circle cx="4.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"/>
+      <circle cx="15.5" cy="5.5" r="0.8" fill="currentColor" stroke="none"/>
+      <circle cx="4.5" cy="13.5" r="0.8" fill="currentColor" stroke="none"/>
+      <circle cx="15.5" cy="13.5" r="0.8" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2527,6 +2542,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-discovery-quality-intelligence-engine", label: "Discovery Quality", icon: IconSalesDiscoveryQualityIntelligenceEngine },
       { href: "/dashboard/sales-customer-success-handoff-quality-intelligence-engine", label: "CS Handoff Quality", icon: IconSalesCustomerSuccessHandoffQualityIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-discipline-intelligence-engine", label: "Negotiation Discipline", icon: IconSalesNegotiationDisciplineIntelligenceEngine },
+      { href: "/dashboard/sales-territory-whitespace-intelligence-engine", label: "Territory Whitespace", icon: IconSalesTerritoryWhitespaceIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
