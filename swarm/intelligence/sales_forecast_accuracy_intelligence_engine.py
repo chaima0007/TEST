@@ -11,229 +11,188 @@ class ForecastRisk(str, Enum):
 
 
 class ForecastPattern(str, Enum):
-    none                   = "none"
-    systematic_overforecast = "systematic_overforecast"
-    sandbag_behavior       = "sandbag_behavior"
-    pipeline_gap           = "pipeline_gap"
-    crm_neglect            = "crm_neglect"
-    stage_manipulation     = "stage_manipulation"
+    none                       = "none"
+    chronic_over_forecasting   = "chronic_over_forecasting"
+    chronic_under_forecasting  = "chronic_under_forecasting"
+    end_of_quarter_cliff       = "end_of_quarter_cliff"
+    recency_bias_sandbagging   = "recency_bias_sandbagging"
+    stage_inflation_blindspot  = "stage_inflation_blindspot"
 
 
 class ForecastSeverity(str, Enum):
-    reliable   = "reliable"
-    variable   = "variable"
-    unreliable = "unreliable"
-    chaotic    = "chaotic"
+    precise     = "precise"
+    calibrating = "calibrating"
+    drifting    = "drifting"
+    unreliable  = "unreliable"
 
 
 class ForecastAction(str, Enum):
-    no_action                  = "no_action"
-    forecast_recalibration     = "forecast_recalibration"
-    pipeline_inspection        = "pipeline_inspection"
-    crm_training               = "crm_training"
-    forecast_review_cadence    = "forecast_review_cadence"
-    forecast_override          = "forecast_override"
+    no_action                     = "no_action"
+    forecast_calibration_coaching = "forecast_calibration_coaching"
+    pipeline_inspection_coaching  = "pipeline_inspection_coaching"
+    stage_criteria_coaching       = "stage_criteria_coaching"
+    commit_discipline_coaching    = "commit_discipline_coaching"
+    forecast_reset_intervention   = "forecast_reset_intervention"
 
 
 @dataclass
-class ForecastAccuracyInput:
+class ForecastInput:
     rep_id: str
     region: str
     evaluation_period_id: str
-    total_forecasted_deals: int
-    forecast_commit_count: int
-    forecast_commit_closed_count: int
-    forecast_upside_count: int
-    forecast_upside_closed_count: int
-    late_stage_slippage_count: int
-    sandbagged_deals_identified: int
-    avg_forecast_accuracy_pct: float
-    forecast_overestimate_count: int
-    forecast_underestimate_count: int
-    pipeline_coverage_ratio: float
-    avg_deal_age_days: float
-    avg_close_date_slip_days: float
-    stage_advancement_rate_pct: float
-    crm_update_frequency_score: float
-    manager_review_sessions_count: int
-    multi_stakeholder_deals_pct: float
-    avg_deal_size_usd: float
-    deals_closed_not_forecasted_count: int
+    forecast_vs_actual_variance_pct: float
+    over_forecast_frequency_pct: float
+    under_forecast_frequency_pct: float
+    commit_to_close_rate_pct: float
+    best_case_to_close_rate_pct: float
+    pipeline_to_quota_ratio: float
+    late_add_to_forecast_pct: float
+    deals_pulled_from_forecast_pct: float
+    avg_deal_slip_days: float
+    stage_advancement_accuracy_pct: float
+    close_date_accuracy_within_week_pct: float
+    forecast_change_frequency_per_qtr: float
+    upside_deals_closed_pct: float
+    commit_deals_lost_pct: float
+    sandbag_conversion_rate_pct: float
+    multi_quarter_slip_rate_pct: float
+    forecast_submitted_on_time_pct: float
+    total_deals_forecasted: int
+    avg_opportunity_value_usd: float
 
 
 @dataclass
-class ForecastAccuracyResult:
+class ForecastResult:
     rep_id: str
     region: str
     forecast_risk: ForecastRisk
     forecast_pattern: ForecastPattern
     forecast_severity: ForecastSeverity
     recommended_action: ForecastAction
-    forecast_accuracy_score: float
-    forecast_discipline_score: float
-    pipeline_health_score: float
-    crm_hygiene_score: float
-    forecast_effectiveness_composite: float
-    is_forecast_unreliable: bool
-    requires_pipeline_inspection: bool
-    estimated_revenue_variance_usd: float
+    accuracy_score: float
+    discipline_score: float
+    stage_score: float
+    commit_score: float
+    forecast_composite: float
+    has_forecast_gap: bool
+    requires_forecast_coaching: bool
+    estimated_revenue_at_risk_usd: float
     forecast_signal: str
 
     def to_dict(self) -> dict:
         return {
-            "rep_id":                           self.rep_id,
-            "region":                           self.region,
-            "forecast_risk":                    self.forecast_risk.value,
-            "forecast_pattern":                 self.forecast_pattern.value,
-            "forecast_severity":                self.forecast_severity.value,
-            "recommended_action":               self.recommended_action.value,
-            "forecast_accuracy_score":          self.forecast_accuracy_score,
-            "forecast_discipline_score":        self.forecast_discipline_score,
-            "pipeline_health_score":            self.pipeline_health_score,
-            "crm_hygiene_score":                self.crm_hygiene_score,
-            "forecast_effectiveness_composite": self.forecast_effectiveness_composite,
-            "is_forecast_unreliable":           self.is_forecast_unreliable,
-            "requires_pipeline_inspection":     self.requires_pipeline_inspection,
-            "estimated_revenue_variance_usd":   self.estimated_revenue_variance_usd,
-            "forecast_signal":                  self.forecast_signal,
+            "rep_id":                        self.rep_id,
+            "region":                        self.region,
+            "forecast_risk":                 self.forecast_risk.value,
+            "forecast_pattern":              self.forecast_pattern.value,
+            "forecast_severity":             self.forecast_severity.value,
+            "recommended_action":            self.recommended_action.value,
+            "accuracy_score":                self.accuracy_score,
+            "discipline_score":              self.discipline_score,
+            "stage_score":                   self.stage_score,
+            "commit_score":                  self.commit_score,
+            "forecast_composite":            self.forecast_composite,
+            "has_forecast_gap":              self.has_forecast_gap,
+            "requires_forecast_coaching":    self.requires_forecast_coaching,
+            "estimated_revenue_at_risk_usd": self.estimated_revenue_at_risk_usd,
+            "forecast_signal":               self.forecast_signal,
         }
 
 
 class SalesForecastAccuracyIntelligenceEngine:
 
     def __init__(self) -> None:
-        self._results: list[ForecastAccuracyResult] = []
+        self._results: list[ForecastResult] = []
 
     # ------------------------------------------------------------------
     # Sub-scores (0–100, higher = more risk)
     # ------------------------------------------------------------------
 
-    def _forecast_accuracy_score(self, inp: ForecastAccuracyInput) -> float:
+    def _accuracy_score(self, inp: ForecastInput) -> float:
         score = 0.0
 
-        # Accuracy deviation from 100%
-        dev = abs(inp.avg_forecast_accuracy_pct - 1.0)
-        if dev >= 0.40:
+        if inp.forecast_vs_actual_variance_pct >= 0.40:
             score += 40.0
-        elif dev >= 0.25:
-            score += 25.0
-        elif dev >= 0.15:
-            score += 12.0
+        elif inp.forecast_vs_actual_variance_pct >= 0.20:
+            score += 22.0
+        elif inp.forecast_vs_actual_variance_pct >= 0.10:
+            score += 8.0
 
-        # Commit accuracy (commit deals that actually closed)
-        commit_denom = max(inp.forecast_commit_count, 1)
-        commit_rate = inp.forecast_commit_closed_count / commit_denom
-        if commit_rate < 0.50:
-            score += 30.0
-        elif commit_rate < 0.70:
-            score += 15.0
-        elif commit_rate < 0.85:
-            score += 5.0
-
-        # Overestimate ratio
-        total = max(inp.total_forecasted_deals, 1)
-        over_ratio = inp.forecast_overestimate_count / total
-        if over_ratio >= 0.40:
-            score += 20.0
-        elif over_ratio >= 0.25:
-            score += 10.0
-        elif over_ratio >= 0.15:
-            score += 5.0
-
-        return min(score, 100.0)
-
-    def _forecast_discipline_score(self, inp: ForecastAccuracyInput) -> float:
-        score = 0.0
-
-        # Late stage slippage
-        if inp.late_stage_slippage_count >= 4:
+        if inp.commit_deals_lost_pct >= 0.40:
             score += 35.0
-        elif inp.late_stage_slippage_count >= 2:
-            score += 20.0
-        elif inp.late_stage_slippage_count >= 1:
-            score += 8.0
-
-        # Close date slippage
-        if inp.avg_close_date_slip_days >= 45:
-            score += 30.0
-        elif inp.avg_close_date_slip_days >= 25:
+        elif inp.commit_deals_lost_pct >= 0.20:
             score += 18.0
-        elif inp.avg_close_date_slip_days >= 10:
-            score += 8.0
 
-        # Unknown closes (closed but not in forecast)
-        if inp.deals_closed_not_forecasted_count >= 3:
+        if inp.close_date_accuracy_within_week_pct <= 0.30:
             score += 25.0
-        elif inp.deals_closed_not_forecasted_count >= 2:
+        elif inp.close_date_accuracy_within_week_pct <= 0.55:
             score += 12.0
-        elif inp.deals_closed_not_forecasted_count >= 1:
-            score += 5.0
-
-        # Missed manager review sessions
-        if inp.manager_review_sessions_count == 0:
-            score += 10.0
-        elif inp.manager_review_sessions_count <= 1:
-            score += 5.0
 
         return min(score, 100.0)
 
-    def _pipeline_health_score(self, inp: ForecastAccuracyInput) -> float:
+    def _discipline_score(self, inp: ForecastInput) -> float:
         score = 0.0
 
-        # Pipeline coverage ratio
-        if inp.pipeline_coverage_ratio < 2.0:
+        if inp.forecast_change_frequency_per_qtr >= 5.0:
+            score += 40.0
+        elif inp.forecast_change_frequency_per_qtr >= 3.0:
+            score += 22.0
+        elif inp.forecast_change_frequency_per_qtr >= 1.5:
+            score += 8.0
+
+        if inp.late_add_to_forecast_pct >= 0.40:
             score += 35.0
-        elif inp.pipeline_coverage_ratio < 3.0:
+        elif inp.late_add_to_forecast_pct >= 0.20:
             score += 18.0
-        elif inp.pipeline_coverage_ratio < 4.0:
-            score += 8.0
 
-        # Deal age (stale pipeline)
-        if inp.avg_deal_age_days >= 120:
+        if inp.multi_quarter_slip_rate_pct >= 0.35:
             score += 25.0
-        elif inp.avg_deal_age_days >= 75:
-            score += 15.0
-        elif inp.avg_deal_age_days >= 45:
-            score += 5.0
-
-        # Stage advancement rate
-        if inp.stage_advancement_rate_pct < 0.30:
-            score += 25.0
-        elif inp.stage_advancement_rate_pct < 0.50:
+        elif inp.multi_quarter_slip_rate_pct >= 0.15:
             score += 12.0
-
-        # Multi-stakeholder coverage
-        if inp.multi_stakeholder_deals_pct < 0.30:
-            score += 15.0
-        elif inp.multi_stakeholder_deals_pct < 0.50:
-            score += 8.0
 
         return min(score, 100.0)
 
-    def _crm_hygiene_score(self, inp: ForecastAccuracyInput) -> float:
+    def _stage_score(self, inp: ForecastInput) -> float:
         score = 0.0
 
-        # CRM update frequency (0–10 scale, low = risky)
-        if inp.crm_update_frequency_score < 3.0:
+        if inp.stage_advancement_accuracy_pct <= 0.40:
+            score += 40.0
+        elif inp.stage_advancement_accuracy_pct <= 0.60:
+            score += 22.0
+        elif inp.stage_advancement_accuracy_pct <= 0.75:
+            score += 8.0
+
+        if inp.deals_pulled_from_forecast_pct >= 0.35:
+            score += 35.0
+        elif inp.deals_pulled_from_forecast_pct >= 0.20:
+            score += 18.0
+
+        if inp.avg_deal_slip_days >= 30.0:
+            score += 25.0
+        elif inp.avg_deal_slip_days >= 14.0:
+            score += 12.0
+
+        return min(score, 100.0)
+
+    def _commit_score(self, inp: ForecastInput) -> float:
+        score = 0.0
+
+        if inp.commit_to_close_rate_pct <= 0.40:
             score += 45.0
-        elif inp.crm_update_frequency_score < 5.0:
+        elif inp.commit_to_close_rate_pct <= 0.60:
             score += 25.0
-        elif inp.crm_update_frequency_score < 7.0:
+        elif inp.commit_to_close_rate_pct <= 0.75:
             score += 10.0
 
-        # Sandbag signals (hide deals from CRM until close)
-        if inp.sandbagged_deals_identified >= 3:
-            score += 35.0
-        elif inp.sandbagged_deals_identified >= 2:
-            score += 18.0
-        elif inp.sandbagged_deals_identified >= 1:
-            score += 8.0
+        if inp.over_forecast_frequency_pct >= 0.60:
+            score += 30.0
+        elif inp.over_forecast_frequency_pct >= 0.40:
+            score += 15.0
 
-        # Underestimate (closed not in forecast — CRM miss)
-        if inp.forecast_underestimate_count >= 3:
-            score += 20.0
-        elif inp.forecast_underestimate_count >= 2:
-            score += 10.0
+        if inp.under_forecast_frequency_pct >= 0.50:
+            score += 25.0
+        elif inp.under_forecast_frequency_pct >= 0.30:
+            score += 12.0
 
         return min(score, 100.0)
 
@@ -241,28 +200,28 @@ class SalesForecastAccuracyIntelligenceEngine:
     # Pattern detection
     # ------------------------------------------------------------------
 
-    def _detect_pattern(self, inp: ForecastAccuracyInput,
+    def _detect_pattern(self, inp: ForecastInput,
                          accuracy: float, discipline: float,
-                         pipeline: float, crm: float) -> ForecastPattern:
-        # Priority: systematic_overforecast > sandbag_behavior > pipeline_gap
-        #           > crm_neglect > stage_manipulation > none
+                         stage: float, commit: float) -> ForecastPattern:
+        # Stage inflation blindspot: stage data is wrong, misrepresenting pipeline
+        if inp.stage_advancement_accuracy_pct <= 0.35 and inp.deals_pulled_from_forecast_pct >= 0.30:
+            return ForecastPattern.stage_inflation_blindspot
 
-        total = max(inp.total_forecasted_deals, 1)
-        over_ratio = inp.forecast_overestimate_count / total
-        if accuracy >= 35 and over_ratio >= 0.30:
-            return ForecastPattern.systematic_overforecast
+        # Chronic over-forecasting: consistently forecasts more than closes
+        if inp.over_forecast_frequency_pct >= 0.55 and inp.commit_deals_lost_pct >= 0.30:
+            return ForecastPattern.chronic_over_forecasting
 
-        if inp.sandbagged_deals_identified >= 2 and crm >= 25:
-            return ForecastPattern.sandbag_behavior
+        # End of quarter cliff: deals slip heavily at quarter end
+        if discipline >= 35 and inp.multi_quarter_slip_rate_pct >= 0.25:
+            return ForecastPattern.end_of_quarter_cliff
 
-        if pipeline >= 35 and inp.pipeline_coverage_ratio < 2.5:
-            return ForecastPattern.pipeline_gap
+        # Recency bias sandbagging: underforecast early, last-minute upside adds
+        if inp.sandbag_conversion_rate_pct >= 0.50 and inp.late_add_to_forecast_pct >= 0.30:
+            return ForecastPattern.recency_bias_sandbagging
 
-        if crm >= 30 and inp.crm_update_frequency_score < 5.0:
-            return ForecastPattern.crm_neglect
-
-        if discipline >= 30 and inp.late_stage_slippage_count >= 2:
-            return ForecastPattern.stage_manipulation
+        # Chronic under-forecasting: consistently sandbagging
+        if inp.under_forecast_frequency_pct >= 0.45 and commit >= 30:
+            return ForecastPattern.chronic_under_forecasting
 
         return ForecastPattern.none
 
@@ -281,127 +240,122 @@ class SalesForecastAccuracyIntelligenceEngine:
 
     def _severity(self, composite: float) -> ForecastSeverity:
         if composite >= 60:
-            return ForecastSeverity.chaotic
-        if composite >= 40:
             return ForecastSeverity.unreliable
+        if composite >= 40:
+            return ForecastSeverity.drifting
         if composite >= 20:
-            return ForecastSeverity.variable
-        return ForecastSeverity.reliable
+            return ForecastSeverity.calibrating
+        return ForecastSeverity.precise
 
     def _action(self, risk: ForecastRisk, pattern: ForecastPattern) -> ForecastAction:
         if risk == ForecastRisk.critical:
-            if pattern == ForecastPattern.systematic_overforecast:
-                return ForecastAction.forecast_override
-            if pattern == ForecastPattern.pipeline_gap:
-                return ForecastAction.pipeline_inspection
-            return ForecastAction.forecast_review_cadence
+            if pattern == ForecastPattern.stage_inflation_blindspot:
+                return ForecastAction.stage_criteria_coaching
+            if pattern == ForecastPattern.chronic_over_forecasting:
+                return ForecastAction.commit_discipline_coaching
+            return ForecastAction.forecast_reset_intervention
         if risk == ForecastRisk.high:
-            if pattern == ForecastPattern.crm_neglect:
-                return ForecastAction.crm_training
-            if pattern == ForecastPattern.sandbag_behavior:
-                return ForecastAction.forecast_review_cadence
-            return ForecastAction.pipeline_inspection
+            if pattern == ForecastPattern.end_of_quarter_cliff:
+                return ForecastAction.pipeline_inspection_coaching
+            if pattern == ForecastPattern.recency_bias_sandbagging:
+                return ForecastAction.forecast_calibration_coaching
+            return ForecastAction.commit_discipline_coaching
         if risk == ForecastRisk.moderate:
-            return ForecastAction.forecast_recalibration
+            return ForecastAction.forecast_calibration_coaching
         return ForecastAction.no_action
 
     # ------------------------------------------------------------------
     # Flags
     # ------------------------------------------------------------------
 
-    def _is_forecast_unreliable(self, composite: float,
-                                 inp: ForecastAccuracyInput) -> bool:
-        commit_denom = max(inp.forecast_commit_count, 1)
-        commit_rate = inp.forecast_commit_closed_count / commit_denom
+    def _has_forecast_gap(self, composite: float, inp: ForecastInput) -> bool:
         return (
             composite >= 40
-            or commit_rate < 0.50
-            or inp.late_stage_slippage_count >= 3
+            or inp.commit_deals_lost_pct >= 0.30
+            or inp.commit_to_close_rate_pct <= 0.50
         )
 
-    def _requires_pipeline_inspection(self, composite: float,
-                                       inp: ForecastAccuracyInput) -> bool:
+    def _requires_forecast_coaching(self, composite: float, inp: ForecastInput) -> bool:
         return (
             composite >= 30
-            or inp.pipeline_coverage_ratio < 2.5
-            or inp.avg_close_date_slip_days >= 30
+            or inp.forecast_vs_actual_variance_pct >= 0.15
+            or inp.stage_advancement_accuracy_pct <= 0.60
         )
 
     # ------------------------------------------------------------------
-    # Revenue variance
+    # Revenue at risk estimate
     # ------------------------------------------------------------------
 
-    def _estimated_revenue_variance(self, inp: ForecastAccuracyInput,
-                                     composite: float) -> float:
+    def _estimated_revenue_at_risk(self, inp: ForecastInput, composite: float) -> float:
         return round(
-            inp.forecast_overestimate_count * inp.avg_deal_size_usd * (composite / 100.0), 2
+            inp.total_deals_forecasted
+            * inp.avg_opportunity_value_usd
+            * inp.commit_deals_lost_pct
+            * (composite / 100.0),
+            2,
         )
 
     # ------------------------------------------------------------------
     # Signal string
     # ------------------------------------------------------------------
 
-    def _signal(self, inp: ForecastAccuracyInput,
+    def _signal(self, inp: ForecastInput,
                  pattern: ForecastPattern, composite: float) -> str:
         if pattern == ForecastPattern.none and composite < 20:
-            return "Forecast accuracy within acceptable benchmarks"
+            return "Forecast accuracy healthy — variance, commit discipline, and stage accuracy within benchmarks"
         parts: list[str] = []
-        if inp.forecast_overestimate_count >= 1:
-            parts.append(f"{inp.forecast_overestimate_count} over-forecasted deals")
-        if inp.late_stage_slippage_count >= 1:
-            parts.append(f"{inp.late_stage_slippage_count} late-stage slippages")
-        if inp.sandbagged_deals_identified >= 1:
-            parts.append(f"{inp.sandbagged_deals_identified} sandbagged deals")
-        if inp.deals_closed_not_forecasted_count >= 1:
-            parts.append(f"{inp.deals_closed_not_forecasted_count} unforecast closes")
+        parts.append(f"{inp.forecast_vs_actual_variance_pct * 100:.0f}% forecast variance")
+        parts.append(f"{inp.commit_to_close_rate_pct * 100:.0f}% commit-to-close rate")
+        parts.append(f"{inp.commit_deals_lost_pct * 100:.0f}% committed deals lost")
         label = pattern.value.replace("_", " ") if pattern != ForecastPattern.none else "Forecast risk"
-        summary = " — ".join(parts) if parts else "forecast quality degrading"
-        return f"{label.capitalize()} — {summary} — composite {composite:.0f}"
+        return f"{label.capitalize()} — {' — '.join(parts)} — composite {composite:.0f}"
 
     # ------------------------------------------------------------------
     # Assess
     # ------------------------------------------------------------------
 
-    def assess(self, inp: ForecastAccuracyInput) -> ForecastAccuracyResult:
-        accuracy   = round(self._forecast_accuracy_score(inp), 1)
-        discipline = round(self._forecast_discipline_score(inp), 1)
-        pipeline   = round(self._pipeline_health_score(inp), 1)
-        crm        = round(self._crm_hygiene_score(inp), 1)
+    def assess(self, inp: ForecastInput) -> ForecastResult:
+        accuracy   = round(self._accuracy_score(inp), 1)
+        discipline = round(self._discipline_score(inp), 1)
+        stage      = round(self._stage_score(inp), 1)
+        commit     = round(self._commit_score(inp), 1)
 
-        composite = round(accuracy * 0.35 + discipline * 0.25 + pipeline * 0.25 + crm * 0.15, 1)
+        composite = round(
+            accuracy * 0.35 + discipline * 0.25 + stage * 0.25 + commit * 0.15, 1
+        )
         composite = min(composite, 100.0)
 
-        pattern  = self._detect_pattern(inp, accuracy, discipline, pipeline, crm)
+        pattern  = self._detect_pattern(inp, accuracy, discipline, stage, commit)
         risk     = self._risk_level(composite)
         severity = self._severity(composite)
         action   = self._action(risk, pattern)
 
-        unreliable = self._is_forecast_unreliable(composite, inp)
-        inspection = self._requires_pipeline_inspection(composite, inp)
-        variance   = self._estimated_revenue_variance(inp, composite)
-        signal     = self._signal(inp, pattern, composite)
+        gap    = self._has_forecast_gap(composite, inp)
+        coach  = self._requires_forecast_coaching(composite, inp)
+        loss   = self._estimated_revenue_at_risk(inp, composite)
+        signal = self._signal(inp, pattern, composite)
 
-        result = ForecastAccuracyResult(
+        result = ForecastResult(
             rep_id=inp.rep_id,
             region=inp.region,
             forecast_risk=risk,
             forecast_pattern=pattern,
             forecast_severity=severity,
             recommended_action=action,
-            forecast_accuracy_score=accuracy,
-            forecast_discipline_score=discipline,
-            pipeline_health_score=pipeline,
-            crm_hygiene_score=crm,
-            forecast_effectiveness_composite=composite,
-            is_forecast_unreliable=unreliable,
-            requires_pipeline_inspection=inspection,
-            estimated_revenue_variance_usd=variance,
+            accuracy_score=accuracy,
+            discipline_score=discipline,
+            stage_score=stage,
+            commit_score=commit,
+            forecast_composite=composite,
+            has_forecast_gap=gap,
+            requires_forecast_coaching=coach,
+            estimated_revenue_at_risk_usd=loss,
             forecast_signal=signal,
         )
         self._results.append(result)
         return result
 
-    def assess_batch(self, inputs: list[ForecastAccuracyInput]) -> list[ForecastAccuracyResult]:
+    def assess_batch(self, inputs: list[ForecastInput]) -> list[ForecastResult]:
         return [self.assess(i) for i in inputs]
 
     def summary(self) -> dict:
@@ -412,48 +366,48 @@ class SalesForecastAccuracyIntelligenceEngine:
                 "pattern_counts": {},
                 "severity_counts": {},
                 "action_counts": {},
-                "avg_forecast_effectiveness_composite": 0.0,
-                "unreliable_forecast_count": 0,
-                "pipeline_inspection_count": 0,
-                "avg_forecast_accuracy_score": 0.0,
-                "avg_forecast_discipline_score": 0.0,
-                "avg_pipeline_health_score": 0.0,
-                "avg_crm_hygiene_score": 0.0,
-                "total_estimated_revenue_variance_usd": 0.0,
+                "avg_forecast_composite": 0.0,
+                "forecast_gap_count": 0,
+                "coaching_count": 0,
+                "avg_accuracy_score": 0.0,
+                "avg_discipline_score": 0.0,
+                "avg_stage_score": 0.0,
+                "avg_commit_score": 0.0,
+                "total_estimated_revenue_at_risk_usd": 0.0,
             }
 
         risk_counts:     dict[str, int] = {}
         pattern_counts:  dict[str, int] = {}
         severity_counts: dict[str, int] = {}
         action_counts:   dict[str, int] = {}
-        total_comp = total_acc = total_disc = total_pipe = total_crm = total_var = 0.0
+        total_comp = total_acc = total_dis = total_sta = total_com = total_loss = 0.0
 
         for r in self._results:
-            risk_counts[r.forecast_risk.value]       = risk_counts.get(r.forecast_risk.value, 0) + 1
-            pattern_counts[r.forecast_pattern.value] = pattern_counts.get(r.forecast_pattern.value, 0) + 1
+            risk_counts[r.forecast_risk.value]         = risk_counts.get(r.forecast_risk.value, 0) + 1
+            pattern_counts[r.forecast_pattern.value]   = pattern_counts.get(r.forecast_pattern.value, 0) + 1
             severity_counts[r.forecast_severity.value] = severity_counts.get(r.forecast_severity.value, 0) + 1
             action_counts[r.recommended_action.value]  = action_counts.get(r.recommended_action.value, 0) + 1
-            total_comp += r.forecast_effectiveness_composite
-            total_acc  += r.forecast_accuracy_score
-            total_disc += r.forecast_discipline_score
-            total_pipe += r.pipeline_health_score
-            total_crm  += r.crm_hygiene_score
-            total_var  += r.estimated_revenue_variance_usd
+            total_comp += r.forecast_composite
+            total_acc  += r.accuracy_score
+            total_dis  += r.discipline_score
+            total_sta  += r.stage_score
+            total_com  += r.commit_score
+            total_loss += r.estimated_revenue_at_risk_usd
 
         n = len(self._results)
 
         return {
-            "total":                                n,
-            "risk_counts":                          risk_counts,
-            "pattern_counts":                       pattern_counts,
-            "severity_counts":                      severity_counts,
-            "action_counts":                        action_counts,
-            "avg_forecast_effectiveness_composite": round(total_comp / n, 1),
-            "unreliable_forecast_count":            sum(1 for r in self._results if r.is_forecast_unreliable),
-            "pipeline_inspection_count":            sum(1 for r in self._results if r.requires_pipeline_inspection),
-            "avg_forecast_accuracy_score":          round(total_acc / n, 1),
-            "avg_forecast_discipline_score":        round(total_disc / n, 1),
-            "avg_pipeline_health_score":            round(total_pipe / n, 1),
-            "avg_crm_hygiene_score":                round(total_crm / n, 1),
-            "total_estimated_revenue_variance_usd": round(total_var, 2),
+            "total":                                    n,
+            "risk_counts":                              risk_counts,
+            "pattern_counts":                           pattern_counts,
+            "severity_counts":                          severity_counts,
+            "action_counts":                            action_counts,
+            "avg_forecast_composite":                   round(total_comp / n, 1),
+            "forecast_gap_count":                       sum(1 for r in self._results if r.has_forecast_gap),
+            "coaching_count":                           sum(1 for r in self._results if r.requires_forecast_coaching),
+            "avg_accuracy_score":                       round(total_acc / n, 1),
+            "avg_discipline_score":                     round(total_dis / n, 1),
+            "avg_stage_score":                          round(total_sta / n, 1),
+            "avg_commit_score":                         round(total_com / n, 1),
+            "total_estimated_revenue_at_risk_usd":      round(total_loss, 2),
         }

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 
+/* ── types ──────────────────────────────────────────────────────────────── */
 interface Rep {
   rep_id: string;
   region: string;
@@ -9,14 +10,14 @@ interface Rep {
   forecast_pattern: string;
   forecast_severity: string;
   recommended_action: string;
-  forecast_accuracy_score: number;
-  forecast_discipline_score: number;
-  pipeline_health_score: number;
-  crm_hygiene_score: number;
-  forecast_effectiveness_composite: number;
-  is_forecast_unreliable: boolean;
-  requires_pipeline_inspection: boolean;
-  estimated_revenue_variance_usd: number;
+  accuracy_score: number;
+  discipline_score: number;
+  stage_score: number;
+  commit_score: number;
+  forecast_composite: number;
+  has_forecast_gap: boolean;
+  requires_forecast_coaching: boolean;
+  estimated_revenue_at_risk_usd: number;
   forecast_signal: string;
 }
 
@@ -26,73 +27,81 @@ interface Summary {
   pattern_counts: Record<string, number>;
   severity_counts: Record<string, number>;
   action_counts: Record<string, number>;
-  avg_forecast_effectiveness_composite: number;
-  unreliable_forecast_count: number;
-  pipeline_inspection_count: number;
-  avg_forecast_accuracy_score: number;
-  avg_forecast_discipline_score: number;
-  avg_pipeline_health_score: number;
-  avg_crm_hygiene_score: number;
-  total_estimated_revenue_variance_usd: number;
+  avg_forecast_composite: number;
+  forecast_gap_count: number;
+  coaching_count: number;
+  avg_accuracy_score: number;
+  avg_discipline_score: number;
+  avg_stage_score: number;
+  avg_commit_score: number;
+  total_estimated_revenue_at_risk_usd: number;
 }
 
-const RISK_COLORS: Record<string, string> = {
+/* ── helpers ─────────────────────────────────────────────────────────────── */
+const fmtUSD = (v: number) =>
+  v >= 1_000_000
+    ? `$${(v / 1_000_000).toFixed(1)}M`
+    : v >= 1_000
+    ? `$${(v / 1_000).toFixed(0)}K`
+    : `$${v.toFixed(0)}`;
+
+const riskColor: Record<string, string> = {
   low:      "text-emerald-400",
-  moderate: "text-amber-400",
+  moderate: "text-cyan-400",
   high:     "text-orange-400",
   critical: "text-red-400",
 };
 
-const RISK_BG: Record<string, string> = {
-  low:      "bg-emerald-400",
-  moderate: "bg-amber-400",
-  high:     "bg-orange-400",
-  critical: "bg-red-400",
+const riskBorder: Record<string, string> = {
+  low:      "border-emerald-500/40",
+  moderate: "border-cyan-500/40",
+  high:     "border-orange-500/40",
+  critical: "border-red-500/40",
 };
 
-const SEV_COLORS: Record<string, string> = {
-  reliable:   "text-emerald-400",
-  variable:   "text-amber-400",
-  unreliable: "text-orange-400",
-  chaotic:    "text-red-400",
+const severityBadge: Record<string, string> = {
+  precise:     "bg-emerald-900/50 text-emerald-300",
+  calibrating: "bg-cyan-900/50 text-cyan-300",
+  drifting:    "bg-orange-900/50 text-orange-300",
+  unreliable:  "bg-red-900/50 text-red-300",
 };
 
-const PATTERN_COLORS: Record<string, string> = {
-  none:                    "bg-slate-600",
-  systematic_overforecast: "bg-red-500",
-  sandbag_behavior:        "bg-orange-500",
-  pipeline_gap:            "bg-amber-500",
-  crm_neglect:             "bg-yellow-500",
-  stage_manipulation:      "bg-violet-500",
+const patternLabel: Record<string, string> = {
+  none:                      "None",
+  chronic_over_forecasting:  "Chronic Over-Forecast",
+  chronic_under_forecasting: "Chronic Under-Forecast",
+  end_of_quarter_cliff:      "Q-End Cliff",
+  recency_bias_sandbagging:  "Recency Sandbag",
+  stage_inflation_blindspot: "Stage Inflation",
 };
 
-function fmtUsd(n: number) {
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000)     return `$${(n / 1_000).toFixed(0)}K`;
-  return `$${n.toFixed(0)}`;
-}
+const patternColor: Record<string, string> = {
+  none:                      "bg-slate-700 text-slate-300",
+  chronic_over_forecasting:  "bg-red-900/60 text-red-300",
+  chronic_under_forecasting: "bg-cyan-900/60 text-cyan-300",
+  end_of_quarter_cliff:      "bg-orange-900/60 text-orange-300",
+  recency_bias_sandbagging:  "bg-amber-900/60 text-amber-300",
+  stage_inflation_blindspot: "bg-purple-900/60 text-purple-300",
+};
 
-function fmtLabel(s: string) {
-  return s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-function GaugeRing({ score, label, color }: { score: number; label: string; color: string }) {
-  const r = 36;
-  const circ = 2 * Math.PI * r;
-  const filled = circ * (1 - score / 100);
+/* ── Gauge ───────────────────────────────────────────────────────────────── */
+function Gauge({ label, value, color }: { label: string; value: number; color: string }) {
+  const r = 36, circ = 2 * Math.PI * r;
+  const dash = (value / 100) * circ;
   return (
     <div className="flex flex-col items-center gap-1">
       <svg width="96" height="96" viewBox="0 0 96 96">
-        <circle cx="48" cy="48" r={r} fill="none" stroke="#1e293b" strokeWidth="10" />
+        <circle cx="48" cy="48" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
         <circle
           cx="48" cy="48" r={r} fill="none"
-          stroke={color} strokeWidth="10"
-          strokeDasharray={circ} strokeDashoffset={filled}
+          stroke={color} strokeWidth="8"
+          strokeDasharray={`${dash} ${circ}`}
           strokeLinecap="round"
           transform="rotate(-90 48 48)"
+          style={{ transition: "stroke-dasharray 0.6s ease" }}
         />
-        <text x="48" y="53" textAnchor="middle" fill="white" fontSize="15" fontWeight="bold">
-          {score.toFixed(0)}
+        <text x="48" y="53" textAnchor="middle" fontSize="15" fontWeight="700" fill="white">
+          {value.toFixed(0)}
         </text>
       </svg>
       <span className="text-xs text-slate-400 text-center leading-tight">{label}</span>
@@ -100,121 +109,137 @@ function GaugeRing({ score, label, color }: { score: number; label: string; colo
   );
 }
 
-function ScoreBar({ label, value, color }: { label: string; value: number; color: string }) {
+/* ── DistBar ─────────────────────────────────────────────────────────────── */
+function DistBar({
+  title, counts, colors, total,
+}: {
+  title: string;
+  counts: Record<string, number>;
+  colors: Record<string, string>;
+  total: number;
+}) {
   return (
-    <div className="space-y-0.5">
-      <div className="flex justify-between text-xs">
-        <span className="text-slate-400">{label}</span>
-        <span className="text-slate-300">{value.toFixed(0)}</span>
-      </div>
-      <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-        <div className={`h-full rounded-full ${color}`} style={{ width: `${Math.min(value, 100)}%` }} />
-      </div>
+    <div className="space-y-1">
+      <p className="text-xs text-slate-400 font-medium">{title}</p>
+      {Object.entries(counts).map(([k, v]) => (
+        <div key={k} className="flex items-center gap-2">
+          <span className="text-xs text-slate-400 w-32 truncate capitalize">{k.replace(/_/g, " ")}</span>
+          <div className="flex-1 bg-slate-800 rounded-full h-2">
+            <div
+              className="h-2 rounded-full transition-all duration-500"
+              style={{ width: `${total ? (v / total) * 100 : 0}%`, background: colors[k] || "#64748b" }}
+            />
+          </div>
+          <span className="text-xs text-slate-300 w-4 text-right">{v}</span>
+        </div>
+      ))}
     </div>
   );
 }
 
-function DistBar({ title, counts, colors }: { title: string; counts: Record<string, number>; colors: Record<string, string> }) {
-  const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
-  return (
-    <div className="space-y-2">
-      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{title}</p>
-      <div className="flex h-3 rounded-full overflow-hidden gap-px">
-        {Object.entries(counts).map(([k, v]) => (
-          <div key={k} className={`${colors[k] || "bg-slate-600"}`} style={{ width: `${(v / total) * 100}%` }} title={`${k}: ${v}`} />
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-x-3 gap-y-1">
-        {Object.entries(counts).map(([k, v]) => (
-          <span key={k} className="flex items-center gap-1 text-xs text-slate-400">
-            <span className={`inline-block w-2 h-2 rounded-sm ${colors[k] || "bg-slate-600"}`} />
-            {fmtLabel(k)} ({v})
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
+/* ── DetailModal ─────────────────────────────────────────────────────────── */
 function DetailModal({ rep, onClose }: { rep: Rep; onClose: () => void }) {
-  const [tab, setTab] = useState<"scores" | "signals" | "action">("scores");
-  const ref = useRef<HTMLDivElement>(null);
+  const [tab, setTab] = useState<"scores" | "signal" | "action">("scores");
 
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    const fn = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", fn);
+    return () => window.removeEventListener("keydown", fn);
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-      onClick={(e) => { if (ref.current && !ref.current.contains(e.target as Node)) onClose(); }}>
-      <div ref={ref} className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-xl mx-4 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between p-5 border-b border-slate-800">
           <div>
-            <p className="font-bold text-slate-100 text-lg">{rep.rep_id}</p>
-            <p className="text-sm text-slate-400">{rep.region} — <span className={RISK_COLORS[rep.forecast_risk]}>{fmtLabel(rep.forecast_risk)} risk</span></p>
+            <p className="font-bold text-white">{rep.rep_id}</p>
+            <p className="text-xs text-slate-400">{rep.region}</p>
           </div>
-          <button onClick={onClose} className="text-slate-500 hover:text-slate-200 text-xl font-bold">×</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-white text-xl leading-none">✕</button>
         </div>
 
         <div className="flex border-b border-slate-800">
-          {(["scores", "signals", "action"] as const).map((t) => (
-            <button key={t} onClick={() => setTab(t)}
-              className={`flex-1 py-2.5 text-sm font-medium capitalize transition-colors ${tab === t ? "text-indigo-400 border-b-2 border-indigo-400" : "text-slate-500 hover:text-slate-300"}`}>
+          {(["scores", "signal", "action"] as const).map((t) => (
+            <button
+              key={t}
+              onClick={() => setTab(t)}
+              className={`flex-1 py-2 text-xs font-medium capitalize transition-colors ${
+                tab === t ? "text-cyan-400 border-b-2 border-cyan-400" : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
               {t}
             </button>
           ))}
         </div>
 
-        <div className="px-6 py-5 space-y-4 max-h-96 overflow-y-auto">
+        <div className="p-5">
           {tab === "scores" && (
-            <>
-              <div className="flex justify-center">
-                <GaugeRing score={rep.forecast_effectiveness_composite} label="Composite Risk" color="#f87171" />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-slate-800/60 rounded-xl p-3">
+                <p className="text-xs text-slate-400">Accuracy Score</p>
+                <p className="text-2xl font-bold text-cyan-400">{rep.accuracy_score.toFixed(1)}</p>
               </div>
-              <div className="space-y-3 mt-2">
-                <ScoreBar label="Forecast Accuracy" value={rep.forecast_accuracy_score} color="bg-indigo-500" />
-                <ScoreBar label="Forecast Discipline" value={rep.forecast_discipline_score} color="bg-violet-500" />
-                <ScoreBar label="Pipeline Health" value={rep.pipeline_health_score} color="bg-amber-500" />
-                <ScoreBar label="CRM Hygiene" value={rep.crm_hygiene_score} color="bg-emerald-500" />
+              <div className="bg-slate-800/60 rounded-xl p-3">
+                <p className="text-xs text-slate-400">Discipline Score</p>
+                <p className="text-2xl font-bold text-teal-400">{rep.discipline_score.toFixed(1)}</p>
               </div>
-              <div className="grid grid-cols-2 gap-3 pt-2 text-xs">
-                <div className="bg-slate-800 rounded-lg p-3">
-                  <p className="text-slate-500">Revenue Variance</p>
-                  <p className="text-lg font-bold text-red-400">{fmtUsd(rep.estimated_revenue_variance_usd)}</p>
-                </div>
-                <div className="bg-slate-800 rounded-lg p-3">
-                  <p className="text-slate-500">Severity</p>
-                  <p className={`text-sm font-semibold ${SEV_COLORS[rep.forecast_severity]}`}>{fmtLabel(rep.forecast_severity)}</p>
-                </div>
+              <div className="bg-slate-800/60 rounded-xl p-3">
+                <p className="text-xs text-slate-400">Stage Score</p>
+                <p className="text-2xl font-bold text-sky-400">{rep.stage_score.toFixed(1)}</p>
               </div>
-            </>
-          )}
-
-          {tab === "signals" && (
-            <div className="space-y-3">
-              <div className="bg-slate-800 rounded-lg p-4">
-                <p className="text-xs text-slate-500 mb-1">Forecast Signal</p>
-                <p className="text-sm text-slate-200">{rep.forecast_signal}</p>
+              <div className="bg-slate-800/60 rounded-xl p-3">
+                <p className="text-xs text-slate-400">Commit Score</p>
+                <p className="text-2xl font-bold text-indigo-400">{rep.commit_score.toFixed(1)}</p>
               </div>
-              <div className="bg-slate-800 rounded-lg p-4 space-y-2 text-xs">
-                <div className="flex justify-between"><span className="text-slate-400">Pattern</span><span className="text-slate-200">{fmtLabel(rep.forecast_pattern)}</span></div>
-                <div className="flex justify-between"><span className="text-slate-400">Unreliable Forecast</span><span className={rep.is_forecast_unreliable ? "text-red-400" : "text-emerald-400"}>{rep.is_forecast_unreliable ? "Yes" : "No"}</span></div>
-                <div className="flex justify-between"><span className="text-slate-400">Pipeline Inspection</span><span className={rep.requires_pipeline_inspection ? "text-amber-400" : "text-emerald-400"}>{rep.requires_pipeline_inspection ? "Required" : "Not required"}</span></div>
+              <div className="bg-slate-800/60 rounded-xl p-3 col-span-2">
+                <p className="text-xs text-slate-400">Forecast Composite</p>
+                <p className="text-3xl font-bold text-white">{rep.forecast_composite.toFixed(1)}</p>
               </div>
             </div>
           )}
-
+          {tab === "signal" && (
+            <div className="space-y-3">
+              <div className="bg-slate-800/60 rounded-xl p-4">
+                <p className="text-xs text-slate-400 mb-1">Forecast Signal</p>
+                <p className="text-sm text-slate-200 leading-relaxed">{rep.forecast_signal}</p>
+              </div>
+              <div className="bg-slate-800/60 rounded-xl p-4">
+                <p className="text-xs text-slate-400 mb-1">Revenue at Risk</p>
+                <p className="text-2xl font-bold text-red-400">{fmtUSD(rep.estimated_revenue_at_risk_usd)}</p>
+              </div>
+              <div className="flex gap-2">
+                {rep.has_forecast_gap && (
+                  <span className="px-2 py-1 rounded-lg text-xs bg-red-900/50 text-red-300">📊 FORECAST GAP</span>
+                )}
+                {rep.requires_forecast_coaching && (
+                  <span className="px-2 py-1 rounded-lg text-xs bg-cyan-900/50 text-cyan-300">📊 COACH</span>
+                )}
+              </div>
+            </div>
+          )}
           {tab === "action" && (
             <div className="space-y-3">
-              <div className="bg-indigo-900/40 border border-indigo-700/50 rounded-lg p-4">
-                <p className="text-xs text-indigo-400 mb-1 uppercase tracking-wider">Recommended Action</p>
-                <p className="text-sm font-semibold text-indigo-200">{fmtLabel(rep.recommended_action)}</p>
+              <div className="bg-slate-800/60 rounded-xl p-4">
+                <p className="text-xs text-slate-400 mb-1">Recommended Action</p>
+                <p className="text-sm font-semibold text-cyan-300 capitalize">
+                  {rep.recommended_action.replace(/_/g, " ")}
+                </p>
               </div>
-              <div className="bg-slate-800 rounded-lg p-4 text-xs space-y-2">
-                <p className="text-slate-400">Based on <span className={RISK_COLORS[rep.forecast_risk]}>{fmtLabel(rep.forecast_risk)} risk</span> level and <span className="text-slate-200">{fmtLabel(rep.forecast_pattern)}</span> pattern.</p>
-                <p className="text-slate-400">Severity: <span className={SEV_COLORS[rep.forecast_severity]}>{fmtLabel(rep.forecast_severity)}</span></p>
+              <div className="bg-slate-800/60 rounded-xl p-4">
+                <p className="text-xs text-slate-400 mb-1">Pattern</p>
+                <p className="text-sm font-semibold text-white">{patternLabel[rep.forecast_pattern] ?? rep.forecast_pattern}</p>
+              </div>
+              <div className="bg-slate-800/60 rounded-xl p-4">
+                <p className="text-xs text-slate-400 mb-1">Severity</p>
+                <span className={`px-2 py-1 rounded-lg text-xs font-medium ${severityBadge[rep.forecast_severity] ?? "bg-slate-700 text-slate-300"}`}>
+                  {rep.forecast_severity}
+                </span>
               </div>
             </div>
           )}
@@ -224,22 +249,26 @@ function DetailModal({ rep, onClose }: { rep: Rep; onClose: () => void }) {
   );
 }
 
-export default function ForecastAccuracyPage() {
+/* ── Main page ───────────────────────────────────────────────────────────── */
+export default function SalesForecastAccuracyPage() {
   const [data, setData]           = useState<{ reps: Rep[]; summary: Summary } | null>(null);
   const [loading, setLoading]     = useState(true);
-  const [riskFilter, setRisk]     = useState("");
-  const [patternFilter, setPattern] = useState("");
+  const [riskFilter, setRiskFilter]       = useState("all");
+  const [patternFilter, setPatternFilter] = useState("all");
   const [selected, setSelected]   = useState<Rep | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
-    const params = new URLSearchParams();
-    if (riskFilter)    params.set("risk", riskFilter);
-    if (patternFilter) params.set("pattern", patternFilter);
-    const res = await fetch(`/api/sales-forecast-accuracy-intelligence-engine?${params}`);
-    const json = await res.json();
-    setData(json);
-    setLoading(false);
+    try {
+      const params = new URLSearchParams();
+      if (riskFilter    !== "all") params.set("risk",    riskFilter);
+      if (patternFilter !== "all") params.set("pattern", patternFilter);
+      const res  = await fetch(`/api/sales-forecast-accuracy-intelligence-engine?${params}`);
+      const json = await res.json();
+      setData(json);
+    } finally {
+      setLoading(false);
+    }
   }, [riskFilter, patternFilter]);
 
   useEffect(() => { load(); }, [load]);
@@ -247,70 +276,131 @@ export default function ForecastAccuracyPage() {
   const s = data?.summary;
 
   const distributions = [
-    { title: "Risk Distribution", counts: s?.risk_counts ?? {}, colors: { low: "bg-emerald-500", moderate: "bg-amber-500", high: "bg-orange-500", critical: "bg-red-500" } as Record<string,string> },
-    { title: "Pattern Distribution", counts: s?.pattern_counts ?? {}, colors: PATTERN_COLORS as Record<string,string> },
-    { title: "Severity Distribution", counts: s?.severity_counts ?? {}, colors: { reliable: "bg-emerald-500", variable: "bg-amber-500", unreliable: "bg-orange-500", chaotic: "bg-red-500" } as Record<string,string> },
-  ] as Array<{ title: string; counts: Record<string,number>; colors: Record<string,string> }>;
+    {
+      title: "Risk Distribution",
+      counts: s?.risk_counts ?? {},
+      colors: { low: "#34d399", moderate: "#22d3ee", high: "#f97316", critical: "#f87171" },
+    },
+    {
+      title: "Pattern Distribution",
+      counts: s?.pattern_counts ?? {},
+      colors: {
+        none:                      "#475569",
+        chronic_over_forecasting:  "#ef4444",
+        chronic_under_forecasting: "#22d3ee",
+        end_of_quarter_cliff:      "#f97316",
+        recency_bias_sandbagging:  "#fbbf24",
+        stage_inflation_blindspot: "#a78bfa",
+      },
+    },
+    {
+      title: "Severity Distribution",
+      counts: s?.severity_counts ?? {},
+      colors: { precise: "#34d399", calibrating: "#22d3ee", drifting: "#f97316", unreliable: "#f87171" },
+    },
+    {
+      title: "Action Distribution",
+      counts: s?.action_counts ?? {},
+      colors: {
+        no_action:                     "#475569",
+        forecast_calibration_coaching: "#22d3ee",
+        pipeline_inspection_coaching:  "#f97316",
+        stage_criteria_coaching:       "#a78bfa",
+        commit_discipline_coaching:    "#ef4444",
+        forecast_reset_intervention:   "#f43f5e",
+      },
+    },
+  ] as Array<{ title: string; counts: Record<string, number>; colors: Record<string, string> }>;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 p-6 space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-slate-100">Forecast Accuracy Intelligence</h1>
-        <p className="text-slate-400 text-sm mt-1">Rep-level forecast reliability, pipeline discipline and CRM hygiene scoring</p>
+      {selected && <DetailModal rep={selected} onClose={() => setSelected(null)} />}
+
+      {/* Header */}
+      <div className="flex items-center gap-3">
+        <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+          <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <div>
+          <h1 className="text-xl font-bold text-white">Sales Forecast Accuracy Intelligence</h1>
+          <p className="text-xs text-slate-400">Per-rep forecast behavioral patterns — over/under-calling, stage inflation &amp; commit discipline</p>
+        </div>
+        <button
+          onClick={load}
+          className="ml-auto px-3 py-1.5 text-xs rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition-colors"
+        >
+          {loading ? "Loading…" : "Refresh"}
+        </button>
       </div>
 
       {/* KPI strip */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
         {[
-          { label: "Total Reps", value: s?.total ?? "—", sub: "evaluated" },
-          { label: "Unreliable Forecast", value: s?.unreliable_forecast_count ?? "—", sub: "reps flagged" },
-          { label: "Need Inspection", value: s?.pipeline_inspection_count ?? "—", sub: "pipeline review" },
-          { label: "Revenue Variance", value: s ? fmtUsd(s.total_estimated_revenue_variance_usd) : "—", sub: "at risk" },
-        ].map((k) => (
-          <div key={k.label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-            <p className="text-xs text-slate-500 uppercase tracking-wider">{k.label}</p>
-            <p className="text-3xl font-bold text-slate-100 mt-1">{k.value}</p>
-            <p className="text-xs text-slate-500 mt-0.5">{k.sub}</p>
+          { label: "Total Reps",      value: s?.total ?? "—" },
+          { label: "Avg Composite",   value: s ? s.avg_forecast_composite.toFixed(1) : "—" },
+          { label: "Forecast Gaps",   value: s?.forecast_gap_count ?? "—" },
+          { label: "Need Coaching",   value: s?.coaching_count ?? "—" },
+          { label: "Revenue at Risk", value: s ? fmtUSD(s.total_estimated_revenue_at_risk_usd) : "—" },
+          { label: "Critical Risk",   value: s ? (s.risk_counts["critical"] ?? 0) : "—" },
+        ].map(({ label, value }) => (
+          <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+            <p className="text-xs text-slate-400">{label}</p>
+            <p className="text-xl font-bold text-white mt-1">{value}</p>
           </div>
         ))}
       </div>
 
-      {/* Gauge rings */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
-        <p className="text-sm font-semibold text-slate-300 mb-4">Average Sub-Scores (Risk Level)</p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-items-center">
-          <GaugeRing score={s?.avg_forecast_accuracy_score ?? 0} label="Forecast Accuracy" color="#6366f1" />
-          <GaugeRing score={s?.avg_forecast_discipline_score ?? 0} label="Discipline" color="#8b5cf6" />
-          <GaugeRing score={s?.avg_pipeline_health_score ?? 0} label="Pipeline Health" color="#f59e0b" />
-          <GaugeRing score={s?.avg_crm_hygiene_score ?? 0} label="CRM Hygiene" color="#10b981" />
+      {/* Gauges */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <p className="text-sm font-semibold text-slate-300 mb-4">Average Sub-Scores</p>
+        <div className="flex flex-wrap justify-around gap-4">
+          <Gauge label="Accuracy"   value={s?.avg_accuracy_score   ?? 0} color="#22d3ee" />
+          <Gauge label="Discipline" value={s?.avg_discipline_score ?? 0} color="#2dd4bf" />
+          <Gauge label="Stage"      value={s?.avg_stage_score      ?? 0} color="#38bdf8" />
+          <Gauge label="Commit"     value={s?.avg_commit_score     ?? 0} color="#818cf8" />
         </div>
       </div>
 
-      {/* Distribution bars */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* Distributions */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {distributions.map((d) => (
-          <div key={d.title} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-            <DistBar {...d} />
+          <div key={d.title} className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+            <DistBar title={d.title} counts={d.counts} colors={d.colors} total={s?.total ?? 0} />
           </div>
         ))}
       </div>
 
       {/* Filters */}
-      <div className="flex flex-wrap gap-3 items-center">
-        <span className="text-xs text-slate-500 uppercase tracking-wider">Filter:</span>
-        <div className="flex gap-2 flex-wrap">
-          {["", "low", "moderate", "high", "critical"].map((v) => (
-            <button key={v} onClick={() => setRisk(v)}
-              className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${riskFilter === v ? "bg-indigo-600 border-indigo-500 text-white" : "border-slate-700 text-slate-400 hover:text-slate-200"}`}>
-              {v ? fmtLabel(v) : "All Risk"}
+      <div className="flex flex-wrap gap-3">
+        <div className="flex gap-1 flex-wrap">
+          {["all", "low", "moderate", "high", "critical"].map((r) => (
+            <button
+              key={r}
+              onClick={() => setRiskFilter(r)}
+              className={`px-3 py-1 text-xs rounded-full border transition-colors capitalize ${
+                riskFilter === r
+                  ? "bg-cyan-500 text-slate-900 border-cyan-500 font-semibold"
+                  : "bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500"
+              }`}
+            >
+              {r}
             </button>
           ))}
         </div>
-        <div className="flex gap-2 flex-wrap">
-          {["", "none", "systematic_overforecast", "sandbag_behavior", "pipeline_gap", "crm_neglect", "stage_manipulation"].map((v) => (
-            <button key={v} onClick={() => setPattern(v)}
-              className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${patternFilter === v ? "bg-violet-600 border-violet-500 text-white" : "border-slate-700 text-slate-400 hover:text-slate-200"}`}>
-              {v ? fmtLabel(v) : "All Patterns"}
+        <div className="flex gap-1 flex-wrap">
+          {["all", "chronic_over_forecasting", "chronic_under_forecasting", "end_of_quarter_cliff", "recency_bias_sandbagging", "stage_inflation_blindspot"].map((p) => (
+            <button
+              key={p}
+              onClick={() => setPatternFilter(p)}
+              className={`px-3 py-1 text-xs rounded-full border transition-colors ${
+                patternFilter === p
+                  ? "bg-cyan-500 text-slate-900 border-cyan-500 font-semibold"
+                  : "bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500"
+              }`}
+            >
+              {patternLabel[p] ?? p}
             </button>
           ))}
         </div>
@@ -318,47 +408,53 @@ export default function ForecastAccuracyPage() {
 
       {/* Rep cards */}
       {loading ? (
-        <div className="text-center py-16 text-slate-500">Loading...</div>
+        <div className="text-center py-16 text-slate-500">Loading…</div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {(data?.reps ?? []).map((rep) => (
-            <div key={rep.rep_id} onClick={() => setSelected(rep)}
-              className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-indigo-600 transition-colors space-y-3">
-              <div className="flex items-start justify-between">
+            <button
+              key={rep.rep_id}
+              onClick={() => setSelected(rep)}
+              className={`text-left bg-slate-900 border rounded-2xl p-5 hover:border-cyan-500/60 transition-colors space-y-3 ${riskBorder[rep.forecast_risk] ?? "border-slate-800"}`}
+            >
+              <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-semibold text-slate-100">{rep.rep_id}</p>
+                  <p className="font-semibold text-white">{rep.rep_id}</p>
                   <p className="text-xs text-slate-400">{rep.region}</p>
                 </div>
-                <div className="text-right">
-                  <span className={`text-xs font-bold uppercase ${RISK_COLORS[rep.forecast_risk]}`}>{rep.forecast_risk}</span>
-                  <p className="text-xs text-slate-500">{fmtLabel(rep.forecast_pattern)}</p>
-                </div>
+                <span className={`text-xs font-bold uppercase ${riskColor[rep.forecast_risk] ?? "text-slate-400"}`}>
+                  {rep.forecast_risk}
+                </span>
               </div>
 
-              <div className="space-y-1.5">
-                <ScoreBar label="Forecast Accuracy" value={rep.forecast_accuracy_score} color="bg-indigo-500" />
-                <ScoreBar label="Discipline" value={rep.forecast_discipline_score} color="bg-violet-500" />
-                <ScoreBar label="Pipeline Health" value={rep.pipeline_health_score} color="bg-amber-500" />
-                <ScoreBar label="CRM Hygiene" value={rep.crm_hygiene_score} color="bg-emerald-500" />
+              <div className="flex items-center justify-between">
+                <span className={`px-2 py-0.5 rounded-md text-xs font-medium ${patternColor[rep.forecast_pattern] ?? "bg-slate-700 text-slate-300"}`}>
+                  {patternLabel[rep.forecast_pattern] ?? rep.forecast_pattern}
+                </span>
+                <span className={`px-2 py-0.5 rounded-md text-xs font-medium ${severityBadge[rep.forecast_severity] ?? "bg-slate-700 text-slate-300"}`}>
+                  {rep.forecast_severity}
+                </span>
               </div>
 
-              <div className="flex items-center justify-between pt-1">
-                <div className="flex items-center gap-2">
-                  <div className={`w-2 h-2 rounded-full ${RISK_BG[rep.forecast_risk]}`} />
-                  <span className="text-xs text-slate-400">Composite {rep.forecast_effectiveness_composite.toFixed(0)}</span>
-                </div>
-                {rep.estimated_revenue_variance_usd > 0 && (
-                  <span className="text-xs text-red-400 font-medium">{fmtUsd(rep.estimated_revenue_variance_usd)}</span>
+              <div className="flex justify-between text-xs text-slate-400">
+                <span>Composite <span className="text-white font-semibold">{rep.forecast_composite.toFixed(1)}</span></span>
+                <span>At Risk <span className="text-red-400 font-semibold">{fmtUSD(rep.estimated_revenue_at_risk_usd)}</span></span>
+              </div>
+
+              <div className="flex gap-1.5">
+                {rep.has_forecast_gap && (
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-red-900/50 text-red-300">📊 GAP</span>
+                )}
+                {rep.requires_forecast_coaching && (
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-cyan-900/50 text-cyan-300">📊 COACH</span>
                 )}
               </div>
 
-              <p className="text-xs text-slate-500 leading-relaxed truncate">{rep.forecast_signal}</p>
-            </div>
+              <p className="text-xs text-slate-500 line-clamp-2">{rep.forecast_signal}</p>
+            </button>
           ))}
         </div>
       )}
-
-      {selected && <DetailModal rep={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }
