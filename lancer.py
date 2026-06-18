@@ -20,7 +20,8 @@ def verifier_cle():
 
 
 def lancer(script, args=""):
-    cmd = f"python {script} {args}".strip()
+    python = "py" if os.system("py --version >nul 2>&1") == 0 else "python"
+    cmd = f"{python} {script} {args}".strip()
     os.system(cmd)
 
 
