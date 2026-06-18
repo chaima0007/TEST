@@ -565,6 +565,16 @@ function IconCompWinRate({ className }: { className?: string }) {
   );
 }
 
+function IconAccountScoring({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="6" r="3" />
+      <path d="M2 17c0-3.3 3.6-6 8-6s8 2.7 8 6" opacity="0.4" />
+      <path d="M12 12l1 1.5 2.5-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconTerritoryPerformance({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1104,6 +1114,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/pipeline-coverage", label: "Pipeline Coverage", icon: IconPipelineCoverage },
       { href: "/dashboard/territory-performance", label: "Territory Perf.", icon: IconTerritoryPerformance },
       { href: "/dashboard/competitive-win-rate", label: "Comp. Win Rate", icon: IconCompWinRate },
+      { href: "/dashboard/account-scoring", label: "Account Scoring", icon: IconAccountScoring },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
