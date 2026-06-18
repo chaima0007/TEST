@@ -1700,6 +1700,18 @@ function IconSalesForecastSanityCheckIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesOnboardingEffectivenessIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Rocket launching with upward arrow — ramp velocity */}
+      <path d="M10 2c0 0-5 4-5 9a5 5 0 0 0 10 0c0-5-5-9-5-9z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"/>
+      <circle cx="10" cy="11" r="1.8" fill="currentColor"/>
+      <path d="M7 17l-1.5 2M13 17l1.5 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" opacity="0.6"/>
+      <path d="M10 2 L10 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2194,6 +2206,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-buyer-intent-signal-intelligence-engine", label: "Buyer Intent", icon: IconSalesBuyerIntentSignalIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-effectiveness-intelligence-engine", label: "Negotiation Eff.", icon: IconSalesNegotiationEffectivenessIntelligenceEngine },
       { href: "/dashboard/sales-forecast-sanity-check-intelligence-engine", label: "Forecast Sanity", icon: IconSalesForecastSanityCheckIntelligenceEngine },
+      { href: "/dashboard/sales-onboarding-effectiveness-intelligence-engine", label: "Rep Onboarding", icon: IconSalesOnboardingEffectivenessIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
