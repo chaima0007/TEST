@@ -248,6 +248,15 @@ function IconSubjectOptimizer({ className }: { className?: string }) {
   );
 }
 
+function IconMarket({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
+      <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
+    </svg>
+  );
+}
+
 function IconThreatIntel({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -533,6 +542,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/revenue", label: "Prévisions Revenus", icon: IconRevenue },
       { href: "/dashboard/proposals", label: "Scoring Propositions", icon: IconProposals },
       { href: "/dashboard/threat-intel", label: "Intelligence Menaces", icon: IconThreatIntel },
+      { href: "/dashboard/market-opportunities", label: "Opportunités Marché", icon: IconMarket },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
