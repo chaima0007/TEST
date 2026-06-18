@@ -2473,6 +2473,19 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesDealVelocityCollapseIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Velocity collapse: speedometer needle dropping */}
+      <circle cx="10" cy="11" r="7" strokeWidth="1.4"/>
+      <path d="M4 11 A6 6 0 0 1 16 11" strokeWidth="1.4" strokeLinecap="round"/>
+      <line x1="10" y1="11" x2="6" y2="7" strokeWidth="2" strokeLinecap="round" stroke="currentColor"/>
+      <circle cx="10" cy="11" r="1" fill="currentColor" stroke="none"/>
+      <path d="M7 15 L10 17 L13 15" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
 function IconSalesRepBurnoutAttritionRiskIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2799,6 +2812,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-value-proposition-deterioration-intelligence-engine", label: "Value Prop. Det.", icon: IconSalesValuePropositionDeteriorationIntelligenceEngine },
       { href: "/dashboard/sales-quota-sandbag-overcommit-intelligence-engine", label: "Quota Gaming", icon: IconSalesQuotaSandbagOvercommitIntelligenceEngine },
       { href: "/dashboard/sales-rep-burnout-attrition-risk-intelligence-engine", label: "Burnout & Flight Risk", icon: IconSalesRepBurnoutAttritionRiskIntelligenceEngine },
+      { href: "/dashboard/sales-deal-velocity-collapse-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityCollapseIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
