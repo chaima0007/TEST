@@ -1223,6 +1223,14 @@ function IconRepAttritionRiskEngine({ className }: { className?: string }) {
   );
 }
 
+function IconCompetitiveWinProbabilityEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2l2 5h5l-4 3 1.5 5L10 12l-4.5 3L7 10 3 7h5z" fill="currentColor" opacity={0.8} />
+    </svg>
+  );
+}
+
 function IconDealContaminationRiskEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1518,6 +1526,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/forecast-calibration-engine", label: "Forecast Calibration", icon: IconForecastCalibrationEngine },
       { href: "/dashboard/sales-capacity-planning-engine", label: "Sales Capacity", icon: IconSalesCapacityPlanningEngine },
       { href: "/dashboard/deal-contamination-risk-engine", label: "Deal Contamination", icon: IconDealContaminationRiskEngine },
+      { href: "/dashboard/competitive-win-probability-engine", label: "Win Probability", icon: IconCompetitiveWinProbabilityEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
