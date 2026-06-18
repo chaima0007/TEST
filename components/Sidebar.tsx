@@ -2150,6 +2150,19 @@ function IconSalesCRMDataHygieneIntelligenceEngine({ className }: { className?: 
   );
 }
 
+function IconSalesCompetitiveIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Two crossed swords — competitive battle */}
+      <path d="M3 3 L17 17" strokeLinecap="round" strokeWidth="1.8"/>
+      <path d="M17 3 L3 17" strokeLinecap="round" strokeWidth="1.8"/>
+      <circle cx="10" cy="10" r="2.5" fill="currentColor" stroke="none" opacity="0.5"/>
+      <path d="M3 3 L5 5" strokeLinecap="round" strokeWidth="2.5" opacity="0.8"/>
+      <path d="M15 3 L17 5" strokeLinecap="round" strokeWidth="2.5" opacity="0.8" transform="rotate(90 16 4)"/>
+    </svg>
+  );
+}
+
 function IconSalesCustomerLifecycleIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2679,6 +2692,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-objection-handling-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingIntelligenceEngine },
       { href: "/dashboard/sales-crm-data-hygiene-intelligence-engine", label: "CRM Hygiene", icon: IconSalesCRMDataHygieneIntelligenceEngine },
       { href: "/dashboard/sales-customer-lifecycle-intelligence-engine", label: "Customer Lifecycle", icon: IconSalesCustomerLifecycleIntelligenceEngine },
+      { href: "/dashboard/sales-competitive-intelligence-engine", label: "Competitive Intel", icon: IconSalesCompetitiveIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
