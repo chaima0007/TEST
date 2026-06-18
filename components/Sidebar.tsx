@@ -1642,6 +1642,17 @@ function IconSalesStakeholderMappingIntelligenceEngine({ className }: { classNam
   );
 }
 
+function IconSalesBuyerResponseLatencyIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Clock with response bubble — buyer latency */}
+      <circle cx="9" cy="10" r="6" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <path d="M9 7v3.5l2 1.5" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M16 5h-2.5a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1H16l1 1.5V6a1 1 0 0 0-1-1z" fill="currentColor" opacity="0.6"/>
+    </svg>
+  );
+}
+
 function IconSalesPipelineContaminationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2699,6 +2710,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-stakeholder-mapping-intelligence-engine", label: "Stakeholder Mapping", icon: IconSalesStakeholderMappingIntelligenceEngine },
       { href: "/dashboard/sales-deal-momentum-intelligence-engine", label: "Deal Momentum", icon: IconSalesDealMomentumIntelligenceEngine },
       { href: "/dashboard/sales-pipeline-contamination-intelligence-engine", label: "Pipeline Contam.", icon: IconSalesPipelineContaminationIntelligenceEngine },
+      { href: "/dashboard/sales-buyer-response-latency-intelligence-engine", label: "Buyer Latency", icon: IconSalesBuyerResponseLatencyIntelligenceEngine },
       { href: "/dashboard/sales-deal-velocity-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityIntelligenceEngine },
       { href: "/dashboard/sales-account-penetration-intelligence-engine", label: "Acct. Penetration", icon: IconSalesAccountPenetrationIntelligenceEngine },
       { href: "/dashboard/sales-time-allocation-intelligence-engine", label: "Time Allocation", icon: IconSalesTimeAllocationIntelligenceEngine },
