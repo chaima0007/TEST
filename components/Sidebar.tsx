@@ -248,6 +248,14 @@ function IconSubjectOptimizer({ className }: { className?: string }) {
   );
 }
 
+function IconRevenue({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconSecurity({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -506,6 +514,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/retention", label: "Rétention Clients", icon: IconRetention },
       { href: "/dashboard/subject-optimizer", label: "Sujets Email IA", icon: IconSubjectOptimizer },
       { href: "/dashboard/security", label: "Sécurité IA", icon: IconSecurity },
+      { href: "/dashboard/revenue", label: "Prévisions Revenus", icon: IconRevenue },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
