@@ -1,6 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
+from typing import List, Dict
 
 
 class StakeholderRisk(str, Enum):
@@ -11,376 +12,294 @@ class StakeholderRisk(str, Enum):
 
 
 class StakeholderPattern(str, Enum):
-    none                        = "none"
-    single_threaded             = "single_threaded"
-    no_economic_buyer           = "no_economic_buyer"
-    champion_gap                = "champion_gap"
-    executive_avoidance         = "executive_avoidance"
-    poor_stakeholder_advancement = "poor_stakeholder_advancement"
+    none                = "none"
+    single_threaded     = "single_threaded"
+    champion_dependency = "champion_dependency"
+    economic_blind_spot = "economic_blind_spot"
+    blocker_ignored     = "blocker_ignored"
+    org_chart_gap       = "org_chart_gap"
 
 
 class StakeholderSeverity(str, Enum):
-    engaged    = "engaged"
-    developing = "developing"
-    fragile    = "fragile"
-    exposed    = "exposed"
+    mapped       = "mapped"
+    developing   = "developing"
+    fragile      = "fragile"
+    exposed      = "exposed"
 
 
 class StakeholderAction(str, Enum):
-    no_action                = "no_action"
-    multi_threading_coaching = "multi_threading_coaching"
-    economic_buyer_strategy  = "economic_buyer_strategy"
-    champion_development     = "champion_development"
-    stakeholder_mapping_review = "stakeholder_mapping_review"
-    executive_access_plan    = "executive_access_plan"
+    no_action                        = "no_action"
+    stakeholder_tracking_coaching    = "stakeholder_tracking_coaching"
+    multi_thread_coaching            = "multi_thread_coaching"
+    economic_buyer_coaching          = "economic_buyer_coaching"
+    blocker_neutralization_coaching  = "blocker_neutralization_coaching"
+    executive_sponsor_escalation     = "executive_sponsor_escalation"
+    deal_rescue_intervention         = "deal_rescue_intervention"
 
 
 @dataclass
-class StakeholderMappingInput:
-    rep_id: str
-    region: str
-    evaluation_period_id: str
-    total_active_deals: int
-    single_threaded_deals: int
-    multi_threaded_deals: int
-    avg_contacts_per_deal: float
-    economic_buyer_identified_count: int
-    economic_buyer_engaged_count: int
-    champion_identified_count: int
-    champion_active_count: int
-    executive_sponsor_deals: int
-    decision_maker_met_count: int
-    avg_stakeholder_influence_score: float
-    deals_with_legal_involved: int
-    deals_with_procurement_involved: int
-    committee_buying_deals: int
-    multi_department_deals: int
-    lost_deals_single_threaded: int
-    deals_stalled_no_champion: int
-    avg_deal_size_multi_stakeholder_usd: float
-    avg_deal_size_single_stakeholder_usd: float
+class StakeholderInput:
+    rep_id:                          str
+    region:                          str
+    evaluation_period_id:            str
+    avg_stakeholders_per_deal:       float   # count
+    economic_buyer_identified_pct:   float   # 0-1
+    champion_identified_pct:         float   # 0-1
+    executive_sponsor_engaged_pct:   float   # 0-1
+    blocker_identified_pct:          float   # 0-1
+    multi_contact_deal_pct:          float   # 0-1 (>1 contact per deal)
+    org_chart_mapped_pct:            float   # 0-1
+    champion_strength_score:         float   # 0-1
+    single_threaded_deal_pct:        float   # 0-1
+    procurement_engaged_pct:         float   # 0-1 (when applicable)
+    it_stakeholder_engaged_pct:      float   # 0-1
+    legal_engaged_pct:               float   # 0-1
+    end_user_engaged_pct:            float   # 0-1
+    decision_process_mapped_pct:     float   # 0-1
+    coach_to_champion_pct:           float   # 0-1 (coaches becoming champions)
+    stakeholder_sentiment_score:     float   # 0-1
+    total_active_deals:              int
+    avg_deal_value_usd:              float
+    avg_stakeholder_count_benchmark: float   # org benchmark
 
 
 @dataclass
-class StakeholderMappingResult:
-    rep_id: str
-    region: str
-    stakeholder_risk: StakeholderRisk
-    stakeholder_pattern: StakeholderPattern
-    stakeholder_severity: StakeholderSeverity
-    recommended_action: StakeholderAction
-    coverage_breadth_score: float
-    buyer_alignment_score: float
-    champion_development_score: float
-    executive_access_score: float
-    stakeholder_effectiveness_composite: float
-    has_stakeholder_gap: bool
-    requires_stakeholder_coaching: bool
-    estimated_deal_risk_usd: float
-    stakeholder_signal: str
+class StakeholderResult:
+    rep_id:                          str
+    region:                          str
+    stakeholder_risk:                StakeholderRisk
+    stakeholder_pattern:             StakeholderPattern
+    stakeholder_severity:            StakeholderSeverity
+    recommended_action:              StakeholderAction
+    coverage_score:                  float
+    champion_quality_score:          float
+    economic_alignment_score:        float
+    process_intelligence_score:      float
+    stakeholder_composite:           float
+    has_stakeholder_gap:             bool
+    requires_stakeholder_coaching:   bool
+    estimated_deal_risk_usd:         float
+    stakeholder_signal:              str
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> Dict:
         return {
-            "rep_id":                               self.rep_id,
-            "region":                               self.region,
-            "stakeholder_risk":                     self.stakeholder_risk.value,
-            "stakeholder_pattern":                  self.stakeholder_pattern.value,
-            "stakeholder_severity":                 self.stakeholder_severity.value,
-            "recommended_action":                   self.recommended_action.value,
-            "coverage_breadth_score":               self.coverage_breadth_score,
-            "buyer_alignment_score":                self.buyer_alignment_score,
-            "champion_development_score":           self.champion_development_score,
-            "executive_access_score":               self.executive_access_score,
-            "stakeholder_effectiveness_composite":  self.stakeholder_effectiveness_composite,
-            "has_stakeholder_gap":                  self.has_stakeholder_gap,
-            "requires_stakeholder_coaching":        self.requires_stakeholder_coaching,
-            "estimated_deal_risk_usd":              self.estimated_deal_risk_usd,
-            "stakeholder_signal":                   self.stakeholder_signal,
+            "rep_id":                           self.rep_id,
+            "region":                           self.region,
+            "stakeholder_risk":                 self.stakeholder_risk.value,
+            "stakeholder_pattern":              self.stakeholder_pattern.value,
+            "stakeholder_severity":             self.stakeholder_severity.value,
+            "recommended_action":               self.recommended_action.value,
+            "coverage_score":                   self.coverage_score,
+            "champion_quality_score":           self.champion_quality_score,
+            "economic_alignment_score":         self.economic_alignment_score,
+            "process_intelligence_score":       self.process_intelligence_score,
+            "stakeholder_composite":            self.stakeholder_composite,
+            "has_stakeholder_gap":              self.has_stakeholder_gap,
+            "requires_stakeholder_coaching":    self.requires_stakeholder_coaching,
+            "estimated_deal_risk_usd":          self.estimated_deal_risk_usd,
+            "stakeholder_signal":               self.stakeholder_signal,
         }
 
 
 class SalesStakeholderMappingIntelligenceEngine:
+    """Detects per-rep stakeholder blindspots — single-threading, champion dependency, economic buyer gaps."""
 
     def __init__(self) -> None:
-        self._results: list[StakeholderMappingResult] = []
+        self._results: List[StakeholderResult] = []
 
-    # ------------------------------------------------------------------
-    # Sub-scores (0–100, higher = more risk)
-    # ------------------------------------------------------------------
+    # ── sub-scores ────────────────────────────────────────────────────────
 
-    def _coverage_breadth_score(self, inp: StakeholderMappingInput) -> float:
-        score = 0.0
-        total = max(inp.total_active_deals, 1)
+    def _coverage_score(self, inp: StakeholderInput) -> float:
+        s = 0.0
+        if   inp.multi_contact_deal_pct       <= 0.40: s += 40
+        elif inp.multi_contact_deal_pct       <= 0.60: s += 22
+        elif inp.multi_contact_deal_pct       <= 0.80: s += 8
+        if   inp.avg_stakeholders_per_deal    <= 1.5:  s += 35
+        elif inp.avg_stakeholders_per_deal    <= 2.5:  s += 18
+        if   inp.org_chart_mapped_pct         <= 0.30: s += 25
+        elif inp.org_chart_mapped_pct         <= 0.55: s += 12
+        return min(s, 100.0)
 
-        single_rate = inp.single_threaded_deals / total
-        if single_rate >= 0.60:
-            score += 45.0
-        elif single_rate >= 0.40:
-            score += 25.0
-        elif single_rate >= 0.20:
-            score += 10.0
+    def _champion_quality_score(self, inp: StakeholderInput) -> float:
+        s = 0.0
+        if   inp.champion_identified_pct      <= 0.40: s += 40
+        elif inp.champion_identified_pct      <= 0.65: s += 22
+        elif inp.champion_identified_pct      <= 0.85: s += 8
+        if   inp.champion_strength_score      <= 0.30: s += 35
+        elif inp.champion_strength_score      <= 0.55: s += 18
+        if   inp.coach_to_champion_pct        <= 0.20: s += 25
+        elif inp.coach_to_champion_pct        <= 0.45: s += 12
+        return min(s, 100.0)
 
-        if inp.avg_contacts_per_deal < 1.5:
-            score += 30.0
-        elif inp.avg_contacts_per_deal < 2.5:
-            score += 15.0
+    def _economic_alignment_score(self, inp: StakeholderInput) -> float:
+        s = 0.0
+        if   inp.economic_buyer_identified_pct <= 0.35: s += 45
+        elif inp.economic_buyer_identified_pct <= 0.60: s += 25
+        elif inp.economic_buyer_identified_pct <= 0.80: s += 10
+        if   inp.executive_sponsor_engaged_pct <= 0.20: s += 30
+        elif inp.executive_sponsor_engaged_pct <= 0.45: s += 15
+        if   inp.single_threaded_deal_pct      >= 0.50: s += 25
+        elif inp.single_threaded_deal_pct      >= 0.30: s += 12
+        return min(s, 100.0)
 
-        if inp.multi_threaded_deals == 0:
-            score += 20.0
-        elif inp.multi_threaded_deals < 3:
-            score += 10.0
+    def _process_intelligence_score(self, inp: StakeholderInput) -> float:
+        s = 0.0
+        if   inp.decision_process_mapped_pct  <= 0.30: s += 40
+        elif inp.decision_process_mapped_pct  <= 0.55: s += 22
+        elif inp.decision_process_mapped_pct  <= 0.75: s += 8
+        if   inp.blocker_identified_pct       <= 0.25: s += 35
+        elif inp.blocker_identified_pct       <= 0.50: s += 18
+        if   inp.stakeholder_sentiment_score  <= 0.35: s += 25
+        elif inp.stakeholder_sentiment_score  <= 0.60: s += 12
+        return min(s, 100.0)
 
-        return min(score, 100.0)
+    # ── composite ─────────────────────────────────────────────────────────
 
-    def _buyer_alignment_score(self, inp: StakeholderMappingInput) -> float:
-        score = 0.0
-        total = max(inp.total_active_deals, 1)
+    def _composite(self, co: float, cq: float, ea: float, pi: float) -> float:
+        return min(round(co * 0.30 + cq * 0.25 + ea * 0.30 + pi * 0.15, 2), 100.0)
 
-        eb_rate = inp.economic_buyer_identified_count / total
-        if eb_rate < 0.30:
-            score += 40.0
-        elif eb_rate < 0.50:
-            score += 20.0
-        elif eb_rate < 0.70:
-            score += 8.0
+    # ── pattern ───────────────────────────────────────────────────────────
 
-        eb_identified = max(inp.economic_buyer_identified_count, 1)
-        engaged_rate = inp.economic_buyer_engaged_count / eb_identified
-        if inp.economic_buyer_identified_count > 0 and engaged_rate < 0.40:
-            score += 30.0
-        elif inp.economic_buyer_identified_count > 0 and engaged_rate < 0.60:
-            score += 15.0
-
-        dm_rate = inp.decision_maker_met_count / total
-        if dm_rate < 0.30:
-            score += 20.0
-        elif dm_rate < 0.50:
-            score += 10.0
-
-        return min(score, 100.0)
-
-    def _champion_development_score(self, inp: StakeholderMappingInput) -> float:
-        score = 0.0
-        total = max(inp.total_active_deals, 1)
-
-        champ_rate = inp.champion_identified_count / total
-        if champ_rate < 0.30:
-            score += 40.0
-        elif champ_rate < 0.50:
-            score += 20.0
-        elif champ_rate < 0.70:
-            score += 8.0
-
-        champ_identified = max(inp.champion_identified_count, 1)
-        active_rate = inp.champion_active_count / champ_identified
-        if inp.champion_identified_count > 0 and active_rate < 0.40:
-            score += 30.0
-        elif inp.champion_identified_count > 0 and active_rate < 0.60:
-            score += 15.0
-
-        if inp.deals_stalled_no_champion >= 3:
-            score += 20.0
-        elif inp.deals_stalled_no_champion >= 1:
-            score += 10.0
-
-        return min(score, 100.0)
-
-    def _executive_access_score(self, inp: StakeholderMappingInput) -> float:
-        score = 0.0
-        total = max(inp.total_active_deals, 1)
-
-        exec_rate = inp.executive_sponsor_deals / total
-        if exec_rate < 0.10:
-            score += 45.0
-        elif exec_rate < 0.20:
-            score += 25.0
-        elif exec_rate < 0.35:
-            score += 10.0
-
-        if inp.avg_stakeholder_influence_score < 4.0:
-            score += 30.0
-        elif inp.avg_stakeholder_influence_score < 6.0:
-            score += 15.0
-
-        if inp.committee_buying_deals > 0 and inp.executive_sponsor_deals == 0:
-            score += 20.0
-        elif inp.committee_buying_deals > 0 and exec_rate < 0.20:
-            score += 10.0
-
-        return min(score, 100.0)
-
-    # ------------------------------------------------------------------
-    # Pattern detection
-    # ------------------------------------------------------------------
-
-    def _detect_pattern(self, inp: StakeholderMappingInput,
-                         coverage: float, buyer: float,
-                         champion: float, executive: float) -> StakeholderPattern:
-        total = max(inp.total_active_deals, 1)
-        single_rate = inp.single_threaded_deals / total
-        if coverage >= 35 and single_rate >= 0.50:
+    def _pattern(self, inp: StakeholderInput) -> StakeholderPattern:
+        if inp.single_threaded_deal_pct >= 0.55 and inp.avg_stakeholders_per_deal <= 1.5:
             return StakeholderPattern.single_threaded
-
-        eb_rate = inp.economic_buyer_identified_count / total
-        if buyer >= 30 and eb_rate < 0.40:
-            return StakeholderPattern.no_economic_buyer
-
-        champ_rate = inp.champion_identified_count / total
-        if champion >= 30 and champ_rate < 0.40:
-            return StakeholderPattern.champion_gap
-
-        exec_rate = inp.executive_sponsor_deals / total
-        if executive >= 30 and exec_rate < 0.15:
-            return StakeholderPattern.executive_avoidance
-
-        if buyer >= 25 and inp.avg_stakeholder_influence_score < 5.0:
-            return StakeholderPattern.poor_stakeholder_advancement
-
+        if inp.champion_strength_score <= 0.30 and inp.coach_to_champion_pct <= 0.20:
+            return StakeholderPattern.champion_dependency
+        if inp.economic_buyer_identified_pct <= 0.35 and inp.executive_sponsor_engaged_pct <= 0.20:
+            return StakeholderPattern.economic_blind_spot
+        if inp.blocker_identified_pct <= 0.20 and inp.decision_process_mapped_pct <= 0.35:
+            return StakeholderPattern.blocker_ignored
+        if inp.org_chart_mapped_pct <= 0.30 and inp.multi_contact_deal_pct <= 0.45:
+            return StakeholderPattern.org_chart_gap
         return StakeholderPattern.none
 
-    # ------------------------------------------------------------------
-    # Risk / severity / action
-    # ------------------------------------------------------------------
+    # ── thresholds ────────────────────────────────────────────────────────
 
-    def _risk_level(self, composite: float) -> StakeholderRisk:
-        if composite >= 60:
-            return StakeholderRisk.critical
-        if composite >= 40:
-            return StakeholderRisk.high
-        if composite >= 20:
-            return StakeholderRisk.moderate
+    def _risk(self, composite: float) -> StakeholderRisk:
+        if   composite >= 60: return StakeholderRisk.critical
+        elif composite >= 40: return StakeholderRisk.high
+        elif composite >= 20: return StakeholderRisk.moderate
         return StakeholderRisk.low
 
     def _severity(self, composite: float) -> StakeholderSeverity:
-        if composite >= 60:
-            return StakeholderSeverity.exposed
-        if composite >= 40:
-            return StakeholderSeverity.fragile
-        if composite >= 20:
-            return StakeholderSeverity.developing
-        return StakeholderSeverity.engaged
+        if   composite >= 60: return StakeholderSeverity.exposed
+        elif composite >= 40: return StakeholderSeverity.fragile
+        elif composite >= 20: return StakeholderSeverity.developing
+        return StakeholderSeverity.mapped
 
-    def _action(self, risk: StakeholderRisk,
-                 pattern: StakeholderPattern) -> StakeholderAction:
+    def _action(self, risk: StakeholderRisk, pattern: StakeholderPattern) -> StakeholderAction:
         if risk == StakeholderRisk.critical:
-            if pattern == StakeholderPattern.single_threaded:
-                return StakeholderAction.multi_threading_coaching
-            if pattern == StakeholderPattern.no_economic_buyer:
-                return StakeholderAction.economic_buyer_strategy
-            return StakeholderAction.stakeholder_mapping_review
+            if pattern in (StakeholderPattern.single_threaded, StakeholderPattern.champion_dependency):
+                return StakeholderAction.deal_rescue_intervention
+            return StakeholderAction.executive_sponsor_escalation
         if risk == StakeholderRisk.high:
-            if pattern == StakeholderPattern.champion_gap:
-                return StakeholderAction.champion_development
-            if pattern == StakeholderPattern.executive_avoidance:
-                return StakeholderAction.executive_access_plan
-            return StakeholderAction.multi_threading_coaching
+            if pattern == StakeholderPattern.single_threaded:
+                return StakeholderAction.multi_thread_coaching
+            if pattern == StakeholderPattern.champion_dependency:
+                return StakeholderAction.multi_thread_coaching
+            if pattern == StakeholderPattern.economic_blind_spot:
+                return StakeholderAction.economic_buyer_coaching
+            if pattern == StakeholderPattern.blocker_ignored:
+                return StakeholderAction.blocker_neutralization_coaching
+            if pattern == StakeholderPattern.org_chart_gap:
+                return StakeholderAction.stakeholder_tracking_coaching
+            return StakeholderAction.multi_thread_coaching
         if risk == StakeholderRisk.moderate:
-            return StakeholderAction.multi_threading_coaching
+            return StakeholderAction.stakeholder_tracking_coaching
         return StakeholderAction.no_action
 
-    # ------------------------------------------------------------------
-    # Flags
-    # ------------------------------------------------------------------
+    # ── flags ─────────────────────────────────────────────────────────────
 
-    def _has_stakeholder_gap(self, composite: float,
-                              inp: StakeholderMappingInput) -> bool:
-        total = max(inp.total_active_deals, 1)
-        single_rate = inp.single_threaded_deals / total
+    def _has_gap(self, inp: StakeholderInput, composite: float) -> bool:
         return (
             composite >= 40
-            or single_rate >= 0.50
-            or inp.champion_identified_count == 0
+            or inp.single_threaded_deal_pct         >= 0.35
+            or inp.economic_buyer_identified_pct    <= 0.60
         )
 
-    def _requires_stakeholder_coaching(self, composite: float,
-                                        inp: StakeholderMappingInput) -> bool:
-        total = max(inp.total_active_deals, 1)
-        eb_rate = inp.economic_buyer_identified_count / total
+    def _requires_coaching(self, inp: StakeholderInput, composite: float) -> bool:
         return (
-            composite >= 30
-            or eb_rate < 0.40
-            or inp.avg_contacts_per_deal < 2.0
+            composite >= 25
+            or inp.champion_strength_score           <= 0.50
+            or inp.multi_contact_deal_pct            <= 0.65
         )
 
-    # ------------------------------------------------------------------
-    # Deal risk
-    # ------------------------------------------------------------------
+    # ── dollar impact ─────────────────────────────────────────────────────
 
-    def _estimated_deal_risk(self, inp: StakeholderMappingInput,
-                              composite: float) -> float:
+    def _deal_risk(self, inp: StakeholderInput, composite: float) -> float:
+        risk_multiplier = max(0.0, inp.single_threaded_deal_pct) * (composite / 100)
         return round(
-            inp.single_threaded_deals * inp.avg_deal_size_single_stakeholder_usd * (composite / 100.0), 2
+            inp.total_active_deals
+            * inp.avg_deal_value_usd
+            * risk_multiplier,
+            2,
         )
 
-    # ------------------------------------------------------------------
-    # Signal string
-    # ------------------------------------------------------------------
+    # ── signal ────────────────────────────────────────────────────────────
 
-    def _signal(self, inp: StakeholderMappingInput,
-                 pattern: StakeholderPattern, composite: float) -> str:
-        if pattern == StakeholderPattern.none and composite < 20:
-            return "Stakeholder engagement and multi-threading on track"
-        parts: list[str] = []
-        total = max(inp.total_active_deals, 1)
-        if inp.single_threaded_deals >= 1:
-            parts.append(f"{inp.single_threaded_deals} single-threaded deals")
-        if inp.champion_identified_count < total:
-            parts.append(f"{inp.champion_identified_count} champions identified")
-        if inp.executive_sponsor_deals < total:
-            parts.append(f"{inp.executive_sponsor_deals} exec sponsors engaged")
-        label = pattern.value.replace("_", " ") if pattern != StakeholderPattern.none else "Stakeholder risk"
-        summary = " — ".join(parts) if parts else "stakeholder engagement declining"
-        return f"{label.capitalize()} — {summary} — composite {composite:.0f}"
+    _PATTERN_LABELS = {
+        StakeholderPattern.single_threaded:     "Single-threaded",
+        StakeholderPattern.champion_dependency: "Champion dependency",
+        StakeholderPattern.economic_blind_spot: "Economic blind spot",
+        StakeholderPattern.blocker_ignored:     "Blocker ignored",
+        StakeholderPattern.org_chart_gap:       "Org chart gap",
+    }
 
-    # ------------------------------------------------------------------
-    # Assess
-    # ------------------------------------------------------------------
-
-    def assess(self, inp: StakeholderMappingInput) -> StakeholderMappingResult:
-        coverage   = round(self._coverage_breadth_score(inp), 1)
-        buyer      = round(self._buyer_alignment_score(inp), 1)
-        champion   = round(self._champion_development_score(inp), 1)
-        executive  = round(self._executive_access_score(inp), 1)
-
-        composite = round(
-            coverage * 0.30 + buyer * 0.30 + champion * 0.25 + executive * 0.15, 1
+    def _signal(self, inp: StakeholderInput, pattern: StakeholderPattern, composite: float) -> str:
+        if composite < 20:
+            return (
+                "Stakeholder mapping strong — multi-threading, champion quality, "
+                "economic buyer alignment, and decision process within benchmarks"
+            )
+        label     = self._PATTERN_LABELS.get(pattern, pattern.value.replace("_", " ").title())
+        thread_pct = round(inp.single_threaded_deal_pct * 100)
+        eb_pct     = round(inp.economic_buyer_identified_pct * 100)
+        champ_pct  = round(inp.champion_identified_pct * 100)
+        comp_int   = round(composite)
+        return (
+            f"{label} — {thread_pct}% single-threaded deals — "
+            f"{eb_pct}% economic buyers identified — "
+            f"{champ_pct}% champions identified — composite {comp_int}"
         )
-        composite = min(composite, 100.0)
 
-        pattern  = self._detect_pattern(inp, coverage, buyer, champion, executive)
-        risk     = self._risk_level(composite)
-        severity = self._severity(composite)
+    # ── public API ────────────────────────────────────────────────────────
+
+    def assess(self, inp: StakeholderInput) -> StakeholderResult:
+        co  = self._coverage_score(inp)
+        cq  = self._champion_quality_score(inp)
+        ea  = self._economic_alignment_score(inp)
+        pi  = self._process_intelligence_score(inp)
+        comp = self._composite(co, cq, ea, pi)
+
+        pattern  = self._pattern(inp)
+        risk     = self._risk(comp)
+        severity = self._severity(comp)
         action   = self._action(risk, pattern)
 
-        gap      = self._has_stakeholder_gap(composite, inp)
-        coaching = self._requires_stakeholder_coaching(composite, inp)
-        deal_risk = self._estimated_deal_risk(inp, composite)
-        signal   = self._signal(inp, pattern, composite)
-
-        result = StakeholderMappingResult(
-            rep_id=inp.rep_id,
-            region=inp.region,
-            stakeholder_risk=risk,
-            stakeholder_pattern=pattern,
-            stakeholder_severity=severity,
-            recommended_action=action,
-            coverage_breadth_score=coverage,
-            buyer_alignment_score=buyer,
-            champion_development_score=champion,
-            executive_access_score=executive,
-            stakeholder_effectiveness_composite=composite,
-            has_stakeholder_gap=gap,
-            requires_stakeholder_coaching=coaching,
-            estimated_deal_risk_usd=deal_risk,
-            stakeholder_signal=signal,
+        result = StakeholderResult(
+            rep_id                      = inp.rep_id,
+            region                      = inp.region,
+            stakeholder_risk            = risk,
+            stakeholder_pattern         = pattern,
+            stakeholder_severity        = severity,
+            recommended_action          = action,
+            coverage_score              = co,
+            champion_quality_score      = cq,
+            economic_alignment_score    = ea,
+            process_intelligence_score  = pi,
+            stakeholder_composite       = comp,
+            has_stakeholder_gap         = self._has_gap(inp, comp),
+            requires_stakeholder_coaching = self._requires_coaching(inp, comp),
+            estimated_deal_risk_usd     = self._deal_risk(inp, comp),
+            stakeholder_signal          = self._signal(inp, pattern, comp),
         )
         self._results.append(result)
         return result
 
-    def assess_batch(self, inputs: list[StakeholderMappingInput]) -> list[StakeholderMappingResult]:
+    def assess_batch(self, inputs: List[StakeholderInput]) -> List[StakeholderResult]:
         return [self.assess(i) for i in inputs]
 
-    def summary(self) -> dict:
+    def summary(self) -> Dict:
         if not self._results:
             return {
                 "total": 0,
@@ -388,48 +307,50 @@ class SalesStakeholderMappingIntelligenceEngine:
                 "pattern_counts": {},
                 "severity_counts": {},
                 "action_counts": {},
-                "avg_stakeholder_effectiveness_composite": 0.0,
+                "avg_stakeholder_composite": 0.0,
                 "stakeholder_gap_count": 0,
-                "stakeholder_coaching_count": 0,
-                "avg_coverage_breadth_score": 0.0,
-                "avg_buyer_alignment_score": 0.0,
-                "avg_champion_development_score": 0.0,
-                "avg_executive_access_score": 0.0,
+                "coaching_count": 0,
+                "avg_coverage_score": 0.0,
+                "avg_champion_quality_score": 0.0,
+                "avg_economic_alignment_score": 0.0,
+                "avg_process_intelligence_score": 0.0,
                 "total_estimated_deal_risk_usd": 0.0,
             }
 
-        risk_counts:     dict[str, int] = {}
-        pattern_counts:  dict[str, int] = {}
-        severity_counts: dict[str, int] = {}
-        action_counts:   dict[str, int] = {}
-        total_comp = total_cov = total_buy = total_champ = total_exec = total_risk = 0.0
+        risk_counts:     Dict[str, int] = {}
+        pattern_counts:  Dict[str, int] = {}
+        severity_counts: Dict[str, int] = {}
+        action_counts:   Dict[str, int] = {}
+        total_comp = total_co = total_cq = total_ea = total_pi = total_dr = 0.0
+        gap_count = coaching_count = 0
 
-        for r in self._results:
-            risk_counts[r.stakeholder_risk.value]       = risk_counts.get(r.stakeholder_risk.value, 0) + 1
-            pattern_counts[r.stakeholder_pattern.value] = pattern_counts.get(r.stakeholder_pattern.value, 0) + 1
-            severity_counts[r.stakeholder_severity.value] = severity_counts.get(r.stakeholder_severity.value, 0) + 1
-            action_counts[r.recommended_action.value]     = action_counts.get(r.recommended_action.value, 0) + 1
-            total_comp  += r.stakeholder_effectiveness_composite
-            total_cov   += r.coverage_breadth_score
-            total_buy   += r.buyer_alignment_score
-            total_champ += r.champion_development_score
-            total_exec  += r.executive_access_score
-            total_risk  += r.estimated_deal_risk_usd
+        for res in self._results:
+            risk_counts[res.stakeholder_risk.value]       = risk_counts.get(res.stakeholder_risk.value, 0) + 1
+            pattern_counts[res.stakeholder_pattern.value] = pattern_counts.get(res.stakeholder_pattern.value, 0) + 1
+            severity_counts[res.stakeholder_severity.value] = severity_counts.get(res.stakeholder_severity.value, 0) + 1
+            action_counts[res.recommended_action.value]   = action_counts.get(res.recommended_action.value, 0) + 1
+            total_comp += res.stakeholder_composite
+            total_co   += res.coverage_score
+            total_cq   += res.champion_quality_score
+            total_ea   += res.economic_alignment_score
+            total_pi   += res.process_intelligence_score
+            total_dr   += res.estimated_deal_risk_usd
+            if res.has_stakeholder_gap:           gap_count      += 1
+            if res.requires_stakeholder_coaching:  coaching_count += 1
 
         n = len(self._results)
-
         return {
-            "total":                                    n,
-            "risk_counts":                              risk_counts,
-            "pattern_counts":                           pattern_counts,
-            "severity_counts":                          severity_counts,
-            "action_counts":                            action_counts,
-            "avg_stakeholder_effectiveness_composite":  round(total_comp / n, 1),
-            "stakeholder_gap_count":                    sum(1 for r in self._results if r.has_stakeholder_gap),
-            "stakeholder_coaching_count":               sum(1 for r in self._results if r.requires_stakeholder_coaching),
-            "avg_coverage_breadth_score":               round(total_cov / n, 1),
-            "avg_buyer_alignment_score":                round(total_buy / n, 1),
-            "avg_champion_development_score":           round(total_champ / n, 1),
-            "avg_executive_access_score":               round(total_exec / n, 1),
-            "total_estimated_deal_risk_usd":            round(total_risk, 2),
+            "total":                                n,
+            "risk_counts":                          risk_counts,
+            "pattern_counts":                       pattern_counts,
+            "severity_counts":                      severity_counts,
+            "action_counts":                        action_counts,
+            "avg_stakeholder_composite":            round(total_comp / n, 1),
+            "stakeholder_gap_count":                gap_count,
+            "coaching_count":                       coaching_count,
+            "avg_coverage_score":                   round(total_co / n, 1),
+            "avg_champion_quality_score":           round(total_cq / n, 1),
+            "avg_economic_alignment_score":         round(total_ea / n, 1),
+            "avg_process_intelligence_score":       round(total_pi / n, 1),
+            "total_estimated_deal_risk_usd":        round(total_dr, 2),
         }

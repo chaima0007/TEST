@@ -1,118 +1,58 @@
 "use client";
+import { useEffect, useState } from "react";
 
-import { useEffect, useState, useCallback } from "react";
-
-// ─── Types ───────────────────────────────────────────────────────────────────
-
-interface Rep {
-  rep_id: string;
-  region: string;
-  stakeholder_risk: string;
-  stakeholder_pattern: string;
-  stakeholder_severity: string;
-  recommended_action: string;
-  coverage_breadth_score: number;
-  buyer_alignment_score: number;
-  champion_development_score: number;
-  executive_access_score: number;
-  stakeholder_effectiveness_composite: number;
-  has_stakeholder_gap: boolean;
-  requires_stakeholder_coaching: boolean;
-  estimated_deal_risk_usd: number;
+type Rep = {
+  rep_id: string; region: string; stakeholder_risk: string; stakeholder_pattern: string;
+  stakeholder_severity: string; recommended_action: string;
+  coverage_score: number; champion_quality_score: number;
+  economic_alignment_score: number; process_intelligence_score: number;
+  stakeholder_composite: number; has_stakeholder_gap: boolean;
+  requires_stakeholder_coaching: boolean; estimated_deal_risk_usd: number;
   stakeholder_signal: string;
-}
-
-interface Summary {
-  total: number;
-  risk_counts: Record<string, number>;
-  pattern_counts: Record<string, number>;
-  severity_counts: Record<string, number>;
-  action_counts: Record<string, number>;
-  avg_stakeholder_effectiveness_composite: number;
-  stakeholder_gap_count: number;
-  stakeholder_coaching_count: number;
-  avg_coverage_breadth_score: number;
-  avg_buyer_alignment_score: number;
-  avg_champion_development_score: number;
-  avg_executive_access_score: number;
+};
+type Summary = {
+  total: number; risk_counts: Record<string,number>;
+  pattern_counts: Record<string,number>; severity_counts: Record<string,number>;
+  action_counts: Record<string,number>; avg_stakeholder_composite: number;
+  stakeholder_gap_count: number; coaching_count: number;
+  avg_coverage_score: number; avg_champion_quality_score: number;
+  avg_economic_alignment_score: number; avg_process_intelligence_score: number;
   total_estimated_deal_risk_usd: number;
-}
-
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-const riskColor: Record<string, string> = {
-  low: "text-emerald-400", moderate: "text-yellow-400",
-  high: "text-orange-400", critical: "text-red-400",
-};
-const riskBorder: Record<string, string> = {
-  low: "border-emerald-500/30", moderate: "border-yellow-500/30",
-  high: "border-orange-500/30", critical: "border-red-500/30",
-};
-const riskBg: Record<string, string> = {
-  low: "bg-emerald-500/10", moderate: "bg-yellow-500/10",
-  high: "bg-orange-500/10", critical: "bg-red-500/10",
 };
 
-function fmtUSD(v: number): string {
-  if (v >= 1_000_000) return `$${(v / 1_000_000).toFixed(1)}M`;
-  if (v >= 1_000)     return `$${(v / 1_000).toFixed(0)}K`;
-  return `$${v.toFixed(0)}`;
-}
-
-// ─── Gauge Ring ───────────────────────────────────────────────────────────────
-
-function GaugeRing({ label, value, max = 100 }: { label: string; value: number; max?: number }) {
-  const pct = Math.min(value / max, 1);
-  const r = 36, cx = 44, cy = 44;
-  const circ = 2 * Math.PI * r;
-  const dash = circ * pct;
-  const color = pct < 0.2 ? "#34d399" : pct < 0.4 ? "#facc15" : pct < 0.6 ? "#fb923c" : "#f87171";
+function Gauge({ value, label, color }: { value: number; label: string; color: string }) {
+  const r = 36; const circ = 2 * Math.PI * r;
+  const fill = circ * (1 - value / 100);
   return (
     <div className="flex flex-col items-center gap-1">
-      <svg width={88} height={88} className="-rotate-90">
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e293b" strokeWidth={8} />
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth={8}
-          strokeDasharray={`${dash} ${circ}`} strokeLinecap="round" />
+      <svg width="88" height="88" viewBox="0 0 88 88">
+        <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth="8"/>
+        <circle cx="44" cy="44" r={r} fill="none" stroke={color} strokeWidth="8"
+          strokeDasharray={circ} strokeDashoffset={fill}
+          strokeLinecap="round" transform="rotate(-90 44 44)"/>
+        <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">
+          {Math.round(value)}
+        </text>
       </svg>
-      <span className="text-base font-bold text-slate-100 -mt-10">{value.toFixed(1)}</span>
-      <span className="text-xs text-slate-400 mt-8 text-center leading-tight">{label}</span>
+      <span className="text-xs text-slate-400 text-center">{label}</span>
     </div>
   );
 }
 
-// ─── Score Bar ────────────────────────────────────────────────────────────────
-
-function ScoreBar({ label, value }: { label: string; value: number }) {
-  const pct = Math.min(value, 100);
-  const color = pct < 20 ? "bg-emerald-500" : pct < 40 ? "bg-yellow-500" : pct < 60 ? "bg-orange-500" : "bg-red-500";
+function DistBar({ title, counts, colors }: { title: string; counts: Record<string,number>; colors: Record<string,string> }) {
+  const total = Object.values(counts).reduce((a,b)=>a+b,0)||1;
   return (
-    <div className="space-y-1">
-      <div className="flex justify-between text-xs text-slate-400">
-        <span>{label}</span><span className="font-medium text-slate-200">{value.toFixed(1)}</span>
-      </div>
-      <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-        <div className={`h-full rounded-full ${color}`} style={{ width: `${pct}%` }} />
-      </div>
-    </div>
-  );
-}
-
-// ─── Distribution Bar ─────────────────────────────────────────────────────────
-
-function DistBar({ title, counts, colors }: { title: string; counts: Record<string, number>; colors: Record<string, string> }) {
-  const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
-  return (
-    <div className="space-y-2">
-      <p className="text-xs font-medium text-slate-400 uppercase tracking-wider">{title}</p>
-      <div className="flex h-2 rounded-full overflow-hidden gap-0.5">
-        {Object.entries(counts).map(([k, v]) => (
-          <div key={k} className={colors[k] || "bg-slate-600"} style={{ width: `${(v / total) * 100}%` }} title={`${k}: ${v}`} />
+    <div className="flex flex-col gap-1">
+      <span className="text-xs text-slate-400 font-medium">{title}</span>
+      <div className="flex h-3 rounded overflow-hidden gap-px">
+        {Object.entries(counts).map(([k,v])=>(
+          <div key={k} style={{width:`${v/total*100}%`, background:colors[k]||"#475569"}} title={`${k}: ${v}`}/>
         ))}
       </div>
-      <div className="flex flex-wrap gap-x-3 gap-y-1">
-        {Object.entries(counts).map(([k, v]) => (
+      <div className="flex flex-wrap gap-x-3 gap-y-0.5">
+        {Object.entries(counts).map(([k,v])=>(
           <span key={k} className="text-xs text-slate-400">
-            <span className={`font-medium ${colors[k]?.replace("bg-", "text-") || "text-slate-300"}`}>{v}</span> {k.replace(/_/g, " ")}
+            <span style={{color:colors[k]||"#94a3b8"}}>■</span> {k} {v}
           </span>
         ))}
       </div>
@@ -120,93 +60,82 @@ function DistBar({ title, counts, colors }: { title: string; counts: Record<stri
   );
 }
 
-// ─── Detail Modal ─────────────────────────────────────────────────────────────
+const RISK_COLORS = { low:"#6366f1", moderate:"#f59e0b", high:"#f97316", critical:"#ef4444" };
+const PAT_COLORS  = { none:"#6366f1", single_threaded:"#ef4444", champion_dependency:"#f97316", economic_blind_spot:"#f59e0b", blocker_ignored:"#a855f7", org_chart_gap:"#3b82f6" };
+const SEV_COLORS  = { mapped:"#6366f1", developing:"#f59e0b", fragile:"#f97316", exposed:"#ef4444" };
+const ACT_COLORS  = { no_action:"#6366f1", stakeholder_tracking_coaching:"#f59e0b", multi_thread_coaching:"#f97316", economic_buyer_coaching:"#a855f7", blocker_neutralization_coaching:"#3b82f6", executive_sponsor_escalation:"#ef4444", deal_rescue_intervention:"#dc2626" };
+const RISK_BADGE  = { low:"bg-indigo-900 text-indigo-300", moderate:"bg-amber-900 text-amber-300", high:"bg-orange-900 text-orange-300", critical:"bg-red-900 text-red-300" };
+const SEV_BADGE   = { mapped:"bg-indigo-900 text-indigo-300", developing:"bg-amber-900 text-amber-300", fragile:"bg-orange-900 text-orange-300", exposed:"bg-red-900 text-red-300" };
 
 function DetailModal({ rep, onClose }: { rep: Rep; onClose: () => void }) {
-  const [tab, setTab] = useState<"scores" | "signals" | "action">("scores");
-
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [onClose]);
-
-  const actionLabels: Record<string, string> = {
-    no_action: "No Action Required",
-    multi_threading_coaching: "Multi-Threading Coaching",
-    economic_buyer_strategy: "Economic Buyer Engagement Strategy",
-    champion_development: "Champion Development Program",
-    stakeholder_mapping_review: "Full Stakeholder Mapping Review",
-    executive_access_plan: "Executive Access & Sponsorship Plan",
-  };
-
+  const [tab, setTab] = useState<"scores"|"signal"|"action">("scores");
+  useEffect(()=>{
+    const h = (e: KeyboardEvent) => { if (e.key==="Escape") onClose(); };
+    window.addEventListener("keydown", h);
+    return ()=>window.removeEventListener("keydown",h);
+  },[onClose]);
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
-      onClick={onClose}>
-      <div className="relative w-full max-w-lg bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl p-6"
-        onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute top-4 right-4 text-slate-500 hover:text-slate-200 text-lg">✕</button>
-        <div className="mb-4">
-          <h3 className="text-lg font-bold text-slate-100">{rep.rep_id}</h3>
-          <p className="text-sm text-slate-400">{rep.region} · <span className={riskColor[rep.stakeholder_risk] || "text-slate-300"}>{rep.stakeholder_risk.toUpperCase()}</span></p>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={onClose}>
+      <div className="bg-slate-900 border border-slate-700 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e=>e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <span className="text-lg font-bold text-white">{rep.rep_id}</span>
+            <span className="ml-2 text-slate-400 text-sm">{rep.region}</span>
+          </div>
+          <button onClick={onClose} className="text-slate-500 hover:text-white text-xl leading-none">✕</button>
         </div>
         <div className="flex gap-2 mb-4">
-          {(["scores", "signals", "action"] as const).map((t) => (
-            <button key={t} onClick={() => setTab(t)}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${tab === t ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}>
-              {t.charAt(0).toUpperCase() + t.slice(1)}
+          {(["scores","signal","action"] as const).map(t=>(
+            <button key={t} onClick={()=>setTab(t)}
+              className={`px-3 py-1 rounded text-xs font-medium transition-colors ${tab===t?"bg-indigo-700 text-white":"bg-slate-800 text-slate-400 hover:text-white"}`}>
+              {t.charAt(0).toUpperCase()+t.slice(1)}
             </button>
           ))}
         </div>
-        {tab === "scores" && (
-          <div className="space-y-3">
-            <ScoreBar label="Coverage Breadth Score" value={rep.coverage_breadth_score} />
-            <ScoreBar label="Buyer Alignment Score" value={rep.buyer_alignment_score} />
-            <ScoreBar label="Champion Development Score" value={rep.champion_development_score} />
-            <ScoreBar label="Executive Access Score" value={rep.executive_access_score} />
-            <div className="pt-2 border-t border-slate-800">
-              <ScoreBar label="Composite" value={rep.stakeholder_effectiveness_composite} />
+        {tab==="scores" && (
+          <div className="grid grid-cols-2 gap-3 text-sm">
+            {[
+              ["Coverage",           rep.coverage_score,             "#6366f1"],
+              ["Champion Quality",   rep.champion_quality_score,     "#f97316"],
+              ["Economic Alignment", rep.economic_alignment_score,   "#f59e0b"],
+              ["Process Intel",      rep.process_intelligence_score, "#a855f7"],
+            ].map(([l,v,c])=>(
+              <div key={String(l)} className="bg-slate-800 rounded-lg p-3">
+                <div className="text-slate-400 text-xs mb-1">{String(l)}</div>
+                <div className="text-white font-bold text-lg">{Number(v).toFixed(1)}</div>
+                <div className="h-1.5 rounded mt-1 bg-slate-700">
+                  <div className="h-1.5 rounded" style={{width:`${Math.min(Number(v),100)}%`,background:String(c)}}/>
+                </div>
+              </div>
+            ))}
+            <div className="col-span-2 bg-slate-800 rounded-lg p-3">
+              <div className="text-slate-400 text-xs mb-1">Stakeholder Composite</div>
+              <div className="text-white font-bold text-2xl">{rep.stakeholder_composite.toFixed(1)}</div>
             </div>
           </div>
         )}
-        {tab === "signals" && (
+        {tab==="signal" && (
+          <div className="bg-slate-800 rounded-lg p-4 text-sm text-slate-200 leading-relaxed">
+            {rep.stakeholder_signal}
+            <div className="mt-3 flex gap-2 flex-wrap">
+              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[rep.stakeholder_risk as keyof typeof RISK_BADGE]||"bg-slate-700 text-slate-300"}`}>{rep.stakeholder_risk}</span>
+              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[rep.stakeholder_severity as keyof typeof SEV_BADGE]||"bg-slate-700 text-slate-300"}`}>{rep.stakeholder_severity}</span>
+            </div>
+          </div>
+        )}
+        {tab==="action" && (
           <div className="space-y-3 text-sm">
-            <p className="text-slate-300 leading-relaxed">{rep.stakeholder_signal}</p>
-            <div className="grid grid-cols-2 gap-2 pt-2">
-              <div className="bg-slate-800/60 rounded-lg p-3">
-                <p className="text-xs text-slate-500 mb-1">Severity</p>
-                <p className="font-medium text-slate-200 capitalize">{rep.stakeholder_severity.replace(/_/g, " ")}</p>
-              </div>
-              <div className="bg-slate-800/60 rounded-lg p-3">
-                <p className="text-xs text-slate-500 mb-1">Pattern</p>
-                <p className="font-medium text-slate-200 capitalize">{rep.stakeholder_pattern.replace(/_/g, " ")}</p>
-              </div>
-              <div className="bg-slate-800/60 rounded-lg p-3">
-                <p className="text-xs text-slate-500 mb-1">Stakeholder Gap</p>
-                <p className={`font-medium ${rep.has_stakeholder_gap ? "text-red-400" : "text-emerald-400"}`}>
-                  {rep.has_stakeholder_gap ? "Yes" : "No"}
-                </p>
-              </div>
-              <div className="bg-slate-800/60 rounded-lg p-3">
-                <p className="text-xs text-slate-500 mb-1">Deal Risk</p>
-                <p className="font-medium text-orange-400">{fmtUSD(rep.estimated_deal_risk_usd)}</p>
-              </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-slate-400 text-xs mb-1">Recommended Action</div>
+              <div className="text-white font-medium">{rep.recommended_action.replace(/_/g," ")}</div>
             </div>
-          </div>
-        )}
-        {tab === "action" && (
-          <div className="space-y-3">
-            <div className="bg-indigo-500/10 border border-indigo-500/30 rounded-xl p-4">
-              <p className="text-xs text-indigo-400 mb-1 font-medium uppercase tracking-wider">Recommended Action</p>
-              <p className="text-slate-100 font-semibold">{actionLabels[rep.recommended_action] || rep.recommended_action}</p>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-slate-400 text-xs mb-1">Deal Risk Exposure</div>
+              <div className="text-white font-bold">${rep.estimated_deal_risk_usd.toLocaleString()}</div>
             </div>
             <div className="flex gap-2">
-              <span className={`px-2 py-1 rounded text-xs font-medium ${riskBg[rep.stakeholder_risk]} ${riskColor[rep.stakeholder_risk]}`}>
-                {rep.stakeholder_risk} risk
-              </span>
-              {rep.requires_stakeholder_coaching && (
-                <span className="px-2 py-1 rounded text-xs font-medium bg-violet-500/10 text-violet-400">Needs Coaching</span>
-              )}
+              {rep.has_stakeholder_gap           && <span className="px-2 py-1 rounded bg-red-900 text-red-300 text-xs font-medium">🔗 GAP</span>}
+              {rep.requires_stakeholder_coaching && <span className="px-2 py-1 rounded bg-indigo-900 text-indigo-300 text-xs font-medium">🎯 COACH</span>}
             </div>
           </div>
         )}
@@ -215,147 +144,111 @@ function DetailModal({ rep, onClose }: { rep: Rep; onClose: () => void }) {
   );
 }
 
-// ─── Main Page ────────────────────────────────────────────────────────────────
+export default function StakeholderMappingDashboard() {
+  const [data, setData]     = useState<{ reps: Rep[]; summary: Summary }|null>(null);
+  const [filter, setFilter] = useState<string>("all");
+  const [patFilter, setPat] = useState<string>("all");
+  const [selected, setSelected] = useState<Rep|null>(null);
 
-export default function SalesStakeholderMappingPage() {
-  const [data, setData] = useState<{ reps: Rep[]; summary: Summary } | null>(null);
-  const [riskFilter, setRiskFilter]       = useState("");
-  const [patternFilter, setPatternFilter] = useState("");
-  const [selectedRep, setSelectedRep]     = useState<Rep | null>(null);
-
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (riskFilter)    params.set("risk", riskFilter);
-    if (patternFilter) params.set("pattern", patternFilter);
-    const res = await fetch(`/api/sales-stakeholder-mapping-intelligence-engine?${params}`);
-    if (res.ok) setData(await res.json());
-  }, [riskFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
+  useEffect(()=>{
+    fetch("/api/sales-stakeholder-mapping-intelligence-engine")
+      .then(r=>r.json()).then(setData).catch(console.error);
+  },[]);
 
   if (!data) return (
-    <div className="flex items-center justify-center h-64">
-      <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <div className="text-indigo-400 text-lg animate-pulse">Loading Stakeholder Mapping Intelligence...</div>
     </div>
   );
 
   const { reps, summary } = data;
+  const filtered = reps.filter(r=>
+    (filter==="all" || r.stakeholder_risk===filter) &&
+    (patFilter==="all" || r.stakeholder_pattern===patFilter)
+  );
 
-  const riskColors     = { low: "bg-emerald-500", moderate: "bg-yellow-500", high: "bg-orange-500", critical: "bg-red-500" } as Record<string, string>;
-  const patternColors  = { none: "bg-slate-500", single_threaded: "bg-red-500", no_economic_buyer: "bg-orange-500", champion_gap: "bg-yellow-500", executive_avoidance: "bg-violet-500", poor_stakeholder_advancement: "bg-blue-500" } as Record<string, string>;
-  const severityColors = { engaged: "bg-emerald-500", developing: "bg-yellow-500", fragile: "bg-orange-500", exposed: "bg-red-500" } as Record<string, string>;
-
-  const distributions: Array<{ title: string; counts: Record<string, number>; colors: Record<string, string> }> = [
-    { title: "Risk Distribution", counts: summary.risk_counts, colors: riskColors },
-    { title: "Pattern Distribution", counts: summary.pattern_counts, colors: patternColors },
-    { title: "Severity Distribution", counts: summary.severity_counts, colors: severityColors },
-  ];
-
-  const RISKS    = ["low", "moderate", "high", "critical"];
-  const PATTERNS = ["none", "single_threaded", "no_economic_buyer", "champion_gap", "executive_avoidance", "poor_stakeholder_advancement"];
+  const dists = [
+    { title:"Risk",     counts:summary.risk_counts,     colors:RISK_COLORS } as {title:string;counts:Record<string,number>;colors:Record<string,string>},
+    { title:"Pattern",  counts:summary.pattern_counts,  colors:PAT_COLORS  } as {title:string;counts:Record<string,number>;colors:Record<string,string>},
+    { title:"Severity", counts:summary.severity_counts, colors:SEV_COLORS  } as {title:string;counts:Record<string,number>;colors:Record<string,string>},
+    { title:"Action",   counts:summary.action_counts,   colors:ACT_COLORS  } as {title:string;counts:Record<string,number>;colors:Record<string,string>},
+  ] as Array<{title:string;counts:Record<string,number>;colors:Record<string,string>}>;
 
   return (
-    <div className="space-y-6 p-6">
-      {/* Header */}
+    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 space-y-6">
+      {selected && <DetailModal rep={selected} onClose={()=>setSelected(null)}/>}
+
       <div>
-        <h1 className="text-2xl font-bold text-slate-100">Stakeholder Mapping Intelligence</h1>
-        <p className="text-slate-400 text-sm mt-1">Monitor multi-threading coverage, economic buyer access, champion development, and executive engagement</p>
+        <h1 className="text-2xl font-bold text-white">Stakeholder Mapping Intelligence</h1>
+        <p className="text-slate-400 text-sm mt-1">Coverage · Champion quality · Economic alignment · Process intelligence</p>
       </div>
 
-      {/* KPI Strip */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
         {[
-          { label: "Total Reps", value: summary.total, sub: "monitored" },
-          { label: "Stakeholder Gaps", value: summary.stakeholder_gap_count, sub: "reps flagged", color: "text-red-400" },
-          { label: "Need Coaching", value: summary.stakeholder_coaching_count, sub: "reps", color: "text-orange-400" },
-          { label: "Deal Risk Exposure", value: fmtUSD(summary.total_estimated_deal_risk_usd), sub: "single-threaded deals", color: "text-violet-400" },
-        ].map(({ label, value, sub, color }) => (
-          <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-            <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">{label}</p>
-            <p className={`text-2xl font-bold ${color || "text-slate-100"}`}>{value}</p>
-            <p className="text-xs text-slate-500 mt-1">{sub}</p>
+          ["Reps",           summary.total,                                                          "text-indigo-400"],
+          ["Avg Composite",  summary.avg_stakeholder_composite,                                     "text-red-400"],
+          ["Stk Gaps",       summary.stakeholder_gap_count,                                         "text-orange-400"],
+          ["Need Coaching",  summary.coaching_count,                                                "text-amber-400"],
+          ["Deal Risk",      `$${(summary.total_estimated_deal_risk_usd/1000).toFixed(0)}K`,        "text-red-400"],
+          ["Avg Coverage",   summary.avg_coverage_score,                                            "text-indigo-400"],
+        ].map(([l,v,c])=>(
+          <div key={String(l)} className="bg-slate-900 border border-slate-800 rounded-xl p-3 text-center">
+            <div className={`text-xl font-bold ${c}`}>{v}</div>
+            <div className="text-xs text-slate-500 mt-0.5">{l}</div>
           </div>
         ))}
       </div>
 
-      {/* Gauge Rings */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
-        <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-6">Avg Score Components</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-items-center">
-          <GaugeRing label="Coverage Breadth" value={summary.avg_coverage_breadth_score} />
-          <GaugeRing label="Buyer Alignment" value={summary.avg_buyer_alignment_score} />
-          <GaugeRing label="Champion Dev." value={summary.avg_champion_development_score} />
-          <GaugeRing label="Executive Access" value={summary.avg_executive_access_score} />
+      <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
+        <div className="grid grid-cols-4 gap-4">
+          <Gauge value={summary.avg_coverage_score}             label="Coverage"           color="#6366f1"/>
+          <Gauge value={summary.avg_champion_quality_score}     label="Champion Quality"   color="#f97316"/>
+          <Gauge value={summary.avg_economic_alignment_score}   label="Economic Align."    color="#f59e0b"/>
+          <Gauge value={summary.avg_process_intelligence_score} label="Process Intel"      color="#a855f7"/>
         </div>
       </div>
 
-      {/* Distributions */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-5">
-        <h2 className="text-sm font-semibold text-slate-300 uppercase tracking-wider">Distributions</h2>
-        {distributions.map((d) => <DistBar key={d.title} {...d} />)}
+      <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {dists.map(d=><DistBar key={d.title} {...d}/>)}
       </div>
 
-      {/* Filters */}
-      <div className="flex flex-wrap gap-3">
-        <div className="flex gap-1 flex-wrap">
-          <span className="text-xs text-slate-500 self-center mr-1">Risk:</span>
-          {["", ...RISKS].map((r) => (
-            <button key={r} onClick={() => setRiskFilter(r)}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${riskFilter === r ? "bg-indigo-600 text-white" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}>
-              {r || "All"}
-            </button>
-          ))}
-        </div>
-        <div className="flex gap-1 flex-wrap">
-          <span className="text-xs text-slate-500 self-center mr-1">Pattern:</span>
-          {["", ...PATTERNS].map((p) => (
-            <button key={p} onClick={() => setPatternFilter(p)}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${patternFilter === p ? "bg-violet-600 text-white" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}>
-              {p ? p.replace(/_/g, " ") : "All"}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Rep Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {reps.map((rep) => (
-          <button key={rep.rep_id} onClick={() => setSelectedRep(rep)} className="text-left w-full">
-            <div className={`bg-slate-900 border rounded-xl p-4 hover:border-slate-600 transition-colors ${riskBorder[rep.stakeholder_risk] || "border-slate-800"}`}>
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <p className="font-semibold text-slate-100">{rep.rep_id}</p>
-                  <p className="text-xs text-slate-400">{rep.region}</p>
-                </div>
-                <div className="text-right">
-                  <span className={`text-xs font-bold px-2 py-0.5 rounded ${riskBg[rep.stakeholder_risk]} ${riskColor[rep.stakeholder_risk]}`}>
-                    {rep.stakeholder_risk.toUpperCase()}
-                  </span>
-                  <p className="text-xs text-slate-500 mt-1">composite {rep.stakeholder_effectiveness_composite.toFixed(1)}</p>
-                </div>
-              </div>
-              <div className="space-y-2 mb-3">
-                <ScoreBar label="Coverage" value={rep.coverage_breadth_score} />
-                <ScoreBar label="Buyer Alignment" value={rep.buyer_alignment_score} />
-                <ScoreBar label="Champion Dev." value={rep.champion_development_score} />
-                <ScoreBar label="Exec Access" value={rep.executive_access_score} />
-              </div>
-              <div className="flex justify-between items-center text-xs text-slate-500">
-                <span className="capitalize">{rep.stakeholder_pattern.replace(/_/g, " ")}</span>
-                <span className="text-orange-400 font-medium">{fmtUSD(rep.estimated_deal_risk_usd)}</span>
-              </div>
-              {(rep.has_stakeholder_gap || rep.requires_stakeholder_coaching) && (
-                <div className="flex gap-1 mt-2">
-                  {rep.has_stakeholder_gap && <span className="text-xs bg-red-500/10 text-red-400 px-2 py-0.5 rounded">Gap</span>}
-                  {rep.requires_stakeholder_coaching && <span className="text-xs bg-violet-500/10 text-violet-400 px-2 py-0.5 rounded">Coaching</span>}
-                </div>
-              )}
-            </div>
+      <div className="flex flex-wrap gap-2">
+        {["all","low","moderate","high","critical"].map(r=>(
+          <button key={r} onClick={()=>setFilter(r)}
+            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${filter===r?"bg-indigo-700 border-indigo-600 text-white":"bg-slate-900 border-slate-700 text-slate-400 hover:text-white"}`}>
+            {r}
+          </button>
+        ))}
+        <span className="w-px h-5 self-center bg-slate-700"/>
+        {["all","single_threaded","champion_dependency","economic_blind_spot","blocker_ignored","org_chart_gap"].map(p=>(
+          <button key={p} onClick={()=>setPat(p)}
+            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${patFilter===p?"bg-violet-700 border-violet-600 text-white":"bg-slate-900 border-slate-700 text-slate-400 hover:text-white"}`}>
+            {p.replace(/_/g," ")}
           </button>
         ))}
       </div>
 
-      {selectedRep && <DetailModal rep={selectedRep} onClose={() => setSelectedRep(null)} />}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {filtered.map(r=>(
+          <div key={r.rep_id} onClick={()=>setSelected(r)}
+            className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-indigo-700 transition-colors">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-bold text-white">{r.rep_id}</span>
+              <span className="text-xs text-slate-400">{r.region}</span>
+            </div>
+            <div className="flex gap-1 mb-3 flex-wrap">
+              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[r.stakeholder_risk as keyof typeof RISK_BADGE]||"bg-slate-700 text-slate-300"}`}>{r.stakeholder_risk}</span>
+              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[r.stakeholder_severity as keyof typeof SEV_BADGE]||"bg-slate-700 text-slate-300"}`}>{r.stakeholder_severity}</span>
+            </div>
+            <div className="text-2xl font-black text-white mb-1">{r.stakeholder_composite.toFixed(1)}</div>
+            <div className="text-xs text-slate-500 mb-2 capitalize">{r.stakeholder_pattern.replace(/_/g," ")}</div>
+            <div className="flex gap-1">
+              {r.has_stakeholder_gap           && <span className="px-1.5 py-0.5 rounded bg-red-900 text-red-300 text-xs">🔗 GAP</span>}
+              {r.requires_stakeholder_coaching && <span className="px-1.5 py-0.5 rounded bg-indigo-900 text-indigo-300 text-xs">🎯 COACH</span>}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
