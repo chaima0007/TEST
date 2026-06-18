@@ -595,6 +595,15 @@ function IconMutualActionPlan({ className }: { className?: string }) {
   );
 }
 
+function IconRevenueLeakDetector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" opacity="0.7" />
+      <path d="M10 12v2M9 13h2" stroke="#f87171" strokeWidth="1.2" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconConversationIntelligence({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1269,6 +1278,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/territory-whitespace", label: "Territory WS", icon: IconTerritoryWhitespace },
       { href: "/dashboard/ghosting-predictor", label: "Ghost Predictor", icon: IconGhostingPredictor },
       { href: "/dashboard/conversation-intelligence", label: "Conv. Intelligence", icon: IconConversationIntelligence },
+      { href: "/dashboard/revenue-leak-detector", label: "Revenue Leak", icon: IconRevenueLeakDetector },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
