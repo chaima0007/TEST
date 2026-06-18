@@ -84,6 +84,7 @@ export class Vehicle {
     this._lateralSpeed = 0; // sideways slide velocity (m/s)
     this._handbrakeActive = false;
     this._boostMultiplier = 1.0; // set externally by nitro system
+    this._damageFactor = 1.0;   // set externally by VehicleDamageSystem
 
     // Restore saved color from localStorage (browser only)
     if (typeof localStorage !== 'undefined') {
@@ -147,7 +148,7 @@ export class Vehicle {
       }
     }
 
-    this.speed = clamp(this.speed, -MAX_REVERSE_MS, MAX_SPEED_MS * this._boostMultiplier);
+    this.speed = clamp(this.speed, -MAX_REVERSE_MS, MAX_SPEED_MS * this._boostMultiplier * this._damageFactor);
 
     // Drift/slide model: handbrake + steering builds lateral velocity
     this._handbrakeActive = handbrake;
@@ -300,4 +301,5 @@ export class Vehicle {
   getLateralSpeed() { return this._lateralSpeed; }
   isHandbraking()   { return this._handbrakeActive; }
   setBoostMultiplier(m) { this._boostMultiplier = Math.max(1.0, Math.min(2.0, m)); }
+  setDamageFactor(f)    { this._damageFactor    = Math.max(0.35, Math.min(1.0, f)); }
 }

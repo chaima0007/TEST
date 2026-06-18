@@ -24,6 +24,7 @@ import { LODManager } from './lod.js';
 import { ArchitectSystem } from './architect.js';
 import { MusicAgent } from './music.js';
 import { DialogueAgent } from './dialogue.js';
+import { VehicleDamageSystem } from './vehicledamage.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -80,6 +81,35 @@ const lod = new LODManager();
 const _audioCtx = audio.getContext();
 const musicAgent = _audioCtx ? new MusicAgent(_audioCtx, _audioCtx.destination) : null;
 const dialogueAgent = new DialogueAgent();
+const vehicleDamage = new VehicleDamageSystem();
+
+// ── RadioSystem — stations switchables avec la touche R ──────────────────────
+const RADIO_STATIONS = [
+  { name: 'AUTO',              style: null    },
+  { name: 'Radio Néon',        style: 'city'  },
+  { name: 'Fréquence Sombre',  style: 'night' },
+  { name: 'CHASE FM',          style: 'chase' },
+  { name: 'Radio Némésis',     style: 'boss'  },
+];
+let _radioIdx = 0;
+let _lastRKey  = false;
+
+const _notifEl = document.createElement('div');
+_notifEl.style.cssText = `
+  position:fixed;bottom:76px;left:50%;transform:translateX(-50%);
+  background:rgba(8,10,20,.88);border:1px solid rgba(255,255,255,.2);
+  padding:5px 20px;border-radius:20px;
+  font-family:'Segoe UI',Arial,sans-serif;font-size:13px;
+  color:#ffe87a;font-weight:700;pointer-events:none;
+  opacity:0;transition:opacity .3s;z-index:300;
+`;
+document.body.appendChild(_notifEl);
+let _notifTimer = 0;
+function _showNotif(text) {
+  _notifEl.textContent = text;
+  _notifEl.style.opacity = '1';
+  _notifTimer = 2.5;
+}
 
 // Colour picker wired once — swatches from monetization unlocks
 const ALL_COLORS = [
@@ -125,6 +155,11 @@ const _nexusPhrases = [
   (v, d, w, dc, wx) => w.level > 0 ? `Police niveau ${w.level} — pathfinding actif` : `Surveillance réseau calme`,
   (v, d, w, dc, wx) => `Météo ${wx.getWeatherId()} — adhérence ${Math.round(wx.getGripFactor()*100)}%`,
   (v, d, w, dc, wx) => dc.isNight() ? `Mode nuit — lampadaires + Fantôme` : `Cycle jour ${dc.getTimeString()}`,
+  (v, d, w, dc, wx) => {
+    const dmg = vehicleDamage.getDamage();
+    const radio = RADIO_STATIONS[_radioIdx].name;
+    return `Carrosserie ${dmg > 0.05 ? Math.round(dmg*100)+'% endommagée' : 'intacte'} | ${radio}`;
+  },
 ];
 let _nexusIdx = 0;
 let _nexusFlip = 0;
@@ -149,6 +184,15 @@ function animate() {
 
   lod.tick();
 
+  // --- Touche R : changement de station radio ---
+  const rKeyNow = input.codes.has('KeyR');
+  if (rKeyNow && !_lastRKey) {
+    _radioIdx = (_radioIdx + 1) % RADIO_STATIONS.length;
+    _showNotif(`[ ${RADIO_STATIONS[_radioIdx].name} ]`);
+  }
+  _lastRKey = rKeyNow;
+  if (_notifTimer > 0) { _notifTimer -= dt; if (_notifTimer <= 0) _notifEl.style.opacity = '0'; }
+
   // --- Systèmes environnementaux ---
   dayCycle.update(dt);
   weather.update(dt, vehicle.getPosition());
@@ -158,6 +202,9 @@ function animate() {
   // Nitro boost + grip
   vehicle.setBoostMultiplier(nitro.getBoostMultiplier());
   vehicle.update(dt, input, world.colliders.concat(traffic.getColliders(), wanted.getRoadblockColliders()));
+  vehicleDamage.update(dt);
+  vehicle.setDamageFactor(vehicleDamage.getSpeedFactor());
+  vehicleDamage.updateVisuals(vehicle._bodyMat);
   updateFollowCamera(camera, vehicle, dt);
   missions.update(dt, vehicle);
   wanted.update(dt, vehicle, hud);
@@ -218,9 +265,11 @@ function animate() {
   const archResult = architect.update(dt, vehicle, hud, wanted, totalScore);
   if (archResult.raisedWanted && wanted.level < 5) wanted._setLevel(wanted.level + 1, hud);
 
-  // MusicAgent — sélection automatique de la piste selon l'état du jeu
+  // MusicAgent — station radio manuelle ou sélection automatique
   if (musicAgent) {
-    const musicState = architect.active ? 'boss'
+    const radioStyle = RADIO_STATIONS[_radioIdx].style;
+    const musicState = radioStyle !== null ? radioStyle
+      : architect.active ? 'boss'
       : wanted.level > 0 ? 'chase'
       : dayCycle.isNight() ? 'night'
       : 'city';
@@ -328,9 +377,12 @@ function animate() {
     audio.playCollision(impact);
     lastImpactSoundTime = elapsedS;
     cameraShake = Math.min(1, cameraShake + impact * 0.7);
+    vehicleDamage.addImpact(impact);
+    const dmgPct = Math.round(vehicleDamage.getDamage() * 100);
+    if (dmgPct >= 75 && Math.round((vehicleDamage.getDamage() - impact * 0.22) * 100) < 75)
+      _showNotif(`Carrosserie ${dmgPct}% — vitesse reduite !`);
     if (impact > 0.35) {
       sparks.emit(playerPos.x, playerPos.z, impact);
-      // Crash fort → panique de foule autour du point d'impact
       traffic.crowdAgent.broadcast('crash', playerPos.x, playerPos.z, 18, impact);
     }
   }

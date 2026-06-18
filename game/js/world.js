@@ -204,6 +204,43 @@ export function createWorld(scene) {
     { name: 'Port', x: -HALF_CITY + ROAD_WIDTH / 2, z: HALF_CITY - ROAD_WIDTH / 2 },
   );
 
+  // --- Voitures garées (obstacles statiques en bord de route) ---------------
+  // Placement déterministe sur des routes intérieures, aux centres de blocs
+  // (blockCenter) pour éviter les intersections.
+  const parkedGeo = new THREE.BoxGeometry(1.9, 0.75, 3.8);
+  const parkedColors = [0x2244bb, 0x882222, 0x227744, 0x998822, 0x445566, 0x774466, 0x33557a];
+  const parkedMats = parkedColors.map((c) => new THREE.MeshLambertMaterial({ color: c }));
+  let _pmi = 0;
+
+  // Routes horizontales (constant Z) → voitures face à X (rotation.y = PI/2)
+  for (const rz of [roadZs[1], roadZs[2], roadZs[3]]) {
+    for (let bi = 0; bi < CITY_SIZE; bi += 2) {
+      const cx = blockCenter(bi);
+      const pz = rz + 3.3; // bord droit de la chaussée
+      const mesh = new THREE.Mesh(parkedGeo, parkedMats[_pmi++ % parkedMats.length]);
+      mesh.position.set(cx, 0.375, pz);
+      mesh.rotation.y = Math.PI / 2;
+      mesh.castShadow = true;
+      scene.add(mesh);
+      // Après rotation PI/2 : longueur 3.8 → monde X, largeur 1.9 → monde Z
+      colliders.push({ x: cx, z: pz, halfWidth: 1.9, halfDepth: 0.95 });
+    }
+  }
+
+  // Routes verticales (constant X) → voitures face à Z (rotation.y = 0)
+  for (const rx of [roadXs[1], roadXs[2], roadXs[3]]) {
+    for (let bi = 1; bi < CITY_SIZE; bi += 2) {
+      const cz = blockCenter(bi);
+      const px = rx + 3.3; // bord droit de la chaussée
+      const mesh = new THREE.Mesh(parkedGeo, parkedMats[_pmi++ % parkedMats.length]);
+      mesh.position.set(px, 0.375, cz);
+      // rotation.y = 0 : longueur 3.8 → monde Z, largeur 1.9 → monde X
+      mesh.castShadow = true;
+      scene.add(mesh);
+      colliders.push({ x: px, z: cz, halfWidth: 0.95, halfDepth: 1.9 });
+    }
+  }
+
   // --- Point de spawn -------------------------------------------------------
   // Sur la route horizontale qui traverse la rangée de blocs spawnBlockJ,
   // orienté pour rouler le long de cette rue (axe X), loin des bâtiments.
