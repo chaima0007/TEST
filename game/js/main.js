@@ -32,6 +32,9 @@ import { WitnessAgent }         from './witness.js';
 import { CityPulseAgent }       from './citypulse.js';
 import { PredictivePoliceAgent } from './predictive.js';
 import { EmotionEngine }        from './emotion.js';
+import { FlashMobAgent }        from './flashmob.js';
+import { HonkCascadeAgent, NEAR_MISS_DIST } from './honkcascade.js';
+import { CopConfusionAgent }    from './copconfusion.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -104,6 +107,29 @@ const _predRing    = new THREE.Mesh(_predRingGeo, _predRingMat);
 _predRing.rotation.x = -Math.PI / 2;
 _predRing.visible = false;
 scene.add(_predRing);
+
+const flashMob     = new FlashMobAgent();
+const honkCascade  = new HonkCascadeAgent();
+const copConfusion = new CopConfusionAgent();
+
+// Sprite "!" pour les klaxons (partagé entre toutes les voitures klaxonnantes)
+const _honkSprites = new Map(); // mesh → { sprite, timer }
+function _getHonkSprite(mesh) {
+  if (_honkSprites.has(mesh)) return _honkSprites.get(mesh);
+  const el = document.createElement('div');
+  el.style.cssText = `
+    position:fixed;pointer-events:none;
+    font-size:22px;font-weight:900;color:#ffdd00;
+    text-shadow:0 0 8px #ff8800;
+    transform:translate(-50%,-50%);
+    z-index:200;transition:opacity .2s;
+  `;
+  el.textContent = '📯';
+  document.body.appendChild(el);
+  const entry = { el, timer: 0 };
+  _honkSprites.set(mesh, entry);
+  return entry;
+}
 
 let   _signalViolationTime = -Infinity;
 const SIGNAL_COOLDOWN_S    = 10;
@@ -195,6 +221,11 @@ const _nexusPhrases = [
     const conf = Math.round(predictive.getConfidence() * 100);
     return `Humeur ville: ${mood} | BPM ${bpm}${conf > 0 ? ` | Prédiction ${conf}%` : ''}`;
   },
+  (v, d, w, dc, wx) => {
+    const honks = honkCascade.getHonkingCount();
+    const dance = flashMob.isActive() ? `Flash mob! ${flashMob.getDancerCount()} danseurs` : `CD ${Math.round(flashMob.getCooldown())}s`;
+    return `${dance}${honks > 0 ? ` | ${honks} klaxon(s) en cascade` : ''}`;
+  },
 ];
 let _nexusIdx = 0;
 let _nexusFlip = 0;
@@ -270,6 +301,51 @@ function animate() {
 
   // --- WitnessAgent ---
   witness.update(dt, traffic.pedestrians);
+
+  // --- FlashMobAgent — flash mobs piétons tous les 45s ---
+  flashMob.update(dt, traffic.pedestrians, playerPos);
+  if (flashMob.isActive() && flashMob.getDancerCount() > 0) {
+    // Notification au démarrage (quand timeLeft ≈ DANCE_DURATION)
+    if (flashMob.getTimeLeft() > 6.8) _showNotif(`Flash mob ! ${flashMob.getDancerCount()} piétons envahissent la rue !`);
+  }
+
+  // --- HonkCascadeAgent — cascade de klaxons sur quasi-frôlement ---
+  honkCascade.update(dt, traffic.cars);
+  // Détecte quasi-frôlement : joueur trop proche d'une voiture à vitesse > 30 km/h
+  if (Math.abs(vehicle.getSpeedKmh()) > 30) {
+    for (const car of traffic.cars) {
+      if (!car.active || !car.mesh) continue;
+      const hx = car.mesh.position.x - playerPos.x;
+      const hz = car.mesh.position.z - playerPos.z;
+      if (hx * hx + hz * hz < NEAR_MISS_DIST * NEAR_MISS_DIST) {
+        honkCascade.triggerAt(car.mesh.position.x, car.mesh.position.z);
+        break; // un déclencheur par frame suffit
+      }
+    }
+  }
+  // Met à jour les sprites "!" flottants au-dessus des voitures klaxonnantes
+  for (const [mesh, ttl] of honkCascade.getAll()) {
+    const entry = _getHonkSprite(mesh);
+    // Projette la position 3D → écran
+    const pos3 = mesh.position.clone();
+    pos3.y += 2.5;
+    pos3.project(camera);
+    const sx = (pos3.x * 0.5 + 0.5) * window.innerWidth;
+    const sy = (-pos3.y * 0.5 + 0.5) * window.innerHeight;
+    entry.el.style.left = sx + 'px';
+    entry.el.style.top  = sy + 'px';
+    entry.el.style.opacity = String(Math.min(1, ttl));
+    entry.el.style.display = 'block';
+  }
+  // Cache les sprites expirés
+  for (const [mesh, entry] of _honkSprites) {
+    if (!honkCascade.isHonking(mesh)) { entry.el.style.display = 'none'; }
+  }
+
+  // --- CopConfusionAgent — policier qui confond une civile avec le joueur ---
+  copConfusion.update(dt, wanted.level, wanted.cars, traffic.cars);
+  const confusionMsg = copConfusion.popMessage();
+  if (confusionMsg) _showNotif(confusionMsg);
 
   // --- Garage : réparation auto quand le joueur arrive au garage ---
   const _gp = world.garagePos;
@@ -490,6 +566,28 @@ function animate() {
         : 'En veille (wanted < 3)',
       bar: predictive.getConfidence(),
       color: '#ff4422',
+    },
+    flashMob: {
+      active: flashMob.isActive(),
+      status: flashMob.isActive()
+        ? `FLASH MOB ! ${flashMob.getDancerCount()} danseurs | ${Math.round(flashMob.getTimeLeft())}s restant`
+        : `Prochain mob dans ${Math.round(flashMob.getCooldown())}s`,
+      bar: flashMob.isActive() ? flashMob.getTimeLeft() / 7 : Math.max(0, 1 - flashMob.getCooldown() / 45),
+      color: '#ff88ff',
+    },
+    honkCascade: {
+      active: honkCascade.getHonkingCount() > 0,
+      status: `${honkCascade.getHonkingCount()} voiture(s) en panique | total: ${honkCascade.getTotalHonks()} klaxons`,
+      bar: Math.min(1, honkCascade.getHonkingCount() / 8),
+      color: '#ffdd00',
+    },
+    copConfusion: {
+      active: copConfusion.isConfused(),
+      status: copConfusion.isConfused()
+        ? `POLICIER CONFUS ! Poursuite d'une civile | ${Math.round(copConfusion.getTimeLeft())}s`
+        : `${copConfusion.getConfusionCount()} confusion(s) totale(s)`,
+      bar: copConfusion.isConfused() ? copConfusion.getTimeLeft() / 9 : 0,
+      color: '#ff9944',
     },
   });
 
