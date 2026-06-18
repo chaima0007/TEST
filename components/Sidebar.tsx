@@ -1147,6 +1147,19 @@ function IconSettings({ className }: { className?: string }) {
   );
 }
 
+function IconProspectEngagementVelocity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 12l3-3 2 2 3-4 3 2 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="5" cy="9" r="1.2" fill="#34d399" />
+      <circle cx="7" cy="11" r="1.2" fill="#34d399" />
+      <circle cx="10" cy="7" r="1.2" fill="#818cf8" />
+      <circle cx="13" cy="9" r="1.2" fill="#818cf8" />
+      <circle cx="16" cy="6" r="1.2" fill="#fbbf24" />
+    </svg>
+  );
+}
+
 function IconSalesProcessCompliance({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1371,6 +1384,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/win-loss-pattern-engine", label: "Win/Loss Patterns", icon: IconWinLossPatternEngine },
       { href: "/dashboard/rep-ramp-intelligence", label: "Rep Ramp Intel", icon: IconRepRampIntelligence },
       { href: "/dashboard/sales-process-compliance-monitor", label: "Process Compliance", icon: IconSalesProcessCompliance },
+      { href: "/dashboard/prospect-engagement-velocity", label: "Prospect Velocity", icon: IconProspectEngagementVelocity },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
