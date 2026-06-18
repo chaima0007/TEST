@@ -2460,6 +2460,19 @@ function IconSalesBurnoutRiskEngine({ className }: { className?: string }) {
   );
 }
 
+function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Value prop: dollar sign with downward trend — deteriorating value */}
+      <path d="M10 3 C8 3 7 4 7 5.5 C7 7 8.5 7.5 10 8 C11.5 8.5 13 9 13 10.5 C13 12 12 13 10 13" strokeLinecap="round"/>
+      <line x1="10" y1="2" x2="10" y2="3" strokeLinecap="round"/>
+      <line x1="10" y1="13" x2="10" y2="14" strokeLinecap="round"/>
+      <path d="M3 16 L7 13 L10 15 L14 10 L17 12" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+      <circle cx="17" cy="12" r="1.5" fill="currentColor" stroke="none" opacity="0.8"/>
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2759,6 +2772,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-competitive-intelligence-engine", label: "Competitive Intel", icon: IconSalesCompetitiveIntelligenceEngine },
       { href: "/dashboard/sales-territory-coverage-intelligence-engine", label: "Territory Coverage", icon: IconSalesTerritoryConverageIntelligenceEngine },
       { href: "/dashboard/sales-coaching-receptivity-intelligence-engine", label: "Coaching Receptivity", icon: IconSalesCoachingReceptivityIntelligenceEngine },
+      { href: "/dashboard/sales-value-proposition-deterioration-intelligence-engine", label: "Value Prop. Det.", icon: IconSalesValuePropositionDeteriorationIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
