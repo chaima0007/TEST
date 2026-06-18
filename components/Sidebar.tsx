@@ -2150,6 +2150,18 @@ function IconSalesCRMDataHygieneIntelligenceEngine({ className }: { className?: 
   );
 }
 
+function IconSalesCustomerLifecycleIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Circular lifecycle loop with arrow — customer journey */}
+      <circle cx="10" cy="10" r="7" opacity="0.4"/>
+      <path d="M10 3 A7 7 0 1 1 3.5 14.5" strokeLinecap="round"/>
+      <path d="M3.5 14.5 L2 12 L5.5 12.5 Z" fill="currentColor" stroke="none" opacity="0.8"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.7"/>
+    </svg>
+  );
+}
+
 function IconSalesAccountPenetrationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2666,6 +2678,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pricing-discipline-intelligence-engine", label: "Pricing Discipline", icon: IconSalesPricingDisciplineIntelligenceEngine },
       { href: "/dashboard/sales-objection-handling-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingIntelligenceEngine },
       { href: "/dashboard/sales-crm-data-hygiene-intelligence-engine", label: "CRM Hygiene", icon: IconSalesCRMDataHygieneIntelligenceEngine },
+      { href: "/dashboard/sales-customer-lifecycle-intelligence-engine", label: "Customer Lifecycle", icon: IconSalesCustomerLifecycleIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
