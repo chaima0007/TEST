@@ -1384,6 +1384,31 @@ function IconCRMDataQualityRiskEngine({ className }: { className?: string }) {
   );
 }
 
+function IconCompetitorWinLossIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 14l4-6 4 3 4-8 2 1" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
+      <circle cx="3" cy="14" r="1.5" opacity="0.8" />
+      <circle cx="7" cy="8" r="1.5" opacity="0.8" />
+      <circle cx="11" cy="11" r="1.5" fill="#f87171" />
+      <circle cx="15" cy="3" r="1.5" opacity="0.8" />
+      <path d="M13 15l2-2 2 2-2 2-2-2z" opacity="0.5" />
+    </svg>
+  );
+}
+
+function IconSalesRepBurnoutDisengagementEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2a6 6 0 016 6c0 2.5-1.5 4.7-3.7 5.7L12 17H8l-.3-3.3C5.5 12.7 4 10.5 4 8a6 6 0 016-6z" opacity="0.35" />
+      <path d="M8 17h4v1.5a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5V17z" opacity="0.6" />
+      <path d="M10 5v4l2.5 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none" opacity="0.9" />
+      <circle cx="15" cy="5" r="2.5" fill="#f87171" opacity="0.9" />
+      <path d="M14.25 5h1.5M15 4.25v1.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconSalesDiscountAbuseDetector({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1661,6 +1686,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-forecast-sandbagging-detector", label: "Forecast Sandbagging", icon: IconSalesForecastSandbaggingDetector },
       { href: "/dashboard/sales-discount-abuse-detector", label: "Discount Abuse", icon: IconSalesDiscountAbuseDetector },
       { href: "/dashboard/crm-data-quality-risk-engine", label: "CRM Data Quality", icon: IconCRMDataQualityRiskEngine },
+      { href: "/dashboard/sales-rep-burnout-disengagement-engine", label: "Rep Burnout", icon: IconSalesRepBurnoutDisengagementEngine },
+      { href: "/dashboard/competitor-win-loss-intelligence-engine", label: "Competitor Intel", icon: IconCompetitorWinLossIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
