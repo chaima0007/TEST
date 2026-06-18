@@ -371,6 +371,18 @@ function animate() {
   const nightIntensity = dayCycle.isNight() ? 1.4 : 0;
   for (const lamp of world.streetLamps) lamp.material.emissiveIntensity = nightIntensity;
 
+  // Phares + feux du joueur (nuit)
+  const isNight = dayCycle.isNight();
+  if (vehicle._headlightMat) vehicle._headlightMat.emissiveIntensity = isNight ? 2.2 : 0;
+  if (vehicle._taillightMat) vehicle._taillightMat.emissiveIntensity = isNight ? 1.8 : 0;
+
+  // Phares + feux des voitures de trafic (nuit)
+  for (const car of traffic.cars) {
+    if (!car.active || !car.mesh) continue;
+    if (car.mesh._hlMat) car.mesh._hlMat.emissiveIntensity = isNight ? 1.6 : 0;
+    if (car.mesh._tlMat) car.mesh._tlMat.emissiveIntensity = isNight ? 1.4 : 0;
+  }
+
   // Enseignes néon — pulsation sinusoïdale (Quartier Est)
   for (const ns of world.neonSigns) {
     ns.mat.emissiveIntensity = ns.base + Math.sin(now * 0.0015 + ns.phase) * 0.35;

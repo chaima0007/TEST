@@ -47,31 +47,78 @@ function clamp(v, min, max) {
 
 function buildTrafficCarMesh(color) {
   const group = new THREE.Group();
-  const bodyMat = new THREE.MeshStandardMaterial({ color, metalness: 0.2, roughness: 0.6 });
-  const cabinMat = new THREE.MeshStandardMaterial({ color: 0x1a1d22, metalness: 0.1, roughness: 0.5 });
+  const bodyMat  = new THREE.MeshStandardMaterial({ color, metalness: 0.35, roughness: 0.50 });
+  const cabinMat = new THREE.MeshStandardMaterial({ color: 0x0c0f18, metalness: 0.12, roughness: 0.40 });
+  const wheelMat = new THREE.MeshStandardMaterial({ color: 0x080808, roughness: 0.88 });
+  const hubMat   = new THREE.MeshStandardMaterial({ color: 0xb0b0b0, metalness: 0.75, roughness: 0.30 });
+  const glassMat = new THREE.MeshStandardMaterial({ color: 0x3a5f88, transparent: true, opacity: 0.38, roughness: 0.08, depthWrite: false });
+  const hlMat    = new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: 0xffffff, emissiveIntensity: 0 });
+  const tlMat    = new THREE.MeshStandardMaterial({ color: 0xff1100, emissive: 0xff1100, emissiveIntensity: 0 });
+  const darkMat  = new THREE.MeshStandardMaterial({ color: 0x080808, roughness: 0.9 });
 
-  const body = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.55, 4.0), bodyMat);
-  body.position.y = 0.5;
+  // Corps
+  const body = new THREE.Mesh(new THREE.BoxGeometry(1.80, 0.55, 4.0), bodyMat);
+  body.position.y = 0.50;
+  body.castShadow = true;
   group.add(body);
 
-  const cabin = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.5, 1.9), cabinMat);
-  cabin.position.set(0, 0.95, -0.2);
+  // Habitacle
+  const cabin = new THREE.Mesh(new THREE.BoxGeometry(1.52, 0.48, 1.88), cabinMat);
+  cabin.position.set(0, 0.95, -0.22);
+  cabin.castShadow = true;
   group.add(cabin);
 
-  const wheelGeo = new THREE.BoxGeometry(0.35, 0.35, 0.7);
-  const wheelMat = new THREE.MeshStandardMaterial({ color: 0x0a0a0a });
-  const wheelOffsets = [
-    [-0.9, 0.22, 1.25],
-    [0.9, 0.22, 1.25],
-    [-0.9, 0.22, -1.25],
-    [0.9, 0.22, -1.25],
-  ];
-  for (const [x, y, z] of wheelOffsets) {
-    const wheel = new THREE.Mesh(wheelGeo, wheelMat);
-    wheel.position.set(x, y, z);
-    group.add(wheel);
+  // Pare-brise avant + arrière (vitre)
+  const wf = new THREE.Mesh(new THREE.BoxGeometry(1.40, 0.40, 0.07), glassMat);
+  wf.position.set(0, 0.95, 0.73); wf.rotation.x = -0.22;
+  group.add(wf);
+  const wr = new THREE.Mesh(new THREE.BoxGeometry(1.38, 0.36, 0.07), glassMat);
+  wr.position.set(0, 0.93, -1.19); wr.rotation.x = 0.22;
+  group.add(wr);
+
+  // Vitres latérales
+  for (const x of [-0.77, 0.77]) {
+    const sw = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.32, 1.55), glassMat);
+    sw.position.set(x, 0.94, -0.20);
+    group.add(sw);
   }
 
+  // Phares avant
+  for (const x of [-0.65, 0.65]) {
+    const hl = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.12, 0.08), hlMat);
+    hl.position.set(x, 0.58, 2.04);
+    group.add(hl);
+  }
+
+  // Feux arrière
+  for (const x of [-0.66, 0.66]) {
+    const tl = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.12, 0.08), tlMat);
+    tl.position.set(x, 0.60, -2.02);
+    group.add(tl);
+  }
+
+  // Calandre
+  const grille = new THREE.Mesh(new THREE.BoxGeometry(0.90, 0.14, 0.10), darkMat);
+  grille.position.set(0, 0.45, 2.06);
+  group.add(grille);
+
+  // Roues (pneu + jante)
+  const tireGeo = new THREE.CylinderGeometry(0.38, 0.38, 0.24, 14);
+  const hubGeo  = new THREE.CylinderGeometry(0.14, 0.14, 0.26, 10);
+  for (const [x, y, z] of [[-0.93,0.22,1.25],[0.93,0.22,1.25],[-0.93,0.22,-1.25],[0.93,0.22,-1.25]]) {
+    const tire = new THREE.Mesh(tireGeo, wheelMat);
+    tire.rotation.x = Math.PI / 2;
+    tire.position.set(x, y, z);
+    tire.castShadow = true;
+    group.add(tire);
+    const hub = new THREE.Mesh(hubGeo, hubMat);
+    hub.rotation.x = Math.PI / 2;
+    hub.position.set(x, y, z);
+    group.add(hub);
+  }
+
+  group._hlMat = hlMat;
+  group._tlMat = tlMat;
   return group;
 }
 
