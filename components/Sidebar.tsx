@@ -622,6 +622,14 @@ function IconConversationIntelligence({ className }: { className?: string }) {
   );
 }
 
+function IconObjectionPatternAnalyzer({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconBuyingCommitteeMapper({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1329,6 +1337,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/forecast-confidence-scorer", label: "Forecast Conf.", icon: IconForecastConfidenceScorer },
       { href: "/dashboard/champion-risk-monitor", label: "Champion Risk", icon: IconChampionRiskMonitor },
       { href: "/dashboard/buying-committee-mapper", label: "Committee Map", icon: IconBuyingCommitteeMapper },
+      { href: "/dashboard/objection-pattern-analyzer", label: "Objection Patterns", icon: IconObjectionPatternAnalyzer },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
