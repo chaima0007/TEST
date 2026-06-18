@@ -35,6 +35,10 @@ import { EmotionEngine }        from './emotion.js';
 import { FlashMobAgent }        from './flashmob.js';
 import { HonkCascadeAgent, NEAR_MISS_DIST } from './honkcascade.js';
 import { CopConfusionAgent }    from './copconfusion.js';
+import { TrendRadarAgent }     from './trendradar.js';
+import { AtmosphereAgent }     from './atmosphereagent.js';
+import { WeatherFXAgent }      from './weatherfx.js';
+import { CarShaderAgent }      from './carshader.js';
 
 const MAX_SPEED_KMH = 150;
 const MAX_SPEED_MS  = MAX_SPEED_KMH / 3.6;
@@ -112,6 +116,13 @@ scene.add(_predRing);
 const flashMob     = new FlashMobAgent();
 const honkCascade  = new HonkCascadeAgent();
 const copConfusion = new CopConfusionAgent();
+
+// Ronde 21 — Visual Excellence Agents
+const trendRadar   = new TrendRadarAgent();
+const atmosphere   = new AtmosphereAgent(scene);
+const weatherFX    = new WeatherFXAgent(scene);
+const carShader    = new CarShaderAgent(scene, renderer, vehicle, traffic);
+atmosphere.registerLamps(world.streetLamps);
 
 // Sprite "!" pour les klaxons (partagé entre toutes les voitures klaxonnantes)
 const _honkSprites = new Map(); // mesh → { sprite, timer }
@@ -230,6 +241,12 @@ const _nexusPhrases = [
     const honks = honkCascade.getHonkingCount();
     const dance = flashMob.isActive() ? `Flash mob! ${flashMob.getDancerCount()} danseurs` : `CD ${Math.round(flashMob.getCooldown())}s`;
     return `${dance}${honks > 0 ? ` | ${honks} klaxon(s) en cascade` : ''}`;
+  },
+  (v, d, w, dc, wx) => {
+    const rain  = Math.round(weatherFX.getIntensity() * 100);
+    const dirt  = Math.round(carShader.getDirtLevel() * 100);
+    const stars = Math.round(atmosphere.getStarOpacity() * 100);
+    return `VisualFX: Ciel ${stars}% étoiles | Pluie ${rain}% | Carrosserie saleté ${dirt}%`;
   },
 ];
 let _nexusIdx = 0;
@@ -403,6 +420,7 @@ function animate() {
   if (vehicleDamage.getDamage() > 0 && _gp &&
       Math.hypot(playerPos.x - _gp.x, playerPos.z - _gp.z) < 5.5) {
     vehicleDamage.repair(vehicle._bodyMat);
+    carShader.onRepair();
     _showNotif('Garage — véhicule réparé !');
   }
 
@@ -502,6 +520,14 @@ function animate() {
   if (wanted.level === 0 && !drift.isDrifting() && Math.abs(vehicle.getSpeedKmh()) < 30)
                                emotion.pushEvent('peaceful', dt);
   emotion.update(dt);
+
+  // --- Ronde 21 — Visual Excellence Agents ---
+  trendRadar.update(dt);
+  const _trendNotif = trendRadar.popNotif();
+  if (_trendNotif) _showNotif(_trendNotif);
+  atmosphere.update(dt, dayCycle);
+  weatherFX.update(dt, weather.getWeatherId(), playerPos);
+  carShader.update(dt, vehicle, dayCycle);
 
   // Teinte émotionnelle de la lumière ambiante
   const _tint = emotion.getColorTint();
@@ -652,6 +678,30 @@ function animate() {
       bar: copConfusion.isConfused() ? copConfusion.getTimeLeft() / 9 : 0,
       color: '#ff9944',
     },
+    trendRadar: {
+      active: true,
+      status: trendRadar.getStatusLine(),
+      bar: trendRadar.getActiveCount() / trendRadar.getTotalCount(),
+      color: '#00ffaa',
+    },
+    atmosphere: {
+      active: true,
+      status: `Sky gradient GLSL | God rays ${Math.round(atmosphere.getRayIntensity() * 100)}% | Étoiles ${Math.round(atmosphere.getStarOpacity() * 100)}%`,
+      bar: 1,
+      color: '#4499ff',
+    },
+    weatherFX: {
+      active: weatherFX.isActive(),
+      status: `Pluie volumétrique ${Math.round(weatherFX.getIntensity() * 100)}% | Flaques PBR + éclairs`,
+      bar: weatherFX.getIntensity(),
+      color: '#55aaff',
+    },
+    carShader: {
+      active: true,
+      status: `CubeMap env. + Clearcoat shimmer | Saleté ${Math.round(carShader.getDirtLevel() * 100)}%`,
+      bar: 1 - carShader.getDirtLevel(),
+      color: '#ffcc44',
+    },
   });
 
   if (nitroFired) audio.playNitro();
@@ -686,6 +736,7 @@ function animate() {
       if (witness.hasNearbyWitness(playerPos)) _showNotif('Des témoins alertent la police !');
       // EmotionEngine — crash brutal
       emotion.pushEvent('crash', impact);
+      carShader.onCrash(impact);
     }
   }
 

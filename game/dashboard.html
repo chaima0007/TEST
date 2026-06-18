@@ -152,22 +152,22 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">37</div>
+    <div class="card-value">50</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
 
   <div class="card" style="--accent:#44ff99">
     <div class="card-title">Tests passés</div>
-    <div class="card-value">138 / 138</div>
-    <div class="card-desc">0 échec — 26 suites — couverture totale</div>
+    <div class="card-value">172 / 172</div>
+    <div class="card-desc">0 échec — 30 suites — couverture totale</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--green)"></div></div>
   </div>
 
   <div class="card" style="--accent:#ffaa00">
     <div class="card-title">Agents IA en jeu</div>
-    <div class="card-value">12</div>
-    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique</div>
+    <div class="card-value">25</div>
+    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--gold)"></div></div>
   </div>
 
@@ -222,6 +222,26 @@
         <div class="agent-role">rival · fantome · detective — antagonistes</div>
         <div class="agent-status active">Machines à état complètes</div>
       </div>
+      <div class="agent-card">
+        <div class="agent-name">TrendRadarAgent</div>
+        <div class="agent-role">trendradar.js — espion tech AAA 2024-2026</div>
+        <div class="agent-status active">18 techniques · OSINT scan 38s · notifs RADAR</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">AtmosphereAgent</div>
+        <div class="agent-role">atmosphereagent.js — ciel procédural GLSL</div>
+        <div class="agent-status guard">Sky shader · 2200 étoiles · 6 god rays · halos néon</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">WeatherFXAgent</div>
+        <div class="agent-role">weatherfx.js — pluie · flaques · éclairs</div>
+        <div class="agent-status guard">3000 particules · PBR puddles · PointLight éclair</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">CarShaderAgent</div>
+        <div class="agent-role">carshader.js — réflexions · clearcoat · dirt</div>
+        <div class="agent-status music">CubeCamera 64px · shimmer · saleté progressive</div>
+      </div>
     </div>
   </div>
 
@@ -273,6 +293,10 @@
       <li class="system-item"><span class="sys-dot" style="background:#ff88ff"></span><span class="sys-name">FlashMobAgent — flash mob piétons toutes les 45s, ronde chorégraphiée + sauts synchronisés</span><span class="sys-tag new">MARRANT</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#ffdd00"></span><span class="sys-name">HonkCascadeAgent — cascade contagieuse de klaxons par quasi-frôlement, sprites 📯 en temps réel</span><span class="sys-tag new">MARRANT</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#ff9944"></span><span class="sys-name">CopConfusionAgent — policier qui confond une civile avec le joueur, message HUD absurde</span><span class="sys-tag new">MARRANT</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00ffaa"></span><span class="sys-name">TrendRadarAgent — espion IA surveille 18 techs AAA 2024-2026, OSINT scan toutes les 38s, notifs RADAR</span><span class="sys-tag hot">AAA</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#4499ff"></span><span class="sys-name">AtmosphereAgent — ciel gradient GLSL (zenith/mid/horizon), 2200 étoiles, lune, 6 god rays, halos néon sol</span><span class="sys-tag hot">AAA</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#55aaff"></span><span class="sys-name">WeatherFXAgent — 3000 particules pluie volumétriques, 16 flaques PBR réfléchissantes, éclairs + flash DOM</span><span class="sys-tag hot">AAA</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffcc44"></span><span class="sys-name">CarShaderAgent — CubeCamera 64px env map, clearcoat shimmer, saleté progressive crash→garage, traffic upgrade</span><span class="sys-tag hot">AAA</span></li>
     </ul>
   </div>
 
@@ -280,6 +304,7 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 21</span><span class="log-msg"><strong>Visual Excellence Agents</strong> — TrendRadarAgent (espion 18 techs AAA, OSINT), AtmosphereAgent (sky GLSL zenith/mid/horizon, 2200 étoiles, 6 god rays, halos néon), WeatherFXAgent (3000 particules pluie, 16 flaques PBR, éclairs), CarShaderAgent (CubeCamera env, clearcoat shimmer, saleté crash, Forza/GT7/NFS)</span></li>
       <li class="log-item"><span class="log-time">Ronde 20</span><span class="log-msg"><strong>NEXUS CITY</strong> — Ville surréaliste 5 districts : Cristaux (Nord), Jungle Mécanique (Sud), Ville Renversée (Ouest), Neon Dystopie (Est), Place des Miroirs (Centre) ; 5 trampolines, 4 couloirs de vitesse, portail de téléportation Nord↔Sud, 5 landmarks procéduraux, lampadaires thématiques par district</span></li>
       <li class="log-item"><span class="log-time">Ronde 19</span><span class="log-msg"><strong>Personnages ultra-réalistes</strong> — iris/pupille/reflet, lèvres volumétriques, mains à 4 doigts, ceinture + boucle, col chemise, 3 morphologies, 10 coiffures, lunettes, sac à dos ; véhicule joueur : vitres, phares/feux nuit/jour, rétroviseurs, 5 rayons de jante</span></li>
       <li class="log-item"><span class="log-time">Ronde 18</span><span class="log-msg"><strong>FlashMobAgent</strong> + <strong>HonkCascadeAgent</strong> + <strong>CopConfusionAgent</strong> — 3 agents comiques : flash mob chorégraphié toutes les 45s, cascade contagieuse de klaxons avec sprites 📯 flottants, policier qui confond une civile avec le joueur + messages absurdes, 15 tests</span></li>
@@ -314,16 +339,15 @@
     </div>
   </div>
 
-  <!-- Prochaine construction -->
+  <!-- Ronde 22 — Pipeline -->
   <div class="card" style="--accent:#00c8ff">
-    <div class="card-title">Prochaine construction — NEXUS</div>
+    <div class="card-title">Prochaine construction — Ronde 22</div>
     <ul class="system-list">
-      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">RadioSystem — 5 stations, touche R, override musique</span><span class="sys-tag chaud">CHAUD</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">VehicleDamageSystem — dégâts cumulatifs, emissive orange, vitesse pénalisée</span><span class="sys-tag chaud">CHAUD</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Voitures garées — 15 obstacles statiques avec colliders</span><span class="sys-tag chaud">CHAUD</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Bollards et mobilier urbain — bancs, poubelles, barrières</span><span class="sys-tag wip">Planifié</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#55aaff"></span><span class="sys-name">Effets visuels avancés — flaques reflétantes, éclair orage, neige légère</span><span class="sys-tag wip">Planifié</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ff9900"></span><span class="sys-name">Checkpoint/Respawn amélioré — tolérance de terrain + animation caméra</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff2288"></span><span class="sys-name">Post-Processing Stack — bloom WebGL shader, vignette, chromatic aberration sur vitesse élevée</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa44ff"></span><span class="sys-name">SoundscapeAgent — audio 3D positionnel (pluie, vent, ambiance quartier) via PannerNode</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff8800"></span><span class="sys-name">CrowdDensityAgent — densité NPC adaptive (heure du jour, quartier, meteo, événements)</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00ffcc"></span><span class="sys-name">ShadowCascadeAgent — cascaded shadow maps 3 niveaux (proche/moyen/loin)</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffcc00"></span><span class="sys-name">InteriorLightAgent — lumières intérieures bâtiments nuit (MeshStandardMaterial emissive)</span><span class="sys-tag wip">Planifié</span></li>
     </ul>
   </div>
 
@@ -332,7 +356,7 @@
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
   Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
-  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">46 systèmes · 172/172 tests · 21 agents IA</span>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">50 systèmes · 172/172 tests · 25 agents IA — Ronde 21 : Visual Excellence AAA</span>
 </footer>
 
 <script>
