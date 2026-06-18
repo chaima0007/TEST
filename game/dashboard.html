@@ -152,7 +152,7 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">50</div>
+    <div class="card-value">52</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
@@ -166,8 +166,8 @@
 
   <div class="card" style="--accent:#ffaa00">
     <div class="card-title">Agents IA en jeu</div>
-    <div class="card-value">25</div>
-    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader</div>
+    <div class="card-value">27</div>
+    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader · Commandant · Résolveur</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--gold)"></div></div>
   </div>
 
@@ -242,6 +242,16 @@
         <div class="agent-role">carshader.js — réflexions · clearcoat · dirt</div>
         <div class="agent-status music">CubeCamera 64px · shimmer · saleté progressive</div>
       </div>
+      <div class="agent-card">
+        <div class="agent-name">COMMANDANT ⚔</div>
+        <div class="agent-role">commandant.js — général tactique PREMIUM</div>
+        <div class="agent-status active">4 plans militaires · radio intercept · Force Maximale</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">RÉSOLVEUR ◈</div>
+        <div class="agent-role">resolveur.js — Director IA PREMIUM</div>
+        <div class="agent-status active">5 situations · nitro urgence · bonus dynamiques · L4D Director</div>
+      </div>
     </div>
   </div>
 
@@ -297,6 +307,8 @@
       <li class="system-item"><span class="sys-dot" style="background:#4499ff"></span><span class="sys-name">AtmosphereAgent — ciel gradient GLSL (zenith/mid/horizon), 2200 étoiles, lune, 6 god rays, halos néon sol</span><span class="sys-tag hot">AAA</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#55aaff"></span><span class="sys-name">WeatherFXAgent — 3000 particules pluie volumétriques, 16 flaques PBR réfléchissantes, éclairs + flash DOM</span><span class="sys-tag hot">AAA</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#ffcc44"></span><span class="sys-name">CarShaderAgent — CubeCamera 64px env map, clearcoat shimmer, saleté progressive crash→garage, traffic upgrade</span><span class="sys-tag hot">AAA</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff5500"></span><span class="sys-name">CommandantAgent — général tactique, 4 plans militaires (Poursuite→Flanquement→Encerclement→Force Max), radio intercept</span><span class="sys-tag hot">PREMIUM</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00ffcc"></span><span class="sys-name">ResolveurAgent — Director IA (L4D), 5 situations (cerné/épave/inactif/revanche/record), résolution dynamique + bonus</span><span class="sys-tag hot">PREMIUM</span></li>
     </ul>
   </div>
 
@@ -304,6 +316,7 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 22</span><span class="log-msg"><strong>COMMANDANT + RÉSOLVEUR</strong> — deux agents PREMIUM : général tactique (4 plans militaires, radio intercept, Force Maximale escalade wanted), Director IA (5 situations détectées : cerné/épave/inactif/revanche/record, résolutions dynamiques, nitro d'urgence, +900 pts revanche)</span></li>
       <li class="log-item"><span class="log-time">Ronde 21</span><span class="log-msg"><strong>Visual Excellence Agents</strong> — TrendRadarAgent (espion 18 techs AAA, OSINT), AtmosphereAgent (sky GLSL zenith/mid/horizon, 2200 étoiles, 6 god rays, halos néon), WeatherFXAgent (3000 particules pluie, 16 flaques PBR, éclairs), CarShaderAgent (CubeCamera env, clearcoat shimmer, saleté crash, Forza/GT7/NFS)</span></li>
       <li class="log-item"><span class="log-time">Ronde 20</span><span class="log-msg"><strong>NEXUS CITY</strong> — Ville surréaliste 5 districts : Cristaux (Nord), Jungle Mécanique (Sud), Ville Renversée (Ouest), Neon Dystopie (Est), Place des Miroirs (Centre) ; 5 trampolines, 4 couloirs de vitesse, portail de téléportation Nord↔Sud, 5 landmarks procéduraux, lampadaires thématiques par district</span></li>
       <li class="log-item"><span class="log-time">Ronde 19</span><span class="log-msg"><strong>Personnages ultra-réalistes</strong> — iris/pupille/reflet, lèvres volumétriques, mains à 4 doigts, ceinture + boucle, col chemise, 3 morphologies, 10 coiffures, lunettes, sac à dos ; véhicule joueur : vitres, phares/feux nuit/jour, rétroviseurs, 5 rayons de jante</span></li>
@@ -356,7 +369,7 @@
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
   Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
-  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">50 systèmes · 172/172 tests · 25 agents IA — Ronde 21 : Visual Excellence AAA</span>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">52 systèmes · 172/172 tests · 27 agents IA — Ronde 22 : COMMANDANT + RÉSOLVEUR PREMIUM</span>
 </footer>
 
 <script>

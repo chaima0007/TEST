@@ -39,6 +39,8 @@ import { TrendRadarAgent }     from './trendradar.js';
 import { AtmosphereAgent }     from './atmosphereagent.js';
 import { WeatherFXAgent }      from './weatherfx.js';
 import { CarShaderAgent }      from './carshader.js';
+import { CommandantAgent }     from './commandant.js';
+import { ResolveurAgent }      from './resolveur.js';
 
 const MAX_SPEED_KMH = 150;
 const MAX_SPEED_MS  = MAX_SPEED_KMH / 3.6;
@@ -124,6 +126,10 @@ const weatherFX    = new WeatherFXAgent(scene);
 const carShader    = new CarShaderAgent(scene, renderer, vehicle, traffic);
 atmosphere.registerLamps(world.streetLamps);
 
+// Ronde 22 — Premium Agents
+const commandant   = new CommandantAgent();
+const resolveur    = new ResolveurAgent();
+
 // Sprite "!" pour les klaxons (partagé entre toutes les voitures klaxonnantes)
 const _honkSprites = new Map(); // mesh → { sprite, timer }
 function _getHonkSprite(mesh) {
@@ -196,6 +202,9 @@ const HS_KEY = 'moonbow_highscore';
 let highScore = parseInt(localStorage.getItem(HS_KEY) || '0', 10);
 hud.setRecord(highScore);
 
+// Bonus cumulatif accordé par le Résolveur (persiste pendant la session)
+let _resolveurBonusTotal = 0;
+
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   camera.aspect = window.innerWidth / window.innerHeight;
@@ -247,6 +256,10 @@ const _nexusPhrases = [
     const dirt  = Math.round(carShader.getDirtLevel() * 100);
     const stars = Math.round(atmosphere.getStarOpacity() * 100);
     return `VisualFX: Ciel ${stars}% étoiles | Pluie ${rain}% | Carrosserie saleté ${dirt}%`;
+  },
+  (v, d, w, dc, wx) => {
+    if (commandant.isActive()) return `COMMANDANT: ${commandant.getPlanLabel()} | Menace ${Math.round(commandant.getThreatLevel() * 100)}%`;
+    return `COMMANDANT en veille | RÉSOLVEUR: ${resolveur.getResolveCount()} résolution(s) — bonus +${_resolveurBonusTotal}`;
   },
 ];
 let _nexusIdx = 0;
@@ -481,7 +494,7 @@ function animate() {
 
   hud.setSpeed(vehicle.getSpeedKmh());
 
-  const baseScore = missions.getScore() + rival.getScore() + combo.getScore() + fantome.getScore() + drift.getScore();
+  const baseScore = missions.getScore() + rival.getScore() + combo.getScore() + fantome.getScore() + drift.getScore() + _resolveurBonusTotal;
   const monoBonus = monetization.update(
     dt, vehicle, wanted.level, drift,
     nitroFired,
@@ -528,6 +541,17 @@ function animate() {
   atmosphere.update(dt, dayCycle);
   weatherFX.update(dt, weather.getWeatherId(), playerPos);
   carShader.update(dt, vehicle, dayCycle);
+
+  // --- Ronde 22 — Premium Agents ---
+  commandant.update(dt, wanted, hud);
+  const _cmdRadio = commandant.popRadioMessage();
+  if (_cmdRadio) _showNotif(_cmdRadio);
+
+  resolveur.update(dt, vehicle, wanted, vehicleDamage, nitro);
+  const _resNotif = resolveur.popNotif();
+  if (_resNotif) _showNotif(_resNotif);
+  const _resBonus = resolveur.popBonus();
+  if (_resBonus > 0) _resolveurBonusTotal += _resBonus;
 
   // Teinte émotionnelle de la lumière ambiante
   const _tint = emotion.getColorTint();
@@ -701,6 +725,24 @@ function animate() {
       status: `CubeMap env. + Clearcoat shimmer | Saleté ${Math.round(carShader.getDirtLevel() * 100)}%`,
       bar: 1 - carShader.getDirtLevel(),
       color: '#ffcc44',
+    },
+    commandant: {
+      active: commandant.isActive(),
+      status: commandant.isActive()
+        ? `${commandant.getPlanLabel()} | Menace ${Math.round(commandant.getThreatLevel() * 100)}% | Rotation ${commandant.getTimeToNext() === Infinity ? '∞' : Math.round(commandant.getTimeToNext()) + 's'}`
+        : 'En veille (wanted < 3)',
+      bar: commandant.getThreatLevel(),
+      color: commandant.getPlan() === 'FORCE_MAX' ? '#ff0000' : '#ff5500',
+    },
+    resolveur: {
+      active: resolveur.isActive(),
+      status: resolveur.isActive()
+        ? (resolveur.isAnalyzing()
+          ? `ANALYSE: ${resolveur.getSituation()}...`
+          : `RÉSOLUTION: ${resolveur.getResolutionLabel()} | ${resolveur.getResolveCount()} résolution(s)`)
+        : `En veille | ${resolveur.getResolveCount()} résolution(s) | CD ${Math.round(resolveur.getCooldown())}s`,
+      bar: resolveur.isActive() ? 1 : Math.max(0, 1 - resolveur.getCooldown() / 32),
+      color: resolveur.isAnalyzing() ? '#00aaff' : '#00ffcc',
     },
   });
 
