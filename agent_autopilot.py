@@ -12,17 +12,47 @@ import sys
 import json
 import time
 from datetime import datetime, timedelta
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
+
+client = genai.Client(api_key=API_KEY)
 if not API_KEY:
     print("\n[ERREUR] set GEMINI_API_KEY=ta_cle")
     sys.exit(1)
 
-genai.configure(api_key=API_KEY)
 MODEL = "gemini-2.0-flash"
 
 LOG_FILE = "autopilot_log.json"
+
+
+def _creer_model(model_name=None, system_instruction="", generation_config=None, **kwargs):
+    """Compatibilité: retourne un proxy GenerativeModel pour google.genai."""
+    class _ModelProxy:
+        def __init__(self, mn, si, cfg):
+            self.model_name = mn or MODEL
+            self.system_instruction = si
+            self.config = cfg or types.GenerateContentConfig(temperature=0.3, max_output_tokens=2000)
+            if isinstance(self.config, types.GenerateContentConfig):
+                self.config = types.GenerateContentConfig(
+                    system_instruction=si,
+                    temperature=self.config.temperature if hasattr(self.config, 'temperature') else 0.3,
+                    max_output_tokens=self.config.max_output_tokens if hasattr(self.config, 'max_output_tokens') else 2000,
+                )
+        def generate_content(self, prompt, stream=False):
+            if stream:
+                return client.models.generate_content_stream(
+                    model=self.model_name, contents=prompt, config=self.config)
+            return client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.config)
+    config = generation_config
+    if config and not isinstance(config, types.GenerateContentConfig):
+        config = types.GenerateContentConfig(
+            temperature=getattr(config, 'temperature', 0.3),
+            max_output_tokens=getattr(config, 'max_output_tokens', 2000),
+        )
+    return _ModelProxy(model_name, system_instruction, config)
 
 
 def charger_tout():
@@ -75,10 +105,10 @@ def sauvegarder_action(titre, contenu):
 
 def streamer_silencieux(instructions, prompt):
     """Génère du contenu sans affichage en temps réel."""
-    model = genai.GenerativeModel(
+    model = _creer_model(
         model_name=MODEL,
         system_instruction=instructions,
-        generation_config=genai.GenerationConfig(temperature=0.3, max_output_tokens=2000),
+        generation_config=types.GenerateContentConfig(temperature=0.3, max_output_tokens=2000),
     )
     try:
         reponse = model.generate_content(prompt)
@@ -90,10 +120,10 @@ def streamer_silencieux(instructions, prompt):
 def streamer(instructions, prompt, label=""):
     if label:
         print(f"\n  ► {label}")
-    model = genai.GenerativeModel(
+    model = _creer_model(
         model_name=MODEL,
         system_instruction=instructions,
-        generation_config=genai.GenerationConfig(temperature=0.3, max_output_tokens=2500),
+        generation_config=types.GenerateContentConfig(temperature=0.3, max_output_tokens=2500),
     )
     reponse = ""
     try:
@@ -119,7 +149,7 @@ def analyser_situation(donnees):
     factures_attente = [f for f in m.get("factures", {}).values() if f.get("statut") == "en_attente"]
     milestones_attente = [mi for mi in h.get("milestones", []) if mi.get("statut") == "en_attente"]
 
-    model = genai.GenerativeModel(
+    model = _creer_model(
         model_name=MODEL,
         system_instruction="""Tu es l'IA autonome de Caelum Partners.
 Tu analyses la situation et décides les 3 actions à exécuter MAINTENANT.
@@ -133,7 +163,7 @@ Réponds en JSON uniquement :
   ],
   "objectif_semaine": "..."
 }""",
-        generation_config=genai.GenerationConfig(temperature=0.2, max_output_tokens=800),
+        generation_config=types.GenerateContentConfig(temperature=0.2, max_output_tokens=800),
     )
     try:
         r = model.generate_content(f"""

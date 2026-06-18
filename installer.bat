@@ -18,17 +18,17 @@ if errorlevel 1 (
 )
 echo  [OK] Python installe
 
-:: ── Installer google-generativeai ────────────────────────
+:: ── Installer google-genai (nouvelle API officielle) ──────
 echo.
-echo  Installation de google-generativeai...
-pip install google-generativeai
+echo  Installation de google-genai...
+pip install google-genai
 if errorlevel 1 (
     echo  [ERREUR] Echec. Essaie : pip install --upgrade pip  puis relance.
     pause
     exit /b 1
 )
 echo.
-echo  [OK] google-generativeai installe
+echo  [OK] google-genai installe
 
 :: ── Configurer la clé API ────────────────────────────────
 echo.
@@ -55,7 +55,7 @@ echo  [OK] Cle sauvegardee definitivement
 echo.
 echo  Test de la cle API...
 set GEMINI_API_KEY=%CLE%
-python -c "import google.generativeai as g; g.configure(api_key='%CLE%'); print('[OK] Connexion Gemini reussie')" 2>nul
+python -c "from google import genai; c=genai.Client(api_key='%CLE%'); print('[OK] Connexion Gemini reussie')" 2>nul
 if errorlevel 1 (
     echo  [ATTENTION] Test echoue. Verifie que ta cle est correcte.
     echo  Retourne sur aistudio.google.com et copie la vraie cle.

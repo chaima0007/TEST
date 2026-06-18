@@ -10,17 +10,19 @@ import os
 import sys
 import json
 from datetime import datetime, timedelta
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 from memoire import charger_memoire, incrementer_stat
 
 # ─── Configuration ────────────────────────────────────────────
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
+
+client = genai.Client(api_key=API_KEY)
 if not API_KEY:
     print("\n[ERREUR] Variable GEMINI_API_KEY non définie. Exécutez : export GEMINI_API_KEY=votre_cle")
     sys.exit(1)
 
-genai.configure(api_key=API_KEY)
 MODEL = "gemini-2.0-flash"
 
 ENTREPRISE = "AgentClaude Solutions"
@@ -33,6 +35,34 @@ LARGEUR = 70
 # ═══════════════════════════════════════════════════════════════
 # UTILITAIRES
 # ═══════════════════════════════════════════════════════════════
+
+def _creer_model(model_name=None, system_instruction="", generation_config=None, **kwargs):
+    """Compatibilité: retourne un proxy GenerativeModel pour google.genai."""
+    class _ModelProxy:
+        def __init__(self, mn, si, cfg):
+            self.model_name = mn or MODEL
+            self.system_instruction = si
+            self.config = cfg or types.GenerateContentConfig(temperature=0.3, max_output_tokens=2000)
+            if isinstance(self.config, types.GenerateContentConfig):
+                self.config = types.GenerateContentConfig(
+                    system_instruction=si,
+                    temperature=self.config.temperature if hasattr(self.config, 'temperature') else 0.3,
+                    max_output_tokens=self.config.max_output_tokens if hasattr(self.config, 'max_output_tokens') else 2000,
+                )
+        def generate_content(self, prompt, stream=False):
+            if stream:
+                return client.models.generate_content_stream(
+                    model=self.model_name, contents=prompt, config=self.config)
+            return client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.config)
+    config = generation_config
+    if config and not isinstance(config, types.GenerateContentConfig):
+        config = types.GenerateContentConfig(
+            temperature=getattr(config, 'temperature', 0.3),
+            max_output_tokens=getattr(config, 'max_output_tokens', 2000),
+        )
+    return _ModelProxy(model_name, system_instruction, config)
+
 
 def _sep(car="═", n=LARGEUR):
     return car * n
@@ -55,9 +85,9 @@ def _barre_ascii(valeur, maxi, largeur=30, car_plein="█", car_vide="░"):
 
 def _streamer(prompt: str, temperature: float = 0.5) -> str:
     """Appelle Gemini en streaming et retourne le texte complet."""
-    modele = genai.GenerativeModel(
+    modele = _creer_model(
         model_name=MODEL,
-        generation_config=genai.GenerationConfig(
+        generation_config=types.GenerateContentConfig(
             temperature=temperature,
             max_output_tokens=4096,
         ),

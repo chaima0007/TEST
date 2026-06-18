@@ -36,16 +36,16 @@ try {
     exit 1
 }
 
-# ── Installer google-generativeai ─────────────────────────────
+# ── Installer google-genai (nouvelle API officielle) ──────────
 Write-Host ""
-Write-Host "  Installation de google-generativeai..." -ForegroundColor Yellow
-pip install google-generativeai --quiet
+Write-Host "  Installation de google-genai..." -ForegroundColor Yellow
+pip install google-genai --quiet
 if ($LASTEXITCODE -ne 0) {
     Write-Host "  ❌ Échec. Essaie : pip install --upgrade pip" -ForegroundColor Red
     Read-Host "[Entrée pour quitter]"
     exit 1
 }
-Write-Host "  ✅ google-generativeai installé." -ForegroundColor Green
+Write-Host "  ✅ google-genai installé." -ForegroundColor Green
 
 # ── Configurer la clé API ─────────────────────────────────────
 Write-Host ""
@@ -75,8 +75,8 @@ Write-Host "  ✅ Clé sauvegardée définitivement." -ForegroundColor Green
 Write-Host ""
 Write-Host "  Test de la connexion Gemini..." -ForegroundColor Gray
 $test = python -c "
-import google.generativeai as g
-g.configure(api_key='$cle')
+from google import genai
+c = genai.Client(api_key='$cle')
 print('OK')
 " 2>&1
 

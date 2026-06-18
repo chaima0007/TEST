@@ -6,9 +6,12 @@ Clé API gratuite sur : aistudio.google.com
 import os
 import sys
 import json
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 API_KEY = os.environ.get("GEMINI_API_KEY", "")
+
+client = genai.Client(api_key=API_KEY)
 if not API_KEY:
     print("\nERREUR : Clé API manquante.")
     print("1. Va sur https://aistudio.google.com")
@@ -17,17 +20,44 @@ if not API_KEY:
     print("   set GEMINI_API_KEY=ta_cle_ici")
     sys.exit(1)
 
-genai.configure(api_key=API_KEY)
 MODEL = "gemini-2.0-flash"
+
+
+def _creer_model(model_name=None, system_instruction="", generation_config=None, **kwargs):
+    """Compatibilité: retourne un proxy GenerativeModel pour google.genai."""
+    class _ModelProxy:
+        def __init__(self, mn, si, cfg):
+            self.model_name = mn or MODEL
+            self.system_instruction = si
+            self.config = cfg or types.GenerateContentConfig(temperature=0.3, max_output_tokens=2000)
+            if isinstance(self.config, types.GenerateContentConfig):
+                self.config = types.GenerateContentConfig(
+                    system_instruction=si,
+                    temperature=self.config.temperature if hasattr(self.config, 'temperature') else 0.3,
+                    max_output_tokens=self.config.max_output_tokens if hasattr(self.config, 'max_output_tokens') else 2000,
+                )
+        def generate_content(self, prompt, stream=False):
+            if stream:
+                return client.models.generate_content_stream(
+                    model=self.model_name, contents=prompt, config=self.config)
+            return client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.config)
+    config = generation_config
+    if config and not isinstance(config, types.GenerateContentConfig):
+        config = types.GenerateContentConfig(
+            temperature=getattr(config, 'temperature', 0.3),
+            max_output_tokens=getattr(config, 'max_output_tokens', 2000),
+        )
+    return _ModelProxy(model_name, system_instruction, config)
 
 
 def creer_agent(nom, instructions, effort="normal"):
     """Crée et retourne un agent avec ses instructions."""
-    config = genai.GenerationConfig(
+    config = types.GenerateContentConfig(
         temperature=0.3 if effort == "precis" else 0.7,
         max_output_tokens=4096,
     )
-    model = genai.GenerativeModel(
+    model = _creer_model(
         model_name=MODEL,
         system_instruction=instructions,
         generation_config=config,

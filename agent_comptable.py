@@ -8,7 +8,8 @@ import os
 import json
 from datetime import datetime, timedelta
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 from memoire import charger_memoire, sauvegarder_memoire, incrementer_stat
 
@@ -49,6 +50,34 @@ FRANCHISE_TVA_SEUIL_MAJOREE = 39_100.0
 # Utilitaires internes
 # ---------------------------------------------------------------------------
 
+def _creer_model(model_name=None, system_instruction="", generation_config=None, **kwargs):
+    """Compatibilité: retourne un proxy GenerativeModel pour google.genai."""
+    class _ModelProxy:
+        def __init__(self, mn, si, cfg):
+            self.model_name = mn or MODEL
+            self.system_instruction = si
+            self.config = cfg or types.GenerateContentConfig(temperature=0.3, max_output_tokens=2000)
+            if isinstance(self.config, types.GenerateContentConfig):
+                self.config = types.GenerateContentConfig(
+                    system_instruction=si,
+                    temperature=self.config.temperature if hasattr(self.config, 'temperature') else 0.3,
+                    max_output_tokens=self.config.max_output_tokens if hasattr(self.config, 'max_output_tokens') else 2000,
+                )
+        def generate_content(self, prompt, stream=False):
+            if stream:
+                return client.models.generate_content_stream(
+                    model=self.model_name, contents=prompt, config=self.config)
+            return client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.config)
+    config = generation_config
+    if config and not isinstance(config, types.GenerateContentConfig):
+        config = types.GenerateContentConfig(
+            temperature=getattr(config, 'temperature', 0.3),
+            max_output_tokens=getattr(config, 'max_output_tokens', 2000),
+        )
+    return _ModelProxy(model_name, system_instruction, config)
+
+
 def _sep(largeur: int = 70, c: str = "=") -> str:
     return c * largeur
 
@@ -83,7 +112,7 @@ def _sauvegarder_rapport(nom_fichier: str, contenu: str) -> str:
 
 def _streamer_reponse(prompt: str) -> str:
     """Appelle Gemini en streaming et retourne le texte complet."""
-    modele = genai.GenerativeModel(MODEL)
+    modele = _creer_model(MODEL)
     print()
     texte_complet = ""
     for chunk in modele.generate_content(prompt, stream=True):
