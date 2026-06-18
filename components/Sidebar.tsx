@@ -510,6 +510,15 @@ function IconDealMomentum({ className }: { className?: string }) {
   );
 }
 
+function IconStakeholderMap({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+      <path d="M10 10a1 1 0 100-2 1 1 0 000 2zm3 2a1 1 0 100-2 1 1 0 000 2zm-6 0a1 1 0 100-2 1 1 0 000 2z" fillOpacity="0.5" />
+    </svg>
+  );
+}
+
 function IconSalesSkills({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -953,6 +962,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/deal-momentum", label: "Deal Momentum", icon: IconDealMomentum },
       { href: "/dashboard/forecast-commit", label: "Forecast Commit", icon: IconForecastCommit },
       { href: "/dashboard/sales-skills", label: "Sales Skills", icon: IconSalesSkills },
+      { href: "/dashboard/stakeholder-map", label: "Stakeholder Map", icon: IconStakeholderMap },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
