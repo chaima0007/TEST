@@ -91,13 +91,21 @@ function LoginForm() {
             </button>
           </form>
 
-          {/* Demo hint — acceptable in demo mode, credentials stored server-side only */}
+          {/* Demo hint */}
           <div className="mt-4 p-3 bg-indigo-50 border border-indigo-100 rounded-lg">
             <p className="text-xs text-indigo-700 font-semibold mb-1">Compte démo</p>
             <p className="text-xs text-indigo-600">Utilisez le compte de démonstration pour explorer l&apos;application.</p>
             <button
               type="button"
-              onClick={() => { setEmail("demo@competeiq.com"); setPassword("demo123"); }}
+              onClick={async () => {
+                // Credentials are fetched server-side to avoid hardcoding them in the JS bundle
+                const res = await fetch("/api/auth/demo-credentials");
+                if (res.ok) {
+                  const { email, password } = await res.json() as { email: string; password: string };
+                  setEmail(email);
+                  setPassword(password);
+                }
+              }}
               className="mt-2 text-xs text-indigo-700 font-semibold hover:underline"
             >
               Remplir automatiquement →

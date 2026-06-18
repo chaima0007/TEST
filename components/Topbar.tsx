@@ -196,7 +196,8 @@ function UserDropdown() {
   const handleLogout = async () => {
     setOpen(false);
     await fetch("/api/auth/logout", { method: "POST" });
-    router.push("/login");
+    // Hard redirect: clears React state, router cache, and any in-memory session data
+    window.location.href = "/login";
   };
 
   return (

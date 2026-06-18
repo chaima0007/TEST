@@ -167,7 +167,8 @@ function NavContent({
 
   const handleLogout = async () => {
     await fetch("/api/auth/logout", { method: "POST" });
-    router.push("/login");
+    // Hard redirect: clears React state, router cache, and any in-memory session data
+    window.location.href = "/login";
   };
 
   return (
