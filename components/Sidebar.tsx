@@ -586,6 +586,27 @@ function IconDealFragmentation({ className }: { className?: string }) {
   );
 }
 
+function IconContractClauseRisk({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h4a1 1 0 100-2H7z" clipRule="evenodd" />
+      <path d="M10 10.5a.5.5 0 11-1 0 .5.5 0 011 0zm0-3a.5.5 0 11-1 0 .5.5 0 011 0z" fill="#f87171" opacity="0.9" />
+    </svg>
+  );
+}
+
+function IconBuyerPersonaDrift({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="7" cy="6" r="3" />
+      <path d="M1 17c0-3.3 2.7-6 6-6" opacity="0.5" />
+      <circle cx="14" cy="9" r="2.5" opacity="0.7" />
+      <path d="M9 17c0-2.8 2.2-5 5-5" opacity="0.35" />
+      <path d="M10 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconCustomerExpansion({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1184,6 +1205,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-compensation-intelligence", label: "Comp Intelligence", icon: IconSalesCompIntel },
       { href: "/dashboard/customer-expansion-readiness", label: "Expansion Readiness", icon: IconCustomerExpansion },
       { href: "/dashboard/deal-fragmentation", label: "Deal Fragmentation", icon: IconDealFragmentation },
+      { href: "/dashboard/buyer-persona-drift", label: "Persona Drift", icon: IconBuyerPersonaDrift },
+      { href: "/dashboard/contract-clause-risk", label: "Contract Clauses", icon: IconContractClauseRisk },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
