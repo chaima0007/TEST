@@ -51,8 +51,9 @@ MENU = """
   [6]  Agent Professeur          ← Formation et apprentissage
   [7]  Usine de Migration        ← Moderniser du code legacy
   [8]  Suite Sécurité            ← Audit et protection données
+  [9]  Agent Référence           ← Index et doc de tous tes projets
 
-  [9]  Voir stats & mémoire
+  [s]  Voir stats & mémoire
   [0]  Quitter
 """
 
@@ -90,6 +91,8 @@ if __name__ == "__main__":
             fichier = input("\n  Fichier à auditer → ").strip()
             lancer("securite.py", fichier)
         elif choix == "9":
+            lancer("agent_reference.py")
+        elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
             lister_clients()
