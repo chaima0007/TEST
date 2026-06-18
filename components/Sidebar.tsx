@@ -2473,6 +2473,17 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesOnboardingRampIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Onboarding ramp: staircase steps with upward arrow */}
+      <path d="M3 16 L3 13 L7 13 L7 10 L11 10 L11 7 L15 7 L15 4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6"/>
+      <path d="M13 4 L15 4 L15 6" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="5" cy="14.5" r="1.5" fill="currentColor" stroke="none" opacity="0.7"/>
+    </svg>
+  );
+}
+
 function IconSalesCompetitiveIntelligenceBattleCardEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2867,6 +2878,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-discount-leakage-margin-erosion-intelligence-engine", label: "Discount Leakage", icon: IconSalesDiscountLeakageMarginErosionIntelligenceEngine },
       { href: "/dashboard/sales-meeting-quality-conversion-intelligence-engine", label: "Meeting Quality", icon: IconSalesMeetingQualityConversionIntelligenceEngine },
       { href: "/dashboard/sales-competitive-intelligence-battle-card-engine", label: "Competitive Intel", icon: IconSalesCompetitiveIntelligenceBattleCardEngine },
+      { href: "/dashboard/sales-onboarding-ramp-intelligence-engine", label: "Onboarding Ramp", icon: IconSalesOnboardingRampIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
