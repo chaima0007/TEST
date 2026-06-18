@@ -56,6 +56,10 @@ MENU = """
   [11] Agent Support Client      ← SAV 24/7, FAQ, onboarding
   [12] Agent Chef de Projet      ← Planification, risques, rapports
   [13] Agent Guide               ← Sait toujours ce qu'il faut faire ensuite
+  [14] Agent Watchdog            ← Surveillance 24h/24 de tous les agents
+  [15] Agent Fantôme             ← Audit silencieux, zéro trace
+  [16] Agent Commandant          ← Fait travailler tous les agents en équipe
+  [17] Agent Résolveur           ← Résout les problèmes de manière ultra-pro
 
   [s]  Voir stats & mémoire
   [0]  Quitter
@@ -104,6 +108,14 @@ if __name__ == "__main__":
             lancer("agent_chef_projet.py")
         elif choix == "13":
             lancer("agent_guide.py")
+        elif choix == "14":
+            lancer("agent_watchdog.py")
+        elif choix == "15":
+            lancer("agent_fantome.py")
+        elif choix == "16":
+            lancer("agent_commandant.py")
+        elif choix == "17":
+            lancer("agent_resolveur.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
