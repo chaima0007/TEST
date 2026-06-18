@@ -248,6 +248,14 @@ function IconSubjectOptimizer({ className }: { className?: string }) {
   );
 }
 
+function IconThreatIntel({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconProposals({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -524,6 +532,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/security", label: "Sécurité IA", icon: IconSecurity },
       { href: "/dashboard/revenue", label: "Prévisions Revenus", icon: IconRevenue },
       { href: "/dashboard/proposals", label: "Scoring Propositions", icon: IconProposals },
+      { href: "/dashboard/threat-intel", label: "Intelligence Menaces", icon: IconThreatIntel },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
