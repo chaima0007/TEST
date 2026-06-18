@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.egg-info/
+dist/
+build/
+.DS_Store
+seo_output/
+fichiers/
+index_projets.json
+memoire_entreprise.json
+rapport_*.txt
+proposition_*.txt
+facture_*.txt
+DOC_*.md
