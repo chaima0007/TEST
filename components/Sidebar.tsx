@@ -1533,6 +1533,18 @@ function IconSalesForecastAccuracyIntelligenceEngine({ className }: { className?
   );
 }
 
+function IconSalesCoachingReceptivityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Person with brain/arrow showing receptivity or block */}
+      <circle cx="10" cy="5.5" r="2.5" opacity="0.7"/>
+      <path d="M5 18 C5 14 7 12 10 12 C13 12 15 14 15 18" opacity="0.5" strokeLinecap="round"/>
+      <path d="M13 7 L16 7 L16 10" strokeLinecap="round" strokeLinejoin="round" opacity="0.8"/>
+      <path d="M13.5 7.5 L15 9" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
 function IconSalesAccountExpansionIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2705,6 +2717,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-customer-lifecycle-intelligence-engine", label: "Customer Lifecycle", icon: IconSalesCustomerLifecycleIntelligenceEngine },
       { href: "/dashboard/sales-competitive-intelligence-engine", label: "Competitive Intel", icon: IconSalesCompetitiveIntelligenceEngine },
       { href: "/dashboard/sales-territory-coverage-intelligence-engine", label: "Territory Coverage", icon: IconSalesTerritoryConverageIntelligenceEngine },
+      { href: "/dashboard/sales-coaching-receptivity-intelligence-engine", label: "Coaching Receptivity", icon: IconSalesCoachingReceptivityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
