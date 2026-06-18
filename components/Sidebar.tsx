@@ -2630,6 +2630,18 @@ function IconSalesPriceSensitivityNegotiationLeverageEngine({ className }: { cla
   );
 }
 
+function IconSalesCompetitiveWinLossPatternEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Competitive: two swords crossing with win/loss bars */}
+      <path d="M4 4 L16 16 M4 4 L7 4 M4 4 L4 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6"/>
+      <path d="M16 16 L13 16 M16 16 L16 13" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" stroke="#ef4444"/>
+      <path d="M16 4 L4 16 M16 4 L13 4 M16 4 L16 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" opacity="0.55"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
 function IconSalesPipelineStageInflationCrmHygieneEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2958,6 +2970,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-proposal-quality-win-rate-intelligence-engine", label: "Proposal Quality", icon: IconSalesProposalQualityWinRateIntelligenceEngine },
       { href: "/dashboard/sales-champion-departure-relationship-continuity-engine", label: "Champion Risk", icon: IconSalesChampionDepartureRelationshipContinuityEngine },
       { href: "/dashboard/sales-pipeline-stage-inflation-crm-hygiene-engine", label: "Pipeline Hygiene", icon: IconSalesPipelineStageInflationCrmHygieneEngine },
+      { href: "/dashboard/sales-competitive-win-loss-pattern-engine", label: "Competitive Wins", icon: IconSalesCompetitiveWinLossPatternEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
