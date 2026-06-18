@@ -248,6 +248,14 @@ function IconSubjectOptimizer({ className }: { className?: string }) {
   );
 }
 
+function IconProposals({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h4a1 1 0 100-2H7z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconRevenue({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -515,6 +523,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/subject-optimizer", label: "Sujets Email IA", icon: IconSubjectOptimizer },
       { href: "/dashboard/security", label: "Sécurité IA", icon: IconSecurity },
       { href: "/dashboard/revenue", label: "Prévisions Revenus", icon: IconRevenue },
+      { href: "/dashboard/proposals", label: "Scoring Propositions", icon: IconProposals },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
