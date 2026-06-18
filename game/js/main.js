@@ -44,6 +44,9 @@ import { ResolveurAgent }      from './resolveur.js';
 import { BackroomAgent }       from './backroom.js';
 import { MonsterAgent }        from './monster.js';
 import { DreamZoneAgent }      from './dreamzone.js';
+import { SoundscapeAgent }     from './soundscape.js';
+import { GlitchFXAgent }       from './glitchfx.js';
+import { CrypticAgent }        from './cryptic.js';
 
 const MAX_SPEED_KMH = 150;
 const MAX_SPEED_MS  = MAX_SPEED_KMH / 3.6;
@@ -137,6 +140,11 @@ const resolveur    = new ResolveurAgent();
 const backroom  = new BackroomAgent(scene);
 const monster   = new MonsterAgent(scene);
 const dreamzone = new DreamZoneAgent(scene);
+
+// Ronde 24 — Immersion Totale
+const soundscape = new SoundscapeAgent(_audioCtx);
+const glitchFX   = new GlitchFXAgent();
+const cryptic    = new CrypticAgent();
 
 // Sprite "!" pour les klaxons (partagé entre toutes les voitures klaxonnantes)
 const _honkSprites = new Map(); // mesh → { sprite, timer }
@@ -273,6 +281,12 @@ const _nexusPhrases = [
     if (backroom.isActive()) return `BACKROOM — Entité à ${Math.round(backroom.getEntityDist())}m | Fuite ${Math.round(backroom.getEscapePct() * 100)}%`;
     if (monster.isActive()) return `${monster.getMonsterType()} — Distance ${Math.round(monster.getDistance())}m | Peur ${Math.round(monster.getFearLevel() * 100)}%`;
     return `ONIRIQUE — Zones visitées ${dreamzone.getVisitedCount()}/${dreamzone.getTotalCount()} | ${monster.getScareCount()} frayeur(s)`;
+  },
+  (v, d, w, dc, wx) => {
+    const _fi = Math.max(backroom.getFearLevel(), monster.getFearLevel());
+    if (_fi > 0.50) return `// NEXUS CORROMPU — PEUR ${Math.round(_fi * 100)}% — RÉALITÉ INSTABLE`;
+    if (dreamzone.isInZone()) return `✦ ${dreamzone.getCurrentZoneName() || 'Zone magique'} — Glitch + Soundscape actifs`;
+    return `IMMERSION — Soundscape · GlitchFX · Messages cryptiques`;
   },
 ];
 let _nexusIdx = 0;
@@ -592,6 +606,22 @@ function animate() {
     _showNotif('⬛ VORTEX COSMIQUE — Téléportation !');
   }
 
+  // --- Ronde 24 — Immersion Totale ---
+  const _fearNow  = Math.max(backroom.getFearLevel(), monster.getFearLevel());
+  const _monType  = monster.getMonsterType();
+  const _dzInZone = dreamzone.isInZone();
+  const _dzColor  = dreamzone.getCurrentColor();
+
+  soundscape.update(dt, backroom.isActive(), _fearNow, _monType, _dzInZone);
+  glitchFX.update(dt, {
+    backroomActive: backroom.isActive(),
+    fearLevel:      _fearNow,
+    monsterActive:  monster.isActive(),
+    dreamActive:    _dzInZone,
+    dreamColor:     _dzColor,
+  });
+  cryptic.update(dt, backroom.isActive(), _fearNow, _monType, _dzInZone);
+
   // Teinte émotionnelle de la lumière ambiante
   const _tint = emotion.getColorTint();
   ambientLight.color.setRGB(_tint.r * 0.45, _tint.g * 0.45, _tint.b * 0.45 + cityPulse.getAmbientBoost());
@@ -801,9 +831,45 @@ function animate() {
     },
     dreamzone: {
       active: true,
-      status: `Zones magiques ${dreamzone.getVisitedCount()}/${dreamzone.getTotalCount()} visitées`,
+      status: dreamzone.isInZone()
+        ? `✦ ${dreamzone.getCurrentZoneName()} — Bloom + son cristallin actifs`
+        : `Zones magiques ${dreamzone.getVisitedCount()}/${dreamzone.getTotalCount()} visitées`,
       bar: dreamzone.getTotalCount() > 0 ? dreamzone.getVisitedCount() / dreamzone.getTotalCount() : 0,
       color: '#aa44ff',
+    },
+    soundscape: {
+      active: soundscape.isReady(),
+      status: backroom.isActive()
+        ? `Néon 60Hz · Battements ${Math.round(60 + _fearNow * 80)} BPM · entité gronde`
+        : monster.isActive()
+          ? `${_monType} grondement LFO · Battements ${Math.round(60 + _fearNow * 80)} BPM`
+          : _dzInZone
+            ? `Tonalités cristallines 528 Hz · Delay reverb actif`
+            : `En veille — ${soundscape.isReady() ? 'Web Audio prêt' : 'AudioCtx indisponible'}`,
+      bar: _fearNow,
+      color: '#884488',
+    },
+    glitchFX: {
+      active: backroom.isActive() || monster.isActive() || _dzInZone,
+      status: backroom.isActive()
+        ? `Aberration chromatique · Scanlines · Grain · Bloom jaune`
+        : monster.isActive()
+          ? `Aberration R/B | Peur ${Math.round(_fearNow * 100)}% | Flash rouge`
+          : _dzInZone
+            ? `Bloom couleur zone | ${dreamzone.getCurrentZoneName()}`
+            : 'En veille',
+      bar: _fearNow,
+      color: '#cc2244',
+    },
+    cryptic: {
+      active: cryptic.isActive(),
+      status: cryptic.isActive()
+        ? '⚠ MESSAGE EN COURS — 4e mur brisé'
+        : backroom.isActive() || _fearNow > 0.4
+          ? 'NEXUS corrompu — messages en attente'
+          : 'En veille — prêt à corrompre la réalité',
+      bar: cryptic.isActive() ? 1 : Math.min(1, _fearNow * 1.5),
+      color: '#770077',
     },
   });
 

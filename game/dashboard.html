@@ -152,7 +152,7 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">55</div>
+    <div class="card-value">58</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
@@ -166,8 +166,8 @@
 
   <div class="card" style="--accent:#ffaa00">
     <div class="card-title">Agents IA en jeu</div>
-    <div class="card-value">30</div>
-    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader · Commandant · Résolveur · Backroom · Monster · DreamZone</div>
+    <div class="card-value">33</div>
+    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader · Commandant · Résolveur · Backroom · Monster · DreamZone · Soundscape · GlitchFX · Cryptic</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--gold)"></div></div>
   </div>
 
@@ -267,6 +267,21 @@
         <div class="agent-role">dreamzone.js — 6 zones magiques</div>
         <div class="agent-status music">Âmes · Cristal · Aiguilles · Source · Vortex · Miroir</div>
       </div>
+      <div class="agent-card">
+        <div class="agent-name">SoundscapeAgent 🔊</div>
+        <div class="agent-role">soundscape.js — sons procéduraux ambiants</div>
+        <div class="agent-status active">Néon 60Hz · Battements · Grondement LFO · Cristal 528Hz</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">GlitchFXAgent 📺</div>
+        <div class="agent-role">glitchfx.js — effets visuels de rupture DOM</div>
+        <div class="agent-status active">Aberration R/B · Bloom couleur · Scanlines · Grain · Flash</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">CrypticAgent ⚠</div>
+        <div class="agent-role">cryptic.js — messages qui brisent le 4e mur</div>
+        <div class="agent-status active">Typewriter · Corruption glyphs · NEXUS corrompu</div>
+      </div>
     </div>
   </div>
 
@@ -327,6 +342,9 @@
       <li class="system-item"><span class="sys-dot" style="background:#c8b040"></span><span class="sys-name">BackroomAgent — espace liminal jaune infini, L'Entité poursuivante, fuite 55 km/h, FogExp2 dense, overlay Backroom</span><span class="sys-tag hot">ONIRIQUE</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#880033"></span><span class="sys-name">MonsterAgent — 3 créatures nocturnes procédurales : L'Ombre (speed 3.2), La Bête (speed 5.5), Le Cyclope (flottant), vignette peur</span><span class="sys-tag hot">HORREUR</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#aa44ff"></span><span class="sys-name">DreamZoneAgent — 6 zones magiques avec particules : Jardin des Âmes, Cathédrale de Cristal, Forêt des Aiguilles, Source (heal), Vortex (téléport), Lac des Reflets</span><span class="sys-tag hot">MAGIQUE</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#884488"></span><span class="sys-name">SoundscapeAgent — sons procéduraux : bourdonnement néon 60Hz vacillant, battements cardiaques 55→130 BPM, grondement LFO par monstre, tonalités cristallines 528Hz + delay reverb</span><span class="sys-tag hot">IMMERSION</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#cc2244"></span><span class="sys-name">GlitchFXAgent — aberration chromatique R/B (divs décalés), bloom couleur par zone, scanlines CRT, grain de film canvas 160×120, flashs aléatoires rouge/jaune</span><span class="sys-tag hot">IMMERSION</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#770077"></span><span class="sys-name">CrypticAgent — typewriter effect + corruption de glyphs, 11 messages Backroom, 4×3 messages Monstre, 5 messages Dream, ligne NEXUS corrompue coin bas-droite</span><span class="sys-tag hot">IMMERSION</span></li>
     </ul>
   </div>
 
@@ -334,6 +352,7 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 24</span><span class="log-msg"><strong>SoundscapeAgent + GlitchFXAgent + CrypticAgent</strong> — Immersion Totale : sons procéduraux ambiants (bourdonnement néon 60Hz vacillant, battements cardiaques 55→130 BPM, grondement LFO par type de monstre, tonalités cristallines 528Hz + delay reverb), aberration chromatique R/B + bloom couleur + scanlines CRT + grain canvas + flashs, messages qui brisent le 4e mur (typewriter + corruption glyphs, ligne NEXUS corrompue, 30+ messages contextuels)</span></li>
       <li class="log-item"><span class="log-time">Ronde 23</span><span class="log-msg"><strong>BackroomAgent + MonsterAgent + DreamZoneAgent</strong> — Onirique &amp; Horreur : espace liminal jaune avec L'Entité poursuivante (fuite à 55 km/h, FogExp2 dense), 3 créatures nocturnes procédurales (L'Ombre silhouette impossible, La Bête quadrupède à épines dorsales, Le Cyclope œil géant flottant), 6 zones magiques avec particules AdditiveBlending (Jardin des Âmes, Cathédrale de Cristal, Forêt des Aiguilles, Source de Lumière [heal], Vortex Cosmique [téléport], Lac des Reflets)</span></li>
       <li class="log-item"><span class="log-time">Ronde 22</span><span class="log-msg"><strong>COMMANDANT + RÉSOLVEUR</strong> — deux agents PREMIUM : général tactique (4 plans militaires, radio intercept, Force Maximale escalade wanted), Director IA (5 situations détectées : cerné/épave/inactif/revanche/record, résolutions dynamiques, nitro d'urgence, +900 pts revanche)</span></li>
       <li class="log-item"><span class="log-time">Ronde 21</span><span class="log-msg"><strong>Visual Excellence Agents</strong> — TrendRadarAgent (espion 18 techs AAA, OSINT), AtmosphereAgent (sky GLSL zenith/mid/horizon, 2200 étoiles, 6 god rays, halos néon), WeatherFXAgent (3000 particules pluie, 16 flaques PBR, éclairs), CarShaderAgent (CubeCamera env, clearcoat shimmer, saleté crash, Forza/GT7/NFS)</span></li>
@@ -388,7 +407,7 @@
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
   Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
-  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">55 systèmes · 172/172 tests · 30 agents IA — Ronde 23 : BACKROOM + MONSTERS + DREAMZONES ONIRIQUE</span>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">58 systèmes · 172/172 tests · 33 agents IA — Ronde 24 : SOUNDSCAPE + GLITCHFX + CRYPTIC IMMERSION TOTALE</span>
 </footer>
 
 <script>

@@ -288,6 +288,7 @@ export class DreamZoneAgent {
     this._pendingBonus = 0;
     this._pendingHeal  = false;
     this._pendingTeleport = false;
+    this._currentZone  = null;
 
     for (const def of ZONES) {
       const built = def.build(scene, def);
@@ -303,12 +304,15 @@ export class DreamZoneAgent {
 
   update(dt, playerPos, vehicleDamage) {
     this._time += dt;
+    this._currentZone = null;
 
     for (const zone of this._zones) {
       const { def } = zone;
       const dx = playerPos.x - def.x;
       const dz = playerPos.z - def.z;
       const dist = Math.sqrt(dx * dx + dz * dz);
+
+      if (dist < def.radius) this._currentZone = def;
 
       // Zone entry bonus
       if (zone.cooldown > 0) {
@@ -371,4 +375,7 @@ export class DreamZoneAgent {
   popTeleport()        { const t = this._pendingTeleport; this._pendingTeleport = false; return t; }
   getVisitedCount()    { return this._zones.filter(z => z.visited).length; }
   getTotalCount()      { return this._zones.length; }
+  isInZone()           { return this._currentZone !== null; }
+  getCurrentColor()    { return this._currentZone?.color ?? null; }
+  getCurrentZoneName() { return this._currentZone?.name ?? null; }
 }
