@@ -2594,6 +2594,17 @@ function IconSalesQuotaSandbagOvercommitIntelligenceEngine({ className }: { clas
   );
 }
 
+function IconSalesProposalQualityWinRateIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Proposal quality: document with checkmark and ascending win bars */}
+      <rect x="4" y="2" width="10" height="13" rx="1.2"/>
+      <path d="M7 6 L13 6 M7 8.5 L11 8.5 M7 11 L10 11" strokeLinecap="round" strokeWidth="1.2"/>
+      <path d="M6 13.5 L8 15.5 L14 10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" stroke="#10b981"/>
+    </svg>
+  );
+}
+
 function IconSalesPriceSensitivityNegotiationLeverageEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2918,6 +2929,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-customer-health-score-deterioration-engine", label: "Customer Health", icon: IconSalesCustomerHealthScoreDeteriorationEngine },
       { href: "/dashboard/sales-territory-imbalance-coverage-gap-engine", label: "Territory Balance", icon: IconSalesTerritoryImbalanceCoverageGapEngine },
       { href: "/dashboard/sales-price-sensitivity-negotiation-leverage-engine", label: "Negotiation Leverage", icon: IconSalesPriceSensitivityNegotiationLeverageEngine },
+      { href: "/dashboard/sales-proposal-quality-win-rate-intelligence-engine", label: "Proposal Quality", icon: IconSalesProposalQualityWinRateIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
