@@ -2630,6 +2630,19 @@ function IconSalesPriceSensitivityNegotiationLeverageEngine({ className }: { cla
   );
 }
 
+function IconSalesBuyerIntentSignalDecayEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Intent decay: wifi signal bars declining with downward trend */}
+      <path d="M3 15 C3 11 17 11 17 15" strokeLinecap="round" strokeWidth="1.2" opacity="0.3"/>
+      <path d="M5 12 C5 9.5 15 9.5 15 12" strokeLinecap="round" strokeWidth="1.2" opacity="0.5"/>
+      <path d="M7 9.5 C7 7.5 13 7.5 13 9.5" strokeLinecap="round" strokeWidth="1.4"/>
+      <circle cx="10" cy="7" r="1.2" fill="currentColor" stroke="none"/>
+      <path d="M6 18 L10 14 L13 16 L17 11" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" stroke="#ef4444"/>
+    </svg>
+  );
+}
+
 function IconSalesCompetitiveWinLossPatternEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2971,6 +2984,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-champion-departure-relationship-continuity-engine", label: "Champion Risk", icon: IconSalesChampionDepartureRelationshipContinuityEngine },
       { href: "/dashboard/sales-pipeline-stage-inflation-crm-hygiene-engine", label: "Pipeline Hygiene", icon: IconSalesPipelineStageInflationCrmHygieneEngine },
       { href: "/dashboard/sales-competitive-win-loss-pattern-engine", label: "Competitive Wins", icon: IconSalesCompetitiveWinLossPatternEngine },
+      { href: "/dashboard/sales-buyer-intent-signal-decay-engine", label: "Intent Decay", icon: IconSalesBuyerIntentSignalDecayEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
