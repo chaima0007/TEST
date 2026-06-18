@@ -1147,6 +1147,18 @@ function IconSettings({ className }: { className?: string }) {
   );
 }
 
+function IconWinLossPatternEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 7l4 4 3-3 4 4 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="7" cy="11" r="1.5" fill="#34d399" />
+      <circle cx="10" cy="8" r="1.5" fill="#f87171" />
+      <circle cx="14" cy="12" r="1.5" fill="#34d399" />
+      <path fillRule="evenodd" d="M2 15a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1z" clipRule="evenodd" opacity="0.4" />
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1338,6 +1350,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/champion-risk-monitor", label: "Champion Risk", icon: IconChampionRiskMonitor },
       { href: "/dashboard/buying-committee-mapper", label: "Committee Map", icon: IconBuyingCommitteeMapper },
       { href: "/dashboard/objection-pattern-analyzer", label: "Objection Patterns", icon: IconObjectionPatternAnalyzer },
+      { href: "/dashboard/win-loss-pattern-engine", label: "Win/Loss Patterns", icon: IconWinLossPatternEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
