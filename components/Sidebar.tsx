@@ -174,6 +174,34 @@ function IconRadar({ className }: { className?: string }) {
   );
 }
 
+function IconCommandant({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {/* Monitor frame */}
+      <rect x="2" y="3" width="16" height="11" rx="1.5" />
+      {/* Stand */}
+      <line x1="7" y1="14" x2="6" y2="17" />
+      <line x1="13" y1="14" x2="14" y2="17" />
+      <line x1="5.5" y1="17" x2="14.5" y2="17" />
+      {/* Signal wave inside screen */}
+      <polyline points="3.5,10 5.5,10 7,7.5 9,12 11,8 13,10.5 14.5,9.5 16.5,9.5" strokeWidth="1.3" />
+      {/* Radar dot */}
+      <circle cx="16.5" cy="9.5" r="0.8" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconResolveur({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {/* Circle */}
+      <circle cx="10" cy="10" r="7.5" />
+      {/* Lightning bolt */}
+      <polyline points="11.5,3.5 8,10.5 11,10.5 8.5,16.5" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -216,6 +244,13 @@ const navSections: NavSection[] = [
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: IconSettings },
+    ],
+  },
+  {
+    title: "COMMANDEMENT",
+    items: [
+      { href: "/dashboard/commandant", label: "Commandant", icon: IconCommandant, badge: "PRO" },
+      { href: "/dashboard/resolveur", label: "Résolveur", icon: IconResolveur },
     ],
   },
 ];
@@ -319,9 +354,15 @@ function NavContent({
                               {item.badge > 9 ? "9+" : item.badge}
                             </span>
                           )}
-                          {/* String badge (e.g. "NEW") */}
+                          {/* String badge (e.g. "NEW" → indigo, "PRO" → purple) */}
                           {typeof item.badge === "string" && (
-                            <span className="ml-auto bg-indigo-600 text-white text-[9px] font-bold rounded px-1.5 py-0.5 leading-none tracking-wide">
+                            <span
+                              className={`ml-auto text-white text-[9px] font-bold rounded px-1.5 py-0.5 leading-none tracking-wide ${
+                                item.badge === "PRO"
+                                  ? "bg-purple-600"
+                                  : "bg-indigo-600"
+                              }`}
+                            >
                               {item.badge}
                             </span>
                           )}
