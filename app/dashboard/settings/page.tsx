@@ -91,12 +91,21 @@ export default function SettingsPage() {
   const [activeSection, setActiveSection] = useState<NavSection>("profile");
   const [deleteConfirm, setDeleteConfirm] = useState(false);
 
-  const sectionRefs = {
-    profile: useRef<HTMLDivElement>(null),
-    notifications: useRef<HTMLDivElement>(null),
-    api: useRef<HTMLDivElement>(null),
-    compliance: useRef<HTMLDivElement>(null),
-    support: useRef<HTMLDivElement>(null),
+  // Refs individuelles (stables) — passées directement à `ref={}` dans le JSX.
+  // La règle react-hooks/refs interdit d'accéder à un ref via une propriété d'objet
+  // pendant le rendu, d'où ces variables dédiées.
+  const profileRef = useRef<HTMLDivElement>(null);
+  const notificationsRef = useRef<HTMLDivElement>(null);
+  const apiRef = useRef<HTMLDivElement>(null);
+  const complianceRef = useRef<HTMLDivElement>(null);
+  const supportRef = useRef<HTMLDivElement>(null);
+  // Map réutilisée hors rendu (scroll + IntersectionObserver).
+  const sectionRefs: Record<NavSection, React.RefObject<HTMLDivElement | null>> = {
+    profile: profileRef,
+    notifications: notificationsRef,
+    api: apiRef,
+    compliance: complianceRef,
+    support: supportRef,
   };
 
   const handleSave = async () => {
@@ -178,7 +187,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Profile section */}
-        <div ref={sectionRefs.profile} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={profileRef} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Profil</h3>
             <p className="text-xs text-slate-400 mt-0.5">Vos informations personnelles et professionnelles</p>
@@ -255,7 +264,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Notifications section */}
-        <div ref={sectionRefs.notifications} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={notificationsRef} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Notifications</h3>
             <p className="text-xs text-slate-400 mt-0.5">Choisissez les alertes que vous souhaitez recevoir</p>
@@ -286,7 +295,7 @@ export default function SettingsPage() {
         </div>
 
         {/* API section */}
-        <div ref={sectionRefs.api} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={apiRef} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Clé API</h3>
             <p className="text-xs text-slate-400 mt-0.5">Accédez à l&apos;API REST CompeteIQ depuis vos applications</p>
@@ -334,7 +343,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Conformité & Sécurité section */}
-        <div ref={sectionRefs.compliance} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={complianceRef} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Conformité &amp; Sécurité</h3>
             <p className="text-xs text-slate-400 mt-0.5">Certifications et garanties de conformité de votre compte</p>
@@ -366,7 +375,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Support dédié section */}
-        <div ref={sectionRefs.support} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={supportRef} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Support dédié</h3>
             <p className="text-xs text-slate-400 mt-0.5">Votre interlocuteur privilégié chez CompeteIQ</p>

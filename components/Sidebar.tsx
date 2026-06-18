@@ -77,6 +77,14 @@ function IconSettings({ className }: { className?: string }) {
   );
 }
 
+function IconPipeline({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2 1 1 0 0 0 1 1h1a2 2 0 0 1 2 2 1 1 0 0 0 1 1h.5a2 2 0 1 1 0 2H14a3 3 0 0 1-3-3 1 1 0 0 0-1-1H9a3 3 0 0 1-3-3 1 1 0 0 0-1-1 2 2 0 0 1-2-2zm0 10a2 2 0 0 1 2-2h6a1 1 0 0 0 0 2H5a2 2 0 0 1-2 0z" />
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -143,6 +151,12 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitors", label: "Concurrents", icon: IconCompetitors },
       { href: "/dashboard/alerts", label: "Alertes", icon: IconAlerts, badge: 3 },
       { href: "/dashboard/reports", label: "Rapports", icon: IconReports },
+    ],
+  },
+  {
+    title: "MATCHING FREELANCE",
+    items: [
+      { href: "/dashboard/pipeline", label: "Pipeline", icon: IconPipeline },
     ],
   },
   {
