@@ -2473,6 +2473,19 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesTerritoryImbalanceCoverageGapEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Territory map: grid with unequal cells — imbalance */}
+      <rect x="2" y="3" width="7" height="7" rx="0.8"/>
+      <rect x="11" y="3" width="7" height="4" rx="0.8" opacity="0.5"/>
+      <rect x="11" y="9" width="7" height="8" rx="0.8" opacity="0.5"/>
+      <rect x="2" y="12" width="7" height="5" rx="0.8"/>
+      <path d="M9 6.5 L11 6.5 M9 14.5 L11 11" strokeDasharray="1.5 1" opacity="0.6" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesCustomerHealthScoreDeteriorationEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2890,6 +2903,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-competitive-intelligence-battle-card-engine", label: "Competitive Intel", icon: IconSalesCompetitiveIntelligenceBattleCardEngine },
       { href: "/dashboard/sales-onboarding-ramp-intelligence-engine", label: "Onboarding Ramp", icon: IconSalesOnboardingRampIntelligenceEngine },
       { href: "/dashboard/sales-customer-health-score-deterioration-engine", label: "Customer Health", icon: IconSalesCustomerHealthScoreDeteriorationEngine },
+      { href: "/dashboard/sales-territory-imbalance-coverage-gap-engine", label: "Territory Balance", icon: IconSalesTerritoryImbalanceCoverageGapEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
