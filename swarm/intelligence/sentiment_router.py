@@ -166,7 +166,11 @@ class SentimentRouter:
                 keywords_matched=scores["Méfiant"],
             )
 
-        best = max(scores, key=lambda k: len(scores[k]))
+        # Négatif wins ties — a rejection is never ambiguous
+        def _rank(k: str) -> tuple:
+            return (len(scores[k]), 1 if k == "Négatif" else 0)
+
+        best = max(scores, key=_rank)
         matched = scores[best]
 
         if not matched:
