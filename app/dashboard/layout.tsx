@@ -1,5 +1,6 @@
 import Sidebar from "@/components/Sidebar";
 import Topbar from "@/components/Topbar";
+import ExpertAssistant from "@/components/ExpertAssistant";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,6 +10,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <Topbar />
         <main className="flex-1 p-4 md:p-6 bg-slate-50">{children}</main>
       </div>
+      <ExpertAssistant />
     </div>
   );
 }
