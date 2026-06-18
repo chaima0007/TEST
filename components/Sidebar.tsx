@@ -2630,6 +2630,21 @@ function IconSalesPriceSensitivityNegotiationLeverageEngine({ className }: { cla
   );
 }
 
+function IconSalesMultithreadingDepthRelationshipBreadthEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Multithreading: network nodes with varying connection density */}
+      <circle cx="10" cy="4" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="3"  cy="14" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="17" cy="14" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="10" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+      <path d="M10 5.5 L3 12.5 M10 5.5 L17 12.5 M10 5.5 L10 14.5" strokeLinecap="round" strokeWidth="1.2"/>
+      <path d="M3 12.5 L10 14.5 M17 12.5 L10 14.5 M3 12.5 L17 12.5" strokeLinecap="round" strokeWidth="0.9" opacity="0.5"/>
+      <circle cx="17" cy="14" r="1.5" fill="none" stroke="#ef4444" strokeWidth="1.8"/>
+    </svg>
+  );
+}
+
 function IconSalesBuyerIntentSignalDecayEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2985,6 +3000,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pipeline-stage-inflation-crm-hygiene-engine", label: "Pipeline Hygiene", icon: IconSalesPipelineStageInflationCrmHygieneEngine },
       { href: "/dashboard/sales-competitive-win-loss-pattern-engine", label: "Competitive Wins", icon: IconSalesCompetitiveWinLossPatternEngine },
       { href: "/dashboard/sales-buyer-intent-signal-decay-engine", label: "Intent Decay", icon: IconSalesBuyerIntentSignalDecayEngine },
+      { href: "/dashboard/sales-multithreading-depth-relationship-breadth-engine", label: "Multithreading", icon: IconSalesMultithreadingDepthRelationshipBreadthEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
