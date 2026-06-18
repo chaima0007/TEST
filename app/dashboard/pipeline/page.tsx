@@ -26,6 +26,25 @@ const STEP_LABELS: Record<string, string> = {
 };
 const ALL_STEPS = ["ingest", "filter", "match", "enrich", "notify"];
 
+// ─── Conseiller / Simulateur (réponse de /advice) ────────────────────────────
+interface RankedOpportunity {
+  id: string; title: string; profileName: string; budget: number | null;
+  probability: number; expectedValue: number; recommendation: "strong" | "consider" | "skip";
+}
+interface Advice {
+  ranked: RankedOpportunity[];
+  top: RankedOpportunity | null;
+  portfolio: { trials: number; expectedRevenue: number; expectedWins: number; p10: number; p50: number; p90: number };
+  summary: string;
+  generatedBy: "heuristic" | "llm";
+}
+const eur = (n: number) => `${n.toLocaleString("fr-FR")} €`;
+const recoMeta: Record<string, { label: string; cls: string }> = {
+  strong: { label: "À viser", cls: "bg-green-50 text-[#107C10]" },
+  consider: { label: "À étudier", cls: "bg-amber-50 text-amber-700" },
+  skip: { label: "Faible", cls: "bg-slate-100 text-slate-500" },
+};
+
 const statusBadge: Record<string, string> = {
   running: "bg-blue-50 text-[#0078D4]",
   completed: "bg-green-50 text-[#107C10]",
@@ -36,6 +55,7 @@ export default function PipelinePage() {
   const [runs, setRuns] = useState<RunSummary[]>([]);
   const [threshold, setThreshold] = useState<number | null>(null);
   const [selected, setSelected] = useState<RunDetail | null>(null);
+  const [advice, setAdvice] = useState<Advice | null>(null);
   const [loading, setLoading] = useState(true);
   const [running, setRunning] = useState(false);
 
@@ -49,9 +69,17 @@ export default function PipelinePage() {
   }, []);
 
   const loadDetail = useCallback(async (id: string) => {
+    setAdvice(null);
     const res = await fetch(`/api/pipeline/runs/${id}`);
     if (res.ok) setSelected(await res.json());
+    // Agent Conseiller : classement + simulation de réussite + recommandation.
+    const adv = await fetch(`/api/pipeline/runs/${id}/advice`);
+    if (adv.ok) setAdvice(await adv.json());
   }, []);
+
+  // Probabilité / valeur attendue par match (depuis le conseiller), indexées par id.
+  const simByMatch: Record<string, RankedOpportunity> = {};
+  for (const r of advice?.ranked ?? []) simByMatch[r.id] = r;
 
   useEffect(() => {
     fetch("/api/pipeline/run")
@@ -204,6 +232,37 @@ export default function PipelinePage() {
                 </div>
               </div>
 
+              {/* Conseiller : recommandation + simulation de réussite */}
+              {advice && advice.ranked.length > 0 && (
+                <div className="rounded-lg overflow-hidden border border-indigo-100" style={{ background: "linear-gradient(135deg,#eef2ff,#ffffff)" }}>
+                  <div className="px-5 py-3 border-b border-indigo-100 flex items-center justify-between">
+                    <h2 className="text-[13px] font-semibold text-slate-900">Conseil de l&apos;agent</h2>
+                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white text-indigo-600 border border-indigo-100">
+                      {advice.generatedBy === "llm" ? "rédigé par Claude" : "analyse heuristique"}
+                    </span>
+                  </div>
+                  <div className="px-5 py-4 space-y-3">
+                    <p className="text-[13px] text-slate-700 leading-snug">{advice.summary}</p>
+                    {/* Simulation de réussite (Monte-Carlo) */}
+                    <div className="grid grid-cols-3 gap-2">
+                      {[
+                        { l: "Revenu médian", v: eur(advice.portfolio.p50) },
+                        { l: "Missions (moy.)", v: String(advice.portfolio.expectedWins) },
+                        { l: "Fourchette p10–p90", v: `${eur(advice.portfolio.p10)} – ${eur(advice.portfolio.p90)}` },
+                      ].map((c) => (
+                        <div key={c.l} className="bg-white rounded-md border border-indigo-100 px-3 py-2">
+                          <p className="text-[10px] text-slate-400 uppercase tracking-wide">{c.l}</p>
+                          <p className="text-[13px] font-semibold text-slate-800 tabular-nums">{c.v}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-[10px] text-slate-400">
+                      Simulation sur {advice.portfolio.trials} scénarios · modèle déterministe
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Propositions à valider */}
               <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
                 <div className="px-5 py-3.5 border-b border-slate-100">
@@ -220,6 +279,19 @@ export default function PipelinePage() {
                             <p className="text-[13px] font-medium text-slate-900">{m.analyzedJob.title}</p>
                             <p className="text-[12px] text-slate-500">→ {m.profile.name}</p>
                             <p className="text-[12px] text-slate-400 mt-1">{m.snippet}</p>
+                            {simByMatch[m.id] && (
+                              <div className="flex flex-wrap items-center gap-2 mt-2">
+                                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${recoMeta[simByMatch[m.id].recommendation].cls}`}>
+                                  {recoMeta[simByMatch[m.id].recommendation].label}
+                                </span>
+                                <span className="text-[11px] text-slate-500 tabular-nums">
+                                  {Math.round(simByMatch[m.id].probability * 100)}% de réussite
+                                </span>
+                                <span className="text-[11px] text-slate-500 tabular-nums">
+                                  · valeur attendue {eur(simByMatch[m.id].expectedValue)}
+                                </span>
+                              </div>
+                            )}
                           </div>
                           <span className="text-[13px] font-bold text-[#0078D4] tabular-nums flex-shrink-0">
                             {Math.round(m.confidence * 100)}%
