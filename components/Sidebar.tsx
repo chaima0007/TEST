@@ -1178,6 +1178,18 @@ function IconAccountExpansionIntelligence({ className }: { className?: string })
   );
 }
 
+function IconCustomerReferralIntelligence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="6" r="2.5" fill="currentColor" opacity={0.5} />
+      <circle cx="4" cy="13" r="2" fill="currentColor" opacity={0.4} />
+      <circle cx="16" cy="13" r="2" fill="currentColor" opacity={0.4} />
+      <path d="M10 8.5L4.5 11.5M10 8.5L15.5 11.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <path d="M4.5 13L8 16M15.5 13L12 16" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  );
+}
+
 function IconSalesProcessCompliance({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1405,6 +1417,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/prospect-engagement-velocity", label: "Prospect Velocity", icon: IconProspectEngagementVelocity },
       { href: "/dashboard/account-expansion-intelligence", label: "Account Expansion", icon: IconAccountExpansionIntelligence },
       { href: "/dashboard/sales-data-integrity-monitor", label: "Data Integrity", icon: IconSalesDataIntegrityMonitor },
+      { href: "/dashboard/customer-referral-intelligence", label: "Referral Intel", icon: IconCustomerReferralIntelligence },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
