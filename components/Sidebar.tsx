@@ -215,6 +215,14 @@ function IconInvoice({ className }: { className?: string }) {
   );
 }
 
+function IconEnricher({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconLeadScorer({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -379,6 +387,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/workflow", label: "Orchestrateur", icon: IconWorkflow },
       { href: "/dashboard/scorecard", label: "Scorecard Prospects", icon: IconScorecard },
       { href: "/dashboard/leads", label: "Scoring Leads", icon: IconLeadScorer },
+      { href: "/dashboard/enricher", label: "Enrichissement", icon: IconEnricher },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },

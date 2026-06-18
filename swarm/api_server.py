@@ -57,6 +57,7 @@ from intelligence.prospect_scorecard import (
     ProspectScorecard, BANTDimension, BehavioralDimension,
     TemporalDimension, MarketFitDimension, ScorecardTier,
 )
+from intelligence.prospect_enricher import ProspectEnricher
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -112,6 +113,7 @@ _qualification_engine = LeadQualificationEngine()
 _followup_scheduler = FollowUpScheduler()
 _workflow_orchestrator = WorkflowOrchestrator()
 _prospect_scorecard = ProspectScorecard()
+_prospect_enricher = ProspectEnricher()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1542,6 +1544,44 @@ def scorecard_get(prospect_id: str):
 def scorecard_reset():
     _prospect_scorecard.reset()
     return {"status": "reset"}
+
+
+# ── Prospect Enricher ─────────────────────────────────────────────────────────
+
+class EnrichReq(BaseModel):
+    company_id:     str
+    name:           str
+    sector:         str
+    website:        str = ""
+    contact_email:  str = ""
+    pagespeed_score: int = 50
+    load_time_ms:   int = 3000
+
+
+class EnrichBatchReq(BaseModel):
+    prospects:  List[Dict[str, Any]]
+    min_score:  Optional[int] = None
+
+
+@app.post("/enrich", tags=["Enricher"])
+def enrich_prospect(req: EnrichReq):
+    enriched = _prospect_enricher.enrich(req.dict())
+    return enriched.to_dict()
+
+
+@app.post("/enrich/batch", tags=["Enricher"])
+def enrich_batch(req: EnrichBatchReq):
+    if req.min_score is not None:
+        results = _prospect_enricher.filter_priority(req.prospects, min_score=req.min_score)
+    else:
+        results = _prospect_enricher.enrich_batch(req.prospects)
+    return {"count": len(results), "prospects": [e.to_dict() for e in results]}
+
+
+@app.post("/enrich/tier-a", tags=["Enricher"])
+def enrich_tier_a(req: EnrichBatchReq):
+    results = _prospect_enricher.get_tier_a(req.prospects)
+    return {"count": len(results), "prospects": [e.to_dict() for e in results]}
 
 
 # ── Lead Scorer ───────────────────────────────────────────────────────────────
