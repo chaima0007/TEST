@@ -1474,6 +1474,78 @@ function IconSalesRepCapacityOverloadDetector({ className }: { className?: strin
   );
 }
 
+function IconSalesCoachingEffectivenessEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Person with upward trend arrow (coaching = growth) */}
+      <circle cx="10" cy="5" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M6 19v-2a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <path d="M14 13l2-2 2 2" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+      <path d="M16 11v5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  );
+}
+
+function IconSalesProposalConversionIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Document with checkmark and conversion arrow */}
+      <rect x="4" y="2" width="10" height="13" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.3" />
+      <line x1="7" y1="6" x2="11" y2="6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="7" y1="9" x2="11" y2="9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M12 15l2 2 3-3" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconSalesTerritoryCoverageIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Map with pins representing territory coverage */}
+      <path d="M3 4l4 2 6-3 4 2v11l-4-2-6 3-4-2V4z" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <circle cx="7" cy="9" r="1.5" fill="currentColor" opacity="0.9" />
+      <circle cx="13" cy="7" r="1.5" fill="currentColor" opacity="0.6" />
+      <line x1="7" y1="10.5" x2="13" y2="8.5" stroke="currentColor" strokeWidth="0.8" strokeDasharray="2 1.5" opacity="0.5" />
+    </svg>
+  );
+}
+
+function IconSalesCustomerRelationshipHealthEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Heart with pulse line (relationship health) */}
+      <path d="M10 16s-7-4.5-7-8.5A4 4 0 0 1 10 5a4 4 0 0 1 7 2.5C17 11.5 10 16 10 16z"
+        fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+      <polyline points="4,10 7,10 8.5,7 10,13 11.5,10 13,10 16,10"
+        fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
+    </svg>
+  );
+}
+
+function IconSalesForecastAccuracyIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 14l4-5 3 3 3-4 4 2" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 3v14h14" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+      <circle cx="16" cy="10" r="1.2" fill="currentColor" opacity="0.7" />
+      <polyline points="14,6 16,10 18,8" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+    </svg>
+  );
+}
+
+function IconPipelineGenerationEfficiencyEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Funnel with activity arrows entering top */}
+      <path d="M3 3h14l-5 6v6l-4-2V9L3 3z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+      <line x1="6" y1="1" x2="6" y2="3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="10" y1="1" x2="10" y2="3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="14" y1="1" x2="14" y2="3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <circle cx="10" cy="15" r="1.5" fill="currentColor" opacity="0.7" />
+    </svg>
+  );
+}
+
 function IconSalesObjectionPatternIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1893,6 +1965,12 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-cycle-velocity-degradation-engine", label: "Cycle Velocity", icon: IconSalesCycleVelocityDegradationEngine },
       { href: "/dashboard/sales-incentive-compensation-risk-engine", label: "Incentive Comp Risk", icon: IconSalesIncentiveCompensationRiskEngine },
       { href: "/dashboard/sales-objection-pattern-intelligence-engine", label: "Objection Patterns", icon: IconSalesObjectionPatternIntelligenceEngine },
+      { href: "/dashboard/pipeline-generation-efficiency-engine", label: "Pipeline Efficiency", icon: IconPipelineGenerationEfficiencyEngine },
+      { href: "/dashboard/sales-coaching-effectiveness-engine", label: "Coaching Effectiveness", icon: IconSalesCoachingEffectivenessEngine },
+      { href: "/dashboard/sales-proposal-conversion-intelligence-engine", label: "Proposal Conversion", icon: IconSalesProposalConversionIntelligenceEngine },
+      { href: "/dashboard/sales-territory-coverage-intelligence-engine", label: "Territory Coverage", icon: IconSalesTerritoryCoverageIntelligenceEngine },
+      { href: "/dashboard/sales-customer-relationship-health-engine", label: "Customer Relationship", icon: IconSalesCustomerRelationshipHealthEngine },
+      { href: "/dashboard/sales-forecast-accuracy-intelligence-engine", label: "Forecast Accuracy", icon: IconSalesForecastAccuracyIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
