@@ -356,6 +356,14 @@ function IconCustomerSuccessPlaybook({ className }: { className?: string }) {
   );
 }
 
+function IconTerritoryOptimizer({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconPipelineVelocity({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -708,6 +716,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/expansion-revenue", label: "Revenus Expansion", icon: IconExpansionRevenue },
       { href: "/dashboard/win-loss-intelligence", label: "Analyse Win/Loss", icon: IconWinLossIntelligence },
       { href: "/dashboard/customer-success-playbook", label: "Playbook CS", icon: IconCustomerSuccessPlaybook },
+      { href: "/dashboard/territory-optimizer", label: "Territoires", icon: IconTerritoryOptimizer },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
