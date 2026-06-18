@@ -595,6 +595,24 @@ function IconMutualActionPlan({ className }: { className?: string }) {
   );
 }
 
+function IconGhostingPredictor({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 2a7 7 0 00-7 7c0 2.5 1.3 4.7 3.2 6l.8.6V18h6v-2.4l.8-.6A7 7 0 0010 2zm-1 13h2v1H9v-1z" clipRule="evenodd" opacity="0.6" />
+      <path d="M8 7c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1zm3 0c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1z" fill="#f87171" />
+    </svg>
+  );
+}
+
+function IconTerritoryWhitespace({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" opacity="0.7" />
+      <path d="M8 10h4M10 8v4" stroke="#22d3ee" strokeWidth="1.2" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconProspectDigitalFootprint({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1240,6 +1258,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/call-tone-analyzer", label: "Call Tone AI", icon: IconCallToneAnalyzer },
       { href: "/dashboard/prospect-digital-footprint", label: "Digital Footprint", icon: IconProspectDigitalFootprint },
       { href: "/dashboard/mutual-action-plan", label: "MAP Tracker", icon: IconMutualActionPlan },
+      { href: "/dashboard/territory-whitespace", label: "Territory WS", icon: IconTerritoryWhitespace },
+      { href: "/dashboard/ghosting-predictor", label: "Ghost Predictor", icon: IconGhostingPredictor },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
