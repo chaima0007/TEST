@@ -526,6 +526,15 @@ function IconPriceNegotiation({ className }: { className?: string }) {
   );
 }
 
+function IconAccountExpansion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
+      <path d="M5 14a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" />
+    </svg>
+  );
+}
+
 function IconPartnerChannel({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1020,6 +1029,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/quota-gap-analysis", label: "Quota Gap Analysis", icon: IconQuotaGap },
       { href: "/dashboard/partner-channel", label: "Partner Channel", icon: IconPartnerChannel },
       { href: "/dashboard/price-negotiation", label: "Price Negotiation", icon: IconPriceNegotiation },
+      { href: "/dashboard/account-expansion", label: "Account Expansion", icon: IconAccountExpansion },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
