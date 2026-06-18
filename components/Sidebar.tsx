@@ -2473,6 +2473,19 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesBuyerPersonaMismatchIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Persona mismatch: two people, one with X — wrong person */}
+      <circle cx="7" cy="6" r="2.5"/>
+      <path d="M2 17 C2 13 12 13 12 17" strokeLinecap="round"/>
+      <circle cx="15" cy="6" r="2.5" opacity="0.4"/>
+      <line x1="12.5" y1="3.5" x2="17.5" y2="8.5" strokeLinecap="round" stroke="#ef4444" strokeWidth="1.8"/>
+      <line x1="17.5" y1="3.5" x2="12.5" y2="8.5" strokeLinecap="round" stroke="#ef4444" strokeWidth="1.8"/>
+    </svg>
+  );
+}
+
 function IconSalesDealVelocityCollapseIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2813,6 +2826,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-quota-sandbag-overcommit-intelligence-engine", label: "Quota Gaming", icon: IconSalesQuotaSandbagOvercommitIntelligenceEngine },
       { href: "/dashboard/sales-rep-burnout-attrition-risk-intelligence-engine", label: "Burnout & Flight Risk", icon: IconSalesRepBurnoutAttritionRiskIntelligenceEngine },
       { href: "/dashboard/sales-deal-velocity-collapse-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityCollapseIntelligenceEngine },
+      { href: "/dashboard/sales-buyer-persona-mismatch-intelligence-engine", label: "Persona Mismatch", icon: IconSalesBuyerPersonaMismatchIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
