@@ -1460,6 +1460,19 @@ function IconSalesTerritoryOverlapConflictEngine({ className }: { className?: st
   );
 }
 
+function IconSalesPipelineConcentrationRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="2" y="13" width="3" height="5" rx="0.5" opacity="0.5" />
+      <rect x="6.5" y="9" width="3" height="9" rx="0.5" opacity="0.5" />
+      <rect x="11" y="4" width="3" height="14" rx="0.5" opacity="0.9" fill="#f87171" />
+      <rect x="15.5" y="7" width="3" height="11" rx="0.5" opacity="0.5" />
+      <circle cx="12.5" cy="4" r="2.5" fill="#fbbf24" opacity="0.9" />
+      <path d="M11.5 4h2M12.5 3v2" stroke="white" strokeWidth="1" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconCustomerLTVErosionDetector({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1771,6 +1784,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/account-executive-ramp-velocity-engine", label: "AE Ramp Velocity", icon: IconAccountExecutiveRampVelocityEngine },
       { href: "/dashboard/sales-territory-overlap-conflict-engine", label: "Territory Overlap", icon: IconSalesTerritoryOverlapConflictEngine },
       { href: "/dashboard/customer-ltv-erosion-detector", label: "LTV Erosion", icon: IconCustomerLTVErosionDetector },
+      { href: "/dashboard/sales-pipeline-concentration-risk-engine", label: "Pipeline Concentration", icon: IconSalesPipelineConcentrationRiskEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
