@@ -152,7 +152,7 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">52</div>
+    <div class="card-value">55</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
@@ -166,8 +166,8 @@
 
   <div class="card" style="--accent:#ffaa00">
     <div class="card-title">Agents IA en jeu</div>
-    <div class="card-value">27</div>
-    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader · Commandant · Résolveur</div>
+    <div class="card-value">30</div>
+    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique · CityPulse · Predictive · Emotion · FlashMob · Honk · CopConfusion · TrendRadar · Atmosphere · WeatherFX · CarShader · Commandant · Résolveur · Backroom · Monster · DreamZone</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--gold)"></div></div>
   </div>
 
@@ -252,6 +252,21 @@
         <div class="agent-role">resolveur.js — Director IA PREMIUM</div>
         <div class="agent-status active">5 situations · nitro urgence · bonus dynamiques · L4D Director</div>
       </div>
+      <div class="agent-card">
+        <div class="agent-name">BackroomAgent 🟨</div>
+        <div class="agent-role">backroom.js — espace liminal onirique</div>
+        <div class="agent-status active">Couloirs jaunes infinis · L'Entité · fuite à 55 km/h · fog dense</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">MonsterAgent 👁</div>
+        <div class="agent-role">monster.js — 3 créatures nocturnes</div>
+        <div class="agent-status active">L'Ombre · La Bête · Le Cyclope · vignette de peur</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">DreamZoneAgent ✨</div>
+        <div class="agent-role">dreamzone.js — 6 zones magiques</div>
+        <div class="agent-status music">Âmes · Cristal · Aiguilles · Source · Vortex · Miroir</div>
+      </div>
     </div>
   </div>
 
@@ -309,6 +324,9 @@
       <li class="system-item"><span class="sys-dot" style="background:#ffcc44"></span><span class="sys-name">CarShaderAgent — CubeCamera 64px env map, clearcoat shimmer, saleté progressive crash→garage, traffic upgrade</span><span class="sys-tag hot">AAA</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#ff5500"></span><span class="sys-name">CommandantAgent — général tactique, 4 plans militaires (Poursuite→Flanquement→Encerclement→Force Max), radio intercept</span><span class="sys-tag hot">PREMIUM</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#00ffcc"></span><span class="sys-name">ResolveurAgent — Director IA (L4D), 5 situations (cerné/épave/inactif/revanche/record), résolution dynamique + bonus</span><span class="sys-tag hot">PREMIUM</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#c8b040"></span><span class="sys-name">BackroomAgent — espace liminal jaune infini, L'Entité poursuivante, fuite 55 km/h, FogExp2 dense, overlay Backroom</span><span class="sys-tag hot">ONIRIQUE</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#880033"></span><span class="sys-name">MonsterAgent — 3 créatures nocturnes procédurales : L'Ombre (speed 3.2), La Bête (speed 5.5), Le Cyclope (flottant), vignette peur</span><span class="sys-tag hot">HORREUR</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa44ff"></span><span class="sys-name">DreamZoneAgent — 6 zones magiques avec particules : Jardin des Âmes, Cathédrale de Cristal, Forêt des Aiguilles, Source (heal), Vortex (téléport), Lac des Reflets</span><span class="sys-tag hot">MAGIQUE</span></li>
     </ul>
   </div>
 
@@ -316,6 +334,7 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
+      <li class="log-item"><span class="log-time">Ronde 23</span><span class="log-msg"><strong>BackroomAgent + MonsterAgent + DreamZoneAgent</strong> — Onirique &amp; Horreur : espace liminal jaune avec L'Entité poursuivante (fuite à 55 km/h, FogExp2 dense), 3 créatures nocturnes procédurales (L'Ombre silhouette impossible, La Bête quadrupède à épines dorsales, Le Cyclope œil géant flottant), 6 zones magiques avec particules AdditiveBlending (Jardin des Âmes, Cathédrale de Cristal, Forêt des Aiguilles, Source de Lumière [heal], Vortex Cosmique [téléport], Lac des Reflets)</span></li>
       <li class="log-item"><span class="log-time">Ronde 22</span><span class="log-msg"><strong>COMMANDANT + RÉSOLVEUR</strong> — deux agents PREMIUM : général tactique (4 plans militaires, radio intercept, Force Maximale escalade wanted), Director IA (5 situations détectées : cerné/épave/inactif/revanche/record, résolutions dynamiques, nitro d'urgence, +900 pts revanche)</span></li>
       <li class="log-item"><span class="log-time">Ronde 21</span><span class="log-msg"><strong>Visual Excellence Agents</strong> — TrendRadarAgent (espion 18 techs AAA, OSINT), AtmosphereAgent (sky GLSL zenith/mid/horizon, 2200 étoiles, 6 god rays, halos néon), WeatherFXAgent (3000 particules pluie, 16 flaques PBR, éclairs), CarShaderAgent (CubeCamera env, clearcoat shimmer, saleté crash, Forza/GT7/NFS)</span></li>
       <li class="log-item"><span class="log-time">Ronde 20</span><span class="log-msg"><strong>NEXUS CITY</strong> — Ville surréaliste 5 districts : Cristaux (Nord), Jungle Mécanique (Sud), Ville Renversée (Ouest), Neon Dystopie (Est), Place des Miroirs (Centre) ; 5 trampolines, 4 couloirs de vitesse, portail de téléportation Nord↔Sud, 5 landmarks procéduraux, lampadaires thématiques par district</span></li>
@@ -352,9 +371,9 @@
     </div>
   </div>
 
-  <!-- Ronde 22 — Pipeline -->
+  <!-- Ronde 24 — Pipeline -->
   <div class="card" style="--accent:#00c8ff">
-    <div class="card-title">Prochaine construction — Ronde 22</div>
+    <div class="card-title">Prochaine construction — Ronde 24</div>
     <ul class="system-list">
       <li class="system-item"><span class="sys-dot" style="background:#ff2288"></span><span class="sys-name">Post-Processing Stack — bloom WebGL shader, vignette, chromatic aberration sur vitesse élevée</span><span class="sys-tag wip">Planifié</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#aa44ff"></span><span class="sys-name">SoundscapeAgent — audio 3D positionnel (pluie, vent, ambiance quartier) via PannerNode</span><span class="sys-tag wip">Planifié</span></li>
@@ -369,7 +388,7 @@
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
   Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
-  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">52 systèmes · 172/172 tests · 27 agents IA — Ronde 22 : COMMANDANT + RÉSOLVEUR PREMIUM</span>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">55 systèmes · 172/172 tests · 30 agents IA — Ronde 23 : BACKROOM + MONSTERS + DREAMZONES ONIRIQUE</span>
 </footer>
 
 <script>

@@ -41,6 +41,9 @@ import { WeatherFXAgent }      from './weatherfx.js';
 import { CarShaderAgent }      from './carshader.js';
 import { CommandantAgent }     from './commandant.js';
 import { ResolveurAgent }      from './resolveur.js';
+import { BackroomAgent }       from './backroom.js';
+import { MonsterAgent }        from './monster.js';
+import { DreamZoneAgent }      from './dreamzone.js';
 
 const MAX_SPEED_KMH = 150;
 const MAX_SPEED_MS  = MAX_SPEED_KMH / 3.6;
@@ -129,6 +132,11 @@ atmosphere.registerLamps(world.streetLamps);
 // Ronde 22 — Premium Agents
 const commandant   = new CommandantAgent();
 const resolveur    = new ResolveurAgent();
+
+// Ronde 23 — Onirique & Horreur
+const backroom  = new BackroomAgent(scene);
+const monster   = new MonsterAgent(scene);
+const dreamzone = new DreamZoneAgent(scene);
 
 // Sprite "!" pour les klaxons (partagé entre toutes les voitures klaxonnantes)
 const _honkSprites = new Map(); // mesh → { sprite, timer }
@@ -260,6 +268,11 @@ const _nexusPhrases = [
   (v, d, w, dc, wx) => {
     if (commandant.isActive()) return `COMMANDANT: ${commandant.getPlanLabel()} | Menace ${Math.round(commandant.getThreatLevel() * 100)}%`;
     return `COMMANDANT en veille | RÉSOLVEUR: ${resolveur.getResolveCount()} résolution(s) — bonus +${_resolveurBonusTotal}`;
+  },
+  (v, d, w, dc, wx) => {
+    if (backroom.isActive()) return `BACKROOM — Entité à ${Math.round(backroom.getEntityDist())}m | Fuite ${Math.round(backroom.getEscapePct() * 100)}%`;
+    if (monster.isActive()) return `${monster.getMonsterType()} — Distance ${Math.round(monster.getDistance())}m | Peur ${Math.round(monster.getFearLevel() * 100)}%`;
+    return `ONIRIQUE — Zones visitées ${dreamzone.getVisitedCount()}/${dreamzone.getTotalCount()} | ${monster.getScareCount()} frayeur(s)`;
   },
 ];
 let _nexusIdx = 0;
@@ -539,6 +552,7 @@ function animate() {
   const _trendNotif = trendRadar.popNotif();
   if (_trendNotif) _showNotif(_trendNotif);
   atmosphere.update(dt, dayCycle);
+  backroom.applySceneOverride(scene);
   weatherFX.update(dt, weather.getWeatherId(), playerPos);
   carShader.update(dt, vehicle, dayCycle);
 
@@ -552,6 +566,31 @@ function animate() {
   if (_resNotif) _showNotif(_resNotif);
   const _resBonus = resolveur.popBonus();
   if (_resBonus > 0) _resolveurBonusTotal += _resBonus;
+  const _resNitro = resolveur.popNitroGrant();
+  if (_resNitro) nitro._charges = Math.min(3, nitro._charges + 1);
+
+  // --- Ronde 23 — Onirique & Horreur ---
+  backroom.update(dt, playerPos, vehicle, dayCycle.isNight(), wanted.level);
+  const _backNotif = backroom.popNotif();
+  if (_backNotif) _showNotif(_backNotif);
+
+  monster.update(dt, playerPos, dayCycle.isNight(), wanted.level, vehicle);
+  const _monNotif = monster.popNotif();
+  if (_monNotif) _showNotif(_monNotif);
+
+  dreamzone.update(dt, playerPos, vehicleDamage);
+  const _dzNotif = dreamzone.popNotif();
+  if (_dzNotif) _showNotif(_dzNotif);
+  const _dzBonus = dreamzone.popBonus();
+  if (_dzBonus > 0) _resolveurBonusTotal += _dzBonus;
+  const _dzHeal = dreamzone.popHeal();
+  if (_dzHeal) { vehicleDamage.repair(vehicle._bodyMat); carShader.onRepair(); _showNotif('✨ Zone sacrée — Véhicule réparé !'); }
+  const _dzTeleport = dreamzone.popTeleport();
+  if (_dzTeleport) {
+    const _tpAngle = Math.random() * Math.PI * 2;
+    vehicle.mesh.position.set(Math.cos(_tpAngle) * 60, 0, Math.sin(_tpAngle) * 60);
+    _showNotif('⬛ VORTEX COSMIQUE — Téléportation !');
+  }
 
   // Teinte émotionnelle de la lumière ambiante
   const _tint = emotion.getColorTint();
@@ -743,6 +782,28 @@ function animate() {
         : `En veille | ${resolveur.getResolveCount()} résolution(s) | CD ${Math.round(resolveur.getCooldown())}s`,
       bar: resolveur.isActive() ? 1 : Math.max(0, 1 - resolveur.getCooldown() / 32),
       color: resolveur.isAnalyzing() ? '#00aaff' : '#00ffcc',
+    },
+    backroom: {
+      active: backroom.isActive(),
+      status: backroom.isActive()
+        ? `BACKROOM | Entité ${Math.round(backroom.getEntityDist())}m | ${Math.round(backroom.getTimer())}s | Fuite ${Math.round(backroom.getEscapePct() * 100)}%`
+        : 'En veille — tourne à droite la nuit',
+      bar: backroom.isActive() ? backroom.getEscapePct() : 0,
+      color: '#c8b040',
+    },
+    monster: {
+      active: monster.isActive(),
+      status: monster.isActive()
+        ? `${monster.getMonsterType()} | Dist. ${Math.round(monster.getDistance())}m | Peur ${Math.round(monster.getFearLevel() * 100)}%`
+        : `${monster.getScareCount()} frayeur(s) | CD ${Math.round(monster.getCooldown())}s`,
+      bar: monster.isActive() ? monster.getFearLevel() : 0,
+      color: '#880033',
+    },
+    dreamzone: {
+      active: true,
+      status: `Zones magiques ${dreamzone.getVisitedCount()}/${dreamzone.getTotalCount()} visitées`,
+      bar: dreamzone.getTotalCount() > 0 ? dreamzone.getVisitedCount() / dreamzone.getTotalCount() : 0,
+      color: '#aa44ff',
     },
   });
 
