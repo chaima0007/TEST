@@ -1777,6 +1777,19 @@ function IconSalesCRMAdoptionIntelligenceEngine({ className }: { className?: str
   );
 }
 
+function IconSalesDealDeskIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Scales/balance — deal desk pricing judgment */}
+      <line x1="10" y1="3" x2="10" y2="17" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <line x1="4" y1="6" x2="16" y2="6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+      <path d="M4 6 L2 11 A3 3 0 0 0 6 11 Z" fill="none" stroke="currentColor" strokeWidth="1.2"/>
+      <path d="M16 6 L14 11 A3 3 0 0 0 18 11 Z" fill="none" stroke="currentColor" strokeWidth="1.2"/>
+      <line x1="7" y1="17" x2="13" y2="17" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2277,6 +2290,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-multithreading-intelligence-engine", label: "Multithreading", icon: IconSalesMultithreadingIntelligenceEngine },
       { href: "/dashboard/sales-social-selling-intelligence-engine", label: "Social Selling", icon: IconSalesSocialSellingIntelligenceEngine },
       { href: "/dashboard/sales-crm-adoption-intelligence-engine", label: "CRM Adoption", icon: IconSalesCRMAdoptionIntelligenceEngine },
+      { href: "/dashboard/sales-deal-desk-intelligence-engine", label: "Deal Desk", icon: IconSalesDealDeskIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
