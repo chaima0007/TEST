@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { buildDetailedCharacter, CharacterAnimator } from './characters.js';
 
 // TrafficSystem — vie ambiante de la ville : voitures de circulation qui
 // roulent sur la grille de rues, et piétons qui errent sur les trottoirs.
@@ -73,30 +74,6 @@ function buildTrafficCarMesh(color) {
   return group;
 }
 
-function buildPedestrianMesh() {
-  const group = new THREE.Group();
-  const shirtColors = [0xcc4444, 0x4477cc, 0x44aa66, 0xccaa33, 0x9955cc, 0x777777];
-  const skinColors = [0xe0b08a, 0xc68a5e, 0x8d5a3c, 0xf0c9a0];
-
-  const bodyMat = new THREE.MeshStandardMaterial({
-    color: shirtColors[Math.floor(Math.random() * shirtColors.length)],
-    roughness: 0.8,
-  });
-  const headMat = new THREE.MeshStandardMaterial({
-    color: skinColors[Math.floor(Math.random() * skinColors.length)],
-    roughness: 0.8,
-  });
-
-  const body = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.9, 0.28), bodyMat);
-  body.position.y = 0.65;
-  group.add(body);
-
-  const head = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.32, 0.32), headMat);
-  head.position.y = 1.28;
-  group.add(head);
-
-  return group;
-}
 
 // Trouve la ligne de route la plus proche d'une coordonnée donnée, parmi une
 // liste de lignes (roadLines.xs ou .zs).
@@ -251,7 +228,7 @@ class TrafficCar {
 
 class Pedestrian {
   constructor(scene) {
-    this.mesh = buildPedestrianMesh();
+    this.mesh = buildDetailedCharacter();
     scene.add(this.mesh);
     this.personality = PERSONALITIES[Math.floor(Math.random() * PERSONALITIES.length)];
     this.speed = (PED_SPEED_RANGE[0] + Math.random() * (PED_SPEED_RANGE[1] - PED_SPEED_RANGE[0])) * this.personality.speedMult;
@@ -310,14 +287,12 @@ class Pedestrian {
       if (distToPlayer < PED_SCATTER_RADIUS) {
         this._panicking = true;
         this._pauseTimer = 0;
-        // Tourner dos au véhicule
         const awayAngle = Math.atan2(pdx, pdz);
         let diff = awayAngle - this.heading;
         diff = Math.atan2(Math.sin(diff), Math.cos(diff));
         const maxTurn = PED_TURN_RATE * p.turnMult * dt * 6;
         this.heading += clamp(diff, -maxTurn, maxTurn);
         this.mesh.rotation.y = this.heading;
-        // Sprint
         const panicSpeed = this.speed * p.panicMult;
         const nx = this.mesh.position.x + Math.sin(this.heading) * panicSpeed * dt;
         const nz = this.mesh.position.z + Math.cos(this.heading) * panicSpeed * dt;
@@ -325,6 +300,7 @@ class Pedestrian {
           this.mesh.position.x = nx;
           this.mesh.position.z = nz;
         }
+        CharacterAnimator.update(this.mesh, panicSpeed, dt);
         return;
       }
     }
@@ -333,10 +309,12 @@ class Pedestrian {
     // --- Pause aléatoire (personnalité : le touriste s'arrête souvent) --
     if (this._pauseTimer > 0) {
       this._pauseTimer -= dt;
+      CharacterAnimator.update(this.mesh, 0, dt);
       return;
     }
     if (Math.random() < p.pauseChance) {
       this._pauseTimer = 0.8 + Math.random() * 1.5;
+      CharacterAnimator.update(this.mesh, 0, dt);
       return;
     }
 
@@ -357,10 +335,11 @@ class Pedestrian {
       const maxTurn = PED_TURN_RATE * p.turnMult * dt * 8;
       this.heading += clamp(diff, -maxTurn, maxTurn);
       this.mesh.rotation.y = this.heading;
+      CharacterAnimator.update(this.mesh, 0, dt);
       return;
     }
 
-    // Dérive aléatoire selon la personnalité (le nerveux change souvent de direction)
+    // Dérive aléatoire selon la personnalité
     if (Math.random() < 0.01 * p.turnMult) {
       this._wanderTarget = this.heading + (Math.random() * 2 - 1) * 1.2;
     }
@@ -374,6 +353,7 @@ class Pedestrian {
     this.mesh.position.x = nextX;
     this.mesh.position.z = nextZ;
     this.mesh.rotation.y = this.heading;
+    CharacterAnimator.update(this.mesh, this.speed, dt);
   }
 
   dispose(scene) {

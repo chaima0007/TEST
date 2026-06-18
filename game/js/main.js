@@ -22,6 +22,7 @@ import { DetectiveSystem } from './detective.js';
 import { MonetizationAgent } from './monetization.js';
 import { LODManager } from './lod.js';
 import { ArchitectSystem } from './architect.js';
+import { MusicAgent } from './music.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -64,6 +65,8 @@ const detective    = new DetectiveSystem(scene, world);
 const architect    = new ArchitectSystem(scene, world);
 const monetization = new MonetizationAgent(hud);
 const lod = new LODManager();
+const _audioCtx = audio.getContext();
+const musicAgent = _audioCtx ? new MusicAgent(_audioCtx, _audioCtx.destination) : null;
 
 // Colour picker wired once — swatches from monetization unlocks
 const ALL_COLORS = [
@@ -201,6 +204,15 @@ function animate() {
   // L'Architecte reacts to the player's actual score this frame
   const archResult = architect.update(dt, vehicle, hud, wanted, totalScore);
   if (archResult.raisedWanted && wanted.level < 5) wanted._setLevel(wanted.level + 1, hud);
+
+  // MusicAgent — sélection automatique de la piste selon l'état du jeu
+  if (musicAgent) {
+    const musicState = architect.active ? 'boss'
+      : wanted.level > 0 ? 'chase'
+      : dayCycle.isNight() ? 'night'
+      : 'city';
+    musicAgent.setState(musicState);
+  }
 
   // --- Panneau agents temps réel ---
   const spectreState = rival.active

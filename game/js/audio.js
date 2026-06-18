@@ -489,6 +489,9 @@ export class AudioSystem {
     }
   }
 
+  // Returns the raw AudioContext so other modules (e.g. MusicAgent) can share it.
+  getContext() { return this._ctx; }
+
   // --- Teardown -----------------------------------------------------------
 
   // Cleanly stops everything and closes the AudioContext. Safe to call
