@@ -555,6 +555,16 @@ function IconSalesForecast({ className }: { className?: string }) {
   );
 }
 
+function IconPipelineCoverage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h8a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h5a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+      <circle cx="16" cy="14" r="3" opacity="0.8" />
+      <path d="M15 14l1 1 1.5-1.5" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconCustomerOnboarding({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1071,6 +1081,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-capacity", label: "Sales Capacity", icon: IconSalesCapacity },
       { href: "/dashboard/sales-forecast", label: "Sales Forecast", icon: IconSalesForecast },
       { href: "/dashboard/deal-velocity", label: "Deal Velocity", icon: IconDealVelocity },
+      { href: "/dashboard/pipeline-coverage", label: "Pipeline Coverage", icon: IconPipelineCoverage },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
