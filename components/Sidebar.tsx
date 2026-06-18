@@ -1223,6 +1223,17 @@ function IconRepAttritionRiskEngine({ className }: { className?: string }) {
   );
 }
 
+function IconDealContaminationRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.2" opacity={0.3} />
+      <path d="M10 4v6l3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.6" />
+      <path d="M7 3.5L5 5M13 3.5L15 5M4 9H2M18 9H16" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity={0.9} />
+    </svg>
+  );
+}
+
 function IconSalesCapacityPlanningEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1506,6 +1517,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/quota-fairness-engine", label: "Quota Fairness", icon: IconQuotaFairnessEngine },
       { href: "/dashboard/forecast-calibration-engine", label: "Forecast Calibration", icon: IconForecastCalibrationEngine },
       { href: "/dashboard/sales-capacity-planning-engine", label: "Sales Capacity", icon: IconSalesCapacityPlanningEngine },
+      { href: "/dashboard/deal-contamination-risk-engine", label: "Deal Contamination", icon: IconDealContaminationRiskEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
