@@ -247,6 +247,14 @@ function IconScorecard({ className }: { className?: string }) {
   );
 }
 
+function IconForecast({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm9 4a1 1 0 10-2 0v6a1 1 0 102 0V7zm-3 2a1 1 0 10-2 0v4a1 1 0 102 0V9zm-3 3a1 1 0 10-2 0v1a1 1 0 102 0v-1z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconObjection({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -442,6 +450,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sentiment", label: "Sentiment IA", icon: IconSentiment },
       { href: "/dashboard/templates", label: "Templates Email", icon: IconTemplates },
       { href: "/dashboard/performance", label: "Performance Agents", icon: IconPerformance },
+      { href: "/dashboard/forecast", label: "Prévisions Ventes", icon: IconForecast },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
