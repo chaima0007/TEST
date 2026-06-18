@@ -43,6 +43,10 @@ from intelligence.negotiation_manager import (
 from intelligence.invoice_manager import (
     InvoiceManager, InvoiceStatus, PaymentMethod,
 )
+from intelligence.lead_qualification import (
+    LeadQualificationEngine, AuthorityLevel, Timeline as QTimeline,
+    QualificationTier,
+)
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -94,6 +98,7 @@ _template_renderer = TemplateRenderer()
 _funnel_tracker = ConversionFunnelTracker()
 _negotiation_manager = NegotiationManager()
 _invoice_manager = InvoiceManager()
+_qualification_engine = LeadQualificationEngine()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1261,6 +1266,104 @@ def invoice_payment_methods():
 @app.delete("/invoices/reset", tags=["Invoices"])
 def invoice_reset():
     _invoice_manager.reset()
+    return {"status": "reset"}
+
+
+# ── Lead qualification routes ─────────────────────────────────────────────────
+
+class QualifyReq(BaseModel):
+    prospect_id:      str
+    company_name:     str
+    sector:           str = ""
+    contact_name:     str = ""
+    contact_role:     str = ""
+    budget_eur:       float = 0.0
+    budget_confirmed: bool = False
+    authority_level:  str = "unknown"
+    need_severity:    int = 1
+    need_articulated: bool = False
+    timeline:         str = "unknown"
+    notes:            str = ""
+
+
+class QualifyUpdateReq(BaseModel):
+    budget_eur:       Optional[float] = None
+    budget_confirmed: Optional[bool] = None
+    authority_level:  Optional[str] = None
+    need_severity:    Optional[int] = None
+    need_articulated: Optional[bool] = None
+    timeline:         Optional[str] = None
+    notes:            Optional[str] = None
+
+
+@app.post("/qualification", tags=["Qualification"])
+def qual_qualify(req: QualifyReq):
+    try:
+        auth = AuthorityLevel(req.authority_level)
+        tl   = QTimeline(req.timeline)
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    rec = _qualification_engine.qualify(
+        req.prospect_id, req.company_name, req.sector,
+        req.contact_name, req.contact_role,
+        req.budget_eur, req.budget_confirmed,
+        auth, req.need_severity, req.need_articulated, tl, req.notes,
+    )
+    return rec.to_dict()
+
+
+@app.get("/qualification", tags=["Qualification"])
+def qual_list(tier: Optional[str] = None):
+    if tier:
+        try:
+            t = QualificationTier(tier)
+        except ValueError:
+            raise HTTPException(status_code=422, detail=f"Unknown tier: {tier!r}")
+        return [r.to_dict() for r in _qualification_engine.by_tier(t)]
+    return [r.to_dict() for r in _qualification_engine.all_records()]
+
+
+@app.get("/qualification/top", tags=["Qualification"])
+def qual_top(n: int = 10):
+    return [r.to_dict() for r in _qualification_engine.top_n(n)]
+
+
+@app.get("/qualification/summary", tags=["Qualification"])
+def qual_summary():
+    return _qualification_engine.summary()
+
+
+@app.get("/qualification/{prospect_id}", tags=["Qualification"])
+def qual_get(prospect_id: str):
+    rec = _qualification_engine.get(prospect_id)
+    if not rec:
+        raise HTTPException(status_code=404, detail="Qualification not found")
+    return rec.to_dict()
+
+
+@app.patch("/qualification/{prospect_id}", tags=["Qualification"])
+def qual_update(prospect_id: str, req: QualifyUpdateReq):
+    kwargs = {}
+    if req.budget_eur is not None:         kwargs["budget_eur"] = req.budget_eur
+    if req.budget_confirmed is not None:   kwargs["budget_confirmed"] = req.budget_confirmed
+    if req.authority_level is not None:
+        try:    kwargs["authority_level"] = AuthorityLevel(req.authority_level)
+        except ValueError as e: raise HTTPException(status_code=422, detail=str(e))
+    if req.need_severity is not None:      kwargs["need_severity"] = req.need_severity
+    if req.need_articulated is not None:   kwargs["need_articulated"] = req.need_articulated
+    if req.timeline is not None:
+        try:    kwargs["timeline"] = QTimeline(req.timeline)
+        except ValueError as e: raise HTTPException(status_code=422, detail=str(e))
+    if req.notes is not None:              kwargs["notes"] = req.notes
+    rec = _qualification_engine.update(prospect_id, **kwargs)
+    if not rec:
+        raise HTTPException(status_code=404, detail="Qualification not found")
+    return rec.to_dict()
+
+
+@app.delete("/qualification/reset", tags=["Qualification"])
+def qual_reset():
+    _qualification_engine.reset()
     return {"status": "reset"}
 
 
