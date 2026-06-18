@@ -1815,6 +1815,18 @@ function IconSalesDecisionCriteriaAlignmentIntelligenceEngine({ className }: { c
   );
 }
 
+function IconSalesPricingConfidenceIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Coin with confidence arrow — pricing psychology */}
+      <circle cx="10" cy="10" r="7" strokeLinecap="round"/>
+      <path d="M10 6 C8.5 6 7.5 6.9 7.5 8 C7.5 9.1 8.5 9.5 10 10 C11.5 10.5 12.5 11 12.5 12.1 C12.5 13.2 11.5 14 10 14" strokeLinecap="round"/>
+      <line x1="10" y1="5" x2="10" y2="6" strokeLinecap="round"/>
+      <line x1="10" y1="14" x2="10" y2="15" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2427,6 +2439,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-win-rate-decay-intelligence-engine", label: "Win Rate Decay", icon: IconSalesWinRateDecayIntelligenceEngine },
       { href: "/dashboard/sales-champion-stability-intelligence-engine", label: "Champion Stability", icon: IconSalesChampionStabilityIntelligenceEngine },
       { href: "/dashboard/sales-decision-criteria-alignment-intelligence-engine", label: "Criteria Alignment", icon: IconSalesDecisionCriteriaAlignmentIntelligenceEngine },
+      { href: "/dashboard/sales-pricing-confidence-intelligence-engine", label: "Pricing Confidence", icon: IconSalesPricingConfidenceIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
