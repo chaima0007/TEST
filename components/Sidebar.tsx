@@ -2630,6 +2630,18 @@ function IconSalesPriceSensitivityNegotiationLeverageEngine({ className }: { cla
   );
 }
 
+function IconSalesDiscountApprovalAbuseMarginErosionEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Margin erosion: tag with discount slash and declining margin bar */}
+      <path d="M3 10 L10 3 L17 3 L17 10 L10 17 Z" strokeLinejoin="round"/>
+      <circle cx="14" cy="6" r="1.2" fill="currentColor" stroke="none"/>
+      <path d="M7 13 L13 7" strokeLinecap="round" strokeWidth="1.8" stroke="#ef4444"/>
+      <path d="M3 17 L6 15 L9 16.5 L12 14 L17 15" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" opacity="0.6" stroke="#ef4444"/>
+    </svg>
+  );
+}
+
 function IconSalesMultithreadingDepthRelationshipBreadthEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -3001,6 +3013,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-competitive-win-loss-pattern-engine", label: "Competitive Wins", icon: IconSalesCompetitiveWinLossPatternEngine },
       { href: "/dashboard/sales-buyer-intent-signal-decay-engine", label: "Intent Decay", icon: IconSalesBuyerIntentSignalDecayEngine },
       { href: "/dashboard/sales-multithreading-depth-relationship-breadth-engine", label: "Multithreading", icon: IconSalesMultithreadingDepthRelationshipBreadthEngine },
+      { href: "/dashboard/sales-discount-approval-abuse-margin-erosion-engine", label: "Margin Erosion", icon: IconSalesDiscountApprovalAbuseMarginErosionEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
