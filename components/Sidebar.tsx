@@ -1460,6 +1460,20 @@ function IconSalesTerritoryOverlapConflictEngine({ className }: { className?: st
   );
 }
 
+function IconSalesRepCapacityOverloadDetector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+      <circle cx="10" cy="10" r="8" fill="none" stroke="#fb923c" strokeWidth="1.5"
+        strokeDasharray="30 20" strokeLinecap="round" opacity="0.8" />
+      <path d="M10 4v6l4 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.9" />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.9" />
+      <path d="M16 4l1.5 1.5-1.5 1.5" stroke="#f87171" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.8" />
+      <path d="M17.5 5.5h-3.5" stroke="#f87171" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.0" />
+    </svg>
+  );
+}
+
 function IconSalesPipelineConcentrationRiskEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1785,6 +1799,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-territory-overlap-conflict-engine", label: "Territory Overlap", icon: IconSalesTerritoryOverlapConflictEngine },
       { href: "/dashboard/customer-ltv-erosion-detector", label: "LTV Erosion", icon: IconCustomerLTVErosionDetector },
       { href: "/dashboard/sales-pipeline-concentration-risk-engine", label: "Pipeline Concentration", icon: IconSalesPipelineConcentrationRiskEngine },
+      { href: "/dashboard/sales-rep-capacity-overload-detector", label: "Rep Capacity", icon: IconSalesRepCapacityOverloadDetector },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
