@@ -90,6 +90,127 @@ function nearestLine(lines, value) {
   return best;
 }
 
+// ── PathClearanceAgent ────────────────────────────────────────────────────────
+// Vérifie en temps réel qu'une entité a la voie libre avant d'avancer.
+// Utilisé par TrafficCar (évitement voiture-à-voiture) et Pedestrian
+// (évitement piéton-à-piéton). Un seul agent partagé par TrafficSystem.
+
+export class PathClearanceAgent {
+  constructor() {
+    this._cars = [];
+    this._peds = [];
+  }
+
+  // Appelé chaque frame par TrafficSystem avant les mises à jour individuelles
+  register(cars, peds) {
+    this._cars = cars;
+    this._peds = peds;
+  }
+
+  // posX/posZ : position actuelle de l'entité
+  // heading   : direction de déplacement en radians (0=+Z, π/2=+X)
+  // lookDist  : distance de regard en mètres
+  // self      : référence de l'entité (exclue du test)
+  // laneHalf  : demi-largeur de couloir testé (mètres)
+  // Retourne  : { clear, distance, type:'car'|'ped'|null }
+  check(posX, posZ, heading, lookDist, self, laneHalf = 2.0) {
+    const dirX = Math.sin(heading);
+    const dirZ = Math.cos(heading);
+    let minDist = Infinity;
+    let hitType  = null;
+
+    const scan = (pool, half, label) => {
+      for (const e of pool) {
+        if (e === self || !e.active || !e.mesh) continue;
+        const dx = e.mesh.position.x - posX;
+        const dz = e.mesh.position.z - posZ;
+        const fwd = dx * dirX + dz * dirZ;          // composante avant
+        if (fwd < 0.5 || fwd > lookDist) continue;
+        const lat = Math.abs(dx * dirZ - dz * dirX); // composante latérale
+        if (lat > half) continue;
+        if (fwd < minDist) { minDist = fwd; hitType = label; }
+      }
+    };
+
+    scan(this._cars, laneHalf, 'car');
+    scan(this._peds, laneHalf * 0.45, 'ped');
+
+    return { clear: hitType === null, distance: minDist, type: hitType };
+  }
+}
+
+// ── IntegrityAgent ────────────────────────────────────────────────────────────
+// Détecte et répare automatiquement les états pathologiques :
+//   • entités hors limites  → marque pour respawn
+//   • entités coincées dans un bâtiment → éjecte vers l'extérieur
+//   • voitures bloquées trop longtemps (speed≈0) → respawn
+// Rend le système auto-correct sans intervention manuelle.
+
+export class IntegrityAgent {
+  constructor() {
+    this._stuckFrames = new WeakMap(); // TrafficCar → nb de frames à speed≈0
+  }
+
+  // Retourne le nombre de corrections appliquées ce frame.
+  repair(cars, peds, colliders) {
+    let fixes = 0;
+
+    // Voitures : hors-limites, coincées dans bâtiment, bloquées
+    for (const car of cars) {
+      if (!car.active || !car.mesh) continue;
+      const p = car.mesh.position;
+
+      if (Math.abs(p.x) > CITY_HALF_SIZE + 8 || Math.abs(p.z) > CITY_HALF_SIZE + 8) {
+        car.active = false; // déclenchera respawnNear au prochain _syncEntities
+        this._stuckFrames.set(car, 0);
+        fixes++;
+        continue;
+      }
+
+      if (colliders && this._insideAny(p.x, p.z, colliders)) {
+        // Éjecte vers le centre : direction opposée à la position
+        p.x += p.x > 0 ? -3 : 3;
+        p.z += p.z > 0 ? -3 : 3;
+        car.speed = 0;
+        fixes++;
+      }
+
+      // Détection blocage prolongé (voiture coincée contre un mur)
+      const cnt = this._stuckFrames.get(car) || 0;
+      if (typeof car.speed === 'number' && Math.abs(car.speed) < 0.2) {
+        const newCnt = cnt + 1;
+        this._stuckFrames.set(car, newCnt);
+        if (newCnt >= 120) { // ~2 s à 60 fps
+          car.active = false;
+          this._stuckFrames.set(car, 0);
+          fixes++;
+        }
+      } else {
+        this._stuckFrames.set(car, 0);
+      }
+    }
+
+    // Piétons : hors-limites seulement (les piétons gèrent leur propre évitement)
+    for (const ped of peds) {
+      if (!ped.active || !ped.mesh) continue;
+      const p = ped.mesh.position;
+      if (Math.abs(p.x) > CITY_HALF_SIZE + 5 || Math.abs(p.z) > CITY_HALF_SIZE + 5) {
+        ped.active = false;
+        fixes++;
+      }
+    }
+
+    return fixes;
+  }
+
+  _insideAny(x, z, colliders) {
+    for (const c of colliders) {
+      if (Math.abs(x - c.x) < c.halfWidth && Math.abs(z - c.z) < c.halfDepth) return true;
+    }
+    return false;
+  }
+}
+
 class TrafficCar {
   constructor(scene, roadLines) {
     this.roadLines = roadLines;
@@ -162,10 +283,15 @@ class TrafficCar {
     this._caution = clamp(this._caution, 0, 1);
   }
 
-  // playerPos: {x, z} optionnel — si fourni, la voiture ralentit si le joueur
-  // est juste devant elle dans son sens de marche (comportement de suivi).
-  // wantedLevel influences caution; used by _updateDrives.
-  update(dt, playerPos = null, wantedLevel = 0) {
+  // Heading en radians depuis axis/dir (convention Vehicle : 0=+Z, π/2=+X)
+  _getHeading() {
+    if (this.axis === 'x') return this.dir > 0 ? Math.PI / 2 : -Math.PI / 2;
+    return this.dir > 0 ? 0 : Math.PI;
+  }
+
+  // playerPos : {x, z} optionnel — ralentit si le joueur est devant.
+  // pathAgent : PathClearanceAgent — ralentit/stoppe si un autre véhicule/piéton bloque.
+  update(dt, playerPos = null, wantedLevel = 0, pathAgent = null) {
     if (!this.active) return;
     const { xs, zs } = this.roadLines;
     const crossLines = this.axis === 'x' ? zs : xs;
@@ -177,17 +303,30 @@ class TrafficCar {
     const driveMult = (1 + this._urgency * 0.45) * (1 - this._caution * 0.38);
 
     let effectiveSpeed = this.speed * driveMult;
+
+    // ── Freinage joueur devant ──────────────────────────────────────────
     if (playerPos) {
-      // Distance et position relative du joueur sur l'axe de déplacement.
       const movingPlayer = this.axis === 'x' ? playerPos.x : playerPos.z;
       const fixedPlayer  = this.axis === 'x' ? playerPos.z : playerPos.x;
       const fixedDist = Math.abs(fixedPlayer - this.fixedCoord);
       const aheadDist = (movingPlayer - this.moving) * this.dir;
-      // Cautious drivers keep a wider gap (followDist scales with caution)
       const followDist = CAR_FOLLOW_DIST * (1 + this._caution * 0.6);
       if (fixedDist < 3.5 && aheadDist > 0 && aheadDist < followDist) {
-        // Joueur devant dans la même voie : vitesse progressivement réduite.
         effectiveSpeed *= clamp(aheadDist / followDist, 0.15, 1);
+      }
+    }
+
+    // ── PathClearanceAgent : évitement voiture-à-voiture et piétons ───
+    if (pathAgent) {
+      const { clear, distance } = pathAgent.check(
+        this.mesh.position.x, this.mesh.position.z,
+        this._getHeading(), CAR_FOLLOW_DIST * 1.3, this, 2.2
+      );
+      if (!clear) {
+        const stopZone = 3.5; // distance d'arrêt complet (m)
+        effectiveSpeed = distance <= stopZone
+          ? 0
+          : effectiveSpeed * clamp((distance - stopZone) / (CAR_FOLLOW_DIST - stopZone), 0.05, 1);
       }
     }
 
@@ -273,9 +412,9 @@ class Pedestrian {
     return false;
   }
 
-  // playerPos: {x, z} optionnel — si fourni, le piéton réagit à la proximité
-  // du véhicule du joueur selon sa personnalité.
-  update(dt, colliders, playerPos = null) {
+  // playerPos : {x, z} optionnel — réaction à la proximité du joueur.
+  // pathAgent : PathClearanceAgent — contournement des autres piétons/voitures.
+  update(dt, colliders, playerPos = null, pathAgent = null) {
     if (!this.active) return;
     const p = this.personality;
 
@@ -350,6 +489,21 @@ class Pedestrian {
       this.heading += clamp(diff, -maxTurn, maxTurn);
     }
 
+    // ── PathClearanceAgent : évitement piéton-à-piéton ────────────────
+    if (pathAgent) {
+      const { clear, distance } = pathAgent.check(
+        this.mesh.position.x, this.mesh.position.z,
+        this.heading, 2.0, this, 0.65
+      );
+      if (!clear && distance < 1.3) {
+        // Dévie légèrement sur le côté pour contourner
+        this.heading += (Math.random() < 0.5 ? 1 : -1) * 0.9;
+        this.mesh.rotation.y = this.heading;
+        CharacterAnimator.update(this.mesh, 0, dt);
+        return;
+      }
+    }
+
     this.mesh.position.x = nextX;
     this.mesh.position.z = nextZ;
     this.mesh.rotation.y = this.heading;
@@ -370,8 +524,6 @@ export class TrafficSystem {
     this.scene = scene;
     this.world = world;
     this.colliders = (world && world.colliders) || [];
-    // Repli si roadLines absent (ancienne version de world.js) : reconstruit
-    // la même grille que celle utilisée pour générer les routes.
     this.roadLines = (world && world.roadLines) || this._fallbackRoadLines();
 
     this.cars = [];
@@ -383,6 +535,10 @@ export class TrafficSystem {
     for (let i = 0; i < PEDESTRIAN_COUNT; i++) {
       this.pedestrians.push(new Pedestrian(scene));
     }
+
+    // Agents autonomes de surveillance
+    this._pathAgent      = new PathClearanceAgent();
+    this._integrityAgent = new IntegrityAgent();
   }
 
   _fallbackRoadLines() {
@@ -396,11 +552,17 @@ export class TrafficSystem {
     return { xs: lines.slice(), zs: lines.slice() };
   }
 
-  // wantedLevel: current police level (0-5) fed to AI drives.
-  // lod: LODManager instance — if provided, distant cars update less often.
+  // wantedLevel : niveau police 0-5, feed aux AI drives.
+  // lod         : LODManager — les entités distantes mettent à jour moins souvent.
   update(dt, playerPos, wantedLevel = 0, lod = null) {
     if (!playerPos) return;
     this._syncEntities(playerPos);
+
+    // IntegrityAgent : répare les états pathologiques AVANT la mise à jour
+    this._integrityAgent.repair(this.cars, this.pedestrians, this.colliders);
+
+    // PathClearanceAgent : enregistre les entités actives pour ce frame
+    this._pathAgent.register(this.cars, this.pedestrians);
 
     for (let i = 0; i < this.cars.length; i++) {
       const car = this.cars[i];
@@ -409,7 +571,7 @@ export class TrafficSystem {
         const dist = this._distTo(car.mesh.position, playerPos);
         if (!lod.shouldUpdate(dist, i)) continue;
       }
-      car.update(dt, playerPos, wantedLevel);
+      car.update(dt, playerPos, wantedLevel, this._pathAgent);
     }
     for (let i = 0; i < this.pedestrians.length; i++) {
       const ped = this.pedestrians[i];
@@ -418,7 +580,7 @@ export class TrafficSystem {
         const dist = this._distTo(ped.mesh.position, playerPos);
         if (!lod.shouldUpdate(dist, i + this.cars.length)) continue;
       }
-      ped.update(dt, this.colliders, playerPos);
+      ped.update(dt, this.colliders, playerPos, this._pathAgent);
     }
   }
 
