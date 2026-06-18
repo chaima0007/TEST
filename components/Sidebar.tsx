@@ -1591,6 +1591,45 @@ function IconSalesCompetitiveWinLossIntelligenceEngine({ className }: { classNam
   );
 }
 
+function IconSalesOutboundProspectingIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Megaphone/loudspeaker with outward arrows — outbound prospecting */}
+      <path d="M3 8v4l2 1V7L3 8z" fill="currentColor" opacity="0.7" />
+      <path d="M5 7v6l8 3V4L5 7z" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <line x1="13" y1="9" x2="17" y2="7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.8" />
+      <line x1="13" y1="11" x2="17" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.8" />
+      <line x1="13" y1="10" x2="17" y2="10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
+    </svg>
+  );
+}
+
+function IconSalesQuotaAttainmentIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Target with progress bar — quota attainment */}
+      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.3" opacity="0.6" />
+      <circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.7" />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.9" />
+      <path d="M10 3v1.5M10 15.5V17M3 10h1.5M15.5 10H17" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity="0.5" />
+    </svg>
+  );
+}
+
+function IconSalesStakeholderMappingIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Network nodes — stakeholder mapping */}
+      <circle cx="10" cy="5" r="2" fill="currentColor" opacity="0.9" />
+      <circle cx="4" cy="14" r="2" fill="currentColor" opacity="0.7" />
+      <circle cx="16" cy="14" r="2" fill="currentColor" opacity="0.7" />
+      <line x1="10" y1="7" x2="4" y2="12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
+      <line x1="10" y1="7" x2="16" y2="12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.6" />
+      <line x1="4" y1="14" x2="16" y2="14" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeDasharray="2 1.5" opacity="0.5" />
+    </svg>
+  );
+}
+
 function IconPipelineGenerationEfficiencyEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2034,6 +2073,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pricing-negotiation-intelligence-engine", label: "Pricing Negotiation", icon: IconSalesPricingNegotiationIntelligenceEngine },
       { href: "/dashboard/sales-inbound-lead-response-engine", label: "Lead Response", icon: IconSalesInboundLeadResponseEngine },
       { href: "/dashboard/sales-competitive-win-loss-intelligence-engine", label: "Competitive W/L", icon: IconSalesCompetitiveWinLossIntelligenceEngine },
+      { href: "/dashboard/sales-outbound-prospecting-intelligence-engine", label: "Outbound Prospect.", icon: IconSalesOutboundProspectingIntelligenceEngine },
+      { href: "/dashboard/sales-quota-attainment-intelligence-engine", label: "Quota Attainment", icon: IconSalesQuotaAttainmentIntelligenceEngine },
+      { href: "/dashboard/sales-stakeholder-mapping-intelligence-engine", label: "Stakeholder Mapping", icon: IconSalesStakeholderMappingIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
