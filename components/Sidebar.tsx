@@ -1790,6 +1790,20 @@ function IconSalesDealDeskIntelligenceEngine({ className }: { className?: string
   );
 }
 
+function IconSalesReferenceIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Quote/testimonial bubbles — customer evidence */}
+      <rect x="2" y="3" width="11" height="8" rx="2" strokeLinecap="round"/>
+      <path d="M5 14 L2 17 L7 14" strokeLinecap="round" strokeLinejoin="round"/>
+      <line x1="5" y1="6" x2="10" y2="6" strokeLinecap="round"/>
+      <line x1="5" y1="8.5" x2="9" y2="8.5" strokeLinecap="round"/>
+      <circle cx="15" cy="14" r="3" strokeLinecap="round"/>
+      <path d="M14 13.5 L14.8 14.5 L16.5 13" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesPOCIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2305,6 +2319,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-crm-adoption-intelligence-engine", label: "CRM Adoption", icon: IconSalesCRMAdoptionIntelligenceEngine },
       { href: "/dashboard/sales-deal-desk-intelligence-engine", label: "Deal Desk", icon: IconSalesDealDeskIntelligenceEngine },
       { href: "/dashboard/sales-poc-intelligence-engine", label: "POC Execution", icon: IconSalesPOCIntelligenceEngine },
+      { href: "/dashboard/sales-reference-intelligence-engine", label: "Ref. Evidence", icon: IconSalesReferenceIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
