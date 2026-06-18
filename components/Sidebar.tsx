@@ -1474,6 +1474,19 @@ function IconSalesRepCapacityOverloadDetector({ className }: { className?: strin
   );
 }
 
+function IconSalesRepBurnoutAttritionRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="7" r="4" fill="none" stroke="currentColor" strokeWidth="1.4" opacity="0.7" />
+      <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.5" />
+      <path d="M10 10v4" stroke="#f87171" strokeWidth="1.3" strokeLinecap="round" opacity="0.9" />
+      <path d="M8 14l2 2 2-2" stroke="#f87171" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.9" />
+      <circle cx="16" cy="4" r="2.5" fill="#fbbf24" opacity="0.85" />
+      <path d="M16 3v1.5M16 5.2v.3" stroke="white" strokeWidth="0.9" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function IconSalesCompetitiveWinRateErosionEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1813,6 +1826,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pipeline-concentration-risk-engine", label: "Pipeline Concentration", icon: IconSalesPipelineConcentrationRiskEngine },
       { href: "/dashboard/sales-rep-capacity-overload-detector", label: "Rep Capacity", icon: IconSalesRepCapacityOverloadDetector },
       { href: "/dashboard/sales-competitive-win-rate-erosion-engine", label: "Win Rate Erosion", icon: IconSalesCompetitiveWinRateErosionEngine },
+      { href: "/dashboard/sales-rep-burnout-attrition-risk-engine", label: "Rep Burnout Risk", icon: IconSalesRepBurnoutAttritionRiskEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
