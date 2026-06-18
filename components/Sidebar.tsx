@@ -1922,6 +1922,19 @@ function IconSalesTerritoryWhitespaceIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesProofOfValueIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Diamond gem with ROI arrow — value proof */}
+      <path d="M10 2 L14 7 L10 18 L6 7 Z" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6 7 L14 7" strokeLinecap="round"/>
+      <path d="M4 7 L6 7 L10 2 L14 7 L16 7" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14 4 L17 2 L17 5" strokeLinecap="round" strokeLinejoin="round"/>
+      <line x1="14" y1="4" x2="17" y2="2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2543,6 +2556,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-customer-success-handoff-quality-intelligence-engine", label: "CS Handoff Quality", icon: IconSalesCustomerSuccessHandoffQualityIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-discipline-intelligence-engine", label: "Negotiation Discipline", icon: IconSalesNegotiationDisciplineIntelligenceEngine },
       { href: "/dashboard/sales-territory-whitespace-intelligence-engine", label: "Territory Whitespace", icon: IconSalesTerritoryWhitespaceIntelligenceEngine },
+      { href: "/dashboard/sales-proof-of-value-intelligence-engine", label: "Proof of Value", icon: IconSalesProofOfValueIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
