@@ -1372,6 +1372,17 @@ function IconSalesForecastSandbaggingDetector({ className }: { className?: strin
   );
 }
 
+function IconSalesDiscountAbuseDetector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" opacity="0.4" />
+      <path d="M8 6l-2 8" stroke="#f87171" strokeWidth="1.4" strokeLinecap="round" fill="none" opacity="0.8" />
+      <circle cx="6.5" cy="6.5" r="1.5" fill="#f87171" opacity="0.8" />
+      <circle cx="9.5" cy="13.5" r="1.5" fill="#f87171" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconSalesActivityFabricationDetector({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1636,6 +1647,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/customer-sentiment-decay-engine", label: "Sentiment Decay", icon: IconCustomerSentimentDecayEngine },
       { href: "/dashboard/sales-process-velocity-anomaly-engine", label: "Process Velocity", icon: IconSalesProcessVelocityAnomalyEngine },
       { href: "/dashboard/sales-forecast-sandbagging-detector", label: "Forecast Sandbagging", icon: IconSalesForecastSandbaggingDetector },
+      { href: "/dashboard/sales-discount-abuse-detector", label: "Discount Abuse", icon: IconSalesDiscountAbuseDetector },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
