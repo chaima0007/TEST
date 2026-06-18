@@ -2594,6 +2594,18 @@ function IconSalesQuotaSandbagOvercommitIntelligenceEngine({ className }: { clas
   );
 }
 
+function IconSalesChampionDepartureRelationshipContinuityEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Champion departure: person with exit arrow and broken link */}
+      <circle cx="8" cy="6" r="3"/>
+      <path d="M2 17 C2 13 14 13 14 17" strokeLinecap="round"/>
+      <path d="M15 8 L18 8 M16.5 6 L18 8 L16.5 10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" stroke="#ef4444"/>
+      <path d="M10 11.5 L12 11.5" strokeLinecap="round" strokeWidth="1" strokeDasharray="1.5 1" opacity="0.5"/>
+    </svg>
+  );
+}
+
 function IconSalesProposalQualityWinRateIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2930,6 +2942,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-territory-imbalance-coverage-gap-engine", label: "Territory Balance", icon: IconSalesTerritoryImbalanceCoverageGapEngine },
       { href: "/dashboard/sales-price-sensitivity-negotiation-leverage-engine", label: "Negotiation Leverage", icon: IconSalesPriceSensitivityNegotiationLeverageEngine },
       { href: "/dashboard/sales-proposal-quality-win-rate-intelligence-engine", label: "Proposal Quality", icon: IconSalesProposalQualityWinRateIntelligenceEngine },
+      { href: "/dashboard/sales-champion-departure-relationship-continuity-engine", label: "Champion Risk", icon: IconSalesChampionDepartureRelationshipContinuityEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
