@@ -1,69 +1,95 @@
 "use client";
-
 import { useEffect, useState, useCallback } from "react";
 
 interface Rep {
-  rep_id: string; region: string;
-  allocation_risk: string; allocation_pattern: string;
-  allocation_severity: string; recommended_action: string;
-  selling_time_score: number; admin_burden_score: number;
-  activity_quality_score: number; time_discipline_score: number;
-  time_allocation_composite: number;
-  has_time_gap: boolean; requires_allocation_coaching: boolean;
-  estimated_selling_hours_lost_per_week: number; allocation_signal: string;
+  rep_id: string;
+  region: string;
+  time_risk: string;
+  time_pattern: string;
+  time_severity: string;
+  recommended_action: string;
+  priority_allocation_score: number;
+  balance_score: number;
+  pipeline_focus_score: number;
+  selling_effectiveness_score: number;
+  time_composite: number;
+  has_time_gap: boolean;
+  requires_time_coaching: boolean;
+  estimated_quota_risk_usd: number;
+  time_signal: string;
 }
+
 interface Summary {
-  total: number; risk_counts: Record<string, number>;
-  pattern_counts: Record<string, number>; severity_counts: Record<string, number>;
+  total: number;
+  risk_counts: Record<string, number>;
+  pattern_counts: Record<string, number>;
+  severity_counts: Record<string, number>;
   action_counts: Record<string, number>;
-  avg_time_allocation_composite: number; time_gap_count: number;
-  allocation_coaching_count: number; avg_selling_time_score: number;
-  avg_admin_burden_score: number; avg_activity_quality_score: number;
-  avg_time_discipline_score: number; total_estimated_selling_hours_lost_per_week: number;
+  avg_time_composite: number;
+  time_gap_count: number;
+  coaching_count: number;
+  avg_priority_allocation_score: number;
+  avg_balance_score: number;
+  avg_pipeline_focus_score: number;
+  avg_selling_effectiveness_score: number;
+  total_estimated_quota_risk_usd: number;
 }
 
-const riskColor: Record<string,string> = { low:"text-emerald-400", moderate:"text-yellow-400", high:"text-orange-400", critical:"text-red-400" };
-const riskBorder: Record<string,string> = { low:"border-emerald-500/30", moderate:"border-yellow-500/30", high:"border-orange-500/30", critical:"border-red-500/30" };
-const riskBg: Record<string,string> = { low:"bg-emerald-500/10", moderate:"bg-yellow-500/10", high:"bg-orange-500/10", critical:"bg-red-500/10" };
+const RISK_COLORS: Record<string, string> = {
+  low: "text-emerald-400", moderate: "text-yellow-400",
+  high: "text-orange-400", critical: "text-rose-400",
+};
+const RISK_BG: Record<string, string> = {
+  low: "bg-emerald-400/10 border-emerald-400/30",
+  moderate: "bg-yellow-400/10 border-yellow-400/30",
+  high: "bg-orange-400/10 border-orange-400/30",
+  critical: "bg-rose-400/10 border-rose-400/30",
+};
+const SEV_COLORS: Record<string, string> = {
+  optimized: "text-emerald-400", balanced: "text-yellow-400",
+  misaligned: "text-orange-400", scattered: "text-rose-400",
+};
+const PATTERN_LABELS: Record<string, string> = {
+  none: "None", high_priority_neglect: "Priority Neglect",
+  admin_overload: "Admin Overload", reactive_time_sink: "Reactive Trap",
+  wrong_size_focus: "Wrong Size Focus", renewal_hover: "Renewal Hover",
+};
 
-function GaugeRing({label,value}:{label:string;value:number}) {
-  const pct=Math.min(value/100,1),r=36,cx=44,cy=44,circ=2*Math.PI*r,dash=circ*pct;
-  const color=pct<0.2?"#34d399":pct<0.4?"#facc15":pct<0.6?"#fb923c":"#f87171";
+function GaugeRing({ value, label, color }: { value: number; label: string; color: string }) {
+  const r = 36, circ = 2 * Math.PI * r;
+  const arc = circ * (1 - value / 100);
   return (
     <div className="flex flex-col items-center gap-1">
-      <svg width={88} height={88} className="-rotate-90">
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e293b" strokeWidth={8}/>
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth={8} strokeDasharray={`${dash} ${circ}`} strokeLinecap="round"/>
+      <svg width="88" height="88" viewBox="0 0 88 88">
+        <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
+        <circle cx="44" cy="44" r={r} fill="none" stroke={color} strokeWidth="8"
+          strokeDasharray={circ} strokeDashoffset={arc}
+          strokeLinecap="round" transform="rotate(-90 44 44)" />
+        <text x="44" y="49" textAnchor="middle" fontSize="13" fontWeight="700" fill="white">
+          {value.toFixed(0)}
+        </text>
       </svg>
-      <span className="text-base font-bold text-slate-100 -mt-10">{value.toFixed(1)}</span>
-      <span className="text-xs text-slate-400 mt-8 text-center leading-tight">{label}</span>
+      <span className="text-xs text-slate-400 text-center leading-tight">{label}</span>
     </div>
   );
 }
 
-function ScoreBar({label,value}:{label:string;value:number}) {
-  const pct=Math.min(value,100);
-  const color=pct<20?"bg-emerald-500":pct<40?"bg-yellow-500":pct<60?"bg-orange-500":"bg-red-500";
+function DistBar({ title, counts, colors }: { title: string; counts: Record<string, number>; colors: Record<string, string> }) {
+  const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
   return (
-    <div className="space-y-1">
-      <div className="flex justify-between text-xs text-slate-400"><span>{label}</span><span className="font-medium text-slate-200">{value.toFixed(1)}</span></div>
-      <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div className={`h-full rounded-full ${color}`} style={{width:`${pct}%`}}/></div>
-    </div>
-  );
-}
-
-function DistBar({title,counts,colors}:{title:string;counts:Record<string,number>;colors:Record<string,string>}) {
-  const total=Object.values(counts).reduce((a,b)=>a+b,0)||1;
-  return (
-    <div className="space-y-2">
-      <p className="text-xs font-medium text-slate-400 uppercase tracking-wider">{title}</p>
-      <div className="flex h-2 rounded-full overflow-hidden gap-0.5">
-        {Object.entries(counts).map(([k,v])=><div key={k} className={colors[k]||"bg-slate-600"} style={{width:`${(v/total)*100}%`}} title={`${k}: ${v}`}/>)}
+    <div>
+      <p className="text-xs text-slate-400 mb-1">{title}</p>
+      <div className="flex rounded overflow-hidden h-3">
+        {Object.entries(counts).map(([k, v]) => (
+          <div key={k} style={{ width: `${(v / total) * 100}%` }}
+            className={`${colors[k] ?? "bg-slate-600"} transition-all`} title={`${k}: ${v}`} />
+        ))}
       </div>
-      <div className="flex flex-wrap gap-x-3 gap-y-1">
-        {Object.entries(counts).map(([k,v])=>(
+      <div className="flex flex-wrap gap-x-3 mt-1">
+        {Object.entries(counts).map(([k, v]) => (
           <span key={k} className="text-xs text-slate-400">
-            <span className={`font-medium ${colors[k]?.replace("bg-","text-")||"text-slate-300"}`}>{v}</span> {k.replace(/_/g," ")}
+            <span className={`inline-block w-2 h-2 rounded-sm mr-1 ${colors[k] ?? "bg-slate-600"}`} />
+            {k} ({v})
           </span>
         ))}
       </div>
@@ -71,190 +97,317 @@ function DistBar({title,counts,colors}:{title:string;counts:Record<string,number
   );
 }
 
-function DetailModal({rep,onClose}:{rep:Rep;onClose:()=>void}) {
-  const [tab,setTab]=useState<"scores"|"signals"|"action">("scores");
-  useEffect(()=>{ const h=(e:KeyboardEvent)=>{if(e.key==="Escape")onClose();}; window.addEventListener("keydown",h); return ()=>window.removeEventListener("keydown",h); },[onClose]);
-  const actionLabels:Record<string,string>={
-    no_action:"No Action Required",
-    time_audit_coaching:"Time Audit Coaching",
-    admin_reduction_plan:"Admin Reduction Plan",
-    meeting_hygiene_review:"Meeting Hygiene Review",
-    selling_time_recovery:"Selling Time Recovery",
-    workflow_optimization:"Workflow Optimization",
-  };
-  const severityColors:Record<string,string>={ optimized:"text-emerald-400", developing:"text-yellow-400", burdened:"text-orange-400", fragmented:"text-red-400" };
+function DetailModal({ rep, onClose }: { rep: Rep; onClose: () => void }) {
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [onClose]);
+  const [tab, setTab] = useState<"scores" | "signal" | "action">("scores");
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={onClose}>
-      <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-lg mx-4 shadow-2xl" onClick={e=>e.stopPropagation()}>
-        <div className="flex items-center justify-between p-5 border-b border-slate-800">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+      onClick={onClose}>
+      <div className="bg-slate-900 border border-slate-700 rounded-xl p-6 max-w-lg w-full mx-4 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-start justify-between mb-4">
           <div>
-            <h3 className="font-semibold text-slate-100">{rep.rep_id}</h3>
-            <p className="text-xs text-slate-400">{rep.region} · {rep.allocation_pattern.replace(/_/g," ")}</p>
+            <h2 className="text-lg font-bold text-white">{rep.rep_id}</h2>
+            <p className="text-sm text-slate-400">{rep.region}</p>
           </div>
-          <button onClick={onClose} className="text-slate-500 hover:text-slate-300 text-xl leading-none">×</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-white text-xl leading-none">✕</button>
         </div>
-        <div className="flex border-b border-slate-800">
-          {(["scores","signals","action"] as const).map(t=>(
-            <button key={t} onClick={()=>setTab(t)} className={`flex-1 py-2.5 text-xs font-medium capitalize transition-colors ${tab===t?"text-indigo-400 border-b-2 border-indigo-400":"text-slate-500 hover:text-slate-300"}`}>{t}</button>
+        <div className="flex gap-2 mb-4">
+          {(["scores", "signal", "action"] as const).map((t) => (
+            <button key={t} onClick={() => setTab(t)}
+              className={`px-3 py-1 rounded text-xs font-medium transition-colors ${
+                tab === t ? "bg-lime-500 text-white" : "bg-slate-800 text-slate-400 hover:text-white"}`}>
+              {t.charAt(0).toUpperCase() + t.slice(1)}
+            </button>
           ))}
         </div>
-        <div className="p-5 space-y-4">
-          {tab==="scores" && (
-            <>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-slate-400">Composite</span>
-                <span className={`text-xl font-bold ${riskColor[rep.allocation_risk]||"text-slate-100"}`}>{rep.time_allocation_composite.toFixed(1)}</span>
+        {tab === "scores" && (
+          <div className="space-y-2">
+            {[
+              ["Priority Allocation", rep.priority_allocation_score],
+              ["Time Balance", rep.balance_score],
+              ["Pipeline Focus", rep.pipeline_focus_score],
+              ["Selling Effectiveness", rep.selling_effectiveness_score],
+              ["Time Composite", rep.time_composite],
+            ].map(([label, val]) => (
+              <div key={label as string} className="flex justify-between items-center">
+                <span className="text-sm text-slate-300">{label as string}</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-24 bg-slate-800 rounded-full h-1.5">
+                    <div className="bg-lime-500 h-1.5 rounded-full"
+                      style={{ width: `${Math.min(val as number, 100)}%` }} />
+                  </div>
+                  <span className="text-sm font-mono text-white w-10 text-right">
+                    {(val as number).toFixed(1)}
+                  </span>
+                </div>
               </div>
-              <ScoreBar label="Selling Time" value={rep.selling_time_score}/>
-              <ScoreBar label="Admin Burden" value={rep.admin_burden_score}/>
-              <ScoreBar label="Activity Quality" value={rep.activity_quality_score}/>
-              <ScoreBar label="Time Discipline" value={rep.time_discipline_score}/>
-              <div className="pt-2 flex gap-4 text-xs text-slate-500">
-                <span>Gap: <span className={rep.has_time_gap?"text-red-400":"text-emerald-400"}>{rep.has_time_gap?"Yes":"No"}</span></span>
-                <span>Coaching: <span className={rep.requires_allocation_coaching?"text-orange-400":"text-emerald-400"}>{rep.requires_allocation_coaching?"Yes":"No"}</span></span>
-                <span>Severity: <span className={severityColors[rep.allocation_severity]||"text-slate-300"}>{rep.allocation_severity}</span></span>
-              </div>
-            </>
-          )}
-          {tab==="signals" && (
-            <div className="space-y-3">
-              <p className="text-sm text-slate-300 leading-relaxed">{rep.allocation_signal}</p>
-              <div className="bg-slate-800/50 rounded-lg p-3 space-y-1.5 text-xs text-slate-400">
-                <div className="flex justify-between"><span>Risk Level</span><span className={`font-medium ${riskColor[rep.allocation_risk]}`}>{rep.allocation_risk}</span></div>
-                <div className="flex justify-between"><span>Pattern</span><span className="font-medium text-slate-200">{rep.allocation_pattern.replace(/_/g," ")}</span></div>
-                <div className="flex justify-between"><span>Severity</span><span className={`font-medium ${severityColors[rep.allocation_severity]||"text-slate-200"}`}>{rep.allocation_severity}</span></div>
-                <div className="flex justify-between"><span>Selling Hours Lost/Week</span><span className="font-medium text-orange-400">{rep.estimated_selling_hours_lost_per_week.toFixed(1)}h</span></div>
+            ))}
+            <div className="mt-3 pt-3 border-t border-slate-800">
+              <div className="flex justify-between text-sm">
+                <span className="text-slate-400">Quota Risk</span>
+                <span className="font-semibold text-lime-400">
+                  ${rep.estimated_quota_risk_usd.toLocaleString()}
+                </span>
               </div>
             </div>
-          )}
-          {tab==="action" && (
-            <div className="space-y-3">
-              <div className={`rounded-lg p-3 border ${riskBorder[rep.allocation_risk]} ${riskBg[rep.allocation_risk]}`}>
-                <p className="text-xs text-slate-400 mb-1">Recommended Action</p>
-                <p className={`font-semibold ${riskColor[rep.allocation_risk]}`}>{actionLabels[rep.recommended_action]||rep.recommended_action}</p>
+          </div>
+        )}
+        {tab === "signal" && (
+          <div className="space-y-3">
+            <div className="bg-slate-800 rounded-lg p-3">
+              <p className="text-xs text-slate-400 mb-1">Time Signal</p>
+              <p className="text-sm text-white leading-relaxed">{rep.time_signal}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <div className="bg-slate-800 rounded p-2">
+                <p className="text-slate-400 text-xs">Pattern</p>
+                <p className="text-white">{PATTERN_LABELS[rep.time_pattern] ?? rep.time_pattern}</p>
               </div>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Optimize time allocation by reducing administrative burden, cutting unnecessary internal meetings, and protecting focused selling blocks to maximize revenue-generating activity.
+              <div className="bg-slate-800 rounded p-2">
+                <p className="text-slate-400 text-xs">Severity</p>
+                <p className={SEV_COLORS[rep.time_severity] ?? "text-white"}>
+                  {rep.time_severity.charAt(0).toUpperCase() + rep.time_severity.slice(1)}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+        {tab === "action" && (
+          <div className="space-y-3">
+            <div className="bg-lime-500/10 border border-lime-500/30 rounded-lg p-3">
+              <p className="text-xs text-lime-400 mb-1">Recommended Action</p>
+              <p className="text-sm text-white">
+                {rep.recommended_action.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
               </p>
             </div>
-          )}
-        </div>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <div className="bg-slate-800 rounded p-2">
+                <p className="text-slate-400 text-xs">Gap Detected</p>
+                <p className={rep.has_time_gap ? "text-rose-400" : "text-emerald-400"}>
+                  {rep.has_time_gap ? "✗ Yes" : "✓ No"}
+                </p>
+              </div>
+              <div className="bg-slate-800 rounded p-2">
+                <p className="text-slate-400 text-xs">Coaching Required</p>
+                <p className={rep.requires_time_coaching ? "text-orange-400" : "text-emerald-400"}>
+                  {rep.requires_time_coaching ? "✗ Yes" : "✓ No"}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default function SalesTimeAllocationPage() {
-  const [data, setData]         = useState<{reps:Rep[];summary:Summary}|null>(null);
-  const [filter, setFilter]     = useState("all");
-  const [patFilter, setPat]     = useState("all");
-  const [selected, setSelected] = useState<Rep|null>(null);
+  const [reps, setReps] = useState<Rep[]>([]);
+  const [summary, setSummary] = useState<Summary | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [riskFilter, setRiskFilter] = useState("");
+  const [patternFilter, setPatternFilter] = useState("");
+  const [selected, setSelected] = useState<Rep | null>(null);
 
   const load = useCallback(async () => {
+    setLoading(true);
     const params = new URLSearchParams();
-    if (filter !== "all") params.set("risk", filter);
-    if (patFilter !== "all") params.set("pattern", patFilter);
-    const res = await fetch(`/api/sales-time-allocation-intelligence-engine?${params}`, { cache: "no-store" });
-    if (res.ok) setData(await res.json());
-  }, [filter, patFilter]);
+    if (riskFilter) params.set("risk", riskFilter);
+    if (patternFilter) params.set("pattern", patternFilter);
+    const res = await fetch(`/api/sales-time-allocation-intelligence-engine?${params}`);
+    const data = await res.json();
+    setReps(data.reps ?? []);
+    setSummary(data.summary ?? null);
+    setLoading(false);
+  }, [riskFilter, patternFilter]);
 
   useEffect(() => { load(); }, [load]);
 
-  const s = data?.summary;
-  const reps = data?.reps ?? [];
-
-  const riskColors:Record<string,string> = { low:"bg-emerald-500", moderate:"bg-yellow-500", high:"bg-orange-500", critical:"bg-red-500" };
-  const patColors:Record<string,string>  = { none:"bg-slate-500", admin_overload:"bg-red-500", meeting_fatigue:"bg-orange-500", low_selling_time:"bg-yellow-500", reactive_mode:"bg-violet-500", time_fragmentation:"bg-blue-500" };
-  const sevColors:Record<string,string>  = { optimized:"bg-emerald-500", developing:"bg-yellow-500", burdened:"bg-orange-500", fragmented:"bg-red-500" };
-  const actColors:Record<string,string>  = { no_action:"bg-slate-500", time_audit_coaching:"bg-sky-500", admin_reduction_plan:"bg-red-500", meeting_hygiene_review:"bg-orange-500", selling_time_recovery:"bg-yellow-500", workflow_optimization:"bg-violet-500" };
+  const fmt = (n: number) =>
+    n >= 1_000_000 ? `$${(n / 1_000_000).toFixed(1)}M`
+    : n >= 1_000 ? `$${(n / 1_000).toFixed(0)}K`
+    : `$${n.toFixed(0)}`;
 
   const distributions = [
-    { title:"Risk Distribution",     counts:s?.risk_counts     ??{}, colors:riskColors },
-    { title:"Pattern Distribution",  counts:s?.pattern_counts  ??{}, colors:patColors },
-    { title:"Severity Distribution", counts:s?.severity_counts ??{}, colors:sevColors },
-    { title:"Action Distribution",   counts:s?.action_counts   ??{}, colors:actColors },
-  ] as Array<{title:string;counts:Record<string,number>;colors:Record<string,string>}>;
+    {
+      title: "Risk Distribution",
+      counts: summary?.risk_counts ?? {},
+      colors: { low: "bg-emerald-400", moderate: "bg-yellow-400", high: "bg-orange-400", critical: "bg-rose-400" },
+    },
+    {
+      title: "Pattern Distribution",
+      counts: summary?.pattern_counts ?? {},
+      colors: {
+        none: "bg-slate-500", high_priority_neglect: "bg-rose-400",
+        admin_overload: "bg-orange-400", reactive_time_sink: "bg-amber-400",
+        wrong_size_focus: "bg-yellow-400", renewal_hover: "bg-lime-400",
+      },
+    },
+    {
+      title: "Severity Distribution",
+      counts: summary?.severity_counts ?? {},
+      colors: { optimized: "bg-emerald-400", balanced: "bg-yellow-400", misaligned: "bg-orange-400", scattered: "bg-rose-400" },
+    },
+    {
+      title: "Action Distribution",
+      counts: summary?.action_counts ?? {},
+      colors: {
+        no_action: "bg-slate-500",
+        account_prioritization_coaching: "bg-lime-400",
+        admin_reduction_coaching: "bg-orange-400",
+        pipeline_focus_coaching: "bg-yellow-400",
+        time_reallocation_coaching: "bg-amber-400",
+        time_reallocation_intervention: "bg-rose-400",
+        time_strategy_reset: "bg-red-600",
+      },
+    },
+  ] as Array<{ title: string; counts: Record<string, number>; colors: Record<string, string> }>;
+
+  const RISKS = ["", "low", "moderate", "high", "critical"];
+  const PATTERNS = ["", "none", "high_priority_neglect", "admin_overload",
+    "reactive_time_sink", "wrong_size_focus", "renewal_hover"];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-slate-100">Time Allocation Intelligence</h1>
-        <p className="text-sm text-slate-400 mt-1">Selling time ratio · admin burden · meeting fatigue · focus discipline</p>
-      </div>
+    <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
+      {selected && <DetailModal rep={selected} onClose={() => setSelected(null)} />}
 
-      {/* KPI strip */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3">
-        {[
-          { label:"Total Reps",           value: s?.total ?? 0,                               fmt:(v:number)=>v.toString() },
-          { label:"Avg Composite",         value: s?.avg_time_allocation_composite??0,          fmt:(v:number)=>v.toFixed(1) },
-          { label:"Time Gaps",             value: s?.time_gap_count ??0,                        fmt:(v:number)=>v.toString() },
-          { label:"Need Coaching",         value: s?.allocation_coaching_count ??0,             fmt:(v:number)=>v.toString() },
-          { label:"Selling Hrs Lost/Wk",  value: s?.total_estimated_selling_hours_lost_per_week??0, fmt:(v:number)=>`${v.toFixed(1)}h` },
-          { label:"Avg Admin Burden",      value: s?.avg_admin_burden_score ??0,                fmt:(v:number)=>v.toFixed(1) },
-        ].map(({label,value,fmt})=>(
-          <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
-            <p className="text-xs text-slate-400">{label}</p>
-            <p className="text-xl font-bold text-slate-100">{fmt(value)}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Gauge rings */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-        <p className="text-sm font-medium text-slate-300 mb-4">Average Sub-Scores</p>
-        <div className="flex flex-wrap justify-around gap-6">
-          <GaugeRing label="Selling Time" value={s?.avg_selling_time_score??0}/>
-          <GaugeRing label="Admin Burden" value={s?.avg_admin_burden_score??0}/>
-          <GaugeRing label="Activity Quality" value={s?.avg_activity_quality_score??0}/>
-          <GaugeRing label="Discipline" value={s?.avg_time_discipline_score??0}/>
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-white">
+            ⏱️ Sales Time Allocation Intelligence Engine
+          </h1>
+          <p className="text-slate-400 text-sm mt-1">
+            Per-rep time misalignment analysis — priority account focus, admin burden, pipeline building, and selling effectiveness
+          </p>
         </div>
-      </div>
 
-      {/* Distributions */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {distributions.map(d=>(
-          <div key={d.title} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-            <DistBar {...d}/>
+        {/* KPI strip */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
+          {[
+            { label: "Total Reps", value: summary?.total ?? 0, suffix: "" },
+            { label: "Avg Composite", value: summary?.avg_time_composite ?? 0, suffix: "/100" },
+            { label: "Gap Detected", value: summary?.time_gap_count ?? 0, suffix: " reps" },
+            { label: "Coaching Needed", value: summary?.coaching_count ?? 0, suffix: " reps" },
+            { label: "Quota at Risk", value: summary ? fmt(summary.total_estimated_quota_risk_usd) : "$0", suffix: "" },
+            { label: "Avg Priority Score", value: summary?.avg_priority_allocation_score ?? 0, suffix: "/100" },
+          ].map(({ label, value, suffix }) => (
+            <div key={label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+              <p className="text-xs text-slate-400 mb-1">{label}</p>
+              <p className="text-xl font-bold text-white">
+                {typeof value === "number" ? value.toLocaleString() : value}{suffix}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Gauges */}
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 mb-6">
+          <h2 className="text-sm font-semibold text-slate-300 mb-4">Average Sub-Scores</h2>
+          <div className="flex flex-wrap justify-around gap-4">
+            <GaugeRing value={summary?.avg_priority_allocation_score ?? 0} label="Priority Allocation" color="#84cc16" />
+            <GaugeRing value={summary?.avg_balance_score ?? 0} label="Time Balance" color="#65a30d" />
+            <GaugeRing value={summary?.avg_pipeline_focus_score ?? 0} label="Pipeline Focus" color="#4d7c0f" />
+            <GaugeRing value={summary?.avg_selling_effectiveness_score ?? 0} label="Selling Effectiveness" color="#a3e635" />
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* Filters */}
-      <div className="flex flex-wrap gap-2">
-        <span className="text-xs text-slate-500 self-center">Risk:</span>
-        {["all","low","moderate","high","critical"].map(f=>(
-          <button key={f} onClick={()=>setFilter(f)} className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${filter===f?"bg-indigo-600 text-white":"bg-slate-800 text-slate-400 hover:text-slate-200"}`}>{f}</button>
-        ))}
-        <span className="text-xs text-slate-500 self-center ml-2">Pattern:</span>
-        {["all","admin_overload","meeting_fatigue","low_selling_time","reactive_mode","time_fragmentation","none"].map(f=>(
-          <button key={f} onClick={()=>setPat(f)} className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${patFilter===f?"bg-violet-600 text-white":"bg-slate-800 text-slate-400 hover:text-slate-200"}`}>{f.replace(/_/g," ")}</button>
-        ))}
-      </div>
+        {/* Distributions */}
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 mb-6">
+          <h2 className="text-sm font-semibold text-slate-300 mb-4">Distributions</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {distributions.map((d) => (
+              <DistBar key={d.title} title={d.title} counts={d.counts} colors={d.colors} />
+            ))}
+          </div>
+        </div>
 
-      {/* Rep cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {reps.map(rep=>(
-          <button key={rep.rep_id} onClick={()=>setSelected(rep)} className={`bg-slate-900 border rounded-xl p-4 text-left space-y-3 hover:border-slate-600 transition-colors cursor-pointer ${riskBorder[rep.allocation_risk]}`}>
-            <div className="flex items-center justify-between">
-              <span className="font-semibold text-slate-100">{rep.rep_id}</span>
-              <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${riskBg[rep.allocation_risk]} ${riskColor[rep.allocation_risk]}`}>{rep.allocation_risk}</span>
-            </div>
-            <p className="text-xs text-slate-400">{rep.region}</p>
-            <div className="space-y-1.5">
-              <ScoreBar label="Selling Time" value={rep.selling_time_score}/>
-              <ScoreBar label="Admin Burden" value={rep.admin_burden_score}/>
-              <ScoreBar label="Activity Quality" value={rep.activity_quality_score}/>
-            </div>
-            <div className="flex justify-between items-center pt-1">
-              <span className="text-xs text-slate-500">{rep.allocation_pattern.replace(/_/g," ")}</span>
-              <span className="text-xs font-semibold text-orange-400">{rep.estimated_selling_hours_lost_per_week.toFixed(1)}h/wk lost</span>
-            </div>
-            <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{rep.allocation_signal}</p>
-          </button>
-        ))}
-      </div>
+        {/* Filters */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex gap-1 flex-wrap">
+            {RISKS.map((r) => (
+              <button key={r} onClick={() => setRiskFilter(r)}
+                className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
+                  riskFilter === r
+                    ? "bg-lime-500 border-lime-500 text-white"
+                    : "border-slate-700 text-slate-400 hover:text-white"}`}>
+                {r || "All Risks"}
+              </button>
+            ))}
+          </div>
+          <div className="flex gap-1 flex-wrap">
+            {PATTERNS.map((p) => (
+              <button key={p} onClick={() => setPatternFilter(p)}
+                className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
+                  patternFilter === p
+                    ? "bg-lime-500 border-lime-500 text-white"
+                    : "border-slate-700 text-slate-400 hover:text-white"}`}>
+                {p ? PATTERN_LABELS[p] ?? p : "All Patterns"}
+              </button>
+            ))}
+          </div>
+        </div>
 
-      {selected && <DetailModal rep={selected} onClose={()=>setSelected(null)}/>}
+        {/* Rep grid */}
+        {loading ? (
+          <div className="text-center py-12 text-slate-400">Loading...</div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {reps.map((rep) => (
+              <button key={rep.rep_id} onClick={() => setSelected(rep)}
+                className="text-left bg-slate-900 border border-slate-800 rounded-xl p-4 hover:border-lime-500/50 transition-colors">
+                <div className="flex items-start justify-between mb-2">
+                  <div>
+                    <p className="font-semibold text-white text-sm">{rep.rep_id}</p>
+                    <p className="text-xs text-slate-400">{rep.region}</p>
+                  </div>
+                  <span className={`text-xs font-semibold px-2 py-0.5 rounded-full border ${RISK_BG[rep.time_risk] ?? ""}`}>
+                    <span className={RISK_COLORS[rep.time_risk] ?? ""}>{rep.time_risk}</span>
+                  </span>
+                </div>
+
+                <div className="mb-3">
+                  <div className="flex justify-between text-xs mb-0.5">
+                    <span className="text-slate-400">Composite</span>
+                    <span className="text-white font-mono">{rep.time_composite.toFixed(1)}</span>
+                  </div>
+                  <div className="w-full bg-slate-800 rounded-full h-1.5">
+                    <div className="bg-lime-500 h-1.5 rounded-full"
+                      style={{ width: `${rep.time_composite}%` }} />
+                  </div>
+                </div>
+
+                <div className="text-xs text-slate-400 mb-2">
+                  {PATTERN_LABELS[rep.time_pattern] ?? rep.time_pattern}
+                </div>
+
+                <div className="flex gap-1.5 flex-wrap">
+                  {rep.has_time_gap && (
+                    <span className="text-xs bg-lime-500/10 text-lime-400 border border-lime-500/30 rounded px-1.5 py-0.5">
+                      ⏱️ GAP
+                    </span>
+                  )}
+                  {rep.requires_time_coaching && (
+                    <span className="text-xs bg-orange-500/10 text-orange-400 border border-orange-500/30 rounded px-1.5 py-0.5">
+                      🎯 COACH
+                    </span>
+                  )}
+                </div>
+
+                {rep.estimated_quota_risk_usd > 0 && (
+                  <p className="text-xs text-lime-400 font-semibold mt-2">
+                    {fmt(rep.estimated_quota_risk_usd)} quota risk
+                  </p>
+                )}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

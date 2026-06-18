@@ -5,91 +5,91 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const mockReps = [
   {
     rep_id: "rep_001", region: "West",
-    allocation_risk: "low", allocation_pattern: "none",
-    allocation_severity: "optimized", recommended_action: "no_action",
-    selling_time_score: 0.0, admin_burden_score: 0.0,
-    activity_quality_score: 0.0, time_discipline_score: 0.0,
-    time_allocation_composite: 0.0,
-    has_time_gap: false, requires_allocation_coaching: false,
-    estimated_selling_hours_lost_per_week: 0.0,
-    allocation_signal: "Time allocation and selling productivity within healthy benchmarks",
+    time_risk: "low", time_pattern: "none",
+    time_severity: "optimized", recommended_action: "no_action",
+    priority_allocation_score: 0.0, balance_score: 0.0,
+    pipeline_focus_score: 0.0, selling_effectiveness_score: 0.0,
+    time_composite: 0.0,
+    has_time_gap: false, requires_time_coaching: false,
+    estimated_quota_risk_usd: 0.0,
+    time_signal: "Time allocation optimized — priority accounts, pipeline building, and selling hours within benchmarks",
   },
   {
     rep_id: "rep_002", region: "East",
-    allocation_risk: "low", allocation_pattern: "none",
-    allocation_severity: "optimized", recommended_action: "no_action",
-    selling_time_score: 4.0, admin_burden_score: 3.0,
-    activity_quality_score: 5.0, time_discipline_score: 4.0,
-    time_allocation_composite: 4.0,
-    has_time_gap: false, requires_allocation_coaching: false,
-    estimated_selling_hours_lost_per_week: 0.0,
-    allocation_signal: "Time allocation and selling productivity within healthy benchmarks",
+    time_risk: "low", time_pattern: "none",
+    time_severity: "optimized", recommended_action: "no_action",
+    priority_allocation_score: 4.0, balance_score: 3.0,
+    pipeline_focus_score: 5.0, selling_effectiveness_score: 2.0,
+    time_composite: 3.65,
+    has_time_gap: false, requires_time_coaching: true,
+    estimated_quota_risk_usd: 0.0,
+    time_signal: "Time allocation optimized — priority accounts, pipeline building, and selling hours within benchmarks",
   },
   {
     rep_id: "rep_003", region: "Central",
-    allocation_risk: "moderate", allocation_pattern: "time_fragmentation",
-    allocation_severity: "developing", recommended_action: "time_audit_coaching",
-    selling_time_score: 10.0, admin_burden_score: 8.0,
-    activity_quality_score: 18.0, time_discipline_score: 35.0,
-    time_allocation_composite: 16.7,
-    has_time_gap: false, requires_allocation_coaching: false,
-    estimated_selling_hours_lost_per_week: 0.7,
-    allocation_signal: "Time fragmentation — 30h customer-facing — composite 17",
+    time_risk: "moderate", time_pattern: "renewal_hover",
+    time_severity: "balanced", recommended_action: "account_prioritization_coaching",
+    priority_allocation_score: 22.0, balance_score: 18.0,
+    pipeline_focus_score: 20.0, selling_effectiveness_score: 15.0,
+    time_composite: 19.55,
+    has_time_gap: true, requires_time_coaching: true,
+    estimated_quota_risk_usd: 198000.0,
+    time_signal: "Renewal hover — 48% time on high-priority accounts — 18% on admin — 35% reactive — composite 20",
   },
   {
     rep_id: "rep_004", region: "Northeast",
-    allocation_risk: "moderate", allocation_pattern: "reactive_mode",
-    allocation_severity: "developing", recommended_action: "time_audit_coaching",
-    selling_time_score: 15.0, admin_burden_score: 14.0,
-    activity_quality_score: 32.0, time_discipline_score: 18.0,
-    time_allocation_composite: 20.45,
-    has_time_gap: false, requires_allocation_coaching: false,
-    estimated_selling_hours_lost_per_week: 1.2,
-    allocation_signal: "Reactive mode — 28h customer-facing — 20h admin — composite 20",
+    time_risk: "moderate", time_pattern: "wrong_size_focus",
+    time_severity: "balanced", recommended_action: "account_prioritization_coaching",
+    priority_allocation_score: 20.0, balance_score: 22.0,
+    pipeline_focus_score: 18.0, selling_effectiveness_score: 20.0,
+    time_composite: 20.3,
+    has_time_gap: true, requires_time_coaching: true,
+    estimated_quota_risk_usd: 312000.0,
+    time_signal: "Wrong-size focus — 42% time on high-priority accounts — 22% on admin — 42% reactive — composite 20",
   },
   {
     rep_id: "rep_005", region: "Southeast",
-    allocation_risk: "high", allocation_pattern: "low_selling_time",
-    allocation_severity: "burdened", recommended_action: "selling_time_recovery",
-    selling_time_score: 38.0, admin_burden_score: 22.0,
-    activity_quality_score: 20.0, time_discipline_score: 25.0,
-    time_allocation_composite: 28.65,
-    has_time_gap: false, requires_allocation_coaching: true,
-    estimated_selling_hours_lost_per_week: 2.1,
-    allocation_signal: "Low selling time — 22h customer-facing — 28h admin — composite 29",
+    time_risk: "high", time_pattern: "reactive_time_sink",
+    time_severity: "misaligned", recommended_action: "pipeline_focus_coaching",
+    priority_allocation_score: 40.0, balance_score: 45.0,
+    pipeline_focus_score: 38.0, selling_effectiveness_score: 30.0,
+    time_composite: 39.25,
+    has_time_gap: true, requires_time_coaching: true,
+    estimated_quota_risk_usd: 756000.0,
+    time_signal: "Reactive time sink — 30% time on high-priority accounts — 28% on admin — 68% reactive — composite 39",
   },
   {
     rep_id: "rep_006", region: "West",
-    allocation_risk: "high", allocation_pattern: "meeting_fatigue",
-    allocation_severity: "burdened", recommended_action: "meeting_hygiene_review",
-    selling_time_score: 30.0, admin_burden_score: 38.0,
-    activity_quality_score: 22.0, time_discipline_score: 30.0,
-    time_allocation_composite: 31.3,
-    has_time_gap: true, requires_allocation_coaching: true,
-    estimated_selling_hours_lost_per_week: 3.5,
-    allocation_signal: "Meeting fatigue — 20h customer-facing — 30h admin — 28h internal meetings — composite 31",
+    time_risk: "high", time_pattern: "admin_overload",
+    time_severity: "misaligned", recommended_action: "admin_reduction_coaching",
+    priority_allocation_score: 48.0, balance_score: 52.0,
+    pipeline_focus_score: 40.0, selling_effectiveness_score: 45.0,
+    time_composite: 46.7,
+    has_time_gap: true, requires_time_coaching: true,
+    estimated_quota_risk_usd: 1404000.0,
+    time_signal: "Admin overload — 25% time on high-priority accounts — 38% on admin — 58% reactive — composite 47",
   },
   {
     rep_id: "rep_007", region: "APAC",
-    allocation_risk: "critical", allocation_pattern: "admin_overload",
-    allocation_severity: "fragmented", recommended_action: "admin_reduction_plan",
-    selling_time_score: 65.0, admin_burden_score: 60.0,
-    activity_quality_score: 55.0, time_discipline_score: 62.0,
-    time_allocation_composite: 61.55,
-    has_time_gap: true, requires_allocation_coaching: true,
-    estimated_selling_hours_lost_per_week: 7.8,
-    allocation_signal: "Admin overload — 16h customer-facing — 48h admin — 40h internal meetings — composite 62",
+    time_risk: "critical", time_pattern: "high_priority_neglect",
+    time_severity: "scattered", recommended_action: "time_strategy_reset",
+    priority_allocation_score: 72.0, balance_score: 68.0,
+    pipeline_focus_score: 65.0, selling_effectiveness_score: 72.0,
+    time_composite: 69.55,
+    has_time_gap: true, requires_time_coaching: true,
+    estimated_quota_risk_usd: 2574000.0,
+    time_signal: "High-priority neglect — 15% time on high-priority accounts — 35% on admin — 72% reactive — composite 70",
   },
   {
     rep_id: "rep_008", region: "EMEA",
-    allocation_risk: "critical", allocation_pattern: "admin_overload",
-    allocation_severity: "fragmented", recommended_action: "admin_reduction_plan",
-    selling_time_score: 80.0, admin_burden_score: 75.0,
-    activity_quality_score: 70.0, time_discipline_score: 72.0,
-    time_allocation_composite: 74.95,
-    has_time_gap: true, requires_allocation_coaching: true,
-    estimated_selling_hours_lost_per_week: 10.4,
-    allocation_signal: "Admin overload — 12h customer-facing — 55h admin — 45h internal meetings — composite 75",
+    time_risk: "critical", time_pattern: "high_priority_neglect",
+    time_severity: "scattered", recommended_action: "time_strategy_reset",
+    priority_allocation_score: 100.0, balance_score: 100.0,
+    pipeline_focus_score: 100.0, selling_effectiveness_score: 100.0,
+    time_composite: 100.0,
+    has_time_gap: true, requires_time_coaching: true,
+    estimated_quota_risk_usd: 4950000.0,
+    time_signal: "High-priority neglect — 10% time on high-priority accounts — 40% on admin — 75% reactive — composite 100",
   },
 ];
 
@@ -109,26 +109,26 @@ export async function GET(request: Request) {
   }
 
   let reps = [...mockReps];
-  if (risk)    reps = reps.filter((r) => r.allocation_risk    === risk);
-  if (pattern) reps = reps.filter((r) => r.allocation_pattern === pattern);
+  if (risk)    reps = reps.filter((r) => r.time_risk    === risk);
+  if (pattern) reps = reps.filter((r) => r.time_pattern === pattern);
 
   const risk_counts:     Record<string, number> = {};
   const pattern_counts:  Record<string, number> = {};
   const severity_counts: Record<string, number> = {};
   const action_counts:   Record<string, number> = {};
-  let total_comp = 0, total_sel = 0, total_adm = 0, total_qua = 0, total_dis = 0, total_lost = 0;
+  let total_comp = 0, total_pa = 0, total_ba = 0, total_pf = 0, total_se = 0, total_qr = 0;
 
   for (const r of mockReps) {
-    risk_counts[r.allocation_risk]       = (risk_counts[r.allocation_risk] || 0) + 1;
-    pattern_counts[r.allocation_pattern] = (pattern_counts[r.allocation_pattern] || 0) + 1;
-    severity_counts[r.allocation_severity] = (severity_counts[r.allocation_severity] || 0) + 1;
-    action_counts[r.recommended_action]  = (action_counts[r.recommended_action] || 0) + 1;
-    total_comp += r.time_allocation_composite;
-    total_sel  += r.selling_time_score;
-    total_adm  += r.admin_burden_score;
-    total_qua  += r.activity_quality_score;
-    total_dis  += r.time_discipline_score;
-    total_lost += r.estimated_selling_hours_lost_per_week;
+    risk_counts[r.time_risk]         = (risk_counts[r.time_risk] || 0) + 1;
+    pattern_counts[r.time_pattern]   = (pattern_counts[r.time_pattern] || 0) + 1;
+    severity_counts[r.time_severity] = (severity_counts[r.time_severity] || 0) + 1;
+    action_counts[r.recommended_action] = (action_counts[r.recommended_action] || 0) + 1;
+    total_comp += r.time_composite;
+    total_pa   += r.priority_allocation_score;
+    total_ba   += r.balance_score;
+    total_pf   += r.pipeline_focus_score;
+    total_se   += r.selling_effectiveness_score;
+    total_qr   += r.estimated_quota_risk_usd;
   }
 
   const n = mockReps.length;
@@ -136,19 +136,19 @@ export async function GET(request: Request) {
   return NextResponse.json({
     reps,
     summary: {
-      total:                                      n,
+      total:                              n,
       risk_counts,
       pattern_counts,
       severity_counts,
       action_counts,
-      avg_time_allocation_composite:              Math.round((total_comp / n) * 10) / 10,
-      time_gap_count:                             mockReps.filter((r) => r.has_time_gap).length,
-      allocation_coaching_count:                  mockReps.filter((r) => r.requires_allocation_coaching).length,
-      avg_selling_time_score:                     Math.round((total_sel / n) * 10) / 10,
-      avg_admin_burden_score:                     Math.round((total_adm / n) * 10) / 10,
-      avg_activity_quality_score:                 Math.round((total_qua / n) * 10) / 10,
-      avg_time_discipline_score:                  Math.round((total_dis / n) * 10) / 10,
-      total_estimated_selling_hours_lost_per_week: Math.round(total_lost * 100) / 100,
+      avg_time_composite:                 Math.round((total_comp / n) * 10) / 10,
+      time_gap_count:                     mockReps.filter((r) => r.has_time_gap).length,
+      coaching_count:                     mockReps.filter((r) => r.requires_time_coaching).length,
+      avg_priority_allocation_score:      Math.round((total_pa / n) * 10) / 10,
+      avg_balance_score:                  Math.round((total_ba / n) * 10) / 10,
+      avg_pipeline_focus_score:           Math.round((total_pf / n) * 10) / 10,
+      avg_selling_effectiveness_score:    Math.round((total_se / n) * 10) / 10,
+      total_estimated_quota_risk_usd:     Math.round(total_qr * 100) / 100,
     },
   });
 }

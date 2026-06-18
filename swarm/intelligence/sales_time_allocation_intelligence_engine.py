@@ -1,388 +1,306 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
+from typing import List, Dict
 
 
-class AllocationRisk(str, Enum):
+class TimeRisk(str, Enum):
     low      = "low"
     moderate = "moderate"
     high     = "high"
     critical = "critical"
 
 
-class AllocationPattern(str, Enum):
-    none               = "none"
-    admin_overload     = "admin_overload"
-    meeting_fatigue    = "meeting_fatigue"
-    low_selling_time   = "low_selling_time"
-    reactive_mode      = "reactive_mode"
-    time_fragmentation = "time_fragmentation"
+class TimePattern(str, Enum):
+    none                   = "none"
+    high_priority_neglect  = "high_priority_neglect"
+    admin_overload         = "admin_overload"
+    reactive_time_sink     = "reactive_time_sink"
+    wrong_size_focus       = "wrong_size_focus"
+    renewal_hover          = "renewal_hover"
 
 
-class AllocationSeverity(str, Enum):
+class TimeSeverity(str, Enum):
     optimized  = "optimized"
-    developing = "developing"
-    burdened   = "burdened"
-    fragmented = "fragmented"
+    balanced   = "balanced"
+    misaligned = "misaligned"
+    scattered  = "scattered"
 
 
-class AllocationAction(str, Enum):
-    no_action               = "no_action"
-    time_audit_coaching     = "time_audit_coaching"
-    admin_reduction_plan    = "admin_reduction_plan"
-    meeting_hygiene_review  = "meeting_hygiene_review"
-    selling_time_recovery   = "selling_time_recovery"
-    workflow_optimization   = "workflow_optimization"
-
-
-@dataclass
-class TimeAllocationInput:
-    rep_id: str
-    region: str
-    evaluation_period_id: str
-    total_hours_tracked: float
-    customer_facing_hours: float
-    prospecting_hours: float
-    admin_hours: float
-    internal_meeting_hours: float
-    proposal_prep_hours: float
-    travel_hours: float
-    training_hours: float
-    emails_sent_count: int
-    avg_email_response_time_minutes: float
-    calls_made_count: int
-    avg_call_duration_minutes: float
-    meetings_attended_count: int
-    internal_meetings_count: int
-    demo_hours: float
-    pipeline_review_hours: float
-    coaching_sessions_hours: float
-    focus_blocks_per_week: float
-    after_hours_work_hours: float
+class TimeAction(str, Enum):
+    no_action                       = "no_action"
+    account_prioritization_coaching = "account_prioritization_coaching"
+    admin_reduction_coaching        = "admin_reduction_coaching"
+    pipeline_focus_coaching         = "pipeline_focus_coaching"
+    time_reallocation_coaching      = "time_reallocation_coaching"
+    time_reallocation_intervention  = "time_reallocation_intervention"
+    time_strategy_reset             = "time_strategy_reset"
 
 
 @dataclass
-class TimeAllocationResult:
-    rep_id: str
-    region: str
-    allocation_risk: AllocationRisk
-    allocation_pattern: AllocationPattern
-    allocation_severity: AllocationSeverity
-    recommended_action: AllocationAction
-    selling_time_score: float
-    admin_burden_score: float
-    activity_quality_score: float
-    time_discipline_score: float
-    time_allocation_composite: float
-    has_time_gap: bool
-    requires_allocation_coaching: bool
-    estimated_selling_hours_lost_per_week: float
-    allocation_signal: str
+class TimeInput:
+    rep_id:                          str
+    region:                          str
+    evaluation_period_id:            str
+    time_on_high_priority_accts_pct: float   # 0-1
+    time_on_low_priority_accts_pct:  float   # 0-1
+    time_on_admin_tasks_pct:         float   # 0-1
+    time_on_pipeline_building_pct:   float   # 0-1
+    time_on_existing_customers_pct:  float   # 0-1
+    time_on_new_logo_pursuit_pct:    float   # 0-1
+    reactive_time_pct:               float   # 0-1
+    meeting_prep_time_pct:           float   # 0-1
+    crm_update_hrs_per_week_avg:     float   # hours
+    avg_selling_hours_per_week:      float   # hours
+    accounts_touched_per_week_avg:   float   # count
+    high_value_deal_time_ratio:      float   # 0-1
+    quota_mapped_time_pct:           float   # 0-1
+    strategy_vs_tactical_ratio:      float   # 0-1 (1.0 = all strategic)
+    early_stage_deal_time_pct:       float   # 0-1
+    late_stage_deal_time_pct:        float   # 0-1
+    lost_deal_time_pct:              float   # 0-1
+    total_managed_accounts:          int
+    avg_opportunity_value_usd:       float
 
-    def to_dict(self) -> dict:
+
+@dataclass
+class TimeResult:
+    rep_id:                          str
+    region:                          str
+    time_risk:                       TimeRisk
+    time_pattern:                    TimePattern
+    time_severity:                   TimeSeverity
+    recommended_action:              TimeAction
+    priority_allocation_score:       float
+    balance_score:                   float
+    pipeline_focus_score:            float
+    selling_effectiveness_score:     float
+    time_composite:                  float
+    has_time_gap:                    bool
+    requires_time_coaching:          bool
+    estimated_quota_risk_usd:        float
+    time_signal:                     str
+
+    def to_dict(self) -> Dict:
         return {
-            "rep_id":                               self.rep_id,
-            "region":                               self.region,
-            "allocation_risk":                      self.allocation_risk.value,
-            "allocation_pattern":                   self.allocation_pattern.value,
-            "allocation_severity":                  self.allocation_severity.value,
-            "recommended_action":                   self.recommended_action.value,
-            "selling_time_score":                   self.selling_time_score,
-            "admin_burden_score":                   self.admin_burden_score,
-            "activity_quality_score":               self.activity_quality_score,
-            "time_discipline_score":                self.time_discipline_score,
-            "time_allocation_composite":            self.time_allocation_composite,
-            "has_time_gap":                         self.has_time_gap,
-            "requires_allocation_coaching":         self.requires_allocation_coaching,
-            "estimated_selling_hours_lost_per_week": self.estimated_selling_hours_lost_per_week,
-            "allocation_signal":                    self.allocation_signal,
+            "rep_id":                        self.rep_id,
+            "region":                        self.region,
+            "time_risk":                     self.time_risk.value,
+            "time_pattern":                  self.time_pattern.value,
+            "time_severity":                 self.time_severity.value,
+            "recommended_action":            self.recommended_action.value,
+            "priority_allocation_score":     self.priority_allocation_score,
+            "balance_score":                 self.balance_score,
+            "pipeline_focus_score":          self.pipeline_focus_score,
+            "selling_effectiveness_score":   self.selling_effectiveness_score,
+            "time_composite":                self.time_composite,
+            "has_time_gap":                  self.has_time_gap,
+            "requires_time_coaching":        self.requires_time_coaching,
+            "estimated_quota_risk_usd":      self.estimated_quota_risk_usd,
+            "time_signal":                   self.time_signal,
         }
 
 
 class SalesTimeAllocationIntelligenceEngine:
+    """Detects per-rep time misallocation — priority neglect, admin overload, reactive traps, and pipeline gaps."""
 
     def __init__(self) -> None:
-        self._results: list[TimeAllocationResult] = []
+        self._results: List[TimeResult] = []
 
-    # ------------------------------------------------------------------
-    # Sub-scores (0–100, higher = more risk)
-    # ------------------------------------------------------------------
+    # ── sub-scores ────────────────────────────────────────────────────────
 
-    def _selling_time_score(self, inp: TimeAllocationInput) -> float:
-        score = 0.0
-        total = max(inp.total_hours_tracked, 1.0)
+    def _priority_allocation_score(self, inp: TimeInput) -> float:
+        s = 0.0
+        if   inp.time_on_high_priority_accts_pct <= 0.30: s += 40
+        elif inp.time_on_high_priority_accts_pct <= 0.50: s += 22
+        elif inp.time_on_high_priority_accts_pct <= 0.65: s += 8
+        if   inp.high_value_deal_time_ratio      <= 0.30: s += 35
+        elif inp.high_value_deal_time_ratio      <= 0.50: s += 18
+        if   inp.quota_mapped_time_pct           <= 0.40: s += 25
+        elif inp.quota_mapped_time_pct           <= 0.60: s += 12
+        return min(s, 100.0)
 
-        selling_pct = (inp.customer_facing_hours + inp.proposal_prep_hours) / total
-        if selling_pct < 0.20:
-            score += 45.0
-        elif selling_pct < 0.30:
-            score += 25.0
-        elif selling_pct < 0.40:
-            score += 10.0
+    def _balance_score(self, inp: TimeInput) -> float:
+        s = 0.0
+        if   inp.time_on_admin_tasks_pct >= 0.30: s += 40
+        elif inp.time_on_admin_tasks_pct >= 0.20: s += 22
+        elif inp.time_on_admin_tasks_pct >= 0.12: s += 8
+        if   inp.reactive_time_pct       >= 0.60: s += 35
+        elif inp.reactive_time_pct       >= 0.40: s += 18
+        if   inp.lost_deal_time_pct      >= 0.20: s += 25
+        elif inp.lost_deal_time_pct      >= 0.10: s += 12
+        return min(s, 100.0)
 
-        demo_pct = inp.demo_hours / total
-        if demo_pct < 0.05:
-            score += 25.0
-        elif demo_pct < 0.10:
-            score += 12.0
+    def _pipeline_focus_score(self, inp: TimeInput) -> float:
+        s = 0.0
+        if   inp.time_on_pipeline_building_pct  <= 0.20: s += 45
+        elif inp.time_on_pipeline_building_pct  <= 0.35: s += 25
+        elif inp.time_on_pipeline_building_pct  <= 0.50: s += 10
+        if   inp.time_on_new_logo_pursuit_pct   <= 0.10: s += 30
+        elif inp.time_on_new_logo_pursuit_pct   <= 0.25: s += 15
+        if   inp.early_stage_deal_time_pct      <= 0.15: s += 25
+        elif inp.early_stage_deal_time_pct      <= 0.30: s += 12
+        return min(s, 100.0)
 
-        prospecting_pct = inp.prospecting_hours / total
-        if prospecting_pct < 0.10:
-            score += 20.0
-        elif prospecting_pct < 0.15:
-            score += 10.0
+    def _selling_effectiveness_score(self, inp: TimeInput) -> float:
+        s = 0.0
+        if   inp.avg_selling_hours_per_week  <= 25: s += 40
+        elif inp.avg_selling_hours_per_week  <= 32: s += 22
+        elif inp.avg_selling_hours_per_week  <= 38: s += 8
+        if   inp.strategy_vs_tactical_ratio  <= 0.25: s += 35
+        elif inp.strategy_vs_tactical_ratio  <= 0.45: s += 18
+        if   inp.meeting_prep_time_pct       <= 0.05: s += 25
+        elif inp.meeting_prep_time_pct       <= 0.10: s += 12
+        return min(s, 100.0)
 
-        return min(score, 100.0)
+    # ── composite ─────────────────────────────────────────────────────────
 
-    def _admin_burden_score(self, inp: TimeAllocationInput) -> float:
-        score = 0.0
-        total = max(inp.total_hours_tracked, 1.0)
+    def _composite(self, pa: float, ba: float, pf: float, se: float) -> float:
+        return min(round(pa * 0.35 + ba * 0.30 + pf * 0.20 + se * 0.15, 2), 100.0)
 
-        admin_pct = (inp.admin_hours + inp.travel_hours) / total
-        if admin_pct >= 0.30:
-            score += 40.0
-        elif admin_pct >= 0.20:
-            score += 20.0
-        elif admin_pct >= 0.15:
-            score += 8.0
+    # ── pattern ───────────────────────────────────────────────────────────
 
-        internal_pct = inp.internal_meeting_hours / total
-        if internal_pct >= 0.25:
-            score += 35.0
-        elif internal_pct >= 0.15:
-            score += 18.0
-        elif internal_pct >= 0.10:
-            score += 7.0
+    def _pattern(self, inp: TimeInput) -> TimePattern:
+        if inp.time_on_high_priority_accts_pct <= 0.25 and inp.high_value_deal_time_ratio <= 0.25:
+            return TimePattern.high_priority_neglect
+        if inp.time_on_admin_tasks_pct >= 0.35 and inp.avg_selling_hours_per_week <= 28:
+            return TimePattern.admin_overload
+        if inp.reactive_time_pct >= 0.65 and inp.time_on_pipeline_building_pct <= 0.15:
+            return TimePattern.reactive_time_sink
+        if inp.time_on_low_priority_accts_pct >= 0.50 and inp.high_value_deal_time_ratio <= 0.30:
+            return TimePattern.wrong_size_focus
+        if inp.time_on_existing_customers_pct >= 0.65 and inp.time_on_new_logo_pursuit_pct <= 0.15:
+            return TimePattern.renewal_hover
+        return TimePattern.none
 
-        if inp.internal_meetings_count >= 15:
-            score += 20.0
-        elif inp.internal_meetings_count >= 10:
-            score += 10.0
+    # ── thresholds ────────────────────────────────────────────────────────
 
-        return min(score, 100.0)
+    def _risk(self, composite: float) -> TimeRisk:
+        if   composite >= 60: return TimeRisk.critical
+        elif composite >= 40: return TimeRisk.high
+        elif composite >= 20: return TimeRisk.moderate
+        return TimeRisk.low
 
-    def _activity_quality_score(self, inp: TimeAllocationInput) -> float:
-        score = 0.0
-        total = max(inp.total_hours_tracked, 1.0)
+    def _severity(self, composite: float) -> TimeSeverity:
+        if   composite >= 60: return TimeSeverity.scattered
+        elif composite >= 40: return TimeSeverity.misaligned
+        elif composite >= 20: return TimeSeverity.balanced
+        return TimeSeverity.optimized
 
-        if inp.avg_call_duration_minutes < 5.0:
-            score += 35.0
-        elif inp.avg_call_duration_minutes < 10.0:
-            score += 18.0
-        elif inp.avg_call_duration_minutes < 15.0:
-            score += 7.0
+    def _action(self, risk: TimeRisk, pattern: TimePattern) -> TimeAction:
+        if risk == TimeRisk.critical:
+            if pattern == TimePattern.high_priority_neglect:
+                return TimeAction.time_strategy_reset
+            if pattern == TimePattern.admin_overload:
+                return TimeAction.time_reallocation_intervention
+            return TimeAction.time_strategy_reset
+        if risk == TimeRisk.high:
+            if pattern == TimePattern.admin_overload:
+                return TimeAction.admin_reduction_coaching
+            if pattern == TimePattern.reactive_time_sink:
+                return TimeAction.pipeline_focus_coaching
+            if pattern == TimePattern.wrong_size_focus:
+                return TimeAction.account_prioritization_coaching
+            if pattern == TimePattern.renewal_hover:
+                return TimeAction.pipeline_focus_coaching
+            return TimeAction.time_reallocation_coaching
+        if risk == TimeRisk.moderate:
+            return TimeAction.account_prioritization_coaching
+        return TimeAction.no_action
 
-        email_rate = inp.emails_sent_count / total
-        if email_rate < 2.0:
-            score += 30.0
-        elif email_rate < 5.0:
-            score += 15.0
+    # ── flags ─────────────────────────────────────────────────────────────
 
-        if inp.avg_email_response_time_minutes >= 1440.0:
-            score += 25.0
-        elif inp.avg_email_response_time_minutes >= 480.0:
-            score += 12.0
-
-        return min(score, 100.0)
-
-    def _time_discipline_score(self, inp: TimeAllocationInput) -> float:
-        score = 0.0
-
-        if inp.focus_blocks_per_week < 2.0:
-            score += 35.0
-        elif inp.focus_blocks_per_week < 5.0:
-            score += 18.0
-        elif inp.focus_blocks_per_week < 8.0:
-            score += 7.0
-
-        if inp.after_hours_work_hours >= 10.0:
-            score += 30.0
-        elif inp.after_hours_work_hours >= 5.0:
-            score += 15.0
-
-        if inp.pipeline_review_hours < 1.0:
-            score += 20.0
-        elif inp.pipeline_review_hours < 2.0:
-            score += 10.0
-
-        return min(score, 100.0)
-
-    # ------------------------------------------------------------------
-    # Pattern detection
-    # ------------------------------------------------------------------
-
-    def _detect_pattern(self, inp: TimeAllocationInput,
-                         selling: float, admin: float,
-                         quality: float, discipline: float) -> AllocationPattern:
-        total = max(inp.total_hours_tracked, 1.0)
-        admin_pct = (inp.admin_hours + inp.travel_hours) / total
-        if admin >= 35 and admin_pct >= 0.25:
-            return AllocationPattern.admin_overload
-
-        internal_pct = inp.internal_meeting_hours / total
-        if admin >= 30 and internal_pct >= 0.20:
-            return AllocationPattern.meeting_fatigue
-
-        selling_pct = (inp.customer_facing_hours + inp.proposal_prep_hours) / total
-        if selling >= 35 and selling_pct < 0.25:
-            return AllocationPattern.low_selling_time
-
-        if quality >= 30 and inp.avg_email_response_time_minutes >= 480.0:
-            return AllocationPattern.reactive_mode
-
-        if discipline >= 30 and inp.focus_blocks_per_week < 3.0:
-            return AllocationPattern.time_fragmentation
-
-        return AllocationPattern.none
-
-    # ------------------------------------------------------------------
-    # Risk / severity / action
-    # ------------------------------------------------------------------
-
-    def _risk_level(self, composite: float) -> AllocationRisk:
-        if composite >= 60:
-            return AllocationRisk.critical
-        if composite >= 40:
-            return AllocationRisk.high
-        if composite >= 20:
-            return AllocationRisk.moderate
-        return AllocationRisk.low
-
-    def _severity(self, composite: float) -> AllocationSeverity:
-        if composite >= 60:
-            return AllocationSeverity.fragmented
-        if composite >= 40:
-            return AllocationSeverity.burdened
-        if composite >= 20:
-            return AllocationSeverity.developing
-        return AllocationSeverity.optimized
-
-    def _action(self, risk: AllocationRisk,
-                 pattern: AllocationPattern) -> AllocationAction:
-        if risk == AllocationRisk.critical:
-            if pattern == AllocationPattern.admin_overload:
-                return AllocationAction.admin_reduction_plan
-            if pattern == AllocationPattern.low_selling_time:
-                return AllocationAction.selling_time_recovery
-            return AllocationAction.workflow_optimization
-        if risk == AllocationRisk.high:
-            if pattern == AllocationPattern.meeting_fatigue:
-                return AllocationAction.meeting_hygiene_review
-            if pattern == AllocationPattern.time_fragmentation:
-                return AllocationAction.time_audit_coaching
-            return AllocationAction.selling_time_recovery
-        if risk == AllocationRisk.moderate:
-            return AllocationAction.time_audit_coaching
-        return AllocationAction.no_action
-
-    # ------------------------------------------------------------------
-    # Flags
-    # ------------------------------------------------------------------
-
-    def _has_time_gap(self, composite: float,
-                       inp: TimeAllocationInput) -> bool:
-        total = max(inp.total_hours_tracked, 1.0)
-        selling_pct = (inp.customer_facing_hours + inp.proposal_prep_hours) / total
-        admin_pct = (inp.admin_hours + inp.travel_hours) / total
+    def _has_gap(self, inp: TimeInput, composite: float) -> bool:
         return (
             composite >= 40
-            or selling_pct < 0.15
-            or admin_pct >= 0.35
+            or inp.time_on_admin_tasks_pct           >= 0.25
+            or inp.time_on_high_priority_accts_pct   <= 0.40
         )
 
-    def _requires_allocation_coaching(self, composite: float,
-                                       inp: TimeAllocationInput) -> bool:
-        total = max(inp.total_hours_tracked, 1.0)
-        selling_pct = (inp.customer_facing_hours + inp.proposal_prep_hours) / total
-        internal_pct = inp.internal_meeting_hours / total
+    def _requires_coaching(self, inp: TimeInput, composite: float) -> bool:
         return (
             composite >= 30
-            or selling_pct < 0.20
-            or internal_pct >= 0.25
+            or inp.reactive_time_pct                 >= 0.45
+            or inp.high_value_deal_time_ratio        <= 0.40
         )
 
-    # ------------------------------------------------------------------
-    # Hours lost
-    # ------------------------------------------------------------------
+    # ── dollar impact ─────────────────────────────────────────────────────
 
-    def _estimated_selling_hours_lost(self, inp: TimeAllocationInput,
-                                       composite: float) -> float:
-        total = max(inp.total_hours_tracked, 1.0)
-        selling_pct = (inp.customer_facing_hours + inp.proposal_prep_hours) / total
-        gap = max(0.0, 0.40 - selling_pct)
-        return round(gap * total / 4.0 * composite / 100.0, 2)
-
-    # ------------------------------------------------------------------
-    # Signal string
-    # ------------------------------------------------------------------
-
-    def _signal(self, inp: TimeAllocationInput,
-                 pattern: AllocationPattern, composite: float) -> str:
-        if pattern == AllocationPattern.none and composite < 20:
-            return "Time allocation and selling productivity within healthy benchmarks"
-        total = max(inp.total_hours_tracked, 1.0)
-        selling_pct = (inp.customer_facing_hours + inp.proposal_prep_hours) / total
-        admin_pct = (inp.admin_hours + inp.travel_hours) / total
-        parts: list[str] = []
-        if selling_pct < 0.30:
-            parts.append(f"{inp.customer_facing_hours:.0f}h customer-facing")
-        if admin_pct >= 0.15:
-            parts.append(f"{inp.admin_hours:.0f}h admin")
-        if inp.internal_meeting_hours >= 5.0:
-            parts.append(f"{inp.internal_meeting_hours:.0f}h internal meetings")
-        label = pattern.value.replace("_", " ") if pattern != AllocationPattern.none else "Allocation risk"
-        summary = " — ".join(parts) if parts else "selling time below target"
-        return f"{label.capitalize()} — {summary} — composite {composite:.0f}"
-
-    # ------------------------------------------------------------------
-    # Assess
-    # ------------------------------------------------------------------
-
-    def assess(self, inp: TimeAllocationInput) -> TimeAllocationResult:
-        selling    = round(self._selling_time_score(inp), 1)
-        admin      = round(self._admin_burden_score(inp), 1)
-        quality    = round(self._activity_quality_score(inp), 1)
-        discipline = round(self._time_discipline_score(inp), 1)
-
-        composite = round(
-            selling * 0.35 + admin * 0.30 + quality * 0.20 + discipline * 0.15, 1
+    def _quota_risk(self, inp: TimeInput, composite: float) -> float:
+        misalignment = max(0.0, 0.65 - inp.time_on_high_priority_accts_pct)
+        return round(
+            inp.total_managed_accounts
+            * inp.avg_opportunity_value_usd
+            * misalignment
+            * (composite / 100),
+            2,
         )
-        composite = min(composite, 100.0)
 
-        pattern  = self._detect_pattern(inp, selling, admin, quality, discipline)
-        risk     = self._risk_level(composite)
-        severity = self._severity(composite)
+    # ── signal ────────────────────────────────────────────────────────────
+
+    _PATTERN_LABELS = {
+        TimePattern.high_priority_neglect: "High-priority neglect",
+        TimePattern.admin_overload:        "Admin overload",
+        TimePattern.reactive_time_sink:    "Reactive time sink",
+        TimePattern.wrong_size_focus:      "Wrong-size focus",
+        TimePattern.renewal_hover:         "Renewal hover",
+    }
+
+    def _signal(self, inp: TimeInput, pattern: TimePattern, composite: float) -> str:
+        if composite < 20:
+            return (
+                "Time allocation optimized — priority accounts, pipeline building, "
+                "and selling hours within benchmarks"
+            )
+        label      = self._PATTERN_LABELS.get(pattern, pattern.value.replace("_", " ").title())
+        hi_pct     = round(inp.time_on_high_priority_accts_pct * 100)
+        admin_pct  = round(inp.time_on_admin_tasks_pct * 100)
+        react_pct  = round(inp.reactive_time_pct * 100)
+        comp_int   = round(composite)
+        return (
+            f"{label} — {hi_pct}% time on high-priority accounts — "
+            f"{admin_pct}% on admin — "
+            f"{react_pct}% reactive — composite {comp_int}"
+        )
+
+    # ── public API ────────────────────────────────────────────────────────
+
+    def assess(self, inp: TimeInput) -> TimeResult:
+        pa  = self._priority_allocation_score(inp)
+        ba  = self._balance_score(inp)
+        pf  = self._pipeline_focus_score(inp)
+        se  = self._selling_effectiveness_score(inp)
+        comp = self._composite(pa, ba, pf, se)
+
+        pattern  = self._pattern(inp)
+        risk     = self._risk(comp)
+        severity = self._severity(comp)
         action   = self._action(risk, pattern)
 
-        gap      = self._has_time_gap(composite, inp)
-        coaching = self._requires_allocation_coaching(composite, inp)
-        lost     = self._estimated_selling_hours_lost(inp, composite)
-        signal   = self._signal(inp, pattern, composite)
-
-        result = TimeAllocationResult(
-            rep_id=inp.rep_id,
-            region=inp.region,
-            allocation_risk=risk,
-            allocation_pattern=pattern,
-            allocation_severity=severity,
-            recommended_action=action,
-            selling_time_score=selling,
-            admin_burden_score=admin,
-            activity_quality_score=quality,
-            time_discipline_score=discipline,
-            time_allocation_composite=composite,
-            has_time_gap=gap,
-            requires_allocation_coaching=coaching,
-            estimated_selling_hours_lost_per_week=lost,
-            allocation_signal=signal,
+        result = TimeResult(
+            rep_id                      = inp.rep_id,
+            region                      = inp.region,
+            time_risk                   = risk,
+            time_pattern                = pattern,
+            time_severity               = severity,
+            recommended_action          = action,
+            priority_allocation_score   = pa,
+            balance_score               = ba,
+            pipeline_focus_score        = pf,
+            selling_effectiveness_score = se,
+            time_composite              = comp,
+            has_time_gap                = self._has_gap(inp, comp),
+            requires_time_coaching      = self._requires_coaching(inp, comp),
+            estimated_quota_risk_usd    = self._quota_risk(inp, comp),
+            time_signal                 = self._signal(inp, pattern, comp),
         )
         self._results.append(result)
         return result
 
-    def assess_batch(self, inputs: list[TimeAllocationInput]) -> list[TimeAllocationResult]:
+    def assess_batch(self, inputs: List[TimeInput]) -> List[TimeResult]:
         return [self.assess(i) for i in inputs]
 
-    def summary(self) -> dict:
+    def summary(self) -> Dict:
         if not self._results:
             return {
                 "total": 0,
@@ -390,48 +308,50 @@ class SalesTimeAllocationIntelligenceEngine:
                 "pattern_counts": {},
                 "severity_counts": {},
                 "action_counts": {},
-                "avg_time_allocation_composite": 0.0,
+                "avg_time_composite": 0.0,
                 "time_gap_count": 0,
-                "allocation_coaching_count": 0,
-                "avg_selling_time_score": 0.0,
-                "avg_admin_burden_score": 0.0,
-                "avg_activity_quality_score": 0.0,
-                "avg_time_discipline_score": 0.0,
-                "total_estimated_selling_hours_lost_per_week": 0.0,
+                "coaching_count": 0,
+                "avg_priority_allocation_score": 0.0,
+                "avg_balance_score": 0.0,
+                "avg_pipeline_focus_score": 0.0,
+                "avg_selling_effectiveness_score": 0.0,
+                "total_estimated_quota_risk_usd": 0.0,
             }
 
-        risk_counts:     dict[str, int] = {}
-        pattern_counts:  dict[str, int] = {}
-        severity_counts: dict[str, int] = {}
-        action_counts:   dict[str, int] = {}
-        total_comp = total_sel = total_adm = total_qua = total_dis = total_lost = 0.0
+        risk_counts:     Dict[str, int] = {}
+        pattern_counts:  Dict[str, int] = {}
+        severity_counts: Dict[str, int] = {}
+        action_counts:   Dict[str, int] = {}
+        total_comp = total_pa = total_ba = total_pf = total_se = total_qr = 0.0
+        gap_count = coaching_count = 0
 
-        for r in self._results:
-            risk_counts[r.allocation_risk.value]       = risk_counts.get(r.allocation_risk.value, 0) + 1
-            pattern_counts[r.allocation_pattern.value] = pattern_counts.get(r.allocation_pattern.value, 0) + 1
-            severity_counts[r.allocation_severity.value] = severity_counts.get(r.allocation_severity.value, 0) + 1
-            action_counts[r.recommended_action.value]    = action_counts.get(r.recommended_action.value, 0) + 1
-            total_comp += r.time_allocation_composite
-            total_sel  += r.selling_time_score
-            total_adm  += r.admin_burden_score
-            total_qua  += r.activity_quality_score
-            total_dis  += r.time_discipline_score
-            total_lost += r.estimated_selling_hours_lost_per_week
+        for res in self._results:
+            risk_counts[res.time_risk.value]       = risk_counts.get(res.time_risk.value, 0) + 1
+            pattern_counts[res.time_pattern.value] = pattern_counts.get(res.time_pattern.value, 0) + 1
+            severity_counts[res.time_severity.value] = severity_counts.get(res.time_severity.value, 0) + 1
+            action_counts[res.recommended_action.value] = action_counts.get(res.recommended_action.value, 0) + 1
+            total_comp += res.time_composite
+            total_pa   += res.priority_allocation_score
+            total_ba   += res.balance_score
+            total_pf   += res.pipeline_focus_score
+            total_se   += res.selling_effectiveness_score
+            total_qr   += res.estimated_quota_risk_usd
+            if res.has_time_gap:         gap_count      += 1
+            if res.requires_time_coaching: coaching_count += 1
 
         n = len(self._results)
-
         return {
-            "total":                                        n,
-            "risk_counts":                                  risk_counts,
-            "pattern_counts":                               pattern_counts,
-            "severity_counts":                              severity_counts,
-            "action_counts":                                action_counts,
-            "avg_time_allocation_composite":                round(total_comp / n, 1),
-            "time_gap_count":                               sum(1 for r in self._results if r.has_time_gap),
-            "allocation_coaching_count":                    sum(1 for r in self._results if r.requires_allocation_coaching),
-            "avg_selling_time_score":                       round(total_sel / n, 1),
-            "avg_admin_burden_score":                       round(total_adm / n, 1),
-            "avg_activity_quality_score":                   round(total_qua / n, 1),
-            "avg_time_discipline_score":                    round(total_dis / n, 1),
-            "total_estimated_selling_hours_lost_per_week":  round(total_lost, 2),
+            "total":                              n,
+            "risk_counts":                        risk_counts,
+            "pattern_counts":                     pattern_counts,
+            "severity_counts":                    severity_counts,
+            "action_counts":                      action_counts,
+            "avg_time_composite":                 round(total_comp / n, 1),
+            "time_gap_count":                     gap_count,
+            "coaching_count":                     coaching_count,
+            "avg_priority_allocation_score":      round(total_pa / n, 1),
+            "avg_balance_score":                  round(total_ba / n, 1),
+            "avg_pipeline_focus_score":           round(total_pf / n, 1),
+            "avg_selling_effectiveness_score":    round(total_se / n, 1),
+            "total_estimated_quota_risk_usd":     round(total_qr, 2),
         }
