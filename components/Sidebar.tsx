@@ -1803,6 +1803,18 @@ function IconSalesBuyerMeetingQualityIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesQuotaAttainmentPatternIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Target with trend line — quota attainment pattern */}
+      <circle cx="10" cy="10" r="8" strokeLinecap="round"/>
+      <circle cx="10" cy="10" r="4" strokeLinecap="round"/>
+      <circle cx="10" cy="10" r="1" fill="currentColor" stroke="none"/>
+      <path d="M4 15 L8 11 L11 13 L16 7" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesObjectionIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2361,6 +2373,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-negotiation-intelligence-engine", label: "Negotiation", icon: IconSalesNegotiationIntelligenceEngine },
       { href: "/dashboard/sales-buyer-meeting-quality-intelligence-engine", label: "Meeting Quality", icon: IconSalesBuyerMeetingQualityIntelligenceEngine },
       { href: "/dashboard/sales-objection-intelligence-engine", label: "Objection Intel", icon: IconSalesObjectionIntelligenceEngine },
+      { href: "/dashboard/sales-quota-attainment-pattern-intelligence-engine", label: "Quota Patterns", icon: IconSalesQuotaAttainmentPatternIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
