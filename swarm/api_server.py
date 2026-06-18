@@ -1544,6 +1544,51 @@ def scorecard_reset():
     return {"status": "reset"}
 
 
+# ── Lead Scorer ───────────────────────────────────────────────────────────────
+
+class LeadScoreReq(BaseModel):
+    company_id:     str
+    pagespeed_score: int
+    load_time_ms:   int
+    icp_fit:        float
+    sector:         str
+    company_size:   str = "PME"
+    open_rate:      float = 0.0
+    reply_signal:   float = 0.0
+
+
+class LeadBatchReq(BaseModel):
+    leads:     List[Dict[str, Any]]
+    min_grade: str = "B"
+
+
+@app.post("/leads/score", tags=["Leads"])
+def lead_score(req: LeadScoreReq):
+    result = _lead_scorer.score(
+        req.company_id, req.pagespeed_score, req.load_time_ms,
+        req.icp_fit, req.sector, req.company_size,
+        req.open_rate, req.reply_signal,
+    )
+    return result.to_dict()
+
+
+@app.post("/leads/batch", tags=["Leads"])
+def lead_batch(req: LeadBatchReq):
+    scored = _lead_scorer.filter_actionable(req.leads, min_grade=req.min_grade)
+    return {"count": len(scored), "leads": [s.to_dict() for s in scored]}
+
+
+@app.post("/leads/top", tags=["Leads"])
+def lead_top_n(req: LeadBatchReq, n: int = 10):
+    top = _lead_scorer.top_n(req.leads, n=n)
+    return [s.to_dict() for s in top]
+
+
+@app.get("/leads/weights", tags=["Leads"])
+def lead_weights():
+    return {"weights": _lead_scorer.WEIGHTS, "grade_thresholds": _lead_scorer.GRADE_THRESHOLDS}
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8001, reload=True)
