@@ -1630,6 +1630,17 @@ function IconSalesStakeholderMappingIntelligenceEngine({ className }: { classNam
   );
 }
 
+function IconSalesRepRetentionRiskIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Person silhouette with exit arrow — retention risk */}
+      <circle cx="8" cy="5" r="2.5" fill="currentColor" opacity="0.85"/>
+      <path d="M3 17c0-3.314 2.239-6 5-6s5 2.686 5 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M14 8h4M16 6l2 2-2 2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2118,6 +2129,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-deal-velocity-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityIntelligenceEngine },
       { href: "/dashboard/sales-account-penetration-intelligence-engine", label: "Acct. Penetration", icon: IconSalesAccountPenetrationIntelligenceEngine },
       { href: "/dashboard/sales-time-allocation-intelligence-engine", label: "Time Allocation", icon: IconSalesTimeAllocationIntelligenceEngine },
+      { href: "/dashboard/sales-rep-retention-risk-intelligence-engine", label: "Rep Retention Risk", icon: IconSalesRepRetentionRiskIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
