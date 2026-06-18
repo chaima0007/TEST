@@ -1790,6 +1790,19 @@ function IconSalesDealDeskIntelligenceEngine({ className }: { className?: string
   );
 }
 
+function IconSalesPOCIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Microscope/lab flask — POC scientific evaluation */}
+      <ellipse cx="10" cy="14" rx="5" ry="3" strokeLinecap="round"/>
+      <path d="M7 14 L6 7 M13 14 L14 7" strokeLinecap="round"/>
+      <line x1="6" y1="7" x2="14" y2="7" strokeLinecap="round"/>
+      <circle cx="10" cy="4" r="2" strokeLinecap="round"/>
+      <line x1="10" y1="6" x2="10" y2="7" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2291,6 +2304,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-social-selling-intelligence-engine", label: "Social Selling", icon: IconSalesSocialSellingIntelligenceEngine },
       { href: "/dashboard/sales-crm-adoption-intelligence-engine", label: "CRM Adoption", icon: IconSalesCRMAdoptionIntelligenceEngine },
       { href: "/dashboard/sales-deal-desk-intelligence-engine", label: "Deal Desk", icon: IconSalesDealDeskIntelligenceEngine },
+      { href: "/dashboard/sales-poc-intelligence-engine", label: "POC Execution", icon: IconSalesPOCIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
