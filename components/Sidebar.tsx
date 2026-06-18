@@ -1666,6 +1666,27 @@ function IconSalesPipelineHygieneIntelligenceEngine({ className }: { className?:
   );
 }
 
+function IconSalesBuyerIntentSignalIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Heartbeat / pulse line — buyer intent signal */}
+      <path d="M2 10h3l2-5 3 10 2-7 2 3h4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconSalesNegotiationEffectivenessIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Handshake / two hands crossing — negotiation */}
+      <path d="M3 12l4-4 3 2 4-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M1 15c2-1 4 0 5-1s3-3 5-2 4 1 4 3" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" opacity="0.7"/>
+      <circle cx="14" cy="5" r="1.5" fill="currentColor" opacity="0.8"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2157,6 +2178,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-rep-retention-risk-intelligence-engine", label: "Rep Retention Risk", icon: IconSalesRepRetentionRiskIntelligenceEngine },
       { href: "/dashboard/sales-multi-channel-engagement-intelligence-engine", label: "Multi-Channel Eng.", icon: IconSalesMultiChannelEngagementIntelligenceEngine },
       { href: "/dashboard/sales-pipeline-hygiene-intelligence-engine", label: "Pipeline Hygiene", icon: IconSalesPipelineHygieneIntelligenceEngine },
+      { href: "/dashboard/sales-buyer-intent-signal-intelligence-engine", label: "Buyer Intent", icon: IconSalesBuyerIntentSignalIntelligenceEngine },
+      { href: "/dashboard/sales-negotiation-effectiveness-intelligence-engine", label: "Negotiation Eff.", icon: IconSalesNegotiationEffectivenessIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
