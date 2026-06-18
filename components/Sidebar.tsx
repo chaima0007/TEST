@@ -1384,6 +1384,43 @@ function IconCRMDataQualityRiskEngine({ className }: { className?: string }) {
   );
 }
 
+function IconDealGhostingRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2a7 7 0 110 14A7 7 0 0110 2z" opacity="0.2" />
+      <path d="M10 2a7 7 0 110 14A7 7 0 0110 2z" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.5" />
+      <path d="M7 8c0-1.66 1.34-3 3-3s3 1.34 3 3c0 1.2-.7 2.24-1.73 2.74L11 13H9l-.27-2.26A3 3 0 017 8z" opacity="0.5" />
+      <circle cx="10" cy="15" r="0.8" opacity="0.8" />
+      <path d="M14 3l3 3-3 3" stroke="#fbbf24" strokeWidth="1.2" fill="none" strokeLinecap="round" opacity="0.0" />
+      <path d="M16 6h-4" stroke="#fbbf24" strokeWidth="0.0" fill="none" />
+      <path d="M4 4l12 12" stroke="#f87171" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+    </svg>
+  );
+}
+
+function IconSalesQuotaGamingDetectionEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 14l3-7 3 4 3-6 3 3" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+      <rect x="2" y="15" width="16" height="1.5" rx="0.75" opacity="0.3" />
+      <path d="M14 2l2 2-2 2M16 4H11" stroke="#fbbf24" strokeWidth="1.3" strokeLinecap="round" fill="none" opacity="0.9" />
+      <circle cx="15" cy="15" r="3.5" fill="#f87171" opacity="0.9" />
+      <path d="M13.5 15h3M15 13.5v3" stroke="white" strokeWidth="1.3" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
+function IconSalesDataExfiltrationRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M4 3h12a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" opacity="0.25" />
+      <path d="M7 8h6M7 11h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.6" />
+      <circle cx="15" cy="15" r="4" fill="#f87171" opacity="0.9" />
+      <path d="M15 13v2.5M15 16.5v.5" stroke="white" strokeWidth="1.4" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconCompetitorWinLossIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1393,6 +1430,19 @@ function IconCompetitorWinLossIntelligenceEngine({ className }: { className?: st
       <circle cx="11" cy="11" r="1.5" fill="#f87171" />
       <circle cx="15" cy="3" r="1.5" opacity="0.8" />
       <path d="M13 15l2-2 2 2-2 2-2-2z" opacity="0.5" />
+    </svg>
+  );
+}
+
+function IconAccountExecutiveRampVelocityEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 16l4-8 3 5 3-9 4 6" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.8" />
+      <circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.3" />
+      <circle cx="10" cy="10" r="4" fill="none" stroke="#34d399" strokeWidth="1.2"
+        strokeDasharray="12 13" strokeLinecap="round" opacity="0.9" />
+      <path d="M10 8v2.5l1.5 1" stroke="#34d399" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.9" />
+      <path d="M15 4l1.5 1.5-1.5 1.5" stroke="#818cf8" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.8" />
     </svg>
   );
 }
@@ -1688,6 +1738,10 @@ const navSections: NavSection[] = [
       { href: "/dashboard/crm-data-quality-risk-engine", label: "CRM Data Quality", icon: IconCRMDataQualityRiskEngine },
       { href: "/dashboard/sales-rep-burnout-disengagement-engine", label: "Rep Burnout", icon: IconSalesRepBurnoutDisengagementEngine },
       { href: "/dashboard/competitor-win-loss-intelligence-engine", label: "Competitor Intel", icon: IconCompetitorWinLossIntelligenceEngine },
+      { href: "/dashboard/sales-data-exfiltration-risk-engine", label: "Data Exfiltration", icon: IconSalesDataExfiltrationRiskEngine },
+      { href: "/dashboard/sales-quota-gaming-detection-engine", label: "Quota Gaming", icon: IconSalesQuotaGamingDetectionEngine },
+      { href: "/dashboard/deal-ghosting-risk-engine", label: "Deal Ghosting", icon: IconDealGhostingRiskEngine },
+      { href: "/dashboard/account-executive-ramp-velocity-engine", label: "AE Ramp Velocity", icon: IconAccountExecutiveRampVelocityEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
