@@ -2473,6 +2473,20 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesQuotaSandbagOvercommitIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Quota bar: sandbagging low then surging — gaming detection */}
+      <rect x="2" y="12" width="3" height="5" rx="0.5" fill="currentColor" stroke="none" opacity="0.4"/>
+      <rect x="6" y="10" width="3" height="7" rx="0.5" fill="currentColor" stroke="none" opacity="0.5"/>
+      <rect x="10" y="8" width="3" height="9" rx="0.5" fill="currentColor" stroke="none" opacity="0.6"/>
+      <rect x="14" y="3" width="3" height="14" rx="0.5" fill="currentColor" stroke="none" opacity="0.9"/>
+      <path d="M3 9 L9 8 L13 6 L17 2" strokeLinecap="round" strokeLinejoin="round" stroke="#eab308" strokeWidth="1.6"/>
+      <circle cx="17" cy="2" r="1.2" fill="#eab308" stroke="none"/>
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2773,6 +2787,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-territory-coverage-intelligence-engine", label: "Territory Coverage", icon: IconSalesTerritoryConverageIntelligenceEngine },
       { href: "/dashboard/sales-coaching-receptivity-intelligence-engine", label: "Coaching Receptivity", icon: IconSalesCoachingReceptivityIntelligenceEngine },
       { href: "/dashboard/sales-value-proposition-deterioration-intelligence-engine", label: "Value Prop. Det.", icon: IconSalesValuePropositionDeteriorationIntelligenceEngine },
+      { href: "/dashboard/sales-quota-sandbag-overcommit-intelligence-engine", label: "Quota Gaming", icon: IconSalesQuotaSandbagOvercommitIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
