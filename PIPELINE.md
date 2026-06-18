@@ -80,6 +80,13 @@ Action : `POST /api/pipeline/matches/[id]/draft` (`lib/pipeline/writer.ts`). Ré
 par Claude si `ANTHROPIC_API_KEY`, sinon gabarit heuristique. Bouton « Préparer le
 dossier » sur chaque proposition du dashboard.
 
+## Agent Auto-pilote
+
+Orchestre Conseiller + Rédacteur + Négociateur : prépare automatiquement le
+dossier des opportunités « à viser » (recommandation ≥ niveau, défaut `strong`).
+**Ne fait que préparer** — il n'approuve, ne rejette ni n'envoie. `lib/pipeline/autopilot.ts`,
+`POST /api/pipeline/runs/[id]/autopilot`, bouton « 🚀 Auto-pilote » dans le dashboard.
+
 ## Reprise sur panne
 
 Un run en échec est repris depuis l'étape fautive via `POST /api/pipeline/runs/[id]/resume`

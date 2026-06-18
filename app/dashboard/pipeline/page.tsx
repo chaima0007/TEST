@@ -134,6 +134,27 @@ export default function PipelinePage() {
     }
   };
 
+  // Agent auto-pilote : prépare automatiquement les dossiers prioritaires.
+  const [piloting, setPiloting] = useState(false);
+  const [autopilotMsg, setAutopilotMsg] = useState<string | null>(null);
+  const handleAutopilot = async () => {
+    if (!selected) return;
+    setPiloting(true);
+    setAutopilotMsg(null);
+    try {
+      const res = await fetch(`/api/pipeline/runs/${selected.id}/autopilot`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ level: "strong" }),
+      });
+      const report = await res.json();
+      setAutopilotMsg(`${report.prepared} dossier(s) prioritaire(s) préparé(s) automatiquement.`);
+      await loadDetail(selected.id);
+    } finally {
+      setPiloting(false);
+    }
+  };
+
   return (
     <div className="space-y-6 pb-8">
       {/* Header */}
@@ -178,7 +199,7 @@ export default function PipelinePage() {
                 return (
                   <button
                     key={r.id}
-                    onClick={() => loadDetail(r.id)}
+                    onClick={() => { setAutopilotMsg(null); loadDetail(r.id); }}
                     className={`w-full text-left px-4 py-3 transition-colors ${isSel ? "bg-blue-50/60" : "hover:bg-slate-50"}`}
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -249,14 +270,29 @@ export default function PipelinePage() {
               {/* Conseiller : recommandation + simulation de réussite */}
               {advice && advice.ranked.length > 0 && (
                 <div className="rounded-lg overflow-hidden border border-indigo-100" style={{ background: "linear-gradient(135deg,#eef2ff,#ffffff)" }}>
-                  <div className="px-5 py-3 border-b border-indigo-100 flex items-center justify-between">
+                  <div className="px-5 py-3 border-b border-indigo-100 flex items-center justify-between gap-2">
                     <h2 className="text-[13px] font-semibold text-slate-900">Conseil de l&apos;agent</h2>
-                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white text-indigo-600 border border-indigo-100">
-                      {advice.generatedBy === "llm" ? "rédigé par Claude" : "analyse heuristique"}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={handleAutopilot}
+                        disabled={piloting}
+                        title="Préparer automatiquement les dossiers des opportunités « à viser »"
+                        className="text-[11px] font-semibold px-3 py-1 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-colors disabled:opacity-60"
+                      >
+                        {piloting ? "Auto-pilote…" : "🚀 Auto-pilote"}
+                      </button>
+                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white text-indigo-600 border border-indigo-100">
+                        {advice.generatedBy === "llm" ? "rédigé par Claude" : "analyse heuristique"}
+                      </span>
+                    </div>
                   </div>
                   <div className="px-5 py-4 space-y-3">
                     <p className="text-[13px] text-slate-700 leading-snug">{advice.summary}</p>
+                    {autopilotMsg && (
+                      <p className="text-[12px] font-medium text-indigo-700 bg-white border border-indigo-100 rounded-md px-3 py-2">
+                        ✅ {autopilotMsg} Validation toujours manuelle (l&apos;auto-pilote ne fait que préparer).
+                      </p>
+                    )}
                     {/* Simulation de réussite (Monte-Carlo) */}
                     <div className="grid grid-cols-3 gap-2">
                       {[
