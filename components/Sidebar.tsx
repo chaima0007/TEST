@@ -1533,6 +1533,29 @@ function IconSalesForecastAccuracyIntelligenceEngine({ className }: { className?
   );
 }
 
+function IconSalesAccountExpansionIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" strokeWidth="1.3" />
+      <circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.1" opacity="0.5" strokeDasharray="2 2" />
+      <path d="M13 7l3-3m0 0h-2.5m2.5 0v2.5" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 6.5V10m0 0h3.5" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconSalesMeetingQualityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="2" y="3" width="16" height="11" rx="2" fill="none" stroke="currentColor" strokeWidth="1.3" />
+      <circle cx="7" cy="8.5" r="1.5" fill="currentColor" opacity="0.7" />
+      <circle cx="10" cy="8.5" r="1.5" fill="currentColor" opacity="0.7" />
+      <circle cx="13" cy="8.5" r="1.5" fill="currentColor" opacity="0.7" />
+      <path d="M10 14v3m-3-1.5h6" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function IconPipelineGenerationEfficiencyEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1971,6 +1994,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-territory-coverage-intelligence-engine", label: "Territory Coverage", icon: IconSalesTerritoryCoverageIntelligenceEngine },
       { href: "/dashboard/sales-customer-relationship-health-engine", label: "Customer Relationship", icon: IconSalesCustomerRelationshipHealthEngine },
       { href: "/dashboard/sales-forecast-accuracy-intelligence-engine", label: "Forecast Accuracy", icon: IconSalesForecastAccuracyIntelligenceEngine },
+      { href: "/dashboard/sales-account-expansion-intelligence-engine", label: "Account Expansion", icon: IconSalesAccountExpansionIntelligenceEngine },
+      { href: "/dashboard/sales-meeting-quality-intelligence-engine", label: "Meeting Quality", icon: IconSalesMeetingQualityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
