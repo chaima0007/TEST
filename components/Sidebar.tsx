@@ -2473,6 +2473,16 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesRepBurnoutAttritionRiskIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Burnout: flame with person silhouette — rep at risk */}
+      <path d="M10 17 C6 17 4 14 4 11 C4 8 6 6 8 5 C7 7 8 8 9 8 C9 5 11 3 13 2 C13 5 11 7 12 9 C13 7 14 6 15 7 C16 9 16 11 14 13 C13 15 12 17 10 17Z" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="10" cy="12" r="1.5" fill="currentColor" stroke="none" opacity="0.6"/>
+    </svg>
+  );
+}
+
 function IconSalesQuotaSandbagOvercommitIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2788,6 +2798,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-coaching-receptivity-intelligence-engine", label: "Coaching Receptivity", icon: IconSalesCoachingReceptivityIntelligenceEngine },
       { href: "/dashboard/sales-value-proposition-deterioration-intelligence-engine", label: "Value Prop. Det.", icon: IconSalesValuePropositionDeteriorationIntelligenceEngine },
       { href: "/dashboard/sales-quota-sandbag-overcommit-intelligence-engine", label: "Quota Gaming", icon: IconSalesQuotaSandbagOvercommitIntelligenceEngine },
+      { href: "/dashboard/sales-rep-burnout-attrition-risk-intelligence-engine", label: "Burnout & Flight Risk", icon: IconSalesRepBurnoutAttritionRiskIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
