@@ -622,6 +622,23 @@ function IconConversationIntelligence({ className }: { className?: string }) {
   );
 }
 
+function IconChampionRiskMonitor({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" opacity="0.7" />
+      <path d="M13 14l-3-3-1 1" stroke="#f87171" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    </svg>
+  );
+}
+
+function IconForecastConfidenceScorer({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clipRule="evenodd" opacity="0.7" />
+    </svg>
+  );
+}
+
 function IconDealVelocityTracker({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1301,6 +1318,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/revenue-leak-detector", label: "Revenue Leak", icon: IconRevenueLeakDetector },
       { href: "/dashboard/email-sentiment-tracker", label: "Email Sentiment", icon: IconEmailSentimentTracker },
       { href: "/dashboard/deal-velocity-tracker", label: "Deal Velocity", icon: IconDealVelocityTracker },
+      { href: "/dashboard/forecast-confidence-scorer", label: "Forecast Conf.", icon: IconForecastConfidenceScorer },
+      { href: "/dashboard/champion-risk-monitor", label: "Champion Risk", icon: IconChampionRiskMonitor },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
