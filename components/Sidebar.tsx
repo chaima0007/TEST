@@ -113,6 +113,47 @@ function IconLogout({ className }: { className?: string }) {
   );
 }
 
+function IconSignals({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+      <circle cx="10" cy="10" r="4" />
+      <circle cx="10" cy="10" r="7" />
+    </svg>
+  );
+}
+
+function IconSimulate({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+      <line x1="3" y1="7" x2="17" y2="7" />
+      <circle cx="8" cy="7" r="2" fill="currentColor" stroke="none" />
+      <line x1="3" y1="13" x2="17" y2="13" />
+      <circle cx="13" cy="13" r="2" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconBattleCards({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+      <rect x="4" y="6" width="12" height="9" rx="1.5" />
+      <path d="M6 6V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1" />
+    </svg>
+  );
+}
+
+function IconRadar({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" />
+      <line x1="10" y1="3" x2="10" y2="17" />
+      <line x1="3" y1="10" x2="17" y2="10" />
+      <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -120,7 +161,7 @@ type NavItem = {
   label: string;
   icon: React.ComponentType<{ className?: string }>;
   exact?: boolean;
-  badge?: number;
+  badge?: number | string;
 };
 
 type NavSection = {
@@ -135,6 +176,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard", label: "Tableau de bord", icon: IconDashboard, exact: true },
       { href: "/dashboard/compare", label: "Comparaison", icon: IconComparison },
       { href: "/dashboard/pricing", label: "Tarification", icon: IconPricing },
+      { href: "/dashboard/signals", label: "Signaux Faibles", icon: IconSignals, badge: "NEW" },
+      { href: "/dashboard/simulate", label: "Simulateur", icon: IconSimulate },
     ],
   },
   {
@@ -143,6 +186,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitors", label: "Concurrents", icon: IconCompetitors },
       { href: "/dashboard/alerts", label: "Alertes", icon: IconAlerts, badge: 3 },
       { href: "/dashboard/reports", label: "Rapports", icon: IconReports },
+      { href: "/dashboard/battlecards", label: "Battle Cards", icon: IconBattleCards },
+      { href: "/dashboard/radar", label: "Radar Clients", icon: IconRadar },
     ],
   },
   {
@@ -236,7 +281,7 @@ function NavContent({
                       {/* Icon + optional badge wrapper */}
                       <span className="relative flex-shrink-0">
                         <Icon className="w-5 h-5" />
-                        {item.badge !== undefined && item.badge > 0 && (
+                        {typeof item.badge === "number" && item.badge > 0 && (
                           <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center leading-none">
                             {item.badge > 9 ? "9+" : item.badge}
                           </span>
@@ -246,10 +291,16 @@ function NavContent({
                       {!collapsed && (
                         <>
                           <span className="flex-1 truncate">{item.label}</span>
-                          {/* Badge also shows inline when expanded */}
-                          {item.badge !== undefined && item.badge > 0 && (
+                          {/* Numeric badge shows inline when expanded */}
+                          {typeof item.badge === "number" && item.badge > 0 && (
                             <span className="ml-auto bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1">
                               {item.badge > 9 ? "9+" : item.badge}
+                            </span>
+                          )}
+                          {/* String badge (e.g. "NEW") */}
+                          {typeof item.badge === "string" && (
+                            <span className="ml-auto bg-indigo-600 text-white text-[9px] font-bold rounded px-1.5 py-0.5 leading-none tracking-wide">
+                              {item.badge}
                             </span>
                           )}
                         </>
