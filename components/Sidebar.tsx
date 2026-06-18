@@ -1630,6 +1630,33 @@ function IconSalesStakeholderMappingIntelligenceEngine({ className }: { classNam
   );
 }
 
+function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Clock face with segmented arc — time allocation */}
+      <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" strokeWidth="1.4" opacity="0.5"/>
+      <path d="M10 10 L10 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+      <path d="M10 10 L15 12" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" opacity="0.7"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+      <path d="M10 2 A8 8 0 0 1 16.9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.8"/>
+    </svg>
+  );
+}
+
+function IconSalesAccountPenetrationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Concentric circles radiating out from center — territory penetration */}
+      <circle cx="10" cy="10" r="2" fill="currentColor" />
+      <circle cx="10" cy="10" r="5" fill="none" stroke="currentColor" strokeWidth="1.3" opacity="0.7" />
+      <circle cx="10" cy="10" r="8.5" fill="none" stroke="currentColor" strokeWidth="1.1" opacity="0.4" />
+      <circle cx="10" cy="4" r="1.2" fill="currentColor" opacity="0.8" />
+      <circle cx="16" cy="10" r="1.2" fill="currentColor" opacity="0.6" />
+      <circle cx="4" cy="10" r="1.2" fill="currentColor" opacity="0.4" />
+    </svg>
+  );
+}
+
 function IconSalesDealVelocityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2089,6 +2116,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-quota-attainment-intelligence-engine", label: "Quota Attainment", icon: IconSalesQuotaAttainmentIntelligenceEngine },
       { href: "/dashboard/sales-stakeholder-mapping-intelligence-engine", label: "Stakeholder Mapping", icon: IconSalesStakeholderMappingIntelligenceEngine },
       { href: "/dashboard/sales-deal-velocity-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityIntelligenceEngine },
+      { href: "/dashboard/sales-account-penetration-intelligence-engine", label: "Acct. Penetration", icon: IconSalesAccountPenetrationIntelligenceEngine },
+      { href: "/dashboard/sales-time-allocation-intelligence-engine", label: "Time Allocation", icon: IconSalesTimeAllocationIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
