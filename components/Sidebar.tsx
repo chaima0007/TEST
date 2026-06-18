@@ -429,6 +429,14 @@ function IconRenewalIntelligence({ className }: { className?: string }) {
   );
 }
 
+function IconPipelineGap({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zm0 4a1 1 0 000 2h7a1 1 0 100-2H3zm0 4a1 1 0 100 2h4a1 1 0 100-2H3zm10 1a1 1 0 011-1h.5a1 1 0 110 2H14a1 1 0 01-1-1zm3-1a1 1 0 100 2h.5a1 1 0 100-2H16z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconLeadScoringIntelligence({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -809,6 +817,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/forecast-accuracy-engine", label: "Précision Forecast", icon: IconForecastAccuracy },
       { href: "/dashboard/onboarding-risk-monitor", label: "Risques Onboarding", icon: IconOnboardingRisk },
       { href: "/dashboard/renewal-intelligence-engine", label: "Intelligence Renouvellement", icon: IconRenewalIntelligence },
+      { href: "/dashboard/pipeline-gap-analyzer", label: "Analyse Gap Pipeline", icon: IconPipelineGap },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
