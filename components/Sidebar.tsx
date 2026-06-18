@@ -1190,6 +1190,17 @@ function IconCustomerReferralIntelligence({ className }: { className?: string })
   );
 }
 
+function IconDealComplexityIntelligence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.2" opacity={0.4} />
+      <circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" opacity={0.6} />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity={0.8} />
+      <path d="M10 3v4M10 13v4M3 10h4M13 10h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
+    </svg>
+  );
+}
+
 function IconPipelineAgingIntelligence({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1455,6 +1466,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/deal-multithreading-intelligence", label: "Deal Threading", icon: IconDealMultithreadingIntelligence },
       { href: "/dashboard/rep-attrition-risk-engine", label: "Rep Attrition", icon: IconRepAttritionRiskEngine },
       { href: "/dashboard/pipeline-aging-intelligence", label: "Pipeline Aging", icon: IconPipelineAgingIntelligence },
+      { href: "/dashboard/deal-complexity-intelligence", label: "Deal Complexity", icon: IconDealComplexityIntelligence },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
