@@ -2473,6 +2473,18 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesMeetingQualityConversionIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Calendar with checkmark and upward arrow — meeting quality & conversion */}
+      <rect x="3" y="4" width="14" height="12" rx="1.5"/>
+      <path d="M3 7.5 L17 7.5"/>
+      <path d="M7 3 L7 5.5 M13 3 L13 5.5" strokeLinecap="round"/>
+      <path d="M7 11.5 L9 13.5 L13 10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6"/>
+    </svg>
+  );
+}
+
 function IconSalesDiscountLeakageMarginErosionIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2841,6 +2853,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-deal-velocity-collapse-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityCollapseIntelligenceEngine },
       { href: "/dashboard/sales-buyer-persona-mismatch-intelligence-engine", label: "Persona Mismatch", icon: IconSalesBuyerPersonaMismatchIntelligenceEngine },
       { href: "/dashboard/sales-discount-leakage-margin-erosion-intelligence-engine", label: "Discount Leakage", icon: IconSalesDiscountLeakageMarginErosionIntelligenceEngine },
+      { href: "/dashboard/sales-meeting-quality-conversion-intelligence-engine", label: "Meeting Quality", icon: IconSalesMeetingQualityConversionIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
