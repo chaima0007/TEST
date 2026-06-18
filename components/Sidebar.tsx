@@ -1893,6 +1893,20 @@ function IconSalesCustomerSuccessHandoffQualityIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesNegotiationDisciplineIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Handshake with dollar sign — negotiation discipline */}
+      <path d="M2 11 L6 8 L9 10 L11 10 L14 8 L18 11" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6 8 L6 6" strokeLinecap="round"/>
+      <path d="M14 8 L14 6" strokeLinecap="round"/>
+      <path d="M9 10 L9 15 M11 10 L11 15" strokeLinecap="round"/>
+      <path d="M7.5 15 L12.5 15" strokeLinecap="round"/>
+      <text x="10" y="5.5" textAnchor="middle" fontSize="4.5" fill="currentColor" stroke="none" fontWeight="bold">$</text>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2512,6 +2526,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-objection-handling-effectiveness-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingEffectivenessIntelligenceEngine },
       { href: "/dashboard/sales-discovery-quality-intelligence-engine", label: "Discovery Quality", icon: IconSalesDiscoveryQualityIntelligenceEngine },
       { href: "/dashboard/sales-customer-success-handoff-quality-intelligence-engine", label: "CS Handoff Quality", icon: IconSalesCustomerSuccessHandoffQualityIntelligenceEngine },
+      { href: "/dashboard/sales-negotiation-discipline-intelligence-engine", label: "Negotiation Discipline", icon: IconSalesNegotiationDisciplineIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
