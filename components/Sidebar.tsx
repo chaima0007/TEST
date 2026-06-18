@@ -1790,6 +1790,19 @@ function IconSalesDealDeskIntelligenceEngine({ className }: { className?: string
   );
 }
 
+function IconSalesBuyerMeetingQualityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Calendar with checkmark — meeting quality */}
+      <rect x="2" y="4" width="16" height="13" rx="2" strokeLinecap="round"/>
+      <line x1="2" y1="8" x2="18" y2="8" strokeLinecap="round"/>
+      <line x1="6" y1="2" x2="6" y2="6" strokeLinecap="round"/>
+      <line x1="14" y1="2" x2="14" y2="6" strokeLinecap="round"/>
+      <path d="M7 13 L9 15 L13 11" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 function IconSalesNegotiationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2335,6 +2348,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-poc-intelligence-engine", label: "POC Execution", icon: IconSalesPOCIntelligenceEngine },
       { href: "/dashboard/sales-reference-intelligence-engine", label: "Ref. Evidence", icon: IconSalesReferenceIntelligenceEngine },
       { href: "/dashboard/sales-negotiation-intelligence-engine", label: "Negotiation", icon: IconSalesNegotiationIntelligenceEngine },
+      { href: "/dashboard/sales-buyer-meeting-quality-intelligence-engine", label: "Meeting Quality", icon: IconSalesBuyerMeetingQualityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
