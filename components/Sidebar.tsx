@@ -1737,6 +1737,21 @@ function IconSalesEmailSequenceIntelligenceEngine({ className }: { className?: s
   );
 }
 
+function IconSalesMultithreadingIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Network nodes — stakeholder multithreading */}
+      <circle cx="10" cy="4" r="2" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <circle cx="3" cy="15" r="2" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <circle cx="10" cy="15" r="2" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <circle cx="17" cy="15" r="2" fill="none" stroke="currentColor" strokeWidth="1.4"/>
+      <line x1="10" y1="6" x2="4" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="10" y1="6" x2="10" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="10" y1="6" x2="16" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesTimeAllocationIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2234,6 +2249,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-onboarding-effectiveness-intelligence-engine", label: "Rep Onboarding", icon: IconSalesOnboardingEffectivenessIntelligenceEngine },
       { href: "/dashboard/sales-conversation-quality-intelligence-engine", label: "Conv. Quality", icon: IconSalesConversationQualityIntelligenceEngine },
       { href: "/dashboard/sales-email-sequence-intelligence-engine", label: "Email Sequences", icon: IconSalesEmailSequenceIntelligenceEngine },
+      { href: "/dashboard/sales-multithreading-intelligence-engine", label: "Multithreading", icon: IconSalesMultithreadingIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
