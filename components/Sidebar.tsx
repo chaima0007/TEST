@@ -1474,6 +1474,18 @@ function IconSalesRepCapacityOverloadDetector({ className }: { className?: strin
   );
 }
 
+function IconCustomerExpansionRevenueLeakDetector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2a8 8 0 1 1 0 16A8 8 0 0 1 10 2z" fill="none" stroke="currentColor" strokeWidth="1.3" opacity="0.3" />
+      <path d="M10 2a8 8 0 0 1 0 16" fill="none" stroke="#fb923c" strokeWidth="1.5" strokeLinecap="round" opacity="0.8" />
+      <path d="M10 6v5l3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.7" />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.8" />
+      <path d="M7 3.5l-2 3h4l-2-3z" fill="#f87171" opacity="0.85" />
+    </svg>
+  );
+}
+
 function IconSalesForecastSandbaggingDetectionEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1840,6 +1852,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-competitive-win-rate-erosion-engine", label: "Win Rate Erosion", icon: IconSalesCompetitiveWinRateErosionEngine },
       { href: "/dashboard/sales-rep-burnout-attrition-risk-engine", label: "Rep Burnout Risk", icon: IconSalesRepBurnoutAttritionRiskEngine },
       { href: "/dashboard/sales-forecast-sandbagging-detection-engine", label: "Forecast Sandbagging", icon: IconSalesForecastSandbaggingDetectionEngine },
+      { href: "/dashboard/customer-expansion-revenue-leak-detector", label: "Expansion Revenue Leak", icon: IconCustomerExpansionRevenueLeakDetector },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
