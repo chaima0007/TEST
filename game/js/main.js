@@ -37,6 +37,7 @@ import { HonkCascadeAgent, NEAR_MISS_DIST } from './honkcascade.js';
 import { CopConfusionAgent }    from './copconfusion.js';
 
 const MAX_SPEED_KMH = 150;
+const MAX_SPEED_MS  = MAX_SPEED_KMH / 3.6;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -196,6 +197,10 @@ let lastBoostActive = false;
 let lastWantedLevel = wanted.level;
 let cameraShake = 0;
 let lastImpactSoundTime = -Infinity;
+
+// ── Physique verticale (jump pads) ────────────────────────────────────────────
+let _jumpVy = 0;
+let _jumpY  = 0;
 const IMPACT_AUDIO_THRESHOLD = 0.08;
 const IMPACT_AUDIO_COOLDOWN_S = 0.25;
 
@@ -280,6 +285,52 @@ function animate() {
   detective.update(dt, vehicle, hud, wanted.level);
 
   const playerPos = vehicle.getPosition();
+
+  // --- Physique verticale (jump pads) ────────────────────────────────────────
+  _jumpVy -= 18 * dt;
+  _jumpY   = Math.max(0, _jumpY + _jumpVy * dt);
+  vehicle.mesh.position.y = _jumpY;
+
+  // --- Jump pads ─────────────────────────────────────────────────────────────
+  for (const pad of world.jumpPads) {
+    if (pad._cd > 0) { pad._cd -= dt; continue; }
+    const dx = playerPos.x - pad.x, dz = playerPos.z - pad.z;
+    if (_jumpY < 0.5 && dx * dx + dz * dz < 12) {
+      _jumpVy = pad.power * 0.55;
+      pad._cd = 2.8;
+      emotion.pushEvent('drift', 2);
+      _showNotif('💥 TRAMPOLINE — envol !');
+    }
+  }
+
+  // --- Couloirs de vitesse ────────────────────────────────────────────────────
+  for (const boost of world.speedBoosts) {
+    if (Math.abs(playerPos.x - boost.x) < boost.hw && Math.abs(playerPos.z - boost.z) < boost.hd) {
+      vehicle.speed = Math.min(vehicle.speed + 8 * dt, MAX_SPEED_MS * 1.45);
+    }
+  }
+
+  // --- Portails de téléportation ──────────────────────────────────────────────
+  for (const portal of world.portals) {
+    if (!portal._cd || portal._cd <= 0) {
+      const dA = Math.hypot(playerPos.x - portal.a.x, playerPos.z - portal.a.z);
+      const dB = Math.hypot(playerPos.x - portal.b.x, playerPos.z - portal.b.z);
+      if (_jumpY < 0.5 && dA < 4) {
+        vehicle.mesh.position.set(portal.b.x + 5, 0, portal.b.z);
+        _jumpVy = 0; _jumpY = 0;
+        portal._cd = 3;
+        _showNotif('⬛ PORTAIL — Téléportation !');
+        emotion.pushEvent('crash', 0.5);
+      } else if (_jumpY < 0.5 && dB < 4) {
+        vehicle.mesh.position.set(portal.a.x + 5, 0, portal.a.z);
+        _jumpVy = 0; _jumpY = 0;
+        portal._cd = 3;
+        _showNotif('⬛ PORTAIL — Retour au Nord !');
+        emotion.pushEvent('crash', 0.5);
+      }
+    }
+    if (portal._cd > 0) portal._cd -= dt;
+  }
 
   // --- DistrictSystem : changement de quartier ---
   const districtChange = district.update(playerPos.x, playerPos.z, scene.fog);
