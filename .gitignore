@@ -10,6 +10,9 @@ seo_output/
 fichiers/
 index_projets.json
 memoire_entreprise.json
+crm_pipeline.json
+watchdog_sante.json
+.fantome_ref
 rapport_*.txt
 proposition_*.txt
 facture_*.txt

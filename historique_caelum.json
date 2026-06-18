@@ -1,0 +1,119 @@
+{
+  "projet": "Caelum Partners",
+  "fondatrice": "Chaima Mhadbi",
+  "date_creation": "2026-06-18",
+  "email": "contact@caelumpartners.agency",
+  "site": "caelumpartners.agency",
+  "github": "chaima0007",
+  "linkedin": "Caelum Partners",
+
+  "achats_et_depenses": [
+    {
+      "date": "2026-06",
+      "quoi": "Nom de domaine caelumpartners.agency",
+      "fournisseur": "Namecheap",
+      "compte": "caelum2026be",
+      "montant": "4.47$",
+      "statut": "actif",
+      "note": "Acheté avec l'aide de Claude — domaine choisi ensemble"
+    }
+  ],
+
+  "infrastructure": {
+    "domaine": {
+      "nom": "caelumpartners.agency",
+      "registrar": "Namecheap",
+      "nameservers": "gabe.ns.cloudflare.com + kim.ns.cloudflare.com"
+    },
+    "hebergement": {
+      "service": "Cloudflare Pages",
+      "cout": "Gratuit",
+      "ssl": true,
+      "ddos_protection": true,
+      "statut": "configuré — en attente de contenu HTML"
+    },
+    "dns": {
+      "service": "Cloudflare",
+      "compte": "retrouvetouvetonsmile@gmail.com",
+      "statut": "actif"
+    },
+    "api_ia": {
+      "service": "Google Gemini (gemini-2.0-flash)",
+      "cout": "Gratuit",
+      "note": "Anthropic refusé — paiement non accepté. Basculé sur Gemini."
+    }
+  },
+
+  "services_vendus": [
+    {"nom": "Site web premium", "prix": 500, "delai": "7 jours"},
+    {"nom": "Automatisation IA simple", "prix": 1500, "delai": "14 jours"},
+    {"nom": "Pack complet IA+Web+Marketing", "prix": 3000, "delai": "30 jours"}
+  ],
+
+  "statut_legal": {
+    "statut": "En attente inscription indépendante complémentaire Belgique",
+    "pays": "Belgique — Bruxelles",
+    "stripe": "À activer après inscription légale",
+    "asbl": "Existante (enfants placés) — ne PAS utiliser pour Caelum Partners"
+  },
+
+  "agents_construits": [
+    "lancer.py", "orchestrateur.py", "agent_commercial.py",
+    "agent_veille.py", "agent_facturation.py", "agent_recrutement.py",
+    "agent_reference.py", "agent_seo.py", "agent_juridique.py",
+    "agent_support_client.py", "agent_chef_projet.py", "agent_kpi.py",
+    "agent_reputation.py", "agent_pricing.py", "agent_comptable.py",
+    "agent_strategie.py", "agent_data.py", "agent_veille_techno.py",
+    "agent_partenariats.py", "agent_onboarding_employe.py",
+    "agent_formation_equipe.py", "agent_bienetre_equipe.py",
+    "agent_fluidite.py", "agent_adaptation.py", "agent_jumeau_numerique.py",
+    "agent_oracle.py", "agent_innovation.py", "agent_ethique_ia.py",
+    "agent_memoire_collective.py", "securite.py", "usine_migration_logicielle.py",
+    "agent_guide.py", "agent_watchdog.py", "agent_fantome.py",
+    "agent_commandant.py", "agent_resolveur.py", "agent_crm.py",
+    "agent_email.py", "agent_dashboard_ceo.py", "agent_memoire_session.py"
+  ],
+
+  "decisions_cles": [
+    {
+      "date": "2026-06",
+      "decision": "Nom de l'entreprise : Caelum Partners",
+      "raison": "Caelum = ciel en latin. Symbolise ambition, élévation, vision."
+    },
+    {
+      "date": "2026-06",
+      "decision": "Achat domaine caelumpartners.agency sur Namecheap à 4.47$",
+      "raison": "Fait avec Claude — domaine professionnel .agency pour une agence IA"
+    },
+    {
+      "date": "2026-06",
+      "decision": "Hébergement Cloudflare Pages (gratuit)",
+      "raison": "SSL inclus, DDoS protégé, CDN mondial, déploiement GitHub automatique"
+    },
+    {
+      "date": "2026-06",
+      "decision": "Basculer de Anthropic à Google Gemini",
+      "raison": "Paiement Anthropic refusé. Gemini gratuit avec gemini-2.0-flash."
+    },
+    {
+      "date": "2026-06",
+      "decision": "40+ agents IA construits ensemble",
+      "raison": "Suite complète : commercial, juridique, RH, sécurité, CRM, email, CEO..."
+    }
+  ],
+
+  "milestones": [
+    {"date": "2026-06", "etape": "Création entreprise Caelum Partners", "statut": "fait"},
+    {"date": "2026-06", "etape": "Achat domaine caelumpartners.agency", "statut": "fait"},
+    {"date": "2026-06", "etape": "Configuration Cloudflare + DNS", "statut": "fait"},
+    {"date": "2026-06", "etape": "Page LinkedIn Caelum Partners créée", "statut": "fait"},
+    {"date": "2026-06", "etape": "40+ agents IA construits", "statut": "fait"},
+    {"date": "2026-06", "etape": "Déployer le site HTML sur Cloudflare Pages", "statut": "en_attente"},
+    {"date": "2026-06", "etape": "Inscription légale indépendante Belgique", "statut": "en_attente"},
+    {"date": "2026-06", "etape": "Activer Stripe", "statut": "en_attente"},
+    {"date": "2026-06", "etape": "Trouver le premier client (500€)", "statut": "en_cours"},
+    {"date": "2026-06", "etape": "10 messages LinkedIn/jour via agent HERMES", "statut": "en_cours"}
+  ],
+
+  "evenements": []
+}
