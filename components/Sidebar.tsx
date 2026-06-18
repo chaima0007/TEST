@@ -1358,6 +1358,20 @@ function IconSalesProcessVelocityAnomalyEngine({ className }: { className?: stri
   );
 }
 
+function IconSalesForecastSandbaggingDetector({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 14l4-2 3 1 3-3 4 -1" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.6" />
+      <path d="M2 8l4-5 3 2 3-4 4 1" stroke="#f59e0b" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.8" />
+      <path d="M6 9v5M9 11v3M12 8v6M16 9v5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.2" />
+      <rect x="4" y="13" width="4" height="4" rx="0.5" fill="#f59e0b" opacity="0.3" />
+      <rect x="10" y="11" width="4" height="6" rx="0.5" fill="#f97316" opacity="0.3" />
+      <path d="M16 4a2 2 0 100 -4 2 2 0 000 4z" stroke="#ef4444" strokeWidth="1" fill="none" opacity="0.7" />
+      <path d="M15.3 1.7l1 1 1.5-1.5" stroke="#ef4444" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0" />
+    </svg>
+  );
+}
+
 function IconSalesActivityFabricationDetector({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1621,6 +1635,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-commission-clawback-risk-engine", label: "Commission Clawback", icon: IconSalesCommissionClawbackRiskEngine },
       { href: "/dashboard/customer-sentiment-decay-engine", label: "Sentiment Decay", icon: IconCustomerSentimentDecayEngine },
       { href: "/dashboard/sales-process-velocity-anomaly-engine", label: "Process Velocity", icon: IconSalesProcessVelocityAnomalyEngine },
+      { href: "/dashboard/sales-forecast-sandbagging-detector", label: "Forecast Sandbagging", icon: IconSalesForecastSandbaggingDetector },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
