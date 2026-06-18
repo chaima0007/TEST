@@ -49,8 +49,26 @@ npm run dev                # puis ouvrir /dashboard/pipeline
 npm test                   # tests unitaires (analyzer + matcher)
 ```
 
+## Extraction LLM (optionnelle)
+
+L'étape 2 utilise par défaut un extracteur **heuristique** déterministe. Si la
+variable d'environnement `ANTHROPIC_API_KEY` est définie, `createAnalyzer()`
+bascule automatiquement sur `LLMAnalyzer` (`lib/pipeline/llm-analyzer.ts`), qui
+délègue l'extraction à Claude (`claude-opus-4-8`, structured outputs). En cas
+d'absence de clé ou d'erreur (réseau, parsing), il **retombe sur l'heuristique** —
+aucune casse, aucune dépendance réseau obligatoire.
+
+```bash
+export ANTHROPIC_API_KEY=sk-...   # active l'extraction par Claude ; sinon heuristique
+```
+
+## Reprise sur panne
+
+Un run en échec est repris depuis l'étape fautive via `POST /api/pipeline/runs/[id]/resume`
+(bouton « Reprendre » dans le dashboard) — cf. `lib/pipeline/orchestrator.ts` (`resumeRun`).
+
 ## Extension
 
-- **Vrai LLM à l'étape 2** : implémenter `Analyzer` (`lib/pipeline/analyzer.ts`).
-- **Nouvelle source** : implémenter `SourceConnector` (`lib/pipeline/connectors.ts`).
+- **Vrai LLM à l'étape 2** : déjà branché (`LLMAnalyzer`) ; ou implémenter un autre `Analyzer`.
+- **Nouvelle source** : implémenter `SourceConnector` (`lib/pipeline/connectors.ts`) — uniquement des sources légales (APIs officielles/flux), pas de scraping.
 - **Scoring** : ajuster `scoreMatch` (`lib/pipeline/matcher.ts`) — couvert par les tests.

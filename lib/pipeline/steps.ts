@@ -7,7 +7,8 @@
 
 import { prisma } from "@/lib/prisma";
 import { MockJobBoardConnector, type SourceConnector } from "./connectors";
-import { HeuristicAnalyzer, type Analyzer } from "./analyzer";
+import { type Analyzer } from "./analyzer";
+import { createAnalyzer } from "./llm-analyzer";
 import { scoreMatch, buildSnippet } from "./matcher";
 import { getMinBudgetThreshold } from "./settings";
 
@@ -18,7 +19,8 @@ export interface StepDeps {
 
 export const defaultDeps: StepDeps = {
   connector: new MockJobBoardConnector(),
-  analyzer: new HeuristicAnalyzer(),
+  // Claude si ANTHROPIC_API_KEY est défini, sinon extracteur heuristique.
+  analyzer: createAnalyzer(),
 };
 
 const csv = (s: string) => s.split(",").map((x) => x.trim()).filter(Boolean);
@@ -44,7 +46,7 @@ export async function filterStep(runId: string, deps: StepDeps): Promise<string>
   let rejected = 0;
 
   for (const raw of raws) {
-    const fields = deps.analyzer.extract({
+    const fields = await deps.analyzer.extract({
       externalId: raw.externalId,
       source: raw.source,
       title: raw.title,

@@ -3,7 +3,7 @@ import { PrismaLibSql } from "@prisma/adapter-libsql";
 import bcrypt from "bcryptjs";
 
 const adapter = new PrismaLibSql({ url: "file:./dev.db" });
-const prisma = new PrismaClient({ adapter } as any);
+const prisma = new PrismaClient({ adapter } as never);
 
 const competitorData = [
   {

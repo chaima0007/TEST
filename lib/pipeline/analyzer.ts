@@ -16,7 +16,8 @@ export interface ExtractedFields {
 }
 
 export interface Analyzer {
-  extract(job: RawJobInput): ExtractedFields;
+  // Sync pour l'heuristique, async pour un vrai LLM — les appelants `await`.
+  extract(job: RawJobInput): ExtractedFields | Promise<ExtractedFields>;
 }
 
 // Dictionnaire de compétences reconnues → libellé canonique.
