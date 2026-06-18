@@ -1578,6 +1578,19 @@ function IconSalesInboundLeadResponseEngine({ className }: { className?: string 
   );
 }
 
+function IconSalesCompetitiveWinLossIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Trophy/shield with crossed swords — competitive win/loss */}
+      <path d="M10 2L4 5v5c0 3.5 2.5 6.5 6 7.5C16 16.5 16 14 16 10V5L10 2z"
+        fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <line x1="7" y1="8" x2="13" y2="12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.8" />
+      <line x1="13" y1="8" x2="7" y2="12" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.8" />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.7" />
+    </svg>
+  );
+}
+
 function IconPipelineGenerationEfficiencyEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2020,6 +2033,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-meeting-quality-intelligence-engine", label: "Meeting Quality", icon: IconSalesMeetingQualityIntelligenceEngine },
       { href: "/dashboard/sales-pricing-negotiation-intelligence-engine", label: "Pricing Negotiation", icon: IconSalesPricingNegotiationIntelligenceEngine },
       { href: "/dashboard/sales-inbound-lead-response-engine", label: "Lead Response", icon: IconSalesInboundLeadResponseEngine },
+      { href: "/dashboard/sales-competitive-win-loss-intelligence-engine", label: "Competitive W/L", icon: IconSalesCompetitiveWinLossIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
