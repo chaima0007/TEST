@@ -211,6 +211,53 @@ export class IntegrityAgent {
   }
 }
 
+// ── CrowdAgent ────────────────────────────────────────────────────────────────
+// Coordonne les réactions collectives de la foule aux événements du jeu.
+// Diffuse des signaux de panique positionnés (crash, police, boss) qui se
+// propagent aux piétons proches et déclenchent une fuite de groupe.
+// Câblé dans main.js : traffic.crowdAgent.broadcast(type, x, z)
+
+export class CrowdAgent {
+  constructor() {
+    this._signals = []; // { x, z, type, radius, strength, ttl }
+  }
+
+  // Diffuse un événement à (x, z). Les piétons dans <radius> mètres fuient.
+  // type     : 'crash' | 'police' | 'boss' | 'explosion'
+  // radius   : rayon de panique en mètres
+  // strength : 0-1, intensité (au-dessus de 0.25 → fuite)
+  // duration : durée de vie du signal en secondes
+  broadcast(type, x, z, radius = 22, strength = 1.0, duration = 5) {
+    this._signals.push({ x, z, type, radius, strength, ttl: duration });
+  }
+
+  // Appelé par TrafficSystem chaque frame
+  update(dt, pedestrians) {
+    // Vieillissement des signaux
+    this._signals = this._signals.filter(s => (s.ttl -= dt) > 0);
+
+    for (const ped of pedestrians) {
+      if (!ped.active || !ped.mesh || ped._panicking) continue;
+      for (const sig of this._signals) {
+        const dx = ped.mesh.position.x - sig.x;
+        const dz = ped.mesh.position.z - sig.z;
+        const dist = Math.hypot(dx, dz);
+        if (dist >= sig.radius) continue;
+        const panicStr = sig.strength * (1 - dist / sig.radius);
+        if (panicStr > 0.25) {
+          ped._panicking = true;
+          // Fuit dans la direction opposée à la source, avec léger bruit
+          ped.heading = Math.atan2(dx, dz) + (Math.random() - 0.5) * 0.6;
+          break; // un seul signal par piéton par frame
+        }
+      }
+    }
+  }
+
+  getActiveSignals() { return this._signals.length; }
+  hasType(type) { return this._signals.some(s => s.type === type); }
+}
+
 class TrafficCar {
   constructor(scene, roadLines) {
     this.roadLines = roadLines;
@@ -539,6 +586,7 @@ export class TrafficSystem {
     // Agents autonomes de surveillance
     this._pathAgent      = new PathClearanceAgent();
     this._integrityAgent = new IntegrityAgent();
+    this.crowdAgent      = new CrowdAgent();
   }
 
   _fallbackRoadLines() {
@@ -560,6 +608,9 @@ export class TrafficSystem {
 
     // IntegrityAgent : répare les états pathologiques AVANT la mise à jour
     this._integrityAgent.repair(this.cars, this.pedestrians, this.colliders);
+
+    // CrowdAgent : applique les signaux de panique aux piétons AVANT leur update
+    this.crowdAgent.update(dt, this.pedestrians);
 
     // PathClearanceAgent : enregistre les entités actives pour ce frame
     this._pathAgent.register(this.cars, this.pedestrians);

@@ -35,7 +35,7 @@ export function createWorld(scene) {
   const ground = new THREE.Mesh(groundGeo, groundMat);
   ground.rotation.x = -Math.PI / 2;
   ground.position.set(0, 0, 0);
-  ground.receiveShadow = false;
+  ground.receiveShadow = true;
   scene.add(ground);
 
   // --- Routes (croix de bandes sombres sur toute la grille) --------------
@@ -153,6 +153,8 @@ export function createWorld(scene) {
           const mesh = new THREE.Mesh(buildingGeo, mat);
           mesh.scale.set(w, h, d);
           mesh.position.set(lotCx, h / 2, lotCz);
+          mesh.castShadow = true;
+          mesh.receiveShadow = true;
           scene.add(mesh);
 
           colliders.push({

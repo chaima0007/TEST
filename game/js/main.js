@@ -29,6 +29,8 @@ const MAX_SPEED_KMH = 150;
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
@@ -37,6 +39,15 @@ scene.fog = new THREE.Fog(0x87ceeb, 80, 260);
 
 const sun = new THREE.DirectionalLight(0xffffff, 1.1);
 sun.position.set(60, 100, 40);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+sun.shadow.camera.near = 1;
+sun.shadow.camera.far = 400;
+sun.shadow.camera.left   = -160;
+sun.shadow.camera.right  =  160;
+sun.shadow.camera.top    =  160;
+sun.shadow.camera.bottom = -160;
+sun.shadow.bias = -0.001;
 scene.add(sun);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
 scene.add(ambientLight);
@@ -270,9 +281,11 @@ function animate() {
       active: true,
       status: drift.isDrifting()
         ? `DRIFT ${Math.round(drift.getDriftAngle())}° +${drift.getSessionScore()}`
-        : `Combo x${combo.getMultiplier()} | ${Math.round(vehicle.getSpeedKmh())} km/h`,
+        : traffic.crowdAgent.getActiveSignals() > 0
+          ? `FOULE PANIQUE — ${traffic.crowdAgent.getActiveSignals()} signal(s)`
+          : `Combo x${combo.getMultiplier()} | ${Math.round(vehicle.getSpeedKmh())} km/h`,
       bar: drift.isDrifting() ? Math.min(1, drift.getSessionScore() / 300) : combo.getMultiplier() / 5,
-      color: drift.isDrifting() ? '#ff6622' : combo.getMultiplier() >= 3 ? '#ff9944' : '#55cc88',
+      color: drift.isDrifting() ? '#ff6622' : traffic.crowdAgent.getActiveSignals() > 0 ? '#ff4422' : combo.getMultiplier() >= 3 ? '#ff9944' : '#55cc88',
     },
     monetisation: {
       active: dailyStatus.pct < 1,
@@ -313,7 +326,21 @@ function animate() {
     audio.playCollision(impact);
     lastImpactSoundTime = elapsedS;
     cameraShake = Math.min(1, cameraShake + impact * 0.7);
-    if (impact > 0.35) sparks.emit(playerPos.x, playerPos.z, impact);
+    if (impact > 0.35) {
+      sparks.emit(playerPos.x, playerPos.z, impact);
+      // Crash fort → panique de foule autour du point d'impact
+      traffic.crowdAgent.broadcast('crash', playerPos.x, playerPos.z, 18, impact);
+    }
+  }
+
+  // Sirène police active → foule inquiète dans un rayon plus large
+  if (wanted.level >= 2 && Math.floor(elapsedS) % 4 === 0) {
+    traffic.crowdAgent.broadcast('police', playerPos.x, playerPos.z, 30, wanted.level / 5, 3);
+  }
+  // L'Architecte → vague de panique maximale
+  if (architect.active && Math.floor(elapsedS) % 6 === 0) {
+    const apos = architect.getPosition();
+    if (apos) traffic.crowdAgent.broadcast('boss', apos.x, apos.z, 35, 1.0, 5);
   }
   if (cameraShake > 0.001) {
     camera.position.x += (Math.random() - 0.5) * cameraShake * 1.8;

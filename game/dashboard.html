@@ -84,6 +84,7 @@
   }
   .sys-tag.wip{background:rgba(255,170,0,0.12);color:var(--gold);border-color:rgba(255,170,0,0.25);}
   .sys-tag.new{background:rgba(170,85,255,0.15);color:var(--purple);border-color:rgba(170,85,255,0.3);}
+  .sys-tag.hot{background:rgba(255,68,85,0.15);color:var(--red);border-color:rgba(255,68,85,0.3);}
 
   /* ── LOG ── */
   .log-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
@@ -114,6 +115,19 @@
   /* ── FULL-WIDTH ── */
   .full{grid-column:1/-1;}
 
+  /* ── AGENTS GRID ── */
+  .agents-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;}
+  .agent-card{
+    padding:9px 11px;border-radius:8px;
+    background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);
+  }
+  .agent-name{font-size:11px;font-weight:800;color:#fff;letter-spacing:0.5px;}
+  .agent-role{font-size:10px;color:var(--dim);margin-top:2px;}
+  .agent-status{font-size:10px;margin-top:4px;padding:2px 6px;border-radius:3px;display:inline-block;}
+  .agent-status.active{background:rgba(68,255,153,0.12);color:var(--green);}
+  .agent-status.guard{background:rgba(0,200,255,0.12);color:var(--cyan);}
+  .agent-status.music{background:rgba(170,85,255,0.15);color:var(--purple);}
+
   /* ── FOOTER ── */
   footer{text-align:center;padding:28px;font-size:11px;color:var(--dim);border-top:1px solid var(--border);margin-top:10px;}
   footer span{color:var(--cyan);}
@@ -129,7 +143,7 @@
   </div>
   <div class="nexus-status-dot">
     <div class="dot"></div>
-    ACTIF &amp; EN CONSTRUCTION
+    <span id="clock">ACTIF</span>
   </div>
 </header>
 
@@ -138,57 +152,110 @@
   <!-- Stats rapides -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Systèmes construits</div>
-    <div class="card-value">21</div>
+    <div class="card-value">26</div>
     <div class="card-desc">Modules JavaScript actifs dans le jeu</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div>
   </div>
 
   <div class="card" style="--accent:#44ff99">
     <div class="card-title">Tests passés</div>
-    <div class="card-value">56 / 56</div>
-    <div class="card-desc">0 échec — couverture totale</div>
+    <div class="card-value">77 / 77</div>
+    <div class="card-desc">0 échec — 18 suites — couverture totale</div>
     <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--green)"></div></div>
   </div>
 
   <div class="card" style="--accent:#ffaa00">
     <div class="card-title">Agents IA en jeu</div>
-    <div class="card-value">7</div>
-    <div class="card-desc">Le Spectre · La Fantôme · Le Détectif · Police · Météo · Trafic · Monétisation</div>
-    <div class="bar-wrap"><div class="bar-fill" style="width:87.5%;background:var(--gold)"></div></div>
+    <div class="card-value">11</div>
+    <div class="card-desc">Spectre · Fantôme · Détectif · Police · Architecte · Météo · Trafic · PathClearance · Integrity · Crowd · Musique</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--gold)"></div></div>
   </div>
 
   <div class="card" style="--accent:#aa55ff">
     <div class="card-title">Achievements joueur</div>
     <div class="card-value">12</div>
-    <div class="card-desc">Débloquables + défis quotidiens + couleurs</div>
-    <div class="bar-wrap"><div class="bar-fill" style="width:80%;background:var(--purple)"></div></div>
+    <div class="card-desc">Débloquables + défis quotidiens + 6 couleurs + leaderboard Top 10</div>
+    <div class="bar-wrap"><div class="bar-fill" style="width:100%;background:var(--purple)"></div></div>
+  </div>
+
+  <!-- Agents spécialisés -->
+  <div class="card full" style="--accent:#aa55ff">
+    <div class="card-title">Agents IA spécialisés — rôles et statuts</div>
+    <div class="agents-grid">
+      <div class="agent-card">
+        <div class="agent-name">Expert Visage &amp; Corps</div>
+        <div class="agent-role">characters.js — humanoids procéduraux</div>
+        <div class="agent-status active">8 tons peau · 6 coiffures · animation marche</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">Expert Musique</div>
+        <div class="agent-role">music.js — compositeur IA lookahead</div>
+        <div class="agent-status music">CITY · CHASE · NIGHT · BOSS — 4 pistes</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">PathClearanceAgent</div>
+        <div class="agent-role">traffic.js — vérifie que la voie est libre</div>
+        <div class="agent-status guard">Car-to-car · Ped-to-ped · Projection avant</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">IntegrityAgent</div>
+        <div class="agent-role">traffic.js — répare les bugs en temps réel</div>
+        <div class="agent-status guard">Hors-limites · Coincé bâtiment · Bloqué 2s</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">CrowdAgent</div>
+        <div class="agent-role">traffic.js — réactions collectives de la foule</div>
+        <div class="agent-status active">Crash · Police · Boss → panique de groupe</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">MonetizationAgent</div>
+        <div class="agent-role">monetization.js — revenus &amp; rétention</div>
+        <div class="agent-status active">12 achievements · Défis quotidiens · Share</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">L'Architecte</div>
+        <div class="agent-role">architect.js — boss IA agressif</div>
+        <div class="agent-status active">Apparaît à $15 000 · Commandes HUD · Chase</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-name">Le Spectre · La Fantôme · Le Détectif</div>
+        <div class="agent-role">rival · fantome · detective — antagonistes</div>
+        <div class="agent-status active">Machines à état complètes</div>
+      </div>
+    </div>
   </div>
 
   <!-- Systèmes -->
   <div class="card full" style="--accent:#00c8ff">
     <div class="card-title">Tous les systèmes — état actuel</div>
     <ul class="system-list">
-      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">Vehicle Physics</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">World Generation (5×5 grid, 90 bâtiments)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Camera Follow + Shake</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">Vehicle Physics — bicycle model, drift, lateral velocity</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">World Generation — 5×5 grille, 90 bâtiments, ombres PCF</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Camera Follow + Shake + Motion Blur</span><span class="sys-tag">Stable</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Le Spectre — rival IA (HUNT / TAUNT)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ffd700"></span><span class="sys-name">La Fantôme — course nocturne</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffd700"></span><span class="sys-name">La Fantôme — course nocturne IA</span><span class="sys-tag">Stable</span></li>
       <li class="system-item"><span class="sys-dot" style="background:#cc4444"></span><span class="sys-name">Le Détectif — filature undercover</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#4488ff"></span><span class="sys-name">Police + Hélicoptère + Roadblocks</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#44aaff"></span><span class="sys-name">Météo (4 états, pluie 1 500 particules)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#55cc88"></span><span class="sys-name">Traffic IA — personnalités (5 types)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ff6622"></span><span class="sys-name">Drift Physics + Score + Fumée pneus</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#00eeff"></span><span class="sys-name">Nitro System (3 charges, capsules)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ff8800"></span><span class="sys-name">Étincelles (collision forte)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#111111;border:1px solid #444"></span><span class="sys-name">Traces de pneus (180 quads décals)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ffcc00"></span><span class="sys-name">Caméras radar (7 fixes, sanction wanted)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#9fd3ff"></span><span class="sys-name">Cycle jour/nuit (9 keyframes, 5 min)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ff9944"></span><span class="sys-name">Combo Multiplier</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Missions (livraisons)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#5566ff"></span><span class="sys-name">Audio procédural (moteur, sirène, drift, nitro)</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#88aaff"></span><span class="sys-name">HUD complet + Radar + Panneau agents</span><span class="sys-tag">Stable</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ffaa00"></span><span class="sys-name">MonetizationAgent (achievements, défis, partage)</span><span class="sys-tag new">NOUVEAU</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">NEXUS Dashboard (cette page)</span><span class="sys-tag new">NOUVEAU</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#4488ff"></span><span class="sys-name">Police + Hélicoptère + Roadblocks — pathfinding grille</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44aaff"></span><span class="sys-name">Météo — 4 états, pluie 1 500 particules, adhérence dynamique</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#55cc88"></span><span class="sys-name">Traffic IA — 5 personnalités, AI Drives (Wiener process)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff6622"></span><span class="sys-name">Drift Physics + Score + Fumée pneus Float32Array</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00eeff"></span><span class="sys-name">Nitro System — 3 charges, boost 1.55×, capsules sur route</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff8800"></span><span class="sys-name">Étincelles collision + Traces de pneus (180 décals)</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffcc00"></span><span class="sys-name">SpeedCam — 7 caméras fixes, flash, sanction wanted</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#9fd3ff"></span><span class="sys-name">Cycle jour/nuit — 9 keyframes, lampadaires, 5 min réel</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff9944"></span><span class="sys-name">Combo Multiplier + Score persistant localStorage</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Missions livraisons + Checkpoint chain</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#5566ff"></span><span class="sys-name">Audio procédural — moteur, sirène, drift, nitro, reverb urbain 3-tap</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#88aaff"></span><span class="sys-name">HUD complet — Radar, Panneau agents, couleurs véhicule, leaderboard</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ffaa00"></span><span class="sys-name">MonetizationAgent — 12 achievements, défis quotidiens, social share</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">LODManager — FULL/MID/LOW, stagger par index entité</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff0022"></span><span class="sys-name">L'Architecte — boss noir métal, IA seek, commandes HUD</span><span class="sys-tag">Stable</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#e8c04a"></span><span class="sys-name">Expert Visage &amp; Corps — faces, 6 coiffures, animation sinus</span><span class="sys-tag new">NOUVEAU</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Expert Musique — 4 pistes 12-TET, lookahead scheduler</span><span class="sys-tag new">NOUVEAU</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00ff88"></span><span class="sys-name">PathClearanceAgent — voie libre car-to-car et ped-to-ped</span><span class="sys-tag new">NOUVEAU</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff6644"></span><span class="sys-name">IntegrityAgent — auto-réparation coincé/hors-limites/bloqué</span><span class="sys-tag new">NOUVEAU</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff3300"></span><span class="sys-name">CrowdAgent — panique de foule (crash, police, boss)</span><span class="sys-tag hot">CHAUD</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#4499ff"></span><span class="sys-name">Ombres dynamiques PCFSoft — 2048×2048, frustum 320m</span><span class="sys-tag hot">CHAUD</span></li>
     </ul>
   </div>
 
@@ -196,14 +263,14 @@
   <div class="card full" style="--accent:#aa55ff">
     <div class="card-title">Journal NEXUS — Dernières actions</div>
     <ul class="log-list">
-      <li class="log-item"><span class="log-time">Ronde 8</span><span class="log-msg"><strong>MonetizationAgent</strong> — 12 achievements, défis quotidiens, partage social, 6 couleurs à débloquer</span></li>
-      <li class="log-item"><span class="log-time">Ronde 7</span><span class="log-msg"><strong>DetectiveSystem</strong> — popEscaped() + FantomeSystem — getters public (bug radar corrigé)</span></li>
-      <li class="log-item"><span class="log-time">Ronde 6</span><span class="log-msg"><strong>Le Détectif</strong> — filature undercover, piste perdue à 118+ km/h pendant 3s</span></li>
-      <li class="log-item"><span class="log-time">Ronde 5</span><span class="log-msg"><strong>SkidMarkSystem</strong> — 180 décals persistants y=0.025, pool recyclable</span></li>
-      <li class="log-item"><span class="log-time">Ronde 4</span><span class="log-msg"><strong>SpeedCamSystem</strong> — 7 caméras, flash lens, sanction wanted +1 au-dessus 80 km/h</span></li>
-      <li class="log-item"><span class="log-time">Ronde 3</span><span class="log-msg"><strong>NitroSystem</strong> — 3 charges collectibles, boost 1.55×, capsules cyan sur route</span></li>
-      <li class="log-item"><span class="log-time">Ronde 2</span><span class="log-msg"><strong>DriftSystem</strong> — vélocité latérale, banque de score, fumée pneus Float32Array</span></li>
-      <li class="log-item"><span class="log-time">Ronde 1</span><span class="log-msg"><strong>Base GTA</strong> — monde 5×5, véhicule, police, trafic, mission, HUD, audio procédural</span></li>
+      <li class="log-item"><span class="log-time">Ronde 12</span><span class="log-msg"><strong>CrowdAgent</strong> + Ombres PCFSoft — foule réagit aux crashs/police/boss, ombres 2048px</span></li>
+      <li class="log-item"><span class="log-time">Ronde 11</span><span class="log-msg"><strong>PathClearanceAgent</strong> + <strong>IntegrityAgent</strong> — voies libres, auto-réparation, 12 tests unitaires</span></li>
+      <li class="log-item"><span class="log-time">Ronde 10</span><span class="log-msg"><strong>Expert Musique</strong> — 4 pistes Web Audio (city/chase/night/boss), lookahead scheduler, crossfade 0.6s</span></li>
+      <li class="log-item"><span class="log-time">Ronde 9</span><span class="log-msg"><strong>Expert Visage &amp; Corps</strong> — piétons détaillés (yeux/nez/bouche/cheveux), CharacterAnimator intégré</span></li>
+      <li class="log-item"><span class="log-time">Ronde 8</span><span class="log-msg"><strong>LODManager</strong> + AI Drives Wiener + Reverb urbain 3-tap + Motion blur CSS</span></li>
+      <li class="log-item"><span class="log-time">Ronde 7</span><span class="log-msg"><strong>L'Architecte</strong> boss + Couleur véhicule persistante + Leaderboard Top 10</span></li>
+      <li class="log-item"><span class="log-time">Ronde 6</span><span class="log-msg"><strong>MonetizationAgent</strong> — 12 achievements, défis quotidiens, partage social, 6 couleurs</span></li>
+      <li class="log-item"><span class="log-time">Ronde 1-5</span><span class="log-msg"><strong>Base GTA</strong> — monde, physique, police, trafic, missions, audio procédural, drift, nitro, météo</span></li>
     </ul>
   </div>
 
@@ -222,14 +289,14 @@
     </div>
   </div>
 
-  <!-- Prochaine mission NEXUS -->
+  <!-- Prochaine construction -->
   <div class="card" style="--accent:#00c8ff">
     <div class="card-title">Prochaine construction — NEXUS</div>
     <ul class="system-list">
-      <li class="system-item"><span class="sys-dot" style="background:#ffaa00"></span><span class="sys-name">Système de personnalisation véhicule</span><span class="sys-tag wip">Planifié</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">Leaderboard local + partage score</span><span class="sys-tag wip">Planifié</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">Progression niveaux / districts</span><span class="sys-tag wip">Planifié</span></li>
-      <li class="system-item"><span class="sys-dot" style="background:#ff4455"></span><span class="sys-name">Boss final — L'Architecte</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#ff9900"></span><span class="sys-name">RadioSystem — stations musicales, switch joueur</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#aa55ff"></span><span class="sys-name">VehicleDamage — déformation visuelle sur collision</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#44ff99"></span><span class="sys-name">CityLiving — voitures garées, mobilier urbain</span><span class="sys-tag wip">Planifié</span></li>
+      <li class="system-item"><span class="sys-dot" style="background:#00c8ff"></span><span class="sys-name">DistrictSystem — quartiers avec ambiances distinctes</span><span class="sys-tag wip">Planifié</span></li>
     </ul>
   </div>
 
@@ -237,14 +304,15 @@
 
 <footer>
   <strong style="color:#fff;font-size:14px;">NEXUS</strong> — Agent IA Développeur<br>
-  Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma
+  Construit par <span>Claude (Anthropic)</span> · Projet <span>Open City</span> · Tous droits réservés Chaïma<br>
+  <span style="color:var(--dim);font-size:10px;margin-top:4px;display:block;" id="build-info">26 systèmes · 77/77 tests · 11 agents IA</span>
 </footer>
 
 <script>
-  // Horloge live
   function tick() {
     const now = new Date();
     const t = now.toLocaleTimeString('fr-FR');
+    document.getElementById('clock').textContent = t + ' — ACTIF';
     document.title = `NEXUS — ${t}`;
   }
   tick();
