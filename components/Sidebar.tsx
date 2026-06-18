@@ -2473,6 +2473,16 @@ function IconSalesValuePropositionDeteriorationIntelligenceEngine({ className }:
   );
 }
 
+function IconSalesCustomerHealthScoreDeteriorationEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Customer health: heartbeat / ECG pulse declining */}
+      <path d="M2 10 L5 10 L6.5 6 L8 14 L9.5 10 L11 10 L12.5 8 L14 12 L15.5 10 L18 10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6"/>
+      <path d="M2 15 L18 15" strokeDasharray="2 2" opacity="0.4"/>
+    </svg>
+  );
+}
+
 function IconSalesOnboardingRampIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2879,6 +2889,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-meeting-quality-conversion-intelligence-engine", label: "Meeting Quality", icon: IconSalesMeetingQualityConversionIntelligenceEngine },
       { href: "/dashboard/sales-competitive-intelligence-battle-card-engine", label: "Competitive Intel", icon: IconSalesCompetitiveIntelligenceBattleCardEngine },
       { href: "/dashboard/sales-onboarding-ramp-intelligence-engine", label: "Onboarding Ramp", icon: IconSalesOnboardingRampIntelligenceEngine },
+      { href: "/dashboard/sales-customer-health-score-deterioration-engine", label: "Customer Health", icon: IconSalesCustomerHealthScoreDeteriorationEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
