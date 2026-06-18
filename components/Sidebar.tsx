@@ -1790,6 +1790,20 @@ function IconSalesDealDeskIntelligenceEngine({ className }: { className?: string
   );
 }
 
+function IconSalesNegotiationIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Handshake — negotiation */}
+      <path d="M2 11 L6 8 L9 10 L13 7 L18 9" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6 8 L6 15" strokeLinecap="round"/>
+      <path d="M13 7 L13 14" strokeLinecap="round"/>
+      <line x1="3" y1="15" x2="17" y2="15" strokeLinecap="round"/>
+      <circle cx="6" cy="6" r="2"/>
+      <circle cx="13" cy="5" r="2"/>
+    </svg>
+  );
+}
+
 function IconSalesReferenceIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2320,6 +2334,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-deal-desk-intelligence-engine", label: "Deal Desk", icon: IconSalesDealDeskIntelligenceEngine },
       { href: "/dashboard/sales-poc-intelligence-engine", label: "POC Execution", icon: IconSalesPOCIntelligenceEngine },
       { href: "/dashboard/sales-reference-intelligence-engine", label: "Ref. Evidence", icon: IconSalesReferenceIntelligenceEngine },
+      { href: "/dashboard/sales-negotiation-intelligence-engine", label: "Negotiation", icon: IconSalesNegotiationIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
