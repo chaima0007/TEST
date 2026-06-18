@@ -405,6 +405,14 @@ function IconAccountHealthScorer({ className }: { className?: string }) {
   );
 }
 
+function IconForecastAccuracy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v2a1 1 0 102 0v-2zm2-5a1 1 0 011 1v6a1 1 0 11-2 0V8a1 1 0 011-1zm4 3a1 1 0 10-2 0v3a1 1 0 102 0v-3z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconLeadScoringIntelligence({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -782,6 +790,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/price-optimization", label: "Optimisation Pricing", icon: IconPriceOptimization },
       { href: "/dashboard/deal-risk-analyzer", label: "Analyse Risque Deals", icon: IconDealRiskAnalyzer },
       { href: "/dashboard/account-health-scorer", label: "Santé Comptes IA", icon: IconAccountHealthScorer },
+      { href: "/dashboard/forecast-accuracy-engine", label: "Précision Forecast", icon: IconForecastAccuracy },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
