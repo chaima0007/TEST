@@ -29,6 +29,9 @@ import { DistrictSystem }      from './district.js';
 import { SignalAgent }          from './signal.js';
 import { ReputationAgent }      from './reputation.js';
 import { WitnessAgent }         from './witness.js';
+import { CityPulseAgent }       from './citypulse.js';
+import { PredictivePoliceAgent } from './predictive.js';
+import { EmotionEngine }        from './emotion.js';
 
 const MAX_SPEED_KMH = 150;
 
@@ -90,6 +93,18 @@ const district     = new DistrictSystem();
 const signals      = new SignalAgent(scene, world.roadLines.xs, world.roadLines.zs);
 const reputation   = new ReputationAgent();
 const witness      = new WitnessAgent();
+const cityPulse    = new CityPulseAgent();
+const predictive   = new PredictivePoliceAgent();
+const emotion      = new EmotionEngine();
+
+// Marqueur de prédiction policière (anneau semi-transparent)
+const _predRingGeo = new THREE.TorusGeometry(2.2, 0.22, 8, 24);
+const _predRingMat = new THREE.MeshBasicMaterial({ color: 0xff2200, transparent: true, opacity: 0.7 });
+const _predRing    = new THREE.Mesh(_predRingGeo, _predRingMat);
+_predRing.rotation.x = -Math.PI / 2;
+_predRing.visible = false;
+scene.add(_predRing);
+
 let   _signalViolationTime = -Infinity;
 const SIGNAL_COOLDOWN_S    = 10;
 
@@ -173,6 +188,12 @@ const _nexusPhrases = [
     const rep = reputation.getStatus(district.getCurrent().id);
     const wit = witness.getWitnessCount();
     return `Réputation ${district.getCurrent().name}: ${rep}${wit > 0 ? ` | ${wit} TÉMOIN(S) actif(s)` : ''}`;
+  },
+  (v, d, w, dc, wx) => {
+    const mood = emotion.getMoodLabel();
+    const bpm  = cityPulse.getBpm();
+    const conf = Math.round(predictive.getConfidence() * 100);
+    return `Humeur ville: ${mood} | BPM ${bpm}${conf > 0 ? ` | Prédiction ${conf}%` : ''}`;
   },
 ];
 let _nexusIdx = 0;
@@ -311,7 +332,8 @@ function animate() {
     fantome.popWin(),
     baseScore
   );
-  const totalScore = baseScore + monoBonus;
+  const emotionMult = emotion.getScoreMult() * cityPulse.getScoreMult();
+  const totalScore = Math.round((baseScore + monoBonus) * emotionMult);
   hud.setScore(totalScore);
 
   // L'Architecte reacts to the player's actual score this frame
@@ -319,14 +341,45 @@ function animate() {
   if (archResult.raisedWanted && wanted.level < 5) wanted._setLevel(wanted.level + 1, hud);
 
   // MusicAgent — station radio manuelle ou sélection automatique
-  if (musicAgent) {
+  const _musicState = (() => {
     const radioStyle = RADIO_STATIONS[_radioIdx].style;
-    const musicState = radioStyle !== null ? radioStyle
+    return radioStyle !== null ? radioStyle
       : architect.active ? 'boss'
       : wanted.level > 0 ? 'chase'
       : dayCycle.isNight() ? 'night'
       : 'city';
-    musicAgent.setState(musicState);
+  })();
+  if (musicAgent) musicAgent.setState(_musicState);
+
+  // CityPulseAgent — pouls BPM synchronisé sur la musique
+  cityPulse.setMusicState(_musicState);
+  cityPulse.update(dt);
+  ambientLight.intensity = 0.45 + cityPulse.getAmbientBoost();
+
+  // EmotionEngine — événements wanted / drift / nitro / peaceful
+  if (wanted.level > 0)       emotion.pushEvent('wanted', wanted.level / 5 * dt);
+  if (drift.isDrifting())      emotion.pushEvent('drift',  drift.getDriftAngle() / 45 * dt);
+  if (nitro.isBoostActive())   emotion.pushEvent('nitro',  dt);
+  if (wanted.level === 0 && !drift.isDrifting() && Math.abs(vehicle.getSpeedKmh()) < 30)
+                               emotion.pushEvent('peaceful', dt);
+  emotion.update(dt);
+
+  // Teinte émotionnelle de la lumière ambiante
+  const _tint = emotion.getColorTint();
+  ambientLight.color.setRGB(_tint.r * 0.45, _tint.g * 0.45, _tint.b * 0.45 + cityPulse.getAmbientBoost());
+
+  // PredictivePoliceAgent — interception prédictive (wanted ≥ 3)
+  predictive.record(playerPos.x, playerPos.z);
+  if (wanted.level >= 3) {
+    const pred = predictive.predict(90);
+    if (pred) {
+      _predRing.position.set(pred.x, 0.3, pred.z);
+      _predRing.visible = true;
+      _predRingMat.opacity = 0.4 + pred.confidence * 0.5;
+    }
+  } else {
+    _predRing.visible = false;
+    if (wanted.level === 0) predictive.reset();
   }
 
   // --- Panneau agents temps réel ---
@@ -418,6 +471,26 @@ function animate() {
       bar: architect.active ? 1 : Math.min(1, totalScore / 15000),
       color: architect.active ? '#ff0022' : '#880011',
     },
+    emotion: {
+      active: emotion.getMood() !== 'neutral',
+      status: `${emotion.getMoodLabel()} | agressivité ${Math.round(emotion.getAggression())} sérénité ${Math.round(emotion.getSerenity())}`,
+      bar: Math.max(emotion.getAggression(), emotion.getSerenity(), emotion.getEntropy()) / 100,
+      color: emotion.getMood() === 'chaotic' ? '#ff2200' : emotion.getMood() === 'serene' ? '#44ddff' : '#ffaa00',
+    },
+    cityPulse: {
+      active: cityPulse.isPeak(),
+      status: `BPM ${cityPulse.getBpm()} | Beat ${Math.round(cityPulse.getIntensity() * 100)}% | Trafic ×${cityPulse.getTrafficMult().toFixed(2)}`,
+      bar: cityPulse.getIntensity(),
+      color: '#ff66cc',
+    },
+    predictive: {
+      active: wanted.level >= 3 && predictive.getConfidence() > 0,
+      status: wanted.level >= 3
+        ? `Interception prédictive | confiance ${Math.round(predictive.getConfidence() * 100)}%`
+        : 'En veille (wanted < 3)',
+      bar: predictive.getConfidence(),
+      color: '#ff4422',
+    },
   });
 
   if (nitroFired) audio.playNitro();
@@ -450,6 +523,8 @@ function animate() {
         Math.hypot(p.mesh.position.x - playerPos.x, p.mesh.position.z - playerPos.z) < 15);
       witness.report(nearPeds, impact);
       if (witness.hasNearbyWitness(playerPos)) _showNotif('Des témoins alertent la police !');
+      // EmotionEngine — crash brutal
+      emotion.pushEvent('crash', impact);
     }
   }
 
