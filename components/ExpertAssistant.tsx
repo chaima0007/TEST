@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 
 const TIPS: Record<string, { message: string; insight?: string }> = {
@@ -39,515 +39,477 @@ const DEFAULT_TIP = {
   insight: undefined,
 };
 
-type EmotionalState = "idle" | "thinking" | "speaking";
+type Phase = "idle" | "thinking" | "speaking" | "done";
 
-interface AvatarSVGProps {
-  emotionalState?: EmotionalState;
-  isHovered?: boolean;
-  blinkPhase?: boolean;
-  nodPhase?: boolean;
+// ─── Avatar SVG ───────────────────────────────────────────────────────────────
+
+interface AvatarProps {
+  phase?: Phase;
+  blink?: boolean;
+  nod?: boolean;
+  hovered?: boolean;
+  size?: "sm" | "md";
 }
 
-function AvatarSVG({ emotionalState = "idle", isHovered = false, blinkPhase = false, nodPhase = false }: AvatarSVGProps) {
-  const eyeLidHeight = blinkPhase ? 3.5 : 0;
-  const irisOffsetY = emotionalState === "thinking" ? -0.8 : 0;
-  const mouthScaleY = emotionalState === "speaking" ? 1.05 : 1;
-  const browOffsetY = emotionalState === "thinking" ? -1 : 0;
-  const headTiltY = nodPhase ? 1 : 0;
-  const bodyScale = emotionalState === "idle" ? 1 : 1;
+function Avatar({ phase = "idle", blink = false, nod = false, hovered = false, size = "md" }: AvatarProps) {
+  const irisY   = phase === "thinking" ? -0.8 : 0;
+  const browY   = phase === "thinking" ? -1   : 0;
+  const mouthSY = phase === "speaking" ? 1.06 : 1;
 
   return (
     <svg
       viewBox="0 0 80 80"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-full"
-      style={{ transform: `translateY(${headTiltY}px)`, transition: "transform 0.4s ease" }}
+      className="w-full h-full select-none"
+      style={{
+        transform: nod ? "translateY(1.5px)" : "translateY(0)",
+        transition: "transform 0.5s cubic-bezier(0.34,1.56,0.64,1)",
+      }}
     >
-      {/* Soft drop shadow under chin */}
-      <ellipse cx="40" cy="50" rx="12" ry="2.5" fill="#00000018" />
+      {/* ── shadow ── */}
+      <ellipse cx="40" cy="51" rx="13" ry="2.5" fill="#00000015" />
 
-      {/* Background — radial gradient, softer and more professional */}
-      <circle cx="40" cy="40" r="40" fill="url(#bgGrad)" />
+      {/* ── background ── */}
+      <circle cx="40" cy="40" r="40" fill="url(#bg)" />
+      <circle cx="40" cy="40" r="40" fill="url(#dots)" opacity="0.16" />
+      {hovered && <circle cx="40" cy="40" r="39" stroke="url(#glow)" strokeWidth="2.5" fill="none" />}
 
-      {/* Subtle dot-pattern texture overlay */}
-      <circle cx="40" cy="40" r="40" fill="url(#dotPattern)" opacity="0.18" />
+      {/* ── body ── */}
+      <path d="M8 80 C8 55 20 47 40 47 C60 47 72 55 72 80" fill="url(#body)" />
+      <path d="M26 51 L22 74 L40 65 L58 74 L54 51" fill="url(#jacket)" />
+      <path d="M36 51 L31 62 L40 65" fill="url(#lapel)" opacity="0.55" />
+      <path d="M44 51 L49 62 L40 65" fill="url(#lapel)" opacity="0.55" />
+      <path d="M40 65 L38.5 77 M40 65 L41.5 77" stroke="white" strokeWidth="0.4" opacity="0.2" />
+      <path d="M8 62 Q22 55 40 53 Q58 55 72 62" stroke="white" strokeWidth="0.7" opacity="0.1" fill="none" />
 
-      {/* Body / shoulders */}
-      <path
-        d="M10 78 C10 56 21 48 40 48 C59 48 70 56 70 78"
-        fill="url(#bodyGrad)"
-      />
+      {/* ── collar + tie ── */}
+      <path d="M35 49 L37 56 L40 54 L43 56 L45 49" fill="white" opacity="0.93" />
+      <path d="M38.8 56 L40 66 L41.2 56 L40 54Z" fill="url(#tie)" />
+      <ellipse cx="40" cy="55.5" rx="1.4" ry="1" fill="url(#tie)" />
 
-      {/* Blazer — left lapel with subtle fold highlight */}
-      <path d="M28 52 L24 72 L40 64 L56 72 L52 52" fill="url(#jacketGrad)" opacity="0.97" />
-      {/* Left lapel fold */}
-      <path d="M36 52 L32 62 L40 64" fill="url(#lapelGrad)" opacity="0.6" />
-      {/* Right lapel fold */}
-      <path d="M44 52 L48 62 L40 64" fill="url(#lapelGrad)" opacity="0.6" />
-      {/* Blazer crease lines */}
-      <path d="M40 64 L38 76" stroke="white" strokeWidth="0.4" opacity="0.25" />
-      <path d="M40 64 L42 76" stroke="white" strokeWidth="0.4" opacity="0.25" />
-      {/* Shoulder highlight */}
-      <path d="M10 60 Q22 54 40 52 Q58 54 70 60" stroke="white" strokeWidth="0.6" opacity="0.12" fill="none" />
+      {/* ── neck ── */}
+      <path d="M35 43 Q40 47 45 43 L44 50 Q40 53 36 50Z" fill="url(#skin)" />
+      <path d="M36 50 Q40 52.5 44 50 L44 52 Q40 54.5 36 52Z" fill="#D4956E" opacity="0.28" />
 
-      {/* Shirt collar visible */}
-      <path d="M35 50 L37 57 L40 55 L43 57 L45 50" fill="white" opacity="0.92" />
+      {/* ── head ── */}
+      <ellipse cx="40" cy="30" rx="14.5" ry="17" fill="url(#face)" />
+      <ellipse cx="40" cy="43.5" rx="11" ry="3" fill="#D4956E" opacity="0.15" />
 
-      {/* Tie */}
-      <path d="M38.5 57 L40 66 L41.5 57 L40 55Z" fill="url(#tieGrad)" opacity="0.85" />
-      {/* Tie knot */}
-      <ellipse cx="40" cy="56.5" rx="1.5" ry="1" fill="url(#tieGrad)" opacity="0.9" />
+      {/* ── blush ── */}
+      <circle cx="30" cy="36.5" r="4.5" fill="#FFB3A7" opacity="0.18" />
+      <circle cx="50" cy="36.5" r="4.5" fill="#FFB3A7" opacity="0.18" />
 
-      {/* Neck — skin tone gradient */}
-      <path d="M35 44 Q40 48 45 44 L44 51 Q40 53.5 36 51Z" fill="url(#skinGrad)" />
-      {/* Neck shadow */}
-      <path d="M36 51 Q40 53 44 51 L44 53 Q40 55 36 53Z" fill="#D4956E" opacity="0.3" />
+      {/* ── hair ── */}
+      <path d="M25.5 26 C25 15 30 10 40 10 C50 10 55 15 54.5 26 C53 19 50 14 40 14 C30 14 27 19 25.5 26Z" fill="url(#hair)" />
+      <ellipse cx="40" cy="13.5" rx="12" ry="5.5" fill="url(#hair)" />
+      <path d="M53.5 21 C55 25 55.5 30 54 35" stroke="#3d2b8e" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.65" />
+      <path d="M54.5 23 C56.5 27 56.5 32 54.5 37" stroke="#4a3599" strokeWidth="1.1" strokeLinecap="round" fill="none" opacity="0.45" />
+      <path d="M26.5 21 C25 25 24.5 30 26 35" stroke="#3d2b8e" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.65" />
+      <path d="M25.5 23 C23.5 27 23.5 32 25.5 37" stroke="#4a3599" strokeWidth="1.1" strokeLinecap="round" fill="none" opacity="0.45" />
 
-      {/* Head — improved proportions, wider forehead */}
-      <ellipse cx="40" cy="31" rx="14.5" ry="17" fill="url(#faceSkinGrad)" />
+      {/* ── ears ── */}
+      <ellipse cx="26" cy="31.5" rx="2.8" ry="3.3" fill="url(#face)" />
+      <ellipse cx="54" cy="31.5" rx="2.8" ry="3.3" fill="url(#face)" />
+      <path d="M26.5 29.5 Q27.5 31.5 26.5 33.5" stroke="#D4956E" strokeWidth="0.7" fill="none" opacity="0.4" />
+      <path d="M53.5 29.5 Q52.5 31.5 53.5 33.5" stroke="#D4956E" strokeWidth="0.7" fill="none" opacity="0.4" />
 
-      {/* Jaw shadow for depth */}
-      <ellipse cx="40" cy="44" rx="10" ry="3" fill="#D4956E" opacity="0.18" />
+      {/* ── eyes ── */}
+      <ellipse cx="34.5" cy="29.5" rx="4.2" ry="3.3" fill="white" />
+      <ellipse cx="45.5" cy="29.5" rx="4.2" ry="3.3" fill="white" />
 
-      {/* Cheek blush */}
-      <circle cx="30.5" cy="37" r="4" fill="#FFB3A7" opacity="0.2" />
-      <circle cx="49.5" cy="37" r="4" fill="#FFB3A7" opacity="0.2" />
+      <circle cx="34.8" cy={29.5 + irisY} r="2.4" fill="url(#irisL)" />
+      <circle cx="45.8" cy={29.5 + irisY} r="2.4" fill="url(#irisR)" />
+      <circle cx="34.8" cy={29.5 + irisY} r="2.4" stroke="#3128a8" strokeWidth="0.35" fill="none" opacity="0.35" />
+      <circle cx="45.8" cy={29.5 + irisY} r="2.4" stroke="#3128a8" strokeWidth="0.35" fill="none" opacity="0.35" />
+      <circle cx="35.1" cy={29.6 + irisY} r="1.2" fill="#1a1740" />
+      <circle cx="46.1" cy={29.6 + irisY} r="1.2" fill="#1a1740" />
+      <circle cx="35.7" cy={28.8 + irisY} r="0.6" fill="white" opacity="0.92" />
+      <circle cx="46.7" cy={28.8 + irisY} r="0.6" fill="white" opacity="0.92" />
+      <circle cx="34.2" cy={30.3 + irisY} r="0.28" fill="white" opacity="0.45" />
+      <circle cx="45.2" cy={30.3 + irisY} r="0.28" fill="white" opacity="0.45" />
 
-      {/* ===== HAIR ===== */}
-      {/* Main hair cap */}
-      <path
-        d="M25.5 27 C25 16 30 11 40 11 C50 11 55 16 54.5 27 C53 20 50 15 40 15 C30 15 27 20 25.5 27Z"
-        fill="url(#hairGrad)"
-      />
-      <ellipse cx="40" cy="14.5" rx="12" ry="5.5" fill="url(#hairGrad)" />
-
-      {/* Hair strands — right side */}
-      <path d="M53 22 C54.5 25 55 30 53.5 35" stroke="#3d2b8e" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.7" />
-      <path d="M54 24 C56 27 56 32 54 37" stroke="#4a3599" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.5" />
-      {/* Hair strands — left side */}
-      <path d="M27 22 C25.5 25 25 30 26.5 35" stroke="#3d2b8e" strokeWidth="1.8" strokeLinecap="round" fill="none" opacity="0.7" />
-      <path d="M26 24 C24 27 24 32 26 37" stroke="#4a3599" strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.5" />
-      {/* Top hair detail strands */}
-      <path d="M33 13 C34 11 38 10.5 40 11" stroke="#5040a0" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.5" />
-      <path d="M47 13 C46 11 42 10.5 40 11" stroke="#5040a0" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.5" />
-
-      {/* Ears */}
-      <ellipse cx="26" cy="32.5" rx="2.8" ry="3.3" fill="url(#faceSkinGrad)" />
-      <ellipse cx="54" cy="32.5" rx="2.8" ry="3.3" fill="url(#faceSkinGrad)" />
-      {/* Ear inner */}
-      <path d="M26.5 30.5 Q27.5 32.5 26.5 34.5" stroke="#D4956E" strokeWidth="0.7" fill="none" opacity="0.5" />
-      <path d="M53.5 30.5 Q52.5 32.5 53.5 34.5" stroke="#D4956E" strokeWidth="0.7" fill="none" opacity="0.5" />
-
-      {/* ===== EYES ===== */}
-      {/* Eye whites — almond shaped */}
-      <ellipse cx="34.5" cy="30.5" rx="4.2" ry="3.3" fill="white" />
-      <ellipse cx="45.5" cy="30.5" rx="4.2" ry="3.3" fill="white" />
-
-      {/* Iris — detailed with gradient */}
-      <circle cx="34.8" cy={30.5 + irisOffsetY} r="2.4" fill="url(#irisGradL)" style={{ transition: "cy 0.3s ease" }} />
-      <circle cx="45.8" cy={30.5 + irisOffsetY} r="2.4" fill="url(#irisGradR)" style={{ transition: "cy 0.3s ease" }} />
-      {/* Iris ring detail */}
-      <circle cx="34.8" cy={30.5 + irisOffsetY} r="2.4" stroke="#3128a8" strokeWidth="0.4" fill="none" opacity="0.4" />
-      <circle cx="45.8" cy={30.5 + irisOffsetY} r="2.4" stroke="#3128a8" strokeWidth="0.4" fill="none" opacity="0.4" />
-      {/* Pupils */}
-      <circle cx="35.1" cy={30.6 + irisOffsetY} r="1.2" fill="#1a1740" />
-      <circle cx="46.1" cy={30.6 + irisOffsetY} r="1.2" fill="#1a1740" />
-      {/* Main eye shine */}
-      <circle cx="35.7" cy={29.7 + irisOffsetY} r="0.6" fill="white" opacity="0.9" />
-      <circle cx="46.7" cy={29.7 + irisOffsetY} r="0.6" fill="white" opacity="0.9" />
-      {/* Secondary small shine */}
-      <circle cx="34.3" cy={31.2 + irisOffsetY} r="0.3" fill="white" opacity="0.5" />
-      <circle cx="45.3" cy={31.2 + irisOffsetY} r="0.3" fill="white" opacity="0.5" />
-
-      {/* Eyelids (for blink animation) */}
-      {blinkPhase && (
+      {/* blink */}
+      {blink && (
         <>
-          <ellipse cx="34.5" cy="30.5" rx="4.2" ry={eyeLidHeight} fill="#F4C5A8" />
-          <ellipse cx="45.5" cy="30.5" rx="4.2" ry={eyeLidHeight} fill="#F4C5A8" />
+          <ellipse cx="34.5" cy="29.5" rx="4.4" ry="3.5" fill="url(#face)" />
+          <ellipse cx="45.5" cy="29.5" rx="4.4" ry="3.5" fill="url(#face)" />
         </>
       )}
 
-      {/* Lower eyelid line */}
-      <path d="M30.5 32.5 Q34.5 33.5 38.5 32.5" stroke="#D4956E" strokeWidth="0.5" fill="none" opacity="0.35" />
-      <path d="M41.5 32.5 Q45.5 33.5 49.5 32.5" stroke="#D4956E" strokeWidth="0.5" fill="none" opacity="0.35" />
+      {/* lower lids */}
+      <path d="M30.5 31.5 Q34.5 32.5 38.5 31.5" stroke="#D4956E" strokeWidth="0.45" fill="none" opacity="0.3" />
+      <path d="M41.5 31.5 Q45.5 32.5 49.5 31.5" stroke="#D4956E" strokeWidth="0.45" fill="none" opacity="0.3" />
 
-      {/* Eyelashes — top (subtle) */}
-      <path d="M30.8 28.5 L30 27.5 M33 27.5 L32.8 26.4 M35 27.2 L35.2 26 M37.2 27.5 L37.8 26.5 M38.8 28.3 L39.5 27.5" stroke="#2d1b69" strokeWidth="0.7" strokeLinecap="round" opacity="0.6" />
-      <path d="M41.8 28.3 L41.2 27.3 M43.2 27.5 L43 26.4 M45.2 27.2 L45.3 26 M47.2 27.5 L47.8 26.5 M49 28.5 L49.8 27.5" stroke="#2d1b69" strokeWidth="0.7" strokeLinecap="round" opacity="0.6" />
+      {/* lashes */}
+      <path d="M30.8 27.5 L30 26.5 M33 26.5 L32.8 25.4 M35 26.2 L35.2 25 M37.2 26.5 L37.8 25.5 M38.8 27.3 L39.5 26.5" stroke="#2d1b69" strokeWidth="0.65" strokeLinecap="round" opacity="0.55" />
+      <path d="M41.8 27.3 L41.2 26.3 M43.2 26.5 L43 25.4 M45.2 26.2 L45.3 25 M47.2 26.5 L47.8 25.5 M49 27.5 L49.8 26.5" stroke="#2d1b69" strokeWidth="0.65" strokeLinecap="round" opacity="0.55" />
 
-      {/* Eyebrows — natural arch, shift up when thinking */}
-      <path d={`M30.5 ${26 + browOffsetY} Q34.5 ${24 + browOffsetY} 38.5 ${26 + browOffsetY}`} stroke="#2d1b69" strokeWidth="1.5" strokeLinecap="round" fill="none" style={{ transition: "d 0.3s ease" }} />
-      <path d={`M41.5 ${26 + browOffsetY} Q45.5 ${24 + browOffsetY} 49.5 ${26 + browOffsetY}`} stroke="#2d1b69" strokeWidth="1.5" strokeLinecap="round" fill="none" style={{ transition: "d 0.3s ease" }} />
+      {/* brows */}
+      <path
+        d={`M30.5 ${25 + browY} Q34.5 ${23 + browY} 38.5 ${25 + browY}`}
+        stroke="#2d1b69" strokeWidth="1.5" strokeLinecap="round" fill="none"
+        style={{ transition: "d 0.3s ease" }}
+      />
+      <path
+        d={`M41.5 ${25 + browY} Q45.5 ${23 + browY} 49.5 ${25 + browY}`}
+        stroke="#2d1b69" strokeWidth="1.5" strokeLinecap="round" fill="none"
+        style={{ transition: "d 0.3s ease" }}
+      />
 
-      {/* ===== NOSE ===== */}
-      <path d="M38.5 33.5 Q40 36.5 41.5 33.5" stroke="#C8896A" strokeWidth="1.1" strokeLinecap="round" fill="none" />
-      <path d="M37.5 36.5 Q38.8 37.5 40 37.2 Q41.2 37.5 42.5 36.5" stroke="#C8896A" strokeWidth="0.9" strokeLinecap="round" fill="none" opacity="0.7" />
-      <circle cx="37.8" cy="36.8" r="1.1" fill="#C8896A" opacity="0.35" />
-      <circle cx="42.2" cy="36.8" r="1.1" fill="#C8896A" opacity="0.35" />
+      {/* ── nose ── */}
+      <path d="M38.5 32.5 Q40 35.5 41.5 32.5" stroke="#C8896A" strokeWidth="1.1" strokeLinecap="round" fill="none" />
+      <path d="M37.5 35.5 Q40 36.8 42.5 35.5" stroke="#C8896A" strokeWidth="0.9" strokeLinecap="round" fill="none" opacity="0.65" />
+      <circle cx="37.8" cy="35.8" r="1.1" fill="#C8896A" opacity="0.3" />
+      <circle cx="42.2" cy="35.8" r="1.1" fill="#C8896A" opacity="0.3" />
 
-      {/* ===== MOUTH ===== */}
-      {/* Mouth group — animated when speaking */}
-      <g style={{ transformOrigin: "40px 41px", transform: `scaleY(${mouthScaleY})`, transition: "transform 0.15s ease-in-out" }}>
-        {/* Upper lip */}
-        <path d="M35.5 39.5 Q37.5 38.5 40 39 Q42.5 38.5 44.5 39.5" stroke="#C8756A" strokeWidth="1" strokeLinecap="round" fill="none" />
-        {/* Main smile */}
-        <path d="M35.5 39.5 Q40 44.5 44.5 39.5" fill="#C8756A" stroke="#C8756A" strokeWidth="0.5" strokeLinecap="round" opacity="0.9" />
-        {/* Teeth glimpse */}
-        <path d="M36.5 40 Q40 43 43.5 40 L43 41 Q40 43.5 37 41Z" fill="white" opacity="0.85" />
-        {/* Lower lip */}
-        <path d="M36.5 40.5 Q40 43.5 43.5 40.5 Q42 43 40 43.2 Q38 43 36.5 40.5Z" fill="#D4856A" opacity="0.25" />
+      {/* ── mouth ── */}
+      <g
+        style={{
+          transformOrigin: "40px 40px",
+          transform: `scaleY(${mouthSY})`,
+          transition: "transform 0.12s ease-in-out",
+        }}
+      >
+        <path d="M35.5 38.5 Q37.5 37.5 40 38 Q42.5 37.5 44.5 38.5" stroke="#C8756A" strokeWidth="0.9" strokeLinecap="round" fill="none" />
+        <path d="M35.5 38.5 Q40 43.5 44.5 38.5" fill="#C8756A" stroke="#C8756A" strokeWidth="0.4" strokeLinecap="round" opacity="0.88" />
+        <path d="M36.5 39 Q40 42 43.5 39 L43 40 Q40 42.5 37 40Z" fill="white" opacity="0.82" />
+        <path d="M36.5 39.5 Q40 42.5 43.5 39.5 Q42 42 40 42.2 Q38 42 36.5 39.5Z" fill="#D4856A" opacity="0.22" />
       </g>
-
-      {/* Smile dimples */}
-      <circle cx="35" cy="41" r="0.8" fill="#D4956E" opacity="0.25" />
-      <circle cx="45" cy="41" r="0.8" fill="#D4956E" opacity="0.25" />
-
-      {/* Hover glow effect */}
-      {isHovered && (
-        <circle cx="40" cy="40" r="39" stroke="url(#hoverGlow)" strokeWidth="2" fill="none" opacity="0.6" />
-      )}
+      <circle cx="35" cy="40" r="0.75" fill="#D4956E" opacity="0.22" />
+      <circle cx="45" cy="40" r="0.75" fill="#D4956E" opacity="0.22" />
 
       <defs>
-        {/* Background gradient — softer, more professional */}
-        <radialGradient id="bgGrad" cx="42%" cy="35%" r="65%">
+        <radialGradient id="bg" cx="42%" cy="35%" r="65%">
           <stop offset="0%" stopColor="#dde4ff" />
-          <stop offset="60%" stopColor="#c4d0ff" />
+          <stop offset="65%" stopColor="#c4d0ff" />
           <stop offset="100%" stopColor="#a8b8f0" />
         </radialGradient>
-
-        {/* Dot micro-texture */}
-        <pattern id="dotPattern" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="0.7" fill="#6366f1" />
+        <pattern id="dots" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="0.65" fill="#6366f1" />
         </pattern>
-
-        {/* Skin gradients */}
-        <radialGradient id="faceSkinGrad" cx="45%" cy="40%" r="60%">
-          <stop offset="0%" stopColor="#F8D5B8" />
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#a5b4fc" />
+          <stop offset="100%" stopColor="#6366f1" />
+        </radialGradient>
+        <radialGradient id="face" cx="45%" cy="40%" r="60%">
+          <stop offset="0%" stopColor="#F9D6BC" />
           <stop offset="60%" stopColor="#F4C5A8" />
           <stop offset="100%" stopColor="#E8A882" />
         </radialGradient>
-        <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#F4C5A8" />
           <stop offset="100%" stopColor="#E8A882" />
         </linearGradient>
-
-        {/* Hair gradient */}
-        <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="hair" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#4a3599" />
-          <stop offset="50%" stopColor="#3d2b8e" />
+          <stop offset="55%" stopColor="#3d2b8e" />
           <stop offset="100%" stopColor="#2d1b69" />
         </linearGradient>
-
-        {/* Body / jacket gradients */}
-        <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#4338CA" />
           <stop offset="100%" stopColor="#312e81" />
         </linearGradient>
-        <linearGradient id="jacketGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#4f46e5" />
+        <linearGradient id="jacket" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#5048e5" />
           <stop offset="50%" stopColor="#4338CA" />
           <stop offset="100%" stopColor="#3730a3" />
         </linearGradient>
-        <linearGradient id="lapelGrad" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id="lapel" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#6366f1" />
           <stop offset="100%" stopColor="#4338CA" />
         </linearGradient>
-
-        {/* Tie */}
-        <linearGradient id="tieGrad" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="tie" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#818cf8" />
           <stop offset="100%" stopColor="#4338ca" />
         </linearGradient>
-
-        {/* Iris gradients — each eye slightly different for realism */}
-        <radialGradient id="irisGradL" cx="40%" cy="35%" r="65%">
-          <stop offset="0%" stopColor="#6366f1" />
-          <stop offset="50%" stopColor="#4338CA" />
+        <radialGradient id="irisL" cx="38%" cy="33%" r="65%">
+          <stop offset="0%" stopColor="#6d71f5" />
+          <stop offset="55%" stopColor="#4338CA" />
           <stop offset="100%" stopColor="#312e81" />
         </radialGradient>
-        <radialGradient id="irisGradR" cx="40%" cy="35%" r="65%">
-          <stop offset="0%" stopColor="#6366f1" />
-          <stop offset="50%" stopColor="#4338CA" />
+        <radialGradient id="irisR" cx="38%" cy="33%" r="65%">
+          <stop offset="0%" stopColor="#6d71f5" />
+          <stop offset="55%" stopColor="#4338CA" />
           <stop offset="100%" stopColor="#312e81" />
-        </radialGradient>
-
-        {/* Hover glow */}
-        <radialGradient id="hoverGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#a5b4fc" />
-          <stop offset="100%" stopColor="#6366f1" />
         </radialGradient>
       </defs>
     </svg>
   );
 }
 
-// Small avatar for chat bubbles
-function MiniAvatar() {
-  return (
-    <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 mt-0.5 ring-2 ring-indigo-100 shadow-sm">
-      <AvatarSVG emotionalState="idle" />
-    </div>
-  );
-}
+// ─── Main component ────────────────────────────────────────────────────────────
 
 export default function ExpertAssistant() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const [typing, setTyping] = useState(false);
-  const [displayedText, setDisplayedText] = useState("");
-  const [pulse, setPulse] = useState(false);
-  const [emotionalState, setEmotionalState] = useState<EmotionalState>("idle");
-  const [isHovered, setIsHovered] = useState(false);
-  const [blinkPhase, setBlinkPhase] = useState(false);
-  const [nodPhase, setNodPhase] = useState(false);
-  const [showGreeting, setShowGreeting] = useState(false);
-  const [greetingVisible, setGreetingVisible] = useState(false);
-  const [messageReactions, setMessageReactions] = useState<Record<string, string>>({});
-  const blinkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const nodTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   const tip = TIPS[pathname] ?? DEFAULT_TIP;
 
-  // Initial visibility
+  const [visible,    setVisible]    = useState(false);
+  const [open,       setOpen]       = useState(false);
+  const [closing,    setClosing]    = useState(false);
+  const [phase,      setPhase]      = useState<Phase>("idle");
+  const [text,       setText]       = useState("");
+  const [done,       setDone]       = useState(false);
+  const [blink,      setBlink]      = useState(false);
+  const [nod,        setNod]        = useState(false);
+  const [hovered,    setHovered]    = useState(false);
+  const [pulse,      setPulse]      = useState(false);
+  const [greeting,   setGreeting]   = useState(false);
+  const [greetFade,  setGreetFade]  = useState(false);
+  const [reaction,   setReaction]   = useState<string | null>(null);
+  const [userInput,  setUserInput]  = useState("");
+  const [userMsgs,   setUserMsgs]   = useState<string[]>([]);
+
+  const blinkRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const nodRef   = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // ── appear after short delay ──
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 1200);
+    const t = setTimeout(() => setVisible(true), 900);
     return () => clearTimeout(t);
   }, []);
 
-  // Greeting bubble — only once per session
+  // ── one-time greeting bubble ──
   useEffect(() => {
-    if (!visible) return;
-    const alreadyGreeted = typeof window !== "undefined" && localStorage.getItem("sophia_greeted");
-    if (alreadyGreeted) return;
+    if (!visible || open) return;
+    if (typeof window !== "undefined" && localStorage.getItem("sophia_greeted")) return;
     const t = setTimeout(() => {
-      setShowGreeting(true);
-      setGreetingVisible(true);
+      setGreeting(true);
+      setGreetFade(false);
       localStorage.setItem("sophia_greeted", "1");
-      // Fade out after 4 seconds
-      const t2 = setTimeout(() => setGreetingVisible(false), 4000);
-      // Remove from DOM after fade
-      const t3 = setTimeout(() => setShowGreeting(false), 5200);
+      const t2 = setTimeout(() => setGreetFade(true), 3500);
+      const t3 = setTimeout(() => setGreeting(false), 4700);
       return () => { clearTimeout(t2); clearTimeout(t3); };
-    }, 2000);
+    }, 2200);
     return () => clearTimeout(t);
-  }, [visible]);
+  }, [visible, open]);
 
-  // Pulse ring on pathname change
+  // ── pulse on page change ──
   useEffect(() => {
-    const t = setTimeout(() => setPulse(true), 3000);
-    const t2 = setTimeout(() => setPulse(false), 5000);
+    if (open) return;
+    const t = setTimeout(() => setPulse(true),  2800);
+    const t2 = setTimeout(() => setPulse(false), 4800);
     return () => { clearTimeout(t); clearTimeout(t2); };
-  }, [pathname]);
+  }, [pathname, open]);
 
-  // Blink animation — every 4-7 seconds when idle
+  // ── blink loop (only when panel closed) ──
+  const scheduleBlink = useCallback(() => {
+    const delay = 4200 + Math.random() * 3200;
+    blinkRef.current = setTimeout(() => {
+      setBlink(true);
+      setTimeout(() => setBlink(false), 140);
+      scheduleBlink();
+    }, delay);
+  }, []);
+
   useEffect(() => {
     if (open) return;
-    const scheduleBlink = () => {
-      const delay = 4000 + Math.random() * 3000;
-      blinkTimerRef.current = setTimeout(() => {
-        setBlinkPhase(true);
-        setTimeout(() => setBlinkPhase(false), 150);
-        scheduleBlink();
-      }, delay);
-    };
     scheduleBlink();
-    return () => { if (blinkTimerRef.current) clearTimeout(blinkTimerRef.current); };
-  }, [open]);
+    return () => { if (blinkRef.current) clearTimeout(blinkRef.current); };
+  }, [open, scheduleBlink]);
 
-  // Nod animation — subtle head movement every 8-14 seconds when idle
+  // ── nod loop (only when panel closed) ──
+  const scheduleNod = useCallback(() => {
+    const delay = 9000 + Math.random() * 6000;
+    nodRef.current = setTimeout(() => {
+      setNod(true);
+      setTimeout(() => setNod(false), 550);
+      scheduleNod();
+    }, delay);
+  }, []);
+
   useEffect(() => {
     if (open) return;
-    const scheduleNod = () => {
-      const delay = 8000 + Math.random() * 6000;
-      nodTimerRef.current = setTimeout(() => {
-        setNodPhase(true);
-        setTimeout(() => setNodPhase(false), 600);
-        scheduleNod();
-      }, delay);
-    };
     scheduleNod();
-    return () => { if (nodTimerRef.current) clearTimeout(nodTimerRef.current); };
-  }, [open]);
+    return () => { if (nodRef.current) clearTimeout(nodRef.current); };
+  }, [open, scheduleNod]);
 
-  // Typewriter effect + emotional states
+  // ── typewriter when panel opens or page changes while open ──
   useEffect(() => {
     if (!open) {
-      setDisplayedText("");
-      setEmotionalState("idle");
+      setText("");
+      setDone(false);
+      setPhase("idle");
+      setReaction(null);
       return;
     }
-    setEmotionalState("thinking");
-    setTyping(true);
-    setDisplayedText("");
+    setPhase("thinking");
+    setDone(false);
+    setText("");
+    setReaction(null);
+
     let i = 0;
     const msg = tip.message;
-    // Short "thinking" pause before speaking
-    const thinkDelay = setTimeout(() => {
-      setEmotionalState("speaking");
-      const interval = setInterval(() => {
+    const think = setTimeout(() => {
+      setPhase("speaking");
+      const iv = setInterval(() => {
         if (i < msg.length) {
-          setDisplayedText(msg.slice(0, i + 1));
+          setText(msg.slice(0, i + 1));
           i++;
         } else {
-          setTyping(false);
-          setEmotionalState("idle");
-          clearInterval(interval);
+          setPhase("done");
+          setDone(true);
+          clearInterval(iv);
         }
-      }, 18);
-      return () => clearInterval(interval);
-    }, 600);
-    return () => clearTimeout(thinkDelay);
+      }, 17);
+      return () => clearInterval(iv);
+    }, 550);
+
+    return () => clearTimeout(think);
   }, [open, tip.message]);
 
-  const handleReaction = (emoji: string) => {
-    setMessageReactions(prev => ({ ...prev, main: emoji }));
+  // ── smooth close ──
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => { setOpen(false); setClosing(false); }, 280);
+  };
+
+  const handleOpen = () => {
+    if (open) { handleClose(); return; }
+    setOpen(true);
+  };
+
+  const handleSend = () => {
+    const msg = userInput.trim();
+    if (!msg) return;
+    setUserMsgs(prev => [...prev, msg]);
+    setUserInput("");
   };
 
   if (!visible) return null;
 
+  const isTyping = phase === "thinking" || phase === "speaking";
+
   return (
     <>
-      {/* Global keyframe styles */}
       <style>{`
-        @keyframes sophia-slide-in {
-          from { opacity: 0; transform: translateX(20px) scale(0.95); }
-          to   { opacity: 1; transform: translateX(0)   scale(1); }
-        }
-        @keyframes sophia-fade-out {
-          from { opacity: 1; transform: translateX(0)   scale(1); }
-          to   { opacity: 0; transform: translateX(10px) scale(0.95); }
-        }
-        @keyframes sophia-breathe {
-          0%, 100% { transform: scale(1); }
-          50%       { transform: scale(1.018); }
-        }
-        @keyframes sophia-float {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-3px); }
-        }
-        @keyframes sophia-mouth-talk {
-          0%, 100% { transform: scaleY(1); }
-          50%       { transform: scaleY(1.07); }
-        }
-        .sophia-breathing {
-          animation: sophia-breathe 4s ease-in-out infinite;
-        }
-        .sophia-floating {
-          animation: sophia-float 6s ease-in-out infinite;
-        }
+        @keyframes s-in  { from { opacity:0; transform:translateX(16px) scale(.94); } to { opacity:1; transform:translateX(0) scale(1); } }
+        @keyframes s-out { from { opacity:1; transform:translateX(0) scale(1); } to { opacity:0; transform:translateX(12px) scale(.94); } }
+        @keyframes s-up  { from { opacity:0; transform:translateY(12px) scale(.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+        @keyframes s-dn  { from { opacity:1; transform:translateY(0) scale(1); } to { opacity:0; transform:translateY(10px) scale(.96); } }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+        @keyframes breath{ 0%,100%{transform:scale(1)} 50%{transform:scale(1.02)} }
+        @keyframes blink { 0%,90%,100%{opacity:1} 95%{opacity:0} }
+        .s-float { animation: float 5.5s ease-in-out infinite; }
+        .s-breath { animation: breath 3.8s ease-in-out infinite; }
+        .cursor-blink { animation: blink 1s step-end infinite; }
       `}</style>
 
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
 
-        {/* Chat panel */}
+        {/* ── chat panel ── */}
         {open && (
           <div
-            className="w-80 rounded-2xl shadow-2xl border border-slate-100/80 overflow-hidden"
+            className="w-80 rounded-2xl shadow-2xl border border-white/60 overflow-hidden"
             style={{
-              animation: "sophia-slide-in 0.3s cubic-bezier(0.16,1,0.3,1) forwards",
-              background: "linear-gradient(160deg, #ffffff 0%, #f8f7ff 100%)",
+              animation: closing
+                ? "s-dn 0.28s cubic-bezier(0.4,0,1,1) forwards"
+                : "s-up 0.32s cubic-bezier(0.16,1,0.3,1) forwards",
+              background: "linear-gradient(155deg, #ffffff 0%, #f5f3ff 100%)",
             }}
           >
-            {/* Micro-texture overlay on panel */}
+            {/* dot texture */}
             <div
-              className="absolute inset-0 pointer-events-none opacity-[0.04] z-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%234338ca'/%3E%3C/svg%3E")`,
-              }}
+              className="absolute inset-0 pointer-events-none opacity-[0.035] z-0"
+              style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1.5' cy='1.5' r='1' fill='%234338ca'/%3E%3C/svg%3E")` }}
             />
 
-            <div className="relative z-10">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-indigo-600 via-indigo-600 to-violet-600 px-4 py-3 flex items-center justify-between shadow-md">
+            <div className="relative z-10 flex flex-col">
+
+              {/* header */}
+              <div className="bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
                   <div
-                    className="w-9 h-9 rounded-full overflow-hidden bg-indigo-200 flex-shrink-0 ring-2 ring-white/40 shadow-lg"
-                    style={{ animation: emotionalState === "speaking" ? "sophia-breathe 0.8s ease-in-out infinite" : undefined }}
+                    className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-white/35 shadow-md flex-shrink-0"
+                    style={{ animation: phase === "speaking" ? "breath 0.9s ease-in-out infinite" : undefined }}
                   >
-                    <AvatarSVG emotionalState={emotionalState} blinkPhase={blinkPhase} />
+                    <Avatar phase={phase} />
                   </div>
                   <div>
-                    <p className="text-white font-semibold text-sm leading-tight tracking-wide">Sophia</p>
+                    <p className="text-white font-semibold text-sm leading-none mb-1">Sophia</p>
                     <div className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_4px_rgba(52,211,153,0.8)]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_5px_rgba(52,211,153,0.9)]" style={{ animation: "blink 2.5s ease-in-out infinite" }} />
                       <p className="text-indigo-200 text-[10px] font-medium">Expert · Intelligence Stratégique</p>
                     </div>
                   </div>
                 </div>
                 <button
-                  onClick={() => setOpen(false)}
-                  className="text-white/60 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/10 active:scale-90"
+                  onClick={handleClose}
+                  className="text-white/50 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition-all active:scale-90"
                 >
                   <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                    <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                   </svg>
                 </button>
               </div>
 
-              {/* Status bar */}
-              <div className="bg-indigo-50/80 border-b border-indigo-100/60 px-4 py-1.5 flex items-center gap-2">
-                <div className="flex gap-0.5">
-                  {[0, 1, 2].map(i => (
+              {/* status bar */}
+              <div className="bg-indigo-50/70 border-b border-indigo-100/50 px-4 py-1.5 flex items-center gap-2">
+                <div className="flex gap-[3px] items-end h-3">
+                  {[0.7, 1, 0.55, 0.85, 0.65].map((h, i) => (
                     <span
                       key={i}
-                      className="w-1 h-2.5 rounded-full bg-indigo-400"
-                      style={{ animation: `sophia-breathe ${0.8 + i * 0.2}s ease-in-out infinite`, animationDelay: `${i * 0.15}s` }}
+                      className="w-[3px] rounded-full bg-indigo-400"
+                      style={{
+                        height: `${h * 12}px`,
+                        animation: `breath ${0.7 + i * 0.15}s ease-in-out infinite`,
+                        animationDelay: `${i * 0.1}s`,
+                      }}
                     />
                   ))}
                 </div>
-                <p className="text-indigo-600 text-[9px] font-semibold tracking-wider uppercase">
-                  Sophia analyse votre tableau de bord en temps réel…
+                <p className="text-indigo-500 text-[9px] font-semibold tracking-widest uppercase">
+                  Sophia analyse votre tableau de bord…
                 </p>
               </div>
 
-              {/* Body */}
-              <div className="p-4 space-y-3">
-                {/* Message bubble */}
+              {/* messages */}
+              <div className="p-4 space-y-3 max-h-72 overflow-y-auto">
+
+                {/* sophia bubble */}
                 <div className="flex items-start gap-2.5">
-                  <MiniAvatar />
-                  <div className="flex-1">
-                    <div
-                      className="bg-white rounded-2xl rounded-tl-none px-3.5 py-2.5 border border-slate-100 shadow-sm"
-                      style={{
-                        animation: emotionalState === "thinking" ? "sophia-breathe 1.2s ease-in-out infinite" : undefined,
-                      }}
-                    >
-                      {emotionalState === "thinking" && !displayedText ? (
-                        <div className="flex items-center gap-1.5 py-1">
+                  <div className="w-7 h-7 rounded-full overflow-hidden ring-2 ring-indigo-100 flex-shrink-0 mt-0.5">
+                    <Avatar phase={phase} size="sm" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="bg-white rounded-2xl rounded-tl-none px-3.5 py-2.5 border border-slate-100 shadow-sm">
+                      {phase === "thinking" && !text ? (
+                        <div className="flex items-center gap-1.5 py-0.5">
                           {[0, 1, 2].map(i => (
                             <span
                               key={i}
                               className="w-2 h-2 rounded-full bg-indigo-300"
-                              style={{ animation: `sophia-breathe 1s ease-in-out infinite`, animationDelay: `${i * 0.2}s` }}
+                              style={{ animation: `breath 1s ease-in-out infinite`, animationDelay: `${i * 0.22}s` }}
                             />
                           ))}
                         </div>
                       ) : (
-                        <p className="text-slate-700 text-sm leading-relaxed">
-                          {displayedText}
-                          {typing && (
-                            <span className="inline-block w-0.5 h-3.5 bg-indigo-400 ml-0.5 rounded-sm" style={{ animation: "sophia-breathe 0.8s ease-in-out infinite" }} />
+                        <p className="text-slate-700 text-sm leading-relaxed break-words">
+                          {text}
+                          {isTyping && (
+                            <span className="inline-block w-[2px] h-3.5 bg-indigo-500 ml-0.5 rounded-sm cursor-blink" />
                           )}
                         </p>
                       )}
                     </div>
 
-                    {/* Emoji reactions */}
-                    {!typing && displayedText && (
-                      <div className="flex items-center gap-1.5 mt-1.5 ml-1">
-                        {(["👍", "💡", "📊"] as const).map((emoji) => (
+                    {/* reactions */}
+                    {done && (
+                      <div
+                        className="flex items-center gap-1.5 mt-1.5 ml-1"
+                        style={{ animation: "s-in 0.3s 0.1s cubic-bezier(0.16,1,0.3,1) both" }}
+                      >
+                        {["👍", "💡", "📊"].map(e => (
                           <button
-                            key={emoji}
-                            onClick={() => handleReaction(emoji)}
+                            key={e}
+                            onClick={() => setReaction(r => r === e ? null : e)}
                             className={`text-sm px-2 py-0.5 rounded-full border transition-all hover:scale-110 active:scale-95 ${
-                              messageReactions.main === emoji
-                                ? "bg-indigo-100 border-indigo-300 shadow-sm"
-                                : "bg-white/60 border-slate-200 hover:bg-slate-50"
+                              reaction === e
+                                ? "bg-indigo-100 border-indigo-300 shadow-sm scale-110"
+                                : "bg-white/70 border-slate-200 hover:bg-slate-50"
                             }`}
                           >
-                            {emoji}
+                            {e}
                           </button>
                         ))}
                       </div>
@@ -555,131 +517,130 @@ export default function ExpertAssistant() {
                   </div>
                 </div>
 
-                {/* Insight card */}
-                {!typing && tip.insight && (
+                {/* insight */}
+                {done && tip.insight && (
                   <div
-                    className="ml-9 bg-gradient-to-br from-indigo-50 to-violet-50 border border-indigo-100 rounded-xl p-3"
-                    style={{ animation: "sophia-slide-in 0.5s 0.3s cubic-bezier(0.16,1,0.3,1) both" }}
+                    className="ml-9 bg-gradient-to-br from-indigo-50 to-violet-50/60 border border-indigo-100 rounded-xl p-3"
+                    style={{ animation: "s-in 0.35s 0.2s cubic-bezier(0.16,1,0.3,1) both" }}
                   >
                     <div className="flex items-start gap-2">
-                      <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0 mt-px">
                         <svg className="w-3 h-3 text-indigo-500" viewBox="0 0 14 14" fill="currentColor">
                           <path d="M7 1a6 6 0 100 12A6 6 0 007 1zm0 9a.75.75 0 110-1.5A.75.75 0 017 10zm.75-3.25a.75.75 0 01-1.5 0V5a.75.75 0 011.5 0v1.75z" />
                         </svg>
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <p className="text-indigo-700 text-xs leading-relaxed">{tip.insight}</p>
-                        {/* Confidence indicator */}
                         <div className="flex items-center gap-1.5 mt-1.5">
                           <div className="flex gap-0.5">
-                            {[...Array(5)].map((_, i) => (
+                            {[0,1,2,3,4].map(i => (
                               <span key={i} className={`w-1.5 h-1.5 rounded-full ${i < 4 ? "bg-indigo-400" : "bg-indigo-200"}`} />
                             ))}
                           </div>
-                          <span className="text-indigo-400 text-[9px] font-medium">Analyse basée sur 847 signaux</span>
+                          <span className="text-indigo-400 text-[9px] font-medium">847 signaux analysés</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {/* Quick actions */}
-                {!typing && (
+                {/* quick actions */}
+                {done && (
                   <div
                     className="ml-9 flex flex-wrap gap-2"
-                    style={{ animation: "sophia-slide-in 0.4s 0.5s cubic-bezier(0.16,1,0.3,1) both" }}
+                    style={{ animation: "s-in 0.35s 0.35s cubic-bezier(0.16,1,0.3,1) both" }}
                   >
-                    {["Analyser maintenant", "Générer un rapport"].map((action) => (
+                    {["Analyser maintenant", "Générer un rapport"].map(a => (
                       <button
-                        key={action}
-                        className="text-xs font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 px-3 py-1.5 rounded-full transition-all hover:scale-105 active:scale-95 hover:shadow-sm"
+                        key={a}
+                        className="text-xs font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-100/80 px-3 py-1.5 rounded-full transition-all hover:scale-105 active:scale-95 hover:shadow-sm"
                       >
-                        {action}
+                        {a}
                       </button>
                     ))}
                   </div>
                 )}
+
+                {/* user messages */}
+                {userMsgs.map((m, i) => (
+                  <div key={i} className="flex justify-end" style={{ animation: "s-in 0.25s cubic-bezier(0.16,1,0.3,1) both" }}>
+                    <div className="bg-indigo-600 text-white text-sm px-3.5 py-2 rounded-2xl rounded-br-none shadow-sm max-w-[85%]">
+                      {m}
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              {/* Input */}
-              <div className="px-4 pb-4">
-                <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-3 py-2.5 focus-within:border-indigo-300 focus-within:shadow-[0_0_0_3px_rgba(99,102,241,0.1)] transition-all shadow-sm">
+              {/* input */}
+              <div className="px-4 pb-4 pt-1">
+                <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-3 py-2.5 focus-within:border-indigo-300 focus-within:shadow-[0_0_0_3px_rgba(99,102,241,0.12)] transition-all shadow-sm">
                   <input
                     type="text"
+                    value={userInput}
+                    onChange={e => setUserInput(e.target.value)}
+                    onKeyDown={e => e.key === "Enter" && handleSend()}
                     placeholder="Posez une question à Sophia…"
                     className="flex-1 bg-transparent text-sm text-slate-700 placeholder-slate-400 outline-none"
                   />
-                  <button className="w-6 h-6 flex items-center justify-center rounded-lg bg-indigo-600 hover:bg-indigo-700 transition-colors flex-shrink-0 hover:scale-110 active:scale-90 shadow-sm">
+                  <button
+                    onClick={handleSend}
+                    className="w-6 h-6 flex items-center justify-center rounded-lg bg-indigo-600 hover:bg-indigo-700 transition-all flex-shrink-0 hover:scale-110 active:scale-90 shadow-sm disabled:opacity-40"
+                    disabled={!userInput.trim()}
+                  >
                     <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 14 14" fill="none">
                       <path d="M2 7h10M7.5 3L12 7l-4.5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
                 </div>
               </div>
+
             </div>
           </div>
         )}
 
-        {/* Greeting bubble */}
-        {showGreeting && !open && (
+        {/* ── greeting bubble ── */}
+        {greeting && !open && (
           <div
-            className="absolute bottom-16 right-16 mb-1 pointer-events-none"
-            style={{
-              animation: greetingVisible
-                ? "sophia-slide-in 0.4s cubic-bezier(0.16,1,0.3,1) forwards"
-                : "sophia-fade-out 0.8s ease forwards",
-            }}
+            className="absolute bottom-[4.5rem] right-16 pointer-events-none"
+            style={{ animation: greetFade ? "s-out 0.8s ease forwards" : "s-in 0.4s cubic-bezier(0.16,1,0.3,1) forwards" }}
           >
-            <div className="bg-slate-900 text-white text-sm font-medium px-4 py-2.5 rounded-2xl shadow-xl whitespace-nowrap max-w-[200px]">
-              <span>Bonjour, je suis Sophia&nbsp;</span>
-              <span role="img" aria-label="wave">👋</span>
-              {/* Arrow pointing right toward the avatar */}
-              <div
+            <div className="relative bg-slate-900 text-white text-sm font-medium px-4 py-2.5 rounded-2xl shadow-xl whitespace-nowrap">
+              Bonjour, je suis Sophia&nbsp;👋
+              <span
                 className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-0 h-0"
-                style={{
-                  borderTop: "5px solid transparent",
-                  borderBottom: "5px solid transparent",
-                  borderLeft: "6px solid #0f172a",
-                }}
+                style={{ borderTop: "5px solid transparent", borderBottom: "5px solid transparent", borderLeft: "6px solid #0f172a" }}
               />
             </div>
           </div>
         )}
 
-        {/* Floating avatar button */}
+        {/* ── floating button ── */}
         <div className="relative">
-          {/* Notification pulse ring */}
           {pulse && !open && (
-            <span className="absolute inset-0 rounded-full animate-ping bg-indigo-400 opacity-25" />
+            <span className="absolute inset-0 rounded-full animate-ping bg-indigo-400/30" />
           )}
-
-          {/* New message badge */}
           {!open && (
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-indigo-500 rounded-full border-2 border-white flex items-center justify-center z-10 shadow-sm">
               <span className="text-white text-[8px] font-black">1</span>
             </span>
           )}
-
           <button
-            onClick={() => setOpen((v) => !v)}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="w-14 h-14 rounded-full shadow-xl hover:shadow-2xl transition-all active:scale-95 overflow-hidden ring-2 ring-white ring-offset-2 ring-offset-slate-50"
+            onClick={handleOpen}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            className="w-14 h-14 rounded-full shadow-xl overflow-hidden ring-2 ring-white ring-offset-2 ring-offset-slate-100"
             style={{
-              animation: !open ? "sophia-floating 6s ease-in-out infinite" : undefined,
-              transform: isHovered ? "scale(1.08)" : undefined,
-              transition: "transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease",
+              animation: !open ? "float 5.5s ease-in-out infinite" : undefined,
+              transform: hovered ? "scale(1.1)" : open ? "scale(1.02)" : "scale(1)",
+              transition: "transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease",
+              boxShadow: hovered ? "0 12px 32px rgba(99,102,241,0.45)" : undefined,
             }}
             title="Sophia — Expert en Intelligence Stratégique"
           >
-            <AvatarSVG
-              emotionalState={emotionalState}
-              isHovered={isHovered}
-              blinkPhase={blinkPhase}
-              nodPhase={nodPhase}
-            />
+            <Avatar phase={phase} blink={blink} nod={nod} hovered={hovered} />
           </button>
         </div>
+
       </div>
     </>
   );
