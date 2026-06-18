@@ -50,6 +50,9 @@ from intelligence.lead_qualification import (
 from intelligence.followup_scheduler import (
     FollowUpScheduler, ActionType, Priority as FUPriority,
 )
+from intelligence.workflow_orchestrator import (
+    WorkflowOrchestrator, ProspectSignals, DivisionTarget, WorkflowAction,
+)
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -103,6 +106,7 @@ _negotiation_manager = NegotiationManager()
 _invoice_manager = InvoiceManager()
 _qualification_engine = LeadQualificationEngine()
 _followup_scheduler = FollowUpScheduler()
+_workflow_orchestrator = WorkflowOrchestrator()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1445,6 +1449,46 @@ def followup_remove(prospect_id: str):
 @app.delete("/followup/reset", tags=["FollowUp"])
 def followup_reset():
     _followup_scheduler.reset()
+    return {"status": "reset"}
+
+
+# ── Workflow Orchestrator ─────────────────────────────────────────────────────
+
+@app.post("/workflow/decide", tags=["Workflow"])
+def workflow_decide(body: dict):
+    signals = ProspectSignals(**body)
+    decision = _workflow_orchestrator.decide(signals)
+    return decision.to_dict()
+
+
+@app.post("/workflow/batch", tags=["Workflow"])
+def workflow_batch(body: dict):
+    signals_list = [ProspectSignals(**s) for s in body.get("signals", [])]
+    decisions = _workflow_orchestrator.decide_batch(signals_list)
+    return {"decisions": [d.to_dict() for d in decisions]}
+
+
+@app.get("/workflow/queue", tags=["Workflow"])
+def workflow_queue(limit: Optional[int] = None):
+    return {"queue": [d.to_dict() for d in _workflow_orchestrator.get_queue(limit=limit)]}
+
+
+@app.get("/workflow/summary", tags=["Workflow"])
+def workflow_summary():
+    return _workflow_orchestrator.summary()
+
+
+@app.get("/workflow/{prospect_id}", tags=["Workflow"])
+def workflow_get(prospect_id: str):
+    d = _workflow_orchestrator.get(prospect_id)
+    if not d:
+        raise HTTPException(status_code=404, detail="No decision for prospect")
+    return d.to_dict()
+
+
+@app.delete("/workflow/reset", tags=["Workflow"])
+def workflow_reset():
+    _workflow_orchestrator.reset()
     return {"status": "reset"}
 
 
