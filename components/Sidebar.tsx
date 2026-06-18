@@ -454,6 +454,15 @@ function IconCompetitiveWinLoss({ className }: { className?: string }) {
   );
 }
 
+function IconRepActivity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+      <path fillRule="evenodd" d="M15 8a1 1 0 011 1l.01 3H17a1 1 0 110 2h-1l-.01 1a1 1 0 11-2 0V14h-1a1 1 0 110-2h1V9a1 1 0 011-1z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconDealStageProgression({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -858,6 +867,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitive-win-loss", label: "Win-Loss Compétitif", icon: IconCompetitiveWinLoss },
       { href: "/dashboard/quota-attainment", label: "Prédiction Quota", icon: IconQuotaAttainment },
       { href: "/dashboard/deal-stage-progression", label: "Progression Deals", icon: IconDealStageProgression },
+      { href: "/dashboard/rep-activity-intelligence", label: "Activité Commerciale", icon: IconRepActivity },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
