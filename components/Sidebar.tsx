@@ -1883,6 +1883,16 @@ function IconSalesDiscoveryQualityIntelligenceEngine({ className }: { className?
   );
 }
 
+function IconSalesCustomerSuccessHandoffQualityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Two-way arrows with handshake — CS handoff quality */}
+      <path d="M3 8 L8 5 L8 7 L12 7 L12 5 L17 8 L12 11 L12 9 L8 9 L8 11 Z" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6 13 C6 13 8 15 10 15 C12 15 14 13 14 13" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2501,6 +2511,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-pipeline-health-degradation-intelligence-engine", label: "Pipeline Health", icon: IconSalesPipelineHealthDegradationIntelligenceEngine },
       { href: "/dashboard/sales-objection-handling-effectiveness-intelligence-engine", label: "Objection Handling", icon: IconSalesObjectionHandlingEffectivenessIntelligenceEngine },
       { href: "/dashboard/sales-discovery-quality-intelligence-engine", label: "Discovery Quality", icon: IconSalesDiscoveryQualityIntelligenceEngine },
+      { href: "/dashboard/sales-customer-success-handoff-quality-intelligence-engine", label: "CS Handoff Quality", icon: IconSalesCustomerSuccessHandoffQualityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
