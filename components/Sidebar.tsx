@@ -2150,6 +2150,17 @@ function IconSalesCRMDataHygieneIntelligenceEngine({ className }: { className?: 
   );
 }
 
+function IconSalesTerritoryConverageIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Map with pin and boundary outline — territory */}
+      <path d="M10 2 C5 2 2 5.5 2 9 C2 13 10 18 10 18 C10 18 18 13 18 9 C18 5.5 15 2 10 2 Z" opacity="0.4"/>
+      <circle cx="10" cy="9" r="2.5" fill="currentColor" opacity="0.8"/>
+      <path d="M2 8 L8 10 L12 6 L18 8" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
 function IconSalesCompetitiveIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2693,6 +2704,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-crm-data-hygiene-intelligence-engine", label: "CRM Hygiene", icon: IconSalesCRMDataHygieneIntelligenceEngine },
       { href: "/dashboard/sales-customer-lifecycle-intelligence-engine", label: "Customer Lifecycle", icon: IconSalesCustomerLifecycleIntelligenceEngine },
       { href: "/dashboard/sales-competitive-intelligence-engine", label: "Competitive Intel", icon: IconSalesCompetitiveIntelligenceEngine },
+      { href: "/dashboard/sales-territory-coverage-intelligence-engine", label: "Territory Coverage", icon: IconSalesTerritoryConverageIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },

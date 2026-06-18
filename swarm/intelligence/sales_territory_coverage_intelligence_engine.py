@@ -1,395 +1,305 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
+from typing import List, Dict
 
 
-class CoverageRisk(str, Enum):
+class TerritoryRisk(str, Enum):
     low      = "low"
     moderate = "moderate"
     high     = "high"
     critical = "critical"
 
 
-class CoveragePattern(str, Enum):
-    none                   = "none"
-    account_neglect        = "account_neglect"
-    high_value_underserved = "high_value_underserved"
-    whitespace_ignored     = "whitespace_ignored"
-    churn_risk_uncovered   = "churn_risk_uncovered"
-    revenue_concentration  = "revenue_concentration"
+class TerritoryPattern(str, Enum):
+    none                = "none"
+    whitespace_neglect  = "whitespace_neglect"
+    density_imbalance   = "density_imbalance"
+    travel_inefficiency = "travel_inefficiency"
+    vertical_blind_spot = "vertical_blind_spot"
+    renewal_anchoring   = "renewal_anchoring"
 
 
-class CoverageSeverity(str, Enum):
-    optimized     = "optimized"
-    gaps_detected = "gaps_detected"
-    underserved   = "underserved"
-    critical      = "critical"
+class TerritorySeverity(str, Enum):
+    optimal    = "optimal"
+    adequate   = "adequate"
+    underserved = "underserved"
+    neglected  = "neglected"
 
 
-class CoverageAction(str, Enum):
-    no_action                = "no_action"
-    account_outreach_blitz   = "account_outreach_blitz"
-    high_value_focus         = "high_value_focus"
-    whitespace_expansion     = "whitespace_expansion"
-    churn_prevention_sprint  = "churn_prevention_sprint"
-    territory_restructure    = "territory_restructure"
-
-
-@dataclass
-class TerritoryCoverageInput:
-    rep_id: str
-    region: str
-    evaluation_period_id: str
-    total_accounts_in_territory: int
-    accounts_active_count: int
-    accounts_neglected_count: int
-    high_value_accounts_total: int
-    high_value_accounts_engaged_count: int
-    new_logo_accounts_added: int
-    new_logo_converted_count: int
-    whitespace_accounts_identified: int
-    whitespace_accounts_pursued: int
-    churn_risk_accounts_total: int
-    churn_risk_accounts_contacted: int
-    top_account_revenue_concentration_pct: float
-    avg_contacts_per_account: float
-    expansion_signals_identified: int
-    expansion_signals_acted_upon: int
-    multi_product_penetration_pct: float
-    territory_revenue_growth_pct: float
-    avg_account_revenue_usd: float
-    accounts_without_next_steps_pct: float
+class TerritoryAction(str, Enum):
+    no_action                       = "no_action"
+    territory_monitoring            = "territory_monitoring"
+    whitespace_prospecting_coaching = "whitespace_prospecting_coaching"
+    route_optimization_coaching     = "route_optimization_coaching"
+    vertical_expansion_coaching     = "vertical_expansion_coaching"
+    territory_rebalancing           = "territory_rebalancing"
+    territory_strategy_reset        = "territory_strategy_reset"
 
 
 @dataclass
-class TerritoryCoverageResult:
-    rep_id: str
-    region: str
-    coverage_risk: CoverageRisk
-    coverage_pattern: CoveragePattern
-    coverage_severity: CoverageSeverity
-    recommended_action: CoverageAction
-    account_breadth_score: float
-    account_prioritization_score: float
-    whitespace_exploitation_score: float
-    churn_prevention_score: float
-    territory_coverage_composite: float
-    has_coverage_gap: bool
-    requires_territory_rebalance: bool
-    estimated_revenue_at_risk_usd: float
-    coverage_signal: str
+class TerritoryInput:
+    rep_id:                         str
+    region:                         str
+    evaluation_period_id:           str
+    accounts_touched_pct:           float   # 0-1 (pct of assigned accounts touched)
+    whitespace_accounts_touched_pct:float   # 0-1
+    new_logo_attempts_per_month:    float   # count
+    avg_accounts_per_week:          float   # unique accounts touched
+    vertical_coverage_pct:          float   # 0-1 (industries covered vs available)
+    geographic_concentration_pct:   float   # 0-1 (1.0 = all activity one city)
+    travel_time_pct_of_selling:     float   # 0-1
+    repeat_visit_rate_pct:          float   # 0-1
+    inactive_account_pct:           float   # 0-1 (accounts not touched in 60d)
+    expansion_account_pct:          float   # 0-1
+    at_risk_account_pct:            float   # 0-1 (by health score)
+    high_potential_untouched_pct:   float   # 0-1
+    avg_touch_frequency_days:       float   # days between touches per account
+    segmentation_adherence_pct:     float   # 0-1
+    icp_alignment_pct:              float   # 0-1
+    conquest_account_coverage_pct:  float   # 0-1
+    total_assigned_accounts:        int
+    total_territory_arr_usd:        float
+    avg_account_arr_usd:            float
 
-    def to_dict(self) -> dict:
+
+@dataclass
+class TerritoryResult:
+    rep_id:                         str
+    region:                         str
+    territory_risk:                 TerritoryRisk
+    territory_pattern:              TerritoryPattern
+    territory_severity:             TerritorySeverity
+    recommended_action:             TerritoryAction
+    coverage_score:                 float
+    prospecting_score:              float
+    efficiency_score:               float
+    segmentation_score:             float
+    territory_composite:            float
+    has_territory_gap:              bool
+    requires_territory_coaching:    bool
+    estimated_missed_revenue_usd:   float
+    territory_signal:               str
+
+    def to_dict(self) -> Dict:
         return {
-            "rep_id":                          self.rep_id,
-            "region":                          self.region,
-            "coverage_risk":                   self.coverage_risk.value,
-            "coverage_pattern":                self.coverage_pattern.value,
-            "coverage_severity":               self.coverage_severity.value,
-            "recommended_action":              self.recommended_action.value,
-            "account_breadth_score":           self.account_breadth_score,
-            "account_prioritization_score":    self.account_prioritization_score,
-            "whitespace_exploitation_score":   self.whitespace_exploitation_score,
-            "churn_prevention_score":          self.churn_prevention_score,
-            "territory_coverage_composite":    self.territory_coverage_composite,
-            "has_coverage_gap":                self.has_coverage_gap,
-            "requires_territory_rebalance":    self.requires_territory_rebalance,
-            "estimated_revenue_at_risk_usd":   self.estimated_revenue_at_risk_usd,
-            "coverage_signal":                 self.coverage_signal,
+            "rep_id":                           self.rep_id,
+            "region":                           self.region,
+            "territory_risk":                   self.territory_risk.value,
+            "territory_pattern":                self.territory_pattern.value,
+            "territory_severity":               self.territory_severity.value,
+            "recommended_action":               self.recommended_action.value,
+            "coverage_score":                   self.coverage_score,
+            "prospecting_score":                self.prospecting_score,
+            "efficiency_score":                 self.efficiency_score,
+            "segmentation_score":               self.segmentation_score,
+            "territory_composite":              self.territory_composite,
+            "has_territory_gap":                self.has_territory_gap,
+            "requires_territory_coaching":      self.requires_territory_coaching,
+            "estimated_missed_revenue_usd":     self.estimated_missed_revenue_usd,
+            "territory_signal":                 self.territory_signal,
         }
 
 
-class SalesTerritoryCoverageIntelligenceEngine:
+class SalesTerritoryConverageIntelligenceEngine:
+    """Detects territory gaps — whitespace neglect, density imbalance, travel inefficiency, vertical blind spots."""
 
     def __init__(self) -> None:
-        self._results: list[TerritoryCoverageResult] = []
+        self._results: List[TerritoryResult] = []
 
-    # ------------------------------------------------------------------
-    # Sub-scores (0–100, higher = more risk)
-    # ------------------------------------------------------------------
+    # ── sub-scores ────────────────────────────────────────────────────────
 
-    def _account_breadth_score(self, inp: TerritoryCoverageInput) -> float:
-        score = 0.0
-        total = max(inp.total_accounts_in_territory, 1)
+    def _coverage_score(self, inp: TerritoryInput) -> float:
+        s = 0.0
+        if   inp.accounts_touched_pct        <= 0.40: s += 40
+        elif inp.accounts_touched_pct        <= 0.60: s += 22
+        elif inp.accounts_touched_pct        <= 0.75: s += 8
+        if   inp.inactive_account_pct        >= 0.40: s += 35
+        elif inp.inactive_account_pct        >= 0.25: s += 18
+        if   inp.high_potential_untouched_pct >= 0.40: s += 25
+        elif inp.high_potential_untouched_pct >= 0.25: s += 12
+        return min(s, 100.0)
 
-        neglect_ratio = inp.accounts_neglected_count / total
-        if neglect_ratio >= 0.40:
-            score += 40.0
-        elif neglect_ratio >= 0.25:
-            score += 25.0
-        elif neglect_ratio >= 0.10:
-            score += 10.0
+    def _prospecting_score(self, inp: TerritoryInput) -> float:
+        s = 0.0
+        if   inp.whitespace_accounts_touched_pct <= 0.15: s += 40
+        elif inp.whitespace_accounts_touched_pct <= 0.35: s += 22
+        elif inp.whitespace_accounts_touched_pct <= 0.55: s += 8
+        if   inp.new_logo_attempts_per_month     <= 3:    s += 35
+        elif inp.new_logo_attempts_per_month     <= 6:    s += 18
+        if   inp.conquest_account_coverage_pct   <= 0.20: s += 25
+        elif inp.conquest_account_coverage_pct   <= 0.40: s += 12
+        return min(s, 100.0)
 
-        active_ratio = inp.accounts_active_count / total
-        if active_ratio < 0.30:
-            score += 25.0
-        elif active_ratio < 0.50:
-            score += 12.0
+    def _efficiency_score(self, inp: TerritoryInput) -> float:
+        s = 0.0
+        if   inp.travel_time_pct_of_selling  >= 0.35: s += 40
+        elif inp.travel_time_pct_of_selling  >= 0.25: s += 22
+        elif inp.travel_time_pct_of_selling  >= 0.15: s += 8
+        if   inp.repeat_visit_rate_pct       >= 0.60: s += 35
+        elif inp.repeat_visit_rate_pct       >= 0.45: s += 18
+        if   inp.geographic_concentration_pct >= 0.70: s += 25
+        elif inp.geographic_concentration_pct >= 0.55: s += 12
+        return min(s, 100.0)
 
-        if inp.accounts_without_next_steps_pct >= 0.60:
-            score += 20.0
-        elif inp.accounts_without_next_steps_pct >= 0.40:
-            score += 10.0
+    def _segmentation_score(self, inp: TerritoryInput) -> float:
+        s = 0.0
+        if   inp.segmentation_adherence_pct  <= 0.40: s += 45
+        elif inp.segmentation_adherence_pct  <= 0.60: s += 25
+        elif inp.segmentation_adherence_pct  <= 0.75: s += 10
+        if   inp.icp_alignment_pct           <= 0.40: s += 30
+        elif inp.icp_alignment_pct           <= 0.65: s += 15
+        if   inp.vertical_coverage_pct       <= 0.30: s += 25
+        elif inp.vertical_coverage_pct       <= 0.55: s += 12
+        return min(s, 100.0)
 
-        return min(score, 100.0)
+    # ── composite ─────────────────────────────────────────────────────────
 
-    def _account_prioritization_score(self, inp: TerritoryCoverageInput) -> float:
-        score = 0.0
-        hv_total = max(inp.high_value_accounts_total, 1)
-        hv_engaged_ratio = inp.high_value_accounts_engaged_count / hv_total
+    def _composite(self, co: float, pr: float, ef: float, se: float) -> float:
+        return min(round(co * 0.35 + pr * 0.25 + ef * 0.20 + se * 0.20, 2), 100.0)
 
-        if hv_engaged_ratio < 0.40:
-            score += 40.0
-        elif hv_engaged_ratio < 0.60:
-            score += 25.0
-        elif hv_engaged_ratio < 0.80:
-            score += 10.0
+    # ── pattern ───────────────────────────────────────────────────────────
 
-        # Dangerous over-concentration in few accounts
-        if inp.top_account_revenue_concentration_pct >= 0.80:
-            score += 30.0
-        elif inp.top_account_revenue_concentration_pct >= 0.60:
-            score += 15.0
+    def _pattern(self, inp: TerritoryInput) -> TerritoryPattern:
+        if inp.whitespace_accounts_touched_pct <= 0.15 and inp.high_potential_untouched_pct >= 0.35:
+            return TerritoryPattern.whitespace_neglect
+        if inp.geographic_concentration_pct >= 0.65 and inp.inactive_account_pct >= 0.35:
+            return TerritoryPattern.density_imbalance
+        if inp.travel_time_pct_of_selling >= 0.30 and inp.repeat_visit_rate_pct >= 0.55:
+            return TerritoryPattern.travel_inefficiency
+        if inp.vertical_coverage_pct <= 0.30 and inp.icp_alignment_pct <= 0.50:
+            return TerritoryPattern.vertical_blind_spot
+        if inp.repeat_visit_rate_pct >= 0.60 and inp.new_logo_attempts_per_month <= 3:
+            return TerritoryPattern.renewal_anchoring
+        return TerritoryPattern.none
 
-        if inp.avg_contacts_per_account < 1.0:
-            score += 20.0
-        elif inp.avg_contacts_per_account < 2.0:
-            score += 10.0
+    # ── thresholds ────────────────────────────────────────────────────────
 
-        return min(score, 100.0)
+    def _risk(self, composite: float) -> TerritoryRisk:
+        if   composite >= 60: return TerritoryRisk.critical
+        elif composite >= 40: return TerritoryRisk.high
+        elif composite >= 20: return TerritoryRisk.moderate
+        return TerritoryRisk.low
 
-    def _whitespace_exploitation_score(self, inp: TerritoryCoverageInput) -> float:
-        score = 0.0
-        exp_identified = max(inp.expansion_signals_identified, 1)
-        ws_identified  = max(inp.whitespace_accounts_identified, 1)
+    def _severity(self, composite: float) -> TerritorySeverity:
+        if   composite >= 60: return TerritorySeverity.neglected
+        elif composite >= 40: return TerritorySeverity.underserved
+        elif composite >= 20: return TerritorySeverity.adequate
+        return TerritorySeverity.optimal
 
-        acted_ratio = inp.expansion_signals_acted_upon / exp_identified
-        if acted_ratio < 0.20:
-            score += 35.0
-        elif acted_ratio < 0.40:
-            score += 20.0
-        elif acted_ratio < 0.60:
-            score += 8.0
+    def _action(self, risk: TerritoryRisk, pattern: TerritoryPattern) -> TerritoryAction:
+        if risk == TerritoryRisk.critical:
+            if pattern == TerritoryPattern.whitespace_neglect:
+                return TerritoryAction.territory_strategy_reset
+            return TerritoryAction.territory_rebalancing
+        if risk == TerritoryRisk.high:
+            if pattern == TerritoryPattern.whitespace_neglect:
+                return TerritoryAction.whitespace_prospecting_coaching
+            if pattern == TerritoryPattern.density_imbalance:
+                return TerritoryAction.territory_rebalancing
+            if pattern == TerritoryPattern.travel_inefficiency:
+                return TerritoryAction.route_optimization_coaching
+            if pattern == TerritoryPattern.vertical_blind_spot:
+                return TerritoryAction.vertical_expansion_coaching
+            if pattern == TerritoryPattern.renewal_anchoring:
+                return TerritoryAction.whitespace_prospecting_coaching
+            return TerritoryAction.territory_rebalancing
+        if risk == TerritoryRisk.moderate:
+            return TerritoryAction.territory_monitoring
+        return TerritoryAction.no_action
 
-        ws_ratio = inp.whitespace_accounts_pursued / ws_identified
-        if ws_ratio < 0.20:
-            score += 30.0
-        elif ws_ratio < 0.40:
-            score += 15.0
+    # ── flags ─────────────────────────────────────────────────────────────
 
-        if inp.multi_product_penetration_pct < 0.20:
-            score += 20.0
-        elif inp.multi_product_penetration_pct < 0.35:
-            score += 10.0
-
-        new_logo_total = max(inp.new_logo_accounts_added, 1)
-        if inp.new_logo_converted_count / new_logo_total < 0.20:
-            score += 15.0
-
-        return min(score, 100.0)
-
-    def _churn_prevention_score(self, inp: TerritoryCoverageInput) -> float:
-        score = 0.0
-        churn_total = max(inp.churn_risk_accounts_total, 1)
-
-        churn_coverage = inp.churn_risk_accounts_contacted / churn_total
-        if churn_coverage < 0.40:
-            score += 40.0
-        elif churn_coverage < 0.60:
-            score += 25.0
-        elif churn_coverage < 0.80:
-            score += 10.0
-
-        if inp.territory_revenue_growth_pct < -0.10:
-            score += 35.0
-        elif inp.territory_revenue_growth_pct < 0:
-            score += 15.0
-
-        if inp.accounts_neglected_count >= 5:
-            score += 15.0
-        elif inp.accounts_neglected_count >= 3:
-            score += 8.0
-
-        return min(score, 100.0)
-
-    # ------------------------------------------------------------------
-    # Pattern detection
-    # ------------------------------------------------------------------
-
-    def _detect_pattern(self, inp: TerritoryCoverageInput,
-                         breadth: float, prioritization: float,
-                         whitespace: float, churn: float) -> CoveragePattern:
-        # Priority: revenue_concentration > churn_risk_uncovered > high_value_underserved
-        #           > whitespace_ignored > account_neglect > none
-        if inp.top_account_revenue_concentration_pct >= 0.70 and prioritization >= 30:
-            return CoveragePattern.revenue_concentration
-
-        churn_total = max(inp.churn_risk_accounts_total, 1)
-        churn_ratio = inp.churn_risk_accounts_contacted / churn_total
-        if churn >= 30 and churn_ratio < 0.40:
-            return CoveragePattern.churn_risk_uncovered
-
-        hv_total  = max(inp.high_value_accounts_total, 1)
-        hv_ratio  = inp.high_value_accounts_engaged_count / hv_total
-        if prioritization >= 35 and hv_ratio < 0.60:
-            return CoveragePattern.high_value_underserved
-
-        exp_identified = max(inp.expansion_signals_identified, 1)
-        acted_ratio    = inp.expansion_signals_acted_upon / exp_identified
-        if whitespace >= 35 and acted_ratio < 0.20:
-            return CoveragePattern.whitespace_ignored
-
-        if breadth >= 30 and inp.accounts_neglected_count >= 5:
-            return CoveragePattern.account_neglect
-
-        return CoveragePattern.none
-
-    # ------------------------------------------------------------------
-    # Risk / severity / action
-    # ------------------------------------------------------------------
-
-    def _risk_level(self, composite: float) -> CoverageRisk:
-        if composite >= 60:
-            return CoverageRisk.critical
-        if composite >= 40:
-            return CoverageRisk.high
-        if composite >= 20:
-            return CoverageRisk.moderate
-        return CoverageRisk.low
-
-    def _severity(self, composite: float) -> CoverageSeverity:
-        if composite >= 60:
-            return CoverageSeverity.critical
-        if composite >= 40:
-            return CoverageSeverity.underserved
-        if composite >= 20:
-            return CoverageSeverity.gaps_detected
-        return CoverageSeverity.optimized
-
-    def _action(self, risk: CoverageRisk, pattern: CoveragePattern) -> CoverageAction:
-        if risk == CoverageRisk.critical:
-            if pattern == CoveragePattern.churn_risk_uncovered:
-                return CoverageAction.churn_prevention_sprint
-            return CoverageAction.territory_restructure
-        if risk == CoverageRisk.high:
-            if pattern == CoveragePattern.churn_risk_uncovered:
-                return CoverageAction.churn_prevention_sprint
-            if pattern == CoveragePattern.whitespace_ignored:
-                return CoverageAction.whitespace_expansion
-            if pattern == CoveragePattern.high_value_underserved:
-                return CoverageAction.high_value_focus
-            return CoverageAction.account_outreach_blitz
-        if risk == CoverageRisk.moderate:
-            if pattern == CoveragePattern.whitespace_ignored:
-                return CoverageAction.whitespace_expansion
-            return CoverageAction.account_outreach_blitz
-        return CoverageAction.no_action
-
-    # ------------------------------------------------------------------
-    # Flags
-    # ------------------------------------------------------------------
-
-    def _has_coverage_gap(self, composite: float, inp: TerritoryCoverageInput) -> bool:
-        churn_total = max(inp.churn_risk_accounts_total, 1)
+    def _has_gap(self, inp: TerritoryInput, composite: float) -> bool:
         return (
             composite >= 40
-            or inp.accounts_neglected_count >= 5
-            or (inp.churn_risk_accounts_total > 0
-                and inp.churn_risk_accounts_contacted / churn_total < 0.40)
+            or inp.accounts_touched_pct          <= 0.60
+            or inp.high_potential_untouched_pct  >= 0.30
         )
 
-    def _requires_territory_rebalance(self, composite: float,
-                                       inp: TerritoryCoverageInput) -> bool:
-        hv_total = max(inp.high_value_accounts_total, 1)
+    def _requires_coaching(self, inp: TerritoryInput, composite: float) -> bool:
         return (
-            composite >= 30
-            or inp.top_account_revenue_concentration_pct >= 0.70
-            or inp.high_value_accounts_engaged_count / hv_total < 0.40
+            composite >= 25
+            or inp.whitespace_accounts_touched_pct <= 0.40
+            or inp.segmentation_adherence_pct      <= 0.60
         )
 
-    # ------------------------------------------------------------------
-    # Revenue at risk
-    # ------------------------------------------------------------------
+    # ── dollar impact ─────────────────────────────────────────────────────
 
-    def _estimated_revenue_at_risk(self, inp: TerritoryCoverageInput,
-                                    composite: float) -> float:
+    def _missed_revenue(self, inp: TerritoryInput, composite: float) -> float:
+        untouched_pct = max(0.0, 1.0 - inp.accounts_touched_pct)
         return round(
-            inp.accounts_neglected_count * inp.avg_account_revenue_usd * (composite / 100.0), 2
+            inp.total_territory_arr_usd
+            * untouched_pct
+            * (composite / 100),
+            2,
         )
 
-    # ------------------------------------------------------------------
-    # Signal string
-    # ------------------------------------------------------------------
+    # ── signal ────────────────────────────────────────────────────────────
 
-    def _signal(self, inp: TerritoryCoverageInput,
-                pattern: CoveragePattern, composite: float) -> str:
-        if pattern == CoveragePattern.none and composite < 20:
-            return "Territory coverage optimized across all segments"
-        parts: list[str] = []
-        if inp.accounts_neglected_count >= 3:
-            parts.append(f"{inp.accounts_neglected_count} accounts neglected")
-        hv_total = max(inp.high_value_accounts_total, 1)
-        hv_ratio = inp.high_value_accounts_engaged_count / hv_total
-        if hv_ratio < 0.60:
-            parts.append(f"{hv_ratio*100:.0f}% high-value coverage")
-        exp_identified = max(inp.expansion_signals_identified, 1)
-        acted_ratio    = inp.expansion_signals_acted_upon / exp_identified
-        if acted_ratio < 0.40:
-            parts.append(f"{inp.whitespace_accounts_identified - inp.whitespace_accounts_pursued} whitespace opportunities missed")
-        churn_total = max(inp.churn_risk_accounts_total, 1)
-        if inp.churn_risk_accounts_contacted / churn_total < 0.50:
-            parts.append(f"{int((inp.churn_risk_accounts_contacted / churn_total)*100)}% churn risk contacts")
-        label = pattern.value.replace("_", " ") if pattern != CoveragePattern.none else "Coverage risk"
-        summary = " — ".join(parts) if parts else "territory coverage gaps detected"
-        return f"{label.capitalize()} — {summary} — composite {composite:.0f}"
+    _PATTERN_LABELS = {
+        TerritoryPattern.whitespace_neglect:  "Whitespace neglect",
+        TerritoryPattern.density_imbalance:   "Density imbalance",
+        TerritoryPattern.travel_inefficiency: "Travel inefficiency",
+        TerritoryPattern.vertical_blind_spot: "Vertical blind spot",
+        TerritoryPattern.renewal_anchoring:   "Renewal anchoring",
+    }
 
-    # ------------------------------------------------------------------
-    # Assess
-    # ------------------------------------------------------------------
+    def _signal(self, inp: TerritoryInput, pattern: TerritoryPattern, composite: float) -> str:
+        if composite < 20:
+            return (
+                "Territory coverage optimal — accounts touched, whitespace prospecting, "
+                "travel efficiency, and segmentation within benchmarks"
+            )
+        label       = self._PATTERN_LABELS.get(pattern, pattern.value.replace("_", " ").title())
+        touch_pct   = round(inp.accounts_touched_pct * 100)
+        ws_pct      = round(inp.whitespace_accounts_touched_pct * 100)
+        inact_pct   = round(inp.inactive_account_pct * 100)
+        comp_int    = round(composite)
+        return (
+            f"{label} — {touch_pct}% accounts touched — "
+            f"{ws_pct}% whitespace coverage — "
+            f"{inact_pct}% inactive accounts — composite {comp_int}"
+        )
 
-    def assess(self, inp: TerritoryCoverageInput) -> TerritoryCoverageResult:
-        breadth        = round(self._account_breadth_score(inp), 1)
-        prioritization = round(self._account_prioritization_score(inp), 1)
-        whitespace     = round(self._whitespace_exploitation_score(inp), 1)
-        churn          = round(self._churn_prevention_score(inp), 1)
+    # ── public API ────────────────────────────────────────────────────────
 
-        composite = round(breadth * 0.25 + prioritization * 0.30 + whitespace * 0.25 + churn * 0.20, 1)
-        composite = min(composite, 100.0)
+    def assess(self, inp: TerritoryInput) -> TerritoryResult:
+        co  = self._coverage_score(inp)
+        pr  = self._prospecting_score(inp)
+        ef  = self._efficiency_score(inp)
+        se  = self._segmentation_score(inp)
+        comp = self._composite(co, pr, ef, se)
 
-        pattern  = self._detect_pattern(inp, breadth, prioritization, whitespace, churn)
-        risk     = self._risk_level(composite)
-        severity = self._severity(composite)
+        pattern  = self._pattern(inp)
+        risk     = self._risk(comp)
+        severity = self._severity(comp)
         action   = self._action(risk, pattern)
 
-        gap      = self._has_coverage_gap(composite, inp)
-        rebal    = self._requires_territory_rebalance(composite, inp)
-        revenue  = self._estimated_revenue_at_risk(inp, composite)
-        signal   = self._signal(inp, pattern, composite)
-
-        result = TerritoryCoverageResult(
-            rep_id=inp.rep_id,
-            region=inp.region,
-            coverage_risk=risk,
-            coverage_pattern=pattern,
-            coverage_severity=severity,
-            recommended_action=action,
-            account_breadth_score=breadth,
-            account_prioritization_score=prioritization,
-            whitespace_exploitation_score=whitespace,
-            churn_prevention_score=churn,
-            territory_coverage_composite=composite,
-            has_coverage_gap=gap,
-            requires_territory_rebalance=rebal,
-            estimated_revenue_at_risk_usd=revenue,
-            coverage_signal=signal,
+        result = TerritoryResult(
+            rep_id                      = inp.rep_id,
+            region                      = inp.region,
+            territory_risk              = risk,
+            territory_pattern           = pattern,
+            territory_severity          = severity,
+            recommended_action          = action,
+            coverage_score              = co,
+            prospecting_score           = pr,
+            efficiency_score            = ef,
+            segmentation_score          = se,
+            territory_composite         = comp,
+            has_territory_gap           = self._has_gap(inp, comp),
+            requires_territory_coaching = self._requires_coaching(inp, comp),
+            estimated_missed_revenue_usd= self._missed_revenue(inp, comp),
+            territory_signal            = self._signal(inp, pattern, comp),
         )
         self._results.append(result)
         return result
 
-    def assess_batch(self, inputs: list[TerritoryCoverageInput]) -> list[TerritoryCoverageResult]:
+    def assess_batch(self, inputs: List[TerritoryInput]) -> List[TerritoryResult]:
         return [self.assess(i) for i in inputs]
 
-    def summary(self) -> dict:
+    def summary(self) -> Dict:
         if not self._results:
             return {
                 "total": 0,
@@ -397,48 +307,50 @@ class SalesTerritoryCoverageIntelligenceEngine:
                 "pattern_counts": {},
                 "severity_counts": {},
                 "action_counts": {},
-                "avg_territory_coverage_composite": 0.0,
-                "coverage_gap_count": 0,
-                "rebalance_count": 0,
-                "avg_account_breadth_score": 0.0,
-                "avg_account_prioritization_score": 0.0,
-                "avg_whitespace_exploitation_score": 0.0,
-                "avg_churn_prevention_score": 0.0,
-                "total_estimated_revenue_at_risk_usd": 0.0,
+                "avg_territory_composite": 0.0,
+                "territory_gap_count": 0,
+                "coaching_count": 0,
+                "avg_coverage_score": 0.0,
+                "avg_prospecting_score": 0.0,
+                "avg_efficiency_score": 0.0,
+                "avg_segmentation_score": 0.0,
+                "total_estimated_missed_revenue_usd": 0.0,
             }
 
-        risk_counts:     dict[str, int] = {}
-        pattern_counts:  dict[str, int] = {}
-        severity_counts: dict[str, int] = {}
-        action_counts:   dict[str, int] = {}
-        total_comp = total_br = total_pr = total_ws = total_ch = total_rev = 0.0
+        risk_counts:     Dict[str, int] = {}
+        pattern_counts:  Dict[str, int] = {}
+        severity_counts: Dict[str, int] = {}
+        action_counts:   Dict[str, int] = {}
+        total_comp = total_co = total_pr = total_ef = total_se = total_mr = 0.0
+        gap_count = coaching_count = 0
 
-        for r in self._results:
-            risk_counts[r.coverage_risk.value]       = risk_counts.get(r.coverage_risk.value, 0) + 1
-            pattern_counts[r.coverage_pattern.value] = pattern_counts.get(r.coverage_pattern.value, 0) + 1
-            severity_counts[r.coverage_severity.value] = severity_counts.get(r.coverage_severity.value, 0) + 1
-            action_counts[r.recommended_action.value]  = action_counts.get(r.recommended_action.value, 0) + 1
-            total_comp += r.territory_coverage_composite
-            total_br   += r.account_breadth_score
-            total_pr   += r.account_prioritization_score
-            total_ws   += r.whitespace_exploitation_score
-            total_ch   += r.churn_prevention_score
-            total_rev  += r.estimated_revenue_at_risk_usd
+        for res in self._results:
+            risk_counts[res.territory_risk.value]       = risk_counts.get(res.territory_risk.value, 0) + 1
+            pattern_counts[res.territory_pattern.value] = pattern_counts.get(res.territory_pattern.value, 0) + 1
+            severity_counts[res.territory_severity.value] = severity_counts.get(res.territory_severity.value, 0) + 1
+            action_counts[res.recommended_action.value] = action_counts.get(res.recommended_action.value, 0) + 1
+            total_comp += res.territory_composite
+            total_co   += res.coverage_score
+            total_pr   += res.prospecting_score
+            total_ef   += res.efficiency_score
+            total_se   += res.segmentation_score
+            total_mr   += res.estimated_missed_revenue_usd
+            if res.has_territory_gap:          gap_count      += 1
+            if res.requires_territory_coaching: coaching_count += 1
 
         n = len(self._results)
-
         return {
             "total":                                n,
             "risk_counts":                          risk_counts,
             "pattern_counts":                       pattern_counts,
             "severity_counts":                      severity_counts,
             "action_counts":                        action_counts,
-            "avg_territory_coverage_composite":     round(total_comp / n, 1),
-            "coverage_gap_count":                   sum(1 for r in self._results if r.has_coverage_gap),
-            "rebalance_count":                      sum(1 for r in self._results if r.requires_territory_rebalance),
-            "avg_account_breadth_score":            round(total_br / n, 1),
-            "avg_account_prioritization_score":     round(total_pr / n, 1),
-            "avg_whitespace_exploitation_score":    round(total_ws / n, 1),
-            "avg_churn_prevention_score":           round(total_ch / n, 1),
-            "total_estimated_revenue_at_risk_usd":  round(total_rev, 2),
+            "avg_territory_composite":              round(total_comp / n, 1),
+            "territory_gap_count":                  gap_count,
+            "coaching_count":                       coaching_count,
+            "avg_coverage_score":                   round(total_co / n, 1),
+            "avg_prospecting_score":                round(total_pr / n, 1),
+            "avg_efficiency_score":                 round(total_ef / n, 1),
+            "avg_segmentation_score":               round(total_se / n, 1),
+            "total_estimated_missed_revenue_usd":   round(total_mr, 2),
         }

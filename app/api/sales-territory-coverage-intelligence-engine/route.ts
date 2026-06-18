@@ -1,146 +1,50 @@
 import { NextResponse } from "next/server";
 
-const SWARM_API_URL = process.env.SWARM_API_URL;
+export async function GET() {
+  if (!process.env.SWARM_API_URL) {
+    return NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 503 });
+  }
+  return NextResponse.json({ reps: MOCK_REPS, summary: buildSummary(MOCK_REPS) });
+}
 
-const mockReps = [
-  {
-    rep_id: "rep_001", region: "West",
-    coverage_risk: "low", coverage_pattern: "none",
-    coverage_severity: "optimized", recommended_action: "no_action",
-    account_breadth_score: 0.0, account_prioritization_score: 0.0,
-    whitespace_exploitation_score: 0.0, churn_prevention_score: 0.0,
-    territory_coverage_composite: 0.0, has_coverage_gap: false,
-    requires_territory_rebalance: false, estimated_revenue_at_risk_usd: 0.0,
-    coverage_signal: "Territory coverage optimized across all segments",
-  },
-  {
-    rep_id: "rep_002", region: "East",
-    coverage_risk: "low", coverage_pattern: "none",
-    coverage_severity: "optimized", recommended_action: "no_action",
-    account_breadth_score: 0.0, account_prioritization_score: 10.0,
-    whitespace_exploitation_score: 8.0, churn_prevention_score: 0.0,
-    territory_coverage_composite: 5.0, has_coverage_gap: false,
-    requires_territory_rebalance: false, estimated_revenue_at_risk_usd: 0.0,
-    coverage_signal: "Territory coverage optimized across all segments",
-  },
-  {
-    rep_id: "rep_003", region: "Central",
-    coverage_risk: "moderate", coverage_pattern: "whitespace_ignored",
-    coverage_severity: "gaps_detected", recommended_action: "account_outreach_blitz",
-    account_breadth_score: 10.0, account_prioritization_score: 10.0,
-    whitespace_exploitation_score: 45.0, churn_prevention_score: 8.0,
-    territory_coverage_composite: 20.0, has_coverage_gap: false,
-    requires_territory_rebalance: false, estimated_revenue_at_risk_usd: 0.0,
-    coverage_signal: "Whitespace ignored — 6 whitespace opportunities missed — composite 20",
-  },
-  {
-    rep_id: "rep_004", region: "Northeast",
-    coverage_risk: "moderate", coverage_pattern: "high_value_underserved",
-    coverage_severity: "gaps_detected", recommended_action: "account_outreach_blitz",
-    account_breadth_score: 10.0, account_prioritization_score: 35.0,
-    whitespace_exploitation_score: 15.0, churn_prevention_score: 8.0,
-    territory_coverage_composite: 20.0, has_coverage_gap: false,
-    requires_territory_rebalance: true, estimated_revenue_at_risk_usd: 0.0,
-    coverage_signal: "High value underserved — 45% high-value coverage — composite 22",
-  },
-  {
-    rep_id: "rep_005", region: "Southeast",
-    coverage_risk: "high", coverage_pattern: "account_neglect",
-    coverage_severity: "underserved", recommended_action: "account_outreach_blitz",
-    account_breadth_score: 50.0, account_prioritization_score: 25.0,
-    whitespace_exploitation_score: 30.0, churn_prevention_score: 23.0,
-    territory_coverage_composite: 33.0, has_coverage_gap: true,
-    requires_territory_rebalance: true, estimated_revenue_at_risk_usd: 24000.0,
-    coverage_signal: "Account neglect — 8 accounts neglected — 55% high-value coverage — composite 42",
-  },
-  {
-    rep_id: "rep_006", region: "West",
-    coverage_risk: "high", coverage_pattern: "churn_risk_uncovered",
-    coverage_severity: "underserved", recommended_action: "churn_prevention_sprint",
-    account_breadth_score: 25.0, account_prioritization_score: 15.0,
-    whitespace_exploitation_score: 30.0, churn_prevention_score: 58.0,
-    territory_coverage_composite: 32.0, has_coverage_gap: true,
-    requires_territory_rebalance: true, estimated_revenue_at_risk_usd: 30000.0,
-    coverage_signal: "Churn risk uncovered — 5 accounts neglected — 30% churn risk contacts — composite 44",
-  },
-  {
-    rep_id: "rep_007", region: "APAC",
-    coverage_risk: "critical", coverage_pattern: "revenue_concentration",
-    coverage_severity: "critical", recommended_action: "territory_restructure",
-    account_breadth_score: 55.0, account_prioritization_score: 65.0,
-    whitespace_exploitation_score: 55.0, churn_prevention_score: 55.0,
-    territory_coverage_composite: 58.5, has_coverage_gap: true,
-    requires_territory_rebalance: true, estimated_revenue_at_risk_usd: 78000.0,
-    coverage_signal: "Revenue concentration — 12 accounts neglected — 30% high-value coverage — 8 whitespace opportunities missed — composite 62",
-  },
-  {
-    rep_id: "rep_008", region: "EMEA",
-    coverage_risk: "critical", coverage_pattern: "revenue_concentration",
-    coverage_severity: "critical", recommended_action: "territory_restructure",
-    account_breadth_score: 75.0, account_prioritization_score: 85.0,
-    whitespace_exploitation_score: 65.0, churn_prevention_score: 70.0,
-    territory_coverage_composite: 75.0, has_coverage_gap: true,
-    requires_territory_rebalance: true, estimated_revenue_at_risk_usd: 150000.0,
-    coverage_signal: "Revenue concentration — 15 accounts neglected — 20% high-value coverage — 10 whitespace opportunities missed — 20% churn risk contacts — composite 75",
-  },
+const MOCK_REPS = [
+  { rep_id:"R001", region:"EMEA",  territory_risk:"critical",  territory_pattern:"whitespace_neglect",  territory_severity:"neglected",    recommended_action:"territory_strategy_reset",           coverage_score:88, prospecting_score:85, efficiency_score:80, segmentation_score:82, territory_composite:84.8, has_territory_gap:true,  requires_territory_coaching:true,  estimated_missed_revenue_usd:420000, territory_signal:"Whitespace neglect — 25% accounts touched — 8% whitespace coverage — 55% inactive — composite 85" },
+  { rep_id:"R002", region:"APAC",  territory_risk:"critical",  territory_pattern:"density_imbalance",   territory_severity:"neglected",    recommended_action:"territory_rebalancing",              coverage_score:75, prospecting_score:70, efficiency_score:72, segmentation_score:68, territory_composite:72.4, has_territory_gap:true,  requires_territory_coaching:true,  estimated_missed_revenue_usd:350000, territory_signal:"Density imbalance — 30% accounts touched — 12% whitespace — composite 72" },
+  { rep_id:"R003", region:"NOAM",  territory_risk:"high",      territory_pattern:"travel_inefficiency", territory_severity:"underserved",  recommended_action:"route_optimization_coaching",        coverage_score:52, prospecting_score:48, efficiency_score:58, segmentation_score:45, territory_composite:50.8, has_territory_gap:true,  requires_territory_coaching:true,  estimated_missed_revenue_usd:240000, territory_signal:"Travel inefficiency — 45% accounts touched — 20% whitespace — composite 51" },
+  { rep_id:"R004", region:"LATAM", territory_risk:"high",      territory_pattern:"vertical_blind_spot", territory_severity:"underserved",  recommended_action:"vertical_expansion_coaching",        coverage_score:45, prospecting_score:42, efficiency_score:38, segmentation_score:52, territory_composite:44.3, has_territory_gap:true,  requires_territory_coaching:true,  estimated_missed_revenue_usd:195000, territory_signal:"Vertical blind spot — 50% accounts touched — 18% whitespace — composite 44" },
+  { rep_id:"R005", region:"EMEA",  territory_risk:"moderate",  territory_pattern:"renewal_anchoring",   territory_severity:"adequate",    recommended_action:"territory_monitoring",               coverage_score:28, prospecting_score:32, efficiency_score:22, segmentation_score:25, territory_composite:26.9, has_territory_gap:true,  requires_territory_coaching:true,  estimated_missed_revenue_usd:88000,  territory_signal:"Renewal anchoring — 65% accounts touched — 22% whitespace — composite 27" },
+  { rep_id:"R006", region:"APAC",  territory_risk:"low",       territory_pattern:"none",                territory_severity:"optimal",     recommended_action:"no_action",                          coverage_score:8,  prospecting_score:6,  efficiency_score:5,  segmentation_score:7,  territory_composite:6.6,  has_territory_gap:false, requires_territory_coaching:false, estimated_missed_revenue_usd:0,      territory_signal:"Territory coverage optimal — accounts touched, whitespace prospecting, travel efficiency, and segmentation within benchmarks" },
+  { rep_id:"R007", region:"NOAM",  territory_risk:"high",      territory_pattern:"whitespace_neglect",  territory_severity:"underserved",  recommended_action:"whitespace_prospecting_coaching",    coverage_score:60, prospecting_score:55, efficiency_score:48, segmentation_score:52, territory_composite:55.3, has_territory_gap:true,  requires_territory_coaching:true,  estimated_missed_revenue_usd:280000, territory_signal:"Whitespace neglect — 38% accounts touched — 10% whitespace — composite 55" },
+  { rep_id:"R008", region:"LATAM", territory_risk:"low",       territory_pattern:"none",                territory_severity:"optimal",     recommended_action:"no_action",                          coverage_score:5,  prospecting_score:4,  efficiency_score:6,  segmentation_score:5,  territory_composite:5.0,  has_territory_gap:false, requires_territory_coaching:false, estimated_missed_revenue_usd:0,      territory_signal:"Territory coverage optimal — all metrics within benchmarks" },
 ];
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const risk    = searchParams.get("risk");
-  const pattern = searchParams.get("pattern");
-
-  if (SWARM_API_URL) {
-    try {
-      const url = new URL(`${SWARM_API_URL}/api/sales-territory-coverage-intelligence-engine`);
-      if (risk)    url.searchParams.set("risk", risk);
-      if (pattern) url.searchParams.set("pattern", pattern);
-      const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
-    } catch {}
+function buildSummary(reps: typeof MOCK_REPS) {
+  const risk_counts:     Record<string,number> = {};
+  const pattern_counts:  Record<string,number> = {};
+  const severity_counts: Record<string,number> = {};
+  const action_counts:   Record<string,number> = {};
+  let comp=0, co=0, pr=0, ef=0, se=0, mr=0, gap=0, coach=0;
+  for (const r of reps) {
+    risk_counts[r.territory_risk]         = (risk_counts[r.territory_risk]||0)+1;
+    pattern_counts[r.territory_pattern]   = (pattern_counts[r.territory_pattern]||0)+1;
+    severity_counts[r.territory_severity] = (severity_counts[r.territory_severity]||0)+1;
+    action_counts[r.recommended_action]   = (action_counts[r.recommended_action]||0)+1;
+    comp+=r.territory_composite; co+=r.coverage_score; pr+=r.prospecting_score;
+    ef+=r.efficiency_score; se+=r.segmentation_score;
+    mr+=r.estimated_missed_revenue_usd;
+    if (r.has_territory_gap)           gap++;
+    if (r.requires_territory_coaching) coach++;
   }
-
-  let reps = [...mockReps];
-  if (risk)    reps = reps.filter((r) => r.coverage_risk    === risk);
-  if (pattern) reps = reps.filter((r) => r.coverage_pattern === pattern);
-
-  const risk_counts:     Record<string, number> = {};
-  const pattern_counts:  Record<string, number> = {};
-  const severity_counts: Record<string, number> = {};
-  const action_counts:   Record<string, number> = {};
-  let total_comp = 0, total_br = 0, total_pr = 0, total_ws = 0, total_ch = 0, total_rev = 0;
-
-  for (const r of mockReps) {
-    risk_counts[r.coverage_risk]         = (risk_counts[r.coverage_risk] || 0) + 1;
-    pattern_counts[r.coverage_pattern]   = (pattern_counts[r.coverage_pattern] || 0) + 1;
-    severity_counts[r.coverage_severity] = (severity_counts[r.coverage_severity] || 0) + 1;
-    action_counts[r.recommended_action]  = (action_counts[r.recommended_action] || 0) + 1;
-    total_comp += r.territory_coverage_composite;
-    total_br   += r.account_breadth_score;
-    total_pr   += r.account_prioritization_score;
-    total_ws   += r.whitespace_exploitation_score;
-    total_ch   += r.churn_prevention_score;
-    total_rev  += r.estimated_revenue_at_risk_usd;
-  }
-
-  const n = mockReps.length;
-
-  return NextResponse.json({
-    reps,
-    summary: {
-      total:                                n,
-      risk_counts,
-      pattern_counts,
-      severity_counts,
-      action_counts,
-      avg_territory_coverage_composite:     Math.round((total_comp / n) * 10) / 10,
-      coverage_gap_count:                   mockReps.filter((r) => r.has_coverage_gap).length,
-      rebalance_count:                      mockReps.filter((r) => r.requires_territory_rebalance).length,
-      avg_account_breadth_score:            Math.round((total_br / n) * 10) / 10,
-      avg_account_prioritization_score:     Math.round((total_pr / n) * 10) / 10,
-      avg_whitespace_exploitation_score:    Math.round((total_ws / n) * 10) / 10,
-      avg_churn_prevention_score:           Math.round((total_ch / n) * 10) / 10,
-      total_estimated_revenue_at_risk_usd:  Math.round(total_rev * 100) / 100,
-    },
-  });
+  const n = reps.length;
+  return {
+    total: n, risk_counts, pattern_counts, severity_counts, action_counts,
+    avg_territory_composite:                Math.round(comp/n*10)/10,
+    territory_gap_count:                    gap,
+    coaching_count:                         coach,
+    avg_coverage_score:                     Math.round(co/n*10)/10,
+    avg_prospecting_score:                  Math.round(pr/n*10)/10,
+    avg_efficiency_score:                   Math.round(ef/n*10)/10,
+    avg_segmentation_score:                 Math.round(se/n*10)/10,
+    total_estimated_missed_revenue_usd:     Math.round(mr*100)/100,
+  };
 }
