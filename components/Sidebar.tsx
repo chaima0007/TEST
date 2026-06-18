@@ -526,6 +526,23 @@ function IconPriceNegotiation({ className }: { className?: string }) {
   );
 }
 
+function IconSalesCapacity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+      <path fillRule="evenodd" d="M16 8a1 1 0 011 1v4a1 1 0 11-2 0V9a1 1 0 011-1z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconCustomerOnboarding({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconAccountExpansion({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1030,6 +1047,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/partner-channel", label: "Partner Channel", icon: IconPartnerChannel },
       { href: "/dashboard/price-negotiation", label: "Price Negotiation", icon: IconPriceNegotiation },
       { href: "/dashboard/account-expansion", label: "Account Expansion", icon: IconAccountExpansion },
+      { href: "/dashboard/customer-onboarding", label: "Customer Onboarding", icon: IconCustomerOnboarding },
+      { href: "/dashboard/sales-capacity", label: "Sales Capacity", icon: IconSalesCapacity },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
