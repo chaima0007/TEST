@@ -55,6 +55,7 @@ MENU = """
   [10] Agent Juridique           ← Contrats, CGV, RGPD, NDA
   [11] Agent Support Client      ← SAV 24/7, FAQ, onboarding
   [12] Agent Chef de Projet      ← Planification, risques, rapports
+  [13] Agent Guide               ← Sait toujours ce qu'il faut faire ensuite
 
   [s]  Voir stats & mémoire
   [0]  Quitter
@@ -101,6 +102,8 @@ if __name__ == "__main__":
             lancer("agent_support_client.py")
         elif choix == "12":
             lancer("agent_chef_projet.py")
+        elif choix == "13":
+            lancer("agent_guide.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
