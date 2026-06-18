@@ -1320,6 +1320,19 @@ function IconWinLossPatternEngine({ className }: { className?: string }) {
   );
 }
 
+function IconSalesBurnoutRiskEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="6" r="3" fill="currentColor" opacity={0.6} />
+      <path d="M4 18c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" strokeWidth="1.3" fill="none" strokeLinecap="round" opacity="0.5" />
+      <path d="M10 10v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.8" />
+      <circle cx="10" cy="15" r="1" fill="currentColor" opacity={0.9} />
+      <path d="M14 3l1.5-1.5M6 3L4.5 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
+      <path d="M16 7l1.5.5M4 7L2.5 7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.4" />
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -1527,6 +1540,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-capacity-planning-engine", label: "Sales Capacity", icon: IconSalesCapacityPlanningEngine },
       { href: "/dashboard/deal-contamination-risk-engine", label: "Deal Contamination", icon: IconDealContaminationRiskEngine },
       { href: "/dashboard/competitive-win-probability-engine", label: "Win Probability", icon: IconCompetitiveWinProbabilityEngine },
+      { href: "/dashboard/sales-burnout-risk-engine", label: "Burnout Risk", icon: IconSalesBurnoutRiskEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
