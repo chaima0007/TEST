@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Report {
   id: string;
@@ -10,6 +10,8 @@ interface Report {
   status: string;
   createdAt: string;
 }
+
+type StatusFilter = "Tous" | "Prêts" | "En cours";
 
 function formatDate(dateStr: string) {
   const date = new Date(dateStr);
@@ -53,10 +55,41 @@ const TEMPLATES = [
   { title: "Rapport exécutif", desc: "Synthèse pour la direction", icon: "📋", color: "group-hover:text-violet-600", hover: "hover:border-violet-200 hover:bg-violet-50" },
 ];
 
+const GENERATION_STEPS = [
+  "Collecte des données…",
+  "Analyse concurrentielle…",
+  "Mise en page du rapport…",
+];
+
+function downloadReportPDF(report: Report) {
+  const content = [
+    `RAPPORT: ${report.title}`,
+    ``,
+    `Description: ${report.description}`,
+    `Statut: ${report.status === "ready" ? "Prêt" : report.status}`,
+    `Pages: ${report.pages}`,
+    `Créé le: ${formatDate(report.createdAt)}`,
+    ``,
+    `--- Généré par CompeteIQ ---`,
+  ].join("\n");
+  const blob = new Blob([content], { type: "application/octet-stream" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  const filename = report.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  a.download = `${filename}.pdf`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export default function ReportsPage() {
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
   const [generating, setGenerating] = useState(false);
+  const [genStep, setGenStep] = useState<number>(-1); // -1 = not generating
+  const [successBanner, setSuccessBanner] = useState(false);
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>("Tous");
+  const successTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     fetch("/api/reports")
@@ -66,10 +99,24 @@ export default function ReportsPage() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
+    return () => {
+      if (successTimerRef.current) clearTimeout(successTimerRef.current);
+    };
   }, []);
 
   const generateReport = async () => {
+    if (generating) return;
     setGenerating(true);
+    setGenStep(0);
+
+    // Step animation: 3 steps × 0.8s each
+    await new Promise<void>((resolve) => setTimeout(resolve, 800));
+    setGenStep(1);
+    await new Promise<void>((resolve) => setTimeout(resolve, 800));
+    setGenStep(2);
+    await new Promise<void>((resolve) => setTimeout(resolve, 800));
+    setGenStep(-1);
+
     try {
       const res = await fetch("/api/reports", {
         method: "POST",
@@ -84,11 +131,41 @@ export default function ReportsPage() {
       // silent
     } finally {
       setGenerating(false);
+      setSuccessBanner(true);
+      successTimerRef.current = setTimeout(() => setSuccessBanner(false), 3000);
     }
   };
 
+  const statusFilterOptions: StatusFilter[] = ["Tous", "Prêts", "En cours"];
+
+  const filteredReports = reports.filter((r) => {
+    if (statusFilter === "Prêts") return r.status === "ready";
+    if (statusFilter === "En cours") return r.status !== "ready";
+    return true;
+  });
+
   return (
     <div className="space-y-8">
+      {/* Success banner */}
+      {successBanner && (
+        <div className="flex items-center gap-3 px-4 py-3 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-700 text-sm font-medium animate-in fade-in slide-in-from-top-2 duration-300">
+          <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="7" fill="#10b981" />
+            <path d="M5 8l2.5 2.5L11 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Rapport généré avec succès !
+          <button
+            onClick={() => setSuccessBanner(false)}
+            className="ml-auto text-emerald-500 hover:text-emerald-700 transition-colors"
+          >
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <line x1="1" y1="1" x2="11" y2="11" />
+              <line x1="11" y1="1" x2="1" y2="11" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       {/* Plan banner */}
       <div className="flex items-center justify-between gap-4 rounded-xl bg-[#0f1e3c] px-5 py-3.5">
         <div className="flex items-center gap-3">
@@ -109,6 +186,45 @@ export default function ReportsPage() {
         </a>
       </div>
 
+      {/* Generation progress */}
+      {generating && genStep >= 0 && (
+        <div className="bg-white border border-indigo-100 rounded-xl px-5 py-4 shadow-sm">
+          <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">Génération en cours</p>
+          <div className="space-y-2.5">
+            {GENERATION_STEPS.map((step, i) => (
+              <div key={step} className="flex items-center gap-3">
+                <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${
+                  i < genStep
+                    ? "bg-emerald-500"
+                    : i === genStep
+                    ? "bg-indigo-600"
+                    : "bg-slate-100"
+                }`}>
+                  {i < genStep ? (
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  ) : i === genStep ? (
+                    <span className="w-2.5 h-2.5 rounded-full border-2 border-white/30 border-t-white animate-spin inline-block" />
+                  ) : (
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-300 inline-block" />
+                  )}
+                </div>
+                <span className={`text-sm transition-colors ${
+                  i < genStep
+                    ? "text-emerald-600 font-medium"
+                    : i === genStep
+                    ? "text-indigo-700 font-semibold"
+                    : "text-slate-400"
+                }`}>
+                  {step}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
@@ -127,7 +243,7 @@ export default function ReportsPage() {
           {generating ? (
             <>
               <span className="w-3.5 h-3.5 rounded-full border-2 border-white/30 border-t-white animate-spin" />
-              Génération…
+              {genStep >= 0 ? GENERATION_STEPS[genStep] : "Génération…"}
             </>
           ) : (
             <>
@@ -138,11 +254,28 @@ export default function ReportsPage() {
         </button>
       </div>
 
+      {/* Status filter pills */}
+      <div className="flex items-center gap-2">
+        {statusFilterOptions.map((opt) => (
+          <button
+            key={opt}
+            onClick={() => setStatusFilter(opt)}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all border ${
+              statusFilter === opt
+                ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
+                : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+            }`}
+          >
+            {opt}
+          </button>
+        ))}
+      </div>
+
       {/* Report grid */}
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
         {loading
           ? [...Array(3)].map((_, i) => <ReportSkeleton key={i} />)
-          : reports.map((r, idx) => (
+          : filteredReports.map((r, idx) => (
               <div
                 key={r.id}
                 className="bg-white rounded-xl border border-slate-200 p-5 hover:shadow-lg hover:border-indigo-200 transition-all group cursor-default"
@@ -183,7 +316,10 @@ export default function ReportsPage() {
 
                 {/* Actions */}
                 <div className="flex gap-2">
-                  <button className="flex-1 flex items-center justify-center gap-1.5 bg-indigo-600 text-white py-2 rounded-lg text-xs font-medium hover:bg-indigo-700 transition-colors">
+                  <button
+                    onClick={() => downloadReportPDF(r)}
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-indigo-600 text-white py-2 rounded-lg text-xs font-medium hover:bg-indigo-700 transition-colors"
+                  >
                     <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
                       <path d="M7 1v8M4 7l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       <path d="M2 11h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -202,6 +338,60 @@ export default function ReportsPage() {
                 </div>
               </div>
             ))}
+      </div>
+
+      {/* Scheduled reports section */}
+      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
+          <div>
+            <h3 className="text-sm font-semibold text-slate-900">Rapports programmés</h3>
+            <p className="text-xs text-slate-400 mt-0.5">Rapports générés automatiquement selon un calendrier</p>
+          </div>
+          <a
+            href="#"
+            className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors"
+          >
+            Configurer →
+          </a>
+        </div>
+        <div className="divide-y divide-slate-50">
+          {/* Entry 1 */}
+          <div className="flex items-center gap-4 px-5 py-3.5">
+            <div className="w-9 h-9 rounded-lg bg-indigo-50 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-indigo-500" viewBox="0 0 16 16" fill="none">
+                <rect x="1" y="2" width="14" height="13" rx="2" stroke="currentColor" strokeWidth="1.3" />
+                <path d="M1 6h14" stroke="currentColor" strokeWidth="1.3" />
+                <path d="M5 1v2M11 1v2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-slate-800">Analyse hebdomadaire</p>
+              <p className="text-xs text-slate-400 mt-0.5">Chaque lundi 08:00</p>
+            </div>
+            <span className="flex items-center gap-1.5 text-xs font-medium bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full border border-emerald-100 flex-shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+              Actif
+            </span>
+          </div>
+          {/* Entry 2 */}
+          <div className="flex items-center gap-4 px-5 py-3.5">
+            <div className="w-9 h-9 rounded-lg bg-violet-50 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-violet-500" viewBox="0 0 16 16" fill="none">
+                <rect x="1" y="2" width="14" height="13" rx="2" stroke="currentColor" strokeWidth="1.3" />
+                <path d="M1 6h14" stroke="currentColor" strokeWidth="1.3" />
+                <path d="M5 1v2M11 1v2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-slate-800">Résumé mensuel</p>
+              <p className="text-xs text-slate-400 mt-0.5">1er du mois</p>
+            </div>
+            <span className="flex items-center gap-1.5 text-xs font-medium bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full border border-emerald-100 flex-shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+              Actif
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* AI promo banner */}
