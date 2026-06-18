@@ -46,17 +46,40 @@ async function runFrom(runId: string, fromIndex: number, deps: StepDeps): Promis
   return runId;
 }
 
+export interface RunOptions {
+  /** Déclenche l'agent auto-pilote en fin de run (prépare les dossiers prioritaires). Défaut: true. */
+  autopilot?: boolean;
+}
+
+// Auto-pilote post-run : import dynamique pour éviter tout cycle de modules, et
+// isolé dans un try/catch — son échec ne doit jamais faire échouer le run lui-même.
+async function maybeAutopilot(runId: string, opts: RunOptions): Promise<void> {
+  if (opts.autopilot === false) return;
+  const run = await prisma.pipelineRun.findUnique({ where: { id: runId } });
+  if (run?.status !== "completed") return;
+  try {
+    const { runAutopilot } = await import("./autopilot");
+    await runAutopilot(runId, { level: "strong" });
+  } catch {
+    // silencieux : la préparation auto est best-effort
+  }
+}
+
 /** Démarre un nouveau run complet et renvoie son id. */
-export async function startRun(deps: StepDeps = defaultDeps): Promise<string> {
+export async function startRun(deps: StepDeps = defaultDeps, opts: RunOptions = {}): Promise<string> {
   const run = await prisma.pipelineRun.create({ data: { status: "running", currentStep: 0 } });
-  return runFrom(run.id, 0, deps);
+  const id = await runFrom(run.id, 0, deps);
+  await maybeAutopilot(id, opts);
+  return id;
 }
 
 /** Reprend un run en échec depuis l'étape fautive. */
-export async function resumeRun(runId: string, deps: StepDeps = defaultDeps): Promise<string> {
+export async function resumeRun(runId: string, deps: StepDeps = defaultDeps, opts: RunOptions = {}): Promise<string> {
   const run = await prisma.pipelineRun.findUnique({ where: { id: runId } });
   if (!run) throw new Error(`Run introuvable : ${runId}`);
   if (run.status === "completed") return runId;
   await prisma.pipelineRun.update({ where: { id: runId }, data: { status: "running", error: null } });
-  return runFrom(runId, run.currentStep, deps);
+  const id = await runFrom(runId, run.currentStep, deps);
+  await maybeAutopilot(id, opts);
+  return id;
 }
