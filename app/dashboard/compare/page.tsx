@@ -2,7 +2,7 @@
 
 import { competitors } from "@/lib/data";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 
 const featureNames = [
   "Intelligence Artificielle",
@@ -17,6 +17,14 @@ const qualityScore: Record<string, number> = {
   Excellent: 3,
   Bien: 2,
   Moyen: 1,
+  "-": 0,
+};
+
+// Weighted score quality mapping: Excellent=100, Bien=75, Moyen=50, "-"=0
+const qualityWeightedScore: Record<string, number> = {
+  Excellent: 100,
+  Bien: 75,
+  Moyen: 50,
   "-": 0,
 };
 
@@ -88,8 +96,93 @@ function generateAIInsight(selected: (typeof competitors)[0][]): string {
   } ou sur une valeur prix plus compétitive.`;
 }
 
+// Weighted score criteria
+const CRITERIA = [
+  { key: "prix", label: "Prix", defaultWeight: 40 },
+  { key: "ia", label: "Fonctionnalités IA", defaultWeight: 25 },
+  { key: "ux", label: "Facilité d'utilisation", defaultWeight: 20 },
+  { key: "support", label: "Support", defaultWeight: 15 },
+] as const;
+
+type CriteriaKey = (typeof CRITERIA)[number]["key"];
+
+// Map competitor features to criteria scores
+function getCriteriaQualityScore(c: (typeof competitors)[0], key: CriteriaKey): number {
+  switch (key) {
+    case "prix": {
+      // Inverse price score: lower price = higher score
+      const lowestPrice = Math.min(...c.pricing.filter((p) => p.price > 0).map((p) => p.price));
+      // Map price range 0-500 inversely to 0-100
+      const allPrices = competitors.flatMap((comp) => comp.pricing.filter((p) => p.price > 0).map((p) => p.price));
+      const maxPrice = Math.max(...allPrices);
+      const minPrice = Math.min(...allPrices);
+      return Math.round(100 - ((lowestPrice - minPrice) / (maxPrice - minPrice)) * 100);
+    }
+    case "ia": {
+      const aiFeature = c.features.find((f) =>
+        f.name.toLowerCase().includes("intelligence") || f.name.toLowerCase().includes("ia")
+      );
+      if (!aiFeature || !aiFeature.available) return 0;
+      return qualityWeightedScore[aiFeature.quality] ?? 0;
+    }
+    case "ux": {
+      const mobileFeature = c.features.find((f) => f.name.toLowerCase().includes("mobile"));
+      if (!mobileFeature || !mobileFeature.available) return 50;
+      return qualityWeightedScore[mobileFeature.quality] ?? 50;
+    }
+    case "support": {
+      const apiFeature = c.features.find((f) => f.name.toLowerCase().includes("api"));
+      if (!apiFeature || !apiFeature.available) return 0;
+      return qualityWeightedScore[apiFeature.quality] ?? 0;
+    }
+  }
+}
+
+function computeWeightedScore(
+  c: (typeof competitors)[0],
+  weights: Record<CriteriaKey, number>
+): number {
+  const totalWeight = Object.values(weights).reduce((a, b) => a + b, 0);
+  if (totalWeight === 0) return 0;
+  const raw = CRITERIA.reduce((acc, criterion) => {
+    const q = getCriteriaQualityScore(c, criterion.key);
+    return acc + q * (weights[criterion.key] / 100);
+  }, 0);
+  // Normalize by total weight ratio
+  return Math.min(100, Math.round((raw * 100) / totalWeight));
+}
+
+// Mock past comparisons
+const PAST_COMPARISONS = [
+  { label: "Salesforce vs HubSpot · 12 juin", ids: ["1", "2"] },
+  { label: "Pipedrive vs Zoho · 8 juin", ids: ["3", "4"] },
+  { label: "Tous vs Tous · 1 juin", ids: ["1", "2", "3"] },
+];
+
 export default function ComparePage() {
   const [selectedIds, setSelectedIds] = useState<string[]>(competitors.slice(0, 3).map((c) => c.id));
+
+  // Weighted score state
+  const [weights, setWeights] = useState<Record<CriteriaKey, number>>({
+    prix: 40,
+    ia: 25,
+    ux: 20,
+    support: 15,
+  });
+
+  // Notes state
+  const [notes, setNotes] = useState("");
+  const [noteSaved, setNoteSaved] = useState(false);
+
+  // Load notes from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("compare_notes");
+      if (saved) setNotes(saved);
+    } catch {
+      // ignore
+    }
+  }, []);
 
   function toggleSelect(id: string) {
     setSelectedIds((prev) => {
@@ -127,16 +220,100 @@ export default function ComparePage() {
     [selected]
   );
 
+  // Weighted scores per selected competitor
+  const weightedScores = useMemo(
+    () =>
+      selected.map((c) => ({
+        id: c.id,
+        name: c.name,
+        color: c.color,
+        score: computeWeightedScore(c, weights),
+      })).sort((a, b) => b.score - a.score),
+    [selected, weights]
+  );
+
+  const weightedBest = weightedScores[0] ?? null;
+
+  // Save notes handler
+  const handleSaveNotes = useCallback(() => {
+    try {
+      localStorage.setItem("compare_notes", notes);
+    } catch {
+      // ignore
+    }
+    setNoteSaved(true);
+    setTimeout(() => setNoteSaved(false), 2000);
+  }, [notes]);
+
+  // Export PDF (text blob)
+  function handleExportPDF() {
+    if (selected.length === 0) return;
+    const lines: string[] = [
+      "CompeteIQ — Comparaison des concurrents",
+      `Exporté le ${new Date().toLocaleDateString("fr-FR")}`,
+      "",
+      "=== CONCURRENTS SÉLECTIONNÉS ===",
+      ...selected.map((c) => `- ${c.name} (Score: ${scores.find((s) => s.id === c.id)?.score ?? 0}%)`),
+      "",
+      "=== MATRICE DES FONCTIONNALITÉS ===",
+      ["Fonctionnalité", ...selected.map((c) => c.name)].join(" | "),
+      ...featureNames.map((fn) => {
+        const row = [fn, ...selected.map((c) => {
+          const f = getFeatureForCompetitor(c, fn);
+          return f ? (f.available ? f.quality : "Non dispo") : "—";
+        })];
+        return row.join(" | ");
+      }),
+      "",
+      "=== SCORE PONDÉRÉ ===",
+      ...weightedScores.map((ws) => `${ws.name}: ${ws.score}/100`),
+      weightedBest ? `\nRecommandation : ${weightedBest.name} est le concurrent le mieux positionné` : "",
+      "",
+      "=== NOTES ===",
+      notes || "(aucune note)",
+    ];
+
+    const blob = new Blob([lines.join("\n")], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `comparaison-concurrents-${new Date().toISOString().slice(0, 10)}.pdf`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // Weighted score bar color
+  function getBarColor(score: number): string {
+    if (score >= 75) return "#10b981"; // emerald
+    if (score >= 50) return "#3b82f6"; // blue
+    if (score >= 25) return "#f59e0b"; // amber
+    return "#ef4444"; // red
+  }
+
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex flex-col gap-1">
-        <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
-          Comparez vos concurrents en un coup d&apos;œil
-        </h2>
-        <p className="text-slate-500 text-sm">
-          Sélectionnez jusqu&apos;à 3 concurrents et visualisez leurs forces, leurs lacunes et vos opportunités.
-        </p>
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col gap-1">
+          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+            Comparez vos concurrents en un coup d&apos;œil
+          </h2>
+          <p className="text-slate-500 text-sm">
+            Sélectionnez jusqu&apos;à 3 concurrents et visualisez leurs forces, leurs lacunes et vos opportunités.
+          </p>
+        </div>
+        <button
+          onClick={handleExportPDF}
+          disabled={selected.length === 0}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-semibold shadow-sm hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors flex-shrink-0"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+          </svg>
+          Exporter PDF
+        </button>
       </div>
 
       {/* Competitor selector pills */}
@@ -407,6 +584,87 @@ export default function ComparePage() {
             </div>
           </div>
 
+          {/* Weighted Score Section */}
+          <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+            <div className="px-5 py-4 border-b border-slate-100">
+              <h3 className="font-semibold text-slate-900">Score pondéré</h3>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Ajustez les poids pour chaque critère selon vos priorités. Total affiché /100.
+              </p>
+            </div>
+            <div className="p-5 space-y-6">
+              {/* Weight sliders */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                {CRITERIA.map((criterion) => (
+                  <div key={criterion.key} className="space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <label className="text-sm font-medium text-slate-700">{criterion.label}</label>
+                      <span className="text-sm font-semibold text-indigo-600 tabular-nums w-12 text-right">
+                        {weights[criterion.key]}%
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={0}
+                      max={100}
+                      value={weights[criterion.key]}
+                      onChange={(e) =>
+                        setWeights((prev) => ({ ...prev, [criterion.key]: Number(e.target.value) }))
+                      }
+                      className="w-full h-1.5 rounded-full accent-indigo-600 cursor-pointer"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Weighted scores per competitor */}
+              {selected.length > 0 && (
+                <div className="space-y-3">
+                  {weightedScores.map((ws, idx) => (
+                    <div key={ws.id} className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          {idx === 0 && selected.length > 1 && (
+                            <span className="text-xs font-semibold text-amber-500">★</span>
+                          )}
+                          <span className="text-sm font-medium text-slate-700">{ws.name}</span>
+                        </div>
+                        <span
+                          className="text-2xl font-extrabold tabular-nums"
+                          style={{ color: getBarColor(ws.score) }}
+                        >
+                          {ws.score}
+                          <span className="text-sm font-semibold text-slate-400">/100</span>
+                        </span>
+                      </div>
+                      <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div
+                          className="h-full rounded-full transition-all duration-500"
+                          style={{
+                            width: `${ws.score}%`,
+                            backgroundColor: getBarColor(ws.score),
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Recommendation */}
+              {weightedBest && selected.length > 1 && (
+                <div className="bg-indigo-50 border border-indigo-100 rounded-lg px-4 py-3">
+                  <p className="text-sm text-indigo-800">
+                    <span className="font-semibold">Recommandation :</span>{" "}
+                    <span className="font-bold">{weightedBest.name}</span> est le concurrent le mieux positionné
+                    avec un score pondéré de{" "}
+                    <span className="font-bold">{weightedBest.score}/100</span>.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
           {/* AI Analysis */}
           {selected.length > 0 && (
             <div className="bg-blue-50 border border-blue-100 rounded-xl p-5">
@@ -429,6 +687,50 @@ export default function ComparePage() {
           )}
         </>
       )}
+
+      {/* Notes de comparaison */}
+      <div className="bg-white rounded-xl border border-slate-200 p-5 space-y-3">
+        <h3 className="font-semibold text-slate-900 text-sm">Notes de comparaison</h3>
+        <textarea
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
+          placeholder="Ajouter des notes à cette comparaison…"
+          rows={3}
+          className="w-full text-sm text-slate-700 placeholder-slate-400 border border-slate-200 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+        />
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleSaveNotes}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors"
+          >
+            Sauvegarder
+          </button>
+          {noteSaved && (
+            <span className="text-sm font-medium text-emerald-600 transition-opacity">
+              ✓ Sauvegardé
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Historique des comparaisons */}
+      <div className="space-y-3">
+        <h3 className="font-semibold text-slate-700 text-sm">Comparaisons récentes</h3>
+        <div className="flex flex-wrap gap-2">
+          {PAST_COMPARISONS.map((comp) => (
+            <button
+              key={comp.label}
+              onClick={() => setSelectedIds(comp.ids)}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white text-sm text-slate-600 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 transition-all cursor-pointer"
+            >
+              <svg className="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {comp.label}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
