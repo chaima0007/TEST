@@ -1630,6 +1630,18 @@ function IconSalesStakeholderMappingIntelligenceEngine({ className }: { classNam
   );
 }
 
+function IconSalesDealVelocityIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      {/* Arrow accelerating right — deal velocity */}
+      <path d="M2 10h11M10 6l5 4-5 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="4" cy="10" r="1.2" fill="currentColor" opacity="0.5" />
+      <circle cx="7" cy="10" r="1.2" fill="currentColor" opacity="0.65" />
+      <circle cx="10" cy="10" r="1.2" fill="currentColor" opacity="0.8" />
+    </svg>
+  );
+}
+
 function IconPipelineGenerationEfficiencyEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2076,6 +2088,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-outbound-prospecting-intelligence-engine", label: "Outbound Prospect.", icon: IconSalesOutboundProspectingIntelligenceEngine },
       { href: "/dashboard/sales-quota-attainment-intelligence-engine", label: "Quota Attainment", icon: IconSalesQuotaAttainmentIntelligenceEngine },
       { href: "/dashboard/sales-stakeholder-mapping-intelligence-engine", label: "Stakeholder Mapping", icon: IconSalesStakeholderMappingIntelligenceEngine },
+      { href: "/dashboard/sales-deal-velocity-intelligence-engine", label: "Deal Velocity", icon: IconSalesDealVelocityIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
