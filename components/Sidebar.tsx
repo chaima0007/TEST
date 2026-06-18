@@ -494,6 +494,17 @@ function IconMeetingIntelligence({ className }: { className?: string }) {
   );
 }
 
+function IconBuyerIntent({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z" clipRule="evenodd" opacity="0.3" />
+      <path fillRule="evenodd" d="M10 5a5 5 0 110 10A5 5 0 0110 5zm0 2a3 3 0 100 6 3 3 0 000-6z" clipRule="evenodd" opacity="0.6" />
+      <circle cx="10" cy="10" r="1.5" />
+      <path d="M10 1v2M10 17v2M1 10h2M17 10h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    </svg>
+  );
+}
+
 function IconRepActivity({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -913,6 +924,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitive-intelligence", label: "Intel. Compétitive", icon: IconCompetitiveIntelligence },
       { href: "/dashboard/account-penetration", label: "Pénétration Comptes", icon: IconAccountPenetration },
       { href: "/dashboard/pipeline-health-index", label: "Santé Pipeline (PHI)", icon: IconPipelineHealth },
+      { href: "/dashboard/buyer-intent", label: "Buyer Intent", icon: IconBuyerIntent },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
