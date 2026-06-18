@@ -1803,6 +1803,18 @@ function IconSalesBuyerMeetingQualityIntelligenceEngine({ className }: { classNa
   );
 }
 
+function IconSalesDecisionCriteriaAlignmentIntelligenceEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      {/* Checklist with target — criteria alignment */}
+      <rect x="3" y="2" width="14" height="16" rx="1.5" strokeLinecap="round"/>
+      <path d="M7 7 L9 9 L13 6" strokeLinecap="round" strokeLinejoin="round"/>
+      <line x1="7" y1="11" x2="13" y2="11" strokeLinecap="round"/>
+      <line x1="7" y1="14" x2="11" y2="14" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 function IconSalesChampionStabilityIntelligenceEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
@@ -2414,6 +2426,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-rep-onboarding-ramp-intelligence-engine", label: "Onboarding Ramp", icon: IconSalesRepOnboardingRampIntelligenceEngine },
       { href: "/dashboard/sales-win-rate-decay-intelligence-engine", label: "Win Rate Decay", icon: IconSalesWinRateDecayIntelligenceEngine },
       { href: "/dashboard/sales-champion-stability-intelligence-engine", label: "Champion Stability", icon: IconSalesChampionStabilityIntelligenceEngine },
+      { href: "/dashboard/sales-decision-criteria-alignment-intelligence-engine", label: "Criteria Alignment", icon: IconSalesDecisionCriteriaAlignmentIntelligenceEngine },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
