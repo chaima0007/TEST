@@ -47,6 +47,9 @@ from intelligence.lead_qualification import (
     LeadQualificationEngine, AuthorityLevel, Timeline as QTimeline,
     QualificationTier,
 )
+from intelligence.followup_scheduler import (
+    FollowUpScheduler, ActionType, Priority as FUPriority,
+)
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -99,6 +102,7 @@ _funnel_tracker = ConversionFunnelTracker()
 _negotiation_manager = NegotiationManager()
 _invoice_manager = InvoiceManager()
 _qualification_engine = LeadQualificationEngine()
+_followup_scheduler = FollowUpScheduler()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1364,6 +1368,83 @@ def qual_update(prospect_id: str, req: QualifyUpdateReq):
 @app.delete("/qualification/reset", tags=["Qualification"])
 def qual_reset():
     _qualification_engine.reset()
+    return {"status": "reset"}
+
+
+# ── Follow-up scheduler routes ────────────────────────────────────────────────
+
+class FollowUpAddReq(BaseModel):
+    prospect_id:         str
+    company_name:        str
+    sector:              str = ""
+    current_stage:       str = "lead"
+    days_since_contact:  float = 0.0
+    bant_score:          int = 0
+    touches:             int = 0
+    quote_value:         float = 0.0
+    notes:               str = ""
+
+
+@app.post("/followup", tags=["FollowUp"])
+def followup_add(req: FollowUpAddReq):
+    task = _followup_scheduler.add_prospect(
+        req.prospect_id, req.company_name, req.sector,
+        req.current_stage, req.days_since_contact,
+        req.bant_score, req.touches, req.quote_value, req.notes,
+    )
+    return task.to_dict()
+
+
+@app.get("/followup", tags=["FollowUp"])
+def followup_list(priority: Optional[str] = None, limit: int = 50):
+    if priority:
+        try:
+            p = FUPriority(priority)
+        except ValueError:
+            raise HTTPException(status_code=422, detail=f"Unknown priority: {priority!r}")
+        return [t.to_dict() for t in _followup_scheduler.by_priority(p)[:limit]]
+    return [t.to_dict() for t in _followup_scheduler.get_tasks(limit=limit)]
+
+
+@app.get("/followup/urgent", tags=["FollowUp"])
+def followup_urgent():
+    return [t.to_dict() for t in _followup_scheduler.urgent()]
+
+
+@app.get("/followup/top", tags=["FollowUp"])
+def followup_top(n: int = 10):
+    return [t.to_dict() for t in _followup_scheduler.top_n(n)]
+
+
+@app.get("/followup/overdue", tags=["FollowUp"])
+def followup_overdue(days: float = 7.0):
+    return [t.to_dict() for t in _followup_scheduler.overdue_prospects(days)]
+
+
+@app.get("/followup/summary", tags=["FollowUp"])
+def followup_summary():
+    return _followup_scheduler.summary()
+
+
+@app.get("/followup/{prospect_id}", tags=["FollowUp"])
+def followup_get(prospect_id: str):
+    task = _followup_scheduler.get(prospect_id)
+    if not task:
+        raise HTTPException(status_code=404, detail="Prospect not in follow-up list")
+    return task.to_dict()
+
+
+@app.delete("/followup/{prospect_id}", tags=["FollowUp"])
+def followup_remove(prospect_id: str):
+    ok = _followup_scheduler.remove(prospect_id)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Prospect not found")
+    return {"status": "removed"}
+
+
+@app.delete("/followup/reset", tags=["FollowUp"])
+def followup_reset():
+    _followup_scheduler.reset()
     return {"status": "reset"}
 
 
