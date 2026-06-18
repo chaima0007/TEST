@@ -53,6 +53,10 @@ from intelligence.followup_scheduler import (
 from intelligence.workflow_orchestrator import (
     WorkflowOrchestrator, ProspectSignals, DivisionTarget, WorkflowAction,
 )
+from intelligence.prospect_scorecard import (
+    ProspectScorecard, BANTDimension, BehavioralDimension,
+    TemporalDimension, MarketFitDimension, ScorecardTier,
+)
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -107,6 +111,7 @@ _invoice_manager = InvoiceManager()
 _qualification_engine = LeadQualificationEngine()
 _followup_scheduler = FollowUpScheduler()
 _workflow_orchestrator = WorkflowOrchestrator()
+_prospect_scorecard = ProspectScorecard()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1489,6 +1494,53 @@ def workflow_get(prospect_id: str):
 @app.delete("/workflow/reset", tags=["Workflow"])
 def workflow_reset():
     _workflow_orchestrator.reset()
+    return {"status": "reset"}
+
+
+# ── Prospect Scorecard ────────────────────────────────────────────────────────
+
+@app.post("/scorecard", tags=["Scorecard"])
+def scorecard_score(body: dict):
+    bant = BANTDimension(**body["bant"]) if "bant" in body else None
+    behav = BehavioralDimension(**body["behavioral"]) if "behavioral" in body else None
+    temp = TemporalDimension(**body["temporal"]) if "temporal" in body else None
+    fit = MarketFitDimension(**body["market_fit"]) if "market_fit" in body else None
+    card = _prospect_scorecard.score(
+        prospect_id=body["prospect_id"],
+        company_name=body.get("company_name", ""),
+        sector=body.get("sector", ""),
+        bant=bant, behavioral=behav, temporal=temp, market_fit=fit,
+        notes=body.get("notes", ""),
+    )
+    return card.to_dict()
+
+
+@app.get("/scorecard", tags=["Scorecard"])
+def scorecard_list(limit: Optional[int] = None):
+    return {"scorecards": [c.to_dict() for c in _prospect_scorecard.all_scorecards(limit=limit)]}
+
+
+@app.get("/scorecard/summary", tags=["Scorecard"])
+def scorecard_summary():
+    return _prospect_scorecard.summary()
+
+
+@app.get("/scorecard/top", tags=["Scorecard"])
+def scorecard_top(n: int = 10):
+    return {"scorecards": [c.to_dict() for c in _prospect_scorecard.top_n(n)]}
+
+
+@app.get("/scorecard/{prospect_id}", tags=["Scorecard"])
+def scorecard_get(prospect_id: str):
+    c = _prospect_scorecard.get(prospect_id)
+    if not c:
+        raise HTTPException(status_code=404, detail="Scorecard not found")
+    return c.to_dict()
+
+
+@app.delete("/scorecard/reset", tags=["Scorecard"])
+def scorecard_reset():
+    _prospect_scorecard.reset()
     return {"status": "reset"}
 
 

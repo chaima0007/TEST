@@ -223,6 +223,14 @@ function IconFunnel({ className }: { className?: string }) {
   );
 }
 
+function IconScorecard({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h7a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h4a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconWorkflow({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -361,6 +369,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/followup", label: "Suivi Prioritaire", icon: IconFollowUp },
       { href: "/dashboard/replies", label: "Analyse Réponses", icon: IconReply },
       { href: "/dashboard/workflow", label: "Orchestrateur", icon: IconWorkflow },
+      { href: "/dashboard/scorecard", label: "Scorecard Prospects", icon: IconScorecard },
       { href: "/dashboard/agents", label: "60 Agents Dir.", icon: IconAgents },
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
