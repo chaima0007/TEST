@@ -244,6 +244,15 @@ function animate() {
   const nightIntensity = dayCycle.isNight() ? 1.4 : 0;
   for (const lamp of world.streetLamps) lamp.material.emissiveIntensity = nightIntensity;
 
+  // Enseignes néon — pulsation sinusoïdale (Quartier Est)
+  for (const ns of world.neonSigns) {
+    ns.mat.emissiveIntensity = ns.base + Math.sin(now * 0.0015 + ns.phase) * 0.35;
+  }
+
+  // Brouillard dynamique selon météo (densité réduite sous la pluie)
+  const targetFogFar = weather.getWeatherId() === 'rain' ? 180 : 260;
+  scene.fog.far += (targetFogFar - scene.fog.far) * 0.008;
+
   // --- HUD ---
   hud.setCombo(combo.getMultiplier());
   hud.setTime(dayCycle.getTimeString());

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { StreetFurnitureSystem } from './streetfurniture.js';
 
 // Ville en grille : un sol clair (trottoirs/blocs) recouvert d'une croix de
 // routes sombres avec marquages, et des immeubles (boîtes) posés sur les
@@ -274,6 +275,28 @@ export function createWorld(scene) {
     }
   }
 
+  // --- Mobilier urbain (bollards avec colliders, bancs, poubelles) ---------
+  new StreetFurnitureSystem(scene, roadXs, roadZs, colliders);
+
+  // --- Enseignes néon — Quartier Est (x > 57) ------------------------------
+  // Panneaux émissifs sur la façade est des bâtiments ; pulsés dans main.js.
+  const neonSigns = [];
+  const NEON_COLS = [0xff0088, 0x00ffcc, 0xff6600, 0xaaff00, 0x0099ff];
+  const estCx = (roadXs[4] + roadXs[5]) / 2 + 8; // x ≈ 84, dans Quartier Est
+  for (let j = 0; j < CITY_SIZE; j++) {
+    const cz  = (roadZs[j] + roadZs[j + 1]) / 2;
+    const col = NEON_COLS[j % NEON_COLS.length];
+    const signH = 0.9 + j * 0.18;
+    const signW = 2.2 + j * 0.25;
+    const mat   = new THREE.MeshStandardMaterial({
+      color: col, emissive: col, emissiveIntensity: 1.0,
+    });
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(0.12, signH, signW), mat);
+    mesh.position.set(estCx, 5 + j * 1.2, cz);
+    scene.add(mesh);
+    neonSigns.push({ mat, base: 0.9 + j * 0.06, phase: j * Math.PI * 0.55 });
+  }
+
   // --- Marqueur Garage (sol lumineux) --------------------------------------
   const garageX = blockCenter(0);
   const garageZ = -HALF_CITY + ROAD_WIDTH / 2;
@@ -300,6 +323,7 @@ export function createWorld(scene) {
     spawnPoint,
     missionLocations,
     streetLamps,
+    neonSigns,
     garagePos: { x: garageX, z: garageZ },
     roadLines: {
       xs: roadXs.slice(),
