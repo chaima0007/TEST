@@ -107,6 +107,7 @@ MENU = """
 
   ── SYSTÈME DE CONSCIENCE ─────────────────────────────────
   [51] Gardien Cohérence         ← Détecte les dérives, aligne l'empire, mémoire vive
+  [52] Synthétiseur Réalité      ← Ground Truth : compresse, vérifie, débiaise la flotte
 
   [s]  Voir stats & mémoire
   [0]  Quitter
@@ -231,6 +232,8 @@ if __name__ == "__main__":
             lancer("agent_analyste_legal.py")
         elif choix == "51":
             lancer("agent_gardien_coherence.py")
+        elif choix == "52":
+            lancer("agent_synthetiseur_realite.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
