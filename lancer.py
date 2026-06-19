@@ -123,6 +123,18 @@ MENU = """
   [61] Maître Culture Interne    ← Standards d'excellence, alignement, mindset empire
   [62] Historien Empire          ← Log-Keeper : décisions → protocoles de réussite
 
+  ── SECTEURS À HAUTE VALEUR — BELGIQUE ────────────────────
+  [63] Notaire & Immobilier      ← Annonces FR+NL, actes, baux, prospection agences
+  [64] Fiduciaire & Comptabilité ← Rapports gestion, optimisation fiscale, onboarding
+  [65] RH & Droit du Travail     ← Offres emploi, onboarding, préavis, CCT belge
+  [66] Avocat & Juridique IA     ← Mise en demeure, synthèses dossiers, contrats
+  [67] Médical & Paramédical     ← Lettres référence, fiches patient, mutualité
+  [68] Construction & Architecture ← Devis, rapports chantier, conformité belge
+  [69] Export & Commerce Intl    ← FR/NL/EN/DE, documentation douane, pitch pays
+  [70] HORECA & Restauration     ← Menus trilingues, social media, événements
+  [71] Courtier en Assurances    ← Devoir de conseil, comparatifs, sinistres
+  [72] Formation Professionnelle ← Catalogues, subventions, rapports compétences
+
   [s]  Voir stats & mémoire
   [0]  Quitter
 """
@@ -268,6 +280,26 @@ if __name__ == "__main__":
             lancer("agent_culture_interne.py")
         elif choix == "62":
             lancer("agent_historien_empire.py")
+        elif choix == "63":
+            lancer("agent_notaire_immo.py")
+        elif choix == "64":
+            lancer("agent_fiduciaire.py")
+        elif choix == "65":
+            lancer("agent_rh_belge.py")
+        elif choix == "66":
+            lancer("agent_avocat_ia.py")
+        elif choix == "67":
+            lancer("agent_medical_admin.py")
+        elif choix == "68":
+            lancer("agent_construction_belge.py")
+        elif choix == "69":
+            lancer("agent_export_bilingue.py")
+        elif choix == "70":
+            lancer("agent_horeca_belge.py")
+        elif choix == "71":
+            lancer("agent_assurance_belge.py")
+        elif choix == "72":
+            lancer("agent_formation_pro.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
