@@ -3592,6 +3592,48 @@ function IconOmegaSynthesis({ className }: { className?: string }) {
   );
 }
 
+function IconAutonomousEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="10" width="4" height="7" rx="1"/>
+      <rect x="8" y="7" width="4" height="10" rx="1"/>
+      <rect x="13" y="4" width="4" height="13" rx="1"/>
+      <path d="M5 7l3-3 4 2 4-4"/>
+    </svg>
+  );
+}
+
+function IconSyntheticBiology({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7 3c0 3 6 3 6 6s-6 3-6 6"/>
+      <path d="M13 3c0 3-6 3-6 6s6 3 6 6"/>
+      <line x1="5" y1="6" x2="15" y2="6"/>
+      <line x1="5" y1="10" x2="15" y2="10"/>
+      <line x1="5" y1="14" x2="15" y2="14"/>
+    </svg>
+  );
+}
+
+function IconEmotionalContagion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="8" r="3"/>
+      <path d="M4 17c0-2.8 2.7-5 6-5s6 2.2 6 5"/>
+      <path d="M2 10c1-1 2 1 3 0s2-2 3 0"/>
+      <path d="M12 10c1-1 2 1 3 0s2-2 3 0"/>
+    </svg>
+  );
+}
+
+function IconCriticalResource({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l2.5 5h5l-4 3.5 1.5 5.5L10 13l-5 3 1.5-5.5L2.5 7h5z"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3968,6 +4010,10 @@ const navSections: NavSection[] = [
       { href: "/dashboard/metacognitive-ai-alignment-engine", label: "Alignement IA", icon: IconAIAlignment },
       { href: "/dashboard/dao-governance-intelligence-engine", label: "Gouvernance DAO", icon: IconDAOGovernance },
       { href: "/dashboard/omega-synthesis-engine", label: "OMEGA Synthèse", icon: IconOmegaSynthesis },
+      { href: "/dashboard/autonomous-agent-economy-engine", label: "Économie Agents IA", icon: IconAutonomousEconomy },
+      { href: "/dashboard/synthetic-biology-risk-engine", label: "Biologie Synthétique", icon: IconSyntheticBiology },
+      { href: "/dashboard/emotional-contagion-engine", label: "Contagion Émotionnelle", icon: IconEmotionalContagion },
+      { href: "/dashboard/critical-resource-scarcity-engine", label: "Ressources Critiques", icon: IconCriticalResource },
     ],
   },
   {
