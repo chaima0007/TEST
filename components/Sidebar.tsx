@@ -3187,6 +3187,29 @@ function IconPredictiveArbitrage({ className }: { className?: string }) {
   );
 }
 
+function IconQuantumSocial({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <circle cx="3" cy="5" r="1.5" fill="currentColor" fillOpacity="0.5"/>
+      <circle cx="17" cy="5" r="1.5" fill="currentColor" fillOpacity="0.5"/>
+      <circle cx="3" cy="15" r="1.5" fill="currentColor" fillOpacity="0.5"/>
+      <circle cx="17" cy="15" r="1.5" fill="currentColor" fillOpacity="0.5"/>
+      <path d="M4.5 5.5L8 8.5M15.5 5.5L12 8.5M4.5 14.5L8 11.5M15.5 14.5L12 11.5"/>
+    </svg>
+  );
+}
+function IconSyntheticLiquidation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="5" width="16" height="11" rx="2"/>
+      <path d="M6 5V4a4 4 0 0 1 8 0v1"/>
+      <path d="M10 10v3M8 11l2-1 2 1" strokeWidth="1.2"/>
+      <path d="M2 9h16" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3522,6 +3545,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/temporal-intelligence-engine", label: "Intelligence Temporelle", icon: IconTemporalIntelligence },
       { href: "/dashboard/geopolitical-resilience-engine", label: "Résilience Géopolitique", icon: IconGeopolitical },
       { href: "/dashboard/predictive-arbitrage-engine", label: "Arbitrage Algorithmique", icon: IconPredictiveArbitrage },
+      { href: "/dashboard/quantum-social-intelligence-engine", label: "Intelligence Sociale", icon: IconQuantumSocial },
+      { href: "/dashboard/synthetic-asset-liquidation-engine", label: "Liquidation DeFi", icon: IconSyntheticLiquidation },
     ],
   },
   {

@@ -111,18 +111,22 @@ class TemporalIntelligenceEngine:
     # ------------------------------------------------------------------ #
 
     def _opportunity_score(self, i: TemporalInput) -> float:
-        avg = (i.timing_window_score + i.market_cycle_alignment + i.first_mover_advantage_score) / 3
+        # Inverted: high score = poor timing opportunity (closed window)
+        avg = ((1 - i.timing_window_score) + (1 - i.market_cycle_alignment) + (1 - i.first_mover_advantage_score)) / 3
         return min(avg * 100, 100.0)
 
     def _readiness_score(self, i: TemporalInput) -> float:
-        avg = (i.execution_readiness_score + i.resource_alignment_score + i.stakeholder_availability_score) / 3
+        # Inverted: high score = poor execution readiness
+        avg = ((1 - i.execution_readiness_score) + (1 - i.resource_alignment_score) + (1 - i.stakeholder_availability_score)) / 3
         return min(avg * 100, 100.0)
 
     def _alignment_score(self, i: TemporalInput) -> float:
-        avg = (i.regulatory_window_score + i.macro_momentum_alignment + i.capital_market_receptivity) / 3
+        # Inverted: high score = poor macro/regulatory alignment
+        avg = ((1 - i.regulatory_window_score) + (1 - i.macro_momentum_alignment) + (1 - i.capital_market_receptivity)) / 3
         return min(avg * 100, 100.0)
 
     def _risk_score(self, i: TemporalInput) -> float:
+        # counter_timing_risk already high=bad; opportunity_decay_rate and decision_urgency_index also high=bad
         avg = (i.counter_timing_risk + i.opportunity_decay_rate + i.decision_urgency_index) / 3
         return min(avg * 100, 100.0)
 
