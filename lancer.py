@@ -129,6 +129,7 @@ MENU = """
   [75] Directive Comportement    ← 8 règles non négociables pour tous les agents
   [76] Architecte Diversification ← Micro-branches autonomes, MVP lean, omnipresence
   [77] Architecte Preuve Travail ← Études de cas, vitrines, kit site web, LinkedIn
+  [78] Mémoire du Projet        ← Rappel de tout ce qu'on a fait, directives, agents
 
   ── SECTEURS À HAUTE VALEUR — BELGIQUE ────────────────────
   [63] Notaire & Immobilier      ← Annonces FR+NL, actes, baux, prospection agences
@@ -317,6 +318,8 @@ if __name__ == "__main__":
             lancer("agent_architecte_diversification.py")
         elif choix == "77":
             lancer("agent_preuve_travail.py")
+        elif choix == "78":
+            lancer("agent_memoire_projet.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
