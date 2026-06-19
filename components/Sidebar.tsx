@@ -5418,6 +5418,59 @@ function IconDigitalHealthSovereignty({ className }: { className?: string }) {
   );
 }
 
+function IconNPS({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconSEORanking({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconClientRetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+    </svg>
+  );
+}
+
+function IconUpsellOpportunity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconSocialROI({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+    </svg>
+  );
+}
+
+function IconAgentOrchestrator({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="3" r="1.5" />
+      <circle cx="3" cy="10" r="1.5" />
+      <circle cx="17" cy="10" r="1.5" />
+      <circle cx="7" cy="17" r="1.5" />
+      <circle cx="13" cy="17" r="1.5" />
+      <path d="M10 4.5L3 8.5M10 4.5L17 8.5M3 11.5L7 15.5M17 11.5L13 15.5M10 4.5v3" stroke="currentColor" strokeWidth="1" fill="none"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5958,6 +6011,12 @@ const navSections: NavSection[] = [
       { href: "/dashboard/drug-trafficking-engine", label: "Trafic Drogues & Réseaux", icon: IconDrugTrafficking },
       { href: "/dashboard/food-system-sovereignty-engine", label: "Souveraineté Alimentaire", icon: IconFoodSystemSovereignty },
       { href: "/dashboard/digital-health-sovereignty-engine", label: "Souveraineté Santé Digitale", icon: IconDigitalHealthSovereignty },
+      { href: "/dashboard/nps-satisfaction", label: "Satisfaction & NPS", icon: IconNPS },
+      { href: "/dashboard/seo-ranking", label: "SEO & Positionnement", icon: IconSEORanking },
+      { href: "/dashboard/client-retention", label: "Rétention Client", icon: IconClientRetention },
+      { href: "/dashboard/upsell-opportunity", label: "Opportunités Upsell", icon: IconUpsellOpportunity },
+      { href: "/dashboard/social-media-roi", label: "ROI Réseaux Sociaux", icon: IconSocialROI },
+      { href: "/dashboard/agent-orchestrator", label: "Orchestrateur Agents IA", icon: IconAgentOrchestrator },
     ],
   },
   {
