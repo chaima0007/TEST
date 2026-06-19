@@ -60,12 +60,12 @@ const MOCK_ENTITIES = [
     knowledge_accessibility:0.40, narrative_coherence:0.50 },
   // CM-008: NOAM, oral_traditions → critical, heritage_commodification_risk
   { entity_id:"CM-008", heritage_category:"oral_traditions", region:"NOAM",
-    memory_preservation_rate:0.52, cultural_transmission_fidelity:0.22, knowledge_erosion_rate:0.48,
-    digital_archival_completeness:0.20, intergenerational_transfer:0.25, linguistic_vitality:0.38,
-    oral_tradition_preservation:0.20, artifact_integrity:0.32, collective_identity_coherence:0.22,
+    memory_preservation_rate:0.52, cultural_transmission_fidelity:0.55, knowledge_erosion_rate:0.48,
+    digital_archival_completeness:0.20, intergenerational_transfer:0.42, linguistic_vitality:0.45,
+    oral_tradition_preservation:0.40, artifact_integrity:0.38, collective_identity_coherence:0.35,
     cultural_innovation_rate:0.30, heritage_monetization_potential:0.82, diaspora_network_strength:0.35,
     institutional_fragility:0.88, memory_distortion_rate:0.78, cultural_resilience:0.12,
-    knowledge_accessibility:0.15, narrative_coherence:0.55 },
+    knowledge_accessibility:0.15, narrative_coherence:0.48 },
 ];
 
 type Entity = typeof MOCK_ENTITIES[0];
