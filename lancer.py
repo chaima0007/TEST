@@ -105,6 +105,9 @@ MENU = """
   [49] Testeur Simulation QA     ← Tests en boucle, logs d'erreurs, correctifs auto
   [50] Analyste BD Légales       ← Corpus juridiques → JSON/SQL structuré
 
+  ── SYSTÈME DE CONSCIENCE ─────────────────────────────────
+  [51] Gardien Cohérence         ← Détecte les dérives, aligne l'empire, mémoire vive
+
   [s]  Voir stats & mémoire
   [0]  Quitter
 """
@@ -226,6 +229,8 @@ if __name__ == "__main__":
             lancer("agent_testeur_qa.py")
         elif choix == "50":
             lancer("agent_analyste_legal.py")
+        elif choix == "51":
+            lancer("agent_gardien_coherence.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
