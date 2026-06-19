@@ -91,13 +91,13 @@ export default function SettingsPage() {
   const [activeSection, setActiveSection] = useState<NavSection>("profile");
   const [deleteConfirm, setDeleteConfirm] = useState(false);
 
-  const sectionRefs = {
-    profile: useRef<HTMLDivElement>(null),
-    notifications: useRef<HTMLDivElement>(null),
-    api: useRef<HTMLDivElement>(null),
-    compliance: useRef<HTMLDivElement>(null),
-    support: useRef<HTMLDivElement>(null),
-  };
+  const sectionRefs = useRef<Record<NavSection, HTMLDivElement | null>>({
+    profile: null,
+    notifications: null,
+    api: null,
+    compliance: null,
+    support: null,
+  });
 
   const handleSave = async () => {
     setSaving(true);
@@ -117,15 +117,15 @@ export default function SettingsPage() {
   };
 
   const scrollToSection = (key: NavSection) => {
-    sectionRefs[key].current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    sectionRefs.current[key]?.scrollIntoView({ behavior: "smooth", block: "start" });
     setActiveSection(key);
   };
 
   // Intersection observer to update active nav item on scroll
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
-    (Object.keys(sectionRefs) as NavSection[]).forEach((key) => {
-      const el = sectionRefs[key].current;
+    (Object.keys(sectionRefs.current) as NavSection[]).forEach((key) => {
+      const el = sectionRefs.current[key];
       if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => { if (entry.isIntersecting) setActiveSection(key); },
@@ -135,7 +135,6 @@ export default function SettingsPage() {
       observers.push(obs);
     });
     return () => observers.forEach((o) => o.disconnect());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const initials = (form.firstName[0] ?? "") + (form.lastName[0] ?? "");
@@ -178,7 +177,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Profile section */}
-        <div ref={sectionRefs.profile} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={(el) => { sectionRefs.current.profile = el; }} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Profil</h3>
             <p className="text-xs text-slate-400 mt-0.5">Vos informations personnelles et professionnelles</p>
@@ -255,7 +254,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Notifications section */}
-        <div ref={sectionRefs.notifications} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={(el) => { sectionRefs.current.notifications = el; }} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Notifications</h3>
             <p className="text-xs text-slate-400 mt-0.5">Choisissez les alertes que vous souhaitez recevoir</p>
@@ -286,7 +285,7 @@ export default function SettingsPage() {
         </div>
 
         {/* API section */}
-        <div ref={sectionRefs.api} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={(el) => { sectionRefs.current.api = el; }} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Clé API</h3>
             <p className="text-xs text-slate-400 mt-0.5">Accédez à l&apos;API REST CompeteIQ depuis vos applications</p>
@@ -334,7 +333,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Conformité & Sécurité section */}
-        <div ref={sectionRefs.compliance} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={(el) => { sectionRefs.current.compliance = el; }} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Conformité &amp; Sécurité</h3>
             <p className="text-xs text-slate-400 mt-0.5">Certifications et garanties de conformité de votre compte</p>
@@ -366,7 +365,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Support dédié section */}
-        <div ref={sectionRefs.support} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <div ref={(el) => { sectionRefs.current.support = el; }} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-slate-100">
             <h3 className="font-semibold text-slate-900">Support dédié</h3>
             <p className="text-xs text-slate-400 mt-0.5">Votre interlocuteur privilégié chez CompeteIQ</p>
