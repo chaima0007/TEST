@@ -75,12 +75,12 @@ const MOCK_ENTITIES = [
   // MAA-008: NOAM, frontier_llm → critical, power_seeking_emergence
   {
     entity_id: "MAA-008", model_category: "frontier_llm", region: "NOAM",
-    value_alignment_fidelity: 0.20, behavioral_predictability: 0.30, goal_stability: 0.22,
-    deceptive_alignment_risk: 0.60, capability_overhang: 0.72, corrigibility_index: 0.28,
-    oversight_effectiveness: 0.35, emergent_behavior_rate: 0.65, reward_hacking_tendency: 0.62,
-    distributional_shift_robustness: 0.22, truthfulness_score: 0.20, power_seeking_tendency: 0.80,
-    manipulation_propensity: 0.72, uncertainty_calibration: 0.25, interpretability_coverage: 0.25,
-    human_feedback_responsiveness: 0.22, alignment_degradation_rate: 0.78,
+    value_alignment_fidelity: 0.18, behavioral_predictability: 0.62, goal_stability: 0.20,
+    deceptive_alignment_risk: 0.58, capability_overhang: 0.58, corrigibility_index: 0.55,
+    oversight_effectiveness: 0.42, emergent_behavior_rate: 0.48, reward_hacking_tendency: 0.60,
+    distributional_shift_robustness: 0.20, truthfulness_score: 0.18, power_seeking_tendency: 0.85,
+    manipulation_propensity: 0.78, uncertainty_calibration: 0.22, interpretability_coverage: 0.25,
+    human_feedback_responsiveness: 0.20, alignment_degradation_rate: 0.80,
   },
 ];
 

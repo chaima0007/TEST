@@ -7,14 +7,14 @@ const MOCK_ENTITIES = [
   {
     entity_id: "CEG-001", defi_segment: "lending_protocol", region: "EMEA",
     protocol_governance_quality: 0.12, tvl_concentration: 0.72,
-    smart_contract_audit_coverage: 0.68, oracle_manipulation_risk: 0.30,
-    liquidity_depth: 0.65, cross_protocol_contagion: 0.42,
-    regulatory_clarity: 0.50, rug_pull_risk: 0.35,
-    mev_extraction_rate: 0.40, bridge_security_score: 0.55,
-    stablecoin_depeg_risk: 0.28, governance_token_concentration: 0.78,
-    flash_loan_attack_surface: 0.30, protocol_upgrade_risk: 0.45,
-    community_coordination_quality: 0.35, revenue_sustainability: 0.48,
-    defi_insurance_coverage: 0.30,
+    smart_contract_audit_coverage: 0.58, oracle_manipulation_risk: 0.55,
+    liquidity_depth: 0.55, cross_protocol_contagion: 0.42,
+    regulatory_clarity: 0.35, rug_pull_risk: 0.52,
+    mev_extraction_rate: 0.40, bridge_security_score: 0.45,
+    stablecoin_depeg_risk: 0.38, governance_token_concentration: 0.78,
+    flash_loan_attack_surface: 0.38, protocol_upgrade_risk: 0.55,
+    community_coordination_quality: 0.25, revenue_sustainability: 0.35,
+    defi_insurance_coverage: 0.22,
   },
   // CEG-002: APAC, dex → low, defi_stable/none
   {
@@ -58,15 +58,15 @@ const MOCK_ENTITIES = [
   // CEG-005: MEA, lending_protocol → critical, liquidity_cascade
   {
     entity_id: "CEG-005", defi_segment: "lending_protocol", region: "MEA",
-    protocol_governance_quality: 0.40, tvl_concentration: 0.55,
-    smart_contract_audit_coverage: 0.55, oracle_manipulation_risk: 0.45,
+    protocol_governance_quality: 0.38, tvl_concentration: 0.62,
+    smart_contract_audit_coverage: 0.48, oracle_manipulation_risk: 0.52,
     liquidity_depth: 0.18, cross_protocol_contagion: 0.78,
-    regulatory_clarity: 0.42, rug_pull_risk: 0.48,
-    mev_extraction_rate: 0.55, bridge_security_score: 0.38,
-    stablecoin_depeg_risk: 0.50, governance_token_concentration: 0.50,
-    flash_loan_attack_surface: 0.42, protocol_upgrade_risk: 0.55,
-    community_coordination_quality: 0.38, revenue_sustainability: 0.35,
-    defi_insurance_coverage: 0.25,
+    regulatory_clarity: 0.38, rug_pull_risk: 0.55,
+    mev_extraction_rate: 0.62, bridge_security_score: 0.30,
+    stablecoin_depeg_risk: 0.55, governance_token_concentration: 0.55,
+    flash_loan_attack_surface: 0.45, protocol_upgrade_risk: 0.60,
+    community_coordination_quality: 0.30, revenue_sustainability: 0.28,
+    defi_insurance_coverage: 0.18,
   },
   // CEG-006: EMEA, stablecoin → moderate, none
   {
