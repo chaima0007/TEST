@@ -4235,6 +4235,94 @@ function IconAIGovernance({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 361-368 icons ─────────────────────────────────────────────────────
+
+function IconDemographicWinter({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2v2M5 5l1.5 1.5M15 5l-1.5 1.5"/>
+      <circle cx="10" cy="9" r="3"/>
+      <path d="M4 17c0-3 2.7-6 6-6s6 3 6 6"/>
+      <path d="M7 17c0 0 .5-2 3-2s3 2 3 2" strokeDasharray="2 2"/>
+    </svg>
+  );
+}
+
+function IconSatelliteConstellation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M10 7V3M10 17v-4M7 10H3M17 10h-4"/>
+      <circle cx="4" cy="4" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="16" cy="4" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="4" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+      <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconDeFiRisk({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l2 3h3l-2.5 2 1 3.5L10 9l-3.5 1.5 1-3.5L5 5h3z"/>
+      <path d="M5 14l3 1 2-2 2 2 3-1"/>
+      <path d="M3 17h14"/>
+      <path d="M10 11v2"/>
+    </svg>
+  );
+}
+
+function IconCognitiveEnhancement({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"/>
+      <path d="M10 6V4M14 8l1.5-1.5M14 12l1.5 1.5"/>
+      <path d="M7 7.5L5 6M7 12.5L5 14"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconTaxJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l1.5 3h3l-2.5 2 1 3-3-2-3 2 1-3L5.5 5h3z"/>
+      <path d="M3 16h14"/>
+      <path d="M5 16V12l5 2 5-2v4"/>
+    </svg>
+  );
+}
+
+function IconArcticSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M10 2v4M10 14v4M6 6l2 4-2 4M14 6l-2 4 2 4"/>
+      <path d="M2 10h4M14 10h4"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconQuantumDisruption({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-4 0-7 3-7 7s3 7 7 7 7-3 7-7-3-7-7-7z"/>
+      <path d="M6 7l4 3 4-3M6 13l4-3 4 3"/>
+      <path d="M10 6v8"/>
+    </svg>
+  );
+}
+
+function IconDigitalHealthSov({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-3.9 0-7 3.1-7 7 0 2.7 1.5 5 3.8 6.3L10 18l3.2-1.7C15.5 15 17 12.7 17 10c0-3.9-3.1-7-7-7z"/>
+      <path d="M8 10h4M10 8v4"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -4671,6 +4759,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/antibiotic-resistance-engine", label: "Résistance Antibio.", icon: IconAntibioticResistance },
       { href: "/dashboard/climate-finance-engine", label: "Finance Climatique", icon: IconClimateFinance },
       { href: "/dashboard/ai-governance-engine", label: "Gouvernance IA", icon: IconAIGovernance },
+      { href: "/dashboard/demographic-winter-engine", label: "Hiver Démographique", icon: IconDemographicWinter },
+      { href: "/dashboard/satellite-constellation-engine", label: "Constellations Sat.", icon: IconSatelliteConstellation },
+      { href: "/dashboard/defi-systemic-risk-engine", label: "Risque Systémique DeFi", icon: IconDeFiRisk },
+      { href: "/dashboard/cognitive-enhancement-engine", label: "Amélioration Cognitive", icon: IconCognitiveEnhancement },
+      { href: "/dashboard/tax-justice-engine", label: "Justice Fiscale", icon: IconTaxJustice },
+      { href: "/dashboard/arctic-sovereignty-engine", label: "Souveraineté Arctique", icon: IconArcticSovereignty },
+      { href: "/dashboard/quantum-economic-disruption-engine", label: "Disruption Quantique", icon: IconQuantumDisruption },
+      { href: "/dashboard/digital-health-sovereignty-engine", label: "Santé Numérique Souv.", icon: IconDigitalHealthSov },
     ],
   },
   {
