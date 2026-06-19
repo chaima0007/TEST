@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_SIGNALS = [
   // ARB-001 price_momentum EMEA — critical, signal_degradation

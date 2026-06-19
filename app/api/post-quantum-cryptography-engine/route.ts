@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_SYSTEMS = [
   // SY-001 banking_core EMEA critical/quantum_exposure

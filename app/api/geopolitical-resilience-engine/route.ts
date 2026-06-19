@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_TERRITORIES = [
   // GT-001 sanctions_zone EMEA — critical/sanctions_cascade

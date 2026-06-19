@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ASSETS = [
   // AS-001 digital_twin EMEA — critical speculative_bubble

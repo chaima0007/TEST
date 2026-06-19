@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ASSETS = [
   // DS-001 brand_identity EMEA — critical identity_theft

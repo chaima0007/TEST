@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_MEMES = [
   // MM-001 brand_narrative EMEA — critical/viral_cascade

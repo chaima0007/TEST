@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ASSETS = [
   // DDI-001 legacy_archive EMEA — critical governance_blindspot

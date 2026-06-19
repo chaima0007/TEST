@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   { entity_id:"RC-001", entity_domain:"banking",       region:"EMEA",  policy_adherence_score:0.22, regulatory_deadline_compliance:0.28, internal_audit_score:0.25, external_audit_score:0.30, sanction_history_score:0.75, reporting_accuracy:0.32, documentation_completeness:0.28, training_completion_rate:0.30, whistleblower_incident_rate:0.68, data_governance_score:0.28, third_party_compliance_score:0.32, regulatory_change_adaptation_speed:0.25, ethics_committee_effectiveness:0.28, control_testing_coverage:0.30, risk_register_completeness:0.25, legal_counsel_access_score:0.35, compliance_culture_score:0.22 },

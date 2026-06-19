@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_GAMES = [
   // GM-001 pricing_war EMEA — critical / zero_sum_destruction

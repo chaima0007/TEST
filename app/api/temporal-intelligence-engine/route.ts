@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_DECISIONS = [
   // DC-001 market_entry EMEA — critical window_collapse

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // SR-001 company EMEA — critical governance_failure

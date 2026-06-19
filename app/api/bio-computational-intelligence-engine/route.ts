@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ORGANOIDS = [
   // OR-001 neural_organoid EMEA — critical/biological_collapse

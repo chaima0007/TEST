@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_PORTFOLIOS = [
   // SAL-001 collateralized_derivative EMEA — critical collateral_cascade
