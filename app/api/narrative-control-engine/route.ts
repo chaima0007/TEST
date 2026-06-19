@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
   // NC-008 — critical, sovereignty_erosion
   {
     entity_id: "NC-008", narrative_domain: "brand_narrative", region: "NOAM",
-    narrative_coherence: 0.22, message_amplification_rate: 0.80, counter_narrative_exposure: 0.65,
+    narrative_coherence: 0.22, message_amplification_rate: 0.80, counter_narrative_exposure: 0.45,
     memetic_mutation_speed: 0.72, brand_narrative_integrity: 0.28, hostile_framing_intensity: 0.62,
     misinformation_penetration: 0.60, narrative_capture_risk: 0.62, audience_trust_level: 0.28,
     cultural_resonance_alignment: 0.25, emotional_narrative_charge: 0.82, viral_spread_coefficient: 0.68,
