@@ -4419,6 +4419,92 @@ function IconDigitalIdentity({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 377-384 icons ─────────────────────────────────────────────────────
+
+function IconGeneDrive({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M6 3c0 0 2 2 2 4S6 11 6 13s2 4 2 4"/>
+      <path d="M14 3c0 0-2 2-2 4s2 4 2 4-2 2-2 4 2 4 2 4"/>
+      <path d="M8 7h4M8 13h4M7 10h6"/>
+    </svg>
+  );
+}
+
+function IconSyntheticReality({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="5" width="16" height="10" rx="1"/>
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M7 10c0-1.7 1.3-3 3-3"/>
+      <path d="M13 10c0 1.7-1.3 3-3 3"/>
+      <path d="M2 8l3 2-3 2M18 8l-3 2 3 2"/>
+    </svg>
+  );
+}
+
+function IconEnergyPoverty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M11 2L7 10h5l-3 8 8-10h-5l3-6z"/>
+      <path d="M3 14l2 2M3 10H1M3 6l2-2"/>
+    </svg>
+  );
+}
+
+function IconBatteryGeopolitics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="7" width="14" height="7" rx="1"/>
+      <path d="M16 9v3"/>
+      <path d="M5 7V5h6v2"/>
+      <path d="M5 10h4M5 13h2"/>
+    </svg>
+  );
+}
+
+function IconCorporateSurveillance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="3" width="16" height="12" rx="1"/>
+      <path d="M2 15l16 0M8 18h4"/>
+      <circle cx="10" cy="9" r="2"/>
+      <path d="M7 9c0-1.7 1.3-3 3-3M13 9c0 1.7-1.3 3-3 3"/>
+    </svg>
+  );
+}
+
+function IconGlobalHealthSecurity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l6 3v5c0 4-2.7 7-6 8C7 17 4 14 4 10V5z"/>
+      <path d="M8 10h4M10 8v4"/>
+    </svg>
+  );
+}
+
+function IconIndustrialPolicy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 16h16"/>
+      <path d="M4 16V9l3-3v10M9 16V6l3-3v13M14 16V9l3-3v10"/>
+      <path d="M2 13h2M8 13h2M14 13h2"/>
+    </svg>
+  );
+}
+
+function IconDarkWebEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 3c-2 1.5-3.5 4-3.5 7s1.5 5.5 3.5 7"/>
+      <path d="M10 3c2 1.5 3.5 4 3.5 7s-1.5 5.5-3.5 7"/>
+      <path d="M3 10h14"/>
+      <path d="M5 6l2 1M15 6l-2 1M5 14l2-1M15 14l-2-1"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -4871,6 +4957,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/post-work-ubi-engine", label: "Société Post-Travail", icon: IconPostWork },
       { href: "/dashboard/geoengineering-engine", label: "Géoingénierie", icon: IconGeoengineering },
       { href: "/dashboard/digital-identity-engine", label: "Identité Numérique", icon: IconDigitalIdentity },
+      { href: "/dashboard/gene-drive-engine", label: "Gene Drive Extinction", icon: IconGeneDrive },
+      { href: "/dashboard/synthetic-reality-engine", label: "Réalité Synthétique", icon: IconSyntheticReality },
+      { href: "/dashboard/energy-poverty-engine", label: "Pauvreté Énergétique", icon: IconEnergyPoverty },
+      { href: "/dashboard/battery-geopolitics-engine", label: "Géopolitique Batteries", icon: IconBatteryGeopolitics },
+      { href: "/dashboard/corporate-surveillance-engine", label: "Surveillance Corp.", icon: IconCorporateSurveillance },
+      { href: "/dashboard/global-health-security-engine", label: "Sécurité Sanitaire", icon: IconGlobalHealthSecurity },
+      { href: "/dashboard/industrial-policy-engine", label: "Politique Industrielle", icon: IconIndustrialPolicy },
+      { href: "/dashboard/dark-web-economy-engine", label: "Économie Dark Web", icon: IconDarkWebEconomy },
     ],
   },
   {
