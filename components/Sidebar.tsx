@@ -4505,6 +4505,98 @@ function IconDarkWebEconomy({ className }: { className?: string }) {
   );
 }
 
+function IconRefugeeCrisis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="7" cy="5" r="2"/>
+      <path d="M3 17c0-3.314 2.239-6 4-6s3 1 5 1 3-2 4-2"/>
+      <path d="M11 10l3-2 3 2M14 8v5"/>
+      <path d="M12 13l2 2 2-2"/>
+    </svg>
+  );
+}
+
+function IconCryptoRegulation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M8 7h3a2 2 0 0 1 0 4H8v4"/>
+      <path d="M8 7V5M10 15v2"/>
+      <path d="M14 4l3 3-3 3"/>
+    </svg>
+  );
+}
+
+function IconFoodSecurity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 3v5a3 3 0 0 0 6 0V3"/>
+      <path d="M8 3v7"/>
+      <path d="M14 3c0 4-1 6-1 9"/>
+      <path d="M14 12c1 0 2 1 2 3s-1 3-2 3"/>
+      <path d="M4 17h12"/>
+    </svg>
+  );
+}
+
+function IconSmartCity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="10" width="5" height="8"/>
+      <rect x="7.5" y="6" width="5" height="12"/>
+      <rect x="13" y="8" width="5" height="10"/>
+      <path d="M2 10l4-4 4-3 5 5"/>
+      <circle cx="15" cy="4" r="1.5" fill="currentColor" stroke="none" opacity="0.7"/>
+      <path d="M13 4 A2 2 0 0 1 17 4" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconIPWarfare({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1z"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none" opacity="0.6"/>
+      <path d="M3 17l4-4M17 17l-4-4"/>
+    </svg>
+  );
+}
+
+function IconDeepSeaMining({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 8c3-2 5-3 8-3s5 1 8 3"/>
+      <path d="M2 8c0 5 3 9 8 9s8-4 8-9"/>
+      <path d="M10 8v5"/>
+      <path d="M8 11l2 2 2-2"/>
+      <circle cx="10" cy="14.5" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconBiosurveillance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M10 2v2M10 16v2M2 10h2M16 10h2"/>
+      <path d="M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41"/>
+      <circle cx="10" cy="10" r="6" opacity="0.3"/>
+    </svg>
+  );
+}
+
+function IconAgingInfra({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 17h16"/>
+      <path d="M4 17V9l6-6 6 6v8"/>
+      <path d="M8 17v-5h4v5"/>
+      <path d="M3 12l1-1M17 12l-1-1"/>
+      <path d="M7 7l1 1M13 7l-1 1" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -4965,6 +5057,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/global-health-security-engine", label: "Sécurité Sanitaire", icon: IconGlobalHealthSecurity },
       { href: "/dashboard/industrial-policy-engine", label: "Politique Industrielle", icon: IconIndustrialPolicy },
       { href: "/dashboard/dark-web-economy-engine", label: "Économie Dark Web", icon: IconDarkWebEconomy },
+      { href: "/dashboard/refugee-crisis-engine", label: "Crise Réfugiés", icon: IconRefugeeCrisis },
+      { href: "/dashboard/crypto-regulation-engine", label: "Régulation Crypto", icon: IconCryptoRegulation },
+      { href: "/dashboard/food-security-engine", label: "Sécurité Alimentaire", icon: IconFoodSecurity },
+      { href: "/dashboard/smart-city-engine", label: "Ville Intelligente", icon: IconSmartCity },
+      { href: "/dashboard/ip-warfare-engine", label: "Guerre PI", icon: IconIPWarfare },
+      { href: "/dashboard/deep-sea-mining-engine", label: "Mines Fond Marin", icon: IconDeepSeaMining },
+      { href: "/dashboard/biosurveillance-engine", label: "Biosurveillance", icon: IconBiosurveillance },
+      { href: "/dashboard/aging-infrastructure-engine", label: "Infra Vieillissante", icon: IconAgingInfra },
     ],
   },
   {
