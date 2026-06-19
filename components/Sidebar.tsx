@@ -3250,6 +3250,37 @@ function IconFluidDynamics({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconCollectiveConsciousness({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3" fill="currentColor" fillOpacity="0.2"/>
+      <circle cx="10" cy="10" r="3"/>
+      <circle cx="10" cy="3" r="1.5"/><circle cx="17" cy="10" r="1.5"/><circle cx="10" cy="17" r="1.5"/><circle cx="3" cy="10" r="1.5"/>
+      <path d="M10 6v1M14 10h-1M10 14v-1M6 10h1"/>
+      <path d="M13.2 6.8l-.7.7M13.2 13.2l-.7-.7M6.8 13.2l.7-.7M6.8 6.8l.7.7" strokeWidth="1"/>
+    </svg>
+  );
+}
+function IconARNeural({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 8h14M3 12h14" strokeWidth="1.1"/>
+      <rect x="1" y="6" width="18" height="8" rx="2"/>
+      <circle cx="10" cy="10" r="2"/>
+      <path d="M10 4V2M10 18v-2" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+function IconTemporalEngineering({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 5v5l3 2"/>
+      <path d="M3 10h1M16 10h1M10 3v1M10 16v1" strokeWidth="1.1"/>
+      <path d="M5.5 5.5l.7.7M14.5 5.5l-.7.7" strokeWidth="1"/>
+    </svg>
+  );
+}
 function IconNeuroadaptiveUX({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -3656,6 +3687,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sovereign-ai-governance-engine", label: "Gouvernance IA", icon: IconSovereignAI },
       { href: "/dashboard/hyperpersonalization-engine", label: "Hyperpersonnalisation", icon: IconHyperpersonalization },
       { href: "/dashboard/information-fluid-dynamics-engine", label: "Dynamique des Fluides", icon: IconFluidDynamics },
+      { href: "/dashboard/collective-consciousness-orchestration-engine", label: "Conscience Collective", icon: IconCollectiveConsciousness },
+      { href: "/dashboard/augmented-reality-neural-interface-engine", label: "AR & Interface Neuronale", icon: IconARNeural },
+      { href: "/dashboard/temporal-engineering-engine", label: "Ingénierie Temporelle", icon: IconTemporalEngineering },
       { href: "/dashboard/neuroadaptive-ux-engine", label: "UX Neuroadaptif", icon: IconNeuroadaptiveUX },
       { href: "/dashboard/autonomous-supply-chain-engine", label: "Supply Chain Auto.", icon: IconSupplyChain },
       { href: "/dashboard/biomimetic-strategy-engine", label: "Stratégie Biomimétique", icon: IconBiomimetic },
