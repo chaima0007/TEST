@@ -41,9 +41,9 @@ function bioComposite(v: number, c: number, s: number, e: number): number {
   return Math.min(Math.round((v * 0.30 + c * 0.25 + s * 0.25 + e * 0.20) * 100) / 100, 100);
 }
 function bioPattern(o: Organoid): string {
+  if (o.mutation_drift_rate >= 0.65 && o.replication_accuracy <= 0.35) return "mutation_cascade";
   if (o.viability_score <= 0.30 && o.biological_stability_rate <= 0.30) return "biological_collapse";
   if (o.computational_coherence <= 0.35 || o.signal_propagation_fidelity <= 0.35) return "computational_drift";
-  if (o.mutation_drift_rate >= 0.65 || o.replication_accuracy <= 0.35) return "mutation_cascade";
   if (o.cross_substrate_compatibility <= 0.35 && o.substrate_efficiency_score <= 0.35) return "substrate_incompatibility";
   if (o.emergence_complexity_index <= 0.30 && o.evolutionary_adaptability <= 0.30) return "emergence_suppression";
   return "none";
