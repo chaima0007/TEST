@@ -78,6 +78,33 @@ MENU = """
   [30] Agent Mental              ← Coach entrepreneurial, blocages, routine fondatrice
   [31] Auditeur Financier        ← Simulation ONEM + Caelum, seuil optimal, conformité
 
+  ── AGENTS STRATÉGIE & RÉSILIENCE ─────────────────────────
+  [32] Red Team Architect        ← Black Swan, stress tests, plan de continuité
+  [33] Flux Économique           ← Vélocité capital, DSO, Revenue/Hour, frictions
+  [34] Synthèse Exponentielle    ← Unifie tous agents → décision stratégique unique
+
+  ── DIRECTIVE MAÎTRE — VISION EMPIRE & SINGULARITÉ ────────
+  [35] Stratège Croissance       ← Scalabilité, levier exponentiel, passage paliers
+  [36] Asset Builder             ← Transformer revenus en actifs durables
+  [37] Analyste Convergence      ← Conformité légale + expansion empire simultanée
+
+  ── FLOTTE DOMINATION EUROPÉENNE ──────────────────────────
+  [38] Architecte Singularité    ← Concevoir l'avantage concurrentiel inégalable
+  [39] Sniper Goulots            ← Identifier et éliminer tous les blocages
+  [40] Maître Vélocité Capital   ← Optimisation capital ≥ 10x en 90 jours
+  [41] Simulateur Black Swan     ← Scénarios catastrophe + plans de survie
+  [42] Stratège Premiers Principes ← Décisions fondamentales sans biais
+  [43] Orchestrateur Symbiose    ← Synergie maximale entre tous les agents
+  [44] Chasseur Marchés Émergents ← Détection opportunités avant la concurrence
+  [45] Gardien Playbook          ← Mémoire institutionnelle + décisions validées
+  [46] Expert Conformité Offensif ← Légalité belge = avantage compétitif
+  [47] Influence Systémique      ← Positionnement autorité IA en Belgique
+
+  ── ARCHITECTURE LOCALE AUTONOME (OLLAMA) ─────────────────
+  [48] Ingénieur Code Autonome   ← Dev, debug, optimisation code (sans tokens)
+  [49] Testeur Simulation QA     ← Tests en boucle, logs d'erreurs, correctifs auto
+  [50] Analyste BD Légales       ← Corpus juridiques → JSON/SQL structuré
+
   [s]  Voir stats & mémoire
   [0]  Quitter
 """
@@ -161,6 +188,44 @@ if __name__ == "__main__":
             lancer("agent_mental.py")
         elif choix == "31":
             lancer("agent_auditeur_financier.py")
+        elif choix == "32":
+            lancer("agent_red_team.py")
+        elif choix == "33":
+            lancer("agent_flux_economique.py")
+        elif choix == "34":
+            lancer("agent_synthese_exponentielle.py")
+        elif choix == "35":
+            lancer("agent_stratege_croissance.py")
+        elif choix == "36":
+            lancer("agent_asset_builder.py")
+        elif choix == "37":
+            lancer("agent_convergence.py")
+        elif choix == "38":
+            lancer("agent_architecte_singularite.py")
+        elif choix == "39":
+            lancer("agent_sniper_goulots.py")
+        elif choix == "40":
+            lancer("agent_maitre_velocite.py")
+        elif choix == "41":
+            lancer("agent_simulateur_black_swan.py")
+        elif choix == "42":
+            lancer("agent_premiers_principes.py")
+        elif choix == "43":
+            lancer("agent_symbiose.py")
+        elif choix == "44":
+            lancer("agent_chasseur_marches.py")
+        elif choix == "45":
+            lancer("agent_gardien_playbook.py")
+        elif choix == "46":
+            lancer("agent_conformite_offensive.py")
+        elif choix == "47":
+            lancer("agent_influence_systemique.py")
+        elif choix == "48":
+            lancer("agent_ingenieur_code.py")
+        elif choix == "49":
+            lancer("agent_testeur_qa.py")
+        elif choix == "50":
+            lancer("agent_analyste_legal.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
