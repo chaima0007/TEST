@@ -285,20 +285,21 @@ _MOCK_SCENARIOS: list[ForesightInput] = [
     ForesightInput("FS-003", "geopolitics", "APAC",
                    0.35, 0.30, 0.55, 0.70, 0.35, 0.30, 12, 0.35, 0.40, 0.35, 0.30, 0.35, 0.30, 0.72, 0.38, 0.78, 0.35),
     # FS-004 climate LATAM low monitoring
+    # sig trend prob impact horizon coverage iters accuracy literacy comp_adv early_warn adaptive resilience bs_prep geo_exp tech_dis buffer
     ForesightInput("FS-004", "climate", "LATAM",
-                   0.75, 0.70, 0.20, 0.25, 0.72, 0.70, 55, 0.75, 0.68, 0.70, 0.75, 0.70, 0.72, 0.20, 0.25, 0.70, 0.20, 0.75, 0.70),
+                   0.75, 0.70, 0.20, 0.25, 0.72, 0.70, 55, 0.75, 0.68, 0.70, 0.75, 0.70, 0.72, 0.72, 0.20, 0.25, 0.75),
     # FS-005 regulatory EMEA critical regulatory_shock
     ForesightInput("FS-005", "regulatory", "EMEA",
-                   0.20, 0.25, 0.75, 0.80, 0.20, 0.18, 3, 0.20, 0.25, 0.20, 0.22, 0.25, 0.20, 0.35, 0.22, 0.55, 0.22),
+                   0.20, 0.25, 0.75, 0.80, 0.20, 0.18, 3, 0.20, 0.25, 0.20, 0.22, 0.25, 0.20, 0.20, 0.35, 0.22, 0.40),
     # FS-006 social NAMER moderate
     ForesightInput("FS-006", "social", "NAMER",
-                   0.55, 0.50, 0.35, 0.45, 0.52, 0.55, 28, 0.58, 0.50, 0.55, 0.52, 0.55, 0.50, 0.40, 0.48, 0.35, 0.50, 0.55, 0.52),
+                   0.55, 0.50, 0.35, 0.45, 0.52, 0.55, 28, 0.58, 0.50, 0.55, 0.52, 0.55, 0.50, 0.52, 0.40, 0.55, 0.55),
     # FS-007 technology APAC high competitive_collapse
     ForesightInput("FS-007", "technology", "APAC",
-                   0.40, 0.38, 0.60, 0.65, 0.40, 0.25, 8, 0.35, 0.28, 0.38, 0.35, 0.40, 0.35, 0.42, 0.35, 0.55, 0.75, 0.25, 0.38),
+                   0.40, 0.38, 0.60, 0.65, 0.40, 0.25, 8, 0.35, 0.28, 0.38, 0.35, 0.40, 0.35, 0.35, 0.55, 0.75, 0.38),
     # FS-008 geopolitics MEA critical geopolitical_shift
     ForesightInput("FS-008", "geopolitics", "MEA",
-                   0.22, 0.20, 0.80, 0.85, 0.18, 0.15, 2, 0.20, 0.22, 0.18, 0.20, 0.22, 0.20, 0.80, 0.18, 0.72, 0.20),
+                   0.22, 0.20, 0.80, 0.85, 0.18, 0.15, 2, 0.20, 0.22, 0.18, 0.20, 0.22, 0.20, 0.20, 0.80, 0.18, 0.20),
 ]
 
 

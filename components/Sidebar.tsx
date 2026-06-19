@@ -2999,6 +2999,98 @@ function IconStrategicRisk({ className }: { className?: string }) {
   );
 }
 
+function IconForesight({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="currentColor" fillOpacity="0.08"/>
+      <path d="M10 3v2M10 15v2M3 10h2M15 10h2"/>
+      <path d="M6 6l1.5 1.5M12.5 12.5L14 14M14 6l-1.5 1.5M7.5 12.5L6 14"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" fillOpacity="0.3"/>
+    </svg>
+  );
+}
+function IconEmotionalIntelligence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 17s-7-4.5-7-9a5 5 0 0110 0" fill="none"/>
+      <path d="M10 17s7-4.5 7-9a5 5 0 00-10 0"/>
+      <path d="M7 9c.5-1.5 2-2 3-1.5"/>
+    </svg>
+  );
+}
+function IconLogistics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="1" y="8" width="11" height="7" rx="1" fill="currentColor" fillOpacity="0.1"/>
+      <path d="M12 11h3l3 3v2h-3"/>
+      <circle cx="5" cy="16" r="1.5"/>
+      <circle cx="15" cy="16" r="1.5"/>
+      <path d="M1 11h11"/>
+    </svg>
+  );
+}
+function IconRegulatoryCompliance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V5z" fill="currentColor" fillOpacity="0.1"/>
+      <path d="M10 2l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V5z"/>
+      <path d="M7 10l2 2 4-4"/>
+    </svg>
+  );
+}
+function IconSalesChannel({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2.5" fill="currentColor" fillOpacity="0.2"/>
+      <circle cx="3" cy="5" r="1.5"/>
+      <circle cx="17" cy="5" r="1.5"/>
+      <circle cx="3" cy="15" r="1.5"/>
+      <circle cx="17" cy="15" r="1.5"/>
+      <path d="M4.5 5.5L7.5 8M12.5 8l3-2.5M4.5 14.5l3-2.5M12.5 12l3 2.5"/>
+    </svg>
+  );
+}
+function IconMicroCulture({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="6" cy="7" r="2" fill="currentColor" fillOpacity="0.15"/>
+      <circle cx="14" cy="7" r="2" fill="currentColor" fillOpacity="0.15"/>
+      <circle cx="10" cy="13" r="2" fill="currentColor" fillOpacity="0.15"/>
+      <path d="M8 7h4M7.2 8.5L10 13M12.8 8.5L10 13"/>
+    </svg>
+  );
+}
+function IconAnthropocene({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="currentColor" fillOpacity="0.08"/>
+      <path d="M10 3c0 0-4 3-4 7s4 7 4 7"/>
+      <path d="M10 3c0 0 4 3 4 7s-4 7-4 7"/>
+      <path d="M3 10h14"/>
+    </svg>
+  );
+}
+function IconSyntheticConsciousness({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3" fill="currentColor" fillOpacity="0.2"/>
+      <path d="M10 2v2M10 16v2M2 10h2M16 10h2"/>
+      <path d="M4.9 4.9l1.4 1.4M13.7 13.7l1.4 1.4M4.9 15.1l1.4-1.4M13.7 6.3l1.4-1.4"/>
+      <circle cx="10" cy="10" r="6" strokeDasharray="2 2"/>
+    </svg>
+  );
+}
+function IconSingularityEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 16L7 10l3 3 3-5 4-4" fill="none"/>
+      <path d="M3 16L7 10l3 3 3-5 4-4"/>
+      <circle cx="17" cy="4" r="1.5" fill="currentColor" fillOpacity="0.4"/>
+      <path d="M10 2v3M14 3l-2 2"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3316,6 +3408,15 @@ const navSections: NavSection[] = [
       { href: "/dashboard/swarm-orchestration-conflict-engine", label: "Orchestration Essaim", icon: IconSwarmOrchestration },
       { href: "/dashboard/continuous-improvement-excellence-engine", label: "Excellence Opérat.", icon: IconContinuousImprovement },
       { href: "/dashboard/strategic-risk-governance-engine", label: "Risque Stratégique", icon: IconStrategicRisk },
+      { href: "/dashboard/strategic-foresight-simulation-engine", label: "Anticipation Stratégique", icon: IconForesight },
+      { href: "/dashboard/emotional-intelligence-market-behavior-engine", label: "Intelligence Émotionnelle", icon: IconEmotionalIntelligence },
+      { href: "/dashboard/logistics-prediction-flow-engine", label: "Prédiction Logistique", icon: IconLogistics },
+      { href: "/dashboard/regulatory-compliance-legal-engine", label: "Conformité Réglementaire", icon: IconRegulatoryCompliance },
+      { href: "/dashboard/sales-channel-partnership-engine", label: "Canaux de Vente", icon: IconSalesChannel },
+      { href: "/dashboard/cultural-chronology-microculture-engine", label: "Chrono-Culture", icon: IconMicroCulture },
+      { href: "/dashboard/anthropocene-terraforming-engine", label: "Anthropocène", icon: IconAnthropocene },
+      { href: "/dashboard/synthetic-consciousness-alignment-engine", label: "Conscience Synthétique", icon: IconSyntheticConsciousness },
+      { href: "/dashboard/singularity-economy-engine", label: "Économie Singularité", icon: IconSingularityEconomy },
     ],
   },
   {
