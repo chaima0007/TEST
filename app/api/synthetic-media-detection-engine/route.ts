@@ -73,15 +73,17 @@ const MOCK_ENTITIES = [
     biometric_spoofing_risk:0.52, media_literacy_level:0.45,
     watermarking_adoption:0.20 },
   // SMD-008 — critical, adversarial_arms_race
+  // deepfake_prevalence <0.65 to avoid triggering deepfake_epidemic first;
+  // adversarial_evolution_speed>=0.70 and forensic_detection_lag>=0.60 fires arms_race
   { entity_id:"SMD-008", media_domain:"political_media", region:"NOAM",
-    deepfake_prevalence:0.72, ai_content_saturation:0.78, detection_capability:0.28,
-    authentication_gap:0.70, voice_clone_exposure:0.80, face_swap_sophistication:0.85,
-    provenance_verification_rate:0.18, synthetic_identity_fraud_rate:0.58,
-    content_authenticity_infrastructure:0.20, adversarial_evolution_speed:0.82,
-    forensic_detection_lag:0.75, platform_content_moderation:0.22,
-    public_trust_erosion:0.70, legal_framework_readiness:0.28,
-    biometric_spoofing_risk:0.82, media_literacy_level:0.25,
-    watermarking_adoption:0.18 },
+    deepfake_prevalence:0.55, ai_content_saturation:0.78, detection_capability:0.28,
+    authentication_gap:0.58, voice_clone_exposure:0.80, face_swap_sophistication:0.85,
+    provenance_verification_rate:0.22, synthetic_identity_fraud_rate:0.50,
+    content_authenticity_infrastructure:0.20, adversarial_evolution_speed:0.88,
+    forensic_detection_lag:0.78, platform_content_moderation:0.30,
+    public_trust_erosion:0.62, legal_framework_readiness:0.32,
+    biometric_spoofing_risk:0.82, media_literacy_level:0.35,
+    watermarking_adoption:0.22 },
 ];
 
 type Entity = typeof MOCK_ENTITIES[0];
