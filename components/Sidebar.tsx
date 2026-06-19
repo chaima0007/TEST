@@ -2802,6 +2802,44 @@ function IconRepBurnout({ className }: { className?: string }) {
   );
 }
 
+function IconOrderManagement({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="7" width="16" height="11" rx="2" fillOpacity="0.1" fill="currentColor"/>
+      <path d="M6 7V5a4 4 0 018 0v2"/>
+      <path d="M7 12l2 2 4-4"/>
+    </svg>
+  );
+}
+function IconCustomerService({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" fillOpacity="0.1" fill="currentColor"/>
+      <path d="M7 8h6M7 11h4"/>
+      <circle cx="10" cy="5" r="1.5" fill="currentColor"/>
+    </svg>
+  );
+}
+function IconITSystems({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="3" width="16" height="11" rx="2" fillOpacity="0.1" fill="currentColor"/>
+      <path d="M7 17h6M10 14v3"/>
+      <circle cx="6" cy="7" r="1" fill="currentColor"/>
+      <circle cx="10" cy="7" r="1" fill="currentColor"/>
+      <circle cx="14" cy="7" r="1" fill="currentColor"/>
+    </svg>
+  );
+}
+function IconSecurityShield({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l7 3v5c0 4-3 7-7 8C7 17 4 14 3 10V5l7-3z" fillOpacity="0.15" fill="currentColor"/>
+      <path d="M7 10l2 2 4-4"/>
+    </svg>
+  );
+}
+
 function IconAccountChurn({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -3111,6 +3149,11 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-account-churn-early-warning-engine", label: "Churn Warning", icon: IconAccountChurn },
       { href: "/dashboard/sales-expansion-revenue-signal-engine", label: "Expansion Revenue", icon: IconExpansionRevenue },
       { href: "/dashboard/sales-deal-velocity-acceleration-engine", label: "Deal Velocity", icon: IconDealVelocity },
+      { href: "/dashboard/invoice-intelligence-engine", label: "Facturation", icon: IconInvoice },
+      { href: "/dashboard/order-management-intelligence-engine", label: "Commandes", icon: IconOrderManagement },
+      { href: "/dashboard/customer-service-quality-engine", label: "Service Client", icon: IconCustomerService },
+      { href: "/dashboard/it-systems-health-monitoring-engine", label: "IT Systèmes", icon: IconITSystems },
+      { href: "/dashboard/swarm-security-shield-engine", label: "Bouclier Sécurité", icon: IconSecurityShield },
     ],
   },
   {
