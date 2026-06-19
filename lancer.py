@@ -123,6 +123,12 @@ MENU = """
   [61] Maître Culture Interne    ← Standards d'excellence, alignement, mindset empire
   [62] Historien Empire          ← Log-Keeper : décisions → protocoles de réussite
 
+  ── GOUVERNANCE DE LA FLOTTE ──────────────────────────────
+  [73] Auditeur de la Flotte     ← Audit qualité 5D de tout output (score /100)
+  [74] Protocole Identité        ← Cohérence marque, ton officiel, charte Caelum
+  [75] Directive Comportement    ← 8 règles non négociables pour tous les agents
+  [76] Architecte Diversification ← Micro-branches autonomes, MVP lean, omnipresence
+
   ── SECTEURS À HAUTE VALEUR — BELGIQUE ────────────────────
   [63] Notaire & Immobilier      ← Annonces FR+NL, actes, baux, prospection agences
   [64] Fiduciaire & Comptabilité ← Rapports gestion, optimisation fiscale, onboarding
@@ -300,6 +306,14 @@ if __name__ == "__main__":
             lancer("agent_assurance_belge.py")
         elif choix == "72":
             lancer("agent_formation_pro.py")
+        elif choix == "73":
+            lancer("agent_auditeur_flotte.py")
+        elif choix == "74":
+            lancer("agent_protocole_identite.py")
+        elif choix == "75":
+            lancer("agent_directive_comportement.py")
+        elif choix == "76":
+            lancer("agent_architecte_diversification.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
