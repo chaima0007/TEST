@@ -2732,6 +2732,76 @@ function IconLogout({ className }: { className?: string }) {
   );
 }
 
+function IconPipelineHygiene({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="2" y="4" width="4" height="12" rx="1"/>
+      <rect x="8" y="6" width="4" height="10" rx="1"/>
+      <rect x="14" y="8" width="4" height="8" rx="1"/>
+      <path d="M1 17h18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <circle cx="16" cy="4" r="2.5" fill="#ef4444"/>
+      <path d="M15 3.5l.8.8 1.4-1.4" stroke="white" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+    </svg>
+  );
+}
+
+function IconCompetitiveWins({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M6 3l1.5 2.5H3L6 3zM14 3l2.5 2.5h-5L14 3z"/>
+      <path d="M5.5 5.5L10 14l4.5-8.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <circle cx="10" cy="10" r="2"/>
+      <path d="M10 16v2M8 18h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconIntentDecay({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 10q3-6 7-6t7 6-7 6-7-6z" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+      <circle cx="10" cy="10" r="2"/>
+      <path d="M5 15l3-3M15 15l-3-3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      <path d="M8 17h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+    </svg>
+  );
+}
+
+function IconMultithreading({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="2"/>
+      <circle cx="3" cy="5" r="1.5"/>
+      <circle cx="17" cy="5" r="1.5"/>
+      <circle cx="3" cy="15" r="1.5"/>
+      <circle cx="17" cy="15" r="1.5"/>
+      <circle cx="10" cy="2" r="1.5"/>
+      <path d="M8 10L4.5 5.5M12 10l3.5-4.5M8 10L4.5 14.5M12 10l3.5 4.5M10 8V3.5" stroke="currentColor" strokeWidth="1" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconMarginErosion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M17.707 9.293l-7-7A1 1 0 0 0 10 2H4a2 2 0 0 0-2 2v6c0 .266.105.52.293.707l7 7a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414zM6 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" clipRule="evenodd"/>
+      <path d="M8 12l1.5 1.5L13 10" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+    </svg>
+  );
+}
+
+function IconRepBurnout({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="7" r="3"/>
+      <path d="M5 17c0-2.76 2.24-5 5-5s5 2.24 5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M10 12l-.5 2.5M10 12l.5 2.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" fill="none"/>
+      <path d="M14 4c.5-.5 1-1.5.5-2.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      <path d="M16 6c.8-.3 1.5-1 1.5-2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3018,6 +3088,12 @@ const navSections: NavSection[] = [
       { href: "/dashboard/branding", label: "LinkedIn & CV", icon: IconBranding },
       { href: "/dashboard/portfolio", label: "Portfolio", icon: IconPortfolio },
       { href: "/dashboard/editorial", label: "Calendrier Éditorial", icon: IconEditorial },
+      { href: "/dashboard/sales-pipeline-stage-inflation-crm-hygiene-engine", label: "Pipeline Hygiene", icon: IconPipelineHygiene },
+      { href: "/dashboard/sales-competitive-win-loss-pattern-engine", label: "Competitive Wins", icon: IconCompetitiveWins },
+      { href: "/dashboard/sales-buyer-intent-signal-decay-engine", label: "Intent Decay", icon: IconIntentDecay },
+      { href: "/dashboard/sales-multithreading-depth-relationship-breadth-engine", label: "Multithreading", icon: IconMultithreading },
+      { href: "/dashboard/sales-discount-approval-abuse-margin-erosion-engine", label: "Margin Erosion", icon: IconMarginErosion },
+      { href: "/dashboard/sales-rep-burnout-productivity-decay-engine", label: "Rep Burnout", icon: IconRepBurnout },
     ],
   },
   {
