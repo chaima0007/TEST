@@ -4963,6 +4963,99 @@ function IconCoralReef({ className }: { className?: string }) {
   );
 }
 
+function IconLithiumRecycling({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="5" width="12" height="11" rx="1"/>
+      <path d="M8 5V3h4v2"/>
+      <path d="M7 11l2-2 2 2 2-2" opacity="0.7"/>
+      <path d="M10 9v5" opacity="0.5"/>
+      <circle cx="10" cy="13" r="1.2" fill="currentColor" stroke="none" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconMicroplastics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="5" cy="8" r="1.5" fill="currentColor" stroke="none" opacity="0.5"/>
+      <circle cx="10" cy="5" r="1" fill="currentColor" stroke="none" opacity="0.6"/>
+      <circle cx="15" cy="9" r="1.5" fill="currentColor" stroke="none" opacity="0.5"/>
+      <circle cx="7" cy="13" r="1" fill="currentColor" stroke="none" opacity="0.4"/>
+      <circle cx="13" cy="14" r="1.5" fill="currentColor" stroke="none" opacity="0.5"/>
+      <path d="M3 10c3 2 5 3 8 2s5-2 7 0" opacity="0.4"/>
+      <path d="M4 16h12" opacity="0.3"/>
+    </svg>
+  );
+}
+
+function IconInsuranceClimate({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l7 3v5c0 4-3 7-7 8C7 17 4 14 3 10V5l7-3z"/>
+      <path d="M7 10l2 2 4-4"/>
+      <path d="M16 3l2 1M14 16l2 2" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconAcademicIntegrity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="4" width="14" height="13" rx="1"/>
+      <path d="M7 8h6M7 11h4"/>
+      <path d="M13 14l2-2-2-2" opacity="0.6"/>
+      <path d="M3 4l4-2h6l4 2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconUrbanFlooding({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 9l7-7 7 7"/>
+      <path d="M5 9v4"/>
+      <path d="M15 9v4"/>
+      <path d="M2 14c2 1 4-1 6 0s4 1 6 0"/>
+      <path d="M2 17c2 1 4-1 6 0s4 1 6 0"/>
+    </svg>
+  );
+}
+
+function IconDigitalNomad({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="7" width="10" height="7" rx="1"/>
+      <path d="M3 10h10M7 7V5M9 7V5"/>
+      <circle cx="15" cy="6" r="3"/>
+      <path d="M13 10l4-1" opacity="0.5"/>
+      <path d="M13 13l4 1" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconGeneticPrivacy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M8 2c-1 3 0 5 2 6s3 4 2 7"/>
+      <path d="M12 2c1 3 0 5-2 6s-3 4-2 7"/>
+      <path d="M6 7h8M6 13h8" opacity="0.5"/>
+      <path d="M16 4l1-2M16 16l1 2" opacity="0.3"/>
+    </svg>
+  );
+}
+
+function IconSovereignWealth({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M7 13V8l6 5V8" opacity="0.8"/>
+      <path d="M3 10h2M15 10h2" opacity="0.4"/>
+      <path d="M10 3v2M10 15v2" opacity="0.4"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5463,6 +5556,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/housing-crisis-engine", label: "Crise Immobilière", icon: IconHousingCrisis },
       { href: "/dashboard/climate-migration-engine", label: "Migration Climatique", icon: IconClimateMigration },
       { href: "/dashboard/coral-reef-engine", label: "Récifs Coralliens", icon: IconCoralReef },
+      { href: "/dashboard/lithium-battery-recycling-engine", label: "Recyclage Batteries Li", icon: IconLithiumRecycling },
+      { href: "/dashboard/microplastics-health-engine", label: "Microplastiques Santé", icon: IconMicroplastics },
+      { href: "/dashboard/insurance-climate-engine", label: "Assurance Climat", icon: IconInsuranceClimate },
+      { href: "/dashboard/academic-integrity-engine", label: "Intégrité Académique", icon: IconAcademicIntegrity },
+      { href: "/dashboard/urban-flooding-engine", label: "Inondations Urbaines", icon: IconUrbanFlooding },
+      { href: "/dashboard/digital-nomad-engine", label: "Économie Nomades Numériques", icon: IconDigitalNomad },
+      { href: "/dashboard/genetic-privacy-engine", label: "Confidentialité Génétique", icon: IconGeneticPrivacy },
+      { href: "/dashboard/sovereign-wealth-engine", label: "Fonds Souverains Pouvoir", icon: IconSovereignWealth },
     ],
   },
   {
