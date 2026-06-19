@@ -109,6 +109,20 @@ MENU = """
   [51] Gardien Cohérence         ← Détecte les dérives, aligne l'empire, mémoire vive
   [52] Synthétiseur Réalité      ← Ground Truth : compresse, vérifie, débiaise la flotte
 
+  ── PROTOCOLE DOMINATION TOTALE ───────────────────────────
+  [53] Chasseur Inefficacité     ← Lean : éliminer toute perte de temps et d'argent
+  [54] Capteur Signaux Faibles   ← Valide les opportunités réelles avant la concurrence
+  [55] Architecte Talents        ← Ressources (agents + skills) pour chaque opportunité
+  [56] Force de Vente            ← Offensive marché ciblée, MEDDIC, closing
+  [57] Optimiseur Décisions      ← Résultat final : X% parts de marché, profit net
+
+  ── CAPITAL STRATÉGIQUE DE L'EMPIRE ──────────────────────
+  [58] Architecte Réputation     ← The Anchor : valeur perçue, preuve sociale, crédibilité
+  [59] Analyste Valeurs Adjacentes ← Marchés voisins où Caelum est imbattable
+  [60] Stratège Auto-Obsolescence ← Concevoir le produit qui tuera ton produit actuel
+  [61] Maître Culture Interne    ← Standards d'excellence, alignement, mindset empire
+  [62] Historien Empire          ← Log-Keeper : décisions → protocoles de réussite
+
   [s]  Voir stats & mémoire
   [0]  Quitter
 """
@@ -234,6 +248,26 @@ if __name__ == "__main__":
             lancer("agent_gardien_coherence.py")
         elif choix == "52":
             lancer("agent_synthetiseur_realite.py")
+        elif choix == "53":
+            lancer("agent_chasseur_inefficacite.py")
+        elif choix == "54":
+            lancer("agent_capteur_signaux.py")
+        elif choix == "55":
+            lancer("agent_architecte_talents.py")
+        elif choix == "56":
+            lancer("agent_force_de_vente.py")
+        elif choix == "57":
+            lancer("agent_optimiseur_decisions.py")
+        elif choix == "58":
+            lancer("agent_architecte_reputation.py")
+        elif choix == "59":
+            lancer("agent_valeurs_adjacentes.py")
+        elif choix == "60":
+            lancer("agent_auto_obsolescence.py")
+        elif choix == "61":
+            lancer("agent_culture_interne.py")
+        elif choix == "62":
+            lancer("agent_historien_empire.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
