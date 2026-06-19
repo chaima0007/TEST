@@ -3187,6 +3187,45 @@ function IconPredictiveArbitrage({ className }: { className?: string }) {
   );
 }
 
+function IconNeuroadaptiveUX({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <ellipse cx="10" cy="8" rx="7" ry="5"/>
+      <path d="M5 11c0 3 2 5 5 6 3-1 5-3 5-6"/>
+      <path d="M7 8h.01M10 6h.01M13 8h.01" strokeWidth="2"/>
+    </svg>
+  );
+}
+function IconSupplyChain({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="1" y="7" width="4" height="6" rx="1"/>
+      <rect x="8" y="5" width="4" height="8" rx="1"/>
+      <rect x="15" y="7" width="4" height="6" rx="1"/>
+      <path d="M5 10h3M12 10h3"/>
+    </svg>
+  );
+}
+function IconBiomimetic({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2c0 0-6 4-6 9a6 6 0 0 0 12 0c0-5-6-9-6-9z" fill="currentColor" fillOpacity="0.08"/>
+      <path d="M10 2c0 0-6 4-6 9a6 6 0 0 0 12 0c0-5-6-9-6-9z"/>
+      <path d="M10 8v6M7 11l3-3 3 3" strokeLinecap="round"/>
+    </svg>
+  );
+}
+function IconDarkData({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" fill="currentColor" fillOpacity="0.06"/>
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M10 6v4l2.5 2.5" strokeLinecap="round"/>
+      <path d="M6 10a4 4 0 0 0 4 4" strokeLinecap="round"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+    </svg>
+  );
+}
 function IconQuantumSocial({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -3547,6 +3586,10 @@ const navSections: NavSection[] = [
       { href: "/dashboard/predictive-arbitrage-engine", label: "Arbitrage Algorithmique", icon: IconPredictiveArbitrage },
       { href: "/dashboard/quantum-social-intelligence-engine", label: "Intelligence Sociale", icon: IconQuantumSocial },
       { href: "/dashboard/synthetic-asset-liquidation-engine", label: "Liquidation DeFi", icon: IconSyntheticLiquidation },
+      { href: "/dashboard/neuroadaptive-ux-engine", label: "UX Neuroadaptif", icon: IconNeuroadaptiveUX },
+      { href: "/dashboard/autonomous-supply-chain-engine", label: "Supply Chain Auto.", icon: IconSupplyChain },
+      { href: "/dashboard/biomimetic-strategy-engine", label: "Stratégie Biomimétique", icon: IconBiomimetic },
+      { href: "/dashboard/dark-data-intelligence-engine", label: "Dark Data", icon: IconDarkData },
     ],
   },
   {
