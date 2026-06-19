@@ -5,15 +5,15 @@ const MOCK_ENTITIES = [
   // DGI-001: EMEA, protocol_dao → critical, voter_apathy_collapse
   {
     entity_id: "DGI-001", dao_type: "protocol_dao", region: "EMEA",
-    voter_participation_rate: 0.22, plutocracy_concentration: 0.45,
-    proposal_quality_score: 0.40, treasury_sustainability_index: 0.55,
-    governance_attack_resistance: 0.50, delegate_diversity: 0.35,
-    decision_execution_speed: 0.40, coordination_effectiveness: 0.45,
-    sybil_attack_risk: 0.38, governance_fatigue_rate: 0.72,
-    legal_wrapper_clarity: 0.50, cross_dao_collaboration: 0.40,
-    token_distribution_equity: 0.50, emergency_mechanism_quality: 0.45,
-    fork_risk_level: 0.40, constitutional_stability: 0.55,
-    incentive_alignment: 0.45,
+    voter_participation_rate: 0.10, plutocracy_concentration: 0.62,
+    proposal_quality_score: 0.30, treasury_sustainability_index: 0.40,
+    governance_attack_resistance: 0.38, delegate_diversity: 0.15,
+    decision_execution_speed: 0.35, coordination_effectiveness: 0.38,
+    sybil_attack_risk: 0.50, governance_fatigue_rate: 0.82,
+    legal_wrapper_clarity: 0.35, cross_dao_collaboration: 0.30,
+    token_distribution_equity: 0.30, emergency_mechanism_quality: 0.35,
+    fork_risk_level: 0.50, constitutional_stability: 0.42,
+    incentive_alignment: 0.32,
   },
   // DGI-002: APAC, investment_dao → low, dao_thriving/none
   {
@@ -57,15 +57,15 @@ const MOCK_ENTITIES = [
   // DGI-005: MEA, protocol_dao → critical, treasury_drain
   {
     entity_id: "DGI-005", dao_type: "protocol_dao", region: "MEA",
-    voter_participation_rate: 0.40, plutocracy_concentration: 0.50,
-    proposal_quality_score: 0.35, treasury_sustainability_index: 0.28,
-    governance_attack_resistance: 0.38, delegate_diversity: 0.42,
-    decision_execution_speed: 0.35, coordination_effectiveness: 0.42,
-    sybil_attack_risk: 0.55, governance_fatigue_rate: 0.55,
-    legal_wrapper_clarity: 0.38, cross_dao_collaboration: 0.35,
-    token_distribution_equity: 0.42, emergency_mechanism_quality: 0.35,
-    fork_risk_level: 0.48, constitutional_stability: 0.50,
-    incentive_alignment: 0.40,
+    voter_participation_rate: 0.42, plutocracy_concentration: 0.58,
+    proposal_quality_score: 0.30, treasury_sustainability_index: 0.22,
+    governance_attack_resistance: 0.35, delegate_diversity: 0.35,
+    decision_execution_speed: 0.32, coordination_effectiveness: 0.35,
+    sybil_attack_risk: 0.65, governance_fatigue_rate: 0.58,
+    legal_wrapper_clarity: 0.32, cross_dao_collaboration: 0.30,
+    token_distribution_equity: 0.35, emergency_mechanism_quality: 0.32,
+    fork_risk_level: 0.55, constitutional_stability: 0.42,
+    incentive_alignment: 0.32,
   },
   // DGI-006: EMEA, grant_dao → moderate, none
   {
