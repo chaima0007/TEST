@@ -3142,8 +3142,17 @@ function IconComplexNetwork({ className }: { className?: string }) {
       <circle cx="16" cy="4" r="1.5" fill="currentColor" fillOpacity="0.1"/>
       <circle cx="4" cy="16" r="1.5" fill="currentColor" fillOpacity="0.1"/>
       <circle cx="16" cy="16" r="1.5" fill="currentColor" fillOpacity="0.1"/>
-      <circle cx="10" cy="3" r="1" fill="currentColor" fillOpacity="0.15"/>
-      <path d="M5.5 4.5L8 9M12 9l2.5-4.5M8 11l-3.5 4M12 11l3.5 4M10 5v5M5.5 4.5l5 0.5M9.5 4.5l5 0.5"/>
+      <path d="M5.5 4.5L8.5 9M11.5 9l2.5-4.5M8.5 11l-4 4.5M11.5 11l4 4.5"/>
+    </svg>
+  );
+}
+function IconDigitalSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 1l8 4v5c0 4.5-3.5 7.5-8 9-4.5-1.5-8-4.5-8-9V5z" fill="currentColor" fillOpacity="0.08"/>
+      <path d="M10 1l8 4v5c0 4.5-3.5 7.5-8 9-4.5-1.5-8-4.5-8-9V5z"/>
+      <path d="M10 6v5l3 2" strokeLinecap="round"/>
+      <circle cx="10" cy="6" r="1" fill="currentColor"/>
     </svg>
   );
 }
@@ -3479,6 +3488,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/game-theory-decision-engine", label: "Théorie des Jeux", icon: IconGameTheory },
       { href: "/dashboard/bio-computational-intelligence-engine", label: "Bio-Intelligence", icon: IconBioCompute },
       { href: "/dashboard/complex-network-physics-engine", label: "Physique Réseaux", icon: IconComplexNetwork },
+      { href: "/dashboard/digital-sovereignty-engine", label: "Souveraineté Numérique", icon: IconDigitalSovereignty },
     ],
   },
   {
