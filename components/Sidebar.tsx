@@ -5236,6 +5236,98 @@ function IconCleanWaterAccess({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 449-456 icons ──────────────────────────────────────────────────────
+
+function IconLandDegradation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 14h16"/>
+      <path d="M3 14c1-3 2-5 4-6M9 14c0-2 1-4 2-5M14 14c1-2 2-3 3-4"/>
+      <path d="M2 17h16" opacity="0.3"/>
+      <path d="M6 8l1-3 2 1 1-3" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconElderCare({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="6" r="3"/>
+      <path d="M7 10c-2 1-3 3-3 5h12c0-2-1-4-3-5"/>
+      <path d="M7 15l-1 2M13 15l1 2"/>
+      <path d="M5 14l-2 1M15 14l2 1"/>
+    </svg>
+  );
+}
+
+function IconDarkPatterns({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="4" width="14" height="12" rx="1"/>
+      <path d="M7 8h6M7 10h4"/>
+      <path d="M14 13l2 2"/>
+      <circle cx="14" cy="13" r="0.5" fill="currentColor" stroke="none"/>
+      <path d="M9 13h-2v2h2v-2z" fill="currentColor" stroke="none" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconBiopiracy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-2 3-2 5 0 7s2 4 0 7"/>
+      <path d="M10 7c2-1 4-1 5 1M10 13c2 1 4 1 5-1"/>
+      <path d="M15 8l2-1M15 12l2 1"/>
+      <path d="M10 10h-4M6 10l-2-2M6 10l-2 2"/>
+    </svg>
+  );
+}
+
+function IconElectoralIntegrity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="14" height="11" rx="1"/>
+      <path d="M7 9l2 2 4-4"/>
+      <path d="M10 3v2"/>
+      <path d="M15 3l1-1M5 3L4 2"/>
+    </svg>
+  );
+}
+
+function IconPlatformLabor({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="6" r="3"/>
+      <path d="M5 17v-2a5 5 0 0 1 10 0v2"/>
+      <path d="M3 11l4 2M17 11l-4 2"/>
+      <path d="M7 13v4M13 13v4"/>
+    </svg>
+  );
+}
+
+function IconCryptoFinancialCrime({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l2 3h3l-2.5 2 1 3.5L10 9l-3.5 1.5 1-3.5L5 5h3z"/>
+      <path d="M5 14l3 1 2-2 2 2 3-1"/>
+      <path d="M3 17h14"/>
+      <path d="M14 8l3-2"/>
+    </svg>
+  );
+}
+
+function IconArcticSovereigntyRace({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M10 2v4M10 14v4"/>
+      <path d="M2 10h4M14 10h4"/>
+      <path d="M5 5l2 2M13 5l-2 2M5 15l2-2M13 15l-2-2"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5760,6 +5852,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/vertical-farming-engine", label: "Agriculture Verticale", icon: IconVerticalFarming },
       { href: "/dashboard/social-media-mental-health-engine", label: "Réseaux Sociaux Santé Mentale", icon: IconSocialMediaMentalHealth },
       { href: "/dashboard/clean-water-access-engine", label: "Accès Eau Potable", icon: IconCleanWaterAccess },
+      { href: "/dashboard/land-degradation-engine", label: "Dégradation Terres & Désert.", icon: IconLandDegradation },
+      { href: "/dashboard/elder-care-crisis-engine", label: "Crise Soins Personnes Âgées", icon: IconElderCare },
+      { href: "/dashboard/dark-patterns-engine", label: "Dark Patterns Manipulation", icon: IconDarkPatterns },
+      { href: "/dashboard/biopiracy-engine", label: "Biopiraterie & Savoirs Trad.", icon: IconBiopiracy },
+      { href: "/dashboard/electoral-integrity-engine", label: "Intégrité Électorale", icon: IconElectoralIntegrity },
+      { href: "/dashboard/platform-labor-rights-engine", label: "Droits Travailleurs Plateforme", icon: IconPlatformLabor },
+      { href: "/dashboard/crypto-financial-crime-engine", label: "Criminalité Financière Crypto", icon: IconCryptoFinancialCrime },
+      { href: "/dashboard/arctic-sovereignty-race-engine", label: "Souveraineté Arctique", icon: IconArcticSovereigntyRace },
     ],
   },
   {
