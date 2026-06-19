@@ -2862,6 +2862,75 @@ function IconAccountChurn({ className }: { className?: string }) {
   );
 }
 
+function IconEthicsCompliance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l6 2.5v4.5c0 3.5-2.5 6.5-6 7.5C4.5 15.5 2 12.5 2 9V4.5L10 2z" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M7 10l2 2 4-4"/>
+    </svg>
+  );
+}
+
+function IconInnovationScout({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="currentColor" fillOpacity="0.1"/>
+      <path d="M10 6v4l2.5 2.5"/>
+      <path d="M14 4l1-1M16 8h1M14 12l1 1"/>
+    </svg>
+  );
+}
+
+function IconPRCrisis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 5a2 2 0 012-2h8a2 2 0 012 2v5a2 2 0 01-2 2H7l-3 3V12H4a2 2 0 01-2-2V5z" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M10 8v1M10 6v.5"/>
+    </svg>
+  );
+}
+
+function IconKnowledgeGap({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="8" r="4" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M10 5v3l2 1"/>
+      <path d="M5 15h10M7 17h6"/>
+    </svg>
+  );
+}
+
+function IconCertification({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="8" r="5" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M7 8l2 2 4-3"/>
+      <path d="M7 14l-1 4 4-2 4 2-1-4"/>
+    </svg>
+  );
+}
+
+function IconLearningPath({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 17V7l7-4 7 4v10" fill="currentColor" fillOpacity="0.08"/>
+      <path d="M8 17v-5h4v5"/>
+      <path d="M3 7l7 4 7-4"/>
+    </svg>
+  );
+}
+
+function IconDataProtection({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="8" width="14" height="9" rx="2" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M7 8V6a3 3 0 016 0v2"/>
+      <circle cx="10" cy="13" r="1.5" fill="currentColor"/>
+      <path d="M10 13v2"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3165,6 +3234,13 @@ const navSections: NavSection[] = [
       { href: "/dashboard/it-systems-health-monitoring-engine", label: "IT Systèmes", icon: IconITSystems },
       { href: "/dashboard/swarm-security-shield-engine", label: "Bouclier Sécurité", icon: IconSecurityShield },
       { href: "/dashboard/data-analytics-intelligence-engine", label: "Analyse Données", icon: IconDataAnalytics },
+      { href: "/dashboard/ethics-compliance-sentinel-engine", label: "Éthique & Conformité", icon: IconEthicsCompliance },
+      { href: "/dashboard/innovation-scout-engine", label: "Scout Innovation", icon: IconInnovationScout },
+      { href: "/dashboard/pr-crisis-management-engine", label: "PR & Crise", icon: IconPRCrisis },
+      { href: "/dashboard/knowledge-gap-skills-analysis-engine", label: "Analyse Compétences", icon: IconKnowledgeGap },
+      { href: "/dashboard/certification-standards-tracker-engine", label: "Certifications", icon: IconCertification },
+      { href: "/dashboard/personalized-learning-path-engine", label: "Parcours Apprentissage", icon: IconLearningPath },
+      { href: "/dashboard/data-protection-engine", label: "Protection Données", icon: IconDataProtection },
     ],
   },
   {
