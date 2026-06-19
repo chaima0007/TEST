@@ -91,7 +91,6 @@ class SyntheticAssetResult:
     def to_dict(self) -> dict:
         return {
             "portfolio_id":                     self.portfolio_id,
-            "asset_class":                      self.asset_class,
             "region":                           self.region,
             "liquidation_risk":                 self.liquidation_risk.value,
             "liquidation_pattern":              self.liquidation_pattern.value,
