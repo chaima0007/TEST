@@ -143,6 +143,22 @@ MENU = """
   [71] Courtier en Assurances    ← Devoir de conseil, comparatifs, sinistres
   [72] Formation Professionnelle ← Catalogues, subventions, rapports compétences
 
+  ── NOUVEAUX AGENTS — CONVERSION & CYCLE CLIENT ───────────
+  [79] Pitch Deck                ← Présentations, one-pagers, scripts de démo
+  [80] LinkedIn Content          ← Calendrier posts, messages prospection, profil
+  [81] Automatisation N8N        ← Blueprints n8n/Make/Zapier/Power Automate
+  [82] Architecte Superviseur    ← Méta-orchestrateur V2, cartographie flotte
+  [83] Onboarding Client         ← Email bienvenue, kick-off, checklist livraison
+  [84] Satisfaction & Upsell     ← NPS, fidélisation, upsell, témoignages
+  [85] Blog & SEO                ← Articles caelumpartners.agency, référencement
+  [86] Newsletter                ← Nurturing prospects, séquences email
+  [87] Traducteur                ← FR/NL/EN/DE — Belgique bilingue
+  [88] Négociateur               ← Objections, closing, scripts de vente
+  [89] Calendrier Prospection    ← Planning outreach, relances, plan 90 jours
+  [90] Reporting ONEM            ← Conformité chômage, simulation seuils
+  [91] RGPD Opérationnel         ← Audit RGPD, DPA client, registre traitements
+  [92] Générateur Devis          ← Devis conformes droit belge en 2 minutes
+
   [s]  Voir stats & mémoire
   [0]  Quitter
 """
@@ -320,6 +336,34 @@ if __name__ == "__main__":
             lancer("agent_preuve_travail.py")
         elif choix == "78":
             lancer("agent_memoire_projet.py")
+        elif choix == "79":
+            lancer("agent_pitch_deck.py")
+        elif choix == "80":
+            lancer("agent_linkedin_content.py")
+        elif choix == "81":
+            lancer("agent_automatisation_n8n.py")
+        elif choix == "82":
+            lancer("agent_architecte_superviseur.py")
+        elif choix == "83":
+            lancer("agent_onboarding_client.py")
+        elif choix == "84":
+            lancer("agent_satisfaction_upsell.py")
+        elif choix == "85":
+            lancer("agent_blog_seo.py")
+        elif choix == "86":
+            lancer("agent_newsletter.py")
+        elif choix == "87":
+            lancer("agent_traducteur.py")
+        elif choix == "88":
+            lancer("agent_negociateur.py")
+        elif choix == "89":
+            lancer("agent_calendrier_prospection.py")
+        elif choix == "90":
+            lancer("agent_reporting_onem.py")
+        elif choix == "91":
+            lancer("agent_rgpd_ops.py")
+        elif choix == "92":
+            lancer("agent_generateur_devis.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")

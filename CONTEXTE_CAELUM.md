@@ -38,7 +38,7 @@
 - **Config** : `types.GenerateContentConfig(system_instruction=..., temperature=..., max_output_tokens=...)`
 - **IMPORTANT** : l'ancienne API (`import google.generativeai`) est dépréciée — tous les agents utilisent la nouvelle
 - **Variable d'environnement** : `GEMINI_API_KEY`
-- **Lanceur principal** : `python lancer.py` (menu de 77 agents)
+- **Lanceur principal** : `py lancer.py` (menu de 92 agents — utiliser `py` pas `python` sur Windows)
 - **Repo GitHub** : `chaima0007/TEST`
 - **Branche de travail** : `claude/multi-agent-migration-factory-riujie`
 - **Dossier Windows local** : `C:\Caelum_Projets`
@@ -180,6 +180,24 @@
 | 70 | agent_horeca_belge.py | Menus trilingues, social media, AFSCA, événements |
 | 71 | agent_assurance_belge.py | Devoir conseil FSMA, comparatifs, sinistres |
 | 72 | agent_formation_pro.py | Catalogues, subventions, rapports compétences |
+
+### BLOC 12 — CONVERSION & CYCLE CLIENT COMPLET (79-92)
+| # | Fichier | Rôle |
+|---|---|---|
+| 79 | agent_pitch_deck.py | Pitch decks, one-pagers, scripts présentation, défense du prix |
+| 80 | agent_linkedin_content.py | Calendrier posts LinkedIn, messages prospection, profil optimisé |
+| 81 | agent_automatisation_n8n.py | Blueprints n8n/Make/Zapier/Power Automate, ROI automatisation |
+| 82 | agent_architecte_superviseur.py | Méta-orchestrateur V2, cartographie flotte, protocole résilience |
+| 83 | agent_onboarding_client.py | Email bienvenue, kick-off, questionnaire, checklist livraison |
+| 84 | agent_satisfaction_upsell.py | NPS, séquences upsell, alerte churn, demande témoignage |
+| 85 | agent_blog_seo.py | Articles SEO caelumpartners.agency, plan éditorial, FAQ rich snippets |
+| 86 | agent_newsletter.py | Newsletter hebdo, séquence bienvenue, nurturing, relance inactifs |
+| 87 | agent_traducteur.py | Traductions FR/NL/EN/DE, email bilingue, glossaire technique |
+| 88 | agent_negociateur.py | Réponses objections, scripts closing, simulation négociation |
+| 89 | agent_calendrier_prospection.py | Planning semaine/90 jours, relances, tableau de bord pipeline |
+| 90 | agent_reporting_onem.py | Simulation seuil ONEM, alerte dépassement, guide C45B |
+| 91 | agent_rgpd_ops.py | Politique confidentialité, registre traitements, DPA, audit RGPD |
+| 92 | agent_generateur_devis.py | Devis conformes droit belge, comparatif packages, devis sur mesure |
 
 ---
 
