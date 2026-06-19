@@ -156,12 +156,12 @@ class BioComputationalIntelligenceEngine:
     # ------------------------------------------------------------------ #
 
     def _pattern(self, i: BioComputInput) -> BioPattern:
+        if i.mutation_drift_rate >= 0.65 and i.replication_accuracy <= 0.35:
+            return BioPattern.mutation_cascade
         if i.viability_score <= 0.30 and i.biological_stability_rate <= 0.30:
             return BioPattern.biological_collapse
         if i.computational_coherence <= 0.35 or i.signal_propagation_fidelity <= 0.35:
             return BioPattern.computational_drift
-        if i.mutation_drift_rate >= 0.65 or i.replication_accuracy <= 0.35:
-            return BioPattern.mutation_cascade
         if i.cross_substrate_compatibility <= 0.35 and i.substrate_efficiency_score <= 0.35:
             return BioPattern.substrate_incompatibility
         if i.emergence_complexity_index <= 0.30 and i.evolutionary_adaptability <= 0.30:

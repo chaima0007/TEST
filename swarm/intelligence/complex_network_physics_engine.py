@@ -168,14 +168,14 @@ MOCK_NETWORKS = [
     # NT-007 talent_market NAMER — high/complexity_overload
     NetworkInput(
         network_id="NT-007", network_type="talent_market", region="NAMER",
-        connectivity_density=0.65, cascade_vulnerability_score=0.58,
-        attractor_basin_stability=0.35, phase_transition_proximity=0.55,
-        resilience_redundancy_score=0.38, small_world_coefficient=0.42,
-        clustering_coefficient=0.40, hub_concentration_risk=0.60,
-        information_flow_efficiency=0.42, self_organized_criticality_index=0.88,
-        network_modularity_score=0.35, recovery_speed_score=0.40,
-        interdependency_depth=0.65, perturbation_propagation_rate=0.60,
-        adaptive_capacity_score=0.38, topology_robustness=0.40,
+        connectivity_density=0.55, cascade_vulnerability_score=0.48,
+        attractor_basin_stability=0.42, phase_transition_proximity=0.45,
+        resilience_redundancy_score=0.45, small_world_coefficient=0.48,
+        clustering_coefficient=0.48, hub_concentration_risk=0.52,
+        information_flow_efficiency=0.48, self_organized_criticality_index=0.88,
+        network_modularity_score=0.44, recovery_speed_score=0.46,
+        interdependency_depth=0.55, perturbation_propagation_rate=0.48,
+        adaptive_capacity_score=0.44, topology_robustness=0.46,
         emergent_behavior_predictability=0.25,
     ),
     # NT-008 geopolitical_alliance APAC — low

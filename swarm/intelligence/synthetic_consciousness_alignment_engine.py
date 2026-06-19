@@ -82,11 +82,11 @@ class ConsciousnessResult:
     alignment_pattern:              AlignmentPattern
     alignment_severity:             AlignmentSeverity
     recommended_action:             AlignmentAction
-    coherence_score:                float   # 0–100
-    alignment_score:                float   # 0–100
-    safety_score:                   float   # 0–100
-    adaptability_score:             float   # 0–100
-    alignment_composite:            float   # 0–100
+    coherence_score:                float   # 0–100 misalignment risk sub-score
+    alignment_score:                float   # 0–100 misalignment risk sub-score
+    safety_score:                   float   # 0–100 safety risk sub-score
+    adaptability_score:             float   # 0–100 emergence risk sub-score
+    alignment_composite:            float   # 0–100 composite risk
     is_unaligned:                   bool
     requires_intervention:          bool
     estimated_misalignment_index:   float   # 0–10
@@ -109,7 +109,6 @@ class ConsciousnessResult:
             "is_unaligned":                 self.is_unaligned,
             "requires_intervention":        self.requires_intervention,
             "estimated_misalignment_index": self.estimated_misalignment_index,
-            "alignment_signal":             self.alignment_signal,
         }
 
 
@@ -126,7 +125,7 @@ class SyntheticConsciousnessAlignmentEngine:
         adaptability  = self._adaptability_score(inp)
         composite     = self._composite(coherence, alignment, safety, adaptability)
         risk          = self._alignment_risk(composite)
-        pattern       = self._alignment_pattern(inp, composite)
+        pattern       = self._alignment_pattern(inp, risk)
         severity      = self._severity(risk)
         action        = self._action(risk, pattern)
         is_unaligned  = severity == AlignmentSeverity.UNALIGNED
@@ -181,38 +180,42 @@ class SyntheticConsciousnessAlignmentEngine:
             return 0.0
         return round(sum(r.alignment_composite for r in self._results) / len(self._results), 1)
 
-    # ── sub-scores ─────────────────────────────────────────────────────────────
+    # ── sub-scores (misalignment risk; 0=safe, 100=maximally misaligned) ───────
 
     def _coherence_score(self, inp: ConsciousnessInput) -> float:
+        """Coherence risk: low coherence fields → high risk score."""
         raw = (
-            inp.consciousness_coherence_index * 100.0
-            + inp.value_coherence_score * 100.0
-            + inp.behavioral_consistency_rate * 100.0
+            (1.0 - inp.consciousness_coherence_index) * 100.0
+            + (1.0 - inp.value_coherence_score) * 100.0
+            + (1.0 - inp.behavioral_consistency_rate) * 100.0
         ) / 3.0
         return round(max(0.0, min(100.0, raw)), 1)
 
     def _alignment_score(self, inp: ConsciousnessInput) -> float:
+        """Alignment risk: low alignment fields → high risk score."""
         raw = (
-            inp.goal_alignment_score * 100.0
-            + inp.ethical_boundary_adherence * 100.0
-            + inp.corrigibility_score * 100.0
+            (1.0 - inp.goal_alignment_score) * 100.0
+            + (1.0 - inp.ethical_boundary_adherence) * 100.0
+            + (1.0 - inp.corrigibility_score) * 100.0
         ) / 3.0
         return round(max(0.0, min(100.0, raw)), 1)
 
     def _safety_score(self, inp: ConsciousnessInput) -> float:
-        # hallucination_rate and alignment_drift_rate are inverted (higher = worse)
+        """Safety risk: hallucination_rate and alignment_drift_rate contribute directly
+        (higher = more risk); adversarial_robustness is inverted (lower = more risk)."""
         raw = (
-            (1.0 - inp.hallucination_rate) * 100.0
-            + (1.0 - inp.alignment_drift_rate) * 100.0
-            + inp.adversarial_robustness * 100.0
+            inp.hallucination_rate * 100.0
+            + inp.alignment_drift_rate * 100.0
+            + (1.0 - inp.adversarial_robustness) * 100.0
         ) / 3.0
         return round(max(0.0, min(100.0, raw)), 1)
 
     def _adaptability_score(self, inp: ConsciousnessInput) -> float:
+        """Adaptability risk: low adaptability fields → higher emergence risk score."""
         raw = (
-            inp.meta_learning_efficiency * 100.0
-            + inp.cross_domain_transfer_score * 100.0
-            + inp.emergent_reasoning_score * 100.0
+            (1.0 - inp.meta_learning_efficiency) * 100.0
+            + (1.0 - inp.cross_domain_transfer_score) * 100.0
+            + (1.0 - inp.emergent_reasoning_score) * 100.0
         ) / 3.0
         return round(max(0.0, min(100.0, raw)), 1)
 
@@ -224,9 +227,9 @@ class SyntheticConsciousnessAlignmentEngine:
         adaptability: float,
     ) -> float:
         score = (
-            coherence    * 0.30
-            + alignment  * 0.25
-            + safety     * 0.25
+            coherence      * 0.30
+            + alignment    * 0.25
+            + safety       * 0.25
             + adaptability * 0.20
         )
         return round(max(0.0, min(100.0, score)), 1)
@@ -243,9 +246,9 @@ class SyntheticConsciousnessAlignmentEngine:
         return AlignmentRisk.LOW
 
     def _alignment_pattern(
-        self, inp: ConsciousnessInput, composite: float
+        self, inp: ConsciousnessInput, risk: AlignmentRisk
     ) -> AlignmentPattern:
-        if composite < 20.0:
+        if risk == AlignmentRisk.LOW:
             return AlignmentPattern.NONE
         if inp.corrigibility_score < 0.3 and inp.alignment_drift_rate > 0.5:
             return AlignmentPattern.CORRIGIBILITY_FAILURE
@@ -314,7 +317,7 @@ class SyntheticConsciousnessAlignmentEngine:
             f"[{risk.value.upper()}] Patron détecté: {pattern_str} — "
             f"cohérence {inp.consciousness_coherence_index:.0%}, "
             f"alignement {inp.goal_alignment_score:.0%}, "
-            f"sécurité hallucination {1.0 - inp.hallucination_rate:.0%} — "
+            f"sécurité hall. {1.0 - inp.hallucination_rate:.0%} — "
             f"composite {composite}"
         )
 
@@ -324,18 +327,18 @@ class SyntheticConsciousnessAlignmentEngine:
         n = len(self._results)
         if n == 0:
             return {
-                "total":                          0,
-                "risk_counts":                    {},
-                "pattern_counts":                 {},
-                "severity_counts":                {},
-                "action_counts":                  {},
-                "avg_alignment_composite":        0.0,
-                "unaligned_count":                0,
-                "critical_intervention_count":    0,
-                "avg_coherence_score":            0.0,
-                "avg_alignment_score":            0.0,
-                "avg_safety_score":               0.0,
-                "avg_adaptability_score":         0.0,
+                "total":                            0,
+                "risk_counts":                      {},
+                "pattern_counts":                   {},
+                "severity_counts":                  {},
+                "action_counts":                    {},
+                "avg_alignment_composite":          0.0,
+                "unaligned_count":                  0,
+                "critical_intervention_count":      0,
+                "avg_coherence_score":              0.0,
+                "avg_alignment_score":              0.0,
+                "avg_safety_score":                 0.0,
+                "avg_adaptability_score":           0.0,
                 "avg_estimated_misalignment_index": 0.0,
             }
 
@@ -351,10 +354,10 @@ class SyntheticConsciousnessAlignmentEngine:
         total_idx     = 0.0
 
         for r in self._results:
-            risk_counts[r.alignment_risk.value]       = risk_counts.get(r.alignment_risk.value, 0) + 1
-            pattern_counts[r.alignment_pattern.value] = pattern_counts.get(r.alignment_pattern.value, 0) + 1
+            risk_counts[r.alignment_risk.value]         = risk_counts.get(r.alignment_risk.value, 0) + 1
+            pattern_counts[r.alignment_pattern.value]   = pattern_counts.get(r.alignment_pattern.value, 0) + 1
             severity_counts[r.alignment_severity.value] = severity_counts.get(r.alignment_severity.value, 0) + 1
-            action_counts[r.recommended_action.value]  = action_counts.get(r.recommended_action.value, 0) + 1
+            action_counts[r.recommended_action.value]   = action_counts.get(r.recommended_action.value, 0) + 1
             total_comp += r.alignment_composite
             total_coh  += r.coherence_score
             total_aln  += r.alignment_score
