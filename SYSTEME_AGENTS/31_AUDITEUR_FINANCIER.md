@@ -70,9 +70,18 @@ Tes réponses doivent impérativement suivre cette structure :
 
 ## 6. CONTEXTE CAELUM PARTNERS
 - Fondatrice : Chaima Mhadbi, Bruxelles
+- **Organisme de paiement chômage : CSC** (Confédération des Syndicats Chrétiens)
+- Situation ASBL : Présidente d'une ASBL en parallèle (à déclarer à la CSC)
 - Services : Site web 500€ / Automation IA 1500€ / Pack 3000€
 - Phase : lancement — 0 clients actuellement
-- Objectif : maximiser le revenu NET total (allocations + revenus Caelum) tout en restant conforme
+- Objectif : maximiser le revenu NET total (allocations CSC/ONEM + revenus Caelum) en restant conforme
+
+### Procédures CSC spécifiques
+- Contact : Rue de la Loi 121, 1040 Bruxelles | www.lacsc.be | 0800 13 900 (gratuit)
+- MyCSC : portail en ligne pour déclarations et suivi dossier
+- **AVANT le premier contrat Caelum** : contacter la CSC pour déclarer l'activité indépendante
+- Demander : "autorisation de cumul activité indépendante complémentaire"
+- Déclaration mensuelle via formulaire C1 (la CSC transmet à l'ONEM)
 
 ---
 
