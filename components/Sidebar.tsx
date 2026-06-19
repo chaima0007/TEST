@@ -3634,6 +3634,142 @@ function IconCriticalResource({ className }: { className?: string }) {
   );
 }
 
+function IconClimateTipping({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 14c2-4 4-6 8-6s6 2 8 6"/>
+      <path d="M10 8V4"/>
+      <path d="M7 5l3-3 3 3"/>
+      <circle cx="10" cy="16" r="2"/>
+    </svg>
+  );
+}
+
+function IconDigitalTwin({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="5" width="6" height="10" rx="1"/>
+      <rect x="12" y="5" width="6" height="10" rx="1"/>
+      <path d="M8 10h4"/>
+      <path d="M9 8l-1 2 1 2"/>
+      <path d="M11 8l1 2-1 2"/>
+    </svg>
+  );
+}
+
+function IconQuantumDisruption({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2"/>
+      <path d="M10 3a7 7 0 0 1 7 7"/>
+      <path d="M10 17a7 7 0 0 1-7-7"/>
+      <path d="M3 10a7 7 0 0 1 7-7"/>
+      <path d="M17 10a7 7 0 0 1-7 7"/>
+    </svg>
+  );
+}
+
+function IconUrbanIntel({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="10" width="4" height="8"/>
+      <rect x="8" y="6" width="4" height="12"/>
+      <rect x="14" y="3" width="4" height="15"/>
+      <path d="M2 10l4-4 4 2 4-4 4 2"/>
+    </svg>
+  );
+}
+
+function IconSovereignDebt({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M10 6v2m0 4v2"/>
+      <path d="M7.5 8.5A2.5 2.5 0 0 1 10 7c1.38 0 2.5.84 2.5 2 0 1.5-2.5 2-2.5 3.5"/>
+    </svg>
+  );
+}
+
+function IconNeuroBCI({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.5-.8 2.8-2 3.5V16H8v-2.5C6.8 12.8 6 11.5 6 10z"/>
+      <path d="M8 7.5c-.5-1-1.5-1.5-2-1"/>
+      <path d="M12 7.5c.5-1 1.5-1.5 2-1"/>
+      <path d="M2 10h2m14 0h-2"/>
+    </svg>
+  );
+}
+
+function IconSupplyChain({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="4" cy="10" r="2"/>
+      <circle cx="10" cy="5" r="2"/>
+      <circle cx="16" cy="10" r="2"/>
+      <circle cx="10" cy="15" r="2"/>
+      <path d="M6 10h2M12 10h2M10 7v2M10 13v-2"/>
+    </svg>
+  );
+}
+
+function IconAllianceFracture({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="5" cy="5" r="2"/>
+      <circle cx="15" cy="5" r="2"/>
+      <circle cx="5" cy="15" r="2"/>
+      <circle cx="15" cy="15" r="2"/>
+      <path d="M7 5h6M5 7v6M15 7v6M7 15h6"/>
+      <path d="M9 9l2 2" strokeDasharray="2 1"/>
+    </svg>
+  );
+}
+
+function IconFirstPrinciples({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2v4M2 10h4M14 10h4M10 14v4"/>
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M5.5 5.5l2 2M12.5 12.5l2 2M5.5 14.5l2-2M12.5 7.5l2-2"/>
+    </svg>
+  );
+}
+
+function IconBottleneckSniper({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 10h14"/>
+      <path d="M3 6h6v8H3z"/>
+      <circle cx="14" cy="10" r="3"/>
+      <path d="M14 7v1M14 12v1M11 10h1M16 10h1"/>
+    </svg>
+  );
+}
+
+function IconEconomicSingularity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 16C4 12 6 8 8 6s4-2 10-4"/>
+      <circle cx="18" cy="2" r="1.5" fill="currentColor"/>
+      <path d="M2 18l16-16"/>
+    </svg>
+  );
+}
+
+function IconSystemAwareness({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M10 4a6 6 0 0 1 6 6"/>
+      <path d="M10 16a6 6 0 0 1-6-6"/>
+      <path d="M4 10a6 6 0 0 1 6-6"/>
+      <path d="M16 10a6 6 0 0 1-6 6"/>
+      <path d="M10 2v2M10 16v2M2 10H4M16 10h2"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -4014,6 +4150,18 @@ const navSections: NavSection[] = [
       { href: "/dashboard/synthetic-biology-risk-engine", label: "Biologie Synthétique", icon: IconSyntheticBiology },
       { href: "/dashboard/emotional-contagion-engine", label: "Contagion Émotionnelle", icon: IconEmotionalContagion },
       { href: "/dashboard/critical-resource-scarcity-engine", label: "Ressources Critiques", icon: IconCriticalResource },
+      { href: "/dashboard/climate-tipping-points-engine", label: "Basculement Climatique", icon: IconClimateTipping },
+      { href: "/dashboard/digital-twin-economy-engine", label: "Jumeaux Numériques", icon: IconDigitalTwin },
+      { href: "/dashboard/quantum-computing-disruption-engine", label: "Disruption Quantique", icon: IconQuantumDisruption },
+      { href: "/dashboard/urban-intelligence-engine", label: "Intelligence Urbaine", icon: IconUrbanIntel },
+      { href: "/dashboard/sovereign-debt-crisis-engine", label: "Crise Dette Souveraine", icon: IconSovereignDebt },
+      { href: "/dashboard/neuromorphic-bci-engine", label: "Interface Cerveau-Machine", icon: IconNeuroBCI },
+      { href: "/dashboard/supply-chain-fragility-engine", label: "Fragilité Chaîne Appro.", icon: IconSupplyChain },
+      { href: "/dashboard/geopolitical-alliance-fracture-engine", label: "Fractures Alliances", icon: IconAllianceFracture },
+      { href: "/dashboard/first-principles-architecture-engine", label: "Premiers Principes", icon: IconFirstPrinciples },
+      { href: "/dashboard/bottleneck-sniper-engine", label: "Bottleneck Sniper", icon: IconBottleneckSniper },
+      { href: "/dashboard/economic-singularity-engine", label: "Singularité Économique", icon: IconEconomicSingularity },
+      { href: "/dashboard/system-awareness-engine", label: "Conscience Systémique", icon: IconSystemAwareness },
     ],
   },
   {
