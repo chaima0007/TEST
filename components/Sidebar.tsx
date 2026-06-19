@@ -4872,6 +4872,97 @@ function IconNeuroRights({ className }: { className?: string }) {
   );
 }
 
+function IconWildfire({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2c0 3-3 4-3 7a3 3 0 0 0 6 0c0-2-1-3-1-5"/>
+      <path d="M7 13c-2 0-3 1-3 3h12c0-2-1-3-3-3"/>
+      <path d="M8 8c0 2-1 3-1 4" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconForcedLabor({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="5" r="2.5"/>
+      <path d="M3 17c0-3 2-5 5-5s5 2 5 5"/>
+      <path d="M14 10l3-2M17 8v5M14 13l3-1" opacity="0.6"/>
+      <circle cx="15" cy="8" r="1" fill="currentColor" stroke="none" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconChildMarriage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="7" cy="5" r="2"/>
+      <circle cx="14" cy="4" r="1.5"/>
+      <path d="M3 16c0-2.8 1.8-5 4-5s4 2.2 4 5"/>
+      <path d="M14 6v2l2 2" opacity="0.6"/>
+      <line x1="3" y1="13" x2="17" y2="13" strokeWidth="1" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconOceanGovernance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 12c3-2 5 0 8 0s5-2 8 0"/>
+      <path d="M2 15c3-2 5 0 8 0s5-2 8 0"/>
+      <path d="M5 8l5-5 5 5"/>
+      <path d="M10 3v5"/>
+    </svg>
+  );
+}
+
+function IconCriticalInfraCyber({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l7 3v5c0 4-3 7-7 8C7 17 4 14 3 10V5l7-3z"/>
+      <path d="M7 10l2 2 4-4" opacity="0.8"/>
+      <path d="M13 6l1-2" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconHousingCrisis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 10l8-7 8 7"/>
+      <path d="M4 10v7h12v-7"/>
+      <path d="M8 17v-5h4v5"/>
+      <path d="M16 8l2 2" opacity="0.5"/>
+      <line x1="2" y1="18" x2="18" y2="2" stroke="currentColor" strokeWidth="1.2" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconClimateMigration({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="6" cy="6" r="2.5"/>
+      <path d="M2 17c0-3 2-5 4-5"/>
+      <path d="M9 13l5-3 4 2"/>
+      <path d="M9 13v4M14 10v4M18 12v3" opacity="0.6"/>
+      <path d="M6 9v2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconCoralReef({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 17V11c0-2 1.5-4 3-4"/>
+      <path d="M8 7V4"/>
+      <path d="M8 7c0-2 2-3 4-2"/>
+      <path d="M12 5v3c0 2 2 3 2 5v4"/>
+      <path d="M2 17h16"/>
+      <path d="M6 12c-1 0-2 1-2 2" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5364,6 +5455,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/social-bond-engine", label: "Obligations Sociales ESG", icon: IconSocialBond },
       { href: "/dashboard/digital-divide-engine", label: "Fracture Numérique", icon: IconDigitalDivide },
       { href: "/dashboard/neuro-rights-engine", label: "Neurodroits IA", icon: IconNeuroRights },
+      { href: "/dashboard/wildfire-intelligence-engine", label: "Incendies Forêts", icon: IconWildfire },
+      { href: "/dashboard/forced-labor-engine", label: "Travail Forcé Esclavage", icon: IconForcedLabor },
+      { href: "/dashboard/child-marriage-engine", label: "Mariage Forcé Enfants", icon: IconChildMarriage },
+      { href: "/dashboard/ocean-governance-engine", label: "Gouvernance Océans", icon: IconOceanGovernance },
+      { href: "/dashboard/critical-infra-cyber-engine", label: "Cyber Infra Critique", icon: IconCriticalInfraCyber },
+      { href: "/dashboard/housing-crisis-engine", label: "Crise Immobilière", icon: IconHousingCrisis },
+      { href: "/dashboard/climate-migration-engine", label: "Migration Climatique", icon: IconClimateMigration },
+      { href: "/dashboard/coral-reef-engine", label: "Récifs Coralliens", icon: IconCoralReef },
     ],
   },
   {
