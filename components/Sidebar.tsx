@@ -3540,6 +3540,57 @@ function IconLongevityEconomy({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconSpaceEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <circle cx="10" cy="10" r="2"/>
+      <path d="M10 3v2M10 15v2M3 10h2M15 10h2" strokeWidth="1.1"/>
+      <path d="M14 6l-1.5 1.5M7.5 12.5L6 14" strokeWidth="1"/>
+    </svg>
+  );
+}
+function IconCryptoGovernance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2L4 5v5c0 3.5 2.7 6.7 6 7.5 3.3-.8 6-4 6-7.5V5l-6-3z"/>
+      <path d="M7.5 10l2 2 3-3" strokeWidth="1.3"/>
+    </svg>
+  );
+}
+function IconAIAlignment({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="14" height="10" rx="2"/>
+      <circle cx="7" cy="10" r="1.5"/>
+      <circle cx="13" cy="10" r="1.5"/>
+      <path d="M7 10h6" strokeWidth="1.1"/>
+      <path d="M10 5V3M10 17v-2" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+function IconDAOGovernance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <circle cx="3" cy="10" r="2"/>
+      <circle cx="17" cy="10" r="2"/>
+      <circle cx="10" cy="3" r="2"/>
+      <circle cx="10" cy="17" r="2"/>
+      <path d="M5 10h2M13 10h2M10 5v2M10 13v2" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconOmegaSynthesis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2z"/>
+      <path d="M6 14c0-2.2 1.8-4 4-4s4 1.8 4 4"/>
+      <path d="M8 10c0-1.1.9-2 2-2s2 .9 2 2"/>
+      <circle cx="10" cy="8" r="1" fill="currentColor"/>
+    </svg>
+  );
+}
 
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
@@ -3912,6 +3963,11 @@ const navSections: NavSection[] = [
       { href: "/dashboard/energy-transition-intelligence-engine", label: "Transition Énergétique", icon: IconEnergyTransition },
       { href: "/dashboard/synthetic-media-detection-engine", label: "Médias Synthétiques", icon: IconSyntheticMedia },
       { href: "/dashboard/longevity-economy-engine", label: "Économie Longévité", icon: IconLongevityEconomy },
+      { href: "/dashboard/space-economy-engine", label: "Économie Spatiale", icon: IconSpaceEconomy },
+      { href: "/dashboard/crypto-economic-governance-engine", label: "Gouvernance DeFi", icon: IconCryptoGovernance },
+      { href: "/dashboard/metacognitive-ai-alignment-engine", label: "Alignement IA", icon: IconAIAlignment },
+      { href: "/dashboard/dao-governance-intelligence-engine", label: "Gouvernance DAO", icon: IconDAOGovernance },
+      { href: "/dashboard/omega-synthesis-engine", label: "OMEGA Synthèse", icon: IconOmegaSynthesis },
     ],
   },
   {
