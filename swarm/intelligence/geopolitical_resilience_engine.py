@@ -170,12 +170,12 @@ class GeopoliticalResilienceEngine:
     def _pattern(self, i: GeopoliticalInput) -> GeopoliticalPattern:
         if i.sanctions_exposure_risk >= 0.65:
             return GeopoliticalPattern.sanctions_cascade
+        if i.conflict_proximity_index >= 0.60:
+            return GeopoliticalPattern.conflict_spillover
         if i.bilateral_tension_index >= 0.65 and i.diplomatic_relationship_quality <= 0.35:
             return GeopoliticalPattern.diplomatic_rupture
         if i.regulatory_alignment_score <= 0.35 and i.technology_decoupling_risk >= 0.55:
             return GeopoliticalPattern.regulatory_decoupling
-        if i.conflict_proximity_index >= 0.60:
-            return GeopoliticalPattern.conflict_spillover
         if i.energy_dependency_risk >= 0.60 and i.currency_sovereignty_risk >= 0.55:
             return GeopoliticalPattern.sovereignty_erosion
         return GeopoliticalPattern.none

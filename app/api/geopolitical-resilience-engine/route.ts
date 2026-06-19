@@ -12,7 +12,7 @@ const MOCK_TERRITORIES = [
   // GT-005 conflict_adjacent EMEA — critical/conflict_spillover
   { territory_id:"GT-005", territory_type:"conflict_adjacent",  region:"EMEA",  political_stability_score:0.22, sanctions_exposure_risk:0.58, diplomatic_relationship_quality:0.25, trade_agreement_coverage:0.30, regulatory_alignment_score:0.32, conflict_proximity_index:0.82, supply_chain_geopolitical_risk:0.78, currency_sovereignty_risk:0.68, institutional_quality_score:0.30, anti_corruption_score:0.28, press_freedom_index:0.25, rule_of_law_score:0.28, foreign_investment_protection:0.25, bilateral_tension_index:0.62, technology_decoupling_risk:0.55, energy_dependency_risk:0.72, democratic_resilience_score:0.22 },
   // GT-006 bilateral_trade MEA — moderate
-  { territory_id:"GT-006", territory_type:"bilateral_trade",    region:"MEA",   political_stability_score:0.55, sanctions_exposure_risk:0.30, diplomatic_relationship_quality:0.58, trade_agreement_coverage:0.55, regulatory_alignment_score:0.50, conflict_proximity_index:0.35, supply_chain_geopolitical_risk:0.38, currency_sovereignty_risk:0.42, institutional_quality_score:0.52, anti_corruption_score:0.48, press_freedom_index:0.45, rule_of_law_score:0.50, foreign_investment_protection:0.50, bilateral_tension_index:0.35, technology_decoupling_risk:0.38, energy_dependency_risk:0.40, democratic_resilience_score:0.52 },
+  { territory_id:"GT-006", territory_type:"bilateral_trade",    region:"MEA",   political_stability_score:0.65, sanctions_exposure_risk:0.28, diplomatic_relationship_quality:0.62, trade_agreement_coverage:0.60, regulatory_alignment_score:0.58, conflict_proximity_index:0.28, supply_chain_geopolitical_risk:0.35, currency_sovereignty_risk:0.38, institutional_quality_score:0.68, anti_corruption_score:0.65, press_freedom_index:0.62, rule_of_law_score:0.65, foreign_investment_protection:0.68, bilateral_tension_index:0.28, technology_decoupling_risk:0.38, energy_dependency_risk:0.38, democratic_resilience_score:0.62 },
   // GT-007 strategic_corridor NAMER — high/diplomatic_rupture
   { territory_id:"GT-007", territory_type:"strategic_corridor", region:"NAMER", political_stability_score:0.45, sanctions_exposure_risk:0.42, diplomatic_relationship_quality:0.22, trade_agreement_coverage:0.48, regulatory_alignment_score:0.45, conflict_proximity_index:0.40, supply_chain_geopolitical_risk:0.55, currency_sovereignty_risk:0.38, institutional_quality_score:0.48, anti_corruption_score:0.50, press_freedom_index:0.55, rule_of_law_score:0.48, foreign_investment_protection:0.45, bilateral_tension_index:0.72, technology_decoupling_risk:0.48, energy_dependency_risk:0.35, democratic_resilience_score:0.50 },
   // GT-008 multilateral_bloc APAC — low/stable
@@ -42,9 +42,9 @@ function composite(stab: number, exp: number, gov: number, sov: number): number 
 }
 function geopoliticalPattern(t: Territory): string {
   if (t.sanctions_exposure_risk >= 0.65) return "sanctions_cascade";
+  if (t.conflict_proximity_index >= 0.60) return "conflict_spillover";
   if (t.bilateral_tension_index >= 0.65 && t.diplomatic_relationship_quality <= 0.35) return "diplomatic_rupture";
   if (t.regulatory_alignment_score <= 0.35 && t.technology_decoupling_risk >= 0.55) return "regulatory_decoupling";
-  if (t.conflict_proximity_index >= 0.60) return "conflict_spillover";
   if (t.energy_dependency_risk >= 0.60 && t.currency_sovereignty_risk >= 0.55) return "sovereignty_erosion";
   return "none";
 }
