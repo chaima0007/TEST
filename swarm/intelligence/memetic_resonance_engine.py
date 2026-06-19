@@ -83,7 +83,6 @@ class MemeticResult:
     reach_score: float
     memetic_composite: float
     is_epidemic_threat: bool
-    requires_active_intervention: bool
     estimated_viral_disruption_index: float
     memetic_signal: str
 
@@ -102,7 +101,6 @@ class MemeticResult:
             "reach_score":                      self.reach_score,
             "memetic_composite":                self.memetic_composite,
             "is_epidemic_threat":               self.is_epidemic_threat,
-            "requires_active_intervention":     self.requires_active_intervention,
             "estimated_viral_disruption_index": self.estimated_viral_disruption_index,
             "memetic_signal":                   self.memetic_signal,
         }
@@ -196,9 +194,6 @@ class MemeticResonanceEngine:
     def _is_epidemic(self, comp: float) -> bool:
         return comp >= 60
 
-    def _requires_intervention(self, comp: float) -> bool:
-        return comp >= 40
-
     def _viral_disruption_index(self, i: MemeticInput, comp: float) -> float:
         return round(
             min(comp / 100 * (i.virality_coefficient + i.echo_chamber_intensity) / 2 * 10, 10.0),
@@ -254,7 +249,6 @@ class MemeticResonanceEngine:
             reach_score=rch,
             memetic_composite=comp,
             is_epidemic_threat=self._is_epidemic(comp),
-            requires_active_intervention=self._requires_intervention(comp),
             estimated_viral_disruption_index=self._viral_disruption_index(i, comp),
             memetic_signal=self._signal(i, pat, comp),
         )
@@ -299,8 +293,8 @@ class MemeticResonanceEngine:
             trch  += r.reach_score
             tcomp += r.memetic_composite
             tdis  += r.estimated_viral_disruption_index
-            if r.is_epidemic_threat:            epidemic_count     += 1
-            if r.requires_active_intervention:  intervention_count += 1
+            if r.is_epidemic_threat:                    epidemic_count     += 1
+            if r.memetic_composite >= 40:               intervention_count += 1
         return {
             "total":                               n,
             "risk_counts":                         rc,
