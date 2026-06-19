@@ -4690,6 +4690,99 @@ function IconMetaverse({ className }: { className?: string }) {
   );
 }
 
+function IconNuclearWaste({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M10 7V4M8.5 8l-2.6-1.5M11.5 8l2.6-1.5"/>
+      <path d="M10 13v3M8.5 12l-2.6 1.5M11.5 12l2.6 1.5"/>
+      <circle cx="10" cy="10" r="7" opacity="0.2"/>
+    </svg>
+  );
+}
+
+function IconOceanPlastic({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 13c2-1 4 0 6-1s4-2 6-1"/>
+      <path d="M2 16c2-1 4 0 6-1s4-2 6-1"/>
+      <path d="M5 10l1-4h3l-1 4M10 10l2-4h3l-2 4" opacity="0.6"/>
+      <circle cx="4" cy="8" r="1" fill="currentColor" stroke="none" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconLandGrab({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="12" width="16" height="5" rx="1"/>
+      <path d="M5 12V8l3-3 3 3v4"/>
+      <path d="M14 9l3 1v2"/>
+      <path d="M3 17l4-4" opacity="0.5"/>
+      <path d="M13 9l-2-3" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconWaterPrivatization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2c0 0-6 6-6 10a6 6 0 0 0 12 0c0-4-6-10-6-10z"/>
+      <path d="M7 14l6-4" opacity="0.7"/>
+      <circle cx="13" cy="8" r="2" stroke="currentColor" opacity="0.6"/>
+      <path d="M12 7l2 2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconTaxHaven({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 3c0 0 4 2 4 7s-4 7-4 7"/>
+      <path d="M10 3c0 0-4 2-4 7s4 7 4 7"/>
+      <path d="M3 10h14"/>
+      <path d="M7 5.5l6 9" opacity="0.5" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+
+function IconAutonomousWeapons({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 9h10l2 2-2 2H3l-1-2z"/>
+      <circle cx="16" cy="11" r="1.5" fill="currentColor" stroke="none" opacity="0.7"/>
+      <path d="M7 9V7M10 9V6" opacity="0.6"/>
+      <path d="M17 7l1-2M17 15l1 2" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconSpaceWeather({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="5" cy="10" r="3"/>
+      <path d="M8 10h3"/>
+      <path d="M11 7l1-3M11 10l2-1M11 13l1 3" opacity="0.7"/>
+      <path d="M14 5l2 1-1 2M14 13l2 1-1 2" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconPlatformEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="7" y="2" width="6" height="4" rx="1"/>
+      <path d="M10 6v3"/>
+      <circle cx="4" cy="13" r="2"/>
+      <circle cx="10" cy="13" r="2"/>
+      <circle cx="16" cy="13" r="2"/>
+      <path d="M6 13h2M12 13h2"/>
+      <path d="M4 15v2M10 15v2M16 15v2" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5166,6 +5259,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/noise-pollution-engine", label: "Pollution Sonore", icon: IconNoisePollution },
       { href: "/dashboard/crypto-mining-engine", label: "Minage Crypto Env.", icon: IconCryptoMining },
       { href: "/dashboard/metaverse-governance-engine", label: "Gouvernance Métavers", icon: IconMetaverse },
+      { href: "/dashboard/nuclear-waste-engine", label: "Déchets Nucléaires", icon: IconNuclearWaste },
+      { href: "/dashboard/ocean-plastic-engine", label: "Plastique Océanique", icon: IconOceanPlastic },
+      { href: "/dashboard/land-grab-engine", label: "Accaparement Terres", icon: IconLandGrab },
+      { href: "/dashboard/water-privatization-engine", label: "Privatisation Eau", icon: IconWaterPrivatization },
+      { href: "/dashboard/tax-haven-engine", label: "Paradis Fiscaux", icon: IconTaxHaven },
+      { href: "/dashboard/autonomous-weapons-engine", label: "Armes Autonomes IA", icon: IconAutonomousWeapons },
+      { href: "/dashboard/space-weather-engine", label: "Météo Spatiale", icon: IconSpaceWeather },
+      { href: "/dashboard/platform-economy-engine", label: "Économie Plateforme", icon: IconPlatformEconomy },
     ],
   },
   {
