@@ -5145,6 +5145,97 @@ function IconMediaIntegrity({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 441-448 icons ──────────────────────────────────────────────────────
+
+function IconPandemicPrep({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 6v4l3 2"/>
+      <path d="M6 3l-2-1M14 3l2-1M3 14l-1 2M17 14l1 2"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconGlobalTaxReform({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 3c0 0-3 2-3 7s3 7 3 7M10 3c0 0 3 2 3 7s-3 7-3 7"/>
+      <path d="M3 10h14"/>
+      <path d="M10 7c-1 0-2 .5-2 1.5S9 10 10 10s2 .5 2 1.5S11 13 10 13"/>
+      <path d="M10 6v1M10 13v1"/>
+    </svg>
+  );
+}
+
+function IconPrisonReform({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="4" width="14" height="13" rx="1"/>
+      <path d="M7 4V2M10 4V2M13 4V2"/>
+      <path d="M7 4v13M10 4v13M13 4v13"/>
+      <path d="M3 9h14M3 13h14"/>
+    </svg>
+  );
+}
+
+function IconAMRResponse({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <ellipse cx="10" cy="10" rx="4" ry="2" transform="rotate(45 10 10)"/>
+      <ellipse cx="10" cy="10" rx="4" ry="2" transform="rotate(-45 10 10)"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+      <path d="M5 5l-2-2M15 5l2-2M5 15l-2 2M15 15l2 2"/>
+    </svg>
+  );
+}
+
+function IconTranshumanistEthics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="7" r="3"/>
+      <path d="M7 10c-2 1-3 3-3 5h12c0-2-1-4-3-5"/>
+      <path d="M13 4l2-2M7 4L5 2"/>
+      <path d="M10 4v-2"/>
+      <path d="M15 10l2-1M5 10L3 9"/>
+    </svg>
+  );
+}
+
+function IconVerticalFarming({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="2" width="12" height="16" rx="1"/>
+      <path d="M4 6h12M4 10h12M4 14h12"/>
+      <path d="M8 4v2M12 4v2M8 8v2M12 8v2M8 12v2M12 12v2"/>
+      <circle cx="8" cy="4" r="0.5" fill="currentColor" stroke="none"/>
+      <circle cx="12" cy="4" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconSocialMediaMentalHealth({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-3.9 0-7 3.1-7 7 0 2.7 1.5 5.1 3.8 6.3L10 18l3.2-1.7C15.5 15.1 17 12.7 17 10c0-3.9-3.1-7-7-7z"/>
+      <path d="M7 9l3 3 3-5"/>
+      <path d="M15 4l2-2M13 3l1-2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconCleanWaterAccess({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2c0 0-6 6-6 10a6 6 0 0 0 12 0C16 8 10 2 10 2z"/>
+      <path d="M7 15c1-1 1.5-2 3-2s2 1 3 2"/>
+      <path d="M10 10v3"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5661,6 +5752,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-disarmament-engine", label: "Désarmement Nucléaire", icon: IconNuclearDisarmament },
       { href: "/dashboard/urban-air-mobility-engine", label: "Mobilité Aérienne Urbaine", icon: IconUrbanAirMobility },
       { href: "/dashboard/media-integrity-engine", label: "Intégrité Médias & DeepFakes", icon: IconMediaIntegrity },
+      { href: "/dashboard/pandemic-preparedness-engine", label: "Préparation Pandémies", icon: IconPandemicPrep },
+      { href: "/dashboard/global-tax-reform-engine", label: "Réforme Fiscale Mondiale", icon: IconGlobalTaxReform },
+      { href: "/dashboard/prison-reform-engine", label: "Réforme Pénale & Justice", icon: IconPrisonReform },
+      { href: "/dashboard/amr-global-response-engine", label: "Résistance Antimicrobiens", icon: IconAMRResponse },
+      { href: "/dashboard/transhumanist-ethics-engine", label: "Éthique Transhumaniste", icon: IconTranshumanistEthics },
+      { href: "/dashboard/vertical-farming-engine", label: "Agriculture Verticale", icon: IconVerticalFarming },
+      { href: "/dashboard/social-media-mental-health-engine", label: "Réseaux Sociaux Santé Mentale", icon: IconSocialMediaMentalHealth },
+      { href: "/dashboard/clean-water-access-engine", label: "Accès Eau Potable", icon: IconCleanWaterAccess },
     ],
   },
   {
