@@ -3157,6 +3157,36 @@ function IconDigitalSovereignty({ className }: { className?: string }) {
   );
 }
 
+function IconTemporalIntelligence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M10 5v5l3.5 3.5"/>
+      <path d="M5 1.5l2 2M15 1.5l-2 2" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+function IconGeopolitical({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M2 10h16M10 2c-2 2-3 5-3 8s1 6 3 8M10 2c2 2 3 5 3 8s-1 6-3 8"/>
+      <path d="M4 6h12M4 14h12" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconPredictiveArbitrage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polyline points="2,15 7,8 11,11 16,4"/>
+      <path d="M16 4h-3M16 4v3" strokeWidth="1.8"/>
+      <path d="M2 18h16" strokeWidth="1.1"/>
+      <circle cx="7" cy="8" r="1.2" fill="currentColor"/>
+      <circle cx="11" cy="11" r="1.2" fill="currentColor"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3489,6 +3519,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/bio-computational-intelligence-engine", label: "Bio-Intelligence", icon: IconBioCompute },
       { href: "/dashboard/complex-network-physics-engine", label: "Physique Réseaux", icon: IconComplexNetwork },
       { href: "/dashboard/digital-sovereignty-engine", label: "Souveraineté Numérique", icon: IconDigitalSovereignty },
+      { href: "/dashboard/temporal-intelligence-engine", label: "Intelligence Temporelle", icon: IconTemporalIntelligence },
+      { href: "/dashboard/geopolitical-resilience-engine", label: "Résilience Géopolitique", icon: IconGeopolitical },
+      { href: "/dashboard/predictive-arbitrage-engine", label: "Arbitrage Algorithmique", icon: IconPredictiveArbitrage },
     ],
   },
   {
