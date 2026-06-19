@@ -3343,6 +3343,46 @@ function IconSyntheticLiquidation({ className }: { className?: string }) {
   );
 }
 
+function IconMetamorphic({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 10c0-4 3-7 7-7s7 3 7 7"/>
+      <path d="M17 10c0 4-3 7-7 7"/>
+      <path d="M3 10c0 4 3 7 7 7"/>
+      <path d="M10 6l2 4-2 4"/>
+      <path d="M8 10h4" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+function IconPredictiveTalent({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="7" r="3"/>
+      <path d="M2 17c0-3 2.7-5 6-5s6 2 6 5"/>
+      <path d="M14 9l2 2 3-3" strokeWidth="1.3"/>
+    </svg>
+  );
+}
+function IconPlanetaryIntel({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <ellipse cx="10" cy="10" rx="4" ry="7"/>
+      <path d="M3 10h14" strokeWidth="1.1"/>
+      <path d="M5 6h10M5 14h10" strokeWidth="0.9"/>
+    </svg>
+  );
+}
+function IconExistentialRisk({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2L2 16h16L10 2z"/>
+      <path d="M10 8v4" strokeWidth="1.8"/>
+      <circle cx="10" cy="14" r="0.8" fill="currentColor"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3694,6 +3734,10 @@ const navSections: NavSection[] = [
       { href: "/dashboard/autonomous-supply-chain-engine", label: "Supply Chain Auto.", icon: IconSupplyChain },
       { href: "/dashboard/biomimetic-strategy-engine", label: "Stratégie Biomimétique", icon: IconBiomimetic },
       { href: "/dashboard/dark-data-intelligence-engine", label: "Dark Data", icon: IconDarkData },
+      { href: "/dashboard/metamorphic-business-model-engine", label: "Modèle Métamorphique", icon: IconMetamorphic },
+      { href: "/dashboard/predictive-talent-intelligence-engine", label: "Talent Intelligence", icon: IconPredictiveTalent },
+      { href: "/dashboard/planetary-intelligence-engine", label: "Intelligence Planétaire", icon: IconPlanetaryIntel },
+      { href: "/dashboard/existential-risk-engine", label: "Risque Existentiel", icon: IconExistentialRisk },
     ],
   },
   {
