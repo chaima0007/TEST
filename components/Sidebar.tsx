@@ -2931,6 +2931,74 @@ function IconDataProtection({ className }: { className?: string }) {
   );
 }
 
+function IconResourceOptimization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="12" width="4" height="6" rx="1" fill="currentColor" fillOpacity="0.15"/>
+      <rect x="8" y="8" width="4" height="10" rx="1" fill="currentColor" fillOpacity="0.15"/>
+      <rect x="14" y="4" width="4" height="14" rx="1" fill="currentColor" fillOpacity="0.15"/>
+      <path d="M4 12l4-4 4 2 4-6"/>
+    </svg>
+  );
+}
+function IconOrgHealth({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="6" r="3" fill="currentColor" fillOpacity="0.15"/>
+      <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      <path d="M10 11v3"/>
+      <path d="M8 14h4"/>
+    </svg>
+  );
+}
+function IconLegalWatch({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2L3 6v4c0 4 3 7 7 8 4-1 7-4 7-8V6z" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M7 10l2 2 4-4"/>
+    </svg>
+  );
+}
+function IconQualityAssurance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="currentColor" fillOpacity="0.10"/>
+      <path d="M7 10l2 2 4-4"/>
+      <path d="M10 3v2M10 15v2M3 10h2M15 10h2"/>
+    </svg>
+  );
+}
+function IconSwarmOrchestration({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2" fill="currentColor" fillOpacity="0.2"/>
+      <circle cx="4" cy="5" r="1.5" fill="currentColor" fillOpacity="0.15"/>
+      <circle cx="16" cy="5" r="1.5" fill="currentColor" fillOpacity="0.15"/>
+      <circle cx="4" cy="15" r="1.5" fill="currentColor" fillOpacity="0.15"/>
+      <circle cx="16" cy="15" r="1.5" fill="currentColor" fillOpacity="0.15"/>
+      <path d="M5.5 6l3 3M14.5 6l-3 3M5.5 14l3-3M14.5 14l-3-3"/>
+    </svg>
+  );
+}
+function IconContinuousImprovement({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 14c1-2 2-4 4-5s4 0 6-2 3-4 4-5" fill="none"/>
+      <path d="M15 7l2-2-2-2"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" fillOpacity="0.15"/>
+    </svg>
+  );
+}
+function IconStrategicRisk({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l8 15H2z" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M10 8v4"/>
+      <circle cx="10" cy="14" r="0.75" fill="currentColor"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3241,6 +3309,13 @@ const navSections: NavSection[] = [
       { href: "/dashboard/certification-standards-tracker-engine", label: "Certifications", icon: IconCertification },
       { href: "/dashboard/personalized-learning-path-engine", label: "Parcours Apprentissage", icon: IconLearningPath },
       { href: "/dashboard/data-protection-engine", label: "Protection Données", icon: IconDataProtection },
+      { href: "/dashboard/resource-optimization-capacity-engine", label: "Optimisation Ressources", icon: IconResourceOptimization },
+      { href: "/dashboard/organizational-health-culture-engine", label: "Santé Organisationnelle", icon: IconOrgHealth },
+      { href: "/dashboard/legal-regulatory-watch-engine", label: "Veille Juridique", icon: IconLegalWatch },
+      { href: "/dashboard/quality-assurance-process-engine", label: "Assurance Qualité", icon: IconQualityAssurance },
+      { href: "/dashboard/swarm-orchestration-conflict-engine", label: "Orchestration Essaim", icon: IconSwarmOrchestration },
+      { href: "/dashboard/continuous-improvement-excellence-engine", label: "Excellence Opérat.", icon: IconContinuousImprovement },
+      { href: "/dashboard/strategic-risk-governance-engine", label: "Risque Stratégique", icon: IconStrategicRisk },
     ],
   },
   {
