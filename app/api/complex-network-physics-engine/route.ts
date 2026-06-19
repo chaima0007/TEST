@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_NETWORKS = [
   // NT-001 supply_chain EMEA — critical/cascade_failure
@@ -126,7 +127,7 @@ export async function GET() {
       if (net.network_risk === "critical" || net.network_risk === "high") interventionC++;
     }
     const n = networks.length;
-    return NextResponse.json({ networks, summary: {
+    return NextResponse.json(sealResponse({ networks, summary: {
       total: n,
       risk_counts: rc,
       pattern_counts: pc,
@@ -140,7 +141,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres / n * 10) / 10,
       avg_emergence_score: Math.round(temg / n * 10) / 10,
       avg_estimated_cascade_risk_index: Math.round(tcri / n * 100) / 100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/complex-network-physics-engine`)).json());
 }

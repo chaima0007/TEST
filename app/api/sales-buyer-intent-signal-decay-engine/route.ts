@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"BI-001", region:"EMEA",  evaluation_period_id:"Q1-2026", website_visit_decay_rate_pct:0.68, email_open_rate_decay_pct:0.62, content_download_decay_rate_pct:0.58, avg_days_since_last_digital_touch:28.0, demo_no_show_rate_pct:0.62, demo_follow_up_response_rate_pct:0.18, evaluation_activity_score:0.15, trial_feature_adoption_rate_pct:0.12, champion_response_latency_days:16.0, champion_meeting_acceptance_rate_pct:0.18, champion_internal_forward_rate_pct:0.08, intent_score_trend:-0.72, buying_committee_engagement_score:0.16, multi_contact_engagement_rate_pct:0.12, days_since_last_positive_signal:52.0, intent_data_coverage_score:0.18, deals_with_intent_decay:12, avg_deal_value_usd:92000 },
@@ -105,7 +106,7 @@ export async function GET() {
       if (r.has_intent_gap) gc++; if (r.requires_reengagement) re++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_intent_composite: Math.round(tcomp/n*10)/10,
       intent_gap_count: gc, reengagement_count: re,
@@ -114,7 +115,7 @@ export async function GET() {
       avg_champion_score: Math.round(tch/n*10)/10,
       avg_freshness_score: Math.round(tfr/n*10)/10,
       total_estimated_cold_pipeline_usd: Math.round(tcp*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-buyer-intent-signal-decay-engine`)).json());
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"FC-001", region:"EMEA",  evaluation_period_id:"Q1-2026", commit_vs_actual_variance_pct:0.45, overcommit_frequency_pct:0.65, undercommit_frequency_pct:0.10, forecast_miss_rate_pct:0.65, commit_category_accuracy_pct:0.38, best_case_to_close_conversion_pct:0.18, pipeline_to_commit_escalation_rate_pct:0.48, category_downgrade_rate_pct:0.40, last_week_close_rate_pct:0.60, pull_in_frequency_pct:0.25, push_out_frequency_pct:0.50, avg_days_in_commit_before_close:4.0, crm_forecast_update_frequency_days:9.0, deal_stage_accuracy_at_commit_pct:0.32, close_date_change_frequency:3.5, rolling_3q_forecast_accuracy_pct:0.48, upside_capture_rate_pct:0.22, total_commit_deals:22, avg_deal_value_usd:92000, quota_attainment_pct:0.55 },
@@ -101,7 +102,7 @@ export async function GET() {
       if (r.has_forecast_gap) gc++; if (r.requires_manager_review) mc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_forecast_composite: Math.round(tcomp/n*10)/10,
       forecast_gap_count: gc, manager_review_count: mc,
@@ -110,7 +111,7 @@ export async function GET() {
       avg_timing_score: Math.round(tti/n*10)/10,
       avg_reliability_score: Math.round(tre/n*10)/10,
       total_estimated_forecast_error_usd: Math.round(tfe*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-forecast-accuracy-commit-reliability-engine`)).json());
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_UNITS = [
   // EC-001 executive_layer EMEA — critical burnout_crisis
@@ -117,7 +118,7 @@ export async function GET() {
       if (u.requires_emergency_support) emergC++;
     }
     const n = units.length;
-    return NextResponse.json({ units, summary: {
+    return NextResponse.json(sealResponse({ units, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_emotional_composite:          Math.round(tcomp / n * 10) / 10,
       burnout_alert_count:              alertC,
@@ -127,7 +128,7 @@ export async function GET() {
       avg_meaning_score:                Math.round(tmn  / n * 10) / 10,
       avg_connection_score:             Math.round(tcn  / n * 10) / 10,
       avg_estimated_burnout_risk_index: Math.round(trisk / n * 100) / 100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/emotional-capital-engine`)).json());
 }

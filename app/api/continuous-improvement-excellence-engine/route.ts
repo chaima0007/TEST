@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_INITIATIVES = [
   // CI-001 ops EMEA — critical process_stagnation
@@ -119,7 +120,7 @@ export async function GET() {
       if (init.requires_transformation) transfC++;
     }
     const n = initiatives.length;
-    return NextResponse.json({ initiatives, summary: {
+    return NextResponse.json(sealResponse({ initiatives, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_improvement_composite: Math.round(tcomp/n*10)/10,
       stagnation_signal_count: stagC, transformation_required_count: transfC,
@@ -128,7 +129,7 @@ export async function GET() {
       avg_execution_score: Math.round(tex/n*10)/10,
       avg_maturity_score: Math.round(tmat/n*10)/10,
       avg_estimated_improvement_gap_index: Math.round(tgap/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/continuous-improvement-excellence-engine`)).json());
 }

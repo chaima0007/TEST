@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ASSETS = [
   // FO-001 real_estate_token EMEA — critical liquidity_freeze
@@ -132,7 +133,7 @@ export async function GET() {
       if (asset.recommended_action === "emergency_liquidity" || asset.recommended_action === "governance_reset") emergC++;
     }
     const n = assets.length;
-    return NextResponse.json({ assets, summary: {
+    return NextResponse.json(sealResponse({ assets, summary: {
       total:                           n,
       risk_counts:                     rc,
       pattern_counts:                  pc,
@@ -146,7 +147,7 @@ export async function GET() {
       avg_compliance_score:            Math.round(tcomp / n * 10) / 10,
       avg_estimated_illiquidity_index: Math.round(tilliq / n * 100) / 100,
       emergency_action_count:          emergC,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/fractional-ownership-engine`)).json());
 }

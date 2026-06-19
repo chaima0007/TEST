@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -108,7 +109,7 @@ export async function GET(request: Request) {
     }
 
     const n = mockSegments.length;
-    return NextResponse.json({
+    return NextResponse.json(sealResponse({
       segments,
       summary: {
         total:                                       n,
@@ -125,7 +126,7 @@ export async function GET(request: Request) {
         avg_resilience_score:                        Math.round((total_res  / n) * 100) / 100,
         avg_estimated_sentiment_disruption_index:    Math.round((total_idx  / n) * 100) / 100,
       },
-    });
+    } as Record<string,unknown>));
   }
 
   try {
@@ -136,5 +137,5 @@ export async function GET(request: Request) {
     if (res.ok) return NextResponse.json(await res.json());
   } catch {}
 
-  return NextResponse.json({ segments: [], summary: {} }, { status: 502 });
+  return NextResponse.json(sealResponse({ segments: [], summary: {} } as Record<string,unknown>), { status: 502 });
 }

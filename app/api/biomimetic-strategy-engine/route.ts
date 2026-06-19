@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ORGANISMS = [
   // BMS-001 swarm_intelligence EMEA — critical extinction_spiral
@@ -116,7 +117,7 @@ export async function GET() {
       if (org.requires_evolutionary_intervention) intervC++;
     }
     const n = organisms.length;
-    return NextResponse.json({ organisms, summary: {
+    return NextResponse.json(sealResponse({ organisms, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_biomimetic_composite: Math.round(tcomp/n*10)/10,
       extinction_signal_count: extC, evolutionary_intervention_count: intervC,
@@ -125,7 +126,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_synergy_score: Math.round(tsyn/n*10)/10,
       avg_estimated_extinction_risk_index: Math.round(trisk/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/biomimetic-strategy-engine`)).json());
 }

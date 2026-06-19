@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"NL-001", region:"EMEA",  evaluation_period_id:"Q2-2026", first_concession_without_ask_pct:0.72, avg_concession_rounds_per_deal:4.2, price_anchor_usage_rate_pct:0.12, concession_size_avg_pct:0.22, deal_closed_below_floor_price_pct:0.38, multi_element_trade_rate_pct:0.08, deadline_pressure_concession_pct:0.68, bundle_unbundling_rate_pct:0.52, legal_hold_up_capitulation_pct:0.62, negotiation_preparation_score:0.22, walk_away_rate_pct:0.01, final_price_vs_list_pct:0.68, value_selling_score:0.18, competitor_price_match_rate_pct:0.72, procurement_win_rate_pct:0.18, multi_year_deal_rate_pct:0.12, payment_terms_concession_pct:0.55, total_closed_deals:32, avg_deal_value_usd:88000 },
@@ -101,7 +102,7 @@ export async function GET() {
       if (r.has_negotiation_gap) gc++; if (r.requires_negotiation_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_negotiation_composite: Math.round(tcomp/n*10)/10,
       negotiation_gap_count: gc, coaching_count: cc,
@@ -110,7 +111,7 @@ export async function GET() {
       avg_preparation_score: Math.round(tpr/n*10)/10,
       avg_value_anchoring_score: Math.round(tva/n*10)/10,
       total_estimated_margin_left_usd: Math.round(tmar*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-price-sensitivity-negotiation-leverage-engine`)).json());
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"PH-001", region:"EMEA",  evaluation_period_id:"Q1-2026", stage_advancement_without_exit_criteria_pct:0.62, deal_regression_rate_pct:0.38, avg_days_in_current_stage:45.0, stage_3_to_close_conversion_rate_pct:0.12, closed_won_below_forecast_pct:0.48, stage_skip_rate_pct:0.22, crm_update_latency_days:9.5, verified_next_step_in_crm_rate_pct:0.18, competitive_status_missing_rate_pct:0.55, decision_criteria_captured_rate_pct:0.15, technical_validation_complete_rate_pct:0.18, budget_verified_rate_pct:0.22, close_date_slip_rate_pct:0.65, pipeline_creation_to_close_ratio:7.2, opp_age_over_180_days_pct:0.45, discovery_to_proposal_ratio:6.8, data_completeness_score:0.22, manual_close_date_push_rate_pct:0.58, win_rate_vs_forecast_accuracy_delta:0.35, total_pipeline_deals:35, avg_deal_value_usd:95000 },
@@ -101,7 +102,7 @@ export async function GET() {
       if (r.has_hygiene_gap) gc++; if (r.requires_hygiene_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_hygiene_composite: Math.round(tcomp/n*10)/10,
       hygiene_gap_count: gc, coaching_count: cc,
@@ -110,7 +111,7 @@ export async function GET() {
       avg_velocity_score: Math.round(tve/n*10)/10,
       avg_completeness_score: Math.round(tco/n*10)/10,
       total_estimated_inflated_pipeline_usd: Math.round(tinf*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-pipeline-stage-inflation-crm-hygiene-engine`)).json());
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -300,7 +301,7 @@ export async function GET(request: Request) {
 
   const n = mockMeetings.length;
 
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     meetings,
     summary: {
       total: n,
@@ -314,5 +315,5 @@ export async function GET(request: Request) {
       advancement_rate:     Math.round((advanced_count / n) * 1000) / 10,
       immediate_follow_up_count: mockMeetings.filter((m) => m.follow_up_urgency === "immediate").length,
     },
-  });
+  } as Record<string,unknown>));
 }

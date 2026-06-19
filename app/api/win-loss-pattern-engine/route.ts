@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -129,7 +130,7 @@ export async function GET(request: Request) {
   const n = mockDeals.length;
   const wonCount = mockDeals.filter((d) => d.deal_outcome === "closed_won").length;
 
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     deals,
     summary: {
       total: n,
@@ -146,5 +147,5 @@ export async function GET(request: Request) {
       avg_relationship_score:     Math.round((total_rel / n) * 10) / 10,
       avg_replication_value:      Math.round((total_repl / n) * 10) / 10,
     },
-  });
+  } as Record<string,unknown>));
 }

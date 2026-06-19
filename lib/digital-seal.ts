@@ -52,7 +52,11 @@ export function createDigitalSeal(agentName: string): DigitalSeal {
 
 export function sealResponse<T extends Record<string, unknown>>(
   data: T,
-  agentName: string
+  agentName = "Caelum Partners Swarm Agent"
 ): T & { digital_seal: DigitalSeal } {
   return { ...data, digital_seal: createDigitalSeal(agentName) };
 }
+
+// Drop-in replacement — use instead of NextResponse.json() in any route
+// to automatically stamp every response with the Chaima Mhadbi sovereignty seal.
+export { sealResponse as autoSeal };

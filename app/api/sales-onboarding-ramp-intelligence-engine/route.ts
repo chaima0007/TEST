@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"OR-001", region:"EMEA",  evaluation_period_id:"Q2-2026", weeks_since_start:10, quota_attainment_vs_ramp_plan_pct:0.15, first_meeting_booked_days:25, first_opportunity_created_days:38, product_certification_completion_pct:0.22, training_module_completion_pct:0.28, call_shadowing_sessions_completed:1, manager_1on1_frequency_per_month:0.8, pipeline_coverage_ratio:0.8, avg_deal_size_vs_team_avg_pct:0.55, outbound_activity_vs_plan_pct:0.32, discovery_call_pass_rate_pct:0.18, demo_to_next_step_rate_pct:0.20, competitive_win_rate_ramp_pct:0.10, peer_buddy_engagement_score:0.15, onboarding_satisfaction_score:0.28, net_promoter_internal_score:0.25, tool_adoption_rate_pct:0.35, avg_deal_value_usd:80000 },
@@ -95,7 +96,7 @@ export async function GET() {
       if (r.has_ramp_gap) gc++; if (r.requires_ramp_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_ramp_composite: Math.round(tcomp/n*10)/10,
       ramp_gap_count: gc, intervention_count: ic,
@@ -104,7 +105,7 @@ export async function GET() {
       avg_pipeline_score: Math.round(tpi/n*10)/10,
       avg_manager_support_score: Math.round(tms/n*10)/10,
       total_estimated_ramp_revenue_risk_usd: Math.round(trr*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-onboarding-ramp-intelligence-engine`)).json());
 }

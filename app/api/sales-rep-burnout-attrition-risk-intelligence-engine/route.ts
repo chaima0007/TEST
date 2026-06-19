@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"BR-001", region:"EMEA",  evaluation_period_id:"Q2-2026", activity_volume_trend_pct:-0.38, win_rate_trend_pct:-0.22, pipeline_creation_trend_pct:-0.28, avg_deal_size_trend_pct:-0.12, pto_utilization_rate_pct:0.05, unplanned_absence_days:6, overtime_hours_per_week:18, after_hours_activity_rate_pct:0.52, manager_satisfaction_score:0.22, peer_collaboration_score:0.28, recognition_received_count:0, voluntary_task_completion_pct:0.28, training_participation_pct:0.15, internal_mobility_applications:1, tenure_months:18, consecutive_quota_miss_streak:3, comp_plan_satisfaction_score:0.18, career_path_clarity_score:0.20, exit_interview_signals:1, team_attrition_exposure_pct:0.45 },
@@ -160,7 +161,7 @@ export async function GET() {
       avg_performance_erosion_score: Math.round(total_perf/n*10)/10,
       total_estimated_replacement_cost_usd: Math.round(total_rc*100)/100,
     };
-    return NextResponse.json({ reps, summary });
+    return NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>));
   }
 
   const res = await fetch(`${process.env.SWARM_API_URL}/sales-rep-burnout-attrition-risk-intelligence-engine`);

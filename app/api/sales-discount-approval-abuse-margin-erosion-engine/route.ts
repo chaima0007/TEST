@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"ME-001", region:"EMEA",  evaluation_period_id:"Q1-2026", avg_discount_pct:0.32, max_discount_pct:0.52, deals_discounted_above_approval_pct:0.48, unauthorized_discount_rate_pct:0.35, deal_desk_bypass_rate_pct:0.45, approval_cycle_shortcut_rate_pct:0.38, post_approval_discount_increase_rate_pct:0.28, avg_gross_margin_pct:0.22, deals_below_floor_margin_pct:0.32, quarter_end_discount_spike_ratio:2.8, list_price_adherence_rate_pct:0.28, discount_justification_rate_pct:0.30, multi_year_discount_front_loading_pct:0.52, bundled_discount_rate_pct:0.18, competitive_discount_rate_pct:0.65, total_deals_closed:28, avg_deal_value_usd:95000 },
@@ -101,7 +102,7 @@ export async function GET() {
       if (r.has_margin_gap) gc++; if (r.requires_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_margin_composite: Math.round(tcomp/n*10)/10,
       margin_gap_count: gc, intervention_count: ic,
@@ -110,7 +111,7 @@ export async function GET() {
       avg_outcome_score: Math.round(tou/n*10)/10,
       avg_value_score: Math.round(tva/n*10)/10,
       total_estimated_margin_erosion_usd: Math.round(tme*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-discount-approval-abuse-margin-erosion-engine`)).json());
 }

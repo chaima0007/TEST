@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_INVOICES = [
   { invoice_id:"INV-001", client_id:"CL-042", region:"EMEA",  days_overdue:75, payment_delay_avg_days:55, late_payment_frequency_pct:0.72, partial_payment_count:3, dispute_history_count:4, billing_error_rate_pct:0.22, credit_note_frequency:4, invoice_rejection_count:3, invoice_amount_usd:48000, total_outstanding_usd:165000, credit_limit_utilization_pct:0.92, days_sales_outstanding:85, contract_value_usd:180000, client_tenure_months:14, account_health_score:0.15, payment_terms_days:30, last_contact_days_ago:3, promise_to_pay_broken_count:3, escalation_count:3 },
@@ -100,7 +101,7 @@ export async function GET() {
       if (inv.has_collection_signal) gc++; if (inv.requires_escalation) ec++;
     }
     const n = invoices.length;
-    return NextResponse.json({ invoices, summary: {
+    return NextResponse.json(sealResponse({ invoices, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_invoice_composite: Math.round(tcomp/n*10)/10,
       collection_signal_count: gc, escalation_count: ec,
@@ -109,7 +110,7 @@ export async function GET() {
       avg_exposure_score: Math.round(tex/n*10)/10,
       avg_behavior_score: Math.round(tbh/n*10)/10,
       total_estimated_bad_debt_usd: Math.round(tbd*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/invoice-intelligence-engine`)).json());
 }

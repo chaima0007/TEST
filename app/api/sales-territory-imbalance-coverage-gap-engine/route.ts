@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"TI-001", region:"EMEA",  evaluation_period_id:"Q2-2026", accounts_per_rep_vs_benchmark:2.1, revenue_per_account_vs_benchmark:0.42, whitespace_accounts_untouched_pct:0.72, renewal_coverage_rate_pct:0.35, territory_quota_vs_capacity_ratio:1.72, active_accounts_pct:0.22, avg_travel_time_per_call_hours:3.5, geographic_concentration_score:0.28, icp_account_coverage_pct:0.18, new_logo_territory_penetration_pct:0.06, competitive_displacement_coverage:0.08, account_scoring_adoption_rate_pct:0.15, stale_account_rate_pct:0.62, multi_product_territory_pct:0.12, territory_nps_avg:-0.22, expansion_opportunity_capture_pct:0.12, rep_tenure_territory_months:6, total_accounts_in_territory:72, avg_arr_per_account_usd:88000 },
@@ -94,7 +95,7 @@ export async function GET() {
       if (r.has_territory_gap) gc++; if (r.requires_territory_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_territory_composite: Math.round(tcomp/n*10)/10,
       territory_gap_count: gc, intervention_count: ic,
@@ -103,7 +104,7 @@ export async function GET() {
       avg_penetration_score: Math.round(tpe/n*10)/10,
       avg_efficiency_score: Math.round(tef/n*10)/10,
       total_estimated_uncaptured_revenue_usd: Math.round(tur*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-territory-imbalance-coverage-gap-engine`)).json());
 }

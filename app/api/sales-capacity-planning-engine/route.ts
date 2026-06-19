@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -143,7 +144,7 @@ export async function GET(request: Request) {
   const total_curr = mockRegions.reduce((s, r) => s + r.current_headcount, 0);
   const total_req = mockRegions.reduce((s, r) => s + r.required_headcount, 0);
 
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     regions,
     summary: {
       total: n,
@@ -160,5 +161,5 @@ export async function GET(request: Request) {
       total_revenue_at_risk_usd:    Math.round(total_risk),
       optimal_headcount_range:      `${total_curr}-${total_req}`,
     },
-  });
+  } as Record<string,unknown>));
 }

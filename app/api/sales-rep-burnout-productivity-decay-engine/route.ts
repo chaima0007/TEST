@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"BR-001", region:"EMEA",  evaluation_period_id:"Q1-2026", outbound_activity_decay_rate_pct:0.55, meetings_booked_decay_rate_pct:0.50, pipeline_creation_decay_rate_pct:0.48, avg_response_time_increase_pct:0.60, proposal_error_rate_pct:0.32, crm_entry_accuracy_drop_pct:0.40, follow_up_timeliness_score:0.25, call_quality_score_decay_pct:0.45, manager_meeting_attendance_rate_pct:0.45, team_activity_participation_rate_pct:0.40, enablement_session_attendance_rate_pct:0.30, voluntary_overtime_rate_pct:0.55, weekend_work_frequency_pct:0.60, avg_daily_work_hours:12.5, vacation_utilization_pct:0.10, deal_abandonment_rate_pct:0.28, prospecting_avoidance_rate_pct:0.55, quota_attainment_trend:0.45, total_active_deals:18, avg_deal_value_usd:85000 },
@@ -101,7 +102,7 @@ export async function GET() {
       if (r.has_burnout_signal) gc++; if (r.requires_manager_action) mc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_burnout_composite: Math.round(tcomp/n*10)/10,
       burnout_signal_count: gc, manager_action_count: mc,
@@ -110,7 +111,7 @@ export async function GET() {
       avg_engagement_score: Math.round(ten/n*10)/10,
       avg_stress_score: Math.round(tst/n*10)/10,
       total_estimated_productivity_loss_usd: Math.round(tpl*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-rep-burnout-productivity-decay-engine`)).json());
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_NODES = [
   // ASC-001 tier1_supplier EMEA — critical supplier_collapse
@@ -141,7 +142,7 @@ export async function GET() {
       if (nd.requires_immediate_intervention) intervC++;
     }
     const n = nodes.length;
-    return NextResponse.json({ nodes, summary: {
+    return NextResponse.json(sealResponse({ nodes, summary: {
       total: n,
       risk_counts:     rc,
       pattern_counts:  pc,
@@ -155,7 +156,7 @@ export async function GET() {
       avg_resilience_score:                    Math.round(tRes   / n * 10) / 10,
       avg_intelligence_score:                  Math.round(tIntel / n * 10) / 10,
       avg_estimated_disruption_impact_index:   Math.round(tImpact/ n * 100) / 100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/autonomous-supply-chain-engine`)).json());
 }

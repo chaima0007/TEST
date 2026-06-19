@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // QSI-001 hive_mind EMEA — critical herd_collapse
@@ -118,7 +119,7 @@ export async function GET() {
       if (ent.requires_collective_intervention) intervC++;
     }
     const n = entities.length;
-    return NextResponse.json({ entities, summary: {
+    return NextResponse.json(sealResponse({ entities, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_social_composite: Math.round(tcomp/n*10)/10,
       cascade_signal_count: cascC, collective_intervention_count: intervC,
@@ -127,7 +128,7 @@ export async function GET() {
       avg_polarization_score: Math.round(tpol/n*10)/10,
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_estimated_collective_risk_index: Math.round(tidx/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/quantum-social-intelligence-engine`)).json());
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"DL-001", region:"EMEA",  evaluation_period_id:"Q2-2026", avg_discount_depth_pct:0.32, discount_frequency_pct:0.72, unauthorized_discount_rate_pct:0.42, early_discount_offer_rate_pct:0.55, discount_as_first_response_pct:0.62, gross_margin_vs_target_pct:-0.18, price_objection_concession_rate_pct:0.58, multi_level_discount_rate_pct:0.48, discount_to_close_conversion_pct:0.38, competitor_price_match_rate_pct:0.62, list_price_win_rate_pct:0.05, end_of_quarter_spike_rate_pct:0.68, approval_request_bypass_count:5, avg_deal_cycle_with_discount_days:72, value_objection_to_discount_pct:0.72, deal_size_after_discount_shrink_pct:0.28, repeat_discount_same_customer_pct:0.55, total_closed_deals:9,  avg_deal_value_usd:85000 },
@@ -79,7 +80,7 @@ export async function GET() {
     let tc=0,tf=0,td=0,tdi=0,tv=0,tm=0,gc=0,ic=0;
     for(const r of reps){rc[r.discount_risk]=(rc[r.discount_risk]||0)+1;pc[r.discount_pattern]=(pc[r.discount_pattern]||0)+1;sc[r.discount_severity]=(sc[r.discount_severity]||0)+1;ac[r.recommended_action]=(ac[r.recommended_action]||0)+1;tc+=r.discount_composite;tf+=r.frequency_score;td+=r.depth_score;tdi+=r.discipline_score;tv+=r.value_defense_score;tm+=r.estimated_margin_erosion_usd;if(r.has_discount_gap)gc++;if(r.requires_discount_intervention)ic++;}
     const n=reps.length;
-    return NextResponse.json({reps,summary:{total:n,risk_counts:rc,pattern_counts:pc,severity_counts:sc,action_counts:ac,avg_discount_composite:Math.round(tc/n*10)/10,discount_gap_count:gc,intervention_count:ic,avg_frequency_score:Math.round(tf/n*10)/10,avg_depth_score:Math.round(td/n*10)/10,avg_discipline_score:Math.round(tdi/n*10)/10,avg_value_defense_score:Math.round(tv/n*10)/10,total_estimated_margin_erosion_usd:Math.round(tm*100)/100}});
+    return NextResponse.json(sealResponse({reps,summary:{total:n,risk_counts:rc,pattern_counts:pc,severity_counts:sc,action_counts:ac,avg_discount_composite:Math.round(tc/n*10)/10,discount_gap_count:gc,intervention_count:ic,avg_frequency_score:Math.round(tf/n*10)/10,avg_depth_score:Math.round(td/n*10)/10,avg_discipline_score:Math.round(tdi/n*10)/10,avg_value_defense_score:Math.round(tv/n*10)/10,total_estimated_margin_erosion_usd:Math.round(tm*100)/100}} as Record<string,unknown>));
   }
   return NextResponse.json(await(await fetch(`${process.env.SWARM_API_URL}/sales-discount-leakage-margin-erosion-intelligence-engine`)).json());
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_AGENTS = [
   { agent_id:"AGT-001", agent_type:"sales_crm",           region:"EMEA",  hardcoded_secret_detected:0.92, env_var_exposure_risk:0.88, api_key_rotation_days_overdue:110, credential_in_plaintext_count:3, unauthorized_access_attempts:14, privilege_escalation_attempts:2, anomalous_access_pattern_score:0.85, inactive_user_access_count:4, prompt_injection_attempts:7, sql_injection_attempts:4, xss_attempt_count:3, input_validation_failure_rate:0.35, pii_exposure_risk_score:0.80, data_encryption_compliance_pct:0.35, gdpr_compliance_score:0.22, data_retention_violation_count:4, audit_log_completeness_pct:0.45, security_scan_days_overdue:115, open_vulnerability_count:11, mfa_enforcement_pct:0.18 },
@@ -103,7 +104,7 @@ export async function GET() {
       if (a.has_active_threat) gc++; if (a.requires_immediate_response) ec++;
     }
     const n = agents.length;
-    return NextResponse.json({ agents, summary: {
+    return NextResponse.json(sealResponse({ agents, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_security_composite: Math.round(tcomp/n*10)/10,
       active_threat_count: gc, immediate_response_count: ec,
@@ -112,7 +113,7 @@ export async function GET() {
       avg_injection_score: Math.round(tinj/n*10)/10,
       avg_compliance_score: Math.round(tco/n*10)/10,
       avg_estimated_exposure_severity: Math.round(texpos/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/swarm-security-shield-engine`)).json());
 }

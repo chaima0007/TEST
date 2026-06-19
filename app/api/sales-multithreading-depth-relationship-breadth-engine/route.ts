@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"MT-001", region:"EMEA",  evaluation_period_id:"Q1-2026", avg_contacts_per_account:1.4, single_threaded_account_rate_pct:0.72, avg_new_contacts_added_per_quarter:0.4, contact_attrition_rate_pct:0.45, economic_buyer_engaged_rate_pct:0.15, technical_buyer_engaged_rate_pct:0.65, end_user_engaged_rate_pct:0.22, champion_to_non_champion_ratio:8.0, avg_email_threads_per_contact:1.2, multi_contact_meeting_rate_pct:0.14, cross_functional_reach_score:0.16, referral_introduction_rate_pct:0.10, dormant_contact_rate_pct:0.58, contact_map_completeness_score:0.18, buying_committee_size_vs_avg:0.40, c_suite_engaged_rate_pct:0.10, vp_engaged_rate_pct:0.18, total_active_accounts:28, avg_deal_value_usd:95000 },
@@ -101,7 +102,7 @@ export async function GET() {
       if (r.has_multithread_gap) gc++; if (r.requires_expansion_coaching) ecc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_multithread_composite: Math.round(tcomp/n*10)/10,
       multithread_gap_count: gc, expansion_coaching_count: ecc,
@@ -110,7 +111,7 @@ export async function GET() {
       avg_quality_score: Math.round(tqu/n*10)/10,
       avg_network_score: Math.round(tne/n*10)/10,
       total_estimated_vulnerable_pipeline_usd: Math.round(tvp*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-multithreading-depth-relationship-breadth-engine`)).json());
 }

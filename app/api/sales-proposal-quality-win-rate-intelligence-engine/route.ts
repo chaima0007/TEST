@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"PQ-001", region:"EMEA",  evaluation_period_id:"Q2-2026", proposal_to_close_rate_pct:0.12, proposal_sent_without_discovery_rate_pct:0.65, avg_days_to_send_proposal:3.5, proposal_revision_count_avg:2.8, executive_sponsor_present_in_proposal_pct:0.18, proposal_customization_score:0.15, value_articulation_score:0.22, competitive_differentiation_score:0.18, pricing_structure_complexity_score:0.72, proposal_response_time_days:18.0, unanswered_proposal_rate_pct:0.55, proposal_reused_template_rate_pct:0.72, mutual_success_plan_inclusion_rate_pct:0.12, roi_case_included_rate_pct:0.18, legal_redline_rate_pct:0.42, multi_stakeholder_proposal_rate_pct:0.15, proposal_champion_alignment_score:0.18, total_proposals_sent:24, avg_deal_value_usd:88000 },
@@ -101,7 +102,7 @@ export async function GET() {
       if (r.has_proposal_gap) gc++; if (r.requires_proposal_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_proposal_composite: Math.round(tcomp/n*10)/10,
       proposal_gap_count: gc, coaching_count: cc,
@@ -110,7 +111,7 @@ export async function GET() {
       avg_execution_score: Math.round(tex/n*10)/10,
       avg_alignment_score: Math.round(tal/n*10)/10,
       total_estimated_deal_loss_usd: Math.round(tloss*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-proposal-quality-win-rate-intelligence-engine`)).json());
 }

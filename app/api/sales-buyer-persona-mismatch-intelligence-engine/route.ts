@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"PM-001", region:"EMEA",  evaluation_period_id:"Q2-2026", primary_contact_level_score:0.18, economic_buyer_contact_rate_pct:0.12, it_only_contact_rate_pct:0.72, business_unit_alignment_score:0.22, decision_maker_access_rate_pct:0.15, influencer_only_rate_pct:0.68, procurement_first_contact_rate_pct:0.55, avg_seniority_of_contacts:0.22, sponsor_identification_rate_pct:0.15, cross_functional_coverage_score:0.12, persona_to_use_case_fit_score:0.18, budget_authority_confirmed_rate_pct:0.10, vp_plus_engagement_rate_pct:0.12, champion_seniority_score:0.15, technical_blockers_rate_pct:0.62, wrong_entry_point_rate_pct:0.68, referral_to_right_person_rate_pct:0.12, lost_due_to_persona_mismatch_pct:0.42, total_deals_evaluated:8,  avg_deal_value_usd:95000 },
@@ -117,14 +118,14 @@ export async function GET() {
       if (r.has_persona_gap) gap++; if (r.requires_persona_coaching) coach++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total:n, risk_counts, pattern_counts, severity_counts, action_counts,
       avg_persona_composite: Math.round(total_comp/n*10)/10,
       persona_gap_count: gap, coaching_count: coach,
       avg_access_score: Math.round(total_ac/n*10)/10, avg_alignment_score: Math.round(total_al/n*10)/10,
       avg_authority_score: Math.round(total_au/n*10)/10, avg_coverage_score: Math.round(total_co/n*10)/10,
       total_estimated_lost_deal_value_usd: Math.round(total_lv*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
 
   const res = await fetch(`${process.env.SWARM_API_URL}/sales-buyer-persona-mismatch-intelligence-engine`);

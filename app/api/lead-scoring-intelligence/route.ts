@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -273,7 +274,7 @@ export async function GET(request: Request) {
 
   const n = mockLeads.length;
 
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     leads,
     summary: {
       total: n,
@@ -287,5 +288,5 @@ export async function GET(request: Request) {
       disqualified_count: mockLeads.filter((l) => l.action === "disqualify").length,
       hot_rate_pct: Math.round((mockLeads.filter((l) => l.tier === "hot").length / n) * 1000) / 10,
     },
-  });
+  } as Record<string,unknown>));
 }

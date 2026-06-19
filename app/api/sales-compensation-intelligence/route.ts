@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -145,7 +146,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     reps,
     summary: {
       total: n,
@@ -162,5 +163,5 @@ export async function GET(request: Request) {
       avg_discount_behavior_score:       Math.round((total_disc / n) * 10) / 10,
       avg_quota_accuracy_score:          Math.round((total_quot / n) * 10) / 10,
     },
-  });
+  } as Record<string,unknown>));
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_INTERFACES = [
   // NUX-001 enterprise_dashboard EMEA — critical cognitive_overload
@@ -110,7 +111,7 @@ export async function GET() {
       if (iface.requires_intervention) intervC++;
     }
     const n = interfaces.length;
-    return NextResponse.json({ interfaces, summary: {
+    return NextResponse.json(sealResponse({ interfaces, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_ux_composite: Math.round(tcomp/n*10)/10,
       load_signal_count: loadC, intervention_required_count: intervC,
@@ -119,7 +120,7 @@ export async function GET() {
       avg_adaptation_score: Math.round(tadp/n*10)/10,
       avg_accessibility_score: Math.round(tacc/n*10)/10,
       avg_estimated_cognitive_friction_index: Math.round(tfri/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/neuroadaptive-ux-engine`)).json());
 }

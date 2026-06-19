@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_DOSSIERS = [
   { dossier_id:"DP-001", entity_type:"customer",  region:"EMEA",  consent_validity_score:0.10, consent_recency_days:420, data_minimization_score:0.20, purpose_limitation_score:0.15, access_request_pending_days:45, erasure_request_pending_days:38, portability_request_pending_days:40, breach_detection_days_since:5, breach_notification_delay_hours:96, encryption_at_rest_pct:0.20, encryption_in_transit_pct:0.30, vulnerability_exposure_score:0.88, cross_border_transfer_unprotected:8, standard_contractual_clauses_pct:0.10, retention_excess_days:200, retention_violation_count:6, dpia_completion_pct:0.10, third_party_processor_compliance:0.15 },
@@ -110,7 +111,7 @@ export async function GET() {
       if (d.has_active_violation) av++; if (d.requires_dpa_notification) dpa++;
     }
     const n = dossiers.length;
-    return NextResponse.json({ dossiers, summary: {
+    return NextResponse.json(sealResponse({ dossiers, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_protection_composite: Math.round(tcomp/n*10)/10,
       active_violation_count: av, dpa_notification_count: dpa,
@@ -119,7 +120,7 @@ export async function GET() {
       avg_breach_score: Math.round(tbr/n*10)/10,
       avg_transfer_score: Math.round(ttr/n*10)/10,
       avg_estimated_fine_risk_index: Math.round(tfine/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/data-protection-engine`)).json());
 }

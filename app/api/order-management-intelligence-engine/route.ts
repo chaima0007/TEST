@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -315,7 +316,7 @@ export async function GET(request: Request) {
 
   const n = scoredOrders.length;
 
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     orders,
     summary: {
       total:                    n,
@@ -332,5 +333,5 @@ export async function GET(request: Request) {
       avg_logistics_score:      Math.round((total_log / n) * 10) / 10,
       avg_estimated_delay_days: Math.round((total_delay / n) * 10) / 10,
     },
-  });
+  } as Record<string,unknown>));
 }

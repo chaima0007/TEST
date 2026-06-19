@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"CI-001", region:"EMEA",  evaluation_period_id:"Q2-2026", competitive_win_rate_pct:0.18, competitive_loss_rate_pct:0.72, battle_card_usage_rate_pct:0.12, competitive_mention_early_rate_pct:0.15, price_concession_vs_competitor_pct:0.62, feature_comparison_loss_rate_pct:0.52, competitive_deal_cycle_delta_days:28, no_competitive_intel_rate_pct:0.52, competitive_stakeholder_loss_pct:0.58, single_competitor_thread_rate_pct:0.65, late_competitor_discovery_rate_pct:0.58, displacement_win_rate_pct:0.12, proof_of_concept_win_rate_pct:0.18, reference_customer_usage_pct:0.10, total_competitive_deals:11, avg_deal_value_usd:92000, competitive_intensity_score:0.78, head_to_head_calls_per_deal:0.2, post_loss_debrief_rate_pct:0.12, total_deals_evaluated:14 },
@@ -94,7 +95,7 @@ export async function GET() {
       if (r.has_competitive_gap) gc++; if (r.requires_competitive_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_competitive_composite: Math.round(tcomp/n*10)/10,
       competitive_gap_count: gc, coaching_count: cc,
@@ -103,7 +104,7 @@ export async function GET() {
       avg_intelligence_score: Math.round(tin/n*10)/10,
       avg_positioning_score: Math.round(tpo/n*10)/10,
       total_estimated_lost_revenue_usd: Math.round(tlr*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-competitive-intelligence-battle-card-engine`)).json());
 }

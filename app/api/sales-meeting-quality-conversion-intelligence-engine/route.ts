@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"MQ-001", region:"EMEA",  evaluation_period_id:"Q2-2026", meetings_to_opportunity_rate_pct:0.12, discovery_completion_rate_pct:0.22, next_step_confirmed_rate_pct:0.18, demo_to_proposal_rate_pct:0.15, proposal_to_close_rate_pct:0.10, avg_meeting_duration_minutes:22, no_show_rate_pct:0.32, reschedule_rate_pct:0.48, multi_stakeholder_meeting_rate_pct:0.12, pain_identified_rate_pct:0.22, budget_confirmed_in_meeting_rate_pct:0.08, decision_process_mapped_rate_pct:0.10, meeting_notes_completion_rate_pct:0.18, repeat_meeting_same_stage_rate_pct:0.52, meeting_to_pipeline_velocity_days:28, champion_identified_meeting_rate_pct:0.12, competitive_mentioned_rate_pct:0.45, executive_access_secured_rate_pct:0.08, total_meetings_held:22, avg_deal_value_usd:85000 },
@@ -94,7 +95,7 @@ export async function GET() {
       if (r.has_meeting_gap) gc++; if (r.requires_meeting_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json({ reps, summary: {
+    return NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_meeting_composite: Math.round(tcomp/n*10)/10,
       meeting_gap_count: gc, coaching_count: cc,
@@ -103,7 +104,7 @@ export async function GET() {
       avg_execution_score: Math.round(tex/n*10)/10,
       avg_advancement_score: Math.round(tad/n*10)/10,
       total_estimated_wasted_meeting_usd: Math.round(tw*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-meeting-quality-conversion-intelligence-engine`)).json());
 }

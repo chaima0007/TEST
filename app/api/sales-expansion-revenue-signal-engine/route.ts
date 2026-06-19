@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ACCOUNTS = [
   { account_id:"EX-001", region:"EMEA",  evaluation_period_id:"Q1-2026", license_utilization_pct:0.94, feature_depth_score_pct:0.82, api_call_growth_rate_pct:0.38, storage_utilization_pct:0.91, adjacent_product_fit_score:0.88, competitor_displacement_pct:0.58, integration_gap_count:6, feature_request_frequency:9, power_user_pct:0.48, nps_score:78.0, executive_engagement_score:0.82, expansion_conversation_initiated:0.8, champion_advocacy_score:0.88, stakeholder_growth_count:4, contract_renewal_months:7, upsell_budget_confirmed:0.85, current_arr_usd:220000, potential_expansion_arr_usd:180000, account_tenure_months:20 },
@@ -100,7 +101,7 @@ export async function GET() {
       if (a.has_expansion_signal) gc++; if (a.requires_executive_engagement) ec++;
     }
     const n = accounts.length;
-    return NextResponse.json({ accounts, summary: {
+    return NextResponse.json(sealResponse({ accounts, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_expansion_composite: Math.round(tcomp/n*10)/10,
       expansion_signal_count: gc, executive_engagement_count: ec,
@@ -109,7 +110,7 @@ export async function GET() {
       avg_engagement_score: Math.round(ten/n*10)/10,
       avg_relationship_score: Math.round(tre/n*10)/10,
       total_estimated_expansion_arr_usd: Math.round(tarr*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-expansion-revenue-signal-engine`)).json());
 }

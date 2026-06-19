@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_DEALS = [
   { deal_id:"DV-001", region:"EMEA",  pipeline_stage:"proposal",           days_in_current_stage:58, expected_stage_duration_days:14, stage_regression_count:3, last_activity_days_ago:18, decision_date_pushed_count:5, decision_criteria_agreed:0.12, procurement_engaged:0.08, legal_review_started:0.0, stakeholder_response_rate_pct:0.10, active_stakeholder_count:1, economic_buyer_engaged:0.08, multithreading_score:0.08, champion_last_contact_days:28, champion_sentiment_score:0.15, champion_internal_advocacy:0.08, budget_confirmed:0.08, deal_value_usd:280000, days_to_close_target:8, win_probability_pct:0.12 },
@@ -104,7 +105,7 @@ export async function GET() {
       if (d.has_velocity_gap) gc++; if (d.requires_executive_bridge) ec++;
     }
     const n = deals.length;
-    return NextResponse.json({ deals, summary: {
+    return NextResponse.json(sealResponse({ deals, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_velocity_composite: Math.round(tcomp/n*10)/10,
       velocity_gap_count: gc, executive_bridge_count: ec,
@@ -113,7 +114,7 @@ export async function GET() {
       avg_stakeholder_score: Math.round(tsk/n*10)/10,
       avg_champion_score: Math.round(tch/n*10)/10,
       avg_estimated_delay_days: Math.round(tdelay/n*10)/10,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-deal-velocity-acceleration-engine`)).json());
 }

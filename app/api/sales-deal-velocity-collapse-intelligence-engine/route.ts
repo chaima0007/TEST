@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"DV-001", region:"EMEA",  evaluation_period_id:"Q2-2026", avg_days_in_current_stage:38, avg_cycle_length_days:155, cycle_length_vs_benchmark_pct:0.62, stage_regression_count:3, no_activity_streak_days:16, champion_response_time_days:12, executive_sponsor_days_since_contact:45, next_step_defined_rate_pct:0.18, mutual_action_plan_completion_pct:0.12, close_date_slip_count:4, close_date_slip_days_avg:22, proposal_sent_to_response_days:18, poc_to_commercial_days:75, avg_stakeholder_response_rate_pct:0.18, multi_threaded_deal_rate_pct:0.15, competitive_re_eval_trigger_pct:0.42, late_stage_stall_rate_pct:0.52, total_active_deals:8, avg_deal_value_usd:85000 },
@@ -160,7 +161,7 @@ export async function GET() {
       avg_pipeline_risk_score: Math.round(total_pip/n*10)/10,
       total_estimated_at_risk_pipeline_usd: Math.round(total_ar*100)/100,
     };
-    return NextResponse.json({ reps, summary });
+    return NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>));
   }
 
   const res = await fetch(`${process.env.SWARM_API_URL}/sales-deal-velocity-collapse-intelligence-engine`);

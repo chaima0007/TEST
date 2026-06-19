@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_CHANNELS = [
   { channel_id:"CH-001", channel_type:"direct",      region:"EMEA",  channel_revenue_contribution:0.22, partner_performance_score:0.25, channel_coverage_score:0.28, margin_per_channel:0.22, conflict_index:0.72, partner_engagement_score:0.28, certification_compliance_pct:0.30, deal_registration_rate:0.28, channel_marketing_roi:0.25, co_selling_effectiveness:0.28, partner_churn_risk:0.78, territory_overlap_score:0.75, icp_alignment_score:0.28, training_program_effectiveness:0.25, revenue_forecast_accuracy:0.28, digital_channel_adoption:0.30, partner_satisfaction_score:0.22 },
@@ -110,7 +111,7 @@ export async function GET() {
       if (e.requires_strategic_review) reviewC++;
     }
     const n = channels.length;
-    return NextResponse.json({ channels, summary: {
+    return NextResponse.json(sealResponse({ channels, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_channel_composite: Math.round(tcomp/n*10)/10,
       channel_alert_count: alertC, strategic_review_count: reviewC,
@@ -119,7 +120,7 @@ export async function GET() {
       avg_health_score: Math.round(thlth/n*10)/10,
       avg_enablement_score: Math.round(tenab/n*10)/10,
       avg_estimated_channel_risk_index: Math.round(tridx/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-channel-partnership-engine`)).json());
 }

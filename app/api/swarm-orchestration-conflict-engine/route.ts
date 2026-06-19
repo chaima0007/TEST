@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_SWARMS = [
   // SO-001 sales EMEA — critical deadlock
@@ -118,7 +119,7 @@ export async function GET() {
       if (s.requires_human_intervention) humanC++;
     }
     const n = swarms.length;
-    return NextResponse.json({ swarms, summary: {
+    return NextResponse.json(sealResponse({ swarms, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_orchestration_composite: Math.round(tcomp/n*10)/10,
       orchestration_alert_count: alertC, human_intervention_count: humanC,
@@ -127,7 +128,7 @@ export async function GET() {
       avg_efficiency_score: Math.round(tef/n*10)/10,
       avg_resilience_score: Math.round(tre/n*10)/10,
       avg_estimated_swarm_health_index: Math.round(thealth/n*100)/100,
-    }});
+    }} as Record<string,unknown>));
   }
   return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/swarm-orchestration-conflict-engine`)).json());
 }

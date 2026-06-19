@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_REPS = [
   { rep_id:"QR-001", region:"EMEA",      evaluation_period_id:"Q2-2026", quota_attainment_pct:1.28, forecast_accuracy_pct:0.38, commit_vs_actual_ratio:0.62, sandbagging_index:0.72, overcommit_frequency_pct:0.12, late_quarter_close_rate_pct:0.71, pipeline_to_quota_ratio:4.2, early_commit_accuracy_pct:0.28, mid_commit_accuracy_pct:0.41, late_commit_accuracy_pct:0.88, upside_conversion_rate_pct:0.72, commit_revision_frequency:2, pulled_in_deal_rate_pct:0.38, pushed_out_deal_rate_pct:0.08, quota_to_territory_fit_score:0.72, mgr_trust_in_forecast_score:0.28, peer_comparison_delta_pct:0.18, consecutive_miss_streak:0, voluntary_quota_increase_pct:0.05 },
@@ -161,7 +162,7 @@ export async function GET() {
       avg_volatility_score: Math.round(total_vol/n*10)/10,
       total_estimated_quota_distortion_usd: Math.round(total_dist*100)/100,
     };
-    return NextResponse.json({ reps, summary });
+    return NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>));
   }
 
   const res = await fetch(`${process.env.SWARM_API_URL}/sales-quota-sandbag-overcommit-intelligence-engine`);
