@@ -4597,6 +4597,99 @@ function IconAgingInfra({ className }: { className?: string }) {
   );
 }
 
+function IconWorkerAutomation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="7" y="2" width="6" height="5" rx="1"/>
+      <path d="M10 7v3"/>
+      <path d="M5 10h10"/>
+      <path d="M5 10l-2 5M15 10l2 5"/>
+      <path d="M3 15h4M13 15h4"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconAutonomousVehicle({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 12l2-5h10l2 5"/>
+      <rect x="2" y="12" width="16" height="4" rx="2"/>
+      <circle cx="6" cy="16" r="1.5"/>
+      <circle cx="14" cy="16" r="1.5"/>
+      <path d="M8 9h4" opacity="0.5"/>
+      <circle cx="10" cy="6" r="2" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconCBDC({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M10 5v10M7 7.5h4.5a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4z" opacity="0.7"/>
+      <path d="M13 3l3-1M7 17l-3 1"/>
+    </svg>
+  );
+}
+
+function IconReproductiveRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="8" r="4"/>
+      <path d="M10 12v7"/>
+      <path d="M7 16h6"/>
+      <path d="M14 4l3-3M16 4l1-3" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconSupplyChainESG({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="3" cy="10" r="2"/>
+      <circle cx="10" cy="4" r="2"/>
+      <circle cx="17" cy="10" r="2"/>
+      <circle cx="10" cy="16" r="2"/>
+      <path d="M5 10h3M12 10h3M10 6v2M10 14v-2"/>
+      <path d="M8 6l-3 3M14 6l-1 2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconNoisePollution({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 7h3l4-4v14l-4-4H3V7z"/>
+      <path d="M14 7a5 5 0 0 1 0 6" opacity="0.8"/>
+      <path d="M16 5a8 8 0 0 1 0 10" opacity="0.5"/>
+      <line x1="2" y1="18" x2="18" y2="2" stroke="currentColor" strokeWidth="1.3" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconCryptoMining({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="7" width="16" height="7" rx="1"/>
+      <path d="M5 7V5M9 7V5M13 7V5M17 7V5" opacity="0.6"/>
+      <path d="M5 14v2M9 14v2M13 14v2M17 14v2" opacity="0.6"/>
+      <path d="M2 14l3-3 3 2 5-4 5 2" opacity="0.5" strokeWidth="1"/>
+    </svg>
+  );
+}
+
+function IconMetaverse({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 7l8-4 8 4v6l-8 4-8-4V7z"/>
+      <path d="M2 7l8 4 8-4"/>
+      <path d="M10 11v6"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none" opacity="0.4"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5065,6 +5158,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/deep-sea-mining-engine", label: "Mines Fond Marin", icon: IconDeepSeaMining },
       { href: "/dashboard/biosurveillance-engine", label: "Biosurveillance", icon: IconBiosurveillance },
       { href: "/dashboard/aging-infrastructure-engine", label: "Infra Vieillissante", icon: IconAgingInfra },
+      { href: "/dashboard/worker-automation-engine", label: "Automatisation Emplois", icon: IconWorkerAutomation },
+      { href: "/dashboard/autonomous-vehicle-engine", label: "Véhicules Autonomes", icon: IconAutonomousVehicle },
+      { href: "/dashboard/cbdc-sovereignty-engine", label: "CBDC Souveraineté", icon: IconCBDC },
+      { href: "/dashboard/reproductive-rights-engine", label: "Droits Reproductifs", icon: IconReproductiveRights },
+      { href: "/dashboard/supply-chain-esg-engine", label: "ESG Chaîne Appro.", icon: IconSupplyChainESG },
+      { href: "/dashboard/noise-pollution-engine", label: "Pollution Sonore", icon: IconNoisePollution },
+      { href: "/dashboard/crypto-mining-engine", label: "Minage Crypto Env.", icon: IconCryptoMining },
+      { href: "/dashboard/metaverse-governance-engine", label: "Gouvernance Métavers", icon: IconMetaverse },
     ],
   },
   {
