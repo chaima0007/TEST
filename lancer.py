@@ -70,6 +70,13 @@ MENU = """
   [24] Agent Empire              ← Vision 5 ans — expansion et domination
   [25] Agent TITAN               ← 20 experts + 50 simulations — zéro erreur
 
+  ── NOUVEAUX AGENTS BUSINESS & ADMINISTRATIF ──────────────
+  [26] Comptable Belge           ← TVA, BCE, INASTI, déductions, factures légales
+  [27] Agent Financement         ← Innoviris, Hub Brussels, subventions, pitch
+  [28] Agent Tarification        ← Pricing, ROI client, packages, upsell
+  [29] Agent Marque              ← Branding, storytelling, LinkedIn, positionnement
+  [30] Agent Mental              ← Coach entrepreneurial, blocages, routine fondatrice
+
   [s]  Voir stats & mémoire
   [0]  Quitter
 """
@@ -141,6 +148,16 @@ if __name__ == "__main__":
             lancer("agent_empire.py")
         elif choix == "25":
             lancer("agent_titan.py")
+        elif choix == "26":
+            lancer("agent_comptable_belge.py")
+        elif choix == "27":
+            lancer("agent_financement.py")
+        elif choix == "28":
+            lancer("agent_tarification.py")
+        elif choix == "29":
+            lancer("agent_marque.py")
+        elif choix == "30":
+            lancer("agent_mental.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
