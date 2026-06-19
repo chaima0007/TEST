@@ -56,6 +56,51 @@ TOUS_LES_AGENTS = {
     "usine_migration_logicielle.py": "Moderniser du code legacy",
 }
 
+# ─── ALGORITHME DE PRIORITÉ ───────────────────────────────────────────────────
+
+ALGORITHME_PRIORITE = """
+## ALGORITHME DE PRIORITÉ — GUIDE CAELUM PARTNERS
+
+### RÈGLE 1 : SI 0 CLIENTS (phase actuelle)
+Agents P0 (PRIORITÉ ABSOLUE — lancer EN PREMIER) :
+  → agent_commercial.py : Prospects, scoring BANT, messages LinkedIn
+  → agent_email.py : Cold emails, séquences de prospection
+  → agent_growth.py : Campagne semaine, connexions LinkedIn, posts viraux
+Logique : Sans clients = sans revenus. TOUT le reste est secondaire.
+
+### RÈGLE 2 : SI CLIENTS ACTIFS (phase suivante)
+Agents P0 (une fois le premier client signé) :
+  → agent_support_client.py : Tickets, FAQ, satisfaction client
+  → agent_crm.py : Suivi, relances, pipeline
+  → agent_facturation.py : Créer factures, relancer paiements en retard
+Logique : Les clients existants génèrent des revenus récurrents et des références.
+
+### RÈGLE 3 : SI INCERTITUDE LÉGALE / FINANCIÈRE
+Agents P0 (avant toute signature ou déclaration) :
+  → agent_auditeur_financier.py : Cumul ONEM, seuils, simulation contrats
+  → agent_comptable_belge.py : BCE, TVA, factures conformes
+Logique : Une erreur légale peut coûter des milliers d'euros de remboursement ONEM.
+
+### RÈGLE 4 : SIGNAUX D'ALARME
+- Prospect chaud identifié → lancer agent_commercial.py MAINTENANT
+- Seuil ONEM à moins de 20% → lancer agent_auditeur_financier.py MAINTENANT
+- Facture en retard > 15 jours → lancer agent_facturation.py MAINTENANT
+- 0 post LinkedIn depuis 7 jours → lancer agent_growth.py MAINTENANT
+
+### RÈGLE 5 : ORDRE DU MATIN (routine quotidienne recommandée)
+1. Vérifier briefing_matinal() → savoir les urgences du jour
+2. Si prospects en attente → agent_commercial.py (répondre dans les 24h)
+3. Post LinkedIn du jour → agent_growth.py (cohérence = algorithme)
+4. Tâches administratives → agent_comptable_belge.py ou agent_facturation.py
+"""
+
+# ─── FICHIERS JSON DE MÉMOIRE ─────────────────────────────────────────────────
+FICHIERS_MEMOIRE = {
+    "memoire_entreprise.json": "Clients, factures, tickets, projets, interactions, stats agents",
+    "crm_pipeline.json": "Pipeline commercial : prospects, étapes, valeurs, dates",
+    "historique_caelum.json": "Historique complet des actions Caelum Partners",
+}
+
 
 def _creer_model(model_name=None, system_instruction="", generation_config=None, **kwargs):
     """Compatibilité: retourne un proxy GenerativeModel pour google.genai."""
@@ -245,22 +290,26 @@ def agent_guide_conversationnel():
     print("  Tape 'quitter' pour arrêter.")
     print("═"*60)
 
-    system = f"""Tu es le conseiller omniscient de AgentClaude Solutions.
+    system = f"""Tu es le conseiller omniscient de Caelum Partners (Chaima Mhadbi, Bruxelles).
 Tu connais TOUS les agents disponibles et l'état complet de l'entreprise.
 Tu guides toujours vers une action concrète avec le bon agent.
+
+ALGORITHME DE PRIORITÉ :
+{ALGORITHME_PRIORITE}
 
 Agents disponibles :
 {chr(10).join(f'• {k} : {v}' for k, v in TOUS_LES_AGENTS.items())}
 
 État actuel :
-- Clients actifs : {etat['clients_actifs']}
-- Prospects : {etat['prospects']}
+- Clients actifs : {etat['clients_actifs'] or 'AUCUN — objectif = premier client ASAP'}
+- Prospects : {etat['prospects'] or 'Aucun prospect enregistré'}
 - Urgences : factures en retard={etat['factures_retard']}, tickets critiques={len(etat['tickets_critiques'])}
 
 Règles :
+- Si 0 clients → TOUJOURS suggérer agent_commercial.py ou agent_growth.py EN PREMIER
 - Toujours terminer par "Lance : python [agent.py]" quand applicable
-- Être concis et actionnable
-- Si plusieurs options, donner la meilleure en premier"""
+- Être concis et actionnable (réponse max 150 mots)
+- Si plusieurs options, donner la meilleure en premier selon l'algorithme de priorité"""
 
     model = _creer_model(
         model_name=MODEL,
@@ -346,6 +395,73 @@ Ton briefing est :
     )
 
 
+
+# ─────────────────────────────────────────────────────────────
+# AGENT 6 : BRIEFING MATINAL — Lire tous les JSON et résumer
+# ─────────────────────────────────────────────────────────────
+
+def briefing_matinal():
+    """Lit tous les fichiers JSON de mémoire et génère un briefing complet du matin."""
+    heure = datetime.now().strftime("%H:%M")
+    jour = datetime.now().strftime("%A %d %B %Y")
+
+    # Charger tous les fichiers JSON disponibles
+    donnees = {}
+    for fichier, description in FICHIERS_MEMOIRE.items():
+        try:
+            if os.path.exists(fichier):
+                with open(fichier, "r", encoding="utf-8") as f:
+                    donnees[fichier] = json.load(f)
+            else:
+                donnees[fichier] = {"statut": "fichier non trouvé", "description": description}
+        except Exception as e:
+            donnees[fichier] = {"erreur": str(e)}
+
+    # Aussi charger memoire_entreprise.json via la fonction existante
+    etat = construire_etat_entreprise()
+
+    # Analyser ce qui s'est passé hier
+    hier = datetime.now()
+    interactions_recentes = []
+    try:
+        m = donnees.get("memoire_entreprise.json", {})
+        for interaction in m.get("interactions", [])[-10:]:
+            interactions_recentes.append(interaction)
+    except Exception:
+        pass
+
+    instructions = f"""Tu es l'assistant personnel de Chaima Mhadbi (Caelum Partners, Bruxelles).
+Tu prépares son briefing du matin. Tu connais l'algorithme de priorité suivant :
+
+{ALGORITHME_PRIORITE}
+
+Tu connais tous les agents disponibles :
+{chr(10).join(f'• {k} : {v}' for k, v in TOUS_LES_AGENTS.items())}
+
+TON BRIEFING DOIT COUVRIR :
+1. CE QUI S'EST PASSÉ HIER (interactions récentes, nouveaux prospects, factures)
+2. URGENCES DU JOUR (en rouge) — ce qui ne peut pas attendre
+3. PRIORITÉS DU JOUR (en orange) — les 3 actions les plus importantes
+4. PLAN D'ACTION SUGGÉRÉ (quel agent lancer en premier, pourquoi)
+5. SIGNAL D'ALARME si risque ONEM, facture en retard, ou prospect chaud non relancé
+6. INTENTION DU JOUR — 1 focus pour rester dans le bon état d'esprit
+
+Format : chaleureux mais efficace. Maximum 400 mots. Toujours terminer par le premier agent à lancer.
+"""
+
+    streamer(
+        instructions,
+        f"""Heure : {heure} | Jour : {jour}
+État entreprise (depuis mémoire) : {json.dumps(etat, ensure_ascii=False, indent=2)}
+Fichiers JSON disponibles : {json.dumps({k: "chargé" if "erreur" not in v and "statut" not in v else v for k, v in donnees.items()}, ensure_ascii=False)}
+Interactions récentes (10 dernières) : {json.dumps(interactions_recentes, ensure_ascii=False)}
+Clients actifs : {etat['clients_actifs'] or 'AUCUN — Phase acquisition'}
+Prospects en cours : {etat['prospects'] or 'Aucun prospect enregistré'}
+Factures en retard : {etat['factures_retard'] or 'Aucune'}""",
+        f"BRIEFING MATINAL — {jour} à {heure}"
+    )
+
+
 # ─────────────────────────────────────────────────────────────
 # MENU
 # ─────────────────────────────────────────────────────────────
@@ -361,6 +477,7 @@ if __name__ == "__main__":
         print("  3. Guide conversationnel — Pose ta question")
         print("  4. Séquenceur — Plan d'action 30/90 jours")
         print("  5. Réveil quotidien — Briefing du matin")
+        print("  6. Briefing matinal intelligent — lit tous les JSON + priorités")
         print("  0. Quitter\n")
 
         choix = input("  Choix → ").strip()
@@ -379,5 +496,7 @@ if __name__ == "__main__":
             agent_sequenceur(obj, int(h) if h.isdigit() else 30)
         elif choix == "5":
             agent_reveil_quotidien()
+        elif choix == "6":
+            briefing_matinal()
         else:
             print("  Choix invalide.")

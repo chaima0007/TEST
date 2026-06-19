@@ -27,10 +27,72 @@ CONTEXTE = {
     "fondatrice": "Chaima Mhadbi",
     "localisation": "Bruxelles, Belgique",
     "services": ["Site web 500€", "Automation IA 1500€", "Pack complet 3000€"],
-    "cible": "PME, startups, indépendants — Belgique + Europe francophone",
+    "cible": "PME 5-50 employés, Bruxelles/Brabant, secteurs: services/conseil/immobilier/juridique",
     "canal_principal": "LinkedIn",
     "site": "caelumpartners.agency",
+    "statut": "0 clients — objectif premier client ASAP",
+    "budget_marketing": "0€ (bootstrapped)",
+    "avantage": "Livraison en 7 jours, prix PME, IA sur mesure",
 }
+
+# ─── KNOWLEDGE BASE GROWTH — DONNÉES RÉELLES ──────────────────────────────────
+
+LINKEDIN_ALGO_2024_2025 = """
+## ALGORITHME LINKEDIN 2024-2025 — RÈGLES RÉELLES
+
+### Horaires optimaux de publication (heure belge — CET/CEST)
+- Mardi : 7h-9h (pic engagement matin) ou 12h-13h (pause déjeuner)
+- Mercredi : 7h-9h (meilleur jour global) ou 17h-18h (fin de journée)
+- Jeudi : 12h-13h (deuxième meilleur créneau hebdo)
+- À ÉVITER : lundi matin (inbox pleine), vendredi après-midi, weekends
+
+### Structure d'un post viral LinkedIn (HOOK + STORY + INSIGHT + CTA)
+1. HOOK (ligne 1 — décide si "voir plus" est cliqué) :
+   - Question provocatrice : "Pourquoi les PME belges perdent-elles 10h/semaine sur des tâches qu'une IA ferait en 30 secondes ?"
+   - Affirmation audacieuse : "J'ai automatisé en 7 jours ce qu'une assistante faisait en 20h/semaine."
+   - Stat surprenante : "87% des PME belges n'ont pas encore automatisé leur facturation. Voici pourquoi c'est une erreur."
+2. STORY (2-4 lignes) : situation concrète, personnage identifiable, problème réel
+3. INSIGHT (2-3 lignes) : la leçon, la solution, le principe actionnable
+4. CTA (1 ligne) : "Commentez 'DEMO' pour recevoir..." ou question ouverte qui invite à commenter
+
+### Règles algorithmiques LinkedIn 2024
+- Les 60 premières minutes après publication sont décisives (golden hour)
+- Répondre à TOUS les commentaires dans les 2 premières heures = signal fort
+- Les posts avec 3-5 hashtags pertinents performent mieux
+- Les posts avec 1-3 images ou carousels ont 3x plus de portée organique
+- Les posts qui genèrent des commentaires longs > des simples likes
+- Hashtags recommandés : #PMEBelgique #AutomatisationIA #AgentsIA #Bruxelles #Digitalisation
+
+### Demandes de connexion — règles
+- Maximum 300 caractères, personnalisée (mentionner 1 élément spécifique de leur profil)
+- JAMAIS pitcher dans la demande de connexion
+- Taux d'acceptation moyen d'une demande personnalisée : 35-45%
+- Template : "Bonjour [Prénom], j'ai vu votre [post/article] sur [sujet]. Votre point sur [élément précis] m'a interpellé. Je travaille dans le même secteur à Bruxelles. Ravi d'échanger."
+
+### Stats LinkedIn Belgique
+- 4,1 millions d'utilisateurs actifs
+- 75% des décideurs (C-level) vérifient LinkedIn chaque semaine
+- Taux d'engagement moyen B2B : 2-3% (vs 0,5% Facebook)
+- Meilleur réseau B2B pour la prospection en Belgique (devant Xing, Twitter)
+"""
+
+GROWTH_PLAYBOOK = """
+## GROWTH PLAYBOOK CAELUM PARTNERS — 0 À PREMIER CLIENT
+
+### Semaine 1 — Fondations LinkedIn
+- Jour 1 : Optimiser profil (photo, bannière Caelum, headline avec bénéfice client)
+- Jour 2-7 : Envoyer 20 demandes de connexion/jour aux prospects idéaux (PME Bruxelles)
+- Posts : 3 posts cette semaine (lundi, mercredi, vendredi) — thèmes : problème client, solution IA, case study
+
+### Objectif semaine 1 :
+- 100+ nouvelles connexions
+- 3 réponses à des messages de prospection
+- 1 réunion planifiée
+
+### Conversion entonnoir réaliste :
+- 100 demandes → 35-45 acceptées → 5-10 réponses aux messages → 1-2 réunions → 0,5 client
+- Soit : 200 demandes pour obtenir 1 client (environ 2 semaines intensives)
+"""
 
 
 def _creer_model(model_name=None, system_instruction="", generation_config=None, **kwargs):
@@ -296,6 +358,75 @@ Semaine 4 ...
     sauvegarder("plan_90_jours", r)
 
 
+
+# ─────────────────────────────────────────────────────────────
+# 7. CAMPAGNE SEMAINE — Plan complet 7 jours LinkedIn
+# ─────────────────────────────────────────────────────────────
+
+def generer_campagne_semaine():
+    """Génère une campagne LinkedIn complète sur 7 jours : 3 posts + 20 connexions + 5 follow-ups."""
+    from datetime import datetime
+    semaine_num = datetime.now().strftime("Semaine %W — %B %Y")
+
+    r = streamer(
+        f"""Tu es un Growth Expert LinkedIn spécialisé B2B belge.
+Tu connais les données réelles du marché :
+
+{LINKEDIN_ALGO_2024_2025}
+
+{GROWTH_PLAYBOOK}
+
+Contexte entreprise : {json.dumps(CONTEXTE, ensure_ascii=False)}
+
+GÉNÈRE UNE CAMPAGNE LINKEDIN COMPLÈTE POUR {semaine_num} :
+
+## 3 POSTS LINKEDIN COMPLETS (rédigés, prêts à publier)
+
+### POST 1 — MARDI 8h (Éducatif / Problème client)
+[Rédige le post complet avec hook, story, insight, CTA — 150-250 mots]
+Hashtags : [liste exacte]
+Image suggérée : [description]
+
+### POST 2 — MERCREDI 12h (Témoignage / Résultat)
+[Rédige le post complet]
+Hashtags : [liste exacte]
+
+### POST 3 — JEUDI 12h (Offre / CTA direct)
+[Rédige le post complet — peut inclure une offre limitée]
+Hashtags : [liste exacte]
+
+## 20 MESSAGES DE DEMANDE DE CONNEXION (personnalisés par secteur)
+
+5 messages pour : Consultants/Coachs Bruxelles
+5 messages pour : Agences immobilières Brabant
+5 messages pour : Cabinets d'avocats/notaires Bruxelles
+5 messages pour : PME services RH/recrutement
+
+[Chaque message : max 300 caractères, personnalisé, SANS pitch]
+
+## 5 MESSAGES DE SUIVI (pour connexions acceptées il y a 2-3 jours)
+
+[5 messages de prospection utilisant le template éprouvé Caelum Partners]
+
+## PLANNING JOUR PAR JOUR
+Lundi : [actions]
+Mardi : [post #1 + X connexions + répondre commentaires]
+...
+Dimanche : [revue des résultats]
+
+## KPIs À SUIVRE CETTE SEMAINE
+- Connexions envoyées : objectif 100
+- Connexions acceptées : objectif 35-45
+- Réponses aux messages : objectif 3-5
+- Réunions planifiées : objectif 1-2
+""",
+        f"Données : {json.dumps(CONTEXTE, ensure_ascii=False)}",
+        f"CAMPAGNE SEMAINE COMPLÈTE — {semaine_num}"
+    )
+    sauvegarder("campagne_semaine", r)
+    return r
+
+
 # ─────────────────────────────────────────────────────────────
 # MENU
 # ─────────────────────────────────────────────────────────────
@@ -313,6 +444,7 @@ if __name__ == "__main__":
         print("  4. Funnel de conversion — prospect → client fidèle")
         print("  5. Viral loop — croissance exponentielle")
         print("  6. Plan 90 jours — de 0 à 10 clients")
+        print("  7. Campagne semaine complète — 3 posts + 20 connexions + 5 follow-ups")
         print("  0. Quitter\n")
 
         choix = input("  Choix → ").strip()
@@ -330,5 +462,7 @@ if __name__ == "__main__":
             viral_loop()
         elif choix == "6":
             plan_90_jours()
+        elif choix == "7":
+            generer_campagne_semaine()
         else:
             print("  Choix invalide.")
