@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
-// ── Security guard ─────────────────────────────────────────────────────────────
-if (!process.env.SWARM_API_URL) {
-  // will be evaluated per-request below
-}
-
 // ── Mock entities ──────────────────────────────────────────────────────────────
 // Module 312 — Caelum Partners — Chaima Mhadbi, Fondatrice, Bruxelles
 // 8 entities covering all fracture patterns and risk levels.
@@ -90,7 +85,6 @@ const MOCK_ENTITIES = [
   },
   // GAF-006 — EMEA, economic_alliance → moderate, none
   // composite in [20,40), no pattern triggered
-  // All fields below thresholds
   {
     entity_id: "GAF-006", alliance_type: "economic_alliance", region: "EMEA",
     internal_cohesion_erosion: 0.32,            burden_sharing_imbalance: 0.25,
@@ -237,7 +231,10 @@ function fractureSignal(e: Entity, pattern: string, comp: number): string {
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
     return NextResponse.json(
-      sealResponse({ error: "SWARM_API_URL non configuré — service indisponible" }, "geopolitical-alliance-fracture-engine") as Record<string, unknown>,
+      sealResponse(
+        { error: "SWARM_API_URL non configuré — service indisponible" } as Record<string, unknown>,
+        "geopolitical-alliance-fracture-engine"
+      ) as Record<string, unknown>,
       { status: 503 }
     );
   }
@@ -297,7 +294,6 @@ export async function GET() {
 
     const n = entities.length;
     const avgComp = Math.round(tComp / n * 10) / 10;
-
     const fractureCrisisEntities = entities.filter(e => e.is_fracture_crisis).map(e => e.entity_id);
     const dominantFracturePattern = Object.entries(pc).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "none";
 
@@ -332,7 +328,10 @@ export async function GET() {
     );
   } catch {
     return NextResponse.json(
-      sealResponse({ error: "Erreur moteur fracture alliance géopolitique" }, "geopolitical-alliance-fracture-engine") as Record<string, unknown>,
+      sealResponse(
+        { error: "Erreur moteur fracture alliance géopolitique" } as Record<string, unknown>,
+        "geopolitical-alliance-fracture-engine"
+      ) as Record<string, unknown>,
       { status: 502 }
     );
   }
