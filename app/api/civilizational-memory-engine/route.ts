@@ -36,12 +36,12 @@ const MOCK_ENTITIES = [
     knowledge_accessibility:0.85, narrative_coherence:0.85 },
   // CM-005: MEA, linguistic_heritage → critical, linguistic_extinction
   { entity_id:"CM-005", heritage_category:"linguistic_heritage", region:"MEA",
-    memory_preservation_rate:0.52, cultural_transmission_fidelity:0.25, knowledge_erosion_rate:0.48,
-    digital_archival_completeness:0.20, intergenerational_transfer:0.22, linguistic_vitality:0.08,
-    oral_tradition_preservation:0.20, artifact_integrity:0.35, collective_identity_coherence:0.25,
+    memory_preservation_rate:0.55, cultural_transmission_fidelity:0.50, knowledge_erosion_rate:0.45,
+    digital_archival_completeness:0.20, intergenerational_transfer:0.45, linguistic_vitality:0.08,
+    oral_tradition_preservation:0.42, artifact_integrity:0.35, collective_identity_coherence:0.45,
     cultural_innovation_rate:0.20, heritage_monetization_potential:0.35, diaspora_network_strength:0.30,
-    institutional_fragility:0.88, memory_distortion_rate:0.75, cultural_resilience:0.12,
-    knowledge_accessibility:0.15, narrative_coherence:0.28 },
+    institutional_fragility:0.88, memory_distortion_rate:0.72, cultural_resilience:0.12,
+    knowledge_accessibility:0.15, narrative_coherence:0.48 },
   // CM-006: EMEA, material_culture → moderate, none
   { entity_id:"CM-006", heritage_category:"material_culture", region:"EMEA",
     memory_preservation_rate:0.62, cultural_transmission_fidelity:0.65, knowledge_erosion_rate:0.32,

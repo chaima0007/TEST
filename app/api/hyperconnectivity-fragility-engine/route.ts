@@ -44,12 +44,12 @@ const MOCK_ENTITIES = [
     zero_day_exposure:0.78, infrastructure_age:0.55 },
   // HF-006 — EMEA, telecom_backbone — moderate, none
   { entity_id:"HF-006", infrastructure_layer:"telecom_backbone", region:"EMEA",
-    node_density:0.48, interconnection_depth:0.45, single_point_concentration:0.42,
-    cascading_vulnerability:0.38, network_centrality_risk:0.45, latency_criticality:0.50,
-    bandwidth_saturation:0.45, protocol_obsolescence:0.40, dependency_depth:0.42,
-    redundancy_deficit:0.38, cyber_attack_surface:0.45, supply_chain_digital_exposure:0.40,
-    cloud_concentration_risk:0.38, data_sovereignty_gap:0.42, patch_velocity:0.58,
-    zero_day_exposure:0.40, infrastructure_age:0.45 },
+    node_density:0.35, interconnection_depth:0.32, single_point_concentration:0.32,
+    cascading_vulnerability:0.30, network_centrality_risk:0.35, latency_criticality:0.38,
+    bandwidth_saturation:0.32, protocol_obsolescence:0.30, dependency_depth:0.32,
+    redundancy_deficit:0.28, cyber_attack_surface:0.35, supply_chain_digital_exposure:0.30,
+    cloud_concentration_risk:0.28, data_sovereignty_gap:0.32, patch_velocity:0.65,
+    zero_day_exposure:0.30, infrastructure_age:0.35 },
   // HF-007 — APAC, data_centers — high, sovereignty_breach
   { entity_id:"HF-007", infrastructure_layer:"data_centers", region:"APAC",
     node_density:0.65, interconnection_depth:0.62, single_point_concentration:0.52,
