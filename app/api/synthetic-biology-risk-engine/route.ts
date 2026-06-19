@@ -52,10 +52,11 @@ const MOCK_ENTITIES = [
 
   // SBR-005 — critical, surveillance_blindspot
   // (1-biosurveillance_coverage)≥0.65 → biosurveillance≤0.35 AND (1-emerging_pathogen_monitoring)≥0.60 → monitoring≤0.40
+  // lab_safety_compliance=0.50 so (1-lsc)=0.50 < 0.65 → lab_leak_risk does NOT fire first
   // composite≥60
   { entity_id:"SBR-005", bio_domain:"gain_of_function", region:"MEA",
     pathogen_engineering_capability:0.78, dual_use_research_exposure:0.75, containment_protocol_quality:0.18,
-    biosurveillance_coverage:0.22, bioweapon_proliferation_risk:0.60, lab_safety_compliance:0.32,
+    biosurveillance_coverage:0.22, bioweapon_proliferation_risk:0.60, lab_safety_compliance:0.50,
     international_treaty_adherence:0.50, pandemic_preparedness_index:0.20, gene_drive_deployment_risk:0.45,
     biosecurity_governance_maturity:0.25, academic_biosecurity_culture:0.28, emerging_pathogen_monitoring:0.25,
     biodefense_investment_rate:0.20, supply_chain_bio_vulnerability:0.75, synthetic_pathogen_detectability:0.20,
@@ -84,14 +85,17 @@ const MOCK_ENTITIES = [
 
   // SBR-008 — critical, gene_drive_risk
   // gene_drive_deployment_risk≥0.70 AND (1-biosecurity_governance_maturity)≥0.60 → governance≤0.40
+  // lab_safety_compliance=0.50 → (1-lsc)=0.50 < 0.65: no lab_leak_risk
+  // biosurveillance_coverage=0.50 → (1-bs)=0.50 < 0.65: no surveillance_blindspot
+  // pandemic_preparedness_index=0.40 → (1-pp)=0.60 < 0.70: no pandemic_unpreparedness
   // composite≥60
   { entity_id:"SBR-008", bio_domain:"gain_of_function", region:"NOAM",
     pathogen_engineering_capability:0.80, dual_use_research_exposure:0.78, containment_protocol_quality:0.18,
-    biosurveillance_coverage:0.25, bioweapon_proliferation_risk:0.62, lab_safety_compliance:0.30,
-    international_treaty_adherence:0.52, pandemic_preparedness_index:0.22, gene_drive_deployment_risk:0.82,
+    biosurveillance_coverage:0.50, bioweapon_proliferation_risk:0.62, lab_safety_compliance:0.50,
+    international_treaty_adherence:0.52, pandemic_preparedness_index:0.40, gene_drive_deployment_risk:0.82,
     biosecurity_governance_maturity:0.32, academic_biosecurity_culture:0.35, emerging_pathogen_monitoring:0.30,
     biodefense_investment_rate:0.22, supply_chain_bio_vulnerability:0.72, synthetic_pathogen_detectability:0.22,
-    public_health_response_speed:0.25, biosecurity_intelligence_coverage:0.28 },
+    public_health_response_speed:0.45, biosecurity_intelligence_coverage:0.28 },
 ];
 
 type Entity = typeof MOCK_ENTITIES[0];
