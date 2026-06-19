@@ -3110,6 +3110,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-onboarding-ramp-velocity-engine", label: "Onboarding Ramp", icon: IconForecastAccuracy },
       { href: "/dashboard/sales-account-churn-early-warning-engine", label: "Churn Warning", icon: IconAccountChurn },
       { href: "/dashboard/sales-expansion-revenue-signal-engine", label: "Expansion Revenue", icon: IconExpansionRevenue },
+      { href: "/dashboard/sales-deal-velocity-acceleration-engine", label: "Deal Velocity", icon: IconDealVelocity },
     ],
   },
   {
