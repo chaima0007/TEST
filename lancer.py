@@ -76,6 +76,7 @@ MENU = """
   [28] Agent Tarification        ← Pricing, ROI client, packages, upsell
   [29] Agent Marque              ← Branding, storytelling, LinkedIn, positionnement
   [30] Agent Mental              ← Coach entrepreneurial, blocages, routine fondatrice
+  [31] Auditeur Financier        ← Simulation ONEM + Caelum, seuil optimal, conformité
 
   [s]  Voir stats & mémoire
   [0]  Quitter
@@ -158,6 +159,8 @@ if __name__ == "__main__":
             lancer("agent_marque.py")
         elif choix == "30":
             lancer("agent_mental.py")
+        elif choix == "31":
+            lancer("agent_auditeur_financier.py")
         elif choix == "s":
             from memoire import charger_memoire, lister_clients
             print("\n  ── CLIENTS ──")
