@@ -52,20 +52,20 @@ const MOCK_ENTITIES = [
     technology_sovereignty_gap: 0.35, adoption_curve_inflection: 0.30 },
   // ETC-007 — APAC, platform_tech — high, sovereignty_vacuum
   { entity_id: "ETC-007", tech_cluster: "platform_tech", region: "APAC",
-    ai_capability_acceleration: 0.62, quantum_computing_readiness: 0.48, biotech_convergence_rate: 0.42,
-    nanotech_integration: 0.38, robotics_autonomy_level: 0.55, energy_transition_speed: 0.40,
-    network_effect_multiplier: 0.58, disruption_velocity: 0.60, incumbent_displacement_rate: 0.55,
-    regulatory_adaptation_lag: 0.65, talent_concentration: 0.60, innovation_inequality: 0.52,
-    platform_dominance_risk: 0.65, open_source_disruption: 0.55, exponential_blind_spot: 0.68,
-    technology_sovereignty_gap: 0.75, adoption_curve_inflection: 0.58 },
+    ai_capability_acceleration: 0.55, quantum_computing_readiness: 0.42, biotech_convergence_rate: 0.38,
+    nanotech_integration: 0.35, robotics_autonomy_level: 0.48, energy_transition_speed: 0.38,
+    network_effect_multiplier: 0.50, disruption_velocity: 0.52, incumbent_displacement_rate: 0.48,
+    regulatory_adaptation_lag: 0.55, talent_concentration: 0.52, innovation_inequality: 0.45,
+    platform_dominance_risk: 0.55, open_source_disruption: 0.48, exponential_blind_spot: 0.65,
+    technology_sovereignty_gap: 0.75, adoption_curve_inflection: 0.50 },
   // ETC-008 — NOAM, ai_quantum_cluster — critical, innovation_inequality_spiral
   { entity_id: "ETC-008", tech_cluster: "ai_quantum_cluster", region: "NOAM",
-    ai_capability_acceleration: 0.80, quantum_computing_readiness: 0.65, biotech_convergence_rate: 0.55,
+    ai_capability_acceleration: 0.65, quantum_computing_readiness: 0.55, biotech_convergence_rate: 0.50,
     nanotech_integration: 0.58, robotics_autonomy_level: 0.70, energy_transition_speed: 0.48,
-    network_effect_multiplier: 0.72, disruption_velocity: 0.68, incumbent_displacement_rate: 0.60,
-    regulatory_adaptation_lag: 0.72, talent_concentration: 0.68, innovation_inequality: 0.78,
-    platform_dominance_risk: 0.62, open_source_disruption: 0.65, exponential_blind_spot: 0.58,
-    technology_sovereignty_gap: 0.65, adoption_curve_inflection: 0.75 },
+    network_effect_multiplier: 0.75, disruption_velocity: 0.68, incumbent_displacement_rate: 0.62,
+    regulatory_adaptation_lag: 0.72, talent_concentration: 0.70, innovation_inequality: 0.78,
+    platform_dominance_risk: 0.65, open_source_disruption: 0.72, exponential_blind_spot: 0.55,
+    technology_sovereignty_gap: 0.60, adoption_curve_inflection: 0.75 },
 ];
 
 type Entity = typeof MOCK_ENTITIES[0];
