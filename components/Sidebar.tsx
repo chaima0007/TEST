@@ -2802,6 +2802,18 @@ function IconRepBurnout({ className }: { className?: string }) {
   );
 }
 
+function IconAccountChurn({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="5" width="16" height="11" rx="2" fill="currentColor" fillOpacity="0.12"/>
+      <path d="M2 8h16"/>
+      <path d="M7 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5"/>
+      <path d="M14 3l2 2-2 2" fill="none"/>
+      <path d="M16 5H6" strokeDasharray="2 1"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3096,6 +3108,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-rep-burnout-productivity-decay-engine", label: "Rep Burnout", icon: IconRepBurnout },
       { href: "/dashboard/sales-forecast-accuracy-commit-reliability-engine", label: "Forecast Reliability", icon: IconForecastAccuracy },
       { href: "/dashboard/sales-onboarding-ramp-velocity-engine", label: "Onboarding Ramp", icon: IconForecastAccuracy },
+      { href: "/dashboard/sales-account-churn-early-warning-engine", label: "Churn Warning", icon: IconAccountChurn },
     ],
   },
   {
