@@ -3113,6 +3113,17 @@ function IconMemetic({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconGameTheory({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="7" height="7" rx="1" fill="currentColor" fillOpacity="0.1"/>
+      <rect x="11" y="2" width="7" height="7" rx="1" fill="currentColor" fillOpacity="0.1"/>
+      <rect x="2" y="11" width="7" height="7" rx="1" fill="currentColor" fillOpacity="0.1"/>
+      <rect x="11" y="11" width="7" height="7" rx="1" fill="currentColor" fillOpacity="0.1"/>
+      <path d="M5.5 5.5l9 9M14.5 5.5l-9 9" strokeDasharray="2 2"/>
+    </svg>
+  );
+}
 
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
@@ -3442,6 +3453,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/singularity-economy-engine", label: "Économie Singularité", icon: IconSingularityEconomy },
       { href: "/dashboard/post-quantum-cryptography-engine", label: "Crypto Post-Quantique", icon: IconPostQuantum },
       { href: "/dashboard/memetic-resonance-engine", label: "Résonance Mémetique", icon: IconMemetic },
+      { href: "/dashboard/game-theory-decision-engine", label: "Théorie des Jeux", icon: IconGameTheory },
     ],
   },
   {
