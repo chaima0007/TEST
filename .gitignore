@@ -17,3 +17,4 @@ rapport_*.txt
 proposition_*.txt
 facture_*.txt
 DOC_*.md
+.claude/
