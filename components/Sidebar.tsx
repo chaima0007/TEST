@@ -3187,6 +3187,69 @@ function IconPredictiveArbitrage({ className }: { className?: string }) {
   );
 }
 
+function IconFractionalOwnership({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="8"/>
+      <path d="M10 2v16M2 10h16" strokeWidth="1.2"/>
+      <path d="M5.5 5.5l9 9M14.5 5.5l-9 9" strokeWidth="0.9"/>
+    </svg>
+  );
+}
+function IconEmotionalCapital({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 17s-7-4.5-7-9a5 5 0 0 1 7-4.58A5 5 0 0 1 17 8c0 4.5-7 9-7 9z" fill="currentColor" fillOpacity="0.1"/>
+      <path d="M10 17s-7-4.5-7-9a5 5 0 0 1 7-4.58A5 5 0 0 1 17 8c0 4.5-7 9-7 9z"/>
+    </svg>
+  );
+}
+function IconRegenFinance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      <path d="M10 8V4M8 6l2-2 2 2"/>
+      <path d="M6 17a4 4 0 0 1 8 0" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconCognitiveWarfare({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="8" r="5"/>
+      <path d="M7 8c0-1.7 1.3-3 3-3M10 13v4M7 17h6"/>
+      <path d="M4 5L2 3M16 5l2-3M4 11l-2 2M16 11l2 2" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconSovereignAI({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="14" height="14" rx="2"/>
+      <path d="M7 7h6M7 10h4M7 13h5"/>
+      <circle cx="14" cy="13" r="2" fill="currentColor" fillOpacity="0.3"/>
+      <path d="M13.5 13.5l1 1"/>
+    </svg>
+  );
+}
+function IconHyperpersonalization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="7" r="3"/>
+      <path d="M4 18c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      <path d="M15 4l1.5-1.5M17 7h1.5M15 10l1.5 1.5" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+function IconFluidDynamics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 10c2-4 4-4 6 0s4 4 6 0" strokeLinecap="round"/>
+      <path d="M2 6c2-3 4-3 6 0s4 3 6 0" strokeLinecap="round" strokeWidth="1.1"/>
+      <path d="M2 14c2-3 4-3 6 0s4 3 6 0" strokeLinecap="round" strokeWidth="1.1"/>
+    </svg>
+  );
+}
 function IconNeuroadaptiveUX({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -3586,6 +3649,13 @@ const navSections: NavSection[] = [
       { href: "/dashboard/predictive-arbitrage-engine", label: "Arbitrage Algorithmique", icon: IconPredictiveArbitrage },
       { href: "/dashboard/quantum-social-intelligence-engine", label: "Intelligence Sociale", icon: IconQuantumSocial },
       { href: "/dashboard/synthetic-asset-liquidation-engine", label: "Liquidation DeFi", icon: IconSyntheticLiquidation },
+      { href: "/dashboard/fractional-ownership-engine", label: "Ownership Fractionné", icon: IconFractionalOwnership },
+      { href: "/dashboard/emotional-capital-engine", label: "Capital Émotionnel", icon: IconEmotionalCapital },
+      { href: "/dashboard/regenerative-finance-engine", label: "Finance Régénérative", icon: IconRegenFinance },
+      { href: "/dashboard/cognitive-warfare-engine", label: "Guerre Cognitive", icon: IconCognitiveWarfare },
+      { href: "/dashboard/sovereign-ai-governance-engine", label: "Gouvernance IA", icon: IconSovereignAI },
+      { href: "/dashboard/hyperpersonalization-engine", label: "Hyperpersonnalisation", icon: IconHyperpersonalization },
+      { href: "/dashboard/information-fluid-dynamics-engine", label: "Dynamique des Fluides", icon: IconFluidDynamics },
       { href: "/dashboard/neuroadaptive-ux-engine", label: "UX Neuroadaptif", icon: IconNeuroadaptiveUX },
       { href: "/dashboard/autonomous-supply-chain-engine", label: "Supply Chain Auto.", icon: IconSupplyChain },
       { href: "/dashboard/biomimetic-strategy-engine", label: "Stratégie Biomimétique", icon: IconBiomimetic },
