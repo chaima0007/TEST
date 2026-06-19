@@ -4783,6 +4783,95 @@ function IconPlatformEconomy({ className }: { className?: string }) {
   );
 }
 
+function IconSoilCarbon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 12h16"/>
+      <path d="M5 12V8c0-2 2-4 5-4s5 2 5 4v4"/>
+      <path d="M5 16h10" opacity="0.5"/>
+      <path d="M7 12v2M10 12v3M13 12v2" opacity="0.7"/>
+    </svg>
+  );
+}
+
+function IconUrbanMining({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="8" width="14" height="9" rx="1"/>
+      <path d="M6 8V5h8v3"/>
+      <path d="M8 13l2-2 2 2"/>
+      <path d="M10 11v4" opacity="0.7"/>
+      <circle cx="10" cy="5" r="1" fill="currentColor" stroke="none" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconPharmaceutical({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="6" y="3" width="8" height="14" rx="3"/>
+      <line x1="6" y1="10" x2="14" y2="10"/>
+      <path d="M9 6.5h2M9 13.5h2" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconAlgaeEnergy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 17c2-3 1-7 5-9s7 0 7-4"/>
+      <path d="M3 14c2-2 2-6 5-8" opacity="0.5"/>
+      <path d="M10 17V13"/>
+      <circle cx="10" cy="12" r="2" fill="currentColor" stroke="none" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconCarbonBorder({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="8" width="16" height="9" rx="1"/>
+      <path d="M2 12h16" opacity="0.5"/>
+      <path d="M7 5l3-3 3 3"/>
+      <path d="M10 2v6"/>
+      <path d="M5 15l2-2M15 15l-2-2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconSocialBond({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 14l3-8 4 6 2-4 3 6"/>
+      <path d="M2 17h16"/>
+      <circle cx="5" cy="14" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="15" cy="14" r="1.2" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconDigitalDivide({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="5" width="7" height="10" rx="1"/>
+      <path d="M13 9h5M13 12h3" opacity="0.4"/>
+      <path d="M9 10h2"/>
+      <circle cx="15" cy="6" r="2.5" fill="none" stroke="currentColor"/>
+      <line x1="13.5" y1="13" x2="16.5" y2="16" strokeWidth="1.3"/>
+    </svg>
+  );
+}
+
+function IconNeuroRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-3 0-5 2-5 5 0 1.5.5 3 2 4l1 4h4l1-4c1.5-1 2-2.5 2-4 0-3-2-5-5-5z"/>
+      <path d="M8 12h4" opacity="0.6"/>
+      <path d="M6 8c1 0 2 1 4 1s3-1 4-1" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5267,6 +5356,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/autonomous-weapons-engine", label: "Armes Autonomes IA", icon: IconAutonomousWeapons },
       { href: "/dashboard/space-weather-engine", label: "Météo Spatiale", icon: IconSpaceWeather },
       { href: "/dashboard/platform-economy-engine", label: "Économie Plateforme", icon: IconPlatformEconomy },
+      { href: "/dashboard/soil-carbon-engine", label: "Carbone Sol Agricole", icon: IconSoilCarbon },
+      { href: "/dashboard/urban-mining-engine", label: "Minage Urbain Recyclage", icon: IconUrbanMining },
+      { href: "/dashboard/pharmaceutical-access-engine", label: "Accès Médicaments", icon: IconPharmaceutical },
+      { href: "/dashboard/algae-energy-engine", label: "Énergie Algues Bio", icon: IconAlgaeEnergy },
+      { href: "/dashboard/carbon-border-engine", label: "Mécanisme Carbone Frontière", icon: IconCarbonBorder },
+      { href: "/dashboard/social-bond-engine", label: "Obligations Sociales ESG", icon: IconSocialBond },
+      { href: "/dashboard/digital-divide-engine", label: "Fracture Numérique", icon: IconDigitalDivide },
+      { href: "/dashboard/neuro-rights-engine", label: "Neurodroits IA", icon: IconNeuroRights },
     ],
   },
   {
