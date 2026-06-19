@@ -5328,6 +5328,96 @@ function IconArcticSovereigntyRace({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 457-464 icons ──────────────────────────────────────────────────────
+
+function IconRefugeeIntegration({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="7" cy="6" r="2.5"/>
+      <path d="M4 17v-2c0-2.2 1.8-4 4-4"/>
+      <circle cx="14" cy="9" r="2"/>
+      <path d="M11 17v-1.5c0-1.9 1.6-3.5 3.5-3.5S18 13.6 18 15.5V17"/>
+      <path d="M9 11l3-2"/>
+    </svg>
+  );
+}
+
+function IconESGGreenwash({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-2 3-1 5 1 6s3 3 1 7"/>
+      <path d="M7 6c-2 1-3 3-2 5"/>
+      <path d="M13 6c2 1 3 3 2 5"/>
+      <path d="M4 17h12"/>
+      <path d="M14 4l2-2M16 2l-1 3"/>
+    </svg>
+  );
+}
+
+function IconTelemedicine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="12" height="9" rx="1"/>
+      <path d="M14 8l4-2v6l-4-2"/>
+      <path d="M7 7v4M5 9h4"/>
+    </svg>
+  );
+}
+
+function IconAIBias({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-4 0-7 3-7 7s3 7 7 7 7-3 7-7-3-7-7-7z"/>
+      <path d="M6 10h4M13 10h1"/>
+      <path d="M10 7v3M10 10l-3 3"/>
+      <path d="M10 7c-1-1-2-1-2 0s1 2 2 2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconSupplyChainTransparency({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 6h4l2 3 2-3h4"/>
+      <path d="M3 6v8h14V6"/>
+      <path d="M7 9v5M13 9v5"/>
+      <path d="M9 9h2"/>
+      <circle cx="5" cy="6" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="15" cy="6" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconDrugTrafficking({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l8 4v8l-8 4-8-4V6z"/>
+      <path d="M10 2v16M2 6l8 4 8-4"/>
+      <path d="M6 8l4 2 4-2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconFoodSystemSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2c0 0-6 5-6 9a6 6 0 0 0 12 0C16 7 10 2 10 2z"/>
+      <path d="M10 8v5M7 10h6"/>
+      <path d="M8 13c0 1 1 2 2 2s2-1 2-2"/>
+    </svg>
+  );
+}
+
+function IconDigitalHealthSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3c-3.9 0-7 3.1-7 7 0 2.7 1.5 5.1 3.8 6.3L10 18l3.2-1.7C15.5 15.1 17 12.7 17 10c0-3.9-3.1-7-7-7z"/>
+      <path d="M7 10h6M10 7v6"/>
+      <path d="M13 7l2-2" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5860,6 +5950,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/platform-labor-rights-engine", label: "Droits Travailleurs Plateforme", icon: IconPlatformLabor },
       { href: "/dashboard/crypto-financial-crime-engine", label: "Criminalité Financière Crypto", icon: IconCryptoFinancialCrime },
       { href: "/dashboard/arctic-sovereignty-race-engine", label: "Souveraineté Arctique", icon: IconArcticSovereigntyRace },
+      { href: "/dashboard/refugee-integration-engine", label: "Intégration Réfugiés", icon: IconRefugeeIntegration },
+      { href: "/dashboard/esg-greenwash-engine", label: "ESG Greenwashing Détection", icon: IconESGGreenwash },
+      { href: "/dashboard/telemedicine-engine", label: "Télémédecine & Accès Santé", icon: IconTelemedicine },
+      { href: "/dashboard/ai-bias-engine", label: "Biais IA & Discrimination", icon: IconAIBias },
+      { href: "/dashboard/supply-chain-transparency-engine", label: "Traçabilité Chaîne Appro.", icon: IconSupplyChainTransparency },
+      { href: "/dashboard/drug-trafficking-engine", label: "Trafic Drogues & Réseaux", icon: IconDrugTrafficking },
+      { href: "/dashboard/food-system-sovereignty-engine", label: "Souveraineté Alimentaire", icon: IconFoodSystemSovereignty },
+      { href: "/dashboard/digital-health-sovereignty-engine", label: "Souveraineté Santé Digitale", icon: IconDigitalHealthSovereignty },
     ],
   },
   {
