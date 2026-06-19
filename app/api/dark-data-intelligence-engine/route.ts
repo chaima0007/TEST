@@ -113,7 +113,7 @@ export async function GET() {
       if (res.requires_immediate_governance) igC++;
     }
     const n = assets.length;
-    return NextResponse.json({ assets, summary: {
+    return NextResponse.json(sealResponse({ assets, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_dark_data_composite:          Math.round(tcomp / n * 10) / 10,
       hidden_value_signal_count:        hvC,
@@ -123,7 +123,7 @@ export async function GET() {
       avg_quality_score:                Math.round(tqual / n * 10) / 10,
       avg_value_score:                  Math.round(tval  / n * 10) / 10,
       avg_estimated_hidden_value_index: Math.round(thvi  / n * 100) / 100,
-    }});
+    } as Record<string, unknown>}, "dark-data-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/dark-data-intelligence-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/dark-data-intelligence-engine`)).json(), "dark-data-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
 }

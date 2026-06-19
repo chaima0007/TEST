@@ -119,7 +119,7 @@ export async function GET() {
       if (a.recommended_action === "emergency_liquidation" || a.recommended_action === "regulatory_intervention") emergC++;
     }
     const n = assets.length;
-    return NextResponse.json({ assets, summary: {
+    return NextResponse.json(sealResponse({ assets, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_singularity_composite: Math.round(tcomp/n*10)/10,
       bubble_alert_count: bubbleC,
@@ -129,7 +129,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_disruption_score: Math.round(tdis/n*10)/10,
       avg_estimated_bubble_risk_index: Math.round(tbri/n*100)/100,
-    }});
+    } as Record<string, unknown>}, "singularity-economy-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/singularity-economy-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/singularity-economy-engine`)).json(), "singularity-economy-engine") as Parameters<typeof NextResponse.json>[0]);
 }

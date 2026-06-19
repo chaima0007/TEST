@@ -119,7 +119,7 @@ export async function GET() {
       if (e.requires_board_action) boardC++;
     }
     const n = entities.length;
-    return NextResponse.json({ entities, summary: {
+    return NextResponse.json(sealResponse({ entities, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_governance_composite: Math.round(tcomp/n*10)/10,
       governance_alert_count: alertC, board_action_count: boardC,
@@ -128,7 +128,7 @@ export async function GET() {
       avg_financial_risk_score: Math.round(tfin/n*10)/10,
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_estimated_strategic_risk_index: Math.round(tridx/n*100)/100,
-    }});
+    } as Record<string, unknown>}, "strategic-risk-governance-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/strategic-risk-governance-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/strategic-risk-governance-engine`)).json(), "strategic-risk-governance-engine") as Parameters<typeof NextResponse.json>[0]);
 }

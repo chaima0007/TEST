@@ -108,7 +108,7 @@ export async function GET() {
       if (org.requires_emergency)     emergC++;
     }
     const n = organoids.length;
-    return NextResponse.json({ organoids, summary: {
+    return NextResponse.json(sealResponse({ organoids, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_bio_composite: Math.round(tcomp / n * 10) / 10,
       critical_collapse_count: collapseC, emergency_count: emergC,
@@ -117,7 +117,7 @@ export async function GET() {
       avg_stability_score:   Math.round(ts / n * 10) / 10,
       avg_emergence_score:   Math.round(te / n * 10) / 10,
       avg_estimated_collapse_index: Math.round(tci / n * 100) / 100,
-    }});
+    } as Record<string, unknown>}, "bio-computational-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/bio-computational-intelligence-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/bio-computational-intelligence-engine`)).json(), "bio-computational-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
 }

@@ -119,7 +119,7 @@ export async function GET() {
       if (port.requires_collateral_top_up) topupC++;
     }
     const n = portfolios.length;
-    return NextResponse.json({ portfolios, summary: {
+    return NextResponse.json(sealResponse({ portfolios, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_liquidation_composite: Math.round(tcomp/n*10)/10,
       liquidation_imminent_count: imminentC,
@@ -129,7 +129,7 @@ export async function GET() {
       avg_liquidity_score: Math.round(tliq/n*10)/10,
       avg_systemic_score: Math.round(tsys/n*10)/10,
       avg_estimated_liquidation_risk_index: Math.round(tidx/n*100)/100,
-    }});
+    } as Record<string, unknown>}, "synthetic-asset-liquidation-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/synthetic-asset-liquidation-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/synthetic-asset-liquidation-engine`)).json(), "synthetic-asset-liquidation-engine") as Parameters<typeof NextResponse.json>[0]);
 }

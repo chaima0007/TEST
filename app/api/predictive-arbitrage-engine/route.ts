@@ -153,7 +153,7 @@ export async function GET() {
       if (sig.recommended_action !== "no_action" && sig.recommended_action !== "performance_monitoring") transfC++;
     }
     const n = signals.length;
-    return NextResponse.json({ signals, summary: {
+    return NextResponse.json(sealResponse({ signals, summary: {
       total:                            n,
       risk_counts:                      rc,
       pattern_counts:                   pc,
@@ -167,7 +167,7 @@ export async function GET() {
       avg_execution_score:              Math.round(tex  / n * 10) / 10,
       avg_resilience_score:             Math.round(tres / n * 10) / 10,
       avg_estimated_alpha_decay_index:  Math.round(tadi / n * 100) / 100,
-    }});
+    } as Record<string, unknown>}, "predictive-arbitrage-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/predictive-arbitrage-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/predictive-arbitrage-engine`)).json(), "predictive-arbitrage-engine") as Parameters<typeof NextResponse.json>[0]);
 }

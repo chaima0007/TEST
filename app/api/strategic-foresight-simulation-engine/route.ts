@@ -109,7 +109,7 @@ export async function GET(request: Request) {
     }
 
     const n = mockScenarios.length;
-    return NextResponse.json({
+    return NextResponse.json(sealResponse({
       scenarios,
       summary: {
         total:                              n,
@@ -126,7 +126,7 @@ export async function GET(request: Request) {
         avg_exposure_score:                 Math.round((total_exp  / n) * 100) / 100,
         avg_estimated_scenario_risk_index:  Math.round((total_idx  / n) * 100) / 100,
       },
-    });
+    } as Record<string, unknown>, "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0]);
   }
 
   try {
@@ -134,8 +134,8 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return NextResponse.json(sealResponse(await res.json(), "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0]);
   } catch {}
 
-  return NextResponse.json({ scenarios: [], summary: {} }, { status: 502 });
+  return NextResponse.json(sealResponse({ scenarios: [], summary: {} }, "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0], { status: 502 });
 }

@@ -126,7 +126,7 @@ export async function GET() {
       if (mm.requires_active_intervention) interC++;
     }
     const n = memes.length;
-    return NextResponse.json({ memes, summary: {
+    return NextResponse.json(sealResponse({ memes, summary: {
       total: n,
       risk_counts: rc,
       pattern_counts: pc,
@@ -140,7 +140,7 @@ export async function GET() {
       avg_persistence_score: Math.round(tper / n * 10) / 10,
       avg_reach_score: Math.round(trch / n * 10) / 10,
       avg_estimated_viral_disruption_index: Math.round(tdis / n * 100) / 100,
-    }});
+    } as Record<string, unknown>}, "memetic-resonance-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/memetic-resonance-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/memetic-resonance-engine`)).json(), "memetic-resonance-engine") as Parameters<typeof NextResponse.json>[0]);
 }

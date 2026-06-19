@@ -107,7 +107,7 @@ export async function GET() {
       if (ter.requires_exit_plan)   exitC++;
     }
     const n = territories.length;
-    return NextResponse.json({ territories, summary: {
+    return NextResponse.json(sealResponse({ territories, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_geopolitical_composite: Math.round(tcomp / n * 10) / 10,
       hostile_count: hostileC, exit_plan_count: exitC,
@@ -116,7 +116,7 @@ export async function GET() {
       avg_governance_score:  Math.round(tgov  / n * 10) / 10,
       avg_sovereignty_score: Math.round(tsov  / n * 10) / 10,
       avg_estimated_geopolitical_risk_index: Math.round(tridx / n * 100) / 100,
-    }});
+    } as Record<string, unknown>}, "geopolitical-resilience-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/geopolitical-resilience-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/geopolitical-resilience-engine`)).json(), "geopolitical-resilience-engine") as Parameters<typeof NextResponse.json>[0]);
 }

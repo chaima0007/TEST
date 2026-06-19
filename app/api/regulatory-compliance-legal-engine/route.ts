@@ -110,7 +110,7 @@ export async function GET() {
       if (e.requires_executive_action) execC++;
     }
     const n = entities.length;
-    return NextResponse.json({ entities, summary: {
+    return NextResponse.json(sealResponse({ entities, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_compliance_composite: Math.round(tcomp/n*10)/10,
       compliance_breach_count: breachC, executive_action_count: execC,
@@ -119,7 +119,7 @@ export async function GET() {
       avg_risk_score: Math.round(trsk/n*10)/10,
       avg_culture_score: Math.round(tcul/n*10)/10,
       avg_estimated_sanction_risk_index: Math.round(tridx/n*100)/100,
-    }});
+    } as Record<string, unknown>}, "regulatory-compliance-legal-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/regulatory-compliance-legal-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/regulatory-compliance-legal-engine`)).json(), "regulatory-compliance-legal-engine") as Parameters<typeof NextResponse.json>[0]);
 }

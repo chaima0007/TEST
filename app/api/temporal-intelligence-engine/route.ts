@@ -124,7 +124,7 @@ export async function GET() {
       if (dec.acceleration_required) arC++;
     }
     const n = decisions.length;
-    return NextResponse.json({ decisions, summary: {
+    return NextResponse.json(sealResponse({ decisions, summary: {
       total:                            n,
       risk_counts:                      rc,
       pattern_counts:                   pc,
@@ -138,7 +138,7 @@ export async function GET() {
       avg_alignment_score:              Math.round(talig / n * 10) / 10,
       avg_risk_score:                   Math.round(trisk / n * 10) / 10,
       avg_estimated_timing_loss_index:  Math.round(tloss / n * 100) / 100,
-    }});
+    } as Record<string, unknown>}, "temporal-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/temporal-intelligence-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/temporal-intelligence-engine`)).json(), "temporal-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
 }

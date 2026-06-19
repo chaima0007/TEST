@@ -113,7 +113,7 @@ export async function GET() {
       if (sys.is_quantum_vulnerable) qvC++;
     }
     const n = systems.length;
-    return NextResponse.json({ systems, summary: {
+    return NextResponse.json(sealResponse({ systems, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_crypto_composite: Math.round(tcomp/n*10)/10,
       compromised_count: compC, quantum_vulnerable_count: qvC,
@@ -122,7 +122,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_readiness_score: Math.round(tread/n*10)/10,
       avg_estimated_quantum_breach_index: Math.round(tqbi/n*100)/100,
-    }});
+    } as Record<string, unknown>}, "post-quantum-cryptography-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/post-quantum-cryptography-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/post-quantum-cryptography-engine`)).json(), "post-quantum-cryptography-engine") as Parameters<typeof NextResponse.json>[0]);
 }

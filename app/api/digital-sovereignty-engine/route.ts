@@ -131,7 +131,7 @@ export async function GET() {
       if (asset.is_legally_actionable) legalCnt++;
     }
     const n = assets.length;
-    return NextResponse.json({ assets, summary: {
+    return NextResponse.json(sealResponse({ assets, summary: {
       total: n,
       risk_counts: rc,
       pattern_counts: pc,
@@ -145,7 +145,7 @@ export async function GET() {
       avg_protection_score: Math.round(tprot/n*10)/10,
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_estimated_sovereignty_breach_index: Math.round(tbreach/n*100)/100,
-    }});
+    } as Record<string, unknown>}, "digital-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]);
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/digital-sovereignty-engine`)).json());
+  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/digital-sovereignty-engine`)).json(), "digital-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]);
 }
