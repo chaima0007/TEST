@@ -2802,6 +2802,16 @@ function IconRepBurnout({ className }: { className?: string }) {
   );
 }
 
+function IconDataAnalytics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="12" width="3" height="6" rx="1" fill="currentColor" fillOpacity="0.7"/>
+      <rect x="7" y="8"  width="3" height="10" rx="1" fill="currentColor" fillOpacity="0.7"/>
+      <rect x="12" y="4" width="3" height="14" rx="1" fill="currentColor" fillOpacity="0.7"/>
+      <path d="M3.5 10L8.5 6l5 3 3-4" stroke="currentColor" strokeWidth="1.2"/>
+    </svg>
+  );
+}
 function IconOrderManagement({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -3154,6 +3164,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/customer-service-quality-engine", label: "Service Client", icon: IconCustomerService },
       { href: "/dashboard/it-systems-health-monitoring-engine", label: "IT Systèmes", icon: IconITSystems },
       { href: "/dashboard/swarm-security-shield-engine", label: "Bouclier Sécurité", icon: IconSecurityShield },
+      { href: "/dashboard/data-analytics-intelligence-engine", label: "Analyse Données", icon: IconDataAnalytics },
     ],
   },
   {
