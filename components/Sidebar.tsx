@@ -4323,6 +4323,102 @@ function IconDigitalHealthSov({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 369-376 icons ─────────────────────────────────────────────────────
+
+function IconCarbonCredit({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 16c2-4 4-6 5-6s3 2 5 6"/>
+      <path d="M6 10c1-2 2-4 4-6 2 2 3 4 4 6"/>
+      <path d="M8 4l2-2 2 2"/>
+      <path d="M10 2v12"/>
+      <path d="M3 17h14"/>
+    </svg>
+  );
+}
+
+function IconSpaceDebris({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M5 5l2 2M13 5l-2 2M5 15l2-2M13 15l-2-2"/>
+      <circle cx="4" cy="7" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="16" cy="6" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="3" cy="13" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="15" cy="15" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="8" cy="3" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconDigitalColonialism({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 3c0 0-3 2-3 7s3 7 3 7M10 3c0 0 3 2 3 7s-3 7-3 7"/>
+      <path d="M3 10h14"/>
+      <path d="M7 6h6M7 14h6"/>
+      <path d="M13 8l2-1"/>
+    </svg>
+  );
+}
+
+function IconOceanAcidification({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 14c1-2 2-3 3.5-3S9 12 10 12s2.5-1 3.5-1S16 12 17 14"/>
+      <path d="M3 17c1-2 2-3 3.5-3S9 15 10 15s2.5-1 3.5-1S16 15 17 17"/>
+      <path d="M10 3v5M8 4l2-2 2 2"/>
+      <path d="M7 8h6"/>
+    </svg>
+  );
+}
+
+function IconNuclearFusion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <ellipse cx="10" cy="10" rx="8" ry="3" transform="rotate(0)"/>
+      <ellipse cx="10" cy="10" rx="8" ry="3" transform="rotate(60 10 10)"/>
+      <ellipse cx="10" cy="10" rx="8" ry="3" transform="rotate(120 10 10)"/>
+    </svg>
+  );
+}
+
+function IconPostWork({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 10h10"/>
+      <path d="M5 10l-3 5h16l-3-5"/>
+      <path d="M8 5h4M10 3v4"/>
+      <path d="M7 10V8M10 10V7M13 10V8"/>
+      <path d="M6 15l1-2M14 15l-1-2M10 15v-2"/>
+    </svg>
+  );
+}
+
+function IconGeoengineering({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 12c2-4 4-6 7-6s5 2 7 6"/>
+      <path d="M3 12c0 3 3 5 7 5s7-2 7-5"/>
+      <path d="M10 6V2M8 3l2-2 2 2"/>
+      <path d="M6 8l-3-2M14 8l3-2"/>
+    </svg>
+  );
+}
+
+function IconDigitalIdentity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="14" height="10" rx="1"/>
+      <circle cx="7" cy="10" r="2"/>
+      <path d="M11 8h5M11 10h4M11 12h3"/>
+      <path d="M5 15l2-2"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -4767,6 +4863,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/arctic-sovereignty-engine", label: "Souveraineté Arctique", icon: IconArcticSovereignty },
       { href: "/dashboard/quantum-economic-disruption-engine", label: "Disruption Quantique", icon: IconQuantumDisruption },
       { href: "/dashboard/digital-health-sovereignty-engine", label: "Santé Numérique Souv.", icon: IconDigitalHealthSov },
+      { href: "/dashboard/carbon-credit-engine", label: "Marchés Carbone", icon: IconCarbonCredit },
+      { href: "/dashboard/space-debris-engine", label: "Débris Spatiaux", icon: IconSpaceDebris },
+      { href: "/dashboard/digital-colonialism-engine", label: "Colonialisme Numérique", icon: IconDigitalColonialism },
+      { href: "/dashboard/ocean-acidification-engine", label: "Acidification Océanique", icon: IconOceanAcidification },
+      { href: "/dashboard/nuclear-fusion-engine", label: "Fusion Nucléaire", icon: IconNuclearFusion },
+      { href: "/dashboard/post-work-ubi-engine", label: "Société Post-Travail", icon: IconPostWork },
+      { href: "/dashboard/geoengineering-engine", label: "Géoingénierie", icon: IconGeoengineering },
+      { href: "/dashboard/digital-identity-engine", label: "Identité Numérique", icon: IconDigitalIdentity },
     ],
   },
   {
