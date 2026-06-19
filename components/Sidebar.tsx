@@ -3383,6 +3383,80 @@ function IconExistentialRisk({ className }: { className?: string }) {
   );
 }
 
+function IconQuantumResilience({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 6v4l2.5 2.5"/>
+      <path d="M6.5 6.5l1 1M13.5 6.5l-1 1M6.5 13.5l1-1M13.5 13.5l-1-1" strokeWidth="1"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.3"/>
+    </svg>
+  );
+}
+function IconBioDigital({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 10c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6"/>
+      <path d="M4 10c2 0 3-1 3-3s1-3 3-3"/>
+      <path d="M10 17c-2 0-3-1-3-3"/>
+      <circle cx="4" cy="10" r="1.5" fill="currentColor"/>
+    </svg>
+  );
+}
+function IconNeuroEconomic({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 10c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
+      <path d="M5 10c0 2 1 3.5 2.5 4.5"/>
+      <path d="M15 10c0 2-1 3.5-2.5 4.5"/>
+      <path d="M8 10h4M10 8v4" strokeWidth="1.2"/>
+      <path d="M3 7l2 1M17 7l-2 1" strokeWidth="1"/>
+    </svg>
+  );
+}
+function IconCivilizationalMemory({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 17V8l7-5 7 5v9"/>
+      <rect x="7" y="11" width="3" height="6" rx="0.5"/>
+      <rect x="11" y="11" width="3" height="4" rx="0.5"/>
+      <path d="M2 17h16" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+function IconHyperconnectivity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2"/>
+      <circle cx="3" cy="5" r="1.5"/>
+      <circle cx="17" cy="5" r="1.5"/>
+      <circle cx="3" cy="15" r="1.5"/>
+      <circle cx="17" cy="15" r="1.5"/>
+      <path d="M4.5 5.5L8.5 8.5M15.5 5.5l-4 3M4.5 14.5L8.5 11.5M15.5 14.5l-4-3" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconAutoFinancial({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 6v2M10 12v2"/>
+      <path d="M7.5 8.5A2.5 2.5 0 0 1 10 7.5h1.5a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3H10a2.5 2.5 0 0 0 2.5-1"/>
+    </svg>
+  );
+}
+function IconCollectiveAmplification({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="5" cy="8" r="2"/>
+      <circle cx="15" cy="8" r="2"/>
+      <circle cx="10" cy="14" r="2"/>
+      <path d="M7 8h6M5.7 9.7L9 13M14.3 9.7L11 13" strokeWidth="1.1"/>
+      <path d="M10 4v2" strokeWidth="1.2"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3738,6 +3812,13 @@ const navSections: NavSection[] = [
       { href: "/dashboard/predictive-talent-intelligence-engine", label: "Talent Intelligence", icon: IconPredictiveTalent },
       { href: "/dashboard/planetary-intelligence-engine", label: "Intelligence Planétaire", icon: IconPlanetaryIntel },
       { href: "/dashboard/existential-risk-engine", label: "Risque Existentiel", icon: IconExistentialRisk },
+      { href: "/dashboard/quantum-resilience-engine", label: "Résilience Quantique", icon: IconQuantumResilience },
+      { href: "/dashboard/bio-digital-convergence-engine", label: "Bio-Digital Convergence", icon: IconBioDigital },
+      { href: "/dashboard/neuro-economic-decision-engine", label: "Neuro-Économie", icon: IconNeuroEconomic },
+      { href: "/dashboard/civilizational-memory-engine", label: "Mémoire Civilisationnelle", icon: IconCivilizationalMemory },
+      { href: "/dashboard/hyperconnectivity-fragility-engine", label: "Hyperconnectivité", icon: IconHyperconnectivity },
+      { href: "/dashboard/autonomous-financial-ecosystem-engine", label: "Éco. Financier Auto.", icon: IconAutoFinancial },
+      { href: "/dashboard/collective-intelligence-amplification-engine", label: "Intelligence Collective+", icon: IconCollectiveAmplification },
     ],
   },
   {
