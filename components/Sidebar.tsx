@@ -3094,6 +3094,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sales-multithreading-depth-relationship-breadth-engine", label: "Multithreading", icon: IconMultithreading },
       { href: "/dashboard/sales-discount-approval-abuse-margin-erosion-engine", label: "Margin Erosion", icon: IconMarginErosion },
       { href: "/dashboard/sales-rep-burnout-productivity-decay-engine", label: "Rep Burnout", icon: IconRepBurnout },
+      { href: "/dashboard/sales-forecast-accuracy-commit-reliability-engine", label: "Forecast Reliability", icon: IconForecastAccuracy },
     ],
   },
   {
