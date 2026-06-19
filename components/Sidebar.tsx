@@ -3090,6 +3090,29 @@ function IconSingularityEconomy({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconPostQuantum({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="7" width="12" height="9" rx="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <path d="M7 7V5a3 3 0 016 0v2"/>
+      <circle cx="10" cy="11.5" r="1.5" fill="currentColor" fillOpacity="0.4"/>
+      <path d="M10 13v2"/>
+      <path d="M3 4l2 2M15 4l2 2M3 16l2-2M15 16l2 2"/>
+    </svg>
+  );
+}
+function IconMemetic({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2" fill="currentColor" fillOpacity="0.2"/>
+      <circle cx="4" cy="6" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <circle cx="16" cy="6" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <circle cx="4" cy="14" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <circle cx="16" cy="14" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <path d="M5.5 6.5L8.5 9M11.5 11l3 2.5M14.5 6.5L11.5 9M8.5 11l-3 2.5"/>
+    </svg>
+  );
+}
 
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
@@ -3417,6 +3440,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/anthropocene-terraforming-engine", label: "Anthropocène", icon: IconAnthropocene },
       { href: "/dashboard/synthetic-consciousness-alignment-engine", label: "Conscience Synthétique", icon: IconSyntheticConsciousness },
       { href: "/dashboard/singularity-economy-engine", label: "Économie Singularité", icon: IconSingularityEconomy },
+      { href: "/dashboard/post-quantum-cryptography-engine", label: "Crypto Post-Quantique", icon: IconPostQuantum },
+      { href: "/dashboard/memetic-resonance-engine", label: "Résonance Mémetique", icon: IconMemetic },
     ],
   },
   {
