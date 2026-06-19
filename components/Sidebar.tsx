@@ -5056,6 +5056,95 @@ function IconSovereignWealth({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 433-440 icons ──────────────────────────────────────────────────────
+
+function IconPermafrostMethane({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 12c2-2 3-4 8-4s6 2 8 4"/>
+      <path d="M2 15c2-2 3-3 8-3s6 1 8 3"/>
+      <path d="M7 8V5M10 7V3M13 8V5"/>
+      <path d="M7 5c0-1.1.9-2 2-2h2"/>
+    </svg>
+  );
+}
+
+function IconFoodWaste({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 9V6c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v3"/>
+      <path d="M3 9h14l-1 8H4z"/>
+      <path d="M8 4V2M12 4V2"/>
+      <path d="M8 13l1-2 2 2 1-2"/>
+    </svg>
+  );
+}
+
+function IconRareDisease({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="8" r="4"/>
+      <path d="M10 4v2M10 10v2M7 7H5M15 7h-2"/>
+      <path d="M7 13c-2 1-3 2-3 4h12c0-2-1-3-3-4"/>
+      <path d="M13 8l2 2"/>
+    </svg>
+  );
+}
+
+function IconChildOnlineSafety({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="6" r="3"/>
+      <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      <path d="M14 10l2 2-2 2M16 12h-3"/>
+      <path d="M3 3l14 14" opacity="0.3"/>
+    </svg>
+  );
+}
+
+function IconPsychedelicMedicine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="4"/>
+      <path d="M10 6V4M10 16v-2M6 10H4M16 10h-2"/>
+      <path d="M7.5 7.5L6 6M14 14l-1.5-1.5M12.5 7.5L14 6M6 14l1.5-1.5"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconNuclearDisarmament({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="M10 3v4M10 13v4M3 10h4M13 10h4"/>
+      <path d="M5.5 5.5l2.8 2.8M11.7 11.7l2.8 2.8M14.5 5.5l-2.8 2.8M8.3 11.7L5.5 14.5"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" stroke="none" opacity="0.4"/>
+    </svg>
+  );
+}
+
+function IconUrbanAirMobility({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3l-2 4H5l3 3-1 4 3-2 3 2-1-4 3-3h-3z"/>
+      <path d="M3 16h14"/>
+      <path d="M6 10l-2 2M14 10l2 2"/>
+    </svg>
+  );
+}
+
+function IconMediaIntegrity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="16" height="11" rx="1"/>
+      <path d="M8 15l-2 3h8l-2-3"/>
+      <path d="M7 8h6M7 11h4"/>
+      <path d="M14 7l2-2M16 5l-2 2" opacity="0.6"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -5564,6 +5653,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/digital-nomad-engine", label: "Économie Nomades Numériques", icon: IconDigitalNomad },
       { href: "/dashboard/genetic-privacy-engine", label: "Confidentialité Génétique", icon: IconGeneticPrivacy },
       { href: "/dashboard/sovereign-wealth-engine", label: "Fonds Souverains Pouvoir", icon: IconSovereignWealth },
+      { href: "/dashboard/permafrost-methane-engine", label: "Pergélisol Méthane Arctique", icon: IconPermafrostMethane },
+      { href: "/dashboard/food-waste-economy-engine", label: "Gaspillage Alimentaire", icon: IconFoodWaste },
+      { href: "/dashboard/rare-disease-engine", label: "Maladies Rares & Médicaments", icon: IconRareDisease },
+      { href: "/dashboard/child-online-safety-engine", label: "Sécurité Enfants Numérique", icon: IconChildOnlineSafety },
+      { href: "/dashboard/psychedelic-medicine-engine", label: "Médecine Psychédélique", icon: IconPsychedelicMedicine },
+      { href: "/dashboard/nuclear-disarmament-engine", label: "Désarmement Nucléaire", icon: IconNuclearDisarmament },
+      { href: "/dashboard/urban-air-mobility-engine", label: "Mobilité Aérienne Urbaine", icon: IconUrbanAirMobility },
+      { href: "/dashboard/media-integrity-engine", label: "Intégrité Médias & DeepFakes", icon: IconMediaIntegrity },
     ],
   },
   {
