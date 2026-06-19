@@ -1,0 +1,181 @@
+import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+const SWARM_API_URL = process.env.SWARM_API_URL;
+
+// ── Mock entities (matches Python ClientRetentionEngine.to_dict() — 15 keys each) ──
+
+const entities = [
+  {
+    id: "CLT-001",
+    name: "Brasserie Le Vieux Port",
+    sector: "Restauration",
+    months_active: 14,
+    contract_value_eur: 2990,
+    last_invoice_days_ago: 62,
+    missed_meetings: 4,
+    delayed_payments: 5,
+    upsell_opportunities: 2,
+    support_ticket_frequency: 0.8,
+    engagement_score: 18,
+    loyalty_tier: "bronze",
+    renewal_probability: 22,
+    composite_risk_score: 66.65,
+    risk_level: "critique",
+  },
+  {
+    id: "CLT-002",
+    name: "Garage Renaud Automobiles",
+    sector: "Auto & Garage",
+    months_active: 8,
+    contract_value_eur: 1490,
+    last_invoice_days_ago: 50,
+    missed_meetings: 4,
+    delayed_payments: 4,
+    upsell_opportunities: 1,
+    support_ticket_frequency: 1.2,
+    engagement_score: 20,
+    loyalty_tier: "bronze",
+    renewal_probability: 25,
+    composite_risk_score: 61.75,
+    risk_level: "critique",
+  },
+  {
+    id: "CLT-003",
+    name: "Institut Beauté Céleste",
+    sector: "Beauté & Bien-être",
+    months_active: 6,
+    contract_value_eur: 990,
+    last_invoice_days_ago: 78,
+    missed_meetings: 5,
+    delayed_payments: 3,
+    upsell_opportunities: 3,
+    support_ticket_frequency: 0.5,
+    engagement_score: 15,
+    loyalty_tier: "bronze",
+    renewal_probability: 18,
+    composite_risk_score: 63.75,
+    risk_level: "critique",
+  },
+  {
+    id: "CLT-004",
+    name: "Cabinet Notarial Marcelin",
+    sector: "Services Juridiques",
+    months_active: 22,
+    contract_value_eur: 4900,
+    last_invoice_days_ago: 30,
+    missed_meetings: 2,
+    delayed_payments: 3,
+    upsell_opportunities: 4,
+    support_ticket_frequency: 0.3,
+    engagement_score: 42,
+    loyalty_tier: "silver",
+    renewal_probability: 48,
+    composite_risk_score: 41.85,
+    risk_level: "élevé",
+  },
+  {
+    id: "CLT-005",
+    name: "Résidence Hôtelière Les Pins",
+    sector: "Hôtellerie",
+    months_active: 18,
+    contract_value_eur: 3490,
+    last_invoice_days_ago: 22,
+    missed_meetings: 1,
+    delayed_payments: 4,
+    upsell_opportunities: 2,
+    support_ticket_frequency: 0.6,
+    engagement_score: 38,
+    loyalty_tier: "silver",
+    renewal_probability: 52,
+    composite_risk_score: 42.4,
+    risk_level: "élevé",
+  },
+  {
+    id: "CLT-006",
+    name: "École Primaire Les Peupliers",
+    sector: "Éducation",
+    months_active: 30,
+    contract_value_eur: 1990,
+    last_invoice_days_ago: 10,
+    missed_meetings: 1,
+    delayed_payments: 1,
+    upsell_opportunities: 2,
+    support_ticket_frequency: 0.2,
+    engagement_score: 60,
+    loyalty_tier: "silver",
+    renewal_probability: 65,
+    composite_risk_score: 23.5,
+    risk_level: "modéré",
+  },
+  {
+    id: "CLT-007",
+    name: "Clinique Vétérinaire Saintignon",
+    sector: "Médical & Vétérinaire",
+    months_active: 36,
+    contract_value_eur: 5900,
+    last_invoice_days_ago: 5,
+    missed_meetings: 0,
+    delayed_payments: 0,
+    upsell_opportunities: 3,
+    support_ticket_frequency: 0.1,
+    engagement_score: 88,
+    loyalty_tier: "gold",
+    renewal_probability: 92,
+    composite_risk_score: 4.4,
+    risk_level: "faible",
+  },
+  {
+    id: "CLT-008",
+    name: "Immobilier Duplessis & Associés",
+    sector: "Immobilier",
+    months_active: 48,
+    contract_value_eur: 8900,
+    last_invoice_days_ago: 3,
+    missed_meetings: 0,
+    delayed_payments: 0,
+    upsell_opportunities: 5,
+    support_ticket_frequency: 0.05,
+    engagement_score: 96,
+    loyalty_tier: "platinum",
+    renewal_probability: 98,
+    composite_risk_score: 1.3,
+    risk_level: "faible",
+  },
+];
+
+// ── Mock summary (matches Python ClientRetentionEngine.summary() — 13 keys) ──
+
+const summary = {
+  total_clients: 8,
+  avg_months_active: 22.75,
+  avg_contract_value: 3831.25,
+  avg_renewal_probability: 52.5,
+  clients_critique: 3,
+  clients_eleve: 2,
+  clients_modere: 1,
+  clients_faible: 2,
+  top_risk_client: "Brasserie Le Vieux Port",
+  top_risk_score: 66.65,
+  patterns_detected: [
+    "inactivité prolongée",
+    "paiements retardés répétés",
+    "désengagement progressif",
+    "opportunité upsell ignorée",
+    "relation à risque de rupture",
+  ],
+  avg_composite: 38.2,
+  avg_estimated_retention_index: 3.82,
+};
+
+export async function GET() {
+  if (!SWARM_API_URL) {
+    return NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>));
+  }
+  try {
+    const url = new URL(`${SWARM_API_URL}/api/client-retention`);
+    const res = await fetch(url.toString(), { cache: "no-store" });
+    if (res.ok) return NextResponse.json(sealResponse(await res.json() as Record<string, unknown>));
+  } catch {}
+  return NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 });
+}
