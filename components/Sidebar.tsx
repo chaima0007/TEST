@@ -3897,6 +3897,168 @@ function IconSoftPower({ className }: { className?: string }) {
   );
 }
 
+function IconCircularEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 3a7 7 0 0 1 7 7"/>
+      <path d="M17 10a7 7 0 0 1-7 7"/>
+      <path d="M10 17a7 7 0 0 1-7-7"/>
+      <path d="M3 10a7 7 0 0 1 7-7"/>
+      <path d="M14 6l3-3 1 4-4-1"/>
+      <circle cx="10" cy="10" r="2"/>
+    </svg>
+  );
+}
+
+function IconDigitalDemocracy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="14" height="10" rx="2"/>
+      <path d="M7 9l2 2 4-4"/>
+      <path d="M3 8h14"/>
+    </svg>
+  );
+}
+
+function IconSpaceEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2"/>
+      <ellipse cx="10" cy="10" rx="7" ry="3"/>
+      <ellipse cx="10" cy="10" rx="3" ry="7"/>
+      <circle cx="10" cy="3" r="1" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function IconBehavioralFinance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 15l4-6 3 4 3-7 4 9"/>
+      <path d="M3 5v12h14"/>
+    </svg>
+  );
+}
+
+function IconBiometricSurveillance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 4C7 4 4.5 6 4 9c-.5 3 1 6 6 7 5-1 6.5-4 6-7-.5-3-3-5-6-5z"/>
+      <circle cx="10" cy="10" r="2"/>
+      <path d="M10 8v-2M10 14v-2M8 10H6M14 10h-2"/>
+    </svg>
+  );
+}
+
+function IconGigEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="6" cy="6" r="2"/>
+      <circle cx="14" cy="6" r="2"/>
+      <circle cx="10" cy="14" r="2"/>
+      <path d="M6 8v4M14 8v4M8 14h4"/>
+    </svg>
+  );
+}
+
+function IconSurveillanceCap({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="8" r="4"/>
+      <path d="M10 12v5M7 17h6"/>
+      <path d="M14 5l3-2M6 5L3 3"/>
+    </svg>
+  );
+}
+
+function IconNeuralLanguage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 6h14M3 10h10M3 14h12"/>
+      <circle cx="16" cy="10" r="2"/>
+      <path d="M14 10h-1"/>
+    </svg>
+  );
+}
+
+function IconMilitaryAI({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/>
+    </svg>
+  );
+}
+
+function IconMigrationCrisis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 10h14M13 6l4 4-4 4"/>
+      <circle cx="5" cy="10" r="2"/>
+    </svg>
+  );
+}
+
+function IconCorporateCapture({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="6" y="3" width="8" height="8" rx="1"/>
+      <path d="M4 11v6h12v-6"/>
+      <path d="M8 11v6M12 11v6"/>
+    </svg>
+  );
+}
+
+function IconEpigeneticHealth({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7 4c0 0 2 2 2 6s-2 6-2 6"/>
+      <path d="M13 4c0 0-2 2-2 6s2 6 2 6"/>
+      <path d="M7 7h6M7 13h6"/>
+    </svg>
+  );
+}
+
+function IconCulturalHeritage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 17V9l6-5 6 5v8"/>
+      <rect x="8" y="13" width="4" height="4"/>
+      <path d="M4 9h12"/>
+    </svg>
+  );
+}
+
+function IconHypersonic({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 10l12-6-2 6 2 6z"/>
+      <path d="M14 7l4 3-4 3"/>
+      <path d="M12 10h6"/>
+    </svg>
+  );
+}
+
+function IconWealthConcentration({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M10 3v2M10 15v2M3 10h2M15 10h2"/>
+      <path d="M5.6 5.6l1.4 1.4M13 13l1.4 1.4M13 7l1.4-1.4M5.6 14.4l1.4-1.4"/>
+    </svg>
+  );
+}
+
+function IconPsychopolitics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4c0 1.5-.8 2.8-2 3.5V15h-4v-1.5C6.8 12.8 6 11.5 6 10z"/>
+      <path d="M9 15h2"/>
+      <path d="M4 6L2 4M16 6l2-4"/>
+      <path d="M3 10H1M19 10h-2"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -4301,6 +4463,22 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-risk-engine", label: "Risque Nucléaire", icon: IconNuclear },
       { href: "/dashboard/ocean-intelligence-engine", label: "Intelligence Océanique", icon: IconOcean },
       { href: "/dashboard/soft-power-hegemony-engine", label: "Puissance Douce", icon: IconSoftPower },
+      { href: "/dashboard/circular-economy-engine", label: "Économie Circulaire", icon: IconCircularEconomy },
+      { href: "/dashboard/digital-democracy-engine", label: "Démocratie Numérique", icon: IconDigitalDemocracy },
+      { href: "/dashboard/space-economy-sovereignty-engine", label: "Économie Spatiale", icon: IconSpaceEconomy },
+      { href: "/dashboard/behavioral-finance-engine", label: "Finance Comportementale", icon: IconBehavioralFinance },
+      { href: "/dashboard/biometric-surveillance-engine", label: "Surveillance Biométrique", icon: IconBiometricSurveillance },
+      { href: "/dashboard/gig-economy-fragility-engine", label: "Économie Gig", icon: IconGigEconomy },
+      { href: "/dashboard/surveillance-capitalism-engine", label: "Capitalisme Surveillance", icon: IconSurveillanceCap },
+      { href: "/dashboard/neural-language-dominance-engine", label: "Dominance Linguistique", icon: IconNeuralLanguage },
+      { href: "/dashboard/military-ai-engine", label: "IA Militaire", icon: IconMilitaryAI },
+      { href: "/dashboard/migration-crisis-engine", label: "Crise Migratoire", icon: IconMigrationCrisis },
+      { href: "/dashboard/corporate-capture-engine", label: "Capture Corporative", icon: IconCorporateCapture },
+      { href: "/dashboard/epigenetic-health-engine", label: "Santé Épigénétique", icon: IconEpigeneticHealth },
+      { href: "/dashboard/cultural-heritage-engine", label: "Patrimoine Culturel", icon: IconCulturalHeritage },
+      { href: "/dashboard/hypersonic-weapons-engine", label: "Armes Hypersoniques", icon: IconHypersonic },
+      { href: "/dashboard/wealth-concentration-engine", label: "Concentration Richesses", icon: IconWealthConcentration },
+      { href: "/dashboard/psychopolitics-engine", label: "Psychopolitique", icon: IconPsychopolitics },
     ],
   },
   {
