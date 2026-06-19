@@ -3124,6 +3124,29 @@ function IconGameTheory({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconBioCompute({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="3" fill="currentColor" fillOpacity="0.15"/>
+      <path d="M10 2c0 0 2 2 2 5s-2 5-2 8" strokeDasharray="1 1.5"/>
+      <path d="M10 2c0 0-2 2-2 5s2 5 2 8" strokeDasharray="1 1.5"/>
+      <path d="M5 5.5c1.5.5 9 .5 10 0M5 14.5c1.5-.5 9-.5 10 0"/>
+    </svg>
+  );
+}
+function IconComplexNetwork({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2" fill="currentColor" fillOpacity="0.3"/>
+      <circle cx="4" cy="4" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <circle cx="16" cy="4" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <circle cx="4" cy="16" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <circle cx="16" cy="16" r="1.5" fill="currentColor" fillOpacity="0.1"/>
+      <circle cx="10" cy="3" r="1" fill="currentColor" fillOpacity="0.15"/>
+      <path d="M5.5 4.5L8 9M12 9l2.5-4.5M8 11l-3.5 4M12 11l3.5 4M10 5v5M5.5 4.5l5 0.5M9.5 4.5l5 0.5"/>
+    </svg>
+  );
+}
 
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
@@ -3454,6 +3477,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/post-quantum-cryptography-engine", label: "Crypto Post-Quantique", icon: IconPostQuantum },
       { href: "/dashboard/memetic-resonance-engine", label: "Résonance Mémetique", icon: IconMemetic },
       { href: "/dashboard/game-theory-decision-engine", label: "Théorie des Jeux", icon: IconGameTheory },
+      { href: "/dashboard/bio-computational-intelligence-engine", label: "Bio-Intelligence", icon: IconBioCompute },
+      { href: "/dashboard/complex-network-physics-engine", label: "Physique Réseaux", icon: IconComplexNetwork },
     ],
   },
   {
