@@ -20,6 +20,14 @@ TALENT_SEGMENTS = (
 )
 
 
+# PTI-008 reference values for potential_stagnation:
+# skill_half_life_risk=0.58, skills_future_alignment=0.42 → NOT talent_obsolescence (needs >=0.70 AND <=0.35)
+# flight_risk_index=0.48, retention_investment_roi=0.52 → NOT flight_risk_crisis (needs >=0.68 AND <=0.38)
+# knowledge_transfer_depth=0.42, mentorship_multiplier_score=0.40 → NOT knowledge_drain (needs <=0.30 AND <=0.35)
+# succession_pipeline_readiness=0.42 → NOT succession_gap (needs <=0.30)
+# potential_trajectory_score=0.20, learning_velocity_score=0.22 → potential_stagnation ✓
+
+
 @dataclass
 class TalentInput:
     talent_id: str

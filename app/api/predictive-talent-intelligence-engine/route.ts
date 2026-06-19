@@ -75,12 +75,12 @@ const MOCK_TALENTS = [
   // PTI-008 creative_catalyst APAC — critical, potential_stagnation
   {
     talent_id: "PTI-008", talent_segment: "creative_catalyst", region: "APAC",
-    skill_half_life_risk: 0.70, learning_velocity_score: 0.22, potential_trajectory_score: 0.20,
-    flight_risk_index: 0.60, human_capital_value_score: 0.28, adaptability_coefficient: 0.28,
-    knowledge_transfer_depth: 0.38, mentorship_multiplier_score: 0.35, strategic_indispensability_score: 0.28,
-    skills_future_alignment: 0.25, innovation_contribution_rate: 0.22, retention_investment_roi: 0.40,
-    succession_pipeline_readiness: 0.38, cultural_influence_score: 0.35, cross_domain_synthesis_ability: 0.20,
-    resilience_under_pressure: 0.22, talent_ecosystem_connectivity: 0.25,
+    skill_half_life_risk: 0.58, learning_velocity_score: 0.22, potential_trajectory_score: 0.20,
+    flight_risk_index: 0.48, human_capital_value_score: 0.22, adaptability_coefficient: 0.25,
+    knowledge_transfer_depth: 0.42, mentorship_multiplier_score: 0.40, strategic_indispensability_score: 0.22,
+    skills_future_alignment: 0.42, innovation_contribution_rate: 0.18, retention_investment_roi: 0.52,
+    succession_pipeline_readiness: 0.42, cultural_influence_score: 0.48, cross_domain_synthesis_ability: 0.18,
+    resilience_under_pressure: 0.20, talent_ecosystem_connectivity: 0.22,
   },
 ];
 
