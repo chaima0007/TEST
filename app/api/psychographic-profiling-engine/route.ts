@@ -29,12 +29,12 @@ const MOCK_ENTITIES = [
   // high: composite 40–59
   {
     entity_id: "PP-003", segment_type: "traditionalist_consumers", region: "NOAM",
-    values_coherence: 0.45, motivation_alignment: 0.42, cognitive_rigidity: 0.58,
-    status_orientation: 0.50, risk_appetite_behavioral: 0.30, social_conformity_pressure: 0.72,
-    identity_brand_fusion: 0.48, novelty_seeking: 0.32, loss_sensitivity: 0.55,
-    authority_deference: 0.58, tribalism_intensity: 0.78, cognitive_dissonance_tolerance: 0.42,
-    future_orientation: 0.40, hedonism_index: 0.35, autonomy_drive: 0.38,
-    empathy_capacity: 0.42, reciprocity_responsiveness: 0.45,
+    values_coherence: 0.50, motivation_alignment: 0.52, cognitive_rigidity: 0.48,
+    status_orientation: 0.50, risk_appetite_behavioral: 0.30, social_conformity_pressure: 0.65,
+    identity_brand_fusion: 0.40, novelty_seeking: 0.48, loss_sensitivity: 0.45,
+    authority_deference: 0.45, tribalism_intensity: 0.72, cognitive_dissonance_tolerance: 0.32,
+    future_orientation: 0.50, hedonism_index: 0.35, autonomy_drive: 0.52,
+    empathy_capacity: 0.48, reciprocity_responsiveness: 0.45,
   },
   // PP-004: LATAM, digital_natives → low, behavioral_fluidity/none
   {
@@ -74,21 +74,23 @@ const MOCK_ENTITIES = [
   // high: composite 40–59
   {
     entity_id: "PP-007", segment_type: "traditionalist_consumers", region: "APAC",
-    values_coherence: 0.40, motivation_alignment: 0.28, cognitive_rigidity: 0.55,
-    status_orientation: 0.52, risk_appetite_behavioral: 0.28, social_conformity_pressure: 0.55,
-    identity_brand_fusion: 0.42, novelty_seeking: 0.30, loss_sensitivity: 0.58,
-    authority_deference: 0.62, tribalism_intensity: 0.52, cognitive_dissonance_tolerance: 0.48,
-    future_orientation: 0.35, hedonism_index: 0.30, autonomy_drive: 0.32,
-    empathy_capacity: 0.40, reciprocity_responsiveness: 0.38,
+    values_coherence: 0.45, motivation_alignment: 0.28, cognitive_rigidity: 0.50,
+    status_orientation: 0.52, risk_appetite_behavioral: 0.28, social_conformity_pressure: 0.50,
+    identity_brand_fusion: 0.38, novelty_seeking: 0.38, loss_sensitivity: 0.52,
+    authority_deference: 0.55, tribalism_intensity: 0.45, cognitive_dissonance_tolerance: 0.40,
+    future_orientation: 0.40, hedonism_index: 0.30, autonomy_drive: 0.32,
+    empathy_capacity: 0.45, reciprocity_responsiveness: 0.38,
   },
   // PP-008: NOAM, conservative_investors → critical, authority_dependency
   // authority_dependency: authority_deference≥0.70, (1-autonomy_drive)≥0.65 => autonomy_drive≤0.35
+  // motivation_alignment kept >0.35 to prevent motivation_void triggering before authority_dependency
+  // loss_sensitivity kept <0.70 to prevent loss_aversion_paralysis triggering before authority_dependency
   // critical: composite ≥ 60
   {
     entity_id: "PP-008", segment_type: "conservative_investors", region: "NOAM",
-    values_coherence: 0.18, motivation_alignment: 0.22, cognitive_rigidity: 0.75,
+    values_coherence: 0.18, motivation_alignment: 0.45, cognitive_rigidity: 0.75,
     status_orientation: 0.70, risk_appetite_behavioral: 0.12, social_conformity_pressure: 0.65,
-    identity_brand_fusion: 0.52, novelty_seeking: 0.18, loss_sensitivity: 0.75,
+    identity_brand_fusion: 0.52, novelty_seeking: 0.18, loss_sensitivity: 0.55,
     authority_deference: 0.85, tribalism_intensity: 0.62, cognitive_dissonance_tolerance: 0.72,
     future_orientation: 0.20, hedonism_index: 0.30, autonomy_drive: 0.28,
     empathy_capacity: 0.25, reciprocity_responsiveness: 0.30,
