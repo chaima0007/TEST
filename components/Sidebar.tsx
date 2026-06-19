@@ -3457,6 +3457,90 @@ function IconCollectiveAmplification({ className }: { className?: string }) {
   );
 }
 
+function IconSovereignWealth({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2l2 4h4l-3 3 1 4-4-2.5L6 13l1-4-3-3h4z"/>
+      <circle cx="10" cy="10" r="8" strokeWidth="1" opacity="0.4"/>
+    </svg>
+  );
+}
+function IconPostHuman({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="7" r="3"/>
+      <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+      <path d="M14 4l2-2M16 6h2M14 10l2 2" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconNarrativeControl({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 6h14M3 10h10M3 14h7"/>
+      <circle cx="16" cy="14" r="2.5"/>
+      <path d="M16 11.5v0M16 16.5v0" strokeWidth="2"/>
+    </svg>
+  );
+}
+function IconSemanticKG({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="10" r="2"/>
+      <circle cx="4" cy="4" r="1.5"/>
+      <circle cx="16" cy="4" r="1.5"/>
+      <circle cx="4" cy="16" r="1.5"/>
+      <circle cx="16" cy="16" r="1.5"/>
+      <path d="M5.5 5.1L8.6 8.2M14.5 5.1L11.4 8.2M5.5 14.9L8.6 11.8M14.5 14.9L11.4 11.8" strokeWidth="1"/>
+    </svg>
+  );
+}
+function IconExponentialTech({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 16 Q5 14 8 10 Q11 6 14 4 Q16 3 18 2"/>
+      <path d="M14 2h4v4" strokeWidth="1.3"/>
+      <path d="M2 10h3M2 13h2" strokeWidth="1" opacity="0.5"/>
+    </svg>
+  );
+}
+function IconPsychographic({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 10c0-2.8 2.2-5 5-5s5 2.2 5 5c0 1.5-.7 2.9-1.7 3.8"/>
+      <path d="M8 10c0-1.1.9-2 2-2s2 .9 2 2"/>
+      <path d="M10 15v2M7 16l1-1M13 16l-1-1" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconEnergyTransition({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2v4M10 14v4M2 10h4M14 10h4"/>
+      <circle cx="10" cy="10" r="3"/>
+      <path d="M4.9 4.9l2.8 2.8M12.3 12.3l2.8 2.8M4.9 15.1l2.8-2.8M12.3 7.7l2.8-2.8" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+function IconSyntheticMedia({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="12" height="9" rx="1"/>
+      <path d="M14 8l4-2v8l-4-2"/>
+      <path d="M6 8.5l3 2-3 2v-4z" fill="currentColor" opacity="0.4"/>
+    </svg>
+  );
+}
+function IconLongevityEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="10" cy="7" r="3"/>
+      <path d="M5 17v-1a5 5 0 0 1 10 0v1"/>
+      <path d="M15 4c1.5.5 2.5 2 2.5 3.5 0 2-1.5 3.5-3.5 4" strokeWidth="1.1"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -3819,6 +3903,15 @@ const navSections: NavSection[] = [
       { href: "/dashboard/hyperconnectivity-fragility-engine", label: "Hyperconnectivité", icon: IconHyperconnectivity },
       { href: "/dashboard/autonomous-financial-ecosystem-engine", label: "Éco. Financier Auto.", icon: IconAutoFinancial },
       { href: "/dashboard/collective-intelligence-amplification-engine", label: "Intelligence Collective+", icon: IconCollectiveAmplification },
+      { href: "/dashboard/sovereign-wealth-intelligence-engine", label: "Fonds Souverains", icon: IconSovereignWealth },
+      { href: "/dashboard/post-human-augmentation-engine", label: "Augmentation Post-Humain", icon: IconPostHuman },
+      { href: "/dashboard/narrative-control-engine", label: "Contrôle Narratif", icon: IconNarrativeControl },
+      { href: "/dashboard/semantic-knowledge-graph-engine", label: "Graphe Sémantique", icon: IconSemanticKG },
+      { href: "/dashboard/exponential-tech-convergence-engine", label: "Tech Exponentielle", icon: IconExponentialTech },
+      { href: "/dashboard/psychographic-profiling-engine", label: "Profilage Psychographique", icon: IconPsychographic },
+      { href: "/dashboard/energy-transition-intelligence-engine", label: "Transition Énergétique", icon: IconEnergyTransition },
+      { href: "/dashboard/synthetic-media-detection-engine", label: "Médias Synthétiques", icon: IconSyntheticMedia },
+      { href: "/dashboard/longevity-economy-engine", label: "Économie Longévité", icon: IconLongevityEconomy },
     ],
   },
   {

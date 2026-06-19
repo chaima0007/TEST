@@ -4,12 +4,12 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // SKG-001 — EMEA, enterprise_ontology — critical, ontology_collapse
   { entity_id: "SKG-001", graph_domain: "enterprise_ontology", region: "EMEA",
-    ontology_coherence: 0.12, knowledge_connectivity: 0.55, inference_accuracy: 0.50,
-    semantic_drift_rate: 0.45, schema_obsolescence: 0.72, entity_disambiguation_quality: 0.48,
-    relation_extraction_precision: 0.50, knowledge_freshness: 0.40, cross_domain_linking: 0.50,
-    graph_completeness: 0.45, reasoning_depth: 0.48, knowledge_pollution_rate: 0.55,
-    provenance_integrity: 0.50, federated_query_efficiency: 0.45, ontological_conflict_rate: 0.68,
-    knowledge_sovereignty: 0.50, graph_scalability: 0.45 },
+    ontology_coherence: 0.08, knowledge_connectivity: 0.45, inference_accuracy: 0.40,
+    semantic_drift_rate: 0.55, schema_obsolescence: 0.80, entity_disambiguation_quality: 0.38,
+    relation_extraction_precision: 0.42, knowledge_freshness: 0.30, cross_domain_linking: 0.38,
+    graph_completeness: 0.35, reasoning_depth: 0.38, knowledge_pollution_rate: 0.60,
+    provenance_integrity: 0.42, federated_query_efficiency: 0.38, ontological_conflict_rate: 0.72,
+    knowledge_sovereignty: 0.42, graph_scalability: 0.38 },
 
   // SKG-002 — APAC, biomedical_kg — low, knowledge_optimum / none
   { entity_id: "SKG-002", graph_domain: "biomedical_kg", region: "APAC",
@@ -67,12 +67,12 @@ const MOCK_ENTITIES = [
 
   // SKG-008 — NOAM, enterprise_ontology — critical, graph_staleness
   { entity_id: "SKG-008", graph_domain: "enterprise_ontology", region: "NOAM",
-    ontology_coherence: 0.32, knowledge_connectivity: 0.40, inference_accuracy: 0.35,
-    semantic_drift_rate: 0.50, schema_obsolescence: 0.78, entity_disambiguation_quality: 0.35,
-    relation_extraction_precision: 0.40, knowledge_freshness: 0.28, cross_domain_linking: 0.42,
-    graph_completeness: 0.38, reasoning_depth: 0.35, knowledge_pollution_rate: 0.50,
-    provenance_integrity: 0.40, federated_query_efficiency: 0.35, ontological_conflict_rate: 0.45,
-    knowledge_sovereignty: 0.40, graph_scalability: 0.35 },
+    ontology_coherence: 0.28, knowledge_connectivity: 0.40, inference_accuracy: 0.30,
+    semantic_drift_rate: 0.60, schema_obsolescence: 0.82, entity_disambiguation_quality: 0.30,
+    relation_extraction_precision: 0.35, knowledge_freshness: 0.22, cross_domain_linking: 0.52,
+    graph_completeness: 0.32, reasoning_depth: 0.30, knowledge_pollution_rate: 0.55,
+    provenance_integrity: 0.38, federated_query_efficiency: 0.30, ontological_conflict_rate: 0.42,
+    knowledge_sovereignty: 0.35, graph_scalability: 0.30 },
 ];
 
 type Entity = typeof MOCK_ENTITIES[0];
