@@ -1,21 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
 
-interface DSEntity {
+interface SGEntity {
   entity_id: string; name: string; country: string; sector: string;
-  composite_score: number; seabed_territorial_claim_score: number;
-  polymetallic_nodule_extraction_score: number; submarine_infrastructure_control_score: number;
-  isa_governance_capture_score: number; risk_level: string;
+  composite_score: number; sportwashing_investment_score: number;
+  sports_rights_acquisition_score: number; soft_power_narrative_score: number;
+  human_rights_whitewash_score: number; risk_level: string;
   primary_pattern: string; key_signals: string[];
-  estimated_deep_sea_index: number; last_updated: string;
+  estimated_sport_geopolitics_index: number; last_updated: string;
 }
-interface DSSummary {
+interface SGSummary {
   total_entities: number; avg_composite: number;
   risk_distribution: Record<string, number>; pattern_distribution: Record<string, number>;
   top_risk_entities: string[]; critical_alerts: string[];
   last_analysis: string; engine_version: string; domain: string;
   confidence_score: number; data_sources: string[];
-  entities: DSEntity[]; avg_estimated_deep_sea_index: number;
+  entities: SGEntity[]; avg_estimated_sport_geopolitics_index: number;
 }
 
 const RC: Record<string,string> = { critique:"text-red-400", "élevé":"text-orange-400", modéré:"text-yellow-400", faible:"text-emerald-400" };
@@ -50,7 +50,7 @@ function DistBar({ label, value, total, color }: { label: string; value: number;
   );
 }
 
-function DetailModal({ entity, onClose }: { entity: DSEntity; onClose: () => void }) {
+function DetailModal({ entity, onClose }: { entity: SGEntity; onClose: () => void }) {
   const [tab, setTab] = useState<"scores" | "signaux" | "actions">("scores");
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
@@ -65,8 +65,7 @@ function DetailModal({ entity, onClose }: { entity: DSEntity; onClose: () => voi
         <div className="flex gap-2 mb-4">
           {(["scores", "signaux", "actions"] as const).map(t => (
             <button key={t} onClick={() => setTab(t)}
-              className={`px-3 py-1 rounded-full text-xs border ${tab === t ? "border-cyan-600 text-white" : "bg-slate-800 border-slate-700 text-slate-400"}`}
-              style={tab === t ? { backgroundColor: "#0e7490" } : {}}>
+              className={`px-3 py-1 rounded-full text-xs border ${tab === t ? "bg-amber-600 border-amber-500 text-white" : "bg-slate-800 border-slate-700 text-slate-400"}`}>
               {t.charAt(0).toUpperCase() + t.slice(1)}
             </button>
           ))}
@@ -74,10 +73,10 @@ function DetailModal({ entity, onClose }: { entity: DSEntity; onClose: () => voi
         {tab === "scores" && (
           <div className="space-y-3">
             {[
-              { l: "Revendications Territoriales Fonds Marins", v: entity.seabed_territorial_claim_score, c: "#0e7490" },
-              { l: "Extraction Nodules Polymétalliques", v: entity.polymetallic_nodule_extraction_score, c: "#0891b2" },
-              { l: "Contrôle Infrastructure Sous-Marine", v: entity.submarine_infrastructure_control_score, c: "#06b6d4" },
-              { l: "Capture Gouvernance AIFM", v: entity.isa_governance_capture_score, c: "#22d3ee" },
+              { l: "Investissement Sportwashing", v: entity.sportwashing_investment_score, c: "#f59e0b" },
+              { l: "Acquisition Droits Sportifs", v: entity.sports_rights_acquisition_score, c: "#d97706" },
+              { l: "Narratif Soft Power", v: entity.soft_power_narrative_score, c: "#b45309" },
+              { l: "Blanchiment Droits Humains", v: entity.human_rights_whitewash_score, c: "#92400e" },
             ].map(({ l, v, c }) => (
               <div key={l}>
                 <div className="flex justify-between text-xs text-slate-400 mb-1"><span>{l}</span><span>{v}/100</span></div>
@@ -85,25 +84,25 @@ function DetailModal({ entity, onClose }: { entity: DSEntity; onClose: () => voi
               </div>
             ))}
             <div className="pt-2 flex justify-between text-sm">
-              <span className="text-slate-400">Index Fonds Marins Estimé</span>
-              <span className="font-bold" style={{ color: "#0e7490" }}>{entity.estimated_deep_sea_index}</span>
+              <span className="text-slate-400">Index Géopolitique Sport Estimé</span>
+              <span className="text-amber-400 font-bold">{entity.estimated_sport_geopolitics_index}</span>
             </div>
           </div>
         )}
         {tab === "signaux" && (
           <ul className="space-y-2">
             {entity.key_signals.map((s, i) => (
-              <li key={i} className="flex gap-2 text-sm text-slate-300"><span style={{ color: "#0e7490" }}>›</span>{s}</li>
+              <li key={i} className="flex gap-2 text-sm text-slate-300"><span className="text-amber-400">›</span>{s}</li>
             ))}
           </ul>
         )}
         {tab === "actions" && (
           <div className="text-sm space-y-2 text-slate-300">
-            <p className="text-xs text-slate-500 mb-2">Pattern: <span style={{ color: "#0e7490" }}>{entity.primary_pattern}</span></p>
-            {entity.risk_level === "critique" && <><p>› Blocage d'urgence des licences d'extraction dans les zones contestées de la Zone internationale</p><p>› Réforme immédiate des mécanismes de gouvernance de l'AIFM face à la capture géopolitique</p></>}
-            {entity.risk_level === "élevé" && <><p>› Conditionnement des licences minières au respect du droit international des fonds marins</p><p>› Surveillance renforcée des infrastructures sous-marines critiques dans la Zone</p></>}
-            {entity.risk_level === "modéré" && <><p>› Renforcement de la transparence dans l'attribution des contrats d'exploration des fonds marins</p></>}
-            {entity.risk_level === "faible" && <><p>› Maintien de la veille sur les activités d'exploration et d'extraction dans la Zone internationale</p></>}
+            <p className="text-xs text-slate-500 mb-2">Pattern: <span className="text-amber-400">{entity.primary_pattern}</span></p>
+            {entity.risk_level === "critique" && <><p>› Sanctions ciblées sur les investissements sportifs instrumentalisés par des régimes autoritaires</p><p>› Réforme urgente des critères d'attribution des droits sportifs internationaux</p></>}
+            {entity.risk_level === "élevé" && <><p>› Conditionnement des droits d'accueil d'événements majeurs aux garanties des droits humains</p><p>› Contre-narratif coordonné face aux campagnes de soft power via le sport</p></>}
+            {entity.risk_level === "modéré" && <><p>› Surveillance renforcée des acquisitions de clubs et droits médias par des fonds souverains autoritaires</p></>}
+            {entity.risk_level === "faible" && <><p>› Maintien de la veille sur les investissements sportifs à des fins géopolitiques</p></>}
           </div>
         )}
       </div>
@@ -111,44 +110,44 @@ function DetailModal({ entity, onClose }: { entity: DSEntity; onClose: () => voi
   );
 }
 
-export default function DeepSeaMiningPage() {
-  const [data, setData] = useState<DSSummary | null>(null);
+export default function SportwashingGeopoliticsPage() {
+  const [data, setData] = useState<SGSummary | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [filter, setFilter] = useState("tous");
-  const [sel, setSel] = useState<DSEntity | null>(null);
+  const [sel, setSel] = useState<SGEntity | null>(null);
 
   useEffect(() => {
     const swarmUrl = process.env.NEXT_PUBLIC_SWARM_API_URL;
     if (!swarmUrl) { setError("SWARM_API_URL non configuré"); setLoading(false); return; }
-    fetch("/api/deep-sea-mining-engine")
+    fetch("/api/sportwashing-geopolitics-engine")
       .then(r => { if (!r.ok) throw new Error(`${r.status}`); return r.json(); })
       .then(d => { setData(d.entities ? d : d.data ?? d); setLoading(false); })
-      .catch(() => { setError("Erreur chargement données fonds marins géopolitique"); setLoading(false); });
+      .catch(() => { setError("Erreur chargement données sportwashing géopolitique"); setLoading(false); });
   }, []);
 
-  if (loading) return <div className="min-h-screen bg-slate-950 flex items-center justify-center"><div className="text-slate-400 animate-pulse">Analyse de la course aux fonds marins et capture géopolitique de la Zone…</div></div>;
+  if (loading) return <div className="min-h-screen bg-slate-950 flex items-center justify-center"><div className="text-slate-400 animate-pulse">Analyse de l'instrumentalisation géopolitique du sport mondial…</div></div>;
   if (error || !data) return <div className="min-h-screen bg-slate-950 flex items-center justify-center"><div className="text-red-400">{error || "Données indisponibles"}</div></div>;
 
   const filtered = filter === "tous" ? data.entities : data.entities.filter(e => e.risk_level === filter);
-  const avgScore = (k: keyof DSEntity) => Math.round(data.entities.reduce((s, e) => s + (e[k] as number), 0) / data.entities.length);
+  const avgScore = (k: keyof SGEntity) => Math.round(data.entities.reduce((s, e) => s + (e[k] as number), 0) / data.entities.length);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6">
       {sel && <DetailModal entity={sel} onClose={() => setSel(null)} />}
       <div className="max-w-7xl mx-auto space-y-6">
         <div>
-          <h1 className="text-2xl font-bold">Deep Sea Mining Geopolitics Intelligence</h1>
-          <p className="text-slate-400 text-sm">Course aux fonds marins et capture géopolitique de la Zone · v{data.engine_version}</p>
+          <h1 className="text-2xl font-bold">Sportwashing Geopolitics Intelligence</h1>
+          <p className="text-slate-400 text-sm">Instrumentalisation géopolitique du sport mondial · v{data.engine_version}</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
             { l: "Zones Analysées", v: data.total_entities, g: "from-slate-700 to-slate-600", t: "text-white" },
-            { l: "Score Composite Moyen", v: `${data.avg_composite}%`, g: "from-cyan-900 to-cyan-800", t: "text-cyan-300" },
-            { l: "Alertes Critiques", v: data.critical_alerts.length, g: "from-cyan-900 to-cyan-800", t: "text-cyan-300" },
-            { l: "Index Fonds Marins Moyen", v: data.avg_estimated_deep_sea_index, g: "from-teal-900 to-teal-800", t: "text-teal-300" },
-            { l: "Sources", v: data.data_sources.length, g: "from-cyan-900 to-cyan-800", t: "text-cyan-300" },
+            { l: "Score Composite Moyen", v: `${data.avg_composite}%`, g: "from-amber-900 to-amber-800", t: "text-amber-300" },
+            { l: "Alertes Critiques", v: data.critical_alerts.length, g: "from-amber-900 to-amber-800", t: "text-amber-300" },
+            { l: "Index Sport Géo Moyen", v: data.avg_estimated_sport_geopolitics_index, g: "from-yellow-900 to-yellow-800", t: "text-yellow-300" },
+            { l: "Sources", v: data.data_sources.length, g: "from-amber-900 to-amber-800", t: "text-amber-300" },
             { l: "Confiance", v: `${Math.round(data.confidence_score * 100)}%`, g: "from-slate-800 to-slate-700", t: "text-slate-300" },
           ].map(({ l, v, g, t }) => (
             <div key={l} className={`bg-gradient-to-br ${g} rounded-xl p-4 border border-white/5`}>
@@ -159,18 +158,18 @@ export default function DeepSeaMiningPage() {
         </div>
 
         <div className="bg-slate-900 rounded-xl p-6 border border-slate-800">
-          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Vecteurs de Capture Géopolitique des Fonds Marins Moyens</h2>
+          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Vecteurs de Sportwashing Géopolitique Moyens</h2>
           <div className="flex flex-wrap justify-around gap-6">
-            <GaugeRing value={avgScore("seabed_territorial_claim_score")} label="Revendications Territoriales" color="#0e7490" />
-            <GaugeRing value={avgScore("polymetallic_nodule_extraction_score")} label="Extraction Nodules Polymétalliques" color="#0891b2" />
-            <GaugeRing value={avgScore("submarine_infrastructure_control_score")} label="Contrôle Infrastructure Sous-Marine" color="#06b6d4" />
-            <GaugeRing value={avgScore("isa_governance_capture_score")} label="Capture Gouvernance AIFM" color="#22d3ee" />
+            <GaugeRing value={avgScore("sportwashing_investment_score")} label="Investissement Sportwashing" color="#f59e0b" />
+            <GaugeRing value={avgScore("sports_rights_acquisition_score")} label="Acquisition Droits Sportifs" color="#d97706" />
+            <GaugeRing value={avgScore("soft_power_narrative_score")} label="Narratif Soft Power" color="#b45309" />
+            <GaugeRing value={avgScore("human_rights_whitewash_score")} label="Blanchiment Droits Humains" color="#92400e" />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-slate-900 rounded-xl p-5 border border-slate-800">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Distribution Risques Fonds Marins</h2>
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Distribution Risques de Sportwashing</h2>
             <div className="space-y-2">
               <DistBar label="Critique" value={data.risk_distribution.critique ?? 0} total={data.total_entities} color="#ef4444" />
               <DistBar label="Élevé" value={data.risk_distribution["élevé"] ?? 0} total={data.total_entities} color="#f97316" />
@@ -179,27 +178,26 @@ export default function DeepSeaMiningPage() {
             </div>
           </div>
           <div className="bg-slate-900 rounded-xl p-5 border border-slate-800">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Patterns de Capture Géopolitique des Fonds Marins</h2>
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Patterns de Sportwashing Géopolitique</h2>
             <div className="space-y-2">
               {Object.entries(data.pattern_distribution).map(([k, v], i) => (
-                <DistBar key={k} label={k.replace(/_/g, " ")} value={v} total={data.total_entities} color={["#0e7490", "#0891b2", "#06b6d4", "#22d3ee", "#67e8f9"][i % 5]} />
+                <DistBar key={k} label={k.replace(/_/g, " ")} value={v} total={data.total_entities} color={["#f59e0b", "#d97706", "#b45309", "#92400e", "#78350f"][i % 5]} />
               ))}
             </div>
           </div>
         </div>
 
         {data.critical_alerts.length > 0 && (
-          <div className="bg-cyan-900/10 border border-cyan-500/20 rounded-xl p-4">
-            <h2 className="text-sm font-semibold text-cyan-400 mb-2">Alertes Fonds Marins Géopolitique Critiques</h2>
-            <ul className="space-y-1">{data.critical_alerts.map((a, i) => <li key={i} className="text-sm text-cyan-300">› {a}</li>)}</ul>
+          <div className="bg-amber-900/10 border border-amber-500/20 rounded-xl p-4">
+            <h2 className="text-sm font-semibold text-amber-400 mb-2">Alertes Sportwashing Géopolitique Critiques</h2>
+            <ul className="space-y-1">{data.critical_alerts.map((a, i) => <li key={i} className="text-sm text-amber-300">› {a}</li>)}</ul>
           </div>
         )}
 
         <div className="flex gap-2 flex-wrap">
           {["tous", "critique", "élevé", "modéré", "faible"].map(f => (
             <button key={f} onClick={() => setFilter(f)}
-              className={`px-4 py-1.5 rounded-full text-sm border transition-all capitalize ${filter === f ? "border-cyan-600 text-white" : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500"}`}
-              style={filter === f ? { backgroundColor: "#0e7490" } : {}}>
+              className={`px-4 py-1.5 rounded-full text-sm border transition-all capitalize ${filter === f ? "bg-amber-600 border-amber-500 text-white" : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-500"}`}>
               {f}
             </button>
           ))}
@@ -208,7 +206,7 @@ export default function DeepSeaMiningPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map(entity => (
             <div key={entity.entity_id} onClick={() => setSel(entity)}
-              className={`bg-slate-900 rounded-xl p-4 border cursor-pointer hover:border-cyan-500/50 transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}>
+              className={`bg-slate-900 rounded-xl p-4 border cursor-pointer hover:border-amber-500/50 transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}>
               <div className="flex justify-between mb-2">
                 <div>
                   <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
@@ -218,17 +216,17 @@ export default function DeepSeaMiningPage() {
                 <span className={`text-xs font-bold ${RC[entity.risk_level]}`}>{entity.composite_score.toFixed(1)}</span>
               </div>
               <div className="h-1.5 bg-slate-800 rounded-full mb-2">
-                <div className="h-full rounded-full" style={{ width: `${entity.composite_score}%`, backgroundColor: "#0e7490" }} />
+                <div className="h-full rounded-full" style={{ width: `${entity.composite_score}%`, backgroundColor: "#f59e0b" }} />
               </div>
               <div className="flex justify-between text-xs text-slate-500">
                 <span className={RC[entity.risk_level]}>{entity.risk_level}</span>
-                <span>idx {entity.estimated_deep_sea_index}</span>
+                <span>idx {entity.estimated_sport_geopolitics_index}</span>
               </div>
             </div>
           ))}
         </div>
 
-        <p className="text-xs text-slate-600 text-center">Caelum Partners · Deep Sea Mining Geopolitics Intelligence · {data.last_analysis}</p>
+        <p className="text-xs text-slate-600 text-center">Caelum Partners · Sportwashing Geopolitics Intelligence · {data.last_analysis}</p>
       </div>
     </div>
   );

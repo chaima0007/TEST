@@ -5974,6 +5974,43 @@ function IconFinancialContagion({ className }: { className?: string }) {
   );
 }
 
+function IconDiasporaWeaponizationEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="4" r="1.5" fill="currentColor" opacity="0.9" />
+      <circle cx="2.5" cy="12" r="1.5" fill="currentColor" opacity="0.9" />
+      <circle cx="13.5" cy="12" r="1.5" fill="currentColor" opacity="0.9" />
+      <line x1="8" y1="5.5" x2="2.5" y2="10.5" opacity="0.7" />
+      <line x1="8" y1="5.5" x2="13.5" y2="10.5" opacity="0.7" />
+      <line x1="2.5" y1="12" x2="13.5" y2="12" opacity="0.5" />
+    </svg>
+  );
+}
+
+function IconSportwashingGeopoliticsEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 12h8" opacity="0.7" />
+      <path d="M5 12V8c0-1.7 1.3-3 3-3s3 1.3 3 3v4" opacity="0.8" />
+      <path d="M6 5.5L8 2l2 3.5" fill="currentColor" fillOpacity="0.6" opacity="0.9" />
+      <line x1="8" y1="2" x2="8" y2="3.5" strokeWidth="1" />
+      <path d="M3 12h10" strokeWidth="2" opacity="0.5" />
+    </svg>
+  );
+}
+
+function IconDeepSeaMiningEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="8" y1="1" x2="8" y2="5" />
+      <path d="M5 5h6" />
+      <path d="M5 5c0 2-2 3-2 5h10c0-2-2-3-2-5" opacity="0.8" />
+      <path d="M6 15h4" opacity="0.6" />
+      <line x1="8" y1="10" x2="8" y2="15" opacity="0.7" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6567,6 +6604,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/water-wars-engine", label: "Water Wars", icon: IconWaterWars },
       { href: "/dashboard/quantum-race-engine", label: "Quantum Race", icon: IconQuantumRace },
       { href: "/dashboard/arctic-geopolitics-engine", label: "Arctic Geopolitics", icon: IconArcticGeopolitics },
+      { href: "/dashboard/diaspora-weaponization-engine", label: "Diaspora Weaponization", icon: IconDiasporaWeaponizationEngine },
+      { href: "/dashboard/sportwashing-geopolitics-engine", label: "Sportwashing Geopolitics", icon: IconSportwashingGeopoliticsEngine },
+      { href: "/dashboard/deep-sea-mining-engine", label: "Deep Sea Mining", icon: IconDeepSeaMiningEngine },
       { href: "/dashboard/food-weaponization-engine", label: "Food Weaponization", icon: IconFoodWeaponization },
       { href: "/dashboard/ai-weapons-race-engine", label: "AI Weapons Race", icon: IconAIWeaponsRace },
       { href: "/dashboard/port-logistics-capture-engine", label: "Port Logistics Capture", icon: IconPortLogisticsCapture },
