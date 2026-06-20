@@ -6126,6 +6126,30 @@ function IconRefugeeRefoulement({ className }: { className?: string }) {
   );
 }
 
+function IconProxyWarfare({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+    </svg>
+  );
+}
+
+function IconTransnationalRepression({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/><path d="M4.93 4.93l14.14 14.14"/>
+    </svg>
+  );
+}
+
+function IconNuclearBlackmail({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M4.22 4.22l2.12 2.12"/><path d="M17.66 17.66l2.12 2.12"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M4.22 19.78l2.12-2.12"/><path d="M17.66 6.34l2.12-2.12"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6951,6 +6975,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/war-crimes-siege-engine", label: "War Crimes Siege", icon: IconWarCrimes },
       { href: "/dashboard/internet-shutdown-engine", label: "Internet Shutdown", icon: IconInternetShutdown },
       { href: "/dashboard/refugee-refoulement-engine", label: "Refugee Refoulement", icon: IconRefugeeRefoulement },
+      { href: "/dashboard/proxy-warfare-engine", label: "Proxy Warfare", icon: IconProxyWarfare },
+      { href: "/dashboard/transnational-repression-engine", label: "Transnational Repression", icon: IconTransnationalRepression },
+      { href: "/dashboard/nuclear-blackmail-engine", label: "Nuclear Blackmail", icon: IconNuclearBlackmail },
     ],
   },
   {
