@@ -5545,6 +5545,28 @@ function IconCivDebt({ className }: { className?: string }) {
   );
 }
 
+function IconNexusCrisis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M10 2 L14 8 L18 6 L14 14 L10 18 L6 14 L2 6 L6 8 Z" opacity="0.3" fill="currentColor"/>
+      <circle cx="10" cy="10" r="2.5" fill="currentColor" opacity="0.9"/>
+      <path d="M10 4 L10 7M10 13 L10 16M4 10 L7 10M13 10 L16 10" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconDemocraticDecay({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M4 14 L4 6 L10 3 L16 6 L16 14 L10 17 Z" opacity="0.3"/>
+      <path d="M4 14 L10 17 L16 14" strokeLinecap="round"/>
+      <path d="M7 9 L9 11 L13 7" strokeLinecap="round" strokeLinejoin="round" opacity="0.6"/>
+      <path d="M10 2 L10 5" strokeLinecap="round" strokeWidth="2" opacity="0.8"/>
+      <line x1="7" y1="14" x2="13" y2="14" strokeLinecap="round" opacity="0.4"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6097,6 +6119,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/caelum-synthesis-engine", label: "Synthèse Méta-Intelligence", icon: IconCaelumSynthesis },
       { href: "/dashboard/antifragility-index-engine", label: "Indice d'Antifragilité", icon: IconAntifragility },
       { href: "/dashboard/civilizational-debt-engine", label: "Dette Civilisationnelle", icon: IconCivDebt },
+      { href: "/dashboard/nexus-crisis-engine", label: "Nexus Eau-Alimentation-Énergie", icon: IconNexusCrisis },
+      { href: "/dashboard/democratic-decay-engine", label: "Érosion Démocratique", icon: IconDemocraticDecay },
     ],
   },
   {
