@@ -5591,6 +5591,18 @@ function IconSocialCohesion({ className }: { className?: string }) {
   );
 }
 
+function IconHybridWarfare({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <polygon points="10,2 12,8 18,8 13,12 15,18 10,14 5,18 7,12 2,8 8,8" opacity="0.5" fill="currentColor" strokeWidth="0.5"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.9" stroke="none"/>
+      <path d="M10 2 L10 5" strokeLinecap="round" strokeWidth="1" opacity="0.8"/>
+      <path d="M18 10 L15 10" strokeLinecap="round" strokeWidth="1" opacity="0.8"/>
+      <path d="M2 10 L5 10" strokeLinecap="round" strokeWidth="1" opacity="0.8"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6147,6 +6159,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/democratic-decay-engine", label: "Érosion Démocratique", icon: IconDemocraticDecay },
       { href: "/dashboard/economic-coercion-engine", label: "Coercition Économique", icon: IconEconomicCoercion },
       { href: "/dashboard/social-cohesion-engine", label: "Cohésion Sociale", icon: IconSocialCohesion },
+      { href: "/dashboard/hybrid-warfare-engine", label: "Guerre Hybride & Zone Grise", icon: IconHybridWarfare },
     ],
   },
   {
