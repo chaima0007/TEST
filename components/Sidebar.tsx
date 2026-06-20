@@ -5638,6 +5638,45 @@ function IconAttentionEconomy({ className }: { className?: string }) {
   );
 }
 
+function IconSovereignAIEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" opacity="0.3"/>
+      <path d="M7 10 C7 7 13 7 13 10 C13 13 7 13 7 10" opacity="0.6"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.9" stroke="none"/>
+      <path d="M10 3 L10 6" strokeLinecap="round"/>
+      <path d="M10 14 L10 17" strokeLinecap="round"/>
+      <path d="M3 10 L6 10" strokeLinecap="round"/>
+      <path d="M14 10 L17 10" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconComplexityHorizonEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M2 15 Q5 8 10 10 Q15 12 18 5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M2 18 L18 18" strokeLinecap="round" opacity="0.4"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.8" stroke="none"/>
+      <path d="M10 10 L10 4" strokeLinecap="round" strokeDasharray="1 2" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconLongevityInequalityEngine({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M4 16 L4 6" strokeLinecap="round" opacity="0.4"/>
+      <path d="M10 16 L10 10" strokeLinecap="round" opacity="0.6"/>
+      <path d="M16 16 L16 4" strokeLinecap="round" opacity="0.8"/>
+      <path d="M2 16 L18 16" strokeLinecap="round"/>
+      <circle cx="4" cy="6" r="1.5" fill="currentColor" opacity="0.5" stroke="none"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.7" stroke="none"/>
+      <circle cx="16" cy="4" r="1.5" fill="currentColor" opacity="0.9" stroke="none"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6198,6 +6237,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/epistemic-security-engine", label: "Sécurité Épistémique", icon: IconEpistemicSecurity },
       { href: "/dashboard/attention-economy-engine", label: "Économie de l'Attention", icon: IconAttentionEconomy },
       { href: "/dashboard/hybrid-warfare-engine", label: "Guerre Hybride & Zone Grise", icon: IconHybridWarfare },
+      { href: "/dashboard/sovereign-ai-engine", label: "Souveraineté IA Nationale", icon: IconSovereignAIEngine },
+      { href: "/dashboard/complexity-horizon-engine", label: "Horizon de Complexité", icon: IconComplexityHorizonEngine },
+      { href: "/dashboard/longevity-inequality-engine", label: "Inégalité de Longévité", icon: IconLongevityInequalityEngine },
     ],
   },
   {
