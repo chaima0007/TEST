@@ -5862,6 +5862,45 @@ function IconArcticGeopolitics({ className }: { className?: string }) {
   );
 }
 
+function IconFoodWeaponization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2c0 0-1 3-1 5s1 3 1 3 1-1 1-3-1-5-1-5z" fill="currentColor" opacity="0.7" />
+      <path d="M9 4c0 0-2 2-2 4s1 3 1 3" opacity="0.6" />
+      <path d="M15 4c0 0 2 2 2 4s-1 3-1 3" opacity="0.6" />
+      <path d="M12 10v12" />
+      <path d="M8 14h8" opacity="0.5" />
+      <path d="M9 17h6" opacity="0.4" />
+    </svg>
+  );
+}
+
+function IconAIWeaponsRace({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="7" y="8" width="10" height="8" rx="2" />
+      <path d="M9 8V6a3 3 0 016 0v2" />
+      <circle cx="10" cy="12" r="1" fill="currentColor" />
+      <circle cx="14" cy="12" r="1" fill="currentColor" />
+      <path d="M5 12H7M17 12H19" opacity="0.6" />
+      <path d="M12 16v3M10 19h4" opacity="0.5" />
+    </svg>
+  );
+}
+
+function IconPortLogisticsCapture({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2v6" />
+      <path d="M8 8h8" />
+      <path d="M5 8l-2 8h18l-2-8" />
+      <path d="M3 16c0 2 2 4 9 4s9-2 9-4" opacity="0.6" />
+      <circle cx="12" cy="4" r="1.5" fill="currentColor" opacity="0.7" />
+      <path d="M9 12h6" opacity="0.5" />
+    </svg>
+  );
+}
+
 function IconResourceCurse({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -6528,6 +6567,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/water-wars-engine", label: "Water Wars", icon: IconWaterWars },
       { href: "/dashboard/quantum-race-engine", label: "Quantum Race", icon: IconQuantumRace },
       { href: "/dashboard/arctic-geopolitics-engine", label: "Arctic Geopolitics", icon: IconArcticGeopolitics },
+      { href: "/dashboard/food-weaponization-engine", label: "Food Weaponization", icon: IconFoodWeaponization },
+      { href: "/dashboard/ai-weapons-race-engine", label: "AI Weapons Race", icon: IconAIWeaponsRace },
+      { href: "/dashboard/port-logistics-capture-engine", label: "Port Logistics Capture", icon: IconPortLogisticsCapture },
     ],
   },
   {
