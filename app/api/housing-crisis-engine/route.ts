@@ -126,10 +126,10 @@ function compositeScore(aff: number, spe: number, sup: number, hom: number): num
   return Math.round((aff * 0.30 + spe * 0.25 + sup * 0.25 + hom * 0.20) * 100) / 100;
 }
 function riskLevel(composite: number): string {
-  if (composite >= 60) return "critical";
-  if (composite >= 40) return "high";
-  if (composite >= 20) return "moderate";
-  return "low";
+  if (composite >= 60) return "critique";
+  if (composite >= 40) return "élevé";
+  if (composite >= 20) return "modéré";
+  return "faible";
 }
 function housingPattern(e: HCEInput): string {
   if (e.homelessness_prevalence > 0.85 && e.eviction_rate > 0.80) return "homelessness_crisis_explosion";
@@ -207,9 +207,9 @@ export async function GET() {
       tSup  += ent.supply_score;
       tHom  += ent.homelessness_score;
       tComp += ent.composite_score;
-      if (ent.risk_level === "critical")       criticalCount++;
-      else if (ent.risk_level === "high")      highCount++;
-      else if (ent.risk_level === "moderate")  moderateCount++;
+      if (ent.risk_level === "critique")       criticalCount++;
+      else if (ent.risk_level === "élevé")     highCount++;
+      else if (ent.risk_level === "modéré")    moderateCount++;
       else                                     lowCount++;
     }
 
