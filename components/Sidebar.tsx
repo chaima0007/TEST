@@ -5471,6 +5471,17 @@ function IconAgentOrchestrator({ className }: { className?: string }) {
   );
 }
 
+function IconHybridInfra({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <rect x="2" y="11" width="5" height="7" rx="1" fill="currentColor" stroke="none" opacity="0.6"/>
+      <rect x="7.5" y="7" width="5" height="11" rx="1" fill="currentColor" stroke="none" opacity="0.8"/>
+      <rect x="13" y="3" width="5" height="15" rx="1" fill="currentColor" stroke="none"/>
+      <path d="M1 10 Q5 6 10 9 Q15 12 19 4" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6017,6 +6028,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/upsell-opportunity", label: "Opportunités Upsell", icon: IconUpsellOpportunity },
       { href: "/dashboard/social-media-roi", label: "ROI Réseaux Sociaux", icon: IconSocialROI },
       { href: "/dashboard/agent-orchestrator", label: "Orchestrateur Agents IA", icon: IconAgentOrchestrator },
+      { href: "/dashboard/hybrid-infrastructure", label: "Infrastructure Hybride", icon: IconHybridInfra },
     ],
   },
   {
