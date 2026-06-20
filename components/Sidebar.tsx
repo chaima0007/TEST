@@ -6150,6 +6150,30 @@ function IconNuclearBlackmail({ className }: { className?: string }) {
   );
 }
 
+function IconForcedDisappearance({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="7" r="3"/><path d="M6 20v-2a4 4 0 0 1 4-4h4"/><path d="M16 14l4 4"/><path d="M20 14l-4 4"/>
+    </svg>
+  );
+}
+
+function IconCulturalProperty({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><line x1="2" y1="2" x2="22" y2="22"/>
+    </svg>
+  );
+}
+
+function IconPsychologicalWarfare({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="10"/><path d="M2 2l20 20"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6978,6 +7002,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/proxy-warfare-engine", label: "Proxy Warfare", icon: IconProxyWarfare },
       { href: "/dashboard/transnational-repression-engine", label: "Transnational Repression", icon: IconTransnationalRepression },
       { href: "/dashboard/nuclear-blackmail-engine", label: "Nuclear Blackmail", icon: IconNuclearBlackmail },
+      { href: "/dashboard/forced-disappearance-engine", label: "Forced Disappearance", icon: IconForcedDisappearance },
+      { href: "/dashboard/cultural-property-looting-engine", label: "Cultural Property", icon: IconCulturalProperty },
+      { href: "/dashboard/psychological-warfare-engine", label: "Psychological Warfare", icon: IconPsychologicalWarfare },
     ],
   },
   {
