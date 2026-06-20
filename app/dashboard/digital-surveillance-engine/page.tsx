@@ -1,28 +1,28 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const ACCENT = "#1e40af";
+const ACCENT = "#312e81";
 const RC: Record<string,string> = { critique:"text-red-400","élevé":"text-orange-400",modéré:"text-yellow-400",faible:"text-emerald-400" };
 const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","élevé":"border-orange-500/30 bg-orange-500/10",modéré:"border-yellow-500/30 bg-yellow-500/10",faible:"border-emerald-500/30 bg-emerald-500/10" };
 
-interface StatelessnessEntity {
+interface DigitalSurveillanceEntity {
   entity_id: string;
   name: string;
   country: string;
   sector: string;
   composite_score: number;
-  population_scale_denial_score: number;
-  documentation_access_failure_score: number;
-  generational_transmission_score: number;
-  protection_legal_framework_gap_score: number;
+  mass_surveillance_scale_score: number;
+  journalist_activist_targeting_score: number;
+  legal_safeguard_absence_score: number;
+  spyware_export_impunity_score: number;
   risk_level: string;
   primary_pattern: string;
   key_signals: string[];
-  estimated_statelessness_index: number;
+  estimated_digital_surveillance_index: number;
   last_updated: string;
 }
 
-interface StatelessnessSummary {
+interface DigitalSurveillanceSummary {
   total_entities: number;
   avg_composite: number;
   risk_distribution: Record<string, number>;
@@ -31,12 +31,12 @@ interface StatelessnessSummary {
   engine_version: string;
   confidence_score: number;
   data_sources: string[];
-  avg_estimated_statelessness_index: number;
+  avg_estimated_digital_surveillance_index: number;
 }
 
-interface StatelessnessData {
-  entities: StatelessnessEntity[];
-  summary: StatelessnessSummary;
+interface DigitalSurveillanceData {
+  entities: DigitalSurveillanceEntity[];
+  summary: DigitalSurveillanceSummary;
 }
 
 const RISK_CONFIG: Record<string, { label: string; color: string; bg: string; border: string; dot: string }> = {
@@ -98,7 +98,7 @@ function KpiCard({ label, value, sub, accent }: { label: string; value: string |
   );
 }
 
-function EntityCard({ entity, onClick }: { entity: StatelessnessEntity; onClick: (e: StatelessnessEntity) => void }) {
+function EntityCard({ entity, onClick }: { entity: DigitalSurveillanceEntity; onClick: (e: DigitalSurveillanceEntity) => void }) {
   const cfg = RISK_CONFIG[entity.risk_level] ?? RISK_CONFIG.faible;
   return (
     <button onClick={() => onClick(entity)}
@@ -114,16 +114,16 @@ function EntityCard({ entity, onClick }: { entity: StatelessnessEntity; onClick:
       </div>
       <div className="grid grid-cols-3 gap-2 mb-3">
         <div className="bg-white/4 rounded-lg p-2 text-center">
-          <p className="text-sm font-bold text-white">{entity.population_scale_denial_score}</p>
-          <p className="text-[10px] text-gray-500">Population</p>
+          <p className="text-sm font-bold text-white">{entity.mass_surveillance_scale_score}</p>
+          <p className="text-[10px] text-gray-500">Masse</p>
         </div>
         <div className="bg-white/4 rounded-lg p-2 text-center">
-          <p className="text-sm font-bold text-white">{entity.documentation_access_failure_score}</p>
-          <p className="text-[10px] text-gray-500">Docs</p>
+          <p className="text-sm font-bold text-white">{entity.journalist_activist_targeting_score}</p>
+          <p className="text-[10px] text-gray-500">Ciblage</p>
         </div>
         <div className="bg-white/4 rounded-lg p-2 text-center">
-          <p className="text-sm font-bold text-white">{entity.generational_transmission_score}</p>
-          <p className="text-[10px] text-gray-500">Générationnel</p>
+          <p className="text-sm font-bold text-white">{entity.spyware_export_impunity_score}</p>
+          <p className="text-[10px] text-gray-500">Spyware</p>
         </div>
       </div>
       <div className="flex items-center justify-between text-xs">
@@ -134,7 +134,7 @@ function EntityCard({ entity, onClick }: { entity: StatelessnessEntity; onClick:
   );
 }
 
-function DetailModal({ entity, onClose }: { entity: StatelessnessEntity; onClose: () => void }) {
+function DetailModal({ entity, onClose }: { entity: DigitalSurveillanceEntity; onClose: () => void }) {
   const [tab, setTab] = useState<"apercu" | "signaux" | "contexte">("apercu");
   const cfg = RISK_CONFIG[entity.risk_level] ?? RISK_CONFIG.faible;
   const TABS = [
@@ -175,11 +175,11 @@ function DetailModal({ entity, onClose }: { entity: StatelessnessEntity; onClose
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Déni Population", value: `${entity.population_scale_denial_score}/100` },
-                  { label: "Accès Documentation", value: `${entity.documentation_access_failure_score}/100` },
-                  { label: "Transmission Générationnelle", value: `${entity.generational_transmission_score}/100` },
-                  { label: "Lacune Cadre Légal", value: `${entity.protection_legal_framework_gap_score}/100` },
-                  { label: "Indice Apatridie", value: `${entity.estimated_statelessness_index}/10` },
+                  { label: "Surveillance de Masse", value: `${entity.mass_surveillance_scale_score}/100` },
+                  { label: "Ciblage Journalistes/Militants", value: `${entity.journalist_activist_targeting_score}/100` },
+                  { label: "Absence Garanties Légales", value: `${entity.legal_safeguard_absence_score}/100` },
+                  { label: "Impunité Export Spyware", value: `${entity.spyware_export_impunity_score}/100` },
+                  { label: "Index Surveillance", value: `${entity.estimated_digital_surveillance_index}/10` },
                   { label: "Dernière mise à jour", value: entity.last_updated },
                 ].map(({ label, value }) => (
                   <div key={label} className="bg-white/4 rounded-lg p-3">
@@ -198,7 +198,7 @@ function DetailModal({ entity, onClose }: { entity: StatelessnessEntity; onClose
                     style={{ width: `${Math.min(100, entity.composite_score)}%`, backgroundColor: ACCENT }} />
                 </div>
                 <p className="text-[11px] text-gray-500 mt-1.5">
-                  Formule : déni population×0.30 + docs×0.25 + générationnel×0.25 + légal×0.20
+                  Formule : masse×0.30 + ciblage×0.25 + légal×0.25 + spyware×0.20
                 </p>
               </div>
             </div>
@@ -222,11 +222,11 @@ function DetailModal({ entity, onClose }: { entity: StatelessnessEntity; onClose
                 <p className="text-xs text-gray-400"><span className="text-gray-300 font-medium">Région :</span> {entity.country}</p>
                 <p className="text-xs text-gray-400 mt-1"><span className="text-gray-300 font-medium">Secteur :</span> {entity.sector}</p>
                 <p className="text-xs text-gray-400 mt-1"><span className="text-gray-300 font-medium">Analyse :</span> {entity.last_updated}</p>
-                <p className="text-xs text-gray-400 mt-1"><span className="text-gray-300 font-medium">Indice Apatridie :</span> {entity.estimated_statelessness_index}/10</p>
+                <p className="text-xs text-gray-400 mt-1"><span className="text-gray-300 font-medium">Index Surveillance :</span> {entity.estimated_digital_surveillance_index}/10</p>
               </div>
               <div className={`rounded-xl border p-4 ${cfg.bg} ${cfg.border}`}>
                 <p className={`text-sm font-semibold ${cfg.color}`}>{entity.primary_pattern}</p>
-                <p className="text-xs text-gray-400 mt-2">Renforcer l&apos;enregistrement des naissances, garantir l&apos;accès aux documents d&apos;identité et combler les lacunes du cadre légal de protection.</p>
+                <p className="text-xs text-gray-400 mt-2">Renforcer les garanties légales contre la surveillance abusive, interdire l&apos;exportation de spyware et protéger journalistes et militants contre le ciblage numérique.</p>
               </div>
             </div>
           )}
@@ -236,18 +236,18 @@ function DetailModal({ entity, onClose }: { entity: StatelessnessEntity; onClose
   );
 }
 
-export default function StatelessnessEnginePage() {
-  const [data, setData] = useState<StatelessnessData | null>(null);
+export default function DigitalSurveillanceEnginePage() {
+  const [data, setData] = useState<DigitalSurveillanceData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("tous");
-  const [selected, setSelected] = useState<StatelessnessEntity | null>(null);
+  const [selected, setSelected] = useState<DigitalSurveillanceEntity | null>(null);
 
   useEffect(() => {
-    fetch("/api/statelessness-engine")
+    fetch("/api/digital-surveillance-engine")
       .then((r) => r.json())
       .then((json) => {
         const payload = json?.data ?? json;
-        setData(payload as StatelessnessData);
+        setData(payload as DigitalSurveillanceData);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -264,9 +264,9 @@ export default function StatelessnessEnginePage() {
 
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-white">Apatridie Mondiale</h1>
+            <h1 className="text-2xl font-bold text-white">Surveillance Digitale</h1>
             <p className="text-sm text-gray-400 mt-1">
-              Moteur de surveillance de l&apos;apatridie et du déni d&apos;identité nationale
+              Moteur de surveillance des systèmes de contrôle numérique et d&apos;espionnage étatique
             </p>
           </div>
           <span className="text-xs text-gray-500 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
@@ -286,20 +286,20 @@ export default function StatelessnessEnginePage() {
               <KpiCard label="Entités" value={s.total_entities} sub="zones surveillées" />
               <KpiCard label="Score moyen" value={s.avg_composite?.toFixed(1) ?? "—"} sub="indice agrégé"
                 accent={s.avg_composite >= 60 ? "text-red-400" : s.avg_composite >= 40 ? "text-orange-400" : "text-emerald-400"} />
-              <KpiCard label="Index Apatridie" value={`${s.avg_estimated_statelessness_index ?? "—"}/10`} sub="statelessness index" accent="text-blue-400" />
-              <KpiCard label="Confiance" value={`${((s.confidence_score ?? 0) * 100).toFixed(0)}%`} sub="fiabilité données" accent="text-indigo-400" />
+              <KpiCard label="Index Surveillance" value={`${s.avg_estimated_digital_surveillance_index ?? "—"}/10`} sub="digital surveillance index" accent="text-indigo-400" />
+              <KpiCard label="Confiance" value={`${((s.confidence_score ?? 0) * 100).toFixed(0)}%`} sub="fiabilité données" accent="text-blue-400" />
               <KpiCard label="Critique" value={s.critical_alerts} sub="intervention urgente" accent="text-red-400" />
               <KpiCard label="Sources" value={s.data_sources?.length ?? 0} sub="organismes ONU/ONG" accent="text-violet-400" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="bg-white/4 border border-white/10 rounded-xl p-6">
-                <h2 className="text-sm font-semibold text-gray-300 mb-6">Indicateurs Apatridie</h2>
+                <h2 className="text-sm font-semibold text-gray-300 mb-6">Indicateurs Surveillance Digitale</h2>
                 <div className="grid grid-cols-4 gap-4">
                   <GaugeRing value={s.avg_composite} max={100} label="Score Composite" color={ACCENT} />
                   <GaugeRing value={s.risk_distribution?.["critique"] ?? 0} max={s.total_entities} label="Critique" color="#ef4444" />
                   <GaugeRing value={s.risk_distribution?.["élevé"] ?? 0} max={s.total_entities} label="Élevé" color="#fb923c" />
-                  <GaugeRing value={s.avg_estimated_statelessness_index ?? 0} max={10} label="Index Apatridie" color={ACCENT} />
+                  <GaugeRing value={s.avg_estimated_digital_surveillance_index ?? 0} max={10} label="Index Surv." color={ACCENT} />
                 </div>
               </div>
 
@@ -353,14 +353,14 @@ export default function StatelessnessEnginePage() {
             </div>
 
             {s.critical_alerts > 0 && (
-              <div className="rounded-xl px-5 py-4 flex items-start gap-3" style={{ backgroundColor: "rgba(30,64,175,0.08)", border: "1px solid rgba(30,64,175,0.3)" }}>
+              <div className="rounded-xl px-5 py-4 flex items-start gap-3" style={{ backgroundColor: "rgba(49,46,129,0.15)", border: "1px solid rgba(49,46,129,0.4)" }}>
                 <div className="w-2 h-2 rounded-full mt-1.5 shrink-0 animate-pulse" style={{ backgroundColor: ACCENT }} />
                 <div>
-                  <p className="text-sm font-medium" style={{ color: ACCENT }}>
-                    {s.critical_alerts} entité{s.critical_alerts > 1 ? "s" : ""} en situation critique d&apos;apatridie
+                  <p className="text-sm font-medium" style={{ color: "#6366f1" }}>
+                    {s.critical_alerts} entité{s.critical_alerts > 1 ? "s" : ""} en situation critique de surveillance numérique
                   </p>
-                  <p className="text-xs mt-0.5" style={{ color: `${ACCENT}b3` }}>
-                    Intervention immédiate requise — protection de l&apos;identité juridique prioritaire
+                  <p className="text-xs mt-0.5" style={{ color: "#6366f1b3" }}>
+                    Intervention immédiate requise — protection des droits numériques et libertés civiles prioritaire
                   </p>
                 </div>
               </div>
