@@ -6746,6 +6746,36 @@ function IconRefugeeRights({ className }: { className?: string }) {
   );
 }
 
+function IconAntiTorture({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8.5 3 6 5.5 6 9c0 2.5 1.5 4.5 3.5 5.5V18h5v-3.5C16.5 13.5 18 11.5 18 9c0-3.5-2.5-6-6-6Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.5 18h5M10 21h4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6l2 2M20 6l-2 2" />
+    </svg>
+  );
+}
+
+function IconTransitionalJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3M12 6l-5 3 5 3 5-3-5-3Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 9v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 20h14M12 16v4" />
+    </svg>
+  );
+}
+
+function IconElectoralRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 11l3 3 5-5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h8" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7400,6 +7430,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/economic-rights-engine", label: "Droits Économiques", icon: IconEconomicRights },
       { href: "/dashboard/child-rights-engine", label: "Droits Enfants", icon: IconChildRights },
       { href: "/dashboard/refugee-rights-engine", label: "Droits Réfugiés", icon: IconRefugeeRights },
+      { href: "/dashboard/anti-torture-engine", label: "Anti-Torture", icon: IconAntiTorture },
+      { href: "/dashboard/transitional-justice-engine", label: "Justice Transitionnelle", icon: IconTransitionalJustice },
+      { href: "/dashboard/electoral-rights-engine", label: "Droits Électoraux", icon: IconElectoralRights },
     ],
   },
   {
