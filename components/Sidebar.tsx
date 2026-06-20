@@ -6888,6 +6888,30 @@ function IconRightToDevelopment({ className }: { className?: string }) {
   );
 }
 
+function IconBirthRegistration({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+    </svg>
+  );
+}
+
+function IconMigrantDomesticWorkers({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5" />
+    </svg>
+  );
+}
+
+function IconBioethics({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7557,6 +7581,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/minority-language-rights-engine", label: "Langues Minoritaires", icon: IconMinorityLanguageRights },
       { href: "/dashboard/arms-transfer-accountability-engine", label: "Transferts d'Armes", icon: IconArmsTransferAccountability },
       { href: "/dashboard/right-to-development-engine", label: "Droit au Développement", icon: IconRightToDevelopment },
+      { href: "/dashboard/birth-registration-engine", label: "Enregistrement Naissance", icon: IconBirthRegistration },
+      { href: "/dashboard/migrant-domestic-workers-engine", label: "Travailleurs Domestiques", icon: IconMigrantDomesticWorkers },
+      { href: "/dashboard/bioethics-engine", label: "Bioéthique", icon: IconBioethics },
     ],
   },
   {
