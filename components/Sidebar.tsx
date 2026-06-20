@@ -7092,6 +7092,32 @@ function IconHumanRightsEducation({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconNuclearTestingLegacy({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="12" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+    </svg>
+  );
+}
+function IconClimateLossDamage({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l4-8 4 6 3-4 4 6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 3c1.5 1 2.5 2.5 2.5 4.5 0 2-1.5 3.5-2.5 4.5" />
+    </svg>
+  );
+}
+function IconPrisonOvercrowding({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 3v18M16 3v18M3 9h18M3 15h18" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7783,6 +7809,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/solitary-confinement-engine", label: "Isolement Cellulaire", icon: IconSolitaryConfinement },
       { href: "/dashboard/medical-neutrality-engine", label: "Neutralité Médicale", icon: IconMedicalNeutrality },
       { href: "/dashboard/human-rights-education-engine", label: "Éducation Droits Humains", icon: IconHumanRightsEducation },
+      { href: "/dashboard/nuclear-testing-legacy-engine", label: "Héritage Tests Nucléaires", icon: IconNuclearTestingLegacy },
+      { href: "/dashboard/climate-loss-damage-engine", label: "Pertes & Dommages Climat", icon: IconClimateLossDamage },
+      { href: "/dashboard/prison-overcrowding-engine", label: "Surpopulation Carcérale", icon: IconPrisonOvercrowding },
     ],
   },
   {
