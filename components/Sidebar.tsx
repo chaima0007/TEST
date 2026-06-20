@@ -5739,6 +5739,30 @@ function IconAIAlignmentRisk({ className }: { className?: string }) {
   );
 }
 
+function IconTreatyErosion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 3v6h-6" />
+    </svg>
+  );
+}
+function IconLinguisticSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+    </svg>
+  );
+}
+function IconPowerVacuum({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <circle cx="12" cy="12" r="3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v3M12 19v3M2 12h3M19 12h3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6308,6 +6332,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/resource-curse-engine", label: "Malédiction des Ressources", icon: IconResourceCurse },
       { href: "/dashboard/shadow-economy-engine", label: "Économie de l'Ombre", icon: IconShadowEconomy },
       { href: "/dashboard/ai-alignment-risk-engine", label: "Risque Alignement IA", icon: IconAIAlignmentRisk },
+      { href: "/dashboard/treaty-erosion-engine", label: "Érosion Ordre International", icon: IconTreatyErosion },
+      { href: "/dashboard/linguistic-sovereignty-engine", label: "Souveraineté Linguistique", icon: IconLinguisticSovereignty },
+      { href: "/dashboard/power-vacuum-engine", label: "Vides de Pouvoir", icon: IconPowerVacuum },
     ],
   },
   {
