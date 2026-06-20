@@ -1,346 +1,183 @@
-"""
-Child Marriage Intelligence Engine — Caelum Partners Swarm Module
-
-Analyse les indicateurs de mariage précoce et forcé à travers le monde,
-en identifiant les facteurs de risque, les zones géographiques critiques
-et les vecteurs d'action pour l'élimination de cette pratique.
-
-Risk levels:
-  critique  → composite ≥ 60
-  élevé     → composite ≥ 40
-  modéré    → composite ≥ 20
-  faible    → composite < 20
-
-Usage:
-    from intelligence.child_marriage_engine import MarriageEngine
-    engine = MarriageEngine()
-    print(engine.summary())
-    for entity in engine.entities:
-        print(entity.to_dict())
-"""
-
 from __future__ import annotations
-
-import logging
 from dataclasses import dataclass, field
-from datetime import date
-from typing import Any, Dict, List
-
-logger = logging.getLogger("swarm.child_marriage")
-
-
-# ── Patterns ──────────────────────────────────────────────────────────────────
-
-PATTERNS: List[Dict[str, str]] = [
-    {
-        "name": "Prévalence Mariage Infantile Critique",
-        "severity_fr": "critique",
-        "action_fr": "Déployer des équipes d'intervention d'urgence et alerter l'UNICEF sous 24h.",
-        "signal_fr": "prevalence_score > 75",
-    },
-    {
-        "name": "Défaillance Législative Grave",
-        "severity_fr": "critique",
-        "action_fr": "Engager des réformes législatives d'urgence avec le soutien des Nations Unies.",
-        "signal_fr": "legal_protection_gap_score > 70",
-    },
-    {
-        "name": "Exclusion Scolaire Féminine",
-        "severity_fr": "élevé",
-        "action_fr": "Lancer des programmes de scolarisation d'urgence et des bourses de maintien scolaire.",
-        "signal_fr": "education_gap_score > 65",
-    },
-    {
-        "name": "Pression Socio-Économique Familiale",
-        "severity_fr": "élevé",
-        "action_fr": "Déployer des transferts monétaires conditionnels et renforcer les filets de sécurité sociale.",
-        "signal_fr": "socioeconomic_pressure_score > 60",
-    },
-    {
-        "name": "Risque Norme Culturelle Persistante",
-        "severity_fr": "modéré",
-        "action_fr": "Engager les leaders communautaires dans des programmes de sensibilisation et de changement normatif.",
-        "signal_fr": "composite_score between 20-40",
-    },
-]
-
-
-# ── Data model ────────────────────────────────────────────────────────────────
+from typing import List
+import statistics
 
 @dataclass
-class MarriageEntity:
+class ChildMarriageEntity:
     entity_id: str
     name: str
     country: str
-    sector: str
-    prevalence_score: float              # 0–100
-    legal_protection_gap_score: float    # 0–100
-    education_gap_score: float           # 0–100
-    socioeconomic_pressure_score: float  # 0–100
-    last_updated: str
+    prevalence_underage_unions_score: float
+    girls_education_dropout_score: float
+    health_maternal_mortality_score: float
+    legal_enforcement_gap_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
-    primary_pattern: str = field(init=False)
-    key_signals: List[str] = field(init=False)
+    primary_pattern: str = ""
+    estimated_child_marriage_index: float = field(init=False)
+    last_updated: str = "2026-06-20"
 
-    def __post_init__(self) -> None:
-        self.composite_score = self._compute_composite()
-        self.risk_level = self._compute_risk_level()
-        self.primary_pattern = self._compute_primary_pattern()
-        self.key_signals = self._compute_key_signals()
-
-    def _compute_composite(self) -> float:
-        """
-        Weighted composite formula (weights sum to 1.00):
-          prevalence_score × 0.30
-          + legal_protection_gap_score × 0.25
-          + education_gap_score × 0.25
-          + socioeconomic_pressure_score × 0.20
-        """
-        score = (
-            self.prevalence_score * 0.30
-            + self.legal_protection_gap_score * 0.25
-            + self.education_gap_score * 0.25
-            + self.socioeconomic_pressure_score * 0.20
+    def __post_init__(self):
+        self.composite_score = round(
+            self.prevalence_underage_unions_score * 0.30
+            + self.girls_education_dropout_score * 0.25
+            + self.health_maternal_mortality_score * 0.25
+            + self.legal_enforcement_gap_score * 0.20,
+            2,
         )
-        return round(score, 2)
-
-    def _compute_risk_level(self) -> str:
         if self.composite_score >= 60:
-            return "critique"
-        if self.composite_score >= 40:
-            return "élevé"
-        if self.composite_score >= 20:
-            return "modéré"
-        return "faible"
+            self.risk_level = "critique"
+        elif self.composite_score >= 40:
+            self.risk_level = "élevé"
+        elif self.composite_score >= 20:
+            self.risk_level = "modéré"
+        else:
+            self.risk_level = "faible"
+        self.estimated_child_marriage_index = round(self.composite_score / 100 * 10, 2)
 
-    def _compute_primary_pattern(self) -> str:
-        if self.prevalence_score > 75:
-            return "Prévalence Mariage Infantile Critique"
-        if self.legal_protection_gap_score > 70:
-            return "Défaillance Législative Grave"
-        if self.education_gap_score > 65:
-            return "Exclusion Scolaire Féminine"
-        if self.socioeconomic_pressure_score > 60:
-            return "Pression Socio-Économique Familiale"
-        return "Risque Norme Culturelle Persistante"
+@dataclass
+class ChildMarriageEngineResult:
+    agent: str = "Child Marriage Engine Agent"
+    domain: str = "child_marriage"
+    total_entities: int = 0
+    avg_composite: float = 0.0
+    confidence_score: float = 0.85
+    risk_distribution: dict = field(default_factory=dict)
+    pattern_distribution: dict = field(default_factory=dict)
+    top_risk_entities: List[str] = field(default_factory=list)
+    critical_alerts: List[str] = field(default_factory=list)
+    last_analysis: str = "2026-06-20"
+    engine_version: str = "1.0.0"
+    avg_estimated_child_marriage_index: float = 0.0
+    data_sources: List[str] = field(default_factory=list)
+    entities: List[ChildMarriageEntity] = field(default_factory=list)
 
-    def _compute_key_signals(self) -> List[str]:
-        signals = []
-        if self.prevalence_score > 75:
-            signals.append(f"Prévalence critique: {self.prevalence_score}/100")
-        if self.legal_protection_gap_score > 70:
-            signals.append(f"Défaillance législative: {self.legal_protection_gap_score}/100")
-        if self.education_gap_score > 65:
-            signals.append(f"Exclusion scolaire: {self.education_gap_score}/100")
-        if self.socioeconomic_pressure_score > 60:
-            signals.append(f"Pression socio-économique: {self.socioeconomic_pressure_score}/100")
-        while len(signals) < 3:
-            signals.append(f"Score composite mariage: {self.composite_score}/100")
-        return signals[:3]
+def run_child_marriage_engine() -> ChildMarriageEngineResult:
+    entities = [
+        ChildMarriageEntity(
+            entity_id="CM-001",
+            name="Niger — 76% Filles Mariées Avant 18 Ans, Taux Mondial le Plus Élevé & Fistules Obstétricales",
+            country="Afrique de l'Ouest",
+            prevalence_underage_unions_score=95.0,
+            girls_education_dropout_score=90.0,
+            health_maternal_mortality_score=92.0,
+            legal_enforcement_gap_score=88.0,
+            primary_pattern="prevalence_underage_unions",
+        ),
+        ChildMarriageEntity(
+            entity_id="CM-002",
+            name="Bangladesh — 59% Filles Mariées Avant 18 Ans, Exception Légale & Violences Conjugales",
+            country="Asie du Sud",
+            prevalence_underage_unions_score=88.0,
+            girls_education_dropout_score=85.0,
+            health_maternal_mortality_score=88.0,
+            legal_enforcement_gap_score=85.0,
+            primary_pattern="health_maternal_mortality",
+        ),
+        ChildMarriageEntity(
+            entity_id="CM-003",
+            name="Mali — 52% Filles Mariées Avant 18 Ans, Mariages Forcés Sahel & Abandon Scolaire Massif",
+            country="Afrique de l'Ouest",
+            prevalence_underage_unions_score=85.0,
+            girls_education_dropout_score=88.0,
+            health_maternal_mortality_score=82.0,
+            legal_enforcement_gap_score=80.0,
+            primary_pattern="girls_education_dropout",
+        ),
+        ChildMarriageEntity(
+            entity_id="CM-004",
+            name="Inde — 27% Filles Mariées Avant 18 Ans, 15M Mariages Enfants/An & Application Loi Défaillante",
+            country="Asie du Sud",
+            prevalence_underage_unions_score=80.0,
+            girls_education_dropout_score=82.0,
+            health_maternal_mortality_score=78.0,
+            legal_enforcement_gap_score=82.0,
+            primary_pattern="legal_enforcement_gap",
+        ),
+        ChildMarriageEntity(
+            entity_id="CM-005",
+            name="Éthiopie — 40% Filles Mariées Avant 18 Ans, Régions Rurales Isolées & Pauvreté Structurelle",
+            country="Afrique de l'Est",
+            prevalence_underage_unions_score=52.0,
+            girls_education_dropout_score=55.0,
+            health_maternal_mortality_score=58.0,
+            legal_enforcement_gap_score=50.0,
+            primary_pattern="health_maternal_mortality",
+        ),
+        ChildMarriageEntity(
+            entity_id="CM-006",
+            name="Proche-Orient/Réfugiés Syriens — Mariages Précoces Camps Jordanie/Liban & Vulnérabilité",
+            country="Moyen-Orient",
+            prevalence_underage_unions_score=48.0,
+            girls_education_dropout_score=52.0,
+            health_maternal_mortality_score=50.0,
+            legal_enforcement_gap_score=55.0,
+            primary_pattern="legal_enforcement_gap",
+        ),
+        ChildMarriageEntity(
+            entity_id="CM-007",
+            name="ONU/UNICEF Girls Not Brides — Alliance Mondiale 1500 ONG, Plaidoyer & Programmes Éducation",
+            country="Global",
+            prevalence_underage_unions_score=22.0,
+            girls_education_dropout_score=28.0,
+            health_maternal_mortality_score=25.0,
+            legal_enforcement_gap_score=30.0,
+            primary_pattern="girls_education_dropout",
+        ),
+        ChildMarriageEntity(
+            entity_id="CM-008",
+            name="ONU/CEDAW — Convention Élimination Discrimination Femmes, Art.16 Mariage Enfants & Suivi",
+            country="Global",
+            prevalence_underage_unions_score=4.0,
+            girls_education_dropout_score=5.0,
+            health_maternal_mortality_score=3.0,
+            legal_enforcement_gap_score=6.0,
+            primary_pattern="prevalence_underage_unions",
+        ),
+    ]
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Returns exactly 15 keys."""
-        return {
-            "entity_id": self.entity_id,
-            "name": self.name,
-            "country": self.country,
-            "sector": self.sector,
-            "composite_score": self.composite_score,
-            "prevalence_score": self.prevalence_score,
-            "legal_protection_gap_score": self.legal_protection_gap_score,
-            "education_gap_score": self.education_gap_score,
-            "socioeconomic_pressure_score": self.socioeconomic_pressure_score,
-            "risk_level": self.risk_level,
-            "primary_pattern": self.primary_pattern,
-            "key_signals": self.key_signals,
-            "estimated_marriage_index": round(self.composite_score / 100 * 10, 2),
-            "last_updated": self.last_updated,
-            "alert_priority": "P1" if self.composite_score >= 60 else "P2" if self.composite_score >= 40 else "P3" if self.composite_score >= 20 else "P4",
-        }
+    composites = [e.composite_score for e in entities]
+    avg_composite = round(statistics.mean(composites), 2)
 
+    risk_dist: dict = {}
+    for e in entities:
+        risk_dist[e.risk_level] = risk_dist.get(e.risk_level, 0) + 1
 
-# ── Engine ────────────────────────────────────────────────────────────────────
+    pattern_dist: dict = {}
+    for e in entities:
+        pattern_dist[e.primary_pattern] = pattern_dist.get(e.primary_pattern, 0) + 1
 
-class MarriageEngine:
-    """
-    Swarm Intelligence module for child marriage risk tracking.
+    sorted_entities = sorted(entities, key=lambda x: x.composite_score, reverse=True)
+    top_risk = [e.name for e in sorted_entities[:3]]
+    alerts = [
+        f"{e.name.split('—')[0].strip()}: {e.primary_pattern}"
+        for e in sorted_entities[:4]
+    ]
 
-    Computes composite risk scores, detects child marriage patterns,
-    and surfaces actionable insights for Caelum Partners.
-    """
+    return ChildMarriageEngineResult(
+        total_entities=len(entities),
+        avg_composite=avg_composite,
+        risk_distribution=risk_dist,
+        pattern_distribution=pattern_dist,
+        top_risk_entities=top_risk,
+        critical_alerts=alerts,
+        avg_estimated_child_marriage_index=round(avg_composite / 100 * 10, 2),
+        data_sources=[
+            "unicef_girls_not_brides_global_child_marriage_data_portal",
+            "save_the_children_too_young_to_wed_global_report",
+            "un_women_child_early_forced_marriage_prevention_framework",
+        ],
+        entities=entities,
+    )
 
-    VERSION = "2.1.0"
-    DOMAIN = "marriage"
-    DATA_SOURCES = ["UNICEF", "OMS", "UNFPA", "Girls Not Brides", "World Bank"]
-
-    def __init__(self) -> None:
-        self.entities: List[MarriageEntity] = self._build_mock_entities()
-        self.patterns: List[Dict[str, str]] = PATTERNS
-        logger.info(
-            "MarriageEngine initialised — %d entities, %d patterns",
-            len(self.entities),
-            len(self.patterns),
-        )
-
-    def _build_mock_entities(self) -> List[MarriageEntity]:
-        """
-        8 mock entities covering all 5 patterns and all 4 risk levels.
-        Distribution: ≥3 critique, ≥2 élevé, ≥1 modéré, ≥2 faible.
-
-        Composite verification (weights: 0.30, 0.25, 0.25, 0.20):
-          MAR-001: 92*0.30+88*0.25+90*0.25+85*0.20 = 27.6+22+22.5+17 = 89.1    → critique ✓
-          MAR-002: 85*0.30+82*0.25+80*0.25+88*0.20 = 25.5+20.5+20+17.6 = 83.6  → critique ✓
-          MAR-003: 80*0.30+78*0.25+75*0.25+72*0.20 = 24+19.5+18.75+14.4 = 76.65→ critique ✓
-          MAR-004: 70*0.30+65*0.25+68*0.25+62*0.20 = 21+16.25+17+12.4 = 66.65  → critique ✓
-          MAR-005: 55*0.30+48*0.25+50*0.25+45*0.20 = 16.5+12+12.5+9 = 50.0     → élevé ✓
-          MAR-006: 45*0.30+42*0.25+40*0.25+38*0.20 = 13.5+10.5+10+7.6 = 41.6   → élevé ✓
-          MAR-007: 30*0.30+25*0.25+28*0.25+22*0.20 = 9+6.25+7+4.4 = 26.65      → modéré ✓
-          MAR-008: 10*0.30+8*0.25+12*0.25+10*0.20  = 3+2+3+2 = 10.0            → faible ✓
-        """
-        raw = [
-            # ── CRITIQUE (4) ──────────────────────────────────────────────────
-            {
-                "entity_id": "MAR-001",
-                "name": "Région Sahel Niger",
-                "country": "Niger",
-                "sector": "Droits Humains & Protection",
-                "prevalence_score": 92.0,
-                "legal_protection_gap_score": 88.0,
-                "education_gap_score": 90.0,
-                "socioeconomic_pressure_score": 85.0,
-                "last_updated": "2026-06-18",
-            },
-            {
-                "entity_id": "MAR-002",
-                "name": "Zone Rurale Bangladesh",
-                "country": "Bangladesh",
-                "sector": "Développement Rural",
-                "prevalence_score": 85.0,
-                "legal_protection_gap_score": 82.0,
-                "education_gap_score": 80.0,
-                "socioeconomic_pressure_score": 88.0,
-                "last_updated": "2026-06-17",
-            },
-            {
-                "entity_id": "MAR-003",
-                "name": "Province Nord Mali",
-                "country": "Mali",
-                "sector": "Gouvernance Locale",
-                "prevalence_score": 80.0,
-                "legal_protection_gap_score": 78.0,
-                "education_gap_score": 75.0,
-                "socioeconomic_pressure_score": 72.0,
-                "last_updated": "2026-06-16",
-            },
-            {
-                "entity_id": "MAR-004",
-                "name": "Districts Ruraux Pakistan",
-                "country": "Pakistan",
-                "sector": "Protection de l'Enfance",
-                "prevalence_score": 70.0,
-                "legal_protection_gap_score": 65.0,
-                "education_gap_score": 68.0,
-                "socioeconomic_pressure_score": 62.0,
-                "last_updated": "2026-06-15",
-            },
-            # ── ÉLEVÉ (2) ─────────────────────────────────────────────────────
-            {
-                "entity_id": "MAR-005",
-                "name": "Communautés Rurales Éthiopie",
-                "country": "Éthiopie",
-                "sector": "Développement Communautaire",
-                "prevalence_score": 55.0,
-                "legal_protection_gap_score": 48.0,
-                "education_gap_score": 50.0,
-                "socioeconomic_pressure_score": 45.0,
-                "last_updated": "2026-06-14",
-            },
-            {
-                "entity_id": "MAR-006",
-                "name": "Zones Tribales Afghanistan",
-                "country": "Afghanistan",
-                "sector": "Droit Coutumier & Tribal",
-                "prevalence_score": 45.0,
-                "legal_protection_gap_score": 42.0,
-                "education_gap_score": 40.0,
-                "socioeconomic_pressure_score": 38.0,
-                "last_updated": "2026-06-13",
-            },
-            # ── MODÉRÉ (1) ────────────────────────────────────────────────────
-            {
-                "entity_id": "MAR-007",
-                "name": "Régions Rurales Inde",
-                "country": "Inde",
-                "sector": "Réforme Législative",
-                "prevalence_score": 30.0,
-                "legal_protection_gap_score": 25.0,
-                "education_gap_score": 28.0,
-                "socioeconomic_pressure_score": 22.0,
-                "last_updated": "2026-06-12",
-            },
-            # ── FAIBLE (2) ────────────────────────────────────────────────────
-            {
-                "entity_id": "MAR-008",
-                "name": "Programme ONG Maroc",
-                "country": "Maroc",
-                "sector": "ONG & Société Civile",
-                "prevalence_score": 10.0,
-                "legal_protection_gap_score": 8.0,
-                "education_gap_score": 12.0,
-                "socioeconomic_pressure_score": 10.0,
-                "last_updated": "2026-06-11",
-            },
-        ]
-        return [MarriageEntity(**d) for d in raw]  # type: ignore[arg-type]
-
-    def analyze(self) -> List[Dict[str, Any]]:
-        """Returns list of 8 entity dicts."""
-        return [e.to_dict() for e in self.entities]
-
-    def summary(self) -> Dict[str, Any]:
-        """Returns exactly 13 keys."""
-        n = len(self.entities)
-        avg_composite = round(sum(e.composite_score for e in self.entities) / n, 2)
-
-        risk_distribution = {
-            "critique": sum(1 for e in self.entities if e.risk_level == "critique"),
-            "élevé": sum(1 for e in self.entities if e.risk_level == "élevé"),
-            "modéré": sum(1 for e in self.entities if e.risk_level == "modéré"),
-            "faible": sum(1 for e in self.entities if e.risk_level == "faible"),
-        }
-
-        pattern_distribution = {p["name"]: 0 for p in PATTERNS}
-        for e in self.entities:
-            if e.primary_pattern in pattern_distribution:
-                pattern_distribution[e.primary_pattern] += 1
-
-        top_risk = sorted(self.entities, key=lambda e: e.composite_score, reverse=True)
-        top_risk_names = [e.name for e in top_risk[:3]]
-
-        critical_alerts = sum(1 for e in self.entities if e.risk_level == "critique")
-        avg_marriage_index = round(avg_composite / 100 * 10, 2)
-
-        return {
-            "total_entities": n,
-            "avg_composite": avg_composite,
-            "risk_distribution": risk_distribution,
-            "pattern_distribution": pattern_distribution,
-            "top_risk_entities": top_risk_names,
-            "critical_alerts": critical_alerts,
-            "last_analysis": str(date.today()),
-            "engine_version": self.VERSION,
-            "domain": self.DOMAIN,
-            "confidence_score": 82.9,
-            "data_sources": self.DATA_SOURCES,
-            "entities": self.analyze(),
-            "avg_estimated_marriage_index": avg_marriage_index,
-        }
-
-
-# ── Module-level convenience ──────────────────────────────────────────────────
-
-def analyze_marriage() -> Dict[str, Any]:
-    """Module-level entry point — returns engine summary."""
-    engine = MarriageEngine()
-    return engine.summary()
+if __name__ == "__main__":
+    result = run_child_marriage_engine()
+    print(f"Agent: {result.agent}")
+    print(f"Total entities: {result.total_entities}")
+    print(f"Avg composite: {result.avg_composite}")
+    print(f"Avg index: {result.avg_estimated_child_marriage_index}")
+    print(f"Risk distribution: {result.risk_distribution}")
+    print(f"Pattern distribution: {result.pattern_distribution}")
+    for e in result.entities:
+        print(f"  {e.entity_id}: {e.composite_score} [{e.risk_level}]")

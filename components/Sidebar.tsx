@@ -7118,6 +7118,33 @@ function IconPrisonOvercrowding({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconStatelessness({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+      <line x1="2" y1="2" x2="22" y2="22" strokeLinecap="round" />
+    </svg>
+  );
+}
+function IconChildMarriage({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a3 3 0 100 6 3 3 0 000-6z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 22v-3a5 5 0 0110 0v3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l3 3-3 3M7 8l-3 3 3 3" />
+    </svg>
+  );
+}
+function IconDigitalSurveillance({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      <circle cx="12" cy="12" r="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2M12 19v2M3 12H1M23 12h-2" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7812,6 +7839,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-testing-legacy-engine", label: "Héritage Tests Nucléaires", icon: IconNuclearTestingLegacy },
       { href: "/dashboard/climate-loss-damage-engine", label: "Pertes & Dommages Climat", icon: IconClimateLossDamage },
       { href: "/dashboard/prison-overcrowding-engine", label: "Surpopulation Carcérale", icon: IconPrisonOvercrowding },
+      { href: "/dashboard/statelessness-engine", label: "Apatridie", icon: IconStatelessness },
+      { href: "/dashboard/child-marriage-engine", label: "Mariages d'Enfants", icon: IconChildMarriage },
+      { href: "/dashboard/digital-surveillance-engine", label: "Surveillance Digitale", icon: IconDigitalSurveillance },
     ],
   },
   {
