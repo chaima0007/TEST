@@ -6102,6 +6102,30 @@ function IconUnderseaCable({ className }: { className?: string }) {
   );
 }
 
+function IconWarCrimes({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14.5 9.5L4 20" /><path d="M9 4l11 11" /><path d="M4 9l5-5 2 2-5 5z" /><path d="M15 20l5-5-2-2-5 5z" />
+    </svg>
+  );
+}
+
+function IconInternetShutdown({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" /><line x1="2" y1="2" x2="22" y2="22" /><path d="M8.5 8.5c.9-.9 2.1-1.5 3.5-1.5" /><path d="M5 5a12 12 0 0 0-1.5 7" /><path d="M12 12v6" /><path d="M9 18h6" />
+    </svg>
+  );
+}
+
+function IconRefugeeRefoulement({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="9" cy="6" r="2" /><path d="M6 20v-6l-2-2 2-4h6l2 4-2 2v6" /><path d="M18 8l3 3-3 3" /><path d="M21 11H15" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6924,6 +6948,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/human-trafficking-engine", label: "Traite Humaine", icon: IconHumanTrafficking },
       { href: "/dashboard/antipersonnel-mines-engine", label: "Mines Antipersonnel", icon: IconAntipersonnelMines },
       { href: "/dashboard/femicide-engine", label: "Féminicides", icon: IconFemicide },
+      { href: "/dashboard/war-crimes-siege-engine", label: "War Crimes Siege", icon: IconWarCrimes },
+      { href: "/dashboard/internet-shutdown-engine", label: "Internet Shutdown", icon: IconInternetShutdown },
+      { href: "/dashboard/refugee-refoulement-engine", label: "Refugee Refoulement", icon: IconRefugeeRefoulement },
     ],
   },
   {
