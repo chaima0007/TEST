@@ -6674,6 +6674,42 @@ function IconSocialProtection({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 38 icons ───────────────────────────────────────────────────────────
+
+function IconRacialJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2M12 3l-4 4h8l-4-4Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 7H4l-1 5h6l-1-5ZM16 7h4l1 5h-6l1-5Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 12c0 2.21 1.79 4 4 4s4-1.79 4-4M12 12c0 2.21 1.79 4 4 4s4-1.79 4-4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 21h6M12 19v2" />
+    </svg>
+  );
+}
+
+function IconDigitalRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <rect x="2" y="4" width="16" height="12" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10 16v2M6 18h8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16 8.5V7a2 2 0 1 1 4 0v1.5" />
+      <rect x="15" y="8.5" width="6" height="4.5" rx="1" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="18" cy="10.75" r="0.75" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconClimateJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C8 2 5 5.5 5 9c0 2.8 1.6 5.2 4 6.5V17h6v-1.5c2.4-1.3 4-3.7 4-6.5 0-3.5-3-7-7-7Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v2a3 3 0 0 0 6 0v-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M14 7c0 1.1-.9 2-2 2s-2-.9-2-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7322,6 +7358,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/water-rights-engine", label: "Water Rights", icon: IconWaterRights },
       { href: "/dashboard/housing-rights-engine", label: "Housing Rights", icon: IconHousingRights },
       { href: "/dashboard/social-protection-engine", label: "Social Protection", icon: IconSocialProtection },
+      { href: "/dashboard/racial-justice-engine", label: "Justice Raciale", icon: IconRacialJustice },
+      { href: "/dashboard/digital-rights-engine", label: "Droits Numériques", icon: IconDigitalRights },
+      { href: "/dashboard/climate-justice-engine", label: "Justice Climatique", icon: IconClimateJustice },
     ],
   },
   {
