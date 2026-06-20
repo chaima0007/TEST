@@ -5603,6 +5603,41 @@ function IconHybridWarfare({ className }: { className?: string }) {
   );
 }
 
+function IconTrustEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M10 2 L12 7 L17 7 L13 10 L15 15 L10 12 L5 15 L7 10 L3 7 L8 7 Z" opacity="0.5"/>
+      <circle cx="10" cy="10" r="2.5" fill="currentColor" opacity="0.8" stroke="none"/>
+      <path d="M10 4 L10 7" strokeLinecap="round" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconEpistemicSecurity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" opacity="0.3"/>
+      <path d="M7 10 L9 12 L13 8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 3 L10 6" strokeLinecap="round" opacity="0.7"/>
+      <path d="M10 14 L10 17" strokeLinecap="round" opacity="0.7"/>
+      <path d="M3 10 L6 10" strokeLinecap="round" opacity="0.7"/>
+      <path d="M14 10 L17 10" strokeLinecap="round" opacity="0.7"/>
+    </svg>
+  );
+}
+
+function IconAttentionEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="10" cy="10" r="3" fill="currentColor" opacity="0.8" stroke="none"/>
+      <circle cx="10" cy="10" r="5.5" opacity="0.5"/>
+      <circle cx="10" cy="10" r="8" opacity="0.25"/>
+      <path d="M4 4 L7 7" strokeLinecap="round" opacity="0.6"/>
+      <path d="M16 4 L13 7" strokeLinecap="round" opacity="0.6"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6159,6 +6194,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/democratic-decay-engine", label: "Érosion Démocratique", icon: IconDemocraticDecay },
       { href: "/dashboard/economic-coercion-engine", label: "Coercition Économique", icon: IconEconomicCoercion },
       { href: "/dashboard/social-cohesion-engine", label: "Cohésion Sociale", icon: IconSocialCohesion },
+      { href: "/dashboard/trust-economy-engine", label: "Capital-Confiance Mondial", icon: IconTrustEconomy },
+      { href: "/dashboard/epistemic-security-engine", label: "Sécurité Épistémique", icon: IconEpistemicSecurity },
+      { href: "/dashboard/attention-economy-engine", label: "Économie de l'Attention", icon: IconAttentionEconomy },
       { href: "/dashboard/hybrid-warfare-engine", label: "Guerre Hybride & Zone Grise", icon: IconHybridWarfare },
     ],
   },
