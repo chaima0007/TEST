@@ -2,49 +2,60 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  console.warn("[organ-trafficking-engine] SWARM_API_URL non défini — mode mock activé");
+  console.warn("[organ-trafficking-engine] SWARM_API_URL is not set — falling back to mock data");
 }
+
+const MOCK = {
+  agent: "Organ Trafficking Engine Agent",
+  domain: "organ_trafficking",
+  total_entities: 8,
+  avg_composite: 58.79,
+  confidence_score: 0.82,
+  risk_distribution: { critique: 4, élevé: 2, modéré: 1, faible: 1 },
+  pattern_distribution: { forced_organ_extraction_scale: 2, donor_coercion_vulnerability: 2, prosecution_accountability_gap: 2, transplant_tourism_infrastructure: 2 },
+  top_risk_entities: [
+    "Chine — Prélèvements Forcés Prisonniers Conscience, Falun Gong/Ouïghours & Industrie Transplants",
+    "Pakistan — Marché Reins Ruraux Pauvres, Chirurgiens Complices & Trafic Migratoire Lié",
+    "Égypte/Afrique du Nord — Réfugiés Soudanais/Érythréens Vendant Organes & Cliniques Clandestines",
+  ],
+  critical_alerts: [
+    "Chine: forced_organ_extraction_scale",
+    "Pakistan: donor_coercion_vulnerability",
+    "Égypte/Afrique du Nord: donor_coercion_vulnerability",
+    "Kosovo/Balkans: prosecution_accountability_gap",
+  ],
+  last_analysis: "2026-06-20",
+  engine_version: "1.0.0",
+  avg_estimated_organ_trafficking_index: 5.88,
+  data_sources: [
+    "david_matas_david_kilgour_bloody_harvest_organ_harvesting_china_report",
+    "declaration_istanbul_custodian_group_organ_trafficking_transplant_tourism",
+    "unodc_global_report_trafficking_persons_organ_removal_chapter",
+  ],
+  entities: [
+    { entity_id: "OT-001", name: "Chine — Prélèvements Forcés Prisonniers Conscience, Falun Gong/Ouïghours & Industrie Transplants", country: "Asie du Nord-Est", composite_score: 92.4, forced_organ_extraction_scale_score: 95.0, transplant_tourism_infrastructure_score: 92.0, donor_coercion_vulnerability_score: 90.0, prosecution_accountability_gap_score: 92.0, risk_level: "critique", primary_pattern: "forced_organ_extraction_scale", estimated_organ_trafficking_index: 9.24, last_updated: "2026-06-20" },
+    { entity_id: "OT-002", name: "Pakistan — Marché Reins Ruraux Pauvres, Chirurgiens Complices & Trafic Migratoire Lié", country: "Asie du Sud", composite_score: 83.85, forced_organ_extraction_scale_score: 82.0, transplant_tourism_infrastructure_score: 85.0, donor_coercion_vulnerability_score: 88.0, prosecution_accountability_gap_score: 80.0, risk_level: "critique", primary_pattern: "donor_coercion_vulnerability", estimated_organ_trafficking_index: 8.39, last_updated: "2026-06-20" },
+    { entity_id: "OT-003", name: "Égypte/Afrique du Nord — Réfugiés Soudanais/Érythréens Vendant Organes & Cliniques Clandestines", country: "Afrique du Nord", composite_score: 81.15, forced_organ_extraction_scale_score: 80.0, transplant_tourism_infrastructure_score: 78.0, donor_coercion_vulnerability_score: 85.0, prosecution_accountability_gap_score: 82.0, risk_level: "critique", primary_pattern: "donor_coercion_vulnerability", estimated_organ_trafficking_index: 8.12, last_updated: "2026-06-20" },
+    { entity_id: "OT-004", name: "Kosovo/Balkans — Affaire Medicus, Prisonniers Serbes Organes Volés & Impunité Partielle", country: "Europe du Sud-Est", composite_score: 79.15, forced_organ_extraction_scale_score: 78.0, transplant_tourism_infrastructure_score: 75.0, donor_coercion_vulnerability_score: 80.0, prosecution_accountability_gap_score: 85.0, risk_level: "critique", primary_pattern: "prosecution_accountability_gap", estimated_organ_trafficking_index: 7.92, last_updated: "2026-06-20" },
+    { entity_id: "OT-005", name: "Inde — Tourisme Transplants Rein, Loi THOA Mal Appliquée & Trafic États Ruraux", country: "Asie du Sud", composite_score: 53.85, forced_organ_extraction_scale_score: 52.0, transplant_tourism_infrastructure_score: 55.0, donor_coercion_vulnerability_score: 58.0, prosecution_accountability_gap_score: 50.0, risk_level: "élevé", primary_pattern: "transplant_tourism_infrastructure", estimated_organ_trafficking_index: 5.39, last_updated: "2026-06-20" },
+    { entity_id: "OT-006", name: "Israël/Patients Riches — Tourisme Transplants Vers Pakistan/Roumanie & Cadre Légal Insuffisant", country: "Moyen-Orient/Europe", composite_score: 49.65, forced_organ_extraction_scale_score: 48.0, transplant_tourism_infrastructure_score: 52.0, donor_coercion_vulnerability_score: 45.0, prosecution_accountability_gap_score: 55.0, risk_level: "élevé", primary_pattern: "prosecution_accountability_gap", estimated_organ_trafficking_index: 4.97, last_updated: "2026-06-20" },
+    { entity_id: "OT-007", name: "Déclaration Istanbul — Coalition Anti-Tourisme Transplant, Réformes & Suivi International", country: "Global", composite_score: 25.85, forced_organ_extraction_scale_score: 22.0, transplant_tourism_infrastructure_score: 25.0, donor_coercion_vulnerability_score: 28.0, prosecution_accountability_gap_score: 30.0, risk_level: "modéré", primary_pattern: "forced_organ_extraction_scale", estimated_organ_trafficking_index: 2.59, last_updated: "2026-06-20" },
+    { entity_id: "OT-008", name: "ONU/ONUDC — Protocole Palermo Organes, Rapport Trafic Êtres Humains & Standards Médicaux", country: "Global", composite_score: 4.4, forced_organ_extraction_scale_score: 4.0, transplant_tourism_infrastructure_score: 5.0, donor_coercion_vulnerability_score: 3.0, prosecution_accountability_gap_score: 6.0, risk_level: "faible", primary_pattern: "transplant_tourism_infrastructure", estimated_organ_trafficking_index: 0.44, last_updated: "2026-06-20" },
+  ],
+};
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Organ Trafficking Engine Agent"));
+    return NextResponse.json(await sealResponse(MOCK));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/organ-trafficking-engine`, { next: { revalidate: 30 } });
-    if (!res.ok) throw new Error(`Upstream ${res.status}`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/organ-trafficking-engine`, {
+      next: { revalidate: 30 },
+    });
+    if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Organ Trafficking Engine Agent"));
+    return NextResponse.json(await sealResponse(data));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Organ Trafficking Engine Agent"), { status: 502 });
+    return NextResponse.json(await sealResponse(MOCK), { status: 502 });
   }
-}
-
-function getMockData() {
-  const entities = [
-    { entity_id: "OT-001", name: "Chine — Prélèvements Forcés Falun Gong/Ouïghours & Exécutions", country: "Asie", sector: "Tribunal Indépendant 2019 'Au-Delà Tout Doute', Délais 1-2 Semaines Impossibles, Camps Xinjiang & ETAC", composite_score: 89.75, forced_organ_harvesting_score: 92.0, transplant_tourism_infrastructure_score: 88.0, state_complicity_organ_trade_score: 95.0, black_market_organ_network_score: 82.0, risk_level: "critique", primary_pattern: "prelevement_organes_force", key_signals: ["Trafic d'organes critique de Chine — le Tribunal Indépendant 2019 a conclu 'au-delà de tout doute raisonnable' à des prélèvements forcés sur des prisonniers de conscience Falun Gong et Ouïghours", "Crime contre l'humanité potentiel — les prélèvements forcés sur des prisonniers de conscience constituent une violation grave du droit international humanitaire", "Demande insatiable mondiale — 100 000 transplantations légales par an pour 2 millions de patients en attente crée une pression criminelle systémique"], estimated_organ_trafficking_index: 8.98, last_updated: "2026-06-20" },
-    { entity_id: "OT-002", name: "Pakistan — Tourisme Transplantation & Reins Vendus 3000$", country: "Asie du Sud", sector: "10 000 Reins Vendus/An Pakistan, Donneurs Contrainte Économique Punjab, Cliniques Karachi Offshore & Réseau Courtiers", composite_score: 74.75, forced_organ_harvesting_score: 72.0, transplant_tourism_infrastructure_score: 90.0, state_complicity_organ_trade_score: 65.0, black_market_organ_network_score: 80.0, risk_level: "critique", primary_pattern: "tourisme_transplantation_illicite", key_signals: ["Trafic d'organes critique de Pakistan — tourisme de transplantation structuré avec des milliers de reins vendus annuellement par des donneurs contraints économiquement", "Crime contre l'humanité potentiel — les prélèvements forcés sur des prisonniers de conscience constituent une violation grave du droit international humanitaire", "Demande insatiable mondiale — 100 000 transplantations légales par an pour 2 millions de patients en attente crée une pression criminelle systémique"], estimated_organ_trafficking_index: 7.48, last_updated: "2026-06-20" },
-    { entity_id: "OT-003", name: "Égypte & Moyen-Orient — Marché Noir Organes Région", country: "MENA", sector: "Réfugiés Syriens/Yéménites Donneurs Forcés, Cliniques Privées Istanbul/Le Caire, 150K$ Rein Revendu", composite_score: 76.6, forced_organ_harvesting_score: 80.0, transplant_tourism_infrastructure_score: 78.0, state_complicity_organ_trade_score: 72.0, black_market_organ_network_score: 88.0, risk_level: "critique", primary_pattern: "marche_noir_organes", key_signals: ["Trafic d'organes critique de Égypte & Moyen-Orient — marché noir d'organes exploitant les réfugiés syriens et yéménites avec un réseau de cliniques privées transfrontalières", "Crime contre l'humanité potentiel — les prélèvements forcés sur des prisonniers de conscience constituent une violation grave du droit international humanitaire", "Demande insatiable mondiale — 100 000 transplantations légales par an pour 2 millions de patients en attente crée une pression criminelle systémique"], estimated_organ_trafficking_index: 7.66, last_updated: "2026-06-20" },
-    { entity_id: "OT-004", name: "Philippines & Asie du Sud-Est — Hub Tourisme Transplantation", country: "Asie du Sud-Est", sector: "Manille Hub Transplantation Illicite, Donneurs Ruraux 2000$, Touristes Médicaux Asie/Moyen-Orient & Interdiction 2008 Contournée", composite_score: 73.5, forced_organ_harvesting_score: 68.0, transplant_tourism_infrastructure_score: 88.0, state_complicity_organ_trade_score: 62.0, black_market_organ_network_score: 78.0, risk_level: "critique", primary_pattern: "tourisme_transplantation_illicite", key_signals: ["Trafic d'organes critique de Philippines & Asie du Sud-Est — hub régional de tourisme de transplantation malgré l'interdiction légale de 2008, exploitant des donneurs ruraux", "Crime contre l'humanité potentiel — les prélèvements forcés sur des prisonniers de conscience constituent une violation grave du droit international humanitaire", "Demande insatiable mondiale — 100 000 transplantations légales par an pour 2 millions de patients en attente crée une pression criminelle systémique"], estimated_organ_trafficking_index: 7.35, last_updated: "2026-06-20" },
-    { entity_id: "OT-005", name: "Turquie & Irak — Transit Organes & Réfugiés Vulnérables", country: "MENA/Europe", sector: "Transit Organes Syrie/Irak, Camps Réfugiés Recrutement, Istanbul Marché Intermédiaire & Chirurgiens Offshore", composite_score: 56.4, forced_organ_harvesting_score: 55.0, transplant_tourism_infrastructure_score: 52.0, state_complicity_organ_trade_score: 58.0, black_market_organ_network_score: 62.0, risk_level: "élevé", primary_pattern: "trafic_organes_actif", key_signals: ["Trafic d'organes actif de Turquie & Irak — couloir de transit pour les organes prélevés dans les zones de conflit avec des populations réfugiées particulièrement vulnérables", "Exploitation des vulnérabilités — réfugiés, déplacés et populations extrêmement pauvres ciblés pour la vente contrainte d'organes à 1 000-3 000$", "Infrastructures médicales complices — cliniques et chirurgiens participant sciemment à l'écosystème criminel des transplantations illicites"], estimated_organ_trafficking_index: 5.64, last_updated: "2026-06-20" },
-    { entity_id: "OT-006", name: "Inde & Bangladesh — Industrie Rein & Donneurs Pauvreté", country: "Asie du Sud", sector: "Villages Rein Bihar/Bengale, Donneurs 1000$ Exploités, Cliniques Chennai Offshore & Prohibition 1994 Contournée", composite_score: 52.95, forced_organ_harvesting_score: 52.0, transplant_tourism_infrastructure_score: 48.0, state_complicity_organ_trade_score: 55.0, black_market_organ_network_score: 58.0, risk_level: "élevé", primary_pattern: "trafic_organes_actif", key_signals: ["Trafic d'organes actif de Inde & Bangladesh — villages entiers dont la population a vendu des reins sous contrainte économique créant des communautés de 'donneurs endettés'", "Exploitation des vulnérabilités — réfugiés, déplacés et populations extrêmement pauvres ciblés pour la vente contrainte d'organes à 1 000-3 000$", "Infrastructures médicales complices — cliniques et chirurgiens participant sciemment à l'écosystème criminel des transplantations illicites"], estimated_organ_trafficking_index: 5.3, last_updated: "2026-06-20" },
-    { entity_id: "OT-007", name: "Moldova & Ukraine — Zones Recrutement Réseaux Europe", country: "Europe de l'Est", sector: "Crise Post-Soviétique Donneur Désespéré, Réseaux Criminels Est-Ouest, Conflits Armés Exposent Populations", composite_score: 29.65, forced_organ_harvesting_score: 28.0, transplant_tourism_infrastructure_score: 25.0, state_complicity_organ_trade_score: 32.0, black_market_organ_network_score: 35.0, risk_level: "modéré", primary_pattern: "trafic_organes_actif", key_signals: ["Vulnérabilité donneur de Moldova & Ukraine — populations exposées au recrutement par des réseaux de trafic d'organes sans infrastructure criminelle pleinement structurée", "Déficits réglementaires — absence de registre national transparent et contrôles insuffisants sur les activités de transplantation créant des opportunités criminelles", "Risque de glissement — la pauvreté endémique et la faiblesse des institutions judiciaires attirent les réseaux criminels de trafic d'organes"], estimated_organ_trafficking_index: 2.97, last_updated: "2026-06-20" },
-    { entity_id: "OT-008", name: "OMS & Conseil Europe — Régulation Transplantation Mondiale", country: "Global", sector: "Déclaration d'Istanbul 2008, Convention Oviedo, INTERPOL Operation Libertad & OMS Principes Directeurs Transplantation", composite_score: 4.45, forced_organ_harvesting_score: 5.0, transplant_tourism_infrastructure_score: 4.0, state_complicity_organ_trade_score: 3.0, black_market_organ_network_score: 6.0, risk_level: "faible", primary_pattern: "regulation_organes_exemplaire", key_signals: ["OMS & Conseil Europe incarne la régulation exemplaire des transplantations — consentement présumé, liste nationale transparente et zéro tolérance pour le tourisme de transplantation", "Système de don éthique — registre national public, temps d'attente équitables et coopération internationale contre les marchés noirs d'organes", "Modèle anti-trafic à diffuser — financement INTERPOL sur le trafic d'organes, formation des procureurs et aide aux pays en déficit de régulation"], estimated_organ_trafficking_index: 0.45, last_updated: "2026-06-20" },
-  ];
-
-  const avg = Math.round(entities.reduce((s, e) => s + e.composite_score, 0) / entities.length * 100) / 100;
-  return {
-    total_entities: 8,
-    avg_composite: avg,
-    risk_distribution: { critique: 4, "élevé": 2, "modéré": 1, faible: 1 },
-    pattern_distribution: { prelevement_organes_force: 1, tourisme_transplantation_illicite: 2, marche_noir_organes: 1, trafic_organes_actif: 3, regulation_organes_exemplaire: 1 },
-    top_risk_entities: ["Chine — Prélèvements Forcés Falun Gong/Ouïghours & Exécutions", "Égypte & Moyen-Orient — Marché Noir Organes Région", "Pakistan — Tourisme Transplantation & Reins Vendus 3000$"],
-    critical_alerts: ["Chine: prélèvement organes forcé", "Pakistan: tourisme transplantation illicite", "Égypte & Moyen-Orient: marché noir organes", "Philippines & Asie du Sud-Est: tourisme transplantation illicite"],
-    last_analysis: "2026-06-20",
-    engine_version: "1.0.0",
-    domain: "organ_trafficking",
-    confidence_score: 0.78,
-    data_sources: ["who_organ_trafficking_monitor", "istanbul_declaration_custodian_group", "china_tribunal_2019_report"],
-    entities,
-    avg_estimated_organ_trafficking_index: Math.round(avg / 100 * 10 * 100) / 100,
-  };
 }

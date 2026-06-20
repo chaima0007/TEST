@@ -7145,6 +7145,29 @@ function IconDigitalSurveillance({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconSocialMediaCensorship({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636a9 9 0 010 12.728M15.536 8.464a5 5 0 010 7.072M5.636 5.636a9 9 0 000 12.728M8.464 8.464a5 5 0 000 7.072" />
+      <line x1="3" y1="3" x2="21" y2="21" strokeLinecap="round" />
+    </svg>
+  );
+}
+function IconOrganTrafficking({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      <line x1="3" y1="3" x2="21" y2="21" strokeLinecap="round" />
+    </svg>
+  );
+}
+function IconLandRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7842,6 +7865,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/statelessness-engine", label: "Apatridie", icon: IconStatelessness },
       { href: "/dashboard/child-marriage-engine", label: "Mariages d'Enfants", icon: IconChildMarriage },
       { href: "/dashboard/digital-surveillance-engine", label: "Surveillance Digitale", icon: IconDigitalSurveillance },
+      { href: "/dashboard/social-media-censorship-engine", label: "Censure Réseaux Sociaux", icon: IconSocialMediaCensorship },
+      { href: "/dashboard/organ-trafficking-engine", label: "Trafic d'Organes", icon: IconOrganTrafficking },
+      { href: "/dashboard/land-rights-engine", label: "Droits Fonciers", icon: IconLandRights },
     ],
   },
   {
