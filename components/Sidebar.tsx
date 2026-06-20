@@ -5778,6 +5778,29 @@ function IconPensionCrisis({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconElectoralInterference({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 7h18M3 12h18M3 17h18M9 3l3 4 3-4M9 21l3-4 3 4" />
+      <circle cx="12" cy="12" r="2" fill="currentColor" />
+    </svg>
+  );
+}
+function IconUrbanHeatCrisis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1M4.22 4.22l.707.707m13.86 13.86.707.707M1 12h2m18 0h2M4.22 19.78l.707-.707m13.86-13.86.707-.707M12 7a5 5 0 100 10 5 5 0 000-10z" />
+    </svg>
+  );
+}
+function IconCriminalStateCapture({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
 function IconResourceCurse({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -6435,6 +6458,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/youth-bulge-engine", label: "Youth Bulge & Instabilité", icon: IconYouthBulge },
       { href: "/dashboard/rare-earth-dominance-engine", label: "Domination Terres Rares", icon: IconRareEarthDominance },
       { href: "/dashboard/pension-crisis-engine", label: "Crise des Retraites", icon: IconPensionCrisis },
+      { href: "/dashboard/electoral-interference-engine", label: "Ingérence Électorale", icon: IconElectoralInterference },
+      { href: "/dashboard/urban-heat-crisis-engine", label: "Crise Chaleur Urbaine", icon: IconUrbanHeatCrisis },
+      { href: "/dashboard/criminal-state-capture-engine", label: "Capture Criminelle État", icon: IconCriminalStateCapture },
     ],
   },
   {
