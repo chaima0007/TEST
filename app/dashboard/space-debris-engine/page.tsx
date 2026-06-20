@@ -3,201 +3,184 @@ import { useEffect, useState } from "react";
 
 type SDEEntity = {
   entity_id: string;
-  orbital_shell: string;
-  region: string;
-  cascade_score: number;
-  density_score: number;
-  governance_score: number;
-  weaponization_score: number;
+  name: string;
+  country: string;
+  sector: string;
+  score1: number;
+  score2: number;
+  score3: number;
+  score4: number;
   composite_score: number;
   risk_level: string;
-  debris_pattern: string;
-  severity: string;
+  primary_pattern: string;
+  key_signals: string;
   recommended_action: string;
-  signal: string;
-  debris_density: number;
-  collision_probability: number;
+  estimated_kessler_index: number;
+  last_updated: string;
 };
 
 type SDESummary = {
-  module_id: number;
-  module_name: string;
-  total: number;
-  critical: number;
-  high: number;
-  moderate: number;
-  low: number;
+  total_entities: number;
   avg_composite: number;
-  pattern_distribution: Record<string, number>;
   risk_distribution: Record<string, number>;
-  severity_distribution: Record<string, number>;
-  action_distribution: Record<string, number>;
-  avg_estimated_kessler_risk_index: number;
+  pattern_distribution: Record<string, number>;
+  top_risk_entities: Array<{ entity_id: string; name: string; composite_score: number }>;
+  critical_alerts: string[];
+  last_analysis: string;
+  engine_version: string;
+  domain: string;
+  confidence_score: number;
+  data_sources: string[];
+  entities: SDEEntity[];
+  avg_estimated_kessler_index: number;
 };
 
-function GaugeRing({ value, label, color }: { value: number; label: string; color: string }) {
+const RISK_COLORS: Record<string, string> = {
+  critique: "#ef4444",
+  eleve:    "#f97316",
+  modere:   "#eab308",
+  faible:   "#22c55e",
+};
+
+const RISK_LABELS: Record<string, string> = {
+  critique: "Critique",
+  eleve:    "Élevé",
+  modere:   "Modéré",
+  faible:   "Faible",
+};
+
+function GaugeRing({ value, max = 100, color, label, sub }: {
+  value: number; max?: number; color: string; label: string; sub: string;
+}) {
+  const pct = Math.min(value / max, 1);
   const r = 36;
   const circ = 2 * Math.PI * r;
-  const fill = circ * (1 - value / 100);
+  const dash = pct * circ;
   return (
     <div className="flex flex-col items-center gap-1">
-      <svg width="88" height="88" viewBox="0 0 88 88">
-        <circle cx="44" cy="44" r={r} fill="none" stroke="#0a1628" strokeWidth="8" />
-        <circle cx="44" cy="44" r={r} fill="none" stroke={color} strokeWidth="8"
-          strokeDasharray={circ} strokeDashoffset={fill}
-          strokeLinecap="round" transform="rotate(-90 44 44)" />
-        <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">
-          {Math.round(value)}
+      <svg width="96" height="96" viewBox="0 0 96 96">
+        <circle cx="48" cy="48" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
+        <circle
+          cx="48" cy="48" r={r} fill="none"
+          stroke={color} strokeWidth="8"
+          strokeDasharray={`${dash} ${circ - dash}`}
+          strokeLinecap="round"
+          transform="rotate(-90 48 48)"
+        />
+        <text x="48" y="53" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">
+          {value.toFixed(0)}
         </text>
       </svg>
-      <span className="text-xs text-red-300/70 text-center">{label}</span>
+      <span className="text-xs text-slate-400 text-center">{label}</span>
+      <span className="text-xs text-slate-500 text-center">{sub}</span>
     </div>
   );
 }
 
-function DistBar({ title, counts, colors }: { title: string; counts: Record<string, number>; colors: Record<string, string> }) {
-  const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
+function DistBar({ label, value, max, color }: { label: string; value: number; max: number; color: string }) {
+  const pct = max > 0 ? (value / max) * 100 : 0;
   return (
-    <div className="flex flex-col gap-1">
-      <span className="text-xs text-red-300/70 font-medium">{title}</span>
-      <div className="flex h-3 rounded overflow-hidden gap-px">
-        {Object.entries(counts).map(([k, v]) => (
-          <div key={k} style={{ width: `${(v / total) * 100}%`, background: colors[k] || "#475569" }} title={`${k}: ${v}`} />
-        ))}
+    <div className="flex items-center gap-2 mb-1">
+      <span className="text-xs text-slate-400 w-32 truncate">{label}</span>
+      <div className="flex-1 bg-slate-800 rounded h-2">
+        <div className="h-2 rounded" style={{ width: `${pct}%`, backgroundColor: color }} />
       </div>
-      <div className="flex flex-wrap gap-x-3 gap-y-0.5">
-        {Object.entries(counts).map(([k, v]) => (
-          <span key={k} className="text-xs text-red-300/60">
-            <span style={{ color: colors[k] || "#94a3b8" }}>■</span> {k.replace(/_/g, " ")} {v}
-          </span>
-        ))}
-      </div>
+      <span className="text-xs text-slate-300 w-8 text-right">{value}</span>
     </div>
   );
 }
 
-const RISK_COLORS = { low: "#10b981", moderate: "#f59e0b", high: "#3b82f6", critical: "#ef4444" };
-const PAT_COLORS: Record<string, string> = {
-  none: "#10b981",
-  kessler_syndrome_onset: "#ef4444",
-  mega_constellation_crisis: "#f97316",
-  debris_weaponization_cascade: "#a855f7",
-  governance_remediation_failure: "#06b6d4",
-  orbital_commons_collapse: "#1d4ed8",
-};
-const SEV_COLORS: Record<string, string> = {
-  "débris_sous_surveillance": "#10b981",
-  "saturation_orbitale_structurelle": "#f59e0b",
-  "crise_débris_spatiaux_majeure": "#3b82f6",
-  "effondrement_orbital_systémique": "#ef4444",
-};
-const ACTION_COLORS: Record<string, string> = {
-  "veille_débris_continue": "#10b981",
-  "renforcement_gouvernance_orbitale": "#06b6d4",
-  "retrait_débris_actifs_urgence": "#3b82f6",
-  "intervention_débris_urgence_mondiale": "#ef4444",
-};
-const RISK_BADGE: Record<string, string> = {
-  low: "bg-emerald-900 text-emerald-300",
-  moderate: "bg-amber-900 text-amber-300",
-  high: "bg-blue-900 text-blue-300",
-  critical: "bg-red-950 text-red-400",
-};
-const SEV_BADGE: Record<string, string> = {
-  "débris_sous_surveillance": "bg-emerald-900 text-emerald-300",
-  "saturation_orbitale_structurelle": "bg-amber-900 text-amber-300",
-  "crise_débris_spatiaux_majeure": "bg-blue-900 text-blue-300",
-  "effondrement_orbital_systémique": "bg-red-950 text-red-400",
-};
+function RiskBadge({ level }: { level: string }) {
+  return (
+    <span
+      className="text-xs px-2 py-0.5 rounded-full font-semibold"
+      style={{ backgroundColor: RISK_COLORS[level] + "33", color: RISK_COLORS[level], border: `1px solid ${RISK_COLORS[level]}55` }}
+    >
+      {RISK_LABELS[level] ?? level}
+    </span>
+  );
+}
 
 function DetailModal({ entity, onClose }: { entity: SDEEntity; onClose: () => void }) {
-  const [tab, setTab] = useState<"scores" | "signal" | "action">("scores");
-  useEffect(() => {
-    const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, [onClose]);
+  const [tab, setTab] = useState<"scores" | "signaux" | "actions">("scores");
+  const color = RISK_COLORS[entity.risk_level] ?? "#6366f1";
+  const tabs = [
+    { key: "scores",  label: "Scores" },
+    { key: "signaux", label: "Signaux" },
+    { key: "actions", label: "Actions" },
+  ] as const;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={onClose}>
-      <div className="bg-slate-950 border border-red-700/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e => e.stopPropagation()}>
-        <div className="flex items-center justify-between mb-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={onClose}>
+      <div className="bg-slate-900 border border-slate-700 rounded-xl p-6 w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex items-start justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
-            <span className="ml-2 text-red-400 text-xs">{entity.region}</span>
-            <span className="ml-2 text-slate-500 text-xs">{entity.orbital_shell}</span>
+            <div className="text-xs text-slate-500 mb-1">{entity.entity_id} — {entity.country}</div>
+            <div className="text-white font-bold text-lg leading-tight">{entity.name}</div>
+            <div className="text-xs text-slate-400 mt-1">{entity.sector}</div>
           </div>
-          <button onClick={onClose} className="text-slate-500 hover:text-white text-xl leading-none">✕</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-white text-xl ml-4">✕</button>
         </div>
-        <div className="flex gap-2 mb-4">
-          {(["scores", "signal", "action"] as const).map(t => (
-            <button key={t} onClick={() => setTab(t)}
-              className={`px-3 py-1 rounded text-xs font-medium transition-colors ${tab === t ? "bg-red-900 text-white" : "bg-slate-900 text-slate-400 hover:text-white"}`}>
-              {t === "scores" ? "Scores" : t === "signal" ? "Signal" : "Action"}
+
+        <div className="flex gap-1 mb-4">
+          {tabs.map(t => (
+            <button
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors ${
+                tab === t.key
+                  ? "text-white"
+                  : "text-slate-400 hover:text-slate-200 bg-slate-800"
+              }`}
+              style={tab === t.key ? { backgroundColor: color } : {}}
+            >
+              {t.label}
             </button>
           ))}
         </div>
 
         {tab === "scores" && (
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            {[
-              ["Score Cascade",        entity.cascade_score,       "#ef4444"],
-              ["Score Densité",        entity.density_score,       "#f97316"],
-              ["Score Gouvernance",    entity.governance_score,    "#06b6d4"],
-              ["Score Weaponisation",  entity.weaponization_score, "#a855f7"],
-            ].map(([l, v, c]) => (
-              <div key={String(l)} className="bg-slate-900 border border-red-700/20 rounded-lg p-3">
-                <div className="text-red-300/60 text-xs mb-1">{String(l)}</div>
-                <div className="text-white font-bold text-lg">{Number(v).toFixed(1)}</div>
-                <div className="h-1.5 rounded mt-1 bg-slate-800">
-                  <div className="h-1.5 rounded" style={{ width: `${Math.min(Number(v), 100)}%`, background: String(c) }} />
-                </div>
-              </div>
-            ))}
-            <div className="col-span-2 bg-slate-900 border border-red-700/20 rounded-lg p-3">
-              <div className="text-red-300/60 text-xs mb-1">Score Composite Débris</div>
-              <div className="text-white font-bold text-2xl">{entity.composite_score.toFixed(1)}</div>
+          <div className="grid grid-cols-2 gap-4">
+            <GaugeRing value={entity.score1} color="#6366f1" label="Densité Débris" sub="score 1" />
+            <GaugeRing value={entity.score2} color="#4f46e5" label="Prob. Collision" sub="score 2" />
+            <GaugeRing value={entity.score3} color="#4338ca" label="Gap Déorbitage" sub="score 3" />
+            <GaugeRing value={entity.score4} color="#3730a3" label="Risque Opérateur" sub="score 4" />
+            <div className="col-span-2 flex justify-center">
+              <GaugeRing value={entity.composite_score} color={color} label="Score Composite" sub="global" />
             </div>
           </div>
         )}
 
-        {tab === "signal" && (
-          <div className="bg-slate-900 border border-red-700/20 rounded-lg p-4 text-sm text-slate-200 leading-relaxed">
-            {entity.signal}
-            <div className="mt-3 flex gap-2 flex-wrap">
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[entity.risk_level] || "bg-slate-700 text-slate-300"}`}>
-                {entity.risk_level}
-              </span>
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[entity.severity] || "bg-slate-700 text-slate-300"}`}>
-                {entity.severity.replace(/_/g, " ")}
-              </span>
+        {tab === "signaux" && (
+          <div className="space-y-3">
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Signaux clés</div>
+              <div className="text-sm text-slate-200">{entity.key_signals}</div>
             </div>
-            <div className="mt-3 grid grid-cols-2 gap-2">
-              <div className="bg-slate-800 rounded p-2">
-                <div className="text-red-300/50 text-xs mb-0.5">Densité Débris</div>
-                <div className="text-white text-sm font-medium">{Math.round(entity.debris_density * 100)}%</div>
-              </div>
-              <div className="bg-slate-800 rounded p-2">
-                <div className="text-red-300/50 text-xs mb-0.5">Probabilité Collision</div>
-                <div className="text-white text-sm font-medium">{Math.round(entity.collision_probability * 100)}%</div>
-              </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Patron primaire</div>
+              <div className="text-sm text-slate-200 font-mono">{entity.primary_pattern}</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Indice Kessler</div>
+              <div className="text-sm text-slate-200 font-bold">{entity.estimated_kessler_index.toFixed(2)}</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Niveau de risque</div>
+              <RiskBadge level={entity.risk_level} />
             </div>
           </div>
         )}
 
-        {tab === "action" && (
-          <div className="space-y-3 text-sm">
-            <div className="bg-slate-900 border border-red-700/20 rounded-lg p-3">
-              <div className="text-red-300/60 text-xs mb-1">Action Recommandée</div>
-              <div className="text-white font-medium">{entity.recommended_action.replace(/_/g, " ")}</div>
+        {tab === "actions" && (
+          <div className="space-y-3">
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Action recommandée</div>
+              <div className="text-sm text-slate-200 font-mono">{entity.recommended_action}</div>
             </div>
-            <div className="bg-slate-900 border border-red-700/20 rounded-lg p-3">
-              <div className="text-red-300/60 text-xs mb-1">Couche Orbitale</div>
-              <div className="text-white font-medium">{entity.orbital_shell}</div>
-            </div>
-            <div className="bg-slate-900 border border-red-700/20 rounded-lg p-3">
-              <div className="text-red-300/60 text-xs mb-1">Patron Débris Détecté</div>
-              <div className="text-red-300 font-medium">{entity.debris_pattern.replace(/_/g, " ")}</div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Dernière analyse</div>
+              <div className="text-xs text-slate-300">{new Date(entity.last_updated).toLocaleString("fr-FR")}</div>
             </div>
           </div>
         )}
@@ -207,141 +190,180 @@ function DetailModal({ entity, onClose }: { entity: SDEEntity; onClose: () => vo
 }
 
 export default function SpaceDebrisDashboard() {
-  const [data, setData]               = useState<{ entities: SDEEntity[]; summary: SDESummary } | null>(null);
-  const [riskFilter, setRiskFilter]   = useState<string>("all");
-  const [patFilter, setPatFilter]     = useState<string>("all");
-  const [selected, setSelected]       = useState<SDEEntity | null>(null);
+  const [data, setData] = useState<SDESummary | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState<string>("tous");
+  const [selected, setSelected] = useState<SDEEntity | null>(null);
 
   useEffect(() => {
     fetch("/api/space-debris-engine")
       .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
+      .then(j => {
+        setData(j);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, []);
 
-  if (!data) return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-      <div className="text-red-400 text-lg animate-pulse">Initialisation du Moteur Débris Spatiaux...</div>
-    </div>
-  );
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-slate-400 text-lg">Chargement Space Debris Engine…</div>
+      </div>
+    );
+  }
 
-  const { entities, summary } = data;
-  const filtered = entities.filter(e =>
-    (riskFilter === "all" || e.risk_level === riskFilter) &&
-    (patFilter === "all" || e.debris_pattern === patFilter)
-  );
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-red-400 text-lg">Erreur de chargement des données</div>
+      </div>
+    );
+  }
 
-  const avgDensity = entities.reduce((s, e) => s + e.density_score, 0) / (entities.length || 1);
+  const filterPills = ["tous", "critique", "eleve", "modere", "faible"];
+  const filtered = filter === "tous"
+    ? data.entities
+    : data.entities.filter(e => e.risk_level === filter);
 
-  const dists = [
-    { title: "Niveau de Risque Orbital",    counts: summary.risk_distribution,     colors: RISK_COLORS   },
-    { title: "Patron Débris Détecté",       counts: summary.pattern_distribution,  colors: PAT_COLORS   },
-    { title: "Sévérité Orbitale",           counts: summary.severity_distribution, colors: SEV_COLORS   },
-    { title: "Action Déclenchée",           counts: summary.action_distribution,   colors: ACTION_COLORS },
-  ] as Array<{ title: string; counts: Record<string, number>; colors: Record<string, string> }>;
+  const maxPattern = Math.max(...Object.values(data.pattern_distribution), 1);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 space-y-6">
+    <div className="min-h-screen bg-slate-950 text-white p-6">
       {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
 
-      <div>
-        <h1 className="text-2xl font-bold text-red-400">Débris Spatiaux &amp; Syndrome Kessler — Module 370</h1>
-        <p className="text-red-300/50 text-sm mt-1">
-          Cascade Orbitale · Densité Débris · Gouvernance Spatiale · Weaponisation Orbitale
-        </p>
-      </div>
-
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-        {[
-          ["Total Orbites",        summary.total,                                                    "text-red-400"],
-          ["Kessler Imminent",     summary.critical,                                                 "text-red-500"],
-          ["Crise Majeure",        summary.high,                                                     "text-orange-400"],
-          ["Composite Moyen",      `${summary.avg_composite.toFixed(1)}`,                            "text-red-300"],
-          ["Index Risque Kessler", `${summary.avg_estimated_kessler_risk_index.toFixed(2)}/10`,      "text-amber-400"],
-          ["Densité Moyenne",      `${Math.round(avgDensity * 10) / 10}`,                            "text-slate-300"],
-        ].map(([l, v, c]) => (
-          <div key={String(l)} className="bg-slate-900 border border-red-700/30 rounded-xl p-3 text-center">
-            <div className={`text-xl font-bold ${c}`}>{v}</div>
-            <div className="text-xs text-red-300/40 mt-0.5 leading-tight">{l}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Gauge Rings */}
-      <div className="bg-slate-900 border border-red-700/30 rounded-xl p-5">
-        <div className="grid grid-cols-4 gap-4">
-          <GaugeRing
-            value={entities.reduce((s, e) => s + e.cascade_score, 0) / (entities.length || 1)}
-            label="Cascade Moy."
-            color="#ef4444"
-          />
-          <GaugeRing
-            value={entities.reduce((s, e) => s + e.density_score, 0) / (entities.length || 1)}
-            label="Densité Moy."
-            color="#f97316"
-          />
-          <GaugeRing
-            value={entities.reduce((s, e) => s + e.governance_score, 0) / (entities.length || 1)}
-            label="Gouvernance Moy."
-            color="#06b6d4"
-          />
-          <GaugeRing
-            value={entities.reduce((s, e) => s + e.weaponization_score, 0) / (entities.length || 1)}
-            label="Weaponisation Moy."
-            color="#a855f7"
-          />
+      {/* Header */}
+      <div className="mb-8">
+        <div className="text-xs text-indigo-400 font-mono mb-1">MODULE 370 — CAELUM PARTNERS</div>
+        <h1 className="text-3xl font-bold text-white mb-2">
+          Space Debris & Kessler Syndrome Intelligence Engine
+        </h1>
+        <div className="text-slate-400 text-sm">
+          Débris Spatiaux & Syndrome Kessler — v{data.engine_version}
         </div>
       </div>
 
-      {/* Distribution Bars */}
-      <div className="bg-slate-900 border border-red-700/30 rounded-xl p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {dists.map(d => <DistBar key={d.title} {...d} />)}
+      {/* KPI Cards */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Entités</div>
+          <div className="text-2xl font-bold text-white">{data.total_entities}</div>
+        </div>
+        <div className="bg-slate-900 border border-red-900 rounded-xl p-4">
+          <div className="text-xs text-red-400 mb-1">Critique</div>
+          <div className="text-2xl font-bold text-red-400">{data.risk_distribution["critique"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-orange-900 rounded-xl p-4">
+          <div className="text-xs text-orange-400 mb-1">Élevé</div>
+          <div className="text-2xl font-bold text-orange-400">{data.risk_distribution["eleve"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-yellow-900 rounded-xl p-4">
+          <div className="text-xs text-yellow-400 mb-1">Modéré</div>
+          <div className="text-2xl font-bold text-yellow-400">{data.risk_distribution["modere"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Composite Moy.</div>
+          <div className="text-2xl font-bold text-indigo-400">{data.avg_composite.toFixed(1)}</div>
+        </div>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Idx Kessler</div>
+          <div className="text-2xl font-bold text-indigo-300">{data.avg_estimated_kessler_index.toFixed(2)}</div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Pattern Distribution */}
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-5">
+          <div className="text-sm font-semibold text-slate-300 mb-4">Distribution des Patrons</div>
+          {Object.entries(data.pattern_distribution).map(([pat, cnt]) => (
+            <DistBar key={pat} label={pat.replace(/_/g, " ")} value={cnt} max={maxPattern} color="#6366f1" />
+          ))}
+        </div>
+
+        {/* Critical Alerts */}
+        <div className="bg-slate-900 border border-red-900/50 rounded-xl p-5 lg:col-span-2">
+          <div className="text-sm font-semibold text-red-400 mb-4">Alertes Critiques</div>
+          {data.critical_alerts.length === 0 ? (
+            <div className="text-slate-500 text-sm">Aucune alerte critique</div>
+          ) : (
+            <div className="space-y-2">
+              {data.critical_alerts.map((alert, i) => (
+                <div key={i} className="bg-red-950/30 border border-red-900/50 rounded-lg p-3 text-sm text-red-200">
+                  {alert}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Filter Pills */}
-      <div className="flex flex-wrap gap-2">
-        {["all", "low", "moderate", "high", "critical"].map(r => (
-          <button key={r} onClick={() => setRiskFilter(r)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${riskFilter === r ? "bg-red-900 border-red-700 text-white" : "bg-slate-900 border-red-700/30 text-red-400/70 hover:text-white"}`}>
-            {r}
-          </button>
-        ))}
-        <span className="w-px h-5 self-center bg-red-700/30" />
-        {["all", "none", "kessler_syndrome_onset", "mega_constellation_crisis", "debris_weaponization_cascade", "governance_remediation_failure", "orbital_commons_collapse"].map(p => (
-          <button key={p} onClick={() => setPatFilter(p)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${patFilter === p ? "bg-red-950 border-red-700 text-white" : "bg-slate-900 border-red-700/30 text-red-400/70 hover:text-white"}`}>
-            {p.replace(/_/g, " ")}
+      <div className="flex gap-2 mb-4 flex-wrap">
+        {filterPills.map(f => (
+          <button
+            key={f}
+            onClick={() => setFilter(f)}
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+              filter === f
+                ? "bg-indigo-600 text-white"
+                : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+            }`}
+          >
+            {f === "tous" ? "Tous" : RISK_LABELS[f]}
+            {f !== "tous" && data.risk_distribution[f] !== undefined && (
+              <span className="ml-1 opacity-70">({data.risk_distribution[f]})</span>
+            )}
           </button>
         ))}
       </div>
 
-      {/* Entity Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {filtered.map(e => (
-          <div key={e.entity_id} onClick={() => setSelected(e)}
-            className="bg-slate-900 border border-red-700/30 rounded-xl p-4 cursor-pointer hover:border-red-500 transition-colors">
-            <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white">{e.entity_id}</span>
-              <span className="text-xs text-red-400/60">{e.region}</span>
-            </div>
-            <div className="text-xs text-slate-500 mb-2">{e.orbital_shell}</div>
-            <div className="flex gap-1 mb-3 flex-wrap">
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[e.risk_level] || "bg-slate-700 text-slate-300"}`}>
-                {e.risk_level}
-              </span>
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[e.severity] || "bg-slate-700 text-slate-300"}`}>
-                {e.severity.replace(/_/g, " ")}
-              </span>
-            </div>
-            <div className="text-2xl font-black text-white mb-1">{e.composite_score.toFixed(1)}</div>
-            <div className="text-xs text-red-400/60 mb-2 capitalize">{e.debris_pattern.replace(/_/g, " ")}</div>
-            <div className="text-xs text-red-400 font-medium mb-2">
-              Cascade: {e.cascade_score.toFixed(1)} · Densité: {e.density_score.toFixed(1)}
-            </div>
-            <div className="text-xs text-slate-400 truncate">{e.signal}</div>
-          </div>
-        ))}
+      {/* Entity Table */}
+      <div className="bg-slate-900 border border-slate-700 rounded-xl overflow-hidden">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-slate-700 bg-slate-800/50">
+              <th className="text-left p-4 text-slate-400 font-medium">ID</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Entité</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Pays</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Risque</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Composite</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Patron</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((e, i) => (
+              <tr
+                key={e.entity_id}
+                className={`border-b border-slate-800 cursor-pointer hover:bg-slate-800/50 transition-colors ${
+                  i % 2 === 0 ? "" : "bg-slate-900/50"
+                }`}
+                onClick={() => setSelected(e)}
+              >
+                <td className="p-4 font-mono text-xs text-slate-500">{e.entity_id}</td>
+                <td className="p-4">
+                  <div className="font-medium text-white">{e.name}</div>
+                  <div className="text-xs text-slate-500">{e.sector}</div>
+                </td>
+                <td className="p-4 text-slate-300">{e.country}</td>
+                <td className="p-4"><RiskBadge level={e.risk_level} /></td>
+                <td className="p-4">
+                  <div className="font-bold" style={{ color: RISK_COLORS[e.risk_level] }}>
+                    {e.composite_score.toFixed(1)}
+                  </div>
+                </td>
+                <td className="p-4 font-mono text-xs text-slate-400">{e.primary_pattern}</td>
+                <td className="p-4 text-xs text-slate-500 max-w-xs truncate">{e.recommended_action}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-6 flex items-center justify-between text-xs text-slate-500">
+        <div>Sources: {data.data_sources.join(", ")}</div>
+        <div>Confiance: {(data.confidence_score * 100).toFixed(0)}% — {new Date(data.last_analysis).toLocaleString("fr-FR")}</div>
       </div>
     </div>
   );

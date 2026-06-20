@@ -1,180 +1,186 @@
 "use client";
 import { useEffect, useState } from "react";
 
-type Entity = {
-  entity_id: string; region: string; nuclear_domain: string;
-  nuclear_risk: string; nuclear_pattern: string;
-  nuclear_severity: string; recommended_action: string;
-  proliferation_score: number; stability_score: number;
-  security_score: number; doctrine_score: number;
-  nuclear_composite: number; is_nuclear_crisis: boolean;
-  requires_nuclear_intervention: boolean; nuclear_signal: string;
-};
-type Summary = {
-  total_entities: number;
-  critical_entities: number; high_entities: number;
-  moderate_entities: number; low_entities: number;
-  crisis_entities: number; intervention_required: number;
-  avg_proliferation_score: number; avg_stability_score: number;
-  avg_security_score: number; avg_doctrine_score: number;
-  avg_nuclear_composite: number;
-  avg_estimated_nuclear_threat_index: number;
-  risk_counts: Record<string,number>;
-  pattern_counts: Record<string,number>;
-  severity_counts: Record<string,number>;
-  action_counts: Record<string,number>;
+type NUCEntity = {
+  entity_id: string;
+  name: string;
+  country: string;
+  sector: string;
+  score1: number;
+  score2: number;
+  score3: number;
+  score4: number;
+  composite_score: number;
+  risk_level: string;
+  primary_pattern: string;
+  key_signals: string;
+  recommended_action: string;
+  estimated_nuclear_index: number;
+  last_updated: string;
 };
 
-function GaugeRing({ value, label, color }: { value: number; label: string; color: string }) {
-  const r = 36; const circ = 2 * Math.PI * r;
-  const fill = circ * (1 - value / 100);
+type NUCSummary = {
+  total_entities: number;
+  avg_composite: number;
+  risk_distribution: Record<string, number>;
+  pattern_distribution: Record<string, number>;
+  top_risk_entities: Array<{ entity_id: string; name: string; composite_score: number }>;
+  critical_alerts: string[];
+  last_analysis: string;
+  engine_version: string;
+  domain: string;
+  confidence_score: number;
+  data_sources: string[];
+  entities: NUCEntity[];
+  avg_estimated_nuclear_index: number;
+};
+
+const RISK_COLORS: Record<string, string> = {
+  critique: "#ef4444",
+  eleve:    "#f97316",
+  modere:   "#eab308",
+  faible:   "#22c55e",
+};
+
+const RISK_LABELS: Record<string, string> = {
+  critique: "Critique",
+  eleve:    "Élevé",
+  modere:   "Modéré",
+  faible:   "Faible",
+};
+
+function GaugeRing({ value, max = 100, color, label, sub }: {
+  value: number; max?: number; color: string; label: string; sub: string;
+}) {
+  const pct = Math.min(value / max, 1);
+  const r = 36;
+  const circ = 2 * Math.PI * r;
+  const dash = pct * circ;
   return (
     <div className="flex flex-col items-center gap-1">
-      <svg width="88" height="88" viewBox="0 0 88 88">
-        <circle cx="44" cy="44" r={r} fill="none" stroke="#0f172a" strokeWidth="8"/>
-        <circle cx="44" cy="44" r={r} fill="none" stroke={color} strokeWidth="8"
-          strokeDasharray={circ} strokeDashoffset={fill}
-          strokeLinecap="round" transform="rotate(-90 44 44)"/>
-        <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">
-          {Math.round(value)}
+      <svg width="96" height="96" viewBox="0 0 96 96">
+        <circle cx="48" cy="48" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
+        <circle
+          cx="48" cy="48" r={r} fill="none"
+          stroke={color} strokeWidth="8"
+          strokeDasharray={`${dash} ${circ - dash}`}
+          strokeLinecap="round"
+          transform="rotate(-90 48 48)"
+        />
+        <text x="48" y="53" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">
+          {value.toFixed(0)}
         </text>
       </svg>
-      <span className="text-xs text-orange-300/70 text-center">{label}</span>
+      <span className="text-xs text-slate-400 text-center">{label}</span>
+      <span className="text-xs text-slate-500 text-center">{sub}</span>
     </div>
   );
 }
 
-function DistBar({ title, counts, colors }: { title: string; counts: Record<string,number>; colors: Record<string,string> }) {
-  const total = Object.values(counts).reduce((a,b)=>a+b,0)||1;
+function DistBar({ label, value, max, color }: { label: string; value: number; max: number; color: string }) {
+  const pct = max > 0 ? (value / max) * 100 : 0;
   return (
-    <div className="flex flex-col gap-1">
-      <span className="text-xs text-orange-300/70 font-medium">{title}</span>
-      <div className="flex h-3 rounded overflow-hidden gap-px">
-        {Object.entries(counts).map(([k,v])=>(
-          <div key={k} style={{width:`${v/total*100}%`, background:colors[k]||"#475569"}} title={`${k}: ${v}`}/>
-        ))}
+    <div className="flex items-center gap-2 mb-1">
+      <span className="text-xs text-slate-400 w-32 truncate">{label}</span>
+      <div className="flex-1 bg-slate-800 rounded h-2">
+        <div className="h-2 rounded" style={{ width: `${pct}%`, backgroundColor: color }} />
       </div>
-      <div className="flex flex-wrap gap-x-3 gap-y-0.5">
-        {Object.entries(counts).map(([k,v])=>(
-          <span key={k} className="text-xs text-orange-300/60">
-            <span style={{color:colors[k]||"#94a3b8"}}>■</span> {k.replace(/_/g," ")} {v}
-          </span>
-        ))}
-      </div>
+      <span className="text-xs text-slate-300 w-8 text-right">{value}</span>
     </div>
   );
 }
 
-const RISK_COLORS   = { low:"#10b981", moderate:"#f59e0b", high:"#f97316", critical:"#ef4444" };
-const PAT_COLORS    = {
-  none:"#10b981",
-  proliferation_cascade:"#ef4444",
-  deterrence_breakdown:"#f97316",
-  nuclear_terrorism_event:"#a855f7",
-  doctrine_escalation:"#f59e0b",
-  arms_control_collapse:"#06b6d4",
-};
-const SEV_COLORS    = {
-  nuclear_stable:"#10b981",
-  nuclear_tension:"#f59e0b",
-  high_nuclear_risk:"#f97316",
-  existential_threat:"#ef4444",
-};
-const ACTION_COLORS = {
-  no_action:"#10b981",
-  nuclear_monitoring:"#06b6d4",
-  nonproliferation_activation:"#f59e0b",
-  nuclear_security_emergency:"#a855f7",
-  existential_risk_protocol:"#ef4444",
-};
-
-const RISK_BADGE: Record<string,string> = {
-  low:"bg-emerald-900 text-emerald-300",
-  moderate:"bg-amber-900 text-amber-300",
-  high:"bg-orange-900 text-orange-300",
-  critical:"bg-red-900 text-red-300",
-};
-const SEV_BADGE: Record<string,string> = {
-  nuclear_stable:"bg-emerald-900 text-emerald-300",
-  nuclear_tension:"bg-amber-900 text-amber-300",
-  high_nuclear_risk:"bg-orange-900 text-orange-300",
-  existential_threat:"bg-red-900 text-red-300",
-};
-
-function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
-  const [tab, setTab] = useState<"scores"|"signal"|"action">("scores");
-  useEffect(()=>{
-    const h = (e: KeyboardEvent) => { if (e.key==="Escape") onClose(); };
-    window.addEventListener("keydown", h);
-    return ()=>window.removeEventListener("keydown", h);
-  },[onClose]);
+function RiskBadge({ level }: { level: string }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={onClose}>
-      <div className="bg-slate-950 border border-orange-700/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e=>e.stopPropagation()}>
-        <div className="flex items-center justify-between mb-4">
+    <span
+      className="text-xs px-2 py-0.5 rounded-full font-semibold"
+      style={{ backgroundColor: RISK_COLORS[level] + "33", color: RISK_COLORS[level], border: `1px solid ${RISK_COLORS[level]}55` }}
+    >
+      {RISK_LABELS[level] ?? level}
+    </span>
+  );
+}
+
+function DetailModal({ entity, onClose }: { entity: NUCEntity; onClose: () => void }) {
+  const [tab, setTab] = useState<"scores" | "signaux" | "actions">("scores");
+  const color = RISK_COLORS[entity.risk_level] ?? "#eab308";
+  const tabs = [
+    { key: "scores",  label: "Scores" },
+    { key: "signaux", label: "Signaux" },
+    { key: "actions", label: "Actions" },
+  ] as const;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={onClose}>
+      <div className="bg-slate-900 border border-slate-700 rounded-xl p-6 w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex items-start justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
-            <span className="ml-2 text-orange-400 text-xs">{entity.region}</span>
-            <span className="ml-2 text-slate-500 text-xs">{entity.nuclear_domain.replace(/_/g," ")}</span>
+            <div className="text-xs text-slate-500 mb-1">{entity.entity_id} — {entity.country}</div>
+            <div className="text-white font-bold text-lg leading-tight">{entity.name}</div>
+            <div className="text-xs text-slate-400 mt-1">{entity.sector}</div>
           </div>
-          <button onClick={onClose} className="text-slate-500 hover:text-white text-xl leading-none">✕</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-white text-xl ml-4">✕</button>
         </div>
-        <div className="flex gap-2 mb-4">
-          {(["scores","signal","action"] as const).map(t=>(
-            <button key={t} onClick={()=>setTab(t)}
-              className={`px-3 py-1 rounded text-xs font-medium transition-colors ${tab===t?"bg-orange-800 text-white":"bg-slate-900 text-slate-400 hover:text-white"}`}>
-              {t.charAt(0).toUpperCase()+t.slice(1)}
+
+        <div className="flex gap-1 mb-4">
+          {tabs.map(t => (
+            <button
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors ${
+                tab === t.key
+                  ? "text-white"
+                  : "text-slate-400 hover:text-slate-200 bg-slate-800"
+              }`}
+              style={tab === t.key ? { backgroundColor: color } : {}}
+            >
+              {t.label}
             </button>
           ))}
         </div>
-        {tab==="scores" && (
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            {[
-              ["Prolifération",  entity.proliferation_score, "#ef4444"],
-              ["Stabilité",      entity.stability_score,     "#f97316"],
-              ["Sécurité",       entity.security_score,      "#a855f7"],
-              ["Doctrine",       entity.doctrine_score,      "#f59e0b"],
-            ].map(([l,v,c])=>(
-              <div key={String(l)} className="bg-slate-900 border border-orange-700/20 rounded-lg p-3">
-                <div className="text-orange-300/60 text-xs mb-1">{String(l)}</div>
-                <div className="text-white font-bold text-lg">{Number(v).toFixed(1)}</div>
-                <div className="h-1.5 rounded mt-1 bg-slate-800">
-                  <div className="h-1.5 rounded" style={{width:`${Math.min(Number(v),100)}%`,background:String(c)}}/>
-                </div>
-              </div>
-            ))}
-            <div className="col-span-2 bg-slate-900 border border-orange-700/20 rounded-lg p-3">
-              <div className="text-orange-300/60 text-xs mb-1">Composite Nucléaire</div>
-              <div className="text-white font-bold text-2xl">{entity.nuclear_composite.toFixed(1)}</div>
+
+        {tab === "scores" && (
+          <div className="grid grid-cols-2 gap-4">
+            <GaugeRing value={entity.score1} color="#eab308" label="Sûreté Installations" sub="score 1" />
+            <GaugeRing value={entity.score2} color="#ca8a04" label="Gestion Déchets" sub="score 2" />
+            <GaugeRing value={entity.score3} color="#a16207" label="Risque Prolifération" sub="score 3" />
+            <GaugeRing value={entity.score4} color="#854d0e" label="Gap Réponse Urgence" sub="score 4" />
+            <div className="col-span-2 flex justify-center">
+              <GaugeRing value={entity.composite_score} color={color} label="Score Composite" sub="global" />
             </div>
           </div>
         )}
-        {tab==="signal" && (
-          <div className="bg-slate-900 border border-orange-700/20 rounded-lg p-4 text-sm text-slate-200 leading-relaxed">
-            {entity.nuclear_signal}
-            <div className="mt-3 flex gap-2 flex-wrap">
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[entity.nuclear_risk]||"bg-slate-700 text-slate-300"}`}>{entity.nuclear_risk}</span>
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[entity.nuclear_severity]||"bg-slate-700 text-slate-300"}`}>{entity.nuclear_severity.replace(/_/g," ")}</span>
+
+        {tab === "signaux" && (
+          <div className="space-y-3">
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Signaux clés</div>
+              <div className="text-sm text-slate-200">{entity.key_signals}</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Patron primaire</div>
+              <div className="text-sm text-slate-200 font-mono">{entity.primary_pattern}</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Indice Nucléaire</div>
+              <div className="text-sm text-slate-200 font-bold">{entity.estimated_nuclear_index.toFixed(2)}</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Niveau de risque</div>
+              <RiskBadge level={entity.risk_level} />
             </div>
           </div>
         )}
-        {tab==="action" && (
-          <div className="space-y-3 text-sm">
-            <div className="bg-slate-900 border border-orange-700/20 rounded-lg p-3">
-              <div className="text-orange-300/60 text-xs mb-1">Action Recommandée</div>
-              <div className="text-white font-medium">{entity.recommended_action.replace(/_/g," ")}</div>
+
+        {tab === "actions" && (
+          <div className="space-y-3">
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Action recommandée</div>
+              <div className="text-sm text-slate-200 font-mono">{entity.recommended_action}</div>
             </div>
-            <div className="bg-slate-900 border border-orange-700/20 rounded-lg p-3">
-              <div className="text-orange-300/60 text-xs mb-1">Pattern Nucléaire</div>
-              <div className="text-white font-medium">{entity.nuclear_pattern.replace(/_/g," ")}</div>
-            </div>
-            <div className="flex gap-2 flex-wrap">
-              {entity.is_nuclear_crisis && (
-                <span className="px-2 py-1 rounded bg-red-950 text-red-300 text-xs font-medium">CRISE NUCLÉAIRE</span>
-              )}
-              {entity.requires_nuclear_intervention && (
-                <span className="px-2 py-1 rounded bg-orange-950 text-orange-400 text-xs font-medium">INTERVENTION</span>
-              )}
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Dernière analyse</div>
+              <div className="text-xs text-slate-300">{new Date(entity.last_updated).toLocaleString("fr-FR")}</div>
             </div>
           </div>
         )}
@@ -184,120 +190,180 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
 }
 
 export default function NuclearRiskDashboard() {
-  const [data, setData]         = useState<{ entities: Entity[]; summary: Summary }|null>(null);
-  const [filter, setFilter]     = useState<string>("all");
-  const [patFilter, setPat]     = useState<string>("all");
-  const [selected, setSelected] = useState<Entity|null>(null);
+  const [data, setData] = useState<NUCSummary | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState<string>("tous");
+  const [selected, setSelected] = useState<NUCEntity | null>(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("/api/nuclear-risk-engine")
-      .then(r=>r.json()).then(setData).catch(console.error);
-  },[]);
+      .then(r => r.json())
+      .then(j => {
+        setData(j);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
 
-  if (!data) return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-      <div className="text-orange-400 text-lg animate-pulse">Initialisation Moteur Risque Nucléaire...</div>
-    </div>
-  );
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-slate-400 text-lg">Chargement Nuclear Risk Engine…</div>
+      </div>
+    );
+  }
 
-  const { entities, summary } = data;
-  const filtered = entities.filter(e=>
-    (filter==="all" || e.nuclear_risk===filter) &&
-    (patFilter==="all" || e.nuclear_pattern===patFilter)
-  );
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-red-400 text-lg">Erreur de chargement des données</div>
+      </div>
+    );
+  }
 
-  const dists = [
-    { title:"Niveau Risque",         counts:summary.risk_counts,     colors:RISK_COLORS   },
-    { title:"Patterns Nucléaires",   counts:summary.pattern_counts,  colors:PAT_COLORS    },
-    { title:"Sévérité",              counts:summary.severity_counts, colors:SEV_COLORS    },
-    { title:"Actions",               counts:summary.action_counts,   colors:ACTION_COLORS },
-  ] as Array<{title:string;counts:Record<string,number>;colors:Record<string,string>}>;
+  const filterPills = ["tous", "critique", "eleve", "modere", "faible"];
+  const filtered = filter === "tous"
+    ? data.entities
+    : data.entities.filter(e => e.risk_level === filter);
+
+  const maxPattern = Math.max(...Object.values(data.pattern_distribution), 1);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 space-y-6">
-      {selected && <DetailModal entity={selected} onClose={()=>setSelected(null)}/>}
+    <div className="min-h-screen bg-slate-950 text-white p-6">
+      {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
 
-      <div>
-        <h1 className="text-2xl font-bold text-orange-400">Risque Nucléaire &amp; Prolifération — Module 326</h1>
-        <p className="text-slate-500 text-sm mt-1">Prolifération · Stabilité · Sécurité · Doctrine — Caelum Partners — Chaima Mhadbi, Fondatrice, Bruxelles</p>
-      </div>
-
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-        {[
-          ["Total Entités",              summary.total_entities,                                        "text-orange-400"],
-          ["Critiques",                  summary.critical_entities,                                     "text-red-400"],
-          ["Élevés",                     summary.high_entities,                                         "text-orange-300"],
-          ["Modérés / Faibles",          `${summary.moderate_entities}/${summary.low_entities}`,        "text-amber-300"],
-          ["Crises Nucléaires",          summary.crisis_entities,                                       "text-red-500"],
-          ["Intervention Requise",       summary.intervention_required,                                 "text-orange-500"],
-        ].map(([l,v,c])=>(
-          <div key={String(l)} className="bg-slate-900 border border-slate-600/30 rounded-xl p-3 text-center">
-            <div className={`text-xl font-bold ${c}`}>{v}</div>
-            <div className="text-xs text-orange-300/40 mt-0.5 leading-tight">{l}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Gauge Rings */}
-      <div className="bg-slate-900 border border-slate-600/30 rounded-xl p-5">
-        <div className="grid grid-cols-4 gap-4">
-          <GaugeRing value={summary.avg_proliferation_score} label="Prolifération" color="#ef4444"/>
-          <GaugeRing value={summary.avg_stability_score}     label="Stabilité"     color="#f97316"/>
-          <GaugeRing value={summary.avg_security_score}      label="Sécurité"      color="#a855f7"/>
-          <GaugeRing value={summary.avg_doctrine_score}      label="Doctrine"      color="#f59e0b"/>
+      {/* Header */}
+      <div className="mb-8">
+        <div className="text-xs text-yellow-400 font-mono mb-1">MODULE 326 — CAELUM PARTNERS</div>
+        <h1 className="text-3xl font-bold text-white mb-2">
+          Nuclear Risk & Proliferation Intelligence Engine
+        </h1>
+        <div className="text-slate-400 text-sm">
+          Risque Nucléaire & Prolifération — v{data.engine_version}
         </div>
       </div>
 
-      {/* Distribution Bars */}
-      <div className="bg-slate-900 border border-slate-600/30 rounded-xl p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {dists.map(d=><DistBar key={d.title} {...d}/>)}
+      {/* KPI Cards */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Entités</div>
+          <div className="text-2xl font-bold text-white">{data.total_entities}</div>
+        </div>
+        <div className="bg-slate-900 border border-red-900 rounded-xl p-4">
+          <div className="text-xs text-red-400 mb-1">Critique</div>
+          <div className="text-2xl font-bold text-red-400">{data.risk_distribution["critique"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-orange-900 rounded-xl p-4">
+          <div className="text-xs text-orange-400 mb-1">Élevé</div>
+          <div className="text-2xl font-bold text-orange-400">{data.risk_distribution["eleve"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-yellow-900 rounded-xl p-4">
+          <div className="text-xs text-yellow-400 mb-1">Modéré</div>
+          <div className="text-2xl font-bold text-yellow-400">{data.risk_distribution["modere"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Composite Moy.</div>
+          <div className="text-2xl font-bold text-yellow-400">{data.avg_composite.toFixed(1)}</div>
+        </div>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Idx Nucléaire</div>
+          <div className="text-2xl font-bold text-yellow-300">{data.avg_estimated_nuclear_index.toFixed(2)}</div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Pattern Distribution */}
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-5">
+          <div className="text-sm font-semibold text-slate-300 mb-4">Distribution des Patrons</div>
+          {Object.entries(data.pattern_distribution).map(([pat, cnt]) => (
+            <DistBar key={pat} label={pat.replace(/_/g, " ")} value={cnt} max={maxPattern} color="#eab308" />
+          ))}
+        </div>
+
+        {/* Critical Alerts */}
+        <div className="bg-slate-900 border border-red-900/50 rounded-xl p-5 lg:col-span-2">
+          <div className="text-sm font-semibold text-red-400 mb-4">Alertes Critiques</div>
+          {data.critical_alerts.length === 0 ? (
+            <div className="text-slate-500 text-sm">Aucune alerte critique</div>
+          ) : (
+            <div className="space-y-2">
+              {data.critical_alerts.map((alert, i) => (
+                <div key={i} className="bg-red-950/30 border border-red-900/50 rounded-lg p-3 text-sm text-red-200">
+                  {alert}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Filter Pills */}
-      <div className="flex flex-wrap gap-2">
-        {["all","low","moderate","high","critical"].map(r=>(
-          <button key={r} onClick={()=>setFilter(r)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${filter===r?"bg-orange-800 border-orange-700 text-white":"bg-slate-900 border-slate-600/30 text-orange-400/70 hover:text-white"}`}>
-            {r}
-          </button>
-        ))}
-        <span className="w-px h-5 self-center bg-slate-600/30"/>
-        {["all","none","proliferation_cascade","deterrence_breakdown","nuclear_terrorism_event","doctrine_escalation","arms_control_collapse"].map(p=>(
-          <button key={p} onClick={()=>setPat(p)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${patFilter===p?"bg-red-900 border-red-800 text-white":"bg-slate-900 border-slate-600/30 text-orange-400/70 hover:text-white"}`}>
-            {p.replace(/_/g," ")}
+      <div className="flex gap-2 mb-4 flex-wrap">
+        {filterPills.map(f => (
+          <button
+            key={f}
+            onClick={() => setFilter(f)}
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+              filter === f
+                ? "bg-yellow-600 text-white"
+                : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+            }`}
+          >
+            {f === "tous" ? "Tous" : RISK_LABELS[f]}
+            {f !== "tous" && data.risk_distribution[f] !== undefined && (
+              <span className="ml-1 opacity-70">({data.risk_distribution[f]})</span>
+            )}
           </button>
         ))}
       </div>
 
-      {/* Entity Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {filtered.map(e=>(
-          <div key={e.entity_id} onClick={()=>setSelected(e)}
-            className="bg-slate-900 border border-slate-600/30 rounded-xl p-4 cursor-pointer hover:border-orange-600 transition-colors">
-            <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white">{e.entity_id}</span>
-              <span className="text-xs text-orange-400/60">{e.region}</span>
-            </div>
-            <div className="text-xs text-slate-500 mb-2 capitalize">{e.nuclear_domain.replace(/_/g," ")}</div>
-            <div className="flex gap-1 mb-3 flex-wrap">
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[e.nuclear_risk]||"bg-slate-700 text-slate-300"}`}>{e.nuclear_risk}</span>
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[e.nuclear_severity]||"bg-slate-700 text-slate-300"}`}>{e.nuclear_severity.replace(/_/g," ")}</span>
-            </div>
-            <div className="text-2xl font-black text-white mb-1">{e.nuclear_composite.toFixed(1)}</div>
-            <div className="text-xs text-orange-400/60 mb-2 capitalize">{e.nuclear_pattern.replace(/_/g," ")}</div>
-            <div className="text-xs text-orange-400 font-medium mb-2">{e.recommended_action.replace(/_/g," ")}</div>
-            <div className="flex gap-1 flex-wrap">
-              {e.is_nuclear_crisis && (
-                <span className="px-1.5 py-0.5 rounded bg-red-950 text-red-300 text-xs">CRISE NUCLÉAIRE</span>
-              )}
-              {e.requires_nuclear_intervention && (
-                <span className="px-1.5 py-0.5 rounded bg-orange-950 text-orange-400 text-xs">INTERVENTION</span>
-              )}
-            </div>
-          </div>
-        ))}
+      {/* Entity Table */}
+      <div className="bg-slate-900 border border-slate-700 rounded-xl overflow-hidden">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-slate-700 bg-slate-800/50">
+              <th className="text-left p-4 text-slate-400 font-medium">ID</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Entité</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Pays</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Risque</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Composite</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Patron</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((e, i) => (
+              <tr
+                key={e.entity_id}
+                className={`border-b border-slate-800 cursor-pointer hover:bg-slate-800/50 transition-colors ${
+                  i % 2 === 0 ? "" : "bg-slate-900/50"
+                }`}
+                onClick={() => setSelected(e)}
+              >
+                <td className="p-4 font-mono text-xs text-slate-500">{e.entity_id}</td>
+                <td className="p-4">
+                  <div className="font-medium text-white">{e.name}</div>
+                  <div className="text-xs text-slate-500">{e.sector}</div>
+                </td>
+                <td className="p-4 text-slate-300">{e.country}</td>
+                <td className="p-4"><RiskBadge level={e.risk_level} /></td>
+                <td className="p-4">
+                  <div className="font-bold" style={{ color: RISK_COLORS[e.risk_level] }}>
+                    {e.composite_score.toFixed(1)}
+                  </div>
+                </td>
+                <td className="p-4 font-mono text-xs text-slate-400">{e.primary_pattern}</td>
+                <td className="p-4 text-xs text-slate-500 max-w-xs truncate">{e.recommended_action}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-6 flex items-center justify-between text-xs text-slate-500">
+        <div>Sources: {data.data_sources.join(", ")}</div>
+        <div>Confiance: {(data.confidence_score * 100).toFixed(0)}% — {new Date(data.last_analysis).toLocaleString("fr-FR")}</div>
       </div>
     </div>
   );

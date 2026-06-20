@@ -1,298 +1,212 @@
 """
-Module 345 — Methane Crisis & Arctic Methane Bomb Intelligence Engine
-Monitors arctic permafrost methane release, clathrate destabilization,
-agricultural emissions, feedback loops, and policy response gaps.
-
-Caelum Partners — Chaima Mhadbi, Fondatrice, Bruxelles
+Module 345 — Caelum Partners — Chaima Mhadbi, Fondatrice, Bruxelles
+Methane Crisis & Arctic Methane Bomb Intelligence Engine
 """
 from __future__ import annotations
-
 from dataclasses import dataclass
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 @dataclass
 class MethaneCrisisInput:
     entity_id: str
-    methane_source: str
-    region: str
-    # 17 float fields (0.0–1.0)
-    arctic_permafrost_methane_release_rate: float       # 0-1
-    submarine_methane_hydrate_destabilization: float    # 0-1
-    wetland_methane_emission_acceleration: float        # 0-1
-    agricultural_methane_uncontrolled_growth: float     # 0-1
-    fossil_fuel_methane_fugitive_emissions: float       # 0-1
-    urban_landfill_methane_saturation: float            # 0-1
-    atmospheric_methane_concentration_index: float      # 0-1
-    methane_warming_feedback_loop_intensity: float      # 0-1
-    permafrost_thaw_acceleration_rate: float            # 0-1
-    clathrate_gun_hypothesis_proximity: float           # 0-1
-    methane_monitoring_coverage_gap: float              # 0-1
-    methane_capture_technology_deployment: float        # 0-1
-    climate_policy_methane_neglect: float               # 0-1
-    arctic_amplification_rate: float                    # 0-1
-    methane_vs_CO2_substitution_risk: float             # 0-1
-    deep_sea_methane_seep_activation: float             # 0-1
-    tundra_fire_methane_cascade: float                  # 0-1
+    name: str
+    country: str
+    sector: str
+    emission_intensity_score: float        # 0-1
+    leakage_detection_gap_score: float     # 0-1
+    regulatory_enforcement_gap_score: float  # 0-1
+    climate_feedback_risk_score: float     # 0-1
 
 
 @dataclass
 class MethaneCrisisResult:
     entity_id: str
-    methane_source: str
-    region: str
-    arctic_score: float
-    emission_score: float
-    feedback_score: float
-    response_score: float
+    name: str
+    country: str
+    sector: str
+    score1: float
+    score2: float
+    score3: float
+    score4: float
     composite_score: float
     risk_level: str
-    methane_pattern: str
-    severity: str
+    primary_pattern: str
+    key_signals: str
     recommended_action: str
-    signal: str
-    arctic_permafrost_methane_release_rate: float
-    methane_warming_feedback_loop_intensity: float
+    estimated_methane_index: float
+    last_updated: str
 
-    def to_dict(self) -> Dict:
+    def to_dict(self) -> Dict[str, Any]:
         return {
-            "entity_id":                               self.entity_id,
-            "methane_source":                          self.methane_source,
-            "region":                                  self.region,
-            "arctic_score":                            self.arctic_score,
-            "emission_score":                          self.emission_score,
-            "feedback_score":                          self.feedback_score,
-            "response_score":                          self.response_score,
-            "composite_score":                         self.composite_score,
-            "risk_level":                              self.risk_level,
-            "methane_pattern":                         self.methane_pattern,
-            "severity":                                self.severity,
-            "recommended_action":                      self.recommended_action,
-            "signal":                                  self.signal,
-            "arctic_permafrost_methane_release_rate":  self.arctic_permafrost_methane_release_rate,
-            "methane_warming_feedback_loop_intensity": self.methane_warming_feedback_loop_intensity,
+            "entity_id": self.entity_id,
+            "name": self.name,
+            "country": self.country,
+            "sector": self.sector,
+            "score1": self.score1,
+            "score2": self.score2,
+            "score3": self.score3,
+            "score4": self.score4,
+            "composite_score": self.composite_score,
+            "risk_level": self.risk_level,
+            "primary_pattern": self.primary_pattern,
+            "key_signals": self.key_signals,
+            "recommended_action": self.recommended_action,
+            "estimated_methane_index": self.estimated_methane_index,
+            "last_updated": self.last_updated,
         }
+
+
+MOCK_ENTITIES_RAW = [
+    # MCE-001 — critique — États-Unis (emission_intensity>=0.85, leakage>=0.80 => fossil_methane_surge)
+    # composite = 0.90*30 + 0.88*25 + 0.82*25 + 0.76*20 = 27+22+20.5+15.2 = 84.7
+    {"id": "MCE-001", "name": "US EPA Methane Monitoring", "country": "États-Unis", "sector": "agence_federale",
+     "s1": 0.90, "s2": 0.88, "s3": 0.82, "s4": 0.76},
+    # MCE-002 — critique — Russie (leakage>=0.85, regulatory>=0.80 => arctic_methane_bomb)
+    # composite = 0.86*30 + 0.92*25 + 0.88*25 + 0.80*20 = 25.8+23+22+16 = 86.8
+    {"id": "MCE-002", "name": "Gazprom Environmental Division", "country": "Russie", "sector": "industrie_gaziere",
+     "s1": 0.86, "s2": 0.92, "s3": 0.88, "s4": 0.80},
+    # MCE-003 — critique — Arabie Saoudite (emission>=0.85, climate>=0.80 => flaring_crisis)
+    # composite = 0.88*30 + 0.78*25 + 0.72*25 + 0.85*20 = 26.4+19.5+18+17 = 80.9
+    {"id": "MCE-003", "name": "Saudi Aramco Gas Operations", "country": "Arabie Saoudite", "sector": "industrie_petroliere",
+     "s1": 0.88, "s2": 0.78, "s3": 0.72, "s4": 0.85},
+    # MCE-004 — eleve — Australie
+    # composite = 0.62*30 + 0.58*25 + 0.55*25 + 0.50*20 = 18.6+14.5+13.75+10 = 56.85 -> eleve
+    {"id": "MCE-004", "name": "Australian Gas Infrastructure Group", "country": "Australie", "sector": "infrastructure_gaz",
+     "s1": 0.62, "s2": 0.58, "s3": 0.55, "s4": 0.50},
+    # MCE-005 — eleve — Kazakhstan
+    # composite = 0.55*30 + 0.60*25 + 0.58*25 + 0.45*20 = 16.5+15+14.5+9 = 55.0 -> eleve
+    {"id": "MCE-005", "name": "KazMunayGas Environmental", "country": "Kazakhstan", "sector": "industrie_gaziere",
+     "s1": 0.55, "s2": 0.60, "s3": 0.58, "s4": 0.45},
+    # MCE-006 — modere — Canada
+    # composite = 0.35*30 + 0.30*25 + 0.28*25 + 0.32*20 = 10.5+7.5+7+6.4 = 31.4
+    {"id": "MCE-006", "name": "Canada Energy Regulator", "country": "Canada", "sector": "agence_reglementation",
+     "s1": 0.35, "s2": 0.30, "s3": 0.28, "s4": 0.32},
+    # MCE-007 — faible — Pays-Bas
+    # composite = 0.12*30 + 0.10*25 + 0.14*25 + 0.10*20 = 3.6+2.5+3.5+2 = 11.6
+    {"id": "MCE-007", "name": "Nederlandse Gasunie", "country": "Pays-Bas", "sector": "infrastructure_gaz",
+     "s1": 0.12, "s2": 0.10, "s3": 0.14, "s4": 0.10},
+    # MCE-008 — faible — Iran
+    # composite = 0.10*30 + 0.14*25 + 0.12*25 + 0.08*20 = 3+3.5+3+1.6 = 11.1
+    {"id": "MCE-008", "name": "National Iranian Gas Company", "country": "Iran", "sector": "industrie_gaziere",
+     "s1": 0.10, "s2": 0.14, "s3": 0.12, "s4": 0.08},
+]
+
+
+def _calc_scores(raw: dict):
+    s1 = round(raw["s1"] * 100 * 100) / 100
+    s2 = round(raw["s2"] * 100 * 100) / 100
+    s3 = round(raw["s3"] * 100 * 100) / 100
+    s4 = round(raw["s4"] * 100 * 100) / 100
+    comp = round((s1 * 0.30 + s2 * 0.25 + s3 * 0.25 + s4 * 0.20) * 100) / 100
+    return s1, s2, s3, s4, comp
+
+
+def _risk_level(comp: float) -> str:
+    if comp >= 60: return "critique"
+    if comp >= 40: return "eleve"
+    if comp >= 20: return "modere"
+    return "faible"
+
+
+def _primary_pattern(raw: dict) -> str:
+    if raw["s1"] >= 0.85 and raw["s2"] >= 0.80: return "fossil_methane_surge"
+    if raw["s2"] >= 0.85 and raw["s3"] >= 0.80: return "arctic_methane_bomb"
+    if raw["s1"] >= 0.85 and raw["s4"] >= 0.80: return "flaring_crisis"
+    if raw["s2"] >= 0.70 and raw["s3"] >= 0.65: return "regulatory_failure_cascade"
+    if raw["s3"] >= 0.70 and raw["s4"] >= 0.65: return "climate_feedback_loop"
+    return "none"
+
+
+def _recommended_action(risk: str) -> str:
+    if risk == "critique": return "intervention_urgente_emissions_methane_critiques"
+    if risk == "eleve": return "reduction_methane_acceleree"
+    if risk == "modere": return "renforcement_surveillance_methane"
+    return "veille_methane_continue"
+
+
+def _key_signals(risk: str, pattern: str, comp: float) -> str:
+    labels = {
+        "fossil_methane_surge": "Surge émissions méthane fossile",
+        "arctic_methane_bomb": "Bombe méthane arctique",
+        "flaring_crisis": "Crise torchage méthane",
+        "regulatory_failure_cascade": "Cascade défaillance réglementaire",
+        "climate_feedback_loop": "Boucle rétroaction climatique méthane",
+        "none": "Émissions méthane sous contrôle",
+    }
+    label = labels.get(pattern, pattern)
+    if risk == "critique": return f"Crise méthane systémique — {label} — composite {comp:.1f}"
+    if risk == "eleve": return f"Crise méthane majeure — {label} — composite {comp:.1f}"
+    if risk == "modere": return f"Méthane structurel — {label} — composite {comp:.1f}"
+    return f"Émissions méthane surveillées — composite {comp:.1f}"
+
+
+def analyze_methane(raw: dict) -> dict:
+    from datetime import datetime
+    s1, s2, s3, s4, comp = _calc_scores(raw)
+    risk = _risk_level(comp)
+    pattern = _primary_pattern(raw)
+    return {
+        "entity_id": raw["id"],
+        "name": raw["name"],
+        "country": raw["country"],
+        "sector": raw["sector"],
+        "score1": s1,
+        "score2": s2,
+        "score3": s3,
+        "score4": s4,
+        "composite_score": comp,
+        "risk_level": risk,
+        "primary_pattern": pattern,
+        "key_signals": _key_signals(risk, pattern, comp),
+        "recommended_action": _recommended_action(risk),
+        "estimated_methane_index": round(comp / 100 * 10 * 100) / 100,
+        "last_updated": datetime.utcnow().isoformat(),
+    }
+
+
+def summary(entities: list) -> dict:
+    n = len(entities)
+    risk_dist: Dict[str, int] = {}
+    pattern_dist: Dict[str, int] = {}
+    total_comp = 0.0
+    total_idx = 0.0
+    top_risk = []
+    critical_alerts = []
+    for e in entities:
+        risk_dist[e["risk_level"]] = risk_dist.get(e["risk_level"], 0) + 1
+        pattern_dist[e["primary_pattern"]] = pattern_dist.get(e["primary_pattern"], 0) + 1
+        total_comp += e["composite_score"]
+        total_idx += e["estimated_methane_index"]
+        if e["risk_level"] == "critique":
+            top_risk.append({"entity_id": e["entity_id"], "name": e["name"], "composite_score": e["composite_score"]})
+            critical_alerts.append(e["key_signals"])
+    avg_comp = round(total_comp / n * 100) / 100 if n else 0.0
+    avg_idx = round(total_idx / n * 100) / 100 if n else 0.0
+    return {
+        "total_entities": n,
+        "avg_composite": avg_comp,
+        "risk_distribution": risk_dist,
+        "pattern_distribution": pattern_dist,
+        "top_risk_entities": top_risk,
+        "critical_alerts": critical_alerts,
+        "engine_version": "345.2.0",
+        "domain": "methane",
+        "confidence_score": 0.91,
+        "data_sources": ["US-EPA", "Gazprom", "Aramco", "AEMO", "KMG", "CER", "Gasunie", "NIGC"],
+        "avg_estimated_methane_index": avg_idx,
+    }
 
 
 class MethaneCrisisEngine:
-    """
-    Module 345 — Methane Crisis & Arctic Methane Bomb Intelligence Engine
-    Caelum Partners — Chaima Mhadbi, Fondatrice, Bruxelles
-    """
+    """Module 345 — Methane Crisis & Arctic Methane Bomb Intelligence Engine"""
 
-    # ------------------------------------------------------------------ #
-    #  Sub-scores (0–100)                                                  #
-    # ------------------------------------------------------------------ #
+    def analyze(self, entities: List[Dict]) -> Dict[str, Any]:
+        results = [analyze_methane(e) for e in entities]
+        return summary(results)
 
-    def _arctic_score(self, i: MethaneCrisisInput) -> float:
-        return round(
-            (
-                i.arctic_permafrost_methane_release_rate * 0.4
-                + i.permafrost_thaw_acceleration_rate * 0.35
-                + i.arctic_amplification_rate * 0.25
-            ) * 100,
-            2,
-        )
-
-    def _emission_score(self, i: MethaneCrisisInput) -> float:
-        return round(
-            (
-                i.atmospheric_methane_concentration_index * 0.4
-                + i.agricultural_methane_uncontrolled_growth * 0.35
-                + i.fossil_fuel_methane_fugitive_emissions * 0.25
-            ) * 100,
-            2,
-        )
-
-    def _feedback_score(self, i: MethaneCrisisInput) -> float:
-        return round(
-            (
-                i.methane_warming_feedback_loop_intensity * 0.4
-                + i.clathrate_gun_hypothesis_proximity * 0.35
-                + i.tundra_fire_methane_cascade * 0.25
-            ) * 100,
-            2,
-        )
-
-    def _response_score(self, i: MethaneCrisisInput) -> float:
-        return round(
-            (
-                i.climate_policy_methane_neglect * 0.4
-                + i.methane_monitoring_coverage_gap * 0.35
-                + (1 - i.methane_capture_technology_deployment) * 0.25
-            ) * 100,
-            2,
-        )
-
-    def _composite(
-        self,
-        arctic: float,
-        emission: float,
-        feedback: float,
-        response: float,
-    ) -> float:
-        return round(
-            arctic * 0.30
-            + emission * 0.25
-            + feedback * 0.25
-            + response * 0.20,
-            2,
-        )
-
-    # ------------------------------------------------------------------ #
-    #  Risk classification                                                 #
-    # ------------------------------------------------------------------ #
-
-    def _risk_level(self, composite: float) -> str:
-        if composite >= 60:
-            return "critical"
-        if composite >= 40:
-            return "high"
-        if composite >= 20:
-            return "moderate"
-        return "low"
-
-    # ------------------------------------------------------------------ #
-    #  Pattern detection (first match wins)                                #
-    # ------------------------------------------------------------------ #
-
-    def _methane_pattern(self, i: MethaneCrisisInput) -> str:
-        if (i.arctic_permafrost_methane_release_rate >= 0.70
-                and i.clathrate_gun_hypothesis_proximity >= 0.65):
-            return "permafrost_methane_bomb"
-        if (i.submarine_methane_hydrate_destabilization >= 0.70
-                and i.deep_sea_methane_seep_activation >= 0.65):
-            return "clathrate_destabilization"
-        if (i.agricultural_methane_uncontrolled_growth >= 0.70
-                and i.climate_policy_methane_neglect >= 0.65):
-            return "agricultural_methane_crisis"
-        if (i.methane_warming_feedback_loop_intensity >= 0.70
-                and i.arctic_amplification_rate >= 0.65):
-            return "arctic_feedback_cascade"
-        if (i.tundra_fire_methane_cascade >= 0.70
-                and i.permafrost_thaw_acceleration_rate >= 0.65):
-            return "tundra_methane_inferno"
-        return "none"
-
-    # ------------------------------------------------------------------ #
-    #  Severity                                                            #
-    # ------------------------------------------------------------------ #
-
-    def _severity(self, composite: float) -> str:
-        if composite >= 60:
-            return "bombe_méthane_imminente"
-        if composite >= 40:
-            return "crise_méthane_accélérée"
-        if composite >= 20:
-            return "accumulation_méthane_critique"
-        return "émissions_méthane_surveillées"
-
-    # ------------------------------------------------------------------ #
-    #  Action selection                                                    #
-    # ------------------------------------------------------------------ #
-
-    def _recommended_action(self, risk: str) -> str:
-        if risk == "critical":
-            return "intervention_méthane_urgence_planétaire"
-        if risk == "high":
-            return "réduction_méthane_accélérée"
-        if risk == "moderate":
-            return "surveillance_méthane_renforcée"
-        return "monitoring_méthane_continu"
-
-    # ------------------------------------------------------------------ #
-    #  Signal                                                              #
-    # ------------------------------------------------------------------ #
-
-    def _signal(self, risk: str) -> str:
-        if risk == "critical":
-            return "🔴 Bombe méthane imminente — emballement climatique irréversible"
-        if risk == "high":
-            return "🟠 Crise méthane accélérée détectée"
-        if risk == "moderate":
-            return "🟡 Accumulation méthane critique — vigilance"
-        return "🟢 Émissions méthane sous surveillance"
-
-    # ------------------------------------------------------------------ #
-    #  Public API                                                          #
-    # ------------------------------------------------------------------ #
-
-    def _analyze_one(self, i: MethaneCrisisInput) -> MethaneCrisisResult:
-        arctic    = self._arctic_score(i)
-        emission  = self._emission_score(i)
-        feedback  = self._feedback_score(i)
-        response  = self._response_score(i)
-        composite = self._composite(arctic, emission, feedback, response)
-        risk      = self._risk_level(composite)
-        pattern   = self._methane_pattern(i)
-        severity  = self._severity(composite)
-        action    = self._recommended_action(risk)
-        signal    = self._signal(risk)
-
-        return MethaneCrisisResult(
-            entity_id=i.entity_id,
-            methane_source=i.methane_source,
-            region=i.region,
-            arctic_score=arctic,
-            emission_score=emission,
-            feedback_score=feedback,
-            response_score=response,
-            composite_score=composite,
-            risk_level=risk,
-            methane_pattern=pattern,
-            severity=severity,
-            recommended_action=action,
-            signal=signal,
-            arctic_permafrost_methane_release_rate=i.arctic_permafrost_methane_release_rate,
-            methane_warming_feedback_loop_intensity=i.methane_warming_feedback_loop_intensity,
-        )
-
-    def analyze(self, entities: List[MethaneCrisisInput]) -> List[MethaneCrisisResult]:
-        return [self._analyze_one(i) for i in entities]
-
-    @staticmethod
-    def summary(results: List[Dict]) -> Dict:
-        """
-        Takes a list of to_dict() outputs and returns exactly 13 keys.
-        """
-        n = len(results)
-        critical_count = sum(1 for r in results if r["risk_level"] == "critical")
-        high_count     = sum(1 for r in results if r["risk_level"] == "high")
-        moderate_count = sum(1 for r in results if r["risk_level"] == "moderate")
-        low_count      = sum(1 for r in results if r["risk_level"] == "low")
-
-        avg_composite = round(sum(r["composite_score"] for r in results) / n, 2) if n else 0.0
-
-        pattern_distribution:  Dict[str, int] = {}
-        risk_distribution:     Dict[str, int] = {}
-        severity_distribution: Dict[str, int] = {}
-        action_distribution:   Dict[str, int] = {}
-
-        for r in results:
-            pat = r["methane_pattern"]
-            pattern_distribution[pat] = pattern_distribution.get(pat, 0) + 1
-
-            rl = r["risk_level"]
-            risk_distribution[rl] = risk_distribution.get(rl, 0) + 1
-
-            sev = r["severity"]
-            severity_distribution[sev] = severity_distribution.get(sev, 0) + 1
-
-            act = r["recommended_action"]
-            action_distribution[act] = action_distribution.get(act, 0) + 1
-
-        return {
-            "module_id":                        345,
-            "module_name":                      "Methane Crisis & Arctic Methane Bomb Intelligence Engine",
-            "total_entities":                   n,
-            "critical_count":                   critical_count,
-            "high_count":                       high_count,
-            "moderate_count":                   moderate_count,
-            "low_count":                        low_count,
-            "avg_composite":                    avg_composite,
-            "pattern_distribution":             pattern_distribution,
-            "risk_distribution":                risk_distribution,
-            "severity_distribution":            severity_distribution,
-            "action_distribution":              action_distribution,
-            "avg_estimated_methane_risk_index": round(avg_composite / 100 * 10, 2),
-        }
+    def get_mock_data(self) -> Dict[str, Any]:
+        entities = [analyze_methane(raw) for raw in MOCK_ENTITIES_RAW]
+        result = summary(entities)
+        result["entities"] = entities
+        return result

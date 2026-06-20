@@ -146,15 +146,15 @@ function severity(composite: number): string {
   return "marché_logement_sous_surveillance";
 }
 function recommendedAction(risk: string): string {
-  if (risk === "critical") return "intervention_urgente_crise_logement_systémique";
-  if (risk === "high") return "régulation_marché_immobilier_accélérée";
-  if (risk === "moderate") return "renforcement_politiques_accessibilité_logement";
+  if (risk === "critique") return "intervention_urgente_crise_logement_systémique";
+  if (risk === "élevé") return "régulation_marché_immobilier_accélérée";
+  if (risk === "modéré") return "renforcement_politiques_accessibilité_logement";
   return "veille_marché_logement_continue";
 }
 function signal(risk: string): string {
-  if (risk === "critical") return "🔴 Crise logement systémique — accessibilité immobilière en péril";
-  if (risk === "high") return "🟠 Crise accessibilité immobilière majeure détectée";
-  if (risk === "moderate") return "🟡 Tension marché immobilier structurelle active";
+  if (risk === "critique") return "🔴 Crise logement systémique — accessibilité immobilière en péril";
+  if (risk === "élevé") return "🟠 Crise accessibilité immobilière majeure détectée";
+  if (risk === "modéré") return "🟡 Tension marché immobilier structurelle active";
   return "🟢 Marché logement sous surveillance";
 }
 

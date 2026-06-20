@@ -151,10 +151,10 @@ function compositeScore(supply: number, geo: number, demand: number, resilience:
 }
 
 function riskLevel(comp: number): string {
-  if (comp >= 60) return "critical";
-  if (comp >= 40) return "high";
-  if (comp >= 20) return "moderate";
-  return "low";
+  if (comp >= 60) return "critique";
+  if (comp >= 40) return "élevé";
+  if (comp >= 20) return "modéré";
+  return "faible";
 }
 
 function materialPattern(e: Entity): string {
@@ -174,16 +174,16 @@ function severity(comp: number): string {
 }
 
 function recommendedAction(risk: string): string {
-  if (risk === "critical") return "sécurisation_urgente_approvisionnements_critiques";
-  if (risk === "high")     return "diversification_stratégique_accélérée";
-  if (risk === "moderate") return "renforcement_résilience_chaînes_approvisionnement";
+  if (risk === "critique") return "sécurisation_urgente_approvisionnements_critiques";
+  if (risk === "élevé")    return "diversification_stratégique_accélérée";
+  if (risk === "modéré")  return "renforcement_résilience_chaînes_approvisionnement";
   return "veille_matières_critiques_continue";
 }
 
 function signal(risk: string): string {
-  if (risk === "critical") return "🔴 Crise matières critiques systémique — dépendance stratégique extrême";
-  if (risk === "high")     return "🟠 Pénurie stratégique majeure détectée";
-  if (risk === "moderate") return "🟡 Tension approvisionnement critique active";
+  if (risk === "critique") return "🔴 Crise matières critiques systémique — dépendance stratégique extrême";
+  if (risk === "élevé")    return "🟠 Pénurie stratégique majeure détectée";
+  if (risk === "modéré")  return "🟡 Tension approvisionnement critique active";
   return "🟢 Approvisionnement matières critiques sous surveillance";
 }
 
@@ -233,9 +233,9 @@ export async function GET() {
       sc[ent.severity]            = (sc[ent.severity]            || 0) + 1;
       ac[ent.recommended_action]  = (ac[ent.recommended_action]  || 0) + 1;
       tComp += ent.composite_score;
-      if (ent.risk_level === "critical")      criticalCount++;
-      else if (ent.risk_level === "high")     highCount++;
-      else if (ent.risk_level === "moderate") moderateCount++;
+      if (ent.risk_level === "critique")     criticalCount++;
+      else if (ent.risk_level === "élevé")    highCount++;
+      else if (ent.risk_level === "modéré")  moderateCount++;
       else                                    lowCount++;
     }
 

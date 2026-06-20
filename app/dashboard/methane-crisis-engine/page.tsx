@@ -1,464 +1,370 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
-type RiskLevel      = "critical" | "high" | "moderate" | "low";
-type MethanePattern = "permafrost_methane_bomb" | "clathrate_destabilization" | "agricultural_methane_crisis" | "arctic_feedback_cascade" | "tundra_methane_inferno" | "none";
-type Severity       = "bombe_méthane_imminente" | "crise_méthane_accélérée" | "accumulation_méthane_critique" | "émissions_méthane_surveillées";
-type Action         = "intervention_méthane_urgence_planétaire" | "réduction_méthane_accélérée" | "surveillance_méthane_renforcée" | "monitoring_méthane_continu";
-
-interface MceEntity {
+type MCEEntity = {
   entity_id: string;
-  methane_source: string;
-  region: string;
-  arctic_score: number;
-  emission_score: number;
-  feedback_score: number;
-  response_score: number;
+  name: string;
+  country: string;
+  sector: string;
+  score1: number;
+  score2: number;
+  score3: number;
+  score4: number;
   composite_score: number;
-  risk_level: RiskLevel;
-  methane_pattern: MethanePattern;
-  severity: Severity;
-  recommended_action: Action;
-  signal: string;
-  arctic_permafrost_methane_release_rate: number;
-  methane_warming_feedback_loop_intensity: number;
-}
+  risk_level: string;
+  primary_pattern: string;
+  key_signals: string;
+  recommended_action: string;
+  estimated_methane_index: number;
+  last_updated: string;
+};
 
-interface MceSummary {
-  module_id: number;
-  module_name: string;
+type MCESummary = {
   total_entities: number;
-  critical_count: number;
-  high_count: number;
-  moderate_count: number;
-  low_count: number;
   avg_composite: number;
-  pattern_distribution: Record<string, number>;
   risk_distribution: Record<string, number>;
-  severity_distribution: Record<string, number>;
-  action_distribution: Record<string, number>;
-  avg_estimated_methane_risk_index: number;
-  avg_arctic_score: number;
-  avg_emission_score: number;
-  avg_feedback_score: number;
-  avg_response_score: number;
-}
-
-// ─── Meta ─────────────────────────────────────────────────────────────────────
-
-const RISK_META: Record<RiskLevel, { label: string; color: string; ring: string; bg: string; badge: string }> = {
-  critical: { label: "Critique",  color: "text-red-400",    ring: "#f87171", bg: "bg-red-950/40",    badge: "bg-red-900/60 text-red-300 border-red-700"    },
-  high:     { label: "Élevé",     color: "text-orange-400", ring: "#fb923c", bg: "bg-orange-950/40", badge: "bg-orange-900/60 text-orange-300 border-orange-700" },
-  moderate: { label: "Modéré",    color: "text-amber-400",  ring: "#fbbf24", bg: "bg-amber-950/40",  badge: "bg-amber-900/60 text-amber-300 border-amber-700"  },
-  low:      { label: "Faible",    color: "text-cyan-400",   ring: "#22d3ee", bg: "bg-cyan-950/40",   badge: "bg-cyan-900/60 text-cyan-300 border-cyan-700"     },
-};
-
-const PATTERN_LABELS: Record<MethanePattern, string> = {
-  permafrost_methane_bomb:   "Bombe Méthane Pergélisol",
-  clathrate_destabilization: "Déstabilisation Clathrate",
-  agricultural_methane_crisis: "Crise Méthane Agricole",
-  arctic_feedback_cascade:   "Cascade Rétroaction Arctique",
-  tundra_methane_inferno:    "Enfer Méthane Toundra",
-  none:                      "Aucun",
-};
-
-const SEV_LABELS: Record<Severity, string> = {
-  "bombe_méthane_imminente":       "Bombe Méthane Imminente",
-  "crise_méthane_accélérée":       "Crise Méthane Accélérée",
-  "accumulation_méthane_critique": "Accumulation Méthane Critique",
-  "émissions_méthane_surveillées": "Émissions Méthane Surveillées",
-};
-
-const ACTION_LABELS: Record<Action, string> = {
-  "intervention_méthane_urgence_planétaire": "Intervention Urgence Planétaire",
-  "réduction_méthane_accélérée":             "Réduction Méthane Accélérée",
-  "surveillance_méthane_renforcée":          "Surveillance Méthane Renforcée",
-  "monitoring_méthane_continu":              "Monitoring Méthane Continu",
+  pattern_distribution: Record<string, number>;
+  top_risk_entities: Array<{ entity_id: string; name: string; composite_score: number }>;
+  critical_alerts: string[];
+  last_analysis: string;
+  engine_version: string;
+  domain: string;
+  confidence_score: number;
+  data_sources: string[];
+  entities: MCEEntity[];
+  avg_estimated_methane_index: number;
 };
 
 const RISK_COLORS: Record<string, string> = {
-  critical: "#ef4444",
-  high:     "#f97316",
-  moderate: "#f59e0b",
-  low:      "#22d3ee",
+  critique: "#ef4444",
+  eleve:    "#f97316",
+  modere:   "#eab308",
+  faible:   "#22c55e",
 };
 
-const PAT_COLORS: Record<string, string> = {
-  permafrost_methane_bomb:     "#ef4444",
-  clathrate_destabilization:   "#3b82f6",
-  agricultural_methane_crisis: "#22c55e",
-  arctic_feedback_cascade:     "#a855f7",
-  tundra_methane_inferno:      "#f97316",
-  none:                        "#22d3ee",
+const RISK_LABELS: Record<string, string> = {
+  critique: "Critique",
+  eleve:    "Élevé",
+  modere:   "Modéré",
+  faible:   "Faible",
 };
 
-const SEV_COLORS: Record<string, string> = {
-  "bombe_méthane_imminente":       "#ef4444",
-  "crise_méthane_accélérée":       "#f97316",
-  "accumulation_méthane_critique": "#f59e0b",
-  "émissions_méthane_surveillées": "#22d3ee",
-};
-
-const ACT_COLORS: Record<string, string> = {
-  "intervention_méthane_urgence_planétaire": "#ef4444",
-  "réduction_méthane_accélérée":             "#f97316",
-  "surveillance_méthane_renforcée":          "#f59e0b",
-  "monitoring_méthane_continu":              "#22d3ee",
-};
-
-// ─── GaugeRing ────────────────────────────────────────────────────────────────
-
-function GaugeRing({ value, label, color }: { value: number; label: string; color: string }) {
-  const r    = 36;
+function GaugeRing({ value, max = 100, color, label, sub }: {
+  value: number; max?: number; color: string; label: string; sub: string;
+}) {
+  const pct = Math.min(value / max, 1);
+  const r = 36;
   const circ = 2 * Math.PI * r;
-  const fill = circ * (1 - value / 100);
+  const dash = pct * circ;
   return (
     <div className="flex flex-col items-center gap-1">
-      <svg width="88" height="88" viewBox="0 0 88 88">
-        <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
+      <svg width="96" height="96" viewBox="0 0 96 96">
+        <circle cx="48" cy="48" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
         <circle
-          cx="44" cy="44" r={r} fill="none"
+          cx="48" cy="48" r={r} fill="none"
           stroke={color} strokeWidth="8"
-          strokeDasharray={circ}
-          strokeDashoffset={fill}
+          strokeDasharray={`${dash} ${circ - dash}`}
           strokeLinecap="round"
-          transform="rotate(-90 44 44)"
+          transform="rotate(-90 48 48)"
         />
-        <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
-          {Math.round(value)}
+        <text x="48" y="53" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">
+          {value.toFixed(0)}
         </text>
       </svg>
       <span className="text-xs text-slate-400 text-center">{label}</span>
+      <span className="text-xs text-slate-500 text-center">{sub}</span>
     </div>
   );
 }
 
-// ─── DistBar ──────────────────────────────────────────────────────────────────
-
-function DistBar({ title, counts, colors }: { title: string; counts: Record<string, number>; colors: Record<string, string> }) {
-  const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
+function DistBar({ label, value, max, color }: { label: string; value: number; max: number; color: string }) {
+  const pct = max > 0 ? (value / max) * 100 : 0;
   return (
-    <div className="flex flex-col gap-1">
-      <span className="text-xs text-slate-400 font-medium">{title}</span>
-      <div className="flex h-3 rounded overflow-hidden gap-px">
-        {Object.entries(counts).map(([k, v]) => (
-          <div
-            key={k}
-            style={{ width: `${(v / total) * 100}%`, background: colors[k] || "#475569" }}
-            title={`${k}: ${v}`}
-          />
-        ))}
+    <div className="flex items-center gap-2 mb-1">
+      <span className="text-xs text-slate-400 w-32 truncate">{label}</span>
+      <div className="flex-1 bg-slate-800 rounded h-2">
+        <div className="h-2 rounded" style={{ width: `${pct}%`, backgroundColor: color }} />
       </div>
-      <div className="flex flex-wrap gap-x-3 gap-y-0.5">
-        {Object.entries(counts).map(([k, v]) => (
-          <span key={k} className="text-xs text-slate-400">
-            <span style={{ color: colors[k] || "#94a3b8" }}>■</span>{" "}
-            {k.replace(/_/g, " ")} {v}
-          </span>
-        ))}
-      </div>
+      <span className="text-xs text-slate-300 w-8 text-right">{value}</span>
     </div>
   );
 }
 
-// ─── DetailModal ──────────────────────────────────────────────────────────────
-
-function DetailModal({ entity, onClose }: { entity: MceEntity; onClose: () => void }) {
-  const [tab, setTab] = useState<"scores" | "signal" | "action">("scores");
-  const overlayRef    = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const fn = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", fn);
-    return () => window.removeEventListener("keydown", fn);
-  }, [onClose]);
-
-  const rm = RISK_META[entity.risk_level];
-
+function RiskBadge({ level }: { level: string }) {
   return (
-    <div
-      ref={overlayRef}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-      onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
+    <span
+      className="text-xs px-2 py-0.5 rounded-full font-semibold"
+      style={{ backgroundColor: RISK_COLORS[level] + "33", color: RISK_COLORS[level], border: `1px solid ${RISK_COLORS[level]}55` }}
     >
-      <div className="bg-slate-900 border border-cyan-700/30 rounded-2xl w-full max-w-lg shadow-2xl max-h-[90vh] overflow-y-auto">
-        {/* Header */}
-        <div className="flex items-center justify-between p-5 border-b border-slate-800">
+      {RISK_LABELS[level] ?? level}
+    </span>
+  );
+}
+
+function DetailModal({ entity, onClose }: { entity: MCEEntity; onClose: () => void }) {
+  const [tab, setTab] = useState<"scores" | "signaux" | "actions">("scores");
+  const color = RISK_COLORS[entity.risk_level] ?? "#f97316";
+  const tabs = [
+    { key: "scores",  label: "Scores" },
+    { key: "signaux", label: "Signaux" },
+    { key: "actions", label: "Actions" },
+  ] as const;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={onClose}>
+      <div className="bg-slate-900 border border-slate-700 rounded-xl p-6 w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex items-start justify-between mb-4">
           <div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-lg font-bold text-white">{entity.entity_id}</span>
-              <span className="text-cyan-400 text-xs">{entity.region}</span>
-              <span className={`text-xs font-bold px-2 py-0.5 rounded border ${rm.badge}`}>{rm.label}</span>
-            </div>
-            <p className="text-slate-400 text-sm capitalize mt-0.5">{entity.methane_source.replace(/_/g, " ")}</p>
+            <div className="text-xs text-slate-500 mb-1">{entity.entity_id} — {entity.country}</div>
+            <div className="text-white font-bold text-lg leading-tight">{entity.name}</div>
+            <div className="text-xs text-slate-400 mt-1">{entity.sector}</div>
           </div>
-          <button onClick={onClose} className="text-slate-500 hover:text-white text-xl leading-none p-1">✕</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-white text-xl ml-4">✕</button>
         </div>
 
-        {/* Tabs */}
-        <div className="flex border-b border-slate-800">
-          {(["scores", "signal", "action"] as const).map((t) => (
+        <div className="flex gap-1 mb-4">
+          {tabs.map(t => (
             <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={`flex-1 py-2.5 text-xs font-semibold uppercase tracking-wide transition-colors ${
-                tab === t
-                  ? "text-cyan-400 border-b-2 border-cyan-400"
-                  : "text-slate-500 hover:text-slate-300"
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              className={`px-3 py-1.5 rounded text-xs font-semibold transition-colors ${
+                tab === t.key
+                  ? "text-white"
+                  : "text-slate-400 hover:text-slate-200 bg-slate-800"
               }`}
+              style={tab === t.key ? { backgroundColor: color } : {}}
             >
-              {t === "scores" ? "Scores" : t === "signal" ? "Signal" : "Action"}
+              {t.label}
             </button>
           ))}
         </div>
 
-        {/* Tab content */}
-        <div className="p-5">
-          {tab === "scores" && (
-            <div className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                {([
-                  ["Arctique",    entity.arctic_score,    "#22d3ee"],
-                  ["Émissions",   entity.emission_score,  "#f87171"],
-                  ["Rétroaction", entity.feedback_score,  "#fb923c"],
-                  ["Réponse",     entity.response_score,  "#f59e0b"],
-                ] as [string, number, string][]).map(([l, v, c]) => (
-                  <div key={l} className="bg-slate-800 rounded-lg p-3">
-                    <div className="text-slate-400 text-xs mb-1">{l}</div>
-                    <div className="text-white font-bold text-lg">{v.toFixed(1)}</div>
-                    <div className="h-1.5 rounded mt-1 bg-slate-700">
-                      <div
-                        className="h-1.5 rounded"
-                        style={{ width: `${Math.min(v, 100)}%`, background: c }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-slate-800 rounded-lg p-3">
-                <div className="text-slate-400 text-xs mb-1">Score Composite Méthane</div>
-                <div className="text-white font-bold text-2xl">{entity.composite_score.toFixed(1)}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{SEV_LABELS[entity.severity]}</div>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-slate-800 rounded-lg p-3">
-                  <div className="text-slate-400 text-xs mb-1">Relâchement Pergélisol</div>
-                  <div className="text-cyan-300 font-bold">{(entity.arctic_permafrost_methane_release_rate * 100).toFixed(0)}%</div>
-                </div>
-                <div className="bg-slate-800 rounded-lg p-3">
-                  <div className="text-slate-400 text-xs mb-1">Intensité Rétroaction</div>
-                  <div className="text-orange-300 font-bold">{(entity.methane_warming_feedback_loop_intensity * 100).toFixed(0)}%</div>
-                </div>
-              </div>
+        {tab === "scores" && (
+          <div className="grid grid-cols-2 gap-4">
+            <GaugeRing value={entity.score1} color="#f97316" label="Intensité Émission" sub="score 1" />
+            <GaugeRing value={entity.score2} color="#ea580c" label="Gap Détection Fuites" sub="score 2" />
+            <GaugeRing value={entity.score3} color="#c2410c" label="Gap Réglementaire" sub="score 3" />
+            <GaugeRing value={entity.score4} color="#9a3412" label="Risque Rétroaction" sub="score 4" />
+            <div className="col-span-2 flex justify-center">
+              <GaugeRing value={entity.composite_score} color={color} label="Score Composite" sub="global" />
             </div>
-          )}
+          </div>
+        )}
 
-          {tab === "signal" && (
-            <div className="bg-slate-800 rounded-lg p-4 text-sm text-slate-200 leading-relaxed">
-              {entity.signal}
-              <div className="mt-3 flex gap-2 flex-wrap">
-                <span className={`px-2 py-0.5 rounded text-xs font-medium border ${rm.badge}`}>{rm.label}</span>
-                <span className="px-2 py-0.5 rounded text-xs font-medium bg-slate-700 text-slate-300">
-                  {PATTERN_LABELS[entity.methane_pattern]}
-                </span>
-              </div>
+        {tab === "signaux" && (
+          <div className="space-y-3">
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Signaux clés</div>
+              <div className="text-sm text-slate-200">{entity.key_signals}</div>
             </div>
-          )}
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Patron primaire</div>
+              <div className="text-sm text-slate-200 font-mono">{entity.primary_pattern}</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Indice Méthane</div>
+              <div className="text-sm text-slate-200 font-bold">{entity.estimated_methane_index.toFixed(2)}</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Niveau de risque</div>
+              <RiskBadge level={entity.risk_level} />
+            </div>
+          </div>
+        )}
 
-          {tab === "action" && (
-            <div className="space-y-3 text-sm">
-              <div className="bg-slate-800 rounded-lg p-3">
-                <div className="text-slate-400 text-xs mb-1">Action Recommandée</div>
-                <div className="text-cyan-300 font-medium">{ACTION_LABELS[entity.recommended_action]}</div>
-              </div>
-              <div className="bg-slate-800 rounded-lg p-3">
-                <div className="text-slate-400 text-xs mb-1">Pattern Méthane</div>
-                <div className="text-white font-medium">{PATTERN_LABELS[entity.methane_pattern]}</div>
-              </div>
-              <div className="bg-slate-800 rounded-lg p-3">
-                <div className="text-slate-400 text-xs mb-1">Sévérité</div>
-                <div className="text-white font-medium">{SEV_LABELS[entity.severity]}</div>
-              </div>
-              {entity.risk_level === "critical" && (
-                <span className="inline-block px-2 py-1 rounded bg-red-900/60 text-red-300 text-xs font-bold border border-red-700">
-                  BOMBE MÉTHANE
-                </span>
-              )}
+        {tab === "actions" && (
+          <div className="space-y-3">
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Action recommandée</div>
+              <div className="text-sm text-slate-200 font-mono">{entity.recommended_action}</div>
             </div>
-          )}
-        </div>
+            <div className="bg-slate-800 rounded-lg p-3">
+              <div className="text-xs text-slate-400 mb-1">Dernière analyse</div>
+              <div className="text-xs text-slate-300">{new Date(entity.last_updated).toLocaleString("fr-FR")}</div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-// ─── EntityCard ───────────────────────────────────────────────────────────────
-
-function EntityCard({ entity, onClick }: { entity: MceEntity; onClick: () => void }) {
-  const rm = RISK_META[entity.risk_level];
-
-  return (
-    <button
-      onClick={onClick}
-      className={`w-full text-left rounded-xl border border-slate-800 ${rm.bg} p-4 hover:border-cyan-700/50 transition-colors`}
-    >
-      <div className="flex items-center justify-between mb-2">
-        <span className="font-bold text-white">{entity.entity_id}</span>
-        <span className="text-xs text-cyan-400">{entity.region}</span>
-      </div>
-      <div className="text-xs text-slate-400 mb-2 capitalize">{entity.methane_source.replace(/_/g, " ")}</div>
-      <div className="flex gap-1 mb-3 flex-wrap">
-        <span className={`px-2 py-0.5 rounded text-xs font-bold border ${rm.badge}`}>{rm.label}</span>
-      </div>
-      <div className="text-2xl font-black text-white mb-1">{entity.composite_score.toFixed(1)}</div>
-      <div className="text-xs text-slate-500 mb-2">{PATTERN_LABELS[entity.methane_pattern]}</div>
-      <div className="text-xs text-cyan-400 font-medium mb-2">{SEV_LABELS[entity.severity]}</div>
-      <div className="text-xs text-slate-400 leading-snug line-clamp-2">{entity.signal}</div>
-    </button>
-  );
-}
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
-
 export default function MethaneCrisisDashboard() {
-  const [data, setData]            = useState<{ entities: MceEntity[]; summary: MceSummary } | null>(null);
-  const [riskFilter, setRiskFilter]   = useState<string>("all");
-  const [patFilter,  setPatFilter]    = useState<string>("all");
-  const [selected,   setSelected]     = useState<MceEntity | null>(null);
+  const [data, setData] = useState<MCESummary | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState<string>("tous");
+  const [selected, setSelected] = useState<MCEEntity | null>(null);
 
   useEffect(() => {
     fetch("/api/methane-crisis-engine")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(console.error);
+      .then(r => r.json())
+      .then(j => {
+        setData(j);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, []);
 
-  if (!data) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="text-cyan-400 text-lg animate-pulse">Chargement Crise Méthane…</div>
+        <div className="text-slate-400 text-lg">Chargement Methane Crisis Engine…</div>
       </div>
     );
   }
 
-  const { entities, summary } = data;
+  if (!data) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="text-red-400 text-lg">Erreur de chargement des données</div>
+      </div>
+    );
+  }
 
-  const filtered = entities.filter(
-    (e) =>
-      (riskFilter === "all" || e.risk_level      === riskFilter) &&
-      (patFilter  === "all" || e.methane_pattern === patFilter),
-  );
+  const filterPills = ["tous", "critique", "eleve", "modere", "faible"];
+  const filtered = filter === "tous"
+    ? data.entities
+    : data.entities.filter(e => e.risk_level === filter);
 
-  const kpis = [
-    { label: "Total Sources",     value: String(summary.total_entities),                           color: "text-cyan-400"   },
-    { label: "Bombe Méthane",     value: String(summary.critical_count),                           color: "text-red-400"    },
-    { label: "Crise Accélérée",   value: String(summary.high_count),                               color: "text-orange-400" },
-    { label: "Composite Moyen",   value: summary.avg_composite.toFixed(1),                         color: "text-cyan-400"   },
-    { label: "Index Risque Méthane", value: `${summary.avg_estimated_methane_risk_index.toFixed(2)}/10`, color: "text-teal-400" },
-    { label: "Arctique Moyen",    value: Math.round(summary.avg_arctic_score ?? 0).toString(),     color: "text-orange-400" },
-  ];
-
-  const dists = [
-    { title: "Risque",    counts: summary.risk_distribution,    colors: RISK_COLORS },
-    { title: "Patterns",  counts: summary.pattern_distribution, colors: PAT_COLORS  },
-    { title: "Sévérité",  counts: summary.severity_distribution, colors: SEV_COLORS },
-    { title: "Actions",   counts: summary.action_distribution,  colors: ACT_COLORS  },
-  ] as Array<{ title: string; counts: Record<string, number>; colors: Record<string, string> }>;
-
-  const risks:    RiskLevel[]      = ["critical", "high", "moderate", "low"];
-  const patterns: MethanePattern[] = ["permafrost_methane_bomb", "clathrate_destabilization", "agricultural_methane_crisis", "arctic_feedback_cascade", "tundra_methane_inferno", "none"];
+  const maxPattern = Math.max(...Object.values(data.pattern_distribution), 1);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 space-y-6">
+    <div className="min-h-screen bg-slate-950 text-white p-6">
       {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
 
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-cyan-400">
-          Crise Méthane &amp; Bombe Méthane Arctique — Module 345
+      <div className="mb-8">
+        <div className="text-xs text-orange-400 font-mono mb-1">MODULE 345 — CAELUM PARTNERS</div>
+        <h1 className="text-3xl font-bold text-white mb-2">
+          Methane Crisis & Arctic Methane Bomb Intelligence Engine
         </h1>
-        <p className="text-slate-400 text-sm mt-1">
-          Arctique · Émissions · Rétroaction · Réponse — surveillance des bombes méthane planétaires
-        </p>
+        <div className="text-slate-400 text-sm">
+          Crise Méthane & Bombe Méthane Arctique — v{data.engine_version}
+        </div>
       </div>
 
-      {/* KPI strip */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {kpis.map((k) => (
-          <div key={k.label} className="bg-slate-900 border border-cyan-700/30 rounded-xl p-4 text-center">
-            <div className={`text-xl font-bold ${k.color}`}>{k.value}</div>
-            <div className="text-xs text-slate-500 mt-0.5">{k.label}</div>
-          </div>
+      {/* KPI Cards */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Entités</div>
+          <div className="text-2xl font-bold text-white">{data.total_entities}</div>
+        </div>
+        <div className="bg-slate-900 border border-red-900 rounded-xl p-4">
+          <div className="text-xs text-red-400 mb-1">Critique</div>
+          <div className="text-2xl font-bold text-red-400">{data.risk_distribution["critique"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-orange-900 rounded-xl p-4">
+          <div className="text-xs text-orange-400 mb-1">Élevé</div>
+          <div className="text-2xl font-bold text-orange-400">{data.risk_distribution["eleve"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-yellow-900 rounded-xl p-4">
+          <div className="text-xs text-yellow-400 mb-1">Modéré</div>
+          <div className="text-2xl font-bold text-yellow-400">{data.risk_distribution["modere"] ?? 0}</div>
+        </div>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Composite Moy.</div>
+          <div className="text-2xl font-bold text-orange-400">{data.avg_composite.toFixed(1)}</div>
+        </div>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
+          <div className="text-xs text-slate-400 mb-1">Idx Méthane</div>
+          <div className="text-2xl font-bold text-orange-300">{data.avg_estimated_methane_index.toFixed(2)}</div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Pattern Distribution */}
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-5">
+          <div className="text-sm font-semibold text-slate-300 mb-4">Distribution des Patrons</div>
+          {Object.entries(data.pattern_distribution).map(([pat, cnt]) => (
+            <DistBar key={pat} label={pat.replace(/_/g, " ")} value={cnt} max={maxPattern} color="#f97316" />
+          ))}
+        </div>
+
+        {/* Critical Alerts */}
+        <div className="bg-slate-900 border border-red-900/50 rounded-xl p-5 lg:col-span-2">
+          <div className="text-sm font-semibold text-red-400 mb-4">Alertes Critiques</div>
+          {data.critical_alerts.length === 0 ? (
+            <div className="text-slate-500 text-sm">Aucune alerte critique</div>
+          ) : (
+            <div className="space-y-2">
+              {data.critical_alerts.map((alert, i) => (
+                <div key={i} className="bg-red-950/30 border border-red-900/50 rounded-lg p-3 text-sm text-red-200">
+                  {alert}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Filter Pills */}
+      <div className="flex gap-2 mb-4 flex-wrap">
+        {filterPills.map(f => (
+          <button
+            key={f}
+            onClick={() => setFilter(f)}
+            className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
+              filter === f
+                ? "bg-orange-600 text-white"
+                : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+            }`}
+          >
+            {f === "tous" ? "Tous" : RISK_LABELS[f]}
+            {f !== "tous" && data.risk_distribution[f] !== undefined && (
+              <span className="ml-1 opacity-70">({data.risk_distribution[f]})</span>
+            )}
+          </button>
         ))}
       </div>
 
-      {/* GaugeRings */}
-      <div className="bg-slate-900 border border-cyan-700/30 rounded-xl p-5">
-        <p className="text-xs text-slate-500 mb-4 font-semibold uppercase tracking-wide">
-          Scores Moyens par Dimension
-        </p>
-        <div className="grid grid-cols-4 gap-4">
-          <GaugeRing value={summary.avg_arctic_score   ?? 0} label="Arctique"    color="#22d3ee" />
-          <GaugeRing value={summary.avg_emission_score ?? 0} label="Émissions"   color="#f87171" />
-          <GaugeRing value={summary.avg_feedback_score ?? 0} label="Rétroaction" color="#fb923c" />
-          <GaugeRing value={summary.avg_response_score ?? 0} label="Réponse"     color="#f59e0b" />
-        </div>
+      {/* Entity Table */}
+      <div className="bg-slate-900 border border-slate-700 rounded-xl overflow-hidden">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-slate-700 bg-slate-800/50">
+              <th className="text-left p-4 text-slate-400 font-medium">ID</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Entité</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Pays</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Risque</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Composite</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Patron</th>
+              <th className="text-left p-4 text-slate-400 font-medium">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((e, i) => (
+              <tr
+                key={e.entity_id}
+                className={`border-b border-slate-800 cursor-pointer hover:bg-slate-800/50 transition-colors ${
+                  i % 2 === 0 ? "" : "bg-slate-900/50"
+                }`}
+                onClick={() => setSelected(e)}
+              >
+                <td className="p-4 font-mono text-xs text-slate-500">{e.entity_id}</td>
+                <td className="p-4">
+                  <div className="font-medium text-white">{e.name}</div>
+                  <div className="text-xs text-slate-500">{e.sector}</div>
+                </td>
+                <td className="p-4 text-slate-300">{e.country}</td>
+                <td className="p-4"><RiskBadge level={e.risk_level} /></td>
+                <td className="p-4">
+                  <div className="font-bold" style={{ color: RISK_COLORS[e.risk_level] }}>
+                    {e.composite_score.toFixed(1)}
+                  </div>
+                </td>
+                <td className="p-4 font-mono text-xs text-slate-400">{e.primary_pattern}</td>
+                <td className="p-4 text-xs text-slate-500 max-w-xs truncate">{e.recommended_action}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      {/* DistBars */}
-      <div className="bg-slate-900 border border-cyan-700/30 rounded-xl p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {dists.map((d) => (
-          <DistBar key={d.title} {...d} />
-        ))}
+      {/* Footer */}
+      <div className="mt-6 flex items-center justify-between text-xs text-slate-500">
+        <div>Sources: {data.data_sources.join(", ")}</div>
+        <div>Confiance: {(data.confidence_score * 100).toFixed(0)}% — {new Date(data.last_analysis).toLocaleString("fr-FR")}</div>
       </div>
-
-      {/* Risk filters */}
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-wrap gap-2">
-          {["all", ...risks].map((r) => (
-            <button
-              key={r}
-              onClick={() => setRiskFilter(r)}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
-                riskFilter === r
-                  ? "bg-cyan-700 border-cyan-600 text-white"
-                  : "bg-slate-900 border-slate-700 text-slate-400 hover:text-white hover:border-cyan-600"
-              }`}
-            >
-              {r === "all" ? "Tous risques" : RISK_META[r as RiskLevel].label}
-            </button>
-          ))}
-        </div>
-        {/* Pattern filters */}
-        <div className="flex flex-wrap gap-2">
-          {["all", ...patterns].map((p) => (
-            <button
-              key={p}
-              onClick={() => setPatFilter(p)}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors ${
-                patFilter === p
-                  ? "bg-teal-700 border-teal-600 text-white"
-                  : "bg-slate-900 border-slate-700 text-slate-400 hover:text-white hover:border-teal-600"
-              }`}
-            >
-              {p === "all" ? "Tous patterns" : PATTERN_LABELS[p as MethanePattern]}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Entity grid */}
-      {filtered.length === 0 ? (
-        <div className="text-center text-slate-500 py-16">Aucune source pour ces filtres.</div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {filtered.map((e) => (
-            <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
-          ))}
-        </div>
-      )}
     </div>
   );
 }
