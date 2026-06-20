@@ -6943,6 +6943,35 @@ function IconClimateDisplacement({ className }: { className?: string }) {
   );
 }
 
+function IconPeasantRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c0 0-7 4-7 9a7 7 0 0014 0c0-5-7-9-7-9z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v9M9 18h6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 8h2M17 8h2" />
+    </svg>
+  );
+}
+
+function IconPrisonLabor({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 3v18M16 3v18M3 8h18M3 16h18" />
+      <circle cx="12" cy="12" r="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconCulturalHeritageDestruction({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 21h8M12 3l8 6H4l8-6zM5 9v8M19 9v8M9 9v8M15 9v8" />
+      <line x1="4" y1="4" x2="20" y2="20" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7618,6 +7647,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sex-work-rights-engine", label: "Droits Travail Sexuel", icon: IconSexWorkRights },
       { href: "/dashboard/environmental-defenders-engine", label: "Défenseurs Environnement", icon: IconEnvironmentalDefenders },
       { href: "/dashboard/climate-displacement-engine", label: "Déplacement Climatique", icon: IconClimateDisplacement },
+      { href: "/dashboard/peasant-rights-engine", label: "Droits Paysans", icon: IconPeasantRights },
+      { href: "/dashboard/prison-labor-engine", label: "Travail Carcéral", icon: IconPrisonLabor },
+      { href: "/dashboard/cultural-heritage-destruction-engine", label: "Destruction Patrimoine", icon: IconCulturalHeritageDestruction },
     ],
   },
   {
