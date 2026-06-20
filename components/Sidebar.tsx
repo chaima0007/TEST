@@ -7063,6 +7063,36 @@ function IconMigrantDetention({ className }: { className?: string }) {
   );
 }
 
+function IconSolitaryConfinement({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <rect x="4" y="4" width="16" height="16" rx="2" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="3" strokeLinecap="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 12H1M23 12h-3M12 4V1M12 23v-3" />
+    </svg>
+  );
+}
+
+function IconMedicalNeutrality({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a10 10 0 100 20A10 10 0 0012 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6M12 9v6" />
+      <line x1="4" y1="4" x2="20" y2="20" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconHumanRightsEducation({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L2 8l10 5 10-5-10-5z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+      <line x1="5" y1="5" x2="19" y2="19" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7750,6 +7780,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/juvenile-justice-engine", label: "Justice Juvénile", icon: IconJuvenileJustice },
       { href: "/dashboard/business-human-rights-engine", label: "Entreprises & Droits", icon: IconBusinessHumanRights },
       { href: "/dashboard/migrant-detention-engine", label: "Détention Migrants", icon: IconMigrantDetention },
+      { href: "/dashboard/solitary-confinement-engine", label: "Isolement Cellulaire", icon: IconSolitaryConfinement },
+      { href: "/dashboard/medical-neutrality-engine", label: "Neutralité Médicale", icon: IconMedicalNeutrality },
+      { href: "/dashboard/human-rights-education-engine", label: "Éducation Droits Humains", icon: IconHumanRightsEducation },
     ],
   },
   {
