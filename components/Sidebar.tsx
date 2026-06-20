@@ -5504,6 +5504,18 @@ function IconBlackSwan({ className }: { className?: string }) {
   );
 }
 
+function IconCaelumSynthesis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" opacity="0.3"/>
+      <circle cx="10" cy="10" r="5" opacity="0.5"/>
+      <circle cx="10" cy="10" r="2.5" fill="currentColor" opacity="0.9"/>
+      <path d="M10 2 L10 5M10 15 L10 18M2 10 L5 10M15 10 L18 10" strokeLinecap="round" opacity="0.6"/>
+      <path d="M4.6 4.6 L6.8 6.8M13.2 13.2 L15.4 15.4M15.4 4.6 L13.2 6.8M6.8 13.2 L4.6 15.4" strokeLinecap="round" opacity="0.4"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6053,6 +6065,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/hybrid-infrastructure", label: "Infrastructure Hybride", icon: IconHybridInfra },
       { href: "/dashboard/polycrisis-engine", label: "Polycrise Mondiale", icon: IconPolycrisis },
       { href: "/dashboard/black-swan-engine", label: "Cygne Noir — Risques Extrêmes", icon: IconBlackSwan },
+      { href: "/dashboard/caelum-synthesis-engine", label: "Synthèse Méta-Intelligence", icon: IconCaelumSynthesis },
     ],
   },
   {
