@@ -6259,6 +6259,43 @@ function IconColonialReparations({ className }: { className?: string }) {
   );
 }
 
+function IconHateCrime({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+  );
+}
+
+function IconChildLabor({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="5" r="2.5"/>
+      <path d="M12 8v5"/>
+      <path d="M9 11l3 2 3-2"/>
+      <path d="M8 20l4-7 4 7"/>
+      <path d="M6 14l2-2M18 14l-2-2"/>
+      <line x1="4" y1="17" x2="7" y2="17" strokeWidth="1.5"/>
+      <line x1="17" y1="17" x2="20" y2="17" strokeWidth="1.5"/>
+    </svg>
+  );
+}
+
+function IconIndigenousLandRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2v10"/>
+      <path d="M7 6l5-4 5 4"/>
+      <path d="M5 10l7-4 7 4"/>
+      <path d="M9 10c0 3-2 5-4 6M15 10c0 3 2 5 4 6"/>
+      <path d="M6 20h12"/>
+      <path d="M8 16c1.5 1 5.5 2.5 8 0"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -7099,6 +7136,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sexual-violence-wartime-engine", label: "Sexual Violence Wartime", icon: IconSexualViolenceWartime },
       { href: "/dashboard/police-brutality-engine", label: "Police Brutality", icon: IconPoliceBrutality },
       { href: "/dashboard/colonial-reparations-engine", label: "Colonial Reparations", icon: IconColonialReparations },
+      { href: "/dashboard/hate-crime-engine", label: "Hate Crime", icon: IconHateCrime },
+      { href: "/dashboard/child-labor-engine", label: "Child Labor", icon: IconChildLabor },
+      { href: "/dashboard/indigenous-land-rights-engine", label: "Indigenous Land Rights", icon: IconIndigenousLandRights },
     ],
   },
   {
