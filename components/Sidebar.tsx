@@ -6025,6 +6025,48 @@ function IconMercenaryWarfare({ className }: { className?: string }) {
   );
 }
 
+function IconNuclearDeterrence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="8" r="2" fill="currentColor" fillOpacity="0.5" />
+      <path d="M8 2a6 6 0 0 1 6 6" opacity="0.8" />
+      <path d="M8 2a6 6 0 0 0-6 6" opacity="0.8" />
+      <path d="M2 8a6 6 0 0 0 6 6" opacity="0.8" />
+      <path d="M14 8a6 6 0 0 1-6 6" opacity="0.8" />
+      <line x1="8" y1="1" x2="8" y2="3" strokeWidth="2" opacity="0.9" />
+      <line x1="15" y1="8" x2="13" y2="8" strokeWidth="2" opacity="0.9" />
+      <line x1="1" y1="8" x2="3" y2="8" strokeWidth="2" opacity="0.9" />
+      <line x1="8" y1="15" x2="8" y2="13" strokeWidth="2" opacity="0.9" />
+    </svg>
+  );
+}
+
+function IconSanctionsEvasion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="8" r="5.5" opacity="0.6" />
+      <path d="M8 5v1.5" opacity="0.9" />
+      <path d="M6 6.5c0-.8.9-1.5 2-1.5s2 .7 2 1.5c0 .7-.5 1.2-1.2 1.4L8 8" opacity="0.8" />
+      <circle cx="8" cy="9.5" r="0.5" fill="currentColor" />
+      <path d="M11 3L13 1M13 3L11 1" opacity="0.7" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
+function IconPandemicBioweapons({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="8" r="2.5" fill="currentColor" fillOpacity="0.4" />
+      <path d="M8 1.5a6.5 6.5 0 0 1 5.63 9.75" opacity="0.8" />
+      <path d="M8 1.5a6.5 6.5 0 0 0-5.63 9.75" opacity="0.8" />
+      <path d="M2.37 11.25a6.5 6.5 0 0 0 11.26 0" opacity="0.8" />
+      <circle cx="8" cy="1.5" r="1" fill="currentColor" opacity="0.7" />
+      <circle cx="2.37" cy="11.25" r="1" fill="currentColor" opacity="0.7" />
+      <circle cx="13.63" cy="11.25" r="1" fill="currentColor" opacity="0.7" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6625,6 +6667,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/food-weaponization-engine", label: "Food Weaponization", icon: IconFoodWeaponization },
       { href: "/dashboard/ai-weapons-race-engine", label: "AI Weapons Race", icon: IconAIWeaponsRace },
       { href: "/dashboard/port-logistics-capture-engine", label: "Port Logistics Capture", icon: IconPortLogisticsCapture },
+      { href: "/dashboard/nuclear-deterrence-engine", label: "Nuclear Deterrence", icon: IconNuclearDeterrence },
+      { href: "/dashboard/sanctions-evasion-engine", label: "Sanctions Evasion", icon: IconSanctionsEvasion },
+      { href: "/dashboard/pandemic-bioweapons-engine", label: "Pandemic Bioweapons", icon: IconPandemicBioweapons },
     ],
   },
   {
