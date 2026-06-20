@@ -7002,6 +7002,36 @@ function IconCounterterrorismAbuse({ className }: { className?: string }) {
   );
 }
 
+function IconWhistleblowerProtection({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a4 4 0 014 4v1h1a2 2 0 012 2v6a2 2 0 01-2 2H7a2 2 0 01-2-2v-6a2 2 0 012-2h1V7a4 4 0 014-4z" />
+      <circle cx="12" cy="14" r="1.5" strokeLinecap="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3l18 18" />
+    </svg>
+  );
+}
+
+function IconFoodSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21C12 21 5 15 5 9a7 7 0 0114 0c0 6-7 12-7 12z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6M9 12h6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 5L5 2M16 5l3-3" />
+    </svg>
+  );
+}
+
+function IconEconomicSanctions({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="12" r="9" strokeLinecap="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v2M12 16v2M8 12H6M18 12h-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10 10l4 4M14 10l-4 4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7683,6 +7713,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/drug-policy-human-rights-engine", label: "Politique Drogues DR", icon: IconDrugPolicyHumanRights },
       { href: "/dashboard/right-to-truth-engine", label: "Droit à la Vérité", icon: IconRightToTruth },
       { href: "/dashboard/counterterrorism-abuse-engine", label: "Abus Antiterrorisme", icon: IconCounterterrorismAbuse },
+      { href: "/dashboard/whistleblower-protection-engine", label: "Lanceurs d'Alerte", icon: IconWhistleblowerProtection },
+      { href: "/dashboard/food-sovereignty-engine", label: "Souveraineté Alimentaire", icon: IconFoodSovereignty },
+      { href: "/dashboard/economic-sanctions-human-rights-engine", label: "Sanctions Économiques DR", icon: IconEconomicSanctions },
     ],
   },
   {

@@ -45,4 +45,4 @@ jobs:
         run: pip install pytest pytest-cov crewai langchain-anthropic anthropic
 
       - name: Run swarm tests
-        run: cd swarm && pytest tests/ -v --tb=short --cov=. --cov-report=term-missing 2>&1 | head -200 || true
+        run: cd swarm && pytest tests/ -v --tb=short --cov=. --cov-report=term-missing 2>&1 | head -200
