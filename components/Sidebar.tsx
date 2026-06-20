@@ -5567,6 +5567,30 @@ function IconDemocraticDecay({ className }: { className?: string }) {
   );
 }
 
+function IconEconomicCoercion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M3 10 L10 3 L17 10" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+      <path d="M5 17 L5 10 L15 10 L15 17" strokeLinecap="round" strokeLinejoin="round" opacity="0.4"/>
+      <path d="M3 17 L17 17" strokeLinecap="round"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.8"/>
+      <path d="M8 6 L10 4 L12 6" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function IconSocialCohesion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="13" cy="8" r="2.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="10" cy="13" r="2.5" fill="currentColor" opacity="0.8"/>
+      <path d="M7 8 L10 13 L13 8" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
+      <path d="M7 8 L13 8" strokeLinecap="round" opacity="0.4"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6121,6 +6145,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/civilizational-debt-engine", label: "Dette Civilisationnelle", icon: IconCivDebt },
       { href: "/dashboard/nexus-crisis-engine", label: "Nexus Eau-Alimentation-Énergie", icon: IconNexusCrisis },
       { href: "/dashboard/democratic-decay-engine", label: "Érosion Démocratique", icon: IconDemocraticDecay },
+      { href: "/dashboard/economic-coercion-engine", label: "Coercition Économique", icon: IconEconomicCoercion },
+      { href: "/dashboard/social-cohesion-engine", label: "Cohésion Sociale", icon: IconSocialCohesion },
     ],
   },
   {
