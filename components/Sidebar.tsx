@@ -6338,6 +6338,37 @@ function IconMinorityRights({ className }: { className?: string }) {
   );
 }
 
+function IconLgbtqRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 21C12 21 4 15 4 9a8 8 0 0 1 16 0c0 6-8 12-8 12z"/>
+      <circle cx="12" cy="9" r="2.5"/>
+    </svg>
+  );
+}
+
+function IconRightToEducation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 7l10-5 10 5-10 5z"/>
+      <path d="M6 9.5V17c0 0 2 2 6 2s6-2 6-2V9.5"/>
+      <path d="M22 7v6"/>
+    </svg>
+  );
+}
+
+function IconMigrantWorkerRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="9" cy="6" r="2.5"/>
+      <path d="M4 20v-2a5 5 0 0 1 10 0v2"/>
+      <rect x="15" y="10" width="6" height="5" rx="1"/>
+      <path d="M17 10V8a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v2"/>
+      <path d="M15 15l-1 4M21 15l1 4"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -7184,6 +7215,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/debt-bondage-engine", label: "Debt Bondage", icon: IconDebtBondage },
       { href: "/dashboard/arms-embargo-violation-engine", label: "Arms Embargo", icon: IconArmsEmbargoViolation },
       { href: "/dashboard/minority-rights-engine", label: "Minority Rights", icon: IconMinorityRights },
+      { href: "/dashboard/lgbtq-rights-engine", label: "LGBTQ+ Rights", icon: IconLgbtqRights },
+      { href: "/dashboard/right-to-education-engine", label: "Right to Education", icon: IconRightToEducation },
+      { href: "/dashboard/migrant-worker-rights-engine", label: "Migrant Worker Rights", icon: IconMigrantWorkerRights },
     ],
   },
   {
