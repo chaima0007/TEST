@@ -2696,6 +2696,49 @@ function IconSalesPipelineStageInflationCrmHygieneEngine({ className }: { classN
   );
 }
 
+function IconFreedomOfAssembly({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="5" cy="8" r="2" />
+      <circle cx="12" cy="6" r="2" />
+      <circle cx="19" cy="8" r="2" />
+      <path d="M2 20c0-3 2-5 3-5s2 1 3 1 2-1 3-1 2 1 3 1 2-1 3-1 3 2 3 5" />
+      <path d="M12 9v4" />
+      <path d="M10 11h4" />
+      <path d="M9 14l-1.5 2" />
+      <path d="M15 14l1.5 2" />
+    </svg>
+  );
+}
+
+function IconArbitraryDetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="7" y="11" width="10" height="10" rx="1" />
+      <path d="M9 11V7a3 3 0 0 1 6 0v4" />
+      <circle cx="12" cy="16" r="1" fill="currentColor" />
+      <path d="M5 8l-2 2" />
+      <path d="M3 10v3" />
+      <path d="M19 8l2 2" />
+      <path d="M21 10v3" />
+    </svg>
+  );
+}
+
+function IconDisabilityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="4" r="1.5" />
+      <path d="M9 9h6" />
+      <path d="M12 9v5" />
+      <path d="M9 22a4 4 0 0 1 0-8" />
+      <path d="M15 14h2l1.5 4" />
+      <path d="M9 14H7l-1 4" />
+      <path d="M12 14v-5" />
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -7218,6 +7261,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/lgbtq-rights-engine", label: "LGBTQ+ Rights", icon: IconLgbtqRights },
       { href: "/dashboard/right-to-education-engine", label: "Right to Education", icon: IconRightToEducation },
       { href: "/dashboard/migrant-worker-rights-engine", label: "Migrant Worker Rights", icon: IconMigrantWorkerRights },
+      { href: "/dashboard/freedom-of-assembly-engine", label: "Freedom of Assembly", icon: IconFreedomOfAssembly },
+      { href: "/dashboard/arbitrary-detention-engine", label: "Arbitrary Detention", icon: IconArbitraryDetention },
+      { href: "/dashboard/disability-rights-engine", label: "Disability Rights", icon: IconDisabilityRights },
     ],
   },
   {
