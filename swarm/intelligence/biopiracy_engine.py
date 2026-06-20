@@ -156,6 +156,7 @@ class BiopirateEntity:
             "key_signals": self.key_signals,
             "estimated_biopiracy_index": round(self.composite_score / 100 * 10, 2),
             "last_updated": self.last_updated,
+            "alert_priority": "P1" if self.composite_score >= 60 else "P2" if self.composite_score >= 40 else "P3" if self.composite_score >= 20 else "P4",
         }
 
 
