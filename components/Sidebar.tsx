@@ -6912,6 +6912,37 @@ function IconBioethics({ className }: { className?: string }) {
   );
 }
 
+function IconSexWorkRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v10M8 18h8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 5l2 2M17 5l-2 2" />
+      <line x1="4" y1="20" x2="8" y2="16" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconEnvironmentalDefenders({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C7 3 3 7 3 12c0 6 9 9 9 9s9-3 9-9c0-5-4-9-9-9Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3" />
+      <line x1="3" y1="3" x2="7" y2="7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconClimateDisplacement({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l3-6 3 4 3-8 3 5 3-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 8a4.5 4.5 0 019 0c.5 2-1 4-2.5 4H6a3 3 0 010-6 3 3 0 012.5 1.4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2 21h20" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7584,6 +7615,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/birth-registration-engine", label: "Enregistrement Naissance", icon: IconBirthRegistration },
       { href: "/dashboard/migrant-domestic-workers-engine", label: "Travailleurs Domestiques", icon: IconMigrantDomesticWorkers },
       { href: "/dashboard/bioethics-engine", label: "Bioéthique", icon: IconBioethics },
+      { href: "/dashboard/sex-work-rights-engine", label: "Droits Travail Sexuel", icon: IconSexWorkRights },
+      { href: "/dashboard/environmental-defenders-engine", label: "Défenseurs Environnement", icon: IconEnvironmentalDefenders },
+      { href: "/dashboard/climate-displacement-engine", label: "Déplacement Climatique", icon: IconClimateDisplacement },
     ],
   },
   {
