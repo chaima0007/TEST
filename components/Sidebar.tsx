@@ -6200,6 +6200,27 @@ function IconMaritimePiracy() {
     </svg>
   );
 }
+function IconChildSoldiers({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+    </svg>
+  );
+}
+function IconCulturalGenocide({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253" />
+    </svg>
+  );
+}
+function IconStateTerrorism({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -6801,6 +6822,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/organ-trafficking-engine", label: "Organ Trafficking", icon: IconOrganTrafficking },
       { href: "/dashboard/gender-apartheid-engine", label: "Gender Apartheid", icon: IconGenderApartheid },
       { href: "/dashboard/maritime-piracy-engine", label: "Maritime Piracy", icon: IconMaritimePiracy },
+      { href: "/dashboard/child-soldiers-engine", label: "Child Soldiers", icon: IconChildSoldiers },
+      { href: "/dashboard/cultural-genocide-engine", label: "Cultural Genocide", icon: IconCulturalGenocide },
+      { href: "/dashboard/state-terrorism-engine", label: "State Terrorism", icon: IconStateTerrorism },
     ],
   },
   {
