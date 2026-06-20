@@ -6225,6 +6225,40 @@ function IconCasteDiscrimination({ className }: { className?: string }) {
   );
 }
 
+function IconSexualViolenceWartime({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2L8 6v6l4 4 4-4V6L12 2z"/>
+      <path d="M8 6L4 8v4l4 2"/>
+      <path d="M16 6l4 2v4l-4 2"/>
+      <path d="M9 14l-2 6M15 14l2 6"/>
+      <line x1="8" y1="20" x2="16" y2="20" strokeWidth="1" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconPoliceBrutality({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+      <line x1="6" y1="6" x2="18" y2="18" strokeWidth="2" opacity="0.8"/>
+      <line x1="18" y1="6" x2="6" y2="18" strokeWidth="2" opacity="0.8"/>
+    </svg>
+  );
+}
+
+function IconColonialReparations({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3v18"/>
+      <path d="M5 10l7-4 7 4"/>
+      <path d="M3 10h18"/>
+      <path d="M5 10v6l2 2h10l2-2v-6"/>
+      <path d="M7 16l2-3M17 16l-2-3" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -7062,6 +7096,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/prison-torture-engine", label: "Prison Torture", icon: IconPrisonTorture },
       { href: "/dashboard/statelessness-engine", label: "Statelessness", icon: IconStatelessness },
       { href: "/dashboard/caste-discrimination-engine", label: "Caste Discrimination", icon: IconCasteDiscrimination },
+      { href: "/dashboard/sexual-violence-wartime-engine", label: "Sexual Violence Wartime", icon: IconSexualViolenceWartime },
+      { href: "/dashboard/police-brutality-engine", label: "Police Brutality", icon: IconPoliceBrutality },
+      { href: "/dashboard/colonial-reparations-engine", label: "Colonial Reparations", icon: IconColonialReparations },
     ],
   },
   {
