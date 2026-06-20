@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 
 interface EIEntity {
   entity_id: string; name: string; country: string; sector: string;
-  composite_score: number; cyberattack_score: number;
-  disinformation_campaign_score: number; illicit_foreign_funding_score: number;
-  electoral_infrastructure_vulnerability_score: number; risk_level: string;
+  composite_score: number; foreign_influence_operation_score: number;
+  disinformation_campaign_score: number; campaign_finance_infiltration_score: number;
+  electoral_infrastructure_attack_score: number; risk_level: string;
   primary_pattern: string; key_signals: string[];
-  estimated_interference_index: number; last_updated: string;
+  estimated_electoral_interference_index: number; last_updated: string;
 }
 interface EISummary {
   total_entities: number; avg_composite: number;
@@ -15,7 +15,7 @@ interface EISummary {
   top_risk_entities: string[]; critical_alerts: string[];
   last_analysis: string; engine_version: string; domain: string;
   confidence_score: number; data_sources: string[];
-  entities: EIEntity[]; avg_estimated_interference_index: number;
+  entities: EIEntity[]; avg_estimated_electoral_interference_index: number;
 }
 
 const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
@@ -73,10 +73,10 @@ function DetailModal({ entity, onClose }: { entity: EIEntity; onClose: () => voi
         {tab === "scores" && (
           <div className="space-y-3">
             {[
-              { l: "Score Cyberattaque", v: entity.cyberattack_score, c: "#ef4444" },
-              { l: "Score Campagne Désinformation", v: entity.disinformation_campaign_score, c: "#f97316" },
-              { l: "Score Financement Étranger Illicite", v: entity.illicit_foreign_funding_score, c: "#eab308" },
-              { l: "Vulnérabilité Infrastructure Électorale", v: entity.electoral_infrastructure_vulnerability_score, c: "#3b82f6" },
+              { l: "Opération d'Influence Étrangère", v: entity.foreign_influence_operation_score, c: "#2563eb" },
+              { l: "Campagne de Désinformation", v: entity.disinformation_campaign_score, c: "#1d4ed8" },
+              { l: "Infiltration Financement Campagne", v: entity.campaign_finance_infiltration_score, c: "#1e40af" },
+              { l: "Attaque Infrastructure Électorale", v: entity.electoral_infrastructure_attack_score, c: "#1e3a8a" },
             ].map(({ l, v, c }) => (
               <div key={l}>
                 <div className="flex justify-between text-xs text-slate-400 mb-1"><span>{l}</span><span>{v}/100</span></div>
@@ -84,8 +84,8 @@ function DetailModal({ entity, onClose }: { entity: EIEntity; onClose: () => voi
               </div>
             ))}
             <div className="pt-2 flex justify-between text-sm">
-              <span className="text-slate-400">Index d'Ingérence Estimé</span>
-              <span className="text-blue-400 font-bold">{entity.estimated_interference_index}</span>
+              <span className="text-slate-400">Index Ingérence Électorale Estimé</span>
+              <span className="text-blue-400 font-bold">{entity.estimated_electoral_interference_index}</span>
             </div>
           </div>
         )}
@@ -137,7 +137,7 @@ export default function ElectoralInterferencePage() {
       {sel && <DetailModal entity={sel} onClose={() => setSel(null)} />}
       <div className="max-w-7xl mx-auto space-y-6">
         <div>
-          <h1 className="text-2xl font-bold">Ingérence Électorale Étrangère</h1>
+          <h1 className="text-2xl font-bold">Electoral Interference Intelligence Engine</h1>
           <p className="text-slate-400 text-sm">Opérations étrangères compromettant la souveraineté électorale des démocraties · v{data.engine_version}</p>
         </div>
 
@@ -146,7 +146,7 @@ export default function ElectoralInterferencePage() {
             { l: "Zones Analysées", v: data.total_entities, g: "from-slate-700 to-slate-600", t: "text-white" },
             { l: "Score Composite Moyen", v: `${data.avg_composite}%`, g: "from-blue-900 to-blue-800", t: "text-blue-300" },
             { l: "Alertes Critiques", v: data.critical_alerts.length, g: "from-red-900 to-red-800", t: "text-red-300" },
-            { l: "Index Ingérence Moyen", v: data.avg_estimated_interference_index, g: "from-indigo-900 to-indigo-800", t: "text-indigo-300" },
+            { l: "Index Ingérence Moyen", v: data.avg_estimated_electoral_interference_index, g: "from-indigo-900 to-indigo-800", t: "text-indigo-300" },
             { l: "Sources", v: data.data_sources.length, g: "from-blue-900 to-blue-800", t: "text-blue-300" },
             { l: "Confiance", v: `${Math.round(data.confidence_score * 100)}%`, g: "from-slate-800 to-slate-700", t: "text-slate-300" },
           ].map(({ l, v, g, t }) => (
@@ -160,10 +160,10 @@ export default function ElectoralInterferencePage() {
         <div className="bg-slate-900 rounded-xl p-6 border border-slate-800">
           <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Vecteurs d'Ingérence Électorale Moyens</h2>
           <div className="flex flex-wrap justify-around gap-6">
-            <GaugeRing value={avgScore("cyberattack_score")} label="Score Cyberattaque" color="#ef4444" />
-            <GaugeRing value={avgScore("disinformation_campaign_score")} label="Campagne Désinformation" color="#f97316" />
-            <GaugeRing value={avgScore("illicit_foreign_funding_score")} label="Financement Étranger Illicite" color="#eab308" />
-            <GaugeRing value={avgScore("electoral_infrastructure_vulnerability_score")} label="Vulnérabilité Infrastructure" color="#3b82f6" />
+            <GaugeRing value={avgScore("foreign_influence_operation_score")} label="Opérations d'Influence" color="#2563eb" />
+            <GaugeRing value={avgScore("disinformation_campaign_score")} label="Campagne Désinformation" color="#1d4ed8" />
+            <GaugeRing value={avgScore("campaign_finance_infiltration_score")} label="Infiltration Financement" color="#1e40af" />
+            <GaugeRing value={avgScore("electoral_infrastructure_attack_score")} label="Attaque Infrastructure" color="#1e3a8a" />
           </div>
         </div>
 
@@ -220,7 +220,7 @@ export default function ElectoralInterferencePage() {
               </div>
               <div className="flex justify-between text-xs text-slate-500">
                 <span className={RC[entity.risk_level]}>{entity.risk_level}</span>
-                <span>idx {entity.estimated_interference_index}</span>
+                <span>idx {entity.estimated_electoral_interference_index}</span>
               </div>
             </div>
           ))}

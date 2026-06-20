@@ -6011,6 +6011,20 @@ function IconDeepSeaMiningEngine({ className }: { className?: string }) {
   );
 }
 
+function IconMercenaryWarfare({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="8" y1="2" x2="8" y2="12" />
+      <path d="M5 5l3-3 3 3" fill="currentColor" fillOpacity="0.4" />
+      <path d="M4 7l4 1 4-1" opacity="0.7" />
+      <path d="M6 12l-2 2" opacity="0.8" />
+      <path d="M10 12l2 2" opacity="0.8" />
+      <path d="M6 12h4" opacity="0.6" />
+      <path d="M3 4l2 1M13 4l-2 1" opacity="0.5" strokeWidth="1" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6606,6 +6620,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/arctic-geopolitics-engine", label: "Arctic Geopolitics", icon: IconArcticGeopolitics },
       { href: "/dashboard/diaspora-weaponization-engine", label: "Diaspora Weaponization", icon: IconDiasporaWeaponizationEngine },
       { href: "/dashboard/sportwashing-geopolitics-engine", label: "Sportwashing Geopolitics", icon: IconSportwashingGeopoliticsEngine },
+      { href: "/dashboard/mercenary-warfare-engine", label: "Mercenary Warfare", icon: IconMercenaryWarfare },
       { href: "/dashboard/deep-sea-mining-engine", label: "Deep Sea Mining", icon: IconDeepSeaMiningEngine },
       { href: "/dashboard/food-weaponization-engine", label: "Food Weaponization", icon: IconFoodWeaponization },
       { href: "/dashboard/ai-weapons-race-engine", label: "AI Weapons Race", icon: IconAIWeaponsRace },
