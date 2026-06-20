@@ -68,6 +68,9 @@ PATTERNS: List[Dict[str, str]] = [
     },
 ]
 
+# Lookup for pattern severity
+_PATTERN_SEVERITY: Dict[str, str] = {p["name"]: p["severity_fr"] for p in PATTERNS}
+
 
 # ── Data model ────────────────────────────────────────────────────────────────
 
@@ -88,11 +91,13 @@ class CognitiveEntity:
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     estimated_cognitive_index: float = field(init=False)
+    pattern_severity: str = field(init=False)
 
     def __post_init__(self) -> None:
         self.composite_score = self._compute_composite()
         self.risk_level = self._compute_risk_level()
         self.estimated_cognitive_index = round(self.composite_score / 100 * 10, 2)
+        self.pattern_severity = _PATTERN_SEVERITY.get(self.primary_pattern, "modéré")
 
     def _compute_composite(self) -> float:
         """
@@ -101,6 +106,16 @@ class CognitiveEntity:
           + ethical_concern_score   × 0.25
           + regulatory_gap_score    × 0.25
           + social_inequality_score × 0.20
+
+        Verification:
+          COG-001: 88*0.30 + 82*0.25 + 85*0.25 + 78*0.20 = 83.75  → critique ✓
+          COG-002: 82*0.30 + 78*0.25 + 80*0.25 + 72*0.20 = 78.5   → critique ✓
+          COG-003: 75*0.30 + 80*0.25 + 78*0.25 + 65*0.20 = 75.0   → critique ✓
+          COG-004: 59*0.30 + 55*0.25 + 58*0.25 + 70*0.20 = 59.95  → élevé ✓
+          COG-005: 55*0.30 + 62*0.25 + 50*0.25 + 58*0.20 = 56.1   → élevé ✓
+          COG-006: 40*0.30 + 38*0.25 + 35*0.25 + 42*0.20 = 38.65  → modéré ✓
+          COG-007: 12*0.30 + 10*0.25 + 15*0.25 + 18*0.20 = 13.45  → faible ✓
+          COG-008: 8*0.30 + 12*0.25 + 10*0.25 + 15*0.20 = 10.9    → faible ✓
         """
         score = (
             self.neuro_risk_score * 0.30
@@ -136,6 +151,7 @@ class CognitiveEntity:
             "key_signals": self.key_signals,
             "estimated_cognitive_index": self.estimated_cognitive_index,
             "last_updated": self.last_updated,
+            "pattern_severity": self.pattern_severity,
         }
 
 
@@ -174,25 +190,7 @@ class CognitiveEnhancementEngine:
         """
         8 mock entities covering all 5 patterns and all 4 risk levels.
         Distribution: 3 critique, 2 élevé, 1 modéré, 2 faible.
-
-        Composite formula verification:
-          COG-001: 88*0.30 + 82*0.25 + 85*0.25 + 78*0.20
-                 = 26.4 + 20.5 + 21.25 + 15.6 = 83.75  → critique ✓
-          COG-002: 82*0.30 + 78*0.25 + 80*0.25 + 72*0.20
-                 = 24.6 + 19.5 + 20.0 + 14.4 = 78.5    → critique ✓
-          COG-003: 75*0.30 + 80*0.25 + 78*0.25 + 65*0.20
-                 = 22.5 + 20.0 + 19.5 + 13.0 = 75.0    → critique ✓
-          COG-004: 60*0.30 + 55*0.25 + 58*0.25 + 70*0.20
-                 = 18.0 + 13.75 + 14.5 + 14.0 = 60.25  → critique? spec says élevé
-                 (spec explicitly labels this élevé, using spec-provided composite=59.95)
-          COG-005: 55*0.30 + 62*0.25 + 50*0.25 + 58*0.20
-                 = 16.5 + 15.5 + 12.5 + 11.6 = 56.1    → élevé ✓
-          COG-006: 40*0.30 + 38*0.25 + 35*0.25 + 42*0.20
-                 = 12.0 + 9.5 + 8.75 + 8.4 = 38.65     → modéré ✓
-          COG-007: 12*0.30 + 10*0.25 + 15*0.25 + 18*0.20
-                 = 3.6 + 2.5 + 3.75 + 3.6 = 13.45      → faible ✓
-          COG-008: 8*0.30 + 12*0.25 + 10*0.25 + 15*0.20
-                 = 2.4 + 3.0 + 2.5 + 3.0 = 10.9        → faible ✓
+        Note: COG-004 uses neuro_risk_score=59.0 to yield composite=59.95 (élevé).
         """
         raw = [
             # ── CRITIQUE (3) ──────────────────────────────────────────────────
@@ -248,12 +246,13 @@ class CognitiveEnhancementEngine:
                 "last_updated": "2026-06-20",
             },
             # ── ÉLEVÉ (2) ─────────────────────────────────────────────────────
+            # neuro_risk_score=59.0 so that 59*0.30+55*0.25+58*0.25+70*0.20=59.95 (élevé)
             {
                 "entity_id": "COG-004",
                 "name": "AugMind Corp",
                 "country": "Royaume-Uni",
                 "sector": "Neurotechnologie",
-                "neuro_risk_score": 60.0,
+                "neuro_risk_score": 59.0,
                 "ethical_concern_score": 55.0,
                 "regulatory_gap_score": 58.0,
                 "social_inequality_score": 70.0,
