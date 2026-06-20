@@ -6776,6 +6776,36 @@ function IconElectoralRights({ className }: { className?: string }) {
   );
 }
 
+function IconDeathPenalty({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a2 2 0 0 0-2 2v6H7l-2 3h14l-2-3h-3V5a2 2 0 0 0-2-2Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 20h6M12 14v6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 8H4M20 8h-2" />
+    </svg>
+  );
+}
+
+function IconIndigenousRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L6 9l2 1-4 5h16l-4-5 2-1-6-6Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 21h6M12 15v6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 21h14" />
+    </svg>
+  );
+}
+
+function IconCorporateAccountability({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M3 10h18M5 6l7-3 7 3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 21V10M17 21V10M12 21V10" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10 14h4M10 17h4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7433,6 +7463,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/anti-torture-engine", label: "Anti-Torture", icon: IconAntiTorture },
       { href: "/dashboard/transitional-justice-engine", label: "Justice Transitionnelle", icon: IconTransitionalJustice },
       { href: "/dashboard/electoral-rights-engine", label: "Droits Électoraux", icon: IconElectoralRights },
+      { href: "/dashboard/death-penalty-engine", label: "Peine de Mort", icon: IconDeathPenalty },
+      { href: "/dashboard/indigenous-rights-engine", label: "Droits Autochtones", icon: IconIndigenousRights },
+      { href: "/dashboard/corporate-accountability-engine", label: "Responsabilité Corp.", icon: IconCorporateAccountability },
     ],
   },
   {
