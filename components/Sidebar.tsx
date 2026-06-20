@@ -6972,6 +6972,36 @@ function IconCulturalHeritageDestruction({ className }: { className?: string }) 
   );
 }
 
+function IconDrugPolicyHumanRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 3h6l2 4H7L9 3zM7 7v12a2 2 0 002 2h6a2 2 0 002-2V7H7z" />
+      <line x1="3" y1="3" x2="21" y2="21" strokeLinecap="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v5" />
+    </svg>
+  );
+}
+
+function IconRightToTruth({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 100 18A9 9 0 0012 3z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-3 3M17 16l3 3" />
+    </svg>
+  );
+}
+
+function IconCounterterrorismAbuse({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l8 4v5c0 4-3.5 7.5-8 9-4.5-1.5-8-5-8-9V7l8-4z" />
+      <line x1="9" y1="9" x2="15" y2="15" strokeLinecap="round" />
+      <line x1="15" y1="9" x2="9" y2="15" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7650,6 +7680,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/peasant-rights-engine", label: "Droits Paysans", icon: IconPeasantRights },
       { href: "/dashboard/prison-labor-engine", label: "Travail Carcéral", icon: IconPrisonLabor },
       { href: "/dashboard/cultural-heritage-destruction-engine", label: "Destruction Patrimoine", icon: IconCulturalHeritageDestruction },
+      { href: "/dashboard/drug-policy-human-rights-engine", label: "Politique Drogues DR", icon: IconDrugPolicyHumanRights },
+      { href: "/dashboard/right-to-truth-engine", label: "Droit à la Vérité", icon: IconRightToTruth },
+      { href: "/dashboard/counterterrorism-abuse-engine", label: "Abus Antiterrorisme", icon: IconCounterterrorismAbuse },
     ],
   },
   {
