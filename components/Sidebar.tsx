@@ -6173,6 +6173,34 @@ function IconClimateGeopolitics() {
   );
 }
 
+function IconOrganTrafficking() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3M12 15h.01" />
+    </svg>
+  );
+}
+
+function IconGenderApartheid() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <circle cx="12" cy="8" r="4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v8M9 17h6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 4l16 16" />
+    </svg>
+  );
+}
+
+function IconMaritimePiracy() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2M12 5a4 4 0 014 4H8a4 4 0 014-4zM8 9v1a9 9 0 008 0V9M12 19v2M5 12H3M21 12h-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 19c1.333-2 2.667-3 5-3s3.667 1 5 3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -6770,6 +6798,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/space-warfare-engine", label: "Space Warfare", icon: IconSpaceWarfare },
       { href: "/dashboard/food-security-weaponization-engine", label: "Food Security Weaponization", icon: IconFoodSecurity },
       { href: "/dashboard/climate-geopolitics-engine", label: "Climate Geopolitics", icon: IconClimateGeopolitics },
+      { href: "/dashboard/organ-trafficking-engine", label: "Organ Trafficking", icon: IconOrganTrafficking },
+      { href: "/dashboard/gender-apartheid-engine", label: "Gender Apartheid", icon: IconGenderApartheid },
+      { href: "/dashboard/maritime-piracy-engine", label: "Maritime Piracy", icon: IconMaritimePiracy },
     ],
   },
   {
