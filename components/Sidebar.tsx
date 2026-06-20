@@ -6835,6 +6835,34 @@ function IconHumanRightsDefenders({ className }: { className?: string }) {
   );
 }
 
+function IconGenderBasedViolence({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v8M9 17h6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 5l-3 3M16 5h3v3" />
+    </svg>
+  );
+}
+
+function IconRightToFood({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8 3 4 6 4 10c0 5 8 11 8 11s8-6 8-11c0-4-4-7-8-7Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+    </svg>
+  );
+}
+
+function IconAntiCorruption({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" />
+      <line x1="4" y1="4" x2="20" y2="20" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7498,6 +7526,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/right-to-privacy-engine", label: "Droit à la Vie Privée", icon: IconRightToPrivacy },
       { href: "/dashboard/access-to-justice-engine", label: "Accès à la Justice", icon: IconAccessToJustice },
       { href: "/dashboard/human-rights-defenders-engine", label: "Défenseurs DH", icon: IconHumanRightsDefenders },
+      { href: "/dashboard/gender-based-violence-engine", label: "Violence de Genre", icon: IconGenderBasedViolence },
+      { href: "/dashboard/right-to-food-engine", label: "Droit à l'Alimentation", icon: IconRightToFood },
+      { href: "/dashboard/anti-corruption-engine", label: "Anti-Corruption", icon: IconAntiCorruption },
     ],
   },
   {
