@@ -6221,6 +6221,32 @@ function IconStateTerrorism({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconEcocide({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8.5 3 5 6 5 10c0 2.5 1.5 4.5 3.5 5.5L7 21h10l-1.5-5.5C17.5 14.5 19 12.5 19 10c0-4-3.5-7-7-7z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M9 8c0 0 1.5 2 3 2s3-2 3-2" />
+    </svg>
+  );
+}
+function IconForcedSterilization({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+      <line x1="4" y1="4" x2="20" y2="20" strokeLinecap="round" />
+    </svg>
+  );
+}
+function IconPoliticalAssassination({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="9" />
+      <line x1="12" y1="3" x2="12" y2="21" strokeLinecap="round" />
+      <line x1="3" y1="12" x2="21" y2="12" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -6825,6 +6851,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/child-soldiers-engine", label: "Child Soldiers", icon: IconChildSoldiers },
       { href: "/dashboard/cultural-genocide-engine", label: "Cultural Genocide", icon: IconCulturalGenocide },
       { href: "/dashboard/state-terrorism-engine", label: "State Terrorism", icon: IconStateTerrorism },
+      { href: "/dashboard/ecocide-engine", label: "Écocide", icon: IconEcocide },
+      { href: "/dashboard/forced-sterilization-engine", label: "Stérilisations Forcées", icon: IconForcedSterilization },
+      { href: "/dashboard/political-assassination-engine", label: "Assassinats Politiques", icon: IconPoliticalAssassination },
     ],
   },
   {
