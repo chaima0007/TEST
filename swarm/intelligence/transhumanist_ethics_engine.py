@@ -86,8 +86,14 @@ class TranshumanistEntity:
         return round(self.composite_score / 100 * 10, 2)
 
     @property
-    def pattern_severity(self) -> str:
-        return PATTERNS.get(self.primary_pattern, {}).get("severity_fr", "modéré")
+    def recommended_action(self) -> str:
+        if self.risk_level == "critique":
+            return "suspension_programme_augmentation_audit_indépendant"
+        if self.risk_level == "élevé":
+            return "engagement_urgent_régulateurs_cadre_juridique"
+        if self.risk_level == "modéré":
+            return "veille_éthique_consultation_comités_spécialisés"
+        return "surveillance_transhumaniste_standard"
 
     def to_dict(self) -> Dict[str, Any]:
         """Returns exactly 15 keys."""
@@ -105,8 +111,8 @@ class TranshumanistEntity:
             "primary_pattern": self.primary_pattern,
             "key_signals": self.key_signals,
             "estimated_transhumanist_index": self.estimated_transhumanist_index,
-            "pattern_severity": self.pattern_severity,
             "last_updated": datetime.now(timezone.utc).isoformat(),
+            "recommended_action": self.recommended_action,
         }
 
 

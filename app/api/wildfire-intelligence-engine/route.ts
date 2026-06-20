@@ -25,8 +25,8 @@ interface WildfireEntity {
   primary_pattern: string;
   key_signals: string[];
   estimated_wildfire_index: number;
-  action_fr: string;
   last_updated: string;
+  recommended_action: string;
 }
 
 interface WildfireSummary {
@@ -34,14 +34,8 @@ interface WildfireSummary {
   avg_composite: number;
   risk_distribution: Record<string, number>;
   pattern_distribution: Record<string, number>;
-  top_risk_entities: WildfireEntity[];
-  critical_alerts: Array<{
-    entity_id: string;
-    name: string;
-    composite_score: number;
-    primary_pattern: string;
-    alert: string;
-  }>;
+  top_risk_entities: string[];
+  critical_alerts: string[];
   last_analysis: string;
   engine_version: string;
   domain: string;
@@ -97,8 +91,7 @@ function getMockData(): WildfireSummary {
         "Superficie brûlée cumulée dépassant 500 000 hectares depuis janvier",
       ],
       estimated_wildfire_index: 7.33, // round(73.25/100*10,2)
-      action_fr:
-        "Déploiement immédiat des équipes de lutte contre l'incendie et évacuation des zones à risque. Coordination interagences et demande de renforts aériens.",
+      recommended_action: "déploiement_immédiat_équipes_lutte_incendie",
       last_updated: now,
     },
     // WF-002 — Amazon Deforestation Region — critique (83.0)
@@ -120,8 +113,7 @@ function getMockData(): WildfireSummary {
         "Concentration de CO₂ forestier anormalement élevée détectée par satellite",
       ],
       estimated_wildfire_index: 8.3,
-      action_fr:
-        "Révision urgente des politiques de prévention et renforcement des capacités de débroussaillage. Audit immédiat des protocoles de gestion forestière.",
+      recommended_action: "déploiement_immédiat_équipes_lutte_incendie",
       last_updated: now,
     },
     // WF-003 — Mediterranean Basin Authority — critique (68.25)
@@ -143,8 +135,7 @@ function getMockData(): WildfireSummary {
         "Infrastructure de détection précoce défaillante dans 60 % des zones forestières",
       ],
       estimated_wildfire_index: 6.83,
-      action_fr:
-        "Déploiement immédiat des équipes de lutte contre l'incendie et évacuation des zones à risque. Coordination interagences et demande de renforts aériens.",
+      recommended_action: "déploiement_immédiat_équipes_lutte_incendie",
       last_updated: now,
     },
     // WF-004 — Australian Bushfire Region — élevé (50.1)
@@ -166,8 +157,7 @@ function getMockData(): WildfireSummary {
         "Manque de personnels formés pour la saison des feux — déficit de 35 % des effectifs",
       ],
       estimated_wildfire_index: 5.01,
-      action_fr:
-        "Renforcement immédiat des capacités de réponse d'urgence. Formation accélérée des équipes et acquisition de matériel supplémentaire.",
+      recommended_action: "renforcement_capacités_réponse_urgence",
       last_updated: now,
     },
     // WF-005 — Siberian Taiga Agency — élevé (44.9)
@@ -189,8 +179,7 @@ function getMockData(): WildfireSummary {
         "Superficie de forêt morte (bois mort) augmentée de 18 % suite aux épidémies de scolytes",
       ],
       estimated_wildfire_index: 4.49,
-      action_fr:
-        "Mise en place de programmes de restauration écologique. Surveillance renforcée des zones de biodiversité sensibles et plans de réhabilitation.",
+      recommended_action: "programme_restauration_écologique_surveillance",
       last_updated: now,
     },
     // WF-006 — Portuguese Forest Service — modéré (26.9)
@@ -212,8 +201,7 @@ function getMockData(): WildfireSummary {
         "Indices de risque saisonnier en hausse précoce — 3 semaines avant la normale",
       ],
       estimated_wildfire_index: 2.69,
-      action_fr:
-        "Activation des protocoles de surveillance saisonnière. Mise à jour des plans de prévention et sensibilisation des communautés locales.",
+      recommended_action: "activation_protocoles_surveillance_saisonnière",
       last_updated: now,
     },
     // WF-007 — Canadian Fire Watch — faible (11.85)
@@ -235,8 +223,7 @@ function getMockData(): WildfireSummary {
         "Réseau de surveillance par drone opérationnel sur l'ensemble des zones à risque",
       ],
       estimated_wildfire_index: 1.19,
-      action_fr:
-        "Activation des protocoles de surveillance saisonnière. Mise à jour des plans de prévention et sensibilisation des communautés locales.",
+      recommended_action: "activation_protocoles_surveillance_saisonnière",
       last_updated: now,
     },
     // WF-008 — Scandinavian Forest Authority — faible (8.35)
@@ -258,8 +245,7 @@ function getMockData(): WildfireSummary {
         "Investissement record dans la télédétection satellitaire des incendies — couverture 100 %",
       ],
       estimated_wildfire_index: 0.83,
-      action_fr:
-        "Activation des protocoles de surveillance saisonnière. Mise à jour des plans de prévention et sensibilisation des communautés locales.",
+      recommended_action: "activation_protocoles_surveillance_saisonnière",
       last_updated: now,
     },
   ];
@@ -269,9 +255,14 @@ function getMockData(): WildfireSummary {
   // avg_estimated_wildfire_index = round(45.83 / 100 * 10, 2) = 4.58
   const avg_estimated_wildfire_index = 4.58;
 
-  const top_risk_entities = entities
+  const top_risk_entities: string[] = entities
     .filter((e) => e.risk_level === "critique")
-    .sort((a, b) => b.composite_score - a.composite_score);
+    .sort((a, b) => b.composite_score - a.composite_score)
+    .map((e) => e.name);
+
+  const critical_alerts: string[] = entities
+    .filter((e) => e.risk_level === "critique")
+    .map((e) => e.name);
 
   return {
     total_entities: 8,
@@ -290,32 +281,7 @@ function getMockData(): WildfireSummary {
       "Risque Saisonnier Émergent": 3,
     },
     top_risk_entities,
-    critical_alerts: [
-      {
-        entity_id: "WF-002",
-        name: "Amazon Deforestation Region",
-        composite_score: 83.0,
-        primary_pattern: "Déficit Prévention Critique",
-        alert:
-          "Absence critique de pare-feux et de zones tampons. Sous-investissement chronique dans les mesures préventives de gestion forestière.",
-      },
-      {
-        entity_id: "WF-001",
-        name: "California Wildfire Zone",
-        composite_score: 73.25,
-        primary_pattern: "Propagation Catastrophique",
-        alert:
-          "Vitesse de propagation extrême détectée avec des vents défavorables et végétation hautement inflammable.",
-      },
-      {
-        entity_id: "WF-003",
-        name: "Mediterranean Basin Authority",
-        composite_score: 68.25,
-        primary_pattern: "Propagation Catastrophique",
-        alert:
-          "Vitesse de propagation extrême détectée avec des vents défavorables et végétation hautement inflammable.",
-      },
-    ],
+    critical_alerts,
     last_analysis: now,
     engine_version: "1.0.0",
     domain: "wildfire",

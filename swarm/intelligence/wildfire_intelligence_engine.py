@@ -90,6 +90,15 @@ class WildfireEntity:
             return "Impact Écosystème Majeur"
         return "Risque Saisonnier Émergent"
 
+    def _recommended_action(self, risk: str) -> str:
+        if risk == "critique":
+            return "déploiement_immédiat_équipes_lutte_incendie"
+        if risk == "élevé":
+            return "renforcement_capacités_réponse_urgence"
+        if risk == "modéré":
+            return "programme_restauration_écologique_surveillance"
+        return "activation_protocoles_surveillance_saisonnière"
+
     def to_dict(self) -> Dict[str, Any]:
         composite = self._composite_score()
         risk = self._risk_level(composite)
@@ -109,8 +118,8 @@ class WildfireEntity:
             "primary_pattern": pattern,
             "key_signals": self.key_signals,
             "estimated_wildfire_index": estimated_wildfire_index,
-            "action_fr": PATTERNS[pattern]["action_fr"],
             "last_updated": datetime.now(timezone.utc).isoformat(),
+            "recommended_action": self._recommended_action(risk),
         }
 
 

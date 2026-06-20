@@ -80,8 +80,14 @@ class TelemedicineEntity:
         self.key_signals = key_signals
         self.estimated_telemedicine_index = round(self.composite_score / 100 * 10, 2)
         self.last_updated = "2026-06-20"
-        _pattern_map = {p["name"]: p["severity_fr"] for p in PATTERNS}
-        self.pattern_severity = _pattern_map.get(primary_pattern, "inconnu")
+        if self.risk_level == "critique":
+            self.recommended_action = "intervention_urgente_infrastructure_télémédecine"
+        elif self.risk_level == "élevé":
+            self.recommended_action = "audit_sécurité_données_santé_prioritaire"
+        elif self.risk_level == "modéré":
+            self.recommended_action = "programme_adoption_sensibilisation_médecins"
+        else:
+            self.recommended_action = "veille_qualité_téléconsultation_continue"
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -96,10 +102,10 @@ class TelemedicineEntity:
             "adoption_score": self.adoption_score,
             "risk_level": self.risk_level,
             "primary_pattern": self.primary_pattern,
-            "pattern_severity": self.pattern_severity,
             "key_signals": self.key_signals,
             "estimated_telemedicine_index": self.estimated_telemedicine_index,
             "last_updated": self.last_updated,
+            "recommended_action": self.recommended_action,
         }
 
 

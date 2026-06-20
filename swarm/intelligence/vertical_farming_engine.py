@@ -112,6 +112,17 @@ class FarmingEntity:
     def estimated_farming_index(self) -> float:
         return round(self.composite_score / 100 * 10, 2)
 
+    @property
+    def recommended_action(self) -> str:
+        rl = self.risk_level
+        if rl == "critique":
+            return "audit_immédiat_protocole_culture_optimisation_rendement"
+        if rl == "élevé":
+            return "révision_architecture_modulaire_scalabilité"
+        if rl == "modéré":
+            return "diversification_cultures_haute_valeur_ajoutée"
+        return "maintien_certifications_surveillance_rentabilité"
+
     def to_dict(self) -> dict:
         cs = self.composite_score
         return {
@@ -119,7 +130,6 @@ class FarmingEntity:
             "name": self.name,
             "country": self.country,
             "sector": self.sector,
-            "domain": VerticalFarmingEngine.DOMAIN,
             "composite_score": cs,
             "yield_score": self.yield_score,
             "energy_score": self.energy_score,
@@ -130,6 +140,7 @@ class FarmingEntity:
             "key_signals": self.key_signals,
             "estimated_farming_index": self.estimated_farming_index,
             "last_updated": self.last_updated,
+            "recommended_action": self.recommended_action,
         }
 
 
@@ -386,11 +397,8 @@ class VerticalFarmingEngine:
         self._last_analysis = None
 
 
-def summary() -> dict:
-    """Module-level summary — returns the canonical 13-key dict."""
-    return VerticalFarmingEngine().summary()
-
-
 def analyze_farming() -> dict:
     """Entry point for the Caelum Partners swarm orchestrator."""
-    return summary()
+    engine = VerticalFarmingEngine()
+    engine.analyze_farming()
+    return engine.summary()

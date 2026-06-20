@@ -38,7 +38,7 @@ function getMockData() {
       adoption_score: 80.0,
       risk_level: "critique",
       primary_pattern: "Désert Médical Numérique",
-      pattern_severity: "critique",
+      recommended_action: "intervention_urgente_infrastructure_télémédecine",
       key_signals: [
         "Couverture réseau mobile inférieure à 30% dans les zones rurales périphériques",
         "Absence de dispositifs de diagnostic connectés dans 68% des centres de santé",
@@ -59,7 +59,7 @@ function getMockData() {
       adoption_score: 75.0,
       risk_level: "critique",
       primary_pattern: "Désert Médical Numérique",
-      pattern_severity: "critique",
+      recommended_action: "intervention_urgente_infrastructure_télémédecine",
       key_signals: [
         "Ratio médecin-patient de 1 pour 12 000 habitants en zone rurale",
         "Infrastructure électrique défaillante rendant inutilisables 40% des équipements télé-médicaux",
@@ -80,7 +80,7 @@ function getMockData() {
       adoption_score: 70.0,
       risk_level: "critique",
       primary_pattern: "Fraude Téléconsultation",
-      pattern_severity: "critique",
+      recommended_action: "intervention_urgente_infrastructure_télémédecine",
       key_signals: [
         "Multiplication des plateformes non agréées proposant des consultations médicales frauduleuses",
         "Usurpation d'identité de médecins détectée dans 23% des sessions de téléconsultation auditées",
@@ -101,7 +101,7 @@ function getMockData() {
       adoption_score: 50.0,
       risk_level: "élevé",
       primary_pattern: "Faille Sécurité Données Santé",
-      pattern_severity: "élevé",
+      recommended_action: "audit_sécurité_données_santé_prioritaire",
       key_signals: [
         "Dossiers médicaux électroniques stockés sans chiffrement sur des serveurs locaux vulnérables",
         "Absence de protocole d'authentification multifacteur pour les accès aux systèmes médicaux distants",
@@ -122,7 +122,7 @@ function getMockData() {
       adoption_score: 52.0,
       risk_level: "élevé",
       primary_pattern: "Faille Sécurité Données Santé",
-      pattern_severity: "élevé",
+      recommended_action: "audit_sécurité_données_santé_prioritaire",
       key_signals: [
         "API de partage de données médicales exposées sans authentification sur des endpoints publics",
         "Conformité PDPA insuffisante avec stockage de données biométriques hors consentement",
@@ -143,7 +143,7 @@ function getMockData() {
       adoption_score: 22.0,
       risk_level: "modéré",
       primary_pattern: "Adoption Insuffisante",
-      pattern_severity: "modéré",
+      recommended_action: "programme_adoption_sensibilisation_médecins",
       key_signals: [
         "Taux d'utilisation de la plateforme de télémédecine inférieur à 15% parmi les praticiens inscrits",
         "Résistance au changement des équipes médicales formées aux pratiques de consultation présentielle",
@@ -164,7 +164,7 @@ function getMockData() {
       adoption_score: 15.0,
       risk_level: "faible",
       primary_pattern: "Qualité Consultation Dégradée",
-      pattern_severity: "faible",
+      recommended_action: "veille_qualité_téléconsultation_continue",
       key_signals: [
         "Score de satisfaction patient en baisse de 18 points suite à la dégradation de la qualité audio-vidéo",
         "Taux de rediagnostic post-téléconsultation de 8% indiquant des erreurs d'évaluation à distance",
@@ -185,7 +185,7 @@ function getMockData() {
       adoption_score: 10.0,
       risk_level: "faible",
       primary_pattern: "Qualité Consultation Dégradée",
-      pattern_severity: "faible",
+      recommended_action: "veille_qualité_téléconsultation_continue",
       key_signals: [
         "Latence réseau moyenne de 340ms dégradant significativement la qualité des consultations spécialisées",
         "Taux d'abandon en cours de téléconsultation de 22% lié à des problèmes de connectivité",
@@ -198,7 +198,7 @@ function getMockData() {
 
   const risk_distribution: Record<string, number> = {};
   const pattern_distribution: Record<string, number> = {};
-  const top_risk_entities: Array<{ entity_id: string; name: string; composite_score: number; risk_level: string }> = [];
+  const top_risk_entities: string[] = [];
   const critical_alerts: string[] = [];
   let totalComposite = 0;
 
@@ -207,15 +207,8 @@ function getMockData() {
     pattern_distribution[e.primary_pattern] = (pattern_distribution[e.primary_pattern] || 0) + 1;
     totalComposite += e.composite_score;
     if (e.risk_level === "critique") {
-      top_risk_entities.push({
-        entity_id: e.entity_id,
-        name: e.name,
-        composite_score: e.composite_score,
-        risk_level: e.risk_level,
-      });
-      critical_alerts.push(
-        `${e.entity_id} — ${e.name} (${e.country}): ${e.primary_pattern} [composite=${e.composite_score}]`
-      );
+      top_risk_entities.push(e.name);
+      critical_alerts.push(e.name);
     }
   }
 

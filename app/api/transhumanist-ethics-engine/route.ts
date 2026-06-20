@@ -21,24 +21,8 @@ interface EntityDict {
   primary_pattern: string;
   key_signals: string[];
   estimated_transhumanist_index: number;
-  pattern_severity: string;
   last_updated: string;
-}
-
-interface TopRiskEntity {
-  entity_id: string;
-  name: string;
-  composite_score: number;
-  risk_level: string;
-  primary_pattern: string;
-}
-
-interface CriticalAlert {
-  entity_id: string;
-  name: string;
-  composite_score: number;
-  primary_pattern: string;
-  alert: string;
+  recommended_action: string;
 }
 
 interface MockData {
@@ -46,8 +30,8 @@ interface MockData {
   avg_composite: number;
   risk_distribution: Record<string, number>;
   pattern_distribution: Record<string, number>;
-  top_risk_entities: TopRiskEntity[];
-  critical_alerts: CriticalAlert[];
+  top_risk_entities: string[];
+  critical_alerts: string[];
   last_analysis: string;
   engine_version: string;
   domain: string;
@@ -91,7 +75,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Pression institutionnelle documentée sur les participants vulnérables",
     ],
     estimated_transhumanist_index: 7.62,
-    pattern_severity: "critique",
+    recommended_action: "suspension_programme_augmentation_audit_indépendant",
     last_updated: new Date().toISOString(),
   },
   {
@@ -112,7 +96,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Critères de sélection génétique alignés sur des préférences socio-culturelles dominantes",
     ],
     estimated_transhumanist_index: 7.08,
-    pattern_severity: "critique",
+    recommended_action: "suspension_programme_augmentation_audit_indépendant",
     last_updated: new Date().toISOString(),
   },
   {
@@ -133,7 +117,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Stratification sociale amplifiée par les technologies d'augmentation biologique",
     ],
     estimated_transhumanist_index: 6.53,
-    pattern_severity: "critique",
+    recommended_action: "suspension_programme_augmentation_audit_indépendant",
     last_updated: new Date().toISOString(),
   },
   {
@@ -154,7 +138,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Absence de normes internationales appliquées pour les prothèses cognitives",
     ],
     estimated_transhumanist_index: 4.98,
-    pattern_severity: "élevé",
+    recommended_action: "engagement_urgent_régulateurs_cadre_juridique",
     last_updated: new Date().toISOString(),
   },
   {
@@ -175,7 +159,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Supervision étatique insuffisante des programmes d'extension de vie expérimentaux",
     ],
     estimated_transhumanist_index: 4.63,
-    pattern_severity: "élevé",
+    recommended_action: "engagement_urgent_régulateurs_cadre_juridique",
     last_updated: new Date().toISOString(),
   },
   {
@@ -196,7 +180,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Risque résiduel d'inégalité d'accès malgré les engagements d'équité affichés",
     ],
     estimated_transhumanist_index: 3.14,
-    pattern_severity: "modéré",
+    recommended_action: "veille_éthique_consultation_comités_spécialisés",
     last_updated: new Date().toISOString(),
   },
   {
@@ -217,7 +201,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Programmes d'accès inclusif mis en place pour les populations défavorisées",
     ],
     estimated_transhumanist_index: 1.42,
-    pattern_severity: "modéré",
+    recommended_action: "veille_éthique_consultation_comités_spécialisés",
     last_updated: new Date().toISOString(),
   },
   {
@@ -238,7 +222,7 @@ const MOCK_ENTITIES: EntityDict[] = [
       "Transparence totale sur les objectifs et méthodes des programmes de recherche",
     ],
     estimated_transhumanist_index: 0.95,
-    pattern_severity: "modéré",
+    recommended_action: "veille_éthique_consultation_comités_spécialisés",
     last_updated: new Date().toISOString(),
   },
 ];
@@ -261,50 +245,14 @@ function getMockData(): MockData {
       "Risque Éthique Émergent": 3,
     },
     top_risk_entities: [
-      {
-        entity_id: "TRH-001",
-        name: "NeuralLink Corp",
-        composite_score: 76.15,
-        risk_level: "critique",
-        primary_pattern: "Augmentation Non Consentie",
-      },
-      {
-        entity_id: "TRH-002",
-        name: "GenEdit Therapeutics",
-        composite_score: 70.75,
-        risk_level: "critique",
-        primary_pattern: "Dérive Eugéniste",
-      },
-      {
-        entity_id: "TRH-003",
-        name: "BioEnhance Labs",
-        composite_score: 65.25,
-        risk_level: "critique",
-        primary_pattern: "Inégalité d'Accès Transhumaniste",
-      },
+      "NeuralLink Corp",
+      "GenEdit Therapeutics",
+      "BioEnhance Labs",
     ],
     critical_alerts: [
-      {
-        entity_id: "TRH-001",
-        name: "NeuralLink Corp",
-        composite_score: 76.15,
-        primary_pattern: "Augmentation Non Consentie",
-        alert: "Expérimentations d'augmentation conduites sans consentement éclairé documenté",
-      },
-      {
-        entity_id: "TRH-002",
-        name: "GenEdit Therapeutics",
-        composite_score: 70.75,
-        primary_pattern: "Dérive Eugéniste",
-        alert: "Sélection génétique orientée vers des critères sociaux — dérive eugéniste détectée",
-      },
-      {
-        entity_id: "TRH-003",
-        name: "BioEnhance Labs",
-        composite_score: 65.25,
-        primary_pattern: "Inégalité d'Accès Transhumaniste",
-        alert: "Accès aux augmentations réservé aux populations fortunées — fracture transhumaniste",
-      },
+      "NeuralLink Corp",
+      "GenEdit Therapeutics",
+      "BioEnhance Labs",
     ],
     last_analysis: new Date().toISOString(),
     engine_version: "1.0.0",
