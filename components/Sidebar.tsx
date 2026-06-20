@@ -6143,6 +6143,36 @@ function IconTransnationalCrime() {
   );
 }
 
+function IconSpaceWarfare() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <circle cx="12" cy="12" r="3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2 12h4M18 12h4M12 2v4M12 18v4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" />
+    </svg>
+  );
+}
+
+function IconFoodSecurity() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v20M8 6c0 0 0 4 4 4s4-4 4-4M8 10c0 0-4 0-4 4h16c0-4-4-4-4-4M4 18h16" />
+    </svg>
+  );
+}
+
+function IconClimateGeopolitics() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.6 9h16.8M3.6 15h16.8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-2.4 3-3 6-3 9s.6 6 3 9M12 3c2.4 3 3 6 3 9s-.6 6-3 9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 7l2-2-2-2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -6737,6 +6767,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/lawfare-engine", label: "Lawfare Engine", icon: IconLawfare },
       { href: "/dashboard/ai-surveillance-autocracy-engine", label: "AI Surveillance Autocracy", icon: IconAISurveillance },
       { href: "/dashboard/transnational-crime-engine", label: "Transnational Crime", icon: IconTransnationalCrime },
+      { href: "/dashboard/space-warfare-engine", label: "Space Warfare", icon: IconSpaceWarfare },
+      { href: "/dashboard/food-security-weaponization-engine", label: "Food Security Weaponization", icon: IconFoodSecurity },
+      { href: "/dashboard/climate-geopolitics-engine", label: "Climate Geopolitics", icon: IconClimateGeopolitics },
     ],
   },
   {
