@@ -6710,6 +6710,42 @@ function IconClimateJustice({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 39 icons ───────────────────────────────────────────────────────────
+
+function IconEconomicRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="12" r="9" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v1.5M12 15.5V17" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.5 14.5c0 1.1.9 2 2.5 2s2.5-.9 2.5-2-1-1.8-2.5-2-2.5-.9-2.5-2 .9-2 2.5-2 2.5.9 2.5 2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16 8l2-2M16 8h2M16 8v2" />
+    </svg>
+  );
+}
+
+function IconChildRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="6" r="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 21v-4a4 4 0 0 1 8 0v4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 11v4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 4l1.5-1.5M18 4h2M18 4v2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 6.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+    </svg>
+  );
+}
+
+function IconRefugeeRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 8l2-3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7361,6 +7397,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/racial-justice-engine", label: "Justice Raciale", icon: IconRacialJustice },
       { href: "/dashboard/digital-rights-engine", label: "Droits Numériques", icon: IconDigitalRights },
       { href: "/dashboard/climate-justice-engine", label: "Justice Climatique", icon: IconClimateJustice },
+      { href: "/dashboard/economic-rights-engine", label: "Droits Économiques", icon: IconEconomicRights },
+      { href: "/dashboard/child-rights-engine", label: "Droits Enfants", icon: IconChildRights },
+      { href: "/dashboard/refugee-rights-engine", label: "Droits Réfugiés", icon: IconRefugeeRights },
     ],
   },
   {
