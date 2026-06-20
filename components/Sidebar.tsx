@@ -5762,6 +5762,27 @@ function IconPowerVacuum({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconSeedSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 22V12m0 0c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8zm0 0c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8z" />
+    </svg>
+  );
+}
+function IconAcademicFreedom({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+    </svg>
+  );
+}
+function IconFinancialContagion({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+    </svg>
+  );
+}
 
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
@@ -6335,6 +6356,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/treaty-erosion-engine", label: "Érosion Ordre International", icon: IconTreatyErosion },
       { href: "/dashboard/linguistic-sovereignty-engine", label: "Souveraineté Linguistique", icon: IconLinguisticSovereignty },
       { href: "/dashboard/power-vacuum-engine", label: "Vides de Pouvoir", icon: IconPowerVacuum },
+      { href: "/dashboard/seed-sovereignty-engine", label: "Souveraineté Semencière", icon: IconSeedSovereignty },
+      { href: "/dashboard/academic-freedom-engine", label: "Liberté Académique", icon: IconAcademicFreedom },
+      { href: "/dashboard/financial-contagion-engine", label: "Contagion Financière", icon: IconFinancialContagion },
     ],
   },
   {
