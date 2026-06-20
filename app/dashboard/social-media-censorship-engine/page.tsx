@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const RC: Record<string,string> = { critique:"text-red-400","élevé":"text-orange-400",modéré:"text-yellow-400",faible:"text-emerald-400" };
 const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","élevé":"border-orange-500/30 bg-orange-500/10",modéré:"border-yellow-500/30 bg-yellow-500/10",faible:"border-emerald-500/30 bg-emerald-500/10" };
 
-const ACCENT = "#991b1b";
+const ACCENT = "#6b21a8";
 
 interface Entity {
   entity_id: string;
@@ -12,11 +12,11 @@ interface Entity {
   country: string;
   sector: string;
   composite_score: number;
-  forced_organ_extraction_scale_score: number;
-  transplant_tourism_infrastructure_score: number;
-  donor_coercion_vulnerability_score: number;
-  prosecution_accountability_gap_score: number;
-  estimated_organ_trafficking_index: number;
+  platform_blocking_scope_score: number;
+  content_removal_political_score: number;
+  algorithmic_suppression_score: number;
+  user_data_state_access_score: number;
+  estimated_social_media_censorship_index: number;
   risk_level: string;
   primary_pattern: string;
   key_signals: string[];
@@ -27,7 +27,7 @@ interface Entity {
 interface DashData {
   total_entities: number;
   avg_composite: number;
-  avg_estimated_organ_trafficking_index: number;
+  avg_estimated_social_media_censorship_index: number;
   risk_distribution: Record<string, number>;
   pattern_distribution: Record<string, number>;
   confidence_score: number;
@@ -65,14 +65,14 @@ export default function Page() {
   const [tab, setTab] = useState(0);
 
   useEffect(() => {
-    fetch("/api/organ-trafficking-engine")
+    fetch("/api/social-media-censorship-engine")
       .then(r => r.json())
       .then(j => setData(j.payload ?? j.data ?? j));
   }, []);
 
   if (!data) return (
     <div className="bg-slate-950 min-h-screen flex items-center justify-center">
-      <div className="text-red-400 animate-pulse">Initialisation du Moteur Trafic d&apos;Organes…</div>
+      <div className="text-purple-400 animate-pulse">Initialisation du Moteur Censure Réseaux Sociaux…</div>
     </div>
   );
 
@@ -85,14 +85,14 @@ export default function Page() {
   const confidence = typeof data.confidence_score === "number"
     ? `${(data.confidence_score * 100).toFixed(0)}%`
     : "—";
-  const avgIndex = typeof data.avg_estimated_organ_trafficking_index === "number"
-    ? data.avg_estimated_organ_trafficking_index.toFixed(2)
+  const avgIndex = typeof data.avg_estimated_social_media_censorship_index === "number"
+    ? data.avg_estimated_social_media_censorship_index.toFixed(2)
     : "—";
 
   const kpis = [
     { label: "Entités", value: data.total_entities ?? allEntities.length },
     { label: "Score moyen", value: typeof data.avg_composite === "number" ? data.avg_composite.toFixed(1) : "—" },
-    { label: "Index Trafic Organes", value: avgIndex },
+    { label: "Index Censure", value: avgIndex },
     { label: "Confiance", value: confidence },
     { label: "Critique", value: critCount },
     { label: "Sources", value: sources },
@@ -104,10 +104,10 @@ export default function Page() {
       <div>
         <div className="flex items-center gap-3 mb-1">
           <div className="w-3 h-3 rounded-full" style={{ background: ACCENT }} />
-          <h1 className="text-2xl font-bold tracking-tight">Trafic d&apos;Organes</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Censure Réseaux Sociaux</h1>
         </div>
         <p className="text-slate-400 text-sm ml-6">
-          Extraction forcée d&apos;organes, tourisme de transplantation et vulnérabilités des donneurs
+          Blocage de plateformes, suppression de contenus et surveillance étatique des réseaux sociaux
         </p>
       </div>
 
@@ -131,10 +131,10 @@ export default function Page() {
               return allEntities.reduce((a, e) => a + (Number(e[key]) || 0), 0) / allEntities.length;
             };
             return [
-              { label: "Extraction Forcée", key: "forced_organ_extraction_scale_score" as keyof Entity },
-              { label: "Tourisme Transplantation", key: "transplant_tourism_infrastructure_score" as keyof Entity },
-              { label: "Vulnérabilité Donneurs", key: "donor_coercion_vulnerability_score" as keyof Entity },
-              { label: "Déficit Poursuites", key: "prosecution_accountability_gap_score" as keyof Entity },
+              { label: "Blocage Plateformes", key: "platform_blocking_scope_score" as keyof Entity },
+              { label: "Suppression Politique", key: "content_removal_political_score" as keyof Entity },
+              { label: "Suppression Algorithmique", key: "algorithmic_suppression_score" as keyof Entity },
+              { label: "Accès État aux Données", key: "user_data_state_access_score" as keyof Entity },
             ].map(s => (
               <GaugeRing key={s.key} value={avg(s.key)} label={s.label} />
             ));
@@ -173,7 +173,7 @@ export default function Page() {
               <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(e.composite_score, 100)}%`, background: ACCENT }} />
             </div>
             <div className="text-xs text-slate-500 mt-2">
-              Index Trafic Organes: <span className="font-medium text-red-300">{e.estimated_organ_trafficking_index}</span>
+              Index Censure: <span className="font-medium text-purple-300">{e.estimated_social_media_censorship_index}</span>
             </div>
           </div>
         ))}
@@ -213,16 +213,16 @@ export default function Page() {
                       <div className="text-xs text-slate-400">Score composite</div>
                     </div>
                     <div className="ml-auto text-right">
-                      <div className="text-lg font-bold text-red-300">{selected.estimated_organ_trafficking_index}</div>
-                      <div className="text-xs text-slate-500">Index Trafic Organes</div>
+                      <div className="text-lg font-bold text-purple-300">{selected.estimated_social_media_censorship_index}</div>
+                      <div className="text-xs text-slate-500">Index Censure</div>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { label: "Extraction Forcée", value: selected.forced_organ_extraction_scale_score },
-                      { label: "Tourisme Transplantation", value: selected.transplant_tourism_infrastructure_score },
-                      { label: "Vulnérabilité Donneurs", value: selected.donor_coercion_vulnerability_score },
-                      { label: "Déficit Poursuites", value: selected.prosecution_accountability_gap_score },
+                      { label: "Blocage Plateformes", value: selected.platform_blocking_scope_score },
+                      { label: "Suppression Politique", value: selected.content_removal_political_score },
+                      { label: "Suppression Algorithmique", value: selected.algorithmic_suppression_score },
+                      { label: "Accès État aux Données", value: selected.user_data_state_access_score },
                     ].map(s => (
                       <div key={s.label} className="bg-slate-800 rounded-lg p-3">
                         <div className="text-xs text-slate-500 mb-1">{s.label}</div>
