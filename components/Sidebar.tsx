@@ -7032,6 +7032,37 @@ function IconEconomicSanctions({ className }: { className?: string }) {
   );
 }
 
+function IconJuvenileJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="7" r="3" strokeLinecap="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h18M8 12v4M16 12v4" />
+    </svg>
+  );
+}
+
+function IconBusinessHumanRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <rect x="2" y="7" width="20" height="14" rx="2" strokeLinecap="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v4M10 14h4" />
+      <line x1="4" y1="4" x2="20" y2="20" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconMigrantDetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M3 14h18M7 3v18M17 3v18" />
+      <rect x="3" y="3" width="18" height="18" rx="2" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7716,6 +7747,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/whistleblower-protection-engine", label: "Lanceurs d'Alerte", icon: IconWhistleblowerProtection },
       { href: "/dashboard/food-sovereignty-engine", label: "Souveraineté Alimentaire", icon: IconFoodSovereignty },
       { href: "/dashboard/economic-sanctions-human-rights-engine", label: "Sanctions Économiques DR", icon: IconEconomicSanctions },
+      { href: "/dashboard/juvenile-justice-engine", label: "Justice Juvénile", icon: IconJuvenileJustice },
+      { href: "/dashboard/business-human-rights-engine", label: "Entreprises & Droits", icon: IconBusinessHumanRights },
+      { href: "/dashboard/migrant-detention-engine", label: "Détention Migrants", icon: IconMigrantDetention },
     ],
   },
   {
