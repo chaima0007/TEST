@@ -10,15 +10,14 @@ interface Entity {
   country: string;
   sector: string;
   composite_score: number;
-  manipulation_score: number;
-  consent_violation_score: number;
-  financial_harm_score: number;
-  regulatory_risk_score: number;
+  deception_score: number;
+  coercion_score: number;
+  addiction_score: number;
+  exploitation_score: number;
   risk_level: string;
   primary_pattern: string;
   key_signals: string[];
   estimated_darkpattern_index: number;
-  recommended_action: string;
   last_updated: string;
 }
 
@@ -28,7 +27,7 @@ interface Summary {
   risk_distribution: Record<string, number>;
   pattern_distribution: Record<string, number>;
   top_risk_entities: string[];
-  critical_alerts: number;
+  critical_alerts: string[] | number;
   last_analysis: string;
   engine_version: string;
   domain: string;
@@ -60,11 +59,11 @@ const RISK_BAR_COLORS: Record<string, string> = {
 };
 
 const PATTERN_ACTIONS: Record<string, string> = {
-  "Manipulation Consentement Forcé": "Mise en demeure CNIL/DPA immédiate et audit UX obligatoire",
-  "Piège Abonnement Caché": "Remboursement automatique utilisateurs et rectification interface",
-  "Déceptivité Interface Systémique": "Redesign UX supervisé par autorité régulation numérique",
-  "Violation DSA Répétée": "Plan de conformité DSA accéléré avec deadline 90 jours",
-  "Monétisation Données Occulte": "Transparence politique de données et opt-out simplifié",
+  "Déception Systématique Interface": "Injonction réglementaire immédiate et retrait du marché sous 48h.",
+  "Coercition Consentement Numérique": "Audit DSA/RGPD d'urgence et suspension des flux consentement.",
+  "Ingénierie Addiction Comportementale": "Désactivation fonctionnalités addictives et audit éthique indépendant.",
+  "Exploitation Psychologique Ciblée": "Révision algorithme de recommandation et rapport DPC trimestriel.",
+  "Nudge Opaque Décisionnel": "Transparence renforcée des algorithmes et étiquetage dark patterns.",
 };
 
 function scoreToColor(score: number): string {
@@ -179,10 +178,10 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   const [tab, setTab] = useState<"scores" | "signaux" | "actions">("scores");
 
   const subScores = [
-    { label: "Manipulation UX", value: entity.manipulation_score, weight: "0.30" },
-    { label: "Violation Consentement", value: entity.consent_violation_score, weight: "0.25" },
-    { label: "Préjudice Financier", value: entity.financial_harm_score, weight: "0.25" },
-    { label: "Risque Réglementaire", value: entity.regulatory_risk_score, weight: "0.20" },
+    { label: "Déception Interface", value: entity.deception_score, weight: "0.30" },
+    { label: "Coercition", value: entity.coercion_score, weight: "0.25" },
+    { label: "Addiction", value: entity.addiction_score, weight: "0.25" },
+    { label: "Exploitation", value: entity.exploitation_score, weight: "0.20" },
   ];
 
   return (
@@ -321,7 +320,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
                   Action recommandée
                 </p>
                 <p className="text-white text-sm leading-relaxed font-medium">
-                  {entity.recommended_action || PATTERN_ACTIONS[entity.primary_pattern] || "Audit UX complémentaire requis"}
+                  {PATTERN_ACTIONS[entity.primary_pattern] || "Audit UX complémentaire requis"}
                 </p>
               </div>
               <div className="p-4 bg-slate-800 rounded-xl border border-slate-700/50">
@@ -367,7 +366,8 @@ export default function DarkPatternsEnginePage() {
     fetch("/api/dark-patterns-engine")
       .then((r) => r.json())
       .then((json) => {
-        setData(json);
+        const payload = json?.data ?? json;
+        setData(payload);
         setLoading(false);
       })
       .catch((err) => {
@@ -399,14 +399,10 @@ export default function DarkPatternsEnginePage() {
   const { entities, summary } = data;
 
   // Compute averages for gauge rings
-  const avgManipulation =
-    entities.reduce((a, e) => a + e.manipulation_score, 0) / entities.length;
-  const avgConsent =
-    entities.reduce((a, e) => a + e.consent_violation_score, 0) / entities.length;
-  const avgFinancial =
-    entities.reduce((a, e) => a + e.financial_harm_score, 0) / entities.length;
-  const avgRegulatory =
-    entities.reduce((a, e) => a + e.regulatory_risk_score, 0) / entities.length;
+  const avgDeception = entities.reduce((a, e) => a + e.deception_score, 0) / entities.length;
+  const avgCoercion = entities.reduce((a, e) => a + e.coercion_score, 0) / entities.length;
+  const avgAddiction = entities.reduce((a, e) => a + e.addiction_score, 0) / entities.length;
+  const avgExploitation = entities.reduce((a, e) => a + e.exploitation_score, 0) / entities.length;
 
   // Sector distribution
   const sectorDist: Record<string, number> = {};
@@ -420,12 +416,10 @@ export default function DarkPatternsEnginePage() {
     countryDist[e.country] = (countryDist[e.country] ?? 0) + 1;
   });
 
-  // DSA violations count (Violation DSA Répétée or regulatory_risk_score > 60)
-  const dsaViolations = entities.filter(
-    (e) =>
-      e.primary_pattern === "Violation DSA Répétée" ||
-      e.regulatory_risk_score > 60
-  ).length;
+  const criticalCount =
+    typeof summary.critical_alerts === "number"
+      ? summary.critical_alerts
+      : (summary.critical_alerts as string[]).length;
 
   // Filter
   const riskLevels = ["tous", "critique", "élevé", "modéré", "faible"];
@@ -461,13 +455,13 @@ export default function DarkPatternsEnginePage() {
           />
           <KpiCard
             label="Alertes Critiques"
-            value={summary.critical_alerts}
+            value={criticalCount}
             sub="niveau critique"
             accent="text-red-400"
           />
           <KpiCard
-            label="Score Manipulation Moyen"
-            value={avgManipulation.toFixed(1)}
+            label="Score Déception Moyen"
+            value={avgDeception.toFixed(1)}
             sub="sur 100"
             accent="text-orange-400"
           />
@@ -478,9 +472,9 @@ export default function DarkPatternsEnginePage() {
             accent="text-violet-400"
           />
           <KpiCard
-            label="Violations DSA"
-            value={dsaViolations}
-            sub="entités concernées"
+            label="Risque Élevé"
+            value={summary.risk_distribution["élevé"] ?? 0}
+            sub="entités élevées"
             accent="text-yellow-400"
           />
           <KpiCard
@@ -497,10 +491,10 @@ export default function DarkPatternsEnginePage() {
             Scores Moyens par Dimension
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <GaugeRing label="Manipulation UX (×0.30)" value={parseFloat(avgManipulation.toFixed(1))} />
-            <GaugeRing label="Violation Consentement (×0.25)" value={parseFloat(avgConsent.toFixed(1))} />
-            <GaugeRing label="Préjudice Financier (×0.25)" value={parseFloat(avgFinancial.toFixed(1))} />
-            <GaugeRing label="Risque Réglementaire (×0.20)" value={parseFloat(avgRegulatory.toFixed(1))} />
+            <GaugeRing label="Déception Interface (×0.30)" value={parseFloat(avgDeception.toFixed(1))} />
+            <GaugeRing label="Coercition (×0.25)" value={parseFloat(avgCoercion.toFixed(1))} />
+            <GaugeRing label="Addiction (×0.25)" value={parseFloat(avgAddiction.toFixed(1))} />
+            <GaugeRing label="Exploitation (×0.20)" value={parseFloat(avgExploitation.toFixed(1))} />
           </div>
         </div>
 
