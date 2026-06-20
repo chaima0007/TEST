@@ -6117,6 +6117,32 @@ type NavSection = {
   items: NavItem[];
 };
 
+function IconLawfare() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 9l9-6 9 6M6 12l6-3 6 3M6 18H3l3-6 3 6H6zM18 18h-3l3-6 3 6h-3z" />
+    </svg>
+  );
+}
+
+function IconAISurveillance() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 3l1 2M15 3l-1 2M3 9l2 1M21 9l-2 1" />
+    </svg>
+  );
+}
+
+function IconTransnationalCrime() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a2 2 0 100 4 2 2 0 000-4zM4 18a2 2 0 100 4 2 2 0 000-4zM20 18a2 2 0 100 4 2 2 0 000-4zM12 4L4 18M12 4l8 14M4 18h16" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -6708,6 +6734,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/semiconductor-war-engine", label: "Semiconductor War", icon: IconSemiconductorWar },
       { href: "/dashboard/currency-war-engine", label: "Currency War", icon: IconCurrencyWar },
       { href: "/dashboard/undersea-cable-engine", label: "Undersea Cable", icon: IconUnderseaCable },
+      { href: "/dashboard/lawfare-engine", label: "Lawfare Engine", icon: IconLawfare },
+      { href: "/dashboard/ai-surveillance-autocracy-engine", label: "AI Surveillance Autocracy", icon: IconAISurveillance },
+      { href: "/dashboard/transnational-crime-engine", label: "Transnational Crime", icon: IconTransnationalCrime },
     ],
   },
   {
