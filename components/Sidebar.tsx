@@ -6279,6 +6279,39 @@ function IconReligiousPersecution({ className }: { className?: string }) {
   );
 }
 
+function IconHumanTrafficking({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="5" r="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5v5M9 10l-3 5h12l-3-5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 19h8M10 19v-2M14 19v-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 8.5c-1.5.5-2 2-1.5 3.5M19 8.5c1.5.5 2 2 1.5 3.5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 14l-1.5 1.5M17 14l1.5 1.5" strokeDasharray="2 1" />
+    </svg>
+  );
+}
+
+function IconAntipersonnelMines({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="14" r="5" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9V6M12 6l-2-2M12 6l2-2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 11.5L5 9M16.5 11.5L19 9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 19l-2 2M15 19l2 2M12 19v2" />
+    </svg>
+  );
+}
+
+function IconFemicide({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v8M9 17h6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 5l3-3M17 5h3M17 5v3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -6888,6 +6921,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/drone-warfare-engine", label: "Drones Guerre", icon: IconDroneWarfare },
       { href: "/dashboard/ethnic-cleansing-engine", label: "Nettoyage Ethnique", icon: IconEthnicCleansing },
       { href: "/dashboard/religious-persecution-engine", label: "Persécution Religieuse", icon: IconReligiousPersecution },
+      { href: "/dashboard/human-trafficking-engine", label: "Traite Humaine", icon: IconHumanTrafficking },
+      { href: "/dashboard/antipersonnel-mines-engine", label: "Mines Antipersonnel", icon: IconAntipersonnelMines },
+      { href: "/dashboard/femicide-engine", label: "Féminicides", icon: IconFemicide },
     ],
   },
   {
