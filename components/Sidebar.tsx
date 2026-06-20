@@ -5801,6 +5801,34 @@ function IconCriminalStateCapture({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconSpaceMilitarization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L9 8H3l5 4-2 7 6-4 6 4-2-7 5-4h-6z" />
+      <circle cx="19" cy="5" r="2" fill="currentColor" opacity="0.7" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 7l2-2" />
+    </svg>
+  );
+}
+function IconAlgorithmicSurveillance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <ellipse cx="12" cy="12" rx="10" ry="5" />
+      <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.6" />
+      <path strokeLinecap="round" d="M2 12h2M20 12h2M12 2v2M12 20v2" opacity="0.5" />
+    </svg>
+  );
+}
+function IconRefugeeWeaponization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <circle cx="7" cy="6" r="2.5" />
+      <circle cx="14" cy="6" r="2.5" opacity="0.7" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2 20c0-4 2.5-6 5-6h4c2.5 0 5 2 5 6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 9l4 4-4 4" opacity="0.7" />
+    </svg>
+  );
+}
 function IconResourceCurse({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -6461,6 +6489,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/electoral-interference-engine", label: "Ingérence Électorale", icon: IconElectoralInterference },
       { href: "/dashboard/urban-heat-crisis-engine", label: "Crise Chaleur Urbaine", icon: IconUrbanHeatCrisis },
       { href: "/dashboard/criminal-state-capture-engine", label: "Capture Criminelle État", icon: IconCriminalStateCapture },
+      { href: "/dashboard/space-militarization-engine", label: "Space Militarization", icon: IconSpaceMilitarization },
+      { href: "/dashboard/algorithmic-surveillance-engine", label: "Algorithmic Surveillance", icon: IconAlgorithmicSurveillance },
+      { href: "/dashboard/refugee-weaponization-engine", label: "Refugee Weaponization", icon: IconRefugeeWeaponization },
     ],
   },
   {
