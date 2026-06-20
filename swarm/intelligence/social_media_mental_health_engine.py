@@ -218,8 +218,8 @@ class SocialMediaMentalHealthEngine:
         Distribution: ≥3 critique, ≥2 élevé, ≥1 modéré, ≥2 faible.
 
         Composite formula verification:
-          MNH-001: 82*0.30 + 88*0.25 + 74*0.25 + 62*0.20
-                 = 24.60 + 22.00 + 18.50 + 12.40 = 77.50 → critique ✓ (youth_mental_crisis: yve=88>=70)
+          MNH-001: 65*0.30 + 88*0.25 + 74*0.25 + 62*0.20
+                 = 19.50 + 22.00 + 18.50 + 12.40 = 72.40 → critique ✓ (youth_mental_crisis: aha=65<70, yve=88>=70)
           MNH-002: 78*0.30 + 65*0.25 + 66*0.25 + 72*0.20
                  = 23.40 + 16.25 + 16.50 + 14.40 = 70.55 → critique ✓ (algorithmic_radicalization: aha=78>=70)
           MNH-003: 60*0.30 + 58*0.25 + 62*0.25 + 76*0.20
@@ -237,13 +237,13 @@ class SocialMediaMentalHealthEngine:
         """
         raw = [
             # ── CRITIQUE (3) ──────────────────────────────────────────────────
-            # MNH-001: TikTok US — youth_mental_crisis (yve=88 >= 70)
+            # MNH-001: TikTok US — youth_mental_crisis (aha=65<70, yve=88>=70)
             {
                 "entity_id": "MNH-001",
                 "name": "TikTok US Operations",
                 "country": "USA",
                 "sector": "Social Media",
-                "algorithmic_harm_amplification_score": 82.0,
+                "algorithmic_harm_amplification_score": 65.0,
                 "youth_vulnerability_exposure_score": 88.0,
                 "mental_disorder_correlation_score": 74.0,
                 "platform_accountability_deficit_score": 62.0,
