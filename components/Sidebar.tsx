@@ -6296,6 +6296,48 @@ function IconIndigenousLandRights({ className }: { className?: string }) {
   );
 }
 
+function IconDebtBondage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="5" r="2"/>
+      <path d="M8 7v4"/>
+      <path d="M6 11h4"/>
+      <path d="M8 11v6"/>
+      <path d="M5 17h6"/>
+      <rect x="13" y="9" width="5" height="7" rx="1"/>
+      <path d="M15 9V7a1 1 0 0 1 1-1v0a1 1 0 0 1 1 1v2"/>
+      <circle cx="15.5" cy="13" r="0.8" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconArmsEmbargoViolation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 12h8l2-3h5l1 3"/>
+      <path d="M16 9l1-4h2"/>
+      <circle cx="7" cy="15" r="1.5"/>
+      <circle cx="17" cy="15" r="1.5"/>
+      <line x1="4" y1="4" x2="20" y2="20" strokeWidth="1.5" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconMinorityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="7" cy="5" r="2"/>
+      <circle cx="17" cy="5" r="2"/>
+      <circle cx="12" cy="4" r="2"/>
+      <path d="M5 11c0-1.7 1-3 2-3s2 1.3 2 3v6"/>
+      <path d="M15 11c0-1.7 1-3 2-3s2 1.3 2 3v6"/>
+      <path d="M10 10c0-1.7 1-3 2-3s2 1.3 2 3v7"/>
+      <path d="M10 17h4M5 17h4M15 17h4"/>
+      <path d="M12 14l1.5 1.5" opacity="0.5"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -7139,6 +7181,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/hate-crime-engine", label: "Hate Crime", icon: IconHateCrime },
       { href: "/dashboard/child-labor-engine", label: "Child Labor", icon: IconChildLabor },
       { href: "/dashboard/indigenous-land-rights-engine", label: "Indigenous Land Rights", icon: IconIndigenousLandRights },
+      { href: "/dashboard/debt-bondage-engine", label: "Debt Bondage", icon: IconDebtBondage },
+      { href: "/dashboard/arms-embargo-violation-engine", label: "Arms Embargo", icon: IconArmsEmbargoViolation },
+      { href: "/dashboard/minority-rights-engine", label: "Minority Rights", icon: IconMinorityRights },
     ],
   },
   {
