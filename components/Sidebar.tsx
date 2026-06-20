@@ -5711,6 +5711,34 @@ function IconTechnoDarwinism({ className }: { className?: string }) {
   );
 }
 
+function IconResourceCurse({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v4m0 0c-2.5 0-4.5 1.5-4.5 4 0 1.5.5 2.5 1.5 3.5L12 16l3-2.5c1-1 1.5-2 1.5-3.5 0-2.5-2-4-4.5-4zm0 14v4M8 20h8" />
+      <circle cx="12" cy="6" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function IconShadowEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="9" />
+      <path strokeLinecap="round" d="M12 3a9 9 0 0 1 0 18" fill="currentColor" fillOpacity="0.3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6M12 9v6" />
+    </svg>
+  );
+}
+
+function IconAIAlignmentRisk({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 20h20L12 2zm0 6v5m0 3v1" />
+      <circle cx="12" cy="18" r="0.5" fill="currentColor" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6277,6 +6305,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/narrative-sovereignty-engine", label: "Souveraineté Narrative", icon: IconNarrativeSovereignty },
       { href: "/dashboard/biopower-engine", label: "Bio-Pouvoir & Corps", icon: IconBioPower },
       { href: "/dashboard/techno-darwinism-engine", label: "Techno-Darwinisme", icon: IconTechnoDarwinism },
+      { href: "/dashboard/resource-curse-engine", label: "Malédiction des Ressources", icon: IconResourceCurse },
+      { href: "/dashboard/shadow-economy-engine", label: "Économie de l'Ombre", icon: IconShadowEconomy },
+      { href: "/dashboard/ai-alignment-risk-engine", label: "Risque Alignement IA", icon: IconAIAlignmentRisk },
     ],
   },
   {
