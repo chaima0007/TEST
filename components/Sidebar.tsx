@@ -6067,6 +6067,41 @@ function IconPandemicBioweapons({ className }: { className?: string }) {
   );
 }
 
+function IconSemiconductorWar({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="4" width="8" height="8" rx="1" opacity="0.8" />
+      <path d="M6 4V2M8 4V2M10 4V2" opacity="0.7" />
+      <path d="M6 14v-2M8 14v-2M10 14v-2" opacity="0.7" />
+      <path d="M4 6H2M4 8H2M4 10H2" opacity="0.7" />
+      <path d="M14 6h-2M14 8h-2M14 10h-2" opacity="0.7" />
+      <circle cx="8" cy="8" r="1.5" fill="currentColor" opacity="0.9" />
+    </svg>
+  );
+}
+
+function IconCurrencyWar({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="8" cy="8" r="5.5" opacity="0.7" />
+      <path d="M8 4v8M6 5.5h3a1.5 1.5 0 0 1 0 3H6" opacity="0.9" />
+      <path d="M6 8.5h3.5" opacity="0.8" />
+    </svg>
+  );
+}
+
+function IconUnderseaCable({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2 4c2 0 3 1 4 2s2 2 4 2 3-1 3-2" opacity="0.8" />
+      <path d="M2 8c2 0 3 1 4 2s2 2 4 2 3-1 3-2" opacity="0.9" />
+      <circle cx="2" cy="4" r="1" fill="currentColor" opacity="0.7" />
+      <circle cx="14" cy="4" r="1" fill="currentColor" opacity="0.7" />
+      <path d="M8 12v2M7 14h2" opacity="0.6" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6670,6 +6705,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-deterrence-engine", label: "Nuclear Deterrence", icon: IconNuclearDeterrence },
       { href: "/dashboard/sanctions-evasion-engine", label: "Sanctions Evasion", icon: IconSanctionsEvasion },
       { href: "/dashboard/pandemic-bioweapons-engine", label: "Pandemic Bioweapons", icon: IconPandemicBioweapons },
+      { href: "/dashboard/semiconductor-war-engine", label: "Semiconductor War", icon: IconSemiconductorWar },
+      { href: "/dashboard/currency-war-engine", label: "Currency War", icon: IconCurrencyWar },
+      { href: "/dashboard/undersea-cable-engine", label: "Undersea Cable", icon: IconUnderseaCable },
     ],
   },
   {
