@@ -384,3 +384,13 @@ class VerticalFarmingEngine:
     def reset(self) -> None:
         self._entities = []
         self._last_analysis = None
+
+
+def summary() -> dict:
+    """Module-level summary — returns the canonical 13-key dict."""
+    return VerticalFarmingEngine().summary()
+
+
+def analyze_farming() -> dict:
+    """Entry point for the Caelum Partners swarm orchestrator."""
+    return summary()

@@ -285,3 +285,8 @@ def analyze_telemedicine() -> dict[str, Any]:
         "entities": entities,
         "avg_estimated_telemedicine_index": round(avg_composite / 100 * 10, 2),
     }
+
+
+def summary() -> dict:
+    """Module-level summary alias for swarm orchestrator compatibility."""
+    return analyze_telemedicine()

@@ -376,6 +376,16 @@ def analyze_taxjustice() -> dict:
     return engine.summary()
 
 
+def summary() -> dict:
+    """Module-level summary — returns the canonical 13-key dict."""
+    return analyze_taxjustice()
+
+
+def analyze_tax_justice() -> dict:
+    """Alias for swarm orchestrator compatibility."""
+    return analyze_taxjustice()
+
+
 if __name__ == "__main__":
     import json
 

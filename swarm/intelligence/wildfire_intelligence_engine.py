@@ -349,6 +349,11 @@ def analyze_wildfire() -> Dict[str, Any]:
     return engine.analyze_wildfire()
 
 
+def summary() -> Dict[str, Any]:
+    """Module-level summary alias for swarm orchestrator compatibility."""
+    return analyze_wildfire()
+
+
 if __name__ == "__main__":
     import json
 

@@ -382,3 +382,13 @@ def analyze_transhumanist() -> Dict[str, Any]:
     """
     engine = TranshumanistEthicsEngine()
     return engine.summary()
+
+
+def summary() -> Dict[str, Any]:
+    """Module-level summary alias for swarm orchestrator compatibility."""
+    return analyze_transhumanist()
+
+
+def analyze_transhumanism() -> Dict[str, Any]:
+    """Alias for swarm orchestrator compatibility."""
+    return analyze_transhumanist()

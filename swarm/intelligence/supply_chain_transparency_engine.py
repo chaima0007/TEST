@@ -348,7 +348,11 @@ class SupplyChainTransparencyEngine:
         }
 
 
+def summary() -> Dict[str, Any]:
+    """Module-level summary — returns the canonical 13-key dict."""
+    return SupplyChainTransparencyEngine().summary()
+
+
 def analyze_transparency() -> Dict[str, Any]:
     """Entry point for the Caelum Partners swarm orchestrator."""
-    engine = SupplyChainTransparencyEngine()
-    return engine.export()
+    return summary()
