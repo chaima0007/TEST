@@ -6247,6 +6247,37 @@ function IconPoliticalAssassination({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconDroneWarfare({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 10V7m0 10v-3M10 12H7m10 0h-3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 7l-2-2m12 2l2-2M7 17l-2 2m12-2l2 2" />
+      <circle cx="12" cy="12" r="7" strokeDasharray="3 2" />
+    </svg>
+  );
+}
+function IconEthnicCleansing({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8a5 5 0 11-10 0 5 5 0 0110 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 20c0-3.314 4.03-6 9-6s9 2.686 9 6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 10l3 3-3 3" />
+      <line x1="22" y1="13" x2="15" y2="13" strokeLinecap="round" />
+    </svg>
+  );
+}
+function IconReligiousPersecution({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <line x1="12" y1="3" x2="12" y2="10" strokeLinecap="round" />
+      <line x1="9" y1="5.5" x2="15" y2="5.5" strokeLinecap="round" />
+      <circle cx="12" cy="17" r="4" />
+      <line x1="9.17" y1="14.17" x2="14.83" y2="19.83" strokeLinecap="round" />
+      <line x1="14.83" y1="14.17" x2="9.17" y2="19.83" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -6854,6 +6885,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/ecocide-engine", label: "Écocide", icon: IconEcocide },
       { href: "/dashboard/forced-sterilization-engine", label: "Stérilisations Forcées", icon: IconForcedSterilization },
       { href: "/dashboard/political-assassination-engine", label: "Assassinats Politiques", icon: IconPoliticalAssassination },
+      { href: "/dashboard/drone-warfare-engine", label: "Drones Guerre", icon: IconDroneWarfare },
+      { href: "/dashboard/ethnic-cleansing-engine", label: "Nettoyage Ethnique", icon: IconEthnicCleansing },
+      { href: "/dashboard/religious-persecution-engine", label: "Persécution Religieuse", icon: IconReligiousPersecution },
     ],
   },
   {
