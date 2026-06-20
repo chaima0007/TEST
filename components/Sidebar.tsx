@@ -6863,6 +6863,31 @@ function IconAntiCorruption({ className }: { className?: string }) {
   );
 }
 
+function IconMinorityLanguageRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10" />
+    </svg>
+  );
+}
+
+function IconArmsTransferAccountability({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3M12 12l2 2" />
+    </svg>
+  );
+}
+
+function IconRightToDevelopment({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7529,6 +7554,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/gender-based-violence-engine", label: "Violence de Genre", icon: IconGenderBasedViolence },
       { href: "/dashboard/right-to-food-engine", label: "Droit à l'Alimentation", icon: IconRightToFood },
       { href: "/dashboard/anti-corruption-engine", label: "Anti-Corruption", icon: IconAntiCorruption },
+      { href: "/dashboard/minority-language-rights-engine", label: "Langues Minoritaires", icon: IconMinorityLanguageRights },
+      { href: "/dashboard/arms-transfer-accountability-engine", label: "Transferts d'Armes", icon: IconArmsTransferAccountability },
+      { href: "/dashboard/right-to-development-engine", label: "Droit au Développement", icon: IconRightToDevelopment },
     ],
   },
   {
