@@ -5482,6 +5482,28 @@ function IconHybridInfra({ className }: { className?: string }) {
   );
 }
 
+function IconPolycrisis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" strokeDasharray="3 2"/>
+      <path d="M10 2 L10 18M2 10 L18 10" strokeLinecap="round" opacity="0.5"/>
+      <circle cx="10" cy="10" r="3" fill="currentColor" opacity="0.8"/>
+      <path d="M5 5 L15 15M15 5 L5 15" strokeLinecap="round" opacity="0.6"/>
+    </svg>
+  );
+}
+
+function IconBlackSwan({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M10 2 C6 2 3 5 3 8 C3 12 7 15 10 18 C13 15 17 12 17 8 C17 5 14 2 10 2Z" fill="currentColor" opacity="0.2"/>
+      <path d="M10 5 C8 5 6 7 7 9 C8 11 10 12 10 14" strokeLinecap="round"/>
+      <path d="M10 14 L10 17" strokeLinecap="round" strokeWidth="2"/>
+      <circle cx="13" cy="6" r="1.5" fill="currentColor"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6029,6 +6051,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/social-media-roi", label: "ROI Réseaux Sociaux", icon: IconSocialROI },
       { href: "/dashboard/agent-orchestrator", label: "Orchestrateur Agents IA", icon: IconAgentOrchestrator },
       { href: "/dashboard/hybrid-infrastructure", label: "Infrastructure Hybride", icon: IconHybridInfra },
+      { href: "/dashboard/polycrisis-engine", label: "Polycrise Mondiale", icon: IconPolycrisis },
+      { href: "/dashboard/black-swan-engine", label: "Cygne Noir — Risques Extrêmes", icon: IconBlackSwan },
     ],
   },
   {
