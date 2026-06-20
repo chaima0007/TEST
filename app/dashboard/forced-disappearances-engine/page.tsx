@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const RC: Record<string,string> = { critique:"text-red-400","élevé":"text-orange-400",modéré:"text-yellow-400",faible:"text-emerald-400" };
 const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","élevé":"border-orange-500/30 bg-orange-500/10",modéré:"border-yellow-500/30 bg-yellow-500/10",faible:"border-emerald-500/30 bg-emerald-500/10" };
 
-const ACCENT = "#1e3a5f";
+const ACCENT = "#1c1917";
 
 interface Entity {
   entity_id: string;
@@ -12,11 +12,11 @@ interface Entity {
   country: string;
   sector: string;
   composite_score: number;
-  institutionalization_forced_score: number;
-  accessibility_infrastructure_failure_score: number;
-  legal_capacity_deprivation_score: number;
-  crpd_implementation_gap_score: number;
-  estimated_disability_rights_index: number;
+  state_perpetration_scale_score: number;
+  body_concealment_impunity_score: number;
+  family_search_obstruction_score: number;
+  truth_justice_mechanism_gap_score: number;
+  estimated_forced_disappearances_index: number;
   risk_level: string;
   primary_pattern: string;
   key_signals: string[];
@@ -27,7 +27,7 @@ interface Entity {
 interface DashData {
   total_entities: number;
   avg_composite: number;
-  avg_estimated_disability_rights_index: number;
+  avg_estimated_forced_disappearances_index: number;
   risk_distribution: Record<string, number>;
   pattern_distribution: Record<string, number>;
   confidence_score: number;
@@ -45,7 +45,7 @@ function GaugeRing({ value, label }: { value: number; label: string }) {
       <svg width="88" height="88" viewBox="0 0 88 88">
         <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
         <circle
-          cx="44" cy="44" r={r} fill="none" stroke="#3b82f6" strokeWidth="8"
+          cx="44" cy="44" r={r} fill="none" stroke="#78716c" strokeWidth="8"
           strokeDasharray={circ} strokeDashoffset={fill}
           strokeLinecap="round" transform="rotate(-90 44 44)"
         />
@@ -65,14 +65,14 @@ export default function Page() {
   const [tab, setTab] = useState(0);
 
   useEffect(() => {
-    fetch("/api/disability-rights-engine")
+    fetch("/api/forced-disappearances-engine")
       .then(r => r.json())
       .then(j => setData(j.payload ?? j.data ?? j));
   }, []);
 
   if (!data) return (
     <div className="bg-slate-950 min-h-screen flex items-center justify-center">
-      <div className="text-blue-900 animate-pulse">Initialisation du Moteur Droits des Personnes Handicapées…</div>
+      <div className="text-stone-400 animate-pulse">Initialisation du Moteur Disparitions Forcées…</div>
     </div>
   );
 
@@ -85,14 +85,14 @@ export default function Page() {
   const confidence = typeof data.confidence_score === "number"
     ? `${(data.confidence_score * 100).toFixed(0)}%`
     : "—";
-  const avgIndex = typeof data.avg_estimated_disability_rights_index === "number"
-    ? data.avg_estimated_disability_rights_index.toFixed(2)
+  const avgIndex = typeof data.avg_estimated_forced_disappearances_index === "number"
+    ? data.avg_estimated_forced_disappearances_index.toFixed(2)
     : "—";
 
   const kpis = [
     { label: "Entités", value: data.total_entities ?? allEntities.length },
     { label: "Score moyen", value: typeof data.avg_composite === "number" ? data.avg_composite.toFixed(1) : "—" },
-    { label: "Index Droits Handicap", value: avgIndex },
+    { label: "Index Disparitions", value: avgIndex },
     { label: "Confiance", value: confidence },
     { label: "Critique", value: critCount },
     { label: "Sources", value: sources },
@@ -102,11 +102,11 @@ export default function Page() {
     <div className="bg-slate-950 min-h-screen text-slate-100 p-6 space-y-6">
       <div>
         <div className="flex items-center gap-3 mb-1">
-          <div className="w-3 h-3 rounded-full bg-blue-900" />
-          <h1 className="text-2xl font-bold tracking-tight">Droits des Personnes Handicapées</h1>
+          <div className="w-3 h-3 rounded-full bg-stone-700" />
+          <h1 className="text-2xl font-bold tracking-tight">Disparitions Forcées</h1>
         </div>
         <p className="text-slate-400 text-sm ml-6">
-          Institutionnalisation forcée, défaillances d&apos;accessibilité, privation de capacité juridique et lacunes d&apos;implémentation CDPH
+          Perpétration étatique, dissimulation des corps, obstruction aux familles et lacunes des mécanismes de vérité
         </p>
       </div>
 
@@ -114,7 +114,7 @@ export default function Page() {
         {kpis.map(k => (
           <div key={k.label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
             <div className="text-xs text-slate-500 mb-1">{k.label}</div>
-            <div className="text-xl font-bold text-blue-400">{k.value}</div>
+            <div className="text-xl font-bold text-stone-400">{k.value}</div>
           </div>
         ))}
       </div>
@@ -128,10 +128,10 @@ export default function Page() {
               return allEntities.reduce((a, e) => a + (Number(e[key]) || 0), 0) / allEntities.length;
             };
             return [
-              { label: "Institutionnalisation Forcée", key: "institutionalization_forced_score" as keyof Entity },
-              { label: "Échec Infrastructure Accès", key: "accessibility_infrastructure_failure_score" as keyof Entity },
-              { label: "Privation Capacité Juridique", key: "legal_capacity_deprivation_score" as keyof Entity },
-              { label: "Lacune Implémentation CDPH", key: "crpd_implementation_gap_score" as keyof Entity },
+              { label: "Perpétration Étatique", key: "state_perpetration_scale_score" as keyof Entity },
+              { label: "Dissimulation & Impunité", key: "body_concealment_impunity_score" as keyof Entity },
+              { label: "Obstruction aux Familles", key: "family_search_obstruction_score" as keyof Entity },
+              { label: "Lacune Vérité & Justice", key: "truth_justice_mechanism_gap_score" as keyof Entity },
             ].map(s => (
               <GaugeRing key={s.key} value={avg(s.key)} label={s.label} />
             ));
@@ -143,7 +143,7 @@ export default function Page() {
         {filters.map(f => (
           <button key={f} onClick={() => setFilter(f)}
             className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${filter === f ? "text-white font-bold" : "bg-slate-800 text-slate-400 hover:bg-slate-700"}`}
-            style={filter === f ? { background: "#1d4ed8" } : {}}>
+            style={filter === f ? { background: "#78716c" } : {}}>
             {f.charAt(0).toUpperCase() + f.slice(1)}
           </button>
         ))}
@@ -165,10 +165,10 @@ export default function Page() {
               </div>
             </div>
             <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden mt-2">
-              <div className="h-full rounded-full transition-all bg-blue-700" style={{ width: `${Math.min(e.composite_score, 100)}%` }} />
+              <div className="h-full rounded-full transition-all bg-stone-600" style={{ width: `${Math.min(e.composite_score, 100)}%` }} />
             </div>
             <div className="text-xs text-slate-500 mt-2">
-              Index Droits Handicap: <span className="font-medium text-blue-400">{e.estimated_disability_rights_index}</span>
+              Index Disparitions: <span className="font-medium text-stone-400">{e.estimated_forced_disappearances_index}</span>
             </div>
           </div>
         ))}
@@ -193,7 +193,7 @@ export default function Page() {
               {["Aperçu", "Signaux", "Contexte"].map((t, i) => (
                 <button key={t} onClick={() => setTab(i)}
                   className={`px-6 py-3 text-sm font-medium transition-colors ${tab === i ? "border-b-2 text-white" : "text-slate-500 hover:text-slate-300"}`}
-                  style={tab === i ? { borderColor: "#1d4ed8", color: "#60a5fa" } : {}}>
+                  style={tab === i ? { borderColor: "#78716c", color: "#a8a29e" } : {}}>
                   {t}
                 </button>
               ))}
@@ -207,20 +207,20 @@ export default function Page() {
                       <div className="text-xs text-slate-400">Score composite</div>
                     </div>
                     <div className="ml-auto text-right">
-                      <div className="text-lg font-bold text-blue-400">{selected.estimated_disability_rights_index}</div>
-                      <div className="text-xs text-slate-500">Index Droits Handicap</div>
+                      <div className="text-lg font-bold text-stone-400">{selected.estimated_forced_disappearances_index}</div>
+                      <div className="text-xs text-slate-500">Index Disparitions</div>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     {[
-                      { label: "Institutionnalisation Forcée", value: selected.institutionalization_forced_score },
-                      { label: "Échec Infrastructure Accès", value: selected.accessibility_infrastructure_failure_score },
-                      { label: "Privation Capacité Juridique", value: selected.legal_capacity_deprivation_score },
-                      { label: "Lacune Implémentation CDPH", value: selected.crpd_implementation_gap_score },
+                      { label: "Perpétration Étatique", value: selected.state_perpetration_scale_score },
+                      { label: "Dissimulation & Impunité", value: selected.body_concealment_impunity_score },
+                      { label: "Obstruction aux Familles", value: selected.family_search_obstruction_score },
+                      { label: "Lacune Vérité & Justice", value: selected.truth_justice_mechanism_gap_score },
                     ].map(s => (
                       <div key={s.label} className="bg-slate-800 rounded-lg p-3">
                         <div className="text-xs text-slate-500 mb-1">{s.label}</div>
-                        <div className="text-lg font-bold text-blue-400">
+                        <div className="text-lg font-bold text-stone-400">
                           {typeof s.value === "number" ? s.value.toFixed(1) : "—"}
                         </div>
                       </div>
@@ -232,7 +232,7 @@ export default function Page() {
                 <ul className="space-y-3">
                   {(selected.key_signals ?? []).map((s, i) => (
                     <li key={i} className="flex gap-2 text-sm text-slate-300">
-                      <span className="text-blue-400 shrink-0 mt-0.5">▸</span>
+                      <span className="text-stone-400 shrink-0 mt-0.5">▸</span>
                       {s}
                     </li>
                   ))}
