@@ -6647,6 +6647,33 @@ function IconDomesticViolence({ className }: { className?: string }) {
   );
 }
 
+function IconWaterRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C12 2 5 10.5 5 14.5a7 7 0 0 0 14 0C19 10.5 12 2 12 2Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 15a3 3 0 0 0 6 0" />
+    </svg>
+  );
+}
+
+function IconHousingRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12L12 3l9 9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9" />
+    </svg>
+  );
+}
+
+function IconSocialProtection({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25c-4.5 3-9 3.75-9 3.75S3 18 12 21.75C21 18 21 6 21 6s-4.5-.75-9-3.75Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.5c0 1.657 1.343 3 3 3s3-1.343 3-3S13.657 9.5 12 9.5a3 3 0 0 0-3 3Z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7292,6 +7319,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/press-freedom-engine", label: "Press Freedom", icon: IconPressFreedom },
       { href: "/dashboard/right-to-health-engine", label: "Right to Health", icon: IconRightToHealth },
       { href: "/dashboard/domestic-violence-engine", label: "Domestic Violence", icon: IconDomesticViolence },
+      { href: "/dashboard/water-rights-engine", label: "Water Rights", icon: IconWaterRights },
+      { href: "/dashboard/housing-rights-engine", label: "Housing Rights", icon: IconHousingRights },
+      { href: "/dashboard/social-protection-engine", label: "Social Protection", icon: IconSocialProtection },
     ],
   },
   {
