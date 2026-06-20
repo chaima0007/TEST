@@ -7168,6 +7168,33 @@ function IconLandRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconForcedDisappearances({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M20 4l-8 8M12 4l8 8" strokeDasharray="2 2" />
+    </svg>
+  );
+}
+function IconHumanTrafficking({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4-4 4M3 12h18" />
+      <circle cx="7" cy="9" r="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 20v-2a4 4 0 014-4h2" />
+    </svg>
+  );
+}
+function IconDisabilityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="5" r="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v5l3 3M9 21c0-3 1.5-5 3-6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16 14a5 5 0 11-10 0" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7868,6 +7895,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/social-media-censorship-engine", label: "Censure Réseaux Sociaux", icon: IconSocialMediaCensorship },
       { href: "/dashboard/organ-trafficking-engine", label: "Trafic d'Organes", icon: IconOrganTrafficking },
       { href: "/dashboard/land-rights-engine", label: "Droits Fonciers", icon: IconLandRights },
+      { href: "/dashboard/forced-disappearances-engine", label: "Disparitions Forcées", icon: IconForcedDisappearances },
+      { href: "/dashboard/human-trafficking-engine", label: "Traite Êtres Humains", icon: IconHumanTrafficking },
+      { href: "/dashboard/disability-rights-engine", label: "Droits Handicap", icon: IconDisabilityRights },
     ],
   },
   {
