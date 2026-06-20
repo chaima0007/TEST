@@ -5516,6 +5516,35 @@ function IconCaelumSynthesis({ className }: { className?: string }) {
   );
 }
 
+function IconAntifragility({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M10 16 L10 4" strokeLinecap="round"/>
+      <path d="M10 4 L6 8" strokeLinecap="round"/>
+      <path d="M10 4 L14 8" strokeLinecap="round"/>
+      <path d="M6 16 L6 10" strokeLinecap="round" opacity="0.5"/>
+      <path d="M6 10 L4 12" strokeLinecap="round" opacity="0.5"/>
+      <path d="M6 10 L8 12" strokeLinecap="round" opacity="0.5"/>
+      <path d="M14 16 L14 10" strokeLinecap="round" opacity="0.5"/>
+      <path d="M14 10 L12 12" strokeLinecap="round" opacity="0.5"/>
+      <path d="M14 10 L16 12" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  );
+}
+
+function IconCivDebt({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="10" cy="10" r="8" opacity="0.3"/>
+      <path d="M10 2 L10 10" strokeLinecap="round"/>
+      <path d="M10 10 L14 13" strokeLinecap="round"/>
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.8"/>
+      <path d="M4 10 L16 10" strokeLinecap="round" strokeDasharray="1.5 1.5" opacity="0.4"/>
+      <path d="M5 6 L15 14M5 14 L15 6" strokeLinecap="round" opacity="0.2"/>
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -6066,6 +6095,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/polycrisis-engine", label: "Polycrise Mondiale", icon: IconPolycrisis },
       { href: "/dashboard/black-swan-engine", label: "Cygne Noir — Risques Extrêmes", icon: IconBlackSwan },
       { href: "/dashboard/caelum-synthesis-engine", label: "Synthèse Méta-Intelligence", icon: IconCaelumSynthesis },
+      { href: "/dashboard/antifragility-index-engine", label: "Indice d'Antifragilité", icon: IconAntifragility },
+      { href: "/dashboard/civilizational-debt-engine", label: "Dette Civilisationnelle", icon: IconCivDebt },
     ],
   },
   {
