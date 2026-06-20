@@ -355,4 +355,5 @@ def summary() -> Dict[str, Any]:
 
 def analyze_transparency() -> Dict[str, Any]:
     """Entry point for the Caelum Partners swarm orchestrator."""
-    return summary()
+    engine = SupplyChainTransparencyEngine()
+    return engine.summary()
