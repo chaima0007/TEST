@@ -6806,6 +6806,35 @@ function IconCorporateAccountability({ className }: { className?: string }) {
   );
 }
 
+function IconRightToPrivacy({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6l-8-4Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function IconAccessToJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3M5 8h14M8 8v8a4 4 0 0 0 8 0V8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 20h18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 8l-3 5h6l-3-5ZM18 8l-3 5h6l-3-5Z" />
+    </svg>
+  );
+}
+
+function IconHumanRightsDefenders({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 20c0-3.31 4.03-6 9-6s9 2.69 9 6" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -7466,6 +7495,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/death-penalty-engine", label: "Peine de Mort", icon: IconDeathPenalty },
       { href: "/dashboard/indigenous-rights-engine", label: "Droits Autochtones", icon: IconIndigenousRights },
       { href: "/dashboard/corporate-accountability-engine", label: "Responsabilité Corp.", icon: IconCorporateAccountability },
+      { href: "/dashboard/right-to-privacy-engine", label: "Droit à la Vie Privée", icon: IconRightToPrivacy },
+      { href: "/dashboard/access-to-justice-engine", label: "Accès à la Justice", icon: IconAccessToJustice },
+      { href: "/dashboard/human-rights-defenders-engine", label: "Défenseurs DH", icon: IconHumanRightsDefenders },
     ],
   },
   {
