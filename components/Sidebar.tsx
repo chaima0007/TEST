@@ -5652,6 +5652,28 @@ function IconSovereignAIEngine({ className }: { className?: string }) {
   );
 }
 
+function IconNarrativeSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M3 6 Q10 3 17 6 L17 14 Q10 17 3 14 Z" opacity="0.3" fill="currentColor"/>
+      <path d="M7 9 L13 9" strokeLinecap="round"/>
+      <path d="M7 12 L11 12" strokeLinecap="round" opacity="0.6"/>
+      <circle cx="10" cy="5" r="1.5" fill="currentColor" opacity="0.8" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconBioPower({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <circle cx="10" cy="10" r="6" opacity="0.3"/>
+      <path d="M10 4 L10 7 M10 13 L10 16 M4 10 L7 10 M13 10 L16 10" strokeLinecap="round" opacity="0.6"/>
+      <path d="M7 7 L13 13 M13 7 L7 13" strokeLinecap="round" opacity="0.4"/>
+      <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.9" stroke="none"/>
+    </svg>
+  );
+}
+
 function IconComplexityHorizonEngine({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -5673,6 +5695,18 @@ function IconLongevityInequalityEngine({ className }: { className?: string }) {
       <circle cx="4" cy="6" r="1.5" fill="currentColor" opacity="0.5" stroke="none"/>
       <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.7" stroke="none"/>
       <circle cx="16" cy="4" r="1.5" fill="currentColor" opacity="0.9" stroke="none"/>
+    </svg>
+  );
+}
+
+function IconTechnoDarwinism({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+      <path d="M3 16 L6 10 L10 13 L14 6 L17 4" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="6" cy="10" r="1.5" fill="currentColor" opacity="0.6" stroke="none"/>
+      <circle cx="14" cy="6" r="1.5" fill="currentColor" opacity="0.8" stroke="none"/>
+      <circle cx="17" cy="4" r="2" fill="currentColor" opacity="1" stroke="none"/>
+      <path d="M3 17 L17 17" strokeLinecap="round" opacity="0.3"/>
     </svg>
   );
 }
@@ -6240,6 +6274,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sovereign-ai-engine", label: "Souveraineté IA Nationale", icon: IconSovereignAIEngine },
       { href: "/dashboard/complexity-horizon-engine", label: "Horizon de Complexité", icon: IconComplexityHorizonEngine },
       { href: "/dashboard/longevity-inequality-engine", label: "Inégalité de Longévité", icon: IconLongevityInequalityEngine },
+      { href: "/dashboard/narrative-sovereignty-engine", label: "Souveraineté Narrative", icon: IconNarrativeSovereignty },
+      { href: "/dashboard/biopower-engine", label: "Bio-Pouvoir & Corps", icon: IconBioPower },
+      { href: "/dashboard/techno-darwinism-engine", label: "Techno-Darwinisme", icon: IconTechnoDarwinism },
     ],
   },
   {
