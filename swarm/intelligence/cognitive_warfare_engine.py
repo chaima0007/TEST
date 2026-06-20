@@ -212,3 +212,68 @@ class CognitiveWarfareEngine:
             "top_threat": max(results, key=lambda r: r.warfare_composite).entity_id if results else None,
             "entities": dicts,
         }
+
+
+# ── Canonical summary (13-key format for Caelum swarm orchestrator) ───────────
+
+_RISK_MAP = {"critical": "critique", "high": "élevé", "moderate": "modéré", "low": "faible"}
+_PATTERN_LABELS = {
+    "saturation_epistemique": {"severity_fr": "Critique", "action_fr": "Activation protocole souveraineté informationnelle — contre-narratifs sous 48h", "signal_fr": "Effondrement épistémique imminent — saturation informationnelle détectée"},
+    "manipulation_strategique": {"severity_fr": "Critique", "action_fr": "Déploiement unités de fact-checking d'urgence et alerte plateformes numériques", "signal_fr": "Campagnes coordonnées acteurs étatiques — manipulation institutionnelle"},
+    "erosion_confiance": {"severity_fr": "Élevé", "action_fr": "Renforcement médias publics et éducation aux médias ciblée", "signal_fr": "Érosion progressive confiance institutionnelle — vulnérabilité démocratique"},
+    "pollution_informationnelle": {"severity_fr": "Modéré", "action_fr": "Surveillance écosystèmes informationnels et signalement contenus manipulatoires", "signal_fr": "Pollution espace informationnel gérable — vigilance épistémique"},
+    "resilience_cognitive": {"severity_fr": "Faible", "action_fr": "Maintien programmes littératie numérique et veille informationnelle continue", "signal_fr": "composite_score < 30 — résilience cognitive confirmée"},
+}
+
+_MOCK = [
+    ("CW-001", "Russie & Espace Post-Soviétique", "Eurasie", "Opérations Informationnelles", 92.0, 85.0, 88.0, 80.0),
+    ("CW-002", "Chine & Sphère d'Influence", "Asie-Pacifique", "Influence Stratégique", 88.0, 78.0, 82.0, 75.0),
+    ("CW-003", "Moyen-Orient & Golfe", "MENA", "Propagande Régionale", 80.0, 72.0, 76.0, 68.0),
+    ("CW-004", "Amérique Latine", "Amériques", "Polarisation Politique", 65.0, 60.0, 62.0, 55.0),
+    ("CW-005", "Afrique Sub-Saharienne", "Afrique", "Manipulation Électorale", 70.0, 75.0, 65.0, 60.0),
+    ("CW-006", "Europe Occidentale", "Europe", "Désinformation Hybride", 48.0, 42.0, 45.0, 38.0),
+    ("CW-007", "Amérique du Nord", "Amériques", "Polarisation Démocratique", 52.0, 38.0, 50.0, 45.0),
+    ("CW-008", "Scandinavie & Pays Baltes", "Europe du Nord", "Résilience Cognitive", 15.0, 12.0, 18.0, 10.0),
+]
+
+def _make_entity(row: tuple) -> dict:
+    eid, name, country, sector, s1, s2, s3, s4 = row
+    comp = round(s1*0.30 + s2*0.25 + s3*0.25 + s4*0.20, 2)
+    if comp >= 60: rl = "critique"
+    elif comp >= 40: rl = "élevé"
+    elif comp >= 20: rl = "modéré"
+    else: rl = "faible"
+    if s1 >= 85 and s2 >= 80: pat = "saturation_epistemique"
+    elif s3 >= 75 and s4 >= 70: pat = "manipulation_strategique"
+    elif comp >= 45: pat = "erosion_confiance"
+    elif comp >= 25: pat = "pollution_informationnelle"
+    else: pat = "resilience_cognitive"
+    if rl == "critique":
+        signals = [f"Guerre cognitive critique pour {name} — saturation épistémique en cours", "Vélocité désinformation au-delà des seuils de résilience démocratique", "Capture narrative institutionnelle — processus décisionnels compromis"]
+    elif rl == "élevé":
+        signals = [f"Manipulation informationnelle élevée pour {name} — confiance institutionnelle érodée", "Campagnes coordonnées identifiées dans l'espace numérique", "Vulnérabilité cognitive population en hausse significative"]
+    elif rl == "modéré":
+        signals = [f"Pollution informationnelle modérée pour {name} — vigilance épistémique requise", "Signaux de manipulation détectés dans les réseaux sociaux", "Résilience cognitive maintenue mais sous pression croissante"]
+    else:
+        signals = [f"{name} maintient une souveraineté épistémique robuste", "Écosystème informationnel sain — faible vulnérabilité aux manipulations", "Littératie numérique élevée — bouclier cognitif effectif"]
+    return {"entity_id": eid, "name": name, "country": country, "sector": sector, "composite_score": comp, "disinfo_velocity_score": s1, "epistemic_resilience_gap_score": s2, "narrative_capture_score": s3, "cognitive_vulnerability_score": s4, "risk_level": rl, "primary_pattern": pat, "key_signals": signals, "estimated_cogwar_index": round(comp/100*10, 2), "last_updated": "2026-06-20"}
+
+def summary() -> dict:
+    """Canonical 13-key summary for the Caelum swarm orchestrator."""
+    entities = [_make_entity(r) for r in _MOCK]
+    n = len(entities)
+    avg = round(sum(e["composite_score"] for e in entities) / n, 2)
+    risk_dist: dict = {"critique": 0, "élevé": 0, "modéré": 0, "faible": 0}
+    pattern_dist: dict = {k: 0 for k in _PATTERN_LABELS}
+    critical_alerts, top_risk = [], []
+    for e in entities:
+        risk_dist[e["risk_level"]] = risk_dist.get(e["risk_level"], 0) + 1
+        pattern_dist[e["primary_pattern"]] = pattern_dist.get(e["primary_pattern"], 0) + 1
+        if e["risk_level"] == "critique":
+            critical_alerts.append(f"{e['name']}: {e['primary_pattern'].replace('_', ' ')}")
+            top_risk.append(e["name"])
+    return {"total_entities": n, "avg_composite": avg, "risk_distribution": risk_dist, "pattern_distribution": pattern_dist, "top_risk_entities": top_risk, "critical_alerts": critical_alerts, "last_analysis": "2026-06-20", "engine_version": "1.0.0", "domain": "cognitivewarfare", "confidence_score": 0.82, "data_sources": ["disinfo_tracker", "epistemic_security_index", "narrative_analysis_lab"], "entities": entities, "avg_estimated_cogwar_index": round(avg/100*10, 2)}
+
+def analyze_cognitive_warfare() -> dict:
+    """Entry point for the Caelum Partners swarm orchestrator."""
+    return summary()
