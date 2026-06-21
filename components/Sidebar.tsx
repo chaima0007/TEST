@@ -7914,6 +7914,30 @@ function IconWaterSanitationAccessRights({ className }: { className?: string }) 
   );
 }
 
+function IconCorporateAccountabilityHumanRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /><line x1="12" y1="12" x2="12" y2="16" /><line x1="10" y1="14" x2="14" y2="14" />
+    </svg>
+  );
+}
+
+function IconCounterTerrorismRightsViolations({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+    </svg>
+  );
+}
+
+function IconIndigenousLandRightsExtraction({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="3 11 22 2 13 21 11 13 3 11" /><line x1="3" y1="21" x2="11" y2="13" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8718,6 +8742,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/stateless-persons-rights-engine", label: "Apatridie & Droits", icon: IconStatelessPersonsRights },
       { href: "/dashboard/human-trafficking-labor-exploitation-engine", label: "Traite Humaine & Exploitation", icon: IconHumanTraffickingLaborExploitation },
       { href: "/dashboard/water-sanitation-access-rights-engine", label: "Eau & Assainissement", icon: IconWaterSanitationAccessRights },
+      { href: "/dashboard/corporate-accountability-human-rights-engine", label: "Responsabilité Entreprises", icon: IconCorporateAccountabilityHumanRights },
+      { href: "/dashboard/counter-terrorism-rights-violations-engine", label: "Antiterrorisme & Droits", icon: IconCounterTerrorismRightsViolations },
+      { href: "/dashboard/indigenous-land-rights-extraction-engine", label: "Terres Autochtones & Extraction", icon: IconIndigenousLandRightsExtraction },
     ],
   },
   {
