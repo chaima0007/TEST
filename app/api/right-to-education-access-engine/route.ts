@@ -156,14 +156,17 @@ const MOCK = {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    console.warn("[right-to-education-access-engine] SWARM_API_URL not set — returning mock");
-    return await sealResponse(NextResponse.json({ payload: MOCK }));
+    return NextResponse.json(await sealResponse(MOCK));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/right-to-education-access-engine`, { next: { revalidate: 30 } });
+    const res = await fetch(
+      `${process.env.SWARM_API_URL}/right-to-education-access-engine`,
+      { next: { revalidate: 30 } }
+    );
+    if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return await sealResponse(NextResponse.json({ payload: data }));
+    return NextResponse.json(await sealResponse(data.payload ?? data));
   } catch {
-    return await sealResponse(NextResponse.json({ error: "upstream_error" }, { status: 502 }));
+    return NextResponse.json(await sealResponse(MOCK), { status: 502 });
   }
 }
