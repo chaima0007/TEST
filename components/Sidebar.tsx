@@ -8575,6 +8575,33 @@ function IconXenophobiaHateCrimeMinority({ className }: { className?: string }) 
   );
 }
 
+function IconNuclearTestingEnvironmentalRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
+    </svg>
+  );
+}
+
+function IconSocialProtectionPovertyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  );
+}
+
+function IconFreedomExpressionArtisticCensorship({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9458,6 +9485,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/right-to-education-access-engine", label: "Droit à l'Éducation", icon: IconRightToEducationAccess },
       { href: "/dashboard/fair-trial-due-process-rights-engine", label: "Procès Équitable", icon: IconFairTrialDueProcessRights },
       { href: "/dashboard/xenophobia-hate-crime-minority-engine", label: "Xénophobie & Haine", icon: IconXenophobiaHateCrimeMinority },
+      { href: "/dashboard/nuclear-testing-environmental-rights-engine", label: "Tests Nucléaires", icon: IconNuclearTestingEnvironmentalRights },
+      { href: "/dashboard/social-protection-poverty-rights-engine", label: "Protection Sociale", icon: IconSocialProtectionPovertyRights },
+      { href: "/dashboard/freedom-expression-artistic-censorship-engine", label: "Liberté Artistique", icon: IconFreedomExpressionArtisticCensorship },
     ],
   },
   {
