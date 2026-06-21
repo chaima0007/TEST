@@ -8058,6 +8058,30 @@ function IconDigitalDivideAccessRights({ className }: { className?: string }) {
   );
 }
 
+function IconClimateChangeHumanRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" /><path d="M12 6v6l4 2" /><path d="M8 12c0-2.21 1.79-4 4-4" /><path d="M17 16.5c-1.5 1-3 1.5-5 1.5" />
+    </svg>
+  );
+}
+
+function IconChildLaborExploitationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5" r="2" /><path d="M12 7v6" /><path d="M9 10l-2 5" /><path d="M15 10l2 5" /><path d="M9 22l3-5 3 5" /><path d="M6 15h12" />
+    </svg>
+  );
+}
+
+function IconLgbtqRightsCriminalization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" /><path d="M12 8v4" /><path d="M8 12h8" /><path d="M9 16l3-2 3 2" /><line x1="9" y1="9" x2="15" y2="15" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8880,6 +8904,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/autonomous-weapons-ai-warfare-rights-engine", label: "Armes Autonomes & IA Militaire", icon: IconAutonomousWeaponsAiWarfareRights },
       { href: "/dashboard/space-rights-outer-space-militarization-engine", label: "Espace & Militarisation Orbitale", icon: IconSpaceRightsOuterSpaceMilitarization },
       { href: "/dashboard/digital-divide-access-rights-engine", label: "Fracture Numérique & Accès", icon: IconDigitalDivideAccessRights },
+      { href: "/dashboard/climate-change-human-rights-engine", label: "Changement Climatique & Droits", icon: IconClimateChangeHumanRights },
+      { href: "/dashboard/child-labor-exploitation-rights-engine", label: "Travail des Enfants & Exploitation", icon: IconChildLaborExploitationRights },
+      { href: "/dashboard/lgbtq-rights-criminalization-engine", label: "Droits LGBTQ+ & Criminalisation", icon: IconLgbtqRightsCriminalization },
     ],
   },
   {
