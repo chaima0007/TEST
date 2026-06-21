@@ -1,0 +1,214 @@
+openapi: "3.1.0"
+info:
+  title: Caelum Knowledge Base API
+  version: "1.0.0"
+  description: Read-only semantic search API for Caelum Partners agents
+
+servers:
+  - url: https://kb.caelumpartners.eu/v1
+
+security:
+  - BearerAuth: []
+
+paths:
+  /kb/search:
+    get:
+      operationId: kb_search
+      summary: Recherche sémantique
+      description: |
+        Recherche vectorielle FAISS sur companies, personas et playbooks.
+
+        Exemples :
+        ```
+        curl -sS -H "Authorization: Bearer $KB_TOKEN" \
+          "https://kb.caelumpartners.eu/v1/kb/search?q=CCO%20automobile%20LkSG&type=company&limit=3"
+        ```
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string }
+          example: "CCO automobile LkSG compliance"
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [company, persona, playbook, all]
+          default: all
+        - name: limit
+          in: query
+          schema: { type: integer, default: 5, maximum: 20 }
+        - name: min_score
+          in: query
+          schema: { type: number, format: float, default: 0.65 }
+        - name: next_token
+          in: query
+          schema: { type: string, nullable: true }
+          description: Pagination token from previous response
+      responses:
+        "200":
+          description: Résultats
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+              example:
+                results:
+                  - id: "volkswagen-group"
+                    slug: "volkswagen-group"
+                    type: "company"
+                    score: 0.92
+                    snippet: "Head of ESG, LkSG compliance, forced labor Xinjiang supply chain..."
+                    source: "data/knowledge_base/companies/volkswagen-group.json"
+                total: 1
+                next_token: null
+                query_time_ms: 12.4
+        "400":
+          description: Paramètre manquant ou invalide
+        "401":
+          description: Token manquant ou invalide
+        "500":
+          description: Erreur interne
+
+  /kb/companies/{slug}:
+    get:
+      operationId: kb_get_company
+      summary: Fiche entreprise
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+          example: "volkswagen-group"
+      responses:
+        "200":
+          description: Fiche complète (JSON brut)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KBResult'
+        "401":
+          description: Non autorisé
+        "404":
+          description: Entreprise non trouvée
+
+  /kb/personas/{slug}:
+    get:
+      operationId: kb_get_persona
+      summary: Persona
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+          example: "cco-automotive"
+      responses:
+        "200":
+          description: Profil persona (Markdown rendu en JSON)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KBResult'
+        "401":
+          description: Non autorisé
+        "404":
+          description: Persona non trouvé
+
+  /kb/playbooks/{slug}:
+    get:
+      operationId: kb_get_playbook
+      summary: Playbook
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Playbook
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KBResult'
+        "401":
+          description: Non autorisé
+        "404":
+          description: Playbook non trouvé
+
+  /kb/health:
+    get:
+      operationId: kb_health
+      summary: Health check
+      security: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: "ok" }
+                  index_loaded: { type: boolean }
+                  total_vectors: { type: integer }
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: "Token via env var KB_TOKEN"
+
+  schemas:
+    KBResult:
+      type: object
+      required: [id, slug, type, score, snippet, source]
+      properties:
+        id:
+          type: string
+          description: Identifiant unique du document
+          example: "volkswagen-group"
+        slug:
+          type: string
+          description: Slug URL-safe
+          example: "volkswagen-group"
+        type:
+          type: string
+          enum: [company, persona, playbook]
+          description: Type de document KB
+        score:
+          type: number
+          format: float
+          description: Score de similarité cosinus [0-1]
+          example: 0.92
+        snippet:
+          type: string
+          description: Extrait pertinent du document
+          example: "Head of ESG — LkSG, CSDDD, forced labor Xinjiang..."
+        source:
+          type: string
+          description: Chemin relatif du fichier source
+          example: "data/knowledge_base/companies/volkswagen-group.json"
+
+    SearchResponse:
+      type: object
+      required: [results, total, query_time_ms]
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/KBResult'
+        total:
+          type: integer
+          description: Nombre total de résultats correspondants
+          example: 3
+        next_token:
+          type: string
+          nullable: true
+          description: Token de pagination (null si dernière page)
+          example: null
+        query_time_ms:
+          type: number
+          format: float
+          description: Temps de traitement en millisecondes
+          example: 12.4
