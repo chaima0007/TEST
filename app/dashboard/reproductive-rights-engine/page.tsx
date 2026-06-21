@@ -1,331 +1,264 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-type Entity = {
+const ACCENT = "#ec4899";
+const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
+const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
+
+function GaugeRing({ value, stroke }: { value: number; stroke: string }) {
+  const r = 36, cx = 44, cy = 44, circ = 2 * Math.PI * r;
+  const pct = Math.min(Math.max(value, 0), 100) / 100;
+  return (
+    <svg viewBox="0 0 88 88" className="w-20 h-20">
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e293b" strokeWidth={8} />
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={stroke} strokeWidth={8}
+        strokeDasharray={circ} strokeDashoffset={circ * (1 - pct)}
+        strokeLinecap="round" transform="rotate(-90 44 44)" />
+      <text x={cx} y={cy} textAnchor="middle" dominantBaseline="central"
+        fill="white" fontSize={14} fontWeight="bold">{Math.round(value)}</text>
+    </svg>
+  );
+}
+
+interface Entity {
   entity_id: string;
-  region: string;
-  rights_domain: string;
-  reproductive_risk: string;
-  reproductive_pattern: string;
-  reproductive_severity: string;
-  recommended_action: string;
-  access_score: number;
-  legal_score: number;
-  coercion_score: number;
-  disparity_score: number;
-  reproductive_composite: number;
-  is_in_reproductive_crisis: boolean;
-  requires_reproductive_intervention: boolean;
-  reproductive_signal: string;
-};
+  name: string;
+  country: string;
+  sector: string;
+  composite_score: number;
+  abortion_access_criminalization_severity_score: number;
+  maternal_mortality_healthcare_gap_score: number;
+  contraception_sex_education_exclusion_score: number;
+  forced_sterilization_coercion_scale_score: number;
+  estimated_reproductive_rights_index: number;
+  risk_level: string;
+  primary_pattern: string;
+  key_signals: string[];
+  last_updated: string;
+  data_sources: string[];
+  [key: string]: unknown;
+}
 
-type Summary = {
-  total: number;
-  risk_counts: Record<string, number>;
-  pattern_counts: Record<string, number>;
-  severity_counts: Record<string, number>;
-  action_counts: Record<string, number>;
-  avg_reproductive_composite: number;
-  reproductive_crisis_count: number;
-  reproductive_intervention_count: number;
-  avg_access_score: number;
-  avg_legal_score: number;
-  avg_coercion_score: number;
-  avg_disparity_score: number;
+interface DashData {
+  total_entities: number;
+  avg_composite: number;
+  risk_distribution: Record<string, number>;
+  critical_alerts: number;
+  confidence_score: number;
+  last_analysis: string;
+  entities: Entity[];
   avg_estimated_reproductive_rights_index: number;
-};
-
-function GaugeRing({ value, label, color }: { value: number; label: string; color: string }) {
-  const r = 36;
-  const circ = 2 * Math.PI * r;
-  const fill = circ * (1 - value / 100);
-  return (
-    <div className="flex flex-col items-center gap-1">
-      <svg width="88" height="88" viewBox="0 0 88 88">
-        <circle cx="44" cy="44" r={r} fill="none" stroke="#1e1030" strokeWidth="8" />
-        <circle cx="44" cy="44" r={r} fill="none" stroke={color} strokeWidth="8"
-          strokeDasharray={circ} strokeDashoffset={fill}
-          strokeLinecap="round" transform="rotate(-90 44 44)" />
-        <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">
-          {Math.round(value)}
-        </text>
-      </svg>
-      <span className="text-xs text-rose-300/70 text-center">{label}</span>
-    </div>
-  );
+  data_sources: string[];
+  [key: string]: unknown;
 }
 
-function DistBar({ title, counts, colors }: { title: string; counts: Record<string, number>; colors: Record<string, string> }) {
-  const total = Object.values(counts).reduce((a, b) => a + b, 0) || 1;
-  return (
-    <div className="flex flex-col gap-1">
-      <span className="text-xs text-rose-300/70 font-medium">{title}</span>
-      <div className="flex h-3 rounded overflow-hidden gap-px">
-        {Object.entries(counts).map(([k, v]) => (
-          <div key={k} style={{ width: `${(v / total) * 100}%`, background: colors[k] || "#475569" }} title={`${k}: ${v}`} />
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-x-3 gap-y-0.5">
-        {Object.entries(counts).map(([k, v]) => (
-          <span key={k} className="text-xs text-rose-300/60">
-            <span style={{ color: colors[k] || "#94a3b8" }}>■</span> {k.replace(/_/g, " ")} {v}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-const RISK_COLORS = { low: "#10b981", moderate: "#f59e0b", high: "#f97316", critical: "#ef4444" };
-const PAT_COLORS: Record<string, string> = {
-  none: "#10b981",
-  total_abortion_ban_crisis: "#7f1d1d",
-  coercive_sterilization_pattern: "#dc2626",
-  maternal_mortality_collapse: "#f97316",
-  contraception_access_barrier: "#a855f7",
-  reproductive_surveillance_state: "#0ea5e9",
-};
-const SEV_COLORS: Record<string, string> = {
-  autonomie_corporelle_préservée: "#10b981",
-  stress_reproductif: "#f59e0b",
-  "risque_reproductif_élevé": "#f97316",
-  urgence_reproductive: "#7f1d1d",
-};
-const ACTION_COLORS: Record<string, string> = {
-  aucune_action: "#10b981",
-  surveillance_reproductive: "#06b6d4",
-  renforcement_droits_reproductifs: "#f59e0b",
-  sauvetage_maternel_prioritaire: "#f97316",
-  intervention_d_urgence_reproductive: "#ef4444",
+const RISK_CONFIG: Record<string, { label: string; color: string; bg: string; border: string }> = {
+  critique: { label: "Critique", color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/25" },
+  "élevé": { label: "Élevé", color: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/25" },
+  modéré: { label: "Modéré", color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/25" },
+  faible: { label: "Faible", color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/25" },
 };
 
-const RISK_BADGE: Record<string, string> = {
-  low: "bg-emerald-900 text-emerald-300",
-  moderate: "bg-amber-900 text-amber-300",
-  high: "bg-orange-900 text-orange-300",
-  critical: "bg-red-950 text-red-400",
-};
-const SEV_BADGE: Record<string, string> = {
-  autonomie_corporelle_préservée: "bg-emerald-900 text-emerald-300",
-  stress_reproductif: "bg-amber-900 text-amber-300",
-  "risque_reproductif_élevé": "bg-orange-900 text-orange-300",
-  urgence_reproductive: "bg-red-950 text-red-400",
-};
+const SUB_SCORES = [
+  { key: "abortion_access_criminalization_severity_score", label: "Avortement/Criminalisation" },
+  { key: "maternal_mortality_healthcare_gap_score", label: "Mortalité Maternelle" },
+  { key: "contraception_sex_education_exclusion_score", label: "Contraception/Éducation" },
+  { key: "forced_sterilization_coercion_scale_score", label: "Stérilisation Forcée" },
+];
 
 function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
-  const [tab, setTab] = useState<"scores" | "signal" | "action">("scores");
-  useEffect(() => {
-    const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, [onClose]);
-
+  const [tab, setTab] = useState(0);
+  const cfg = RISK_CONFIG[entity.risk_level] ?? RISK_CONFIG.faible;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={onClose}>
-      <div className="bg-slate-950 border border-rose-500/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e => e.stopPropagation()}>
-        <div className="flex items-center justify-between mb-4">
+    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto"
+        onClick={e => e.stopPropagation()}>
+        <div className="p-6 border-b border-slate-800 flex justify-between items-start">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
-            <span className="ml-2 text-rose-400 text-xs">{entity.region}</span>
-            <span className="ml-2 text-slate-500 text-xs">{entity.rights_domain.replace(/_/g, " ")}</span>
+            <span className={`text-xs font-semibold uppercase ${cfg.color}`}>{cfg.label}</span>
+            <h2 className="text-lg font-bold text-slate-100 mt-1">{entity.name}</h2>
+            <p className="text-sm text-slate-400">{entity.country} · {entity.sector}</p>
           </div>
           <button onClick={onClose} className="text-slate-500 hover:text-white text-xl leading-none">✕</button>
         </div>
-        <div className="flex gap-2 mb-4">
-          {(["scores", "signal", "action"] as const).map(t => (
-            <button key={t} onClick={() => setTab(t)}
-              className={`px-3 py-1 rounded text-xs font-medium transition-colors ${tab === t ? "bg-rose-900 text-white" : "bg-slate-900 text-slate-400 hover:text-white"}`}>
-              {t === "scores" ? "Scores" : t === "signal" ? "Signal" : "Action"}
+        <div className="flex border-b border-slate-800">
+          {["Aperçu", "Métriques", "Sources"].map((t, i) => (
+            <button key={t} onClick={() => setTab(i)}
+              className={`flex-1 py-3 text-sm font-medium transition-colors ${tab === i ? "border-b-2 text-pink-400" : "text-slate-400 hover:text-white"}`}
+              style={tab === i ? { borderColor: ACCENT } : {}}>
+              {t}
             </button>
           ))}
         </div>
-
-        {tab === "scores" && (
-          <div className="grid grid-cols-2 gap-3 text-sm">
-            {[
-              ["Score Accès",       entity.access_score,    "#ef4444"],
-              ["Score Légal",       entity.legal_score,     "#f97316"],
-              ["Score Coercition",  entity.coercion_score,  "#a855f7"],
-              ["Score Disparité",   entity.disparity_score, "#0ea5e9"],
-            ].map(([l, v, c]) => (
-              <div key={String(l)} className="bg-slate-900 border border-rose-500/20 rounded-lg p-3">
-                <div className="text-rose-300/60 text-xs mb-1">{String(l)}</div>
-                <div className="text-white font-bold text-lg">{Number(v).toFixed(1)}</div>
-                <div className="h-1.5 rounded mt-1 bg-slate-800">
-                  <div className="h-1.5 rounded" style={{ width: `${Math.min(Number(v), 100)}%`, background: String(c) }} />
-                </div>
+        <div className="p-6">
+          {tab === 0 && (
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-slate-400 text-sm">Score composite</span>
+                <span className="text-2xl font-bold" style={{ color: ACCENT }}>{entity.composite_score}/100</span>
               </div>
-            ))}
-            <div className="col-span-2 bg-slate-900 border border-rose-500/20 rounded-lg p-3">
-              <div className="text-rose-300/60 text-xs mb-1">Composite Reproductif</div>
-              <div className="text-white font-bold text-2xl">{entity.reproductive_composite.toFixed(1)}</div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-slate-400">Index Droits Reproductifs</span>
+                <span className="font-semibold" style={{ color: ACCENT }}>{entity.estimated_reproductive_rights_index}/10</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-slate-400">Niveau de risque</span>
+                <span className={`font-semibold uppercase text-xs ${cfg.color}`}>{cfg.label}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-slate-400">Patron principal</span>
+                <span className="text-slate-200">{entity.primary_pattern?.replace(/_/g, " ")}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-slate-400">Contexte</span>
+                <span className="text-slate-200 text-right max-w-xs">{entity.sector}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-slate-400">Dernière mise à jour</span>
+                <span className="text-slate-200">{entity.last_updated}</span>
+              </div>
             </div>
-          </div>
-        )}
-
-        {tab === "signal" && (
-          <div className="bg-slate-900 border border-rose-500/20 rounded-lg p-4 text-sm text-slate-200 leading-relaxed">
-            {entity.reproductive_signal}
-            <div className="mt-3 flex gap-2 flex-wrap">
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[entity.reproductive_risk] || "bg-slate-700 text-slate-300"}`}>
-                {entity.reproductive_risk}
-              </span>
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[entity.reproductive_severity] || "bg-slate-700 text-slate-300"}`}>
-                {entity.reproductive_severity.replace(/_/g, " ")}
-              </span>
+          )}
+          {tab === 1 && (
+            <div className="space-y-3">
+              {SUB_SCORES.map(({ key, label }) => (
+                <div key={key}>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-slate-400">{label}</span>
+                    <span className="text-slate-200">{entity[key] as number}/100</span>
+                  </div>
+                  <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-full rounded-full" style={{ width: `${entity[key] as number}%`, backgroundColor: ACCENT }} />
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        )}
-
-        {tab === "action" && (
-          <div className="space-y-3 text-sm">
-            <div className="bg-slate-900 border border-rose-500/20 rounded-lg p-3">
-              <div className="text-rose-300/60 text-xs mb-1">Action Recommandée</div>
-              <div className="text-white font-medium">{entity.recommended_action.replace(/_/g, " ")}</div>
-            </div>
-            <div className="bg-slate-900 border border-rose-500/20 rounded-lg p-3">
-              <div className="text-rose-300/60 text-xs mb-1">Pattern Reproductif</div>
-              <div className="text-white font-medium capitalize">{entity.reproductive_pattern.replace(/_/g, " ")}</div>
-            </div>
-            <div className="flex gap-2 flex-wrap">
-              {entity.is_in_reproductive_crisis && (
-                <span className="px-2 py-1 rounded bg-red-950 text-red-400 text-xs font-medium">CRISE REPRODUCTIVE</span>
-              )}
-              {entity.requires_reproductive_intervention && (
-                <span className="px-2 py-1 rounded bg-orange-950 text-orange-400 text-xs font-medium">INTERVENTION REQ.</span>
-              )}
-            </div>
-          </div>
-        )}
+          )}
+          {tab === 2 && (
+            <ul className="space-y-3">
+              {(entity.data_sources ?? entity.key_signals ?? []).map((s: string, i: number) => (
+                <li key={i} className="flex gap-3 text-sm">
+                  <span className="mt-0.5 shrink-0" style={{ color: ACCENT }}>▸</span>
+                  <span className="text-slate-300">{s}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
-export default function ReproductiveRightsDashboard() {
-  const [data, setData]           = useState<{ entities: Entity[]; summary: Summary } | null>(null);
-  const [filter, setFilter]       = useState<string>("all");
-  const [patFilter, setPatFilter] = useState<string>("all");
-  const [selected, setSelected]   = useState<Entity | null>(null);
+export default function Page() {
+  const [data, setData] = useState<DashData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("tous");
+  const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/reproductive-rights-engine")
-      .then(r => r.json())
-      .then(setData)
-      .catch(console.error);
+    fetch("/api/reproductive-rights-engine").then(r => r.json()).then(d => { setData(d.payload ?? d); setLoading(false); });
   }, []);
 
+  if (loading) return (
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: ACCENT, borderTopColor: "transparent" }} />
+    </div>
+  );
   if (!data) return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-      <div className="text-rose-400 text-lg animate-pulse">Initialisation du Moteur Droits Reproductifs...</div>
+      <div className="text-slate-400">Données indisponibles</div>
     </div>
   );
 
-  const { entities, summary } = data;
-  const filtered = entities.filter(e =>
-    (filter === "all" || e.reproductive_risk === filter) &&
-    (patFilter === "all" || e.reproductive_pattern === patFilter)
-  );
-
-  const dists = [
-    { title: "Niveau de Risque",         counts: summary.risk_counts,     colors: RISK_COLORS   },
-    { title: "Pattern Reproductif",      counts: summary.pattern_counts,  colors: PAT_COLORS    },
-    { title: "Sévérité",                 counts: summary.severity_counts, colors: SEV_COLORS    },
-    { title: "Action Recommandée",       counts: summary.action_counts,   colors: ACTION_COLORS },
-  ] as Array<{ title: string; counts: Record<string, number>; colors: Record<string, string> }>;
+  const entities = data.entities ?? [];
+  const filtered = filter === "tous" ? entities : entities.filter(e => e.risk_level === filter);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 space-y-6">
-      {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
-
-      <div>
-        <h1 className="text-2xl font-bold text-rose-400">Droits Reproductifs & Autonomie Corporelle — Module 396</h1>
-        <p className="text-rose-300/50 text-sm mt-1">Accès aux Soins · Cadre Légal · Coercition · Disparités Structurelles</p>
+    <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
+      {/* Header */}
+      <div className="mb-8 flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold" style={{ color: ACCENT }}>Reproductive Rights Engine</h1>
+          <p className="text-slate-400 mt-1 text-sm">Avortement · Mortalité Maternelle · Contraception · Stérilisation Forcée</p>
+        </div>
+        <span className="text-xs text-slate-500 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
+          {data.total_entities} entités analysées
+        </span>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-        {[
-          ["Entités Analysées",              summary.total,                                                  "text-rose-400"],
-          ["Crises Reproductives",           summary.reproductive_crisis_count,                              "text-red-400"],
-          ["Interventions Requises",         summary.reproductive_intervention_count,                        "text-orange-400"],
-          ["Composite Moy.",                 summary.avg_reproductive_composite.toFixed(1),                  "text-violet-400"],
-          ["Indice Droits Reproductifs",     summary.avg_estimated_reproductive_rights_index.toFixed(2),     "text-amber-400"],
-          ["Score Accès Moy.",               summary.avg_access_score.toFixed(1),                            "text-rose-500"],
-        ].map(([l, v, c]) => (
-          <div key={String(l)} className="bg-slate-900 border border-rose-500/30 rounded-xl p-3 text-center">
-            <div className={`text-xl font-bold ${c}`}>{v}</div>
-            <div className="text-xs text-rose-300/40 mt-0.5 leading-tight">{l}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Gauge Rings */}
-      <div className="bg-slate-900 border border-rose-500/30 rounded-xl p-5">
-        <div className="grid grid-cols-4 gap-4">
-          <GaugeRing value={summary.avg_access_score}    label="Accès aux Soins Moy."    color="#ef4444" />
-          <GaugeRing value={summary.avg_legal_score}     label="Score Légal Moy."         color="#f97316" />
-          <GaugeRing value={summary.avg_coercion_score}  label="Score Coercition Moy."    color="#a855f7" />
-          <GaugeRing value={summary.avg_disparity_score} label="Score Disparité Moy."     color="#0ea5e9" />
+      {/* KPI Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Critiques</p>
+          <p className="text-3xl font-bold mt-1 text-red-400">{data.risk_distribution?.critique ?? 0}</p>
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col items-center">
+          <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">Score Moyen</p>
+          <GaugeRing value={data.avg_composite} stroke={ACCENT} />
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Index Droits Reproductifs</p>
+          <p className="text-3xl font-bold mt-1" style={{ color: ACCENT }}>{data.avg_estimated_reproductive_rights_index}</p>
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Entités</p>
+          <p className="text-3xl font-bold mt-1" style={{ color: ACCENT }}>{data.total_entities}</p>
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Confiance</p>
+          <p className="text-3xl font-bold mt-1 text-emerald-400">{Math.round((data.confidence_score ?? 0) * 100)}%</p>
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Dernière Analyse</p>
+          <p className="text-sm font-bold mt-1 text-slate-200">{data.last_analysis ?? "—"}</p>
         </div>
       </div>
 
-      {/* Distribution Bars */}
-      <div className="bg-slate-900 border border-rose-500/30 rounded-xl p-5 grid grid-cols-1 md:grid-cols-2 gap-5">
-        {dists.map(d => <DistBar key={d.title} {...d} />)}
-      </div>
-
-      {/* Filter Pills */}
-      <div className="flex flex-wrap gap-2">
-        {["all", "low", "moderate", "high", "critical"].map(r => (
-          <button key={r} onClick={() => setFilter(r)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${filter === r ? "bg-rose-900 border-rose-700 text-white" : "bg-slate-900 border-rose-500/30 text-rose-400/70 hover:text-white"}`}>
-            {r}
-          </button>
-        ))}
-        <span className="w-px h-5 self-center bg-rose-500/30" />
-        {["all", "none", "total_abortion_ban_crisis", "coercive_sterilization_pattern", "maternal_mortality_collapse", "contraception_access_barrier", "reproductive_surveillance_state"].map(p => (
-          <button key={p} onClick={() => setPatFilter(p)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${patFilter === p ? "bg-rose-950 border-rose-700 text-white" : "bg-slate-900 border-rose-500/30 text-rose-400/70 hover:text-white"}`}>
-            {p.replace(/_/g, " ")}
+      {/* Filter pills */}
+      <div className="flex gap-2 mb-6 flex-wrap">
+        {["tous", "critique", "élevé", "modéré", "faible"].map(f => (
+          <button key={f} onClick={() => setFilter(f)}
+            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${filter === f
+              ? f !== "tous" ? `${RB[f]} ${RC[f]}` : "bg-white/10 border-white/20 text-white"
+              : "border-slate-700 text-slate-400 hover:border-slate-500"}`}>
+            {f.charAt(0).toUpperCase() + f.slice(1)}
           </button>
         ))}
       </div>
 
-      {/* Entity Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {filtered.map(e => (
-          <div key={e.entity_id} onClick={() => setSelected(e)}
-            className="bg-slate-900 border border-rose-500/30 rounded-xl p-4 cursor-pointer hover:border-rose-400 transition-colors">
-            <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white">{e.entity_id}</span>
-              <span className="text-xs text-rose-400/60">{e.region}</span>
-            </div>
-            <div className="text-xs text-slate-500 mb-2 capitalize">{e.rights_domain.replace(/_/g, " ")}</div>
-            <div className="flex gap-1 mb-3 flex-wrap">
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[e.reproductive_risk] || "bg-slate-700 text-slate-300"}`}>
-                {e.reproductive_risk}
-              </span>
-              <span className={`px-2 py-0.5 rounded text-xs font-medium ${SEV_BADGE[e.reproductive_severity] || "bg-slate-700 text-slate-300"}`}>
-                {e.reproductive_severity.replace(/_/g, " ")}
-              </span>
-            </div>
-            <div className="text-2xl font-black text-white mb-1">{e.reproductive_composite.toFixed(1)}</div>
-            <div className="text-xs text-rose-400/60 mb-2 capitalize">{e.reproductive_pattern.replace(/_/g, " ")}</div>
-            <div className="text-xs text-violet-400 font-medium mb-2">
-              Accès: {e.access_score.toFixed(1)} · Légal: {e.legal_score.toFixed(1)}
-            </div>
-            <div className="flex gap-1 flex-wrap">
-              {e.is_in_reproductive_crisis && (
-                <span className="px-1.5 py-0.5 rounded bg-red-950 text-red-400 text-xs">CRISE</span>
-              )}
-              {e.requires_reproductive_intervention && (
-                <span className="px-1.5 py-0.5 rounded bg-orange-950 text-orange-400 text-xs">INTERVENTION</span>
-              )}
-            </div>
+      {/* Entity grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+        {filtered.map(e => {
+          const cfg = RISK_CONFIG[e.risk_level] ?? RISK_CONFIG.faible;
+          return (
+            <button key={e.entity_id} onClick={() => setSelected(e)}
+              className={`text-left border rounded-xl p-4 transition-all hover:scale-[1.01] ${RB[e.risk_level]}`}>
+              <div className="flex justify-between items-start mb-3">
+                <div className="min-w-0">
+                  <span className="text-xs font-mono text-slate-500">{e.entity_id}</span>
+                  <p className="font-semibold text-sm text-slate-100 line-clamp-1 mt-0.5">{e.name}</p>
+                  <p className="text-xs text-slate-400">{e.country}</p>
+                </div>
+                <div className="shrink-0 ml-3">
+                  <GaugeRing value={e.composite_score} stroke={ACCENT} />
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className={`text-xs font-semibold uppercase ${cfg.color}`}>{cfg.label}</span>
+                <span className="text-xs text-slate-500">Index: <span className="font-bold" style={{ color: ACCENT }}>{e.estimated_reproductive_rights_index}</span></span>
+              </div>
+            </button>
+          );
+        })}
+        {filtered.length === 0 && (
+          <div className="col-span-full text-center py-12 text-slate-400 text-sm">
+            Aucune entité dans ce niveau de risque
           </div>
-        ))}
+        )}
       </div>
+
+      {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }
