@@ -163,6 +163,13 @@
 | Prison Privatization Profit Rights | `swarm/intelligence/prison_privatization_profit_rights_engine.py` | 58.54 | Prisons privées, quotas remplissage, exploitation travail |
 | Cultural Heritage Destruction Rights | `swarm/intelligence/cultural_heritage_destruction_rights_engine.py` | 59.76 | Patrimoine détruit en conflit, pillage, minorités culturelles |
 
+### Wave 127
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Colonial Reparations Transitional Justice | `swarm/intelligence/colonial_reparations_transitional_justice_engine.py` | 57.83 | Réparations coloniales, justice transitionnelle, commissions vérité |
+| Mining Extraction Community Rights | `swarm/intelligence/mining_extraction_community_rights_engine.py` | 57.83 | Communautés minières, pollution extraction, FPIC violations |
+| Sexual Orientation Identity Criminalization | `swarm/intelligence/sexual_orientation_identity_criminalization_engine.py` | 58.78 | Lois sodomie, reconnaissance genre, thérapies conversion |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -354,4 +361,4 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 126 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 127 · Caelum Partners · Chaima Mhadbi*
