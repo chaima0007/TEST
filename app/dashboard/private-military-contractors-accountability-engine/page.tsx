@@ -1,289 +1,124 @@
-"use client";
-import { useState, useEffect } from "react";
+"use client"
 
-const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
-const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
-
-const ACCENT = "#b91c1c";
+import { useEffect, useState } from "react"
 
 interface Entity {
-  entity_id: string;
-  name: string;
-  country: string;
-  composite_score: number;
-  documented_abuses_civilian_harm_score: number;
-  legal_immunity_impunity_gap_score: number;
-  oversight_transparency_failure_score: number;
-  international_regulatory_framework_gap_score: number;
-  estimated_pmc_accountability_index: number;
-  risk_level: string;
-  primary_pattern: string;
-  last_updated: string;
-  [key: string]: unknown;
+  id: string
+  name: string
+  composite_score: number
+  risk_level: string
+  estimated_pmc_accountability_index: number
 }
 
-interface DashData {
-  total_entities?: number;
-  avg_composite?: number;
-  avg_estimated_pmc_accountability_index?: number;
-  risk_distribution?: Record<string, number>;
-  confidence_score?: number;
-  data_sources?: string[];
-  entities?: Entity[];
-  [key: string]: unknown;
+interface DomainData {
+  domain: string
+  generated_at: string
+  entities: Entity[]
+  avg_composite: number
+  risk_distribution: Record<string, number>
 }
 
-function GaugeRing({ value, label }: { value: number; label: string }) {
-  const r = 36;
-  const circ = 2 * Math.PI * r;
-  const fill = circ * (1 - Math.min(value, 100) / 100);
+const ACCENT = "#b91c1c"
+
+function GaugeRing({ score }: { score: number }) {
+  const r = 36, cx = 44, cy = 44
+  const circumference = 2 * Math.PI * r
+  const filled = (score / 100) * circumference
   return (
-    <div className="flex flex-col items-center gap-1">
-      <svg width="88" height="88" viewBox="0 0 88 88">
-        <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth={8} />
-        <circle
-          cx="44" cy="44" r={r} fill="none" stroke={ACCENT} strokeWidth={8}
-          strokeDasharray={circ} strokeDashoffset={fill}
-          strokeLinecap="round" transform="rotate(-90 44 44)"
-        />
-        <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">
-          {value.toFixed(1)}
-        </text>
-      </svg>
-      <span className="text-xs text-slate-400 text-center">{label}</span>
-    </div>
-  );
+    <svg viewBox="0 0 88 88" width={88} height={88}>
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e293b" strokeWidth={8} />
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={ACCENT} strokeWidth={8}
+        strokeDasharray={`${filled} ${circumference - filled}`}
+        transform="rotate(-90 44 44)" strokeLinecap="round" />
+      <text x={cx} y={cy + 5} textAnchor="middle" fill="#f1f5f9" fontSize={14} fontWeight="bold">
+        {score.toFixed(0)}
+      </text>
+    </svg>
+  )
 }
 
-function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
-  const [tab, setTab] = useState<"apercu" | "metriques" | "sources">("apercu");
-  const tabs: { key: "apercu" | "metriques" | "sources"; label: string }[] = [
-    { key: "apercu", label: "Aperçu" },
-    { key: "metriques", label: "Métriques" },
-    { key: "sources", label: "Sources" },
-  ];
-  const subScores = [
-    { label: "Abus Documentés & Victimes Civiles", value: entity.documented_abuses_civilian_harm_score, weight: "0.30" },
-    { label: "Immunité Légale & Impunité", value: entity.legal_immunity_impunity_gap_score, weight: "0.25" },
-    { label: "Échec Surveillance & Transparence", value: entity.oversight_transparency_failure_score, weight: "0.25" },
-    { label: "Lacune Cadre Réglementaire Int.", value: entity.international_regulatory_framework_gap_score, weight: "0.20" },
-  ];
+function RiskBadge({ level }: { level: string }) {
+  const colors: Record<string, string> = { critique: "#ef4444", "élevé": "#f97316", modéré: "#eab308", faible: "#22c55e" }
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={onClose}>
-      <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl" onClick={(e) => e.stopPropagation()}>
-        <div className="p-6 border-b border-slate-800 flex items-start justify-between gap-4">
-          <div>
-            <h2 className="text-xl font-bold text-white">{entity.name}</h2>
-            <p className="text-sm text-slate-400 mt-0.5">{entity.country}</p>
-            <span className={`text-xs font-semibold uppercase mt-1 inline-block ${RC[entity.risk_level] ?? "text-slate-400"}`}>{entity.risk_level}</span>
-          </div>
-          <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors text-2xl leading-none">&times;</button>
-        </div>
-        <div className="flex border-b border-slate-800">
-          {tabs.map((t) => (
-            <button key={t.key} onClick={() => setTab(t.key)}
-              className={`flex-1 py-3 text-sm font-medium transition-colors ${tab === t.key ? "border-b-2 text-white" : "text-slate-500 hover:text-slate-300"}`}
-              style={tab === t.key ? { borderColor: ACCENT, color: ACCENT } : {}}>
-              {t.label}
-            </button>
-          ))}
-        </div>
-        <div className="p-6">
-          {tab === "apercu" && (
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold" style={{ color: ACCENT }}>{entity.composite_score.toFixed(1)}</div>
-                  <div className="text-xs text-slate-400 mt-1">Score Composite</div>
-                </div>
-                <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold" style={{ color: ACCENT }}>{typeof entity.estimated_pmc_accountability_index === "number" ? entity.estimated_pmc_accountability_index.toFixed(2) : "—"}</div>
-                  <div className="text-xs text-slate-400 mt-1">Index Responsabilité PMC</div>
-                </div>
-              </div>
-              <div className={`rounded-lg p-3 border ${RB[entity.risk_level] ?? "border-slate-700 bg-slate-800/30"}`}>
-                <span className={`text-sm font-semibold capitalize ${RC[entity.risk_level] ?? "text-slate-300"}`}>
-                  Niveau de risque : {entity.risk_level}
-                </span>
-              </div>
-              <div className="bg-slate-800/50 rounded-xl p-4">
-                <div className="text-xs text-slate-400 mb-2">Pattern Principal</div>
-                <div className="text-sm font-medium" style={{ color: ACCENT }}>{entity.primary_pattern}</div>
-              </div>
-            </div>
-          )}
-          {tab === "metriques" && (
-            <div className="space-y-3">
-              {subScores.map((s) => (
-                <div key={s.label} className="bg-slate-800/50 rounded-lg p-3">
-                  <div className="flex justify-between items-center mb-1.5">
-                    <span className="text-sm text-slate-300">{s.label}</span>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-slate-500">×{s.weight}</span>
-                      <span className="text-sm font-bold text-white">{typeof s.value === "number" ? s.value.toFixed(1) : "—"}</span>
-                    </div>
-                  </div>
-                  <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-                    <div className="h-full rounded-full" style={{ width: `${Math.min(typeof s.value === "number" ? s.value : 0, 100)}%`, background: ACCENT }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-          {tab === "sources" && (
-            <div className="space-y-3">
-              <div className="bg-slate-800/50 rounded-xl p-4">
-                <div className="text-xs text-slate-400 mb-2">Dernière mise à jour</div>
-                <div className="text-sm text-slate-300">{new Date(entity.last_updated).toLocaleDateString("fr-FR")}</div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+    <span style={{ background: colors[level] ?? "#64748b", color: "#fff", borderRadius: 6, padding: "2px 10px", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 0.5, whiteSpace: "nowrap" }}>
+      {level}
+    </span>
+  )
 }
 
-export default function PrivateMilitaryContractorsAccountabilityEnginePage() {
-  const [data, setData] = useState<DashData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState("tous");
-  const [selected, setSelected] = useState<Entity | null>(null);
+export default function PrivateMilitaryContractorsAccountabilityPage() {
+  const [data, setData] = useState<DomainData | null>(null)
 
   useEffect(() => {
     fetch("/api/private-military-contractors-accountability-engine")
-      .then(r => r.json())
-      .then(d => { setData(d.payload ?? d); setLoading(false); })
-      .catch(() => { setLoading(false); });
-  }, []);
+      .then((r) => r.json())
+      .then((d) => setData(d.payload ?? d))
+  }, [])
 
-  if (loading) {
-    return (
-      <div className="bg-slate-950 min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-sm" style={{ color: ACCENT }}>Initialisation Responsabilité Contractants Militaires Privés…</div>
-      </div>
-    );
-  }
-
-  const allEntities: Entity[] = data?.entities ?? (Array.isArray(data) ? data as unknown as Entity[] : []);
-  const filtered = filter === "tous" ? allEntities : allEntities.filter(e => e.risk_level === filter);
-  const avg = (arr: number[]) => arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
-  const avgComposite = data?.avg_composite ?? avg(allEntities.map(e => e.composite_score));
-  const avgIndex = data?.avg_estimated_pmc_accountability_index ?? avg(allEntities.map(e => e.estimated_pmc_accountability_index));
-  const rd = data?.risk_distribution ?? {};
-  const countCritique = rd["critique"] ?? allEntities.filter(e => e.risk_level === "critique").length;
-  const countEleve = rd["élevé"] ?? allEntities.filter(e => e.risk_level === "élevé").length;
-  const sources = data?.data_sources ?? [];
-  const confidence = typeof data?.confidence_score === "number" ? `${(data.confidence_score * 100).toFixed(0)}%` : "—";
-
-  const avgAbuses = avg(allEntities.map(e => e.documented_abuses_civilian_harm_score));
-  const avgImpunity = avg(allEntities.map(e => e.legal_immunity_impunity_gap_score));
-  const avgOversight = avg(allEntities.map(e => e.oversight_transparency_failure_score));
-  const avgRegulatory = avg(allEntities.map(e => e.international_regulatory_framework_gap_score));
-
-  const kpis = [
-    { label: "Entités Analysées", value: data?.total_entities ?? allEntities.length },
-    { label: "Score Moyen", value: avgComposite.toFixed(1) },
-    { label: "Index Responsabilité PMC", value: avgIndex.toFixed(2) },
-    { label: "Confiance", value: confidence },
-    { label: "Critique", value: countCritique },
-    { label: "Élevé", value: countEleve },
-  ];
-
-  const filters = ["tous", "critique", "élevé", "modéré", "faible"];
+  if (!data) return (
+    <div style={{ background: "#0f172a", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ color: ACCENT, fontSize: 18 }}>Chargement contractants militaires privés…</div>
+    </div>
+  )
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-6 space-y-6">
-      {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
-
-      {/* Header */}
-      <div>
-        <div className="flex items-center gap-3 mb-1">
-          <div className="w-3 h-8 rounded-full" style={{ background: ACCENT }} />
-          <h1 className="text-2xl font-bold tracking-tight">Responsabilité Contractants Militaires Privés</h1>
-        </div>
-        <p className="text-slate-400 text-sm ml-6">
-          Private Military Contractors Accountability Engine — Caelum Partners · Wave 182 · Chaima Mhadbi, Fondatrice, Bruxelles
-        </p>
-      </div>
-
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {kpis.map(k => (
-          <div key={k.label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-            <div className="text-xs text-slate-500 mb-1">{k.label}</div>
-            <div className="text-xl font-bold" style={{ color: ACCENT }}>{k.value}</div>
+    <div style={{ background: "#0f172a", minHeight: "100vh", padding: "32px 24px", fontFamily: "system-ui, sans-serif" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", marginBottom: 32 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <div style={{ background: ACCENT, borderRadius: 12, padding: 12, flexShrink: 0 }}>
+            <svg width={28} height={28} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2}>
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
           </div>
-        ))}
-      </div>
-
-      {/* Gauge Rings */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
-        <h2 className="text-sm font-semibold text-slate-400 mb-4">Scores Moyens par Dimension</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <GaugeRing value={avgAbuses} label="Abus & Victimes Civiles" />
-          <GaugeRing value={avgImpunity} label="Immunité & Impunité" />
-          <GaugeRing value={avgOversight} label="Échec Surveillance" />
-          <GaugeRing value={avgRegulatory} label="Lacune Réglementaire" />
+          <div>
+            <h1 style={{ margin: 0, fontSize: 24, fontWeight: 800, color: "#f1f5f9" }}>
+              Contractants Militaires Privés &amp; Responsabilité
+            </h1>
+            <p style={{ margin: 0, color: "#94a3b8", fontSize: 14 }}>Wave 182 — Indice mondial des droits humains · Caelum Partners</p>
+          </div>
+        </div>
+        <div style={{ display: "flex", gap: 20, marginTop: 28, flexWrap: "wrap" }}>
+          {[
+            { label: "Score moyen", value: data.avg_composite.toFixed(2) },
+            { label: "Critique", value: data.risk_distribution["critique"] ?? 0, color: "#ef4444" },
+            { label: "Élevé", value: data.risk_distribution["élevé"] ?? 0, color: "#f97316" },
+            { label: "Modéré", value: data.risk_distribution["modéré"] ?? 0, color: "#eab308" },
+            { label: "Faible", value: data.risk_distribution["faible"] ?? 0, color: "#22c55e" },
+          ].map((s) => (
+            <div key={s.label} style={{ background: "#1e293b", borderRadius: 10, padding: "14px 22px", minWidth: 110, borderTop: `3px solid ${s.color ?? ACCENT}` }}>
+              <div style={{ fontSize: 22, fontWeight: 700, color: s.color ?? ACCENT }}>{s.value}</div>
+              <div style={{ fontSize: 12, color: "#94a3b8", marginTop: 2 }}>{s.label}</div>
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Filter Pills */}
-      <div className="flex gap-2 flex-wrap">
-        {filters.map(f => (
-          <button key={f} onClick={() => setFilter(f)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${filter === f ? "text-white font-bold" : "bg-slate-800 text-slate-400 hover:bg-slate-700"}`}
-            style={filter === f ? { background: ACCENT } : {}}>
-            {f.charAt(0).toUpperCase() + f.slice(1)}
-          </button>
-        ))}
-      </div>
-
-      {/* Entity Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {filtered.map(e => (
-          <div key={e.entity_id} onClick={() => setSelected(e)}
-            className={`border rounded-xl p-4 cursor-pointer hover:scale-[1.01] transition-transform ${RB[e.risk_level] ?? "border-slate-700 bg-slate-900"}`}>
-            <div className="flex justify-between items-start mb-2">
-              <div className="flex-1 min-w-0">
-                <div className="font-semibold text-sm leading-tight truncate">{e.name}</div>
-                <div className="text-xs text-slate-400 mt-1">{e.country}</div>
+      <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(480px, 1fr))", gap: 20 }}>
+        {data.entities.map((entity) => (
+          <div key={entity.id} style={{ background: "#1e293b", borderRadius: 12, padding: 22, display: "flex", gap: 20, alignItems: "flex-start", borderLeft: `4px solid ${ACCENT}` }}>
+            <div style={{ flexShrink: 0 }}><GaugeRing score={entity.composite_score} /></div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8, gap: 8 }}>
+                <span style={{ color: ACCENT, fontSize: 11, fontWeight: 700, letterSpacing: 1 }}>{entity.id}</span>
+                <RiskBadge level={entity.risk_level} />
               </div>
-              <div className="text-right ml-3 flex-shrink-0">
-                <div className="text-xl font-bold text-white">{e.composite_score.toFixed(1)}</div>
-                <div className={`text-xs font-bold uppercase mt-1 ${RC[e.risk_level] ?? "text-slate-400"}`}>{e.risk_level}</div>
+              <p style={{ margin: "0 0 10px", fontSize: 13, color: "#cbd5e1", lineHeight: 1.5 }}>{entity.name}</p>
+              <div style={{ display: "flex", gap: 16 }}>
+                <div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: ACCENT }}>{entity.estimated_pmc_accountability_index.toFixed(2)}</div>
+                  <div style={{ fontSize: 11, color: "#64748b" }}>Indice responsabilité</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: "#f1f5f9" }}>{entity.composite_score.toFixed(2)}</div>
+                  <div style={{ fontSize: 11, color: "#64748b" }}>Score composite</div>
+                </div>
               </div>
             </div>
-            <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden mt-2">
-              <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(e.composite_score, 100)}%`, background: ACCENT }} />
-            </div>
-            <div className="text-xs text-slate-500 mt-2">
-              Index Responsabilité PMC: <span className="font-medium" style={{ color: ACCENT }}>{typeof e.estimated_pmc_accountability_index === "number" ? e.estimated_pmc_accountability_index.toFixed(2) : "—"}</span>
-            </div>
           </div>
         ))}
       </div>
-
-      {filtered.length === 0 && (
-        <div className="text-center py-12 text-slate-500 text-sm">Aucune entité pour ce niveau de risque.</div>
-      )}
-
-      {/* Sources */}
-      {sources.length > 0 && (
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-          <h3 className="text-slate-400 text-xs uppercase tracking-wide mb-3">Sources de données</h3>
-          <div className="flex flex-wrap gap-2">
-            {sources.map((src) => (
-              <span key={src} className="text-xs bg-slate-800 text-slate-400 px-3 py-1 rounded-full border border-slate-700/50">{src}</span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Footer */}
-      <div className="text-center text-xs text-slate-600 py-4">
-        Wave 182 · Private Military Contractors Accountability Engine · Caelum Partners © 2026
+      <div style={{ maxWidth: 1100, margin: "40px auto 0", textAlign: "center", color: "#334155", fontSize: 12 }}>
+        Dernière mise à jour : {new Date(data.generated_at).toLocaleString("fr-FR")} · Caelum Partners Wave 182
       </div>
     </div>
-  );
+  )
 }
