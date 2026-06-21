@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const ACCENT = "#7c3aed";
+const ACCENT = "#ec4899";
 const SLUG = "lgbtq-rights-criminalization-engine";
 
 const RC: Record<string, string> = {
