@@ -7513,6 +7513,27 @@ function IconChildSoldiersRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconOlderPersonsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z M12 14.25v3M10.5 16.5h3" />
+    </svg>
+  );
+}
+function IconMentalHealthRightsW78({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+    </svg>
+  );
+}
+function IconDebtBondageRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -8162,6 +8183,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/water-rights-engine", label: "Water Rights", icon: IconWaterRights },
       { href: "/dashboard/housing-rights-engine", label: "Housing Rights", icon: IconHousingRights },
       { href: "/dashboard/ai-surveillance-rights-engine", label: "Surveillance IA", icon: IconAISurveillanceRights },
+      { href: "/dashboard/older-persons-rights-engine", label: "Droits Personnes Âgées", icon: IconOlderPersonsRights },
+      { href: "/dashboard/mental-health-rights-engine", label: "Santé Mentale", icon: IconMentalHealthRightsW78 },
+      { href: "/dashboard/debt-bondage-rights-engine", label: "Servitude Dette", icon: IconDebtBondageRights },
       { href: "/dashboard/gig-economy-rights-engine", label: "Économie Gig", icon: IconGigEconomyRights },
       { href: "/dashboard/enforced-disappearances-engine", label: "Disparitions Forcées", icon: IconEnforcedDisappearances },
       { href: "/dashboard/child-soldiers-rights-engine", label: "Enfants Soldats", icon: IconChildSoldiersRights },
