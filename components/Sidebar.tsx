@@ -9452,6 +9452,30 @@ function IconDigitalSurveillanceMassMonitoring({ className }: { className?: stri
   )
 }
 
+function IconExtraordinaryRenditionSecretDetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z" />
+    </svg>
+  )
+}
+
+function IconCriticalMineralsTransitionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    </svg>
+  )
+}
+
+function IconMegaInfrastructureConstructionLabor({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10474,6 +10498,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/lgbtqi-rights-criminalization-engine", label: "Droits LGBTQI+", icon: IconLgbtqRightsCriminalization },
       { href: "/dashboard/corporate-impunity-accountability-engine", label: "Impunité Corporate", icon: IconCorporateImpunity },
       { href: "/dashboard/freedom-religion-belief-persecution-engine", label: "Liberté Religion", icon: IconFreedomReligionBelief },
+      { href: "/dashboard/extraordinary-rendition-secret-detention-engine", label: "Renditions Secrètes", icon: <IconExtraordinaryRenditionSecretDetention className="w-4 h-4" /> },
+      { href: "/dashboard/critical-minerals-transition-rights-engine", label: "Minéraux Critiques", icon: <IconCriticalMineralsTransitionRights className="w-4 h-4" /> },
+      { href: "/dashboard/mega-infrastructure-construction-labor-engine", label: "Infrastructures Méga", icon: <IconMegaInfrastructureConstructionLabor className="w-4 h-4" /> },
     ],
   },
   {
