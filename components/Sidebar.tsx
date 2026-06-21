@@ -7632,6 +7632,30 @@ function IconStatelessnessRights({ className }: { className?: string }) {
   );
 }
 
+function IconClimateForcedMigrationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+    </svg>
+  );
+}
+
+function IconChildLaborMiningRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+    </svg>
+  );
+}
+
+function IconWaterRightsAccess({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8387,6 +8411,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/land-grabbing-rights-engine", label: "Accaparement Terres", icon: IconLandGrabbingRights },
       { href: "/dashboard/prison-labor-rights-engine", label: "Travail Pénitentiaire", icon: IconPrisonLaborRights },
       { href: "/dashboard/statelessness-rights-engine", label: "Apatridie", icon: IconStatelessnessRights },
+      { href: "/dashboard/climate-forced-migration-rights-engine", label: "Climate Migration Rights", icon: IconClimateForcedMigrationRights },
+      { href: "/dashboard/child-labor-mining-rights-engine", label: "Child Labor Mining Rights", icon: IconChildLaborMiningRights },
+      { href: "/dashboard/water-rights-access-engine", label: "Water Rights Access", icon: IconWaterRightsAccess },
     ],
   },
   {
