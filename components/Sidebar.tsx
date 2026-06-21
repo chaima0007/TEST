@@ -7516,6 +7516,30 @@ function IconEcoGriefRights({ className }: { className?: string }) {
   );
 }
 
+function IconNeurodiversityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+    </svg>
+  );
+}
+
+function IconGeneticDiscrimination({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+    </svg>
+  );
+}
+
+function IconMenopauseWorkplaceRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8257,6 +8281,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/neuroright-mental-sovereignty-engine", label: "Neurodroits Mentaux", icon: IconNeurorightMentalSovereignty },
       { href: "/dashboard/economic-domestic-abuse-engine", label: "Abus Économique Conjugal", icon: IconEconomicDomesticAbuse },
       { href: "/dashboard/eco-grief-rights-engine", label: "Deuil Écologique", icon: IconEcoGriefRights },
+      { href: "/dashboard/neurodiversity-rights-engine", label: "Droits Neurodiversité", icon: IconNeurodiversityRights },
+      { href: "/dashboard/genetic-discrimination-engine", label: "Discrimination Génétique", icon: IconGeneticDiscrimination },
+      { href: "/dashboard/menopause-workplace-rights-engine", label: "Ménopause & Travail", icon: IconMenopauseWorkplaceRights },
     ],
   },
   {
