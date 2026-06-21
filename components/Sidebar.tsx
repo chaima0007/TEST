@@ -9395,6 +9395,22 @@ function IconCorporateTaxJusticeDevelopment({ className }: { className?: string 
   )
 }
 
+function IconPrisonConditionsTorture({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+    </svg>
+  )
+}
+
+function IconAIAutonomousWeaponsHumanRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10173,7 +10189,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/gender-based-violence-femicide-engine", label: "Violences Genre & Féminicide", icon: IconGenderBasedViolenceFemicide },
       { href: "/dashboard/anti-corruption-accountability-engine", label: "Anti-Corruption & Redevabilité", icon: IconAntiCorruptionAccountability },
       { href: "/dashboard/digital-privacy-surveillance-rights-engine", label: "Vie Privée Numérique", icon: IconDigitalPrivacySurveillanceRights },
-      { href: "/dashboard/freedom-of-assembly-protest-rights-engine", label: "Liberté de Réunion", icon: IconFreedomOfAssemblyProtestRights },
+      { href: "/dashboard/freedom-of-assembly-protest-rights-engine", label: "Liberté Réunion &amp; Manifestation", icon: <IconFreedomOfAssemblyProtestRights className="w-4 h-4" /> },
       { href: "/dashboard/housing-eviction-homelessness-rights-engine", label: "Droit au Logement", icon: IconHousingEvictionHomelessnessRights },
       { href: "/dashboard/child-trafficking-exploitation-rights-engine", label: "Trafic Enfants & Exploitation", icon: IconChildTraffickingExploitationRights },
       { href: "/dashboard/disability-rights-accessibility-engine", label: "Droits Handicap & Accessibilité", icon: IconDisabilityRightsAccessibility },
@@ -10397,6 +10413,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/social-media-platform-accountability-engine", label: "Responsabilité Plateformes", icon: <IconSocialMediaPlatformAccountability className="w-4 h-4" /> },
       { href: "/dashboard/refugee-return-voluntary-repatriation-engine", label: "Retour Réfugiés", icon: <IconRefugeeReturnVoluntaryRepatriation className="w-4 h-4" /> },
       { href: "/dashboard/corporate-tax-justice-development-engine", label: "Justice Fiscale Corporative", icon: <IconCorporateTaxJusticeDevelopment className="w-4 h-4" /> },
+      { href: "/dashboard/prison-conditions-torture-engine", label: "Conditions Carcérales &amp; Torture", icon: <IconPrisonConditionsTorture className="w-4 h-4" /> },
+      { href: "/dashboard/ai-autonomous-weapons-human-rights-engine", label: "IA &amp; Armes Autonomes", icon: <IconAIAutonomousWeaponsHumanRights className="w-4 h-4" /> },
     ],
   },
   {
