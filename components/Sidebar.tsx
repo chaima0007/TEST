@@ -10469,6 +10469,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/digital-surveillance-mass-monitoring-engine", label: "Surveillance Numérique", icon: <IconDigitalSurveillanceMassMonitoring className="w-4 h-4" /> },
       { href: "/dashboard/child-soldiers-armed-recruitment-engine", label: "Enfants Soldats", icon: <IconChildSoldiers className="w-4 h-4" /> },
       { href: "/dashboard/sexual-violence-conflict-weapon-engine", label: "Violence Sexuelle Conflit", icon: <IconSexualViolenceWartime className="w-4 h-4" /> },
+      { href: "/dashboard/environmental-defenders-killings-engine", label: "Défenseurs Environnement", icon: IconEnvironmentalDefendersRights },
+      { href: "/dashboard/access-water-sanitation-rights-engine", label: "Droit à l&apos;Eau", icon: IconWaterSanitationRights },
+      { href: "/dashboard/lgbtqi-rights-criminalization-engine", label: "Droits LGBTQI+", icon: IconLgbtqRightsCriminalization },
     ],
   },
   {
