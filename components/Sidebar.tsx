@@ -10454,6 +10454,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/stateless-persons-documentation-engine", label: "Apatridie & Documentation", icon: IconStatelessPersonsNationalityRights },
       { href: "/dashboard/anti-personnel-mines-cluster-munitions-engine", label: "Mines Antipersonnel", icon: <IconAntiPersonnelMinesClusterMunitions className="w-4 h-4" /> },
       { href: "/dashboard/peacekeeping-accountability-governance-engine", label: "Responsabilité OMP", icon: <IconPeacekeepingAccountabilityGovernance className="w-4 h-4" /> },
+      { href: "/dashboard/trafficking-forced-labor-modern-slavery-engine", label: "Traite & Esclavage Moderne", icon: IconHumanTraffickingModernSlavery },
+      { href: "/dashboard/arbitrary-detention-political-prisoners-engine", label: "Détention Arbitraire", icon: IconArbitraryDetention },
+      { href: "/dashboard/land-rights-eviction-indigenous-territories-engine", label: "Droits Fonciers Autochtones", icon: IconIndigenousLandRightsExtraction },
     ],
   },
   {
