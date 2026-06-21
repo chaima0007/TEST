@@ -8,10 +8,10 @@ class StatelessnessRightsEntity:
     entity_id: str
     name: str
     country: str
-    statelessness_documentation_deprivation_severity_score: float
-    birth_registration_absence_exclusion_scale_score: float
-    nationality_acquisition_barrier_score: float
-    social_service_access_stateless_gap_score: float
+    statelessness_legal_vulnerability_severity_score: float
+    documentation_citizenship_denial_scale_score: float
+    stateless_detention_expulsion_risk_score: float
+    reduced_social_rights_access_barrier_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
@@ -20,10 +20,10 @@ class StatelessnessRightsEntity:
 
     def __post_init__(self):
         self.composite_score = round(
-            self.statelessness_documentation_deprivation_severity_score * 0.30
-            + self.birth_registration_absence_exclusion_scale_score * 0.25
-            + self.nationality_acquisition_barrier_score * 0.25
-            + self.social_service_access_stateless_gap_score * 0.20,
+            self.statelessness_legal_vulnerability_severity_score * 0.30
+            + self.documentation_citizenship_denial_scale_score * 0.25
+            + self.stateless_detention_expulsion_risk_score * 0.25
+            + self.reduced_social_rights_access_barrier_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -56,84 +56,84 @@ class StatelessnessRightsEngineResult:
 def run_statelessness_rights_engine() -> StatelessnessRightsEngineResult:
     entities = [
         StatelessnessRightsEntity(
-            entity_id="STR-001",
-            name="Myanmar/Rohingyas — 600 000 Apatrides, Loi Citoyenneté 1982 Exclusion Ethnique & Déni Documents Génération",
+            entity_id="STL-001",
+            name="Rohingya/Myanmar — 600 000 Apatrides, Génocide Reconnu ICJ 2019, Cambodge/Thaïlande Refoulements & Camps UNHCR",
             country="Myanmar",
-            statelessness_documentation_deprivation_severity_score=97.0,
-            birth_registration_absence_exclusion_scale_score=93.0,
-            nationality_acquisition_barrier_score=93.0,
-            social_service_access_stateless_gap_score=91.0,
-            primary_pattern="statelessness_documentation_deprivation_severity",
+            statelessness_legal_vulnerability_severity_score=95.0,
+            documentation_citizenship_denial_scale_score=93.0,
+            stateless_detention_expulsion_risk_score=92.0,
+            reduced_social_rights_access_barrier_score=92.0,
+            primary_pattern="statelessness_legal_vulnerability_severity",
         ),
         StatelessnessRightsEntity(
-            entity_id="STR-002",
-            name="Côte d'Ivoire — 700 000 Apatrides Post-Guerre Civile, Enregistrement Naissances Rural Absent & Discrimination Dioula",
-            country="Côte d'Ivoire",
-            statelessness_documentation_deprivation_severity_score=93.0,
-            birth_registration_absence_exclusion_scale_score=89.0,
-            nationality_acquisition_barrier_score=88.0,
-            social_service_access_stateless_gap_score=88.0,
-            primary_pattern="birth_registration_absence_exclusion_scale",
+            entity_id="STL-002",
+            name="Apatrides Golfe/Bidoun — Kuwait/UAE 100 000 Bidoun Sans Nationalité, Zéro Droit Légal & Arrestations Arbitraires",
+            country="Kuwait",
+            statelessness_legal_vulnerability_severity_score=92.0,
+            documentation_citizenship_denial_scale_score=90.0,
+            stateless_detention_expulsion_risk_score=89.0,
+            reduced_social_rights_access_barrier_score=89.0,
+            primary_pattern="documentation_citizenship_denial_scale",
         ),
         StatelessnessRightsEntity(
-            entity_id="STR-003",
-            name="Thaïlande/Peuples Collines — 480 000 Highland Peoples Sans Nationalité, Restriction Mobilité & Exclusion Éducation",
-            country="Thaïlande",
-            statelessness_documentation_deprivation_severity_score=91.0,
-            birth_registration_absence_exclusion_scale_score=87.0,
-            nationality_acquisition_barrier_score=87.0,
-            social_service_access_stateless_gap_score=86.0,
-            primary_pattern="nationality_acquisition_barrier",
+            entity_id="STL-003",
+            name="Syrie/Conflit — 1M Nés Hors Registres Guerre, Déplacés Apatrides Région & Bureaucratie Accès Documents",
+            country="Syrie",
+            statelessness_legal_vulnerability_severity_score=89.0,
+            documentation_citizenship_denial_scale_score=87.0,
+            stateless_detention_expulsion_risk_score=86.0,
+            reduced_social_rights_access_barrier_score=84.0,
+            primary_pattern="documentation_citizenship_denial_scale",
         ),
         StatelessnessRightsEntity(
-            entity_id="STR-004",
-            name="Koweït/Bidoun — 100 000 Bidoun Apatrides, Accès Emploi Public Interdit & Passeports Voyageurs Refusés",
-            country="Koweït",
-            statelessness_documentation_deprivation_severity_score=89.0,
-            birth_registration_absence_exclusion_scale_score=85.0,
-            nationality_acquisition_barrier_score=86.0,
-            social_service_access_stateless_gap_score=85.0,
-            primary_pattern="social_service_access_stateless_gap",
+            entity_id="STL-004",
+            name="Afrique Subsaharienne — Communautés Nomades Kenya/Éthiopie, Migrations Sans Documents & Discrimination Ethnique",
+            country="Kenya",
+            statelessness_legal_vulnerability_severity_score=86.0,
+            documentation_citizenship_denial_scale_score=84.0,
+            stateless_detention_expulsion_risk_score=83.0,
+            reduced_social_rights_access_barrier_score=83.0,
+            primary_pattern="statelessness_legal_vulnerability_severity",
         ),
         StatelessnessRightsEntity(
-            entity_id="STR-005",
-            name="Europe/Roms — 46 000 Roms Apatrides UE, Non-Enregistrement Naissances Itinérants & Discrimination Administrative",
-            country="Europe",
-            statelessness_documentation_deprivation_severity_score=56.0,
-            birth_registration_absence_exclusion_scale_score=52.0,
-            nationality_acquisition_barrier_score=53.0,
-            social_service_access_stateless_gap_score=51.0,
-            primary_pattern="birth_registration_absence_exclusion_scale",
+            entity_id="STL-005",
+            name="Europe/Roms — 12 000 Apatrides Roms Balkans, Non-Enregistrement Naissance & Discrimination Accès Droits",
+            country="Balkans",
+            statelessness_legal_vulnerability_severity_score=56.0,
+            documentation_citizenship_denial_scale_score=54.0,
+            stateless_detention_expulsion_risk_score=53.0,
+            reduced_social_rights_access_barrier_score=52.0,
+            primary_pattern="documentation_citizenship_denial_scale",
         ),
         StatelessnessRightsEntity(
-            entity_id="STR-006",
-            name="République Dominicaine — Arrêt TC 168-13 Déchéance Rétroactive, 133 000 Dominicains Haïtiens Apatrides",
+            entity_id="STL-006",
+            name="Haïtiens Dominicains — Décision TC168/13 Rétroactive, 200 000 Dénaturalisés & Expulsions Sans Procédure",
             country="République Dominicaine",
-            statelessness_documentation_deprivation_severity_score=54.0,
-            birth_registration_absence_exclusion_scale_score=51.0,
-            nationality_acquisition_barrier_score=52.0,
-            social_service_access_stateless_gap_score=48.0,
-            primary_pattern="nationality_acquisition_barrier",
+            statelessness_legal_vulnerability_severity_score=53.0,
+            documentation_citizenship_denial_scale_score=51.0,
+            stateless_detention_expulsion_risk_score=51.0,
+            reduced_social_rights_access_barrier_score=50.0,
+            primary_pattern="stateless_detention_expulsion_risk",
         ),
         StatelessnessRightsEntity(
-            entity_id="STR-007",
-            name="UNHCR/ISI — Campagne #IBelong Fin Apatridie 2024, Cartographie Globale & Plaidoyer Convention 1954",
+            entity_id="STL-007",
+            name="UNHCR/IBelong — Campagne #IBelong Fin Apatridie 2024, Plans Action & Enregistrements Naissances",
             country="Global",
-            statelessness_documentation_deprivation_severity_score=24.0,
-            birth_registration_absence_exclusion_scale_score=28.0,
-            nationality_acquisition_barrier_score=26.0,
-            social_service_access_stateless_gap_score=26.0,
-            primary_pattern="statelessness_documentation_deprivation_severity",
+            statelessness_legal_vulnerability_severity_score=27.0,
+            documentation_citizenship_denial_scale_score=26.0,
+            stateless_detention_expulsion_risk_score=25.0,
+            reduced_social_rights_access_barrier_score=26.0,
+            primary_pattern="reduced_social_rights_access_barrier",
         ),
         StatelessnessRightsEntity(
-            entity_id="STR-008",
-            name="ONU/Convention 1954 — Statut Apatrides, Convention 1961 Réduction Apatridie & SDG 16.9 Identité Légale",
+            entity_id="STL-008",
+            name="ONU/Convention 1954 — Convention Statut Apatrides 1954/1961, Mécanismes Identification & SDG 16.9 Identité Légale",
             country="Global",
-            statelessness_documentation_deprivation_severity_score=4.0,
-            birth_registration_absence_exclusion_scale_score=5.0,
-            nationality_acquisition_barrier_score=4.0,
-            social_service_access_stateless_gap_score=5.0,
-            primary_pattern="birth_registration_absence_exclusion_scale",
+            statelessness_legal_vulnerability_severity_score=4.0,
+            documentation_citizenship_denial_scale_score=4.0,
+            stateless_detention_expulsion_risk_score=4.0,
+            reduced_social_rights_access_barrier_score=5.0,
+            primary_pattern="reduced_social_rights_access_barrier",
         ),
     ]
 
@@ -164,9 +164,9 @@ def run_statelessness_rights_engine() -> StatelessnessRightsEngineResult:
         critical_alerts=alerts,
         avg_estimated_statelessness_rights_index=round(avg_composite / 100 * 10, 2),
         data_sources=[
-            "unhcr_ibelong_campaign_statelessness_global_trends_report",
-            "institute_statelessness_inclusion_global_statelessness_report",
-            "human_rights_watch_statelessness_nationality_discrimination_review",
+            "unhcr_ibelong_statelessness_campaign_report",
+            "human_rights_watch_stateless_bidoun_gulf_report",
+            "amnesty_international_rohingya_statelessness_report",
         ],
         entities=entities,
     )
