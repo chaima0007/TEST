@@ -8034,6 +8034,30 @@ function IconEconomicAusteritySocialRights({ className }: { className?: string }
   );
 }
 
+function IconAutonomousWeaponsAiWarfareRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" /><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" /><line x1="12" y1="9" x2="12" y2="6" />
+    </svg>
+  );
+}
+
+function IconSpaceRightsOuterSpaceMilitarization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L8 6H4l2 4-4 2 4 2-2 4h4l4 4 4-4h4l-2-4 4-2-4-2 2-4h-4z" /><circle cx="12" cy="12" r="2" />
+    </svg>
+  );
+}
+
+function IconDigitalDivideAccessRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /><line x1="2" y1="10" x2="7" y2="10" /><line x1="2" y1="14" x2="5" y2="14" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8853,6 +8877,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/land-mine-cluster-munitions-rights-engine", label: "Mines & Sous-Munitions Civiles", icon: IconLandMineClusterMunitionsRights },
       { href: "/dashboard/refugee-integration-inclusion-rights-engine", label: "Intégration Réfugiés & Inclusion", icon: IconRefugeeIntegrationInclusionRights },
       { href: "/dashboard/economic-austerity-social-rights-engine", label: "Austérité Économique & Droits Sociaux", icon: IconEconomicAusteritySocialRights },
+      { href: "/dashboard/autonomous-weapons-ai-warfare-rights-engine", label: "Armes Autonomes & IA Militaire", icon: IconAutonomousWeaponsAiWarfareRights },
+      { href: "/dashboard/space-rights-outer-space-militarization-engine", label: "Espace & Militarisation Orbitale", icon: IconSpaceRightsOuterSpaceMilitarization },
+      { href: "/dashboard/digital-divide-access-rights-engine", label: "Fracture Numérique & Accès", icon: IconDigitalDivideAccessRights },
     ],
   },
   {
