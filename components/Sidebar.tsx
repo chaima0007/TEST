@@ -7352,6 +7352,30 @@ function IconConflictMinerals({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconMentalHealthRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+    </svg>
+  );
+}
+function IconAusteritySocialRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+    </svg>
+  );
+}
+function IconIntersexRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="12" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v9M9 18h6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 5.5A5 5 0 0 1 17 5.5" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -8073,6 +8097,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/hate-speech-incitement-engine", label: "Discours Haineux", icon: IconHateSpeechIncitement },
       { href: "/dashboard/slavery-reparations-engine", label: "Réparations Esclavage", icon: IconSlaveryReparations },
       { href: "/dashboard/conflict-minerals-engine", label: "Minerais Conflit", icon: IconConflictMinerals },
+      { href: "/dashboard/mental-health-rights-engine", label: "Droits Santé Mentale", icon: IconMentalHealthRights },
+      { href: "/dashboard/austerity-social-rights-engine", label: "Austérité & Droits", icon: IconAusteritySocialRights },
+      { href: "/dashboard/intersex-rights-engine", label: "Droits Intersexes", icon: IconIntersexRights },
     ],
   },
   {
