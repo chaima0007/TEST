@@ -7563,6 +7563,21 @@ function IconRefugeeDigitalRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconAlgorithmicBiasRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+    </svg>
+  );
+}
+function IconHateSpeechPlatformRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h.01M12 12h.01M15 12h.01" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -8311,6 +8326,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/obstetric-violence-rights-engine", label: "Violence Obstétricale", icon: IconObstetricViolenceRights },
       { href: "/dashboard/period-poverty-rights-engine", label: "Précarité Menstruelle", icon: IconPeriodPovertyRights },
       { href: "/dashboard/refugee-digital-rights-engine", label: "Droits Numériques Réfugiés", icon: IconRefugeeDigitalRights },
+      { href: "/dashboard/algorithmic-bias-rights-engine", label: "Biais Algorithmiques", icon: IconAlgorithmicBiasRights },
+      { href: "/dashboard/hate-speech-platform-rights-engine", label: "Discours Haine Plateformes", icon: IconHateSpeechPlatformRights },
     ],
   },
   {
