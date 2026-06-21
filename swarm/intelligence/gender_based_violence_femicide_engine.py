@@ -155,9 +155,10 @@ def analyze(entities: List[GenderBasedViolenceFemicideEntity]) -> dict:
             statistics.mean([e.estimated_gender_based_violence_femicide_index for e in entities]), 2
         ),
         "data_sources": [
-            "un_women_gbv_prevalence_global_database",
-            "who_femicide_global_status_report",
-            "amnesty_honor_killing_sexual_violence_documentation",
+            "un_sr_violence_against_women_2023",
+            "who_global_gbv_2021",
+            "un_women_femicide_2023",
+            "amnesty_international_gbv_2022",
         ],
         "entities": [
             {

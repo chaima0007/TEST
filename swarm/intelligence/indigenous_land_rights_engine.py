@@ -81,9 +81,10 @@ class IndigenousLandRightsEngine:
     ENGINE_VERSION = "1.0.0"
     CONFIDENCE_SCORE = 0.83
     DATA_SOURCES = [
-        "forest_peoples_programme_land_rights_database",
-        "un_permanent_forum_indigenous_peoples_reports",
-        "global_witness_land_defenders_killed_database",
+        "un_sr_indigenous_peoples_2023",
+        "forest_peoples_programme_2022",
+        "cultural_survival_2023",
+        "land_rights_now_2022",
     ]
 
     def __init__(self):
