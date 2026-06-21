@@ -8375,6 +8375,22 @@ function IconRefugeesAsylumSeekersRights({ className }: { className?: string }) 
   );
 }
 
+function IconBusinessTaxEvasionHumanRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+    </svg>
+  )
+}
+
+function IconPandemicHealthEmergencyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+    </svg>
+  )
+}
+
 function IconCorruptionHumanRightsNexus({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
@@ -10262,6 +10278,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/environmental-rights-defenders-engine", label: "Défenseurs Environnement", icon: <IconEnvironmentalRightsDefenders className="w-4 h-4" /> },
       { href: "/dashboard/nuclear-weapons-humanitarian-impact-engine", label: "Armes Nucléaires &amp; Humanitaire", icon: <IconNuclearWeaponsHumanitarianImpact className="w-4 h-4" /> },
       { href: "/dashboard/youth-rights-intergenerational-justice-engine", label: "Droits Jeunesse", icon: <IconYouthRightsIntergenerationalJustice className="w-4 h-4" /> },
+      { href: "/dashboard/business-tax-evasion-human-rights-engine", label: "Évasion Fiscale &amp; Droits", icon: <IconBusinessTaxEvasionHumanRights className="w-4 h-4" /> },
+      { href: "/dashboard/pandemic-health-emergency-rights-engine", label: "Urgences Sanitaires", icon: <IconPandemicHealthEmergencyRights className="w-4 h-4" /> },
     ],
   },
   {
