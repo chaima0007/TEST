@@ -8602,6 +8602,22 @@ function IconFreedomExpressionArtisticCensorship({ className }: { className?: st
   );
 }
 
+function IconDeathInCustodyPrisonConditions({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M8.25 21V6.75A2.25 2.25 0 0110.5 4.5h3a2.25 2.25 0 012.25 2.25V21M3.75 9h16.5M12 4.5v.75" />
+    </svg>
+  );
+}
+
+function IconDrugPolicyCriminalizationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9488,6 +9504,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-testing-environmental-rights-engine", label: "Tests Nucléaires", icon: IconNuclearTestingEnvironmentalRights },
       { href: "/dashboard/social-protection-poverty-rights-engine", label: "Protection Sociale", icon: IconSocialProtectionPovertyRights },
       { href: "/dashboard/freedom-expression-artistic-censorship-engine", label: "Liberté Artistique", icon: IconFreedomExpressionArtisticCensorship },
+      { href: "/dashboard/death-in-custody-prison-conditions-engine", label: "Mort en Détention", icon: IconDeathInCustodyPrisonConditions },
+      { href: "/dashboard/drug-policy-criminalization-rights-engine", label: "Politique Drogues", icon: IconDrugPolicyCriminalizationRights },
     ],
   },
   {
