@@ -8342,6 +8342,22 @@ function IconMentalHealthRightsPsychiatricViolence({ className }: { className?: 
   );
 }
 
+function IconForcedDisappearanceExtrajudicialKilling({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function IconRefugeesAsylumSeekersRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0110.5 3h6a2.25 2.25 0 012.25 2.25v13.5A2.25 2.25 0 0116.5 21h-6a2.25 2.25 0 01-2.25-2.25V15m-3 0l-3-3m0 0l3-3m-3 3H15" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9199,6 +9215,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/digital-surveillance-privacy-rights-engine", label: "Surveillance Digitale & Droits à la Vie Privée", icon: IconDigitalSurveillancePrivacyRights },
       { href: "/dashboard/food-sovereignty-famine-rights-engine", label: "Souveraineté Alimentaire & Droits Face à la Famine", icon: IconFoodSovereigntyFamineRights },
       { href: "/dashboard/mental-health-rights-psychiatric-violence-engine", label: "Santé Mentale & Violence Psychiatrique", icon: IconMentalHealthRightsPsychiatricViolence },
+      { href: "/dashboard/forced-disappearance-extrajudicial-killing-engine", label: "Disparitions Forcées & Exécutions Extrajudiciaires", icon: IconForcedDisappearanceExtrajudicialKilling },
+      { href: "/dashboard/refugees-asylum-seekers-rights-engine", label: "Droits Réfugiés & Demandeurs d&apos;Asile", icon: IconRefugeesAsylumSeekersRights },
     ],
   },
   {
