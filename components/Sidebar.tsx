@@ -7648,6 +7648,38 @@ function IconAntiCorruptionAccountability({ className }: { className?: string })
   );
 }
 
+function IconDigitalPrivacySurveillanceRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+      <circle cx="12" cy="12" r="3"/>
+      <line x1="1" y1="1" x2="23" y2="23"/>
+    </svg>
+  );
+}
+
+function IconFreedomOfAssemblyProtestRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  );
+}
+
+function IconHousingEvictionHomelessnessRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+      <line x1="12" y1="2" x2="12" y2="9"/>
+      <line x1="9" y1="5.5" x2="15" y2="5.5"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8425,6 +8457,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/right-to-asylum-refugee-protection-engine", label: "Droit d&apos;Asile & Réfugiés", icon: IconRightToAsylumRefugeeProtection },
       { href: "/dashboard/gender-based-violence-femicide-engine", label: "Violences Genre & Féminicide", icon: IconGenderBasedViolenceFemicide },
       { href: "/dashboard/anti-corruption-accountability-engine", label: "Anti-Corruption & Redevabilité", icon: IconAntiCorruptionAccountability },
+      { href: "/dashboard/digital-privacy-surveillance-rights-engine", label: "Vie Privée Numérique", icon: IconDigitalPrivacySurveillanceRights },
+      { href: "/dashboard/freedom-of-assembly-protest-rights-engine", label: "Liberté de Réunion", icon: IconFreedomOfAssemblyProtestRights },
+      { href: "/dashboard/housing-eviction-homelessness-rights-engine", label: "Droit au Logement", icon: IconHousingEvictionHomelessnessRights },
     ],
   },
   {
