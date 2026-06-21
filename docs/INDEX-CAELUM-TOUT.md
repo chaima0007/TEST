@@ -170,6 +170,13 @@
 | Mining Extraction Community Rights | `swarm/intelligence/mining_extraction_community_rights_engine.py` | 57.83 | Communautés minières, pollution extraction, FPIC violations |
 | Sexual Orientation Identity Criminalization | `swarm/intelligence/sexual_orientation_identity_criminalization_engine.py` | 58.78 | Lois sodomie, reconnaissance genre, thérapies conversion |
 
+### Wave 128
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Water Scarcity Conflict Rights | `swarm/intelligence/water_scarcity_conflict_rights_engine.py` | 58.78 | Pénurie d'eau, conflits hydriques, droit à l'eau en zones arides |
+| Climate Justice Loss Damage Rights | `swarm/intelligence/climate_justice_loss_damage_rights_engine.py` | 57.65 | Justice climatique, pertes et préjudices, responsabilité États pollueurs |
+| Border Wall Migration Rights | `swarm/intelligence/border_wall_migration_rights_engine.py` | 58.85 | Murs frontaliers, refoulements, droits migrants en transit |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
