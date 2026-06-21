@@ -7222,6 +7222,33 @@ function IconInternetShutdown({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconAcademicFreedom({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L2 8l10 5 10-5-10-5z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2 8v8l10 5 10-5V8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 13v8" />
+    </svg>
+  );
+}
+function IconRefugeeDetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <rect x="3" y="8" width="18" height="13" rx="1" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 8V6a5 5 0 0110 0v2" />
+      <circle cx="12" cy="14" r="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 16v2" />
+    </svg>
+  );
+}
+function IconCorporateImpunity({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18M9 21V9l3-6 3 6v12M5 21V13H3l9-10 9 10h-2v8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 17h-2v4h2v-4z" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7928,6 +7955,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/colonial-reparations-engine", label: "Réparations Coloniales", icon: IconColonialReparations },
       { href: "/dashboard/water-rights-engine", label: "Droit à l'Eau", icon: IconWaterRights },
       { href: "/dashboard/internet-shutdown-engine", label: "Coupures Internet", icon: IconInternetShutdown },
+      { href: "/dashboard/academic-freedom-engine", label: "Liberté Académique", icon: IconAcademicFreedom },
+      { href: "/dashboard/refugee-detention-engine", label: "Détention Réfugiés", icon: IconRefugeeDetention },
+      { href: "/dashboard/corporate-impunity-engine", label: "Impunité Corporate", icon: IconCorporateImpunity },
     ],
   },
   {

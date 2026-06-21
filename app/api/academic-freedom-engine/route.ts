@@ -2,49 +2,60 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  console.warn("[academic-freedom-engine] SWARM_API_URL non défini — mode mock activé");
+  console.warn("[academic-freedom-engine] SWARM_API_URL is not set — falling back to mock data");
 }
+
+const MOCK = {
+  agent: "Academic Freedom Engine Agent",
+  domain: "academic_freedom",
+  total_entities: 8,
+  avg_composite: 60.18,
+  confidence_score: 0.84,
+  risk_distribution: { critique: 4, élevé: 2, modéré: 1, faible: 1 },
+  pattern_distribution: { campus_surveillance_control: 1, scholar_arrest_persecution: 3, curriculum_state_interference: 3, international_collaboration_restriction: 1 },
+  top_risk_entities: [
+    "Chine — Purges Académiques Xinjiang/Tibet, Surveillance Campus & Interdiction Pensée Critique",
+    "Iran — Épurations Universités Post-2022, Arrestations Professeurs & Islamisation Curricula",
+    "Turquie — 6000 Académiciens Licenciés Post-2016, Pétition Paix & Passeports Confisqués",
+  ],
+  critical_alerts: [
+    "Chine: campus_surveillance_control",
+    "Iran: scholar_arrest_persecution",
+    "Turquie: scholar_arrest_persecution",
+    "Russie: curriculum_state_interference",
+  ],
+  last_analysis: "2026-06-21",
+  engine_version: "1.0.0",
+  avg_estimated_academic_freedom_index: 6.02,
+  data_sources: [
+    "scholars_at_risk_network_academic_freedom_monitoring_project",
+    "academic_freedom_index_global_public_policy_institute_report",
+    "human_rights_watch_university_repression_global_report",
+  ],
+  entities: [
+    { entity_id: "AF-001", name: "Chine — Purges Académiques Xinjiang/Tibet, Surveillance Campus & Interdiction Pensée Critique", country: "Asie du Nord-Est", composite_score: 92.85, scholar_arrest_persecution_score: 95.0, curriculum_state_interference_score: 92.0, campus_surveillance_control_score: 95.0, international_collaboration_restriction_score: 88.0, risk_level: "critique", primary_pattern: "campus_surveillance_control", estimated_academic_freedom_index: 9.29, last_updated: "2026-06-21" },
+    { entity_id: "AF-002", name: "Iran — Épurations Universités Post-2022, Arrestations Professeurs & Islamisation Curricula", country: "Moyen-Orient", composite_score: 88.85, scholar_arrest_persecution_score: 92.0, curriculum_state_interference_score: 88.0, campus_surveillance_control_score: 85.0, international_collaboration_restriction_score: 90.0, risk_level: "critique", primary_pattern: "scholar_arrest_persecution", estimated_academic_freedom_index: 8.89, last_updated: "2026-06-21" },
+    { entity_id: "AF-003", name: "Turquie — 6000 Académiciens Licenciés Post-2016, Pétition Paix & Passeports Confisqués", country: "Europe/Moyen-Orient", composite_score: 84.5, scholar_arrest_persecution_score: 88.0, curriculum_state_interference_score: 82.0, campus_surveillance_control_score: 80.0, international_collaboration_restriction_score: 88.0, risk_level: "critique", primary_pattern: "scholar_arrest_persecution", estimated_academic_freedom_index: 8.45, last_updated: "2026-06-21" },
+    { entity_id: "AF-004", name: "Russie — Exode Scientifiques Post-Ukraine, Censure Syllabi & Propagande Obligatoire", country: "Europe de l'Est", composite_score: 82.25, scholar_arrest_persecution_score: 82.0, curriculum_state_interference_score: 85.0, campus_surveillance_control_score: 80.0, international_collaboration_restriction_score: 82.0, risk_level: "critique", primary_pattern: "curriculum_state_interference", estimated_academic_freedom_index: 8.23, last_updated: "2026-06-21" },
+    { entity_id: "AF-005", name: "USA — Lois Anti-DEI, Interdictions Livres Universités & Pressions Politique sur Campus", country: "Amérique du Nord", composite_score: 52.5, scholar_arrest_persecution_score: 52.0, curriculum_state_interference_score: 58.0, campus_surveillance_control_score: 48.0, international_collaboration_restriction_score: 52.0, risk_level: "élevé", primary_pattern: "curriculum_state_interference", estimated_academic_freedom_index: 5.25, last_updated: "2026-06-21" },
+    { entity_id: "AF-006", name: "Hongrie/Orbán — CEU Expulsée, Lois Gender Studies & Contrôle Financement Recherche", country: "Europe", composite_score: 50.25, scholar_arrest_persecution_score: 48.0, curriculum_state_interference_score: 55.0, campus_surveillance_control_score: 50.0, international_collaboration_restriction_score: 48.0, risk_level: "élevé", primary_pattern: "curriculum_state_interference", estimated_academic_freedom_index: 5.03, last_updated: "2026-06-21" },
+    { entity_id: "AF-007", name: "Scholars at Risk — Réseau 600+ Universités, Cas Documentés & Plaidoyer Protection", country: "Global", composite_score: 25.85, scholar_arrest_persecution_score: 22.0, curriculum_state_interference_score: 25.0, campus_surveillance_control_score: 28.0, international_collaboration_restriction_score: 30.0, risk_level: "modéré", primary_pattern: "scholar_arrest_persecution", estimated_academic_freedom_index: 2.59, last_updated: "2026-06-21" },
+    { entity_id: "AF-008", name: "ONU/UNESCO — Recommandation Liberté Académique 1997, Suivi & Mécanismes Rapport", country: "Global", composite_score: 4.4, scholar_arrest_persecution_score: 4.0, curriculum_state_interference_score: 5.0, campus_surveillance_control_score: 3.0, international_collaboration_restriction_score: 6.0, risk_level: "faible", primary_pattern: "international_collaboration_restriction", estimated_academic_freedom_index: 0.44, last_updated: "2026-06-21" },
+  ],
+};
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Academic Freedom Engine Agent"));
+    return NextResponse.json(await sealResponse(MOCK));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/academic-freedom-engine`, { next: { revalidate: 30 } });
-    if (!res.ok) throw new Error(`Upstream ${res.status}`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/academic-freedom-engine`, {
+      next: { revalidate: 30 },
+    });
+    if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Academic Freedom Engine Agent"));
+    return NextResponse.json(await sealResponse(data));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Academic Freedom Engine Agent"), { status: 502 });
+    return NextResponse.json(await sealResponse(MOCK), { status: 502 });
   }
-}
-
-function getMockData() {
-  const entities = [
-    { entity_id: "AF-001", name: "Chine — Universités Sous Contrôle CPC", country: "Asie", sector: "Censure Politique Totale & Endoctrinement Xi Jinping", composite_score: 90.25, political_censorship_score: 95.0, researcher_persecution_score: 88.0, brain_drain_severity_score: 85.0, institutional_autonomy_loss_score: 92.0, risk_level: "critique", primary_pattern: "controle_ideologique_universitaire", key_signals: ["Répression académique totale dans Chine — chercheurs emprisonnés, universités sous contrôle étatique", "Censure politique systémique — thèmes de recherche interdits, auto-censure généralisée", "Fuite des cerveaux massive — talents académiques quittant le pays pour préserver leur liberté"], estimated_repression_index: 9.03, last_updated: "2026-06-20" },
-    { entity_id: "AF-002", name: "Russie — Académiques Emprisonnés & Exil", country: "Europe de l'Est", sector: "Répression Post-2022 & Universités en Exil", composite_score: 89.5, political_censorship_score: 90.0, researcher_persecution_score: 92.0, brain_drain_severity_score: 88.0, institutional_autonomy_loss_score: 85.0, risk_level: "critique", primary_pattern: "repression_academique_totale", key_signals: ["Répression académique totale dans Russie — chercheurs emprisonnés, universités sous contrôle étatique", "Censure politique systémique — thèmes de recherche interdits, auto-censure généralisée", "Fuite des cerveaux massive — talents académiques quittant le pays pour préserver leur liberté"], estimated_repression_index: 8.95, last_updated: "2026-06-20" },
-    { entity_id: "AF-003", name: "Iran — Sciences sous Révolution Islamique", country: "MENA", sector: "Purge des Chercheurs & Contrôle Idéologique Total", composite_score: 86.45, political_censorship_score: 88.0, researcher_persecution_score: 85.0, brain_drain_severity_score: 82.0, institutional_autonomy_loss_score: 88.0, risk_level: "critique", primary_pattern: "repression_academique_totale", key_signals: ["Répression académique totale dans Iran — chercheurs emprisonnés, universités sous contrôle étatique", "Censure politique systémique — thèmes de recherche interdits, auto-censure généralisée", "Fuite des cerveaux massive — talents académiques quittant le pays pour préserver leur liberté"], estimated_repression_index: 8.65, last_updated: "2026-06-20" },
-    { entity_id: "AF-004", name: "Turquie — Purges Post-Coup 2016", country: "Europe/MENA", sector: "5000 Académiques Licenciés & Universités Fermées", composite_score: 78.25, political_censorship_score: 80.0, researcher_persecution_score: 78.0, brain_drain_severity_score: 75.0, institutional_autonomy_loss_score: 80.0, risk_level: "critique", primary_pattern: "repression_academique_totale", key_signals: ["Répression académique totale dans Turquie — chercheurs emprisonnés, universités sous contrôle étatique", "Censure politique systémique — thèmes de recherche interdits, auto-censure généralisée", "Fuite des cerveaux massive — talents académiques quittant le pays pour préserver leur liberté"], estimated_repression_index: 7.83, last_updated: "2026-06-20" },
-    { entity_id: "AF-005", name: "Hongrie — Capture Académique Orban", country: "Europe", sector: "CEU Expulsée & Contrôle Politique des Universités", composite_score: 63.5, political_censorship_score: 65.0, researcher_persecution_score: 60.0, brain_drain_severity_score: 55.0, institutional_autonomy_loss_score: 70.0, risk_level: "élevé", primary_pattern: "pression_systemique", key_signals: ["Pression systémique sur les académiques dans Hongrie — financements conditionnels et ingérence politique", "Autonomie institutionnelle érodée — gouvernance universitaire contrôlée par le politique", "Brain drain accéléré — chercheurs fuyant vers des environnements académiques libres"], estimated_repression_index: 6.35, last_updated: "2026-06-20" },
-    { entity_id: "AF-006", name: "USA — Campus Wars & Financement Conditionnel", country: "Amérique du Nord", sector: "Pressions Politiques des Deux Bords & Autocensure", composite_score: 33.5, political_censorship_score: 42.0, researcher_persecution_score: 28.0, brain_drain_severity_score: 22.0, institutional_autonomy_loss_score: 38.0, risk_level: "modéré", primary_pattern: "tensions_academiques", key_signals: ["Tensions sur l'indépendance académique dans USA — pressions politiques mais institutions résistantes", "Autocensure partielle — certains sujets difficiles à étudier sans risques professionnels", "Financement académique partiellement conditionné — risque d'orientation de la recherche"], estimated_repression_index: 3.35, last_updated: "2026-06-20" },
-    { entity_id: "AF-007", name: "France & Allemagne — Tensions Académiques", country: "Europe", sector: "Pression sur les Études Postcoloniales & Genre", composite_score: 19.75, political_censorship_score: 25.0, researcher_persecution_score: 12.0, brain_drain_severity_score: 18.0, institutional_autonomy_loss_score: 22.0, risk_level: "faible", primary_pattern: "liberte_academique_exemplaire", key_signals: ["France & Allemagne préserve une liberté académique exemplaire — recherche indépendante garantie légalement", "Universités autonomes et chercheurs protégés — innovation intellectuelle florissante", "Modèle d'infrastructure épistémique à préserver et exporter pour soutenir la démocratie mondiale"], estimated_repression_index: 1.98, last_updated: "2026-06-20" },
-    { entity_id: "AF-008", name: "Pays Nordiques & Suisse — Modèles Académiques", country: "Europe du Nord", sector: "Liberté Académique Constitutionnelle & Financement Public", composite_score: 4.5, political_censorship_score: 5.0, researcher_persecution_score: 3.0, brain_drain_severity_score: 8.0, institutional_autonomy_loss_score: 4.0, risk_level: "faible", primary_pattern: "liberte_academique_exemplaire", key_signals: ["Pays Nordiques & Suisse préserve une liberté académique exemplaire — recherche indépendante garantie légalement", "Universités autonomes et chercheurs protégés — innovation intellectuelle florissante", "Modèle d'infrastructure épistémique à préserver et exporter pour soutenir la démocratie mondiale"], estimated_repression_index: 0.45, last_updated: "2026-06-20" },
-  ];
-
-  const avg = Math.round(entities.reduce((s, e) => s + e.composite_score, 0) / entities.length * 100) / 100;
-  return {
-    total_entities: 8,
-    avg_composite: avg,
-    risk_distribution: { critique: 4, "élevé": 1, "modéré": 1, faible: 2 },
-    pattern_distribution: { repression_academique_totale: 3, controle_ideologique_universitaire: 1, pression_systemique: 1, tensions_academiques: 1, liberte_academique_exemplaire: 2 },
-    top_risk_entities: ["Chine — Universités Sous Contrôle CPC", "Russie — Académiques Emprisonnés & Exil", "Iran — Sciences sous Révolution Islamique"],
-    critical_alerts: ["Chine: contrôle idéologique universitaire", "Russie: répression académique totale", "Iran: répression académique totale", "Turquie: répression académique totale"],
-    last_analysis: "2026-06-20",
-    engine_version: "1.0.0",
-    domain: "academic_freedom",
-    confidence_score: 0.87,
-    data_sources: ["scholars_at_risk_network", "academic_freedom_index", "university_world_news_tracker"],
-    entities,
-    avg_estimated_repression_index: Math.round(avg / 100 * 10 * 100) / 100,
-  };
 }
