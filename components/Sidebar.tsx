@@ -8495,6 +8495,37 @@ function IconWarCrimesAccountability({ className }: { className?: string }) {
   );
 }
 
+function IconEnvironmentalDefendersRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8 3 4 7 4 11c0 5 8 10 8 10s8-5 8-10c0-4-4-8-8-8z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M8 7l4 4 4-4" />
+    </svg>
+  );
+}
+
+function IconAntiterrorismLawsRightsAbuse({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+      <line x1="16" y1="8" x2="16" y2="8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconChildMarriageForcedUnions({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="9" cy="7" r="3" />
+      <circle cx="17" cy="7" r="2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 10c-3 0-6 2-6 5v2h12v-2c0-3-3-5-6-5z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 9c2 0 4 1.5 4 3.5V14h-4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 16l-2-2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9370,6 +9401,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/racial-justice-police-brutality-engine", label: "Justice Raciale & Police", icon: IconRacialJusticePoliceBrutality },
       { href: "/dashboard/internet-freedom-censorship-engine", label: "Liberté Internet", icon: IconInternetFreedomCensorship },
       { href: "/dashboard/war-crimes-accountability-engine", label: "Crimes de Guerre", icon: IconWarCrimesAccountability },
+      { href: "/dashboard/environmental-defenders-rights-engine", label: "Défenseurs Env.", icon: IconEnvironmentalDefendersRights },
+      { href: "/dashboard/antiterrorism-laws-rights-abuse-engine", label: "Lois Antiterro", icon: IconAntiterrorismLawsRightsAbuse },
+      { href: "/dashboard/child-marriage-forced-unions-engine", label: "Mariage Enfants", icon: IconChildMarriageForcedUnions },
     ],
   },
   {
