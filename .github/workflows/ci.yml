@@ -9,7 +9,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  sidebar-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for duplicate Icon function definitions in Sidebar.tsx
+        run: |
+          DUPS=$(grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort | uniq -d)
+          if [ -n "$DUPS" ]; then
+            echo "❌ Duplicate Icon functions found in components/Sidebar.tsx:"
+            echo "$DUPS"
+            echo ""
+            echo "Each icon function must be defined exactly once."
+            echo "Remove the earlier occurrence(s) for each duplicate listed above."
+            exit 1
+          fi
+          echo "✅ No duplicate Icon functions — Sidebar.tsx is clean"
+
   nextjs-build:
+    needs: sidebar-lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
