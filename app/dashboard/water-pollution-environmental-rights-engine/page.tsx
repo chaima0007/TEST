@@ -29,13 +29,13 @@ function GaugeRing({ value, accent }: { value: number; accent: string }) {
   );
 }
 
-export default function ElderlyRightsAgeDiscriminationPage() {
+export default function WaterPollutionEnvironmentalRightsPage() {
   const [data, setData] = useState<EngineData | null>(null);
-  const ACCENT = "#4a044e";
+  const ACCENT = "#164e63";
   const RC: Record<string, string> = { critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e" };
 
   useEffect(() => {
-    fetch("/api/elderly-rights-age-discrimination-engine").then(r => r.json()).then(d => setData(d.payload ?? d));
+    fetch("/api/water-pollution-environmental-rights-engine").then(r => r.json()).then(d => setData(d.payload ?? d));
   }, []);
 
   if (!data) return (
@@ -44,7 +44,7 @@ export default function ElderlyRightsAgeDiscriminationPage() {
     </div>
   );
 
-  const indexValue = (data["avg_estimated_elderly_rights_age_discrimination_index"] as number) ?? 0;
+  const indexValue = (data["avg_estimated_water_pollution_environmental_rights_index"] as number) ?? 0;
 
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6">
