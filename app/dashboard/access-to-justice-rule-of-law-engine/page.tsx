@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const ACCENT = "#f97316";
-const SLUG = "migrant-worker-rights-engine";
+const ACCENT = "#3b82f6";
+const SLUG = "access-to-justice-rule-of-law-engine";
 
 const RC: Record<string, string> = {
   critique: "#dc2626", élevé: "#f97316", modéré: "#eab308", faible: "#22c55e",
@@ -32,10 +32,10 @@ function DetailModal({ entity, onClose }: { entity: Record<string, unknown>; onC
   const [tab, setTab] = useState<"apercu" | "metriques" | "sources">("apercu");
   const rl = entity.risk_level as string;
   const SUB_SCORES = [
-    "wage_theft_exploitation_score",
-    "recruitment_fee_debt_score",
-    "kafala_system_dependency_score",
-    "labor_rights_access_failure_score",
+    "judicial_independence_capture_score",
+    "political_prisoners_rule_of_law_score",
+    "constitutional_erosion_score",
+    "access_to_remedy_gaps_score",
   ];
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
@@ -65,7 +65,7 @@ function DetailModal({ entity, onClose }: { entity: Record<string, unknown>; onC
                 <p className="text-white font-semibold">Score: {(entity.composite_score as number).toFixed(2)}</p>
                 <p className="text-slate-400 text-sm">Pays: {entity.country as string}</p>
                 <p className="text-slate-400 text-sm">Pattern: {entity.primary_pattern as string}</p>
-                <p className="text-slate-400 text-sm">Index: {(entity.estimated_migrant_worker_rights_index as number)?.toFixed(2)}/10</p>
+                <p className="text-slate-400 text-sm">Index: {(entity.estimated_access_to_justice_rule_of_law_index as number)?.toFixed(2)}/10</p>
               </div>
             </div>
           )}
@@ -85,7 +85,7 @@ function DetailModal({ entity, onClose }: { entity: Record<string, unknown>; onC
             </div>
           )}
           {tab === "sources" && (
-            <p className="text-slate-400 text-sm">Sources: ILO Fair Recruitment 2023, Migrant Forum Asia 2023, Human Rights Watch Migrant Workers 2022, ILO Forced Labour Migrants 2022.</p>
+            <p className="text-slate-400 text-sm">Sources: World Justice Project Rule of Law 2023, Freedom House Rule of Law 2023, Transparency International CPI 2023, ICJ Judicial Independence 2022.</p>
           )}
         </div>
       </div>
@@ -100,10 +100,10 @@ type ApiData = {
   risk_distribution: Record<string, number>;
   confidence_score: number;
   critical_alerts: string[];
-  avg_estimated_migrant_worker_rights_index: number;
+  avg_estimated_access_to_justice_rule_of_law_index: number;
 };
 
-export default function MigrantWorkerRightsEnginePage() {
+export default function AccessToJusticeRuleOfLawPage() {
   const [data, setData] = useState<ApiData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
 
@@ -122,8 +122,8 @@ export default function MigrantWorkerRightsEnginePage() {
       {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white">Droits des Travailleurs Migrants</h1>
-          <p className="text-slate-400 mt-1">Système Kafala, exploitation &amp; violations des conventions OIT</p>
+          <h1 className="text-3xl font-bold text-white">Accès à la Justice &amp; État de Droit</h1>
+          <p className="text-slate-400 mt-1">Indépendance judiciaire, prisonniers politiques &amp; érosion constitutionnelle</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
@@ -139,8 +139,8 @@ export default function MigrantWorkerRightsEnginePage() {
             <p className="text-2xl font-bold text-red-500">{data.risk_distribution["critique"] ?? 0}</p>
           </div>
           <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
-            <p className="text-slate-400 text-xs mb-1">Index Migrants</p>
-            <p className="text-2xl font-bold text-orange-400">{data.avg_estimated_migrant_worker_rights_index?.toFixed(2) ?? "—"}/10</p>
+            <p className="text-slate-400 text-xs mb-1">Index Justice</p>
+            <p className="text-2xl font-bold text-blue-400">{data.avg_estimated_access_to_justice_rule_of_law_index?.toFixed(2) ?? "—"}/10</p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
