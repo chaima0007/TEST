@@ -8879,6 +8879,18 @@ function IconInventionsShowcase({ className }: { className?: string }) {
   return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>;
 }
 
+function IconMentalHealthForcedTreatmentRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" /></svg>;
+}
+
+function IconHumanRightsDefendersAssassination({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" /></svg>;
+}
+
+function IconAutonomousWeaponsLethalRoboticsRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9808,6 +9820,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/albinism-persecution-rights-engine", label: "Persécution Albinisme", icon: IconAlbinismPersecutionRights },
       { href: "/dashboard/toxic-waste-environmental-racism-rights-engine", label: "Racisme Environnemental", icon: IconToxicWasteEnvironmentalRacismRights },
       { href: "/dashboard/juvenile-justice-child-detention-rights-engine", label: "Justice Juvénile", icon: IconJuvenileJusticeChildDetentionRights },
+      { href: "/dashboard/mental-health-forced-treatment-rights-engine", label: "Santé Mentale Forcée", icon: IconMentalHealthForcedTreatmentRights },
+      { href: "/dashboard/human-rights-defenders-assassination-engine", label: "Défenseurs DH Assassinés", icon: IconHumanRightsDefendersAssassination },
+      { href: "/dashboard/autonomous-weapons-lethal-robotics-rights-engine", label: "Armes Autonomes LAWS", icon: IconAutonomousWeaponsLethalRoboticsRights },
     ],
   },
   {
