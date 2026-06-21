@@ -7804,6 +7804,37 @@ function IconCybercrimeDigitalRightsExploitation({ className }: { className?: st
   );
 }
 
+function IconNuclearRadiationCivilianRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+    </svg>
+  );
+}
+
+function IconColonialReparationsMemoryRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+      <path d="M2 17l10 5 10-5"/>
+      <path d="M2 12l10 5 10-5"/>
+    </svg>
+  );
+}
+
+function IconElderCareAgingRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      <line x1="19" y1="8" x2="23" y2="8"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8596,6 +8627,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/death-penalty-extrajudicial-killings-engine", label: "Peine de Mort & EJK", icon: IconDeathPenaltyExtrajudicialKillings },
       { href: "/dashboard/human-rights-defenders-protection-engine", label: "Défenseurs Droits Humains", icon: IconHumanRightsDefendersProtection },
       { href: "/dashboard/cybercrime-digital-rights-exploitation-engine", label: "Cybercriminalité & Droits", icon: IconCybercrimeDigitalRightsExploitation },
+      { href: "/dashboard/nuclear-radiation-civilian-rights-engine", label: "Droits Nucléaire & Radiations", icon: IconNuclearRadiationCivilianRights },
+      { href: "/dashboard/colonial-reparations-memory-rights-engine", label: "Réparations Coloniales", icon: IconColonialReparationsMemoryRights },
+      { href: "/dashboard/elder-care-aging-rights-engine", label: "Droits Personnes Âgées", icon: IconElderCareAgingRights },
     ],
   },
   {
