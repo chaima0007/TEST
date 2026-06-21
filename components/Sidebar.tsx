@@ -8320,6 +8320,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/climate-forced-migration-rights-engine", label: "Climate Migration Rights", icon: IconClimateForcedMigrationRights },
       { href: "/dashboard/child-labor-mining-rights-engine", label: "Child Labor Mining Rights", icon: IconChildLaborMiningRights },
       { href: "/dashboard/water-rights-access-engine", label: "Water Rights Access", icon: IconWaterRightsAccess },
+      { href: "/dashboard/corporate-accountability-rights-engine", label: "Responsabilité Corp.", icon: IconCorporateAccountability },
+      { href: "/dashboard/statelessness-rights-engine", label: "Droits Apatrides", icon: IconStatelessness },
+      { href: "/dashboard/prison-torture-rights-engine", label: "Torture Carcérale", icon: IconPrisonTorture },
     ],
   },
   {
