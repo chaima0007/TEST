@@ -1,0 +1,43 @@
+# Caelum Partners — Observability Stack
+# Metrics exposed at /api/metrics (TODO: implement endpoint)
+
+metrics:
+  engine_request_total:
+    type: counter
+    help: "Total requests per engine endpoint"
+    labels: [engine, status_code]
+
+  engine_response_duration_seconds:
+    type: histogram
+    help: "Response time per engine (seconds)"
+    buckets: [0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0]
+    labels: [engine]
+
+  seal_operations_total:
+    type: counter
+    help: "Total sealResponse() operations"
+    labels: [status]
+
+  upstream_fallback_total:
+    type: counter
+    help: "Times SWARM_API_URL fallback triggered (mock data served)"
+    labels: [engine]
+
+  active_dashboard_sessions:
+    type: gauge
+    help: "Estimated concurrent dashboard sessions"
+
+business_metrics:
+  pilot_clients_active:
+    type: gauge
+    help: "Number of active pilot clients"
+
+  engines_deployed_total:
+    type: gauge
+    help: "Total engine dashboards deployed"
+    value: 11  # wave 71-73
+
+  avg_composite_score_by_domain:
+    type: gauge
+    help: "Average composite score per domain"
+    labels: [domain]
