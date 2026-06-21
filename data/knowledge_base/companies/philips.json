@@ -1,15 +1,70 @@
 {
+  "id": "philips",
   "slug": "philips",
-  "name": "Philips N.V.",
-  "country": "NL",
-  "sector": "Healthcare",
-  "size": "Large (70 000+ employees, ~18B EUR revenue)",
-  "hq": "Amsterdam, Netherlands",
-  "csrd_exposure": "LOW",
-  "csddd_scope": false,
-  "persona_target": "Sustainability Manager",
-  "ddh_domains": ["prison_labor_rights"],
-  "priority": 4,
-  "estimated_budget_eur": 2500,
-  "last_updated": "2026-06-21"
+  "name": "Philips NV",
+  "country": "Netherlands",
+  "city": "Amsterdam",
+  "sector": "MedTech",
+  "size": {
+    "revenue_bn_eur": 18,
+    "employees": 77000,
+    "index": "AEX"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "23.4 Medium Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief ESG Officer / VP Supply Chain Sustainability",
+    "team": "Sustainability & Inclusion team, Supplier Sustainability Development",
+    "location": "Amsterdam (siège), Eindhoven (R&D), Best (opérations), Cambridge MA (North America HQ)",
+    "process": "Sustainability governance board trimestriel, Supplier Sustainability Program (SSP) avec audits et capacity building, mécanisme de réclamation Speak Up"
+  },
+  "pain_points": [
+    "Composants électroniques médicaux : concentration fournisseurs en Asie du Sud-Est (Malaisie, Thaïlande, Philippines) avec risques travail forcé des migrants",
+    "Rappel massif respirateurs CPAP (2021-2023) : gestion de crise avec 5,5 millions d'appareils défectueux — révélant des failles dans le contrôle qualité/sécurité produits",
+    "Minerais de conflits (tantalum, tungstène, étain, or) dans les équipements médicaux : conformité Dodd-Frank et OCDE Guidance exigeante",
+    "Conditions de travail dans les usines de fabrication en Pologne et Hongrie : pressions syndicales locales et harmonisation des standards RH",
+    "Patients comme parties prenantes : droits des patients liés à l'accès aux équipements médicaux dans les pays à faibles revenus (pricing, licences)",
+    "Données de santé des patients dans les solutions HealthTech connectées : droits à la vie privée et souveraineté des données médicales"
+  ],
+  "observed_failures": [
+    "Rappel CPAP Philips DreamStation (2021) : 5,5 millions d'appareils retirés pour risque de cancer, amende FDA 1,1 Mrd USD — crise majeure de gouvernance produit",
+    "Rapport Amnesty International 2022 : fournisseurs de composants Philips en Malaisie pratiquant des frais de recrutement abusifs pour les travailleurs migrants indonésiens",
+    "Audit tiers Thaïlande 2021 : non-conformité dans une usine d'assemblage (heures supplémentaires excessives) corrigée mais révélant la fragilité du SSP"
+  ],
+  "signals_of_risk": [
+    "Secteur MedTech exposé à des risques DDH spécifiques (patients, données de santé) peu couverts par les frameworks standards",
+    "Restructuration post-crise CPAP : réduction des effectifs et pression sur les fournisseurs risquant de dégrader les standards sociaux",
+    "Concentration géographique des fournisseurs en Asie du Sud-Est dans des zones à risque migration forcée"
+  ],
+  "signals_of_trust": [
+    "Supplier Sustainability Program (SSP) couvrant 95% des achats avec audits et plans d'action corrective documentés",
+    "Rapport de durabilité certifié GRI, intégré au rapport annuel",
+    "Engagement pour l'accès aux soins de santé : programme Healthy Communities touchant 300 millions de personnes dans les pays à faibles revenus d'ici 2025",
+    "Mécanisme de réclamation Speak Up accessible aux fournisseurs et travailleurs de la supply chain"
+  ],
+  "recommended_actions": [
+    "Proposer une solution DDH adaptée aux spécificités MedTech : droits des patients, données médicales, accès aux soins comme dimensions complémentaires",
+    "Démontrer comment notre outil peut renforcer le SSP sur les fournisseurs Tier 2 en Asie du Sud-Est (frais de recrutement migrants)",
+    "Présenter un module de conformité minerais de conflits aligné Dodd-Frank et OCDE pour les composants médicaux",
+    "Organiser une session post-crise CPAP sur le renforcement de la gouvernance produit avec dimension droits humains intégrée"
+  ],
+  "local_tone": "Ton professionnel néerlandais : direct, pragmatique, orienté impact mesurable. Philips apprécie les partenaires qui comprennent les spécificités du secteur médical. Référencer les réglementations sectorielles (MDR, FDA) en complément des frameworks DDH génériques.",
+  "cultural_notes": "Culture néerlandaise : directe, collégiale, peu hiérarchique. La prise de décision est consensuelle (poldermodel). Philips est en phase de reconstruction de confiance post-crise CPAP — être sensible à cette réalité et positionner les solutions comme des outils de reconstruction de la confiance.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.philips.com/a-w/about/sustainability/supplier-sustainability.html",
+    "https://www.amnesty.org/en/latest/news/2022/philips-suppliers-malaysia-migrant-workers/",
+    "https://www.business-humanrights.org/en/companies/philips/"
+  ]
 }

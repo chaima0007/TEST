@@ -1,10 +1,10 @@
 {
   "id": "axa",
   "slug": "axa",
-  "name": "AXA S.A.",
+  "name": "AXA SA",
   "country": "France",
   "city": "Paris",
-  "sector": "Assurance / Investissement",
+  "sector": "Assurance",
   "size": {
     "revenue_bn_eur": 110,
     "employees": 145000,
@@ -18,52 +18,53 @@
     "sfdr": true,
     "esg_rating": {
       "msci": "A",
-      "sustainalytics": "18.7 (Low Risk)",
-      "target": "AA d'ici 2026 — engagement Net Zero Insurance Alliance"
+      "sustainalytics": "18.7 Low Risk",
+      "target": "AA"
     }
   },
   "org_structure": {
-    "decision_maker": "Head of Responsible Investment / Directeur de la Conformité Groupe",
-    "team": "Équipe Responsible Investment (35 FTE), équipe SFDR/Taxonomie (18 FTE), équipe ESG & Climate (25 FTE)",
-    "location": "Siège Paris 8e + bureau Bruxelles (compliance européenne) + hub Singapour",
-    "process": "Comité Investissement Responsable mensuel, reporting SFDR trimestriel, budget compliance validé COMEX Q4"
+    "decision_maker": "Group Chief Sustainability Officer / Chief Investment Officer",
+    "team": "AXA Investment Managers (AXA IM) ESG Team, Group Sustainability",
+    "location": "Paris (Tour AXA, La Défense), Paris 8e (siège historique)",
+    "process": "Comité de responsabilité d'entreprise trimestriel, processus d'exclusion sectorielle géré par AXA IM, due diligence ESG intégrée à la souscription"
   },
   "pain_points": [
-    "Algorithme de scoring santé pour la tarification assurance : biais potentiel non audité SFDR Art.9 — risque de discrimination indirecte sur critères santé",
-    "Produits SFDR Art.9 : les fonds 'impact' doivent prouver la prise en compte des droits humains dans les PAI — données de qualité insuffisante des entreprises investies",
-    "Souscription assurance agricole Afrique : absence de critères droits humains dans les modèles de risque pour les micro-assurances",
-    "Reporting CSRD : consolidation des données ESG de 50+ filiales dans 20 pays — fragmentation et manque de standards communs",
-    "Pression netzéro : la désassurance des secteurs fossiles crée des risques sociaux (emplois) non mesurés par les outils actuels"
+    "Intégration des droits humains dans les décisions d'investissement : AXA IM gère 850 Mrd EUR avec des exigences SFDR croissantes sur les PAI sociaux",
+    "Souscription dans les secteurs extractifs : évaluation des risques DDH pour les polices d'assurance responsabilité civile des entreprises pétro-gazières",
+    "Conformité SFDR Article 8/9 pour les fonds AXA IM : documentation des mécanismes de due diligence droits humains",
+    "Risques climatiques liés aux droits humains : modélisation de l'impact des événements climatiques extrêmes sur les droits des communautés assurées",
+    "Chaîne d'approvisionnement propre : prestataires IT, facilities management, marketing — conformité CSDDD pour les achats indirects",
+    "Cohérence entre la politique d'exclusion investissement (charbon) et les pratiques de souscription dans les mêmes secteurs"
   ],
   "observed_failures": [
-    "Audit SFDR interne 2023 : les algorithmes de scoring health-based pour les produits d'assurance vie non-vie produisent des taux de refus statistiquement corrélés à l'origine géographique — biais indirect non corrigé",
-    "Rapport Finance Watch 2024 : produits SFDR Art.9 AXA Investment Managers contenant des entreprises avec violations documentées de droits humains — incohérence label/portefeuille",
-    "Absence de procédure formelle d'exclusion ESG pour les réassureurs dont les pratiques de souscription violent les UNGP"
+    "Rapport Insure Our Future 2023 : AXA maintient des capacités de souscription pour des projets d'expansion pétro-gazière malgré ses engagements climatiques — contradictions documentées",
+    "Fonds Article 9 AXA IM : 3 fonds reclassés article 8 en 2023 suite à la révision SFDR niveau 2, soulevant des questions sur la robustesse des critères sociaux",
+    "Controverse Myanmar 2021 : AXA assurait des entités liées à la junte militaire post-coup d'état, avant de se retirer sous pression ONG en juin 2021"
   ],
   "signals_of_risk": [
-    "AMF et ACPR renforcent les contrôles sur les fonds SFDR Art.9 en 2025-2026 — risque de downgrade vers Art.8",
-    "Plainte ONG (Reclaim Finance) sur le financement d'entreprises extractives malgré les engagements AXA",
-    "AI Act 2025 : les systèmes de scoring santé pour l'assurance sont classifiés 'high risk' — obligation d'audit"
+    "Tension structurelle entre activités d'assurance commerciale (souscription) et engagements d'investissement ESG",
+    "Pression réglementaire SFDR niveau 2 avec exigences PAI (Principal Adverse Impacts) sociaux insuffisamment standardisées",
+    "Exposition aux litiges climatiques via la souscription de polices pour des entreprises visées par des contentieux climatiques"
   ],
   "signals_of_trust": [
-    "Membre fondateur de la Net Zero Insurance Alliance (NZIA) et de la Climate Action 100+",
-    "Politique d'exclusion charbon et sables bitumineux parmi les plus strictes du secteur",
-    "Score MSCI A : reconnu comme leader ESG dans le secteur assurance",
-    "Publication PAI (Principal Adverse Impacts) depuis 2022 conforme SFDR avec granularité par fonds"
+    "Signataire des UN Principles for Responsible Investment (UNPRI) depuis 2012 avec rapport annuel",
+    "Politique d'exclusion charbon parmi les plus strictes du secteur (GCEL - Global Coal Exit List)",
+    "AXA IM Impact Investing : 20 Mrd EUR alloués aux investissements à impact social mesuré",
+    "Membre du Net-Zero Insurance Alliance (NZIA) — engagement sur les émissions financées via la souscription"
   ],
   "recommended_actions": [
-    "Entrer par le risque AI Act + SFDR Art.9 sur l'auditabilité des algorithmes de scoring — angle double réglementaire très actuel 2025-2026",
-    "Proposer un audit du scoring santé pour identifier les biais indirects — présenter comme protection proactive avant contrôle ACPR",
-    "Référencer Finance Watch et les risques de downgrade SFDR Art.9 : 'Comment allez-vous prouver l'intégrité droits humains de vos fonds impact en 2026 ?'",
-    "Cibler Head of Responsible Investment pour l'angle investissement, Head of Compliance pour l'angle réglementaire"
+    "Proposer une solution d'intégration des PAI sociaux (SFDR) dans le processus de sélection des actifs AXA IM avec documentation automatisée",
+    "Développer un module d'évaluation DDH pour les décisions de souscription dans les secteurs à risque élevé (extractif, infrastructure)",
+    "Présenter comment notre outil résout la tension entre critères d'exclusion investissement et pratiques de souscription via une approche cohérente",
+    "Organiser un atelier avec les équipes AXA IM et Group Sustainability autour de la convergence CSDDD/SFDR pour les assureurs"
   ],
-  "local_tone": "Très formel, institutionnel. Références SFDR, AMF, ACPR, AI Act obligatoires. Les interlocuteurs AXA Investment Managers sont analytiques et exigent des preuves méthodologiques. Ton écrit soigné, présentation PowerPoint structurée. Le mot 'conformité' est positif chez AXA.",
-  "cultural_notes": "AXA est une grande maison française avec une culture de conformité forte héritée des régulateurs assurance. Les interlocuteurs Responsible Investment ont souvent une double culture finance/développement durable — ils apprécient les références académiques. Les décisions prennent du temps (6-12 mois) mais une fois engagées, elles sont solides. Prévoir 3-4 rendez-vous de qualification avant la proposition commerciale.",
+  "local_tone": "Ton formel parisien avec sensibilité financière et réglementaire. AXA est très sensible à sa réputation internationale — aborder les risques sous l'angle de la gestion des risques institutionnelle. Références aux frameworks UNPRI, NZIA et SFDR sont des signaux de crédibilité.",
+  "cultural_notes": "AXA est une entreprise avec une forte culture de risque et d'analyse actuarielle. Les équipes ESG travaillent en étroite collaboration avec les équipes investissement et souscription — l'approche doit être quantitative et documentée. La réputation de 'leader ESG dans l'assurance' est une source de fierté institutionnelle.",
   "priority": 4,
   "last_updated": "2026-06-21",
   "source_links": [
-    "https://www.axa.com/en/responsibility/sustainable-finance",
-    "https://reclaimfinance.org",
-    "https://www.amf-france.org/fr/reglementation/dossiers-thematiques/finance-durable"
+    "https://www.axa.com/en/about-us/our-commitment-to-esg",
+    "https://insureourfuture.co.org/2023-scorecard/axa/",
+    "https://www.axa-im.com/responsible-investing/our-approach"
   ]
 }

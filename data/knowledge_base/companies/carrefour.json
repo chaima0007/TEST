@@ -1,10 +1,10 @@
 {
   "id": "carrefour",
   "slug": "carrefour",
-  "name": "Carrefour S.A.",
+  "name": "Carrefour SA",
   "country": "France",
   "city": "Massy",
-  "sector": "Retail / Grande Distribution",
+  "sector": "Retail",
   "size": {
     "revenue_bn_eur": 90,
     "employees": 320000,
@@ -18,52 +18,53 @@
     "sfdr": false,
     "esg_rating": {
       "msci": "BBB",
-      "sustainalytics": "25.3 (Medium Risk)",
-      "target": "A d'ici 2026 — feuille de route Act for Food et Carrefour 2026"
+      "sustainalytics": "20.4 Low Risk",
+      "target": "A"
     }
   },
   "org_structure": {
-    "decision_maker": "CCO (Chief Compliance Officer) / VP Développement Durable & Achats Responsables",
-    "team": "Équipe RSE (55 FTE), équipe compliance fournisseurs (40 FTE terrain), équipe CSDDD (15 FTE créée 2023)",
-    "location": "Siège Massy + direction Achats Cœur Défense + équipes terrain Brésil, Argentine, Espagne, Belgique",
-    "process": "Revue fournisseurs trimestrielle, audit fournisseurs premier prix annuel (3000 audits/an), budget RSE validé COMEX septembre"
+    "decision_maker": "Directeur RSE Groupe / Directeur des Achats",
+    "team": "Direction RSE, Achats Responsables, Qualité & Contrôle des Risques",
+    "location": "Massy (siège), Paris (direction générale), Bruxelles (affaires réglementaires)",
+    "process": "Plan de vigilance annuel publié, comité RSE trimestriel, processus de qualification fournisseurs avec critères sociaux et environnementaux"
   },
   "pain_points": [
-    "Maltraitance des seniors dans les filières : absence de KPIs spécifiques sur les conditions de travail des employés âgés (>55 ans) dans les entrepôts logistiques Carrefour Brésil et Pologne",
-    "Déforestation Brésil 2023 : incident documenté sur des fournisseurs viande bovine liés à des zones déforestées Amazonie — système de traçabilité insuffisant",
-    "Fournisseurs premier prix : les marques propres Carrefour font appel à des sous-traitants en Asie du Sud dont les conditions de travail ne font pas l'objet de monitoring temps réel",
-    "CSDDD consommateur final : Carrefour doit prouver que l'information droits humains remonte jusqu'au prix sur l'étiquette — complexité énorme",
-    "Chaîne produits frais Afrique (fruits tropicaux) : travailleurs agricoles sans accès aux procédures de plainte dans les langues locales"
+    "Filières alimentaires à risque : viande bovine (Brésil/déforestation), huile de palme (Indonésie), crevettes (Asie du Sud-Est/travail forcé), cacao (Côte d'Ivoire)",
+    "Marques propres Carrefour : 15 000+ références avec responsabilité directe de l'enseigne sur les conditions de production — exposition DDH maximale",
+    "Conformité loi de vigilance : plan 2023 jugé insuffisant sur la cartographie Tier 2 et 3 selon Sherpa et CCFD-Terre Solidaire",
+    "Conditions de travail des employés de caisse et logistique en France et en Europe : pressions syndicales sur les horaires atypiques et les cadences",
+    "Fournisseurs locaux dans les pays d'opération (Brésil, Argentine, Pologne, Roumanie, Espagne) : disparités des standards sociaux nationaux vs. exigences groupe",
+    "Réglementation EUDR : filières cacao, café, bois, caoutchouc dans les produits distributeur à cartographier géographiquement avant 2025"
   ],
   "observed_failures": [
-    "Incident Brésil 2023 : documentaire Arte + rapport Mighty Earth identifiant des fournisseurs viande bovine Carrefour approvisionnant depuis des zones d'élevage sur terres déforestées illégalement en Amazonie",
-    "Rapport CCFD-Terre Solidaire 2024 : conditions de travail insuffisantes documentées chez des fournisseurs textile Carrefour Bangladesh — absence de monitoring continu",
-    "Audit interne 2023 : taux de non-conformité de 28% dans les audits fournisseurs first price asiatiques — taux élevé sans plan d'action systémique"
+    "Plan de vigilance 2023 : évaluation Sherpa/CCFD — lacunes dans la cartographie des risques fournisseurs Tier 2, absence de mécanisme de réclamation accessible aux travailleurs",
+    "Fournisseur viande Brésil 2022 : rapport Global Witness liant des fournisseurs indirects Carrefour à de la déforestation illégale en Amazonie",
+    "Enquête Collectif Éthique sur Étiquette 2021 : conditions de travail dans une usine textile Bangladesh produisant pour les marques propres Carrefour — heures et salaires non conformes"
   ],
   "signals_of_risk": [
-    "CSDDD art.13 : obligation d'information consommateur sur les risques droits humains dans la chaîne — Carrefour frontline consumer est particulièrement exposé",
-    "ONG Envol Vert et Mighty Earth très actives sur le dossier Carrefour Brésil — pression médiatique continue",
-    "Enquête DGCCRF sur les pratiques commerciales avec fournisseurs — risque de corrélation avec pratiques DDH"
+    "Exposition massive aux filières agricoles à risque via les marques propres (MDD) qui représentent 30%+ du chiffre d'affaires",
+    "Présence dans des marchés émergents (Brésil, Pologne, Espagne, Roumanie) avec des standards sociaux hétérogènes",
+    "Pression réglementaire EUDR et CSDDD simultanée sur les filières alimentaires complexes"
   ],
   "signals_of_trust": [
-    "Programme Act for Food : engagements publics chiffrés sur l'alimentation durable avec reporting annuel",
-    "Label Carrefour Quality Lines (CQL) : traçabilité produit améliorée sur 500+ références",
-    "Membre de la Roundtable on Responsible Soy (RTRS) et de l'initiative Cattle Agreement Brésil",
-    "Rapport de vigilance annuel depuis 2018 (loi Vigilance française) — un des premiers retailers à le publier"
+    "Engagement Carrefour Act for Food : 2,4 Mrd EUR investis dans la transition alimentaire durable d'ici 2025",
+    "Partenariat avec WWF France sur les filières durables (pêche, forêts)",
+    "Programme Carrefour Agir : sourcing local prioritaire avec critères sociaux pour les agriculteurs français",
+    "Rapport RSE intégré publié annuellement avec vérification externe (EY)"
   ],
   "recommended_actions": [
-    "Entrer par l'incident Brésil 2023 et la CSDDD art.13 : 'Le consommateur final sera bientôt informé des risques droits humains — êtes-vous prêt ?'",
-    "Proposer le module traçabilité viande/soja Brésil avec alertes déforestation temps réel intégrées",
-    "Angle maltraitance seniors : thème peu traité, fort impact RH et réputation marque employeur en France",
-    "Cibler VP Achats Responsables pour l'entrée opérationnelle, CCO pour la dimension compliance réglementaire"
+    "Proposer un outil de cartographie DDH spécialisé pour les marques propres (MDD) avec focus filières alimentaires à risque",
+    "Démontrer la conformité EUDR pour les filières cacao, café et huile de palme avec géolocalisation des parcelles fournisseurs",
+    "Présenter un module de mécanisme de réclamation accessible aux travailleurs de la supply chain (multilingue, confidentiel)",
+    "Organiser une session avec la Direction RSE autour de l'amélioration du plan de vigilance face aux critiques Sherpa/CCFD"
   ],
-  "local_tone": "Formel mais accessible, centré CSDDD et consommateur final. Carrefour est très sensible à sa réputation marque auprès du grand public. Les arguments sur la protection de la marque et la confiance consommateur sont très efficaces. Éviter le jargon trop technique — les interlocuteurs ne sont pas tous juristes.",
-  "cultural_notes": "Carrefour est un groupe français avec une forte culture commerciale. Le RSE doit se justifier en termes d'impact business (omnicanal, prix, fidélisation). Les décisions impliquent souvent la Direction Commerciale en plus de la RSE. Attention aux cycles politiques internes : changements de direction fréquents affectent les priorités RSE. Premier contact idéal en Q1 avant les revues budgétaires.",
+  "local_tone": "Ton direct et pragmatique, typique de la grande distribution française. Valoriser les gains d'efficacité et la réduction des risques réglementaires. Les références à la loi de vigilance française et aux attentes des ONG partenaires sont des leviers d'engagement. Éviter un discours trop théorique.",
+  "cultural_notes": "Carrefour est une entreprise française historique avec une culture de la négociation commerciale dure. Les équipes RSE travaillent souvent avec des contraintes budgétaires serrées. Valoriser le ROI des investissements DDH et montrer comment la conformité peut devenir un avantage compétitif dans les appels d'offres BtoB.",
   "priority": 4,
   "last_updated": "2026-06-21",
   "source_links": [
-    "https://www.carrefour.com/fr/groupe/engagement-rse",
-    "https://www.mightyearth.org/fr/carrefour/",
-    "https://www.arte.tv/fr/videos/RC-022555/amazonie/"
+    "https://www.carrefour.com/sites/default/files/2024-04/carrefour-plan-de-vigilance-2023.pdf",
+    "https://www.asso-sherpa.org/carrefour-plan-vigilance-evaluation",
+    "https://www.globalwitness.org/en/campaigns/forests/carrefour-amazon-deforestation/"
   ]
 }

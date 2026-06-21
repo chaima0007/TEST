@@ -1,10 +1,10 @@
 {
   "id": "bnpparibas",
   "slug": "bnpparibas",
-  "name": "BNP Paribas S.A.",
+  "name": "BNP Paribas SA",
   "country": "France",
   "city": "Paris",
-  "sector": "Finance / Banque",
+  "sector": "Finance/Bank",
   "size": {
     "revenue_bn_eur": 45,
     "employees": 190000,
@@ -18,53 +18,53 @@
     "sfdr": true,
     "esg_rating": {
       "msci": "A",
-      "sustainalytics": "22.1 (Medium Risk)",
-      "target": "AA d'ici 2027 — objectif annoncé investisseurs institutionnels"
+      "sustainalytics": "21.3 Medium Risk",
+      "target": "AA"
     }
   },
   "org_structure": {
-    "decision_maker": "Directeur des Risques ESG / Directeur de la Conformité Groupe",
-    "team": "Équipe ESG & Climate Risk (60 FTE), équipe SFDR/Taxonomie (20 FTE), équipe Compliance Droits Humains (15 FTE)",
-    "location": "Siège Paris 9e + centre de décision La Défense (direction financière)",
-    "process": "Comité des risques ESG mensuel, validation SFDR reporting en Q1/Q3, budget compliance approuvé COMEX en novembre"
+    "decision_maker": "Chief Sustainability Officer / Chief Risk Officer / Head of ESG Finance",
+    "team": "Sustainable Finance Hub, Compliance & Conduct, Chief Compliance Officer",
+    "location": "Paris (siège), Londres (marchés), Luxembourg (fonds SFDR)",
+    "process": "Comité ESG groupe mensuel, validation conseil d'administration pour politiques sectorielles, processus KYC ESG intégré à l'onboarding client"
   },
   "pain_points": [
-    "Algorithme de scoring ESG des contreparties non auditable : impossibilité de démontrer l'absence de biais dans la notation des entreprises financées — risque SFDR Art.9",
-    "Financement controversé Brésil 2024 (Oxfam) : soutien documenté à des entreprises impliquées dans des violations de droits communautaires amazoniens",
-    "Obligation SFDR Art.8/9 : les fonds classifiés doivent prouver la prise en compte des PAI (Principal Adverse Impacts) sur les droits humains — données insuffisantes",
-    "Traçabilité DDH des crédits syndiqués : impossibilité d'auditer les impacts droits humains des consortiums de financement multibanques",
-    "Pression réglementaire BCE : stress tests climatiques intégrant maintenant des critères droits humains (2025)",
-    "Reporting CSRD consolidé : les filiales BNP (Cardif, Arval, BNP CIB) ont des pratiques DDH divergentes non harmonisées"
+    "Intégration des risques DDH dans les décisions de financement : évaluation des droits humains pour les prêts aux industries extractives et infrastructure",
+    "SFDR Article 8/9 : preuves documentées des mécanismes de due diligence sociale pour les fonds labellisés, pression AMF sur les green claims",
+    "Financement de projets en zones sensibles : Équateur Principles application dans les financements de projets >10M USD avec impacts communautaires",
+    "Risques de réputation liés au financement d'entreprises sous sanctions ou impliquées dans des violations DDH (Myanmar, Russie post-2022)",
+    "Conformité loi de vigilance française pour les activités propres et les filiales : cartographie des impacts droits humains dans les opérations bancaires directes",
+    "Pression croissante sur le financement des énergies fossiles et risques de contentieux climatiques liés aux droits des générations futures"
   ],
   "observed_failures": [
-    "Rapport Oxfam 2024 documentant le financement BNP Paribas d'entreprises agricoles brésiliennes impliquées dans des expulsions de communautés autochtones en Amazonie",
-    "Audit SFDR interne 2023 révélant que les algorithmes de scoring ESG contreparties produisaient des notations 'greenwashing' impossibles à justifier méthodologiquement devant l'AMF",
-    "Absence de mécanisme de filtrage droits humains dans les décisions de crédit corporate >500M€ — signalé par le Conseil d'Administration en 2024"
+    "Rapport Reclaim Finance 2023 : BNP Paribas classé parmi les principaux financeurs d'expansion des énergies fossiles en Europe — 32 Mrd USD depuis 2016",
+    "Fonds ESG article 9 déclassé en article 8 en 2023 suite à révision AMF sur la matérialité des critères sociaux — impact réputation avec investisseurs institutionnels",
+    "Financement du terminal GNL Mozambique (TotalEnergies) : implications dans les déplacements de population, interpellation par ONG et actionnaires lors de l'AG 2023"
   ],
   "signals_of_risk": [
-    "AMF sous pression du Parlement européen pour renforcer les contrôles SFDR Art.9 — BNP Paribas est dans le viseur régulier",
-    "Coalition d'actionnaires (CERES, Eurosif) ayant déposé une résolution en AG 2024 sur les droits humains dans le portefeuille",
-    "Journaliste Le Monde enquêtant sur le financement bancaire français des entreprises en zone de conflit"
+    "Exposition significative aux secteurs extractifs dans le portefeuille de prêts corporate (pétrole, gaz, mines)",
+    "Risque de contentieux 'fossil fuel litigation' similaire au cas ING Pays-Bas",
+    "Complexité réglementaire croissante SFDR niveau 2 avec exigences PAI (Principal Adverse Impacts) insuffisamment documentées"
   ],
   "signals_of_trust": [
-    "Signataire des Principes pour une Banque Responsable (UNEP FI) depuis 2019",
-    "Engagement net-zéro 2050 avec trajectoires par secteur validées SBTi",
-    "Publication rapport PAI (Principal Adverse Impacts) depuis 2022 conforme SFDR",
-    "Membre de l'initiative Finance for Biodiversity Pledge"
+    "Politique charbon la plus stricte des banques françaises : sortie totale du financement charbon d'ici 2030 (OCDE) et 2040 (monde)",
+    "Membre fondateur des Principes de l'Équateur et signataire des UNEP FI Principles for Responsible Banking",
+    "Publication des émissions financées (Scope 3 catégorie 15) selon PCAF depuis 2021",
+    "Engagements Net Zero Banking Alliance avec jalons sectoriels vérifiés par des tiers"
   ],
   "recommended_actions": [
-    "Entrer par la problématique SFDR Art.9 et l'auditabilité des algorithmes ESG — angle régulateur AMF très actuel",
-    "Proposer le module d'audit algorithmique droits humains pour les décisions de crédit : 'Pouvez-vous aujourd'hui prouver devant l'AMF que votre scoring ESG est exempt de biais ?'",
-    "Référencer le rapport Oxfam 2024 Brésil : montrer qu'un système de monitoring en amont aurait permis d'anticiper l'exposition réputationnelle",
-    "Cibler Directeur Risques ESG + Directeur Compliance simultanément — la décision est bicéphale"
+    "Présenter une solution d'intégration DDH dans le processus KYC/KYT pour les clients corporate des secteurs à risque élevé",
+    "Proposer un outil de scoring DDH pour les portefeuilles de prêts permettant d'identifier et de documenter les risques PAI sociaux (SFDR)",
+    "Développer une offre d'accompagnement pour les équipes de financement de projets sur l'application des Principes de l'Équateur dimension droits humains",
+    "Organiser un atelier avec le Sustainable Finance Hub sur l'évolution des exigences CSDDD pour les institutions financières"
   ],
-  "local_tone": "Très formel, institutionnel. Références SFDR, EU Taxonomy, AMF, BCE obligatoires. Les interlocuteurs bancaires sont juristes ou financiers — éviter le jargon RSE associatif. Privilégier les termes 'risk management', 'auditabilité', 'conformité réglementaire'. Les réunions se préparent avec des notes de synthèse écrites envoyées à l'avance.",
-  "cultural_notes": "BNP Paribas est une grande maison avec une culture interne très structurée. Les interlocuteurs compliance sont prudents par nature professionnelle. Le mot 'risque' doit être présenté comme maîtrisé, jamais comme une menace existentielle. Prévoir un premier rendez-vous de qualification, puis une présentation formelle avec support écrit. La décision implique systématiquement le service juridique.",
+  "local_tone": "Ton formel et rigoureux, adapté à la culture bancaire parisienne. Utiliser le vocabulaire technique financier (PAI, SFDR, Équateur Principles). Éviter les formulations militantes. Se positionner comme partenaire de conformité réglementaire avec une approche gestion des risques.",
+  "cultural_notes": "Culture bancaire française : hiérarchique, très sensible à la réputation institutionnelle et aux relations régulateurs. Les équipes ESG sont souvent sous pression entre ambitions de durabilité et objectifs commerciaux. Valoriser la discrétion et le sérieux. Les références aux pairs (Société Générale, Crédit Agricole) peuvent être utiles avec précaution.",
   "priority": 5,
   "last_updated": "2026-06-21",
   "source_links": [
-    "https://invest.bnpparibas/en/esg-sustainable-finance",
-    "https://www.oxfam.org/en/research/banks-amazon",
-    "https://www.amf-france.org/fr/reglementation/dossiers-thematiques/finance-durable"
+    "https://invest.bnpparibas/en/sustainability/responsible-business",
+    "https://reclaimfinance.org/site/en/2023/06/01/bnp-paribas-fossil-fuel-finance/",
+    "https://www.unepfi.org/banking/bankingprinciples/"
   ]
 }

@@ -2,9 +2,9 @@
   "id": "airbus",
   "slug": "airbus",
   "name": "Airbus SE",
-  "country": "France / Germany / Spain",
-  "city": "Toulouse (siège) / Hamburg / Madrid",
-  "sector": "Aéronautique / Défense / Espace",
+  "country": "France",
+  "city": "Toulouse",
+  "sector": "Aéronautique",
   "size": {
     "revenue_bn_eur": 68,
     "employees": 134000,
@@ -18,52 +18,53 @@
     "sfdr": false,
     "esg_rating": {
       "msci": "BBB",
-      "sustainalytics": "23.5 (Medium Risk)",
-      "target": "A d'ici 2027 — engagement plan stratégique Airbus 2035"
+      "sustainalytics": "22.6 Medium Risk",
+      "target": "A"
     }
   },
   "org_structure": {
-    "decision_maker": "VP Ethics & Compliance / Head of Sustainability",
-    "team": "Compliance Group (150+ FTE), équipe Ethics & Human Rights (22 FTE), équipe fournisseurs durables (35 FTE)",
-    "location": "Siège Toulouse + centres Hamburg (compliance) + Madrid (procurement)",
-    "process": "Comité éthique trimestriel, revue fournisseurs semestrielle, certification EN9100 annuelle intégrant critères sociaux"
+    "decision_maker": "Chief Sustainability Officer / VP Procurement & Supply Chain",
+    "team": "Sustainability & Responsibility team, Supply Chain Ethics & Compliance",
+    "location": "Toulouse (siège, aérocommercial), Hamburg (A320), Madrid (A400M), Leiden (siège légal)",
+    "process": "Comité Sustainability trimestriel, qualification fournisseurs avec critères ESG (FICAS scoring), plan de vigilance publié annuellement"
   },
   "pain_points": [
-    "Droits numériques des réfugiés dans la chaîne d'approvisionnement : les fournisseurs d'électronique et composants en zones de crise n'ont pas de politique formalisée sur la vie privée des travailleurs déplacés",
-    "Chaîne titane post-Ukraine 2022 : réorientation d'urgence de l'approvisionnement titane hors Russie sans audit DDH préalable des nouveaux fournisseurs Canada/Japon",
-    "Conformité CSDDD sur les sous-traitants aéronautiques : 15 000 fournisseurs actifs dont 40% localisés dans des pays à risque droits humains modéré-élevé",
-    "Zones de conflit : livraison d'équipements dans des pays sous tensions géopolitiques — absence de scoring droits humains des clients finaux",
-    "Documentation bilingue/trilingue insuffisante : les procédures DDH ne sont pas accessibles en langue locale pour les fournisseurs Turquie, Maroc, Inde"
+    "Chaîne d'approvisionnement aéronautique : 12 000+ fournisseurs actifs avec délégation de fabrication critique (structures, moteurs, avionique) — traçabilité DDH complexe",
+    "Conformité loi de vigilance française pour les opérations propres et la supply chain : cartographie des risques dans les pays de production (Mexique, Maroc, Inde, Chine)",
+    "Minerais critiques pour l'aéronautique (titane, cobalt, aluminium) : exposition aux risques DDH en Russie (titane post-2022) et en RDC (cobalt)",
+    "Conditions de travail dans les joint-ventures et usines locales en Inde (Airbus India) et Chine (Airbus Tianjin) : alignement avec les standards européens",
+    "Dual-use : ventes de technologies à des États avec historique de violations des droits humains — arbitrage entre obligations commerciales et éthique",
+    "Impact social de la transition vers les avions zéro émission (hydrogène) sur les emplois dans la supply chain traditionnelle"
   ],
   "observed_failures": [
-    "Crise titane 2022 : substitution urgente de fournisseurs russes sans délai d'audit DDH suffisant — 3 nouveaux fournisseurs intégrés sans évaluation droits humains formelle",
-    "Audit interne 2024 : seulement 52% des fournisseurs aéronautiques tier-1 ont signé le Code of Conduct Airbus et en prouvent la mise en œuvre",
-    "Rapport RSE 2023 : mécanisme de plainte fournisseurs utilisé 12 fois en 3 ans sur 15 000 fournisseurs — taux d'utilisation révélant un défaut d'accessibilité"
+    "Affaire corruption Airbus 2020 : amende record 3,6 Mrd EUR pour corruption dans 5 pays — révélant des failles systémiques dans la gouvernance des partenariats commerciaux",
+    "Rapport Sherpa 2022 : plan de vigilance Airbus insuffisant sur la cartographie des risques DDH Tier 2 et Tier 3, comparé aux standards Best Practices UNGP",
+    "Fournisseur Maroc 2023 : conditions de travail non conformes dans une usine de câblage aéronautique à Casablanca (heures supplémentaires forcées) — audit FICAS révision nécessaire"
   ],
   "signals_of_risk": [
-    "Pression réglementaire US ITAR + européenne CSDDD convergente sur la traçabilité des matériaux défense",
-    "Enquête journalistique (Der Spiegel) sur les fournisseurs Airbus en Turquie et Maroc et les conditions de travail",
-    "Risque reputationnel : contrats défense dans des pays sous sanctions ONU — zero-tolerance policy à prouver"
+    "Dépendance au titane russe (substitution en cours mais coûteuse) révélant la vulnérabilité des chaînes critiques",
+    "Pression croissante sur les ventes dual-use vers des régimes autoritaires (Arabie Saoudite, Émirats Arabes Unis)",
+    "Plan de vigilance sous scrutin régulier des ONG françaises spécialisées (Sherpa, CCFD)"
   ],
   "signals_of_trust": [
-    "Code éthique Airbus (Standards of Business Conduct) parmi les plus complets du secteur aéronautique",
-    "Membre de l'Aerospace Industries Association Human Rights Working Group",
-    "Certification EN9100 avec intégration croissante de critères éthiques fournisseurs",
-    "Partenariat avec Transparency International sur la prévention de la corruption dans les marchés défense"
+    "Publication du plan de vigilance depuis 2017, avec amélioration progressive de la cartographie des risques",
+    "Programme FICAS (Fournisseurs d'Intérêt Critique pour Airbus et la Sécurité) avec scoring ESG intégré",
+    "Engagement zéro émission nette 2050 avec programme ZEROe (avion à hydrogène) comme vision industrielle",
+    "Membre de l'initiative AeroMAPS pour la modélisation des impacts climatiques et sociaux du secteur"
   ],
   "recommended_actions": [
-    "Entrer par la crise titane 2022 : 'Si cela se reproduit, comment intégrez-vous un audit DDH express en 72h pour les nouveaux fournisseurs d'urgence ?'",
-    "Proposer un module droits numériques des réfugiés dans les chaînes de montage — angle différenciateur peu traité par les concurrents",
-    "Préparer une démo trilingue FR/DE/EN démontrant l'accessibilité pour les fournisseurs en Turquie et Maroc",
-    "Cibler VP Ethics & Compliance en entrée — Airbus a une forte culture compliance post-enquêtes anticorruption"
+    "Proposer un audit de maturité DDH du plan de vigilance Airbus par rapport aux standards UNGP et préparer les évolutions CSDDD",
+    "Démontrer comment notre solution peut enrichir le scoring FICAS avec des indicateurs droits humains pour les fournisseurs Tier 2",
+    "Présenter une solution de cartographie des minerais critiques (titane, cobalt) avec indicateurs DDH par pays d'origine",
+    "Organiser une session avec l'équipe Supply Chain Ethics autour de la gestion des risques dans les joint-ventures en Asie"
   ],
-  "local_tone": "Trilingue FR/DE/EN selon l'interlocuteur. Ton technique et précis. Références réglementaires CSDDD + EN9100 + ITAR appréciées. Les Toulousains sont moins formels que les Parisiens — une réunion décontractée est possible mais le fond doit être rigoureux.",
-  "cultural_notes": "Airbus est une entreprise multiculturelle (franco-germano-hispano) avec des frictions culturelles internes fréquentes. Le VP Ethics à Toulouse peut avoir une vision différente du VP Compliance à Hamburg. Adapter le discours selon l'interlocuteur. La culture de conformité est très forte post-affaires anticorruption (2020 : amende 3,6Md€). Le mot 'éthique' est central dans leur vocabulaire.",
+  "local_tone": "Ton professionnel avec sensibilité pour les enjeux de souveraineté industrielle européenne. Airbus est fier de sa dimension paneuropéenne — valoriser les approches qui renforcent la conformité sans fragiliser la compétitivité. Références aux obligations françaises (loi de vigilance) avant les directives UE.",
+  "cultural_notes": "Culture d'ingénieurs aéronautiques avec une forte conscience de la sécurité et de la qualité. La dimension multinationale (France, Allemagne, Espagne) crée des dynamiques culturelles complexes — adapter le ton selon l'interlocuteur. La sensibilité post-affaire corruption est réelle — la gouvernance éthique est un sujet traité avec sérieux.",
   "priority": 4,
   "last_updated": "2026-06-21",
   "source_links": [
-    "https://www.airbus.com/en/sustainability/ethics-and-compliance",
-    "https://www.aia-aerospace.org/human-rights/",
-    "https://www.transparency.org/en/sectors/defence-security"
+    "https://www.airbus.com/en/sustainability",
+    "https://www.asso-sherpa.org/vigilance-plan-airbus-analysis-2022",
+    "https://www.business-humanrights.org/en/companies/airbus/"
   ]
 }

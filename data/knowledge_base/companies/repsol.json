@@ -1,0 +1,70 @@
+{
+  "id": "repsol",
+  "slug": "repsol",
+  "name": "Repsol SA",
+  "country": "Spain",
+  "city": "Madrid",
+  "sector": "Oil&Gas",
+  "size": {
+    "revenue_bn_eur": 56,
+    "employees": 25000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "27.8 Medium Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Director de Sostenibilidad / Chief Risk Officer",
+    "team": "Dirección de Sostenibilidad, Dirección de Compras y Gestión de Contratos",
+    "location": "Madrid (siège, Torre Repsol), Lima (Pérou operations), Bogotá (Colombie), Houston (North America)",
+    "process": "Comité de Sostenibilidad trimestral, Sistema de Gestión de Derechos Humanos (SGDH) déployé depuis 2019, évaluation HRDD intégrée aux projets E&P"
+  },
+  "pain_points": [
+    "Opérations en Pérou et en Bolivie : exploitation pétrolière en territoire indigène (Lot 57, Lot 39) avec exigences de consultation préalable (CLPI/FPIC) complexes",
+    "Transition énergétique : Repsol ambitionne la neutralité carbone en 2050 mais maintient des projets d'exploration — tension avec les droits climatiques",
+    "Incidents environnementaux et droits des communautés : déversements pétroliers en Amazonie péruvienne avec impacts sur les peuples Nahua et Nanti",
+    "Fournisseurs de services pétroliers dans des zones à gouvernance faible (Libye, Trinidad, Venezuela) : risques DDH dans les contrats de sous-traitance",
+    "Conformité CSDDD pour les opérations E&P : cartographie des impacts droits humains dans les phases d'exploration, extraction et abandon de puits",
+    "Pression des investisseurs ESG sur les objectifs de réduction d'empreinte carbone liés aux droits des générations futures"
+  ],
+  "observed_failures": [
+    "Déversement pétrolier Lot 57 (Pérou, 2022) : 3 000 barils dans l'Amazonie avec impact sur les communautés Nahua — recours judiciaire en cours devant les tribunaux espagnols",
+    "Rapport FPIC Watch 2021 : processus de consultation Repsol au Pérou jugé insuffisant par des experts ONU — CLPI non respecté dans 2 concessions",
+    "Espagne (raffinerie Puertollano, 2023) : travailleurs de maintenance sous-traitée blessés dans un accident documentant des failles dans les standards SST fournisseurs"
+  ],
+  "signals_of_risk": [
+    "Dépendance aux opérations en Amérique Latine (40%+ de la production) dans des zones à fort risque DDH indigène",
+    "Contentieux juridiques actifs en Espagne et au Pérou liés à des incidents environnementaux avec impact communautaire",
+    "Écart potentiel entre les engagements de transition énergétique et les pratiques d'exploration réelles"
+  ],
+  "signals_of_trust": [
+    "Sistema de Gestión de Derechos Humanos (SGDH) : cadre structuré avec évaluations d'impact DDH pour chaque nouveau projet",
+    "Fonds d'investissement communautaire de 50M EUR pour les communautés affectées par les opérations en Amérique Latine",
+    "Rapport de durabilité conforme GRI Oil & Gas Sector Supplement, vérifié par Bureau Veritas",
+    "Engagement Net Zero 2050 avec objectifs intermédiaires 2025 et 2030 validés par SBTi"
+  ],
+  "recommended_actions": [
+    "Proposer un module de FPIC (Free Prior Informed Consent) digitalisé pour les opérations en territoire indigène Amérique Latine",
+    "Démontrer comment notre solution améliore la traçabilité des incidents DDH (déversements, accidents) avec suivi des mesures correctives",
+    "Présenter une analyse de gap entre le SGDH actuel et les exigences CSDDD 2026, notamment pour les opérations E&P offshore",
+    "Organiser une session avec la Dirección de Sostenibilidad autour du cas Lot 57 comme étude de cas pour l'amélioration des processus"
+  ],
+  "local_tone": "Ton professionnel espagnol : chaleureux mais rigoureux, avec sensibilité aux enjeux géopolitiques ibéro-américains. Repsol est très sensible à sa réputation en Amérique Latine — valoriser les approches qui renforcent la confiance avec les communautés locales. L'espagnol est apprécié.",
+  "cultural_notes": "Repsol est l'une des grandes multinationales espagnoles avec une forte identité nationale. Les équipes de durabilité sont compétentes et conscientes des risques — mais la pression commerciale des opérations E&P est forte. Valoriser les solutions qui permettent de maintenir les opérations tout en gérant les risques DDH de manière proactive.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.repsol.com/es/sostenibilidad/derechos-humanos/index.cshtml",
+    "https://www.fpicwatch.org/repsol-peru-consultation-2021",
+    "https://www.business-humanrights.org/en/companies/repsol-sa/"
+  ]
+}

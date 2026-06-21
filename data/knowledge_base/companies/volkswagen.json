@@ -4,7 +4,7 @@
   "name": "Volkswagen AG",
   "country": "Germany",
   "city": "Wolfsburg",
-  "sector": "Automobile / Mobilité",
+  "sector": "Automobile",
   "size": {
     "revenue_bn_eur": 322,
     "employees": 675000,
@@ -18,53 +18,53 @@
     "sfdr": false,
     "esg_rating": {
       "msci": "A-",
-      "sustainalytics": "28.5 (Medium Risk)",
-      "target": "AA d'ici 2026 — objectif communiqué au CA"
+      "sustainalytics": "31.2 Medium Risk",
+      "target": "AA"
     }
   },
   "org_structure": {
-    "decision_maker": "CCO (Chief Compliance Officer) / VP Human Rights & Supply Chain Ethics",
-    "team": "Compliance Group (200+ FTE), équipe LkSG dédiée (25 FTE créée 2023), direction achats durables (40 FTE)",
-    "location": "Wolfsburg (siège) + centres de décision Munich (Audi), Stuttgart (Porsche)",
-    "process": "Comité de conformité mensuel, reporting LkSG semestriel obligatoire BAFA, budget compliance validé en Q4 pour l'année suivante"
+    "decision_maker": "Group Chief Procurement Officer / Chief Sustainability Officer",
+    "team": "Group Sustainability & Procurement Compliance (Wolfsburg + Bruxelles)",
+    "location": "Wolfsburg (siège), Berlin (lobbying/public affairs)",
+    "process": "Processus d'approbation par niveaux (Freigabeprozess) — validation supervisory board pour initiatives >1M EUR, comité de durabilité trimestriel"
   },
   "pain_points": [
-    "Conformité LkSG §3 : obligation de mettre en place un système de gestion des risques DDH couvrant fournisseurs directs ET indirects — complexité opérationnelle massive avec 40 000 fournisseurs actifs",
-    "Audit algorithmique RH absent : les systèmes de recrutement automatisé (IA screening CV) ne font l'objet d'aucun audit de biais discriminatoire formalisé depuis l'incident 2022",
-    "Traçabilité minerais critiques (cobalt, lithium) dans la chaîne batteries électriques — pression CSDDD et investisseurs institutionnels",
-    "Documentation insuffisante des mesures correctives suite aux signalements LkSG internes — risque BAFA §10",
-    "Absence de KPI standardisé sur la discrimination algorithmique dans les 12 marques du groupe (VW, Audi, Porsche, SEAT, Skoda...)",
-    "Pression syndicale interne (IG Metall) sur les conditions de travail usines Mexique et Chine — besoin de preuves d'amélioration"
+    "Conformité LkSG opérationnelle pour +40 000 fournisseurs directs, avec exigences d'audit documentées et recours effectifs",
+    "Chaîne d'approvisionnement en cobalt et lithium (batteries EV) : traçabilité jusqu'aux mines artisanales en RDC (travail des enfants documenté)",
+    "Risques DDH dans les usines en Xinjiang (Chine) : pression US (UFLPA) et européenne — partenariat Xinjiang SAIC controversé",
+    "Transition vers véhicules électriques : impact social sur 35 000 emplois en Allemagne, obligations de reclassement et dialogue syndical (IG Metall)",
+    "Complexité du reporting CSRD groupe vs. subsidiaires (Audi, Porsche, SEAT, Skoda) : harmonisation des méthodologies DDH",
+    "Gestion des risques de corruption dans les marchés émergents Amérique Latine et Afrique du Sud liés aux pratiques d'approvisionnement"
   ],
   "observed_failures": [
-    "Incident 2022 : enquête interne révélant que les algorithmes de tri de candidatures discriminaient statistiquement les candidatures féminines pour les postes d'ingénierie — correction partielle sans audit externe certifié",
-    "Rapport BAFA 2024 signalant des lacunes dans la documentation des évaluations de risque fournisseurs indirects (non-conformité §5 LkSG)",
-    "Absence de mécanisme de plainte accessible pour les travailleurs des sous-traitants en Asie du Sud-Est — signalé par Fair Labor Association 2023"
+    "Usine Urumqi (Xinjiang) : audit indépendant impossible selon rapport BHRRC 2023, exposition à l'UFLPA américaine menaçant les exportations",
+    "Dieselgate (2015-2023) : 35 Mrd EUR d'amendes globales — démontrant la faiblesse des systèmes de conformité interne malgré la taille",
+    "Fournisseur Bertrandt 2022 : conditions de travail dégradées dans l'usine de câblage en Roumanie documentées par CorA Netzwerk"
   ],
   "signals_of_risk": [
-    "Émergence de litiges actionnariaux liés à Dieselgate 2.0 potentiel : investisseurs institutionnels exigent des preuves d'audit IA RH",
-    "Pression réglementaire AI Act 2025 : les systèmes RH à 'haut risque' devront être certifiés — VW non préparé selon analyse interne",
-    "Médiatisation croissante du sujet biais algorithme recrutement en Allemagne (ARD, Süddeutsche Zeitung)"
+    "Dépendance critique aux fournisseurs de batteries avec présence en zones à haut risque DDH (RDC, Xinjiang)",
+    "Pression réglementaire simultanée LkSG (Allemagne), CSDDD (UE) et UFLPA (USA) créant des obligations potentiellement conflictuelles",
+    "Restructuration interne en cours (réduction 35 000 postes) créant tensions sociales et risques de réputation"
   ],
   "signals_of_trust": [
-    "Membre du Responsible Business Alliance (RBA) depuis 2019 avec audits fournisseurs annuels",
-    "Publication d'un rapport LkSG annuel depuis 2023 avec cartographie des risques par pays fournisseur",
-    "Engagement CEO public sur l'objectif 'zéro tolérance esclavage moderne' dans le rapport de durabilité 2024",
-    "Partenariat avec GIZ (agence allemande de coopération) sur les droits des travailleurs en Afrique du Sud"
+    "Système LkSG opérationnel déployé depuis janvier 2023 avec portail fournisseurs dédié (SupplyOn)",
+    "Membre fondateur de la Responsible Minerals Initiative (RMI) pour la traçabilité des minerais de batteries",
+    "Rapport de durabilité intégré selon GRI et TCFD, vérifié par KPMG",
+    "Investissement de 180 Mrd EUR sur 5 ans dans l'électrification avec volet social documenté"
   ],
   "recommended_actions": [
-    "Entrée par la problématique LkSG §3 : montrer concrètement comment la solution couvre les fournisseurs indirects avec scoring automatisé — angle BAFA audit readiness",
-    "Présenter le module audit algorithmique RH comme réponse directe à l'incident 2022 ET à l'AI Act 2025 — double argumentaire réglementaire",
-    "Préparer une démo avec données fictives automobiles : 40 000 fournisseurs, hiérarchisation par niveau de risque DDH",
-    "Cibler simultanément CCO et VP HR Digital pour créer une dynamique interne croisée compliance × RH"
+    "Démontrer comment notre solution s'intègre avec SupplyOn pour enrichir le scoring DDH des fournisseurs Tier 1 et Tier 2",
+    "Proposer un module spécialisé traçabilité minerais critiques (cobalt, lithium, nickel) aligné RMI et OECD Due Diligence Guidance",
+    "Présenter une analyse de l'écart entre le système LkSG actuel et les exigences CSDDD 2026 pour identifier les investissements prioritaires",
+    "Organiser un workshop avec l'équipe Xinjiang compliance pour explorer des solutions d'audit à distance et de vérification documentaire"
   ],
-  "local_tone": "Structuré, référencé LkSG §3, §5, §10. Les interlocuteurs allemands apprécient les plans d'implémentation détaillés, les Gantt charts, les références BAFA. Éviter toute comparaison directe avec Dieselgate. Ton professionnel neutre, pas de familiarité.",
-  "cultural_notes": "Culture d'entreprise très hiérarchique avec forte influence syndicale (IG Metall siège au conseil de surveillance). Les décisions majeures impliquent le Betriebsrat. Présenter d'abord aux équipes techniques avant d'escalader. Les Allemands valorisent la Gründlichkeit (thorough due diligence) — ne pas précipiter la décision. Apporter un Konzept (document de concept) formel avant toute réunion de décision.",
+  "local_tone": "Ton professionnel germanique : précis, structuré, factuel. Préparer des présentations Powerpoint détaillées avec tableaux comparatifs. Références aux normes DIN, ISO et réglementations allemandes prioritaires sur les directives UE. Ponctualité et rigueur sont des signaux de crédibilité.",
+  "cultural_notes": "Culture d'entreprise très hiérarchique avec fort rôle des syndicats (co-détermination). Les décisions prennent du temps mais sont durables. Privilégier les relations long terme. La notion de 'Gründlichkeit' (rigueur) est centrale — toute proposition doit être exhaustive et documentée. Éviter l'improvisation.",
   "priority": 5,
   "last_updated": "2026-06-21",
   "source_links": [
-    "https://www.volkswagenag.com/en/group/compliance.html",
-    "https://www.bafa.de/DE/Wirtschaft/Sorgfaltspflichten/sorgfaltspflichten_node.html",
-    "https://www.fairlabor.org"
+    "https://www.volkswagenag.com/en/sustainability/reporting.html",
+    "https://www.business-humanrights.org/en/companies/volkswagen-ag/",
+    "https://www.bafin.de/SharedDocs/Downloads/EN/Anlage/dl_lksg_guidance.html"
   ]
 }

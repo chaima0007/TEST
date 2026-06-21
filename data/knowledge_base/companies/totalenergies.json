@@ -3,8 +3,8 @@
   "slug": "totalenergies",
   "name": "TotalEnergies SE",
   "country": "France",
-  "city": "Courbevoie (La Défense)",
-  "sector": "Énergie / Oil & Gas / Renewables",
+  "city": "Courbevoie",
+  "sector": "Énergie",
   "size": {
     "revenue_bn_eur": 218,
     "employees": 105000,
@@ -18,66 +18,53 @@
     "sfdr": false,
     "esg_rating": {
       "msci": "BBB",
-      "sustainalytics": "34.2 (High Risk)",
-      "target": "A d'ici 2027 selon feuille de route interne"
+      "sustainalytics": "28.4 Medium Risk",
+      "target": "A"
     }
   },
   "org_structure": {
-    "decision_maker": "CSO (Chief Sustainability Officer) / Head of Human Rights & Social Performance",
-    "team": "Direction RSE & Climate (~45 FTE), équipe droits humains (8 FTE), équipe conformité fournisseurs (12 FTE)",
-    "location": "Siège La Défense + Centre Technique de Lyon",
-    "process": "Revue RSE trimestrielle au COMEX, validation budget annuel H1, cycles d'achat fournisseurs renouvelés en Q3"
+    "decision_maker": "Chief Sustainability Officer / Chief Procurement Officer",
+    "team": "Direction Développement Durable & Achats Responsables",
+    "location": "Courbevoie, La Défense",
+    "process": "Appels d'offres annuels, validation COMEX pour engagements >500K EUR, pilotage par KPIs ESG intégrés aux bonus management"
   },
   "pain_points": [
-    "Absence de système d'alerte temps réel sur les violations DDH dans la chaîne d'approvisionnement africaine (Angola, Nigeria, Mozambique)",
-    "Pression réglementaire CSDDD article 9 sur l'obligation de résultat en matière de diligence raisonnable — délai 2027",
-    "Difficulté à prouver l'auditabilité des scores fournisseurs ESG face aux parties prenantes ONG et investisseurs",
-    "Risque de réputation post-incident Uganda 2021 : absence de dispositif de monitoring communautaire formalisé",
-    "Manque de traçabilité sur les droits des peuples autochtones dans les projets d'exploration offshore",
-    "KPIs droits humains non intégrés dans les reporting CSRD consolidés — fragmentation des données"
+    "Cartographie des droits humains dans 50+ pays d'opération pétro-gazière avec des régimes autoritaires (Angola, Irak, Azerbaïdjan)",
+    "Gestion des fournisseurs sous-traitants dans la chaîne de valeur GNL : absence de traçabilité sur conditions de travail des sous-traitants en Papouasie-Nouvelle-Guinée",
+    "Alignement CSDDD avec les obligations de vigilance déjà en vigueur sous la loi française (plan de vigilance insuffisant selon ONG)",
+    "Pression des actionnaires activistes (Follow This, ClientEarth) sur les engagements climatiques liés aux droits des communautés affectées",
+    "Incidents répétés autour du projet Tilenga en Ouganda : déplacements forcés, compensations insuffisantes documentées par Oxfam",
+    "Reporting CSRD E1 (transition climatique) couplé aux impacts sociaux sur les communautés extractives — manque d'outils intégrés"
   ],
   "observed_failures": [
-    "Incident 2021 Ouganda (EACOP) : rapport Global Witness documentant des expropriations forcées sans compensation adéquate — aucun système d'alerte préventif en place",
-    "Absence de scoring temps réel sur les fournisseurs de sous-traitance Afrique subsaharienne malgré 3 alertes ONG entre 2020-2023",
-    "Rapport de diligence raisonnable 2023 identifié comme 'non conforme aux attentes CSDDD art.9' par une analyse externe Vigeo Eiris"
+    "Projet EACOP (Ouganda-Tanzanie) : rapport Banktrack 2023 documentant 100 000+ personnes déplacées sans compensation adéquate, objet de plainte OCDE",
+    "Plan de vigilance 2022 jugé insuffisant par le tribunal judiciaire de Paris suite à la plainte des Amis de la Terre — première décision de ce type",
+    "Audit fournisseurs GNL Qatar 2021 : conditions de travail des travailleurs migrants non conformes aux standards ILO, relevé par rapport IHRB"
   ],
   "signals_of_risk": [
-    "Score MSCI BBB stagnant depuis 2022 malgré investissements RSE — signal de manque de preuve systémique",
-    "Plainte déposée par coalition d'ONG françaises (2024) sur insuffisance du plan de vigilance LDN",
-    "Presse spécialisée (Les Echos, Reuters) relayant régulièrement des critiques sur l'écart entre ambitions net-zéro et pratiques terrain"
+    "Expansion continue dans des zones à haut risque DDH (Mozambique, Irak, Myanmar jusqu'en 2021)",
+    "Taux de couverture audit fournisseurs Tier 2 inférieur à 15% selon rapport développement durable 2023",
+    "Contentieux juridiques actifs sur le devoir de vigilance en France et Belgique"
   ],
   "signals_of_trust": [
-    "Engagement public signataire UNGC (Global Compact) depuis 2002 avec reporting Communication on Progress",
-    "Membre fondateur du Voluntary Principles on Security and Human Rights (VPSHR)",
-    "Publication annuelle d'un rapport de vigilance avec cartographie des risques par pays",
-    "Politique droits humains formalisée (Human Rights Policy 2021) alignée UNGP"
+    "Engagement Net Zero 2050 avec jalons intermédiaires vérifiés par SBTi",
+    "Membre du Pacte Mondial ONU et signataire des Principes directeurs ONU relatifs aux entreprises et aux droits de l'homme",
+    "Publication annuelle du plan de vigilance depuis 2017 (obligation légale française)",
+    "Investissement de 100M EUR dans le fonds d'adaptation climatique pour communautés affectées (2023)"
   ],
   "recommended_actions": [
-    "Proposer une démonstration live du module de monitoring DDH temps réel sur supply chain Afrique — montrer l'écart entre leur reporting actuel et ce qui est requis CSDDD art.9",
-    "Ancrer l'approche sur l'incident Uganda 2021 : 'Que se serait-il passé avec un système d'alerte préventif ?'",
-    "Préparer un benchmark chiffré : coût d'un incident DDH (litige + réputation) vs coût annuel de la solution",
-    "Cibler en priorité Head of Human Rights & Social Performance pour l'entrée, puis escalade vers CSO pour la décision budgétaire"
+    "Proposer un audit de maturité DDH ciblant spécifiquement les zones extractives Afrique subsaharienne — démontrer l'écart vs. CSDDD exigences 2026",
+    "Présenter une solution de cartographie fournisseurs Tier 1-3 avec scoring risque pays intégrant indices Freedom House et ILO",
+    "Organiser un atelier avec le CSO autour du cas EACOP comme étude de cas interne pour identifier les lacunes de processus",
+    "Proposer un module de formation e-learning droits humains pour les 8 000+ acheteurs et contract managers terrain"
   ],
-  "local_tone": "Formel, ancré CSDDD art.9 et UNGP. Éviter le langage trop commercial. Préférer les références réglementaires précises et les données de risque chiffrées. Le DG RSE lit les rapports Vigeo/MSCI.",
-  "cultural_notes": "Culture d'ingénieur : les interlocuteurs RSE apprécient la précision technique et les benchmarks sectoriels. Éviter les formules creuses de 'transformation RSE'. Les décisions se prennent en comité, rarement à titre individuel. Premier rendez-vous = phase de qualification — ne pas proposer un contrat avant le 2e échange.",
-  "relevant_engines": [
-    "land-grabbing-rights-engine",
-    "prison-labor-rights-engine",
-    "digital-gender-gap-rights-engine",
-    "hate-speech-online-rights-engine"
-  ],
-  "caelum_value_prop": {
-    "time_saving": "Monitoring continu vs rapport de vigilance annuel",
-    "cost_saving": "490€/mois vs cabinet juridique spécialisé DDH",
-    "coverage": "Droits communautés, terres, genre, discours haine — multidimensionnel",
-    "compliance": "Alimentation directe rapport CSDDD et plan de Vigilance"
-  },
-  "pitch_angle": "CSDDD & Loi de Vigilance — documentation droits communautés locales sur sites d'extraction africains (Mozambique, Ouganda). Monitoring continu vs rapport Vigilance annuel.",
+  "local_tone": "Ton formel, technique et factuel. Référencer systématiquement les obligations légales françaises (loi de vigilance 2017) avant les directives européennes. Éviter le militantisme — se positionner comme partenaire de conformité, pas d'activisme.",
+  "cultural_notes": "Culture d'ingénieur et de gestionnaire de risques. Les interlocuteurs apprécient les données chiffrées, les benchmarks sectoriels et les références réglementaires précises. La hiérarchie est respectée — toujours adresser le bon niveau décisionnel. Méfiance envers les consultants perçus comme génériques.",
   "priority": 5,
   "last_updated": "2026-06-21",
   "source_links": [
-    "https://totalenergies.com/sustainability/human-rights",
-    "https://www.globalwitness.org/en/campaigns/oil-gas-and-mining/eacop/",
-    "https://www.vigeo-eiris.com"
+    "https://totalenergies.com/sites/g/files/nytnzq121/files/documents/2024-04/totalenergies-plan-de-vigilance-2023.pdf",
+    "https://www.banktrack.org/project/east_africa_crude_oil_pipeline",
+    "https://www.business-humanrights.org/fr/derni%C3%A8res-nouvelles/france-totalenergies-devoir-de-vigilance/"
   ]
 }
