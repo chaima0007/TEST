@@ -10136,6 +10136,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/organ-trafficking-engine", label: "Trafic d'Organes", icon: IconOrganTrafficking },
       { href: "/dashboard/land-rights-engine", label: "Droits Fonciers", icon: IconLandRights },
       { href: "/dashboard/forced-disappearances-engine", label: "Disparitions Forcées", icon: IconForcedDisappearances },
+      { href: "/dashboard/toxic-waste-environmental-racism-engine", label: "Racisme Environnemental", icon: IconToxicWasteEnvironmentalRacismRights },
+      { href: "/dashboard/right-to-truth-transitional-justice-engine", label: "Droit à la Vérité", icon: IconRightToTruth },
       { href: "/dashboard/human-trafficking-engine", label: "Traite Êtres Humains", icon: IconHumanTrafficking },
       { href: "/dashboard/disability-rights-engine", label: "Droits Handicap", icon: IconDisabilityRights },
       { href: "/dashboard/colonial-reparations-engine", label: "Réparations Coloniales", icon: IconColonialReparations },
