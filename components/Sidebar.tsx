@@ -9071,6 +9071,27 @@ function IconMalnutritionChildNutritionRights({ className }: { className?: strin
     </svg>
   );
 }
+function IconPrivateMilitaryContractorAccountability({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+    </svg>
+  );
+}
+function IconInformationWarfareCivilianRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+    </svg>
+  );
+}
+function IconSatelliteSurveillancePrivacyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -10032,6 +10053,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/deforestation-indigenous-rights-engine", label: "Déforestation & Autochtones", icon: <IconDeforestationIndigenousRights className="w-4 h-4" /> },
       { href: "/dashboard/wildlife-trafficking-biodiversity-rights-engine", label: "Trafic Faune Sauvage", icon: <IconWildlifeTraffickingBiodiversityRights className="w-4 h-4" /> },
       { href: "/dashboard/malnutrition-child-nutrition-rights-engine", label: "Malnutrition Enfants", icon: <IconMalnutritionChildNutritionRights className="w-4 h-4" /> },
+      { href: "/dashboard/private-military-contractor-accountability-engine", label: "Contractants Militaires", icon: <IconPrivateMilitaryContractorAccountability className="w-4 h-4" /> },
+      { href: "/dashboard/information-warfare-civilian-rights-engine", label: "Guerre Information", icon: <IconInformationWarfareCivilianRights className="w-4 h-4" /> },
+      { href: "/dashboard/satellite-surveillance-privacy-rights-engine", label: "Surveillance Satellite", icon: <IconSatelliteSurveillancePrivacyRights className="w-4 h-4" /> },
     ],
   },
   {
