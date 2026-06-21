@@ -9868,6 +9868,38 @@ function IconStatelessnessDocumentRights({ className }: { className?: string }) 
     </svg>
   );
 }
+function IconConflictMineralSupplyChain({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <polygon points="10,3 14,8 10,7 6,8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+      <path d="M6 8 L5 13 L10 15 L15 13 L14 8" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+      <line x1="10" y1="7" x2="10" y2="15" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" opacity="0.8" />
+    </svg>
+  );
+}
+function IconRefugeeCampRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 14 L10 5 L17 14 Z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+      <path d="M6 14 L8 10 L10 14 Z" fill="none" stroke="currentColor" strokeWidth="1" strokeLinejoin="round" opacity="0.7" />
+      <line x1="1" y1="14" x2="19" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="15" cy="8" r="1.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
+function IconCorporateImpunityLegal({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 3 L14 5 L14 10 C14 13 12 15.5 10 16.5 C8 15.5 6 13 6 10 L6 5 Z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+      <line x1="8" y1="9" x2="12" y2="9" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.7" />
+      <path d="M8 11.5 L9.5 13 L12 10.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0" />
+      <line x1="8" y1="9" x2="8" y2="13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+      <line x1="10" y1="7" x2="10" y2="13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+      <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -10975,6 +11007,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/deepfake-synthetic-media-rights-engine", label: "Deepfake & Médias Synth.", icon: IconDeepfakeSyntheticMediaRights },
       { href: "/dashboard/offshore-tax-haven-rights-engine", label: "Paradis Fiscaux", icon: IconOffshoreTaxHavenRights },
       { href: "/dashboard/statelessness-document-rights-engine", label: "Apatridie & Documents", icon: IconStatelessnessDocumentRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 194",
+    items: [
+      { href: "/dashboard/conflict-mineral-supply-chain-engine", label: "Minéraux de Conflit", icon: IconConflictMineralSupplyChain },
+      { href: "/dashboard/refugee-camp-rights-engine", label: "Camps de Réfugiés", icon: IconRefugeeCampRights },
+      { href: "/dashboard/corporate-impunity-legal-gap-engine", label: "Impunité Corporative", icon: IconCorporateImpunityLegal },
     ],
   },
   {
