@@ -1,35 +1,36 @@
-import { NextResponse } from "next/server";
-import { sealResponse } from "@/lib/digital-seal";
+import { NextResponse } from "next/server"
+import { sealResponse } from "@/lib/digital-seal"
 
-const MOCK: Record<string, unknown> = {
-  agent: "Refugees Asylum Seekers Rights Engine Agent",
+if (!process.env.SWARM_API_URL) {
+  console.warn("[refugees-asylum-seekers-rights-engine] SWARM_API_URL not set — using mock data")
+}
+
+const MOCK = {
   domain: "refugees_asylum_seekers_rights",
-  total_entities: 8,
-  avg_composite: 58.40,
-  confidence_score: 0.88,
-  avg_estimated_refugees_asylum_seekers_rights_index: 5.84,
-  risk_distribution: { critique: 4, "élevé": 2, "modéré": 1, faible: 1 },
-  top_risk_entities: [],
-  critical_alerts: [],
-  data_sources: [
-    "unhcr_global_trends_2023",
-    "human_rights_watch_refugee_rights_2023",
-    "amnesty_international_refugee_crisis_report_2023",
-    "borderline_europe_pushback_monitoring_2023",
+  generated_at: new Date().toISOString(),
+  entities: [
+    { entity_id: "REF-001", name: "Bangladesh (Rohingya camps)", composite_score: 91.5, level: "critique", estimated_refugee_protection_index: 9.15 },
+    { entity_id: "REF-002", name: "Liban (réfugiés syriens)", composite_score: 82.3, level: "critique", estimated_refugee_protection_index: 8.23 },
+    { entity_id: "REF-003", name: "Turquie (3.6M réfugiés)", composite_score: 78.4, level: "critique", estimated_refugee_protection_index: 7.84 },
+    { entity_id: "REF-004", name: "Kenya (camp Dadaab)", composite_score: 65.2, level: "critique", estimated_refugee_protection_index: 6.52 },
+    { entity_id: "REF-005", name: "Grèce (îles Égée)", composite_score: 51.8, level: "élevé", estimated_refugee_protection_index: 5.18 },
+    { entity_id: "REF-006", name: "Australie (offshore)", composite_score: 48.6, level: "élevé", estimated_refugee_protection_index: 4.86 },
+    { entity_id: "REF-007", name: "Mexique (transit)", composite_score: 31.4, level: "modéré", estimated_refugee_protection_index: 3.14 },
+    { entity_id: "REF-008", name: "Canada (IRPA)", composite_score: 12.5, level: "faible", estimated_refugee_protection_index: 1.25 },
   ],
-  entities: [],
-};
+  avg_composite: 57.71,
+  risk_distribution: { critique: 4, "élevé": 2, "modéré": 1, faible: 1 }
+}
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    console.warn("[refugees-asylum-seekers-rights-engine] SWARM_API_URL not set — returning mock");
-    return sealResponse(NextResponse.json({ payload: MOCK }));
+    return await sealResponse(NextResponse.json({ payload: MOCK }))
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/refugees-asylum-seekers-rights-engine`, { next: { revalidate: 30 } });
-    const data = await res.json();
-    return sealResponse(NextResponse.json({ payload: data }));
+    const res = await fetch(`${process.env.SWARM_API_URL}/refugees-asylum-seekers-rights-engine`, { next: { revalidate: 30 } })
+    const data = await res.json()
+    return await sealResponse(NextResponse.json({ payload: data }))
   } catch {
-    return sealResponse(NextResponse.json({ error: "upstream_error" }, { status: 502 }));
+    return await sealResponse(NextResponse.json({ error: "upstream unavailable" }, { status: 502 }))
   }
 }
