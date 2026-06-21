@@ -7550,6 +7550,37 @@ function IconDebtBondageRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconSeafarersMaritimeLaborRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M3 17l3-10h12l3 10"/>
+      <path d="M12 3v4"/>
+      <path d="M8 7h8"/>
+      <path d="M2 20h20"/>
+      <path d="M6 17c0 1.5 1.5 2 3 2s3-.5 3-2 1.5-2 3-2 3 .5 3 2"/>
+    </svg>
+  );
+}
+function IconCulturalMinorityRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      <path d="M9 5l3-3 3 3"/>
+    </svg>
+  );
+}
+function IconRightToStrikeLaborRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+      <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+      <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+      <path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -8319,6 +8350,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/statelessness-rights-engine", label: "Droits Apatrides", icon: IconStatelessnessRights },
       { href: "/dashboard/corporate-accountability-rights-engine", label: "Responsabilité Corp.", icon: IconCorporateAccountability },
       { href: "/dashboard/prison-torture-rights-engine", label: "Torture Carcérale", icon: IconPrisonTorture },
+      { href: "/dashboard/seafarers-maritime-labor-rights-engine", label: "Marins & Maritime", icon: IconSeafarersMaritimeLaborRights },
+      { href: "/dashboard/cultural-minority-rights-engine", label: "Droits Minorités Culturelles", icon: IconCulturalMinorityRights },
+      { href: "/dashboard/right-to-strike-labor-engine", label: "Droit de Grève", icon: IconRightToStrikeLaborRights },
     ],
   },
   {
