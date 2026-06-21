@@ -9804,6 +9804,40 @@ function IconPrisonIndustrialComplexRights({ className }: { className?: string }
   );
 }
 
+function IconDarkWebCybercrimeRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M10 3 C10 3 7 6 7 10 C7 14 10 17 10 17 C10 17 13 14 13 10 C13 6 10 3 10 3Z" fill="none" stroke="currentColor" strokeWidth="1" />
+      <path d="M3.5 7.5 L16.5 7.5 M3.5 12.5 L16.5 12.5" stroke="currentColor" strokeWidth="1" />
+      <circle cx="10" cy="10" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function IconGigEconomyLaborExploitation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="6" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M6 14 C6 11.8 7.8 10 10 10 C12.2 10 14 11.8 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M10 14 L10 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M7 16 L13 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M15 8 L18 8 M16.5 6.5 L16.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="14" y1="5" x2="16" y2="3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconIndigenousLanguageExtinction({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 5 L17 5 L17 13 L11 13 L8 17 L8 13 L3 13 Z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <line x1="6" y1="8" x2="14" y2="8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <line x1="6" y1="10.5" x2="11" y2="10.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10894,6 +10928,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/algorithmic-justice-bias-rights-engine", label: "Justice Algorithmique", icon: IconAlgorithmicJusticeBiasRights },
       { href: "/dashboard/water-privatization-commons-rights-engine", label: "Eau & Droits Communs", icon: IconWaterPrivatizationCommonsRights },
       { href: "/dashboard/prison-industrial-complex-rights-engine", label: "Complexe Carcéral", icon: IconPrisonIndustrialComplexRights },
+    ],
+  },
+  {
+    title: "DROITS NUMÉRIQUES — WAVE 192",
+    items: [
+      { href: "/dashboard/dark-web-cybercrime-rights-engine", label: "Dark Web & Cybercrime", icon: IconDarkWebCybercrimeRights },
+      { href: "/dashboard/gig-economy-labor-exploitation-engine", label: "Économie Gig & Travail", icon: IconGigEconomyLaborExploitation },
+      { href: "/dashboard/indigenous-language-extinction-rights-engine", label: "Langues Autochtones", icon: IconIndigenousLanguageExtinction },
     ],
   },
   {
