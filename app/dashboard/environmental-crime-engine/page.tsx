@@ -18,11 +18,11 @@ interface Entity {
   id: string;
   name: string;
   risk_level: string;
-  truth_commission_absence_score: number;
-  reparations_implementation_gap_score: number;
-  amnesty_impunity_bloc_score: number;
-  institutional_reform_failure_score: number;
-  estimated_transitional_justice_index: number;
+  ecocide_scale_impunity_score: number;
+  wildlife_trafficking_networks_score: number;
+  illegal_extraction_corruption_score: number;
+  environmental_defender_killings_score: number;
+  estimated_environmental_crime_index: number;
   [key: string]: unknown;
 }
 
@@ -51,7 +51,7 @@ function GaugeRing({ value, max = 100 }: { value: number; max?: number }) {
         cy={cy}
         r={r}
         fill="none"
-        stroke="#94a3b8"
+        stroke="#a3e635"
         strokeWidth={8}
         strokeDasharray={`${dash} ${circumference}`}
         strokeLinecap="round"
@@ -84,7 +84,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
               onClick={() => setTab(i)}
               className={`rounded-md px-3 py-1 text-sm font-medium transition-colors ${
                 tab === i
-                  ? "bg-slate-500/20 text-slate-300 border border-slate-500/30"
+                  ? "bg-lime-500/20 text-lime-400 border border-lime-500/30"
                   : "text-slate-500 hover:text-slate-300"
               }`}
             >
@@ -95,10 +95,10 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         {tab === 0 && (
           <div className="space-y-3">
             {[
-              { label: "Truth Commission Absence", value: entity.truth_commission_absence_score },
-              { label: "Reparations Implementation Gap", value: entity.reparations_implementation_gap_score },
-              { label: "Amnesty / Impunity Bloc", value: entity.amnesty_impunity_bloc_score },
-              { label: "Institutional Reform Failure", value: entity.institutional_reform_failure_score },
+              { label: "Ecocide Scale & Impunity", value: entity.ecocide_scale_impunity_score },
+              { label: "Wildlife Trafficking Networks", value: entity.wildlife_trafficking_networks_score },
+              { label: "Illegal Extraction & Corruption", value: entity.illegal_extraction_corruption_score },
+              { label: "Environmental Defender Killings", value: entity.environmental_defender_killings_score },
             ].map((s) => (
               <div key={s.label} className="flex items-center justify-between rounded-lg border border-slate-700/40 bg-slate-800/50 px-4 py-2">
                 <span className="text-sm text-slate-400">{s.label}</span>
@@ -109,25 +109,25 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         )}
         {tab === 1 && (
           <div className="flex flex-col items-center gap-4 py-4">
-            <GaugeRing value={entity.estimated_transitional_justice_index} />
+            <GaugeRing value={entity.estimated_environmental_crime_index} />
             <div className="text-center">
-              <div className="text-3xl font-bold text-slate-300">
-                {typeof entity.estimated_transitional_justice_index === "number"
-                  ? entity.estimated_transitional_justice_index.toFixed(1)
-                  : entity.estimated_transitional_justice_index}
+              <div className="text-3xl font-bold text-lime-400">
+                {typeof entity.estimated_environmental_crime_index === "number"
+                  ? entity.estimated_environmental_crime_index.toFixed(1)
+                  : entity.estimated_environmental_crime_index}
               </div>
-              <div className="text-sm text-slate-500">Transitional Justice Index</div>
+              <div className="text-sm text-slate-500">Environmental Crime Index</div>
             </div>
           </div>
         )}
         {tab === 2 && (
-          <div className="rounded-lg border border-slate-700/40 bg-slate-800/50 p-4">
+          <div className="rounded-lg border border-lime-500/30 bg-lime-500/10 p-4">
             <p className="text-sm leading-relaxed text-slate-400">
-              Analyse contextuelle de la justice transitionnelle pour {entity.name}. Indice global&nbsp;:&nbsp;
-              <span className="text-slate-200 font-medium">
-                {typeof entity.estimated_transitional_justice_index === "number"
-                  ? entity.estimated_transitional_justice_index.toFixed(2)
-                  : entity.estimated_transitional_justice_index}
+              Analyse contextuelle de la criminalité environnementale pour {entity.name}. Indice global&nbsp;:&nbsp;
+              <span className="text-lime-400 font-medium">
+                {typeof entity.estimated_environmental_crime_index === "number"
+                  ? entity.estimated_environmental_crime_index.toFixed(2)
+                  : entity.estimated_environmental_crime_index}
               </span>
               . Niveau de risque&nbsp;: <span className={RC[entity.risk_level]}>{entity.risk_level}</span>.
             </p>
@@ -138,14 +138,14 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function TransitionalJusticeEngine() {
+export default function EnvironmentalCrimeEngine() {
   const [data, setData] = useState<ApiData>({});
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("tous");
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/transitional-justice-engine")
+    fetch("/api/environmental-crime-engine")
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
@@ -163,13 +163,13 @@ export default function TransitionalJusticeEngine() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-100">Transitional Justice Engine</h1>
-            <p className="mt-1 text-sm text-slate-500">Monitoring des processus de justice transitionnelle</p>
+            <h1 className="text-3xl font-bold tracking-tight text-lime-400">Environmental Crime Engine</h1>
+            <p className="mt-1 text-sm text-slate-500">Surveillance des crimes environnementaux et réseaux d&apos;extraction illégale</p>
           </div>
           <div className="rounded-lg border border-slate-700/50 bg-slate-900/80 px-4 py-2">
             <span className="text-xs text-slate-500">Statut</span>
             <div className="flex items-center gap-2">
-              <span className={`h-2 w-2 rounded-full ${loading ? "bg-yellow-400" : "bg-emerald-400"}`} />
+              <span className={`h-2 w-2 rounded-full ${loading ? "bg-yellow-400" : "bg-lime-400"}`} />
               <span className="text-sm text-slate-300">{loading ? "Chargement…" : "Actif"}</span>
             </div>
           </div>
@@ -178,19 +178,19 @@ export default function TransitionalJusticeEngine() {
         {/* KPI Grid 3×2 */}
         <div className="grid grid-cols-3 gap-4">
           {(kpis.length > 0 ? kpis : [
-            { label: "Truth Commission Absence", value: "—" },
-            { label: "Reparations Gap", value: "—" },
-            { label: "Amnesty Impunity Bloc", value: "—" },
-            { label: "Institutional Reform Failure", value: "—" },
-            { label: "TJ Index Moyen", value: "—" },
+            { label: "Ecocide Scale & Impunity", value: "—" },
+            { label: "Wildlife Trafficking Networks", value: "—" },
+            { label: "Illegal Extraction & Corruption", value: "—" },
+            { label: "Environmental Defender Killings", value: "—" },
+            { label: "EC Index Moyen", value: "—" },
             { label: "Entités Surveillées", value: entities.length || "—" },
           ]).slice(0, 6).map((kpi) => (
             <div
               key={kpi.label}
-              className="rounded-xl border border-slate-500/30 bg-slate-500/10 p-4"
+              className="rounded-xl border border-lime-500/30 bg-lime-500/10 p-4"
             >
               <div className="text-xs font-medium uppercase tracking-wide text-slate-500">{kpi.label}</div>
-              <div className="mt-2 text-2xl font-bold text-slate-300">
+              <div className="mt-2 text-2xl font-bold text-lime-400">
                 {typeof kpi.value === "number" ? kpi.value.toFixed(2) : kpi.value}
               </div>
             </div>
@@ -205,8 +205,8 @@ export default function TransitionalJusticeEngine() {
               onClick={() => setFilter(f)}
               className={`rounded-full px-4 py-1.5 text-sm font-medium capitalize transition-all ${
                 filter === f
-                  ? "bg-slate-500/20 text-slate-300 border border-slate-500/30"
-                  : "border border-slate-700/40 text-slate-500 hover:text-slate-300 hover:border-slate-500/30"
+                  ? "bg-lime-500/20 text-lime-400 border border-lime-500/30"
+                  : "border border-slate-700/40 text-slate-500 hover:text-slate-300 hover:border-lime-500/30"
               }`}
             >
               {f}
@@ -217,7 +217,7 @@ export default function TransitionalJusticeEngine() {
         {/* Entity Grid */}
         {loading ? (
           <div className="flex h-48 items-center justify-center">
-            <div className="h-8 w-8 animate-spin rounded-full border-2 border-slate-500 border-t-transparent" />
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-lime-400 border-t-transparent" />
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -234,19 +234,19 @@ export default function TransitionalJusticeEngine() {
                   </span>
                 </div>
                 <div className="mt-3 flex items-center justify-between">
-                  <span className="text-xs text-slate-500">TJ Index</span>
-                  <span className="font-mono text-sm text-slate-300">
-                    {typeof entity.estimated_transitional_justice_index === "number"
-                      ? entity.estimated_transitional_justice_index.toFixed(2)
-                      : entity.estimated_transitional_justice_index}
+                  <span className="text-xs text-slate-500">EC Index</span>
+                  <span className="font-mono text-sm text-lime-400">
+                    {typeof entity.estimated_environmental_crime_index === "number"
+                      ? entity.estimated_environmental_crime_index.toFixed(2)
+                      : entity.estimated_environmental_crime_index}
                   </span>
                 </div>
                 <div className="mt-2 space-y-1">
                   {[
-                    { key: "truth_commission_absence_score", label: "Truth" },
-                    { key: "reparations_implementation_gap_score", label: "Reparations" },
-                    { key: "amnesty_impunity_bloc_score", label: "Amnesty" },
-                    { key: "institutional_reform_failure_score", label: "Reform" },
+                    { key: "ecocide_scale_impunity_score", label: "Ecocide" },
+                    { key: "wildlife_trafficking_networks_score", label: "Trafficking" },
+                    { key: "illegal_extraction_corruption_score", label: "Extraction" },
+                    { key: "environmental_defender_killings_score", label: "Defenders" },
                   ].map(({ key, label }) => (
                     <div key={key} className="flex items-center justify-between text-xs">
                       <span className="text-slate-500">{label}</span>
