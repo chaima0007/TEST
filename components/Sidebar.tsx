@@ -9243,6 +9243,22 @@ function IconAccessToJusticeRuleOfLaw({ className }: { className?: string }) {
   );
 }
 
+function IconEconomicSocialRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+    </svg>
+  );
+}
+
+function IconEnvironmentalRightsDefenders({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10226,6 +10242,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/digital-surveillance-privacy-rights-engine", label: "Surveillance Numérique", icon: <IconDigitalSurveillancePrivacyRights className="w-4 h-4" /> },
       { href: "/dashboard/ip-watch-guardian", label: "IP Watch Guardian", icon: <IconIPWatchGuardian className="w-4 h-4" /> },
       { href: "/dashboard/access-to-justice-rule-of-law-engine", label: "Accès Justice & État de Droit", icon: <IconAccessToJusticeRuleOfLaw className="w-4 h-4" /> },
+      { href: "/dashboard/economic-social-rights-engine", label: "Droits Économiques & Sociaux", icon: <IconEconomicSocialRights className="w-4 h-4" /> },
+      { href: "/dashboard/environmental-rights-defenders-engine", label: "Défenseurs Environnement", icon: <IconEnvironmentalRightsDefenders className="w-4 h-4" /> },
     ],
   },
   {
