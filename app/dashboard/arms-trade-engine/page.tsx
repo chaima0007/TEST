@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const ACCENT_COLOR = "#4ade80";
+const ACCENT_COLOR = "#fb7185";
 const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
 const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
 
@@ -27,11 +27,11 @@ interface Entity {
   country: string;
   sector: string;
   composite_score: number;
-  territorial_dispossession_score: number;
-  fpic_violation_scale_score: number;
-  cultural_linguistic_erasure_score: number;
-  undrip_implementation_gap_score: number;
-  estimated_indigenous_rights_index: number;
+  atrocity_enabling_transfers_score: number;
+  export_control_circumvention_score: number;
+  civilian_harm_documentation_score: number;
+  arms_embargo_violation_score: number;
+  estimated_arms_trade_index: number;
   risk_level: string;
   primary_pattern: string;
   key_signals: string[];
@@ -48,7 +48,7 @@ interface DashData {
   critical_alerts: string[];
   confidence_score: number;
   entities: Entity[];
-  avg_estimated_indigenous_rights_index: number;
+  avg_estimated_arms_trade_index: number;
 }
 
 export default function Page() {
@@ -58,7 +58,7 @@ export default function Page() {
   const [tab, setTab] = useState(0);
 
   useEffect(() => {
-    fetch("/api/indigenous-rights-engine").then(r => r.json()).then(j => setData(j.data ?? j)).catch(console.error);
+    fetch("/api/arms-trade-engine").then(r => r.json()).then(j => setData(j.data ?? j)).catch(console.error);
   }, []);
 
   if (!data) return (
@@ -73,15 +73,15 @@ export default function Page() {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-green-400">Indigenous Rights Engine</h1>
-        <p className="text-slate-400 mt-1">UNDRIP · Rapporteur ONU · Mécanisme Permanent · FPIC</p>
+        <h1 className="text-3xl font-bold text-rose-400">Arms Trade Engine</h1>
+        <p className="text-slate-400 mt-1">ATT · Embargos ONU · Transferts d&apos;Armes · Droit Humanitaire</p>
       </div>
 
       {/* KPI Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
           <p className="text-xs text-slate-500 uppercase tracking-wide">Entités</p>
-          <p className="text-3xl font-bold mt-1 text-green-400">{data.total_entities}</p>
+          <p className="text-3xl font-bold mt-1 text-rose-400">{data.total_entities}</p>
         </div>
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col items-center">
           <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">Score Moyen</p>
@@ -96,12 +96,12 @@ export default function Page() {
           <p className="text-3xl font-bold mt-1 text-orange-400">{data.risk_distribution["élevé"] ?? 0}</p>
         </div>
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-          <p className="text-xs text-slate-500 uppercase tracking-wide">Indice IR</p>
-          <p className="text-3xl font-bold mt-1 text-green-400">{data.avg_estimated_indigenous_rights_index}</p>
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Indice AT</p>
+          <p className="text-3xl font-bold mt-1 text-rose-400">{data.avg_estimated_arms_trade_index}</p>
         </div>
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
           <p className="text-xs text-slate-500 uppercase tracking-wide">Confiance</p>
-          <p className="text-3xl font-bold mt-1 text-green-400">{Math.round((data.confidence_score ?? 0) * 100)}%</p>
+          <p className="text-3xl font-bold mt-1 text-rose-400">{Math.round((data.confidence_score ?? 0) * 100)}%</p>
         </div>
       </div>
 
@@ -109,7 +109,7 @@ export default function Page() {
       <div className="flex gap-2 mb-6 flex-wrap">
         {["tous", "critique", "élevé", "modéré", "faible"].map(f => (
           <button key={f} onClick={() => setFilter(f)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${filter === f ? "bg-green-500/10 border-green-500/30 text-green-400" : "border-slate-700 text-slate-400 hover:border-slate-500"}`}>
+            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${filter === f ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : "border-slate-700 text-slate-400 hover:border-slate-500"}`}>
             {f.charAt(0).toUpperCase() + f.slice(1)}
           </button>
         ))}
@@ -128,7 +128,7 @@ export default function Page() {
             <p className="text-xs text-slate-400">{e.country}</p>
             <div className="mt-3 flex items-center justify-between">
               <span className="text-xs text-slate-500">Score composite</span>
-              <span className="text-lg font-bold text-green-400">{e.composite_score}</span>
+              <span className="text-lg font-bold text-rose-400">{e.composite_score}</span>
             </div>
           </button>
         ))}
@@ -150,7 +150,7 @@ export default function Page() {
             <div className="flex border-b border-slate-800">
               {["Aperçu", "Signaux", "Contexte"].map((t, i) => (
                 <button key={t} onClick={() => setTab(i)}
-                  className={`flex-1 py-3 text-sm font-medium transition-colors ${tab === i ? "text-green-400 border-b-2 border-green-500/30" : "text-slate-400"}`}>
+                  className={`flex-1 py-3 text-sm font-medium transition-colors ${tab === i ? "text-rose-400 border-b-2 border-rose-500/30" : "text-slate-400"}`}>
                   {t}
                 </button>
               ))}
@@ -160,14 +160,14 @@ export default function Page() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-slate-400">Score composite</span>
-                    <span className="text-2xl font-bold text-green-400">{selected.composite_score}/100</span>
+                    <span className="text-2xl font-bold text-rose-400">{selected.composite_score}/100</span>
                   </div>
                   <div className="space-y-2">
                     {[
-                      { key: "territorial_dispossession_score", label: "Dépossession Territoriale" },
-                      { key: "fpic_violation_scale_score", label: "Violations FPIC" },
-                      { key: "cultural_linguistic_erasure_score", label: "Effacement Culturel/Linguistique" },
-                      { key: "undrip_implementation_gap_score", label: "Lacune Impl. UNDRIP" },
+                      { key: "atrocity_enabling_transfers_score", label: "Transferts Facilitant Atrocités" },
+                      { key: "export_control_circumvention_score", label: "Contournement Contrôle Export" },
+                      { key: "civilian_harm_documentation_score", label: "Dommages Civils Documentés" },
+                      { key: "arms_embargo_violation_score", label: "Violations d'Embargo" },
                     ].map(({ key, label }) => (
                       <div key={key}>
                         <div className="flex justify-between text-sm mb-1">
@@ -181,8 +181,8 @@ export default function Page() {
                     ))}
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-slate-400">Indice IR Estimé</span>
-                    <span className="text-green-400 font-semibold">{selected.estimated_indigenous_rights_index}</span>
+                    <span className="text-slate-400">Indice AT Estimé</span>
+                    <span className="text-rose-400 font-semibold">{selected.estimated_arms_trade_index}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-400">Patron principal</span>
@@ -194,7 +194,7 @@ export default function Page() {
                 <ul className="space-y-3">
                   {selected.key_signals.map((s, i) => (
                     <li key={i} className="flex gap-3 text-sm">
-                      <span className="text-green-400 mt-0.5 shrink-0">▸</span>
+                      <span className="text-rose-400 mt-0.5 shrink-0">▸</span>
                       <span className="text-slate-300">{s}</span>
                     </li>
                   ))}
