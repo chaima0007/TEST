@@ -9259,6 +9259,22 @@ function IconEnvironmentalRightsDefenders({ className }: { className?: string })
   );
 }
 
+function IconNuclearWeaponsHumanitarianImpact({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function IconYouthRightsIntergenerationalJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10244,6 +10260,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/access-to-justice-rule-of-law-engine", label: "Accès Justice & État de Droit", icon: <IconAccessToJusticeRuleOfLaw className="w-4 h-4" /> },
       { href: "/dashboard/economic-social-rights-engine", label: "Droits Économiques & Sociaux", icon: <IconEconomicSocialRights className="w-4 h-4" /> },
       { href: "/dashboard/environmental-rights-defenders-engine", label: "Défenseurs Environnement", icon: <IconEnvironmentalRightsDefenders className="w-4 h-4" /> },
+      { href: "/dashboard/nuclear-weapons-humanitarian-impact-engine", label: "Armes Nucléaires &amp; Humanitaire", icon: <IconNuclearWeaponsHumanitarianImpact className="w-4 h-4" /> },
+      { href: "/dashboard/youth-rights-intergenerational-justice-engine", label: "Droits Jeunesse", icon: <IconYouthRightsIntergenerationalJustice className="w-4 h-4" /> },
     ],
   },
   {
