@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
+// Types
 interface Entity {
   entity_id: string;
   name: string;
@@ -8,20 +9,22 @@ interface Entity {
   composite_score: number;
   risk_level: string;
   primary_pattern: string;
-  [key: string]: unknown;
+  estimated_food_sovereignty_right_to_food_index: number;
 }
 interface EngineData {
   agent: string;
   total_entities: number;
   avg_composite: number;
   confidence_score: number;
+  avg_estimated_food_sovereignty_right_to_food_index: number;
   risk_distribution: Record<string, number>;
-  data_sources: string[];
+  top_risk_entities: string[];
   critical_alerts: string[];
+  data_sources: string[];
   entities: Entity[];
-  [key: string]: unknown;
 }
 
+// GaugeRing
 function GaugeRing({ value, accent }: { value: number; accent: string }) {
   const r = 36, cx = 44, cy = 44, stroke = 8;
   const circ = 2 * Math.PI * r;
@@ -38,32 +41,42 @@ function GaugeRing({ value, accent }: { value: number; accent: string }) {
   );
 }
 
-function DetailModal({ entity, accent, onClose }: { entity: Entity; accent: string; onClose: () => void }) {
-  const [tab, setTab] = useState<"apercu" | "metriques">("apercu");
-  const RC: Record<string, string> = { critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e" };
+// DetailModal
+function DetailModal({ entity, accent, onClose, indexKey }: {
+  entity: Entity; accent: string; onClose: () => void; indexKey: string;
+}) {
+  const [tab, setTab] = useState<"apercu" | "metriques" | "sources">("apercu");
+  const RC: Record<string, string> = {
+    critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e",
+  };
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" onClick={onClose}>
-      <div className="bg-slate-900 rounded-2xl max-w-lg w-full p-6 shadow-2xl" onClick={e => e.stopPropagation()}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+      onClick={onClose}>
+      <div className="bg-slate-900 rounded-2xl max-w-lg w-full p-6 shadow-2xl"
+        onClick={e => e.stopPropagation()}>
         <div className="flex justify-between items-start mb-4">
           <h3 className="text-white font-bold text-sm leading-snug pr-4">{entity.name}</h3>
           <button onClick={onClose} className="text-slate-400 hover:text-white text-xl leading-none">×</button>
         </div>
         <div className="flex gap-2 mb-4">
-          {(["apercu", "metriques"] as const).map(t => (
+          {(["apercu", "metriques", "sources"] as const).map(t => (
             <button key={t} onClick={() => setTab(t)}
-              className={`px-3 py-1 rounded-full text-xs font-medium ${tab === t ? "text-white" : "bg-slate-800 text-slate-400"}`}
+              className={`px-3 py-1 rounded-full text-xs font-medium ${tab === t ? "text-white" : "bg-slate-800 text-slate-400 hover:text-white"}`}
               style={tab === t ? { backgroundColor: accent } : {}}>
-              {t === "apercu" ? "Aperçu" : "Métriques"}
+              {t === "apercu" ? "Aperçu" : t === "metriques" ? "Métriques" : "Sources"}
             </button>
           ))}
         </div>
         {tab === "apercu" && (
-          <div className="space-y-2">
-            <span className="text-xs px-2 py-1 rounded-full font-medium"
-              style={{ backgroundColor: RC[entity.risk_level] + "33", color: RC[entity.risk_level] }}>
-              {entity.risk_level}
-            </span>
-            <p className="text-slate-400 text-xs mt-2">{entity.primary_pattern.replace(/_/g, " ")}</p>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="text-xs px-2 py-1 rounded-full font-medium"
+                style={{ backgroundColor: RC[entity.risk_level] + "33", color: RC[entity.risk_level] }}>
+                {entity.risk_level}
+              </span>
+              <span className="text-slate-300 text-sm">{entity.country}</span>
+            </div>
+            <p className="text-slate-400 text-xs">{entity.primary_pattern.replace(/_/g, " ")}</p>
           </div>
         )}
         {tab === "metriques" && (
@@ -72,21 +85,34 @@ function DetailModal({ entity, accent, onClose }: { entity: Entity; accent: stri
               <span className="text-slate-400">Score composite</span>
               <span className="text-white font-bold">{entity.composite_score}</span>
             </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-slate-400">Index estimé</span>
+              <span style={{ color: accent }} className="font-bold">{(entity as any)[indexKey]}</span>
+            </div>
           </div>
+        )}
+        {tab === "sources" && (
+          <p className="text-slate-400 text-xs">Sources disponibles via l&apos;API engine.</p>
         )}
       </div>
     </div>
   );
 }
 
-export default function DigitalSurveillancePrivacyRightsPage() {
+// Main page component
+export default function FoodSovereigntyRightToFoodPage() {
   const [data, setData] = useState<EngineData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
-  const ACCENT = "#8b5cf6";
-  const RC: Record<string, string> = { critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e" };
+  const ACCENT = "#84cc16";
+  const RC: Record<string, string> = {
+    critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e",
+  };
+  const INDEX_KEY = "estimated_food_sovereignty_right_to_food_index";
 
   useEffect(() => {
-    fetch("/api/digital-surveillance-privacy-rights-engine").then(r => r.json()).then(d => setData(d.payload ?? d));
+    fetch("/api/food-sovereignty-right-to-food-engine")
+      .then(r => r.json())
+      .then(d => setData(d.payload ?? d));
   }, []);
 
   if (!data) return (
@@ -95,19 +121,24 @@ export default function DigitalSurveillancePrivacyRightsPage() {
     </div>
   );
 
-  const indexValue = (data["avg_estimated_digital_surveillance_privacy_rights_index"] as number) ?? 0;
-
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6">
-      {selected && <DetailModal entity={selected} accent={ACCENT} onClose={() => setSelected(null)} />}
+      {selected && (
+        <DetailModal entity={selected} accent={ACCENT} onClose={() => setSelected(null)} indexKey={INDEX_KEY} />
+      )}
       <div className="max-w-6xl mx-auto space-y-6">
+        {/* Header */}
         <div className="flex items-start justify-between">
           <div>
             <h1 className="text-2xl font-bold text-white">{data.agent}</h1>
-            <p className="text-slate-400 text-sm mt-1">{data.total_entities} entités · Confiance {((data.confidence_score ?? 0) * 100).toFixed(0)}% · MAJ 2026-06-21</p>
+            <p className="text-slate-400 text-sm mt-1">
+              {data.total_entities} entités · Confiance {(data.confidence_score * 100).toFixed(0)}% · MAJ 2026-06-21
+            </p>
           </div>
-          <GaugeRing value={indexValue} accent={ACCENT} />
+          <GaugeRing value={data.avg_estimated_food_sovereignty_right_to_food_index} accent={ACCENT} />
         </div>
+
+        {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {Object.entries(data.risk_distribution).map(([level, count]) => (
             <div key={level} className="bg-slate-900 rounded-xl p-4 border border-slate-800">
@@ -116,6 +147,8 @@ export default function DigitalSurveillancePrivacyRightsPage() {
             </div>
           ))}
         </div>
+
+        {/* Entities grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.entities.map(e => (
             <button key={e.entity_id} onClick={() => setSelected(e)}
@@ -140,7 +173,9 @@ export default function DigitalSurveillancePrivacyRightsPage() {
             </button>
           ))}
         </div>
-        {data.critical_alerts && data.critical_alerts.length > 0 && (
+
+        {/* Alerts */}
+        {data.critical_alerts.length > 0 && (
           <div className="bg-slate-900 rounded-xl p-4 border border-red-900/30">
             <h3 className="text-red-400 font-semibold text-sm mb-3">Alertes critiques</h3>
             <ul className="space-y-1">
@@ -152,6 +187,8 @@ export default function DigitalSurveillancePrivacyRightsPage() {
             </ul>
           </div>
         )}
+
+        {/* Sources */}
         <div className="bg-slate-900 rounded-xl p-4 border border-slate-800">
           <h3 className="text-slate-400 font-semibold text-xs mb-2 uppercase tracking-wider">Sources de données</h3>
           <div className="flex flex-wrap gap-2">
