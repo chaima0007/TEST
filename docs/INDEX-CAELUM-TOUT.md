@@ -156,6 +156,13 @@
 | AI Surveillance Biometric Rights | `swarm/intelligence/ai_surveillance_biometric_rights_engine.py` | 59.71 | Reconnaissance faciale, police prédictive, biométrie masse |
 | Arms Embargo Violations Rights | `swarm/intelligence/arms_embargo_violations_rights_engine.py` | 60.51 | Violations embargo armes, complicité États, victimes civiles |
 
+### Wave 126
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Nomadic Pastoralist Peoples Rights | `swarm/intelligence/nomadic_pastoralist_peoples_rights_engine.py` | 58.76 | Peuples nomades, sédentarisation forcée, conflits éleveurs |
+| Prison Privatization Profit Rights | `swarm/intelligence/prison_privatization_profit_rights_engine.py` | 58.54 | Prisons privées, quotas remplissage, exploitation travail |
+| Cultural Heritage Destruction Rights | `swarm/intelligence/cultural_heritage_destruction_rights_engine.py` | 59.76 | Patrimoine détruit en conflit, pillage, minorités culturelles |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -297,6 +304,12 @@ Pas de useCallback/useMemo            → jamais
 | Death In Custody Prison Conditions | `/dashboard/death-in-custody-prison-conditions-engine` | `#2a1a0a` |
 | Human Rights Defenders Protection | `/dashboard/human-rights-defenders-protection-engine` | `#0a2a1a` |
 | Drug Policy Criminalization Rights | `/dashboard/drug-policy-criminalization-rights-engine` | `#1a0a2a` |
+| Indigenous Land Cultural Rights | `/dashboard/indigenous-land-cultural-rights-engine` | `#1a3a0a` |
+| Organ Trafficking Body Autonomy Rights | `/dashboard/organ-trafficking-body-autonomy-rights-engine` | `#3a0a1a` |
+| Solitary Confinement Isolation Rights | `/dashboard/solitary-confinement-isolation-rights-engine` | `#0a1a3a` |
+| Child Online Exploitation Rights | `/dashboard/child-online-exploitation-rights-engine` | `#1a0a3a` |
+| Forced Sterilization Reproductive Coercion | `/dashboard/forced-sterilization-reproductive-coercion-engine` | `#3a0a2a` |
+| AI Surveillance Biometric Rights | `/dashboard/ai-surveillance-biometric-rights-engine` | `#0a1a3a` |
 
 ---
 
@@ -341,4 +354,4 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 125 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 126 · Caelum Partners · Chaima Mhadbi*
