@@ -127,6 +127,13 @@
 | Fair Trial Due Process Rights | `swarm/intelligence/fair_trial_due_process_rights_engine.py` | 61.40 | Procès équitable, tribunaux militaires, procès de masse |
 | Xenophobia Hate Crime Minority | `swarm/intelligence/xenophobia_hate_crime_minority_engine.py` | 60.09 | Xénophobie, crimes de haine, minorités, discours haineux |
 
+### Wave 122
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Nuclear Testing Environmental Rights | `swarm/intelligence/nuclear_testing_environmental_rights_engine.py` | 62.11 | Tests nucléaires, contamination radioactive, peuples autochtones |
+| Social Protection Poverty Rights | `swarm/intelligence/social_protection_poverty_rights_engine.py` | 63.75 | Protection sociale, pauvreté extrême, austérité |
+| Freedom Expression Artistic Censorship | `swarm/intelligence/freedom_expression_artistic_censorship_engine.py` | 62.66 | Artistes emprisonnés, censure culturelle, autocensure |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -299,8 +306,8 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 - [ ] Script d'automatisation des waves (`run_wave.py`) — pour créer engines+routes+sidebar+dashboards sans Claude
 - [ ] GitHub Actions workflow — pour déclencher une wave depuis GitHub directement
 - [ ] Intégration Gmail + Google Calendar via Composio + Claude Agent SDK
-- [ ] Continuer les waves (122, 123, 124...) — pipeline infini
+- [ ] Continuer les waves (123, 124, 125...) — pipeline infini
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 121 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 122 · Caelum Partners · Chaima Mhadbi*
