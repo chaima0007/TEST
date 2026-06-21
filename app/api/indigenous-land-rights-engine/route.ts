@@ -7,15 +7,15 @@ if (!process.env.SWARM_API_URL) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Indigenous Land Rights Engine Agent"));
+    console.warn("[indigenous-land-rights-engine] SWARM_API_URL not set — returning mock");
+    return await sealResponse(NextResponse.json({ payload: getMockData() }));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/indigenous-land-rights-engine`, { next: { revalidate: 30 } });
-    if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Indigenous Land Rights Engine Agent"));
+    return await sealResponse(NextResponse.json({ payload: data }));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Indigenous Land Rights Engine Agent"), { status: 502 });
+    return await sealResponse(NextResponse.json({ error: "upstream_error" }, { status: 502 }));
   }
 }
 

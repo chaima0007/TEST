@@ -155,16 +155,14 @@ const MOCK = {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(await sealResponse(MOCK));
+    console.warn("[gender-based-violence-femicide-engine] SWARM_API_URL not set — returning mock");
+    return await sealResponse(NextResponse.json({ payload: MOCK }));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/gender-based-violence-femicide-engine`, {
-      next: { revalidate: 30 },
-    });
-    if (!res.ok) throw new Error(`upstream ${res.status}`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/gender-based-violence-femicide-engine`, { next: { revalidate: 30 } });
     const data = await res.json();
-    return NextResponse.json(await sealResponse(data.payload ?? data));
+    return await sealResponse(NextResponse.json({ payload: data }));
   } catch {
-    return NextResponse.json(await sealResponse(MOCK), { status: 502 });
+    return await sealResponse(NextResponse.json({ error: "upstream_error" }, { status: 502 }));
   }
 }
