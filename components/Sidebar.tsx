@@ -9584,6 +9584,33 @@ function IconColonialRestitutionHeritage({ className }: { className?: string }) 
   )
 }
 
+function IconIntersexRightsBodily({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v3M12 19v3M5.22 5.22l2.12 2.12M16.66 16.66l2.12 2.12M2 12h3M19 12h3M5.22 18.78l2.12-2.12M16.66 7.34l2.12-2.12"/>
+    </svg>
+  )
+}
+
+function IconMentalHealthDetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12h.01"/>
+    </svg>
+  )
+}
+
+function IconPeasantRightsSmallFarmer({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 19V9l9-7 9 7v10M9 19v-5h6v5"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2M7 8l2 1M17 8l-2 1"/>
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10641,6 +10668,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/femicide-gender-based-killings-engine", label: "Féminicide & Crimes Genre", icon: <IconFemicideGenderBasedKillings className="w-4 h-4" /> },
       { href: "/dashboard/romani-sinti-anti-ziganism-rights-engine", label: "Droits Roms & Anti-Tziganisme", icon: <IconRomaniSintiAntiZiganism className="w-4 h-4" /> },
       { href: "/dashboard/colonial-restitution-cultural-heritage-engine", label: "Restitution Coloniale & Patrimoine", icon: <IconColonialRestitutionHeritage className="w-4 h-4" /> },
+      { href: "/dashboard/intersex-rights-bodily-integrity-engine", label: "Droits Intersexes & Intégrité Corporelle", icon: <IconIntersexRightsBodily className="w-4 h-4" /> },
+      { href: "/dashboard/mental-health-detention-psychiatric-rights-engine", label: "Détention Psychiatrique & Droits Santé Mentale", icon: <IconMentalHealthDetention className="w-4 h-4" /> },
+      { href: "/dashboard/peasant-rights-small-farmer-displacement-engine", label: "Droits Paysans & Déplacement Agricole", icon: <IconPeasantRightsSmallFarmer className="w-4 h-4" /> },
     ],
   },
   {
