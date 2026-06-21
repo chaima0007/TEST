@@ -327,6 +327,31 @@ Pas de useCallback/useMemo            → jamais
 | Arms Embargo Violations Rights | `/dashboard/arms-embargo-violations-rights-engine` | `#2a1a0a` |
 | Nomadic Pastoralist Peoples Rights | `/dashboard/nomadic-pastoralist-peoples-rights-engine` | `#1a2a0a` |
 | Prison Privatization Profit Rights | `/dashboard/prison-privatization-profit-rights-engine` | `#1a1a2a` |
+| Colonial Reparations Transitional Justice | `/dashboard/colonial-reparations-transitional-justice-engine` | `#2a1a0a` |
+| Mining Extraction Community Rights | `/dashboard/mining-extraction-community-rights-engine` | `#0a2a1a` |
+| Sexual Orientation Identity Criminalization | `/dashboard/sexual-orientation-identity-criminalization-engine` | `#1a0a2a` |
+| Water Scarcity Conflict Rights | `/dashboard/water-scarcity-conflict-rights-engine` | `#0a1a2a` |
+| Climate Justice Loss Damage Rights | `/dashboard/climate-justice-loss-damage-rights-engine` | `#1a2a1a` |
+| Border Wall Migration Rights | `/dashboard/border-wall-migration-rights-engine` | `#2a0a1a` |
+
+---
+
+## INVENTIONS CAELUM
+
+**Inventrice : Chaima Mhadbi · Score moyen brevetabilité : 9.02/10**
+
+| Fichier | Contenu |
+|---------|---------|
+| `swarm/inventions/invention_generator_engine.py` | Moteur de génération de 6 inventions G1→G3 avec scoring brevetabilité |
+| `app/api/inventions-portfolio-engine/route.ts` | Route API sécurisée pour le portefeuille d'inventions |
+| `app/dashboard/inventions-portfolio-engine/page.tsx` | Dashboard React du portefeuille de brevets |
+| `docs/inventions/FILING-GUIDE.md` | Guide de dépôt de brevets — procédure Bruxelles EPO/USPTO |
+| `docs/inventions/patents/CAE-INV-001.md` | Draft brevet — Scoring IA droits humains multi-dimensionnel |
+| `docs/inventions/patents/CAE-INV-002.md` | Draft brevet — Détection précoce crises droits humains |
+| `docs/inventions/patents/CAE-INV-003.md` | Draft brevet — Apprentissage fédéré sources anonymes |
+| `docs/inventions/patents/CAE-INV-004.md` | Draft brevet — Blockchain preuve violations droits humains |
+| `docs/inventions/patents/CAE-INV-005.md` | Draft brevet — Plateforme ESG due diligence CSDDD |
+| `docs/inventions/patents/CAE-INV-006.md` | Draft brevet — Indice risque conflit armé multi-modal |
 
 ---
 
@@ -371,4 +396,4 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 127 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 128 · Caelum Partners · Chaima Mhadbi*
