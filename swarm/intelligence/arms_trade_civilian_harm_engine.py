@@ -164,10 +164,10 @@ def run_arms_trade_civilian_harm_engine() -> ArmsTradeClvilianHarmEngineResult:
         critical_alerts=alerts,
         avg_estimated_arms_trade_civilian_harm_index=round(avg_composite / 100 * 10, 2),
         data_sources=[
-            "sipri_arms_transfers_database_2023",
-            "action_on_armed_violence_ewipa_report_2023",
-            "amnesty_international_arms_trade_report_2023",
-            "arms_control_association_att_implementation_2023",
+            "sipri_arms_transfers_2023",
+            "arms_control_association_2023",
+            "amnesty_arms_trade_2022",
+            "un_arms_trade_treaty_report_2023",
         ],
         entities=entities,
     )
