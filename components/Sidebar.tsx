@@ -9443,6 +9443,15 @@ function IconPeacekeepingAccountabilityGovernance({ className }: { className?: s
   )
 }
 
+function IconDigitalSurveillanceMassMonitoring({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10457,6 +10466,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/trafficking-forced-labor-modern-slavery-engine", label: "Traite & Esclavage Moderne", icon: IconHumanTraffickingModernSlavery },
       { href: "/dashboard/arbitrary-detention-political-prisoners-engine", label: "Détention Arbitraire", icon: IconArbitraryDetention },
       { href: "/dashboard/land-rights-eviction-indigenous-territories-engine", label: "Droits Fonciers Autochtones", icon: IconIndigenousLandRightsExtraction },
+      { href: "/dashboard/digital-surveillance-mass-monitoring-engine", label: "Surveillance Numérique", icon: <IconDigitalSurveillanceMassMonitoring className="w-4 h-4" /> },
+      { href: "/dashboard/child-soldiers-armed-recruitment-engine", label: "Enfants Soldats", icon: <IconChildSoldiers className="w-4 h-4" /> },
+      { href: "/dashboard/sexual-violence-conflict-weapon-engine", label: "Violence Sexuelle Conflit", icon: <IconSexualViolenceWartime className="w-4 h-4" /> },
     ],
   },
   {
