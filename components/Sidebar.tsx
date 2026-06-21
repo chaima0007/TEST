@@ -8384,6 +8384,24 @@ function IconArmsTradeCivilianHarm({ className }: { className?: string }) {
   );
 }
 
+function IconLgbtqRightsViolenceCriminalization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v2M12 18v2M4 12H2M22 12h-2" />
+    </svg>
+  );
+}
+
+function IconPressFreedomJournalistSafety({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l6 6v8a2 2 0 01-2 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6M9 16h4M13 4v4h6" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9246,6 +9264,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/corruption-human-rights-nexus-engine", label: "Corruption &amp; Droits Humains", icon: IconCorruptionHumanRightsNexus },
       { href: "/dashboard/religious-persecution-minority-rights-engine", label: "Persécution Religieuse", icon: IconReligiousPersecutionMinorityRights },
       { href: "/dashboard/arms-trade-civilian-harm-engine", label: "Commerce Armes &amp; Civils", icon: IconArmsTradeCivilianHarm },
+      { href: "/dashboard/lgbtq-rights-violence-criminalization-engine", label: "Droits LGBTQ+", icon: IconLgbtqRightsViolenceCriminalization },
+      { href: "/dashboard/press-freedom-journalist-safety-engine", label: "Liberté de la Presse", icon: IconPressFreedomJournalistSafety },
     ],
   },
   {
