@@ -8230,6 +8230,34 @@ function IconFoodSovereigntyAgriculturalRights({ className }: { className?: stri
   );
 }
 
+function IconDebtTrapEconomicCoercionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function IconEnvironmentalDefendersPersecution({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12z" />
+    </svg>
+  );
+}
+
+function IconReligiousLawLgbtqRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l6 6M15 9l-6 6" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9073,6 +9101,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/colonial-reparations-historical-justice-engine", label: "Réparations Coloniales & Justice Historique", icon: IconColonialReparationsHistoricalJustice },
       { href: "/dashboard/biometric-surveillance-state-control-engine", label: "Surveillance Biométrique & Contrôle Étatique", icon: IconBiometricSurveillanceStateControl },
       { href: "/dashboard/food-sovereignty-agricultural-rights-engine", label: "Souveraineté Alimentaire & Droits Agricoles", icon: IconFoodSovereigntyAgriculturalRights },
+      { href: "/dashboard/debt-trap-economic-coercion-rights-engine", label: "Piège de la Dette & Coercition Économique", icon: IconDebtTrapEconomicCoercionRights },
+      { href: "/dashboard/environmental-defenders-persecution-engine", label: "Défenseurs Environnementaux Persécutés", icon: IconEnvironmentalDefendersPersecution },
+      { href: "/dashboard/religious-law-lgbtq-rights-engine", label: "Droit Religieux & Droits LGBTQ+", icon: IconReligiousLawLgbtqRights },
     ],
   },
   {
