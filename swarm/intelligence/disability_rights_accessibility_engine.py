@@ -8,10 +8,10 @@ class DisabilityRightsAccessibilityEntity:
     entity_id: str
     name: str
     country: str
-    institutionalization_forced_treatment_severity_score: float
-    physical_accessibility_exclusion_scale_score: float
-    disability_employment_discrimination_score: float
-    crpd_legal_capacity_guardianship_reform_deficit_gap_score: float
+    institutional_segregation_forced_treatment_severity_score: float
+    employment_education_exclusion_scale_score: float
+    physical_infrastructure_accessibility_barrier_score: float
+    crpd_legal_capacity_recognition_deficit_gap_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
@@ -20,10 +20,10 @@ class DisabilityRightsAccessibilityEntity:
 
     def __post_init__(self):
         self.composite_score = round(
-            self.institutionalization_forced_treatment_severity_score * 0.30
-            + self.physical_accessibility_exclusion_scale_score * 0.25
-            + self.disability_employment_discrimination_score * 0.25
-            + self.crpd_legal_capacity_guardianship_reform_deficit_gap_score * 0.20,
+            self.institutional_segregation_forced_treatment_severity_score * 0.30
+            + self.employment_education_exclusion_scale_score * 0.25
+            + self.physical_infrastructure_accessibility_barrier_score * 0.25
+            + self.crpd_legal_capacity_recognition_deficit_gap_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -61,83 +61,83 @@ def run_disability_rights_accessibility_engine() -> DisabilityRightsAccessibilit
     entities = [
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-001",
-            name="Chine — Institutions Psychiatriques Dissidents, Xiebi Internement Forcé, Eugénisme Stérilisation & Travail Forcé Handicapés",
-            country="Chine",
-            institutionalization_forced_treatment_severity_score=95.0,
-            physical_accessibility_exclusion_scale_score=93.0,
-            disability_employment_discrimination_score=92.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=91.0,
-            primary_pattern="institutionalization_forced_treatment_severity",
+            name="Russie/Internats Psychiatriques — Handicapés Isolés Institutions, Traitement Forcé Soviétique & Tutelle Totale Abus",
+            country="Russie",
+            institutional_segregation_forced_treatment_severity_score=94.0,
+            employment_education_exclusion_scale_score=91.0,
+            physical_infrastructure_accessibility_barrier_score=90.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=93.0,
+            primary_pattern="institutional_segregation_forced_treatment_severity",
         ),
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-002",
-            name="Russie — Internats Psychiatriques Punição Politique, Psychiatrie Punitive Retour & Handicapés Institutionnalisés 150 000",
-            country="Russie",
-            institutionalization_forced_treatment_severity_score=92.0,
-            physical_accessibility_exclusion_scale_score=90.0,
-            disability_employment_discrimination_score=89.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=88.0,
-            primary_pattern="institutionalization_forced_treatment_severity",
+            name="Inde/Lépreux Colonies — Exclus Société Villages Séparés, Mendier Autorisé Légalement & Discrimination Systémique",
+            country="Inde",
+            institutional_segregation_forced_treatment_severity_score=91.0,
+            employment_education_exclusion_scale_score=89.0,
+            physical_infrastructure_accessibility_barrier_score=88.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=90.0,
+            primary_pattern="institutional_segregation_forced_treatment_severity",
         ),
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-003",
-            name="Afrique Sub-Saharienne — Sorcellerie Handicaps Infantiles, Exclusion Scolaire, Albinos Mutilations & Sans Protection CRPD",
-            country="Afrique Sub-Saharienne",
-            institutionalization_forced_treatment_severity_score=89.0,
-            physical_accessibility_exclusion_scale_score=87.0,
-            disability_employment_discrimination_score=86.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=85.0,
-            primary_pattern="physical_accessibility_exclusion_scale",
+            name="Chine/Handicapés Mentaux — Institutions Abus Documentés, Loi 2008 Non-Appliquée & Travail Forcé Ateliers",
+            country="Chine",
+            institutional_segregation_forced_treatment_severity_score=88.0,
+            employment_education_exclusion_scale_score=86.0,
+            physical_infrastructure_accessibility_barrier_score=85.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=87.0,
+            primary_pattern="crpd_legal_capacity_recognition_deficit_gap",
         ),
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-004",
-            name="Inde — Personnes Handicapées Mental Internées, Loi Santé Mentale 2017 Inappliquée, Accessibilité Zéro Ruraux & Discrimination Castes",
-            country="Inde",
-            institutionalization_forced_treatment_severity_score=86.0,
-            physical_accessibility_exclusion_scale_score=84.0,
-            disability_employment_discrimination_score=83.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=82.0,
-            primary_pattern="crpd_legal_capacity_guardianship_reform_deficit_gap",
+            name="Brésil/Manicômios — Réforme Psychiatrique Incomplète, 30 000 Internés Institutions & Violence Documentée HRW",
+            country="Brésil",
+            institutional_segregation_forced_treatment_severity_score=85.0,
+            employment_education_exclusion_scale_score=83.0,
+            physical_infrastructure_accessibility_barrier_score=82.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=84.0,
+            primary_pattern="institutional_segregation_forced_treatment_severity",
         ),
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-005",
-            name="USA/Europe — Olmstead Inappliqué Partiellement, Guardianship Abusif, ADA/ADAEU Lacunes & Électrochocs Sans Consentement",
-            country="USA/Europe",
-            institutionalization_forced_treatment_severity_score=57.0,
-            physical_accessibility_exclusion_scale_score=55.0,
-            disability_employment_discrimination_score=54.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=53.0,
-            primary_pattern="institutionalization_forced_treatment_severity",
+            name="USA/Institutions Psychiatriques — Olmstead Non-Appliqué Intégralement, ADA Gaps & Criminalisation Handicap Mental",
+            country="USA",
+            institutional_segregation_forced_treatment_severity_score=55.0,
+            employment_education_exclusion_scale_score=53.0,
+            physical_infrastructure_accessibility_barrier_score=52.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=58.0,
+            primary_pattern="crpd_legal_capacity_recognition_deficit_gap",
         ),
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-006",
-            name="MENA — Stigmatisation Handicap Mental, Loi Tutelle Totale, Femmes Handicapées Double Discrimination & Accessibilité Absente",
-            country="MENA",
-            institutionalization_forced_treatment_severity_score=54.0,
-            physical_accessibility_exclusion_scale_score=52.0,
-            disability_employment_discrimination_score=51.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=50.0,
-            primary_pattern="disability_employment_discrimination",
+            name="Afrique Sub-Saharienne — Handicap Exclusion Emploi 90%, Infrastructures Inaccessibles & Sorcellerie Stigma Handicap",
+            country="Afrique Sub-Saharienne",
+            institutional_segregation_forced_treatment_severity_score=52.0,
+            employment_education_exclusion_scale_score=58.0,
+            physical_infrastructure_accessibility_barrier_score=57.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=54.0,
+            primary_pattern="employment_education_exclusion_scale",
         ),
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-007",
-            name="IDA/DPO Global — Disabled Peoples Organisations, CRPD Advocacy, Monitoring Mise en Œuvre & Standards Accessibilité",
+            name="DPO/IDA Alliance Internationale — Handicapés Organisations, CRPD Monitoring & Inclusion Advocacy Global",
             country="Global",
-            institutionalization_forced_treatment_severity_score=27.0,
-            physical_accessibility_exclusion_scale_score=26.0,
-            disability_employment_discrimination_score=25.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=25.0,
-            primary_pattern="crpd_legal_capacity_guardianship_reform_deficit_gap",
+            institutional_segregation_forced_treatment_severity_score=27.0,
+            employment_education_exclusion_scale_score=25.0,
+            physical_infrastructure_accessibility_barrier_score=26.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=28.0,
+            primary_pattern="crpd_legal_capacity_recognition_deficit_gap",
         ),
         DisabilityRightsAccessibilityEntity(
             entity_id="DRA-008",
-            name="ONU/CRPD — Convention Droits Personnes Handicapées 2006, Comité CRPD & SDG 10.2 Inclusion",
+            name="ONU/CRPD 2006 — Convention Droits Personnes Handicapées, Comité CRPD Examen États & Art.12 Capacité Juridique",
             country="Global",
-            institutionalization_forced_treatment_severity_score=5.0,
-            physical_accessibility_exclusion_scale_score=4.0,
-            disability_employment_discrimination_score=4.0,
-            crpd_legal_capacity_guardianship_reform_deficit_gap_score=4.0,
-            primary_pattern="physical_accessibility_exclusion_scale",
+            institutional_segregation_forced_treatment_severity_score=5.0,
+            employment_education_exclusion_scale_score=5.0,
+            physical_infrastructure_accessibility_barrier_score=4.0,
+            crpd_legal_capacity_recognition_deficit_gap_score=5.0,
+            primary_pattern="crpd_legal_capacity_recognition_deficit_gap",
         ),
     ]
 
@@ -168,9 +168,9 @@ def run_disability_rights_accessibility_engine() -> DisabilityRightsAccessibilit
         critical_alerts=alerts,
         avg_estimated_disability_rights_accessibility_index=round(avg_composite / 100 * 10, 2),
         data_sources=[
-            "who_disability_world_report_global_data",
-            "mental_disability_rights_international_monitoring",
-            "crpd_committee_concluding_observations_database",
+            "un_crpd_committee_concluding_observations",
+            "hrw_disability_rights_violations_documentation",
+            "ida_international_disability_alliance_reports",
         ],
         entities=entities,
     )
