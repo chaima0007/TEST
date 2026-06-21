@@ -7775,6 +7775,35 @@ function IconMigrantWorkerLaborExploitation({ className }: { className?: string 
   );
 }
 
+function IconDeathPenaltyExtrajudicialKillings({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="15" y1="9" x2="9" y2="15"/>
+      <line x1="9" y1="9" x2="15" y2="15"/>
+    </svg>
+  );
+}
+
+function IconHumanRightsDefendersProtection({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    </svg>
+  );
+}
+
+function IconCybercrimeDigitalRightsExploitation({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+      <line x1="8" y1="21" x2="16" y2="21"/>
+      <line x1="12" y1="17" x2="12" y2="21"/>
+      <path d="M9 9l2 2 4-4"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8564,6 +8593,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/press-freedom-journalist-protection-engine", label: "Liberté de la Presse", icon: IconPressFreedomJournalistProtection },
       { href: "/dashboard/climate-justice-environmental-defenders-engine", label: "Justice Climatique", icon: IconClimateJusticeEnvironmentalDefenders },
       { href: "/dashboard/migrant-worker-labor-exploitation-engine", label: "Travailleurs Migrants", icon: IconMigrantWorkerLaborExploitation },
+      { href: "/dashboard/death-penalty-extrajudicial-killings-engine", label: "Peine de Mort & EJK", icon: IconDeathPenaltyExtrajudicialKillings },
+      { href: "/dashboard/human-rights-defenders-protection-engine", label: "Défenseurs Droits Humains", icon: IconHumanRightsDefendersProtection },
+      { href: "/dashboard/cybercrime-digital-rights-exploitation-engine", label: "Cybercriminalité & Droits", icon: IconCybercrimeDigitalRightsExploitation },
     ],
   },
   {
