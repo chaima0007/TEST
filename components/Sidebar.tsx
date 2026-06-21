@@ -9371,6 +9371,30 @@ function IconElderlyRightsAgeism({ className }: { className?: string }) {
   );
 }
 
+function IconSocialMediaPlatformAccountability({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+    </svg>
+  )
+}
+
+function IconRefugeeReturnVoluntaryRepatriation({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+    </svg>
+  )
+}
+
+function IconCorporateTaxJusticeDevelopment({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10370,6 +10394,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/elderly-rights-ageism-engine", label: "Droits Personnes Âgées", icon: <IconElderlyRightsAgeism className="w-4 h-4" /> },
       { href: "/dashboard/anti-money-laundering-human-rights-engine", label: "Blanchiment &amp; Droits", icon: <IconAntiMoneyLaunderingHumanRights className="w-4 h-4" /> },
       { href: "/dashboard/settler-colonialism-land-rights-engine", label: "Colonialisme &amp; Droits Fonciers", icon: <IconSettlerColonialismLandRights className="w-4 h-4" /> },
+      { href: "/dashboard/social-media-platform-accountability-engine", label: "Responsabilité Plateformes", icon: <IconSocialMediaPlatformAccountability className="w-4 h-4" /> },
+      { href: "/dashboard/refugee-return-voluntary-repatriation-engine", label: "Retour Réfugiés", icon: <IconRefugeeReturnVoluntaryRepatriation className="w-4 h-4" /> },
+      { href: "/dashboard/corporate-tax-justice-development-engine", label: "Justice Fiscale Corporative", icon: <IconCorporateTaxJusticeDevelopment className="w-4 h-4" /> },
     ],
   },
   {
