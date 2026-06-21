@@ -1,0 +1,69 @@
+{
+  "id": "engie",
+  "slug": "engie",
+  "name": "ENGIE S.A.",
+  "country": "France",
+  "city": "Courbevoie (La Défense)",
+  "sector": "Énergie / Infrastructure / Utilities",
+  "size": {
+    "revenue_bn_eur": 78,
+    "employees": 96000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB+",
+      "sustainalytics": "21.4 (Medium Risk)",
+      "target": "A d'ici 2026 — Zero Carbon Transition plan"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Directeur ESG Infrastructure / VP Sustainability & Social Performance",
+    "team": "Équipe RSE (~65 FTE), équipe droits humains & concessions (20 FTE), équipe conformité fournisseurs (18 FTE)",
+    "location": "Siège La Défense + présence opérationnelle en 31 pays dont forte présence Afrique, Brésil, Moyen-Orient",
+    "process": "Revue droits humains semestrielle intégrée aux revues concessions, budget RSE validé COMEX Q4, reporting CSRD en cours d'harmonisation"
+  },
+  "pain_points": [
+    "Droits à l'eau dans les projets hydroélectriques Afrique : les concessions hydro (Gabon, Cameroun, Côte d'Ivoire) affectent l'accès communautaire à l'eau sans monitoring des droits en temps réel",
+    "Déplacement communautaire : projets d'infrastructure (barrages, lignes haute tension) entraînant des déplacements de populations sans évaluation DDH préalable suffisante",
+    "CSDDD concessions longue durée : les contrats de concession 25-30 ans doivent intégrer des clauses DDH évolutives — absence de mécanisme de révision périodique",
+    "Fournisseurs construction infrastructure : sous-traitants locaux Afrique et Asie sans audit droits humains systématique",
+    "Accès à l'énergie vs droits de connexion : les coupures d'électricité pour impayés dans les pays en développement peuvent constituer une violation du droit à l'énergie — KPI absent"
+  ],
+  "observed_failures": [
+    "Rapport International Rivers 2023 : projet hydroélectrique ENGIE Gabon — communautés riveraines documentant un accès réduit à l'eau potable post-construction sans mécanisme de compensation",
+    "Audit CSDDD préparatoire 2024 : 12 des 45 projets infrastructure ENGIE en Afrique identifiés comme 'risque élevé' droits humains sans plan d'action corrective formalisé",
+    "Rapport Amnesty International 2022 : travailleur migrant blessé sur chantier ENGIE Moyen-Orient — absence de mécanisme de plainte accessible dans la langue du travailleur"
+  ],
+  "signals_of_risk": [
+    "CSDDD art.9 : obligation de preuves de due diligence sur les projets d'infrastructure longue durée — ENGIE très exposé avec ses concessions africaines",
+    "Pression IFC (Banque Mondiale) : les standards Performance Standard 2 et 5 IFC exigent des preuves de monitoring communautaire — ENGIE les utilise pour ses financements",
+    "NGO coalitions (Friends of the Earth, Sherpa) très actives sur les projets hydroélectriques ENGIE en Afrique"
+  ],
+  "signals_of_trust": [
+    "Politique droits humains formalisée alignée UNGP depuis 2021",
+    "Membre du Business & Human Rights Leadership Council (BHRRC)",
+    "Engagement GreenStar : programme accès à l'énergie en Afrique Sub-Saharienne avec dimension sociale",
+    "Score MSCI BBB+ en progression — reconnaissance des efforts DDH 2022-2024"
+  ],
+  "recommended_actions": [
+    "Entrer par les concessions hydroélectriques Afrique et CSDDD : 'Pour vos concessions 25-30 ans, comment documentez-vous l'évolution des droits communautaires à l'eau sur la durée du contrat ?'",
+    "Proposer un module monitoring droits à l'eau et accès énergie spécifique aux projets d'infrastructure concédée",
+    "Référencer le rapport International Rivers Gabon : montrer qu'un système préventif aurait évité l'incident",
+    "Cibler Directeur ESG Infrastructure pour l'entrée opérationnelle, VP Sustainability pour la vision stratégique groupe"
+  ],
+  "local_tone": "Formel, références CSDDD, IFC Performance Standards, concessions publiques. Les interlocuteurs ENGIE ont une culture ingénieur + relations publiques. Mettre en avant la conformité réglementaire ET la protection des licences d'exploitation. Le mot 'concession' est central.",
+  "cultural_notes": "ENGIE est un groupe semi-public (État français actionnaire à 23%) avec une culture réglementaire forte. Les interlocuteurs RSE naviguent entre exigences réglementaires européennes et réalités opérationnelles terrain en Afrique — tension permanente. Décisions multi-niveaux : Corporate + BU infrastructure. Prévoir des interlocuteurs différents selon le pays de projet.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.engie.com/activites/sante-securite-environnement/droits-humains",
+    "https://www.internationalrivers.org",
+    "https://www.ifc.org/wps/wcm/connect/topics_ext_content/ifc_external_corporate_site/sustainability-at-ifc/policies-standards/performance-standards"
+  ]
+}
