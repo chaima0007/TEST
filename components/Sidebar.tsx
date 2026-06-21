@@ -9148,6 +9148,27 @@ function IconWaterSanitationRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconPrisonConditionsDetaineeRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+    </svg>
+  );
+}
+function IconFreedomReligionBelief({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+    </svg>
+  );
+}
+function IconMediaFreedomJournalistProtection({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -10119,6 +10140,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/elder-rights-aging-population-engine", label: "Droits des Aînés", icon: IconElderRightsAgingPopulation },
       { href: "/dashboard/housing-forced-eviction-rights-engine", label: "Logement & Expulsions Forcées", icon: IconHousingForcedEvictionRights },
       { href: "/dashboard/water-sanitation-rights-engine", label: "Droit à l'Eau WASH", icon: IconWaterSanitationRights },
+      { href: "/dashboard/prison-conditions-detainee-rights-engine", label: "Conditions Carcérales", icon: IconPrisonConditionsDetaineeRights },
+      { href: "/dashboard/freedom-religion-belief-engine", label: "Liberté Religion", icon: IconFreedomReligionBelief },
+      { href: "/dashboard/media-freedom-journalist-protection-engine", label: "Liberté Presse", icon: IconMediaFreedomJournalistProtection },
     ],
   },
   {
