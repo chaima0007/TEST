@@ -7680,6 +7680,34 @@ function IconHousingEvictionHomelessnessRights({ className }: { className?: stri
   );
 }
 
+function IconChildTraffickingExploitationRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+  );
+}
+
+function IconDisabilityRightsAccessibility({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="4" r="2"/>
+      <path d="M19 13v-2a7 7 0 0 0-14 0v2"/>
+      <path d="M5 13h14l-2 7H7l-2-7z"/>
+    </svg>
+  );
+}
+
+function IconAcademicFreedomEducationRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8460,6 +8488,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/digital-privacy-surveillance-rights-engine", label: "Vie Privée Numérique", icon: IconDigitalPrivacySurveillanceRights },
       { href: "/dashboard/freedom-of-assembly-protest-rights-engine", label: "Liberté de Réunion", icon: IconFreedomOfAssemblyProtestRights },
       { href: "/dashboard/housing-eviction-homelessness-rights-engine", label: "Droit au Logement", icon: IconHousingEvictionHomelessnessRights },
+      { href: "/dashboard/child-trafficking-exploitation-rights-engine", label: "Trafic Enfants & Exploitation", icon: IconChildTraffickingExploitationRights },
+      { href: "/dashboard/disability-rights-accessibility-engine", label: "Droits Handicap & Accessibilité", icon: IconDisabilityRightsAccessibility },
+      { href: "/dashboard/academic-freedom-education-rights-engine", label: "Liberté Académique", icon: IconAcademicFreedomEducationRights },
     ],
   },
   {
