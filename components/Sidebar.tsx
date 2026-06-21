@@ -8146,6 +8146,30 @@ function IconAcademicFreedomUniversityRights({ className }: { className?: string
   );
 }
 
+function IconForcedMarriageChildMarriageRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="7" r="3" /><path d="M3 21v-1a6 6 0 0 1 9.17-5.07" /><circle cx="17" cy="15" r="4" /><line x1="17" y1="11" x2="17" y2="13" /><line x1="17" y1="17" x2="17" y2="19" /><line x1="13" y1="15" x2="15" y2="15" /><line x1="19" y1="15" x2="21" y2="15" />
+    </svg>
+  );
+}
+
+function IconNuclearWeaponsDisarmamentRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" /><circle cx="12" cy="12" r="8" strokeDasharray="4 2" />
+    </svg>
+  );
+}
+
+function IconAntiCorruptionAccountabilityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><line x1="9" y1="12" x2="15" y2="12" /><line x1="12" y1="9" x2="12" y2="15" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8980,6 +9004,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/elderly-rights-age-discrimination-engine", label: "Droits Aînés & Discrimination Âge", icon: IconElderlyRightsAgeDiscrimination },
       { href: "/dashboard/migration-asylum-seekers-rights-engine", label: "Migration & Droits Demandeurs Asile", icon: IconMigrationAsylumSeekersRights },
       { href: "/dashboard/academic-freedom-university-rights-engine", label: "Liberté Académique & Universités", icon: IconAcademicFreedomUniversityRights },
+      { href: "/dashboard/forced-marriage-child-marriage-rights-engine", label: "Mariage Forcé & Mariage Enfants", icon: IconForcedMarriageChildMarriageRights },
+      { href: "/dashboard/nuclear-weapons-disarmament-rights-engine", label: "Armes Nucléaires & Désarmement", icon: IconNuclearWeaponsDisarmamentRights },
+      { href: "/dashboard/anti-corruption-accountability-rights-engine", label: "Anti-Corruption & Redevabilité", icon: IconAntiCorruptionAccountabilityRights },
     ],
   },
   {
