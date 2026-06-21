@@ -1,150 +1,68 @@
 #!/usr/bin/env python3
-import json
+"""
+Water & Sanitation Rights Engine — Wave 159
+CaelumSwarm Intelligence Layer
+"""
 from dataclasses import dataclass, field
 from typing import List
-
 
 @dataclass
 class EntityScore:
     entity_id: str
     name: str
-    sub1_water_access_deficit: float
-    sub2_sanitation_gap: float
-    sub3_water_quality_contamination: float
-    sub4_legal_recognition_gap: float
-    composite_score: float = field(init=False)
-    risk_level: str = field(init=False)
-    estimated_water_sanitation_rights_index: float = field(init=False)
+    sub1_water_access_coverage: float  # Couverture accès eau potable
+    sub2_sanitation_infrastructure: float  # Infrastructure assainissement
+    sub3_affordability_index: float        # Accessibilité financière
+    sub4_water_quality_safety: float       # Qualité et sécurité eau
 
-    def __post_init__(self):
-        self.composite_score = round(
-            (
-                self.sub1_water_access_deficit * 0.30
-                + self.sub2_sanitation_gap * 0.25
-                + self.sub3_water_quality_contamination * 0.25
-                + self.sub4_legal_recognition_gap * 0.20
-            ) * 10,
-            2,
-        )
-        if self.composite_score >= 60:
-            self.risk_level = "critique"
-        elif self.composite_score >= 40:
-            self.risk_level = "élevé"
-        elif self.composite_score >= 20:
-            self.risk_level = "modéré"
-        else:
-            self.risk_level = "faible"
-        self.estimated_water_sanitation_rights_index = round(
-            self.composite_score / 100 * 10, 2
-        )
+    @property
+    def composite_score(self) -> float:
+        return (self.sub1_water_access_coverage * 0.30 +
+                self.sub2_sanitation_infrastructure * 0.25 +
+                self.sub3_affordability_index * 0.25 +
+                self.sub4_water_quality_safety * 0.20)
+
+    @property
+    def estimated_water_sanitation_rights_index(self) -> float:
+        return round(self.composite_score / 100 * 10, 2)
+
+    @property
+    def level(self) -> str:
+        cs = self.composite_score
+        if cs >= 60: return "critique"
+        elif cs >= 40: return "élevé"
+        elif cs >= 20: return "modéré"
+        return "faible"
 
 
-def run():
-    entities = [
-        # 4 critique (composite >= 60)
-        EntityScore(
-            entity_id="CD",
-            name="RDC (République démocratique du Congo)",
-            sub1_water_access_deficit=8.8,
-            sub2_sanitation_gap=9.0,
-            sub3_water_quality_contamination=8.5,
-            sub4_legal_recognition_gap=8.3,
-        ),
-        EntityScore(
-            entity_id="NE",
-            name="Niger",
-            sub1_water_access_deficit=8.5,
-            sub2_sanitation_gap=8.8,
-            sub3_water_quality_contamination=8.0,
-            sub4_legal_recognition_gap=8.2,
-        ),
-        EntityScore(
-            entity_id="HT",
-            name="Haïti",
-            sub1_water_access_deficit=8.0,
-            sub2_sanitation_gap=8.3,
-            sub3_water_quality_contamination=8.5,
-            sub4_legal_recognition_gap=7.8,
-        ),
-        EntityScore(
-            entity_id="ET",
-            name="Éthiopie",
-            sub1_water_access_deficit=7.5,
-            sub2_sanitation_gap=8.0,
-            sub3_water_quality_contamination=7.2,
-            sub4_legal_recognition_gap=7.5,
-        ),
-        # 2 élevé (40 <= composite < 60)
-        EntityScore(
-            entity_id="NG",
-            name="Nigeria",
-            sub1_water_access_deficit=5.8,
-            sub2_sanitation_gap=6.0,
-            sub3_water_quality_contamination=5.5,
-            sub4_legal_recognition_gap=5.3,
-        ),
-        EntityScore(
-            entity_id="PK",
-            name="Pakistan",
-            sub1_water_access_deficit=5.2,
-            sub2_sanitation_gap=5.5,
-            sub3_water_quality_contamination=5.8,
-            sub4_legal_recognition_gap=4.8,
-        ),
-        # 1 modéré (20 <= composite < 40)
-        EntityScore(
-            entity_id="IN",
-            name="Inde rurale",
-            sub1_water_access_deficit=3.5,
-            sub2_sanitation_gap=3.8,
-            sub3_water_quality_contamination=3.2,
-            sub4_legal_recognition_gap=3.0,
-        ),
-        # 1 faible (composite < 20)
-        EntityScore(
-            entity_id="DK",
-            name="Danemark (modèle WASH)",
-            sub1_water_access_deficit=0.5,
-            sub2_sanitation_gap=0.4,
-            sub3_water_quality_contamination=0.3,
-            sub4_legal_recognition_gap=0.6,
-        ),
-    ]
+ENTITIES: List[EntityScore] = [
+    EntityScore("WSR-001", "Somalie (accès eau <50%, conflits)", 94, 92, 90, 88),
+    EntityScore("WSR-002", "République Centrafricaine (infrastructure détruite)", 89, 87, 84, 82),
+    EntityScore("WSR-003", "Mali (zones rurales sahéliennes)", 82, 80, 77, 75),
+    EntityScore("WSR-004", "Niger (pénurie chronique)", 74, 72, 69, 67),
+    EntityScore("WSR-005", "Bangladesh (arsenic nappes)", 58, 56, 53, 50),
+    EntityScore("WSR-006", "Inde (Flint-type contaminations)", 50, 47, 45, 43),
+    EntityScore("WSR-007", "Mexique (accès inégal urbain/rural)", 32, 30, 28, 26),
+    EntityScore("WSR-008", "Pays-Bas (eau universelle garantie)", 9, 8, 7, 8),
+]
 
-    results = []
-    for e in entities:
-        results.append(
-            {
-                "entity_id": e.entity_id,
-                "name": e.name,
-                "sub1_water_access_deficit": e.sub1_water_access_deficit,
-                "sub2_sanitation_gap": e.sub2_sanitation_gap,
-                "sub3_water_quality_contamination": e.sub3_water_quality_contamination,
-                "sub4_legal_recognition_gap": e.sub4_legal_recognition_gap,
-                "composite_score": e.composite_score,
-                "risk_level": e.risk_level,
-                "estimated_water_sanitation_rights_index": e.estimated_water_sanitation_rights_index,
-            }
-        )
 
-    avg_composite = round(
-        sum(r["composite_score"] for r in results) / len(results), 2
-    )
-    distribution = {}
-    for r in results:
-        distribution[r["risk_level"]] = distribution.get(r["risk_level"], 0) + 1
-
-    output = {
-        "engine": "water_sanitation_rights_engine",
-        "wave": 149,
-        "total_entities": len(results),
-        "avg_composite": avg_composite,
-        "distribution": distribution,
-        "estimated_avg_index": round(avg_composite / 100 * 10, 2),
-        "entities": results,
-    }
-    print(json.dumps(output, ensure_ascii=False, indent=2))
+def run_analysis():
+    print("=== Water & Sanitation Rights Engine — Wave 159 ===\n")
+    total = 0
+    dist = {"critique": 0, "élevé": 0, "modéré": 0, "faible": 0}
+    for e in ENTITIES:
+        cs = e.composite_score
+        total += cs
+        dist[e.level] += 1
+        print(f"{e.entity_id} | {e.name}")
+        print(f"  composite_score={cs:.2f} | level={e.level} | estimated_water_sanitation_rights_index={e.estimated_water_sanitation_rights_index}")
+    avg = total / len(ENTITIES)
+    print(f"\navg_composite: {avg:.2f}")
+    print(f"risk_distribution: {dist}")
+    assert dist == {"critique": 4, "élevé": 2, "modéré": 1, "faible": 1}, f"Distribution incorrecte: {dist}"
+    print("\n✓ Distribution validée : 4 critique / 2 élevé / 1 modéré / 1 faible")
 
 
 if __name__ == "__main__":
-    run()
+    run_analysis()

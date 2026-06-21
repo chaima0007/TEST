@@ -1,188 +1,68 @@
-from __future__ import annotations
+#!/usr/bin/env python3
+"""
+Press Freedom & Journalist Protection Engine — Wave 159
+CaelumSwarm Intelligence Layer
+"""
 from dataclasses import dataclass, field
 from typing import List
-import statistics
 
 @dataclass
-class PressFreedomJournalistProtectionEntity:
+class EntityScore:
     entity_id: str
     name: str
-    country: str
-    journalist_killing_imprisonment_severity_score: float
-    media_censorship_state_capture_scale_score: float
-    surveillance_source_protection_violation_score: float
-    online_journalist_harassment_slapp_gap_score: float
-    composite_score: float = field(init=False)
-    risk_level: str = field(init=False)
-    primary_pattern: str = ""
-    estimated_press_freedom_journalist_protection_index: float = field(init=False)
-    last_updated: str = "2026-06-21"
+    sub1_legal_framework: float      # Cadre légal protection presse
+    sub2_physical_safety: float       # Sécurité physique journalistes
+    sub3_digital_surveillance: float  # Surveillance numérique
+    sub4_self_censorship_index: float # Auto-censure et pression
 
-    def __post_init__(self):
-        self.composite_score = round(
-            self.journalist_killing_imprisonment_severity_score * 0.30
-            + self.media_censorship_state_capture_scale_score * 0.25
-            + self.surveillance_source_protection_violation_score * 0.25
-            + self.online_journalist_harassment_slapp_gap_score * 0.20,
-            2,
-        )
-        if self.composite_score >= 60:
-            self.risk_level = "critique"
-        elif self.composite_score >= 40:
-            self.risk_level = "élevé"
-        elif self.composite_score >= 20:
-            self.risk_level = "modéré"
-        else:
-            self.risk_level = "faible"
-        self.estimated_press_freedom_journalist_protection_index = round(
-            self.composite_score / 100 * 10, 2
-        )
+    @property
+    def composite_score(self) -> float:
+        return (self.sub1_legal_framework * 0.30 +
+                self.sub2_physical_safety * 0.25 +
+                self.sub3_digital_surveillance * 0.25 +
+                self.sub4_self_censorship_index * 0.20)
+
+    @property
+    def estimated_press_freedom_index(self) -> float:
+        return round(self.composite_score / 100 * 10, 2)
+
+    @property
+    def level(self) -> str:
+        cs = self.composite_score
+        if cs >= 60: return "critique"
+        elif cs >= 40: return "élevé"
+        elif cs >= 20: return "modéré"
+        return "faible"
 
 
-@dataclass
-class PressFreedomJournalistProtectionEngineResult:
-    agent: str = "Press Freedom Journalist Protection Engine Agent"
-    domain: str = "press_freedom_journalist_protection"
-    total_entities: int = 0
-    avg_composite: float = 0.0
-    confidence_score: float = 0.85
-    risk_distribution: dict = field(default_factory=dict)
-    pattern_distribution: dict = field(default_factory=dict)
-    top_risk_entities: List[str] = field(default_factory=list)
-    critical_alerts: List[str] = field(default_factory=list)
-    last_analysis: str = "2026-06-21"
-    engine_version: str = "1.0.0"
-    avg_estimated_press_freedom_journalist_protection_index: float = 0.0
-    data_sources: List[str] = field(default_factory=list)
-    entities: List[PressFreedomJournalistProtectionEntity] = field(default_factory=list)
+ENTITIES: List[EntityScore] = [
+    EntityScore("PFJ-001", "Corée du Nord (journalisme d'État)", 95, 92, 94, 88),
+    EntityScore("PFJ-002", "Érythrée (censure totale)", 90, 87, 85, 83),
+    EntityScore("PFJ-003", "Chine (Great Firewall + RSF)", 84, 81, 88, 78),
+    EntityScore("PFJ-004", "Russie (loi 'désinformation' 2022)", 78, 74, 76, 68),
+    EntityScore("PFJ-005", "Turquie (3e emprisonnements)", 58, 55, 52, 51),
+    EntityScore("PFJ-006", "Iran (journalistes web)", 51, 48, 54, 44),
+    EntityScore("PFJ-007", "Inde (presse régionale)", 33, 30, 35, 26),
+    EntityScore("PFJ-008", "Finlande (RSF classement #1)", 8, 10, 9, 11),
+]
 
 
-def run_press_freedom_journalist_protection_engine() -> PressFreedomJournalistProtectionEngineResult:
-    entities = [
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-001",
-            name="Mexique/Honduras — Journalistes Pays Non-Guerre Le Plus Meurtrier, Cartels Tuent Reporters, Impunité 99% & Autodéfense Journalistes",
-            country="Mexique/Honduras",
-            journalist_killing_imprisonment_severity_score=93.0,
-            media_censorship_state_capture_scale_score=91.0,
-            surveillance_source_protection_violation_score=90.0,
-            online_journalist_harassment_slapp_gap_score=92.0,
-            primary_pattern="journalist_killing_imprisonment_severity",
-        ),
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-002",
-            name="Chine — 100+ Journalistes Emprisonnés, Presse Étrangère Expulsée, Porte-Parole Seul Autorisé & VPN Bloqué Presse",
-            country="Chine",
-            journalist_killing_imprisonment_severity_score=90.0,
-            media_censorship_state_capture_scale_score=88.0,
-            surveillance_source_protection_violation_score=89.0,
-            online_journalist_harassment_slapp_gap_score=91.0,
-            primary_pattern="media_censorship_state_capture_scale",
-        ),
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-003",
-            name="Russie — Novaya Gazeta Fermée, Loi Agent Étranger, Khashoggi-Style Meurtres Abyan & Ukraine War Coverage Interdit",
-            country="Russie",
-            journalist_killing_imprisonment_severity_score=87.0,
-            media_censorship_state_capture_scale_score=85.0,
-            surveillance_source_protection_violation_score=86.0,
-            online_journalist_harassment_slapp_gap_score=88.0,
-            primary_pattern="journalist_killing_imprisonment_severity",
-        ),
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-004",
-            name="Arabie Saoudite — Khashoggi Assassinat, Blogueurs Condamnés, Médias Indépendants Inexistants & Critiques Online Emprisonnés",
-            country="Arabie Saoudite",
-            journalist_killing_imprisonment_severity_score=84.0,
-            media_censorship_state_capture_scale_score=82.0,
-            surveillance_source_protection_violation_score=83.0,
-            online_journalist_harassment_slapp_gap_score=85.0,
-            primary_pattern="surveillance_source_protection_violation",
-        ),
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-005",
-            name="Turquie/Israël — Journalistes Gaza Tués 100+, Turquie 2ème Prison Journalistes, Presse Pro-Gouvernement Monopole & SLAPP",
-            country="Turquie/Israël",
-            journalist_killing_imprisonment_severity_score=55.0,
-            media_censorship_state_capture_scale_score=53.0,
-            surveillance_source_protection_violation_score=54.0,
-            online_journalist_harassment_slapp_gap_score=56.0,
-            primary_pattern="journalist_killing_imprisonment_severity",
-        ),
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-006",
-            name="USA/Europe — Fox News/MSNBC Polarisation, Reporters Sans Protection Fédérale, SLAPP Suits Croissants & Propriété Oligarques",
-            country="USA/Europe",
-            journalist_killing_imprisonment_severity_score=52.0,
-            media_censorship_state_capture_scale_score=50.0,
-            surveillance_source_protection_violation_score=51.0,
-            online_journalist_harassment_slapp_gap_score=53.0,
-            primary_pattern="online_journalist_harassment_slapp_gap",
-        ),
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-007",
-            name="RSF/CPJ — Classement Liberté Presse, Committee Protect Journalists, Hotlines Urgence & Rapports Annuels",
-            country="Global",
-            journalist_killing_imprisonment_severity_score=27.0,
-            media_censorship_state_capture_scale_score=25.0,
-            surveillance_source_protection_violation_score=26.0,
-            online_journalist_harassment_slapp_gap_score=26.0,
-            primary_pattern="journalist_killing_imprisonment_severity",
-        ),
-        PressFreedomJournalistProtectionEntity(
-            entity_id="PFJ-008",
-            name="ONU/Art.19 PIDCP — Liberté Expression Presse, Rapporteur Spécial & SDG 16.10 Accès Information",
-            country="Global",
-            journalist_killing_imprisonment_severity_score=5.0,
-            media_censorship_state_capture_scale_score=3.0,
-            surveillance_source_protection_violation_score=4.0,
-            online_journalist_harassment_slapp_gap_score=4.0,
-            primary_pattern="media_censorship_state_capture_scale",
-        ),
-    ]
-
-    composites = [e.composite_score for e in entities]
-    avg_composite = round(statistics.mean(composites), 2)
-
-    risk_dist: dict = {}
-    for e in entities:
-        risk_dist[e.risk_level] = risk_dist.get(e.risk_level, 0) + 1
-
-    pattern_dist: dict = {}
-    for e in entities:
-        pattern_dist[e.primary_pattern] = pattern_dist.get(e.primary_pattern, 0) + 1
-
-    sorted_entities = sorted(entities, key=lambda x: x.composite_score, reverse=True)
-    top_risk = [e.name for e in sorted_entities[:3]]
-    alerts = [
-        f"{e.name.split('—')[0].strip()}: {e.primary_pattern}"
-        for e in sorted_entities[:4]
-    ]
-
-    return PressFreedomJournalistProtectionEngineResult(
-        total_entities=len(entities),
-        avg_composite=avg_composite,
-        risk_distribution=risk_dist,
-        pattern_distribution=pattern_dist,
-        top_risk_entities=top_risk,
-        critical_alerts=alerts,
-        avg_estimated_press_freedom_journalist_protection_index=round(avg_composite / 100 * 10, 2),
-        data_sources=[
-            "rsf_press_freedom_index_annual_report",
-            "cpj_journalist_imprisonment_global_census",
-            "freedom_of_press_foundation_surveillance_report",
-        ],
-        entities=entities,
-    )
+def run_analysis():
+    print("=== Press Freedom & Journalist Protection Engine — Wave 159 ===\n")
+    total = 0
+    dist = {"critique": 0, "élevé": 0, "modéré": 0, "faible": 0}
+    for e in ENTITIES:
+        cs = e.composite_score
+        total += cs
+        dist[e.level] += 1
+        print(f"{e.entity_id} | {e.name}")
+        print(f"  composite_score={cs:.2f} | level={e.level} | estimated_press_freedom_index={e.estimated_press_freedom_index}")
+    avg = total / len(ENTITIES)
+    print(f"\navg_composite: {avg:.2f}")
+    print(f"risk_distribution: {dist}")
+    assert dist == {"critique": 4, "élevé": 2, "modéré": 1, "faible": 1}, f"Distribution incorrecte: {dist}"
+    print("\n✓ Distribution validée : 4 critique / 2 élevé / 1 modéré / 1 faible")
 
 
 if __name__ == "__main__":
-    result = run_press_freedom_journalist_protection_engine()
-    print(f"Agent: {result.agent}")
-    print(f"Total entities: {result.total_entities}")
-    print(f"Avg composite: {result.avg_composite}")
-    print(f"Avg index: {result.avg_estimated_press_freedom_journalist_protection_index}")
-    print(f"Risk distribution: {result.risk_distribution}")
-    print(f"Pattern distribution: {result.pattern_distribution}")
-    for e in result.entities:
-        print(f"  {e.entity_id}: {e.composite_score} [{e.risk_level}]")
+    run_analysis()
