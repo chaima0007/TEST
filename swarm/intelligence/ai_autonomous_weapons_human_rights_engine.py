@@ -6,14 +6,14 @@ import json
 class EntityScore:
     entity_id: str
     name: str
-    sub1: float  # ×0.30 — sub1_protest_ban_laws: Lois d'interdiction manifestations
-    sub2: float  # ×0.25 — sub2_police_brutality_protests: Brutalité policière manifestations
-    sub3: float  # ×0.25 — sub3_arrest_detention_protesters: Arrestations manifestants
-    sub4: float  # ×0.20 — sub4_assembly_permit_restrictions: Restrictions permis de rassemblement
+    sub1: float  # ×0.30 — sub1_lethal_autonomous_development: Développement armes autonomes létales
+    sub2: float  # ×0.25 — sub2_human_rights_impact: Impact droits humains documenté
+    sub3: float  # ×0.25 — sub3_international_law_compliance: Conformité droit international humanitaire
+    sub4: float  # ×0.20 — sub4_transparency_accountability: Transparence et responsabilité
 
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
-    estimated_assembly_rights_index: float = field(init=False)
+    estimated_ai_weapons_index: float = field(init=False)
 
     def __post_init__(self):
         self.composite_score = round(
@@ -27,50 +27,50 @@ class EntityScore:
             self.risk_level = "modéré"
         else:
             self.risk_level = "faible"
-        self.estimated_assembly_rights_index = round(self.composite_score / 100 * 10, 2)
+        self.estimated_ai_weapons_index = round(self.composite_score / 100 * 10, 2)
 
 
 def run_engine() -> List[EntityScore]:
     entities = [
         EntityScore(
-            entity_id="FAP-001",
-            name="Chine (Tiananmen legacy + Hong Kong)",
-            sub1=96.0, sub2=92.0, sub3=95.0, sub4=88.0
+            entity_id="AAW-001",
+            name="Israël (Lavender AI targeting system)",
+            sub1=90.0, sub2=92.0, sub3=88.0, sub4=84.0
         ),
         EntityScore(
-            entity_id="FAP-002",
-            name="Belarus (2020 répression)",
-            sub1=90.0, sub2=86.0, sub3=89.0, sub4=84.0
+            entity_id="AAW-002",
+            name="USA (Project Maven + drone kill chain)",
+            sub1=84.0, sub2=80.0, sub3=82.0, sub4=78.0
         ),
         EntityScore(
-            entity_id="FAP-003",
-            name="Iran (Mahsa Amini 2022-2024)",
+            entity_id="AAW-003",
+            name="Chine (LAWS développement accéléré)",
             sub1=88.0, sub2=84.0, sub3=86.0, sub4=80.0
         ),
         EntityScore(
-            entity_id="FAP-004",
-            name="Russie (anti-guerre 2022+)",
-            sub1=84.0, sub2=79.0, sub3=82.0, sub4=76.0
+            entity_id="AAW-004",
+            name="Russie (KUB-BLA autonome Ukraine)",
+            sub1=80.0, sub2=78.0, sub3=76.0, sub4=74.0
         ),
         EntityScore(
-            entity_id="FAP-005",
-            name="USA (BLM — force excessive)",
-            sub1=52.0, sub2=58.0, sub3=54.0, sub4=50.0
+            entity_id="AAW-005",
+            name="Turquie (Kargu-2 Libye)",
+            sub1=62.0, sub2=58.0, sub3=56.0, sub4=58.0
         ),
         EntityScore(
-            entity_id="FAP-006",
-            name="France (gilets jaunes — LBD)",
-            sub1=44.0, sub2=52.0, sub3=46.0, sub4=45.0
+            entity_id="AAW-006",
+            name="Corée du Sud (Super aEgis II)",
+            sub1=52.0, sub2=50.0, sub3=50.0, sub4=52.0
         ),
         EntityScore(
-            entity_id="FAP-007",
-            name="Allemagne (réglementation stricte)",
-            sub1=24.0, sub2=22.0, sub3=28.0, sub4=30.0
+            entity_id="AAW-007",
+            name="UK (drone Reaper humain-dans-boucle)",
+            sub1=28.0, sub2=26.0, sub3=24.0, sub4=30.0
         ),
         EntityScore(
-            entity_id="FAP-008",
-            name="Islande (ECHR gold standard)",
-            sub1=8.0, sub2=7.0, sub3=9.0, sub4=12.0
+            entity_id="AAW-008",
+            name="Autriche (traité ban LAWS)",
+            sub1=8.0, sub2=9.0, sub3=7.0, sub4=12.0
         ),
     ]
     return entities
@@ -80,7 +80,7 @@ def main():
     entities = run_engine()
 
     print("=" * 60)
-    print("FREEDOM OF ASSEMBLY & PROTEST RIGHTS ENGINE — Wave 165")
+    print("AI AUTONOMOUS WEAPONS & HUMAN RIGHTS ENGINE — Wave 165")
     print("=" * 60)
 
     dist: Dict[str, int] = {}
@@ -91,7 +91,7 @@ def main():
         total += e.composite_score
         print(
             f"[{e.risk_level.upper():8s}] {e.name[:50]:<50s} "
-            f"composite={e.composite_score:.2f}  index={e.estimated_assembly_rights_index:.2f}"
+            f"composite={e.composite_score:.2f}  index={e.estimated_ai_weapons_index:.2f}"
         )
 
     avg = total / len(entities)
@@ -108,19 +108,19 @@ def main():
     assert dist.get('faible', 0) == 1, f"Expected 1 faible, got {dist.get('faible', 0)}"
 
     output = {
-        "engine": "freedom_of_assembly_protest_rights_engine",
+        "engine": "ai_autonomous_weapons_human_rights_engine",
         "wave": 165,
         "entities": [
             {
                 "entity_id": e.entity_id,
                 "name": e.name,
-                "sub1_protest_ban_laws": e.sub1,
-                "sub2_police_brutality_protests": e.sub2,
-                "sub3_arrest_detention_protesters": e.sub3,
-                "sub4_assembly_permit_restrictions": e.sub4,
+                "sub1_lethal_autonomous_development": e.sub1,
+                "sub2_human_rights_impact": e.sub2,
+                "sub3_international_law_compliance": e.sub3,
+                "sub4_transparency_accountability": e.sub4,
                 "composite_score": e.composite_score,
                 "risk_level": e.risk_level,
-                "estimated_assembly_rights_index": e.estimated_assembly_rights_index,
+                "estimated_ai_weapons_index": e.estimated_ai_weapons_index,
             }
             for e in entities
         ],
