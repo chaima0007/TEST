@@ -1,0 +1,69 @@
+{
+  "id": "repsol",
+  "slug": "repsol",
+  "name": "Repsol S.A.",
+  "country": "Spain",
+  "city": "Madrid",
+  "sector": "Oil & Gas / Énergie",
+  "size": {
+    "revenue_bn_eur": 56,
+    "employees": 25000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "31.2 (Medium Risk)",
+      "target": "A d'ici 2027 — Repsol Multi-Energy Strategy 2030"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO (Chief Compliance Officer) / Director of Sustainability & Climate",
+    "team": "Équipe Compliance (45 FTE), équipe Sustainability (30 FTE), équipe Human Rights & Stakeholders (12 FTE)",
+    "location": "Siège Madrid + opérations E&P Amérique Latine (Pérou, Bolivie, Brésil, Venezuela historique) + Trinité-et-Tobago",
+    "process": "Revue droits humains annuelle intégrée aux Country Risk Reviews, budget compliance validé COMEX Q4, reporting CSRD en déploiement"
+  },
+  "pain_points": [
+    "Droits des peuples autochtones Amazonie : les projets d'exploration E&P au Pérou et Bolivie affectent des territoires de peuples autochtones (Quechua, Achuar, Shipibo-Conibo) sans système de monitoring du Consentement Libre et Informé (CLIP) en temps réel",
+    "CSDDD peuples autochtones : obligation CLIP (Consentement Libre, Informé et Préalable) reconnue CSDDD — Repsol sans outil de documentation systématique",
+    "Passif environnemental Pérou : déversements historiques Amazonie (Oleoducto Norperuano) — communautés autochtones sans mécanisme de plainte formalisé en langue locale",
+    "Transition énergétique droits sociaux : les plans de fermeture de sites fossiles créent des impacts sociaux (emplois, économies locales) non documentés en KPIs DDH",
+    "Chaîne fournisseurs Amérique Latine : sous-traitants locaux (forage, transport) sans audit droits humains systématique"
+  ],
+  "observed_failures": [
+    "Rapport Survival International 2023 : communauté Achuar (Pérou) documentant des déversements de pétrole dans des rivières utilisées comme source d'eau potable — mécanisme de plainte Repsol jugé inaccessible",
+    "Décision arbitrale CIADI 2022 : Repsol condamné à compenser des communautés boliviennes suite à des impacts non divulgués lors d'une phase d'exploration",
+    "Audit CSDDD préparatoire 2024 : absence de cartographie formalisée des peuples autochtones dans les zones d'opération E&P Amérique Latine"
+  ],
+  "signals_of_risk": [
+    "CSDDD et droits peuples autochtones : Repsol avec ses opérations Amazonie est particulièrement exposé à l'obligation CLIP",
+    "Pression investisseurs ESG européens : plusieurs fonds ISR ont exclu ou menacent d'exclure Repsol sur critère 'peuples autochtones'",
+    "Enquête journalistique en cours (El País Planeta) sur les impacts des opérations pétrolières Amazonie sur les peuples autochtones"
+  ],
+  "signals_of_trust": [
+    "Politique droits humains formalisée alignée UNGP depuis 2020",
+    "Engagement net-zero 2050 avec plans de décarbonation par business unit",
+    "Partenariat avec GIZ sur le dialogue communautaire en Pérou",
+    "Score MSCI BBB en progression — reconnaissance des efforts 2022-2024 sur les droits autochtones"
+  ],
+  "recommended_actions": [
+    "Entrer par CSDDD et droits des peuples autochtones : 'Pour vos blocs E&P amazonniens, comment documentez-vous le CLIP (Consentement Libre et Informé) en conformité CSDDD ?'",
+    "Proposer un module peuples autochtones avec cartographie des territoires affectés et suivi CLIP en temps réel",
+    "Référencer le rapport Survival International Pérou : montrer qu'un système préventif aurait permis d'anticiper la crise",
+    "Cibler CCO pour l'angle conformité CSDDD, Director Sustainability pour la vision stratégique"
+  ],
+  "local_tone": "Chaleureux et professionnel, en espagnol de préférence. Les interlocuteurs espagnols apprécient la confiance relationnelle avant les aspects techniques. Références secteur pétrolier ibérique et Amérique Latine bien reçues. Éviter toute comparaison avec Galp ou BP.",
+  "cultural_notes": "Repsol est une entreprise espagnole avec une forte présence Amérique Latine — les interlocuteurs ont souvent une double culture ibérique et latinoaméricaine. La culture interne valorise la compétence technique et la loyauté institutionnelle. Les décisions majeures impliquent le Legal + le Sustainability + le CCO. Préférer Madrid pour les premières réunions. Les déjeuners de travail sont une norme culturelle.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.repsol.com/en/sustainability/human-rights/index.cshtml",
+    "https://www.survivalinternational.org/companies/repsol",
+    "https://ungpreporting.org/how-to-use-this-framework/"
+  ]
+}
