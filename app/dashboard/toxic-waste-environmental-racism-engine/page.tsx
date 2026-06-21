@@ -1,0 +1,182 @@
+"use client"
+import { useState, useEffect } from "react"
+
+const ACCENT = "#22c55e"
+const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" }
+const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" }
+
+function GaugeRing({ value, stroke }: { value: number; stroke: string }) {
+  const r = 36, cx = 44, cy = 44, circ = 2 * Math.PI * r
+  const pct = Math.min(Math.max(value, 0), 100) / 100
+  return (
+    <svg viewBox="0 0 88 88" className="w-20 h-20">
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e293b" strokeWidth={8} />
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={stroke} strokeWidth={8}
+        strokeDasharray={circ} strokeDashoffset={circ * (1 - pct)}
+        strokeLinecap="round" transform="rotate(-90 44 44)" />
+      <text x={cx} y={cy} textAnchor="middle" dominantBaseline="central"
+        fill="white" fontSize={14} fontWeight="bold">{Math.round(value)}</text>
+    </svg>
+  )
+}
+
+const RISK_CONFIG: Record<string, { label: string; color: string; bg: string; border: string }> = {
+  critique: { label: "Critique", color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/25" },
+  "élevé": { label: "Élevé", color: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/25" },
+  modéré: { label: "Modéré", color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/25" },
+  faible: { label: "Faible", color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/25" },
+}
+
+interface Entity {
+  entity_id: string
+  name: string
+  composite_score: number
+  risk_level: string
+  estimated_environmental_racism_index: number
+  [key: string]: unknown
+}
+
+interface DashData {
+  avg_composite: number
+  risk_distribution: Record<string, number>
+  entities: Entity[]
+  [key: string]: unknown
+}
+
+export default function ToxicWasteEnvironmentalRacismPage() {
+  const [data, setData] = useState<DashData | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [filter, setFilter] = useState("tous")
+  const [selected, setSelected] = useState<Entity | null>(null)
+
+  useEffect(() => {
+    fetch("/api/toxic-waste-environmental-racism-engine")
+      .then(r => r.json())
+      .then(d => { setData(d.payload ?? d); setLoading(false) })
+  }, [])
+
+  if (loading) return (
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-t-transparent rounded-full animate-spin" style={{ borderColor: ACCENT, borderTopColor: "transparent" }} />
+    </div>
+  )
+  if (!data) return (
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <div className="text-slate-400">Données indisponibles</div>
+    </div>
+  )
+
+  const entities = data.entities ?? []
+  const filtered = filter === "tous" ? entities : entities.filter(e => e.risk_level === filter)
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
+      <div className="mb-8 flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold" style={{ color: ACCENT }}>Déchets Toxiques &amp; Racisme Environnemental</h1>
+          <p className="text-slate-400 mt-1 text-sm">Pollution · Communautés Marginalisées · Justice Environnementale · Impunité Industrielle</p>
+        </div>
+        <span className="text-xs text-slate-500 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
+          {entities.length} entités analysées
+        </span>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Entités</p>
+          <p className="text-3xl font-bold mt-1" style={{ color: ACCENT }}>{entities.length}</p>
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col items-center">
+          <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">Score Moyen</p>
+          <GaugeRing value={data.avg_composite} stroke={ACCENT} />
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Critiques</p>
+          <p className="text-3xl font-bold mt-1 text-red-400">{data.risk_distribution?.critique ?? 0}</p>
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Élevés</p>
+          <p className="text-3xl font-bold mt-1 text-orange-400">{data.risk_distribution?.["élevé"] ?? 0}</p>
+        </div>
+        <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
+          <p className="text-xs text-slate-500 uppercase tracking-wide">Indice racisme env.</p>
+          <p className="text-3xl font-bold mt-1" style={{ color: ACCENT }}>{data.avg_composite ? (data.avg_composite / 100 * 10).toFixed(2) : "—"}</p>
+        </div>
+      </div>
+
+      <div className="flex gap-2 mb-6 flex-wrap">
+        {["tous", "critique", "élevé", "modéré", "faible"].map(f => (
+          <button key={f} onClick={() => setFilter(f)}
+            className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${filter === f
+              ? "border-green-700/40 text-green-300"
+              : "border-slate-700 text-slate-400 hover:border-slate-500"}`}
+            style={filter === f ? { backgroundColor: "#22c55e1a" } : {}}>
+            {f.charAt(0).toUpperCase() + f.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+        {filtered.map(e => {
+          const cfg = RISK_CONFIG[e.risk_level] ?? RISK_CONFIG.faible
+          return (
+            <button key={e.entity_id} onClick={() => setSelected(e)}
+              className={`text-left border rounded-xl p-4 transition-all hover:scale-[1.01] ${RB[e.risk_level]}`}>
+              <div className="flex justify-between items-start mb-3">
+                <div className="min-w-0 flex-1">
+                  <span className="text-xs font-mono text-slate-500">{e.entity_id}</span>
+                  <p className="font-semibold text-sm text-slate-100 line-clamp-2 mt-0.5">{e.name}</p>
+                </div>
+                <div className="shrink-0 ml-3">
+                  <GaugeRing value={e.composite_score} stroke={ACCENT} />
+                </div>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className={`text-xs font-semibold uppercase ${cfg.color}`}>{cfg.label}</span>
+                <span className="text-xs text-slate-500">Indice racisme env.: <span className="font-bold" style={{ color: ACCENT }}>{e.estimated_environmental_racism_index}</span></span>
+              </div>
+            </button>
+          )
+        })}
+        {filtered.length === 0 && (
+          <div className="col-span-full text-center py-12 text-slate-400 text-sm">
+            Aucune entité dans ce niveau de risque
+          </div>
+        )}
+      </div>
+
+      {selected && (
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={() => setSelected(null)}>
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto"
+            onClick={e => e.stopPropagation()}>
+            <div className="p-6 border-b border-slate-800 flex justify-between items-start">
+              <div>
+                <span className={`text-xs font-semibold uppercase ${RC[selected.risk_level]}`}>
+                  {RISK_CONFIG[selected.risk_level]?.label ?? selected.risk_level}
+                </span>
+                <h2 className="text-lg font-bold text-slate-100 mt-1">{selected.name}</h2>
+              </div>
+              <button onClick={() => setSelected(null)} className="text-slate-500 hover:text-white text-xl leading-none">✕</button>
+            </div>
+            <div className="p-6 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-slate-400 text-sm">Score composite</span>
+                <span className="text-2xl font-bold" style={{ color: ACCENT }}>{selected.composite_score}/100</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-slate-400">Indice racisme env.</span>
+                <span className="font-semibold" style={{ color: ACCENT }}>{selected.estimated_environmental_racism_index}/10</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-slate-400">Niveau de risque</span>
+                <span className={`font-semibold uppercase text-xs ${RC[selected.risk_level]}`}>
+                  {RISK_CONFIG[selected.risk_level]?.label ?? selected.risk_level}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
