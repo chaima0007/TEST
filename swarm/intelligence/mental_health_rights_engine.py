@@ -8,10 +8,10 @@ class MentalHealthRightsEntity:
     entity_id: str
     name: str
     country: str
-    forced_institutionalization_score: float
-    treatment_access_denial_score: float
-    legal_capacity_deprivation_score: float
-    stigma_discrimination_barrier_score: float
+    forced_institutionalization_coercion_severity_score: float
+    psychiatric_treatment_without_consent_scale_score: float
+    mental_health_service_access_gap_score: float
+    stigma_discrimination_mental_health_barrier_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
@@ -20,10 +20,10 @@ class MentalHealthRightsEntity:
 
     def __post_init__(self):
         self.composite_score = round(
-            self.forced_institutionalization_score * 0.30
-            + self.treatment_access_denial_score * 0.25
-            + self.legal_capacity_deprivation_score * 0.25
-            + self.stigma_discrimination_barrier_score * 0.20,
+            self.forced_institutionalization_coercion_severity_score * 0.30
+            + self.psychiatric_treatment_without_consent_scale_score * 0.25
+            + self.mental_health_service_access_gap_score * 0.25
+            + self.stigma_discrimination_mental_health_barrier_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -56,84 +56,84 @@ class MentalHealthRightsEngineResult:
 def run_mental_health_rights_engine() -> MentalHealthRightsEngineResult:
     entities = [
         MentalHealthRightsEntity(
-            entity_id="MH-001",
-            name="Russie — Psychiatrie Punitive Post-Soviétique, Internements Forcés Opposants & CRPD Non Ratifié",
-            country="Europe de l'Est",
-            forced_institutionalization_score=95.0,
-            treatment_access_denial_score=92.0,
-            legal_capacity_deprivation_score=95.0,
-            stigma_discrimination_barrier_score=90.0,
-            primary_pattern="forced_institutionalization",
+            entity_id="MHR-001",
+            name="Indonésie — 18 000 Personnes Enchaînées Pasung, Hôpitaux Surpeuplés & Zéro Psychiatres Ruraux",
+            country="Indonésie",
+            forced_institutionalization_coercion_severity_score=96.0,
+            psychiatric_treatment_without_consent_scale_score=94.0,
+            mental_health_service_access_gap_score=93.0,
+            stigma_discrimination_mental_health_barrier_score=92.0,
+            primary_pattern="forced_institutionalization_coercion_severity",
         ),
         MentalHealthRightsEntity(
-            entity_id="MH-002",
-            name="Inde — 7M Institutionnalisés, Dargahs Chaînes, Loi 2017 Non Appliquée & CRPD Violations",
-            country="Asie du Sud",
-            forced_institutionalization_score=90.0,
-            treatment_access_denial_score=92.0,
-            legal_capacity_deprivation_score=88.0,
-            stigma_discrimination_barrier_score=92.0,
-            primary_pattern="treatment_access_denial",
+            entity_id="MHR-002",
+            name="Inde — 150M Besoins Santé Mentale, 0,3 Psychiatres/100k, Internement Forcé Famille & ECT Mineurs",
+            country="Inde",
+            forced_institutionalization_coercion_severity_score=93.0,
+            psychiatric_treatment_without_consent_scale_score=91.0,
+            mental_health_service_access_gap_score=90.0,
+            stigma_discrimination_mental_health_barrier_score=89.0,
+            primary_pattern="mental_health_service_access_gap",
         ),
         MentalHealthRightsEntity(
-            entity_id="MH-003",
-            name="Ghana/Nigeria — Maisons Prière Patients Enchaînés, 10K+ Captifs & Lois Coloniales",
-            country="Afrique de l'Ouest",
-            forced_institutionalization_score=88.0,
-            treatment_access_denial_score=90.0,
-            legal_capacity_deprivation_score=85.0,
-            stigma_discrimination_barrier_score=90.0,
-            primary_pattern="treatment_access_denial",
+            entity_id="MHR-003",
+            name="Afrique Sub-Saharienne — 1 Psychiatre/Million, Guérisseurs Traditionnels Seule Option & Chaînes Thérapeutiques",
+            country="Afrique Sub-Saharienne",
+            forced_institutionalization_coercion_severity_score=90.0,
+            psychiatric_treatment_without_consent_scale_score=87.0,
+            mental_health_service_access_gap_score=88.0,
+            stigma_discrimination_mental_health_barrier_score=86.0,
+            primary_pattern="mental_health_service_access_gap",
         ),
         MentalHealthRightsEntity(
-            entity_id="MH-004",
-            name="USA — 180K Institutionnalisés, Olmstead Non Appliqué, Prisons Remplacent Asiles",
-            country="Amérique du Nord",
-            forced_institutionalization_score=85.0,
-            treatment_access_denial_score=85.0,
-            legal_capacity_deprivation_score=88.0,
-            stigma_discrimination_barrier_score=82.0,
-            primary_pattern="legal_capacity_deprivation",
+            entity_id="MHR-004",
+            name="Russie — Hôpitaux Psychiatriques Punitifs Héritage Soviétique, Dissidents Internés & Zéro Consentement",
+            country="Russie",
+            forced_institutionalization_coercion_severity_score=87.0,
+            psychiatric_treatment_without_consent_scale_score=85.0,
+            mental_health_service_access_gap_score=84.0,
+            stigma_discrimination_mental_health_barrier_score=83.0,
+            primary_pattern="forced_institutionalization_coercion_severity",
         ),
         MentalHealthRightsEntity(
-            entity_id="MH-005",
-            name="UE/Malte & Hongrie — Tutelle Systémique, Capacité Juridique Restreinte & CRPD Art.12",
+            entity_id="MHR-005",
+            name="USA — 500k Sans Abri Troubles Mentaux, Prisons Hôpitaux Psychiatrie, Isolement Cellulaire",
+            country="USA",
+            forced_institutionalization_coercion_severity_score=56.0,
+            psychiatric_treatment_without_consent_scale_score=54.0,
+            mental_health_service_access_gap_score=53.0,
+            stigma_discrimination_mental_health_barrier_score=52.0,
+            primary_pattern="forced_institutionalization_coercion_severity",
+        ),
+        MentalHealthRightsEntity(
+            entity_id="MHR-006",
+            name="Europe — ECT Sans Consentement Légal Plusieurs Pays, Contention Physique & Gaps Désinstitutionnalisation",
             country="Europe",
-            forced_institutionalization_score=55.0,
-            treatment_access_denial_score=52.0,
-            legal_capacity_deprivation_score=58.0,
-            stigma_discrimination_barrier_score=50.0,
-            primary_pattern="legal_capacity_deprivation",
+            forced_institutionalization_coercion_severity_score=53.0,
+            psychiatric_treatment_without_consent_scale_score=51.0,
+            mental_health_service_access_gap_score=50.0,
+            stigma_discrimination_mental_health_barrier_score=49.0,
+            primary_pattern="psychiatric_treatment_without_consent_scale",
         ),
         MentalHealthRightsEntity(
-            entity_id="MH-006",
-            name="Japon — Hospitalisations Involontaires 300+ Jours Moy., Isolement Systémique & CRPD",
-            country="Asie de l'Est",
-            forced_institutionalization_score=52.0,
-            treatment_access_denial_score=48.0,
-            legal_capacity_deprivation_score=50.0,
-            stigma_discrimination_barrier_score=48.0,
-            primary_pattern="forced_institutionalization",
-        ),
-        MentalHealthRightsEntity(
-            entity_id="MH-007",
-            name="OMS/IASC — MHPSS Standards, Lignes Directrices Désinstitutionnalisation & Monitoring",
+            entity_id="MHR-007",
+            name="WNUSP/MIND — Réforme Psychiatrie, CRPD Article 12 & Mouvement Survivants Psychiatriques",
             country="Global",
-            forced_institutionalization_score=22.0,
-            treatment_access_denial_score=28.0,
-            legal_capacity_deprivation_score=25.0,
-            stigma_discrimination_barrier_score=30.0,
-            primary_pattern="stigma_discrimination_barrier",
+            forced_institutionalization_coercion_severity_score=27.0,
+            psychiatric_treatment_without_consent_scale_score=26.0,
+            mental_health_service_access_gap_score=25.0,
+            stigma_discrimination_mental_health_barrier_score=26.0,
+            primary_pattern="forced_institutionalization_coercion_severity",
         ),
         MentalHealthRightsEntity(
-            entity_id="MH-008",
-            name="ONU/CRPD — Art.12 Capacité Juridique Égale, Art.14 Liberté & Rapporteur Spécial Handicap",
+            entity_id="MHR-008",
+            name="ONU/CRPD — Article 12 Capacité Légale Égale, Rapporteur Santé Mentale & SDG 3.4 Bien-Être Mental",
             country="Global",
-            forced_institutionalization_score=4.0,
-            treatment_access_denial_score=5.0,
-            legal_capacity_deprivation_score=3.0,
-            stigma_discrimination_barrier_score=6.0,
-            primary_pattern="stigma_discrimination_barrier",
+            forced_institutionalization_coercion_severity_score=4.0,
+            psychiatric_treatment_without_consent_scale_score=4.0,
+            mental_health_service_access_gap_score=5.0,
+            stigma_discrimination_mental_health_barrier_score=4.0,
+            primary_pattern="mental_health_service_access_gap",
         ),
     ]
 
