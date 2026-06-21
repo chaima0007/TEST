@@ -1,43 +1,84 @@
-import { NextResponse } from "next/server";
-import { sealResponse } from "@/lib/digital-seal";
+import { NextResponse } from "next/server"
+import { sealResponse } from "@/lib/digital-seal"
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[water-sanitation-rights-engine] SWARM_API_URL not set — using mock data")
+}
 
 const MOCK = {
-  agent: "Water Sanitation Rights Engine Agent",
   domain: "water_sanitation_rights",
   total_entities: 8,
-  avg_composite: 59.55,
-  confidence_score: 0.91,
-  avg_estimated_water_sanitation_rights_index: 5.95,
+  avg_composite: 58.18,
   risk_distribution: { critique: 4, "élevé": 2, modéré: 1, faible: 1 },
-  data_sources: [
-    "who_unicef_jmp_wash_progress_2023",
-    "un_sr_safe_drinking_water_sanitation_2023",
-    "wateraid_water_sanitation_crisis_2023",
-    "sdg6_monitoring_report_2023",
-  ],
-  critical_alerts: [],
   entities: [
-    { entity_id: "CD", name: "RDC (République démocratique du Congo)", composite_score: 86.75, risk_level: "critique", estimated_water_sanitation_rights_index: 8.68 },
-    { entity_id: "NE", name: "Niger", composite_score: 83.9, risk_level: "critique", estimated_water_sanitation_rights_index: 8.39 },
-    { entity_id: "HT", name: "Haïti", composite_score: 81.6, risk_level: "critique", estimated_water_sanitation_rights_index: 8.16 },
-    { entity_id: "ET", name: "Éthiopie", composite_score: 75.5, risk_level: "critique", estimated_water_sanitation_rights_index: 7.55 },
-    { entity_id: "NG", name: "Nigeria", composite_score: 56.75, risk_level: "élevé", estimated_water_sanitation_rights_index: 5.67 },
-    { entity_id: "PK", name: "Pakistan", composite_score: 53.45, risk_level: "élevé", estimated_water_sanitation_rights_index: 5.34 },
-    { entity_id: "IN", name: "Inde rurale", composite_score: 34.0, risk_level: "modéré", estimated_water_sanitation_rights_index: 3.4 },
-    { entity_id: "DK", name: "Danemark (modèle WASH)", composite_score: 4.45, risk_level: "faible", estimated_water_sanitation_rights_index: 0.45 },
+    {
+      entity_id: "WSR-001",
+      name: "Somalie (accès eau <50%, conflits)",
+      composite_score: 91.30,
+      level: "critique",
+      estimated_water_rights_index: 9.13,
+    },
+    {
+      entity_id: "WSR-002",
+      name: "République Centrafricaine (infrastructure détruite)",
+      composite_score: 85.85,
+      level: "critique",
+      estimated_water_rights_index: 8.59,
+    },
+    {
+      entity_id: "WSR-003",
+      name: "Mali (zones rurales sahéliennes)",
+      composite_score: 78.85,
+      level: "critique",
+      estimated_water_rights_index: 7.89,
+    },
+    {
+      entity_id: "WSR-004",
+      name: "Niger (pénurie chronique)",
+      composite_score: 70.85,
+      level: "critique",
+      estimated_water_rights_index: 7.09,
+    },
+    {
+      entity_id: "WSR-005",
+      name: "Bangladesh (arsenic nappes)",
+      composite_score: 54.65,
+      level: "élevé",
+      estimated_water_rights_index: 5.47,
+    },
+    {
+      entity_id: "WSR-006",
+      name: "Inde (contaminations chroniques)",
+      composite_score: 46.60,
+      level: "élevé",
+      estimated_water_rights_index: 4.66,
+    },
+    {
+      entity_id: "WSR-007",
+      name: "Mexique (accès inégal urbain/rural)",
+      composite_score: 29.30,
+      level: "modéré",
+      estimated_water_rights_index: 2.93,
+    },
+    {
+      entity_id: "WSR-008",
+      name: "Pays-Bas (eau universelle garantie)",
+      composite_score: 8.05,
+      level: "faible",
+      estimated_water_rights_index: 0.81,
+    },
   ],
-};
+}
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    console.warn("[water-sanitation-rights-engine] SWARM_API_URL not set — returning mock");
-    return await sealResponse(NextResponse.json({ payload: MOCK }));
+    return await sealResponse(NextResponse.json({ payload: MOCK }))
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/water-sanitation-rights-engine`, { next: { revalidate: 30 } });
-    const data = await res.json();
-    return await sealResponse(NextResponse.json({ payload: data }));
+    const res = await fetch(`${process.env.SWARM_API_URL}/water-sanitation-rights-engine`, { next: { revalidate: 30 } })
+    const data = await res.json()
+    return await sealResponse(NextResponse.json({ payload: data }))
   } catch {
-    return await sealResponse(NextResponse.json({ error: "upstream_error" }, { status: 502 }));
+    return await sealResponse(NextResponse.json({ error: "upstream unavailable" }, { status: 502 }))
   }
 }

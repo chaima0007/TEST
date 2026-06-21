@@ -1,91 +1,84 @@
-import { NextResponse } from "next/server";
-import { sealResponse } from "@/lib/digital-seal";
+import { NextResponse } from "next/server"
+import { sealResponse } from "@/lib/digital-seal"
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[disability-rights-inclusion-engine] SWARM_API_URL not set — using mock data")
+}
 
 const MOCK = {
-  agent: "Disability Rights Inclusion Engine Agent",
   domain: "disability_rights_inclusion",
   total_entities: 8,
-  avg_composite: 62.36,
-  confidence_score: 0.89,
-  avg_estimated_disability_rights_inclusion_index: 6.24,
+  avg_composite: 56.18,
   risk_distribution: { critique: 4, "élevé": 2, modéré: 1, faible: 1 },
-  data_sources: [
-    "un_crpd_committee_reports_2023",
-    "human_rights_watch_disability_rights_2022",
-    "disability_rights_international_2023",
-    "who_world_report_on_disability_2023",
-  ],
-  critical_alerts: [],
   entities: [
     {
-      entity_id: "AF-001",
-      name: "Afghanistan — Taliban Disability Rights Rollback",
-      composite_score: 89.1,
-      risk_level: "critique",
-      estimated_disability_rights_inclusion_index: 8.91,
+      entity_id: "DRI-001",
+      name: "Soudan du Sud (aucun cadre légal)",
+      composite_score: 87.90,
+      level: "critique",
+      estimated_disability_inclusion_index: 8.79,
     },
     {
-      entity_id: "YE-002",
-      name: "Yémen — Conflit & Handicap de Guerre",
-      composite_score: 88.4,
-      risk_level: "critique",
-      estimated_disability_rights_inclusion_index: 8.84,
+      entity_id: "DRI-002",
+      name: "Haïti (post-séisme, handicapés abandonnés)",
+      composite_score: 83.10,
+      level: "critique",
+      estimated_disability_inclusion_index: 8.31,
     },
     {
-      entity_id: "ET-003",
-      name: "Éthiopie — Déficit Structurel & Conflit Tigré",
-      composite_score: 81.6,
-      risk_level: "critique",
-      estimated_disability_rights_inclusion_index: 8.16,
+      entity_id: "DRI-003",
+      name: "Inde (Persons with Disabilities Act insuffisant)",
+      composite_score: 75.30,
+      level: "critique",
+      estimated_disability_inclusion_index: 7.53,
     },
     {
-      entity_id: "SD-004",
-      name: "Soudan — Guerre Civile & Populations Vulnérables",
-      composite_score: 85.15,
-      risk_level: "critique",
-      estimated_disability_rights_inclusion_index: 8.52,
+      entity_id: "DRI-004",
+      name: "Indonésie (barrières physiques + sociales)",
+      composite_score: 67.90,
+      level: "critique",
+      estimated_disability_inclusion_index: 6.79,
     },
     {
-      entity_id: "MM-005",
-      name: "Myanmar — Coup & Disability Policy Collapse",
-      composite_score: 56.65,
-      risk_level: "élevé",
-      estimated_disability_rights_inclusion_index: 5.67,
+      entity_id: "DRI-005",
+      name: "Mexique (application partielle)",
+      composite_score: 52.60,
+      level: "élevé",
+      estimated_disability_inclusion_index: 5.26,
     },
     {
-      entity_id: "IN-R-006",
-      name: "Inde Rurale — Lacunes RPWD & Exclusion",
-      composite_score: 53.75,
-      risk_level: "élevé",
-      estimated_disability_rights_inclusion_index: 5.38,
+      entity_id: "DRI-006",
+      name: "Brésil (LBI 2015 non appliquée)",
+      composite_score: 45.30,
+      level: "élevé",
+      estimated_disability_inclusion_index: 4.53,
     },
     {
-      entity_id: "BR-007",
-      name: "Brésil — Progrès Législatif, Exclusion Persistante",
-      composite_score: 31.6,
-      risk_level: "modéré",
-      estimated_disability_rights_inclusion_index: 3.16,
+      entity_id: "DRI-007",
+      name: "France (RQTH insuffisant)",
+      composite_score: 27.30,
+      level: "modéré",
+      estimated_disability_inclusion_index: 2.73,
     },
     {
-      entity_id: "NL-008",
-      name: "Pays-Bas — Modèle CDPH avec Lacunes Résiduelles",
-      composite_score: 12.6,
-      risk_level: "faible",
-      estimated_disability_rights_inclusion_index: 1.26,
+      entity_id: "DRI-008",
+      name: "Suède (modèle universel)",
+      composite_score: 10.05,
+      level: "faible",
+      estimated_disability_inclusion_index: 1.01,
     },
   ],
-};
+}
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    console.warn("[disability-rights-inclusion-engine] SWARM_API_URL not set — returning mock");
-    return await sealResponse(NextResponse.json({ payload: MOCK }));
+    return await sealResponse(NextResponse.json({ payload: MOCK }))
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/disability-rights-inclusion-engine`, { next: { revalidate: 30 } });
-    const data = await res.json();
-    return await sealResponse(NextResponse.json({ payload: data }));
+    const res = await fetch(`${process.env.SWARM_API_URL}/disability-rights-inclusion-engine`, { next: { revalidate: 30 } })
+    const data = await res.json()
+    return await sealResponse(NextResponse.json({ payload: data }))
   } catch {
-    return await sealResponse(NextResponse.json({ error: "upstream_error" }, { status: 502 }));
+    return await sealResponse(NextResponse.json({ error: "upstream unavailable" }, { status: 502 }))
   }
 }
