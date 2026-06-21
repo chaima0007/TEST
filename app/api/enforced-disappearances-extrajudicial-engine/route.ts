@@ -21,7 +21,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "EDE-001",
+      id: "EDE-001",
       name: "Mexique — 100 000+ Personnes Disparues, Cartels & Complicité État, Fosses Communes Massives",
       country: "Mexique",
       composite_score: 93.75,
@@ -34,7 +34,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "EDE-002",
+      id: "EDE-002",
       name: "Syrie — Régime Assad: 150 000+ Détenus Disparus, Torture Industrielle, Charnel Saydnaya",
       country: "Syrie",
       composite_score: 97.55,
@@ -47,7 +47,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "EDE-003",
+      id: "EDE-003",
       name: "Philippines — Guerre Duterte Drogue: 7 000-30 000 Morts Extrajudiciaires 2016-2022",
       country: "Philippines",
       composite_score: 89.15,
@@ -60,7 +60,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "EDE-004",
+      id: "EDE-004",
       name: "Égypte — 2 000+ Disparitions Forcées Depuis 2013, Détention Secrète, Sisi Impunité Totale",
       country: "Égypte",
       composite_score: 84.65,
@@ -73,7 +73,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "EDE-005",
+      id: "EDE-005",
       name: "Colombie Post-FARC — 85 000+ Disparus Conflit, Faux Positifs Armée, JEP Vérité Partielle",
       country: "Colombie",
       composite_score: 51.85,
@@ -86,7 +86,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "EDE-006",
+      id: "EDE-006",
       name: "Sri Lanka — 65 000-100 000 Disparus Guerre Civile, Lassana Manel Oubliées, Commission Vérité",
       country: "Sri Lanka",
       composite_score: 51.95,
@@ -99,7 +99,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "EDE-007",
+      id: "EDE-007",
       name: "Argentine — Modèle CONADEP: 30 000 Disparus Junte 1976-1983, Procès Emblématiques",
       country: "Argentine",
       composite_score: 26.4,
@@ -112,7 +112,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "EDE-008",
+      id: "EDE-008",
       name: "Espagne — 114 000 Disparus Franquisme, Loi Mémoire Démocratique 2022, Amnistie 1977 Obstacle",
       country: "Espagne",
       composite_score: 14.45,

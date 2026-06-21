@@ -21,7 +21,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "HFE-001",
+      id: "HFE-001",
       name: "Inde — 100M+ Sans Logement Adéquat, Démolitions Bidonvilles Massives, Dalit Ciblés",
       country: "Inde",
       composite_score: 90.75,
@@ -34,7 +34,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HFE-002",
+      id: "HFE-002",
       name: "Kenya/Nairobi — Kibera 250 000 Expulsés Décennie, Récupération Terrain État sans Indemnité",
       country: "Kenya",
       composite_score: 85.75,
@@ -47,7 +47,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HFE-003",
+      id: "HFE-003",
       name: "Philippines/Manille — 100 000 Expulsions/An Urban Poor, Duterte Reclaiming Land Programme",
       country: "Philippines",
       composite_score: 81.45,
@@ -60,7 +60,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HFE-004",
+      id: "HFE-004",
       name: "Brésil/Favelas — 170 000 Expulsés JO Rio 2016, Spéculation Immobilière Porto Maravilha",
       country: "Brésil",
       composite_score: 76.95,
@@ -73,7 +73,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HFE-005",
+      id: "HFE-005",
       name: "USA — 600 000 Sans-Abri/Nuit, Anti-Camping Laws, Gentrification Côtes & Criminalisation SDF",
       country: "USA",
       composite_score: 54.45,
@@ -86,7 +86,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HFE-006",
+      id: "HFE-006",
       name: "France — 300 000 Sans Domicile, DAL Contesté, Expulsions Hivernales Trêve Contournée",
       country: "France",
       composite_score: 46.35,
@@ -99,7 +99,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HFE-007",
+      id: "HFE-007",
       name: "Pays-Bas — Réforme Logement Social: 170 000 Logements Vendus Secteur Privé, Liste Attente 15 Ans",
       country: "Pays-Bas",
       composite_score: 28.9,
@@ -112,7 +112,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HFE-008",
+      id: "HFE-008",
       name: "Finlande — Modèle Housing First: Sans-Abrisme Réduit 85%, Y-Foundation Référence Mondiale",
       country: "Finlande",
       composite_score: 5.85,
