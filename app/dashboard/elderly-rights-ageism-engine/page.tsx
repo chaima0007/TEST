@@ -18,19 +18,19 @@ function GaugeRing({ score, color }: { score: number; color: string }) {
   )
 }
 
-interface Entity { entity_id: string; name: string; composite_score: number; risk_level: string; estimated_minority_language_index?: number; [key: string]: unknown }
+interface Entity { entity_id: string; name: string; composite_score: number; risk_level: string; estimated_elderly_rights_index?: number; [key: string]: unknown }
 interface DashData { domain?: string; avg_composite?: number; risk_distribution?: Record<string, number>; entities?: Entity[]; [key: string]: unknown }
 
-export default function MinorityLanguageRightsDashboard() {
+export default function ElderlyRightsAgeismDashboard() {
   const [data, setData] = useState<DashData>({})
   const [filter, setFilter] = useState("tous")
   const [selected, setSelected] = useState<Entity | null>(null)
   const [tab, setTab] = useState(0)
   const [loading, setLoading] = useState(true)
-  const ACCENT = "#34d399"
+  const ACCENT = "#818cf8"
 
   useEffect(() => {
-    fetch("/api/minority-language-rights-engine")
+    fetch("/api/elderly-rights-ageism-engine")
       .then(r => r.json())
       .then(d => { setData(d.payload ?? d); setLoading(false) })
       .catch(() => setLoading(false))
@@ -42,8 +42,8 @@ export default function MinorityLanguageRightsDashboard() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold" style={{ color: ACCENT }}>Droits Minorités Linguistiques</h1>
-        <p className="text-slate-400 mt-1">Minority Language Rights Engine — Analyse des risques de suppression des langues minoritaires et autochtones</p>
+        <h1 className="text-3xl font-bold" style={{ color: ACCENT }}>Droits Personnes Âgées &amp; Âgisme</h1>
+        <p className="text-slate-400 mt-1">Elderly Rights Ageism Engine — Analyse des violations des droits des personnes âgées et discriminations liées à l&apos;âge</p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
         <div className="bg-slate-900 rounded-xl p-4 border border-slate-800">
@@ -98,7 +98,7 @@ export default function MinorityLanguageRightsDashboard() {
                 <div className="flex items-center gap-2 mt-2">
                   <span className={`text-xs font-bold uppercase ${RC[e.risk_level]}`}>{e.risk_level}</span>
                   <span className="text-slate-600">·</span>
-                  <span className="text-xs text-slate-400">index: {e.estimated_minority_language_index?.toFixed(2)}/10</span>
+                  <span className="text-xs text-slate-400">index: {e.estimated_elderly_rights_index?.toFixed(2)}/10</span>
                 </div>
               </div>
             </div>
@@ -133,13 +133,13 @@ export default function MinorityLanguageRightsDashboard() {
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm"><span className="text-slate-400">Score composite</span><span className="font-bold">{selected.composite_score}/100</span></div>
                   <div className="flex justify-between text-sm"><span className="text-slate-400">Niveau de risque</span><span className={`font-bold uppercase ${RC[selected.risk_level]}`}>{selected.risk_level}</span></div>
-                  <div className="flex justify-between text-sm"><span className="text-slate-400">Indice langues minoritaires</span><span className="font-bold">{selected.estimated_minority_language_index?.toFixed(2)}/10</span></div>
+                  <div className="flex justify-between text-sm"><span className="text-slate-400">Indice droits seniors</span><span className="font-bold">{selected.estimated_elderly_rights_index?.toFixed(2)}/10</span></div>
                 </div>
               )}
               {tab === 1 && (
                 <div className="space-y-3">
                   <div className="flex justify-between text-sm"><span className="text-slate-400">Score composite</span><span className="font-bold">{selected.composite_score}</span></div>
-                  <div className="flex justify-between text-sm"><span className="text-slate-400">Index estimé</span><span className="font-bold">{selected.estimated_minority_language_index?.toFixed(2)}</span></div>
+                  <div className="flex justify-between text-sm"><span className="text-slate-400">Index estimé</span><span className="font-bold">{selected.estimated_elderly_rights_index?.toFixed(2)}</span></div>
                 </div>
               )}
               {tab === 2 && (
