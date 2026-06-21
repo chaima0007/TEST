@@ -8825,6 +8825,27 @@ function IconForcedRecruitmentConscriptionRights({ className }: { className?: st
     </svg>
   );
 }
+function IconTransitionalJusticeTruthCommission({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97z" />
+    </svg>
+  );
+}
+function IconReparationsGenocideVictims({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+    </svg>
+  );
+}
+function IconRomaTravellerRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -9733,6 +9754,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/witch-hunt-accusation-persecution-engine", label: "Chasses aux Sorcières", icon: IconWitchHuntAccusationPersecution },
       { href: "/dashboard/antipersonnel-mines-victim-rights-engine", label: "Victimes Mines", icon: IconAntipersonnelMinesVictimRights },
       { href: "/dashboard/death-penalty-abolition-rights-engine", label: "Peine de Mort", icon: IconDeathPenaltyAbolitionRights },
+      { href: "/dashboard/transitional-justice-truth-commission-engine", label: "Justice Transitionnelle", icon: IconTransitionalJusticeTruthCommission },
+      { href: "/dashboard/reparations-genocide-victims-engine", label: "Réparations Génocide", icon: IconReparationsGenocideVictims },
+      { href: "/dashboard/roma-traveller-rights-engine", label: "Droits Roms & Gens du Voyage", icon: IconRomaTravellerRights },
       { href: "/dashboard/street-children-rights-engine", label: "Enfants des Rues", icon: IconStreetChildrenRights },
       { href: "/dashboard/bonded-labor-debt-slavery-rights-engine", label: "Servitude par Dette", icon: IconBondedLaborDebtSlaveryRights },
       { href: "/dashboard/forced-recruitment-conscription-rights-engine", label: "Recrutement Forcé", icon: IconForcedRecruitmentConscriptionRights },
