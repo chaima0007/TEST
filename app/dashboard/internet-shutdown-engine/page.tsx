@@ -1,244 +1,225 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-const ACCENT = "#0ea5e9";
-
-const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
-const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
-
-function GaugeRing({ value, max = 100 }: { value: number; max?: number }) {
-  const r = 36, circ = 2 * Math.PI * r;
-  const pct = Math.min(value / max, 1);
-  return (
-    <svg width="88" height="88" viewBox="0 0 88 88">
-      <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
-      <circle cx="44" cy="44" r={r} fill="none" stroke={ACCENT} strokeWidth="8"
-        strokeDasharray={`${pct * circ} ${circ}`} strokeLinecap="round"
-        transform="rotate(-90 44 44)" />
-      <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">
-        {value.toFixed(1)}
-      </text>
-    </svg>
-  );
-}
+const RC: Record<string,string> = { critique:"text-red-400","élevé":"text-orange-400",modéré:"text-yellow-400",faible:"text-emerald-400" };
+const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","élevé":"border-orange-500/30 bg-orange-500/10",modéré:"border-yellow-500/30 bg-yellow-500/10",faible:"border-emerald-500/30 bg-emerald-500/10" };
 
 interface Entity {
   entity_id: string;
   name: string;
   country: string;
-  sector: string;
   composite_score: number;
-  shutdown_frequency_severity_score: number;
-  platform_censorship_scale_score: number;
-  network_surveillance_score: number;
-  digital_repression_impunity_score: number;
-  estimated_internet_shutdown_index: number;
+  shutdown_duration_frequency_score: number;
+  economic_civil_harm_score: number;
+  political_protest_targeting_score: number;
+  legal_accountability_gap_score: number;
   risk_level: string;
   primary_pattern: string;
-  key_signals: string[];
-  last_updated: string;
-  [key: string]: unknown;
+  estimated_internet_shutdown_index: number;
 }
 
-interface DashData {
+interface ApiData {
   total_entities: number;
   avg_composite: number;
-  risk_distribution: Record<string, number>;
-  pattern_distribution: Record<string, number>;
-  top_risk_entities: string[];
-  critical_alerts: string[];
-  last_analysis: string;
   confidence_score: number;
-  data_sources: string[];
+  risk_distribution: Record<string, number>;
+  top_risk_entities: Entity[];
+  avg_estimated_internet_shutdown_index: number;
   entities: Entity[];
-  [key: string]: unknown;
 }
 
-const PATTERN_LABELS: Record<string, string> = {
-  blackout_total_repression: "Blackout Total",
-  censure_plateforme_systematique: "Censure Systématique",
-  surveillance_reseau_massive: "Surveillance Massive",
-  throttling_elections_coups: "Throttling Électoral",
-  liberte_numerique_exemplaire: "Liberté Numérique",
-};
+function GaugeRing({ value, max = 100, color }: { value: number; max?: number; color: string }) {
+  const r = 36;
+  const cx = 44;
+  const cy = 44;
+  const circumference = 226.19;
+  const pct = Math.min(Math.max(value / max, 0), 1);
+  const dash = pct * circumference;
+  return (
+    <svg viewBox="0 0 88 88" className="w-16 h-16">
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
+      <circle
+        cx={cx} cy={cy} r={r} fill="none"
+        stroke="currentColor" strokeWidth="8"
+        strokeDasharray={`${dash} ${circumference}`}
+        strokeLinecap="round"
+        transform="rotate(-90 44 44)"
+        className={color}
+      />
+      <text x={cx} y={cy + 5} textAnchor="middle" className="fill-white text-xs font-bold" fontSize="12">
+        {Math.round(value)}
+      </text>
+    </svg>
+  );
+}
 
-export default function Page() {
-  const [data, setData] = useState<DashData | null>(null);
-  const [filter, setFilter] = useState("tous");
+function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
+  const [tab, setTab] = useState<"apercu"|"signaux"|"contexte">("apercu");
+  return (
+    <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-slate-900 border border-violet-500/30 rounded-xl w-full max-w-2xl p-6" onClick={e => e.stopPropagation()}>
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h2 className="text-xl font-bold text-white">{entity.name}</h2>
+            <p className="text-slate-400 text-sm">{entity.country} · {entity.entity_id}</p>
+          </div>
+          <button onClick={onClose} className="text-slate-400 hover:text-white text-2xl leading-none">&times;</button>
+        </div>
+        <div className={`inline-flex items-center px-3 py-1 rounded-full border text-xs font-semibold mb-4 ${RB[entity.risk_level] ?? ""} ${RC[entity.risk_level] ?? ""}`}>
+          {entity.risk_level}
+        </div>
+        <div className="flex gap-2 mb-6">
+          {(["apercu","signaux","contexte"] as const).map(t => (
+            <button key={t} onClick={() => setTab(t)}
+              className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${tab === t ? "bg-violet-500/20 text-violet-400 border border-violet-500/40" : "text-slate-400 hover:text-white"}`}>
+              {t === "apercu" ? "Aperçu" : t === "signaux" ? "Signaux" : "Contexte"}
+            </button>
+          ))}
+        </div>
+        {tab === "apercu" && (
+          <div className="space-y-3">
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Score composite</span><span className="text-white font-semibold">{entity.composite_score?.toFixed(2)}</span></div>
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Indice coupures internet</span><span className="text-violet-400 font-semibold">{entity.estimated_internet_shutdown_index?.toFixed(2)}</span></div>
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Modèle principal</span><span className="text-white">{entity.primary_pattern}</span></div>
+          </div>
+        )}
+        {tab === "signaux" && (
+          <div className="space-y-3">
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Durée / fréquence coupures</span><span className="text-white">{entity.shutdown_duration_frequency_score?.toFixed(2)}</span></div>
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Préjudice économique et civil</span><span className="text-white">{entity.economic_civil_harm_score?.toFixed(2)}</span></div>
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Ciblage politique / protestations</span><span className="text-white">{entity.political_protest_targeting_score?.toFixed(2)}</span></div>
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Déficit légal / responsabilité</span><span className="text-white">{entity.legal_accountability_gap_score?.toFixed(2)}</span></div>
+          </div>
+        )}
+        {tab === "contexte" && (
+          <div className="space-y-3">
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Pays</span><span className="text-white">{entity.country}</span></div>
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Niveau de risque</span><span className={RC[entity.risk_level] ?? "text-white"}>{entity.risk_level}</span></div>
+            <div className="flex justify-between text-sm"><span className="text-slate-400">Modèle principal</span><span className="text-white">{entity.primary_pattern}</span></div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function InternetShutdownEngine() {
+  const [data, setData] = useState<ApiData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState<string>("tous");
   const [selected, setSelected] = useState<Entity | null>(null);
-  const [tab, setTab] = useState(0);
 
   useEffect(() => {
     fetch("/api/internet-shutdown-engine")
       .then(r => r.json())
-      .then(j => setData(j.payload ?? j));
+      .then(d => { setData(d); setLoading(false); })
+      .catch(() => setLoading(false));
   }, []);
 
-  if (!data) return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-      <div className="text-slate-400 animate-pulse">Chargement…</div>
-    </div>
-  );
-
-  const filters = ["tous", "critique", "élevé", "modéré", "faible"];
-  const entities = data.entities.filter(e => filter === "tous" || e.risk_level === filter);
+  const entities: Entity[] = data?.entities ?? [];
+  const filtered = filter === "tous" ? entities : entities.filter(e => e.risk_level === filter);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-3 h-3 rounded-full" style={{ background: ACCENT }} />
-          <h1 className="text-2xl font-bold tracking-tight">Internet Shutdown Engine</h1>
+    <div className="min-h-screen bg-slate-950 text-white p-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-violet-400">Internet Shutdown Engine</h1>
+          <p className="text-slate-400 mt-1">Analyse des coupures internet et indicateurs de répression numérique</p>
         </div>
-        <p className="text-slate-400 text-sm ml-6">Surveillance des coupures internet, censure et répression numérique</p>
-      </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-        {[
-          { label: "Total Acteurs", value: data.total_entities },
-          { label: "Risque Moyen", value: data.avg_composite?.toFixed(1) },
-          { label: "Critiques", value: data.risk_distribution?.critique },
-          { label: "Confidence", value: `${(data.confidence_score * 100).toFixed(0)}%` },
-          { label: "Alertes", value: data.critical_alerts?.length },
-          { label: "Dernière Analyse", value: data.last_analysis },
-        ].map(k => (
-          <div key={k.label} className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-            <div className="text-xs text-slate-500 mb-1">{k.label}</div>
-            <div className="text-xl font-bold" style={{ color: ACCENT }}>{k.value}</div>
+        {loading && (
+          <div className="flex items-center justify-center h-64">
+            <div className="text-violet-400 text-lg">Chargement...</div>
           </div>
-        ))}
-      </div>
+        )}
 
-      {/* Pattern distribution */}
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 mb-6">
-        <h2 className="text-sm font-semibold text-slate-400 mb-3">Distribution des patterns</h2>
-        <div className="flex flex-wrap gap-2">
-          {Object.entries(data.pattern_distribution ?? {}).map(([k, v]) => (
-            <span key={k} className="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-300">
-              {PATTERN_LABELS[k] ?? k}: <span style={{ color: ACCENT }}>{v}</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Filter pills */}
-      <div className="flex gap-2 mb-6 flex-wrap">
-        {filters.map(f => (
-          <button key={f} onClick={() => setFilter(f)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${filter === f ? "text-slate-950 font-bold" : "bg-slate-800 text-slate-400 hover:bg-slate-700"}`}
-            style={filter === f ? { background: ACCENT } : {}}>
-            {f.charAt(0).toUpperCase() + f.slice(1)}
-          </button>
-        ))}
-      </div>
-
-      {/* Entity grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
-        {entities.map(e => (
-          <div key={e.entity_id} onClick={() => { setSelected(e); setTab(0); }}
-            className={`border rounded-xl p-4 cursor-pointer hover:scale-[1.01] transition-transform ${RB[e.risk_level] ?? "border-slate-700 bg-slate-900"}`}>
-            <div className="flex justify-between items-start mb-3">
-              <div className="flex-1 min-w-0">
-                <div className="text-xs text-slate-500 mb-1">{e.entity_id}</div>
-                <div className="font-semibold text-sm leading-tight truncate">{e.name}</div>
-                <div className="text-xs text-slate-400 mt-1">{e.country}</div>
+        {!loading && data && (
+          <>
+            {/* KPI Cards 3x2 */}
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="bg-slate-900 border border-violet-500/30 rounded-xl p-5">
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">Total entités</p>
+                <div className="flex items-center gap-3">
+                  <GaugeRing value={Math.min(data.total_entities, 100)} max={100} color="text-violet-400" />
+                  <p className="text-3xl font-bold text-white">{data.total_entities}</p>
+                </div>
               </div>
-              <GaugeRing value={e.composite_score} />
-            </div>
-            <div className={`text-xs font-bold uppercase ${RC[e.risk_level]}`}>{e.risk_level}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Critical alerts */}
-      {data.critical_alerts?.length > 0 && (
-        <div className="bg-red-950/30 border border-red-500/20 rounded-xl p-4 mb-6">
-          <h2 className="text-sm font-semibold text-red-400 mb-3">Alertes Critiques</h2>
-          <ul className="space-y-1">
-            {data.critical_alerts.map((a, i) => (
-              <li key={i} className="text-xs text-slate-300 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
-                {a}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Detail Modal */}
-      {selected && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={() => setSelected(null)}>
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-            <div className="p-6 border-b border-slate-800 flex justify-between items-start">
-              <div>
-                <div className="text-xs text-slate-500 mb-1">{selected.entity_id}</div>
-                <h3 className="font-bold text-lg">{selected.name}</h3>
-                <div className={`text-xs font-bold uppercase mt-1 ${RC[selected.risk_level]}`}>{selected.risk_level}</div>
+              <div className="bg-slate-900 border border-violet-500/30 rounded-xl p-5">
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">Score composite moyen</p>
+                <div className="flex items-center gap-3">
+                  <GaugeRing value={data.avg_composite} max={100} color="text-violet-400" />
+                  <p className="text-3xl font-bold text-white">{data.avg_composite?.toFixed(1)}</p>
+                </div>
               </div>
-              <button onClick={() => setSelected(null)} className="text-slate-500 hover:text-white text-xl leading-none">×</button>
+              <div className="bg-slate-900 border border-violet-500/30 rounded-xl p-5">
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">Score de confiance</p>
+                <div className="flex items-center gap-3">
+                  <GaugeRing value={data.confidence_score} max={100} color="text-violet-400" />
+                  <p className="text-3xl font-bold text-white">{data.confidence_score?.toFixed(1)}</p>
+                </div>
+              </div>
+              <div className="bg-slate-900 border border-red-500/30 rounded-xl p-5">
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">Risque critique</p>
+                <div className="flex items-center gap-3">
+                  <GaugeRing value={data.risk_distribution?.critique ?? 0} max={Math.max(data.total_entities, 1)} color="text-red-400" />
+                  <p className="text-3xl font-bold text-red-400">{data.risk_distribution?.critique ?? 0}</p>
+                </div>
+              </div>
+              <div className="bg-slate-900 border border-violet-500/30 rounded-xl p-5">
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">Entité à risque max</p>
+                <p className="text-lg font-bold text-violet-400 truncate">{data.top_risk_entities?.[0]?.name ?? "—"}</p>
+                <p className="text-slate-400 text-xs truncate">{data.top_risk_entities?.[0]?.country ?? ""}</p>
+              </div>
+              <div className="bg-slate-900 border border-violet-500/30 rounded-xl p-5">
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-2">Indice coupures moy.</p>
+                <div className="flex items-center gap-3">
+                  <GaugeRing value={data.avg_estimated_internet_shutdown_index} max={100} color="text-violet-400" />
+                  <p className="text-3xl font-bold text-white">{data.avg_estimated_internet_shutdown_index?.toFixed(1)}</p>
+                </div>
+              </div>
             </div>
-            <div className="flex border-b border-slate-800">
-              {["Aperçu", "Signaux", "Contexte"].map((t, i) => (
-                <button key={t} onClick={() => setTab(i)}
-                  className={`px-6 py-3 text-sm font-medium transition-colors ${tab === i ? "border-b-2 text-white" : "text-slate-500 hover:text-slate-300"}`}
-                  style={tab === i ? { borderColor: ACCENT, color: ACCENT } : {}}>
-                  {t}
+
+            {/* Filter pills */}
+            <div className="flex gap-2 mb-6 flex-wrap">
+              {["tous","critique","élevé","modéré","faible"].map(f => (
+                <button key={f} onClick={() => setFilter(f)}
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${filter === f ? "bg-violet-500/20 border-violet-500/50 text-violet-400" : "border-slate-700 text-slate-400 hover:text-white hover:border-slate-500"}`}>
+                  {f}
                 </button>
               ))}
             </div>
-            <div className="p-6">
-              {tab === 0 && (
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <GaugeRing value={selected.composite_score} />
+
+            {/* Entity grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filtered.map(entity => (
+                <div key={entity.entity_id}
+                  className={`bg-slate-900 border rounded-xl p-5 cursor-pointer hover:border-violet-500/50 transition-colors ${RB[entity.risk_level] ?? "border-slate-700"}`}
+                  onClick={() => setSelected(entity)}>
+                  <div className="flex items-start justify-between mb-3">
                     <div>
-                      <div className="text-2xl font-bold">{selected.composite_score.toFixed(1)}</div>
-                      <div className="text-xs text-slate-400">Score composite</div>
-                      <div className="text-xs text-slate-500 mt-1">Pattern: {PATTERN_LABELS[selected.primary_pattern] ?? selected.primary_pattern}</div>
+                      <p className="font-semibold text-white truncate">{entity.name}</p>
+                      <p className="text-slate-400 text-xs">{entity.country}</p>
+                    </div>
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full border ${RB[entity.risk_level] ?? ""} ${RC[entity.risk_level] ?? ""}`}>
+                      {entity.risk_level}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <GaugeRing value={entity.composite_score ?? 0} max={100} color="text-violet-400" />
+                    <div>
+                      <p className="text-xs text-slate-400">Score composite</p>
+                      <p className="text-lg font-bold text-white">{entity.composite_score?.toFixed(1)}</p>
+                      <p className="text-xs text-slate-500 truncate">{entity.primary_pattern}</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3 mt-4">
-                    {[
-                      { label: "Fréq. Coupures", value: selected.shutdown_frequency_severity_score },
-                      { label: "Censure Plateformes", value: selected.platform_censorship_scale_score },
-                      { label: "Surveillance Réseau", value: selected.network_surveillance_score },
-                      { label: "Impunité Digitale", value: selected.digital_repression_impunity_score },
-                    ].map(s => (
-                      <div key={s.label} className="bg-slate-800 rounded-lg p-3">
-                        <div className="text-xs text-slate-500 mb-1">{s.label}</div>
-                        <div className="text-lg font-bold" style={{ color: ACCENT }}>{typeof s.value === "number" ? s.value.toFixed(1) : "—"}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bg-slate-800 rounded-lg p-3">
-                    <div className="text-xs text-slate-500 mb-1">Index Internet Shutdown</div>
-                    <div className="text-lg font-bold" style={{ color: ACCENT }}>{typeof selected.estimated_internet_shutdown_index === "number" ? selected.estimated_internet_shutdown_index.toFixed(1) : "—"}</div>
-                  </div>
                 </div>
-              )}
-              {tab === 1 && (
-                <ul className="space-y-3">
-                  {selected.key_signals?.map((s, i) => (
-                    <li key={i} className="flex gap-2 text-sm text-slate-300">
-                      <span style={{ color: ACCENT }} className="shrink-0 mt-0.5">▸</span>
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {tab === 2 && (
-                <div className="space-y-3 text-sm text-slate-300">
-                  <div><span className="text-slate-500">Pays: </span>{selected.country}</div>
-                  <div><span className="text-slate-500">Secteur: </span>{selected.sector}</div>
-                  <div><span className="text-slate-500">Dernière MAJ: </span>{selected.last_updated}</div>
-                </div>
-              )}
+              ))}
             </div>
-          </div>
-        </div>
-      )}
+          </>
+        )}
+      </div>
+
+      {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }
