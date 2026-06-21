@@ -7938,6 +7938,30 @@ function IconIndigenousLandRightsExtraction({ className }: { className?: string 
   );
 }
 
+function IconReproductiveRightsBodlyAutonomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" />
+    </svg>
+  );
+}
+
+function IconOnlineCensorshipPlatformGovernance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" /><line x1="4.93" y1="4.93" x2="19.07" y2="19.07" /><path d="M9.17 9.17A4 4 0 0 0 8 12c0 2.21 1.79 4 4 4 1.06 0 2.02-.41 2.73-1.09" />
+    </svg>
+  );
+}
+
+function IconForcedDisappearancesExtrajudicial({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><line x1="20" y1="8" x2="22" y2="8" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8745,6 +8769,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/corporate-accountability-human-rights-engine", label: "Responsabilité Entreprises", icon: IconCorporateAccountabilityHumanRights },
       { href: "/dashboard/counter-terrorism-rights-violations-engine", label: "Antiterrorisme & Droits", icon: IconCounterTerrorismRightsViolations },
       { href: "/dashboard/indigenous-land-rights-extraction-engine", label: "Terres Autochtones & Extraction", icon: IconIndigenousLandRightsExtraction },
+      { href: "/dashboard/reproductive-rights-bodily-autonomy-engine", label: "Droits Reproductifs & Autonomie", icon: IconReproductiveRightsBodlyAutonomy },
+      { href: "/dashboard/online-censorship-platform-governance-engine", label: "Censure En Ligne & Plateformes", icon: IconOnlineCensorshipPlatformGovernance },
+      { href: "/dashboard/forced-disappearances-extrajudicial-engine", label: "Disparitions Forcées & Extrajudiciaires", icon: IconForcedDisappearancesExtrajudicial },
     ],
   },
   {
