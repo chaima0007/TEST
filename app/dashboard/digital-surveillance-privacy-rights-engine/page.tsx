@@ -79,14 +79,14 @@ function DetailModal({ entity, accent, onClose }: { entity: Entity; accent: stri
   );
 }
 
-export default function FoodSovereigntyFamineRightsPage() {
+export default function DigitalSurveillancePrivacyRightsPage() {
   const [data, setData] = useState<EngineData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
-  const ACCENT = "#713f12";
+  const ACCENT = "#1e3a5f";
   const RC: Record<string, string> = { critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e" };
 
   useEffect(() => {
-    fetch("/api/food-sovereignty-famine-rights-engine").then(r => r.json()).then(d => setData(d.payload ?? d));
+    fetch("/api/digital-surveillance-privacy-rights-engine").then(r => r.json()).then(d => setData(d.payload ?? d));
   }, []);
 
   if (!data) return (
@@ -95,7 +95,7 @@ export default function FoodSovereigntyFamineRightsPage() {
     </div>
   );
 
-  const indexValue = (data["avg_estimated_food_sovereignty_famine_rights_index"] as number) ?? 0;
+  const indexValue = (data["avg_estimated_digital_surveillance_privacy_rights_index"] as number) ?? 0;
 
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6">
