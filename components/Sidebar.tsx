@@ -10512,6 +10512,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/biometric-border-surveillance-migration-engine", label: "Surveillance Frontières", icon: <IconBiometricSurveillance className="w-4 h-4" /> },
       { href: "/dashboard/agribusiness-land-grab-community-rights-engine", label: "Accaparement Terres", icon: <IconLandGrabbingRights className="w-4 h-4" /> },
       { href: "/dashboard/icc-universal-jurisdiction-impunity-engine", label: "CPI & Impunité", icon: <IconIccUniversalJurisdictionImpunity className="w-4 h-4" /> },
+      { href: "/dashboard/stateless-persons-nationality-rights-engine", label: "Apatridie & Nationalité", icon: <IconStatelessPersonsNationalityRights className="w-4 h-4" /> },
+      { href: "/dashboard/whistleblower-protection-corporate-accountability-engine", label: "Lanceurs d'Alerte", icon: <IconWhistleblowerProtection className="w-4 h-4" /> },
+      { href: "/dashboard/housing-forced-evictions-gentrification-engine", label: "Expulsions & Logement", icon: <IconHousingRightsForcedEvictions className="w-4 h-4" /> },
     ],
   },
   {
