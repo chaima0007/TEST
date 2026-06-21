@@ -8170,6 +8170,36 @@ function IconAntiCorruptionAccountabilityRights({ className }: { className?: str
   );
 }
 
+function IconInternetShutdownDigitalRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3l18 18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.584 10.587a2 2 0 002.828 2.829" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.363 5.365A9.466 9.466 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 17.593A9.467 9.467 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.98 9.98 0 013.093-4.655" />
+    </svg>
+  );
+}
+
+function IconStatelessnessCitizenshipRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l.75.75M13.5 9.75l-.75.75" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75h.008v.008H9v-.008zm6 0h.008v.008H15v-.008z" />
+    </svg>
+  );
+}
+
+function IconHumanTraffickingModernSlavery({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 7.5h17.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125H3.375A1.125 1.125 0 012.25 19.875V8.625c0-.621.504-1.125 1.125-1.125z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9007,6 +9037,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/forced-marriage-child-marriage-rights-engine", label: "Mariage Forcé & Mariage Enfants", icon: IconForcedMarriageChildMarriageRights },
       { href: "/dashboard/nuclear-weapons-disarmament-rights-engine", label: "Armes Nucléaires & Désarmement", icon: IconNuclearWeaponsDisarmamentRights },
       { href: "/dashboard/anti-corruption-accountability-rights-engine", label: "Anti-Corruption & Redevabilité", icon: IconAntiCorruptionAccountabilityRights },
+      { href: "/dashboard/internet-shutdown-digital-rights-engine", label: "Coupures Internet & Droits Numériques", icon: IconInternetShutdownDigitalRights },
+      { href: "/dashboard/statelessness-citizenship-rights-engine", label: "Apatridie & Droits à la Nationalité", icon: IconStatelessnessCitizenshipRights },
+      { href: "/dashboard/human-trafficking-modern-slavery-engine", label: "Trafic Humain & Esclavage Moderne", icon: IconHumanTraffickingModernSlavery },
     ],
   },
   {
