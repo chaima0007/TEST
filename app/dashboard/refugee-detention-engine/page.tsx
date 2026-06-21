@@ -19,13 +19,13 @@ interface Entity {
   name: string;
   country: string;
   composite_score: number;
-  scholar_arrest_persecution_score: number;
-  curriculum_state_interference_score: number;
-  campus_surveillance_control_score: number;
-  international_collaboration_restriction_score: number;
+  arbitrary_detention_scale_score: number;
+  inhumane_conditions_score: number;
+  legal_access_denial_score: number;
+  pushback_refoulement_score: number;
   risk_level: string;
   primary_pattern: string;
-  estimated_academic_freedom_index: number;
+  estimated_refugee_detention_index: number;
 }
 
 interface ApiData {
@@ -34,7 +34,7 @@ interface ApiData {
   confidence_score: number;
   risk_distribution: Record<string, number>;
   top_risk_entities: string[];
-  avg_estimated_academic_freedom_index: number;
+  avg_estimated_refugee_detention_index: number;
   entities: Entity[];
 }
 
@@ -83,7 +83,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
             <button
               key={t}
               onClick={() => setTab(t)}
-              className={`flex-1 py-2 text-sm font-medium capitalize transition-colors ${tab === t ? "text-indigo-400 border-b-2 border-indigo-400" : "text-slate-400 hover:text-white"}`}
+              className={`flex-1 py-2 text-sm font-medium capitalize transition-colors ${tab === t ? "text-orange-400 border-b-2 border-orange-400" : "text-slate-400 hover:text-white"}`}
             >
               {t === "apercu" ? "Aperçu" : t.charAt(0).toUpperCase() + t.slice(1)}
             </button>
@@ -105,28 +105,28 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
                 <span className="text-white text-sm text-right max-w-xs">{entity.primary_pattern}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400 text-sm">Indice liberté académique</span>
-                <span className="text-indigo-400 font-semibold">{entity.estimated_academic_freedom_index.toFixed(2)}</span>
+                <span className="text-slate-400 text-sm">Indice détention réfugiés</span>
+                <span className="text-orange-400 font-semibold">{entity.estimated_refugee_detention_index.toFixed(2)}</span>
               </div>
             </div>
           )}
           {tab === "signaux" && (
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-slate-400 text-sm">Arrestation / persécution scholars</span>
-                <span className="text-white font-semibold">{entity.scholar_arrest_persecution_score.toFixed(2)}</span>
+                <span className="text-slate-400 text-sm">Détention arbitraire (échelle)</span>
+                <span className="text-white font-semibold">{entity.arbitrary_detention_scale_score.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400 text-sm">Interférence État curriculum</span>
-                <span className="text-white font-semibold">{entity.curriculum_state_interference_score.toFixed(2)}</span>
+                <span className="text-slate-400 text-sm">Conditions inhumaines</span>
+                <span className="text-white font-semibold">{entity.inhumane_conditions_score.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400 text-sm">Surveillance campus</span>
-                <span className="text-white font-semibold">{entity.campus_surveillance_control_score.toFixed(2)}</span>
+                <span className="text-slate-400 text-sm">Déni d&apos;accès légal</span>
+                <span className="text-white font-semibold">{entity.legal_access_denial_score.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400 text-sm">Restrictions collaboration int&apos;l</span>
-                <span className="text-white font-semibold">{entity.international_collaboration_restriction_score.toFixed(2)}</span>
+                <span className="text-slate-400 text-sm">Refoulement / pushback</span>
+                <span className="text-white font-semibold">{entity.pushback_refoulement_score.toFixed(2)}</span>
               </div>
             </div>
           )}
@@ -141,8 +141,8 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
                 <span className="text-white text-sm">{entity.country}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400 text-sm">Indice liberté académique estimé</span>
-                <span className="text-indigo-400 font-semibold">{entity.estimated_academic_freedom_index.toFixed(2)}</span>
+                <span className="text-slate-400 text-sm">Indice détention réfugiés estimé</span>
+                <span className="text-orange-400 font-semibold">{entity.estimated_refugee_detention_index.toFixed(2)}</span>
               </div>
             </div>
           )}
@@ -152,14 +152,14 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function AcademicFreedomEnginePage() {
+export default function RefugeeDetentionEnginePage() {
   const [data, setData] = useState<ApiData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<string>("tous");
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/academic-freedom-engine")
+    fetch("/api/refugee-detention-engine")
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
@@ -173,8 +173,8 @@ export default function AcademicFreedomEnginePage() {
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center gap-3">
-          <div className="w-2 h-8 bg-indigo-500 rounded-full" />
-          <h1 className="text-2xl font-bold text-white">Academic Freedom Engine</h1>
+          <div className="w-2 h-8 bg-orange-500 rounded-full" />
+          <h1 className="text-2xl font-bold text-white">Refugee Detention Engine</h1>
           <span className="ml-auto text-slate-500 text-sm">Wave 57</span>
         </div>
 
@@ -192,13 +192,13 @@ export default function AcademicFreedomEnginePage() {
               </div>
               <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
                 <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Score composite moyen</p>
-                <p className="text-3xl font-bold text-indigo-400">{data.avg_composite.toFixed(2)}</p>
+                <p className="text-3xl font-bold text-orange-400">{data.avg_composite.toFixed(2)}</p>
               </div>
               <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
                 <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Score de confiance</p>
                 <div className="flex items-center gap-3 mt-1">
-                  <GaugeRing value={data.confidence_score * 100} color="#818cf8" />
-                  <span className="text-2xl font-bold text-indigo-400">{(data.confidence_score * 100).toFixed(0)}%</span>
+                  <GaugeRing value={data.confidence_score * 100} color="#fb923c" />
+                  <span className="text-2xl font-bold text-orange-400">{(data.confidence_score * 100).toFixed(0)}%</span>
                 </div>
               </div>
               <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
@@ -210,8 +210,8 @@ export default function AcademicFreedomEnginePage() {
                 <p className="text-lg font-semibold text-white truncate">{data.top_risk_entities?.[0] ?? "—"}</p>
               </div>
               <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
-                <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Indice liberté académique moy.</p>
-                <p className="text-3xl font-bold text-indigo-400">{data.avg_estimated_academic_freedom_index.toFixed(2)}</p>
+                <p className="text-slate-400 text-xs uppercase tracking-wider mb-1">Indice détention réfugiés moy.</p>
+                <p className="text-3xl font-bold text-orange-400">{data.avg_estimated_refugee_detention_index.toFixed(2)}</p>
               </div>
             </div>
 
@@ -223,7 +223,7 @@ export default function AcademicFreedomEnginePage() {
                   onClick={() => setFilter(f)}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
                     filter === f
-                      ? "bg-indigo-500/20 border-indigo-500/50 text-indigo-300"
+                      ? "bg-orange-500/20 border-orange-500/50 text-orange-300"
                       : "bg-slate-800 border-slate-700 text-slate-400 hover:text-white"
                   }`}
                 >
@@ -252,7 +252,7 @@ export default function AcademicFreedomEnginePage() {
                   </div>
                   <div className="flex items-center justify-between mt-3">
                     <span className="text-slate-500 text-xs truncate max-w-[60%]">{entity.primary_pattern}</span>
-                    <span className="text-indigo-400 font-bold text-sm">{entity.composite_score.toFixed(2)}</span>
+                    <span className="text-orange-400 font-bold text-sm">{entity.composite_score.toFixed(2)}</span>
                   </div>
                 </div>
               ))}
