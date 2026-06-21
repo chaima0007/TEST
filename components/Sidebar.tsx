@@ -8106,6 +8106,22 @@ function IconHousingEvictionDisplacementRights({ className }: { className?: stri
   );
 }
 
+function IconMinorityReligiousRightsPersecution({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" /><line x1="12" y1="16" x2="12" y2="22" />
+    </svg>
+  );
+}
+
+function IconSocialMediaPoliticalCensorship({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" /><line x1="3" y1="3" x2="21" y2="21" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8934,6 +8950,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/prison-conditions-detention-rights-engine", label: "Conditions Détention & Droits Prisonniers", icon: IconPrisonConditionsDetentionRights },
       { href: "/dashboard/freedom-assembly-association-rights-engine", label: "Liberté Réunion & Association", icon: IconFreedomAssemblyAssociationRights },
       { href: "/dashboard/housing-eviction-displacement-rights-engine", label: "Logement & Expulsions Forcées", icon: IconHousingEvictionDisplacementRights },
+      { href: "/dashboard/minority-religious-rights-persecution-engine", label: "Persécution Religieuse Minorités", icon: IconMinorityReligiousRightsPersecution },
+      { href: "/dashboard/social-media-political-censorship-engine", label: "Censure Politique Réseaux Sociaux", icon: IconSocialMediaPoliticalCensorship },
+      { href: "/dashboard/disability-rights-accessibility-engine", label: "Droits Handicapés & Accessibilité", icon: IconDisabilityRightsAccessibility },
     ],
   },
   {
