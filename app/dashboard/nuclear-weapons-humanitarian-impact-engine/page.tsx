@@ -4,22 +4,20 @@ import { useState, useEffect } from "react";
 const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
 const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
 
-const ACCENT = "#7c3aed";
+const ACCENT = "#dc2626";
 
 interface Entity {
   entity_id: string;
   name: string;
   country: string;
-  sector: string;
   composite_score: number;
-  grand_corruption_state_capture_severity_score: number;
-  judicial_police_bribery_impunity_scale_score: number;
-  public_procurement_kleptocracy_scale_score: number;
-  whistleblower_anticorruption_protection_deficit_gap_score: number;
-  estimated_anti_corruption_accountability_index: number;
+  nuclear_threat_proliferation_severity_score: number;
+  civilian_humanitarian_impact_risk_score: number;
+  arms_control_treaty_violation_scale_score: number;
+  nuclear_doctrine_escalation_risk_score: number;
+  estimated_nuclear_weapons_humanitarian_impact_index: number;
   risk_level: string;
   primary_pattern: string;
-  key_signals: string[];
   last_updated: string;
   [key: string]: unknown;
 }
@@ -27,7 +25,7 @@ interface Entity {
 interface DashData {
   total_entities?: number;
   avg_composite?: number;
-  avg_estimated_anti_corruption_accountability_index?: number;
+  avg_estimated_nuclear_weapons_humanitarian_impact_index?: number;
   risk_distribution?: Record<string, number>;
   confidence_score?: number;
   data_sources?: string[];
@@ -42,9 +40,9 @@ function GaugeRing({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center gap-1">
       <svg width="88" height="88" viewBox="0 0 88 88">
-        <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth="8" />
+        <circle cx="44" cy="44" r={r} fill="none" stroke="#1e293b" strokeWidth={8} />
         <circle
-          cx="44" cy="44" r={r} fill="none" stroke={ACCENT} strokeWidth="8"
+          cx="44" cy="44" r={r} fill="none" stroke={ACCENT} strokeWidth={8}
           strokeDasharray={circ} strokeDashoffset={fill}
           strokeLinecap="round" transform="rotate(-90 44 44)"
         />
@@ -65,10 +63,10 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
     { key: "sources", label: "Sources" },
   ];
   const subScores = [
-    { label: "Grand Corruption & Capture État", value: entity.grand_corruption_state_capture_severity_score, weight: "0.30" },
-    { label: "Corruption Judiciaire & Police", value: entity.judicial_police_bribery_impunity_scale_score, weight: "0.25" },
-    { label: "Marchés Publics & Kleptocratie", value: entity.public_procurement_kleptocracy_scale_score, weight: "0.25" },
-    { label: "Déficit Protection Lanceurs Alerte", value: entity.whistleblower_anticorruption_protection_deficit_gap_score, weight: "0.20" },
+    { label: "Menace Nucléaire & Prolifération", value: entity.nuclear_threat_proliferation_severity_score, weight: "0.30" },
+    { label: "Impact Humanitaire Civilian", value: entity.civilian_humanitarian_impact_risk_score, weight: "0.25" },
+    { label: "Violation Contrôle Armements", value: entity.arms_control_treaty_violation_scale_score, weight: "0.25" },
+    { label: "Risque Escalade Doctrine", value: entity.nuclear_doctrine_escalation_risk_score, weight: "0.20" },
   ];
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={onClose}>
@@ -76,7 +74,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         <div className="p-6 border-b border-slate-800 flex items-start justify-between gap-4">
           <div>
             <h2 className="text-xl font-bold text-white">{entity.name}</h2>
-            <p className="text-sm text-slate-400 mt-0.5">{entity.country} · {entity.sector}</p>
+            <p className="text-sm text-slate-400 mt-0.5">{entity.country}</p>
             <span className={`text-xs font-semibold uppercase mt-1 inline-block ${RC[entity.risk_level] ?? "text-slate-400"}`}>{entity.risk_level}</span>
           </div>
           <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors text-2xl leading-none">&times;</button>
@@ -99,8 +97,8 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
                   <div className="text-xs text-slate-400 mt-1">Score Composite</div>
                 </div>
                 <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold" style={{ color: ACCENT }}>{typeof entity.estimated_anti_corruption_accountability_index === "number" ? entity.estimated_anti_corruption_accountability_index.toFixed(2) : "—"}</div>
-                  <div className="text-xs text-slate-400 mt-1">Index Anti-Corruption</div>
+                  <div className="text-3xl font-bold" style={{ color: ACCENT }}>{typeof entity.estimated_nuclear_weapons_humanitarian_impact_index === "number" ? entity.estimated_nuclear_weapons_humanitarian_impact_index.toFixed(2) : "—"}</div>
+                  <div className="text-xs text-slate-400 mt-1">Index Impact Humanitaire</div>
                 </div>
               </div>
               <div className={`rounded-lg p-3 border ${RB[entity.risk_level] ?? "border-slate-700 bg-slate-800/30"}`}>
@@ -135,18 +133,8 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
           {tab === "sources" && (
             <div className="space-y-3">
               <div className="bg-slate-800/50 rounded-xl p-4">
-                <div className="text-xs text-slate-400 mb-3">Signaux Clés Détectés</div>
-                <ul className="space-y-2">
-                  {(entity.key_signals ?? []).map((sig, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-slate-300">
-                      <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: ACCENT }} />
-                      {sig}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="text-xs text-slate-500">
-                Dernière mise à jour : {new Date(entity.last_updated).toLocaleDateString("fr-FR")}
+                <div className="text-xs text-slate-400 mb-2">Dernière mise à jour</div>
+                <div className="text-sm text-slate-300">{new Date(entity.last_updated).toLocaleDateString("fr-FR")}</div>
               </div>
             </div>
           )}
@@ -156,14 +144,14 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function AntiCorruptionAccountabilityEnginePage() {
+export default function NuclearWeaponsHumanitarianImpactEnginePage() {
   const [data, setData] = useState<DashData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("tous");
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/anti-corruption-accountability-engine")
+    fetch("/api/nuclear-weapons-humanitarian-impact-engine")
       .then(r => r.json())
       .then(d => { setData(d.payload ?? d); setLoading(false); })
       .catch(() => { setLoading(false); });
@@ -172,7 +160,7 @@ export default function AntiCorruptionAccountabilityEnginePage() {
   if (loading) {
     return (
       <div className="bg-slate-950 min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-sm" style={{ color: ACCENT }}>Initialisation Anti-Corruption & Responsabilité Étatique…</div>
+        <div className="animate-pulse text-sm" style={{ color: ACCENT }}>Initialisation Armes Nucléaires &amp; Impact Humanitaire…</div>
       </div>
     );
   }
@@ -181,22 +169,22 @@ export default function AntiCorruptionAccountabilityEnginePage() {
   const filtered = filter === "tous" ? allEntities : allEntities.filter(e => e.risk_level === filter);
   const avg = (arr: number[]) => arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
   const avgComposite = data?.avg_composite ?? avg(allEntities.map(e => e.composite_score));
-  const avgIndex = data?.avg_estimated_anti_corruption_accountability_index ?? avg(allEntities.map(e => e.estimated_anti_corruption_accountability_index));
+  const avgIndex = data?.avg_estimated_nuclear_weapons_humanitarian_impact_index ?? avg(allEntities.map(e => e.estimated_nuclear_weapons_humanitarian_impact_index));
   const rd = data?.risk_distribution ?? {};
   const countCritique = rd["critique"] ?? allEntities.filter(e => e.risk_level === "critique").length;
   const countEleve = rd["élevé"] ?? allEntities.filter(e => e.risk_level === "élevé").length;
   const sources = data?.data_sources ?? [];
   const confidence = typeof data?.confidence_score === "number" ? `${(data.confidence_score * 100).toFixed(0)}%` : "—";
 
-  const avgGrandCorruption = avg(allEntities.map(e => e.grand_corruption_state_capture_severity_score));
-  const avgJudicial = avg(allEntities.map(e => e.judicial_police_bribery_impunity_scale_score));
-  const avgProcurement = avg(allEntities.map(e => e.public_procurement_kleptocracy_scale_score));
-  const avgWhistleblower = avg(allEntities.map(e => e.whistleblower_anticorruption_protection_deficit_gap_score));
+  const avgProliferation = avg(allEntities.map(e => e.nuclear_threat_proliferation_severity_score));
+  const avgHumanitarian = avg(allEntities.map(e => e.civilian_humanitarian_impact_risk_score));
+  const avgArmsControl = avg(allEntities.map(e => e.arms_control_treaty_violation_scale_score));
+  const avgEscalation = avg(allEntities.map(e => e.nuclear_doctrine_escalation_risk_score));
 
   const kpis = [
     { label: "Entités Analysées", value: data?.total_entities ?? allEntities.length },
     { label: "Score Moyen", value: avgComposite.toFixed(1) },
-    { label: "Index Anti-Corruption", value: avgIndex.toFixed(2) },
+    { label: "Index Impact Nucléaire", value: avgIndex.toFixed(2) },
     { label: "Confiance", value: confidence },
     { label: "Critique", value: countCritique },
     { label: "Élevé", value: countEleve },
@@ -212,10 +200,10 @@ export default function AntiCorruptionAccountabilityEnginePage() {
       <div>
         <div className="flex items-center gap-3 mb-1">
           <div className="w-3 h-8 rounded-full" style={{ background: ACCENT }} />
-          <h1 className="text-2xl font-bold tracking-tight">Anti-Corruption & Responsabilité Étatique</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Armes Nucléaires &amp; Impact Humanitaire</h1>
         </div>
         <p className="text-slate-400 text-sm ml-6">
-          Anti-Corruption & Accountability Engine — Caelum Partners · Chaima Mhadbi, Fondatrice, Bruxelles
+          Nuclear Weapons Humanitarian Impact Engine — Caelum Partners · Chaima Mhadbi, Fondatrice, Bruxelles
         </p>
       </div>
 
@@ -233,10 +221,10 @@ export default function AntiCorruptionAccountabilityEnginePage() {
       <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
         <h2 className="text-sm font-semibold text-slate-400 mb-4">Scores Moyens par Dimension</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <GaugeRing value={avgGrandCorruption} label="Grand Corruption" />
-          <GaugeRing value={avgJudicial} label="Corruption Judiciaire" />
-          <GaugeRing value={avgProcurement} label="Marchés Publics" />
-          <GaugeRing value={avgWhistleblower} label="Protection Lanceurs" />
+          <GaugeRing value={avgProliferation} label="Menace Prolifération" />
+          <GaugeRing value={avgHumanitarian} label="Impact Humanitaire" />
+          <GaugeRing value={avgArmsControl} label="Violation Traités" />
+          <GaugeRing value={avgEscalation} label="Risque Escalade" />
         </div>
       </div>
 
@@ -260,7 +248,6 @@ export default function AntiCorruptionAccountabilityEnginePage() {
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-sm leading-tight truncate">{e.name}</div>
                 <div className="text-xs text-slate-400 mt-1">{e.country}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{e.sector}</div>
               </div>
               <div className="text-right ml-3 flex-shrink-0">
                 <div className="text-xl font-bold text-white">{e.composite_score.toFixed(1)}</div>
@@ -271,16 +258,8 @@ export default function AntiCorruptionAccountabilityEnginePage() {
               <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(e.composite_score, 100)}%`, background: ACCENT }} />
             </div>
             <div className="text-xs text-slate-500 mt-2">
-              Index Anti-Corruption: <span className="font-medium" style={{ color: ACCENT }}>{typeof e.estimated_anti_corruption_accountability_index === "number" ? e.estimated_anti_corruption_accountability_index.toFixed(2) : "—"}</span>
+              Index Impact Nucléaire: <span className="font-medium" style={{ color: ACCENT }}>{typeof e.estimated_nuclear_weapons_humanitarian_impact_index === "number" ? e.estimated_nuclear_weapons_humanitarian_impact_index.toFixed(2) : "—"}</span>
             </div>
-            {e.key_signals?.length > 0 && (
-              <div className="mt-2 flex flex-wrap gap-1">
-                {e.key_signals.slice(0, 2).map((sig, i) => (
-                  <span key={i} className="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">{sig}</span>
-                ))}
-                {e.key_signals.length > 2 && <span className="text-xs text-slate-500">+{e.key_signals.length - 2}</span>}
-              </div>
-            )}
           </div>
         ))}
       </div>
