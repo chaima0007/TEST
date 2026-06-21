@@ -9411,6 +9411,22 @@ function IconAIAutonomousWeaponsHumanRights({ className }: { className?: string 
   )
 }
 
+function IconGenderPayGapEconomicRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+    </svg>
+  )
+}
+
+function IconConflictMineralResources({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10415,6 +10431,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/corporate-tax-justice-development-engine", label: "Justice Fiscale Corporative", icon: <IconCorporateTaxJusticeDevelopment className="w-4 h-4" /> },
       { href: "/dashboard/prison-conditions-torture-engine", label: "Conditions Carcérales &amp; Torture", icon: <IconPrisonConditionsTorture className="w-4 h-4" /> },
       { href: "/dashboard/ai-autonomous-weapons-human-rights-engine", label: "IA &amp; Armes Autonomes", icon: <IconAIAutonomousWeaponsHumanRights className="w-4 h-4" /> },
+      { href: "/dashboard/gender-pay-gap-economic-rights-engine", label: "Écart Salarial Femmes", icon: <IconGenderPayGapEconomicRights className="w-4 h-4" /> },
+      { href: "/dashboard/conflict-mineral-resources-engine", label: "Minerais de Conflit", icon: <IconConflictMineralResources className="w-4 h-4" /> },
     ],
   },
   {
