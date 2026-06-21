@@ -77,18 +77,18 @@ def run():
         EntityScore(
             entity_id="TUR_post2016",
             name="Turquie — Législation post-coup 2016",
-            sub1_mass_surveillance_rights_violation=6.0,
-            sub2_arbitrary_detention_terrorism_pretext=6.5,
-            sub3_due_process_fair_trial_deficit=6.2,
-            sub4_civil_society_restriction=6.8,
+            sub1_mass_surveillance_rights_violation=5.0,
+            sub2_arbitrary_detention_terrorism_pretext=5.5,
+            sub3_due_process_fair_trial_deficit=5.2,
+            sub4_civil_society_restriction=5.8,
         ),
         EntityScore(
             entity_id="PAK_anti_terror",
             name="Pakistan — Lois antiterroristes",
-            sub1_mass_surveillance_rights_violation=5.5,
-            sub2_arbitrary_detention_terrorism_pretext=6.0,
-            sub3_due_process_fair_trial_deficit=5.8,
-            sub4_civil_society_restriction=5.5,
+            sub1_mass_surveillance_rights_violation=4.5,
+            sub2_arbitrary_detention_terrorism_pretext=5.0,
+            sub3_due_process_fair_trial_deficit=4.8,
+            sub4_civil_society_restriction=4.5,
         ),
         # 1 modéré (20 <= composite < 40)
         EntityScore(

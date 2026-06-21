@@ -77,18 +77,18 @@ def run():
         EntityScore(
             entity_id="THA_fishing_slavery",
             name="Thaïlande — Esclavage dans la pêche",
-            sub1_supply_chain_labor_violations=6.2,
-            sub2_environmental_rights_destruction=5.5,
-            sub3_due_diligence_gap=6.0,
-            sub4_remedy_access_victims=6.5,
+            sub1_supply_chain_labor_violations=5.2,
+            sub2_environmental_rights_destruction=4.8,
+            sub3_due_diligence_gap=5.0,
+            sub4_remedy_access_victims=5.5,
         ),
         EntityScore(
             entity_id="SLE_diamonds_conflict",
             name="Sierra Leone — Diamants conflits",
-            sub1_supply_chain_labor_violations=5.8,
-            sub2_environmental_rights_destruction=6.0,
-            sub3_due_diligence_gap=5.5,
-            sub4_remedy_access_victims=6.0,
+            sub1_supply_chain_labor_violations=4.8,
+            sub2_environmental_rights_destruction=5.0,
+            sub3_due_diligence_gap=4.5,
+            sub4_remedy_access_victims=5.0,
         ),
         # 1 modéré (20 <= composite < 40)
         EntityScore(
