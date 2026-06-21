@@ -7274,6 +7274,35 @@ function IconArmsTrade({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconTransitionalJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v4M8 7h8M6 7l-2 8h16l-2-8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 15v4m6-4v4M7 19h10" />
+      <circle cx="12" cy="5" r="1" />
+    </svg>
+  );
+}
+function IconClimateDisplacement({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12a9 9 0 0118 0" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7V3M9 5l3-2 3 2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 21h14" />
+    </svg>
+  );
+}
+function IconEnvironmentalCrime({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8 3 4 7 4 12s4 9 8 9 8-4 8-9-4-9-8-9z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c0 0 4 4 4 9M12 3c0 0-4 4-4 9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 12h16" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 7l14 10M19 7L5 17" strokeDasharray="3 2" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7986,6 +8015,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/gender-pay-gap-engine", label: "Écart Salarial Genre", icon: IconGenderPayGap },
       { href: "/dashboard/indigenous-rights-engine", label: "Droits Autochtones", icon: IconIndigenousRights },
       { href: "/dashboard/arms-trade-engine", label: "Commerce des Armes", icon: IconArmsTrade },
+      { href: "/dashboard/transitional-justice-engine", label: "Justice Transitionnelle", icon: IconTransitionalJustice },
+      { href: "/dashboard/climate-displacement-engine", label: "Déplacements Climatiques", icon: IconClimateDisplacement },
+      { href: "/dashboard/environmental-crime-engine", label: "Criminalité Environnem.", icon: IconEnvironmentalCrime },
     ],
   },
   {

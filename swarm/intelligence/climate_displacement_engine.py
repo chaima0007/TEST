@@ -8,22 +8,22 @@ class ClimateDisplacementEntity:
     entity_id: str
     name: str
     country: str
-    displacement_scale_score: float
-    state_protection_failure_score: float
-    international_legal_gap_score: float
-    adaptation_resource_denial_score: float
+    displacement_scale_severity_score: float
+    legal_protection_gap_score: float
+    adaptation_finance_absence_score: float
+    return_resettlement_impossibility_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
     estimated_climate_displacement_index: float = field(init=False)
-    last_updated: str = "2026-06-20"
+    last_updated: str = "2026-06-21"
 
     def __post_init__(self):
         self.composite_score = round(
-            self.displacement_scale_score * 0.30
-            + self.state_protection_failure_score * 0.25
-            + self.international_legal_gap_score * 0.25
-            + self.adaptation_resource_denial_score * 0.20,
+            self.displacement_scale_severity_score * 0.30
+            + self.legal_protection_gap_score * 0.25
+            + self.adaptation_finance_absence_score * 0.25
+            + self.return_resettlement_impossibility_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -42,12 +42,12 @@ class ClimateDisplacementEngineResult:
     domain: str = "climate_displacement"
     total_entities: int = 0
     avg_composite: float = 0.0
-    confidence_score: float = 0.85
+    confidence_score: float = 0.86
     risk_distribution: dict = field(default_factory=dict)
     pattern_distribution: dict = field(default_factory=dict)
     top_risk_entities: List[str] = field(default_factory=list)
     critical_alerts: List[str] = field(default_factory=list)
-    last_analysis: str = "2026-06-20"
+    last_analysis: str = "2026-06-21"
     engine_version: str = "1.0.0"
     avg_estimated_climate_displacement_index: float = 0.0
     data_sources: List[str] = field(default_factory=list)
@@ -57,83 +57,83 @@ def run_climate_displacement_engine() -> ClimateDisplacementEngineResult:
     entities = [
         ClimateDisplacementEntity(
             entity_id="CD-001",
-            name="Bangladesh/Delta — 30M Menacés Hausse Mer, Cyclones & Déplacement Structurel",
-            country="Asie du Sud",
-            displacement_scale_score=92.0,
-            state_protection_failure_score=88.0,
-            international_legal_gap_score=90.0,
-            adaptation_resource_denial_score=85.0,
-            primary_pattern="displacement_scale",
+            name="Tuvalu/Kiribati — Submersion Totale Prévue 2050, 100% Population Déplacée & Souveraineté Perdue",
+            country="Océanie",
+            displacement_scale_severity_score=95.0,
+            legal_protection_gap_score=95.0,
+            adaptation_finance_absence_score=92.0,
+            return_resettlement_impossibility_score=98.0,
+            primary_pattern="return_resettlement_impossibility",
         ),
         ClimateDisplacementEntity(
             entity_id="CD-002",
-            name="Îles Pacifique/Tuvalu — Submersion Totale, 11 000 Habitants & Disparition d'une Nation",
-            country="Océanie",
-            displacement_scale_score=88.0,
-            state_protection_failure_score=85.0,
-            international_legal_gap_score=92.0,
-            adaptation_resource_denial_score=90.0,
-            primary_pattern="international_legal_gap",
+            name="Bangladesh — 20M Déplacés Cyclones/Inondations, Deltas Submergés & Migration Urbaine Forcée",
+            country="Asie du Sud",
+            displacement_scale_severity_score=92.0,
+            legal_protection_gap_score=88.0,
+            adaptation_finance_absence_score=90.0,
+            return_resettlement_impossibility_score=85.0,
+            primary_pattern="displacement_scale_severity",
         ),
         ClimateDisplacementEntity(
             entity_id="CD-003",
-            name="Sahel/Afrique — 50M Déplacés Sécheresse, Conflits Eau & Désertification Massive",
+            name="Sahel/Afrique — Désertification 10M Déplacés, Conflit Eau/Terre & Aucun Statut Légal",
             country="Afrique Sub-Saharienne",
-            displacement_scale_score=85.0,
-            state_protection_failure_score=80.0,
-            international_legal_gap_score=88.0,
-            adaptation_resource_denial_score=82.0,
-            primary_pattern="state_protection_failure",
+            displacement_scale_severity_score=88.0,
+            legal_protection_gap_score=90.0,
+            adaptation_finance_absence_score=88.0,
+            return_resettlement_impossibility_score=82.0,
+            primary_pattern="legal_protection_gap",
         ),
         ClimateDisplacementEntity(
             entity_id="CD-004",
-            name="Syrie/Moyen-Orient — Sécheresse 2006-2010, Déplacement Préalable & Conflit Armé",
-            country="Moyen-Orient",
-            displacement_scale_score=72.0,
-            state_protection_failure_score=75.0,
-            international_legal_gap_score=80.0,
-            adaptation_resource_denial_score=78.0,
-            primary_pattern="adaptation_resource_denial",
+            name="Philippines — Typhons Annuels, 4M Déplacés/An & Reconstruction Zones Rouge Impossible",
+            country="Asie du Sud-Est",
+            displacement_scale_severity_score=85.0,
+            legal_protection_gap_score=80.0,
+            adaptation_finance_absence_score=82.0,
+            return_resettlement_impossibility_score=85.0,
+            primary_pattern="return_resettlement_impossibility",
         ),
         ClimateDisplacementEntity(
             entity_id="CD-005",
-            name="Inde/Orissa — 8M Déplacés Catastrophes, Communautés Côtières & Barrage Sardar",
-            country="Asie du Sud",
-            displacement_scale_score=52.0,
-            state_protection_failure_score=55.0,
-            international_legal_gap_score=58.0,
-            adaptation_resource_denial_score=50.0,
-            primary_pattern="displacement_scale",
+            name="USA/Alaska — Villages Autochtones Érodés, Relocalisation Fédérale Lente & Cultures Perdues",
+            country="Amérique du Nord",
+            displacement_scale_severity_score=52.0,
+            legal_protection_gap_score=48.0,
+            adaptation_finance_absence_score=55.0,
+            return_resettlement_impossibility_score=58.0,
+            primary_pattern="adaptation_finance_absence",
         ),
         ClimateDisplacementEntity(
             entity_id="CD-006",
-            name="USA/Puerto Rico — Ouragan Maria, Déplacement Non Reconnu & Inégalité Reconstruction",
-            country="Amérique du Nord",
-            displacement_scale_score=48.0,
-            state_protection_failure_score=52.0,
-            international_legal_gap_score=55.0,
-            adaptation_resource_denial_score=58.0,
-            primary_pattern="state_protection_failure",
+            name="Europe/Méditerranée — Migrations Climatiques Mélangées, Distinction Réfugiés Inexistante & Refoulements",
+            country="Europe",
+            displacement_scale_severity_score=48.0,
+            legal_protection_gap_score=55.0,
+            adaptation_finance_absence_score=45.0,
+            return_resettlement_impossibility_score=50.0,
+            primary_pattern="legal_protection_gap",
         ),
         ClimateDisplacementEntity(
             entity_id="CD-007",
-            name="Europe/Méditerranée — Réfugiés Climatiques Refoulés, Convention 1951 Inadaptée",
-            country="Europe",
-            displacement_scale_score=25.0,
-            state_protection_failure_score=30.0,
-            international_legal_gap_score=32.0,
-            adaptation_resource_denial_score=28.0,
-            primary_pattern="international_legal_gap",
+            name="IDMC/UNHCR — Monitoring Déplacements, Plaidoyer Statut Légal & Nansen Initiative",
+            country="Global",
+            displacement_scale_severity_score=22.0,
+            legal_protection_gap_score=25.0,
+            adaptation_finance_absence_score=28.0,
+            return_resettlement_impossibility_score=30.0,
+            primary_pattern="displacement_scale_severity",
         ),
         ClimateDisplacementEntity(
             entity_id="CD-008",
-            name="ONU/UNHCR/IPCC — Cadre Nansen, Principes Directeurs & Vide Juridique International",
+            name="ONU/Résolution — Reconnaissance Réfugiés Climatiques, Agenda Nansen & Lacunes Convention 1951",
             country="Global",
-            displacement_scale_score=4.0,
-            state_protection_failure_score=5.0,
-            international_legal_gap_score=3.0,
-            adaptation_resource_denial_score=6.0,
-            primary_pattern="displacement_scale",
+            displacement_scale_severity_score=4.0,
+            legal_protection_gap_score=5.0,
+            adaptation_finance_absence_score=3.0,
+            return_resettlement_impossibility_score=6.0,
+            primary_pattern="legal_protection_gap",
         ),
     ]
 
@@ -165,8 +165,8 @@ def run_climate_displacement_engine() -> ClimateDisplacementEngineResult:
         avg_estimated_climate_displacement_index=round(avg_composite / 100 * 10, 2),
         data_sources=[
             "idmc_global_report_internal_displacement_annual",
-            "unhcr_global_trends_forced_displacement_annual_report",
-            "ipcc_sixth_assessment_report_impacts_adaptation_vulnerability_chapter_climate_migration",
+            "unhcr_climate_change_displacement_legal_protection_gap_report",
+            "world_bank_groundswell_climate_migration_projections_2050",
         ],
         entities=entities,
     )
