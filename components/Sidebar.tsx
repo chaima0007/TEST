@@ -8402,6 +8402,23 @@ function IconPressFreedomJournalistSafety({ className }: { className?: string })
   );
 }
 
+function IconLandGrabbingDisplacementRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+    </svg>
+  );
+}
+
+function IconWaterPollutionEnvironmentalRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 5.06-7 8.47-7 11a7 7 0 0014 0c0-2.53-2.03-5.94-7-11z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 15l1.5 1.5L14 13" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9266,6 +9283,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/arms-trade-civilian-harm-engine", label: "Commerce Armes &amp; Civils", icon: IconArmsTradeCivilianHarm },
       { href: "/dashboard/lgbtq-rights-violence-criminalization-engine", label: "Droits LGBTQ+", icon: IconLgbtqRightsViolenceCriminalization },
       { href: "/dashboard/press-freedom-journalist-safety-engine", label: "Liberté de la Presse", icon: IconPressFreedomJournalistSafety },
+      { href: "/dashboard/land-grabbing-displacement-rights-engine", label: "Accaparement Terres", icon: IconLandGrabbingDisplacementRights },
+      { href: "/dashboard/water-pollution-environmental-rights-engine", label: "Pollution Eau & Environnement", icon: IconWaterPollutionEnvironmentalRights },
     ],
   },
   {
