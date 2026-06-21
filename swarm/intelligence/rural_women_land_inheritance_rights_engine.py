@@ -75,18 +75,18 @@ def main():
         EntityScore(
             entity_id="KEN_rural_women",
             name="Kenya — Femmes rurales (foncier & succession)",
-            sub1=6.5,   # customary denial persists despite progressive constitution
-            sub2=5.8,   # Succession Act gender-neutral but customary law still applied
-            sub3=6.2,   # squatter settlements expose women to eviction
-            sub4=5.5,   # some legal aid; FIDA Kenya active but under-resourced
+            sub1=5.0,   # customary denial persists despite progressive constitution
+            sub2=4.5,   # Succession Act gender-neutral but customary law still applied
+            sub3=4.8,   # squatter settlements expose women to eviction
+            sub4=4.2,   # some legal aid; FIDA Kenya active but under-resourced
         ),
         EntityScore(
             entity_id="GTM_indigenous_women",
             name="Guatemala — Femmes rurales indigènes (tierra)",
-            sub1=6.3,   # Maya customary law excludes women from communal land
-            sub2=6.0,   # Civil Code reformed but implementation weak
-            sub3=6.5,   # palm oil/mining concessions displace indigenous women first
-            sub4=6.1,   # indigenous women defenders face criminalization
+            sub1=4.8,   # Maya customary law excludes women from communal land
+            sub2=4.5,   # Civil Code reformed but implementation weak
+            sub3=5.0,   # palm oil/mining concessions displace indigenous women first
+            sub4=4.6,   # indigenous women defenders face criminalization
         ),
         # 1 modéré
         EntityScore(

@@ -75,10 +75,10 @@ def main():
         EntityScore(
             entity_id="LKA_rodiya",
             name="Sri Lanka — Rodiya & low-caste communities",
-            sub1=6.0,   # diminishing but persistent social exclusion
-            sub2=6.5,   # limited legal framework; implementation gaps
-            sub3=6.2,   # wage discrimination in plantation sector
-            sub4=5.8,   # some prosecutions but systemic impunity remains
+            sub1=5.2,   # diminishing but persistent social exclusion
+            sub2=5.5,   # limited legal framework; implementation gaps
+            sub3=5.0,   # wage discrimination in plantation sector
+            sub4=4.8,   # some prosecutions but systemic impunity remains
         ),
         EntityScore(
             entity_id="JPN_burakumin",
