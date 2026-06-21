@@ -141,6 +141,21 @@
 | Human Rights Defenders Protection | `swarm/intelligence/human_rights_defenders_protection_engine.py` | 61.46 | Défenseurs tués, lois agents étrangers, surveillance numérique |
 | Drug Policy Criminalization Rights | `swarm/intelligence/drug_policy_criminalization_rights_engine.py` | 60.15 | Peine de mort drogues, incarcération massive, harm reduction |
 
+### Wave 124
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Indigenous Land Cultural Rights | `swarm/intelligence/indigenous_land_cultural_rights_engine.py` | 61.44 | Droits fonciers FPIC, effacement culturel, dépossession terres |
+| Organ Trafficking Body Autonomy Rights | `swarm/intelligence/organ_trafficking_body_autonomy_rights_engine.py` | 59.41 | Trafic organes, prélèvements forcés, tourisme transplantation |
+| Solitary Confinement Isolation Rights | `swarm/intelligence/solitary_confinement_isolation_rights_engine.py` | 59.51 | Isolement prolongé, torture psychologique, couloir mort |
+| Child Online Exploitation Rights | `swarm/intelligence/child_online_exploitation_rights_engine.py` | 59.61 | CSAM, grooming en ligne, modération insuffisante |
+
+### Wave 125
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Forced Sterilization Reproductive Coercion | `swarm/intelligence/forced_sterilization_reproductive_coercion_engine.py` | 59.67 | Stérilisations forcées, quotas État, coercition reproductive |
+| AI Surveillance Biometric Rights | `swarm/intelligence/ai_surveillance_biometric_rights_engine.py` | 59.71 | Reconnaissance faciale, police prédictive, biométrie masse |
+| Arms Embargo Violations Rights | `swarm/intelligence/arms_embargo_violations_rights_engine.py` | 60.51 | Violations embargo armes, complicité États, victimes civiles |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -326,4 +341,4 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 123 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 125 · Caelum Partners · Chaima Mhadbi*
