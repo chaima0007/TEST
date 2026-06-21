@@ -8847,6 +8847,25 @@ function IconRomaTravellerRights({ className }: { className?: string }) {
   );
 }
 
+function IconLeprosyAffectedRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 4c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 10c-2.21 0-4.15-1.12-5.33-2.83C7.72 12.72 9.79 12 12 12s4.28.72 5.33 1.17C16.15 14.88 14.21 16 12 16z" /></svg>;
+}
+function IconFistulaObstetricRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>;
+}
+function IconHIVAIDSStigmaRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>;
+}
+function IconPovertyCriminalizationAntiHomelessLaws({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>;
+}
+function IconNonconsensualIntimateImageAbuse({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" /></svg>;
+}
+function IconResidentialSchoolIndigenousAssimilation({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>;
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9766,6 +9785,12 @@ const navSections: NavSection[] = [
       { href: "/dashboard/human-trafficking-labor-exploitation-rights-engine", label: "Traite Humaine", icon: IconHumanTraffickingLaborExploitationRights },
       { href: "/dashboard/disability-rights-inclusive-society-engine", label: "Droits Handicap", icon: IconDisabilityRightsInclusiveSociety },
       { href: "/dashboard/inventions-portfolio-engine", label: "Brevets Caelum", icon: IconInventionsPortfolio },
+      { href: "/dashboard/leprosy-affected-rights-engine", label: "Lèpre & Stigmatisation", icon: IconLeprosyAffectedRights },
+      { href: "/dashboard/fistula-obstetric-rights-engine", label: "Fistule Obstétrique", icon: IconFistulaObstetricRights },
+      { href: "/dashboard/hiv-aids-stigma-rights-engine", label: "VIH/SIDA Stigma Droits", icon: IconHIVAIDSStigmaRights },
+      { href: "/dashboard/poverty-criminalization-anti-homeless-laws-engine", label: "Criminalisation Pauvreté", icon: IconPovertyCriminalizationAntiHomelessLaws },
+      { href: "/dashboard/nonconsensual-intimate-image-abuse-engine", label: "Abus Image Intime", icon: IconNonconsensualIntimateImageAbuse },
+      { href: "/dashboard/residential-school-indigenous-assimilation-engine", label: "Pensionnats Autochtones", icon: IconResidentialSchoolIndigenousAssimilation },
     ],
   },
   {
