@@ -9610,6 +9610,30 @@ function IconPeasantRightsSmallFarmer({ className }: { className?: string }) {
     </svg>
   )
 }
+function IconOrganTraffickingTransplant({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 0v2m0-2h2m-2 0H10" />
+    </svg>
+  )
+}
+function IconDigitalSurveillancePegasus({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3l18 18" />
+    </svg>
+  )
+}
+function IconDeathPenaltyWrongfulExecution({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  )
+}
 
 const navSections: NavSection[] = [
   {
@@ -10671,6 +10695,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/intersex-rights-bodily-integrity-engine", label: "Droits Intersexes & Intégrité Corporelle", icon: <IconIntersexRightsBodily className="w-4 h-4" /> },
       { href: "/dashboard/mental-health-detention-psychiatric-rights-engine", label: "Détention Psychiatrique & Droits Santé Mentale", icon: <IconMentalHealthDetention className="w-4 h-4" /> },
       { href: "/dashboard/peasant-rights-small-farmer-displacement-engine", label: "Droits Paysans & Déplacement Agricole", icon: <IconPeasantRightsSmallFarmer className="w-4 h-4" /> },
+      { href: "/dashboard/organ-trafficking-transplant-tourism-engine", label: "Trafic Organes & Tourisme Transplant", icon: <IconOrganTraffickingTransplant className="w-4 h-4" /> },
+      { href: "/dashboard/digital-surveillance-pegasus-spyware-engine", label: "Surveillance Numérique & Pegasus", icon: <IconDigitalSurveillancePegasus className="w-4 h-4" /> },
+      { href: "/dashboard/death-penalty-wrongful-execution-engine", label: "Peine de Mort & Exécutions Erronées", icon: <IconDeathPenaltyWrongfulExecution className="w-4 h-4" /> },
     ],
   },
   {
