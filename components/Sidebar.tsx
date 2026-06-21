@@ -7708,6 +7708,40 @@ function IconAcademicFreedomEducationRights({ className }: { className?: string 
   );
 }
 
+function IconMinorityReligiousFreedomRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+      <path d="M12 22V12"/>
+      <path d="M7 9.5v5"/>
+      <path d="M17 9.5v5"/>
+      <circle cx="12" cy="12" r="2"/>
+    </svg>
+  );
+}
+
+function IconSexualOrientationLgbtqRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M8 12l2 2 4-4"/>
+      <path d="M12 6v2"/>
+      <path d="M12 16v2"/>
+    </svg>
+  );
+}
+
+function IconFoodSovereigntyFamineRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M12 2a10 10 0 1 0 10 10"/>
+      <path d="M12 8v4l3 3"/>
+      <path d="M16 2l2 2-2 2"/>
+      <path d="M18 4h4"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8491,6 +8525,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/child-trafficking-exploitation-rights-engine", label: "Trafic Enfants & Exploitation", icon: IconChildTraffickingExploitationRights },
       { href: "/dashboard/disability-rights-accessibility-engine", label: "Droits Handicap & Accessibilité", icon: IconDisabilityRightsAccessibility },
       { href: "/dashboard/academic-freedom-education-rights-engine", label: "Liberté Académique", icon: IconAcademicFreedomEducationRights },
+      { href: "/dashboard/minority-religious-freedom-rights-engine", label: "Liberté Religieuse Minorités", icon: IconMinorityReligiousFreedomRights },
+      { href: "/dashboard/sexual-orientation-lgbtq-rights-engine", label: "Droits LGBTQ+", icon: IconSexualOrientationLgbtqRights },
+      { href: "/dashboard/food-sovereignty-famine-rights-engine", label: "Souveraineté Alimentaire", icon: IconFoodSovereigntyFamineRights },
     ],
   },
   {
