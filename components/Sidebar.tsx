@@ -7492,6 +7492,27 @@ function IconAISurveillanceRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconGigEconomyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3m-3 3.75h3M9 21.75H6" />
+    </svg>
+  );
+}
+function IconEnforcedDisappearances({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+    </svg>
+  );
+}
+function IconChildSoldiersRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -8141,6 +8162,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/water-rights-engine", label: "Water Rights", icon: IconWaterRights },
       { href: "/dashboard/housing-rights-engine", label: "Housing Rights", icon: IconHousingRights },
       { href: "/dashboard/ai-surveillance-rights-engine", label: "Surveillance IA", icon: IconAISurveillanceRights },
+      { href: "/dashboard/gig-economy-rights-engine", label: "Économie Gig", icon: IconGigEconomyRights },
+      { href: "/dashboard/enforced-disappearances-engine", label: "Disparitions Forcées", icon: IconEnforcedDisappearances },
+      { href: "/dashboard/child-soldiers-rights-engine", label: "Enfants Soldats", icon: IconChildSoldiersRights },
       { href: "/dashboard/social-protection-engine", label: "Social Protection", icon: IconSocialProtection },
       { href: "/dashboard/racial-justice-engine", label: "Justice Raciale", icon: IconRacialJustice },
       { href: "/dashboard/digital-rights-engine", label: "Droits Numériques", icon: IconDigitalRights },

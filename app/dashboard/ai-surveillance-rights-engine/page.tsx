@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const RC: Record<string,string> = { critique:"text-red-400","élevé":"text-orange-400",modéré:"text-yellow-400",faible:"text-emerald-400" };
 const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","élevé":"border-orange-500/30 bg-orange-500/10",modéré:"border-yellow-500/30 bg-yellow-500/10",faible:"border-emerald-500/30 bg-emerald-500/10" };
 
-const ACCENT = "#7c3aed";
+const ACCENT = "#0284c7";
 
 function GaugeRing({ value, stroke }: { value: number; stroke: string }) {
   const r = 36, cx = 44, cy = 44, circ = 2 * Math.PI * r;
@@ -21,17 +21,17 @@ function GaugeRing({ value, stroke }: { value: number; stroke: string }) {
   );
 }
 
-interface DREntity {
+interface AIEntity {
   entity_id: string;
   name: string;
   country: string;
   sector: string;
   composite_score: number;
-  institutionalization_segregation_severity_score: number;
-  accessibility_barrier_discrimination_scale_score: number;
-  legal_capacity_guardianship_deprivation_score: number;
-  violence_abuse_disabled_persons_gap_score: number;
-  estimated_disability_rights_index: number;
+  mass_surveillance_biometric_severity_score: number;
+  social_scoring_behavioral_control_scale_score: number;
+  predictive_policing_racial_targeting_score: number;
+  data_privacy_algorithmic_accountability_gap_score: number;
+  estimated_ai_surveillance_rights_index: number;
   risk_level: string;
   primary_pattern: string;
   key_signals: string[];
@@ -39,7 +39,7 @@ interface DREntity {
   [key: string]: unknown;
 }
 
-interface DRData {
+interface AIData {
   total_entities: number;
   avg_composite: number;
   risk_distribution: Record<string, number>;
@@ -49,28 +49,28 @@ interface DRData {
   last_analysis: string;
   confidence_score: number;
   data_sources: string[];
-  entities: DREntity[];
-  avg_estimated_disability_rights_index: number;
+  entities: AIEntity[];
+  avg_estimated_ai_surveillance_rights_index: number;
   engine_version: string;
   [key: string]: unknown;
 }
 
-export default function DisabilityRightsPage() {
-  const [data, setData] = useState<DRData | null>(null);
+export default function AiSurveillanceRightsPage() {
+  const [data, setData] = useState<AIData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("tous");
-  const [selected, setSelected] = useState<DREntity | null>(null);
+  const [selected, setSelected] = useState<AIEntity | null>(null);
   const [tab, setTab] = useState(0);
 
   useEffect(() => {
-    fetch("/api/disability-rights-engine")
+    fetch("/api/ai-surveillance-rights-engine")
       .then(r => r.json())
       .then(d => { setData(d.payload ?? d); setLoading(false); });
   }, []);
 
   if (loading) return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-      <div className="text-slate-400 animate-pulse">Chargement des données droits handicap…</div>
+      <div className="text-slate-400 animate-pulse">Chargement des données surveillance IA…</div>
     </div>
   );
   if (!data) return (
@@ -82,10 +82,10 @@ export default function DisabilityRightsPage() {
   const filtered = filter === "tous" ? data.entities : data.entities.filter(e => e.risk_level === filter);
 
   const subKeys = [
-    { key: "institutionalization_segregation_severity_score", label: "Institutionnalisation" },
-    { key: "accessibility_barrier_discrimination_scale_score", label: "Accessibilité" },
-    { key: "legal_capacity_guardianship_deprivation_score", label: "Capacité Juridique" },
-    { key: "violence_abuse_disabled_persons_gap_score", label: "Violence/Abus" },
+    { key: "mass_surveillance_biometric_severity_score", label: "Surveillance Biométrique" },
+    { key: "social_scoring_behavioral_control_scale_score", label: "Score Social" },
+    { key: "predictive_policing_racial_targeting_score", label: "Profilage Racial" },
+    { key: "data_privacy_algorithmic_accountability_gap_score", label: "Vie Privée/Algorithmes" },
   ];
 
   const avgSub = (key: string) => {
@@ -99,10 +99,10 @@ export default function DisabilityRightsPage() {
       <div className="max-w-7xl mx-auto mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-3 h-3 rounded-full" style={{ background: ACCENT }} />
-          <h1 className="text-2xl font-bold tracking-tight">Droits des Personnes Handicapées</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Surveillance IA &amp; Droits Numériques</h1>
         </div>
         <p className="text-slate-400 text-sm ml-6">
-          Institutionnalisation · Accessibilité · Capacité Juridique · Violence — surveillance des droits au handicap
+          Surveillance Biométrique · Score Social · Profilage Racial · Vie Privée/Algorithmes — surveillance des droits à l&apos;ère de l&apos;IA
         </p>
       </div>
 
@@ -112,7 +112,7 @@ export default function DisabilityRightsPage() {
           {[
             { label: "Score Moyen", value: data.avg_composite?.toFixed(1) },
             { label: "Entités Critiques", value: data.risk_distribution?.critique ?? 0 },
-            { label: "Index Handicap", value: data.avg_estimated_disability_rights_index ?? "—" },
+            { label: "Index Surveillance IA", value: data.avg_estimated_ai_surveillance_rights_index ?? "—" },
             { label: "Confiance", value: `${Math.round((data.confidence_score ?? 0) * 100)}%` },
             { label: "Dernière Analyse", value: data.last_analysis ?? "—" },
             { label: "Version", value: data.engine_version ?? "—" },
@@ -163,10 +163,10 @@ export default function DisabilityRightsPage() {
             </div>
           </div>
           <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Patterns de Discrimination</h2>
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Patterns de Surveillance</h2>
             <div className="space-y-2">
               {Object.entries(data.pattern_distribution ?? {}).map(([k, v], i) => {
-                const colors = ["#7c3aed", "#f97316", "#eab308", "#ef4444", "#10b981"];
+                const colors = ["#0284c7", "#ef4444", "#eab308", "#f97316", "#10b981"];
                 const pct = data.total_entities > 0 ? Math.round((v as number) / data.total_entities * 100) : 0;
                 return (
                   <div key={k} className="flex items-center gap-3">
@@ -184,7 +184,7 @@ export default function DisabilityRightsPage() {
 
         {/* Critical alerts */}
         {(data.critical_alerts?.length ?? 0) > 0 && (
-          <div className="border border-violet-500/30 bg-violet-500/10 rounded-xl p-4">
+          <div className="border border-sky-500/30 bg-sky-500/10 rounded-xl p-4">
             <h2 className="text-sm font-semibold mb-2" style={{ color: ACCENT }}>Alertes Critiques</h2>
             <ul className="space-y-1">
               {data.critical_alerts.map((a, i) => (
@@ -212,7 +212,7 @@ export default function DisabilityRightsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map(entity => (
             <div key={entity.entity_id} onClick={() => { setSelected(entity); setTab(0); }}
-              className={`bg-slate-900 border rounded-xl p-4 cursor-pointer hover:border-violet-500/50 transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}>
+              className={`bg-slate-900 border rounded-xl p-4 cursor-pointer hover:border-sky-500/50 transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}>
               <div className="flex justify-between items-start mb-3">
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
@@ -223,7 +223,7 @@ export default function DisabilityRightsPage() {
               </div>
               <div className="flex justify-between text-xs">
                 <span className={RC[entity.risk_level]}>{entity.risk_level}</span>
-                <span className="text-slate-500">idx {entity.estimated_disability_rights_index}</span>
+                <span className="text-slate-500">idx {entity.estimated_ai_surveillance_rights_index}</span>
               </div>
             </div>
           ))}
@@ -233,7 +233,7 @@ export default function DisabilityRightsPage() {
           <div className="text-center py-12 text-slate-500 text-sm">Aucune entité pour ce niveau de risque.</div>
         )}
 
-        <p className="text-xs text-slate-600 text-center">Caelum Partners · Droits des Personnes Handicapées · {data.last_analysis}</p>
+        <p className="text-xs text-slate-600 text-center">Caelum Partners · Surveillance IA &amp; Droits Numériques · {data.last_analysis}</p>
       </div>
 
       {/* Detail Modal */}
@@ -270,8 +270,8 @@ export default function DisabilityRightsPage() {
                     </div>
                   </div>
                   <div className="bg-slate-800 rounded-lg p-3">
-                    <div className="text-xs text-slate-500 mb-1">Index Handicap</div>
-                    <div className="text-lg font-bold" style={{ color: ACCENT }}>{selected.estimated_disability_rights_index}</div>
+                    <div className="text-xs text-slate-500 mb-1">Index Surveillance IA</div>
+                    <div className="text-lg font-bold" style={{ color: ACCENT }}>{selected.estimated_ai_surveillance_rights_index}</div>
                   </div>
                 </div>
               )}
