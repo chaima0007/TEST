@@ -9557,6 +9557,33 @@ function IconPrivateMilitaryContractorsAccountability({ className }: { className
   )
 }
 
+function IconFemicideGenderBasedKillings({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 22c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3"/>
+    </svg>
+  )
+}
+
+function IconRomaniSintiAntiZiganism({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="10"/>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h8M12 8v8"/>
+    </svg>
+  )
+}
+
+function IconColonialRestitutionHeritage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10611,6 +10638,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-testing-radiation-victims-engine", label: "Victimes Tests Nucléaires", icon: <IconNuclearTestingRadiationVictims className="w-4 h-4" /> },
       { href: "/dashboard/stateless-persons-documentation-crisis-engine", label: "Apatrides & Crise Docs", icon: <IconStatelessPersonsDocumentationCrisis className="w-4 h-4" /> },
       { href: "/dashboard/private-military-contractors-accountability-engine", label: "Contractants Militaires PMC", icon: <IconPrivateMilitaryContractorsAccountability className="w-4 h-4" /> },
+      { href: "/dashboard/femicide-gender-based-killings-engine", label: "Féminicide & Crimes Genre", icon: <IconFemicideGenderBasedKillings className="w-4 h-4" /> },
+      { href: "/dashboard/romani-sinti-anti-ziganism-rights-engine", label: "Droits Roms & Anti-Tziganisme", icon: <IconRomaniSintiAntiZiganism className="w-4 h-4" /> },
+      { href: "/dashboard/colonial-restitution-cultural-heritage-engine", label: "Restitution Coloniale & Patrimoine", icon: <IconColonialRestitutionHeritage className="w-4 h-4" /> },
     ],
   },
   {
