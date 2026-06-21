@@ -159,14 +159,14 @@ MOCK_ENTITIES: list[FoodSovereigntyAgriculturalRightsEntity] = [
         "Inde/Suicides Agriculteurs Dettes Bt Cotton Monsanto 300K Morts",
         "Asie du Sud",
         "300.000 Suicides Agriculteurs 1995-2022, Bt Cotton Monsanto Dépendance, Cycles Dette Insurmontables, Maharashtra Epicentre & Loi Semences Propriétaires 2020 Retirée",
-        85.0, 90.0, 72.0, 80.0,
+        88.0, 92.0, 75.0, 82.0,
     ),
     FoodSovereigntyAgriculturalRightsEntity(
         "FSAR-002",
         "Éthiopie/Accaparement Terres 3.6M Hectares Investisseurs Étrangers",
         "Afrique de l'Est",
         "3.6M Ha Cédés 2000-2015, Saudi Arabia/India/China Investisseurs, Villages Oromia Déplacés, Gambella 70.000 Expulsés & Oakland Institute Rapport Violations",
-        88.0, 68.0, 62.0, 72.0,
+        90.0, 72.0, 66.0, 75.0,
     ),
     FoodSovereigntyAgriculturalRightsEntity(
         "FSAR-003",
@@ -201,7 +201,7 @@ MOCK_ENTITIES: list[FoodSovereigntyAgriculturalRightsEntity] = [
         "Mexique/ALENA Maïs Natif Menacé Importations USA",
         "Amérique du Nord",
         "59 Variétés Maïs Natif Menacées, ALENA Maïs USA Dumping, Milpa Système Traditionnel Déclin, Décret OGM Maïs 2023 Annulé Pression USA & 4M Agriculteurs Déplacés ALENA",
-        30.0, 34.0, 38.0, 42.0,
+        32.0, 36.0, 40.0, 44.0,
     ),
     FoodSovereigntyAgriculturalRightsEntity(
         "FSAR-008",
