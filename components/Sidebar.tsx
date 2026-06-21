@@ -8865,6 +8865,15 @@ function IconNonconsensualIntimateImageAbuse({ className }: { className?: string
 function IconResidentialSchoolIndigenousAssimilation({ className }: { className?: string }) {
   return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>;
 }
+function IconAlbinismPersecutionRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>;
+}
+function IconToxicWasteEnvironmentalRacismRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>;
+}
+function IconJuvenileJusticeChildDetentionRights({ className }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>;
+}
 
 function IconInventionsShowcase({ className }: { className?: string }) {
   return <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>;
@@ -9796,6 +9805,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/poverty-criminalization-anti-homeless-laws-engine", label: "Criminalisation Pauvreté", icon: IconPovertyCriminalizationAntiHomelessLaws },
       { href: "/dashboard/nonconsensual-intimate-image-abuse-engine", label: "Abus Image Intime", icon: IconNonconsensualIntimateImageAbuse },
       { href: "/dashboard/residential-school-indigenous-assimilation-engine", label: "Pensionnats Autochtones", icon: IconResidentialSchoolIndigenousAssimilation },
+      { href: "/dashboard/albinism-persecution-rights-engine", label: "Persécution Albinisme", icon: IconAlbinismPersecutionRights },
+      { href: "/dashboard/toxic-waste-environmental-racism-rights-engine", label: "Racisme Environnemental", icon: IconToxicWasteEnvironmentalRacismRights },
+      { href: "/dashboard/juvenile-justice-child-detention-rights-engine", label: "Justice Juvénile", icon: IconJuvenileJusticeChildDetentionRights },
     ],
   },
   {
