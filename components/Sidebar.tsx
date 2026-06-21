@@ -9557,6 +9557,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/indigenous-land-cultural-rights-engine", label: "Droits Peuples Autochtones", icon: IconIndigenousLandCulturalRights },
       { href: "/dashboard/organ-trafficking-body-autonomy-rights-engine", label: "Trafic d&apos;Organes", icon: IconOrganTraffickingBodyAutonomyRights },
       { href: "/dashboard/solitary-confinement-isolation-rights-engine", label: "Isolement Carcéral", icon: IconSolitaryConfinementIsolationRights },
+      { href: "/dashboard/child-online-exploitation-rights-engine", label: "Exploitation Enfants Ligne", icon: IconChildOnlineExploitationRights },
+      { href: "/dashboard/forced-sterilization-reproductive-coercion-engine", label: "Stérilisation Forcée", icon: IconForcedSterilizationReproductiveCoercion },
+      { href: "/dashboard/ai-surveillance-biometric-rights-engine", label: "Surveillance IA & Biométrie", icon: IconAiSurveillanceBiometricRights },
     ],
   },
   {
