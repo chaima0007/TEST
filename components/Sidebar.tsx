@@ -9092,6 +9092,27 @@ function IconSatelliteSurveillancePrivacyRights({ className }: { className?: str
     </svg>
   );
 }
+function IconClimateFinanceLossDamage({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1M3 12h1m16 0h1M5.636 5.636l.707.707m11.314 11.314.707.707M5.636 18.364l.707-.707m11.314-11.314.707-.707M12 7a5 5 0 100 10A5 5 0 0012 7z" />
+    </svg>
+  );
+}
+function IconSexualViolenceConflictAccountability({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+function IconChildrenArmedConflictGraveViolations({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -10056,6 +10077,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/private-military-contractor-accountability-engine", label: "Contractants Militaires", icon: <IconPrivateMilitaryContractorAccountability className="w-4 h-4" /> },
       { href: "/dashboard/information-warfare-civilian-rights-engine", label: "Guerre Information", icon: <IconInformationWarfareCivilianRights className="w-4 h-4" /> },
       { href: "/dashboard/satellite-surveillance-privacy-rights-engine", label: "Surveillance Satellite", icon: <IconSatelliteSurveillancePrivacyRights className="w-4 h-4" /> },
+      { href: "/dashboard/climate-finance-loss-damage-rights-engine", label: "Financement Climatique L&D", icon: <IconClimateFinanceLossDamage className="w-4 h-4" /> },
+      { href: "/dashboard/sexual-violence-conflict-accountability-engine", label: "Violence Sexuelle Conflit", icon: <IconSexualViolenceConflictAccountability className="w-4 h-4" /> },
+      { href: "/dashboard/children-armed-conflict-grave-violations-engine", label: "Enfants Conflits Armés", icon: <IconChildrenArmedConflictGraveViolations className="w-4 h-4" /> },
     ],
   },
   {
