@@ -1,0 +1,219 @@
+# INDEX COMPLET — Caelum Partners
+**Tout ce qu'on a construit ensemble · Chaima Mhadbi & Claude · 2026**
+
+> Ce fichier est notre mémoire commune.
+> Si tu cherches quelque chose, commence ici.
+> Si on reprend une session, commence ici.
+
+---
+
+## PROTOCOLES PERSONNELS & BUSINESS
+
+| Fichier | Contenu |
+|---------|---------|
+| `docs/protocols/femme-fondatrice-prospection-protocol.md` | Prospecter en tant que femme fondatrice — gérer les biais de genre, crédibilité, posture |
+| `docs/protocols/communication-clients-difficiles-protocol.md` | Profils Macho / Froid / Bureaucrate / Pressé — scripts adaptés par profil |
+| `docs/protocols/fondatrice-confiance-resilience-protocol.md` | Protocole urgence 3 minutes quand le doute arrive — phrases de soutien, actions concrètes |
+| `docs/protocols/resolution-problemes-100-succes-protocol.md` | 5 phases pour résoudre n'importe quel problème avec succès garanti |
+| `docs/protocols/linkedin-prospection-cartographie-protocol.md` | Cartographie 4 segments prospects · Séquence 4 messages · Scripts par profil · Métriques |
+| `docs/protocols/wave-development-protocol.md` | Règles techniques de développement waves (pour Claude) |
+
+---
+
+## ENGINES WAVE — Droits Humains (notre travail principal)
+
+### Wave 107
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Water Rights Access Sanitation | `swarm/intelligence/water_rights_access_sanitation_engine.py` | 60.91 | Droit à l'eau, assainissement, eau comme arme |
+| Prison Labor Exploitation Rights | `swarm/intelligence/prison_labor_exploitation_rights_engine.py` | 61.26 | Travail forcé carcéral, prisons privées |
+| Children Rights Armed Conflict | `swarm/intelligence/children_rights_armed_conflict_engine.py` | 61.29 | Enfants soldats, attaques écoles, déplacement |
+
+### Wave 108
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Disability Rights Ableism | `swarm/intelligence/disability_rights_ableism_engine.py` | 57.12 | Handicap, institutionnalisation forcée, validisme |
+| Genocide Prevention Accountability | `swarm/intelligence/genocide_prevention_accountability_engine.py` | 59.76 | Prévention génocide, impunité, déshumanisation |
+| Labor Union Rights Freedom Association | `swarm/intelligence/labor_union_rights_freedom_association_engine.py` | 59.07 | Syndicats, grève, négociation collective |
+
+### Wave 109
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Maternal Health Rights Obstetric Violence | `swarm/intelligence/maternal_health_rights_obstetric_violence_engine.py` | 60.64 | Mortalité maternelle, violence obstétricale |
+| Academic Freedom Scholar Persecution | `swarm/intelligence/academic_freedom_scholar_persecution_engine.py` | 57.62 | Liberté académique, persécution chercheurs |
+| Climate Refugee Displacement Rights | `swarm/intelligence/climate_refugee_displacement_rights_engine.py` | 60.26 | Réfugiés climatiques, apatridie, déplacement |
+
+### Wave 110
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Stateless Persons Nationality Rights | `swarm/intelligence/stateless_persons_nationality_rights_engine.py` | 56.40 | Apatrides, nationalité, citoyenneté refusée |
+| Human Trafficking Modern Slavery | `swarm/intelligence/human_trafficking_modern_slavery_engine.py` | 62.02 | Traite humaine, esclavage moderne, exploitation |
+| Indigenous Land Rights Territorial Sovereignty | `swarm/intelligence/indigenous_land_rights_territorial_sovereignty_engine.py` | 57.06 | Droits fonciers autochtones, dépossession terres |
+
+### Wave 111
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Digital Surveillance Privacy Rights | `swarm/intelligence/digital_surveillance_privacy_rights_engine.py` | 59.78 | Surveillance État, répression numérique, vie privée |
+| Food Sovereignty Famine Rights | `swarm/intelligence/food_sovereignty_famine_rights_engine.py` | 59.56 | Famine, nourriture comme arme, droits alimentaires |
+| Mental Health Rights Psychiatric Violence | `swarm/intelligence/mental_health_rights_psychiatric_violence_engine.py` | 57.06 | Internement forcé, violence psychiatrique |
+
+### Wave 112
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Forced Disappearance Extrajudicial Killing | `swarm/intelligence/forced_disappearance_extrajudicial_killing_engine.py` | 59.39 | Disparitions forcées, exécutions extrajudiciaires |
+| Refugees Asylum Seekers Rights | `swarm/intelligence/refugees_asylum_seekers_rights_engine.py` | 58.40 | Réfugiés, refoulement, camps, demandeurs asile |
+| Caste Discrimination Untouchability | `swarm/intelligence/caste_discrimination_untouchability_engine.py` | 57.21 | Discrimination de caste, intouchabilité, Dalits |
+
+---
+
+## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass, field
+from typing import List
+import statistics
+
+ENGINE_VERSION = "1.0.0"
+
+@dataclass
+class <Domain>Entity:
+    entity_id: str
+    name: str
+    country: str
+    <sub1>_score: float          # × 0.30
+    <sub2>_score: float          # × 0.25
+    <sub3>_score: float          # × 0.25
+    <sub4>_score: float          # × 0.20
+    composite_score: float = field(init=False)
+    risk_level: str = field(init=False)
+    primary_pattern: str = ""
+    estimated_<domain>_index: float = field(init=False)
+    last_updated: str = "2026-06-21"
+
+    def __post_init__(self):
+        self.composite_score = round(
+            self.<sub1>_score * 0.30
+            + self.<sub2>_score * 0.25
+            + self.<sub3>_score * 0.25
+            + self.<sub4>_score * 0.20, 2)
+        if self.composite_score >= 60: self.risk_level = "critique"
+        elif self.composite_score >= 40: self.risk_level = "élevé"
+        elif self.composite_score >= 20: self.risk_level = "modéré"
+        else: self.risk_level = "faible"
+        self.estimated_<domain>_index = round(self.composite_score / 100 * 10, 2)
+```
+
+**Distribution OBLIGATOIRE : 4 critique / 2 élevé / 1 modéré / 1 faible**
+
+---
+
+## PATTERN ROUTE API — À COPIER POUR CHAQUE NOUVELLE ROUTE
+
+```typescript
+import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+const MOCK: Record<string, unknown> = { /* données engine */ };
+
+export async function GET() {
+  if (!process.env.SWARM_API_URL) {
+    console.warn("[domain-engine] SWARM_API_URL not set — returning mock");
+    return sealResponse(NextResponse.json({ payload: MOCK }));
+  }
+  try {
+    const res = await fetch(`${process.env.SWARM_API_URL}/domain-engine`, { next: { revalidate: 30 } });
+    const data = await res.json();
+    return sealResponse(NextResponse.json({ payload: data }));
+  } catch {
+    return sealResponse(NextResponse.json({ error: "upstream_error" }, { status: 502 }));
+  }
+}
+```
+
+**Checklist sécurité :** ✓ sealResponse · ✓ SWARM_API_URL guard · ✓ revalidate:30 · ✓ status:502
+
+---
+
+## PATTERN DASHBOARD — Éléments clés
+
+```
+"use client"                           → TOUJOURS en première ligne
+GaugeRing: r=36 cx=44 cy=44           → EXACT, ne pas changer
+viewBox="0 0 88 88" strokeWidth={8}   → EXACT
+bg-slate-950                           → fond page
+fetch → d.payload ?? d                 → récupération données
+&apos;                                 → apostrophes dans JSX (jamais ')
+&amp;                                  → & dans JSX
+Pas de useCallback/useMemo            → jamais
+```
+
+---
+
+## DASHBOARDS CRÉÉS
+
+| Dashboard | URL | Accent |
+|-----------|-----|--------|
+| Water Rights Access Sanitation | `/dashboard/water-rights-access-sanitation-engine` | `#0ea5e9` |
+| Prison Labor Exploitation Rights | `/dashboard/prison-labor-exploitation-rights-engine` | `#dc2626` |
+| Children Rights Armed Conflict | `/dashboard/children-rights-armed-conflict-engine` | `#d97706` |
+| Disability Rights Ableism | `/dashboard/disability-rights-ableism-engine` | `#7c3aed` |
+| Genocide Prevention Accountability | `/dashboard/genocide-prevention-accountability-engine` | `#b91c1c` |
+| Labor Union Rights Freedom Association | `/dashboard/labor-union-rights-freedom-association-engine` | `#0369a1` |
+| Maternal Health Rights Obstetric Violence | `/dashboard/maternal-health-rights-obstetric-violence-engine` | `#be185d` |
+| Academic Freedom Scholar Persecution | `/dashboard/academic-freedom-scholar-persecution-engine` | `#7c2d12` |
+| Climate Refugee Displacement Rights | `/dashboard/climate-refugee-displacement-rights-engine` | `#0f766e` |
+| Stateless Persons Nationality Rights | `/dashboard/stateless-persons-nationality-rights-engine` | `#b45309` |
+| Human Trafficking Modern Slavery | `/dashboard/human-trafficking-modern-slavery-engine` | `#7f1d1d` |
+| Indigenous Land Rights Territorial Sovereignty | `/dashboard/indigenous-land-rights-territorial-sovereignty-engine` | `#14532d` |
+| Digital Surveillance Privacy Rights | `/dashboard/digital-surveillance-privacy-rights-engine` | `#1e3a5f` |
+| Food Sovereignty Famine Rights | `/dashboard/food-sovereignty-famine-rights-engine` | `#713f12` |
+| Mental Health Rights Psychiatric Violence | `/dashboard/mental-health-rights-psychiatric-violence-engine` | `#4c1d95` |
+| Forced Disappearance Extrajudicial Killing | `/dashboard/forced-disappearance-extrajudicial-killing-engine` | `#450a0a` |
+| Refugees Asylum Seekers Rights | `/dashboard/refugees-asylum-seekers-rights-engine` | `#0c4a6e` |
+| Caste Discrimination Untouchability | `/dashboard/caste-discrimination-untouchability-engine` | `#3b0764` |
+
+---
+
+## INFOS COMPTE & PROJET
+
+| Info | Valeur |
+|------|--------|
+| GitHub repo | `chaima0007/TEST` |
+| Branche principale | `claude/swarm-50-agent-architecture-3l6cno` |
+| Email pro Gmail | `chaima.caelumpartners@gmail.com` |
+| Projet | Caelum Partners — intelligence droits humains |
+| Ville | Bruxelles |
+| Fondatrice | Chaima Mhadbi |
+
+---
+
+## COMMANDES GIT À RETENIR
+
+```bash
+# Démarrage OBLIGATOIRE à chaque session
+git config user.email noreply@anthropic.com && git config user.name Claude
+git checkout claude/swarm-50-agent-architecture-3l6cno
+git pull origin claude/swarm-50-agent-architecture-3l6cno
+git branch --show-current
+
+# Vérifier avant commit
+git status --short
+python3 swarm/intelligence/<engine>.py
+
+# Vérifier doublons Sidebar
+grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort | uniq -d
+```
+
+---
+
+## CE QUI EST PRÉVU (prochaines étapes)
+
+- [ ] Script d'automatisation des waves (`run_wave.py`) — pour créer engines+routes+sidebar+dashboards sans Claude
+- [ ] GitHub Actions workflow — pour déclencher une wave depuis GitHub directement
+- [ ] Intégration Gmail + Google Calendar via Composio + Claude Agent SDK
+- [ ] Continuer les waves (113, 114, 115...) — pipeline infini
+
+---
+
+*Mis à jour : 2026-06-21 · Caelum Partners · Chaima Mhadbi*
