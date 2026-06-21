@@ -9635,6 +9635,24 @@ function IconDeathPenaltyWrongfulExecution({ className }: { className?: string }
   )
 }
 
+function IconEnforcedDisappearancesExtrajudicial({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 12l4.5 4.5m0-4.5l-4.5 4.5" />
+    </svg>
+  )
+}
+
+function IconHousingForcedEvictionsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 9.75l3 3" />
+    </svg>
+  )
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10698,6 +10716,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/organ-trafficking-transplant-tourism-engine", label: "Trafic Organes & Tourisme Transplant", icon: <IconOrganTraffickingTransplant className="w-4 h-4" /> },
       { href: "/dashboard/digital-surveillance-pegasus-spyware-engine", label: "Surveillance Numérique & Pegasus", icon: <IconDigitalSurveillancePegasus className="w-4 h-4" /> },
       { href: "/dashboard/death-penalty-wrongful-execution-engine", label: "Peine de Mort & Exécutions Erronées", icon: <IconDeathPenaltyWrongfulExecution className="w-4 h-4" /> },
+      { href: "/dashboard/enforced-disappearances-extrajudicial-engine", label: "Disparitions Forcées & Extrajudiciaires", icon: <IconEnforcedDisappearancesExtrajudicial className="w-4 h-4" /> },
+      { href: "/dashboard/housing-forced-evictions-rights-engine", label: "Logement & Expulsions Forcées W187", icon: <IconHousingForcedEvictionsRights className="w-4 h-4" /> },
     ],
   },
   {
