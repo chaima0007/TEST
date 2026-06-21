@@ -10526,6 +10526,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/modern-slavery-forced-labor-contemporary-engine", label: "Esclavage Moderne", icon: <IconHumanTraffickingModernSlavery className="w-4 h-4" /> },
       { href: "/dashboard/climate-justice-climate-refugees-rights-engine", label: "Justice Climatique", icon: <IconClimateJustice className="w-4 h-4" /> },
       { href: "/dashboard/food-right-agribusiness-hunger-engine", label: "Droit à l&apos;Alimentation", icon: <IconFoodSovereigntyRightToFood className="w-4 h-4" /> },
+      { href: "/dashboard/genocide-prevention-early-warning-engine", label: "Prévention Génocide & Alerte", icon: <IconGenocidePreventionAccountability className="w-4 h-4" /> },
+      { href: "/dashboard/child-soldiers-armed-recruitment-contemporain-engine", label: "Enfants Soldats Contemporain", icon: <IconChildSoldiers className="w-4 h-4" /> },
+      { href: "/dashboard/solitary-confinement-torture-methods-engine", label: "Isolement & Torture", icon: <IconSolitaryConfinement className="w-4 h-4" /> },
     ],
   },
   {
