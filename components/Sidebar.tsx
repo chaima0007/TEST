@@ -9731,6 +9731,41 @@ function IconDigitalFeudalismPlatformRights({ className }: { className?: string 
   );
 }
 
+function IconNeurotechCognitiveLibertyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="8" r="5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M7 8 Q10 5 13 8" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <path d="M10 13 L10 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M7 17 L13 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="10" cy="8" r="1.5" />
+    </svg>
+  );
+}
+
+function IconSpaceColonizationIndigenousRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M10 2 L10 6 M10 14 L10 18 M2 10 L6 10 M14 10 L18 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="10" cy="10" r="1.5" />
+      <path d="M5 5 L8 8 M12 12 L15 15" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconSyntheticBiologyBiosafetyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2 C8 4 6 6 6 9 C6 12 8 14 10 14 C12 14 14 12 14 9 C14 6 12 4 10 2Z" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="7" y1="7" x2="13" y2="7" stroke="currentColor" strokeWidth="1" />
+      <line x1="7" y1="10" x2="13" y2="10" stroke="currentColor" strokeWidth="1" />
+      <path d="M8 14 L7 18 M12 14 L13 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="6" y1="18" x2="14" y2="18" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10802,6 +10837,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/biotech-genetic-discrimination-rights-engine", label: "Génétique & Discrimination", icon: <IconBiotechGeneticDiscrimination className="w-4 h-4" /> },
       { href: "/dashboard/carbon-colonialism-climate-justice-engine", label: "Colonialisme Carbone", icon: <IconCarbonColonialismClimateJustice className="w-4 h-4" /> },
       { href: "/dashboard/digital-feudalism-platform-rights-engine", label: "Féodalisme Numérique", icon: <IconDigitalFeudalismPlatformRights className="w-4 h-4" /> },
+      { href: "/dashboard/neurotech-cognitive-liberty-rights-engine", label: "Neurotechnologie & Liberté", icon: <IconNeurotechCognitiveLibertyRights className="w-4 h-4" /> },
+      { href: "/dashboard/space-colonization-indigenous-rights-engine", label: "Espace & Droits Autochtones", icon: <IconSpaceColonizationIndigenousRights className="w-4 h-4" /> },
+      { href: "/dashboard/synthetic-biology-biosafety-rights-engine", label: "Biologie Synthétique", icon: <IconSyntheticBiologyBiosafetyRights className="w-4 h-4" /> },
     ],
   },
   {
