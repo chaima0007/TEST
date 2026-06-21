@@ -9837,6 +9837,37 @@ function IconIndigenousLanguageExtinction({ className }: { className?: string })
     </svg>
   );
 }
+function IconDeepfakeSyntheticMediaRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="8" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M6 8 Q4 8 3 10 Q2 12 4 13 Q6 14 10 14 Q14 14 16 13 Q18 12 17 10 Q16 8 14 8" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="8" y1="6.5" x2="12" y2="9.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+    </svg>
+  );
+}
+function IconOffshoreTaxHavenRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M10 3 Q13 7 13 10 Q13 13 10 17 Q7 13 7 10 Q7 7 10 3 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+      <line x1="3" y1="10" x2="17" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <path d="M7 7 L13 7" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" strokeDasharray="2 1" />
+    </svg>
+  );
+}
+function IconStatelessnessDocumentRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="4" y="3" width="12" height="15" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="7" y1="7" x2="13" y2="7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <line x1="7" y1="10" x2="13" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <path d="M7 13 L10 13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <circle cx="13" cy="14" r="2" fill="none" stroke="currentColor" strokeWidth="1" />
+      <line x1="14.4" y1="15.4" x2="16" y2="17" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -10936,6 +10967,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/dark-web-cybercrime-rights-engine", label: "Dark Web & Cybercrime", icon: IconDarkWebCybercrimeRights },
       { href: "/dashboard/gig-economy-labor-exploitation-engine", label: "Économie Gig & Travail", icon: IconGigEconomyLaborExploitation },
       { href: "/dashboard/indigenous-language-extinction-rights-engine", label: "Langues Autochtones", icon: IconIndigenousLanguageExtinction },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 193",
+    items: [
+      { href: "/dashboard/deepfake-synthetic-media-rights-engine", label: "Deepfake & Médias Synth.", icon: IconDeepfakeSyntheticMediaRights },
+      { href: "/dashboard/offshore-tax-haven-rights-engine", label: "Paradis Fiscaux", icon: IconOffshoreTaxHavenRights },
+      { href: "/dashboard/statelessness-document-rights-engine", label: "Apatridie & Documents", icon: IconStatelessnessDocumentRights },
     ],
   },
   {
