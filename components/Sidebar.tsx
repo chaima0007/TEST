@@ -2725,19 +2725,6 @@ function IconArbitraryDetention({ className }: { className?: string }) {
   );
 }
 
-function IconDisabilityRights({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="12" cy="4" r="1.5" />
-      <path d="M9 9h6" />
-      <path d="M12 9v5" />
-      <path d="M9 22a4 4 0 0 1 0-8" />
-      <path d="M15 14h2l1.5 4" />
-      <path d="M9 14H7l-1 4" />
-      <path d="M12 14v-5" />
-    </svg>
-  );
-}
 
 function IconChevronLeft({ className }: { className?: string }) {
   return (
@@ -3256,15 +3243,6 @@ function IconRegenFinance({ className }: { className?: string }) {
     </svg>
   );
 }
-function IconCognitiveWarfare({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="10" cy="8" r="5"/>
-      <path d="M7 8c0-1.7 1.3-3 3-3M10 13v4M7 17h6"/>
-      <path d="M4 5L2 3M16 5l2-3M4 11l-2 2M16 11l2 2" strokeWidth="1.1"/>
-    </svg>
-  );
-}
 function IconSovereignAI({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -3330,16 +3308,6 @@ function IconNeuroadaptiveUX({ className }: { className?: string }) {
       <ellipse cx="10" cy="8" rx="7" ry="5"/>
       <path d="M5 11c0 3 2 5 5 6 3-1 5-3 5-6"/>
       <path d="M7 8h.01M10 6h.01M13 8h.01" strokeWidth="2"/>
-    </svg>
-  );
-}
-function IconSupplyChain({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="1" y="7" width="4" height="6" rx="1"/>
-      <rect x="8" y="5" width="4" height="8" rx="1"/>
-      <rect x="15" y="7" width="4" height="6" rx="1"/>
-      <path d="M5 10h3M12 10h3"/>
     </svg>
   );
 }
@@ -3500,14 +3468,6 @@ function IconCollectiveAmplification({ className }: { className?: string }) {
   );
 }
 
-function IconSovereignWealth({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M10 2l2 4h4l-3 3 1 4-4-2.5L6 13l1-4-3-3h4z"/>
-      <circle cx="10" cy="10" r="8" strokeWidth="1" opacity="0.4"/>
-    </svg>
-  );
-}
 function IconPostHuman({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -3580,16 +3540,6 @@ function IconLongevityEconomy({ className }: { className?: string }) {
       <circle cx="10" cy="7" r="3"/>
       <path d="M5 17v-1a5 5 0 0 1 10 0v1"/>
       <path d="M15 4c1.5.5 2.5 2 2.5 3.5 0 2-1.5 3.5-3.5 4" strokeWidth="1.1"/>
-    </svg>
-  );
-}
-function IconSpaceEconomy({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="10" cy="10" r="7"/>
-      <circle cx="10" cy="10" r="2"/>
-      <path d="M10 3v2M10 15v2M3 10h2M15 10h2" strokeWidth="1.1"/>
-      <path d="M14 6l-1.5 1.5M7.5 12.5L6 14" strokeWidth="1"/>
     </svg>
   );
 }
@@ -3700,17 +3650,6 @@ function IconDigitalTwin({ className }: { className?: string }) {
   );
 }
 
-function IconQuantumDisruption({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="10" cy="10" r="2"/>
-      <path d="M10 3a7 7 0 0 1 7 7"/>
-      <path d="M10 17a7 7 0 0 1-7-7"/>
-      <path d="M3 10a7 7 0 0 1 7-7"/>
-      <path d="M17 10a7 7 0 0 1-7 7"/>
-    </svg>
-  );
-}
 
 function IconUrbanIntel({ className }: { className?: string }) {
   return (
@@ -4570,18 +4509,6 @@ function IconCryptoRegulation({ className }: { className?: string }) {
   );
 }
 
-function IconFoodSecurity({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M5 3v5a3 3 0 0 0 6 0V3"/>
-      <path d="M8 3v7"/>
-      <path d="M14 3c0 4-1 6-1 9"/>
-      <path d="M14 12c1 0 2 1 2 3s-1 3-2 3"/>
-      <path d="M4 17h12"/>
-    </svg>
-  );
-}
-
 function IconSmartCity({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -4936,17 +4863,6 @@ function IconForcedLabor({ className }: { className?: string }) {
   );
 }
 
-function IconChildMarriage({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="7" cy="5" r="2"/>
-      <circle cx="14" cy="4" r="1.5"/>
-      <path d="M3 16c0-2.8 1.8-5 4-5s4 2.2 4 5"/>
-      <path d="M14 6v2l2 2" opacity="0.6"/>
-      <line x1="3" y1="13" x2="17" y2="13" strokeWidth="1" opacity="0.4"/>
-    </svg>
-  );
-}
 
 function IconOceanGovernance({ className }: { className?: string }) {
   return (
@@ -6002,13 +5918,6 @@ function IconSeedSovereignty({ className }: { className?: string }) {
     </svg>
   );
 }
-function IconAcademicFreedom({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
-    </svg>
-  );
-}
 function IconFinancialContagion({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -6153,13 +6062,6 @@ function IconWarCrimes({ className }: { className?: string }) {
   );
 }
 
-function IconInternetShutdown({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" /><line x1="2" y1="2" x2="22" y2="22" /><path d="M8.5 8.5c.9-.9 2.1-1.5 3.5-1.5" /><path d="M5 5a12 12 0 0 0-1.5 7" /><path d="M12 12v6" /><path d="M9 18h6" />
-    </svg>
-  );
-}
 
 function IconRefugeeRefoulement({ className }: { className?: string }) {
   return (
@@ -6249,15 +6151,6 @@ function IconPrisonTorture({ className }: { className?: string }) {
     </svg>
   );
 }
-function IconStatelessness({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
-      <circle cx="12" cy="8" r="4"/>
-      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-      <line x1="20" y1="4" x2="4" y2="20"/>
-    </svg>
-  );
-}
 function IconCasteDiscrimination({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
@@ -6290,17 +6183,6 @@ function IconPoliceBrutality({ className }: { className?: string }) {
   );
 }
 
-function IconColonialReparations({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M12 3v18"/>
-      <path d="M5 10l7-4 7 4"/>
-      <path d="M3 10h18"/>
-      <path d="M5 10v6l2 2h10l2-2v-6"/>
-      <path d="M7 16l2-3M17 16l-2-3" opacity="0.5"/>
-    </svg>
-  );
-}
 
 function IconHateCrime({ className }: { className?: string }) {
   return (
@@ -6483,15 +6365,6 @@ function IconClimateGeopolitics() {
   );
 }
 
-function IconOrganTrafficking() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3M12 15h.01" />
-    </svg>
-  );
-}
-
 function IconGenderApartheid() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
@@ -6589,17 +6462,6 @@ function IconReligiousPersecution({ className }: { className?: string }) {
   );
 }
 
-function IconHumanTrafficking({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <circle cx="12" cy="5" r="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5v5M9 10l-3 5h12l-3-5" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M8 19h8M10 19v-2M14 19v-2" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 8.5c-1.5.5-2 2-1.5 3.5M19 8.5c1.5.5 2 2 1.5 3.5" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7 14l-1.5 1.5M17 14l1.5 1.5" strokeDasharray="2 1" />
-    </svg>
-  );
-}
 
 function IconAntipersonnelMines({ className }: { className?: string }) {
   return (
@@ -6647,14 +6509,6 @@ function IconDomesticViolence({ className }: { className?: string }) {
   );
 }
 
-function IconWaterRights({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C12 2 5 10.5 5 14.5a7 7 0 0 0 14 0C19 10.5 12 2 12 2Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 15a3 3 0 0 0 6 0" />
-    </svg>
-  );
-}
 
 function IconHousingRights({ className }: { className?: string }) {
   return (
@@ -6756,15 +6610,6 @@ function IconAntiTorture({ className }: { className?: string }) {
   );
 }
 
-function IconTransitionalJustice({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3M12 6l-5 3 5 3 5-3-5-3Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7 9v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 20h14M12 16v4" />
-    </svg>
-  );
-}
 
 function IconElectoralRights({ className }: { className?: string }) {
   return (
@@ -6786,15 +6631,6 @@ function IconDeathPenalty({ className }: { className?: string }) {
   );
 }
 
-function IconIndigenousRights({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L6 9l2 1-4 5h16l-4-5 2-1-6-6Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 21h6M12 15v6" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 21h14" />
-    </svg>
-  );
-}
 
 function IconCorporateAccountability({ className }: { className?: string }) {
   return (
@@ -6933,15 +6769,6 @@ function IconEnvironmentalDefenders({ className }: { className?: string }) {
   );
 }
 
-function IconClimateDisplacement({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l3-6 3 4 3-8 3 5 3-2" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 8a4.5 4.5 0 019 0c.5 2-1 4-2.5 4H6a3 3 0 010-6 3 3 0 012.5 1.4" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M2 21h20" />
-    </svg>
-  );
-}
 
 function IconPeasantRights({ className }: { className?: string }) {
   return (
@@ -7614,34 +7441,8 @@ function IconLandGrabbingRights({ className }: { className?: string }) {
   );
 }
 
-function IconClimateForcedMigrationRights({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 11.41c.39-.39.39-1.02 0-1.41L12 6.41 8.41 10c-.39.39-.39 1.02 0 1.41L12 15l3.59-3.59Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v3" />
-    </svg>
-  );
-}
 
-function IconChildLaborMiningRights({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21v-1a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v1" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17l1.5 3 1.5-2 1.5 2 1.5-3" />
-    </svg>
-  );
-}
 
-function IconWaterRightsAccess({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C8.5 6.5 6 9.5 6 13a6 6 0 0 0 12 0c0-3.5-2.5-6.5-6-11Z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 13.5a3 3 0 0 0 6 0" />
-    </svg>
-  );
-}
 
 function IconPrisonLaborRights({ className }: { className?: string }) {
   return (
