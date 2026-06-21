@@ -10472,6 +10472,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/environmental-defenders-killings-engine", label: "Défenseurs Environnement", icon: IconEnvironmentalDefendersRights },
       { href: "/dashboard/access-water-sanitation-rights-engine", label: "Droit à l&apos;Eau", icon: IconWaterSanitationRights },
       { href: "/dashboard/lgbtqi-rights-criminalization-engine", label: "Droits LGBTQI+", icon: IconLgbtqRightsCriminalization },
+      { href: "/dashboard/corporate-impunity-accountability-engine", label: "Impunité Corporate", icon: IconCorporateImpunity },
+      { href: "/dashboard/freedom-religion-belief-persecution-engine", label: "Liberté Religion", icon: IconFreedomReligionBelief },
     ],
   },
   {
