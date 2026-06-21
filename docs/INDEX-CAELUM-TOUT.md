@@ -279,6 +279,9 @@ Pas de useCallback/useMemo            → jamais
 | Nuclear Testing Environmental Rights | `/dashboard/nuclear-testing-environmental-rights-engine` | `#1a2f1a` |
 | Social Protection Poverty Rights | `/dashboard/social-protection-poverty-rights-engine` | `#2c1a0a` |
 | Freedom Expression Artistic Censorship | `/dashboard/freedom-expression-artistic-censorship-engine` | `#1a0a2c` |
+| Death In Custody Prison Conditions | `/dashboard/death-in-custody-prison-conditions-engine` | `#2a1a0a` |
+| Human Rights Defenders Protection | `/dashboard/human-rights-defenders-protection-engine` | `#0a2a1a` |
+| Drug Policy Criminalization Rights | `/dashboard/drug-policy-criminalization-rights-engine` | `#1a0a2a` |
 
 ---
 
