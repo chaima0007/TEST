@@ -8262,7 +8262,6 @@ const navSections: NavSection[] = [
       { href: "/dashboard/hate-speech-incitement-engine", label: "Discours Haineux", icon: IconHateSpeechIncitement },
       { href: "/dashboard/slavery-reparations-engine", label: "Réparations Esclavage", icon: IconSlaveryReparations },
       { href: "/dashboard/conflict-minerals-engine", label: "Minerais Conflit", icon: IconConflictMinerals },
-      { href: "/dashboard/mental-health-rights-engine", label: "Droits Santé Mentale", icon: IconMentalHealthRights },
       { href: "/dashboard/austerity-social-rights-engine", label: "Austérité & Droits", icon: IconAusteritySocialRights },
       { href: "/dashboard/intersex-rights-engine", label: "Droits Intersexes", icon: IconIntersexRights },
       { href: "/dashboard/climate-litigation-rights-engine", label: "Litiges Climatiques", icon: IconClimateLitigationRights },
