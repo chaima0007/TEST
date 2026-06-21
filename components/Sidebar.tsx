@@ -10520,6 +10520,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/online-censorship-internet-freedom-engine", label: "Censure Internet", icon: <IconInternetFreedomCensorship className="w-4 h-4" /> },
       { href: "/dashboard/prison-labor-exploitation-rehabilitation-engine", label: "Travail Carcéral & Réhabilitation", icon: <IconPrisonRehabilitationReentryRights className="w-4 h-4" /> },
       { href: "/dashboard/sex-work-criminalization-trafficking-engine", label: "Criminalisation Travail Sexuel", icon: <IconSexWorkerRightsCriminalization className="w-4 h-4" /> },
+      { href: "/dashboard/forced-marriage-honor-violence-engine", label: "Mariages Forcés & Crimes d'Honneur", icon: <IconChildMarriageForcedUnion className="w-4 h-4" /> },
+      { href: "/dashboard/autonomous-weapons-killer-robots-engine", label: "Armes Autonomes Létales", icon: <IconAIAutonomousWeaponsHumanRights className="w-4 h-4" /> },
+      { href: "/dashboard/pharmaceutical-access-medicine-rights-engine", label: "Accès Médicaments", icon: <IconPandemicHealthEmergencyRights className="w-4 h-4" /> },
     ],
   },
   {
