@@ -2,49 +2,60 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  console.warn("[housing-rights-engine] SWARM_API_URL non défini — mode mock activé");
+  console.warn("[housing-rights-engine] SWARM_API_URL is not set — falling back to mock data");
 }
+
+const MOCK = {
+  agent: "Housing Rights Engine Agent",
+  domain: "housing_rights",
+  total_entities: 8,
+  avg_composite: 60.89,
+  confidence_score: 0.85,
+  risk_distribution: { critique: 4, élevé: 2, modéré: 1, faible: 1 },
+  pattern_distribution: { forced_eviction_displacement_severity: 3, housing_discrimination_marginalized: 1, rent_speculation_financialization_gap: 3, homelessness_inadequate_housing_scale: 1 },
+  top_risk_entities: [
+    "Kenya/Nairobi — Kibera 700k Habitants Bidonvilles, Expulsions Bulldozer Sans Préavis & Zéro Relogement",
+    "Philippines — 3,1M Sans Abri Manille, Expulsions Duterte Drug War & Bidonvilles Inondables",
+    "India — 5M Expulsés Projets Infra/Jeux, DUSIB Delhi Démolitions & Dalits/Tribaux Ciblés",
+  ],
+  critical_alerts: [
+    "Kenya/Nairobi: forced_eviction_displacement_severity",
+    "Philippines: forced_eviction_displacement_severity",
+    "India: housing_discrimination_marginalized",
+    "Brazil/Rio: rent_speculation_financialization_gap",
+  ],
+  last_analysis: "2026-06-21",
+  engine_version: "1.0.0",
+  avg_estimated_housing_rights_index: 6.09,
+  data_sources: [
+    "cohre_forced_evictions_violations_human_rights_report",
+    "un_habitat_world_cities_report_2022",
+    "pidesc_committee_general_comment_4_adequate_housing",
+  ],
+  entities: [
+    { entity_id: "HR-001", name: "Kenya/Nairobi — Kibera 700k Habitants Bidonvilles, Expulsions Bulldozer Sans Préavis & Zéro Relogement", country: "Kenya", composite_score: 92.95, forced_eviction_displacement_severity_score: 95.0, homelessness_inadequate_housing_scale_score: 92.0, housing_discrimination_marginalized_score: 93.0, rent_speculation_financialization_gap_score: 91.0, risk_level: "critique", primary_pattern: "forced_eviction_displacement_severity", estimated_housing_rights_index: 9.3, last_updated: "2026-06-21" },
+    { entity_id: "HR-002", name: "Philippines — 3,1M Sans Abri Manille, Expulsions Duterte Drug War & Bidonvilles Inondables", country: "Philippines", composite_score: 89.75, forced_eviction_displacement_severity_score: 92.0, homelessness_inadequate_housing_scale_score: 89.0, housing_discrimination_marginalized_score: 90.0, rent_speculation_financialization_gap_score: 87.0, risk_level: "critique", primary_pattern: "forced_eviction_displacement_severity", estimated_housing_rights_index: 8.98, last_updated: "2026-06-21" },
+    { entity_id: "HR-003", name: "India — 5M Expulsés Projets Infra/Jeux, DUSIB Delhi Démolitions & Dalits/Tribaux Ciblés", country: "Inde", composite_score: 86.75, forced_eviction_displacement_severity_score: 89.0, homelessness_inadequate_housing_scale_score: 86.0, housing_discrimination_marginalized_score: 87.0, rent_speculation_financialization_gap_score: 84.0, risk_level: "critique", primary_pattern: "housing_discrimination_marginalized", estimated_housing_rights_index: 8.68, last_updated: "2026-06-21" },
+    { entity_id: "HR-004", name: "Brazil/Rio — Favelas Pacification Expulsions Forcées, Spéculation Immobilière & Gentrification Olympique", country: "Brésil", composite_score: 83.95, forced_eviction_displacement_severity_score: 86.0, homelessness_inadequate_housing_scale_score: 83.0, housing_discrimination_marginalized_score: 84.0, rent_speculation_financialization_gap_score: 82.0, risk_level: "critique", primary_pattern: "rent_speculation_financialization_gap", estimated_housing_rights_index: 8.4, last_updated: "2026-06-21" },
+    { entity_id: "HR-005", name: "USA — 650k Sans Abri, Sweeps Campements & Criminalization Homelessness Anti-Camping Laws", country: "USA", composite_score: 52.95, forced_eviction_displacement_severity_score: 55.0, homelessness_inadequate_housing_scale_score: 53.0, housing_discrimination_marginalized_score: 52.0, rent_speculation_financialization_gap_score: 51.0, risk_level: "élevé", primary_pattern: "homelessness_inadequate_housing_scale", estimated_housing_rights_index: 5.3, last_updated: "2026-06-21" },
+    { entity_id: "HR-006", name: "Western Europe — Crise Logement Amsterdam/London/Paris, Airbnb Speculation & Familles Expulsées", country: "Europe Occidentale", composite_score: 50.95, forced_eviction_displacement_severity_score: 53.0, homelessness_inadequate_housing_scale_score: 50.0, housing_discrimination_marginalized_score: 51.0, rent_speculation_financialization_gap_score: 49.0, risk_level: "élevé", primary_pattern: "rent_speculation_financialization_gap", estimated_housing_rights_index: 5.1, last_updated: "2026-06-21" },
+    { entity_id: "HR-007", name: "COHRE/HIC — Centre Droit Logement Expulsions, Plaidoyer Droit Logement & Standards PIDESC", country: "Global", composite_score: 25.65, forced_eviction_displacement_severity_score: 27.0, homelessness_inadequate_housing_scale_score: 25.0, housing_discrimination_marginalized_score: 26.0, rent_speculation_financialization_gap_score: 24.0, risk_level: "modéré", primary_pattern: "forced_eviction_displacement_severity", estimated_housing_rights_index: 2.57, last_updated: "2026-06-21" },
+    { entity_id: "HR-008", name: "ONU/PIDESC — Article 11 Droit Logement Convenable, Rapporteur Logement & SDG 11.1", country: "Global", composite_score: 4.2, forced_eviction_displacement_severity_score: 4.0, homelessness_inadequate_housing_scale_score: 4.0, housing_discrimination_marginalized_score: 4.0, rent_speculation_financialization_gap_score: 5.0, risk_level: "faible", primary_pattern: "rent_speculation_financialization_gap", estimated_housing_rights_index: 0.42, last_updated: "2026-06-21" },
+  ],
+};
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Housing Rights Engine Agent"));
+    return NextResponse.json(await sealResponse(MOCK));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/housing-rights-engine`, { next: { revalidate: 30 } });
-    if (!res.ok) throw new Error(`Upstream ${res.status}`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/housing-rights-engine`, {
+      next: { revalidate: 30 },
+    });
+    if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Housing Rights Engine Agent"));
+    return NextResponse.json(await sealResponse(data));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Housing Rights Engine Agent"), { status: 502 });
+    return NextResponse.json(await sealResponse(MOCK), { status: 502 });
   }
-}
-
-function getMockData() {
-  const entities = [
-    { entity_id: "HR-001", name: "Afrique du Sud/Townships — 2.6M Expulsions Post-Apartheid, Bidonvilles 30% & PIE Act", country: "Afrique du Sud", sector: "Afrique du Sud 2.6M Expulsions Judiciaires Depuis 1994, Bidonvilles Soweto/Khayelitsha 30% Urbains, PIE Act Protections Contournées & 3.7M Foyers Liste Attente Logements Sociaux", composite_score: 88.45, forced_eviction_displacement_score: 92.0, homelessness_shelter_denial_score: 88.0, affordability_habitability_score: 85.0, discriminatory_housing_score: 88.0, risk_level: "critique", primary_pattern: "expulsion_forcee_deplacement", key_signals: ["Violation du droit au logement documentée — Afrique du Sud/Townships avec score composite 88.45/100 révélant des défaillances systémiques violant l'Article 25 de la DUDH et l'Article 11 du PIDESC sur le droit à un logement suffisant", "Expulsion forcée (92.0/100) — les 2.6 millions d'expulsions judiciaires depuis 1994 et la persistance des bidonvilles représentant 30% des zones urbaines constituent des violations persistantes de l'Observation Générale 7 du Comité PIDESC sur les expulsions forcées", "Activer le Rapporteur Spécial ONU sur le logement convenable et exiger l'application des Lignes Directrices ONU sur les entreprises et les droits de l'homme pour protéger les communautés contre les expulsions liées aux projets de développement"], estimated_housing_rights_index: 8.85, last_updated: "2026-06-20" },
-    { entity_id: "HR-002", name: "Chine — 1M+ Expulsions Urbanisation, Hukou Discrimination & Migrant Workers Exclure", country: "Asie du Nord-Est", sector: "Chine 1M+ Expulsions Forcées Urbanisation/JO 2008, Système Hukou Migrant Workers 250M Sans Droits Logement Urbain, Bidonvilles Non-Régularisables & CERD Rapports Discrimination", composite_score: 86.55, forced_eviction_displacement_score: 88.0, homelessness_shelter_denial_score: 85.0, affordability_habitability_score: 82.0, discriminatory_housing_score: 92.0, risk_level: "critique", primary_pattern: "discrimination_logement", key_signals: ["Violation du droit au logement documentée — Chine avec score composite 86.55/100 révélant des défaillances systémiques violant l'Article 25 de la DUDH et l'Article 11 du PIDESC sur le droit à un logement suffisant", "Expulsion forcée (88.0/100) — les 1M+ expulsions pour l'urbanisation et le système Hukou excluant 250 millions de travailleurs migrants des droits au logement urbain constituent des violations du droit au logement garanti par le PIDESC", "Activer le Rapporteur Spécial ONU sur le logement convenable et exiger l'application des Lignes Directrices ONU sur les entreprises et les droits de l'homme pour protéger les communautés contre les expulsions liées aux projets de développement"], estimated_housing_rights_index: 8.66, last_updated: "2026-06-20" },
-    { entity_id: "HR-003", name: "Inde — 17M Bidonvilles Mumbai/Delhi, Expulsions Bulldozers Modi & Dalits Ciblés", country: "Asie du Sud", sector: "Inde 17M Personnes Bidonvilles, Bulldozer Politics Modi 2022-23 Démolitions Sans Décision Justice, Dalits/Musulmans Ciblés, Dharavi Redéveloppement & 60M Sans Logement Adéquat", composite_score: 86.90, forced_eviction_displacement_score: 88.0, homelessness_shelter_denial_score: 82.0, affordability_habitability_score: 88.0, discriminatory_housing_score: 90.0, risk_level: "critique", primary_pattern: "discrimination_logement", key_signals: ["Violation du droit au logement documentée — Inde avec score composite 86.90/100 révélant des défaillances systémiques violant l'Article 25 de la DUDH et l'Article 11 du PIDESC sur le droit à un logement suffisant", "Expulsion forcée (88.0/100) — la 'Bulldozer Politics' ciblant disproportionnellement les communautés Dalits et musulmanes constitue une discrimination dans l'accès au logement violant l'Article 2 PIDESC et le CERD", "Activer le Rapporteur Spécial ONU sur le logement convenable et exiger l'application des Lignes Directrices ONU sur les entreprises et les droits de l'homme pour protéger les communautés contre les expulsions liées aux projets de développement"], estimated_housing_rights_index: 8.69, last_updated: "2026-06-20" },
-    { entity_id: "HR-004", name: "Kenya/Nairobi — Mathare/Kibera Expulsions, 60% Nairobi Bidonvilles & Sans Titre Foncier", country: "Afrique de l'Est", sector: "Nairobi 60% Population Bidonvilles Kibera/Mathare, Expulsions Forcées Infrastructure, Sans Titre Foncier 80% Résidents Bidonvilles & COHRE Rapports Kenya Violations Logement", composite_score: 84.40, forced_eviction_displacement_score: 85.0, homelessness_shelter_denial_score: 88.0, affordability_habitability_score: 82.0, discriminatory_housing_score: 82.0, risk_level: "critique", primary_pattern: "sans_abrisme_refus_abri", key_signals: ["Violation du droit au logement documentée — Kenya/Nairobi avec score composite 84.40/100 révélant des défaillances systémiques violant l'Article 25 de la DUDH et l'Article 11 du PIDESC sur le droit à un logement suffisant", "Expulsion forcée (85.0/100) — les 60% de Nairobi vivant dans des bidonvilles sans titre foncier sécurisé sont exposés à des expulsions permanentes, violant le droit à la sécurité d'occupation garanti par l'Observation Générale 4 du Comité PIDESC", "Activer le Rapporteur Spécial ONU sur le logement convenable et exiger l'application des Lignes Directrices ONU sur les entreprises et les droits de l'homme pour protéger les communautés contre les expulsions liées aux projets de développement"], estimated_housing_rights_index: 8.44, last_updated: "2026-06-20" },
-    { entity_id: "HR-005", name: "USA — 580 000 Sans-Abri, Lois Anti-Camping & Criminalization Homelessness", country: "Amérique du Nord", sector: "USA 580 000 Sans-Abri 2023 HUD, 100+ Villes Lois Anti-Camping Criminalisent SDF, Loyer Médian +50% 2020-24, 25M Coût Loyer >50% Revenu & Section 8 Listes 10+ Ans Attente", composite_score: 55.60, forced_eviction_displacement_score: 52.0, homelessness_shelter_denial_score: 62.0, affordability_habitability_score: 58.0, discriminatory_housing_score: 50.0, risk_level: "élevé", primary_pattern: "sans_abrisme_refus_abri", key_signals: ["Violation du droit au logement documentée — USA avec score composite 55.60/100 révélant une criminalisation croissante du sans-abrisme et une crise d'abordabilité affectant 25 millions de ménages violant le PIDESC (non ratifié par les USA)", "Expulsion forcée (52.0/100) — les 100+ villes américaines ayant criminalisé le sans-abrisme via des lois anti-camping constituent des violations du droit au logement et du droit à la vie privée reconnus dans les décisions de la Cour Suprême (Martin v. City of Boise)", "Ratifier le PIDESC et mettre en œuvre un plan national d'accès au logement abordable incluant l'extension du programme Section 8 et l'interdiction des lois criminalisant le sans-abrisme conformément aux recommandations du Rapporteur Spécial ONU"], estimated_housing_rights_index: 5.56, last_updated: "2026-06-20" },
-    { entity_id: "HR-006", name: "Europe/Crise Logement — Gentrification Barcelone/Amsterdam, Roma Expulsions & AirBnB", country: "Europe", sector: "Barcelone/Amsterdam Crise Logement AirBnB Gentrification, Roma 1M Expulsions Europe Non-UE, Loyers +100% 10 Ans, Grève Loyers Dublin & FEANTSA 895 000 Sans-Abri Europe", composite_score: 54.65, forced_eviction_displacement_score: 50.0, homelessness_shelter_denial_score: 55.0, affordability_habitability_score: 62.0, discriminatory_housing_score: 52.0, risk_level: "élevé", primary_pattern: "inabordabilite_inhabitable", key_signals: ["Violation du droit au logement documentée — Europe/Crise Logement avec score composite 54.65/100 révélant une crise de l'abordabilité et des expulsions discriminatoires des communautés Roma violant la Charte Sociale Européenne Révisée", "Expulsion forcée (50.0/100) — les expulsions des communautés Roma en Europe et la gentrification accélérée par AirBnB à Barcelone et Amsterdam constituant des violations du droit à la sécurité d'occupation garanti par le PIDESC et la Charte Sociale Européenne", "Renforcer les lois de contrôle des loyers et les quotas de logements abordables dans les villes européennes conformément aux recommandations du Rapporteur Spécial ONU sur le logement convenable et protéger les communautés Roma contre les expulsions discriminatoires"], estimated_housing_rights_index: 5.47, last_updated: "2026-06-20" },
-    { entity_id: "HR-007", name: "Japon/Corée — Homeless in Capsule Hotels, Jeonse Bulle & Vieillissement Logement", country: "Asie du Nord-Est", sector: "Japon 5 000 Yado-Nashi Sans Adresse Permanente, Capsule Hotels Longue Durée, Corée du Sud Bulle Jeonse Expulsions Brusques & Sōgō-Fukushi Centre Inégalités Logement Vieilles Personnes", composite_score: 28.90, forced_eviction_displacement_score: 28.0, homelessness_shelter_denial_score: 30.0, affordability_habitability_score: 32.0, discriminatory_housing_score: 25.0, risk_level: "modéré", primary_pattern: "inabordabilite_inhabitable", key_signals: ["Défis modérés du droit au logement au Japon/Corée — phénomène des 'yado-nashi' (sans adresse) au Japon et bulle Jeonse en Corée causant des expulsions brusques de locataires révèlent des tensions avec le droit à la sécurité d'occupation", "Abordabilité/Habitabilité (32.0/100) — la dépendance aux hôtels capsule comme logement longue durée et les expulsions Jeonse en Corée illustrent des lacunes dans la protection du droit au logement malgré des systèmes économiquement développés", "Renforcer les protections légales pour les locataires au Japon et en Corée du Sud et développer des alternatives aux hôtels capsule comme logement durable pour les populations à revenus modestes conformément aux standards PIDESC"], estimated_housing_rights_index: 2.89, last_updated: "2026-06-20" },
-    { entity_id: "HR-008", name: "PIDESC/ONU-Habitat — Art 11 Logement Suffisant, ODD11 & Rapporteur Spécial", country: "Global", sector: "PIDESC Article 11 Logement Suffisant, Observation Générale 4 Critères Logement, ODD11 Villes Inclusives, ONU-Habitat Programme d'Action Nairobi & Rapporteur Spécial ONU Logement", composite_score: 4.45, forced_eviction_displacement_score: 5.0, homelessness_shelter_denial_score: 4.0, affordability_habitability_score: 3.0, discriminatory_housing_score: 6.0, risk_level: "faible", primary_pattern: "discrimination_logement", key_signals: ["PIDESC/ONU-Habitat incarne le cadre exemplaire du droit au logement — Article 11 PIDESC et Observation Générale 4 définissant 7 critères de logement suffisant (sécurité, disponibilité, abordabilité, habitabilité, accessibilité, emplacement, adéquation culturelle)", "PIDESC Article 11 — impose aux États de garantir progressivement le droit à un logement suffisant incluant des mesures immédiates contre les expulsions forcées et les discriminations dans l'accès au logement", "Universaliser la ratification du PIDESC et renforcer ONU-Habitat pour accélérer la mise en œuvre de l'ODD11 sur les villes inclusives avec mécanismes de financement dédiés à l'habitat abordable dans les pays en développement"], estimated_housing_rights_index: 0.45, last_updated: "2026-06-20" },
-  ];
-
-  const avg = Math.round(entities.reduce((s, e) => s + e.composite_score, 0) / entities.length * 100) / 100;
-  return {
-    total_entities: 8,
-    avg_composite: avg,
-    risk_distribution: { critique: 4, "élevé": 2, "modéré": 1, faible: 1 },
-    pattern_distribution: { expulsion_forcee_deplacement: 1, sans_abrisme_refus_abri: 2, inabordabilite_inhabitable: 2, discrimination_logement: 3 },
-    top_risk_entities: ["Afrique du Sud/Townships — 2.6M Expulsions Post-Apartheid, Bidonvilles 30% & PIE Act", "Inde — 17M Bidonvilles Mumbai/Delhi, Expulsions Bulldozers Modi & Dalits Ciblés", "Chine — 1M+ Expulsions Urbanisation, Hukou Discrimination & Migrant Workers Exclure"],
-    critical_alerts: ["Afrique du Sud/Townships: expulsion forcée déplacement", "Inde: discrimination logement", "Chine: discrimination logement", "Kenya/Nairobi: sans-abrisme refus abri"],
-    last_analysis: "2026-06-20",
-    engine_version: "1.0.0",
-    domain: "housing_rights",
-    confidence_score: 0.82,
-    data_sources: ["un_special_rapporteur_adequate_housing_reports", "un_habitat_world_cities_report", "cohre_housing_rights_violations_database"],
-    entities,
-    avg_estimated_housing_rights_index: Math.round(avg / 100 * 10 * 100) / 100,
-  };
 }

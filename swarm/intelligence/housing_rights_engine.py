@@ -1,124 +1,183 @@
-"""Housing Rights Engine — Wave 37"""
-
-from dataclasses import dataclass
+from __future__ import annotations
+from dataclasses import dataclass, field
 from typing import List
-
+import statistics
 
 @dataclass
 class HousingRightsEntity:
     entity_id: str
     name: str
     country: str
-    sector: str
-    forced_eviction_displacement_score: float
-    homelessness_shelter_denial_score: float
-    affordability_habitability_score: float
-    discriminatory_housing_score: float
+    forced_eviction_displacement_severity_score: float
+    homelessness_inadequate_housing_scale_score: float
+    housing_discrimination_marginalized_score: float
+    rent_speculation_financialization_gap_score: float
+    composite_score: float = field(init=False)
+    risk_level: str = field(init=False)
+    primary_pattern: str = ""
+    estimated_housing_rights_index: float = field(init=False)
+    last_updated: str = "2026-06-21"
 
-    @property
-    def composite_score(self) -> float:
-        return round(
-            self.forced_eviction_displacement_score * 0.30
-            + self.homelessness_shelter_denial_score * 0.25
-            + self.affordability_habitability_score * 0.25
-            + self.discriminatory_housing_score * 0.20,
+    def __post_init__(self):
+        self.composite_score = round(
+            self.forced_eviction_displacement_severity_score * 0.30
+            + self.homelessness_inadequate_housing_scale_score * 0.25
+            + self.housing_discrimination_marginalized_score * 0.25
+            + self.rent_speculation_financialization_gap_score * 0.20,
             2,
         )
+        if self.composite_score >= 60:
+            self.risk_level = "critique"
+        elif self.composite_score >= 40:
+            self.risk_level = "élevé"
+        elif self.composite_score >= 20:
+            self.risk_level = "modéré"
+        else:
+            self.risk_level = "faible"
+        self.estimated_housing_rights_index = round(self.composite_score / 100 * 10, 2)
 
-    @property
-    def risk_level(self) -> str:
-        s = self.composite_score
-        if s >= 60: return "critique"
-        if s >= 40: return "élevé"
-        if s >= 20: return "modéré"
-        return "faible"
+@dataclass
+class HousingRightsEngineResult:
+    agent: str = "Housing Rights Engine Agent"
+    domain: str = "housing_rights"
+    total_entities: int = 0
+    avg_composite: float = 0.0
+    confidence_score: float = 0.85
+    risk_distribution: dict = field(default_factory=dict)
+    pattern_distribution: dict = field(default_factory=dict)
+    top_risk_entities: List[str] = field(default_factory=list)
+    critical_alerts: List[str] = field(default_factory=list)
+    last_analysis: str = "2026-06-21"
+    engine_version: str = "1.0.0"
+    avg_estimated_housing_rights_index: float = 0.0
+    data_sources: List[str] = field(default_factory=list)
+    entities: List[HousingRightsEntity] = field(default_factory=list)
 
-    @property
-    def primary_pattern(self) -> str:
-        scores = {
-            "expulsion_forcee_deplacement": self.forced_eviction_displacement_score,
-            "sans_abrisme_refus_abri": self.homelessness_shelter_denial_score,
-            "inabordabilite_inhabitable": self.affordability_habitability_score,
-            "discrimination_logement": self.discriminatory_housing_score,
-        }
-        return max(scores, key=scores.get)
+def run_housing_rights_engine() -> HousingRightsEngineResult:
+    entities = [
+        HousingRightsEntity(
+            entity_id="HR-001",
+            name="Kenya/Nairobi — Kibera 700k Habitants Bidonvilles, Expulsions Bulldozer Sans Préavis & Zéro Relogement",
+            country="Kenya",
+            forced_eviction_displacement_severity_score=95.0,
+            homelessness_inadequate_housing_scale_score=92.0,
+            housing_discrimination_marginalized_score=93.0,
+            rent_speculation_financialization_gap_score=91.0,
+            primary_pattern="forced_eviction_displacement_severity",
+        ),
+        HousingRightsEntity(
+            entity_id="HR-002",
+            name="Philippines — 3,1M Sans Abri Manille, Expulsions Duterte Drug War & Bidonvilles Inondables",
+            country="Philippines",
+            forced_eviction_displacement_severity_score=92.0,
+            homelessness_inadequate_housing_scale_score=89.0,
+            housing_discrimination_marginalized_score=90.0,
+            rent_speculation_financialization_gap_score=87.0,
+            primary_pattern="forced_eviction_displacement_severity",
+        ),
+        HousingRightsEntity(
+            entity_id="HR-003",
+            name="India — 5M Expulsés Projets Infra/Jeux, DUSIB Delhi Démolitions & Dalits/Tribaux Ciblés",
+            country="Inde",
+            forced_eviction_displacement_severity_score=89.0,
+            homelessness_inadequate_housing_scale_score=86.0,
+            housing_discrimination_marginalized_score=87.0,
+            rent_speculation_financialization_gap_score=84.0,
+            primary_pattern="housing_discrimination_marginalized",
+        ),
+        HousingRightsEntity(
+            entity_id="HR-004",
+            name="Brazil/Rio — Favelas Pacification Expulsions Forcées, Spéculation Immobilière & Gentrification Olympique",
+            country="Brésil",
+            forced_eviction_displacement_severity_score=86.0,
+            homelessness_inadequate_housing_scale_score=83.0,
+            housing_discrimination_marginalized_score=84.0,
+            rent_speculation_financialization_gap_score=82.0,
+            primary_pattern="rent_speculation_financialization_gap",
+        ),
+        HousingRightsEntity(
+            entity_id="HR-005",
+            name="USA — 650k Sans Abri, Sweeps Campements & Criminalization Homelessness Anti-Camping Laws",
+            country="USA",
+            forced_eviction_displacement_severity_score=55.0,
+            homelessness_inadequate_housing_scale_score=53.0,
+            housing_discrimination_marginalized_score=52.0,
+            rent_speculation_financialization_gap_score=51.0,
+            primary_pattern="homelessness_inadequate_housing_scale",
+        ),
+        HousingRightsEntity(
+            entity_id="HR-006",
+            name="Western Europe — Crise Logement Amsterdam/London/Paris, Airbnb Speculation & Familles Expulsées",
+            country="Europe Occidentale",
+            forced_eviction_displacement_severity_score=53.0,
+            homelessness_inadequate_housing_scale_score=50.0,
+            housing_discrimination_marginalized_score=51.0,
+            rent_speculation_financialization_gap_score=49.0,
+            primary_pattern="rent_speculation_financialization_gap",
+        ),
+        HousingRightsEntity(
+            entity_id="HR-007",
+            name="COHRE/HIC — Centre Droit Logement Expulsions, Plaidoyer Droit Logement & Standards PIDESC",
+            country="Global",
+            forced_eviction_displacement_severity_score=27.0,
+            homelessness_inadequate_housing_scale_score=25.0,
+            housing_discrimination_marginalized_score=26.0,
+            rent_speculation_financialization_gap_score=24.0,
+            primary_pattern="forced_eviction_displacement_severity",
+        ),
+        HousingRightsEntity(
+            entity_id="HR-008",
+            name="ONU/PIDESC — Article 11 Droit Logement Convenable, Rapporteur Logement & SDG 11.1",
+            country="Global",
+            forced_eviction_displacement_severity_score=4.0,
+            homelessness_inadequate_housing_scale_score=4.0,
+            housing_discrimination_marginalized_score=4.0,
+            rent_speculation_financialization_gap_score=5.0,
+            primary_pattern="rent_speculation_financialization_gap",
+        ),
+    ]
 
-    @property
-    def estimated_housing_rights_index(self) -> float:
-        return round(self.composite_score / 100 * 10, 2)
+    composites = [e.composite_score for e in entities]
+    avg_composite = round(statistics.mean(composites), 2)
 
-    def to_dict(self) -> dict:
-        return {
-            "entity_id": self.entity_id,
-            "name": self.name,
-            "country": self.country,
-            "sector": self.sector,
-            "composite_score": self.composite_score,
-            "forced_eviction_displacement_score": self.forced_eviction_displacement_score,
-            "homelessness_shelter_denial_score": self.homelessness_shelter_denial_score,
-            "affordability_habitability_score": self.affordability_habitability_score,
-            "discriminatory_housing_score": self.discriminatory_housing_score,
-            "risk_level": self.risk_level,
-            "primary_pattern": self.primary_pattern,
-            "key_signals": self.key_signals,
-            "estimated_housing_rights_index": self.estimated_housing_rights_index,
-            "last_updated": "2026-06-20",
-        }
-
-    @property
-    def key_signals(self) -> List[str]:
-        return [
-            f"Violation du droit au logement documentée — {self.name} avec score composite {self.composite_score}/100 révélant des défaillances systémiques violant l'Article 25 de la DUDH et l'Article 11 du PIDESC sur le droit à un logement suffisant",
-            f"Expulsion forcée ({self.forced_eviction_displacement_score}/100) — les expulsions forcées sans relogement adéquat constituent des violations directes de l'Observation Générale 7 du Comité PIDESC sur les expulsions forcées et le droit au logement",
-            "Activer le Rapporteur Spécial ONU sur le logement convenable (SRRH) et exiger l'application des Lignes Directrices ONU sur les entreprises et les droits de l'homme pour protéger les communautés contre les expulsions liées aux projets de développement",
-        ]
-
-
-ENTITIES = [
-    HousingRightsEntity("HR-001", "Afrique du Sud/Townships — 2.6M Expulsions Post-Apartheid, Bidonvilles 30% & PIE Act", "Afrique du Sud", "Afrique du Sud 2.6M Expulsions Judiciaires Depuis 1994, Bidonvilles Soweto/Khayelitsha 30% Urbains, PIE Act Protections Contournées & 3.7M Foyers Liste Attente Logements Sociaux", 92, 88, 85, 88),
-    HousingRightsEntity("HR-002", "Chine — 1M+ Expulsions Urbanisation, Hukou Discrimination & Migrant Workers Exclure", "Asie du Nord-Est", "Chine 1M+ Expulsions Forcées Urbanisation/JO 2008, Système Hukou Migrant Workers 250M Sans Droits Logement Urbain, Bidonvilles Non-Régularisables & CERD Rapports Discrimination", 88, 85, 82, 92),
-    HousingRightsEntity("HR-003", "Inde — 17M Bidonvilles Mumbai/Delhi, Expulsions Bulldozers Modi & Dalits Ciblés", "Asie du Sud", "Inde 17M Personnes Bidonvilles, Bulldozer Politics Modi 2022-23 Démolitions Sans Décision Justice, Dalits/Musulmans Ciblés, Dharavi Redéveloppement & 60M Sans Logement Adéquat", 88, 82, 88, 90),
-    HousingRightsEntity("HR-004", "Kenya/Nairobi — Mathare/Kibera Expulsions, 60% Nairobi Bidonvilles & Sans Titre Foncier", "Afrique de l'Est", "Nairobi 60% Population Bidonvilles Kibera/Mathare, Expulsions Forcées Infrastructure, Sans Titre Foncier 80% Résidents Bidonvilles & COHRE Rapports Kenya Violations Logement", 85, 88, 82, 82),
-    HousingRightsEntity("HR-005", "USA — 580 000 Sans-Abri, Lois Anti-Camping & Criminalization Homelessness", "Amérique du Nord", "USA 580 000 Sans-Abri 2023 HUD, 100+ Villes Lois Anti-Camping Criminalisent SDF, Loyer Médian +50% 2020-24, 25M Coût Loyer >50% Revenu & Section 8 Listes 10+ Ans Attente", 52, 62, 58, 50),
-    HousingRightsEntity("HR-006", "Europe/Crise Logement — Gentrification Barcelone/Amsterdam, Roma Expulsions & AirBnB", "Europe", "Barcelone/Amsterdam Crise Logement AirBnB Gentrification, Roma 1M Expulsions Europe Non-UE, Loyers +100% 10 Ans, Grève Loyers Dublin & FEANTSA 895 000 Sans-Abri Europe", 50, 55, 62, 52),
-    HousingRightsEntity("HR-007", "Japon/Corée — Homeless in Capsule Hotels, Jeonse Bulle & Vieillissement Logement", "Asie du Nord-Est", "Japon 5 000 Yado-Nashi Sans Adresse Permanente, Capsule Hotels Longue Durée, Corée du Sud Bulle Jeonse Expulsions Brusques & Sōgō-Fukushi Centre Inégalités Logement Vieilles Personnes", 28, 30, 32, 25),
-    HousingRightsEntity("HR-008", "PIDESC/ONU-Habitat — Art 11 Logement Suffisant, ODD11 & Rapporteur Spécial", "Global", "PIDESC Article 11 Logement Suffisant, Observation Générale 4 Critères Logement, ODD11 Villes Inclusives, ONU-Habitat Programme d'Action Nairobi & Rapporteur Spécial ONU Logement", 5, 4, 3, 6),
-]
-
-
-def summary() -> dict:
-    entities_data = [e.to_dict() for e in ENTITIES]
-    avg = round(sum(e.composite_score for e in ENTITIES) / len(ENTITIES), 2)
-    risk_dist = {}
-    pattern_dist = {}
-    for e in ENTITIES:
+    risk_dist: dict = {}
+    for e in entities:
         risk_dist[e.risk_level] = risk_dist.get(e.risk_level, 0) + 1
-        pattern_dist[e.primary_pattern] = pattern_dist.get(e.primary_pattern, 0) + 1
-    top = sorted(ENTITIES, key=lambda x: x.composite_score, reverse=True)[:3]
-    critical = [e for e in ENTITIES if e.risk_level == "critique"]
-    return {
-        "total_entities": len(ENTITIES),
-        "avg_composite": avg,
-        "risk_distribution": risk_dist,
-        "pattern_distribution": pattern_dist,
-        "top_risk_entities": [e.name for e in top],
-        "critical_alerts": [f"{e.name.split('—')[0].strip()}: {e.primary_pattern.replace('_', ' ')}" for e in critical],
-        "last_analysis": "2026-06-20",
-        "engine_version": "1.0.0",
-        "domain": "housing_rights",
-        "confidence_score": 0.82,
-        "data_sources": [
-            "un_special_rapporteur_adequate_housing_reports",
-            "un_habitat_world_cities_report",
-            "cohre_housing_rights_violations_database",
-        ],
-        "entities": entities_data,
-        "avg_estimated_housing_rights_index": round(avg / 100 * 10, 2),
-    }
 
+    pattern_dist: dict = {}
+    for e in entities:
+        pattern_dist[e.primary_pattern] = pattern_dist.get(e.primary_pattern, 0) + 1
+
+    sorted_entities = sorted(entities, key=lambda x: x.composite_score, reverse=True)
+    top_risk = [e.name for e in sorted_entities[:3]]
+    alerts = [
+        f"{e.name.split('—')[0].strip()}: {e.primary_pattern}"
+        for e in sorted_entities[:4]
+    ]
+
+    return HousingRightsEngineResult(
+        total_entities=len(entities),
+        avg_composite=avg_composite,
+        risk_distribution=risk_dist,
+        pattern_distribution=pattern_dist,
+        top_risk_entities=top_risk,
+        critical_alerts=alerts,
+        avg_estimated_housing_rights_index=round(avg_composite / 100 * 10, 2),
+        data_sources=[
+            "cohre_forced_evictions_violations_human_rights_report",
+            "un_habitat_world_cities_report_2022",
+            "pidesc_committee_general_comment_4_adequate_housing",
+        ],
+        entities=entities,
+    )
 
 if __name__ == "__main__":
-    s = summary()
-    print(f"Entities: {s['total_entities']}, Avg: {s['avg_composite']}, Dist: {s['risk_distribution']}")
-    for e in ENTITIES:
-        print(f"  {e.entity_id} {e.risk_level:8} {e.composite_score:6.2f} {e.name[:60]}")
+    result = run_housing_rights_engine()
+    print(f"Agent: {result.agent}")
+    print(f"Total entities: {result.total_entities}")
+    print(f"Avg composite: {result.avg_composite}")
+    print(f"Avg index: {result.avg_estimated_housing_rights_index}")
+    print(f"Risk distribution: {result.risk_distribution}")
+    print(f"Pattern distribution: {result.pattern_distribution}")
+    for e in result.entities:
+        print(f"  {e.entity_id}: {e.composite_score} [{e.risk_level}]")
