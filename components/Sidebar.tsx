@@ -2775,6 +2775,20 @@ function IconPipelineHygiene({ className }: { className?: string }) {
   );
 }
 
+function IconQuantumSurveillancePrivacy({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="2" />
+      <ellipse cx="10" cy="10" rx="8" ry="3" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <ellipse cx="10" cy="10" rx="3" ry="8" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="10" cy="2" r="1" />
+      <circle cx="10" cy="18" r="1" />
+      <circle cx="2" cy="10" r="1" />
+      <circle cx="18" cy="10" r="1" />
+    </svg>
+  );
+}
+
 function IconCompetitiveWins({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -2782,6 +2796,18 @@ function IconCompetitiveWins({ className }: { className?: string }) {
       <path d="M5.5 5.5L10 14l4.5-8.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
       <circle cx="10" cy="10" r="2"/>
       <path d="M10 16v2M8 18h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconPostQuantumCryptography({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="5" y="9" width="10" height="8" rx="1" />
+      <path d="M7 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="10" cy="13" r="1.5" fill="white" />
+      <path d="M16 4 Q18 6 16 8" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <path d="M17 5 Q19 7 17 9" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
     </svg>
   );
 }
@@ -6306,6 +6332,24 @@ function IconMigrantWorkerRights({ className }: { className?: string }) {
       <rect x="15" y="10" width="6" height="5" rx="1"/>
       <path d="M17 10V8a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v2"/>
       <path d="M15 15l-1 4M21 15l1 4"/>
+    </svg>
+  );
+}
+
+function IconQuantumSupremacyArmsRace({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="4" cy="4" r="2" />
+      <circle cx="16" cy="4" r="2" />
+      <circle cx="4" cy="16" r="2" />
+      <circle cx="16" cy="16" r="2" />
+      <circle cx="10" cy="10" r="2" />
+      <line x1="4" y1="4" x2="10" y2="10" stroke="currentColor" strokeWidth="1" />
+      <line x1="16" y1="4" x2="10" y2="10" stroke="currentColor" strokeWidth="1" />
+      <line x1="4" y1="16" x2="10" y2="10" stroke="currentColor" strokeWidth="1" />
+      <line x1="16" y1="16" x2="10" y2="10" stroke="currentColor" strokeWidth="1" />
+      <line x1="4" y1="4" x2="16" y2="4" stroke="currentColor" strokeWidth="1" />
+      <line x1="4" y1="16" x2="16" y2="16" stroke="currentColor" strokeWidth="1" />
     </svg>
   );
 }
@@ -10765,6 +10809,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/quantum-surveillance-privacy-rights-engine", label: "Surveillance Quantique", icon: <IconQuantumSurveillancePrivacy className="w-4 h-4" /> },
       { href: "/dashboard/post-quantum-cryptography-rights-engine", label: "Cryptographie Post-Quantique", icon: <IconPostQuantumCryptography className="w-4 h-4" /> },
       { href: "/dashboard/quantum-supremacy-arms-race-engine", label: "Suprématie Quantique", icon: <IconQuantumSupremacyArmsRace className="w-4 h-4" /> },
+    ],
+  },
+  {
+    title: "QUANTUM",
+    items: [
+      { href: "/dashboard/quantum-surveillance-privacy-rights-engine", label: "Surveillance Quantique", icon: IconQuantumSurveillancePrivacy },
+      { href: "/dashboard/post-quantum-cryptography-rights-engine", label: "Cryptographie Post-Quantum", icon: IconPostQuantumCryptography },
+      { href: "/dashboard/quantum-supremacy-arms-race-engine", label: "Suprématie Quantique", icon: IconQuantumSupremacyArmsRace },
     ],
   },
   {
