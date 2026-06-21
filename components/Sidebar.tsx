@@ -8383,6 +8383,31 @@ function IconForcedDisappearanceExtrajudicialKilling({ className }: { className?
   );
 }
 
+function IconChildAgriculturalLabor({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364-6.364l.707.707M5.636 18.364l-.707.707M18.364 18.364l.707-.707M5.636 5.636l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+    </svg>
+  );
+}
+
+function IconDigitalSurveillanceMassRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.964-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  );
+}
+
+function IconForcedEvictionLandRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+    </svg>
+  );
+}
+
 function IconRefugeesAsylumSeekersRights({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -11015,6 +11040,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/conflict-mineral-supply-chain-engine", label: "Minéraux de Conflit", icon: IconConflictMineralSupplyChain },
       { href: "/dashboard/refugee-camp-rights-engine", label: "Camps de Réfugiés", icon: IconRefugeeCampRights },
       { href: "/dashboard/corporate-impunity-legal-gap-engine", label: "Impunité Corporative", icon: IconCorporateImpunityLegal },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 195",
+    items: [
+      { href: "/dashboard/child-agricultural-labor-engine", label: "Travail Agricole Enfants", icon: IconChildAgriculturalLabor },
+      { href: "/dashboard/digital-surveillance-rights-engine", label: "Surveillance Numérique", icon: IconDigitalSurveillanceMassRights },
+      { href: "/dashboard/forced-eviction-land-rights-engine", label: "Expulsion & Droits Fonciers", icon: IconForcedEvictionLandRights },
     ],
   },
   {
