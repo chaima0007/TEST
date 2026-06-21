@@ -8082,6 +8082,30 @@ function IconLgbtqRightsCriminalization({ className }: { className?: string }) {
   );
 }
 
+function IconPrisonConditionsDetentionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="1" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="3" y1="15" x2="21" y2="15" /><line x1="9" y1="3" x2="9" y2="21" /><line x1="15" y1="3" x2="15" y2="21" />
+    </svg>
+  );
+}
+
+function IconFreedomAssemblyAssociationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="7" r="2" /><circle cx="15" cy="7" r="2" /><circle cx="12" cy="14" r="2" /><path d="M9 9c0 2 1.5 3 3 3s3-1 3-3" /><path d="M12 16v4" /><path d="M9 20h6" />
+    </svg>
+  );
+}
+
+function IconHousingEvictionDisplacementRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /><line x1="17" y1="9" x2="22" y2="4" /><line x1="19" y1="4" x2="22" y2="4" /><line x1="22" y1="4" x2="22" y2="7" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8907,6 +8931,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/climate-change-human-rights-engine", label: "Changement Climatique & Droits", icon: IconClimateChangeHumanRights },
       { href: "/dashboard/child-labor-exploitation-rights-engine", label: "Travail des Enfants & Exploitation", icon: IconChildLaborExploitationRights },
       { href: "/dashboard/lgbtq-rights-criminalization-engine", label: "Droits LGBTQ+ & Criminalisation", icon: IconLgbtqRightsCriminalization },
+      { href: "/dashboard/prison-conditions-detention-rights-engine", label: "Conditions Détention & Droits Prisonniers", icon: IconPrisonConditionsDetentionRights },
+      { href: "/dashboard/freedom-assembly-association-rights-engine", label: "Liberté Réunion & Association", icon: IconFreedomAssemblyAssociationRights },
+      { href: "/dashboard/housing-eviction-displacement-rights-engine", label: "Logement & Expulsions Forcées", icon: IconHousingEvictionDisplacementRights },
     ],
   },
   {
