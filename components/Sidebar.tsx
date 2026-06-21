@@ -8932,6 +8932,30 @@ function IconCulturalGenocideHeritageDestruction({ className }: { className?: st
     </svg>
   );
 }
+function IconMedicalExperimentationEthicsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .03 2.698-1.32 2.698H4.12c-1.35 0-2.32-1.698-1.32-2.698L4.2 15.3" />
+    </svg>
+  );
+}
+function IconDomesticWorkerExploitationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9H8.25" />
+    </svg>
+  );
+}
+function IconSurveillanceFacialRecognitionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 7l2 2M17 7l-2 2M7 17l2-2M17 17l-2-2" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -9874,6 +9898,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/organ-trafficking-transplant-rights-engine", label: "Trafic d'Organes", icon: <IconOrganTraffickingTransplantRights className="w-4 h-4" /> },
       { href: "/dashboard/enforced-disappearance-rights-engine", label: "Disparitions Forcées", icon: <IconEnforcedDisappearanceRights className="w-4 h-4" /> },
       { href: "/dashboard/cultural-genocide-heritage-destruction-engine", label: "Génocide Culturel", icon: <IconCulturalGenocideHeritageDestruction className="w-4 h-4" /> },
+      { href: "/dashboard/medical-experimentation-ethics-rights-engine", label: "Éthique Médicale", icon: <IconMedicalExperimentationEthicsRights className="w-4 h-4" /> },
+      { href: "/dashboard/domestic-worker-exploitation-rights-engine", label: "Travailleurs Dom.", icon: <IconDomesticWorkerExploitationRights className="w-4 h-4" /> },
+      { href: "/dashboard/surveillance-facial-recognition-rights-engine", label: "Surveillance IA", icon: <IconSurveillanceFacialRecognitionRights className="w-4 h-4" /> },
     ],
   },
   {
