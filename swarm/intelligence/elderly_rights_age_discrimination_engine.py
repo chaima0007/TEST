@@ -8,10 +8,10 @@ class ElderlyRightsAgeDiscriminationEntity:
     entity_id: str
     name: str
     country: str
-    elder_abuse_neglect_institutional_severity_score: float
-    pension_social_security_denial_scale_score: float
-    age_discrimination_employment_exclusion_score: float
-    elderly_healthcare_access_dignity_deficit_gap_score: float
+    elder_abuse_neglect_institutionalized_score: float
+    pension_social_protection_deficit_score: float
+    healthcare_access_denial_age_discrimination_score: float
+    legal_protection_elder_rights_gap_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
@@ -20,10 +20,10 @@ class ElderlyRightsAgeDiscriminationEntity:
 
     def __post_init__(self):
         self.composite_score = round(
-            self.elder_abuse_neglect_institutional_severity_score * 0.30
-            + self.pension_social_security_denial_scale_score * 0.25
-            + self.age_discrimination_employment_exclusion_score * 0.25
-            + self.elderly_healthcare_access_dignity_deficit_gap_score * 0.20,
+            self.elder_abuse_neglect_institutionalized_score * 0.30
+            + self.pension_social_protection_deficit_score * 0.25
+            + self.healthcare_access_denial_age_discrimination_score * 0.25
+            + self.legal_protection_elder_rights_gap_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -50,139 +50,133 @@ class ElderlyRightsAgeDiscriminationEngineResult:
     pattern_distribution: dict = field(default_factory=dict)
     top_risk_entities: List[str] = field(default_factory=list)
     critical_alerts: List[str] = field(default_factory=list)
-    last_analysis: str = "2026-06-21"
-    engine_version: str = "1.0.0"
-    avg_estimated_elderly_rights_age_discrimination_index: float = 0.0
     data_sources: List[str] = field(default_factory=list)
-    entities: List[ElderlyRightsAgeDiscriminationEntity] = field(default_factory=list)
+    last_analysis: str = "2026-06-21"
 
 
 def run_elderly_rights_age_discrimination_engine() -> ElderlyRightsAgeDiscriminationEngineResult:
     entities = [
         ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-001",
-            name="Chine/Maisons Retraite Abandons Covid Scandale — Aînés Isolés Morts Confinement, Familles Séparées & Maltraitance Institutionnelle Documentée",
-            country="Chine",
-            elder_abuse_neglect_institutional_severity_score=93.0,
-            pension_social_security_denial_scale_score=88.0,
-            age_discrimination_employment_exclusion_score=87.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=91.0,
-            primary_pattern="elder_abuse_neglect_institutional_severity",
-        ),
-        ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-002",
-            name="Inde/Abandons Aînés Temples Vieillesse — 3.7M Personnes Âgées Sans Abri, Abandon Familial Structurel & Discrimination Caste-Âge Cumulée",
+            entity_id="IND-002",
+            name="Inde",
             country="Inde",
-            elder_abuse_neglect_institutional_severity_score=90.0,
-            pension_social_security_denial_scale_score=89.0,
-            age_discrimination_employment_exclusion_score=85.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=88.0,
-            primary_pattern="pension_social_security_denial_scale",
+            elder_abuse_neglect_institutionalized_score=86.0,
+            pension_social_protection_deficit_score=90.0,
+            healthcare_access_denial_age_discrimination_score=84.0,
+            legal_protection_elder_rights_gap_score=88.0,
+            primary_pattern="71% personnes âgées sans revenu propre, abandon familles urbaines, mendiance, soins inexistants zones rurales",
         ),
         ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-003",
-            name="Brésil/EHPAD Abus Maltraitance Pandémie — 36 000 Morts Résidences 2020, Surmortalité Aînés Pauvres & Négligence Institutionnelle Systémique",
-            country="Brésil",
-            elder_abuse_neglect_institutional_severity_score=88.0,
-            pension_social_security_denial_scale_score=84.0,
-            age_discrimination_employment_exclusion_score=83.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=86.0,
-            primary_pattern="elder_abuse_neglect_institutional_severity",
+            entity_id="NGA-001",
+            name="Nigeria",
+            country="Nigeria",
+            elder_abuse_neglect_institutionalized_score=88.0,
+            pension_social_protection_deficit_score=92.0,
+            healthcare_access_denial_age_discrimination_score=86.0,
+            legal_protection_elder_rights_gap_score=90.0,
+            primary_pattern="Accusations sorcellerie tuent personnes âgées, abandon systématique, aucune pension 90%+ population",
         ),
         ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-004",
-            name="Russie/Retraites Gelées Inflation Pauvreté Aînés — Âge Retraite Relevé 2018, Pensions Insuffisantes & Discrimination Emploi 50+ Documentée",
-            country="Russie",
-            elder_abuse_neglect_institutional_severity_score=85.0,
-            pension_social_security_denial_scale_score=87.0,
-            age_discrimination_employment_exclusion_score=86.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=83.0,
-            primary_pattern="age_discrimination_employment_exclusion",
+            entity_id="AFG-001",
+            name="Afghanistan",
+            country="Afghanistan",
+            elder_abuse_neglect_institutionalized_score=84.0,
+            pension_social_protection_deficit_score=88.0,
+            healthcare_access_denial_age_discrimination_score=90.0,
+            legal_protection_elder_rights_gap_score=92.0,
+            primary_pattern="Personnes âgées exclues aide humanitaire, invalidité ignorée, femmes âgées particulièrement vulnérables Talibans",
         ),
         ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-005",
-            name="USA/Maisons Retraite Abus 1.5M Signalements/An — Under-Staffing Chronique, Abus Financiers Aînés & Discrimination Couleur dans EHPAD",
+            entity_id="PER-002",
+            name="Pérou",
+            country="Pérou",
+            elder_abuse_neglect_institutionalized_score=78.0,
+            pension_social_protection_deficit_score=80.0,
+            healthcare_access_denial_age_discrimination_score=76.0,
+            legal_protection_elder_rights_gap_score=82.0,
+            primary_pattern="Maltraitance documentée IPRESS, pensions insuffisantes, populations rurales quechuas sans accès",
+        ),
+        ElderlyRightsAgeDiscriminationEntity(
+            entity_id="USA-001",
+            name="USA",
             country="USA",
-            elder_abuse_neglect_institutional_severity_score=58.0,
-            pension_social_security_denial_scale_score=54.0,
-            age_discrimination_employment_exclusion_score=57.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=55.0,
-            primary_pattern="elder_abuse_neglect_institutional_severity",
+            elder_abuse_neglect_institutionalized_score=55.0,
+            pension_social_protection_deficit_score=48.0,
+            healthcare_access_denial_age_discrimination_score=52.0,
+            legal_protection_elder_rights_gap_score=45.0,
+            primary_pattern="1 personne âgée sur 10 victime maltraitance, EHPAD sous-staffés COVID-19 55K décès, discrimination âgisme santé",
         ),
         ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-006",
-            name="Afrique Sub-Saharienne/Sorcellerie Accusations Aîné Exclusion — Aînés Accusés Sorcellerie, Lynchages, Expulsions & Violence Communautaire Ritualisée",
-            country="Afrique Sub-Saharienne",
-            elder_abuse_neglect_institutional_severity_score=55.0,
-            pension_social_security_denial_scale_score=52.0,
-            age_discrimination_employment_exclusion_score=50.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=58.0,
-            primary_pattern="elderly_healthcare_access_dignity_deficit_gap",
+            entity_id="GBR-001",
+            name="Royaume-Uni",
+            country="Royaume-Uni",
+            elder_abuse_neglect_institutionalized_score=52.0,
+            pension_social_protection_deficit_score=45.0,
+            healthcare_access_denial_age_discrimination_score=50.0,
+            legal_protection_elder_rights_gap_score=42.0,
+            primary_pattern="Scandales soins domicile, austerity 1.5M sans aide suffisante, isolation sociale épidémique",
         ),
         ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-007",
-            name="HelpAge/AARP Alliance Internationale Vieillissement — Plaidoyer Convention ONU Droits Aînés, Rapport Global AgeWatch & Indicateurs Inclusion",
-            country="Global",
-            elder_abuse_neglect_institutional_severity_score=28.0,
-            pension_social_security_denial_scale_score=26.0,
-            age_discrimination_employment_exclusion_score=27.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=25.0,
-            primary_pattern="elder_abuse_neglect_institutional_severity",
+            entity_id="FRA-001",
+            name="France",
+            country="France",
+            elder_abuse_neglect_institutionalized_score=35.0,
+            pension_social_protection_deficit_score=28.0,
+            healthcare_access_denial_age_discrimination_score=30.0,
+            legal_protection_elder_rights_gap_score=25.0,
+            primary_pattern="Canicule 2003 15K décès révélatrice, Orpea scandale 2022, progrès législatifs partiels",
         ),
         ElderlyRightsAgeDiscriminationEntity(
-            entity_id="ERA-008",
-            name="ONU/Plan Madrid 2002 Vieillissement & MIPAA — Cadre International Non-Discrimination Âge, Résolutions AG Personnes Âgées & SDG Inclusion",
-            country="Global",
-            elder_abuse_neglect_institutional_severity_score=6.0,
-            pension_social_security_denial_scale_score=5.0,
-            age_discrimination_employment_exclusion_score=5.0,
-            elderly_healthcare_access_dignity_deficit_gap_score=6.0,
-            primary_pattern="pension_social_security_denial_scale",
+            entity_id="SWE-001",
+            name="Suède",
+            country="Suède",
+            elder_abuse_neglect_institutionalized_score=10.0,
+            pension_social_protection_deficit_score=8.0,
+            healthcare_access_denial_age_discrimination_score=9.0,
+            legal_protection_elder_rights_gap_score=7.0,
+            primary_pattern="Système vieillissement actif modèle, pensions universelles, soins communautaires bien financés",
         ),
     ]
 
-    composites = [e.composite_score for e in entities]
-    avg_composite = round(statistics.mean(composites), 2)
+    result = ElderlyRightsAgeDiscriminationEngineResult()
+    result.total_entities = len(entities)
+    result.avg_composite = round(
+        statistics.mean(e.composite_score for e in entities), 2
+    )
+    result.confidence_score = 0.85
 
     risk_dist: dict = {}
     for e in entities:
         risk_dist[e.risk_level] = risk_dist.get(e.risk_level, 0) + 1
+    result.risk_distribution = risk_dist
 
-    pattern_dist: dict = {}
-    for e in entities:
-        pattern_dist[e.primary_pattern] = pattern_dist.get(e.primary_pattern, 0) + 1
-
-    sorted_entities = sorted(entities, key=lambda x: x.composite_score, reverse=True)
-    top_risk = [e.name for e in sorted_entities[:3]]
-    alerts = [
-        f"{e.name.split('—')[0].strip()}: {e.primary_pattern}"
-        for e in sorted_entities[:4]
+    sorted_entities = sorted(entities, key=lambda e: e.composite_score, reverse=True)
+    result.top_risk_entities = [e.name for e in sorted_entities[:3]]
+    result.critical_alerts = [
+        f"{e.name}: composite={e.composite_score}, index={e.estimated_elderly_rights_age_discrimination_index}"
+        for e in sorted_entities
+        if e.risk_level == "critique"
+    ]
+    result.data_sources = [
+        "who_global_report_ageism_2021",
+        "helpage_global_agewatch_index_2023",
+        "human_rights_watch_elder_care_database",
+        "un_open_ended_working_group_ageing_2023",
     ]
 
-    return ElderlyRightsAgeDiscriminationEngineResult(
-        total_entities=len(entities),
-        avg_composite=avg_composite,
-        risk_distribution=risk_dist,
-        pattern_distribution=pattern_dist,
-        top_risk_entities=top_risk,
-        critical_alerts=alerts,
-        avg_estimated_elderly_rights_age_discrimination_index=round(avg_composite / 100 * 10, 2),
-        data_sources=[
-            "helpage_global_agewatch_index_annual_report",
-            "who_elder_abuse_global_status_report",
-            "ilo_age_discrimination_employment_survey",
-        ],
-        entities=entities,
-    )
+    return result
 
 
 if __name__ == "__main__":
     result = run_elderly_rights_age_discrimination_engine()
-    print(f"Agent: {result.agent}")
-    print(f"Total entities: {result.total_entities}")
-    print(f"Avg composite: {result.avg_composite}")
-    print(f"Avg index: {result.avg_estimated_elderly_rights_age_discrimination_index}")
-    print(f"Risk distribution: {result.risk_distribution}")
-    print(f"Pattern distribution: {result.pattern_distribution}")
-    for e in result.entities:
-        print(f"  {e.entity_id}: {e.composite_score} [{e.risk_level}]")
+    print(f"Agent      : {result.agent}")
+    print(f"Domain     : {result.domain}")
+    print(f"Entities   : {result.total_entities}")
+    print(f"Avg composite : {result.avg_composite}")
+    print(f"Confidence : {result.confidence_score}")
+    print(f"Distribution: {result.risk_distribution}")
+    print(f"Top risks  : {result.top_risk_entities}")
+    print("Critical alerts:")
+    for alert in result.critical_alerts:
+        print(f"  - {alert}")
+    print(f"Sources    : {result.data_sources}")
