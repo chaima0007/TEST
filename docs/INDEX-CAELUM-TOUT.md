@@ -120,6 +120,13 @@
 | Protest Freedom Assembly Rights | `swarm/intelligence/protest_freedom_assembly_rights_engine.py` | 64.03 | Répression manifestations, arrestations massives |
 | Sexual Violence Conflict Impunity | `swarm/intelligence/sexual_violence_conflict_impunity_engine.py` | 63.51 | Viol arme de guerre, impunité auteurs, justice survivantes |
 
+### Wave 121
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Right To Education Access | `swarm/intelligence/right_to_education_access_engine.py` | 60.38 | Exclusion scolaire, filles, conflits armés, inégalités |
+| Fair Trial Due Process Rights | `swarm/intelligence/fair_trial_due_process_rights_engine.py` | 61.40 | Procès équitable, tribunaux militaires, procès de masse |
+| Xenophobia Hate Crime Minority | `swarm/intelligence/xenophobia_hate_crime_minority_engine.py` | 60.09 | Xénophobie, crimes de haine, minorités, discours haineux |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -292,8 +299,8 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 - [ ] Script d'automatisation des waves (`run_wave.py`) — pour créer engines+routes+sidebar+dashboards sans Claude
 - [ ] GitHub Actions workflow — pour déclencher une wave depuis GitHub directement
 - [ ] Intégration Gmail + Google Calendar via Composio + Claude Agent SDK
-- [ ] Continuer les waves (121, 122, 123...) — pipeline infini
+- [ ] Continuer les waves (122, 123, 124...) — pipeline infini
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 120 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 121 · Caelum Partners · Chaima Mhadbi*
