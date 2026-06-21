@@ -505,6 +505,177 @@ def build_invention_portfolio() -> List[Invention]:
             utility_score=9.5,
             inventive_step_score=9.3,
         ),
+
+        # ═══════════════ GÉNÉRATION 4 — ÉMERGENCE ═══════════════
+
+        Invention(
+            invention_id="CAE-INV-007",
+            title="Système d'Intégration Blockchain-Scoring pour Admissibilité CPI",
+            generation=4,
+            parent_ids=["CAE-INV-004"],
+            ipc_class="H04L 9/32 · G06N 20/00 · G06F 40/56",
+            technical_field=(
+                "Interface directe entre le système de collecte de preuves blockchain "
+                "(CAE-INV-004) et le moteur de scoring IA (CAE-INV-001) pour pondération "
+                "automatique des preuves en droit international."
+            ),
+            problem_solved=(
+                "Les preuves certifiées blockchain (CAE-INV-004) et les scores de violations "
+                "IA (CAE-INV-001) opèrent en silos distincts. Aucune interface ne permet "
+                "l'attribution automatique d'un poids probatoire aux preuves certifiées "
+                "dans le cadre des procédures devant la CPI."
+            ),
+            solution_summary=(
+                "Système d'intégration bidirectionnel connectant le registre blockchain "
+                "de preuves (CAE-INV-004) au moteur de scoring (CAE-INV-001), permettant "
+                "l'authentification cryptographique automatisée, l'attribution d'un poids "
+                "probatoire basé sur l'IA, et la transmission directe au greffe de la CPI "
+                "via API standardisée."
+            ),
+            independent_claims=[
+                "Procédé d'authentification cryptographique des preuves de violations",
+                "Système d'attribution de poids probatoire automatisé",
+                "Interface API avec le greffe de la CPI",
+            ],
+            dependent_claims=[],
+            prior_art=[
+                "CAE-INV-001 — Scoring IA droits humains (fondation)",
+                "CAE-INV-004 — Blockchain preuve violations (fondation)",
+            ],
+            child_invention_seeds=[
+                "CAE-INV-011: Certification automatisée des experts témoins numériques",
+                "CAE-INV-013: Module d'export pour procédures d'arbitrage commercial international",
+            ],
+            novelty_score=0.88,
+            inventive_step_score=0.86,
+            utility_score=0.90,
+        ),
+
+        Invention(
+            invention_id="CAE-INV-008",
+            title="Système d'Alertes Multi-Pays à Corrélation Régionale pour Crises Droits Humains",
+            generation=4,
+            parent_ids=["CAE-INV-002"],
+            ipc_class="G06N 5/04 · G06Q 10/04 · H04L 51/21",
+            technical_field=(
+                "Extension du moteur de détection précoce (CAE-INV-002) avec corrélation "
+                "géographique régionale et système de push notifications vers ONG et gouvernements."
+            ),
+            problem_solved=(
+                "Le moteur CAE-INV-002 analyse les pays individuellement sans corréler "
+                "les crises entre pays voisins d'une même région. Les acteurs humanitaires "
+                "ne reçoivent pas d'alertes push certifiées leur permettant d'agir en temps réel."
+            ),
+            solution_summary=(
+                "Extension régionale du moteur de détection précoce avec algorithme de "
+                "corrélation géographique multi-pays, système de notification push certifiée "
+                "vers acteurs humanitaires (ONG, ambassades, OCHA), et tableau de bord "
+                "régional temps-réel avec visualisation cartographique des crises corrélées."
+            ),
+            independent_claims=[
+                "Algorithme de corrélation géographique multi-pays",
+                "Système de notification push certifiée vers acteurs humanitaires",
+                "Tableau de bord régional temps-réel",
+            ],
+            dependent_claims=[],
+            prior_art=[
+                "CAE-INV-002 — Détection précoce crises droits humains (fondation)",
+                "OCHA ReliefWeb — alertes manuelles, non-corrélées régionalement",
+            ],
+            child_invention_seeds=[
+                "CAE-INV-012: Module d'intégration OCHA ReliefWeb",
+                "CAE-INV-014: API partenariats institutionnels PNUD",
+            ],
+            novelty_score=0.85,
+            inventive_step_score=0.83,
+            utility_score=0.88,
+        ),
+
+        Invention(
+            invention_id="CAE-INV-009",
+            title="Framework de Certification ISO 27001 Adapté aux Données de Droits Humains Sensibles",
+            generation=4,
+            parent_ids=["CAE-INV-003"],
+            ipc_class="H04L 9/32 · G06F 21/62 · G06N 20/00",
+            technical_field=(
+                "Protocole de certification de sécurité spécialisé pour les systèmes de "
+                "collecte de données de violations de droits humains, intégrant protection "
+                "des sources et anonymisation fédérée."
+            ),
+            problem_solved=(
+                "La norme ISO 27001 générique ne couvre pas les cas d'usage spécifiques "
+                "aux données de violations de droits humains : protection des sources "
+                "sous contrainte juridique, anonymisation fédérée, destruction sécurisée "
+                "post-utilisation judiciaire."
+            ),
+            solution_summary=(
+                "Framework de certification dérivé d'ISO 27001, adapté aux spécificités "
+                "des systèmes de droits humains : protocole d'anonymisation des sources "
+                "témoins avec preuves cryptographiques, certification adaptée aux exigences "
+                "droits humains, et système de destruction sécurisée de données "
+                "post-utilisation conforme aux standards judiciaires internationaux."
+            ),
+            independent_claims=[
+                "Protocole d'anonymisation des sources témoins",
+                "Framework de certification adapté droits humains",
+                "Système de destruction sécurisée de données post-utilisation",
+            ],
+            dependent_claims=[],
+            prior_art=[
+                "CAE-INV-003 — Apprentissage fédéré sources anonymes (fondation)",
+                "ISO 27001:2022 — standard générique, non adapté droits humains",
+            ],
+            child_invention_seeds=[
+                "CAE-INV-013: Module de conformité RGPD spécialisé données témoins",
+                "CAE-INV-015: Certification pour systèmes d'IA éthique selon AI Act EU 2024",
+            ],
+            novelty_score=0.82,
+            inventive_step_score=0.80,
+            utility_score=0.87,
+        ),
+
+        Invention(
+            invention_id="CAE-INV-010",
+            title="Plateforme de Vérification Automatique des Certifications Fournisseurs pour CSDDD EU 2026",
+            generation=4,
+            parent_ids=["CAE-INV-005", "CAE-INV-001"],
+            ipc_class="G06Q 10/06 · G06N 20/00 · G06Q 50/10",
+            technical_field=(
+                "Module d'extension de la plateforme ESG (CAE-INV-005) avec vérification "
+                "automatique des certifications fournisseurs tier-2 et tier-3, conformité "
+                "directive CSDDD européenne 2026."
+            ),
+            problem_solved=(
+                "La plateforme CAE-INV-005 couvre les fournisseurs directs (tier-1) mais "
+                "ne peut vérifier automatiquement les certifications des fournisseurs "
+                "tier-2 et tier-3. La directive CSDDD 2026 impose cette traçabilité "
+                "sur l'ensemble de la chaîne d'approvisionnement."
+            ),
+            solution_summary=(
+                "Extension de la plateforme ESG (CAE-INV-005) avec système de vérification "
+                "automatisée des certifications fournisseurs tier-2 et tier-3 via "
+                "algorithme de traçabilité de chaîne d'approvisionnement, et génération "
+                "automatique de rapports CSDDD conformes à la directive européenne 2026."
+            ),
+            independent_claims=[
+                "Système de vérification automatisée certifications fournisseurs",
+                "Algorithme de traçabilité chaîne d'approvisionnement tier-3",
+                "Rapport CSDDD automatisé conforme à la directive EU 2026",
+            ],
+            dependent_claims=[],
+            prior_art=[
+                "CAE-INV-005 — Plateforme ESG due diligence CSDDD (fondation)",
+                "CAE-INV-001 — Scoring IA droits humains (fondation)",
+                "EcoVadis (2007) — évaluation manuelle, pas de traçabilité tier-3",
+            ],
+            child_invention_seeds=[
+                "CAE-INV-014: Intégration registres nationaux entreprises EU",
+                "CAE-INV-016: Module scoring ESG temps-réel via API données extrafinancières",
+            ],
+            novelty_score=0.91,
+            inventive_step_score=0.89,
+            utility_score=0.93,
+        ),
     ]
 
     return inventions
