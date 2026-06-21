@@ -6724,6 +6724,22 @@ function IconRightToDevelopment({ className }: { className?: string }) {
   );
 }
 
+function IconEnvironmentalRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+    </svg>
+  );
+}
+
+function IconBioethicsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 1-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21a48.25 48.25 0 0 1-8.135-.687c-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+    </svg>
+  );
+}
+
 function IconBirthRegistration({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -8211,6 +8227,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/minority-language-rights-engine", label: "Langues Minoritaires", icon: IconMinorityLanguageRights },
       { href: "/dashboard/arms-transfer-accountability-engine", label: "Transferts d'Armes", icon: IconArmsTransferAccountability },
       { href: "/dashboard/right-to-development-engine", label: "Droit au Développement", icon: IconRightToDevelopment },
+      { href: "/dashboard/environmental-rights-engine", label: "Droits Environnementaux", icon: IconEnvironmentalRights },
+      { href: "/dashboard/bioethics-rights-engine", label: "Droits Bioéthique", icon: IconBioethicsRights },
       { href: "/dashboard/birth-registration-engine", label: "Enregistrement Naissance", icon: IconBirthRegistration },
       { href: "/dashboard/migrant-domestic-workers-engine", label: "Travailleurs Domestiques", icon: IconMigrantDomesticWorkers },
       { href: "/dashboard/bioethics-engine", label: "Bioéthique", icon: IconBioethics },
