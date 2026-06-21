@@ -7420,6 +7420,30 @@ function IconConscientiousObjectorRights({ className }: { className?: string }) 
   );
 }
 
+function IconWitchHuntPersecution({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+    </svg>
+  );
+}
+
+function IconAlbinismRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+    </svg>
+  );
+}
+
+function IconMenstrualHealthEducation({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 3.741-1.342m-7.482 0 7.482 0" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8149,6 +8173,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sanitation-rights-access-engine", label: "Droits Assainissement", icon: IconSanitationRightsAccess },
       { href: "/dashboard/prison-healthcare-denial-engine", label: "Santé Carcérale", icon: IconPrisonHealthcareDenial },
       { href: "/dashboard/conscientious-objector-rights-engine", label: "Objection Conscience", icon: IconConscientiousObjectorRights },
+      { href: "/dashboard/witch-hunt-persecution-engine", label: "Chasse aux Sorcières", icon: IconWitchHuntPersecution },
+      { href: "/dashboard/albinism-rights-engine", label: "Droits Albinisme", icon: IconAlbinismRights },
+      { href: "/dashboard/menstrual-health-education-engine", label: "Santé Menstruelle", icon: IconMenstrualHealthEducation },
     ],
   },
   {
