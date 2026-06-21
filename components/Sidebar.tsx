@@ -8470,6 +8470,30 @@ function IconWomensRightsGenderBasedViolence({ className }: { className?: string
     </svg>
   );
 }
+function IconRacialJusticePoliceBrutality({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
+    </svg>
+  );
+}
+function IconInternetFreedomCensorship({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
+    </svg>
+  );
+}
+function IconWarCrimesAccountability({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.728 12.728.707.707M1 12h2m18 0h2M4.22 19.78l.707-.707M18.364 5.636l.707-.707" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+      <circle cx="12" cy="12" r="5" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -9343,6 +9367,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/migrant-workers-rights-kafala-engine", label: "Travailleurs Migrants", icon: IconMigrantWorkersRightsKafala },
       { href: "/dashboard/torture-cruel-treatment-detention-engine", label: "Torture & Détention", icon: IconTortureCruelTreatmentDetention },
       { href: "/dashboard/womens-rights-gender-based-violence-engine", label: "Droits des Femmes", icon: IconWomensRightsGenderBasedViolence },
+      { href: "/dashboard/racial-justice-police-brutality-engine", label: "Justice Raciale & Police", icon: IconRacialJusticePoliceBrutality },
+      { href: "/dashboard/internet-freedom-censorship-engine", label: "Liberté Internet", icon: IconInternetFreedomCensorship },
+      { href: "/dashboard/war-crimes-accountability-engine", label: "Crimes de Guerre", icon: IconWarCrimesAccountability },
     ],
   },
   {
