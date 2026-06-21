@@ -9697,6 +9697,40 @@ function IconQuantumSupremacyArmsRace({ className }: { className?: string }) {
   );
 }
 
+function IconBiotechGeneticDiscrimination({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2 C10 2 7 5 7 8 C7 11 10 12 10 12 C10 12 13 11 13 8 C13 5 10 2 10 2Z" opacity="0.7" />
+      <path d="M10 12 C10 12 7 13 7 16 C7 19 10 19 10 19 C10 19 13 19 13 16 C13 13 10 12 10 12Z" opacity="0.7" />
+      <line x1="6" y1="7" x2="14" y2="7" stroke="currentColor" strokeWidth="1" />
+      <line x1="6" y1="10" x2="14" y2="10" stroke="currentColor" strokeWidth="1" />
+      <line x1="6" y1="13" x2="14" y2="13" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function IconCarbonColonialismClimateJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 10 Q6 6 10 8 Q14 10 17 7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M10 3 L10 4 M10 16 L10 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M13 5 L11 8 M7 12 L9 15" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconDigitalFeudalismPlatformRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="2" y="12" width="4" height="6" rx="1" />
+      <rect x="8" y="8" width="4" height="10" rx="1" />
+      <rect x="14" y="4" width="4" height="14" rx="1" />
+      <path d="M4 12 L4 8 L10 5 L10 8" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10765,6 +10799,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/quantum-surveillance-privacy-rights-engine", label: "Surveillance Quantique", icon: <IconQuantumSurveillancePrivacy className="w-4 h-4" /> },
       { href: "/dashboard/post-quantum-cryptography-rights-engine", label: "Cryptographie Post-Quantique", icon: <IconPostQuantumCryptography className="w-4 h-4" /> },
       { href: "/dashboard/quantum-supremacy-arms-race-engine", label: "Suprématie Quantique", icon: <IconQuantumSupremacyArmsRace className="w-4 h-4" /> },
+      { href: "/dashboard/biotech-genetic-discrimination-rights-engine", label: "Génétique & Discrimination", icon: <IconBiotechGeneticDiscrimination className="w-4 h-4" /> },
+      { href: "/dashboard/carbon-colonialism-climate-justice-engine", label: "Colonialisme Carbone", icon: <IconCarbonColonialismClimateJustice className="w-4 h-4" /> },
+      { href: "/dashboard/digital-feudalism-platform-rights-engine", label: "Féodalisme Numérique", icon: <IconDigitalFeudalismPlatformRights className="w-4 h-4" /> },
     ],
   },
   {
