@@ -1,0 +1,137 @@
+openapi: "3.1.0"
+info:
+  title: Caelum Knowledge Base API
+  version: "1.0.0"
+  description: Read-only semantic search API for Caelum Partners agents
+
+servers:
+  - url: https://kb.caelumpartners.eu/v1
+
+security:
+  - BearerAuth: []
+
+paths:
+  /kb/search:
+    get:
+      operationId: openapi_server.controllers.kb_controller.kb_search
+      summary: Recherche sémantique
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string }
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [company, persona, playbook, all]
+          default: all
+        - name: limit
+          in: query
+          schema: { type: integer, default: 5, maximum: 20 }
+        - name: min_score
+          in: query
+          schema: { type: number, format: float, default: 0.65 }
+        - name: next_token
+          in: query
+          schema: { type: string, nullable: true }
+      responses:
+        "200":
+          description: Résultats
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        "400":
+          description: Paramètre invalide
+        "401":
+          description: Non autorisé
+        "500":
+          description: Erreur interne
+
+  /kb/companies/{slug}:
+    get:
+      operationId: openapi_server.controllers.kb_controller.kb_get_company
+      summary: Fiche entreprise
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Fiche complète
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KBResult'
+        "401":
+          description: Non autorisé
+        "404":
+          description: Non trouvée
+
+  /kb/personas/{slug}:
+    get:
+      operationId: openapi_server.controllers.kb_controller.kb_get_persona
+      summary: Persona
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Profil persona
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KBResult'
+        "401":
+          description: Non autorisé
+        "404":
+          description: Non trouvé
+
+  /kb/health:
+    get:
+      operationId: openapi_server.controllers.kb_controller.kb_health
+      summary: Health check
+      security: []
+      responses:
+        "200":
+          description: OK
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+
+  schemas:
+    KBResult:
+      type: object
+      required: [id, slug, type, score, snippet, source]
+      properties:
+        id: { type: string }
+        slug: { type: string }
+        type:
+          type: string
+          enum: [company, persona, playbook]
+        score: { type: number, format: float }
+        snippet: { type: string }
+        source: { type: string }
+
+    SearchResponse:
+      type: object
+      required: [results, total, query_time_ms]
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/KBResult'
+        total: { type: integer }
+        next_token:
+          type: string
+          nullable: true
+        query_time_ms:
+          type: number
+          format: float
