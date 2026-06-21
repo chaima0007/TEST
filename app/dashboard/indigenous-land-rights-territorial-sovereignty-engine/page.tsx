@@ -9,14 +9,14 @@ interface Entity {
   composite_score: number;
   risk_level: string;
   primary_pattern: string;
-  estimated_human_trafficking_modern_slavery_index: number;
+  estimated_indigenous_land_rights_territorial_sovereignty_index: number;
 }
 interface EngineData {
   agent: string;
   total_entities: number;
   avg_composite: number;
   confidence_score: number;
-  avg_estimated_human_trafficking_modern_slavery_index: number;
+  avg_estimated_indigenous_land_rights_territorial_sovereignty_index: number;
   risk_distribution: Record<string, number>;
   top_risk_entities: string[];
   critical_alerts: string[];
@@ -100,17 +100,17 @@ function DetailModal({ entity, accent, onClose, indexKey }: {
 }
 
 // Main page component
-export default function HumanTraffickingModernSlaveryPage() {
+export default function IndigenousLandRightsTerritoralSovereigntyPage() {
   const [data, setData] = useState<EngineData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
-  const ACCENT = "#7f1d1d";
+  const ACCENT = "#14532d";
   const RC: Record<string, string> = {
     critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e",
   };
-  const INDEX_KEY = "estimated_human_trafficking_modern_slavery_index";
+  const INDEX_KEY = "estimated_indigenous_land_rights_territorial_sovereignty_index";
 
   useEffect(() => {
-    fetch("/api/human-trafficking-modern-slavery-engine")
+    fetch("/api/indigenous-land-rights-territorial-sovereignty-engine")
       .then(r => r.json())
       .then(d => setData(d.payload ?? d));
   }, []);
@@ -135,7 +135,7 @@ export default function HumanTraffickingModernSlaveryPage() {
               {data.total_entities} entités · Confiance {(data.confidence_score * 100).toFixed(0)}% · MAJ 2026-06-21
             </p>
           </div>
-          <GaugeRing value={data.avg_estimated_human_trafficking_modern_slavery_index} accent={ACCENT} />
+          <GaugeRing value={data.avg_estimated_indigenous_land_rights_territorial_sovereignty_index} accent={ACCENT} />
         </div>
 
         {/* Stats */}
