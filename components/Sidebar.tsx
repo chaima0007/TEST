@@ -7890,6 +7890,30 @@ function IconBorderCrossingDetentionRights({ className }: { className?: string }
   );
 }
 
+function IconStatelessPersonsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" /><line x1="2" y1="12" x2="4" y2="12" /><line x1="20" y1="12" x2="22" y2="12" />
+    </svg>
+  );
+}
+
+function IconHumanTraffickingLaborExploitation({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><line x1="18" y1="8" x2="22" y2="8" /><line x1="20" y1="6" x2="20" y2="10" />
+    </svg>
+  );
+}
+
+function IconWaterSanitationAccessRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" /><path d="M12 6v6l4 2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8691,6 +8715,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/arts-cultural-expression-rights-engine", label: "Expression Artistique & Culture", icon: IconArtsCulturalExpressionRights },
       { href: "/dashboard/mental-health-involuntary-treatment-engine", label: "Santé Mentale & Traitement Forcé", icon: IconMentalHealthInvoluntaryTreatment },
       { href: "/dashboard/border-crossing-detention-rights-engine", label: "Frontières & Détention", icon: IconBorderCrossingDetentionRights },
+      { href: "/dashboard/stateless-persons-rights-engine", label: "Apatridie & Droits", icon: IconStatelessPersonsRights },
+      { href: "/dashboard/human-trafficking-labor-exploitation-engine", label: "Traite Humaine & Exploitation", icon: IconHumanTraffickingLaborExploitation },
+      { href: "/dashboard/water-sanitation-access-rights-engine", label: "Eau & Assainissement", icon: IconWaterSanitationAccessRights },
     ],
   },
   {
