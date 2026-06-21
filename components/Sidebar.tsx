@@ -8444,6 +8444,33 @@ function IconDeathPenaltyExecutionRights({ className }: { className?: string }) 
   );
 }
 
+function IconMigrantWorkersRightsKafala({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5l3 3m0 0l-3 3m3-3H9" />
+    </svg>
+  );
+}
+
+function IconTortureCruelTreatmentDetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+    </svg>
+  );
+}
+
+function IconWomensRightsGenderBasedViolence({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="8" r="4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v9M9 18h6" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 5l3-3M17 5h3M17 5v3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9313,6 +9340,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/ethnic-minority-rights-discrimination-engine", label: "Minorités Ethniques", icon: IconEthnicMinorityRightsDiscrimination },
       { href: "/dashboard/housing-rights-forced-evictions-engine", label: "Droit au Logement", icon: IconHousingRightsForcedEvictions },
       { href: "/dashboard/death-penalty-execution-rights-engine", label: "Peine de Mort", icon: IconDeathPenaltyExecutionRights },
+      { href: "/dashboard/migrant-workers-rights-kafala-engine", label: "Travailleurs Migrants", icon: IconMigrantWorkersRightsKafala },
+      { href: "/dashboard/torture-cruel-treatment-detention-engine", label: "Torture & Détention", icon: IconTortureCruelTreatmentDetention },
+      { href: "/dashboard/womens-rights-gender-based-violence-engine", label: "Droits des Femmes", icon: IconWomensRightsGenderBasedViolence },
     ],
   },
   {
