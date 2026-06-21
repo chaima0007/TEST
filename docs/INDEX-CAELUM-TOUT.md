@@ -134,6 +134,13 @@
 | Social Protection Poverty Rights | `swarm/intelligence/social_protection_poverty_rights_engine.py` | 63.75 | Protection sociale, pauvreté extrême, austérité |
 | Freedom Expression Artistic Censorship | `swarm/intelligence/freedom_expression_artistic_censorship_engine.py` | 62.66 | Artistes emprisonnés, censure culturelle, autocensure |
 
+### Wave 123
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Death In Custody Prison Conditions | `swarm/intelligence/death_in_custody_prison_conditions_engine.py` | 62.28 | Mort en détention, surpopulation carcérale, surveillance |
+| Human Rights Defenders Protection | `swarm/intelligence/human_rights_defenders_protection_engine.py` | 61.46 | Défenseurs tués, lois agents étrangers, surveillance numérique |
+| Drug Policy Criminalization Rights | `swarm/intelligence/drug_policy_criminalization_rights_engine.py` | 60.15 | Peine de mort drogues, incarcération massive, harm reduction |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -269,6 +276,9 @@ Pas de useCallback/useMemo            → jamais
 | Right To Education Access | `/dashboard/right-to-education-access-engine` | `#1a3a5c` |
 | Fair Trial Due Process Rights | `/dashboard/fair-trial-due-process-rights-engine` | `#2a1a3c` |
 | Xenophobia Hate Crime Minority | `/dashboard/xenophobia-hate-crime-minority-engine` | `#3c1a1a` |
+| Nuclear Testing Environmental Rights | `/dashboard/nuclear-testing-environmental-rights-engine` | `#1a2f1a` |
+| Social Protection Poverty Rights | `/dashboard/social-protection-poverty-rights-engine` | `#2c1a0a` |
+| Freedom Expression Artistic Censorship | `/dashboard/freedom-expression-artistic-censorship-engine` | `#1a0a2c` |
 
 ---
 
@@ -313,4 +323,4 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 122 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 123 · Caelum Partners · Chaima Mhadbi*
