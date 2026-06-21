@@ -7195,6 +7195,33 @@ function IconDisabilityRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconColonialReparations({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18" />
+      <circle cx="12" cy="12" r="3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function IconWaterRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C12 2 5 10 5 15a7 7 0 0014 0C19 10 12 2 12 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 15a3 3 0 006 0" />
+    </svg>
+  );
+}
+function IconInternetShutdown({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3l18 18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.5 8.5A8.96 8.96 0 003 12c2 3 5.4 5 9 5a8.97 8.97 0 005.5-1.9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6.1A9 9 0 0121 12c-.7 1.2-1.7 2.3-2.9 3.1" />
+      <circle cx="12" cy="12" r="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7898,6 +7925,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/forced-disappearances-engine", label: "Disparitions Forcées", icon: IconForcedDisappearances },
       { href: "/dashboard/human-trafficking-engine", label: "Traite Êtres Humains", icon: IconHumanTrafficking },
       { href: "/dashboard/disability-rights-engine", label: "Droits Handicap", icon: IconDisabilityRights },
+      { href: "/dashboard/colonial-reparations-engine", label: "Réparations Coloniales", icon: IconColonialReparations },
+      { href: "/dashboard/water-rights-engine", label: "Droit à l'Eau", icon: IconWaterRights },
+      { href: "/dashboard/internet-shutdown-engine", label: "Coupures Internet", icon: IconInternetShutdown },
     ],
   },
   {

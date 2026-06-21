@@ -2,49 +2,60 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  console.warn("[internet-shutdown-engine] SWARM_API_URL non défini — mode mock activé");
+  console.warn("[internet-shutdown-engine] SWARM_API_URL is not set — falling back to mock data");
 }
+
+const MOCK = {
+  agent: "Internet Shutdown Engine Agent",
+  domain: "internet_shutdown",
+  total_entities: 8,
+  avg_composite: 60.84,
+  confidence_score: 0.86,
+  risk_distribution: { critique: 4, élevé: 2, modéré: 1, faible: 1 },
+  pattern_distribution: { shutdown_duration_frequency: 3, political_protest_targeting: 3, legal_accountability_gap: 2 },
+  top_risk_entities: [
+    "Myanmar — Coupures Post-Coup 2021, 4 Ans Restrictions & Populations Rurales Isolées",
+    "Éthiopie/Tigray — Coupure 2 Ans Guerre, Génocide Sans Témoins & Humanitaire Aveugle",
+    "Inde/Cachemire — Coupure 213 Jours Record Mondial, Répression Post-Art.370 & Presse Muselée",
+  ],
+  critical_alerts: [
+    "Myanmar: shutdown_duration_frequency",
+    "Éthiopie/Tigray: political_protest_targeting",
+    "Inde/Cachemire: shutdown_duration_frequency",
+    "Iran: political_protest_targeting",
+  ],
+  last_analysis: "2026-06-21",
+  engine_version: "1.0.0",
+  avg_estimated_internet_shutdown_index: 6.08,
+  data_sources: [
+    "access_now_keepiton_internet_shutdowns_annual_report",
+    "netblocks_cost_internet_shutdowns_global_tracker",
+    "freedom_house_freedom_net_global_internet_freedom_report",
+  ],
+  entities: [
+    { entity_id: "IS-001", name: "Myanmar — Coupures Post-Coup 2021, 4 Ans Restrictions & Populations Rurales Isolées", country: "Asie du Sud-Est", composite_score: 93.15, shutdown_duration_frequency_score: 95.0, economic_civil_harm_score: 90.0, political_protest_targeting_score: 95.0, legal_accountability_gap_score: 92.0, risk_level: "critique", primary_pattern: "shutdown_duration_frequency", estimated_internet_shutdown_index: 9.32, last_updated: "2026-06-21" },
+    { entity_id: "IS-002", name: "Éthiopie/Tigray — Coupure 2 Ans Guerre, Génocide Sans Témoins & Humanitaire Aveugle", country: "Afrique de l'Est", composite_score: 89.0, shutdown_duration_frequency_score: 88.0, economic_civil_harm_score: 88.0, political_protest_targeting_score: 92.0, legal_accountability_gap_score: 88.0, risk_level: "critique", primary_pattern: "political_protest_targeting", estimated_internet_shutdown_index: 8.9, last_updated: "2026-06-21" },
+    { entity_id: "IS-003", name: "Inde/Cachemire — Coupure 213 Jours Record Mondial, Répression Post-Art.370 & Presse Muselée", country: "Asie du Sud", composite_score: 86.65, shutdown_duration_frequency_score: 90.0, economic_civil_harm_score: 85.0, political_protest_targeting_score: 88.0, legal_accountability_gap_score: 82.0, risk_level: "critique", primary_pattern: "shutdown_duration_frequency", estimated_internet_shutdown_index: 8.67, last_updated: "2026-06-21" },
+    { entity_id: "IS-004", name: "Iran — Coupures Systématiques Protestations, Mahsa Amini 2022 & Blocages Plateformes", country: "Moyen-Orient", composite_score: 82.25, shutdown_duration_frequency_score: 82.0, economic_civil_harm_score: 80.0, political_protest_targeting_score: 85.0, legal_accountability_gap_score: 82.0, risk_level: "critique", primary_pattern: "political_protest_targeting", estimated_internet_shutdown_index: 8.23, last_updated: "2026-06-21" },
+    { entity_id: "IS-005", name: "Afrique/Élections — Coupures Cameroun/Mali/Tchad Périodes Électorales & Manipulation Info", country: "Afrique Sub-Saharienne", composite_score: 54.25, shutdown_duration_frequency_score: 52.0, economic_civil_harm_score: 55.0, political_protest_targeting_score: 58.0, legal_accountability_gap_score: 52.0, risk_level: "élevé", primary_pattern: "political_protest_targeting", estimated_internet_shutdown_index: 5.43, last_updated: "2026-06-21" },
+    { entity_id: "IS-006", name: "Russie/Ukraine — Blocages RT/Médias, DPI Technologie Surveillance & Internet Souverain RuNet", country: "Europe de l'Est", composite_score: 51.15, shutdown_duration_frequency_score: 48.0, economic_civil_harm_score: 52.0, political_protest_targeting_score: 55.0, legal_accountability_gap_score: 50.0, risk_level: "élevé", primary_pattern: "legal_accountability_gap", estimated_internet_shutdown_index: 5.12, last_updated: "2026-06-21" },
+    { entity_id: "IS-007", name: "Access Now/NetBlocks — ONG Détection Coupures, Alertes Temps Réel & Plaidoyer Global", country: "Global", composite_score: 25.85, shutdown_duration_frequency_score: 22.0, economic_civil_harm_score: 25.0, political_protest_targeting_score: 28.0, legal_accountability_gap_score: 30.0, risk_level: "modéré", primary_pattern: "shutdown_duration_frequency", estimated_internet_shutdown_index: 2.59, last_updated: "2026-06-21" },
+    { entity_id: "IS-008", name: "ONU/IGF — Forum Gouvernance Internet, Résolutions Liberté Expression & Normes Non Contraignantes", country: "Global", composite_score: 4.4, shutdown_duration_frequency_score: 4.0, economic_civil_harm_score: 5.0, political_protest_targeting_score: 3.0, legal_accountability_gap_score: 6.0, risk_level: "faible", primary_pattern: "legal_accountability_gap", estimated_internet_shutdown_index: 0.44, last_updated: "2026-06-21" },
+  ],
+};
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Internet Shutdown Engine Agent"));
+    return NextResponse.json(await sealResponse(MOCK));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/internet-shutdown-engine`, { next: { revalidate: 30 } });
-    if (!res.ok) throw new Error(`Upstream ${res.status}`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/internet-shutdown-engine`, {
+      next: { revalidate: 30 },
+    });
+    if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Internet Shutdown Engine Agent"));
+    return NextResponse.json(await sealResponse(data));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Internet Shutdown Engine Agent"), { status: 502 });
+    return NextResponse.json(await sealResponse(MOCK), { status: 502 });
   }
-}
-
-function getMockData() {
-  const entities = [
-    { entity_id: "IS-001", name: "Chine/GFW — Grand Firewall, WeChat Surveillance & VPN Illégaux", country: "Asie", sector: "Grand Firewall 3000+ Sites Bloqués, VPN Illégaux Prison, WeChat Surveillance IA & Système Crédit Social Connecté", composite_score: 90.9, shutdown_frequency_severity_score: 88.0, platform_censorship_scale_score: 95.0, network_surveillance_score: 95.0, digital_repression_impunity_score: 85.0, risk_level: "critique", primary_pattern: "censure_plateforme_systematique", key_signals: ["Censure systématique des plateformes de Chine/GFW — Grand Firewall bloquant 3000+ sites avec WeChat surveillance IA intégrée au système de crédit social pour contrôle total de l'espace numérique", "Droit à l'information violé — les coupures internet privent les citoyens de l'accès aux informations vitales et empêchent la documentation des violations des droits humains", "Activer les mécanismes du Conseil des droits de l'homme ONU sur l'accès à internet et sanctionner les équipementiers complices"], estimated_internet_shutdown_index: 9.09, last_updated: "2026-06-20" },
-    { entity_id: "IS-002", name: "Iran — Mahsa Amini Blackout 2022 & Filternet Permanent", country: "MENA", sector: "Blackout 2022 Mahsa Amini Manifestations, Filternet 50% Internet Bloqué, Instagram/WhatsApp Fermés & IRGC Surveillance", composite_score: 87.25, shutdown_frequency_severity_score: 92.0, platform_censorship_scale_score: 88.0, network_surveillance_score: 85.0, digital_repression_impunity_score: 82.0, risk_level: "critique", primary_pattern: "blackout_total_repression", key_signals: ["Blackout internet total répressionnel d'Iran — coupure complète d'internet pendant les manifestations Mahsa Amini pour empêcher la documentation des abus et coordonner la résistance", "Droit à l'information violé — les coupures internet privent les citoyens de l'accès aux informations vitales et empêchent la documentation des violations des droits humains", "Activer les mécanismes du Conseil des droits de l'homme ONU sur l'accès à internet et sanctionner les équipementiers complices"], estimated_internet_shutdown_index: 8.73, last_updated: "2026-06-20" },
-    { entity_id: "IS-003", name: "Myanmar — Coup 2021 Blackout Total & Réseaux Tatmadaw", country: "Asie du Sud-Est", sector: "Coup 2021 Blackout 4 Jours Total, 18 Mois Restrictions Partielles, Zayar Thaw Emprisonné & Facebook Seul Réseau Autorisé", composite_score: 85.1, shutdown_frequency_severity_score: 90.0, platform_censorship_scale_score: 82.0, network_surveillance_score: 80.0, digital_repression_impunity_score: 88.0, risk_level: "critique", primary_pattern: "blackout_total_repression", key_signals: ["Blackout internet total répressionnel de Myanmar — coupure de 4 jours lors du coup d'État de 2021 suivie de restrictions partielles pendant 18 mois ciblant les réseaux anti-junte", "Droit à l'information violé — les coupures internet privent les citoyens de l'accès aux informations vitales et empêchent la documentation des violations des droits humains", "Activer les mécanismes du Conseil des droits de l'homme ONU sur l'accès à internet et sanctionner les équipementiers complices"], estimated_internet_shutdown_index: 8.51, last_updated: "2026-06-20" },
-    { entity_id: "IS-004", name: "Russie/Roskomnadzor — Ukraine Censure & Réseaux VPN Bloqués", country: "Europe de l'Est", sector: "Facebook/Instagram Bloqués 2022, 100 000 Sites Blacklistés, Runet Isolement Projet & Journalistes VPN Criminalisés", composite_score: 82.35, shutdown_frequency_severity_score: 82.0, platform_censorship_scale_score: 85.0, network_surveillance_score: 82.0, digital_repression_impunity_score: 80.0, risk_level: "critique", primary_pattern: "censure_plateforme_systematique", key_signals: ["Censure systématique des plateformes de Russie/Roskomnadzor — blocage de Facebook/Instagram et 100 000 sites depuis 2022 avec projet Runet d'isolement total du réseau national", "Droit à l'information violé — les coupures internet privent les citoyens de l'accès aux informations vitales et empêchent la documentation des violations des droits humains", "Engager Cloudflare/ISOC pour contournement technique et saisir le Rapporteur ONU sur la liberté d'expression"], estimated_internet_shutdown_index: 8.24, last_updated: "2026-06-20" },
-    { entity_id: "IS-005", name: "Inde/Kashmir — 552 Jours Blackout Record Mondial", country: "Asie du Sud", sector: "552 Jours Coupure Kashmir 2019-21 Record Mondial, 4G Rétabli Partiellement, Section 144 Mobile & Économie -4B$", composite_score: 52.6, shutdown_frequency_severity_score: 55.0, platform_censorship_scale_score: 50.0, network_surveillance_score: 48.0, digital_repression_impunity_score: 58.0, risk_level: "élevé", primary_pattern: "throttling_elections_coups", key_signals: ["Throttling électoral et restrictions au Kashmir d'Inde — 552 jours de coupure internet record mondial au Kashmir après l'abrogation de l'article 370, impactant -4 milliards $ l'économie locale", "Droit à l'information violé — les coupures internet privent les citoyens de l'accès aux informations vitales et empêchent la documentation des violations des droits humains", "Mobiliser les observateurs internationaux munis d'outils de mesure de débit et alerter Access Now NetBlocks en temps réel"], estimated_internet_shutdown_index: 5.26, last_updated: "2026-06-20" },
-    { entity_id: "IS-006", name: "Éthiopie/Tigré — Coupures Conflit & Blackout Tigré 2020-22", country: "Afrique de l'Est", sector: "Tigré Région Coupée 2 Ans Conflit, Télécom Éthiopie Monopole État, Journalistes Arrêtés Connexion & Coupures Amhara 2023", composite_score: 54.6, shutdown_frequency_severity_score: 60.0, platform_censorship_scale_score: 52.0, network_surveillance_score: 48.0, digital_repression_impunity_score: 58.0, risk_level: "élevé", primary_pattern: "blackout_total_repression", key_signals: ["Blackout internet total répressionnel d'Éthiopie/Tigré — région du Tigré coupée d'internet pendant 2 ans de conflit empêchant toute documentation des crimes de guerre commis", "Droit à l'information violé — les coupures internet privent les citoyens de l'accès aux informations vitales et empêchent la documentation des violations des droits humains", "Activer les mécanismes du Conseil des droits de l'homme ONU sur l'accès à internet et sanctionner les équipementiers complices"], estimated_internet_shutdown_index: 5.46, last_updated: "2026-06-20" },
-    { entity_id: "IS-007", name: "Cuba/Nicaragua — Internet Limité & Réseaux Sociaux Coupés Crises", country: "Amérique Centrale", sector: "Cuba Juillet 2021 Manifestations Coupure, Nicaragua 2018 Blackout, Twitter/Facebook Bloqués Ponctuellement & VPN Populaires", composite_score: 32.5, shutdown_frequency_severity_score: 35.0, platform_censorship_scale_score: 32.0, network_surveillance_score: 28.0, digital_repression_impunity_score: 35.0, risk_level: "modéré", primary_pattern: "blackout_total_repression", key_signals: ["Blackout internet ciblé de Cuba/Nicaragua — coupures ponctuelles lors des manifestations de juillet 2021 à Cuba et 2018 au Nicaragua pour limiter la coordination des opposants", "Droit à l'information violé — les coupures internet privent les citoyens de l'accès aux informations vitales et empêchent la documentation des violations des droits humains", "Activer les mécanismes du Conseil des droits de l'homme ONU sur l'accès à internet et sanctionner les équipementiers complices"], estimated_internet_shutdown_index: 3.25, last_updated: "2026-06-20" },
-    { entity_id: "IS-008", name: "Access Now/ISOC — Défense Liberté Internet & Outils Contournement", country: "Global", sector: "Access Now NetBlocks Monitoring Temps Réel, ISOC Standards Ouverts, Résolution ONU Internet Droit Humain 2016 & Tor/VPN", composite_score: 4.45, shutdown_frequency_severity_score: 5.0, platform_censorship_scale_score: 4.0, network_surveillance_score: 3.0, digital_repression_impunity_score: 6.0, risk_level: "faible", primary_pattern: "liberte_numerique_exemplaire", key_signals: ["Access Now/ISOC incarnent la liberté numérique exemplaire — internet ouvert, absence de blackouts, protection légale du chiffrement et accès universel sans discrimination", "Résolution ONU 2016 sur l'accès à internet — droit humain fondamental contraignant les États à garantir la connectivité et à s'abstenir de coupures délibérées", "Partager les cadres légaux protégeant la neutralité du net et financer les outils de contournement pour les pays sous censure"], estimated_internet_shutdown_index: 0.45, last_updated: "2026-06-20" },
-  ];
-
-  const avg = Math.round(entities.reduce((s, e) => s + e.composite_score, 0) / entities.length * 100) / 100;
-  return {
-    total_entities: 8,
-    avg_composite: avg,
-    risk_distribution: { critique: 4, "élevé": 2, "modéré": 1, faible: 1 },
-    pattern_distribution: { blackout_total_repression: 4, censure_plateforme_systematique: 2, surveillance_reseau_massive: 0, throttling_elections_coups: 1, liberte_numerique_exemplaire: 1 },
-    top_risk_entities: ["Chine/GFW — Grand Firewall, WeChat Surveillance & VPN Illégaux", "Iran — Mahsa Amini Blackout 2022 & Filternet Permanent", "Myanmar — Coup 2021 Blackout Total & Réseaux Tatmadaw"],
-    critical_alerts: ["Chine/GFW: censure systématique plateformes", "Iran: blackout total répressionnel", "Myanmar: blackout total répressionnel", "Russie/Roskomnadzor: censure systématique plateformes"],
-    last_analysis: "2026-06-20",
-    engine_version: "1.0.0",
-    domain: "internet_shutdown",
-    confidence_score: 0.86,
-    data_sources: ["access_now_keep_it_on_database", "freedom_house_freedom_net_report", "netblocks_internet_outage_detector"],
-    entities,
-    avg_estimated_internet_shutdown_index: Math.round(avg / 100 * 10 * 100) / 100,
-  };
 }
