@@ -7962,6 +7962,30 @@ function IconForcedDisappearancesExtrajudicial({ className }: { className?: stri
   );
 }
 
+function IconArmedConflictCivilianProtection({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  );
+}
+
+function IconWhistleblowerLeakerProtection({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1" /><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" /><line x1="6" y1="1" x2="6" y2="4" /><line x1="10" y1="1" x2="10" y2="4" /><line x1="14" y1="1" x2="14" y2="4" />
+    </svg>
+  );
+}
+
+function IconRacialDiscriminationSystemicRacism({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" /><path d="M8 12h8" /><path d="M12 8v8" /><path d="M4.93 4.93l14.14 14.14" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8772,6 +8796,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/reproductive-rights-bodily-autonomy-engine", label: "Droits Reproductifs & Autonomie", icon: IconReproductiveRightsBodlyAutonomy },
       { href: "/dashboard/online-censorship-platform-governance-engine", label: "Censure En Ligne & Plateformes", icon: IconOnlineCensorshipPlatformGovernance },
       { href: "/dashboard/forced-disappearances-extrajudicial-engine", label: "Disparitions Forcées & Extrajudiciaires", icon: IconForcedDisappearancesExtrajudicial },
+      { href: "/dashboard/armed-conflict-civilian-protection-engine", label: "Conflits Armés & Protection Civils", icon: IconArmedConflictCivilianProtection },
+      { href: "/dashboard/whistleblower-leaker-protection-engine", label: "Lanceurs d&apos;Alerte & Protection Sources", icon: IconWhistleblowerLeakerProtection },
+      { href: "/dashboard/racial-discrimination-systemic-racism-engine", label: "Discrimination Raciale & Racisme Systémique", icon: IconRacialDiscriminationSystemicRacism },
     ],
   },
   {
