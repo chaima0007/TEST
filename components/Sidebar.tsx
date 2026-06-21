@@ -8200,6 +8200,36 @@ function IconHumanTraffickingModernSlavery({ className }: { className?: string }
   );
 }
 
+function IconColonialReparationsHistoricalJustice({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1.5M12 19.5V21M3 12h1.5M19.5 12H21M6.22 6.22l1.06 1.06M16.72 16.72l1.06 1.06M6.22 17.78l1.06-1.06M16.72 7.28l1.06-1.06" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12a3 3 0 106 0 3 3 0 00-6 0z" />
+    </svg>
+  );
+}
+
+function IconBiometricSurveillanceStateControl({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 3l1.5 1.5M15 3l-1.5 1.5M9 21l1.5-1.5M15 21l-1.5-1.5" />
+    </svg>
+  );
+}
+
+function IconFoodSovereigntyAgriculturalRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c0 0-4 4-4 9s4 9 4 9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c0 0 4 4 4 9s-4 9-4 9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 9h8M8 12h8M8 15h8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9040,6 +9070,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/internet-shutdown-digital-rights-engine", label: "Coupures Internet & Droits Numériques", icon: IconInternetShutdownDigitalRights },
       { href: "/dashboard/statelessness-citizenship-rights-engine", label: "Apatridie & Droits à la Nationalité", icon: IconStatelessnessCitizenshipRights },
       { href: "/dashboard/human-trafficking-modern-slavery-engine", label: "Trafic Humain & Esclavage Moderne", icon: IconHumanTraffickingModernSlavery },
+      { href: "/dashboard/colonial-reparations-historical-justice-engine", label: "Réparations Coloniales & Justice Historique", icon: IconColonialReparationsHistoricalJustice },
+      { href: "/dashboard/biometric-surveillance-state-control-engine", label: "Surveillance Biométrique & Contrôle Étatique", icon: IconBiometricSurveillanceStateControl },
+      { href: "/dashboard/food-sovereignty-agricultural-rights-engine", label: "Souveraineté Alimentaire & Droits Agricoles", icon: IconFoodSovereigntyAgriculturalRights },
     ],
   },
   {
