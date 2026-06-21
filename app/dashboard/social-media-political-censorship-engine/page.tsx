@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const ACCENT = "#0891b2";
-const SLUG = "disability-rights-accessibility-engine";
+const ACCENT = "#6366f1";
+const SLUG = "social-media-political-censorship-engine";
 
 const RC: Record<string, string> = {
   critique: "#dc2626", élevé: "#f97316", modéré: "#eab308", faible: "#22c55e",
@@ -32,10 +32,10 @@ function DetailModal({ entity, onClose }: { entity: Record<string, unknown>; onC
   const [tab, setTab] = useState<"apercu" | "metriques" | "sources">("apercu");
   const rl = entity.risk_level as string;
   const SUB_SCORES = [
-    "institutional_segregation_forced_treatment_severity_score",
-    "employment_education_exclusion_scale_score",
-    "physical_infrastructure_accessibility_barrier_score",
-    "crpd_legal_capacity_recognition_deficit_gap_score",
+    "platform_content_removal_political_severity_score",
+    "internet_shutdown_election_suppression_scale_score",
+    "state_disinformation_manipulation_score",
+    "journalist_blogger_platform_ban_deficit_gap_score",
   ];
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
@@ -84,7 +84,7 @@ function DetailModal({ entity, onClose }: { entity: Record<string, unknown>; onC
             </div>
           )}
           {tab === "sources" && (
-            <p className="text-slate-400 text-sm">Sources: UN Committee on the Rights of Persons with Disabilities, World Health Organization Disability Report, International Disability Alliance, Disability Rights International.</p>
+            <p className="text-slate-400 text-sm">Sources: Freedom House Freedom on the Net, NetBlocks Internet Observatory, Committee to Protect Journalists, Reporters Without Borders.</p>
           )}
         </div>
       </div>
@@ -101,7 +101,7 @@ type ApiData = {
   critical_alerts: string[];
 };
 
-export default function DisabilityRightsAccessibilityPage() {
+export default function SocialMediaPoliticalCensorshipPage() {
   const [data, setData] = useState<ApiData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
 
@@ -120,8 +120,8 @@ export default function DisabilityRightsAccessibilityPage() {
       {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white">Droits Handicapés &amp; Accessibilité</h1>
-          <p className="text-slate-400 mt-1">Droits des personnes handicapées, accessibilité et discrimination institutionnelle</p>
+          <h1 className="text-3xl font-bold text-white">Censure Politique Réseaux Sociaux</h1>
+          <p className="text-slate-400 mt-1">Censure politique sur réseaux sociaux, coupures internet et désinformation d&apos;État</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-slate-900 border border-slate-700 rounded-xl p-4">
