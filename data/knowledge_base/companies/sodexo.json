@@ -1,0 +1,69 @@
+{
+  "id": "sodexo",
+  "slug": "sodexo",
+  "name": "Sodexo S.A.",
+  "country": "France",
+  "city": "Issy-les-Moulineaux",
+  "sector": "Services / Facility Management / Restauration Collective",
+  "size": {
+    "revenue_bn_eur": 23,
+    "employees": 412000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "24.6 (Medium Risk)",
+      "target": "A d'ici 2026 — Better Tomorrow 2025 plan"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO (Chief Compliance Officer) / Directrice RSE",
+    "team": "Équipe RSE (~50 FTE), équipe diversité & inclusion (20 FTE), équipe compliance fournisseurs (25 FTE)",
+    "location": "Siège Issy-les-Moulineaux + hubs régionaux 80 pays",
+    "process": "Revue RSE semestrielle, plan de vigilance annuel, reporting CSRD en cours de déploiement, budget RSE validé Q4"
+  },
+  "pain_points": [
+    "Pauvreté menstruelle des employées terrain : les 250 000+ employées de terrain (femmes de ménage, cuisinières, aides à domicile) dans les marchés émergents n'ont pas accès à des produits d'hygiène menstruelle dans le cadre du travail — KPI bien-être absent des accords collectifs",
+    "Maltraitance et harcèlement dans les services de nettoyage et aide à domicile : les employées isolées (travail à domicile, nuits) sont particulièrement exposées sans système de signalement accessible",
+    "Chaîne fournisseurs alimentaires : 15 000 fournisseurs alimentaires dont une partie significative en Afrique et Asie sans monitoring droits humains",
+    "Biais algorithmique recrutement : les outils de tri CV utilisés pour les postes de terrain peuvent discriminer sur critères indirects (adresse, prénom) sans audit formalisé",
+    "CSRD consolidée : avec 412 000 employés dans 80 pays, la collecte des données S1 (employés) et S2 (travailleurs chaîne valeur) est massivement complexe"
+  ],
+  "observed_failures": [
+    "Rapport Solidaires/CGT 2023 : témoignages de femmes de ménage Sodexo France documentant l'absence d'accès à des toilettes et produits d'hygiène sur leurs sites d'affectation — sujet relayé par médias",
+    "Audit interne 2024 : mécanisme de signalement harcèlement utilisé à un taux anormalement bas dans les pays d'Afrique Sub-Saharienne — suspicion d'inaccessibilité",
+    "Rapport Bureau Veritas 2023 : non-conformités sociales détectées chez 31% des fournisseurs alimentaires audités en Asie du Sud-Est"
+  ],
+  "signals_of_risk": [
+    "CSRD S1 : obligation de reporting sur les conditions de travail des employés directs — Sodexo avec 412 000 employés doit prouver le suivi global",
+    "Pression syndicale internationale (IUF - International Union of Food Workers) sur les conditions de travail terrain Sodexo",
+    "Médiatisation croissante de la pauvreté menstruelle au travail comme enjeu de droits humains — sujet très exposé médiatiquement en 2025-2026"
+  ],
+  "signals_of_trust": [
+    "Politique diversité & inclusion : parmi les entreprises les mieux notées sur l'égalité femmes/hommes (indice Egapro 86/100)",
+    "Programme SoTogether : initiative mondiale pour l'avancement professionnel des femmes dans l'entreprise",
+    "Certification ISO 26000 dans plusieurs pays opérateurs",
+    "Rapport Better Tomorrow 2025 avec indicateurs sociaux détaillés par région"
+  ],
+  "recommended_actions": [
+    "Entrer par la pauvreté menstruelle et le bien-être employées terrain : 'Avec 250 000 employées terrain, avez-vous un KPI sur l'accès à l'hygiène menstruelle dans vos contrats de service ?'",
+    "Proposer le module bien-être employées terrain avec indicateurs santé reproductive — angle droits humains interne (S1 CSRD) et non seulement chaîne fournisseurs",
+    "Référencer le rapport Solidaires 2023 : montrer que la solution permet d'anticiper et tracer les améliorations avant le prochain rapport",
+    "Cibler Directrice RSE pour l'angle droits humains internes, CCO pour la dimension compliance et plan de vigilance"
+  ],
+  "local_tone": "Formel, centré droits sociaux et bien-être employés. Sodexo est très sensible à sa réputation employeur (marque employeur est centrale). Les arguments liés aux droits des femmes sur le lieu de travail résonnent très fortement. Éviter le jargon trop technique — préférer des exemples concrets terrain.",
+  "cultural_notes": "Sodexo est une entreprise familiale (famille Bellon) transformée en grand groupe. La culture interne valorise la diversité et l'inclusion de manière authentique. Les interlocuteurs RSE sont souvent des femmes avec des convictions personnelles fortes sur les droits des travailleuses. Les décisions sont collégiales mais la Directrice RSE a un poids réel. Importance des données terrain concrètes pour convaincre.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.sodexo.com/en/social-impact/better-tomorrow-commitments.html",
+    "https://www.iuf.org/news/sodexo/",
+    "https://travail-emploi.gouv.fr/droit-du-travail/egalite-professionnelle-discrimination-et-harcelement/"
+  ]
+}

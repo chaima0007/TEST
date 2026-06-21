@@ -1,0 +1,69 @@
+{
+  "id": "danone",
+  "slug": "danone",
+  "name": "Danone S.A.",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Agrifood / Nutrition / Eau",
+  "size": {
+    "revenue_bn_eur": 28,
+    "employees": 97000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "16.1 (Low Risk)",
+      "target": "AAA d'ici 2027 — One Planet One Health mission enterprise"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "VP Sustainability / Chief Purpose Officer",
+    "team": "Équipe Sustainability (~60 FTE), équipe Regenerative Agriculture (25 FTE), équipe Social Performance (15 FTE)",
+    "location": "Siège Paris 9e + centres régionaux Amsterdam (Europe), Shanghai (Asie), Mexico City (Amérique)",
+    "process": "Revue B-Corp annuelle, AG actionnaires avec résolutions droits humains, budget développement durable validé Q1"
+  },
+  "pain_points": [
+    "Droits à l'eau dans la chaîne d'approvisionnement Afrique : les agriculteurs fournisseurs de lait (Sénégal, Maroc) et de fruits (Afrique Sub-Saharienne) n'ont pas de KPI temps réel sur l'accès à l'eau potable — contradiction avec mission 'One Planet One Health'",
+    "Supply chain lait Inde et Bangladesh : conditions de travail des éleveurs smallholders non monitorées en temps réel malgré les engagements publics",
+    "B-Corp recertification : pression croissante de B Lab pour prouver des améliorations mesurables sur les droits humains dans la chaîne — pas seulement des politiques",
+    "Reporting CSRD mission enterprise : Danone doit prouver que son statut d'entreprise à mission se traduit en KPIs droits humains vérifiables",
+    "Eau en zones de stress hydrique : extraction d'eau pour les marques Evian/Volvic dans un contexte de raréfaction — droits communautaires à l'eau non monitorés"
+  ],
+  "observed_failures": [
+    "Rapport Oxfam 2023 : malgré les engagements Danone sur le living income, les éleveurs laitiers Inde bénéficiant du programme Danone Nutricia reçoivent des prix inférieurs au coût de production décent",
+    "Audit B-Corp 2024 : score 'Workers' et 'Community' de Danone stagnant depuis 2021 malgré la certification entreprise à mission — signal de manque de progrès terrain",
+    "Absence de mécanisme de plainte fonctionnel pour les fournisseurs agricoles en Afrique Sub-Saharienne — signalé par Fairtrade International 2023"
+  ],
+  "signals_of_risk": [
+    "Tension actionnaire : fonds activistes ont remis en question la pertinence du statut B-Corp pour la rentabilité — pression sur VP Sustainability",
+    "CSDDD eau : droit à l'eau reconnu comme droit humain fondamental — Danone avec ses marques eau minérale est particulièrement exposé",
+    "Presse spécialisée (The Guardian) sur l'écart entre marketing 'mission enterprise' et réalité terrain chez les fournisseurs"
+  ],
+  "signals_of_trust": [
+    "Première entreprise du CAC40 à adopter le statut d'entreprise à mission (loi PACTE 2020)",
+    "Score MSCI AA : excellence ESG reconnue dans le secteur agrifood",
+    "Certification B-Corp groupe depuis 2021 — premier grand groupe coté à obtenir cette certification",
+    "Programme Danone Ecosystem Fund : 100M€ investis depuis 2009 dans le développement durable des communautés fournisseurs"
+  ],
+  "recommended_actions": [
+    "Entrer par le gap entre mission enterprise et KPIs droits humains mesurables : 'Votre B-Corp recertification 2026 exigera des preuves concrètes — avez-vous des données temps réel sur les droits à l'eau de vos fournisseurs Afrique ?'",
+    "Proposer un module eau et droits communautaires spécifique aux marques eau minérale et aux fournisseurs agricoles Afrique",
+    "Mettre en avant la dimension 'purpose reporting' : transformer la mission en données vérifiables pour les actionnaires et B Lab",
+    "Cibler VP Sustainability et Chief Purpose Officer en parallèle — les deux ont un rôle dans la décision"
+  ],
+  "local_tone": "Formel mais engagé, références B-Corp, GRI, UNGP. Danone apprécie le langage de l'entreprise à mission. Éviter le ton purement commercial — parler d'impact et de cohérence mission/pratiques. Les références SDG 6 (eau) et SDG 2 (alimentation) sont très bien reçues.",
+  "cultural_notes": "Danone est une entreprise française avec une culture RSE très ancrée mais sous pression actionnaire depuis 2021 (éviction d'Emmanuel Faber). Les interlocuteurs RSE sont militants mais doivent justifier chaque dépense en ROI. Le statut B-Corp est une fierté interne — toute approche valorisant ce statut sera bien accueillie. Décision prise conjointement par VP Sustainability et DAF.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.danone.com/impact/planet/sustainable-agriculture-and-regenerative.html",
+    "https://www.bcorporation.net/en-us/find-a-b-corp/company/danone/",
+    "https://www.oxfam.org/en/research/behind-the-brands"
+  ]
+}
