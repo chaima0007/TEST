@@ -7986,6 +7986,30 @@ function IconRacialDiscriminationSystemicRacism({ className }: { className?: str
   );
 }
 
+function IconCasteDiscriminationUntouchability({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="17" y1="11" x2="23" y2="11" /><line x1="17" y1="15" x2="23" y2="15" />
+    </svg>
+  );
+}
+
+function IconBioethicsGeneticPrivacyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 12h4" /><path d="M18 12h4" /><path d="M12 2v4" /><path d="M12 18v4" /><circle cx="12" cy="12" r="4" /><path d="M4.93 4.93l2.83 2.83" /><path d="M16.24 16.24l2.83 2.83" /><path d="M4.93 19.07l2.83-2.83" /><path d="M16.24 7.76l2.83-2.83" />
+    </svg>
+  );
+}
+
+function IconMinorityLanguageCulturalRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><line x1="9" y1="10" x2="15" y2="10" /><line x1="12" y1="7" x2="12" y2="13" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8799,6 +8823,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/armed-conflict-civilian-protection-engine", label: "Conflits Armés & Protection Civils", icon: IconArmedConflictCivilianProtection },
       { href: "/dashboard/whistleblower-leaker-protection-engine", label: "Lanceurs d&apos;Alerte & Protection Sources", icon: IconWhistleblowerLeakerProtection },
       { href: "/dashboard/racial-discrimination-systemic-racism-engine", label: "Discrimination Raciale & Racisme Systémique", icon: IconRacialDiscriminationSystemicRacism },
+      { href: "/dashboard/caste-discrimination-untouchability-engine", label: "Discrimination de Caste & Intouchabilité", icon: IconCasteDiscriminationUntouchability },
+      { href: "/dashboard/bioethics-genetic-privacy-rights-engine", label: "Bioéthique & Vie Privée Génétique", icon: IconBioethicsGeneticPrivacyRights },
+      { href: "/dashboard/minority-language-cultural-rights-engine", label: "Droits Linguistiques & Culturels Minoritaires", icon: IconMinorityLanguageCulturalRights },
     ],
   },
   {
