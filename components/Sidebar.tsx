@@ -9766,6 +9766,44 @@ function IconSyntheticBiologyBiosafetyRights({ className }: { className?: string
   );
 }
 
+function IconAlgorithmicJusticeBiasRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="2" y="14" width="3" height="4" rx="0.5" />
+      <rect x="7" y="10" width="3" height="8" rx="0.5" />
+      <rect x="12" y="6" width="3" height="12" rx="0.5" />
+      <path d="M1 13 L6 9 L11 11 L16 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="16" cy="4" r="1.5" />
+      <path d="M17 4 L19 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconWaterPrivatizationCommonsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M10 2 C10 2 5 8 5 12 C5 15.3 7.2 18 10 18 C12.8 18 15 15.3 15 12 C15 8 10 2 10 2Z" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M7 12 Q10 10 13 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="10" y1="14" x2="10" y2="16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="2" y1="9" x2="4" y2="11" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <line x1="18" y1="9" x2="16" y2="11" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconPrisonIndustrialComplexRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <rect x="3" y="6" width="14" height="11" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 10 L17 10" stroke="currentColor" strokeWidth="1" />
+      <path d="M8 6 L8 3 L12 3 L12 6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <rect x="8.5" y="12" width="3" height="5" rx="0.5" fill="currentColor" />
+      <line x1="6" y1="13" x2="7.5" y2="13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <line x1="12.5" y1="13" x2="14" y2="13" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10848,6 +10886,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/quantum-surveillance-privacy-rights-engine", label: "Surveillance Quantique", icon: IconQuantumSurveillancePrivacy },
       { href: "/dashboard/post-quantum-cryptography-rights-engine", label: "Cryptographie Post-Quantum", icon: IconPostQuantumCryptography },
       { href: "/dashboard/quantum-supremacy-arms-race-engine", label: "Suprématie Quantique", icon: IconQuantumSupremacyArmsRace },
+    ],
+  },
+  {
+    title: "WAVE 191",
+    items: [
+      { href: "/dashboard/algorithmic-justice-bias-rights-engine", label: "Justice Algorithmique", icon: IconAlgorithmicJusticeBiasRights },
+      { href: "/dashboard/water-privatization-commons-rights-engine", label: "Eau & Droits Communs", icon: IconWaterPrivatizationCommonsRights },
+      { href: "/dashboard/prison-industrial-complex-rights-engine", label: "Complexe Carcéral", icon: IconPrisonIndustrialComplexRights },
     ],
   },
   {
