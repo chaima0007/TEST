@@ -239,6 +239,9 @@ Pas de useCallback/useMemo            → jamais
 | Racial Justice Police Brutality | `/dashboard/racial-justice-police-brutality-engine` | `#1c1917` |
 | Internet Freedom Censorship | `/dashboard/internet-freedom-censorship-engine` | `#0c1a2e` |
 | War Crimes Accountability | `/dashboard/war-crimes-accountability-engine` | `#2d1515` |
+| Environmental Defenders Rights | `/dashboard/environmental-defenders-rights-engine` | `#065f46` |
+| Antiterrorism Laws Rights Abuse | `/dashboard/antiterrorism-laws-rights-abuse-engine` | `#312e81` |
+| Child Marriage Forced Unions | `/dashboard/child-marriage-forced-unions-engine` | `#831843` |
 
 ---
 
