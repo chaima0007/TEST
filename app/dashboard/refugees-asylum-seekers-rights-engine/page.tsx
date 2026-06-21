@@ -79,14 +79,14 @@ function DetailModal({ entity, accent, onClose }: { entity: Entity; accent: stri
   );
 }
 
-export default function CasteDiscriminationUntouchabilityPage() {
+export default function RefugeesAsylumSeekersRightsPage() {
   const [data, setData] = useState<EngineData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
-  const ACCENT = "#3b0764";
+  const ACCENT = "#0c4a6e";
   const RC: Record<string, string> = { critique: "#ef4444", "élevé": "#f97316", "modéré": "#eab308", faible: "#22c55e" };
 
   useEffect(() => {
-    fetch("/api/caste-discrimination-untouchability-engine").then(r => r.json()).then(d => setData(d.payload ?? d));
+    fetch("/api/refugees-asylum-seekers-rights-engine").then(r => r.json()).then(d => setData(d.payload ?? d));
   }, []);
 
   if (!data) return (
@@ -95,7 +95,7 @@ export default function CasteDiscriminationUntouchabilityPage() {
     </div>
   );
 
-  const indexValue = (data["avg_estimated_caste_discrimination_untouchability_index"] as number) ?? 0;
+  const indexValue = (data["avg_estimated_refugees_asylum_seekers_rights_index"] as number) ?? 0;
 
   return (
     <div className="min-h-screen bg-slate-950 text-white p-6">
