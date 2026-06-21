@@ -8,10 +8,10 @@ class FoodSovereigntyFamineRightsEntity:
     entity_id: str
     name: str
     country: str
-    famine_starvation_weaponization_severity_score: float
-    land_grab_smallholder_displacement_scale_score: float
-    seed_patent_corporate_monopoly_score: float
-    food_access_indigenous_sovereignty_deficit_gap_score: float
+    famine_food_insecurity_severity_score: float
+    food_weaponization_siege_blockade_score: float
+    smallholder_land_seed_rights_violation_score: float
+    food_aid_obstruction_accountability_gap_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
@@ -20,10 +20,10 @@ class FoodSovereigntyFamineRightsEntity:
 
     def __post_init__(self):
         self.composite_score = round(
-            self.famine_starvation_weaponization_severity_score * 0.30
-            + self.land_grab_smallholder_displacement_scale_score * 0.25
-            + self.seed_patent_corporate_monopoly_score * 0.25
-            + self.food_access_indigenous_sovereignty_deficit_gap_score * 0.20,
+            self.famine_food_insecurity_severity_score * 0.30
+            + self.food_weaponization_siege_blockade_score * 0.25
+            + self.smallholder_land_seed_rights_violation_score * 0.25
+            + self.food_aid_obstruction_accountability_gap_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -34,7 +34,10 @@ class FoodSovereigntyFamineRightsEntity:
             self.risk_level = "modéré"
         else:
             self.risk_level = "faible"
-        self.estimated_food_sovereignty_famine_rights_index = round(self.composite_score / 100 * 10, 2)
+        self.estimated_food_sovereignty_famine_rights_index = round(
+            self.composite_score / 100 * 10, 2
+        )
+
 
 @dataclass
 class FoodSovereigntyFamineRightsEngineResult:
@@ -42,7 +45,7 @@ class FoodSovereigntyFamineRightsEngineResult:
     domain: str = "food_sovereignty_famine_rights"
     total_entities: int = 0
     avg_composite: float = 0.0
-    confidence_score: float = 0.85
+    confidence_score: float = 0.87
     risk_distribution: dict = field(default_factory=dict)
     pattern_distribution: dict = field(default_factory=dict)
     top_risk_entities: List[str] = field(default_factory=list)
@@ -53,87 +56,88 @@ class FoodSovereigntyFamineRightsEngineResult:
     data_sources: List[str] = field(default_factory=list)
     entities: List[FoodSovereigntyFamineRightsEntity] = field(default_factory=list)
 
+
 def run_food_sovereignty_famine_rights_engine() -> FoodSovereigntyFamineRightsEngineResult:
     entities = [
         FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-001",
-            name="Yemen/Soudan — Famine Arme Guerre, Blocus Ports, 17M Insécurité Alimentaire Aiguë & Aid Workers Tués",
-            country="Yemen/Soudan",
-            famine_starvation_weaponization_severity_score=96.0,
-            land_grab_smallholder_displacement_scale_score=92.0,
-            seed_patent_corporate_monopoly_score=88.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=94.0,
-            primary_pattern="famine_starvation_weaponization_severity",
+            entity_id="FSFR-001",
+            name="Yémen/Siège Houthis — Blocus Portuaire Hodeidah, Famine IPC Phase 5, Destruction Agriculture & Obstruction Aide Humanitaire",
+            country="Yémen",
+            famine_food_insecurity_severity_score=92.0,
+            food_weaponization_siege_blockade_score=90.0,
+            smallholder_land_seed_rights_violation_score=75.0,
+            food_aid_obstruction_accountability_gap_score=88.0,
+            primary_pattern="food_weaponization_siege_blockade",
         ),
         FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-002",
-            name="Éthiopie/Tigray — Récoltes Brûlées Systématiquement, Famine Weaponisée Conflits, Sièges Civils & Starvation Tactique",
+            entity_id="FSFR-002",
+            name="Soudan/RSF Famine — Pillage Greniers Villages, Destruction Marchés, Déplacement Agriculteurs Darfour & Blocage Convois ONG",
+            country="Soudan",
+            famine_food_insecurity_severity_score=90.0,
+            food_weaponization_siege_blockade_score=88.0,
+            smallholder_land_seed_rights_violation_score=72.0,
+            food_aid_obstruction_accountability_gap_score=85.0,
+            primary_pattern="famine_food_insecurity_severity",
+        ),
+        FoodSovereigntyFamineRightsEntity(
+            entity_id="FSFR-003",
+            name="Éthiopie/Tigré Blocus — Siège Total Région, Destruction Récoltes Armée, Famine Délibérée & Expulsion Agences ONU",
             country="Éthiopie",
-            famine_starvation_weaponization_severity_score=93.0,
-            land_grab_smallholder_displacement_scale_score=89.0,
-            seed_patent_corporate_monopoly_score=86.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=90.0,
-            primary_pattern="famine_starvation_weaponization_severity",
+            famine_food_insecurity_severity_score=85.0,
+            food_weaponization_siege_blockade_score=82.0,
+            smallholder_land_seed_rights_violation_score=78.0,
+            food_aid_obstruction_accountability_gap_score=80.0,
+            primary_pattern="food_weaponization_siege_blockade",
         ),
         FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-003",
-            name="Gaza/Palestine — Blocus 17 Ans, Famine Délibérée 2024 ONU Rapport, Destructions Terres Agricoles & Pêche Interdite",
-            country="Palestine",
-            famine_starvation_weaponization_severity_score=90.0,
-            land_grab_smallholder_displacement_scale_score=88.0,
-            seed_patent_corporate_monopoly_score=83.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=87.0,
-            primary_pattern="famine_starvation_weaponization_severity",
+            entity_id="FSFR-004",
+            name="Afghanistan/Talibans Aide Bloquée — Exclusion Femmes ONG, Gel Avoirs Bancaires Bloquant Importations, Sécheresse & Famine Systémique",
+            country="Afghanistan",
+            famine_food_insecurity_severity_score=80.0,
+            food_weaponization_siege_blockade_score=78.0,
+            smallholder_land_seed_rights_violation_score=82.0,
+            food_aid_obstruction_accountability_gap_score=75.0,
+            primary_pattern="smallholder_land_seed_rights_violation",
         ),
         FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-004",
-            name="RDC/Sahel — 27M Famine Aiguë, Climate Change Amplificateur, Terres Accaparées Multi-Nationales & Semences Brevetées",
-            country="RDC/Sahel",
-            famine_starvation_weaponization_severity_score=87.0,
-            land_grab_smallholder_displacement_scale_score=85.0,
-            seed_patent_corporate_monopoly_score=82.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=84.0,
-            primary_pattern="land_grab_smallholder_displacement_scale",
+            entity_id="FSFR-005",
+            name="Haïti/Gangs Bloquent Distribution — Contrôle Routes Alimentaires par Gangs, Insécurité Alimentaire Urbaine & Effondrement Système Agricole",
+            country="Haïti",
+            famine_food_insecurity_severity_score=60.0,
+            food_weaponization_siege_blockade_score=58.0,
+            smallholder_land_seed_rights_violation_score=55.0,
+            food_aid_obstruction_accountability_gap_score=52.0,
+            primary_pattern="famine_food_insecurity_severity",
         ),
         FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-005",
-            name="Inde/Bangladesh — Agriculteurs Dettes Suicides, Monsanto OGM Dépendance, Terres Firmes Chinoises & Prix Minimum",
-            country="Inde/Bangladesh",
-            famine_starvation_weaponization_severity_score=57.0,
-            land_grab_smallholder_displacement_scale_score=56.0,
-            seed_patent_corporate_monopoly_score=55.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=54.0,
-            primary_pattern="seed_patent_corporate_monopoly",
+            entity_id="FSFR-006",
+            name="RCA/Pillage Agricole — Groupes Armés Volant Récoltes, Déplacement Paysans, Accaparement Terres & Impunité Totale",
+            country="République Centrafricaine",
+            famine_food_insecurity_severity_score=55.0,
+            food_weaponization_siege_blockade_score=52.0,
+            smallholder_land_seed_rights_violation_score=58.0,
+            food_aid_obstruction_accountability_gap_score=48.0,
+            primary_pattern="smallholder_land_seed_rights_violation",
         ),
         FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-006",
-            name="USA/UE — Agrobusiness Subventions Distorsives, Monopole Semencier Bayer/Cargill, Dumpings Marchés Africains & Biofuels vs Food",
-            country="USA/UE",
-            famine_starvation_weaponization_severity_score=52.0,
-            land_grab_smallholder_displacement_scale_score=54.0,
-            seed_patent_corporate_monopoly_score=56.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=53.0,
-            primary_pattern="seed_patent_corporate_monopoly",
+            entity_id="FSFR-007",
+            name="Venezuela/Restrictions Importations — Contrôle des Changes Bloquant Importations Alimentaires, Hyperinflation & Exode Agriculteurs",
+            country="Venezuela",
+            famine_food_insecurity_severity_score=30.0,
+            food_weaponization_siege_blockade_score=25.0,
+            smallholder_land_seed_rights_violation_score=35.0,
+            food_aid_obstruction_accountability_gap_score=28.0,
+            primary_pattern="smallholder_land_seed_rights_violation",
         ),
         FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-007",
-            name="La Via Campesina/FIAN — Mouvement Paysans Mondiaux, Déclaration ONU Droits Paysans 2018 & Monitoring Accaparement Terres",
-            country="Global",
-            famine_starvation_weaponization_severity_score=24.0,
-            land_grab_smallholder_displacement_scale_score=28.0,
-            seed_patent_corporate_monopoly_score=27.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=26.0,
-            primary_pattern="land_grab_smallholder_displacement_scale",
-        ),
-        FoodSovereigntyFamineRightsEntity(
-            entity_id="FSF-008",
-            name="ONU/Art.11 DESC — Droit Nourriture Adéquate, Rapporteur Spécial Alimentation & SDG 2 Faim Zéro",
-            country="Global",
-            famine_starvation_weaponization_severity_score=4.0,
-            land_grab_smallholder_displacement_scale_score=5.0,
-            seed_patent_corporate_monopoly_score=4.0,
-            food_access_indigenous_sovereignty_deficit_gap_score=5.0,
-            primary_pattern="famine_starvation_weaponization_severity",
+            entity_id="FSFR-008",
+            name="Brésil/Bolsa Família Modèle — Programme Transferts Conditionnels Alimentaires, Réduction Faim & Référence Mondiale Sécurité Alimentaire",
+            country="Brésil",
+            famine_food_insecurity_severity_score=5.0,
+            food_weaponization_siege_blockade_score=4.0,
+            smallholder_land_seed_rights_violation_score=8.0,
+            food_aid_obstruction_accountability_gap_score=6.0,
+            primary_pattern="famine_food_insecurity_severity",
         ),
     ]
 
@@ -164,12 +168,14 @@ def run_food_sovereignty_famine_rights_engine() -> FoodSovereigntyFamineRightsEn
         critical_alerts=alerts,
         avg_estimated_food_sovereignty_famine_rights_index=round(avg_composite / 100 * 10, 2),
         data_sources=[
-            "fao_world_food_insecurity_annual_report",
-            "grain_land_grabbing_global_database",
-            "la_via_campesina_food_sovereignty_violations_report",
+            "fao_hunger_map_2023",
+            "ipc_acute_food_insecurity_analysis_2023",
+            "grain_land_grabbing_database_2023",
+            "oxfam_food_rights_violations_report_2023",
         ],
         entities=entities,
     )
+
 
 if __name__ == "__main__":
     result = run_food_sovereignty_famine_rights_engine()
