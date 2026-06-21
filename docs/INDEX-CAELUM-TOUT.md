@@ -64,6 +64,55 @@
 | Refugees Asylum Seekers Rights | `swarm/intelligence/refugees_asylum_seekers_rights_engine.py` | 58.40 | Réfugiés, refoulement, camps, demandeurs asile |
 | Caste Discrimination Untouchability | `swarm/intelligence/caste_discrimination_untouchability_engine.py` | 57.21 | Discrimination de caste, intouchabilité, Dalits |
 
+### Wave 113
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Corruption Human Rights Nexus | `swarm/intelligence/corruption_human_rights_nexus_engine.py` | 63.04 | Corruption judiciaire, capture État, impunité |
+| Religious Persecution Minority Rights | `swarm/intelligence/religious_persecution_minority_rights_engine.py` | 63.43 | Persécution religieuse, lois blasphème, minorités |
+| Arms Trade Civilian Harm | `swarm/intelligence/arms_trade_civilian_harm_engine.py` | 61.81 | Commerce armes, victimes civiles, responsabilité |
+
+### Wave 114
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| LGBTQ Rights Violence Criminalization | `swarm/intelligence/lgbtq_rights_violence_criminalization_engine.py` | 62.89 | Criminalisation LGBTQ+, violences, peine de mort |
+| Child Labor Exploitation Rights | `swarm/intelligence/child_labor_exploitation_rights_engine.py` | 61.16 | Travail enfants, exploitation, pires formes |
+| Press Freedom Journalist Safety | `swarm/intelligence/press_freedom_journalist_safety_engine.py` | 62.63 | Liberté presse, journalistes tués/emprisonnés |
+
+### Wave 115
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Land Grabbing Displacement Rights | `swarm/intelligence/land_grabbing_displacement_rights_engine.py` | 61.52 | Accaparement terres, expulsions, populations rurales |
+| Elderly Rights Age Discrimination | `swarm/intelligence/elderly_rights_age_discrimination_engine.py` | 59.95 | Droits personnes âgées, discrimination, maltraitance |
+| Water Pollution Environmental Rights | `swarm/intelligence/water_pollution_environmental_rights_engine.py` | 62.28 | Pollution eau, droits environnementaux, contamination |
+
+### Wave 116
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Ethnic Minority Rights Discrimination | `swarm/intelligence/ethnic_minority_rights_discrimination_engine.py` | 63.11 | Minorités ethniques, discrimination systémique |
+| Housing Rights Forced Evictions | `swarm/intelligence/housing_rights_forced_evictions_engine.py` | 60.12 | Droit logement, expulsions forcées, sans-abri |
+| Death Penalty Execution Rights | `swarm/intelligence/death_penalty_execution_rights_engine.py` | 62.72 | Peine de mort, exécutions, garanties judiciaires |
+
+### Wave 117
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Migrant Workers Rights Kafala | `swarm/intelligence/migrant_workers_rights_kafala_engine.py` | 61.83 | Travailleurs migrants, système kafala, exploitation |
+| Torture Cruel Treatment Detention | `swarm/intelligence/torture_cruel_treatment_detention_engine.py` | 63.69 | Torture, traitements dégradants, détention |
+| Womens Rights Gender Based Violence | `swarm/intelligence/womens_rights_gender_based_violence_engine.py` | 62.84 | Droits femmes, violences basées genre, féminicide |
+
+### Wave 118
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Racial Justice Police Brutality | `swarm/intelligence/racial_justice_police_brutality_engine.py` | 63.41 | Justice raciale, brutalité policière, profilage |
+| Internet Freedom Censorship | `swarm/intelligence/internet_freedom_censorship_engine.py` | 62.58 | Liberté internet, censure, coupures réseau |
+| War Crimes Accountability | `swarm/intelligence/war_crimes_accountability_engine.py` | 62.40 | Crimes de guerre, DIH, impunité, CPI |
+
+### Wave 119
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Environmental Defenders Rights | `swarm/intelligence/environmental_defenders_rights_engine.py` | 62.10 | Défenseurs environnement tués, poursuites SLAPP |
+| Antiterrorism Laws Rights Abuse | `swarm/intelligence/antiterrorism_laws_rights_abuse_engine.py` | 63.20 | Lois antiterroristes contre dissidents/minorités |
+| Child Marriage Forced Unions | `swarm/intelligence/child_marriage_forced_unions_engine.py` | 60.23 | Mariage enfants, unions forcées, droits filles |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -172,6 +221,24 @@ Pas de useCallback/useMemo            → jamais
 | Forced Disappearance Extrajudicial Killing | `/dashboard/forced-disappearance-extrajudicial-killing-engine` | `#450a0a` |
 | Refugees Asylum Seekers Rights | `/dashboard/refugees-asylum-seekers-rights-engine` | `#0c4a6e` |
 | Caste Discrimination Untouchability | `/dashboard/caste-discrimination-untouchability-engine` | `#3b0764` |
+| Corruption Human Rights Nexus | `/dashboard/corruption-human-rights-nexus-engine` | `#78350f` |
+| Religious Persecution Minority Rights | `/dashboard/religious-persecution-minority-rights-engine` | `#581c87` |
+| Arms Trade Civilian Harm | `/dashboard/arms-trade-civilian-harm-engine` | `#7c0a02` |
+| LGBTQ Rights Violence Criminalization | `/dashboard/lgbtq-rights-violence-criminalization-engine` | `#7e22ce` |
+| Child Labor Exploitation Rights | `/dashboard/child-labor-exploitation-rights-engine` | `#92400e` |
+| Press Freedom Journalist Safety | `/dashboard/press-freedom-journalist-safety-engine` | `#0f3460` |
+| Land Grabbing Displacement Rights | `/dashboard/land-grabbing-displacement-rights-engine` | `#422006` |
+| Elderly Rights Age Discrimination | `/dashboard/elderly-rights-age-discrimination-engine` | `#4a044e` |
+| Water Pollution Environmental Rights | `/dashboard/water-pollution-environmental-rights-engine` | `#164e63` |
+| Ethnic Minority Rights Discrimination | `/dashboard/ethnic-minority-rights-discrimination-engine` | `#1e1b4b` |
+| Housing Rights Forced Evictions | `/dashboard/housing-rights-forced-evictions-engine` | `#052e16` |
+| Death Penalty Execution Rights | `/dashboard/death-penalty-execution-rights-engine` | `#27141c` |
+| Migrant Workers Rights Kafala | `/dashboard/migrant-workers-rights-kafala-engine` | `#5c3317` |
+| Torture Cruel Treatment Detention | `/dashboard/torture-cruel-treatment-detention-engine` | `#3d0000` |
+| Womens Rights Gender Based Violence | `/dashboard/womens-rights-gender-based-violence-engine` | `#500724` |
+| Racial Justice Police Brutality | `/dashboard/racial-justice-police-brutality-engine` | `#1c1917` |
+| Internet Freedom Censorship | `/dashboard/internet-freedom-censorship-engine` | `#0c1a2e` |
+| War Crimes Accountability | `/dashboard/war-crimes-accountability-engine` | `#2d1515` |
 
 ---
 
@@ -212,8 +279,8 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 - [ ] Script d'automatisation des waves (`run_wave.py`) — pour créer engines+routes+sidebar+dashboards sans Claude
 - [ ] GitHub Actions workflow — pour déclencher une wave depuis GitHub directement
 - [ ] Intégration Gmail + Google Calendar via Composio + Claude Agent SDK
-- [ ] Continuer les waves (113, 114, 115...) — pipeline infini
+- [ ] Continuer les waves (120, 121, 122...) — pipeline infini
 
 ---
 
-*Mis à jour : 2026-06-21 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 119 · Caelum Partners · Chaima Mhadbi*
