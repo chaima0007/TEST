@@ -48,5 +48,16 @@ python3 engine1.py ✓ / python3 engine2.py ✓ / python3 engine3.py ✓
 - Fallback `status: 502` sur échec upstream (jamais 503)
 - Zéro credentials dans le code
 
-## Simulation
-Toujours indiquer : paramètres exacts, version script, sortie complète.
+## Simulation — Règle permanente
+**Toujours simuler pour choisir la meilleure solution** avant toute décision non triviale.
+
+Exemples de situations qui déclenchent une simulation comparative :
+- Choix entre deux approches techniques ou organisationnelles
+- Sélection des 3 domaines pour une nouvelle wave
+- Paramètres SaaS / business model
+- Architecture, nommage, design système
+
+Format de simulation :
+- Présenter ≥2 options avec critères explicites et scoring
+- Déclarer le gagnant avec justification
+- Pour les simulations numériques : paramètres exacts, sortie complète, version script
