@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // ─── Math (mirrors Python exactly) ───────────────────────────────────────────
 
 interface CfeInput {
-  entity_id: string;
+  id: string;
   finance_domain: string;
   region: string;
   stranded_asset_exposure_rate: number;
@@ -107,7 +107,7 @@ function analyzeEntity(e: CfeInput) {
   const sig  = signal(risk);
 
   return {
-    entity_id:                    e.entity_id,
+    id:                    e.entity_id,
     finance_domain:               e.finance_domain,
     region:                       e.region,
     stranded_score:               str,
@@ -136,7 +136,7 @@ const mockEntities = (() => {
   // systemic=(0.70*0.4+0.68*0.35+0.65*0.25)*100=68.05
   // composite=81.5*0.30+71.5*0.25+68.85*0.25+68.05*0.20=73.15 → critical
   const e1 = analyzeEntity({
-    entity_id: "CFE-001", finance_domain: "fossil_fuel_banking", region: "EMEA",
+    id: "CFE-001", finance_domain: "fossil_fuel_banking", region: "EMEA",
     stranded_asset_exposure_rate: 0.85, fossil_fuel_finance_lock_in: 0.80,
     transition_risk_repricing_speed: 0.78, green_washing_prevalence_index: 0.75,
     carbon_credit_integrity_risk: 0.70, climate_regulatory_arbitrage_risk: 0.68,
@@ -151,7 +151,7 @@ const mockEntities = (() => {
   // CFE-002: low + none
   // all values ~0.10-0.20 → composite very low → low
   const e2 = analyzeEntity({
-    entity_id: "CFE-002", finance_domain: "green_bonds", region: "NAMER",
+    id: "CFE-002", finance_domain: "green_bonds", region: "NAMER",
     stranded_asset_exposure_rate: 0.10, fossil_fuel_finance_lock_in: 0.12,
     transition_risk_repricing_speed: 0.11, green_washing_prevalence_index: 0.10,
     carbon_credit_integrity_risk: 0.12, climate_regulatory_arbitrage_risk: 0.10,
@@ -173,7 +173,7 @@ const mockEntities = (() => {
   // systemic=(0.48*0.4+0.50*0.35+0.48*0.25)*100=48.7
   // composite=46.45*0.30+73.7*0.25+49.9*0.25+48.7*0.20=13.935+18.425+12.475+9.74=54.575 → high
   const e3 = analyzeEntity({
-    entity_id: "CFE-003", finance_domain: "esg_investment", region: "APAC",
+    id: "CFE-003", finance_domain: "esg_investment", region: "APAC",
     stranded_asset_exposure_rate: 0.48, fossil_fuel_finance_lock_in: 0.45,
     transition_risk_repricing_speed: 0.50, green_washing_prevalence_index: 0.78,
     carbon_credit_integrity_risk: 0.72, climate_regulatory_arbitrage_risk: 0.65,
@@ -187,7 +187,7 @@ const mockEntities = (() => {
 
   // CFE-004: low + none
   const e4 = analyzeEntity({
-    entity_id: "CFE-004", finance_domain: "climate_insurance", region: "LATAM",
+    id: "CFE-004", finance_domain: "climate_insurance", region: "LATAM",
     stranded_asset_exposure_rate: 0.15, fossil_fuel_finance_lock_in: 0.18,
     transition_risk_repricing_speed: 0.14, green_washing_prevalence_index: 0.15,
     carbon_credit_integrity_risk: 0.12, climate_regulatory_arbitrage_risk: 0.14,
@@ -209,7 +209,7 @@ const mockEntities = (() => {
   // systemic=(0.68*0.4+0.72*0.35+0.70*0.25)*100=70.2
   // composite=51.3*0.30+54.7*0.25+79.55*0.25+70.2*0.20=15.39+13.675+19.8875+14.04=62.99 → critical
   const e5 = analyzeEntity({
-    entity_id: "CFE-005", finance_domain: "development_finance", region: "MEA",
+    id: "CFE-005", finance_domain: "development_finance", region: "MEA",
     stranded_asset_exposure_rate: 0.50, fossil_fuel_finance_lock_in: 0.48,
     transition_risk_repricing_speed: 0.65, green_washing_prevalence_index: 0.55,
     carbon_credit_integrity_risk: 0.52, climate_regulatory_arbitrage_risk: 0.58,
@@ -229,7 +229,7 @@ const mockEntities = (() => {
   // systemic=(0.30*0.4+0.32*0.35+0.28*0.25)*100=30.2
   // composite=31.75*0.30+33.2*0.25+35.45*0.25+30.2*0.20=9.525+8.3+8.8625+6.04=32.73 → moderate
   const e6 = analyzeEntity({
-    entity_id: "CFE-006", finance_domain: "sovereign_bonds", region: "EMEA",
+    id: "CFE-006", finance_domain: "sovereign_bonds", region: "EMEA",
     stranded_asset_exposure_rate: 0.32, fossil_fuel_finance_lock_in: 0.30,
     transition_risk_repricing_speed: 0.35, green_washing_prevalence_index: 0.35,
     carbon_credit_integrity_risk: 0.32, climate_regulatory_arbitrage_risk: 0.30,
@@ -252,7 +252,7 @@ const mockEntities = (() => {
   // systemic=(0.75*0.4+0.58*0.35+0.55*0.25)*100=64.05
   // composite=43.7*0.30+49.3*0.25+50.3*0.25+64.05*0.20=13.11+12.325+12.575+12.81=50.82 → high
   const e7 = analyzeEntity({
-    entity_id: "CFE-007", finance_domain: "sovereign_climate_debt", region: "APAC",
+    id: "CFE-007", finance_domain: "sovereign_climate_debt", region: "APAC",
     stranded_asset_exposure_rate: 0.45, fossil_fuel_finance_lock_in: 0.42,
     transition_risk_repricing_speed: 0.50, green_washing_prevalence_index: 0.50,
     carbon_credit_integrity_risk: 0.48, climate_regulatory_arbitrage_risk: 0.50,
@@ -276,7 +276,7 @@ const mockEntities = (() => {
   // systemic=(0.60*0.4+0.80*0.35+0.72*0.25)*100=70.0
   // composite=65.75*0.30+64.70*0.25+65.30*0.25+70.0*0.20=19.725+16.175+16.325+14.0=66.22 → critical
   const e8 = analyzeEntity({
-    entity_id: "CFE-008", finance_domain: "climate_insurance", region: "NOAM",
+    id: "CFE-008", finance_domain: "climate_insurance", region: "NOAM",
     stranded_asset_exposure_rate: 0.65, fossil_fuel_finance_lock_in: 0.60,
     transition_risk_repricing_speed: 0.75, green_washing_prevalence_index: 0.65,
     carbon_credit_integrity_risk: 0.62, climate_regulatory_arbitrage_risk: 0.68,

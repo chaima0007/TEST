@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "BIO-001",
+      id: "BIO-001",
       name: "PharmaCorp Amazonia",
       country: "Brésil",
       sector: "Pharmaceutique",
@@ -43,7 +43,7 @@ function getMockData() {
       last_updated: "2026-06-18",
     },
     {
-      entity_id: "BIO-002",
+      id: "BIO-002",
       name: "BioGen Asia Pacific",
       country: "Inde",
       sector: "Biotechnologie",
@@ -59,7 +59,7 @@ function getMockData() {
       last_updated: "2026-06-17",
     },
     {
-      entity_id: "BIO-003",
+      id: "BIO-003",
       name: "Savane Resources Corp",
       country: "Afrique du Sud",
       sector: "Cosmétique & Herboristerie",
@@ -75,7 +75,7 @@ function getMockData() {
       last_updated: "2026-06-16",
     },
     {
-      entity_id: "BIO-004",
+      id: "BIO-004",
       name: "Équateur Biodiversité SA",
       country: "Équateur",
       sector: "Extraction Végétale",
@@ -91,7 +91,7 @@ function getMockData() {
       last_updated: "2026-06-15",
     },
     {
-      entity_id: "BIO-005",
+      id: "BIO-005",
       name: "Forêt Médicinale Myanmar",
       country: "Myanmar",
       sector: "Médecine Traditionnelle",
@@ -107,7 +107,7 @@ function getMockData() {
       last_updated: "2026-06-14",
     },
     {
-      entity_id: "BIO-006",
+      id: "BIO-006",
       name: "Ethnobot Kenya Ltd",
       country: "Kenya",
       sector: "Ethnobotanique Commerciale",
@@ -123,7 +123,7 @@ function getMockData() {
       last_updated: "2026-06-13",
     },
     {
-      entity_id: "BIO-007",
+      id: "BIO-007",
       name: "Institut Plantes Médicinales Pérou",
       country: "Pérou",
       sector: "Recherche Académique",
@@ -139,7 +139,7 @@ function getMockData() {
       last_updated: "2026-06-12",
     },
     {
-      entity_id: "BIO-008",
+      id: "BIO-008",
       name: "Conservation ONG Costa Rica",
       country: "Costa Rica",
       sector: "Conservation & ONG",

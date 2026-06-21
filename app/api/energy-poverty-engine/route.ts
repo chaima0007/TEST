@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // EPE-001 — critical, energy_access_collapse (access_gap>0.85, rural_elec>0.80)
   {
-    entity_id: "EPE-001", energy_sector: "residential", region: "SSA",
+    id: "EPE-001", energy_sector: "residential", region: "SSA",
     energy_access_gap: 0.92, fossil_fuel_dependency_lock: 0.70,
     green_transition_inequality: 0.65, energy_cost_burden: 0.72,
     grid_infrastructure_failure: 0.82, rural_electrification_gap: 0.88,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // EPE-002 — critical, just_transition_failure (jt_policy>0.85, stranded>0.80)
   {
-    entity_id: "EPE-002", energy_sector: "fossil_fuel_extraction", region: "APAC",
+    id: "EPE-002", energy_sector: "fossil_fuel_extraction", region: "APAC",
     energy_access_gap: 0.62, fossil_fuel_dependency_lock: 0.88,
     green_transition_inequality: 0.70, energy_cost_burden: 0.65,
     grid_infrastructure_failure: 0.68, rural_electrification_gap: 0.60,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // EPE-003 — high, green_inequality_trap (green_ineq>0.85, renewable_excl>0.80)
   {
-    entity_id: "EPE-003", energy_sector: "renewable_transition", region: "EMEA",
+    id: "EPE-003", energy_sector: "renewable_transition", region: "EMEA",
     energy_access_gap: 0.48, fossil_fuel_dependency_lock: 0.50,
     green_transition_inequality: 0.88, energy_cost_burden: 0.50,
     grid_infrastructure_failure: 0.48, rural_electrification_gap: 0.45,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // EPE-004 — high, colonial_energy_debt_crisis (colonial>0.80, global_south>0.75)
   {
-    entity_id: "EPE-004", energy_sector: "utility", region: "LATAM",
+    id: "EPE-004", energy_sector: "utility", region: "LATAM",
     energy_access_gap: 0.45, fossil_fuel_dependency_lock: 0.50,
     green_transition_inequality: 0.48, energy_cost_burden: 0.52,
     grid_infrastructure_failure: 0.45, rural_electrification_gap: 0.48,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // EPE-005 — moderate, energy_affordability_crisis_pattern (afford>0.80, carbon_tax>0.75)
   {
-    entity_id: "EPE-005", energy_sector: "household", region: "NOAM",
+    id: "EPE-005", energy_sector: "household", region: "NOAM",
     energy_access_gap: 0.28, fossil_fuel_dependency_lock: 0.30,
     green_transition_inequality: 0.30, energy_cost_burden: 0.30,
     grid_infrastructure_failure: 0.28, rural_electrification_gap: 0.25,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // EPE-006 — moderate, none
   {
-    entity_id: "EPE-006", energy_sector: "industrial", region: "EMEA",
+    id: "EPE-006", energy_sector: "industrial", region: "EMEA",
     energy_access_gap: 0.30, fossil_fuel_dependency_lock: 0.28,
     green_transition_inequality: 0.30, energy_cost_burden: 0.32,
     grid_infrastructure_failure: 0.28, rural_electrification_gap: 0.25,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // EPE-007 — low, none
   {
-    entity_id: "EPE-007", energy_sector: "grid_operator", region: "NOAM",
+    id: "EPE-007", energy_sector: "grid_operator", region: "NOAM",
     energy_access_gap: 0.10, fossil_fuel_dependency_lock: 0.12,
     green_transition_inequality: 0.10, energy_cost_burden: 0.12,
     grid_infrastructure_failure: 0.10, rural_electrification_gap: 0.08,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // EPE-008 — low, none
   {
-    entity_id: "EPE-008", energy_sector: "municipal", region: "APAC",
+    id: "EPE-008", energy_sector: "municipal", region: "APAC",
     energy_access_gap: 0.12, fossil_fuel_dependency_lock: 0.10,
     green_transition_inequality: 0.12, energy_cost_burden: 0.10,
     grid_infrastructure_failure: 0.12, rural_electrification_gap: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         energy_sector:              e.energy_sector,
         region:                     e.region,
         access_score:               acc,

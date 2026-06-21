@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // AV-001 — critical, fatal_accident_liability_gap (accident_rate>0.85, liability_clarity>0.80)
   {
-    entity_id: "AV-001", vehicle_type: "robotaxi", region: "USA",
+    id: "AV-001", vehicle_type: "robotaxi", region: "USA",
     safety_score_raw: 0.92, accident_rate: 0.92, regulatory_compliance: 0.90,
     liability_clarity: 0.88, insurance_coverage: 0.75, ethical_alignment: 0.70,
     data_privacy: 0.65, cybersecurity_resilience: 0.60, public_trust: 0.65,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // AV-002 — critical, regulatory_arbitrage_race (regulatory_compliance>0.85, legislative_readiness>0.80)
   {
-    entity_id: "AV-002", vehicle_type: "camion_autonome", region: "APAC",
+    id: "AV-002", vehicle_type: "camion_autonome", region: "APAC",
     safety_score_raw: 0.88, accident_rate: 0.70, regulatory_compliance: 0.90,
     liability_clarity: 0.72, insurance_coverage: 0.70, ethical_alignment: 0.68,
     data_privacy: 0.65, cybersecurity_resilience: 0.60, public_trust: 0.60,
@@ -26,7 +26,7 @@ const MOCK_ENTITIES = [
   },
   // AV-003 — critical, algorithmic_bias_discrimination (bias_detection>0.85, ethical_alignment>0.80)
   {
-    entity_id: "AV-003", vehicle_type: "navette_autonome", region: "UE",
+    id: "AV-003", vehicle_type: "navette_autonome", region: "UE",
     safety_score_raw: 0.80, accident_rate: 0.72, regulatory_compliance: 0.75,
     liability_clarity: 0.70, insurance_coverage: 0.68, ethical_alignment: 0.85,
     data_privacy: 0.65, cybersecurity_resilience: 0.62, public_trust: 0.58,
@@ -36,7 +36,7 @@ const MOCK_ENTITIES = [
   },
   // AV-004 — high, insurance_market_collapse (insurance_coverage>0.80, manufacturer_accountability>0.75)
   {
-    entity_id: "AV-004", vehicle_type: "drone_livraison", region: "EMEA",
+    id: "AV-004", vehicle_type: "drone_livraison", region: "EMEA",
     safety_score_raw: 0.55, accident_rate: 0.48, regulatory_compliance: 0.52,
     liability_clarity: 0.50, insurance_coverage: 0.85, ethical_alignment: 0.48,
     data_privacy: 0.45, cybersecurity_resilience: 0.50, public_trust: 0.52,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
   },
   // AV-005 — high, data_sovereignty_failure (data_privacy>0.80, cybersecurity_resilience>0.75)
   {
-    entity_id: "AV-005", vehicle_type: "véhicule_connecté", region: "LATAM",
+    id: "AV-005", vehicle_type: "véhicule_connecté", region: "LATAM",
     safety_score_raw: 0.50, accident_rate: 0.48, regulatory_compliance: 0.52,
     liability_clarity: 0.50, insurance_coverage: 0.48, ethical_alignment: 0.50,
     data_privacy: 0.85, cybersecurity_resilience: 0.80, public_trust: 0.50,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // AV-006 — moderate, none
   {
-    entity_id: "AV-006", vehicle_type: "véhicule_partagé", region: "NOAM",
+    id: "AV-006", vehicle_type: "véhicule_partagé", region: "NOAM",
     safety_score_raw: 0.32, accident_rate: 0.28, regulatory_compliance: 0.30,
     liability_clarity: 0.32, insurance_coverage: 0.28, ethical_alignment: 0.30,
     data_privacy: 0.28, cybersecurity_resilience: 0.30, public_trust: 0.32,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
   },
   // AV-007 — low, none
   {
-    entity_id: "AV-007", vehicle_type: "bus_autonome", region: "UE",
+    id: "AV-007", vehicle_type: "bus_autonome", region: "UE",
     safety_score_raw: 0.10, accident_rate: 0.12, regulatory_compliance: 0.10,
     liability_clarity: 0.12, insurance_coverage: 0.10, ethical_alignment: 0.12,
     data_privacy: 0.10, cybersecurity_resilience: 0.12, public_trust: 0.15,
@@ -76,7 +76,7 @@ const MOCK_ENTITIES = [
   },
   // AV-008 — low, none
   {
-    entity_id: "AV-008", vehicle_type: "taxi_autonome", region: "APAC",
+    id: "AV-008", vehicle_type: "taxi_autonome", region: "APAC",
     safety_score_raw: 0.08, accident_rate: 0.10, regulatory_compliance: 0.08,
     liability_clarity: 0.10, insurance_coverage: 0.08, ethical_alignment: 0.10,
     data_privacy: 0.08, cybersecurity_resilience: 0.10, public_trust: 0.12,
@@ -150,7 +150,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:               e.entity_id,
+        id:               e.entity_id,
         vehicle_type:            e.vehicle_type,
         region:                  e.region,
         safety_score:            saf,

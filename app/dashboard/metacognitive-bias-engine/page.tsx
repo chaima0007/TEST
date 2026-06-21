@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface EntityData {
-  entity_id: string;
+  id: string;
   decision_system_type: string;
   region: string;
   bias_risk: string;
@@ -250,7 +250,7 @@ function DetailModal({ entity, onClose }: { entity: EntityData; onClose: () => v
                 {SEVERITY_LABEL[entity.bias_severity] ?? entity.bias_severity}
               </span>
             </div>
-            <h2 className="text-white font-bold text-lg">{entity.entity_id}</h2>
+            <h2 className="text-white font-bold text-lg">{entity.id}</h2>
             <p className="text-slate-400 text-sm">
               {entity.decision_system_type} · {entity.region} · Composite:{" "}
               <span style={{ color: riskColor }}>{entity.bias_composite}</span>
@@ -431,7 +431,7 @@ function EntityCard({ entity, onClick }: { entity: EntityData; onClick: () => vo
               </span>
             )}
           </div>
-          <h3 className="text-white font-semibold text-sm">{entity.entity_id}</h3>
+          <h3 className="text-white font-semibold text-sm">{entity.id}</h3>
           <p className="text-slate-400 text-xs">{entity.decision_system_type} · {entity.region}</p>
         </div>
         <div className="flex-shrink-0">
@@ -649,7 +649,7 @@ export default function MetacognitiveBiasEnginePage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {entities.map((entity) => (
-            <EntityCard key={entity.entity_id} entity={entity} onClick={() => setSelected(entity)} />
+            <EntityCard key={entity.id} entity={entity} onClick={() => setSelected(entity)} />
           ))}
         </div>
       )}

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // SDE-001 — critical, topsoil_extinction (topsoil>=0.70, monoculture>=0.65)
   {
-    entity_id: "SDE-001", land_type: "cropland", region: "APAC",
+    id: "SDE-001", land_type: "cropland", region: "APAC",
     topsoil_loss_acceleration_rate: 0.85, soil_carbon_depletion_index: 0.60,
     microbiome_diversity_collapse: 0.55, desertification_expansion_rate: 0.60,
     agricultural_chemical_soil_toxicity: 0.65, compaction_crisis_density: 0.70,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // SDE-002 — low, none (forest, NOAM)
   {
-    entity_id: "SDE-002", land_type: "forest", region: "NOAM",
+    id: "SDE-002", land_type: "forest", region: "NOAM",
     topsoil_loss_acceleration_rate: 0.10, soil_carbon_depletion_index: 0.12,
     microbiome_diversity_collapse: 0.10, desertification_expansion_rate: 0.08,
     agricultural_chemical_soil_toxicity: 0.10, compaction_crisis_density: 0.12,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // SDE-003 — high, soil_biome_collapse (microbiome>=0.70, food_web>=0.65)
   {
-    entity_id: "SDE-003", land_type: "pasture", region: "LATAM",
+    id: "SDE-003", land_type: "pasture", region: "LATAM",
     topsoil_loss_acceleration_rate: 0.45, soil_carbon_depletion_index: 0.45,
     microbiome_diversity_collapse: 0.78, desertification_expansion_rate: 0.42,
     agricultural_chemical_soil_toxicity: 0.42, compaction_crisis_density: 0.45,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // SDE-004 — low, none (wetland, EMEA)
   {
-    entity_id: "SDE-004", land_type: "wetland", region: "EMEA",
+    id: "SDE-004", land_type: "wetland", region: "EMEA",
     topsoil_loss_acceleration_rate: 0.15, soil_carbon_depletion_index: 0.14,
     microbiome_diversity_collapse: 0.12, desertification_expansion_rate: 0.10,
     agricultural_chemical_soil_toxicity: 0.15, compaction_crisis_density: 0.14,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // SDE-005 — critical, desertification_cascade (desert>=0.70, erosion>=0.65)
   {
-    entity_id: "SDE-005", land_type: "dryland", region: "MEA",
+    id: "SDE-005", land_type: "dryland", region: "MEA",
     topsoil_loss_acceleration_rate: 0.70, soil_carbon_depletion_index: 0.62,
     microbiome_diversity_collapse: 0.60, desertification_expansion_rate: 0.88,
     agricultural_chemical_soil_toxicity: 0.62, compaction_crisis_density: 0.65,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // SDE-006 — moderate, none (arable, NOAM)
   {
-    entity_id: "SDE-006", land_type: "arable", region: "NOAM",
+    id: "SDE-006", land_type: "arable", region: "NOAM",
     topsoil_loss_acceleration_rate: 0.30, soil_carbon_depletion_index: 0.28,
     microbiome_diversity_collapse: 0.30, desertification_expansion_rate: 0.25,
     agricultural_chemical_soil_toxicity: 0.30, compaction_crisis_density: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // SDE-007 — high, chemical_soil_death (chem_tox>=0.70, acidif>=0.65)
   {
-    entity_id: "SDE-007", land_type: "industrial_farmland", region: "APAC",
+    id: "SDE-007", land_type: "industrial_farmland", region: "APAC",
     topsoil_loss_acceleration_rate: 0.48, soil_carbon_depletion_index: 0.45,
     microbiome_diversity_collapse: 0.48, desertification_expansion_rate: 0.42,
     agricultural_chemical_soil_toxicity: 0.82, compaction_crisis_density: 0.48,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // SDE-008 — critical, phosphorus_crisis (phosphorus>=0.70, carbon>=0.65)
   {
-    entity_id: "SDE-008", land_type: "degraded_agricultural", region: "EMEA",
+    id: "SDE-008", land_type: "degraded_agricultural", region: "EMEA",
     topsoil_loss_acceleration_rate: 0.65, soil_carbon_depletion_index: 0.82,
     microbiome_diversity_collapse: 0.68, desertification_expansion_rate: 0.62,
     agricultural_chemical_soil_toxicity: 0.68, compaction_crisis_density: 0.65,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig   = signal(risk);
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         land_type:                        e.land_type,
         region:                           e.region,
         physical_score:                   phys,

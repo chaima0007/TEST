@@ -17,7 +17,7 @@ function GaugeRing({ score, color }: { score: number; color: string }) {
   );
 }
 
-interface Entity { entity_id: string; name: string; country: string; composite_score: number; risk_level: string; primary_pattern: string; key_signals?: string[]; sector?: string; last_updated?: string; [key: string]: unknown; }
+interface Entity { id: string; name: string; country: string; composite_score: number; risk_level: string; primary_pattern: string; key_signals?: string[]; sector?: string; last_updated?: string; [key: string]: unknown; }
 interface DashData { total_entities?: number; avg_composite?: number; confidence_score?: number; risk_distribution?: Record<string,number>; entities?: Entity[]; [key: string]: unknown; }
 
 export default function DashboardPage() {
@@ -56,11 +56,11 @@ export default function DashboardPage() {
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         {filtered.map(e=>(
-          <div key={e.entity_id} onClick={()=>{setSelected(e);setTab(0);}} className={`cursor-pointer rounded-xl border p-4 transition-all hover:scale-[1.01] ${RB[e.risk_level]??"border-slate-700 bg-slate-900"}`}>
+          <div key={e.id} onClick={()=>{setSelected(e);setTab(0);}} className={`cursor-pointer rounded-xl border p-4 transition-all hover:scale-[1.01] ${RB[e.risk_level]??"border-slate-700 bg-slate-900"}`}>
             <div className="flex items-start gap-4">
               <GaugeRing score={e.composite_score} color={ACCENT}/>
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-400 mb-1">{e.entity_id} · {e.country}</p>
+                <p className="text-xs text-slate-400 mb-1">{e.id} · {e.country}</p>
                 <p className="font-semibold text-sm leading-snug line-clamp-2">{e.name}</p>
                 <div className="flex items-center gap-2 mt-2">
                   <span className={`text-xs font-bold uppercase ${RC[e.risk_level]}`}>{e.risk_level}</span>
@@ -77,7 +77,7 @@ export default function DashboardPage() {
           <div className="bg-slate-900 rounded-2xl border border-slate-700 max-w-2xl w-full max-h-[85vh] overflow-y-auto" onClick={e=>e.stopPropagation()}>
             <div className="p-6 border-b border-slate-800">
               <div className="flex items-start justify-between gap-4">
-                <div><p className="text-xs text-slate-400 mb-1">{selected.entity_id} · {selected.country}</p><h2 className="text-lg font-bold">{selected.name}</h2></div>
+                <div><p className="text-xs text-slate-400 mb-1">{selected.id} · {selected.country}</p><h2 className="text-lg font-bold">{selected.name}</h2></div>
                 <button onClick={()=>setSelected(null)} className="text-slate-400 hover:text-white text-xl flex-shrink-0">✕</button>
               </div>
               <div className="flex items-center gap-3 mt-3">
@@ -93,7 +93,7 @@ export default function DashboardPage() {
             <div className="p-6">
               {tab===0&&(<div className="space-y-3"><div className="flex justify-between text-sm"><span className="text-slate-400">Score composite</span><span className="font-bold">{selected.composite_score}/100</span></div><div className="flex justify-between text-sm"><span className="text-slate-400">Niveau de risque</span><span className={`font-bold uppercase ${RC[selected.risk_level]}`}>{selected.risk_level}</span></div><div className="flex justify-between text-sm"><span className="text-slate-400">Pattern principal</span><span>{selected.primary_pattern?.replace(/_/g," ")}</span></div><div className="pt-3 border-t border-slate-800"><p className="text-slate-400 text-xs mb-2">SECTEUR</p><p className="text-slate-300 text-sm">{selected.sector as string}</p></div></div>)}
               {tab===1&&(<ul className="space-y-4">{(selected.key_signals??[]).map((s,i)=>(<li key={i} className="bg-slate-800 rounded-lg p-3 text-sm text-slate-300 leading-relaxed">{s}</li>))}</ul>)}
-              {tab===2&&(<div className="space-y-3 text-sm"><div className="flex justify-between"><span className="text-slate-400">Dernière mise à jour</span><span>{selected.last_updated as string}</span></div><div className="flex justify-between"><span className="text-slate-400">ID Entité</span><span className="font-mono">{selected.entity_id}</span></div><div className="flex justify-between"><span className="text-slate-400">Pays/Région</span><span>{selected.country}</span></div></div>)}
+              {tab===2&&(<div className="space-y-3 text-sm"><div className="flex justify-between"><span className="text-slate-400">Dernière mise à jour</span><span>{selected.last_updated as string}</span></div><div className="flex justify-between"><span className="text-slate-400">ID Entité</span><span className="font-mono">{selected.id}</span></div><div className="flex justify-between"><span className="text-slate-400">Pays/Région</span><span>{selected.country}</span></div></div>)}
             </div>
           </div>
         </div>

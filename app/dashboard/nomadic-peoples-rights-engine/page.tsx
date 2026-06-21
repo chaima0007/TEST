@@ -20,7 +20,7 @@ function GaugeRing({ value, stroke }: { value: number; stroke: string }) {
 }
 
 interface NPREntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -206,11 +206,11 @@ export default function NomadicPeoplesRightsPage() {
         {/* Entity grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map(entity => (
-            <div key={entity.entity_id} onClick={() => { setSelected(entity); setTab(0); }}
+            <div key={entity.id} onClick={() => { setSelected(entity); setTab(0); }}
               className={`bg-slate-900 border rounded-xl p-4 cursor-pointer hover:border-orange-500/50 transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}>
               <div className="flex justify-between items-start mb-3">
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
+                  <p className="text-xs font-mono text-slate-500">{entity.id}</p>
                   <p className="text-sm font-semibold text-white truncate">{entity.name}</p>
                   <p className="text-xs text-slate-500">{entity.country}</p>
                 </div>
@@ -233,7 +233,7 @@ export default function NomadicPeoplesRightsPage() {
           <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
             <div className="p-6 border-b border-slate-800 flex justify-between items-start">
               <div>
-                <p className="text-xs text-slate-500 mb-1">{selected.entity_id}</p>
+                <p className="text-xs text-slate-500 mb-1">{selected.id}</p>
                 <h3 className="font-bold text-lg">{selected.name}</h3>
                 <p className="text-xs text-slate-400 mt-1">{selected.country} · {selected.sector}</p>
                 <p className={`text-xs font-bold uppercase mt-1 ${RC[selected.risk_level]}`}>{selected.risk_level}</p>

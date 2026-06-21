@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "CJE-001",
+      id: "CJE-001",
       name: "Philippines/Honduras — Berta Cáceres Assassinée, Île Nations Submersion, Défenseurs Environnement #1 Tués Monde & Impunité Totale",
       country: "Philippines/Honduras",
       environmental_defender_killing_criminalization_severity_score: 93.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CJE-002",
+      id: "CJE-002",
       name: "Amazonie Brésil — 300+ Défenseurs Tués Bolsonaro Era, Terres Indigènes Déforestées, Garimpeiros Violents & Lula Réforme Lente",
       country: "Brésil",
       environmental_defender_killing_criminalization_severity_score: 90.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CJE-003",
+      id: "CJE-003",
       name: "Pakistan/Bangladesh — Inondations Catastrophiques 33M Déplacés, Pertes Économiques Irréparables, Emprunt FMI Climate & Pollueurs Non Responsables",
       country: "Pakistan/Bangladesh",
       environmental_defender_killing_criminalization_severity_score: 87.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CJE-004",
+      id: "CJE-004",
       name: "Afrique Subsaharienne — Sécheresse Corne Afrique 36M, Lac Tchad Disparu 90%, Cyclones Mozambique & Multinationales Extractives Immunisées",
       country: "Afrique Subsaharienne",
       environmental_defender_killing_criminalization_severity_score: 84.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CJE-005",
+      id: "CJE-005",
       name: "Indonésie/PNG — Déforestation Palmier Huile, Communautés Indigènes Expulsées, Forêts Tourbe Brûlées & Licences Sans FPIC",
       country: "Indonésie/PNG",
       environmental_defender_killing_criminalization_severity_score: 55.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CJE-006",
+      id: "CJE-006",
       name: "USA/Australie — Greenwashing Légal, Climate SLAPP Contre Activistes, Fossil Fuel Subsidies 7T$/An & Lobbying Anti-Climate",
       country: "USA/Australie",
       environmental_defender_killing_criminalization_severity_score: 52.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CJE-007",
+      id: "CJE-007",
       name: "Global Witness/Frontline Defenders — Rapports Défenseurs Environnement, Cartographie Meurtres & Mécanismes Protection",
       country: "Global",
       environmental_defender_killing_criminalization_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CJE-008",
+      id: "CJE-008",
       name: "ONU/Accord Paris + Aarhus — Droits Humains Climate Change, Rapporteur Spécial & SDG 13 Action Climatique",
       country: "Global",
       environmental_defender_killing_criminalization_severity_score: 5.0,

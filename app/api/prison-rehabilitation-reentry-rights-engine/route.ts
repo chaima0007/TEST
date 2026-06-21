@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "PRR-001",
+      id: "PRR-001",
       name: "USA — 2.3M Détenus #1 Monde, Solitary 80 000, Prison Privatisée Lobby, For-Profit & Three Strikes Perpétuité",
       country: "USA",
       prison_overcrowding_inhumane_conditions_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PRR-002",
+      id: "PRR-002",
       name: "Philippines — Prisons 500% Surpeuplées, 800 Détenus/Cellule 50 Places, Morts Chaleur & Guerre Drogue Détenus Abandonnés",
       country: "Philippines",
       prison_overcrowding_inhumane_conditions_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PRR-003",
+      id: "PRR-003",
       name: "Brésil — APAC vs Complexes Régimes, Massacres Pénitentiaires Carandiru, Factions Contrôlent Prisons & Réhab Absente",
       country: "Brésil",
       prison_overcrowding_inhumane_conditions_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PRR-004",
+      id: "PRR-004",
       name: "Russie/Belarus — Colonies Pénitentiaires Sibérie, Travail Forcé Prisonniers, Torture Systématique & IK-6 Navalny",
       country: "Russie/Belarus",
       prison_overcrowding_inhumane_conditions_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PRR-005",
+      id: "PRR-005",
       name: "Afrique Sub-Saharienne — Prisons Coloniales Non Réformées, Détention Préventive 70%, Sans Procès Années & Maladies",
       country: "Afrique Sub-Saharienne",
       prison_overcrowding_inhumane_conditions_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PRR-006",
+      id: "PRR-006",
       name: "Europe — Récidive Manque Réhab France, UK Short Sentences Inefficaces, Norvège Modèle Non Copié & Détention Immigrants",
       country: "Europe",
       prison_overcrowding_inhumane_conditions_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PRR-007",
+      id: "PRR-007",
       name: "Penal Reform International/ICPA — Standards Mandela Rules, Réforme Pénitentiaire Globale, Réhab Evidence-Based & Monitoring",
       country: "Global",
       prison_overcrowding_inhumane_conditions_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PRR-008",
+      id: "PRR-008",
       name: "ONU/Règles Mandela — Règles Minima Traitement Détenus, OPCAT Mécanismes & SDG 16.3 Justice Accès",
       country: "Global",
       prison_overcrowding_inhumane_conditions_severity_score: 5.0,

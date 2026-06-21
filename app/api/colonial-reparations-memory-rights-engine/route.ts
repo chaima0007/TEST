@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "CRM-001",
+      id: "CRM-001",
       name: "France/Algérie — Guerre Algérie 1.5M Morts Déniés, Massacres Mai 1945 Non Reconnus, Archives Fermées & Harkis Abandonés",
       country: "France/Algérie",
       colonial_genocide_crime_denial_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CRM-002",
+      id: "CRM-002",
       name: "Belgique/RDC — Léopold II 10M Morts Congo Reconnu 2020 Pas Réparations, Pillage Or/Caoutchouc & Patrice Lumumba",
       country: "Belgique/RDC",
       colonial_genocide_crime_denial_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CRM-003",
+      id: "CRM-003",
       name: "UK/Caraïbes — Esclavage Indemnisation 2023 Debat, Plantation Profits Familles Royales, CARICOM 14 Points & Windrush",
       country: "UK/Caraïbes",
       colonial_genocide_crime_denial_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CRM-004",
+      id: "CRM-004",
       name: "Pays-Bas/Indonésie — Reconnaissance Partielle 2022, Archives Torture Décolonisation, Westerling Massacres & Comores",
       country: "Pays-Bas/Indonésie",
       colonial_genocide_crime_denial_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CRM-005",
+      id: "CRM-005",
       name: "Allemagne/Namibie — Héreros-Namas Génocide Reconnu 2021, 1.1B€ Aide Pas Réparations, OvaHerero Négociations & Crânes Restitués",
       country: "Allemagne/Namibie",
       colonial_genocide_crime_denial_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CRM-006",
+      id: "CRM-006",
       name: "USA/Afro-Américains — Slavery Reparations H.R.40 Bloqué 30 Ans, Juneteenth Sans Réparations, Redlining Wealth Gap & Jim Crow",
       country: "USA",
       colonial_genocide_crime_denial_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CRM-007",
+      id: "CRM-007",
       name: "ICOM/UNESCO — Principes Restitution Patrimoine, Convention 1970, Restitution Objets & Mécanisme Biens Culturels",
       country: "Global",
       colonial_genocide_crime_denial_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "CRM-008",
+      id: "CRM-008",
       name: "ONU/DDRIP — Droit Réparation Peuples Autochtones, CERD Recommandations Réparations & SDG 10 Inégalités Réduction",
       country: "Global",
       colonial_genocide_crime_denial_severity_score: 5.0,

@@ -20,7 +20,7 @@ function getMockData() {
     avg_estimated_internet_shutdown_digital_rights_index: 6.27,
     entities: [
       {
-        entity_id: "ISDR-001",
+        id: "ISDR-001",
         name: "Myanmar/Coup État 2021 Blackout Total Internet",
         country: "Asie du Sud-Est",
         sector: "Coup Militaire Février 2021, Coupure Internet 77 Jours, Facebook Principal Media Coupé & 40+ Millions Privés Connectivité",
@@ -40,7 +40,7 @@ function getMockData() {
         estimated_internet_shutdown_digital_rights_index: 9.27,
       },
       {
-        entity_id: "ISDR-002",
+        id: "ISDR-002",
         name: "Corée du Nord/Intranet Kwangmyong Isolement Total",
         country: "Asie du Nord-Est",
         sector: "Internet Mondial Accessible <0.1% Population, Intranet Étatique Contrôlé, VPN Peine De Mort & Totale Désinformation",
@@ -60,7 +60,7 @@ function getMockData() {
         estimated_internet_shutdown_digital_rights_index: 9.82,
       },
       {
-        entity_id: "ISDR-003",
+        id: "ISDR-003",
         name: "Iran/Mahsa Amini Coupure 2022 & Filtrage",
         country: "MENA",
         sector: "Coupure Internet Pendant Manifestations 2022, Instagram/WhatsApp Bloqués, VPN Criminalisés & 76 Millions Touchés",
@@ -80,7 +80,7 @@ function getMockData() {
         estimated_internet_shutdown_digital_rights_index: 8.74,
       },
       {
-        entity_id: "ISDR-004",
+        id: "ISDR-004",
         name: "Éthiopie/Tigré 2020-2022 Zone de Guerre",
         country: "Afrique de l'Est",
         sector: "18 Mois Sans Internet Région Tigré, Blackout Pendant Conflit, Populations Coupées Aide Humanitaire & Journalistes Exclus",
@@ -100,7 +100,7 @@ function getMockData() {
         estimated_internet_shutdown_digital_rights_index: 8.51,
       },
       {
-        entity_id: "ISDR-005",
+        id: "ISDR-005",
         name: "Russie/Blocage Twitter VK Censuré Ukraine",
         country: "Europe de l'Est",
         sector: "Twitter/Facebook Bloqués Mars 2022, Loi Roskomnadzor, 200+ Sites Censurés, VPN Légaux Sous Pression & Propagande RuTube",
@@ -120,7 +120,7 @@ function getMockData() {
         estimated_internet_shutdown_digital_rights_index: 5.28,
       },
       {
-        entity_id: "ISDR-006",
+        id: "ISDR-006",
         name: "Inde/Cachemire 552 Jours Sans Internet",
         country: "Asie du Sud",
         sector: "552 Jours Coupure Cachemire 2019-2021, Monde Record, 4G Bloqué, 7M Habitants & Économie Locale Dévastée",
@@ -140,7 +140,7 @@ function getMockData() {
         estimated_internet_shutdown_digital_rights_index: 5.97,
       },
       {
-        entity_id: "ISDR-007",
+        id: "ISDR-007",
         name: "USA/Section 230 & Big Tech Modération",
         country: "Amérique du Nord",
         sector: "Section 230 Débat, Modération Contenu Big Tech, CLOUD Act Surveillance, Patriot Act & NSA Mass Surveillance Revelations",
@@ -160,7 +160,7 @@ function getMockData() {
         estimated_internet_shutdown_digital_rights_index: 2.29,
       },
       {
-        entity_id: "ISDR-008",
+        id: "ISDR-008",
         name: "UE/GDPR & Digital Services Act Régulation",
         country: "Europe",
         sector: "GDPR 2018 Protection Données, DSA 2022 Modération Transparente, NIS2 Cybersécurité & Droits Numériques Renforcés",

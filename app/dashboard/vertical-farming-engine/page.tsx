@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface FarmingEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -229,7 +229,7 @@ function DetailModal({ entity, onClose }: { entity: FarmingEntity; onClose: () =
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              {entity.country} · {entity.sector} · {entity.entity_id}
+              {entity.country} · {entity.sector} · {entity.id}
             </p>
           </div>
           <button
@@ -750,7 +750,7 @@ export default function VerticalFarmingEnginePage() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filtered.map((entity) => (
               <EntityCard
-                key={entity.entity_id}
+                key={entity.id}
                 entity={entity}
                 onClick={() => setSelectedEntity(entity)}
               />

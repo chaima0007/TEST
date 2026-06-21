@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // NWE-001 — critical, repository_failure_crisis (containment_integrity<0.15, repository_capacity<0.20)
   {
-    entity_id: "NWE-001", waste_category: "haute_activité", region: "Europe_Est",
+    id: "NWE-001", waste_category: "haute_activité", region: "Europe_Est",
     containment_integrity: 0.10, repository_capacity: 0.12, geological_stability: 0.15,
     cooling_system_safety: 0.12, governance_effectiveness: 0.20, regulatory_independence: 0.22,
     transparency_index: 0.18, public_trust: 0.15, intergenerational_equity: 0.22,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // NWE-002 — critical, intergenerational_justice_void (intergenerational_equity<0.15, time_horizon_planning<0.20)
   {
-    entity_id: "NWE-002", waste_category: "moyenne_activité", region: "Asie_Pacifique",
+    id: "NWE-002", waste_category: "moyenne_activité", region: "Asie_Pacifique",
     containment_integrity: 0.20, repository_capacity: 0.22, geological_stability: 0.18,
     cooling_system_safety: 0.20, governance_effectiveness: 0.22, regulatory_independence: 0.20,
     transparency_index: 0.18, public_trust: 0.20, intergenerational_equity: 0.10,
@@ -26,7 +26,7 @@ const MOCK_ENTITIES = [
   },
   // NWE-003 — critical, proliferation_leakage_risk (proliferation_risk>0.85, security_measures<0.20)
   {
-    entity_id: "NWE-003", waste_category: "matières_fissiles", region: "Moyen_Orient",
+    id: "NWE-003", waste_category: "matières_fissiles", region: "Moyen_Orient",
     containment_integrity: 0.18, repository_capacity: 0.20, geological_stability: 0.20,
     cooling_system_safety: 0.18, governance_effectiveness: 0.18, regulatory_independence: 0.20,
     transparency_index: 0.15, public_trust: 0.18, intergenerational_equity: 0.20,
@@ -36,7 +36,7 @@ const MOCK_ENTITIES = [
   },
   // NWE-004 — high, regulatory_capture_collapse (regulatory_independence<0.15, governance_effectiveness<0.20)
   {
-    entity_id: "NWE-004", waste_category: "faible_activité", region: "Amérique_Latine",
+    id: "NWE-004", waste_category: "faible_activité", region: "Amérique_Latine",
     containment_integrity: 0.50, repository_capacity: 0.52, geological_stability: 0.55,
     cooling_system_safety: 0.50, governance_effectiveness: 0.12, regulatory_independence: 0.10,
     transparency_index: 0.18, public_trust: 0.20, intergenerational_equity: 0.45,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
   },
   // NWE-005 — high, legacy_contamination_spread (worker_exposure>0.80, decommissioning_readiness<0.25)
   {
-    entity_id: "NWE-005", waste_category: "déchets_anciens", region: "Europe_Occidentale",
+    id: "NWE-005", waste_category: "déchets_anciens", region: "Europe_Occidentale",
     containment_integrity: 0.48, repository_capacity: 0.50, geological_stability: 0.52,
     cooling_system_safety: 0.45, governance_effectiveness: 0.50, regulatory_independence: 0.48,
     transparency_index: 0.50, public_trust: 0.45, intergenerational_equity: 0.48,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // NWE-006 — moderate, none
   {
-    entity_id: "NWE-006", waste_category: "très_faible_activité", region: "Afrique",
+    id: "NWE-006", waste_category: "très_faible_activité", region: "Afrique",
     containment_integrity: 0.65, repository_capacity: 0.68, geological_stability: 0.70,
     cooling_system_safety: 0.65, governance_effectiveness: 0.68, regulatory_independence: 0.65,
     transparency_index: 0.70, public_trust: 0.65, intergenerational_equity: 0.68,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
   },
   // NWE-007 — low, none
   {
-    entity_id: "NWE-007", waste_category: "stockage_géologique", region: "Amérique_Nord",
+    id: "NWE-007", waste_category: "stockage_géologique", region: "Amérique_Nord",
     containment_integrity: 0.88, repository_capacity: 0.85, geological_stability: 0.90,
     cooling_system_safety: 0.88, governance_effectiveness: 0.88, regulatory_independence: 0.90,
     transparency_index: 0.85, public_trust: 0.88, intergenerational_equity: 0.85,
@@ -76,7 +76,7 @@ const MOCK_ENTITIES = [
   },
   // NWE-008 — low, none
   {
-    entity_id: "NWE-008", waste_category: "déchets_hospitaliers", region: "Scandinavie",
+    id: "NWE-008", waste_category: "déchets_hospitaliers", region: "Scandinavie",
     containment_integrity: 0.90, repository_capacity: 0.88, geological_stability: 0.92,
     cooling_system_safety: 0.90, governance_effectiveness: 0.90, regulatory_independence: 0.88,
     transparency_index: 0.92, public_trust: 0.90, intergenerational_equity: 0.88,
@@ -150,7 +150,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig   = signal(risk);
       return {
-        entity_id:              e.entity_id,
+        id:              e.entity_id,
         waste_category:         e.waste_category,
         region:                 e.region,
         containment_score:      cont,

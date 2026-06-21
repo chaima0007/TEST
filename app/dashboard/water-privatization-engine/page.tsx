@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 type RiskLevel = "critique" | "élevé" | "modéré" | "faible";
 
 interface WPEEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -305,7 +305,7 @@ export default function WaterPrivatizationDashboard() {
         {filtered.map(e => {
           const meta = RISK_META[e.risk_level];
           return (
-            <div key={e.entity_id} onClick={() => setSelected(e)}
+            <div key={e.id} onClick={() => setSelected(e)}
               className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-blue-700/50 transition-colors">
               <div className="flex items-center justify-between mb-1">
                 <span className="font-bold text-white">{e.name}</span>

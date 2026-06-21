@@ -7,7 +7,7 @@ if (!process.env.SWARM_API_URL) {
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "CRY-001",
+    id: "CRY-001",
     name: "DarkChain Exchange",
     country: "Russie",
     sector: "Exchange Crypto Non Régulé",
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-20",
   },
   {
-    entity_id: "CRY-002",
+    id: "CRY-002",
     name: "CryptoHaven Protocol",
     country: "Îles Caïmans",
     sector: "Protocole Mixage Crypto",
@@ -47,7 +47,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-19",
   },
   {
-    entity_id: "CRY-003",
+    id: "CRY-003",
     name: "NovaCoin Darknet",
     country: "Corée du Nord",
     sector: "Marché Darknet Crypto",
@@ -67,7 +67,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-18",
   },
   {
-    entity_id: "CRY-004",
+    id: "CRY-004",
     name: "QuickSwap DeFi",
     country: "Singapour",
     sector: "Protocole DeFi",
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-17",
   },
   {
-    entity_id: "CRY-005",
+    id: "CRY-005",
     name: "CryptoVault Exchange",
     country: "Malaisie",
     sector: "Exchange Crypto Semi-Régulé",
@@ -107,7 +107,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-16",
   },
   {
-    entity_id: "CRY-006",
+    id: "CRY-006",
     name: "AltCoin Market EU",
     country: "Malte",
     sector: "Exchange Crypto Régulé MiCA",
@@ -127,7 +127,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-15",
   },
   {
-    entity_id: "CRY-007",
+    id: "CRY-007",
     name: "SwissBlock Custody",
     country: "Suisse",
     sector: "Custody & Banque Crypto",
@@ -147,7 +147,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-14",
   },
   {
-    entity_id: "CRY-008",
+    id: "CRY-008",
     name: "EUROCoin Regulated Exchange",
     country: "France",
     sector: "Exchange Crypto Régulé PSAN",

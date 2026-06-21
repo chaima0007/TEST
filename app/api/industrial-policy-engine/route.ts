@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // strategic_dependency_crisis: strategic_dependency_exposure>0.85 AND semiconductor_dependency>0.80
   // composite >= 60 → critical
   {
-    entity_id: "IPE-001", industrial_sector: "semiconducteurs_electronique", region: "APAC",
+    id: "IPE-001", industrial_sector: "semiconducteurs_electronique", region: "APAC",
     strategic_dependency_exposure: 0.90,
     reshoring_policy_effectiveness: 0.70,
     friend_shoring_progress: 0.55,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   // IPE-002 — low, pattern=none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "IPE-002", industrial_sector: "artisanat_local", region: "EMEA",
+    id: "IPE-002", industrial_sector: "artisanat_local", region: "EMEA",
     strategic_dependency_exposure: 0.08,
     reshoring_policy_effectiveness: 0.10,
     friend_shoring_progress: 0.12,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   // strategic_dependency_crisis must NOT fire: strategic_dependency_exposure<=0.85 OR semiconductor_dependency<=0.80
   // composite >=40 and <60 → high
   {
-    entity_id: "IPE-003", industrial_sector: "acier_aluminium", region: "NOAM",
+    id: "IPE-003", industrial_sector: "acier_aluminium", region: "NOAM",
     strategic_dependency_exposure: 0.50,
     reshoring_policy_effectiveness: 0.50,
     friend_shoring_progress: 0.45,
@@ -78,7 +78,7 @@ const MOCK_ENTITIES = [
   // IPE-004 — moderate, pattern=none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "IPE-004", industrial_sector: "chimie_materiaux", region: "LATAM",
+    id: "IPE-004", industrial_sector: "chimie_materiaux", region: "LATAM",
     strategic_dependency_exposure: 0.28,
     reshoring_policy_effectiveness: 0.28,
     friend_shoring_progress: 0.30,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
   // subsidy_trade_war_escalation must NOT fire: IRA_like_subsidy_race<=0.85 OR protectionism_trade_war_risk<=0.80
   // composite >= 60 → critical
   {
-    entity_id: "IPE-005", industrial_sector: "construction_navale", region: "EMEA",
+    id: "IPE-005", industrial_sector: "construction_navale", region: "EMEA",
     strategic_dependency_exposure: 0.70,
     reshoring_policy_effectiveness: 0.88,
     friend_shoring_progress: 0.60,
@@ -129,7 +129,7 @@ const MOCK_ENTITIES = [
   // reshoring_policy_failure must NOT fire: reshoring_policy_effectiveness<=0.85 OR workforce_skills_mismatch<=0.80
   // composite >=40 and <60 → high
   {
-    entity_id: "IPE-006", industrial_sector: "pharmacie_biotechnologie", region: "MEA",
+    id: "IPE-006", industrial_sector: "pharmacie_biotechnologie", region: "MEA",
     strategic_dependency_exposure: 0.50,
     reshoring_policy_effectiveness: 0.50,
     friend_shoring_progress: 0.45,
@@ -153,7 +153,7 @@ const MOCK_ENTITIES = [
   // all prior patterns must NOT fire
   // composite >= 60 → critical
   {
-    entity_id: "IPE-007", industrial_sector: "energies_renouvelables", region: "APAC",
+    id: "IPE-007", industrial_sector: "energies_renouvelables", region: "APAC",
     strategic_dependency_exposure: 0.70,
     reshoring_policy_effectiveness: 0.72,
     friend_shoring_progress: 0.62,
@@ -175,7 +175,7 @@ const MOCK_ENTITIES = [
   // IPE-008 — low, pattern=none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "IPE-008", industrial_sector: "agriculture_agroalimentaire", region: "NOAM",
+    id: "IPE-008", industrial_sector: "agriculture_agroalimentaire", region: "NOAM",
     strategic_dependency_exposure: 0.10,
     reshoring_policy_effectiveness: 0.08,
     friend_shoring_progress: 0.10,
@@ -294,7 +294,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         industrial_sector:               e.industrial_sector,
         region:                          e.region,
         dependency_score:                dep,

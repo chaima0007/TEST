@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // MBM-001: critical, metamorphic_stall
-  { entity_id:"MBM-001", transformation_stage:"identity_dissolution", region:"EMEA",
+  { id:"MBM-001", transformation_stage:"identity_dissolution", region:"EMEA",
     transformation_velocity:0.22, identity_coherence_score:0.25, legacy_anchor_risk:0.75,
     new_capability_readiness:0.22, revenue_model_clarity:0.20, stakeholder_change_tolerance:0.55,
     cultural_transformation_depth:0.18, innovation_pipeline_richness:0.22, organizational_grief_processing:0.28,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     ecosystem_partner_alignment:0.55, customer_migration_readiness:0.55, financial_runway_adequacy:0.22,
     metamorphic_vision_clarity:0.20, post_transformation_market_fit:0.15 },
   // MBM-002: low, metamorphosed, none
-  { entity_id:"MBM-002", transformation_stage:"culture_metamorphosis", region:"NAMER",
+  { id:"MBM-002", transformation_stage:"culture_metamorphosis", region:"NAMER",
     transformation_velocity:0.90, identity_coherence_score:0.90, legacy_anchor_risk:0.15,
     new_capability_readiness:0.90, revenue_model_clarity:0.92, stakeholder_change_tolerance:0.90,
     cultural_transformation_depth:0.88, innovation_pipeline_richness:0.90, organizational_grief_processing:0.85,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     ecosystem_partner_alignment:0.90, customer_migration_readiness:0.90, financial_runway_adequacy:0.90,
     metamorphic_vision_clarity:0.92, post_transformation_market_fit:0.88 },
   // MBM-003: high, identity_crisis
-  { entity_id:"MBM-003", transformation_stage:"chrysalis_phase", region:"APAC",
+  { id:"MBM-003", transformation_stage:"chrysalis_phase", region:"APAC",
     transformation_velocity:0.35, identity_coherence_score:0.22, legacy_anchor_risk:0.55,
     new_capability_readiness:0.35, revenue_model_clarity:0.40, stakeholder_change_tolerance:0.35,
     cultural_transformation_depth:0.32, innovation_pipeline_richness:0.35, organizational_grief_processing:0.38,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     ecosystem_partner_alignment:0.35, customer_migration_readiness:0.35, financial_runway_adequacy:0.35,
     metamorphic_vision_clarity:0.40, post_transformation_market_fit:0.30 },
   // MBM-004: low, metamorphosed, none
-  { entity_id:"MBM-004", transformation_stage:"capability_reconfiguration", region:"LATAM",
+  { id:"MBM-004", transformation_stage:"capability_reconfiguration", region:"LATAM",
     transformation_velocity:0.70, identity_coherence_score:0.72, legacy_anchor_risk:0.28,
     new_capability_readiness:0.70, revenue_model_clarity:0.68, stakeholder_change_tolerance:0.72,
     cultural_transformation_depth:0.65, innovation_pipeline_richness:0.70, organizational_grief_processing:0.68,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     ecosystem_partner_alignment:0.70, customer_migration_readiness:0.70, financial_runway_adequacy:0.70,
     metamorphic_vision_clarity:0.72, post_transformation_market_fit:0.68 },
   // MBM-005: critical, capability_gap
-  { entity_id:"MBM-005", transformation_stage:"revenue_model_pivot", region:"EMEA",
+  { id:"MBM-005", transformation_stage:"revenue_model_pivot", region:"EMEA",
     transformation_velocity:0.22, identity_coherence_score:0.55, legacy_anchor_risk:0.60,
     new_capability_readiness:0.22, revenue_model_clarity:0.18, stakeholder_change_tolerance:0.55,
     cultural_transformation_depth:0.20, innovation_pipeline_richness:0.22, organizational_grief_processing:0.25,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     ecosystem_partner_alignment:0.55, customer_migration_readiness:0.55, financial_runway_adequacy:0.22,
     metamorphic_vision_clarity:0.30, post_transformation_market_fit:0.20 },
   // MBM-006: moderate, none
-  { entity_id:"MBM-006", transformation_stage:"ecosystem_reposition", region:"NAMER",
+  { id:"MBM-006", transformation_stage:"ecosystem_reposition", region:"NAMER",
     transformation_velocity:0.55, identity_coherence_score:0.55, legacy_anchor_risk:0.52,
     new_capability_readiness:0.55, revenue_model_clarity:0.58, stakeholder_change_tolerance:0.55,
     cultural_transformation_depth:0.52, innovation_pipeline_richness:0.55, organizational_grief_processing:0.50,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     ecosystem_partner_alignment:0.55, customer_migration_readiness:0.55, financial_runway_adequacy:0.55,
     metamorphic_vision_clarity:0.55, post_transformation_market_fit:0.52 },
   // MBM-007: high, ecosystem_rejection
-  { entity_id:"MBM-007", transformation_stage:"value_proposition_reinvention", region:"APAC",
+  { id:"MBM-007", transformation_stage:"value_proposition_reinvention", region:"APAC",
     transformation_velocity:0.40, identity_coherence_score:0.55, legacy_anchor_risk:0.55,
     new_capability_readiness:0.40, revenue_model_clarity:0.45, stakeholder_change_tolerance:0.55,
     cultural_transformation_depth:0.38, innovation_pipeline_richness:0.40, organizational_grief_processing:0.42,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     ecosystem_partner_alignment:0.22, customer_migration_readiness:0.28, financial_runway_adequacy:0.40,
     metamorphic_vision_clarity:0.45, post_transformation_market_fit:0.35 },
   // MBM-008: critical, vision_collapse
-  { entity_id:"MBM-008", transformation_stage:"stakeholder_realignment", region:"MEA",
+  { id:"MBM-008", transformation_stage:"stakeholder_realignment", region:"MEA",
     transformation_velocity:0.22, identity_coherence_score:0.55, legacy_anchor_risk:0.72,
     new_capability_readiness:0.22, revenue_model_clarity:0.18, stakeholder_change_tolerance:0.45,
     cultural_transformation_depth:0.20, innovation_pipeline_richness:0.55, organizational_grief_processing:0.25,
@@ -163,7 +163,7 @@ export async function GET() {
       const comp = composite(stag, read, mom, align);
       const pat = metamorphicPattern(e), risk = transformationRisk(comp), sev = transformationSeverity(comp), act = recommendedAction(risk, pat);
       return {
-        entity_id: e.entity_id, region: e.region, transformation_stage: e.transformation_stage,
+        id: e.entity_id, region: e.region, transformation_stage: e.transformation_stage,
         transformation_risk: risk, metamorphic_pattern: pat, transformation_severity: sev, recommended_action: act,
         stagnation_score: stag, readiness_score: read, momentum_score: mom, alignment_score: align,
         transformation_composite: comp,

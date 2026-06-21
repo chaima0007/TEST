@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "ACE-001",
+      id: "ACE-001",
       name: "Chine — Ai Weiwei Exilé, Artistes Xinjiang Emprisonnés, Films Censurés 2000+/An & Internet Culturel Filtré",
       country: "Chine",
       artist_censorship_imprisonment_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACE-002",
+      id: "ACE-002",
       name: "Iran — Rappeurs Exécutés Toomaj Salehi, Cinéastes Jafar Panahi Prison, Femmes Artistes Voile & Concerts Interdits",
       country: "Iran",
       artist_censorship_imprisonment_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACE-003",
+      id: "ACE-003",
       name: "Russie — Pussy Riot Emprisonnées, Théâtres Fermés Guerre Ukraine, Artistes Exilés 5 000+ & Livres Retirés",
       country: "Russie",
       artist_censorship_imprisonment_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACE-004",
+      id: "ACE-004",
       name: "Arabie Saoudite — Vision 2030 Contrôlée, Artistes Critiques Traqués, Cinéma 35 Ans Interdit & Social Media Stars Arrêtés",
       country: "Arabie Saoudite",
       artist_censorship_imprisonment_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACE-005",
+      id: "ACE-005",
       name: "Turquie/Hongrie — Écrivains Procès 301 Code Pénal Insulte Turcité, Théâtres Hongrois Étatisés & Subventions Politisées",
       country: "Turquie/Hongrie",
       artist_censorship_imprisonment_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACE-006",
+      id: "ACE-006",
       name: "USA/UK — TikTok Menace Interdiction, DMCA Surcensure, Artistes Noirs Historiquement Effacés & NFT Droits Ambigus",
       country: "USA/UK",
       artist_censorship_imprisonment_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACE-007",
+      id: "ACE-007",
       name: "PEN International/Freemuse — Défense Artistes Emprisonnés, Alertes Violations, Advocacy ONU & Réseau Mondial",
       country: "Global",
       artist_censorship_imprisonment_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACE-008",
+      id: "ACE-008",
       name: "ONU/Art.27 DUDH — Droit Vie Culturelle, Art.15 DESC Vie Culturelle & UNESCO Convention 2005 Diversité",
       country: "Global",
       artist_censorship_imprisonment_severity_score: 5.0,

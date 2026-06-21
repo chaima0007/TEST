@@ -78,7 +78,7 @@ const MOCK = {
   },
   entities: [
     {
-      entity_id: "PAT-001",
+      id: "PAT-001",
       name: "CAE-INV-005 — ESG CSDDD Compliance Engine (50 000 entreprises EU obligées 2026)",
       invention_code: "CAE-INV-005",
       market_size_potential: 98.0,
@@ -92,7 +92,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PAT-002",
+      id: "PAT-002",
       name: "CAE-INV-006 — Risque Conflit Armé & Analyse Géopolitique IA (Défense/Gouvernements)",
       invention_code: "CAE-INV-006",
       market_size_potential: 88.0,
@@ -106,7 +106,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PAT-003",
+      id: "PAT-003",
       name: "CAE-INV-004 — Blockchain Preuves Droits Humains (Legal Tech & Justice Internationale)",
       invention_code: "CAE-INV-004",
       market_size_potential: 85.0,
@@ -120,7 +120,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PAT-004",
+      id: "PAT-004",
       name: "CAE-INV-007 — AI Scoring V2 Droits Humains Gen4 (Prochaine Génération Moteurs)",
       invention_code: "CAE-INV-007",
       market_size_potential: 82.0,
@@ -134,7 +134,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PAT-005",
+      id: "PAT-005",
       name: "CAE-INV-003 — Federated Learning Données Sensibles (Privacy-Preserving AI Analytics)",
       invention_code: "CAE-INV-003",
       market_size_potential: 52.0,
@@ -148,7 +148,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PAT-006",
+      id: "PAT-006",
       name: "CAE-INV-008 — ESG Reporting Automatisé Gen4 (CSRD/GRI/SASB Multi-Framework)",
       invention_code: "CAE-INV-008",
       market_size_potential: 58.0,
@@ -162,7 +162,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PAT-007",
+      id: "PAT-007",
       name: "CAE-INV-002 — Détection Crises Humanitaires Précoce (Early Warning System)",
       invention_code: "CAE-INV-002",
       market_size_potential: 35.0,
@@ -176,7 +176,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PAT-008",
+      id: "PAT-008",
       name: "CAE-INV-001 — Scoring IA Droits Humains V1 (Protection En Cours — Dépôt Initial)",
       invention_code: "CAE-INV-001",
       market_size_potential: 12.0,

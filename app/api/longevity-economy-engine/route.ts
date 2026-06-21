@@ -6,7 +6,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // LE-001: EMEA, pension_management → critical, pension_collapse
   {
-    entity_id: "LE-001", longevity_segment: "pension_management", region: "EMEA",
+    id: "LE-001", longevity_segment: "pension_management", region: "EMEA",
     aging_population_rate: 0.80, longevity_biotech_adoption: 0.30, silver_spending_power: 0.30,
     intergenerational_wealth_transfer_rate: 0.40, pension_system_stress: 0.82,
     healthcare_cost_inflation: 0.60, productive_aging_index: 0.30,
@@ -18,7 +18,7 @@ const MOCK_ENTITIES = [
   },
   // LE-002: APAC, longevity_biotech → low, longevity_thriving / none
   {
-    entity_id: "LE-002", longevity_segment: "longevity_biotech", region: "APAC",
+    id: "LE-002", longevity_segment: "longevity_biotech", region: "APAC",
     aging_population_rate: 0.15, longevity_biotech_adoption: 0.88, silver_spending_power: 0.85,
     intergenerational_wealth_transfer_rate: 0.82, pension_system_stress: 0.12,
     healthcare_cost_inflation: 0.12, productive_aging_index: 0.88,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // LE-003: NOAM, eldercare_services → high, healthcare_cost_spiral
   {
-    entity_id: "LE-003", longevity_segment: "eldercare_services", region: "NOAM",
+    id: "LE-003", longevity_segment: "eldercare_services", region: "NOAM",
     aging_population_rate: 0.55, longevity_biotech_adoption: 0.42, silver_spending_power: 0.50,
     intergenerational_wealth_transfer_rate: 0.50, pension_system_stress: 0.48,
     healthcare_cost_inflation: 0.75, productive_aging_index: 0.45,
@@ -42,7 +42,7 @@ const MOCK_ENTITIES = [
   },
   // LE-004: LATAM, longevity_biotech → low, longevity_thriving / none
   {
-    entity_id: "LE-004", longevity_segment: "longevity_biotech", region: "LATAM",
+    id: "LE-004", longevity_segment: "longevity_biotech", region: "LATAM",
     aging_population_rate: 0.18, longevity_biotech_adoption: 0.80, silver_spending_power: 0.80,
     intergenerational_wealth_transfer_rate: 0.78, pension_system_stress: 0.15,
     healthcare_cost_inflation: 0.15, productive_aging_index: 0.82,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // LE-005: MEA, pension_management → critical, silver_exclusion
   {
-    entity_id: "LE-005", longevity_segment: "pension_management", region: "MEA",
+    id: "LE-005", longevity_segment: "pension_management", region: "MEA",
     aging_population_rate: 0.75, longevity_biotech_adoption: 0.20, silver_spending_power: 0.25,
     intergenerational_wealth_transfer_rate: 0.40, pension_system_stress: 0.60,
     healthcare_cost_inflation: 0.62, productive_aging_index: 0.22,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
   },
   // LE-006: EMEA, wealth_management → moderate, none
   {
-    entity_id: "LE-006", longevity_segment: "wealth_management", region: "EMEA",
+    id: "LE-006", longevity_segment: "wealth_management", region: "EMEA",
     aging_population_rate: 0.38, longevity_biotech_adoption: 0.55, silver_spending_power: 0.60,
     intergenerational_wealth_transfer_rate: 0.55, pension_system_stress: 0.38,
     healthcare_cost_inflation: 0.38, productive_aging_index: 0.58,
@@ -78,7 +78,7 @@ const MOCK_ENTITIES = [
   },
   // LE-007: APAC, eldercare_services → high, intergenerational_wealth_lock
   {
-    entity_id: "LE-007", longevity_segment: "eldercare_services", region: "APAC",
+    id: "LE-007", longevity_segment: "eldercare_services", region: "APAC",
     aging_population_rate: 0.60, longevity_biotech_adoption: 0.40, silver_spending_power: 0.48,
     intergenerational_wealth_transfer_rate: 0.28, pension_system_stress: 0.50,
     healthcare_cost_inflation: 0.55, productive_aging_index: 0.38,
@@ -90,7 +90,7 @@ const MOCK_ENTITIES = [
   },
   // LE-008: NOAM, pension_management → critical, longevity_insurance_gap
   {
-    entity_id: "LE-008", longevity_segment: "pension_management", region: "NOAM",
+    id: "LE-008", longevity_segment: "pension_management", region: "NOAM",
     aging_population_rate: 0.78, longevity_biotech_adoption: 0.22, silver_spending_power: 0.28,
     intergenerational_wealth_transfer_rate: 0.42, pension_system_stress: 0.65,
     healthcare_cost_inflation: 0.65, productive_aging_index: 0.25,
@@ -201,7 +201,7 @@ export async function GET() {
       const severity = longevitySeverity(composite);
       const action = recommendedAction(risk, pattern);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         region: e.region,
         longevity_segment: e.longevity_segment,
         longevity_risk: risk,

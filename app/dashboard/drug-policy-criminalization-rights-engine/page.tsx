@@ -101,7 +101,7 @@ export default function DrugPolicyCriminalizationRightsPage() {
                 const level = e.risk_level as string;
                 const name = e.name as string;
                 return (
-                  <div key={e.entity_id as string} className="px-6 py-3 flex items-center gap-4">
+                  <div key={e.id as string} className="px-6 py-3 flex items-center gap-4">
                     <div className="flex-1 text-sm text-slate-300 truncate">{name}</div>
                     <div className="text-xs font-medium capitalize px-2 py-0.5 rounded-full border" style={{ color: riskColor(level), borderColor: riskColor(level) + "40" }}>{level}</div>
                     <div className="text-sm font-mono font-bold w-12 text-right" style={{ color: riskColor(level) }}>{score.toFixed(1)}</div>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface LanguageEntity {
-  entity_id: string;
+  id: string;
   language_domain: string;
   region: string;
   dominance_score: number;
@@ -176,7 +176,7 @@ function DetailModal({ entity, onClose }: { entity: LanguageEntity; onClose: () 
           <GaugeRing score={entity.composite_score} label="" color={ringColor} />
           <div className="flex-1 min-w-0">
             <h2 className="text-white font-bold text-lg truncate">
-              {DOMAIN_ICON[entity.language_domain] || "🌐"} {entity.entity_id}
+              {DOMAIN_ICON[entity.language_domain] || "🌐"} {entity.id}
             </h2>
             <p className="text-slate-400 text-sm">{entity.language_domain.replace(/_/g, " ")} · {entity.region}</p>
             <div className="flex gap-2 mt-1 flex-wrap">
@@ -305,7 +305,7 @@ function EntityCard({ entity, onClick }: { entity: LanguageEntity; onClick: () =
         <GaugeRing score={entity.composite_score} label="" color={ringColor} />
         <div className="flex-1 min-w-0">
           <div className="text-white font-semibold truncate">
-            {DOMAIN_ICON[entity.language_domain] || "🌐"} {entity.entity_id}
+            {DOMAIN_ICON[entity.language_domain] || "🌐"} {entity.id}
           </div>
           <div className="text-slate-400 text-xs">{entity.language_domain.replace(/_/g, " ")} · {entity.region}</div>
           <div className="flex gap-2 mt-1 flex-wrap">
@@ -474,7 +474,7 @@ export default function NeuralLanguageDominancePage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {entities.map((e) => (
-              <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+              <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
             ))}
           </div>
         )}

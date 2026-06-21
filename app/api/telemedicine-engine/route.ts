@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "TLM-001",
+      id: "TLM-001",
       name: "CHU Afrique Sub-Saharienne",
       country: "Senegal",
       sector: "Healthcare",
@@ -48,7 +48,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TLM-002",
+      id: "TLM-002",
       name: "Clinique Rurale Myanmar",
       country: "Myanmar",
       sector: "Healthcare",
@@ -69,7 +69,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TLM-003",
+      id: "TLM-003",
       name: "TeleSanté Haïti",
       country: "Haiti",
       sector: "Healthcare",
@@ -90,7 +90,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TLM-004",
+      id: "TLM-004",
       name: "Hopital District Maroc",
       country: "Morocco",
       sector: "Healthcare",
@@ -111,7 +111,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TLM-005",
+      id: "TLM-005",
       name: "DocConnect India Rural",
       country: "India",
       sector: "HealthTech",
@@ -132,7 +132,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TLM-006",
+      id: "TLM-006",
       name: "MedTech SARL",
       country: "France",
       sector: "HealthTech",
@@ -153,7 +153,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TLM-007",
+      id: "TLM-007",
       name: "TeleClinic Nordic",
       country: "Sweden",
       sector: "Healthcare",
@@ -174,7 +174,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TLM-008",
+      id: "TLM-008",
       name: "DigitalHealth AG",
       country: "Switzerland",
       sector: "HealthTech",

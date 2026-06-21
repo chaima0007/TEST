@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country?: string;
   sector?: string;
@@ -277,7 +277,7 @@ export default function ClimateLossDamageEnginePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((entity) => (
             <button
-              key={entity.entity_id}
+              key={entity.id}
               onClick={() => setSelected(entity)}
               className={`text-left border rounded-xl p-4 hover:border-slate-600 transition-colors ${RB[entity.risk_level] ?? "border-slate-800 bg-slate-900"}`}
             >
@@ -285,7 +285,7 @@ export default function ClimateLossDamageEnginePage() {
                 <div className="flex-1 min-w-0">
                   <p className="text-white font-semibold truncate">{entity.name}</p>
                   {entity.country && <p className="text-slate-400 text-xs mt-0.5">{entity.country}</p>}
-                  <p className="text-slate-500 text-xs mt-0.5">{entity.entity_id}</p>
+                  <p className="text-slate-500 text-xs mt-0.5">{entity.id}</p>
                 </div>
                 <span className={`ml-2 text-xs font-bold uppercase ${RC[entity.risk_level] ?? "text-slate-400"}`}>
                   {entity.risk_level}

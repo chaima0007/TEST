@@ -12,7 +12,7 @@ if (!SWARM_API_URL) {
 const MOCK_ENTITIES = [
   // APE-001: cultivated_meat, LATAM → critical risk, livestock_disruption_crisis
   {
-    entity_id: "APE-001", protein_sector: "cultivated_meat", region: "LATAM",
+    id: "APE-001", protein_sector: "cultivated_meat", region: "LATAM",
     cultivated_meat_cost_parity_proximity: 0.82, plant_based_market_saturation_risk: 0.50,
     precision_fermentation_disruption: 0.75, traditional_livestock_industry_disruption_speed: 0.88,
     regulatory_approval_barrier_level: 0.55, consumer_acceptance_gap: 0.60,
@@ -25,7 +25,7 @@ const MOCK_ENTITIES = [
   },
   // APE-002: plant_based, EMEA → low risk, none pattern
   {
-    entity_id: "APE-002", protein_sector: "plant_based", region: "EMEA",
+    id: "APE-002", protein_sector: "plant_based", region: "EMEA",
     cultivated_meat_cost_parity_proximity: 0.15, plant_based_market_saturation_risk: 0.20,
     precision_fermentation_disruption: 0.12, traditional_livestock_industry_disruption_speed: 0.18,
     regulatory_approval_barrier_level: 0.20, consumer_acceptance_gap: 0.15,
@@ -38,7 +38,7 @@ const MOCK_ENTITIES = [
   },
   // APE-003: precision_fermentation, NOAM → high risk, biotech_food_monopoly
   {
-    entity_id: "APE-003", protein_sector: "precision_fermentation", region: "NOAM",
+    id: "APE-003", protein_sector: "precision_fermentation", region: "NOAM",
     cultivated_meat_cost_parity_proximity: 0.48, plant_based_market_saturation_risk: 0.45,
     precision_fermentation_disruption: 0.45, traditional_livestock_industry_disruption_speed: 0.50,
     regulatory_approval_barrier_level: 0.52, consumer_acceptance_gap: 0.50,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
   },
   // APE-004: insect_protein, APAC → low risk, none pattern
   {
-    entity_id: "APE-004", protein_sector: "insect_protein", region: "APAC",
+    id: "APE-004", protein_sector: "insect_protein", region: "APAC",
     cultivated_meat_cost_parity_proximity: 0.12, plant_based_market_saturation_risk: 0.15,
     precision_fermentation_disruption: 0.10, traditional_livestock_industry_disruption_speed: 0.15,
     regulatory_approval_barrier_level: 0.22, consumer_acceptance_gap: 0.20,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // APE-005: cultivated_meat, APAC → critical risk, food_sovereignty_capture
   {
-    entity_id: "APE-005", protein_sector: "cultivated_meat", region: "APAC",
+    id: "APE-005", protein_sector: "cultivated_meat", region: "APAC",
     cultivated_meat_cost_parity_proximity: 0.75, plant_based_market_saturation_risk: 0.55,
     precision_fermentation_disruption: 0.68, traditional_livestock_industry_disruption_speed: 0.72,
     regulatory_approval_barrier_level: 0.55, consumer_acceptance_gap: 0.60,
@@ -77,7 +77,7 @@ const MOCK_ENTITIES = [
   },
   // APE-006: mycoprotein, MEA → moderate risk, none pattern
   {
-    entity_id: "APE-006", protein_sector: "mycoprotein", region: "MEA",
+    id: "APE-006", protein_sector: "mycoprotein", region: "MEA",
     cultivated_meat_cost_parity_proximity: 0.32, plant_based_market_saturation_risk: 0.30,
     precision_fermentation_disruption: 0.28, traditional_livestock_industry_disruption_speed: 0.35,
     regulatory_approval_barrier_level: 0.38, consumer_acceptance_gap: 0.35,
@@ -90,7 +90,7 @@ const MOCK_ENTITIES = [
   },
   // APE-007: algae_protein, EMEA → high risk, transition_inequality_trap
   {
-    entity_id: "APE-007", protein_sector: "algae_protein", region: "EMEA",
+    id: "APE-007", protein_sector: "algae_protein", region: "EMEA",
     cultivated_meat_cost_parity_proximity: 0.50, plant_based_market_saturation_risk: 0.48,
     precision_fermentation_disruption: 0.45, traditional_livestock_industry_disruption_speed: 0.52,
     regulatory_approval_barrier_level: 0.52, consumer_acceptance_gap: 0.50,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
   },
   // APE-008: cellular_agriculture, NOAM → critical risk, biosafety_novel_protein
   {
-    entity_id: "APE-008", protein_sector: "cellular_agriculture", region: "NOAM",
+    id: "APE-008", protein_sector: "cellular_agriculture", region: "NOAM",
     cultivated_meat_cost_parity_proximity: 0.65, plant_based_market_saturation_risk: 0.55,
     precision_fermentation_disruption: 0.58, traditional_livestock_industry_disruption_speed: 0.60,
     regulatory_approval_barrier_level: 0.60, consumer_acceptance_gap: 0.65,

@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface LgeInput {
-  entity_id: string;
+  id: string;
   land_type: string;
   region: string;
   land_concentration: number;
@@ -41,7 +41,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // land_concentration>0.80 AND corporate_opacity>0.75 → foreign_sovereign_land_capture
   // composite ≈ 72 → critical
   {
-    entity_id: "LGE-001", land_type: "terres_agricoles", region: "AFRIC",
+    id: "LGE-001", land_type: "terres_agricoles", region: "AFRIC",
     land_concentration: 0.88,
     smallholder_displacement: 0.82,
     indigenous_rights_violation: 0.75,
@@ -65,7 +65,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // land_concentration≤0.80 → avoids foreign_sovereign_land_capture
   // composite ≈ 68 → critical
   {
-    entity_id: "LGE-002", land_type: "terres_cultivables", region: "LATAM",
+    id: "LGE-002", land_type: "terres_cultivables", region: "LATAM",
     land_concentration: 0.75,
     smallholder_displacement: 0.85,
     indigenous_rights_violation: 0.70,
@@ -90,7 +90,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // monoculture_expansion≤0.80 → avoids corporate_agribusiness_displacement
   // composite ≈ 65 → critical
   {
-    entity_id: "LGE-003", land_type: "territoires_autochtones", region: "APAC",
+    id: "LGE-003", land_type: "territoires_autochtones", region: "APAC",
     land_concentration: 0.72,
     smallholder_displacement: 0.68,
     indigenous_rights_violation: 0.88,
@@ -116,7 +116,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // indigenous_rights_violation≤0.80 → avoids indigenous_territory_seizure
   // composite ≈ 52 → high
   {
-    entity_id: "LGE-004", land_type: "zones_climatiques", region: "MENA",
+    id: "LGE-004", land_type: "zones_climatiques", region: "MENA",
     land_concentration: 0.55,
     smallholder_displacement: 0.60,
     indigenous_rights_violation: 0.50,
@@ -143,7 +143,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // climate_vulnerability≤0.80 → avoids climate_migration_land_conflict
   // composite ≈ 48 → high
   {
-    entity_id: "LGE-005", land_type: "plantations_export", region: "SEASI",
+    id: "LGE-005", land_type: "plantations_export", region: "SEASI",
     land_concentration: 0.60,
     smallholder_displacement: 0.58,
     indigenous_rights_violation: 0.52,
@@ -165,7 +165,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // LGE-006 — moderate, no pattern
   // All values below pattern thresholds → no pattern, composite ≈ 30 → moderate
   {
-    entity_id: "LGE-006", land_type: "prairies_communautaires", region: "EMEA",
+    id: "LGE-006", land_type: "prairies_communautaires", region: "EMEA",
     land_concentration: 0.30,
     smallholder_displacement: 0.28,
     indigenous_rights_violation: 0.25,
@@ -187,7 +187,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // LGE-007 — low, no pattern
   // All values very low → composite ≈ 10 → low
   {
-    entity_id: "LGE-007", land_type: "forêts_protégées", region: "NOAM",
+    id: "LGE-007", land_type: "forêts_protégées", region: "NOAM",
     land_concentration: 0.10,
     smallholder_displacement: 0.08,
     indigenous_rights_violation: 0.10,
@@ -209,7 +209,7 @@ const MOCK_ENTITIES: LgeInput[] = [
   // LGE-008 — low, no pattern
   // All values very low → composite ≈ 12 → low
   {
-    entity_id: "LGE-008", land_type: "terres_réservées", region: "APAC",
+    id: "LGE-008", land_type: "terres_réservées", region: "APAC",
     land_concentration: 0.12,
     smallholder_displacement: 0.10,
     indigenous_rights_violation: 0.12,
@@ -319,7 +319,7 @@ function analyzeEntity(e: LgeInput) {
   const sig   = landSignal(risk);
 
   return {
-    entity_id:                e.entity_id,
+    id:                e.entity_id,
     land_type:                e.land_type,
     region:                   e.region,
     dispossession_score:      d,

@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // exchange_collapse_risk>0.85 AND contagion_from_collapse>0.80 → exchange_collapse_cascade
   // composite≥60 → critical
   {
-    entity_id: "CRE-001", exchange_type: "centralized_exchange", region: "EMEA",
+    id: "CRE-001", exchange_type: "centralized_exchange", region: "EMEA",
     exchange_collapse_risk: 0.92,          fractional_reserve_crypto: 0.78,
     regulatory_arbitrage_intensity: 0.72,  custody_failure_risk: 0.80,
     market_manipulation_scale: 0.65,       insider_trading_prevalence: 0.60,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   // CRE-002 — APAC, decentralized_protocol → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "CRE-002", exchange_type: "decentralized_protocol", region: "APAC",
+    id: "CRE-002", exchange_type: "decentralized_protocol", region: "APAC",
     exchange_collapse_risk: 0.08,          fractional_reserve_crypto: 0.10,
     regulatory_arbitrage_intensity: 0.08,  custody_failure_risk: 0.10,
     market_manipulation_scale: 0.08,       insider_trading_prevalence: 0.10,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   // exchange_collapse_risk=0.60≤0.85 → avoids exchange_collapse_cascade
   // composite≥60 → critical
   {
-    entity_id: "CRE-003", exchange_type: "stablecoin_issuer", region: "NOAM",
+    id: "CRE-003", exchange_type: "stablecoin_issuer", region: "NOAM",
     exchange_collapse_risk: 0.60,          fractional_reserve_crypto: 0.90,
     regulatory_arbitrage_intensity: 0.75,  custody_failure_risk: 0.72,
     market_manipulation_scale: 0.62,       insider_trading_prevalence: 0.58,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   // CRE-004 — LATAM, retail_crypto_app → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "CRE-004", exchange_type: "retail_crypto_app", region: "LATAM",
+    id: "CRE-004", exchange_type: "retail_crypto_app", region: "LATAM",
     exchange_collapse_risk: 0.28,          fractional_reserve_crypto: 0.25,
     regulatory_arbitrage_intensity: 0.30,  custody_failure_risk: 0.22,
     market_manipulation_scale: 0.28,       insider_trading_prevalence: 0.25,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   // fractional_reserve_crypto=0.50≤0.85 → avoids fractional_reserve_crisis
   // composite in [40,60) → high
   {
-    entity_id: "CRE-005", exchange_type: "crypto_derivatives_platform", region: "MEA",
+    id: "CRE-005", exchange_type: "crypto_derivatives_platform", region: "MEA",
     exchange_collapse_risk: 0.55,          fractional_reserve_crypto: 0.50,
     regulatory_arbitrage_intensity: 0.48,  custody_failure_risk: 0.45,
     market_manipulation_scale: 0.88,       insider_trading_prevalence: 0.84,
@@ -85,7 +85,7 @@ const MOCK_ENTITIES = [
   // CRE-006 — APAC, crypto_lending_platform → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "CRE-006", exchange_type: "crypto_lending_platform", region: "APAC",
+    id: "CRE-006", exchange_type: "crypto_lending_platform", region: "APAC",
     exchange_collapse_risk: 0.10,          fractional_reserve_crypto: 0.08,
     regulatory_arbitrage_intensity: 0.10,  custody_failure_risk: 0.08,
     market_manipulation_scale: 0.10,       insider_trading_prevalence: 0.08,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
   // market_manipulation_scale=0.50≤0.85 → avoids market_manipulation_empire
   // composite in [40,60) → high
   {
-    entity_id: "CRE-007", exchange_type: "crypto_mining_conglomerate", region: "EMEA",
+    id: "CRE-007", exchange_type: "crypto_mining_conglomerate", region: "EMEA",
     exchange_collapse_risk: 0.45,          fractional_reserve_crypto: 0.42,
     regulatory_arbitrage_intensity: 0.65,  custody_failure_risk: 0.42,
     market_manipulation_scale: 0.50,       insider_trading_prevalence: 0.45,
@@ -122,7 +122,7 @@ const MOCK_ENTITIES = [
   // geopolitical_ban_risk=0.55≤0.80 → avoids regulatory_ban_extermination
   // composite≥60 → critical
   {
-    entity_id: "CRE-008", exchange_type: "crypto_market_maker", region: "NOAM",
+    id: "CRE-008", exchange_type: "crypto_market_maker", region: "NOAM",
     exchange_collapse_risk: 0.62,          fractional_reserve_crypto: 0.58,
     regulatory_arbitrage_intensity: 0.70,  custody_failure_risk: 0.65,
     market_manipulation_scale: 0.60,       insider_trading_prevalence: 0.55,
@@ -215,7 +215,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = cryptoSignal(risk);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         exchange_type:                e.exchange_type,
         region:                       e.region,
         collapse_score:               col,

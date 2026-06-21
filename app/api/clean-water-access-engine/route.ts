@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "WAT-001",
+      id: "WAT-001",
       name: "Bassin du Lac Tchad",
       country: "Tchad",
       sector: "Ressources Hydriques",
@@ -43,7 +43,7 @@ function getMockData() {
       last_updated: "2026-06-18",
     },
     {
-      entity_id: "WAT-002",
+      id: "WAT-002",
       name: "Aquifère Ogallala Kansas",
       country: "États-Unis",
       sector: "Agriculture & Irrigation",
@@ -59,7 +59,7 @@ function getMockData() {
       last_updated: "2026-06-17",
     },
     {
-      entity_id: "WAT-003",
+      id: "WAT-003",
       name: "Péninsule Arabique Yémen",
       country: "Yémen",
       sector: "Eau Potable Urbaine",
@@ -75,7 +75,7 @@ function getMockData() {
       last_updated: "2026-06-16",
     },
     {
-      entity_id: "WAT-004",
+      id: "WAT-004",
       name: "Delta du Gange Bengale",
       country: "Bangladesh",
       sector: "Assainissement & Eau",
@@ -91,7 +91,7 @@ function getMockData() {
       last_updated: "2026-06-15",
     },
     {
-      entity_id: "WAT-005",
+      id: "WAT-005",
       name: "Zones Rurales Mozambique",
       country: "Mozambique",
       sector: "Développement Rural",
@@ -107,7 +107,7 @@ function getMockData() {
       last_updated: "2026-06-14",
     },
     {
-      entity_id: "WAT-006",
+      id: "WAT-006",
       name: "Hauts Plateaux Bolivie",
       country: "Bolivie",
       sector: "Eau Communautaire",
@@ -123,7 +123,7 @@ function getMockData() {
       last_updated: "2026-06-13",
     },
     {
-      entity_id: "WAT-007",
+      id: "WAT-007",
       name: "Province Rurale Ouganda",
       country: "Ouganda",
       sector: "WASH & Santé Publique",
@@ -139,7 +139,7 @@ function getMockData() {
       last_updated: "2026-06-12",
     },
     {
-      entity_id: "WAT-008",
+      id: "WAT-008",
       name: "Réseau Eau Potable Danemark",
       country: "Danemark",
       sector: "Infrastructure Municipale",

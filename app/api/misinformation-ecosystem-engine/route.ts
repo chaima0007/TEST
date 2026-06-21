@@ -6,7 +6,7 @@ const MOCK_ENTITIES = [
   // epistemic_collapse: source_trust_collapse_index>=0.70 AND truth_fatigue_index>=0.65
   // composite >=60 → critical
   {
-    entity_id: "MEE-001", info_domain: "social_media", region: "EMEA",
+    id: "MEE-001", info_domain: "social_media", region: "EMEA",
     viral_misinformation_velocity: 0.82,
     fact_checking_infrastructure_gap: 0.80,
     platform_amplification_bias: 0.75,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   // MEE-002 — APAC, local_news → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "MEE-002", info_domain: "local_news", region: "APAC",
+    id: "MEE-002", info_domain: "local_news", region: "APAC",
     viral_misinformation_velocity: 0.08,
     fact_checking_infrastructure_gap: 0.10,
     platform_amplification_bias: 0.10,
@@ -52,7 +52,7 @@ const MOCK_ENTITIES = [
   // epistemic_collapse must NOT fire: source_trust_collapse_index<0.70
   // composite >=40 and <60 → high
   {
-    entity_id: "MEE-003", info_domain: "digital_platform", region: "NOAM",
+    id: "MEE-003", info_domain: "digital_platform", region: "NOAM",
     viral_misinformation_velocity: 0.55,
     fact_checking_infrastructure_gap: 0.55,
     platform_amplification_bias: 0.72,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   // MEE-004 — LATAM, community_media → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "MEE-004", info_domain: "community_media", region: "LATAM",
+    id: "MEE-004", info_domain: "community_media", region: "LATAM",
     viral_misinformation_velocity: 0.08,
     fact_checking_infrastructure_gap: 0.10,
     platform_amplification_bias: 0.10,
@@ -99,7 +99,7 @@ const MOCK_ENTITIES = [
   // AI_disinfo_saturation must NOT fire: AI_generated<0.70
   // composite >=60 → critical
   {
-    entity_id: "MEE-005", info_domain: "state_media", region: "MEA",
+    id: "MEE-005", info_domain: "state_media", region: "MEA",
     viral_misinformation_velocity: 0.72,
     fact_checking_infrastructure_gap: 0.75,
     platform_amplification_bias: 0.60,
@@ -121,7 +121,7 @@ const MOCK_ENTITIES = [
   // MEE-006 — EMEA, broadcast_media → moderate, none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "MEE-006", info_domain: "broadcast_media", region: "EMEA",
+    id: "MEE-006", info_domain: "broadcast_media", region: "EMEA",
     viral_misinformation_velocity: 0.28,
     fact_checking_infrastructure_gap: 0.35,
     platform_amplification_bias: 0.32,
@@ -147,7 +147,7 @@ const MOCK_ENTITIES = [
   // state_info_warfare must NOT fire: state_sponsored<0.70
   // composite >=40 and <60 → high
   {
-    entity_id: "MEE-007", info_domain: "health_media", region: "APAC",
+    id: "MEE-007", info_domain: "health_media", region: "APAC",
     viral_misinformation_velocity: 0.50,
     fact_checking_infrastructure_gap: 0.58,
     platform_amplification_bias: 0.48,
@@ -174,7 +174,7 @@ const MOCK_ENTITIES = [
   // health_disinfo must NOT fire: health_mortality<0.70
   // composite >=60 → critical
   {
-    entity_id: "MEE-008", info_domain: "influencer_ecosystem", region: "NOAM",
+    id: "MEE-008", info_domain: "influencer_ecosystem", region: "NOAM",
     viral_misinformation_velocity: 0.72,
     fact_checking_infrastructure_gap: 0.72,
     platform_amplification_bias: 0.60,
@@ -293,7 +293,7 @@ export async function GET() {
       const act   = recommendedAction(risk);
       const sig   = signal(risk);
       return {
-        entity_id:                         e.entity_id,
+        id:                         e.entity_id,
         info_domain:                       e.info_domain,
         region:                            e.region,
         velocity_score:                    vel,

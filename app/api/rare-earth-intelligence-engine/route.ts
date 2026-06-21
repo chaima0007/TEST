@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // REI-001 — rare_earth_elements, APAC → critical, rare_earth_monopoly_crisis
   {
-    entity_id: "REI-001", material_category: "rare_earth_elements", region: "APAC",
+    id: "REI-001", material_category: "rare_earth_elements", region: "APAC",
     supply_concentration_monopoly_risk: 0.88, critical_material_import_dependency: 0.80,
     mining_geopolitical_leverage: 0.72, processing_chokepoint_control: 0.82,
     strategic_reserve_depletion_rate: 0.70, conflict_mineral_sourcing_risk: 0.45,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // REI-002 — lithium, LATAM → low, none
   {
-    entity_id: "REI-002", material_category: "lithium", region: "LATAM",
+    id: "REI-002", material_category: "lithium", region: "LATAM",
     supply_concentration_monopoly_risk: 0.18, critical_material_import_dependency: 0.15,
     mining_geopolitical_leverage: 0.20, processing_chokepoint_control: 0.12,
     strategic_reserve_depletion_rate: 0.10, conflict_mineral_sourcing_risk: 0.12,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // REI-003 — rare_earth_elements, EMEA → high, export_weapon_deployment
   {
-    entity_id: "REI-003", material_category: "rare_earth_elements", region: "EMEA",
+    id: "REI-003", material_category: "rare_earth_elements", region: "EMEA",
     supply_concentration_monopoly_risk: 0.55, critical_material_import_dependency: 0.62,
     mining_geopolitical_leverage: 0.72, processing_chokepoint_control: 0.48,
     strategic_reserve_depletion_rate: 0.50, conflict_mineral_sourcing_risk: 0.45,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // REI-004 — cobalt, NOAM → low, none
   {
-    entity_id: "REI-004", material_category: "cobalt", region: "NOAM",
+    id: "REI-004", material_category: "cobalt", region: "NOAM",
     supply_concentration_monopoly_risk: 0.15, critical_material_import_dependency: 0.20,
     mining_geopolitical_leverage: 0.18, processing_chokepoint_control: 0.10,
     strategic_reserve_depletion_rate: 0.12, conflict_mineral_sourcing_risk: 0.08,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // REI-005 — lithium, APAC → critical, green_tech_material_crunch
   {
-    entity_id: "REI-005", material_category: "lithium", region: "APAC",
+    id: "REI-005", material_category: "lithium", region: "APAC",
     supply_concentration_monopoly_risk: 0.65, critical_material_import_dependency: 0.70,
     mining_geopolitical_leverage: 0.60, processing_chokepoint_control: 0.58,
     strategic_reserve_depletion_rate: 0.72, conflict_mineral_sourcing_risk: 0.48,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // REI-006 — copper, MEA → moderate, none
   {
-    entity_id: "REI-006", material_category: "copper", region: "MEA",
+    id: "REI-006", material_category: "copper", region: "MEA",
     supply_concentration_monopoly_risk: 0.40, critical_material_import_dependency: 0.38,
     mining_geopolitical_leverage: 0.42, processing_chokepoint_control: 0.35,
     strategic_reserve_depletion_rate: 0.30, conflict_mineral_sourcing_risk: 0.38,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // REI-007 — cobalt, EMEA → high, conflict_mineral_cascade
   {
-    entity_id: "REI-007", material_category: "cobalt", region: "EMEA",
+    id: "REI-007", material_category: "cobalt", region: "EMEA",
     supply_concentration_monopoly_risk: 0.58, critical_material_import_dependency: 0.65,
     mining_geopolitical_leverage: 0.60, processing_chokepoint_control: 0.52,
     strategic_reserve_depletion_rate: 0.55, conflict_mineral_sourcing_risk: 0.78,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // REI-008 — semiconductor_minerals, NOAM → critical, supply_chain_collapse
   {
-    entity_id: "REI-008", material_category: "semiconductor_minerals", region: "NOAM",
+    id: "REI-008", material_category: "semiconductor_minerals", region: "NOAM",
     supply_concentration_monopoly_risk: 0.70, critical_material_import_dependency: 0.78,
     mining_geopolitical_leverage: 0.68, processing_chokepoint_control: 0.60,
     strategic_reserve_depletion_rate: 0.75, conflict_mineral_sourcing_risk: 0.50,
@@ -202,7 +202,7 @@ export async function GET() {
       const sig         = signal(risk);
 
       return {
-        entity_id:                            e.entity_id,
+        id:                            e.entity_id,
         material_category:                    e.material_category,
         region:                               e.region,
         supply_score:                         supply,

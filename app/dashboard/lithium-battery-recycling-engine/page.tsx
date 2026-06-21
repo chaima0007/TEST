@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface BatteryEntity {
-  entity_id: string;
+  id: string;
   battery_type: string;
   region: string;
   recovery_score: number;
@@ -168,7 +168,7 @@ function DetailModal({ entity, onClose }: { entity: BatteryEntity; onClose: () =
           <GaugeRing score={entity.composite_score} label="" color={ringColor} />
           <div className="flex-1 min-w-0">
             <h2 className="text-white font-bold text-lg truncate">
-              {BATTERY_ICON[entity.battery_type] || "🔋"} {entity.entity_id}
+              {BATTERY_ICON[entity.battery_type] || "🔋"} {entity.id}
             </h2>
             <p className="text-slate-400 text-sm">{entity.battery_type.replace(/_/g, " ")} · {entity.region.replace(/_/g, " ")}</p>
             <div className="flex gap-2 mt-1 flex-wrap">
@@ -283,7 +283,7 @@ function EntityCard({ entity, onClick }: { entity: BatteryEntity; onClick: () =>
         <GaugeRing score={entity.composite_score} label="" color={ringColor} />
         <div className="flex-1 min-w-0">
           <div className="text-white font-semibold truncate">
-            {BATTERY_ICON[entity.battery_type] || "🔋"} {entity.entity_id}
+            {BATTERY_ICON[entity.battery_type] || "🔋"} {entity.id}
           </div>
           <div className="text-slate-400 text-xs">{entity.battery_type.replace(/_/g, " ")} · {entity.region.replace(/_/g, " ")}</div>
           <div className="flex gap-2 mt-1 flex-wrap">
@@ -492,7 +492,7 @@ export default function LithiumBatteryRecyclingEnginePage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {entities.map((e) => (
-              <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+              <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
             ))}
           </div>
         )}

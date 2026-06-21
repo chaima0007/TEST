@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "SPR-001",
+      id: "SPR-001",
       name: "Myanmar/Rohingya — Apatridie Légale 1982, Carte Identité NV Refusée, Camps Concentration & Génocide Documentation",
       country: "Myanmar",
       statelessness_documentation_denial_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SPR-002",
+      id: "SPR-002",
       name: "Koweït/Bidoun — 100 000 Apatrides Bidoun Légaux, Pas Passeports, Enfants Non Enregistrés & Discrimination Systémique",
       country: "Koweït",
       statelessness_documentation_denial_severity_score: 91.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SPR-003",
+      id: "SPR-003",
       name: "Éthiopie/Érythrée — Rapatriés Déchus Citoyenneté 1998, Binationaux Expulsés & Générations Apatrides Conflits",
       country: "Éthiopie",
       statelessness_documentation_denial_severity_score: 87.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SPR-004",
+      id: "SPR-004",
       name: "Dom. Rep./Haïtiens — Arrêt 168-13 Rétroactif 1929, 200k Stateless Haïtiano-Dominicains & Registres Refus",
       country: "Rép. Dominicaine",
       statelessness_documentation_denial_severity_score: 84.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SPR-005",
+      id: "SPR-005",
       name: "Thaïlande/Minorités — Tribus Montagnardes Apatrides, 480 000 Sans Nationalité, Travail Enfant & Accès Éducation Refusé",
       country: "Thaïlande",
       statelessness_documentation_denial_severity_score: 56.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SPR-006",
+      id: "SPR-006",
       name: "Europe/Roms — Roms Apatrides Est-Europe, Enregistrement Naissance Refus, Discrimination Institutionnelle & Expulsions Massives",
       country: "Europe",
       statelessness_documentation_denial_severity_score: 52.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SPR-007",
+      id: "SPR-007",
       name: "UNHCR/ENS — #IBelong 2024-2024, European Network on Statelessness, Mesures Réduction & Procédures Détermination Apatridie",
       country: "Global",
       statelessness_documentation_denial_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SPR-008",
+      id: "SPR-008",
       name: "ONU/Conv 1954 — Convention Apatridie 1954 & 1961, UNHCR Mandat, Art.1 Définition & Protocole Réduction Apatridie",
       country: "Global",
       statelessness_documentation_denial_severity_score: 4.0,

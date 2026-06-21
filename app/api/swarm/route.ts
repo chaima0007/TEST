@@ -53,7 +53,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   if (!SWARM_API_URL) {
-    return NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 503 });
+    return NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 502 });
   }
 
   const body = await request.json();
@@ -70,6 +70,6 @@ export async function POST(request: Request) {
     const data = await res.json();
     return NextResponse.json(data, { status: res.status });
   } catch (err) {
-    return NextResponse.json({ error: "Swarm API unreachable" }, { status: 503 });
+    return NextResponse.json({ error: "Swarm API unreachable" }, { status: 502 });
   }
 }

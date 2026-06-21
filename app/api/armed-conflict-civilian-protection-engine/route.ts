@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "ACP-001",
+      id: "ACP-001",
       name: "Gaza/Israël 2023-24 — 40 000 Civils Tués, 70% Femmes/Enfants, Hôpitaux Bombardés & Blocus Humanitaire Total",
       country: "Palestine",
       civilian_targeting_indiscriminate_attack_severity_score: 96.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACP-002",
+      id: "ACP-002",
       name: "Syrie/Assad-Russie — 500 000 Morts Civils, Barils Explosifs Alep, Hôpitaux M2020 Ciblés & Chlore Attaques Chimiques",
       country: "Syrie",
       civilian_targeting_indiscriminate_attack_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACP-003",
+      id: "ACP-003",
       name: "Yemen/Coalition — 24 000 Frappes Documentées, Mariages/Funérailles Bombardés, Blocus Port Hodeidah & Choléra 2.5M Cas",
       country: "Yemen",
       civilian_targeting_indiscriminate_attack_severity_score: 88.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACP-004",
+      id: "ACP-004",
       name: "Ukraine/Russie — Bucha Massacres, Zaporizhzhia Centrales Nucléaires Ciblées, Missiles Résidentiels & Déportations Forcées Enfants",
       country: "Ukraine",
       civilian_targeting_indiscriminate_attack_severity_score: 84.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACP-005",
+      id: "ACP-005",
       name: "Myanmar/Tatmadaw — Villages Brûlés Civils, Jade/Chin Populations Ciblées, Aide Bloquée & Médecins Arrêtés",
       country: "Myanmar",
       civilian_targeting_indiscriminate_attack_severity_score: 56.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACP-006",
+      id: "ACP-006",
       name: "Éthiopie/Tigré — Blocus Alimentaire 900 Jours, Massacres Axum/Mahbere Dego, Accès Humanitaire Refusé & Violences Sexuelles Arme Guerre",
       country: "Éthiopie",
       civilian_targeting_indiscriminate_attack_severity_score: 53.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACP-007",
+      id: "ACP-007",
       name: "CICR/MSF — Droit International Humanitaire, Médecins Sans Frontières Protection & Comité CICR Supervision Conflits Armés",
       country: "Global",
       civilian_targeting_indiscriminate_attack_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACP-008",
+      id: "ACP-008",
       name: "ONU/Genève IV — Conventions Genève 1949 & Protocoles Additionnels, Rome Statute ICC & Standards DIH Minimaux",
       country: "Global",
       civilian_targeting_indiscriminate_attack_severity_score: 4.0,

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // SCE-001 — critical, carbon_debt_acceleration (carbon_loss>0.85, org_matter>0.80)
   {
-    entity_id: "SCE-001", soil_type: "argile_lourde", region: "Beauce",
+    id: "SCE-001", soil_type: "argile_lourde", region: "Beauce",
     carbon_loss_rate: 0.92, organic_matter_depletion: 0.88, tillage_intensity: 0.70, erosion_rate: 0.72,
     sequestration_potential: 0.20, regenerative_adoption: 0.18, cover_crop_use: 0.15,
     market_offset_credibility: 0.25, policy_incentive_effectiveness: 0.22,
@@ -15,7 +15,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-002 — critical, tillage_erosion_crisis (tillage>0.85, erosion>0.80)
   {
-    entity_id: "SCE-002", soil_type: "limon_sableux", region: "Picardie",
+    id: "SCE-002", soil_type: "limon_sableux", region: "Picardie",
     carbon_loss_rate: 0.75, organic_matter_depletion: 0.70, tillage_intensity: 0.90, erosion_rate: 0.88,
     sequestration_potential: 0.22, regenerative_adoption: 0.20, cover_crop_use: 0.18,
     market_offset_credibility: 0.25, policy_incentive_effectiveness: 0.22,
@@ -26,7 +26,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-003 — critical, rewilding_sequestration_collapse (seq_potential>0.80, regen_adoption<0.20)
   {
-    entity_id: "SCE-003", soil_type: "tourbe_dégradée", region: "Normandie",
+    id: "SCE-003", soil_type: "tourbe_dégradée", region: "Normandie",
     carbon_loss_rate: 0.78, organic_matter_depletion: 0.72, tillage_intensity: 0.65, erosion_rate: 0.70,
     sequestration_potential: 0.85, regenerative_adoption: 0.10, cover_crop_use: 0.12,
     market_offset_credibility: 0.22, policy_incentive_effectiveness: 0.20,
@@ -37,7 +37,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-004 — high, market_greenwashing_fraud (fraud_risk>0.80, credibility<0.25)
   {
-    entity_id: "SCE-004", soil_type: "calcaire_sec", region: "Champagne",
+    id: "SCE-004", soil_type: "calcaire_sec", region: "Champagne",
     carbon_loss_rate: 0.48, organic_matter_depletion: 0.45, tillage_intensity: 0.50, erosion_rate: 0.45,
     sequestration_potential: 0.55, regenerative_adoption: 0.50, cover_crop_use: 0.48,
     market_offset_credibility: 0.20, policy_incentive_effectiveness: 0.45,
@@ -48,7 +48,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-005 — high, soil_microbiome_collapse (fungal<0.20, monoculture>0.80)
   {
-    entity_id: "SCE-005", soil_type: "limon_argileux", region: "Grand_Est",
+    id: "SCE-005", soil_type: "limon_argileux", region: "Grand_Est",
     carbon_loss_rate: 0.50, organic_matter_depletion: 0.48, tillage_intensity: 0.52, erosion_rate: 0.48,
     sequestration_potential: 0.50, regenerative_adoption: 0.45, cover_crop_use: 0.48,
     market_offset_credibility: 0.50, policy_incentive_effectiveness: 0.45,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-006 — moderate, none
   {
-    entity_id: "SCE-006", soil_type: "sable_humifère", region: "Bretagne",
+    id: "SCE-006", soil_type: "sable_humifère", region: "Bretagne",
     carbon_loss_rate: 0.30, organic_matter_depletion: 0.28, tillage_intensity: 0.30, erosion_rate: 0.28,
     sequestration_potential: 0.60, regenerative_adoption: 0.55, cover_crop_use: 0.58,
     market_offset_credibility: 0.60, policy_incentive_effectiveness: 0.58,
@@ -70,7 +70,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-007 — low, none
   {
-    entity_id: "SCE-007", soil_type: "humus_riche", region: "Auvergne",
+    id: "SCE-007", soil_type: "humus_riche", region: "Auvergne",
     carbon_loss_rate: 0.10, organic_matter_depletion: 0.08, tillage_intensity: 0.10, erosion_rate: 0.08,
     sequestration_potential: 0.85, regenerative_adoption: 0.80, cover_crop_use: 0.82,
     market_offset_credibility: 0.88, policy_incentive_effectiveness: 0.85,
@@ -81,7 +81,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-008 — low, none
   {
-    entity_id: "SCE-008", soil_type: "prairie_permanente", region: "Massif_Central",
+    id: "SCE-008", soil_type: "prairie_permanente", region: "Massif_Central",
     carbon_loss_rate: 0.12, organic_matter_depletion: 0.10, tillage_intensity: 0.12, erosion_rate: 0.10,
     sequestration_potential: 0.82, regenerative_adoption: 0.78, cover_crop_use: 0.80,
     market_offset_credibility: 0.85, policy_incentive_effectiveness: 0.82,
@@ -156,7 +156,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:              e.entity_id,
+        id:              e.entity_id,
         soil_type:              e.soil_type,
         region:                 e.region,
         degradation_score:      deg,

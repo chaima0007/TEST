@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // BSE-001 — critical, outbreak_detection_failure (outbreak_detection_delay>0.85, early_warning_system_weakness>0.80)
   {
-    entity_id: "BSE-001", surveillance_system: "détection_épidémique_défaillante", region: "APAC",
+    id: "BSE-001", surveillance_system: "détection_épidémique_défaillante", region: "APAC",
     outbreak_detection_delay: 0.90, genomic_sequencing_gap: 0.72, zoonotic_interface_monitoring: 0.68,
     one_health_integration_failure: 0.70, lab_network_capacity: 0.65, data_sharing_obstruction: 0.68,
     early_warning_system_weakness: 0.88, cross_border_surveillance_gap: 0.72, community_level_detection_gap: 0.80,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // BSE-002 — low, none
   {
-    entity_id: "BSE-002", surveillance_system: "surveillance_de_base", region: "NOAM",
+    id: "BSE-002", surveillance_system: "surveillance_de_base", region: "NOAM",
     outbreak_detection_delay: 0.08, genomic_sequencing_gap: 0.10, zoonotic_interface_monitoring: 0.08,
     one_health_integration_failure: 0.10, lab_network_capacity: 0.08, data_sharing_obstruction: 0.10,
     early_warning_system_weakness: 0.08, cross_border_surveillance_gap: 0.10, community_level_detection_gap: 0.08,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // BSE-003 — high, zoonotic_surveillance_gap (zoonotic_interface_monitoring>0.85, veterinary_surveillance_failure>0.80)
   {
-    entity_id: "BSE-003", surveillance_system: "interface_zoonotique_critique", region: "EMEA",
+    id: "BSE-003", surveillance_system: "interface_zoonotique_critique", region: "EMEA",
     outbreak_detection_delay: 0.50, genomic_sequencing_gap: 0.48, zoonotic_interface_monitoring: 0.88,
     one_health_integration_failure: 0.52, lab_network_capacity: 0.50, data_sharing_obstruction: 0.48,
     early_warning_system_weakness: 0.50, cross_border_surveillance_gap: 0.52, community_level_detection_gap: 0.48,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // BSE-004 — moderate, none
   {
-    entity_id: "BSE-004", surveillance_system: "surveillance_partielle", region: "LATAM",
+    id: "BSE-004", surveillance_system: "surveillance_partielle", region: "LATAM",
     outbreak_detection_delay: 0.28, genomic_sequencing_gap: 0.30, zoonotic_interface_monitoring: 0.28,
     one_health_integration_failure: 0.30, lab_network_capacity: 0.28, data_sharing_obstruction: 0.30,
     early_warning_system_weakness: 0.28, cross_border_surveillance_gap: 0.30, community_level_detection_gap: 0.28,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // BSE-005 — critical, data_sharing_political_suppression (political_outbreak_suppression>0.85, WHO_reporting_compliance>0.80)
   {
-    entity_id: "BSE-005", surveillance_system: "suppression_politique_données", region: "MEA",
+    id: "BSE-005", surveillance_system: "suppression_politique_données", region: "MEA",
     outbreak_detection_delay: 0.78, genomic_sequencing_gap: 0.72, zoonotic_interface_monitoring: 0.68,
     one_health_integration_failure: 0.75, lab_network_capacity: 0.70, data_sharing_obstruction: 0.78,
     early_warning_system_weakness: 0.72, cross_border_surveillance_gap: 0.75, community_level_detection_gap: 0.70,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // BSE-006 — high, genomic_surveillance_collapse (genomic_sequencing_gap>0.80, lab_network_capacity>0.75)
   {
-    entity_id: "BSE-006", surveillance_system: "effondrement_génomique", region: "APAC",
+    id: "BSE-006", surveillance_system: "effondrement_génomique", region: "APAC",
     outbreak_detection_delay: 0.50, genomic_sequencing_gap: 0.85, zoonotic_interface_monitoring: 0.48,
     one_health_integration_failure: 0.52, lab_network_capacity: 0.80, data_sharing_obstruction: 0.50,
     early_warning_system_weakness: 0.48, cross_border_surveillance_gap: 0.52, community_level_detection_gap: 0.50,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // BSE-007 — critical, cross_border_surveillance_failure (cross_border_surveillance_gap>0.80, data_sharing_obstruction>0.75)
   {
-    entity_id: "BSE-007", surveillance_system: "défaillance_transfrontalière", region: "EMEA",
+    id: "BSE-007", surveillance_system: "défaillance_transfrontalière", region: "EMEA",
     outbreak_detection_delay: 0.78, genomic_sequencing_gap: 0.75, zoonotic_interface_monitoring: 0.72,
     one_health_integration_failure: 0.78, lab_network_capacity: 0.70, data_sharing_obstruction: 0.82,
     early_warning_system_weakness: 0.75, cross_border_surveillance_gap: 0.88, community_level_detection_gap: 0.72,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // BSE-008 — high, none
   {
-    entity_id: "BSE-008", surveillance_system: "surveillance_fragile", region: "NOAM",
+    id: "BSE-008", surveillance_system: "surveillance_fragile", region: "NOAM",
     outbreak_detection_delay: 0.52, genomic_sequencing_gap: 0.50, zoonotic_interface_monitoring: 0.48,
     one_health_integration_failure: 0.52, lab_network_capacity: 0.50, data_sharing_obstruction: 0.48,
     early_warning_system_weakness: 0.52, cross_border_surveillance_gap: 0.50, community_level_detection_gap: 0.52,
@@ -148,7 +148,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                   e.entity_id,
+        id:                   e.entity_id,
         surveillance_system:         e.surveillance_system,
         region:                      e.region,
         detection_score:             det,

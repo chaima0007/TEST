@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // Caelum Partners — Propriété exclusive de Chaima Mhadbi, Fondatrice Caelum Partners, Bruxelles.
 
 type Entity = {
-  entity_id: string; region: string; intelligence_domain: string;
+  id: string; region: string; intelligence_domain: string;
   omega_risk: string; omega_pattern: string;
   omega_severity: string; recommended_action: string;
   strategic_score: number; convergence_score: number;
@@ -114,7 +114,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-yellow-300">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-yellow-300">{entity.id}</span>
             <span className="ml-2 text-yellow-400/60 text-xs">{entity.region}</span>
             <span className="ml-2 text-slate-500 text-xs">{entity.intelligence_domain.replace(/_/g," ")}</span>
           </div>
@@ -299,11 +299,11 @@ export default function OmegaSynthesisDashboard() {
       {/* Entity Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map(e=>(
-          <div key={e.entity_id} onClick={()=>setSelected(e)}
+          <div key={e.id} onClick={()=>setSelected(e)}
             className="bg-slate-900 border border-yellow-500/20 rounded-xl p-4 cursor-pointer hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-900/20 transition-all">
             {/* Card header */}
             <div className="flex items-center justify-between mb-1">
-              <span className="font-black text-yellow-300 text-base">{e.entity_id}</span>
+              <span className="font-black text-yellow-300 text-base">{e.id}</span>
               <span className="text-xs text-yellow-400/50 font-medium">{e.region}</span>
             </div>
             <div className="text-xs text-slate-500 mb-2 capitalize">{e.intelligence_domain.replace(/_/g," ")}</div>

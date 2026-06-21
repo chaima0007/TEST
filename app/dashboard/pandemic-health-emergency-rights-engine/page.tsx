@@ -18,7 +18,7 @@ function GaugeRing({ value, color }: { value: number; color: string }) {
 }
 
 interface Entity {
-  entity_id: string
+  id: string
   name: string
   composite_score: number
   level: string
@@ -50,7 +50,7 @@ export default function PandemicHealthEmergencyRightsDashboard() {
         <p className="text-slate-400 mb-8">Score moyen : <span className="font-bold" style={{ color }}>{data.avg_composite.toFixed(2)}</span> / 100</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {data.entities.map(e => (
-            <div key={e.entity_id} className="bg-slate-900 rounded-xl p-6 border border-slate-800">
+            <div key={e.id} className="bg-slate-900 rounded-xl p-6 border border-slate-800">
               <div className="flex justify-center mb-4">
                 <GaugeRing value={Math.round(e.composite_score)} color={
                   e.level === "critique" ? "#ef4444" :
@@ -58,7 +58,7 @@ export default function PandemicHealthEmergencyRightsDashboard() {
                   e.level === "modéré" ? "#eab308" : "#22c55e"
                 } />
               </div>
-              <p className="text-xs text-slate-500 font-mono mb-1">{e.entity_id}</p>
+              <p className="text-xs text-slate-500 font-mono mb-1">{e.id}</p>
               <h3 className="font-semibold text-sm text-center mb-2">{e.name}</h3>
               <div className="text-center">
                 <span className={`text-xs px-2 py-1 rounded-full ${

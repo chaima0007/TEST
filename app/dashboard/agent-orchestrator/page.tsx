@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -120,7 +120,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
       >
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-white">{entity.id}</span>
             <span className="ml-2 text-sky-400 text-xs">{entity.name}</span>
             <span className="ml-2 text-slate-500 text-xs">{entity.country}</span>
           </div>
@@ -337,12 +337,12 @@ export default function OrchestrationDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map(e => (
           <div
-            key={e.entity_id}
+            key={e.id}
             onClick={() => setSelected(e)}
             className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-sky-500 transition-colors"
           >
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white text-sm">{e.entity_id}</span>
+              <span className="font-bold text-white text-sm">{e.id}</span>
               <span className="text-xs text-sky-400/60">{e.country}</span>
             </div>
             <div className="text-sm font-medium text-white mb-0.5">{e.name}</div>

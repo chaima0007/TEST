@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // ── Types ────────────────────────────────────────────────────────────────────
 
 interface EntityRecord {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -373,7 +373,7 @@ function DetailModal({
                   { label: "Niveau de Confiance", value: `${Math.round(entity.confidence_level * 100)}%` },
                   { label: "Pays d'Origine", value: entity.country },
                   { label: "Pays d'Accueil", value: entity.sector },
-                  { label: "Identifiant", value: entity.entity_id },
+                  { label: "Identifiant", value: entity.id },
                   { label: "Dernière Mise à Jour", value: entity.last_updated },
                 ].map(({ label, value }) => (
                   <div key={label} className="bg-white/4 rounded-lg p-3">
@@ -744,7 +744,7 @@ export default function RefugeeIntegrationEnginePage() {
             {/* ── Entity cards grid ── */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filtered.map((entity) => (
-                <EntityCard key={entity.entity_id} entity={entity} onClick={setSelected} />
+                <EntityCard key={entity.id} entity={entity} onClick={setSelected} />
               ))}
               {filtered.length === 0 && (
                 <div className="col-span-full text-center py-12 text-gray-400 text-sm">

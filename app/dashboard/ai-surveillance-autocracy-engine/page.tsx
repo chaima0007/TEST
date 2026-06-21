@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -83,7 +83,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
           <div>
             <p className="font-bold text-white text-lg">{entity.name}</p>
             <p className="text-xs text-slate-400">{entity.country} · {entity.sector}</p>
-            <p className="text-xs text-slate-500 font-mono">{entity.entity_id}</p>
+            <p className="text-xs text-slate-500 font-mono">{entity.id}</p>
           </div>
           <button onClick={onClose} className="text-slate-500 hover:text-white text-xl">✕</button>
         </div>
@@ -274,11 +274,11 @@ export default function AISurveillanceAutocracyEnginePage() {
         {/* Entity Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map(entity => (
-            <div key={entity.entity_id} onClick={() => setSel(entity)}
+            <div key={entity.id} onClick={() => setSel(entity)}
               className={`bg-slate-900 rounded-xl p-4 border cursor-pointer transition-all hover:border-red-500/50 ${RB[entity.risk_level] ?? "border-slate-800"}`}>
               <div className="flex justify-between mb-2">
                 <div>
-                  <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
+                  <p className="text-xs font-mono text-slate-500">{entity.id}</p>
                   <p className="text-sm font-semibold text-white">{entity.name}</p>
                   <p className="text-xs text-slate-500">{entity.country}</p>
                 </div>

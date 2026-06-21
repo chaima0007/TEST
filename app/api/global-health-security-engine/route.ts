@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // GHS-001 — critical, pandemic_preparedness_collapse (preparedness_gap>0.85, surveillance>0.80)
   {
-    entity_id: "GHS-001", health_system_type: "système_fragile_pandémique", region: "AFRIQUE_SSA",
+    id: "GHS-001", health_system_type: "système_fragile_pandémique", region: "AFRIQUE_SSA",
     pandemic_preparedness_gap: 0.92, surveillance_system_weakness: 0.88,
     healthcare_system_resilience: 0.75, international_coordination_failure: 0.72,
     WHO_funding_adequacy: 0.68, vaccine_manufacturing_capacity: 0.70,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // GHS-002 — low, none
   {
-    entity_id: "GHS-002", health_system_type: "système_résilient_avancé", region: "EUROPE_NORD",
+    id: "GHS-002", health_system_type: "système_résilient_avancé", region: "EUROPE_NORD",
     pandemic_preparedness_gap: 0.10, surveillance_system_weakness: 0.08,
     healthcare_system_resilience: 0.12, international_coordination_failure: 0.10,
     WHO_funding_adequacy: 0.08, vaccine_manufacturing_capacity: 0.10,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // GHS-003 — critical, international_health_governance_failure (WHO_funding>0.85, coord_failure>0.80)
   {
-    entity_id: "GHS-003", health_system_type: "défaillance_gouvernance_mondiale", region: "MOYEN_ORIENT",
+    id: "GHS-003", health_system_type: "défaillance_gouvernance_mondiale", region: "MOYEN_ORIENT",
     pandemic_preparedness_gap: 0.72, surveillance_system_weakness: 0.70,
     healthcare_system_resilience: 0.68, international_coordination_failure: 0.88,
     WHO_funding_adequacy: 0.90, vaccine_manufacturing_capacity: 0.72,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // GHS-004 — moderate, none
   {
-    entity_id: "GHS-004", health_system_type: "système_en_développement", region: "ASIE_SUD",
+    id: "GHS-004", health_system_type: "système_en_développement", region: "ASIE_SUD",
     pandemic_preparedness_gap: 0.32, surveillance_system_weakness: 0.30,
     healthcare_system_resilience: 0.28, international_coordination_failure: 0.30,
     WHO_funding_adequacy: 0.32, vaccine_manufacturing_capacity: 0.28,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // GHS-005 — critical, health_supply_chain_crisis (supply_chain>0.85, vaccine_manuf>0.80)
   {
-    entity_id: "GHS-005", health_system_type: "crise_chaîne_approvisionnement", region: "AMERIQUE_LATINE",
+    id: "GHS-005", health_system_type: "crise_chaîne_approvisionnement", region: "AMERIQUE_LATINE",
     pandemic_preparedness_gap: 0.70, surveillance_system_weakness: 0.68,
     healthcare_system_resilience: 0.72, international_coordination_failure: 0.68,
     WHO_funding_adequacy: 0.70, vaccine_manufacturing_capacity: 0.88,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // GHS-006 — high, health_system_resilience_collapse (resilience>0.80, worker_shortage>0.75)
   {
-    entity_id: "GHS-006", health_system_type: "effondrement_résilience_sanitaire", region: "EUROPE_EST",
+    id: "GHS-006", health_system_type: "effondrement_résilience_sanitaire", region: "EUROPE_EST",
     pandemic_preparedness_gap: 0.50, surveillance_system_weakness: 0.48,
     healthcare_system_resilience: 0.85, international_coordination_failure: 0.50,
     WHO_funding_adequacy: 0.48, vaccine_manufacturing_capacity: 0.52,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // GHS-007 — high, climate_zoonotic_health_nexus (climate>0.80, zoonotic>0.75)
   {
-    entity_id: "GHS-007", health_system_type: "nexus_climatique_zoonotique", region: "ASIE_PACIFIQUE",
+    id: "GHS-007", health_system_type: "nexus_climatique_zoonotique", region: "ASIE_PACIFIQUE",
     pandemic_preparedness_gap: 0.55, surveillance_system_weakness: 0.52,
     healthcare_system_resilience: 0.50, international_coordination_failure: 0.55,
     WHO_funding_adequacy: 0.52, vaccine_manufacturing_capacity: 0.50,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // GHS-008 — moderate, none
   {
-    entity_id: "GHS-008", health_system_type: "système_émergent_renforcé", region: "AFRIQUE_NORD",
+    id: "GHS-008", health_system_type: "système_émergent_renforcé", region: "AFRIQUE_NORD",
     pandemic_preparedness_gap: 0.25, surveillance_system_weakness: 0.28,
     healthcare_system_resilience: 0.22, international_coordination_failure: 0.28,
     WHO_funding_adequacy: 0.25, vaccine_manufacturing_capacity: 0.22,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         health_system_type:         e.health_system_type,
         region:                     e.region,
         preparedness_score:         prep,

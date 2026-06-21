@@ -18,7 +18,7 @@ function GaugeRing({ value, color }: { value: number; color: string }) {
 }
 
 interface Entity {
-  entity_id: string
+  id: string
   name: string
   composite_score: number
   risk_level: string
@@ -142,9 +142,9 @@ export default function ArbitraryDetentionPoliticalPrisonersDashboard() {
           <h2 className="text-xl font-semibold text-white mb-4">Entités Analysées</h2>
           <div className="space-y-3">
             {data.entities.map((entity) => (
-              <div key={entity.entity_id} className="bg-slate-800/50 rounded-xl p-4 flex items-center justify-between gap-4">
+              <div key={entity.id} className="bg-slate-800/50 rounded-xl p-4 flex items-center justify-between gap-4">
                 <div className="flex-1 min-w-0">
-                  <div className="text-xs text-slate-500 mb-1">{entity.entity_id}</div>
+                  <div className="text-xs text-slate-500 mb-1">{entity.id}</div>
                   <div className="text-sm text-slate-200 leading-snug">{entity.name}</div>
                 </div>
                 <div className="flex items-center gap-4 shrink-0">

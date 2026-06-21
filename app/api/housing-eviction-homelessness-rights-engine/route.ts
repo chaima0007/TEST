@@ -41,7 +41,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "HEH-001",
+      id: "HEH-001",
       name: "Inde/Bulldozer Justice — Démolitions Maisons Minorités Musulmanes, Expulsions Slums Pré-Olympiques & 15M Déplacés Projets Infra",
       country: "Inde",
       composite_score: 91.8,
@@ -55,7 +55,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HEH-002",
+      id: "HEH-002",
       name: "Kenya/Nairobi — Bidonvilles Kibera Expulsions Répétées, Police Violence Squatters, Tenure Informelle 70% Population & Nairobi Expressway",
       country: "Kenya",
       composite_score: 88.35,
@@ -69,7 +69,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HEH-003",
+      id: "HEH-003",
       name: "Brésil/Rio — Favela Expulsions Coupe Monde/JO, Milice Propriété, Cadastre Exclu Pauvres & Réforme Foncière Bloquée",
       country: "Brésil",
       composite_score: 85.15,
@@ -83,7 +83,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HEH-004",
+      id: "HEH-004",
       name: "USA — Sans-Abri 580 000, Anti-Camping Lois 23 États, Sweeps Camps & Loyers San Francisco/NY Inaccessibles",
       country: "États-Unis",
       composite_score: 80.25,
@@ -97,7 +97,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HEH-005",
+      id: "HEH-005",
       name: "Philippines — Évacuations Forcées Duterte/Marcos, 4M SDF Estimés, Anti-Squatter Laws & DMCI Gentrification",
       country: "Philippines",
       composite_score: 54.15,
@@ -111,7 +111,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HEH-006",
+      id: "HEH-006",
       name: "France/UE — Squats Expulsés Hiver, DALO Droit Non Opposable, Migrants Tentes Évacuées Paris & Loi Anti-Squat",
       country: "France/Union Européenne",
       composite_score: 51.5,
@@ -125,7 +125,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HEH-007",
+      id: "HEH-007",
       name: "UN-Habitat/HIC — Monitoring Expulsions Forcées, Principes Pinheiro, Campagnes Sécurité Tenure & Rapports Fonciers",
       country: "International",
       composite_score: 25.8,
@@ -139,7 +139,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "HEH-008",
+      id: "HEH-008",
       name: "ONU/Art.11 DESC — Droit Logement Convenable, Comité DESC Observation Générale 4 & SDG 11.1 Habitat",
       country: "International",
       composite_score: 3.95,

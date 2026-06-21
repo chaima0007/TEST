@@ -41,7 +41,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "DPS-001",
+      id: "DPS-001",
       name: "Chine — Crédit Social, Reconnaissance Faciale 600M Caméras, Surveillance Ouïghours Xinjiang & Firewall",
       country: "Chine",
       composite_score: 92.6,
@@ -55,7 +55,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DPS-002",
+      id: "DPS-002",
       name: "Russie — SORM-3 Surveillance Totale, Blocage VPN, Journalistes Pegasus & Données Trafic FSB Obligatoire",
       country: "Russie",
       composite_score: 88.25,
@@ -69,7 +69,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DPS-003",
+      id: "DPS-003",
       name: "Iran — Surveillance Protestants 2022, Coupures Internet Nationales, Telegram Bloqué & Reconnaissance Faciale Hijab",
       country: "Iran",
       composite_score: 85.95,
@@ -83,7 +83,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DPS-004",
+      id: "DPS-004",
       name: "USA/NSA — PRISM Mass Collection, Pegasus Civils, Section 702 FISA & Absence Loi Fédérale Protection Données",
       country: "États-Unis",
       composite_score: 81.85,
@@ -97,7 +97,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DPS-005",
+      id: "DPS-005",
       name: "Inde — Internet Shutdown 84× En 2023, UAPA Surveillance Activistes, Aadhaar Biométrique Obligatoire & Pegasus Journalistes",
       country: "Inde",
       composite_score: 54.25,
@@ -111,7 +111,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DPS-006",
+      id: "DPS-006",
       name: "UE — Chatcontrol Proposé, RGPD Application Inégale, Métadonnées Stockées & Frontex Surveillance Biométrique",
       country: "Union Européenne",
       composite_score: 47.35,
@@ -125,7 +125,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DPS-007",
+      id: "DPS-007",
       name: "EFF/Privacy International — Rapports Surveillance, Outils Defense Numérique, Advocacy GDPR & Standards Chiffrement",
       country: "International",
       composite_score: 26.0,
@@ -139,7 +139,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DPS-008",
+      id: "DPS-008",
       name: "ONU/Art.17 PIDCP — Droit à la Vie Privée, Rapporteur Spécial Surveillance & SDG 16.10 Liberté Information",
       country: "International",
       composite_score: 3.95,

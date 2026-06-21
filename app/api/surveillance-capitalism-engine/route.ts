@@ -6,7 +6,7 @@ const MOCK_ENTITIES = [
   // behavioral_totalitarianism: behavioral_totalitarianism_risk>=0.70 AND autonomy_erosion_index>=0.65
   // composite >=60 → critical
   {
-    entity_id: "SCE-001", platform_type: "Social_Media", region: "USA",
+    id: "SCE-001", platform_type: "Social_Media", region: "USA",
     behavioral_surplus_extraction_rate: 0.90,
     prediction_product_invasiveness: 0.82,
     attention_capture_monopoly: 0.88,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   // SCE-002 — E-Commerce, EU → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "SCE-002", platform_type: "E-Commerce", region: "EU",
+    id: "SCE-002", platform_type: "E-Commerce", region: "EU",
     behavioral_surplus_extraction_rate: 0.12,
     prediction_product_invasiveness: 0.15,
     attention_capture_monopoly: 0.10,
@@ -52,7 +52,7 @@ const MOCK_ENTITIES = [
   // behavioral_totalitarianism must NOT fire: behavioral_totalitarianism_risk<0.70 OR autonomy_erosion_index<0.65
   // composite >=40 and <60 → high
   {
-    entity_id: "SCE-003", platform_type: "AdTech", region: "UK",
+    id: "SCE-003", platform_type: "AdTech", region: "UK",
     behavioral_surplus_extraction_rate: 0.62,
     prediction_product_invasiveness: 0.82,
     attention_capture_monopoly: 0.60,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   // SCE-004 — HealthTech, Canada → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "SCE-004", platform_type: "HealthTech", region: "Canada",
+    id: "SCE-004", platform_type: "HealthTech", region: "Canada",
     behavioral_surplus_extraction_rate: 0.15,
     prediction_product_invasiveness: 0.18,
     attention_capture_monopoly: 0.12,
@@ -99,7 +99,7 @@ const MOCK_ENTITIES = [
   // prediction_product_hegemony must NOT fire
   // composite >=60 → critical
   {
-    entity_id: "SCE-005", platform_type: "Mobile_Apps", region: "USA",
+    id: "SCE-005", platform_type: "Mobile_Apps", region: "USA",
     behavioral_surplus_extraction_rate: 0.82,
     prediction_product_invasiveness: 0.65,
     attention_capture_monopoly: 0.80,
@@ -121,7 +121,7 @@ const MOCK_ENTITIES = [
   // SCE-006 — IoT, Germany → moderate, none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "SCE-006", platform_type: "IoT", region: "Germany",
+    id: "SCE-006", platform_type: "IoT", region: "Germany",
     behavioral_surplus_extraction_rate: 0.35,
     prediction_product_invasiveness: 0.38,
     attention_capture_monopoly: 0.30,
@@ -146,7 +146,7 @@ const MOCK_ENTITIES = [
   // consent_manufacturing_crisis must NOT fire
   // composite >=40 and <60 → high
   {
-    entity_id: "SCE-007", platform_type: "DataBroker", region: "USA",
+    id: "SCE-007", platform_type: "DataBroker", region: "USA",
     behavioral_surplus_extraction_rate: 0.62,
     prediction_product_invasiveness: 0.58,
     attention_capture_monopoly: 0.55,
@@ -171,7 +171,7 @@ const MOCK_ENTITIES = [
   // consent_manufacturing_crisis must NOT fire, shadow_profiling_empire must NOT fire
   // composite >=60 → critical
   {
-    entity_id: "SCE-008", platform_type: "BigTech", region: "Global",
+    id: "SCE-008", platform_type: "BigTech", region: "Global",
     behavioral_surplus_extraction_rate: 0.88,
     prediction_product_invasiveness: 0.65,
     attention_capture_monopoly: 0.82,
@@ -290,7 +290,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                            e.entity_id,
+        id:                            e.entity_id,
         platform_type:                        e.platform_type,
         region:                               e.region,
         extraction_score:                     ext,

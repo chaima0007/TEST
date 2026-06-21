@@ -17,14 +17,14 @@ const MOCK = {
   ],
   critical_alerts: [],
   entities: [
-    { entity_id: "MMR_rohingya", name: "Myanmar — Rohingyas (800k apatrides)", composite_score: 93.0, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 9.3 },
-    { entity_id: "KWT_bidoun", name: "Koweït — Bidouns sans nationalité", composite_score: 83.35, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 8.33 },
-    { entity_id: "DOM_haitian_origin", name: "République Dominicaine — Dominicains d'origine haïtienne", composite_score: 80.9, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 8.09 },
-    { entity_id: "BTN_nepali_bhutanese", name: "Bhoutan — Bhoutanais népalais expulsés", composite_score: 78.4, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 7.84 },
-    { entity_id: "KEN_nubians", name: "Kenya — Nubiens et reconnaissance citoyenneté", composite_score: 59.85, risk_level: "élevé", estimated_statelessness_citizenship_deprivation_index: 5.99 },
-    { entity_id: "SAH_sahel_undocumented", name: "Sahel — Populations sans-papiers transfrontalières", composite_score: 59.0, risk_level: "élevé", estimated_statelessness_citizenship_deprivation_index: 5.9 },
-    { entity_id: "LVA_non_citizens", name: "Lettonie — Non-citoyens (statut résiduel post-URSS)", composite_score: 30.95, risk_level: "modéré", estimated_statelessness_citizenship_deprivation_index: 3.09 },
-    { entity_id: "UNHCR_reduction_model", name: "UNHCR — Modèle de réduction de l'apatridie", composite_score: 9.0, risk_level: "faible", estimated_statelessness_citizenship_deprivation_index: 0.9 },
+    { id: "MMR_rohingya", name: "Myanmar — Rohingyas (800k apatrides)", composite_score: 93.0, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 9.3 },
+    { id: "KWT_bidoun", name: "Koweït — Bidouns sans nationalité", composite_score: 83.35, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 8.33 },
+    { id: "DOM_haitian_origin", name: "République Dominicaine — Dominicains d'origine haïtienne", composite_score: 80.9, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 8.09 },
+    { id: "BTN_nepali_bhutanese", name: "Bhoutan — Bhoutanais népalais expulsés", composite_score: 78.4, risk_level: "critique", estimated_statelessness_citizenship_deprivation_index: 7.84 },
+    { id: "KEN_nubians", name: "Kenya — Nubiens et reconnaissance citoyenneté", composite_score: 59.85, risk_level: "élevé", estimated_statelessness_citizenship_deprivation_index: 5.99 },
+    { id: "SAH_sahel_undocumented", name: "Sahel — Populations sans-papiers transfrontalières", composite_score: 59.0, risk_level: "élevé", estimated_statelessness_citizenship_deprivation_index: 5.9 },
+    { id: "LVA_non_citizens", name: "Lettonie — Non-citoyens (statut résiduel post-URSS)", composite_score: 30.95, risk_level: "modéré", estimated_statelessness_citizenship_deprivation_index: 3.09 },
+    { id: "UNHCR_reduction_model", name: "UNHCR — Modèle de réduction de l'apatridie", composite_score: 9.0, risk_level: "faible", estimated_statelessness_citizenship_deprivation_index: 0.9 },
   ],
 };
 

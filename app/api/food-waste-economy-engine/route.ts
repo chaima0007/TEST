@@ -7,7 +7,7 @@ const MOCK_ENTITIES = [
   // FWE-001 — critique — grande_distribution, Île-de-France
   // patterns: retail_overproduction_dump, cold_chain_collapse, date_label_confusion, consumer_behavioral_waste, policy_incentive_failure
   {
-    entity_id: "FWE-001", food_sector: "grande_distribution", region: "Île-de-France",
+    id: "FWE-001", food_sector: "grande_distribution", region: "Île-de-France",
     retail_waste_rate: 80.0, production_surplus: 75.0, cold_chain_failure: 60.0,
     date_labeling_confusion: 70.0, consumer_waste_behavior: 65.0, redistribution_gap: 70.0,
     composting_infrastructure: 80.0, regulatory_compliance_gap: 70.0,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
   // FWE-002 — critique — logistique_alimentaire, Auvergne-Rhône-Alpes
   // patterns: retail_overproduction_dump, cold_chain_collapse, date_label_confusion, consumer_behavioral_waste, policy_incentive_failure
   {
-    entity_id: "FWE-002", food_sector: "logistique_alimentaire", region: "Auvergne-Rhône-Alpes",
+    id: "FWE-002", food_sector: "logistique_alimentaire", region: "Auvergne-Rhône-Alpes",
     retail_waste_rate: 65.0, production_surplus: 65.0, cold_chain_failure: 80.0,
     date_labeling_confusion: 55.0, consumer_waste_behavior: 60.0, redistribution_gap: 72.0,
     composting_infrastructure: 75.0, regulatory_compliance_gap: 60.0,
@@ -31,7 +31,7 @@ const MOCK_ENTITIES = [
   // FWE-003 — critique — restauration_collective, Hauts-de-France
   // patterns: retail_overproduction_dump, date_label_confusion, consumer_behavioral_waste, policy_incentive_failure
   {
-    entity_id: "FWE-003", food_sector: "restauration_collective", region: "Hauts-de-France",
+    id: "FWE-003", food_sector: "restauration_collective", region: "Hauts-de-France",
     retail_waste_rate: 70.0, production_surplus: 68.0, cold_chain_failure: 50.0,
     date_labeling_confusion: 55.0, consumer_waste_behavior: 80.0, redistribution_gap: 65.0,
     composting_infrastructure: 80.0, regulatory_compliance_gap: 65.0,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   // FWE-004 — élevé — industrie_agroalimentaire, Bretagne
   // pattern: date_label_confusion
   {
-    entity_id: "FWE-004", food_sector: "industrie_agroalimentaire", region: "Bretagne",
+    id: "FWE-004", food_sector: "industrie_agroalimentaire", region: "Bretagne",
     retail_waste_rate: 50.0, production_surplus: 48.0, cold_chain_failure: 45.0,
     date_labeling_confusion: 70.0, consumer_waste_behavior: 48.0, redistribution_gap: 52.0,
     composting_infrastructure: 60.0, regulatory_compliance_gap: 50.0,
@@ -55,7 +55,7 @@ const MOCK_ENTITIES = [
   // FWE-005 — élevé — coopérative_agricole, Nouvelle-Aquitaine
   // pattern: policy_incentive_failure
   {
-    entity_id: "FWE-005", food_sector: "coopérative_agricole", region: "Nouvelle-Aquitaine",
+    id: "FWE-005", food_sector: "coopérative_agricole", region: "Nouvelle-Aquitaine",
     retail_waste_rate: 52.0, production_surplus: 50.0, cold_chain_failure: 48.0,
     date_labeling_confusion: 50.0, consumer_waste_behavior: 50.0, redistribution_gap: 55.0,
     composting_infrastructure: 62.0, regulatory_compliance_gap: 70.0,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
   },
   // FWE-006 — modéré — marché_de_proximité, Occitanie
   {
-    entity_id: "FWE-006", food_sector: "marché_de_proximité", region: "Occitanie",
+    id: "FWE-006", food_sector: "marché_de_proximité", region: "Occitanie",
     retail_waste_rate: 30.0, production_surplus: 28.0, cold_chain_failure: 25.0,
     date_labeling_confusion: 30.0, consumer_waste_behavior: 28.0, redistribution_gap: 32.0,
     composting_infrastructure: 55.0, regulatory_compliance_gap: 28.0,
@@ -77,7 +77,7 @@ const MOCK_ENTITIES = [
   },
   // FWE-007 — faible — filière_biologique, Pays de la Loire
   {
-    entity_id: "FWE-007", food_sector: "filière_biologique", region: "Pays de la Loire",
+    id: "FWE-007", food_sector: "filière_biologique", region: "Pays de la Loire",
     retail_waste_rate: 10.0, production_surplus: 12.0, cold_chain_failure: 10.0,
     date_labeling_confusion: 12.0, consumer_waste_behavior: 8.0, redistribution_gap: 10.0,
     composting_infrastructure: 20.0, regulatory_compliance_gap: 10.0,
@@ -88,7 +88,7 @@ const MOCK_ENTITIES = [
   },
   // FWE-008 — faible — agriculture_raisonnée, Grand Est
   {
-    entity_id: "FWE-008", food_sector: "agriculture_raisonnée", region: "Grand Est",
+    id: "FWE-008", food_sector: "agriculture_raisonnée", region: "Grand Est",
     retail_waste_rate: 8.0, production_surplus: 10.0, cold_chain_failure: 8.0,
     date_labeling_confusion: 10.0, consumer_waste_behavior: 10.0, redistribution_gap: 8.0,
     composting_infrastructure: 15.0, regulatory_compliance_gap: 8.0,
@@ -143,7 +143,7 @@ export async function GET() {
       const risk    = riskLevel(comp);
       const pats    = detectPatterns(e);
       return {
-        entity_id:              e.entity_id,
+        id:              e.entity_id,
         food_sector:            e.food_sector,
         region:                 e.region,
         waste_score:            waste,

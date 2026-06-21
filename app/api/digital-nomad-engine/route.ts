@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // DNE-001 — critical, housing_gentrification_explosion (housing_spike>0.85, displacement>0.80)
   {
-    entity_id: "DNE-001", destination_type: "ville_côtière", region: "EMEA",
+    id: "DNE-001", destination_type: "ville_côtière", region: "EMEA",
     housing_price_spike: 0.92, local_displacement_rate: 0.88,
     rental_market_distortion: 0.82, tax_contribution_gap: 0.70,
     visa_fee_revenue: 0.65, local_wage_disparity: 0.72,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // DNE-002 — critical, tax_base_erosion_crisis (tax_gap>0.85, visa_fee>0.80)
   {
-    entity_id: "DNE-002", destination_type: "hub_numérique", region: "APAC",
+    id: "DNE-002", destination_type: "hub_numérique", region: "APAC",
     housing_price_spike: 0.62, local_displacement_rate: 0.60,
     rental_market_distortion: 0.65, tax_contribution_gap: 0.90,
     visa_fee_revenue: 0.85, local_wage_disparity: 0.72,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // DNE-003 — critical, cultural_displacement_trap (cultural_com>0.85, service_overload>0.80)
   {
-    entity_id: "DNE-003", destination_type: "île_tropicale", region: "LATAM",
+    id: "DNE-003", destination_type: "île_tropicale", region: "LATAM",
     housing_price_spike: 0.72, local_displacement_rate: 0.68,
     rental_market_distortion: 0.70, tax_contribution_gap: 0.65,
     visa_fee_revenue: 0.60, local_wage_disparity: 0.68,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // DNE-004 — high, two_tier_economy_formation (wage_disparity>0.80, income_ineq>0.75)
   {
-    entity_id: "DNE-004", destination_type: "zone_économique_spéciale", region: "SSA",
+    id: "DNE-004", destination_type: "zone_économique_spéciale", region: "SSA",
     housing_price_spike: 0.48, local_displacement_rate: 0.45,
     rental_market_distortion: 0.50, tax_contribution_gap: 0.52,
     visa_fee_revenue: 0.48, local_wage_disparity: 0.85,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // DNE-005 — high, regulatory_arbitrage_race (reg_clarity>0.80, seasonal_vol>0.75)
   {
-    entity_id: "DNE-005", destination_type: "ville_universitaire", region: "NOAM",
+    id: "DNE-005", destination_type: "ville_universitaire", region: "NOAM",
     housing_price_spike: 0.45, local_displacement_rate: 0.42,
     rental_market_distortion: 0.48, tax_contribution_gap: 0.50,
     visa_fee_revenue: 0.45, local_wage_disparity: 0.48,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // DNE-006 — moderate, none
   {
-    entity_id: "DNE-006", destination_type: "village_rural", region: "EMEA",
+    id: "DNE-006", destination_type: "village_rural", region: "EMEA",
     housing_price_spike: 0.30, local_displacement_rate: 0.28,
     rental_market_distortion: 0.30, tax_contribution_gap: 0.32,
     visa_fee_revenue: 0.28, local_wage_disparity: 0.30,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // DNE-007 — low, none
   {
-    entity_id: "DNE-007", destination_type: "métropole_diversifiée", region: "NOAM",
+    id: "DNE-007", destination_type: "métropole_diversifiée", region: "NOAM",
     housing_price_spike: 0.10, local_displacement_rate: 0.08,
     rental_market_distortion: 0.10, tax_contribution_gap: 0.12,
     visa_fee_revenue: 0.08, local_wage_disparity: 0.10,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // DNE-008 — low, none
   {
-    entity_id: "DNE-008", destination_type: "ville_intermédiaire", region: "APAC",
+    id: "DNE-008", destination_type: "ville_intermédiaire", region: "APAC",
     housing_price_spike: 0.12, local_displacement_rate: 0.10,
     rental_market_distortion: 0.12, tax_contribution_gap: 0.10,
     visa_fee_revenue: 0.12, local_wage_disparity: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         destination_type:           e.destination_type,
         region:                     e.region,
         gentrification_score:       gen,

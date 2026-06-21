@@ -29,7 +29,7 @@ const MOCK = {
   engine_version: "1.0.0",
   entities: [
     {
-      entity_id: "JJD-001",
+      id: "JJD-001",
       name: "Philippines — détention massive d'enfants, guerre anti-drogue et centres surpeuplés",
       country: "Philippines",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 90.0,
@@ -43,7 +43,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "JJD-002",
+      id: "JJD-002",
       name: "États-Unis — détention d'enfants migrants, centres privatisés, isolement cellulaire",
       country: "États-Unis",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 84.0,
@@ -57,7 +57,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "JJD-003",
+      id: "JJD-003",
       name: "Pakistan — enfants détenus avec adultes, torture documentée, système féodal informel",
       country: "Pakistan",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 82.0,
@@ -71,7 +71,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "JJD-004",
+      id: "JJD-004",
       name: "Kenya — détention préventive prolongée de mineurs, manque de tribunaux pour enfants",
       country: "Kenya",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 76.0,
@@ -85,7 +85,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "JJD-005",
+      id: "JJD-005",
       name: "Brésil (FEBEM/CASE) — violences institutionnelles dans centres socio-éducatifs",
       country: "Brésil",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 55.0,
@@ -99,7 +99,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "JJD-006",
+      id: "JJD-006",
       name: "Inde — détention arbitraire de mineurs tribaux et Dalits, accès défenseur rare",
       country: "Inde",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 52.0,
@@ -113,7 +113,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "JJD-007",
+      id: "JJD-007",
       name: "France — quartiers mineurs surpeuplés, durées de détention provisoire en hausse",
       country: "France",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 30.0,
@@ -127,7 +127,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "JJD-008",
+      id: "JJD-008",
       name: "Norvège — justice restaurative, alternatives systématiques, recours indépendants",
       country: "Norvège",
       detention_enfants_preventive_longue_duree_mixte_adultes_score: 10.0,

@@ -15,7 +15,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // PPE-001 — critical, mass_psychosis_politics
   // mass_anxiety_political_exploitation≥0.70 AND emotional_contagion_amplification≥0.65
-  { entity_id: "PPE-001", political_domain: "electoral_politics", region: "EMEA",
+  { id: "PPE-001", political_domain: "electoral_politics", region: "EMEA",
     mass_anxiety_political_exploitation: 0.88, tribal_identity_weaponization: 0.72,
     emotional_contagion_amplification: 0.85, fear_architecture_deployment: 0.82,
     political_gaslighting_prevalence: 0.78, collective_trauma_manipulation: 0.80,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     political_identity_addiction: 0.74 },
 
   // PPE-002 — low, none
-  { entity_id: "PPE-002", political_domain: "local_governance", region: "NOAM",
+  { id: "PPE-002", political_domain: "local_governance", region: "NOAM",
     mass_anxiety_political_exploitation: 0.12, tribal_identity_weaponization: 0.10,
     emotional_contagion_amplification: 0.15, fear_architecture_deployment: 0.12,
     political_gaslighting_prevalence: 0.10, collective_trauma_manipulation: 0.12,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
 
   // PPE-003 — high, tribal_warfare_activation
   // tribal_identity_weaponization≥0.70 AND scapegoating_mechanism_intensity≥0.65
-  { entity_id: "PPE-003", political_domain: "ethnic_politics", region: "MEA",
+  { id: "PPE-003", political_domain: "ethnic_politics", region: "MEA",
     mass_anxiety_political_exploitation: 0.60, tribal_identity_weaponization: 0.82,
     emotional_contagion_amplification: 0.60, fear_architecture_deployment: 0.55,
     political_gaslighting_prevalence: 0.52, collective_trauma_manipulation: 0.48,
@@ -52,7 +52,7 @@ const MOCK_ENTITIES = [
     political_identity_addiction: 0.58 },
 
   // PPE-004 — low, none
-  { entity_id: "PPE-004", political_domain: "civil_society", region: "APAC",
+  { id: "PPE-004", political_domain: "civil_society", region: "APAC",
     mass_anxiety_political_exploitation: 0.15, tribal_identity_weaponization: 0.12,
     emotional_contagion_amplification: 0.18, fear_architecture_deployment: 0.10,
     political_gaslighting_prevalence: 0.12, collective_trauma_manipulation: 0.15,
@@ -65,7 +65,7 @@ const MOCK_ENTITIES = [
 
   // PPE-005 — critical, trauma_based_control
   // collective_trauma_manipulation≥0.70 AND political_PTSD_induction≥0.65
-  { entity_id: "PPE-005", political_domain: "post_conflict_governance", region: "LATAM",
+  { id: "PPE-005", political_domain: "post_conflict_governance", region: "LATAM",
     mass_anxiety_political_exploitation: 0.60, tribal_identity_weaponization: 0.55,
     emotional_contagion_amplification: 0.60, fear_architecture_deployment: 0.80,
     political_gaslighting_prevalence: 0.75, collective_trauma_manipulation: 0.88,
@@ -77,7 +77,7 @@ const MOCK_ENTITIES = [
     political_identity_addiction: 0.65 },
 
   // PPE-006 — moderate, none
-  { entity_id: "PPE-006", political_domain: "parliamentary_democracy", region: "EU",
+  { id: "PPE-006", political_domain: "parliamentary_democracy", region: "EU",
     mass_anxiety_political_exploitation: 0.35, tribal_identity_weaponization: 0.30,
     emotional_contagion_amplification: 0.32, fear_architecture_deployment: 0.30,
     political_gaslighting_prevalence: 0.28, collective_trauma_manipulation: 0.30,
@@ -90,7 +90,7 @@ const MOCK_ENTITIES = [
 
   // PPE-007 — high, authoritarian_personality_cult
   // cult_of_personality_formation≥0.70 AND authoritarian_personality_activation≥0.65
-  { entity_id: "PPE-007", political_domain: "authoritarian_regime", region: "EURASIA",
+  { id: "PPE-007", political_domain: "authoritarian_regime", region: "EURASIA",
     mass_anxiety_political_exploitation: 0.45, tribal_identity_weaponization: 0.42,
     emotional_contagion_amplification: 0.45, fear_architecture_deployment: 0.48,
     political_gaslighting_prevalence: 0.42, collective_trauma_manipulation: 0.42,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
 
   // PPE-008 — critical, democratic_psychological_collapse
   // democratic_disillusionment_weaponization≥0.70 AND mass_helplessness_cultivation≥0.65
-  { entity_id: "PPE-008", political_domain: "fragile_democracy", region: "LATAM",
+  { id: "PPE-008", political_domain: "fragile_democracy", region: "LATAM",
     mass_anxiety_political_exploitation: 0.65, tribal_identity_weaponization: 0.60,
     emotional_contagion_amplification: 0.62, fear_architecture_deployment: 0.78,
     political_gaslighting_prevalence: 0.72, collective_trauma_manipulation: 0.62,
@@ -204,7 +204,7 @@ function buildEntity(e: Entity) {
   const risk       = riskLevel(comp);
   const pattern    = psychoPattern(e);
   return {
-    entity_id:                               e.entity_id,
+    id:                               e.entity_id,
     political_domain:                        e.political_domain,
     region:                                  e.region,
     manipulation_score:                      manip,

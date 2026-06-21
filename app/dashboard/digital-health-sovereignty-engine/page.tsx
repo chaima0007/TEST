@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type DHSEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -276,10 +276,10 @@ export default function DigitalHealthSovereigntyDashboard() {
       {/* Entity Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map(e => (
-          <div key={e.entity_id} onClick={() => setSelected(e)}
+          <div key={e.id} onClick={() => setSelected(e)}
             className="bg-slate-900 border border-emerald-700/30 rounded-xl p-4 cursor-pointer hover:border-emerald-500 transition-colors">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white text-sm">{e.entity_id}</span>
+              <span className="font-bold text-white text-sm">{e.id}</span>
               <span className="text-xs text-emerald-400/60">{e.country}</span>
             </div>
             <div className="text-xs text-slate-400 mb-2 truncate">{e.name}</div>

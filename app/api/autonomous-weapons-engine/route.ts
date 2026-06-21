@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // AWE-001 — critical, accountability_vacuum_crisis (human_control_removal>0.85, legal_accountability_gap>0.80)
   {
-    entity_id: "AWE-001", system_type: "lethal_autonomous_drone", region: "MENA",
+    id: "AWE-001", system_type: "lethal_autonomous_drone", region: "MENA",
     human_control_removal: 0.92, legal_accountability_gap: 0.88,
     civilian_discrimination_failure: 0.72, proportionality_compliance: 0.18,
     targeting_algorithm_bias: 0.70, proliferation_risk: 0.68,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
   },
   // AWE-002 — critical, civilian_harm_discrimination_failure (civ_discrim>0.85, 1-prop_compliance>0.80)
   {
-    entity_id: "AWE-002", system_type: "autonomous_targeting_system", region: "SSA",
+    id: "AWE-002", system_type: "autonomous_targeting_system", region: "SSA",
     human_control_removal: 0.75, legal_accountability_gap: 0.78,
     civilian_discrimination_failure: 0.90, proportionality_compliance: 0.12,
     targeting_algorithm_bias: 0.82, proliferation_risk: 0.70,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   },
   // AWE-003 — critical, arms_race_proliferation (prolif_risk>0.85, non_state_actor_access>0.80)
   {
-    entity_id: "AWE-003", system_type: "swarm_weapons_system", region: "APAC",
+    id: "AWE-003", system_type: "swarm_weapons_system", region: "APAC",
     human_control_removal: 0.70, legal_accountability_gap: 0.65,
     civilian_discrimination_failure: 0.68, proportionality_compliance: 0.22,
     targeting_algorithm_bias: 0.68, proliferation_risk: 0.90,
@@ -45,7 +45,7 @@ const MOCK_ENTITIES = [
   },
   // AWE-004 — high, treaty_governance_collapse (1-treaty_compliance>0.80, 1-intl_law>0.75)
   {
-    entity_id: "AWE-004", system_type: "robotic_combat_vehicle", region: "EMEA",
+    id: "AWE-004", system_type: "robotic_combat_vehicle", region: "EMEA",
     human_control_removal: 0.55, legal_accountability_gap: 0.52,
     civilian_discrimination_failure: 0.50, proportionality_compliance: 0.45,
     targeting_algorithm_bias: 0.50, proliferation_risk: 0.52,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
   },
   // AWE-005 — high, algorithmic_bias_targeting (targeting_bias>0.80, escalation_risk>0.75)
   {
-    entity_id: "AWE-005", system_type: "ai_surveillance_strike_system", region: "LATAM",
+    id: "AWE-005", system_type: "ai_surveillance_strike_system", region: "LATAM",
     human_control_removal: 0.50, legal_accountability_gap: 0.52,
     civilian_discrimination_failure: 0.55, proportionality_compliance: 0.42,
     targeting_algorithm_bias: 0.85, proliferation_risk: 0.48,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   },
   // AWE-006 — moderate, none
   {
-    entity_id: "AWE-006", system_type: "semi_autonomous_patrol_drone", region: "NOAM",
+    id: "AWE-006", system_type: "semi_autonomous_patrol_drone", region: "NOAM",
     human_control_removal: 0.28, legal_accountability_gap: 0.30,
     civilian_discrimination_failure: 0.30, proportionality_compliance: 0.68,
     targeting_algorithm_bias: 0.30, proliferation_risk: 0.28,
@@ -84,7 +84,7 @@ const MOCK_ENTITIES = [
   },
   // AWE-007 — low, none
   {
-    entity_id: "AWE-007", system_type: "remote_controlled_bomb_disposal", region: "EMEA",
+    id: "AWE-007", system_type: "remote_controlled_bomb_disposal", region: "EMEA",
     human_control_removal: 0.08, legal_accountability_gap: 0.10,
     civilian_discrimination_failure: 0.10, proportionality_compliance: 0.92,
     targeting_algorithm_bias: 0.10, proliferation_risk: 0.08,
@@ -97,7 +97,7 @@ const MOCK_ENTITIES = [
   },
   // AWE-008 — low, none
   {
-    entity_id: "AWE-008", system_type: "supervised_border_surveillance", region: "NOAM",
+    id: "AWE-008", system_type: "supervised_border_surveillance", region: "NOAM",
     human_control_removal: 0.10, legal_accountability_gap: 0.12,
     civilian_discrimination_failure: 0.12, proportionality_compliance: 0.88,
     targeting_algorithm_bias: 0.12, proliferation_risk: 0.10,
@@ -192,7 +192,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:              e.entity_id,
+        id:              e.entity_id,
         system_type:            e.system_type,
         region:                 e.region,
         accountability_score:   acc,

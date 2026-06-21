@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "GW-001",
+      id: "GW-001",
       name: "EnergiVerde S.p.A.",
       country: "Italie",
       sector: "Énergie & Utilities",
@@ -42,7 +42,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GW-002",
+      id: "GW-002",
       name: "GreenFashion International",
       country: "Bangladesh",
       sector: "Mode & Textile",
@@ -62,7 +62,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GW-003",
+      id: "GW-003",
       name: "PetroGreen Holdings Ltd",
       country: "Royaume-Uni",
       sector: "Pétrole & Gaz",
@@ -82,7 +82,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GW-004",
+      id: "GW-004",
       name: "AgroSustain Corporation",
       country: "Brésil",
       sector: "Agroalimentaire",
@@ -102,7 +102,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GW-005",
+      id: "GW-005",
       name: "AutoEco Mobility Group",
       country: "Allemagne",
       sector: "Automobile",
@@ -122,7 +122,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GW-006",
+      id: "GW-006",
       name: "BioPack Solutions SA",
       country: "France",
       sector: "Emballage & Chimie",
@@ -142,7 +142,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GW-007",
+      id: "GW-007",
       name: "Interface Inc. Europe",
       country: "Pays-Bas",
       sector: "Matériaux & Construction",
@@ -162,7 +162,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GW-008",
+      id: "GW-008",
       name: "Patagonia EMEA",
       country: "Suisse",
       sector: "Mode & Textile",

@@ -9,7 +9,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const entities = [
   {
-    entity_id: "MED-001",
+    id: "MED-001",
     name: "Russia Today Network",
     country: "Russie",
     sector: "Médias d'État",
@@ -26,7 +26,7 @@ const entities = [
     alert_level: "ROUGE",
   },
   {
-    entity_id: "MED-002",
+    id: "MED-002",
     name: "Réseau InfoWars Global",
     country: "États-Unis",
     sector: "Médias Alternatifs",
@@ -43,7 +43,7 @@ const entities = [
     alert_level: "ROUGE",
   },
   {
-    entity_id: "MED-003",
+    id: "MED-003",
     name: "CCTV International",
     country: "Chine",
     sector: "Médias d'État International",
@@ -60,7 +60,7 @@ const entities = [
     alert_level: "ROUGE",
   },
   {
-    entity_id: "MED-004",
+    id: "MED-004",
     name: "Canal Politique Partisan",
     country: "Hongrie",
     sector: "Médias Politiques",
@@ -77,7 +77,7 @@ const entities = [
     alert_level: "ORANGE",
   },
   {
-    entity_id: "MED-005",
+    id: "MED-005",
     name: "Chaîne Commerciale Biaisée",
     country: "Brésil",
     sector: "Médias Commerciaux",
@@ -94,7 +94,7 @@ const entities = [
     alert_level: "ORANGE",
   },
   {
-    entity_id: "MED-006",
+    id: "MED-006",
     name: "Presse Régionale Indépendante",
     country: "Italie",
     sector: "Presse Écrite",
@@ -111,7 +111,7 @@ const entities = [
     alert_level: "JAUNE",
   },
   {
-    entity_id: "MED-007",
+    id: "MED-007",
     name: "BBC World Service",
     country: "Royaume-Uni",
     sector: "Service Public",
@@ -128,7 +128,7 @@ const entities = [
     alert_level: "VERT",
   },
   {
-    entity_id: "MED-008",
+    id: "MED-008",
     name: "Reuters Foundation",
     country: "Royaume-Uni",
     sector: "Agence de Presse",

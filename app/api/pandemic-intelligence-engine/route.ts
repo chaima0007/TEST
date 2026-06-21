@@ -13,7 +13,7 @@ const MOCK_ENTITIES = [
   // PAN-001 — critical, pandemic_emergence
   // pandemic_emergence: transmission_velocity≥0.70 AND surveillance_gap_index≥0.65
   // composite≥60
-  { entity_id:"PAN-001", pathogen_category:"respiratory_pathogen", region:"MEA",
+  { id:"PAN-001", pathogen_category:"respiratory_pathogen", region:"MEA",
     transmission_velocity:0.88,          case_fatality_escalation_risk:0.82, healthcare_capacity_saturation:0.78,
     genomic_variant_emergence_rate:0.60, vaccine_efficacy_erosion:0.58,      surveillance_gap_index:0.85,
     cross_border_spread_velocity:0.84,   pandemic_preparedness_deficit:0.80, zoonotic_spillover_risk:0.50,
@@ -23,7 +23,7 @@ const MOCK_ENTITIES = [
 
   // PAN-002 — low, none
   // composite<20 — all risk-driving fields low, protective fields high
-  { entity_id:"PAN-002", pathogen_category:"endemic_virus", region:"APAC",
+  { id:"PAN-002", pathogen_category:"endemic_virus", region:"APAC",
     transmission_velocity:0.10,          case_fatality_escalation_risk:0.08, healthcare_capacity_saturation:0.12,
     genomic_variant_emergence_rate:0.10, vaccine_efficacy_erosion:0.08,      surveillance_gap_index:0.10,
     cross_border_spread_velocity:0.08,   pandemic_preparedness_deficit:0.10, zoonotic_spillover_risk:0.08,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   // PAN-003 — high, variant_escape_cascade
   // variant_escape_cascade: variant_immune_evasion_potential≥0.70 AND vaccine_efficacy_erosion≥0.65
   // 40≤composite<60; pandemic_emergence must NOT fire: either transmission_velocity<0.70 OR surveillance_gap_index<0.65
-  { entity_id:"PAN-003", pathogen_category:"respiratory_pathogen", region:"NOAM",
+  { id:"PAN-003", pathogen_category:"respiratory_pathogen", region:"NOAM",
     transmission_velocity:0.55,          case_fatality_escalation_risk:0.52, healthcare_capacity_saturation:0.50,
     genomic_variant_emergence_rate:0.55, vaccine_efficacy_erosion:0.72,      surveillance_gap_index:0.48,
     cross_border_spread_velocity:0.60,   pandemic_preparedness_deficit:0.50, zoonotic_spillover_risk:0.40,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     global_health_governance_gap:0.48,   digital_health_surveillance_coverage:0.52 },
 
   // PAN-004 — low, none
-  { entity_id:"PAN-004", pathogen_category:"vector_borne", region:"LATAM",
+  { id:"PAN-004", pathogen_category:"vector_borne", region:"LATAM",
     transmission_velocity:0.12,          case_fatality_escalation_risk:0.10, healthcare_capacity_saturation:0.15,
     genomic_variant_emergence_rate:0.12, vaccine_efficacy_erosion:0.10,      surveillance_gap_index:0.12,
     cross_border_spread_velocity:0.10,   pandemic_preparedness_deficit:0.12, zoonotic_spillover_risk:0.10,
@@ -55,7 +55,7 @@ const MOCK_ENTITIES = [
   // healthcare_system_collapse: healthcare_capacity_saturation≥0.70 AND healthcare_worker_attrition≥0.65
   // composite≥60; pandemic_emergence must NOT fire: either transmission_velocity<0.70 OR surveillance_gap_index<0.65
   // variant_escape_cascade must NOT fire: either variant_immune_evasion_potential<0.70 OR vaccine_efficacy_erosion<0.65
-  { entity_id:"PAN-005", pathogen_category:"respiratory_pathogen", region:"EMEA",
+  { id:"PAN-005", pathogen_category:"respiratory_pathogen", region:"EMEA",
     transmission_velocity:0.55,          case_fatality_escalation_risk:0.85, healthcare_capacity_saturation:0.88,
     genomic_variant_emergence_rate:0.62, vaccine_efficacy_erosion:0.55,      surveillance_gap_index:0.55,
     cross_border_spread_velocity:0.78,   pandemic_preparedness_deficit:0.82, zoonotic_spillover_risk:0.52,
@@ -65,7 +65,7 @@ const MOCK_ENTITIES = [
 
   // PAN-006 — moderate, none
   // 20≤composite<40; no pattern triggers
-  { entity_id:"PAN-006", pathogen_category:"bacterial_pathogen", region:"APAC",
+  { id:"PAN-006", pathogen_category:"bacterial_pathogen", region:"APAC",
     transmission_velocity:0.32,          case_fatality_escalation_risk:0.30, healthcare_capacity_saturation:0.35,
     genomic_variant_emergence_rate:0.28, vaccine_efficacy_erosion:0.30,      surveillance_gap_index:0.32,
     cross_border_spread_velocity:0.30,   pandemic_preparedness_deficit:0.35, zoonotic_spillover_risk:0.28,
@@ -77,7 +77,7 @@ const MOCK_ENTITIES = [
   // zoonotic_explosion: zoonotic_spillover_risk≥0.70 AND genomic_variant_emergence_rate≥0.65
   // 40≤composite<60; pandemic_emergence must NOT fire; variant_escape_cascade must NOT fire;
   // healthcare_system_collapse must NOT fire
-  { entity_id:"PAN-007", pathogen_category:"zoonotic", region:"MEA",
+  { id:"PAN-007", pathogen_category:"zoonotic", region:"MEA",
     transmission_velocity:0.55,          case_fatality_escalation_risk:0.52, healthcare_capacity_saturation:0.55,
     genomic_variant_emergence_rate:0.78, vaccine_efficacy_erosion:0.48,      surveillance_gap_index:0.50,
     cross_border_spread_velocity:0.58,   pandemic_preparedness_deficit:0.52, zoonotic_spillover_risk:0.82,
@@ -89,7 +89,7 @@ const MOCK_ENTITIES = [
   // amr_catastrophe: antimicrobial_resistance_amplification≥0.70 AND pandemic_preparedness_deficit≥0.65
   // composite≥60; pandemic_emergence must NOT fire; variant_escape_cascade must NOT fire;
   // healthcare_system_collapse must NOT fire; zoonotic_explosion must NOT fire
-  { entity_id:"PAN-008", pathogen_category:"drug_resistant", region:"NOAM",
+  { id:"PAN-008", pathogen_category:"drug_resistant", region:"NOAM",
     transmission_velocity:0.60,          case_fatality_escalation_risk:0.80, healthcare_capacity_saturation:0.60,
     genomic_variant_emergence_rate:0.55, vaccine_efficacy_erosion:0.55,      surveillance_gap_index:0.60,
     cross_border_spread_velocity:0.75,   pandemic_preparedness_deficit:0.85, zoonotic_spillover_risk:0.40,
@@ -203,7 +203,7 @@ export async function GET() {
       const action   = recommendedAction(risk, pat);
       const signal   = pandemicSignal(e, risk, comp);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         region:                          e.region,
         pathogen_category:               e.pathogen_category,
         pandemic_risk:                   risk,

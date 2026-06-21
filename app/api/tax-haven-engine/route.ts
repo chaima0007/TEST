@@ -8,7 +8,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 interface TheInput {
-  entity_id: string;
+  id: string;
   haven_type: string;
   region: string;
   secrecy_score: number;
@@ -35,7 +35,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // beneficial_ownership_opacity>0.85 AND politically_exposed_persons>0.80 → sovereign_wealth_capture
   // composite≥60 → critical
   {
-    entity_id: "THE-001", haven_type: "juridiction_offshore", region: "EMEA",
+    id: "THE-001", haven_type: "juridiction_offshore", region: "EMEA",
     secrecy_score: 0.90,
     corporate_tax_rate: 0.05,
     beneficial_ownership_opacity: 0.92,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // beneficial_ownership_opacity=0.72 → avoids sovereign_wealth_capture
   // composite≥60 → critical
   {
-    entity_id: "THE-002", haven_type: "centre_financier_offshore", region: "APAC",
+    id: "THE-002", haven_type: "centre_financier_offshore", region: "APAC",
     secrecy_score: 0.85,
     corporate_tax_rate: 0.02,
     beneficial_ownership_opacity: 0.72,
@@ -83,7 +83,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // beneficial_ownership_opacity=0.78, profit_shifting_intensity=0.75 → avoids earlier patterns
   // composite≥60 → critical
   {
-    entity_id: "THE-003", haven_type: "paradis_fiscal_insulaire", region: "LATAM",
+    id: "THE-003", haven_type: "paradis_fiscal_insulaire", region: "LATAM",
     secrecy_score: 0.88,
     corporate_tax_rate: 0.00,
     beneficial_ownership_opacity: 0.78,
@@ -107,7 +107,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // beneficial_ownership_opacity=0.55, profit_shifting=0.42, illicit=0.45 → avoids earlier patterns
   // composite≈51.8 → high [40,60)
   {
-    entity_id: "THE-004", haven_type: "zone_franche_financière", region: "NOAM",
+    id: "THE-004", haven_type: "zone_franche_financière", region: "NOAM",
     secrecy_score: 0.82,
     corporate_tax_rate: 0.08,
     beneficial_ownership_opacity: 0.55,
@@ -131,7 +131,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // secrecy_score=0.60 → avoids regulatory_arbitrage_network
   // composite≈50.9 → high [40,60)
   {
-    entity_id: "THE-005", haven_type: "juridiction_secrète", region: "MEA",
+    id: "THE-005", haven_type: "juridiction_secrète", region: "MEA",
     secrecy_score: 0.60,
     corporate_tax_rate: 0.10,
     beneficial_ownership_opacity: 0.52,
@@ -153,7 +153,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // THE-006 — EMEA, territoire_autonome_fiscal → moderate, none
   // composite≈35.5 → moderate [20,40)
   {
-    entity_id: "THE-006", haven_type: "territoire_autonome_fiscal", region: "EMEA",
+    id: "THE-006", haven_type: "territoire_autonome_fiscal", region: "EMEA",
     secrecy_score: 0.38,
     corporate_tax_rate: 0.15,
     beneficial_ownership_opacity: 0.35,
@@ -175,7 +175,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // THE-007 — APAC, microjuridiction_offshore → low, none
   // composite≈10.5 → low
   {
-    entity_id: "THE-007", haven_type: "microjuridiction_offshore", region: "APAC",
+    id: "THE-007", haven_type: "microjuridiction_offshore", region: "APAC",
     secrecy_score: 0.12,
     corporate_tax_rate: 0.25,
     beneficial_ownership_opacity: 0.10,
@@ -197,7 +197,7 @@ const MOCK_ENTITIES: TheInput[] = [
   // THE-008 — NOAM, centre_services_financiers → low, none
   // composite≈9.5 → low
   {
-    entity_id: "THE-008", haven_type: "centre_services_financiers", region: "NOAM",
+    id: "THE-008", haven_type: "centre_services_financiers", region: "NOAM",
     secrecy_score: 0.10,
     corporate_tax_rate: 0.22,
     beneficial_ownership_opacity: 0.08,
@@ -290,7 +290,7 @@ function analyzeEntity(e: TheInput) {
   const signal = theSignal(risk);
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     haven_type: e.haven_type,
     region: e.region,
     evasion_score: ev,

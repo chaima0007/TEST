@@ -6,7 +6,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // OS-001 — EMEA, strategic_convergence — critical, omega_convergence_crisis
-  { entity_id:"OS-001", intelligence_domain:"strategic_convergence", region:"EMEA",
+  { id:"OS-001", intelligence_domain:"strategic_convergence", region:"EMEA",
     financial_intelligence_signal:0.88, geopolitical_intelligence_signal:0.85, technological_intelligence_signal:0.60,
     social_intelligence_signal:0.55, environmental_intelligence_signal:0.50, cognitive_intelligence_signal:0.62,
     quantum_intelligence_signal:0.55, biological_intelligence_signal:0.50, civilizational_intelligence_signal:0.58,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
     governance_intelligence_signal:0.78, spatial_intelligence_signal:0.52, temporal_intelligence_signal:0.55,
     consciousness_intelligence_signal:0.60, sovereignty_synthesis_index:0.18 },
   // OS-002 — APAC, technological_synthesis — low, omega_equilibrium / none
-  { entity_id:"OS-002", intelligence_domain:"technological_synthesis", region:"APAC",
+  { id:"OS-002", intelligence_domain:"technological_synthesis", region:"APAC",
     financial_intelligence_signal:0.12, geopolitical_intelligence_signal:0.10, technological_intelligence_signal:0.15,
     social_intelligence_signal:0.10, environmental_intelligence_signal:0.12, cognitive_intelligence_signal:0.10,
     quantum_intelligence_signal:0.12, biological_intelligence_signal:0.10, civilizational_intelligence_signal:0.10,
@@ -22,7 +22,7 @@ const MOCK_ENTITIES = [
     governance_intelligence_signal:0.10, spatial_intelligence_signal:0.10, temporal_intelligence_signal:0.10,
     consciousness_intelligence_signal:0.08, sovereignty_synthesis_index:0.92 },
   // OS-003 — NOAM, civilizational_analysis — high, technological_singularity_approach
-  { entity_id:"OS-003", intelligence_domain:"civilizational_analysis", region:"NOAM",
+  { id:"OS-003", intelligence_domain:"civilizational_analysis", region:"NOAM",
     financial_intelligence_signal:0.55, geopolitical_intelligence_signal:0.50, technological_intelligence_signal:0.82,
     social_intelligence_signal:0.48, environmental_intelligence_signal:0.45, cognitive_intelligence_signal:0.50,
     quantum_intelligence_signal:0.78, biological_intelligence_signal:0.72, civilizational_intelligence_signal:0.52,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
     governance_intelligence_signal:0.50, spatial_intelligence_signal:0.48, temporal_intelligence_signal:0.50,
     consciousness_intelligence_signal:0.55, sovereignty_synthesis_index:0.48 },
   // OS-004 — LATAM, technological_synthesis — low, omega_equilibrium / none
-  { entity_id:"OS-004", intelligence_domain:"technological_synthesis", region:"LATAM",
+  { id:"OS-004", intelligence_domain:"technological_synthesis", region:"LATAM",
     financial_intelligence_signal:0.18, geopolitical_intelligence_signal:0.15, technological_intelligence_signal:0.20,
     social_intelligence_signal:0.15, environmental_intelligence_signal:0.18, cognitive_intelligence_signal:0.15,
     quantum_intelligence_signal:0.18, biological_intelligence_signal:0.15, civilizational_intelligence_signal:0.18,
@@ -38,7 +38,7 @@ const MOCK_ENTITIES = [
     governance_intelligence_signal:0.15, spatial_intelligence_signal:0.15, temporal_intelligence_signal:0.15,
     consciousness_intelligence_signal:0.12, sovereignty_synthesis_index:0.88 },
   // OS-005 — MEA, strategic_convergence — critical, civilizational_inflection
-  { entity_id:"OS-005", intelligence_domain:"strategic_convergence", region:"MEA",
+  { id:"OS-005", intelligence_domain:"strategic_convergence", region:"MEA",
     financial_intelligence_signal:0.78, geopolitical_intelligence_signal:0.75, technological_intelligence_signal:0.65,
     social_intelligence_signal:0.60, environmental_intelligence_signal:0.58, cognitive_intelligence_signal:0.68,
     quantum_intelligence_signal:0.55, biological_intelligence_signal:0.52, civilizational_intelligence_signal:0.80,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
     governance_intelligence_signal:0.70, spatial_intelligence_signal:0.60, temporal_intelligence_signal:0.78,
     consciousness_intelligence_signal:0.82, sovereignty_synthesis_index:0.22 },
   // OS-006 — EMEA, geopolitical_synthesis — moderate, none
-  { entity_id:"OS-006", intelligence_domain:"geopolitical_synthesis", region:"EMEA",
+  { id:"OS-006", intelligence_domain:"geopolitical_synthesis", region:"EMEA",
     financial_intelligence_signal:0.38, geopolitical_intelligence_signal:0.42, technological_intelligence_signal:0.35,
     social_intelligence_signal:0.30, environmental_intelligence_signal:0.32, cognitive_intelligence_signal:0.35,
     quantum_intelligence_signal:0.30, biological_intelligence_signal:0.28, civilizational_intelligence_signal:0.32,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
     governance_intelligence_signal:0.38, spatial_intelligence_signal:0.30, temporal_intelligence_signal:0.32,
     consciousness_intelligence_signal:0.30, sovereignty_synthesis_index:0.62 },
   // OS-007 — APAC, civilizational_analysis — high, sovereignty_erosion_cascade
-  { entity_id:"OS-007", intelligence_domain:"civilizational_analysis", region:"APAC",
+  { id:"OS-007", intelligence_domain:"civilizational_analysis", region:"APAC",
     financial_intelligence_signal:0.52, geopolitical_intelligence_signal:0.55, technological_intelligence_signal:0.48,
     social_intelligence_signal:0.50, environmental_intelligence_signal:0.45, cognitive_intelligence_signal:0.72,
     quantum_intelligence_signal:0.42, biological_intelligence_signal:0.45, civilizational_intelligence_signal:0.50,
@@ -62,7 +62,7 @@ const MOCK_ENTITIES = [
     governance_intelligence_signal:0.52, spatial_intelligence_signal:0.45, temporal_intelligence_signal:0.48,
     consciousness_intelligence_signal:0.52, sovereignty_synthesis_index:0.28 },
   // OS-008 — NOAM, strategic_convergence — critical, strategic_intelligence_gap
-  { entity_id:"OS-008", intelligence_domain:"strategic_convergence", region:"NOAM",
+  { id:"OS-008", intelligence_domain:"strategic_convergence", region:"NOAM",
     financial_intelligence_signal:0.82, geopolitical_intelligence_signal:0.78, technological_intelligence_signal:0.55,
     social_intelligence_signal:0.50, environmental_intelligence_signal:0.45, cognitive_intelligence_signal:0.58,
     quantum_intelligence_signal:0.48, biological_intelligence_signal:0.45, civilizational_intelligence_signal:0.52,
@@ -194,7 +194,7 @@ export async function GET() {
       const act   = recommendedAction(risk, pat);
       const sig   = omegaSignal(e, risk, comp);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         region:                     e.region,
         intelligence_domain:        e.intelligence_domain,
         omega_risk:                 risk,

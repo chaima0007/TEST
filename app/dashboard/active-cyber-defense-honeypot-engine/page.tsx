@@ -17,7 +17,7 @@ const RB: Record<string, string> = {
 };
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   threat_type: string;
   threat_detection_speed: number;
@@ -297,14 +297,14 @@ export default function ActiveCyberDefenseHoneypotDashboard() {
         <div className="grid md:grid-cols-2 gap-4">
           {sortedEntities.map((entity) => (
             <button
-              key={entity.entity_id}
+              key={entity.id}
               onClick={() => setSelected(entity)}
               className={`text-left rounded-xl p-5 border transition-all hover:border-cyan-500/50 hover:bg-slate-700 ${RB[entity.risk_level] || "border-slate-700 bg-slate-800"}`}
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-slate-500 font-mono">{entity.entity_id}</span>
+                    <span className="text-xs text-slate-500 font-mono">{entity.id}</span>
                     <span className={`text-xs font-semibold ${RC[entity.risk_level] || "text-slate-300"}`}>
                       {entity.risk_level.toUpperCase()}
                     </span>

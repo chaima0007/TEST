@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // DDG-001: critical, algorithmic_autocracy (algorithmic_bias>=0.70 AND AI_policy>=0.65, comp≈72)
-  { entity_id:"DDG-001", governance_domain:"automated_decision_system", region:"EMEA",
+  { id:"DDG-001", governance_domain:"automated_decision_system", region:"EMEA",
     algorithmic_bias_in_governance:0.85, digital_exclusion_index:0.75, surveillance_democracy_ratio:0.65,
     platform_political_capture:0.60, misinformation_amplification_rate:0.70, citizen_digital_participation:0.30,
     e_voting_integrity_risk:0.60, algorithmic_accountability_gap:0.78, open_data_governance_level:0.25,
@@ -12,7 +12,7 @@ const MOCK_ENTITIES = [
     democratic_AI_oversight:0.20, digital_identity_sovereignty_risk:0.70 },
 
   // DDG-002: low, no pattern (comp≈11)
-  { entity_id:"DDG-002", governance_domain:"civic_digital_services", region:"NAMER",
+  { id:"DDG-002", governance_domain:"civic_digital_services", region:"NAMER",
     algorithmic_bias_in_governance:0.12, digital_exclusion_index:0.10, surveillance_democracy_ratio:0.12,
     platform_political_capture:0.15, misinformation_amplification_rate:0.12, citizen_digital_participation:0.85,
     e_voting_integrity_risk:0.10, algorithmic_accountability_gap:0.10, open_data_governance_level:0.88,
@@ -21,7 +21,7 @@ const MOCK_ENTITIES = [
     democratic_AI_oversight:0.90, digital_identity_sovereignty_risk:0.10 },
 
   // DDG-003: high, electoral_subversion (electoral_manipulation_risk>=0.70 AND misinformation>=0.65, comp≈52)
-  { entity_id:"DDG-003", governance_domain:"electoral_infrastructure", region:"LATAM",
+  { id:"DDG-003", governance_domain:"electoral_infrastructure", region:"LATAM",
     algorithmic_bias_in_governance:0.50, digital_exclusion_index:0.40, surveillance_democracy_ratio:0.40,
     platform_political_capture:0.55, misinformation_amplification_rate:0.75, citizen_digital_participation:0.55,
     e_voting_integrity_risk:0.55, algorithmic_accountability_gap:0.50, open_data_governance_level:0.50,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
     democratic_AI_oversight:0.45, digital_identity_sovereignty_risk:0.45 },
 
   // DDG-004: low, no pattern (comp≈13)
-  { entity_id:"DDG-004", governance_domain:"open_government_platform", region:"APAC",
+  { id:"DDG-004", governance_domain:"open_government_platform", region:"APAC",
     algorithmic_bias_in_governance:0.15, digital_exclusion_index:0.12, surveillance_democracy_ratio:0.15,
     platform_political_capture:0.10, misinformation_amplification_rate:0.15, citizen_digital_participation:0.88,
     e_voting_integrity_risk:0.12, algorithmic_accountability_gap:0.15, open_data_governance_level:0.85,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
     democratic_AI_oversight:0.88, digital_identity_sovereignty_risk:0.12 },
 
   // DDG-005: critical, surveillance_democracy (surveillance_ratio>=0.70 AND digital_rights_erosion>=0.65, comp≈68)
-  { entity_id:"DDG-005", governance_domain:"state_surveillance_system", region:"MEA",
+  { id:"DDG-005", governance_domain:"state_surveillance_system", region:"MEA",
     algorithmic_bias_in_governance:0.65, digital_exclusion_index:0.65, surveillance_democracy_ratio:0.82,
     platform_political_capture:0.58, misinformation_amplification_rate:0.68, citizen_digital_participation:0.30,
     e_voting_integrity_risk:0.65, algorithmic_accountability_gap:0.72, open_data_governance_level:0.20,
@@ -48,7 +48,7 @@ const MOCK_ENTITIES = [
     democratic_AI_oversight:0.18, digital_identity_sovereignty_risk:0.80 },
 
   // DDG-006: moderate, no pattern (comp≈32)
-  { entity_id:"DDG-006", governance_domain:"digital_public_services", region:"EMEA",
+  { id:"DDG-006", governance_domain:"digital_public_services", region:"EMEA",
     algorithmic_bias_in_governance:0.35, digital_exclusion_index:0.32, surveillance_democracy_ratio:0.35,
     platform_political_capture:0.28, misinformation_amplification_rate:0.35, citizen_digital_participation:0.65,
     e_voting_integrity_risk:0.30, algorithmic_accountability_gap:0.35, open_data_governance_level:0.60,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
     democratic_AI_oversight:0.65, digital_identity_sovereignty_risk:0.32 },
 
   // DDG-007: high, digital_disenfranchisement (digital_exclusion>=0.70 AND citizen_participation<=0.35, comp≈54)
-  { entity_id:"DDG-007", governance_domain:"rural_digital_governance", region:"SSA",
+  { id:"DDG-007", governance_domain:"rural_digital_governance", region:"SSA",
     algorithmic_bias_in_governance:0.55, digital_exclusion_index:0.78, surveillance_democracy_ratio:0.45,
     platform_political_capture:0.45, misinformation_amplification_rate:0.50, citizen_digital_participation:0.28,
     e_voting_integrity_risk:0.45, algorithmic_accountability_gap:0.55, open_data_governance_level:0.40,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
     democratic_AI_oversight:0.35, digital_identity_sovereignty_risk:0.48 },
 
   // DDG-008: critical, platform_sovereignty_capture (platform_capture>=0.70 AND regulatory_capture>=0.65, comp≈67)
-  { entity_id:"DDG-008", governance_domain:"platform_regulated_media", region:"NOAM",
+  { id:"DDG-008", governance_domain:"platform_regulated_media", region:"NOAM",
     algorithmic_bias_in_governance:0.68, digital_exclusion_index:0.65, surveillance_democracy_ratio:0.62,
     platform_political_capture:0.82, misinformation_amplification_rate:0.65, citizen_digital_participation:0.30,
     e_voting_integrity_risk:0.62, algorithmic_accountability_gap:0.75, open_data_governance_level:0.22,
@@ -168,7 +168,7 @@ export async function GET() {
       const act   = recommendedAction(risk);
       const sig   = democracySignal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         governance_domain:          e.governance_domain,
         region:                     e.region,
         exclusion_score:            excl,

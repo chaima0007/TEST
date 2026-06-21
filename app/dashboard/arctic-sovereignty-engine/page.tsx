@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type Entity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -531,7 +531,7 @@ export default function ArcticDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((entity) => (
             <EntityCard
-              key={entity.entity_id}
+              key={entity.id}
               entity={entity}
               onClick={() => setSelected(entity)}
             />

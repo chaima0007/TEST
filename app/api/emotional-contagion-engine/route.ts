@@ -6,7 +6,7 @@ const MOCK_ENTITIES = [
   // panic_epidemic: contagion_velocity≥0.70, fear_cascade_intensity≥0.65
   // critical: composite≥60
   {
-    entity_id: "EC-001", contagion_type: "financial_panic", region: "EMEA",
+    id: "EC-001", contagion_type: "financial_panic", region: "EMEA",
     contagion_velocity: 0.88, population_susceptibility: 0.80, emotional_amplification_rate: 0.82,
     social_network_density: 0.78, fear_cascade_intensity: 0.85, euphoria_bubble_risk: 0.20,
     rage_contagion_potential: 0.55, anxiety_baseline: 0.72, collective_resilience: 0.18,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   // EC-002: APAC, consumer_sentiment → low, emotional_equilibrium/none
   // low: composite<20; none pattern
   {
-    entity_id: "EC-002", contagion_type: "consumer_sentiment", region: "APAC",
+    id: "EC-002", contagion_type: "consumer_sentiment", region: "APAC",
     contagion_velocity: 0.12, population_susceptibility: 0.15, emotional_amplification_rate: 0.14,
     social_network_density: 0.18, fear_cascade_intensity: 0.10, euphoria_bubble_risk: 0.12,
     rage_contagion_potential: 0.10, anxiety_baseline: 0.12, collective_resilience: 0.88,
@@ -29,7 +29,7 @@ const MOCK_ENTITIES = [
   // rage_wildfire: rage_contagion_potential≥0.70, social_network_density≥0.65
   // high: 40≤composite<60
   {
-    entity_id: "EC-003", contagion_type: "social_media_rage", region: "NOAM",
+    id: "EC-003", contagion_type: "social_media_rage", region: "NOAM",
     contagion_velocity: 0.55, population_susceptibility: 0.58, emotional_amplification_rate: 0.60,
     social_network_density: 0.72, fear_cascade_intensity: 0.42, euphoria_bubble_risk: 0.15,
     rage_contagion_potential: 0.78, anxiety_baseline: 0.50, collective_resilience: 0.42,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
   },
   // EC-004: LATAM, consumer_sentiment → low, emotional_equilibrium/none
   {
-    entity_id: "EC-004", contagion_type: "consumer_sentiment", region: "LATAM",
+    id: "EC-004", contagion_type: "consumer_sentiment", region: "LATAM",
     contagion_velocity: 0.10, population_susceptibility: 0.12, emotional_amplification_rate: 0.10,
     social_network_density: 0.15, fear_cascade_intensity: 0.08, euphoria_bubble_risk: 0.10,
     rage_contagion_potential: 0.08, anxiety_baseline: 0.10, collective_resilience: 0.90,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
   // polarization_spiral: emotional_polarization_index≥0.70, (1-institutional_trust_buffer)≥0.60
   // critical: composite≥60
   {
-    entity_id: "EC-005", contagion_type: "political_rage", region: "MEA",
+    id: "EC-005", contagion_type: "political_rage", region: "MEA",
     contagion_velocity: 0.72, population_susceptibility: 0.68, emotional_amplification_rate: 0.70,
     social_network_density: 0.60, fear_cascade_intensity: 0.50, euphoria_bubble_risk: 0.18,
     rage_contagion_potential: 0.65, anxiety_baseline: 0.65, collective_resilience: 0.20,
@@ -62,7 +62,7 @@ const MOCK_ENTITIES = [
   // EC-006: EMEA, market_euphoria → moderate, none
   // moderate: 20≤composite<40; none pattern
   {
-    entity_id: "EC-006", contagion_type: "market_euphoria", region: "EMEA",
+    id: "EC-006", contagion_type: "market_euphoria", region: "EMEA",
     contagion_velocity: 0.35, population_susceptibility: 0.38, emotional_amplification_rate: 0.40,
     social_network_density: 0.38, fear_cascade_intensity: 0.28, euphoria_bubble_risk: 0.55,
     rage_contagion_potential: 0.30, anxiety_baseline: 0.35, collective_resilience: 0.62,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   // anxiety_tsunami: anxiety_baseline≥0.70, population_susceptibility≥0.65
   // high: 40≤composite<60
   {
-    entity_id: "EC-007", contagion_type: "social_media_rage", region: "APAC",
+    id: "EC-007", contagion_type: "social_media_rage", region: "APAC",
     contagion_velocity: 0.52, population_susceptibility: 0.72, emotional_amplification_rate: 0.55,
     social_network_density: 0.58, fear_cascade_intensity: 0.48, euphoria_bubble_risk: 0.12,
     rage_contagion_potential: 0.52, anxiety_baseline: 0.78, collective_resilience: 0.38,
@@ -86,7 +86,7 @@ const MOCK_ENTITIES = [
   // euphoria_mania: euphoria_bubble_risk≥0.70, emotional_amplification_rate≥0.60
   // critical: composite≥60
   {
-    entity_id: "EC-008", contagion_type: "financial_panic", region: "NOAM",
+    id: "EC-008", contagion_type: "financial_panic", region: "NOAM",
     contagion_velocity: 0.75, population_susceptibility: 0.78, emotional_amplification_rate: 0.82,
     social_network_density: 0.72, fear_cascade_intensity: 0.55, euphoria_bubble_risk: 0.80,
     rage_contagion_potential: 0.58, anxiety_baseline: 0.65, collective_resilience: 0.20,
@@ -182,7 +182,7 @@ export async function GET() {
       const signal        = contagionSignal(e, risk, composite);
 
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         region:                          e.region,
         contagion_type:                  e.contagion_type,
         contagion_risk:                  risk,

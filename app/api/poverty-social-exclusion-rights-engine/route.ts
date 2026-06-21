@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "PSE-001",
+      id: "PSE-001",
       name: "Madagascar/DRC — 77% Population Extrême Pauvreté <2$/Jour, Malnutrition Aiguë Enfants 50%, Santé Absente & Oxfam Alerte",
       country: "Madagascar/DRC",
       extreme_poverty_essential_services_denial_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PSE-002",
+      id: "PSE-002",
       name: "Sahel/Yémen — Famines Cycliques, 100M Déplacés Pauvres, Dettes FMI Austérité & Programmes Conditionnels Exclusifs",
       country: "Sahel/Yémen",
       extreme_poverty_essential_services_denial_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PSE-003",
+      id: "PSE-003",
       name: "Inde/Bangladesh — Bidonvilles 100M Urbains, Dalits Sans Accès Services, Travail Bonded & Filets Protection Troués",
       country: "Inde/Bangladesh",
       extreme_poverty_essential_services_denial_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PSE-004",
+      id: "PSE-004",
       name: "Amérique Centrale — Pauvreté Migration Forcée, Gangs Contrôle Quartiers Pauvres, Remesas Unique Revenu & Inégalités Record",
       country: "Amérique Centrale",
       extreme_poverty_essential_services_denial_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PSE-005",
+      id: "PSE-005",
       name: "USA/UK — Working Poor 40M USA, Foodbanks Record UK Austérité, Evictions COVID & Sans-Abri Criminalisés",
       country: "USA/UK",
       extreme_poverty_essential_services_denial_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PSE-006",
+      id: "PSE-006",
       name: "Europe/OCDE — NEET Youth 12%, Pièges Pauvreté Bénéficiaires, Logement Social Listes Attente & Fracture Numérique",
       country: "Europe/OCDE",
       extreme_poverty_essential_services_denial_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PSE-007",
+      id: "PSE-007",
       name: "Oxfam/BRAC — Rapports Inégalités Mondiales, Programmes Sortie Pauvreté, Advocacy Filets Sociaux & SDG Monitoring",
       country: "Global",
       extreme_poverty_essential_services_denial_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "PSE-008",
+      id: "PSE-008",
       name: "ONU/Art.11 DESC — Droit Niveau Vie Suffisant, Rapporteur Extrême Pauvreté & SDG 1 Pas de Pauvreté",
       country: "Global",
       extreme_poverty_essential_services_denial_severity_score: 5.0,

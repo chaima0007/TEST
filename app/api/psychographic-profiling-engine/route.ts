@@ -6,7 +6,7 @@ import { sealResponse } from "@/lib/digital-seal";
 // critical composite ≥ 60
 const MOCK_ENTITIES = [
   {
-    entity_id: "PP-001", segment_type: "corporate_executives", region: "EMEA",
+    id: "PP-001", segment_type: "corporate_executives", region: "EMEA",
     values_coherence: 0.12, motivation_alignment: 0.18, cognitive_rigidity: 0.78,
     status_orientation: 0.85, risk_appetite_behavioral: 0.22, social_conformity_pressure: 0.55,
     identity_brand_fusion: 0.82, novelty_seeking: 0.20, loss_sensitivity: 0.72,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // PP-002: APAC, digital_natives → low, behavioral_fluidity/none
   {
-    entity_id: "PP-002", segment_type: "digital_natives", region: "APAC",
+    id: "PP-002", segment_type: "digital_natives", region: "APAC",
     values_coherence: 0.88, motivation_alignment: 0.90, cognitive_rigidity: 0.12,
     status_orientation: 0.20, risk_appetite_behavioral: 0.78, social_conformity_pressure: 0.15,
     identity_brand_fusion: 0.18, novelty_seeking: 0.85, loss_sensitivity: 0.12,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   // tribalism_capture: tribalism_intensity≥0.70, social_conformity_pressure≥0.60
   // high: composite 40–59
   {
-    entity_id: "PP-003", segment_type: "traditionalist_consumers", region: "NOAM",
+    id: "PP-003", segment_type: "traditionalist_consumers", region: "NOAM",
     values_coherence: 0.50, motivation_alignment: 0.52, cognitive_rigidity: 0.48,
     status_orientation: 0.50, risk_appetite_behavioral: 0.30, social_conformity_pressure: 0.65,
     identity_brand_fusion: 0.40, novelty_seeking: 0.48, loss_sensitivity: 0.45,
@@ -38,7 +38,7 @@ const MOCK_ENTITIES = [
   },
   // PP-004: LATAM, digital_natives → low, behavioral_fluidity/none
   {
-    entity_id: "PP-004", segment_type: "digital_natives", region: "LATAM",
+    id: "PP-004", segment_type: "digital_natives", region: "LATAM",
     values_coherence: 0.85, motivation_alignment: 0.88, cognitive_rigidity: 0.15,
     status_orientation: 0.25, risk_appetite_behavioral: 0.72, social_conformity_pressure: 0.18,
     identity_brand_fusion: 0.22, novelty_seeking: 0.80, loss_sensitivity: 0.15,
@@ -50,7 +50,7 @@ const MOCK_ENTITIES = [
   // loss_aversion_paralysis: loss_sensitivity≥0.70, cognitive_rigidity≥0.60
   // critical: composite ≥ 60
   {
-    entity_id: "PP-005", segment_type: "corporate_executives", region: "MEA",
+    id: "PP-005", segment_type: "corporate_executives", region: "MEA",
     values_coherence: 0.22, motivation_alignment: 0.20, cognitive_rigidity: 0.82,
     status_orientation: 0.80, risk_appetite_behavioral: 0.15, social_conformity_pressure: 0.52,
     identity_brand_fusion: 0.48, novelty_seeking: 0.15, loss_sensitivity: 0.88,
@@ -61,7 +61,7 @@ const MOCK_ENTITIES = [
   // PP-006: EMEA, mainstream_consumers → moderate, none
   // moderate: composite 20–39
   {
-    entity_id: "PP-006", segment_type: "mainstream_consumers", region: "EMEA",
+    id: "PP-006", segment_type: "mainstream_consumers", region: "EMEA",
     values_coherence: 0.62, motivation_alignment: 0.60, cognitive_rigidity: 0.35,
     status_orientation: 0.45, risk_appetite_behavioral: 0.52, social_conformity_pressure: 0.38,
     identity_brand_fusion: 0.40, novelty_seeking: 0.55, loss_sensitivity: 0.35,
@@ -73,7 +73,7 @@ const MOCK_ENTITIES = [
   // motivation_void: (1-motivation_alignment)≥0.65 => motivation_alignment≤0.35, (1-autonomy_drive)≥0.60 => autonomy_drive≤0.40
   // high: composite 40–59
   {
-    entity_id: "PP-007", segment_type: "traditionalist_consumers", region: "APAC",
+    id: "PP-007", segment_type: "traditionalist_consumers", region: "APAC",
     values_coherence: 0.45, motivation_alignment: 0.28, cognitive_rigidity: 0.50,
     status_orientation: 0.52, risk_appetite_behavioral: 0.28, social_conformity_pressure: 0.50,
     identity_brand_fusion: 0.38, novelty_seeking: 0.38, loss_sensitivity: 0.52,
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
   // loss_sensitivity kept <0.70 to prevent loss_aversion_paralysis triggering before authority_dependency
   // critical: composite ≥ 60
   {
-    entity_id: "PP-008", segment_type: "conservative_investors", region: "NOAM",
+    id: "PP-008", segment_type: "conservative_investors", region: "NOAM",
     values_coherence: 0.18, motivation_alignment: 0.45, cognitive_rigidity: 0.75,
     status_orientation: 0.70, risk_appetite_behavioral: 0.12, social_conformity_pressure: 0.65,
     identity_brand_fusion: 0.52, novelty_seeking: 0.18, loss_sensitivity: 0.55,
@@ -189,7 +189,7 @@ export async function GET() {
       const severity = psychSeverity(composite);
       const action = recommendedAction(risk, pattern);
       return {
-        entity_id:                   e.entity_id,
+        id:                   e.entity_id,
         region:                      e.region,
         segment_type:                e.segment_type,
         psych_risk:                  risk,

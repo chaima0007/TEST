@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // DCE-001: critical, platform_imperial_capture (pdr>0.85 AND eve>0.80)
-  { entity_id:"DCE-001", tech_domain:"platform_monopoly", region:"AFRIQUE",
+  { id:"DCE-001", tech_domain:"platform_monopoly", region:"AFRIQUE",
     platform_dependency_ratio:0.92, data_extraction_intensity:0.78,
     algorithmic_bias_export:0.70, digital_infrastructure_control:0.75,
     content_moderation_dominance:0.80, payment_system_capture:0.72,
@@ -15,7 +15,7 @@ const MOCK_ENTITIES = [
     geopolitical_tech_leverage:0.78 },
 
   // DCE-002: low, none
-  { entity_id:"DCE-002", tech_domain:"souveraineté_numérique", region:"EUROPE",
+  { id:"DCE-002", tech_domain:"souveraineté_numérique", region:"EUROPE",
     platform_dependency_ratio:0.12, data_extraction_intensity:0.10,
     algorithmic_bias_export:0.08, digital_infrastructure_control:0.15,
     content_moderation_dominance:0.12, payment_system_capture:0.10,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     geopolitical_tech_leverage:0.10 },
 
   // DCE-003: critical, data_extraction_empire (dei>0.85 AND dlf>0.80)
-  { entity_id:"DCE-003", tech_domain:"extraction_données_massives", region:"ASIE_SUD",
+  { id:"DCE-003", tech_domain:"extraction_données_massives", region:"ASIE_SUD",
     platform_dependency_ratio:0.72, data_extraction_intensity:0.90,
     algorithmic_bias_export:0.74, digital_infrastructure_control:0.70,
     content_moderation_dominance:0.68, payment_system_capture:0.72,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
     geopolitical_tech_leverage:0.72 },
 
   // DCE-004: moderate, none
-  { entity_id:"DCE-004", tech_domain:"infrastructure_cloud", region:"LATAM",
+  { id:"DCE-004", tech_domain:"infrastructure_cloud", region:"LATAM",
     platform_dependency_ratio:0.32, data_extraction_intensity:0.28,
     algorithmic_bias_export:0.25, digital_infrastructure_control:0.30,
     content_moderation_dominance:0.28, payment_system_capture:0.30,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     geopolitical_tech_leverage:0.32 },
 
   // DCE-005: critical, AI_dependency_trap_system (adt>0.85 AND cse>0.80)
-  { entity_id:"DCE-005", tech_domain:"dépendance_IA_cloud", region:"AFRIQUE_SUB",
+  { id:"DCE-005", tech_domain:"dépendance_IA_cloud", region:"AFRIQUE_SUB",
     platform_dependency_ratio:0.75, data_extraction_intensity:0.72,
     algorithmic_bias_export:0.70, digital_infrastructure_control:0.78,
     content_moderation_dominance:0.72, payment_system_capture:0.68,
@@ -63,7 +63,7 @@ const MOCK_ENTITIES = [
     geopolitical_tech_leverage:0.75 },
 
   // DCE-006: high, surveillance_export_colonialism (ser>0.80 AND abe>0.75; pdr<=0.85, dei<=0.85, adt<=0.85)
-  { entity_id:"DCE-006", tech_domain:"exportation_surveillance", region:"MOYEN_ORIENT",
+  { id:"DCE-006", tech_domain:"exportation_surveillance", region:"MOYEN_ORIENT",
     platform_dependency_ratio:0.55, data_extraction_intensity:0.52,
     algorithmic_bias_export:0.80, digital_infrastructure_control:0.55,
     content_moderation_dominance:0.58, payment_system_capture:0.50,
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
     geopolitical_tech_leverage:0.60 },
 
   // DCE-007: high, digital_divide_structural (dda>0.80 AND lde>0.75; pdr<=0.85, dei<=0.85, adt<=0.85, ser<=0.80)
-  { entity_id:"DCE-007", tech_domain:"fracture_numérique_structurelle", region:"ASIE_CENTRALE",
+  { id:"DCE-007", tech_domain:"fracture_numérique_structurelle", region:"ASIE_CENTRALE",
     platform_dependency_ratio:0.48, data_extraction_intensity:0.45,
     algorithmic_bias_export:0.42, digital_infrastructure_control:0.50,
     content_moderation_dominance:0.45, payment_system_capture:0.48,
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
     geopolitical_tech_leverage:0.48 },
 
   // DCE-008: low, none
-  { entity_id:"DCE-008", tech_domain:"résilience_tech_locale", region:"NAMER",
+  { id:"DCE-008", tech_domain:"résilience_tech_locale", region:"NAMER",
     platform_dependency_ratio:0.08, data_extraction_intensity:0.10,
     algorithmic_bias_export:0.12, digital_infrastructure_control:0.10,
     content_moderation_dominance:0.08, payment_system_capture:0.12,
@@ -163,7 +163,7 @@ export async function GET() {
       const comp = compositeScore(dep, ext, sov, exc);
       const pat = colonialPattern(e), risk = riskLevel(comp);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         tech_domain: e.tech_domain,
         region: e.region,
         dependency_score: dep,

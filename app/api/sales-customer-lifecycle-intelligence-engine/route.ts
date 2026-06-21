@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" } as Record<string,unknown>), { status: 503 });
+    return NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" } as Record<string,unknown>), { status: 502 });
   }
   return NextResponse.json(sealResponse({ reps: MOCK_REPS, summary: buildSummary(MOCK_REPS) } as Record<string,unknown>));
 }

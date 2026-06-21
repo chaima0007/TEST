@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // CSE-001: critical, splinternet_collapse (isp>=0.70 AND dse>=0.65)
-  { entity_id:"CSE-001", cyber_domain:"internet_fragmentation", region:"APAC",
+  { id:"CSE-001", cyber_domain:"internet_fragmentation", region:"APAC",
     internet_splinternet_progression:0.85, national_internet_firewall_density:0.80,
     DNS_sovereignty_erosion:0.75, undersea_cable_geopolitical_vulnerability:0.70,
     cloud_infrastructure_foreign_dependency:0.65, data_localization_fragmentation:0.78,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
     internet_governance_capture:0.70, election_infrastructure_cyber_risk:0.68,
     digital_sovereignty_deficit_index:0.75 },
   // CSE-002: low, none
-  { entity_id:"CSE-002", cyber_domain:"open_internet_governance", region:"NAMER",
+  { id:"CSE-002", cyber_domain:"open_internet_governance", region:"NAMER",
     internet_splinternet_progression:0.10, national_internet_firewall_density:0.08,
     DNS_sovereignty_erosion:0.12, undersea_cable_geopolitical_vulnerability:0.10,
     cloud_infrastructure_foreign_dependency:0.12, data_localization_fragmentation:0.08,
@@ -25,7 +25,7 @@ const MOCK_ENTITIES = [
     internet_governance_capture:0.10, election_infrastructure_cyber_risk:0.10,
     digital_sovereignty_deficit_index:0.10 },
   // CSE-003: high, undersea_cable_crisis (ucgv>=0.70 AND cifd>=0.65)
-  { entity_id:"CSE-003", cyber_domain:"undersea_cable_infrastructure", region:"EMEA",
+  { id:"CSE-003", cyber_domain:"undersea_cable_infrastructure", region:"EMEA",
     internet_splinternet_progression:0.42, national_internet_firewall_density:0.40,
     DNS_sovereignty_erosion:0.38, undersea_cable_geopolitical_vulnerability:0.78,
     cloud_infrastructure_foreign_dependency:0.72, data_localization_fragmentation:0.42,
@@ -36,7 +36,7 @@ const MOCK_ENTITIES = [
     internet_governance_capture:0.40, election_infrastructure_cyber_risk:0.42,
     digital_sovereignty_deficit_index:0.45 },
   // CSE-004: low, none
-  { entity_id:"CSE-004", cyber_domain:"digital_resilience", region:"LATAM",
+  { id:"CSE-004", cyber_domain:"digital_resilience", region:"LATAM",
     internet_splinternet_progression:0.12, national_internet_firewall_density:0.10,
     DNS_sovereignty_erosion:0.08, undersea_cable_geopolitical_vulnerability:0.12,
     cloud_infrastructure_foreign_dependency:0.10, data_localization_fragmentation:0.10,
@@ -47,7 +47,7 @@ const MOCK_ENTITIES = [
     internet_governance_capture:0.08, election_infrastructure_cyber_risk:0.10,
     digital_sovereignty_deficit_index:0.12 },
   // CSE-005: critical, cyber_weapons_proliferation (zd>=0.70 AND ai>=0.65; isp<0.70)
-  { entity_id:"CSE-005", cyber_domain:"cyber_weapons_ecosystem", region:"MEA",
+  { id:"CSE-005", cyber_domain:"cyber_weapons_ecosystem", region:"MEA",
     internet_splinternet_progression:0.55, national_internet_firewall_density:0.60,
     DNS_sovereignty_erosion:0.50, undersea_cable_geopolitical_vulnerability:0.58,
     cloud_infrastructure_foreign_dependency:0.60, data_localization_fragmentation:0.55,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
     internet_governance_capture:0.68, election_infrastructure_cyber_risk:0.65,
     digital_sovereignty_deficit_index:0.72 },
   // CSE-006: moderate, none
-  { entity_id:"CSE-006", cyber_domain:"data_sovereignty", region:"EMEA",
+  { id:"CSE-006", cyber_domain:"data_sovereignty", region:"EMEA",
     internet_splinternet_progression:0.28, national_internet_firewall_density:0.30,
     DNS_sovereignty_erosion:0.25, undersea_cable_geopolitical_vulnerability:0.28,
     cloud_infrastructure_foreign_dependency:0.30, data_localization_fragmentation:0.32,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
     internet_governance_capture:0.30, election_infrastructure_cyber_risk:0.28,
     digital_sovereignty_deficit_index:0.32 },
   // CSE-007: high, internet_shutdown_authoritarianism (iswf>=0.70 AND nifd>=0.65; isp<0.70)
-  { entity_id:"CSE-007", cyber_domain:"internet_control_authoritarianism", region:"APAC",
+  { id:"CSE-007", cyber_domain:"internet_control_authoritarianism", region:"APAC",
     internet_splinternet_progression:0.50, national_internet_firewall_density:0.75,
     DNS_sovereignty_erosion:0.48, undersea_cable_geopolitical_vulnerability:0.42,
     cloud_infrastructure_foreign_dependency:0.45, data_localization_fragmentation:0.48,
@@ -80,7 +80,7 @@ const MOCK_ENTITIES = [
     internet_governance_capture:0.48, election_infrastructure_cyber_risk:0.50,
     digital_sovereignty_deficit_index:0.50 },
   // CSE-008: critical, supply_chain_cyber_poisoning (scsp>=0.70 AND bgp>=0.65; isp<0.70, ucgv<0.70, zd<0.70, iswf<0.70)
-  { entity_id:"CSE-008", cyber_domain:"supply_chain_security", region:"NAMER",
+  { id:"CSE-008", cyber_domain:"supply_chain_security", region:"NAMER",
     internet_splinternet_progression:0.60, national_internet_firewall_density:0.58,
     DNS_sovereignty_erosion:0.55, undersea_cable_geopolitical_vulnerability:0.60,
     cloud_infrastructure_foreign_dependency:0.62, data_localization_fragmentation:0.58,
@@ -156,7 +156,7 @@ export async function GET() {
       const comp = compositeScore(frag, infra, atk, gov);
       const pat = cyberPattern(e), risk = riskLevel(comp);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         cyber_domain: e.cyber_domain,
         region: e.region,
         fragmentation_score: frag,

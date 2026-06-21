@@ -6,7 +6,7 @@ const MOCK_ENTITIES = [
   // total_employee_surveillance: employee_monitoring_intensity>0.85 AND biometric_workplace_data>0.80
   // composite >=60 → critical
   {
-    entity_id: "CSE-001", industry_type: "Tech_Corp", region: "USA",
+    id: "CSE-001", industry_type: "Tech_Corp", region: "USA",
     employee_monitoring_intensity: 0.92,
     productivity_scoring_opacity: 0.78,
     biometric_workplace_data: 0.88,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   // CSE-002 — Logistics, EU → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "CSE-002", industry_type: "Logistics", region: "EU",
+    id: "CSE-002", industry_type: "Logistics", region: "EU",
     employee_monitoring_intensity: 0.12,
     productivity_scoring_opacity: 0.15,
     biometric_workplace_data: 0.10,
@@ -52,7 +52,7 @@ const MOCK_ENTITIES = [
   // employee_monitoring_intensity<=0.85 to avoid total_employee_surveillance
   // composite >=60 → critical
   {
-    entity_id: "CSE-003", industry_type: "Warehouse_Ops", region: "UK",
+    id: "CSE-003", industry_type: "Warehouse_Ops", region: "UK",
     employee_monitoring_intensity: 0.80,
     productivity_scoring_opacity: 0.88,
     biometric_workplace_data: 0.72,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   // CSE-004 — Retail, Canada → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "CSE-004", industry_type: "Retail", region: "Canada",
+    id: "CSE-004", industry_type: "Retail", region: "Canada",
     employee_monitoring_intensity: 0.15,
     productivity_scoring_opacity: 0.18,
     biometric_workplace_data: 0.12,
@@ -98,7 +98,7 @@ const MOCK_ENTITIES = [
   // employee_monitoring_intensity<=0.85 and algorithmic_management_control<=0.85 to avoid prior patterns
   // composite >=60 → critical
   {
-    entity_id: "CSE-005", industry_type: "AdTech_Platform", region: "USA",
+    id: "CSE-005", industry_type: "AdTech_Platform", region: "USA",
     employee_monitoring_intensity: 0.78,
     productivity_scoring_opacity: 0.70,
     biometric_workplace_data: 0.72,
@@ -122,7 +122,7 @@ const MOCK_ENTITIES = [
   // no prior patterns must trigger
   // composite >=40 and <60 → high
   {
-    entity_id: "CSE-006", industry_type: "Gig_Economy", region: "Germany",
+    id: "CSE-006", industry_type: "Gig_Economy", region: "Germany",
     employee_monitoring_intensity: 0.45,
     productivity_scoring_opacity: 0.50,
     biometric_workplace_data: 0.40,
@@ -146,7 +146,7 @@ const MOCK_ENTITIES = [
   // no prior patterns must trigger
   // composite >=40 and <60 → high
   {
-    entity_id: "CSE-007", industry_type: "HealthInsurance", region: "France",
+    id: "CSE-007", industry_type: "HealthInsurance", region: "France",
     employee_monitoring_intensity: 0.42,
     productivity_scoring_opacity: 0.48,
     biometric_workplace_data: 0.38,
@@ -168,7 +168,7 @@ const MOCK_ENTITIES = [
   // CSE-008 — Finance_Corp, Global → moderate, none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "CSE-008", industry_type: "Finance_Corp", region: "Global",
+    id: "CSE-008", industry_type: "Finance_Corp", region: "Global",
     employee_monitoring_intensity: 0.35,
     productivity_scoring_opacity: 0.38,
     biometric_workplace_data: 0.30,
@@ -287,7 +287,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         industry_type:                  e.industry_type,
         region:                         e.region,
         monitoring_score:               mon,

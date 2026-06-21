@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface GeneticEntity {
-  entity_id: string;
+  id: string;
   data_type: string;
   region: string;
   consent_score: number;
@@ -170,7 +170,7 @@ function DetailModal({ entity, onClose }: { entity: GeneticEntity; onClose: () =
           <GaugeRing score={entity.composite_score} label="" color={ringColor} />
           <div className="flex-1 min-w-0">
             <h2 className="text-white font-bold text-lg truncate">
-              🧬 {entity.entity_id}
+              🧬 {entity.id}
             </h2>
             <p className="text-slate-400 text-sm">{entity.data_type.replace(/_/g, " ")} · {entity.region}</p>
             <div className="flex gap-2 mt-1 flex-wrap">
@@ -285,7 +285,7 @@ function EntityCard({ entity, onClick }: { entity: GeneticEntity; onClick: () =>
         <GaugeRing score={entity.composite_score} label="" color={ringColor} />
         <div className="flex-1 min-w-0">
           <div className="text-white font-semibold truncate">
-            🧬 {entity.entity_id}
+            🧬 {entity.id}
           </div>
           <div className="text-slate-400 text-xs">{entity.data_type.replace(/_/g, " ")} · {entity.region}</div>
           <div className="flex gap-2 mt-1 flex-wrap">
@@ -488,7 +488,7 @@ export default function GeneticPrivacyEnginePage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredEntities.map((e) => (
-              <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+              <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
             ))}
           </div>
         )}

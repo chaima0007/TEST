@@ -22,7 +22,7 @@ function GaugeRing({ value, max = 100 }: { value: number; max?: number }) {
 }
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -119,10 +119,10 @@ export default function Page() {
       {/* Entity grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
         {filtered.map(e => (
-          <button key={e.entity_id} onClick={() => { setSelected(e); setTab(0); }}
+          <button key={e.id} onClick={() => { setSelected(e); setTab(0); }}
             className={`text-left border rounded-xl p-4 transition-all hover:scale-[1.01] ${RB[e.risk_level]}`}>
             <div className="flex justify-between items-start mb-2">
-              <span className="text-xs font-mono text-slate-500">{e.entity_id}</span>
+              <span className="text-xs font-mono text-slate-500">{e.id}</span>
               <span className={`text-xs font-semibold uppercase ${RC[e.risk_level]}`}>{e.risk_level}</span>
             </div>
             <p className="font-semibold text-sm text-slate-100 line-clamp-2 mb-2">{e.name}</p>

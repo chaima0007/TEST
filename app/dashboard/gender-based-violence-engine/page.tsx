@@ -18,7 +18,7 @@ function GaugeRing({ score, color }: { score: number; color: string }) {
   );
 }
 
-interface Entity { entity_id: string; name: string; country: string; composite_score: number; risk_level: string; primary_pattern: string; key_signals: string[]; [key: string]: unknown; }
+interface Entity { id: string; name: string; country: string; composite_score: number; risk_level: string; primary_pattern: string; key_signals: string[]; [key: string]: unknown; }
 interface DashData { agent?: string; total_entities?: number; avg_composite?: number; confidence_score?: number; risk_distribution?: Record<string,number>; avg_estimated_gender_based_violence_index?: number; entities?: Entity[]; [key: string]: unknown; }
 
 export default function DashboardPage() {
@@ -92,12 +92,12 @@ export default function DashboardPage() {
       {/* Entity grid */}
       <div className="grid gap-4 md:grid-cols-2">
         {filtered.map(e => (
-          <div key={e.entity_id} onClick={() => { setSelected(e); setTab(0); }}
+          <div key={e.id} onClick={() => { setSelected(e); setTab(0); }}
             className={`cursor-pointer rounded-xl border p-4 transition-all hover:scale-[1.01] ${RB[e.risk_level] ?? "border-slate-700 bg-slate-900"}`}>
             <div className="flex items-start gap-4">
               <GaugeRing score={e.composite_score} color={ACCENT} />
               <div className="flex-1 min-w-0">
-                <p className="text-xs text-slate-400 mb-1">{e.entity_id} · {e.country}</p>
+                <p className="text-xs text-slate-400 mb-1">{e.id} · {e.country}</p>
                 <p className="font-semibold text-sm leading-snug line-clamp-2">{e.name}</p>
                 <div className="flex items-center gap-2 mt-2">
                   <span className={`text-xs font-bold uppercase ${RC[e.risk_level]}`}>{e.risk_level}</span>
@@ -117,7 +117,7 @@ export default function DashboardPage() {
             <div className="p-6 border-b border-slate-800">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-xs text-slate-400 mb-1">{selected.entity_id} · {selected.country}</p>
+                  <p className="text-xs text-slate-400 mb-1">{selected.id} · {selected.country}</p>
                   <h2 className="text-lg font-bold leading-snug">{selected.name}</h2>
                 </div>
                 <button onClick={() => setSelected(null)} className="text-slate-400 hover:text-white text-xl flex-shrink-0">✕</button>
@@ -159,7 +159,7 @@ export default function DashboardPage() {
               {tab === 2 && (
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between"><span className="text-slate-400">Dernière mise à jour</span><span>{selected.last_updated as string}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">ID Entité</span><span className="font-mono">{selected.entity_id}</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">ID Entité</span><span className="font-mono">{selected.id}</span></div>
                   <div className="flex justify-between"><span className="text-slate-400">Pays/Région</span><span>{selected.country}</span></div>
                 </div>
               )}

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type Entity = {
-  entity_id: string;
+  id: string;
   fusion_program: string;
   region: string;
   dominance_score: number;
@@ -136,7 +136,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
             <div className="flex items-center gap-3 mb-1">
               <GaugeRing value={entity.composite_score} label="" color={ringColor} />
               <div>
-                <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+                <span className="text-lg font-bold text-white">{entity.id}</span>
                 <div className="flex gap-2 mt-1 flex-wrap">
                   <span className="text-amber-400 text-xs">{entity.region}</span>
                   <span className="text-slate-500 text-xs">{entity.fusion_program.replace(/_/g, " ")}</span>
@@ -243,7 +243,7 @@ function EntityCard({ entity, onClick }: { entity: Entity; onClick: () => void }
       <div className="flex items-center gap-3 mb-3">
         <GaugeRing value={entity.composite_score} label="" color={ringColor} />
         <div className="flex-1 min-w-0">
-          <div className="text-white font-bold truncate">{entity.entity_id}</div>
+          <div className="text-white font-bold truncate">{entity.id}</div>
           <div className="text-slate-400 text-xs">{entity.fusion_program.replace(/_/g, " ")} · {entity.region}</div>
           <div className="mt-1">
             <span className={`px-2 py-0.5 rounded border text-xs font-medium ${RISK_BADGE[entity.risk_level] ?? "bg-slate-700 text-slate-300 border-slate-600"}`}>
@@ -383,7 +383,7 @@ export default function NuclearFusionEngineDashboard() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map(e => (
-            <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+            <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
           ))}
         </div>
       )}

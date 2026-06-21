@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // MAI-001 critical / autonomous_kill_chain (alwd>=0.70, hcei>=0.65)
-  { entity_id:"MAI-001", military_domain:"drone_warfare", region:"EMEA",
+  { id:"MAI-001", military_domain:"drone_warfare", region:"EMEA",
     autonomous_lethal_weapon_deployment:0.85, AI_command_authority_level:0.80, algorithmic_targeting_autonomy:0.78,
     human_control_erosion_index:0.75, AI_arms_race_intensity:0.70, drone_swarm_capability:0.72,
     cyber_warfare_AI_integration:0.65, AI_escalation_risk:0.75, military_AI_regulatory_vacuum:0.80,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     lethal_autonomous_weapon_proliferation:0.72, military_AI_accountability_gap:0.78,
     AI_military_capability_gap:0.60, AI_strategic_surprise_risk:0.68, autonomous_warfare_threshold_lowering:0.75 },
   // MAI-002 low / none
-  { entity_id:"MAI-002", military_domain:"logistics_support", region:"NAMER",
+  { id:"MAI-002", military_domain:"logistics_support", region:"NAMER",
     autonomous_lethal_weapon_deployment:0.10, AI_command_authority_level:0.08, algorithmic_targeting_autonomy:0.12,
     human_control_erosion_index:0.10, AI_arms_race_intensity:0.12, drone_swarm_capability:0.08,
     cyber_warfare_AI_integration:0.10, AI_escalation_risk:0.10, military_AI_regulatory_vacuum:0.10,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     lethal_autonomous_weapon_proliferation:0.10, military_AI_accountability_gap:0.08,
     AI_military_capability_gap:0.10, AI_strategic_surprise_risk:0.08, autonomous_warfare_threshold_lowering:0.10 },
   // MAI-003 high / AI_escalation_cascade (aer>=0.70, assr>=0.65)
-  { entity_id:"MAI-003", military_domain:"cyber_operations", region:"APAC",
+  { id:"MAI-003", military_domain:"cyber_operations", region:"APAC",
     autonomous_lethal_weapon_deployment:0.42, AI_command_authority_level:0.40, algorithmic_targeting_autonomy:0.45,
     human_control_erosion_index:0.38, AI_arms_race_intensity:0.48, drone_swarm_capability:0.42,
     cyber_warfare_AI_integration:0.55, AI_escalation_risk:0.75, military_AI_regulatory_vacuum:0.45,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     lethal_autonomous_weapon_proliferation:0.45, military_AI_accountability_gap:0.42,
     AI_military_capability_gap:0.45, AI_strategic_surprise_risk:0.68, autonomous_warfare_threshold_lowering:0.60 },
   // MAI-004 low / none
-  { entity_id:"MAI-004", military_domain:"medical_triage_AI", region:"LATAM",
+  { id:"MAI-004", military_domain:"medical_triage_AI", region:"LATAM",
     autonomous_lethal_weapon_deployment:0.08, AI_command_authority_level:0.12, algorithmic_targeting_autonomy:0.10,
     human_control_erosion_index:0.08, AI_arms_race_intensity:0.10, drone_swarm_capability:0.12,
     cyber_warfare_AI_integration:0.08, AI_escalation_risk:0.12, military_AI_regulatory_vacuum:0.10,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     lethal_autonomous_weapon_proliferation:0.08, military_AI_accountability_gap:0.08,
     AI_military_capability_gap:0.10, AI_strategic_surprise_risk:0.10, autonomous_warfare_threshold_lowering:0.08 },
   // MAI-005 critical / lethal_AI_proliferation (lawp>=0.70, aari>=0.65; aer<0.70 to avoid AI_escalation_cascade)
-  { entity_id:"MAI-005", military_domain:"autonomous_weapons_export", region:"MEA",
+  { id:"MAI-005", military_domain:"autonomous_weapons_export", region:"MEA",
     autonomous_lethal_weapon_deployment:0.75, AI_command_authority_level:0.70, algorithmic_targeting_autonomy:0.72,
     human_control_erosion_index:0.60, AI_arms_race_intensity:0.78, drone_swarm_capability:0.75,
     cyber_warfare_AI_integration:0.68, AI_escalation_risk:0.60, military_AI_regulatory_vacuum:0.70,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     lethal_autonomous_weapon_proliferation:0.82, military_AI_accountability_gap:0.68,
     AI_military_capability_gap:0.65, AI_strategic_surprise_risk:0.62, autonomous_warfare_threshold_lowering:0.68 },
   // MAI-006 moderate / none
-  { entity_id:"MAI-006", military_domain:"surveillance_AI", region:"EMEA",
+  { id:"MAI-006", military_domain:"surveillance_AI", region:"EMEA",
     autonomous_lethal_weapon_deployment:0.30, AI_command_authority_level:0.32, algorithmic_targeting_autonomy:0.28,
     human_control_erosion_index:0.25, AI_arms_race_intensity:0.30, drone_swarm_capability:0.28,
     cyber_warfare_AI_integration:0.32, AI_escalation_risk:0.28, military_AI_regulatory_vacuum:0.28,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     lethal_autonomous_weapon_proliferation:0.32, military_AI_accountability_gap:0.30,
     AI_military_capability_gap:0.28, AI_strategic_surprise_risk:0.25, autonomous_warfare_threshold_lowering:0.30 },
   // MAI-007 high / governance_collapse (marv>=0.70, maag>=0.65)
-  { entity_id:"MAI-007", military_domain:"command_control_AI", region:"NAMER",
+  { id:"MAI-007", military_domain:"command_control_AI", region:"NAMER",
     autonomous_lethal_weapon_deployment:0.42, AI_command_authority_level:0.38, algorithmic_targeting_autonomy:0.40,
     human_control_erosion_index:0.35, AI_arms_race_intensity:0.42, drone_swarm_capability:0.40,
     cyber_warfare_AI_integration:0.38, AI_escalation_risk:0.40, military_AI_regulatory_vacuum:0.78,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     lethal_autonomous_weapon_proliferation:0.45, military_AI_accountability_gap:0.72,
     AI_military_capability_gap:0.38, AI_strategic_surprise_risk:0.42, autonomous_warfare_threshold_lowering:0.38 },
   // MAI-008 critical / nuclear_AI_entanglement (anir>=0.70, ata>=0.72; hcei<0.65 to avoid autonomous_kill_chain)
-  { entity_id:"MAI-008", military_domain:"nuclear_command_AI", region:"APAC",
+  { id:"MAI-008", military_domain:"nuclear_command_AI", region:"APAC",
     autonomous_lethal_weapon_deployment:0.80, AI_command_authority_level:0.75, algorithmic_targeting_autonomy:0.72,
     human_control_erosion_index:0.55, AI_arms_race_intensity:0.52, drone_swarm_capability:0.65,
     cyber_warfare_AI_integration:0.68, AI_escalation_risk:0.60, military_AI_regulatory_vacuum:0.65,
@@ -132,7 +132,7 @@ export async function GET() {
       const comp = compositeScore(aut, esc, pro, gov);
       const pat = militaryPattern(e), risk = riskLevel(comp);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         military_domain: e.military_domain,
         region: e.region,
         autonomy_score: aut,

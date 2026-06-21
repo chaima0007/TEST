@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // PEE-001 — critical, algorithmic_wage_theft dominant
   {
-    entity_id: "PEE-001", platform_sector: "ride_hailing", region: "NOAM",
+    id: "PEE-001", platform_sector: "ride_hailing", region: "NOAM",
     wage_theft_index: 0.92, algorithmic_management_intensity: 0.88,
     benefit_denial_rate: 0.80, misclassification_prevalence: 0.78,
     platform_market_concentration: 0.70, worker_bargaining_power: 0.15,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
   },
   // PEE-002 — critical, surveillance_control_dystopia (surveillance > 0.7)
   {
-    entity_id: "PEE-002", platform_sector: "food_delivery", region: "EMEA",
+    id: "PEE-002", platform_sector: "food_delivery", region: "EMEA",
     wage_theft_index: 0.78, algorithmic_management_intensity: 0.72,
     benefit_denial_rate: 0.90, misclassification_prevalence: 0.82,
     platform_market_concentration: 0.68, worker_bargaining_power: 0.12,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   },
   // PEE-003 — critical, misclassification_fraud dominant
   {
-    entity_id: "PEE-003", platform_sector: "freelance_marketplace", region: "APAC",
+    id: "PEE-003", platform_sector: "freelance_marketplace", region: "APAC",
     wage_theft_index: 0.75, algorithmic_management_intensity: 0.70,
     benefit_denial_rate: 0.72, misclassification_prevalence: 0.95,
     platform_market_concentration: 0.65, worker_bargaining_power: 0.10,
@@ -45,7 +45,7 @@ const MOCK_ENTITIES = [
   },
   // PEE-004 — high, platform_monopoly_capture dominant
   {
-    entity_id: "PEE-004", platform_sector: "cloud_labor", region: "LATAM",
+    id: "PEE-004", platform_sector: "cloud_labor", region: "LATAM",
     wage_theft_index: 0.50, algorithmic_management_intensity: 0.48,
     benefit_denial_rate: 0.52, misclassification_prevalence: 0.50,
     platform_market_concentration: 0.65, worker_bargaining_power: 0.28,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
   },
   // PEE-005 — high, surveillance_control_dystopia (surveillance > 0.7)
   {
-    entity_id: "PEE-005", platform_sector: "domestic_services", region: "SSA",
+    id: "PEE-005", platform_sector: "domestic_services", region: "SSA",
     wage_theft_index: 0.58, algorithmic_management_intensity: 0.55,
     benefit_denial_rate: 0.52, misclassification_prevalence: 0.50,
     platform_market_concentration: 0.48, worker_bargaining_power: 0.22,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   },
   // PEE-006 — moderate, benefits_denial_systematic dominant
   {
-    entity_id: "PEE-006", platform_sector: "microtask", region: "EMEA",
+    id: "PEE-006", platform_sector: "microtask", region: "EMEA",
     wage_theft_index: 0.28, algorithmic_management_intensity: 0.25,
     benefit_denial_rate: 0.55, misclassification_prevalence: 0.28,
     platform_market_concentration: 0.30, worker_bargaining_power: 0.42,
@@ -84,7 +84,7 @@ const MOCK_ENTITIES = [
   },
   // PEE-007 — low
   {
-    entity_id: "PEE-007", platform_sector: "professional_services", region: "NOAM",
+    id: "PEE-007", platform_sector: "professional_services", region: "NOAM",
     wage_theft_index: 0.10, algorithmic_management_intensity: 0.12,
     benefit_denial_rate: 0.12, misclassification_prevalence: 0.10,
     platform_market_concentration: 0.15, worker_bargaining_power: 0.75,
@@ -97,7 +97,7 @@ const MOCK_ENTITIES = [
   },
   // PEE-008 — low
   {
-    entity_id: "PEE-008", platform_sector: "e_commerce_seller", region: "APAC",
+    id: "PEE-008", platform_sector: "e_commerce_seller", region: "APAC",
     wage_theft_index: 0.08, algorithmic_management_intensity: 0.10,
     benefit_denial_rate: 0.10, misclassification_prevalence: 0.08,
     platform_market_concentration: 0.18, worker_bargaining_power: 0.70,
@@ -194,7 +194,7 @@ export async function GET() {
       const act = action(risk);
       const sig = signal(risk);
       return {
-        entity_id:              e.entity_id,
+        id:              e.entity_id,
         platform_sector:        e.platform_sector,
         region:                 e.region,
         exploitation_score:     exp,

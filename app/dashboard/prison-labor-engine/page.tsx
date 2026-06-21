@@ -6,7 +6,7 @@ const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-
 const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
 
 interface PrisonLaborEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -341,7 +341,7 @@ export default function PrisonLaborEnginePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filtered.map((entity) => (
-                <EntityCard key={entity.entity_id} entity={entity} onClick={setSelected} />
+                <EntityCard key={entity.id} entity={entity} onClick={setSelected} />
               ))}
               {filtered.length === 0 && (
                 <div className="col-span-full text-center py-12 text-gray-400 text-sm">

@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "MIG-001",
+      id: "MIG-001",
       name: "Îles Maldives",
       country: "Maldives",
       sector: "Réfugiés Climatiques Insulaires",
@@ -43,7 +43,7 @@ function getMockData() {
       last_updated: "2026-06-18",
     },
     {
-      entity_id: "MIG-002",
+      id: "MIG-002",
       name: "Delta du Bangladesh",
       country: "Bangladesh",
       sector: "Migration Côtière",
@@ -59,7 +59,7 @@ function getMockData() {
       last_updated: "2026-06-17",
     },
     {
-      entity_id: "MIG-003",
+      id: "MIG-003",
       name: "Sahel Subsaharien",
       country: "Soudan",
       sector: "Migration Aride & Famine",
@@ -75,7 +75,7 @@ function getMockData() {
       last_updated: "2026-06-16",
     },
     {
-      entity_id: "MIG-004",
+      id: "MIG-004",
       name: "Corne de l'Afrique",
       country: "Somalie",
       sector: "Déplacement & Sécheresse",
@@ -91,7 +91,7 @@ function getMockData() {
       last_updated: "2026-06-15",
     },
     {
-      entity_id: "MIG-005",
+      id: "MIG-005",
       name: "Amazonie Brésilienne",
       country: "Brésil",
       sector: "Migration Forêt Tropicale",
@@ -107,7 +107,7 @@ function getMockData() {
       last_updated: "2026-06-14",
     },
     {
-      entity_id: "MIG-006",
+      id: "MIG-006",
       name: "Pacifique Central Kiribati",
       country: "Kiribati",
       sector: "Submersion Insulaire",
@@ -123,7 +123,7 @@ function getMockData() {
       last_updated: "2026-06-13",
     },
     {
-      entity_id: "MIG-007",
+      id: "MIG-007",
       name: "Côte Méditerranéenne Maroc",
       country: "Maroc",
       sector: "Migration Climatique Régionale",
@@ -139,7 +139,7 @@ function getMockData() {
       last_updated: "2026-06-12",
     },
     {
-      entity_id: "MIG-008",
+      id: "MIG-008",
       name: "Pays-Bas Adaptation Côtière",
       country: "Pays-Bas",
       sector: "Génie Civil & Adaptation",

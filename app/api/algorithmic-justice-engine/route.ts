@@ -15,7 +15,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEntities = [
   {
-    entity_id: "AJE-001",
+    id: "AJE-001",
     justice_domain: "criminal_sentencing",
     region: "NAMER",
     recidivism_AI_racial_bias_index: 0.85,
@@ -48,7 +48,7 @@ const mockEntities = [
     signal: "🔴 Injustice algorithmique systémique — biais judiciaire IA critique",
   },
   {
-    entity_id: "AJE-002",
+    id: "AJE-002",
     justice_domain: "parole_review",
     region: "EMEA",
     recidivism_AI_racial_bias_index: 0.08,
@@ -81,7 +81,7 @@ const mockEntities = [
     signal: "🟢 Biais algorithmique judiciaire contenu",
   },
   {
-    entity_id: "AJE-003",
+    id: "AJE-003",
     justice_domain: "court_decision_systems",
     region: "APAC",
     recidivism_AI_racial_bias_index: 0.40,
@@ -114,7 +114,7 @@ const mockEntities = [
     signal: "🟠 Biais judiciaire IA majeur détecté",
   },
   {
-    entity_id: "AJE-004",
+    id: "AJE-004",
     justice_domain: "immigration_enforcement",
     region: "LATAM",
     recidivism_AI_racial_bias_index: 0.07,
@@ -147,7 +147,7 @@ const mockEntities = [
     signal: "🟢 Biais algorithmique judiciaire contenu",
   },
   {
-    entity_id: "AJE-005",
+    id: "AJE-005",
     justice_domain: "predictive_policing",
     region: "NAMER",
     recidivism_AI_racial_bias_index: 0.70,
@@ -180,7 +180,7 @@ const mockEntities = [
     signal: "🔴 Injustice algorithmique systémique — biais judiciaire IA critique",
   },
   {
-    entity_id: "AJE-006",
+    id: "AJE-006",
     justice_domain: "bail_assessment",
     region: "EMEA",
     recidivism_AI_racial_bias_index: 0.28,
@@ -213,7 +213,7 @@ const mockEntities = [
     signal: "🟡 Discrimination algorithmique active",
   },
   {
-    entity_id: "AJE-007",
+    id: "AJE-007",
     justice_domain: "public_defense_allocation",
     region: "LATAM",
     recidivism_AI_racial_bias_index: 0.40,
@@ -246,7 +246,7 @@ const mockEntities = [
     signal: "🟠 Biais judiciaire IA majeur détecté",
   },
   {
-    entity_id: "AJE-008",
+    id: "AJE-008",
     justice_domain: "facial_recognition_courts",
     region: "APAC",
     recidivism_AI_racial_bias_index: 0.75,

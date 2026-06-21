@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
   // cryptographic_vulnerability≥0.70 AND harvest_now_decrypt_later_risk≥0.65 → cryptographic_apocalypse
   // composite≥60 → critical
   {
-    entity_id: "QCD-001", sector: "financial_services", region: "EMEA",
+    id: "QCD-001", sector: "financial_services", region: "EMEA",
     cryptographic_vulnerability: 0.88,
     quantum_readiness_gap: 0.80,
     post_quantum_adoption_rate: 0.10,
@@ -33,7 +33,7 @@ const MOCK_ENTITIES = [
   // QCD-002 — APAC, healthcare → low, none
   // composite<20 → low; no pattern triggers
   {
-    entity_id: "QCD-002", sector: "healthcare", region: "APAC",
+    id: "QCD-002", sector: "healthcare", region: "APAC",
     cryptographic_vulnerability: 0.08,
     quantum_readiness_gap: 0.10,
     post_quantum_adoption_rate: 0.90,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
   // cryptographic_vulnerability=0.62<0.70 OR harvest_now_decrypt_later_risk<0.65 → skip cryptographic_apocalypse
   // composite in [40,60) → high
   {
-    entity_id: "QCD-003", sector: "defense", region: "NOAM",
+    id: "QCD-003", sector: "defense", region: "NOAM",
     cryptographic_vulnerability: 0.62,
     quantum_readiness_gap: 0.50,
     post_quantum_adoption_rate: 0.42,
@@ -79,7 +79,7 @@ const MOCK_ENTITIES = [
   // QCD-004 — LATAM, telecommunications → low, none
   // composite<20 → low; no pattern triggers
   {
-    entity_id: "QCD-004", sector: "telecommunications", region: "LATAM",
+    id: "QCD-004", sector: "telecommunications", region: "LATAM",
     cryptographic_vulnerability: 0.10,
     quantum_readiness_gap: 0.12,
     post_quantum_adoption_rate: 0.88,
@@ -104,7 +104,7 @@ const MOCK_ENTITIES = [
   // adversarial_quantum_capability=0.60<0.70 → skip quantum_surprise_attack
   // composite≥60 → critical
   {
-    entity_id: "QCD-005", sector: "energy_grid", region: "MEA",
+    id: "QCD-005", sector: "energy_grid", region: "MEA",
     cryptographic_vulnerability: 0.55,
     quantum_readiness_gap: 0.82,
     post_quantum_adoption_rate: 0.12,
@@ -126,7 +126,7 @@ const MOCK_ENTITIES = [
   // QCD-006 — EMEA, logistics → moderate, none
   // composite in [20,40) → moderate; no pattern triggers
   {
-    entity_id: "QCD-006", sector: "logistics", region: "EMEA",
+    id: "QCD-006", sector: "logistics", region: "EMEA",
     cryptographic_vulnerability: 0.30,
     quantum_readiness_gap: 0.35,
     post_quantum_adoption_rate: 0.60,
@@ -152,7 +152,7 @@ const MOCK_ENTITIES = [
   // critical_infrastructure_vulnerability=0.55<0.70 → skip infrastructure_quantum_shock
   // composite in [40,60) → high
   {
-    entity_id: "QCD-007", sector: "banking", region: "APAC",
+    id: "QCD-007", sector: "banking", region: "APAC",
     cryptographic_vulnerability: 0.55,
     quantum_readiness_gap: 0.52,
     post_quantum_adoption_rate: 0.38,
@@ -179,7 +179,7 @@ const MOCK_ENTITIES = [
   // financial_system_exposure=0.55<0.70 → skip financial_system_collapse
   // composite≥60 → critical
   {
-    entity_id: "QCD-008", sector: "government", region: "NOAM",
+    id: "QCD-008", sector: "government", region: "NOAM",
     cryptographic_vulnerability: 0.58,
     quantum_readiness_gap: 0.85,
     post_quantum_adoption_rate: 0.10,
@@ -311,7 +311,7 @@ export async function GET() {
       const sig     = quantumSignal(e, risk, comp);
 
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         region:                         e.region,
         sector:                         e.sector,
         quantum_risk:                   risk,

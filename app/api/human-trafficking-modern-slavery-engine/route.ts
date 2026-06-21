@@ -23,7 +23,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "HTMS-001",
+      id: "HTMS-001",
       name: "Corée du Nord/Travail Forcé État",
       country: "Asie du Nord-Est",
       composite_score: 91.6,
@@ -32,7 +32,7 @@ const MOCK = {
       estimated_human_trafficking_modern_slavery_index: 9.16,
     },
     {
-      entity_id: "HTMS-002",
+      id: "HTMS-002",
       name: "Érythrée/Service National Indéfini",
       country: "Afrique de l'Est",
       composite_score: 86.65,
@@ -41,7 +41,7 @@ const MOCK = {
       estimated_human_trafficking_modern_slavery_index: 8.67,
     },
     {
-      entity_id: "HTMS-003",
+      id: "HTMS-003",
       name: "Thaïlande/Pêche Esclavage En Mer",
       country: "Asie du Sud-Est",
       composite_score: 82.1,
@@ -50,7 +50,7 @@ const MOCK = {
       estimated_human_trafficking_modern_slavery_index: 8.21,
     },
     {
-      entity_id: "HTMS-004",
+      id: "HTMS-004",
       name: "Mauritanie/Esclavage Héréditaire",
       country: "Afrique de l'Ouest",
       composite_score: 80.5,
@@ -59,7 +59,7 @@ const MOCK = {
       estimated_human_trafficking_modern_slavery_index: 8.05,
     },
     {
-      entity_id: "HTMS-005",
+      id: "HTMS-005",
       name: "Inde/Travail Bonded 8M Walk Free",
       country: "Asie du Sud",
       composite_score: 59.6,
@@ -68,7 +68,7 @@ const MOCK = {
       estimated_human_trafficking_modern_slavery_index: 5.96,
     },
     {
-      entity_id: "HTMS-006",
+      id: "HTMS-006",
       name: "Cambodge/Trafic Forcé Centres Arnaques",
       country: "Asie du Sud-Est",
       composite_score: 56.9,
@@ -77,7 +77,7 @@ const MOCK = {
       estimated_human_trafficking_modern_slavery_index: 5.69,
     },
     {
-      entity_id: "HTMS-007",
+      id: "HTMS-007",
       name: "Mexique/Traite Routiers Migratoires",
       country: "Amérique Centrale",
       composite_score: 34.4,
@@ -86,7 +86,7 @@ const MOCK = {
       estimated_human_trafficking_modern_slavery_index: 3.44,
     },
     {
-      entity_id: "HTMS-008",
+      id: "HTMS-008",
       name: "Pays-Bas/Mécanisme National Référence",
       country: "Europe Occidentale",
       composite_score: 4.4,

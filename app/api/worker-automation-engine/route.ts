@@ -19,7 +19,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEntities = [
   {
-    entity_id: "WAE-001",
+    id: "WAE-001",
     sector_type: "manufacturing",
     region: "RUST_BELT",
     displacement_rate: 0.90,
@@ -52,7 +52,7 @@ const mockEntities = [
     signal: "🔴 Crise d'obsolescence massive des travailleurs — intervention d'urgence requise",
   },
   {
-    entity_id: "WAE-002",
+    id: "WAE-002",
     sector_type: "tech_services",
     region: "NORDIC",
     displacement_rate: 0.08,
@@ -85,7 +85,7 @@ const mockEntities = [
     signal: "🟢 Transition emploi sous surveillance — veille préventive maintenue",
   },
   {
-    entity_id: "WAE-003",
+    id: "WAE-003",
     sector_type: "logistics",
     region: "SOUTHEAST_ASIA",
     displacement_rate: 0.75,
@@ -118,7 +118,7 @@ const mockEntities = [
     signal: "🔴 Crise d'obsolescence massive des travailleurs — intervention d'urgence requise",
   },
   {
-    entity_id: "WAE-004",
+    id: "WAE-004",
     sector_type: "public_services",
     region: "WESTERN_EUROPE",
     displacement_rate: 0.06,
@@ -151,7 +151,7 @@ const mockEntities = [
     signal: "🟢 Transition emploi sous surveillance — veille préventive maintenue",
   },
   {
-    entity_id: "WAE-005",
+    id: "WAE-005",
     sector_type: "retail",
     region: "LATIN_AMERICA",
     displacement_rate: 0.78,
@@ -184,7 +184,7 @@ const mockEntities = [
     signal: "🔴 Crise d'obsolescence massive des travailleurs — intervention d'urgence requise",
   },
   {
-    entity_id: "WAE-006",
+    id: "WAE-006",
     sector_type: "finance",
     region: "EMEA",
     displacement_rate: 0.22,
@@ -217,7 +217,7 @@ const mockEntities = [
     signal: "🟡 Vulnérabilité à la transformation de l'emploi — renforcement des protections sociales",
   },
   {
-    entity_id: "WAE-007",
+    id: "WAE-007",
     sector_type: "gig_economy",
     region: "NORTH_AMERICA",
     displacement_rate: 0.45,
@@ -250,7 +250,7 @@ const mockEntities = [
     signal: "🟠 Déplacement par automatisation majeur détecté — requalification accélérée nécessaire",
   },
   {
-    entity_id: "WAE-008",
+    id: "WAE-008",
     sector_type: "agriculture",
     region: "SUB_SAHARAN_AFRICA",
     displacement_rate: 0.35,

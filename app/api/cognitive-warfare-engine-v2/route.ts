@@ -5,7 +5,7 @@ import { sealResponse } from "@/lib/digital-seal";
 // Chaima Mhadbi, Fondatrice, Bruxelles
 
 interface CognitiveWarfareEntity {
-  entity_id: string;
+  id: string;
   operation_type: string;
   region: string;
   disinformation_velocity: number;
@@ -28,7 +28,7 @@ interface CognitiveWarfareEntity {
 }
 
 interface CognitiveWarfareResult {
-  entity_id: string;
+  id: string;
   region: string;
   operation_type: string;
   warfare_risk: string;
@@ -148,7 +148,7 @@ function analyzeEntity(e: CognitiveWarfareEntity): CognitiveWarfareResult {
   const warfare_signal = frenchSignal(warfare_risk, warfare_pattern);
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     region: e.region,
     operation_type: e.operation_type,
     warfare_risk,
@@ -164,7 +164,7 @@ function analyzeEntity(e: CognitiveWarfareEntity): CognitiveWarfareResult {
 
 const ENTITIES: CognitiveWarfareEntity[] = [
   {
-    entity_id: "CGW-001",
+    id: "CGW-001",
     region: "EMEA",
     operation_type: "state_sponsored_operation",
     disinformation_velocity: 0.88,
@@ -186,7 +186,7 @@ const ENTITIES: CognitiveWarfareEntity[] = [
     psychological_operation_reach: 0.86,
   },
   {
-    entity_id: "CGW-002",
+    id: "CGW-002",
     region: "APAC",
     operation_type: "defensive_operation",
     disinformation_velocity: 0.10,
@@ -208,7 +208,7 @@ const ENTITIES: CognitiveWarfareEntity[] = [
     psychological_operation_reach: 0.08,
   },
   {
-    entity_id: "CGW-003",
+    id: "CGW-003",
     region: "NOAM",
     operation_type: "election_interference",
     disinformation_velocity: 0.65,
@@ -230,7 +230,7 @@ const ENTITIES: CognitiveWarfareEntity[] = [
     psychological_operation_reach: 0.65,
   },
   {
-    entity_id: "CGW-004",
+    id: "CGW-004",
     region: "LATAM",
     operation_type: "local_disinfo",
     disinformation_velocity: 0.18,
@@ -252,7 +252,7 @@ const ENTITIES: CognitiveWarfareEntity[] = [
     psychological_operation_reach: 0.15,
   },
   {
-    entity_id: "CGW-005",
+    id: "CGW-005",
     region: "MEA",
     operation_type: "hybrid_warfare",
     disinformation_velocity: 0.80,
@@ -274,7 +274,7 @@ const ENTITIES: CognitiveWarfareEntity[] = [
     psychological_operation_reach: 0.73,
   },
   {
-    entity_id: "CGW-006",
+    id: "CGW-006",
     region: "EMEA",
     operation_type: "commercial_influence",
     disinformation_velocity: 0.35,
@@ -296,7 +296,7 @@ const ENTITIES: CognitiveWarfareEntity[] = [
     psychological_operation_reach: 0.33,
   },
   {
-    entity_id: "CGW-007",
+    id: "CGW-007",
     region: "APAC",
     operation_type: "social_manipulation",
     disinformation_velocity: 0.62,
@@ -318,7 +318,7 @@ const ENTITIES: CognitiveWarfareEntity[] = [
     psychological_operation_reach: 0.60,
   },
   {
-    entity_id: "CGW-008",
+    id: "CGW-008",
     region: "NOAM",
     operation_type: "ai_generated_psyop",
     disinformation_velocity: 0.85,

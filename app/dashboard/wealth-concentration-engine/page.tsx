@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type Entity = {
-  entity_id: string;
+  id: string;
   economic_zone: string;
   region: string;
   concentration_score: number;
@@ -158,7 +158,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
       >
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-white">{entity.id}</span>
             <span className="ml-2 text-amber-400 text-xs">{entity.economic_zone}</span>
             <span className="ml-2 text-slate-500 text-xs">{entity.region}</span>
           </div>
@@ -409,12 +409,12 @@ export default function WealthConcentrationDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map((e) => (
           <div
-            key={e.entity_id}
+            key={e.id}
             onClick={() => setSelected(e)}
             className="bg-slate-900 border border-slate-600/30 rounded-xl p-4 cursor-pointer hover:border-amber-600 transition-colors"
           >
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white">{e.entity_id}</span>
+              <span className="font-bold text-white">{e.id}</span>
               <span className="text-xs text-amber-400/60">{e.region}</span>
             </div>
             <div className="text-xs text-slate-500 mb-2 capitalize">

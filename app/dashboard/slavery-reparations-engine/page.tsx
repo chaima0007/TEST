@@ -6,7 +6,7 @@ const RC: Record<string,string> = { critique:"text-red-400","élevé":"text-oran
 const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","élevé":"border-orange-500/30 bg-orange-500/10",modéré:"border-yellow-500/30 bg-yellow-500/10",faible:"border-emerald-500/30 bg-emerald-500/10" };
 
 interface SREEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -339,7 +339,7 @@ export default function SlaveryReparationsEnginePage() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {entities.map((entity) => (
               <button
-                key={entity.entity_id}
+                key={entity.id}
                 onClick={() => setSelected(entity)}
                 className={`rounded-xl border p-4 text-left transition-all hover:scale-[1.02] ${RB[entity.risk_level] ?? "border-slate-700/40 bg-slate-800/50"}`}
               >

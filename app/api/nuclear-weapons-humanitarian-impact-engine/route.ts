@@ -40,7 +40,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "NWH-001",
+      id: "NWH-001",
       name: "Corée du Nord — Tests NPT, 50+ Ogives Estimées",
       country: "Corée du Nord",
       nuclear_threat_proliferation_severity_score: 95.0,
@@ -54,7 +54,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NWH-002",
+      id: "NWH-002",
       name: "Russie — Menaces Nucléaires Ukraine 2022-24, Retrait New START",
       country: "Russie",
       nuclear_threat_proliferation_severity_score: 92.0,
@@ -68,7 +68,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NWH-003",
+      id: "NWH-003",
       name: "Pakistan — 100+ Ogives, Instabilité Civilo-Militaire",
       country: "Pakistan",
       nuclear_threat_proliferation_severity_score: 88.0,
@@ -82,7 +82,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NWH-004",
+      id: "NWH-004",
       name: "Inde/Pakistan — Tensions Kashmir, Doctrines Nucléaires",
       country: "Inde/Pakistan",
       nuclear_threat_proliferation_severity_score: 85.0,
@@ -96,7 +96,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NWH-005",
+      id: "NWH-005",
       name: "Iran — Enrichissement 60% Uranium, Breakout Capacity",
       country: "Iran",
       nuclear_threat_proliferation_severity_score: 58.0,
@@ -110,7 +110,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NWH-006",
+      id: "NWH-006",
       name: "Israël — Ambiguïté Nucléaire, 90 Ogives Estimées Negev",
       country: "Israël",
       nuclear_threat_proliferation_severity_score: 52.0,
@@ -124,7 +124,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NWH-007",
+      id: "NWH-007",
       name: "Chine — Modernisation Arsenal, Opacité Doctrine",
       country: "Chine",
       nuclear_threat_proliferation_severity_score: 28.0,
@@ -138,7 +138,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NWH-008",
+      id: "NWH-008",
       name: "TPNW — Traité Interdiction Armes Nucléaires 2021, 68 États",
       country: "International",
       nuclear_threat_proliferation_severity_score: 4.0,

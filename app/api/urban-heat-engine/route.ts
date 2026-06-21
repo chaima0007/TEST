@@ -6,7 +6,7 @@ import { sealResponse } from "@/lib/digital-seal";
 // 8 entities covering all 5 heat patterns and all 4 risk levels.
 
 interface UheInput {
-  entity_id: string;
+  id: string;
   city_type: string;
   region: string;
   heat_island_intensity_index: number;
@@ -33,7 +33,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // extreme_heat_mortality_rate≥0.70 AND heat_vulnerable_population_density≥0.65 → lethal_heat_dome
   // composite≥60 → critical
   {
-    entity_id: "UHE-001", city_type: "megacity", region: "APAC",
+    id: "UHE-001", city_type: "megacity", region: "APAC",
     heat_island_intensity_index: 0.80,
     extreme_heat_mortality_rate: 0.82,
     urban_cooling_infrastructure_deficit: 0.65,
@@ -55,7 +55,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // UHE-002 — EMEA, small_city → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "UHE-002", city_type: "small_city", region: "EMEA",
+    id: "UHE-002", city_type: "small_city", region: "EMEA",
     heat_island_intensity_index: 0.10,
     extreme_heat_mortality_rate: 0.08,
     urban_cooling_infrastructure_deficit: 0.10,
@@ -79,7 +79,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // extreme_heat_mortality_rate=0.50<0.70 → avoids lethal_heat_dome
   // composite in [40,60) → high
   {
-    entity_id: "UHE-003", city_type: "industrial_city", region: "MEA",
+    id: "UHE-003", city_type: "industrial_city", region: "MEA",
     heat_island_intensity_index: 0.55,
     extreme_heat_mortality_rate: 0.50,
     urban_cooling_infrastructure_deficit: 0.78,
@@ -101,7 +101,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // UHE-004 — LATAM, coastal_city → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "UHE-004", city_type: "coastal_city", region: "LATAM",
+    id: "UHE-004", city_type: "coastal_city", region: "LATAM",
     heat_island_intensity_index: 0.08,
     extreme_heat_mortality_rate: 0.10,
     urban_cooling_infrastructure_deficit: 0.10,
@@ -126,7 +126,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // urban_cooling_infrastructure_deficit=0.65<0.70 → avoids cooling_infrastructure_collapse
   // composite≥60 → critical
   {
-    entity_id: "UHE-005", city_type: "informal_settlement", region: "LATAM",
+    id: "UHE-005", city_type: "informal_settlement", region: "LATAM",
     heat_island_intensity_index: 0.72,
     extreme_heat_mortality_rate: 0.60,
     urban_cooling_infrastructure_deficit: 0.65,
@@ -148,7 +148,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // UHE-006 — NOAM, suburban_sprawl → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "UHE-006", city_type: "suburban_sprawl", region: "NOAM",
+    id: "UHE-006", city_type: "suburban_sprawl", region: "NOAM",
     heat_island_intensity_index: 0.28,
     extreme_heat_mortality_rate: 0.25,
     urban_cooling_infrastructure_deficit: 0.25,
@@ -173,7 +173,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // urban_cooling_infrastructure_deficit=0.45<0.70 → avoids cooling_infrastructure_collapse
   // composite in [40,60) → high
   {
-    entity_id: "UHE-007", city_type: "arid_city", region: "MEA",
+    id: "UHE-007", city_type: "arid_city", region: "MEA",
     heat_island_intensity_index: 0.55,
     extreme_heat_mortality_rate: 0.42,
     urban_cooling_infrastructure_deficit: 0.45,
@@ -198,7 +198,7 @@ const MOCK_ENTITIES: UheInput[] = [
   // urban_cooling_infrastructure_deficit=0.65<0.70 → avoids cooling_infrastructure_collapse
   // composite≥60 → critical
   {
-    entity_id: "UHE-008", city_type: "coastal_megacity", region: "APAC",
+    id: "UHE-008", city_type: "coastal_megacity", region: "APAC",
     heat_island_intensity_index: 0.80,
     extreme_heat_mortality_rate: 0.60,
     urban_cooling_infrastructure_deficit: 0.65,
@@ -291,7 +291,7 @@ function analyzeEntity(e: UheInput) {
   const signal = uheSignal(risk);
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     city_type: e.city_type,
     region: e.region,
     thermal_score: th,

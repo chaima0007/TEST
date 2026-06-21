@@ -38,7 +38,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "DRA-001",
+      id: "DRA-001",
       name: "Russie/Internats Psychiatriques — Handicapés Isolés Institutions, Traitement Forcé Soviétique & Tutelle Totale Abus",
       country: "Russie",
       institutional_segregation_forced_treatment_severity_score: 94.0,
@@ -52,7 +52,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DRA-002",
+      id: "DRA-002",
       name: "Inde/Lépreux Colonies — Exclus Société Villages Séparés, Mendier Autorisé Légalement & Discrimination Systémique",
       country: "Inde",
       institutional_segregation_forced_treatment_severity_score: 91.0,
@@ -66,7 +66,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DRA-003",
+      id: "DRA-003",
       name: "Chine/Handicapés Mentaux — Institutions Abus Documentés, Loi 2008 Non-Appliquée & Travail Forcé Ateliers",
       country: "Chine",
       institutional_segregation_forced_treatment_severity_score: 88.0,
@@ -80,7 +80,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DRA-004",
+      id: "DRA-004",
       name: "Brésil/Manicômios — Réforme Psychiatrique Incomplète, 30 000 Internés Institutions & Violence Documentée HRW",
       country: "Brésil",
       institutional_segregation_forced_treatment_severity_score: 85.0,
@@ -94,7 +94,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DRA-005",
+      id: "DRA-005",
       name: "USA/Institutions Psychiatriques — Olmstead Non-Appliqué Intégralement, ADA Gaps & Criminalisation Handicap Mental",
       country: "USA",
       institutional_segregation_forced_treatment_severity_score: 55.0,
@@ -108,7 +108,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DRA-006",
+      id: "DRA-006",
       name: "Afrique Sub-Saharienne — Handicap Exclusion Emploi 90%, Infrastructures Inaccessibles & Sorcellerie Stigma Handicap",
       country: "Afrique Sub-Saharienne",
       institutional_segregation_forced_treatment_severity_score: 52.0,
@@ -122,7 +122,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DRA-007",
+      id: "DRA-007",
       name: "DPO/IDA Alliance Internationale — Handicapés Organisations, CRPD Monitoring & Inclusion Advocacy Global",
       country: "Global",
       institutional_segregation_forced_treatment_severity_score: 27.0,
@@ -136,7 +136,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DRA-008",
+      id: "DRA-008",
       name: "ONU/CRPD 2006 — Convention Droits Personnes Handicapées, Comité CRPD Examen États & Art.12 Capacité Juridique",
       country: "Global",
       institutional_segregation_forced_treatment_severity_score: 5.0,

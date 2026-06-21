@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // SE-001 — EMEA, satellite_operations → critical, orbital_collision_cascade
   {
-    entity_id: "SE-001", space_segment: "satellite_operations", region: "EMEA",
+    id: "SE-001", space_segment: "satellite_operations", region: "EMEA",
     orbital_asset_concentration: 0.72, launch_cost_competitiveness: 0.30,
     satellite_constellation_density: 0.78, space_debris_collision_risk: 0.82,
     spectrum_congestion: 0.68, space_sovereignty_gap: 0.55, launch_vehicle_dependency: 0.60,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // SE-002 — APAC, launch_services → low, space_optimum/none
   {
-    entity_id: "SE-002", space_segment: "launch_services", region: "APAC",
+    id: "SE-002", space_segment: "launch_services", region: "APAC",
     orbital_asset_concentration: 0.15, launch_cost_competitiveness: 0.88,
     satellite_constellation_density: 0.20, space_debris_collision_risk: 0.12,
     spectrum_congestion: 0.18, space_sovereignty_gap: 0.10, launch_vehicle_dependency: 0.15,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   },
   // SE-003 — NOAM, space_mining → high, space_sovereignty_loss
   {
-    entity_id: "SE-003", space_segment: "space_mining", region: "NOAM",
+    id: "SE-003", space_segment: "space_mining", region: "NOAM",
     orbital_asset_concentration: 0.55, launch_cost_competitiveness: 0.45,
     satellite_constellation_density: 0.48, space_debris_collision_risk: 0.40,
     spectrum_congestion: 0.42, space_sovereignty_gap: 0.75, launch_vehicle_dependency: 0.50,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   },
   // SE-004 — LATAM, launch_services → low, space_optimum/none
   {
-    entity_id: "SE-004", space_segment: "launch_services", region: "LATAM",
+    id: "SE-004", space_segment: "launch_services", region: "LATAM",
     orbital_asset_concentration: 0.18, launch_cost_competitiveness: 0.80,
     satellite_constellation_density: 0.22, space_debris_collision_risk: 0.15,
     spectrum_congestion: 0.20, space_sovereignty_gap: 0.18, launch_vehicle_dependency: 0.20,
@@ -52,7 +52,7 @@ const MOCK_ENTITIES = [
   },
   // SE-005 — MEA, satellite_operations → critical, spectrum_war
   {
-    entity_id: "SE-005", space_segment: "satellite_operations", region: "MEA",
+    id: "SE-005", space_segment: "satellite_operations", region: "MEA",
     orbital_asset_concentration: 0.68, launch_cost_competitiveness: 0.28,
     satellite_constellation_density: 0.60, space_debris_collision_risk: 0.62,
     spectrum_congestion: 0.82, space_sovereignty_gap: 0.65, launch_vehicle_dependency: 0.70,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // SE-006 — EMEA, ground_stations → moderate, none
   {
-    entity_id: "SE-006", space_segment: "ground_stations", region: "EMEA",
+    id: "SE-006", space_segment: "ground_stations", region: "EMEA",
     orbital_asset_concentration: 0.35, launch_cost_competitiveness: 0.60,
     satellite_constellation_density: 0.38, space_debris_collision_risk: 0.30,
     spectrum_congestion: 0.32, space_sovereignty_gap: 0.35, launch_vehicle_dependency: 0.38,
@@ -76,7 +76,7 @@ const MOCK_ENTITIES = [
   },
   // SE-007 — APAC, space_mining → high, launch_monopoly
   {
-    entity_id: "SE-007", space_segment: "space_mining", region: "APAC",
+    id: "SE-007", space_segment: "space_mining", region: "APAC",
     orbital_asset_concentration: 0.58, launch_cost_competitiveness: 0.25,
     satellite_constellation_density: 0.52, space_debris_collision_risk: 0.45,
     spectrum_congestion: 0.48, space_sovereignty_gap: 0.55, launch_vehicle_dependency: 0.78,
@@ -88,7 +88,7 @@ const MOCK_ENTITIES = [
   },
   // SE-008 — NOAM, satellite_operations → critical, space_weather_blackout
   {
-    entity_id: "SE-008", space_segment: "satellite_operations", region: "NOAM",
+    id: "SE-008", space_segment: "satellite_operations", region: "NOAM",
     orbital_asset_concentration: 0.75, launch_cost_competitiveness: 0.32,
     satellite_constellation_density: 0.65, space_debris_collision_risk: 0.68,
     spectrum_congestion: 0.62, space_sovereignty_gap: 0.58, launch_vehicle_dependency: 0.62,
@@ -171,7 +171,7 @@ export async function GET() {
       const action      = recommendedAction(risk, pattern);
       const signal      = spaceSignal(e, composite, risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         region:                     e.region,
         space_segment:              e.space_segment,
         space_risk:                 risk,

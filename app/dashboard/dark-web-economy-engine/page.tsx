@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type DarkWebEntity = {
-  entity_id: string; market_type: string; region: string;
+  id: string; market_type: string; region: string;
   risk_level: string; crime_pattern: string;
   severity: string; recommended_action: string;
   crime_scale_score: number; ecosystem_score: number;
@@ -114,7 +114,7 @@ function DetailModal({ entity, onClose }: { entity: DarkWebEntity; onClose: () =
       <div className="bg-slate-900 border border-purple-700/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-white">{entity.id}</span>
             <span className="ml-2 text-purple-400 text-xs">{entity.market_type.replace(/_/g, " ")}</span>
             <span className="ml-2 text-slate-400 text-xs">{entity.region}</span>
           </div>
@@ -304,10 +304,10 @@ export default function DarkWebEconomyDashboard() {
       {/* Cartes Entités */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map(e => (
-          <div key={e.entity_id} onClick={() => setSelected(e)}
+          <div key={e.id} onClick={() => setSelected(e)}
             className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-purple-700/50 transition-colors">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white">{e.entity_id}</span>
+              <span className="font-bold text-white">{e.id}</span>
               <span className="text-xs text-slate-400">{e.region}</span>
             </div>
             <div className="text-xs text-purple-400 mb-2 capitalize">{e.market_type.replace(/_/g, " ")}</div>

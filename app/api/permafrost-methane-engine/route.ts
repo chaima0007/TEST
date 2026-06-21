@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // PME-001 — critical, abrupt_thaw_collapse (degradation>0.85, thermokarst>0.80)
   {
-    entity_id: "PME-001", ecosystem_type: "toundra_continentale", region: "Sibérie",
+    id: "PME-001", ecosystem_type: "toundra_continentale", region: "Sibérie",
     permafrost_degradation_rate: 0.92, active_layer_deepening: 0.88,
     methane_flux_intensity: 0.78, thermokarst_expansion: 0.86,
     subsea_methane_seepage: 0.72, carbon_stock_released: 0.80,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // PME-002 — critical, subsea_methane_eruption (subsea_seepage>0.85, methane_flux>0.80)
   {
-    entity_id: "PME-002", ecosystem_type: "plateau_sous_marin_arctique", region: "Arctique_Est",
+    id: "PME-002", ecosystem_type: "plateau_sous_marin_arctique", region: "Arctique_Est",
     permafrost_degradation_rate: 0.78, active_layer_deepening: 0.72,
     methane_flux_intensity: 0.88, thermokarst_expansion: 0.68,
     subsea_methane_seepage: 0.90, carbon_stock_released: 0.82,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // PME-003 — critical, tipping_point_cascade (tipping>0.85, feedback>0.80)
   {
-    entity_id: "PME-003", ecosystem_type: "tourbière_boréale", region: "Canada_Nord",
+    id: "PME-003", ecosystem_type: "tourbière_boréale", region: "Canada_Nord",
     permafrost_degradation_rate: 0.80, active_layer_deepening: 0.75,
     methane_flux_intensity: 0.72, thermokarst_expansion: 0.70,
     subsea_methane_seepage: 0.65, carbon_stock_released: 0.78,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // PME-004 — high, infrastructure_sinkhole_crisis (infra_damage>0.80, econ_loss>0.75)
   {
-    entity_id: "PME-004", ecosystem_type: "pergélisol_urbain", region: "Alaska",
+    id: "PME-004", ecosystem_type: "pergélisol_urbain", region: "Alaska",
     permafrost_degradation_rate: 0.52, active_layer_deepening: 0.50,
     methane_flux_intensity: 0.48, thermokarst_expansion: 0.45,
     subsea_methane_seepage: 0.42, carbon_stock_released: 0.50,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // PME-005 — high, indigenous_territory_loss (indigenous_disp>0.80, biodiversity>0.75)
   {
-    entity_id: "PME-005", ecosystem_type: "territoire_autochtone_arctique", region: "Groenland",
+    id: "PME-005", ecosystem_type: "territoire_autochtone_arctique", region: "Groenland",
     permafrost_degradation_rate: 0.48, active_layer_deepening: 0.45,
     methane_flux_intensity: 0.50, thermokarst_expansion: 0.48,
     subsea_methane_seepage: 0.42, carbon_stock_released: 0.45,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // PME-006 — moderate, none
   {
-    entity_id: "PME-006", ecosystem_type: "toundra_alpine", region: "Scandinavie",
+    id: "PME-006", ecosystem_type: "toundra_alpine", region: "Scandinavie",
     permafrost_degradation_rate: 0.30, active_layer_deepening: 0.28,
     methane_flux_intensity: 0.30, thermokarst_expansion: 0.28,
     subsea_methane_seepage: 0.25, carbon_stock_released: 0.30,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // PME-007 — low, none
   {
-    entity_id: "PME-007", ecosystem_type: "pergélisol_subarctique", region: "Finlande",
+    id: "PME-007", ecosystem_type: "pergélisol_subarctique", region: "Finlande",
     permafrost_degradation_rate: 0.10, active_layer_deepening: 0.12,
     methane_flux_intensity: 0.10, thermokarst_expansion: 0.08,
     subsea_methane_seepage: 0.10, carbon_stock_released: 0.12,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // PME-008 — low, none
   {
-    entity_id: "PME-008", ecosystem_type: "zone_périarctique", region: "Islande",
+    id: "PME-008", ecosystem_type: "zone_périarctique", region: "Islande",
     permafrost_degradation_rate: 0.12, active_layer_deepening: 0.10,
     methane_flux_intensity: 0.12, thermokarst_expansion: 0.10,
     subsea_methane_seepage: 0.08, carbon_stock_released: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig   = signal(risk);
       return {
-        entity_id:                   e.entity_id,
+        id:                   e.entity_id,
         ecosystem_type:              e.ecosystem_type,
         region:                      e.region,
         thaw_score:                  thaw,

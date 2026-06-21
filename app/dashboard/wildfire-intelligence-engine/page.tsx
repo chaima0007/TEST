@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 type RiskLevel = "critique" | "élevé" | "modéré" | "faible";
 
 interface WildfireEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -34,7 +34,7 @@ interface WildfireSummary {
   pattern_distribution: Record<string, number>;
   top_risk_entities: WildfireEntity[];
   critical_alerts: Array<{
-    entity_id: string;
+    id: string;
     name: string;
     composite_score: number;
     primary_pattern: string;
@@ -200,7 +200,7 @@ function DetailModal({
         <div className="p-5 border-b border-slate-800 flex items-start justify-between gap-3">
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
-              <span className="text-xs text-orange-500 font-mono">{entity.entity_id}</span>
+              <span className="text-xs text-orange-500 font-mono">{entity.id}</span>
               <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${meta.badge}`}>
                 {meta.label}
               </span>
@@ -578,13 +578,13 @@ export default function WildfireIntelligenceDashboard() {
               const meta = RISK_META[entity.risk_level];
               return (
                 <button
-                  key={entity.entity_id}
+                  key={entity.id}
                   onClick={() => setSelectedEntity(entity)}
                   className="bg-slate-900 border border-orange-500/20 rounded-xl p-4 text-left hover:border-orange-500/50 hover:bg-slate-800/80 transition-all group flex flex-col gap-3"
                 >
                   {/* Top row */}
                   <div className="flex items-start justify-between gap-2">
-                    <span className="text-xs text-orange-500/70 font-mono">{entity.entity_id}</span>
+                    <span className="text-xs text-orange-500/70 font-mono">{entity.id}</span>
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium shrink-0 ${meta.badge}`}>
                       {meta.label}
                     </span>

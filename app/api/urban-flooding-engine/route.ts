@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // UFE-001 — critical, stormwater_infrastructure_collapse (stormwater_age>0.85, drainage_deficit>0.80)
   {
-    entity_id: "UFE-001", city_type: "métropole_côtière", region: "APAC",
+    id: "UFE-001", city_type: "métropole_côtière", region: "APAC",
     flood_frequency_increase: 0.88, impervious_surface_expansion: 0.72,
     stormwater_system_age: 0.90, drainage_capacity_deficit: 0.85,
     combined_sewer_overflow: 0.70, green_infrastructure_adoption: 0.20,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // UFE-002 — critical, informal_settlement_flood_trap (informal_exp>0.85, low_income_exp>0.80)
   {
-    entity_id: "UFE-002", city_type: "ville_deltaïque", region: "SSA",
+    id: "UFE-002", city_type: "ville_deltaïque", region: "SSA",
     flood_frequency_increase: 0.85, impervious_surface_expansion: 0.70,
     stormwater_system_age: 0.72, drainage_capacity_deficit: 0.70,
     combined_sewer_overflow: 0.75, green_infrastructure_adoption: 0.15,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // UFE-003 — critical, urban_heat_flood_compound (heat_compound>0.85, impervious>0.80)
   {
-    entity_id: "UFE-003", city_type: "agglomération_industrielle", region: "EMEA",
+    id: "UFE-003", city_type: "agglomération_industrielle", region: "EMEA",
     flood_frequency_increase: 0.80, impervious_surface_expansion: 0.88,
     stormwater_system_age: 0.72, drainage_capacity_deficit: 0.75,
     combined_sewer_overflow: 0.72, green_infrastructure_adoption: 0.18,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // UFE-004 — high, drainage_capacity_failure (cso>0.80, drainage_deficit>0.75)
   {
-    entity_id: "UFE-004", city_type: "ville_fluviale", region: "LATAM",
+    id: "UFE-004", city_type: "ville_fluviale", region: "LATAM",
     flood_frequency_increase: 0.55, impervious_surface_expansion: 0.50,
     stormwater_system_age: 0.50, drainage_capacity_deficit: 0.80,
     combined_sewer_overflow: 0.85, green_infrastructure_adoption: 0.30,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // UFE-005 — high, climate_adaptation_funding_gap (maint_budget>0.80, insurance_gap>0.75)
   {
-    entity_id: "UFE-005", city_type: "zone_périurbaine", region: "NOAM",
+    id: "UFE-005", city_type: "zone_périurbaine", region: "NOAM",
     flood_frequency_increase: 0.52, impervious_surface_expansion: 0.48,
     stormwater_system_age: 0.50, drainage_capacity_deficit: 0.72,
     combined_sewer_overflow: 0.50, green_infrastructure_adoption: 0.28,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // UFE-006 — moderate, none
   {
-    entity_id: "UFE-006", city_type: "ville_moyenne", region: "EMEA",
+    id: "UFE-006", city_type: "ville_moyenne", region: "EMEA",
     flood_frequency_increase: 0.30, impervious_surface_expansion: 0.28,
     stormwater_system_age: 0.30, drainage_capacity_deficit: 0.30,
     combined_sewer_overflow: 0.28, green_infrastructure_adoption: 0.50,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // UFE-007 — low, none
   {
-    entity_id: "UFE-007", city_type: "agglomération_alpine", region: "EMEA",
+    id: "UFE-007", city_type: "agglomération_alpine", region: "EMEA",
     flood_frequency_increase: 0.10, impervious_surface_expansion: 0.12,
     stormwater_system_age: 0.10, drainage_capacity_deficit: 0.10,
     combined_sewer_overflow: 0.08, green_infrastructure_adoption: 0.75,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // UFE-008 — low, none
   {
-    entity_id: "UFE-008", city_type: "commune_rurale_péri-urbaine", region: "NOAM",
+    id: "UFE-008", city_type: "commune_rurale_péri-urbaine", region: "NOAM",
     flood_frequency_increase: 0.12, impervious_surface_expansion: 0.10,
     stormwater_system_age: 0.12, drainage_capacity_deficit: 0.10,
     combined_sewer_overflow: 0.10, green_infrastructure_adoption: 0.70,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         city_type:                  e.city_type,
         region:                     e.region,
         exposure_score:             exp,

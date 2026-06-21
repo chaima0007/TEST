@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "FS-001",
+      id: "FS-001",
       name: "Bayer-Monsanto Agro Division",
       country: "États-Unis",
       sector: "Agrochimie & Semences",
@@ -42,7 +42,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "FS-002",
+      id: "FS-002",
       name: "Cargill Global Food Systems",
       country: "États-Unis",
       sector: "Négoce Alimentaire",
@@ -62,7 +62,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "FS-003",
+      id: "FS-003",
       name: "Gouvernement du Yémen — Sécurité Alimentaire",
       country: "Yémen",
       sector: "Souveraineté Alimentaire Nationale",
@@ -82,7 +82,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "FS-004",
+      id: "FS-004",
       name: "Système Alimentaire Éthiopien",
       country: "Éthiopie",
       sector: "Souveraineté Alimentaire Nationale",
@@ -102,7 +102,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "FS-005",
+      id: "FS-005",
       name: "Chaîne Alimentaire des Philippines",
       country: "Philippines",
       sector: "Souveraineté Alimentaire Nationale",
@@ -122,7 +122,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "FS-006",
+      id: "FS-006",
       name: "Secteur Agricole du Maroc",
       country: "Maroc",
       sector: "Souveraineté Alimentaire Nationale",
@@ -142,7 +142,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "FS-007",
+      id: "FS-007",
       name: "Système Alimentaire Français",
       country: "France",
       sector: "Souveraineté Alimentaire Nationale",
@@ -162,7 +162,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "FS-008",
+      id: "FS-008",
       name: "Système Alimentaire Uruguayen",
       country: "Uruguay",
       sector: "Souveraineté Alimentaire Nationale",

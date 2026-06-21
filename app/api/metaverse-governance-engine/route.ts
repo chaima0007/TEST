@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // MGE-001 — critical, platform_monopoly_capture (concentration>0.85, user_lock_in>0.80)
   {
-    entity_id: "MGE-001", platform_type: "social_vr_platform", region: "NOAM",
+    id: "MGE-001", platform_type: "social_vr_platform", region: "NOAM",
     platform_concentration: 0.92, user_lock_in: 0.88,
     virtual_labor_rights: 0.70, economic_extraction: 0.72,
     identity_exploitation: 0.68, biometric_harvesting: 0.65,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // MGE-002 — critical, virtual_labor_exploitation (labor_rights>0.85, extraction>0.80)
   {
-    entity_id: "MGE-002", platform_type: "play_to_earn_metaverse", region: "APAC",
+    id: "MGE-002", platform_type: "play_to_earn_metaverse", region: "APAC",
     platform_concentration: 0.65, user_lock_in: 0.62,
     virtual_labor_rights: 0.90, economic_extraction: 0.85,
     identity_exploitation: 0.65, biometric_harvesting: 0.60,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // MGE-003 — critical, identity_data_colonialism (identity>0.85, biometric>0.80)
   {
-    entity_id: "MGE-003", platform_type: "immersive_commerce_world", region: "EMEA",
+    id: "MGE-003", platform_type: "immersive_commerce_world", region: "EMEA",
     platform_concentration: 0.68, user_lock_in: 0.65,
     virtual_labor_rights: 0.60, economic_extraction: 0.62,
     identity_exploitation: 0.90, biometric_harvesting: 0.85,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // MGE-004 — high, addiction_by_design_crisis (addiction>0.85, minor_exposure>0.80)
   {
-    entity_id: "MGE-004", platform_type: "gaming_metaverse", region: "APAC",
+    id: "MGE-004", platform_type: "gaming_metaverse", region: "APAC",
     platform_concentration: 0.48, user_lock_in: 0.52,
     virtual_labor_rights: 0.45, economic_extraction: 0.50,
     identity_exploitation: 0.48, biometric_harvesting: 0.45,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // MGE-005 — high, regulatory_jurisdiction_vacuum (reg_gap>0.80, tax_avoid>0.75)
   {
-    entity_id: "MGE-005", platform_type: "decentralized_virtual_world", region: "LATAM",
+    id: "MGE-005", platform_type: "decentralized_virtual_world", region: "LATAM",
     platform_concentration: 0.45, user_lock_in: 0.48,
     virtual_labor_rights: 0.50, economic_extraction: 0.45,
     identity_exploitation: 0.48, biometric_harvesting: 0.45,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // MGE-006 — moderate, none
   {
-    entity_id: "MGE-006", platform_type: "enterprise_virtual_office", region: "EMEA",
+    id: "MGE-006", platform_type: "enterprise_virtual_office", region: "EMEA",
     platform_concentration: 0.30, user_lock_in: 0.28,
     virtual_labor_rights: 0.32, economic_extraction: 0.28,
     identity_exploitation: 0.30, biometric_harvesting: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // MGE-007 — low, none
   {
-    entity_id: "MGE-007", platform_type: "educational_metaverse", region: "NOAM",
+    id: "MGE-007", platform_type: "educational_metaverse", region: "NOAM",
     platform_concentration: 0.10, user_lock_in: 0.12,
     virtual_labor_rights: 0.08, economic_extraction: 0.10,
     identity_exploitation: 0.10, biometric_harvesting: 0.08,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // MGE-008 — low, none
   {
-    entity_id: "MGE-008", platform_type: "open_source_virtual_commons", region: "SSA",
+    id: "MGE-008", platform_type: "open_source_virtual_commons", region: "SSA",
     platform_concentration: 0.08, user_lock_in: 0.10,
     virtual_labor_rights: 0.10, economic_extraction: 0.08,
     identity_exploitation: 0.08, biometric_harvesting: 0.10,
@@ -174,7 +174,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:               e.entity_id,
+        id:               e.entity_id,
         platform_type:           e.platform_type,
         region:                  e.region,
         monopoly_score:          mon,

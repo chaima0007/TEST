@@ -15,7 +15,7 @@ const RB: Record<string, string> = {
 };
 
 type CGEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -372,7 +372,7 @@ export default function CulturalGenocideEnginePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((entity) => (
             <div
-              key={entity.entity_id}
+              key={entity.id}
               onClick={() => setSelected(entity)}
               className={`bg-slate-900 border rounded-xl p-5 cursor-pointer hover:border-[#a855f7]/40 transition-all ${
                 RB[entity.risk_level] ?? "border-slate-700"

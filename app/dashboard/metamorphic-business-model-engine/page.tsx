@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type Entity = {
-  entity_id: string;
+  id: string;
   region: string;
   transformation_stage: string;
   transformation_risk: string;
@@ -146,7 +146,7 @@ function DetailModal({
       <div className="bg-slate-900 border border-orange-500/30 rounded-xl max-w-lg w-full p-6">
         <div className="flex justify-between items-start mb-4">
           <div>
-            <h3 className="text-amber-400 font-bold text-lg">{entity.entity_id}</h3>
+            <h3 className="text-amber-400 font-bold text-lg">{entity.id}</h3>
             <p className="text-slate-400 text-sm">
               {entity.transformation_stage.replace(/_/g, " ")} · {entity.region}
             </p>
@@ -428,12 +428,12 @@ export default function MetamorphicBusinessModelEnginePage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {filteredEntities.map((entity: Entity) => (
           <div
-            key={entity.entity_id}
+            key={entity.id}
             className="bg-slate-900 border border-orange-500/30 rounded-xl p-4 cursor-pointer hover:border-orange-500/60 transition-colors"
             onClick={() => setSelectedEntity(entity)}
           >
             <div className="flex justify-between items-start mb-2">
-              <span className="text-amber-400 font-semibold text-sm">{entity.entity_id}</span>
+              <span className="text-amber-400 font-semibold text-sm">{entity.id}</span>
               <span
                 className={`text-xs px-2 py-0.5 rounded-full border font-medium ${riskBadge(entity.transformation_risk)}`}
               >

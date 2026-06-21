@@ -34,7 +34,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "AC-001",
+      id: "AC-001",
       name: "Somalie/Syrie/Soudan Sud — États Faillis, Corruption Maximale & Impunité Totale",
       country: "Afrique/MENA",
       sector: "Somalie IPC Score 8/100 Dernier Transparency International, Soudan Sud Pétrole Kleptocracie Salva Kiir, Syrie Assad Corruption Systémique Reconstruction & Haïti Gangs/Corruption État Fusionnés",
@@ -54,7 +54,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "AC-002",
+      id: "AC-002",
       name: "Venezuela/Nicaragua/Haïti — Narco-États, Oligarchies Corrompues & Opacité",
       country: "Amérique Latine",
       sector: "Venezuela PDVSA Corruption 11B$ Détournés Cadivi, Nicaragua Ortega Famille 2B$ Avoirs Étrangers, Haïti Pétrole PetroCaribe Scandale 4B$ & Élites Corrompues Bloquant Tout Contre-Pouvoir",
@@ -74,7 +74,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "AC-003",
+      id: "AC-003",
       name: "Russie — Oligarques Poutine, Actifs Saisis 300B$ & Corruption Systémique",
       country: "Europe de l'Est",
       sector: "Russie Oligarques Poutine 300B$ Actifs Gelés Occident Sanctions, Navalny Fondation Anti-Corruption FBK, Corruption Marchés Publics 30-50% Contrats État & Kleptocracie Pétrole/Gaz Gazprom Rosneft",
@@ -94,7 +94,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "AC-004",
+      id: "AC-004",
       name: "Chine — Campagne Xi Anti-Corruption, Capture Institutionnelle & Opacité",
       country: "Asie du Nord-Est",
       sector: "Chine 1,5M Fonctionnaires Punis Campagne Anti-Corruption Xi Depuis 2012, Corruption Marchés Publics Documentée, PCC Contrôle Total Institutions Anti-Corruption & Transparence Budgétaire Minimale",
@@ -114,7 +114,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "AC-005",
+      id: "AC-005",
       name: "Afrique/Entreprises Extractives — Corruption Ressources, ITIE & Opacité",
       country: "Afrique Sub-Saharienne",
       sector: "Afrique Ressources Naturelles Corruption Licences Minières/Pétrolières, ITIE Initiative Transparence 50 Pays Mise En Oeuvre Partielle, 88B$/An Flux Financiers Illicites & Angola/Gabon Kleptocracie Pétrolière",
@@ -134,7 +134,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "AC-006",
+      id: "AC-006",
       name: "Inde/Asie du Sud — Corruption Bureaucratique, Bribery & Lanceurs Alerte Tués",
       country: "Asie du Sud",
       sector: "Inde 1B$ Pots-De-Vin/Mois Estimation Transparency, Bureaucratie 'Speed Money' Services Publics, RTI Right To Information Act Activistes Tués 80+, Bangladesh CAN/Anti-Corruption & Pakistan NAB Politisé",
@@ -154,7 +154,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "AC-007",
+      id: "AC-007",
       name: "UE/GRECO — Mécanisme Anti-Corruption, OLAF & Lacunes États Membres",
       country: "Europe",
       sector: "UE OLAF Office Anti-Fraude 1,5B€ Fraudes Détectées/An, GRECO Conseil Europe 46 États Évaluations, Fonds Structurels Corruption Europe Est & Hongrie/Bulgarie Lacunes Anti-Corruption Documentées",
@@ -174,7 +174,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "AC-008",
+      id: "AC-008",
       name: "ONU/CNUCC — Convention Contre Corruption, UNCAC Coalition & StAR Initiative",
       country: "Global",
       sector: "CNUCC Convention ONU Contre Corruption 190 Ratifications 2003, Initiative Restitution Avoirs Volés StAR UNODC/Banque Mondiale, UNCAC Coalition 350 ONG & Examen Application Mécanisme Intergouvernemental",

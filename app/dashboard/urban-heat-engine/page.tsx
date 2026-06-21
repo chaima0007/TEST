@@ -9,7 +9,7 @@ type Severity    = "urgence_chaleur_urbaine_létale" | "crise_chaleur_urbaine_ma
 type HeatAction  = "plan_urgence_chaleur_urbaine" | "infrastructure_refroidissement_urgente" | "verdissement_urbain_accéléré" | "veille_chaleur_urbaine_continue";
 
 interface UheEntity {
-  entity_id: string;
+  id: string;
   city_type: string;
   region: string;
   thermal_score: number;
@@ -163,7 +163,7 @@ function DetailModal({ entity, onClose }: { entity: UheEntity; onClose: () => vo
       <div className="bg-slate-900 border border-orange-700/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-white">{entity.id}</span>
             <span className="ml-2 text-orange-400 text-xs">{entity.city_type.replace(/_/g, " ")}</span>
             <span className="ml-2 text-slate-400 text-xs">{entity.region}</span>
           </div>
@@ -352,10 +352,10 @@ export default function UrbanHeatDashboard() {
         {filtered.map(e => {
           const risk = RISK_META[e.risk_level];
           return (
-            <div key={e.entity_id} onClick={() => setSelected(e)}
+            <div key={e.id} onClick={() => setSelected(e)}
               className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-orange-700/50 transition-colors">
               <div className="flex items-center justify-between mb-1">
-                <span className="font-bold text-white">{e.entity_id}</span>
+                <span className="font-bold text-white">{e.id}</span>
                 <span className="text-xs text-slate-400">{e.region}</span>
               </div>
               <div className="text-xs text-orange-400 mb-2 capitalize">{e.city_type.replace(/_/g, " ")}</div>

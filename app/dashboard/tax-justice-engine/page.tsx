@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // ── types ────────────────────────────────────────────────────────────────────
 
 type Entity = {
-  entity_id:                  string;
+  id:                  string;
   name:                       string;
   country:                    string;
   sector:                     string;
@@ -26,7 +26,7 @@ type ApiData = {
   avg_composite:                 number;
   risk_distribution:             Record<string, number>;
   pattern_distribution:          Record<string, number>;
-  top_risk_entities:             Array<{ entity_id: string; name: string; composite_score: number; risk_level: string }>;
+  top_risk_entities:             Array<{ id: string; name: string; composite_score: number; risk_level: string }>;
   critical_alerts:               string[];
   last_analysis:                 string;
   engine_version:                string;
@@ -159,7 +159,7 @@ function DetailModal({
         <div className="flex items-start justify-between mb-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+              <span className="text-lg font-bold text-white">{entity.id}</span>
               <span
                 className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[entity.risk_level] || "bg-slate-700 text-slate-300"}`}
               >
@@ -515,12 +515,12 @@ export default function TaxJusticeEngineDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map((e) => (
           <div
-            key={e.entity_id}
+            key={e.id}
             onClick={() => setSelectedEntity(e)}
             className="bg-slate-900 border border-red-900/30 rounded-xl p-4 cursor-pointer hover:border-red-700 transition-colors"
           >
             <div className="flex items-start justify-between mb-1">
-              <span className="font-bold text-white text-sm">{e.entity_id}</span>
+              <span className="font-bold text-white text-sm">{e.id}</span>
               <span className="text-xs text-stone-400">{e.country}</span>
             </div>
             <div className="text-sm text-red-300 font-medium mb-1 leading-snug">

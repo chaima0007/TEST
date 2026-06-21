@@ -22,7 +22,7 @@ function GaugeRing({ value, stroke }: { value: number; stroke: string }) {
 }
 
 interface HSPREntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -90,7 +90,7 @@ function DetailModal({ entity, onClose, dataSources }: { entity: HSPREntity; onC
       <div className="bg-slate-900 border border-orange-500/30 rounded-2xl w-full max-w-lg mx-4 max-h-[85vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
         <div className="p-6 border-b border-slate-800 flex justify-between items-start">
           <div>
-            <p className="text-xs font-mono text-slate-500 mb-1">{entity.entity_id}</p>
+            <p className="text-xs font-mono text-slate-500 mb-1">{entity.id}</p>
             <h3 className="font-bold text-lg text-white">{entity.name}</h3>
             <p className="text-xs text-slate-400 mt-1">{entity.country} · {entity.sector}</p>
             <p className={`text-xs font-bold uppercase mt-1 ${RC[entity.risk_level]}`}>{entity.risk_level}</p>
@@ -315,11 +315,11 @@ export default function HateSpeechPlatformRightsPage() {
         {/* Entity Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map(entity => (
-            <div key={entity.entity_id} onClick={() => setSel(entity)}
+            <div key={entity.id} onClick={() => setSel(entity)}
               className={`bg-slate-900 border rounded-xl p-4 cursor-pointer hover:border-orange-500/50 transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}>
               <div className="flex justify-between items-start mb-3">
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
+                  <p className="text-xs font-mono text-slate-500">{entity.id}</p>
                   <p className="text-sm font-semibold text-white truncate">{entity.name}</p>
                   <p className="text-xs text-slate-500">{entity.country}</p>
                 </div>

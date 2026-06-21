@@ -105,7 +105,7 @@ export default function InventionsPortfolioPage() {
               {entities.map((e) => {
                 const gen = e.generation as string;
                 const name = e.name as string;
-                const id = e.entity_id as string;
+                const id = e.id as string;
                 const ipc = e.ipc_class as string;
                 const score = e.patentability_score as number;
                 const status = e.filing_status as string;

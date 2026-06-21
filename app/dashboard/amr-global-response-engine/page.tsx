@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -417,13 +417,13 @@ export default function AmrDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map((e) => (
           <div
-            key={e.entity_id}
+            key={e.id}
             onClick={() => setSelected(e)}
             className="bg-slate-900 border border-blue-700/30 rounded-xl p-4 cursor-pointer hover:border-blue-500 transition-colors"
           >
             <div className="flex items-center justify-between mb-1">
               <span className="font-bold text-white text-sm">{e.name}</span>
-              <span className="text-xs text-blue-400/60">{e.entity_id}</span>
+              <span className="text-xs text-blue-400/60">{e.id}</span>
             </div>
             <div className="text-xs text-slate-500 mb-2">
               {e.country} · {e.sector}

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // NRE-001 — critical, mental_surveillance_state (neural_data>0.85, mental_health_surv>0.80)
   {
-    entity_id: "NRE-001", neurotechnology_type: "bci_consumer", region: "APAC",
+    id: "NRE-001", neurotechnology_type: "bci_consumer", region: "APAC",
     neural_data_collection: 0.92, mental_privacy_protection: 0.10,
     cognitive_manipulation_risk: 0.72, bci_corporate_control: 0.70,
     informed_consent_quality: 0.12, algorithmic_thought_influence: 0.68,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // NRE-002 — critical, cognitive_manipulation_crisis (cog_manip>0.85, algo_thought>0.80)
   {
-    entity_id: "NRE-002", neurotechnology_type: "neurofeedback_platform", region: "NOAM",
+    id: "NRE-002", neurotechnology_type: "neurofeedback_platform", region: "NOAM",
     neural_data_collection: 0.65, mental_privacy_protection: 0.15,
     cognitive_manipulation_risk: 0.90, bci_corporate_control: 0.72,
     informed_consent_quality: 0.10, algorithmic_thought_influence: 0.88,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // NRE-003 — critical, neural_data_commodification (neuro_data_comm>0.85, re_id>0.80)
   {
-    entity_id: "NRE-003", neurotechnology_type: "emotion_detection_ai", region: "EMEA",
+    id: "NRE-003", neurotechnology_type: "emotion_detection_ai", region: "EMEA",
     neural_data_collection: 0.78, mental_privacy_protection: 0.12,
     cognitive_manipulation_risk: 0.75, bci_corporate_control: 0.68,
     informed_consent_quality: 0.08, algorithmic_thought_influence: 0.72,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // NRE-004 — high, bci_corporate_monopoly (bci_corp>0.80, reg_gap>0.75)
   {
-    entity_id: "NRE-004", neurotechnology_type: "deep_brain_stimulation", region: "LATAM",
+    id: "NRE-004", neurotechnology_type: "deep_brain_stimulation", region: "LATAM",
     neural_data_collection: 0.55, mental_privacy_protection: 0.30,
     cognitive_manipulation_risk: 0.52, bci_corporate_control: 0.85,
     informed_consent_quality: 0.35, algorithmic_thought_influence: 0.48,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // NRE-005 — high, brain_enhancement_inequality (mem_aug>0.80, equity_access<0.25)
   {
-    entity_id: "NRE-005", neurotechnology_type: "cognitive_enhancement_implant", region: "SSA",
+    id: "NRE-005", neurotechnology_type: "cognitive_enhancement_implant", region: "SSA",
     neural_data_collection: 0.48, mental_privacy_protection: 0.35,
     cognitive_manipulation_risk: 0.50, bci_corporate_control: 0.55,
     informed_consent_quality: 0.30, algorithmic_thought_influence: 0.45,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // NRE-006 — moderate, none
   {
-    entity_id: "NRE-006", neurotechnology_type: "eeg_wellness", region: "EMEA",
+    id: "NRE-006", neurotechnology_type: "eeg_wellness", region: "EMEA",
     neural_data_collection: 0.30, mental_privacy_protection: 0.60,
     cognitive_manipulation_risk: 0.28, bci_corporate_control: 0.32,
     informed_consent_quality: 0.65, algorithmic_thought_influence: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // NRE-007 — low, none
   {
-    entity_id: "NRE-007", neurotechnology_type: "non_invasive_tms", region: "NOAM",
+    id: "NRE-007", neurotechnology_type: "non_invasive_tms", region: "NOAM",
     neural_data_collection: 0.10, mental_privacy_protection: 0.88,
     cognitive_manipulation_risk: 0.10, bci_corporate_control: 0.12,
     informed_consent_quality: 0.90, algorithmic_thought_influence: 0.10,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // NRE-008 — low, none
   {
-    entity_id: "NRE-008", neurotechnology_type: "therapeutic_neuroprosthetic", region: "APAC",
+    id: "NRE-008", neurotechnology_type: "therapeutic_neuroprosthetic", region: "APAC",
     neural_data_collection: 0.12, mental_privacy_protection: 0.85,
     cognitive_manipulation_risk: 0.12, bci_corporate_control: 0.10,
     informed_consent_quality: 0.88, algorithmic_thought_influence: 0.12,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         neurotechnology_type:       e.neurotechnology_type,
         region:                     e.region,
         mental_privacy_score:       priv,

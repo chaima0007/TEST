@@ -17,7 +17,7 @@ type ActionName =
   | "veille_transparence_fournisseurs_active";
 
 interface SctEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -159,7 +159,7 @@ function DetailModal({ entity, onClose }: { entity: SctEntity; onClose: () => vo
         <div className="flex items-center justify-between mb-4">
           <div>
             <span className="text-lg font-bold text-white">{entity.name}</span>
-            <span className="ml-2 text-teal-400 text-xs">{entity.entity_id}</span>
+            <span className="ml-2 text-teal-400 text-xs">{entity.id}</span>
             <span className="ml-2 text-stone-400 text-xs">{entity.country} · {entity.sector}</span>
           </div>
           <button onClick={onClose} className="text-stone-500 hover:text-white text-xl leading-none">✕</button>
@@ -392,7 +392,7 @@ export default function SupplyChainTransparencyDashboard() {
         {filtered.map(e => {
           const risk = RISK_META[e.risk_level];
           return (
-            <div key={e.entity_id} onClick={() => setSelected(e)}
+            <div key={e.id} onClick={() => setSelected(e)}
               className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-teal-700/50 transition-colors">
               <div className="flex items-center justify-between mb-1">
                 <span className="font-bold text-white text-sm">{e.name}</span>

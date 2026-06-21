@@ -38,14 +38,14 @@ const MOCK = {
     git_history: "github.com/chaima0007/TEST — audit trail complet",
   },
   entities: [
-    { entity_id: "CAE-SEC-001", name: "Injection SQL/NoSQL", risk_level: "critique", composite_score: 78.0 },
-    { entity_id: "CAE-SEC-002", name: "Accès Non Autorisé API", risk_level: "critique", composite_score: 71.5 },
-    { entity_id: "CAE-SEC-003", name: "Exfiltration de Données", risk_level: "critique", composite_score: 69.2 },
-    { entity_id: "CAE-SEC-004", name: "Malware / Ransomware", risk_level: "critique", composite_score: 65.8 },
-    { entity_id: "CAE-SEC-005", name: "Phishing Dirigeants", risk_level: "élevé", composite_score: 54.3 },
-    { entity_id: "CAE-SEC-006", name: "Fuites via Prestataires", risk_level: "élevé", composite_score: 49.8 },
-    { entity_id: "CAE-SEC-007", name: "DDoS Infrastructure", risk_level: "modéré", composite_score: 35.2 },
-    { entity_id: "CAE-SEC-008", name: "Chiffrement Transit/Repos", risk_level: "faible", composite_score: 8.5 },
+    { id: "CAE-SEC-001", name: "Injection SQL/NoSQL", risk_level: "critique", composite_score: 78.0 },
+    { id: "CAE-SEC-002", name: "Accès Non Autorisé API", risk_level: "critique", composite_score: 71.5 },
+    { id: "CAE-SEC-003", name: "Exfiltration de Données", risk_level: "critique", composite_score: 69.2 },
+    { id: "CAE-SEC-004", name: "Malware / Ransomware", risk_level: "critique", composite_score: 65.8 },
+    { id: "CAE-SEC-005", name: "Phishing Dirigeants", risk_level: "élevé", composite_score: 54.3 },
+    { id: "CAE-SEC-006", name: "Fuites via Prestataires", risk_level: "élevé", composite_score: 49.8 },
+    { id: "CAE-SEC-007", name: "DDoS Infrastructure", risk_level: "modéré", composite_score: 35.2 },
+    { id: "CAE-SEC-008", name: "Chiffrement Transit/Repos", risk_level: "faible", composite_score: 8.5 },
   ],
 };
 

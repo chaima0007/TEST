@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 interface SEEntity {
-  entity_id: string; name: string; country: string; sector: string;
+  id: string; name: string; country: string; sector: string;
   composite_score: number; informal_sector_dominance_score: number;
   tax_evasion_systemic_score: number; corruption_lubricant_score: number;
   regulatory_arbitrage_score: number; risk_level: string;
@@ -239,11 +239,11 @@ export default function ShadowEconomyEnginePage() {
         {/* Entity Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map(entity => (
-            <div key={entity.entity_id} onClick={() => setSel(entity)}
+            <div key={entity.id} onClick={() => setSel(entity)}
               className={`bg-slate-900 rounded-xl p-4 border cursor-pointer transition-all hover:border-slate-400/50 ${RB[entity.risk_level] ?? "border-slate-800"}`}>
               <div className="flex justify-between mb-2">
                 <div>
-                  <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
+                  <p className="text-xs font-mono text-slate-500">{entity.id}</p>
                   <p className="text-sm font-semibold text-white">{entity.name}</p>
                   <p className="text-xs text-slate-500">{entity.country}</p>
                 </div>

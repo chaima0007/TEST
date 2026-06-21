@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // IPW-001 — state_IP_espionage_campaign + patent_monopoly_capture → critical
   {
-    entity_id: "IPW-001", ip_domain: "patents_trade_secrets", region: "APAC",
+    id: "IPW-001", ip_domain: "patents_trade_secrets", region: "APAC",
     patent_trolling_scale: 0.82,
     state_IP_theft_intensity: 0.90,
     standard_essential_patent_abuse: 0.78,
@@ -25,7 +25,7 @@ const MOCK_ENTITIES = [
   },
   // IPW-002 — pharmaceutical_access_blockade → critical
   {
-    entity_id: "IPW-002", ip_domain: "pharmaceutical_patents", region: "NOAM",
+    id: "IPW-002", ip_domain: "pharmaceutical_patents", region: "NOAM",
     patent_trolling_scale: 0.75,
     state_IP_theft_intensity: 0.70,
     standard_essential_patent_abuse: 0.72,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
   },
   // IPW-003 — geopolitical_IP_warfare → high
   {
-    entity_id: "IPW-003", ip_domain: "technology_transfer", region: "EMEA",
+    id: "IPW-003", ip_domain: "technology_transfer", region: "EMEA",
     patent_trolling_scale: 0.55,
     state_IP_theft_intensity: 0.60,
     standard_essential_patent_abuse: 0.52,
@@ -67,7 +67,7 @@ const MOCK_ENTITIES = [
   },
   // IPW-004 — global_south_IP_exclusion → high
   {
-    entity_id: "IPW-004", ip_domain: "global_south_access", region: "SSA",
+    id: "IPW-004", ip_domain: "global_south_access", region: "SSA",
     patent_trolling_scale: 0.52,
     state_IP_theft_intensity: 0.50,
     standard_essential_patent_abuse: 0.55,
@@ -88,7 +88,7 @@ const MOCK_ENTITIES = [
   },
   // IPW-005 — patent_monopoly_capture → high
   {
-    entity_id: "IPW-005", ip_domain: "AI_patents", region: "NOAM",
+    id: "IPW-005", ip_domain: "AI_patents", region: "NOAM",
     patent_trolling_scale: 0.60,
     state_IP_theft_intensity: 0.55,
     standard_essential_patent_abuse: 0.62,
@@ -109,7 +109,7 @@ const MOCK_ENTITIES = [
   },
   // IPW-006 — moderate risk, no patterns
   {
-    entity_id: "IPW-006", ip_domain: "copyright", region: "LATAM",
+    id: "IPW-006", ip_domain: "copyright", region: "LATAM",
     patent_trolling_scale: 0.30,
     state_IP_theft_intensity: 0.28,
     standard_essential_patent_abuse: 0.32,
@@ -130,7 +130,7 @@ const MOCK_ENTITIES = [
   },
   // IPW-007 — low risk
   {
-    entity_id: "IPW-007", ip_domain: "open_source", region: "EMEA",
+    id: "IPW-007", ip_domain: "open_source", region: "EMEA",
     patent_trolling_scale: 0.10,
     state_IP_theft_intensity: 0.08,
     standard_essential_patent_abuse: 0.10,
@@ -151,7 +151,7 @@ const MOCK_ENTITIES = [
   },
   // IPW-008 — moderate risk, geopolitical_IP_warfare
   {
-    entity_id: "IPW-008", ip_domain: "semiconductor_IP", region: "APAC",
+    id: "IPW-008", ip_domain: "semiconductor_IP", region: "APAC",
     patent_trolling_scale: 0.42,
     state_IP_theft_intensity: 0.40,
     standard_essential_patent_abuse: 0.45,
@@ -272,7 +272,7 @@ export async function GET() {
       const sig         = signal(risk);
 
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         ip_domain:                    e.ip_domain,
         region:                       e.region,
         theft_score:                  theft,

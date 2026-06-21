@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // UCI-001 — critical, surveillance_state (megacity, EMEA)
   {
-    entity_id: "UCI-001", city_type: "megacity", region: "EMEA",
+    id: "UCI-001", city_type: "megacity", region: "EMEA",
     surveillance_density: 0.88, digital_infrastructure_vulnerability: 0.55, social_control_index: 0.82,
     inequality_tension_index: 0.60, migration_pressure: 0.65, housing_crisis_index: 0.58,
     mobility_gridlock_risk: 0.70, energy_grid_fragility: 0.50, water_system_stress: 0.48,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // UCI-002 — low, none (medium_city, APAC)
   {
-    entity_id: "UCI-002", city_type: "medium_city", region: "APAC",
+    id: "UCI-002", city_type: "medium_city", region: "APAC",
     surveillance_density: 0.12, digital_infrastructure_vulnerability: 0.15, social_control_index: 0.10,
     inequality_tension_index: 0.14, migration_pressure: 0.18, housing_crisis_index: 0.12,
     mobility_gridlock_risk: 0.15, energy_grid_fragility: 0.10, water_system_stress: 0.12,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // UCI-003 — high, algorithmic_oppression (smart_city, NOAM)
   {
-    entity_id: "UCI-003", city_type: "smart_city", region: "NOAM",
+    id: "UCI-003", city_type: "smart_city", region: "NOAM",
     surveillance_density: 0.58, digital_infrastructure_vulnerability: 0.52, social_control_index: 0.55,
     inequality_tension_index: 0.60, migration_pressure: 0.50, housing_crisis_index: 0.58,
     mobility_gridlock_risk: 0.48, energy_grid_fragility: 0.50, water_system_stress: 0.45,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // UCI-004 — low, none (medium_city, LATAM)
   {
-    entity_id: "UCI-004", city_type: "medium_city", region: "LATAM",
+    id: "UCI-004", city_type: "medium_city", region: "LATAM",
     surveillance_density: 0.15, digital_infrastructure_vulnerability: 0.18, social_control_index: 0.12,
     inequality_tension_index: 0.18, migration_pressure: 0.22, housing_crisis_index: 0.16,
     mobility_gridlock_risk: 0.20, energy_grid_fragility: 0.15, water_system_stress: 0.18,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // UCI-005 — critical, social_explosion (megacity, MEA)
   {
-    entity_id: "UCI-005", city_type: "megacity", region: "MEA",
+    id: "UCI-005", city_type: "megacity", region: "MEA",
     surveillance_density: 0.62, digital_infrastructure_vulnerability: 0.60, social_control_index: 0.58,
     inequality_tension_index: 0.85, migration_pressure: 0.80, housing_crisis_index: 0.78,
     mobility_gridlock_risk: 0.72, energy_grid_fragility: 0.65, water_system_stress: 0.70,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // UCI-006 — moderate, none (smart_city, EMEA)
   {
-    entity_id: "UCI-006", city_type: "smart_city", region: "EMEA",
+    id: "UCI-006", city_type: "smart_city", region: "EMEA",
     surveillance_density: 0.35, digital_infrastructure_vulnerability: 0.38, social_control_index: 0.30,
     inequality_tension_index: 0.35, migration_pressure: 0.38, housing_crisis_index: 0.32,
     mobility_gridlock_risk: 0.40, energy_grid_fragility: 0.35, water_system_stress: 0.30,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // UCI-007 — high, infrastructure_collapse (megacity, APAC)
   {
-    entity_id: "UCI-007", city_type: "megacity", region: "APAC",
+    id: "UCI-007", city_type: "megacity", region: "APAC",
     surveillance_density: 0.52, digital_infrastructure_vulnerability: 0.80, social_control_index: 0.50,
     inequality_tension_index: 0.55, migration_pressure: 0.60, housing_crisis_index: 0.58,
     mobility_gridlock_risk: 0.65, energy_grid_fragility: 0.75, water_system_stress: 0.62,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // UCI-008 — critical, smart_city_monopoly (megacity, NOAM)
   {
-    entity_id: "UCI-008", city_type: "megacity", region: "NOAM",
+    id: "UCI-008", city_type: "megacity", region: "NOAM",
     surveillance_density: 0.62, digital_infrastructure_vulnerability: 0.60, social_control_index: 0.58,
     inequality_tension_index: 0.65, migration_pressure: 0.55, housing_crisis_index: 0.60,
     mobility_gridlock_risk: 0.62, energy_grid_fragility: 0.58, water_system_stress: 0.55,
@@ -185,7 +185,7 @@ export async function GET() {
       const signal    = urbanSignal(e, risk, composite);
 
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         region:                       e.region,
         city_type:                    e.city_type,
         urban_risk:                   risk,

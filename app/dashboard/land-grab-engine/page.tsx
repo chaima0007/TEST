@@ -23,7 +23,7 @@ type Action =
   | "veille_accaparement_terres_continue";
 
 interface LgeEntity {
-  entity_id: string;
+  id: string;
   land_type: string;
   region: string;
   dispossession_score: number;
@@ -202,7 +202,7 @@ function DetailModal({ entity, onClose }: { entity: LgeEntity; onClose: () => vo
         <div className="flex items-center justify-between p-5 border-b border-slate-800">
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+              <span className="text-lg font-bold text-white">{entity.id}</span>
               <span className="text-amber-400 text-xs">{entity.region}</span>
               <span className={`text-xs font-bold px-2 py-0.5 rounded border ${rm.badge}`}>{rm.label}</span>
             </div>
@@ -319,7 +319,7 @@ function EntityCard({ entity, onClick }: { entity: LgeEntity; onClick: () => voi
       className={`w-full text-left rounded-xl border border-slate-800 ${rm.bg} p-4 hover:border-amber-700/50 transition-colors`}
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="font-bold text-white">{entity.entity_id}</span>
+        <span className="font-bold text-white">{entity.id}</span>
         <span className="text-xs text-amber-400">{entity.region}</span>
       </div>
       <div className="text-xs text-slate-400 mb-2 capitalize">{entity.land_type.replace(/_/g, " ")}</div>
@@ -476,7 +476,7 @@ export default function LandGrabEngineDashboard() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((e) => (
-            <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+            <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
           ))}
         </div>
       )}

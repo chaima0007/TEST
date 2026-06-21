@@ -9,7 +9,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "SRM-001",
+    id: "SRM-001",
     name: "Russie — Test ASAT Nudol 2021 1 500 Débris, Orbital Bombardment System, Inspection Satellites Rapprochée & Armes Lasers Anti-Sat",
     country: "Russie",
     sector: "ASAT Débris Orbitaux",
@@ -20,7 +20,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "anti_satellite_weapons_debris_severity",
   },
   {
-    entity_id: "SRM-002",
+    id: "SRM-002",
     name: "Chine — ASAT SC-19 Test 2007 3 000 Débris, Satellites Militaires 200+, Jamming GPS & Programme Espace Militaire Accéléré",
     country: "Chine",
     sector: "Programme Militaire Spatial",
@@ -31,7 +31,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "space_militarization_arms_race_scale",
   },
   {
-    entity_id: "SRM-003",
+    id: "SRM-003",
     name: "USA/SpaceCom — US Space Force 2019, Starlink Usage Ukraine Militaire, X-37B Orbital, Co-Orbital ASAT & Contrôle Commercial Militarisé",
     country: "USA",
     sector: "Space Force Militarisation Commerciale",
@@ -42,7 +42,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "space_militarization_arms_race_scale",
   },
   {
-    entity_id: "SRM-004",
+    id: "SRM-004",
     name: "Inde — Test ASAT Mission Shakti 2019 400+ Débris, DRDO Capacités Croissantes, Spatialisation Défense & Adhésion Partielle Traités",
     country: "Inde",
     sector: "ASAT Capacités Croissantes",
@@ -53,7 +53,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "anti_satellite_weapons_debris_severity",
   },
   {
-    entity_id: "SRM-005",
+    id: "SRM-005",
     name: "Méga-Constellations — Starlink 6 000+ Satellites 42k Prévus, OneWeb Amazon Kuiper, Pollution Lumineuse Astronomie & Collision Risk 1% /An",
     country: "Global",
     sector: "Constellations Commerciales Congestion Orbitale",
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "space_debris_kessler_syndrome_risk",
   },
   {
-    entity_id: "SRM-006",
+    id: "SRM-006",
     name: "JAXA/ESA — Agences Civiles Pression Militarisée, Budget Défense Espace +30%, Clean Space Initiative & Nettoyage Débris Sous-Financé",
     country: "Global",
     sector: "Agences Civiles Transition Défense",
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "outer_space_treaty_compliance_governance_deficit_gap",
   },
   {
-    entity_id: "SRM-007",
+    id: "SRM-007",
     name: "UNOOSA/COPUOS — Committee Peaceful Uses Outer Space, Space Debris Mitigation Guidelines, LTS Guidelines & Registre ONU",
     country: "Global",
     sector: "Gouvernance Internationale Espace",
@@ -86,7 +86,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "outer_space_treaty_compliance_governance_deficit_gap",
   },
   {
-    entity_id: "SRM-008",
+    id: "SRM-008",
     name: "ONU/OST 1967 — Traité Espace Extra-Atmosphérique 1967, Traité Lune 1979, Convention Responsabilité & Régime Gouvernance Lacunaire",
     country: "Global",
     sector: "Cadre Normatif Traités Spatiaux",
@@ -147,7 +147,7 @@ export async function GET() {
       const composite = computeComposite(e);
       const risk = riskLevel(composite);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         name: e.name,
         country: e.country,
         sector: e.sector,

@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // ER-001 — critical, existential_cascade
-  { entity_id:"ER-001", risk_category:"civilizational_collapse", region:"GLOBAL",
+  { id:"ER-001", risk_category:"civilizational_collapse", region:"GLOBAL",
     existential_exposure_score:0.92, continuity_plan_robustness:0.12, black_swan_preparedness:0.10,
     cascade_failure_vulnerability:0.88, civilizational_resilience_score:0.10, institutional_trust_erosion_rate:0.82,
     strategic_optionality_reserve:0.08, antifragility_score:0.09, early_warning_system_quality:0.08,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     emergency_governance_readiness:0.08, knowledge_preservation_score:0.15, regenerative_recovery_capacity:0.10,
     strategic_redundancy_depth:0.08, existential_hedge_ratio:0.05 },
   // ER-002 — low, resilient
-  { entity_id:"ER-002", risk_category:"climate_tipping", region:"NAMER",
+  { id:"ER-002", risk_category:"climate_tipping", region:"NAMER",
     existential_exposure_score:0.12, continuity_plan_robustness:0.92, black_swan_preparedness:0.90,
     cascade_failure_vulnerability:0.10, civilizational_resilience_score:0.92, institutional_trust_erosion_rate:0.08,
     strategic_optionality_reserve:0.90, antifragility_score:0.88, early_warning_system_quality:0.92,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     emergency_governance_readiness:0.92, knowledge_preservation_score:0.90, regenerative_recovery_capacity:0.92,
     strategic_redundancy_depth:0.88, existential_hedge_ratio:0.90 },
   // ER-003 — high, institutional_collapse
-  { entity_id:"ER-003", risk_category:"democratic_erosion", region:"EMEA",
+  { id:"ER-003", risk_category:"democratic_erosion", region:"EMEA",
     existential_exposure_score:0.72, continuity_plan_robustness:0.30, black_swan_preparedness:0.35,
     cascade_failure_vulnerability:0.60, civilizational_resilience_score:0.32, institutional_trust_erosion_rate:0.78,
     strategic_optionality_reserve:0.28, antifragility_score:0.30, early_warning_system_quality:0.38,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     emergency_governance_readiness:0.28, knowledge_preservation_score:0.38, regenerative_recovery_capacity:0.30,
     strategic_redundancy_depth:0.28, existential_hedge_ratio:0.22 },
   // ER-004 — low, high_alert (moderate composite but low risk label)
-  { entity_id:"ER-004", risk_category:"pandemics_biosecurity", region:"APAC",
+  { id:"ER-004", risk_category:"pandemics_biosecurity", region:"APAC",
     existential_exposure_score:0.20, continuity_plan_robustness:0.75, black_swan_preparedness:0.72,
     cascade_failure_vulnerability:0.18, civilizational_resilience_score:0.78, institutional_trust_erosion_rate:0.20,
     strategic_optionality_reserve:0.75, antifragility_score:0.72, early_warning_system_quality:0.78,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     emergency_governance_readiness:0.80, knowledge_preservation_score:0.75, regenerative_recovery_capacity:0.78,
     strategic_redundancy_depth:0.70, existential_hedge_ratio:0.72 },
   // ER-005 — critical, black_swan_blindspot
-  { entity_id:"ER-005", risk_category:"ai_misalignment", region:"GLOBAL",
+  { id:"ER-005", risk_category:"ai_misalignment", region:"GLOBAL",
     existential_exposure_score:0.85, continuity_plan_robustness:0.20, black_swan_preparedness:0.08,
     cascade_failure_vulnerability:0.78, civilizational_resilience_score:0.22, institutional_trust_erosion_rate:0.62,
     strategic_optionality_reserve:0.18, antifragility_score:0.20, early_warning_system_quality:0.12,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     emergency_governance_readiness:0.15, knowledge_preservation_score:0.28, regenerative_recovery_capacity:0.20,
     strategic_redundancy_depth:0.18, existential_hedge_ratio:0.10 },
   // ER-006 — moderate, none
-  { entity_id:"ER-006", risk_category:"financial_system_failure", region:"LATAM",
+  { id:"ER-006", risk_category:"financial_system_failure", region:"LATAM",
     existential_exposure_score:0.48, continuity_plan_robustness:0.55, black_swan_preparedness:0.52,
     cascade_failure_vulnerability:0.42, civilizational_resilience_score:0.52, institutional_trust_erosion_rate:0.42,
     strategic_optionality_reserve:0.50, antifragility_score:0.48, early_warning_system_quality:0.55,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     emergency_governance_readiness:0.55, knowledge_preservation_score:0.52, regenerative_recovery_capacity:0.50,
     strategic_redundancy_depth:0.48, existential_hedge_ratio:0.50 },
   // ER-007 — high, civilizational_drift
-  { entity_id:"ER-007", risk_category:"technology_singularity", region:"EMEA",
+  { id:"ER-007", risk_category:"technology_singularity", region:"EMEA",
     existential_exposure_score:0.68, continuity_plan_robustness:0.35, black_swan_preparedness:0.40,
     cascade_failure_vulnerability:0.58, civilizational_resilience_score:0.38, institutional_trust_erosion_rate:0.62,
     strategic_optionality_reserve:0.32, antifragility_score:0.35, early_warning_system_quality:0.42,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     emergency_governance_readiness:0.38, knowledge_preservation_score:0.40, regenerative_recovery_capacity:0.35,
     strategic_redundancy_depth:0.32, existential_hedge_ratio:0.28 },
   // ER-008 — critical, continuity_failure
-  { entity_id:"ER-008", risk_category:"nuclear_risk", region:"MEA",
+  { id:"ER-008", risk_category:"nuclear_risk", region:"MEA",
     existential_exposure_score:0.88, continuity_plan_robustness:0.08, black_swan_preparedness:0.18,
     cascade_failure_vulnerability:0.82, civilizational_resilience_score:0.15, institutional_trust_erosion_rate:0.72,
     strategic_optionality_reserve:0.10, antifragility_score:0.12, early_warning_system_quality:0.20,
@@ -152,7 +152,7 @@ export async function GET() {
       const sev  = severity(comp);
       const prot = protocol(risk, pat);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         region:                          e.region,
         risk_category:                   e.risk_category,
         existential_risk_level:          risk,

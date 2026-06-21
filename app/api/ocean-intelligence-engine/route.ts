@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // OCN-001 — critical, ecological_ocean_collapse (coral_reef_system, APAC)
   {
-    entity_id: "OCN-001", ocean_domain: "coral_reef_system", region: "APAC",
+    id: "OCN-001", ocean_domain: "coral_reef_system", region: "APAC",
     ocean_acidification_severity: 0.88, plastic_pollution_saturation: 0.55, deep_sea_mining_disruption: 0.50,
     maritime_trade_route_vulnerability: 0.55, illegal_fishing_intensity: 0.60, coral_reef_collapse_rate: 0.82,
     submarine_cable_security_risk: 0.48, marine_biodiversity_collapse: 0.75, ocean_heat_content_anomaly: 0.80,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // OCN-002 — low, none (amazon_coast, LATAM)
   {
-    entity_id: "OCN-002", ocean_domain: "amazon_coast", region: "LATAM",
+    id: "OCN-002", ocean_domain: "amazon_coast", region: "LATAM",
     ocean_acidification_severity: 0.12, plastic_pollution_saturation: 0.15, deep_sea_mining_disruption: 0.10,
     maritime_trade_route_vulnerability: 0.14, illegal_fishing_intensity: 0.18, coral_reef_collapse_rate: 0.12,
     submarine_cable_security_risk: 0.10, marine_biodiversity_collapse: 0.15, ocean_heat_content_anomaly: 0.18,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // OCN-003 — high, maritime_security_crisis (strait_chokepoint, MEA)
   {
-    entity_id: "OCN-003", ocean_domain: "strait_chokepoint", region: "MEA",
+    id: "OCN-003", ocean_domain: "strait_chokepoint", region: "MEA",
     ocean_acidification_severity: 0.45, plastic_pollution_saturation: 0.50, deep_sea_mining_disruption: 0.48,
     maritime_trade_route_vulnerability: 0.55, illegal_fishing_intensity: 0.52, coral_reef_collapse_rate: 0.42,
     submarine_cable_security_risk: 0.82, marine_biodiversity_collapse: 0.45, ocean_heat_content_anomaly: 0.50,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // OCN-004 — low, none (north_sea, EMEA)
   {
-    entity_id: "OCN-004", ocean_domain: "north_sea", region: "EMEA",
+    id: "OCN-004", ocean_domain: "north_sea", region: "EMEA",
     ocean_acidification_severity: 0.18, plastic_pollution_saturation: 0.20, deep_sea_mining_disruption: 0.15,
     maritime_trade_route_vulnerability: 0.18, illegal_fishing_intensity: 0.15, coral_reef_collapse_rate: 0.12,
     submarine_cable_security_risk: 0.15, marine_biodiversity_collapse: 0.18, ocean_heat_content_anomaly: 0.20,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // OCN-005 — critical, ocean_sovereignty_war (south_china_sea, APAC)
   {
-    entity_id: "OCN-005", ocean_domain: "south_china_sea", region: "APAC",
+    id: "OCN-005", ocean_domain: "south_china_sea", region: "APAC",
     ocean_acidification_severity: 0.60, plastic_pollution_saturation: 0.58, deep_sea_mining_disruption: 0.62,
     maritime_trade_route_vulnerability: 0.65, illegal_fishing_intensity: 0.68, coral_reef_collapse_rate: 0.55,
     submarine_cable_security_risk: 0.60, marine_biodiversity_collapse: 0.58, ocean_heat_content_anomaly: 0.62,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // OCN-006 — moderate, none (atlantic_coast, NOAM)
   {
-    entity_id: "OCN-006", ocean_domain: "atlantic_coast", region: "NOAM",
+    id: "OCN-006", ocean_domain: "atlantic_coast", region: "NOAM",
     ocean_acidification_severity: 0.32, plastic_pollution_saturation: 0.35, deep_sea_mining_disruption: 0.28,
     maritime_trade_route_vulnerability: 0.30, illegal_fishing_intensity: 0.32, coral_reef_collapse_rate: 0.28,
     submarine_cable_security_risk: 0.30, marine_biodiversity_collapse: 0.32, ocean_heat_content_anomaly: 0.35,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // OCN-007 — high, blue_economy_disruption (indian_ocean, MEA)
   {
-    entity_id: "OCN-007", ocean_domain: "indian_ocean", region: "MEA",
+    id: "OCN-007", ocean_domain: "indian_ocean", region: "MEA",
     ocean_acidification_severity: 0.50, plastic_pollution_saturation: 0.52, deep_sea_mining_disruption: 0.78,
     maritime_trade_route_vulnerability: 0.82, illegal_fishing_intensity: 0.58, coral_reef_collapse_rate: 0.48,
     submarine_cable_security_risk: 0.55, marine_biodiversity_collapse: 0.50, ocean_heat_content_anomaly: 0.55,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // OCN-008 — critical, plastic_collapse (pacific_gyre, APAC)
   {
-    entity_id: "OCN-008", ocean_domain: "pacific_gyre", region: "APAC",
+    id: "OCN-008", ocean_domain: "pacific_gyre", region: "APAC",
     ocean_acidification_severity: 0.62, plastic_pollution_saturation: 0.88, deep_sea_mining_disruption: 0.58,
     maritime_trade_route_vulnerability: 0.60, illegal_fishing_intensity: 0.65, coral_reef_collapse_rate: 0.58,
     submarine_cable_security_risk: 0.55, marine_biodiversity_collapse: 0.68, ocean_heat_content_anomaly: 0.72,
@@ -185,7 +185,7 @@ export async function GET() {
       const signal    = oceanSignal(e, risk, composite);
 
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         region:                       e.region,
         ocean_domain:                 e.ocean_domain,
         ocean_risk:                   risk,

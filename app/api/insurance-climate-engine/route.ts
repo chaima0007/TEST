@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // ICE-001 — critical, market_exit_uninsurability (uninsurability>0.85, market_exit>0.80)
   {
-    entity_id: "ICE-001", risk_category: "coastal_property", region: "NOAM",
+    id: "ICE-001", risk_category: "coastal_property", region: "NOAM",
     uninsurability_rate: 0.92, premium_increase_trajectory: 0.75,
     insurer_market_exit_rate: 0.88, government_backstop_dependence: 0.72,
     stranded_property_value: 0.70, flood_zone_exposure: 0.85,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // ICE-002 — critical, premium_unaffordability_crisis (premium>0.85, low_income>0.80)
   {
-    entity_id: "ICE-002", risk_category: "wildfire_zone", region: "NOAM",
+    id: "ICE-002", risk_category: "wildfire_zone", region: "NOAM",
     uninsurability_rate: 0.72, premium_increase_trajectory: 0.90,
     insurer_market_exit_rate: 0.68, government_backstop_dependence: 0.75,
     stranded_property_value: 0.65, flood_zone_exposure: 0.58,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // ICE-003 — critical, government_insurer_last_resort (gov_backstop>0.85, reg_solvency>0.80)
   {
-    entity_id: "ICE-003", risk_category: "flood_plain", region: "EMEA",
+    id: "ICE-003", risk_category: "flood_plain", region: "EMEA",
     uninsurability_rate: 0.78, premium_increase_trajectory: 0.72,
     insurer_market_exit_rate: 0.75, government_backstop_dependence: 0.90,
     stranded_property_value: 0.68, flood_zone_exposure: 0.82,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // ICE-004 — high, stranded_asset_collapse (stranded>0.80, mortgage>0.75)
   {
-    entity_id: "ICE-004", risk_category: "coastal_urban", region: "APAC",
+    id: "ICE-004", risk_category: "coastal_urban", region: "APAC",
     uninsurability_rate: 0.55, premium_increase_trajectory: 0.52,
     insurer_market_exit_rate: 0.50, government_backstop_dependence: 0.55,
     stranded_property_value: 0.85, flood_zone_exposure: 0.58,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // ICE-005 — high, systemic_financial_contagion (reinsurance>0.80, infra_gap>0.75)
   {
-    entity_id: "ICE-005", risk_category: "reinsurance_market", region: "EMEA",
+    id: "ICE-005", risk_category: "reinsurance_market", region: "EMEA",
     uninsurability_rate: 0.50, premium_increase_trajectory: 0.52,
     insurer_market_exit_rate: 0.48, government_backstop_dependence: 0.50,
     stranded_property_value: 0.52, flood_zone_exposure: 0.50,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // ICE-006 — moderate, none
   {
-    entity_id: "ICE-006", risk_category: "agricultural", region: "LATAM",
+    id: "ICE-006", risk_category: "agricultural", region: "LATAM",
     uninsurability_rate: 0.32, premium_increase_trajectory: 0.30,
     insurer_market_exit_rate: 0.28, government_backstop_dependence: 0.30,
     stranded_property_value: 0.28, flood_zone_exposure: 0.30,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // ICE-007 — low, none
   {
-    entity_id: "ICE-007", risk_category: "inland_commercial", region: "EMEA",
+    id: "ICE-007", risk_category: "inland_commercial", region: "EMEA",
     uninsurability_rate: 0.10, premium_increase_trajectory: 0.12,
     insurer_market_exit_rate: 0.10, government_backstop_dependence: 0.08,
     stranded_property_value: 0.10, flood_zone_exposure: 0.08,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // ICE-008 — low, none
   {
-    entity_id: "ICE-008", risk_category: "municipal_infrastructure", region: "NOAM",
+    id: "ICE-008", risk_category: "municipal_infrastructure", region: "NOAM",
     uninsurability_rate: 0.12, premium_increase_trajectory: 0.10,
     insurer_market_exit_rate: 0.12, government_backstop_dependence: 0.10,
     stranded_property_value: 0.08, flood_zone_exposure: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:               e.entity_id,
+        id:               e.entity_id,
         risk_category:           e.risk_category,
         region:                  e.region,
         uninsurability_score:    u,

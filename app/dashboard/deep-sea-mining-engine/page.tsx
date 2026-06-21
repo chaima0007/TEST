@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 interface DSEntity {
-  entity_id: string; name: string; country: string; sector: string;
+  id: string; name: string; country: string; sector: string;
   composite_score: number; seabed_territorial_claim_score: number;
   polymetallic_nodule_extraction_score: number; submarine_infrastructure_control_score: number;
   isa_governance_capture_score: number; risk_level: string;
@@ -207,11 +207,11 @@ export default function DeepSeaMiningPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map(entity => (
-            <div key={entity.entity_id} onClick={() => setSel(entity)}
+            <div key={entity.id} onClick={() => setSel(entity)}
               className={`bg-slate-900 rounded-xl p-4 border cursor-pointer hover:border-cyan-500/50 transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}>
               <div className="flex justify-between mb-2">
                 <div>
-                  <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
+                  <p className="text-xs font-mono text-slate-500">{entity.id}</p>
                   <p className="text-sm font-semibold text-white">{entity.name}</p>
                   <p className="text-xs text-slate-500">{entity.country}</p>
                 </div>

@@ -9,7 +9,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "DDA-001",
+    id: "DDA-001",
     name: "Afrique Sub-Saharienne — 28% Connexion Internet, Coût 1 Go = 20% Salaire, Électricité 40% Rurale & Femmes 25% Moins Connectées",
     country: "Afrique",
     sector: "Exclusion Numérique Infrastructure",
@@ -20,7 +20,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "internet_access_exclusion_infrastructure_severity",
   },
   {
-    entity_id: "DDA-002",
+    id: "DDA-002",
     name: "Myanmar/Rural Asie — Coupures Internet Post-Coup, 50% Population Non-Connectée, Zones Rurales 3G Absente & Contenu Langue Maternelle 0%",
     country: "Myanmar",
     sector: "Coupures Internet Autoritaires",
@@ -31,7 +31,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "internet_access_exclusion_infrastructure_severity",
   },
   {
-    entity_id: "DDA-003",
+    id: "DDA-003",
     name: "Inde/Rurale — 800M Sans Internet Régulier, 5G Urbain vs 2G Rural, Femmes 67% Moins Accès & Hindi 90% Contenu Langue",
     country: "Inde",
     sector: "Fracture Rurale-Urbaine Linguistique",
@@ -42,7 +42,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "platform_language_content_inclusion_deficit_gap",
   },
   {
-    entity_id: "DDA-004",
+    id: "DDA-004",
     name: "USA/Zones Rurales — 21M Américains Sans Haut Débit, FCC Data Inexacte, Bibliothèques Seul Accès & Fracture Raciale Digitale Persistante",
     country: "USA",
     sector: "Fracture Numérique Rurale Pays Développé",
@@ -53,7 +53,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "affordability_economic_digital_barrier_scale",
   },
   {
-    entity_id: "DDA-005",
+    id: "DDA-005",
     name: "Europe/DESI — 13% UE Sans Compétences Numériques Basiques, Personnes Âgées 60%+ Exclusion, PME Lag Numérique & Inégalités Régions",
     country: "Europe",
     sector: "Compétences Numériques Inclusion Sociale",
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "digital_literacy_skills_gap",
   },
   {
-    entity_id: "DDA-006",
+    id: "DDA-006",
     name: "Brésil/Favelas — 40% Sans Internet Fixe, Mobile Only Limitation, Contenu Portugais Dominant & Éducation Distance Inégale COVID",
     country: "Brésil",
     sector: "Fracture Mobile-Fixe Inégalités Urbaines",
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "affordability_economic_digital_barrier_scale",
   },
   {
-    entity_id: "DDA-007",
+    id: "DDA-007",
     name: "ITU/A4AI — Union Internationale Télécommunications, Alliance Affordable Internet, Web Foundation & Digital Rights Charter",
     country: "Global",
     sector: "Plaidoyer Droits Numériques",
@@ -86,7 +86,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "affordability_economic_digital_barrier_scale",
   },
   {
-    entity_id: "DDA-008",
+    id: "DDA-008",
     name: "ONU/SDG9c — SDG 9.c Connectivité Universelle 2030, Déclaration WSIS, Droit Internet Résolution ONU & ITU Connect 2030",
     country: "Global",
     sector: "Cadre Normatif Connectivité Universelle",
@@ -147,7 +147,7 @@ export async function GET() {
       const composite = computeComposite(e);
       const risk = riskLevel(composite);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         name: e.name,
         country: e.country,
         sector: e.sector,

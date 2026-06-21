@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // NPE-001 — critical, chronic_cardiovascular_noise_crisis (cardio>0.85, noise_db>0.80)
   {
-    entity_id: "NPE-001", urban_type: "métropole", region: "IDF",
+    id: "NPE-001", urban_type: "métropole", region: "IDF",
     noise_level_db: 0.90, traffic_exposure: 0.88, aviation_exposure: 0.60, industrial_noise: 0.55,
     cardiovascular_risk: 0.88, sleep_disruption: 0.72, cognitive_impact: 0.70, mental_health_burden: 0.68,
     school_noise_exposure: 0.60, hospital_quiet_zone_compliance: 0.40,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // NPE-002 — critical, sleep_deprivation_pandemic (sleep>0.85, nighttime>0.80)
   {
-    entity_id: "NPE-002", urban_type: "agglomération", region: "PACA",
+    id: "NPE-002", urban_type: "agglomération", region: "PACA",
     noise_level_db: 0.75, traffic_exposure: 0.78, aviation_exposure: 0.72, industrial_noise: 0.55,
     cardiovascular_risk: 0.72, sleep_disruption: 0.88, cognitive_impact: 0.68, mental_health_burden: 0.70,
     school_noise_exposure: 0.65, hospital_quiet_zone_compliance: 0.38,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // NPE-003 — critical, childhood_cognitive_impairment (school>0.85, cogn>0.80)
   {
-    entity_id: "NPE-003", urban_type: "zone_industrielle", region: "HDF",
+    id: "NPE-003", urban_type: "zone_industrielle", region: "HDF",
     noise_level_db: 0.82, traffic_exposure: 0.78, aviation_exposure: 0.50, industrial_noise: 0.88,
     cardiovascular_risk: 0.78, sleep_disruption: 0.75, cognitive_impact: 0.82, mental_health_burden: 0.72,
     school_noise_exposure: 0.88, hospital_quiet_zone_compliance: 0.35,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // NPE-004 — high, noise_poverty_inequality_trap (low_income>0.85, racial>0.80)
   {
-    entity_id: "NPE-004", urban_type: "banlieue_dense", region: "IDF",
+    id: "NPE-004", urban_type: "banlieue_dense", region: "IDF",
     noise_level_db: 0.42, traffic_exposure: 0.45, aviation_exposure: 0.35, industrial_noise: 0.30,
     cardiovascular_risk: 0.38, sleep_disruption: 0.40, cognitive_impact: 0.35, mental_health_burden: 0.38,
     school_noise_exposure: 0.50, hospital_quiet_zone_compliance: 0.55,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // NPE-005 — high, regulatory_enforcement_collapse (reg_comp<0.20, complaint<0.20)
   {
-    entity_id: "NPE-005", urban_type: "port_industriel", region: "MED",
+    id: "NPE-005", urban_type: "port_industriel", region: "MED",
     noise_level_db: 0.45, traffic_exposure: 0.48, aviation_exposure: 0.38, industrial_noise: 0.50,
     cardiovascular_risk: 0.42, sleep_disruption: 0.45, cognitive_impact: 0.40, mental_health_burden: 0.42,
     school_noise_exposure: 0.45, hospital_quiet_zone_compliance: 0.45,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // NPE-006 — moderate, none
   {
-    entity_id: "NPE-006", urban_type: "ville_moyenne", region: "ARA",
+    id: "NPE-006", urban_type: "ville_moyenne", region: "ARA",
     noise_level_db: 0.35, traffic_exposure: 0.38, aviation_exposure: 0.25, industrial_noise: 0.28,
     cardiovascular_risk: 0.32, sleep_disruption: 0.35, cognitive_impact: 0.30, mental_health_burden: 0.28,
     school_noise_exposure: 0.32, hospital_quiet_zone_compliance: 0.60,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // NPE-007 — low, none
   {
-    entity_id: "NPE-007", urban_type: "commune_rurale", region: "BZH",
+    id: "NPE-007", urban_type: "commune_rurale", region: "BZH",
     noise_level_db: 0.10, traffic_exposure: 0.12, aviation_exposure: 0.08, industrial_noise: 0.08,
     cardiovascular_risk: 0.10, sleep_disruption: 0.12, cognitive_impact: 0.10, mental_health_burden: 0.08,
     school_noise_exposure: 0.10, hospital_quiet_zone_compliance: 0.85,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // NPE-008 — low, none
   {
-    entity_id: "NPE-008", urban_type: "parc_résidentiel", region: "OCC",
+    id: "NPE-008", urban_type: "parc_résidentiel", region: "OCC",
     noise_level_db: 0.12, traffic_exposure: 0.10, aviation_exposure: 0.08, industrial_noise: 0.06,
     cardiovascular_risk: 0.10, sleep_disruption: 0.10, cognitive_impact: 0.08, mental_health_burden: 0.10,
     school_noise_exposure: 0.08, hospital_quiet_zone_compliance: 0.90,
@@ -150,7 +150,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:          e.entity_id,
+        id:          e.entity_id,
         urban_type:         e.urban_type,
         region:             e.region,
         exposure_score:     exp,

@@ -9,7 +9,7 @@ type TippingSeverity = "planetary_emergency" | "critical_tipping" | "tipping_dev
 type TippingAction   = "planetary_emergency_protocol" | "carbon_emergency_brake" | "ecosystem_crisis_response" | "tipping_monitoring" | "no_action";
 
 interface CtpEntity {
-  entity_id: string;
+  id: string;
   region: string;
   ecosystem_type: string;
   tipping_risk: TippingRisk;
@@ -185,7 +185,7 @@ function DetailModal({ entity, onClose }: { entity: CtpEntity; onClose: () => vo
         <div className="flex items-center justify-between p-5 border-b border-slate-800">
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+              <span className="text-lg font-bold text-white">{entity.id}</span>
               <span className="text-teal-400 text-xs">{entity.region}</span>
               <span className={`text-xs font-bold px-2 py-0.5 rounded border ${rm.badge}`}>{rm.label}</span>
             </div>
@@ -297,7 +297,7 @@ function EntityCard({ entity, onClick }: { entity: CtpEntity; onClick: () => voi
       className={`w-full text-left rounded-xl border border-slate-800 ${rm.bg} p-4 hover:border-emerald-700/50 transition-colors`}
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="font-bold text-white">{entity.entity_id}</span>
+        <span className="font-bold text-white">{entity.id}</span>
         <span className="text-xs text-teal-400">{entity.region}</span>
       </div>
       <div className="text-xs text-slate-400 mb-2 capitalize">{entity.ecosystem_type.replace(/_/g, " ")}</div>
@@ -453,7 +453,7 @@ export default function ClimateTippingPointsDashboard() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((e) => (
-            <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+            <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
           ))}
         </div>
       )}

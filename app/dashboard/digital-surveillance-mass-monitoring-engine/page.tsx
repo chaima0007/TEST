@@ -18,7 +18,7 @@ function GaugeRing({ value, color }: { value: number; color: string }) {
 }
 
 type Entity = {
-  entity_id: string
+  id: string
   name: string
   composite_score: number
   risk_level: string
@@ -111,11 +111,11 @@ export default function DigitalSurveillanceMassMonitoringDashboard() {
             const riskColor = RISK_COLORS[entity.risk_level] ?? ACCENT
             return (
               <div
-                key={entity.entity_id}
+                key={entity.id}
                 className="bg-slate-900 rounded-xl p-4 border border-slate-800 flex flex-col gap-3"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-500">{entity.entity_id}</span>
+                  <span className="text-xs font-mono text-slate-500">{entity.id}</span>
                   <span
                     className="text-xs font-semibold px-2 py-0.5 rounded-full"
                     style={{ backgroundColor: `${riskColor}22`, color: riskColor }}

@@ -28,7 +28,7 @@ const MOCK: Record<string, unknown> = {
   ],
   entities: [
     {
-      entity_id: "DSPR-001",
+      id: "DSPR-001",
       name: "Chine/GFW II SCS — Surveillance de Masse IA, Crédit Social, Reconnaissance Faciale Ouïghours & Contrôle Internet Total",
       country: "Chine",
       composite_score: 91.0,
@@ -42,7 +42,7 @@ const MOCK: Record<string, unknown> = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DSPR-002",
+      id: "DSPR-002",
       name: "Russie/SORM Nagulny — Interception Totale Télécoms, Blogage VPN, Surveillance Opposants & Loi Souveraineté Internet",
       country: "Russie",
       composite_score: 85.75,
@@ -56,7 +56,7 @@ const MOCK: Record<string, unknown> = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DSPR-003",
+      id: "DSPR-003",
       name: "Iran/Internet National — Filtrage Contenu Islamique, Coupures Réseau Protestations, Espionnage Activistes & Contrôle Messageries",
       country: "Iran",
       composite_score: 83.0,
@@ -70,7 +70,7 @@ const MOCK: Record<string, unknown> = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DSPR-004",
+      id: "DSPR-004",
       name: "Biélorussie/Répression Telegram — Surveillance Manifestants 2020, Interception Messages, Arrestations via Données Numériques & Coupures Internet",
       country: "Biélorussie",
       composite_score: 80.25,
@@ -84,7 +84,7 @@ const MOCK: Record<string, unknown> = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DSPR-005",
+      id: "DSPR-005",
       name: "USA/PRISM NSA — Collecte Masse Métadonnées, Section 702 FISA, Surveillance Sans Mandat Étrangers & Absence Recours Citoyens",
       country: "USA",
       composite_score: 55.25,
@@ -98,7 +98,7 @@ const MOCK: Record<string, unknown> = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DSPR-006",
+      id: "DSPR-006",
       name: "Inde/NATGRID Surveillance — Interception Légale Élargie, Absence Loi Protection Données Robuste, Coupures Cachemire & Surveillance Journalistes",
       country: "Inde",
       composite_score: 51.0,
@@ -112,7 +112,7 @@ const MOCK: Record<string, unknown> = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DSPR-007",
+      id: "DSPR-007",
       name: "UE/RGPD Partiel — Protection Données Avancée Mais Lacunes Sécurité Nationale, Surveillance Policière & Adéquation Transferts Données",
       country: "Union Européenne",
       composite_score: 25.5,
@@ -126,7 +126,7 @@ const MOCK: Record<string, unknown> = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "DSPR-008",
+      id: "DSPR-008",
       name: "Allemagne/BND Réforme — Réforme Service Renseignement 2021, Cour Constitutionnelle Protection Vie Privée & Cadre Légal Surveillance Limité",
       country: "Allemagne",
       composite_score: 6.5,

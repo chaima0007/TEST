@@ -6,7 +6,7 @@ const MOCK_ENTITIES = [
   // monopoly_feudalism: platform_market_capture>=0.70 AND gatekeeper_tax_burden>=0.65
   // composite >=60 → critical
   {
-    entity_id: "TFE-001", platform_domain: "social_media_platform", region: "EMEA",
+    id: "TFE-001", platform_domain: "social_media_platform", region: "EMEA",
     platform_market_capture: 0.88,
     cloud_rent_extraction_rate: 0.72,
     data_feudal_rent_index: 0.75,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   // TFE-002 — APAC, local_marketplace → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "TFE-002", platform_domain: "local_marketplace", region: "APAC",
+    id: "TFE-002", platform_domain: "local_marketplace", region: "APAC",
     platform_market_capture: 0.12,
     cloud_rent_extraction_rate: 0.08,
     data_feudal_rent_index: 0.10,
@@ -53,7 +53,7 @@ const MOCK_ENTITIES = [
   // data_serfdom must NOT fire: data_feudal_rent_index<0.70 OR surveillance_capitalism_depth<0.65
   // composite >=40 and <60 → high
   {
-    entity_id: "TFE-003", platform_domain: "cloud_platform", region: "NOAM",
+    id: "TFE-003", platform_domain: "cloud_platform", region: "NOAM",
     platform_market_capture: 0.50,
     cloud_rent_extraction_rate: 0.65,
     data_feudal_rent_index: 0.55,
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
   // TFE-004 — LATAM, regional_platform → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "TFE-004", platform_domain: "regional_platform", region: "LATAM",
+    id: "TFE-004", platform_domain: "regional_platform", region: "LATAM",
     platform_market_capture: 0.10,
     cloud_rent_extraction_rate: 0.10,
     data_feudal_rent_index: 0.08,
@@ -99,7 +99,7 @@ const MOCK_ENTITIES = [
   // monopoly_feudalism must NOT fire: platform_market_capture<0.70 OR gatekeeper_tax_burden<0.65
   // composite >=60 → critical
   {
-    entity_id: "TFE-005", platform_domain: "big_tech_ecosystem", region: "MEA",
+    id: "TFE-005", platform_domain: "big_tech_ecosystem", region: "MEA",
     platform_market_capture: 0.62,
     cloud_rent_extraction_rate: 0.70,
     data_feudal_rent_index: 0.85,
@@ -121,7 +121,7 @@ const MOCK_ENTITIES = [
   // TFE-006 — EMEA, digital_marketplace → moderate, none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "TFE-006", platform_domain: "digital_marketplace", region: "EMEA",
+    id: "TFE-006", platform_domain: "digital_marketplace", region: "EMEA",
     platform_market_capture: 0.35,
     cloud_rent_extraction_rate: 0.28,
     data_feudal_rent_index: 0.30,
@@ -147,7 +147,7 @@ const MOCK_ENTITIES = [
   // monopoly_feudalism must NOT fire, data_serfdom must NOT fire
   // composite >=40 and <60 → high
   {
-    entity_id: "TFE-007", platform_domain: "gig_economy_platform", region: "APAC",
+    id: "TFE-007", platform_domain: "gig_economy_platform", region: "APAC",
     platform_market_capture: 0.48,
     cloud_rent_extraction_rate: 0.40,
     data_feudal_rent_index: 0.42,
@@ -172,7 +172,7 @@ const MOCK_ENTITIES = [
   // monopoly_feudalism must NOT fire, data_serfdom must NOT fire
   // composite >=60 → critical
   {
-    entity_id: "TFE-008", platform_domain: "platform_conglomerate", region: "NOAM",
+    id: "TFE-008", platform_domain: "platform_conglomerate", region: "NOAM",
     platform_market_capture: 0.65,
     cloud_rent_extraction_rate: 0.72,
     data_feudal_rent_index: 0.65,
@@ -298,7 +298,7 @@ export async function GET() {
       const act  = recommendedAction(risk, pat);
       const sig  = feudalSignal(e, risk, comp);
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         region:                         e.region,
         platform_domain:                e.platform_domain,
         feudal_risk:                    risk,

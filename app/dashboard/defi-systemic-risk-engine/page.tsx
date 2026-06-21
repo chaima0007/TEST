@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // ── Types ──────────────────────────────────────────────────────────────────────
 
 type DeFiEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -197,7 +197,7 @@ function DetailModal({ entity, onClose }: { entity: DeFiEntity; onClose: () => v
         <div className="flex items-start justify-between mb-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-500 font-mono">{entity.entity_id}</span>
+              <span className="text-xs text-slate-500 font-mono">{entity.id}</span>
               <span className={`px-2 py-0.5 rounded text-xs font-medium ${RISK_BADGE[entity.risk_level] || "bg-slate-700 text-slate-300"}`}>
                 {entity.risk_level}
               </span>
@@ -492,13 +492,13 @@ export default function DeFiSystemicRiskDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map((e) => (
           <div
-            key={e.entity_id}
+            key={e.id}
             onClick={() => setSelected(e)}
             className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-cyan-700 transition-colors"
           >
             {/* Card header */}
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-slate-500 font-mono">{e.entity_id}</span>
+              <span className="text-xs text-slate-500 font-mono">{e.id}</span>
               <span className="text-xs text-slate-400">{e.country}</span>
             </div>
             <div className="font-bold text-white mb-0.5 leading-tight">{e.name}</div>

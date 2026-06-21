@@ -26,7 +26,7 @@ function getMockData() {
     // BON-001 — critique — social_washing (imd<70, gr=78>=70)
     // composite: 55*0.30 + 78*0.25 + 65*0.25 + 68*0.20 = 16.5+19.5+16.25+13.6 = 65.85
     {
-      entity_id: "BON-001",
+      id: "BON-001",
       name: "Obligation Sociale SNCF 2025",
       country: "France",
       sector: "Infrastructure",
@@ -49,7 +49,7 @@ function getMockData() {
     // BON-002 — critique — impact_fraud (imd=75>=70)
     // composite: 75*0.30 + 62*0.25 + 60*0.25 + 58*0.20 = 22.5+15.5+15+11.6 = 64.60
     {
-      entity_id: "BON-002",
+      id: "BON-002",
       name: "UK Social Housing Bond",
       country: "UK",
       sector: "Real Estate",
@@ -72,7 +72,7 @@ function getMockData() {
     // BON-003 — critique — regulatory_breach (imd<70,gr<70,ite<70,rcg=72>=70)
     // composite: 55*0.30 + 58*0.25 + 62*0.25 + 72*0.20 = 16.5+14.5+15.5+14.4 = 60.90
     {
-      entity_id: "BON-003",
+      id: "BON-003",
       name: "Bundesanleihe Social Bond",
       country: "Germany",
       sector: "Government",
@@ -95,7 +95,7 @@ function getMockData() {
     // BON-004 — élevé — investor_confidence_collapse (imd<70,gr<70,ite=72>=70)
     // composite: 48*0.30 + 52*0.25 + 72*0.25 + 38*0.20 = 14.4+13+18+7.6 = 53.00
     {
-      entity_id: "BON-004",
+      id: "BON-004",
       name: "ABN AMRO ESG Bond",
       country: "Netherlands",
       sector: "Finance",
@@ -118,7 +118,7 @@ function getMockData() {
     // BON-005 — élevé — bond_performing (no sub-score >= 70)
     // composite: 60*0.30 + 42*0.25 + 38*0.25 + 36*0.20 = 18+10.5+9.5+7.2 = 45.20
     {
-      entity_id: "BON-005",
+      id: "BON-005",
       name: "BNP Paribas Social Bond",
       country: "Belgium",
       sector: "Finance",
@@ -141,7 +141,7 @@ function getMockData() {
     // BON-006 — modéré — bond_performing
     // composite: 32*0.30 + 28*0.25 + 26*0.25 + 22*0.20 = 9.6+7+6.5+4.4 = 27.50
     {
-      entity_id: "BON-006",
+      id: "BON-006",
       name: "Nordic Green Social Bond",
       country: "Sweden",
       sector: "Environment",
@@ -164,7 +164,7 @@ function getMockData() {
     // BON-007 — faible — bond_performing
     // composite: 12*0.30 + 10*0.25 + 14*0.25 + 8*0.20 = 3.6+2.5+3.5+1.6 = 11.20
     {
-      entity_id: "BON-007",
+      id: "BON-007",
       name: "UBS Impact Bond",
       country: "Switzerland",
       sector: "Finance",
@@ -187,7 +187,7 @@ function getMockData() {
     // BON-008 — faible — bond_performing
     // composite: 8*0.30 + 6*0.25 + 10*0.25 + 5*0.20 = 2.4+1.5+2.5+1.0 = 7.40
     {
-      entity_id: "BON-008",
+      id: "BON-008",
       name: "European Investment Bank Social Bond",
       country: "Luxembourg",
       sector: "Finance",
@@ -252,7 +252,7 @@ function getMockData() {
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface EntityDict {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;

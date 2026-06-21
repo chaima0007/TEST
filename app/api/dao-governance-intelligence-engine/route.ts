@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // DGI-001: EMEA, protocol_dao → critical, voter_apathy_collapse
   {
-    entity_id: "DGI-001", dao_type: "protocol_dao", region: "EMEA",
+    id: "DGI-001", dao_type: "protocol_dao", region: "EMEA",
     voter_participation_rate: 0.10, plutocracy_concentration: 0.62,
     proposal_quality_score: 0.30, treasury_sustainability_index: 0.40,
     governance_attack_resistance: 0.38, delegate_diversity: 0.15,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // DGI-002: APAC, investment_dao → low, dao_thriving/none
   {
-    entity_id: "DGI-002", dao_type: "investment_dao", region: "APAC",
+    id: "DGI-002", dao_type: "investment_dao", region: "APAC",
     voter_participation_rate: 0.82, plutocracy_concentration: 0.18,
     proposal_quality_score: 0.85, treasury_sustainability_index: 0.88,
     governance_attack_resistance: 0.90, delegate_diversity: 0.85,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // DGI-003: NOAM, social_dao → high, plutocracy_takeover
   {
-    entity_id: "DGI-003", dao_type: "social_dao", region: "NOAM",
+    id: "DGI-003", dao_type: "social_dao", region: "NOAM",
     voter_participation_rate: 0.50, plutocracy_concentration: 0.75,
     proposal_quality_score: 0.38, treasury_sustainability_index: 0.55,
     governance_attack_resistance: 0.55, delegate_diversity: 0.45,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // DGI-004: LATAM, investment_dao → low, dao_thriving/none
   {
-    entity_id: "DGI-004", dao_type: "investment_dao", region: "LATAM",
+    id: "DGI-004", dao_type: "investment_dao", region: "LATAM",
     voter_participation_rate: 0.78, plutocracy_concentration: 0.20,
     proposal_quality_score: 0.80, treasury_sustainability_index: 0.82,
     governance_attack_resistance: 0.85, delegate_diversity: 0.80,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // DGI-005: MEA, protocol_dao → critical, treasury_drain
   {
-    entity_id: "DGI-005", dao_type: "protocol_dao", region: "MEA",
+    id: "DGI-005", dao_type: "protocol_dao", region: "MEA",
     voter_participation_rate: 0.42, plutocracy_concentration: 0.58,
     proposal_quality_score: 0.30, treasury_sustainability_index: 0.22,
     governance_attack_resistance: 0.35, delegate_diversity: 0.35,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // DGI-006: EMEA, grant_dao → moderate, none
   {
-    entity_id: "DGI-006", dao_type: "grant_dao", region: "EMEA",
+    id: "DGI-006", dao_type: "grant_dao", region: "EMEA",
     voter_participation_rate: 0.58, plutocracy_concentration: 0.35,
     proposal_quality_score: 0.60, treasury_sustainability_index: 0.62,
     governance_attack_resistance: 0.65, delegate_diversity: 0.60,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // DGI-007: APAC, social_dao → high, fork_war
   {
-    entity_id: "DGI-007", dao_type: "social_dao", region: "APAC",
+    id: "DGI-007", dao_type: "social_dao", region: "APAC",
     voter_participation_rate: 0.48, plutocracy_concentration: 0.45,
     proposal_quality_score: 0.38, treasury_sustainability_index: 0.50,
     governance_attack_resistance: 0.52, delegate_diversity: 0.45,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // DGI-008: NOAM, protocol_dao → critical, sybil_governance_attack
   {
-    entity_id: "DGI-008", dao_type: "protocol_dao", region: "NOAM",
+    id: "DGI-008", dao_type: "protocol_dao", region: "NOAM",
     voter_participation_rate: 0.35, plutocracy_concentration: 0.55,
     proposal_quality_score: 0.30, treasury_sustainability_index: 0.40,
     governance_attack_resistance: 0.30, delegate_diversity: 0.38,
@@ -202,7 +202,7 @@ export async function GET() {
       const act   = recommendedAction(risk, pat);
       const sig   = daoSignal(e, risk, comp);
       return {
-        entity_id:                e.entity_id,
+        id:                e.entity_id,
         region:                   e.region,
         dao_type:                 e.dao_type,
         dao_risk:                 risk,

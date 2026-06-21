@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   // COG-001 — critique — Interface Neurale Non Régulée
   // 88*0.30 + 82*0.25 + 85*0.25 + 78*0.20 = 26.4+20.5+21.25+15.6 = 83.75
   {
-    entity_id: "COG-001",
+    id: "COG-001",
     name: "NeuraTech Dynamics",
     country: "USA",
     sector: "Biotechnologie",
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
   // COG-002 — critique — Convergence BCI-IA Incontrôlée
   // 82*0.30 + 78*0.25 + 80*0.25 + 72*0.20 = 24.6+19.5+20.0+14.4 = 78.5
   {
-    entity_id: "COG-002",
+    id: "COG-002",
     name: "CognAI Solutions",
     country: "Chine",
     sector: "Intelligence Artificielle",
@@ -62,7 +62,7 @@ const MOCK_ENTITIES = [
   // COG-003 — critique — Vide Réglementaire Nootropique
   // 75*0.30 + 80*0.25 + 78*0.25 + 65*0.20 = 22.5+20.0+19.5+13.0 = 75.0
   {
-    entity_id: "COG-003",
+    id: "COG-003",
     name: "PharmaCog Industries",
     country: "Suisse",
     sector: "Pharmaceutique",
@@ -85,7 +85,7 @@ const MOCK_ENTITIES = [
   // COG-004 — élevé — Augmentation Cognitive Inégalitaire
   // 59*0.30 + 55*0.25 + 58*0.25 + 70*0.20 = 17.7+13.75+14.5+14.0 = 59.95
   {
-    entity_id: "COG-004",
+    id: "COG-004",
     name: "AugMind Corp",
     country: "Royaume-Uni",
     sector: "Neurotechnologie",
@@ -108,7 +108,7 @@ const MOCK_ENTITIES = [
   // COG-005 — élevé — Dépendance Cognitive Induite
   // 55*0.30 + 62*0.25 + 50*0.25 + 58*0.20 = 16.5+15.5+12.5+11.6 = 56.1
   {
-    entity_id: "COG-005",
+    id: "COG-005",
     name: "MindBoost Laboratories",
     country: "Allemagne",
     sector: "Recherche Médicale",
@@ -131,7 +131,7 @@ const MOCK_ENTITIES = [
   // COG-006 — modéré — Dépendance Cognitive Induite
   // 40*0.30 + 38*0.25 + 35*0.25 + 42*0.20 = 12.0+9.5+8.75+8.4 = 38.65
   {
-    entity_id: "COG-006",
+    id: "COG-006",
     name: "BrainWave Institut",
     country: "France",
     sector: "Neurosciences",
@@ -154,7 +154,7 @@ const MOCK_ENTITIES = [
   // COG-007 — faible — Interface Neurale Non Régulée
   // 12*0.30 + 10*0.25 + 15*0.25 + 18*0.20 = 3.6+2.5+3.75+3.6 = 13.45
   {
-    entity_id: "COG-007",
+    id: "COG-007",
     name: "NeurEthics Foundation",
     country: "Canada",
     sector: "Éthique & Recherche",
@@ -177,7 +177,7 @@ const MOCK_ENTITIES = [
   // COG-008 — faible — Vide Réglementaire Nootropique
   // 8*0.30 + 12*0.25 + 10*0.25 + 15*0.20 = 2.4+3.0+2.5+3.0 = 10.9
   {
-    entity_id: "COG-008",
+    id: "COG-008",
     name: "CogSafe Initiative",
     country: "Suède",
     sector: "Santé Publique",

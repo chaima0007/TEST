@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // DPM-001: EMEA, social_media → critical risk, addiction_engineering pattern
   {
-    entity_id: "DPM-001", region: "EMEA", platform_type: "social_media",
+    id: "DPM-001", region: "EMEA", platform_type: "social_media",
     confirmshaming_intensity: 0.68,
     hidden_cost_deployment: 0.48,
     forced_continuity_risk: 0.52,
@@ -25,7 +25,7 @@ const MOCK_ENTITIES = [
   },
   // DPM-002: APAC, e_commerce → low risk, none pattern
   {
-    entity_id: "DPM-002", region: "APAC", platform_type: "e_commerce",
+    id: "DPM-002", region: "APAC", platform_type: "e_commerce",
     confirmshaming_intensity: 0.10,
     hidden_cost_deployment: 0.12,
     forced_continuity_risk: 0.10,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
   },
   // DPM-003: NOAM, subscription_platform → high risk, consent_violation pattern
   {
-    entity_id: "DPM-003", region: "NOAM", platform_type: "subscription_platform",
+    id: "DPM-003", region: "NOAM", platform_type: "subscription_platform",
     confirmshaming_intensity: 0.50,
     hidden_cost_deployment: 0.45,
     forced_continuity_risk: 0.75,
@@ -67,7 +67,7 @@ const MOCK_ENTITIES = [
   },
   // DPM-004: LATAM, gaming_platform → low risk, none pattern
   {
-    entity_id: "DPM-004", region: "LATAM", platform_type: "gaming_platform",
+    id: "DPM-004", region: "LATAM", platform_type: "gaming_platform",
     confirmshaming_intensity: 0.15,
     hidden_cost_deployment: 0.10,
     forced_continuity_risk: 0.12,
@@ -88,7 +88,7 @@ const MOCK_ENTITIES = [
   },
   // DPM-005: MEA, social_media → critical risk, psychological_exploitation pattern
   {
-    entity_id: "DPM-005", region: "MEA", platform_type: "social_media",
+    id: "DPM-005", region: "MEA", platform_type: "social_media",
     confirmshaming_intensity: 0.70,
     hidden_cost_deployment: 0.45,
     forced_continuity_risk: 0.50,
@@ -109,7 +109,7 @@ const MOCK_ENTITIES = [
   },
   // DPM-006: EMEA, news_platform → moderate risk, none pattern
   {
-    entity_id: "DPM-006", region: "EMEA", platform_type: "news_platform",
+    id: "DPM-006", region: "EMEA", platform_type: "news_platform",
     confirmshaming_intensity: 0.30,
     hidden_cost_deployment: 0.35,
     forced_continuity_risk: 0.28,
@@ -130,7 +130,7 @@ const MOCK_ENTITIES = [
   },
   // DPM-007: APAC, fintech_app → high risk, systematic_deception pattern
   {
-    entity_id: "DPM-007", region: "APAC", platform_type: "fintech_app",
+    id: "DPM-007", region: "APAC", platform_type: "fintech_app",
     confirmshaming_intensity: 0.55,
     hidden_cost_deployment: 0.82,
     forced_continuity_risk: 0.45,
@@ -151,7 +151,7 @@ const MOCK_ENTITIES = [
   },
   // DPM-008: NOAM, big_tech_platform → critical risk, regulatory_evasion pattern
   {
-    entity_id: "DPM-008", region: "NOAM", platform_type: "big_tech_platform",
+    id: "DPM-008", region: "NOAM", platform_type: "big_tech_platform",
     confirmshaming_intensity: 0.72,
     hidden_cost_deployment: 0.50,
     forced_continuity_risk: 0.55,
@@ -272,7 +272,7 @@ export async function GET() {
       const severity = manipulationSeverity(comp);
       const action = recommendedAction(risk, pattern);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         region: e.region,
         platform_type: e.platform_type,
         manipulation_risk: risk,

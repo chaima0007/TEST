@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // transboundary_tension≥0.70 AND hydro_weapon_risk≥0.65 → water_war_imminent
   // composite≥60 → critical
   {
-    entity_id: "WGP-001", basin_type: "transboundary_river", region: "MEA",
+    id: "WGP-001", basin_type: "transboundary_river", region: "MEA",
     water_stress_index: 0.80,              transboundary_tension: 0.85,
     upstream_damming_rate: 0.60,           climate_precipitation_deficit: 0.72,
     groundwater_depletion_rate: 0.60,      agricultural_water_competition: 0.78,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   // WGP-002 — APAC, island_nation → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "WGP-002", basin_type: "island_nation", region: "APAC",
+    id: "WGP-002", basin_type: "island_nation", region: "APAC",
     water_stress_index: 0.10,              transboundary_tension: 0.08,
     upstream_damming_rate: 0.08,           climate_precipitation_deficit: 0.10,
     groundwater_depletion_rate: 0.10,      agricultural_water_competition: 0.08,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   // transboundary_tension=0.40<0.70 → avoids water_war_imminent
   // composite in [40,60) → high
   {
-    entity_id: "WGP-003", basin_type: "arid_basin", region: "NOAM",
+    id: "WGP-003", basin_type: "arid_basin", region: "NOAM",
     water_stress_index: 0.72,              transboundary_tension: 0.40,
     upstream_damming_rate: 0.38,           climate_precipitation_deficit: 0.45,
     groundwater_depletion_rate: 0.78,      agricultural_water_competition: 0.55,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   // WGP-004 — LATAM, amazon_basin → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "WGP-004", basin_type: "amazon_basin", region: "LATAM",
+    id: "WGP-004", basin_type: "amazon_basin", region: "LATAM",
     water_stress_index: 0.08,              transboundary_tension: 0.10,
     upstream_damming_rate: 0.10,           climate_precipitation_deficit: 0.08,
     groundwater_depletion_rate: 0.08,      agricultural_water_competition: 0.10,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   // groundwater_depletion_rate=0.55<0.70 → avoids aquifer_collapse
   // composite≥60 → critical
   {
-    entity_id: "WGP-005", basin_type: "nile_system", region: "MEA",
+    id: "WGP-005", basin_type: "nile_system", region: "MEA",
     water_stress_index: 0.75,              transboundary_tension: 0.60,
     upstream_damming_rate: 0.82,           climate_precipitation_deficit: 0.68,
     groundwater_depletion_rate: 0.55,      agricultural_water_competition: 0.72,
@@ -85,7 +85,7 @@ const MOCK_ENTITIES = [
   // WGP-006 — EMEA, alpine_watershed → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "WGP-006", basin_type: "alpine_watershed", region: "EMEA",
+    id: "WGP-006", basin_type: "alpine_watershed", region: "EMEA",
     water_stress_index: 0.28,              transboundary_tension: 0.25,
     upstream_damming_rate: 0.22,           climate_precipitation_deficit: 0.30,
     groundwater_depletion_rate: 0.25,      agricultural_water_competition: 0.28,
@@ -104,7 +104,7 @@ const MOCK_ENTITIES = [
   // urban_water_demand_surge=0.42<0.70 → avoids urban_water_crisis
   // composite in [40,60) → high
   {
-    entity_id: "WGP-007", basin_type: "himalayan_basin", region: "APAC",
+    id: "WGP-007", basin_type: "himalayan_basin", region: "APAC",
     water_stress_index: 0.48,              transboundary_tension: 0.45,
     upstream_damming_rate: 0.40,           climate_precipitation_deficit: 0.72,
     groundwater_depletion_rate: 0.40,      agricultural_water_competition: 0.50,
@@ -122,7 +122,7 @@ const MOCK_ENTITIES = [
   // upstream_damming_rate=0.45<0.70 → avoids upstream_dam_coercion
   // composite≥60 → critical
   {
-    entity_id: "WGP-008", basin_type: "megacity_basin", region: "NOAM",
+    id: "WGP-008", basin_type: "megacity_basin", region: "NOAM",
     water_stress_index: 0.70,              transboundary_tension: 0.50,
     upstream_damming_rate: 0.45,           climate_precipitation_deficit: 0.65,
     groundwater_depletion_rate: 0.55,      agricultural_water_competition: 0.72,
@@ -225,7 +225,7 @@ export async function GET() {
       const action = recommendedAction(risk, pattern);
       const signal = hydroSignal(risk, pattern);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         region: e.region,
         basin_type: e.basin_type,
         hydro_risk: risk,

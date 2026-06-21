@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "MHI-001",
+      id: "MHI-001",
       name: "Russie/Belarus — Psychiatrie Punitive Dissidents, Serbsky Centre Abus, Internements Forcés Longue Durée & Médicaments Forcés",
       country: "Russie/Belarus",
       involuntary_psychiatric_hospitalization_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MHI-002",
+      id: "MHI-002",
       name: "Chine — Ankang Hôpitaux Psychiatrie Police, Falun Gong Internements, Activistes Psychiatrisés & Conditions Inhumaines",
       country: "Chine",
       involuntary_psychiatric_hospitalization_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MHI-003",
+      id: "MHI-003",
       name: "USA — 250 000 Personnes Santé Mentale Incarcérées, Crisis Intervention Manque, Taser Deaths & Rikers Island",
       country: "USA",
       involuntary_psychiatric_hospitalization_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MHI-004",
+      id: "MHI-004",
       name: "Inde/Asie Sud — Chaînes Patients Hôpitaux, Exorcisme Pratiques, Stigmatisation Suicide Criminalisé & Soins Zéro Rural",
       country: "Inde/Asie Sud",
       involuntary_psychiatric_hospitalization_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MHI-005",
+      id: "MHI-005",
       name: "Europe — Involuntary Placement 5-20% Hospitalisations, Électrochocs Sans Consentement, Longue Détention & CRPD Violations",
       country: "Europe",
       involuntary_psychiatric_hospitalization_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MHI-006",
+      id: "MHI-006",
       name: "Afrique/MENA — Budget Santé Mentale 0.5%, Guérisseurs Traditionnels Seuls, Médicaments Indisponibles & Lois Coloniales",
       country: "Afrique/MENA",
       involuntary_psychiatric_hospitalization_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MHI-007",
+      id: "MHI-007",
       name: "WHO/MHRN — Global Mental Health Action Plan, Réseau Recherche, CRPD Art.12 Capacité Juridique & Standards Soins",
       country: "Global",
       involuntary_psychiatric_hospitalization_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MHI-008",
+      id: "MHI-008",
       name: "ONU/CRPD Art.12-17 — Capacité Juridique, Intégrité Personne, Convention Torture & SDG 3.4 Santé Mentale",
       country: "Global",
       involuntary_psychiatric_hospitalization_severity_score: 5.0,

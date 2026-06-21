@@ -6,7 +6,7 @@ const MOCK_ENTITIES = [
   // physical_digital_sync_lag>=0.70 AND model_drift_rate>=0.65 → twin_divergence_crisis
   // composite >=60 → critical
   {
-    entity_id: "DTE-001", twin_category: "industrial_twin", region: "EMEA",
+    id: "DTE-001", twin_category: "industrial_twin", region: "EMEA",
     simulation_accuracy: 0.15,
     physical_digital_sync_lag: 0.85,
     data_sovereignty_risk: 0.80,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   // DTE-002 — APAC, urban_twin → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "DTE-002", twin_category: "urban_twin", region: "APAC",
+    id: "DTE-002", twin_category: "urban_twin", region: "APAC",
     simulation_accuracy: 0.90,
     physical_digital_sync_lag: 0.10,
     data_sovereignty_risk: 0.12,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
   // adversarial_input_risk>=0.70 AND cybersecurity_exposure>=0.65 → adversarial_twin_attack
   // composite 40-59 → high
   {
-    entity_id: "DTE-003", twin_category: "financial_twin", region: "NOAM",
+    id: "DTE-003", twin_category: "financial_twin", region: "NOAM",
     simulation_accuracy: 0.55,
     physical_digital_sync_lag: 0.48,
     data_sovereignty_risk: 0.52,
@@ -73,7 +73,7 @@ const MOCK_ENTITIES = [
   // DTE-004 — LATAM, urban_twin → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "DTE-004", twin_category: "urban_twin", region: "LATAM",
+    id: "DTE-004", twin_category: "urban_twin", region: "LATAM",
     simulation_accuracy: 0.88,
     physical_digital_sync_lag: 0.12,
     data_sovereignty_risk: 0.10,
@@ -96,7 +96,7 @@ const MOCK_ENTITIES = [
   // data_sovereignty_risk>=0.70 AND regulatory_compliance_gap>=0.65 → digital_sovereignty_breach
   // composite >=60 → critical
   {
-    entity_id: "DTE-005", twin_category: "supply_chain_twin", region: "MEA",
+    id: "DTE-005", twin_category: "supply_chain_twin", region: "MEA",
     simulation_accuracy: 0.22,
     physical_digital_sync_lag: 0.65,
     data_sovereignty_risk: 0.82,
@@ -118,7 +118,7 @@ const MOCK_ENTITIES = [
   // DTE-006 — EMEA, logistics_twin → moderate, none
   // composite 20-39 → moderate; no pattern triggers
   {
-    entity_id: "DTE-006", twin_category: "logistics_twin", region: "EMEA",
+    id: "DTE-006", twin_category: "logistics_twin", region: "EMEA",
     simulation_accuracy: 0.68,
     physical_digital_sync_lag: 0.32,
     data_sovereignty_risk: 0.30,
@@ -141,7 +141,7 @@ const MOCK_ENTITIES = [
   // twin_dependency_lock_in>=0.70 AND interoperability_deficit>=0.65 → lock_in_monopoly
   // composite 40-59 → high
   {
-    entity_id: "DTE-007", twin_category: "healthcare_twin", region: "APAC",
+    id: "DTE-007", twin_category: "healthcare_twin", region: "APAC",
     simulation_accuracy: 0.50,
     physical_digital_sync_lag: 0.50,
     data_sovereignty_risk: 0.52,
@@ -164,7 +164,7 @@ const MOCK_ENTITIES = [
   // simulation_accuracy<=0.30 AND twin_fragmentation_rate>=0.60 → predictive_failure_cascade
   // composite >=60 → critical
   {
-    entity_id: "DTE-008", twin_category: "military_twin", region: "NOAM",
+    id: "DTE-008", twin_category: "military_twin", region: "NOAM",
     simulation_accuracy: 0.20,
     physical_digital_sync_lag: 0.78,
     data_sovereignty_risk: 0.75,
@@ -290,7 +290,7 @@ export async function GET() {
       const act  = recommendedAction(risk, pat);
       const sig  = twinSignal(e, risk, comp);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         region:                       e.region,
         twin_category:                e.twin_category,
         twin_risk:                    risk,

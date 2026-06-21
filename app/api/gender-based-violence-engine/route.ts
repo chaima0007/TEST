@@ -34,7 +34,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "GBV-001",
+      id: "GBV-001",
       name: "Afghanistan/Talibans — Interdiction Éducation Filles, Mariage Forcé & Violence Conjugale Légalisée",
       country: "Asie Centrale",
       sector: "Afghanistan Talibans Femmes Interdites Éducation/Travail 2021, Mariage Forcé Filles Dès 9 Ans Légal, Code Moral Taliban Violence Conjugale Non Criminalisée & 4M Filles Hors École",
@@ -54,7 +54,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "GBV-002",
+      id: "GBV-002",
       name: "RDC/Conflits Armés — Viol Arme de Guerre, 400 000 Viols/An & Impunité Totale",
       country: "Afrique Sub-Saharienne",
       sector: "RDC 400 000 Viols/An Est Congo OMS 2011, Milices M23/FDLR Viols Systématiques, Mukwege Nobel Panzi Hospital 85 000 Survivantes & Impunité 90% Auteurs Jamais Poursuivis",
@@ -74,7 +74,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "GBV-003",
+      id: "GBV-003",
       name: "Inde/Asie du Sud — Féminicides, Dots, Crimes Honneur & 7 000 Meurtres Dots/An",
       country: "Asie du Sud",
       sector: "Inde 7000 Meurtres Liés Dot NCRB 2023, Crimes Honneur Pakistan/Bangladesh, Infanticide Féminin 50M Femmes Manquantes Démographie Asie & Acide Attacks 1500/An Bangladesh/Inde",
@@ -94,7 +94,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "GBV-004",
+      id: "GBV-004",
       name: "Yémen/Soudan — VBG en Conflits, Femmes Déplacées & Violences Sexuelles Soldats",
       country: "MENA/Afrique",
       sector: "Yémen Mariage Enfants 66% Filles Avant 18 Ans, Soudan RSF Violences Sexuelles Systématiques 2023 Darfour, 4M PDI Yémen Femmes Vulnérables & Filles Hors École Zones Conflit",
@@ -114,7 +114,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "GBV-005",
+      id: "GBV-005",
       name: "USA — Violences Domestiques, Inégalités Raciales & Recul Droits Reproductifs",
       country: "Amérique du Nord",
       sector: "USA 1/4 Femmes Victimes Violences Conjugales CDC, Arrêt Dobbs 2022 Avortement Interdit 13 États, Femmes Noires 3x Plus à Risque Mort Maternelle & 10M Dossiers Violence Domestique/An FBI",
@@ -134,7 +134,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "GBV-006",
+      id: "GBV-006",
       name: "Mexique/Amérique Latine — Féminicides 10/Jour, Búsqueda & Impunité 99%",
       country: "Amérique Latine",
       sector: "Mexique 10 Féminicides/Jour SESNSP 2023, Búsqueda Mexique Collectifs Femmes Cherchant Disparues, Impunité 99% Féminicides Non Résolus, Guatemala 98% Impunité & Argentine Mouvement Ni Una Menos",
@@ -154,7 +154,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "GBV-007",
+      id: "GBV-007",
       name: "UE/CEDAW — Directive Violence Femmes, Istanbul & Lacunes États Membres",
       country: "Europe",
       sector: "UE Directive Violence Faite aux Femmes 2024 Adoptée, Convention Istanbul 46 États, 1/3 Femmes UE Victimes Violences Physiques/Sexuelles Vie & Lacunes Mise En Oeuvre Pologne/Hongrie",
@@ -174,7 +174,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "GBV-008",
+      id: "GBV-008",
       name: "ONU/CEDAW — Convention Droits Femmes, Rapporteur Spécial & Pékin+30",
       country: "Global",
       sector: "CEDAW Convention Droits Femmes 189 Ratifications 1979, Rapporteur Spécial VBG ONU, Plateforme Action Beijing 1995 +30 Ans Révision 2025 & ONU Women Mécanisme Intergouvernemental",

@@ -40,7 +40,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "XHCM-001",
+      id: "XHCM-001",
       name: "Myanmar/Rohingya — Génocide Reconnu ONU, Villages Brûlés, 700K Réfugiés Bangladesh & Apartheid Ethnic Cleansing",
       country: "Myanmar",
       ethnic_violence_pogrom_targeting_scale_score: 98.0,
@@ -54,7 +54,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "XHCM-002",
+      id: "XHCM-002",
       name: "Inde/BJP-RSS — Loi CAA Discriminatoire, Pogroms Musulmans, Démolitions Bulldozer & Discours Haine Officiel",
       country: "Inde",
       ethnic_violence_pogrom_targeting_scale_score: 90.0,
@@ -68,7 +68,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "XHCM-003",
+      id: "XHCM-003",
       name: "Chine/Ouïghours-Tibet — Surveillance Ethnique, Internement Culturel, Stérilisations Forcées & Langues Interdites",
       country: "Chine",
       ethnic_violence_pogrom_targeting_scale_score: 87.0,
@@ -82,7 +82,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "XHCM-004",
+      id: "XHCM-004",
       name: "Éthiopie/Tigré — Massacres Ethniques, Villages Amhara Tigré Oromo, Famine Arme Guerre & Dépeuplementt Forcé",
       country: "Éthiopie",
       ethnic_violence_pogrom_targeting_scale_score: 86.0,
@@ -96,7 +96,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "XHCM-005",
+      id: "XHCM-005",
       name: "Hongrie/Pologne — Déshumanisation Migrants, Clôtures Anti-Réfugiés, Minorités Roma Exclusion & Parti Jobbik Influence",
       country: "Hongrie/Pologne",
       ethnic_violence_pogrom_targeting_scale_score: 57.0,
@@ -110,7 +110,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "XHCM-006",
+      id: "XHCM-006",
       name: "USA/Europe — Suprémacisme Blanc Attentats, Islamophobie Post-9/11, Antisémitisme Montant & Afro-descendants Violences",
       country: "USA/Europe",
       ethnic_violence_pogrom_targeting_scale_score: 54.0,
@@ -124,7 +124,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "XHCM-007",
+      id: "XHCM-007",
       name: "OSCE/ODIHR — Hate Crime Data Collection, Tolerance Programmes, Early Warning Systems & CERD Monitoring",
       country: "Global",
       ethnic_violence_pogrom_targeting_scale_score: 26.0,
@@ -138,7 +138,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "XHCM-008",
+      id: "XHCM-008",
       name: "ONU/ICERD — Convention Discrimination Raciale, Rapporteur Spécial Racisme, Décennie Afrodescendants & DDPA Durban",
       country: "Global",
       ethnic_violence_pogrom_targeting_scale_score: 5.0,

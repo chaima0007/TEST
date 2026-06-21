@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // CRE-001 — critical, mass_bleaching_extinction_event (bf>0.85, ta>0.80)
   {
-    entity_id: "CRE-001", reef_type: "barrière_corallienne", region: "APAC",
+    id: "CRE-001", reef_type: "barrière_corallienne", region: "APAC",
     bleaching_frequency: 0.92, temperature_anomaly: 0.88,
     ocean_acidification_ph: 0.72, coral_cover_loss: 0.82,
     biodiversity_decline: 0.78, nutrient_pollution: 0.68,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // CRE-002 — critical, ocean_acidification_dissolution (oa_ph>0.85, ccl>0.80)
   {
-    entity_id: "CRE-002", reef_type: "récif_frangeant", region: "CARIB",
+    id: "CRE-002", reef_type: "récif_frangeant", region: "CARIB",
     bleaching_frequency: 0.72, temperature_anomaly: 0.70,
     ocean_acidification_ph: 0.90, coral_cover_loss: 0.88,
     biodiversity_decline: 0.75, nutrient_pollution: 0.70,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // CRE-003 — critical, nutrient_runoff_algae_takeover (np>0.85, sr>0.80)
   {
-    entity_id: "CRE-003", reef_type: "récif_patch", region: "EMEA",
+    id: "CRE-003", reef_type: "récif_patch", region: "EMEA",
     bleaching_frequency: 0.68, temperature_anomaly: 0.65,
     ocean_acidification_ph: 0.70, coral_cover_loss: 0.75,
     biodiversity_decline: 0.70, nutrient_pollution: 0.88,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // CRE-004 — high, destructive_fishing_collapse (dfi>0.80, bd>0.75)
   {
-    entity_id: "CRE-004", reef_type: "récif_atoll", region: "PACIF",
+    id: "CRE-004", reef_type: "récif_atoll", region: "PACIF",
     bleaching_frequency: 0.50, temperature_anomaly: 0.48,
     ocean_acidification_ph: 0.52, coral_cover_loss: 0.50,
     biodiversity_decline: 0.80, nutrient_pollution: 0.48,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // CRE-005 — high, marine_protected_area_failure (mpa>0.80, ri>0.75)
   {
-    entity_id: "CRE-005", reef_type: "récif_profond", region: "LATAM",
+    id: "CRE-005", reef_type: "récif_profond", region: "LATAM",
     bleaching_frequency: 0.48, temperature_anomaly: 0.50,
     ocean_acidification_ph: 0.48, coral_cover_loss: 0.50,
     biodiversity_decline: 0.48, nutrient_pollution: 0.50,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // CRE-006 — moderate, none
   {
-    entity_id: "CRE-006", reef_type: "récif_mesophotique", region: "NOAM",
+    id: "CRE-006", reef_type: "récif_mesophotique", region: "NOAM",
     bleaching_frequency: 0.30, temperature_anomaly: 0.28,
     ocean_acidification_ph: 0.32, coral_cover_loss: 0.30,
     biodiversity_decline: 0.28, nutrient_pollution: 0.32,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // CRE-007 — low, none
   {
-    entity_id: "CRE-007", reef_type: "récif_côtier", region: "APAC",
+    id: "CRE-007", reef_type: "récif_côtier", region: "APAC",
     bleaching_frequency: 0.10, temperature_anomaly: 0.12,
     ocean_acidification_ph: 0.10, coral_cover_loss: 0.12,
     biodiversity_decline: 0.10, nutrient_pollution: 0.12,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // CRE-008 — low, none
   {
-    entity_id: "CRE-008", reef_type: "récif_corallien_isolé", region: "EMEA",
+    id: "CRE-008", reef_type: "récif_corallien_isolé", region: "EMEA",
     bleaching_frequency: 0.12, temperature_anomaly: 0.10,
     ocean_acidification_ph: 0.12, coral_cover_loss: 0.10,
     biodiversity_decline: 0.12, nutrient_pollution: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:            e.entity_id,
+        id:            e.entity_id,
         reef_type:            e.reef_type,
         region:               e.region,
         bleaching_score:      bl,

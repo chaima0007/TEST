@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "BCD-001",
+      id: "BCD-001",
       name: "USA/Mexique — 853 Morts Frontière 2022, Titre 42 Expulsions, Séparation Familles 5 000+, CBP Violence & Razor Wire Texas",
       country: "USA/Mexique",
       border_violence_pushback_death_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "BCD-002",
+      id: "BCD-002",
       name: "UE/Méditerranée — 30 000 Morts Depuis 1993, Pushbacks Croatie/Grèce Documentés, Frontex Complicité & Lampedusa Crise",
       country: "UE/Méditerranée",
       border_violence_pushback_death_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "BCD-003",
+      id: "BCD-003",
       name: "Libye — Centres Détention Torture ONU Documentée, Coast Guard Financement EU, Retours Forcés & Conditions Dégradantes",
       country: "Libye",
       border_violence_pushback_death_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "BCD-004",
+      id: "BCD-004",
       name: "Australie — Nauru Détention Offshore Indéfinie, Manus Island Fermé Tard, Suicides Détenus & Medical Transfers Refusés",
       country: "Australie",
       border_violence_pushback_death_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "BCD-005",
+      id: "BCD-005",
       name: "UK/France — Channel Deaths 2022 Record 46, Pushbacks Illégaux Dunkerque, Rwanda Plan & Small Boats Act 2023",
       country: "UK/France",
       border_violence_pushback_death_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "BCD-006",
+      id: "BCD-006",
       name: "Turquie/Balkans — Route Bosnie Violences, Détention Sans Limite Légale, Mineurs Non-Accompagnés Perdus & Corruption Gardes",
       country: "Turquie/Balkans",
       border_violence_pushback_death_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "BCD-007",
+      id: "BCD-007",
       name: "UNHCR/MSF — Monitoring Frontières, Sauvetages Méditerranée, Dossiers Décès & Advocacy Standards Détention",
       country: "Global",
       border_violence_pushback_death_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "BCD-008",
+      id: "BCD-008",
       name: "ONU/Convention 1951 Art.31 — Non-Pénalisation Entrée Irrégulière, Standards Détention UNHCR & SDG 10.7 Migration",
       country: "Global",
       border_violence_pushback_death_severity_score: 5.0,

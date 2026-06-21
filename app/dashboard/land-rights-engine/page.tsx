@@ -7,7 +7,7 @@ const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","
 const ACCENT = "#78350f";
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -156,7 +156,7 @@ export default function Page() {
       {/* Entity grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {entities.map(e => (
-          <div key={e.entity_id} onClick={() => { setSelected(e); setTab(0); }}
+          <div key={e.id} onClick={() => { setSelected(e); setTab(0); }}
             className={`border rounded-xl p-4 cursor-pointer hover:scale-[1.01] transition-transform ${RB[e.risk_level] ?? "border-slate-700 bg-slate-900"}`}>
             <div className="flex justify-between items-start mb-2">
               <div className="flex-1 min-w-0">

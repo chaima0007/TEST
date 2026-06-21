@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // SMD-001 — critical, deepfake_epidemic
-  { entity_id:"SMD-001", media_domain:"political_media", region:"EMEA",
+  { id:"SMD-001", media_domain:"political_media", region:"EMEA",
     deepfake_prevalence:0.80, ai_content_saturation:0.72, detection_capability:0.22,
     authentication_gap:0.75, voice_clone_exposure:0.68, face_swap_sophistication:0.82,
     provenance_verification_rate:0.15, synthetic_identity_fraud_rate:0.55,
@@ -13,7 +13,7 @@ const MOCK_ENTITIES = [
     biometric_spoofing_risk:0.80, media_literacy_level:0.20,
     watermarking_adoption:0.15 },
   // SMD-002 — low, authentic_environment / none
-  { entity_id:"SMD-002", media_domain:"corporate_comms", region:"APAC",
+  { id:"SMD-002", media_domain:"corporate_comms", region:"APAC",
     deepfake_prevalence:0.10, ai_content_saturation:0.18, detection_capability:0.90,
     authentication_gap:0.12, voice_clone_exposure:0.10, face_swap_sophistication:0.08,
     provenance_verification_rate:0.88, synthetic_identity_fraud_rate:0.10,
@@ -23,7 +23,7 @@ const MOCK_ENTITIES = [
     biometric_spoofing_risk:0.08, media_literacy_level:0.88,
     watermarking_adoption:0.85 },
   // SMD-003 — high, identity_fraud_cascade
-  { entity_id:"SMD-003", media_domain:"financial_media", region:"NOAM",
+  { id:"SMD-003", media_domain:"financial_media", region:"NOAM",
     deepfake_prevalence:0.50, ai_content_saturation:0.55, detection_capability:0.48,
     authentication_gap:0.68, voice_clone_exposure:0.60, face_swap_sophistication:0.55,
     provenance_verification_rate:0.38, synthetic_identity_fraud_rate:0.72,
@@ -33,7 +33,7 @@ const MOCK_ENTITIES = [
     biometric_spoofing_risk:0.60, media_literacy_level:0.45,
     watermarking_adoption:0.38 },
   // SMD-004 — low, authentic_environment / none
-  { entity_id:"SMD-004", media_domain:"corporate_comms", region:"LATAM",
+  { id:"SMD-004", media_domain:"corporate_comms", region:"LATAM",
     deepfake_prevalence:0.12, ai_content_saturation:0.20, detection_capability:0.85,
     authentication_gap:0.15, voice_clone_exposure:0.12, face_swap_sophistication:0.10,
     provenance_verification_rate:0.82, synthetic_identity_fraud_rate:0.12,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     biometric_spoofing_risk:0.10, media_literacy_level:0.82,
     watermarking_adoption:0.80 },
   // SMD-005 — critical, trust_collapse
-  { entity_id:"SMD-005", media_domain:"political_media", region:"MEA",
+  { id:"SMD-005", media_domain:"political_media", region:"MEA",
     deepfake_prevalence:0.60, ai_content_saturation:0.70, detection_capability:0.30,
     authentication_gap:0.65, voice_clone_exposure:0.72, face_swap_sophistication:0.68,
     provenance_verification_rate:0.20, synthetic_identity_fraud_rate:0.60,
@@ -53,7 +53,7 @@ const MOCK_ENTITIES = [
     biometric_spoofing_risk:0.75, media_literacy_level:0.28,
     watermarking_adoption:0.18 },
   // SMD-006 — moderate, none
-  { entity_id:"SMD-006", media_domain:"entertainment", region:"EMEA",
+  { id:"SMD-006", media_domain:"entertainment", region:"EMEA",
     deepfake_prevalence:0.32, ai_content_saturation:0.38, detection_capability:0.62,
     authentication_gap:0.35, voice_clone_exposure:0.30, face_swap_sophistication:0.38,
     provenance_verification_rate:0.55, synthetic_identity_fraud_rate:0.28,
@@ -63,7 +63,7 @@ const MOCK_ENTITIES = [
     biometric_spoofing_risk:0.30, media_literacy_level:0.55,
     watermarking_adoption:0.50 },
   // SMD-007 — high, governance_vacuum
-  { entity_id:"SMD-007", media_domain:"financial_media", region:"APAC",
+  { id:"SMD-007", media_domain:"financial_media", region:"APAC",
     deepfake_prevalence:0.48, ai_content_saturation:0.55, detection_capability:0.42,
     authentication_gap:0.52, voice_clone_exposure:0.48, face_swap_sophistication:0.50,
     provenance_verification_rate:0.40, synthetic_identity_fraud_rate:0.48,
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
   // SMD-008 — critical, adversarial_arms_race
   // deepfake_prevalence <0.65 to avoid triggering deepfake_epidemic first;
   // adversarial_evolution_speed>=0.70 and forensic_detection_lag>=0.60 fires arms_race
-  { entity_id:"SMD-008", media_domain:"political_media", region:"NOAM",
+  { id:"SMD-008", media_domain:"political_media", region:"NOAM",
     deepfake_prevalence:0.55, ai_content_saturation:0.78, detection_capability:0.28,
     authentication_gap:0.58, voice_clone_exposure:0.80, face_swap_sophistication:0.85,
     provenance_verification_rate:0.22, synthetic_identity_fraud_rate:0.50,
@@ -183,7 +183,7 @@ export async function GET() {
       const sev  = syntheticSeverity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         region:                           e.region,
         media_domain:                     e.media_domain,
         synthetic_risk:                   risk,

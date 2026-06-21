@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
   // decoherence_risk≥0.65, (1-quantum_coherence)≥0.50 → quantum_decoherence
   // Need composite≥60 → critical
   {
-    entity_id: "QR-001", region: "EMEA", defense_layer: "quantum_core",
+    id: "QR-001", region: "EMEA", defense_layer: "quantum_core",
     quantum_coherence: 0.10, adaptive_capacity: 0.30, threat_neutralization: 0.30,
     system_redundancy: 0.30, attack_surface_reduction: 0.30, recovery_velocity: 0.30,
     cross_layer_synchrony: 0.30, anomaly_detection: 0.30, self_healing_rate: 0.30,
@@ -22,7 +22,7 @@ const MOCK_ENTITIES = [
   // QR-002 — APAC, perimeter → low, resilient/none
   // All good values → composite<20
   {
-    entity_id: "QR-002", region: "APAC", defense_layer: "perimeter",
+    id: "QR-002", region: "APAC", defense_layer: "perimeter",
     quantum_coherence: 0.92, adaptive_capacity: 0.90, threat_neutralization: 0.92,
     system_redundancy: 0.90, attack_surface_reduction: 0.92, recovery_velocity: 0.90,
     cross_layer_synchrony: 0.92, anomaly_detection: 0.90, self_healing_rate: 0.92,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   // (1-adaptive_capacity)≥0.60 and (1-self_healing_rate)≥0.55 → adaptive_failure
   // composite in [40,60) → high
   {
-    entity_id: "QR-003", region: "NOAM", defense_layer: "adaptive_mesh",
+    id: "QR-003", region: "NOAM", defense_layer: "adaptive_mesh",
     quantum_coherence: 0.65, adaptive_capacity: 0.30, threat_neutralization: 0.60,
     system_redundancy: 0.60, attack_surface_reduction: 0.60, recovery_velocity: 0.60,
     cross_layer_synchrony: 0.65, anomaly_detection: 0.60, self_healing_rate: 0.35,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // QR-004 — LATAM, perimeter → low, resilient/none
   {
-    entity_id: "QR-004", region: "LATAM", defense_layer: "perimeter",
+    id: "QR-004", region: "LATAM", defense_layer: "perimeter",
     quantum_coherence: 0.88, adaptive_capacity: 0.85, threat_neutralization: 0.88,
     system_redundancy: 0.85, attack_surface_reduction: 0.88, recovery_velocity: 0.85,
     cross_layer_synchrony: 0.88, anomaly_detection: 0.85, self_healing_rate: 0.88,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
   // But decoherence_risk<0.65 to avoid quantum_decoherence taking priority
   // composite≥60 → critical
   {
-    entity_id: "QR-005", region: "MEA", defense_layer: "quantum_core",
+    id: "QR-005", region: "MEA", defense_layer: "quantum_core",
     quantum_coherence: 0.20, adaptive_capacity: 0.25, threat_neutralization: 0.25,
     system_redundancy: 0.25, attack_surface_reduction: 0.25, recovery_velocity: 0.25,
     cross_layer_synchrony: 0.35, anomaly_detection: 0.25, self_healing_rate: 0.50,
@@ -68,7 +68,7 @@ const MOCK_ENTITIES = [
   // QR-006 — EMEA, adaptive_mesh → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "QR-006", region: "EMEA", defense_layer: "adaptive_mesh",
+    id: "QR-006", region: "EMEA", defense_layer: "adaptive_mesh",
     quantum_coherence: 0.72, adaptive_capacity: 0.68, threat_neutralization: 0.72,
     system_redundancy: 0.70, attack_surface_reduction: 0.70, recovery_velocity: 0.70,
     cross_layer_synchrony: 0.72, anomaly_detection: 0.70, self_healing_rate: 0.72,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   // (1-adaptive_capacity)<0.60 or (1-self_healing_rate)<0.55 to skip adaptive_failure
   // composite in [40,60) → high
   {
-    entity_id: "QR-007", region: "APAC", defense_layer: "response_layer",
+    id: "QR-007", region: "APAC", defense_layer: "response_layer",
     quantum_coherence: 0.62, adaptive_capacity: 0.50, threat_neutralization: 0.30,
     system_redundancy: 0.50, attack_surface_reduction: 0.50, recovery_velocity: 0.50,
     cross_layer_synchrony: 0.55, anomaly_detection: 0.45, self_healing_rate: 0.55,
@@ -98,7 +98,7 @@ const MOCK_ENTITIES = [
   // vulnerability_exposure=0.55<0.65 → skip vulnerability_breach
   // composite≥60 → critical
   {
-    entity_id: "QR-008", region: "NOAM", defense_layer: "quantum_core",
+    id: "QR-008", region: "NOAM", defense_layer: "quantum_core",
     quantum_coherence: 0.15, adaptive_capacity: 0.50, threat_neutralization: 0.20,
     system_redundancy: 0.20, attack_surface_reduction: 0.20, recovery_velocity: 0.20,
     cross_layer_synchrony: 0.25, anomaly_detection: 0.20, self_healing_rate: 0.55,
@@ -218,7 +218,7 @@ export async function GET() {
       const sig  = resilienceSignal(e, risk, coh, ada, syn, comp);
 
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         region:                           e.region,
         defense_layer:                    e.defense_layer,
         resilience_risk:                  risk,

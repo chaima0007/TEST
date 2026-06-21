@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // UAM-001 — critique: airspace_collision_risk + battery_fire_safety_gap + regulatory_certification_bottleneck
   {
-    entity_id: "UAM-001", vehicle_type: "taxi_aérien_électrique", region: "Île-de-France",
+    id: "UAM-001", vehicle_type: "taxi_aérien_électrique", region: "Île-de-France",
     collision_avoidance_gap: 0.90, airspace_management_failure: 0.88,
     vertiport_density_deficit: 0.78, battery_energy_density_risk: 0.85,
     noise_impact_residential: 0.72, weather_operational_limit: 0.70,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // UAM-002 — critique: airspace_collision_risk + noise_pollution_community_conflict + elite_mobility_gentrification
   {
-    entity_id: "UAM-002", vehicle_type: "drone_cargo_urbain", region: "Grand Paris",
+    id: "UAM-002", vehicle_type: "drone_cargo_urbain", region: "Grand Paris",
     collision_avoidance_gap: 0.85, airspace_management_failure: 0.82,
     vertiport_density_deficit: 0.75, battery_energy_density_risk: 0.72,
     noise_impact_residential: 0.88, weather_operational_limit: 0.68,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // UAM-003 — critique: battery_fire_safety_gap + regulatory_certification_bottleneck
   {
-    entity_id: "UAM-003", vehicle_type: "véhicule_volant_autonome", region: "Lyon Métropole",
+    id: "UAM-003", vehicle_type: "véhicule_volant_autonome", region: "Lyon Métropole",
     collision_avoidance_gap: 0.78, airspace_management_failure: 0.75,
     vertiport_density_deficit: 0.80, battery_energy_density_risk: 0.90,
     noise_impact_residential: 0.65, weather_operational_limit: 0.72,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // UAM-004 — élevé: noise_pollution_community_conflict
   {
-    entity_id: "UAM-004", vehicle_type: "hélicoptère_électrique", region: "Marseille",
+    id: "UAM-004", vehicle_type: "hélicoptère_électrique", region: "Marseille",
     collision_avoidance_gap: 0.50, airspace_management_failure: 0.48,
     vertiport_density_deficit: 0.52, battery_energy_density_risk: 0.55,
     noise_impact_residential: 0.80, weather_operational_limit: 0.52,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // UAM-005 — élevé: elite_mobility_gentrification
   {
-    entity_id: "UAM-005", vehicle_type: "aéronef_vtol_premium", region: "Bordeaux",
+    id: "UAM-005", vehicle_type: "aéronef_vtol_premium", region: "Bordeaux",
     collision_avoidance_gap: 0.48, airspace_management_failure: 0.50,
     vertiport_density_deficit: 0.52, battery_energy_density_risk: 0.50,
     noise_impact_residential: 0.55, weather_operational_limit: 0.48,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // UAM-006 — modéré: no pattern
   {
-    entity_id: "UAM-006", vehicle_type: "navette_aérienne_partagée", region: "Toulouse",
+    id: "UAM-006", vehicle_type: "navette_aérienne_partagée", region: "Toulouse",
     collision_avoidance_gap: 0.30, airspace_management_failure: 0.28,
     vertiport_density_deficit: 0.32, battery_energy_density_risk: 0.30,
     noise_impact_residential: 0.28, weather_operational_limit: 0.32,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // UAM-007 — faible: no pattern
   {
-    entity_id: "UAM-007", vehicle_type: "drone_surveillance_léger", region: "Nantes",
+    id: "UAM-007", vehicle_type: "drone_surveillance_léger", region: "Nantes",
     collision_avoidance_gap: 0.10, airspace_management_failure: 0.12,
     vertiport_density_deficit: 0.10, battery_energy_density_risk: 0.12,
     noise_impact_residential: 0.10, weather_operational_limit: 0.12,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // UAM-008 — faible: no pattern
   {
-    entity_id: "UAM-008", vehicle_type: "planeur_urbain_silencieux", region: "Bretagne",
+    id: "UAM-008", vehicle_type: "planeur_urbain_silencieux", region: "Bretagne",
     collision_avoidance_gap: 0.12, airspace_management_failure: 0.10,
     vertiport_density_deficit: 0.12, battery_energy_density_risk: 0.10,
     noise_impact_residential: 0.12, weather_operational_limit: 0.10,
@@ -165,7 +165,7 @@ export async function GET() {
       const risk = riskLevel(comp);
       const pats = detectPatterns(e);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         vehicle_type:                 e.vehicle_type,
         region:                       e.region,
         composite_score:              comp,

@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // CM-001: EMEA, oral_traditions → critical, civilizational_amnesia
-  { entity_id:"CM-001", heritage_category:"oral_traditions", region:"EMEA",
+  { id:"CM-001", heritage_category:"oral_traditions", region:"EMEA",
     memory_preservation_rate:0.12, cultural_transmission_fidelity:0.20, knowledge_erosion_rate:0.82,
     digital_archival_completeness:0.15, intergenerational_transfer:0.18, linguistic_vitality:0.22,
     oral_tradition_preservation:0.15, artifact_integrity:0.30, collective_identity_coherence:0.20,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     institutional_fragility:0.80, memory_distortion_rate:0.78, cultural_resilience:0.15,
     knowledge_accessibility:0.18, narrative_coherence:0.20 },
   // CM-002: APAC, written_heritage → low, vibrant_heritage/none
-  { entity_id:"CM-002", heritage_category:"written_heritage", region:"APAC",
+  { id:"CM-002", heritage_category:"written_heritage", region:"APAC",
     memory_preservation_rate:0.92, cultural_transmission_fidelity:0.90, knowledge_erosion_rate:0.08,
     digital_archival_completeness:0.92, intergenerational_transfer:0.88, linguistic_vitality:0.92,
     oral_tradition_preservation:0.90, artifact_integrity:0.92, collective_identity_coherence:0.90,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     institutional_fragility:0.10, memory_distortion_rate:0.08, cultural_resilience:0.92,
     knowledge_accessibility:0.90, narrative_coherence:0.90 },
   // CM-003: NOAM, indigenous_knowledge → high, cultural_fragmentation
-  { entity_id:"CM-003", heritage_category:"indigenous_knowledge", region:"NOAM",
+  { id:"CM-003", heritage_category:"indigenous_knowledge", region:"NOAM",
     memory_preservation_rate:0.38, cultural_transmission_fidelity:0.42, knowledge_erosion_rate:0.52,
     digital_archival_completeness:0.35, intergenerational_transfer:0.40, linguistic_vitality:0.48,
     oral_tradition_preservation:0.38, artifact_integrity:0.55, collective_identity_coherence:0.28,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     institutional_fragility:0.58, memory_distortion_rate:0.48, cultural_resilience:0.35,
     knowledge_accessibility:0.38, narrative_coherence:0.32 },
   // CM-004: LATAM, digital_archives → low, vibrant_heritage/none
-  { entity_id:"CM-004", heritage_category:"digital_archives", region:"LATAM",
+  { id:"CM-004", heritage_category:"digital_archives", region:"LATAM",
     memory_preservation_rate:0.88, cultural_transmission_fidelity:0.85, knowledge_erosion_rate:0.10,
     digital_archival_completeness:0.95, intergenerational_transfer:0.82, linguistic_vitality:0.88,
     oral_tradition_preservation:0.80, artifact_integrity:0.90, collective_identity_coherence:0.85,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     institutional_fragility:0.12, memory_distortion_rate:0.10, cultural_resilience:0.88,
     knowledge_accessibility:0.85, narrative_coherence:0.85 },
   // CM-005: MEA, linguistic_heritage → critical, linguistic_extinction
-  { entity_id:"CM-005", heritage_category:"linguistic_heritage", region:"MEA",
+  { id:"CM-005", heritage_category:"linguistic_heritage", region:"MEA",
     memory_preservation_rate:0.55, cultural_transmission_fidelity:0.50, knowledge_erosion_rate:0.45,
     digital_archival_completeness:0.20, intergenerational_transfer:0.45, linguistic_vitality:0.08,
     oral_tradition_preservation:0.42, artifact_integrity:0.35, collective_identity_coherence:0.45,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     institutional_fragility:0.88, memory_distortion_rate:0.72, cultural_resilience:0.12,
     knowledge_accessibility:0.15, narrative_coherence:0.48 },
   // CM-006: EMEA, material_culture → moderate, none
-  { entity_id:"CM-006", heritage_category:"material_culture", region:"EMEA",
+  { id:"CM-006", heritage_category:"material_culture", region:"EMEA",
     memory_preservation_rate:0.62, cultural_transmission_fidelity:0.65, knowledge_erosion_rate:0.32,
     digital_archival_completeness:0.58, intergenerational_transfer:0.60, linguistic_vitality:0.68,
     oral_tradition_preservation:0.62, artifact_integrity:0.72, collective_identity_coherence:0.65,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     institutional_fragility:0.38, memory_distortion_rate:0.30, cultural_resilience:0.62,
     knowledge_accessibility:0.60, narrative_coherence:0.65 },
   // CM-007: APAC, performing_arts → high, transmission_collapse
-  { entity_id:"CM-007", heritage_category:"performing_arts", region:"APAC",
+  { id:"CM-007", heritage_category:"performing_arts", region:"APAC",
     memory_preservation_rate:0.42, cultural_transmission_fidelity:0.30, knowledge_erosion_rate:0.48,
     digital_archival_completeness:0.40, intergenerational_transfer:0.28, linguistic_vitality:0.55,
     oral_tradition_preservation:0.32, artifact_integrity:0.60, collective_identity_coherence:0.50,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     institutional_fragility:0.55, memory_distortion_rate:0.42, cultural_resilience:0.38,
     knowledge_accessibility:0.40, narrative_coherence:0.50 },
   // CM-008: NOAM, oral_traditions → critical, heritage_commodification_risk
-  { entity_id:"CM-008", heritage_category:"oral_traditions", region:"NOAM",
+  { id:"CM-008", heritage_category:"oral_traditions", region:"NOAM",
     memory_preservation_rate:0.52, cultural_transmission_fidelity:0.55, knowledge_erosion_rate:0.48,
     digital_archival_completeness:0.20, intergenerational_transfer:0.42, linguistic_vitality:0.45,
     oral_tradition_preservation:0.40, artifact_integrity:0.38, collective_identity_coherence:0.35,
@@ -160,7 +160,7 @@ export async function GET() {
       const sev   = severity(comp);
       const act   = recommendedAction(risk, pat);
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         region:                         e.region,
         heritage_category:              e.heritage_category,
         memory_risk:                    risk,

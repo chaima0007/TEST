@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // OPE-001 — critical, great_garbage_patch_expansion (plastic_conc>0.85, microplastic>0.80)
   {
-    entity_id: "OPE-001", ocean_zone: "north_pacific_gyre", region: "APAC",
+    id: "OPE-001", ocean_zone: "north_pacific_gyre", region: "APAC",
     plastic_concentration: 0.92, microplastic_density: 0.88, macroplastic_accumulation: 0.82,
     marine_biodiversity_loss: 0.75, coral_reef_damage: 0.70, fisheries_contamination: 0.72,
     human_health_exposure: 0.78, cleanup_effectiveness: 0.72, corporate_accountability: 0.68,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // OPE-002 — critical, microplastic_food_chain_collapse (microplastic>0.85, fisheries>0.80)
   {
-    entity_id: "OPE-002", ocean_zone: "south_atlantic", region: "LATAM",
+    id: "OPE-002", ocean_zone: "south_atlantic", region: "LATAM",
     plastic_concentration: 0.78, microplastic_density: 0.90, macroplastic_accumulation: 0.75,
     marine_biodiversity_loss: 0.72, coral_reef_damage: 0.68, fisheries_contamination: 0.85,
     human_health_exposure: 0.82, cleanup_effectiveness: 0.70, corporate_accountability: 0.72,
@@ -26,7 +26,7 @@ const MOCK_ENTITIES = [
   },
   // OPE-003 — critical, coastal_ecosystem_destruction (coral>0.85, biodiversity>0.80)
   {
-    entity_id: "OPE-003", ocean_zone: "coral_triangle", region: "SEA",
+    id: "OPE-003", ocean_zone: "coral_triangle", region: "SEA",
     plastic_concentration: 0.80, microplastic_density: 0.78, macroplastic_accumulation: 0.82,
     marine_biodiversity_loss: 0.88, coral_reef_damage: 0.92, fisheries_contamination: 0.75,
     human_health_exposure: 0.76, cleanup_effectiveness: 0.68, corporate_accountability: 0.65,
@@ -36,7 +36,7 @@ const MOCK_ENTITIES = [
   },
   // OPE-004 — high, corporate_plastic_impunity (corporate_acc>0.80, policy>0.75)
   {
-    entity_id: "OPE-004", ocean_zone: "mediterranean", region: "EMEA",
+    id: "OPE-004", ocean_zone: "mediterranean", region: "EMEA",
     plastic_concentration: 0.55, microplastic_density: 0.52, macroplastic_accumulation: 0.50,
     marine_biodiversity_loss: 0.48, coral_reef_damage: 0.45, fisheries_contamination: 0.50,
     human_health_exposure: 0.52, cleanup_effectiveness: 0.48, corporate_accountability: 0.85,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
   },
   // OPE-005 — high, treaty_governance_failure (treaty>0.80, single_use>0.75)
   {
-    entity_id: "OPE-005", ocean_zone: "arctic_ocean", region: "NOAM",
+    id: "OPE-005", ocean_zone: "arctic_ocean", region: "NOAM",
     plastic_concentration: 0.50, microplastic_density: 0.48, macroplastic_accumulation: 0.45,
     marine_biodiversity_loss: 0.50, coral_reef_damage: 0.42, fisheries_contamination: 0.48,
     human_health_exposure: 0.50, cleanup_effectiveness: 0.45, corporate_accountability: 0.50,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // OPE-006 — moderate, none
   {
-    entity_id: "OPE-006", ocean_zone: "north_sea", region: "EMEA",
+    id: "OPE-006", ocean_zone: "north_sea", region: "EMEA",
     plastic_concentration: 0.30, microplastic_density: 0.28, macroplastic_accumulation: 0.25,
     marine_biodiversity_loss: 0.30, coral_reef_damage: 0.25, fisheries_contamination: 0.28,
     human_health_exposure: 0.30, cleanup_effectiveness: 0.28, corporate_accountability: 0.25,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
   },
   // OPE-007 — low, none
   {
-    entity_id: "OPE-007", ocean_zone: "southern_ocean", region: "ANT",
+    id: "OPE-007", ocean_zone: "southern_ocean", region: "ANT",
     plastic_concentration: 0.10, microplastic_density: 0.08, macroplastic_accumulation: 0.10,
     marine_biodiversity_loss: 0.10, coral_reef_damage: 0.08, fisheries_contamination: 0.10,
     human_health_exposure: 0.08, cleanup_effectiveness: 0.10, corporate_accountability: 0.08,
@@ -76,7 +76,7 @@ const MOCK_ENTITIES = [
   },
   // OPE-008 — low, none
   {
-    entity_id: "OPE-008", ocean_zone: "baltic_sea", region: "EMEA",
+    id: "OPE-008", ocean_zone: "baltic_sea", region: "EMEA",
     plastic_concentration: 0.12, microplastic_density: 0.10, macroplastic_accumulation: 0.12,
     marine_biodiversity_loss: 0.10, coral_reef_damage: 0.08, fisheries_contamination: 0.10,
     human_health_exposure: 0.12, cleanup_effectiveness: 0.10, corporate_accountability: 0.08,
@@ -150,7 +150,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:             e.entity_id,
+        id:             e.entity_id,
         ocean_zone:            e.ocean_zone,
         region:                e.region,
         pollution_score:       pol,

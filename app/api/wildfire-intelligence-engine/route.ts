@@ -12,7 +12,7 @@ if (!process.env.SWARM_API_URL) {
 // ── Types ──────────────────────────────────────────────────────────────────────
 
 interface WildfireEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -74,7 +74,7 @@ function getMockData(): WildfireSummary {
   const entities: WildfireEntity[] = [
     // WF-001 — California Wildfire Zone — critique (73.25)
     {
-      entity_id: "WF-001",
+      id: "WF-001",
       name: "California Wildfire Zone",
       country: "USA",
       sector: "Emergency Management",
@@ -96,7 +96,7 @@ function getMockData(): WildfireSummary {
     },
     // WF-002 — Amazon Deforestation Region — critique (83.0)
     {
-      entity_id: "WF-002",
+      id: "WF-002",
       name: "Amazon Deforestation Region",
       country: "Brazil",
       sector: "Environmental",
@@ -118,7 +118,7 @@ function getMockData(): WildfireSummary {
     },
     // WF-003 — Mediterranean Basin Authority — critique (68.25)
     {
-      entity_id: "WF-003",
+      id: "WF-003",
       name: "Mediterranean Basin Authority",
       country: "Greece",
       sector: "Emergency Management",
@@ -140,7 +140,7 @@ function getMockData(): WildfireSummary {
     },
     // WF-004 — Australian Bushfire Region — élevé (50.1)
     {
-      entity_id: "WF-004",
+      id: "WF-004",
       name: "Australian Bushfire Region",
       country: "Australia",
       sector: "Emergency Management",
@@ -162,7 +162,7 @@ function getMockData(): WildfireSummary {
     },
     // WF-005 — Siberian Taiga Agency — élevé (44.9)
     {
-      entity_id: "WF-005",
+      id: "WF-005",
       name: "Siberian Taiga Agency",
       country: "Russia",
       sector: "Forestry",
@@ -184,7 +184,7 @@ function getMockData(): WildfireSummary {
     },
     // WF-006 — Portuguese Forest Service — modéré (26.9)
     {
-      entity_id: "WF-006",
+      id: "WF-006",
       name: "Portuguese Forest Service",
       country: "Portugal",
       sector: "Forestry",
@@ -206,7 +206,7 @@ function getMockData(): WildfireSummary {
     },
     // WF-007 — Canadian Fire Watch — faible (11.85)
     {
-      entity_id: "WF-007",
+      id: "WF-007",
       name: "Canadian Fire Watch",
       country: "Canada",
       sector: "Emergency Management",
@@ -228,7 +228,7 @@ function getMockData(): WildfireSummary {
     },
     // WF-008 — Scandinavian Forest Authority — faible (8.35)
     {
-      entity_id: "WF-008",
+      id: "WF-008",
       name: "Scandinavian Forest Authority",
       country: "Sweden",
       sector: "Forestry",

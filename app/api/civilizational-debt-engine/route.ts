@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "CD-001",
+      id: "CD-001",
       name: "États-Unis",
       country: "États-Unis",
       sector: "Nation-État",
@@ -47,7 +47,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "CD-002",
+      id: "CD-002",
       name: "Chine",
       country: "Chine",
       sector: "Nation-État",
@@ -67,7 +67,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "CD-003",
+      id: "CD-003",
       name: "Brésil",
       country: "Brésil",
       sector: "Nation-État",
@@ -87,7 +87,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "CD-004",
+      id: "CD-004",
       name: "Italie",
       country: "Italie",
       sector: "Nation-État",
@@ -107,7 +107,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "CD-005",
+      id: "CD-005",
       name: "Nigéria",
       country: "Nigéria",
       sector: "Nation-État",
@@ -127,7 +127,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "CD-006",
+      id: "CD-006",
       name: "Allemagne",
       country: "Allemagne",
       sector: "Nation-État",
@@ -147,7 +147,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "CD-007",
+      id: "CD-007",
       name: "Danemark",
       country: "Danemark",
       sector: "Nation-État",
@@ -167,7 +167,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "CD-008",
+      id: "CD-008",
       name: "Singapour",
       country: "Singapour",
       sector: "Nation-État",

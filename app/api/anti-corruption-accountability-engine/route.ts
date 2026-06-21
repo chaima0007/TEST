@@ -40,7 +40,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "ACA-001",
+      id: "ACA-001",
       name: "Somalie — CPI 11/100, Corruption Systémique",
       country: "Somalie",
       grand_corruption_state_capture_severity_score: 96.0,
@@ -54,7 +54,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACA-002",
+      id: "ACA-002",
       name: "Syrie — CPI 13/100, Kleptocracie Assad",
       country: "Syrie",
       grand_corruption_state_capture_severity_score: 94.0,
@@ -68,7 +68,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACA-003",
+      id: "ACA-003",
       name: "Corée du Nord — CPI 17/100, Corruption d'État",
       country: "Corée du Nord",
       grand_corruption_state_capture_severity_score: 92.0,
@@ -82,7 +82,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACA-004",
+      id: "ACA-004",
       name: "Yémen — CPI 16/100, Fragmentation Pouvoir",
       country: "Yémen",
       grand_corruption_state_capture_severity_score: 90.0,
@@ -96,7 +96,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACA-005",
+      id: "ACA-005",
       name: "Venezuela — CPI 14/100, Corruption Pétrolière",
       country: "Venezuela",
       grand_corruption_state_capture_severity_score: 55.0,
@@ -110,7 +110,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACA-006",
+      id: "ACA-006",
       name: "Afghanistan — CPI 20/100, Retour Taliban",
       country: "Afghanistan",
       grand_corruption_state_capture_severity_score: 52.0,
@@ -124,7 +124,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACA-007",
+      id: "ACA-007",
       name: "Kenya — CPI 31/100, Réformes Partielles Ruto",
       country: "Kenya",
       grand_corruption_state_capture_severity_score: 28.0,
@@ -138,7 +138,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACA-008",
+      id: "ACA-008",
       name: "Danemark — CPI 90/100, Modèle Mondial Anti-Corruption",
       country: "Danemark",
       grand_corruption_state_capture_severity_score: 4.0,

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type ChainEntity = {
-  entity_id: string;
+  id: string;
   region: string;
   chain_type: string;
   chain_risk: string;
@@ -154,7 +154,7 @@ function DetailModal({ entity, onClose }: { entity: ChainEntity; onClose: () => 
             </text>
           </svg>
           <div>
-            <h2 className="text-xl font-bold text-slate-100">{entity.entity_id}</h2>
+            <h2 className="text-xl font-bold text-slate-100">{entity.id}</h2>
             <p className="text-slate-400 text-sm mt-0.5">{entity.chain_type.replace(/_/g, " ")} · {entity.region}</p>
             <div className="flex flex-wrap gap-2 mt-2">
               <span className={`px-2 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide ${RISK_BADGE[entity.chain_risk]}`}>
@@ -450,13 +450,13 @@ export default function SupplyChainFragilityPage() {
           const eo = ec * (1 - entity.chain_composite / 100);
           return (
             <button
-              key={entity.entity_id}
+              key={entity.id}
               onClick={() => setSelected(entity)}
               className="bg-slate-900 border border-slate-800 rounded-2xl p-5 text-left hover:border-orange-500/50 transition-all hover:bg-slate-800/50 group"
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex-1 min-w-0 mr-3">
-                  <p className="text-slate-100 font-semibold text-sm truncate">{entity.entity_id}</p>
+                  <p className="text-slate-100 font-semibold text-sm truncate">{entity.id}</p>
                   <p className="text-slate-400 text-xs">{entity.region}</p>
                 </div>
                 <svg width={sz} height={sz} viewBox={`0 0 ${sz} ${sz}`} className="shrink-0">

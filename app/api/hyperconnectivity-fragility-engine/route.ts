@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // HF-001 — EMEA, cloud_core — critical, cascade_failure_risk
-  { entity_id:"HF-001", infrastructure_layer:"cloud_core", region:"EMEA",
+  { id:"HF-001", infrastructure_layer:"cloud_core", region:"EMEA",
     node_density:0.82, interconnection_depth:0.88, single_point_concentration:0.85,
     cascading_vulnerability:0.80, network_centrality_risk:0.78, latency_criticality:0.75,
     bandwidth_saturation:0.72, protocol_obsolescence:0.45, dependency_depth:0.70,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     cloud_concentration_risk:0.75, data_sovereignty_gap:0.62, patch_velocity:0.35,
     zero_day_exposure:0.60, infrastructure_age:0.55 },
   // HF-002 — APAC, edge_network — low, none
-  { entity_id:"HF-002", infrastructure_layer:"edge_network", region:"APAC",
+  { id:"HF-002", infrastructure_layer:"edge_network", region:"APAC",
     node_density:0.25, interconnection_depth:0.20, single_point_concentration:0.18,
     cascading_vulnerability:0.15, network_centrality_risk:0.20, latency_criticality:0.22,
     bandwidth_saturation:0.18, protocol_obsolescence:0.15, dependency_depth:0.20,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     cloud_concentration_risk:0.20, data_sovereignty_gap:0.15, patch_velocity:0.88,
     zero_day_exposure:0.12, infrastructure_age:0.18 },
   // HF-003 — NOAM, data_centers — high, dependency_collapse
-  { entity_id:"HF-003", infrastructure_layer:"data_centers", region:"NOAM",
+  { id:"HF-003", infrastructure_layer:"data_centers", region:"NOAM",
     node_density:0.62, interconnection_depth:0.65, single_point_concentration:0.55,
     cascading_vulnerability:0.58, network_centrality_risk:0.52, latency_criticality:0.60,
     bandwidth_saturation:0.55, protocol_obsolescence:0.48, dependency_depth:0.72,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     cloud_concentration_risk:0.62, data_sovereignty_gap:0.45, patch_velocity:0.50,
     zero_day_exposure:0.50, infrastructure_age:0.52 },
   // HF-004 — LATAM, edge_network — low, none
-  { entity_id:"HF-004", infrastructure_layer:"edge_network", region:"LATAM",
+  { id:"HF-004", infrastructure_layer:"edge_network", region:"LATAM",
     node_density:0.22, interconnection_depth:0.18, single_point_concentration:0.20,
     cascading_vulnerability:0.18, network_centrality_risk:0.22, latency_criticality:0.20,
     bandwidth_saturation:0.15, protocol_obsolescence:0.20, dependency_depth:0.18,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     cloud_concentration_risk:0.18, data_sovereignty_gap:0.20, patch_velocity:0.82,
     zero_day_exposure:0.15, infrastructure_age:0.20 },
   // HF-005 — MEA, cloud_core — critical, cyber_systemic_attack
-  { entity_id:"HF-005", infrastructure_layer:"cloud_core", region:"MEA",
+  { id:"HF-005", infrastructure_layer:"cloud_core", region:"MEA",
     node_density:0.78, interconnection_depth:0.80, single_point_concentration:0.55,
     cascading_vulnerability:0.60, network_centrality_risk:0.65, latency_criticality:0.70,
     bandwidth_saturation:0.68, protocol_obsolescence:0.50, dependency_depth:0.60,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     cloud_concentration_risk:0.70, data_sovereignty_gap:0.60, patch_velocity:0.22,
     zero_day_exposure:0.78, infrastructure_age:0.55 },
   // HF-006 — EMEA, telecom_backbone — moderate, none
-  { entity_id:"HF-006", infrastructure_layer:"telecom_backbone", region:"EMEA",
+  { id:"HF-006", infrastructure_layer:"telecom_backbone", region:"EMEA",
     node_density:0.35, interconnection_depth:0.32, single_point_concentration:0.32,
     cascading_vulnerability:0.30, network_centrality_risk:0.35, latency_criticality:0.38,
     bandwidth_saturation:0.32, protocol_obsolescence:0.30, dependency_depth:0.32,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     cloud_concentration_risk:0.28, data_sovereignty_gap:0.32, patch_velocity:0.65,
     zero_day_exposure:0.30, infrastructure_age:0.35 },
   // HF-007 — APAC, data_centers — high, sovereignty_breach
-  { entity_id:"HF-007", infrastructure_layer:"data_centers", region:"APAC",
+  { id:"HF-007", infrastructure_layer:"data_centers", region:"APAC",
     node_density:0.65, interconnection_depth:0.62, single_point_concentration:0.52,
     cascading_vulnerability:0.55, network_centrality_risk:0.58, latency_criticality:0.60,
     bandwidth_saturation:0.55, protocol_obsolescence:0.50, dependency_depth:0.60,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     cloud_concentration_risk:0.72, data_sovereignty_gap:0.78, patch_velocity:0.48,
     zero_day_exposure:0.52, infrastructure_age:0.50 },
   // HF-008 — NOAM, cloud_core — critical, infrastructure_obsolescence
-  { entity_id:"HF-008", infrastructure_layer:"cloud_core", region:"NOAM",
+  { id:"HF-008", infrastructure_layer:"cloud_core", region:"NOAM",
     node_density:0.75, interconnection_depth:0.72, single_point_concentration:0.68,
     cascading_vulnerability:0.62, network_centrality_risk:0.70, latency_criticality:0.65,
     bandwidth_saturation:0.62, protocol_obsolescence:0.80, dependency_depth:0.68,
@@ -143,7 +143,7 @@ export async function GET() {
       const sev  = fragilitySeverity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                          e.entity_id,
+        id:                          e.entity_id,
         region:                             e.region,
         infrastructure_layer:               e.infrastructure_layer,
         fragility_risk:                     risk,

@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // SPH-001: NOAM, tech_entertainment_hegemon → critical, cultural_monopoly
-  { entity_id:"SPH-001", power_domain:"tech_entertainment_hegemon", region:"NOAM",
+  { id:"SPH-001", power_domain:"tech_entertainment_hegemon", region:"NOAM",
     cultural_export_dominance:0.88, language_hegemony_index:0.82, media_narrative_control:0.78,
     educational_model_projection:0.75, diaspora_influence_leverage:0.72, brand_ideology_penetration:0.85,
     entertainment_culture_capture:0.90, algorithmic_culture_shaping:0.80, religious_soft_power:0.45,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     cultural_autonomy_erosion:0.78, linguistic_diversity_threat:0.72, value_system_colonization:0.68,
     counter_hegemony_capacity:0.20, soft_power_weaponization_index:0.75 },
   // SPH-002: LATAM, local_culture_economy → low, none
-  { entity_id:"SPH-002", power_domain:"local_culture_economy", region:"LATAM",
+  { id:"SPH-002", power_domain:"local_culture_economy", region:"LATAM",
     cultural_export_dominance:0.18, language_hegemony_index:0.22, media_narrative_control:0.20,
     educational_model_projection:0.25, diaspora_influence_leverage:0.28, brand_ideology_penetration:0.15,
     entertainment_culture_capture:0.20, algorithmic_culture_shaping:0.18, religious_soft_power:0.35,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     cultural_autonomy_erosion:0.18, linguistic_diversity_threat:0.20, value_system_colonization:0.15,
     counter_hegemony_capacity:0.80, soft_power_weaponization_index:0.10 },
   // SPH-003: EMEA, media_platform → high, narrative_hegemony
-  { entity_id:"SPH-003", power_domain:"media_platform", region:"EMEA",
+  { id:"SPH-003", power_domain:"media_platform", region:"EMEA",
     cultural_export_dominance:0.55, language_hegemony_index:0.60, media_narrative_control:0.78,
     educational_model_projection:0.50, diaspora_influence_leverage:0.48, brand_ideology_penetration:0.52,
     entertainment_culture_capture:0.58, algorithmic_culture_shaping:0.72, religious_soft_power:0.40,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     cultural_autonomy_erosion:0.55, linguistic_diversity_threat:0.58, value_system_colonization:0.48,
     counter_hegemony_capacity:0.45, soft_power_weaponization_index:0.52 },
   // SPH-004: APAC, regional_power → low, none
-  { entity_id:"SPH-004", power_domain:"regional_power", region:"APAC",
+  { id:"SPH-004", power_domain:"regional_power", region:"APAC",
     cultural_export_dominance:0.25, language_hegemony_index:0.28, media_narrative_control:0.22,
     educational_model_projection:0.30, diaspora_influence_leverage:0.32, brand_ideology_penetration:0.20,
     entertainment_culture_capture:0.25, algorithmic_culture_shaping:0.20, religious_soft_power:0.42,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     cultural_autonomy_erosion:0.22, linguistic_diversity_threat:0.25, value_system_colonization:0.20,
     counter_hegemony_capacity:0.72, soft_power_weaponization_index:0.18 },
   // SPH-005: NOAM, global_institution → critical, normative_colonization
-  { entity_id:"SPH-005", power_domain:"global_institution", region:"NOAM",
+  { id:"SPH-005", power_domain:"global_institution", region:"NOAM",
     cultural_export_dominance:0.65, language_hegemony_index:0.70, media_narrative_control:0.68,
     educational_model_projection:0.82, diaspora_influence_leverage:0.65, brand_ideology_penetration:0.60,
     entertainment_culture_capture:0.58, algorithmic_culture_shaping:0.62, religious_soft_power:0.50,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     cultural_autonomy_erosion:0.70, linguistic_diversity_threat:0.65, value_system_colonization:0.78,
     counter_hegemony_capacity:0.22, soft_power_weaponization_index:0.68 },
   // SPH-006: EMEA, multilateral_org → moderate, none
-  { entity_id:"SPH-006", power_domain:"multilateral_org", region:"EMEA",
+  { id:"SPH-006", power_domain:"multilateral_org", region:"EMEA",
     cultural_export_dominance:0.38, language_hegemony_index:0.42, media_narrative_control:0.35,
     educational_model_projection:0.40, diaspora_influence_leverage:0.38, brand_ideology_penetration:0.32,
     entertainment_culture_capture:0.35, algorithmic_culture_shaping:0.30, religious_soft_power:0.28,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     cultural_autonomy_erosion:0.38, linguistic_diversity_threat:0.35, value_system_colonization:0.32,
     counter_hegemony_capacity:0.60, soft_power_weaponization_index:0.28 },
   // SPH-007: APAC, emerging_hegemon → high, soft_power_weaponization
-  { entity_id:"SPH-007", power_domain:"emerging_hegemon", region:"APAC",
+  { id:"SPH-007", power_domain:"emerging_hegemon", region:"APAC",
     cultural_export_dominance:0.58, language_hegemony_index:0.55, media_narrative_control:0.60,
     educational_model_projection:0.62, diaspora_influence_leverage:0.65, brand_ideology_penetration:0.55,
     entertainment_culture_capture:0.52, algorithmic_culture_shaping:0.58, religious_soft_power:0.48,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     cultural_autonomy_erosion:0.72, linguistic_diversity_threat:0.58, value_system_colonization:0.55,
     counter_hegemony_capacity:0.38, soft_power_weaponization_index:0.78 },
   // SPH-008: NOAM, language_institution → critical, linguistic_homogenization
-  { entity_id:"SPH-008", power_domain:"language_institution", region:"NOAM",
+  { id:"SPH-008", power_domain:"language_institution", region:"NOAM",
     cultural_export_dominance:0.72, language_hegemony_index:0.88, media_narrative_control:0.75,
     educational_model_projection:0.80, diaspora_influence_leverage:0.70, brand_ideology_penetration:0.65,
     entertainment_culture_capture:0.68, algorithmic_culture_shaping:0.72, religious_soft_power:0.42,
@@ -158,7 +158,7 @@ export async function GET() {
       const sev  = severity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         region:                          e.region,
         power_domain:                    e.power_domain,
         hegemony_risk:                   risk,

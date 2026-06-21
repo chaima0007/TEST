@@ -22,7 +22,7 @@ export async function GET() {
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface SctEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -58,7 +58,7 @@ interface SctSummary {
 // ── Mock scoring helpers (mirrors Python engine exactly) ───────────────────────
 
 interface SctInput {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -151,7 +151,7 @@ function analyzeEntity(e: SctInput): SctEntity {
   const transparencyIndex = Math.round(comp / 100 * 10 * 100) / 100;
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     name: e.name,
     country: e.country,
     sector: e.sector,
@@ -174,7 +174,7 @@ function analyzeEntity(e: SctInput): SctEntity {
 const RAW_ENTITIES: SctInput[] = [
   // ENT-001 — GlobalTex Industries (Bangladesh, Textile) → critique
   {
-    entity_id: "ENT-001", name: "GlobalTex Industries", country: "Bangladesh", sector: "Textile",
+    id: "ENT-001", name: "GlobalTex Industries", country: "Bangladesh", sector: "Textile",
     supplier_mapping_incompleteness: 0.88, origin_verification_gap: 0.82, tier_visibility_deficit: 0.85,
     regulatory_audit_failures: 0.80, certification_gap_rate: 0.75, labor_standards_violations: 0.82,
     esg_reporting_deficit: 0.78, public_disclosure_gap: 0.75, third_party_audit_absence: 0.72,
@@ -182,7 +182,7 @@ const RAW_ENTITIES: SctInput[] = [
   },
   // ENT-002 — MineralCorp Congo (DRC, Mining) → critique
   {
-    entity_id: "ENT-002", name: "MineralCorp Congo", country: "DRC", sector: "Mining",
+    id: "ENT-002", name: "MineralCorp Congo", country: "DRC", sector: "Mining",
     supplier_mapping_incompleteness: 0.90, origin_verification_gap: 0.88, tier_visibility_deficit: 0.85,
     regulatory_audit_failures: 0.85, certification_gap_rate: 0.80, labor_standards_violations: 0.88,
     esg_reporting_deficit: 0.82, public_disclosure_gap: 0.80, third_party_audit_absence: 0.75,
@@ -190,7 +190,7 @@ const RAW_ENTITIES: SctInput[] = [
   },
   // ENT-003 — AgriChain Asia Pacific (Vietnam, Agriculture) → critique
   {
-    entity_id: "ENT-003", name: "AgriChain Asia Pacific", country: "Vietnam", sector: "Agriculture",
+    id: "ENT-003", name: "AgriChain Asia Pacific", country: "Vietnam", sector: "Agriculture",
     supplier_mapping_incompleteness: 0.72, origin_verification_gap: 0.78, tier_visibility_deficit: 0.75,
     regulatory_audit_failures: 0.82, certification_gap_rate: 0.78, labor_standards_violations: 0.75,
     esg_reporting_deficit: 0.72, public_disclosure_gap: 0.70, third_party_audit_absence: 0.68,
@@ -198,7 +198,7 @@ const RAW_ENTITIES: SctInput[] = [
   },
   // ENT-004 — FastFashion EU GmbH (Germany, Retail) → élevé
   {
-    entity_id: "ENT-004", name: "FastFashion EU GmbH", country: "Germany", sector: "Retail",
+    id: "ENT-004", name: "FastFashion EU GmbH", country: "Germany", sector: "Retail",
     supplier_mapping_incompleteness: 0.55, origin_verification_gap: 0.68, tier_visibility_deficit: 0.52,
     regulatory_audit_failures: 0.52, certification_gap_rate: 0.50, labor_standards_violations: 0.55,
     esg_reporting_deficit: 0.62, public_disclosure_gap: 0.58, third_party_audit_absence: 0.52,
@@ -206,7 +206,7 @@ const RAW_ENTITIES: SctInput[] = [
   },
   // ENT-005 — TechSupply Chain Inc (Taiwan, Electronics) → élevé
   {
-    entity_id: "ENT-005", name: "TechSupply Chain Inc", country: "Taiwan", sector: "Electronics",
+    id: "ENT-005", name: "TechSupply Chain Inc", country: "Taiwan", sector: "Electronics",
     supplier_mapping_incompleteness: 0.55, origin_verification_gap: 0.62, tier_visibility_deficit: 0.50,
     regulatory_audit_failures: 0.52, certification_gap_rate: 0.48, labor_standards_violations: 0.52,
     esg_reporting_deficit: 0.58, public_disclosure_gap: 0.55, third_party_audit_absence: 0.48,
@@ -214,7 +214,7 @@ const RAW_ENTITIES: SctInput[] = [
   },
   // ENT-006 — FoodTrace SARL (France, Food & Beverage) → modéré
   {
-    entity_id: "ENT-006", name: "FoodTrace SARL", country: "France", sector: "Food & Beverage",
+    id: "ENT-006", name: "FoodTrace SARL", country: "France", sector: "Food & Beverage",
     supplier_mapping_incompleteness: 0.30, origin_verification_gap: 0.32, tier_visibility_deficit: 0.28,
     regulatory_audit_failures: 0.28, certification_gap_rate: 0.25, labor_standards_violations: 0.30,
     esg_reporting_deficit: 0.32, public_disclosure_gap: 0.48, third_party_audit_absence: 0.45,
@@ -222,7 +222,7 @@ const RAW_ENTITIES: SctInput[] = [
   },
   // ENT-007 — Nordic Transparency AS (Norway, Financial Services) → faible
   {
-    entity_id: "ENT-007", name: "Nordic Transparency AS", country: "Norway", sector: "Financial Services",
+    id: "ENT-007", name: "Nordic Transparency AS", country: "Norway", sector: "Financial Services",
     supplier_mapping_incompleteness: 0.10, origin_verification_gap: 0.08, tier_visibility_deficit: 0.10,
     regulatory_audit_failures: 0.08, certification_gap_rate: 0.10, labor_standards_violations: 0.08,
     esg_reporting_deficit: 0.10, public_disclosure_gap: 0.08, third_party_audit_absence: 0.10,
@@ -230,7 +230,7 @@ const RAW_ENTITIES: SctInput[] = [
   },
   // ENT-008 — GreenChain Certified (Netherlands, Sustainability) → faible
   {
-    entity_id: "ENT-008", name: "GreenChain Certified", country: "Netherlands", sector: "Sustainability",
+    id: "ENT-008", name: "GreenChain Certified", country: "Netherlands", sector: "Sustainability",
     supplier_mapping_incompleteness: 0.08, origin_verification_gap: 0.10, tier_visibility_deficit: 0.08,
     regulatory_audit_failures: 0.10, certification_gap_rate: 0.08, labor_standards_violations: 0.10,
     esg_reporting_deficit: 0.08, public_disclosure_gap: 0.10, third_party_audit_absence: 0.08,

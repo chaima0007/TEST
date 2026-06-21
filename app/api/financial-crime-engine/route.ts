@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // money_laundering_volume_index≥0.70 AND shell_company_opacity_level≥0.65 → systemic_laundering_network
   // composite≥60 → critical
   {
-    entity_id: "FCE-001", financial_sector: "offshore_banking", region: "EMEA",
+    id: "FCE-001", financial_sector: "offshore_banking", region: "EMEA",
     money_laundering_volume_index: 0.85,           correspondent_banking_vulnerability: 0.78,
     shell_company_opacity_level: 0.82,             crypto_crime_laundering_integration: 0.60,
     trade_based_money_laundering_rate: 0.72,       real_estate_laundering_density: 0.75,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   // FCE-002 — APAC, retail_banking → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "FCE-002", financial_sector: "retail_banking", region: "APAC",
+    id: "FCE-002", financial_sector: "retail_banking", region: "APAC",
     money_laundering_volume_index: 0.08,           correspondent_banking_vulnerability: 0.10,
     shell_company_opacity_level: 0.08,             crypto_crime_laundering_integration: 0.10,
     trade_based_money_laundering_rate: 0.08,       real_estate_laundering_density: 0.10,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   // money_laundering_volume_index=0.45<0.70 → avoids systemic_laundering_network
   // composite in [40,60) → high
   {
-    entity_id: "FCE-003", financial_sector: "correspondent_banking", region: "MEA",
+    id: "FCE-003", financial_sector: "correspondent_banking", region: "MEA",
     money_laundering_volume_index: 0.45,           correspondent_banking_vulnerability: 0.55,
     shell_company_opacity_level: 0.48,             crypto_crime_laundering_integration: 0.40,
     trade_based_money_laundering_rate: 0.42,       real_estate_laundering_density: 0.40,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   // FCE-004 — LATAM, microfinance → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "FCE-004", financial_sector: "microfinance", region: "LATAM",
+    id: "FCE-004", financial_sector: "microfinance", region: "LATAM",
     money_laundering_volume_index: 0.10,           correspondent_banking_vulnerability: 0.08,
     shell_company_opacity_level: 0.08,             crypto_crime_laundering_integration: 0.10,
     trade_based_money_laundering_rate: 0.10,       real_estate_laundering_density: 0.08,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   // sanction_evasion_sophistication=0.55<0.70 → avoids sanction_evasion_empire
   // composite≥60 → critical
   {
-    entity_id: "FCE-005", financial_sector: "state_finance", region: "EMEA",
+    id: "FCE-005", financial_sector: "state_finance", region: "EMEA",
     money_laundering_volume_index: 0.60,           correspondent_banking_vulnerability: 0.72,
     shell_company_opacity_level: 0.65,             crypto_crime_laundering_integration: 0.55,
     trade_based_money_laundering_rate: 0.68,       real_estate_laundering_density: 0.70,
@@ -85,7 +85,7 @@ const MOCK_ENTITIES = [
   // FCE-006 — NOAM, insurance → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "FCE-006", financial_sector: "insurance", region: "NOAM",
+    id: "FCE-006", financial_sector: "insurance", region: "NOAM",
     money_laundering_volume_index: 0.28,           correspondent_banking_vulnerability: 0.30,
     shell_company_opacity_level: 0.25,             crypto_crime_laundering_integration: 0.22,
     trade_based_money_laundering_rate: 0.28,       real_estate_laundering_density: 0.25,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
   // kleptocracy_asset_repatriation_failure=0.40<0.70 → avoids kleptocracy_financial_system
   // composite in [40,60) → high
   {
-    entity_id: "FCE-007", financial_sector: "crypto_exchange", region: "APAC",
+    id: "FCE-007", financial_sector: "crypto_exchange", region: "APAC",
     money_laundering_volume_index: 0.50,           correspondent_banking_vulnerability: 0.48,
     shell_company_opacity_level: 0.45,             crypto_crime_laundering_integration: 0.82,
     trade_based_money_laundering_rate: 0.45,       real_estate_laundering_density: 0.42,
@@ -122,7 +122,7 @@ const MOCK_ENTITIES = [
   // crypto_crime_laundering_integration=0.55<0.70 → avoids crypto_crime_integration
   // composite≥60 → critical
   {
-    entity_id: "FCE-008", financial_sector: "law_firm_trust", region: "LATAM",
+    id: "FCE-008", financial_sector: "law_firm_trust", region: "LATAM",
     money_laundering_volume_index: 0.60,           correspondent_banking_vulnerability: 0.72,
     shell_company_opacity_level: 0.62,             crypto_crime_laundering_integration: 0.55,
     trade_based_money_laundering_rate: 0.70,       real_estate_laundering_density: 0.68,
@@ -215,7 +215,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = crimeSignal(risk);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         financial_sector:                e.financial_sector,
         region:                          e.region,
         laundering_score:                lau,

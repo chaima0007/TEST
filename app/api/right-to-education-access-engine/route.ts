@@ -40,7 +40,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "RTEA-001",
+      id: "RTEA-001",
       name: "Afghanistan/Taliban — Filles Bannies Écoles, 3M Enfants Hors Scolarité, Universités Femmes Fermées & Enseignantes Exclues",
       country: "Afghanistan",
       out_of_school_children_crisis_scale_score: 96.0,
@@ -54,7 +54,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RTEA-002",
+      id: "RTEA-002",
       name: "Sahel/Mali-Niger-Burkina — Écoles Brûlées Djihadistes, 10 000+ Fermées Conflit, Enseignants Assassinés & IDP Enfants Exclus",
       country: "Sahel",
       out_of_school_children_crisis_scale_score: 91.0,
@@ -68,7 +68,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RTEA-003",
+      id: "RTEA-003",
       name: "Pakistan/Bangladesh — 20M Enfants Hors École, Filles Rurales Mariages Précoces, Madrassas Alternatives & Inondations Écoles",
       country: "Pakistan/Bangladesh",
       out_of_school_children_crisis_scale_score: 88.0,
@@ -82,7 +82,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RTEA-004",
+      id: "RTEA-004",
       name: "Nigéria/Boko-Haram — Chibok Girls Legacy, Nordeste Écoles Fermées, ISWA Attaques & Millions Déplacés Sans Accès",
       country: "Nigéria",
       out_of_school_children_crisis_scale_score: 85.0,
@@ -96,7 +96,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RTEA-005",
+      id: "RTEA-005",
       name: "Yémen/Syrie — Décennie Conflit, 50% Écoles Endommagées, Enseignants Impayés 3 Ans & Génération Perdue Éducation",
       country: "Yémen/Syrie",
       out_of_school_children_crisis_scale_score: 56.0,
@@ -110,7 +110,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RTEA-006",
+      id: "RTEA-006",
       name: "Amérique Centrale/Haïti — Gangs Écoles Fermées, Exode Rural, Travail Enfants Agriculture & Coût Indirect Scolarisation",
       country: "Amérique Centrale/Haïti",
       out_of_school_children_crisis_scale_score: 53.0,
@@ -124,7 +124,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RTEA-007",
+      id: "RTEA-007",
       name: "UNICEF/UNESCO — Coalitions Éducation Crise, Rapports Exclusion Mondiale, Programmes Rattrapage & Fonds Urgence",
       country: "Global",
       out_of_school_children_crisis_scale_score: 26.0,
@@ -138,7 +138,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RTEA-008",
+      id: "RTEA-008",
       name: "ONU/Art.26 DUDH — Droit Éducation Universel, Convention Enfant Art.28, SDG 4 & Protocole Facultatif DESC",
       country: "Global",
       out_of_school_children_crisis_scale_score: 5.0,

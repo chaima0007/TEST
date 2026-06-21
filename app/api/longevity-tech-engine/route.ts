@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
   // senolytic_therapy_access_inequality≥0.70 AND longevity_wealth_concentration≥0.65 → immortality_apartheid
   // composite≥60 → critical
   {
-    entity_id: "LTE-001", longevity_sector: "biotech_cluster", region: "NOAM",
+    id: "LTE-001", longevity_sector: "biotech_cluster", region: "NOAM",
     senolytic_therapy_access_inequality: 0.85,
     epigenetic_reprogramming_risk: 0.75,
     longevity_wealth_concentration: 0.80,
@@ -33,7 +33,7 @@ const MOCK_ENTITIES = [
   // LTE-002 — APAC, traditional_medicine → low, none
   // values all 0.15–0.25 range
   {
-    entity_id: "LTE-002", longevity_sector: "traditional_medicine", region: "APAC",
+    id: "LTE-002", longevity_sector: "traditional_medicine", region: "APAC",
     senolytic_therapy_access_inequality: 0.18,
     epigenetic_reprogramming_risk: 0.20,
     longevity_wealth_concentration: 0.15,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   // regulatory_approval_gap≥0.70 AND bioethics_framework_deficit≥0.65 → governance_vacuum
   // composite in [40,60) → high
   {
-    entity_id: "LTE-003", longevity_sector: "pharmaceutical_sector", region: "EMEA",
+    id: "LTE-003", longevity_sector: "pharmaceutical_sector", region: "EMEA",
     senolytic_therapy_access_inequality: 0.50,
     epigenetic_reprogramming_risk: 0.48,
     longevity_wealth_concentration: 0.45,
@@ -78,7 +78,7 @@ const MOCK_ENTITIES = [
   // LTE-004 — LATAM, public_health → low, none
   // values all 0.15–0.25 range
   {
-    entity_id: "LTE-004", longevity_sector: "public_health", region: "LATAM",
+    id: "LTE-004", longevity_sector: "public_health", region: "LATAM",
     senolytic_therapy_access_inequality: 0.20,
     epigenetic_reprogramming_risk: 0.18,
     longevity_wealth_concentration: 0.22,
@@ -101,7 +101,7 @@ const MOCK_ENTITIES = [
   // biotech_monopoly_formation≥0.70 AND longevity_data_sovereignty_risk≥0.65 → biotech_monopoly
   // composite≥60 → critical
   {
-    entity_id: "LTE-005", longevity_sector: "silicon_valley_longevity", region: "NOAM",
+    id: "LTE-005", longevity_sector: "silicon_valley_longevity", region: "NOAM",
     senolytic_therapy_access_inequality: 0.72,
     epigenetic_reprogramming_risk: 0.78,
     longevity_wealth_concentration: 0.75,
@@ -123,7 +123,7 @@ const MOCK_ENTITIES = [
   // LTE-006 — EMEA, research_institution → moderate, none
   // values around 0.25–0.35 range
   {
-    entity_id: "LTE-006", longevity_sector: "research_institution", region: "EMEA",
+    id: "LTE-006", longevity_sector: "research_institution", region: "EMEA",
     senolytic_therapy_access_inequality: 0.30,
     epigenetic_reprogramming_risk: 0.28,
     longevity_wealth_concentration: 0.32,
@@ -146,7 +146,7 @@ const MOCK_ENTITIES = [
   // healthcare_system_disruption_rate≥0.70 AND pension_system_longevity_shock≥0.65 → system_collapse_shock
   // composite in [40,60) → high
   {
-    entity_id: "LTE-007", longevity_sector: "aging_society", region: "APAC",
+    id: "LTE-007", longevity_sector: "aging_society", region: "APAC",
     senolytic_therapy_access_inequality: 0.55,
     epigenetic_reprogramming_risk: 0.50,
     longevity_wealth_concentration: 0.48,
@@ -169,7 +169,7 @@ const MOCK_ENTITIES = [
   // intergenerational_resource_conflict≥0.70 AND youth_labor_market_displacement≥0.65 → intergenerational_war
   // composite≥60 → critical
   {
-    entity_id: "LTE-008", longevity_sector: "longevity_economy", region: "MEA",
+    id: "LTE-008", longevity_sector: "longevity_economy", region: "MEA",
     senolytic_therapy_access_inequality: 0.72,
     epigenetic_reprogramming_risk: 0.68,
     longevity_wealth_concentration: 0.70,
@@ -300,7 +300,7 @@ export async function GET() {
       const sig        = longevitySignal(e, risk, comp, access);
 
       return {
-        entity_id:                          e.entity_id,
+        id:                          e.entity_id,
         region:                             e.region,
         longevity_sector:                   e.longevity_sector,
         longevity_risk:                     risk,

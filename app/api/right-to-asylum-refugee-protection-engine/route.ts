@@ -38,7 +38,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "RAR-001",
+      id: "RAR-001",
       name: "Australie — Offshore Processing Nauru/PNG",
       country: "Australie",
       pushback_refoulement_severity_score: 95.0,
@@ -52,7 +52,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RAR-002",
+      id: "RAR-002",
       name: "Hongrie/UE — Clôtures Barbelées & Pushbacks Illégaux",
       country: "Hongrie",
       pushback_refoulement_severity_score: 92.0,
@@ -66,7 +66,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RAR-003",
+      id: "RAR-003",
       name: "Libye/EU — Garde-Côtes Financés & Centres Détention",
       country: "Libye",
       pushback_refoulement_severity_score: 89.0,
@@ -80,7 +80,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RAR-004",
+      id: "RAR-004",
       name: "USA/Trump — MPP/Attendre au Mexique & Titre 42",
       country: "USA",
       pushback_refoulement_severity_score: 86.0,
@@ -94,7 +94,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RAR-005",
+      id: "RAR-005",
       name: "Grèce — Pushbacks Égée & Camps Samos Surpeuplés",
       country: "Grèce",
       pushback_refoulement_severity_score: 57.0,
@@ -108,7 +108,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RAR-006",
+      id: "RAR-006",
       name: "Turquie — 3.5M Réfugiés Syriens & Déportations",
       country: "Turquie",
       pushback_refoulement_severity_score: 54.0,
@@ -122,7 +122,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RAR-007",
+      id: "RAR-007",
       name: "HCR/OIM — Standards Protection Internationale",
       country: "International",
       pushback_refoulement_severity_score: 27.0,
@@ -136,7 +136,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RAR-008",
+      id: "RAR-008",
       name: "ONU/Convention 1951 — Non-Refoulement & SDG 10.7",
       country: "International",
       pushback_refoulement_severity_score: 4.0,

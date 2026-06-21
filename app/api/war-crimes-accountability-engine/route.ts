@@ -18,7 +18,7 @@ const MOCK = {
   critical_alerts: [],
   entities: [
     {
-      entity_id: "WCA-001",
+      id: "WCA-001",
       name: "Syrie — 500K+ Morts, Armes Chimiques Impunies, 600+ Hôpitaux Bombardés, Veto Russie/Chine CPI & Aucun Jugement",
       country: "Syrie",
       composite_score: 96.05,
@@ -27,7 +27,7 @@ const MOCK = {
       primary_pattern: "chemical_biological_weapons_use",
     },
     {
-      entity_id: "WCA-002",
+      id: "WCA-002",
       name: "Russie/Ukraine — Bucha Massacres Documentés, Bombes Sous-Munitions Civils, Centrales Nucléaires Ciblées & CPI Mandat Poutine Non-Exécuté",
       country: "Russie/Ukraine",
       composite_score: 89.10,
@@ -36,7 +36,7 @@ const MOCK = {
       primary_pattern: "accountability_icc_prosecution_gap",
     },
     {
-      entity_id: "WCA-003",
+      id: "WCA-003",
       name: "Yémen/Coalition — Frappes Marchés/Hôpitaux/Mariages ONU Documentées, Armes US/UK Utilisées & Panel ONU Bloqué 2023",
       country: "Yémen",
       composite_score: 85.65,
@@ -45,7 +45,7 @@ const MOCK = {
       primary_pattern: "humanitarian_law_violations_impunity",
     },
     {
-      entity_id: "WCA-004",
+      id: "WCA-004",
       name: "Israël/Gaza — 35K+ Morts Civils 2023-2024, CIJ Génocide Plausible, Blocus Humanitaire & 100+ Journalistes Tués",
       country: "Israël/Gaza",
       composite_score: 86.05,
@@ -54,7 +54,7 @@ const MOCK = {
       primary_pattern: "war_crimes_scale_civilian_harm",
     },
     {
-      entity_id: "WCA-005",
+      id: "WCA-005",
       name: "Myanmar — Crimes Contre Rohingya Génocide CIJ, Junta Bombes Villages Karen/Chin & Armes Importées Malgré Embargo",
       country: "Myanmar",
       composite_score: 57.40,
@@ -63,7 +63,7 @@ const MOCK = {
       primary_pattern: "accountability_icc_prosecution_gap",
     },
     {
-      entity_id: "WCA-006",
+      id: "WCA-006",
       name: "Éthiopie — Tigré Blocus Alimentaire Crime de Guerre, Viols Systématiques Arme Guerre & Impunité Totale Commandants",
       country: "Éthiopie",
       composite_score: 53.40,
@@ -72,7 +72,7 @@ const MOCK = {
       primary_pattern: "humanitarian_law_violations_impunity",
     },
     {
-      entity_id: "WCA-007",
+      id: "WCA-007",
       name: "Colombie — FARC/Para Crimes Passés, JEP Réconciliation en Progrès & 30 Ans Conflit Quelques Jugements",
       country: "Colombie",
       composite_score: 26.50,
@@ -81,7 +81,7 @@ const MOCK = {
       primary_pattern: "war_crimes_scale_civilian_harm",
     },
     {
-      entity_id: "WCA-008",
+      id: "WCA-008",
       name: "Pays-Bas/CPI — Siège CPI La Haye, Jurisprudence Crimes Guerre, Contribution Financière Majeure & Pas en Conflit",
       country: "Pays-Bas",
       composite_score: 5.05,

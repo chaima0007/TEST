@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // ── Types ────────────────────────────────────────────────────────────────────
 
 interface MigrationEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -371,7 +371,7 @@ export default function ClimateMigrationPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filtered.map((entity) => (
-                <EntityCard key={entity.entity_id} entity={entity} onClick={setSelected} />
+                <EntityCard key={entity.id} entity={entity} onClick={setSelected} />
               ))}
               {filtered.length === 0 && (
                 <div className="col-span-full text-center py-12 text-gray-400 text-sm">

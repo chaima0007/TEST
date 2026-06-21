@@ -40,7 +40,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "FTDP-001",
+      id: "FTDP-001",
       name: "Chine/Xinjiang — Tribunaux Secrets, Aveux Télévisés Forcés, 1M+ Détenus Sans Procès & Défenseurs Droits Condamnés",
       country: "Chine",
       arbitrary_detention_prolonged_pretrial_score: 95.0,
@@ -54,7 +54,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FTDP-002",
+      id: "FTDP-002",
       name: "Égypte/Al-Sissi — 60 000 Prisonniers Politiques, Tribunaux Militaires Civils, Détention Préventive Infinie & Torture Documentée",
       country: "Égypte",
       arbitrary_detention_prolonged_pretrial_score: 92.0,
@@ -68,7 +68,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FTDP-003",
+      id: "FTDP-003",
       name: "Iran/CGRI — Procès 10 Minutes, Défenseurs Isolés, Peine Mort Manifestants & Avocats Emprisonnés Pour Défense",
       country: "Iran",
       arbitrary_detention_prolonged_pretrial_score: 88.0,
@@ -82,7 +82,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FTDP-004",
+      id: "FTDP-004",
       name: "Russie/Navalny-Legacy — Procès Politiques Médiatisés, Prisonniers Transférés Colonies Arctiques, 3 700 Manifestants Condamnés",
       country: "Russie",
       arbitrary_detention_prolonged_pretrial_score: 86.0,
@@ -96,7 +96,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FTDP-005",
+      id: "FTDP-005",
       name: "Turquie/Post-Coup — 150 000 Purges, Magistrats Révoqués, État Urgence Perpétuel & KHK Décrets Sans Recours",
       country: "Turquie",
       arbitrary_detention_prolonged_pretrial_score: 58.0,
@@ -110,7 +110,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FTDP-006",
+      id: "FTDP-006",
       name: "USA/Guantánamo — Détention Indéfinie Sans Charge, Commissions Militaires, Preuves Torture & Racisme Système Pénal",
       country: "USA",
       arbitrary_detention_prolonged_pretrial_score: 55.0,
@@ -124,7 +124,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FTDP-007",
+      id: "FTDP-007",
       name: "Fair Trials International — Justice Index, Monitoring Procès Politiques, Rapports Détention Provisoire & Réforme Pénale",
       country: "Global",
       arbitrary_detention_prolonged_pretrial_score: 27.0,
@@ -138,7 +138,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FTDP-008",
+      id: "FTDP-008",
       name: "ONU/Art.14 PIDCP — Droit Procès Équitable, Présomption Innocence, Indépendance Judiciaire & Principes Bangalors",
       country: "Global",
       arbitrary_detention_prolonged_pretrial_score: 5.0,

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // Caelum Partners — Chaima Mhadbi, Fondatrice, Bruxelles
 
 type Entity = {
-  entity_id: string;
+  id: string;
   region: string;
   economy_type: string;
   singularity_risk: string;
@@ -137,7 +137,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
       >
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-yellow-300">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-yellow-300">{entity.id}</span>
             <span className="ml-2 text-yellow-300/60 text-xs">{entity.economy_type.replace(/_/g, " ")}</span>
             <span className="ml-2 text-yellow-300/40 text-xs">{entity.region}</span>
           </div>
@@ -337,12 +337,12 @@ export default function EconomicSingularityDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map(e => (
           <div
-            key={e.entity_id}
+            key={e.id}
             onClick={() => setSelected(e)}
             className="bg-slate-950 border border-yellow-600/30 rounded-xl p-4 cursor-pointer hover:border-yellow-400 transition-colors"
           >
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-yellow-300">{e.entity_id}</span>
+              <span className="font-bold text-yellow-300">{e.id}</span>
               <span className="text-xs text-yellow-300/40">{e.region}</span>
             </div>
             <div className="text-xs text-yellow-300/50 mb-2 capitalize">{e.economy_type.replace(/_/g, " ")}</div>

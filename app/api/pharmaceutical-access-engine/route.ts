@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // PAE-001 — critical, life_saving_drug_unaffordability (drug_price>0.85, out_of_pocket>0.80)
   {
-    entity_id: "PAE-001", therapeutic_area: "oncologie", region: "SSA",
+    id: "PAE-001", therapeutic_area: "oncologie", region: "SSA",
     drug_price_index: 0.92, patent_monopoly_duration: 0.70, generic_availability: 0.65,
     insurance_coverage_gap: 0.72, out_of_pocket_burden: 0.88, compulsory_license_use: 0.68,
     clinical_trial_inclusion: 0.65, off_label_access: 0.60, essential_medicine_gap: 0.72,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // PAE-002 — critical, patent_monopoly_abuse (patent_monopoly>0.85, export_restriction>0.80)
   {
-    entity_id: "PAE-002", therapeutic_area: "maladies_rares", region: "APAC",
+    id: "PAE-002", therapeutic_area: "maladies_rares", region: "APAC",
     drug_price_index: 0.62, patent_monopoly_duration: 0.90, generic_availability: 0.70,
     insurance_coverage_gap: 0.65, out_of_pocket_burden: 0.65, compulsory_license_use: 0.60,
     clinical_trial_inclusion: 0.62, off_label_access: 0.58, essential_medicine_gap: 0.65,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // PAE-003 — critical, generic_market_suppression (generic_availability>0.85, essential_medicine_gap>0.80)
   {
-    entity_id: "PAE-003", therapeutic_area: "maladies_tropicales", region: "SSA",
+    id: "PAE-003", therapeutic_area: "maladies_tropicales", region: "SSA",
     drug_price_index: 0.60, patent_monopoly_duration: 0.65, generic_availability: 0.88,
     insurance_coverage_gap: 0.70, out_of_pocket_burden: 0.65, compulsory_license_use: 0.60,
     clinical_trial_inclusion: 0.62, off_label_access: 0.55, essential_medicine_gap: 0.85,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // PAE-004 — high, clinical_trial_exclusion (clinical_trial_inclusion>0.80, research_neglected>0.75)
   {
-    entity_id: "PAE-004", therapeutic_area: "pédiatrie", region: "EMEA",
+    id: "PAE-004", therapeutic_area: "pédiatrie", region: "EMEA",
     drug_price_index: 0.48, patent_monopoly_duration: 0.50, generic_availability: 0.45,
     insurance_coverage_gap: 0.50, out_of_pocket_burden: 0.48, compulsory_license_use: 0.45,
     clinical_trial_inclusion: 0.82, off_label_access: 0.50, essential_medicine_gap: 0.50,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // PAE-005 — high, counterfeit_drug_proliferation (counterfeiting_risk>0.80, black_market>0.75)
   {
-    entity_id: "PAE-005", therapeutic_area: "anti-infectieux", region: "LATAM",
+    id: "PAE-005", therapeutic_area: "anti-infectieux", region: "LATAM",
     drug_price_index: 0.45, patent_monopoly_duration: 0.50, generic_availability: 0.48,
     insurance_coverage_gap: 0.52, out_of_pocket_burden: 0.48, compulsory_license_use: 0.45,
     clinical_trial_inclusion: 0.48, off_label_access: 0.45, essential_medicine_gap: 0.50,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // PAE-006 — moderate, none
   {
-    entity_id: "PAE-006", therapeutic_area: "cardiovasculaire", region: "NOAM",
+    id: "PAE-006", therapeutic_area: "cardiovasculaire", region: "NOAM",
     drug_price_index: 0.28, patent_monopoly_duration: 0.30, generic_availability: 0.28,
     insurance_coverage_gap: 0.30, out_of_pocket_burden: 0.28, compulsory_license_use: 0.25,
     clinical_trial_inclusion: 0.28, off_label_access: 0.30, essential_medicine_gap: 0.28,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // PAE-007 — low, none
   {
-    entity_id: "PAE-007", therapeutic_area: "diabète", region: "NOAM",
+    id: "PAE-007", therapeutic_area: "diabète", region: "NOAM",
     drug_price_index: 0.10, patent_monopoly_duration: 0.12, generic_availability: 0.10,
     insurance_coverage_gap: 0.12, out_of_pocket_burden: 0.10, compulsory_license_use: 0.08,
     clinical_trial_inclusion: 0.10, off_label_access: 0.12, essential_medicine_gap: 0.10,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // PAE-008 — low, none
   {
-    entity_id: "PAE-008", therapeutic_area: "vaccination", region: "EMEA",
+    id: "PAE-008", therapeutic_area: "vaccination", region: "EMEA",
     drug_price_index: 0.12, patent_monopoly_duration: 0.10, generic_availability: 0.12,
     insurance_coverage_gap: 0.10, out_of_pocket_burden: 0.12, compulsory_license_use: 0.10,
     clinical_trial_inclusion: 0.12, off_label_access: 0.10, essential_medicine_gap: 0.12,
@@ -148,7 +148,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:             e.entity_id,
+        id:             e.entity_id,
         therapeutic_area:      e.therapeutic_area,
         region:                e.region,
         affordability_score:   aff,

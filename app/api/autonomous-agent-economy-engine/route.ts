@@ -6,7 +6,7 @@ const MOCK_ENTITIES = [
   // labor_displacement_rate>=0.70 AND (1-human_reskilling_velocity)>=0.60 → mass_displacement_crisis
   // composite should be >=60 → critical
   {
-    entity_id: "AAE-001", agent_category: "knowledge_workers", region: "EMEA",
+    id: "AAE-001", agent_category: "knowledge_workers", region: "EMEA",
     agent_market_penetration: 0.85,
     labor_displacement_rate: 0.82,
     human_agent_collaboration_index: 0.20,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   // AAE-002 — APAC, creative_agents → low, agent_economy_thriving / none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "AAE-002", agent_category: "creative_agents", region: "APAC",
+    id: "AAE-002", agent_category: "creative_agents", region: "APAC",
     agent_market_penetration: 0.20,
     labor_displacement_rate: 0.10,
     human_agent_collaboration_index: 0.88,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
   // monopolization_risk>=0.70 AND economic_value_capture_by_agents>=0.65 → agent_monopoly
   // composite >=40 and <60 → high
   {
-    entity_id: "AAE-003", agent_category: "service_robots", region: "NOAM",
+    id: "AAE-003", agent_category: "service_robots", region: "NOAM",
     agent_market_penetration: 0.65,
     labor_displacement_rate: 0.48,
     human_agent_collaboration_index: 0.42,
@@ -73,7 +73,7 @@ const MOCK_ENTITIES = [
   // AAE-004 — LATAM, creative_agents → low, agent_economy_thriving / none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "AAE-004", agent_category: "creative_agents", region: "LATAM",
+    id: "AAE-004", agent_category: "creative_agents", region: "LATAM",
     agent_market_penetration: 0.15,
     labor_displacement_rate: 0.08,
     human_agent_collaboration_index: 0.90,
@@ -96,7 +96,7 @@ const MOCK_ENTITIES = [
   // (1-agent_governance_maturity)>=0.65 AND agent_accountability_gap>=0.60 → governance_vacuum
   // composite >=60 → critical
   {
-    entity_id: "AAE-005", agent_category: "knowledge_workers", region: "MEA",
+    id: "AAE-005", agent_category: "knowledge_workers", region: "MEA",
     agent_market_penetration: 0.72,
     labor_displacement_rate: 0.60,
     human_agent_collaboration_index: 0.25,
@@ -118,7 +118,7 @@ const MOCK_ENTITIES = [
   // AAE-006 — EMEA, logistics_bots → moderate, none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "AAE-006", agent_category: "logistics_bots", region: "EMEA",
+    id: "AAE-006", agent_category: "logistics_bots", region: "EMEA",
     agent_market_penetration: 0.42,
     labor_displacement_rate: 0.28,
     human_agent_collaboration_index: 0.60,
@@ -141,7 +141,7 @@ const MOCK_ENTITIES = [
   // (1-income_redistribution_mechanism)>=0.70 AND wage_floor_erosion>=0.65 → equity_collapse
   // composite >=40 and <60 → high
   {
-    entity_id: "AAE-007", agent_category: "service_robots", region: "APAC",
+    id: "AAE-007", agent_category: "service_robots", region: "APAC",
     agent_market_penetration: 0.58,
     labor_displacement_rate: 0.50,
     human_agent_collaboration_index: 0.38,
@@ -164,7 +164,7 @@ const MOCK_ENTITIES = [
   // agent_bias_prevalence>=0.65 AND (1-agent_safety_compliance)>=0.60 → safety_failure
   // composite >=60 → critical
   {
-    entity_id: "AAE-008", agent_category: "knowledge_workers", region: "NOAM",
+    id: "AAE-008", agent_category: "knowledge_workers", region: "NOAM",
     agent_market_penetration: 0.78,
     labor_displacement_rate: 0.62,
     human_agent_collaboration_index: 0.22,
@@ -290,7 +290,7 @@ export async function GET() {
       const act  = recommendedAction(risk, pat);
       const sig  = agentSignal(e, risk, comp);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         region:                       e.region,
         agent_category:               e.agent_category,
         agent_risk:                   risk,

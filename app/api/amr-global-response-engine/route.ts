@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "ENT-001",
+      id: "ENT-001",
       name: "WHO AMR Task Force",
       country: "Suisse",
       sector: "Santé Mondiale",
@@ -48,7 +48,7 @@ function getMockData() {
       outbreak_count: 47,
     },
     {
-      entity_id: "ENT-002",
+      id: "ENT-002",
       name: "South Asia AMR Hub",
       country: "Inde",
       sector: "Santé Publique",
@@ -69,7 +69,7 @@ function getMockData() {
       outbreak_count: 312,
     },
     {
-      entity_id: "ENT-003",
+      id: "ENT-003",
       name: "African Resistance Network",
       country: "Nigeria",
       sector: "Épidémiologie",
@@ -90,7 +90,7 @@ function getMockData() {
       outbreak_count: 189,
     },
     {
-      entity_id: "ENT-004",
+      id: "ENT-004",
       name: "EU AMR Action Plan",
       country: "Belgique",
       sector: "Politique Sanitaire",
@@ -111,7 +111,7 @@ function getMockData() {
       outbreak_count: 23,
     },
     {
-      entity_id: "ENT-005",
+      id: "ENT-005",
       name: "LATAM Health Consortium",
       country: "Brésil",
       sector: "Recherche Clinique",
@@ -132,7 +132,7 @@ function getMockData() {
       outbreak_count: 78,
     },
     {
-      entity_id: "ENT-006",
+      id: "ENT-006",
       name: "Nordic AMR Institute",
       country: "Suède",
       sector: "Recherche & Développement",
@@ -153,7 +153,7 @@ function getMockData() {
       outbreak_count: 8,
     },
     {
-      entity_id: "ENT-007",
+      id: "ENT-007",
       name: "Singapore Biomed Centre",
       country: "Singapour",
       sector: "Biotechnologie",
@@ -174,7 +174,7 @@ function getMockData() {
       outbreak_count: 3,
     },
     {
-      entity_id: "ENT-008",
+      id: "ENT-008",
       name: "Swiss Precision Health",
       country: "Suisse",
       sector: "Médecine de Précision",

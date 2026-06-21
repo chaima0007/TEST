@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // MPH-001 — critical, endocrine_disruption_epidemic (endocrine>0.85, chem_add>0.80)
   {
-    entity_id: "MPH-001", exposure_route: "ingestion_alimentaire", region: "NOAM",
+    id: "MPH-001", exposure_route: "ingestion_alimentaire", region: "NOAM",
     blood_microplastic_concentration: 0.88, lung_particle_accumulation: 0.82,
     digestive_system_exposure: 0.80, endocrine_disruption_risk: 0.90,
     cardiovascular_inflammation: 0.75, placental_crossing_rate: 0.72,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
   },
   // MPH-002 — critical, cardiovascular_microplastic_crisis (cardio>0.85, blood>0.80)
   {
-    entity_id: "MPH-002", exposure_route: "inhalation_atmosphérique", region: "APAC",
+    id: "MPH-002", exposure_route: "inhalation_atmosphérique", region: "APAC",
     blood_microplastic_concentration: 0.88, lung_particle_accumulation: 0.85,
     digestive_system_exposure: 0.78, endocrine_disruption_risk: 0.72,
     cardiovascular_inflammation: 0.90, placental_crossing_rate: 0.68,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   },
   // MPH-003 — critical, maternal_fetal_exposure_trap (placental>0.85, neuro>0.80)
   {
-    entity_id: "MPH-003", exposure_route: "transfert_placentaire", region: "EMEA",
+    id: "MPH-003", exposure_route: "transfert_placentaire", region: "EMEA",
     blood_microplastic_concentration: 0.78, lung_particle_accumulation: 0.72,
     digestive_system_exposure: 0.75, endocrine_disruption_risk: 0.78,
     cardiovascular_inflammation: 0.72, placental_crossing_rate: 0.90,
@@ -45,7 +45,7 @@ const MOCK_ENTITIES = [
   },
   // MPH-004 — high, food_chain_saturation_collapse (seafood>0.85, food_pack>0.80)
   {
-    entity_id: "MPH-004", exposure_route: "contamination_chaîne_alimentaire", region: "SSA",
+    id: "MPH-004", exposure_route: "contamination_chaîne_alimentaire", region: "SSA",
     blood_microplastic_concentration: 0.42, lung_particle_accumulation: 0.40,
     digestive_system_exposure: 0.45, endocrine_disruption_risk: 0.40,
     cardiovascular_inflammation: 0.38, placental_crossing_rate: 0.38,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
   },
   // MPH-005 — high, regulatory_threshold_vacuum (reg_gap>0.85, bioaccum>0.80)
   {
-    entity_id: "MPH-005", exposure_route: "accumulation_bioaccumulation", region: "LATAM",
+    id: "MPH-005", exposure_route: "accumulation_bioaccumulation", region: "LATAM",
     blood_microplastic_concentration: 0.52, lung_particle_accumulation: 0.50,
     digestive_system_exposure: 0.55, endocrine_disruption_risk: 0.52,
     cardiovascular_inflammation: 0.48, placental_crossing_rate: 0.50,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   },
   // MPH-006 — moderate, none
   {
-    entity_id: "MPH-006", exposure_route: "absorption_cutanée", region: "MENA",
+    id: "MPH-006", exposure_route: "absorption_cutanée", region: "MENA",
     blood_microplastic_concentration: 0.28, lung_particle_accumulation: 0.30,
     digestive_system_exposure: 0.28, endocrine_disruption_risk: 0.30,
     cardiovascular_inflammation: 0.28, placental_crossing_rate: 0.25,
@@ -84,7 +84,7 @@ const MOCK_ENTITIES = [
   },
   // MPH-007 — low, none
   {
-    entity_id: "MPH-007", exposure_route: "eau_potable_filtrée", region: "EMEA",
+    id: "MPH-007", exposure_route: "eau_potable_filtrée", region: "EMEA",
     blood_microplastic_concentration: 0.10, lung_particle_accumulation: 0.08,
     digestive_system_exposure: 0.10, endocrine_disruption_risk: 0.10,
     cardiovascular_inflammation: 0.08, placental_crossing_rate: 0.08,
@@ -97,7 +97,7 @@ const MOCK_ENTITIES = [
   },
   // MPH-008 — low, none
   {
-    entity_id: "MPH-008", exposure_route: "milieu_rural_protégé", region: "NOAM",
+    id: "MPH-008", exposure_route: "milieu_rural_protégé", region: "NOAM",
     blood_microplastic_concentration: 0.12, lung_particle_accumulation: 0.10,
     digestive_system_exposure: 0.12, endocrine_disruption_risk: 0.10,
     cardiovascular_inflammation: 0.12, placental_crossing_rate: 0.10,
@@ -174,7 +174,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         exposure_route:                   e.exposure_route,
         region:                           e.region,
         exposure_score:                   exp,

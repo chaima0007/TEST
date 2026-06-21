@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type AlgaeEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -438,7 +438,7 @@ export default function AlgaeDashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
         {filtered.map((entity) => (
           <div
-            key={entity.entity_id}
+            key={entity.id}
             onClick={() => setSelected(entity)}
             className="bg-slate-900 border border-blue-700/30 rounded-xl p-4 cursor-pointer hover:border-blue-500/60 transition-colors"
           >
@@ -447,7 +447,7 @@ export default function AlgaeDashboard() {
                 <div className="text-white font-semibold text-sm leading-tight">
                   {entity.name}
                 </div>
-                <div className="text-blue-300/50 text-xs mt-0.5">{entity.entity_id}</div>
+                <div className="text-blue-300/50 text-xs mt-0.5">{entity.id}</div>
               </div>
               <span
                 className={`px-2 py-0.5 rounded text-xs font-medium shrink-0 ml-2 ${

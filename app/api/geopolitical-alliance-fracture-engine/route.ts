@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // internal_cohesion_erosion≥0.70 AND defection_incentive_strength≥0.65 → alliance_dissolution
   // composite≥60 → critical
   {
-    entity_id: "GAF-001", alliance_type: "nato_equivalent", region: "EMEA",
+    id: "GAF-001", alliance_type: "nato_equivalent", region: "EMEA",
     internal_cohesion_erosion: 0.85,            burden_sharing_imbalance: 0.75,
     strategic_interest_divergence: 0.80,        external_pressure_index: 0.72,
     defection_incentive_strength: 0.82,         alternative_alignment_attractiveness: 0.78,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   // GAF-002 — APAC, trade_bloc → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "GAF-002", alliance_type: "trade_bloc", region: "APAC",
+    id: "GAF-002", alliance_type: "trade_bloc", region: "APAC",
     internal_cohesion_erosion: 0.08,            burden_sharing_imbalance: 0.10,
     strategic_interest_divergence: 0.10,        external_pressure_index: 0.10,
     defection_incentive_strength: 0.08,         alternative_alignment_attractiveness: 0.08,
@@ -41,7 +41,7 @@ const MOCK_ENTITIES = [
   // alternative_alignment_attractiveness=0.45<0.70 → avoids strategic_pivot
   // composite in [40,60) → high
   {
-    entity_id: "GAF-003", alliance_type: "security_alliance", region: "NOAM",
+    id: "GAF-003", alliance_type: "security_alliance", region: "NOAM",
     internal_cohesion_erosion: 0.55,            burden_sharing_imbalance: 0.48,
     strategic_interest_divergence: 0.50,        external_pressure_index: 0.52,
     defection_incentive_strength: 0.48,         alternative_alignment_attractiveness: 0.45,
@@ -55,7 +55,7 @@ const MOCK_ENTITIES = [
   // GAF-004 — LATAM, regional_bloc → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "GAF-004", alliance_type: "regional_bloc", region: "LATAM",
+    id: "GAF-004", alliance_type: "regional_bloc", region: "LATAM",
     internal_cohesion_erosion: 0.10,            burden_sharing_imbalance: 0.12,
     strategic_interest_divergence: 0.12,        external_pressure_index: 0.10,
     defection_incentive_strength: 0.10,         alternative_alignment_attractiveness: 0.10,
@@ -72,7 +72,7 @@ const MOCK_ENTITIES = [
   // defection_incentive_strength=0.60<0.65 → avoids alliance_dissolution trigger
   // composite≥60 → critical
   {
-    entity_id: "GAF-005", alliance_type: "energy_alliance", region: "MEA",
+    id: "GAF-005", alliance_type: "energy_alliance", region: "MEA",
     internal_cohesion_erosion: 0.60,            burden_sharing_imbalance: 0.78,
     strategic_interest_divergence: 0.82,        external_pressure_index: 0.75,
     defection_incentive_strength: 0.60,         alternative_alignment_attractiveness: 0.85,
@@ -86,7 +86,7 @@ const MOCK_ENTITIES = [
   // GAF-006 — EMEA, economic_alliance → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "GAF-006", alliance_type: "economic_alliance", region: "EMEA",
+    id: "GAF-006", alliance_type: "economic_alliance", region: "EMEA",
     internal_cohesion_erosion: 0.32,            burden_sharing_imbalance: 0.25,
     strategic_interest_divergence: 0.28,        external_pressure_index: 0.30,
     defection_incentive_strength: 0.28,         alternative_alignment_attractiveness: 0.25,
@@ -104,7 +104,7 @@ const MOCK_ENTITIES = [
   // intelligence_trust_deficit=0.55<0.70 → avoids trust_collapse
   // composite in [40,60) → high
   {
-    entity_id: "GAF-007", alliance_type: "security_alliance", region: "APAC",
+    id: "GAF-007", alliance_type: "security_alliance", region: "APAC",
     internal_cohesion_erosion: 0.55,            burden_sharing_imbalance: 0.48,
     strategic_interest_divergence: 0.52,        external_pressure_index: 0.50,
     defection_incentive_strength: 0.50,         alternative_alignment_attractiveness: 0.55,
@@ -123,7 +123,7 @@ const MOCK_ENTITIES = [
   // populist_alliance_skepticism=0.55<0.70 → avoids populist_defection
   // composite≥60 → critical
   {
-    entity_id: "GAF-008", alliance_type: "tech_alliance", region: "NOAM",
+    id: "GAF-008", alliance_type: "tech_alliance", region: "NOAM",
     internal_cohesion_erosion: 0.60,            burden_sharing_imbalance: 0.55,
     strategic_interest_divergence: 0.62,        external_pressure_index: 0.68,
     defection_incentive_strength: 0.60,         alternative_alignment_attractiveness: 0.55,
@@ -235,7 +235,7 @@ export async function GET() {
         { error: "SWARM_API_URL non configuré — service indisponible" } as Record<string, unknown>,
         "geopolitical-alliance-fracture-engine"
       ) as Record<string, unknown>,
-      { status: 503 }
+      { status: 502 }
     );
   }
 
@@ -253,7 +253,7 @@ export async function GET() {
       const sig  = fractureSignal(e, pat, comp);
 
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         region:                           e.region,
         alliance_type:                    e.alliance_type,
         fracture_risk:                    risk,

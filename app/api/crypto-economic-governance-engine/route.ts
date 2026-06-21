@@ -5,7 +5,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // CEG-001: EMEA, lending_protocol → critical, governance_attack
   {
-    entity_id: "CEG-001", defi_segment: "lending_protocol", region: "EMEA",
+    id: "CEG-001", defi_segment: "lending_protocol", region: "EMEA",
     protocol_governance_quality: 0.12, tvl_concentration: 0.72,
     smart_contract_audit_coverage: 0.58, oracle_manipulation_risk: 0.55,
     liquidity_depth: 0.55, cross_protocol_contagion: 0.42,
@@ -18,7 +18,7 @@ const MOCK_ENTITIES = [
   },
   // CEG-002: APAC, dex → low, defi_stable/none
   {
-    entity_id: "CEG-002", defi_segment: "dex", region: "APAC",
+    id: "CEG-002", defi_segment: "dex", region: "APAC",
     protocol_governance_quality: 0.88, tvl_concentration: 0.18,
     smart_contract_audit_coverage: 0.92, oracle_manipulation_risk: 0.08,
     liquidity_depth: 0.90, cross_protocol_contagion: 0.10,
@@ -31,7 +31,7 @@ const MOCK_ENTITIES = [
   },
   // CEG-003: NOAM, yield_farming → high, smart_contract_exploit
   {
-    entity_id: "CEG-003", defi_segment: "yield_farming", region: "NOAM",
+    id: "CEG-003", defi_segment: "yield_farming", region: "NOAM",
     protocol_governance_quality: 0.60, tvl_concentration: 0.40,
     smart_contract_audit_coverage: 0.22, oracle_manipulation_risk: 0.62,
     liquidity_depth: 0.58, cross_protocol_contagion: 0.38,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // CEG-004: LATAM, dex → low, defi_stable/none
   {
-    entity_id: "CEG-004", defi_segment: "dex", region: "LATAM",
+    id: "CEG-004", defi_segment: "dex", region: "LATAM",
     protocol_governance_quality: 0.82, tvl_concentration: 0.22,
     smart_contract_audit_coverage: 0.88, oracle_manipulation_risk: 0.12,
     liquidity_depth: 0.85, cross_protocol_contagion: 0.15,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
   },
   // CEG-005: MEA, lending_protocol → critical, liquidity_cascade
   {
-    entity_id: "CEG-005", defi_segment: "lending_protocol", region: "MEA",
+    id: "CEG-005", defi_segment: "lending_protocol", region: "MEA",
     protocol_governance_quality: 0.38, tvl_concentration: 0.62,
     smart_contract_audit_coverage: 0.48, oracle_manipulation_risk: 0.52,
     liquidity_depth: 0.18, cross_protocol_contagion: 0.78,
@@ -70,7 +70,7 @@ const MOCK_ENTITIES = [
   },
   // CEG-006: EMEA, stablecoin → moderate, none
   {
-    entity_id: "CEG-006", defi_segment: "stablecoin", region: "EMEA",
+    id: "CEG-006", defi_segment: "stablecoin", region: "EMEA",
     protocol_governance_quality: 0.62, tvl_concentration: 0.38,
     smart_contract_audit_coverage: 0.65, oracle_manipulation_risk: 0.30,
     liquidity_depth: 0.62, cross_protocol_contagion: 0.28,
@@ -83,7 +83,7 @@ const MOCK_ENTITIES = [
   },
   // CEG-007: APAC, yield_farming → high, stablecoin_depeg_crisis
   {
-    entity_id: "CEG-007", defi_segment: "yield_farming", region: "APAC",
+    id: "CEG-007", defi_segment: "yield_farming", region: "APAC",
     protocol_governance_quality: 0.52, tvl_concentration: 0.72,
     smart_contract_audit_coverage: 0.60, oracle_manipulation_risk: 0.40,
     liquidity_depth: 0.50, cross_protocol_contagion: 0.40,
@@ -96,7 +96,7 @@ const MOCK_ENTITIES = [
   },
   // CEG-008: NOAM, lending_protocol → critical, regulatory_crackdown
   {
-    entity_id: "CEG-008", defi_segment: "lending_protocol", region: "NOAM",
+    id: "CEG-008", defi_segment: "lending_protocol", region: "NOAM",
     protocol_governance_quality: 0.35, tvl_concentration: 0.55,
     smart_contract_audit_coverage: 0.48, oracle_manipulation_risk: 0.52,
     liquidity_depth: 0.38, cross_protocol_contagion: 0.48,
@@ -211,7 +211,7 @@ export async function GET() {
       const action = recommendedAction(risk, pattern);
 
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         region: e.region,
         defi_segment: e.defi_segment,
         defi_risk: risk,

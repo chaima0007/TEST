@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // NFE-001 — tokamak_program, APAC → critical, fusion_supremacy_race
   {
-    entity_id: "NFE-001", fusion_program: "tokamak_program", region: "APAC",
+    id: "NFE-001", fusion_program: "tokamak_program", region: "APAC",
     technological_lead: 0.92, tritium_supply_control: 0.70,
     plasma_confinement_advantage: 0.88, fusion_patent_monopoly: 0.75,
     rare_material_access: 0.68, commercial_deployment_speed: 0.72,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // NFE-002 — inertial_confinement, LATAM → low, none
   {
-    entity_id: "NFE-002", fusion_program: "inertial_confinement", region: "LATAM",
+    id: "NFE-002", fusion_program: "inertial_confinement", region: "LATAM",
     technological_lead: 0.18, tritium_supply_control: 0.15,
     plasma_confinement_advantage: 0.12, fusion_patent_monopoly: 0.10,
     rare_material_access: 0.14, commercial_deployment_speed: 0.12,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // NFE-003 — tritium_breeder_reactor, EMEA → high, tritium_geopolitical_weapon
   {
-    entity_id: "NFE-003", fusion_program: "tritium_breeder_reactor", region: "EMEA",
+    id: "NFE-003", fusion_program: "tritium_breeder_reactor", region: "EMEA",
     technological_lead: 0.42, tritium_supply_control: 0.88,
     plasma_confinement_advantage: 0.38, fusion_patent_monopoly: 0.45,
     rare_material_access: 0.82, commercial_deployment_speed: 0.38,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // NFE-004 — stellarator_research, NOAM → low, none
   {
-    entity_id: "NFE-004", fusion_program: "stellarator_research", region: "NOAM",
+    id: "NFE-004", fusion_program: "stellarator_research", region: "NOAM",
     technological_lead: 0.20, tritium_supply_control: 0.18,
     plasma_confinement_advantage: 0.15, fusion_patent_monopoly: 0.12,
     rare_material_access: 0.16, commercial_deployment_speed: 0.14,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // NFE-005 — patent_portfolio_fusion, APAC → critical, fusion_IP_monopoly_capture
   {
-    entity_id: "NFE-005", fusion_program: "patent_portfolio_fusion", region: "APAC",
+    id: "NFE-005", fusion_program: "patent_portfolio_fusion", region: "APAC",
     technological_lead: 0.75, tritium_supply_control: 0.65,
     plasma_confinement_advantage: 0.70, fusion_patent_monopoly: 0.92,
     rare_material_access: 0.60, commercial_deployment_speed: 0.68,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // NFE-006 — private_commercial_fusion, NOAM → critical, private_fusion_disruption
   {
-    entity_id: "NFE-006", fusion_program: "private_commercial_fusion", region: "NOAM",
+    id: "NFE-006", fusion_program: "private_commercial_fusion", region: "NOAM",
     technological_lead: 0.72, tritium_supply_control: 0.60,
     plasma_confinement_advantage: 0.68, fusion_patent_monopoly: 0.70,
     rare_material_access: 0.62, commercial_deployment_speed: 0.88,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // NFE-007 — military_fusion_program, MEA → moderate, none
   {
-    entity_id: "NFE-007", fusion_program: "military_fusion_program", region: "MEA",
+    id: "NFE-007", fusion_program: "military_fusion_program", region: "MEA",
     technological_lead: 0.38, tritium_supply_control: 0.35,
     plasma_confinement_advantage: 0.32, fusion_patent_monopoly: 0.30,
     rare_material_access: 0.38, commercial_deployment_speed: 0.28,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // NFE-008 — dual_use_fusion_weapons, EMEA → critical, fusion_proliferation_crisis
   {
-    entity_id: "NFE-008", fusion_program: "dual_use_fusion_weapons", region: "EMEA",
+    id: "NFE-008", fusion_program: "dual_use_fusion_weapons", region: "EMEA",
     technological_lead: 0.78, tritium_supply_control: 0.72,
     plasma_confinement_advantage: 0.75, fusion_patent_monopoly: 0.68,
     rare_material_access: 0.70, commercial_deployment_speed: 0.65,
@@ -202,7 +202,7 @@ export async function GET() {
       const sig   = signal(rl);
 
       return {
-        entity_id:               e.entity_id,
+        id:               e.entity_id,
         fusion_program:          e.fusion_program,
         region:                  e.region,
         dominance_score:         dom,

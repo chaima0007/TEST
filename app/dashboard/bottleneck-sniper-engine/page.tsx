@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // ── types ─────────────────────────────────────────────────────────────────────
 
 interface ConstraintEntity {
-  entity_id: string;
+  id: string;
   region: string;
   system_type: string;
   constraint_risk: string;
@@ -206,7 +206,7 @@ function DetailModal({ entity, onClose }: { entity: ConstraintEntity; onClose: (
             </span>
           </div>
           <div className="flex-1 min-w-0">
-            <h2 className="text-white font-bold text-lg truncate">{entity.entity_id}</h2>
+            <h2 className="text-white font-bold text-lg truncate">{entity.id}</h2>
             <p className="text-slate-400 text-sm">{entity.system_type.replace(/_/g, " ")} · {entity.region}</p>
             <div className="flex gap-2 mt-1 flex-wrap">
               <span className={`text-xs px-2 py-0.5 rounded-full border ${RISK_BG[entity.constraint_risk]}`}>
@@ -325,7 +325,7 @@ function EntityCard({ entity, onClick }: { entity: ConstraintEntity; onClick: ()
           </span>
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-white font-semibold truncate">{entity.entity_id}</div>
+          <div className="text-white font-semibold truncate">{entity.id}</div>
           <div className="text-slate-400 text-xs">{entity.system_type.replace(/_/g, " ")} · {entity.region}</div>
           <div className="flex gap-2 mt-1 flex-wrap">
             <span className={`text-xs px-2 py-0.5 rounded-full border ${RISK_BG[entity.constraint_risk]}`}>
@@ -466,7 +466,7 @@ export default function BottleneckSniperEnginePage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((e) => (
-              <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+              <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
             ))}
           </div>
         )}

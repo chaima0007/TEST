@@ -145,7 +145,7 @@ export default function AcademicFreedomUniversityRightsPage() {
           {data.entities.map((e) => {
             const rl = e.risk_level as string;
             return (
-              <button key={e.entity_id as string} onClick={() => setSelected(e)}
+              <button key={e.id as string} onClick={() => setSelected(e)}
                 className="bg-slate-900 border border-slate-700 rounded-xl p-4 text-left hover:border-slate-500 transition-colors">
                 <div className="flex items-start gap-3">
                   <GaugeRing score={e.composite_score as number} color={RC[rl]} />

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // CRS-001 — critical, supply_shock (rare_earth_metals, EMEA)
   {
-    entity_id: "CRS-001", resource_category: "rare_earth_metals", region: "EMEA",
+    id: "CRS-001", resource_category: "rare_earth_metals", region: "EMEA",
     supply_concentration_risk: 0.88, demand_growth_rate: 0.55, substitution_difficulty: 0.60,
     geopolitical_supply_risk: 0.62, stockpile_adequacy: 0.18, recycling_circularity_rate: 0.20,
     processing_choke_point: 0.72, reserve_depletion_rate: 0.50, alternative_source_development: 0.22,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // CRS-002 — low, resource_abundant/none (water_resources, APAC)
   {
-    entity_id: "CRS-002", resource_category: "water_resources", region: "APAC",
+    id: "CRS-002", resource_category: "water_resources", region: "APAC",
     supply_concentration_risk: 0.12, demand_growth_rate: 0.15, substitution_difficulty: 0.10,
     geopolitical_supply_risk: 0.10, stockpile_adequacy: 0.88, recycling_circularity_rate: 0.82,
     processing_choke_point: 0.08, reserve_depletion_rate: 0.12, alternative_source_development: 0.85,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // CRS-003 — high, geopolitical_embargo (semiconductors, NOAM)
   {
-    entity_id: "CRS-003", resource_category: "semiconductors", region: "NOAM",
+    id: "CRS-003", resource_category: "semiconductors", region: "NOAM",
     supply_concentration_risk: 0.60, demand_growth_rate: 0.62, substitution_difficulty: 0.58,
     geopolitical_supply_risk: 0.78, stockpile_adequacy: 0.40, recycling_circularity_rate: 0.35,
     processing_choke_point: 0.55, reserve_depletion_rate: 0.48, alternative_source_development: 0.38,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // CRS-004 — low, resource_abundant/none (water_resources, LATAM)
   {
-    entity_id: "CRS-004", resource_category: "water_resources", region: "LATAM",
+    id: "CRS-004", resource_category: "water_resources", region: "LATAM",
     supply_concentration_risk: 0.15, demand_growth_rate: 0.18, substitution_difficulty: 0.12,
     geopolitical_supply_risk: 0.12, stockpile_adequacy: 0.85, recycling_circularity_rate: 0.78,
     processing_choke_point: 0.10, reserve_depletion_rate: 0.15, alternative_source_development: 0.80,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // CRS-005 — critical, demand_explosion (oil_gas, MEA)
   {
-    entity_id: "CRS-005", resource_category: "oil_gas", region: "MEA",
+    id: "CRS-005", resource_category: "oil_gas", region: "MEA",
     supply_concentration_risk: 0.72, demand_growth_rate: 0.85, substitution_difficulty: 0.78,
     geopolitical_supply_risk: 0.68, stockpile_adequacy: 0.30, recycling_circularity_rate: 0.15,
     processing_choke_point: 0.65, reserve_depletion_rate: 0.70, alternative_source_development: 0.20,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // CRS-006 — moderate, none (food_systems, EMEA)
   {
-    entity_id: "CRS-006", resource_category: "food_systems", region: "EMEA",
+    id: "CRS-006", resource_category: "food_systems", region: "EMEA",
     supply_concentration_risk: 0.35, demand_growth_rate: 0.38, substitution_difficulty: 0.32,
     geopolitical_supply_risk: 0.30, stockpile_adequacy: 0.58, recycling_circularity_rate: 0.50,
     processing_choke_point: 0.28, reserve_depletion_rate: 0.35, alternative_source_development: 0.52,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // CRS-007 — high, depletion_crisis (semiconductors, APAC)
   {
-    entity_id: "CRS-007", resource_category: "semiconductors", region: "APAC",
+    id: "CRS-007", resource_category: "semiconductors", region: "APAC",
     supply_concentration_risk: 0.58, demand_growth_rate: 0.60, substitution_difficulty: 0.55,
     geopolitical_supply_risk: 0.52, stockpile_adequacy: 0.42, recycling_circularity_rate: 0.32,
     processing_choke_point: 0.55, reserve_depletion_rate: 0.78, alternative_source_development: 0.22,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // CRS-008 — critical, processing_monopoly (rare_earth_metals, NOAM)
   {
-    entity_id: "CRS-008", resource_category: "rare_earth_metals", region: "NOAM",
+    id: "CRS-008", resource_category: "rare_earth_metals", region: "NOAM",
     supply_concentration_risk: 0.75, demand_growth_rate: 0.65, substitution_difficulty: 0.60,
     geopolitical_supply_risk: 0.70, stockpile_adequacy: 0.25, recycling_circularity_rate: 0.18,
     processing_choke_point: 0.82, reserve_depletion_rate: 0.65, alternative_source_development: 0.28,
@@ -185,7 +185,7 @@ export async function GET() {
       const signal     = scarcitySignal(e, risk, composite);
 
       return {
-        entity_id:                     e.entity_id,
+        id:                     e.entity_id,
         region:                        e.region,
         resource_category:             e.resource_category,
         scarcity_risk:                 risk,

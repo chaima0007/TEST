@@ -21,7 +21,7 @@ const MOCK = {
   critical_alerts: [],
   entities: [
     {
-      entity_id: "CAE-INV-001",
+      id: "CAE-INV-001",
       name: "Scoring IA Droits Humains Automatisé",
       generation: "G1",
       ipc_class: "G06N 20/00",
@@ -31,7 +31,7 @@ const MOCK = {
       filing_status: "draft",
     },
     {
-      entity_id: "CAE-INV-002",
+      id: "CAE-INV-002",
       name: "Détection Précoce Crises par IA",
       generation: "G1",
       ipc_class: "G06N 5/04",
@@ -41,7 +41,7 @@ const MOCK = {
       filing_status: "draft",
     },
     {
-      entity_id: "CAE-INV-003",
+      id: "CAE-INV-003",
       name: "Apprentissage Fédéré Droits Humains",
       generation: "G2",
       ipc_class: "G06N 20/00 · H04L 9/32",
@@ -51,7 +51,7 @@ const MOCK = {
       filing_status: "draft",
     },
     {
-      entity_id: "CAE-INV-004",
+      id: "CAE-INV-004",
       name: "Blockchain Preuves de Violations",
       generation: "G2",
       ipc_class: "H04L 9/32",
@@ -61,7 +61,7 @@ const MOCK = {
       filing_status: "draft",
     },
     {
-      entity_id: "CAE-INV-005",
+      id: "CAE-INV-005",
       name: "Plateforme ESG CSDDD Due Diligence",
       generation: "G3",
       ipc_class: "G06Q 10/06",
@@ -71,7 +71,7 @@ const MOCK = {
       filing_status: "draft",
     },
     {
-      entity_id: "CAE-INV-006",
+      id: "CAE-INV-006",
       name: "Indice Risque de Conflit Armé Multi-modal",
       generation: "G3",
       ipc_class: "G06N 20/00 · G06F 40/56",

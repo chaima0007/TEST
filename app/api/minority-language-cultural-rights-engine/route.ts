@@ -17,14 +17,14 @@ const MOCK = {
   ],
   critical_alerts: [],
   entities: [
-    { entity_id: "CN", name: "Chine (Ouïghours/Tibétains)", composite_score: 85.2, risk_level: "critique", estimated_minority_language_cultural_rights_index: 8.52 },
-    { entity_id: "MM", name: "Myanmar (Rohingyas)", composite_score: 81.6, risk_level: "critique", estimated_minority_language_cultural_rights_index: 8.16 },
-    { entity_id: "TR", name: "Turquie (Kurdes)", composite_score: 72.8, risk_level: "critique", estimated_minority_language_cultural_rights_index: 7.28 },
-    { entity_id: "IR", name: "Iran (Kurdes/Baloutches)", composite_score: 70.3, risk_level: "critique", estimated_minority_language_cultural_rights_index: 7.03 },
-    { entity_id: "RU", name: "Russie (peuples indigènes)", composite_score: 52.6, risk_level: "élevé", estimated_minority_language_cultural_rights_index: 5.26 },
-    { entity_id: "IN", name: "Inde (minorités du nord-est)", composite_score: 47.8, risk_level: "élevé", estimated_minority_language_cultural_rights_index: 4.78 },
-    { entity_id: "FR", name: "France (langues régionales)", composite_score: 28.85, risk_level: "modéré", estimated_minority_language_cultural_rights_index: 2.89 },
-    { entity_id: "CA", name: "Canada (langues autochtones en rétablissement)", composite_score: 12.05, risk_level: "faible", estimated_minority_language_cultural_rights_index: 1.21 },
+    { id: "CN", name: "Chine (Ouïghours/Tibétains)", composite_score: 85.2, risk_level: "critique", estimated_minority_language_cultural_rights_index: 8.52 },
+    { id: "MM", name: "Myanmar (Rohingyas)", composite_score: 81.6, risk_level: "critique", estimated_minority_language_cultural_rights_index: 8.16 },
+    { id: "TR", name: "Turquie (Kurdes)", composite_score: 72.8, risk_level: "critique", estimated_minority_language_cultural_rights_index: 7.28 },
+    { id: "IR", name: "Iran (Kurdes/Baloutches)", composite_score: 70.3, risk_level: "critique", estimated_minority_language_cultural_rights_index: 7.03 },
+    { id: "RU", name: "Russie (peuples indigènes)", composite_score: 52.6, risk_level: "élevé", estimated_minority_language_cultural_rights_index: 5.26 },
+    { id: "IN", name: "Inde (minorités du nord-est)", composite_score: 47.8, risk_level: "élevé", estimated_minority_language_cultural_rights_index: 4.78 },
+    { id: "FR", name: "France (langues régionales)", composite_score: 28.85, risk_level: "modéré", estimated_minority_language_cultural_rights_index: 2.89 },
+    { id: "CA", name: "Canada (langues autochtones en rétablissement)", composite_score: 12.05, risk_level: "faible", estimated_minority_language_cultural_rights_index: 1.21 },
   ],
 };
 

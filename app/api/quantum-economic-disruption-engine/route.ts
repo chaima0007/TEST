@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "QED-001",
+      id: "QED-001",
       name: "Federal Reserve Quantum Division",
       country: "USA",
       sector: "Finance",
@@ -43,7 +43,7 @@ function getMockData() {
       confidence_level: 0.87,
     },
     {
-      entity_id: "QED-002",
+      id: "QED-002",
       name: "Sinoquantum Technologies Group",
       country: "China",
       sector: "Technology",
@@ -64,7 +64,7 @@ function getMockData() {
       confidence_level: 0.82,
     },
     {
-      entity_id: "QED-003",
+      id: "QED-003",
       name: "Rostec Quantum Defense Systems",
       country: "Russia",
       sector: "Defense",
@@ -85,7 +85,7 @@ function getMockData() {
       confidence_level: 0.79,
     },
     {
-      entity_id: "QED-004",
+      id: "QED-004",
       name: "Bundesverband Industrie Quantique",
       country: "Germany",
       sector: "Manufacturing",
@@ -106,7 +106,7 @@ function getMockData() {
       confidence_level: 0.84,
     },
     {
-      entity_id: "QED-005",
+      id: "QED-005",
       name: "Tata Quantum Innovation Labs",
       country: "India",
       sector: "Technology",
@@ -127,7 +127,7 @@ function getMockData() {
       confidence_level: 0.76,
     },
     {
-      entity_id: "QED-006",
+      id: "QED-006",
       name: "Banco do Brasil Quantum Initiative",
       country: "Brazil",
       sector: "Finance",
@@ -148,7 +148,7 @@ function getMockData() {
       confidence_level: 0.71,
     },
     {
-      entity_id: "QED-007",
+      id: "QED-007",
       name: "Canadian Quantum Computing Initiative",
       country: "Canada",
       sector: "Technology",
@@ -169,7 +169,7 @@ function getMockData() {
       confidence_level: 0.90,
     },
     {
-      entity_id: "QED-008",
+      id: "QED-008",
       name: "Swiss National Bank Quantum Lab",
       country: "Switzerland",
       sector: "Finance",

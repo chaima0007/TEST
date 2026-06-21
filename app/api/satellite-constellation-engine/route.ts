@@ -23,7 +23,7 @@ function getMockData() {
   const entities = [
     // SAT-001 — USA, SpaceTech — critique (70.5) — kessler_syndrome_risk
     {
-      entity_id: "SAT-001",
+      id: "SAT-001",
       name: "Starlink LEO Constellation",
       country: "USA",
       sector: "SpaceTech",
@@ -45,7 +45,7 @@ function getMockData() {
     },
     // SAT-002 — China, Government — critique (67.4) — signal_warfare
     {
-      entity_id: "SAT-002",
+      id: "SAT-002",
       name: "Guowang Constellation",
       country: "China",
       sector: "Government",
@@ -67,7 +67,7 @@ function getMockData() {
     },
     // SAT-003 — Russia, Defense — critique (63.25) — debris_accumulation_crisis
     {
-      entity_id: "SAT-003",
+      id: "SAT-003",
       name: "Glonass-K2 Array",
       country: "Russia",
       sector: "Defense",
@@ -89,7 +89,7 @@ function getMockData() {
     },
     // SAT-004 — EU, Navigation — élevé (50.75) — constellation_stable (all sub < 70)
     {
-      entity_id: "SAT-004",
+      id: "SAT-004",
       name: "Galileo Extended",
       country: "EU",
       sector: "Navigation",
@@ -111,7 +111,7 @@ function getMockData() {
     },
     // SAT-005 — India, Government — élevé (43.1) — kessler_syndrome_risk
     {
-      entity_id: "SAT-005",
+      id: "SAT-005",
       name: "IRNSS Expansion",
       country: "India",
       sector: "Government",
@@ -133,7 +133,7 @@ function getMockData() {
     },
     // SAT-006 — Japan, Navigation — modéré (28.75) — constellation_stable
     {
-      entity_id: "SAT-006",
+      id: "SAT-006",
       name: "QZSS Augmentation",
       country: "Japan",
       sector: "Navigation",
@@ -155,7 +155,7 @@ function getMockData() {
     },
     // SAT-007 — Canada, Telecom — faible (13.75) — constellation_stable
     {
-      entity_id: "SAT-007",
+      id: "SAT-007",
       name: "Telesat LEO",
       country: "Canada",
       sector: "Telecom",
@@ -177,7 +177,7 @@ function getMockData() {
     },
     // SAT-008 — ESA, Earth Observation — faible (8.6) — constellation_stable
     {
-      entity_id: "SAT-008",
+      id: "SAT-008",
       name: "Copernicus Sentinel",
       country: "ESA",
       sector: "Earth Observation",

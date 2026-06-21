@@ -15,7 +15,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "BNS-001", region: "EMEA", system_type: "manufacturing_system",
+    id: "BNS-001", region: "EMEA", system_type: "manufacturing_system",
     throughput_reduction_rate: 0.82, constraint_utilization_excess: 0.78,
     queue_accumulation_rate: 0.70, resource_starvation_index: 0.65,
     batch_size_mismatch: 0.55, variability_amplification: 0.68,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     constraint_migration_velocity: 0.40,
   },
   {
-    entity_id: "BNS-002", region: "APAC", system_type: "digital_service",
+    id: "BNS-002", region: "APAC", system_type: "digital_service",
     throughput_reduction_rate: 0.05, constraint_utilization_excess: 0.08,
     queue_accumulation_rate: 0.06, resource_starvation_index: 0.04,
     batch_size_mismatch: 0.10, variability_amplification: 0.08,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
     constraint_migration_velocity: 0.85,
   },
   {
-    entity_id: "BNS-003", region: "NOAM", system_type: "supply_chain",
+    id: "BNS-003", region: "NOAM", system_type: "supply_chain",
     throughput_reduction_rate: 0.50, constraint_utilization_excess: 0.45,
     queue_accumulation_rate: 0.72, resource_starvation_index: 0.40,
     batch_size_mismatch: 0.45, variability_amplification: 0.50,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     constraint_migration_velocity: 0.45,
   },
   {
-    entity_id: "BNS-004", region: "LATAM", system_type: "service_operation",
+    id: "BNS-004", region: "LATAM", system_type: "service_operation",
     throughput_reduction_rate: 0.12, constraint_utilization_excess: 0.15,
     queue_accumulation_rate: 0.10, resource_starvation_index: 0.08,
     batch_size_mismatch: 0.18, variability_amplification: 0.14,
@@ -63,7 +63,7 @@ const MOCK_ENTITIES = [
     constraint_migration_velocity: 0.75,
   },
   {
-    entity_id: "BNS-005", region: "MEA", system_type: "government_process",
+    id: "BNS-005", region: "MEA", system_type: "government_process",
     throughput_reduction_rate: 0.60, constraint_utilization_excess: 0.55,
     queue_accumulation_rate: 0.65, resource_starvation_index: 0.58,
     batch_size_mismatch: 0.50, variability_amplification: 0.62,
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
     constraint_migration_velocity: 0.30,
   },
   {
-    entity_id: "BNS-006", region: "EMEA", system_type: "retail_operation",
+    id: "BNS-006", region: "EMEA", system_type: "retail_operation",
     throughput_reduction_rate: 0.28, constraint_utilization_excess: 0.30,
     queue_accumulation_rate: 0.25, resource_starvation_index: 0.22,
     batch_size_mismatch: 0.30, variability_amplification: 0.28,
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
     constraint_migration_velocity: 0.62,
   },
   {
-    entity_id: "BNS-007", region: "APAC", system_type: "healthcare_system",
+    id: "BNS-007", region: "APAC", system_type: "healthcare_system",
     throughput_reduction_rate: 0.48, constraint_utilization_excess: 0.42,
     queue_accumulation_rate: 0.55, resource_starvation_index: 0.75,
     batch_size_mismatch: 0.45, variability_amplification: 0.50,
@@ -99,7 +99,7 @@ const MOCK_ENTITIES = [
     constraint_migration_velocity: 0.40,
   },
   {
-    entity_id: "BNS-008", region: "NOAM", system_type: "financial_process",
+    id: "BNS-008", region: "NOAM", system_type: "financial_process",
     throughput_reduction_rate: 0.65, constraint_utilization_excess: 0.60,
     queue_accumulation_rate: 0.62, resource_starvation_index: 0.55,
     batch_size_mismatch: 0.52, variability_amplification: 0.65,
@@ -184,7 +184,7 @@ function processEntity(e: Entity) {
   const severity = constraintSeverity(comp);
   const action   = recommendedAction(risk, pattern);
   return {
-    entity_id:                        e.entity_id,
+    id:                        e.entity_id,
     region:                           e.region,
     system_type:                      e.system_type,
     constraint_risk:                  risk,

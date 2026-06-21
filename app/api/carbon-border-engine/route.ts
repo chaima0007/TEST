@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // CBE-001 — critical, carbon_leakage_acceleration (carbon_leakage_risk>0.85, import_emission_intensity>0.80)
   {
-    entity_id: "CBE-001", sector_type: "acier", region: "EMEA",
+    id: "CBE-001", sector_type: "acier", region: "EMEA",
     carbon_leakage_risk: 0.90, import_emission_intensity: 0.88,
     domestic_carbon_price: 0.70, border_price_equivalence: 0.72,
     compliance_verification_gap: 0.80, developing_country_impact: 0.60,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // CBE-002 — critical, trade_war_escalation (third_country_retaliation>0.85, wto_compatibility_risk>0.80)
   {
-    entity_id: "CBE-002", sector_type: "ciment", region: "APAC",
+    id: "CBE-002", sector_type: "ciment", region: "APAC",
     carbon_leakage_risk: 0.78, import_emission_intensity: 0.75,
     domestic_carbon_price: 0.65, border_price_equivalence: 0.68,
     compliance_verification_gap: 0.72, developing_country_impact: 0.70,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // CBE-003 — critical, developing_country_exclusion (developing_country_impact>0.85, renewable_transition_support<0.20)
   {
-    entity_id: "CBE-003", sector_type: "aluminium", region: "SSA",
+    id: "CBE-003", sector_type: "aluminium", region: "SSA",
     carbon_leakage_risk: 0.80, import_emission_intensity: 0.78,
     domestic_carbon_price: 0.60, border_price_equivalence: 0.62,
     compliance_verification_gap: 0.75, developing_country_impact: 0.90,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // CBE-004 — high, measurement_fraud_crisis (compliance_verification_gap>0.80, measurement_accuracy>0.75)
   {
-    entity_id: "CBE-004", sector_type: "engrais", region: "LATAM",
+    id: "CBE-004", sector_type: "engrais", region: "LATAM",
     carbon_leakage_risk: 0.48, import_emission_intensity: 0.45,
     domestic_carbon_price: 0.40, border_price_equivalence: 0.42,
     compliance_verification_gap: 0.85, developing_country_impact: 0.50,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // CBE-005 — high, implementation_collapse (administrative_capacity>0.80, political_stability<0.20)
   {
-    entity_id: "CBE-005", sector_type: "électricité", region: "MENA",
+    id: "CBE-005", sector_type: "électricité", region: "MENA",
     carbon_leakage_risk: 0.50, import_emission_intensity: 0.48,
     domestic_carbon_price: 0.42, border_price_equivalence: 0.44,
     compliance_verification_gap: 0.52, developing_country_impact: 0.55,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // CBE-006 — moderate, none
   {
-    entity_id: "CBE-006", sector_type: "chimie", region: "NOAM",
+    id: "CBE-006", sector_type: "chimie", region: "NOAM",
     carbon_leakage_risk: 0.30, import_emission_intensity: 0.28,
     domestic_carbon_price: 0.25, border_price_equivalence: 0.28,
     compliance_verification_gap: 0.30, developing_country_impact: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // CBE-007 — low, none
   {
-    entity_id: "CBE-007", sector_type: "hydrogène", region: "EMEA",
+    id: "CBE-007", sector_type: "hydrogène", region: "EMEA",
     carbon_leakage_risk: 0.10, import_emission_intensity: 0.10,
     domestic_carbon_price: 0.08, border_price_equivalence: 0.10,
     compliance_verification_gap: 0.10, developing_country_impact: 0.10,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // CBE-008 — low, none
   {
-    entity_id: "CBE-008", sector_type: "acier_recyclé", region: "APAC",
+    id: "CBE-008", sector_type: "acier_recyclé", region: "APAC",
     carbon_leakage_risk: 0.12, import_emission_intensity: 0.12,
     domestic_carbon_price: 0.10, border_price_equivalence: 0.12,
     compliance_verification_gap: 0.12, developing_country_impact: 0.12,
@@ -174,7 +174,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig   = signal(risk);
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         sector_type:                    e.sector_type,
         region:                         e.region,
         leakage_score:                  leak,

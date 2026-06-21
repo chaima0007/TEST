@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // CME-001 — critical, carbon_bomb_mining_operation (carbon_intensity>0.85, coal_dependency>0.80)
   {
-    entity_id: "CME-001", mining_type: "proof_of_work", region: "APAC",
+    id: "CME-001", mining_type: "proof_of_work", region: "APAC",
     carbon_intensity: 0.90, renewable_energy_share: 0.05, coal_dependency: 0.88,
     energy_consumption_gwh: 0.85, water_usage_intensity: 0.80, cooling_water_stress: 0.78,
     e_waste_generation: 0.75, hardware_lifecycle: 0.20, grid_strain: 0.80,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // CME-002 — critical, coal_powered_crypto_expansion (coal_dep>0.80, energy_consump>0.75, carbon_int≤0.85)
   {
-    entity_id: "CME-002", mining_type: "proof_of_work", region: "EMEA",
+    id: "CME-002", mining_type: "proof_of_work", region: "EMEA",
     carbon_intensity: 0.75, renewable_energy_share: 0.08, coal_dependency: 0.85,
     energy_consumption_gwh: 0.88, water_usage_intensity: 0.78, cooling_water_stress: 0.75,
     e_waste_generation: 0.72, hardware_lifecycle: 0.22, grid_strain: 0.82,
@@ -26,7 +26,7 @@ const MOCK_ENTITIES = [
   },
   // CME-003 — critical, water_crisis_cooling_drain (water_usage>0.80, cooling_water>0.75, carbon_int≤0.85, coal_dep≤0.80)
   {
-    entity_id: "CME-003", mining_type: "asic_mining", region: "NOAM",
+    id: "CME-003", mining_type: "asic_mining", region: "NOAM",
     carbon_intensity: 0.78, renewable_energy_share: 0.10, coal_dependency: 0.70,
     energy_consumption_gwh: 0.82, water_usage_intensity: 0.88, cooling_water_stress: 0.85,
     e_waste_generation: 0.70, hardware_lifecycle: 0.25, grid_strain: 0.78,
@@ -36,7 +36,7 @@ const MOCK_ENTITIES = [
   },
   // CME-004 — high, e_waste_toxic_dumping (e_waste>0.80, toxic_chemical>0.75)
   {
-    entity_id: "CME-004", mining_type: "gpu_mining", region: "LATAM",
+    id: "CME-004", mining_type: "gpu_mining", region: "LATAM",
     carbon_intensity: 0.50, renewable_energy_share: 0.30, coal_dependency: 0.45,
     energy_consumption_gwh: 0.52, water_usage_intensity: 0.48, cooling_water_stress: 0.50,
     e_waste_generation: 0.85, hardware_lifecycle: 0.30, grid_strain: 0.50,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
   },
   // CME-005 — high, energy_grid_destabilization (grid_strain>0.80, local_energy_price>0.75)
   {
-    entity_id: "CME-005", mining_type: "proof_of_work", region: "SSA",
+    id: "CME-005", mining_type: "proof_of_work", region: "SSA",
     carbon_intensity: 0.48, renewable_energy_share: 0.28, coal_dependency: 0.45,
     energy_consumption_gwh: 0.75, water_usage_intensity: 0.50, cooling_water_stress: 0.48,
     e_waste_generation: 0.55, hardware_lifecycle: 0.48, grid_strain: 0.85,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // CME-006 — moderate, none
   {
-    entity_id: "CME-006", mining_type: "proof_of_stake", region: "EMEA",
+    id: "CME-006", mining_type: "proof_of_stake", region: "EMEA",
     carbon_intensity: 0.30, renewable_energy_share: 0.55, coal_dependency: 0.28,
     energy_consumption_gwh: 0.32, water_usage_intensity: 0.30, cooling_water_stress: 0.28,
     e_waste_generation: 0.30, hardware_lifecycle: 0.62, grid_strain: 0.30,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
   },
   // CME-007 — low, none
   {
-    entity_id: "CME-007", mining_type: "proof_of_stake", region: "NOAM",
+    id: "CME-007", mining_type: "proof_of_stake", region: "NOAM",
     carbon_intensity: 0.10, renewable_energy_share: 0.88, coal_dependency: 0.08,
     energy_consumption_gwh: 0.10, water_usage_intensity: 0.10, cooling_water_stress: 0.08,
     e_waste_generation: 0.10, hardware_lifecycle: 0.88, grid_strain: 0.12,
@@ -76,7 +76,7 @@ const MOCK_ENTITIES = [
   },
   // CME-008 — low, none
   {
-    entity_id: "CME-008", mining_type: "green_mining", region: "APAC",
+    id: "CME-008", mining_type: "green_mining", region: "APAC",
     carbon_intensity: 0.12, renewable_energy_share: 0.85, coal_dependency: 0.10,
     energy_consumption_gwh: 0.12, water_usage_intensity: 0.12, cooling_water_stress: 0.10,
     e_waste_generation: 0.12, hardware_lifecycle: 0.85, grid_strain: 0.10,
@@ -150,7 +150,7 @@ export async function GET() {
       const action  = recommendedAction(risk);
       const sig     = signal(risk);
       return {
-        entity_id:          e.entity_id,
+        id:          e.entity_id,
         mining_type:        e.mining_type,
         region:             e.region,
         carbon_score:       carbon,

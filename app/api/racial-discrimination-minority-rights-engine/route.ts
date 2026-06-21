@@ -23,7 +23,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "RDMR-001",
+      id: "RDMR-001",
       name: "USA/Violence Policière Raciale — Killings BLM Persistance, 1 000+ Morts/An, Disparités Raciales Justice Pénale & Sur-Incarcération Noirs 5×",
       country: "USA",
       composite_score: 81.6,
@@ -37,7 +37,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RDMR-002",
+      id: "RDMR-002",
       name: "Chine/Tibet & Xinjiang — Discrimination Ethnique Systémique, Suppression Culture Tibétaine, Assimilation Forcée Ouïghours & Persécution Religieuse",
       country: "Chine",
       composite_score: 89.1,
@@ -51,7 +51,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RDMR-003",
+      id: "RDMR-003",
       name: "Inde/Discrimination Castes Dalits — 200M Dalits Intouchabilité Persistante, Violences Sexuelles Dalites, Exclusion Économique & Impunité Auteurs",
       country: "Inde",
       composite_score: 79.1,
@@ -65,7 +65,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RDMR-004",
+      id: "RDMR-004",
       name: "Brésil/Racisme Structurel & Féminicide Noir — Noirs 75% Victimes Homicides, Féminicide Noir 2× Plus Élevé, Exclusion Socio-Économique & Impunité Persistante",
       country: "Brésil",
       composite_score: 77.65,
@@ -79,7 +79,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RDMR-005",
+      id: "RDMR-005",
       name: "Hongrie/Discrimination Roms UE — 700K Roms Ségrégation Scolaire, Exclusion Emploi, Expulsions Forcées & Discours Haineux Gouvernemental Légitimé",
       country: "Hongrie",
       composite_score: 59.85,
@@ -93,7 +93,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RDMR-006",
+      id: "RDMR-006",
       name: "Israël/Palestine — Apartheid Selon HRW & Amnesty, Discrimination Systémique Arabes Israéliens, Déni Droits Palestiniens & Ségrégation Territoriale",
       country: "Israël/Palestine",
       composite_score: 58.65,
@@ -107,7 +107,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RDMR-007",
+      id: "RDMR-007",
       name: "France/Discrimination Institutionnelle Voilée — Rapport Défenseur des Droits: Discrimination 20% Minorités Emploi, Contrôles Faciaux, Islamophobie & Inégalités Logement",
       country: "France",
       composite_score: 35.9,
@@ -121,7 +121,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "RDMR-008",
+      id: "RDMR-008",
       name: "Canada/TRC & Multiculturalisme — Politique Multiculturalisme Avancée, TRC 94 Appels à l'Action, Réconciliation Peuples Autochtones & Cadre Anti-Discrimination Robuste",
       country: "Canada",
       composite_score: 13.45,

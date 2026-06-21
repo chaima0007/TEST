@@ -29,7 +29,7 @@ function GaugeRing({ value, label }: { value: number; label: string }) {
 }
 
 interface Entity {
-  entity_id: string
+  id: string
   name: string
   composite_score: number
   risk_level: string
@@ -166,12 +166,12 @@ export default function StatelessPersonsDocumentationPage() {
       {/* Entity Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {filtered.map(e => (
-          <div key={e.entity_id}
+          <div key={e.id}
             className={`border rounded-xl p-4 ${RB[e.risk_level] ?? "border-slate-700 bg-slate-900"}`}>
             <div className="flex justify-between items-start mb-2">
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-sm leading-tight">{e.name}</div>
-                <div className="text-xs text-slate-500 mt-0.5">{e.entity_id}</div>
+                <div className="text-xs text-slate-500 mt-0.5">{e.id}</div>
               </div>
               <div className="text-right ml-3 flex-shrink-0">
                 <div className="text-xl font-bold text-white">{e.composite_score.toFixed(1)}</div>

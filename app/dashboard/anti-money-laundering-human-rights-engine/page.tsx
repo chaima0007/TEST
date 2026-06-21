@@ -7,7 +7,7 @@ const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10"
 const ACCENT = "#f59e0b";
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   composite_score: number;
   estimated_aml_rights_index: number;
@@ -98,7 +98,7 @@ export default function AntiMoneyLaunderingHumanRightsDashboard() {
             </div>
             <div className="bg-slate-800/50 rounded-xl p-3">
               <div className="text-xs text-slate-400 mb-1">ID</div>
-              <div className="text-white font-mono text-sm">{selected.entity_id}</div>
+              <div className="text-white font-mono text-sm">{selected.id}</div>
             </div>
           </div>
         </div>
@@ -181,10 +181,10 @@ export default function AntiMoneyLaunderingHumanRightsDashboard() {
       {/* Entity Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map((e) => (
-          <div key={e.entity_id} onClick={() => setSelected(e)}
+          <div key={e.id} onClick={() => setSelected(e)}
             className={`bg-slate-900 border rounded-xl p-4 cursor-pointer hover:border-amber-500/50 transition-colors ${RB[e.risk_level] ?? "border-slate-800"}`}>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs text-slate-500 font-mono">{e.entity_id}</span>
+              <span className="text-xs text-slate-500 font-mono">{e.id}</span>
               <span className={`text-xs font-semibold uppercase ${RC[e.risk_level] ?? "text-slate-400"}`}>{e.risk_level}</span>
             </div>
             <div className="font-semibold text-white text-sm mb-3 leading-tight">{e.name}</div>

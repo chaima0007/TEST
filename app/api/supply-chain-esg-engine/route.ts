@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // SCE-001 — critical, forced_labor_opacity (forced_labor_risk>0.85, child_labor_exposure>0.80)
   {
-    entity_id: "SCE-001", industry_type: "textile", region: "APAC",
+    id: "SCE-001", industry_type: "textile", region: "APAC",
     supply_visibility: 0.85, forced_labor_risk: 0.90, child_labor_exposure: 0.85,
     carbon_footprint: 0.75, deforestation_link: 0.70, water_pollution: 0.70,
     conflict_mineral_use: 0.50, audit_independence: 0.75, reporting_quality: 0.70,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-002 — critical, greenwashing_deception (carbon_footprint>0.85, reporting_quality<0.20)
   {
-    entity_id: "SCE-002", industry_type: "energie_fossile", region: "NOAM",
+    id: "SCE-002", industry_type: "energie_fossile", region: "NOAM",
     supply_visibility: 0.80, forced_labor_risk: 0.72, child_labor_exposure: 0.68,
     carbon_footprint: 0.90, deforestation_link: 0.72, water_pollution: 0.75,
     conflict_mineral_use: 0.50, audit_independence: 0.80, reporting_quality: 0.10,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-003 — critical, conflict_mineral_complicity (conflict_mineral_use>0.85, supply_visibility<0.20)
   {
-    entity_id: "SCE-003", industry_type: "electronique", region: "SSA",
+    id: "SCE-003", industry_type: "electronique", region: "SSA",
     supply_visibility: 0.10, forced_labor_risk: 0.75, child_labor_exposure: 0.70,
     carbon_footprint: 0.78, deforestation_link: 0.72, water_pollution: 0.70,
     conflict_mineral_use: 0.90, audit_independence: 0.78, reporting_quality: 0.70,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-004 — high, carbon_laundering_scheme (carbon_footprint>0.80, deforestation_link>0.75)
   {
-    entity_id: "SCE-004", industry_type: "agroalimentaire", region: "LATAM",
+    id: "SCE-004", industry_type: "agroalimentaire", region: "LATAM",
     supply_visibility: 0.48, forced_labor_risk: 0.40, child_labor_exposure: 0.38,
     carbon_footprint: 0.82, deforestation_link: 0.78, water_pollution: 0.50,
     conflict_mineral_use: 0.30, audit_independence: 0.42, reporting_quality: 0.40,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-005 — high, supplier_audit_capture (audit_independence>0.80, certification_credibility>0.75)
   {
-    entity_id: "SCE-005", industry_type: "chimie_industrielle", region: "EMEA",
+    id: "SCE-005", industry_type: "chimie_industrielle", region: "EMEA",
     supply_visibility: 0.50, forced_labor_risk: 0.42, child_labor_exposure: 0.40,
     carbon_footprint: 0.45, deforestation_link: 0.42, water_pollution: 0.40,
     conflict_mineral_use: 0.35, audit_independence: 0.85, reporting_quality: 0.70,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-006 — moderate, none
   {
-    entity_id: "SCE-006", industry_type: "logistique", region: "EMEA",
+    id: "SCE-006", industry_type: "logistique", region: "EMEA",
     supply_visibility: 0.32, forced_labor_risk: 0.28, child_labor_exposure: 0.25,
     carbon_footprint: 0.32, deforestation_link: 0.28, water_pollution: 0.30,
     conflict_mineral_use: 0.20, audit_independence: 0.30, reporting_quality: 0.28,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-007 — low, none
   {
-    entity_id: "SCE-007", industry_type: "pharmaceutique", region: "NOAM",
+    id: "SCE-007", industry_type: "pharmaceutique", region: "NOAM",
     supply_visibility: 0.12, forced_labor_risk: 0.10, child_labor_exposure: 0.08,
     carbon_footprint: 0.12, deforestation_link: 0.10, water_pollution: 0.10,
     conflict_mineral_use: 0.08, audit_independence: 0.10, reporting_quality: 0.12,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // SCE-008 — low, none
   {
-    entity_id: "SCE-008", industry_type: "technologie", region: "APAC",
+    id: "SCE-008", industry_type: "technologie", region: "APAC",
     supply_visibility: 0.14, forced_labor_risk: 0.12, child_labor_exposure: 0.10,
     carbon_footprint: 0.10, deforestation_link: 0.12, water_pollution: 0.12,
     conflict_mineral_use: 0.10, audit_independence: 0.12, reporting_quality: 0.14,
@@ -150,7 +150,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:             e.entity_id,
+        id:             e.entity_id,
         industry_type:         e.industry_type,
         region:                e.region,
         visibility_score:      vis,

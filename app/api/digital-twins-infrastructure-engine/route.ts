@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // DTI-001 — critical / twin_divergence_catastrophe
   {
-    entity_id: "DTI-001", twin_domain: "smart_city", region: "EMEA",
+    id: "DTI-001", twin_domain: "smart_city", region: "EMEA",
     digital_physical_synchronization_gap: 0.85, twin_data_integrity_risk: 0.78,
     adversarial_twin_manipulation_risk: 0.72, twin_sovereignty_capture_index: 0.55,
     real_time_feedback_latency_risk: 0.80, twin_divergence_crisis_probability: 0.82,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
   },
   // DTI-002 — low / none
   {
-    entity_id: "DTI-002", twin_domain: "manufacturing", region: "NAMER",
+    id: "DTI-002", twin_domain: "manufacturing", region: "NAMER",
     digital_physical_synchronization_gap: 0.10, twin_data_integrity_risk: 0.08,
     adversarial_twin_manipulation_risk: 0.12, twin_sovereignty_capture_index: 0.10,
     real_time_feedback_latency_risk: 0.08, twin_divergence_crisis_probability: 0.09,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   },
   // DTI-003 — high / adversarial_twin_attack
   {
-    entity_id: "DTI-003", twin_domain: "energy_grid", region: "APAC",
+    id: "DTI-003", twin_domain: "energy_grid", region: "APAC",
     digital_physical_synchronization_gap: 0.42, twin_data_integrity_risk: 0.55,
     adversarial_twin_manipulation_risk: 0.78, twin_sovereignty_capture_index: 0.48,
     real_time_feedback_latency_risk: 0.40, twin_divergence_crisis_probability: 0.38,
@@ -45,7 +45,7 @@ const MOCK_ENTITIES = [
   },
   // DTI-004 — low / none
   {
-    entity_id: "DTI-004", twin_domain: "logistics", region: "LATAM",
+    id: "DTI-004", twin_domain: "logistics", region: "LATAM",
     digital_physical_synchronization_gap: 0.12, twin_data_integrity_risk: 0.10,
     adversarial_twin_manipulation_risk: 0.08, twin_sovereignty_capture_index: 0.12,
     real_time_feedback_latency_risk: 0.10, twin_divergence_crisis_probability: 0.09,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
   },
   // DTI-005 — critical / cascading_twin_collapse
   {
-    entity_id: "DTI-005", twin_domain: "healthcare_infrastructure", region: "EMEA",
+    id: "DTI-005", twin_domain: "healthcare_infrastructure", region: "EMEA",
     digital_physical_synchronization_gap: 0.62, twin_data_integrity_risk: 0.70,
     adversarial_twin_manipulation_risk: 0.55, twin_sovereignty_capture_index: 0.60,
     real_time_feedback_latency_risk: 0.58, twin_divergence_crisis_probability: 0.60,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   },
   // DTI-006 — moderate / none
   {
-    entity_id: "DTI-006", twin_domain: "transportation", region: "MEA",
+    id: "DTI-006", twin_domain: "transportation", region: "MEA",
     digital_physical_synchronization_gap: 0.32, twin_data_integrity_risk: 0.28,
     adversarial_twin_manipulation_risk: 0.30, twin_sovereignty_capture_index: 0.35,
     real_time_feedback_latency_risk: 0.28, twin_divergence_crisis_probability: 0.30,
@@ -84,7 +84,7 @@ const MOCK_ENTITIES = [
   },
   // DTI-007 — high / twin_vendor_monopoly
   {
-    entity_id: "DTI-007", twin_domain: "financial_markets", region: "NAMER",
+    id: "DTI-007", twin_domain: "financial_markets", region: "NAMER",
     digital_physical_synchronization_gap: 0.45, twin_data_integrity_risk: 0.52,
     adversarial_twin_manipulation_risk: 0.42, twin_sovereignty_capture_index: 0.60,
     real_time_feedback_latency_risk: 0.40, twin_divergence_crisis_probability: 0.38,
@@ -97,7 +97,7 @@ const MOCK_ENTITIES = [
   },
   // DTI-008 — critical / physical_twin_lock
   {
-    entity_id: "DTI-008", twin_domain: "nuclear_facility", region: "EMEA",
+    id: "DTI-008", twin_domain: "nuclear_facility", region: "EMEA",
     digital_physical_synchronization_gap: 0.58, twin_data_integrity_risk: 0.65,
     adversarial_twin_manipulation_risk: 0.60, twin_sovereignty_capture_index: 0.65,
     real_time_feedback_latency_risk: 0.62, twin_divergence_crisis_probability: 0.55,
@@ -185,7 +185,7 @@ export async function GET() {
       const comp = compositeScore(sync, sec, dep, sov);
       const pat = twinPattern(e), r = riskLevel(comp);
       return {
-        entity_id: e.entity_id, twin_domain: e.twin_domain, region: e.region,
+        id: e.entity_id, twin_domain: e.twin_domain, region: e.region,
         sync_score: sync, security_score: sec,
         dependency_score: dep, sovereignty_score: sov,
         composite_score: comp, risk_level: r,

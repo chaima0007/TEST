@@ -17,14 +17,14 @@ const MOCK = {
   ],
   critical_alerts: [],
   entities: [
-    { entity_id: "COD_cobalt_ev_batteries", name: "RDC — Cobalt chaînes batteries EV", composite_score: 88.65, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 8.87 },
-    { entity_id: "BGD_fast_fashion", name: "Bangladesh — Fast fashion (travail forcé)", composite_score: 82.35, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 8.23 },
-    { entity_id: "CIV_cocoa_child_labor", name: "Côte d'Ivoire — Cacao et travail enfants", composite_score: 79.6, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 7.96 },
-    { entity_id: "IDN_palm_oil", name: "Indonésie — Huile de palme déforestation", composite_score: 80.0, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 8.0 },
-    { entity_id: "THA_fishing_slavery", name: "Thaïlande — Esclavage dans la pêche", composite_score: 51.1, risk_level: "élevé", estimated_corporate_human_rights_due_diligence_index: 5.11 },
-    { entity_id: "SLE_diamonds_conflict", name: "Sierra Leone — Diamants conflits", composite_score: 48.15, risk_level: "élevé", estimated_corporate_human_rights_due_diligence_index: 4.81 },
-    { entity_id: "CHL_ARG_lithium", name: "Chili/Argentine — Lithium et communautés", composite_score: 34.1, risk_level: "modéré", estimated_corporate_human_rights_due_diligence_index: 3.41 },
-    { entity_id: "APPLE_NIKE_compliance", name: "Apple/Nike — Conformité CSDDD/UNGPs", composite_score: 14.0, risk_level: "faible", estimated_corporate_human_rights_due_diligence_index: 1.4 },
+    { id: "COD_cobalt_ev_batteries", name: "RDC — Cobalt chaînes batteries EV", composite_score: 88.65, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 8.87 },
+    { id: "BGD_fast_fashion", name: "Bangladesh — Fast fashion (travail forcé)", composite_score: 82.35, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 8.23 },
+    { id: "CIV_cocoa_child_labor", name: "Côte d'Ivoire — Cacao et travail enfants", composite_score: 79.6, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 7.96 },
+    { id: "IDN_palm_oil", name: "Indonésie — Huile de palme déforestation", composite_score: 80.0, risk_level: "critique", estimated_corporate_human_rights_due_diligence_index: 8.0 },
+    { id: "THA_fishing_slavery", name: "Thaïlande — Esclavage dans la pêche", composite_score: 51.1, risk_level: "élevé", estimated_corporate_human_rights_due_diligence_index: 5.11 },
+    { id: "SLE_diamonds_conflict", name: "Sierra Leone — Diamants conflits", composite_score: 48.15, risk_level: "élevé", estimated_corporate_human_rights_due_diligence_index: 4.81 },
+    { id: "CHL_ARG_lithium", name: "Chili/Argentine — Lithium et communautés", composite_score: 34.1, risk_level: "modéré", estimated_corporate_human_rights_due_diligence_index: 3.41 },
+    { id: "APPLE_NIKE_compliance", name: "Apple/Nike — Conformité CSDDD/UNGPs", composite_score: 14.0, risk_level: "faible", estimated_corporate_human_rights_due_diligence_index: 1.4 },
   ],
 };
 

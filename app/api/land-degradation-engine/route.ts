@@ -25,7 +25,7 @@ function getMockData(): Record<string, unknown> {
   const entities = [
     // ── CRITIQUE (3) ──────────────────────────────────────────────────────────
     {
-      entity_id: "LND-001",
+      id: "LND-001",
       name: "Sahel Occidental",
       country: "Mali",
       sector: "Agriculture & Élevage",
@@ -42,7 +42,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ROUGE",
     },
     {
-      entity_id: "LND-002",
+      id: "LND-002",
       name: "Amazonie Brésilienne Nord",
       country: "Brésil",
       sector: "Déforestation Tropicale",
@@ -59,7 +59,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ROUGE",
     },
     {
-      entity_id: "LND-003",
+      id: "LND-003",
       name: "Plaines d'Asie Centrale",
       country: "Kazakhstan",
       sector: "Terres Agricoles Dégradées",
@@ -77,7 +77,7 @@ function getMockData(): Record<string, unknown> {
     },
     // ── ÉLEVÉ (2) ─────────────────────────────────────────────────────────────
     {
-      entity_id: "LND-004",
+      id: "LND-004",
       name: "Bassin du Congo Central",
       country: "RDC",
       sector: "Forêts Tropicales",
@@ -94,7 +94,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ORANGE",
     },
     {
-      entity_id: "LND-005",
+      id: "LND-005",
       name: "Méditerranée du Sud",
       country: "Algérie",
       sector: "Agriculture Semi-Aride",
@@ -112,7 +112,7 @@ function getMockData(): Record<string, unknown> {
     },
     // ── MODÉRÉ (1) ────────────────────────────────────────────────────────────
     {
-      entity_id: "LND-006",
+      id: "LND-006",
       name: "Plaines Européennes Est",
       country: "Pologne",
       sector: "Agriculture Intensive",
@@ -130,7 +130,7 @@ function getMockData(): Record<string, unknown> {
     },
     // ── FAIBLE (2) ────────────────────────────────────────────────────────────
     {
-      entity_id: "LND-007",
+      id: "LND-007",
       name: "Scandinavie Forestière",
       country: "Suède",
       sector: "Gestion Forestière Durable",
@@ -147,7 +147,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "VERT",
     },
     {
-      entity_id: "LND-008",
+      id: "LND-008",
       name: "Patagonie Protégée",
       country: "Argentine",
       sector: "Aires Protégées",

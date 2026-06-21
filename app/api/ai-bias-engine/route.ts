@@ -56,7 +56,7 @@ function getMockData() {
     data_sources: ["audit_reports", "model_registries", "discrimination_complaints"],
     entities: [
       {
-        entity_id: "ENT-001",
+        id: "ENT-001",
         name: "AlgoDecide Corp",
         country: "États-Unis",
         sector: "Justice & Juridique",
@@ -77,7 +77,7 @@ function getMockData() {
         model_count: 47,
       },
       {
-        entity_id: "ENT-002",
+        id: "ENT-002",
         name: "HireAI Systems",
         country: "Royaume-Uni",
         sector: "Ressources Humaines",
@@ -98,7 +98,7 @@ function getMockData() {
         model_count: 23,
       },
       {
-        entity_id: "ENT-003",
+        id: "ENT-003",
         name: "CreditBot Finance",
         country: "Allemagne",
         sector: "Services Financiers",
@@ -119,7 +119,7 @@ function getMockData() {
         model_count: 89,
       },
       {
-        entity_id: "ENT-004",
+        id: "ENT-004",
         name: "MedPredict AI",
         country: "France",
         sector: "Santé & Médical",
@@ -140,7 +140,7 @@ function getMockData() {
         model_count: 12,
       },
       {
-        entity_id: "ENT-005",
+        id: "ENT-005",
         name: "PolicePredAI",
         country: "Pays-Bas",
         sector: "Sécurité Publique",
@@ -161,7 +161,7 @@ function getMockData() {
         model_count: 8,
       },
       {
-        entity_id: "ENT-006",
+        id: "ENT-006",
         name: "AdTargetML",
         country: "Espagne",
         sector: "Marketing & Publicité",
@@ -182,7 +182,7 @@ function getMockData() {
         model_count: 156,
       },
       {
-        entity_id: "ENT-007",
+        id: "ENT-007",
         name: "FairLens Analytics",
         country: "Suède",
         sector: "Recherche & Développement",
@@ -203,7 +203,7 @@ function getMockData() {
         model_count: 5,
       },
       {
-        entity_id: "ENT-008",
+        id: "ENT-008",
         name: "EthicAI Solutions",
         country: "Canada",
         sector: "Conseil & Audit",

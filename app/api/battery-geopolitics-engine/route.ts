@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // BGE-001 — lithium, APAC → critical, lithium_supply_crisis
   {
-    entity_id: "BGE-001", mineral_type: "lithium", region: "APAC",
+    id: "BGE-001", mineral_type: "lithium", region: "APAC",
     lithium_supply_concentration: 0.92, cobalt_congo_dependency: 0.55, nickel_supply_risk: 0.62,
     manganese_geopolitical_control: 0.58, battery_manufacturing_monopoly: 0.88,
     EV_supply_chain_vulnerability: 0.70, Chinese_battery_dominance: 0.78,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // BGE-002 — battery_cells, APAC → critical, Chinese_battery_capture
   {
-    entity_id: "BGE-002", mineral_type: "battery_cells", region: "APAC",
+    id: "BGE-002", mineral_type: "battery_cells", region: "APAC",
     lithium_supply_concentration: 0.70, cobalt_congo_dependency: 0.60, nickel_supply_risk: 0.68,
     manganese_geopolitical_control: 0.72, battery_manufacturing_monopoly: 0.78,
     EV_supply_chain_vulnerability: 0.65, Chinese_battery_dominance: 0.90,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   },
   // BGE-003 — cobalt, MEA → critical, cobalt_humanitarian_crisis
   {
-    entity_id: "BGE-003", mineral_type: "cobalt", region: "MEA",
+    id: "BGE-003", mineral_type: "cobalt", region: "MEA",
     lithium_supply_concentration: 0.60, cobalt_congo_dependency: 0.90, nickel_supply_risk: 0.55,
     manganese_geopolitical_control: 0.50, battery_manufacturing_monopoly: 0.58,
     EV_supply_chain_vulnerability: 0.62, Chinese_battery_dominance: 0.65,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   },
   // BGE-004 — critical_minerals, EMEA → critical, green_tech_weaponization
   {
-    entity_id: "BGE-004", mineral_type: "critical_minerals", region: "EMEA",
+    id: "BGE-004", mineral_type: "critical_minerals", region: "EMEA",
     lithium_supply_concentration: 0.65, cobalt_congo_dependency: 0.58, nickel_supply_risk: 0.60,
     manganese_geopolitical_control: 0.72, battery_manufacturing_monopoly: 0.68,
     EV_supply_chain_vulnerability: 0.70, Chinese_battery_dominance: 0.75,
@@ -52,7 +52,7 @@ const MOCK_ENTITIES = [
   },
   // BGE-005 — EV_batteries, NOAM → critical, EV_supply_chain_collapse
   {
-    entity_id: "BGE-005", mineral_type: "EV_batteries", region: "NOAM",
+    id: "BGE-005", mineral_type: "EV_batteries", region: "NOAM",
     lithium_supply_concentration: 0.68, cobalt_congo_dependency: 0.62, nickel_supply_risk: 0.70,
     manganese_geopolitical_control: 0.65, battery_manufacturing_monopoly: 0.72,
     EV_supply_chain_vulnerability: 0.88, Chinese_battery_dominance: 0.75,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // BGE-006 — nickel, APAC → high, none
   {
-    entity_id: "BGE-006", mineral_type: "nickel", region: "APAC",
+    id: "BGE-006", mineral_type: "nickel", region: "APAC",
     lithium_supply_concentration: 0.55, cobalt_congo_dependency: 0.48, nickel_supply_risk: 0.72,
     manganese_geopolitical_control: 0.60, battery_manufacturing_monopoly: 0.55,
     EV_supply_chain_vulnerability: 0.58, Chinese_battery_dominance: 0.62,
@@ -76,7 +76,7 @@ const MOCK_ENTITIES = [
   },
   // BGE-007 — manganese, LATAM → moderate, none
   {
-    entity_id: "BGE-007", mineral_type: "manganese", region: "LATAM",
+    id: "BGE-007", mineral_type: "manganese", region: "LATAM",
     lithium_supply_concentration: 0.30, cobalt_congo_dependency: 0.28, nickel_supply_risk: 0.32,
     manganese_geopolitical_control: 0.45, battery_manufacturing_monopoly: 0.35,
     EV_supply_chain_vulnerability: 0.38, Chinese_battery_dominance: 0.40,
@@ -88,7 +88,7 @@ const MOCK_ENTITIES = [
   },
   // BGE-008 — recycled_materials, EMEA → low, none
   {
-    entity_id: "BGE-008", mineral_type: "recycled_materials", region: "EMEA",
+    id: "BGE-008", mineral_type: "recycled_materials", region: "EMEA",
     lithium_supply_concentration: 0.12, cobalt_congo_dependency: 0.10, nickel_supply_risk: 0.15,
     manganese_geopolitical_control: 0.18, battery_manufacturing_monopoly: 0.14,
     EV_supply_chain_vulnerability: 0.16, Chinese_battery_dominance: 0.20,
@@ -194,7 +194,7 @@ export async function GET() {
       const sig          = signal(risk);
 
       return {
-        entity_id:                     e.entity_id,
+        id:                     e.entity_id,
         mineral_type:                  e.mineral_type,
         region:                        e.region,
         supply_score:                  supply,

@@ -102,8 +102,8 @@ export default function CorporateHumanRightsDueDiligencePage() {
                 const name = e.name as string;
                 const idx = e.estimated_corporate_human_rights_due_diligence_index as number;
                 return (
-                  <div key={e.entity_id as string} className="px-6 py-3 flex items-center gap-4">
-                    <div className="text-xs font-mono text-slate-500 w-10">{e.entity_id as string}</div>
+                  <div key={e.id as string} className="px-6 py-3 flex items-center gap-4">
+                    <div className="text-xs font-mono text-slate-500 w-10">{e.id as string}</div>
                     <div className="flex-1 text-sm text-slate-300 truncate">{name}</div>
                     <div className="text-xs text-slate-500 font-mono w-12 text-right">{idx.toFixed(2)}/10</div>
                     <div className="text-xs font-medium capitalize px-2 py-0.5 rounded-full border" style={{ color: riskColor(level), borderColor: riskColor(level) + "40" }}>{level}</div>

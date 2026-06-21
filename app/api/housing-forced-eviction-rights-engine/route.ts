@@ -17,14 +17,14 @@ const MOCK = {
   ],
   critical_alerts: [],
   entities: [
-    { entity_id: "ZW", name: "Zimbabwe", composite_score: 85.55, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 8.55 },
-    { entity_id: "KH", name: "Cambodge", composite_score: 79.3, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 7.93 },
-    { entity_id: "ET", name: "Éthiopie (déplacés internes)", composite_score: 77.55, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 7.75 },
-    { entity_id: "KE", name: "Kenya (bidonvilles)", composite_score: 72.75, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 7.28 },
-    { entity_id: "BR", name: "Brésil (favelas)", composite_score: 52.7, risk_level: "élevé", estimated_housing_forced_eviction_rights_index: 5.27 },
-    { entity_id: "IN", name: "Inde (démolitions urbaines)", composite_score: 49.35, risk_level: "élevé", estimated_housing_forced_eviction_rights_index: 4.93 },
-    { entity_id: "US", name: "États-Unis (sans-abri urbains)", composite_score: 32.95, risk_level: "modéré", estimated_housing_forced_eviction_rights_index: 3.29 },
-    { entity_id: "SE", name: "Suède (modèle logement social)", composite_score: 8.55, risk_level: "faible", estimated_housing_forced_eviction_rights_index: 0.86 },
+    { id: "ZW", name: "Zimbabwe", composite_score: 85.55, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 8.55 },
+    { id: "KH", name: "Cambodge", composite_score: 79.3, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 7.93 },
+    { id: "ET", name: "Éthiopie (déplacés internes)", composite_score: 77.55, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 7.75 },
+    { id: "KE", name: "Kenya (bidonvilles)", composite_score: 72.75, risk_level: "critique", estimated_housing_forced_eviction_rights_index: 7.28 },
+    { id: "BR", name: "Brésil (favelas)", composite_score: 52.7, risk_level: "élevé", estimated_housing_forced_eviction_rights_index: 5.27 },
+    { id: "IN", name: "Inde (démolitions urbaines)", composite_score: 49.35, risk_level: "élevé", estimated_housing_forced_eviction_rights_index: 4.93 },
+    { id: "US", name: "États-Unis (sans-abri urbains)", composite_score: 32.95, risk_level: "modéré", estimated_housing_forced_eviction_rights_index: 3.29 },
+    { id: "SE", name: "Suède (modèle logement social)", composite_score: 8.55, risk_level: "faible", estimated_housing_forced_eviction_rights_index: 0.86 },
   ],
 };
 

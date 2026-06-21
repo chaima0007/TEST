@@ -33,7 +33,7 @@ function computeRecommendedAction(riskLevel: string): string {
 
 const mockEntities = [
   {
-    entity_id:                    "TAX-001",
+    id:                    "TAX-001",
     name:                         "MegaCorp Cayman Holdings",
     country:                      "Cayman Islands",
     sector:                       "Finance",
@@ -54,7 +54,7 @@ const mockEntities = [
     recommended_action:           computeRecommendedAction("critique"),
   },
   {
-    entity_id:                    "TAX-002",
+    id:                    "TAX-002",
     name:                         "TechGiant Ireland LLC",
     country:                      "Ireland",
     sector:                       "Technology",
@@ -75,7 +75,7 @@ const mockEntities = [
     recommended_action:           computeRecommendedAction("critique"),
   },
   {
-    entity_id:                    "TAX-003",
+    id:                    "TAX-003",
     name:                         "LuxHolding SA",
     country:                      "Luxembourg",
     sector:                       "Real Estate",
@@ -96,7 +96,7 @@ const mockEntities = [
     recommended_action:           computeRecommendedAction("critique"),
   },
   {
-    entity_id:                    "TAX-004",
+    id:                    "TAX-004",
     name:                         "ShellCompany BV",
     country:                      "Netherlands",
     sector:                       "Consulting",
@@ -117,7 +117,7 @@ const mockEntities = [
     recommended_action:           computeRecommendedAction("élevé"),
   },
   {
-    entity_id:                    "TAX-005",
+    id:                    "TAX-005",
     name:                         "PharmaOffset AG",
     country:                      "Switzerland",
     sector:                       "Pharmaceuticals",
@@ -138,7 +138,7 @@ const mockEntities = [
     recommended_action:           computeRecommendedAction("élevé"),
   },
   {
-    entity_id:                    "TAX-006",
+    id:                    "TAX-006",
     name:                         "RetailGroup SARL",
     country:                      "France",
     sector:                       "Retail",
@@ -159,7 +159,7 @@ const mockEntities = [
     recommended_action:           computeRecommendedAction("modéré"),
   },
   {
-    entity_id:                    "TAX-007",
+    id:                    "TAX-007",
     name:                         "Nordic Fair AS",
     country:                      "Denmark",
     sector:                       "Renewable Energy",
@@ -180,7 +180,7 @@ const mockEntities = [
     recommended_action:           computeRecommendedAction("faible"),
   },
   {
-    entity_id:                    "TAX-008",
+    id:                    "TAX-008",
     name:                         "Transparent Corp",
     country:                      "Germany",
     sector:                       "Manufacturing",

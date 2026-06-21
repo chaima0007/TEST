@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // NED-001 — EMEA, financial_markets → critical, cognitive_overload
-  { entity_id:"NED-001", decision_domain:"financial_markets", region:"EMEA",
+  { id:"NED-001", decision_domain:"financial_markets", region:"EMEA",
     cognitive_load:0.88, loss_aversion_bias:0.72, anchoring_effect:0.65,
     framing_susceptibility:0.70, sunk_cost_fallacy:0.68, hyperbolic_discounting:0.75,
     overconfidence_index:0.60, herding_tendency:0.55, attention_scarcity:0.82,
@@ -12,7 +12,7 @@ const MOCK_ENTITIES = [
     metacognitive_awareness:0.18, decision_coherence:0.15 },
 
   // NED-002 — APAC, investment → low, rational_clarity/none
-  { entity_id:"NED-002", decision_domain:"investment", region:"APAC",
+  { id:"NED-002", decision_domain:"investment", region:"APAC",
     cognitive_load:0.15, loss_aversion_bias:0.12, anchoring_effect:0.10,
     framing_susceptibility:0.14, sunk_cost_fallacy:0.12, hyperbolic_discounting:0.10,
     overconfidence_index:0.12, herding_tendency:0.10, attention_scarcity:0.12,
@@ -21,7 +21,7 @@ const MOCK_ENTITIES = [
     metacognitive_awareness:0.90, decision_coherence:0.92 },
 
   // NED-003 — NOAM, strategic_planning → high, bias_cascade
-  { entity_id:"NED-003", decision_domain:"strategic_planning", region:"NOAM",
+  { id:"NED-003", decision_domain:"strategic_planning", region:"NOAM",
     cognitive_load:0.52, loss_aversion_bias:0.78, anchoring_effect:0.72,
     framing_susceptibility:0.60, sunk_cost_fallacy:0.65, hyperbolic_discounting:0.48,
     overconfidence_index:0.75, herding_tendency:0.42, attention_scarcity:0.50,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
     metacognitive_awareness:0.38, decision_coherence:0.42 },
 
   // NED-004 — LATAM, investment → low, rational_clarity/none
-  { entity_id:"NED-004", decision_domain:"investment", region:"LATAM",
+  { id:"NED-004", decision_domain:"investment", region:"LATAM",
     cognitive_load:0.18, loss_aversion_bias:0.15, anchoring_effect:0.12,
     framing_susceptibility:0.16, sunk_cost_fallacy:0.14, hyperbolic_discounting:0.12,
     overconfidence_index:0.15, herding_tendency:0.12, attention_scarcity:0.18,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
     metacognitive_awareness:0.86, decision_coherence:0.90 },
 
   // NED-005 — MEA, financial_markets → critical, emotional_hijack
-  { entity_id:"NED-005", decision_domain:"financial_markets", region:"MEA",
+  { id:"NED-005", decision_domain:"financial_markets", region:"MEA",
     cognitive_load:0.60, loss_aversion_bias:0.65, anchoring_effect:0.58,
     framing_susceptibility:0.62, sunk_cost_fallacy:0.70, hyperbolic_discounting:0.80,
     overconfidence_index:0.55, herding_tendency:0.62, attention_scarcity:0.58,
@@ -48,7 +48,7 @@ const MOCK_ENTITIES = [
     metacognitive_awareness:0.25, decision_coherence:0.20 },
 
   // NED-006 — EMEA, risk_assessment → moderate, none
-  { entity_id:"NED-006", decision_domain:"risk_assessment", region:"EMEA",
+  { id:"NED-006", decision_domain:"risk_assessment", region:"EMEA",
     cognitive_load:0.38, loss_aversion_bias:0.35, anchoring_effect:0.32,
     framing_susceptibility:0.38, sunk_cost_fallacy:0.35, hyperbolic_discounting:0.32,
     overconfidence_index:0.30, herding_tendency:0.35, attention_scarcity:0.35,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
     metacognitive_awareness:0.60, decision_coherence:0.58 },
 
   // NED-007 — APAC, strategic_planning → high, decision_paralysis
-  { entity_id:"NED-007", decision_domain:"strategic_planning", region:"APAC",
+  { id:"NED-007", decision_domain:"strategic_planning", region:"APAC",
     cognitive_load:0.55, loss_aversion_bias:0.50, anchoring_effect:0.45,
     framing_susceptibility:0.52, sunk_cost_fallacy:0.48, hyperbolic_discounting:0.50,
     overconfidence_index:0.42, herding_tendency:0.48, attention_scarcity:0.52,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
     metacognitive_awareness:0.40, decision_coherence:0.35 },
 
   // NED-008 — NOAM, financial_markets → critical, herding_collapse
-  { entity_id:"NED-008", decision_domain:"financial_markets", region:"NOAM",
+  { id:"NED-008", decision_domain:"financial_markets", region:"NOAM",
     cognitive_load:0.65, loss_aversion_bias:0.60, anchoring_effect:0.58,
     framing_susceptibility:0.65, sunk_cost_fallacy:0.72, hyperbolic_discounting:0.82,
     overconfidence_index:0.58, herding_tendency:0.88, attention_scarcity:0.58,
@@ -149,7 +149,7 @@ export async function GET() {
       const sev  = decisionSeverity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                          e.entity_id,
+        id:                          e.entity_id,
         region:                             e.region,
         decision_domain:                    e.decision_domain,
         decision_risk:                      risk,

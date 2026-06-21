@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -421,7 +421,7 @@ export default function BiasDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
         {filteredEntities.map((entity) => (
           <button
-            key={entity.entity_id}
+            key={entity.id}
             onClick={() => setSelectedEntity(entity)}
             className="bg-slate-900 border border-blue-700/30 rounded-xl p-5 text-left hover:border-blue-500/60 transition-all hover:bg-slate-800/60 group"
           >
@@ -430,7 +430,7 @@ export default function BiasDashboard() {
                 <p className="font-semibold text-white group-hover:text-blue-300 transition-colors">
                   {entity.name}
                 </p>
-                <p className="text-xs text-slate-500">{entity.entity_id} · {entity.country}</p>
+                <p className="text-xs text-slate-500">{entity.id} · {entity.country}</p>
               </div>
               <span className={`px-2 py-1 rounded text-xs font-semibold shrink-0 ${riskBadgeClass(entity.risk_level)}`}>
                 {entity.risk_level.toUpperCase()}

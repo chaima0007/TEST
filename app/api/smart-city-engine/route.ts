@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_CITIES = [
   // SCE-001: total_surveillance_city + authoritarian_smart_city_export (critical)
-  { entity_id:"SCE-001", city_type:"autoritaire_intégré",   region:"APAC",
+  { id:"SCE-001", city_type:"autoritaire_intégré",   region:"APAC",
     camera_surveillance_density:0.92, facial_recognition_deployment:0.90, movement_tracking_intensity:0.88,
     predictive_policing_bias:0.82, IoT_data_vulnerability:0.70, smart_grid_cyber_exposure:0.68,
     digital_twin_city_control:0.85, behavioral_nudging_scale:0.80, private_tech_city_capture:0.75,
@@ -11,7 +11,7 @@ const MOCK_CITIES = [
     fiveG_surveillance_integration:0.88, CCP_smart_city_export:0.92, dissent_suppression_capacity:0.88,
     urban_data_sovereignty_loss:0.85, smart_home_surveillance_integration:0.82 },
   // SCE-002: private_tech_city_capture_pattern (critical)
-  { entity_id:"SCE-002", city_type:"capture_tech_privée",   region:"NAMER",
+  { id:"SCE-002", city_type:"capture_tech_privée",   region:"NAMER",
     camera_surveillance_density:0.78, facial_recognition_deployment:0.72, movement_tracking_intensity:0.75,
     predictive_policing_bias:0.70, IoT_data_vulnerability:0.65, smart_grid_cyber_exposure:0.62,
     digital_twin_city_control:0.80, behavioral_nudging_scale:0.78, private_tech_city_capture:0.90,
@@ -19,7 +19,7 @@ const MOCK_CITIES = [
     fiveG_surveillance_integration:0.75, CCP_smart_city_export:0.40, dissent_suppression_capacity:0.45,
     urban_data_sovereignty_loss:0.80, smart_home_surveillance_integration:0.72 },
   // SCE-003: predictive_policing_dystopia (high)
-  { entity_id:"SCE-003", city_type:"policing_prédictif",    region:"NAMER",
+  { id:"SCE-003", city_type:"policing_prédictif",    region:"NAMER",
     camera_surveillance_density:0.72, facial_recognition_deployment:0.68, movement_tracking_intensity:0.70,
     predictive_policing_bias:0.85, IoT_data_vulnerability:0.55, smart_grid_cyber_exposure:0.52,
     digital_twin_city_control:0.65, behavioral_nudging_scale:0.60, private_tech_city_capture:0.62,
@@ -27,7 +27,7 @@ const MOCK_CITIES = [
     fiveG_surveillance_integration:0.65, CCP_smart_city_export:0.30, dissent_suppression_capacity:0.42,
     urban_data_sovereignty_loss:0.65, smart_home_surveillance_integration:0.60 },
   // SCE-004: IoT_city_cyber_catastrophe (high)
-  { entity_id:"SCE-004", city_type:"infrastructure_IoT",    region:"EMEA",
+  { id:"SCE-004", city_type:"infrastructure_IoT",    region:"EMEA",
     camera_surveillance_density:0.65, facial_recognition_deployment:0.58, movement_tracking_intensity:0.62,
     predictive_policing_bias:0.55, IoT_data_vulnerability:0.88, smart_grid_cyber_exposure:0.82,
     digital_twin_city_control:0.60, behavioral_nudging_scale:0.55, private_tech_city_capture:0.58,
@@ -35,7 +35,7 @@ const MOCK_CITIES = [
     fiveG_surveillance_integration:0.62, CCP_smart_city_export:0.25, dissent_suppression_capacity:0.35,
     urban_data_sovereignty_loss:0.60, smart_home_surveillance_integration:0.55 },
   // SCE-005: total_surveillance_city (high)
-  { entity_id:"SCE-005", city_type:"surveillance_dense",    region:"APAC",
+  { id:"SCE-005", city_type:"surveillance_dense",    region:"APAC",
     camera_surveillance_density:0.90, facial_recognition_deployment:0.85, movement_tracking_intensity:0.78,
     predictive_policing_bias:0.62, IoT_data_vulnerability:0.58, smart_grid_cyber_exposure:0.55,
     digital_twin_city_control:0.60, behavioral_nudging_scale:0.55, private_tech_city_capture:0.52,
@@ -43,7 +43,7 @@ const MOCK_CITIES = [
     fiveG_surveillance_integration:0.70, CCP_smart_city_export:0.45, dissent_suppression_capacity:0.50,
     urban_data_sovereignty_loss:0.55, smart_home_surveillance_integration:0.60 },
   // SCE-006: no patterns (moderate)
-  { entity_id:"SCE-006", city_type:"mixte_régulé",          region:"EMEA",
+  { id:"SCE-006", city_type:"mixte_régulé",          region:"EMEA",
     camera_surveillance_density:0.52, facial_recognition_deployment:0.45, movement_tracking_intensity:0.48,
     predictive_policing_bias:0.42, IoT_data_vulnerability:0.50, smart_grid_cyber_exposure:0.45,
     digital_twin_city_control:0.48, behavioral_nudging_scale:0.40, private_tech_city_capture:0.45,
@@ -51,7 +51,7 @@ const MOCK_CITIES = [
     fiveG_surveillance_integration:0.48, CCP_smart_city_export:0.18, dissent_suppression_capacity:0.22,
     urban_data_sovereignty_loss:0.45, smart_home_surveillance_integration:0.42 },
   // SCE-007: no patterns (moderate)
-  { entity_id:"SCE-007", city_type:"semi_connecté",         region:"LATAM",
+  { id:"SCE-007", city_type:"semi_connecté",         region:"LATAM",
     camera_surveillance_density:0.40, facial_recognition_deployment:0.35, movement_tracking_intensity:0.38,
     predictive_policing_bias:0.32, IoT_data_vulnerability:0.42, smart_grid_cyber_exposure:0.38,
     digital_twin_city_control:0.35, behavioral_nudging_scale:0.30, private_tech_city_capture:0.38,
@@ -59,7 +59,7 @@ const MOCK_CITIES = [
     fiveG_surveillance_integration:0.38, CCP_smart_city_export:0.12, dissent_suppression_capacity:0.18,
     urban_data_sovereignty_loss:0.38, smart_home_surveillance_integration:0.32 },
   // SCE-008: no patterns (low)
-  { entity_id:"SCE-008", city_type:"démocratique_ouvert",   region:"EMEA",
+  { id:"SCE-008", city_type:"démocratique_ouvert",   region:"EMEA",
     camera_surveillance_density:0.18, facial_recognition_deployment:0.12, movement_tracking_intensity:0.15,
     predictive_policing_bias:0.10, IoT_data_vulnerability:0.20, smart_grid_cyber_exposure:0.18,
     digital_twin_city_control:0.12, behavioral_nudging_scale:0.10, private_tech_city_capture:0.15,
@@ -111,7 +111,7 @@ export async function GET() {
       if (ppd)  patterns_detected.push("predictive_policing_dystopia");
       if (icc)  patterns_detected.push("IoT_city_cyber_catastrophe");
       return {
-        entity_id: c.entity_id, city_type: c.city_type, region: c.region,
+        id: c.entity_id, city_type: c.city_type, region: c.region,
         surveillance_score: surv, control_score: ctrl, vulnerability_score: vuln, sovereignty_score: sov,
         composite_score: comp, risk_level: risk,
         total_surveillance_city: tsc, authoritarian_smart_city_export: asce,

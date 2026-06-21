@@ -42,7 +42,7 @@ function getMockData() {
 
   const entities = [
     {
-      entity_id: "VF-001",
+      id: "VF-001",
       name: "AeroFarm Detroit",
       country: "USA",
       sector: "Vertical Farming",
@@ -63,7 +63,7 @@ function getMockData() {
       recommended_action: computeRecommendedAction("critique"),
     },
     {
-      entity_id: "VF-002",
+      id: "VF-002",
       name: "UrbanCrop Asia",
       country: "Bangladesh",
       sector: "Urban Agriculture",
@@ -84,7 +84,7 @@ function getMockData() {
       recommended_action: computeRecommendedAction("critique"),
     },
     {
-      entity_id: "VF-003",
+      id: "VF-003",
       name: "GrowTech Africa",
       country: "Nigeria",
       sector: "AgriTech",
@@ -105,7 +105,7 @@ function getMockData() {
       recommended_action: computeRecommendedAction("critique"),
     },
     {
-      entity_id: "VF-004",
+      id: "VF-004",
       name: "VerticalVeg UK",
       country: "United Kingdom",
       sector: "Horticulture",
@@ -126,7 +126,7 @@ function getMockData() {
       recommended_action: computeRecommendedAction("élevé"),
     },
     {
-      entity_id: "VF-005",
+      id: "VF-005",
       name: "FarmBot EU GmbH",
       country: "Germany",
       sector: "AgriTech",
@@ -147,7 +147,7 @@ function getMockData() {
       recommended_action: computeRecommendedAction("élevé"),
     },
     {
-      entity_id: "VF-006",
+      id: "VF-006",
       name: "HydroFarm SARL",
       country: "France",
       sector: "Hydroponic",
@@ -168,7 +168,7 @@ function getMockData() {
       recommended_action: computeRecommendedAction("modéré"),
     },
     {
-      entity_id: "VF-007",
+      id: "VF-007",
       name: "Nordic GreenFarm AS",
       country: "Norway",
       sector: "Sustainable Agriculture",
@@ -189,7 +189,7 @@ function getMockData() {
       recommended_action: computeRecommendedAction("faible"),
     },
     {
-      entity_id: "VF-008",
+      id: "VF-008",
       name: "EcoFarm Netherlands BV",
       country: "Netherlands",
       sector: "Sustainable Agriculture",

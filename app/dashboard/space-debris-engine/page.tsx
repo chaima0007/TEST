@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type SDEEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -24,7 +24,7 @@ type SDESummary = {
   avg_composite: number;
   risk_distribution: Record<string, number>;
   pattern_distribution: Record<string, number>;
-  top_risk_entities: Array<{ entity_id: string; name: string; composite_score: number }>;
+  top_risk_entities: Array<{ id: string; name: string; composite_score: number }>;
   critical_alerts: string[];
   last_analysis: string;
   engine_version: string;
@@ -115,7 +115,7 @@ function DetailModal({ entity, onClose }: { entity: SDEEntity; onClose: () => vo
       <div className="bg-slate-900 border border-slate-700 rounded-xl p-6 w-full max-w-lg shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="flex items-start justify-between mb-4">
           <div>
-            <div className="text-xs text-slate-500 mb-1">{entity.entity_id} — {entity.country}</div>
+            <div className="text-xs text-slate-500 mb-1">{entity.id} — {entity.country}</div>
             <div className="text-white font-bold text-lg leading-tight">{entity.name}</div>
             <div className="text-xs text-slate-400 mt-1">{entity.sector}</div>
           </div>
@@ -334,13 +334,13 @@ export default function SpaceDebrisDashboard() {
           <tbody>
             {filtered.map((e, i) => (
               <tr
-                key={e.entity_id}
+                key={e.id}
                 className={`border-b border-slate-800 cursor-pointer hover:bg-slate-800/50 transition-colors ${
                   i % 2 === 0 ? "" : "bg-slate-900/50"
                 }`}
                 onClick={() => setSelected(e)}
               >
-                <td className="p-4 font-mono text-xs text-slate-500">{e.entity_id}</td>
+                <td className="p-4 font-mono text-xs text-slate-500">{e.id}</td>
                 <td className="p-4">
                   <div className="font-medium text-white">{e.name}</div>
                   <div className="text-xs text-slate-500">{e.sector}</div>

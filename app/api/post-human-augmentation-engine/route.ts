@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // PHA-001 — EMEA, cognitive_enhancement → critical, cognitive_arms_race
-  { entity_id: "PHA-001", augmentation_domain: "cognitive_enhancement", region: "EMEA",
+  { id: "PHA-001", augmentation_domain: "cognitive_enhancement", region: "EMEA",
     cognitive_enhancement_penetration: 0.82, genetic_modification_rate: 0.30,
     neural_interface_adoption: 0.70, longevity_extension_index: 0.35,
     augmentation_equity_gap: 0.60, regulatory_lag: 0.72, social_acceptance_rate: 0.38,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
     competitiveness_divergence: 0.62, natural_human_obsolescence_risk: 0.70 },
 
   // PHA-002 — APAC, longevity → low, controlled_augmentation/none
-  { entity_id: "PHA-002", augmentation_domain: "longevity", region: "APAC",
+  { id: "PHA-002", augmentation_domain: "longevity", region: "APAC",
     cognitive_enhancement_penetration: 0.12, genetic_modification_rate: 0.18,
     neural_interface_adoption: 0.10, longevity_extension_index: 0.55,
     augmentation_equity_gap: 0.10, regulatory_lag: 0.12, social_acceptance_rate: 0.85,
@@ -25,7 +25,7 @@ const MOCK_ENTITIES = [
     competitiveness_divergence: 0.10, natural_human_obsolescence_risk: 0.08 },
 
   // PHA-003 — NOAM, neural_interface → high, identity_collapse
-  { entity_id: "PHA-003", augmentation_domain: "neural_interface", region: "NOAM",
+  { id: "PHA-003", augmentation_domain: "neural_interface", region: "NOAM",
     cognitive_enhancement_penetration: 0.55, genetic_modification_rate: 0.35,
     neural_interface_adoption: 0.62, longevity_extension_index: 0.40,
     augmentation_equity_gap: 0.50, regulatory_lag: 0.58, social_acceptance_rate: 0.45,
@@ -36,7 +36,7 @@ const MOCK_ENTITIES = [
     competitiveness_divergence: 0.45, natural_human_obsolescence_risk: 0.52 },
 
   // PHA-004 — LATAM, longevity → low, controlled_augmentation/none
-  { entity_id: "PHA-004", augmentation_domain: "longevity", region: "LATAM",
+  { id: "PHA-004", augmentation_domain: "longevity", region: "LATAM",
     cognitive_enhancement_penetration: 0.10, genetic_modification_rate: 0.15,
     neural_interface_adoption: 0.08, longevity_extension_index: 0.30,
     augmentation_equity_gap: 0.15, regulatory_lag: 0.18, social_acceptance_rate: 0.80,
@@ -47,7 +47,7 @@ const MOCK_ENTITIES = [
     competitiveness_divergence: 0.12, natural_human_obsolescence_risk: 0.10 },
 
   // PHA-005 — MEA, genetic_modification → critical, augmentation_divide
-  { entity_id: "PHA-005", augmentation_domain: "genetic_modification", region: "MEA",
+  { id: "PHA-005", augmentation_domain: "genetic_modification", region: "MEA",
     cognitive_enhancement_penetration: 0.65, genetic_modification_rate: 0.75,
     neural_interface_adoption: 0.45, longevity_extension_index: 0.50,
     augmentation_equity_gap: 0.82, regulatory_lag: 0.62, social_acceptance_rate: 0.30,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
     competitiveness_divergence: 0.72, natural_human_obsolescence_risk: 0.75 },
 
   // PHA-006 — EMEA, neural_interface → moderate, none
-  { entity_id: "PHA-006", augmentation_domain: "neural_interface", region: "EMEA",
+  { id: "PHA-006", augmentation_domain: "neural_interface", region: "EMEA",
     cognitive_enhancement_penetration: 0.30, genetic_modification_rate: 0.25,
     neural_interface_adoption: 0.28, longevity_extension_index: 0.32,
     augmentation_equity_gap: 0.30, regulatory_lag: 0.32, social_acceptance_rate: 0.62,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
     competitiveness_divergence: 0.30, natural_human_obsolescence_risk: 0.28 },
 
   // PHA-007 — APAC, cognitive_enhancement → high, regulatory_vacuum
-  { entity_id: "PHA-007", augmentation_domain: "cognitive_enhancement", region: "APAC",
+  { id: "PHA-007", augmentation_domain: "cognitive_enhancement", region: "APAC",
     cognitive_enhancement_penetration: 0.58, genetic_modification_rate: 0.42,
     neural_interface_adoption: 0.50, longevity_extension_index: 0.45,
     augmentation_equity_gap: 0.55, regulatory_lag: 0.78, social_acceptance_rate: 0.40,
@@ -80,7 +80,7 @@ const MOCK_ENTITIES = [
     competitiveness_divergence: 0.55, natural_human_obsolescence_risk: 0.58 },
 
   // PHA-008 — NOAM, genetic_modification → critical, biological_sovereignty_loss
-  { entity_id: "PHA-008", augmentation_domain: "genetic_modification", region: "NOAM",
+  { id: "PHA-008", augmentation_domain: "genetic_modification", region: "NOAM",
     cognitive_enhancement_penetration: 0.70, genetic_modification_rate: 0.88,
     neural_interface_adoption: 0.55, longevity_extension_index: 0.60,
     augmentation_equity_gap: 0.65, regulatory_lag: 0.68, social_acceptance_rate: 0.28,
@@ -199,7 +199,7 @@ export async function GET() {
       const sig        = augmentationSignal(e, risk, comp);
 
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         region:                           e.region,
         augmentation_domain:              e.augmentation_domain,
         augmentation_risk:                risk,

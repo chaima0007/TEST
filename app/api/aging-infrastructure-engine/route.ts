@@ -6,7 +6,7 @@ import { sealResponse } from "@/lib/digital-seal";
 // 8 entities covering all 5 patterns and all 4 risk levels.
 
 interface AieInput {
-  entity_id: string;
+  id: string;
   infrastructure_type: string;
   region: string;
   structural_deterioration_rate: number;
@@ -33,7 +33,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // critical_failure_imminent>0.85 AND structural_deterioration_rate>0.80 → critical_infrastructure_imminent_failure
   // composite≥60 → critical
   {
-    entity_id: "AIE-001", infrastructure_type: "pont_routier", region: "NOAM",
+    id: "AIE-001", infrastructure_type: "pont_routier", region: "NOAM",
     structural_deterioration_rate: 0.88,
     maintenance_deficit_severity: 0.75,
     bridge_dam_collapse_risk: 0.78,
@@ -55,7 +55,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // AIE-002 — EMEA, réseau_eau → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "AIE-002", infrastructure_type: "réseau_eau", region: "EMEA",
+    id: "AIE-002", infrastructure_type: "réseau_eau", region: "EMEA",
     structural_deterioration_rate: 0.10,
     maintenance_deficit_severity: 0.08,
     bridge_dam_collapse_risk: 0.08,
@@ -79,7 +79,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // critical_failure_imminent=0.60≤0.85 → avoids critical_infrastructure_imminent_failure
   // composite≥60 → critical
   {
-    entity_id: "AIE-003", infrastructure_type: "réseau_électrique", region: "LATAM",
+    id: "AIE-003", infrastructure_type: "réseau_électrique", region: "LATAM",
     structural_deterioration_rate: 0.72,
     maintenance_deficit_severity: 0.88,
     bridge_dam_collapse_risk: 0.65,
@@ -104,7 +104,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // investment_deficit_chronic=0.55≤0.85 → avoids investment_deficit_crisis
   // composite in [40,60) → high
   {
-    entity_id: "AIE-004", infrastructure_type: "canalisation_eau", region: "APAC",
+    id: "AIE-004", infrastructure_type: "canalisation_eau", region: "APAC",
     structural_deterioration_rate: 0.55,
     maintenance_deficit_severity: 0.50,
     bridge_dam_collapse_risk: 0.55,
@@ -130,7 +130,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // water_pipe_failure_rate=0.55≤0.85 → avoids water_power_grid_collapse
   // composite≥60 → critical
   {
-    entity_id: "AIE-005", infrastructure_type: "barrage", region: "MEA",
+    id: "AIE-005", infrastructure_type: "barrage", region: "MEA",
     structural_deterioration_rate: 0.75,
     maintenance_deficit_severity: 0.72,
     bridge_dam_collapse_risk: 0.88,
@@ -152,7 +152,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // AIE-006 — NOAM, réseau_routier → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "AIE-006", infrastructure_type: "réseau_routier", region: "NOAM",
+    id: "AIE-006", infrastructure_type: "réseau_routier", region: "NOAM",
     structural_deterioration_rate: 0.28,
     maintenance_deficit_severity: 0.25,
     bridge_dam_collapse_risk: 0.22,
@@ -179,7 +179,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // bridge_dam_collapse_risk=0.55≤0.80 → avoids bridge_dam_catastrophe_risk
   // composite in [40,60) → high
   {
-    entity_id: "AIE-007", infrastructure_type: "infrastructure_ferroviaire", region: "EMEA",
+    id: "AIE-007", infrastructure_type: "infrastructure_ferroviaire", region: "EMEA",
     structural_deterioration_rate: 0.55,
     maintenance_deficit_severity: 0.52,
     bridge_dam_collapse_risk: 0.55,
@@ -201,7 +201,7 @@ const MOCK_ENTITIES: AieInput[] = [
   // AIE-008 — APAC, réseau_eau_urbain → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "AIE-008", infrastructure_type: "réseau_eau_urbain", region: "APAC",
+    id: "AIE-008", infrastructure_type: "réseau_eau_urbain", region: "APAC",
     structural_deterioration_rate: 0.08,
     maintenance_deficit_severity: 0.10,
     bridge_dam_collapse_risk: 0.08,
@@ -294,7 +294,7 @@ function analyzeEntity(e: AieInput) {
   const signal = aieSignal(risk);
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     infrastructure_type: e.infrastructure_type,
     region: e.region,
     deterioration_score: det,

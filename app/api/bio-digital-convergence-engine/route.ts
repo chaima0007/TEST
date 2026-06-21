@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // BDC-001 — EMEA, biocomputing → critical, bio_digital_desync
-  { entity_id:"BDC-001", convergence_domain:"biocomputing", region:"EMEA",
+  { id:"BDC-001", convergence_domain:"biocomputing", region:"EMEA",
     bio_integration_rate:0.10, digital_twin_fidelity:0.20, synthetic_viability:0.30,
     biocompute_efficiency:0.28, dna_data_density:0.25, neural_coupling_depth:0.20,
     bio_signal_clarity:0.18, organic_error_rate:0.72, cellular_adaptation:0.22,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     containment_integrity:0.35, cross_domain_coherence:0.28, emergence_risk:0.62,
     biological_instability:0.82, interface_degradation:0.75 },
   // BDC-002 — APAC, synthetic_biology → low, none
-  { entity_id:"BDC-002", convergence_domain:"synthetic_biology", region:"APAC",
+  { id:"BDC-002", convergence_domain:"synthetic_biology", region:"APAC",
     bio_integration_rate:0.92, digital_twin_fidelity:0.88, synthetic_viability:0.90,
     biocompute_efficiency:0.88, dna_data_density:0.85, neural_coupling_depth:0.82,
     bio_signal_clarity:0.88, organic_error_rate:0.08, cellular_adaptation:0.90,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     containment_integrity:0.92, cross_domain_coherence:0.90, emergence_risk:0.08,
     biological_instability:0.08, interface_degradation:0.10 },
   // BDC-003 — NOAM, neural_coupling → high, synthetic_collapse
-  { entity_id:"BDC-003", convergence_domain:"neural_coupling", region:"NOAM",
+  { id:"BDC-003", convergence_domain:"neural_coupling", region:"NOAM",
     bio_integration_rate:0.38, digital_twin_fidelity:0.42, synthetic_viability:0.28,
     biocompute_efficiency:0.40, dna_data_density:0.38, neural_coupling_depth:0.32,
     bio_signal_clarity:0.35, organic_error_rate:0.62, cellular_adaptation:0.40,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     containment_integrity:0.45, cross_domain_coherence:0.38, emergence_risk:0.52,
     biological_instability:0.55, interface_degradation:0.50 },
   // BDC-004 — LATAM, biocomputing → low, none
-  { entity_id:"BDC-004", convergence_domain:"biocomputing", region:"LATAM",
+  { id:"BDC-004", convergence_domain:"biocomputing", region:"LATAM",
     bio_integration_rate:0.85, digital_twin_fidelity:0.82, synthetic_viability:0.88,
     biocompute_efficiency:0.85, dna_data_density:0.80, neural_coupling_depth:0.78,
     bio_signal_clarity:0.82, organic_error_rate:0.12, cellular_adaptation:0.88,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     containment_integrity:0.88, cross_domain_coherence:0.85, emergence_risk:0.12,
     biological_instability:0.10, interface_degradation:0.12 },
   // BDC-005 — MEA, synthetic_biology → critical, biocompute_failure
-  { entity_id:"BDC-005", convergence_domain:"synthetic_biology", region:"MEA",
+  { id:"BDC-005", convergence_domain:"synthetic_biology", region:"MEA",
     bio_integration_rate:0.18, digital_twin_fidelity:0.15, synthetic_viability:0.50,
     biocompute_efficiency:0.12, dna_data_density:0.18, neural_coupling_depth:0.15,
     bio_signal_clarity:0.12, organic_error_rate:0.40, cellular_adaptation:0.20,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     containment_integrity:0.25, cross_domain_coherence:0.18, emergence_risk:0.68,
     biological_instability:0.60, interface_degradation:0.70 },
   // BDC-006 — EMEA, neural_coupling → moderate, none
-  { entity_id:"BDC-006", convergence_domain:"neural_coupling", region:"EMEA",
+  { id:"BDC-006", convergence_domain:"neural_coupling", region:"EMEA",
     bio_integration_rate:0.68, digital_twin_fidelity:0.65, synthetic_viability:0.72,
     biocompute_efficiency:0.68, dna_data_density:0.65, neural_coupling_depth:0.70,
     bio_signal_clarity:0.68, organic_error_rate:0.30, cellular_adaptation:0.70,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     containment_integrity:0.72, cross_domain_coherence:0.68, emergence_risk:0.28,
     biological_instability:0.25, interface_degradation:0.30 },
   // BDC-007 — APAC, dna_computing → high, emergence_cascade
-  { entity_id:"BDC-007", convergence_domain:"dna_computing", region:"APAC",
+  { id:"BDC-007", convergence_domain:"dna_computing", region:"APAC",
     bio_integration_rate:0.40, digital_twin_fidelity:0.38, synthetic_viability:0.45,
     biocompute_efficiency:0.42, dna_data_density:0.40, neural_coupling_depth:0.35,
     bio_signal_clarity:0.38, organic_error_rate:0.55, cellular_adaptation:0.42,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     containment_integrity:0.35, cross_domain_coherence:0.40, emergence_risk:0.72,
     biological_instability:0.58, interface_degradation:0.52 },
   // BDC-008 — NOAM, biocomputing → critical, evolutionary_drift
-  { entity_id:"BDC-008", convergence_domain:"biocomputing", region:"NOAM",
+  { id:"BDC-008", convergence_domain:"biocomputing", region:"NOAM",
     bio_integration_rate:0.22, digital_twin_fidelity:0.18, synthetic_viability:0.45,
     biocompute_efficiency:0.42, dna_data_density:0.20, neural_coupling_depth:0.18,
     bio_signal_clarity:0.20, organic_error_rate:0.50, cellular_adaptation:0.18,
@@ -161,7 +161,7 @@ export async function GET() {
       const sev  = convergenceSeverity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                 e.entity_id,
+        id:                 e.entity_id,
         region:                    e.region,
         convergence_domain:        e.convergence_domain,
         convergence_risk:          risk,

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // AIE-001 — critical, data_fabrication_fraud_ring (data_fab>0.85, retraction>0.80)
   {
-    entity_id: "AIE-001", research_field: "sciences_biomédicales", region: "APAC",
+    id: "AIE-001", research_field: "sciences_biomédicales", region: "APAC",
     retraction_rate: 0.88, data_fabrication_index: 0.90,
     plagiarism_detection_gap: 0.75, predatory_journal_prevalence: 0.70,
     paper_mill_activity: 0.68, peer_review_quality: 0.80,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // AIE-002 — critical, predatory_publishing_ecosystem (predatory>0.85, paper_mill>0.80)
   {
-    entity_id: "AIE-002", research_field: "sciences_sociales", region: "AFRIQUE_SUBSAHARIENNE",
+    id: "AIE-002", research_field: "sciences_sociales", region: "AFRIQUE_SUBSAHARIENNE",
     retraction_rate: 0.72, data_fabrication_index: 0.68,
     plagiarism_detection_gap: 0.78, predatory_journal_prevalence: 0.90,
     paper_mill_activity: 0.85, peer_review_quality: 0.82,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // AIE-003 — critical, peer_review_capture (peer_review>0.80, conflicts>0.75)
   {
-    entity_id: "AIE-003", research_field: "pharmacologie_clinique", region: "NOAM",
+    id: "AIE-003", research_field: "pharmacologie_clinique", region: "NOAM",
     retraction_rate: 0.70, data_fabrication_index: 0.72,
     plagiarism_detection_gap: 0.68, predatory_journal_prevalence: 0.65,
     paper_mill_activity: 0.62, peer_review_quality: 0.88,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // AIE-004 — high, replication_crisis_collapse (replication>0.85, preprint_mis>0.80)
   {
-    entity_id: "AIE-004", research_field: "psychologie_expérimentale", region: "EMEA",
+    id: "AIE-004", research_field: "psychologie_expérimentale", region: "EMEA",
     retraction_rate: 0.50, data_fabrication_index: 0.48,
     plagiarism_detection_gap: 0.52, predatory_journal_prevalence: 0.45,
     paper_mill_activity: 0.48, peer_review_quality: 0.50,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // AIE-005 — high, ai_generated_research_flood (ai_content>0.80, plagiarism>0.75)
   {
-    entity_id: "AIE-005", research_field: "intelligence_artificielle", region: "APAC",
+    id: "AIE-005", research_field: "intelligence_artificielle", region: "APAC",
     retraction_rate: 0.45, data_fabrication_index: 0.42,
     plagiarism_detection_gap: 0.80, predatory_journal_prevalence: 0.48,
     paper_mill_activity: 0.50, peer_review_quality: 0.52,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // AIE-006 — moderate, none
   {
-    entity_id: "AIE-006", research_field: "sciences_de_lenvironnement", region: "LATAM",
+    id: "AIE-006", research_field: "sciences_de_lenvironnement", region: "LATAM",
     retraction_rate: 0.28, data_fabrication_index: 0.25,
     plagiarism_detection_gap: 0.30, predatory_journal_prevalence: 0.28,
     paper_mill_activity: 0.25, peer_review_quality: 0.30,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // AIE-007 — low, none
   {
-    entity_id: "AIE-007", research_field: "mathématiques_pures", region: "EMEA",
+    id: "AIE-007", research_field: "mathématiques_pures", region: "EMEA",
     retraction_rate: 0.08, data_fabrication_index: 0.06,
     plagiarism_detection_gap: 0.10, predatory_journal_prevalence: 0.08,
     paper_mill_activity: 0.06, peer_review_quality: 0.08,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // AIE-008 — low, none
   {
-    entity_id: "AIE-008", research_field: "physique_théorique", region: "NOAM",
+    id: "AIE-008", research_field: "physique_théorique", region: "NOAM",
     retraction_rate: 0.10, data_fabrication_index: 0.08,
     plagiarism_detection_gap: 0.08, predatory_journal_prevalence: 0.10,
     paper_mill_activity: 0.08, peer_review_quality: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         research_field:                  e.research_field,
         region:                          e.region,
         fraud_score:                     fr,

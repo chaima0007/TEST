@@ -13,7 +13,7 @@ const MOCK_ENTITIES = [
   // SBR-001 — critical, bioweapon_proliferation
   // bioweapon_proliferation_risk≥0.65 AND (1-international_treaty_adherence)≥0.55 → treaty≤0.45
   // composite≥60 → need high scores across sub-scores
-  { entity_id:"SBR-001", bio_domain:"gain_of_function", region:"EMEA",
+  { id:"SBR-001", bio_domain:"gain_of_function", region:"EMEA",
     pathogen_engineering_capability:0.85, dual_use_research_exposure:0.82, containment_protocol_quality:0.15,
     biosurveillance_coverage:0.20, bioweapon_proliferation_risk:0.88, lab_safety_compliance:0.22,
     international_treaty_adherence:0.30, pandemic_preparedness_index:0.18, gene_drive_deployment_risk:0.50,
@@ -22,7 +22,7 @@ const MOCK_ENTITIES = [
     public_health_response_speed:0.18, biosecurity_intelligence_coverage:0.20 },
 
   // SBR-002 — low, none (biosecure)
-  { entity_id:"SBR-002", bio_domain:"vaccine_research", region:"APAC",
+  { id:"SBR-002", bio_domain:"vaccine_research", region:"APAC",
     pathogen_engineering_capability:0.10, dual_use_research_exposure:0.08, containment_protocol_quality:0.92,
     biosurveillance_coverage:0.90, bioweapon_proliferation_risk:0.08, lab_safety_compliance:0.92,
     international_treaty_adherence:0.95, pandemic_preparedness_index:0.92, gene_drive_deployment_risk:0.05,
@@ -33,7 +33,7 @@ const MOCK_ENTITIES = [
   // SBR-003 — high, lab_leak_risk
   // (1-lab_safety_compliance)≥0.65 → lab_safety≤0.35 AND pathogen_engineering_capability≥0.60
   // composite≥40 but <60
-  { entity_id:"SBR-003", bio_domain:"pathogen_modification", region:"NOAM",
+  { id:"SBR-003", bio_domain:"pathogen_modification", region:"NOAM",
     pathogen_engineering_capability:0.72, dual_use_research_exposure:0.55, containment_protocol_quality:0.38,
     biosurveillance_coverage:0.52, bioweapon_proliferation_risk:0.42, lab_safety_compliance:0.28,
     international_treaty_adherence:0.62, pandemic_preparedness_index:0.55, gene_drive_deployment_risk:0.35,
@@ -42,7 +42,7 @@ const MOCK_ENTITIES = [
     public_health_response_speed:0.55, biosecurity_intelligence_coverage:0.52 },
 
   // SBR-004 — low, none (biosecure)
-  { entity_id:"SBR-004", bio_domain:"vaccine_research", region:"LATAM",
+  { id:"SBR-004", bio_domain:"vaccine_research", region:"LATAM",
     pathogen_engineering_capability:0.12, dual_use_research_exposure:0.10, containment_protocol_quality:0.88,
     biosurveillance_coverage:0.85, bioweapon_proliferation_risk:0.10, lab_safety_compliance:0.88,
     international_treaty_adherence:0.90, pandemic_preparedness_index:0.88, gene_drive_deployment_risk:0.08,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   // (1-biosurveillance_coverage)≥0.65 → biosurveillance≤0.35 AND (1-emerging_pathogen_monitoring)≥0.60 → monitoring≤0.40
   // lab_safety_compliance=0.50 so (1-lsc)=0.50 < 0.65 → lab_leak_risk does NOT fire first
   // composite≥60
-  { entity_id:"SBR-005", bio_domain:"gain_of_function", region:"MEA",
+  { id:"SBR-005", bio_domain:"gain_of_function", region:"MEA",
     pathogen_engineering_capability:0.78, dual_use_research_exposure:0.75, containment_protocol_quality:0.18,
     biosurveillance_coverage:0.22, bioweapon_proliferation_risk:0.60, lab_safety_compliance:0.50,
     international_treaty_adherence:0.50, pandemic_preparedness_index:0.20, gene_drive_deployment_risk:0.45,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
 
   // SBR-006 — moderate, none
   // composite≥20 but <40; no pattern triggers
-  { entity_id:"SBR-006", bio_domain:"gene_therapy", region:"EMEA",
+  { id:"SBR-006", bio_domain:"gene_therapy", region:"EMEA",
     pathogen_engineering_capability:0.30, dual_use_research_exposure:0.28, containment_protocol_quality:0.65,
     biosurveillance_coverage:0.62, bioweapon_proliferation_risk:0.25, lab_safety_compliance:0.68,
     international_treaty_adherence:0.72, pandemic_preparedness_index:0.65, gene_drive_deployment_risk:0.30,
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
   // SBR-007 — high, pandemic_unpreparedness
   // (1-pandemic_preparedness_index)≥0.70 → preparedness≤0.30 AND (1-public_health_response_speed)≥0.60 → response≤0.40
   // composite≥40 but <60
-  { entity_id:"SBR-007", bio_domain:"pathogen_modification", region:"APAC",
+  { id:"SBR-007", bio_domain:"pathogen_modification", region:"APAC",
     pathogen_engineering_capability:0.55, dual_use_research_exposure:0.52, containment_protocol_quality:0.40,
     biosurveillance_coverage:0.50, bioweapon_proliferation_risk:0.38, lab_safety_compliance:0.55,
     international_treaty_adherence:0.60, pandemic_preparedness_index:0.22, gene_drive_deployment_risk:0.40,
@@ -89,7 +89,7 @@ const MOCK_ENTITIES = [
   // biosurveillance_coverage=0.50 → (1-bs)=0.50 < 0.65: no surveillance_blindspot
   // pandemic_preparedness_index=0.40 → (1-pp)=0.60 < 0.70: no pandemic_unpreparedness
   // composite≥60
-  { entity_id:"SBR-008", bio_domain:"gain_of_function", region:"NOAM",
+  { id:"SBR-008", bio_domain:"gain_of_function", region:"NOAM",
     pathogen_engineering_capability:0.80, dual_use_research_exposure:0.78, containment_protocol_quality:0.18,
     biosurveillance_coverage:0.50, bioweapon_proliferation_risk:0.62, lab_safety_compliance:0.50,
     international_treaty_adherence:0.52, pandemic_preparedness_index:0.40, gene_drive_deployment_risk:0.82,
@@ -203,7 +203,7 @@ export async function GET() {
       const act   = recommendedAction(risk, pat);
       const sig   = bioSignal(e, risk, comp);
       return {
-        entity_id:               e.entity_id,
+        id:               e.entity_id,
         region:                  e.region,
         bio_domain:              e.bio_domain,
         bio_risk:                risk,

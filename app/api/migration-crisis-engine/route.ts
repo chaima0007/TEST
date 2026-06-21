@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface McrInput {
-  entity_id: string;
+  id: string;
   migration_corridor: string;
   region: string;
   forced_displacement_rate: number;
@@ -100,7 +100,7 @@ function analyzeEntity(e: McrInput) {
   const sig  = signal(risk);
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     migration_corridor: e.migration_corridor,
     region: e.region,
     displacement_score: d,
@@ -123,7 +123,7 @@ function analyzeEntity(e: McrInput) {
 const mockEntities: McrInput[] = [
   {
     // MCR-001: critical / mass_displacement_crisis
-    entity_id: "MCR-001", migration_corridor: "Syria-Turkey-EU", region: "EMEA",
+    id: "MCR-001", migration_corridor: "Syria-Turkey-EU", region: "EMEA",
     forced_displacement_rate: 0.88, climate_migration_acceleration: 0.70, economic_migration_pressure: 0.75,
     border_violence_index: 0.80, asylum_system_saturation: 0.82, integration_failure_rate: 0.78,
     xenophobia_political_exploitation: 0.85, demographic_aging_severity: 0.40, brain_drain_intensity: 0.45,
@@ -133,7 +133,7 @@ const mockEntities: McrInput[] = [
   },
   {
     // MCR-002: low / none
-    entity_id: "MCR-002", migration_corridor: "Canada-US", region: "NOAM",
+    id: "MCR-002", migration_corridor: "Canada-US", region: "NOAM",
     forced_displacement_rate: 0.10, climate_migration_acceleration: 0.12, economic_migration_pressure: 0.10,
     border_violence_index: 0.08, asylum_system_saturation: 0.12, integration_failure_rate: 0.10,
     xenophobia_political_exploitation: 0.10, demographic_aging_severity: 0.15, brain_drain_intensity: 0.10,
@@ -143,7 +143,7 @@ const mockEntities: McrInput[] = [
   },
   {
     // MCR-003: high / asylum_system_collapse
-    entity_id: "MCR-003", migration_corridor: "Afghanistan-Pakistan-EU", region: "APAC",
+    id: "MCR-003", migration_corridor: "Afghanistan-Pakistan-EU", region: "APAC",
     forced_displacement_rate: 0.55, climate_migration_acceleration: 0.48, economic_migration_pressure: 0.52,
     border_violence_index: 0.60, asylum_system_saturation: 0.78, integration_failure_rate: 0.62,
     xenophobia_political_exploitation: 0.58, demographic_aging_severity: 0.42, brain_drain_intensity: 0.50,
@@ -153,7 +153,7 @@ const mockEntities: McrInput[] = [
   },
   {
     // MCR-004: low / none
-    entity_id: "MCR-004", migration_corridor: "Australia-NZ", region: "APAC",
+    id: "MCR-004", migration_corridor: "Australia-NZ", region: "APAC",
     forced_displacement_rate: 0.08, climate_migration_acceleration: 0.10, economic_migration_pressure: 0.12,
     border_violence_index: 0.05, asylum_system_saturation: 0.10, integration_failure_rate: 0.08,
     xenophobia_political_exploitation: 0.08, demographic_aging_severity: 0.12, brain_drain_intensity: 0.08,
@@ -164,7 +164,7 @@ const mockEntities: McrInput[] = [
   {
     // MCR-005: critical / climate_exodus
     // forced_displacement_rate<0.70 ensures mass_displacement_crisis is NOT triggered first
-    entity_id: "MCR-005", migration_corridor: "Sahel-Libya-Mediterranean", region: "MEA",
+    id: "MCR-005", migration_corridor: "Sahel-Libya-Mediterranean", region: "MEA",
     forced_displacement_rate: 0.60, climate_migration_acceleration: 0.82, economic_migration_pressure: 0.78,
     border_violence_index: 0.70, asylum_system_saturation: 0.60, integration_failure_rate: 0.70,
     xenophobia_political_exploitation: 0.72, demographic_aging_severity: 0.35, brain_drain_intensity: 0.40,
@@ -174,7 +174,7 @@ const mockEntities: McrInput[] = [
   },
   {
     // MCR-006: moderate / none
-    entity_id: "MCR-006", migration_corridor: "Mexico-US", region: "NOAM",
+    id: "MCR-006", migration_corridor: "Mexico-US", region: "NOAM",
     forced_displacement_rate: 0.32, climate_migration_acceleration: 0.28, economic_migration_pressure: 0.38,
     border_violence_index: 0.35, asylum_system_saturation: 0.30, integration_failure_rate: 0.28,
     xenophobia_political_exploitation: 0.30, demographic_aging_severity: 0.22, brain_drain_intensity: 0.28,
@@ -185,7 +185,7 @@ const mockEntities: McrInput[] = [
   {
     // MCR-007: high / xenophobia_cascade
     // forced_displacement_rate<0.70, asylum_system_saturation<0.70, climate_migration_acceleration<0.70 to avoid prior patterns
-    entity_id: "MCR-007", migration_corridor: "Bangladesh-India-EU", region: "APAC",
+    id: "MCR-007", migration_corridor: "Bangladesh-India-EU", region: "APAC",
     forced_displacement_rate: 0.50, climate_migration_acceleration: 0.48, economic_migration_pressure: 0.52,
     border_violence_index: 0.55, asylum_system_saturation: 0.55, integration_failure_rate: 0.58,
     xenophobia_political_exploitation: 0.78, demographic_aging_severity: 0.45, brain_drain_intensity: 0.48,
@@ -197,7 +197,7 @@ const mockEntities: McrInput[] = [
     // MCR-008: critical / demographic_implosion
     // forced_displacement_rate<0.70, asylum_system_saturation<0.70, climate_migration_acceleration<0.70,
     // xenophobia_political_exploitation<0.70 — ensuring demographic_implosion fires
-    entity_id: "MCR-008", migration_corridor: "Eastern-Europe-West", region: "EMEA",
+    id: "MCR-008", migration_corridor: "Eastern-Europe-West", region: "EMEA",
     forced_displacement_rate: 0.55, climate_migration_acceleration: 0.50, economic_migration_pressure: 0.65,
     border_violence_index: 0.55, asylum_system_saturation: 0.60, integration_failure_rate: 0.72,
     xenophobia_political_exploitation: 0.65, demographic_aging_severity: 0.80, brain_drain_intensity: 0.75,

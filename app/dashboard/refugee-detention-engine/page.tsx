@@ -15,7 +15,7 @@ const RB: Record<string, string> = {
 };
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   composite_score: number;
@@ -134,7 +134,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
             <div className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-slate-400 text-sm">Entité ID</span>
-                <span className="text-slate-300 text-sm font-mono">{entity.entity_id}</span>
+                <span className="text-slate-300 text-sm font-mono">{entity.id}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-400 text-sm">Pays</span>
@@ -237,7 +237,7 @@ export default function RefugeeDetentionEnginePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
               {filtered.map((entity) => (
                 <div
-                  key={entity.entity_id}
+                  key={entity.id}
                   onClick={() => setSelected(entity)}
                   className={`rounded-xl border p-4 cursor-pointer hover:brightness-110 transition-all ${RB[entity.risk_level] || "border-slate-700 bg-slate-800/50"}`}
                 >

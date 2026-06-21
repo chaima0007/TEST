@@ -17,7 +17,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEntities = [
   {
-    entity_id: "DIE-001",
+    id: "DIE-001",
     identity_system: "etat_biometrique_centralise",
     region: "APAC",
     biometric_surveillance_integration: 0.88,
@@ -50,7 +50,7 @@ const mockEntities = [
     signal: "🔴 Souveraineté identitaire effondrée — contrôle systémique de l'identité",
   },
   {
-    entity_id: "DIE-002",
+    id: "DIE-002",
     identity_system: "identite_liberale_ouverte",
     region: "EMEA",
     biometric_surveillance_integration: 0.07,
@@ -83,7 +83,7 @@ const mockEntities = [
     signal: "🟢 Risque identitaire limité et contenu",
   },
   {
-    entity_id: "DIE-003",
+    id: "DIE-003",
     identity_system: "monopole_identite_prive",
     region: "NAMER",
     biometric_surveillance_integration: 0.45,
@@ -116,7 +116,7 @@ const mockEntities = [
     signal: "🟠 Identité numérique sous contrôle avancé détecté",
   },
   {
-    entity_id: "DIE-004",
+    id: "DIE-004",
     identity_system: "systeme_identite_distribue",
     region: "LATAM",
     biometric_surveillance_integration: 0.09,
@@ -149,7 +149,7 @@ const mockEntities = [
     signal: "🟢 Risque identitaire limité et contenu",
   },
   {
-    entity_id: "DIE-005",
+    id: "DIE-005",
     identity_system: "systeme_exclusion_identitaire",
     region: "MEA",
     biometric_surveillance_integration: 0.55,
@@ -182,7 +182,7 @@ const mockEntities = [
     signal: "🔴 Souveraineté identitaire effondrée — contrôle systémique de l'identité",
   },
   {
-    entity_id: "DIE-006",
+    id: "DIE-006",
     identity_system: "identite_numerique_partielle",
     region: "EMEA",
     biometric_surveillance_integration: 0.25,
@@ -215,7 +215,7 @@ const mockEntities = [
     signal: "🟡 Vulnérabilité identitaire structurelle active",
   },
   {
-    entity_id: "DIE-007",
+    id: "DIE-007",
     identity_system: "identite_arme_politique",
     region: "APAC",
     biometric_surveillance_integration: 0.48,
@@ -248,7 +248,7 @@ const mockEntities = [
     signal: "🟠 Identité numérique sous contrôle avancé détecté",
   },
   {
-    entity_id: "DIE-008",
+    id: "DIE-008",
     identity_system: "souverainete_identitaire_supprimee",
     region: "NAMER",
     biometric_surveillance_integration: 0.62,

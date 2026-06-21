@@ -7,7 +7,7 @@ if (!process.env.SWARM_API_URL) {
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "CYB-001",
+    id: "CYB-001",
     name: "Réseau Électrique National UKR",
     country: "Ukraine",
     sector: "Énergie & Réseaux Électriques",
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-20",
   },
   {
-    entity_id: "CYB-002",
+    id: "CYB-002",
     name: "Water Authority Greater London",
     country: "Royaume-Uni",
     sector: "Eau & Traitement",
@@ -47,7 +47,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-19",
   },
   {
-    entity_id: "CYB-003",
+    id: "CYB-003",
     name: "Port Autonome Rotterdam",
     country: "Pays-Bas",
     sector: "Transport & Logistique",
@@ -67,7 +67,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-18",
   },
   {
-    entity_id: "CYB-004",
+    id: "CYB-004",
     name: "Réseau Hospitalier CHU Paris",
     country: "France",
     sector: "Santé & Infrastructure Médicale",
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-17",
   },
   {
-    entity_id: "CYB-005",
+    id: "CYB-005",
     name: "Infrastruktur Bahn AG Berlin",
     country: "Allemagne",
     sector: "Transport Ferroviaire",
@@ -107,7 +107,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-16",
   },
   {
-    entity_id: "CYB-006",
+    id: "CYB-006",
     name: "Telecom Backbone Belge",
     country: "Belgique",
     sector: "Télécommunications",
@@ -127,7 +127,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-15",
   },
   {
-    entity_id: "CYB-007",
+    id: "CYB-007",
     name: "Swiss Federal Infrastructure Agency",
     country: "Suisse",
     sector: "Administration & Services Publics",
@@ -147,7 +147,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-14",
   },
   {
-    entity_id: "CYB-008",
+    id: "CYB-008",
     name: "Nordics Energy Grid Council",
     country: "Suède",
     sector: "Énergie & Réseaux Électriques",

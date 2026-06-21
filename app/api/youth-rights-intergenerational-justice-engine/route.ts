@@ -40,7 +40,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "YRJ-001",
+      id: "YRJ-001",
       name: "Mali — 77% Jeunes Sans Emploi, Conflit Armé, Droit Futur Violé",
       country: "Mali",
       youth_employment_education_rights_deprivation_score: 94.0,
@@ -54,7 +54,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "YRJ-002",
+      id: "YRJ-002",
       name: "Burundi — Recrutement Enfants Soldats, Pauvreté Intergénérationnelle",
       country: "Burundi",
       youth_employment_education_rights_deprivation_score: 91.0,
@@ -68,7 +68,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "YRJ-003",
+      id: "YRJ-003",
       name: "Yémen — Génération Entière Sans Éducation, Famine",
       country: "Yémen",
       youth_employment_education_rights_deprivation_score: 93.0,
@@ -82,7 +82,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "YRJ-004",
+      id: "YRJ-004",
       name: "Haïti — Gangs Recruteurs Jeunes, État Défaillant",
       country: "Haïti",
       youth_employment_education_rights_deprivation_score: 89.0,
@@ -96,7 +96,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "YRJ-005",
+      id: "YRJ-005",
       name: "Bangladesh — Ateliers Jeunes, Manifestations Réprimées 2024",
       country: "Bangladesh",
       youth_employment_education_rights_deprivation_score: 55.0,
@@ -110,7 +110,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "YRJ-006",
+      id: "YRJ-006",
       name: "Éthiopie — Jeunes Tigré Trauma, Déplacement",
       country: "Éthiopie",
       youth_employment_education_rights_deprivation_score: 52.0,
@@ -124,7 +124,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "YRJ-007",
+      id: "YRJ-007",
       name: "Brésil — Inégalités Intergénérationnelles, Crime Organisé",
       country: "Brésil",
       youth_employment_education_rights_deprivation_score: 27.0,
@@ -138,7 +138,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "YRJ-008",
+      id: "YRJ-008",
       name: "Finlande — Droits Jeunes Constitutionnels, Meilleur Système Éducatif",
       country: "Finlande",
       youth_employment_education_rights_deprivation_score: 4.0,

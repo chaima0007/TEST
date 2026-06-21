@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // OGE-001 — critical, high_seas_jurisdiction_vacuum (jurisdictional_gap>0.85, flag_state>0.80)
   {
-    entity_id: "OGE-001", ocean_zone: "haute_mer", region: "Atlantique Nord",
+    id: "OGE-001", ocean_zone: "haute_mer", region: "Atlantique Nord",
     jurisdictional_gap: 0.92, flag_state_compliance: 0.85,
     illegal_fishing_intensity: 0.72, treaty_ratification_rate: 0.68,
     marine_protected_coverage: 0.70, biodiversity_loss_rate: 0.72,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // OGE-002 — critical, illeagal_fishing_impunity (illegal_fishing>0.85, enforcement>0.80)
   {
-    entity_id: "OGE-002", ocean_zone: "zone_économique_exclusive", region: "Pacifique Ouest",
+    id: "OGE-002", ocean_zone: "zone_économique_exclusive", region: "Pacifique Ouest",
     jurisdictional_gap: 0.68, flag_state_compliance: 0.65,
     illegal_fishing_intensity: 0.90, treaty_ratification_rate: 0.65,
     marine_protected_coverage: 0.62, biodiversity_loss_rate: 0.68,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // OGE-003 — critical, biodiversity_treaty_collapse (biodiversity_loss>0.85, treaty_rat>0.80)
   {
-    entity_id: "OGE-003", ocean_zone: "mer_territoriale", region: "Océan Indien",
+    id: "OGE-003", ocean_zone: "mer_territoriale", region: "Océan Indien",
     jurisdictional_gap: 0.70, flag_state_compliance: 0.68,
     illegal_fishing_intensity: 0.65, treaty_ratification_rate: 0.82,
     marine_protected_coverage: 0.65, biodiversity_loss_rate: 0.88,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // OGE-004 — high, deep_sea_resource_capture (deep_sea_mining>0.80, corporate_accountability>0.75)
   {
-    entity_id: "OGE-004", ocean_zone: "fond_marin_international", region: "Arctique",
+    id: "OGE-004", ocean_zone: "fond_marin_international", region: "Arctique",
     jurisdictional_gap: 0.48, flag_state_compliance: 0.45,
     illegal_fishing_intensity: 0.50, treaty_ratification_rate: 0.48,
     marine_protected_coverage: 0.50, biodiversity_loss_rate: 0.52,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // OGE-005 — high, marine_protected_area_failure (marine_prot>0.80, biodiversity>0.75)
   {
-    entity_id: "OGE-005", ocean_zone: "zone_protégée_marine", region: "Méditerranée",
+    id: "OGE-005", ocean_zone: "zone_protégée_marine", region: "Méditerranée",
     jurisdictional_gap: 0.45, flag_state_compliance: 0.48,
     illegal_fishing_intensity: 0.50, treaty_ratification_rate: 0.48,
     marine_protected_coverage: 0.85, biodiversity_loss_rate: 0.80,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // OGE-006 — moderate, none
   {
-    entity_id: "OGE-006", ocean_zone: "plateau_continental", region: "Atlantique Sud",
+    id: "OGE-006", ocean_zone: "plateau_continental", region: "Atlantique Sud",
     jurisdictional_gap: 0.30, flag_state_compliance: 0.28,
     illegal_fishing_intensity: 0.32, treaty_ratification_rate: 0.28,
     marine_protected_coverage: 0.30, biodiversity_loss_rate: 0.32,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // OGE-007 — low, none
   {
-    entity_id: "OGE-007", ocean_zone: "mer_intérieure", region: "Europe Nord",
+    id: "OGE-007", ocean_zone: "mer_intérieure", region: "Europe Nord",
     jurisdictional_gap: 0.10, flag_state_compliance: 0.12,
     illegal_fishing_intensity: 0.10, treaty_ratification_rate: 0.12,
     marine_protected_coverage: 0.10, biodiversity_loss_rate: 0.12,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // OGE-008 — low, none
   {
-    entity_id: "OGE-008", ocean_zone: "détroit_international", region: "Asie Pacifique",
+    id: "OGE-008", ocean_zone: "détroit_international", region: "Asie Pacifique",
     jurisdictional_gap: 0.12, flag_state_compliance: 0.10,
     illegal_fishing_intensity: 0.12, treaty_ratification_rate: 0.10,
     marine_protected_coverage: 0.12, biodiversity_loss_rate: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         ocean_zone:                     e.ocean_zone,
         region:                         e.region,
         jurisdiction_score:             jur,

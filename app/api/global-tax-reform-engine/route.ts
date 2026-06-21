@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "TX-001",
+      id: "TX-001",
       name: "Apple Inc. — Structures Fiscales EMEA",
       country: "Irlande",
       sector: "Technologie",
@@ -42,7 +42,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TX-002",
+      id: "TX-002",
       name: "Glencore International AG",
       country: "Suisse",
       sector: "Matières Premières & Négoce",
@@ -62,7 +62,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TX-003",
+      id: "TX-003",
       name: "Amazon EU SARL — Luxembourg Division",
       country: "Luxembourg",
       sector: "Commerce & Logistique",
@@ -82,7 +82,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TX-004",
+      id: "TX-004",
       name: "TotalEnergies SE — Division Trading",
       country: "France",
       sector: "Énergie & Pétrochimie",
@@ -102,7 +102,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TX-005",
+      id: "TX-005",
       name: "Stellantis NV — Holding Néerlandaise",
       country: "Pays-Bas",
       sector: "Automobile",
@@ -122,7 +122,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TX-006",
+      id: "TX-006",
       name: "Carrefour SA — Structures Internationales",
       country: "France",
       sector: "Distribution & Retail",
@@ -142,7 +142,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TX-007",
+      id: "TX-007",
       name: "Danone SA — Gouvernance Fiscale",
       country: "France",
       sector: "Agroalimentaire",
@@ -162,7 +162,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "TX-008",
+      id: "TX-008",
       name: "IKEA Foundation — Structures Suédoises",
       country: "Suède",
       sector: "Ameublement & Retail",

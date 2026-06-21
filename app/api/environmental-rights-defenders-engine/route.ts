@@ -18,7 +18,7 @@ const MOCK = {
   critical_alerts: [],
   entities: [
     {
-      entity_id: "ERD-001",
+      id: "ERD-001",
       name: "Honduras — Effet Berta Cáceres, Défenseurs Eau Systématiquement Assassinés, COPINH Persécuté &amp; Impunité Totale Tueurs",
       country: "Honduras",
       composite_score: 92.90,
@@ -27,7 +27,7 @@ const MOCK = {
       primary_pattern: "defenders_killed_attacked",
     },
     {
-      entity_id: "ERD-002",
+      id: "ERD-002",
       name: "Philippines — Mindanao Défenseurs Miniers Tués, 800+ Activistes Environnement Assassinés &amp; Loi Anti-Terrorisme Instrumentalisée",
       country: "Philippines",
       composite_score: 89.90,
@@ -36,7 +36,7 @@ const MOCK = {
       primary_pattern: "state_criminal_criminalisation",
     },
     {
-      entity_id: "ERD-003",
+      id: "ERD-003",
       name: "Brésil/Amazonie — Défenseurs Autochtones Tués Héritage Bolsonaro, Dom Phillips Assassiné &amp; Terres Indigènes Déforestées Impunément",
       country: "Brésil",
       composite_score: 89.35,
@@ -45,7 +45,7 @@ const MOCK = {
       primary_pattern: "corporate_land_grabbing_impunity",
     },
     {
-      entity_id: "ERD-004",
+      id: "ERD-004",
       name: "Cambodge — Défenseurs Forêts Emprisonnés, Mother Nature Cambodia Arrêtée &amp; Concessions Foncières Géantes Complicité État",
       country: "Cambodge",
       composite_score: 85.85,
@@ -54,7 +54,7 @@ const MOCK = {
       primary_pattern: "state_criminal_criminalisation",
     },
     {
-      entity_id: "ERD-005",
+      id: "ERD-005",
       name: "Mexique — Activistes Eau/Forêts Tués Cartels et État, Impunité 98% Meurtres &amp; Communautés Zapotèques Assiégées",
       country: "Mexique",
       composite_score: 55.30,
@@ -63,7 +63,7 @@ const MOCK = {
       primary_pattern: "defenders_killed_attacked",
     },
     {
-      entity_id: "ERD-006",
+      id: "ERD-006",
       name: "Colombie — Post-Accord Leaders Environnementaux Tués, 33% Défenseurs Globaux Assassinés 2022 &amp; PDET Non-Implémenté",
       country: "Colombie",
       composite_score: 52.80,
@@ -72,7 +72,7 @@ const MOCK = {
       primary_pattern: "defenders_killed_attacked",
     },
     {
-      entity_id: "ERD-007",
+      id: "ERD-007",
       name: "Kenya — Ogiek Victoire Partielle Cour Africaine, Défenseurs Fonciers Mau Forest &amp; Litiges Environnementaux en Progrès",
       country: "Kenya",
       composite_score: 26.55,
@@ -81,7 +81,7 @@ const MOCK = {
       primary_pattern: "climate_justice_indigenous_rights",
     },
     {
-      entity_id: "ERD-008",
+      id: "ERD-008",
       name: "Costa Rica — Modèle Conservation, Droits Verts Constitutionnels, Tribunaux Environnementaux &amp; Défenseurs Protégés par Loi",
       country: "Costa Rica",
       composite_score: 5.80,

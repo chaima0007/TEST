@@ -19,7 +19,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEntities = [
   {
-    entity_id: "PWU-001",
+    id: "PWU-001",
     economic_sector: "manufacturing",
     region: "NAMER",
     automation_displacement_rate: 0.90,
@@ -52,7 +52,7 @@ const mockEntities = [
     signal: "🔴 Effondrement post-travail systémique — disruption emploi IA critique",
   },
   {
-    entity_id: "PWU-002",
+    id: "PWU-002",
     economic_sector: "public_services",
     region: "EMEA",
     automation_displacement_rate: 0.55,
@@ -85,7 +85,7 @@ const mockEntities = [
     signal: "🔴 Effondrement post-travail systémique — disruption emploi IA critique",
   },
   {
-    entity_id: "PWU-003",
+    id: "PWU-003",
     economic_sector: "retail_commerce",
     region: "APAC",
     automation_displacement_rate: 0.55,
@@ -118,7 +118,7 @@ const mockEntities = [
     signal: "🟠 Disruption emploi & revenu universel majeure détectée",
   },
   {
-    entity_id: "PWU-004",
+    id: "PWU-004",
     economic_sector: "finance_banking",
     region: "LATAM",
     automation_displacement_rate: 0.60,
@@ -151,7 +151,7 @@ const mockEntities = [
     signal: "🟠 Disruption emploi & revenu universel majeure détectée",
   },
   {
-    entity_id: "PWU-005",
+    id: "PWU-005",
     economic_sector: "transportation_logistics",
     region: "NAMER",
     automation_displacement_rate: 0.70,
@@ -184,7 +184,7 @@ const mockEntities = [
     signal: "🔴 Effondrement post-travail systémique — disruption emploi IA critique",
   },
   {
-    entity_id: "PWU-006",
+    id: "PWU-006",
     economic_sector: "healthcare",
     region: "EMEA",
     automation_displacement_rate: 0.25,
@@ -217,7 +217,7 @@ const mockEntities = [
     signal: "🟡 Transition post-travail active en cours",
   },
   {
-    entity_id: "PWU-007",
+    id: "PWU-007",
     economic_sector: "education",
     region: "APAC",
     automation_displacement_rate: 0.07,
@@ -250,7 +250,7 @@ const mockEntities = [
     signal: "🟢 Risque post-travail contenu",
   },
   {
-    entity_id: "PWU-008",
+    id: "PWU-008",
     economic_sector: "agriculture",
     region: "LATAM",
     automation_displacement_rate: 0.05,

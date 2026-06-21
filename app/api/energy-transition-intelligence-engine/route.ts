@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // ETI-001 — EMEA, fossil_utilities → critical, fossil_lock_in
-  { entity_id: "ETI-001", energy_sector: "fossil_utilities", region: "EMEA",
+  { id: "ETI-001", energy_sector: "fossil_utilities", region: "EMEA",
     renewable_penetration_rate: 0.08, fossil_dependency: 0.88, grid_stability_index: 0.55,
     stranded_asset_exposure: 0.60, carbon_intensity: 0.82, energy_storage_capacity: 0.20,
     demand_flexibility: 0.22, grid_modernization_lag: 0.72, energy_poverty_risk: 0.42,
@@ -12,7 +12,7 @@ const MOCK_ENTITIES = [
     energy_sovereignty_index: 0.38, decarbonization_velocity: 0.08 },
 
   // ETI-002 — APAC, renewables → low, none
-  { entity_id: "ETI-002", energy_sector: "renewables", region: "APAC",
+  { id: "ETI-002", energy_sector: "renewables", region: "APAC",
     renewable_penetration_rate: 0.88, fossil_dependency: 0.08, grid_stability_index: 0.85,
     stranded_asset_exposure: 0.05, carbon_intensity: 0.10, energy_storage_capacity: 0.80,
     demand_flexibility: 0.82, grid_modernization_lag: 0.12, energy_poverty_risk: 0.10,
@@ -21,7 +21,7 @@ const MOCK_ENTITIES = [
     energy_sovereignty_index: 0.88, decarbonization_velocity: 0.92 },
 
   // ETI-003 — NOAM, coal_power → high, stranded_asset_crisis
-  { entity_id: "ETI-003", energy_sector: "coal_power", region: "NOAM",
+  { id: "ETI-003", energy_sector: "coal_power", region: "NOAM",
     renewable_penetration_rate: 0.22, fossil_dependency: 0.65, grid_stability_index: 0.62,
     stranded_asset_exposure: 0.78, carbon_intensity: 0.72, energy_storage_capacity: 0.35,
     demand_flexibility: 0.40, grid_modernization_lag: 0.55, energy_poverty_risk: 0.38,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
     energy_sovereignty_index: 0.55, decarbonization_velocity: 0.28 },
 
   // ETI-004 — LATAM, renewables → low, none
-  { entity_id: "ETI-004", energy_sector: "renewables", region: "LATAM",
+  { id: "ETI-004", energy_sector: "renewables", region: "LATAM",
     renewable_penetration_rate: 0.82, fossil_dependency: 0.10, grid_stability_index: 0.80,
     stranded_asset_exposure: 0.08, carbon_intensity: 0.12, energy_storage_capacity: 0.75,
     demand_flexibility: 0.78, grid_modernization_lag: 0.15, energy_poverty_risk: 0.18,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
     energy_sovereignty_index: 0.85, decarbonization_velocity: 0.88 },
 
   // ETI-005 — MEA, oil_gas → critical, mineral_sovereignty_loss
-  { entity_id: "ETI-005", energy_sector: "oil_gas", region: "MEA",
+  { id: "ETI-005", energy_sector: "oil_gas", region: "MEA",
     renewable_penetration_rate: 0.10, fossil_dependency: 0.92, grid_stability_index: 0.48,
     stranded_asset_exposure: 0.65, carbon_intensity: 0.88, energy_storage_capacity: 0.18,
     demand_flexibility: 0.20, grid_modernization_lag: 0.68, energy_poverty_risk: 0.52,
@@ -48,7 +48,7 @@ const MOCK_ENTITIES = [
     energy_sovereignty_index: 0.22, decarbonization_velocity: 0.05 },
 
   // ETI-006 — EMEA, grid_operator → moderate, none
-  { entity_id: "ETI-006", energy_sector: "grid_operator", region: "EMEA",
+  { id: "ETI-006", energy_sector: "grid_operator", region: "EMEA",
     renewable_penetration_rate: 0.45, fossil_dependency: 0.40, grid_stability_index: 0.58,
     stranded_asset_exposure: 0.30, carbon_intensity: 0.42, energy_storage_capacity: 0.48,
     demand_flexibility: 0.50, grid_modernization_lag: 0.45, energy_poverty_risk: 0.30,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
     energy_sovereignty_index: 0.55, decarbonization_velocity: 0.45 },
 
   // ETI-007 — APAC, coal_power → high, grid_instability
-  { entity_id: "ETI-007", energy_sector: "coal_power", region: "APAC",
+  { id: "ETI-007", energy_sector: "coal_power", region: "APAC",
     renewable_penetration_rate: 0.25, fossil_dependency: 0.68, grid_stability_index: 0.28,
     stranded_asset_exposure: 0.55, carbon_intensity: 0.75, energy_storage_capacity: 0.30,
     demand_flexibility: 0.32, grid_modernization_lag: 0.70, energy_poverty_risk: 0.45,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
     energy_sovereignty_index: 0.45, decarbonization_velocity: 0.22 },
 
   // ETI-008 — NOAM, fossil_utilities → critical, energy_poverty_trap
-  { entity_id: "ETI-008", energy_sector: "fossil_utilities", region: "NOAM",
+  { id: "ETI-008", energy_sector: "fossil_utilities", region: "NOAM",
     renewable_penetration_rate: 0.12, fossil_dependency: 0.80, grid_stability_index: 0.50,
     stranded_asset_exposure: 0.62, carbon_intensity: 0.78, energy_storage_capacity: 0.22,
     demand_flexibility: 0.25, grid_modernization_lag: 0.65, energy_poverty_risk: 0.82,
@@ -177,7 +177,7 @@ export async function GET() {
       const signal      = transitionSignal(e, risk, comp);
 
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         region:                           e.region,
         energy_sector:                    e.energy_sector,
         transition_risk:                  risk,

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // HCE-001 — critical, homelessness_crisis_explosion (homeless>0.85, eviction>0.80)
   {
-    entity_id: "HCE-001", market_type: "logement_social", region: "Île-de-France",
+    id: "HCE-001", market_type: "logement_social", region: "Île-de-France",
     price_to_income_ratio: 0.90, rent_burden_rate: 0.85,
     homelessness_prevalence: 0.92, speculative_investment_share: 0.72,
     vacancy_rate: 0.65, social_housing_stock: 0.75,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // HCE-002 — critical, financialization_speculation_trap (financialization>0.85, speculative>0.80)
   {
-    entity_id: "HCE-002", market_type: "marché_locatif", region: "Grand Paris",
+    id: "HCE-002", market_type: "marché_locatif", region: "Grand Paris",
     price_to_income_ratio: 0.88, rent_burden_rate: 0.80,
     homelessness_prevalence: 0.68, speculative_investment_share: 0.85,
     vacancy_rate: 0.60, social_housing_stock: 0.65,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // HCE-003 — critical, rental_market_collapse (tenant_protection>0.85, rent_burden>0.80)
   {
-    entity_id: "HCE-003", market_type: "résidentiel_privé", region: "Lyon Métropole",
+    id: "HCE-003", market_type: "résidentiel_privé", region: "Lyon Métropole",
     price_to_income_ratio: 0.82, rent_burden_rate: 0.88,
     homelessness_prevalence: 0.70, speculative_investment_share: 0.68,
     vacancy_rate: 0.60, social_housing_stock: 0.65,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // HCE-004 — high, displacement_gentrification (displacement>0.80, geo_segregation>0.75)
   {
-    entity_id: "HCE-004", market_type: "réhabilitation_urbaine", region: "Marseille",
+    id: "HCE-004", market_type: "réhabilitation_urbaine", region: "Marseille",
     price_to_income_ratio: 0.55, rent_burden_rate: 0.52,
     homelessness_prevalence: 0.50, speculative_investment_share: 0.48,
     vacancy_rate: 0.45, social_housing_stock: 0.50,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // HCE-005 — high, social_housing_defunding (social_housing>0.80, waitlist>0.75)
   {
-    entity_id: "HCE-005", market_type: "habitat_social", region: "Bordeaux",
+    id: "HCE-005", market_type: "habitat_social", region: "Bordeaux",
     price_to_income_ratio: 0.50, rent_burden_rate: 0.48,
     homelessness_prevalence: 0.52, speculative_investment_share: 0.48,
     vacancy_rate: 0.45, social_housing_stock: 0.85,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // HCE-006 — moderate, none
   {
-    entity_id: "HCE-006", market_type: "péri_urbain", region: "Nantes",
+    id: "HCE-006", market_type: "péri_urbain", region: "Nantes",
     price_to_income_ratio: 0.30, rent_burden_rate: 0.28,
     homelessness_prevalence: 0.30, speculative_investment_share: 0.28,
     vacancy_rate: 0.25, social_housing_stock: 0.30,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // HCE-007 — low, none
   {
-    entity_id: "HCE-007", market_type: "rural", region: "Bretagne",
+    id: "HCE-007", market_type: "rural", region: "Bretagne",
     price_to_income_ratio: 0.10, rent_burden_rate: 0.12,
     homelessness_prevalence: 0.10, speculative_investment_share: 0.12,
     vacancy_rate: 0.10, social_housing_stock: 0.12,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // HCE-008 — low, none
   {
-    entity_id: "HCE-008", market_type: "copropriété", region: "Alsace",
+    id: "HCE-008", market_type: "copropriété", region: "Alsace",
     price_to_income_ratio: 0.12, rent_burden_rate: 0.10,
     homelessness_prevalence: 0.12, speculative_investment_share: 0.10,
     vacancy_rate: 0.12, social_housing_stock: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         market_type:                e.market_type,
         region:                     e.region,
         affordability_score:        aff,

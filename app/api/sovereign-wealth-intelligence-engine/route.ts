@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // SWI-001 — EMEA, sovereign_stabilization → critical, capital_misallocation
   {
-    entity_id: "SWI-001", fund_type: "sovereign_stabilization", region: "EMEA",
+    id: "SWI-001", fund_type: "sovereign_stabilization", region: "EMEA",
     mandate_alignment: 0.30, diversification_quality: 0.22, liquidity_buffer: 0.40,
     geopolitical_exposure: 0.62, currency_concentration: 0.72, return_on_mandate: 0.35,
     esg_compliance: 0.42, governance_maturity: 0.48, political_interference_risk: 0.58,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // SWI-002 — APAC, pension_sovereign → low, optimal_allocation/none
   {
-    entity_id: "SWI-002", fund_type: "pension_sovereign", region: "APAC",
+    id: "SWI-002", fund_type: "pension_sovereign", region: "APAC",
     mandate_alignment: 0.92, diversification_quality: 0.90, liquidity_buffer: 0.88,
     geopolitical_exposure: 0.12, currency_concentration: 0.10, return_on_mandate: 0.90,
     esg_compliance: 0.88, governance_maturity: 0.92, political_interference_risk: 0.08,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // SWI-003 — NOAM, future_generations → high, political_capture
   {
-    entity_id: "SWI-003", fund_type: "future_generations", region: "NOAM",
+    id: "SWI-003", fund_type: "future_generations", region: "NOAM",
     mandate_alignment: 0.52, diversification_quality: 0.58, liquidity_buffer: 0.55,
     geopolitical_exposure: 0.45, currency_concentration: 0.38, return_on_mandate: 0.50,
     esg_compliance: 0.60, governance_maturity: 0.30, political_interference_risk: 0.72,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // SWI-004 — LATAM, pension_sovereign → low, optimal_allocation/none
   {
-    entity_id: "SWI-004", fund_type: "pension_sovereign", region: "LATAM",
+    id: "SWI-004", fund_type: "pension_sovereign", region: "LATAM",
     mandate_alignment: 0.85, diversification_quality: 0.82, liquidity_buffer: 0.80,
     geopolitical_exposure: 0.18, currency_concentration: 0.15, return_on_mandate: 0.82,
     esg_compliance: 0.78, governance_maturity: 0.80, political_interference_risk: 0.12,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // SWI-005 — MEA, oil_stabilization → critical, liquidity_trap
   {
-    entity_id: "SWI-005", fund_type: "oil_stabilization", region: "MEA",
+    id: "SWI-005", fund_type: "oil_stabilization", region: "MEA",
     mandate_alignment: 0.40, diversification_quality: 0.45, liquidity_buffer: 0.18,
     geopolitical_exposure: 0.65, currency_concentration: 0.60, return_on_mandate: 0.42,
     esg_compliance: 0.30, governance_maturity: 0.50, political_interference_risk: 0.55,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // SWI-006 — EMEA, development_fund → moderate, none
   {
-    entity_id: "SWI-006", fund_type: "development_fund", region: "EMEA",
+    id: "SWI-006", fund_type: "development_fund", region: "EMEA",
     mandate_alignment: 0.62, diversification_quality: 0.60, liquidity_buffer: 0.62,
     geopolitical_exposure: 0.38, currency_concentration: 0.40, return_on_mandate: 0.58,
     esg_compliance: 0.65, governance_maturity: 0.62, political_interference_risk: 0.38,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // SWI-007 — APAC, future_generations → high, mandate_drift
   {
-    entity_id: "SWI-007", fund_type: "future_generations", region: "APAC",
+    id: "SWI-007", fund_type: "future_generations", region: "APAC",
     mandate_alignment: 0.22, diversification_quality: 0.55, liquidity_buffer: 0.58,
     geopolitical_exposure: 0.40, currency_concentration: 0.35, return_on_mandate: 0.28,
     esg_compliance: 0.52, governance_maturity: 0.60, political_interference_risk: 0.40,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // SWI-008 — NOAM, sovereign_stabilization → critical, geopolitical_overexposure
   {
-    entity_id: "SWI-008", fund_type: "sovereign_stabilization", region: "NOAM",
+    id: "SWI-008", fund_type: "sovereign_stabilization", region: "NOAM",
     mandate_alignment: 0.38, diversification_quality: 0.40, liquidity_buffer: 0.42,
     geopolitical_exposure: 0.82, currency_concentration: 0.65, return_on_mandate: 0.40,
     esg_compliance: 0.35, governance_maturity: 0.45, political_interference_risk: 0.60,
@@ -184,7 +184,7 @@ export async function GET() {
       const sev   = swSeverity(comp);
       const act   = recommendedAction(risk, pat);
       return {
-        entity_id:               e.entity_id,
+        id:               e.entity_id,
         region:                  e.region,
         fund_type:               e.fund_type,
         sw_risk:                 risk,

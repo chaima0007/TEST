@@ -23,7 +23,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "CLER-001",
+      id: "CLER-001",
       name: "Mali — 77% enfants hors école en zones de conflit, recrutement milices jihadistes",
       sub1: 85.0,
       sub2: 90.0,
@@ -34,7 +34,7 @@ const MOCK = {
       estimated_child_labor_education_rights_index: 8.45,
     },
     {
-      entity_id: "CLER-002",
+      id: "CLER-002",
       name: "Burkina Faso — fermetures massives écoles (4000+) par groupes armés, enseignants ciblés",
       sub1: 80.0,
       sub2: 88.0,
@@ -45,7 +45,7 @@ const MOCK = {
       estimated_child_labor_education_rights_index: 8.19,
     },
     {
-      entity_id: "CLER-003",
+      id: "CLER-003",
       name: "Yémen — 2300 écoles bombardées, 4,5M enfants déscolarisés, travail forcé conflit",
       sub1: 82.0,
       sub2: 85.0,
@@ -56,7 +56,7 @@ const MOCK = {
       estimated_child_labor_education_rights_index: 8.14,
     },
     {
-      entity_id: "CLER-004",
+      id: "CLER-004",
       name: "Érythrée — service national Sawa obligatoire enfants 17 ans, travail d&apos;État forcé",
       sub1: 78.0,
       sub2: 75.0,
@@ -67,7 +67,7 @@ const MOCK = {
       estimated_child_labor_education_rights_index: 7.86,
     },
     {
-      entity_id: "CLER-005",
+      id: "CLER-005",
       name: "Bangladesh — garment factories, 1,2M enfants travailleurs, accord Rana Plaza",
       sub1: 62.0,
       sub2: 55.0,
@@ -78,7 +78,7 @@ const MOCK = {
       estimated_child_labor_education_rights_index: 5.72,
     },
     {
-      entity_id: "CLER-006",
+      id: "CLER-006",
       name: "Cambodge — travail briqueteries/exploitation rurale, dette familiale, abandon scolaire",
       sub1: 58.0,
       sub2: 52.0,
@@ -89,7 +89,7 @@ const MOCK = {
       estimated_child_labor_education_rights_index: 5.42,
     },
     {
-      entity_id: "CLER-007",
+      id: "CLER-007",
       name: "Inde — Child Labour Act application partielle, 10M enfants au travail secteurs informels",
       sub1: 38.0,
       sub2: 32.0,
@@ -100,7 +100,7 @@ const MOCK = {
       estimated_child_labor_education_rights_index: 3.41,
     },
     {
-      entity_id: "CLER-008",
+      id: "CLER-008",
       name: "Islande — 100% scolarisation, zéro travail enfants documenté, meilleur modèle mondial",
       sub1: 2.0,
       sub2: 1.0,

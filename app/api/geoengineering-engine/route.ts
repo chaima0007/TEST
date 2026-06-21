@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "GE-001",
+      id: "GE-001",
       name: "Programme HAARP Russie — Division Climatique",
       country: "Russie",
       sector: "Géo-ingénierie Militaire",
@@ -42,7 +42,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GE-002",
+      id: "GE-002",
       name: "SolarShield Technologies Corp",
       country: "États-Unis",
       sector: "Géo-ingénierie Privée",
@@ -62,7 +62,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GE-003",
+      id: "GE-003",
       name: "Programme National de Pluie Artificielle Chine",
       country: "Chine",
       sector: "Géo-ingénierie Étatique",
@@ -82,7 +82,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GE-004",
+      id: "GE-004",
       name: "Make Sunsets LLC",
       country: "États-Unis",
       sector: "Géo-ingénierie Privée",
@@ -102,7 +102,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GE-005",
+      id: "GE-005",
       name: "Projet IROAM — Fertilisation Océanique Atlantique",
       country: "Canada",
       sector: "Géo-ingénierie Océanique",
@@ -122,7 +122,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GE-006",
+      id: "GE-006",
       name: "Programme SCoPEx — Harvard University",
       country: "États-Unis",
       sector: "Recherche Géo-ingénierie",
@@ -142,7 +142,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GE-007",
+      id: "GE-007",
       name: "Groupe Intergouvernemental Experts Climat (GIEC)",
       country: "International",
       sector: "Gouvernance Climatique",
@@ -162,7 +162,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "GE-008",
+      id: "GE-008",
       name: "Alliance Géo-ingénierie Responsable — Union Européenne",
       country: "Union Européenne",
       sector: "Gouvernance Climatique",

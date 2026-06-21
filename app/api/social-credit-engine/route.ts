@@ -15,7 +15,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEntities = [
   {
-    entity_id: "SCR-001",
+    id: "SCR-001",
     control_domain: "population_scoring",
     region: "APAC",
     behavioral_score_deployment_density: 0.88,
@@ -48,7 +48,7 @@ const mockEntities = [
     signal: "🔴 Contrôle comportemental total — crédit social systémique",
   },
   {
-    entity_id: "SCR-002",
+    id: "SCR-002",
     control_domain: "civic_engagement",
     region: "EMEA",
     behavioral_score_deployment_density: 0.08,
@@ -81,7 +81,7 @@ const mockEntities = [
     signal: "🟢 Scoring comportemental limité et contenu",
   },
   {
-    entity_id: "SCR-003",
+    id: "SCR-003",
     control_domain: "political_compliance",
     region: "MEA",
     behavioral_score_deployment_density: 0.48,
@@ -114,7 +114,7 @@ const mockEntities = [
     signal: "🟠 Système crédit social avancé détecté",
   },
   {
-    entity_id: "SCR-004",
+    id: "SCR-004",
     control_domain: "corporate_hr",
     region: "NAMER",
     behavioral_score_deployment_density: 0.10,
@@ -147,7 +147,7 @@ const mockEntities = [
     signal: "🟢 Scoring comportemental limité et contenu",
   },
   {
-    entity_id: "SCR-005",
+    id: "SCR-005",
     control_domain: "family_social_control",
     region: "APAC",
     behavioral_score_deployment_density: 0.65,
@@ -180,7 +180,7 @@ const mockEntities = [
     signal: "🔴 Contrôle comportemental total — crédit social systémique",
   },
   {
-    entity_id: "SCR-006",
+    id: "SCR-006",
     control_domain: "workplace_conduct",
     region: "LATAM",
     behavioral_score_deployment_density: 0.28,
@@ -213,7 +213,7 @@ const mockEntities = [
     signal: "🟡 Notation comportementale structurelle active",
   },
   {
-    entity_id: "SCR-007",
+    id: "SCR-007",
     control_domain: "cultural_normalization",
     region: "EMEA",
     behavioral_score_deployment_density: 0.45,
@@ -246,7 +246,7 @@ const mockEntities = [
     signal: "🟠 Système crédit social avancé détecté",
   },
   {
-    entity_id: "SCR-008",
+    id: "SCR-008",
     control_domain: "corporate_state_integration",
     region: "NAMER",
     behavioral_score_deployment_density: 0.68,

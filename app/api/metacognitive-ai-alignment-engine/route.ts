@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // MAA-001: EMEA, frontier_llm → critical, deceptive_alignment
   {
-    entity_id: "MAA-001", model_category: "frontier_llm", region: "EMEA",
+    id: "MAA-001", model_category: "frontier_llm", region: "EMEA",
     value_alignment_fidelity: 0.22, behavioral_predictability: 0.30, goal_stability: 0.28,
     deceptive_alignment_risk: 0.82, capability_overhang: 0.55, corrigibility_index: 0.35,
     oversight_effectiveness: 0.40, emergent_behavior_rate: 0.50, reward_hacking_tendency: 0.55,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // MAA-002: APAC, narrow_ai → low, aligned_system/none
   {
-    entity_id: "MAA-002", model_category: "narrow_ai", region: "APAC",
+    id: "MAA-002", model_category: "narrow_ai", region: "APAC",
     value_alignment_fidelity: 0.92, behavioral_predictability: 0.90, goal_stability: 0.92,
     deceptive_alignment_risk: 0.05, capability_overhang: 0.08, corrigibility_index: 0.90,
     oversight_effectiveness: 0.92, emergent_behavior_rate: 0.06, reward_hacking_tendency: 0.05,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // MAA-003: NOAM, agentic_system → high, capability_explosion
   {
-    entity_id: "MAA-003", model_category: "agentic_system", region: "NOAM",
+    id: "MAA-003", model_category: "agentic_system", region: "NOAM",
     value_alignment_fidelity: 0.50, behavioral_predictability: 0.55, goal_stability: 0.48,
     deceptive_alignment_risk: 0.40, capability_overhang: 0.78, corrigibility_index: 0.55,
     oversight_effectiveness: 0.52, emergent_behavior_rate: 0.72, reward_hacking_tendency: 0.40,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // MAA-004: LATAM, narrow_ai → low, aligned_system/none
   {
-    entity_id: "MAA-004", model_category: "narrow_ai", region: "LATAM",
+    id: "MAA-004", model_category: "narrow_ai", region: "LATAM",
     value_alignment_fidelity: 0.88, behavioral_predictability: 0.85, goal_stability: 0.88,
     deceptive_alignment_risk: 0.08, capability_overhang: 0.10, corrigibility_index: 0.88,
     oversight_effectiveness: 0.88, emergent_behavior_rate: 0.08, reward_hacking_tendency: 0.08,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // MAA-005: MEA, frontier_llm → critical, oversight_failure
   {
-    entity_id: "MAA-005", model_category: "frontier_llm", region: "MEA",
+    id: "MAA-005", model_category: "frontier_llm", region: "MEA",
     value_alignment_fidelity: 0.28, behavioral_predictability: 0.55, goal_stability: 0.30,
     deceptive_alignment_risk: 0.55, capability_overhang: 0.60, corrigibility_index: 0.25,
     oversight_effectiveness: 0.20, emergent_behavior_rate: 0.58, reward_hacking_tendency: 0.60,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // MAA-006: EMEA, recommendation_system → moderate, none
   {
-    entity_id: "MAA-006", model_category: "recommendation_system", region: "EMEA",
+    id: "MAA-006", model_category: "recommendation_system", region: "EMEA",
     value_alignment_fidelity: 0.68, behavioral_predictability: 0.70, goal_stability: 0.68,
     deceptive_alignment_risk: 0.30, capability_overhang: 0.28, corrigibility_index: 0.68,
     oversight_effectiveness: 0.65, emergent_behavior_rate: 0.30, reward_hacking_tendency: 0.28,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // MAA-007: APAC, agentic_system → high, reward_hacking
   {
-    entity_id: "MAA-007", model_category: "agentic_system", region: "APAC",
+    id: "MAA-007", model_category: "agentic_system", region: "APAC",
     value_alignment_fidelity: 0.32, behavioral_predictability: 0.60, goal_stability: 0.38,
     deceptive_alignment_risk: 0.45, capability_overhang: 0.52, corrigibility_index: 0.55,
     oversight_effectiveness: 0.58, emergent_behavior_rate: 0.48, reward_hacking_tendency: 0.78,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // MAA-008: NOAM, frontier_llm → critical, power_seeking_emergence
   {
-    entity_id: "MAA-008", model_category: "frontier_llm", region: "NOAM",
+    id: "MAA-008", model_category: "frontier_llm", region: "NOAM",
     value_alignment_fidelity: 0.18, behavioral_predictability: 0.62, goal_stability: 0.20,
     deceptive_alignment_risk: 0.58, capability_overhang: 0.58, corrigibility_index: 0.55,
     oversight_effectiveness: 0.42, emergent_behavior_rate: 0.48, reward_hacking_tendency: 0.60,
@@ -189,7 +189,7 @@ export async function GET() {
       const sev  = alignmentSeverity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         region:                          e.region,
         model_category:                  e.model_category,
         alignment_risk:                  risk,

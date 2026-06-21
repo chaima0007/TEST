@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "REF-001",
+      id: "REF-001",
       name: "Programme d'Accueil Berlin",
       country: "Syria",
       sector: "Germany",
@@ -43,7 +43,7 @@ function getMockData() {
       confidence_level: 0.83,
     },
     {
-      entity_id: "REF-002",
+      id: "REF-002",
       name: "Centre d'Intégration Paris",
       country: "Afghanistan",
       sector: "France",
@@ -64,7 +64,7 @@ function getMockData() {
       confidence_level: 0.79,
     },
     {
-      entity_id: "REF-003",
+      id: "REF-003",
       name: "Foyer d'Accueil Bruxelles",
       country: "Sudan",
       sector: "Belgium",
@@ -85,7 +85,7 @@ function getMockData() {
       confidence_level: 0.85,
     },
     {
-      entity_id: "REF-004",
+      id: "REF-004",
       name: "Centre Varsovie",
       country: "Ukraine",
       sector: "Poland",
@@ -106,7 +106,7 @@ function getMockData() {
       confidence_level: 0.81,
     },
     {
-      entity_id: "REF-005",
+      id: "REF-005",
       name: "Programme Rome",
       country: "Ethiopia",
       sector: "Italy",
@@ -127,7 +127,7 @@ function getMockData() {
       confidence_level: 0.77,
     },
     {
-      entity_id: "REF-006",
+      id: "REF-006",
       name: "Accueil Madrid",
       country: "Venezuela",
       sector: "Spain",
@@ -148,7 +148,7 @@ function getMockData() {
       confidence_level: 0.88,
     },
     {
-      entity_id: "REF-007",
+      id: "REF-007",
       name: "Centre Amsterdam",
       country: "Colombia",
       sector: "Netherlands",
@@ -169,7 +169,7 @@ function getMockData() {
       confidence_level: 0.91,
     },
     {
-      entity_id: "REF-008",
+      id: "REF-008",
       name: "Programme Genève",
       country: "Morocco",
       sector: "Switzerland",

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 interface CGEntity {
-  entity_id: string; name: string; country: string; sector: string;
+  id: string; name: string; country: string; sector: string;
   composite_score: number; arctic_resources_militarization_score: number;
   climate_migration_weaponization_score: number; green_tech_monopoly_score: number;
   climate_sabotage_score: number; risk_level: string;
@@ -209,13 +209,13 @@ export default function ClimateGeopoliticsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map(entity => (
-            <div key={entity.entity_id} onClick={() => setSel(entity)}
+            <div key={entity.id} onClick={() => setSel(entity)}
               className={`bg-slate-900 rounded-xl p-4 border cursor-pointer transition-all ${RB[entity.risk_level] ?? "border-slate-800"}`}
               onMouseEnter={e => (e.currentTarget.style.borderColor = "#22c55e50")}
               onMouseLeave={e => (e.currentTarget.style.borderColor = "")}>
               <div className="flex justify-between mb-2">
                 <div>
-                  <p className="text-xs font-mono text-slate-500">{entity.entity_id}</p>
+                  <p className="text-xs font-mono text-slate-500">{entity.id}</p>
                   <p className="text-sm font-semibold text-white">{entity.name}</p>
                   <p className="text-xs text-slate-500">{entity.country}</p>
                 </div>

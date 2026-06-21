@@ -7,7 +7,7 @@ if (!process.env.SWARM_API_URL) {
 
 const entities = [
   {
-    entity_id: "LAB-001",
+    id: "LAB-001",
     name: "Uber Technologies Global",
     country: "États-Unis",
     sector: "Transport & Mobilité",
@@ -24,7 +24,7 @@ const entities = [
     alert_level: "ROUGE",
   },
   {
-    entity_id: "LAB-002",
+    id: "LAB-002",
     name: "Amazon Flex Réseau",
     country: "États-Unis",
     sector: "Livraison & Logistique",
@@ -41,7 +41,7 @@ const entities = [
     alert_level: "ROUGE",
   },
   {
-    entity_id: "LAB-003",
+    id: "LAB-003",
     name: "Deliveroo Europe",
     country: "Royaume-Uni",
     sector: "Livraison Alimentaire",
@@ -58,7 +58,7 @@ const entities = [
     alert_level: "ROUGE",
   },
   {
-    entity_id: "LAB-004",
+    id: "LAB-004",
     name: "Glovo Espagne & Méditerranée",
     country: "Espagne",
     sector: "Économie des Courses",
@@ -75,7 +75,7 @@ const entities = [
     alert_level: "ORANGE",
   },
   {
-    entity_id: "LAB-005",
+    id: "LAB-005",
     name: "TaskRabbit Plateforme",
     country: "États-Unis",
     sector: "Services à Domicile",
@@ -92,7 +92,7 @@ const entities = [
     alert_level: "ORANGE",
   },
   {
-    entity_id: "LAB-006",
+    id: "LAB-006",
     name: "Fiverr Pro Network",
     country: "Israël",
     sector: "Travail Créatif en Ligne",
@@ -109,7 +109,7 @@ const entities = [
     alert_level: "JAUNE",
   },
   {
-    entity_id: "LAB-007",
+    id: "LAB-007",
     name: "Coopérative Transport Amsterdam",
     country: "Pays-Bas",
     sector: "Coopérative Numérique",
@@ -126,7 +126,7 @@ const entities = [
     alert_level: "VERT",
   },
   {
-    entity_id: "LAB-008",
+    id: "LAB-008",
     name: "Fairwork Certified Platform",
     country: "Allemagne",
     sector: "Plateforme Éthique",

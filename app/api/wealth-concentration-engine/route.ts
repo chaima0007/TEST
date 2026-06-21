@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // democratic_process_plutocratic_capture≥0.70 AND wealth_effect_political_power≥0.65 → plutocracy_lock_in
   // composite≥60 → critical
   {
-    entity_id: "WCE-001", economic_zone: "Euro-Atlantic", region: "Global_North",
+    id: "WCE-001", economic_zone: "Euro-Atlantic", region: "Global_North",
     gini_coefficient_extreme_level: 0.85,          billionaire_wealth_gdp_ratio: 0.78,
     top_1_percent_wealth_share: 0.68,              tax_evasion_elite_impunity: 0.72,
     offshore_wealth_accumulation_rate: 0.75,       democratic_process_plutocratic_capture: 0.82,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   // WCE-002 — Oceania, Pacific_Rim → low, none
   // All values low → composite<20, no pattern triggered
   {
-    entity_id: "WCE-002", economic_zone: "Oceania", region: "Pacific_Rim",
+    id: "WCE-002", economic_zone: "Oceania", region: "Pacific_Rim",
     gini_coefficient_extreme_level: 0.10,          billionaire_wealth_gdp_ratio: 0.08,
     top_1_percent_wealth_share: 0.10,              tax_evasion_elite_impunity: 0.08,
     offshore_wealth_accumulation_rate: 0.10,       democratic_process_plutocratic_capture: 0.08,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   // democratic_process_plutocratic_capture=0.55<0.70 → avoids plutocracy_lock_in
   // composite in [40,60) → high
   {
-    entity_id: "WCE-003", economic_zone: "Anglo-Saxon", region: "NOAM",
+    id: "WCE-003", economic_zone: "Anglo-Saxon", region: "NOAM",
     gini_coefficient_extreme_level: 0.62,          billionaire_wealth_gdp_ratio: 0.72,
     top_1_percent_wealth_share: 0.78,              tax_evasion_elite_impunity: 0.48,
     offshore_wealth_accumulation_rate: 0.55,       democratic_process_plutocratic_capture: 0.55,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   // WCE-004 — Nordic, EMEA → low, none
   // All values low → composite<20, no pattern triggered
   {
-    entity_id: "WCE-004", economic_zone: "Nordic", region: "EMEA",
+    id: "WCE-004", economic_zone: "Nordic", region: "EMEA",
     gini_coefficient_extreme_level: 0.08,          billionaire_wealth_gdp_ratio: 0.10,
     top_1_percent_wealth_share: 0.08,              tax_evasion_elite_impunity: 0.10,
     offshore_wealth_accumulation_rate: 0.08,       democratic_process_plutocratic_capture: 0.10,
@@ -72,7 +72,7 @@ const MOCK_ENTITIES = [
   // intergenerational_mobility_collapse=0.60<0.70 → avoids social_immobility_trap
   // composite≥60 → critical
   {
-    entity_id: "WCE-005", economic_zone: "Offshore_Finance", region: "Global_South",
+    id: "WCE-005", economic_zone: "Offshore_Finance", region: "Global_South",
     gini_coefficient_extreme_level: 0.82,          billionaire_wealth_gdp_ratio: 0.75,
     top_1_percent_wealth_share: 0.62,              tax_evasion_elite_impunity: 0.85,
     offshore_wealth_accumulation_rate: 0.78,       democratic_process_plutocratic_capture: 0.60,
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
   // Values below pattern thresholds → no pattern
   // composite in [20,40) → moderate
   {
-    entity_id: "WCE-006", economic_zone: "Emerging_Market", region: "LATAM",
+    id: "WCE-006", economic_zone: "Emerging_Market", region: "LATAM",
     gini_coefficient_extreme_level: 0.32,          billionaire_wealth_gdp_ratio: 0.28,
     top_1_percent_wealth_share: 0.30,              tax_evasion_elite_impunity: 0.28,
     offshore_wealth_accumulation_rate: 0.30,       democratic_process_plutocratic_capture: 0.30,
@@ -104,7 +104,7 @@ const MOCK_ENTITIES = [
   // top_1_percent_wealth_share=0.55<0.70 → avoids wealth_singularity
   // composite in [40,60) → high
   {
-    entity_id: "WCE-007", economic_zone: "Post-Industrial", region: "APAC",
+    id: "WCE-007", economic_zone: "Post-Industrial", region: "APAC",
     gini_coefficient_extreme_level: 0.58,          billionaire_wealth_gdp_ratio: 0.52,
     top_1_percent_wealth_share: 0.55,              tax_evasion_elite_impunity: 0.48,
     offshore_wealth_accumulation_rate: 0.50,       democratic_process_plutocratic_capture: 0.52,
@@ -123,7 +123,7 @@ const MOCK_ENTITIES = [
   // tax_evasion_elite_impunity=0.62<0.70 → avoids tax_impunity_regime
   // composite≥60 → critical
   {
-    entity_id: "WCE-008", economic_zone: "Oligarchic_Media", region: "MEA",
+    id: "WCE-008", economic_zone: "Oligarchic_Media", region: "MEA",
     gini_coefficient_extreme_level: 0.80,          billionaire_wealth_gdp_ratio: 0.72,
     top_1_percent_wealth_share: 0.62,              tax_evasion_elite_impunity: 0.62,
     offshore_wealth_accumulation_rate: 0.70,       democratic_process_plutocratic_capture: 0.60,
@@ -238,7 +238,7 @@ export async function GET() {
       const sig   = signal(risk);
 
       return {
-        entity_id:                              e.entity_id,
+        id:                              e.entity_id,
         economic_zone:                          e.economic_zone,
         region:                                 e.region,
         concentration_score:                    conc,

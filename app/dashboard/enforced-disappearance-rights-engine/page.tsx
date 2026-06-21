@@ -21,7 +21,7 @@ function GaugeRing({ value, stroke }: { value: number; stroke: string }) {
 }
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   composite_score: number;
@@ -164,11 +164,11 @@ export default function EnforcedDisappearanceRightsPage() {
         {filtered.map(e => {
           const cfg = RISK_CONFIG[e.risk_level] ?? RISK_CONFIG.faible;
           return (
-            <button key={e.entity_id} onClick={() => setSelected(e)}
+            <button key={e.id} onClick={() => setSelected(e)}
               className={`text-left border rounded-xl p-4 transition-all hover:scale-[1.01] ${RB[e.risk_level]}`}>
               <div className="flex justify-between items-start mb-3">
                 <div className="min-w-0">
-                  <span className="text-xs font-mono text-slate-500">{e.entity_id}</span>
+                  <span className="text-xs font-mono text-slate-500">{e.id}</span>
                   <p className="font-semibold text-sm text-slate-100 line-clamp-1 mt-0.5">{e.name}</p>
                   <p className="text-xs text-slate-400">{e.country}</p>
                 </div>

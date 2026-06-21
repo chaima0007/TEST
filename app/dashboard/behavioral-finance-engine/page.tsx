@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 interface EntityData {
-  entity_id: string;
+  id: string;
   market_segment: string;
   region: string;
   cognitive_score: number;
@@ -203,7 +203,7 @@ function DetailModal({ entity, onClose }: { entity: EntityData; onClose: () => v
                 {SEVERITY_LABEL[entity.severity] ?? entity.severity}
               </span>
             </div>
-            <h2 className="text-white font-bold text-lg">{entity.entity_id}</h2>
+            <h2 className="text-white font-bold text-lg">{entity.id}</h2>
             <p className="text-slate-400 text-sm">
               {entity.market_segment} · {entity.region} · Composite:{" "}
               <span style={{ color: riskColor }}>{entity.composite_score}</span>
@@ -462,7 +462,7 @@ export default function BehavioralFinanceEnginePage() {
             const color = RISK_COLOR[entity.risk_level] ?? "#94a3b8";
             return (
               <div
-                key={entity.entity_id}
+                key={entity.id}
                 onClick={() => setSelected(entity)}
                 className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-amber-700 transition-all hover:bg-slate-800/60"
               >
@@ -481,7 +481,7 @@ export default function BehavioralFinanceEnginePage() {
                         </span>
                       )}
                     </div>
-                    <h3 className="text-white font-semibold text-sm">{entity.entity_id}</h3>
+                    <h3 className="text-white font-semibold text-sm">{entity.id}</h3>
                     <p className="text-slate-400 text-xs">{entity.market_segment} · {entity.region}</p>
                   </div>
                   <div className="flex-shrink-0">

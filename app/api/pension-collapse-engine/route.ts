@@ -8,7 +8,7 @@ if (!process.env.SWARM_API_URL) {
 const NOW = new Date().toISOString().slice(0, 10);
 
 interface PCEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -54,7 +54,7 @@ function buildEntity(
   const risk = riskLevel(composite);
   const pattern = computePattern(s1, s2, s4);
   return {
-    entity_id: id,
+    id: id,
     name,
     country,
     sector,

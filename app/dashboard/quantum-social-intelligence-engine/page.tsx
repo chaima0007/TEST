@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type Entity = {
-  entity_id: string; collective_type: string; region: string;
+  id: string; collective_type: string; region: string;
   social_risk: string; emergence_pattern: string;
   collective_severity: string; recommended_action: string;
   coherence_score: number; contagion_score: number;
@@ -81,7 +81,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
       <div className="bg-slate-900 border border-pink-500/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e=>e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-white">{entity.id}</span>
             <span className="ml-2 text-indigo-400 text-xs">{entity.collective_type}</span>
             <span className="ml-2 text-pink-400 text-xs">{entity.region}</span>
           </div>
@@ -233,10 +233,10 @@ export default function QuantumSocialIntelligenceDashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map(e=>(
-          <div key={e.entity_id} onClick={()=>setSelected(e)}
+          <div key={e.id} onClick={()=>setSelected(e)}
             className="bg-slate-900 border border-pink-500/30 rounded-xl p-4 cursor-pointer hover:border-indigo-500 transition-colors">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white">{e.entity_id}</span>
+              <span className="font-bold text-white">{e.id}</span>
               <span className="text-xs text-slate-400">{e.region}</span>
             </div>
             <div className="text-xs text-indigo-400 mb-2 truncate">{e.collective_type}</div>

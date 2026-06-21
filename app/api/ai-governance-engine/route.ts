@@ -12,7 +12,7 @@ const MOCK_ENTITIES = [
   // AI_regulatory_fragmentation_index>=0.70 AND AI_deployment_speed_vs_governance_gap>=0.65 → governance_vacuum_crisis
   // composite≥60 → critical
   {
-    entity_id: "AGE-001", governance_context: "national_AI_regulation", region: "EMEA",
+    id: "AGE-001", governance_context: "national_AI_regulation", region: "EMEA",
     AI_regulatory_fragmentation_index: 0.80,
     AI_safety_standard_gap: 0.75,
     autonomous_system_accountability_vacuum: 0.72,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   // AGE-002 — APAC, supranational_governance → low, none
   // All values low → composite<20, no pattern triggered
   {
-    entity_id: "AGE-002", governance_context: "supranational_governance", region: "APAC",
+    id: "AGE-002", governance_context: "supranational_governance", region: "APAC",
     AI_regulatory_fragmentation_index: 0.10,
     AI_safety_standard_gap: 0.12,
     autonomous_system_accountability_vacuum: 0.10,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
   // reg_frag=0.55<0.70 → avoids governance_vacuum_crisis
   // composite in [40,60) → high
   {
-    entity_id: "AGE-003", governance_context: "accountability_framework", region: "NOAM",
+    id: "AGE-003", governance_context: "accountability_framework", region: "NOAM",
     AI_regulatory_fragmentation_index: 0.55,
     AI_safety_standard_gap: 0.50,
     autonomous_system_accountability_vacuum: 0.78,
@@ -80,7 +80,7 @@ const MOCK_ENTITIES = [
   // AGE-004 — LATAM, democratic_oversight → low, none
   // All values very low → composite<20, no pattern triggered
   {
-    entity_id: "AGE-004", governance_context: "democratic_oversight", region: "LATAM",
+    id: "AGE-004", governance_context: "democratic_oversight", region: "LATAM",
     AI_regulatory_fragmentation_index: 0.08,
     AI_safety_standard_gap: 0.10,
     autonomous_system_accountability_vacuum: 0.08,
@@ -105,7 +105,7 @@ const MOCK_ENTITIES = [
   // acc_vac=0.62<0.70 → avoids accountability_collapse
   // composite≥60 → critical
   {
-    entity_id: "AGE-005", governance_context: "industry_capture_risk", region: "MEA",
+    id: "AGE-005", governance_context: "industry_capture_risk", region: "MEA",
     AI_regulatory_fragmentation_index: 0.75,
     AI_safety_standard_gap: 0.70,
     autonomous_system_accountability_vacuum: 0.62,
@@ -127,7 +127,7 @@ const MOCK_ENTITIES = [
   // AGE-006 — EMEA, standards_development → moderate, none
   // All values moderate → composite in [20,40), no pattern triggered
   {
-    entity_id: "AGE-006", governance_context: "standards_development", region: "EMEA",
+    id: "AGE-006", governance_context: "standards_development", region: "EMEA",
     AI_regulatory_fragmentation_index: 0.35,
     AI_safety_standard_gap: 0.32,
     autonomous_system_accountability_vacuum: 0.28,
@@ -153,7 +153,7 @@ const MOCK_ENTITIES = [
   // reg_cap=0.48<0.70 → avoids AI_regulatory_capture
   // composite in [40,60) → high
   {
-    entity_id: "AGE-007", governance_context: "existential_safety_gap", region: "APAC",
+    id: "AGE-007", governance_context: "existential_safety_gap", region: "APAC",
     AI_regulatory_fragmentation_index: 0.55,
     AI_safety_standard_gap: 0.72,
     autonomous_system_accountability_vacuum: 0.55,
@@ -180,7 +180,7 @@ const MOCK_ENTITIES = [
   // exist_risk=0.68<0.70 → avoids existential_risk_blindspot
   // composite≥60 → critical
   {
-    entity_id: "AGE-008", governance_context: "geopolitical_AI_fragmentation", region: "NOAM",
+    id: "AGE-008", governance_context: "geopolitical_AI_fragmentation", region: "NOAM",
     AI_regulatory_fragmentation_index: 0.65,
     AI_safety_standard_gap: 0.62,
     autonomous_system_accountability_vacuum: 0.62,
@@ -307,7 +307,7 @@ export async function GET() {
       const sig  = signal(risk);
 
       return {
-        entity_id:                              e.entity_id,
+        id:                              e.entity_id,
         governance_context:                     e.governance_context,
         region:                                 e.region,
         regulatory_score:                       reg,

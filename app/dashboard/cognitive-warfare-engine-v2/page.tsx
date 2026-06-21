@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface CognitiveWarfareEntity {
-  entity_id: string;
+  id: string;
   region: string;
   operation_type: string;
   warfare_risk: string;
@@ -172,7 +172,7 @@ function DetailModal({ entity, onClose }: { entity: CognitiveWarfareEntity; onCl
           <GaugeRing score={entity.warfare_composite} label="" color={ringColor} />
           <div className="flex-1 min-w-0">
             <h2 className="text-white font-bold text-lg truncate">
-              {OP_ICON[entity.operation_type] || "🎯"} {entity.entity_id}
+              {OP_ICON[entity.operation_type] || "🎯"} {entity.id}
             </h2>
             <p className="text-slate-400 text-sm">{entity.operation_type.replace(/_/g, " ")} · {entity.region}</p>
             <div className="flex gap-2 mt-1 flex-wrap">
@@ -282,7 +282,7 @@ function EntityCard({ entity, onClick }: { entity: CognitiveWarfareEntity; onCli
         <GaugeRing score={entity.warfare_composite} label="" color={ringColor} />
         <div className="flex-1 min-w-0">
           <div className="text-white font-semibold truncate">
-            {OP_ICON[entity.operation_type] || "🎯"} {entity.entity_id}
+            {OP_ICON[entity.operation_type] || "🎯"} {entity.id}
           </div>
           <div className="text-slate-400 text-xs">{entity.operation_type.replace(/_/g, " ")} · {entity.region}</div>
           <div className="flex gap-2 mt-1 flex-wrap">
@@ -479,7 +479,7 @@ export default function CognitiveWarfareEnginePage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((e) => (
-              <EntityCard key={e.entity_id} entity={e} onClick={() => setSelected(e)} />
+              <EntityCard key={e.id} entity={e} onClick={() => setSelected(e)} />
             ))}
           </div>
         )}

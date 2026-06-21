@@ -17,14 +17,14 @@ const MOCK = {
   ],
   critical_alerts: [],
   entities: [
-    { entity_id: "CHN", name: "Chine", composite_score: 84.15, risk_level: "critique", estimated_freedom_religion_belief_index: 8.42 },
-    { entity_id: "IRN", name: "Iran", composite_score: 83.5, risk_level: "critique", estimated_freedom_religion_belief_index: 8.35 },
-    { entity_id: "SAU", name: "Arabie Saoudite", composite_score: 81.6, risk_level: "critique", estimated_freedom_religion_belief_index: 8.16 },
-    { entity_id: "MMR", name: "Myanmar", composite_score: 80.85, risk_level: "critique", estimated_freedom_religion_belief_index: 8.09 },
-    { entity_id: "PAK", name: "Pakistan", composite_score: 58.25, risk_level: "élevé", estimated_freedom_religion_belief_index: 5.83 },
-    { entity_id: "NGA", name: "Nigeria", composite_score: 57.65, risk_level: "élevé", estimated_freedom_religion_belief_index: 5.77 },
-    { entity_id: "IND", name: "Inde", composite_score: 37.5, risk_level: "modéré", estimated_freedom_religion_belief_index: 3.75 },
-    { entity_id: "NOR", name: "Norvège", composite_score: 7.15, risk_level: "faible", estimated_freedom_religion_belief_index: 0.72 },
+    { id: "CHN", name: "Chine", composite_score: 84.15, risk_level: "critique", estimated_freedom_religion_belief_index: 8.42 },
+    { id: "IRN", name: "Iran", composite_score: 83.5, risk_level: "critique", estimated_freedom_religion_belief_index: 8.35 },
+    { id: "SAU", name: "Arabie Saoudite", composite_score: 81.6, risk_level: "critique", estimated_freedom_religion_belief_index: 8.16 },
+    { id: "MMR", name: "Myanmar", composite_score: 80.85, risk_level: "critique", estimated_freedom_religion_belief_index: 8.09 },
+    { id: "PAK", name: "Pakistan", composite_score: 58.25, risk_level: "élevé", estimated_freedom_religion_belief_index: 5.83 },
+    { id: "NGA", name: "Nigeria", composite_score: 57.65, risk_level: "élevé", estimated_freedom_religion_belief_index: 5.77 },
+    { id: "IND", name: "Inde", composite_score: 37.5, risk_level: "modéré", estimated_freedom_religion_belief_index: 3.75 },
+    { id: "NOR", name: "Norvège", composite_score: 7.15, risk_level: "faible", estimated_freedom_religion_belief_index: 0.72 },
   ],
 };
 

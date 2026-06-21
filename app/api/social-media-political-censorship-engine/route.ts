@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "SMC-001",
+      id: "SMC-001",
       name: "Chine/Grande Muraille Feu — WeChat Weibo Contrôle Total, Algorithmes Surveillance & Mots-Clés Censurés Millions",
       country: "Chine",
       platform_content_removal_political_severity_score: 97.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SMC-002",
+      id: "SMC-002",
       name: "Russie/Blocages Twitter Meta — Loi Souveraineté Numérique RuNet, VPN Criminalisés & Blogueurs Emprisonnés Guerre",
       country: "Russie",
       platform_content_removal_political_severity_score: 93.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SMC-003",
+      id: "SMC-003",
       name: "Iran/VPN Généralisés — Coupures Élection Mahsa Amini, Instagram TikTok Bloqués & Cyber Police Arrestations",
       country: "Iran",
       platform_content_removal_political_severity_score: 90.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SMC-004",
+      id: "SMC-004",
       name: "Inde/Shutdowns 2022 — 584 Internet Coupures Record Mondial, Twitter Ordres Retrait & Farmer Protests Blocages",
       country: "Inde",
       platform_content_removal_political_severity_score: 87.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SMC-005",
+      id: "SMC-005",
       name: "Éthiopie/Tigré — Coupures Internet 1 An Conflit, Journalistes Bloqués & Propagande État Réseaux Sociaux",
       country: "Éthiopie",
       platform_content_removal_political_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SMC-006",
+      id: "SMC-006",
       name: "Pakistan/Blocages PTI — Imran Khan Arrestations Twitter X Suspendu, TikTok Banni & Journalistes Disparus",
       country: "Pakistan",
       platform_content_removal_political_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SMC-007",
+      id: "SMC-007",
       name: "EFF/Access Now KeepItOn — Coalition Anti-Shutdown, Digital Rights Atlas & Rapport Annuel Coupures Internet",
       country: "Global",
       platform_content_removal_political_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SMC-008",
+      id: "SMC-008",
       name: "ONU/RES 32/13 — Internet Droit Fondamental, Rapporteur Spécial Expression En Ligne & GNI Principes",
       country: "Global",
       platform_content_removal_political_severity_score: 5.0,

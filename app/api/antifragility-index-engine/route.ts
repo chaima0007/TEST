@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "AF-001",
+      id: "AF-001",
       name: "Singapour",
       country: "Singapour",
       sector: "Nation-État",
@@ -47,7 +47,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AF-002",
+      id: "AF-002",
       name: "Suisse",
       country: "Suisse",
       sector: "Nation-État",
@@ -67,7 +67,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AF-003",
+      id: "AF-003",
       name: "Israël",
       country: "Israël",
       sector: "Nation-État",
@@ -87,7 +87,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AF-004",
+      id: "AF-004",
       name: "États-Unis",
       country: "États-Unis",
       sector: "Nation-État",
@@ -107,7 +107,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AF-005",
+      id: "AF-005",
       name: "Allemagne",
       country: "Allemagne",
       sector: "Nation-État",
@@ -127,7 +127,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AF-006",
+      id: "AF-006",
       name: "Brésil",
       country: "Brésil",
       sector: "Nation-État",
@@ -147,7 +147,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AF-007",
+      id: "AF-007",
       name: "Pakistan",
       country: "Pakistan",
       sector: "Nation-État",
@@ -167,7 +167,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AF-008",
+      id: "AF-008",
       name: "Venezuela",
       country: "Venezuela",
       sector: "Nation-État",

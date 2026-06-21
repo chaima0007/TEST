@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // ─── Math (mirrors Python exactly) ───────────────────────────────────────────
 
 interface CtpInput {
-  entity_id: string;
+  id: string;
   ecosystem_type: string;
   region: string;
   temperature_anomaly: number;
@@ -105,7 +105,7 @@ function analyzeEntity(e: CtpInput) {
   const signal = tippingSignal(e, risk, comp);
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     region: e.region,
     ecosystem_type: e.ecosystem_type,
     tipping_risk: risk,
@@ -127,7 +127,7 @@ function analyzeEntity(e: CtpInput) {
 
 const mockEntities: CtpInput[] = [
   {
-    entity_id: "CTP-001", region: "EMEA", ecosystem_type: "arctic_ecosystem",
+    id: "CTP-001", region: "EMEA", ecosystem_type: "arctic_ecosystem",
     temperature_anomaly: 0.88, ice_sheet_loss_rate: 0.82, permafrost_thaw_index: 0.75,
     ocean_acidification_level: 0.60, methane_release_rate: 0.72,
     coral_bleaching_intensity: 0.70, arctic_sea_ice_decline: 0.68,
@@ -138,7 +138,7 @@ const mockEntities: CtpInput[] = [
     ecosystem_resilience: 0.18, adaptation_capacity: 0.20,
   },
   {
-    entity_id: "CTP-002", region: "APAC", ecosystem_type: "temperate_forest",
+    id: "CTP-002", region: "APAC", ecosystem_type: "temperate_forest",
     temperature_anomaly: 0.12, ice_sheet_loss_rate: 0.10, permafrost_thaw_index: 0.11,
     ocean_acidification_level: 0.10, methane_release_rate: 0.11,
     coral_bleaching_intensity: 0.10, arctic_sea_ice_decline: 0.10,
@@ -149,7 +149,7 @@ const mockEntities: CtpInput[] = [
     ecosystem_resilience: 0.92, adaptation_capacity: 0.88,
   },
   {
-    entity_id: "CTP-003", region: "NOAM", ecosystem_type: "boreal_forest",
+    id: "CTP-003", region: "NOAM", ecosystem_type: "boreal_forest",
     temperature_anomaly: 0.48, ice_sheet_loss_rate: 0.45, permafrost_thaw_index: 0.78,
     ocean_acidification_level: 0.30, methane_release_rate: 0.72,
     coral_bleaching_intensity: 0.35, arctic_sea_ice_decline: 0.38,
@@ -160,7 +160,7 @@ const mockEntities: CtpInput[] = [
     ecosystem_resilience: 0.38, adaptation_capacity: 0.40,
   },
   {
-    entity_id: "CTP-004", region: "LATAM", ecosystem_type: "ocean_ecosystem",
+    id: "CTP-004", region: "LATAM", ecosystem_type: "ocean_ecosystem",
     temperature_anomaly: 0.12, ice_sheet_loss_rate: 0.10, permafrost_thaw_index: 0.10,
     ocean_acidification_level: 0.11, methane_release_rate: 0.10,
     coral_bleaching_intensity: 0.11, arctic_sea_ice_decline: 0.10,
@@ -171,7 +171,7 @@ const mockEntities: CtpInput[] = [
     ecosystem_resilience: 0.90, adaptation_capacity: 0.88,
   },
   {
-    entity_id: "CTP-005", region: "MEA", ecosystem_type: "tropical_rainforest",
+    id: "CTP-005", region: "MEA", ecosystem_type: "tropical_rainforest",
     temperature_anomaly: 0.70, ice_sheet_loss_rate: 0.65, permafrost_thaw_index: 0.60,
     ocean_acidification_level: 0.58, methane_release_rate: 0.65,
     coral_bleaching_intensity: 0.65, arctic_sea_ice_decline: 0.50,
@@ -182,7 +182,7 @@ const mockEntities: CtpInput[] = [
     ecosystem_resilience: 0.22, adaptation_capacity: 0.25,
   },
   {
-    entity_id: "CTP-006", region: "EMEA", ecosystem_type: "coastal_ecosystem",
+    id: "CTP-006", region: "EMEA", ecosystem_type: "coastal_ecosystem",
     temperature_anomaly: 0.28, ice_sheet_loss_rate: 0.25, permafrost_thaw_index: 0.22,
     ocean_acidification_level: 0.22, methane_release_rate: 0.22,
     coral_bleaching_intensity: 0.25, arctic_sea_ice_decline: 0.20,
@@ -193,7 +193,7 @@ const mockEntities: CtpInput[] = [
     ecosystem_resilience: 0.65, adaptation_capacity: 0.62,
   },
   {
-    entity_id: "CTP-007", region: "APAC", ecosystem_type: "coral_reef",
+    id: "CTP-007", region: "APAC", ecosystem_type: "coral_reef",
     temperature_anomaly: 0.48, ice_sheet_loss_rate: 0.40, permafrost_thaw_index: 0.35,
     ocean_acidification_level: 0.78, methane_release_rate: 0.42,
     coral_bleaching_intensity: 0.72, arctic_sea_ice_decline: 0.35,
@@ -204,7 +204,7 @@ const mockEntities: CtpInput[] = [
     ecosystem_resilience: 0.40, adaptation_capacity: 0.42,
   },
   {
-    entity_id: "CTP-008", region: "NOAM", ecosystem_type: "arctic_ecosystem",
+    id: "CTP-008", region: "NOAM", ecosystem_type: "arctic_ecosystem",
     temperature_anomaly: 0.72, ice_sheet_loss_rate: 0.75, permafrost_thaw_index: 0.68,
     ocean_acidification_level: 0.55, methane_release_rate: 0.62,
     coral_bleaching_intensity: 0.62, arctic_sea_ice_decline: 0.82,

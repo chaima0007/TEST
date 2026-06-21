@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // creative_class_extinction: AI_creative_displacement_rate>=0.70 AND creator_income_collapse_index>=0.65
   // composite >= 60 → critical
   {
-    entity_id: "GAE-001", creative_sector: "illustration_design", region: "NOAM",
+    id: "GAE-001", creative_sector: "illustration_design", region: "NOAM",
     AI_creative_displacement_rate: 0.85,
     copyright_training_data_exploitation: 0.60,
     creator_income_collapse_index: 0.80,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   // GAE-002 — low, pattern=none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "GAE-002", creative_sector: "artisanal_craft", region: "EMEA",
+    id: "GAE-002", creative_sector: "artisanal_craft", region: "EMEA",
     AI_creative_displacement_rate: 0.08,
     copyright_training_data_exploitation: 0.08,
     creator_income_collapse_index: 0.10,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   // creative_class_extinction must NOT fire: AI_creative_displacement_rate<0.70 OR creator_income_collapse_index<0.65
   // composite >=40 and <60 → high
   {
-    entity_id: "GAE-003", creative_sector: "digital_media", region: "APAC",
+    id: "GAE-003", creative_sector: "digital_media", region: "APAC",
     AI_creative_displacement_rate: 0.50,
     copyright_training_data_exploitation: 0.55,
     creator_income_collapse_index: 0.45,
@@ -78,7 +78,7 @@ const MOCK_ENTITIES = [
   // GAE-004 — low, pattern=none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "GAE-004", creative_sector: "folk_traditions", region: "LATAM",
+    id: "GAE-004", creative_sector: "folk_traditions", region: "LATAM",
     AI_creative_displacement_rate: 0.12,
     copyright_training_data_exploitation: 0.10,
     creator_income_collapse_index: 0.10,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
   // generative_monopoly_capture must NOT fire: generative_model_monopoly_concentration<0.70 OR AI_gatekeeper_content_control<0.65
   // composite >= 60 → critical
   {
-    entity_id: "GAE-005", creative_sector: "music_production", region: "MEA",
+    id: "GAE-005", creative_sector: "music_production", region: "MEA",
     AI_creative_displacement_rate: 0.62,
     copyright_training_data_exploitation: 0.65,
     creator_income_collapse_index: 0.58,
@@ -125,7 +125,7 @@ const MOCK_ENTITIES = [
   // GAE-006 — moderate, pattern=none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "GAE-006", creative_sector: "indie_publishing", region: "EMEA",
+    id: "GAE-006", creative_sector: "indie_publishing", region: "EMEA",
     AI_creative_displacement_rate: 0.30,
     copyright_training_data_exploitation: 0.25,
     creator_income_collapse_index: 0.28,
@@ -151,7 +151,7 @@ const MOCK_ENTITIES = [
   // cultural_homogenization_crisis must NOT fire: AI_aesthetic_homogenization_risk<0.70 OR AI_cultural_production_homogeny<0.65
   // composite >=40 and <60 → high
   {
-    entity_id: "GAE-007", creative_sector: "stock_photography", region: "NOAM",
+    id: "GAE-007", creative_sector: "stock_photography", region: "NOAM",
     AI_creative_displacement_rate: 0.50,
     copyright_training_data_exploitation: 0.82,
     creator_income_collapse_index: 0.48,
@@ -178,7 +178,7 @@ const MOCK_ENTITIES = [
   // IP_extraction_empire must NOT fire: copyright_training_data_exploitation<0.70 OR training_consent_violation_scale<0.65
   // composite >= 60 → critical
   {
-    entity_id: "GAE-008", creative_sector: "journalism_news", region: "APAC",
+    id: "GAE-008", creative_sector: "journalism_news", region: "APAC",
     AI_creative_displacement_rate: 0.65,
     copyright_training_data_exploitation: 0.65,
     creator_income_collapse_index: 0.60,
@@ -297,7 +297,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                              e.entity_id,
+        id:                              e.entity_id,
         creative_sector:                        e.creative_sector,
         region:                                 e.region,
         displacement_score:                     disp,

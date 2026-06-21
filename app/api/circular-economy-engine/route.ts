@@ -14,7 +14,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // CEE-008: critical / systemic_inertia
 const MOCK_ENTITIES = [
   {
-    entity_id: "CEE-001", economy_sector: "manufacturing", region: "EMEA",
+    id: "CEE-001", economy_sector: "manufacturing", region: "EMEA",
     material_circularity_rate: 0.20, waste_generation_index: 0.55, resource_efficiency_score: 0.25,
     product_lifecycle_extension: 0.30, regenerative_business_model_adoption: 0.30, supply_loop_closure_rate: 0.28,
     industrial_symbiosis_level: 0.28, consumer_circular_behavior: 0.30, repair_reuse_accessibility: 0.32,
@@ -23,7 +23,7 @@ const MOCK_ENTITIES = [
     social_circular_equity: 0.32, systemic_circular_transition_readiness: 0.28,
   },
   {
-    entity_id: "CEE-002", economy_sector: "services", region: "APAC",
+    id: "CEE-002", economy_sector: "services", region: "APAC",
     material_circularity_rate: 0.85, waste_generation_index: 0.10, resource_efficiency_score: 0.88,
     product_lifecycle_extension: 0.82, regenerative_business_model_adoption: 0.85, supply_loop_closure_rate: 0.80,
     industrial_symbiosis_level: 0.82, consumer_circular_behavior: 0.85, repair_reuse_accessibility: 0.80,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
     social_circular_equity: 0.82, systemic_circular_transition_readiness: 0.88,
   },
   {
-    entity_id: "CEE-003", economy_sector: "logistics", region: "NOAM",
+    id: "CEE-003", economy_sector: "logistics", region: "NOAM",
     material_circularity_rate: 0.42, waste_generation_index: 0.78, resource_efficiency_score: 0.45,
     product_lifecycle_extension: 0.40, regenerative_business_model_adoption: 0.45, supply_loop_closure_rate: 0.28,
     industrial_symbiosis_level: 0.40, consumer_circular_behavior: 0.45, repair_reuse_accessibility: 0.42,
@@ -41,7 +41,7 @@ const MOCK_ENTITIES = [
     social_circular_equity: 0.45, systemic_circular_transition_readiness: 0.42,
   },
   {
-    entity_id: "CEE-004", economy_sector: "technology", region: "LATAM",
+    id: "CEE-004", economy_sector: "technology", region: "LATAM",
     material_circularity_rate: 0.82, waste_generation_index: 0.12, resource_efficiency_score: 0.80,
     product_lifecycle_extension: 0.85, regenerative_business_model_adoption: 0.80, supply_loop_closure_rate: 0.82,
     industrial_symbiosis_level: 0.80, consumer_circular_behavior: 0.82, repair_reuse_accessibility: 0.85,
@@ -50,7 +50,7 @@ const MOCK_ENTITIES = [
     social_circular_equity: 0.82, systemic_circular_transition_readiness: 0.85,
   },
   {
-    entity_id: "CEE-005", economy_sector: "agriculture", region: "MEA",
+    id: "CEE-005", economy_sector: "agriculture", region: "MEA",
     material_circularity_rate: 0.22, waste_generation_index: 0.60, resource_efficiency_score: 0.25,
     product_lifecycle_extension: 0.20, regenerative_business_model_adoption: 0.28, supply_loop_closure_rate: 0.25,
     industrial_symbiosis_level: 0.22, consumer_circular_behavior: 0.25, repair_reuse_accessibility: 0.28,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     social_circular_equity: 0.30, systemic_circular_transition_readiness: 0.28,
   },
   {
-    entity_id: "CEE-006", economy_sector: "retail", region: "EMEA",
+    id: "CEE-006", economy_sector: "retail", region: "EMEA",
     material_circularity_rate: 0.62, waste_generation_index: 0.35, resource_efficiency_score: 0.60,
     product_lifecycle_extension: 0.58, regenerative_business_model_adoption: 0.60, supply_loop_closure_rate: 0.62,
     industrial_symbiosis_level: 0.58, consumer_circular_behavior: 0.60, repair_reuse_accessibility: 0.62,
@@ -68,7 +68,7 @@ const MOCK_ENTITIES = [
     social_circular_equity: 0.62, systemic_circular_transition_readiness: 0.60,
   },
   {
-    entity_id: "CEE-007", economy_sector: "construction", region: "APAC",
+    id: "CEE-007", economy_sector: "construction", region: "APAC",
     material_circularity_rate: 0.48, waste_generation_index: 0.45, resource_efficiency_score: 0.45,
     product_lifecycle_extension: 0.45, regenerative_business_model_adoption: 0.48, supply_loop_closure_rate: 0.45,
     industrial_symbiosis_level: 0.48, consumer_circular_behavior: 0.48, repair_reuse_accessibility: 0.32,
@@ -77,7 +77,7 @@ const MOCK_ENTITIES = [
     social_circular_equity: 0.28, systemic_circular_transition_readiness: 0.48,
   },
   {
-    entity_id: "CEE-008", economy_sector: "energy", region: "LATAM",
+    id: "CEE-008", economy_sector: "energy", region: "LATAM",
     material_circularity_rate: 0.25, waste_generation_index: 0.55, resource_efficiency_score: 0.28,
     product_lifecycle_extension: 0.25, regenerative_business_model_adoption: 0.28, supply_loop_closure_rate: 0.25,
     industrial_symbiosis_level: 0.28, consumer_circular_behavior: 0.25, repair_reuse_accessibility: 0.28,
@@ -160,7 +160,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig = signal(risk);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         economy_sector: e.economy_sector,
         region: e.region,
         material_score: mat,

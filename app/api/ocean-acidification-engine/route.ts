@@ -9,7 +9,7 @@ if (!process.env.SWARM_API_URL) {
 }
 
 type OAEEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -119,7 +119,7 @@ function getMockData() {
     const risk = riskLevel(comp);
     const pat = primaryPattern(raw);
     return {
-      entity_id:                     raw.id,
+      id:                     raw.id,
       name:                          raw.name,
       country:                       raw.country,
       sector:                        raw.sector,
@@ -139,7 +139,7 @@ function getMockData() {
 
   const risk_distribution: Record<string, number> = {};
   const pattern_distribution: Record<string, number> = {};
-  const top_risk_entities: Array<{ entity_id: string; name: string; composite_score: number }> = [];
+  const top_risk_entities: Array<{ id: string; name: string; composite_score: number }> = [];
   const critical_alerts: string[] = [];
   let totalComp = 0;
   let totalIdx = 0;
@@ -150,7 +150,7 @@ function getMockData() {
     totalComp += e.composite_score;
     totalIdx += e.estimated_acidification_index;
     if (e.risk_level === "critique") {
-      top_risk_entities.push({ entity_id: e.entity_id, name: e.name, composite_score: e.composite_score });
+      top_risk_entities.push({ id: e.entity_id, name: e.name, composite_score: e.composite_score });
       critical_alerts.push(e.key_signals);
     }
   }

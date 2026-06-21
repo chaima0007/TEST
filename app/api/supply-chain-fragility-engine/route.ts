@@ -8,7 +8,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // SCF-001: EMEA, semiconductor_chain → critical risk, single_source_crisis
   {
-    entity_id: "SCF-001", chain_type: "semiconductor_chain", region: "EMEA",
+    id: "SCF-001", chain_type: "semiconductor_chain", region: "EMEA",
     single_source_dependency: 0.82, just_in_time_vulnerability: 0.55,
     geopolitical_chokepoint_exposure: 0.78, logistics_network_fragility: 0.60,
     supplier_financial_fragility: 0.50, inventory_buffer_adequacy: 0.25,
@@ -21,7 +21,7 @@ const MOCK_ENTITIES = [
   },
   // SCF-002: APAC, food_supply_chain → low risk, none pattern
   {
-    entity_id: "SCF-002", chain_type: "food_supply_chain", region: "APAC",
+    id: "SCF-002", chain_type: "food_supply_chain", region: "APAC",
     single_source_dependency: 0.12, just_in_time_vulnerability: 0.18,
     geopolitical_chokepoint_exposure: 0.15, logistics_network_fragility: 0.20,
     supplier_financial_fragility: 0.15, inventory_buffer_adequacy: 0.80,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // SCF-003: NOAM, pharmaceutical_chain → high risk, jit_shock_cascade
   {
-    entity_id: "SCF-003", chain_type: "pharmaceutical_chain", region: "NOAM",
+    id: "SCF-003", chain_type: "pharmaceutical_chain", region: "NOAM",
     single_source_dependency: 0.48, just_in_time_vulnerability: 0.75,
     geopolitical_chokepoint_exposure: 0.45, logistics_network_fragility: 0.55,
     supplier_financial_fragility: 0.40, inventory_buffer_adequacy: 0.35,
@@ -47,7 +47,7 @@ const MOCK_ENTITIES = [
   },
   // SCF-004: LATAM, agricultural_chain → low risk, none pattern
   {
-    entity_id: "SCF-004", chain_type: "agricultural_chain", region: "LATAM",
+    id: "SCF-004", chain_type: "agricultural_chain", region: "LATAM",
     single_source_dependency: 0.15, just_in_time_vulnerability: 0.22,
     geopolitical_chokepoint_exposure: 0.18, logistics_network_fragility: 0.25,
     supplier_financial_fragility: 0.20, inventory_buffer_adequacy: 0.72,
@@ -60,7 +60,7 @@ const MOCK_ENTITIES = [
   },
   // SCF-005: MEA, energy_supply_chain → critical risk, cyber_supply_attack
   {
-    entity_id: "SCF-005", chain_type: "energy_supply_chain", region: "MEA",
+    id: "SCF-005", chain_type: "energy_supply_chain", region: "MEA",
     single_source_dependency: 0.60, just_in_time_vulnerability: 0.58,
     geopolitical_chokepoint_exposure: 0.72, logistics_network_fragility: 0.65,
     supplier_financial_fragility: 0.55, inventory_buffer_adequacy: 0.30,
@@ -73,7 +73,7 @@ const MOCK_ENTITIES = [
   },
   // SCF-006: EMEA, automotive_chain → moderate risk, none pattern
   {
-    entity_id: "SCF-006", chain_type: "automotive_chain", region: "EMEA",
+    id: "SCF-006", chain_type: "automotive_chain", region: "EMEA",
     single_source_dependency: 0.35, just_in_time_vulnerability: 0.42,
     geopolitical_chokepoint_exposure: 0.38, logistics_network_fragility: 0.38,
     supplier_financial_fragility: 0.30, inventory_buffer_adequacy: 0.55,
@@ -86,7 +86,7 @@ const MOCK_ENTITIES = [
   },
   // SCF-007: APAC, electronics_chain → high risk, supplier_bankruptcy_wave
   {
-    entity_id: "SCF-007", chain_type: "electronics_chain", region: "APAC",
+    id: "SCF-007", chain_type: "electronics_chain", region: "APAC",
     single_source_dependency: 0.55, just_in_time_vulnerability: 0.60,
     geopolitical_chokepoint_exposure: 0.52, logistics_network_fragility: 0.58,
     supplier_financial_fragility: 0.75, inventory_buffer_adequacy: 0.30,
@@ -99,7 +99,7 @@ const MOCK_ENTITIES = [
   },
   // SCF-008: NOAM, critical_minerals_chain → critical risk, regulatory_fragmentation
   {
-    entity_id: "SCF-008", chain_type: "critical_minerals_chain", region: "NOAM",
+    id: "SCF-008", chain_type: "critical_minerals_chain", region: "NOAM",
     single_source_dependency: 0.65, just_in_time_vulnerability: 0.62,
     geopolitical_chokepoint_exposure: 0.70, logistics_network_fragility: 0.65,
     supplier_financial_fragility: 0.58, inventory_buffer_adequacy: 0.28,
@@ -182,7 +182,7 @@ function processEntity(e: Entity) {
   const sev  = chainSeverity(comp);
   const act  = recommendedAction(risk, pat);
   return {
-    entity_id:                    e.entity_id,
+    id:                    e.entity_id,
     region:                       e.region,
     chain_type:                   e.chain_type,
     chain_risk:                   risk,

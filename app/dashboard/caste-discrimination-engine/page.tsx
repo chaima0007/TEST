@@ -21,7 +21,7 @@ function GaugeRing({ value, max = 100 }: { value: number; max?: number }) {
   );
 }
 
-interface Entity { entity_id: string; name: string; country: string; sector: string; composite_score: number; risk_level: string; primary_pattern: string; key_signals: string[]; estimated_caste_discrimination_index: number; untouchability_practice_rate_score: number; occupational_segregation_score: number; caste_violence_impunity_score: number; intermarriage_prohibition_score: number; [key: string]: unknown; }
+interface Entity { id: string; name: string; country: string; sector: string; composite_score: number; risk_level: string; primary_pattern: string; key_signals: string[]; estimated_caste_discrimination_index: number; untouchability_practice_rate_score: number; occupational_segregation_score: number; caste_violence_impunity_score: number; intermarriage_prohibition_score: number; [key: string]: unknown; }
 interface DashData { total_entities: number; avg_composite: number; avg_estimated_caste_discrimination_index: number; risk_distribution: Record<string, number>; pattern_distribution: Record<string, number>; top_risk_entities: string[]; critical_alerts: string[]; last_analysis: string; confidence_score: number; data_sources: string[]; entities: Entity[]; [key: string]: unknown; }
 
 export default function Page() {
@@ -59,9 +59,9 @@ export default function Page() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
         {entities.map(e => (
-          <div key={e.entity_id} onClick={() => { setSelected(e); setTab(0); }} className={`border rounded-xl p-4 cursor-pointer hover:scale-[1.01] transition-transform ${RB[e.risk_level] ?? "border-slate-700 bg-slate-900"}`}>
+          <div key={e.id} onClick={() => { setSelected(e); setTab(0); }} className={`border rounded-xl p-4 cursor-pointer hover:scale-[1.01] transition-transform ${RB[e.risk_level] ?? "border-slate-700 bg-slate-900"}`}>
             <div className="flex justify-between items-start mb-3">
-              <div className="flex-1 min-w-0"><div className="text-xs text-slate-500 mb-1">{e.entity_id}</div><div className="font-semibold text-sm leading-tight truncate">{e.name}</div><div className="text-xs text-slate-400 mt-1">{e.country}</div></div>
+              <div className="flex-1 min-w-0"><div className="text-xs text-slate-500 mb-1">{e.id}</div><div className="font-semibold text-sm leading-tight truncate">{e.name}</div><div className="text-xs text-slate-400 mt-1">{e.country}</div></div>
               <GaugeRing value={e.estimated_caste_discrimination_index ?? e.composite_score} />
             </div>
             <div className={`text-xs font-bold uppercase ${RC[e.risk_level]}`}>{e.risk_level}</div>
@@ -78,7 +78,7 @@ export default function Page() {
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4" onClick={() => setSelected(null)}>
           <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
             <div className="p-6 border-b border-slate-800 flex justify-between items-start">
-              <div><div className="text-xs text-slate-500 mb-1">{selected.entity_id}</div><h3 className="font-bold text-lg">{selected.name}</h3><div className={`text-xs font-bold uppercase mt-1 ${RC[selected.risk_level]}`}>{selected.risk_level}</div></div>
+              <div><div className="text-xs text-slate-500 mb-1">{selected.id}</div><h3 className="font-bold text-lg">{selected.name}</h3><div className={`text-xs font-bold uppercase mt-1 ${RC[selected.risk_level]}`}>{selected.risk_level}</div></div>
               <button onClick={() => setSelected(null)} className="text-slate-500 hover:text-white text-xl leading-none">×</button>
             </div>
             <div className="flex border-b border-slate-800">

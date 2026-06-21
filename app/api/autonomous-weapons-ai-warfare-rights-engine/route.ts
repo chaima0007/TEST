@@ -9,7 +9,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "AWR-001",
+    id: "AWR-001",
     name: "USA/DARPA — Autonomous F-16 Dogfight, Drone Swarms, Loitering Munitions Kargu & LAWS Aucun Veto Humain Cible",
     country: "USA",
     sector: "Systèmes Armes Autonomes Létales",
@@ -20,7 +20,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "lethal_autonomous_weapon_civilian_harm_severity",
   },
   {
-    entity_id: "AWR-002",
+    id: "AWR-002",
     name: "Russie/Uran-9 — Robots Combat Syrie, S-70 Okhotnik Drone, IA Cibles Non-Supervisée & KUB-BLA Kamikaze",
     country: "Russie",
     sector: "Robots Combat IA Non-Supervisée",
@@ -31,7 +31,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "human_control_accountability_removal_scale",
   },
   {
-    entity_id: "AWR-003",
+    id: "AWR-003",
     name: "Chine/PLA — IA Militaire Plan 2030, Drone CH-5 Ventes Export, Systèmes Anti-Drones IA & Sharp Sword UCAV",
     country: "Chine",
     sector: "IA Militaire Exportation",
@@ -42,7 +42,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "lethal_autonomous_weapon_civilian_harm_severity",
   },
   {
-    entity_id: "AWR-004",
+    id: "AWR-004",
     name: "Israël/Elbit — Système Harpy LAWS, Hermes Ciblage Automatique, Iron Dome IA & Export Sans Contrôle Humain",
     country: "Israël",
     sector: "Export LAWS Ciblage Automatique",
@@ -53,7 +53,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "ai_bias_targeting_discrimination",
   },
   {
-    entity_id: "AWR-005",
+    id: "AWR-005",
     name: "UE/Défense — Eurodrone Autonomie Partielle, FCAS Humain Supervisé, Politique IA Éthique Défense & Règlement IA Exemption Militaire",
     country: "Europe",
     sector: "Défense Européenne IA Éthique",
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "autonomous_weapon_ban_treaty_deficit_gap",
   },
   {
-    entity_id: "AWR-006",
+    id: "AWR-006",
     name: "Turquie/Bayraktar — TB2 Usage Libyen/Azerbaïdjan, Kargu-2 LAWS Exporté, Pas Veto Humain Obligatoire & Réglementations Absentes",
     country: "Turquie",
     sector: "Export Drones LAWS Réglementation Absente",
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "human_control_accountability_removal_scale",
   },
   {
-    entity_id: "AWR-007",
+    id: "AWR-007",
     name: "ICRC/PAX — Campagne Stop Killer Robots, CICR Appel Réglementation, CCW GGE LAWS Genève & Principes Martens Application",
     country: "Global",
     sector: "Plaidoyer International LAWS",
@@ -86,7 +86,7 @@ const MOCK_ENTITIES = [
     primary_pattern: "autonomous_weapon_ban_treaty_deficit_gap",
   },
   {
-    entity_id: "AWR-008",
+    id: "AWR-008",
     name: "ONU/CCW — Convention Certaines Armes Classiques GGE LAWS, Résolution ONU IA Militaire 2023 & Dix Principes Guterres",
     country: "Global",
     sector: "Cadre Normatif International LAWS",
@@ -147,7 +147,7 @@ export async function GET() {
       const composite = computeComposite(e);
       const risk = riskLevel(composite);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         name: e.name,
         country: e.country,
         sector: e.sector,

@@ -29,7 +29,7 @@ const MOCK = {
   engine_version: "1.0.0",
   entities: [
     {
-      entity_id: "APR-001",
+      id: "APR-001",
       name: "Tanzanie — meurtres rituels et trafic de membres albinos parmi les plus documentés",
       country: "Tanzanie",
       violence_physique_meurtres_rituels_trafic_score: 92.0,
@@ -43,7 +43,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "APR-002",
+      id: "APR-002",
       name: "Malawi — vague d'attaques 2014-2018, exhumations de tombes albinos",
       country: "Malawi",
       violence_physique_meurtres_rituels_trafic_score: 88.0,
@@ -57,7 +57,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "APR-003",
+      id: "APR-003",
       name: "Mozambique — persécutions liées à la médecine traditionnelle et trafic transfrontalier",
       country: "Mozambique",
       violence_physique_meurtres_rituels_trafic_score: 82.0,
@@ -71,7 +71,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "APR-004",
+      id: "APR-004",
       name: "Zambie — stigmatisation extrême et violences rituelles dans les zones rurales isolées",
       country: "Zambie",
       violence_physique_meurtres_rituels_trafic_score: 76.0,
@@ -85,7 +85,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "APR-005",
+      id: "APR-005",
       name: "Rwanda — discrimination sociale persistante malgré législation anti-discrimination",
       country: "Rwanda",
       violence_physique_meurtres_rituels_trafic_score: 52.0,
@@ -99,7 +99,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "APR-006",
+      id: "APR-006",
       name: "Kenya — harcèlement communautaire et abandon scolaire des enfants albinos",
       country: "Kenya",
       violence_physique_meurtres_rituels_trafic_score: 50.0,
@@ -113,7 +113,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "APR-007",
+      id: "APR-007",
       name: "Cameroun — exclusion familiale et accès limité aux soins dermatologiques",
       country: "Cameroun",
       violence_physique_meurtres_rituels_trafic_score: 32.0,
@@ -127,7 +127,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "APR-008",
+      id: "APR-008",
       name: "Afrique du Sud — cadre juridique renforcé, accès aux soins amélioré",
       country: "Afrique du Sud",
       violence_physique_meurtres_rituels_trafic_score: 14.0,

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // SWF-001 — critical, critical_asset_foreign_capture (infra>0.85, tech>0.80)
   {
-    entity_id: "SWF-001", fund_type: "stabilisation", region: "MENA",
+    id: "SWF-001", fund_type: "stabilisation", region: "MENA",
     aum_concentration: 0.92, governance_transparency: 0.15, political_independence: 0.08,
     investment_opacity: 0.80, critical_infrastructure_acquisition: 0.90, media_influence_buying: 0.70,
     real_estate_strategic_purchase: 0.78, tech_sector_control: 0.85, sovereign_debt_leverage: 0.72,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // SWF-002 — critical, democratic_influence_buying (media>0.85, democracy_idx>0.80)
   {
-    entity_id: "SWF-002", fund_type: "développement", region: "APAC",
+    id: "SWF-002", fund_type: "développement", region: "APAC",
     aum_concentration: 0.85, governance_transparency: 0.12, political_independence: 0.08,
     investment_opacity: 0.82, critical_infrastructure_acquisition: 0.70, media_influence_buying: 0.90,
     real_estate_strategic_purchase: 0.75, tech_sector_control: 0.72, sovereign_debt_leverage: 0.80,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // SWF-003 — critical, opacity_money_laundering_nexus (opacity>0.85, 1-governance>0.80)
   {
-    entity_id: "SWF-003", fund_type: "réserve", region: "EMEA",
+    id: "SWF-003", fund_type: "réserve", region: "EMEA",
     aum_concentration: 0.88, governance_transparency: 0.10, political_independence: 0.05,
     investment_opacity: 0.92, critical_infrastructure_acquisition: 0.72, media_influence_buying: 0.65,
     real_estate_strategic_purchase: 0.80, tech_sector_control: 0.68, sovereign_debt_leverage: 0.75,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // SWF-004 — high, resource_curse_recycling (fossil>0.80, wealth_dist<0.25)
   {
-    entity_id: "SWF-004", fund_type: "stabilisation", region: "MENA",
+    id: "SWF-004", fund_type: "stabilisation", region: "MENA",
     aum_concentration: 0.55, governance_transparency: 0.35, political_independence: 0.30,
     investment_opacity: 0.52, critical_infrastructure_acquisition: 0.48, media_influence_buying: 0.50,
     real_estate_strategic_purchase: 0.55, tech_sector_control: 0.45, sovereign_debt_leverage: 0.55,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // SWF-005 — high, geoeconomic_coercion_tool (debt_leverage>0.80, geo_align>0.75)
   {
-    entity_id: "SWF-005", fund_type: "développement", region: "APAC",
+    id: "SWF-005", fund_type: "développement", region: "APAC",
     aum_concentration: 0.35, governance_transparency: 0.52, political_independence: 0.45,
     investment_opacity: 0.38, critical_infrastructure_acquisition: 0.32, media_influence_buying: 0.30,
     real_estate_strategic_purchase: 0.45, tech_sector_control: 0.28, sovereign_debt_leverage: 0.85,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // SWF-006 — moderate, none
   {
-    entity_id: "SWF-006", fund_type: "épargne", region: "NOAM",
+    id: "SWF-006", fund_type: "épargne", region: "NOAM",
     aum_concentration: 0.30, governance_transparency: 0.60, political_independence: 0.55,
     investment_opacity: 0.32, critical_infrastructure_acquisition: 0.28, media_influence_buying: 0.30,
     real_estate_strategic_purchase: 0.28, tech_sector_control: 0.25, sovereign_debt_leverage: 0.30,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // SWF-007 — low, none
   {
-    entity_id: "SWF-007", fund_type: "épargne", region: "NOAM",
+    id: "SWF-007", fund_type: "épargne", region: "NOAM",
     aum_concentration: 0.10, governance_transparency: 0.88, political_independence: 0.85,
     investment_opacity: 0.10, critical_infrastructure_acquisition: 0.08, media_influence_buying: 0.10,
     real_estate_strategic_purchase: 0.08, tech_sector_control: 0.08, sovereign_debt_leverage: 0.10,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // SWF-008 — low, none
   {
-    entity_id: "SWF-008", fund_type: "retraite", region: "EMEA",
+    id: "SWF-008", fund_type: "retraite", region: "EMEA",
     aum_concentration: 0.12, governance_transparency: 0.85, political_independence: 0.82,
     investment_opacity: 0.12, critical_infrastructure_acquisition: 0.10, media_influence_buying: 0.10,
     real_estate_strategic_purchase: 0.10, tech_sector_control: 0.10, sovereign_debt_leverage: 0.10,
@@ -148,7 +148,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                               e.entity_id,
+        id:                               e.entity_id,
         fund_type:                               e.fund_type,
         region:                                  e.region,
         concentration_score:                     con,

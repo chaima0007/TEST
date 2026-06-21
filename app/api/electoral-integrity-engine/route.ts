@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "EL-001",
+      id: "EL-001",
       name: "Commission Électorale du Myanmar",
       country: "Myanmar",
       sector: "Institutions Électorales",
@@ -42,7 +42,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "EL-002",
+      id: "EL-002",
       name: "Autorité Électorale Centrale du Venezuela",
       country: "Venezuela",
       sector: "Institutions Électorales",
@@ -62,7 +62,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "EL-003",
+      id: "EL-003",
       name: "Conseil Constitutionnel Électoral du Belarus",
       country: "Belarus",
       sector: "Institutions Électorales",
@@ -82,7 +82,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "EL-004",
+      id: "EL-004",
       name: "Commission Indépendante Électorale du Bangladesh",
       country: "Bangladesh",
       sector: "Institutions Électorales",
@@ -102,7 +102,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "EL-005",
+      id: "EL-005",
       name: "Commission Nationale Électorale du Niger",
       country: "Niger",
       sector: "Institutions Électorales",
@@ -122,7 +122,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "EL-006",
+      id: "EL-006",
       name: "Agence Centrale Électorale de Tunisie",
       country: "Tunisie",
       sector: "Institutions Électorales",
@@ -142,7 +142,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "EL-007",
+      id: "EL-007",
       name: "Commission Électorale Fédérale d'Allemagne",
       country: "Allemagne",
       sector: "Institutions Électorales",
@@ -162,7 +162,7 @@ function getMockData() {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "EL-008",
+      id: "EL-008",
       name: "Conseil Électoral Permanent de Nouvelle-Zélande",
       country: "Nouvelle-Zélande",
       sector: "Institutions Électorales",

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // ── Types ──────────────────────────────────────────────────────────────────────
 
 interface EntityDict {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -22,7 +22,7 @@ interface EntityDict {
 }
 
 interface TopRiskEntity {
-  entity_id: string;
+  id: string;
   name: string;
   composite_score: number;
   risk_level: string;
@@ -30,7 +30,7 @@ interface TopRiskEntity {
 }
 
 interface CriticalAlert {
-  entity_id: string;
+  id: string;
   name: string;
   composite_score: number;
   primary_pattern: string;
@@ -200,7 +200,7 @@ function DetailModal({ entity, onClose }: { entity: EntityDict; onClose: () => v
               </span>
             </div>
             <div className="flex items-center gap-2 text-xs text-slate-400">
-              <span>{entity.entity_id}</span>
+              <span>{entity.id}</span>
               <span>·</span>
               <span>{entity.country}</span>
               <span>·</span>
@@ -567,14 +567,14 @@ export default function TranshumanistEthicsEnginePage() {
             <div className="flex flex-col gap-3">
               {data.critical_alerts.map((alert) => (
                 <div
-                  key={alert.entity_id}
+                  key={alert.id}
                   className="flex items-start gap-3 bg-red-950/20 border border-red-800/20 rounded-xl p-3"
                 >
                   <span className="flex-shrink-0 mt-0.5 w-2 h-2 rounded-full bg-red-500 animate-pulse" />
                   <div>
                     <div className="flex items-center gap-2 mb-0.5">
                       <span className="text-sm font-semibold text-white">{alert.name}</span>
-                      <span className="text-xs text-slate-500">{alert.entity_id}</span>
+                      <span className="text-xs text-slate-500">{alert.id}</span>
                       <span className="text-xs text-red-400 font-bold">
                         {alert.composite_score.toFixed(2)}
                       </span>
@@ -596,7 +596,7 @@ export default function TranshumanistEthicsEnginePage() {
           <div className="flex flex-col gap-3">
             {(data.top_risk_entities ?? []).map((e, i) => (
               <div
-                key={e.entity_id}
+                key={e.id}
                 className="flex items-center gap-4 bg-slate-950 border border-purple-800/20 rounded-xl p-3"
               >
                 <span className="text-2xl font-black text-purple-700/40 w-6 text-center leading-none">
@@ -689,7 +689,7 @@ export default function TranshumanistEthicsEnginePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((entity) => (
             <button
-              key={entity.entity_id}
+              key={entity.id}
               onClick={() => setSelectedEntity(entity)}
               className="text-left bg-slate-900 border border-purple-800/20 rounded-2xl p-4 hover:border-purple-600/50 hover:bg-slate-900/80 transition-all group focus:outline-none focus:ring-2 focus:ring-purple-700"
             >
@@ -700,7 +700,7 @@ export default function TranshumanistEthicsEnginePage() {
                     {entity.name}
                   </div>
                   <div className="text-xs text-slate-500 mt-0.5">
-                    {entity.entity_id} · {entity.country}
+                    {entity.id} · {entity.country}
                   </div>
                 </div>
                 <span

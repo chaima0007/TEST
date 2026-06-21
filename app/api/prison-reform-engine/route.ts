@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // PRE-001 — critical, mass_incarceration_industrial (incarceration>0.85, drug>0.80)
   {
-    entity_id: "PRE-001", justice_system_type: "pénal_carcéral", region: "NOAM",
+    id: "PRE-001", justice_system_type: "pénal_carcéral", region: "NOAM",
     incarceration_rate_excess: 0.92, pretrial_detention_rate: 0.78,
     racial_sentencing_disparity: 0.70, mandatory_minimum_overuse: 0.72,
     private_prison_profit_motive: 0.68, recidivism_rate_high: 0.70,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // PRE-002 — critical, racial_disparity_sentencing (racial>0.85, mandatory>0.80)
   {
-    entity_id: "PRE-002", justice_system_type: "tribunal_correctionnel", region: "NOAM",
+    id: "PRE-002", justice_system_type: "tribunal_correctionnel", region: "NOAM",
     incarceration_rate_excess: 0.72, pretrial_detention_rate: 0.70,
     racial_sentencing_disparity: 0.90, mandatory_minimum_overuse: 0.85,
     private_prison_profit_motive: 0.65, recidivism_rate_high: 0.68,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // PRE-003 — critical, recidivism_rehabilitation_gap (recidivism>0.85, rehab_gap>0.80)
   {
-    entity_id: "PRE-003", justice_system_type: "établissement_pénitentiaire", region: "EMEA",
+    id: "PRE-003", justice_system_type: "établissement_pénitentiaire", region: "EMEA",
     incarceration_rate_excess: 0.65, pretrial_detention_rate: 0.68,
     racial_sentencing_disparity: 0.62, mandatory_minimum_overuse: 0.65,
     private_prison_profit_motive: 0.60, recidivism_rate_high: 0.88,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // PRE-004 — high, prison_privatization_abuse (private>0.80, labor>0.75)
   {
-    entity_id: "PRE-004", justice_system_type: "prison_privée", region: "NOAM",
+    id: "PRE-004", justice_system_type: "prison_privée", region: "NOAM",
     incarceration_rate_excess: 0.50, pretrial_detention_rate: 0.48,
     racial_sentencing_disparity: 0.52, mandatory_minimum_overuse: 0.50,
     private_prison_profit_motive: 0.85, recidivism_rate_high: 0.48,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // PRE-005 — high, solitary_confinement_torture (solitary>0.80, mental_health>0.75)
   {
-    entity_id: "PRE-005", justice_system_type: "centre_détention_sécurité_max", region: "LATAM",
+    id: "PRE-005", justice_system_type: "centre_détention_sécurité_max", region: "LATAM",
     incarceration_rate_excess: 0.48, pretrial_detention_rate: 0.52,
     racial_sentencing_disparity: 0.50, mandatory_minimum_overuse: 0.48,
     private_prison_profit_motive: 0.50, recidivism_rate_high: 0.52,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // PRE-006 — moderate, none
   {
-    entity_id: "PRE-006", justice_system_type: "tribunal_de_première_instance", region: "APAC",
+    id: "PRE-006", justice_system_type: "tribunal_de_première_instance", region: "APAC",
     incarceration_rate_excess: 0.28, pretrial_detention_rate: 0.30,
     racial_sentencing_disparity: 0.28, mandatory_minimum_overuse: 0.30,
     private_prison_profit_motive: 0.28, recidivism_rate_high: 0.32,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // PRE-007 — low, none
   {
-    entity_id: "PRE-007", justice_system_type: "système_pénal_nordique", region: "EMEA",
+    id: "PRE-007", justice_system_type: "système_pénal_nordique", region: "EMEA",
     incarceration_rate_excess: 0.10, pretrial_detention_rate: 0.12,
     racial_sentencing_disparity: 0.10, mandatory_minimum_overuse: 0.08,
     private_prison_profit_motive: 0.10, recidivism_rate_high: 0.12,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // PRE-008 — low, none
   {
-    entity_id: "PRE-008", justice_system_type: "maison_de_justice", region: "APAC",
+    id: "PRE-008", justice_system_type: "maison_de_justice", region: "APAC",
     incarceration_rate_excess: 0.12, pretrial_detention_rate: 0.10,
     racial_sentencing_disparity: 0.12, mandatory_minimum_overuse: 0.10,
     private_prison_profit_motive: 0.12, recidivism_rate_high: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         justice_system_type:          e.justice_system_type,
         region:                       e.region,
         incarceration_score:          inc,

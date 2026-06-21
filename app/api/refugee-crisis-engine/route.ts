@@ -19,7 +19,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEntities = [
   {
-    entity_id: "RCE-001",
+    id: "RCE-001",
     displacement_type: "climate_induced",
     region: "SAHEL",
     displacement_volume: 0.88,
@@ -52,7 +52,7 @@ const mockEntities = [
     signal: "🔴 Crise déplacement catastrophique — intervention humanitaire d'urgence requise",
   },
   {
-    entity_id: "RCE-002",
+    id: "RCE-002",
     displacement_type: "conflict_induced",
     region: "EMEA",
     displacement_volume: 0.07,
@@ -85,7 +85,7 @@ const mockEntities = [
     signal: "🟢 Déplacement contenu — veille préventive maintenue",
   },
   {
-    entity_id: "RCE-003",
+    id: "RCE-003",
     displacement_type: "mixed_flow",
     region: "MENA",
     displacement_volume: 0.45,
@@ -118,7 +118,7 @@ const mockEntities = [
     signal: "🟠 Déplacement forcé majeur détecté — mobilisation internationale nécessaire",
   },
   {
-    entity_id: "RCE-004",
+    id: "RCE-004",
     displacement_type: "internal_displacement",
     region: "APAC",
     displacement_volume: 0.06,
@@ -151,7 +151,7 @@ const mockEntities = [
     signal: "🟢 Déplacement contenu — veille préventive maintenue",
   },
   {
-    entity_id: "RCE-005",
+    id: "RCE-005",
     displacement_type: "stateless_population",
     region: "SEA",
     displacement_volume: 0.75,
@@ -184,7 +184,7 @@ const mockEntities = [
     signal: "🔴 Crise déplacement catastrophique — intervention humanitaire d'urgence requise",
   },
   {
-    entity_id: "RCE-006",
+    id: "RCE-006",
     displacement_type: "economic_migrants",
     region: "LATAM",
     displacement_volume: 0.25,
@@ -217,7 +217,7 @@ const mockEntities = [
     signal: "🟡 Vulnérabilité réfugiés active — renforcement du dispositif d'accueil",
   },
   {
-    entity_id: "RCE-007",
+    id: "RCE-007",
     displacement_type: "conflict_induced",
     region: "HORN_AFRICA",
     displacement_volume: 0.45,
@@ -250,7 +250,7 @@ const mockEntities = [
     signal: "🟠 Déplacement forcé majeur détecté — mobilisation internationale nécessaire",
   },
   {
-    entity_id: "RCE-008",
+    id: "RCE-008",
     displacement_type: "protracted_refugee",
     region: "CENTRAL_ASIA",
     displacement_volume: 0.72,

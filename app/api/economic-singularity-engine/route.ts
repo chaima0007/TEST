@@ -7,7 +7,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // ESI-001: EMEA, advanced_economy → critical, singularity_threshold_breach
   {
-    entity_id: "ESI-001", economy_type: "advanced_economy", region: "EMEA",
+    id: "ESI-001", economy_type: "advanced_economy", region: "EMEA",
     ai_labor_displacement_velocity: 0.80,
     productivity_growth_acceleration: 0.75,
     capital_concentration_rate: 0.72,
@@ -28,7 +28,7 @@ const MOCK_ENTITIES = [
   },
   // ESI-002: APAC, emerging_economy → low, none
   {
-    entity_id: "ESI-002", economy_type: "emerging_economy", region: "APAC",
+    id: "ESI-002", economy_type: "emerging_economy", region: "APAC",
     ai_labor_displacement_velocity: 0.15,
     productivity_growth_acceleration: 0.45,
     capital_concentration_rate: 0.22,
@@ -49,7 +49,7 @@ const MOCK_ENTITIES = [
   },
   // ESI-003: NOAM, tech_economy → high, labor_extinction_event
   {
-    entity_id: "ESI-003", economy_type: "tech_economy", region: "NOAM",
+    id: "ESI-003", economy_type: "tech_economy", region: "NOAM",
     ai_labor_displacement_velocity: 0.75,
     productivity_growth_acceleration: 0.80,
     capital_concentration_rate: 0.55,
@@ -70,7 +70,7 @@ const MOCK_ENTITIES = [
   },
   // ESI-004: LATAM, developing_economy → low, none
   {
-    entity_id: "ESI-004", economy_type: "developing_economy", region: "LATAM",
+    id: "ESI-004", economy_type: "developing_economy", region: "LATAM",
     ai_labor_displacement_velocity: 0.12,
     productivity_growth_acceleration: 0.28,
     capital_concentration_rate: 0.18,
@@ -91,7 +91,7 @@ const MOCK_ENTITIES = [
   },
   // ESI-005: MEA, resource_economy → critical, institutional_collapse
   {
-    entity_id: "ESI-005", economy_type: "resource_economy", region: "MEA",
+    id: "ESI-005", economy_type: "resource_economy", region: "MEA",
     ai_labor_displacement_velocity: 0.65,
     productivity_growth_acceleration: 0.55,
     capital_concentration_rate: 0.68,
@@ -112,7 +112,7 @@ const MOCK_ENTITIES = [
   },
   // ESI-006: EMEA, industrial_economy → moderate, none
   {
-    entity_id: "ESI-006", economy_type: "industrial_economy", region: "EMEA",
+    id: "ESI-006", economy_type: "industrial_economy", region: "EMEA",
     ai_labor_displacement_velocity: 0.38,
     productivity_growth_acceleration: 0.42,
     capital_concentration_rate: 0.35,
@@ -133,7 +133,7 @@ const MOCK_ENTITIES = [
   },
   // ESI-007: APAC, platform_economy → high, capital_hypercentralization
   {
-    entity_id: "ESI-007", economy_type: "platform_economy", region: "APAC",
+    id: "ESI-007", economy_type: "platform_economy", region: "APAC",
     ai_labor_displacement_velocity: 0.55,
     productivity_growth_acceleration: 0.68,
     capital_concentration_rate: 0.78,
@@ -154,7 +154,7 @@ const MOCK_ENTITIES = [
   },
   // ESI-008: NOAM, digital_economy → critical, social_contract_rupture
   {
-    entity_id: "ESI-008", economy_type: "digital_economy", region: "NOAM",
+    id: "ESI-008", economy_type: "digital_economy", region: "NOAM",
     ai_labor_displacement_velocity: 0.65,
     productivity_growth_acceleration: 0.82,
     capital_concentration_rate: 0.60,
@@ -280,7 +280,7 @@ export async function GET() {
       const act   = recommendedAction(risk, pat);
       const sig   = singularitySignal(e, risk, comp);
       return {
-        entity_id:                         e.entity_id,
+        id:                         e.entity_id,
         region:                            e.region,
         economy_type:                      e.economy_type,
         singularity_risk:                  risk,

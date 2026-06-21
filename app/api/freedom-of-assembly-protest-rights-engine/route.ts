@@ -41,7 +41,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "FAP-001",
+      id: "FAP-001",
       name: "Belarus/Loukachenko — 35 000 Arrestations Post-2020, Manifestants Torturés, Dirigeants Exilés & Lois Anti-Extrémisme",
       country: "Belarus",
       composite_score: 92.3,
@@ -55,7 +55,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FAP-002",
+      id: "FAP-002",
       name: "Myanmar/Junta — Manifestants Tués 3 000+, Syndicats Bannis, Couvre-Feu Permanent & Internet Coupé",
       country: "Myanmar",
       composite_score: 89.35,
@@ -69,7 +69,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FAP-003",
+      id: "FAP-003",
       name: "Chine/HK — NSL Hong Kong Manifestants, Article 23 Assemblées Illégales, Dirigeants 47 Condamnés & Tiananmen Commémoration Interdite",
       country: "Chine/Hong Kong",
       composite_score: 86.6,
@@ -83,7 +83,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FAP-004",
+      id: "FAP-004",
       name: "Égypte/Sissi — Loi 107/2013 Rassemblements, 60 000 Prisonniers Politiques, Sit-In Rabaa 2013 Massacre & ONG Étrangères Interdites",
       country: "Égypte",
       composite_score: 83.3,
@@ -97,7 +97,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FAP-005",
+      id: "FAP-005",
       name: "France/UK — Loi Sécurité Globale, Anti-Protest Policing Powers UK, BRAV-M Violences & Extinction Rebellion Interdit",
       country: "France/Royaume-Uni",
       composite_score: 53.6,
@@ -111,7 +111,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FAP-006",
+      id: "FAP-006",
       name: "USA — Anti-BLM Laws 34 États, COINTELPRO Legacy, Poursuites RICO Manifestants & Stand Your Ground Contre Protestataires",
       country: "États-Unis",
       composite_score: 51.5,
@@ -125,7 +125,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FAP-007",
+      id: "FAP-007",
       name: "CIVICUS/FIDH — Monitor Espace Civique, Rapports Liberté Réunion, Défense Manifestants & Lobbying Nations Unies",
       country: "International",
       composite_score: 25.8,
@@ -139,7 +139,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FAP-008",
+      id: "FAP-008",
       name: "ONU/Art.20 DUDH — Liberté Réunion Pacifique, Rapporteur Spécial & SDG 16.7 Gouvernance Inclusive",
       country: "International",
       composite_score: 3.95,

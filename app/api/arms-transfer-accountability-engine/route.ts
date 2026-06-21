@@ -34,7 +34,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "AT-001",
+      id: "AT-001",
       name: "USA — Arabie Saoudite/Israël/Égypte : 52B$/An & Complicit Yémen Gaza",
       country: "Amérique du Nord",
       composite_score: 88.85,
@@ -48,7 +48,7 @@ const MOCK = {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AT-002",
+      id: "AT-002",
       name: "France — Égypte/EAU/Arabie Saoudite : Rafale & Silence des Victimes du Yémen",
       country: "Europe Occidentale",
       composite_score: 84.15,
@@ -62,7 +62,7 @@ const MOCK = {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AT-003",
+      id: "AT-003",
       name: "Russie/Chine — Syrie/Myanmar/Iran : Veto ONU & Armement des Dictatures",
       country: "Eurasie",
       composite_score: 83.55,
@@ -76,7 +76,7 @@ const MOCK = {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AT-004",
+      id: "AT-004",
       name: "Royaume-Uni — Arabie Saoudite Licence Suspendue/Rétablie & Opacité Juridique",
       country: "Europe Occidentale",
       composite_score: 76.10,
@@ -90,7 +90,7 @@ const MOCK = {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AT-005",
+      id: "AT-005",
       name: "Allemagne/UE — Exports Double Usage, Critères Communs & Violations Persistantes",
       country: "Europe",
       composite_score: 49.85,
@@ -104,7 +104,7 @@ const MOCK = {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AT-006",
+      id: "AT-006",
       name: "Israël — Technologie Surveillance/Drones Exportés à 100 Régimes Répressifs",
       country: "Moyen-Orient",
       composite_score: 49.75,
@@ -118,7 +118,7 @@ const MOCK = {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AT-007",
+      id: "AT-007",
       name: "TCA/ATT — Traité Commerce des Armes, Lacunes & 113 États Parties",
       country: "Global",
       composite_score: 28.40,
@@ -132,7 +132,7 @@ const MOCK = {
       last_updated: "2026-06-20",
     },
     {
-      entity_id: "AT-008",
+      id: "AT-008",
       name: "ONU/Registre — Armes Conventionnelles, Panel Experts & Standards Transparence",
       country: "Global",
       composite_score: 4.40,

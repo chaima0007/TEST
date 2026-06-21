@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // AFE-001 — critical, liquidity_vacuum
-  { entity_id: "AFE-001", ecosystem_type: "defi_protocol", region: "EMEA",
+  { id: "AFE-001", ecosystem_type: "defi_protocol", region: "EMEA",
     autonomous_liquidity_depth: 0.10, algorithmic_governance_maturity: 0.20, self_regulation_effectiveness: 0.15,
     market_maker_concentration: 0.75, flash_crash_susceptibility: 0.70, liquidity_fragmentation: 0.80,
     order_flow_toxicity: 0.65, price_discovery_efficiency: 0.25, systemic_correlation: 0.72,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     regulatory_arbitrage_exposure: 0.68, cross_market_contagion: 0.65, autonomous_agent_conflict_rate: 0.75,
     market_microstructure_stress: 0.62, information_latency_risk: 0.70 },
   // AFE-002 — low, none
-  { entity_id: "AFE-002", ecosystem_type: "traditional_exchange", region: "APAC",
+  { id: "AFE-002", ecosystem_type: "traditional_exchange", region: "APAC",
     autonomous_liquidity_depth: 0.88, algorithmic_governance_maturity: 0.85, self_regulation_effectiveness: 0.90,
     market_maker_concentration: 0.12, flash_crash_susceptibility: 0.10, liquidity_fragmentation: 0.12,
     order_flow_toxicity: 0.10, price_discovery_efficiency: 0.90, systemic_correlation: 0.15,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     regulatory_arbitrage_exposure: 0.10, cross_market_contagion: 0.12, autonomous_agent_conflict_rate: 0.10,
     market_microstructure_stress: 0.12, information_latency_risk: 0.10 },
   // AFE-003 — high, flash_crash_cascade
-  { entity_id: "AFE-003", ecosystem_type: "algo_market", region: "NOAM",
+  { id: "AFE-003", ecosystem_type: "algo_market", region: "NOAM",
     autonomous_liquidity_depth: 0.42, algorithmic_governance_maturity: 0.38, self_regulation_effectiveness: 0.40,
     market_maker_concentration: 0.55, flash_crash_susceptibility: 0.72, liquidity_fragmentation: 0.50,
     order_flow_toxicity: 0.58, price_discovery_efficiency: 0.45, systemic_correlation: 0.55,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     regulatory_arbitrage_exposure: 0.45, cross_market_contagion: 0.50, autonomous_agent_conflict_rate: 0.55,
     market_microstructure_stress: 0.65, information_latency_risk: 0.55 },
   // AFE-004 — low, none
-  { entity_id: "AFE-004", ecosystem_type: "traditional_exchange", region: "LATAM",
+  { id: "AFE-004", ecosystem_type: "traditional_exchange", region: "LATAM",
     autonomous_liquidity_depth: 0.82, algorithmic_governance_maturity: 0.78, self_regulation_effectiveness: 0.85,
     market_maker_concentration: 0.18, flash_crash_susceptibility: 0.15, liquidity_fragmentation: 0.18,
     order_flow_toxicity: 0.15, price_discovery_efficiency: 0.85, systemic_correlation: 0.20,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     regulatory_arbitrage_exposure: 0.15, cross_market_contagion: 0.18, autonomous_agent_conflict_rate: 0.15,
     market_microstructure_stress: 0.18, information_latency_risk: 0.15 },
   // AFE-005 — critical, governance_failure
-  { entity_id: "AFE-005", ecosystem_type: "defi_protocol", region: "MEA",
+  { id: "AFE-005", ecosystem_type: "defi_protocol", region: "MEA",
     autonomous_liquidity_depth: 0.25, algorithmic_governance_maturity: 0.12, self_regulation_effectiveness: 0.10,
     market_maker_concentration: 0.65, flash_crash_susceptibility: 0.58, liquidity_fragmentation: 0.55,
     order_flow_toxicity: 0.62, price_discovery_efficiency: 0.20, systemic_correlation: 0.68,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     regulatory_arbitrage_exposure: 0.78, cross_market_contagion: 0.55, autonomous_agent_conflict_rate: 0.70,
     market_microstructure_stress: 0.60, information_latency_risk: 0.72 },
   // AFE-006 — moderate, none
-  { entity_id: "AFE-006", ecosystem_type: "dark_pool", region: "EMEA",
+  { id: "AFE-006", ecosystem_type: "dark_pool", region: "EMEA",
     autonomous_liquidity_depth: 0.62, algorithmic_governance_maturity: 0.60, self_regulation_effectiveness: 0.62,
     market_maker_concentration: 0.30, flash_crash_susceptibility: 0.28, liquidity_fragmentation: 0.30,
     order_flow_toxicity: 0.30, price_discovery_efficiency: 0.60, systemic_correlation: 0.32,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     regulatory_arbitrage_exposure: 0.28, cross_market_contagion: 0.30, autonomous_agent_conflict_rate: 0.32,
     market_microstructure_stress: 0.28, information_latency_risk: 0.32 },
   // AFE-007 — high, contagion_spiral
-  { entity_id: "AFE-007", ecosystem_type: "algo_market", region: "APAC",
+  { id: "AFE-007", ecosystem_type: "algo_market", region: "APAC",
     autonomous_liquidity_depth: 0.40, algorithmic_governance_maturity: 0.42, self_regulation_effectiveness: 0.45,
     market_maker_concentration: 0.52, flash_crash_susceptibility: 0.50, liquidity_fragmentation: 0.45,
     order_flow_toxicity: 0.48, price_discovery_efficiency: 0.42, systemic_correlation: 0.75,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     regulatory_arbitrage_exposure: 0.42, cross_market_contagion: 0.68, autonomous_agent_conflict_rate: 0.55,
     market_microstructure_stress: 0.48, information_latency_risk: 0.52 },
   // AFE-008 — critical, hft_predation
-  { entity_id: "AFE-008", ecosystem_type: "hft_venue", region: "NOAM",
+  { id: "AFE-008", ecosystem_type: "hft_venue", region: "NOAM",
     autonomous_liquidity_depth: 0.22, algorithmic_governance_maturity: 0.25, self_regulation_effectiveness: 0.40,
     market_maker_concentration: 0.72, flash_crash_susceptibility: 0.60, liquidity_fragmentation: 0.55,
     order_flow_toxicity: 0.85, price_discovery_efficiency: 0.22, systemic_correlation: 0.62,
@@ -169,7 +169,7 @@ export async function GET() {
       const sev  = ecosystemSeverity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         region:                          e.region,
         ecosystem_type:                  e.ecosystem_type,
         ecosystem_risk:                  risk,

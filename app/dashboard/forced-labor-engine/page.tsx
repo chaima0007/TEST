@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface ForcedLaborEntity {
-  entity_id: string;
+  id: string;
   labor_sector: string;
   region: string;
   exploitation_score: number;
@@ -171,7 +171,7 @@ function DetailModal({ entity, onClose }: { entity: ForcedLaborEntity; onClose: 
           <GaugeRing score={entity.composite_score} label="" color={ringColor} />
           <div className="flex-1 min-w-0">
             <h2 className="text-white font-bold text-lg truncate">
-              {SECTOR_ICON[entity.labor_sector] || "⚙️"} {entity.entity_id}
+              {SECTOR_ICON[entity.labor_sector] || "⚙️"} {entity.id}
             </h2>
             <p className="text-slate-400 text-sm">{entity.labor_sector.replace(/_/g, " ")} · {entity.region}</p>
             <div className="flex gap-2 mt-1 flex-wrap">
@@ -286,7 +286,7 @@ function EntityCard({ entity, onClick }: { entity: ForcedLaborEntity; onClick: (
         <GaugeRing score={entity.composite_score} label="" color={ringColor} />
         <div className="flex-1 min-w-0">
           <div className="text-white font-semibold truncate">
-            {SECTOR_ICON[entity.labor_sector] || "⚙️"} {entity.entity_id}
+            {SECTOR_ICON[entity.labor_sector] || "⚙️"} {entity.id}
           </div>
           <div className="text-slate-400 text-xs">{entity.labor_sector.replace(/_/g, " ")} · {entity.region}</div>
           <div className="flex gap-2 mt-1 flex-wrap">
@@ -478,7 +478,7 @@ export default function ForcedLaborEnginePage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {entities.map((entity) => (
-              <EntityCard key={entity.entity_id} entity={entity} onClick={() => setSelected(entity)} />
+              <EntityCard key={entity.id} entity={entity} onClick={() => setSelected(entity)} />
             ))}
           </div>
         )}

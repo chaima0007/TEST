@@ -5,7 +5,7 @@ const RC: Record<string,string> = { critique:"text-red-400","élevé":"text-oran
 const RB: Record<string,string> = { critique:"border-red-500/30 bg-red-500/10","élevé":"border-orange-500/30 bg-orange-500/10",modéré:"border-yellow-500/30 bg-yellow-500/10",faible:"border-emerald-500/30 bg-emerald-500/10" };
 
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   composite_score: number;
@@ -61,7 +61,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         <div className="flex items-start justify-between mb-4">
           <div>
             <h2 className="text-xl font-bold text-white">{entity.name}</h2>
-            <p className="text-slate-400 text-sm">{entity.country} · {entity.entity_id}</p>
+            <p className="text-slate-400 text-sm">{entity.country} · {entity.id}</p>
           </div>
           <button onClick={onClose} className="text-slate-400 hover:text-white text-2xl leading-none">&times;</button>
         </div>
@@ -192,7 +192,7 @@ export default function ColonialReparationsEngine() {
             {/* Entity grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filtered.map(entity => (
-                <div key={entity.entity_id}
+                <div key={entity.id}
                   className={`bg-slate-900 border rounded-xl p-5 cursor-pointer hover:border-amber-500/50 transition-colors ${RB[entity.risk_level] ?? "border-slate-700"}`}
                   onClick={() => setSelected(entity)}>
                   <div className="flex items-start justify-between mb-3">

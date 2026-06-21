@@ -72,7 +72,7 @@ function compositeScore(
 const mockEntities = [
   // MCB-001: EMEA, corporate_boardroom → critical, dunning_kruger_crisis
   {
-    entity_id: "MCB-001",
+    id: "MCB-001",
     decision_system_type: "corporate_boardroom",
     region: "EMEA",
     confirmation_bias_intensity: 0.80,
@@ -108,7 +108,7 @@ const mockEntities = [
   },
   // MCB-002: APAC, research_team → low, none
   {
-    entity_id: "MCB-002",
+    id: "MCB-002",
     decision_system_type: "research_team",
     region: "APAC",
     confirmation_bias_intensity: 0.10,
@@ -144,7 +144,7 @@ const mockEntities = [
   },
   // MCB-003: NOAM, government_agency → high, groupthink_capture
   {
-    entity_id: "MCB-003",
+    id: "MCB-003",
     decision_system_type: "government_agency",
     region: "NOAM",
     confirmation_bias_intensity: 0.55,
@@ -180,7 +180,7 @@ const mockEntities = [
   },
   // MCB-004: LATAM, startup → low, none
   {
-    entity_id: "MCB-004",
+    id: "MCB-004",
     decision_system_type: "startup",
     region: "LATAM",
     confirmation_bias_intensity: 0.18,
@@ -216,7 +216,7 @@ const mockEntities = [
   },
   // MCB-005: MEA, intelligence_agency → critical, black_swan_blindness
   {
-    entity_id: "MCB-005",
+    id: "MCB-005",
     decision_system_type: "intelligence_agency",
     region: "MEA",
     confirmation_bias_intensity: 0.60,
@@ -252,7 +252,7 @@ const mockEntities = [
   },
   // MCB-006: EMEA, investment_committee → moderate, none
   {
-    entity_id: "MCB-006",
+    id: "MCB-006",
     decision_system_type: "investment_committee",
     region: "EMEA",
     confirmation_bias_intensity: 0.35,
@@ -288,7 +288,7 @@ const mockEntities = [
   },
   // MCB-007: APAC, media_organization → high, narrative_trap
   {
-    entity_id: "MCB-007",
+    id: "MCB-007",
     decision_system_type: "media_organization",
     region: "APAC",
     confirmation_bias_intensity: 0.72,
@@ -324,7 +324,7 @@ const mockEntities = [
   },
   // MCB-008: NOAM, ai_decision_system → critical, metacognitive_collapse
   {
-    entity_id: "MCB-008",
+    id: "MCB-008",
     decision_system_type: "ai_decision_system",
     region: "NOAM",
     confirmation_bias_intensity: 0.70,

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // CSE-001 — critical, grooming_network_proliferation (predator>0.85, grooming>0.80)
   {
-    entity_id: "CSE-001", platform_type: "réseau_social", region: "EMEA",
+    id: "CSE-001", platform_type: "réseau_social", region: "EMEA",
     predator_network_density: 0.92, grooming_incident_rate: 0.88,
     csam_detection_gap: 0.70, algorithmic_harm_amplification: 0.68,
     screen_addiction_severity: 0.65, cyberbullying_prevalence: 0.72,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // CSE-002 — critical, csam_distribution_infrastructure (csam>0.85, dark_web>0.80)
   {
-    entity_id: "CSE-002", platform_type: "messagerie_chiffrée", region: "APAC",
+    id: "CSE-002", platform_type: "messagerie_chiffrée", region: "APAC",
     predator_network_density: 0.72, grooming_incident_rate: 0.65,
     csam_detection_gap: 0.90, algorithmic_harm_amplification: 0.68,
     screen_addiction_severity: 0.62, cyberbullying_prevalence: 0.65,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // CSE-003 — critical, algorithmic_radicalization_youth (algo>0.85, screen>0.80)
   {
-    entity_id: "CSE-003", platform_type: "plateforme_vidéo", region: "NOAM",
+    id: "CSE-003", platform_type: "plateforme_vidéo", region: "NOAM",
     predator_network_density: 0.65, grooming_incident_rate: 0.62,
     csam_detection_gap: 0.68, algorithmic_harm_amplification: 0.88,
     screen_addiction_severity: 0.82, cyberbullying_prevalence: 0.70,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // CSE-004 — high, sextortion_epidemic (sextortion>0.80, cyberbullying>0.75)
   {
-    entity_id: "CSE-004", platform_type: "jeu_en_ligne", region: "LATAM",
+    id: "CSE-004", platform_type: "jeu_en_ligne", region: "LATAM",
     predator_network_density: 0.50, grooming_incident_rate: 0.48,
     csam_detection_gap: 0.50, algorithmic_harm_amplification: 0.52,
     screen_addiction_severity: 0.55, cyberbullying_prevalence: 0.78,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // CSE-005 — high, platform_moderation_failure (transp>0.80, reporting>0.75)
   {
-    entity_id: "CSE-005", platform_type: "forum_communautaire", region: "SSA",
+    id: "CSE-005", platform_type: "forum_communautaire", region: "SSA",
     predator_network_density: 0.48, grooming_incident_rate: 0.45,
     csam_detection_gap: 0.50, algorithmic_harm_amplification: 0.48,
     screen_addiction_severity: 0.45, cyberbullying_prevalence: 0.50,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // CSE-006 — moderate, none
   {
-    entity_id: "CSE-006", platform_type: "application_éducative", region: "EMEA",
+    id: "CSE-006", platform_type: "application_éducative", region: "EMEA",
     predator_network_density: 0.28, grooming_incident_rate: 0.25,
     csam_detection_gap: 0.28, algorithmic_harm_amplification: 0.30,
     screen_addiction_severity: 0.28, cyberbullying_prevalence: 0.30,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // CSE-007 — low, none
   {
-    entity_id: "CSE-007", platform_type: "portail_parental", region: "NOAM",
+    id: "CSE-007", platform_type: "portail_parental", region: "NOAM",
     predator_network_density: 0.10, grooming_incident_rate: 0.08,
     csam_detection_gap: 0.10, algorithmic_harm_amplification: 0.10,
     screen_addiction_severity: 0.08, cyberbullying_prevalence: 0.10,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // CSE-008 — low, none
   {
-    entity_id: "CSE-008", platform_type: "service_streaming_famille", region: "APAC",
+    id: "CSE-008", platform_type: "service_streaming_famille", region: "APAC",
     predator_network_density: 0.12, grooming_incident_rate: 0.10,
     csam_detection_gap: 0.12, algorithmic_harm_amplification: 0.10,
     screen_addiction_severity: 0.12, cyberbullying_prevalence: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         platform_type:                e.platform_type,
         region:                       e.region,
         predation_score:              pred,

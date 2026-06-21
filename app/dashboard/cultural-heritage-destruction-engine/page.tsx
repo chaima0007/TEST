@@ -17,7 +17,7 @@ const FILTER_OPTIONS = [
 ]
 
 interface CulturalHeritageEntity {
-  entity_id: string
+  id: string
   name: string
   composite_score: number
   risk_level: string
@@ -82,7 +82,7 @@ function EntityCard({ entity, onClick }: { entity: CulturalHeritageEntity; onCli
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="min-w-0">
           <p className="font-semibold text-white truncate">{entity.name}</p>
-          <p className="text-xs text-gray-400 mt-0.5">{entity.entity_id}</p>
+          <p className="text-xs text-gray-400 mt-0.5">{entity.id}</p>
         </div>
         <span className={`shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border ${cfg.bg} ${cfg.border} ${cfg.color}`}>
           {cfg.label}
@@ -114,7 +114,7 @@ function DetailModal({ entity, onClose }: { entity: CulturalHeritageEntity; onCl
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-lg font-bold text-white">{entity.name}</h2>
-              <p className="text-sm text-gray-400 mt-0.5">{entity.entity_id}</p>
+              <p className="text-sm text-gray-400 mt-0.5">{entity.id}</p>
             </div>
             <div className="flex items-center gap-2">
               <span className={`text-xs font-medium px-2.5 py-1 rounded-full border ${cfg.bg} ${cfg.border} ${cfg.color}`}>{cfg.label}</span>
@@ -132,7 +132,7 @@ function DetailModal({ entity, onClose }: { entity: CulturalHeritageEntity; onCl
               { label: "Score Composite", value: `${entity.composite_score}/100` },
               { label: "Indice Protection Patrimoine", value: `${entity.estimated_heritage_protection_index}/10` },
               { label: "Niveau de risque", value: cfg.label },
-              { label: "Identifiant", value: entity.entity_id },
+              { label: "Identifiant", value: entity.id },
             ].map(({ label, value }) => (
               <div key={label} className="bg-white/4 rounded-lg p-3">
                 <p className="text-[11px] text-gray-500 mb-0.5">{label}</p>
@@ -255,7 +255,7 @@ export default function CulturalHeritageDestructionDashboard() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {filtered.map((entity) => (
-                <EntityCard key={entity.entity_id} entity={entity} onClick={setSelected} />
+                <EntityCard key={entity.id} entity={entity} onClick={setSelected} />
               ))}
               {filtered.length === 0 && (
                 <div className="col-span-full text-center py-12 text-gray-400 text-sm">

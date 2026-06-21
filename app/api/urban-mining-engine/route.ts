@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // UME-001 — critical, toxic_ewaste_dumping_crisis (toxic_chem>0.85, heavy_metal>0.80)
   {
-    entity_id: "UME-001", electronics_sector: "décharge_informelle", region: "SSA",
+    id: "UME-001", electronics_sector: "décharge_informelle", region: "SSA",
     ewaste_volume_growth: 0.88, informal_recycling_rate: 0.80,
     toxic_chemical_exposure: 0.90, heavy_metal_leaching: 0.85,
     gold_silver_recovery_rate: 0.70, rare_earth_extraction: 0.68,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // UME-002 — critical, critical_metal_supply_gap (gold_silver>0.85, rare_earth>0.80)
   {
-    entity_id: "UME-002", electronics_sector: "extraction_métaux_précieux", region: "APAC",
+    id: "UME-002", electronics_sector: "extraction_métaux_précieux", region: "APAC",
     ewaste_volume_growth: 0.85, informal_recycling_rate: 0.72,
     toxic_chemical_exposure: 0.70, heavy_metal_leaching: 0.68,
     gold_silver_recovery_rate: 0.90, rare_earth_extraction: 0.85,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // UME-003 — critical, informal_sector_health_catastrophe (informal>0.85, child_labor>0.80)
   {
-    entity_id: "UME-003", electronics_sector: "recyclage_artisanal", region: "AFRIQUE_OUEST",
+    id: "UME-003", electronics_sector: "recyclage_artisanal", region: "AFRIQUE_OUEST",
     ewaste_volume_growth: 0.90, informal_recycling_rate: 0.90,
     toxic_chemical_exposure: 0.78, heavy_metal_leaching: 0.72,
     gold_silver_recovery_rate: 0.82, rare_earth_extraction: 0.80,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // UME-004 — high, extended_producer_responsibility_failure (producer>0.80, regulatory>0.75)
   {
-    entity_id: "UME-004", electronics_sector: "fabricant_électronique", region: "EMEA",
+    id: "UME-004", electronics_sector: "fabricant_électronique", region: "EMEA",
     ewaste_volume_growth: 0.55, informal_recycling_rate: 0.45,
     toxic_chemical_exposure: 0.48, heavy_metal_leaching: 0.45,
     gold_silver_recovery_rate: 0.50, rare_earth_extraction: 0.48,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // UME-005 — high, planned_obsolescence_acceleration (ewaste>0.80, recycling_tech>0.75)
   {
-    entity_id: "UME-005", electronics_sector: "grande_consommation", region: "NOAM",
+    id: "UME-005", electronics_sector: "grande_consommation", region: "NOAM",
     ewaste_volume_growth: 0.85, informal_recycling_rate: 0.40,
     toxic_chemical_exposure: 0.42, heavy_metal_leaching: 0.40,
     gold_silver_recovery_rate: 0.45, rare_earth_extraction: 0.42,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // UME-006 — moderate, none
   {
-    entity_id: "UME-006", electronics_sector: "collecte_municipale", region: "LATAM",
+    id: "UME-006", electronics_sector: "collecte_municipale", region: "LATAM",
     ewaste_volume_growth: 0.30, informal_recycling_rate: 0.28,
     toxic_chemical_exposure: 0.30, heavy_metal_leaching: 0.28,
     gold_silver_recovery_rate: 0.30, rare_earth_extraction: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // UME-007 — low, none
   {
-    entity_id: "UME-007", electronics_sector: "recyclage_certifié", region: "EMEA",
+    id: "UME-007", electronics_sector: "recyclage_certifié", region: "EMEA",
     ewaste_volume_growth: 0.10, informal_recycling_rate: 0.08,
     toxic_chemical_exposure: 0.10, heavy_metal_leaching: 0.08,
     gold_silver_recovery_rate: 0.10, rare_earth_extraction: 0.08,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // UME-008 — low, none
   {
-    entity_id: "UME-008", electronics_sector: "réparation_reconditionnement", region: "NOAM",
+    id: "UME-008", electronics_sector: "réparation_reconditionnement", region: "NOAM",
     ewaste_volume_growth: 0.08, informal_recycling_rate: 0.10,
     toxic_chemical_exposure: 0.08, heavy_metal_leaching: 0.10,
     gold_silver_recovery_rate: 0.08, rare_earth_extraction: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         electronics_sector:           e.electronics_sector,
         region:                       e.region,
         ewaste_score:                 ew,

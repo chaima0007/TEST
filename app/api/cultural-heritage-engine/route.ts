@@ -14,7 +14,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // CHE-008: critical / cultural_memory_implosion
 const MOCK_ENTITIES = [
   {
-    entity_id: "CHE-001", cultural_domain: "sites_patrimoine_mondial", region: "MEA",
+    id: "CHE-001", cultural_domain: "sites_patrimoine_mondial", region: "MEA",
     heritage_physical_destruction_rate: 0.88, cultural_gentrification_displacement: 0.60, digital_colonialism_cultural_impact: 0.55,
     intangible_heritage_extinction_speed: 0.58, cultural_commodification_distortion: 0.55, AI_cultural_appropriation_risk: 0.50,
     conflict_cultural_targeting_index: 0.82, climate_cultural_heritage_threat: 0.65, tourism_overcrowding_degradation: 0.50,
@@ -23,7 +23,7 @@ const MOCK_ENTITIES = [
     diaspora_cultural_connection_severing: 0.55, generational_cultural_transmission_failure: 0.60,
   },
   {
-    entity_id: "CHE-002", cultural_domain: "arts_vivants", region: "EMEA",
+    id: "CHE-002", cultural_domain: "arts_vivants", region: "EMEA",
     heritage_physical_destruction_rate: 0.08, cultural_gentrification_displacement: 0.10, digital_colonialism_cultural_impact: 0.12,
     intangible_heritage_extinction_speed: 0.10, cultural_commodification_distortion: 0.08, AI_cultural_appropriation_risk: 0.10,
     conflict_cultural_targeting_index: 0.08, climate_cultural_heritage_threat: 0.10, tourism_overcrowding_degradation: 0.12,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
     diaspora_cultural_connection_severing: 0.10, generational_cultural_transmission_failure: 0.12,
   },
   {
-    entity_id: "CHE-003", cultural_domain: "traditions_orales", region: "APAC",
+    id: "CHE-003", cultural_domain: "traditions_orales", region: "APAC",
     heritage_physical_destruction_rate: 0.42, cultural_gentrification_displacement: 0.45, digital_colonialism_cultural_impact: 0.48,
     intangible_heritage_extinction_speed: 0.82, cultural_commodification_distortion: 0.45, AI_cultural_appropriation_risk: 0.42,
     conflict_cultural_targeting_index: 0.40, climate_cultural_heritage_threat: 0.45, tourism_overcrowding_degradation: 0.40,
@@ -41,7 +41,7 @@ const MOCK_ENTITIES = [
     diaspora_cultural_connection_severing: 0.45, generational_cultural_transmission_failure: 0.75,
   },
   {
-    entity_id: "CHE-004", cultural_domain: "musiques_traditionnelles", region: "NOAM",
+    id: "CHE-004", cultural_domain: "musiques_traditionnelles", region: "NOAM",
     heritage_physical_destruction_rate: 0.10, cultural_gentrification_displacement: 0.12, digital_colonialism_cultural_impact: 0.10,
     intangible_heritage_extinction_speed: 0.12, cultural_commodification_distortion: 0.10, AI_cultural_appropriation_risk: 0.12,
     conflict_cultural_targeting_index: 0.08, climate_cultural_heritage_threat: 0.10, tourism_overcrowding_degradation: 0.10,
@@ -50,7 +50,7 @@ const MOCK_ENTITIES = [
     diaspora_cultural_connection_severing: 0.08, generational_cultural_transmission_failure: 0.10,
   },
   {
-    entity_id: "CHE-005", cultural_domain: "artisanat_identitaire", region: "LATAM",
+    id: "CHE-005", cultural_domain: "artisanat_identitaire", region: "LATAM",
     heritage_physical_destruction_rate: 0.55, cultural_gentrification_displacement: 0.60, digital_colonialism_cultural_impact: 0.62,
     intangible_heritage_extinction_speed: 0.55, cultural_commodification_distortion: 0.88, AI_cultural_appropriation_risk: 0.65,
     conflict_cultural_targeting_index: 0.50, climate_cultural_heritage_threat: 0.52, tourism_overcrowding_degradation: 0.75,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     diaspora_cultural_connection_severing: 0.55, generational_cultural_transmission_failure: 0.55,
   },
   {
-    entity_id: "CHE-006", cultural_domain: "architecture_vernaculaire", region: "EMEA",
+    id: "CHE-006", cultural_domain: "architecture_vernaculaire", region: "EMEA",
     heritage_physical_destruction_rate: 0.28, cultural_gentrification_displacement: 0.30, digital_colonialism_cultural_impact: 0.28,
     intangible_heritage_extinction_speed: 0.30, cultural_commodification_distortion: 0.28, AI_cultural_appropriation_risk: 0.30,
     conflict_cultural_targeting_index: 0.25, climate_cultural_heritage_threat: 0.30, tourism_overcrowding_degradation: 0.32,
@@ -68,7 +68,7 @@ const MOCK_ENTITIES = [
     diaspora_cultural_connection_severing: 0.28, generational_cultural_transmission_failure: 0.30,
   },
   {
-    entity_id: "CHE-007", cultural_domain: "langues_autochtones", region: "APAC",
+    id: "CHE-007", cultural_domain: "langues_autochtones", region: "APAC",
     heritage_physical_destruction_rate: 0.45, cultural_gentrification_displacement: 0.48, digital_colonialism_cultural_impact: 0.50,
     intangible_heritage_extinction_speed: 0.48, cultural_commodification_distortion: 0.42, AI_cultural_appropriation_risk: 0.45,
     conflict_cultural_targeting_index: 0.40, climate_cultural_heritage_threat: 0.45, tourism_overcrowding_degradation: 0.42,
@@ -77,7 +77,7 @@ const MOCK_ENTITIES = [
     diaspora_cultural_connection_severing: 0.42, generational_cultural_transmission_failure: 0.45,
   },
   {
-    entity_id: "CHE-008", cultural_domain: "archives_mémoire_collective", region: "NOAM",
+    id: "CHE-008", cultural_domain: "archives_mémoire_collective", region: "NOAM",
     heritage_physical_destruction_rate: 0.62, cultural_gentrification_displacement: 0.65, digital_colonialism_cultural_impact: 0.68,
     intangible_heritage_extinction_speed: 0.65, cultural_commodification_distortion: 0.60, AI_cultural_appropriation_risk: 0.65,
     conflict_cultural_targeting_index: 0.60, climate_cultural_heritage_threat: 0.65, tourism_overcrowding_degradation: 0.60,
@@ -160,7 +160,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig = signal(risk);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         cultural_domain: e.cultural_domain,
         region: e.region,
         destruction_score: dest,

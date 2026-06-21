@@ -8,7 +8,7 @@ if (!process.env.SWARM_API_URL) {
 // ── Types ──────────────────────────────────────────────────────────────────────
 
 interface EntityDict {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -58,7 +58,7 @@ interface MockData {
 
 const MOCK_ENTITIES: EntityDict[] = [
   {
-    entity_id: "TRH-001",
+    id: "TRH-001",
     name: "NeuralLink Corp",
     country: "USA",
     sector: "Neurotechnology",
@@ -79,7 +79,7 @@ const MOCK_ENTITIES: EntityDict[] = [
     last_updated: new Date().toISOString(),
   },
   {
-    entity_id: "TRH-002",
+    id: "TRH-002",
     name: "GenEdit Therapeutics",
     country: "Chine",
     sector: "Biotechnology",
@@ -100,7 +100,7 @@ const MOCK_ENTITIES: EntityDict[] = [
     last_updated: new Date().toISOString(),
   },
   {
-    entity_id: "TRH-003",
+    id: "TRH-003",
     name: "BioEnhance Labs",
     country: "Émirats Arabes Unis",
     sector: "Biotechnology",
@@ -121,7 +121,7 @@ const MOCK_ENTITIES: EntityDict[] = [
     last_updated: new Date().toISOString(),
   },
   {
-    entity_id: "TRH-004",
+    id: "TRH-004",
     name: "CyberAugment Inc",
     country: "Japon",
     sector: "Cybernetics",
@@ -142,7 +142,7 @@ const MOCK_ENTITIES: EntityDict[] = [
     last_updated: new Date().toISOString(),
   },
   {
-    entity_id: "TRH-005",
+    id: "TRH-005",
     name: "LifeExtension Pharma",
     country: "Russie",
     sector: "Pharmaceuticals",
@@ -163,7 +163,7 @@ const MOCK_ENTITIES: EntityDict[] = [
     last_updated: new Date().toISOString(),
   },
   {
-    entity_id: "TRH-006",
+    id: "TRH-006",
     name: "EthicsFirst Biotech",
     country: "Allemagne",
     sector: "Biotechnology",
@@ -184,7 +184,7 @@ const MOCK_ENTITIES: EntityDict[] = [
     last_updated: new Date().toISOString(),
   },
   {
-    entity_id: "TRH-007",
+    id: "TRH-007",
     name: "NordicBioEthics AS",
     country: "Norvège",
     sector: "Research",
@@ -205,7 +205,7 @@ const MOCK_ENTITIES: EntityDict[] = [
     last_updated: new Date().toISOString(),
   },
   {
-    entity_id: "TRH-008",
+    id: "TRH-008",
     name: "HumaneCyborg EU",
     country: "Suisse",
     sector: "Ethics Research",

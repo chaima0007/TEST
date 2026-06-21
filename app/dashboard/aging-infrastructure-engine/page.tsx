@@ -9,7 +9,7 @@ type Severity     = "urgence_effondrement_infrastructure_physique" | "crise_viei
 type AgingAction  = "plan_urgence_réhabilitation_infrastructure" | "réparation_urgente_infrastructure_critique" | "programme_maintenance_préventive_accéléré" | "veille_vieillissement_infrastructure_continue";
 
 interface AieEntity {
-  entity_id: string;
+  id: string;
   infrastructure_type: string;
   region: string;
   deterioration_score: number;
@@ -165,7 +165,7 @@ function DetailModal({ entity, onClose }: { entity: AieEntity; onClose: () => vo
       <div className="bg-slate-900 border border-red-800/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-white">{entity.id}</span>
             <span className="ml-2 text-red-400 text-xs">{entity.infrastructure_type.replace(/_/g, " ")}</span>
             <span className="ml-2 text-stone-400 text-xs">{entity.region}</span>
           </div>
@@ -354,10 +354,10 @@ export default function AgingInfrastructureDashboard() {
         {filtered.map(e => {
           const risk = RISK_META[e.risk_level];
           return (
-            <div key={e.entity_id} onClick={() => setSelected(e)}
+            <div key={e.id} onClick={() => setSelected(e)}
               className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-red-800/50 transition-colors">
               <div className="flex items-center justify-between mb-1">
-                <span className="font-bold text-white">{e.entity_id}</span>
+                <span className="font-bold text-white">{e.id}</span>
                 <span className="text-xs text-stone-400">{e.region}</span>
               </div>
               <div className="text-xs text-red-400 mb-2 capitalize">{e.infrastructure_type.replace(/_/g, " ")}</div>

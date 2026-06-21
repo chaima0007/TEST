@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // CBDC-001 — Digital Yuan, APAC → critical, financial_surveillance_state
   {
-    entity_id: "CBDC-001", currency_type: "digital_yuan", region: "APAC",
+    id: "CBDC-001", currency_type: "digital_yuan", region: "APAC",
     surveillance_intensity: 0.92, transaction_monitoring: 0.88,
     programmability_risk: 0.78, privacy_preservation: 0.08,
     financial_inclusion: 0.72, sovereignty_risk: 0.60,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
   },
   // CBDC-002 — Digital Dollar, AMER → critical, programmable_money_control
   {
-    entity_id: "CBDC-002", currency_type: "digital_dollar", region: "AMER",
+    id: "CBDC-002", currency_type: "digital_dollar", region: "AMER",
     surveillance_intensity: 0.80, transaction_monitoring: 0.82,
     programmability_risk: 0.92, privacy_preservation: 0.15,
     financial_inclusion: 0.60, sovereignty_risk: 0.58,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   },
   // CBDC-003 — e-Naira Nigeria, AFRICA → moderate, financial_exclusion_crisis
   {
-    entity_id: "CBDC-003", currency_type: "e_naira", region: "AFRICA",
+    id: "CBDC-003", currency_type: "e_naira", region: "AFRICA",
     surveillance_intensity: 0.10, transaction_monitoring: 0.08,
     programmability_risk: 0.12, privacy_preservation: 0.80,
     financial_inclusion: 0.10, sovereignty_risk: 0.12,
@@ -45,7 +45,7 @@ const MOCK_ENTITIES = [
   },
   // CBDC-004 — Digital Ruble, EMEA → critical, monetary_sovereignty_capture
   {
-    entity_id: "CBDC-004", currency_type: "digital_ruble", region: "EMEA",
+    id: "CBDC-004", currency_type: "digital_ruble", region: "EMEA",
     surveillance_intensity: 0.80, transaction_monitoring: 0.75,
     programmability_risk: 0.72, privacy_preservation: 0.12,
     financial_inclusion: 0.55, sovereignty_risk: 0.88,
@@ -58,7 +58,7 @@ const MOCK_ENTITIES = [
   },
   // CBDC-005 — Digital Euro, EMEA → high, digital_dollarization_trap
   {
-    entity_id: "CBDC-005", currency_type: "digital_euro", region: "EMEA",
+    id: "CBDC-005", currency_type: "digital_euro", region: "EMEA",
     surveillance_intensity: 0.55, transaction_monitoring: 0.50,
     programmability_risk: 0.58, privacy_preservation: 0.52,
     financial_inclusion: 0.68, sovereignty_risk: 0.60,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   },
   // CBDC-006 — Petro Venezuela, LATAM → high, none
   {
-    entity_id: "CBDC-006", currency_type: "petro_venezuela", region: "LATAM",
+    id: "CBDC-006", currency_type: "petro_venezuela", region: "LATAM",
     surveillance_intensity: 0.58, transaction_monitoring: 0.52,
     programmability_risk: 0.55, privacy_preservation: 0.38,
     financial_inclusion: 0.48, sovereignty_risk: 0.58,
@@ -84,7 +84,7 @@ const MOCK_ENTITIES = [
   },
   // CBDC-007 — Sand Dollar Bahamas, CARIB → low, none
   {
-    entity_id: "CBDC-007", currency_type: "sand_dollar", region: "CARIB",
+    id: "CBDC-007", currency_type: "sand_dollar", region: "CARIB",
     surveillance_intensity: 0.12, transaction_monitoring: 0.10,
     programmability_risk: 0.15, privacy_preservation: 0.85,
     financial_inclusion: 0.88, sovereignty_risk: 0.12,
@@ -97,7 +97,7 @@ const MOCK_ENTITIES = [
   },
   // CBDC-008 — JAM-DEX Jamaica, CARIB → low, none
   {
-    entity_id: "CBDC-008", currency_type: "jam_dex", region: "CARIB",
+    id: "CBDC-008", currency_type: "jam_dex", region: "CARIB",
     surveillance_intensity: 0.14, transaction_monitoring: 0.12,
     programmability_risk: 0.15, privacy_preservation: 0.85,
     financial_inclusion: 0.85, sovereignty_risk: 0.15,
@@ -204,7 +204,7 @@ export async function GET() {
       const sig  = signal(risk);
 
       return {
-        entity_id:              e.entity_id,
+        id:              e.entity_id,
         currency_type:          e.currency_type,
         region:                 e.region,
         surveillance_score:     surv,

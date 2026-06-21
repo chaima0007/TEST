@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "ENT-001",
+      id: "ENT-001",
       name: "SolarAlgae Industries",
       country: "États-Unis",
       sector: "Bioénergie",
@@ -48,7 +48,7 @@ function getMockData() {
       facility_count: 12,
     },
     {
-      entity_id: "ENT-002",
+      id: "ENT-002",
       name: "BioPetro Algae",
       country: "Brésil",
       sector: "Pétrochimie Verte",
@@ -69,7 +69,7 @@ function getMockData() {
       facility_count: 8,
     },
     {
-      entity_id: "ENT-003",
+      id: "ENT-003",
       name: "AlgaFuel Nordic",
       country: "Norvège",
       sector: "Carburants Alternatifs",
@@ -90,7 +90,7 @@ function getMockData() {
       facility_count: 5,
     },
     {
-      entity_id: "ENT-004",
+      id: "ENT-004",
       name: "Spirulina Power SA",
       country: "France",
       sector: "Nutraceutique & Énergie",
@@ -111,7 +111,7 @@ function getMockData() {
       facility_count: 3,
     },
     {
-      entity_id: "ENT-005",
+      id: "ENT-005",
       name: "MicroBloom Tech",
       country: "Australie",
       sector: "Biotechnologie Marine",
@@ -132,7 +132,7 @@ function getMockData() {
       facility_count: 7,
     },
     {
-      entity_id: "ENT-006",
+      id: "ENT-006",
       name: "Chlorella Energy GmbH",
       country: "Allemagne",
       sector: "Énergie Renouvelable",
@@ -153,7 +153,7 @@ function getMockData() {
       facility_count: 2,
     },
     {
-      entity_id: "ENT-007",
+      id: "ENT-007",
       name: "AquaGreen Labs",
       country: "Pays-Bas",
       sector: "Recherche Appliquée",
@@ -174,7 +174,7 @@ function getMockData() {
       facility_count: 1,
     },
     {
-      entity_id: "ENT-008",
+      id: "ENT-008",
       name: "BlueTide Bioenergy",
       country: "Danemark",
       sector: "Énergie Côtière",

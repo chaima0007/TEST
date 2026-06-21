@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 const MOCK_ENTITIES = [
   // SWE-001 — critical, carrington_level_event_risk (solar_exp>0.85, transformer_vuln>0.80)
   {
-    entity_id: "SWE-001", infrastructure_type: "power_grid", region: "NOAM",
+    id: "SWE-001", infrastructure_type: "power_grid", region: "NOAM",
     solar_activity_exposure: 0.92, grid_hardening_level: 0.10, transformer_vulnerability: 0.88,
     satellite_shielding: 0.50, gps_dependency: 0.80, communication_backup: 0.15,
     financial_system_exposure: 0.75, emergency_power_reserve: 0.12, early_warning_capability: 0.12,
@@ -16,7 +16,7 @@ const MOCK_ENTITIES = [
   },
   // SWE-002 — critical, grid_infrastructure_collapse (geomag>0.85, grid_hardening<0.20)
   {
-    entity_id: "SWE-002", infrastructure_type: "electrical_distribution", region: "EMEA",
+    id: "SWE-002", infrastructure_type: "electrical_distribution", region: "EMEA",
     solar_activity_exposure: 0.80, grid_hardening_level: 0.12, transformer_vulnerability: 0.78,
     satellite_shielding: 0.40, gps_dependency: 0.75, communication_backup: 0.20,
     financial_system_exposure: 0.68, emergency_power_reserve: 0.18, early_warning_capability: 0.15,
@@ -26,7 +26,7 @@ const MOCK_ENTITIES = [
   },
   // SWE-003 — critical, satellite_constellation_disruption (sat_shielding<0.20, space_sit<0.20)
   {
-    entity_id: "SWE-003", infrastructure_type: "satellite_network", region: "APAC",
+    id: "SWE-003", infrastructure_type: "satellite_network", region: "APAC",
     solar_activity_exposure: 0.78, grid_hardening_level: 0.15, transformer_vulnerability: 0.72,
     satellite_shielding: 0.12, gps_dependency: 0.88, communication_backup: 0.15,
     financial_system_exposure: 0.70, emergency_power_reserve: 0.15, early_warning_capability: 0.18,
@@ -36,7 +36,7 @@ const MOCK_ENTITIES = [
   },
   // SWE-004 — high, financial_system_blackout (fin_exp>0.80, data_center<0.25)
   {
-    entity_id: "SWE-004", infrastructure_type: "financial_infrastructure", region: "LATAM",
+    id: "SWE-004", infrastructure_type: "financial_infrastructure", region: "LATAM",
     solar_activity_exposure: 0.42, grid_hardening_level: 0.52, transformer_vulnerability: 0.40,
     satellite_shielding: 0.55, gps_dependency: 0.45, communication_backup: 0.58,
     financial_system_exposure: 0.85, emergency_power_reserve: 0.52, early_warning_capability: 0.55,
@@ -46,7 +46,7 @@ const MOCK_ENTITIES = [
   },
   // SWE-005 — high, emergency_coordination_failure (emergency_power<0.20, intl_coord<0.20)
   {
-    entity_id: "SWE-005", infrastructure_type: "emergency_services", region: "SSA",
+    id: "SWE-005", infrastructure_type: "emergency_services", region: "SSA",
     solar_activity_exposure: 0.45, grid_hardening_level: 0.50, transformer_vulnerability: 0.42,
     satellite_shielding: 0.52, gps_dependency: 0.48, communication_backup: 0.55,
     financial_system_exposure: 0.45, emergency_power_reserve: 0.15, early_warning_capability: 0.52,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // SWE-006 — moderate, none
   {
-    entity_id: "SWE-006", infrastructure_type: "aviation_control", region: "NOAM",
+    id: "SWE-006", infrastructure_type: "aviation_control", region: "NOAM",
     solar_activity_exposure: 0.30, grid_hardening_level: 0.55, transformer_vulnerability: 0.28,
     satellite_shielding: 0.55, gps_dependency: 0.35, communication_backup: 0.58,
     financial_system_exposure: 0.32, emergency_power_reserve: 0.55, early_warning_capability: 0.52,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
   },
   // SWE-007 — low, none
   {
-    entity_id: "SWE-007", infrastructure_type: "telecommunications", region: "EMEA",
+    id: "SWE-007", infrastructure_type: "telecommunications", region: "EMEA",
     solar_activity_exposure: 0.10, grid_hardening_level: 0.85, transformer_vulnerability: 0.10,
     satellite_shielding: 0.88, gps_dependency: 0.12, communication_backup: 0.88,
     financial_system_exposure: 0.10, emergency_power_reserve: 0.88, early_warning_capability: 0.88,
@@ -76,7 +76,7 @@ const MOCK_ENTITIES = [
   },
   // SWE-008 — low, none
   {
-    entity_id: "SWE-008", infrastructure_type: "data_centers", region: "APAC",
+    id: "SWE-008", infrastructure_type: "data_centers", region: "APAC",
     solar_activity_exposure: 0.08, grid_hardening_level: 0.88, transformer_vulnerability: 0.08,
     satellite_shielding: 0.90, gps_dependency: 0.10, communication_backup: 0.90,
     financial_system_exposure: 0.08, emergency_power_reserve: 0.90, early_warning_capability: 0.90,
@@ -150,7 +150,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         infrastructure_type:          e.infrastructure_type,
         region:                       e.region,
         exposure_score:               exp,

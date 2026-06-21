@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // regulatory_capture_complete: regulatory_capture_depth>=0.70 AND agency_capture_prevalence>=0.65
   // composite >=60 → critical
   {
-    entity_id: "CPE-001", industry_sector: "financial_services", region: "NOAM",
+    id: "CPE-001", industry_sector: "financial_services", region: "NOAM",
     regulatory_capture_depth: 0.88,
     lobbying_expenditure_ratio: 0.72,
     revolving_door_intensity: 0.65,
@@ -32,7 +32,7 @@ const MOCK_ENTITIES = [
   // CPE-002 — low, pattern=none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "CPE-002", industry_sector: "local_retail", region: "EMEA",
+    id: "CPE-002", industry_sector: "local_retail", region: "EMEA",
     regulatory_capture_depth: 0.10,
     lobbying_expenditure_ratio: 0.08,
     revolving_door_intensity: 0.10,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   // regulatory_capture_complete must NOT fire: regulatory_capture_depth<0.70 OR agency_capture_prevalence<0.65
   // composite >=40 and <60 → high
   {
-    entity_id: "CPE-003", industry_sector: "big_tech", region: "APAC",
+    id: "CPE-003", industry_sector: "big_tech", region: "APAC",
     regulatory_capture_depth: 0.50,
     lobbying_expenditure_ratio: 0.55,
     revolving_door_intensity: 0.48,
@@ -78,7 +78,7 @@ const MOCK_ENTITIES = [
   // CPE-004 — low, pattern=none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "CPE-004", industry_sector: "cooperative_farming", region: "LATAM",
+    id: "CPE-004", industry_sector: "cooperative_farming", region: "LATAM",
     regulatory_capture_depth: 0.12,
     lobbying_expenditure_ratio: 0.10,
     revolving_door_intensity: 0.08,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
   // antitrust_collapse must NOT fire: market_concentration_index<0.70 OR antitrust_enforcement_weakness<0.65
   // composite >=60 → critical
   {
-    entity_id: "CPE-005", industry_sector: "fossil_fuels", region: "MEA",
+    id: "CPE-005", industry_sector: "fossil_fuels", region: "MEA",
     regulatory_capture_depth: 0.62,
     lobbying_expenditure_ratio: 0.85,
     revolving_door_intensity: 0.72,
@@ -125,7 +125,7 @@ const MOCK_ENTITIES = [
   // CPE-006 — moderate, pattern=none
   // composite >=20 and <40 → moderate; no pattern triggers
   {
-    entity_id: "CPE-006", industry_sector: "regional_utilities", region: "EMEA",
+    id: "CPE-006", industry_sector: "regional_utilities", region: "EMEA",
     regulatory_capture_depth: 0.32,
     lobbying_expenditure_ratio: 0.28,
     revolving_door_intensity: 0.30,
@@ -149,7 +149,7 @@ const MOCK_ENTITIES = [
   // regulatory_capture_complete must NOT fire, antitrust_collapse must NOT fire, dark_money_dominance must NOT fire
   // composite >=40 and <60 → high
   {
-    entity_id: "CPE-007", industry_sector: "multinational_pharma", region: "NOAM",
+    id: "CPE-007", industry_sector: "multinational_pharma", region: "NOAM",
     regulatory_capture_depth: 0.50,
     lobbying_expenditure_ratio: 0.55,
     revolving_door_intensity: 0.48,
@@ -174,7 +174,7 @@ const MOCK_ENTITIES = [
   // dark_money_dominance must NOT fire, corporate_sovereignty must NOT fire
   // composite >=60 → critical
   {
-    entity_id: "CPE-008", industry_sector: "defense_aerospace", region: "NOAM",
+    id: "CPE-008", industry_sector: "defense_aerospace", region: "NOAM",
     regulatory_capture_depth: 0.65,
     lobbying_expenditure_ratio: 0.62,
     revolving_door_intensity: 0.70,
@@ -293,7 +293,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         industry_sector:                  e.industry_sector,
         region:                           e.region,
         capture_score:                    cap,

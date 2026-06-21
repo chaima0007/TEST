@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // PME-001 — critical, clinical_trial_access_barrier (clinical_trial_access>0.85, research_funding_barrier>0.80)
   {
-    entity_id: "PME-001", substance_category: "psilocybine", region: "NOAM",
+    id: "PME-001", substance_category: "psilocybine", region: "NOAM",
     clinical_evidence_gap: 0.90, fda_scheduling_barrier: 0.75,
     insurance_coverage_exclusion: 0.85, therapist_training_deficit: 0.80,
     clinical_trial_access: 0.92, indigenous_knowledge_theft: 0.60,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // PME-002 — critical, regulatory_scheduling_blockade (fda_scheduling_barrier>0.85, decriminalization_policy_gap>0.80)
   {
-    entity_id: "PME-002", substance_category: "mdma", region: "EMEA",
+    id: "PME-002", substance_category: "mdma", region: "EMEA",
     clinical_evidence_gap: 0.78, fda_scheduling_barrier: 0.92,
     insurance_coverage_exclusion: 0.75, therapist_training_deficit: 0.72,
     clinical_trial_access: 0.80, indigenous_knowledge_theft: 0.55,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // PME-003 — critical, harm_reduction_policy_failure (harm_reduction_suppression>0.80, underground_session_risk>0.75)
   {
-    entity_id: "PME-003", substance_category: "ketamine", region: "LATAM",
+    id: "PME-003", substance_category: "ketamine", region: "LATAM",
     clinical_evidence_gap: 0.82, fda_scheduling_barrier: 0.78,
     insurance_coverage_exclusion: 0.78, therapist_training_deficit: 0.75,
     clinical_trial_access: 0.80, indigenous_knowledge_theft: 0.55,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // PME-004 — high, commercialization_equity_gap (commercialization_monopoly_risk>0.85, insurance_coverage_exclusion>0.80)
   {
-    entity_id: "PME-004", substance_category: "ayahuasca", region: "APAC",
+    id: "PME-004", substance_category: "ayahuasca", region: "APAC",
     clinical_evidence_gap: 0.50, fda_scheduling_barrier: 0.48,
     insurance_coverage_exclusion: 0.88, therapist_training_deficit: 0.45,
     clinical_trial_access: 0.50, indigenous_knowledge_theft: 0.45,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // PME-005 — high, indigenous_knowledge_appropriation (indigenous_knowledge_theft>0.80, commercialization_monopoly_risk>0.75)
   {
-    entity_id: "PME-005", substance_category: "ibogaine", region: "SSA",
+    id: "PME-005", substance_category: "ibogaine", region: "SSA",
     clinical_evidence_gap: 0.48, fda_scheduling_barrier: 0.45,
     insurance_coverage_exclusion: 0.45, therapist_training_deficit: 0.42,
     clinical_trial_access: 0.48, indigenous_knowledge_theft: 0.88,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // PME-006 — moderate, none
   {
-    entity_id: "PME-006", substance_category: "lsd", region: "EMEA",
+    id: "PME-006", substance_category: "lsd", region: "EMEA",
     clinical_evidence_gap: 0.28, fda_scheduling_barrier: 0.28,
     insurance_coverage_exclusion: 0.30, therapist_training_deficit: 0.25,
     clinical_trial_access: 0.28, indigenous_knowledge_theft: 0.25,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // PME-007 — low, none
   {
-    entity_id: "PME-007", substance_category: "mescaline", region: "NOAM",
+    id: "PME-007", substance_category: "mescaline", region: "NOAM",
     clinical_evidence_gap: 0.10, fda_scheduling_barrier: 0.10,
     insurance_coverage_exclusion: 0.12, therapist_training_deficit: 0.08,
     clinical_trial_access: 0.10, indigenous_knowledge_theft: 0.08,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // PME-008 — low, none
   {
-    entity_id: "PME-008", substance_category: "dmt", region: "APAC",
+    id: "PME-008", substance_category: "dmt", region: "APAC",
     clinical_evidence_gap: 0.12, fda_scheduling_barrier: 0.12,
     insurance_coverage_exclusion: 0.10, therapist_training_deficit: 0.10,
     clinical_trial_access: 0.12, indigenous_knowledge_theft: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                       e.entity_id,
+        id:                       e.entity_id,
         substance_category:              e.substance_category,
         region:                          e.region,
         clinical_score:                  cli,

@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "ENT-001",
+      id: "ENT-001",
       name: "SwarmAI Dynamics",
       country: "États-Unis",
       sector: "Intelligence Artificielle",
@@ -48,7 +48,7 @@ function getMockData() {
       agent_count: 847,
     },
     {
-      entity_id: "ENT-002",
+      id: "ENT-002",
       name: "AgentForge Berlin",
       country: "Allemagne",
       sector: "Robotique & Automatisation",
@@ -69,7 +69,7 @@ function getMockData() {
       agent_count: 523,
     },
     {
-      entity_id: "ENT-003",
+      id: "ENT-003",
       name: "Nexus Orchestral",
       country: "Royaume-Uni",
       sector: "Infrastructure Numérique",
@@ -90,7 +90,7 @@ function getMockData() {
       agent_count: 1205,
     },
     {
-      entity_id: "ENT-004",
+      id: "ENT-004",
       name: "Korrelia Systems",
       country: "France",
       sector: "Logistique & Transport",
@@ -111,7 +111,7 @@ function getMockData() {
       agent_count: 312,
     },
     {
-      entity_id: "ENT-005",
+      id: "ENT-005",
       name: "Parallax Computing",
       country: "Japon",
       sector: "Systèmes Embarqués",
@@ -132,7 +132,7 @@ function getMockData() {
       agent_count: 189,
     },
     {
-      entity_id: "ENT-006",
+      id: "ENT-006",
       name: "Cascade Robotics",
       country: "Canada",
       sector: "Industrie Manufacturière",
@@ -153,7 +153,7 @@ function getMockData() {
       agent_count: 67,
     },
     {
-      entity_id: "ENT-007",
+      id: "ENT-007",
       name: "Harmony Agents",
       country: "Pays-Bas",
       sector: "Services Financiers",
@@ -174,7 +174,7 @@ function getMockData() {
       agent_count: 23,
     },
     {
-      entity_id: "ENT-008",
+      id: "ENT-008",
       name: "Equilibria Labs",
       country: "Suède",
       sector: "Recherche & Développement",

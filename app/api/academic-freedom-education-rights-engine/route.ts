@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "AFE-001",
+      id: "AFE-001",
       name: "Afghanistan/Taliban — Filles Bannies Éducation, Universités Femmes Fermées, Chercheurs Exilés & Manuels Brûlés",
       country: "Afghanistan",
       scholar_persecution_imprisonment_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "AFE-002",
+      id: "AFE-002",
       name: "Chine — Uighur Scholars Disparus, Universités Idéologie Xi, Manuels Réécrits Histoire & Chercheurs Étrangers Espionnage",
       country: "Chine",
       scholar_persecution_imprisonment_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "AFE-003",
+      id: "AFE-003",
       name: "Turquie/Erdoğan — 6 000 Académiciens Virés Post-2016, Pétition Paix Signée→Procès, Universités Recteurs Nommés Gouvernement",
       country: "Turquie",
       scholar_persecution_imprisonment_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "AFE-004",
+      id: "AFE-004",
       name: "Hongrie/Orbán — CEU Expulsé Budapest, Études Genre Interdites, Académie Sciences Sous Contrôle & Think Tanks Fermés",
       country: "Hongrie",
       scholar_persecution_imprisonment_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "AFE-005",
+      id: "AFE-005",
       name: "Russie/Belarus — Profs Anti-Guerre Licenciés, Étudiants Arrêtés Manifestations, Histoire Réécriture Ukrainienne & LGBTQ+ Curricula Bannis",
       country: "Russie/Belarus",
       scholar_persecution_imprisonment_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "AFE-006",
+      id: "AFE-006",
       name: "USA/UK — DEI Programmes Attaqués, Campus Speech Codes, Donors Political Pressure & Academic Boycott Palestine",
       country: "USA/UK",
       scholar_persecution_imprisonment_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "AFE-007",
+      id: "AFE-007",
       name: "Scholars at Risk/SAR — Réseau Protection Académiciens Persécutés, Free to Think Report & Monitoring Attaques",
       country: "Global",
       scholar_persecution_imprisonment_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "AFE-008",
+      id: "AFE-008",
       name: "ONU/Art.13 DESC — Droit Éducation, Recommandation UNESCO Chercheurs 1997 & SDG 4 Éducation Qualité",
       country: "Global",
       scholar_persecution_imprisonment_severity_score: 5.0,

@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "GEF-001", labor_sector: "ride_hailing", region: "LATAM",
+    id: "GEF-001", labor_sector: "ride_hailing", region: "LATAM",
     platform_worker_precarity_index: 0.82, social_protection_absence_rate: 0.78,
     income_volatility_severity: 0.75, algorithmic_management_oppression: 0.60,
     classification_misuse_rate: 0.55, collective_bargaining_erosion: 0.60,
@@ -15,7 +15,7 @@ const MOCK_ENTITIES = [
     labor_market_dualization_index: 0.52,
   },
   {
-    entity_id: "GEF-002", labor_sector: "freelance_creative", region: "APAC",
+    id: "GEF-002", labor_sector: "freelance_creative", region: "APAC",
     platform_worker_precarity_index: 0.18, social_protection_absence_rate: 0.20,
     income_volatility_severity: 0.22, algorithmic_management_oppression: 0.15,
     classification_misuse_rate: 0.18, collective_bargaining_erosion: 0.15,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     labor_market_dualization_index: 0.12,
   },
   {
-    entity_id: "GEF-003", labor_sector: "food_delivery", region: "EMEA",
+    id: "GEF-003", labor_sector: "food_delivery", region: "EMEA",
     platform_worker_precarity_index: 0.58, social_protection_absence_rate: 0.55,
     income_volatility_severity: 0.52, algorithmic_management_oppression: 0.78,
     classification_misuse_rate: 0.60, collective_bargaining_erosion: 0.55,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
     labor_market_dualization_index: 0.50,
   },
   {
-    entity_id: "GEF-004", labor_sector: "micro_tasking", region: "NOAM",
+    id: "GEF-004", labor_sector: "micro_tasking", region: "NOAM",
     platform_worker_precarity_index: 0.12, social_protection_absence_rate: 0.15,
     income_volatility_severity: 0.10, algorithmic_management_oppression: 0.12,
     classification_misuse_rate: 0.10, collective_bargaining_erosion: 0.12,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     labor_market_dualization_index: 0.08,
   },
   {
-    entity_id: "GEF-005", labor_sector: "domestic_care", region: "MEA",
+    id: "GEF-005", labor_sector: "domestic_care", region: "MEA",
     platform_worker_precarity_index: 0.62, social_protection_absence_rate: 0.58,
     income_volatility_severity: 0.60, algorithmic_management_oppression: 0.55,
     classification_misuse_rate: 0.78, collective_bargaining_erosion: 0.82,
@@ -63,7 +63,7 @@ const MOCK_ENTITIES = [
     labor_market_dualization_index: 0.58,
   },
   {
-    entity_id: "GEF-006", labor_sector: "logistics_last_mile", region: "APAC",
+    id: "GEF-006", labor_sector: "logistics_last_mile", region: "APAC",
     platform_worker_precarity_index: 0.38, social_protection_absence_rate: 0.35,
     income_volatility_severity: 0.32, algorithmic_management_oppression: 0.40,
     classification_misuse_rate: 0.35, collective_bargaining_erosion: 0.38,
@@ -75,7 +75,7 @@ const MOCK_ENTITIES = [
     labor_market_dualization_index: 0.32,
   },
   {
-    entity_id: "GEF-007", labor_sector: "beauty_wellness", region: "LATAM",
+    id: "GEF-007", labor_sector: "beauty_wellness", region: "LATAM",
     platform_worker_precarity_index: 0.58, social_protection_absence_rate: 0.55,
     income_volatility_severity: 0.72, algorithmic_management_oppression: 0.60,
     classification_misuse_rate: 0.58, collective_bargaining_erosion: 0.55,
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
     labor_market_dualization_index: 0.52,
   },
   {
-    entity_id: "GEF-008", labor_sector: "platform_agriculture", region: "EMEA",
+    id: "GEF-008", labor_sector: "platform_agriculture", region: "EMEA",
     platform_worker_precarity_index: 0.62, social_protection_absence_rate: 0.58,
     income_volatility_severity: 0.60, algorithmic_management_oppression: 0.58,
     classification_misuse_rate: 0.55, collective_bargaining_erosion: 0.62,
@@ -166,7 +166,7 @@ export async function GET() {
       const severity = gigSeverity(comp);
       const action = gigAction(risk);
       return {
-        entity_id: i.entity_id,
+        id: i.entity_id,
         labor_sector: i.labor_sector,
         region: i.region,
         precarity_score: pre,

@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // ─── Math (mirrors Python exactly) ───────────────────────────────────────────
 
 interface CceInput {
-  entity_id: string;
+  id: string;
   market_type: string;
   region: string;
   fraud_prevalence: number;
@@ -107,7 +107,7 @@ function analyzeEntity(e: CceInput) {
   const sig  = signal(risk);
 
   return {
-    entity_id:                e.entity_id,
+    id:                e.entity_id,
     market_type:              e.market_type,
     region:                   e.region,
     fraud_score:              fr,
@@ -136,7 +136,7 @@ const mockEntities = (() => {
   // manipulation=(0.72*0.4+0.70*0.35+0.68*0.25)*100=70.30
   // composite=85.75*0.30+78.05*0.25+72.70*0.25+70.30*0.20=25.725+19.5125+18.175+14.06=77.47 → critical
   const e1 = analyzeEntity({
-    entity_id: "CCE-001", market_type: "voluntary_carbon_market", region: "GLOBAL",
+    id: "CCE-001", market_type: "voluntary_carbon_market", region: "GLOBAL",
     fraud_prevalence: 0.90, additionality_failure: 0.80, permanence_risk: 0.72,
     double_counting_rate: 0.85, verification_opacity: 0.82, greenwashing_integration: 0.80,
     REDD_collapse_risk: 0.75, voluntary_market_manipulation: 0.72, corporate_offset_abuse: 0.78,
@@ -148,7 +148,7 @@ const mockEntities = (() => {
   // CCE-002: low + none
   // All values ~0.10-0.15 → composite ~12 → low
   const e2 = analyzeEntity({
-    entity_id: "CCE-002", market_type: "compliance_market", region: "EU",
+    id: "CCE-002", market_type: "compliance_market", region: "EU",
     fraud_prevalence: 0.10, additionality_failure: 0.12, permanence_risk: 0.11,
     double_counting_rate: 0.10, verification_opacity: 0.12, greenwashing_integration: 0.10,
     REDD_collapse_risk: 0.11, voluntary_market_manipulation: 0.10, corporate_offset_abuse: 0.12,
@@ -166,7 +166,7 @@ const mockEntities = (() => {
   // manipulation=(0.68*0.4+0.65*0.35+0.62*0.25)*100=65.45
   // composite=72.00*0.30+70.30*0.25+82.75*0.25+65.45*0.20=21.60+17.575+20.6875+13.09=72.95 → critical
   const e3 = analyzeEntity({
-    entity_id: "CCE-003", market_type: "REDD_plus", region: "AMAZONIA",
+    id: "CCE-003", market_type: "REDD_plus", region: "AMAZONIA",
     fraud_prevalence: 0.70, additionality_failure: 0.85, permanence_risk: 0.80,
     double_counting_rate: 0.65, verification_opacity: 0.78, greenwashing_integration: 0.72,
     REDD_collapse_risk: 0.90, voluntary_market_manipulation: 0.68, corporate_offset_abuse: 0.70,
@@ -184,7 +184,7 @@ const mockEntities = (() => {
   // manipulation=(0.50*0.4+0.48*0.35+0.45*0.25)*100=48.05
   // composite=47.00*0.30+83.75*0.25+48.80*0.25+48.05*0.20=14.10+20.9375+12.20+9.61=56.85 → high
   const e4 = analyzeEntity({
-    entity_id: "CCE-004", market_type: "corporate_offset", region: "NAMER",
+    id: "CCE-004", market_type: "corporate_offset", region: "NAMER",
     fraud_prevalence: 0.50, additionality_failure: 0.45, permanence_risk: 0.48,
     double_counting_rate: 0.45, verification_opacity: 0.52, greenwashing_integration: 0.90,
     REDD_collapse_risk: 0.50, voluntary_market_manipulation: 0.50, corporate_offset_abuse: 0.85,
@@ -202,7 +202,7 @@ const mockEntities = (() => {
   // manipulation=(0.85*0.4+0.80*0.35+0.70*0.25)*100=79.50
   // composite=50.75*0.30+58.25*0.25+58.20*0.25+79.50*0.20=15.225+14.5625+14.55+15.90=60.24 → critical
   const e5 = analyzeEntity({
-    entity_id: "CCE-005", market_type: "voluntary_carbon_market", region: "APAC",
+    id: "CCE-005", market_type: "voluntary_carbon_market", region: "APAC",
     fraud_prevalence: 0.55, additionality_failure: 0.45, permanence_risk: 0.62,
     double_counting_rate: 0.50, verification_opacity: 0.58, greenwashing_integration: 0.60,
     REDD_collapse_risk: 0.55, voluntary_market_manipulation: 0.85, corporate_offset_abuse: 0.55,
@@ -219,7 +219,7 @@ const mockEntities = (() => {
   // manipulation=(0.35*0.4+0.32*0.35+0.28*0.25)*100=32.2
   // composite=29.8*0.30+32.7*0.25+30.5*0.25+32.2*0.20=8.94+8.175+7.625+6.44=31.18 → moderate
   const e6 = analyzeEntity({
-    entity_id: "CCE-006", market_type: "biodiversity_credit", region: "EMEA",
+    id: "CCE-006", market_type: "biodiversity_credit", region: "EMEA",
     fraud_prevalence: 0.30, additionality_failure: 0.32, permanence_risk: 0.30,
     double_counting_rate: 0.28, verification_opacity: 0.35, greenwashing_integration: 0.35,
     REDD_collapse_risk: 0.32, voluntary_market_manipulation: 0.35, corporate_offset_abuse: 0.32,
@@ -237,7 +237,7 @@ const mockEntities = (() => {
   // manipulation=(0.50*0.4+0.48*0.35+0.80*0.25)*100=56.80
   // composite=42.50*0.30+47.75*0.25+47.50*0.25+56.80*0.20=12.75+11.9375+11.875+11.36=47.92 → high
   const e7 = analyzeEntity({
-    entity_id: "CCE-007", market_type: "compliance_market", region: "LATAM",
+    id: "CCE-007", market_type: "compliance_market", region: "LATAM",
     fraud_prevalence: 0.45, additionality_failure: 0.42, permanence_risk: 0.50,
     double_counting_rate: 0.40, verification_opacity: 0.48, greenwashing_integration: 0.50,
     REDD_collapse_risk: 0.45, voluntary_market_manipulation: 0.50, corporate_offset_abuse: 0.45,
@@ -249,7 +249,7 @@ const mockEntities = (() => {
   // CCE-008: low + none
   // All values ~0.12-0.18 → composite ~14 → low
   const e8 = analyzeEntity({
-    entity_id: "CCE-008", market_type: "sovereign_carbon", region: "MEA",
+    id: "CCE-008", market_type: "sovereign_carbon", region: "MEA",
     fraud_prevalence: 0.14, additionality_failure: 0.16, permanence_risk: 0.12,
     double_counting_rate: 0.13, verification_opacity: 0.15, greenwashing_integration: 0.14,
     REDD_collapse_risk: 0.12, voluntary_market_manipulation: 0.15, corporate_offset_abuse: 0.13,

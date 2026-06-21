@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "ENT-001",
+      id: "ENT-001",
       name: "Russia Arctic Command",
       country: "Russie",
       sector: "Défense & Militaire",
@@ -48,7 +48,7 @@ function getMockData() {
       disputed_zones: 7,
     },
     {
-      entity_id: "ENT-002",
+      id: "ENT-002",
       name: "China Arctic Silk Road",
       country: "Chine",
       sector: "Infrastructure & Commerce",
@@ -69,7 +69,7 @@ function getMockData() {
       disputed_zones: 4,
     },
     {
-      entity_id: "ENT-003",
+      id: "ENT-003",
       name: "US Coast Guard Arctic",
       country: "États-Unis",
       sector: "Sécurité Maritime",
@@ -90,7 +90,7 @@ function getMockData() {
       disputed_zones: 3,
     },
     {
-      entity_id: "ENT-004",
+      id: "ENT-004",
       name: "Norway Arctic Council",
       country: "Norvège",
       sector: "Diplomatie & Gouvernance",
@@ -111,7 +111,7 @@ function getMockData() {
       disputed_zones: 2,
     },
     {
-      entity_id: "ENT-005",
+      id: "ENT-005",
       name: "Canada Arctic Patrol",
       country: "Canada",
       sector: "Surveillance Territoriale",
@@ -132,7 +132,7 @@ function getMockData() {
       disputed_zones: 2,
     },
     {
-      entity_id: "ENT-006",
+      id: "ENT-006",
       name: "Finland Arctic Strategy",
       country: "Finlande",
       sector: "Politique Environnementale",
@@ -153,7 +153,7 @@ function getMockData() {
       disputed_zones: 1,
     },
     {
-      entity_id: "ENT-007",
+      id: "ENT-007",
       name: "Denmark Greenland Authority",
       country: "Danemark",
       sector: "Administration Territoriale",
@@ -174,7 +174,7 @@ function getMockData() {
       disputed_zones: 1,
     },
     {
-      entity_id: "ENT-008",
+      id: "ENT-008",
       name: "Iceland Research Station",
       country: "Islande",
       sector: "Recherche Polaire",

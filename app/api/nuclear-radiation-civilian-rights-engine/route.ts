@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "NRC-001",
+      id: "NRC-001",
       name: "France/Polynésie — 193 Essais Nucléaires Polynésie, Vétérans Irradiés Non Indemnisés, Cancers Cachés & Dépollution Refusée",
       country: "France/Polynésie",
       nuclear_testing_civilian_contamination_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NRC-002",
+      id: "NRC-002",
       name: "USA/Marshall Islands — Bikini Atoll 67 Tests, Populations Déplacées Non Retournables, Castle Bravo & Fonds Compensation Épuisé",
       country: "USA/Marshall Islands",
       nuclear_testing_civilian_contamination_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NRC-003",
+      id: "NRC-003",
       name: "URSS/Kazakhstan — Semipalatinsk 456 Essais, 1.5M Exposés, Maladies Génération & Dépollution Insuffisante Post-URSS",
       country: "Kazakhstan",
       nuclear_testing_civilian_contamination_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NRC-004",
+      id: "NRC-004",
       name: "Japon/Fukushima — Évacuations Forcées 154 000, Compensation Tepco Insuffisante, Eaux Traitées Pacifique & Zones Exclusion",
       country: "Japon",
       nuclear_testing_civilian_contamination_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NRC-005",
+      id: "NRC-005",
       name: "Inde/Pakistan — Tests Pokhran/Chagai Sans TICE, Mines Uranium Travailleurs Exposés, Prolifération & Sans Traité Interdiction",
       country: "Inde/Pakistan",
       nuclear_testing_civilian_contamination_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NRC-006",
+      id: "NRC-006",
       name: "Australie — Essais Maralinga Aborigènes Exposés, Décontamination Incomplète, Veterans Irradiés & Uranium Mines Kakadu",
       country: "Australie",
       nuclear_testing_civilian_contamination_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NRC-007",
+      id: "NRC-007",
       name: "AIEA/IPPNW — Normes Radioprotection, Médecins Prevention Guerre Nucléaire & Traité Interdiction Armes Nucléaires 2017",
       country: "Global",
       nuclear_testing_civilian_contamination_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "NRC-008",
+      id: "NRC-008",
       name: "ONU/TNP — Traité Non-Prolifération, TICE Moratoire, Article VI Désarmement & SDG 16 Paix Justice",
       country: "Global",
       nuclear_testing_civilian_contamination_severity_score: 5.0,

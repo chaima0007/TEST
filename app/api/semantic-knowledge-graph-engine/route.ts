@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // SKG-001 — EMEA, enterprise_ontology — critical, ontology_collapse
-  { entity_id: "SKG-001", graph_domain: "enterprise_ontology", region: "EMEA",
+  { id: "SKG-001", graph_domain: "enterprise_ontology", region: "EMEA",
     ontology_coherence: 0.08, knowledge_connectivity: 0.45, inference_accuracy: 0.40,
     semantic_drift_rate: 0.55, schema_obsolescence: 0.80, entity_disambiguation_quality: 0.38,
     relation_extraction_precision: 0.42, knowledge_freshness: 0.30, cross_domain_linking: 0.38,
@@ -12,7 +12,7 @@ const MOCK_ENTITIES = [
     knowledge_sovereignty: 0.42, graph_scalability: 0.38 },
 
   // SKG-002 — APAC, biomedical_kg — low, knowledge_optimum / none
-  { entity_id: "SKG-002", graph_domain: "biomedical_kg", region: "APAC",
+  { id: "SKG-002", graph_domain: "biomedical_kg", region: "APAC",
     ontology_coherence: 0.92, knowledge_connectivity: 0.90, inference_accuracy: 0.91,
     semantic_drift_rate: 0.08, schema_obsolescence: 0.07, entity_disambiguation_quality: 0.90,
     relation_extraction_precision: 0.91, knowledge_freshness: 0.92, cross_domain_linking: 0.90,
@@ -21,7 +21,7 @@ const MOCK_ENTITIES = [
     knowledge_sovereignty: 0.92, graph_scalability: 0.90 },
 
   // SKG-003 — NOAM, financial_graph — high, knowledge_fragmentation
-  { entity_id: "SKG-003", graph_domain: "financial_graph", region: "NOAM",
+  { id: "SKG-003", graph_domain: "financial_graph", region: "NOAM",
     ontology_coherence: 0.58, knowledge_connectivity: 0.22, inference_accuracy: 0.55,
     semantic_drift_rate: 0.42, schema_obsolescence: 0.38, entity_disambiguation_quality: 0.55,
     relation_extraction_precision: 0.58, knowledge_freshness: 0.55, cross_domain_linking: 0.28,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
     knowledge_sovereignty: 0.60, graph_scalability: 0.55 },
 
   // SKG-004 — LATAM, biomedical_kg — low, knowledge_optimum / none
-  { entity_id: "SKG-004", graph_domain: "biomedical_kg", region: "LATAM",
+  { id: "SKG-004", graph_domain: "biomedical_kg", region: "LATAM",
     ontology_coherence: 0.85, knowledge_connectivity: 0.83, inference_accuracy: 0.84,
     semantic_drift_rate: 0.12, schema_obsolescence: 0.10, entity_disambiguation_quality: 0.84,
     relation_extraction_precision: 0.85, knowledge_freshness: 0.84, cross_domain_linking: 0.83,
@@ -39,7 +39,7 @@ const MOCK_ENTITIES = [
     knowledge_sovereignty: 0.85, graph_scalability: 0.83 },
 
   // SKG-005 — MEA, enterprise_ontology — critical, semantic_pollution
-  { entity_id: "SKG-005", graph_domain: "enterprise_ontology", region: "MEA",
+  { id: "SKG-005", graph_domain: "enterprise_ontology", region: "MEA",
     ontology_coherence: 0.30, knowledge_connectivity: 0.40, inference_accuracy: 0.35,
     semantic_drift_rate: 0.72, schema_obsolescence: 0.45, entity_disambiguation_quality: 0.35,
     relation_extraction_precision: 0.40, knowledge_freshness: 0.30, cross_domain_linking: 0.42,
@@ -48,7 +48,7 @@ const MOCK_ENTITIES = [
     knowledge_sovereignty: 0.40, graph_scalability: 0.35 },
 
   // SKG-006 — EMEA, legal_knowledge — moderate, none
-  { entity_id: "SKG-006", graph_domain: "legal_knowledge", region: "EMEA",
+  { id: "SKG-006", graph_domain: "legal_knowledge", region: "EMEA",
     ontology_coherence: 0.65, knowledge_connectivity: 0.62, inference_accuracy: 0.63,
     semantic_drift_rate: 0.28, schema_obsolescence: 0.30, entity_disambiguation_quality: 0.63,
     relation_extraction_precision: 0.65, knowledge_freshness: 0.65, cross_domain_linking: 0.62,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
     knowledge_sovereignty: 0.65, graph_scalability: 0.62 },
 
   // SKG-007 — APAC, financial_graph — high, sovereignty_breach
-  { entity_id: "SKG-007", graph_domain: "financial_graph", region: "APAC",
+  { id: "SKG-007", graph_domain: "financial_graph", region: "APAC",
     ontology_coherence: 0.55, knowledge_connectivity: 0.52, inference_accuracy: 0.53,
     semantic_drift_rate: 0.35, schema_obsolescence: 0.38, entity_disambiguation_quality: 0.53,
     relation_extraction_precision: 0.55, knowledge_freshness: 0.55, cross_domain_linking: 0.52,
@@ -66,7 +66,7 @@ const MOCK_ENTITIES = [
     knowledge_sovereignty: 0.18, graph_scalability: 0.52 },
 
   // SKG-008 — NOAM, enterprise_ontology — critical, graph_staleness
-  { entity_id: "SKG-008", graph_domain: "enterprise_ontology", region: "NOAM",
+  { id: "SKG-008", graph_domain: "enterprise_ontology", region: "NOAM",
     ontology_coherence: 0.28, knowledge_connectivity: 0.40, inference_accuracy: 0.30,
     semantic_drift_rate: 0.60, schema_obsolescence: 0.82, entity_disambiguation_quality: 0.30,
     relation_extraction_precision: 0.35, knowledge_freshness: 0.22, cross_domain_linking: 0.52,
@@ -176,7 +176,7 @@ export async function GET() {
       const severity = kgSeverity(comp);
       const action = recommendedAction(risk, pattern);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         region: e.region,
         graph_domain: e.graph_domain,
         kg_risk: risk,

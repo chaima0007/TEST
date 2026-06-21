@@ -34,7 +34,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "RF-001",
+      id: "RF-001",
       name: "Yémen/Gaza — Famine Arme de Guerre, Blocus & 2,2M Enfants Malnutris",
       country: "MENA",
       sector: "Yémen 17M Insécurité Alimentaire Sévère Blocus Coalition, Gaza Famine Artificielle 1M+ Hamas/Blocus Israël 2024, 2,2M Enfants Malnutris Yémen & FAO Stade 5 IPC Catastrophe Alimentaire",
@@ -54,7 +54,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "RF-002",
+      id: "RF-002",
       name: "Éthiopie/Soudan/Sahel — Crise Alimentaire, Conflits & 40M En Urgence",
       country: "Afrique Sub-Saharienne",
       sector: "Éthiopie Tigray 900 000 Famine Conflit 2022, Soudan 18M Insécurité Alimentaire Sévère 2024, Sahel 40M En Urgence Alimentaire & Changement Climatique Sécheresses Récurrentes",
@@ -74,7 +74,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "RF-003",
+      id: "RF-003",
       name: "Afrique/Asie — Land Grab, 200M Ha Accaparés & Paysans Expulsés Sans Compensation",
       country: "Global Sud",
       sector: "Accaparement Terres 200M Ha Depuis 2008 Land Matrix, Foncier Africain 70% Transactions Étrangères, Paysans Expulsés Sans Compensation, Entreprises Chine/Golfe/USA & Semences OGM Dépendance",
@@ -94,7 +94,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "RF-004",
+      id: "RF-004",
       name: "Inde — 194M Sous-Alimentés, Loi Droit Alimentaire & Malnutrition Enfants",
       country: "Asie du Sud",
       sector: "Inde 194M Sous-Alimentés GHI 2023 Rang 111/125, Malnutrition Infantile 35% Retard Croissance, National Food Security Act 2013 Partiellement Appliqué & Pertes Post-Récoltes 40% Céréales",
@@ -114,7 +114,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "RF-005",
+      id: "RF-005",
       name: "USA — 44M En Insécurité Alimentaire, SNAP Cuts & Deserts Alimentaires",
       country: "Amérique du Nord",
       sector: "USA 44M Insécurité Alimentaire USDA 2023, SNAP Coupures Budgétaires, Food Deserts 23M Personnes Accès Limité Nourriture Saine, Obésité Pauvreté Corrélation & Banques Alimentaires Saturées",
@@ -134,7 +134,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "RF-006",
+      id: "RF-006",
       name: "Brésil/Amérique Latine — Agribusiness, Déforestation & Accès Alimentation",
       country: "Amérique Latine",
       sector: "Brésil Agribusiness Exportateur Soja/Bœuf Déforestation Amazonie, 33M Insécurité Alimentaire Bolsonaro 2022, Venezuela 25% Malnutrition & Haïti 5M IPC 4-5 Urgence Alimentaire",
@@ -154,7 +154,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "RF-007",
+      id: "RF-007",
       name: "UE/PAC — Politique Agricole Commune, Farm to Fork & Accès Alimentation",
       country: "Europe",
       sector: "UE PAC 387B€ Subventions 2023-2027, Farm To Fork Stratégie Durabilité, 42M Européens Incapables Repas Protéiné/2 Jours & Inflation Alimentaire 2022-2023 Record 20%",
@@ -174,7 +174,7 @@ const MOCK = {
       ],
     },
     {
-      entity_id: "RF-008",
+      id: "RF-008",
       name: "ONU/PIDESC Art.11 — Droit Alimentation, Directives FAO & Rapporteur Spécial",
       country: "Global",
       sector: "PIDESC Article 11 Droit Alimentation Adéquate 171 Ratifications, Directives Volontaires FAO 2004, Rapporteur Spécial ONU Droit Alimentation & Déclaration ONU Droits Paysans UNDROP 2018",

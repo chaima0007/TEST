@@ -7,7 +7,7 @@ if (!process.env.SWARM_API_URL) {
 
 // ── Mock entity type ───────────────────────────────────────────────────────────
 type DeFiEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -29,7 +29,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
   const entities: DeFiEntity[] = [
     // ── CRITIQUE (3) ────────────────────────────────────────────────────────
     {
-      entity_id: "DFI-001",
+      id: "DFI-001",
       name: "VulnSwap Protocol",
       country: "Anonyme",
       sector: "DEX / AMM",
@@ -50,7 +50,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
       domain: "defi",
     },
     {
-      entity_id: "DFI-002",
+      id: "DFI-002",
       name: "TerraClone Finance",
       country: "Corée du Sud",
       sector: "Stablecoin Algorithmique",
@@ -71,7 +71,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
       domain: "defi",
     },
     {
-      entity_id: "DFI-003",
+      id: "DFI-003",
       name: "WhaleDAO Governance",
       country: "Îles Caïmans",
       sector: "Protocole Gouvernance",
@@ -93,7 +93,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
     },
     // ── ÉLEVÉ (2) ───────────────────────────────────────────────────────────
     {
-      entity_id: "DFI-004",
+      id: "DFI-004",
       name: "CrossChain Bridge Alpha",
       country: "Singapour",
       sector: "Bridge Inter-Chaînes",
@@ -114,7 +114,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
       domain: "defi",
     },
     {
-      entity_id: "DFI-005",
+      id: "DFI-005",
       name: "LeverageFarm Ultra",
       country: "Îles Vierges Britanniques",
       sector: "Yield Farming Levieré",
@@ -137,7 +137,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
     // ── MODÉRÉ (1) ──────────────────────────────────────────────────────────
     // composite: 42*0.30 + 38*0.25 + 40*0.25 + 35*0.20 = 12.6+9.5+10+7 = 39.1
     {
-      entity_id: "DFI-006",
+      id: "DFI-006",
       name: "StableYield Moderate",
       country: "Suisse",
       sector: "Lending Protocol",
@@ -159,7 +159,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
     },
     // ── FAIBLE (2) ──────────────────────────────────────────────────────────
     {
-      entity_id: "DFI-007",
+      id: "DFI-007",
       name: "Aave Secure V4",
       country: "Royaume-Uni",
       sector: "Lending Régulé",
@@ -180,7 +180,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
       domain: "defi",
     },
     {
-      entity_id: "DFI-008",
+      id: "DFI-008",
       name: "Uniswap Foundation",
       country: "USA",
       sector: "DEX Mature",

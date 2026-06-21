@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData(): Record<string, unknown> {
   const entities = [
     {
-      entity_id: "PAN-001",
+      id: "PAN-001",
       name: "Système de Santé Sahélien",
       country: "Niger",
       sector: "Santé Publique",
@@ -44,7 +44,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ROUGE",
     },
     {
-      entity_id: "PAN-002",
+      id: "PAN-002",
       name: "Infrastructure Médicale Yéménite",
       country: "Yémen",
       sector: "Santé en Zone de Conflit",
@@ -61,7 +61,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ROUGE",
     },
     {
-      entity_id: "PAN-003",
+      id: "PAN-003",
       name: "Réseau Sanitaire Amazonien",
       country: "Brésil",
       sector: "Santé Tropicale",
@@ -78,7 +78,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ROUGE",
     },
     {
-      entity_id: "PAN-004",
+      id: "PAN-004",
       name: "Système Hospitalier Bangladais",
       country: "Bangladesh",
       sector: "Santé Densité Urbaine",
@@ -95,7 +95,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ORANGE",
     },
     {
-      entity_id: "PAN-005",
+      id: "PAN-005",
       name: "Infrastructure Sanitaire Philippine",
       country: "Philippines",
       sector: "Santé Insulaire",
@@ -112,7 +112,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "ORANGE",
     },
     {
-      entity_id: "PAN-006",
+      id: "PAN-006",
       name: "Réseau Santé Régional Balkans",
       country: "Serbie",
       sector: "Santé Régionale",
@@ -129,7 +129,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "JAUNE",
     },
     {
-      entity_id: "PAN-007",
+      id: "PAN-007",
       name: "Système Santé Nordique",
       country: "Norvège",
       sector: "Santé Publique Avancée",
@@ -146,7 +146,7 @@ function getMockData(): Record<string, unknown> {
       alert_level: "VERT",
     },
     {
-      entity_id: "PAN-008",
+      id: "PAN-008",
       name: "CDC & Systèmes OMS Genève",
       country: "Suisse",
       sector: "Coordination Internationale",

@@ -18,7 +18,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // NBC-001: consumer_bci, EMEA → critical, neural_sovereignty_breach
   {
-    entity_id: "NBC-001", technology_type: "consumer_bci", region: "EMEA",
+    id: "NBC-001", technology_type: "consumer_bci", region: "EMEA",
     neural_signal_fidelity: 0.20, cognitive_privacy_risk: 0.82, neural_manipulation_potential: 0.75,
     bci_security_vulnerability: 0.70, consciousness_data_extraction_risk: 0.78,
     neurorights_violation_index: 0.65, cognitive_enhancement_inequality: 0.65,
@@ -29,7 +29,7 @@ const MOCK_ENTITIES = [
   },
   // NBC-002: medical_implant, APAC → low, none
   {
-    entity_id: "NBC-002", technology_type: "medical_implant", region: "APAC",
+    id: "NBC-002", technology_type: "medical_implant", region: "APAC",
     neural_signal_fidelity: 0.92, cognitive_privacy_risk: 0.08, neural_manipulation_potential: 0.10,
     bci_security_vulnerability: 0.10, consciousness_data_extraction_risk: 0.08,
     neurorights_violation_index: 0.10, cognitive_enhancement_inequality: 0.08,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   },
   // NBC-003: military_bci, NOAM → high, military_neuroweapon
   {
-    entity_id: "NBC-003", technology_type: "military_bci", region: "NOAM",
+    id: "NBC-003", technology_type: "military_bci", region: "NOAM",
     neural_signal_fidelity: 0.40, cognitive_privacy_risk: 0.52, neural_manipulation_potential: 0.72,
     bci_security_vulnerability: 0.55, consciousness_data_extraction_risk: 0.48,
     neurorights_violation_index: 0.55, cognitive_enhancement_inequality: 0.50,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
   },
   // NBC-004: medical_implant, LATAM → low, none
   {
-    entity_id: "NBC-004", technology_type: "medical_implant", region: "LATAM",
+    id: "NBC-004", technology_type: "medical_implant", region: "LATAM",
     neural_signal_fidelity: 0.88, cognitive_privacy_risk: 0.10, neural_manipulation_potential: 0.12,
     bci_security_vulnerability: 0.12, consciousness_data_extraction_risk: 0.10,
     neurorights_violation_index: 0.12, cognitive_enhancement_inequality: 0.10,
@@ -62,7 +62,7 @@ const MOCK_ENTITIES = [
   },
   // NBC-005: consumer_bci, MEA → critical, neurorights_violation
   {
-    entity_id: "NBC-005", technology_type: "consumer_bci", region: "MEA",
+    id: "NBC-005", technology_type: "consumer_bci", region: "MEA",
     neural_signal_fidelity: 0.22, cognitive_privacy_risk: 0.65, neural_manipulation_potential: 0.60,
     bci_security_vulnerability: 0.68, consciousness_data_extraction_risk: 0.62,
     neurorights_violation_index: 0.82, cognitive_enhancement_inequality: 0.65,
@@ -73,7 +73,7 @@ const MOCK_ENTITIES = [
   },
   // NBC-006: research_bci, EMEA → moderate, none
   {
-    entity_id: "NBC-006", technology_type: "research_bci", region: "EMEA",
+    id: "NBC-006", technology_type: "research_bci", region: "EMEA",
     neural_signal_fidelity: 0.65, cognitive_privacy_risk: 0.28, neural_manipulation_potential: 0.30,
     bci_security_vulnerability: 0.30, consciousness_data_extraction_risk: 0.25,
     neurorights_violation_index: 0.30, cognitive_enhancement_inequality: 0.28,
@@ -84,7 +84,7 @@ const MOCK_ENTITIES = [
   },
   // NBC-007: consumer_bci, APAC → high, brain_hacking_attack
   {
-    entity_id: "NBC-007", technology_type: "consumer_bci", region: "APAC",
+    id: "NBC-007", technology_type: "consumer_bci", region: "APAC",
     neural_signal_fidelity: 0.35, cognitive_privacy_risk: 0.55, neural_manipulation_potential: 0.58,
     bci_security_vulnerability: 0.72, consciousness_data_extraction_risk: 0.52,
     neurorights_violation_index: 0.52, cognitive_enhancement_inequality: 0.55,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // NBC-008: military_bci, NOAM → critical, cognitive_inequality_crisis
   {
-    entity_id: "NBC-008", technology_type: "military_bci", region: "NOAM",
+    id: "NBC-008", technology_type: "military_bci", region: "NOAM",
     neural_signal_fidelity: 0.20, cognitive_privacy_risk: 0.65, neural_manipulation_potential: 0.68,
     bci_security_vulnerability: 0.70, consciousness_data_extraction_risk: 0.60,
     neurorights_violation_index: 0.65, cognitive_enhancement_inequality: 0.82,
@@ -236,7 +236,7 @@ export async function GET() {
       const sev    = neuralSeverity(comp);
       const act    = recommendedAction(risk, pattern);
       return {
-        entity_id:                   e.entity_id,
+        id:                   e.entity_id,
         region:                      e.region,
         technology_type:             e.technology_type,
         neural_risk:                 risk,

@@ -3,7 +3,7 @@ import { sealResponse } from "@/lib/digital-seal";
 
 const MOCK_ENTITIES = [
   // ETC-001 — EMEA, ai_quantum_cluster — critical, convergence_singularity
-  { entity_id: "ETC-001", tech_cluster: "ai_quantum_cluster", region: "EMEA",
+  { id: "ETC-001", tech_cluster: "ai_quantum_cluster", region: "EMEA",
     ai_capability_acceleration: 0.88, quantum_computing_readiness: 0.75, biotech_convergence_rate: 0.72,
     nanotech_integration: 0.60, robotics_autonomy_level: 0.65, energy_transition_speed: 0.50,
     network_effect_multiplier: 0.68, disruption_velocity: 0.82, incumbent_displacement_rate: 0.60,
@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
     platform_dominance_risk: 0.65, open_source_disruption: 0.58, exponential_blind_spot: 0.62,
     technology_sovereignty_gap: 0.65, adoption_curve_inflection: 0.80 },
   // ETC-002 — APAC, biotech_cluster — low, controlled_innovation/none
-  { entity_id: "ETC-002", tech_cluster: "biotech_cluster", region: "APAC",
+  { id: "ETC-002", tech_cluster: "biotech_cluster", region: "APAC",
     ai_capability_acceleration: 0.15, quantum_computing_readiness: 0.20, biotech_convergence_rate: 0.18,
     nanotech_integration: 0.12, robotics_autonomy_level: 0.15, energy_transition_speed: 0.22,
     network_effect_multiplier: 0.18, disruption_velocity: 0.12, incumbent_displacement_rate: 0.15,
@@ -19,7 +19,7 @@ const MOCK_ENTITIES = [
     platform_dominance_risk: 0.12, open_source_disruption: 0.18, exponential_blind_spot: 0.15,
     technology_sovereignty_gap: 0.18, adoption_curve_inflection: 0.12 },
   // ETC-003 — NOAM, platform_tech — high, incumbent_collapse
-  { entity_id: "ETC-003", tech_cluster: "platform_tech", region: "NOAM",
+  { id: "ETC-003", tech_cluster: "platform_tech", region: "NOAM",
     ai_capability_acceleration: 0.60, quantum_computing_readiness: 0.45, biotech_convergence_rate: 0.40,
     nanotech_integration: 0.35, robotics_autonomy_level: 0.50, energy_transition_speed: 0.38,
     network_effect_multiplier: 0.62, disruption_velocity: 0.72, incumbent_displacement_rate: 0.78,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     platform_dominance_risk: 0.60, open_source_disruption: 0.65, exponential_blind_spot: 0.45,
     technology_sovereignty_gap: 0.42, adoption_curve_inflection: 0.55 },
   // ETC-004 — LATAM, biotech_cluster — low, controlled_innovation/none
-  { entity_id: "ETC-004", tech_cluster: "biotech_cluster", region: "LATAM",
+  { id: "ETC-004", tech_cluster: "biotech_cluster", region: "LATAM",
     ai_capability_acceleration: 0.18, quantum_computing_readiness: 0.15, biotech_convergence_rate: 0.20,
     nanotech_integration: 0.15, robotics_autonomy_level: 0.12, energy_transition_speed: 0.18,
     network_effect_multiplier: 0.15, disruption_velocity: 0.18, incumbent_displacement_rate: 0.12,
@@ -35,7 +35,7 @@ const MOCK_ENTITIES = [
     platform_dominance_risk: 0.15, open_source_disruption: 0.12, exponential_blind_spot: 0.18,
     technology_sovereignty_gap: 0.15, adoption_curve_inflection: 0.18 },
   // ETC-005 — MEA, ai_quantum_cluster — critical, platform_monopolization
-  { entity_id: "ETC-005", tech_cluster: "ai_quantum_cluster", region: "MEA",
+  { id: "ETC-005", tech_cluster: "ai_quantum_cluster", region: "MEA",
     ai_capability_acceleration: 0.78, quantum_computing_readiness: 0.55, biotech_convergence_rate: 0.45,
     nanotech_integration: 0.50, robotics_autonomy_level: 0.60, energy_transition_speed: 0.42,
     network_effect_multiplier: 0.70, disruption_velocity: 0.65, incumbent_displacement_rate: 0.60,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
     platform_dominance_risk: 0.80, open_source_disruption: 0.58, exponential_blind_spot: 0.55,
     technology_sovereignty_gap: 0.62, adoption_curve_inflection: 0.72 },
   // ETC-006 — EMEA, energy_tech — moderate, none
-  { entity_id: "ETC-006", tech_cluster: "energy_tech", region: "EMEA",
+  { id: "ETC-006", tech_cluster: "energy_tech", region: "EMEA",
     ai_capability_acceleration: 0.35, quantum_computing_readiness: 0.30, biotech_convergence_rate: 0.28,
     nanotech_integration: 0.32, robotics_autonomy_level: 0.35, energy_transition_speed: 0.55,
     network_effect_multiplier: 0.38, disruption_velocity: 0.35, incumbent_displacement_rate: 0.32,
@@ -51,7 +51,7 @@ const MOCK_ENTITIES = [
     platform_dominance_risk: 0.30, open_source_disruption: 0.35, exponential_blind_spot: 0.32,
     technology_sovereignty_gap: 0.35, adoption_curve_inflection: 0.30 },
   // ETC-007 — APAC, platform_tech — high, sovereignty_vacuum
-  { entity_id: "ETC-007", tech_cluster: "platform_tech", region: "APAC",
+  { id: "ETC-007", tech_cluster: "platform_tech", region: "APAC",
     ai_capability_acceleration: 0.55, quantum_computing_readiness: 0.42, biotech_convergence_rate: 0.38,
     nanotech_integration: 0.35, robotics_autonomy_level: 0.48, energy_transition_speed: 0.38,
     network_effect_multiplier: 0.50, disruption_velocity: 0.52, incumbent_displacement_rate: 0.48,
@@ -59,7 +59,7 @@ const MOCK_ENTITIES = [
     platform_dominance_risk: 0.55, open_source_disruption: 0.48, exponential_blind_spot: 0.65,
     technology_sovereignty_gap: 0.75, adoption_curve_inflection: 0.50 },
   // ETC-008 — NOAM, ai_quantum_cluster — critical, innovation_inequality_spiral
-  { entity_id: "ETC-008", tech_cluster: "ai_quantum_cluster", region: "NOAM",
+  { id: "ETC-008", tech_cluster: "ai_quantum_cluster", region: "NOAM",
     ai_capability_acceleration: 0.65, quantum_computing_readiness: 0.55, biotech_convergence_rate: 0.50,
     nanotech_integration: 0.58, robotics_autonomy_level: 0.70, energy_transition_speed: 0.48,
     network_effect_multiplier: 0.75, disruption_velocity: 0.68, incumbent_displacement_rate: 0.62,
@@ -148,7 +148,7 @@ export async function GET() {
       const sev  = disruptionSeverity(comp);
       const act  = recommendedAction(risk, pat);
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         region:                           e.region,
         tech_cluster:                     e.tech_cluster,
         disruption_risk:                  risk,

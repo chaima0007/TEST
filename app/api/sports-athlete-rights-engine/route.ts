@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "SAR-001",
+      id: "SAR-001",
       name: "Russie/Chine — Dopage Systématique État, RUSADA Scandale, McLaren Report, Athlètes Femmes Gymnastes Abus & Boycotts Silenciés",
       country: "Russie/Chine",
       athlete_exploitation_unpaid_labor_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SAR-002",
+      id: "SAR-002",
       name: "Qatar/FIFA — Travailleurs Stades Morts 6 500, Corruption FIFA Sepp Blatter, Athlètes Droits Bafoués & Chaleur Mortelle",
       country: "Qatar",
       athlete_exploitation_unpaid_labor_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SAR-003",
+      id: "SAR-003",
       name: "USA/NCAA — Athlètes Universitaires Non Payés 5B$/An Revenus, Abus Sexuels Larry Nassar 300 Victimes & NFL CTE Dissimulé",
       country: "USA",
       athlete_exploitation_unpaid_labor_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SAR-004",
+      id: "SAR-004",
       name: "Arabie Saoudite — Sports Washing Golfs/Boxe, LIV Golf Critiques Tues, Activistes Sportifs Emprisonnés & Femmes Sport Tardif",
       country: "Arabie Saoudite",
       athlete_exploitation_unpaid_labor_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SAR-005",
+      id: "SAR-005",
       name: "Chine/IOC — Hong Kong Athlètes Pression, IOC Silence Droits Humains, Nathan Law Exilé & Peng Shuai Disparition",
       country: "Chine",
       athlete_exploitation_unpaid_labor_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SAR-006",
+      id: "SAR-006",
       name: "USA/Europe — NIL Student Athletes Inégaux, Contrats Exploiteurs, Black Athletes Protest NFL & Transfer Portal Abus",
       country: "USA/Europe",
       athlete_exploitation_unpaid_labor_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SAR-007",
+      id: "SAR-007",
       name: "Global Athletes/WADA — Association Athlètes Internationaux, Anti-Dopage Réforme, Droits Représentation & Plateforme Signalement",
       country: "Global",
       athlete_exploitation_unpaid_labor_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "SAR-008",
+      id: "SAR-008",
       name: "ONU/CDES — Droit Sport Charte Internationale, Olympisme Droits Humains & SDG 3 Santé Bien-Être",
       country: "Global",
       athlete_exploitation_unpaid_labor_severity_score: 5.0,

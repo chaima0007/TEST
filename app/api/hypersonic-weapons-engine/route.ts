@@ -23,7 +23,7 @@ function getMockData() {
   const entities = [
     // ── CRITIQUE (3) ──────────────────────────────────────────────────────────
     {
-      entity_id: "HYP-001",
+      id: "HYP-001",
       name: "Programme Zircon Russe",
       country: "Russie",
       sector: "Missiles Hypersoniques",
@@ -40,7 +40,7 @@ function getMockData() {
       alert_level: "ROUGE",
     },
     {
-      entity_id: "HYP-002",
+      id: "HYP-002",
       name: "DF-17 Chinois",
       country: "Chine",
       sector: "Véhicules Planeurs",
@@ -57,7 +57,7 @@ function getMockData() {
       alert_level: "ROUGE",
     },
     {
-      entity_id: "HYP-003",
+      id: "HYP-003",
       name: "AGM-183A ARRW Américain",
       country: "États-Unis",
       sector: "Missiles Hypersoniques",
@@ -75,7 +75,7 @@ function getMockData() {
     },
     // ── ÉLEVÉ (2) ─────────────────────────────────────────────────────────────
     {
-      entity_id: "HYP-004",
+      id: "HYP-004",
       name: "BrahMos-II Indo-Russe",
       country: "Inde",
       sector: "Missiles Hypersoniques",
@@ -92,7 +92,7 @@ function getMockData() {
       alert_level: "ORANGE",
     },
     {
-      entity_id: "HYP-005",
+      id: "HYP-005",
       name: "Programme HYFLOW Européen",
       country: "Allemagne",
       sector: "Recherche Hypersonique",
@@ -110,7 +110,7 @@ function getMockData() {
     },
     // ── MODÉRÉ (1) ────────────────────────────────────────────────────────────
     {
-      entity_id: "HYP-006",
+      id: "HYP-006",
       name: "Systèmes ISRO India",
       country: "Inde",
       sector: "Technologies Duales",
@@ -128,7 +128,7 @@ function getMockData() {
     },
     // ── FAIBLE (2) ────────────────────────────────────────────────────────────
     {
-      entity_id: "HYP-007",
+      id: "HYP-007",
       name: "Recherche Académique MIT",
       country: "États-Unis",
       sector: "Recherche & Développement",
@@ -145,7 +145,7 @@ function getMockData() {
       alert_level: "VERT",
     },
     {
-      entity_id: "HYP-008",
+      id: "HYP-008",
       name: "Programme Spatial Japonais JAXA",
       country: "Japon",
       sector: "Technologies Spatiales",

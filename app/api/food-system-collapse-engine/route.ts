@@ -6,7 +6,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 // ─── Math (mirrors Python exactly) ───────────────────────────────────────────
 
 interface FscInput {
-  entity_id: string;
+  id: string;
   food_system_type: string;
   region: string;
   crop_yield_collapse_risk: number;
@@ -105,7 +105,7 @@ function analyzeEntity(e: FscInput) {
   const signal = foodSignal(e, risk, comp);
 
   return {
-    entity_id: e.entity_id,
+    id: e.entity_id,
     region: e.region,
     food_system_type: e.food_system_type,
     food_risk: risk,
@@ -127,7 +127,7 @@ function analyzeEntity(e: FscInput) {
 
 const mockEntities: FscInput[] = [
   {
-    entity_id: "FSC-001", region: "MEA", food_system_type: "arid_agriculture",
+    id: "FSC-001", region: "MEA", food_system_type: "arid_agriculture",
     crop_yield_collapse_risk: 0.82, food_import_dependency: 0.78, soil_degradation_rate: 0.75,
     pollinator_collapse_index: 0.70, monoculture_vulnerability: 0.60, supply_chain_food_fragility: 0.68,
     price_spike_transmission: 0.72, urban_food_desert_expansion: 0.65, smallholder_displacement_rate: 0.60,
@@ -136,7 +136,7 @@ const mockEntities: FscInput[] = [
     water_food_nexus_stress: 0.72, food_system_digitalization_risk: 0.40,
   },
   {
-    entity_id: "FSC-002", region: "LATAM", food_system_type: "diverse_agriculture",
+    id: "FSC-002", region: "LATAM", food_system_type: "diverse_agriculture",
     crop_yield_collapse_risk: 0.22, food_import_dependency: 0.20, soil_degradation_rate: 0.25,
     pollinator_collapse_index: 0.20, monoculture_vulnerability: 0.22, supply_chain_food_fragility: 0.22,
     price_spike_transmission: 0.20, urban_food_desert_expansion: 0.22, smallholder_displacement_rate: 0.20,
@@ -145,7 +145,7 @@ const mockEntities: FscInput[] = [
     water_food_nexus_stress: 0.22, food_system_digitalization_risk: 0.20,
   },
   {
-    entity_id: "FSC-003", region: "NOAM", food_system_type: "industrial_agriculture",
+    id: "FSC-003", region: "NOAM", food_system_type: "industrial_agriculture",
     crop_yield_collapse_risk: 0.55, food_import_dependency: 0.40, soil_degradation_rate: 0.55,
     pollinator_collapse_index: 0.72, monoculture_vulnerability: 0.78, supply_chain_food_fragility: 0.50,
     price_spike_transmission: 0.48, urban_food_desert_expansion: 0.45, smallholder_displacement_rate: 0.52,
@@ -154,7 +154,7 @@ const mockEntities: FscInput[] = [
     water_food_nexus_stress: 0.50, food_system_digitalization_risk: 0.55,
   },
   {
-    entity_id: "FSC-004", region: "APAC", food_system_type: "rice_system",
+    id: "FSC-004", region: "APAC", food_system_type: "rice_system",
     crop_yield_collapse_risk: 0.28, food_import_dependency: 0.25, soil_degradation_rate: 0.30,
     pollinator_collapse_index: 0.22, monoculture_vulnerability: 0.28, supply_chain_food_fragility: 0.25,
     price_spike_transmission: 0.28, urban_food_desert_expansion: 0.25, smallholder_displacement_rate: 0.28,
@@ -163,7 +163,7 @@ const mockEntities: FscInput[] = [
     water_food_nexus_stress: 0.30, food_system_digitalization_risk: 0.25,
   },
   {
-    entity_id: "FSC-005", region: "EMEA", food_system_type: "wheat_system",
+    id: "FSC-005", region: "EMEA", food_system_type: "wheat_system",
     crop_yield_collapse_risk: 0.72, food_import_dependency: 0.55, soil_degradation_rate: 0.82,
     pollinator_collapse_index: 0.58, monoculture_vulnerability: 0.65, supply_chain_food_fragility: 0.62,
     price_spike_transmission: 0.68, urban_food_desert_expansion: 0.55, smallholder_displacement_rate: 0.58,
@@ -172,7 +172,7 @@ const mockEntities: FscInput[] = [
     water_food_nexus_stress: 0.68, food_system_digitalization_risk: 0.45,
   },
   {
-    entity_id: "FSC-006", region: "APAC", food_system_type: "mixed_farming",
+    id: "FSC-006", region: "APAC", food_system_type: "mixed_farming",
     crop_yield_collapse_risk: 0.35, food_import_dependency: 0.32, soil_degradation_rate: 0.38,
     pollinator_collapse_index: 0.30, monoculture_vulnerability: 0.35, supply_chain_food_fragility: 0.33,
     price_spike_transmission: 0.38, urban_food_desert_expansion: 0.35, smallholder_displacement_rate: 0.32,
@@ -181,7 +181,7 @@ const mockEntities: FscInput[] = [
     water_food_nexus_stress: 0.40, food_system_digitalization_risk: 0.33,
   },
   {
-    entity_id: "FSC-007", region: "NOAM", food_system_type: "meat_system",
+    id: "FSC-007", region: "NOAM", food_system_type: "meat_system",
     crop_yield_collapse_risk: 0.52, food_import_dependency: 0.42, soil_degradation_rate: 0.52,
     pollinator_collapse_index: 0.45, monoculture_vulnerability: 0.55, supply_chain_food_fragility: 0.55,
     price_spike_transmission: 0.50, urban_food_desert_expansion: 0.48, smallholder_displacement_rate: 0.68,
@@ -190,7 +190,7 @@ const mockEntities: FscInput[] = [
     water_food_nexus_stress: 0.48, food_system_digitalization_risk: 0.58,
   },
   {
-    entity_id: "FSC-008", region: "MEA", food_system_type: "import_dependent",
+    id: "FSC-008", region: "MEA", food_system_type: "import_dependent",
     crop_yield_collapse_risk: 0.72, food_import_dependency: 0.85, soil_degradation_rate: 0.68,
     pollinator_collapse_index: 0.58, monoculture_vulnerability: 0.65, supply_chain_food_fragility: 0.75,
     price_spike_transmission: 0.82, urban_food_desert_expansion: 0.72, smallholder_displacement_rate: 0.65,

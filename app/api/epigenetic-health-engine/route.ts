@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // EHE-001 — critical, epigenetic_catastrophe (epigenetic_toxin>=0.70, intergenerational>=0.65)
   {
-    entity_id: "EHE-001", health_domain: "epigenetic_toxicology", region: "EMEA",
+    id: "EHE-001", health_domain: "epigenetic_toxicology", region: "EMEA",
     epigenetic_toxin_exposure_rate: 0.88, endocrine_disruption_prevalence: 0.75,
     microplastic_bioaccumulation_index: 0.80, air_quality_chronic_disease_coupling: 0.82,
     heavy_metal_cognitive_impairment_rate: 0.78, pesticide_epigenetic_impact: 0.72,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // EHE-002 — low, none
   {
-    entity_id: "EHE-002", health_domain: "environmental_baseline", region: "NOAM",
+    id: "EHE-002", health_domain: "environmental_baseline", region: "NOAM",
     epigenetic_toxin_exposure_rate: 0.10, endocrine_disruption_prevalence: 0.12,
     microplastic_bioaccumulation_index: 0.08, air_quality_chronic_disease_coupling: 0.10,
     heavy_metal_cognitive_impairment_rate: 0.12, pesticide_epigenetic_impact: 0.08,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // EHE-003 — high, chemical_body_burden (forever>=0.70, endocrine>=0.65)
   {
-    entity_id: "EHE-003", health_domain: "chemical_contamination", region: "APAC",
+    id: "EHE-003", health_domain: "chemical_contamination", region: "APAC",
     epigenetic_toxin_exposure_rate: 0.52, endocrine_disruption_prevalence: 0.68,
     microplastic_bioaccumulation_index: 0.48, air_quality_chronic_disease_coupling: 0.50,
     heavy_metal_cognitive_impairment_rate: 0.45, pesticide_epigenetic_impact: 0.50,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // EHE-004 — low, none
   {
-    entity_id: "EHE-004", health_domain: "environmental_baseline", region: "LATAM",
+    id: "EHE-004", health_domain: "environmental_baseline", region: "LATAM",
     epigenetic_toxin_exposure_rate: 0.15, endocrine_disruption_prevalence: 0.14,
     microplastic_bioaccumulation_index: 0.12, air_quality_chronic_disease_coupling: 0.14,
     heavy_metal_cognitive_impairment_rate: 0.15, pesticide_epigenetic_impact: 0.12,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // EHE-005 — critical, microbiome_collapse (microplastic>=0.70, gut>=0.65)
   {
-    entity_id: "EHE-005", health_domain: "microbiome_health", region: "MEA",
+    id: "EHE-005", health_domain: "microbiome_health", region: "MEA",
     epigenetic_toxin_exposure_rate: 0.78, endocrine_disruption_prevalence: 0.72,
     microplastic_bioaccumulation_index: 0.85, air_quality_chronic_disease_coupling: 0.78,
     heavy_metal_cognitive_impairment_rate: 0.70, pesticide_epigenetic_impact: 0.68,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // EHE-006 — moderate, none
   {
-    entity_id: "EHE-006", health_domain: "urban_environment", region: "EMEA",
+    id: "EHE-006", health_domain: "urban_environment", region: "EMEA",
     epigenetic_toxin_exposure_rate: 0.30, endocrine_disruption_prevalence: 0.28,
     microplastic_bioaccumulation_index: 0.32, air_quality_chronic_disease_coupling: 0.30,
     heavy_metal_cognitive_impairment_rate: 0.28, pesticide_epigenetic_impact: 0.30,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // EHE-007 — high, environmental_injustice (inequality>=0.70, industrial_waste>=0.65)
   {
-    entity_id: "EHE-007", health_domain: "environmental_justice", region: "NOAM",
+    id: "EHE-007", health_domain: "environmental_justice", region: "NOAM",
     epigenetic_toxin_exposure_rate: 0.52, endocrine_disruption_prevalence: 0.50,
     microplastic_bioaccumulation_index: 0.48, air_quality_chronic_disease_coupling: 0.55,
     heavy_metal_cognitive_impairment_rate: 0.50, pesticide_epigenetic_impact: 0.48,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // EHE-008 — critical, regulatory_chemical_capture (chemical_capture>=0.70, air_quality>=0.65)
   {
-    entity_id: "EHE-008", health_domain: "regulatory_environment", region: "APAC",
+    id: "EHE-008", health_domain: "regulatory_environment", region: "APAC",
     epigenetic_toxin_exposure_rate: 0.65, endocrine_disruption_prevalence: 0.78,
     microplastic_bioaccumulation_index: 0.60, air_quality_chronic_disease_coupling: 0.82,
     heavy_metal_cognitive_impairment_rate: 0.72, pesticide_epigenetic_impact: 0.68,
@@ -172,7 +172,7 @@ export async function GET() {
       const action  = recommendedAction(risk);
       const sig     = signal(risk);
       return {
-        entity_id:                          e.entity_id,
+        id:                          e.entity_id,
         health_domain:                      e.health_domain,
         region:                             e.region,
         chemical_score:                     chem,

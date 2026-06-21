@@ -5,7 +5,7 @@ const MOCK_ENTITIES = [
   // SRE-001 — EMEA, digital_media → critical, reality_consensus_collapse
   // reality_consensus_erosion>0.85 AND reality_verification_collapse>0.80
   {
-    entity_id: "SRE-001", media_domain: "digital_media", region: "EMEA",
+    id: "SRE-001", media_domain: "digital_media", region: "EMEA",
     deepfake_saturation_level: 0.82,
     reality_consensus_erosion: 0.88,
     political_deepfake_weaponization: 0.60,
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
   // SRE-002 — APAC, community_tv → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "SRE-002", media_domain: "community_tv", region: "APAC",
+    id: "SRE-002", media_domain: "community_tv", region: "APAC",
     deepfake_saturation_level: 0.08,
     reality_consensus_erosion: 0.10,
     political_deepfake_weaponization: 0.08,
@@ -50,7 +50,7 @@ const MOCK_ENTITIES = [
   // political_deepfake_weaponization>0.85 AND geopolitical_deepfake_incidents>0.80
   // reality_consensus_erosion<=0.85 to prevent pattern 1 firing
   {
-    entity_id: "SRE-003", media_domain: "state_media", region: "MEA",
+    id: "SRE-003", media_domain: "state_media", region: "MEA",
     deepfake_saturation_level: 0.75,
     reality_consensus_erosion: 0.70,
     political_deepfake_weaponization: 0.88,
@@ -73,7 +73,7 @@ const MOCK_ENTITIES = [
   // financial_fraud_deepfake>0.85 AND economic_deepfake_fraud_scale>0.80
   // patterns 1-2 must NOT fire
   {
-    entity_id: "SRE-004", media_domain: "financial_media", region: "NOAM",
+    id: "SRE-004", media_domain: "financial_media", region: "NOAM",
     deepfake_saturation_level: 0.70,
     reality_consensus_erosion: 0.65,
     political_deepfake_weaponization: 0.60,
@@ -96,7 +96,7 @@ const MOCK_ENTITIES = [
   // synthetic_evidence_falsification>0.80 AND deepfake_criminalization_failure>0.75
   // patterns 1-3 must NOT fire; composite 40-59
   {
-    entity_id: "SRE-005", media_domain: "legal_media", region: "LATAM",
+    id: "SRE-005", media_domain: "legal_media", region: "LATAM",
     deepfake_saturation_level: 0.52,
     reality_consensus_erosion: 0.55,
     political_deepfake_weaponization: 0.50,
@@ -118,7 +118,7 @@ const MOCK_ENTITIES = [
   // SRE-006 — EMEA, broadcast_media → moderate, none
   // composite 20-39; no pattern triggers
   {
-    entity_id: "SRE-006", media_domain: "broadcast_media", region: "EMEA",
+    id: "SRE-006", media_domain: "broadcast_media", region: "EMEA",
     deepfake_saturation_level: 0.28,
     reality_consensus_erosion: 0.30,
     political_deepfake_weaponization: 0.28,
@@ -141,7 +141,7 @@ const MOCK_ENTITIES = [
   // AI_media_monopoly>0.80 AND detection_technology_gap>0.75
   // patterns 1-4 must NOT fire; composite 40-59
   {
-    entity_id: "SRE-007", media_domain: "tech_platform", region: "APAC",
+    id: "SRE-007", media_domain: "tech_platform", region: "APAC",
     deepfake_saturation_level: 0.60,
     reality_consensus_erosion: 0.55,
     political_deepfake_weaponization: 0.50,
@@ -163,7 +163,7 @@ const MOCK_ENTITIES = [
   // SRE-008 — NOAM, print_media → low, none
   // composite < 20 → low; no pattern triggers
   {
-    entity_id: "SRE-008", media_domain: "print_media", region: "NOAM",
+    id: "SRE-008", media_domain: "print_media", region: "NOAM",
     deepfake_saturation_level: 0.10,
     reality_consensus_erosion: 0.12,
     political_deepfake_weaponization: 0.10,
@@ -282,7 +282,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                        e.entity_id,
+        id:                        e.entity_id,
         media_domain:                     e.media_domain,
         region:                           e.region,
         saturation_score:                 sat,

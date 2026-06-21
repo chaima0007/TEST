@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // FLE-001 — critical, supply_chain_slavery_nexus (opacity>0.80, accountability<0.25)
   {
-    entity_id: "FLE-001", labor_sector: "industrie_textile", region: "APAC",
+    id: "FLE-001", labor_sector: "industrie_textile", region: "APAC",
     forced_labor_prevalence: 0.82, debt_bondage_intensity: 0.75,
     document_confiscation: 0.70, movement_restriction: 0.72,
     recruitment_deception: 0.78, wage_theft: 0.80,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // FLE-002 — critical, debt_bondage_trap (debt>0.80, deception>0.75)
   {
-    entity_id: "FLE-002", labor_sector: "agriculture_intensive", region: "LATAM",
+    id: "FLE-002", labor_sector: "agriculture_intensive", region: "LATAM",
     forced_labor_prevalence: 0.78, debt_bondage_intensity: 0.88,
     document_confiscation: 0.65, movement_restriction: 0.70,
     recruitment_deception: 0.82, wage_theft: 0.75,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // FLE-003 — critical, domestic_servitude_network (confiscation>0.80, restriction>0.75)
   {
-    entity_id: "FLE-003", labor_sector: "travail_domestique", region: "MEA",
+    id: "FLE-003", labor_sector: "travail_domestique", region: "MEA",
     forced_labor_prevalence: 0.72, debt_bondage_intensity: 0.68,
     document_confiscation: 0.88, movement_restriction: 0.85,
     recruitment_deception: 0.70, wage_theft: 0.78,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // FLE-004 — high, sex_trafficking_economy (gender>0.80, violence>0.75) composite ~49
   {
-    entity_id: "FLE-004", labor_sector: "exploitation_sexuelle", region: "EMEA",
+    id: "FLE-004", labor_sector: "exploitation_sexuelle", region: "EMEA",
     forced_labor_prevalence: 0.42, debt_bondage_intensity: 0.38,
     document_confiscation: 0.45, movement_restriction: 0.40,
     recruitment_deception: 0.42, wage_theft: 0.35,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // FLE-005 — high, prison_labor_exploitation (corruption>0.75, prevalence>0.70) composite ~50
   {
-    entity_id: "FLE-005", labor_sector: "travail_carcéral", region: "NAMER",
+    id: "FLE-005", labor_sector: "travail_carcéral", region: "NAMER",
     forced_labor_prevalence: 0.72, debt_bondage_intensity: 0.35,
     document_confiscation: 0.42, movement_restriction: 0.65,
     recruitment_deception: 0.30, wage_theft: 0.45,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // FLE-006 — moderate, supply_chain_slavery_nexus (opacity>0.80, accountability<0.25) composite ~37
   {
-    entity_id: "FLE-006", labor_sector: "extraction_minière", region: "SSA",
+    id: "FLE-006", labor_sector: "extraction_minière", region: "SSA",
     forced_labor_prevalence: 0.22, debt_bondage_intensity: 0.18,
     document_confiscation: 0.20, movement_restriction: 0.22,
     recruitment_deception: 0.25, wage_theft: 0.20,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // FLE-007 — low, supply_chain_slavery_nexus
   {
-    entity_id: "FLE-007", labor_sector: "manufacturing_certifié", region: "EUROPE",
+    id: "FLE-007", labor_sector: "manufacturing_certifié", region: "EUROPE",
     forced_labor_prevalence: 0.08, debt_bondage_intensity: 0.05,
     document_confiscation: 0.04, movement_restriction: 0.06,
     recruitment_deception: 0.07, wage_theft: 0.05,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // FLE-008 — low, supply_chain_slavery_nexus
   {
-    entity_id: "FLE-008", labor_sector: "technologie_responsable", region: "NAMER",
+    id: "FLE-008", labor_sector: "technologie_responsable", region: "NAMER",
     forced_labor_prevalence: 0.06, debt_bondage_intensity: 0.04,
     document_confiscation: 0.03, movement_restriction: 0.05,
     recruitment_deception: 0.05, wage_theft: 0.04,
@@ -184,7 +184,7 @@ export async function GET() {
       const act  = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         labor_sector: e.labor_sector,
         region: e.region,
         exploitation_score: ex,

@@ -23,7 +23,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "FSRF-001",
+      id: "FSRF-001",
       name: "Yémen/Famine IPC5 — 21M en Insécurité Alimentaire, 160K Phase Catastrophe IPC5, Blocus Ports & Destruction Infrastructure Agricole par Coalition",
       country: "Yémen",
       composite_score: 91.6,
@@ -37,7 +37,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FSRF-002",
+      id: "FSRF-002",
       name: "Somalie/Sécheresse & Al-Shabaab — Famine Récurrente, 6.5M en Crise Alimentaire, Sécheresses La Niña Cumulées & Insécurité Al-Shabaab Bloquant Aide Humanitaire",
       country: "Somalie",
       composite_score: 86.65,
@@ -51,7 +51,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FSRF-003",
+      id: "FSRF-003",
       name: "Éthiopie/Tigré — Famine Arme de Guerre, 900K Phase Urgence, Siège Militaire Tigré & Destruction Cultures par Forces Armées Documentée ONU",
       country: "Éthiopie",
       composite_score: 85.4,
@@ -65,7 +65,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FSRF-004",
+      id: "FSRF-004",
       name: "Haïti/Crise Alimentaire & Gangs — 5.2M en Insécurité Alimentaire Aigüe, Contrôle Gangs 85% Port-au-Prince, Effondrement Agriculture & Blocage Aide",
       country: "Haïti",
       composite_score: 81.6,
@@ -79,7 +79,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FSRF-005",
+      id: "FSRF-005",
       name: "RCA/Conflit & 2.5M Déplacés — République Centrafricaine, 2.5M Déplacés Affamés, Groupes Armés Pillant Ressources Alimentaires & Effondrement Services Agricoles",
       country: "République Centrafricaine",
       composite_score: 54.15,
@@ -93,7 +93,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FSRF-006",
+      id: "FSRF-006",
       name: "Madagascar/Sécheresse Sud Kere — 1.3M Personnes Phase Crise-Urgence, Sécheresse Sud Grand-Sud Exceptionnelle, Kere (Famine Traditionnelle) & Malnutrition Enfants 20%",
       country: "Madagascar",
       composite_score: 58.65,
@@ -107,7 +107,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FSRF-007",
+      id: "FSRF-007",
       name: "Venezuela/Effondrement Économique — Hyperinflation 2019-2023, 7.7M en Insécurité Alimentaire Modérée-Sévère, Pénuries Chroniques & Émigration 7.7M Réfugiés",
       country: "Venezuela",
       composite_score: 38.65,
@@ -121,7 +121,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "FSRF-008",
+      id: "FSRF-008",
       name: "Brésil/Fome Zero 2.0 Lula — Programme Bolsa Família Relancé, 33M Sortis Faim Sous Lula 2023, Politique Alimentaire Nationale & Droit Constitutionnel à l&apos;Alimentation",
       country: "Brésil",
       composite_score: 9.9,

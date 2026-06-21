@@ -15,7 +15,7 @@ const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEntities = [
   {
-    entity_id: "BSE-001",
+    id: "BSE-001",
     surveillance_domain: "urban_security",
     region: "APAC",
     facial_recognition_deployment_density: 0.85,
@@ -48,7 +48,7 @@ const mockEntities = [
     signal: "🔴 État de surveillance totale — contrôle biométrique systémique",
   },
   {
-    entity_id: "BSE-002",
+    id: "BSE-002",
     surveillance_domain: "border_control",
     region: "EMEA",
     facial_recognition_deployment_density: 0.10,
@@ -81,7 +81,7 @@ const mockEntities = [
     signal: "🟢 Surveillance biométrique contenue",
   },
   {
-    entity_id: "BSE-003",
+    id: "BSE-003",
     surveillance_domain: "law_enforcement",
     region: "NAMER",
     facial_recognition_deployment_density: 0.45,
@@ -114,7 +114,7 @@ const mockEntities = [
     signal: "🟠 Contrôle biométrique avancé détecté",
   },
   {
-    entity_id: "BSE-004",
+    id: "BSE-004",
     surveillance_domain: "workplace_monitoring",
     region: "LATAM",
     facial_recognition_deployment_density: 0.12,
@@ -147,7 +147,7 @@ const mockEntities = [
     signal: "🟢 Surveillance biométrique contenue",
   },
   {
-    entity_id: "BSE-005",
+    id: "BSE-005",
     surveillance_domain: "political_monitoring",
     region: "MEA",
     facial_recognition_deployment_density: 0.60,
@@ -180,7 +180,7 @@ const mockEntities = [
     signal: "🔴 État de surveillance totale — contrôle biométrique systémique",
   },
   {
-    entity_id: "BSE-006",
+    id: "BSE-006",
     surveillance_domain: "healthcare_biometrics",
     region: "EMEA",
     facial_recognition_deployment_density: 0.28,
@@ -213,7 +213,7 @@ const mockEntities = [
     signal: "🟡 Dérive biométrique — vigilance requise",
   },
   {
-    entity_id: "BSE-007",
+    id: "BSE-007",
     surveillance_domain: "financial_identity",
     region: "NAMER",
     facial_recognition_deployment_density: 0.42,
@@ -246,7 +246,7 @@ const mockEntities = [
     signal: "🟠 Contrôle biométrique avancé détecté",
   },
   {
-    entity_id: "BSE-008",
+    id: "BSE-008",
     surveillance_domain: "population_control",
     region: "APAC",
     facial_recognition_deployment_density: 0.62,

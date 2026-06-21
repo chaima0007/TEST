@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // NC-001 — critical, narrative_hijacking
   {
-    entity_id: "NC-001", narrative_domain: "brand_narrative", region: "EMEA",
+    id: "NC-001", narrative_domain: "brand_narrative", region: "EMEA",
     narrative_coherence: 0.20, message_amplification_rate: 0.72, counter_narrative_exposure: 0.68,
     memetic_mutation_speed: 0.75, brand_narrative_integrity: 0.18, hostile_framing_intensity: 0.78,
     misinformation_penetration: 0.80, narrative_capture_risk: 0.82, audience_trust_level: 0.22,
@@ -14,7 +14,7 @@ const MOCK_ENTITIES = [
   },
   // NC-002 — low, narrative_sovereign/none
   {
-    entity_id: "NC-002", narrative_domain: "corporate_communications", region: "APAC",
+    id: "NC-002", narrative_domain: "corporate_communications", region: "APAC",
     narrative_coherence: 0.92, message_amplification_rate: 0.20, counter_narrative_exposure: 0.12,
     memetic_mutation_speed: 0.10, brand_narrative_integrity: 0.90, hostile_framing_intensity: 0.10,
     misinformation_penetration: 0.08, narrative_capture_risk: 0.10, audience_trust_level: 0.92,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   },
   // NC-003 — high, memetic_attack
   {
-    entity_id: "NC-003", narrative_domain: "strategic_messaging", region: "NOAM",
+    id: "NC-003", narrative_domain: "strategic_messaging", region: "NOAM",
     narrative_coherence: 0.42, message_amplification_rate: 0.68, counter_narrative_exposure: 0.55,
     memetic_mutation_speed: 0.60, brand_narrative_integrity: 0.45, hostile_framing_intensity: 0.72,
     misinformation_penetration: 0.65, narrative_capture_risk: 0.55, audience_trust_level: 0.48,
@@ -34,7 +34,7 @@ const MOCK_ENTITIES = [
   },
   // NC-004 — low, narrative_sovereign/none
   {
-    entity_id: "NC-004", narrative_domain: "corporate_communications", region: "LATAM",
+    id: "NC-004", narrative_domain: "corporate_communications", region: "LATAM",
     narrative_coherence: 0.88, message_amplification_rate: 0.22, counter_narrative_exposure: 0.15,
     memetic_mutation_speed: 0.12, brand_narrative_integrity: 0.88, hostile_framing_intensity: 0.12,
     misinformation_penetration: 0.10, narrative_capture_risk: 0.12, audience_trust_level: 0.88,
@@ -44,7 +44,7 @@ const MOCK_ENTITIES = [
   },
   // NC-005 — critical, viral_narrative_collapse
   {
-    entity_id: "NC-005", narrative_domain: "brand_narrative", region: "MEA",
+    id: "NC-005", narrative_domain: "brand_narrative", region: "MEA",
     narrative_coherence: 0.18, message_amplification_rate: 0.88, counter_narrative_exposure: 0.72,
     memetic_mutation_speed: 0.80, brand_narrative_integrity: 0.22, hostile_framing_intensity: 0.75,
     misinformation_penetration: 0.70, narrative_capture_risk: 0.60, audience_trust_level: 0.25,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   },
   // NC-006 — moderate, none
   {
-    entity_id: "NC-006", narrative_domain: "public_affairs", region: "EMEA",
+    id: "NC-006", narrative_domain: "public_affairs", region: "EMEA",
     narrative_coherence: 0.62, message_amplification_rate: 0.42, counter_narrative_exposure: 0.38,
     memetic_mutation_speed: 0.35, brand_narrative_integrity: 0.62, hostile_framing_intensity: 0.38,
     misinformation_penetration: 0.35, narrative_capture_risk: 0.38, audience_trust_level: 0.62,
@@ -64,7 +64,7 @@ const MOCK_ENTITIES = [
   },
   // NC-007 — high, audience_defection
   {
-    entity_id: "NC-007", narrative_domain: "strategic_messaging", region: "APAC",
+    id: "NC-007", narrative_domain: "strategic_messaging", region: "APAC",
     narrative_coherence: 0.45, message_amplification_rate: 0.65, counter_narrative_exposure: 0.68,
     memetic_mutation_speed: 0.58, brand_narrative_integrity: 0.50, hostile_framing_intensity: 0.55,
     misinformation_penetration: 0.52, narrative_capture_risk: 0.50, audience_trust_level: 0.22,
@@ -74,7 +74,7 @@ const MOCK_ENTITIES = [
   },
   // NC-008 — critical, sovereignty_erosion
   {
-    entity_id: "NC-008", narrative_domain: "brand_narrative", region: "NOAM",
+    id: "NC-008", narrative_domain: "brand_narrative", region: "NOAM",
     narrative_coherence: 0.22, message_amplification_rate: 0.80, counter_narrative_exposure: 0.45,
     memetic_mutation_speed: 0.72, brand_narrative_integrity: 0.28, hostile_framing_intensity: 0.62,
     misinformation_penetration: 0.60, narrative_capture_risk: 0.62, audience_trust_level: 0.28,
@@ -194,7 +194,7 @@ export async function GET() {
       const signal      = narrativeSignal(e, risk, composite);
 
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         region:                         e.region,
         narrative_domain:               e.narrative_domain,
         narrative_risk:                 risk,

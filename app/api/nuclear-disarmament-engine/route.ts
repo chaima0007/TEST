@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // NDE-001 — critical, treaty_collapse_cascade (treaty_withdrawal>0.85, verification>0.80)
   {
-    entity_id: "NDE-001", actor_type: "état_nucléaire", region: "EMEA",
+    id: "NDE-001", actor_type: "état_nucléaire", region: "EMEA",
     npt_compliance_gap: 0.88, arsenal_modernization_rate: 0.82,
     first_strike_doctrine_risk: 0.78, tactical_weapons_proliferation: 0.75,
     verification_mechanism_failure: 0.84, treaty_withdrawal_risk: 0.90,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // NDE-002 — critical, nuclear_state_proliferation (npt_gap>0.85, tactical>0.80)
   {
-    entity_id: "NDE-002", actor_type: "puissance_émergente", region: "APAC",
+    id: "NDE-002", actor_type: "puissance_émergente", region: "APAC",
     npt_compliance_gap: 0.92, arsenal_modernization_rate: 0.88,
     first_strike_doctrine_risk: 0.72, tactical_weapons_proliferation: 0.86,
     verification_mechanism_failure: 0.70, treaty_withdrawal_risk: 0.75,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // NDE-003 — critical, tactical_weapon_doctrine_shift (first_strike>0.85, nuclear_sharing>0.80)
   {
-    entity_id: "NDE-003", actor_type: "alliance_militaire", region: "NOAM",
+    id: "NDE-003", actor_type: "alliance_militaire", region: "NOAM",
     npt_compliance_gap: 0.78, arsenal_modernization_rate: 0.85,
     first_strike_doctrine_risk: 0.90, tactical_weapons_proliferation: 0.78,
     verification_mechanism_failure: 0.75, treaty_withdrawal_risk: 0.72,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // NDE-004 — high, cyber_nuclear_command_risk (cyber>0.80, miscalculation>0.75)
   {
-    entity_id: "NDE-004", actor_type: "état_nucléaire", region: "LATAM",
+    id: "NDE-004", actor_type: "état_nucléaire", region: "LATAM",
     npt_compliance_gap: 0.52, arsenal_modernization_rate: 0.50,
     first_strike_doctrine_risk: 0.48, tactical_weapons_proliferation: 0.52,
     verification_mechanism_failure: 0.50, treaty_withdrawal_risk: 0.48,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // NDE-005 — high, humanitarian_impact_denial (civilian>0.80, nuclear_winter>0.75)
   {
-    entity_id: "NDE-005", actor_type: "puissance_régionale", region: "MENA",
+    id: "NDE-005", actor_type: "puissance_régionale", region: "MENA",
     npt_compliance_gap: 0.50, arsenal_modernization_rate: 0.48,
     first_strike_doctrine_risk: 0.52, tactical_weapons_proliferation: 0.48,
     verification_mechanism_failure: 0.50, treaty_withdrawal_risk: 0.52,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // NDE-006 — moderate, none
   {
-    entity_id: "NDE-006", actor_type: "organisation_internationale", region: "EMEA",
+    id: "NDE-006", actor_type: "organisation_internationale", region: "EMEA",
     npt_compliance_gap: 0.28, arsenal_modernization_rate: 0.30,
     first_strike_doctrine_risk: 0.28, tactical_weapons_proliferation: 0.30,
     verification_mechanism_failure: 0.32, treaty_withdrawal_risk: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // NDE-007 — low, none
   {
-    entity_id: "NDE-007", actor_type: "état_non_nucléaire", region: "APAC",
+    id: "NDE-007", actor_type: "état_non_nucléaire", region: "APAC",
     npt_compliance_gap: 0.10, arsenal_modernization_rate: 0.08,
     first_strike_doctrine_risk: 0.10, tactical_weapons_proliferation: 0.08,
     verification_mechanism_failure: 0.10, treaty_withdrawal_risk: 0.08,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // NDE-008 — low, none
   {
-    entity_id: "NDE-008", actor_type: "état_non_nucléaire", region: "SSA",
+    id: "NDE-008", actor_type: "état_non_nucléaire", region: "SSA",
     npt_compliance_gap: 0.12, arsenal_modernization_rate: 0.10,
     first_strike_doctrine_risk: 0.08, tactical_weapons_proliferation: 0.10,
     verification_mechanism_failure: 0.12, treaty_withdrawal_risk: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         actor_type:                   e.actor_type,
         region:                       e.region,
         proliferation_score:          pro,

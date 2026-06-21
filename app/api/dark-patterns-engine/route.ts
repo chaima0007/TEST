@@ -7,7 +7,7 @@ if (!process.env.SWARM_API_URL) {
 
 const MOCK_ENTITIES = [
   {
-    entity_id: "DKP-001",
+    id: "DKP-001",
     name: "StreamTrap Media",
     country: "États-Unis",
     sector: "Streaming & Abonnement",
@@ -27,7 +27,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-20",
   },
   {
-    entity_id: "DKP-002",
+    id: "DKP-002",
     name: "SocialLoop Platform",
     country: "Chine",
     sector: "Réseau Social",
@@ -47,7 +47,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-19",
   },
   {
-    entity_id: "DKP-003",
+    id: "DKP-003",
     name: "ConsentForge Analytics",
     country: "Irlande",
     sector: "AdTech & Analytics",
@@ -67,7 +67,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-18",
   },
   {
-    entity_id: "DKP-004",
+    id: "DKP-004",
     name: "GameLoop Mobile",
     country: "Japon",
     sector: "Gaming Mobile",
@@ -87,7 +87,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-17",
   },
   {
-    entity_id: "DKP-005",
+    id: "DKP-005",
     name: "EcomTrick Marketplace",
     country: "Singapour",
     sector: "E-Commerce",
@@ -107,7 +107,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-16",
   },
   {
-    entity_id: "DKP-006",
+    id: "DKP-006",
     name: "NewsFlow Digital",
     country: "Allemagne",
     sector: "Médias & Information",
@@ -127,7 +127,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-15",
   },
   {
-    entity_id: "DKP-007",
+    id: "DKP-007",
     name: "EthicalShop Cooperative",
     country: "Suisse",
     sector: "Commerce Éthique",
@@ -147,7 +147,7 @@ const MOCK_ENTITIES = [
     last_updated: "2026-06-14",
   },
   {
-    entity_id: "DKP-008",
+    id: "DKP-008",
     name: "OpenDesign Foundation",
     country: "Pays-Bas",
     sector: "Design Éthique & Standards",

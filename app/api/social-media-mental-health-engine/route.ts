@@ -22,7 +22,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "MNH-001",
+      id: "MNH-001",
       name: "TikTok US Operations",
       country: "USA",
       sector: "Social Media",
@@ -43,7 +43,7 @@ function getMockData() {
       confidence_level: 0.91,
     },
     {
-      entity_id: "MNH-002",
+      id: "MNH-002",
       name: "Instagram Meta Platform",
       country: "USA",
       sector: "Social Media",
@@ -64,7 +64,7 @@ function getMockData() {
       confidence_level: 0.87,
     },
     {
-      entity_id: "MNH-003",
+      id: "MNH-003",
       name: "Twitter/X Platform",
       country: "USA",
       sector: "Social Media",
@@ -85,7 +85,7 @@ function getMockData() {
       confidence_level: 0.83,
     },
     {
-      entity_id: "MNH-004",
+      id: "MNH-004",
       name: "WeChat International",
       country: "China",
       sector: "Social Media",
@@ -106,7 +106,7 @@ function getMockData() {
       confidence_level: 0.79,
     },
     {
-      entity_id: "MNH-005",
+      id: "MNH-005",
       name: "Snapchat EU Operations",
       country: "UK",
       sector: "Social Media",
@@ -127,7 +127,7 @@ function getMockData() {
       confidence_level: 0.76,
     },
     {
-      entity_id: "MNH-006",
+      id: "MNH-006",
       name: "LinkedIn DACH",
       country: "Germany",
       sector: "Professional Network",
@@ -148,7 +148,7 @@ function getMockData() {
       confidence_level: 0.72,
     },
     {
-      entity_id: "MNH-007",
+      id: "MNH-007",
       name: "Discord Nordic",
       country: "Finland",
       sector: "Gaming/Social",
@@ -169,7 +169,7 @@ function getMockData() {
       confidence_level: 0.68,
     },
     {
-      entity_id: "MNH-008",
+      id: "MNH-008",
       name: "Pinterest Benelux",
       country: "Netherlands",
       sector: "Creative Platform",

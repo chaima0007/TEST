@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 // Types
 interface Entity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   composite_score: number;
@@ -152,7 +152,7 @@ export default function ClimateRefugeeDisplacementRightsPage() {
         {/* Entities grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.entities.map(e => (
-            <button key={e.entity_id} onClick={() => setSelected(e)}
+            <button key={e.id} onClick={() => setSelected(e)}
               className="bg-slate-900 rounded-xl p-4 border border-slate-800 hover:border-slate-600 text-left transition-all">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
@@ -161,7 +161,7 @@ export default function ClimateRefugeeDisplacementRightsPage() {
                       style={{ backgroundColor: RC[e.risk_level] + "33", color: RC[e.risk_level] }}>
                       {e.risk_level}
                     </span>
-                    <span className="text-slate-500 text-xs">{e.entity_id}</span>
+                    <span className="text-slate-500 text-xs">{e.id}</span>
                   </div>
                   <p className="text-white text-sm font-medium leading-snug line-clamp-2">{e.name}</p>
                   <p className="text-slate-500 text-xs mt-1">{e.primary_pattern.replace(/_/g, " ")}</p>

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type ElectoralEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -450,7 +450,7 @@ export default function ElectoralIntegrityDashboard() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {filtered.map((entity) => (
             <div
-              key={entity.entity_id}
+              key={entity.id}
               onClick={() => setSelectedEntity(entity)}
               className="bg-slate-900 border border-slate-700/50 rounded-xl p-4 cursor-pointer hover:border-amber-500/50 hover:bg-slate-800/60 transition-all group"
             >
@@ -459,7 +459,7 @@ export default function ElectoralIntegrityDashboard() {
                   <p className="text-white font-medium text-sm leading-tight group-hover:text-amber-300 transition-colors">
                     {entity.name}
                   </p>
-                  <p className="text-slate-500 text-xs mt-0.5">{entity.entity_id}</p>
+                  <p className="text-slate-500 text-xs mt-0.5">{entity.id}</p>
                 </div>
                 <span className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap ${RISK_BADGE[entity.risk_level]}`}>
                   {entity.risk_level}

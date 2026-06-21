@@ -19,7 +19,7 @@ function getMockData() {
     avg_composite: 59.67,
     entities: [
       {
-        entity_id: "SCR-001",
+        id: "SCR-001",
         name: "Myanmar/Rohingyas 600 000 Apatrides",
         country: "Asie du Sud-Est",
         sector: "Loi Citoyenneté 1982 Exclut Rohingyas, 600 000 Sans Nationalité Au Myanmar, 1M+ Réfugiés Bangladesh & Génocide ONU 2018",
@@ -39,7 +39,7 @@ function getMockData() {
         estimated_statelessness_citizenship_rights_index: 9.58,
       },
       {
-        entity_id: "SCR-002",
+        id: "SCR-002",
         name: "Koweït/Bidun 100 000 Sans Nationalité",
         country: "MENA",
         sector: "100 000 Bidun Sans Citoyenneté Depuis Indépendance 1961, Résidents Depuis Génération, Sans Emploi Public, Éducation & Soins",
@@ -59,7 +59,7 @@ function getMockData() {
         estimated_statelessness_citizenship_rights_index: 8.78,
       },
       {
-        entity_id: "SCR-003",
+        id: "SCR-003",
         name: "République Dominicaine/Haïtiens Déchus 2013",
         country: "Caraïbes",
         sector: "Décision TC 168-13 Rétroactive Depuis 1929, 200 000 Haïtiens-Dominicains Déchus Nationalité, Génération Née Sur Place",
@@ -79,7 +79,7 @@ function getMockData() {
         estimated_statelessness_citizenship_rights_index: 8.49,
       },
       {
-        entity_id: "SCR-004",
+        id: "SCR-004",
         name: "Thaïlande/Peuples Montagnards Highlanders",
         country: "Asie du Sud-Est",
         sector: "480 000 Peuples Autochtones Montagnards Sans Nationalité, Akha/Hmong/Karen, Sans Droit Vote, Travel & Services Publics",
@@ -99,7 +99,7 @@ function getMockData() {
         estimated_statelessness_citizenship_rights_index: 8.21,
       },
       {
-        entity_id: "SCR-005",
+        id: "SCR-005",
         name: "Lettonie/Estonies Non-Citoyens Russophones",
         country: "Europe du Nord",
         sector: "220 000 Passeports Non-Citoyens Lettonie, 70 000 Estonie, Russophones Post-URSS, Droits Politiques Limités & Naturalisation Difficile",
@@ -119,7 +119,7 @@ function getMockData() {
         estimated_statelessness_citizenship_rights_index: 4.74,
       },
       {
-        entity_id: "SCR-006",
+        id: "SCR-006",
         name: "Côte d'Ivoire/Populations Sans Actes Naissance",
         country: "Afrique de l'Ouest",
         sector: "750 000 Personnes Sans Actes Naissance, 25% Enfants Non Enregistrés, Conflit Post-Électoral 2010-2011 Aggravation",
@@ -139,7 +139,7 @@ function getMockData() {
         estimated_statelessness_citizenship_rights_index: 5.35,
       },
       {
-        entity_id: "SCR-007",
+        id: "SCR-007",
         name: "UNHCR/Plan #IBelong 2024 Éradication Apatridie",
         country: "Global",
         sector: "Plan 10 Ans Fin Apatridie 2014-2024, 10M Apatrides Documentés, Conventions 1954 & 1961 & 92 États Parties",
@@ -159,7 +159,7 @@ function getMockData() {
         estimated_statelessness_citizenship_rights_index: 2.16,
       },
       {
-        entity_id: "SCR-008",
+        id: "SCR-008",
         name: "UE/Droit Citoyenneté & Naturalisation Modèle",
         country: "Europe",
         sector: "Directive Longue Durée Résidents, Naturalisation 5-10 Ans, Double Nationalité & CJUE Protection Perte Citoyenneté EU",

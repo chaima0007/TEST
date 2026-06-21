@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 type City = {
-  entity_id: string; city_type: string; region: string;
+  id: string; city_type: string; region: string;
   surveillance_score: number; control_score: number;
   vulnerability_score: number; sovereignty_score: number;
   composite_score: number; risk_level: string;
@@ -80,7 +80,7 @@ function DetailModal({ city, onClose }: { city: City; onClose: () => void }) {
       <div className="bg-slate-900 border border-cyan-900 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e=>e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{city.entity_id}</span>
+            <span className="text-lg font-bold text-white">{city.id}</span>
             <span className="ml-2 text-cyan-400 text-xs">{city.city_type}</span>
             <span className="ml-2 text-slate-400 text-xs">{city.region}</span>
           </div>
@@ -235,10 +235,10 @@ export default function SmartCityDashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map(city=>(
-          <div key={city.entity_id} onClick={()=>setSelected(city)}
+          <div key={city.id} onClick={()=>setSelected(city)}
             className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-cyan-700 transition-colors">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-bold text-white">{city.entity_id}</span>
+              <span className="font-bold text-white">{city.id}</span>
               <span className="text-xs text-slate-400">{city.region}</span>
             </div>
             <div className="text-xs text-cyan-400 mb-2 capitalize">{city.city_type.replace(/_/g," ")}</div>

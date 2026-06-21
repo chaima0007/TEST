@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // RDE-001 — critical, orphan_drug_pricing_crisis (orphan_drug_price_index>0.85, insurance_coverage_gap>0.80)
   {
-    entity_id: "RDE-001", disease_category: "maladies_métaboliques_rares", region: "NOAM",
+    id: "RDE-001", disease_category: "maladies_métaboliques_rares", region: "NOAM",
     diagnostic_delay_years: 0.70, misdiagnosis_rate: 0.68,
     treatment_availability_gap: 0.88, orphan_drug_price_index: 0.92,
     research_investment_gap: 0.72, clinical_trial_access: 0.78,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // RDE-002 — critical, diagnostic_odyssey_barrier (diagnostic_delay_years>0.85, misdiagnosis_rate>0.80)
   {
-    entity_id: "RDE-002", disease_category: "maladies_neurologiques_rares", region: "EMEA",
+    id: "RDE-002", disease_category: "maladies_neurologiques_rares", region: "EMEA",
     diagnostic_delay_years: 0.90, misdiagnosis_rate: 0.86,
     treatment_availability_gap: 0.72, orphan_drug_price_index: 0.68,
     research_investment_gap: 0.75, clinical_trial_access: 0.70,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // RDE-003 — critical, research_funding_desert (research_investment_gap>0.85, patient_registry_gap>0.80)
   {
-    entity_id: "RDE-003", disease_category: "maladies_génétiques_ultra_rares", region: "SSA",
+    id: "RDE-003", disease_category: "maladies_génétiques_ultra_rares", region: "SSA",
     diagnostic_delay_years: 0.68, misdiagnosis_rate: 0.65,
     treatment_availability_gap: 0.80, orphan_drug_price_index: 0.72,
     research_investment_gap: 0.90, clinical_trial_access: 0.75,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // RDE-004 — high, regulatory_pathway_blockade (regulatory_approval_delay>0.80, cross_border_access_barrier>0.75)
   {
-    entity_id: "RDE-004", disease_category: "maladies_auto_immunes_rares", region: "APAC",
+    id: "RDE-004", disease_category: "maladies_auto_immunes_rares", region: "APAC",
     diagnostic_delay_years: 0.48, misdiagnosis_rate: 0.45,
     treatment_availability_gap: 0.50, orphan_drug_price_index: 0.52,
     research_investment_gap: 0.48, clinical_trial_access: 0.50,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // RDE-005 — high, patient_advocacy_capture (patient_group_funding_capture>0.80, newborn_screening_gap>0.75)
   {
-    entity_id: "RDE-005", disease_category: "maladies_lysosomales", region: "LATAM",
+    id: "RDE-005", disease_category: "maladies_lysosomales", region: "LATAM",
     diagnostic_delay_years: 0.45, misdiagnosis_rate: 0.48,
     treatment_availability_gap: 0.52, orphan_drug_price_index: 0.48,
     research_investment_gap: 0.50, clinical_trial_access: 0.45,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // RDE-006 — moderate, none
   {
-    entity_id: "RDE-006", disease_category: "maladies_hématologiques_rares", region: "EMEA",
+    id: "RDE-006", disease_category: "maladies_hématologiques_rares", region: "EMEA",
     diagnostic_delay_years: 0.28, misdiagnosis_rate: 0.30,
     treatment_availability_gap: 0.32, orphan_drug_price_index: 0.28,
     research_investment_gap: 0.30, clinical_trial_access: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // RDE-007 — low, none
   {
-    entity_id: "RDE-007", disease_category: "maladies_mitochondriales", region: "NOAM",
+    id: "RDE-007", disease_category: "maladies_mitochondriales", region: "NOAM",
     diagnostic_delay_years: 0.10, misdiagnosis_rate: 0.12,
     treatment_availability_gap: 0.10, orphan_drug_price_index: 0.12,
     research_investment_gap: 0.10, clinical_trial_access: 0.12,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // RDE-008 — low, none
   {
-    entity_id: "RDE-008", disease_category: "maladies_dermatologiques_rares", region: "APAC",
+    id: "RDE-008", disease_category: "maladies_dermatologiques_rares", region: "APAC",
     diagnostic_delay_years: 0.12, misdiagnosis_rate: 0.10,
     treatment_availability_gap: 0.12, orphan_drug_price_index: 0.10,
     research_investment_gap: 0.12, clinical_trial_access: 0.10,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                  e.entity_id,
+        id:                  e.entity_id,
         disease_category:           e.disease_category,
         region:                     e.region,
         access_score:               acc,

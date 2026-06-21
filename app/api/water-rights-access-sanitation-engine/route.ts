@@ -24,7 +24,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "WRAS-001",
+      id: "WRAS-001",
       name: "Yemen — Infrastructures Eau Détruites Guerre, Millions Sans Accès Eau Potable, Choléra Épidémique & Puits Bombardés Coalition",
       country: "Yemen",
       sector: "Conflit & Crise Humanitaire",
@@ -40,7 +40,7 @@ function getMockData() {
       last_updated: "2026-06-21"
     },
     {
-      entity_id: "WRAS-002",
+      id: "WRAS-002",
       name: "RDC — Accès Eau Potable 35% Population Zones Conflit Kivu, Cholera Endémique, Femmes 6h Transport Eau & Contamination Intentionnelle",
       country: "RDC",
       sector: "Conflit & Infrastructure Dégradée",
@@ -56,7 +56,7 @@ function getMockData() {
       last_updated: "2026-06-21"
     },
     {
-      entity_id: "WRAS-003",
+      id: "WRAS-003",
       name: "Gaza — Désalinisation Détruite Siège, Eau Contaminée Population Civile, Infrastructures WASH Bombardées & Accès Bloqué Humanitaire",
       country: "Palestine/Gaza",
       sector: "Siège & Droit International Humanitaire",
@@ -72,7 +72,7 @@ function getMockData() {
       last_updated: "2026-06-21"
     },
     {
-      entity_id: "WRAS-004",
+      id: "WRAS-004",
       name: "Somalie — Sécheresse Crise Humanitaire Eau 2022, 7M Personnes Déplacées, Pénurie Eau Pastorale & Enfants Malnutrition Déshydratation",
       country: "Somalie",
       sector: "Sécheresse & Crise Climatique",
@@ -88,7 +88,7 @@ function getMockData() {
       last_updated: "2026-06-21"
     },
     {
-      entity_id: "WRAS-005",
+      id: "WRAS-005",
       name: "Bolivie/Cochabamba — Guerre de l'Eau Privatisation Bechtel 1999, Contrats Illégaux, Coupures Accès Pauvres & Résistance Populaire Réprimée",
       country: "Bolivie",
       sector: "Privatisation & Résistance Populaire",
@@ -104,7 +104,7 @@ function getMockData() {
       last_updated: "2026-06-21"
     },
     {
-      entity_id: "WRAS-006",
+      id: "WRAS-006",
       name: "Inde/Punjab — Stress Hydrique Agriculture Intensive, Surexploitation Aquifères, Pesticides Eau Souterraine & Crise Accès Rural Dalit",
       country: "Inde",
       sector: "Agriculture Industrielle & Inégalités",
@@ -120,7 +120,7 @@ function getMockData() {
       last_updated: "2026-06-21"
     },
     {
-      entity_id: "WRAS-007",
+      id: "WRAS-007",
       name: "Chili — Privatisation Eau Constitutionnelle Codes 1981, Droits Propriété Eau Concentrés Agro-Industrie & Communautés Sans Accès Garanti",
       country: "Chili",
       sector: "Privatisation Constitutionnelle",
@@ -136,7 +136,7 @@ function getMockData() {
       last_updated: "2026-06-21"
     },
     {
-      entity_id: "WRAS-008",
+      id: "WRAS-008",
       name: "Pays-Bas — Eau Bien Commun Modèle Gestion Publique, Interdiction Privatisation Constitutionnelle, Standards RIVM & Accès Universel Garanti",
       country: "Pays-Bas",
       sector: "Modèle de Bonne Gouvernance",

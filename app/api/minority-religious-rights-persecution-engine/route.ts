@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "MRR-001",
+      id: "MRR-001",
       name: "Chine/Ouïghours — Mosquées Détruites Reeducation Camps Xinjiang, Prières Interdites & Hajj Contrôlé État",
       country: "Chine",
       state_religious_persecution_severity_score: 96.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MRR-002",
+      id: "MRR-002",
       name: "Iran/Bahais Chrétiens — Emprisonnés Apostasie Peine Mort, Eglises Maisons Fermées & Convertis Torturés",
       country: "Iran",
       state_religious_persecution_severity_score: 93.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MRR-003",
+      id: "MRR-003",
       name: "Pakistan/Ahmadis Chrétiens — Blasphème Peine Mort, Ahmadis Déclarés Non-Musulmans & Eglises Brûlées Foules",
       country: "Pakistan",
       state_religious_persecution_severity_score: 91.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MRR-004",
+      id: "MRR-004",
       name: "Inde/Lynchages Minorités — BJP Lois Anti-Conversion, Muslimans Lynchés Vache & Démolitions Mosquées Bulldozer",
       country: "Inde",
       state_religious_persecution_severity_score: 88.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MRR-005",
+      id: "MRR-005",
       name: "Myanmar/Rohingya — Mosquées Brûlées Génocide, Statut Apatride 1982 & Moine Wirathu Haine Anti-Islam",
       country: "Myanmar",
       state_religious_persecution_severity_score: 58.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MRR-006",
+      id: "MRR-006",
       name: "Égypte/Coptes — Discriminés Emploi État, Eglises Démolies Permis Refusés & Blasphème Procès Chrétiens",
       country: "Égypte",
       state_religious_persecution_severity_score: 55.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MRR-007",
+      id: "MRR-007",
       name: "USCIRF/Forum 18 — Monitoring Liberté Religieuse, Rapport Annuel Violations & Commission Internationale",
       country: "Global",
       state_religious_persecution_severity_score: 28.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "MRR-008",
+      id: "MRR-008",
       name: "ONU/PIDCP Art.18 — Liberté Religion & Déclaration 1981 Intolérance Religieuse Rapporteur Spécial",
       country: "Global",
       state_religious_persecution_severity_score: 5.0,

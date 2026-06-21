@@ -17,14 +17,14 @@ const MOCK = {
   ],
   critical_alerts: [],
   entities: [
-    { entity_id: "CHN_xinjiang", name: "Chine — Sécurité Xinjiang", composite_score: 90.3, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 9.03 },
-    { entity_id: "EGY_law94_2015", name: "Égypte — Loi antiterroriste 94/2015", composite_score: 81.15, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 8.12 },
-    { entity_id: "RUS_yarovaya", name: "Russie — Loi Yarovaya", composite_score: 81.35, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 8.13 },
-    { entity_id: "SAU_antiterrorism", name: "Arabie Saoudite — Lois antiterrorisme", composite_score: 78.9, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 7.89 },
-    { entity_id: "TUR_post2016", name: "Turquie — Législation post-coup 2016", composite_score: 53.35, risk_level: "élevé", estimated_anti_terrorism_counter_extremism_rights_index: 5.33 },
-    { entity_id: "PAK_anti_terror", name: "Pakistan — Lois antiterroristes", composite_score: 47.0, risk_level: "élevé", estimated_anti_terrorism_counter_extremism_rights_index: 4.7 },
-    { entity_id: "FRA_silt_renseignement", name: "France — SILT / Renseignement", composite_score: 28.15, risk_level: "modéré", estimated_anti_terrorism_counter_extremism_rights_index: 2.81 },
-    { entity_id: "CAN_oversight_model", name: "Canada — Modèle de surveillance antiterroriste", composite_score: 11.6, risk_level: "faible", estimated_anti_terrorism_counter_extremism_rights_index: 1.16 },
+    { id: "CHN_xinjiang", name: "Chine — Sécurité Xinjiang", composite_score: 90.3, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 9.03 },
+    { id: "EGY_law94_2015", name: "Égypte — Loi antiterroriste 94/2015", composite_score: 81.15, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 8.12 },
+    { id: "RUS_yarovaya", name: "Russie — Loi Yarovaya", composite_score: 81.35, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 8.13 },
+    { id: "SAU_antiterrorism", name: "Arabie Saoudite — Lois antiterrorisme", composite_score: 78.9, risk_level: "critique", estimated_anti_terrorism_counter_extremism_rights_index: 7.89 },
+    { id: "TUR_post2016", name: "Turquie — Législation post-coup 2016", composite_score: 53.35, risk_level: "élevé", estimated_anti_terrorism_counter_extremism_rights_index: 5.33 },
+    { id: "PAK_anti_terror", name: "Pakistan — Lois antiterroristes", composite_score: 47.0, risk_level: "élevé", estimated_anti_terrorism_counter_extremism_rights_index: 4.7 },
+    { id: "FRA_silt_renseignement", name: "France — SILT / Renseignement", composite_score: 28.15, risk_level: "modéré", estimated_anti_terrorism_counter_extremism_rights_index: 2.81 },
+    { id: "CAN_oversight_model", name: "Canada — Modèle de surveillance antiterroriste", composite_score: 11.6, risk_level: "faible", estimated_anti_terrorism_counter_extremism_rights_index: 1.16 },
   ],
 };
 

@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // ARE-001 — critical, post_antibiotic_era (last_resort>=0.70, pipeline_drought>=0.65)
   {
-    entity_id: "ARE-001", health_context: "résistance_last_resort", region: "EMEA",
+    id: "ARE-001", health_context: "résistance_last_resort", region: "EMEA",
     AMR_mortality_acceleration_rate: 0.82, last_resort_antibiotic_failure_rate: 0.88,
     agricultural_antibiotic_overuse_index: 0.72, hospital_acquired_AMR_prevalence: 0.68,
     AMR_surveillance_gap_index: 0.75, new_antibiotic_pipeline_drought: 0.80,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // ARE-002 — low, none
   {
-    entity_id: "ARE-002", health_context: "surveillance_de_base", region: "NOAM",
+    id: "ARE-002", health_context: "surveillance_de_base", region: "NOAM",
     AMR_mortality_acceleration_rate: 0.10, last_resort_antibiotic_failure_rate: 0.08,
     agricultural_antibiotic_overuse_index: 0.12, hospital_acquired_AMR_prevalence: 0.10,
     AMR_surveillance_gap_index: 0.08, new_antibiotic_pipeline_drought: 0.12,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // ARE-003 — high, agricultural_AMR_reservoir (agri>=0.70, soil>=0.65)
   {
-    entity_id: "ARE-003", health_context: "agriculture_intensive", region: "APAC",
+    id: "ARE-003", health_context: "agriculture_intensive", region: "APAC",
     AMR_mortality_acceleration_rate: 0.48, last_resort_antibiotic_failure_rate: 0.50,
     agricultural_antibiotic_overuse_index: 0.82, hospital_acquired_AMR_prevalence: 0.45,
     AMR_surveillance_gap_index: 0.50, new_antibiotic_pipeline_drought: 0.48,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // ARE-004 — low, none
   {
-    entity_id: "ARE-004", health_context: "environnement_contrôlé", region: "LATAM",
+    id: "ARE-004", health_context: "environnement_contrôlé", region: "LATAM",
     AMR_mortality_acceleration_rate: 0.14, last_resort_antibiotic_failure_rate: 0.12,
     agricultural_antibiotic_overuse_index: 0.15, hospital_acquired_AMR_prevalence: 0.12,
     AMR_surveillance_gap_index: 0.14, new_antibiotic_pipeline_drought: 0.10,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // ARE-005 — critical, hospital_AMR_catastrophe (hospital>=0.70, surgery>=0.65)
   {
-    entity_id: "ARE-005", health_context: "infections_nosocomiales", region: "MEA",
+    id: "ARE-005", health_context: "infections_nosocomiales", region: "MEA",
     AMR_mortality_acceleration_rate: 0.78, last_resort_antibiotic_failure_rate: 0.65,
     agricultural_antibiotic_overuse_index: 0.70, hospital_acquired_AMR_prevalence: 0.88,
     AMR_surveillance_gap_index: 0.72, new_antibiotic_pipeline_drought: 0.60,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // ARE-006 — moderate, none
   {
-    entity_id: "ARE-006", health_context: "résistance_émergente", region: "EMEA",
+    id: "ARE-006", health_context: "résistance_émergente", region: "EMEA",
     AMR_mortality_acceleration_rate: 0.30, last_resort_antibiotic_failure_rate: 0.28,
     agricultural_antibiotic_overuse_index: 0.32, hospital_acquired_AMR_prevalence: 0.28,
     AMR_surveillance_gap_index: 0.30, new_antibiotic_pipeline_drought: 0.32,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // ARE-007 — high, AMR_global_spread (spread>=0.70, travel>=0.65)
   {
-    entity_id: "ARE-007", health_context: "dissémination_mondiale", region: "NOAM",
+    id: "ARE-007", health_context: "dissémination_mondiale", region: "NOAM",
     AMR_mortality_acceleration_rate: 0.52, last_resort_antibiotic_failure_rate: 0.48,
     agricultural_antibiotic_overuse_index: 0.50, hospital_acquired_AMR_prevalence: 0.52,
     AMR_surveillance_gap_index: 0.48, new_antibiotic_pipeline_drought: 0.52,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // ARE-008 — critical, pharmaceutical_neglect_crisis (pharma>=0.70, one_health>=0.65)
   {
-    entity_id: "ARE-008", health_context: "négligence_pharmaceutique", region: "APAC",
+    id: "ARE-008", health_context: "négligence_pharmaceutique", region: "APAC",
     AMR_mortality_acceleration_rate: 0.75, last_resort_antibiotic_failure_rate: 0.68,
     agricultural_antibiotic_overuse_index: 0.65, hospital_acquired_AMR_prevalence: 0.60,
     AMR_surveillance_gap_index: 0.78, new_antibiotic_pipeline_drought: 0.62,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig   = signal(risk);
       return {
-        entity_id:                            e.entity_id,
+        id:                            e.entity_id,
         health_context:                       e.health_context,
         region:                               e.region,
         resistance_score:                     res,

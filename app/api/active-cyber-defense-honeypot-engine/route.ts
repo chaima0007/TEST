@@ -56,7 +56,7 @@ const MOCK = {
   },
   entities: [
     {
-      entity_id: "ACD-001",
+      id: "ACD-001",
       name: "SQL Injection Bot — Exfiltration BDD Clients & Tokens Auth Caelum",
       threat_type: "Database Attack",
       threat_detection_speed: 92.0,
@@ -70,7 +70,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACD-002",
+      id: "ACD-002",
       name: "Credential Stuffing Attack — Bourrage Identifiants Volés 4M+ Comptes",
       threat_type: "Authentication Attack",
       threat_detection_speed: 88.0,
@@ -84,7 +84,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACD-003",
+      id: "ACD-003",
       name: "Data Scraping Crawler — Extraction Propriété Intellectuelle Moteurs IA Caelum",
       threat_type: "IP Theft",
       threat_detection_speed: 85.0,
@@ -98,7 +98,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACD-004",
+      id: "ACD-004",
       name: "Ransomware Delivery Attempt — Chiffrement Données ESG & Brevets Stratégiques",
       threat_type: "Ransomware",
       threat_detection_speed: 95.0,
@@ -112,7 +112,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACD-005",
+      id: "ACD-005",
       name: "DDoS Amplification — Saturation Infrastructure API Swarm & Dashboards",
       threat_type: "DDoS",
       threat_detection_speed: 52.0,
@@ -126,7 +126,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACD-006",
+      id: "ACD-006",
       name: "Phishing Campaign — Usurpation Identité Chaima Mhadbi & Ingénierie Sociale",
       threat_type: "Social Engineering",
       threat_detection_speed: 45.0,
@@ -140,7 +140,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACD-007",
+      id: "ACD-007",
       name: "Port Scanning — Reconnaissance Infrastructure Serveurs Caelum Partners",
       threat_type: "Reconnaissance",
       threat_detection_speed: 42.0,
@@ -154,7 +154,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ACD-008",
+      id: "ACD-008",
       name: "Known CVE Exploit — Vulnérabilité Log4j/OpenSSL (Déjà Patché & Neutralisé)",
       threat_type: "CVE Exploit",
       threat_detection_speed: 10.0,

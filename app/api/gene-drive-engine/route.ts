@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // GDE-001 — critical, mass_extinction_cascade (extinction_drive>0.85, ecological_cascade>0.80)
   {
-    entity_id: "GDE-001", organism_type: "moustique_anopheles", region: "AFRIQUE_SUB_SAHARIENNE",
+    id: "GDE-001", organism_type: "moustique_anopheles", region: "AFRIQUE_SUB_SAHARIENNE",
     extinction_drive_capability: 0.92, ecological_cascade_risk: 0.88,
     containment_failure_probability: 0.78, weaponization_risk: 0.72,
     regulatory_governance_gap: 0.80, accidental_release_risk: 0.75,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // GDE-002 — low, none
   {
-    entity_id: "GDE-002", organism_type: "levure_laboratoire", region: "EMEA",
+    id: "GDE-002", organism_type: "levure_laboratoire", region: "EMEA",
     extinction_drive_capability: 0.10, ecological_cascade_risk: 0.08,
     containment_failure_probability: 0.12, weaponization_risk: 0.10,
     regulatory_governance_gap: 0.08, accidental_release_risk: 0.10,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // GDE-003 — critical, containment_breach_catastrophe (containment_failure>0.85, accidental_release>0.80)
   {
-    entity_id: "GDE-003", organism_type: "rongeur_sauvage", region: "APAC",
+    id: "GDE-003", organism_type: "rongeur_sauvage", region: "APAC",
     extinction_drive_capability: 0.72, ecological_cascade_risk: 0.75,
     containment_failure_probability: 0.90, weaponization_risk: 0.68,
     regulatory_governance_gap: 0.78, accidental_release_risk: 0.88,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // GDE-004 — moderate, none
   {
-    entity_id: "GDE-004", organism_type: "plante_cultivée", region: "NOAM",
+    id: "GDE-004", organism_type: "plante_cultivée", region: "NOAM",
     extinction_drive_capability: 0.28, ecological_cascade_risk: 0.30,
     containment_failure_probability: 0.32, weaponization_risk: 0.25,
     regulatory_governance_gap: 0.30, accidental_release_risk: 0.28,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // GDE-005 — critical, gene_drive_bioweapon (weaponization>0.85, dual_use>0.80)
   {
-    entity_id: "GDE-005", organism_type: "insecte_ravageur", region: "MEA",
+    id: "GDE-005", organism_type: "insecte_ravageur", region: "MEA",
     extinction_drive_capability: 0.78, ecological_cascade_risk: 0.72,
     containment_failure_probability: 0.75, weaponization_risk: 0.92,
     regulatory_governance_gap: 0.80, accidental_release_risk: 0.72,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // GDE-006 — high, governance_monitoring_void (regulatory_gap>0.80, int_monitoring>0.75)
   {
-    entity_id: "GDE-006", organism_type: "poisson_eau_douce", region: "LATAM",
+    id: "GDE-006", organism_type: "poisson_eau_douce", region: "LATAM",
     extinction_drive_capability: 0.52, ecological_cascade_risk: 0.55,
     containment_failure_probability: 0.50, weaponization_risk: 0.48,
     regulatory_governance_gap: 0.85, accidental_release_risk: 0.52,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // GDE-007 — high, irreversible_ecosystem_invasion (irreversibility>0.80, natural_invasion>0.75)
   {
-    entity_id: "GDE-007", organism_type: "algue_marine", region: "APAC",
+    id: "GDE-007", organism_type: "algue_marine", region: "APAC",
     extinction_drive_capability: 0.55, ecological_cascade_risk: 0.58,
     containment_failure_probability: 0.52, weaponization_risk: 0.45,
     regulatory_governance_gap: 0.60, accidental_release_risk: 0.55,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // GDE-008 — critical, mass_extinction_cascade — second critical covering all risk levels
   {
-    entity_id: "GDE-008", organism_type: "mammifère_invasif", region: "EMEA",
+    id: "GDE-008", organism_type: "mammifère_invasif", region: "EMEA",
     extinction_drive_capability: 0.88, ecological_cascade_risk: 0.85,
     containment_failure_probability: 0.82, weaponization_risk: 0.75,
     regulatory_governance_gap: 0.85, accidental_release_risk: 0.78,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                    e.entity_id,
+        id:                    e.entity_id,
         organism_type:                e.organism_type,
         region:                       e.region,
         extinction_score:             ext,

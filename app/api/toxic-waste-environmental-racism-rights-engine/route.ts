@@ -29,7 +29,7 @@ const MOCK = {
   engine_version: "1.0.0",
   entities: [
     {
-      entity_id: "TWR-001",
+      id: "TWR-001",
       name: "Nigeria (Delta du Niger) — déversements pétroliers Shell/Chevron, communautés Ogoni et Ijaw",
       country: "Nigeria",
       proximite_dechets_toxiques_communautes_marginalisees_score: 95.0,
@@ -43,7 +43,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "TWR-002",
+      id: "TWR-002",
       name: "Ghana (Agbogbloshie) — décharge e-waste, travailleurs informels et plomb atmosphérique",
       country: "Ghana",
       proximite_dechets_toxiques_communautes_marginalisees_score: 88.0,
@@ -57,7 +57,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "TWR-003",
+      id: "TWR-003",
       name: "États-Unis (Cancer Alley, Louisiane) — complexe pétrochimique, communautés noires rurales",
       country: "États-Unis",
       proximite_dechets_toxiques_communautes_marginalisees_score: 80.0,
@@ -71,7 +71,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "TWR-004",
+      id: "TWR-004",
       name: "Inde (Bhopal, Madhya Pradesh) — héritage Union Carbide, contamination chronique post-1984",
       country: "Inde",
       proximite_dechets_toxiques_communautes_marginalisees_score: 78.0,
@@ -85,7 +85,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "TWR-005",
+      id: "TWR-005",
       name: "Zambie (Copperbelt) — contamination au plomb et au cuivre autour des mines Glencore",
       country: "Zambie",
       proximite_dechets_toxiques_communautes_marginalisees_score: 55.0,
@@ -99,7 +99,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "TWR-006",
+      id: "TWR-006",
       name: "Brésil (Complexe de Cubatão) — pollution industrielle, communautés riveraines pauvres",
       country: "Brésil",
       proximite_dechets_toxiques_communautes_marginalisees_score: 50.0,
@@ -113,7 +113,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "TWR-007",
+      id: "TWR-007",
       name: "Roumanie (Copsa Mica) — héritage industriel soviet, minorité rom surexposée",
       country: "Roumanie",
       proximite_dechets_toxiques_communautes_marginalisees_score: 32.0,
@@ -127,7 +127,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "TWR-008",
+      id: "TWR-008",
       name: "Pays-Bas (Rotterdam) — exposition portuaire, cadre réglementaire UE protecteur",
       country: "Pays-Bas",
       proximite_dechets_toxiques_communautes_marginalisees_score: 14.0,

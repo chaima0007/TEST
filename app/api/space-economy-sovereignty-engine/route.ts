@@ -9,7 +9,7 @@ if (!process.env.SWARM_API_URL) {
 const MOCK_ENTITIES = [
   // SEC-001 — EMEA, military_space → critical, orbital_warfare
   {
-    entity_id: "SEC-001", space_sector: "military_space", region: "EMEA",
+    id: "SEC-001", space_sector: "military_space", region: "EMEA",
     orbital_congestion_index: 0.65, space_debris_collision_risk: 0.60, launch_frequency_dominance: 0.55,
     satellite_dependency_vulnerability: 0.52, space_weaponization_level: 0.82,
     commercial_space_monopoly_risk: 0.50, space_resource_extraction_conflict: 0.30,
@@ -21,7 +21,7 @@ const MOCK_ENTITIES = [
   },
   // SEC-002 — APAC, commercial_satellite → low, none
   {
-    entity_id: "SEC-002", space_sector: "commercial_satellite", region: "APAC",
+    id: "SEC-002", space_sector: "commercial_satellite", region: "APAC",
     orbital_congestion_index: 0.12, space_debris_collision_risk: 0.10, launch_frequency_dominance: 0.15,
     satellite_dependency_vulnerability: 0.12, space_weaponization_level: 0.10,
     commercial_space_monopoly_risk: 0.12, space_resource_extraction_conflict: 0.10,
@@ -33,7 +33,7 @@ const MOCK_ENTITIES = [
   },
   // SEC-003 — NOAM, launch_services → high, kessler_syndrome
   {
-    entity_id: "SEC-003", space_sector: "launch_services", region: "NOAM",
+    id: "SEC-003", space_sector: "launch_services", region: "NOAM",
     orbital_congestion_index: 0.72, space_debris_collision_risk: 0.68, launch_frequency_dominance: 0.38,
     satellite_dependency_vulnerability: 0.42, space_weaponization_level: 0.30,
     commercial_space_monopoly_risk: 0.35, space_resource_extraction_conflict: 0.30,
@@ -45,7 +45,7 @@ const MOCK_ENTITIES = [
   },
   // SEC-004 — LATAM, ground_infrastructure → low, none
   {
-    entity_id: "SEC-004", space_sector: "ground_infrastructure", region: "LATAM",
+    id: "SEC-004", space_sector: "ground_infrastructure", region: "LATAM",
     orbital_congestion_index: 0.15, space_debris_collision_risk: 0.12, launch_frequency_dominance: 0.18,
     satellite_dependency_vulnerability: 0.15, space_weaponization_level: 0.12,
     commercial_space_monopoly_risk: 0.15, space_resource_extraction_conflict: 0.12,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
   },
   // SEC-005 — NOAM, commercial_space → critical, commercial_colonization
   {
-    entity_id: "SEC-005", space_sector: "commercial_space", region: "NOAM",
+    id: "SEC-005", space_sector: "commercial_space", region: "NOAM",
     orbital_congestion_index: 0.62, space_debris_collision_risk: 0.60, launch_frequency_dominance: 0.65,
     satellite_dependency_vulnerability: 0.58, space_weaponization_level: 0.58,
     commercial_space_monopoly_risk: 0.78, space_resource_extraction_conflict: 0.40,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // SEC-006 — MEA, space_mining → moderate, none
   {
-    entity_id: "SEC-006", space_sector: "space_mining", region: "MEA",
+    id: "SEC-006", space_sector: "space_mining", region: "MEA",
     orbital_congestion_index: 0.32, space_debris_collision_risk: 0.28, launch_frequency_dominance: 0.32,
     satellite_dependency_vulnerability: 0.30, space_weaponization_level: 0.28,
     commercial_space_monopoly_risk: 0.30, space_resource_extraction_conflict: 0.20,
@@ -81,7 +81,7 @@ const MOCK_ENTITIES = [
   },
   // SEC-007 — APAC, cislunar_operations → high, space_resource_war
   {
-    entity_id: "SEC-007", space_sector: "cislunar_operations", region: "APAC",
+    id: "SEC-007", space_sector: "cislunar_operations", region: "APAC",
     orbital_congestion_index: 0.45, space_debris_collision_risk: 0.42, launch_frequency_dominance: 0.42,
     satellite_dependency_vulnerability: 0.45, space_weaponization_level: 0.35,
     commercial_space_monopoly_risk: 0.40, space_resource_extraction_conflict: 0.75,
@@ -93,7 +93,7 @@ const MOCK_ENTITIES = [
   },
   // SEC-008 — EMEA, regulatory_space → critical, regulatory_vacuum_crisis
   {
-    entity_id: "SEC-008", space_sector: "regulatory_space", region: "EMEA",
+    id: "SEC-008", space_sector: "regulatory_space", region: "EMEA",
     orbital_congestion_index: 0.65, space_debris_collision_risk: 0.62, launch_frequency_dominance: 0.60,
     satellite_dependency_vulnerability: 0.58, space_weaponization_level: 0.60,
     commercial_space_monopoly_risk: 0.62, space_resource_extraction_conflict: 0.40,
@@ -169,7 +169,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig = signal(risk);
       return {
-        entity_id: e.entity_id,
+        id: e.entity_id,
         space_sector: e.space_sector,
         region: e.region,
         congestion_score: cg,

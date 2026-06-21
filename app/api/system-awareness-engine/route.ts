@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // reinforcing_loop_dominance≥0.70 AND balancing_loop_weakness≥0.65 → runaway_reinforcing_loop
   // composite≥75 → system_chaos severity, composite≥60 → critical
   {
-    entity_id: "SAW-001", system_category: "financial_system", region: "EMEA",
+    id: "SAW-001", system_category: "financial_system", region: "EMEA",
     reinforcing_loop_dominance: 0.85,  balancing_loop_weakness: 0.80,
     delay_accumulation_risk: 0.78,     stock_flow_misalignment: 0.70,
     emergence_unpredictability: 0.75,  systemic_leverage_blindness: 0.72,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   // SAW-002 — APAC, small_enterprise → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "SAW-002", system_category: "small_enterprise", region: "APAC",
+    id: "SAW-002", system_category: "small_enterprise", region: "APAC",
     reinforcing_loop_dominance: 0.08,  balancing_loop_weakness: 0.10,
     delay_accumulation_risk: 0.10,     stock_flow_misalignment: 0.08,
     emergence_unpredictability: 0.10,  systemic_leverage_blindness: 0.08,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   // reinforcing_loop_dominance=0.50<0.70 → avoids runaway_reinforcing_loop
   // composite in [40,60) → high
   {
-    entity_id: "SAW-003", system_category: "healthcare_system", region: "NOAM",
+    id: "SAW-003", system_category: "healthcare_system", region: "NOAM",
     reinforcing_loop_dominance: 0.50,  balancing_loop_weakness: 0.48,
     delay_accumulation_risk: 0.78,     stock_flow_misalignment: 0.50,
     emergence_unpredictability: 0.45,  systemic_leverage_blindness: 0.38,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   // SAW-004 — LATAM, local_economy → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "SAW-004", system_category: "local_economy", region: "LATAM",
+    id: "SAW-004", system_category: "local_economy", region: "LATAM",
     reinforcing_loop_dominance: 0.10,  balancing_loop_weakness: 0.12,
     delay_accumulation_risk: 0.12,     stock_flow_misalignment: 0.10,
     emergence_unpredictability: 0.12,  systemic_leverage_blindness: 0.10,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   // delay_accumulation_risk=0.60<0.70 → avoids delay_catastrophe
   // composite≥60 → critical
   {
-    entity_id: "SAW-005", system_category: "political_system", region: "MEA",
+    id: "SAW-005", system_category: "political_system", region: "MEA",
     reinforcing_loop_dominance: 0.60,  balancing_loop_weakness: 0.55,
     delay_accumulation_risk: 0.60,     stock_flow_misalignment: 0.70,
     emergence_unpredictability: 0.80,  systemic_leverage_blindness: 0.60,
@@ -86,7 +86,7 @@ const MOCK_ENTITIES = [
   // All values below pattern thresholds → no pattern
   // composite in [20,40) → moderate
   {
-    entity_id: "SAW-006", system_category: "corporate_org", region: "EMEA",
+    id: "SAW-006", system_category: "corporate_org", region: "EMEA",
     reinforcing_loop_dominance: 0.28,  balancing_loop_weakness: 0.25,
     delay_accumulation_risk: 0.28,     stock_flow_misalignment: 0.28,
     emergence_unpredictability: 0.28,  systemic_leverage_blindness: 0.22,
@@ -104,7 +104,7 @@ const MOCK_ENTITIES = [
   // tipping_point_proximity=0.40<0.70 → avoids tipping_point_cascade
   // composite in [40,60) → high
   {
-    entity_id: "SAW-007", system_category: "supply_network", region: "APAC",
+    id: "SAW-007", system_category: "supply_network", region: "APAC",
     reinforcing_loop_dominance: 0.50,  balancing_loop_weakness: 0.48,
     delay_accumulation_risk: 0.55,     stock_flow_misalignment: 0.48,
     emergence_unpredictability: 0.48,  systemic_leverage_blindness: 0.75,
@@ -123,7 +123,7 @@ const MOCK_ENTITIES = [
   // archetype_trap_exposure=0.55<0.70 → avoids archetype_trap
   // composite≥60 → critical
   {
-    entity_id: "SAW-008", system_category: "social_system", region: "NOAM",
+    id: "SAW-008", system_category: "social_system", region: "NOAM",
     reinforcing_loop_dominance: 0.55,  balancing_loop_weakness: 0.50,
     delay_accumulation_risk: 0.55,     stock_flow_misalignment: 0.65,
     emergence_unpredictability: 0.70,  systemic_leverage_blindness: 0.55,
@@ -265,7 +265,7 @@ export async function GET() {
       const sig       = systemSignal(e, pat, comp);
 
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         region:                         e.region,
         system_category:                e.system_category,
         awareness_risk:                 risk,

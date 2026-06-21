@@ -18,7 +18,7 @@ function GaugeRing({ value, color }: { value: number; color: string }) {
 }
 
 type Entity = {
-  entity_id: string
+  id: string
   name: string
   composite_score: number
   risk_level: string
@@ -115,11 +115,11 @@ export default function EnvironmentalDefendersKillingsDashboard() {
         {/* Entités */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.entities.map((entity) => (
-            <div key={entity.entity_id} className="bg-slate-900 rounded-xl p-5 border border-slate-800">
+            <div key={entity.id} className="bg-slate-900 rounded-xl p-5 border border-slate-800">
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-mono text-slate-500">{entity.entity_id}</span>
+                    <span className="text-xs font-mono text-slate-500">{entity.id}</span>
                     <span
                       className="text-xs px-2 py-0.5 rounded-full font-medium"
                       style={{ backgroundColor: (RISK_COLORS[entity.risk_level] ?? "#94a3b8") + "22", color: RISK_COLORS[entity.risk_level] ?? "#94a3b8" }}

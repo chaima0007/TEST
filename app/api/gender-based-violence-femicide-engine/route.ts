@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "GBV-001",
+      id: "GBV-001",
       name: "Mexique/Amérique Centrale — 10 Féminicides/Jour",
       country: "Mexique",
       femicide_domestic_violence_impunity_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "GBV-002",
+      id: "GBV-002",
       name: "Afghanistan/Taliban — Mariage Enfants & Violence Conjugale",
       country: "Afghanistan",
       femicide_domestic_violence_impunity_severity_score: 93.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "GBV-003",
+      id: "GBV-003",
       name: "Pakistan/Inde — Honor Killings 1000+/An",
       country: "Pakistan",
       femicide_domestic_violence_impunity_severity_score: 90.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "GBV-004",
+      id: "GBV-004",
       name: "RDC/Afrique Conflits — Viol Arme de Guerre",
       country: "RDC",
       femicide_domestic_violence_impunity_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "GBV-005",
+      id: "GBV-005",
       name: "Brésil/Turquie — Feminicide Post-COVID & Istanbul",
       country: "Brésil",
       femicide_domestic_violence_impunity_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "GBV-006",
+      id: "GBV-006",
       name: "Europe/USA — Cyberviolence Genre & Underreporting",
       country: "Europe/USA",
       femicide_domestic_violence_impunity_severity_score: 53.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "GBV-007",
+      id: "GBV-007",
       name: "ONU Femmes/CEDAW — Mécanismes Élimination Discrimination",
       country: "International",
       femicide_domestic_violence_impunity_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "GBV-008",
+      id: "GBV-008",
       name: "ONU/DEVAW — Convention Istanbul & SDG 5.2",
       country: "International",
       femicide_domestic_violence_impunity_severity_score: 4.0,

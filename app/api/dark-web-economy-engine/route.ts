@@ -10,7 +10,7 @@ const MOCK_ENTITIES = [
   // ransomware_ecosystem_scale>0.85 AND cybercrime_as_service>0.80 → ransomware_industrial_complex
   // composite≥60 → critical
   {
-    entity_id: "DWE-001", market_type: "ransomware_marketplace", region: "EMEA",
+    id: "DWE-001", market_type: "ransomware_marketplace", region: "EMEA",
     ransomware_ecosystem_scale: 0.92,        drug_market_volume: 0.65,
     stolen_data_market_size: 0.78,           weapon_trafficking_intensity: 0.60,
     human_trafficking_digital: 0.55,         cybercrime_as_service: 0.88,
@@ -24,7 +24,7 @@ const MOCK_ENTITIES = [
   // DWE-002 — APAC, community_forum → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "DWE-002", market_type: "community_forum", region: "APAC",
+    id: "DWE-002", market_type: "community_forum", region: "APAC",
     ransomware_ecosystem_scale: 0.08,        drug_market_volume: 0.10,
     stolen_data_market_size: 0.08,           weapon_trafficking_intensity: 0.08,
     human_trafficking_digital: 0.10,         cybercrime_as_service: 0.08,
@@ -40,7 +40,7 @@ const MOCK_ENTITIES = [
   // ransomware_ecosystem_scale=0.60≤0.85 → avoids ransomware_industrial_complex
   // composite≥60 → critical
   {
-    entity_id: "DWE-003", market_type: "state_sponsored_market", region: "MEA",
+    id: "DWE-003", market_type: "state_sponsored_market", region: "MEA",
     ransomware_ecosystem_scale: 0.60,        drug_market_volume: 0.55,
     stolen_data_market_size: 0.70,           weapon_trafficking_intensity: 0.65,
     human_trafficking_digital: 0.50,         cybercrime_as_service: 0.70,
@@ -54,7 +54,7 @@ const MOCK_ENTITIES = [
   // DWE-004 — LATAM, small_forum → low, none
   // All low values → composite<20, no pattern triggered
   {
-    entity_id: "DWE-004", market_type: "small_forum", region: "LATAM",
+    id: "DWE-004", market_type: "small_forum", region: "LATAM",
     ransomware_ecosystem_scale: 0.10,        drug_market_volume: 0.08,
     stolen_data_market_size: 0.10,           weapon_trafficking_intensity: 0.08,
     human_trafficking_digital: 0.10,         cybercrime_as_service: 0.08,
@@ -71,7 +71,7 @@ const MOCK_ENTITIES = [
   // nation_state_marketplace=0.60≤0.85 → avoids nation_state_crime_market
   // composite≥60 → critical
   {
-    entity_id: "DWE-005", market_type: "consolidated_darknet", region: "EMEA",
+    id: "DWE-005", market_type: "consolidated_darknet", region: "EMEA",
     ransomware_ecosystem_scale: 0.65,        drug_market_volume: 0.70,
     stolen_data_market_size: 0.72,           weapon_trafficking_intensity: 0.68,
     human_trafficking_digital: 0.60,         cybercrime_as_service: 0.75,
@@ -85,7 +85,7 @@ const MOCK_ENTITIES = [
   // DWE-006 — NOAM, credential_shop → moderate, none
   // composite in [20,40), no pattern triggered
   {
-    entity_id: "DWE-006", market_type: "credential_shop", region: "NOAM",
+    id: "DWE-006", market_type: "credential_shop", region: "NOAM",
     ransomware_ecosystem_scale: 0.28,        drug_market_volume: 0.30,
     stolen_data_market_size: 0.35,           weapon_trafficking_intensity: 0.22,
     human_trafficking_digital: 0.25,         cybercrime_as_service: 0.28,
@@ -103,7 +103,7 @@ const MOCK_ENTITIES = [
   // criminal_marketplace_consolidation=0.48≤0.85 → avoids criminal_marketplace_empire
   // composite in [40,60) → high
   {
-    entity_id: "DWE-007", market_type: "ai_automation_hub", region: "APAC",
+    id: "DWE-007", market_type: "ai_automation_hub", region: "APAC",
     ransomware_ecosystem_scale: 0.50,        drug_market_volume: 0.42,
     stolen_data_market_size: 0.48,           weapon_trafficking_intensity: 0.40,
     human_trafficking_digital: 0.45,         cybercrime_as_service: 0.55,
@@ -122,7 +122,7 @@ const MOCK_ENTITIES = [
   // AI_crime_automation=0.65≤0.80 → avoids AI_crime_automation_crisis
   // composite≥60 → critical
   {
-    entity_id: "DWE-008", market_type: "trafficking_network", region: "LATAM",
+    id: "DWE-008", market_type: "trafficking_network", region: "LATAM",
     ransomware_ecosystem_scale: 0.55,        drug_market_volume: 0.70,
     stolen_data_market_size: 0.65,           weapon_trafficking_intensity: 0.72,
     human_trafficking_digital: 0.88,         cybercrime_as_service: 0.68,
@@ -215,7 +215,7 @@ export async function GET() {
       const act  = darkwebAction(risk);
       const sig  = darkwebSignal(risk);
       return {
-        entity_id:                   e.entity_id,
+        id:                   e.entity_id,
         market_type:                 e.market_type,
         region:                      e.region,
         crime_scale_score:           cs,

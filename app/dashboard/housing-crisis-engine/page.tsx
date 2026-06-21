@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 type RiskLevel = "critique" | "élevé" | "modéré" | "faible";
 
 interface HCEEntity {
-  entity_id: string;
+  id: string;
   market_type: string;
   region: string;
   affordability_score: number;
@@ -131,7 +131,7 @@ function DetailModal({ entity, onClose }: { entity: HCEEntity; onClose: () => vo
       <div className="bg-slate-900 border border-rose-700/30 rounded-xl w-full max-w-lg p-6 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <span className="text-lg font-bold text-white">{entity.entity_id}</span>
+            <span className="text-lg font-bold text-white">{entity.id}</span>
             <span className="ml-2 text-rose-400 text-xs">{entity.region}</span>
             <span className="ml-2 text-slate-400 text-xs">{entity.market_type.replace(/_/g, " ")}</span>
           </div>
@@ -328,10 +328,10 @@ export default function HousingCrisisDashboard() {
         {filtered.map(e => {
           const meta = RISK_META[e.risk_level];
           return (
-            <div key={e.entity_id} onClick={() => setSelected(e)}
+            <div key={e.id} onClick={() => setSelected(e)}
               className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-rose-700/50 transition-colors">
               <div className="flex items-center justify-between mb-1">
-                <span className="font-bold text-white">{e.entity_id}</span>
+                <span className="font-bold text-white">{e.id}</span>
                 <span className="text-xs text-slate-400">{e.region}</span>
               </div>
               <div className="text-xs text-rose-400 mb-2">{e.market_type.replace(/_/g, " ")}</div>

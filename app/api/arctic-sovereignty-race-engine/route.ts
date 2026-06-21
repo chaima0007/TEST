@@ -27,7 +27,7 @@ export async function GET() {
 function getMockData() {
   const entities = [
     {
-      entity_id: "SOV-001",
+      id: "SOV-001",
       name: "Opération Polaire Russe",
       country: "Russie",
       sector: "Défense & Militaire",
@@ -43,7 +43,7 @@ function getMockData() {
       last_updated: "2026-06-18",
     },
     {
-      entity_id: "SOV-002",
+      id: "SOV-002",
       name: "Base Arctique Severomorsk",
       country: "Russie",
       sector: "Infrastructure Militaire",
@@ -59,7 +59,7 @@ function getMockData() {
       last_updated: "2026-06-17",
     },
     {
-      entity_id: "SOV-003",
+      id: "SOV-003",
       name: "Projet Extraction Pétrole Arctique",
       country: "Russie",
       sector: "Énergie & Extraction",
@@ -75,7 +75,7 @@ function getMockData() {
       last_updated: "2026-06-16",
     },
     {
-      entity_id: "SOV-004",
+      id: "SOV-004",
       name: "Revendication Passage Nord-Est",
       country: "Chine",
       sector: "Commerce Maritime",
@@ -91,7 +91,7 @@ function getMockData() {
       last_updated: "2026-06-15",
     },
     {
-      entity_id: "SOV-005",
+      id: "SOV-005",
       name: "Programme Arctique Norvégien",
       country: "Norvège",
       sector: "Ressources Naturelles",
@@ -107,7 +107,7 @@ function getMockData() {
       last_updated: "2026-06-14",
     },
     {
-      entity_id: "SOV-006",
+      id: "SOV-006",
       name: "Initiative Groenland Danois",
       country: "Danemark",
       sector: "Gouvernance Territoriale",
@@ -123,7 +123,7 @@ function getMockData() {
       last_updated: "2026-06-13",
     },
     {
-      entity_id: "SOV-007",
+      id: "SOV-007",
       name: "Patrouille Côtière Canada",
       country: "Canada",
       sector: "Garde-Côtes & Surveillance",
@@ -139,7 +139,7 @@ function getMockData() {
       last_updated: "2026-06-12",
     },
     {
-      entity_id: "SOV-008",
+      id: "SOV-008",
       name: "Station Recherche Arctique USA",
       country: "États-Unis",
       sector: "Recherche Scientifique",

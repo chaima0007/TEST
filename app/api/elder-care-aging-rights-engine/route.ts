@@ -39,7 +39,7 @@ const MOCK = {
   ],
   entities: [
     {
-      entity_id: "ECA-001",
+      id: "ECA-001",
       name: "Inde/Asie Sud — 3/4 Ainés Sans Pension, Familles Abandon Rural, Brus Vieillissants Apatrides & Maltraitance Invisible",
       country: "Inde/Asie Sud",
       elder_abuse_neglect_institutionalization_severity_score: 95.0,
@@ -53,7 +53,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ECA-002",
+      id: "ECA-002",
       name: "Afrique Sub-Saharienne — HIV/AIDS Orphelins Parents Ainés, Pensions Absentes 90%, Sorcellerie Âgées Accusées & Déplacement",
       country: "Afrique Sub-Saharienne",
       elder_abuse_neglect_institutionalization_severity_score: 92.0,
@@ -67,7 +67,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ECA-003",
+      id: "ECA-003",
       name: "USA/Europe COVID — EHPAD COVID 40% Morts, Directives Ne-Pas-Réanimer Âge, Isolement Forcé & Vaccination Retard Ainés",
       country: "USA/Europe",
       elder_abuse_neglect_institutionalization_severity_score: 89.0,
@@ -81,7 +81,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ECA-004",
+      id: "ECA-004",
       name: "Chine/Japon — Vieillissement Démographique Crise, Traités Confucéens vs Institutions, Kodawari Abandon Urbain & Maltraitance EHPAD",
       country: "Chine/Japon",
       elder_abuse_neglect_institutionalization_severity_score: 86.0,
@@ -95,7 +95,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ECA-005",
+      id: "ECA-005",
       name: "France/UK — EHPAD Orpea Scandale Maltraitance, Personal Budgets Coupés, Restraint Chimique & Capacité Juridique Tutelle",
       country: "France/UK",
       elder_abuse_neglect_institutionalization_severity_score: 57.0,
@@ -109,7 +109,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ECA-006",
+      id: "ECA-006",
       name: "Amérique Latine — Retraites Dollarisées Perdues, Violence Intra-Familiale Âgés, Systèmes Santé Sans Gériatrie & Abandon",
       country: "Amérique Latine",
       elder_abuse_neglect_institutionalization_severity_score: 54.0,
@@ -123,7 +123,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ECA-007",
+      id: "ECA-007",
       name: "HelpAge International/AARP — Advocacy Droits Personnes Âgées, Monitoring Maltraitance, Convention Proposée ONU & Standards",
       country: "Global",
       elder_abuse_neglect_institutionalization_severity_score: 27.0,
@@ -137,7 +137,7 @@ const MOCK = {
       last_updated: "2026-06-21",
     },
     {
-      entity_id: "ECA-008",
+      id: "ECA-008",
       name: "ONU/MIPAA — Plan International Madrid Vieillissement, Décennie Vieillissement Sain 2021-2030 & SDG 3 Santé",
       country: "Global",
       elder_abuse_neglect_institutionalization_severity_score: 5.0,

@@ -11,7 +11,7 @@ const MOCK_ENTITIES = [
   // cascading_failure_interconnection_risk>=0.70 AND cross_sector_dependency_fragility>=0.65
   // composite >= 60 → critical
   {
-    entity_id: "IRE-001", infrastructure_type: "power_grid", region: "NOAM",
+    id: "IRE-001", infrastructure_type: "power_grid", region: "NOAM",
     aging_infrastructure_deterioration_rate: 0.80,
     cascading_failure_interconnection_risk: 0.88,
     cyber_physical_attack_vulnerability: 0.72,
@@ -33,7 +33,7 @@ const MOCK_ENTITIES = [
   // IRE-002 — low, no pattern (none)
   // composite < 20 → low
   {
-    entity_id: "IRE-002", infrastructure_type: "water_treatment", region: "EMEA",
+    id: "IRE-002", infrastructure_type: "water_treatment", region: "EMEA",
     aging_infrastructure_deterioration_rate: 0.10,
     cascading_failure_interconnection_risk: 0.08,
     cyber_physical_attack_vulnerability: 0.10,
@@ -57,7 +57,7 @@ const MOCK_ENTITIES = [
   // cascading pattern must NOT fire: cascading_failure_interconnection_risk<0.70 OR cross_sector_dependency_fragility<0.65
   // composite >= 40 and < 60 → high
   {
-    entity_id: "IRE-003", infrastructure_type: "transport_network", region: "EMEA",
+    id: "IRE-003", infrastructure_type: "transport_network", region: "EMEA",
     aging_infrastructure_deterioration_rate: 0.82,
     cascading_failure_interconnection_risk: 0.50,
     cyber_physical_attack_vulnerability: 0.42,
@@ -79,7 +79,7 @@ const MOCK_ENTITIES = [
   // IRE-004 — low, no pattern (none)
   // composite < 20 → low
   {
-    entity_id: "IRE-004", infrastructure_type: "telecommunications", region: "APAC",
+    id: "IRE-004", infrastructure_type: "telecommunications", region: "APAC",
     aging_infrastructure_deterioration_rate: 0.12,
     cascading_failure_interconnection_risk: 0.10,
     cyber_physical_attack_vulnerability: 0.12,
@@ -104,7 +104,7 @@ const MOCK_ENTITIES = [
   // aging pattern NOT fired: aging_infrastructure_deterioration_rate<0.70 OR maintenance_investment_deficit<0.65
   // composite >= 60 → critical
   {
-    entity_id: "IRE-005", infrastructure_type: "smart_grid", region: "NOAM",
+    id: "IRE-005", infrastructure_type: "smart_grid", region: "NOAM",
     aging_infrastructure_deterioration_rate: 0.55,
     cascading_failure_interconnection_risk: 0.60,
     cyber_physical_attack_vulnerability: 0.88,
@@ -126,7 +126,7 @@ const MOCK_ENTITIES = [
   // IRE-006 — moderate, no pattern (none)
   // composite >= 20 and < 40 → moderate
   {
-    entity_id: "IRE-006", infrastructure_type: "water_distribution", region: "LATAM",
+    id: "IRE-006", infrastructure_type: "water_distribution", region: "LATAM",
     aging_infrastructure_deterioration_rate: 0.32,
     cascading_failure_interconnection_risk: 0.30,
     cyber_physical_attack_vulnerability: 0.32,
@@ -152,7 +152,7 @@ const MOCK_ENTITIES = [
   // cyber pattern NOT fired: cyber_physical_attack_vulnerability<0.70 OR smart_infrastructure_vulnerability<0.65
   // composite >= 40 and < 60 → high
   {
-    entity_id: "IRE-007", infrastructure_type: "coastal_infrastructure", region: "APAC",
+    id: "IRE-007", infrastructure_type: "coastal_infrastructure", region: "APAC",
     aging_infrastructure_deterioration_rate: 0.50,
     cascading_failure_interconnection_risk: 0.48,
     cyber_physical_attack_vulnerability: 0.42,
@@ -179,7 +179,7 @@ const MOCK_ENTITIES = [
   // climate pattern NOT fired: climate_infrastructure_stress_index<0.70 OR extreme_weather_infrastructure_exposure<0.65
   // composite >= 60 → critical
   {
-    entity_id: "IRE-008", infrastructure_type: "emergency_systems", region: "MEA",
+    id: "IRE-008", infrastructure_type: "emergency_systems", region: "MEA",
     aging_infrastructure_deterioration_rate: 0.60,
     cascading_failure_interconnection_risk: 0.58,
     cyber_physical_attack_vulnerability: 0.62,
@@ -303,7 +303,7 @@ export async function GET() {
       const sig   = signal(risk);
 
       return {
-        entity_id:                              e.entity_id,
+        id:                              e.entity_id,
         infrastructure_type:                    e.infrastructure_type,
         region:                                 e.region,
         physical_score:                         phys,

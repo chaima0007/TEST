@@ -12,7 +12,7 @@ type QuantumPattern =
   | "quantum_stable";
 
 interface QedEntity {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -167,7 +167,7 @@ function DetailModal({ entity, onClose }: { entity: QedEntity; onClose: () => vo
           <div className="flex items-start justify-between">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs text-stone-500 font-mono">{entity.entity_id}</span>
+                <span className="text-xs text-stone-500 font-mono">{entity.id}</span>
                 <span
                   className={`px-2 py-0.5 rounded text-xs font-medium border ${risk?.badge || "bg-slate-700 text-stone-300"}`}
                 >
@@ -451,12 +451,12 @@ export default function QuantumEconomicDisruptionDashboard() {
           const risk = RISK_META[e.risk_level];
           return (
             <div
-              key={e.entity_id}
+              key={e.id}
               onClick={() => setSelected(e)}
               className="bg-slate-900 border border-slate-800 rounded-xl p-4 cursor-pointer hover:border-violet-700/50 transition-colors"
             >
               <div className="flex items-center justify-between mb-1">
-                <span className="font-bold text-white font-mono text-sm">{e.entity_id}</span>
+                <span className="font-bold text-white font-mono text-sm">{e.id}</span>
                 <span className="text-xs text-stone-500">{e.country}</span>
               </div>
               <div className="text-sm font-semibold text-stone-200 mb-0.5 leading-tight">{e.name}</div>

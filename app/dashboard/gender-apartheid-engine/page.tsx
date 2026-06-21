@@ -15,7 +15,7 @@ const RB: Record<string, string> = {
 };
 
 type GAEntity = {
-  entity_id: string;
+  id: string;
   name: string;
   country: string;
   sector: string;
@@ -366,7 +366,7 @@ export default function GenderApartheidDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {filtered.map((entity) => (
           <div
-            key={entity.entity_id}
+            key={entity.id}
             onClick={() => setSelected(entity)}
             className="bg-slate-900 border border-pink-700/30 rounded-xl p-4 cursor-pointer hover:border-pink-500 transition-colors"
           >

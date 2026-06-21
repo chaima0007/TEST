@@ -4,7 +4,7 @@ import { sealResponse } from "@/lib/digital-seal";
 const MOCK_ENTITIES = [
   // FSE-001 — critical, famine_emergency (famine_risk>0.85, acute_hunger>0.80)
   {
-    entity_id: "FSE-001", food_system_type: "humanitarian_crisis", region: "SSA",
+    id: "FSE-001", food_system_type: "humanitarian_crisis", region: "SSA",
     acute_hunger_prevalence: 0.88, famine_risk_level: 0.92,
     agricultural_production_collapse: 0.78, climate_crop_failure: 0.72,
     supply_chain_disruption_food: 0.80, price_volatility_extreme: 0.75,
@@ -17,7 +17,7 @@ const MOCK_ENTITIES = [
   },
   // FSE-002 — low, none
   {
-    entity_id: "FSE-002", food_system_type: "diversified_economy", region: "NOAM",
+    id: "FSE-002", food_system_type: "diversified_economy", region: "NOAM",
     acute_hunger_prevalence: 0.08, famine_risk_level: 0.05,
     agricultural_production_collapse: 0.10, climate_crop_failure: 0.08,
     supply_chain_disruption_food: 0.10, price_volatility_extreme: 0.08,
@@ -30,7 +30,7 @@ const MOCK_ENTITIES = [
   },
   // FSE-003 — critical, agricultural_collapse (prod_collapse>0.85, climate_crop>0.80)
   {
-    entity_id: "FSE-003", food_system_type: "agrarian_subsistence", region: "APAC",
+    id: "FSE-003", food_system_type: "agrarian_subsistence", region: "APAC",
     acute_hunger_prevalence: 0.72, famine_risk_level: 0.70,
     agricultural_production_collapse: 0.90, climate_crop_failure: 0.86,
     supply_chain_disruption_food: 0.68, price_volatility_extreme: 0.65,
@@ -43,7 +43,7 @@ const MOCK_ENTITIES = [
   },
   // FSE-004 — high, food_supply_chain_crisis (supply_chain>0.85, price_vol>0.80)
   {
-    entity_id: "FSE-004", food_system_type: "import_dependent", region: "MEA",
+    id: "FSE-004", food_system_type: "import_dependent", region: "MEA",
     acute_hunger_prevalence: 0.48, famine_risk_level: 0.42,
     agricultural_production_collapse: 0.45, climate_crop_failure: 0.42,
     supply_chain_disruption_food: 0.90, price_volatility_extreme: 0.85,
@@ -56,7 +56,7 @@ const MOCK_ENTITIES = [
   },
   // FSE-005 — critical, food_geopolitical_weapon (geo_coercion>0.80, import_dep>0.75)
   {
-    entity_id: "FSE-005", food_system_type: "geopolitical_leverage", region: "EMEA",
+    id: "FSE-005", food_system_type: "geopolitical_leverage", region: "EMEA",
     acute_hunger_prevalence: 0.65, famine_risk_level: 0.62,
     agricultural_production_collapse: 0.70, climate_crop_failure: 0.65,
     supply_chain_disruption_food: 0.72, price_volatility_extreme: 0.68,
@@ -69,7 +69,7 @@ const MOCK_ENTITIES = [
   },
   // FSE-006 — moderate, none
   {
-    entity_id: "FSE-006", food_system_type: "developing_mixed", region: "LATAM",
+    id: "FSE-006", food_system_type: "developing_mixed", region: "LATAM",
     acute_hunger_prevalence: 0.28, famine_risk_level: 0.25,
     agricultural_production_collapse: 0.30, climate_crop_failure: 0.28,
     supply_chain_disruption_food: 0.30, price_volatility_extreme: 0.28,
@@ -82,7 +82,7 @@ const MOCK_ENTITIES = [
   },
   // FSE-007 — high, seed_fertilizer_monopoly_crisis (seed_mono>0.80, fertilizer>0.75)
   {
-    entity_id: "FSE-007", food_system_type: "industrial_agri", region: "APAC",
+    id: "FSE-007", food_system_type: "industrial_agri", region: "APAC",
     acute_hunger_prevalence: 0.45, famine_risk_level: 0.40,
     agricultural_production_collapse: 0.50, climate_crop_failure: 0.45,
     supply_chain_disruption_food: 0.48, price_volatility_extreme: 0.50,
@@ -95,7 +95,7 @@ const MOCK_ENTITIES = [
   },
   // FSE-008 — moderate, none (urban food system, NOAM)
   {
-    entity_id: "FSE-008", food_system_type: "urban_food_system", region: "NOAM",
+    id: "FSE-008", food_system_type: "urban_food_system", region: "NOAM",
     acute_hunger_prevalence: 0.22, famine_risk_level: 0.18,
     agricultural_production_collapse: 0.22, climate_crop_failure: 0.20,
     supply_chain_disruption_food: 0.25, price_volatility_extreme: 0.22,
@@ -172,7 +172,7 @@ export async function GET() {
       const action = recommendedAction(risk);
       const sig  = signal(risk);
       return {
-        entity_id:                      e.entity_id,
+        id:                      e.entity_id,
         food_system_type:               e.food_system_type,
         region:                         e.region,
         hunger_score:                   hun,

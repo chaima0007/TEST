@@ -17,14 +17,14 @@ const MOCK = {
   ],
   critical_alerts: [],
   entities: [
-    { entity_id: "ERI", name: "Érythrée", composite_score: 89.35, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 8.93 },
-    { entity_id: "PRK", name: "Corée du Nord", composite_score: 91.0, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 9.1 },
-    { entity_id: "TKM", name: "Turkménistan", composite_score: 86.15, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 8.62 },
-    { entity_id: "RUS", name: "Russie", composite_score: 82.85, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 8.28 },
-    { entity_id: "CHN", name: "Chine", composite_score: 59.65, risk_level: "élevé", estimated_media_freedom_journalist_protection_index: 5.96 },
-    { entity_id: "MMR", name: "Myanmar", composite_score: 54.15, risk_level: "élevé", estimated_media_freedom_journalist_protection_index: 5.42 },
-    { entity_id: "MEX", name: "Mexique", composite_score: 31.25, risk_level: "modéré", estimated_media_freedom_journalist_protection_index: 3.12 },
-    { entity_id: "FIN", name: "Finlande", composite_score: 3.95, risk_level: "faible", estimated_media_freedom_journalist_protection_index: 0.4 },
+    { id: "ERI", name: "Érythrée", composite_score: 89.35, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 8.93 },
+    { id: "PRK", name: "Corée du Nord", composite_score: 91.0, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 9.1 },
+    { id: "TKM", name: "Turkménistan", composite_score: 86.15, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 8.62 },
+    { id: "RUS", name: "Russie", composite_score: 82.85, risk_level: "critique", estimated_media_freedom_journalist_protection_index: 8.28 },
+    { id: "CHN", name: "Chine", composite_score: 59.65, risk_level: "élevé", estimated_media_freedom_journalist_protection_index: 5.96 },
+    { id: "MMR", name: "Myanmar", composite_score: 54.15, risk_level: "élevé", estimated_media_freedom_journalist_protection_index: 5.42 },
+    { id: "MEX", name: "Mexique", composite_score: 31.25, risk_level: "modéré", estimated_media_freedom_journalist_protection_index: 3.12 },
+    { id: "FIN", name: "Finlande", composite_score: 3.95, risk_level: "faible", estimated_media_freedom_journalist_protection_index: 0.4 },
   ],
 };
 
