@@ -9049,6 +9049,28 @@ function IconAfrodescendantReparationsRights({ className }: { className?: string
     </svg>
   );
 }
+function IconDeforestationIndigenousRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18m0-18C9.5 3 7 5 7 8c0 2 1 3.5 2.5 4.5C7.5 13.5 6 15.5 6 18h12c0-2.5-1.5-4.5-3.5-5.5C16 11.5 17 10 17 8c0-3-2.5-5-5-5z" />
+    </svg>
+  );
+}
+function IconWildlifeTraffickingBiodiversityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+    </svg>
+  );
+}
+function IconMalnutritionChildNutritionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v-2m0 0V8m0 2h2m-2 0H10" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -10007,6 +10029,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/caste-discrimination-dalit-rights-engine", label: "Discrimination Caste", icon: <IconCasteDiscriminationDalitRights className="w-4 h-4" /> },
       { href: "/dashboard/rural-women-land-inheritance-rights-engine", label: "Femmes Rurales Terres", icon: <IconRuralWomenLandInheritanceRights className="w-4 h-4" /> },
       { href: "/dashboard/afrodescendant-reparations-rights-engine", label: "Réparations Afrodesc.", icon: <IconAfrodescendantReparationsRights className="w-4 h-4" /> },
+      { href: "/dashboard/deforestation-indigenous-rights-engine", label: "Déforestation & Autochtones", icon: <IconDeforestationIndigenousRights className="w-4 h-4" /> },
+      { href: "/dashboard/wildlife-trafficking-biodiversity-rights-engine", label: "Trafic Faune Sauvage", icon: <IconWildlifeTraffickingBiodiversityRights className="w-4 h-4" /> },
+      { href: "/dashboard/malnutrition-child-nutrition-rights-engine", label: "Malnutrition Enfants", icon: <IconMalnutritionChildNutritionRights className="w-4 h-4" /> },
     ],
   },
   {
