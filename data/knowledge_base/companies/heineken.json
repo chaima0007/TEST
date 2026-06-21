@@ -1,0 +1,64 @@
+{
+  "id": "heineken",
+  "slug": "heineken",
+  "name": "Heineken N.V.",
+  "country": "Pays-Bas",
+  "city": "Amsterdam",
+  "sector": "Boissons / Brasserie",
+  "size": {
+    "revenue_bn_eur": 36,
+    "employees": 85000,
+    "index": "AEX"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "24.1 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Ethics & Compliance / VP Procurement Sustainability",
+    "team": "Ethics, Sustainability & Responsible Sourcing team (Amsterdam)",
+    "location": "Amsterdam (siège), Singapour (Asia Pacific ops), Lagos (Africa ops)",
+    "process": "Ethics Committee trimestriel, validation EVP Supply Chain pour audits fournisseurs stratégiques"
+  },
+  "pain_points": [
+    "Violence obstétricale et santé reproductive fournisseurs sorgho Afrique Sub-Saharienne non monitorée",
+    "Supply chain agricole Afrique (sorgho, malt) : travailleuses saisonnières sans protection santé documentée",
+    "CSDDD : filières agricoles Afrique dans périmètre supply chain étendu — couverture audit <30%",
+    "SDG 5 : aucun KPI santé reproductive travailleurs agricoles dans rapport annuel"
+  ],
+  "observed_failures": [
+    "Rapport 2022 Business & Human Rights Resource Centre : conditions travail travailleuses sorgho Nigeria Heineken insuffisamment documentées",
+    "Audit 2024 supply chain Mali et Éthiopie : absence de politique santé reproductive fournisseurs agricoles",
+    "Gap SDG 5.6 : zéro indicateur santé maternelle dans rapport Brew a Better World 2023"
+  ],
+  "signals_of_risk": [
+    "Travailleurs saisonniers agricoles Afrique : femmes = 60% main-d'oeuvre, santé reproductive non documentée",
+    "Exposition CSDDD supply chain agricole étendue : périmètre inclut fournisseurs locaux Afrique",
+    "Pression investisseurs ESG : fonds néerlandais (APG, PGGM) sensibles droits travail Afrique"
+  ],
+  "signals_of_trust": [
+    "Programme 'Brew a Better World' avec KPI publiés annuellement",
+    "Partenariat Fairtrade sur houblon et orge certifiés",
+    "Rapport GRI Standards complet depuis 2017",
+    "Engagement UN Women EmpowerHER dans 20 pays"
+  ],
+  "recommended_actions": [
+    "Pitch axé violence obstétricale / santé reproductive sorgho Afrique — angle inédit brasserie",
+    "Proposer module KPI SDG 5.6 santé maternelle fournisseurs agricoles (plug & play GRI 405)",
+    "Référencer rapport B&HRR 2022 Nigeria comme risque documenté",
+    "Approche directe pragmatique, supply chain Afrique comme terrain connu"
+  ],
+  "local_tone": "Direct et pragmatique, anglais supply chain Afrique, références GRI et SDG, éviter sensationnalisme — parler 'risque systémique' et 'KPI manquants'",
+  "cultural_notes": "Culture néerlandaise directe. Heineken très fier de Brew a Better World — challenger sur les angles non couverts (santé maternelle). Head of Ethics est pragmatique, sensible aux preuves terrain. Réunions efficaces Amsterdam. Investisseurs institutionnels néerlandais (APG) influents.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

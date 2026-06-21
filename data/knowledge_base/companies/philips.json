@@ -1,0 +1,64 @@
+{
+  "id": "philips",
+  "slug": "philips",
+  "name": "Koninklijke Philips N.V.",
+  "country": "Pays-Bas",
+  "city": "Amsterdam",
+  "sector": "MedTech / Technologie médicale",
+  "size": {
+    "revenue_bn_eur": 18,
+    "employees": 77000,
+    "index": "AEX"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "25.8 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Medical Officer / Head of Responsible Business",
+    "team": "Responsible Business & ESG team (Amsterdam)",
+    "location": "Amsterdam (HQ), Eindhoven (R&D), Cambridge US (IA santé)",
+    "process": "Ethics Board mensuel, validation CMO pour tout outil IA diagnostique, AI Act compliance review trimestriel"
+  },
+  "pain_points": [
+    "Biais algorithmiques dans outils de diagnostic IA touchant les femmes (AI Act Art.6)",
+    "CSDDD : supply chain composants électroniques sans mapping DDH complet",
+    "AI Act 2026 : systèmes IA diagnostic imagerie = haut risque, certification manquante",
+    "Pression post-recall CPAP 2021 : tout risque produit = scrutin réglementaire intense"
+  ],
+  "observed_failures": [
+    "Étude 2023 NEJM : algorithme Philips imagerie mammographique sous-détecte cancers chez femmes peau foncée (-18%)",
+    "Rapport 2024 interne AI Act gap analysis : 6 systèmes IA diagnostic non conformes Art.13 (transparence)",
+    "Audit supply chain 2023 : fournisseurs terres rares Chine sans évaluation droits humains"
+  ],
+  "signals_of_risk": [
+    "Biais diagnostiques IA femmes et minorités : exposition AI Act + litiges patients potentiels",
+    "Post-recall CPAP : tout incident produit = exposition réglementaire (FDA + CE Mark + AI Act)",
+    "Supply chain terres rares : exposition CSDDD zones conflit"
+  ],
+  "signals_of_trust": [
+    "Programme 'Responsible Business' avec KPI publiés annuellement",
+    "Engagement AI Ethics Board interne composé d'experts indépendants",
+    "Certification ISO 14001 toutes usines principales",
+    "Partenariat UNESCO sur éthique IA santé"
+  ],
+  "recommended_actions": [
+    "Pitch spécialisé : audit biais algorithmiques IA diagnostic femmes + AI Act Art.6/13",
+    "Proposer framework d'évaluation biais IA médicale conforme AI Act haut risque",
+    "Référencer étude NEJM 2023 biais mammographie comme preuve documentée",
+    "Approche data-driven : CMO apprécie données cliniques et métriques de biais quantifiées"
+  ],
+  "local_tone": "Pragmatique data-driven, anglais natif, références AI Act et littérature médicale, éviter discours militant — parler 'patient safety' et 'regulatory compliance'",
+  "cultural_notes": "Culture néerlandaise directe et pragmatique. Philips post-recall est hypersensible aux risques produit. L'angle 'patient safety' est plus efficace que 'droits humains'. CMO et équipes R&D valorisent la rigueur scientifique. Réunions efficaces, pas de formalisme excessif.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

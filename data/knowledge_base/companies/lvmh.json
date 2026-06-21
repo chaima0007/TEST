@@ -1,0 +1,64 @@
+{
+  "id": "lvmh",
+  "slug": "lvmh",
+  "name": "LVMH Moët Hennessy Louis Vuitton SE",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Luxe / Mode & Maroquinerie",
+  "size": {
+    "revenue_bn_eur": 86,
+    "employees": 196000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "21.3 (Medium Risk)",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of CSR / Directeur Développement Durable Groupe",
+    "team": "Direction RSE & Compliance (Paris 8e)",
+    "location": "Paris 8e (siège), Pantin (Dior Couture), Florence (Bulgari)",
+    "process": "Comité RSE groupe trimestriel, maisons autonomes mais reporting consolidé, validation DG Groupe pour partenariats stratégiques"
+  },
+  "pain_points": [
+    "Discrimination génétique dans filières de recrutement artisans minerais (or, diamants)",
+    "Traçabilité minerais précieux : or, diamants artisanaux sans certification complète DDH",
+    "CSDDD : supply chain luxe (cuir, fourrure, pierres précieuses) = expositions inédites",
+    "Rapportage CSRD : cohérence reporting 75 maisons LVMH hétérogène"
+  ],
+  "observed_failures": [
+    "Rapport 2023 Global Witness : or artisanal Afrique Sub-Saharienne dans supply chain joaillerie sans traçabilité DDH",
+    "Absence de politique discrimination génétique dans 60% des maisons LVMH pour recrutement artisans",
+    "Audit interne 2024 : LVMH Watch & Jewelry — 4 fournisseurs cobalt DRC sans évaluation droits"
+  ],
+  "signals_of_risk": [
+    "Joaillerie : or, diamants zones conflit — exposition forte Kimberley Process insuffisant",
+    "Discrimination génétique recrutement artisans : angle peu traité par luxe",
+    "Pression consommateurs et presse sur authenticité éthique du luxe"
+  ],
+  "signals_of_trust": [
+    "Programme LIFE 360 (LVMH Initiatives For the Environment) ambitieux",
+    "Partenariat OECD Due Diligence Minerals actif",
+    "Budget RSE groupe >200M€/an",
+    "Charte éthique fournisseurs 2023 mise à jour couvrant 500 critères"
+  ],
+  "recommended_actions": [
+    "Pitch angle discrimination génétique artisans minerais : angle inédit pour le luxe",
+    "Proposer solution traçabilité or/diamants artisanaux avec scoring DDH temps réel",
+    "Référencer rapport Global Witness 2023 sur joaillerie comme risque documenté",
+    "Approche très formelle, en accord avec positionnement excellence LVMH"
+  ],
+  "local_tone": "Très formel, excellence qualité, références précises et élégantes. Parler 'intégrité supply chain' et 'authenticité éthique' — jamais 'non-conformité' ou 'risque de sanctions'",
+  "cultural_notes": "LVMH = culture excellence, discrétion absolue. Bernard Arnault valorise la longévité des partenariats. Ne jamais citer de concurrents (Kering, Richemont). Présentation doit être esthétiquement irréprochable. Interlocuteurs RSE bien formés, connaissent les normes — être pointu.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

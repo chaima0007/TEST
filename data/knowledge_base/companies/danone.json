@@ -1,0 +1,64 @@
+{
+  "id": "danone",
+  "slug": "danone",
+  "name": "Danone SA",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Agroalimentaire",
+  "size": {
+    "revenue_bn_eur": 28,
+    "employees": 97000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "17.8 (Low Risk)",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "VP Sustainability / Chief Cycles & Procurement Officer",
+    "team": "Sustainability & Nature team (Paris)",
+    "location": "Paris 9e (siège), Evian (eaux), Utrecht (Alpro)",
+    "process": "Sustainability Committee mensuel, validation CEO pour engagements B-Corp majeurs, processus achats centralisé"
+  },
+  "pain_points": [
+    "Droits à l'eau pour fournisseurs agricoles Afrique supply chain sans KPI temps réel",
+    "SDG 6 : accès eau propre et assainissement populations riveraines supply chain non mesuré",
+    "CSDDD : filières lait Afrique (Maroc, Sénégal) sans cartographie DDH complète",
+    "Pression B-Corp recertification 2024 : exigences droits humains supply chain relevées"
+  ],
+  "observed_failures": [
+    "Rapport 2023 RAN (Rainforest Action Network) : fournisseurs soja Danone liés à déforestation Cerrado Brésil",
+    "Audit B-Corp 2024 : score droits humains supply chain insuffisant pour recertification sans plan d'action",
+    "Absence de KPI droits eau fournisseurs lait Afrique dans rapport annuel 2023"
+  ],
+  "signals_of_risk": [
+    "Supply chain lait Afrique : accès eau fournisseurs éleveurs non documenté SDG 6",
+    "Soja Brésil : déforestation Cerrado = risque B-Corp + CSDDD simultané",
+    "Pression recertification B-Corp avec nouveaux critères droits humains 2024"
+  ],
+  "signals_of_trust": [
+    "Première société anonyme française certifiée Entreprise à Mission (2020)",
+    "MSCI AA — meilleure notation agroalimentaire France",
+    "Rapport intégré B-Corp + GRI conforme depuis 2015",
+    "Programme 'One Planet. One Health' avec objectifs SDG alignés"
+  ],
+  "recommended_actions": [
+    "Pitch : KPI droits eau supply chain Afrique + B-Corp recertification — double urgence 2024",
+    "Proposer module SDG 6 monitoring eau fournisseurs agricoles (temps réel)",
+    "Référencer gap B-Corp audit 2024 droits humains comme urgence immédiate",
+    "Cibler VP Sustainability : sensible au langage B-Corp et mission d'entreprise"
+  ],
+  "local_tone": "Formel B-Corp et entreprise à mission, références SDG, GRI, mission statuts, éviter termes 'performance financière' — parler 'impact positif' et 'raison d'être'",
+  "cultural_notes": "Danone post-Faber = culture mission forte mais managérialisme revenu. VP Sustainability est stratégique. B-Corp recertification = urgence réelle 2024. Valoriser l'impact mesurable et les métriques SDG. Culture française formelle mais ouverte à l'innovation responsable.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

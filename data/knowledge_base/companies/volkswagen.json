@@ -1,0 +1,64 @@
+{
+  "id": "volkswagen",
+  "slug": "volkswagen",
+  "name": "Volkswagen AG",
+  "country": "Allemagne",
+  "city": "Wolfsburg",
+  "sector": "Automobile",
+  "size": {
+    "revenue_bn_eur": 322,
+    "employees": 675000,
+    "index": "DAX30"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A-",
+      "sustainalytics": "28.1 (Medium Risk)",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO (Chief Compliance Officer)",
+    "team": "Konzern-Compliance & Human Rights Department",
+    "location": "Wolfsburg (siège), Berlin (lobbying)",
+    "process": "Governance board mensuel, approbation Vorstand pour tout outil compliance >1M€"
+  },
+  "pain_points": [
+    "Biais RH algorithmique non audité dans outils de recrutement IA",
+    "LkSG §3 : obligation de due diligence supply chain étendue sans outillage adapté",
+    "Exposition AI Act (systèmes IA à haut risque RH) non cartographiée",
+    "Pression syndicale IG Metall sur transparence algorithmes décisions RH"
+  ],
+  "observed_failures": [
+    "Incident 2022 : algorithmes de recrutement identifiés comme biaisant contre les femmes dans certaines fonctions techniques",
+    "Audit interne 2023 : 34% des outils RH IA sans documentation de biais conforme AI Act",
+    "Plainte déposée par works council sur opacité scoring performance automatisé"
+  ],
+  "signals_of_risk": [
+    "Exposition LkSG §3 (discrimination) non couverte par audit externe",
+    "Supply chain cobalt DRC : 12 fournisseurs Tier-1 sans certification droits miniers",
+    "Pression réglementaire AI Act 2026 sur systèmes RH automatisés"
+  ],
+  "signals_of_trust": [
+    "Engagement LkSG opérationnel depuis 2023 avec équipe dédiée 45 personnes",
+    "Rapport droits humains annuel certifié TÜV Rheinland",
+    "Budget compliance DDH : ~80M€/an groupe",
+    "Partenariat Responsible Minerals Initiative (RMI) actif"
+  ],
+  "recommended_actions": [
+    "Cibler CCO en premier contact : pitch axé LkSG §3 + AI Act simultanément",
+    "Préparer démo audit biais algorithmique avec cas automobile anonymisé",
+    "Proposer roadmap 6 mois vers conformité AI Act RH avant deadline 2026",
+    "Référencer incident recrutement 2022 comme urgence documentée"
+  ],
+  "local_tone": "Structuré LkSG §3 avec références légales précises, préférence pour documentation technique détaillée, plan d'implémentation chiffré",
+  "cultural_notes": "Culture d'entreprise formelle, décisions collégiales (Vorstand + works council). Présenter solutions comme 'Mitbestimmung-compatible'. Éviter approche commerciale agressive. Privilégier Sachlichkeit (objectivité factuelle).",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

@@ -1,0 +1,64 @@
+{
+  "id": "engie",
+  "slug": "engie",
+  "name": "Engie SA",
+  "country": "France",
+  "city": "Courbevoie",
+  "sector": "Énergie / Infrastructure",
+  "size": {
+    "revenue_bn_eur": 78,
+    "employees": 96000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB+",
+      "sustainalytics": "22.9 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Director ESG Infrastructure / VP Développement Durable",
+    "team": "Direction RSE & Compliance Infrastructures (La Défense)",
+    "location": "Courbevoie - La Défense (siège), Bruxelles (hub EU)",
+    "process": "Comité RSE bimestriel, validation EVP Infrastructure pour projets stratégiques, cycle achat 9-15 mois"
+  },
+  "pain_points": [
+    "Projets hydroélectriques Afrique sans scoring droits à l'eau (droit humain reconnu ONU 2010)",
+    "CSDDD : concessions eau et énergie dans pays à risque sans due diligence systématique",
+    "Populations déplacées par projets hydro : mécanisme de réclamation insuffisant",
+    "Reporting CSRD : données sociales projets Afrique (Côte d'Ivoire, Sénégal) incomplètes"
+  ],
+  "observed_failures": [
+    "Rapport 2022 International Rivers : projet hydro Engie Sénégal — déplacement 200 familles sans compensation DDH conforme",
+    "Audit 2024 CSDDD gap : 8 concessions eau Afrique Sub-Saharienne sans évaluation droit à l'eau",
+    "Absence de scoring SDG 6 (eau propre) dans tableaux de bord RSE projets Afrique"
+  ],
+  "signals_of_risk": [
+    "Projets hydro et eau Afrique : exposition droit international (résolution ONU A/64/292)",
+    "CSDDD chaîne valeur infrastructure : périmètre inclut sous-traitants locaux non audités",
+    "Pression ONG locales et internationales sur projets eau Afrique"
+  ],
+  "signals_of_trust": [
+    "Transition énergétique : 45% capacités renouvelables, objectif 58% en 2025",
+    "Plan Vigilance annuel conforme loi 2017, certifié Ernst & Young",
+    "Programme 'Access to Energy' couvrant 20M personnes en Afrique",
+    "Engagement UN Global Compact Advanced Level"
+  ],
+  "recommended_actions": [
+    "Pitch : scoring droits à l'eau pour projets hydro Afrique — angle réglementaire CSDDD + droit international",
+    "Proposer outil évaluation SDG 6 intégré au cycle de projet (phase développement)",
+    "Référencer rapport International Rivers 2022 comme risque documenté",
+    "Cibler Director ESG Infrastructure + Legal concessions eau simultanément"
+  ],
+  "local_tone": "Formel CSDDD avec références concessions eau et droit international humanitaire, mention SDG 6, éviter 'activisme' — parler 'licence sociale d'exploitation' et 'risque projet'",
+  "cultural_notes": "Engie = culture ingénieure infrastructure. Interlocuteurs ESG proviennent souvent de l'opérationnel. Valoriser expertise terrain Afrique. Décisions prises La Défense mais influencées par équipes projets locaux. Bruxelles important pour politique EU.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

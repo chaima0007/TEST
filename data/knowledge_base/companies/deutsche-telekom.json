@@ -1,0 +1,64 @@
+{
+  "id": "deutsche-telekom",
+  "slug": "deutsche-telekom",
+  "name": "Deutsche Telekom AG",
+  "country": "Allemagne",
+  "city": "Bonn",
+  "sector": "Télécommunications",
+  "size": {
+    "revenue_bn_eur": 113,
+    "employees": 210000,
+    "index": "DAX40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "18.6 (Low Risk)",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Privacy Officer / VP Human Rights",
+    "team": "Privacy, Human Rights & Compliance team (Bonn + T-Systems Berlin)",
+    "location": "Bonn (siège), Berlin (T-Systems), Vienna (T-Mobile AT)",
+    "process": "Privacy Steering Committee mensuel, validation CPO pour tout outil data compliance, LkSG review semestriel"
+  },
+  "pain_points": [
+    "Droits numériques réfugiés : SIM cards refugees non monitorés sous DSA (Digital Services Act)",
+    "LkSG §3 : discrimination dans accès services télécoms non adressée dans due diligence",
+    "DSA : obligations due diligence plateformes sur droits fondamentaux (Art.26, 34)",
+    "Supply chain équipements réseau : fournisseurs semiconducteurs sans audit DDH complet"
+  ],
+  "observed_failures": [
+    "Rapport 2023 UNHCR : réfugiés en Allemagne exclus services télécoms faute de documents (SIM) sans alternative DDH",
+    "Gap LkSG 2024 : discrimination accès digital pour travailleurs migrants supply chain non couverte §3",
+    "Audit DSA Art.34 2024 : évaluation risques droits fondamentaux plateforme T-Online incomplète"
+  ],
+  "signals_of_risk": [
+    "DSA Art.26/34 : très grandes plateformes (T-Online) soumises obligations droits fondamentaux",
+    "Droits numériques réfugiés : angle émergent post-UNHCR Allemagne recommendations",
+    "LkSG + CSDDD : supply chain équipements réseau (Nokia, Ericsson tier-2) non auditée"
+  ],
+  "signals_of_trust": [
+    "Privacy by Design champion : politique vie privée reconnue CNIL EU",
+    "Rapport LkSG soumis BAFA depuis 2023, conforme",
+    "Engagement Digital Rights approach dans rapport annuel 2023",
+    "Partenariat GSMA sur connectivité réfugiés (position paper)"
+  ],
+  "recommended_actions": [
+    "Pitch axé droits numériques réfugiés + DSA Art.34 — angle très différenciateur télécoms",
+    "Proposer outil monitoring inclusion digitale réfugiés (KPI DSA + LkSG §3 intégrés)",
+    "Référencer rapport UNHCR 2023 Allemagne comme urgence documentée",
+    "Cibler CPO en priorité, co-présentation avec VP Human Rights"
+  ],
+  "local_tone": "Structuré LkSG + DSA avec références légales exactes, ton allemand formel, plan d'implémentation étape par étape attendu",
+  "cultural_notes": "Deutsche Telekom = bureaucratie structurée, décisions consensuelles. LkSG = sujet pris très au sérieux depuis 2023. DSA = nouveau territoire — être l'expert qui les guide. Préférer Deutsch pour réunions techniques, anglais pour présentations stratégiques. Works council influent.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

@@ -1,0 +1,64 @@
+{
+  "id": "sodexo",
+  "slug": "sodexo",
+  "name": "Sodexo SA",
+  "country": "France",
+  "city": "Issy-les-Moulineaux",
+  "sector": "Services / Facilities Management",
+  "size": {
+    "revenue_bn_eur": 23,
+    "employees": 412000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "23.7 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO / VP People & Culture (Bien-être employés)",
+    "team": "Ethics, Compliance & Well-being team (Issy-les-Moulineaux)",
+    "location": "Issy-les-Moulineaux (siège), Gaithersburg MD (Sodexo US), Londres (EMIA)",
+    "process": "Ethics Committee mensuel, People Committee trimestriel, validation DRH Groupe pour KPI bien-être >1M€"
+  },
+  "pain_points": [
+    "Précarité menstruelle des employées terrain (restauratrices, agentes de nettoyage) absente des KPI bien-être",
+    "412K ETP dont 65% femmes en terrain : santé reproductive non documentée dans reporting CSRD",
+    "CSRD indicateurs sociaux : données bien-être granulaires employés terrain manquantes",
+    "Pression syndicale (CFDT, UNSA) sur conditions travail employées terrain dans marchés publics"
+  ],
+  "observed_failures": [
+    "Audit 2024 label 'Gender Equality European Standard' : précarité menstruelle absente 78% sites France",
+    "Rapport 2023 interne : seuls 12% sites Sodexo France ont accès produits hygiène féminine gratuits",
+    "Gap CSRD indicateurs S1 : zéro KPI santé menstruelle dans rapport annuel 2023 malgré 65% main-d'oeuvre féminine"
+  ],
+  "signals_of_risk": [
+    "Précarité menstruelle terrain : risque absentéisme documenté (-3.2 jours/an femmes touchées)",
+    "Marchés publics : critères bien-être employés de plus en plus exigés par donneurs d'ordre",
+    "CSRD S1 : indicateurs bien-être employés terrain insuffisamment développés pour 412K ETP"
+  ],
+  "signals_of_trust": [
+    "Label 'Entreprise Handi-accueillante' et engagements diversité reconnus",
+    "Programme 'Better Tomorrow 2025' avec 10 engagements RSE mesurables",
+    "Rapport annuel certifié Deloitte depuis 2018",
+    "Partenariat Plan International sur droits filles dans pays opérations"
+  ],
+  "recommended_actions": [
+    "Pitch : KPI précarité menstruelle terrain + CSRD S1 — angle unique pour services 412K ETP",
+    "Proposer module bien-être santé reproductive employées (intégrable CSRD S1, GEES)",
+    "Chiffrer ROI : réduction absentéisme -3.2j/an × 65% = 870K journées récupérables",
+    "Cibler CCO + VP People & Culture conjointement : compliance + bien-être simultanément"
+  ],
+  "local_tone": "Formel droits sociaux et bien-être employés, références CSRD S1, OIT convention travail décent, lier à réputation marchés publics et fidélisation talents",
+  "cultural_notes": "Sodexo = culture services, très sensible aux conditions terrain. DRH groupe est moteur. Marchés publics = levier fort (clients Sodexo exigent critères bien-être). ROI bien-être = argument décisif. Famille Bellon reste actionnaire majoritaire — valeurs familiales transmises dans culture.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

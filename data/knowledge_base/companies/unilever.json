@@ -1,0 +1,64 @@
+{
+  "id": "unilever",
+  "slug": "unilever",
+  "name": "Unilever PLC",
+  "country": "Royaume-Uni / Pays-Bas",
+  "city": "Rotterdam",
+  "sector": "FMCG / Biens de grande consommation",
+  "size": {
+    "revenue_bn_eur": 60,
+    "employees": 127000,
+    "index": "FTSE100"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "16.3 (Low Risk)",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Human Rights / Chief Sustainability Officer",
+    "team": "Sustainability & Human Rights team (London + Rotterdam)",
+    "location": "Rotterdam (HQ Europe), London (Group Strategy)",
+    "process": "Quarterly Sustainability Steering Committee, Board ESG review annuel"
+  },
+  "pain_points": [
+    "Précarité menstruelle dans supply chain non mesurée (SDG 5.6)",
+    "Tracking SDG 5 : données granulaires santé reproductive ouvrières absent des KPI fournisseurs",
+    "Pression investisseurs ESG sur disclosure scope 3 social (beyond environment)",
+    "Systèmes de remontée d'alerte fournisseurs : taux utilisation faible en Asie du Sud-Est"
+  ],
+  "observed_failures": [
+    "Rapport 2023 Amnesty International : conditions travail plantations thé Assam insuffisamment améliorées",
+    "Gap reporting SDG 5.6 : aucun KPI santé menstruelle documenté malgré 'Positive Beauty' pledge",
+    "Mécanisme de réclamation ouvriers : 60% des fournisseurs Tier-2 non couverts"
+  ],
+  "signals_of_risk": [
+    "Supply chain plantations thé, huile de palme : populations vulnérables femmes non documentées",
+    "Pression CSDDD : périmètre supply chain étendu jusqu'au niveau agricole",
+    "Investisseurs ESG (UNPRI) poussent vers disclosure social scope 3"
+  ],
+  "signals_of_trust": [
+    "MSCI AA — meilleure notation FMCG secteur",
+    "Unilever Sustainable Living Plan historique (10 ans de reporting)",
+    "Human Rights due diligence policy publiée et auditée annuellement",
+    "Partenariat UN Women, Oxfam America sur droits travailleurs"
+  ],
+  "recommended_actions": [
+    "Pitch différenciateur : module SDG 5 précarité menstruelle — aucun concurrent ne l'adresse",
+    "Ancrer sur gap reporting Head of Human Rights vs investisseurs UNPRI",
+    "Proposer KPI toolkit santé reproductive supply chain (plug & play GRI 405/408)",
+    "Approche directe business-first : ROI en amélioration score MSCI AA → AAA"
+  ],
+  "local_tone": "Direct, business-first, anglais natif. Pas de jargon militant. Parler outcomes mesurables, investor narrative, KPI disclosables.",
+  "cultural_notes": "Culture anglo-néerlandaise pragmatique. Décisions rapides si ROI clair et lien investisseurs. Eviter surcharge réglementaire française. Se distinguer de leurs consultants Deloitte/EY habituels par la spécificité du domaine droits humains sociaux.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

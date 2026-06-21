@@ -1,0 +1,64 @@
+{
+  "id": "totalenergies",
+  "slug": "totalenergies",
+  "name": "TotalEnergies SE",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Énergie / Pétrole & Gaz",
+  "size": {
+    "revenue_bn_eur": 218,
+    "employees": 105000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "32.4 (High Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CSO / Head of ESG Compliance",
+    "team": "Direction Développement Durable & Conformité DDH",
+    "location": "La Défense, Paris",
+    "process": "Comité RSE trimestriel, validation CODIR avant tout engagement >500K€"
+  },
+  "pain_points": [
+    "Aucun système d'alerting DDH temps réel sur la supply chain africaine",
+    "Cartographie fournisseurs Tier-2/3 incomplète en zones conflit",
+    "Pression actionnaires post-résolution AGM 2023 sur Plan Vigilance",
+    "Reporting CSRD 2025 : manque de données granulaires droits humains"
+  ],
+  "observed_failures": [
+    "Incident 2021 Ouganda : expulsion communautés projet EACOP, plaintes ONG Friends of the Earth",
+    "Absence de mécanisme de réclamation local opérationnel pour populations riveraines",
+    "Plan de vigilance 2022 jugé insuffisant par collectif 'Stop EACOP' et Amnesty International"
+  ],
+  "signals_of_risk": [
+    "Exposition forte zones conflit (Mozambique, Irak, Ouganda)",
+    "70% fournisseurs Tier-1 sans auto-évaluation DDH complète",
+    "Pression juridique croissante : devoir de vigilance loi 2017 + CSDDD"
+  ],
+  "signals_of_trust": [
+    "Budget RSE annuel >150M€",
+    "Engagement net-zero 2050 avec jalons intermédiaires vérifiés",
+    "Partenariat OHCHR sur lignes directrices droits humains extractives",
+    "Rapport Vigilance annuel publié depuis 2018"
+  ],
+  "recommended_actions": [
+    "Proposer démo alerting temps réel supply chain Afrique subsaharienne",
+    "Ancrer pitch sur CSDDD art.9 (mécanisme réclamation) et art.7 (cartographie)",
+    "Référencer incident EACOP comme cas d'usage 'avant/après' plateforme",
+    "Cibler Head of ESG Compliance en premier, puis VP Supply Chain"
+  ],
+  "local_tone": "Formel CSDDD art.9, référencer textes réglementaires précis, éviter militantisme apparent",
+  "cultural_notes": "Interlocuteurs formés Sciences Po / ENA, sensibles à la rigueur juridique. Présenter ROI en termes de réduction risque contentieux et amélioration notation ESG.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

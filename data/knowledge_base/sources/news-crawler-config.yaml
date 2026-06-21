@@ -1,0 +1,40 @@
+# Configuration crawler — NE PAS EXÉCUTER SANS APPROBATION IT
+# Usage : config uniquement, pas d'exécution automatique
+
+crawler:
+  name: caelum-news-crawler
+  version: "1.0"
+  schedule: "0 6 * * 1"  # Lundi 6h UTC
+  enabled: false  # Activer après approbation IT
+
+sources:
+  - name: globalwitness
+    url_pattern: "https://www.globalwitness.org/en/campaigns/*/reports/"
+    domains: [land_grabbing, environmental_rights]
+    extract_fields: [title, date, summary, url]
+    max_pages: 50
+
+  - name: business_human_rights
+    url_pattern: "https://www.business-humanrights.org/en/latest-news/"
+    domains: [csddd, supply_chain, corporate_accountability]
+    extract_fields: [title, date, companies_mentioned, url]
+    max_pages: 100
+
+  - name: ohchr
+    url_pattern: "https://www.ohchr.org/en/press-releases/"
+    domains: [all]
+    extract_fields: [title, date, summary, url]
+    max_pages: 50
+
+output:
+  format: jsonl
+  path: "data/knowledge_base/sources/crawled/{date}/{source}.jsonl"
+  retention_days: 365
+
+compliance:
+  respect_robots_txt: true
+  rate_limit_seconds: 2
+  user_agent: "CaelumResearchBot/1.0 (research@caelumpartners.eu)"
+  approval_required: true
+  approved_by: null
+  approved_date: null

@@ -1,0 +1,64 @@
+{
+  "id": "axa",
+  "slug": "axa",
+  "name": "AXA SA",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Assurance",
+  "size": {
+    "revenue_bn_eur": 110,
+    "employees": 145000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "20.1 (Medium Risk)",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Responsible Investment / Group CRO",
+    "team": "AXA IM Responsible Investing & Sustainability team",
+    "location": "Paris 8e (siège groupe), La Défense (AXA IM)",
+    "process": "Investment Committee mensuel, SFDR review trimestriel, validation COMEX nouveaux outils >2M€"
+  },
+  "pain_points": [
+    "Biais dans algorithmes de scoring santé pour tarification non audité (SFDR Art.9)",
+    "SFDR : PAI (Principal Adverse Impacts) sur droits humains incomplets dans portefeuilles Art.9",
+    "CSDDD chaîne financière : exposition inédite sur due diligence assurés corporate",
+    "Pression ACPR sur risques sociaux dans modèles actuariels"
+  ],
+  "observed_failures": [
+    "Rapport 2023 FIR (Forum pour l'Investissement Responsable) : PAI droits humains SFDR Art.9 incomplets pour 12% AUM",
+    "Audit interne AXA IM 2024 : scoring santé algorithme non documenté biais genre",
+    "Incident tarification : surcoût assurance santé femmes 35-45 ans via IA non explicable"
+  ],
+  "signals_of_risk": [
+    "Algorithmes tarification santé : exposition SFDR + potentiel discrimination indirecte",
+    "AUM SFDR Art.9 : 45Mds€ avec PAI sociaux insuffisamment mesurés",
+    "Pression ESMA / ACPR sur greenwashing social dans fonds responsables"
+  ],
+  "signals_of_trust": [
+    "AXA Climate : engagement net-zero portefeuille 2050 avec jalon 2030",
+    "Exclusion industries armement controversé, tabac complète",
+    "Rapport TCFD et SFDR publiés annuellement certifiés",
+    "Partenariat UNPRI Signatory AA depuis 2006"
+  ],
+  "recommended_actions": [
+    "Pitch : audit biais algorithmes scoring santé + PAI droits humains SFDR Art.9",
+    "Proposer outil explainable AI pour scoring actuariel conforme SFDR",
+    "Référencer pression ESMA greenwashing social comme urgence réglementaire",
+    "Cibler Head of Responsible Investment en premier, co-présentation avec CRO"
+  ],
+  "local_tone": "Formel investisseurs institutionnels, références SFDR / EU Taxonomy / ACPR, approche quantitative PAI et AUM",
+  "cultural_notes": "AXA = culture grand groupe français, décisions formelles COMEX. Valoriser l'expertise sectorielle assurance. Préférer réunion formelle avec deck. Éviter références ONG — parler risque réglementaire et réputation investisseurs.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

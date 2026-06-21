@@ -1,0 +1,64 @@
+{
+  "id": "inditex",
+  "slug": "inditex",
+  "name": "Industria de Diseño Textil S.A. (Inditex)",
+  "country": "Espagne",
+  "city": "La Corogne",
+  "sector": "Mode / Textile",
+  "size": {
+    "revenue_bn_eur": 35,
+    "employees": 165000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BB",
+      "sustainalytics": "30.2 (Medium Risk)",
+      "target": "BBB"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO Supply Chain / Director Sostenibilidad",
+    "team": "Sustainability & Social Compliance team (La Corogne + Barcelone)",
+    "location": "La Corogne (siège), Arteixo (campus Zara)",
+    "process": "Comité sostenibilidad mensuel, achats supply chain décentralisés par marque (Zara, Massimo Dutti…)"
+  },
+  "pain_points": [
+    "Violence obstétricale et santé reproductive fournisseurs Bangladesh non monitorée",
+    "Audit social fournisseurs Tier-2/3 : couverture <40% en Asie du Sud",
+    "CSDDD : obligation de cartographie supply chain étendue (vêtements = chaîne longue)",
+    "Pression médiatique post-Rana Plaza persistante — tout incident = crise"
+  ],
+  "observed_failures": [
+    "Incident 2022 : réfugiés syriens identifiés dans ateliers sous-traitants turcs (enquête BBC)",
+    "Rapport 2023 Clean Clothes Campaign : salaires inférieurs au minimum dans 6 usines Bangladesh",
+    "Mécanisme de réclamation fournisseurs : taux de remontées <2% vs industrie ~8%"
+  ],
+  "signals_of_risk": [
+    "6000+ fournisseurs actifs dans 50 pays, cartographie DDH partielle",
+    "Concentration Bangladesh (35% production) : risque systémique droits travail",
+    "Pression réglementaire EU : règlement écoconception, CSDDD, Digital Product Passport"
+  ],
+  "signals_of_trust": [
+    "Programme 'Worker at the Centre' actif dans 4 pays",
+    "Partenariat ACT (Action Collaboration Transformation) salaires vivants",
+    "Rapport social annuel certifié Bureau Veritas",
+    "Engagement 100% coton traçable d'ici 2025"
+  ],
+  "recommended_actions": [
+    "Cibler CCO Supply Chain avec pitch axé violence obstétricale + SDG 5 + CSDDD art.7",
+    "Proposer module monitoring santé reproductive travailleurs : différenciateur fort vs EcoVadis",
+    "Référencer incident réfugiés syriens Turquie 2022 comme cas d'usage",
+    "Approche chaleur humaine : montrer connaissance terrain Asie du Sud"
+  ],
+  "local_tone": "Chaleureux et relationnel, référencer contexte local (Galice, valeurs familiales Inditex), mélanger espagnol et anglais selon interlocuteur",
+  "cultural_notes": "Inditex = culture Galice très attachée à la discrétion. Éviter confrontation publique. Préférer réunion à La Corogne (signe de respect). Décisions de fond prises en Espagne malgré présence internationale. La famille Ortega reste influente sur les valeurs.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

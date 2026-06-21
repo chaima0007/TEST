@@ -1,0 +1,64 @@
+{
+  "id": "airbus",
+  "slug": "airbus",
+  "name": "Airbus SE",
+  "country": "France / Allemagne / Espagne",
+  "city": "Toulouse",
+  "sector": "Aérospatiale / Défense",
+  "size": {
+    "revenue_bn_eur": 68,
+    "employees": 134000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "23.4 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "VP Ethics & Compliance",
+    "team": "Ethics, Compliance & Human Rights team (Toulouse + Hamburg)",
+    "location": "Toulouse (HQ), Hamburg (Airbus Operations), Madrid (CASA)",
+    "process": "Ethics Committee trimestriel, achats centralisés Toulouse, validation Legal pour tout outil compliance"
+  },
+  "pain_points": [
+    "Droits des réfugiés numériques dans supply chain absents du périmètre DDH",
+    "Chaîne titane : exposition post-2022 suite sanctions Russie, fournisseurs alternatifs non audités DDH",
+    "CSDDD : supply chain aéronautique complexe (Tier-1 à Tier-4) sans cartographie droits humains complète",
+    "Contexte défense : tension entre secret industriel et transparence CSRD"
+  ],
+  "observed_failures": [
+    "Incident chaîne titane Russie 2022 : 30% approvisionnement titane réorienté sans due diligence DDH complète",
+    "Audit 2023 : fournisseurs Kazakhstan et Turquie titane sans évaluation droits travailleurs migrants",
+    "Rapport interne 2024 : droits numériques travailleurs supply chain (données biométriques) non couverts"
+  ],
+  "signals_of_risk": [
+    "Réorientation supply chain titane post-Ukraine : 15 nouveaux fournisseurs sans audit DDH",
+    "Travailleurs migrants dans sites fabrication Turquie, Inde : droits numériques non monitorés",
+    "Exposition CSDDD sur supply chain étendue industrielle complexe"
+  ],
+  "signals_of_trust": [
+    "Programme Ethics & Compliance mature post-corruption (Airbus 2020 : accord DOJ)",
+    "Rapport CSRD préparé avec PwC, engagement transparence fort",
+    "Partenariat IATA sur aviation durable",
+    "Budget compliance global >60M€/an"
+  ],
+  "recommended_actions": [
+    "Pitch angle titanium supply chain + droits réfugiés numériques : deux angles uniques",
+    "Proposer cartographie DDH accélérée fournisseurs titane alternatifs (Kazakhstan, Turquie)",
+    "Référencer incident réorientation 2022 comme urgence due diligence non couverte",
+    "Approche trilingue FR/DE/EN selon interlocuteur (Toulouse = FR, Hamburg = DE)"
+  ],
+  "local_tone": "Trilingue FR/DE/EN selon interlocuteur, technique avec référence processus aéronautique AS9100, éviter 'droits humains' brut — parler 'due diligence supply chain' et 'risk management'",
+  "cultural_notes": "Culture multi-nationale complexe (French/German/Spanish). Toulouse = siège décisionnel. Décisions compliance influencées par Legal (fort après accord DOJ 2020). Valoriser discrétion et expertise sectorielle. Ne pas mentionner les concurrents Boeing/Lockheed.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

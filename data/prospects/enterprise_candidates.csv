@@ -1,0 +1,21 @@
+slug,company,country,sector,size,priority,persona,ddh_domain,estimated_budget_eur,csrd_exposure,notes
+volkswagen-group,Volkswagen Group,DE,Automotive,700000,1,Head of ESG,forced_labor/algorithmic_bias,8000,HIGH,Xinjiang supplier controversy
+totalenergies,TotalEnergies,FR,Energy,150000,1,VP Sustainability,land_grabbing/climate_migration,6000,HIGH,EACOP Uganda pipeline
+glencore,Glencore,CH,Mining,150000,1,ESG Director,child_labor/forced_labor,10000,HIGH,DRC cobalt controversy
+hm-group,H&M Group,SE,Fashion,150000,1,Chief Sustainability Officer,digital_gender_gap/supply_chain,5000,HIGH,Uyghur cotton controversy
+sodexo,Sodexo,FR,Services,470000,1,Directrice RSE,prison_labor/migrant_workers,4000,HIGH,Prison catering contracts
+nestle,Nestlé,CH,Food,270000,2,Head of Human Rights,child_labor/water_rights,12000,HIGH,Child labor cocoa
+shell,Shell,NL,Energy,90000,2,VP ESG,land_grabbing/climate,8000,HIGH,Nigeria oil spills
+inditex,Inditex/Zara,ES,Fashion,160000,2,Head of Responsible Sourcing,forced_labor/gender_gap,6000,MEDIUM,Supply chain Bangladesh
+lvmh,LVMH,FR,Luxury,215000,2,RSE Director,forced_labor/supply_chain,7000,HIGH,Artisan labor conditions
+unilever,Unilever,NL,FMCG,130000,2,Chief Sustainability Officer,forced_labor/gender_gap,9000,HIGH,Palm oil deforestation
+heidelberg-materials,HeidelbergMaterials,DE,Construction,50000,3,ESG Manager,land_grabbing/indigenous,3000,MEDIUM,Quarry indigenous rights
+carrefour,Carrefour,FR,Retail,320000,3,RSE Manager,forced_labor/supply_chain,4000,MEDIUM,Supply chain audits
+veolia,Veolia,FR,Environment,220000,3,RSE Director,water_rights/migrant_workers,3500,MEDIUM,Water privatization
+bnp-paribas,BNP Paribas,FR,Finance,183000,3,Head of ESG Investments,land_grabbing/prison_labor,5000,MEDIUM,Financing controversial projects
+axa,AXA,FR,Insurance,150000,3,Impact Investment Director,climate_migration/gender_gap,4500,MEDIUM,Climate risk
+philips,Philips,NL,Healthcare,75000,4,Sustainability Manager,supply_chain/labor_rights,2500,LOW,Cobalt supply chain
+adidas,Adidas,DE,Sports,62000,4,Head of Responsible Sourcing,forced_labor/gender_gap,3000,MEDIUM,Uyghur cotton
+teleperformance,Teleperformance,FR,BPO,410000,4,RSE Director,migrant_workers/digital_rights,2000,LOW,Worker conditions
+danone,Danone,FR,Food,100000,4,Chief Sustainability Officer,water_rights/supply_chain,3000,MEDIUM,Water access controversy
+stellantis,Stellantis,NL/FR,Automotive,300000,5,Head of ESG,forced_labor/supply_chain,4000,MEDIUM,Supply chain minerals

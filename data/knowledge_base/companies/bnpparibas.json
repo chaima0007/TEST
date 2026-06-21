@@ -1,0 +1,64 @@
+{
+  "id": "bnpparibas",
+  "slug": "bnpparibas",
+  "name": "BNP Paribas SA",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Finance / Banque",
+  "size": {
+    "revenue_bn_eur": 45,
+    "employees": 190000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "19.8 (Low Risk)",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Director of ESG Risk / Chief Risk Officer",
+    "team": "ESG Risk Management & Sustainable Finance team",
+    "location": "Paris 9e (siège opérationnel), Montrouge (risk ops)",
+    "process": "Risk committee mensuel, validation COMEX pour nouveaux outils risque >3M€, achats centralisés"
+  },
+  "pain_points": [
+    "Algorithmes scoring ESG portefeuille non auditables (SFDR Art.9)",
+    "Due diligence clients corporate sur droits humains : processus manuel non scalable",
+    "CSDDD : chaîne de valeur financière incluse dans périmètre — exposition inédite",
+    "Pression régulateur BCE sur risques ESG dans stress tests 2025"
+  ],
+  "observed_failures": [
+    "Rapport Oxfam 2024 : BNP finance projets déforestation Brésil via fonds SFDR Art.8",
+    "Audit interne 2023 : 23% portefeuilles corporate sans screening DDH conforme",
+    "Incident réputation : financement pipeline pétrolier contesté Mozambique 2022"
+  ],
+  "signals_of_risk": [
+    "Exposition SFDR Art.9 : scoring ESG algorithmes opaques sous pression ESMA",
+    "Portefeuille infrastructure >40Mds€ en zones à risque droits humains élevé",
+    "Pression litigation : actionnaires minoritaires sur transparence ESG portfolio"
+  ],
+  "signals_of_trust": [
+    "Engagement Net Zero Banking Alliance (NZBA) avec trajectoire 2030",
+    "Équipe Sustainable Finance >200 personnes dédiées",
+    "Rapport TCFD conforme depuis 2021",
+    "Exclusion charbon thermique actée depuis 2023"
+  ],
+  "recommended_actions": [
+    "Pitch centré SFDR Art.9 auditabilité + CSDDD chaîne de valeur financière",
+    "Proposer outil scoring ESG explainable AI pour portefeuille corporate",
+    "Référencer rapport Oxfam 2024 comme risque réputation documenté",
+    "Cibler Director ESG Risk, co-présentation avec Chief Compliance Officer"
+  ],
+  "local_tone": "Formel SFDR / EU Taxonomy / CSDDD, références BCE et ESMA, approche quantitative avec métriques risque",
+  "cultural_notes": "Banques françaises : process achat long (6-12 mois), mais décisions structurées. Interlocuteurs risk utilisent framework quantitatif. Préférer présentation données + cas chiffrés. Éviter discours militant — parler réduction exposure réglementaire.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

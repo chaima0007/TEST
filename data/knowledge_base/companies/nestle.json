@@ -1,0 +1,64 @@
+{
+  "id": "nestle",
+  "slug": "nestle",
+  "name": "Nestlé S.A.",
+  "country": "Suisse",
+  "city": "Vevey",
+  "sector": "Agroalimentaire",
+  "size": {
+    "revenue_bn_eur": 93,
+    "employees": 275000,
+    "index": "SMI"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": true,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB+",
+      "sustainalytics": "24.7 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "VP Sustainability & Human Rights",
+    "team": "Responsible Sourcing & Human Rights team (Geneva HQ)",
+    "location": "Vevey (siège), Genève (sustainability hub)",
+    "process": "Executive Board ESG review semestriel, validation CFO pour investissements compliance >2M CHF"
+  },
+  "pain_points": [
+    "Travail des enfants dans supply chain cacao Côte d'Ivoire sans monitoring temps réel",
+    "Swiss HRDD 2024 : exigences due diligence sans système de traçabilité conforme",
+    "GRI 408/409 reporting : données incomplètes sur travailleurs vulnérables",
+    "Pression litigation : action en justice suisse Swiss HRDD 2023"
+  ],
+  "observed_failures": [
+    "Action en justice 2023 en Suisse sous Swiss HRDD : plainte travail enfants cacao non prévenu",
+    "Rapport NGO 2022 : présence travail enfants documentée chez 7 fournisseurs cacao Tier-1",
+    "Engagement 2025 'Child Labour Monitoring' non atteint selon rapport de progrès interne"
+  ],
+  "signals_of_risk": [
+    "83% approvisionnement cacao via zones à risque élevé travail enfants (Côte d'Ivoire, Ghana)",
+    "Exposition Swiss HRDD avec mécanismes de plainte insuffisants",
+    "Pression ONG : Global Witness, FIAN International monitoring actif"
+  ],
+  "signals_of_trust": [
+    "Nestlé Cocoa Plan : programme traçabilité cacao depuis 2009",
+    "Partenariat Rainforest Alliance et Fairtrade actifs",
+    "Budget sourcing responsable >200M CHF/an",
+    "Rapport GRI Standards complet depuis 2016"
+  ],
+  "recommended_actions": [
+    "Ancrer pitch sur Swiss HRDD art.6 (devoir de diligence) et GRI 408",
+    "Proposer solution monitoring temps réel cacao supply chain avec démo",
+    "Référencer action en justice 2023 comme risque juridique documenté",
+    "Cibler VP Sustainability en premier, co-présenter avec Legal si possible"
+  ],
+  "local_tone": "Sobre GRI Standards, références exactes aux indicateurs, éviter sensationnalisme sur travail enfants — parler 'monitoring', 'traçabilité', 'risque systémique'",
+  "cultural_notes": "Culture suisse : prudence, confidentialité, éviter publicité négative. Interlocuteurs mesurent chaque engagement. Présenter preuves de terrain (pilots existants). Swiss HRDD est sujet sensible — aborder comme 'partenaire conformité', pas auditeur externe.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

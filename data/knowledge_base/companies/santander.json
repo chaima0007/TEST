@@ -1,0 +1,64 @@
+{
+  "id": "santander",
+  "slug": "santander",
+  "name": "Banco Santander S.A.",
+  "country": "Espagne",
+  "city": "Madrid",
+  "sector": "Finance / Banque",
+  "size": {
+    "revenue_bn_eur": 57,
+    "employees": 212000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "26.3 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Risk Officer / Director de Riesgos ESG",
+    "team": "ESG Risk & Sustainable Finance team (Madrid + São Paulo)",
+    "location": "Boadilla del Monte Madrid (Ciudad Financiera), São Paulo (Brasil ops), Mexico City",
+    "process": "Risk Committee semanal, aprobación COMEX para nuevas herramientas riesgo >1M€, decisiones Latam semiautónomas"
+  },
+  "pain_points": [
+    "Exclusion crédit mobile algorithmique non auditée pour populations vulnérables Latam",
+    "SFDR PAI : droits humains dans portefeuilles investissement Latam incomplets",
+    "CSDDD chaîne financière : exposition Santander comme fournisseur de financement projets à risque",
+    "Pression régulateur espagnol CNMV sur transparence ESG produits financiers"
+  ],
+  "observed_failures": [
+    "Rapport 2023 Oxfam Espagne : algorithmes crédit mobile Santander Mexique excluent populations indigènes (biais documenté)",
+    "Audit interne 2024 SFDR : PAI droits humains portefeuilles Brésil non documentés pour 18% AUM",
+    "Incident Santander Brésil 2022 : financement agribusiness déforestation Cerrado"
+  ],
+  "signals_of_risk": [
+    "Algorithmes scoring crédit mobile Latam : biais exclusion populations vulnérables — exposition légale forte",
+    "Portefeuille agribusiness Brésil : déforestation Cerrado et Amazonie exposés CSDDD",
+    "SFDR Art.8/9 : compliance droits humains produits investissement Santander insuffisante"
+  ],
+  "signals_of_trust": [
+    "Programme 'Santander Financial Inclusion' : 10M personnes bancarisées objectif 2025",
+    "Rapport TCFD + SFDR publié annuellement",
+    "Engagement NZBA (Net Zero Banking Alliance) actif",
+    "Équipe ESG Risk 80 personnes dédiées Madrid"
+  ],
+  "recommended_actions": [
+    "Pitch : audit biais algorithmiques crédit mobile Latam + SFDR PAI droits humains",
+    "Proposer outil explainable AI scoring crédit conforme inclusion financière (SDG 10)",
+    "Référencer rapport Oxfam 2023 Mexique comme urgence documentée",
+    "Approche professionnelle hispanophone, référencer contexte Latam et réglementation EU"
+  ],
+  "local_tone": "Professionnel, références réglementaires Latam (Banxico, CNMV) et EU (SFDR/CSDDD), réunion idéale Madrid Ciudad Financiera",
+  "cultural_notes": "Santander = culture ibérique décisionnelle, réunions Madrid clés même pour Latam. Chaud en relations mais structuré en process. Latam ops ont autonomie mais Madrid valide stratégie ESG. Décisions Risk prennent 6-9 mois. Valoriser expertise Latam.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

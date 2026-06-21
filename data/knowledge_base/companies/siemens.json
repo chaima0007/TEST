@@ -1,0 +1,64 @@
+{
+  "id": "siemens",
+  "slug": "siemens",
+  "name": "Siemens AG",
+  "country": "Allemagne",
+  "city": "Munich",
+  "sector": "Industrie / Technologie",
+  "size": {
+    "revenue_bn_eur": 78,
+    "employees": 320000,
+    "index": "DAX40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "17.2 (Low Risk)",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO (Chief Compliance Officer)",
+    "team": "Global Compliance & Human Rights team (Munich)",
+    "location": "Munich Wittelsbacherplatz (siège), Erlangen (industrie)",
+    "process": "Compliance Board mensuel, processus achats centralisé Munich, validation CCO obligatoire tout outil compliance"
+  },
+  "pain_points": [
+    "Discrimination génétique absente du périmètre compliance LkSG §3",
+    "LkSG §9 : mécanismes de réclamation supply chain insuffisamment déployés en Asie",
+    "AI Act : systèmes IA RH et maintenance prédictive non classifiés risque",
+    "Reporting CSRD : manque indicateurs droits humains numériques supply chain"
+  ],
+  "observed_failures": [
+    "Audit LkSG 2023 : discrimination génétique non mentionnée dans 8 des 12 politiques supply chain",
+    "Gap LkSG §3 (2) point g : tests génétiques fournisseurs non couverts par due diligence",
+    "Système de réclamation workers : taux d'utilisation <1% fournisseurs Asie du Sud"
+  ],
+  "signals_of_risk": [
+    "Exposition LkSG §3 discrimination génétique : zone grise juridique non adressée",
+    "Supply chain semi-conducteurs Asie : fournisseurs sans politique droits numériques",
+    "AI Act 2026 : systèmes IA maintenance prédictive potentiellement haut risque"
+  ],
+  "signals_of_trust": [
+    "Programme intégrité Siemens pionnier post-scandale 2006 : référence mondiale",
+    "Budget compliance global >100M€/an",
+    "Rapport LkSG conforme soumis BAFA depuis 2023",
+    "Partenariat UNGC Advanced Level depuis 2011"
+  ],
+  "recommended_actions": [
+    "Pitch spécialisé LkSG §3 discrimination génétique — angle unique non adressé par EcoVadis",
+    "Proposer module évaluation fournisseurs couvrant 17 risques LkSG incluant génétique",
+    "Préparer plan d'implémentation détaillé 12 mois avec jalons mesurables",
+    "CCO Siemens valorise la rigueur technique : préparer documentation exhaustive"
+  ],
+  "local_tone": "Technique, plan d'implémentation détaillé, références légales exactes LkSG, éviter vague — tout doit être mesurable et documentable",
+  "cultural_notes": "Siemens post-scandale 2006 = culture compliance très développée. Interlocuteurs CCO très expérimentés. Différencier par spécialisation droits humains vs compliance généraliste. Décisions structurées, process long mais prévisible. Deutsch ou anglais selon interlocuteur.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

@@ -1,0 +1,64 @@
+{
+  "id": "repsol",
+  "slug": "repsol",
+  "name": "Repsol S.A.",
+  "country": "Espagne",
+  "city": "Madrid",
+  "sector": "Pétrole / Gaz",
+  "size": {
+    "revenue_bn_eur": 56,
+    "employees": 25000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "31.2 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO / Director de Sostenibilidad",
+    "team": "Dirección de Sostenibilidad y Derechos Humanos (Madrid)",
+    "location": "Madrid (Torre Repsol), Bogotá (Colombia ops), Lima (Perú ops)",
+    "process": "Comité Sostenibilidad mensual, aprobación COMEX para compromisos derechos humanos >500K€"
+  },
+  "pain_points": [
+    "Droits des peuples autochtones Amazonie colombienne et péruvienne absents CSDDD périmètre",
+    "FPIC (Free, Prior and Informed Consent) : processus non documenté pour 6 blocs pétroliers actifs",
+    "CSDDD art.8 : mesures préventives peuples autochtones insuffisantes selon OIT Convention 169",
+    "Reporting CSRD : données sociales opérations Latam non consolidées au niveau groupe"
+  ],
+  "observed_failures": [
+    "Plainte 2022 CIDH (Commission Interaméricaine Droits Humains) : bloc pétrolier Pérou sans FPIC communautés Achuar",
+    "Rapport 2023 Amazon Watch : Repsol Colombie — déversement pétrole sans mécanisme réclamation opérationnel",
+    "Absence de politique FPIC documentée dans 4 des 6 blocs Amazonie actifs"
+  ],
+  "signals_of_risk": [
+    "OIT Convention 169 : FPIC non respecté = exposition litiges CIDH + CSDDD",
+    "Communautés autochtones Amazonie : acteurs sociaux très organisés juridiquement",
+    "Pression EU : CSDDD art.8 mesures préventives peuples autochtones explicitement mentionnés"
+  ],
+  "signals_of_trust": [
+    "Engagement transition énergétique 2030 (50% production bas carbone)",
+    "Rapport GRI Standards + IPIECA Oil & Gas complet depuis 2015",
+    "Politique droits humains publiée 2021 alignée UNGP",
+    "Programme investissement social communautaire 15M€/an Latam"
+  ],
+  "recommended_actions": [
+    "Pitch FPIC + CSDDD art.8 peuples autochtones Amazonie — cas d'usage Repsol parfaitement calé",
+    "Proposer outil cartographie FPIC avec documentation conformité OIT 169",
+    "Référencer plainte CIDH 2022 Pérou comme risque juridique international documenté",
+    "Approche chaleur hispanophone : valoriser connaissance terrain Latam"
+  ],
+  "local_tone": "Chaleureux, référence secteur pétrolier espagnol et Latam, espagnol préféré, mention références régulation EU + CIDH + OIT 169",
+  "cultural_notes": "Repsol = culture espagnole, relations personnelles importantes. Décisions Madrid mais opérations très autonomes Latam. Le CCO connaît le terrain Latam — montrer expertise locale. Réunion idéale à Madrid, déjeuner possible. Éviter confrontation — proposer 'partenariat conformité'.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

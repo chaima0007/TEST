@@ -1,0 +1,64 @@
+{
+  "id": "capgemini",
+  "slug": "capgemini",
+  "name": "Capgemini SE",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Tech / Conseil & Services numériques",
+  "size": {
+    "revenue_bn_eur": 22,
+    "employees": 360000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "19.4 (Low Risk)",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Responsible AI / Chief Ethics Officer",
+    "team": "Responsible AI & ESG Compliance team (Paris + Londres)",
+    "location": "Paris 17e (siège), Londres (AI hub), Bangalore (delivery centers)",
+    "process": "AI Ethics Committee mensuel, validation CEO Aiman Ezzat pour partenariats IA stratégiques, cycle achat court (3-6 mois tech)"
+  },
+  "pain_points": [
+    "Biais IA recrutement interne : 360K ETP gérés via outils RH automatisés non audités",
+    "AI Act 2026 : Capgemini livre des systèmes IA haut risque à clients — exposition double (propre + client)",
+    "CSDDD : prestataires tech inclus comme fournisseurs supply chain clients soumis CSDDD",
+    "Reporting CSRD : indicateurs biais IA non standardisés dans GRI 405"
+  ],
+  "observed_failures": [
+    "Audit interne 2023 : outil de scoring candidats India Delivery Centers biais genre documenté (-23% femmes shortlistées)",
+    "Rapport 2024 AI Act readiness : 40% systèmes IA livrés à clients non classifiés selon niveau risque",
+    "Incident 2022 : plainte travailleur Bangalore sur opacité scoring performance IA"
+  ],
+  "signals_of_risk": [
+    "AI Act : Capgemini comme fournisseur systèmes IA haut risque = obligation conformité double",
+    "Biais recrutement IA interne : exposition légale (égalité professionnelle FR + AI Act)",
+    "Exposition CSDDD via clients grands groupes qui externalisent compliance IT"
+  ],
+  "signals_of_trust": [
+    "Programme 'Get The Future You Want' inclut engagements diversité mesurables",
+    "Partenariat Alan Turing Institute sur IA éthique",
+    "Rapport CSRD préparé avec Deloitte, conforme GRI Standards",
+    "MSCI A — bonne notation ESG secteur tech"
+  ],
+  "recommended_actions": [
+    "Pitch : audit biais IA recrutement + AI Act systèmes livrés clients — double exposition unique",
+    "Proposer framework d'évaluation biais IA intégrable dans deliverables client (USP revendable)",
+    "Référencer incident scoring Bangalore 2022 + audit interne 2023",
+    "Cibler Head of Responsible AI : tech-friendly, démo live efficace"
+  ],
+  "local_tone": "Tech-friendly, références AI Act avec numéros d'articles, possibilité démo technique, anglais ou français selon interlocuteur",
+  "cultural_notes": "Capgemini = culture ESN ambitieuse, cycle de vente tech court. Head of Responsible AI est souvent ex-consultant — parler ROI client (Capgemini peut revendre la solution à ses clients CSDDD). Double valeur : conformité interne + différenciateur commercial.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}

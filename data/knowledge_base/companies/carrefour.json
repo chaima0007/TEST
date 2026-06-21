@@ -1,0 +1,64 @@
+{
+  "id": "carrefour",
+  "slug": "carrefour",
+  "name": "Carrefour SA",
+  "country": "France",
+  "city": "Massy",
+  "sector": "Distribution / Grande distribution",
+  "size": {
+    "revenue_bn_eur": 90,
+    "employees": 320000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "27.6 (Medium Risk)",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO / Directeur RSE Groupe",
+    "team": "Direction RSE & Achats Responsables (Massy)",
+    "location": "Massy (siège), Évry (logistique)",
+    "process": "Comité RSE mensuel, validation COMEX pour engagements fournisseurs >1M€, processus achats centralisé France"
+  },
+  "pain_points": [
+    "Maltraitance et bien-être des aînés employés : KPI absents des tableaux de bord RH",
+    "CSDDD : cartographie supply chain alimentaire mondiale (>10K fournisseurs) sans outil adapté",
+    "Incident déforestation Brésil 2023 : viande bovine fournisseurs non tracée",
+    "CSRD : données sociales granulaires employés terrain (caissiers, manutentionnaires) manquantes"
+  ],
+  "observed_failures": [
+    "Incident 2023 : Carrefour Brésil lié à déforestation amazonie via fournisseur bœuf JBS (rapport Mighty Earth)",
+    "Audit 2024 : KPI bien-être employés seniors (>55 ans) absents 78% des entités groupe",
+    "Mécanisme de réclamation fournisseurs : taux remontée <3% en Asie du Sud-Est"
+  ],
+  "signals_of_risk": [
+    "Supply chain alimentaire : déforestation, travail forcé zones cacao, café, soja",
+    "Bien-être employés âgés : pression syndicale CFDT sur conditions travail caissiers",
+    "Exposition CSDDD chaîne agroalimentaire mondiale : périmètre très large"
+  ],
+  "signals_of_trust": [
+    "Plan de vigilance annuel conforme loi Devoir de Vigilance 2017",
+    "Partenariat Rainforest Alliance, WWF France sur sourcing durable",
+    "Initiative 'Act For Food' avec 100 engagements mesurables",
+    "Rapport social certifié KPMG depuis 2020"
+  ],
+  "recommended_actions": [
+    "Pitch : KPI bien-être aînés employés + CSDDD supply chain alimentaire — deux angles complémentaires",
+    "Proposer module monitoring conditions travail employés seniors (lien CSRD indicateurs sociaux)",
+    "Référencer incident déforestation Brésil 2023 comme cas traçabilité supply chain",
+    "Cibler CCO + DRH conjointement : deux douleurs distinctes = double valeur"
+  ],
+  "local_tone": "Formel CSDDD, focus consommateur final et réputation marque, intégrer dimension RH sociale (droits employés) pas seulement supply chain",
+  "cultural_notes": "Culture distributeur française : pragmatique, sensible au coût. Toujours lier à l'impact consommateur final et réputation marque. Décisions centralisées Massy. Les syndicats (CFDT, CGT) ont une influence sur agenda social interne — angle RH est porteur.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": []
+}
