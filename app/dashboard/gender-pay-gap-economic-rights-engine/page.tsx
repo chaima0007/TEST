@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 
-const ACCENT = "#d97706"
+const ACCENT = "#ec4899"
 const RISK_CONFIG: Record<string, { label: string; color: string; bg: string; border: string; dot: string }> = {
   critique: { label: "Critique", color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/25", dot: "bg-red-500" },
   "élevé": { label: "Élevé", color: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/25", dot: "bg-orange-500" },
@@ -16,15 +16,15 @@ const FILTER_OPTIONS = [
   { key: "faible", label: "Faible" },
 ]
 
-interface CulturalHeritageEntity {
+interface GenderPayGapEntity {
   entity_id: string
   name: string
   composite_score: number
   risk_level: string
-  estimated_heritage_protection_index: number
+  estimated_gender_equity_index: number
 }
-interface CulturalHeritageData {
-  entities: CulturalHeritageEntity[]
+interface GenderPayGapData {
+  entities: GenderPayGapEntity[]
   avg_composite: number
   risk_distribution: Record<string, number>
   domain: string
@@ -74,7 +74,7 @@ function KpiCard({ label, value, sub, accent }: { label: string; value: string |
   )
 }
 
-function EntityCard({ entity, onClick }: { entity: CulturalHeritageEntity; onClick: (e: CulturalHeritageEntity) => void }) {
+function EntityCard({ entity, onClick }: { entity: GenderPayGapEntity; onClick: (e: GenderPayGapEntity) => void }) {
   const cfg = RISK_CONFIG[entity.risk_level] ?? RISK_CONFIG.faible
   return (
     <button onClick={() => onClick(entity)}
@@ -94,8 +94,8 @@ function EntityCard({ entity, onClick }: { entity: CulturalHeritageEntity; onCli
           <p className="text-[10px] text-gray-500">Score composite</p>
         </div>
         <div className="bg-white/4 rounded-lg p-2 text-center">
-          <p className="text-sm font-bold text-white">{entity.estimated_heritage_protection_index}/10</p>
-          <p className="text-[10px] text-gray-500">Indice patrimoine</p>
+          <p className="text-sm font-bold text-white">{entity.estimated_gender_equity_index}/10</p>
+          <p className="text-[10px] text-gray-500">Indice équité</p>
         </div>
       </div>
       <div className="flex items-center justify-between text-xs">
@@ -105,7 +105,7 @@ function EntityCard({ entity, onClick }: { entity: CulturalHeritageEntity; onCli
   )
 }
 
-function DetailModal({ entity, onClose }: { entity: CulturalHeritageEntity; onClose: () => void }) {
+function DetailModal({ entity, onClose }: { entity: GenderPayGapEntity; onClose: () => void }) {
   const cfg = RISK_CONFIG[entity.risk_level] ?? RISK_CONFIG.faible
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={onClose}>
@@ -130,7 +130,7 @@ function DetailModal({ entity, onClose }: { entity: CulturalHeritageEntity; onCl
           <div className="grid grid-cols-2 gap-3">
             {[
               { label: "Score Composite", value: `${entity.composite_score}/100` },
-              { label: "Indice Protection Patrimoine", value: `${entity.estimated_heritage_protection_index}/10` },
+              { label: "Indice Équité Genre", value: `${entity.estimated_gender_equity_index}/10` },
               { label: "Niveau de risque", value: cfg.label },
               { label: "Identifiant", value: entity.entity_id },
             ].map(({ label, value }) => (
@@ -150,7 +150,7 @@ function DetailModal({ entity, onClose }: { entity: CulturalHeritageEntity; onCl
                 style={{ width: `${Math.min(100, entity.composite_score)}%`, backgroundColor: ACCENT }} />
             </div>
             <p className="text-[11px] text-gray-500 mt-1.5">
-              Destruction délibérée du patrimoine culturel de l&apos;humanité — sites UNESCO &amp; monuments historiques
+              Indice droits économiques femmes — écart salarial &amp; exclusion du marché du travail
             </p>
           </div>
         </div>
@@ -159,14 +159,14 @@ function DetailModal({ entity, onClose }: { entity: CulturalHeritageEntity; onCl
   )
 }
 
-export default function CulturalHeritageDestructionDashboard() {
-  const [data, setData] = useState<CulturalHeritageData | null>(null)
+export default function GenderPayGapEconomicRightsDashboard() {
+  const [data, setData] = useState<GenderPayGapData | null>(null)
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState("tous")
-  const [selected, setSelected] = useState<CulturalHeritageEntity | null>(null)
+  const [selected, setSelected] = useState<GenderPayGapEntity | null>(null)
 
   useEffect(() => {
-    fetch("/api/cultural-heritage-destruction-engine")
+    fetch("/api/gender-pay-gap-economic-rights-engine")
       .then((r) => r.json())
       .then((d) => {
         const payload = d.payload ?? d
@@ -188,9 +188,9 @@ export default function CulturalHeritageDestructionDashboard() {
 
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-white">Destruction Patrimoine Culturel</h1>
+            <h1 className="text-2xl font-bold text-white">Écart Salarial &amp; Droits Économiques Femmes</h1>
             <p className="text-sm text-gray-400 mt-1">
-              Destruction &amp; pillage du patrimoine culturel mondial — sites UNESCO &amp; monuments historiques
+              Inégalités salariales &amp; exclusion économique des femmes — surveillance mondiale
             </p>
           </div>
           <span className="text-xs text-gray-500 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
@@ -207,7 +207,7 @@ export default function CulturalHeritageDestructionDashboard() {
         {!loading && data && (
           <>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <KpiCard label="Entités analysées" value={total} sub="zones surveillées" />
+              <KpiCard label="Entités analysées" value={total} sub="pays surveillés" />
               <KpiCard label="Score composite moyen" value={data.avg_composite?.toFixed(2) ?? "—"} sub="indice agrégé"
                 accent={data.avg_composite >= 60 ? "text-red-400" : data.avg_composite >= 40 ? "text-orange-400" : "text-emerald-400"} />
               <KpiCard label="Cas critiques" value={critiques} sub="intervention urgente" accent="text-red-400" />
@@ -216,7 +216,7 @@ export default function CulturalHeritageDestructionDashboard() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="bg-white/4 border border-white/10 rounded-xl p-6">
-                <h2 className="text-sm font-semibold text-gray-300 mb-6">Indicateurs Destruction Patrimoine</h2>
+                <h2 className="text-sm font-semibold text-gray-300 mb-6">Indicateurs Écart Salarial</h2>
                 <div className="grid grid-cols-4 gap-4">
                   <GaugeRing value={data.avg_composite} max={100} label="Score Moyen" color={ACCENT} />
                   <GaugeRing value={critiques} max={total} label="Critique" color="#ef4444" />
@@ -265,14 +265,14 @@ export default function CulturalHeritageDestructionDashboard() {
             </div>
 
             {critiques > 0 && (
-              <div className="rounded-xl px-5 py-4 flex items-start gap-3" style={{ backgroundColor: "rgba(217,119,6,0.08)", border: "1px solid rgba(217,119,6,0.2)" }}>
+              <div className="rounded-xl px-5 py-4 flex items-start gap-3" style={{ backgroundColor: "rgba(236,72,153,0.08)", border: "1px solid rgba(236,72,153,0.2)" }}>
                 <div className="w-2 h-2 rounded-full mt-1.5 shrink-0 animate-pulse" style={{ backgroundColor: ACCENT }} />
                 <div>
                   <p className="text-sm font-medium" style={{ color: ACCENT }}>
-                    {critiques} entité{critiques > 1 ? "s" : ""} en situation critique de destruction du patrimoine culturel
+                    {critiques} entité{critiques > 1 ? "s" : ""} en situation critique d&apos;inégalité économique de genre
                   </p>
                   <p className="text-xs mt-0.5" style={{ color: `${ACCENT}b3` }}>
-                    Intervention immédiate requise — protection du patrimoine de l&apos;humanité prioritaire
+                    Intervention immédiate requise — droits économiques des femmes prioritaires
                   </p>
                 </div>
               </div>
