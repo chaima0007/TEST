@@ -7866,6 +7866,30 @@ function IconPovettySocialExclusionRights({ className }: { className?: string })
   );
 }
 
+function IconArtsCulturalExpressionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
+    </svg>
+  );
+}
+
+function IconMentalHealthInvoluntaryTreatment({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11m0 0H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4m0-6h10m-10 0v6m10-6h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4m0-6v6" />
+    </svg>
+  );
+}
+
+function IconBorderCrossingDetentionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /><line x1="12" y1="15" x2="12" y2="19" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8664,6 +8688,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sports-athlete-rights-engine", label: "Droits Athlètes & Sport", icon: IconSportsAthleteRights },
       { href: "/dashboard/prison-rehabilitation-reentry-rights-engine", label: "Réhabilitation Carcérale", icon: IconPrisonRehabilitationReentryRights },
       { href: "/dashboard/poverty-social-exclusion-rights-engine", label: "Pauvreté & Exclusion Sociale", icon: IconPovettySocialExclusionRights },
+      { href: "/dashboard/arts-cultural-expression-rights-engine", label: "Expression Artistique & Culture", icon: IconArtsCulturalExpressionRights },
+      { href: "/dashboard/mental-health-involuntary-treatment-engine", label: "Santé Mentale & Traitement Forcé", icon: IconMentalHealthInvoluntaryTreatment },
+      { href: "/dashboard/border-crossing-detention-rights-engine", label: "Frontières & Détention", icon: IconBorderCrossingDetentionRights },
     ],
   },
   {
