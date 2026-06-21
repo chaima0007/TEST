@@ -9291,6 +9291,30 @@ function IconYouthRightsIntergenerationalJustice({ className }: { className?: st
   );
 }
 
+function IconHousingRightsEviction({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+    </svg>
+  );
+}
+
+function IconReligiousFreedomPersecution({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  );
+}
+
+function IconSexualReproductiveHealthRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -10280,6 +10304,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/youth-rights-intergenerational-justice-engine", label: "Droits Jeunesse", icon: <IconYouthRightsIntergenerationalJustice className="w-4 h-4" /> },
       { href: "/dashboard/business-tax-evasion-human-rights-engine", label: "Évasion Fiscale &amp; Droits", icon: <IconBusinessTaxEvasionHumanRights className="w-4 h-4" /> },
       { href: "/dashboard/pandemic-health-emergency-rights-engine", label: "Urgences Sanitaires", icon: <IconPandemicHealthEmergencyRights className="w-4 h-4" /> },
+      { href: "/dashboard/housing-rights-eviction-engine", label: "Droit au Logement", icon: <IconHousingRightsEviction className="w-4 h-4" /> },
+      { href: "/dashboard/religious-freedom-persecution-engine", label: "Liberté Religieuse", icon: <IconReligiousFreedomPersecution className="w-4 h-4" /> },
+      { href: "/dashboard/sexual-reproductive-health-rights-engine", label: "Droits Sexuels &amp; Reproductifs", icon: <IconSexualReproductiveHealthRights className="w-4 h-4" /> },
     ],
   },
   {
