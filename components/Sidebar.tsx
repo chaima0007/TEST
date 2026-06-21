@@ -10523,6 +10523,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/forced-marriage-honor-violence-engine", label: "Mariages Forcés & Crimes d'Honneur", icon: <IconChildMarriageForcedUnion className="w-4 h-4" /> },
       { href: "/dashboard/autonomous-weapons-killer-robots-engine", label: "Armes Autonomes Létales", icon: <IconAIAutonomousWeaponsHumanRights className="w-4 h-4" /> },
       { href: "/dashboard/pharmaceutical-access-medicine-rights-engine", label: "Accès Médicaments", icon: <IconPandemicHealthEmergencyRights className="w-4 h-4" /> },
+      { href: "/dashboard/modern-slavery-forced-labor-contemporary-engine", label: "Esclavage Moderne", icon: <IconHumanTraffickingModernSlavery className="w-4 h-4" /> },
+      { href: "/dashboard/climate-justice-climate-refugees-rights-engine", label: "Justice Climatique", icon: <IconClimateJustice className="w-4 h-4" /> },
+      { href: "/dashboard/food-right-agribusiness-hunger-engine", label: "Droit à l&apos;Alimentation", icon: <IconFoodSovereigntyRightToFood className="w-4 h-4" /> },
     ],
   },
   {
