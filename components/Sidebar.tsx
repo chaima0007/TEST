@@ -8713,6 +8713,27 @@ function IconMiningExtractionCommunityRights({ className }: { className?: string
     </svg>
   );
 }
+function IconWaterScarcityConflictRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+    </svg>
+  );
+}
+function IconClimateJusticeLossDamageRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  );
+}
+function IconBorderWallMigrationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -9614,6 +9635,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/cultural-heritage-destruction-rights-engine", label: "Patrimoine Culturel", icon: IconCulturalHeritageDestructionRights },
       { href: "/dashboard/colonial-reparations-transitional-justice-engine", label: "Réparations Coloniales", icon: IconColonialReparationsTransitionalJustice },
       { href: "/dashboard/mining-extraction-community-rights-engine", label: "Droits Communautés Mines", icon: IconMiningExtractionCommunityRights },
+      { href: "/dashboard/water-scarcity-conflict-rights-engine", label: "Conflits Hydriques", icon: IconWaterScarcityConflictRights },
+      { href: "/dashboard/climate-justice-loss-damage-rights-engine", label: "Justice Climatique", icon: IconClimateJusticeLossDamageRights },
+      { href: "/dashboard/border-wall-migration-rights-engine", label: "Murs Frontaliers", icon: IconBorderWallMigrationRights },
     ],
   },
   {
