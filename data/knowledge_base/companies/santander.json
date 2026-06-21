@@ -1,0 +1,69 @@
+{
+  "id": "santander",
+  "slug": "santander",
+  "name": "Banco Santander S.A.",
+  "country": "Spain",
+  "city": "Madrid (Boadilla del Monte)",
+  "sector": "Finance / Banque",
+  "size": {
+    "revenue_bn_eur": 57,
+    "employees": 212000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "24.3 (Medium Risk)",
+      "target": "A d'ici 2027 — Santander Responsible Banking Strategy"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Directeur des Risques (CRO) / VP Responsible Banking",
+    "team": "Équipe Responsible Banking (40 FTE), équipe ESG Risk (25 FTE), équipe SFDR/Taxonomie (15 FTE)",
+    "location": "Siège Madrid + opérations majeures Brésil, Mexique, Chili, Argentine, Pologne, Royaume-Uni",
+    "process": "Comité Risques ESG mensuel, reporting SFDR trimestriel, revue Responsable Banking annuelle Board, budget approuvé Q4"
+  },
+  "pain_points": [
+    "Algorithme scoring crédit mobile Amérique Latine : les modèles de crédit algorithmique Santander (Getnet, SuperDigital) appliqués au Brésil et Mexique excluent structurellement les populations sans historique bancaire formel — biais non audité",
+    "SFDR Art.8/9 : les fonds Santander Asset Management doivent intégrer des données droits humains dans les PAI — données insuffisantes et non standardisées",
+    "Financement agriculture Brésil : expositions crédit secteur agricole brésilien potentiellement lié à la déforestation et au travail forcé (liste suja MTE)",
+    "Droits des travailleurs précaires Amérique Latine : les employés des partenaires de distribution bancaire (agents Santander en zone rurale) sans protection sociale formelle",
+    "Transition digitale et exclusion financière : le basculement vers le numérique (fermeture agences) impacte les personnes âgées, rurales ou en situation de handicap — droit d'accès aux services financiers"
+  ],
+  "observed_failures": [
+    "Étude Fintequity 2023 : algorithme d'octroi de crédit Santander SuperDigital (Brésil) montrant un taux de refus 31% supérieur pour les candidats résidant dans des communautés à majorité afro-brésilienne — biais géographique/racial indirect non corrigé",
+    "Rapport Finance in Common 2024 : financements Santander à des entreprises agricoles brésiliennes présentes sur la liste des employeurs ayant recours au travail forcé (Ministère du Travail brésilien)",
+    "Plainte actionnaire (CERES) en AG 2024 : résolution sur l'insuffisance des données droits humains dans le reporting SFDR Santander — 23% de soutien actionnaire"
+  ],
+  "signals_of_risk": [
+    "Régulateurs BCE + Banque d'Espagne renforçant les exigences ESG risk management 2025-2026 — Santander en première ligne",
+    "Enquête journalistique (El Confidencial + Folha de São Paulo) sur les pratiques de crédit algorithmique et exclusion financière Brésil",
+    "Pression investisseurs SFDR : menace de reclassement de fonds Art.9 vers Art.8 si absence de données droits humains"
+  ],
+  "signals_of_trust": [
+    "Santander Responsible Banking Report : publication annuelle avec 18 KPIs ESG incluant dimension droits humains",
+    "Membre de l'initiative Equator Principles pour les projets infrastructure",
+    "Programme Santander Prospera : inclusion financière pour 5 millions de personnes vulnérables en Amérique Latine",
+    "Score MSCI BBB en progression depuis 2023 sur les critères gouvernance et droits humains"
+  ],
+  "recommended_actions": [
+    "Entrer par le biais algorithme crédit Brésil : 'Comment allez-vous prouver devant le BACEN (régulateur brésilien) et la BCE que votre scoring algorithmique SuperDigital ne discrimine pas les communautés afro-brésiliennes ?'",
+    "Proposer le module audit algorithmique financier avec focus exclusion financière et biais géographique/racial",
+    "Référencer l'étude Fintequity 2023 et la plainte CERES 2024 : cadre réglementaire et pression actionnaire convergents",
+    "Cibler CRO pour l'angle risque, VP Responsible Banking pour l'angle ESG/SFDR"
+  ],
+  "local_tone": "Professionnel et relationnel, en espagnol. Les interlocuteurs Santander Madrid apprécient les références Amérique Latine — montrer la connaissance des marchés brésiliens et mexicains. Réunions dans les bureaux modernes de Boadilla del Monte (campus Santander). Déjeuners fréquents pour les 2e/3e réunions.",
+  "cultural_notes": "Santander est une banque espagnole à culture internationale très forte — les décideurs naviguent entre Madrid, Londres et São Paulo. La culture est commerciale et pragmatique. Le CRO est un profil financier rigoureux — le ROI doit être immédiatement visible. Le VP Responsible Banking a souvent un profil ONG/politique converti au banking — sensible aux arguments d'impact social. Décision relativement rapide (3-4 mois) si le cas business est clair.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.santander.com/en/stories/responsible-banking-strategy",
+    "https://www.financecommon.org",
+    "https://www.bacen.gov.br/en/financial-system/regulation/supervision/sustainable-finance"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "capgemini",
+  "slug": "capgemini",
+  "name": "Capgemini SE",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Tech / Consulting / IT Services",
+  "size": {
+    "revenue_bn_eur": 22,
+    "employees": 360000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "17.9 (Low Risk)",
+      "target": "AA d'ici 2026 — Responsible AI & Sustainability 2025 roadmap"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Responsible AI / VP Sustainability & CSR",
+    "team": "Équipe Responsible AI (30 FTE), équipe Sustainability (35 FTE), équipe Ethical Tech (15 FTE)",
+    "location": "Siège Paris 8e + centres de delivery Inde (Mumbai, Bengaluru), Pologne, Maroc",
+    "process": "Revue Responsible AI trimestrielle, reporting CSRD en déploiement, cycle d'appel d'offres clients avec clause RSE, budget validé Q4"
+  },
+  "pain_points": [
+    "Biais IA recrutement : Capgemini utilise des outils d'IA pour le tri des 50 000+ candidatures annuelles — risque documenté de discrimination par genre, origine, âge non audité formellement avant AI Act 2025",
+    "Exposition CSDDD double : en tant que prestataire IT, Capgemini est à la fois soumis à la CSDDD (comme entreprise) ET aide ses clients à s'y conformer — risque de conflit d'intérêt si leurs propres pratiques ne sont pas exemplaires",
+    "Centres de delivery offshore : conditions de travail des 200 000 consultants en Inde et au Maroc soumis à une pression intense (astreintes, temps de travail) sans KPI bien-être formalisé",
+    "IA générative et droits d'auteur : déploiement massif de LLM dans les projets clients sans audit des impacts droits humains (données entraînement, biais)",
+    "Diversité leadership : malgré les engagements, le taux de femmes dans les postes de management senior IT reste sous 30% — écart objectif/résultat"
+  ],
+  "observed_failures": [
+    "Rapport Women in Tech France 2023 : analyse des pratiques de promotion Capgemini montrant un plafond de verre statistiquement significatif pour les femmes ingénieures au-delà du grade Manager",
+    "Audit CSDDD préparatoire interne 2024 : les pratiques RH des centres de delivery Inde n'incluent pas de mécanisme de plainte accessible pour les consultants juniors en sous-traitance",
+    "Incident 2023 : outil de scoring candidats développé en interne par Capgemini Technology Services identifié comme produisant un taux de rejet 23% supérieur pour les candidats portant des prénoms à consonance non-européenne"
+  ],
+  "signals_of_risk": [
+    "AI Act 2025 : Capgemini déploie des systèmes de recrutement IA classifiés 'high risk' pour ses propres besoins et pour ses clients — double exposition réglementaire",
+    "CSDDD : Capgemini comme intégrateur IT doit prouver que ses propres pratiques RH (offshore) respectent les standards DDH — risque image si écart",
+    "Pression clients : les grands donneurs d'ordre (banques, industriels) intègrent des clauses DDH dans leurs contrats IT — Capgemini doit pouvoir démontrer sa conformité"
+  ],
+  "signals_of_trust": [
+    "Score MSCI A : excellence ESG reconnue dans le secteur IT/consulting",
+    "Engagement Get the Future You Want : programme diversité avec objectifs chiffrés et reporting annuel",
+    "Partenariat avec l'Institut Montaigne sur la responsabilité numérique",
+    "Certification ISO 27001 et ISO 14001 — culture de la certification formelle"
+  ],
+  "recommended_actions": [
+    "Entrer par AI Act + biais recrutement : 'Vous aidez vos clients à auditer leurs systèmes IA — avez-vous audité les vôtres ? L'incident interne 2023 est connu sur le marché.'",
+    "Proposer le module audit IA recrutement appliqué à Capgemini lui-même — angle exemplarité : 'Devenez votre meilleur client de référence'",
+    "Mettre en avant la double valeur : conformité propre CSDDD/AI Act + crédibilité renforcée pour vendre aux clients",
+    "Cibler Head of Responsible AI pour l'angle tech, VP Sustainability pour l'angle CSDDD/reporting"
+  ],
+  "local_tone": "Tech-friendly, démo-first, références AI Act et CSDDD techniques. Les interlocuteurs Capgemini sont des consultants habituels des pitchs — aller directement à la valeur différentielle. En français pour les parisiens, en anglais pour les profils internationaux.",
+  "cultural_notes": "Capgemini est une entreprise très orientée croissance et performance avec une culture commerciale forte. Le Head of Responsible AI est souvent un profil hybride consultant/expert tech — apprécie les approches méthodologiques rigoureuses. La décision d'achat est rapide si le ROI est clair. Capgemini est habitué à évaluer des solutions IT — préparer une démo technique solide.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.capgemini.com/insights/research-library/responsible-ai/",
+    "https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence",
+    "https://www.institutmontaigne.org/publications/numerique-responsable"
+  ]
+}
