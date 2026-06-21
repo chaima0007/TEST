@@ -8762,6 +8762,27 @@ function IconDisabilityRightsInclusiveSociety({ className }: { className?: strin
     </svg>
   );
 }
+function IconElderRightsAgeism({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+    </svg>
+  );
+}
+function IconAcidAttackGenderViolence({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+function IconNuclearVictimsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -9667,6 +9688,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/climate-justice-loss-damage-rights-engine", label: "Justice Climatique", icon: IconClimateJusticeLossDamageRights },
       { href: "/dashboard/border-wall-migration-rights-engine", label: "Murs Frontaliers", icon: IconBorderWallMigrationRights },
       { href: "/dashboard/sexual-orientation-identity-criminalization-engine", label: "Criminalisation SOGIE", icon: IconSexualOrientationIdentityCriminalization },
+      { href: "/dashboard/elder-rights-ageism-engine", label: "Droits Personnes Âgées", icon: IconElderRightsAgeism },
+      { href: "/dashboard/acid-attack-gender-violence-engine", label: "Attaques Acide", icon: IconAcidAttackGenderViolence },
+      { href: "/dashboard/nuclear-victims-rights-engine", label: "Victimes Nucléaires", icon: IconNuclearVictimsRights },
       { href: "/dashboard/human-trafficking-labor-exploitation-rights-engine", label: "Traite Humaine", icon: IconHumanTraffickingLaborExploitationRights },
       { href: "/dashboard/disability-rights-inclusive-society-engine", label: "Droits Handicap", icon: IconDisabilityRightsInclusiveSociety },
       { href: "/dashboard/inventions-portfolio-engine", label: "Brevets Caelum", icon: IconInventionsPortfolio },
