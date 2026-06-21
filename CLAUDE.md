@@ -1,4 +1,5 @@
 @AGENTS.md
+@docs/protocols/wave-development-protocol.md
 
 # Guide de collaboration — Caelum Partners
 
