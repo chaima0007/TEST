@@ -8526,6 +8526,25 @@ function IconChildMarriageForcedUnions({ className }: { className?: string }) {
   );
 }
 
+function IconProtestFreedomAssemblyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2M7 8H5a2 2 0 00-2 2v6a2 2 0 002 2h2" />
+      <rect x="7" y="4" width="10" height="16" rx="1" />
+      <path strokeLinecap="round" d="M10 9h4M10 12h4M10 15h2" />
+    </svg>
+  );
+}
+
+function IconSexualViolenceConflictImpunity({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4M12 16h.01" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9404,6 +9423,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/environmental-defenders-rights-engine", label: "Défenseurs Env.", icon: IconEnvironmentalDefendersRights },
       { href: "/dashboard/antiterrorism-laws-rights-abuse-engine", label: "Lois Antiterro", icon: IconAntiterrorismLawsRightsAbuse },
       { href: "/dashboard/child-marriage-forced-unions-engine", label: "Mariage Enfants", icon: IconChildMarriageForcedUnions },
+      { href: "/dashboard/protest-freedom-assembly-rights-engine", label: "Liberté Manifestation", icon: IconProtestFreedomAssemblyRights },
+      { href: "/dashboard/sexual-violence-conflict-impunity-engine", label: "Violences Conflits", icon: IconSexualViolenceConflictImpunity },
     ],
   },
   {
