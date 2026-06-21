@@ -1,0 +1,70 @@
+{
+  "id": "heineken",
+  "slug": "heineken",
+  "name": "Heineken NV",
+  "country": "Netherlands",
+  "city": "Amsterdam",
+  "sector": "Boissons",
+  "size": {
+    "revenue_bn_eur": 36,
+    "employees": 85000,
+    "index": "AEX"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "21.8 Low Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / VP Global Procurement",
+    "team": "EverGreen Sustainability team, Global Procurement Responsible Sourcing",
+    "location": "Amsterdam (siège, Tweede Weteringplantsoen), Rotterdam (opérations), Leuven (Heineken Belgium)",
+    "process": "Sustainability Council mensuel, Responsible Sourcing Program avec audits annuels fournisseurs, processus d'escalade incidents"
+  },
+  "pain_points": [
+    "Filières agricoles brassicoles : houblon (Allemagne, République Tchèque, USA), orge (Europe, Australie), maïs (Afrique) — conditions de travail des producteurs agricoles",
+    "Expansion en Afrique subsaharienne (Nigeria, Éthiopie, RDC, Zimbabwe) : opérations dans des pays à risque DDH élevé avec gouvernance faible",
+    "Marketing responsable de l'alcool : protection des mineurs et des populations vulnérables dans les pays d'Afrique et d'Asie sans réglementation publicitaire robuste",
+    "Accès à l'eau pour la production brassicole dans des zones de stress hydrique (Afrique du Nord, Mexique, Inde)",
+    "Conditions de travail dans les brasseries locales en Afrique (salaires, sécurité, droits syndicaux) — standards hétérogènes selon les pays",
+    "Chaîne de distribution et points de vente informels en Afrique : risques d'association avec des pratiques illégales ou informelles"
+  ],
+  "observed_failures": [
+    "Rapport BBC Africa Eye 2021 : exploitation de femmes 'bar ladies' promues à l'alcool via des pratiques de marketing Heineken au Congo, Mozambique et Sierra Leone",
+    "Audit brasserie Nigeria (2022) : conditions de sécurité non conformes dans une usine d'embouteillage sous-traitée à Lagos — accident mortel, enquête interne",
+    "Conflit eau Mexique (2023) : la brasserie Heineken de Monterrey pointée pour consommation excessive dans une zone en pénurie hydrique — plainte communautés locales"
+  ],
+  "signals_of_risk": [
+    "Stratégie de croissance fortement orientée Afrique subsaharienne — exposition croissante aux risques DDH dans des marchés complexes",
+    "Produit alcool structurellement exposé aux risques de santé publique, en particulier dans les populations vulnérables",
+    "Dépendance à l'eau dans des zones de stress hydrique croissant (Mexique, Inde, Afrique du Nord)"
+  ],
+  "signals_of_trust": [
+    "Programme EverGreen : stratégie de durabilité 2030 avec objectifs mesurables sur l'eau, le carbone et les communautés",
+    "Partenariat WaterAid pour l'accès à l'eau dans les communautés autour des brasseries africaines",
+    "Rapport de développement durable certifié GRI avec vérification KPMG",
+    "Programme Brewing a Better World avec investissements dans les coopératives agricoles locales en Afrique"
+  ],
+  "recommended_actions": [
+    "Proposer un module DDH spécialisé pour les opérations en Afrique subsaharienne avec focus droits syndicaux, sécurité au travail et marketing responsable",
+    "Démontrer comment évaluer et documenter les risques DDH dans les filières agricoles brassicoles (orge, houblon, maïs) pour la conformité CSDDD",
+    "Présenter une solution de cartographie des droits à l'eau pour les brasseries en zones de stress hydrique",
+    "Organiser une session avec l'équipe Responsible Sourcing autour du cas Afrique et des best practices DDH dans l'industrie brassicole"
+  ],
+  "local_tone": "Ton professionnel néerlandais : direct, pragmatique, orienté impact concret. Heineken apprécie les partenaires qui comprennent les réalités des marchés émergents et qui proposent des solutions adaptées aux contextes locaux. La dimension internationale et la diversité culturelle sont des valeurs importantes.",
+  "cultural_notes": "Heineken est une entreprise familiale (famille Heineken via IHC) avec une culture très commerciale et internationale. Les équipes de durabilité sont engagées mais travaillent avec des contraintes commerciales fortes. L'expansion africaine est une priorité stratégique — les solutions qui renforcent les opérations sur ce continent sont particulièrement valorisées.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.theheinekencompany.com/sustainability",
+    "https://www.bbc.co.uk/news/world-africa-heineken-bar-ladies-2021",
+    "https://www.business-humanrights.org/en/companies/heineken/"
+  ]
+}

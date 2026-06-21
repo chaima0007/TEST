@@ -1,0 +1,70 @@
+{
+  "id": "sodexo",
+  "slug": "sodexo",
+  "name": "Sodexo SA",
+  "country": "France",
+  "city": "Issy-les-Moulineaux",
+  "sector": "Services",
+  "size": {
+    "revenue_bn_eur": 23,
+    "employees": 412000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "19.2 Low Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / Chief People Officer",
+    "team": "Better Tomorrow 2025 team, Global People & Culture, Procurement Sustainability",
+    "location": "Issy-les-Moulineaux (siège), Paris, Londres (UK HQ), Gaithersburg MD (USA HQ)",
+    "process": "Sustainability Governance Committee trimestriel, Better Tomorrow 2025 reviews, plan de vigilance annuel publié, processus d'audit fournisseurs alimentation"
+  },
+  "pain_points": [
+    "Travailleurs de services à haut risque de vulnérabilité : personnel de nettoyage, restauration collective, gardiennage — surreprésentation de migrants et de femmes",
+    "Conditions de travail des employés en sous-traitance (gardiennage, nettoyage externalisé) : chaîne de sous-traitance complexe avec standards hétérogènes",
+    "Approvisionnement alimentaire : filières viande, poisson, fruits et légumes avec risques DDH dans les pays producteurs (Mexique, Maroc, Thaïlande)",
+    "Opérations dans des prisons, bases militaires, sites offshore : contextes à haut risque pour les droits des personnes détenues et des travailleurs isolés",
+    "Équité salariale et discrimination : entreprise avec 412 000 employés dont 60% de femmes — enjeux d'égalité de rémunération et de promotion",
+    "Conformité loi de vigilance : plan 2023 critiqué par des ONG pour l'absence de mécanisme de réclamation accessible aux travailleurs les plus vulnérables"
+  ],
+  "observed_failures": [
+    "Rapport ITUC 2022 : conditions de travail dégradées dans les concessions Sodexo dans des prisons australiennes — sous-staffing, heures supplémentaires non payées",
+    "Sodexo Qatar (Coupe du Monde 2022) : employés de restauration Sodexo dans des conditions de logement non conformes aux standards ILO documentées par The Guardian",
+    "Plan de vigilance 2023 : évaluation insuffisante selon Sherpa sur la cartographie des risques dans les filières alimentaires Tier 2 et 3"
+  ],
+  "signals_of_risk": [
+    "Secteur des services avec 412 000 employés à haute vulnérabilité DDH directe — risques non dans la supply chain mais dans les opérations propres",
+    "Présence dans des contextes fermés (prisons, bases militaires, offshore) où les risques DDH sont amplifiés par l'isolement",
+    "Pression des clients grand comptes (gouvernements, grandes entreprises) pour des preuves vérifiables de conformité DDH"
+  ],
+  "signals_of_trust": [
+    "Better Tomorrow 2025 : plan stratégique RSE avec 45 engagements mesurables sur les conditions de travail, la diversité et l'alimentation durable",
+    "Index Equileap : Sodexo classée régulièrement dans le top 10 mondial pour l'égalité femmes-hommes",
+    "Rapport de durabilité intégré publié selon GRI avec vérification externe (PwC)",
+    "Programme STOP Hunger : lutte contre la malnutrition dans les communautés des pays d'opération, touchant 3 millions de personnes"
+  ],
+  "recommended_actions": [
+    "Proposer un module DDH adapté aux risques des opérations propres (vs. supply chain) : conditions de travail des employés directs dans des contextes à haut risque",
+    "Démontrer comment améliorer le mécanisme de réclamation pour les travailleurs vulnérables (multilingue, anonyme, accessible sans smartphone)",
+    "Présenter une solution d'évaluation DDH pour les contextes fermés (prisons, bases militaires, offshore) avec protocoles adaptés",
+    "Organiser une session avec le CSO et le CPO autour de la convergence conditions de travail / CSDDD pour une entreprise de services intensifs en main-d'œuvre"
+  ],
+  "local_tone": "Ton pragmatique et centré sur les personnes, en phase avec la culture de Sodexo ('améliorer la qualité de vie'). Les interlocuteurs apprécient les approches qui mettent les travailleurs au centre. Références aux obligations françaises (loi de vigilance, accord sur l'égalité professionnelle) sont pertinentes.",
+  "cultural_notes": "Sodexo est une entreprise fondée par Pierre Bellon avec une culture d'entreprise familiale forte malgré la taille. La transmission des valeurs fondatrices (service, respect, intégrité) est prise au sérieux. Les équipes de durabilité sont souvent proches des équipes RH — une approche combinant DDH et gestion des talents est efficace.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.sodexo.com/en/better-tomorrow/",
+    "https://www.asso-sherpa.org/sodexo-plan-vigilance-2023",
+    "https://www.business-humanrights.org/en/companies/sodexo/"
+  ]
+}

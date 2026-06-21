@@ -1,0 +1,70 @@
+{
+  "id": "siemens",
+  "slug": "siemens",
+  "name": "Siemens AG",
+  "country": "Germany",
+  "city": "Munich",
+  "sector": "Industrie/Tech",
+  "size": {
+    "revenue_bn_eur": 78,
+    "employees": 320000,
+    "index": "DAX40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "14.8 Low Risk",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / Chief Procurement Officer",
+    "team": "Sustainability Organization, Supply Chain Responsibility (SCR) team",
+    "location": "Munich (siège), Berlin (opérations gouvernementales), Erlangen (infrastructure digitale)",
+    "process": "Sustainability Board trimestriel, processus de qualification fournisseurs avec scoring ESG obligatoire, mécanisme de réclamation Siemens Integrity Initiative"
+  },
+  "pain_points": [
+    "Conformité LkSG pour 60 000+ fournisseurs actifs : documentation des diligences raisonnables, gestion des plaintes et mesures correctives",
+    "Chaîne d'approvisionnement en semi-conducteurs et terres rares : concentration des risques DDH en Asie du Sud-Est et RDC",
+    "Activités en Inde (Siemens India) : risques droits des travailleurs dans les usines de sous-traitance locale, pression LkSG extra-territorial",
+    "Projets d'infrastructure dans des pays à gouvernance faible (Afrique, Moyen-Orient) : risques de corruption liés aux droits humains",
+    "Transition vers Siemens Digital Industries : impact social sur les emplois manufacturiers traditionnels en Allemagne et en Europe centrale",
+    "Gestion des données personnelles dans les solutions IoT industrielles : droits à la vie privée des travailleurs utilisant les systèmes de monitoring"
+  ],
+  "observed_failures": [
+    "Siemens Coal Australia 2020 : décision de livrer des équipements miniers malgré les protestations climatiques et droits des autochtones — recours judiciaire de Sharma v Minister for the Environment",
+    "Affaire corruption Siemens (2008) : amende record de 1,6 Mrd USD, démontrant les risques systémiques de gouvernance dans les marchés émergents",
+    "Rapport CorA 2022 : fournisseurs électroniques Siemens en Malaisie avec des pratiques de recrutement abusives pour les travailleurs migrants (frais de recrutement)"
+  ],
+  "signals_of_risk": [
+    "Exposition croissante aux risques DDH via l'expansion des solutions IoT et IA industrielle dans des contextes de surveillance des travailleurs",
+    "Complexité de la supply chain électronique avec concentration de fournisseurs en Asie du Sud-Est à risque droits humains",
+    "Pression LkSG sur les chaînes d'approvisionnement en technologies critiques (semi-conducteurs, composants électroniques)"
+  ],
+  "signals_of_trust": [
+    "Note MSCI AA — leader sectoriel dans l'industrie lourde européenne",
+    "Siemens Integrity Initiative : mécanisme de réclamation externe opérationnel depuis 2010",
+    "Rapport de développement durable certifié par KPMG selon GRI et UN SDGs",
+    "LkSG compliance system déployé avec portail fournisseurs (SAP Ariba) depuis janvier 2023"
+  ],
+  "recommended_actions": [
+    "Démontrer l'intégration avec SAP Ariba pour enrichir le scoring DDH des fournisseurs Siemens sans dupliquer les processus existants",
+    "Proposer un module spécialisé pour les risques DDH liés aux technologies de surveillance des travailleurs (IoT, capteurs, analytics)",
+    "Présenter une solution d'évaluation des risques pays pour les projets d'infrastructure dans les marchés émergents",
+    "Organiser un workshop avec l'équipe SCR autour du gap LkSG vs. CSDDD pour les fournisseurs Tier 2 et 3"
+  ],
+  "local_tone": "Ton très formel et technique, typique de la grande industrie allemande. Présenter des analyses quantifiées, des processus structurés et des références normatives précises (DIN ISO, GRI, UN Guiding Principles). La rigueur méthodologique est un signal de crédibilité fort.",
+  "cultural_notes": "Siemens a une culture d'ingénieurs très attachée à la précision et à la documentation. Les décisions sont lentes mais durables. La hiérarchie est respectée. La conscience de l'histoire de l'entreprise (période nazie) rend les équipes très sensibles aux questions de droits humains — c'est un atout pour l'engagement.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.siemens.com/global/en/company/sustainability/supply-chain.html",
+    "https://www.business-humanrights.org/en/companies/siemens-ag/",
+    "https://www.cora-netz.de/en/siemens-supply-chain-report/"
+  ]
+}
