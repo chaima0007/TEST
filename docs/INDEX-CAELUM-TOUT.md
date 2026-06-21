@@ -266,6 +266,9 @@ Pas de useCallback/useMemo            → jamais
 | Corporate Accountability Human Rights | `/dashboard/corporate-accountability-human-rights-engine` | `#0c2340` |
 | Protest Freedom Assembly Rights | `/dashboard/protest-freedom-assembly-rights-engine` | `#2d1b69` |
 | Sexual Violence Conflict Impunity | `/dashboard/sexual-violence-conflict-impunity-engine` | `#5c0a0a` |
+| Right To Education Access | `/dashboard/right-to-education-access-engine` | `#1a3a5c` |
+| Fair Trial Due Process Rights | `/dashboard/fair-trial-due-process-rights-engine` | `#2a1a3c` |
+| Xenophobia Hate Crime Minority | `/dashboard/xenophobia-hate-crime-minority-engine` | `#3c1a1a` |
 
 ---
 
