@@ -8309,6 +8309,22 @@ function IconClimateRefugeeDisplacementRights({ className }: { className?: strin
   );
 }
 
+function IconStatelessPersonsNationalityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+    </svg>
+  );
+}
+
+function IconIndigenousLandRightsTerritoralSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9148,7 +9164,6 @@ const navSections: NavSection[] = [
       { href: "/dashboard/anti-corruption-accountability-rights-engine", label: "Anti-Corruption & Redevabilité", icon: IconAntiCorruptionAccountabilityRights },
       { href: "/dashboard/internet-shutdown-digital-rights-engine", label: "Coupures Internet & Droits Numériques", icon: IconInternetShutdownDigitalRights },
       { href: "/dashboard/statelessness-citizenship-rights-engine", label: "Apatridie & Droits à la Nationalité", icon: IconStatelessnessCitizenshipRights },
-      { href: "/dashboard/human-trafficking-modern-slavery-engine", label: "Trafic Humain & Esclavage Moderne", icon: IconHumanTraffickingModernSlavery },
       { href: "/dashboard/colonial-reparations-historical-justice-engine", label: "Réparations Coloniales & Justice Historique", icon: IconColonialReparationsHistoricalJustice },
       { href: "/dashboard/biometric-surveillance-state-control-engine", label: "Surveillance Biométrique & Contrôle Étatique", icon: IconBiometricSurveillanceStateControl },
       { href: "/dashboard/food-sovereignty-agricultural-rights-engine", label: "Souveraineté Alimentaire & Droits Agricoles", icon: IconFoodSovereigntyAgriculturalRights },
@@ -9161,6 +9176,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/maternal-health-rights-obstetric-violence-engine", label: "Santé Maternelle & Violence Obstétricale", icon: IconMaternalHealthRightsObstetricViolence },
       { href: "/dashboard/academic-freedom-scholar-persecution-engine", label: "Liberté Académique & Persécution Chercheurs", icon: IconAcademicFreedomScholarPersecution },
       { href: "/dashboard/climate-refugee-displacement-rights-engine", label: "Réfugiés Climatiques & Droits Déplacement", icon: IconClimateRefugeeDisplacementRights },
+      { href: "/dashboard/stateless-persons-nationality-rights-engine", label: "Apatrides & Droits à la Nationalité", icon: IconStatelessPersonsNationalityRights },
+      { href: "/dashboard/human-trafficking-modern-slavery-engine", label: "Traite Humaine & Esclavage Moderne", icon: IconHumanTraffickingModernSlavery },
+      { href: "/dashboard/indigenous-land-rights-territorial-sovereignty-engine", label: "Droits Fonciers Autochtones & Souveraineté", icon: IconIndigenousLandRightsTerritoralSovereignty },
     ],
   },
   {
