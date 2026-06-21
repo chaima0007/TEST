@@ -317,6 +317,9 @@ Pas de useCallback/useMemo            → jamais
 | Child Online Exploitation Rights | `/dashboard/child-online-exploitation-rights-engine` | `#1a0a3a` |
 | Forced Sterilization Reproductive Coercion | `/dashboard/forced-sterilization-reproductive-coercion-engine` | `#3a0a2a` |
 | AI Surveillance Biometric Rights | `/dashboard/ai-surveillance-biometric-rights-engine` | `#0a1a3a` |
+| Arms Embargo Violations Rights | `/dashboard/arms-embargo-violations-rights-engine` | `#2a1a0a` |
+| Nomadic Pastoralist Peoples Rights | `/dashboard/nomadic-pastoralist-peoples-rights-engine` | `#1a2a0a` |
+| Prison Privatization Profit Rights | `/dashboard/prison-privatization-profit-rights-engine` | `#1a1a2a` |
 
 ---
 
