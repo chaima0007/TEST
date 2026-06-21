@@ -60,6 +60,19 @@
   ],
   "local_tone": "Formel, ancré CSDDD art.9 et UNGP. Éviter le langage trop commercial. Préférer les références réglementaires précises et les données de risque chiffrées. Le DG RSE lit les rapports Vigeo/MSCI.",
   "cultural_notes": "Culture d'ingénieur : les interlocuteurs RSE apprécient la précision technique et les benchmarks sectoriels. Éviter les formules creuses de 'transformation RSE'. Les décisions se prennent en comité, rarement à titre individuel. Premier rendez-vous = phase de qualification — ne pas proposer un contrat avant le 2e échange.",
+  "relevant_engines": [
+    "land-grabbing-rights-engine",
+    "prison-labor-rights-engine",
+    "digital-gender-gap-rights-engine",
+    "hate-speech-online-rights-engine"
+  ],
+  "caelum_value_prop": {
+    "time_saving": "Monitoring continu vs rapport de vigilance annuel",
+    "cost_saving": "490€/mois vs cabinet juridique spécialisé DDH",
+    "coverage": "Droits communautés, terres, genre, discours haine — multidimensionnel",
+    "compliance": "Alimentation directe rapport CSDDD et plan de Vigilance"
+  },
+  "pitch_angle": "CSDDD & Loi de Vigilance — documentation droits communautés locales sur sites d'extraction africains (Mozambique, Ouganda). Monitoring continu vs rapport Vigilance annuel.",
   "priority": 5,
   "last_updated": "2026-06-21",
   "source_links": [

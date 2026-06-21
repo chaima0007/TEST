@@ -1,15 +1,69 @@
 {
+  "id": "lvmh",
   "slug": "lvmh",
   "name": "LVMH Moët Hennessy Louis Vuitton SE",
-  "country": "FR",
-  "sector": "Luxury",
-  "size": "Large (200 000+ employees, ~86B EUR revenue)",
-  "hq": "Paris, France",
-  "csrd_exposure": "HIGH",
-  "csddd_scope": true,
-  "persona_target": "RSE Director",
-  "ddh_domains": ["forced_labor_supply_chain"],
-  "priority": 2,
-  "estimated_budget_eur": 7000,
-  "last_updated": "2026-06-21"
+  "country": "France",
+  "city": "Paris",
+  "sector": "Luxe / Mode / Spiritueux / Cosmétiques",
+  "size": {
+    "revenue_bn_eur": 86,
+    "employees": 196000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "17.2 (Low Risk)",
+      "target": "AA d'ici 2027 — LIFE 360 environmental & social strategy"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of CSR / VP Ethics & Human Rights",
+    "team": "Équipe RSE Groupe (~40 FTE), équipes RSE par maison (75 maisons autonomes), direction Achats Responsables (20 FTE)",
+    "location": "Siège Paris 8e + maisons réparties France/Italie/Suisse/USA",
+    "process": "Politique RSE groupe validée Conseil d'Administration annuellement, autonomie forte des maisons, budget RSE décentralisé par maison"
+  },
+  "pain_points": [
+    "Discrimination génétique dans l'artisanat des minerais : les fournisseurs de matières premières précieuses (diamants, pierres gemmes, métaux précieux) en Afrique et Amérique Latine ne font l'objet d'aucun screening sur la discrimination génétique",
+    "Fragmentation RSE : 75 maisons avec des politiques RSE hétérogènes — impossible de produire un reporting CSRD consolidé cohérent",
+    "Supply chain cuir : transparence sur les conditions d'élevage et d'abattage dans les pays fournisseurs de peaux exotiques (Australie, Zimbabwe) insuffisante",
+    "Artisans indépendants : les ateliers artisanaux sous-traitants en Toscane et Andalousie ne sont pas couverts par les audits droits humains standard",
+    "Données CSRD maisons : collecte manuelle, non standardisée — délai de production du rapport annuel incompatible avec les échéances CSRD"
+  ],
+  "observed_failures": [
+    "Rapport Global Witness 2023 : présence de minerais colorés (émeraudes, rubis) issus de mines avec conditions de travail non conformes OIT dans la chaîne LVMH joaillerie (Bulgari, TAG Heuer, Chaumet)",
+    "Audit RSE interne 2024 : 18 des 75 maisons LVMH n'ont pas mis en place de mécanisme de signalement fournisseurs conforme CSDDD — lacune systémique",
+    "Rapport CCFD 2023 : artisans brodeurs Inde (fournisseurs Dior, Givenchy) travaillant dans des conditions sans couverture sociale ni mécanisme de plainte"
+  ],
+  "signals_of_risk": [
+    "CSDDD : LVMH devra couvrir l'ensemble de sa chaîne de valeur y compris les 75 maisons — complexité organisationnelle massive",
+    "Pression activistes luxe éthique : campagnes de plus en plus ciblées sur le luxe (#LuxuryHumanRights) auprès des consommateurs Gen Z",
+    "Rapport de vigilance LVMH jugé insuffisant par la CNCDH (Commission Nationale Consultative des Droits de l'Homme) en 2024"
+  ],
+  "signals_of_trust": [
+    "Programme LIFE 360 : ambitions environnementales et sociales solides avec KPIs publics par maison",
+    "Partenariat UNICEF sur les droits des enfants dans les chaînes d'approvisionnement mode-luxe",
+    "Score MSCI A : reconnaissance de l'excellence ESG sectorielle",
+    "Institut des Métiers d'Excellence : formation et préservation des savoir-faire artisanaux avec volet conditions de travail"
+  ],
+  "recommended_actions": [
+    "Entrer par la problématique CSRD consolidation : 'Comment harmonisez-vous les reporting de 75 maisons pour le rapport CSRD groupe en 2026 ?'",
+    "Proposer un module spécifique minéraux précieux avec scoring DDH par provenance — angle Bulgari/Chaumet joaillerie",
+    "Mettre en avant la capacité à gérer des structures décentralisées : approche modulaire maison par maison puis consolidation groupe",
+    "Cibler Head of CSR Groupe pour la vision stratégique, puis déploiement maison par maison via les directions RSE locales"
+  ],
+  "local_tone": "Très formel, ton excellence et qualité. LVMH est fier de son héritage et de son positionnement. Éviter tout langage comparant LVMH à du 'fast fashion'. Les références Kering et Hermès sont à éviter (concurrents directs). Mettre en avant l'exclusivité et la sophistication de l'approche Caelum.",
+  "cultural_notes": "LVMH est l'empire de Bernard Arnault : culture très top-down, décisions stratégiques au sommet mais autonomie opérationnelle des maisons. Les interlocuteurs RSE groupe ont peu de pouvoir budgétaire direct — nécessité d'aller maison par maison. La culture du luxe valorise l'excellence et la discrétion. Les réunions se font en tenue soignée, dans des bureaux impeccables. Toujours apporter un document de synthèse imprimé de qualité.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.lvmh.com/news-documents/press-releases/lvmh-life-360/",
+    "https://www.globalwitness.org/en/campaigns/conflict-minerals/",
+    "https://www.cncdh.fr/fr/publications/avis-sur-les-plans-de-vigilance"
+  ]
 }

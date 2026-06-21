@@ -9,6 +9,19 @@
   "csddd_scope": true,
   "persona_target": "Directrice RSE",
   "ddh_domains": ["prison_labor_rights", "unpaid_care_work_rights"],
+  "relevant_engines": [
+    "prison-labor-rights-engine",
+    "algorithmic-bias-rights-engine",
+    "youth-and-child-labor-rights-engine",
+    "digital-gender-gap-rights-engine"
+  ],
+  "caelum_value_prop": {
+    "time_saving": "Monitoring continu 50+ pays vs rapport Vigilance annuel",
+    "cost_saving": "490€/mois vs audit droits sociaux multi-pays",
+    "coverage": "Prison labor, biais algo, genre, jeunesse — 4 engines pertinents services",
+    "compliance": "Documentation CSRD (chapitres S1, S2), plan de Vigilance, CSDDD"
+  },
+  "pitch_angle": "CSRD/CSDDD & Loi de Vigilance — monitoring droits travailleurs services précaires (prison labor USA, biais algorithmique recrutement, droits genre). 422 000 employés dans 50+ pays.",
   "priority": 1,
   "estimated_budget_eur": 4000,
   "last_updated": "2026-06-21"
