@@ -7582,6 +7582,41 @@ function IconRightToStrikeLaborRights({ className }: { className?: string }) {
   );
 }
 
+function IconJudicialIndependenceRights({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M12 2L3 7l9 5 9-5-9-5z"/>
+      <path d="M3 12l9 5 9-5"/>
+      <path d="M12 17v5"/>
+      <path d="M8 19l-4 2"/>
+      <path d="M16 19l4 2"/>
+    </svg>
+  );
+}
+
+function IconIndigenousDataSovereignty({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+      <path d="M2 12h20"/>
+      <path d="M12 2v4M12 18v4"/>
+    </svg>
+  );
+}
+
+function IconFairTrialDueProcess({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className ?? "w-4 h-4"}>
+      <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+      <path d="M14 3h7v7"/>
+      <path d="M21 3l-9 9"/>
+      <path d="M7 13h5"/>
+      <path d="M7 17h3"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8353,6 +8388,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/seafarers-maritime-labor-rights-engine", label: "Marins & Maritime", icon: IconSeafarersMaritimeLaborRights },
       { href: "/dashboard/cultural-minority-rights-engine", label: "Droits Minorités Culturelles", icon: IconCulturalMinorityRights },
       { href: "/dashboard/right-to-strike-labor-engine", label: "Droit de Grève", icon: IconRightToStrikeLaborRights },
+      { href: "/dashboard/judicial-independence-rights-engine", label: "Indépendance Judiciaire", icon: IconJudicialIndependenceRights },
+      { href: "/dashboard/indigenous-data-sovereignty-engine", label: "Souveraineté Données Autochtones", icon: IconIndigenousDataSovereignty },
+      { href: "/dashboard/fair-trial-due-process-engine", label: "Procès Équitable", icon: IconFairTrialDueProcess },
     ],
   },
   {
