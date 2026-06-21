@@ -7303,6 +7303,33 @@ function IconEnvironmentalCrime({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconPretrialDetention({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <rect x="3" y="6" width="18" height="15" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 6V4M16 6V4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 14v3M10.5 15.5h3" />
+    </svg>
+  );
+}
+function IconEmergencyPowersAbuse({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7L12 2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4M12 16h.01" />
+    </svg>
+  );
+}
+function IconRacialProfiling({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="9" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 8l2 2-2 2M21 10h-4" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -8018,6 +8045,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/transitional-justice-engine", label: "Justice Transitionnelle", icon: IconTransitionalJustice },
       { href: "/dashboard/climate-displacement-engine", label: "Déplacements Climatiques", icon: IconClimateDisplacement },
       { href: "/dashboard/environmental-crime-engine", label: "Criminalité Environnem.", icon: IconEnvironmentalCrime },
+      { href: "/dashboard/pretrial-detention-engine", label: "Détention Préventive", icon: IconPretrialDetention },
+      { href: "/dashboard/emergency-powers-abuse-engine", label: "Abus Pouvoirs Urgence", icon: IconEmergencyPowersAbuse },
+      { href: "/dashboard/racial-profiling-engine", label: "Profilage Racial", icon: IconRacialProfiling },
     ],
   },
   {
