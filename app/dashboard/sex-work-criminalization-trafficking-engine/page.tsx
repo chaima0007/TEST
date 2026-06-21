@@ -7,7 +7,7 @@ interface Entity {
   name: string
   composite_score: number
   risk_level: string
-  estimated_environmental_racism_index: number
+  estimated_sex_work_rights_index: number
 }
 
 interface DomainData {
@@ -18,7 +18,7 @@ interface DomainData {
   risk_distribution: Record<string, number>
 }
 
-const ACCENT = "#65a30d"
+const ACCENT = "#e879f9"
 
 function GaugeRing({ score }: { score: number }) {
   const r = 36, cx = 44, cy = 44
@@ -46,18 +46,18 @@ function RiskBadge({ level }: { level: string }) {
   )
 }
 
-export default function ToxicWasteEnvironmentalRacismPage() {
+export default function SexWorkCriminalizationTraffickingPage() {
   const [data, setData] = useState<DomainData | null>(null)
 
   useEffect(() => {
-    fetch("/api/toxic-waste-environmental-racism-engine")
+    fetch("/api/sex-work-criminalization-trafficking-engine")
       .then((r) => r.json())
       .then((d) => setData(d.payload ?? d))
   }, [])
 
   if (!data) return (
     <div style={{ background: "#0f172a", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div style={{ color: ACCENT, fontSize: 18 }}>Chargement déchets toxiques et racisme environnemental…</div>
+      <div style={{ color: ACCENT, fontSize: 18 }}>Chargement criminalisation travail sexuel et traite…</div>
     </div>
   )
 
@@ -67,12 +67,12 @@ export default function ToxicWasteEnvironmentalRacismPage() {
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{ background: ACCENT, borderRadius: 12, padding: 12, flexShrink: 0 }}>
             <svg width={28} height={28} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2}>
-              <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx={9} cy={7} r={4} /><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
             </svg>
           </div>
           <div>
             <h1 style={{ margin: 0, fontSize: 24, fontWeight: 800, color: "#f1f5f9" }}>
-              Déchets Toxiques &amp; Racisme Environnemental
+              Criminalisation Travail Sexuel &amp; Traite des Personnes
             </h1>
             <p style={{ margin: 0, color: "#94a3b8", fontSize: 14 }}>Wave 177 — Indice mondial des droits humains · Caelum Partners</p>
           </div>
@@ -104,8 +104,8 @@ export default function ToxicWasteEnvironmentalRacismPage() {
               <p style={{ margin: "0 0 10px", fontSize: 13, color: "#cbd5e1", lineHeight: 1.5 }}>{entity.name}</p>
               <div style={{ display: "flex", gap: 16 }}>
                 <div>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: ACCENT }}>{entity.estimated_environmental_racism_index.toFixed(2)}</div>
-                  <div style={{ fontSize: 11, color: "#64748b" }}>Indice racisme env.</div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: ACCENT }}>{entity.estimated_sex_work_rights_index.toFixed(2)}</div>
+                  <div style={{ fontSize: 11, color: "#64748b" }}>Indice droits</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 18, fontWeight: 700, color: "#f1f5f9" }}>{entity.composite_score.toFixed(2)}</div>

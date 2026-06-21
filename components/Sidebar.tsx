@@ -10518,6 +10518,8 @@ const navSections: NavSection[] = [
       { href: "/dashboard/disability-rights-social-exclusion-engine", label: "Droits Handicapés", icon: <IconDisabilityRights className="w-4 h-4" /> },
       { href: "/dashboard/organ-trafficking-human-parts-engine", label: "Trafic d'Organes", icon: <IconOrganTrafficking className="w-4 h-4" /> },
       { href: "/dashboard/online-censorship-internet-freedom-engine", label: "Censure Internet", icon: <IconInternetFreedomCensorship className="w-4 h-4" /> },
+      { href: "/dashboard/prison-labor-exploitation-rehabilitation-engine", label: "Travail Carcéral & Réhabilitation", icon: <IconPrisonRehabilitationReentryRights className="w-4 h-4" /> },
+      { href: "/dashboard/sex-work-criminalization-trafficking-engine", label: "Criminalisation Travail Sexuel", icon: <IconSexWorkerRightsCriminalization className="w-4 h-4" /> },
     ],
   },
   {
