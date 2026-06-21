@@ -7444,6 +7444,30 @@ function IconMenstrualHealthEducation({ className }: { className?: string }) {
   );
 }
 
+function IconFacialRecognitionSurveillance({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+    </svg>
+  );
+}
+
+function IconArtisanalMiningRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" />
+    </svg>
+  );
+}
+
+function IconNomadicPeoplesRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8176,6 +8200,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/witch-hunt-persecution-engine", label: "Chasse aux Sorcières", icon: IconWitchHuntPersecution },
       { href: "/dashboard/albinism-rights-engine", label: "Droits Albinisme", icon: IconAlbinismRights },
       { href: "/dashboard/menstrual-health-education-engine", label: "Santé Menstruelle", icon: IconMenstrualHealthEducation },
+      { href: "/dashboard/facial-recognition-surveillance-engine", label: "Surveillance Biométrique", icon: IconFacialRecognitionSurveillance },
+      { href: "/dashboard/artisanal-mining-rights-engine", label: "Mines Artisanales", icon: IconArtisanalMiningRights },
+      { href: "/dashboard/nomadic-peoples-rights-engine", label: "Droits Peuples Nomades", icon: IconNomadicPeoplesRights },
     ],
   },
   {
