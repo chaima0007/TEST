@@ -48,14 +48,16 @@ python3 engine1.py ✓ / python3 engine2.py ✓ / python3 engine3.py ✓
 - Fallback `status: 502` sur échec upstream (jamais 503)
 - Zéro credentials dans le code
 
-## Simulation — Règle permanente
-**Toujours simuler pour choisir la meilleure solution** avant toute décision non triviale.
+## Règle permanente : simuler avant de décider
 
-Exemples de situations qui déclenchent une simulation comparative :
-- Choix entre deux approches techniques ou organisationnelles
-- Sélection des 3 domaines pour une nouvelle wave
-- Paramètres SaaS / business model
-- Architecture, nommage, design système
+Avant toute décision importante :
+- branche/PR : comparer lisibilité × audit × scalabilité
+- domaines : scorer pertinence × unicité × impact droits humains
+- architecture : simuler perf × maintenabilité × sécurité
+- SaaS : tester plusieurs scénarios A/B/C avec métriques explicites
+- design : valider contraste × cohérence palette × unicité visuelle
+
+L'objectif : toujours choisir la meilleure solution avec des données et un cadre clair.
 
 Format de simulation :
 - Présenter ≥2 options avec critères explicites et scoring
