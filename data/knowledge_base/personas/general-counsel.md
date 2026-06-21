@@ -1,68 +1,53 @@
-# Persona : General Counsel / DPO / Directeur(rice) Juridique
+# Persona — General Counsel / DPO
 
 ## Profil type
-**Titre :** General Counsel / Directeur Juridique Groupe / DPO (Data Protection Officer) / Secrétaire Général  
-**Âge :** 42-58 ans  
-**Formation :** DEA/Master 2 droit (droit des affaires, droit international, droit de l'environnement), parfois barreau  
-**Expérience :** 12-20 ans en droit des affaires, souvent mix cabinet d'avocats (3-5 ans) + entreprise (10+ ans)  
-**Secteurs typiques :** Tous secteurs — le General Counsel est présent dans chaque grand compte  
-
----
+- **Titre :** General Counsel / Directeur(-trice) Juridique / Data Protection Officer (DPO)
+- **Âge :** 40–55 ans
+- **Formation :** Master 2 en droit des affaires, droit international, DJCE, barreau ou carrière en cabinet avant passage en entreprise
+- **Expérience :** 15–25 ans en droit des contrats, droit social, conformité réglementaire, protection des données
+- **Secteurs :** Tous secteurs avec présence internationale, particulièrement technologie, industrie, distribution
 
 ## Contexte et responsabilités
-Le General Counsel est le gardien de la responsabilité juridique de l'entreprise. Depuis l'avènement de la loi Vigilance (France, 2017), du LkSG (Allemagne, 2023) et de la CSDDD (EU, transposition 2026-2027), son périmètre inclut désormais formellement les droits humains dans la chaîne d'approvisionnement.
 
-Il/elle est également DPO dans certaines structures, combinant responsabilité RGPD et responsabilité DDH — deux périmètres complémentaires sur les droits fondamentaux des personnes.
+Le General Counsel est le premier défenseur juridique de l'entreprise. Son rôle combine la prévention des risques légaux, la gestion des contentieux, la structuration des contrats majeurs et l'assurance que toutes les activités de l'entreprise respectent les cadres légaux applicables. La multiplication des réglementations ESG (LkSG, CSDDD, CSRD) a considérablement élargi son périmètre d'intervention.
 
-Sa plus grande crainte : une mise en cause de la responsabilité civile ou pénale de l'entreprise (voire personnelle des dirigeants) pour violation de la loi Vigilance ou de la CSDDD.
+La CSDDD crée un cadre de responsabilité civile inédit : les victimes de violations des droits humains dans les chaînes d'approvisionnement peuvent désormais engager la responsabilité des entreprises donneuses d'ordre devant les tribunaux européens. Le General Counsel doit donc construire une protection contractuelle solide via les clauses de diligence dans les contrats fournisseurs, tout en s'assurant que les outils utilisés pour collecter et traiter les données respectent le RGPD.
 
----
+Sa double casquette juridique et protection des données devient particulièrement sensible lorsque les solutions de compliance DDH collectent des données sur des travailleurs étrangers, des lanceurs d'alerte ou des fournisseurs. Il ou elle doit valider la base légale du traitement, les transferts internationaux de données et la conformité avec l'AI Act si des algorithmes de scoring sont utilisés.
 
 ## Motivations principales
-- Identifier précisément la base légale de chaque obligation DDH applicable à l'entreprise (Vigilance, LkSG, CSDDD, Swiss HRDD...)
-- Disposer de documentation juridiquement robuste en cas de litige ou d'inspection réglementaire
-- Protéger contractuellement l'entreprise vis-à-vis des fournisseurs (clauses DDH dans les contrats d'achat)
-- Conformité RGPD : si la solution collecte des données personnelles, elle doit être RGPD-compatible by design
-- Garantir que les mécanismes de plainte sont juridiquement valides (accès, confidentialité, délais de réponse)
-
----
+- Construire une protection juridique contractuelle solide face aux risques CSDDD
+- Valider la conformité RGPD des outils de collecte de données fournisseurs et travailleurs
+- Disposer d'une documentation légale opposable en cas de contentieux ou d'enquête réglementaire
+- S'assurer que les clauses contractuelles fournisseurs couvrent les obligations de diligence
+- Anticiper les implications de l'AI Act sur les systèmes de scoring ou d'évaluation automatisée
 
 ## Pain points quotidiens
-- Les obligations CSDDD/LkSG sont encore mal définies dans les textes d'application — nécessité de surveiller les guidance BAFA et Commission européenne
-- Les contrats fournisseurs historiques n'incluent pas de clauses DDH — nécessité d'un plan de renegociation massif
-- En cas de litige NGO, l'entreprise doit prouver qu'elle a pris "les mesures raisonnables" — sans définition légale claire
-- Les données collectées par les outils de monitoring peuvent elles-mêmes créer des risques RGPD (données sur des personnes physiques)
-- La coordination Legal × RSE × Procurement est souvent défaillante — chacun croit que l'autre gère
-
----
+- Rédiger des clauses contractuelles fournisseurs couvrant LkSG et CSDDD sans précédents établis
+- Valider les flux de données transfrontaliers dans les outils de compliance (BCR, SCCs, adéquation)
+- Gérer la tension entre transparence due diligence et confidentialité des informations commerciales
+- Répondre aux demandes croissantes des équipes achats et RSE sans ressources juridiques supplémentaires
+- Anticiper les risques d'action collective ou de class action dans les pays tiers
 
 ## Ce qui le/la rassure
-- Une documentation claire de la base légale et de la méthodologie
-- Une architecture RGPD-by-design de la solution (aucune donnée personnelle identifiable sans consentement)
-- Des exemples de clauses contractuelles fournisseurs compatibles
-- La garantie que les données peuvent être utilisées comme preuve en cas de litige
-- Une SLA de disponibilité des données (pas de trou dans le monitoring)
-
----
+- Une documentation juridique complète sur les bases légales RGPD du traitement des données
+- Des clauses contractuelles types testées et validées pour l'intégration dans les contrats fournisseurs
+- La certitude que les algorithmes de scoring sont auditables et documentés (conformité AI Act)
+- Un Data Processing Agreement (DPA) solide et des certifications de sécurité (ISO 27001, SOC 2)
+- Des références de cabinets juridiques reconnus ayant validé la conformité de l'outil
 
 ## Ce qui l'irrite
-- Les solutions qui collectent des données personnelles sans analyse RGPD préalable
-- Le jargon "IA" non expliqué méthodologiquement
-- Les commerciaux qui ne connaissent pas la différence entre loi Vigilance et CSDDD
-- Les promesses de "couverture complète de toutes les obligations" sans détail juridiction par juridiction
-- Les contrats d'abonnement avec des clauses de responsabilité déséquilibrées
-
----
+- Les solutions qui collectent des données sensibles sans documentation RGPD adéquate
+- Les prestataires qui ne savent pas ce qu'est un sous-traitant au sens de l'article 28 du RGPD
+- L'absence de clause de résiliation claire en cas de violation de la sécurité des données
+- Les algorithmes de scoring opaques non documentés, exposés aux risques AI Act
+- Les contrats d'abonnement avec propriété des données ambiguë
 
 ## Argument d'ouverture recommandé
-> "Bonjour, avec la CSDDD qui entre en transposition nationale d'ici 2027, les entreprises de votre taille devront prouver qu'elles ont pris des 'mesures raisonnables' en matière de due diligence droits humains. Avez-vous aujourd'hui une documentation juridiquement robuste de ces mesures pour chaque pays où vous opérez ?"
-
----
+> "La CSDDD ouvre la voie aux actions civiles directes contre les donneurs d'ordre. Votre protection repose sur deux piliers : des clauses contractuelles fournisseurs blindées et un dossier de diligence documenté. Nous vous fournissons les deux — avec une architecture RGPD validée et un DPA conforme article 28. Votre DPO peut l'examiner avant toute décision."
 
 ## Phrase à éviter absolument
-"Notre plateforme IA analyse vos fournisseurs en temps réel pour vous protéger."
-
----
+"Ne vous inquiétez pas de la partie légale, on gère tout." *(le General Counsel veut comprendre et valider lui-même — lui retirer le contrôle juridique est un signal d'alarme immédiat)*
 
 ## Canal privilégié
-Email formel avec note de synthèse juridique jointe → réunion avec ordre du jour structuré → fourniture d'une analyse comparative des obligations légales applicables à l'entreprise.
+Email avec documentation juridique en pièce jointe (DPA, politique de confidentialité, certifications). Préférence pour les échanges écrits traçables, les FAQ juridiques détaillées et les sessions de Q&A avec un juriste de la société en amont de toute démo commerciale.

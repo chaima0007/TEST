@@ -1,68 +1,53 @@
-# Persona : CTO / Head of Digital / Directeur(rice) des Systèmes d'Information
+# Persona — CTO / Head of Digital
 
 ## Profil type
-**Titre :** CTO (Chief Technology Officer) / Head of Digital / Directeur SI / VP Data & Technology  
-**Âge :** 38-52 ans  
-**Formation :** Ingénieur informatique, mathématiques appliquées, parfois MBA tech (HEC/Polytechnique)  
-**Expérience :** 12-20 ans en IT, souvent mix startups + grand groupe, ou passage par GAFA/consultants IT  
-**Secteurs typiques :** Banque, assurance, industrie digitalisée, retail, télécoms, tech  
-
----
+- **Titre :** Chief Technology Officer / Head of Digital / Directeur(-trice) des Systèmes d'Information (DSI)
+- **Âge :** 38–52 ans
+- **Formation :** École d'ingénieurs (Centrale, Mines, INSA, Epitech), master en informatique ou cybersécurité
+- **Expérience :** 15–25 ans en architecture logicielle, transformation digitale, cybersécurité, gestion de projets IT
+- **Secteurs :** Tous secteurs avec infrastructure IT complexe, particulièrement finance, industrie, services
 
 ## Contexte et responsabilités
-Le CTO n'est pas un acheteur naturel de solutions RSE. Cependant, son implication devient incontournable dès que la solution nécessite une intégration technique (API, connecteur ERP, traitement de données à grande échelle).
 
-Il/elle est également de plus en plus sollicité sur les sujets IA éthique et AI Act 2025 : ses équipes développent ou déploient des systèmes d'IA qui entrent dans le scope "haut risque" (recrutement, scoring crédit, diagnostic médical) — créant une obligation d'audit et de documentation des biais.
+Le CTO est le garant de l'architecture technique du groupe, de la sécurité des systèmes d'information et de l'intégration cohérente des nouvelles solutions dans l'écosystème IT existant. Dans un contexte de prolifération des outils SaaS, son rôle de gate keeper est crucial pour éviter les dettes techniques, les risques de sécurité et les problèmes de conformité réglementaire.
 
-Dans les entreprises les plus avancées, le CTO est devenu un acteur clé de la stratégie droits humains numériques (droits des données, biais algorithmiques, vie privée).
+L'adoption d'une plateforme de compliance DDH soulève des questions techniques majeures : comment cette solution s'intègre-t-elle avec le système d'information existant (ERP, outils achats, SIRH) ? Quelles données quitte le périmètre de l'entreprise et avec quelles garanties ? Le traitement algorithmique du scoring fournisseurs est-il conforme à l'AI Act européen ? Les flux de données transfrontaliers respectent-ils le RGPD ?
 
----
+La posture du CTO est souvent de freiner l'adoption de nouvelles solutions pour protéger la cohérence du SI et la sécurité des données. Il devient un allié lorsque la solution est bien architecturée, documentée et respectueuse des standards de sécurité (ISO 27001, SOC 2 Type II, chiffrement bout en bout).
 
 ## Motivations principales
-- Garantir la sécurité des données et la conformité RGPD de toute solution intégrée
-- Évaluer la scalabilité et la maintenabilité technique de la solution (pas de vendor lock-in)
-- Se conformer aux exigences de l'AI Act 2025 pour les systèmes IA à haut risque déployés en interne
-- Intégrer la solution sans rupture dans l'architecture existante (SOC2, ISO 27001, SSO, ERP)
-- Réduire la dette technique liée à des outils RSE disparates et non intégrés
-
----
+- Valider l'architecture de sécurité avant tout déploiement (pentest, certifications, chiffrement)
+- S'assurer de l'interopérabilité avec l'écosystème existant via des APIs documentées et stables
+- Garantir la conformité RGPD des flux de données collectées et traitées par la solution
+- Évaluer la conformité AI Act pour les modules de scoring ou d'analyse automatisée
+- Maintenir la scalabilité du SI en évitant les intégrations point-à-point non maintenables
 
 ## Pain points quotidiens
-- Les équipes RSE arrivent avec des solutions "SaaS" sans avoir évalué la sécurité des données ni la conformité RGPD
-- Les intégrations API promis "en 2 semaines" prennent en réalité 3-6 mois avec les contraintes IT groupe
-- L'AI Act 2025 crée une obligation de documentation et d'audit des systèmes IA à haut risque — le CTO est en première ligne
-- Les données sensibles (conditions fournisseurs, risques géopolitiques) ne peuvent pas être stockées n'importe où — questions cloud souverain
-- La multiplication des outils SaaS RSE crée une fragmentation des données sans gouvernance unifiée
-
----
+- Multiplication des solutions SaaS sans gouvernance IT globale créant des silos de données
+- Risque de violation de données personnelles via des outils tiers mal sécurisés
+- Difficulté à intégrer des APIs mal documentées ou instables dans les flux existants
+- Pression des métiers pour aller vite vs. impératif de sécurité et de qualité technique
+- Manque de ressources pour évaluer et intégrer chaque nouvelle solution demandée par les métiers
 
 ## Ce qui le/la rassure
-- Une documentation technique complète : API REST, OpenAPI spec, format des données, SLA de disponibilité
-- Des certifications de sécurité : SOC2 Type II, ISO 27001, RGPD compliance
-- La possibilité d'un déploiement on-premise ou cloud souverain si nécessaire
-- Un modèle de données ouvert (pas de vendor lock-in) avec export standard (JSON, CSV)
-- Des références techniques d'entreprises similaires qui ont intégré la solution avec succès
-
----
+- Une documentation API complète (OpenAPI/Swagger) avec sandbox de test disponible
+- Les certifications de sécurité (ISO 27001, SOC 2 Type II) et les résultats de pentests récents
+- La clarté sur l'hébergement des données (localisation, sous-traitants, DPA conforme article 28)
+- Un support technique de qualité avec SLA documentés et contacts dédiés
+- La conformité AI Act documentée pour les modules algorithmiques (classification de risque)
 
 ## Ce qui l'irrite
-- Les solutions sans documentation API sérieuse
-- Les promesses d'intégration "en plug and play" qui masquent une complexité réelle
-- L'absence de certifications de sécurité ou de politique de gestion des incidents
-- Les solutions qui stockent des données sensibles dans des pays non conformes RGPD
-- Les présentations RSE qui ignorent complètement les aspects techniques
-
----
+- Les solutions sans API ou avec des connecteurs propriétaires fermés non documentés
+- L'absence de certifications de sécurité ou des certifications expirées
+- Les prestataires qui ne savent pas répondre aux questions techniques sur l'architecture de données
+- Les délais de déploiement sous-estimés qui créent des dettes techniques d'intégration
+- Les contrats qui ne précisent pas clairement la propriété et la portabilité des données
 
 ## Argument d'ouverture recommandé
-> "Bonjour, vos équipes déploient probablement des systèmes de scoring ou de recommandation IA — avec l'AI Act qui entre en vigueur, avez-vous un processus d'audit des biais de ces systèmes, notamment sur les critères genre et origine ? Nous avons une solution qui s'intègre via API et produit une documentation technique conforme aux exigences de l'AI Act."
-
----
+> "Avant la démo produit, votre CTO nous a envoyé une liste de questions techniques sur l'architecture. On a préparé un dossier complet : certifications ISO 27001 et SOC 2 Type II, documentation API OpenAPI avec sandbox, DPA article 28 signable, et notre analyse de conformité AI Act pour le module de scoring. Voulez-vous qu'on commence par là ?"
 
 ## Phrase à éviter absolument
-"La solution est très simple, vos équipes IT n'ont pas grand chose à faire."
-
----
+"L'intégration est simple, ça prend deux semaines." *(sous-estime systématiquement la complexité réelle et génère une méfiance immédiate chez un CTO expérimenté)*
 
 ## Canal privilégié
-Bêta invitations sur GitHub ou ProductHunt → démo technique avec l'équipe d'architecture → documentation API partagée avant toute réunion commerciale. Approche développeur-first si possible.
+Documentation technique exhaustive mise à disposition avant tout échange commercial. Préférence pour les échanges avec des interlocuteurs techniques de la société (CTO, architecte solutions). Appréciation forte des POC (proof of concept) techniques avec accès sandbox avant signature.

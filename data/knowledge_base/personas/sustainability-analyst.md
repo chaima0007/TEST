@@ -1,68 +1,53 @@
-# Persona : Sustainability Analyst / Analyste ESG Junior
+# Persona — Junior ESG Analyst / Analyste Développement Durable
 
 ## Profil type
-**Titre :** Sustainability Analyst / ESG Analyst / Chargé(e) de mission RSE / Responsable Reporting Extra-Financier  
-**Âge :** 25-35 ans  
-**Formation :** Master développement durable (AgroParisTech, Sciences Po, ESCP, Sciences de l'environnement), ou MBA avec spécialisation ESG  
-**Expérience :** 1-5 ans en RSE, souvent premier ou deuxième poste post-études  
-**Secteurs typiques :** Tous secteurs avec équipe RSE structurée  
-
----
+- **Titre :** Analyste ESG / Chargé(e) de mission Développement Durable / Junior Sustainability Analyst
+- **Âge :** 24–35 ans
+- **Formation :** Master en développement durable, finance ESG, droit de l'environnement, Sciences Po, AgroParisTech
+- **Expérience :** 2–8 ans en reporting extra-financier, analyse fournisseurs, projets RSE opérationnels
+- **Secteurs :** Banque, industrie, conseil en stratégie ESG, ONG, cabinet d'audit
 
 ## Contexte et responsabilités
-L'analyste ESG est le rouage opérationnel de l'équipe RSE. Il/elle collecte les données, produit les tableaux de bord, prépare le reporting GRI/CSRD, répond aux questionnaires des agences (EcoVadis, MSCI, Sustainalytics) et coordonne les contributions des équipes opérationnelles.
 
-C'est souvent le premier contact lors d'un démarche commerciale : il/elle fait la recherche de solutions, compare les outils et remonte une recommandation au Head of ESG. Son pouvoir de décision est limité mais son influence est réelle — si l'analyste ne valide pas la solution, elle n'arrive pas sur le bureau du décideur.
+L'analyste ESG est le moteur opérationnel du reporting de durabilité. C'est lui ou elle qui collecte les données, remplit les questionnaires de notation (MSCI, Sustainalytics, EcoVadis), suit les indicateurs GRI et ESRS, et prépare les livrables qui seront ensuite présentés par le Head of ESG à la direction. Malgré une position hiérarchique intermédiaire, il ou elle a une influence décisive sur le choix des outils et des méthodologies.
 
-Il/elle est souvent très engagé(e) personnellement sur les enjeux droits humains — c'est pourquoi il/elle a choisi ce métier.
+Dans le contexte de la CSRD, la charge de travail de l'analyste ESG a explosé : les ESRS (European Sustainability Reporting Standards) couvrent des dizaines d'indicateurs quantitatifs et qualitatifs sur des thèmes allant du climat (ESRS E1) aux droits des travailleurs dans la chaîne de valeur (ESRS S2). Répondre aux questionnaires MSCI seul peut représenter plusieurs semaines de travail par an. L'automatisation de la collecte de données est devenue une priorité existentielle.
 
----
+L'analyste ESG est souvent le premier à évaluer les nouvelles solutions technologiques. Il ou elle conduira la phase de test, remontera les retours à sa direction, et sa satisfaction utilisateur conditionne l'adoption interne de l'outil.
 
 ## Motivations principales
-- Avoir des données granulaires, méthodologiquement solides, pour alimenter le reporting GRI/CSRD/UNGP
-- Pouvoir répondre aux questionnaires MSCI/Sustainalytics avec des données vérifiables
-- Automatiser la collecte de données (actuellement trop manuelle et chronophage)
-- Disposer d'alertes préventives sur les fournisseurs à risque — être proactif plutôt que réactif
-- Progresser professionnellement : présenter une solution innovante à son manager est un levier de visibilité interne
-
----
+- Automatiser la collecte de données pour réduire les tâches manuelles répétitives et chronophages
+- Disposer de sources de données granulaires et vérifiables pour répondre aux questionnaires MSCI/EcoVadis
+- Maîtriser les méthodologies GRI et ESRS pour monter en expertise et progresser dans sa carrière
+- Produire des analyses qui influencent réellement la stratégie de l'entreprise et sa note ESG
+- Trouver des outils qui parlent le même langage que lui/elle (GRI 304, ESRS S2, scope 3 catégorie 1)
 
 ## Pain points quotidiens
-- Passe 60% de son temps à collecter et nettoyer des données manuellement (Excel, emails, questionnaires papier)
-- Les données terrain remontent avec 6-12 mois de retard par rapport aux évènements réels
-- Les questionnaires EcoVadis/MSCI arrivent souvent avec 2 semaines de délai — pression énorme
-- Doit justifier chaque source de données aux agences de notation qui challengent la méthodologie
-- Se heurte souvent à l'indifférence des équipes opérationnelles pour la remontée des données RSE
+- Passer des semaines à compiler manuellement des données dans des fichiers Excel non standardisés
+- Répondre aux mêmes questions de plusieurs agences de notation avec des formats différents
+- Manque de données fiables sur les fournisseurs tier-2 et tier-3 pour les indicateurs de chaîne
+- Difficulté à justifier la méthodologie de calcul des indicateurs lors des vérifications tierces
+- Sentiment d'isolement dans un rôle transversal sans ressources suffisantes
 
----
-
-## Ce qui le/la enthousiasme
-- Des API et intégrations avec les outils existants (pas de double-saisie)
-- Une documentation méthodologique claire et citable dans les rapports externes
-- Des exports automatisés au format GRI, CSRD ESRS, questionnaire EcoVadis
-- Des alertes automatiques par email/Slack sur les nouveaux risques fournisseurs
-- Une interface intuitive — pas besoin d'une formation de 2 semaines
-
----
+## Ce qui le/la rassure
+- Une interface intuitive qui mappe automatiquement les données sur GRI 2, GRI 400 et les ESRS S
+- Des exports pré-formatés pour les questionnaires MSCI, Sustainalytics et EcoVadis
+- Une documentation méthodologique solide qu'il/elle peut présenter à un auditeur tiers
+- Une communauté d'utilisateurs ESG avec qui partager les bonnes pratiques
+- Un onboarding court avec des tutoriels adaptés à son niveau de maturité
 
 ## Ce qui l'irrite
-- Les solutions trop "black box" : score sans explication des sources
-- Les interfaces complexes qui nécessitent plusieurs jours de formation
-- Les données mises à jour seulement trimestriellement ou annuellement
-- Les tarifs enterprise qui excluent de faire un test utilisateur seul
-- Les commerciaux qui ignorent les enjeux méthodologiques et veulent parler au DG RSE directement
-
----
+- Les outils qui ne couvrent pas les indicateurs GRI ou ESRS spécifiques dont il/elle a besoin
+- Les interfaces complexes nécessitant une formation longue avant de pouvoir travailler
+- Les données fournisseurs insuffisamment granulaires (pays, secteur, type de risque)
+- Le manque de transparence sur la source et la date de mise à jour des données utilisées
+- Les prestataires qui s'adressent uniquement à la direction sans valoriser le rôle de l'analyste
 
 ## Argument d'ouverture recommandé
-> "Bonjour, je vois que vous travaillez sur le reporting CSRD [ESRS S2 / GRI 408 / UNGP]. Avez-vous un outil qui vous permet d'obtenir les données droits humains fournisseurs automatiquement, sans avoir à croiser manuellement les rapports ONG et les questionnaires EcoVadis ?"
-
----
+> "Combien de temps passez-vous chaque année à répondre au questionnaire MSCI seul(e) ? Notre plateforme pré-remplit automatiquement 70 % des réponses à partir des données fournisseurs déjà collectées, avec la source et la date pour chaque indicateur. Vous pouvez vous concentrer sur l'analyse plutôt que sur la saisie."
 
 ## Phrase à éviter absolument
-"Vous pourrez montrer ça à votre direction — ça va les impressionner."
-
----
+"Notre outil simplifie tellement la compliance que n'importe qui peut l'utiliser." *(dévalorisant pour un expert qui a investi dans ses compétences méthodologiques — il/elle veut être reconnu(e) comme professionnel(le), pas remplacé(e))*
 
 ## Canal privilégié
-LinkedIn (message ciblé sur leur publication ou post), email avec un lien vers une ressource utile (guide CSRD S2, template GRI), invitation à un webinaire gratuit sur les droits humains et le reporting CSRD. Offrir un accès démo ou un free trial sans friction.
+LinkedIn avec contenu éducatif (comparatifs GRI vs ESRS, guides méthodologiques), webinaires techniques gratuits, communautés ESG en ligne. Très réceptif(-ve) aux démonstrations produit détaillées et aux périodes d'essai gratuites permettant de tester par lui/elle-même.

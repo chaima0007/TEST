@@ -1,66 +1,53 @@
-# Persona : Head of Procurement / Directeur(rice) des Achats
+# Persona — Head of Procurement / Directeur(-trice) Achats
 
 ## Profil type
-**Titre :** Chief Procurement Officer / Directeur des Achats / VP Sourcing & Supply Chain  
-**Âge :** 40-55 ans  
-**Formation :** École d'ingénieurs ou de commerce, souvent avec une spécialisation supply chain ou achat (CIPS, APICS)  
-**Expérience :** 10-20 ans en achats, sourcing international, gestion fournisseurs  
-**Secteurs typiques :** Automobile, industrie, retail, agrifood, énergie, luxe — tout secteur avec chaîne d'approvisionnement complexe  
-
----
+- **Titre :** Head of Procurement / Chief Procurement Officer (CPO) / Directeur(-trice) des Achats
+- **Âge :** 40–55 ans
+- **Formation :** Écoles d'ingénieurs, écoles de commerce, master Supply Chain ou Achats
+- **Expérience :** 15–25 ans en gestion des achats, supply chain, négociation fournisseurs, sourcing international
+- **Secteurs :** Automobile, agroalimentaire, textile, électronique, grande distribution, construction
 
 ## Contexte et responsabilités
-Le Head of Procurement gère la relation avec les fournisseurs de l'entreprise, de la sélection à la performance. Depuis la CSDDD et le LkSG, il/elle est en première ligne de la due diligence droits humains : les obligations légales s'appliquent à travers la chaîne d'approvisionnement, et c'est lui/elle qui a la relation directe avec les fournisseurs.
 
-La CSDDD impose notamment d'inclure des clauses DDH dans les contrats d'achat, de mettre en place des évaluations de risque fournisseurs et des plans d'action corrective. Ces obligations sont opérationnellement gérées par les Achats.
+Le Head of Procurement gère des portefeuilles fournisseurs pouvant atteindre plusieurs milliers d'entités réparties dans des dizaines de pays. Son rôle est d'optimiser les coûts, garantir la qualité et la continuité d'approvisionnement, tout en gérant un nombre croissant d'exigences réglementaires et éthiques. La CSDDD lui impose désormais d'étendre sa due diligence au-delà des fournisseurs directs (tier-1) pour couvrir les tier-2 et tier-3 dans les chaînes à risque élevé.
 
----
+Cette extension représente un défi opérationnel considérable : cartographier et évaluer les fournisseurs de rang 2 et 3 requiert des données que les acheteurs n'ont traditionnellement pas collectées, et des processus que peu d'organisations ont mis en place. Le Head of Procurement doit prioriser les audits, arbitrer entre les fournisseurs stratégiques à traiter en priorité et les fournisseurs secondaires, et réduire les coûts d'audit tout en augmentant la couverture.
+
+Il ou elle est également soumis à une pression croissante de ses clients internes (direction générale, CCO, Head of ESG) qui attendent des résultats rapides sur la conformité fournisseurs, tout en maintenant les performances prix et qualité qui constituent son évaluation traditionnelle.
 
 ## Motivations principales
-- Identifier les fournisseurs à risque DDH avant qu'ils ne causent un incident (traçabilité préventive)
-- Disposer d'un outil permettant de prioriser les audits fournisseurs (ressources terrain limitées)
-- Inclure des clauses DDH dans les contrats fournisseurs avec un suivi de conformité automatisé
-- Réduire le coût des audits terrain en les remplaçant partiellement par du monitoring continu
-- Protéger la continuité d'approvisionnement (un fournisseur exclu pour violation DDH = risque de rupture)
-
----
+- Prioriser efficacement les audits fournisseurs en fonction du niveau de risque réel
+- Étendre la couverture de due diligence aux tier-2 et tier-3 sans multiplier les audits physiques coûteux
+- Réduire le coût total des processus d'audit et de qualification fournisseurs
+- Disposer d'une visibilité en temps réel sur l'état de conformité du portefeuille fournisseurs
+- Protéger la continuité d'approvisionnement en identifiant les risques avant qu'ils deviennent des crises
 
 ## Pain points quotidiens
-- Gestion de 5 000 à 50 000 fournisseurs actifs : impossible d'auditer tout le monde en profondeur
-- Les audits EcoVadis/SGS sont coûteux (500-2000€ par audit), ponctuels et ne couvrent pas le tier-2
-- Les incidents DDH arrivent souvent chez des fournisseurs "bien notés" EcoVadis — fausse sécurité
-- Les nouvelles obligations CSDDD de couverture des fournisseurs indirects créent une charge de travail supplémentaire massive
-- Le département Achats est sous pression continue pour réduire les coûts — les investissements DDH sont vus comme un surcoût
+- Absence de visibilité sur les fournisseurs de rang 2 et 3 dans les chaînes à risque élevé
+- Coût élevé des audits physiques sur site, en particulier dans les pays à risque
+- Questionnaires fournisseurs non standardisés générant des données incomparables et inexploitables
+- Difficulté à prioriser les fournisseurs à auditer en premier dans un portefeuille de plusieurs milliers d'entités
+- Tension entre les objectifs de réduction des coûts achats et les investissements en compliance
 
----
-
-## Ce qui le/la convainc
-- Un outil de priorisation : "sur 10 000 fournisseurs, voici les 50 à auditer en priorité cette année"
-- L'intégration avec les outils Achats existants (SAP Ariba, Oracle SCM, Jaggaer)
-- Des alertes automatiques sur les fournisseurs stratégiques (key suppliers) en cas d'incident détecté
-- La preuve que la solution réduit le coût et le temps des audits terrain
-- Des templates de clauses contractuelles DDH prêts à l'emploi
-
----
+## Ce qui le/la rassure
+- Un outil de scoring automatique permettant de prioriser les fournisseurs par niveau de risque
+- La possibilité de couvrir les tier-2/3 via des questionnaires digitaux sans audit physique
+- Des benchmarks de coûts montrant la réduction du coût par audit grâce à la digitalisation
+- Une intégration avec les ERP achats existants (SAP Ariba, Coupa, Oracle Procurement)
+- Des templates de questionnaires fournisseurs alignés sur les standards sectoriels (RBA, SA8000, etc.)
 
 ## Ce qui l'irrite
-- Les solutions qui ne s'intègrent pas aux outils Achats existants (ERP, e-procurement)
-- Les résultats de scoring sans explication des sources — "pourquoi ce fournisseur est noté risque élevé ?"
-- Les délais de mise en place trop longs (>3 mois) avant le premier résultat utilisable
-- Les recommandations d'exclusion de fournisseurs sans alternative de sourcing proposée
-- La confusion entre monitoring DDH et certification qualité/environnementale (ISO 14001, etc.)
-
----
+- Les outils qui nécessitent une saisie manuelle massive sans automatisation de la collecte
+- L'impossibilité de configurer le scoring en fonction des spécificités du secteur et des pays
+- Les solutions qui ignorent la réalité opérationnelle du travail d'acheteur (temps, volume, langue)
+- Les prestataires qui sous-estiment la complexité des chaînes multi-niveaux dans l'industrie
+- Les délais de déploiement supérieurs à 6 mois pour des fonctionnalités critiques
 
 ## Argument d'ouverture recommandé
-> "Bonjour, avec la CSDDD, vous devrez démontrer que vous avez évalué les risques DDH chez vos fournisseurs directs ET indirects. Sur 10 000 fournisseurs, comment faites-vous pour prioriser ? Nous avons un outil qui fait ce triage automatiquement à partir de sources tierces vérifiées."
-
----
+> "Combien vous coûte aujourd'hui un audit fournisseur sur site en Asie du Sud-Est ? Notre plateforme permet de couvrir 80 % de votre portefeuille tier-2 via des évaluations digitales automatisées, en réservant les audits physiques aux 20 % de fournisseurs à risque critique. Résultat typique : réduction de 40 % du coût total d'audit avec une couverture CSDDD tier-2/3 complète."
 
 ## Phrase à éviter absolument
-"Notre solution va vous permettre d'être totalement conforme CSDDD immédiatement."
-
----
+"Il faut auditer tous vos fournisseurs." *(irréaliste et déconnecté de la réalité des Achats — démontre que vous ne comprenez pas les contraintes opérationnelles)*
 
 ## Canal privilégié
-Email direct avec référence à un problème concret de leur secteur → démo live sur données fictives de leur industry → POC (proof of concept) avec quelques fournisseurs réels.
+Événements professionnels achats (CIPS, Salon des Achats), LinkedIn avec contenu opérationnel (checklists, templates), démonstration courte de 20 minutes centrée sur l'interface acheteur et la réduction de charge opérationnelle. Très sensible aux témoignages de pairs CPO.

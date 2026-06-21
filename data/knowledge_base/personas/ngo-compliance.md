@@ -1,67 +1,53 @@
-# Persona : ONG Compliance / Responsable Conformité ONG
+# Persona — NGO Compliance Officer / Responsable Conformité ONG
 
 ## Profil type
-**Titre :** Responsable Conformité / Chargé(e) de Due Diligence / Human Rights Officer (ONG)  
-**Âge :** 30-48 ans  
-**Formation :** Droit international, sciences politiques, développement international (Sciences Po Paris, Geneva Graduate Institute, SOAS, Columbia)  
-**Expérience :** 5-15 ans dans le secteur humanitaire, ONG internationale, agences onusiennes ou droit international  
-**Organisations types :** Sherpa, Global Witness, Amnesty International Corporate Accountability, Business & Human Rights Resource Centre, CCFD-Terre Solidaire, Oxfam  
-
----
+- **Titre :** Compliance Officer / Responsable Plaidoyer et Conformité / Program Officer Business & Human Rights
+- **Âge :** 30–48 ans
+- **Formation :** Droit international des droits de l'homme, Sciences Po, master en développement, anthropologie
+- **Expérience :** 8–18 ans dans le secteur associatif, plaidoyer international, terrain en pays à risque
+- **Secteurs :** ONG internationales de droits humains, syndicats, fondations philanthropiques, think tanks
 
 ## Contexte et responsabilités
-Ce persona est à la fois une cible potentielle (ONG utilisant des outils de monitoring pour leurs enquêtes) et un acteur d'influence majeur (les rapports des ONG déclenchent des crises de réputation qui font bouger les entreprises).
 
-En tant que client potentiel, il/elle représente les ONG qui ont des budgets serrés mais des besoins réels : cartographier les risques DDH, monitorer des entreprises ou des chaînes de valeur spécifiques, produire des rapports documentés pour le plaidoyer ou le contentieux.
+Le Compliance Officer d'une ONG occupe une position unique dans l'écosystème de la conformité DDH : il ou elle n'est ni acheteur ni compliance corporate, mais un acteur de plaidoyer, de documentation et parfois de contentieux. Son rôle est de documenter les violations, d'accompagner les victimes dans les mécanismes de plainte, de produire des rapports crédibles pour les bailleurs de fonds et d'influencer les politiques publiques.
 
-En tant qu'influenceur, comprendre ce persona permet d'anticiper les critiques potentielles et de positionner Caelum comme un outil qui sert à la fois les entreprises ET les ONG.
+La CSDDD ouvre un espace nouveau pour les ONG : les mécanismes de réclamation obligatoires imposés aux entreprises doivent être accessibles aux organisations de la société civile, et la directive ouvre des voies de recours judiciaires que les ONG peuvent soutenir. En parallèle, les grandes ONG sont elles-mêmes soumises à des obligations de diligence raisonnable vis-à-vis de leurs partenaires terrain et de leurs propres chaînes d'approvisionnement (événements, merchandising).
 
----
+Les contraintes budgétaires sont serrées : les outils doivent être accessibles financièrement, répondre à des exigences de reporting des bailleurs (ECHO, AFD, fondations privées) et démontrer un impact documenté et mesurable sur les droits humains. L'ONG ne peut pas se permettre des solutions entreprise à six chiffres.
 
 ## Motivations principales
-- Documenter des violations droits humains avec des sources vérifiables pour des rapports de plaidoyer ou des recours judiciaires
-- Monitorer des secteurs ou des entreprises ciblées dans le cadre de campagnes
-- Aider des victimes à accéder aux mécanismes de plainte des entreprises soumises à la loi Vigilance ou à la CSDDD
-- Former des communautés affectées sur leurs droits dans le cadre des nouvelles réglementations
-- Produire des données pour démontrer l'insuffisance des mesures d'une entreprise en vue d'une action en justice (Sherpa)
-
----
+- Documenter l'impact réel des violations dans les chaînes d'approvisionnement avec des données opposables
+- Préparer des dossiers solides pour les mécanismes de plainte et le contentieux CSDDD
+- Répondre aux exigences de reporting des bailleurs de fonds avec des indicateurs mesurables
+- Utiliser des outils accessibles budgétairement sans sacrifier la qualité méthodologique
+- Influencer les pratiques des entreprises cibles via des données crédibles et publiables
 
 ## Pain points quotidiens
-- Budget très contraint : les ONG n'ont pas les moyens d'acheter des solutions entreprise coûteuses
-- Les données sur les violations sont dispersées, souvent anecdotiques et difficiles à agréger en preuves systémiques
-- La CSDDD et le LkSG créent de nouvelles opportunités de contentieux — mais les ONG manquent d'outils pour documenter le manque de due diligence des entreprises
-- Difficultés à prouver le lien de causalité entre les pratiques d'une entreprise et une violation spécifique
-- Les mécanismes de plainte des entreprises sont souvent inaccessibles pour les communautés affectées (langue, technologie, connaissance des droits)
+- Budget très limité pour les outils technologiques face à des besoins de données croissants
+- Difficulté à trouver des sources de données fiables sur les conditions de travail dans les pays à risque
+- Pression des bailleurs qui exigent des indicateurs d'impact précis et vérifiables
+- Risque sécuritaire pour les enquêteurs terrain et les sources dans les pays sensibles
+- Manque d'interopérabilité entre les outils de documentation terrain et les plateformes de plaidoyer
 
----
+## Ce qui le/la rassure
+- Un pricing adapté aux organisations à but non lucratif (tarif ONG, licence gratuite ou freemium)
+- Des données sur les risques pays et sectoriels sourcées et vérifiables par un tiers
+- La protection des données des sources et des victimes (anonymisation, chiffrement, pas de partage commercial)
+- Des exports au format des rapports bailleurs (ECHO, DFID, fondations) et des rapports ODD
+- Des références dans le secteur associatif et des partenariats avec des ONG reconnues
 
-## Ce qui l'attire dans une solution comme Caelum
-- La possibilité d'accéder à des données agrégées sur les risques DDH par entreprise et secteur
-- Des exports de données utilisables dans des rapports de plaidoyer
-- La documentation des "signaux précoces" qui montrent qu'une entreprise savait ou aurait dû savoir
-- Un tarif NGO/non-profit adapté à leurs budgets serrés
-- La validation de la méthodologie par des pairs académiques ou onusiens
+## Ce qui l'irrite
+- Les solutions corporate qui ignorent totalement la réalité du travail ONG et de ses contraintes
+- Les plateformes qui monétisent les données sur les violations des droits humains
+- L'absence de clause de confidentialité protégeant les sources et les victimes
+- Les interfaces conçues uniquement pour les grandes entreprises, inutilisables pour des équipes de 5 personnes
+- Les prestataires qui proposent des tarifs entreprise sans flexibilité pour le secteur associatif
 
----
-
-## Ce qui le/la méfie
-- Les outils développés exclusivement "pour les entreprises" qui pourraient être utilisés pour masquer des violations plutôt que les révéler
-- Le manque de transparence sur la méthodologie et les sources
-- Des partenariats avec des entreprises controversées qui créent un conflit d'intérêt
-- L'absence de mécanisme d'accès pour les victimes elles-mêmes
-
----
-
-## Argument d'ouverture recommandé (pour les ONG)
-> "Notre plateforme agrège des données sur les risques DDH dans les chaînes d'approvisionnement, basées sur des sources ONU, OIT, Global Witness et académiques. Pour votre campagne sur [thème spécifique], nous pouvons offrir un accès de recherche à tarif NGO. En échange, votre feedback méthodologique nous aide à affiner la couverture."
-
----
+## Argument d'ouverture recommandé
+> "La CSDDD vous donne pour la première fois un levier légal direct : les ONG peuvent désormais appuyer des plaintes formelles contre des entreprises défaillantes. Notre plateforme vous fournit la documentation structurée et sourcée nécessaire pour instruire ces dossiers — avec une tarification ONG et une architecture de protection des sources conforme à vos standards."
 
 ## Phrase à éviter absolument
-"Notre outil aide les entreprises à prouver leur conformité CSDDD."
-
----
+"Notre solution aide les entreprises à améliorer leur image ESG." *(une ONG de droits humains n'est pas là pour améliorer l'image des entreprises — ce positionnement la place en opposition immédiate avec votre offre)*
 
 ## Canal privilégié
-Conférences : Forum mondial droits humains (ONU Genève), Responsible Business Conduct Forum (OCDE Paris), Forum for Business and Human Rights. Approche via le réseau académique ou les coalitions ONG (Business & Human Rights Resource Centre). Tarif "recherche" ou accès gratuit pour enquêtes d'intérêt public.
+Conférences et événements droits humains (Forum Génération Égalité, Conférence OIT, événements Business & Human Rights), mailing listes sectorielles, partenariats avec des réseaux ONG. Très sensible aux témoignages de partenaires ONG, aux politiques de confidentialité transparentes et aux tarifications solidaires documentées.
