@@ -1,0 +1,69 @@
+{
+  "id": "airbus",
+  "slug": "airbus",
+  "name": "Airbus SE",
+  "country": "France / Germany / Spain",
+  "city": "Toulouse (siège) / Hamburg / Madrid",
+  "sector": "Aéronautique / Défense / Espace",
+  "size": {
+    "revenue_bn_eur": 68,
+    "employees": 134000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "23.5 (Medium Risk)",
+      "target": "A d'ici 2027 — engagement plan stratégique Airbus 2035"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "VP Ethics & Compliance / Head of Sustainability",
+    "team": "Compliance Group (150+ FTE), équipe Ethics & Human Rights (22 FTE), équipe fournisseurs durables (35 FTE)",
+    "location": "Siège Toulouse + centres Hamburg (compliance) + Madrid (procurement)",
+    "process": "Comité éthique trimestriel, revue fournisseurs semestrielle, certification EN9100 annuelle intégrant critères sociaux"
+  },
+  "pain_points": [
+    "Droits numériques des réfugiés dans la chaîne d'approvisionnement : les fournisseurs d'électronique et composants en zones de crise n'ont pas de politique formalisée sur la vie privée des travailleurs déplacés",
+    "Chaîne titane post-Ukraine 2022 : réorientation d'urgence de l'approvisionnement titane hors Russie sans audit DDH préalable des nouveaux fournisseurs Canada/Japon",
+    "Conformité CSDDD sur les sous-traitants aéronautiques : 15 000 fournisseurs actifs dont 40% localisés dans des pays à risque droits humains modéré-élevé",
+    "Zones de conflit : livraison d'équipements dans des pays sous tensions géopolitiques — absence de scoring droits humains des clients finaux",
+    "Documentation bilingue/trilingue insuffisante : les procédures DDH ne sont pas accessibles en langue locale pour les fournisseurs Turquie, Maroc, Inde"
+  ],
+  "observed_failures": [
+    "Crise titane 2022 : substitution urgente de fournisseurs russes sans délai d'audit DDH suffisant — 3 nouveaux fournisseurs intégrés sans évaluation droits humains formelle",
+    "Audit interne 2024 : seulement 52% des fournisseurs aéronautiques tier-1 ont signé le Code of Conduct Airbus et en prouvent la mise en œuvre",
+    "Rapport RSE 2023 : mécanisme de plainte fournisseurs utilisé 12 fois en 3 ans sur 15 000 fournisseurs — taux d'utilisation révélant un défaut d'accessibilité"
+  ],
+  "signals_of_risk": [
+    "Pression réglementaire US ITAR + européenne CSDDD convergente sur la traçabilité des matériaux défense",
+    "Enquête journalistique (Der Spiegel) sur les fournisseurs Airbus en Turquie et Maroc et les conditions de travail",
+    "Risque reputationnel : contrats défense dans des pays sous sanctions ONU — zero-tolerance policy à prouver"
+  ],
+  "signals_of_trust": [
+    "Code éthique Airbus (Standards of Business Conduct) parmi les plus complets du secteur aéronautique",
+    "Membre de l'Aerospace Industries Association Human Rights Working Group",
+    "Certification EN9100 avec intégration croissante de critères éthiques fournisseurs",
+    "Partenariat avec Transparency International sur la prévention de la corruption dans les marchés défense"
+  ],
+  "recommended_actions": [
+    "Entrer par la crise titane 2022 : 'Si cela se reproduit, comment intégrez-vous un audit DDH express en 72h pour les nouveaux fournisseurs d'urgence ?'",
+    "Proposer un module droits numériques des réfugiés dans les chaînes de montage — angle différenciateur peu traité par les concurrents",
+    "Préparer une démo trilingue FR/DE/EN démontrant l'accessibilité pour les fournisseurs en Turquie et Maroc",
+    "Cibler VP Ethics & Compliance en entrée — Airbus a une forte culture compliance post-enquêtes anticorruption"
+  ],
+  "local_tone": "Trilingue FR/DE/EN selon l'interlocuteur. Ton technique et précis. Références réglementaires CSDDD + EN9100 + ITAR appréciées. Les Toulousains sont moins formels que les Parisiens — une réunion décontractée est possible mais le fond doit être rigoureux.",
+  "cultural_notes": "Airbus est une entreprise multiculturelle (franco-germano-hispano) avec des frictions culturelles internes fréquentes. Le VP Ethics à Toulouse peut avoir une vision différente du VP Compliance à Hamburg. Adapter le discours selon l'interlocuteur. La culture de conformité est très forte post-affaires anticorruption (2020 : amende 3,6Md€). Le mot 'éthique' est central dans leur vocabulaire.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.airbus.com/en/sustainability/ethics-and-compliance",
+    "https://www.aia-aerospace.org/human-rights/",
+    "https://www.transparency.org/en/sectors/defence-security"
+  ]
+}

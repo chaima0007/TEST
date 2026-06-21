@@ -1,0 +1,70 @@
+{
+  "id": "inditex",
+  "slug": "inditex",
+  "name": "Inditex S.A. (Zara, Massimo Dutti, Pull&Bear...)",
+  "country": "Spain",
+  "city": "Arteixo (La Coruña)",
+  "sector": "Fashion / Textile / Retail",
+  "size": {
+    "revenue_bn_eur": 35,
+    "employees": 165000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BB",
+      "sustainalytics": "19.8 (Low-Medium Risk)",
+      "target": "BBB+ d'ici 2026 — engagement communication investisseurs Q2 2025"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO Supply Chain / VP Sustainability & Social Responsibility",
+    "team": "Équipe durabilité (45 FTE), équipe audit fournisseurs textile (60 FTE terrain), équipe compliance CSDDD (12 FTE créée 2024)",
+    "location": "Siège Arteixo + bureau Madrid (compliance) + bureau de sourcing à Dhaka, Istanbul, Shanghai",
+    "process": "Revue fournisseurs trimestrielle, audit terrain annuel sur 8 000 fournisseurs actifs, budget RSE validé en septembre pour N+1"
+  },
+  "pain_points": [
+    "Violence obstétricale et santé reproductive dans les ateliers de confection Bangladesh : absence de monitoring des conditions de santé des travailleuses enceintes chez les sous-traitants tier-2",
+    "Incident Turquie 2022 (réfugiés syriens dans ateliers Izmir) : absence de système de détection du travail clandestin dans la sous-traitance informelle",
+    "Chaîne de sous-traitance opaque : 35% des fournisseurs tier-2/3 non audités selon audit interne 2024 — risque CSDDD direct",
+    "Pression consumériste : campagnes Boicot Inditex récurrentes sur les réseaux sociaux espagnols et français",
+    "Absence de mécanisme de plainte anonyme accessible en bengali/turc/ourdou pour les travailleurs des usines",
+    "Score MSCI BB : en dessous de la moyenne sectorielle mode (BBB) — pression investisseurs ESG"
+  ],
+  "observed_failures": [
+    "Incident 2022 : enquête journalistique BBC et El País documentant la présence de réfugiés syriens sans papiers dans des ateliers de sous-traitance turcs approvisionnant Zara — aucun système d'alerte préventif",
+    "Rapport Clean Clothes Campaign 2023 : travailleurs bangladais documentant des pressions sur le congé maternité et l'absence de soins prénataux dans les usines tier-1 Inditex",
+    "Audit CSDDD préparatoire 2024 révélant que 28% des fournisseurs tier-1 ne disposent pas de procédures de signalement conformes"
+  ],
+  "signals_of_risk": [
+    "CSDDD art.10 : obligation de couverture des fournisseurs indirects à partir de 2027 — Inditex avec 8000+ fournisseurs est massivement exposée",
+    "Enquête journalistique en cours (Le Monde Diplomatique) sur la fast fashion et les droits humains — Inditex nominalement citée",
+    "Pression syndicale espagnole (CCOO, UGT) sur les conditions chez les fournisseurs étrangers"
+  ],
+  "signals_of_trust": [
+    "Programme Join Life : standards environnementaux et sociaux pour les fournisseurs avec audit annuel",
+    "Membre de l'Accord Bangladesh (Accord sur la sécurité incendie et bâtiment) depuis 2013",
+    "Publication d'une liste des fournisseurs tier-1 depuis 2021 (transparence supply chain)",
+    "Partenariat avec IndustriALL Global Union sur les droits syndicaux dans la chaîne d'approvisionnement"
+  ],
+  "recommended_actions": [
+    "Entrer par le risque CSDDD 2027 sur les fournisseurs indirects : 'Avec 8000 fournisseurs, comment prouverez-vous la conformité tier-2 en 2027 sans outil automatisé ?'",
+    "Présenter le module santé reproductive et droit du travail appliqué au secteur textile — angle différenciateur par rapport aux solutions génériques",
+    "Référencer l'incident Turquie 2022 : 'Que s'est-il passé sans système d'alerte ? Que se passera-t-il avec CSDDD si cela se reproduit ?'",
+    "Cibler CCO Supply Chain pour l'entrée opérationnelle, VP Sustainability pour la vision stratégique"
+  ],
+  "local_tone": "Chaleureux, relationnel, avec des références secteur textile/mode. En espagnol si possible pour les premiers contacts. Les Espagnols apprécient la confiance personnelle avant la confiance institutionnelle — prévoir un repas ou café avant la réunion formelle. Références locales CSDDD et Accord Bangladesh bien reçues.",
+  "cultural_notes": "Inditex est une entreprise familiale (famille Ortega) avec une culture discrète et peu adepte de la communication externe. Les interlocuteurs sont sensibles aux critiques médiatiques et réagissent de manière défensive. Présenter la solution comme un outil de protection et non d'exposition des failles. Éviter tout comparatif avec H&M ou Primark. Le décideur final peut être loin dans la chaîne hiérarchique.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.inditex.com/en/sustainability",
+    "https://cleanclothes.org",
+    "https://www.bbc.com/news/business-58418486"
+  ]
+}

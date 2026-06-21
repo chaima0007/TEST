@@ -1,0 +1,58 @@
+{
+  "company_id": "glencore",
+  "name": "Glencore PLC",
+  "country": "Switzerland (HQ) / UK (listed)",
+  "sector": "Mining & Commodities",
+  "revenue_eur_bn": 230,
+  "employees": 150000,
+  "regulatory_exposure": {
+    "lksg": false,
+    "csddd": true,
+    "csrd": true,
+    "uk_msa": true,
+    "notes": "UK Modern Slavery Act applicable. CSDDD applicable comme groupe opérant en UE. Forte pression OCDE Principes Directeurs."
+  },
+  "supply_chain_risks": {
+    "materials": ["cobalt", "copper", "zinc", "nickel", "coal", "oil"],
+    "high_risk_geographies": ["DRC", "Zambia", "South Africa", "Kazakhstan", "Colombia"],
+    "known_controversies": [
+      "DRC Katanga — cobalt artisanal, travail enfants mines ASM",
+      "Zambia Copperbelt — conditions travail, pollution environnementale",
+      "Colombie — conflits avec communautés minières, paramilitaires",
+      "Kazakhstan — droits travailleurs, liberté syndicale",
+      "Condamnations FCPA (corruption) 2022 — 1,5 Md$ d'amendes"
+    ]
+  },
+  "relevant_engines": [
+    "land-grabbing-rights-engine",
+    "prison-labor-rights-engine",
+    "youth-and-child-labor-rights-engine",
+    "digital-gender-gap-rights-engine"
+  ],
+  "contact_targets": [
+    {
+      "title": "Head of Sustainability",
+      "department": "Sustainability",
+      "linkedin_search": "Glencore Head Sustainability ESG",
+      "email_domain": "@glencore.com"
+    },
+    {
+      "title": "Group Risk Director",
+      "department": "Risk Management",
+      "linkedin_search": "Glencore Risk Director",
+      "email_domain": "@glencore.com"
+    }
+  ],
+  "pitch_angle": "CSDDD + UK MSA — travail forcé mines DRC/Zambie, travail enfants cobalt artisanal. Monitoring IA en temps réel pour due diligence obligatoire.",
+  "caelum_value_prop": {
+    "time_saving": "Alertes critiques en temps réel vs cycle audit annuel",
+    "cost_saving": "490€/mois vs 200 000€+ audit DDH chaîne approvisionnement minière",
+    "coverage": "Travail forcé, enfants, terres, genre — 4 engines secteur minier",
+    "compliance": "Documentation CSDDD, UK MSA, Principes directeurs OCDE"
+  },
+  "metadata": {
+    "created_at": "2026-06-21",
+    "updated_at": "2026-06-21",
+    "created_by": "caelum-commercial-team"
+  }
+}

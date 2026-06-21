@@ -1,0 +1,58 @@
+{
+  "company_id": "hm-group",
+  "name": "H&M Group (Hennes & Mauritz AB)",
+  "country": "Sweden",
+  "sector": "Fashion / Textile Retail",
+  "revenue_eur_bn": 22,
+  "employees": 155000,
+  "regulatory_exposure": {
+    "lksg": false,
+    "csddd": true,
+    "csrd": true,
+    "sweden_corporate_sustainability": true,
+    "notes": "CSRD applicable comme groupe coté. CSDDD dès 2026. Fort scrutin NGO et médias."
+  },
+  "supply_chain_risks": {
+    "materials": ["cotton", "polyester", "wool", "leather", "viscose"],
+    "high_risk_geographies": ["Bangladesh", "Myanmar", "Cambodia", "Ethiopia", "Pakistan", "China"],
+    "known_controversies": [
+      "Bangladesh Rana Plaza aftermath — conditions usines fournisseurs",
+      "Myanmar — maintien sourcing post-coup 2021, droits travailleurs",
+      "Coton Xinjiang — allégations travail forcé Ouïghours",
+      "Éthiopie — conditions industrielles parc Hawassa",
+      "Greenwashing — plaintes FTC et autorités européennes 2023-2024"
+    ]
+  },
+  "relevant_engines": [
+    "digital-gender-gap-rights-engine",
+    "land-grabbing-rights-engine",
+    "algorithmic-bias-rights-engine",
+    "hate-speech-online-rights-engine"
+  ],
+  "contact_targets": [
+    {
+      "title": "Head of Sustainability / Chief Sustainability Officer",
+      "department": "Sustainability",
+      "linkedin_search": "H&M Group Sustainability Head CSO",
+      "email_domain": "@hm.com"
+    },
+    {
+      "title": "Director of Supply Chain Compliance",
+      "department": "Supply Chain",
+      "linkedin_search": "H&M Supply Chain Compliance Director",
+      "email_domain": "@hm.com"
+    }
+  ],
+  "pitch_angle": "CSDDD + pression NGO — monitoring droits genre chaîne textile (Bangladesh, Myanmar, Cambodge). Fracture numérique genre & conditions travail femmes ateliers.",
+  "caelum_value_prop": {
+    "time_saving": "Monitoring continu droits genre vs audit annuel fournisseurs",
+    "cost_saving": "490€/mois vs mission audit terrain Bangladesh (50 000€+)",
+    "coverage": "Genre, terres, biais algorithmique, discours haine — pertinent fast fashion",
+    "compliance": "Documentation CSRD chapitre droits humains & diversité"
+  },
+  "metadata": {
+    "created_at": "2026-06-21",
+    "updated_at": "2026-06-21",
+    "created_by": "caelum-commercial-team"
+  }
+}

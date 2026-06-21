@@ -1,0 +1,70 @@
+{
+  "id": "nestle",
+  "slug": "nestle",
+  "name": "Nestlé S.A.",
+  "country": "Switzerland",
+  "city": "Vevey",
+  "sector": "Agrifood / FMCG",
+  "size": {
+    "revenue_bn_eur": 93,
+    "employees": 275000,
+    "index": "SMI"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": true,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB+",
+      "sustainalytics": "27.1 (Medium Risk)",
+      "target": "A d'ici 2025 selon engagement Swiss HRDD"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "VP Sustainability & Human Rights / Head of Responsible Sourcing",
+    "team": "Équipe Sustainability (~80 FTE globaux), équipe Responsible Sourcing cacao/café (30 FTE), équipe compliance suisse (15 FTE)",
+    "location": "Siège Vevey + hub regional Genève (compliance) + Abidjan (opérations cacao)",
+    "process": "Revue annuelle plan de durabilité en Q1, budget approuvé COMEX Vevey, reporting Swiss HRDD semestriel obligatoire depuis 2022"
+  },
+  "pain_points": [
+    "Travail des enfants dans la chaîne cacao Côte d'Ivoire / Ghana : absence de score temps réel par fournisseur de cacao — monitoring se fait par audits annuels ponctuels insuffisants",
+    "Swiss HRDD (loi suisse sur DD) : obligation de rapport semestriel avec preuves de diligence — système actuel trop manuel et non auditable",
+    "Risque procédural : action en justice 2023 en Suisse (CEDH) portant sur complicité travail des enfants — pression légale directe sur la direction",
+    "Traçabilité eau : engagement 'water stewardship' non mesuré en temps réel dans les communautés agricoles d'approvisionnement",
+    "Absence de mécanisme de plainte digitale accessible aux cultivateurs individuels (smallholders) Afrique de l'Ouest",
+    "Pression investisseurs : les fonds ISR suisses exigent des preuves d'amélioration quantifiée sur le travail des enfants"
+  ],
+  "observed_failures": [
+    "Action en justice 2023 (Suisse) : coalition d'ONG portant une plainte fondée sur l'absence de mesures préventives efficaces contre le travail des enfants dans la chaîne cacao malgré 20 ans d'engagements publics",
+    "Rapport Mighty Earth 2024 : présence documentée de cacao issu de forêts protégées Côte d'Ivoire dans la chaîne d'approvisionnement Nestlé",
+    "Audit interne 2022 révélant que seulement 34% des fournisseurs cacao directs disposaient d'un système de monitoring des droits enfants conforme"
+  ],
+  "signals_of_risk": [
+    "Pression réglementaire Swiss HRDD + CSDDD convergente : double obligation de résultat sur cacao/café",
+    "Réputation marque grand public fragile : campagnes sociales (#Nestlé #ChildLabor) virales en 2023-2024",
+    "Score ISS ESG dégradé sur critère 'supply chain human rights' en 2024"
+  ],
+  "signals_of_trust": [
+    "Cocoa Plan / Nescafé Plan : programmes pluriannuels avec 150 000 agriculteurs formés — base de données existante à exploiter",
+    "Membre du Rainforest Alliance et certification UTZ depuis 2010",
+    "Publication du rapport Swiss HRDD depuis 2022 avec cartographie des risques par matière première",
+    "Partenariat avec Save the Children sur l'éducation des enfants en zones cacao"
+  ],
+  "recommended_actions": [
+    "Ancrer la discussion sur l'action en justice 2023 : 'La question n'est plus 'si' mais 'quand' un tribunal suisse exige des preuves de monitoring temps réel'",
+    "Proposer une intégration avec leur base de données Cocoa Plan existante — pas de révolution, mais une couche d'analyse et d'alerte DDH",
+    "Mettre en avant la conformité Swiss HRDD : tableau de bord audit-ready pour le rapport semestriel",
+    "Cibler VP Responsible Sourcing en premier (opérationnel) avant VP Sustainability (stratégique)"
+  ],
+  "local_tone": "Sobre, factuel, référencé GRI Standards et Swiss HRDD. Les Suisses apprécient la discrétion et la preuve par les données. Éviter le ton militant. Privilégier les termes 'responsible sourcing', 'traceability', 'auditability'. En français si interlocuteur romand, sinon en anglais.",
+  "cultural_notes": "Nestlé est une entreprise très consciente de sa réputation historiquement attaquée (affaire lait maternelle, eau). Les interlocuteurs sont défensifs et prudents. Ne jamais utiliser le terme 'scandale' ou faire référence aux controverses passées de manière accusatoire. Mettre en avant les solutions, pas les problèmes. La décision implique souvent le Legal + le VP Sustainability conjointement.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.nestle.com/sustainability/human-rights",
+    "https://www.mightyearth.org",
+    "https://www.admin.ch/gov/fr/accueil/documentation/communiques.msg-id-90673.html"
+  ]
+}

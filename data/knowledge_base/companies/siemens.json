@@ -1,0 +1,69 @@
+{
+  "id": "siemens",
+  "slug": "siemens",
+  "name": "Siemens AG",
+  "country": "Germany",
+  "city": "Munich",
+  "sector": "Industrie / Technologie / Automation",
+  "size": {
+    "revenue_bn_eur": 78,
+    "employees": 320000,
+    "index": "DAX40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "16.4 (Low Risk)",
+      "target": "AAA d'ici 2027 — objectif sustainability strategy DEGREE"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO (Chief Compliance Officer) / Head of Human Rights",
+    "team": "Compliance Group (300+ FTE), équipe LkSG dédiée (30 FTE), équipe Human Rights (20 FTE)",
+    "location": "Siège Munich + centres de conformité Berlin, Erlangen, Singapour",
+    "process": "Comité de conformité mensuel au niveau Vorstand, reporting LkSG BAFA annuel, cycle d'achat stratégique Q2"
+  },
+  "pain_points": [
+    "Discrimination génétique : absente du scope LkSG compliance malgré son inclusion dans les conventions OIT ratifiées — risque de lacune systémique",
+    "Fournisseurs électroniques Asie : chaîne composants semiconducteurs avec risque travail forcé (Ouïghours Xinjiang) non entièrement cartographié",
+    "LkSG fournisseurs indirects : avec 80 000 fournisseurs actifs, la couverture tier-2/3 reste lacunaire malgré les efforts BAFA",
+    "IA industrielle et droits humains : déploiement d'outils d'automatisation dans des pays sans protection sociale adéquate — pas de scoring impact emploi",
+    "Mécanisme de plainte fournisseurs : accessible en 14 langues selon le rapport mais taux d'utilisation très faible — suspicion de non-accessibilité réelle"
+  ],
+  "observed_failures": [
+    "Rapport Human Rights Watch 2023 identifiant des fournisseurs Siemens en Chine utilisant de la main d'œuvre contrainte dans la fabrication de composants électriques",
+    "Audit BAFA 2024 : documentation insuffisante des plans d'action corrective pour les fournisseurs à risque — non-conformité potentielle §10 LkSG",
+    "Absence de politique formelle sur la discrimination génétique dans les pratiques RH mondiales — lacune identifiée par audit interne 2023 non corrigée"
+  ],
+  "signals_of_risk": [
+    "Pression US Uyghur Forced Labor Prevention Act : risque d'exclusion des marchés publics américains si la chaîne Xinjiang n'est pas auditée",
+    "Enquête Spiegel sur les pratiques fournisseurs Siemens en Asie du Sud-Est — sujet médiatiquement sensible",
+    "AI Act 2025 : les systèmes Siemens d'automation RH sont classifiés 'high risk' et doivent être audités"
+  ],
+  "signals_of_trust": [
+    "Sustainability strategy DEGREE : cadre ambitieux avec objectifs chiffrés sur 6 dimensions dont droits humains",
+    "Rapport LkSG publié depuis 2023 avec cartographie des risques par pays",
+    "Membre du Responsible Business Alliance et de l'initiative Minerals Council",
+    "Score MSCI AA : excellence reconnue en matière de gouvernance ESG"
+  ],
+  "recommended_actions": [
+    "Entrer par la lacune discrimination génétique + LkSG : thème technique peu traité que le CCO appréciera comme différenciateur",
+    "Proposer le module de couverture fournisseurs indirects avec priorisation automatique par score de risque — répondre au défi BAFA",
+    "Démonstration avec scénario semiconducteurs Asie : montrer comment le système identifie le risque Xinjiang en temps réel",
+    "Approcher simultanément CCO et Head of Human Rights — décision collegiale chez Siemens"
+  ],
+  "local_tone": "Très technique, détaillé, avec plan d'implémentation Gantt. Les interlocuteurs Siemens apprécient les références BAFA, l'OIT, les chiffres précis. Présenter un Konzept complet avant toute réunion décisionnelle. Allemand ou anglais selon l'interlocuteur.",
+  "cultural_notes": "Siemens a une culture d'ingénieur très forte : la crédibilité se construit par la précision technique, pas par le prestige. Éviter les promesses non chiffrées. Le Compliance Officer est habitué aux audits externes rigoureux — il voudra voir les méthodologies. Les décisions impliquent une revue juridique systématique. Délai de décision typique : 6-9 mois.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.siemens.com/global/en/company/sustainability/human-rights.html",
+    "https://www.bafa.de/DE/Wirtschaft/Sorgfaltspflichten/sorgfaltspflichten_node.html",
+    "https://www.hrw.org/news/2023/06/07/china-uyghur-forced-labor"
+  ]
+}

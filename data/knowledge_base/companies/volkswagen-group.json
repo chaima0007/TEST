@@ -1,0 +1,55 @@
+{
+  "company_id": "volkswagen-group",
+  "name": "Volkswagen Group",
+  "country": "Germany",
+  "sector": "Automotive",
+  "revenue_eur_bn": 293,
+  "employees": 680000,
+  "regulatory_exposure": {
+    "lksg": true,
+    "csddd": true,
+    "csrd": true,
+    "notes": "LkSG applicable depuis 2023 (>3000 salariés). CSDDD dès 2026."
+  },
+  "supply_chain_risks": {
+    "materials": ["cobalt", "lithium", "nickel", "copper", "rare_earth"],
+    "high_risk_geographies": ["DRC", "China", "Indonesia", "Chile", "Argentina"],
+    "known_controversies": [
+      "Cobalt sourcing DRC — travail des enfants mines artisanales",
+      "Usines Xinjiang — travail forcé Ouïghours",
+      "Lithium extraction — droits autochtones communautés andines"
+    ]
+  },
+  "relevant_engines": [
+    "land-grabbing-rights-engine",
+    "prison-labor-rights-engine",
+    "algorithmic-bias-rights-engine",
+    "digital-gender-gap-rights-engine"
+  ],
+  "contact_targets": [
+    {
+      "title": "Head of Group Sustainability",
+      "department": "Group Sustainability",
+      "linkedin_search": "Volkswagen Group Head Sustainability",
+      "email_domain": "@volkswagen.de"
+    },
+    {
+      "title": "Chief Compliance Officer",
+      "department": "Legal & Compliance",
+      "linkedin_search": "Volkswagen CCO Chief Compliance",
+      "email_domain": "@volkswagen.de"
+    }
+  ],
+  "pitch_angle": "LkSG due diligence chaîne d'approvisionnement minerais critiques — cobalt DRC, lithium Andes. Monitoring temps réel vs audit annuel.",
+  "caelum_value_prop": {
+    "time_saving": "Rapport DDH disponible immédiatement vs 12-18 mois audit",
+    "cost_saving": "490€/mois vs 150 000€+ audit annuel chaîne approvisionnement",
+    "coverage": "11 engines DDH vs 1-2 domaines par audit traditionnel",
+    "compliance": "Rapport exportable PDF pour due diligence LkSG/CSDDD"
+  },
+  "metadata": {
+    "created_at": "2026-06-21",
+    "updated_at": "2026-06-21",
+    "created_by": "caelum-commercial-team"
+  }
+}

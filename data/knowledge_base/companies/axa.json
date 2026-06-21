@@ -1,0 +1,69 @@
+{
+  "id": "axa",
+  "slug": "axa",
+  "name": "AXA S.A.",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Assurance / Investissement",
+  "size": {
+    "revenue_bn_eur": 110,
+    "employees": 145000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "18.7 (Low Risk)",
+      "target": "AA d'ici 2026 — engagement Net Zero Insurance Alliance"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Responsible Investment / Directeur de la Conformité Groupe",
+    "team": "Équipe Responsible Investment (35 FTE), équipe SFDR/Taxonomie (18 FTE), équipe ESG & Climate (25 FTE)",
+    "location": "Siège Paris 8e + bureau Bruxelles (compliance européenne) + hub Singapour",
+    "process": "Comité Investissement Responsable mensuel, reporting SFDR trimestriel, budget compliance validé COMEX Q4"
+  },
+  "pain_points": [
+    "Algorithme de scoring santé pour la tarification assurance : biais potentiel non audité SFDR Art.9 — risque de discrimination indirecte sur critères santé",
+    "Produits SFDR Art.9 : les fonds 'impact' doivent prouver la prise en compte des droits humains dans les PAI — données de qualité insuffisante des entreprises investies",
+    "Souscription assurance agricole Afrique : absence de critères droits humains dans les modèles de risque pour les micro-assurances",
+    "Reporting CSRD : consolidation des données ESG de 50+ filiales dans 20 pays — fragmentation et manque de standards communs",
+    "Pression netzéro : la désassurance des secteurs fossiles crée des risques sociaux (emplois) non mesurés par les outils actuels"
+  ],
+  "observed_failures": [
+    "Audit SFDR interne 2023 : les algorithmes de scoring health-based pour les produits d'assurance vie non-vie produisent des taux de refus statistiquement corrélés à l'origine géographique — biais indirect non corrigé",
+    "Rapport Finance Watch 2024 : produits SFDR Art.9 AXA Investment Managers contenant des entreprises avec violations documentées de droits humains — incohérence label/portefeuille",
+    "Absence de procédure formelle d'exclusion ESG pour les réassureurs dont les pratiques de souscription violent les UNGP"
+  ],
+  "signals_of_risk": [
+    "AMF et ACPR renforcent les contrôles sur les fonds SFDR Art.9 en 2025-2026 — risque de downgrade vers Art.8",
+    "Plainte ONG (Reclaim Finance) sur le financement d'entreprises extractives malgré les engagements AXA",
+    "AI Act 2025 : les systèmes de scoring santé pour l'assurance sont classifiés 'high risk' — obligation d'audit"
+  ],
+  "signals_of_trust": [
+    "Membre fondateur de la Net Zero Insurance Alliance (NZIA) et de la Climate Action 100+",
+    "Politique d'exclusion charbon et sables bitumineux parmi les plus strictes du secteur",
+    "Score MSCI A : reconnu comme leader ESG dans le secteur assurance",
+    "Publication PAI (Principal Adverse Impacts) depuis 2022 conforme SFDR avec granularité par fonds"
+  ],
+  "recommended_actions": [
+    "Entrer par le risque AI Act + SFDR Art.9 sur l'auditabilité des algorithmes de scoring — angle double réglementaire très actuel 2025-2026",
+    "Proposer un audit du scoring santé pour identifier les biais indirects — présenter comme protection proactive avant contrôle ACPR",
+    "Référencer Finance Watch et les risques de downgrade SFDR Art.9 : 'Comment allez-vous prouver l'intégrité droits humains de vos fonds impact en 2026 ?'",
+    "Cibler Head of Responsible Investment pour l'angle investissement, Head of Compliance pour l'angle réglementaire"
+  ],
+  "local_tone": "Très formel, institutionnel. Références SFDR, AMF, ACPR, AI Act obligatoires. Les interlocuteurs AXA Investment Managers sont analytiques et exigent des preuves méthodologiques. Ton écrit soigné, présentation PowerPoint structurée. Le mot 'conformité' est positif chez AXA.",
+  "cultural_notes": "AXA est une grande maison française avec une culture de conformité forte héritée des régulateurs assurance. Les interlocuteurs Responsible Investment ont souvent une double culture finance/développement durable — ils apprécient les références académiques. Les décisions prennent du temps (6-12 mois) mais une fois engagées, elles sont solides. Prévoir 3-4 rendez-vous de qualification avant la proposition commerciale.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.axa.com/en/responsibility/sustainable-finance",
+    "https://reclaimfinance.org",
+    "https://www.amf-france.org/fr/reglementation/dossiers-thematiques/finance-durable"
+  ]
+}

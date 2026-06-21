@@ -1,0 +1,70 @@
+{
+  "id": "bnpparibas",
+  "slug": "bnpparibas",
+  "name": "BNP Paribas S.A.",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Finance / Banque",
+  "size": {
+    "revenue_bn_eur": 45,
+    "employees": 190000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "22.1 (Medium Risk)",
+      "target": "AA d'ici 2027 — objectif annoncé investisseurs institutionnels"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Directeur des Risques ESG / Directeur de la Conformité Groupe",
+    "team": "Équipe ESG & Climate Risk (60 FTE), équipe SFDR/Taxonomie (20 FTE), équipe Compliance Droits Humains (15 FTE)",
+    "location": "Siège Paris 9e + centre de décision La Défense (direction financière)",
+    "process": "Comité des risques ESG mensuel, validation SFDR reporting en Q1/Q3, budget compliance approuvé COMEX en novembre"
+  },
+  "pain_points": [
+    "Algorithme de scoring ESG des contreparties non auditable : impossibilité de démontrer l'absence de biais dans la notation des entreprises financées — risque SFDR Art.9",
+    "Financement controversé Brésil 2024 (Oxfam) : soutien documenté à des entreprises impliquées dans des violations de droits communautaires amazoniens",
+    "Obligation SFDR Art.8/9 : les fonds classifiés doivent prouver la prise en compte des PAI (Principal Adverse Impacts) sur les droits humains — données insuffisantes",
+    "Traçabilité DDH des crédits syndiqués : impossibilité d'auditer les impacts droits humains des consortiums de financement multibanques",
+    "Pression réglementaire BCE : stress tests climatiques intégrant maintenant des critères droits humains (2025)",
+    "Reporting CSRD consolidé : les filiales BNP (Cardif, Arval, BNP CIB) ont des pratiques DDH divergentes non harmonisées"
+  ],
+  "observed_failures": [
+    "Rapport Oxfam 2024 documentant le financement BNP Paribas d'entreprises agricoles brésiliennes impliquées dans des expulsions de communautés autochtones en Amazonie",
+    "Audit SFDR interne 2023 révélant que les algorithmes de scoring ESG contreparties produisaient des notations 'greenwashing' impossibles à justifier méthodologiquement devant l'AMF",
+    "Absence de mécanisme de filtrage droits humains dans les décisions de crédit corporate >500M€ — signalé par le Conseil d'Administration en 2024"
+  ],
+  "signals_of_risk": [
+    "AMF sous pression du Parlement européen pour renforcer les contrôles SFDR Art.9 — BNP Paribas est dans le viseur régulier",
+    "Coalition d'actionnaires (CERES, Eurosif) ayant déposé une résolution en AG 2024 sur les droits humains dans le portefeuille",
+    "Journaliste Le Monde enquêtant sur le financement bancaire français des entreprises en zone de conflit"
+  ],
+  "signals_of_trust": [
+    "Signataire des Principes pour une Banque Responsable (UNEP FI) depuis 2019",
+    "Engagement net-zéro 2050 avec trajectoires par secteur validées SBTi",
+    "Publication rapport PAI (Principal Adverse Impacts) depuis 2022 conforme SFDR",
+    "Membre de l'initiative Finance for Biodiversity Pledge"
+  ],
+  "recommended_actions": [
+    "Entrer par la problématique SFDR Art.9 et l'auditabilité des algorithmes ESG — angle régulateur AMF très actuel",
+    "Proposer le module d'audit algorithmique droits humains pour les décisions de crédit : 'Pouvez-vous aujourd'hui prouver devant l'AMF que votre scoring ESG est exempt de biais ?'",
+    "Référencer le rapport Oxfam 2024 Brésil : montrer qu'un système de monitoring en amont aurait permis d'anticiper l'exposition réputationnelle",
+    "Cibler Directeur Risques ESG + Directeur Compliance simultanément — la décision est bicéphale"
+  ],
+  "local_tone": "Très formel, institutionnel. Références SFDR, EU Taxonomy, AMF, BCE obligatoires. Les interlocuteurs bancaires sont juristes ou financiers — éviter le jargon RSE associatif. Privilégier les termes 'risk management', 'auditabilité', 'conformité réglementaire'. Les réunions se préparent avec des notes de synthèse écrites envoyées à l'avance.",
+  "cultural_notes": "BNP Paribas est une grande maison avec une culture interne très structurée. Les interlocuteurs compliance sont prudents par nature professionnelle. Le mot 'risque' doit être présenté comme maîtrisé, jamais comme une menace existentielle. Prévoir un premier rendez-vous de qualification, puis une présentation formelle avec support écrit. La décision implique systématiquement le service juridique.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://invest.bnpparibas/en/esg-sustainable-finance",
+    "https://www.oxfam.org/en/research/banks-amazon",
+    "https://www.amf-france.org/fr/reglementation/dossiers-thematiques/finance-durable"
+  ]
+}

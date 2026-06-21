@@ -1,0 +1,69 @@
+{
+  "id": "unilever",
+  "slug": "unilever",
+  "name": "Unilever PLC / NV",
+  "country": "United Kingdom / Netherlands",
+  "city": "Rotterdam (NL) / London (UK)",
+  "sector": "FMCG / Biens de consommation",
+  "size": {
+    "revenue_bn_eur": 60,
+    "employees": 127000,
+    "index": "FTSE100"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "14.2 (Low Risk)",
+      "target": "AAA d'ici 2028 — objectif Sustainable Living Plan 2.0"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Human Rights / Chief Sustainability Officer",
+    "team": "Équipe Sustainability (~120 FTE), équipe Responsible Sourcing (50 FTE), équipe Human Rights dédiée (18 FTE)",
+    "location": "Rotterdam (siège opérationnel) + Londres (direction financière et compliance)",
+    "process": "Revue Human Rights Strategy annuelle en Q1, reporting GRI complet, budget approuvé Board of Directors en Q4"
+  },
+  "pain_points": [
+    "Pauvreté menstruelle dans la chaîne d'approvisionnement : absence de mesure de l'accès aux produits d'hygiène menstruelle pour les travailleuses agricoles fournissant huile de palme, thé, cacao — contradiction avec engagement SDG 5",
+    "Traçabilité huile de palme tier-3 : malgré RSPO, absence de score temps réel sur les smallholders Indonésie/Malaisie",
+    "Algorithme pricing fournisseurs : les modèles d'optimisation des coûts peuvent pousser involontairement vers des fournisseurs moins regardants sur les droits humains",
+    "Reporting CSRD : consolidation difficile des données droits humains de 700+ marques et filiales mondiales",
+    "Manque de preuve d'impact mesurable du Sustainable Living Plan sur les conditions de travail terrain — investisseurs exigeants"
+  ],
+  "observed_failures": [
+    "Rapport Oxfam 2023 : malgré les engagements publics, les travailleuses des plantations de thé Lipton (Unilever) au Kenya ne bénéficient pas de soins de santé reproductive suffisants",
+    "Audit interne 2024 : seulement 41% des fournisseurs huile de palme tier-2 disposent d'un système de reporting droits humains fonctionnel",
+    "Décision de scission de la branche glaces (Magnum, Ben & Jerry's) ayant soulevé des questions sur la continuité des engagements droits humains dans les nouvelles entités"
+  ],
+  "signals_of_risk": [
+    "Pression investisseurs post-split : les fonds ISR questionnent la cohérence des engagements RSE après la réorganisation stratégique 2024",
+    "CSDDD art.9 : Unilever devra démontrer des mesures correctives spécifiques, pas seulement des politiques — gap actuel documenté",
+    "Campagnes NGO sur la pauvreté menstruelle dans les chaînes FMCG — sujet en forte montée médiatique 2025-2026"
+  ],
+  "signals_of_trust": [
+    "Sustainable Living Plan : référence mondiale en matière d'engagement RSE chiffré avec KPIs publics depuis 2010",
+    "Membre fondateur de l'initiative Human Rights in Supply Chains",
+    "Scoring MSCI AA : parmi les meilleures entreprises FMCG mondiales",
+    "Publication annuelle d'un rapport droits humains conforme aux UNGP Reporting Framework"
+  ],
+  "recommended_actions": [
+    "Entrer par le gap SDG 5 et la pauvreté menstruelle — sujet aligné avec leur mission publique et néanmoins non mesuré en chaîne d'approvisionnement",
+    "Proposer un pilote sur la chaîne thé Kenya ou huile de palme Indonésie — données existantes à enrichir",
+    "Positionner la solution comme l'outil qui permet de transformer les politiques en preuves — répondre au défi investisseurs",
+    "Cibler Head of Human Rights pour l'entrée, puis CSO pour la décision budgétaire"
+  ],
+  "local_tone": "Direct, business-first, en anglais. Les interlocuteurs Unilever sont pragmatiques et habituels des solutions RSE sophistiquées. Éviter le discours généraliste — aller directement aux KPIs et aux cas d'usage. Références SDG, GRI, UNGP bienvenues mais pas suffisantes seules.",
+  "cultural_notes": "Culture multiculturelle anglo-néerlandaise. Les réunions sont efficaces et orientées résultats. Le Head of Human Rights a souvent une formation ONG ou juridique internationale — appréciera les références UNGP et les cas concrets terrain. Les décisions sont rapides comparées aux entreprises françaises ou allemandes. Préférer les échanges en anglais même avec les Néerlandais.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.unilever.com/planet-and-society/respect-human-rights/",
+    "https://www.oxfam.org/en/research/behind-the-brands",
+    "https://ungpreporting.org/how-to-use-this-framework/"
+  ]
+}

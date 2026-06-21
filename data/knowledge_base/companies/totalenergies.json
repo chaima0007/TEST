@@ -1,0 +1,70 @@
+{
+  "id": "totalenergies",
+  "slug": "totalenergies",
+  "name": "TotalEnergies SE",
+  "country": "France",
+  "city": "Courbevoie (La Défense)",
+  "sector": "Énergie / Oil & Gas / Renewables",
+  "size": {
+    "revenue_bn_eur": 218,
+    "employees": 105000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "34.2 (High Risk)",
+      "target": "A d'ici 2027 selon feuille de route interne"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CSO (Chief Sustainability Officer) / Head of Human Rights & Social Performance",
+    "team": "Direction RSE & Climate (~45 FTE), équipe droits humains (8 FTE), équipe conformité fournisseurs (12 FTE)",
+    "location": "Siège La Défense + Centre Technique de Lyon",
+    "process": "Revue RSE trimestrielle au COMEX, validation budget annuel H1, cycles d'achat fournisseurs renouvelés en Q3"
+  },
+  "pain_points": [
+    "Absence de système d'alerte temps réel sur les violations DDH dans la chaîne d'approvisionnement africaine (Angola, Nigeria, Mozambique)",
+    "Pression réglementaire CSDDD article 9 sur l'obligation de résultat en matière de diligence raisonnable — délai 2027",
+    "Difficulté à prouver l'auditabilité des scores fournisseurs ESG face aux parties prenantes ONG et investisseurs",
+    "Risque de réputation post-incident Uganda 2021 : absence de dispositif de monitoring communautaire formalisé",
+    "Manque de traçabilité sur les droits des peuples autochtones dans les projets d'exploration offshore",
+    "KPIs droits humains non intégrés dans les reporting CSRD consolidés — fragmentation des données"
+  ],
+  "observed_failures": [
+    "Incident 2021 Ouganda (EACOP) : rapport Global Witness documentant des expropriations forcées sans compensation adéquate — aucun système d'alerte préventif en place",
+    "Absence de scoring temps réel sur les fournisseurs de sous-traitance Afrique subsaharienne malgré 3 alertes ONG entre 2020-2023",
+    "Rapport de diligence raisonnable 2023 identifié comme 'non conforme aux attentes CSDDD art.9' par une analyse externe Vigeo Eiris"
+  ],
+  "signals_of_risk": [
+    "Score MSCI BBB stagnant depuis 2022 malgré investissements RSE — signal de manque de preuve systémique",
+    "Plainte déposée par coalition d'ONG françaises (2024) sur insuffisance du plan de vigilance LDN",
+    "Presse spécialisée (Les Echos, Reuters) relayant régulièrement des critiques sur l'écart entre ambitions net-zéro et pratiques terrain"
+  ],
+  "signals_of_trust": [
+    "Engagement public signataire UNGC (Global Compact) depuis 2002 avec reporting Communication on Progress",
+    "Membre fondateur du Voluntary Principles on Security and Human Rights (VPSHR)",
+    "Publication annuelle d'un rapport de vigilance avec cartographie des risques par pays",
+    "Politique droits humains formalisée (Human Rights Policy 2021) alignée UNGP"
+  ],
+  "recommended_actions": [
+    "Proposer une démonstration live du module de monitoring DDH temps réel sur supply chain Afrique — montrer l'écart entre leur reporting actuel et ce qui est requis CSDDD art.9",
+    "Ancrer l'approche sur l'incident Uganda 2021 : 'Que se serait-il passé avec un système d'alerte préventif ?'",
+    "Préparer un benchmark chiffré : coût d'un incident DDH (litige + réputation) vs coût annuel de la solution",
+    "Cibler en priorité Head of Human Rights & Social Performance pour l'entrée, puis escalade vers CSO pour la décision budgétaire"
+  ],
+  "local_tone": "Formel, ancré CSDDD art.9 et UNGP. Éviter le langage trop commercial. Préférer les références réglementaires précises et les données de risque chiffrées. Le DG RSE lit les rapports Vigeo/MSCI.",
+  "cultural_notes": "Culture d'ingénieur : les interlocuteurs RSE apprécient la précision technique et les benchmarks sectoriels. Éviter les formules creuses de 'transformation RSE'. Les décisions se prennent en comité, rarement à titre individuel. Premier rendez-vous = phase de qualification — ne pas proposer un contrat avant le 2e échange.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://totalenergies.com/sustainability/human-rights",
+    "https://www.globalwitness.org/en/campaigns/oil-gas-and-mining/eacop/",
+    "https://www.vigeo-eiris.com"
+  ]
+}
