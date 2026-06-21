@@ -8358,6 +8358,32 @@ function IconRefugeesAsylumSeekersRights({ className }: { className?: string }) 
   );
 }
 
+function IconCorruptionHumanRightsNexus({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.728 12.728.707.707M3 12h1m16 0h1M4.927 19.073l.707-.707M18.364 5.636l.707-.707" />
+      <circle cx="12" cy="12" r="4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3" />
+    </svg>
+  );
+}
+
+function IconReligiousPersecutionMinorityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L8 8H2l4.5 4-1.5 6L12 15l7 3-1.5-6L22 8h-6L12 2z" />
+    </svg>
+  );
+}
+
+function IconArmsTradeCivilianHarm({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h12M15 8l4 4-4 4M9 6H6a2 2 0 00-2 2v8a2 2 0 002 2h3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9217,6 +9243,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/mental-health-rights-psychiatric-violence-engine", label: "Santé Mentale & Violence Psychiatrique", icon: IconMentalHealthRightsPsychiatricViolence },
       { href: "/dashboard/forced-disappearance-extrajudicial-killing-engine", label: "Disparitions Forcées & Exécutions Extrajudiciaires", icon: IconForcedDisappearanceExtrajudicialKilling },
       { href: "/dashboard/refugees-asylum-seekers-rights-engine", label: "Droits Réfugiés & Demandeurs d&apos;Asile", icon: IconRefugeesAsylumSeekersRights },
+      { href: "/dashboard/corruption-human-rights-nexus-engine", label: "Corruption &amp; Droits Humains", icon: IconCorruptionHumanRightsNexus },
+      { href: "/dashboard/religious-persecution-minority-rights-engine", label: "Persécution Religieuse", icon: IconReligiousPersecutionMinorityRights },
+      { href: "/dashboard/arms-trade-civilian-harm-engine", label: "Commerce Armes &amp; Civils", icon: IconArmsTradeCivilianHarm },
     ],
   },
   {
