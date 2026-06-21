@@ -1,0 +1,15 @@
+{
+  "slug": "teleperformance",
+  "name": "Teleperformance SE",
+  "country": "FR",
+  "sector": "BPO",
+  "size": "Large (410 000+ employees, ~8B EUR revenue)",
+  "hq": "Paris, France",
+  "csrd_exposure": "LOW",
+  "csddd_scope": true,
+  "persona_target": "RSE Director",
+  "ddh_domains": ["statelessness_rights"],
+  "priority": 4,
+  "estimated_budget_eur": 2000,
+  "last_updated": "2026-06-21"
+}

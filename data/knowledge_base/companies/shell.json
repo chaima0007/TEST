@@ -1,0 +1,15 @@
+{
+  "slug": "shell",
+  "name": "Shell plc",
+  "country": "NL",
+  "sector": "Energy",
+  "size": "Large (90 000+ employees, ~260B USD revenue)",
+  "hq": "The Hague, Netherlands",
+  "csrd_exposure": "HIGH",
+  "csddd_scope": true,
+  "persona_target": "VP ESG",
+  "ddh_domains": ["land_grabbing_rights"],
+  "priority": 2,
+  "estimated_budget_eur": 8000,
+  "last_updated": "2026-06-21"
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "veolia",
+  "name": "Veolia Environnement S.A.",
+  "country": "FR",
+  "sector": "Environment",
+  "size": "Large (210 000+ employees, ~42B EUR revenue)",
+  "hq": "Aubervilliers, France",
+  "csrd_exposure": "MEDIUM",
+  "csddd_scope": true,
+  "persona_target": "RSE Director",
+  "ddh_domains": ["statelessness_rights"],
+  "priority": 3,
+  "estimated_budget_eur": 3500,
+  "last_updated": "2026-06-21"
+}

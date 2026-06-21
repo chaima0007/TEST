@@ -1,0 +1,15 @@
+{
+  "slug": "lvmh",
+  "name": "LVMH Moët Hennessy Louis Vuitton SE",
+  "country": "FR",
+  "sector": "Luxury",
+  "size": "Large (200 000+ employees, ~86B EUR revenue)",
+  "hq": "Paris, France",
+  "csrd_exposure": "HIGH",
+  "csddd_scope": true,
+  "persona_target": "RSE Director",
+  "ddh_domains": ["forced_labor_supply_chain"],
+  "priority": 2,
+  "estimated_budget_eur": 7000,
+  "last_updated": "2026-06-21"
+}

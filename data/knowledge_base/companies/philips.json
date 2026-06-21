@@ -1,0 +1,15 @@
+{
+  "slug": "philips",
+  "name": "Philips N.V.",
+  "country": "NL",
+  "sector": "Healthcare",
+  "size": "Large (70 000+ employees, ~18B EUR revenue)",
+  "hq": "Amsterdam, Netherlands",
+  "csrd_exposure": "LOW",
+  "csddd_scope": false,
+  "persona_target": "Sustainability Manager",
+  "ddh_domains": ["prison_labor_rights"],
+  "priority": 4,
+  "estimated_budget_eur": 2500,
+  "last_updated": "2026-06-21"
+}

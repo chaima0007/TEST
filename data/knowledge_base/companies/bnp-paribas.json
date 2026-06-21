@@ -1,0 +1,15 @@
+{
+  "slug": "bnp-paribas",
+  "name": "BNP Paribas S.A.",
+  "country": "FR",
+  "sector": "Finance",
+  "size": "Large (180 000+ employees, ~50B EUR revenue)",
+  "hq": "Paris, France",
+  "csrd_exposure": "MEDIUM",
+  "csddd_scope": true,
+  "persona_target": "Head of ESG Investments",
+  "ddh_domains": ["land_grabbing_rights"],
+  "priority": 3,
+  "estimated_budget_eur": 5000,
+  "last_updated": "2026-06-21"
+}

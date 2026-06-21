@@ -1,0 +1,69 @@
+{
+  "id": "carrefour",
+  "slug": "carrefour",
+  "name": "Carrefour S.A.",
+  "country": "France",
+  "city": "Massy",
+  "sector": "Retail / Grande Distribution",
+  "size": {
+    "revenue_bn_eur": 90,
+    "employees": 320000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "25.3 (Medium Risk)",
+      "target": "A d'ici 2026 — feuille de route Act for Food et Carrefour 2026"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "CCO (Chief Compliance Officer) / VP Développement Durable & Achats Responsables",
+    "team": "Équipe RSE (55 FTE), équipe compliance fournisseurs (40 FTE terrain), équipe CSDDD (15 FTE créée 2023)",
+    "location": "Siège Massy + direction Achats Cœur Défense + équipes terrain Brésil, Argentine, Espagne, Belgique",
+    "process": "Revue fournisseurs trimestrielle, audit fournisseurs premier prix annuel (3000 audits/an), budget RSE validé COMEX septembre"
+  },
+  "pain_points": [
+    "Maltraitance des seniors dans les filières : absence de KPIs spécifiques sur les conditions de travail des employés âgés (>55 ans) dans les entrepôts logistiques Carrefour Brésil et Pologne",
+    "Déforestation Brésil 2023 : incident documenté sur des fournisseurs viande bovine liés à des zones déforestées Amazonie — système de traçabilité insuffisant",
+    "Fournisseurs premier prix : les marques propres Carrefour font appel à des sous-traitants en Asie du Sud dont les conditions de travail ne font pas l'objet de monitoring temps réel",
+    "CSDDD consommateur final : Carrefour doit prouver que l'information droits humains remonte jusqu'au prix sur l'étiquette — complexité énorme",
+    "Chaîne produits frais Afrique (fruits tropicaux) : travailleurs agricoles sans accès aux procédures de plainte dans les langues locales"
+  ],
+  "observed_failures": [
+    "Incident Brésil 2023 : documentaire Arte + rapport Mighty Earth identifiant des fournisseurs viande bovine Carrefour approvisionnant depuis des zones d'élevage sur terres déforestées illégalement en Amazonie",
+    "Rapport CCFD-Terre Solidaire 2024 : conditions de travail insuffisantes documentées chez des fournisseurs textile Carrefour Bangladesh — absence de monitoring continu",
+    "Audit interne 2023 : taux de non-conformité de 28% dans les audits fournisseurs first price asiatiques — taux élevé sans plan d'action systémique"
+  ],
+  "signals_of_risk": [
+    "CSDDD art.13 : obligation d'information consommateur sur les risques droits humains dans la chaîne — Carrefour frontline consumer est particulièrement exposé",
+    "ONG Envol Vert et Mighty Earth très actives sur le dossier Carrefour Brésil — pression médiatique continue",
+    "Enquête DGCCRF sur les pratiques commerciales avec fournisseurs — risque de corrélation avec pratiques DDH"
+  ],
+  "signals_of_trust": [
+    "Programme Act for Food : engagements publics chiffrés sur l'alimentation durable avec reporting annuel",
+    "Label Carrefour Quality Lines (CQL) : traçabilité produit améliorée sur 500+ références",
+    "Membre de la Roundtable on Responsible Soy (RTRS) et de l'initiative Cattle Agreement Brésil",
+    "Rapport de vigilance annuel depuis 2018 (loi Vigilance française) — un des premiers retailers à le publier"
+  ],
+  "recommended_actions": [
+    "Entrer par l'incident Brésil 2023 et la CSDDD art.13 : 'Le consommateur final sera bientôt informé des risques droits humains — êtes-vous prêt ?'",
+    "Proposer le module traçabilité viande/soja Brésil avec alertes déforestation temps réel intégrées",
+    "Angle maltraitance seniors : thème peu traité, fort impact RH et réputation marque employeur en France",
+    "Cibler VP Achats Responsables pour l'entrée opérationnelle, CCO pour la dimension compliance réglementaire"
+  ],
+  "local_tone": "Formel mais accessible, centré CSDDD et consommateur final. Carrefour est très sensible à sa réputation marque auprès du grand public. Les arguments sur la protection de la marque et la confiance consommateur sont très efficaces. Éviter le jargon trop technique — les interlocuteurs ne sont pas tous juristes.",
+  "cultural_notes": "Carrefour est un groupe français avec une forte culture commerciale. Le RSE doit se justifier en termes d'impact business (omnicanal, prix, fidélisation). Les décisions impliquent souvent la Direction Commerciale en plus de la RSE. Attention aux cycles politiques internes : changements de direction fréquents affectent les priorités RSE. Premier contact idéal en Q1 avant les revues budgétaires.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.carrefour.com/fr/groupe/engagement-rse",
+    "https://www.mightyearth.org/fr/carrefour/",
+    "https://www.arte.tv/fr/videos/RC-022555/amazonie/"
+  ]
+}

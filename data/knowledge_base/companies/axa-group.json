@@ -1,0 +1,15 @@
+{
+  "slug": "axa-group",
+  "name": "AXA S.A.",
+  "country": "FR",
+  "sector": "Insurance",
+  "size": "Large (145 000+ employees, ~100B EUR revenue)",
+  "hq": "Paris, France",
+  "csrd_exposure": "MEDIUM",
+  "csddd_scope": false,
+  "persona_target": "Impact Investment Director",
+  "ddh_domains": ["algorithmic_bias_rights"],
+  "priority": 3,
+  "estimated_budget_eur": 4500,
+  "last_updated": "2026-06-21"
+}

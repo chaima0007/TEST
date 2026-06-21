@@ -1,0 +1,15 @@
+{
+  "slug": "adidas",
+  "name": "Adidas AG",
+  "country": "DE",
+  "sector": "Sports",
+  "size": "Large (59 000+ employees, ~22B EUR revenue)",
+  "hq": "Herzogenaurach, Germany",
+  "csrd_exposure": "MEDIUM",
+  "csddd_scope": true,
+  "persona_target": "Head of Responsible Sourcing",
+  "ddh_domains": ["digital_gender_gap_rights"],
+  "priority": 4,
+  "estimated_budget_eur": 3000,
+  "last_updated": "2026-06-21"
+}

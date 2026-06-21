@@ -1,0 +1,15 @@
+{
+  "slug": "heidelberg-materials",
+  "name": "HeidelbergMaterials AG",
+  "country": "DE",
+  "sector": "Construction",
+  "size": "Large (51 000+ employees, ~21B EUR revenue)",
+  "hq": "Heidelberg, Germany",
+  "csrd_exposure": "MEDIUM",
+  "csddd_scope": true,
+  "persona_target": "ESG Manager",
+  "ddh_domains": ["land_grabbing_rights"],
+  "priority": 3,
+  "estimated_budget_eur": 3000,
+  "last_updated": "2026-06-21"
+}

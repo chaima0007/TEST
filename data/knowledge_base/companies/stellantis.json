@@ -1,0 +1,15 @@
+{
+  "slug": "stellantis",
+  "name": "Stellantis N.V.",
+  "country": "NL/FR",
+  "sector": "Automotive",
+  "size": "Large (290 000+ employees, ~188B EUR revenue)",
+  "hq": "Amsterdam, Netherlands",
+  "csrd_exposure": "MEDIUM",
+  "csddd_scope": true,
+  "persona_target": "Head of ESG",
+  "ddh_domains": ["algorithmic_bias_rights"],
+  "priority": 5,
+  "estimated_budget_eur": 4000,
+  "last_updated": "2026-06-21"
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "danone",
+  "name": "Danone S.A.",
+  "country": "FR",
+  "sector": "Food",
+  "size": "Large (97 000+ employees, ~27B EUR revenue)",
+  "hq": "Paris, France",
+  "csrd_exposure": "MEDIUM",
+  "csddd_scope": true,
+  "persona_target": "Chief Sustainability Officer",
+  "ddh_domains": ["land_grabbing_rights"],
+  "priority": 4,
+  "estimated_budget_eur": 3000,
+  "last_updated": "2026-06-21"
+}

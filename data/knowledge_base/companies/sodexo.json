@@ -1,0 +1,15 @@
+{
+  "slug": "sodexo",
+  "name": "Sodexo S.A.",
+  "country": "FR",
+  "sector": "Services",
+  "size": "Large (420 000+ employees, ~23B EUR revenue)",
+  "hq": "Issy-les-Moulineaux, France",
+  "csrd_exposure": "HIGH",
+  "csddd_scope": true,
+  "persona_target": "Directrice RSE",
+  "ddh_domains": ["prison_labor_rights", "unpaid_care_work_rights"],
+  "priority": 1,
+  "estimated_budget_eur": 4000,
+  "last_updated": "2026-06-21"
+}
