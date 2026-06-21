@@ -8122,6 +8122,30 @@ function IconSocialMediaPoliticalCensorship({ className }: { className?: string 
   );
 }
 
+function IconElderlyRightsAgeDiscrimination({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="7" r="4" /><path d="M6 21v-1a6 6 0 0 1 12 0v1" /><path d="M8 11l-2 6" /><path d="M16 11l2 6" /><line x1="10" y1="17" x2="14" y2="17" />
+    </svg>
+  );
+}
+
+function IconMigrationAsylumSeekersRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 12h18" /><path d="M3 12l4-4" /><path d="M3 12l4 4" /><path d="M21 12l-4-4" /><path d="M21 12l-4 4" /><circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+function IconAcademicFreedomUniversityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /><line x1="12" y1="22" x2="12" y2="17" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -8953,6 +8977,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/minority-religious-rights-persecution-engine", label: "Persécution Religieuse Minorités", icon: IconMinorityReligiousRightsPersecution },
       { href: "/dashboard/social-media-political-censorship-engine", label: "Censure Politique Réseaux Sociaux", icon: IconSocialMediaPoliticalCensorship },
       { href: "/dashboard/disability-rights-accessibility-engine", label: "Droits Handicapés & Accessibilité", icon: IconDisabilityRightsAccessibility },
+      { href: "/dashboard/elderly-rights-age-discrimination-engine", label: "Droits Aînés & Discrimination Âge", icon: IconElderlyRightsAgeDiscrimination },
+      { href: "/dashboard/migration-asylum-seekers-rights-engine", label: "Migration & Droits Demandeurs Asile", icon: IconMigrationAsylumSeekersRights },
+      { href: "/dashboard/academic-freedom-university-rights-engine", label: "Liberté Académique & Universités", icon: IconAcademicFreedomUniversityRights },
     ],
   },
   {
