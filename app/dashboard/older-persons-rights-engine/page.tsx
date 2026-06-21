@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
 const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
 
-const ACCENT = "#8b5cf6";
+const ACCENT = "#f59e0b";
 
 interface Entity {
   entity_id: string;
@@ -12,11 +12,11 @@ interface Entity {
   country: string;
   sector: string;
   composite_score: number;
-  forced_institutionalization_coercion_severity_score: number;
-  psychiatric_treatment_without_consent_scale_score: number;
-  mental_health_service_access_gap_score: number;
-  stigma_discrimination_mental_health_barrier_score: number;
-  estimated_mental_health_rights_index: number;
+  elder_abuse_neglect_institution_severity_score: number;
+  age_discrimination_employment_exclusion_scale_score: number;
+  pension_social_protection_adequacy_gap_score: number;
+  healthcare_long_term_care_access_barrier_score: number;
+  estimated_older_persons_rights_index: number;
   risk_level: string;
   primary_pattern: string;
   key_signals: string[];
@@ -27,7 +27,7 @@ interface Entity {
 interface DashData {
   total_entities?: number;
   avg_composite?: number;
-  avg_estimated_mental_health_rights_index?: number;
+  avg_estimated_older_persons_rights_index?: number;
   risk_distribution?: Record<string, number>;
   confidence_score?: number;
   data_sources?: string[];
@@ -65,10 +65,10 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
     { key: "sources", label: "Sources" },
   ];
   const subScores = [
-    { label: "Internement Forcé", value: entity.forced_institutionalization_coercion_severity_score, weight: "0.30" },
-    { label: "Traitements Sans Consentement", value: entity.psychiatric_treatment_without_consent_scale_score, weight: "0.25" },
-    { label: "Accès aux Soins", value: entity.mental_health_service_access_gap_score, weight: "0.25" },
-    { label: "Stigma/Discrimination", value: entity.stigma_discrimination_mental_health_barrier_score, weight: "0.20" },
+    { label: "Abus/Négligence", value: entity.elder_abuse_neglect_institution_severity_score, weight: "0.30" },
+    { label: "Discrimination Âge", value: entity.age_discrimination_employment_exclusion_scale_score, weight: "0.25" },
+    { label: "Protection Sociale", value: entity.pension_social_protection_adequacy_gap_score, weight: "0.25" },
+    { label: "Soins Long Terme", value: entity.healthcare_long_term_care_access_barrier_score, weight: "0.20" },
   ];
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={onClose}>
@@ -99,8 +99,8 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
                   <div className="text-xs text-slate-400 mt-1">Score Composite</div>
                 </div>
                 <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold" style={{ color: ACCENT }}>{typeof entity.estimated_mental_health_rights_index === "number" ? entity.estimated_mental_health_rights_index.toFixed(2) : "—"}</div>
-                  <div className="text-xs text-slate-400 mt-1">Index Santé Mentale</div>
+                  <div className="text-3xl font-bold" style={{ color: ACCENT }}>{typeof entity.estimated_older_persons_rights_index === "number" ? entity.estimated_older_persons_rights_index.toFixed(2) : "—"}</div>
+                  <div className="text-xs text-slate-400 mt-1">Index Personnes Âgées</div>
                 </div>
               </div>
               <div className={`rounded-lg p-3 border ${RB[entity.risk_level] ?? "border-slate-700 bg-slate-800/30"}`}>
@@ -156,14 +156,14 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function MentalHealthRightsEnginePage() {
+export default function OlderPersonsRightsEnginePage() {
   const [data, setData] = useState<DashData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("tous");
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/mental-health-rights-engine")
+    fetch("/api/older-persons-rights-engine")
       .then(r => r.json())
       .then(d => { setData(d.payload ?? d); setLoading(false); });
   }, []);
@@ -171,7 +171,7 @@ export default function MentalHealthRightsEnginePage() {
   if (loading) {
     return (
       <div className="bg-slate-950 min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-sm" style={{ color: ACCENT }}>Initialisation Santé Mentale…</div>
+        <div className="animate-pulse text-sm" style={{ color: ACCENT }}>Initialisation Personnes Âgées…</div>
       </div>
     );
   }
@@ -180,22 +180,22 @@ export default function MentalHealthRightsEnginePage() {
   const filtered = filter === "tous" ? allEntities : allEntities.filter(e => e.risk_level === filter);
   const avg = (arr: number[]) => arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
   const avgComposite = data?.avg_composite ?? avg(allEntities.map(e => e.composite_score));
-  const avgIndex = data?.avg_estimated_mental_health_rights_index ?? avg(allEntities.map(e => e.estimated_mental_health_rights_index));
+  const avgIndex = data?.avg_estimated_older_persons_rights_index ?? avg(allEntities.map(e => e.estimated_older_persons_rights_index));
   const rd = data?.risk_distribution ?? {};
   const countCritique = rd["critique"] ?? allEntities.filter(e => e.risk_level === "critique").length;
   const countEleve = rd["élevé"] ?? allEntities.filter(e => e.risk_level === "élevé").length;
   const sources = data?.data_sources ?? [];
   const confidence = typeof data?.confidence_score === "number" ? `${(data.confidence_score * 100).toFixed(0)}%` : "—";
 
-  const avgForcedInstitutionalization = avg(allEntities.map(e => e.forced_institutionalization_coercion_severity_score));
-  const avgPsychiatricTreatment = avg(allEntities.map(e => e.psychiatric_treatment_without_consent_scale_score));
-  const avgServiceAccess = avg(allEntities.map(e => e.mental_health_service_access_gap_score));
-  const avgStigma = avg(allEntities.map(e => e.stigma_discrimination_mental_health_barrier_score));
+  const avgElderAbuse = avg(allEntities.map(e => e.elder_abuse_neglect_institution_severity_score));
+  const avgAgeDiscrimination = avg(allEntities.map(e => e.age_discrimination_employment_exclusion_scale_score));
+  const avgPension = avg(allEntities.map(e => e.pension_social_protection_adequacy_gap_score));
+  const avgHealthcare = avg(allEntities.map(e => e.healthcare_long_term_care_access_barrier_score));
 
   const kpis = [
     { label: "Entités Analysées", value: data?.total_entities ?? allEntities.length },
     { label: "Score Moyen", value: avgComposite.toFixed(1) },
-    { label: "Index Santé Mentale", value: avgIndex.toFixed(2) },
+    { label: "Index Personnes Âgées", value: avgIndex.toFixed(2) },
     { label: "Confiance", value: confidence },
     { label: "Critique", value: countCritique },
     { label: "Élevé", value: countEleve },
@@ -211,10 +211,10 @@ export default function MentalHealthRightsEnginePage() {
       <div>
         <div className="flex items-center gap-3 mb-1">
           <div className="w-3 h-8 rounded-full" style={{ background: ACCENT }} />
-          <h1 className="text-2xl font-bold tracking-tight">Mental Health Rights Engine</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Older Persons Rights Engine</h1>
         </div>
         <p className="text-slate-400 text-sm ml-6">
-          Internement forcé, traitements sans consentement et accès aux soins en santé mentale — Caelum Partners · Chaima Mhadbi, Fondatrice, Bruxelles
+          Abus, discrimination par l&apos;âge et accès aux soins pour les personnes âgées — Caelum Partners · Chaima Mhadbi, Fondatrice, Bruxelles
         </p>
       </div>
 
@@ -232,10 +232,10 @@ export default function MentalHealthRightsEnginePage() {
       <div className="bg-slate-900 border border-slate-800 rounded-xl p-5">
         <h2 className="text-sm font-semibold text-slate-400 mb-4">Scores Moyens par Dimension</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <GaugeRing value={avgForcedInstitutionalization} label="Internement Forcé" />
-          <GaugeRing value={avgPsychiatricTreatment} label="Traitements Sans Consentement" />
-          <GaugeRing value={avgServiceAccess} label="Accès aux Soins" />
-          <GaugeRing value={avgStigma} label="Stigma/Discrimination" />
+          <GaugeRing value={avgElderAbuse} label="Abus/Négligence" />
+          <GaugeRing value={avgAgeDiscrimination} label="Discrimination Âge" />
+          <GaugeRing value={avgPension} label="Protection Sociale" />
+          <GaugeRing value={avgHealthcare} label="Soins Long Terme" />
         </div>
       </div>
 
@@ -270,7 +270,7 @@ export default function MentalHealthRightsEnginePage() {
               <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(e.composite_score, 100)}%`, background: ACCENT }} />
             </div>
             <div className="text-xs text-slate-500 mt-2">
-              Index Santé Mentale: <span className="font-medium" style={{ color: ACCENT }}>{typeof e.estimated_mental_health_rights_index === "number" ? e.estimated_mental_health_rights_index.toFixed(2) : "—"}</span>
+              Index Personnes Âgées: <span className="font-medium" style={{ color: ACCENT }}>{typeof e.estimated_older_persons_rights_index === "number" ? e.estimated_older_persons_rights_index.toFixed(2) : "—"}</span>
             </div>
             {e.key_signals?.length > 0 && (
               <div className="mt-2 flex flex-wrap gap-1">
