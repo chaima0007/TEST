@@ -10515,6 +10515,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/stateless-persons-nationality-rights-engine", label: "Apatridie & Nationalité", icon: <IconStatelessPersonsNationalityRights className="w-4 h-4" /> },
       { href: "/dashboard/whistleblower-protection-corporate-accountability-engine", label: "Lanceurs d'Alerte", icon: <IconWhistleblowerProtection className="w-4 h-4" /> },
       { href: "/dashboard/housing-forced-evictions-gentrification-engine", label: "Expulsions & Logement", icon: <IconHousingRightsForcedEvictions className="w-4 h-4" /> },
+      { href: "/dashboard/disability-rights-social-exclusion-engine", label: "Droits Handicapés", icon: <IconDisabilityRights className="w-4 h-4" /> },
+      { href: "/dashboard/organ-trafficking-human-parts-engine", label: "Trafic d'Organes", icon: <IconOrganTrafficking className="w-4 h-4" /> },
+      { href: "/dashboard/online-censorship-internet-freedom-engine", label: "Censure Internet", icon: <IconInternetFreedomCensorship className="w-4 h-4" /> },
     ],
   },
   {
