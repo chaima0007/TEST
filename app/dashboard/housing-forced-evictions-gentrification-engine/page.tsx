@@ -7,7 +7,7 @@ interface Entity {
   name: string
   composite_score: number
   risk_level: string
-  estimated_statelessness_rights_index: number
+  estimated_housing_rights_index: number
 }
 
 interface DomainData {
@@ -18,7 +18,7 @@ interface DomainData {
   risk_distribution: Record<string, number>
 }
 
-const ACCENT = "#8b5cf6"
+const ACCENT = "#ec4899"
 
 function GaugeRing({ score }: { score: number }) {
   const r = 36
@@ -74,11 +74,11 @@ function RiskBadge({ level }: { level: string }) {
   )
 }
 
-export default function StatelessPersonsNationalityRightsPage() {
+export default function HousingForcedEvictionsGentrificationPage() {
   const [data, setData] = useState<DomainData | null>(null)
 
   useEffect(() => {
-    fetch("/api/stateless-persons-nationality-rights-engine")
+    fetch("/api/housing-forced-evictions-gentrification-engine")
       .then((r) => r.json())
       .then((d) => setData(d.payload ?? d))
   }, [])
@@ -86,7 +86,7 @@ export default function StatelessPersonsNationalityRightsPage() {
   if (!data) {
     return (
       <div style={{ background: "#0f172a", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div style={{ color: ACCENT, fontSize: 18 }}>Chargement apatridie et droit à la nationalité…</div>
+        <div style={{ color: ACCENT, fontSize: 18 }}>Chargement logement et expulsions forcées…</div>
       </div>
     )
   }
@@ -97,12 +97,12 @@ export default function StatelessPersonsNationalityRightsPage() {
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{ background: ACCENT, borderRadius: 12, padding: 12, flexShrink: 0 }}>
             <svg width={28} height={28} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2}>
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx={12} cy={7} r={4} />
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><path d="M9 22V12h6v10" />
             </svg>
           </div>
           <div>
             <h1 style={{ margin: 0, fontSize: 24, fontWeight: 800, color: "#f1f5f9" }}>
-              Apatridie &amp; Droit à la Nationalité
+              Droit au Logement, Expulsions Forcées &amp; Gentrification
             </h1>
             <p style={{ margin: 0, color: "#94a3b8", fontSize: 14 }}>
               Wave 175 — Indice mondial des droits humains · Caelum Partners
@@ -146,8 +146,8 @@ export default function StatelessPersonsNationalityRightsPage() {
               <p style={{ margin: "0 0 10px", fontSize: 13, color: "#cbd5e1", lineHeight: 1.5 }}>{entity.name}</p>
               <div style={{ display: "flex", gap: 16 }}>
                 <div>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: ACCENT }}>{entity.estimated_statelessness_rights_index.toFixed(2)}</div>
-                  <div style={{ fontSize: 11, color: "#64748b" }}>Indice apatridie</div>
+                  <div style={{ fontSize: 18, fontWeight: 700, color: ACCENT }}>{entity.estimated_housing_rights_index.toFixed(2)}</div>
+                  <div style={{ fontSize: 11, color: "#64748b" }}>Indice logement</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 18, fontWeight: 700, color: "#f1f5f9" }}>{entity.composite_score.toFixed(2)}</div>
