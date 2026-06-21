@@ -8800,7 +8800,28 @@ function IconAntipersonnelMinesVictimRights({ className }: { className?: string 
 function IconDeathPenaltyAbolitionRights({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.97zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.988 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.97z" />
+    </svg>
+  );
+}
+function IconStreetChildrenRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+    </svg>
+  );
+}
+function IconBondedLaborDebtSlaveryRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+    </svg>
+  );
+}
+function IconForcedRecruitmentConscriptionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
     </svg>
   );
 }
@@ -9712,6 +9733,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/witch-hunt-accusation-persecution-engine", label: "Chasses aux Sorcières", icon: IconWitchHuntAccusationPersecution },
       { href: "/dashboard/antipersonnel-mines-victim-rights-engine", label: "Victimes Mines", icon: IconAntipersonnelMinesVictimRights },
       { href: "/dashboard/death-penalty-abolition-rights-engine", label: "Peine de Mort", icon: IconDeathPenaltyAbolitionRights },
+      { href: "/dashboard/street-children-rights-engine", label: "Enfants des Rues", icon: IconStreetChildrenRights },
+      { href: "/dashboard/bonded-labor-debt-slavery-rights-engine", label: "Servitude par Dette", icon: IconBondedLaborDebtSlaveryRights },
+      { href: "/dashboard/forced-recruitment-conscription-rights-engine", label: "Recrutement Forcé", icon: IconForcedRecruitmentConscriptionRights },
       { href: "/dashboard/elder-rights-ageism-engine", label: "Droits Personnes Âgées", icon: IconElderRightsAgeism },
       { href: "/dashboard/acid-attack-gender-violence-engine", label: "Attaques Acide", icon: IconAcidAttackGenderViolence },
       { href: "/dashboard/nuclear-victims-rights-engine", label: "Victimes Nucléaires", icon: IconNuclearVictimsRights },
