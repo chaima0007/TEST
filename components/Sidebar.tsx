@@ -7614,6 +7614,35 @@ function IconLandGrabbingRights({ className }: { className?: string }) {
   );
 }
 
+function IconClimateForcedMigrationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 11.41c.39-.39.39-1.02 0-1.41L12 6.41 8.41 10c-.39.39-.39 1.02 0 1.41L12 15l3.59-3.59Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v3" />
+    </svg>
+  );
+}
+
+function IconChildLaborMiningRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21v-1a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v1" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17l1.5 3 1.5-2 1.5 2 1.5-3" />
+    </svg>
+  );
+}
+
+function IconWaterRightsAccess({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C8.5 6.5 6 9.5 6 13a6 6 0 0 0 12 0c0-3.5-2.5-6.5-6-11Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 13.5a3 3 0 0 0 6 0" />
+    </svg>
+  );
+}
+
 function IconPrisonLaborRights({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -8409,6 +8438,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/unpaid-care-work-rights-engine", label: "Travail Care Non Rémunéré", icon: IconUnpaidCareWorkRights },
       { href: "/dashboard/youth-justice-rights-engine", label: "Justice Jeunesse", icon: IconYouthJusticeRights },
       { href: "/dashboard/land-grabbing-rights-engine", label: "Accaparement Terres", icon: IconLandGrabbingRights },
+      { href: "/dashboard/climate-forced-migration-rights-engine", label: "Migration Climatique Forcée", icon: IconClimateForcedMigrationRights },
+      { href: "/dashboard/child-labor-mining-rights-engine", label: "Travail Minier Enfants", icon: IconChildLaborMiningRights },
+      { href: "/dashboard/water-rights-access-engine", label: "Droits Accès à l'Eau", icon: IconWaterRightsAccess },
       { href: "/dashboard/prison-labor-rights-engine", label: "Travail Pénitentiaire", icon: IconPrisonLaborRights },
       { href: "/dashboard/statelessness-rights-engine", label: "Apatridie", icon: IconStatelessnessRights },
       { href: "/dashboard/climate-forced-migration-rights-engine", label: "Climate Migration Rights", icon: IconClimateForcedMigrationRights },
