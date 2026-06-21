@@ -113,6 +113,13 @@
 | Antiterrorism Laws Rights Abuse | `swarm/intelligence/antiterrorism_laws_rights_abuse_engine.py` | 63.20 | Lois antiterroristes contre dissidents/minorités |
 | Child Marriage Forced Unions | `swarm/intelligence/child_marriage_forced_unions_engine.py` | 60.23 | Mariage enfants, unions forcées, droits filles |
 
+### Wave 120
+| Engine | Fichier | Avg | Domaine |
+|--------|---------|-----|---------|
+| Corporate Accountability Human Rights | `swarm/intelligence/corporate_accountability_human_rights_engine.py` | 64.79 | Multinationales, chaînes approvisionnement, devoir vigilance |
+| Protest Freedom Assembly Rights | `swarm/intelligence/protest_freedom_assembly_rights_engine.py` | 64.03 | Répression manifestations, arrestations massives |
+| Sexual Violence Conflict Impunity | `swarm/intelligence/sexual_violence_conflict_impunity_engine.py` | 63.51 | Viol arme de guerre, impunité auteurs, justice survivantes |
+
 ---
 
 ## PATTERN ENGINE — À COPIER POUR CHAQUE NOUVEL ENGINE
@@ -242,6 +249,9 @@ Pas de useCallback/useMemo            → jamais
 | Environmental Defenders Rights | `/dashboard/environmental-defenders-rights-engine` | `#065f46` |
 | Antiterrorism Laws Rights Abuse | `/dashboard/antiterrorism-laws-rights-abuse-engine` | `#312e81` |
 | Child Marriage Forced Unions | `/dashboard/child-marriage-forced-unions-engine` | `#831843` |
+| Corporate Accountability Human Rights | `/dashboard/corporate-accountability-human-rights-engine` | `#0c2340` |
+| Protest Freedom Assembly Rights | `/dashboard/protest-freedom-assembly-rights-engine` | `#2d1b69` |
+| Sexual Violence Conflict Impunity | `/dashboard/sexual-violence-conflict-impunity-engine` | `#5c0a0a` |
 
 ---
 
@@ -282,8 +292,8 @@ grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort 
 - [ ] Script d'automatisation des waves (`run_wave.py`) — pour créer engines+routes+sidebar+dashboards sans Claude
 - [ ] GitHub Actions workflow — pour déclencher une wave depuis GitHub directement
 - [ ] Intégration Gmail + Google Calendar via Composio + Claude Agent SDK
-- [ ] Continuer les waves (120, 121, 122...) — pipeline infini
+- [ ] Continuer les waves (121, 122, 123...) — pipeline infini
 
 ---
 
-*Mis à jour : 2026-06-21 · Wave 119 · Caelum Partners · Chaima Mhadbi*
+*Mis à jour : 2026-06-21 · Wave 120 · Caelum Partners · Chaima Mhadbi*
