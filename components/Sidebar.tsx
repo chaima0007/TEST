@@ -8545,6 +8545,36 @@ function IconSexualViolenceConflictImpunity({ className }: { className?: string 
   );
 }
 
+function IconRightToEducationAccess({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422A12 12 0 0120 16.722V21H4v-4.278a12 12 0 011.84-6.144L12 14z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 14v7" />
+    </svg>
+  );
+}
+
+function IconFairTrialDueProcessRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v4M4 7h16M6 7l-2 10h16L18 7" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 17h8M12 3l-4 4M12 3l4 4" />
+      <line x1="12" y1="10" x2="12" y2="14" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function IconXenophobiaHateCrimeMinority({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="8" r="4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 20v-1a6 6 0 0112 0v1" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 10l-4 4M15 10l4 4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -9425,6 +9455,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/child-marriage-forced-unions-engine", label: "Mariage Enfants", icon: IconChildMarriageForcedUnions },
       { href: "/dashboard/protest-freedom-assembly-rights-engine", label: "Liberté Manifestation", icon: IconProtestFreedomAssemblyRights },
       { href: "/dashboard/sexual-violence-conflict-impunity-engine", label: "Violences Conflits", icon: IconSexualViolenceConflictImpunity },
+      { href: "/dashboard/right-to-education-access-engine", label: "Droit à l'Éducation", icon: IconRightToEducationAccess },
+      { href: "/dashboard/fair-trial-due-process-rights-engine", label: "Procès Équitable", icon: IconFairTrialDueProcessRights },
+      { href: "/dashboard/xenophobia-hate-crime-minority-engine", label: "Xénophobie & Haine", icon: IconXenophobiaHateCrimeMinority },
     ],
   },
   {
