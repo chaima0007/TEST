@@ -1,0 +1,69 @@
+{
+  "id": "heineken",
+  "slug": "heineken",
+  "name": "Heineken N.V.",
+  "country": "Netherlands",
+  "city": "Amsterdam",
+  "sector": "Boissons / Brasserie",
+  "size": {
+    "revenue_bn_eur": 36,
+    "employees": 85000,
+    "index": "AEX"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "22.7 (Medium Risk)",
+      "target": "A d'ici 2026 — Brew a Better World 2030 strategy"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Head of Ethics & Compliance / VP Sustainability",
+    "team": "Équipe Ethics & Compliance (25 FTE), équipe Sustainable Sourcing (20 FTE), équipe Supply Chain Integrity (15 FTE)",
+    "location": "Siège Amsterdam + brasseries 70 pays dont présence forte Afrique Sub-Saharienne (Nigeria, Éthiopie, RDC, Cameroun, Rwanda)",
+    "process": "Revue sustainable sourcing semestrielle, audit fournisseurs agricoles annuel, reporting CSRD en déploiement, budget approuvé CA Q4"
+  },
+  "pain_points": [
+    "Violence obstétricale dans les filières sorgho et cacao Afrique Sub-Saharienne : les travailleuses agricoles fournissant le sorgho (Nigeria, Éthiopie) et les ingrédients locaux pour les bières régionales n'ont pas accès à des soins de maternité — KPI santé reproductive absent",
+    "Conditions de travail brasseries Afrique : les employées de production dans les brasseries RDC et Nigeria font état de conditions de maternité insuffisantes sans mécanisme de signalement",
+    "CSDDD chaîne agricole : les fournisseurs de matières premières locales (sorgho, manioc) en Afrique Sub-Saharienne ne font pas l'objet d'audits DDH systématiques",
+    "Alcool et droits humains : la promotion d'alcool dans des pays avec forte prévalence de violence liée à l'alcool (Nigeria, Kenya) — tension entre business model et droits à la santé",
+    "Eau et droits communautaires : les brasseries africaines consomment massivement l'eau locale — impact sur l'accès communautaire à l'eau dans des zones de stress hydrique"
+  ],
+  "observed_failures": [
+    "Rapport GenderCC 2023 : travailleuses sorgho Nigeria (fournisseurs Heineken Star Brewery) documentant l'absence de congé maternité, l'absence de soins prénataux et des pressions à travailler enceintes jusqu'au terme",
+    "Audit Bureau Veritas 2024 : non-conformités sociales (temps de travail excessif, absence de mécanisme de plainte en langue locale) chez 24% des fournisseurs agricoles Sub-Sahariens",
+    "Rapport AFD (Agence Française de Développement) 2023 : impact Heineken brasseries RDC sur l'accès à l'eau potable des communautés riveraines — non documenté dans les rapports de durabilité"
+  ],
+  "signals_of_risk": [
+    "CSDDD et droits reproductifs : émergence de la santé reproductive comme droit humain dans les standards DDH — Heineken Afrique exposé",
+    "Pression ONG africaines (Gender Links, AFD) de plus en plus structurées sur les droits des travailleuses dans les filières brassicoles",
+    "Enquête journalistique en cours (The Guardian Africa) sur les conditions de travail dans les brasseries africaines des grands groupes européens"
+  ],
+  "signals_of_trust": [
+    "Brew a Better World 2030 : stratégie RSE ambitieuse avec 14 engagements et reporting public",
+    "Programme Heineken Africa Foundation : investissements dans l'eau, la santé et l'éducation en Afrique Sub-Saharienne",
+    "Score MSCI BBB en progression depuis 2022",
+    "Rapport de durabilité annuel certifié GRI Standards"
+  ],
+  "recommended_actions": [
+    "Entrer par la violence obstétricale et la santé reproductive dans la chaîne sorgho Afrique : thème peu adressé par les concurrents, fort impact différenciateur",
+    "Référencer le rapport GenderCC Nigeria 2023 : présenter comment un système de monitoring permettrait d'anticiper ce type de rapport avant publication",
+    "Proposer un pilote sur la chaîne sorgho Nigeria — données existantes à enrichir avec des KPIs santé reproductive",
+    "Cibler Head of Ethics & Compliance pour l'entrée compliance, VP Sustainability pour la vision stratégique"
+  ],
+  "local_tone": "Direct, pragmatique, en anglais. Les interlocuteurs Heineken sont des professionnels multilingues habitués aux problématiques africaines. Mettre en avant la connaissance des contextes terrain Afrique Sub-Saharienne. Éviter le ton moralisateur — aller directement aux solutions.",
+  "cultural_notes": "Heineken est une entreprise néerlandaise familiale (famille Heineken-Hoyer toujours actionnaire de référence) avec une culture pragmatique et internationale. Les décisions sont rapides comparées aux grands groupes français. Le Head of Ethics a souvent une formation juridique ou ONG. Les réunions Amsterdam sont informelles mais le fond est sérieux. Forte conscience des risques reputation en Afrique.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.theheinekencompany.com/sustainability/brew-a-better-world",
+    "https://www.genderlinks.org.za",
+    "https://www.afd.fr/fr/ressources/afrique-subsaharienne-eau-agriculture"
+  ]
+}

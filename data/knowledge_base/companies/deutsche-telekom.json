@@ -1,0 +1,69 @@
+{
+  "id": "deutsche-telekom",
+  "slug": "deutsche-telekom",
+  "name": "Deutsche Telekom AG",
+  "country": "Germany",
+  "city": "Bonn",
+  "sector": "Télécommunications / Digital",
+  "size": {
+    "revenue_bn_eur": 113,
+    "employees": 210000,
+    "index": "DAX40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "15.8 (Low Risk)",
+      "target": "AAA d'ici 2027 — Digital Responsibility Strategy 2025"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Privacy Officer / VP Digital Responsibility & Human Rights",
+    "team": "Équipe Digital Responsibility (35 FTE), équipe Privacy & Data Ethics (25 FTE), équipe LkSG (20 FTE), équipe compliance fournisseurs hardware (30 FTE)",
+    "location": "Siège Bonn + T-Systems Frankfurt + T-Mobile US (Bellevue WA)",
+    "process": "Comité Digital Responsibility mensuel, reporting LkSG BAFA semestriel, revue fournisseurs hardware trimestrielle, budget DSA/AI Act validé Q3"
+  },
+  "pain_points": [
+    "Droits numériques des réfugiés SIM : les processus d'identification pour l'accès aux cartes SIM (prépayées, data) excluent les personnes réfugiées ou sans papiers dans plusieurs pays opérateurs DT (Grèce, Hongrie) — non monitored DSA",
+    "DSA (Digital Services Act) : obligations de transparence algorithmique et protection des utilisateurs vulnérables — systèmes de modération T-Online non encore conformes",
+    "LkSG fournisseurs hardware : chaîne d'approvisionnement smartphones et routeurs (Foxconn, Pegatron) avec risque travail forcé Xinjiang",
+    "Données mobiles en zones de conflit : collecte de métadonnées dans des pays sous régimes autoritaires — risque complicité violations droits numériques",
+    "Fracture numérique et droit à la connectivité : populations rurales Allemagne/Europe de l'Est avec couverture insuffisante — droit d'accès à l'internet comme droit humain non mesuré"
+  ],
+  "observed_failures": [
+    "Rapport Digital Rights Foundation 2023 : documentation de cas de refus d'accès SIM à des demandeurs d'asile dans les réseaux partenaires DT Europe de l'Est sans alternative accessible",
+    "Audit LkSG interne 2024 : 8 fournisseurs hardware classifiés 'risque élevé' (composants Chine) sans plan d'action corrective finalisé",
+    "Plainte noyb (Max Schrems) 2024 : pratiques de ciblage publicitaire T-Online jugées non conformes RGPD — signal de faiblesse systémique sur les droits numériques"
+  ],
+  "signals_of_risk": [
+    "DSA 2024 : Deutsche Telekom comme Very Large Online Platform (T-Online, MagentaTV) soumis aux obligations renforcées de transparence algorithmique et protection des mineurs",
+    "Pression NGO Access Now sur les droits numériques des réfugiés dans les réseaux européens — DT dans le viseur",
+    "Enquête Bundestag sur la fracture numérique en Allemagne rurale — DT tenu responsable politiquement"
+  ],
+  "signals_of_trust": [
+    "Digital Responsibility Report : publication annuelle couvrant IA éthique, vie privée, inclusion numérique",
+    "Score MSCI AA : excellence ESG reconnue dans le secteur télécoms",
+    "Initiative Together for Sustainability (TfS) : membre fondateur pour les audits fournisseurs responsables",
+    "Programme Digital for All : inclusion numérique des personnes vulnérables avec métriques"
+  ],
+  "recommended_actions": [
+    "Entrer par DSA + droits numériques réfugiés : 'Comment prouvez-vous que vos processus SIM respectent le DSA pour les utilisateurs vulnérables dans vos réseaux partenaires en Europe de l'Est ?'",
+    "Proposer le module droits numériques avec focus accès SIM et connectivité — angle très spécifique secteur télécoms peu traité par les concurrents",
+    "Référencer LkSG fournisseurs hardware Foxconn/Xinjiang : lien direct avec les obligations BAFA",
+    "Cibler Chief Privacy Officer pour l'angle DSA/droits numériques, VP Digital Responsibility pour la vision DDH globale"
+  ],
+  "local_tone": "Structuré, référencé LkSG + DSA + CSDDD. Les interlocuteurs DT sont des juristes et des ingénieurs — apprécient les plans d'implémentation précis et les références réglementaires exactes. Allemand ou anglais selon l'interlocuteur.",
+  "cultural_notes": "Deutsche Telekom est un ancien monopole public allemand avec une culture institutionnelle forte. La culture de conformité est très développée (Siemens, VW, SAP influencent les standards sectoriels). Les décisions impliquent plusieurs niveaux hiérarchiques. Le Chief Privacy Officer a un pouvoir réel depuis le RGPD. Prévoir des réunions très structurées avec ordre du jour envoyé à l'avance.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.telekom.com/en/sustainability/society/digital-responsibility",
+    "https://www.accessnow.org/refugee-sim-rights/",
+    "https://www.bafa.de/DE/Wirtschaft/Sorgfaltspflichten/sorgfaltspflichten_node.html"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "hm-group",
+  "name": "H&M Group",
+  "country": "SE",
+  "sector": "Fashion",
+  "size": "Large (155 000+ employees, ~22B EUR revenue)",
+  "hq": "Stockholm, Sweden",
+  "csrd_exposure": "HIGH",
+  "csddd_scope": true,
+  "persona_target": "Chief Sustainability Officer",
+  "ddh_domains": ["digital_gender_gap_rights", "unpaid_care_work_rights"],
+  "priority": 1,
+  "estimated_budget_eur": 5000,
+  "prospect_status": "Prêt",
+  "outreach_contact": "CSO Stockholm",
+  "last_updated": "2026-06-21"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "volkswagen",
+  "name": "Volkswagen AG",
+  "country": "DE",
+  "sector": "Automotive",
+  "size": "Large (675 000+ employees, ~322B EUR revenue)",
+  "hq": "Wolfsburg, Germany",
+  "csrd_exposure": "HIGH",
+  "csddd_scope": true,
+  "persona_target": "CCO / VP Human Rights & Supply Chain Ethics",
+  "ddh_domains": ["algorithmic_bias_rights", "forced_labor_supply_chain"],
+  "priority": 1,
+  "estimated_budget_eur": 10000,
+  "prospect_status": "Prêt",
+  "outreach_contact": "CCO Wolfsburg",
+  "last_updated": "2026-06-21"
+}

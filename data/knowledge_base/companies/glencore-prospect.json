@@ -1,0 +1,17 @@
+{
+  "slug": "glencore",
+  "name": "Glencore plc",
+  "country": "CH",
+  "sector": "Mining",
+  "size": "Large (135 000+ employees, ~240B USD revenue)",
+  "hq": "Baar, Switzerland",
+  "csrd_exposure": "HIGH",
+  "csddd_scope": true,
+  "persona_target": "ESG Director",
+  "ddh_domains": ["land_grabbing_rights", "prison_labor_rights"],
+  "priority": 1,
+  "estimated_budget_eur": 10000,
+  "prospect_status": "Prêt",
+  "outreach_contact": "ESG Director Baar",
+  "last_updated": "2026-06-21"
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "totalenergies",
+  "name": "TotalEnergies SE",
+  "country": "FR",
+  "sector": "Energy",
+  "size": "Large (100 000+ employees, ~200B EUR revenue)",
+  "hq": "Paris, France",
+  "csrd_exposure": "HIGH",
+  "csddd_scope": true,
+  "persona_target": "VP ESG / Head of Human Rights",
+  "ddh_domains": ["land_grabbing_rights", "forced_labor_supply_chain"],
+  "priority": 1,
+  "estimated_budget_eur": 8000,
+  "prospect_status": "Prêt",
+  "outreach_contact": "VP ESG Paris",
+  "last_updated": "2026-06-21"
+}
