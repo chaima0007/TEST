@@ -7249,6 +7249,31 @@ function IconCorporateImpunity({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconGenderPayGap({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <circle cx="8" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="16" cy="8" r="4" strokeLinecap="round" strokeLinejoin="round" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 12v8M5 17h6M16 12v4M13 19h6M16 16v4" />
+    </svg>
+  );
+}
+function IconIndigenousRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" />
+    </svg>
+  );
+}
+function IconArmsTrade({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 3H4a1 1 0 00-1 1v3l3 3h10l3-3V4a1 1 0 00-1-1h-5" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 9v12M18 9v4" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 20h6M15 17l3 3 3-3" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -7958,6 +7983,9 @@ const navSections: NavSection[] = [
       { href: "/dashboard/academic-freedom-engine", label: "Liberté Académique", icon: IconAcademicFreedom },
       { href: "/dashboard/refugee-detention-engine", label: "Détention Réfugiés", icon: IconRefugeeDetention },
       { href: "/dashboard/corporate-impunity-engine", label: "Impunité Corporate", icon: IconCorporateImpunity },
+      { href: "/dashboard/gender-pay-gap-engine", label: "Écart Salarial Genre", icon: IconGenderPayGap },
+      { href: "/dashboard/indigenous-rights-engine", label: "Droits Autochtones", icon: IconIndigenousRights },
+      { href: "/dashboard/arms-trade-engine", label: "Commerce des Armes", icon: IconArmsTrade },
     ],
   },
   {
