@@ -81,59 +81,60 @@ class MigrantWorkerRightsEngine:
     ENGINE_VERSION = "1.0.0"
     CONFIDENCE_SCORE = 0.82
     DATA_SOURCES = [
-        "ilo_global_estimates_international_migrant_workers",
-        "migrant_forum_asia_recruitment_fees_database",
-        "business_human_rights_resource_centre_migrant_reports",
+        "ilo_fair_recruitment_2023",
+        "migrant_forum_asia_2023",
+        "human_rights_watch_migrant_workers_2022",
+        "ilo_forced_labour_migrants_2022",
     ]
 
     def __init__(self):
         self.entities: List[MigrantWorkerRightsEntity] = [
             MigrantWorkerRightsEntity(
-                "MW-001", "Qatar/FIFA — Kafala Système, 6 500+ Morts Travailleurs Migrants & Stades Coupe 2022",
+                "MW-001", "Qatar/Kafala — 6 500+ Morts Migrants Coupe du Monde FIFA, Servitude Contractuelle & Réformes 2021 Insuffisantes",
                 "MENA",
                 "Qatar 6 500+ Morts Travailleurs Migrants Stades FIFA 2010-22 Estimation Guardian, Kafala Système Captivité, Passeports Confisqués & Réformes 2021 Insuffisantes ILO",
                 92, 88, 95, 88,
             ),
             MigrantWorkerRightsEntity(
-                "MW-002", "Golfe Arabe/Kafala — EAU/KSA/Koweït 25M Travailleurs Captifs Système Parrainage",
+                "MW-002", "Arabie Saoudite/EAU — Servitude Contractuelle, 25M Travailleurs Captifs Système Kafala & Domestiques Sans Protection",
                 "MENA",
                 "25M Travailleurs Migrants Golfe Système Kafala EAU/KSA/Koweït/Bahreïn, Changement Emploi Interdit, Travailleuses Domestiques Exclues Code Travail & Réformes Cosmétiques",
                 88, 85, 92, 85,
             ),
             MigrantWorkerRightsEntity(
-                "MW-003", "Malaisie/Top Glove — Travailleurs Migrants Captifs, Palm Oil & Gants Pandémie COVID",
+                "MW-003", "Malaisie/Plantations Huile Palme — Esclavage Travailleurs Migrants, Top Glove Sanctions & Frais Recrutement Dettes",
                 "Asie du Sud-Est",
-                "Top Glove Malaisie Gants Latex 10 000 Travailleurs Migrants Logements Surpeuplés, Frais Recrutement 3 000$, Palm Oil Travailleurs Népalais/Bangladeshis & Sanctions USA 2020",
+                "Top Glove Malaisie Gants Latex 10 000 Travailleurs Migrants Logements Surpeuplés, Frais Recrutement 3 000$, Palm Oil Travailleurs Népalais/Bangladeshis Esclavage & Sanctions USA CBP 2020",
                 85, 90, 85, 82,
             ),
             MigrantWorkerRightsEntity(
-                "MW-004", "USA/H-2A H-2B — Visa Sponsorship Captivité, Abus Agricoles & Frais Recrutement",
-                "Amérique du Nord",
-                "USA H-2A H-2B Visa Workers 300 000/An, Captivité Sponsor Changement Emploi Difficile, Abus Agricoles Saisonniers EWA & Frais Recrutement Mexique/Guatemala",
+                "MW-004", "Singapour — Travailleurs Domestiques Sans Protection Légale, Employment Pass & Exclusion Loi Travail",
+                "Asie du Sud-Est",
+                "Singapour 250 000 Travailleurs Domestiques Exclus Employment Act, FDW Employment Agency Frais, Passeports Confisqués Employeurs, Abus Signalés HRW & Recours Juridique Limité",
                 82, 85, 80, 85,
             ),
             MigrantWorkerRightsEntity(
-                "MW-005", "Thaïlande/Pêche Maritime — Esclavage Bateaux Haute Mer, ILO C188 & GFW Rapport",
+                "MW-005", "Thaïlande — Travailleurs Pêche/Construction Anti-Syndicat, Bateaux Haute Mer & Frais Recrutement Myanmar",
                 "Asie du Sud-Est",
-                "Thaïlande Pêche Maritime Travailleurs Migrants Myanmar/Cambodge Esclavage Bateaux, Pêche Haute Mer Hors Portée Inspection, AP Enquête 2015 & ILO C188 Non-Ratifié",
+                "Thaïlande Pêche Maritime Travailleurs Migrants Myanmar/Cambodge Esclavage Bateaux, Pêche Haute Mer Hors Portée Inspection, AP Enquête 2015, ILO C188 Non-Ratifié & Syndicats Interdits Migrants",
                 55, 52, 58, 50,
             ),
             MigrantWorkerRightsEntity(
-                "MW-006", "Italie/Caporalato — Travailleurs Africains Agriculture, Travail Forcé & Loi 2016",
-                "Europe de l'Ouest",
-                "Italie Caporalato Système Intermédiaires Exploitation Travailleurs Migrants Africains Agriculture, Muerte Agriculteurs Sans Eau/Soleil, Loi 199/2016 Anti-Caporalato & Application Lacunaire",
+                "MW-006", "Jordanie — Réfugiés Syriens Travail Informel, Permis Liés Employeur & Kafala-Like Sponsorship",
+                "MENA",
+                "Jordanie 670 000+ Réfugiés Syriens Enregistrés UNHCR, 80% Secteur Informel Sans Protection, Permis Travail Liés Employeur Kafala-Like, Travailleurs Agricoles Exclus Code Travail & Violations Non Sanctionnées",
                 52, 48, 55, 55,
             ),
             MigrantWorkerRightsEntity(
-                "MW-007", "Allemagne/Travailleurs Saisonniers — COVID Tönnies Abattoir, Logements & Saisonnier",
-                "Europe de l'Ouest",
-                "Allemagne Tönnies Abattoir COVID 1 500 Infectés Travailleurs Roumains 2020, Logements Surpeuplés, Travailleurs Saisonniers UE Contrats & AEntG Arbeitnehmer-Entsendegesetz Lacunes",
+                "MW-007", "UE — Directive Travailleurs Saisonniers Partiellement Appliquée, Caporalato Italie & Lacunes Protection",
+                "Europe",
+                "UE Directive Travailleurs Saisonniers 2014/36/UE Application Partielle, Italie Caporalato Exploitation Agricole Africains, Allemagne Tönnies COVID 2020, Grèce Fraises Manolada & Décret Flussi Insuffisant",
                 30, 28, 32, 28,
             ),
             MigrantWorkerRightsEntity(
-                "MW-008", "OIT/ITUC — Convention 189 Domestiques, C97 Migrants Travailleurs & MOU Bilatéraux",
-                "Global",
-                "OIT Convention 189 Travailleurs Domestiques 2011, C97 Travailleurs Migrants, ITUC Rapports Syndicalisation Migrants & MOU Bilatéraux Philippines/Sri Lanka Golfe",
+                "MW-008", "Nouvelle-Zélande — RSE Travailleurs Migrants, Droits Syndicaux & Ratification Conventions ILO",
+                "Pacifique",
+                "Nouvelle-Zélande RSE Migrants Employment Relations Act, Travailleurs Migrants Droit Syndicat, Seasonal Worker Programme Protections, Immigration Advisers Act & Ratification ILO C97 C143",
                 5, 4, 3, 6,
             ),
         ]
