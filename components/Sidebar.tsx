@@ -16124,6 +16124,32 @@ function IconConnectedhomeAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconSmsmessagingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <line x1="9" y1="10" x2="9" y2="10"/>
+      <line x1="12" y1="10" x2="12" y2="10"/>
+      <line x1="15" y1="10" x2="15" y2="10"/>
+    </svg>
+  );
+}
+function IconWhatsappmarketingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+  );
+}
+function IconChatbotadvertisingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <line x1="12" y1="15" x2="12" y2="17"/>
+    </svg>
+  );
+}
 function IconVideostreamingAdvertising({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -19895,6 +19921,9 @@ const navSections: NavSection[] = [
       { label: "Podcast Advertising", href: "/dashboard/podcastadvertising-advertising", icon: IconPodcastadvertisingAdvertising },
       { label: "Video Streaming Ads", href: "/dashboard/videostreaming-advertising", icon: IconVideostreamingAdvertising },
       { label: "Location-Based Ads", href: "/dashboard/locationbased-advertising", icon: IconLocationbasedAdvertising },
+      { label: "SMS Messaging Ads", href: "/dashboard/smsmessaging-advertising", icon: IconSmsmessagingAdvertising },
+      { label: "WhatsApp Marketing", href: "/dashboard/whatsappmarketing-advertising", icon: IconWhatsappmarketingAdvertising },
+      { label: "Chatbot Advertising", href: "/dashboard/chatbotadvertising-advertising", icon: IconChatbotadvertisingAdvertising },
     ],
   },
   {
