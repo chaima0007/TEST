@@ -5,7 +5,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 import { navSections } from "./sidebar-nav";
-import type { NavSection } from "./sidebar-icons";
 import { IconChevronLeft, IconChevronRight, IconLogout } from "./sidebar-icons";
 
 // ─── Inner nav content ───────────────────────────────────────────────────────
