@@ -12214,6 +12214,40 @@ function IconRubberPlantationLaborRights() {
   );
 }
 
+function IconCottonChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M8 8c-2-2-3-5-1-7" />
+      <path d="M16 8c2-2 3-5 1-7" />
+      <path d="M12 12v4" />
+      <path d="M10 16l2 4 2-4" />
+    </svg>
+  );
+}
+
+function IconTeaWorkerRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M17 8C8 10 5.9 16.17 3.82 22" />
+      <path d="M9 8.27C10.65 8 12.37 8 14 9c2 1.2 2.5 3.5 2 5.5" />
+      <path d="M12 18c-2 1-4 1-6 0" />
+    </svg>
+  );
+}
+
+function IconCutFlowerLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#be185d" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 22V12" />
+      <path d="M12 12c0 0-4-2-4-6 2 0 4 2 4 6z" />
+      <path d="M12 12c0 0 4-2 4-6-2 0-4 2-4 6z" />
+      <circle cx="12" cy="7" r="2" />
+      <path d="M8 20h8" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14064,6 +14098,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/coffee-labor-rights", label: "Droits Travailleurs Café", icon: IconCoffeeLaborRights },
       { href: "/dashboard/vanilla-child-labor-rights", label: "Travail Enfant Vanille", icon: IconVanillaChildLaborRights },
       { href: "/dashboard/rubber-plantation-labor-rights", label: "Travail Plantation Caoutchouc", icon: IconRubberPlantationLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 287",
+    items: [
+      { href: "/dashboard/cotton-child-labor-rights", label: "Travail Enfant Coton", icon: IconCottonChildLaborRights },
+      { href: "/dashboard/tea-worker-rights", label: "Droits Cueilleuses de Thé", icon: IconTeaWorkerRights },
+      { href: "/dashboard/cut-flower-labor-rights", label: "Droits Travailleurs Fleurs Coupées", icon: IconCutFlowerLaborRights },
     ],
   },
   {
