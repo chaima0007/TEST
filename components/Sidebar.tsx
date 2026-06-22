@@ -10474,6 +10474,16 @@ function IconJournalismSafetyRights({ className }: { className?: string }) {
   );
 }
 
+function IconDigitalPrivacyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x={3} y={11} width={18} height={11} rx={2} />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <circle cx={12} cy={16} r={1} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11796,6 +11806,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/birth-registration-rights-engine", label: "Enreg. Naissances Droits", icon: IconBirthRegistrationRights },
       { href: "/dashboard/humanitarian-access-rights-engine", label: "Accès Humanitaire Conflits", icon: IconHumanitarianAccessRights },
       { href: "/dashboard/journalism-safety-rights-engine", label: "Sécurité Journalistes Presse", icon: IconJournalismSafetyRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 221",
+    items: [
+      { href: "/dashboard/statelessness-rights-engine", label: "Apatridie & Nationalité", icon: IconStatelessnessRights },
+      { href: "/dashboard/water-access-rights-engine", label: "Eau Potable & WASH", icon: IconWaterAccessRights },
+      { href: "/dashboard/digital-privacy-rights-engine", label: "Vie Privée Numérique", icon: IconDigitalPrivacyRights },
     ],
   },
   {
