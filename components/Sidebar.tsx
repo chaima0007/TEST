@@ -10990,6 +10990,30 @@ function IconRightToPrivacyRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconReligiousMinorityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a2 2 0 011.6.8L17 7h3a1 1 0 01.8 1.6L18 12l2.8 3.4A1 1 0 0120 17h-3l-3.4 4.2A2 2 0 0112 22a2 2 0 01-1.6-.8L7 17H4a1 1 0 01-.8-1.6L6 12 3.2 8.6A1 1 0 014 7h3l3.4-4.2A2 2 0 0112 2z" />
+    </svg>
+  );
+}
+
+function IconRightToFoodRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8 3 4 7 4 12s4 9 8 9 8-4 8-9-4-9-8-9zm0 4v10M9 9c0-2 1.5-3 3-3s3 1 3 3" />
+    </svg>
+  );
+}
+
+function IconExtrajudicialKillingRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12472,6 +12496,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/right-to-work-rights-engine", label: "Droit au Travail Décent", icon: IconRightToWorkRights },
       { href: "/dashboard/online-harassment-rights-engine", label: "Harcèlement en Ligne", icon: IconOnlineHarassmentRights },
       { href: "/dashboard/right-to-privacy-rights-engine", label: "Droit à la Vie Privée", icon: IconRightToPrivacyRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 241",
+    items: [
+      { href: "/dashboard/religious-minority-rights-engine", label: "Religious Minority Rights", icon: IconReligiousMinorityRights },
+      { href: "/dashboard/right-to-food-rights-engine", label: "Right to Food Rights", icon: IconRightToFoodRights },
+      { href: "/dashboard/extrajudicial-killing-rights-engine", label: "Extrajudicial Killing Rights", icon: IconExtrajudicialKillingRights },
     ],
   },
   {
