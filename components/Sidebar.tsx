@@ -15847,6 +15847,32 @@ function IconStoriesadvertisingAdvertising({ size = 18, color = "currentColor" }
     </svg>
   );
 }
+function IconReelsadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polygon points="10 8 16 12 10 16 10 8"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+  );
+}
+function IconShortsadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+    </svg>
+  );
+}
+function IconUgcadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19530,6 +19556,9 @@ const navSections: NavSection[] = [
       { label: "Video Overlay Ads", href: "/dashboard/videooverlay-advertising", icon: IconVideooverlayAdvertising },
       { label: "Carousel Ads", href: "/dashboard/carouselads-advertising", icon: IconCarouseladsAdvertising },
       { label: "Stories Advertising", href: "/dashboard/storiesadvertising-advertising", icon: IconStoriesadvertisingAdvertising },
+      { label: "Reels Advertising", href: "/dashboard/reelsadvertising-advertising", icon: IconReelsadvertisingAdvertising },
+      { label: "Shorts Advertising", href: "/dashboard/shortsadvertising-advertising", icon: IconShortsadvertisingAdvertising },
+      { label: "UGC Advertising", href: "/dashboard/ugcadvertising-advertising", icon: IconUgcadvertisingAdvertising },
     ],
   },
   {
