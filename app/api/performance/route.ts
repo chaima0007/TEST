@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[performance] SWARM_API_URL non défini — mode local");
+}
 
 type Health = "healthy" | "degraded" | "critical" | "offline";
 
@@ -130,55 +135,59 @@ function divisionHealth(agents: AgentStats[]): Health {
 }
 
 export async function GET() {
-  const divisions = [1, 2, 3, 4, 5, 6].map((div) => {
-    const divAgents = AGENTS.filter((a) => a.division === div);
-    const total_tasks = divAgents.reduce((s, a) => s + a.tasks_completed, 0);
-    const total_errors = divAgents.reduce((s, a) => s + a.tasks_failed, 0);
-    const active = divAgents.filter((a) => a.health !== "offline");
-    const avg_response_time_ms = active.length
-      ? Math.round(active.reduce((s, a) => s + a.avg_response_time_ms, 0) / active.length)
-      : 0;
+  try {
+    const divisions = [1, 2, 3, 4, 5, 6].map((div) => {
+      const divAgents = AGENTS.filter((a) => a.division === div);
+      const total_tasks = divAgents.reduce((s, a) => s + a.tasks_completed, 0);
+      const total_errors = divAgents.reduce((s, a) => s + a.tasks_failed, 0);
+      const active = divAgents.filter((a) => a.health !== "offline");
+      const avg_response_time_ms = active.length
+        ? Math.round(active.reduce((s, a) => s + a.avg_response_time_ms, 0) / active.length)
+        : 0;
 
-    return {
-      division: div,
-      name: DIVISION_NAMES[div],
-      healthy_agents: divAgents.filter((a) => a.health === "healthy").length,
-      total_agents: 10,
-      total_tasks,
-      total_errors,
-      division_error_rate:
-        total_tasks + total_errors > 0
-          ? Math.round((total_errors / (total_tasks + total_errors)) * 1000) / 1000
-          : 0,
-      avg_response_time_ms,
-      health: divisionHealth(divAgents),
-      agents: divAgents,
-    };
-  });
+      return {
+        division: div,
+        name: DIVISION_NAMES[div],
+        healthy_agents: divAgents.filter((a) => a.health === "healthy").length,
+        total_agents: 10,
+        total_tasks,
+        total_errors,
+        division_error_rate:
+          total_tasks + total_errors > 0
+            ? Math.round((total_errors / (total_tasks + total_errors)) * 1000) / 1000
+            : 0,
+        avg_response_time_ms,
+        health: divisionHealth(divAgents),
+        agents: divAgents,
+      };
+    });
 
-  const healthy_agents = AGENTS.filter((a) => a.health === "healthy").length;
-  const degraded_agents = AGENTS.filter((a) => a.health === "degraded").length;
-  const critical_agents = AGENTS.filter((a) => a.health === "critical").length;
-  const offline_agents = AGENTS.filter((a) => a.health === "offline").length;
-  const total_tasks_completed = AGENTS.reduce((s, a) => s + a.tasks_completed, 0);
-  const total_tasks_failed = AGENTS.reduce((s, a) => s + a.tasks_failed, 0);
-  const global_error_rate =
-    total_tasks_completed + total_tasks_failed > 0
-      ? Math.round((total_tasks_failed / (total_tasks_completed + total_tasks_failed)) * 1000) / 1000
-      : 0;
+    const healthy_agents = AGENTS.filter((a) => a.health === "healthy").length;
+    const degraded_agents = AGENTS.filter((a) => a.health === "degraded").length;
+    const critical_agents = AGENTS.filter((a) => a.health === "critical").length;
+    const offline_agents = AGENTS.filter((a) => a.health === "offline").length;
+    const total_tasks_completed = AGENTS.reduce((s, a) => s + a.tasks_completed, 0);
+    const total_tasks_failed = AGENTS.reduce((s, a) => s + a.tasks_failed, 0);
+    const global_error_rate =
+      total_tasks_completed + total_tasks_failed > 0
+        ? Math.round((total_tasks_failed / (total_tasks_completed + total_tasks_failed)) * 1000) / 1000
+        : 0;
 
-  return NextResponse.json({
-    divisions,
-    summary: {
-      total_agents: 60,
-      healthy_agents,
-      degraded_agents,
-      critical_agents,
-      offline_agents,
-      total_tasks_completed,
-      total_tasks_failed,
-      global_error_rate,
-      open_alerts: critical_agents + offline_agents + degraded_agents,
-    },
-  });
+    return NextResponse.json(sealResponse({
+      divisions,
+      summary: {
+        total_agents: 60,
+        healthy_agents,
+        degraded_agents,
+        critical_agents,
+        offline_agents,
+        total_tasks_completed,
+        total_tasks_failed,
+        global_error_rate,
+        open_alerts: critical_agents + offline_agents + degraded_agents,
+      },
+    }));
+  } catch {
+    return NextResponse.json(sealResponse({ error: "upstream error" }), { status: 502 });
+  }
 }
