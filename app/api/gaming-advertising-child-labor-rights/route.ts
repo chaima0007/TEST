@@ -14,16 +14,16 @@ export async function GET() {
   } catch {
     return sealResponse(NextResponse.json({
       entities: [
-        { name: "Google AdMob Gaming", composite_score: 99, risk_level: "critique", estimated_index: 9.9 },
-        { name: "Meta Gaming Ads", composite_score: 93, risk_level: "critique", estimated_index: 9.3 },
-        { name: "Unity Ads Gaming", composite_score: 85, risk_level: "critique", estimated_index: 8.5 },
-        { name: "IronSource Gaming", composite_score: 80, risk_level: "critique", estimated_index: 8.0 },
-        { name: "AppLovin Gaming", composite_score: 61, risk_level: "élevé", estimated_index: 6.1 },
-        { name: "Vungle Gaming", composite_score: 51, risk_level: "élevé", estimated_index: 5.1 },
-        { name: "Digital Turbine Gaming", composite_score: 32, risk_level: "modéré", estimated_index: 3.2 },
-        { name: "Chartboost Gaming", composite_score: 13, risk_level: "faible", estimated_index: 1.3 },
+        { name: "Activision Blizzard", composite_score: 95.20, risk_level: "critique", estimated_index: 9.52 },
+        { name: "Electronic Arts", composite_score: 89.45, risk_level: "critique", estimated_index: 8.95 },
+        { name: "Ubisoft", composite_score: 81.95, risk_level: "critique", estimated_index: 8.20 },
+        { name: "Nintendo", composite_score: 76.95, risk_level: "critique", estimated_index: 7.70 },
+        { name: "Sony PlayStation", composite_score: 57.95, risk_level: "élevé", estimated_index: 5.80 },
+        { name: "Microsoft Xbox", composite_score: 47.95, risk_level: "élevé", estimated_index: 4.80 },
+        { name: "Epic Games", composite_score: 28.95, risk_level: "modéré", estimated_index: 2.90 },
+        { name: "Riot Games", composite_score: 10.00, risk_level: "faible", estimated_index: 1.00 },
       ],
-      avg_composite: 61.02,
+      avg_composite: 61.05,
       generatedAt: new Date().toISOString(),
       mode: "fallback",
     }, { status: 502 }));

@@ -14,16 +14,16 @@ export async function GET() {
   } catch {
     return sealResponse(NextResponse.json({
       entities: [
-        { name: "Facebook Ads", composite_score: 99, risk_level: "critique", estimated_index: 9.9 },
-        { name: "Instagram Ads", composite_score: 93, risk_level: "critique", estimated_index: 9.3 },
-        { name: "TikTok Ads", composite_score: 85, risk_level: "critique", estimated_index: 8.5 },
-        { name: "Twitter/X Ads", composite_score: 80, risk_level: "critique", estimated_index: 8.0 },
-        { name: "Snapchat Ads", composite_score: 61, risk_level: "élevé", estimated_index: 6.1 },
-        { name: "Pinterest Ads", composite_score: 51, risk_level: "élevé", estimated_index: 5.1 },
-        { name: "LinkedIn Ads", composite_score: 32, risk_level: "modéré", estimated_index: 3.2 },
-        { name: "BeReal Ads", composite_score: 13, risk_level: "faible", estimated_index: 1.3 },
+        { name: "Meta (Facebook)", composite_score: 95.20, risk_level: "critique", estimated_index: 9.52 },
+        { name: "TikTok", composite_score: 89.45, risk_level: "critique", estimated_index: 8.95 },
+        { name: "Instagram", composite_score: 81.95, risk_level: "critique", estimated_index: 8.20 },
+        { name: "Twitter/X", composite_score: 76.95, risk_level: "critique", estimated_index: 7.70 },
+        { name: "LinkedIn", composite_score: 57.95, risk_level: "élevé", estimated_index: 5.80 },
+        { name: "Snapchat", composite_score: 47.95, risk_level: "élevé", estimated_index: 4.80 },
+        { name: "Pinterest", composite_score: 28.95, risk_level: "modéré", estimated_index: 2.90 },
+        { name: "Reddit", composite_score: 10.00, risk_level: "faible", estimated_index: 1.00 },
       ],
-      avg_composite: 61.02,
+      avg_composite: 61.05,
       generatedAt: new Date().toISOString(),
       mode: "fallback",
     }, { status: 502 }));
