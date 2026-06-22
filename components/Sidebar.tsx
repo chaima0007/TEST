@@ -12181,6 +12181,39 @@ function IconCocoaChildLaborRights() {
   );
 }
 
+function IconCoffeeLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#78350f" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+      <line x1="6" y1="1" x2="6" y2="4" />
+      <line x1="10" y1="1" x2="10" y2="4" />
+      <line x1="14" y1="1" x2="14" y2="4" />
+    </svg>
+  );
+}
+
+function IconVanillaChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2C8 2 5 7 5 12s3 10 7 10 7-5 7-10S16 2 12 2z" />
+      <path d="M12 2v20" />
+      <path d="M5 12h14" />
+    </svg>
+  );
+}
+
+function IconRubberPlantationLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 22V10" />
+      <path d="M12 10C12 10 8 8 6 4c4 0 6 2 6 6z" />
+      <path d="M12 10C12 10 16 8 18 4c-4 0-6 2-6 6z" />
+      <path d="M8 18c1-1 2-2 4-2s3 1 4 2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14023,6 +14056,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/bear-bile-farming-rights", label: "Élevage Ours pour Bile", icon: IconBearBileFarmingRights },
       { href: "/dashboard/rhinoceros-horn-poaching-rights", label: "Braconnage Rhinocéros", icon: IconRhinocerosHornPoachinRights },
       { href: "/dashboard/cocoa-child-labor-rights", label: "Travail Enfant Cacao", icon: IconCocoaChildLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 286",
+    items: [
+      { href: "/dashboard/coffee-labor-rights", label: "Droits Travailleurs Café", icon: IconCoffeeLaborRights },
+      { href: "/dashboard/vanilla-child-labor-rights", label: "Travail Enfant Vanille", icon: IconVanillaChildLaborRights },
+      { href: "/dashboard/rubber-plantation-labor-rights", label: "Travail Plantation Caoutchouc", icon: IconRubberPlantationLaborRights },
     ],
   },
   {
