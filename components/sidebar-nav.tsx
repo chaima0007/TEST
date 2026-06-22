@@ -3850,6 +3850,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/firstpartydata", label: "First-Party Data", icon: Icons.IconFirstPartyData },
       { href: "/dashboard/zeropartydata", label: "Zero-Party Data", icon: Icons.IconZeroPartyData },
       { href: "/dashboard/contextualint", label: "Contextual Intel", icon: Icons.IconContextualInt },
+      { href: "/dashboard/identityresolution", label: "Identity Resolution", icon: Icons.IconIdentityResolution },
+      { href: "/dashboard/audienceseg", label: "Audience Segmentation", icon: Icons.IconAudienceSeg },
+      { href: "/dashboard/lookalike", label: "Lookalike Modeling", icon: Icons.IconLookalike },
     ],
   },
   {
