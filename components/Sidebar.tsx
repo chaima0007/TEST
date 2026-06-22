@@ -13636,6 +13636,42 @@ function IconPrintMediaProductionChildLaborRights({ size = 20, color = "currentC
   );
 }
 
+function IconPackagingDesignChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2 L22 7 L22 17 L12 22 L2 17 L2 7 Z" />
+      <path d="M12 2 L12 22" />
+      <path d="M2 7 L12 12 L22 7" />
+      <path d="M7 4.5 L17 9.5" />
+    </svg>
+  );
+}
+
+function IconBrandIdentityDesignChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx={12} cy={12} r={9} />
+      <circle cx={12} cy={12} r={4} />
+      <line x1={3} y1={12} x2={8} y2={12} />
+      <line x1={16} y1={12} x2={21} y2={12} />
+      <line x1={12} y1={3} x2={12} y2={8} />
+      <line x1={12} y1={16} x2={12} y2={21} />
+    </svg>
+  );
+}
+
+function IconCatalogPhotographyChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={2} y={4} width={20} height={16} rx={2} />
+      <rect x={6} y={8} width={6} height={6} rx={1} />
+      <line x1={15} y1={9} x2={19} y2={9} />
+      <line x1={15} y1={12} x2={19} y2={12} />
+      <line x1={6} y1={17} x2={18} y2={17} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16082,6 +16118,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Médias Imprimés",
         icon: IconPrintMediaProductionChildLaborRights,
         color: "#1e40af",
+      },
+      {
+        href: "/dashboard/packaging-design-child-labor-rights",
+        label: "Droits Enfants Design Emballage",
+        icon: IconPackagingDesignChildLaborRights,
+        color: "#0f766e",
+      },
+      {
+        href: "/dashboard/brand-identity-design-child-labor-rights",
+        label: "Droits Enfants Design Identité Marque",
+        icon: IconBrandIdentityDesignChildLaborRights,
+        color: "#7e22ce",
+      },
+      {
+        href: "/dashboard/catalog-photography-child-labor-rights",
+        label: "Droits Enfants Photographie Catalogue",
+        icon: IconCatalogPhotographyChildLaborRights,
+        color: "#b45309",
       },
     ],
   },
