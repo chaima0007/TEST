@@ -12507,6 +12507,43 @@ function IconCardamomChildLaborRights({ size = 18, color = "#92400e" }: { size?:
     </svg>
   );
 }
+function IconMineralWaterExtractionCommunityRights({ size = 18, color = "#0891b2" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8 8 5 12 5 16a7 7 0 0 0 14 0c0-4-3-8-7-14z" />
+      <path d="M9 16h6" />
+      <path d="M8 20l2-2" />
+      <path d="M16 20l-2-2" />
+      <path d="M12 22v-4" />
+    </svg>
+  );
+}
+function IconSandalwoodIllegalLoggingRights({ size = 18, color = "#854d0e" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22v-8" />
+      <path d="M8 22h8" />
+      <path d="M12 14c-4 0-7-3-7-7 0-2 2-5 7-5s7 3 7 5c0 4-3 7-7 7z" />
+      <path d="M9 9l3 3 3-3" />
+      <path d="M5 19l2-2" />
+      <path d="M19 19l-2-2" />
+    </svg>
+  );
+}
+function IconElectronicGoldRecoveryRights({ size = 18, color = "#ca8a04" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="6" width="18" height="12" rx="2" />
+      <path d="M7 10h2v4H7z" />
+      <path d="M11 10h2v4h-2z" />
+      <path d="M15 10h2v4h-2z" />
+      <path d="M7 6V4" />
+      <path d="M12 6V4" />
+      <path d="M17 6V4" />
+      <circle cx="19" cy="10" r="1" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -14430,6 +14467,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/spice-farm-child-labor-rights", label: "Droits Enfants Fermes Épices", icon: IconSpiceFarmChildLaborRights, color: "#d97706" },
       { href: "/dashboard/nutmeg-plantation-labor-rights", label: "Droits Travail Plantation Noix Muscade", icon: IconNutmegPlantationLaborRights, color: "#166534" },
       { href: "/dashboard/cardamom-child-labor-rights", label: "Droits Enfants Cardamome", icon: IconCardamomChildLaborRights, color: "#92400e" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 296",
+    items: [
+      { label: "Droits Communautés Extraction Eau Minérale", href: "/dashboard/mineral-water-extraction-community-rights", icon: IconMineralWaterExtractionCommunityRights, color: "#0891b2" },
+      { label: "Droits Bois Santal Exploitation Illégale", href: "/dashboard/sandalwood-illegal-logging-rights", icon: IconSandalwoodIllegalLoggingRights, color: "#854d0e" },
+      { label: "Droits Récupération Or Électronique", href: "/dashboard/electronic-gold-recovery-rights", icon: IconElectronicGoldRecoveryRights, color: "#ca8a04" },
     ],
   },
   {
