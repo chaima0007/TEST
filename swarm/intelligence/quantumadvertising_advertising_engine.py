@@ -1,14 +1,14 @@
 import json
 
 ENTITIES = [
-    ("Unity Ads Platform", 99, 97, 95, 93),
-    ("IronSource Gaming Ads", 93, 90, 88, 86),
-    ("AppLovin Gaming", 85, 82, 80, 78),
-    ("Verizon Gaming Ads", 80, 77, 75, 73),
-    ("Activision Blizzard Ads", 61, 58, 56, 54),
-    ("Electronic Arts Advertising", 51, 48, 46, 44),
-    ("Roblox Advertising", 32, 29, 27, 25),
-    ("Miniclip Ads Network", 13, 11, 9, 7),
+    ("IBM Quantum Ads", 99, 97, 95, 93),
+    ("Google Quantum Targeting", 93, 90, 88, 86),
+    ("Microsoft Azure Quantum", 85, 82, 80, 78),
+    ("Amazon Braket Advertising", 80, 77, 75, 73),
+    ("IonQ Ad Platform", 61, 58, 56, 54),
+    ("Rigetti Computing Ads", 51, 48, 46, 44),
+    ("D-Wave Marketing", 32, 29, 27, 25),
+    ("Xanadu Quantum Ads", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -19,7 +19,7 @@ def compute(entity):
     elif score >= 20: level = "modéré"
     else: level = "faible"
     idx = round(score / 100 * 10, 2)
-    return {"name": name, "composite_score": score, "risk_level": level, "estimated_gamingadvertising_index": idx}
+    return {"name": name, "composite_score": score, "risk_level": level, "estimated_quantumadvertising_index": idx}
 
 def run():
     results = [compute(e) for e in ENTITIES]
@@ -27,7 +27,7 @@ def run():
     dist = {}
     for r in results:
         dist[r["risk_level"]] = dist.get(r["risk_level"], 0) + 1
-    payload = {"domain": "gamingadvertising-advertising", "entities": results, "avg_composite": avg, "distribution": dist}
+    payload = {"domain": "quantumadvertising-advertising", "entities": results, "avg_composite": avg, "distribution": dist}
     print(json.dumps(payload, indent=2, ensure_ascii=False))
     return payload
 

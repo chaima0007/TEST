@@ -1,15 +1,14 @@
-#!/usr/bin/env python3
-"""CaelumSwarm™ — Voice Advertising Compliance Engine CSDDD 2024/1760"""
+import json
 
 ENTITIES = [
     ("Amazon Alexa Ads", 99, 97, 95, 93),
     ("Google Assistant Ads", 93, 90, 88, 86),
-    ("Apple Siri Suggestions", 85, 82, 80, 78),
-    ("Spotify Voice Ads", 80, 77, 75, 73),
-    ("iHeartRadio Voice Ads", 61, 58, 56, 54),
-    ("SoundHound Ads", 51, 48, 46, 44),
-    ("Samsung Bixby Ads", 32, 29, 27, 25),
-    ("Cortana Advertising", 13, 11, 9, 7),
+    ("Apple Siri Advertising", 85, 82, 80, 78),
+    ("Microsoft Cortana Ads", 80, 77, 75, 73),
+    ("Samsung Bixby Advertising", 61, 58, 56, 54),
+    ("Spotify Voice Ads", 51, 48, 46, 44),
+    ("SoundHound Advertising", 32, 29, 27, 25),
+    ("Nuance Voice Marketing", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -22,13 +21,15 @@ def compute(entity):
     idx = round(score / 100 * 10, 2)
     return {"name": name, "composite_score": score, "risk_level": level, "estimated_voiceadvertising_index": idx}
 
-if __name__ == "__main__":
+def run():
     results = [compute(e) for e in ENTITIES]
-    dist = {}; total = 0
+    avg = round(sum(r["composite_score"] for r in results) / len(results), 2)
+    dist = {}
     for r in results:
         dist[r["risk_level"]] = dist.get(r["risk_level"], 0) + 1
-        total += r["composite_score"]
-        print(r)
-    avg = round(total / len(results), 2)
-    print(f"\navg_composite={avg}")
-    print(f"distribution={dist}")
+    payload = {"domain": "voiceadvertising-advertising", "entities": results, "avg_composite": avg, "distribution": dist}
+    print(json.dumps(payload, indent=2, ensure_ascii=False))
+    return payload
+
+if __name__ == "__main__":
+    run()
