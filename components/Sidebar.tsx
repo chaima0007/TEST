@@ -10846,6 +10846,44 @@ function IconDigitalAccessibilityRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconFreedomOfAssemblyRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 18c0-3 2-5 5-5h8c3 0 5 2 5 5"/>
+      <circle cx="12" cy="7" r="3"/>
+      <path d="M17 3l1 2-1 2"/>
+      <path d="M19 5h3"/>
+      <path d="M7 3l-1 2 1 2"/>
+      <path d="M5 5H2"/>
+    </svg>
+  );
+}
+
+function IconRightToHousingRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 10.5L12 3l9 7.5"/>
+      <path d="M5 9v11h14V9"/>
+      <rect x="9" y="14" width="6" height="6"/>
+      <path d="M9 14v6"/>
+    </svg>
+  );
+}
+
+function IconJuvenileJusticeRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5" r="2"/>
+      <path d="M12 7v5"/>
+      <line x1="8" y1="21" x2="16" y2="21"/>
+      <line x1="12" y1="9" x2="8" y2="21"/>
+      <line x1="12" y1="9" x2="16" y2="21"/>
+      <path d="M6 13h3.5M14.5 13H18"/>
+      <path d="M6 13l2-3M18 13l-2-3"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12296,6 +12334,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/net-neutrality-rights-engine", label: "Neutralité du Net", icon: IconNetNeutralityRights },
       { href: "/dashboard/right-to-be-forgotten-rights-engine", label: "Droit à l'Oubli", icon: IconRightToBeForgottenRights },
       { href: "/dashboard/digital-accessibility-rights-engine", label: "Accessibilité Numérique", icon: IconDigitalAccessibilityRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 237",
+    items: [
+      { href: "/dashboard/freedom-of-assembly-rights-engine", label: "Liberté de Réunion", icon: IconFreedomOfAssemblyRights },
+      { href: "/dashboard/right-to-housing-rights-engine", label: "Droit au Logement", icon: IconRightToHousingRights },
+      { href: "/dashboard/juvenile-justice-rights-engine", label: "Justice des Mineurs", icon: IconJuvenileJusticeRights },
     ],
   },
   {
