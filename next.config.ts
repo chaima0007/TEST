@@ -26,6 +26,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    optimizePackageImports: ["react", "react-dom"],
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "logo.clearbit.com" },
