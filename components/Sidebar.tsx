@@ -13003,6 +13003,27 @@ function IconAmaranthHarvestingLaborRights({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconQuinoaHarvestingLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5" r="3"/><path d="M12 8v14M8 12l4 2 4-2"/>
+    </svg>
+  );
+}
+function IconChiaSeedCultivationLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/>
+    </svg>
+  );
+}
+function IconLentilHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="12" cy="12" rx="8" ry="5"/><path d="M4 12c0 0 2 5 8 5s8-5 8-5"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -15089,6 +15110,24 @@ const navSections: NavSection[] = [
         label: "Amaranth Harvesting Labor",
         href: "/dashboard/amaranth-harvesting-labor-rights",
         icon: IconAmaranthHarvestingLaborRights,
+        color: "#7f1d1d",
+      },
+      {
+        label: "Quinoa Harvesting Labor",
+        href: "/dashboard/quinoa-harvesting-labor-rights",
+        icon: IconQuinoaHarvestingLaborRights,
+        color: "#166534",
+      },
+      {
+        label: "Chia Seed Cultivation Labor",
+        href: "/dashboard/chia-seed-cultivation-labor-rights",
+        icon: IconChiaSeedCultivationLaborRights,
+        color: "#1e3a5f",
+      },
+      {
+        label: "Lentil Harvesting Child Labor",
+        href: "/dashboard/lentil-harvesting-child-labor-rights",
+        icon: IconLentilHarvestingChildLaborRights,
         color: "#7f1d1d",
       },
     ],
