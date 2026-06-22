@@ -11975,6 +11975,35 @@ function IconTantalumConflictMineralsRights() {
     </svg>
   );
 }
+function IconLeatherTanneryChromiumRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="3" y="6" width="18" height="12" rx="2" />
+      <circle cx="12" cy="12" r="3" />
+      <line x1="12" y1="9" x2="12" y2="6" />
+      <line x1="12" y1="15" x2="12" y2="18" />
+    </svg>
+  );
+}
+function IconBrickKilnBondedLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#c2410c" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="2" y="10" width="9" height="5" rx="1" />
+      <rect x="13" y="10" width="9" height="5" rx="1" />
+      <line x1="11" y1="12" x2="13" y2="12" />
+      <rect x="5" y="4" width="14" height="5" rx="1" />
+    </svg>
+  );
+}
+function IconCamelJockeyChildRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 17 Q8 10 14 12 Q18 13 21 17" />
+      <circle cx="17" cy="7" r="2" />
+      <line x1="17" y1="9" x2="16" y2="12" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -13770,6 +13799,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/tungsten-conflict-mining-rights", label: "Tungstène Zones de Conflit", icon: IconTungstenConflictMiningRights },
       { href: "/dashboard/tin-mining-artisanal-rights", label: "Mines d'Étain Artisanales", icon: IconTinMiningArtisanalRights },
       { href: "/dashboard/tantalum-conflict-minerals-rights", label: "Tantale Minerais Conflit", icon: IconTantalumConflictMineralsRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 280",
+    items: [
+      { href: "/dashboard/leather-tannery-chromium-rights", label: "Tanneries Chrome Hexavalent", icon: IconLeatherTanneryChromiumRights },
+      { href: "/dashboard/brick-kiln-bonded-labor-rights", label: "Travail Servitude Briqueteries", icon: IconBrickKilnBondedLaborRights },
+      { href: "/dashboard/camel-jockey-child-rights", label: "Enfants Jockeys Chameaux", icon: IconCamelJockeyChildRights },
     ],
   },
   {
