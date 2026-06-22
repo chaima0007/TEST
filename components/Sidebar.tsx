@@ -10612,6 +10612,25 @@ function IconSocialSecurityRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconAsylumRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+  );
+}
+
+function IconIndigenousKnowledgeRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+      <path d="M2 12h20"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11998,6 +12017,14 @@ const navSections: NavSection[] = [
       { label: "Traite des Êtres Humains", href: "/dashboard/human-trafficking-rights-engine", icon: IconHumanTraffickingRights },
       { label: "Droit à l'Éducation", href: "/dashboard/right-to-education-rights-engine", icon: IconRightToEducationRights },
       { label: "Protection Sociale", href: "/dashboard/social-security-rights-engine", icon: IconSocialSecurityRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 229",
+    items: [
+      { label: "Droit d'Asile", href: "/dashboard/asylum-rights-engine", icon: IconAsylumRights },
+      { label: "Santé Mentale", href: "/dashboard/mental-health-rights-engine", icon: IconMentalHealthRights },
+      { label: "Savoirs Autochtones", href: "/dashboard/indigenous-knowledge-rights-engine", icon: IconIndigenousKnowledgeRights },
     ],
   },
   {
