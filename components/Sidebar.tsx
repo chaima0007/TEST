@@ -12317,6 +12317,35 @@ function IconSeafoodSupplyChainRights() {
   );
 }
 
+function IconSheaButterLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2c-4 0-7 3-7 7 0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" />
+      <circle cx="12" cy="9" r="2" />
+    </svg>
+  );
+}
+
+function IconCashewChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 3c-3 0-6 2-7 6 1 2 3 4 7 4s6-2 7-4c-1-4-4-6-7-6z" />
+      <path d="M12 13v5" />
+      <path d="M8 16l4 4 4-4" />
+    </svg>
+  );
+}
+
+function IconMangoLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 20c-4 0-8-4-8-9 0-4 2-7 5-8l1-2h4l1 2c3 1 5 4 5 8 0 5-4 9-8 9z" />
+      <path d="M12 2v3" />
+      <path d="M9 4c1 1 2 2 3 3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14191,6 +14220,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/banana-pesticide-poisoning-rights", label: "Empoisonnement Pesticides Banane", icon: IconBananaPesticidePoisoningRights },
       { href: "/dashboard/grape-harvest-labor-rights", label: "Droits Vendangeurs Migrants", icon: IconGrapeHarvestLaborRights },
       { href: "/dashboard/seafood-supply-chain-rights", label: "Droits Chaîne Fruits de Mer", icon: IconSeafoodSupplyChainRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 290",
+    items: [
+      { href: "/dashboard/shea-butter-labor-rights", label: "Droits Travailleurs Karité", icon: IconSheaButterLaborRights },
+      { href: "/dashboard/cashew-child-labor-rights", label: "Travail Enfant Anacarde", icon: IconCashewChildLaborRights },
+      { href: "/dashboard/mango-labor-rights", label: "Droits Travailleurs Mangue", icon: IconMangoLaborRights },
     ],
   },
   {
