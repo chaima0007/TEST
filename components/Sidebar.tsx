@@ -13378,6 +13378,42 @@ function IconRoselleHarvestingChildLaborRights({ size = 20, color = "currentColo
   );
 }
 
+function IconFlaxRettingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={4} y={10} width={16} height={6} rx={2} />
+      <line x1={7} y1={10} x2={7} y2={16} />
+      <line x1={10} y1={10} x2={10} y2={16} />
+      <line x1={14} y1={10} x2={14} y2={16} />
+      <line x1={17} y1={10} x2={17} y2={16} />
+      <path d="M8 10 Q8 6 12 4 Q16 6 16 10" />
+    </svg>
+  );
+}
+
+function IconCottonGinningChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx={12} cy={9} r={5} />
+      <line x1={5} y1={14} x2={19} y2={14} />
+      <line x1={8} y1={14} x2={8} y2={20} />
+      <line x1={12} y1={14} x2={12} y2={20} />
+      <line x1={16} y1={14} x2={16} y2={20} />
+      <path d="M9 6 Q12 4 15 6" />
+    </svg>
+  );
+}
+
+function IconWoolScouringChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 12 Q6 8 8 12 Q10 16 12 12 Q14 8 16 12 Q18 16 20 12" />
+      <path d="M4 16 Q6 12 8 16 Q10 20 12 16 Q14 12 16 16 Q18 20 20 16" />
+      <line x1={4} y1={8} x2={20} y2={8} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15698,6 +15734,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Roselle",
         icon: IconRoselleHarvestingChildLaborRights,
         color: "#9f1239",
+      },
+      {
+        href: "/dashboard/flax-retting-child-labor-rights",
+        label: "Droits Enfants Rouissage Lin",
+        icon: IconFlaxRettingChildLaborRights,
+        color: "#4338ca",
+      },
+      {
+        href: "/dashboard/cotton-ginning-child-labor-rights",
+        label: "Droits Enfants Égrenage Coton",
+        icon: IconCottonGinningChildLaborRights,
+        color: "#0891b2",
+      },
+      {
+        href: "/dashboard/wool-scouring-child-labor-rights",
+        label: "Droits Enfants Lavage Laine",
+        icon: IconWoolScouringChildLaborRights,
+        color: "#7c3aed",
       },
     ],
   },
