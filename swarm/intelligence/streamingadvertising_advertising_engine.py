@@ -1,14 +1,14 @@
 import json
 
 ENTITIES = [
-    ("Roku OneView Ads", 99, 97, 95, 93),
-    ("Samsung Ads CTV", 93, 90, 88, 86),
-    ("LG Ads Solutions", 85, 82, 80, 78),
-    ("Vizio SmartCast Ads", 80, 77, 75, 73),
-    ("Amazon Fire TV Ads", 61, 58, 56, 54),
-    ("Google TV Ads", 51, 48, 46, 44),
-    ("Apple TV Ads", 32, 29, 27, 25),
-    ("Comcast FreeWheel", 13, 11, 9, 7),
+    ("Netflix Ads Platform", 99, 97, 95, 93),
+    ("Disney+ Advertising", 93, 90, 88, 86),
+    ("Amazon Prime Video Ads", 85, 82, 80, 78),
+    ("HBO Max Ads", 80, 77, 75, 73),
+    ("Peacock Advertising", 61, 58, 56, 54),
+    ("Paramount+ Ads", 51, 48, 46, 44),
+    ("Apple TV+ Ads", 32, 29, 27, 25),
+    ("Hulu Advertising", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -19,7 +19,7 @@ def compute(entity):
     elif score >= 20: level = "modéré"
     else: level = "faible"
     idx = round(score / 100 * 10, 2)
-    return {"name": name, "composite_score": score, "risk_level": level, "estimated_ctvadvertising_index": idx}
+    return {"name": name, "composite_score": score, "risk_level": level, "estimated_streamingadvertising_index": idx}
 
 def run():
     results = [compute(e) for e in ENTITIES]
@@ -27,7 +27,7 @@ def run():
     dist = {}
     for r in results:
         dist[r["risk_level"]] = dist.get(r["risk_level"], 0) + 1
-    payload = {"domain": "ctvadvertising-advertising", "entities": results, "avg_composite": avg, "distribution": dist}
+    payload = {"domain": "streamingadvertising-advertising", "entities": results, "avg_composite": avg, "distribution": dist}
     print(json.dumps(payload, indent=2, ensure_ascii=False))
     return payload
 
