@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """CaelumSwarm™ — Corporate Accountability Risk Engine"""
 
+DOMAIN = "corporateaccountability"
 ENTITIES = [
     {"name": "Shell International (Nigeria Delta)", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},  # critique
     {"name": "Glencore (DRC Cobalt Mining)", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},  # critique
@@ -9,30 +10,26 @@ ENTITIES = [
     {"name": "HSBC (Financial Crime Compliance)", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},  # élevé
     {"name": "Volkswagen (CSDDD Reporting)", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},  # élevé
     {"name": "Unilever (Palm Oil Supply)", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},  # modéré
-    {"name": "Patagonia (ESG Benchmark)", "sub1": 13, "sub2": 11, "sub3": 9, "sub4": 7},    # faible
+    {"name": "Patagonia (ESG Benchmark)", "sub1": 13, "sub2": 11, "sub3": 9, "sub4": 7},  # faible
 ]
 
 def compute(e):
-    return e["sub1"]*0.30 + e["sub2"]*0.25 + e["sub3"]*0.25 + e["sub4"]*0.20
+    score = e["sub1"]*0.30 + e["sub2"]*0.25 + e["sub3"]*0.25 + e["sub4"]*0.20
+    risk = "critique" if score >= 60 else "élevé" if score >= 40 else "modéré" if score >= 20 else "faible"
+    return {**e, "composite_score": round(score, 2), "risk_level": risk,
+            f"estimated_{DOMAIN}_index": round(score / 100 * 10, 2)}
 
-SEUILS = {"critique": 60, "élevé": 40, "modéré": 20}
-
-def classify(score):
-    if score >= SEUILS["critique"]: return "critique"
-    if score >= SEUILS["élevé"]: return "élevé"
-    if score >= SEUILS["modéré"]: return "modéré"
-    return "faible"
-
-results = []
-for e in ENTITIES:
-    score = compute(e)
-    results.append({**e, "composite_score": round(score, 2), "risk_level": classify(score)})
-
-avg_composite = round(sum(r["composite_score"] for r in results) / len(results), 2)
-estimated_corporateaccountability_index = round(avg_composite / 100 * 10, 2)
+def main():
+    results = [compute(e) for e in ENTITIES]
+    avg = round(sum(r["composite_score"] for r in results) / len(results), 2)
+    dist = {}
+    for r in results:
+        dist[r["risk_level"]] = dist.get(r["risk_level"], 0) + 1
+    print(f"Domain: {DOMAIN}")
+    print(f"avg_composite: {avg}")
+    print(f"distribution: {dist}")
+    for r in results:
+        print(f"  {r['name']}: {r['composite_score']} ({r['risk_level']})")
 
 if __name__ == "__main__":
-    for r in results:
-        print(f"{r['risk_level']:10} | {r['composite_score']:5.2f} | {r['name']}")
-    print(f"\navg_composite    = {avg_composite}")
-    print(f"estimated_corporateaccountability_index = {estimated_corporateaccountability_index}")
+    main()
