@@ -13704,6 +13704,54 @@ function IconProductLabel({ className }: { className?: string }) {
   );
 }
 
+function IconAnimationProduction({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <path d="M6 5.5l5 2.5-5 2.5z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconMotionGraphics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 8 Q5 3 8 8 Q11 13 14 8" />
+      <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconVisualEffects({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <polygon points="8,2 10,6 14,6 11,9 12,13 8,11 4,13 5,9 2,6 6,6" />
+    </svg>
+  );
+}
+
+function IconAgentJournal({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="1" width="12" height="14" rx="1" />
+      <line x1="5" y1="5" x2="11" y2="5" />
+      <line x1="5" y1="8" x2="11" y2="8" />
+      <line x1="5" y1="11" x2="8" y2="11" />
+      <circle cx="12" cy="11" r="2" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconRiskAlerts({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 2L14 13H2z" />
+      <line x1="8" y1="7" x2="8" y2="10" />
+      <circle cx="8" cy="12" r="0.7" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16186,6 +16234,41 @@ const navSections: NavSection[] = [
         href: "/dashboard/product-label-design-child-labor-rights",
         icon: IconProductLabel,
         category: "Publicité Visuelle",
+      },
+      {
+        label: "Animation Production",
+        href: "/dashboard/animation-production-child-labor-rights",
+        icon: IconAnimationProduction,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Motion Graphics",
+        href: "/dashboard/motion-graphics-child-labor-rights",
+        icon: IconMotionGraphics,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Visual Effects Production",
+        href: "/dashboard/visual-effects-production-child-labor-rights",
+        icon: IconVisualEffects,
+        category: "Publicité Visuelle",
+      },
+    ],
+  },
+  {
+    title: "OUTILS PLATEFORME",
+    items: [
+      {
+        label: "Journal d'Activité Agents",
+        href: "/dashboard/agent-activity-journal",
+        icon: IconAgentJournal,
+        category: "Outils Plateforme",
+      },
+      {
+        label: "Centre d'Alertes Risque",
+        href: "/dashboard/risk-alerts-center",
+        icon: IconRiskAlerts,
+        category: "Outils Plateforme",
       },
     ],
   },
