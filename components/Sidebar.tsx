@@ -13845,6 +13845,43 @@ function IconBrandAmbassadorProgram({ className }: { className?: string }) {
   );
 }
 
+function IconMicroInfluencerNetwork({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="2" />
+      <circle cx="3" cy="4" r="1.5" />
+      <circle cx="13" cy="4" r="1.5" />
+      <circle cx="3" cy="12" r="1.5" />
+      <circle cx="13" cy="12" r="1.5" />
+      <line x1="6" y1="7" x2="4.2" y2="5.2" />
+      <line x1="10" y1="7" x2="11.8" y2="5.2" />
+      <line x1="6" y1="9" x2="4.2" y2="10.8" />
+      <line x1="10" y1="9" x2="11.8" y2="10.8" />
+    </svg>
+  );
+}
+
+function IconViralContentMarketing({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 8c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" />
+      <path d="M8 2l2 2-2 2" />
+      <path d="M2 10l1.5 1.5L5 10" />
+    </svg>
+  );
+}
+
+function IconUserGeneratedContent({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="4" width="12" height="8" rx="1" />
+      <circle cx="6" cy="8" r="1.5" />
+      <path d="M9 6.5h3M9 9.5h2" />
+      <path d="M5 2l3 2 3-2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16398,6 +16435,24 @@ const navSections: NavSection[] = [
         label: "Brand Ambassador Program",
         href: "/dashboard/brand-ambassador-program-child-labor-rights",
         icon: IconBrandAmbassadorProgram,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Micro Influencer Network",
+        href: "/dashboard/micro-influencer-network-child-labor-rights",
+        icon: IconMicroInfluencerNetwork,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Viral Content Marketing",
+        href: "/dashboard/viral-content-marketing-child-labor-rights",
+        icon: IconViralContentMarketing,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "User Generated Content",
+        href: "/dashboard/user-generated-content-child-labor-rights",
+        icon: IconUserGeneratedContent,
         category: "Publicité Visuelle",
       },
     ],
