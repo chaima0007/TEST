@@ -11620,6 +11620,24 @@ function IconForcedRelocationRights() {
   );
 }
 
+function IconWaterPrivatizationRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+    </svg>
+  );
+}
+
+function IconSexualExploitationSupplyChainRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#be185d" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="8" x2="12" y2="12" />
+      <line x1="12" y1="16" x2="12.01" y2="16" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13310,6 +13328,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/biopiracy-rights", label: "Biopiraterie", icon: IconBiopiacyRights },
       { href: "/dashboard/conflict-mineral-rights", label: "Minérais de Conflit", icon: IconConflictMineralRights },
       { href: "/dashboard/forced-relocation-rights", label: "Déplacements Forcés", icon: IconForcedRelocationRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 267",
+    items: [
+      { href: "/dashboard/water-privatization-rights", label: "Privatisation de l'Eau", icon: IconWaterPrivatizationRights },
+      { href: "/dashboard/artisanal-mining-rights", label: "Mines Artisanales", icon: IconArtisanalMiningRights },
+      { href: "/dashboard/sexual-exploitation-supply-chain", label: "Exploitation Sexuelle", icon: IconSexualExploitationSupplyChainRights },
     ],
   },
   {
