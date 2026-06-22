@@ -14487,6 +14487,28 @@ function IconNativeAdvertising({ size = 20 }: { size?: number }) {
   );
 }
 
+function IconB2bAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="7" width="9" height="13" rx="1" />
+      <rect x="13" y="7" width="9" height="13" rx="1" />
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <path d="M9 12h2M13 12h2M9 16h2M13 16h2" />
+    </svg>
+  );
+}
+
+function IconAccountBasedMarketing({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+      <circle cx="19" cy="8" r="2" />
+      <path d="M21 14c1.5.5 3 2 3 4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17106,6 +17128,18 @@ const navSections: NavSection[] = [
         label: "Native Advertising",
         href: "/dashboard/native-advertising-child-labor-rights",
         icon: IconNativeAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "B2B Advertising",
+        href: "/dashboard/b2b-advertising-child-labor-rights",
+        icon: IconB2bAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Account-Based Marketing",
+        href: "/dashboard/account-based-marketing-child-labor-rights",
+        icon: IconAccountBasedMarketing,
         category: "Publicité Visuelle",
       },
       {

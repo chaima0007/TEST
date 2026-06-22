@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Performance Marketing Child Labor Rights Engine (Wave 358)"""
+"""CaelumSwarm™ — Affiliate Network Advertising Child Labor Rights Engine (Wave 358)"""
 import json, statistics
 
 ENTITIES = [
-    ("Google Performance Max", 99, 97, 95, 93),
-    ("Meta Advantage+", 93, 90, 88, 86),
-    ("TikTok Performance", 85, 82, 80, 78),
-    ("Pinterest Performance+", 80, 77, 75, 73),
-    ("Criteo", 61, 58, 56, 54),
-    ("RTB House", 51, 48, 46, 44),
-    ("Adroll", 32, 29, 27, 25),
-    ("Smarter Click", 13, 11, 9, 7),
+    ("CJ Affiliate", 99, 97, 95, 93),
+    ("Rakuten Advertising", 93, 90, 88, 86),
+    ("ShareASale (Awin)", 85, 82, 80, 78),
+    ("Impact Radius", 80, 77, 75, 73),
+    ("PartnerStack", 61, 58, 56, 54),
+    ("Tradedoubler", 51, 48, 46, 44),
+    ("Awin Direct", 32, 29, 27, 25),
+    ("Skimlinks", 13, 11, 9, 7),
 ]
 WEIGHTS = (0.30, 0.25, 0.25, 0.20)
 THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
@@ -30,7 +30,7 @@ def compute():
             "entity": eid,
             "composite_score": round(composite, 2),
             "risk_level": classify(composite),
-            "estimated_performance_marketing_index": round(composite / 100 * 10, 2),
+            "estimated_affiliate_network_advertising_index": round(composite / 100 * 10, 2),
         })
     avg = statistics.mean(r["composite_score"] for r in results)
     distribution = {}
