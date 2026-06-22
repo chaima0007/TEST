@@ -10218,6 +10218,24 @@ function IconAcademicFreedomSuppression({ className }: { className?: string }) {
   );
 }
 
+function IconForcedMarriageRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2m0 0a4 4 0 110 8 4 4 0 010-8zm-6 9a6 6 0 1112 0v2H6v-2z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17l-2 2m8-2l2 2" />
+    </svg>
+  );
+}
+
+function IconChildMarriageLabor({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11452,6 +11470,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/agricultural-pesticides-rights-engine", label: "Agricultural Pesticides", icon: IconAgriculturalPesticides },
       { href: "/dashboard/homelessness-housing-rights-engine", label: "Homelessness Housing", icon: IconHomelessnessHousing },
       { href: "/dashboard/water-privatisation-rights-engine", label: "Water Privatisation", icon: IconWaterPrivatisation },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 210",
+    items: [
+      { href: "/dashboard/forced-marriage-rights-engine", label: "Mariages Forcés", icon: IconForcedMarriageRights },
+      { href: "/dashboard/statelessness-rights-engine", label: "Apatridie", icon: IconStatelessnessRights },
+      { href: "/dashboard/child-marriage-labor-engine", label: "Mariages & Travail Enfants", icon: IconChildMarriageLabor },
     ],
   },
   {
