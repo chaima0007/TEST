@@ -13491,6 +13491,43 @@ function IconMadderRootDyeChildLaborRights({ size = 20, color = "currentColor" }
   );
 }
 
+function IconHennaCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22 Q12 16 8 12 Q4 8 6 4 Q10 2 12 6 Q14 2 18 4 Q20 8 16 12 Q12 16 12 22" />
+      <path d="M12 14 Q10 12 8 13" />
+      <path d="M12 14 Q14 12 16 13" />
+      <path d="M12 10 Q11 8 9 9" />
+      <path d="M12 10 Q13 8 15 9" />
+    </svg>
+  );
+}
+
+function IconAnnattoDyeChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={10} />
+      <path d="M12 10 Q8 8 6 4" />
+      <path d="M12 10 Q16 8 18 4" />
+      <ellipse cx={12} cy={6} rx={5} ry={3} />
+      <path d="M9 5 Q10 8 12 9 Q14 8 15 5" />
+    </svg>
+  );
+}
+
+function IconWeldDyeCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={6} />
+      <path d="M12 6 Q9 4 7 5 Q8 2 11 3" />
+      <path d="M12 6 Q15 4 17 5 Q16 2 13 3" />
+      <circle cx={12} cy={10} r={2} />
+      <circle cx={12} cy={15} r={1.5} />
+      <circle cx={12} cy={19} r={1} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15865,6 +15902,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Teinture Garance",
         icon: IconMadderRootDyeChildLaborRights,
         color: "#7f1d1d",
+      },
+      {
+        href: "/dashboard/henna-cultivation-child-labor-rights",
+        label: "Droits Enfants Culture Henné",
+        icon: IconHennaCultivationChildLaborRights,
+        color: "#7c2d12",
+      },
+      {
+        href: "/dashboard/annatto-dye-child-labor-rights",
+        label: "Droits Enfants Teinture Rocou",
+        icon: IconAnnattoDyeChildLaborRights,
+        color: "#c2410c",
+      },
+      {
+        href: "/dashboard/weld-dye-cultivation-child-labor-rights",
+        label: "Droits Enfants Culture Gaude",
+        icon: IconWeldDyeCultivationChildLaborRights,
+        color: "#854d0e",
       },
     ],
   },
