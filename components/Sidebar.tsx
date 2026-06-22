@@ -15159,6 +15159,27 @@ function IconQuantumtechAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconNanotechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+    </svg>
+  );
+}
+function IconRoboticsAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 11v2M16 11v2"/>
+    </svg>
+  );
+}
+function IconArvRAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 8l10 6 10-6"/><rect x="2" y="8" width="20" height="8" rx="4"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18384,6 +18405,24 @@ const navSections: NavSection[] = [
         label: "Quantumtech Advertising",
         href: "/dashboard/quantumtech-advertising",
         icon: IconQuantumtechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Nanotech Advertising",
+        href: "/dashboard/nanotech-advertising",
+        icon: IconNanotechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Robotics Advertising",
+        href: "/dashboard/robotics-advertising",
+        icon: IconRoboticsAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "AR/VR Advertising",
+        href: "/dashboard/arvr-advertising",
+        icon: IconArvRAdvertising,
         category: "Publicité Visuelle",
       },
       {
