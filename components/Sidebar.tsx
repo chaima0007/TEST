@@ -15544,6 +15544,27 @@ function IconRadioadsAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconOutdooradvertisingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+    </svg>
+  );
+}
+function IconTransitadsAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+  );
+}
+function IconAirportadsAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 2 16.5 3.5L13 7 4.8 5.2 3.2 6.8l8 4-2 2-4-1-1.6 1.6 4 2 2 4 1.6-1.6-1-4 2-2 4 8z"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19185,6 +19206,9 @@ const navSections: NavSection[] = [
       { label: "Podcasting Advertising", href: "/dashboard/podcasting-advertising", icon: IconPodcastingAdvertising },
       { label: "Audio Streaming Advertising", href: "/dashboard/audiostreaming-advertising", icon: IconAudiostreamingAdvertising },
       { label: "Radio Ads Advertising", href: "/dashboard/radioads-advertising", icon: IconRadioadsAdvertising },
+      { label: "Outdoor Advertising", href: "/dashboard/outdooradvertising-advertising", icon: IconOutdooradvertisingAdvertising },
+      { label: "Transit Ads Advertising", href: "/dashboard/transitads-advertising", icon: IconTransitadsAdvertising },
+      { label: "Airport Ads Advertising", href: "/dashboard/airportads-advertising", icon: IconAirportadsAdvertising },
     ],
   },
   {
