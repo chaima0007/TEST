@@ -6440,6 +6440,78 @@ function IconAIAlgorithmicBias({ className }: { className?: string }) {
   );
 }
 
+function IconConflictMineralsDRC({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+    </svg>
+  );
+}
+
+function IconHumanTraffickingSlavery({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+    </svg>
+  );
+}
+
+function IconWaterPollutionLiability({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 3.582-9 8 0 4.418 4.03 8 9 8s9-3.582 9-8c0-4.418-4.03-8-9-8zM6.75 12.75c0 1.864 2.349 3.75 5.25 3.75s5.25-1.886 5.25-3.75M12 3v18" />
+    </svg>
+  );
+}
+
+function IconNuclearEnergyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  );
+}
+
+function IconEWasteRecycling({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" />
+    </svg>
+  );
+}
+
+function IconDebtBondageMigrant({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function IconDeforestationPalmOil({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18m0-18C8.686 3 6 6.686 6 11c0 2.21.895 4.21 2.343 5.657M12 3c3.314 0 6 3.686 6 8 0 2.21-.895 4.21-2.343 5.657M8.343 16.657C9.79 18.105 10.895 19 12 21m0 0c1.105-2 2.21-2.895 3.657-4.343" />
+    </svg>
+  );
+}
+
+function IconChildSoldiersArmed({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function IconSeedPatentsSovereignty({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -11266,6 +11338,30 @@ const navSections: NavSection[] = [
       { href: "/dashboard/crypto-energy-rights-engine", label: "Crypto Énergie & Droits", icon: IconCryptoEnergyRights },
       { href: "/dashboard/colonial-reparations-rights-engine", label: "Réparations Coloniales", icon: IconColonialReparations },
       { href: "/dashboard/ai-algorithmic-bias-rights-engine", label: "Biais IA & Discrimination", icon: IconAIAlgorithmicBias },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 204",
+    items: [
+      { href: "/dashboard/conflict-minerals-drc-engine", label: "Minerais Conflit RDC", icon: IconConflictMineralsDRC },
+      { href: "/dashboard/human-trafficking-modern-slavery-engine", label: "Traite & Esclavage Moderne", icon: IconHumanTraffickingSlavery },
+      { href: "/dashboard/water-pollution-corporate-liability-engine", label: "Pollution Eau Corp.", icon: IconWaterPollutionLiability },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 205",
+    items: [
+      { href: "/dashboard/nuclear-energy-community-rights-engine", label: "Nucléaire & Communautés", icon: IconNuclearEnergyRights },
+      { href: "/dashboard/e-waste-recycling-rights-engine", label: "Déchets Électroniques", icon: IconEWasteRecycling },
+      { href: "/dashboard/debt-bondage-migrant-workers-engine", label: "Servitude Dettes Migrants", icon: IconDebtBondageMigrant },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 206",
+    items: [
+      { href: "/dashboard/deforestation-palm-oil-rights-engine", label: "Déforestation & Huile Palme", icon: IconDeforestationPalmOil },
+      { href: "/dashboard/child-soldiers-armed-groups-engine", label: "Enfants Soldats", icon: IconChildSoldiersArmed },
+      { href: "/dashboard/seed-patents-food-sovereignty-engine", label: "Brevets Semences", icon: IconSeedPatentsSovereignty },
     ],
   },
   {
