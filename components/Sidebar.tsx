@@ -12653,6 +12653,41 @@ function IconTobaccoNicotinePoisoningRights({ size = 18, color = "#7f1d1d" }: { 
     </svg>
   );
 }
+function IconGoldJewelryArtisanRights({ size = 18, color = "#ca8a04" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l1.5 3h3l-2.5 2 1 3-3-1.5-3 1.5 1-3-2.5-2h3z" />
+      <path d="M9 13l-2 3h10l-2-3" />
+      <path d="M7 16l1 4h8l1-4" />
+      <line x1="12" y1="8" x2="12" y2="13" />
+    </svg>
+  );
+}
+function IconStoneQuarrySilicosisRights({ size = 18, color = "#78716c" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="3,20 8,8 13,14 17,6 21,20" />
+      <path d="M6 17 Q9 15 12 17 Q15 15 18 17" />
+      <path d="M10 20 Q12 14 14 20" />
+      <circle cx="18" cy="7" r="2" />
+    </svg>
+  );
+}
+function IconFlowerPackingChemicalRights({ size = 18, color = "#be185d" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="9" r="2" />
+      <path d="M12 7 Q14 4 17 5 Q18 8 15 9" />
+      <path d="M12 7 Q10 4 7 5 Q6 8 9 9" />
+      <path d="M14 9 Q17 10 17 13 Q14 14 12 11" />
+      <path d="M10 9 Q7 10 7 13 Q10 14 12 11" />
+      <path d="M12 11 Q12 14 10 16 Q8 17 9 19" />
+      <path d="M12 11 Q13 15 15 16 Q16 18 15 19" />
+      <path d="M12 19 L12 22" />
+      <path d="M8 21 Q10 20 12 22 Q14 20 16 21" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -14608,6 +14643,14 @@ const navSections: NavSection[] = [
       { label: "Droits Travailleurs Usines Gants Latex", href: "/dashboard/latex-glove-factory-labor-rights", icon: IconLatexGloveFactoryLaborRights, color: "#1e40af" },
       { label: "Droits Enfants Graines Coton", href: "/dashboard/cottonseed-child-labor-rights", icon: IconCottonseedChildLaborRights, color: "#d97706" },
       { label: "Droits Intoxication Nicotine Tabac", href: "/dashboard/tobacco-nicotine-poisoning-rights", icon: IconTobaccoNicotinePoisoningRights, color: "#7f1d1d" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 300",
+    items: [
+      { label: "Droits Artisans Bijouterie Or", href: "/dashboard/gold-jewelry-artisan-rights", icon: IconGoldJewelryArtisanRights, color: "#ca8a04" },
+      { label: "Droits Carriers Silicose Pierre", href: "/dashboard/stone-quarry-silicosis-rights", icon: IconStoneQuarrySilicosisRights, color: "#78716c" },
+      { label: "Droits Emballeurs Fleurs Pesticides", href: "/dashboard/flower-packing-chemical-rights", icon: IconFlowerPackingChemicalRights, color: "#be185d" },
     ],
   },
   {
