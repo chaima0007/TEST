@@ -1954,6 +1954,16 @@ export function IconFirstPartyDataAdvertising({ className }: { className?: strin
   );
 }
 
+export function IconIdentityResolution({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="4" />
+      <path d="M8 4v4l2.5 2.5" />
+      <path d="M2 8h1M13 8h1M8 2v1M8 13v1" />
+    </svg>
+  );
+}
+
 export function IconIdentityResolutionAdvertising({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
