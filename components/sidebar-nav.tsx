@@ -3802,6 +3802,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/frequencycap", label: "Frequency Cap", icon: Icons.IconFrequencyCap },
       { href: "/dashboard/viewability", label: "Ad Viewability", icon: Icons.IconViewability },
       { href: "/dashboard/brandsafety", label: "Brand Safety", icon: Icons.IconBrandSafety },
+      { href: "/dashboard/adattribution", label: "Ad Attribution", icon: Icons.IconAdAttribution },
+      { href: "/dashboard/mediabuying", label: "Media Buying", icon: Icons.IconMediaBuying },
+      { href: "/dashboard/programmatic", label: "Programmatic", icon: Icons.IconProgrammatic },
     ],
   },
   {
