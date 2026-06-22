@@ -20,6 +20,23 @@
         "high_priority": 6,
         "source": "anthropic_capabilities_db.py",
         "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
       }
     ],
     "SidebarAgent": [
@@ -78,6 +95,23 @@
         "high_priority": 6,
         "source": "anthropic_capabilities_db.py",
         "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
       }
     ],
     "EngineAgent": [
@@ -106,6 +140,23 @@
         "high_priority": 6,
         "source": "anthropic_capabilities_db.py",
         "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
       }
     ],
     "CICDAgent": [
@@ -166,6 +217,23 @@
         "high_priority": 6,
         "source": "anthropic_capabilities_db.py",
         "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
       }
     ],
     "QuantumAgent": [
@@ -194,6 +262,23 @@
         "high_priority": 6,
         "source": "anthropic_capabilities_db.py",
         "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
       }
     ],
     "CoordAgent": [
@@ -222,6 +307,23 @@
         "high_priority": 6,
         "source": "anthropic_capabilities_db.py",
         "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
       }
     ],
     "DashboardAgent": [],
@@ -233,9 +335,26 @@
         "high_priority": 6,
         "source": "anthropic_capabilities_db.py",
         "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
       }
     ]
   },
-  "total_notifications": 18,
-  "last_update": "2026-06-22T22:43:33.753959+00:00"
+  "total_notifications": 25,
+  "last_update": "2026-06-22T22:49:08.261523+00:00"
 }
