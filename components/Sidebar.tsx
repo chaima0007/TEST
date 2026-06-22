@@ -13976,6 +13976,48 @@ function IconAudioAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconSocialMediaAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="4" r="2" />
+      <circle cx="3" cy="12" r="1.5" />
+      <circle cx="13" cy="12" r="1.5" />
+      <line x1="6.5" y1="5.5" x2="4" y2="10.5" />
+      <line x1="9.5" y1="5.5" x2="12" y2="10.5" />
+      <line x1="4.5" y1="12" x2="11.5" y2="12" />
+    </svg>
+  );
+}
+
+function IconInfluencerAnalytics({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="5" r="2.5" />
+      <path d="M3 13c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+      <polyline points="10,7 12,9 14,6" />
+    </svg>
+  );
+}
+
+function IconCreatorMonetization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <path d="M8 5v1.5M8 9.5V11" />
+      <path d="M6 7c0-.8.9-1.5 2-1.5s2 .7 2 1.5-1 1.5-2 1.5-2 .7-2 1.5.9 1.5 2 1.5 2-.7 2-1.5" />
+    </svg>
+  );
+}
+
+function IconIPProtection({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 1L2 4v4c0 3.5 2.5 6.5 6 7.5 3.5-1 6-4 6-7.5V4z" />
+      <path d="M5.5 8l2 2 3.5-3.5" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16585,6 +16627,24 @@ const navSections: NavSection[] = [
         icon: IconAudioAdvertising,
         category: "Publicité Visuelle",
       },
+      {
+        label: "Social Media Advertising",
+        href: "/dashboard/social-media-advertising-child-labor-rights",
+        icon: IconSocialMediaAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Influencer Analytics",
+        href: "/dashboard/influencer-analytics-child-labor-rights",
+        icon: IconInfluencerAnalytics,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Creator Monetization",
+        href: "/dashboard/creator-monetization-child-labor-rights",
+        icon: IconCreatorMonetization,
+        category: "Publicité Visuelle",
+      },
     ],
   },
   {
@@ -16623,6 +16683,12 @@ const navSections: NavSection[] = [
         label: "Centre d'Alertes Risque",
         href: "/dashboard/risk-alerts-center",
         icon: IconRiskAlerts,
+        category: "Outils Plateforme",
+      },
+      {
+        label: "Protection Propriété Intellectuelle",
+        href: "/dashboard/ip-protection-status",
+        icon: IconIPProtection,
         category: "Outils Plateforme",
       },
     ],
