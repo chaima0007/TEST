@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#6366f1";
-const DOMAIN = "metaverse-advertising";
-const TITLE = "Metaverse Advertising";
+const COLOR = "#7c3aed";
+const DOMAIN = "virtualreality-advertising";
+const TITLE = "Virtual Reality Advertising";
 
-type Entity = { name: string; composite_score: number; risk_level: string; estimated_metaverse_index: number };
+type Entity = { name: string; composite_score: number; risk_level: string; estimated_virtualreality_index: number };
 type Data = { entities: Entity[]; avg_composite: number; distribution: Record<string, number> };
 
 function GaugeRing({ value, color }: { value: number; color: string }) {
@@ -52,7 +52,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         </div>
         {tab==="scores" && (
           <div style={{ display:"flex",flexDirection:"column",gap:10 }}>
-            {[["Score composite",entity.composite_score],["Indice domaine",entity.estimated_metaverse_index]].map(([label,val])=>(
+            {[["Score composite",entity.composite_score],["Indice domaine",entity.estimated_virtualreality_index]].map(([label,val])=>(
               <div key={String(label)} style={{ background:"#f8fafc",borderRadius:8,padding:"10px 16px" }}>
                 <div style={{ fontSize:12,color:"#6b7280",marginBottom:4 }}>{label}</div>
                 <div style={{ fontSize:20,fontWeight:700,color:COLOR }}>{val}</div>
@@ -63,7 +63,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         {tab==="signaux" && (
           <div style={{ fontSize:14,color:"#374151",lineHeight:1.7 }}>
             <p><strong>Niveau de risque :</strong> <span style={{ color: entity.risk_level==="critique"?"#dc2626":entity.risk_level==="élevé"?"#d97706":entity.risk_level==="modéré"?"#2563eb":"#16a34a",fontWeight:700 }}>{entity.risk_level.toUpperCase()}</span></p>
-            <p>Analyse conformité CSDDD pour la chaîne d&apos;approvisionnement metaverse. Risques liés à la consommation énergétique des serveurs et conditions de travail des développeurs.</p>
+            <p>Analyse conformité CSDDD pour la chaîne d&apos;approvisionnement VR. Risques liés à l&apos;extraction de terres rares et conditions de travail dans les usines d&apos;assemblage.</p>
           </div>
         )}
         {tab==="certs" && (
@@ -79,10 +79,10 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         {tab==="actions" && (
           <div style={{ fontSize:14,color:"#374151",lineHeight:1.8 }}>
             <ul>
-              <li>auditer centres de données fournisseurs</li>
-              <li>vérifier empreinte carbone infrastructure</li>
-              <li>mettre en place politique ESG metaverse</li>
-              <li>certifier ISO 26000</li>
+              <li>auditer mines terres rares fournisseurs</li>
+              <li>vérifier conditions travail usines assemblage</li>
+              <li>mettre en place code conduite VR</li>
+              <li>certifier SA8000</li>
             </ul>
           </div>
         )}
