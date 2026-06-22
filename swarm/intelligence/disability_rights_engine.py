@@ -3,27 +3,29 @@ from dataclasses import dataclass, field
 from typing import List
 import statistics
 
+ACCENT_COLOR = "#0a1a35"
+
 @dataclass
 class DisabilityRightsEntity:
     entity_id: str
     name: str
     country: str
-    institutionalization_segregation_severity_score: float
-    accessibility_barrier_discrimination_scale_score: float
-    legal_capacity_guardianship_deprivation_score: float
-    violence_abuse_disabled_persons_gap_score: float
+    discrimination_employment_score: float
+    accessibility_barrier_score: float
+    institutional_exclusion_score: float
+    social_protection_gap_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
     estimated_disability_rights_index: float = field(init=False)
-    last_updated: str = "2026-06-21"
+    last_updated: str = "2026-06-22"
 
     def __post_init__(self):
         self.composite_score = round(
-            self.institutionalization_segregation_severity_score * 0.30
-            + self.accessibility_barrier_discrimination_scale_score * 0.25
-            + self.legal_capacity_guardianship_deprivation_score * 0.25
-            + self.violence_abuse_disabled_persons_gap_score * 0.20,
+            self.discrimination_employment_score * 0.30
+            + self.accessibility_barrier_score * 0.25
+            + self.institutional_exclusion_score * 0.25
+            + self.social_protection_gap_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -34,7 +36,10 @@ class DisabilityRightsEntity:
             self.risk_level = "modéré"
         else:
             self.risk_level = "faible"
-        self.estimated_disability_rights_index = round(self.composite_score / 100 * 10, 2)
+        self.estimated_disability_rights_index = round(
+            self.composite_score / 100 * 10, 2
+        )
+
 
 @dataclass
 class DisabilityRightsEngineResult:
@@ -47,93 +52,94 @@ class DisabilityRightsEngineResult:
     pattern_distribution: dict = field(default_factory=dict)
     top_risk_entities: List[str] = field(default_factory=list)
     critical_alerts: List[str] = field(default_factory=list)
-    last_analysis: str = "2026-06-21"
+    last_analysis: str = "2026-06-22"
     engine_version: str = "1.0.0"
     avg_estimated_disability_rights_index: float = 0.0
     data_sources: List[str] = field(default_factory=list)
     entities: List[DisabilityRightsEntity] = field(default_factory=list)
 
+
 def run_disability_rights_engine() -> DisabilityRightsEngineResult:
     entities = [
         DisabilityRightsEntity(
-            entity_id="DR-001",
-            name="India — 26M Personnes Handicapées Institutions, Loi RPWD 2016 Non Appliquée & Stérilisation Forcée Femmes",
+            entity_id="DSR-001",
+            name="Afghanistan (post-Taliban) — Personnes Handicapées Abandonnées, Aucun Service Réhabilitation, Femmes Handicapées Confinées & Budget Santé Néant",
+            country="Afghanistan",
+            discrimination_employment_score=97.0,
+            accessibility_barrier_score=95.0,
+            institutional_exclusion_score=96.0,
+            social_protection_gap_score=94.0,
+            primary_pattern="institutional_exclusion",
+        ),
+        DisabilityRightsEntity(
+            entity_id="DSR-002",
+            name="Yémen — Guerre Créant Handicap Acquis Massif, Zéro Infrastructure Réhabilitation, Mines Antipersonnel & Amputés Sans Prothèses",
+            country="Yémen",
+            discrimination_employment_score=91.0,
+            accessibility_barrier_score=90.0,
+            institutional_exclusion_score=89.0,
+            social_protection_gap_score=92.0,
+            primary_pattern="social_protection_gap",
+        ),
+        DisabilityRightsEntity(
+            entity_id="DSR-003",
+            name="Éthiopie — Conflits Tigré Handicapés Déplacés Sans Support, Stigmatisation Culturelle Profonde & Services Sociaux Absents Zones Rurales",
+            country="Éthiopie",
+            discrimination_employment_score=80.0,
+            accessibility_barrier_score=78.0,
+            institutional_exclusion_score=82.0,
+            social_protection_gap_score=84.0,
+            primary_pattern="social_protection_gap",
+        ),
+        DisabilityRightsEntity(
+            entity_id="DSR-004",
+            name="Inde — Double Discrimination Caste & Handicap, Ségrégation Éducation Spécialisée, Emploi Informel Précaire & Accès Transports Inexistant",
             country="Inde",
-            institutionalization_segregation_severity_score=95.0,
-            accessibility_barrier_discrimination_scale_score=92.0,
-            legal_capacity_guardianship_deprivation_score=93.0,
-            violence_abuse_disabled_persons_gap_score=91.0,
-            primary_pattern="institutionalization_segregation_severity",
+            discrimination_employment_score=75.0,
+            accessibility_barrier_score=72.0,
+            institutional_exclusion_score=70.0,
+            social_protection_gap_score=68.0,
+            primary_pattern="discrimination_employment",
         ),
         DisabilityRightsEntity(
-            entity_id="DR-002",
-            name="China — Institutions Welfare Surpeuplées, Travail Forcé Ateliers & Restriction Droits Civils Handicapés",
-            country="Chine",
-            institutionalization_segregation_severity_score=92.0,
-            accessibility_barrier_discrimination_scale_score=89.0,
-            legal_capacity_guardianship_deprivation_score=90.0,
-            violence_abuse_disabled_persons_gap_score=88.0,
-            primary_pattern="institutionalization_segregation_severity",
-        ),
-        DisabilityRightsEntity(
-            entity_id="DR-003",
-            name="Nigeria — 0,5% Budget Santé Handicap, Exclusion Éducation & Violence Communautaire Impunie",
-            country="Nigeria",
-            institutionalization_segregation_severity_score=89.0,
-            accessibility_barrier_discrimination_scale_score=86.0,
-            legal_capacity_guardianship_deprivation_score=86.0,
-            violence_abuse_disabled_persons_gap_score=85.0,
-            primary_pattern="accessibility_barrier_discrimination_scale",
-        ),
-        DisabilityRightsEntity(
-            entity_id="DR-004",
-            name="Brésil — Internement Psychiatrique Abusif, Isolement Carcéral & Inégalités Accès Emploi",
+            entity_id="DSR-005",
+            name="Brésil — Barrières Accessibilité Infrastructures, Écart Emploi 30% Personnes Handicapées, Inégalités Régionales & Violence Institutionnelle",
             country="Brésil",
-            institutionalization_segregation_severity_score=86.0,
-            accessibility_barrier_discrimination_scale_score=83.0,
-            legal_capacity_guardianship_deprivation_score=84.0,
-            violence_abuse_disabled_persons_gap_score=81.0,
-            primary_pattern="legal_capacity_guardianship_deprivation",
+            discrimination_employment_score=60.0,
+            accessibility_barrier_score=62.0,
+            institutional_exclusion_score=58.0,
+            social_protection_gap_score=56.0,
+            primary_pattern="accessibility_barrier",
         ),
         DisabilityRightsEntity(
-            entity_id="DR-005",
-            name="Europe Est — Désinstitutionnalisation Lente, Tutelle Légale Abusive & Hôpitaux Psychiatriques Soviétiques",
-            country="Europe Est",
-            institutionalization_segregation_severity_score=55.0,
-            accessibility_barrier_discrimination_scale_score=52.0,
-            legal_capacity_guardianship_deprivation_score=53.0,
-            violence_abuse_disabled_persons_gap_score=50.0,
-            primary_pattern="institutionalization_segregation_severity",
+            entity_id="DSR-006",
+            name="USA — ADA Gaps Application, Surreprésentation Handicap en Prison 40%, Assurance Insuffisante & Accès Santé Mentale Défaillant",
+            country="USA",
+            discrimination_employment_score=50.0,
+            accessibility_barrier_score=47.0,
+            institutional_exclusion_score=53.0,
+            social_protection_gap_score=49.0,
+            primary_pattern="institutional_exclusion",
         ),
         DisabilityRightsEntity(
-            entity_id="DR-006",
-            name="Moyen-Orient — Exclusion Éducation Inclusive, Stigma Religieux & Zéro Accessibilité Urbaine",
-            country="Moyen-Orient",
-            institutionalization_segregation_severity_score=53.0,
-            accessibility_barrier_discrimination_scale_score=50.0,
-            legal_capacity_guardianship_deprivation_score=51.0,
-            violence_abuse_disabled_persons_gap_score=48.0,
-            primary_pattern="accessibility_barrier_discrimination_scale",
+            entity_id="DSR-007",
+            name="Allemagne — Inclusion Scolaire Partielle, Ateliers Protégés Controversés, Accessibilité Transport Incomplète & Écart Salaire 15%",
+            country="Allemagne",
+            discrimination_employment_score=28.0,
+            accessibility_barrier_score=30.0,
+            institutional_exclusion_score=32.0,
+            social_protection_gap_score=26.0,
+            primary_pattern="institutional_exclusion",
         ),
         DisabilityRightsEntity(
-            entity_id="DR-007",
-            name="Disability Rights International/IDA — Plaidoyer Désinstitutionnalisation, CRPD & Standards ONU",
-            country="Global",
-            institutionalization_segregation_severity_score=27.0,
-            accessibility_barrier_discrimination_scale_score=25.0,
-            legal_capacity_guardianship_deprivation_score=26.0,
-            violence_abuse_disabled_persons_gap_score=25.0,
-            primary_pattern="institutionalization_segregation_severity",
-        ),
-        DisabilityRightsEntity(
-            entity_id="DR-008",
-            name="ONU/CRPD — Convention Droits Personnes Handicapées, Comité CRPD & SDG 10.2 Inclusion",
-            country="Global",
-            institutionalization_segregation_severity_score=4.0,
-            accessibility_barrier_discrimination_scale_score=4.0,
-            legal_capacity_guardianship_deprivation_score=4.0,
-            violence_abuse_disabled_persons_gap_score=5.0,
-            primary_pattern="violence_abuse_disabled_persons_gap",
+            entity_id="DSR-008",
+            name="Suède — CRPD Meilleure Pratique, Inclusion Universelle Éducation, Emploi Soutenu & Accessibilité Universelle Référence Mondiale",
+            country="Suède",
+            discrimination_employment_score=10.0,
+            accessibility_barrier_score=8.0,
+            institutional_exclusion_score=9.0,
+            social_protection_gap_score=7.0,
+            primary_pattern="discrimination_employment",
         ),
     ]
 
@@ -164,12 +170,15 @@ def run_disability_rights_engine() -> DisabilityRightsEngineResult:
         critical_alerts=alerts,
         avg_estimated_disability_rights_index=round(avg_composite / 100 * 10, 2),
         data_sources=[
-            "disability_rights_international_behind_closed_doors_report",
-            "who_world_report_on_disability_2011",
-            "crpd_committee_concluding_observations_2023",
+            "crpd_committee_concluding_observations_states",
+            "who_world_report_disability_2023",
+            "ilo_disability_employment_gap_global_report",
+            "hrw_disability_rights_violations_documentation",
+            "un_special_rapporteur_disability_annual_report",
         ],
         entities=entities,
     )
+
 
 if __name__ == "__main__":
     result = run_disability_rights_engine()
