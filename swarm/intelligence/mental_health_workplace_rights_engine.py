@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-Disability Rights Accessibility Engine — CaelumSwarm™
-CSDDD Art.8-13 | Droits des personnes handicapées — accessibilité, discrimination emploi, ségrégation
+Mental Health Workplace Rights Engine — CaelumSwarm™
+CSDDD Art.8-13 | Droits santé mentale en milieu professionnel
 """
 import json
 from datetime import datetime
 
-DOMAIN_CODE = "DRA"
-ACCENT_COLOR = "#4338ca"
+DOMAIN_CODE = "MHW"
+ACCENT_COLOR = "#0891b2"
 
 ENTITIES = [
-    {"name": "Uber (inaccessibilité)", "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 85.0},
-    {"name": "Airbnb (discrimination)", "sub1": 88.0, "sub2": 86.0, "sub3": 84.0, "sub4": 82.0},
-    {"name": "Amazon (refus adaptations)", "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 80.0},
-    {"name": "Walmart (inaccessibilité)", "sub1": 84.0, "sub2": 82.0, "sub3": 80.0, "sub4": 78.0},
-    {"name": "Apple (accessibilité numérique limitée)", "sub1": 58.0, "sub2": 56.0, "sub3": 55.0, "sub4": 53.0},
-    {"name": "Facebook/Meta (accessibilité)", "sub1": 55.0, "sub2": 53.0, "sub3": 52.0, "sub4": 50.0},
-    {"name": "Microsoft (WCAG partiel)", "sub1": 32.0, "sub2": 30.0, "sub3": 28.0, "sub4": 34.0},
-    {"name": "Blind Institute Technology", "sub1": 12.0, "sub2": 10.0, "sub3": 8.0, "sub4": 14.0},
+    {"name": "Amazon Warehouses", "sub1": 90.0, "sub2": 87.0, "sub3": 85.0, "sub4": 82.0},
+    {"name": "Foxconn", "sub1": 93.0, "sub2": 91.0, "sub3": 90.0, "sub4": 88.0},
+    {"name": "Uber Drivers", "sub1": 84.0, "sub2": 80.0, "sub3": 78.0, "sub4": 75.0},
+    {"name": "Call Center Industry", "sub1": 80.0, "sub2": 78.0, "sub3": 75.0, "sub4": 72.0},
+    {"name": "Walmart Associates", "sub1": 58.0, "sub2": 56.0, "sub3": 55.0, "sub4": 53.0},
+    {"name": "Fast Food Workers", "sub1": 56.0, "sub2": 54.0, "sub3": 55.0, "sub4": 52.0},
+    {"name": "Google Employees", "sub1": 36.0, "sub2": 32.0, "sub3": 30.0, "sub4": 33.0},
+    {"name": "Patagonia Workers", "sub1": 14.0, "sub2": 12.0, "sub3": 10.0, "sub4": 16.0},
 ]
 
 

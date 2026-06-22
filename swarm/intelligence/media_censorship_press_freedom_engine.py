@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-Disability Rights Accessibility Engine — CaelumSwarm™
-CSDDD Art.8-13 | Droits des personnes handicapées — accessibilité, discrimination emploi, ségrégation
+Media Censorship Press Freedom Engine — CaelumSwarm™
+CSDDD Art.8-13 | Censure médiatique et liberté de presse
 """
 import json
 from datetime import datetime
 
-DOMAIN_CODE = "DRA"
-ACCENT_COLOR = "#4338ca"
+DOMAIN_CODE = "MCP"
+ACCENT_COLOR = "#dc2626"
 
 ENTITIES = [
-    {"name": "Uber (inaccessibilité)", "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 85.0},
-    {"name": "Airbnb (discrimination)", "sub1": 88.0, "sub2": 86.0, "sub3": 84.0, "sub4": 82.0},
-    {"name": "Amazon (refus adaptations)", "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 80.0},
-    {"name": "Walmart (inaccessibilité)", "sub1": 84.0, "sub2": 82.0, "sub3": 80.0, "sub4": 78.0},
-    {"name": "Apple (accessibilité numérique limitée)", "sub1": 58.0, "sub2": 56.0, "sub3": 55.0, "sub4": 53.0},
-    {"name": "Facebook/Meta (accessibilité)", "sub1": 55.0, "sub2": 53.0, "sub3": 52.0, "sub4": 50.0},
-    {"name": "Microsoft (WCAG partiel)", "sub1": 32.0, "sub2": 30.0, "sub3": 28.0, "sub4": 34.0},
-    {"name": "Blind Institute Technology", "sub1": 12.0, "sub2": 10.0, "sub3": 8.0, "sub4": 14.0},
+    {"name": "North Korea", "sub1": 92.0, "sub2": 90.0, "sub3": 88.0, "sub4": 90.0},
+    {"name": "Eritrea", "sub1": 88.0, "sub2": 86.0, "sub3": 85.0, "sub4": 84.0},
+    {"name": "Turkmenistan", "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 83.0},
+    {"name": "China", "sub1": 80.0, "sub2": 78.0, "sub3": 76.0, "sub4": 78.0},
+    {"name": "Russia", "sub1": 58.0, "sub2": 55.0, "sub3": 57.0, "sub4": 54.0},
+    {"name": "Belarus", "sub1": 55.0, "sub2": 53.0, "sub3": 56.0, "sub4": 52.0},
+    {"name": "Egypt", "sub1": 35.0, "sub2": 32.0, "sub3": 34.0, "sub4": 30.0},
+    {"name": "CPJ (Committee to Protect Journalists)", "sub1": 8.0, "sub2": 6.0, "sub3": 5.0, "sub4": 10.0},
 ]
 
 
