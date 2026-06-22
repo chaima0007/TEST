@@ -12346,6 +12346,37 @@ function IconMangoLaborRights() {
   );
 }
 
+function IconJuteChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+      <path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
+    </svg>
+  );
+}
+
+function IconSaltPansChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 20h18" />
+      <path d="M5 20V10l7-7 7 7v10" />
+      <path d="M9 20v-5h6v5" />
+      <path d="M12 13v-2" />
+    </svg>
+  );
+}
+
+function IconPhosphateMiningIndigenousRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2L4 8v13h16V8L12 2z" />
+      <path d="M9 21V9l3-4 3 4v12" />
+      <circle cx="12" cy="14" r="2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14228,6 +14259,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/shea-butter-labor-rights", label: "Droits Travailleurs Karité", icon: IconSheaButterLaborRights },
       { href: "/dashboard/cashew-child-labor-rights", label: "Travail Enfant Anacarde", icon: IconCashewChildLaborRights },
       { href: "/dashboard/mango-labor-rights", label: "Droits Travailleurs Mangue", icon: IconMangoLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 291",
+    items: [
+      { href: "/dashboard/jute-child-labor-rights", label: "Travail Enfant Moulins Jute", icon: IconJuteChildLaborRights },
+      { href: "/dashboard/salt-pans-child-labor-rights", label: "Travail Enfant Marais Salants", icon: IconSaltPansChildLaborRights },
+      { href: "/dashboard/phosphate-mining-indigenous-rights", label: "Droits Autochtones Phosphate", icon: IconPhosphateMiningIndigenousRights },
     ],
   },
   {
