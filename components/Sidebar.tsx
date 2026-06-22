@@ -15873,6 +15873,34 @@ function IconUgcadvertisingAdvertising({ size = 18, color = "currentColor" }: { 
     </svg>
   );
 }
+function IconInfluencervettingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+      <polyline points="22 4 12 14.01 9 11.01"/>
+    </svg>
+  );
+}
+function IconMicroinfluencerAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+      <line x1="19" y1="8" x2="21" y2="8"/>
+      <line x1="3" y1="8" x2="5" y2="8"/>
+    </svg>
+  );
+}
+function IconNanoinfluencerAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="3"/>
+      <path d="M7 20v-2a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v2"/>
+      <circle cx="4" cy="10" r="2"/>
+      <circle cx="20" cy="10" r="2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19559,6 +19587,9 @@ const navSections: NavSection[] = [
       { label: "Reels Advertising", href: "/dashboard/reelsadvertising-advertising", icon: IconReelsadvertisingAdvertising },
       { label: "Shorts Advertising", href: "/dashboard/shortsadvertising-advertising", icon: IconShortsadvertisingAdvertising },
       { label: "UGC Advertising", href: "/dashboard/ugcadvertising-advertising", icon: IconUgcadvertisingAdvertising },
+      { label: "Influencer Vetting", href: "/dashboard/influencervetting-advertising", icon: IconInfluencervettingAdvertising },
+      { label: "Micro-Influencer Ads", href: "/dashboard/microinfluencer-advertising", icon: IconMicroinfluencerAdvertising },
+      { label: "Nano-Influencer Ads", href: "/dashboard/nanoinfluencer-advertising", icon: IconNanoinfluencerAdvertising },
     ],
   },
   {
