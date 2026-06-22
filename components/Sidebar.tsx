@@ -16124,6 +16124,34 @@ function IconConnectedhomeAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconVoiceassistantAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+      <line x1="12" y1="19" x2="12" y2="23"/>
+      <line x1="8" y1="23" x2="16" y2="23"/>
+    </svg>
+  );
+}
+function IconCrosschannelAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="17 1 21 5 17 9"/>
+      <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+      <polyline points="7 23 3 19 7 15"/>
+      <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+    </svg>
+  );
+}
+function IconPodcastadvertisingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="2"/>
+      <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19846,6 +19874,9 @@ const navSections: NavSection[] = [
       { label: "Dynamic Pricing Ads", href: "/dashboard/dynamicpricing-advertising", icon: IconDynamicpricingAdvertising },
       { label: "Shoppable TV Ads", href: "/dashboard/shoppabletv-advertising", icon: IconShoppabletvAdvertising },
       { label: "Connected Home Ads", href: "/dashboard/connectedhome-advertising", icon: IconConnectedhomeAdvertising },
+      { label: "Voice Assistant Ads", href: "/dashboard/voiceassistant-advertising", icon: IconVoiceassistantAdvertising },
+      { label: "Cross-Channel Ads", href: "/dashboard/crosschannel-advertising", icon: IconCrosschannelAdvertising },
+      { label: "Podcast Advertising", href: "/dashboard/podcastadvertising-advertising", icon: IconPodcastadvertisingAdvertising },
     ],
   },
   {
