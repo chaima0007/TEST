@@ -11158,6 +11158,30 @@ function IconSanctionsCivilianRights({ className }: { className?: string }) {
   );
 }
 
+function IconRightToScienceRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+    </svg>
+  );
+}
+
+function IconIndigenousSelfDeterminationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+    </svg>
+  );
+}
+
+function IconEcocideRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 0v9m0-9c2.21 0 4 3.582 4 8m-4-8c-2.21 0-4 3.582-4 8m4 0H3m9 0h9" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12696,6 +12720,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-testing-rights-engine", label: "Nuclear Testing Rights", icon: IconNuclearTestingRights, color: "#7f1d1d" },
       { href: "/dashboard/political-prisoner-rights-engine", label: "Political Prisoner Rights", icon: IconPoliticalPrisonerRights, color: "#1e3a5f" },
       { href: "/dashboard/sanctions-civilian-rights-engine", label: "Sanctions Civilian Rights", icon: IconSanctionsCivilianRights, color: "#44403c" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 248",
+    items: [
+      { href: "/dashboard/right-to-science-rights-engine", label: "Right to Science Rights", icon: IconRightToScienceRights, color: "#0c4a6e" },
+      { href: "/dashboard/indigenous-self-determination-rights-engine", label: "Indigenous Self Determination Rights", icon: IconIndigenousSelfDeterminationRights, color: "#14532d" },
+      { href: "/dashboard/ecocide-rights-engine", label: "Ecocide Rights", icon: IconEcocideRights, color: "#166534" },
     ],
   },
   {
