@@ -10444,6 +10444,36 @@ function IconAntiCorruptionRights({ className }: { className?: string }) {
   );
 }
 
+function IconBirthRegistrationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z" />
+      <circle cx={12} cy={9} r={2.5} />
+    </svg>
+  );
+}
+
+function IconHumanitarianAccessRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z" />
+      <path d="M12 8v4l3 3" />
+      <path d="M8 12H4" />
+    </svg>
+  );
+}
+
+function IconJournalismSafetyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 4h16v12H4z" />
+      <path d="M8 8h8" />
+      <path d="M8 11h5" />
+      <path d="M8 20l4-4 4 4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11758,6 +11788,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/gender-pay-gap-rights-engine", label: "Écart Salarial Femmes", icon: IconGenderPayGapRights },
       { href: "/dashboard/healthcare-access-rights-engine", label: "Accès aux Soins", icon: IconHealthcareAccessRights },
       { href: "/dashboard/anti-corruption-rights-engine", label: "Droits Anticorruption", icon: IconAntiCorruptionRights },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 220",
+    items: [
+      { href: "/dashboard/birth-registration-rights-engine", label: "Enreg. Naissances Droits", icon: IconBirthRegistrationRights },
+      { href: "/dashboard/humanitarian-access-rights-engine", label: "Accès Humanitaire Conflits", icon: IconHumanitarianAccessRights },
+      { href: "/dashboard/journalism-safety-rights-engine", label: "Sécurité Journalistes Presse", icon: IconJournalismSafetyRights },
     ],
   },
   {
