@@ -12804,6 +12804,45 @@ function IconLeadBatteryRecyclingRights({ size = 18, color = "#64748b" }: { size
     </svg>
   );
 }
+function IconRubberTappingForcedLaborRights({ size = 18, color = "#16a34a" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V10" />
+      <path d="M12 10 Q8 8 6 4" />
+      <path d="M12 10 Q16 8 18 4" />
+      <path d="M12 10 Q9 12 8 16" />
+      <path d="M8 16 Q9 18 12 19" />
+      <path d="M10 14 Q7 15 6 18" />
+      <circle cx="6" cy="19" r="1.5" />
+    </svg>
+  );
+}
+function IconVanillaFarmingLaborRights({ size = 18, color = "#7c3aed" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12" />
+      <path d="M12 12 Q10 8 7 6" />
+      <path d="M12 12 Q14 8 17 6" />
+      <path d="M9 9 Q11 10 12 12" />
+      <ellipse cx="12" cy="5" rx="3" ry="2" />
+      <path d="M10 5 Q12 3 14 5" />
+      <path d="M12 15 Q9 16 8 19M12 15 Q15 16 16 19" />
+    </svg>
+  );
+}
+function IconSisalCultivationLaborRights({ size = 18, color = "#b45309" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22v-8" />
+      <path d="M12 14 Q7 12 4 7" />
+      <path d="M12 14 Q17 12 20 7" />
+      <path d="M12 14 Q8 14 5 11" />
+      <path d="M12 14 Q16 14 19 11" />
+      <path d="M12 14 Q10 16 9 20" />
+      <path d="M12 14 Q14 16 15 20" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -14791,6 +14830,14 @@ const navSections: NavSection[] = [
       { label: "Droits Souffleurs Verre Silicose", href: "/dashboard/glass-blowing-silicosis-rights", icon: IconGlowingBlowingSilicosisRights, color: "#0891b2" },
       { label: "Droits Travailleurs Textiles Colorants Azo", href: "/dashboard/azo-dye-textile-worker-rights", icon: IconAzoDyeTextileWorkerRights, color: "#7c3aed" },
       { label: "Droits Recycleurs Batteries Plomb", href: "/dashboard/lead-battery-recycling-rights", icon: IconLeadBatteryRecyclingRights, color: "#64748b" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 304",
+    items: [
+      { label: "Droits Travailleurs Saignée Caoutchouc", href: "/dashboard/rubber-tapping-forced-labor-rights", icon: IconRubberTappingForcedLaborRights, color: "#16a34a" },
+      { label: "Droits Travailleurs Cultures Vanille", href: "/dashboard/vanilla-farming-labor-rights", icon: IconVanillaFarmingLaborRights, color: "#7c3aed" },
+      { label: "Droits Travailleurs Sisal", href: "/dashboard/sisal-cultivation-labor-rights", icon: IconSisalCultivationLaborRights, color: "#b45309" },
     ],
   },
   {
