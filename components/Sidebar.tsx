@@ -15243,6 +15243,27 @@ function IconCarboncaptureAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconNuclearenergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="1"/>
+    </svg>
+  );
+}
+function IconTidalenergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2"/>
+    </svg>
+  );
+}
+function IconGeothermalenergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12M12 12C10 8 6 7 4 9M12 12C14 8 18 7 20 9M4 9c0 5 4 9 8 9M20 9c0 5-4 9-8 9"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18540,6 +18561,24 @@ const navSections: NavSection[] = [
         label: "Carbon Capture Advertising",
         href: "/dashboard/carboncapture-advertising",
         icon: IconCarboncaptureAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Nuclear Energy Advertising",
+        href: "/dashboard/nuclearenergy-advertising",
+        icon: IconNuclearenergyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Tidal Energy Advertising",
+        href: "/dashboard/tidalenergy-advertising",
+        icon: IconTidalenergyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Geothermal Energy Advertising",
+        href: "/dashboard/geothermalenergy-advertising",
+        icon: IconGeothermalenergyAdvertising,
         category: "Publicité Visuelle",
       },
       {
