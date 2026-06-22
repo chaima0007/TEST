@@ -4045,6 +4045,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "HUMAN RIGHTS EQUALITY",
+    items: [
+      { href: "/dashboard/genderequality-engine", label: "Égalité de Genre", icon: Icons.IconGenderEquality },
+      { href: "/dashboard/indigenousrights-engine", label: "Droits Autochtones", icon: Icons.IconIndigenousRights },
+      { href: "/dashboard/disabilityrights-engine", label: "Droits Handicap", icon: Icons.IconDisabilityRights },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
