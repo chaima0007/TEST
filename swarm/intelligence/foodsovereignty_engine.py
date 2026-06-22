@@ -31,8 +31,12 @@ for e in ENTITIES:
 avg_composite = round(sum(r["composite_score"] for r in results) / len(results), 2)
 estimated_foodsovereignty_index = round(avg_composite / 100 * 10, 2)
 
+from collections import Counter
+
 if __name__ == "__main__":
     for r in results:
         print(f"{r['risk_level']:10} | {r['composite_score']:5.2f} | {r['name']}")
-    print(f"\navg_composite    = {avg_composite}")
+    dist = dict(Counter(r["risk_level"] for r in results))
+    print(f"\navg_composite: {avg_composite}")
+    print(f"distribution: {dist}")
     print(f"estimated_foodsovereignty_index = {estimated_foodsovereignty_index}")
