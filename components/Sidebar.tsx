@@ -14853,6 +14853,14 @@ function IconCryptoAdvertising({ size = 18, color = "currentColor" }: { size?: n
   );
 }
 
+function IconStreamingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="5 3 19 12 5 21 5 3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17832,6 +17840,12 @@ const navSections: NavSection[] = [
         label: "Crypto Advertising",
         href: "/dashboard/crypto-advertising-child-labor-rights",
         icon: IconCryptoAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Streaming Advertising",
+        href: "/dashboard/streaming-advertising-child-labor-rights",
+        icon: IconStreamingAdvertising,
         category: "Publicité Visuelle",
       },
       {
