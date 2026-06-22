@@ -10538,6 +10538,32 @@ function IconPrisonConditionsRights({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconQuantumSurveillanceRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+      <circle cx={12} cy={12} r={3}/>
+      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/>
+    </svg>
+  );
+}
+function IconQuantumBioethicsRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M12 22V12M12 12C12 6 6 2 6 2s0 6 6 10M12 12c0-6 6-10 6-10s0 6-6 10"/>
+      <path d="M7 22h10"/>
+    </svg>
+  );
+}
+function IconQuantumDigitalDivideRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <rect x={2} y={3} width={20} height={14} rx={2}/>
+      <path d="M8 21h8M12 17v4"/>
+      <path d="M7 8h2M11 8h6M7 12h4M15 12h2"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -11901,6 +11927,14 @@ const navSections: NavSection[] = [
       { label: "Accaparement Terres", href: "/dashboard/land-grabbing-rights-engine", icon: IconLandGrabbingRights },
       { label: "Droits Minorités", href: "/dashboard/minority-rights-engine", icon: IconMinorityRights },
       { label: "Peine de Mort", href: "/dashboard/death-penalty-rights-engine", icon: IconDeathPenaltyRights },
+    ],
+  },
+  {
+    title: "QUANTIQUE — WAVE 226",
+    items: [
+      { label: "Surveillance Quantique", href: "/dashboard/quantum-surveillance-rights-engine", icon: IconQuantumSurveillanceRights },
+      { label: "Bioéthique Quantique", href: "/dashboard/quantum-bioethics-rights-engine", icon: IconQuantumBioethicsRights },
+      { label: "Fracture Quantique", href: "/dashboard/quantum-digital-divide-rights-engine", icon: IconQuantumDigitalDivideRights },
     ],
   },
   {
