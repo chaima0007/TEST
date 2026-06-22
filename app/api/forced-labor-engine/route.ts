@@ -172,34 +172,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map((e) => {
-      const ex  = exploitationScore(e);
-      const det = detectionScore(e);
-      const imp = impunityScore(e);
-      const vul = vulnerabilityScore(e);
-      const comp = compositeScore(ex, det, imp, vul);
-      const pat  = laborPattern(e);
-      const risk = riskLevel(comp);
-      const sev  = severity(comp);
-      const act  = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id: e.entity_id,
-        labor_sector: e.labor_sector,
-        region: e.region,
-        exploitation_score: ex,
-        detection_score: det,
-        impunity_score: imp,
-        vulnerability_score: vul,
-        composite_score: comp,
-        risk_level: risk,
-        labor_pattern: pat,
-        severity: sev,
-        recommended_action: act,
-        signal: sig,
-        forced_labor_prevalence: e.forced_labor_prevalence,
-        migrant_worker_vulnerability: e.migrant_worker_vulnerability,
-      };
+  console.warn("[forced-labor-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const riskDist: Record<string, number>    = {};
@@ -229,7 +203,7 @@ export async function GET() {
     const n = entities.length;
     const avgComposite = Math.round(totalComposite / n * 10) / 10;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 418,
@@ -246,12 +220,12 @@ export async function GET() {
         action_distribution: actionDist,
         avg_estimated_forced_labor_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
-  const upstream = await fetch(`${process.env.SWARM_API_URL}/api/forced-labor-engine`);
+  const upstream = await fetch(`${process.env.SWARM_API_URL}/api/forced-labor-engine`, { next: { revalidate: 30 } });
   if (!upstream.ok) {
-    return NextResponse.json({ error: "Upstream error" }, { status: 502 });
+    return sealResponse(NextResponse.json({ error: "Upstream error" }, { status: 502 }));
   }
-  return NextResponse.json(await upstream.json());
+  return sealResponse(NextResponse.json(await upstream.json()));
 }

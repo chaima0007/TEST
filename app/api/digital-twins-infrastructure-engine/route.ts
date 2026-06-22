@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[digital-twins-infrastructure-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const MOCK_ENTITIES = [
@@ -232,18 +236,18 @@ export async function GET() {
       avg_estimated_twin_risk_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary: summaryData as Record<string, unknown> }, "digital-twins-infrastructure-engine") as Parameters<typeof NextResponse.json>[0]
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${SWARM_API_URL}/digital-twins-infrastructure-engine`);
+    const upstream = await fetch(`${SWARM_API_URL}/digital-twins-infrastructure-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(data, "digital-twins-infrastructure-engine") as Parameters<typeof NextResponse.json>[0]
-    );
+    ));
   } catch {
-    return NextResponse.json({ error: "upstream unavailable" }, { status: 502 });
+    return sealResponse(NextResponse.json({ error: "upstream unavailable" }, { status: 502 }));
   }
 }

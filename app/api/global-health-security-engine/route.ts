@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const prep = preparednessScore(e);
-      const resp = responseScore(e);
-      const gov  = governanceScore(e);
-      const eq   = equityScore(e);
-      const comp = compositeScore(prep, resp, gov, eq);
-      const risk = riskLevel(comp);
-      const pat  = ghsPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                  e.entity_id,
-        health_system_type:         e.health_system_type,
-        region:                     e.region,
-        preparedness_score:         prep,
-        response_score:             resp,
-        governance_score:           gov,
-        equity_score:               eq,
-        composite_score:            comp,
-        risk_level:                 risk,
-        ghs_pattern:                pat,
-        severity:                   sev,
-        recommended_action:         action,
-        signal:                     sig,
-        pandemic_preparedness_gap:  e.pandemic_preparedness_gap,
-        IHR_compliance_failure:     e.IHR_compliance_failure,
-      };
+  console.warn("[global-health-security-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -228,17 +202,17 @@ export async function GET() {
       avg_estimated_health_security_index:   Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "global-health-security-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "global-health-security-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/global-health-security-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/global-health-security-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "global-health-security-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "global-health-security-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "global-health-security-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

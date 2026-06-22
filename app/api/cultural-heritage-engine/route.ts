@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[cultural-heritage-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // 8 mock entities covering all 5 patterns and all 4 risk levels
@@ -200,7 +204,7 @@ export async function GET() {
     const n = entities.length;
     const avgComposite = Math.round(totalComp / n * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 341,
@@ -217,16 +221,16 @@ export async function GET() {
         action_distribution: actionDist,
         avg_estimated_heritage_risk_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
       },
-    } as Record<string, unknown>, "cultural-heritage-engine"));
+    } as Record<string, unknown>, "cultural-heritage-engine")));
   }
 
   try {
-    const res = await fetch(`${SWARM_API_URL}/cultural-heritage-engine`);
-    if (res.ok) return NextResponse.json(sealResponse(await res.json() as Record<string, unknown>, "cultural-heritage-engine"));
+    const res = await fetch(`${SWARM_API_URL}/cultural-heritage-engine`, { next: { revalidate: 30 } });
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json() as Record<string, unknown>, "cultural-heritage-engine")));
   } catch {}
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({ error: "Upstream unavailable" } as Record<string, unknown>, "cultural-heritage-engine"),
     { status: 502 }
-  );
+  ));
 }

@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[email-sequence-optimizer] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -353,7 +358,7 @@ export async function GET(request: Request) {
       if (status) url.searchParams.set("status", status);
       if (strategy) url.searchParams.set("strategy", strategy);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -377,7 +382,7 @@ export async function GET(request: Request) {
 
   const n = mockSequences.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     sequences,
     summary: {
       total: n,
@@ -387,5 +392,5 @@ export async function GET(request: Request) {
       avg_conversion_rate_pct: Math.round((total_conv / n) * 10) / 10,
       total_pipeline_eur: total_pipeline,
     },
-  });
+  }));
 }

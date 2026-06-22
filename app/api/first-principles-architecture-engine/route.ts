@@ -69,19 +69,8 @@ function principlesSignal(e: Entity, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const assumption = assumptionScore(e), rigidity = rigidityScore(e), blindspot = blindspotScore(e), innovation = innovationScore(e);
-      const comp = composite(assumption, rigidity, blindspot, innovation);
-      const pat  = principlesPattern(e), risk = principlesRisk(comp), sev = principlesSeverity(comp), act = recommendedAction(risk, pat);
-      return {
-        id: e.entity_id, region: e.region, domain_type: e.domain_type,
-        principles_risk: risk, principles_pattern: pat, principles_severity: sev, recommended_action: act,
-        assumption_score: assumption, rigidity_score: rigidity, blindspot_score: blindspot, innovation_score: innovation,
-        principles_composite: comp,
-        is_principles_crisis: comp >= 60,
-        requires_principles_intervention: comp >= 40,
-        principles_signal: principlesSignal(e, pat, comp),
-      };
+  console.warn("[first-principles-architecture-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     let tAssumption=0, tRigidity=0, tBlindspot=0, tInnovation=0, tComp=0;
@@ -102,7 +91,7 @@ export async function GET() {
     const n = entities.length;
     const avgComposite = tComp / n;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entity_results: entities,
       total_entities_analyzed:                 n,
       critical_principles_risk:                criticalCount,
@@ -116,7 +105,7 @@ export async function GET() {
       avg_blindspot_score:                     Math.round(tBlindspot/n*10)/10,
       avg_innovation_score:                    Math.round(tInnovation/n*10)/10,
       avg_estimated_principles_weakness_index: Math.round(avgComposite/100*10*100)/100,
-    } as Record<string,unknown>));
+    } as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/first-principles-architecture-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/first-principles-architecture-engine`, { next: { revalidate: 30 } })).json()));
 }

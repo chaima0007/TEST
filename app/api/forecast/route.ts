@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[forecast] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -134,7 +139,7 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/forecast/summary`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
@@ -151,7 +156,7 @@ export async function GET() {
   const topDeals = [...deals].sort((a, b) => b.weighted_value - a.weighted_value).slice(0, 5);
   const staleDeals = deals.filter((d) => d.days_in_stage >= 14);
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     deals,
     scenarios,
     stage_labels: STAGE_LABELS,
@@ -167,5 +172,5 @@ export async function GET() {
     },
     top_deals: topDeals,
     stale_deals: staleDeals,
-  });
+  }));
 }

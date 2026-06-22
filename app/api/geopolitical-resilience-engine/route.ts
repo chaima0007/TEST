@@ -78,21 +78,8 @@ function signal(t: Territory, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const territories = MOCK_TERRITORIES.map(t => {
-      const stab = stabilityScore(t), exp = exposureScore(t), gov = governanceScore(t), sov = sovereigntyScore(t);
-      const comp = composite(stab, exp, gov, sov), pat = geopoliticalPattern(t), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const isHostile = comp >= 60;
-      const exitPlan  = act === "market_exit_plan";
-      return {
-        territory_id: t.territory_id, territory_type: t.territory_type, region: t.region,
-        geopolitical_risk: r, geopolitical_pattern: pat, geopolitical_severity: sev, recommended_action: act,
-        stability_score: stab, exposure_score: exp, governance_score: gov, sovereignty_score: sov,
-        geopolitical_composite: comp,
-        is_hostile_territory: isHostile,
-        requires_exit_plan: exitPlan,
-        estimated_geopolitical_risk_index: Math.round(Math.min(comp / 100 * (t.sanctions_exposure_risk + t.conflict_proximity_index) / 2 * 10, 10.0) * 100) / 100,
-        geopolitical_signal: signal(t, pat, comp),
-      };
+  console.warn("[geopolitical-resilience-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tstab=0, texp=0, tgov=0, tsov=0, tcomp=0, tridx=0, hostileC=0, exitC=0;
@@ -107,7 +94,7 @@ export async function GET() {
       if (ter.requires_exit_plan)   exitC++;
     }
     const n = territories.length;
-    return NextResponse.json(sealResponse({ territories, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ territories, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_geopolitical_composite: Math.round(tcomp / n * 10) / 10,
       hostile_count: hostileC, exit_plan_count: exitC,
@@ -116,7 +103,7 @@ export async function GET() {
       avg_governance_score:  Math.round(tgov  / n * 10) / 10,
       avg_sovereignty_score: Math.round(tsov  / n * 10) / 10,
       avg_estimated_geopolitical_risk_index: Math.round(tridx / n * 100) / 100,
-    } as Record<string, unknown>}, "geopolitical-resilience-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "geopolitical-resilience-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/geopolitical-resilience-engine`)).json(), "geopolitical-resilience-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/geopolitical-resilience-engine`, { next: { revalidate: 30 } })).json(), "geopolitical-resilience-engine") as Parameters<typeof NextResponse.json>[0]));
 }

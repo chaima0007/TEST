@@ -164,35 +164,8 @@ function transitionSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const fossil      = fossilScore(e);
-      const stability   = stabilityScore(e);
-      const stranded    = strandedScore(e);
-      const sovereignty = sovereigntyScore(e);
-      const comp        = transitionComposite(fossil, stability, stranded, sovereignty);
-      const risk        = transitionRisk(comp);
-      const pattern     = transitionPattern(e);
-      const severity    = transitionSeverity(comp);
-      const action      = recommendedAction(risk, pattern);
-      const signal      = transitionSignal(e, risk, comp);
-
-      return {
-        id:                        e.entity_id,
-        region:                           e.region,
-        energy_sector:                    e.energy_sector,
-        transition_risk:                  risk,
-        transition_pattern:               pattern,
-        transition_severity:              severity,
-        recommended_action:               action,
-        fossil_score:                     fossil,
-        stability_score:                  stability,
-        stranded_score:                   stranded,
-        sovereignty_score:                sovereignty,
-        transition_composite:             comp,
-        is_in_transition_crisis:          comp >= 60,
-        requires_transition_intervention: comp >= 40,
-        transition_signal:                signal,
-      };
+  console.warn("[energy-transition-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -235,14 +208,14 @@ export async function GET() {
       avg_estimated_transition_risk_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "energy-transition-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "energy-transition-intelligence-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/energy-transition-intelligence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/energy-transition-intelligence-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "energy-transition-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "energy-transition-intelligence-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "energy-transition-intelligence-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "energy-transition-intelligence-engine"), { status: 502 }));
   }
 }

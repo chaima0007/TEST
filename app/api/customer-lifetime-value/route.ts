@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[customer-lifetime-value] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -248,7 +253,7 @@ export async function GET(request: Request) {
       if (risk)   url.searchParams.set("risk", risk);
       if (action) url.searchParams.set("action", action);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -278,7 +283,7 @@ export async function GET(request: Request) {
   const n = mockAccounts.length;
   const avg_health = mockAccounts.reduce((s, a) => s + a.health_score, 0) / n;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     accounts,
     summary: {
       total: n,
@@ -292,5 +297,5 @@ export async function GET(request: Request) {
       at_risk_arr_eur: at_risk_arr,
       rescue_count: mockAccounts.filter((a) => a.clv_action === "rescue").length,
     },
-  });
+  }));
 }

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[digital-privacy-rights-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const UPSTREAM = process.env.SWARM_API_URL;
 if (!UPSTREAM) console.warn("[digital-privacy-rights-engine] SWARM_API_URL not set — running in offline mode");
 
@@ -137,8 +141,8 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data));
+    return sealResponse(NextResponse.json(sealResponse(data)));
   } catch {
-    return NextResponse.json(sealResponse(MOCK), { status: 200 });
+    return sealResponse(NextResponse.json(sealResponse(MOCK), { status: 200 }));
   }
 }

@@ -158,27 +158,8 @@ function signal(c: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const dep = dependencyScore(e), ext = extractionScore(e), sov = sovereigntyScore(e), exc = exclusionScore(e);
-      const comp = compositeScore(dep, ext, sov, exc);
-      const pat = colonialPattern(e), risk = riskLevel(comp);
-      return {
-        id: e.entity_id,
-        tech_domain: e.tech_domain,
-        region: e.region,
-        dependency_score: dep,
-        extraction_score: ext,
-        sovereignty_score: sov,
-        exclusion_score: exc,
-        composite_score: comp,
-        risk_level: risk,
-        colonial_pattern: pat,
-        severity: severity(comp),
-        recommended_action: recommendedAction(comp),
-        signal: signal(comp),
-        platform_dependency_ratio: e.platform_dependency_ratio,
-        data_localization_failure: e.data_localization_failure,
-      };
+  console.warn("[digital-colonialism-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const patDist:  Record<string,number> = {};
@@ -200,7 +181,7 @@ export async function GET() {
     const n = entities.length;
     const avgComposite = Math.round(totalComp / n * 10) / 10;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 371,
@@ -217,17 +198,17 @@ export async function GET() {
         action_distribution: actDist,
         avg_estimated_digital_colonial_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
       } as Record<string, unknown>,
-    } as Record<string, unknown>, "digital-colonialism-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>, "digital-colonialism-engine") as Parameters<typeof NextResponse.json>[0]));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/digital-colonialism-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/digital-colonialism-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "digital-colonialism-engine") as Parameters<typeof NextResponse.json>[0]);
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "digital-colonialism-engine") as Parameters<typeof NextResponse.json>[0]));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "upstream_unavailable" } as Record<string, unknown>, "digital-colonialism-engine") as Parameters<typeof NextResponse.json>[0],
       { status: 502 }
-    );
+    ));
   }
 }

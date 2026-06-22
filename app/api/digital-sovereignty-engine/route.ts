@@ -97,21 +97,8 @@ function sovereigntySignal(a: Asset, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const assets = MOCK_ASSETS.map(a => {
-      const id_s = identityScore(a), own_s = ownershipScore(a), prot_s = protectionScore(a), res_s = resilienceScore(a);
-      const comp = composite(id_s, own_s, prot_s, res_s);
-      const risk = sovereigntyRisk(comp), sev = sovereigntySeverity(comp), pat = sovereigntyPattern(a);
-      const acts = recommendedActions(risk);
-      return {
-        asset_id: a.asset_id, asset_domain: a.asset_domain, region: a.region,
-        sovereignty_risk: risk, sovereignty_pattern: pat, sovereignty_severity: sev,
-        recommended_actions: acts,
-        identity_score: id_s, ownership_score: own_s, protection_score: prot_s, resilience_score: res_s,
-        sovereignty_composite: comp,
-        estimated_sovereignty_breach_index: breachIndex(a, comp),
-        sovereignty_signal: sovereigntySignal(a, pat, comp),
-        is_legally_actionable: risk === "critical" || risk === "high",
-      };
+  console.warn("[digital-sovereignty-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -131,7 +118,7 @@ export async function GET() {
       if (asset.is_legally_actionable) legalCnt++;
     }
     const n = assets.length;
-    return NextResponse.json(sealResponse({ assets, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ assets, summary: {
       total: n,
       risk_counts: rc,
       pattern_counts: pc,
@@ -145,7 +132,7 @@ export async function GET() {
       avg_protection_score: Math.round(tprot/n*10)/10,
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_estimated_sovereignty_breach_index: Math.round(tbreach/n*100)/100,
-    } as Record<string, unknown>}, "digital-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "digital-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/digital-sovereignty-engine`)).json(), "digital-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/digital-sovereignty-engine`, { next: { revalidate: 30 } })).json(), "digital-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]));
 }

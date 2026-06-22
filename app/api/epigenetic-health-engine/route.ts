@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const chem    = chemicalScore(e);
-      const bio     = biologicalScore(e);
-      const env     = environmentalScore(e);
-      const soc     = socialScore(e);
-      const comp    = compositeScore(chem, bio, env, soc);
-      const risk    = riskLevel(comp);
-      const pattern = healthPattern(e);
-      const sev     = severity(comp);
-      const action  = recommendedAction(risk);
-      const sig     = signal(risk);
-      return {
-        id:                          e.entity_id,
-        health_domain:                      e.health_domain,
-        region:                             e.region,
-        chemical_score:                     chem,
-        biological_score:                   bio,
-        environmental_score:                env,
-        social_score:                       soc,
-        composite_score:                    comp,
-        risk_level:                         risk,
-        health_pattern:                     pattern,
-        severity:                           sev,
-        recommended_action:                 action,
-        signal:                             sig,
-        epigenetic_toxin_exposure_rate:     e.epigenetic_toxin_exposure_rate,
-        intergenerational_epigenetic_damage: e.intergenerational_epigenetic_damage,
-      };
+  console.warn("[epigenetic-health-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -232,17 +206,17 @@ export async function GET() {
       avg_estimated_health_risk_index:    Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "epigenetic-health-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "epigenetic-health-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/epigenetic-health-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/epigenetic-health-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "epigenetic-health-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "epigenetic-health-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "epigenetic-health-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

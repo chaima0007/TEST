@@ -151,27 +151,8 @@ function signal(c: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const frag = fragmentationScore(e), infra = infrastructureScore(e), atk = attackScore(e), gov = governanceScore(e);
-      const comp = compositeScore(frag, infra, atk, gov);
-      const pat = cyberPattern(e), risk = riskLevel(comp);
-      return {
-        id: e.entity_id,
-        cyber_domain: e.cyber_domain,
-        region: e.region,
-        fragmentation_score: frag,
-        infrastructure_score: infra,
-        attack_score: atk,
-        governance_score: gov,
-        composite_score: comp,
-        risk_level: risk,
-        cyber_pattern: pat,
-        severity: severity(comp),
-        recommended_action: recommendedAction(comp),
-        signal: signal(comp),
-        internet_splinternet_progression: e.internet_splinternet_progression,
-        digital_sovereignty_deficit_index: e.digital_sovereignty_deficit_index,
-      };
+  console.warn("[cyber-sovereignty-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const patDist: Record<string,number>  = {};
@@ -193,7 +174,7 @@ export async function GET() {
     const n = entities.length;
     const avgComposite = Math.round(totalComp / n * 10) / 10;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 357,
@@ -210,17 +191,17 @@ export async function GET() {
         action_distribution: actDist,
         avg_estimated_cyber_sovereignty_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
       } as Record<string, unknown>,
-    } as Record<string, unknown>, "cyber-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>, "cyber-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/cyber-sovereignty-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/cyber-sovereignty-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "cyber-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]);
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "cyber-sovereignty-engine") as Parameters<typeof NextResponse.json>[0]));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "upstream_unavailable" } as Record<string, unknown>, "cyber-sovereignty-engine") as Parameters<typeof NextResponse.json>[0],
       { status: 502 }
-    );
+    ));
   }
 }

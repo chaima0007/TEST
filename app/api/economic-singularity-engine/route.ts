@@ -268,34 +268,8 @@ function singularitySignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const disp  = displacementScore(e);
-      const trans = transitionScore(e);
-      const conc  = concentrationScore(e);
-      const disrup = disruptionScore(e);
-      const comp  = singularityComposite(disp, trans, conc, disrup);
-      const pat   = singularityPattern(e);
-      const risk  = singularityRisk(comp);
-      const sev   = singularitySeverity(comp);
-      const act   = recommendedAction(risk, pat);
-      const sig   = singularitySignal(e, risk, comp);
-      return {
-        id:                         e.entity_id,
-        region:                            e.region,
-        economy_type:                      e.economy_type,
-        singularity_risk:                  risk,
-        singularity_pattern:               pat,
-        singularity_severity:              sev,
-        recommended_action:                act,
-        displacement_score:                disp,
-        transition_score:                  trans,
-        concentration_score:               conc,
-        disruption_score:                  disrup,
-        singularity_composite:             comp,
-        is_singularity_crisis:             comp >= 60,
-        requires_singularity_intervention: comp >= 40,
-        singularity_signal:                sig,
-      };
+  console.warn("[economic-singularity-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {};
@@ -336,21 +310,21 @@ export async function GET() {
       avg_estimated_singularity_proximity_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "economic-singularity-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/economic-singularity-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/economic-singularity-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(data, "economic-singularity-engine")
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream economic singularity engine unavailable" }, "economic-singularity-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

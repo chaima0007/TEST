@@ -155,33 +155,8 @@ function gigSignal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(i => {
-      const pre = precarityScore(i);
-      const rig = rightsScore(i);
-      const exp = exploitationScore(i);
-      const sys = systemicScore(i);
-      const comp = compositeScore(pre, rig, exp, sys);
-      const risk = gigRisk(comp);
-      const pattern = gigPattern(i);
-      const severity = gigSeverity(comp);
-      const action = gigAction(risk);
-      return {
-        id: i.entity_id,
-        labor_sector: i.labor_sector,
-        region: i.region,
-        precarity_score: pre,
-        rights_score: rig,
-        exploitation_score: exp,
-        systemic_score: sys,
-        composite_score: comp,
-        risk_level: risk,
-        gig_pattern: pattern,
-        severity,
-        recommended_action: action,
-        signal: gigSignal(risk),
-        platform_worker_precarity_index: i.platform_worker_precarity_index,
-        labor_market_dualization_index: i.labor_market_dualization_index,
-      };
+  console.warn("[gig-economy-fragility-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -200,7 +175,7 @@ export async function GET() {
     const n = entities.length;
     const avgComp = tComp / n;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 334,
@@ -217,14 +192,14 @@ export async function GET() {
         action_distribution: ac,
         avg_estimated_precarity_index: Math.round(avgComp / 100 * 10 * 100) / 100,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/gig-economy-fragility-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/gig-economy-fragility-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>)));
   } catch {
-    return NextResponse.json(sealResponse({ error: "Upstream unavailable" } as Record<string, unknown>), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "Upstream unavailable" } as Record<string, unknown>), { status: 502 }));
   }
 }

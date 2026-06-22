@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const gen  = gentrificationScore(e);
-      const tax  = taxEvasionScore(e);
-      const ineq = inequalityScore(e);
-      const gov  = governanceScore(e);
-      const comp = compositeScore(gen, tax, ineq, gov);
-      const risk = riskLevel(comp);
-      const pat  = nomadPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                  e.entity_id,
-        destination_type:           e.destination_type,
-        region:                     e.region,
-        gentrification_score:       gen,
-        tax_evasion_score:          tax,
-        inequality_score:           ineq,
-        governance_score:           gov,
-        composite_score:            comp,
-        risk_level:                 risk,
-        nomad_pattern:              pat,
-        severity:                   sev,
-        recommended_action:         action,
-        signal:                     sig,
-        housing_price_spike:        e.housing_price_spike,
-        local_displacement_rate:    e.local_displacement_rate,
-      };
+  console.warn("[digital-nomad-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_nomad_impact_index:    Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_gentrification: avgGentrification }, "digital-nomad-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/digital-nomad-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/digital-nomad-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "digital-nomad-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "digital-nomad-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "digital-nomad-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

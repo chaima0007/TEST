@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[dedup] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -40,8 +45,8 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/dedup/suppression-list`, { next: { revalidate: 30 } });
-      if (res.ok) return NextResponse.json({ source: "live", ...(await res.json()) });
+      if (res.ok) return sealResponse(NextResponse.json({ source: "live", ...(await res.json()) }));
     } catch { /* fall through */ }
   }
-  return NextResponse.json(buildMockData());
+  return sealResponse(NextResponse.json(buildMockData()));
 }

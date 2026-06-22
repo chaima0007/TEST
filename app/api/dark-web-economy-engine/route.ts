@@ -203,34 +203,8 @@ function darkwebSignal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const cs   = crimeScaleScore(e);
-      const eco  = ecosystemScore(e);
-      const enf  = enforcementGapScore(e);
-      const sp   = spilloverScore(e);
-      const comp = compositeScore(cs, eco, enf, sp);
-      const risk = darkwebRisk(comp);
-      const pat  = darkwebPattern(e);
-      const sev  = darkwebSeverity(risk);
-      const act  = darkwebAction(risk);
-      const sig  = darkwebSignal(risk);
-      return {
-        id:                   e.entity_id,
-        market_type:                 e.market_type,
-        region:                      e.region,
-        crime_scale_score:           cs,
-        ecosystem_score:             eco,
-        enforcement_gap_score:       enf,
-        spillover_score:             sp,
-        composite_score:             comp,
-        risk_level:                  risk,
-        crime_pattern:               pat,
-        severity:                    sev,
-        recommended_action:          act,
-        signal:                      sig,
-        ransomware_ecosystem_scale:  e.ransomware_ecosystem_scale,
-        crypto_laundering_volume:    e.crypto_laundering_volume,
-      };
+  console.warn("[dark-web-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const pc: Record<string, number> = {};
@@ -250,7 +224,7 @@ export async function GET() {
     const n = entities.length;
     const avgComp = tComp / n;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id:                        384,
@@ -267,17 +241,17 @@ export async function GET() {
         action_distribution:              ac,
         avg_estimated_darkweb_risk_index: Math.round(avgComp / 100 * 10 * 100) / 100,
       },
-    } as Record<string, unknown>, "dark-web-economy-engine"));
+    } as Record<string, unknown>, "dark-web-economy-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/dark-web-economy-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/dark-web-economy-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "dark-web-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "dark-web-economy-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "SWARM_API_URL upstream error" } as Record<string, unknown>, "dark-web-economy-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

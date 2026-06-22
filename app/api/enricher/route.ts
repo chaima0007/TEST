@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[enricher] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -160,7 +165,7 @@ export async function GET(request: Request) {
       });
       if (res.ok) {
         const data = await res.json();
-        return NextResponse.json({ prospects: data.prospects, summary: buildSummary(), source: "live" });
+        return sealResponse(NextResponse.json({ prospects: data.prospects, summary: buildSummary(), source: "live" }));
       }
     } catch { /* fall through */ }
   }
@@ -169,11 +174,11 @@ export async function GET(request: Request) {
   if (tier) prospects = prospects.filter((p) => p.tier === tier.toUpperCase());
   if (limit) prospects = prospects.slice(0, parseInt(limit));
 
-  return NextResponse.json({ prospects, summary: buildSummary(), source: "mock" });
+  return sealResponse(NextResponse.json({ prospects, summary: buildSummary(), source: "mock" }));
 }
 
 export async function POST(request: Request) {
   const body = await request.json();
-  if (!body.company_id) return NextResponse.json({ error: "company_id required" }, { status: 400 });
-  return NextResponse.json(enrich(body));
+  if (!body.company_id) return sealResponse(NextResponse.json({ error: "company_id required" }, { status: 400 }));
+  return sealResponse(NextResponse.json(enrich(body)));
 }

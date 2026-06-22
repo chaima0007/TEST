@@ -278,34 +278,8 @@ function twinSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const fid = fidelityScore(e);
-      const syn = syncScore(e);
-      const sec = securityScore(e);
-      const gov = governanceScore(e);
-      const comp = twinComposite(fid, syn, sec, gov);
-      const pat  = twinPattern(e);
-      const risk = twinRisk(comp);
-      const sev  = twinSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      const sig  = twinSignal(e, risk, comp);
-      return {
-        id:                    e.entity_id,
-        region:                       e.region,
-        twin_category:                e.twin_category,
-        twin_risk:                    risk,
-        twin_pattern:                 pat,
-        twin_severity:                sev,
-        recommended_action:           act,
-        fidelity_score:               fid,
-        sync_score:                   syn,
-        security_score:               sec,
-        governance_score:             gov,
-        twin_composite:               comp,
-        is_twin_crisis:               comp >= 60,
-        requires_twin_intervention:   comp >= 40,
-        twin_signal:                  sig,
-      };
+  console.warn("[digital-twin-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -346,17 +320,17 @@ export async function GET() {
       avg_estimated_twin_risk_index:  Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "digital-twin-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "digital-twin-economy-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/digital-twin-economy-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/digital-twin-economy-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "digital-twin-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "digital-twin-economy-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream digital twin economy engine unavailable" }, "digital-twin-economy-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

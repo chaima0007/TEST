@@ -156,34 +156,8 @@ function democracySignal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const excl  = exclusionScore(e);
-      const manip = manipulationScore(e);
-      const acct  = accountabilityScore(e);
-      const sov   = sovereigntyScore(e);
-      const comp  = compositeScore(excl, manip, acct, sov);
-      const pat   = democracyPattern(e);
-      const risk  = riskLevel(comp);
-      const sev   = severity(risk);
-      const act   = recommendedAction(risk);
-      const sig   = democracySignal(risk);
-      return {
-        id:                  e.entity_id,
-        governance_domain:          e.governance_domain,
-        region:                     e.region,
-        exclusion_score:            excl,
-        manipulation_score:         manip,
-        accountability_score:       acct,
-        sovereignty_score:          sov,
-        composite_score:            comp,
-        risk_level:                 risk,
-        democracy_pattern:          pat,
-        severity:                   sev,
-        recommended_action:         act,
-        signal:                     sig,
-        e_voting_integrity_risk:    e.e_voting_integrity_risk,
-        open_data_governance_level: e.open_data_governance_level,
-      };
+  console.warn("[digital-democracy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const patternDist: Record<string,number>  = {};
@@ -225,14 +199,14 @@ export async function GET() {
       avg_exclusion_score:                Math.round(tExcl / n * 10) / 10,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>, "digital-democracy-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>, "digital-democracy-engine")));
   }
 
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/digital-democracy-engine`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/digital-democracy-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    return NextResponse.json(sealResponse(await res.json() as Record<string, unknown>, "digital-democracy-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await res.json() as Record<string, unknown>, "digital-democracy-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "upstream unavailable" } as Record<string, unknown>, "digital-democracy-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "upstream unavailable" } as Record<string, unknown>, "digital-democracy-engine"), { status: 502 }));
   }
 }

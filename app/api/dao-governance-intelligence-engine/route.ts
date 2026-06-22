@@ -190,34 +190,8 @@ function daoSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const part  = participationScore(e);
-      const plut  = plutocracyScore(e);
-      const treas = treasuryScore(e);
-      const coord = coordinationScore(e);
-      const comp  = daoComposite(part, plut, treas, coord);
-      const risk  = daoRisk(comp);
-      const pat   = daoPattern(e);
-      const sev   = daoSeverity(comp);
-      const act   = recommendedAction(risk, pat);
-      const sig   = daoSignal(e, risk, comp);
-      return {
-        id:                e.entity_id,
-        region:                   e.region,
-        dao_type:                 e.dao_type,
-        dao_risk:                 risk,
-        dao_pattern:              pat,
-        dao_severity:             sev,
-        recommended_action:       act,
-        participation_score:      Math.round(part * 100) / 100,
-        plutocracy_score:         Math.round(plut * 100) / 100,
-        treasury_score:           Math.round(treas * 100) / 100,
-        coordination_score:       Math.round(coord * 100) / 100,
-        dao_composite:            comp,
-        is_in_dao_crisis:         comp >= 60,
-        requires_dao_intervention: comp >= 40,
-        dao_signal:               sig,
-      };
+  console.warn("[dao-governance-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -259,17 +233,17 @@ export async function GET() {
       avg_estimated_dao_risk_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "dao-governance-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "dao-governance-intelligence-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/dao-governance-intelligence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/dao-governance-intelligence-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "dao-governance-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "dao-governance-intelligence-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream DAO Governance Intelligence Engine unavailable" }, "dao-governance-intelligence-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[deal-multithreading-intelligence] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockDeals = [
@@ -113,7 +117,7 @@ export async function GET(request: Request) {
       if (status) url.searchParams.set("status", status);
       if (risk)   url.searchParams.set("risk", risk);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -142,7 +146,7 @@ export async function GET(request: Request) {
 
   const n = mockDeals.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     deals,
     summary: {
       total: n,
@@ -159,5 +163,5 @@ export async function GET(request: Request) {
       avg_resilience_score:             Math.round((total_res / n) * 10) / 10,
       total_at_risk_pipeline_usd:       Math.round(total_pipe * 100) / 100,
     },
-  });
+  }));
 }

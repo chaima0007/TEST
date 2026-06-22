@@ -137,33 +137,8 @@ function disruptionSignal(e: Entity, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const acc  = accelerationScore(e);
-      const disp = displacementScore(e);
-      const conc = concentrationScore(e);
-      const sov  = sovereigntyScore(e);
-      const comp = disruptionComposite(acc, disp, conc, sov);
-      const pat  = disruptionPattern(e);
-      const risk = disruptionRisk(comp);
-      const sev  = disruptionSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                        e.entity_id,
-        region:                           e.region,
-        tech_cluster:                     e.tech_cluster,
-        disruption_risk:                  risk,
-        disruption_pattern:               pat,
-        disruption_severity:              sev,
-        recommended_action:               act,
-        acceleration_score:               acc,
-        displacement_score:               disp,
-        concentration_score:              conc,
-        sovereignty_score:                sov,
-        disruption_composite:             comp,
-        is_in_disruption_crisis:          comp >= 60,
-        requires_disruption_intervention: comp >= 40,
-        disruption_signal:                disruptionSignal(e, risk, comp),
-      };
+  console.warn("[exponential-tech-convergence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {}, pc: Record<string,number> = {},
@@ -199,17 +174,17 @@ export async function GET() {
       avg_sovereignty_score:            Math.round(tSov  / n * 10) / 10,
       avg_estimated_disruption_index:   Math.round(avgComp / 100 * 10 * 100) / 100,
     };
-    return NextResponse.json(sealResponse({ entities, summary }, "exponential-tech-convergence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "exponential-tech-convergence-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/exponential-tech-convergence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/exponential-tech-convergence-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "exponential-tech-convergence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "exponential-tech-convergence-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream swarm unavailable" }, "exponential-tech-convergence-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -84,12 +84,8 @@ export async function GET(request: Request) {
   const pattern = searchParams.get("pattern");
 
   if (!process.env.SWARM_API_URL) {
-    // mock computation path
-    let segments = [...mockSegments];
-    if (risk)    segments = segments.filter((s) => s.emotional_risk === risk);
-    if (pattern) segments = segments.filter((s) => s.behavior_pattern === pattern);
-
-    const risk_counts:     Record<string, number> = {};
+  console.warn("[emotional-intelligence-market-behavior-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     const pattern_counts:  Record<string, number> = {};
     const severity_counts: Record<string, number> = {};
     const action_counts:   Record<string, number> = {};
@@ -109,7 +105,7 @@ export async function GET(request: Request) {
     }
 
     const n = mockSegments.length;
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       segments,
       summary: {
         total:                                       n,
@@ -126,7 +122,7 @@ export async function GET(request: Request) {
         avg_resilience_score:                        Math.round((total_res  / n) * 100) / 100,
         avg_estimated_sentiment_disruption_index:    Math.round((total_idx  / n) * 100) / 100,
       },
-    } as Record<string,unknown>));
+    } as Record<string,unknown>)));
   }
 
   try {
@@ -134,8 +130,8 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch {}
 
-  return NextResponse.json(sealResponse({ segments: [], summary: {} } as Record<string,unknown>), { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ segments: [], summary: {} } as Record<string,unknown>), { status: 502 }));
 }

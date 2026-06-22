@@ -203,34 +203,8 @@ function crimeSignal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const lau  = launderingScore(e);
-      const eva  = evasionScore(e);
-      const opa  = opacityScore(e);
-      const gov  = governanceScore(e);
-      const comp = compositeScore(lau, eva, opa, gov);
-      const risk = crimeRisk(comp);
-      const pat  = crimePattern(e);
-      const sev  = crimeSeverity(risk);
-      const act  = recommendedAction(risk);
-      const sig  = crimeSignal(risk);
-      return {
-        id:                       e.entity_id,
-        financial_sector:                e.financial_sector,
-        region:                          e.region,
-        laundering_score:                lau,
-        evasion_score:                   eva,
-        opacity_score:                   opa,
-        governance_score:                gov,
-        composite_score:                 comp,
-        risk_level:                      risk,
-        crime_pattern:                   pat,
-        severity:                        sev,
-        recommended_action:              act,
-        signal:                          sig,
-        money_laundering_volume_index:   e.money_laundering_volume_index,
-        sanction_evasion_sophistication: e.sanction_evasion_sophistication,
-      };
+  console.warn("[financial-crime-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const pc: Record<string, number> = {};
@@ -250,7 +224,7 @@ export async function GET() {
     const n = entities.length;
     const avgComp = tComp / n;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id:                          352,
@@ -267,17 +241,17 @@ export async function GET() {
         action_distribution:                ac,
         avg_estimated_financial_crime_index: Math.round(avgComp / 100 * 10 * 100) / 100,
       },
-    } as Record<string, unknown>, "financial-crime-engine"));
+    } as Record<string, unknown>, "financial-crime-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/financial-crime-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/financial-crime-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "financial-crime-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "financial-crime-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "SWARM_API_URL upstream error" } as Record<string, unknown>, "financial-crime-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

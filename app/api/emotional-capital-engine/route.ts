@@ -90,19 +90,8 @@ function signal(u: Unit, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const units = MOCK_UNITS.map(u => {
-      const bn = burnoutScore(u), sf = safetyScore(u), mn = meaningScore(u), cn = connectionScore(u);
-      const comp = composite(bn, sf, mn, cn), pat = emotionalPattern(u), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        unit_id: u.unit_id, region: u.region, workforce_segment: u.workforce_segment,
-        wellbeing_risk: r, emotional_pattern: pat, wellbeing_severity: sev, recommended_action: act,
-        burnout_score: bn, safety_score: sf, meaning_score: mn, connection_score: cn,
-        emotional_composite: comp,
-        has_burnout_alert: comp >= 40 || u.burnout_prevalence_rate >= 0.50 || u.emotional_exhaustion_index >= 0.60 || u.joy_at_work_index <= 0.25,
-        requires_emergency_support: comp >= 25 || u.burnout_prevalence_rate >= 0.65 || u.psychological_safety_score <= 0.25 || u.emotional_exhaustion_index >= 0.70,
-        estimated_burnout_risk_index: Math.min(Math.round(comp / 100 * (1 - u.resilience_capital_score + 0.01) * 10 * 100) / 100, 10.0),
-        wellbeing_signal: signal(u, pat, comp),
-      };
+  console.warn("[emotional-capital-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -118,7 +107,7 @@ export async function GET() {
       if (u.requires_emergency_support) emergC++;
     }
     const n = units.length;
-    return NextResponse.json(sealResponse({ units, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ units, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_emotional_composite:          Math.round(tcomp / n * 10) / 10,
       burnout_alert_count:              alertC,
@@ -128,7 +117,7 @@ export async function GET() {
       avg_meaning_score:                Math.round(tmn  / n * 10) / 10,
       avg_connection_score:             Math.round(tcn  / n * 10) / 10,
       avg_estimated_burnout_risk_index: Math.round(trisk / n * 100) / 100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/emotional-capital-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/emotional-capital-engine`, { next: { revalidate: 30 } })).json()));
 }

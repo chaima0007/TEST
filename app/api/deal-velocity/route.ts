@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[deal-velocity] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -114,7 +119,7 @@ export async function GET(request: Request) {
       if (outcome) url.searchParams.set("outcome", outcome);
       if (rep_id)  url.searchParams.set("rep_id", rep_id);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -144,7 +149,7 @@ export async function GET(request: Request) {
 
   const n = mockDeals.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     deals,
     summary: {
       total:                   n,
@@ -161,5 +166,5 @@ export async function GET(request: Request) {
       avg_momentum_score:      Math.round((total_momentum / n) * 10) / 10,
       healthy_deal_count:      mockDeals.filter((d) => d.deal_health_index >= 65.0).length,
     },
-  });
+  }));
 }

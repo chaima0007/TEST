@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[deal-contamination-risk-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockDeals = [
@@ -97,7 +101,7 @@ export async function GET(request: Request) {
       if (level) url.searchParams.set("level", level);
       if (risk)  url.searchParams.set("risk", risk);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -126,7 +130,7 @@ export async function GET(request: Request) {
 
   const n = mockDeals.length;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     deals,
     summary: {
       total: n,
@@ -143,5 +147,5 @@ export async function GET(request: Request) {
       avg_audit_quality_score:         Math.round((total_aud / n) * 10) / 10,
       total_compliance_exposure_usd:   Math.round(total_exp),
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

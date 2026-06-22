@@ -169,35 +169,8 @@ function contagionSignal(e: Entity, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map((e) => {
-      const spread        = spreadScore(e);
-      const amplification = amplificationScore(e);
-      const resilience    = resilienceScore(e);
-      const polarization  = polarizationScore(e);
-      const composite     = contagionComposite(spread, amplification, resilience, polarization);
-      const pattern       = contagionPattern(e);
-      const risk          = contagionRisk(composite);
-      const severity      = contagionSeverity(composite);
-      const action        = recommendedAction(risk, pattern);
-      const signal        = contagionSignal(e, risk, composite);
-
-      return {
-        id:                       e.entity_id,
-        region:                          e.region,
-        contagion_type:                  e.contagion_type,
-        contagion_risk:                  risk,
-        contagion_pattern:               pattern,
-        contagion_severity:              severity,
-        recommended_action:              action,
-        spread_score:                    spread,
-        amplification_score:             amplification,
-        resilience_score:                resilience,
-        polarization_score:              polarization,
-        contagion_composite:             composite,
-        is_in_contagion_crisis:          composite >= 60,
-        requires_contagion_intervention: composite >= 40,
-        contagion_signal:                signal,
-      };
+  console.warn("[emotional-contagion-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -240,14 +213,14 @@ export async function GET() {
       avg_estimated_contagion_index:     Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "emotional-contagion-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "emotional-contagion-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/emotional-contagion-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/emotional-contagion-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "emotional-contagion-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "emotional-contagion-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "upstream unavailable" }, "emotional-contagion-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "upstream unavailable" }, "emotional-contagion-engine"), { status: 502 }));
   }
 }

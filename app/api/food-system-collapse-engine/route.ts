@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[food-system-collapse-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ─── Math (mirrors Python exactly) ───────────────────────────────────────────
@@ -246,7 +250,7 @@ export async function GET(request: Request) {
     const most_vulnerable_region = Object.entries(region_totals)
       .reduce((a, b) => (b[1].sum / b[1].count) > (a[1].sum / a[1].count) ? b : a)[0];
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         total_entities:                    n,
@@ -269,7 +273,7 @@ export async function GET(request: Request) {
         avg_access_score:                  Math.round((total_acc  / n) * 10) / 10,
         avg_resilience_score:              Math.round((total_res  / n) * 10) / 10,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   try {
@@ -277,8 +281,8 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch {}
 
-  return NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 }));
 }

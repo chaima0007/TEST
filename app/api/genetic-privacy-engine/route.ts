@@ -88,34 +88,8 @@ function geneticSignal(risk: string, composite: number, pattern: string): string
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map((e) => {
-      const cs = consentScore(e);
-      const ds = dataSecurityScore(e);
-      const dis = discriminationScore(e);
-      const ss = sovereigntyScore(e);
-      const comp = compositeScore(cs, ds, dis, ss);
-      const risk = riskLevel(comp);
-      const pattern = geneticPattern(e);
-      const sev = severity(comp);
-      const action = recommendedAction(risk);
-      const sig = geneticSignal(risk, comp, pattern);
-      return {
-        id: e.entity_id,
-        data_type: e.data_type,
-        region: e.region,
-        consent_score: cs,
-        data_security_score: ds,
-        discrimination_score: dis,
-        sovereignty_score: ss,
-        composite_score: comp,
-        risk_level: risk,
-        genetic_pattern: pattern,
-        severity: sev,
-        recommended_action: action,
-        signal: sig,
-        informed_consent_quality: e.informed_consent_quality,
-        indigenous_genetic_sovereignty: e.indigenous_genetic_sovereignty,
-      };
+  console.warn("[genetic-privacy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const riskDist: Record<string, number> = {};
@@ -156,12 +130,12 @@ export async function GET() {
       avg_estimated_genetic_privacy_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>)));
   }
 
-  const upstream = await fetch(`${process.env.SWARM_API_URL}/api/genetic-privacy-engine`);
+  const upstream = await fetch(`${process.env.SWARM_API_URL}/api/genetic-privacy-engine`, { next: { revalidate: 30 } });
   if (!upstream.ok) {
-    return NextResponse.json({ error: "Upstream error" }, { status: 502 });
+    return sealResponse(NextResponse.json({ error: "Upstream error" }, { status: 502 }));
   }
-  return NextResponse.json(await upstream.json());
+  return sealResponse(NextResponse.json(await upstream.json()));
 }

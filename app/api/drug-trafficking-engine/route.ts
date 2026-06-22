@@ -7,15 +7,15 @@ if (!process.env.SWARM_API_URL) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Drug Trafficking Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Drug Trafficking Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/drug-trafficking-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Drug Trafficking Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Drug Trafficking Agent")));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Drug Trafficking Agent"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Drug Trafficking Agent"), { status: 502 }));
   }
 }
 

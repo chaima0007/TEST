@@ -230,9 +230,8 @@ function fractureSignal(e: Entity, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(
-      sealResponse(
-        { error: "SWARM_API_URL non configuré — service indisponible" } as Record<string, unknown>,
+  console.warn("[geopolitical-alliance-fracture-engine] SWARM_API_URL non défini — mode dégradé activé");
+} as Record<string, unknown>,
         "geopolitical-alliance-fracture-engine"
       ) as Record<string, unknown>,
       { status: 502 }
@@ -323,16 +322,16 @@ export async function GET() {
       requires_intervention_count:     interventionC,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "geopolitical-alliance-fracture-engine") as Record<string, unknown>
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(
         { error: "Erreur moteur fracture alliance géopolitique" } as Record<string, unknown>,
         "geopolitical-alliance-fracture-engine"
       ) as Record<string, unknown>,
       { status: 502 }
-    );
+    ));
   }
 }

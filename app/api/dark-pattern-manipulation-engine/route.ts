@@ -261,33 +261,8 @@ function manipulationSignal(e: Entity, pattern: string, comp: number, risk: stri
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map((e) => {
-      const dec = deceptionScore(e);
-      const coe = coercionScore(e);
-      const add = addictionScore(e);
-      const exp = exploitationScore(e);
-      const comp = compositeScore(dec, coe, add, exp);
-      const risk = manipulationRisk(comp);
-      const pattern = manipulationPattern(e);
-      const severity = manipulationSeverity(comp);
-      const action = recommendedAction(risk, pattern);
-      return {
-        id: e.entity_id,
-        region: e.region,
-        platform_type: e.platform_type,
-        manipulation_risk: risk,
-        manipulation_pattern: pattern,
-        manipulation_severity: severity,
-        recommended_action: action,
-        deception_score: dec,
-        coercion_score: coe,
-        addiction_score: add,
-        exploitation_score: exp,
-        manipulation_composite: comp,
-        is_manipulation_crisis: comp >= 60,
-        requires_manipulation_intervention: comp >= 40,
-        manipulation_signal: manipulationSignal(e, pattern, comp, risk),
-      };
+  console.warn("[dark-pattern-manipulation-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const patternFreq: Record<string, number> = {};
@@ -319,7 +294,7 @@ export async function GET() {
 
     const avgComposite = Math.round(tComp / n * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         total_entities_analyzed: n,
@@ -336,11 +311,11 @@ export async function GET() {
         avg_exploitation_score: Math.round(tExp / n * 100) / 100,
         avg_estimated_manipulation_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
       },
-    } as Record<string, unknown>, "dark-pattern-manipulation-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>, "dark-pattern-manipulation-engine") as Parameters<typeof NextResponse.json>[0]));
   }
 
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/dark-pattern-manipulation-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/dark-pattern-manipulation-engine`, { next: { revalidate: 30 } })).json(),
     "dark-pattern-manipulation-engine"
-  ) as Parameters<typeof NextResponse.json>[0]);
+  ) as Parameters<typeof NextResponse.json>[0]));
 }

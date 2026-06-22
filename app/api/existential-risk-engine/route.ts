@@ -141,34 +141,8 @@ function signal(e: Entity, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const exp  = exposureScore(e);
-      const prep = preparednessScore(e);
-      const res  = resilienceScore(e);
-      const cont = continuityScore(e);
-      const comp = composite(exp, prep, res, cont);
-      const pat  = existentialPattern(e);
-      const risk = riskLevel(comp);
-      const sev  = severity(comp);
-      const prot = protocol(risk, pat);
-      return {
-        id:                       e.entity_id,
-        region:                          e.region,
-        risk_category:                   e.risk_category,
-        existential_risk_level:          risk,
-        existential_pattern:             pat,
-        systemic_severity:               sev,
-        recommended_protocol:            prot,
-        exposure_score:                  exp,
-        preparedness_score:              prep,
-        resilience_score:                res,
-        continuity_score:                cont,
-        existential_composite:           comp,
-        has_cascade_signal:              comp >= 45 || e.cascade_failure_vulnerability >= 0.60 || e.existential_exposure_score >= 0.65,
-        requires_continuity_protocol:    comp >= 30 || e.continuity_plan_robustness <= 0.30 || e.strategic_redundancy_depth <= 0.25,
-        estimated_existential_risk_index: Math.min(Math.round(comp / 100 * (1 - e.antifragility_score + 0.01) * 10 * 100) / 100, 10.0),
-        existential_signal:              signal(e, pat, comp),
-      };
+  console.warn("[existential-risk-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -203,10 +177,10 @@ export async function GET() {
       avg_continuity_score:                     Math.round(tCont / n * 10) / 10,
       avg_estimated_existential_risk_index:     Math.round(tEri / n * 100) / 100,
     };
-    return NextResponse.json(sealResponse({ entities, summary }, "existential-risk-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "existential-risk-engine")));
   }
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/existential-risk-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/existential-risk-engine`, { next: { revalidate: 30 } })).json(),
     "existential-risk-engine"
-  ));
+  )));
 }

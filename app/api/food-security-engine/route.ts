@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const hun  = hungerScore(e);
-      const prod = productionScore(e);
-      const acc  = accessScore(e);
-      const sys  = systemicScore(e);
-      const comp = compositeScore(hun, prod, acc, sys);
-      const risk = riskLevel(comp);
-      const pat  = foodPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                      e.entity_id,
-        food_system_type:               e.food_system_type,
-        region:                         e.region,
-        hunger_score:                   hun,
-        production_score:               prod,
-        access_score:                   acc,
-        systemic_score:                 sys,
-        composite_score:                comp,
-        risk_level:                     risk,
-        food_pattern:                   pat,
-        severity:                       sev,
-        recommended_action:             action,
-        signal:                         sig,
-        acute_hunger_prevalence:        e.acute_hunger_prevalence,
-        famine_risk_level:              e.famine_risk_level,
-      };
+  console.warn("[food-security-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -228,17 +202,17 @@ export async function GET() {
       avg_estimated_food_security_index:      Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "food-security-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "food-security-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/food-security-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/food-security-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "food-security-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "food-security-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "food-security-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

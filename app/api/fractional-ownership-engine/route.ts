@@ -87,33 +87,8 @@ function signal(a: Asset, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const assets = MOCK_ASSETS.map(a => {
-      const liq  = liquidityScore(a);
-      const gov  = governanceScore(a);
-      const tru  = trustScore(a);
-      const comp = complianceScore(a);
-      const c    = composite(liq, gov, tru, comp);
-      const pat  = ownershipPattern(a);
-      const r    = risk(c);
-      const sev  = severity(c);
-      const act  = action(r, pat);
-      return {
-        asset_id:                  a.asset_id,
-        asset_category:            a.asset_category,
-        region:                    a.region,
-        ownership_risk:            r,
-        ownership_pattern:         pat,
-        ownership_severity:        sev,
-        recommended_action:        act,
-        liquidity_score:           liq,
-        governance_score:          gov,
-        trust_score:               tru,
-        compliance_score:          comp,
-        fractional_composite:      c,
-        has_freeze_signal:         c >= 40 || a.liquidity_fragmentation_risk >= 0.60,
-        estimated_illiquidity_index: Math.min(Math.round(c / 100 * (1 - a.fractional_liquidity_pool_depth + 0.01) * 10 * 100) / 100, 10.0),
-        ownership_signal:          signal(a, pat, c),
-      };
+  console.warn("[fractional-ownership-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {}, pc: Record<string,number> = {}, sc: Record<string,number> = {}, ac: Record<string,number> = {};
@@ -133,7 +108,7 @@ export async function GET() {
       if (asset.recommended_action === "emergency_liquidity" || asset.recommended_action === "governance_reset") emergC++;
     }
     const n = assets.length;
-    return NextResponse.json(sealResponse({ assets, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ assets, summary: {
       total:                           n,
       risk_counts:                     rc,
       pattern_counts:                  pc,
@@ -147,7 +122,7 @@ export async function GET() {
       avg_compliance_score:            Math.round(tcomp / n * 10) / 10,
       avg_estimated_illiquidity_index: Math.round(tilliq / n * 100) / 100,
       emergency_action_count:          emergC,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/fractional-ownership-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/fractional-ownership-engine`, { next: { revalidate: 30 } })).json()));
 }

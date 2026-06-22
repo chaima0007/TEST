@@ -89,19 +89,8 @@ function gameLossIndex(comp: number, nashStability: number): number {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const games = MOCK_GAMES.map(g => {
-      const stab = stabilityScore(g), strat = strategyScore(g), coop = cooperationScore(g), info = informationScore(g);
-      const comp = composite(stab, strat, coop, info);
-      const risk = gameRisk(comp), pat = gamePattern(g), sev = gameSeverity(comp);
-      const act = gameAction(risk), actSec = gameActionSecondary(risk);
-      return {
-        game_id: g.game_id, game_type: g.game_type, region: g.region,
-        stability_score: stab, strategy_score: strat, cooperation_score: coop, information_score: info,
-        game_composite: comp, game_risk: risk, game_pattern: pat, game_severity: sev,
-        recommended_action: act, recommended_action_secondary: actSec,
-        game_signal: gameSignal(g, pat, comp),
-        estimated_game_loss_index: gameLossIndex(comp, g.nash_equilibrium_stability),
-      };
+  console.warn("[game-theory-decision-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tStab=0, tStrat=0, tCoop=0, tInfo=0, tComp=0, tGli=0, destructiveC=0, mediationC=0;
@@ -117,7 +106,7 @@ export async function GET() {
       if (g.recommended_action === "emergency_mediation") mediationC++;
     }
     const n = games.length;
-    return NextResponse.json(sealResponse({ games, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ games, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_game_composite: Math.round(tComp / n * 10) / 10,
       destructive_count: destructiveC, mediation_required_count: mediationC,
@@ -126,7 +115,7 @@ export async function GET() {
       avg_cooperation_score:  Math.round(tCoop  / n * 10) / 10,
       avg_information_score:  Math.round(tInfo  / n * 10) / 10,
       avg_estimated_game_loss_index: Math.round(tGli / n * 100) / 100,
-    } as Record<string, unknown>}, "game-theory-decision-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "game-theory-decision-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/game-theory-decision-engine`)).json(), "game-theory-decision-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/game-theory-decision-engine`, { next: { revalidate: 30 } })).json(), "game-theory-decision-engine") as Parameters<typeof NextResponse.json>[0]));
 }

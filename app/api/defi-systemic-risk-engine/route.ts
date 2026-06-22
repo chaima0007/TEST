@@ -256,7 +256,7 @@ function getMockData(): { entities: DeFiEntity[]; summary: Record<string, unknow
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "DeFi Systemic Risk Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "DeFi Systemic Risk Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/defi-systemic-risk-engine`, {
@@ -264,11 +264,11 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "DeFi Systemic Risk Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "DeFi Systemic Risk Agent")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData(), "DeFi Systemic Risk Agent"),
       { status: 502 }
-    );
+    ));
   }
 }

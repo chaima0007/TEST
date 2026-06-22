@@ -87,19 +87,8 @@ function signal(i: D, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const dossiers = MOCK_DOSSIERS.map(i => {
-      const rg = rgpdScore(i), ri = rightsScore(i), br = breachScore(i), tr = transferScore(i);
-      const comp = composite(rg, ri, br, tr), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        dossier_id: i.dossier_id, entity_type: i.entity_type, region: i.region,
-        protection_risk: r, violation_pattern: pat, protection_severity: sev, recommended_action: act,
-        rgpd_score: rg, rights_score: ri, breach_score: br, transfer_score: tr,
-        protection_composite: comp,
-        has_active_violation: comp >= 40 || i.breach_notification_delay_hours >= 24 || i.access_request_pending_days >= 15 || i.erasure_request_pending_days >= 15 || i.cross_border_transfer_unprotected >= 2,
-        requires_dpa_notification: comp >= 25 || i.breach_notification_delay_hours >= 1 || i.vulnerability_exposure_score >= 0.60 || i.cross_border_transfer_unprotected >= 3,
-        estimated_fine_risk_index: fineRisk(i, comp),
-        protection_signal: signal(i, pat, comp),
-      };
+  console.warn("[data-protection-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let trg=0,tri=0,tbr=0,ttr=0,tcomp=0,tfine=0,av=0,dpa=0;
@@ -111,7 +100,7 @@ export async function GET() {
       if (d.has_active_violation) av++; if (d.requires_dpa_notification) dpa++;
     }
     const n = dossiers.length;
-    return NextResponse.json(sealResponse({ dossiers, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ dossiers, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_protection_composite: Math.round(tcomp/n*10)/10,
       active_violation_count: av, dpa_notification_count: dpa,
@@ -120,7 +109,7 @@ export async function GET() {
       avg_breach_score: Math.round(tbr/n*10)/10,
       avg_transfer_score: Math.round(ttr/n*10)/10,
       avg_estimated_fine_risk_index: Math.round(tfine/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/data-protection-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/data-protection-engine`, { next: { revalidate: 30 } })).json()));
 }

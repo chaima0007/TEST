@@ -85,19 +85,8 @@ function signal(a: Asset, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const assets = MOCK_ASSETS.map(a => {
-      const gov  = governanceScore(a), disc = discoveryScore(a), qual = qualityScore(a), val = valueScore(a);
-      const comp = composite(gov, disc, qual, val), pat = darkPattern(a), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        asset_id: a.asset_id, data_domain: a.data_domain, region: a.region,
-        dark_data_risk: r, dark_data_pattern: pat, dark_data_severity: sev, recommended_action: act,
-        governance_score: gov, discovery_score: disc, quality_score: qual, value_score: val,
-        dark_data_composite: comp,
-        has_hidden_value_signal: comp >= 40 || a.dark_data_ratio >= 0.55 || a.hidden_value_estimate >= 0.60 || a.data_discovery_coverage <= 0.35,
-        requires_immediate_governance: comp >= 25 || a.governance_gap_severity >= 0.60 || a.regulatory_dark_risk >= 0.55 || a.privacy_exposure_risk >= 0.60,
-        estimated_hidden_value_index: Math.min(Math.round(comp/100*(a.hidden_value_estimate+0.01)*10*100)/100, 10.0),
-        dark_data_signal: signal(a, pat, comp),
-      };
+  console.warn("[dark-data-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tgov=0, tdisc=0, tqual=0, tval=0, tcomp=0, thvi=0, hvC=0, igC=0;
@@ -113,7 +102,7 @@ export async function GET() {
       if (res.requires_immediate_governance) igC++;
     }
     const n = assets.length;
-    return NextResponse.json(sealResponse({ assets, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ assets, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_dark_data_composite:          Math.round(tcomp / n * 10) / 10,
       hidden_value_signal_count:        hvC,
@@ -123,7 +112,7 @@ export async function GET() {
       avg_quality_score:                Math.round(tqual / n * 10) / 10,
       avg_value_score:                  Math.round(tval  / n * 10) / 10,
       avg_estimated_hidden_value_index: Math.round(thvi  / n * 100) / 100,
-    } as Record<string, unknown>}, "dark-data-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "dark-data-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/dark-data-intelligence-engine`)).json(), "dark-data-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/dark-data-intelligence-engine`, { next: { revalidate: 30 } })).json(), "dark-data-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
 }
