@@ -3989,6 +3989,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "SOCIAL RIGHTS",
+    items: [
+      { href: "/dashboard/waterrights", label: "Water Rights", icon: Icons.IconWaterRights },
+      { href: "/dashboard/foodsovereignty", label: "Food Sovereignty", icon: Icons.IconFoodSovereignty },
+      { href: "/dashboard/housingright", label: "Housing Rights", icon: Icons.IconHousingRight },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
