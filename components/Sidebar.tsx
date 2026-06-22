@@ -14897,6 +14897,29 @@ function IconEntertainmentAdvertising({ size = 18, color = "currentColor" }: { s
   );
 }
 
+function IconTelecomAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+function IconInsuranceAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  );
+}
+function IconLogisticsAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="1" y="3" width="15" height="13" />
+      <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+      <circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" />
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17906,6 +17929,24 @@ const navSections: NavSection[] = [
         label: "Entertainment Advertising",
         href: "/dashboard/entertainment-advertising-child-labor-rights",
         icon: IconEntertainmentAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Telecom Advertising",
+        href: "/dashboard/telecom-advertising-child-labor-rights",
+        icon: IconTelecomAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Insurance Advertising",
+        href: "/dashboard/insurance-advertising-child-labor-rights",
+        icon: IconInsuranceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Logistics Advertising",
+        href: "/dashboard/logistics-advertising-child-labor-rights",
+        icon: IconLogisticsAdvertising,
         category: "Publicité Visuelle",
       },
       {
