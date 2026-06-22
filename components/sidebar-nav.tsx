@@ -4029,6 +4029,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "ANTI-CORRUPTION & FISCAL",
+    items: [
+      { href: "/dashboard/antibribery-engine", label: "Anti-Corruption", icon: Icons.IconAntiBribery },
+      { href: "/dashboard/whistleblower-engine", label: "Lanceurs Alerte", icon: Icons.IconWhistleblower },
+      { href: "/dashboard/taxjustice-engine", label: "Justice Fiscale", icon: Icons.IconTaxJustice },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
