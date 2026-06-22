@@ -11742,6 +11742,30 @@ function IconPlasticPollutionRights() {
   );
 }
 
+function IconHeatStressLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2v8" />
+      <path d="m4.93 10.93 1.41 1.41" />
+      <path d="M2 18h2" />
+      <path d="M20 18h2" />
+      <path d="m19.07 10.93-1.41 1.41" />
+      <path d="M22 22H2" />
+      <path d="m16 6-4 4-4-4" />
+      <path d="M16 18a4 4 0 0 0-8 0" />
+    </svg>
+  );
+}
+
+function IconLithiumMiningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7e22ce" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13472,6 +13496,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/wage-theft-rights", label: "Vol de Salaire", icon: IconWageTheftRights },
       { href: "/dashboard/drone-surveillance-rights", label: "Surveillance par Drones", icon: IconDroneSurveillanceRights },
       { href: "/dashboard/plastic-pollution-rights", label: "Pollution Plastique", icon: IconPlasticPollutionRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 272",
+    items: [
+      { href: "/dashboard/supply-chain-transparency-rights", label: "Transparence des Chaînes", icon: IconSupplyChainTransparencyRights },
+      { href: "/dashboard/heat-stress-labor-rights", label: "Stress Thermique au Travail", icon: IconHeatStressLaborRights },
+      { href: "/dashboard/lithium-mining-rights", label: "Mines de Lithium", icon: IconLithiumMiningRights },
     ],
   },
   {
