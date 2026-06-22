@@ -4066,4 +4066,12 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/oceanpollution", label: "Ocean Pollution", icon: Icons.IconOceanPollution },
     ],
   },
+  {
+    title: "PRISON, MIGRATION & ENVIRONMENT",
+    items: [
+      { href: "/dashboard/prisonlabor", label: "Prison Labor Rights", icon: Icons.IconPrisonLaborRights },
+      { href: "/dashboard/migrantremittance", label: "Migrant Remittance Rights", icon: Icons.IconMigrantRemittanceRights },
+      { href: "/dashboard/environmentaldefender", label: "Environmental Defender Rights", icon: Icons.IconEnvironmentalDefenderRights },
+    ],
+  },
 ];
