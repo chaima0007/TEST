@@ -13088,6 +13088,27 @@ function IconCarawayCultivationLaborRights({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconCorianderSeedHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="M9 11v11M15 11v11"/>
+    </svg>
+  );
+}
+function IconCuminCultivationChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V10M7 6l5-4 5 4M7 10l5-4 5 4"/>
+    </svg>
+  );
+}
+function IconFenugreekCultivationLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12M6 8c2-3 6-6 6-6s4 3 6 6c-2 2-4 4-6 4S8 10 6 8z"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -15247,6 +15268,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/caraway-cultivation-labor-rights",
         icon: IconCarawayCultivationLaborRights,
         color: "#166534",
+      },
+      {
+        label: "Coriander Seed Harvesting Child Labor",
+        href: "/dashboard/coriander-seed-harvesting-child-labor-rights",
+        icon: IconCorianderSeedHarvestingChildLaborRights,
+        color: "#d97706",
+      },
+      {
+        label: "Cumin Cultivation Child Labor",
+        href: "/dashboard/cumin-cultivation-child-labor-rights",
+        icon: IconCuminCultivationChildLaborRights,
+        color: "#7c3aed",
+      },
+      {
+        label: "Fenugreek Cultivation Labor",
+        href: "/dashboard/fenugreek-cultivation-labor-rights",
+        icon: IconFenugreekCultivationLaborRights,
+        color: "#0e7490",
       },
     ],
   },
