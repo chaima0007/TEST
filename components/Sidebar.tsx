@@ -12730,6 +12730,48 @@ function IconCoalWasheryWorkerRights({ size = 18, color = "#1c1917" }: { size?: 
   );
 }
 
+function IconIncenseStickChildLaborRights({ size = 18, color = "#6d28d9" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="22" x2="12" y2="6" />
+      <path d="M12 6 Q10 4 11 2 Q12 4 14 2 Q13 4 12 6" />
+      <path d="M9 8 Q7 7 8 5" />
+      <path d="M15 8 Q17 7 16 5" />
+      <path d="M10 12 Q8 11 9 9" />
+      <path d="M14 12 Q16 11 15 9" />
+    </svg>
+  );
+}
+
+function IconMatchFactoryPhosphorusRights({ size = 18, color = "#dc2626" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <line x1="8" y1="20" x2="18" y2="6" />
+      <circle cx="18" cy="5" r="2" />
+      <path d="M16 3 Q20 2 21 5 Q20 8 17 7" />
+      <path d="M4 20 h5" />
+      <path d="M6 17 h4" />
+    </svg>
+  );
+}
+
+function IconFireworksFactoryChildLaborRights({ size = 18, color = "#ea580c" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="10" r="2" />
+      <line x1="12" y1="8" x2="12" y2="3" />
+      <line x1="14" y1="9" x2="18" y2="5" />
+      <line x1="14" y1="11" x2="19" y2="12" />
+      <line x1="10" y1="9" x2="6" y2="5" />
+      <line x1="10" y1="11" x2="5" y2="12" />
+      <line x1="12" y1="12" x2="12" y2="17" />
+      <line x1="13" y1="12" x2="17" y2="16" />
+      <line x1="11" y1="12" x2="7" y2="16" />
+      <path d="M8 20 Q12 18 16 20" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14700,6 +14742,14 @@ const navSections: NavSection[] = [
       { label: "Droits Travailleurs Silicose Céramique", href: "/dashboard/ceramic-dust-silicosis-rights", icon: IconCeramicDustSilicosisRights, color: "#b45309" },
       { label: "Droits Travailleurs Peintures Plomb", href: "/dashboard/lead-paint-manufacturing-worker-rights", icon: IconLeadPaintManufacturingWorkerRights, color: "#475569" },
       { label: "Droits Travailleurs Laveries Charbon", href: "/dashboard/coal-washery-worker-rights", icon: IconCoalWasheryWorkerRights, color: "#1c1917" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 302",
+    items: [
+      { label: "Droits Enfants Fabrication Encens", href: "/dashboard/incense-stick-child-labor-rights", icon: IconIncenseStickChildLaborRights, color: "#6d28d9" },
+      { label: "Droits Travailleurs Phosphore Allumettes", href: "/dashboard/match-factory-phosphorus-rights", icon: IconMatchFactoryPhosphorusRights, color: "#dc2626" },
+      { label: "Droits Enfants Fabriques Feux d&apos;Artifice", href: "/dashboard/fireworks-factory-child-labor-rights", icon: IconFireworksFactoryChildLaborRights, color: "#ea580c" },
     ],
   },
   {
