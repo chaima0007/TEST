@@ -14432,6 +14432,29 @@ function IconVrAdvertising({ size = 20 }: { size?: number }) {
   );
 }
 
+function IconShoppableLiveAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="18" r="1.5" fill="currentColor" />
+      <circle cx="16" cy="18" r="1.5" fill="currentColor" />
+      <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+      <circle cx="17" cy="8" r="3" stroke="currentColor" />
+      <path d="M17 6.5v1.5l1 1" />
+    </svg>
+  );
+}
+
+function IconGamingInAppAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="6" width="20" height="13" rx="3" />
+      <path d="M7 12.5v-3M5.5 11h3" />
+      <circle cx="16.5" cy="11" r="1" fill="currentColor" />
+      <circle cx="14" cy="13.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17303,6 +17326,18 @@ const navSections: NavSection[] = [
         label: "VR Advertising",
         href: "/dashboard/vr-advertising-child-labor-rights",
         icon: IconVrAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Shoppable Live Advertising",
+        href: "/dashboard/shoppable-live-advertising-child-labor-rights",
+        icon: IconShoppableLiveAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Gaming In-App Advertising",
+        href: "/dashboard/gaming-in-app-advertising-child-labor-rights",
+        icon: IconGamingInAppAdvertising,
         category: "Publicité Visuelle",
       },
     ],
