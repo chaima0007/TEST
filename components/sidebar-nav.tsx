@@ -3933,6 +3933,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "LOYALTY & AFFILIATE RISK",
+    items: [
+      { href: "/dashboard/loyaltyprogram", label: "Loyalty Program", icon: Icons.IconLoyaltyProgram },
+      { href: "/dashboard/referralmarketing", label: "Referral Marketing", icon: Icons.IconReferralMarketing },
+      { href: "/dashboard/affiliatefraud", label: "Affiliate Fraud", icon: Icons.IconAffiliateFraud },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
