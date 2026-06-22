@@ -15984,6 +15984,22 @@ function IconQuantumadvertisingAdvertising({ size = 18, color = "currentColor" }
     </svg>
   );
 }
+function IconEsportsadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 12h4m-2-2v4"/><circle cx="16" cy="11" r="1"/><circle cx="18" cy="13" r="1"/>
+      <path d="M2 8c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8z"/>
+    </svg>
+  );
+}
+function IconStreamingadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+      <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill={color} stroke="none"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19685,6 +19701,9 @@ const navSections: NavSection[] = [
       { label: "Quantum Advertising", href: "/dashboard/quantumadvertising-advertising", icon: IconQuantumadvertisingAdvertising },
       { label: "Voice Advertising", href: "/dashboard/voiceadvertising-advertising", icon: IconVoiceadvertisingAdvertising },
       { label: "Gaming Advertising", href: "/dashboard/gamingadvertising-advertising", icon: IconGamingadvertisingAdvertising },
+      { label: "Esports Advertising", href: "/dashboard/esportsadvertising-advertising", icon: IconEsportsadvertisingAdvertising },
+      { label: "Streaming Advertising", href: "/dashboard/streamingadvertising-advertising", icon: IconStreamingadvertisingAdvertising },
+      { label: "CTV Advertising", href: "/dashboard/ctvadvertising-advertising", icon: IconCtvadvertisingAdvertising },
     ],
   },
   {
