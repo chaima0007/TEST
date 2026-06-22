@@ -6310,6 +6310,24 @@ function IconMigrantWorkerRights({ className }: { className?: string }) {
   );
 }
 
+// ─── Wave 196 Icons (missing) ────────────────────────────────────────────────
+
+function IconToxicWasteEnvironmentalHealth({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function IconGigWorkersPlatformEconomy({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -9926,6 +9944,30 @@ function IconCorporateImpunityLegal({ className }: { className?: string }) {
   );
 }
 
+function IconWaterAccessRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 3.582-9 8 0 4.418 4.03 8 9 8s9-3.582 9-8c0-4.418-4.03-8-9-8zM6.75 12.75c0 1.864 2.349 3.75 5.25 3.75s5.25-1.886 5.25-3.75" />
+    </svg>
+  );
+}
+
+function IconIndigenousPeoplesRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+    </svg>
+  );
+}
+
+function IconAcademicFreedomSuppression({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11048,6 +11090,22 @@ const navSections: NavSection[] = [
       { href: "/dashboard/child-agricultural-labor-engine", label: "Travail Agricole Enfants", icon: IconChildAgriculturalLabor },
       { href: "/dashboard/digital-surveillance-rights-engine", label: "Surveillance Numérique", icon: IconDigitalSurveillanceMassRights },
       { href: "/dashboard/forced-eviction-land-rights-engine", label: "Expulsion & Droits Fonciers", icon: IconForcedEvictionLandRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 196",
+    items: [
+      { href: "/dashboard/toxic-waste-environmental-health-engine", label: "Déchets Toxiques & Santé", icon: IconToxicWasteEnvironmentalHealth },
+      { href: "/dashboard/prison-labor-rights-engine", label: "Travail Pénitentiaire", icon: IconPrisonLaborRights },
+      { href: "/dashboard/gig-workers-platform-economy-engine", label: "Économie Plateformes", icon: IconGigWorkersPlatformEconomy },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 197",
+    items: [
+      { href: "/dashboard/water-access-rights-engine", label: "Droits d'Accès à l'Eau", icon: IconWaterAccessRights },
+      { href: "/dashboard/indigenous-peoples-rights-engine", label: "Peuples Autochtones", icon: IconIndigenousPeoplesRights },
+      { href: "/dashboard/academic-freedom-suppression-engine", label: "Liberté Académique", icon: IconAcademicFreedomSuppression },
     ],
   },
   {
