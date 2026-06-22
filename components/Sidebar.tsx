@@ -15138,6 +15138,27 @@ function IconSupplychaintechAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconMobilityAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+    </svg>
+  );
+}
+function IconSpacetechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L8.5 8.5 2 9.27l5 4.87-1.18 6.88L12 17.77l6.18 3.25L17 14.14l5-4.87-6.5-.77z"/>
+    </svg>
+  );
+}
+function IconQuantumtechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18345,6 +18366,24 @@ const navSections: NavSection[] = [
         label: "Supplychaintech Advertising",
         href: "/dashboard/supplychaintech-advertising",
         icon: IconSupplychaintechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Mobility Advertising",
+        href: "/dashboard/mobility-advertising",
+        icon: IconMobilityAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Spacetech Advertising",
+        href: "/dashboard/spacetech-advertising",
+        icon: IconSpacetechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Quantumtech Advertising",
+        href: "/dashboard/quantumtech-advertising",
+        icon: IconQuantumtechAdvertising,
         category: "Publicité Visuelle",
       },
       {
