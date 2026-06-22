@@ -15320,6 +15320,27 @@ function IconLivestreamshoppingAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconSubscriptionboxAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    </svg>
+  );
+}
+function IconFlashsaleAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    </svg>
+  );
+}
+function IconGroupbuyingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18689,6 +18710,24 @@ const navSections: NavSection[] = [
         label: "Livestream Shopping Advertising",
         href: "/dashboard/livestreamshopping-advertising",
         icon: IconLivestreamshoppingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Subscription Box Advertising",
+        href: "/dashboard/subscriptionbox-advertising",
+        icon: IconSubscriptionboxAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Flash Sale Advertising",
+        href: "/dashboard/flashsale-advertising",
+        icon: IconFlashsaleAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Group Buying Advertising",
+        href: "/dashboard/groupbuying-advertising",
+        icon: IconGroupbuyingAdvertising,
         category: "Publicité Visuelle",
       },
       {
