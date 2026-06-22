@@ -15976,6 +15976,14 @@ function IconTokenadvertisingAdvertising({ size = 18, color = "currentColor" }: 
     </svg>
   );
 }
+function IconQuantumadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7" strokeDasharray="2 2"/>
+      <path d="M12 5V3"/><path d="M12 21v-2"/><path d="M5 12H3"/><path d="M21 12h-2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19674,6 +19682,9 @@ const navSections: NavSection[] = [
       { label: "Blockchain Advertising", href: "/dashboard/blockchainadvertising-advertising", icon: IconBlockchainadvertisingAdvertising },
       { label: "Decentralized Ads", href: "/dashboard/decentralizedads-advertising", icon: IconDecentralizedadsAdvertising },
       { label: "Token Advertising", href: "/dashboard/tokenadvertising-advertising", icon: IconTokenadvertisingAdvertising },
+      { label: "Quantum Advertising", href: "/dashboard/quantumadvertising-advertising", icon: IconQuantumadvertisingAdvertising },
+      { label: "Voice Advertising", href: "/dashboard/voiceadvertising-advertising", icon: IconVoiceadvertisingAdvertising },
+      { label: "Gaming Advertising", href: "/dashboard/gamingadvertising-advertising", icon: IconGamingadvertisingAdvertising },
     ],
   },
   {
