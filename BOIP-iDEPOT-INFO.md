@@ -16,7 +16,8 @@ Plateforme IA CaelumSwarm conformite CSDDD 2024. Algorithme scoring 8 entites. 3
 **Contact :** legal@caelumpartners.eu
 
 ## Date de dépôt
-**Déposé le : 22 juin 2026**
+**Déposé le : 22 juin 2026 à 19:04**
+**Référence paiement BOIP : 4009X0062X8234**
 **Expiration : 22 juin 2031** ← RENOUVELER AVANT CETTE DATE
 
 ## Rappel renouvellement
