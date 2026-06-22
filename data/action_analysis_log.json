@@ -1,0 +1,134 @@
+[
+  {
+    "timestamp": "2026-06-22T23:35:05.184739",
+    "action": "git push sidebar fix",
+    "target": "sidebar-icons-4.tsx",
+    "decision": "AUTORISÉ",
+    "agents": [
+      {
+        "agent": "IMPACT",
+        "risk_score": 0.15,
+        "level": "FAIBLE",
+        "reversible": true,
+        "approval_required": false
+      },
+      {
+        "agent": "DEPS",
+        "dependencies": [
+          "components/sidebar-icons*.tsx",
+          "components/sidebar-nav.tsx",
+          "components/Sidebar.tsx",
+          "CI: nextjs-build"
+        ],
+        "cascade_count": 4,
+        "high_cascade": true
+      },
+      {
+        "agent": "PROTOCOL",
+        "status": "OK",
+        "violations": [],
+        "warnings": []
+      },
+      {
+        "agent": "QUANTUM",
+        "simulations": 10000,
+        "success_rate": 96.0,
+        "approved": true,
+        "confidence": "96.0%"
+      },
+      {
+        "agent": "ROLLBACK",
+        "plan": "git checkout HEAD~1 -- components/sidebar-icons-*.tsx && git push --force-with-lease",
+        "estimated_recovery_min": 2
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-22T23:35:05.217802",
+    "action": "git commit engine fix",
+    "target": "swarm/intelligence engine",
+    "decision": "AUTORISÉ",
+    "agents": [
+      {
+        "agent": "IMPACT",
+        "risk_score": 0.15,
+        "level": "FAIBLE",
+        "reversible": true,
+        "approval_required": false
+      },
+      {
+        "agent": "DEPS",
+        "dependencies": [
+          "swarm/intelligence/*.py",
+          "CI: python-tests",
+          "data/library_index.json"
+        ],
+        "cascade_count": 3,
+        "high_cascade": false
+      },
+      {
+        "agent": "PROTOCOL",
+        "status": "OK",
+        "violations": [],
+        "warnings": []
+      },
+      {
+        "agent": "QUANTUM",
+        "simulations": 10000,
+        "success_rate": 96.4,
+        "approved": true,
+        "confidence": "96.4%"
+      },
+      {
+        "agent": "ROLLBACK",
+        "plan": "git checkout HEAD~1 -- swarm/intelligence/<engine>.py && python3 <engine>.py",
+        "estimated_recovery_min": 2
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-22T23:35:05.252939",
+    "action": "delete engine",
+    "target": "swarm/intelligence/test_engine.py",
+    "decision": "BLOQUÉ",
+    "agents": [
+      {
+        "agent": "IMPACT",
+        "risk_score": 0.9,
+        "level": "CRITIQUE",
+        "reversible": false,
+        "approval_required": true
+      },
+      {
+        "agent": "DEPS",
+        "dependencies": [
+          "swarm/intelligence/*.py",
+          "CI: python-tests",
+          "data/library_index.json"
+        ],
+        "cascade_count": 3,
+        "high_cascade": false
+      },
+      {
+        "agent": "PROTOCOL",
+        "status": "WARNING",
+        "violations": [],
+        "warnings": [
+          "Suppression engine — vérifier versioning DB d'abord"
+        ]
+      },
+      {
+        "agent": "QUANTUM",
+        "simulations": 10000,
+        "success_rate": 74.0,
+        "approved": false,
+        "confidence": "74.0%"
+      },
+      {
+        "agent": "ROLLBACK",
+        "plan": "git checkout HEAD~1 -- swarm/intelligence/<engine>.py && python3 <engine>.py",
+        "estimated_recovery_min": 2
+      }
+    ]
+  }
+]
