@@ -13882,6 +13882,68 @@ function IconUserGeneratedContent({ className }: { className?: string }) {
   );
 }
 
+function IconDigitalOutOfHome({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="3" width="12" height="7" rx="1" />
+      <line x1="5" y1="12" x2="11" y2="12" />
+      <line x1="8" y1="10" x2="8" y2="12" />
+      <circle cx="12" cy="4" r="1" fill="#dc2626" stroke="none" />
+    </svg>
+  );
+}
+
+function IconProgrammaticAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 4h3v8H2zM6.5 6h3v6h-3zM11 2h3v10h-3z" />
+    </svg>
+  );
+}
+
+function IconPerformanceMarketing({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <polyline points="2,12 6,8 9,10 14,4" />
+      <polyline points="11,4 14,4 14,7" />
+    </svg>
+  );
+}
+
+function IconSocialMediaBenchmarking({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="9" width="3" height="5" />
+      <rect x="6" y="6" width="3" height="8" />
+      <rect x="11" y="3" width="3" height="11" />
+      <polyline points="2.5,8 7.5,5 12.5,2" />
+    </svg>
+  );
+}
+
+function IconTrendingContentRadar({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <circle cx="8" cy="8" r="3.5" />
+      <circle cx="8" cy="8" r="1" fill="currentColor" stroke="none" />
+      <line x1="8" y1="2" x2="8" y2="0.5" />
+      <line x1="11" y1="5" x2="12.5" y2="3.5" />
+    </svg>
+  );
+}
+
+function IconBrandImageOptimizer({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="5" />
+      <path d="M8 5v3l2 2" />
+      <path d="M11.5 2.5l1 1" />
+      <path d="M4.5 2.5l-1 1" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16454,6 +16516,47 @@ const navSections: NavSection[] = [
         href: "/dashboard/user-generated-content-child-labor-rights",
         icon: IconUserGeneratedContent,
         category: "Publicité Visuelle",
+      },
+      {
+        label: "Digital Out-of-Home",
+        href: "/dashboard/digital-out-of-home-advertising-child-labor-rights",
+        icon: IconDigitalOutOfHome,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Programmatic Advertising",
+        href: "/dashboard/programmatic-advertising-child-labor-rights",
+        icon: IconProgrammaticAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Performance Marketing",
+        href: "/dashboard/performance-marketing-child-labor-rights",
+        icon: IconPerformanceMarketing,
+        category: "Publicité Visuelle",
+      },
+    ],
+  },
+  {
+    title: "INTELLIGENCE MARQUE",
+    items: [
+      {
+        label: "Benchmarking Réseaux Sociaux",
+        href: "/dashboard/social-media-benchmarking",
+        icon: IconSocialMediaBenchmarking,
+        category: "Intelligence Marque",
+      },
+      {
+        label: "Radar Contenus Tendance",
+        href: "/dashboard/trending-content-radar",
+        icon: IconTrendingContentRadar,
+        category: "Intelligence Marque",
+      },
+      {
+        label: "Optimiseur Image de Marque",
+        href: "/dashboard/brand-image-optimizer",
+        icon: IconBrandImageOptimizer,
+        category: "Intelligence Marque",
       },
     ],
   },
