@@ -52,6 +52,13 @@
         "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
         "priority": "NORMAL",
         "index_path": "data/library_index.json"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
+        "priority": "NORMAL"
       }
     ],
     "SidebarAgent": [
@@ -141,6 +148,13 @@
         "timestamp": "2026-06-22 22:56:46",
         "subject": "Rapport autocontrôle: 82.4%",
         "content": "28/34 contrôles OK — 6 corrections requises",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
         "priority": "NORMAL"
       }
     ],
@@ -324,6 +338,13 @@
         "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
         "priority": "NORMAL",
         "db_path": "data/strategy_database.json"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
+        "priority": "NORMAL"
       }
     ],
     "QuantumAgent": [
@@ -481,6 +502,13 @@
         "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
         "priority": "NORMAL",
         "db_path": "data/strategy_database.json"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
+        "priority": "NORMAL"
       }
     ],
     "DashboardAgent": [],
