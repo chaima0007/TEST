@@ -10588,6 +10588,30 @@ function IconSanitationHygieneRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconHumanTraffickingRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M6 20v-2a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v2"/><path d="M3 17l2-2 2 2"/><path d="M19 17l2-2 2 2"/>
+    </svg>
+  );
+}
+
+function IconRightToEducationRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>
+  );
+}
+
+function IconSocialSecurityRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11966,6 +11990,14 @@ const navSections: NavSection[] = [
       { label: "Mariage Enfants & MGF", href: "/dashboard/child-marriage-rights-engine", icon: IconChildMarriageRights },
       { label: "Liberté Expression", href: "/dashboard/freedom-expression-rights-engine", icon: IconFreedomExpressionRights },
       { label: "Assainissement & Hygiène", href: "/dashboard/sanitation-hygiene-rights-engine", icon: IconSanitationHygieneRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 228",
+    items: [
+      { label: "Traite des Êtres Humains", href: "/dashboard/human-trafficking-rights-engine", icon: IconHumanTraffickingRights },
+      { label: "Droit à l'Éducation", href: "/dashboard/right-to-education-rights-engine", icon: IconRightToEducationRights },
+      { label: "Protection Sociale", href: "/dashboard/social-security-rights-engine", icon: IconSocialSecurityRights },
     ],
   },
   {
