@@ -16028,6 +16028,30 @@ function IconRedditadvertisingAdvertising({ size = 18, color = "currentColor" }:
     </svg>
   );
 }
+function IconLinkedinadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+      <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+    </svg>
+  );
+}
+function IconSnapchatadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8 2 6 5 6 8v1c-1 0-2 .5-2 1s1 1.5 2 1.5c-.5 1-1.5 2-3 2.5 1 .5 3 1 5 .5 0 0 1 2 4 2s4-2 4-2c2 .5 4 0 5-.5-1.5-.5-2.5-1.5-3-2.5 1 0 2-.5 2-1.5s-1-1-2-1V8c0-3-2-6-6-6z"/>
+    </svg>
+  );
+}
+function IconSpotifyadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M8 11.5c2.5-1 5.5-1 8 0"/><path d="M7 14.5c3-1.2 6.5-1.2 9.5 0"/>
+      <path d="M9 8.5c2-0.8 5-0.8 7 0"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19735,6 +19759,9 @@ const navSections: NavSection[] = [
       { label: "X Advertising", href: "/dashboard/xadvertising-advertising", icon: IconXadvertisingAdvertising },
       { label: "Pinterest Advertising", href: "/dashboard/pinterestadvertising-advertising", icon: IconPinterestadvertisingAdvertising },
       { label: "Reddit Advertising", href: "/dashboard/redditadvertising-advertising", icon: IconRedditadvertisingAdvertising },
+      { label: "LinkedIn Advertising", href: "/dashboard/linkedinadvertising-advertising", icon: IconLinkedinadvertisingAdvertising },
+      { label: "Snapchat Advertising", href: "/dashboard/snapchatadvertising-advertising", icon: IconSnapchatadvertisingAdvertising },
+      { label: "Spotify Advertising", href: "/dashboard/spotifyadvertising-advertising", icon: IconSpotifyadvertisingAdvertising },
     ],
   },
   {
