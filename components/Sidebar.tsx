@@ -15502,6 +15502,27 @@ function IconDisplayadsAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconSearchadsAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+  );
+}
+function IconShoppingadsAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+    </svg>
+  );
+}
+function IconVideoadsAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19137,6 +19158,9 @@ const navSections: NavSection[] = [
       { label: "Push Notification Advertising", href: "/dashboard/pushnotification-advertising", icon: IconPushnotificationAdvertising },
       { label: "Retargeting Advertising", href: "/dashboard/retargeting-advertising", icon: IconRetargetingAdvertising },
       { label: "Display Ads Advertising", href: "/dashboard/displayads-advertising", icon: IconDisplayadsAdvertising },
+      { label: "Search Ads Advertising", href: "/dashboard/searchads-advertising", icon: IconSearchadsAdvertising },
+      { label: "Shopping Ads Advertising", href: "/dashboard/shoppingads-advertising", icon: IconShoppingadsAdvertising },
+      { label: "Video Ads Advertising", href: "/dashboard/videoads-advertising", icon: IconVideoadsAdvertising },
     ],
   },
   {
