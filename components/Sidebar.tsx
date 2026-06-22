@@ -13297,6 +13297,47 @@ function IconSheaNutHarvestingChildLaborRights({ size = 20, color = "currentColo
   );
 }
 
+function IconSisalFiberHarvestingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22 L12 4" />
+      <path d="M12 8 Q7 7 5 4" />
+      <path d="M12 8 Q17 7 19 4" />
+      <path d="M12 13 Q7 12 5 9" />
+      <path d="M12 13 Q17 12 19 9" />
+      <path d="M12 18 Q8 17 7 14" />
+      <path d="M12 18 Q16 17 17 14" />
+    </svg>
+  );
+}
+
+function IconAbacaFiberExtractionChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={6} y1={4} x2={6} y2={20} />
+      <line x1={10} y1={4} x2={10} y2={20} />
+      <line x1={14} y1={4} x2={14} y2={20} />
+      <line x1={18} y1={4} x2={18} y2={20} />
+      <path d="M4 8 Q12 6 20 8" />
+      <path d="M4 14 Q12 12 20 14" />
+      <path d="M4 20 Q12 18 20 20" />
+    </svg>
+  );
+}
+
+function IconHempCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={10} />
+      <path d="M12 10 Q7 7 4 8 Q6 4 9 6 Q7 2 12 2 Q17 2 15 6 Q18 4 20 8 Q17 7 12 10" />
+      <path d="M9 13 Q6 11 4 12" />
+      <path d="M15 13 Q18 11 20 12" />
+      <path d="M10 17 Q8 15 6 16" />
+      <path d="M14 17 Q16 15 18 16" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15581,6 +15622,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Karité",
         icon: IconSheaNutHarvestingChildLaborRights,
         color: "#92400e",
+      },
+      {
+        href: "/dashboard/sisal-fiber-child-labor-rights",
+        label: "Droits Enfants Fibre Sisal",
+        icon: IconSisalFiberHarvestingChildLaborRights,
+        color: "#713f12",
+      },
+      {
+        href: "/dashboard/abaca-fiber-child-labor-rights",
+        label: "Droits Enfants Fibre Abaca",
+        icon: IconAbacaFiberExtractionChildLaborRights,
+        color: "#166534",
+      },
+      {
+        href: "/dashboard/hemp-cultivation-child-labor-rights",
+        label: "Droits Enfants Culture Chanvre",
+        icon: IconHempCultivationChildLaborRights,
+        color: "#3f6212",
       },
     ],
   },
