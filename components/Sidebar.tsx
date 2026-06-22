@@ -14724,6 +14724,36 @@ function IconDiversityEquityInclusionAdvertising({ size = 18, color = "currentCo
   );
 }
 
+function IconLuxuryAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </svg>
+  );
+}
+function IconSportsSponsorshipAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M4.93 4.93l4.24 4.24"/>
+      <path d="M14.83 9.17l4.24-4.24"/>
+      <path d="M14.83 14.83l4.24 4.24"/>
+      <path d="M9.17 14.83l-4.24 4.24"/>
+    </svg>
+  );
+}
+function IconGamingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="6" width="20" height="12" rx="2"/>
+      <path d="M6 12h4"/>
+      <path d="M8 10v4"/>
+      <circle cx="15" cy="12" r="1" fill={color}/>
+      <circle cx="18" cy="12" r="1" fill={color}/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17613,6 +17643,24 @@ const navSections: NavSection[] = [
         label: "DEI Advertising",
         href: "/dashboard/diversity-equity-inclusion-advertising-child-labor-rights",
         icon: IconDiversityEquityInclusionAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Luxury Advertising",
+        href: "/dashboard/luxury-advertising-child-labor-rights",
+        icon: IconLuxuryAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Sports Sponsorship Advertising",
+        href: "/dashboard/sports-sponsorship-advertising-child-labor-rights",
+        icon: IconSportsSponsorshipAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Gaming Advertising",
+        href: "/dashboard/gaming-advertising-child-labor-rights",
+        icon: IconGamingAdvertising,
         category: "Publicité Visuelle",
       },
       {
