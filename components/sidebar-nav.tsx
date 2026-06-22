@@ -3865,6 +3865,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/identityresolution", label: "Identity Resolution", icon: Icons.IconIdentityResolution },
       { href: "/dashboard/audienceseg", label: "Audience Segmentation", icon: Icons.IconAudienceSeg },
       { href: "/dashboard/lookalike", label: "Lookalike Modeling", icon: Icons.IconLookalike },
+      { href: "/dashboard/dataprivacyads", label: "Data Privacy Ads", icon: Icons.IconDataPrivacyAds },
+      { href: "/dashboard/gdprcompliance", label: "GDPR Compliance", icon: Icons.IconGdprCompliance },
+      { href: "/dashboard/consentmanagement", label: "Consent Management", icon: Icons.IconConsentManagement },
     ],
   },
   {
