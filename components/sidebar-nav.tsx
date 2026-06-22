@@ -4013,6 +4013,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "SUPPLY CHAIN DUE DILIGENCE",
+    items: [
+      { href: "/dashboard/supplieraudit", label: "Supplier Audit", icon: Icons.IconSupplierAudit },
+      { href: "/dashboard/traceability", label: "Traceability", icon: Icons.IconTraceability },
+      { href: "/dashboard/conflictminerals", label: "Conflict Minerals", icon: Icons.IconConflictMinerals },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
