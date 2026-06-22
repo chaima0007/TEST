@@ -13067,6 +13067,28 @@ function IconMustardSeedHarvestingChildLaborRights({ size = 18 }: { size?: numbe
   );
 }
 
+function IconFlaxseedCultivationLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V8M9 5c0 0 0-3 3-3s3 3 3 3-1 3-3 3-3-3-3-3z"/>
+    </svg>
+  );
+}
+function IconPoppySeedHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="5"/><path d="M12 13v9M9 19h6"/>
+    </svg>
+  );
+}
+function IconCarawayCultivationLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 3l7 18L19 3M8 12h8"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15207,6 +15229,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/mustard-seed-harvesting-child-labor-rights",
         icon: IconMustardSeedHarvestingChildLaborRights,
         color: "#ca8a04",
+      },
+      {
+        label: "Flaxseed Cultivation Labor",
+        href: "/dashboard/flaxseed-cultivation-labor-rights",
+        icon: IconFlaxseedCultivationLaborRights,
+        color: "#0369a1",
+      },
+      {
+        label: "Poppy Seed Harvesting Child Labor",
+        href: "/dashboard/poppy-seed-harvesting-child-labor-rights",
+        icon: IconPoppySeedHarvestingChildLaborRights,
+        color: "#dc2626",
+      },
+      {
+        label: "Caraway Cultivation Labor",
+        href: "/dashboard/caraway-cultivation-labor-rights",
+        icon: IconCarawayCultivationLaborRights,
+        color: "#166534",
       },
     ],
   },
