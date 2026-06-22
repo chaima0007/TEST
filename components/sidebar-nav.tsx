@@ -3842,6 +3842,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "DATA RISK",
+    items: [
+      { href: "/dashboard/firstpartydata", label: "First-Party Data", icon: Icons.IconFirstPartyData },
+      { href: "/dashboard/zeropartydata", label: "Zero-Party Data", icon: Icons.IconZeroPartyData },
+      { href: "/dashboard/contextualint", label: "Contextual Intel", icon: Icons.IconContextualInt },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
