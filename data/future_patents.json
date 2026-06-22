@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-22T23:52:42.384397",
+  "timestamp": "2026-06-22T23:53:59.126648",
   "patents": [
     {
       "title": "Méthode d'audit automatisé chaîne d'approvisionnement par agents IA distribués — CSDDD",
@@ -14,9 +14,9 @@
         "years_ahead": 0
       },
       "monte_carlo": {
-        "grant_probability": 83.1,
-        "litigation_risk": 15.1,
-        "expected_value_m": 350.0,
+        "grant_probability": 82.9,
+        "litigation_risk": 15.2,
+        "expected_value_m": 349.9,
         "approved": true
       },
       "draft_claims": {
@@ -45,9 +45,9 @@
         "years_ahead": 0
       },
       "monte_carlo": {
-        "grant_probability": 78.6,
+        "grant_probability": 78.8,
         "litigation_risk": 15.0,
-        "expected_value_m": 244.2,
+        "expected_value_m": 243.9,
         "approved": true
       },
       "draft_claims": {
@@ -76,9 +76,9 @@
         "years_ahead": 1
       },
       "monte_carlo": {
-        "grant_probability": 73.2,
-        "litigation_risk": 14.6,
-        "expected_value_m": 177.9,
+        "grant_probability": 73.0,
+        "litigation_risk": 15.3,
+        "expected_value_m": 177.4,
         "approved": true
       },
       "draft_claims": {
@@ -107,9 +107,9 @@
         "years_ahead": 1
       },
       "monte_carlo": {
-        "grant_probability": 68.6,
-        "litigation_risk": 15.1,
-        "expected_value_m": 147.6,
+        "grant_probability": 68.8,
+        "litigation_risk": 15.2,
+        "expected_value_m": 147.2,
         "approved": true
       },
       "draft_claims": {
@@ -138,9 +138,9 @@
         "years_ahead": 2
       },
       "monte_carlo": {
-        "grant_probability": 51.7,
-        "litigation_risk": 15.3,
-        "expected_value_m": 111.7,
+        "grant_probability": 51.9,
+        "litigation_risk": 15.1,
+        "expected_value_m": 111.6,
         "approved": true
       },
       "draft_claims": {
@@ -169,8 +169,8 @@
         "years_ahead": 2
       },
       "monte_carlo": {
-        "grant_probability": 42.6,
-        "litigation_risk": 15.0,
+        "grant_probability": 42.8,
+        "litigation_risk": 15.1,
         "expected_value_m": 83.7,
         "approved": false
       },
@@ -200,9 +200,9 @@
         "years_ahead": 3
       },
       "monte_carlo": {
-        "grant_probability": 25.7,
-        "litigation_risk": 15.4,
-        "expected_value_m": 62.2,
+        "grant_probability": 25.5,
+        "litigation_risk": 14.7,
+        "expected_value_m": 62.5,
         "approved": false
       },
       "draft_claims": {
@@ -231,9 +231,9 @@
         "years_ahead": 4
       },
       "monte_carlo": {
-        "grant_probability": 9.3,
-        "litigation_risk": 14.6,
-        "expected_value_m": 62.5,
+        "grant_probability": 9.5,
+        "litigation_risk": 14.9,
+        "expected_value_m": 62.7,
         "approved": false
       },
       "draft_claims": {
@@ -252,7 +252,7 @@
   ],
   "summary": {
     "avg_composite": 61.03,
-    "total_expected_value_m": 1239.8,
+    "total_expected_value_m": 1238.9,
     "immediate_filings": [
       "Méthode d'audit automatisé chaîne d'approvisionnem",
       "Algorithme de scoring ESG quantique pour portefeui",
@@ -260,7 +260,7 @@
       "Système de détection travail forcé par vision par "
     ],
     "filing_cost_usd": 120000,
-    "roi_portfolio": 10332.0
+    "roi_portfolio": 10324.0
   },
   "protocol": "Monte Carlo 50K sims | Agent timing optimal | Revendications virtuelles auto-générées"
 }
