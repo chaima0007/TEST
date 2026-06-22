@@ -3766,6 +3766,9 @@ export const navSections: NavSection[] = [
       { label: "Micro-Moment Marketing", href: "/dashboard/micromoment-advertising", icon: Icons.IconMicromomentAdvertising },
       { label: "Personalized Advertising", href: "/dashboard/personalizedadv-advertising", icon: Icons.IconPersonalizedadvAdvertising },
       { label: "Interactive Advertising", href: "/dashboard/interactiveadv-advertising", icon: Icons.IconInteractiveadvAdvertising },
+      { label: "Loyalty Program Advertising", href: "/dashboard/loyaltyprogram-advertising", icon: Icons.IconLoyaltyprogramAdvertising },
+      { label: "Multi-Touch Attribution", href: "/dashboard/multitouch-advertising", icon: Icons.IconMultitouchAdvertising },
+      { label: "Omnichannel Advertising", href: "/dashboard/omnichannel-advertising", icon: Icons.IconOmnichannelAdvertising },
     ],
   },
   {
