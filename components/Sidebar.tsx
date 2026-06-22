@@ -12772,6 +12772,39 @@ function IconFireworksFactoryChildLaborRights({ size = 18, color = "#ea580c" }: 
   );
 }
 
+function IconGlowingBlowingSilicosisRights({ size = 18, color = "#0891b2" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="10" r="5" />
+      <path d="M12 15v7M9 20h6" />
+      <path d="M8 6 Q6 3 8 2M16 6 Q18 3 16 2" />
+    </svg>
+  );
+}
+
+function IconAzoDyeTextileWorkerRights({ size = 18, color = "#7c3aed" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="8" width="18" height="10" rx="2" />
+      <path d="M3 12h18" />
+      <path d="M8 8V6a4 4 0 0 1 8 0v2" />
+      <circle cx="8" cy="16" r="1.5" />
+      <circle cx="16" cy="16" r="1.5" />
+    </svg>
+  );
+}
+
+function IconLeadBatteryRecyclingRights({ size = 18, color = "#64748b" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="7" width="16" height="11" rx="2" />
+      <path d="M8 7V5M16 7V5" />
+      <path d="M8 13h2M14 13h2M10 11v4" />
+      <path d="M17 3 Q20 6 17 9M7 3 Q4 6 7 9" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14750,6 +14783,14 @@ const navSections: NavSection[] = [
       { label: "Droits Enfants Fabrication Encens", href: "/dashboard/incense-stick-child-labor-rights", icon: IconIncenseStickChildLaborRights, color: "#6d28d9" },
       { label: "Droits Travailleurs Phosphore Allumettes", href: "/dashboard/match-factory-phosphorus-rights", icon: IconMatchFactoryPhosphorusRights, color: "#dc2626" },
       { label: "Droits Enfants Fabriques Feux d&apos;Artifice", href: "/dashboard/fireworks-factory-child-labor-rights", icon: IconFireworksFactoryChildLaborRights, color: "#ea580c" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 303",
+    items: [
+      { label: "Droits Souffleurs Verre Silicose", href: "/dashboard/glass-blowing-silicosis-rights", icon: IconGlowingBlowingSilicosisRights, color: "#0891b2" },
+      { label: "Droits Travailleurs Textiles Colorants Azo", href: "/dashboard/azo-dye-textile-worker-rights", icon: IconAzoDyeTextileWorkerRights, color: "#7c3aed" },
+      { label: "Droits Recycleurs Batteries Plomb", href: "/dashboard/lead-battery-recycling-rights", icon: IconLeadBatteryRecyclingRights, color: "#64748b" },
     ],
   },
   {
