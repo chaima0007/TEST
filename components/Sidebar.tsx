@@ -12283,6 +12283,40 @@ function IconQuinoaLandGrabRights() {
   );
 }
 
+function IconBananaPesticidePoisoningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#eab308" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2C7 2 4 6 4 10c0 5 4 8 8 10 4-2 8-5 8-10 0-4-3-8-8-8z" />
+      <path d="M12 7v5" />
+      <circle cx="12" cy="15" r="1" />
+    </svg>
+  );
+}
+
+function IconGrapeHarvestLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="9" cy="11" r="2" />
+      <circle cx="15" cy="11" r="2" />
+      <circle cx="12" cy="15" r="2" />
+      <circle cx="9" cy="7" r="2" />
+      <circle cx="15" cy="7" r="2" />
+      <path d="M12 3c2 0 3 1 3 2" />
+    </svg>
+  );
+}
+
+function IconSeafoodSupplyChainRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M2 12c2-4 6-6 10-6s8 2 10 6c-2 4-6 6-10 6S4 16 2 12z" />
+      <circle cx="12" cy="12" r="2" />
+      <path d="M20 12l2 2-2 2" />
+      <path d="M4 12L2 10l2-2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14149,6 +14183,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/soy-farming-deforestation-rights", label: "Déforestation Soja", icon: IconSoyFarmingDeforestationRights },
       { href: "/dashboard/avocado-water-theft-rights", label: "Vol d'Eau Avocats", icon: IconAvocadoWaterTheftRights },
       { href: "/dashboard/quinoa-land-grab-rights", label: "Accaparement Terres Quinoa", icon: IconQuinoaLandGrabRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 289",
+    items: [
+      { href: "/dashboard/banana-pesticide-poisoning-rights", label: "Empoisonnement Pesticides Banane", icon: IconBananaPesticidePoisoningRights },
+      { href: "/dashboard/grape-harvest-labor-rights", label: "Droits Vendangeurs Migrants", icon: IconGrapeHarvestLaborRights },
+      { href: "/dashboard/seafood-supply-chain-rights", label: "Droits Chaîne Fruits de Mer", icon: IconSeafoodSupplyChainRights },
     ],
   },
   {
