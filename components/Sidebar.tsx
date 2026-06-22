@@ -11638,6 +11638,24 @@ function IconSexualExploitationSupplyChainRights() {
   );
 }
 
+function IconPesticideExposureRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 22V12M12 12C12 12 7 9 7 4h10c0 5-5 8-5 8z" />
+      <path d="M7 4C7 4 4 6 4 10" />
+      <path d="M17 4C17 4 20 6 20 10" />
+    </svg>
+  );
+}
+
+function IconGarmentWorkerRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13336,6 +13354,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/water-privatization-rights", label: "Privatisation de l'Eau", icon: IconWaterPrivatizationRights },
       { href: "/dashboard/artisanal-mining-rights", label: "Mines Artisanales", icon: IconArtisanalMiningRights },
       { href: "/dashboard/sexual-exploitation-supply-chain", label: "Exploitation Sexuelle", icon: IconSexualExploitationSupplyChainRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 268",
+    items: [
+      { href: "/dashboard/pesticide-exposure-rights", label: "Exposition aux Pesticides", icon: IconPesticideExposureRights },
+      { href: "/dashboard/garment-worker-rights", label: "Travailleurs du Textile", icon: IconGarmentWorkerRights },
+      { href: "/dashboard/cobalt-mining-rights", label: "Mines de Cobalt", icon: IconCobaltMiningRights },
     ],
   },
   {
