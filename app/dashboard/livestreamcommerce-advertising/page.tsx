@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#ec4899";
-const DOMAIN = "socialcommerce-advertising";
-const TITLE = "Social Commerce Advertising";
+const COLOR = "#8b5cf6";
+const DOMAIN = "livestreamcommerce-advertising";
+const TITLE = "Livestream Commerce Advertising";
 
-type Entity = { name: string; composite_score: number; risk_level: string; estimated_socialcommerce_index: number };
+type Entity = { name: string; composite_score: number; risk_level: string; estimated_livestreamcommerce_index: number };
 type Data = { entities: Entity[]; avg_composite: number; distribution: Record<string, number> };
 
 function GaugeRing({ value, color }: { value: number; color: string }) {
@@ -52,7 +52,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         </div>
         {tab==="scores" && (
           <div style={{ display:"flex",flexDirection:"column",gap:10 }}>
-            {[["Score composite",entity.composite_score],["Indice social commerce",entity.estimated_socialcommerce_index]].map(([label,val])=>(
+            {[["Score composite",entity.composite_score],["Indice livestream",entity.estimated_livestreamcommerce_index]].map(([label,val])=>(
               <div key={String(label)} style={{ background:"#f8fafc",borderRadius:8,padding:"10px 16px" }}>
                 <div style={{ fontSize:12,color:"#6b7280",marginBottom:4 }}>{label}</div>
                 <div style={{ fontSize:20,fontWeight:700,color:COLOR }}>{val}</div>
@@ -63,7 +63,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         {tab==="signaux" && (
           <div style={{ fontSize:14,color:"#374151",lineHeight:1.7 }}>
             <p><strong>Niveau de risque :</strong> <span style={{ color: entity.risk_level==="critique"?"#dc2626":entity.risk_level==="élevé"?"#d97706":entity.risk_level==="modéré"?"#2563eb":"#16a34a",fontWeight:700 }}>{entity.risk_level.toUpperCase()}</span></p>
-            <p>Analyse conformité CSDDD pour la chaîne d&apos;approvisionnement social commerce. Risques liés aux conditions de travail des micro-influenceurs et partenaires de marque.</p>
+            <p>Analyse conformité CSDDD pour la chaîne d&apos;approvisionnement livestream commerce. Risques liés aux conditions de travail des créateurs et prestataires logistiques.</p>
           </div>
         )}
         {tab==="certs" && (
@@ -78,9 +78,9 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         )}
         {tab==="actions" && (
           <div style={{ fontSize:14,color:"#374151",lineHeight:1.8 }}>
-            <p>• Auditer les conditions de travail des micro-influenceurs</p>
-            <p>• Vérifier les pratiques des marques partenaires</p>
-            <p>• Mettre en place un code de conduite social commerce</p>
+            <p>• Auditer les conditions de travail des créateurs de contenu live</p>
+            <p>• Vérifier les pratiques des prestataires logistiques partenaires</p>
+            <p>• Mettre en place un code de conduite livestream commerce</p>
             <p>• Certifier ISO 26000 pour la plateforme et ses fournisseurs clés</p>
           </div>
         )}
@@ -89,7 +89,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function SocialcommerceAdvertisingPage() {
+export default function LivestreamcommerceAdvertisingPage() {
   const [data, setData] = useState<Data | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
 
@@ -102,7 +102,7 @@ export default function SocialcommerceAdvertisingPage() {
   return (
     <div style={{ padding:32,fontFamily:"sans-serif",maxWidth:1100,margin:"0 auto" }}>
       <h1 style={{ fontSize:26,fontWeight:"bold",color:"#1e293b",marginBottom:4 }}>{TITLE}</h1>
-      <p style={{ color:"#6b7280",marginBottom:28 }}>Analyse conformité CSDDD 2024/1760 — Chaîne d&apos;approvisionnement Social Commerce</p>
+      <p style={{ color:"#6b7280",marginBottom:28 }}>Analyse conformité CSDDD 2024/1760 — Chaîne d&apos;approvisionnement Livestream Commerce</p>
 
       {data ? (
         <>
