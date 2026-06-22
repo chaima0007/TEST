@@ -13414,6 +13414,45 @@ function IconWoolScouringChildLaborRights({ size = 20, color = "currentColor" }:
   );
 }
 
+function IconLeatherTanningChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={3} y={5} width={18} height={14} rx={3} />
+      <path d="M3 9 Q12 7 21 9" />
+      <path d="M3 13 Q12 11 21 13" />
+      <path d="M3 17 Q12 15 21 17" />
+      <circle cx={7} cy={5} r={1} />
+      <circle cx={17} cy={5} r={1} />
+    </svg>
+  );
+}
+
+function IconSilkReelingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx={12} cy={12} rx={8} ry={5} />
+      <ellipse cx={12} cy={12} rx={5} ry={3} />
+      <ellipse cx={12} cy={12} rx={2} ry={1} />
+      <line x1={12} y1={7} x2={12} y2={2} />
+      <line x1={20} y1={12} x2={23} y2={12} />
+    </svg>
+  );
+}
+
+function IconCashmereCombingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={2} y={4} width={20} height={4} rx={1} />
+      <line x1={5} y1={8} x2={5} y2={20} />
+      <line x1={8} y1={8} x2={8} y2={20} />
+      <line x1={11} y1={8} x2={11} y2={20} />
+      <line x1={14} y1={8} x2={14} y2={20} />
+      <line x1={17} y1={8} x2={17} y2={20} />
+      <line x1={20} y1={8} x2={20} y2={20} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15752,6 +15791,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Lavage Laine",
         icon: IconWoolScouringChildLaborRights,
         color: "#7c3aed",
+      },
+      {
+        href: "/dashboard/leather-tanning-child-labor-rights",
+        label: "Droits Enfants Tannage Cuir",
+        icon: IconLeatherTanningChildLaborRights,
+        color: "#92400e",
+      },
+      {
+        href: "/dashboard/silk-reeling-child-labor-rights",
+        label: "Droits Enfants Dévidage Soie",
+        icon: IconSilkReelingChildLaborRights,
+        color: "#7c3aed",
+      },
+      {
+        href: "/dashboard/cashmere-combing-child-labor-rights",
+        label: "Droits Enfants Peignage Cachemire",
+        icon: IconCashmereCombingChildLaborRights,
+        color: "#0e7490",
       },
     ],
   },
