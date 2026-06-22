@@ -13528,6 +13528,41 @@ function IconWeldDyeCultivationChildLaborRights({ size = 20, color = "currentCol
   );
 }
 
+function IconCommercialPhotographyChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={2} y={7} width={20} height={14} rx={2} />
+      <path d="M16 7 L14 4 L10 4 L8 7" />
+      <circle cx={12} cy={14} r={4} />
+      <circle cx={12} cy={14} r={1.5} />
+    </svg>
+  );
+}
+
+function IconAdvertisingModelingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx={12} cy={5} r={3} />
+      <line x1={12} y1={8} x2={12} y2={16} />
+      <path d="M8 11 L12 13 L16 11" />
+      <line x1={12} y1={16} x2={9} y2={22} />
+      <line x1={12} y1={16} x2={15} y2={22} />
+    </svg>
+  );
+}
+
+function IconAdvertisingVideoProductionChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={2} y={6} width={14} height={12} rx={2} />
+      <path d="M16 10 L22 7 L22 17 L16 14" />
+      <line x1={6} y1={2} x2={6} y2={6} />
+      <line x1={10} y1={2} x2={10} y2={6} />
+      <line x1={6} y1={2} x2={10} y2={2} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15920,6 +15955,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Culture Gaude",
         icon: IconWeldDyeCultivationChildLaborRights,
         color: "#854d0e",
+      },
+      {
+        href: "/dashboard/commercial-photography-child-labor-rights",
+        label: "Droits Enfants Photographie Commerciale",
+        icon: IconCommercialPhotographyChildLaborRights,
+        color: "#1e3a5f",
+      },
+      {
+        href: "/dashboard/advertising-modeling-child-labor-rights",
+        label: "Droits Enfants Mannequinat Publicitaire",
+        icon: IconAdvertisingModelingChildLaborRights,
+        color: "#701a75",
+      },
+      {
+        href: "/dashboard/advertising-video-production-child-labor-rights",
+        label: "Droits Enfants Production Vidéo Pub",
+        icon: IconAdvertisingVideoProductionChildLaborRights,
+        color: "#7c2d12",
       },
     ],
   },
