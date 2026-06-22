@@ -15383,6 +15383,27 @@ function IconGigeconomyAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconFooddeliveryAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+    </svg>
+  );
+}
+function IconCloudkitchenAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="M18 3v4"/><path d="M21 6H15"/>
+    </svg>
+  );
+}
+function IconMealkitAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 16V8a2 2 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18968,6 +18989,24 @@ const navSections: NavSection[] = [
         label: "Gaming In-App Advertising",
         href: "/dashboard/gaming-in-app-advertising-child-labor-rights",
         icon: IconGamingInAppAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Food Delivery Advertising",
+        href: "/dashboard/fooddelivery-advertising",
+        icon: IconFooddeliveryAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Cloud Kitchen Advertising",
+        href: "/dashboard/cloudkitchen-advertising",
+        icon: IconCloudkitchenAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Meal Kit Advertising",
+        href: "/dashboard/mealkit-advertising",
+        icon: IconMealkitAdvertising,
         category: "Publicité Visuelle",
       },
     ],
