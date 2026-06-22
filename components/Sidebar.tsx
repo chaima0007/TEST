@@ -13045,6 +13045,27 @@ function IconSesameCultivationChildLaborRights({ size = 18 }: { size?: number })
     </svg>
   );
 }
+function IconGroundnutHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V14M8 10c0-2 2-8 4-8s4 6 4 8-2 4-4 4-4-2-4-4z"/>
+    </svg>
+  );
+}
+function IconPeanutProcessingLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="8" cy="10" rx="4" ry="6"/><ellipse cx="16" cy="10" rx="4" ry="6"/><path d="M8 16c2 2 6 2 8 0"/>
+    </svg>
+  );
+}
+function IconMustardSeedHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="4"/><path d="M12 12v10M8 18h8"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -15168,6 +15189,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/sesame-cultivation-child-labor-rights",
         icon: IconSesameCultivationChildLaborRights,
         color: "#78350f",
+      },
+      {
+        label: "Groundnut Harvesting Child Labor",
+        href: "/dashboard/groundnut-harvesting-child-labor-rights",
+        icon: IconGroundnutHarvestingChildLaborRights,
+        color: "#92400e",
+      },
+      {
+        label: "Peanut Processing Labor",
+        href: "/dashboard/peanut-processing-labor-rights",
+        icon: IconPeanutProcessingLaborRights,
+        color: "#b45309",
+      },
+      {
+        label: "Mustard Seed Harvesting Child Labor",
+        href: "/dashboard/mustard-seed-harvesting-child-labor-rights",
+        icon: IconMustardSeedHarvestingChildLaborRights,
+        color: "#ca8a04",
       },
     ],
   },
