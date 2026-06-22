@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#ec4899";
+const COLOR = "#2563eb";
 const riskColors: Record<string, string> = { critique: "#dc2626", élevé: "#f59e0b", modéré: "#3b82f6", faible: "#16a34a" };
 interface Entity { name: string; composite_score: number; risk_level: string; }
 
