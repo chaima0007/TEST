@@ -105,6 +105,19 @@
       "wave": null,
       "recurrence_count": 2,
       "status": "fixed"
+    },
+    {
+      "id": 9,
+      "timestamp": "2026-06-22T20:49:56.783183",
+      "error_type": "build",
+      "file_path": "next.config.ts",
+      "description": "Vercel build warning — experimental.optimizePackageImports deprecated in Next.js 15+",
+      "cause": "optimizePackageImports was moved from experimental to root config in Next.js 15; kept in experimental caused 'Clé(s) non reconnue(s)' warning",
+      "fix_applied": "Removed experimental.optimizePackageImports (react/react-dom are optimized by default in Next.js 15+)",
+      "resolution_time_minutes": 5,
+      "wave": null,
+      "recurrence_count": 1,
+      "status": "fixed"
     }
   ]
 }
