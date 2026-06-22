@@ -15820,6 +15820,33 @@ function IconPerformanceadvertisingAdvertising({ size = 18, color = "currentColo
     </svg>
   );
 }
+function IconVideooverlayAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="2"/>
+      <rect x="6" y="14" width="12" height="6" rx="1" fill="currentColor" fillOpacity="0.3"/>
+      <polygon points="10 8 16 11 10 14 10 8"/>
+    </svg>
+  );
+}
+function IconCarouseladsAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="7" y="3" width="10" height="18" rx="1"/>
+      <rect x="2" y="6" width="4" height="12" rx="1" opacity="0.5"/>
+      <rect x="18" y="6" width="4" height="12" rx="1" opacity="0.5"/>
+    </svg>
+  );
+}
+function IconStoriesadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="8" y="2" width="8" height="20" rx="1"/>
+      <rect x="2" y="5" width="5" height="14" rx="1" opacity="0.4"/>
+      <rect x="17" y="5" width="5" height="14" rx="1" opacity="0.4"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19500,6 +19527,9 @@ const navSections: NavSection[] = [
       { label: "Social Listening Ads", href: "/dashboard/sociallistening-advertising", icon: IconSociallisteningAdvertising },
       { label: "Brand Advertising", href: "/dashboard/brandadvertising-advertising", icon: IconBrandadvertisingAdvertising },
       { label: "Performance Advertising", href: "/dashboard/performanceadvertising-advertising", icon: IconPerformanceadvertisingAdvertising },
+      { label: "Video Overlay Ads", href: "/dashboard/videooverlay-advertising", icon: IconVideooverlayAdvertising },
+      { label: "Carousel Ads", href: "/dashboard/carouselads-advertising", icon: IconCarouseladsAdvertising },
+      { label: "Stories Advertising", href: "/dashboard/storiesadvertising-advertising", icon: IconStoriesadvertisingAdvertising },
     ],
   },
   {
