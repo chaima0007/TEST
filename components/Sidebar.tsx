@@ -14257,6 +14257,35 @@ function IconIdentityResolutionAdvertising({ className }: { className?: string }
   );
 }
 
+function IconContextualSignalsAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="3" />
+      <path d="M8 1v2M8 13v2M1 8h2M13 8h2" />
+      <path d="M3.5 3.5l1.5 1.5M11 11l1.5 1.5M11 3.5L9.5 5M5 11l-1.5 1.5" />
+    </svg>
+  );
+}
+
+function IconAttentionMeasurementAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <circle cx="8" cy="8" r="2" fill="currentColor" />
+      <path d="M2 8h2M12 8h2M8 2v2M8 12v2" />
+    </svg>
+  );
+}
+
+function IconBrandSafetyAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 1L2 4v4c0 3.5 2.5 6.5 6 7.5 3.5-1 6-4 6-7.5V4z" />
+      <path d="M6 8h4M8 6v4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17020,6 +17049,24 @@ const navSections: NavSection[] = [
         label: "Identity Resolution Advertising",
         href: "/dashboard/identity-resolution-advertising-child-labor-rights",
         icon: IconIdentityResolutionAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Contextual Signals Advertising",
+        href: "/dashboard/contextual-signals-advertising-child-labor-rights",
+        icon: IconContextualSignalsAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Attention Measurement Advertising",
+        href: "/dashboard/attention-measurement-advertising-child-labor-rights",
+        icon: IconAttentionMeasurementAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Brand Safety Advertising",
+        href: "/dashboard/brand-safety-advertising-child-labor-rights",
+        icon: IconBrandSafetyAdvertising,
         category: "Publicité Visuelle",
       },
     ],
