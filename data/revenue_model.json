@@ -1,0 +1,270 @@
+{
+  "agent": "revenue_model_agent",
+  "version": "1.0.0",
+  "n_scenarios": 3,
+  "n_simulations_per_scenario": 100000,
+  "scenarios": [
+    {
+      "id": "A",
+      "name": "Bootstrap / Freemium",
+      "description": "Self-funded growth via freemium SaaS tier. Acquire SME users via LinkedIn and GitHub, convert to paid at 8%. Target: 100K€ ARR end of year 1.",
+      "target_revenue_eur_yr1": 100000,
+      "milestones": [
+        {
+          "month": 1,
+          "action": "MVP launch, 50 free users",
+          "revenue_eur": 0
+        },
+        {
+          "month": 2,
+          "action": "ProductHunt launch, 200 free users",
+          "revenue_eur": 0
+        },
+        {
+          "month": 3,
+          "action": "First 5 paid conversions @ 99€/mo",
+          "revenue_eur": 495
+        },
+        {
+          "month": 4,
+          "action": "10 paid users, content machine active",
+          "revenue_eur": 990
+        },
+        {
+          "month": 5,
+          "action": "20 paid users, first case study published",
+          "revenue_eur": 1980
+        },
+        {
+          "month": 6,
+          "action": "35 paid users, referral loop initiated",
+          "revenue_eur": 3465
+        },
+        {
+          "month": 7,
+          "action": "55 paid users, enterprise trial started",
+          "revenue_eur": 5445
+        },
+        {
+          "month": 8,
+          "action": "75 paid users + 1 enterprise pilot @ 2K€/mo",
+          "revenue_eur": 9425
+        },
+        {
+          "month": 9,
+          "action": "100 paid users + 2 enterprise pilots",
+          "revenue_eur": 13900
+        },
+        {
+          "month": 10,
+          "action": "130 paid users + 3 enterprise clients",
+          "revenue_eur": 18870
+        },
+        {
+          "month": 11,
+          "action": "160 paid users + 4 enterprise clients",
+          "revenue_eur": 23840
+        },
+        {
+          "month": 12,
+          "action": "200 paid users + 5 enterprise clients — 100K€ ARR",
+          "revenue_eur": 100000
+        }
+      ],
+      "risks": [
+        "Slow freemium-to-paid conversion (<5%)",
+        "Enterprise sales cycle > 3 months",
+        "CSDDD awareness low in SME segment",
+        "Solo founder bandwidth constraints"
+      ],
+      "base_success_prob": 0.58,
+      "revenue_variance": 0.35,
+      "monte_carlo": {
+        "success_rate": 0.3627,
+        "avg_simulated_revenue_eur": 68951.33,
+        "p10_eur": 10446.11,
+        "p25_eur": 25835.98,
+        "p50_eur": 62468.95,
+        "p75_eur": 107936.38,
+        "p90_eur": 137292.94,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "id": "B",
+      "name": "SaaS B2B Enterprise",
+      "description": "Direct outbound to Fortune 500 compliance & legal teams. Land 10 enterprise clients at avg 50K€/yr. CSDDD deadline urgency driver.",
+      "target_revenue_eur_yr1": 500000,
+      "target_clients": 10,
+      "avg_contract_eur": 50000,
+      "milestones": [
+        {
+          "month": 1,
+          "action": "ICP definition, 200-account target list built",
+          "revenue_eur": 0
+        },
+        {
+          "month": 2,
+          "action": "Outbound sequence launched, 50 demos booked",
+          "revenue_eur": 0
+        },
+        {
+          "month": 3,
+          "action": "Client 1 signed — 50K€ ACV",
+          "revenue_eur": 50000
+        },
+        {
+          "month": 4,
+          "action": "Clients 2-3 signed — cumulative 150K€",
+          "revenue_eur": 150000
+        },
+        {
+          "month": 5,
+          "action": "Clients 4-5 signed — 250K€ cumulative",
+          "revenue_eur": 250000
+        },
+        {
+          "month": 6,
+          "action": "Clients 6-7 signed — 350K€ cumulative",
+          "revenue_eur": 350000
+        },
+        {
+          "month": 7,
+          "action": "Partnerships (Big4) initiated",
+          "revenue_eur": 350000
+        },
+        {
+          "month": 8,
+          "action": "Client 8 signed + upsell client 1 — 430K€",
+          "revenue_eur": 430000
+        },
+        {
+          "month": 9,
+          "action": "Client 9 signed — 480K€ cumulative",
+          "revenue_eur": 480000
+        },
+        {
+          "month": 10,
+          "action": "Client 10 signed — 500K€ target hit",
+          "revenue_eur": 500000
+        },
+        {
+          "month": 11,
+          "action": "Pipeline for Year 2: 5 new prospects advanced",
+          "revenue_eur": 500000
+        },
+        {
+          "month": 12,
+          "action": "Year 1 closed: 10 clients, 500K€ ARR",
+          "revenue_eur": 500000
+        }
+      ],
+      "risks": [
+        "Enterprise sales cycles 6-9 months",
+        "Legal/procurement delays",
+        "Competition from Big4 advisory arms",
+        "CSDDD postponement by EU legislators",
+        "Pricing pressure on first 3 logos"
+      ],
+      "base_success_prob": 0.42,
+      "revenue_variance": 0.45,
+      "monte_carlo": {
+        "success_rate": 0.2484,
+        "avg_simulated_revenue_eur": 279640.55,
+        "p10_eur": 35075.71,
+        "p25_eur": 91168.79,
+        "p50_eur": 181428.88,
+        "p75_eur": 448036.97,
+        "p90_eur": 674486.47,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "id": "C",
+      "name": "IP Licensing + US Royalties",
+      "description": "License patent portfolio to US/EU compliance data vendors and Big4 firms. 5 axes filed, royalty rate 3-7% of licensee revenue. Target 1M€ Y1.",
+      "target_revenue_eur_yr1": 1000000,
+      "milestones": [
+        {
+          "month": 1,
+          "action": "Patent applications filed (all 5 axes)",
+          "revenue_eur": 0
+        },
+        {
+          "month": 2,
+          "action": "IP valuation report commissioned",
+          "revenue_eur": 0
+        },
+        {
+          "month": 3,
+          "action": "Licensing deck prepared, 10 targets identified",
+          "revenue_eur": 0
+        },
+        {
+          "month": 4,
+          "action": "NDA + term sheet with Licensee A (US data vendor)",
+          "revenue_eur": 0
+        },
+        {
+          "month": 5,
+          "action": "License A signed — 200K€ upfront + royalties",
+          "revenue_eur": 200000
+        },
+        {
+          "month": 6,
+          "action": "License B signed — 150K€ upfront (EU ESG vendor)",
+          "revenue_eur": 350000
+        },
+        {
+          "month": 7,
+          "action": "License C signed — 200K€ (Big4 advisory arm)",
+          "revenue_eur": 550000
+        },
+        {
+          "month": 8,
+          "action": "US royalty Q1 payments received — 80K€",
+          "revenue_eur": 630000
+        },
+        {
+          "month": 9,
+          "action": "License D signed — 150K€ (financial data platform)",
+          "revenue_eur": 780000
+        },
+        {
+          "month": 10,
+          "action": "US royalty Q2 + sublicense fees — 120K€",
+          "revenue_eur": 900000
+        },
+        {
+          "month": 11,
+          "action": "License E signed — 75K€ (RegTech startup)",
+          "revenue_eur": 975000
+        },
+        {
+          "month": 12,
+          "action": "Year-end royalty true-up — 1M€ target achieved",
+          "revenue_eur": 1000000
+        }
+      ],
+      "risks": [
+        "USPTO grant delays (avg 2-3 years)",
+        "Prior art challenges during prosecution",
+        "Licensee revenue lower than projected",
+        "EU patent vs US patent strategy divergence",
+        "Litigation risk from large IP holders"
+      ],
+      "base_success_prob": 0.31,
+      "revenue_variance": 0.6,
+      "monte_carlo": {
+        "success_rate": 0.1776,
+        "avg_simulated_revenue_eur": 476938.82,
+        "p10_eur": 54635.0,
+        "p25_eur": 148006.69,
+        "p50_eur": 300483.04,
+        "p75_eur": 481582.05,
+        "p90_eur": 1304958.43,
+        "n_simulations": 100000
+      }
+    }
+  ]
+}
