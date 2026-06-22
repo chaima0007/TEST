@@ -12620,6 +12620,39 @@ function IconSeaweedFarmingLaborRights({ size = 18, color = "#065f46" }: { size?
     </svg>
   );
 }
+function IconLatexGloveFactoryLaborRights({ size = 18, color = "#1e40af" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 12V7a1 1 0 0 1 2 0v3M10 7V5a1 1 0 0 1 2 0v5M12 6V5a1 1 0 0 1 2 0v5M14 7a1 1 0 0 1 2 0v3l1 3a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4l1-3V9" />
+    </svg>
+  );
+}
+function IconCottonseedChildLaborRights({ size = 18, color = "#d97706" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="3" />
+      <path d="M9 8 Q6 6 6 3" />
+      <path d="M15 8 Q18 6 18 3" />
+      <path d="M12 11 Q10 14 10 17" />
+      <path d="M12 11 Q14 14 14 17" />
+      <path d="M12 20v-3" />
+      <circle cx="8" cy="20" r="1" />
+      <circle cx="12" cy="21" r="1" />
+      <circle cx="16" cy="20" r="1" />
+    </svg>
+  );
+}
+function IconTobaccoNicotinePoisoningRights({ size = 18, color = "#7f1d1d" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 18 Q8 14 7 10 Q6 7 9 6 Q11 5 12 7" />
+      <path d="M9 6 Q10 3 13 4 Q15 5 14 8" />
+      <path d="M15 18 Q17 14 16 10" />
+      <path d="M12 7 Q15 9 14 14 Q13 17 15 18" />
+      <path d="M7 15 Q9 13 11 15 Q13 17 15 15" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -14567,6 +14600,14 @@ const navSections: NavSection[] = [
       { label: "Droits Travailleurs Bambou", href: "/dashboard/bamboo-labor-rights", icon: IconBambooLaborRights, color: "#15803d" },
       { label: "Droits Plongeurs Perles", href: "/dashboard/pearl-diving-labor-rights", icon: IconPearlDivingLaborRights, color: "#0369a1" },
       { label: "Droits Aquaculteurs Algues", href: "/dashboard/seaweed-farming-labor-rights", icon: IconSeaweedFarmingLaborRights, color: "#065f46" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 299",
+    items: [
+      { label: "Droits Travailleurs Usines Gants Latex", href: "/dashboard/latex-glove-factory-labor-rights", icon: IconLatexGloveFactoryLaborRights, color: "#1e40af" },
+      { label: "Droits Enfants Graines Coton", href: "/dashboard/cottonseed-child-labor-rights", icon: IconCottonseedChildLaborRights, color: "#d97706" },
+      { label: "Droits Intoxication Nicotine Tabac", href: "/dashboard/tobacco-nicotine-poisoning-rights", icon: IconTobaccoNicotinePoisoningRights, color: "#7f1d1d" },
     ],
   },
   {
