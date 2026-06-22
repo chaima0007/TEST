@@ -14315,6 +14315,35 @@ function IconCsrAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconDiversityInclusionAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="5" cy="5" r="2.5" />
+      <circle cx="11" cy="5" r="2.5" />
+      <path d="M1 14c0-2.2 1.8-4 4-4h6c2.2 0 4 1.8 4 4" />
+    </svg>
+  );
+}
+
+function IconAccessibilityAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="3" r="1.5" />
+      <path d="M8 5v5M5 7h6M6 10l-2 4M10 10l2 4" />
+    </svg>
+  );
+}
+
+function IconMultilingualAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <path d="M8 2C6 4 5 6 5 8s1 4 3 6M8 2c2 2 3 4 3 6s-1 4-3 6" />
+      <path d="M2 8h12" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17114,6 +17143,24 @@ const navSections: NavSection[] = [
         label: "CSR Advertising",
         href: "/dashboard/csr-advertising-child-labor-rights",
         icon: IconCsrAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Diversity & Inclusion Advertising",
+        href: "/dashboard/diversity-inclusion-advertising-child-labor-rights",
+        icon: IconDiversityInclusionAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Accessibility Advertising",
+        href: "/dashboard/accessibility-advertising-child-labor-rights",
+        icon: IconAccessibilityAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Multilingual Advertising",
+        href: "/dashboard/multilingual-advertising-child-labor-rights",
+        icon: IconMultilingualAdvertising,
         category: "Publicité Visuelle",
       },
     ],
