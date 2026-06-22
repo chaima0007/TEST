@@ -10958,6 +10958,38 @@ function IconDisabilityRightsCrpd({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconRightToWorkRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="11" width="20" height="11" rx="2"/>
+      <path d="M16 11V7a4 4 0 0 0-8 0v4"/>
+      <path d="M12 15v3"/>
+      <path d="M9 18h6"/>
+    </svg>
+  );
+}
+
+function IconOnlineHarassmentRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <path d="M12 8v4"/>
+      <path d="M12 16h.01"/>
+    </svg>
+  );
+}
+
+function IconRightToPrivacyRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <path d="M2 2l20 20"/>
+      <path d="M10.5 10.5A4.95 4.95 0 0 1 12 10a5 5 0 0 1 4.95 4.35"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12432,6 +12464,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/anti-corruption-human-rights-engine", label: "Anti-Corruption", icon: IconAntiCorruptionHumanRights },
       { href: "/dashboard/women-economic-rights-engine", label: "Droits Éco. Femmes", icon: IconWomenEconomicRights },
       { href: "/dashboard/disability-rights-crpd-engine", label: "Droits Handicap CRPD", icon: IconDisabilityRightsCrpd },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 240",
+    items: [
+      { href: "/dashboard/right-to-work-rights-engine", label: "Droit au Travail Décent", icon: IconRightToWorkRights },
+      { href: "/dashboard/online-harassment-rights-engine", label: "Harcèlement en Ligne", icon: IconOnlineHarassmentRights },
+      { href: "/dashboard/right-to-privacy-rights-engine", label: "Droit à la Vie Privée", icon: IconRightToPrivacyRights },
     ],
   },
   {
