@@ -12473,6 +12473,41 @@ function IconBloodPlasmaDonationRights() {
   );
 }
 
+function IconSpiceFarmChildLaborRights({ size = 18, color = "#d97706" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12" />
+      <path d="M12 12C12 7 7 4 4 6" />
+      <path d="M12 12C12 7 17 4 20 6" />
+      <circle cx="12" cy="8" r="2" />
+      <path d="M8 20h8" />
+    </svg>
+  );
+}
+
+function IconNutmegPlantationLaborRights({ size = 18, color = "#166534" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="12" cy="9" rx="5" ry="6" />
+      <path d="M12 15v7" />
+      <path d="M9 18h6" />
+      <path d="M10 6c0-2 1-3 2-3s2 1 2 3" />
+    </svg>
+  );
+}
+
+function IconCardamomChildLaborRights({ size = 18, color = "#92400e" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="8" y="5" width="8" height="11" rx="3" />
+      <path d="M12 16v6" />
+      <path d="M9 19h6" />
+      <path d="M10 8l2 2 2-2" />
+      <circle cx="12" cy="3" r="1.5" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14387,6 +14422,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/surrogacy-exploitation-rights", label: "Exploitation Mères Porteuses", icon: IconSurrogacyExploitationRights },
       { href: "/dashboard/hair-harvesting-labor-rights", label: "Droits Récolte Cheveux", icon: IconHairHarvestingLaborRights },
       { href: "/dashboard/blood-plasma-donation-rights", label: "Droits Donneurs Plasma Sanguin", icon: IconBloodPlasmaDonationRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 295",
+    items: [
+      { href: "/dashboard/spice-farm-child-labor-rights", label: "Droits Enfants Fermes Épices", icon: IconSpiceFarmChildLaborRights, color: "#d97706" },
+      { href: "/dashboard/nutmeg-plantation-labor-rights", label: "Droits Travail Plantation Noix Muscade", icon: IconNutmegPlantationLaborRights, color: "#166534" },
+      { href: "/dashboard/cardamom-child-labor-rights", label: "Droits Enfants Cardamome", icon: IconCardamomChildLaborRights, color: "#92400e" },
     ],
   },
   {
