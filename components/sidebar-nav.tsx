@@ -3901,6 +3901,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "SOCIAL INTELLIGENCE RISK",
+    items: [
+      { href: "/dashboard/sociallistening", label: "Social Listening", icon: Icons.IconSocialListening },
+      { href: "/dashboard/brandmonitoring", label: "Brand Monitoring", icon: Icons.IconBrandMonitoring },
+      { href: "/dashboard/sentimentanalysis", label: "Sentiment Analysis", icon: Icons.IconSentimentAnalysis },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
