@@ -13811,6 +13811,40 @@ function IconAugmentedRealityAds({ className }: { className?: string }) {
   );
 }
 
+function IconInfluencerMarketingAgency({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="5" r="2.5" />
+      <path d="M3 13c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+      <path d="M11.5 3.5l1.5 1-1.5 1" />
+      <line x1="11.5" y1="4.5" x2="14" y2="4.5" />
+    </svg>
+  );
+}
+
+function IconContentCreatorPlatform({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="2" width="12" height="9" rx="1" />
+      <circle cx="8" cy="6.5" r="2" />
+      <path d="M2 13h12" />
+      <line x1="6" y1="11" x2="6" y2="13" />
+      <line x1="10" y1="11" x2="10" y2="13" />
+    </svg>
+  );
+}
+
+function IconBrandAmbassadorProgram({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="5" r="2.5" />
+      <path d="M3 13c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+      <path d="M11 8l1.5.5L11 9" />
+      <path d="M13.5 8.5c.5.5.5 1.5 0 2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16346,6 +16380,24 @@ const navSections: NavSection[] = [
         label: "Augmented Reality Ads",
         href: "/dashboard/augmented-reality-ads-child-labor-rights",
         icon: IconAugmentedRealityAds,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Influencer Marketing Agency",
+        href: "/dashboard/influencer-marketing-agency-child-labor-rights",
+        icon: IconInfluencerMarketingAgency,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Content Creator Platform",
+        href: "/dashboard/content-creator-platform-child-labor-rights",
+        icon: IconContentCreatorPlatform,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Brand Ambassador Program",
+        href: "/dashboard/brand-ambassador-program-child-labor-rights",
+        icon: IconBrandAmbassadorProgram,
         category: "Publicité Visuelle",
       },
     ],
