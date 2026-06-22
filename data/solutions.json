@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "total_problems": 1,
+  "total_auto_fixed": 1,
+  "sessions": [
+    {
+      "timestamp": "2026-06-22T22:15:46.649241+00:00",
+      "problems": [
+        {
+          "id": "P001",
+          "name": "Fichiers non-commités (stop hook)",
+          "severity": "CRITIQUE",
+          "auto_fixed": true,
+          "data_summary": "{'files': ['components/sidebar-icons-4.tsx', 'components/sidebar-nav.tsx', 'data/agent_audit.json', "
+        }
+      ],
+      "total_found": 1,
+      "total_auto_fixed": 1
+    }
+  ],
+  "last_run": "2026-06-22T22:15:46.649287+00:00"
+}
