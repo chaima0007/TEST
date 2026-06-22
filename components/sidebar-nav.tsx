@@ -3941,6 +3941,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "AI ETHICS RISK",
+    items: [
+      { href: "/dashboard/dataethics", label: "Data Ethics", icon: Icons.IconDataEthics },
+      { href: "/dashboard/algorithmicbias", label: "Algorithmic Bias", icon: Icons.IconAlgorithmicBias },
+      { href: "/dashboard/aigovernance", label: "AI Governance", icon: Icons.IconAiGovernance },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
