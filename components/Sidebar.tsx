@@ -10263,6 +10263,29 @@ function IconHousingEvictionRights({ className }: { className?: string }) {
   );
 }
 
+function IconFoodSovereigntyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 3.582-9 8 0 3.314 2.504 6.129 6 7.478V21h6v-2.522c3.496-1.349 6-4.164 6-7.478 0-4.418-4.03-8-9-8z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6M12 9v6" />
+    </svg>
+  );
+}
+function IconCorporateImpunityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+function IconInternetAccessRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11521,6 +11544,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/climate-refugees-rights-engine", label: "Réfugiés Climatiques", icon: IconClimateRefugeesRights },
       { href: "/dashboard/transgender-rights-engine", label: "Droits Trans", icon: IconTransgenderRights },
       { href: "/dashboard/housing-eviction-rights-engine", label: "Expulsions Logement", icon: IconHousingEvictionRights },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 213",
+    items: [
+      { href: "/dashboard/food-sovereignty-rights-engine", label: "Souveraineté Alimentaire", icon: IconFoodSovereigntyRights },
+      { href: "/dashboard/corporate-impunity-rights-engine", label: "Impunité Corporative", icon: IconCorporateImpunityRights },
+      { href: "/dashboard/internet-access-rights-engine", label: "Accès Internet", icon: IconInternetAccessRights },
     ],
   },
   {
