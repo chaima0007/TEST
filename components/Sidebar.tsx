@@ -10205,6 +10205,30 @@ function IconDarkWebRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconArmsTradeRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 10 L8 10 L9 8 L11 12 L12 10 L17 10" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="16" cy="7" r="1.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="16" y1="8.5" x2="16" y2="10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M4 13 L7 13 M4 15 L9 15" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
+      <circle cx="10" cy="5" r="2" fill="none" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="10" y1="7" x2="10" y2="10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  );
+}
+function IconRacialDiscriminationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      <circle cx="7" cy="8" r="1.5" fill="currentColor" opacity="0.9" />
+      <circle cx="13" cy="8" r="1.5" fill="currentColor" opacity="0.6" />
+      <path d="M6 13 Q10 15.5 14 13" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="10" y1="2.5" x2="10" y2="5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+      <line x1="10" y1="15" x2="10" y2="17.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  );
+}
 function IconCorporateImpunityLegal({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -11614,6 +11638,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/refugee-camp-rights-engine", label: "Camps de Réfugiés", icon: IconRefugeeCampRights },
       { href: "/dashboard/pension-elderly-rights-engine", label: "Pension & Personnes Âgées", icon: IconPensionElderlyRights },
       { href: "/dashboard/dark-web-rights-engine", label: "Droits & Dark Web", icon: IconDarkWebRights },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 216",
+    items: [
+      { href: "/dashboard/arms-trade-rights-engine", label: "Commerce d'Armes", icon: IconArmsTradeRights },
+      { href: "/dashboard/disability-rights-engine", label: "Droits Handicap", icon: IconDisabilityRights },
+      { href: "/dashboard/racial-discrimination-rights-engine", label: "Discrimination Raciale", icon: IconRacialDiscriminationRights },
     ],
   },
   {
