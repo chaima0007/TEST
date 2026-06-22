@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#0284c7";
+const COLOR = "#059669";
 const DOMAIN = "ctvadvertising-advertising";
 const INDEX_KEY = "estimated_ctvadvertising_index";
 const TITLE = "CTV Advertising";
@@ -33,8 +33,8 @@ function deriveCerts(score: number) {
   ];
 }
 
-const SIGNALS = ["ACR data consent", "Household targeting compliance", "Streaming data privacy", "Co-viewing detection ethics", "Cross-device tracking limits"];
-const ACTIONS = ["Enforce ACR consent", "Cap household targeting", "Strengthen streaming privacy", "Review co-viewing ethics", "Limit cross-device tracking"];
+const SIGNALS = ["ACR data consent management", "Household-level targeting", "Cross-device identity linking", "Smart TV data collection", "FAST channel ad compliance"];
+const ACTIONS = ["Enforce ACR consent", "Limit household targeting", "Restrict cross-device linking", "Audit smart TV data", "Ensure FAST compliance"];
 
 function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
   const [tab, setTab] = useState<"scores" | "signals" | "certs" | "actions">("scores");
