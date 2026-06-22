@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Loyalty Program Risk Engine (Wave 475)"""
+"""CaelumSwarm™ — Referral Marketing Risk Engine (Wave 475)"""
 
 ENTITIES = [
     (99, 97, 95, 93), (93, 90, 88, 86), (85, 82, 80, 78), (80, 77, 75, 73),
@@ -25,6 +25,6 @@ dist = {l: sum(1 for r in results if r["level"] == l) for l in ["critique","éle
 
 print(f"avg_composite: {round(avg, 2)}")
 print(f"distribution: {dist}")
-print(f"estimated_loyaltyprogram_index: {round(avg/100*10, 2)}")
+print(f"estimated_referralmarketing_index: {round(avg/100*10, 2)}")
 for r in results:
     print(f"  {r['entity']}: {r['composite']} ({r['level']})")
