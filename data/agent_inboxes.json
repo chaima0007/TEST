@@ -44,6 +44,14 @@
         "subject": "Rapport autocontrôle: 82.4%",
         "content": "28/34 contrôles OK — 6 corrections requises",
         "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
       }
     ],
     "SidebarAgent": [
@@ -74,6 +82,14 @@
         "risks": [],
         "confidence": "HAUTE",
         "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
       }
     ],
     "SecurityAgent": [
@@ -178,6 +194,14 @@
         "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
         "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
         "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
       }
     ],
     "CICDAgent": [
@@ -284,6 +308,14 @@
         "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
         "content": "Système de relève opérationnel — jamais de fatigue",
         "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
       }
     ],
     "QuantumAgent": [
@@ -417,6 +449,14 @@
         "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
         "content": "Système de relève opérationnel — jamais de fatigue",
         "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
       }
     ],
     "DashboardAgent": [],
