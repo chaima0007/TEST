@@ -6821,6 +6821,24 @@ function IconHousingRights({ className }: { className?: string }) {
   );
 }
 
+function IconFoodSecurityRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+      <path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1={9} y1={9} x2={9.01} y2={9}/>
+      <line x1={15} y1={9} x2={15.01} y2={9}/>
+    </svg>
+  );
+}
+function IconClimateRefugeeRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M12 2C8 8 4 12 4 15a8 8 0 0 0 16 0c0-3-4-7-8-13z"/>
+      <path d="M9 17c0-1.5 1.5-3 3-3s3 1.5 3 3"/>
+    </svg>
+  );
+}
+
 function IconSocialProtection({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -11840,6 +11858,14 @@ const navSections: NavSection[] = [
       { label: "Travail Forcé & Esclavage", href: "/dashboard/forced-labor-rights-engine", icon: IconForcedLaborRights },
       { label: "Droits Fonciers Autochtones", href: "/dashboard/indigenous-land-rights-engine", icon: IconIndigenousLandRights },
       { label: "Droits LGBTQ+", href: "/dashboard/lgbtq-rights-engine", icon: IconLGBTQRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 223",
+    items: [
+      { label: "Sécurité Alimentaire", href: "/dashboard/food-security-rights-engine", icon: IconFoodSecurityRights },
+      { label: "Réfugiés Climatiques", href: "/dashboard/climate-refugee-rights-engine", icon: IconClimateRefugeeRights },
+      { label: "Droit au Logement", href: "/dashboard/housing-rights-engine", icon: IconHousingRights },
     ],
   },
   {
