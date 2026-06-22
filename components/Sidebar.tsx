@@ -14286,6 +14286,35 @@ function IconBrandSafetyAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconSustainableAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 2C5 2 3 5 4 8c1 3 4 5 7 4-1-2-1-4 0-6-2 1-3 3-3 5" />
+      <path d="M8 14V8" />
+    </svg>
+  );
+}
+
+function IconImpactAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <path d="M8 5v3l2 2" />
+      <path d="M5 2.5L3 1M11 2.5l2-1.5M14.5 6l1.5-1M1.5 6L0 5" />
+    </svg>
+  );
+}
+
+function IconCsrAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="3" width="12" height="10" rx="1" />
+      <path d="M5 7h6M5 10h4" />
+      <path d="M5 1v2M11 1v2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17067,6 +17096,24 @@ const navSections: NavSection[] = [
         label: "Brand Safety Advertising",
         href: "/dashboard/brand-safety-advertising-child-labor-rights",
         icon: IconBrandSafetyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Sustainable Advertising",
+        href: "/dashboard/sustainable-advertising-child-labor-rights",
+        icon: IconSustainableAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Impact Advertising",
+        href: "/dashboard/impact-advertising-child-labor-rights",
+        icon: IconImpactAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "CSR Advertising",
+        href: "/dashboard/csr-advertising-child-labor-rights",
+        icon: IconCsrAdvertising,
         category: "Publicité Visuelle",
       },
     ],
