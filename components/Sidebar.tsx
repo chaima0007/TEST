@@ -15028,6 +15028,27 @@ function IconCleantechAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconBiotechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+    </svg>
+  );
+}
+function IconAgritechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/><path d="M6 12a6 6 0 0 1 6-6 6 6 0 0 1 6 6"/>
+    </svg>
+  );
+}
+function IconFoodtechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18145,6 +18166,24 @@ const navSections: NavSection[] = [
         label: "Cleantech Advertising",
         href: "/dashboard/cleantech-advertising",
         icon: IconCleantechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Biotech Advertising",
+        href: "/dashboard/biotech-advertising",
+        icon: IconBiotechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Agritech Advertising",
+        href: "/dashboard/agritech-advertising",
+        icon: IconAgritechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Foodtech Advertising",
+        href: "/dashboard/foodtech-advertising",
+        icon: IconFoodtechAdvertising,
         category: "Publicité Visuelle",
       },
       {
