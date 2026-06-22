@@ -14227,6 +14227,36 @@ function IconZeroPartyDataAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconCookielessTargeting({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <path d="M5 8h6M8 5l3 3-3 3" />
+      <line x1="3" y1="3" x2="13" y2="13" />
+    </svg>
+  );
+}
+
+function IconFirstPartyDataAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <ellipse cx="8" cy="4" rx="5" ry="2" />
+      <path d="M3 4v4c0 1.1 2.2 2 5 2s5-.9 5-2V4" />
+      <path d="M3 8v4c0 1.1 2.2 2 5 2s5-.9 5-2V8" />
+    </svg>
+  );
+}
+
+function IconIdentityResolutionAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="5" cy="5" r="3" />
+      <circle cx="11" cy="11" r="3" />
+      <path d="M7.5 7.5l1 1" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16972,6 +17002,24 @@ const navSections: NavSection[] = [
         label: "Zero-Party Data Advertising",
         href: "/dashboard/zero-party-data-advertising-child-labor-rights",
         icon: IconZeroPartyDataAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Cookieless Targeting",
+        href: "/dashboard/cookieless-targeting-child-labor-rights",
+        icon: IconCookielessTargeting,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "First-Party Data Advertising",
+        href: "/dashboard/first-party-data-advertising-child-labor-rights",
+        icon: IconFirstPartyDataAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Identity Resolution Advertising",
+        href: "/dashboard/identity-resolution-advertising-child-labor-rights",
+        icon: IconIdentityResolutionAdvertising,
         category: "Publicité Visuelle",
       },
     ],
