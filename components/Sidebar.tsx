@@ -11816,6 +11816,36 @@ function IconAgriculturalChildLaborRights() {
   );
 }
 
+function IconZeroHourContractRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
+function IconNickelMiningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M2 20h20" />
+      <path d="M6 20V10l6-7 6 7v10" />
+      <path d="M9 20v-5h6v5" />
+    </svg>
+  );
+}
+
+function IconColtanMiningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
+      <line x1="12" y1="12" x2="12" y2="16" />
+      <line x1="9" y1="14" x2="15" y2="14" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13570,6 +13600,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/platform-worker-rights", label: "Travailleurs de Plateformes", icon: IconPlatformWorkerRights },
       { href: "/dashboard/rare-earth-mining-rights", label: "Mines de Terres Rares", icon: IconRareEarthMiningRights },
       { href: "/dashboard/agricultural-child-labor-rights", label: "Travail Enfant Agricole", icon: IconAgriculturalChildLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 275",
+    items: [
+      { href: "/dashboard/zero-hour-contract-rights", label: "Contrats Zéro Heure", icon: IconZeroHourContractRights },
+      { href: "/dashboard/nickel-mining-rights", label: "Mines de Nickel", icon: IconNickelMiningRights },
+      { href: "/dashboard/coltan-mining-rights", label: "Mines de Coltan", icon: IconColtanMiningRights },
     ],
   },
   {
