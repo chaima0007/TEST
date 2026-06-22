@@ -11014,6 +11014,30 @@ function IconExtrajudicialKillingRights({ className }: { className?: string }) {
   );
 }
 
+function IconCyberEspionageRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>
+  );
+}
+
+function IconRacismSystemicRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+    </svg>
+  );
+}
+
+function IconClimateDisplacementRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12504,6 +12528,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/religious-minority-rights-engine", label: "Religious Minority Rights", icon: IconReligiousMinorityRights },
       { href: "/dashboard/right-to-food-rights-engine", label: "Right to Food Rights", icon: IconRightToFoodRights },
       { href: "/dashboard/extrajudicial-killing-rights-engine", label: "Extrajudicial Killing Rights", icon: IconExtrajudicialKillingRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 242",
+    items: [
+      { href: "/dashboard/cyber-espionage-rights-engine", label: "Cyber Espionage Rights", icon: IconCyberEspionageRights },
+      { href: "/dashboard/racism-systemic-rights-engine", label: "Racism Systemic Rights", icon: IconRacismSystemicRights },
+      { href: "/dashboard/climate-displacement-rights-engine", label: "Climate Displacement Rights", icon: IconClimateDisplacementRights },
     ],
   },
   {
