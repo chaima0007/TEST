@@ -15095,6 +15095,27 @@ function IconDatatechAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconMartechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+    </svg>
+  );
+}
+function IconAdtechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+    </svg>
+  );
+}
+function IconSalestechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18266,6 +18287,24 @@ const navSections: NavSection[] = [
         label: "Datatech Advertising",
         href: "/dashboard/datatech-advertising",
         icon: IconDatatechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Martech Advertising",
+        href: "/dashboard/martech-advertising",
+        icon: IconMartechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Adtech Advertising",
+        href: "/dashboard/adtech-advertising",
+        icon: IconAdtechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Salestech Advertising",
+        href: "/dashboard/salestech-advertising",
+        icon: IconSalestechAdvertising,
         category: "Publicité Visuelle",
       },
       {
