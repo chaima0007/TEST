@@ -16124,6 +16124,22 @@ function IconConnectedhomeAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconVideostreamingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="23 7 16 12 23 17 23 7"/>
+      <rect x="1" y="5" width="15" height="14" rx="2"/>
+    </svg>
+  );
+}
+function IconLocationbasedAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+  );
+}
 function IconVoiceassistantAdvertising({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -19877,6 +19893,8 @@ const navSections: NavSection[] = [
       { label: "Voice Assistant Ads", href: "/dashboard/voiceassistant-advertising", icon: IconVoiceassistantAdvertising },
       { label: "Cross-Channel Ads", href: "/dashboard/crosschannel-advertising", icon: IconCrosschannelAdvertising },
       { label: "Podcast Advertising", href: "/dashboard/podcastadvertising-advertising", icon: IconPodcastadvertisingAdvertising },
+      { label: "Video Streaming Ads", href: "/dashboard/videostreaming-advertising", icon: IconVideostreamingAdvertising },
+      { label: "Location-Based Ads", href: "/dashboard/locationbased-advertising", icon: IconLocationbasedAdvertising },
     ],
   },
   {
