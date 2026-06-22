@@ -13225,6 +13225,41 @@ function IconChiliPepperChildLaborRights({ size = 20, color = "currentColor" }: 
   );
 }
 
+function IconTobaccoHarvestingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22 L12 8" />
+      <path d="M12 8 Q8 4 5 5" />
+      <path d="M12 8 Q16 4 19 5" />
+      <ellipse cx={12} cy={13} rx={5} ry={3} />
+      <ellipse cx={12} cy={18} rx={4} ry={2} />
+    </svg>
+  );
+}
+
+function IconOpiumPoppyCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={10} />
+      <circle cx={12} cy={7} r={4} />
+      <path d="M8 7 Q7 3 10 2" />
+      <path d="M16 7 Q17 3 14 2" />
+      <line x1={9} y1={7} x2={15} y2={7} />
+    </svg>
+  );
+}
+
+function IconCannabisHarvestingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={12} />
+      <path d="M12 12 Q8 8 4 9 Q6 5 10 7 Q8 3 12 2 Q16 3 14 7 Q18 5 20 9 Q16 8 12 12" />
+      <path d="M10 14 Q8 12 6 13" />
+      <path d="M14 14 Q16 12 18 13" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15473,6 +15508,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Piment Chili",
         icon: IconChiliPepperChildLaborRights,
         color: "#991b1b",
+      },
+      {
+        href: "/dashboard/tobacco-child-labor-rights",
+        label: "Droits Enfants Tabac",
+        icon: IconTobaccoHarvestingChildLaborRights,
+        color: "#78350f",
+      },
+      {
+        href: "/dashboard/opium-poppy-child-labor-rights",
+        label: "Droits Enfants Pavot Opium",
+        icon: IconOpiumPoppyCultivationChildLaborRights,
+        color: "#be123c",
+      },
+      {
+        href: "/dashboard/cannabis-child-labor-rights",
+        label: "Droits Enfants Cannabis",
+        icon: IconCannabisHarvestingChildLaborRights,
+        color: "#166534",
       },
     ],
   },
