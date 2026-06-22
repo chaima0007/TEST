@@ -11900,6 +11900,45 @@ function IconChildBrideEarlyMarriageRights() {
   );
 }
 
+function IconAsbestosSilicosisOccupationalRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#475569" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2C8 2 5 6 5 10c0 3 1 5 3 7l2 3h4l2-3c2-2 3-4 3-7 0-4-3-8-7-8z" />
+      <circle cx="9" cy="9" r="1" fill="#475569" />
+      <circle cx="15" cy="9" r="1" fill="#475569" />
+      <circle cx="12" cy="13" r="1" fill="#475569" />
+    </svg>
+  );
+}
+
+function IconClusterBombCivilianHarmRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b91c1c" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="4" />
+      <line x1="12" y1="2" x2="12" y2="6" />
+      <line x1="12" y1="18" x2="12" y2="22" />
+      <line x1="2" y1="12" x2="6" y2="12" />
+      <line x1="18" y1="12" x2="22" y2="12" />
+      <line x1="5" y1="5" x2="8" y2="8" />
+      <line x1="16" y1="16" x2="19" y2="19" />
+      <line x1="19" y1="5" x2="16" y2="8" />
+      <line x1="8" y1="16" x2="5" y2="19" />
+    </svg>
+  );
+}
+
+function IconMicaChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <polygon points="12,2 20,18 4,18" />
+      <line x1="12" y1="10" x2="12" y2="14" />
+      <circle cx="17" cy="8" r="2" />
+      <line x1="17" y1="10" x2="17" y2="15" />
+      <line x1="15" y1="12" x2="19" y2="12" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13678,6 +13717,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/ivory-trade-poaching-rights", label: "Commerce d'Ivoire", icon: IconIvoryTradePoachinRights },
       { href: "/dashboard/garment-factory-fire-rights", label: "Incendies Usines Textiles", icon: IconGarmentFactoryFireRights },
       { href: "/dashboard/child-bride-early-marriage-rights", label: "Mariage Précoce", icon: IconChildBrideEarlyMarriageRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 278",
+    items: [
+      { href: "/dashboard/asbestos-silicosis-occupational-rights", label: "Amiante et Silicose", icon: IconAsbestosSilicosisOccupationalRights },
+      { href: "/dashboard/cluster-bomb-civilian-harm-rights", label: "Bombes à Sous-Munitions", icon: IconClusterBombCivilianHarmRights },
+      { href: "/dashboard/mica-child-labor-rights", label: "Travail Enfant Mines Mica", icon: IconMicaChildLaborRights },
     ],
   },
   {
