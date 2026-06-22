@@ -3981,6 +3981,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "COMPLIANCE & DUE DILIGENCE",
+    items: [
+      { href: "/dashboard/corporateaccountability", label: "Corporate Accountability", icon: Icons.IconCorporateAccountability },
+      { href: "/dashboard/duediligence", label: "Due Diligence", icon: Icons.IconDueDiligence },
+      { href: "/dashboard/sanctionscreening", label: "Sanction Screening", icon: Icons.IconSanctionScreening },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
