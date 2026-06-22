@@ -10520,6 +10520,16 @@ function IconDigitalPrivacyRights({ className }: { className?: string }) {
   );
 }
 
+function IconPrisonConditionsRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <rect x={3} y={3} width={18} height={18} rx={2}/>
+      <line x1={8} y1={3} x2={8} y2={21}/><line x1={12} y1={3} x2={12} y2={21}/>
+      <line x1={16} y1={3} x2={16} y2={21}/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11866,6 +11876,14 @@ const navSections: NavSection[] = [
       { label: "Sécurité Alimentaire", href: "/dashboard/food-security-rights-engine", icon: IconFoodSecurityRights },
       { label: "Réfugiés Climatiques", href: "/dashboard/climate-refugee-rights-engine", icon: IconClimateRefugeeRights },
       { label: "Droit au Logement", href: "/dashboard/housing-rights-engine", icon: IconHousingRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 224",
+    items: [
+      { label: "Maltraitance Seniors", href: "/dashboard/elder-abuse-rights-engine", icon: IconElderAbuseRights },
+      { label: "Accès Internet", href: "/dashboard/internet-access-rights-engine", icon: IconInternetAccessRights },
+      { label: "Conditions Détention", href: "/dashboard/prison-conditions-rights-engine", icon: IconPrisonConditionsRights },
     ],
   },
   {
