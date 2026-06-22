@@ -11347,6 +11347,30 @@ function IconMigrationGovernanceRights({ className }: { className?: string }) {
   );
 }
 
+function IconRightToLeisureRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364-6.364.707.707M5.636 18.364l-.707.707M18.364 18.364l.707.707M5.636 5.636l-.707.707M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+    </svg>
+  );
+}
+
+function IconSocialProtectionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>
+  );
+}
+
+function IconPrisonReformRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12949,6 +12973,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/gender-justice-rights-engine", label: "Gender Justice Rights", icon: IconGenderJusticeRights, color: "#db2777" },
       { href: "/dashboard/community-land-rights-engine", label: "Community Land Rights", icon: IconCommunityLandRights, color: "#15803d" },
       { href: "/dashboard/migration-governance-rights-engine", label: "Migration Governance Rights", icon: IconMigrationGovernanceRights, color: "#0284c7" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 256",
+    items: [
+      { label: "Right to Leisure Rights", href: "/dashboard/right-to-leisure-rights-engine", icon: IconRightToLeisureRights, color: "#6d28d9" },
+      { label: "Social Protection Rights", href: "/dashboard/social-protection-rights-engine", icon: IconSocialProtectionRights, color: "#0891b2" },
+      { label: "Prison Reform Rights", href: "/dashboard/prison-reform-rights-engine", icon: IconPrisonReformRights, color: "#374151" },
     ],
   },
   {
