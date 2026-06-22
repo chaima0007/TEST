@@ -12005,6 +12005,41 @@ function IconCamelJockeyChildRights() {
   );
 }
 
+function IconTobaccoChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7f1d1d" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2c-4 3-6 7-5 12" />
+      <path d="M12 2c4 3 6 7 5 12" />
+      <line x1="7" y1="14" x2="17" y2="14" />
+      <circle cx="12" cy="18" r="2" />
+    </svg>
+  );
+}
+
+function IconShrimpFishingForcedLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0c4a6e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 17 Q7 14 12 15 Q17 16 21 13" />
+      <path d="M6 17 L4 21" />
+      <path d="M18 13 L20 9" />
+      <path d="M8 19 L10 19 L10 21 L8 21 Z" />
+      <path d="M14 11 Q16 9 14 7 Q12 9 14 11" />
+    </svg>
+  );
+}
+
+function IconArtisanalGoldMercuryRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#713f12" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M8 16 L5 19 L8 22 L11 19 L8 16 Z" />
+      <path d="M8 10 Q10 7 13 9 Q11 12 8 10 Z" />
+      <text x="13" y="8" fontSize="6" stroke="#713f12" strokeWidth={1} fill="#713f12">Hg</text>
+      <circle cx="17" cy="15" r="3" />
+      <line x1="17" y1="12" x2="17" y2="8" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13807,6 +13842,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/leather-tannery-chromium-rights", label: "Tanneries Chrome Hexavalent", icon: IconLeatherTanneryChromiumRights },
       { href: "/dashboard/brick-kiln-bonded-labor-rights", label: "Travail Servitude Briqueteries", icon: IconBrickKilnBondedLaborRights },
       { href: "/dashboard/camel-jockey-child-rights", label: "Enfants Jockeys Chameaux", icon: IconCamelJockeyChildRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 281",
+    items: [
+      { href: "/dashboard/tobacco-child-labor-rights", label: "Travail Enfant Tabac", icon: IconTobaccoChildLaborRights },
+      { href: "/dashboard/shrimp-fishing-forced-labor-rights", label: "Esclavage Crevettiers", icon: IconShrimpFishingForcedLaborRights },
+      { href: "/dashboard/artisanal-gold-mercury-rights", label: "Orpaillage et Mercure", icon: IconArtisanalGoldMercuryRights },
     ],
   },
   {
