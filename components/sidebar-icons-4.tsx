@@ -1662,6 +1662,16 @@ export function IconRetailMediaAdvertising({ className }: { className?: string }
   );
 }
 
+export function IconConnectedTv({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="3" width="12" height="8" rx="1" />
+      <line x1="5" y1="13" x2="11" y2="13" />
+      <line x1="8" y1="11" x2="8" y2="13" />
+    </svg>
+  );
+}
+
 export function IconConnectedTvAdvertising({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
