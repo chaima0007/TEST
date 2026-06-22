@@ -11845,6 +11845,33 @@ function IconColtanMiningRights() {
     </svg>
   );
 }
+function IconWhistleblowerProtectionRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 11l19-9-9 19-2-8-8-2z" />
+    </svg>
+  );
+}
+function IconEWasteRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="2" y="3" width="20" height="14" rx="2" />
+      <path d="M8 21h8" />
+      <path d="M12 17v4" />
+      <path d="M9 10l6 0" />
+      <path d="M12 7v6" />
+    </svg>
+  );
+}
+function IconSandMiningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b45309" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M2 20h20" />
+      <path d="M6 20V10l4-6h4l4 6v10" />
+      <path d="M10 20v-6h4v6" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -13608,6 +13635,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/zero-hour-contract-rights", label: "Contrats Zéro Heure", icon: IconZeroHourContractRights },
       { href: "/dashboard/nickel-mining-rights", label: "Mines de Nickel", icon: IconNickelMiningRights },
       { href: "/dashboard/coltan-mining-rights", label: "Mines de Coltan", icon: IconColtanMiningRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 276",
+    items: [
+      { href: "/dashboard/whistleblower-protection-rights", label: "Lanceurs d'Alerte", icon: IconWhistleblowerProtectionRights },
+      { href: "/dashboard/e-waste-rights", label: "Déchets Électroniques", icon: IconEWasteRights },
+      { href: "/dashboard/sand-mining-rights", label: "Extraction de Sable", icon: IconSandMiningRights },
     ],
   },
   {
