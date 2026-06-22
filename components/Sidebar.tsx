@@ -13130,6 +13130,27 @@ function IconBlackPepperHarvestingChildLaborRights({ size = 18 }: { size?: numbe
     </svg>
   );
 }
+function IconVanillaBeanCultivationChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22c0 0-6-4-6-10s6-8 6-8 6 2 6 8-6 10-6 10z"/>
+    </svg>
+  );
+}
+function IconCardamomHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="8" y="4" width="8" height="12" rx="4"/><path d="M12 16v6"/>
+    </svg>
+  );
+}
+function IconCloveHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="5" r="3"/><path d="M12 8v14M9 18l3 3 3-3"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -15325,6 +15346,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/black-pepper-harvesting-child-labor-rights",
         icon: IconBlackPepperHarvestingChildLaborRights,
         color: "#1c1917",
+      },
+      {
+        label: "Vanilla Bean Cultivation Child Labor",
+        href: "/dashboard/vanilla-bean-cultivation-child-labor-rights",
+        icon: IconVanillaBeanCultivationChildLaborRights,
+        color: "#78350f",
+      },
+      {
+        label: "Cardamom Harvesting Child Labor",
+        href: "/dashboard/cardamom-harvesting-child-labor-rights",
+        icon: IconCardamomHarvestingChildLaborRights,
+        color: "#166534",
+      },
+      {
+        label: "Clove Harvesting Child Labor",
+        href: "/dashboard/clove-harvesting-child-labor-rights",
+        icon: IconCloveHarvestingChildLaborRights,
+        color: "#991b1b",
       },
     ],
   },
