@@ -4010,4 +4010,12 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
     ],
   },
+  {
+    title: "BIODIVERSITY & OCEAN RISK",
+    items: [
+      { href: "/dashboard/biodiversityloss", label: "Biodiversity Loss", icon: Icons.IconBiodiversityLoss },
+      { href: "/dashboard/deforestation", label: "Deforestation", icon: Icons.IconDeforestation },
+      { href: "/dashboard/oceanpollution", label: "Ocean Pollution", icon: Icons.IconOceanPollution },
+    ],
+  },
 ];
