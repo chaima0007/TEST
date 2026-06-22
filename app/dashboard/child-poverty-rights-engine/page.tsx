@@ -8,7 +8,7 @@ interface Entity {
   composite_score: number;
   risk_level: string;
   primary_pattern: string;
-  estimated_migrant_worker_rights_index: number;
+  estimated_child_poverty_rights_index: number;
 }
 
 interface DashboardData {
@@ -22,29 +22,29 @@ interface DashboardData {
 
 const FALLBACK: DashboardData = {
   avg_composite: 61.03,
-  confidence_score: 0.88,
+  confidence_score: 0.89,
   total_entities: 8,
   critical_alerts: [
-    "Qatar FIFA 2022: kafala_exploitation",
-    "Saudi Arabia Domestic: freedom_movement_restriction",
-    "UAE Construction: wage_theft_abuse",
-    "Malaysia Palm Oil: kafala_exploitation",
+    "Somalia: malnutrition_stunting",
+    "CAR Centrafrique: education_deprivation",
+    "Madagascar: malnutrition_stunting",
+    "Nigeria Northern: education_deprivation",
   ],
   data_sources: [
-    "ilo_forced_labour_report_2024",
-    "hrw_kafala_system_2024",
-    "amnesty_qatar_workers",
-    "guardian_migrant_deaths_gulf",
+    "unicef_state_worlds_children_2024",
+    "world_bank_child_poverty_2024",
+    "save_children_global_index_2024",
+    "fao_food_security_report_2024",
   ],
   entities: [
-    { id: "MWR-001", name: "Qatar FIFA 2022 — 6 500 Morts, Kafala Systémique", country: "Qatar", composite_score: 87.15, risk_level: "critique", primary_pattern: "kafala_exploitation", estimated_migrant_worker_rights_index: 8.72 },
-    { id: "MWR-002", name: "Saudi Arabia Domestic Workers — Kafala Sans Protection", country: "Arabie Saoudite", composite_score: 84.15, risk_level: "critique", primary_pattern: "freedom_movement_restriction", estimated_migrant_worker_rights_index: 8.42 },
-    { id: "MWR-003", name: "UAE Construction Sector — Debt Bondage, Accidents Mortels", country: "Émirats Arabes Unis", composite_score: 81.15, risk_level: "critique", primary_pattern: "wage_theft_abuse", estimated_migrant_worker_rights_index: 8.12 },
-    { id: "MWR-004", name: "Malaysia Plantation Palm Oil — Travail Forcé RSPO Documenté", country: "Malaisie", composite_score: 78.15, risk_level: "critique", primary_pattern: "kafala_exploitation", estimated_migrant_worker_rights_index: 7.82 },
-    { id: "MWR-005", name: "USA Agricultural Migrants H-2A — Sans Sécurité Sociale", country: "États-Unis", composite_score: 57.15, risk_level: "élevé", primary_pattern: "social_protection_exclusion", estimated_migrant_worker_rights_index: 5.72 },
-    { id: "MWR-006", name: "France Travailleurs Détachés — Directive Contournée", country: "France", composite_score: 54.15, risk_level: "élevé", primary_pattern: "wage_theft_abuse", estimated_migrant_worker_rights_index: 5.42 },
-    { id: "MWR-007", name: "ILO C189 Domestic Workers — Ratification Partielle", country: "Global", composite_score: 32.15, risk_level: "modéré", primary_pattern: "social_protection_exclusion", estimated_migrant_worker_rights_index: 3.22 },
-    { id: "MWR-008", name: "Philippines OFW Program — Protections Minimales Codifiées", country: "Philippines", composite_score: 14.15, risk_level: "faible", primary_pattern: "kafala_exploitation", estimated_migrant_worker_rights_index: 1.42 },
+    { id: "CPR-001", name: "Somalia — 1.8M Enfants Risque Famine Aiguë", country: "Somalie", composite_score: 87.15, risk_level: "critique", primary_pattern: "malnutrition_stunting", estimated_child_poverty_rights_index: 8.72 },
+    { id: "CPR-002", name: "CAR Centrafrique — 73% Enfants Pauvreté Extrême", country: "Centrafrique", composite_score: 84.15, risk_level: "critique", primary_pattern: "education_deprivation", estimated_child_poverty_rights_index: 8.42 },
+    { id: "CPR-003", name: "Madagascar — 77% Enfants Pauvreté, Retard Croissance 49%", country: "Madagascar", composite_score: 81.15, risk_level: "critique", primary_pattern: "malnutrition_stunting", estimated_child_poverty_rights_index: 8.12 },
+    { id: "CPR-004", name: "Nigeria Northern States — 10.5M Enfants Non-Scolarisés", country: "Nigeria", composite_score: 78.15, risk_level: "critique", primary_pattern: "education_deprivation", estimated_child_poverty_rights_index: 7.82 },
+    { id: "CPR-005", name: "India Bihar/UP — Travail Enfants Mines Mica/Briques", country: "Inde", composite_score: 57.15, risk_level: "élevé", primary_pattern: "child_labor_exploitation", estimated_child_poverty_rights_index: 5.72 },
+    { id: "CPR-006", name: "Brazil Favelas — 40% Enfants Pauvreté, Recrutement Gangs", country: "Brésil", composite_score: 54.15, risk_level: "élevé", primary_pattern: "social_protection_absence", estimated_child_poverty_rights_index: 5.42 },
+    { id: "CPR-007", name: "USA Child Poverty — 12M Enfants, Food Stamps Lacunes", country: "États-Unis", composite_score: 32.15, risk_level: "modéré", primary_pattern: "social_protection_absence", estimated_child_poverty_rights_index: 3.22 },
+    { id: "CPR-008", name: "Nordic Countries — Filet Social Universel, Pauvreté <3%", country: "Pays Nordiques", composite_score: 14.15, risk_level: "faible", primary_pattern: "malnutrition_stunting", estimated_child_poverty_rights_index: 1.42 },
   ],
 };
 
@@ -96,7 +96,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         {tab === "metriques" && (
           <div style={{ color: "#d1d5db" }}>
             <p><strong>Score composite:</strong> {entity.composite_score}</p>
-            <p><strong>Index droits travailleurs migrants:</strong> {entity.estimated_migrant_worker_rights_index}</p>
+            <p><strong>Index pauvreté enfants:</strong> {entity.estimated_child_poverty_rights_index}</p>
           </div>
         )}
         {tab === "sources" && (
@@ -109,18 +109,18 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function MigrantWorkerRightsDashboard() {
+export default function ChildPovertyRightsDashboard() {
   const [data, setData] = useState<DashboardData>(FALLBACK);
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/migrant-worker-rights-engine")
+    fetch("/api/child-poverty-rights-engine")
       .then(r => r.json())
       .then(d => setData(d.payload ?? d))
       .catch(() => setData(FALLBACK));
   }, []);
 
-  const accent = "#1a1505";
+  const accent = "#1a0f06";
   const avgColor = RISK_COLORS["élevé"];
 
   return (
@@ -128,8 +128,8 @@ export default function MigrantWorkerRightsDashboard() {
       {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ background: accent, borderRadius: 12, padding: "24px 32px", marginBottom: 32, borderLeft: "4px solid #f97316" }}>
-          <h1 style={{ fontSize: 28, fontWeight: "bold", margin: 0 }}>Migrant Worker Rights Engine</h1>
-          <p style={{ color: "#9ca3af", marginTop: 8, marginBottom: 0 }}>Surveillance des violations des droits des travailleurs migrants — Wave 217</p>
+          <h1 style={{ fontSize: 28, fontWeight: "bold", margin: 0 }}>Child Poverty Rights Engine</h1>
+          <p style={{ color: "#9ca3af", marginTop: 8, marginBottom: 0 }}>Surveillance des violations des droits liées à la pauvreté des enfants — Wave 217</p>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16, marginBottom: 32 }}>
@@ -166,7 +166,7 @@ export default function MigrantWorkerRightsDashboard() {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <span style={{ background: color + "22", color, padding: "2px 10px", borderRadius: 20, fontSize: 12 }}>{e.risk_level}</span>
                   <span style={{ color: "#6b7280", fontSize: 11 }}>{e.primary_pattern}</span>
-                  <span style={{ color: "#9ca3af", fontSize: 12 }}>Idx: {e.estimated_migrant_worker_rights_index}</span>
+                  <span style={{ color: "#9ca3af", fontSize: 12 }}>Idx: {e.estimated_child_poverty_rights_index}</span>
                 </div>
               </div>
             );
