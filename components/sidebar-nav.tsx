@@ -3805,6 +3805,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/adattribution", label: "Ad Attribution", icon: Icons.IconAdAttribution },
       { href: "/dashboard/mediabuying", label: "Media Buying", icon: Icons.IconMediaBuying },
       { href: "/dashboard/programmatic", label: "Programmatic", icon: Icons.IconProgrammatic },
+      { href: "/dashboard/deepfakeads", label: "Deepfake Ads", icon: Icons.IconDeepfakeAds },
+      { href: "/dashboard/synthmedia", label: "Synthetic Media", icon: Icons.IconSynthMedia },
+      { href: "/dashboard/aicontentmod", label: "AI Content Mod", icon: Icons.IconAiContentMod },
     ],
   },
   {
@@ -3862,6 +3865,14 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/identityresolution", label: "Identity Resolution", icon: Icons.IconIdentityResolution },
       { href: "/dashboard/audienceseg", label: "Audience Segmentation", icon: Icons.IconAudienceSeg },
       { href: "/dashboard/lookalike", label: "Lookalike Modeling", icon: Icons.IconLookalike },
+    ],
+  },
+  {
+    title: "FRAUD RISK",
+    items: [
+      { href: "/dashboard/influencerfraud", label: "Influencer Fraud", icon: Icons.IconInfluencerFraud },
+      { href: "/dashboard/fakereviews", label: "Fake Reviews", icon: Icons.IconFakeReviews },
+      { href: "/dashboard/astroturfing", label: "Astroturfing", icon: Icons.IconAstroturfing },
     ],
   },
   {
