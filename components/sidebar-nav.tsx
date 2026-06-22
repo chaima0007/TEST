@@ -3632,6 +3632,7 @@ export const navSections: NavSection[] = [
       { label: "Chatbot Marketing Advertising", href: "/dashboard/chatbotmarketing-advertising", icon: Icons.IconChatbotmarketingAdvertising },
       { label: "Native Ads Advertising", href: "/dashboard/nativeads-advertising", icon: Icons.IconNativeadsAdvertising },
       { label: "Affiliate Marketing Advertising", href: "/dashboard/affiliatemarketing-advertising", icon: Icons.IconAffiliatemarketingAdvertising },
+      { label: "Affiliate Advertising", href: "/dashboard/affiliate-advertising", icon: Icons.IconAffiliatemarketingAdvertising },
       { label: "Email Marketing Advertising", href: "/dashboard/emailmarketing-advertising", icon: Icons.IconEmailmarketingAdvertising },
       { label: "SMS Marketing Advertising", href: "/dashboard/smsmarketing-advertising", icon: Icons.IconSmsmarketingAdvertising },
       { label: "Push Notification Advertising", href: "/dashboard/pushnotification-advertising", icon: Icons.IconPushnotificationAdvertising },
