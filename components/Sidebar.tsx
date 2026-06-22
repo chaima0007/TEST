@@ -10918,6 +10918,46 @@ function IconBiometricDataRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconAntiCorruptionHumanRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4z"/>
+      <line x1="18" y1="6" x2="22" y2="2"/>
+      <line x1="20" y1="2" x2="22" y2="4"/>
+      <path d="M3 21h8M7 21v-4"/>
+      <path d="M14 21h7M17.5 21v-3"/>
+    </svg>
+  );
+}
+
+function IconWomenEconomicRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="5" r="2"/>
+      <path d="M9 7v5M7 9h4"/>
+      <path d="M9 12v3"/>
+      <path d="M7 15h4"/>
+      <polyline points="3,20 7,16 11,18 15,13 19,15 22,11"/>
+      <polyline points="19,11 22,11 22,14"/>
+    </svg>
+  );
+}
+
+function IconDisabilityRightsCrpd({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="4" r="1.5"/>
+      <path d="M9 8h4l1 4-3 1"/>
+      <path d="M10 12l-1 5h6"/>
+      <path d="M14 17l1 3"/>
+      <path d="M11 22l-1-5"/>
+      <path d="M17 10l1.5 5"/>
+      <path d="M12 17c-2.8 0-5-2.2-5-5 0-1.5.7-2.9 1.7-3.8"/>
+      <path d="M19 12a7 7 0 0 1-7 7"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12384,6 +12424,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/arms-trade-human-rights-engine", label: "Commerce des Armes", icon: IconArmsTradeHumanRights },
       { href: "/dashboard/right-to-truth-rights-engine", label: "Droit à la Vérité", icon: IconRightToTruthRights },
       { href: "/dashboard/biometric-data-rights-engine", label: "Données Biométriques", icon: IconBiometricDataRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 239",
+    items: [
+      { href: "/dashboard/anti-corruption-human-rights-engine", label: "Anti-Corruption", icon: IconAntiCorruptionHumanRights },
+      { href: "/dashboard/women-economic-rights-engine", label: "Droits Éco. Femmes", icon: IconWomenEconomicRights },
+      { href: "/dashboard/disability-rights-crpd-engine", label: "Droits Handicap CRPD", icon: IconDisabilityRightsCrpd },
     ],
   },
   {
