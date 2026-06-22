@@ -3787,6 +3787,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/cookielessads", label: "Cookieless Ads", icon: Icons.IconCookielessAds },
       { href: "/dashboard/creatoreconomy", label: "Creator Economy", icon: Icons.IconCreatorEconomy },
       { href: "/dashboard/b2bads", label: "B2B Advertising", icon: Icons.IconB2bAds },
+      { href: "/dashboard/ctvads", label: "CTV Ads", icon: Icons.IconCtvAds },
+      { href: "/dashboard/retailmedia", label: "Retail Media", icon: Icons.IconRetailMedia },
+      { href: "/dashboard/adfraud", label: "Ad Fraud", icon: Icons.IconAdFraud },
     ],
   },
   {
