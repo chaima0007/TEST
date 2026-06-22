@@ -4005,6 +4005,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "ESG & CSRD REPORTING",
+    items: [
+      { href: "/dashboard/esgrating", label: "ESG Rating", icon: Icons.IconEsgRating },
+      { href: "/dashboard/tcfdreporting", label: "TCFD Reporting", icon: Icons.IconTcfdReporting },
+      { href: "/dashboard/esrsstandards", label: "ESRS Standards", icon: Icons.IconEsrsStandards },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
