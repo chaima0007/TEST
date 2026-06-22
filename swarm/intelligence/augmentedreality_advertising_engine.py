@@ -1,15 +1,15 @@
-"""CaelumSwarm™ — Metaverse Advertising Child Labor Rights Engine
+"""CaelumSwarm™ — Augmented Reality Advertising Child Labor Rights Engine
 © 2024-2026 Caelum Partners SPRL"""
 
 ENTITIES = [
-    ("Metaverse Platform Corp", 99, 97, 95, 93),
-    ("Virtual World Developer", 93, 90, 88, 86),
-    ("Digital Asset Creator Co", 85, 82, 80, 78),
-    ("NFT Marketplace Systems", 80, 77, 75, 73),
-    ("Avatar Commerce Hub", 61, 58, 56, 54),
-    ("Identity Verification Co", 51, 48, 46, 44),
-    ("Server Infrastructure Co", 32, 29, 27, 25),
-    ("Energy Supply Pool", 13, 11, 9, 7),
+    ("AR Platform Corp", 99, 97, 95, 93),
+    ("Hardware Device Manufacturer", 93, 90, 88, 86),
+    ("AR SDK Developer Co", 85, 82, 80, 78),
+    ("Content Creation Studio", 80, 77, 75, 73),
+    ("Ad Network Integration", 61, 58, 56, 54),
+    ("Data Analytics Provider", 51, 48, 46, 44),
+    ("Assembly Component Co", 32, 29, 27, 25),
+    ("Raw Materials Supplier", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -20,7 +20,7 @@ def compute(entity):
     elif score >= 20: level = "modéré"
     else: level = "faible"
     idx = round(score / 100 * 10, 2)
-    return {"name": name, "composite_score": score, "risk_level": level, "estimated_metaverse_index": idx}
+    return {"name": name, "composite_score": score, "risk_level": level, "estimated_augmentedreality_index": idx}
 
 if __name__ == "__main__":
     results = [compute(e) for e in ENTITIES]
