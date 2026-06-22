@@ -15769,6 +15769,31 @@ function IconAidrivenadvertisingAdvertising({ size = 18, color = "currentColor" 
     </svg>
   );
 }
+function IconHyperlocaladvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+      <circle cx="12" cy="9" r="2.5"/>
+    </svg>
+  );
+}
+function IconWeatherbasedadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/>
+    </svg>
+  );
+}
+function IconEmotionadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+      <line x1="9" y1="9" x2="9.01" y2="9"/>
+      <line x1="15" y1="9" x2="15.01" y2="9"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19443,6 +19468,9 @@ const navSections: NavSection[] = [
       { label: "Cross-Device Advertising", href: "/dashboard/crossdeviceadvertising-advertising", icon: IconCrossdeviceadvertisingAdvertising },
       { label: "Semantic Advertising", href: "/dashboard/semanticadvertising-advertising", icon: IconSemanticadvertisingAdvertising },
       { label: "AI-Driven Advertising", href: "/dashboard/aidrivenadvertising-advertising", icon: IconAidrivenadvertisingAdvertising },
+      { label: "Hyper-Local Advertising", href: "/dashboard/hyperlocaladvertising-advertising", icon: IconHyperlocaladvertisingAdvertising },
+      { label: "Weather-Based Advertising", href: "/dashboard/weatherbasedadvertising-advertising", icon: IconWeatherbasedadvertisingAdvertising },
+      { label: "Emotion Advertising", href: "/dashboard/emotionadvertising-advertising", icon: IconEmotionadvertisingAdvertising },
     ],
   },
   {
