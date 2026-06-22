@@ -14112,6 +14112,27 @@ function IconInteractiveAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconGamifiedAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="4" width="14" height="9" rx="2" />
+      <path d="M5 8.5h2M6 7.5v2" />
+      <circle cx="10.5" cy="8" r="0.5" fill="currentColor" />
+      <circle cx="12" cy="9.5" r="0.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function IconVoiceSearchAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="6" y="1" width="4" height="7" rx="2" />
+      <path d="M3 7c0 2.8 2.2 5 5 5s5-2.2 5-5" />
+      <path d="M8 12v3M5 15h6" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16791,6 +16812,18 @@ const navSections: NavSection[] = [
         label: "Interactive Advertising",
         href: "/dashboard/interactive-advertising-child-labor-rights",
         icon: IconInteractiveAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Gamified Advertising",
+        href: "/dashboard/gamified-advertising-child-labor-rights",
+        icon: IconGamifiedAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Voice Search Advertising",
+        href: "/dashboard/voice-search-advertising-child-labor-rights",
+        icon: IconVoiceSearchAdvertising,
         category: "Publicité Visuelle",
       },
     ],
