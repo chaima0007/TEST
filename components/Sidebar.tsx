@@ -14986,6 +14986,27 @@ function IconHospitalityAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconBankingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/><circle cx="12" cy="12" r="1" fill="currentColor"/>
+    </svg>
+  );
+}
+function IconInsurtechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  );
+}
+function IconLogistechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18067,6 +18088,24 @@ const navSections: NavSection[] = [
         label: "Hospitality Advertising",
         href: "/dashboard/hospitality-advertising",
         icon: IconHospitalityAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Banking Advertising",
+        href: "/dashboard/banking-advertising",
+        icon: IconBankingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Insurtech Advertising",
+        href: "/dashboard/insurtech-advertising",
+        icon: IconInsurtechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Logistech Advertising",
+        href: "/dashboard/logistech-advertising",
+        icon: IconLogistechAdvertising,
         category: "Publicité Visuelle",
       },
       {
