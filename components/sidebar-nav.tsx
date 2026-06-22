@@ -3949,6 +3949,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "LABOR RIGHTS RISK",
+    items: [
+      { href: "/dashboard/laborrights", label: "Labor Rights", icon: Icons.IconLaborRights },
+      { href: "/dashboard/forcedlabor", label: "Forced Labor", icon: Icons.IconForcedLabor },
+      { href: "/dashboard/childlabor", label: "Child Labor", icon: Icons.IconChildLabor },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
