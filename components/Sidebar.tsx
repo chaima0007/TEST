@@ -11299,6 +11299,30 @@ function IconSupplyChainTransparencyRights({ className }: { className?: string }
   );
 }
 
+function IconPostConflictReconstructionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+    </svg>
+  );
+}
+
+function IconClimateFinanceRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function IconRightToPeaceRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 0v18M3.6 9h16.8M3.6 15h16.8" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12885,6 +12909,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/ai-weapons-rights-engine", label: "AI Weapons Rights", icon: IconAiWeaponsRights, color: "#1e293b" },
       { href: "/dashboard/water-conflict-rights-engine", label: "Water Conflict Rights", icon: IconWaterConflictRights, color: "#0369a1" },
       { href: "/dashboard/supply-chain-transparency-rights-engine", label: "Supply Chain Transparency Rights", icon: IconSupplyChainTransparencyRights, color: "#1d4ed8" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 254",
+    items: [
+      { href: "/dashboard/post-conflict-reconstruction-rights-engine", label: "Post-Conflict Reconstruction Rights", icon: IconPostConflictReconstructionRights, color: "#4b5563" },
+      { href: "/dashboard/climate-finance-rights-engine", label: "Climate Finance Rights", icon: IconClimateFinanceRights, color: "#166534" },
+      { href: "/dashboard/right-to-peace-rights-engine", label: "Right to Peace Rights", icon: IconRightToPeaceRights, color: "#0c4a6e" },
     ],
   },
   {
