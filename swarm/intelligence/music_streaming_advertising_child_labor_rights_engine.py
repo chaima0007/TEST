@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Digital Out of Home Advertising Child Labor Rights Engine (Wave 353)"""
+"""CaelumSwarm™ — Music Streaming Advertising Child Labor Rights Engine (Wave 353)"""
 import json, statistics
 
 ENTITIES = [
-    ("JCDecaux Digital", 99, 97, 95, 93),
-    ("Clear Channel", 93, 90, 88, 86),
-    ("Lamar Advertising", 85, 82, 80, 78),
-    ("Broadsign", 80, 77, 75, 73),
-    ("Vistar Media", 61, 58, 56, 54),
-    ("Place Exchange", 51, 48, 46, 44),
-    ("VIOOH", 32, 29, 27, 25),
-    ("Hivestack", 13, 11, 9, 7),
+    ("Spotify Ads", 99, 97, 95, 93),
+    ("Apple Music Ads", 93, 90, 88, 86),
+    ("Amazon Music Ads", 85, 82, 80, 78),
+    ("Deezer Ads", 80, 77, 75, 73),
+    ("Tidal", 61, 58, 56, 54),
+    ("SoundCloud Ads", 51, 48, 46, 44),
+    ("YouTube Music Ads", 32, 29, 27, 25),
+    ("Pandora Ads", 13, 11, 9, 7),
 ]
 WEIGHTS = (0.30, 0.25, 0.25, 0.20)
 THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
@@ -30,7 +30,7 @@ def compute():
             "entity": eid,
             "composite_score": round(composite, 2),
             "risk_level": classify(composite),
-            "estimated_digital_out_of_home_advertising_index": round(composite / 100 * 10, 2),
+            "estimated_music_streaming_advertising_index": round(composite / 100 * 10, 2),
         })
     avg = statistics.mean(r["composite_score"] for r in results)
     distribution = {}

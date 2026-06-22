@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Podcast Advertising Child Labor Rights Engine (Wave 335)"""
+"""CaelumSwarm™ — Podcast Advertising Child Labor Rights Engine (Wave 353)"""
 import json, statistics
 
 ENTITIES = [
-    ("PAD-001", 99, 97, 95, 93),
-    ("PAD-002", 93, 90, 88, 86),
-    ("PAD-003", 85, 82, 80, 78),
-    ("PAD-004", 80, 77, 75, 73),
-    ("PAD-005", 61, 58, 56, 54),
-    ("PAD-006", 51, 48, 46, 44),
-    ("PAD-007", 32, 29, 27, 25),
-    ("PAD-008", 13, 11, 9, 7),
+    ("Spotify Podcast Ads", 99, 97, 95, 93),
+    ("iHeartMedia", 93, 90, 88, 86),
+    ("Acast", 85, 82, 80, 78),
+    ("Podimo", 80, 77, 75, 73),
+    ("Audioboom", 61, 58, 56, 54),
+    ("Megaphone (Spotify)", 51, 48, 46, 44),
+    ("Amazon Podcasts Ads", 32, 29, 27, 25),
+    ("Magellan AI", 13, 11, 9, 7),
 ]
 WEIGHTS = (0.30, 0.25, 0.25, 0.20)
 THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
