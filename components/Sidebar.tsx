@@ -7184,7 +7184,7 @@ function IconDisabilityRights({ className }: { className?: string }) {
     </svg>
   );
 }
-function IconColonialReparations({ className }: { className?: string }) {
+function IconColonialReparationsLegacy({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h18M3 12h18M3 18h18" />
@@ -10709,7 +10709,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/caste-discrimination-engine", label: "Caste Discrimination", icon: IconCasteDiscrimination },
       { href: "/dashboard/sexual-violence-wartime-engine", label: "Sexual Violence Wartime", icon: IconSexualViolenceWartime },
       { href: "/dashboard/police-brutality-engine", label: "Police Brutality", icon: IconPoliceBrutality },
-      { href: "/dashboard/colonial-reparations-engine", label: "Colonial Reparations", icon: IconColonialReparations },
+      { href: "/dashboard/colonial-reparations-engine", label: "Colonial Reparations", icon: IconColonialReparationsLegacy },
       { href: "/dashboard/hate-crime-engine", label: "Hate Crime", icon: IconHateCrime },
       { href: "/dashboard/child-labor-engine", label: "Child Labor", icon: IconChildLabor },
       { href: "/dashboard/indigenous-land-rights-engine", label: "Indigenous Land Rights", icon: IconIndigenousLandRights },
@@ -10793,7 +10793,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/right-to-truth-transitional-justice-engine", label: "Droit à la Vérité", icon: IconRightToTruth },
       { href: "/dashboard/human-trafficking-engine", label: "Traite Êtres Humains", icon: IconHumanTrafficking },
       { href: "/dashboard/disability-rights-engine", label: "Droits Handicap", icon: IconDisabilityRights },
-      { href: "/dashboard/colonial-reparations-engine", label: "Réparations Coloniales", icon: IconColonialReparations },
+      { href: "/dashboard/colonial-reparations-engine", label: "Réparations Coloniales", icon: IconColonialReparationsLegacy },
       { href: "/dashboard/water-rights-engine", label: "Droit à l'Eau", icon: IconWaterRights },
       { href: "/dashboard/internet-shutdown-engine", label: "Coupures Internet", icon: IconInternetShutdown },
       { href: "/dashboard/academic-freedom-engine", label: "Liberté Académique", icon: IconAcademicFreedom },
