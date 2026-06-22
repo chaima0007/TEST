@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[quantum-computing-disruption-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ── Mock entities ──────────────────────────────────────────────────────────────
@@ -369,17 +373,17 @@ export async function GET() {
       avg_estimated_quantum_disruption_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "quantum-computing-disruption-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "quantum-computing-disruption-engine")));
   }
 
   try {
-    const upstream = await fetch(`${SWARM_API_URL}/quantum-computing-disruption-engine`);
+    const upstream = await fetch(`${SWARM_API_URL}/quantum-computing-disruption-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "quantum-computing-disruption-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "quantum-computing-disruption-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream quantum computing disruption engine unavailable" }, "quantum-computing-disruption-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

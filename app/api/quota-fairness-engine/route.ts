@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[quota-fairness-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockReps = [
@@ -107,7 +111,7 @@ export async function GET(request: Request) {
       if (risk)   url.searchParams.set("risk", risk);
       if (bias)   url.searchParams.set("bias", bias);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -136,7 +140,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total: n,
@@ -156,5 +160,5 @@ export async function GET(request: Request) {
           .reduce((s, r) => s + Math.abs(r.estimated_fair_quota_usd - r.annual_quota_usd), 0)
       ),
     },
-  });
+  }));
 }

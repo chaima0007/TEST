@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[psychopolitics-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // PPE-001: EMEA, electoral_politics      → critical, mass_psychosis_politics
@@ -268,17 +272,17 @@ export async function GET() {
       results:                           entities,
     };
 
-    return NextResponse.json(sealResponse(summary, "psychopolitics-engine"));
+    return sealResponse(NextResponse.json(sealResponse(summary, "psychopolitics-engine")));
   }
 
   try {
     const res = await fetch(`${SWARM_API_URL}/psychopolitics-engine`, { cache: "no-store" });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    return NextResponse.json(sealResponse(await res.json(), "psychopolitics-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await res.json(), "psychopolitics-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream psychopolitics intelligence unavailable" }, "psychopolitics-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

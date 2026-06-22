@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const ex = exposureScore(i), po = positioningScore(i), in_ = intelligenceScore(i), co = conversionScore(i);
-      const comp = composite(ex, po, in_, co), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const lost = Math.round(i.total_competitive_deals * i.avg_deal_value_usd * i.competitive_loss_rate_pct * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        competitive_risk: r, competitive_pattern: pat, competitive_severity: sev, recommended_action: act,
-        exposure_score: ex, positioning_score: po, intelligence_score: in_, conversion_score: co,
-        competitive_composite: comp,
-        has_competitive_gap: comp >= 40 || i.competitive_win_rate_pct <= 0.35 || i.single_competitor_loss_concentration_pct >= 0.40,
-        requires_competitive_coaching: comp >= 25 || i.battle_card_usage_rate_pct <= 0.40 || i.value_differentiation_score <= 0.50,
-        estimated_lost_revenue_usd: lost,
-        competitive_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-competitive-win-loss-pattern-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tex=0, tpo=0, tin=0, tco=0, tcomp=0, tlr=0, gc=0, cc=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_competitive_gap) gc++; if (r.requires_competitive_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_competitive_composite: Math.round(tcomp/n*10)/10,
       competitive_gap_count: gc, coaching_count: cc,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_intelligence_score: Math.round(tin/n*10)/10,
       avg_conversion_score: Math.round(tco/n*10)/10,
       total_estimated_lost_revenue_usd: Math.round(tlr*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-competitive-win-loss-pattern-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-competitive-win-loss-pattern-engine`, { next: { revalidate: 30 } })).json()));
 }

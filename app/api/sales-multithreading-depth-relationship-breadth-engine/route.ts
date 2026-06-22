@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const de = depthScore(i), co = coverageScore(i), qu = qualityScore(i), ne = networkScore(i);
-      const comp = composite(de, co, qu, ne), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const vuln = Math.round(i.total_active_accounts * i.avg_deal_value_usd * i.single_threaded_account_rate_pct * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        multithread_risk: r, multithread_pattern: pat, multithread_severity: sev, recommended_action: act,
-        depth_score: de, coverage_score: co, quality_score: qu, network_score: ne,
-        multithread_composite: comp,
-        has_multithread_gap: comp >= 40 || i.single_threaded_account_rate_pct >= 0.40 || i.economic_buyer_engaged_rate_pct <= 0.40,
-        requires_expansion_coaching: comp >= 25 || i.avg_contacts_per_account <= 2.5 || i.multi_contact_meeting_rate_pct <= 0.40,
-        estimated_vulnerable_pipeline_usd: vuln,
-        multithread_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-multithreading-depth-relationship-breadth-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tde=0, tco=0, tqu=0, tne=0, tcomp=0, tvp=0, gc=0, ecc=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_multithread_gap) gc++; if (r.requires_expansion_coaching) ecc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_multithread_composite: Math.round(tcomp/n*10)/10,
       multithread_gap_count: gc, expansion_coaching_count: ecc,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_quality_score: Math.round(tqu/n*10)/10,
       avg_network_score: Math.round(tne/n*10)/10,
       total_estimated_vulnerable_pipeline_usd: Math.round(tvp*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-multithreading-depth-relationship-breadth-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-multithreading-depth-relationship-breadth-engine`, { next: { revalidate: 30 } })).json()));
 }

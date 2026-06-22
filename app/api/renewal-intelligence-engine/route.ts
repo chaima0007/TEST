@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[renewal-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockRenewals = [
@@ -246,7 +250,7 @@ export async function GET(request: Request) {
       if (action) url.searchParams.set("action", action);
       if (outcome) url.searchParams.set("outcome", outcome);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -273,7 +277,7 @@ export async function GET(request: Request) {
 
   const n = mockRenewals.length;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     renewals,
     summary: {
       total: n,
@@ -286,5 +290,5 @@ export async function GET(request: Request) {
       total_arr_at_risk_eur: arr_at_risk,
       expected_arr_delta_eur: Math.round(arr_delta),
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

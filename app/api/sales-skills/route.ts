@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-skills] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -224,7 +229,7 @@ export async function GET(request: Request) {
       if (priority) url.searchParams.set("priority", priority);
       if (manager)  url.searchParams.set("manager", manager);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -252,7 +257,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total: n,
@@ -268,5 +273,5 @@ export async function GET(request: Request) {
       immediate_coaching_count: mockReps.filter((r) => r.coaching_priority === "immediate").length,
       at_risk_count:         mockReps.filter((r) => r.skill_gap === "critical" || r.skill_gap === "significant").length,
     },
-  });
+  }));
 }

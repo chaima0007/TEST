@@ -189,35 +189,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const supply      = supplyScore(e);
-      const geo         = geopoliticalScore(e);
-      const demand      = demandScore(e);
-      const resilience  = resilienceScore(e);
-      const comp        = compositeScore(supply, geo, demand, resilience);
-      const risk        = riskLevel(comp);
-      const pattern     = materialPattern(e);
-      const sev         = severity(comp);
-      const action      = recommendedAction(risk);
-      const sig         = signal(risk);
-
-      return {
-        id:                            e.entity_id,
-        material_category:                    e.material_category,
-        region:                               e.region,
-        supply_score:                         supply,
-        geopolitical_score:                   geo,
-        demand_score:                         demand,
-        resilience_score:                     resilience,
-        composite_score:                      comp,
-        risk_level:                           risk,
-        material_pattern:                     pattern,
-        severity:                             sev,
-        recommended_action:                   action,
-        signal:                               sig,
-        supply_concentration_monopoly_risk:   e.supply_concentration_monopoly_risk,
-        export_restriction_weaponization_risk: e.export_restriction_weaponization_risk,
-      };
+  console.warn("[rare-earth-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -258,14 +231,14 @@ export async function GET() {
       avg_estimated_material_risk_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "rare-earth-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "rare-earth-intelligence-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/rare-earth-intelligence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/rare-earth-intelligence-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "rare-earth-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "rare-earth-intelligence-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "rare-earth-intelligence-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "rare-earth-intelligence-engine"), { status: 502 }));
   }
 }

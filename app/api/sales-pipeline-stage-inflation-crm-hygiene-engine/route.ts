@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const ac = accuracyScore(i), hy = hygieneScore(i), ve = velocityScore(i), co = completenessScore(i);
-      const comp = composite(ac, hy, ve, co), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const inflated = Math.round(i.total_pipeline_deals * i.avg_deal_value_usd * i.stage_advancement_without_exit_criteria_pct * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        hygiene_risk: r, hygiene_pattern: pat, hygiene_severity: sev, recommended_action: act,
-        accuracy_score: ac, hygiene_score: hy, velocity_score: ve, completeness_score: co,
-        hygiene_composite: comp,
-        has_hygiene_gap: comp >= 40 || i.data_completeness_score <= 0.50 || i.stage_advancement_without_exit_criteria_pct >= 0.30,
-        requires_hygiene_coaching: comp >= 25 || i.crm_update_latency_days >= 5.0 || i.verified_next_step_in_crm_rate_pct <= 0.60,
-        estimated_inflated_pipeline_usd: inflated,
-        hygiene_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-pipeline-stage-inflation-crm-hygiene-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tac=0, thy=0, tve=0, tco=0, tcomp=0, tinf=0, gc=0, cc=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_hygiene_gap) gc++; if (r.requires_hygiene_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_hygiene_composite: Math.round(tcomp/n*10)/10,
       hygiene_gap_count: gc, coaching_count: cc,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_velocity_score: Math.round(tve/n*10)/10,
       avg_completeness_score: Math.round(tco/n*10)/10,
       total_estimated_inflated_pipeline_usd: Math.round(tinf*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-pipeline-stage-inflation-crm-hygiene-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-pipeline-stage-inflation-crm-hygiene-engine`, { next: { revalidate: 30 } })).json()));
 }

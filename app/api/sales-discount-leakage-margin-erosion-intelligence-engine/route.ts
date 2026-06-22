@@ -65,22 +65,14 @@ function signal(i: typeof MOCK_REPS[0],pat:string,comp:number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const fr=frScore(i),de=deScore(i),di=diScore(i),vd=vdScore(i);
-      const comp=composite(fr,de,di,vd),pat=pattern(i),r=risk(comp),sev=severity(comp),act=action(r,pat);
-      const me=i.total_closed_deals*i.avg_deal_value_usd*i.avg_discount_depth_pct*i.discount_frequency_pct*(comp/100);
-      return { rep_id:i.rep_id,region:i.region, discount_risk:r,discount_pattern:pat,discount_severity:sev,recommended_action:act,
-        frequency_score:fr,depth_score:de,discipline_score:di,value_defense_score:vd,discount_composite:comp,
-        has_discount_gap:comp>=40||i.avg_discount_depth_pct>=0.20||i.unauthorized_discount_rate_pct>=0.15,
-        requires_discount_intervention:comp>=25||i.discount_frequency_pct>=0.50||i.gross_margin_vs_target_pct<=-0.08,
-        estimated_margin_erosion_usd:Math.round(me*100)/100,
-        discount_signal:signal(i,pat,comp) };
+  console.warn("[sales-discount-leakage-margin-erosion-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={},pc: Record<string,number>={},sc: Record<string,number>={},ac: Record<string,number>={};
     let tc=0,tf=0,td=0,tdi=0,tv=0,tm=0,gc=0,ic=0;
     for(const r of reps){rc[r.discount_risk]=(rc[r.discount_risk]||0)+1;pc[r.discount_pattern]=(pc[r.discount_pattern]||0)+1;sc[r.discount_severity]=(sc[r.discount_severity]||0)+1;ac[r.recommended_action]=(ac[r.recommended_action]||0)+1;tc+=r.discount_composite;tf+=r.frequency_score;td+=r.depth_score;tdi+=r.discipline_score;tv+=r.value_defense_score;tm+=r.estimated_margin_erosion_usd;if(r.has_discount_gap)gc++;if(r.requires_discount_intervention)ic++;}
     const n=reps.length;
-    return NextResponse.json(sealResponse({reps,summary:{total:n,risk_counts:rc,pattern_counts:pc,severity_counts:sc,action_counts:ac,avg_discount_composite:Math.round(tc/n*10)/10,discount_gap_count:gc,intervention_count:ic,avg_frequency_score:Math.round(tf/n*10)/10,avg_depth_score:Math.round(td/n*10)/10,avg_discipline_score:Math.round(tdi/n*10)/10,avg_value_defense_score:Math.round(tv/n*10)/10,total_estimated_margin_erosion_usd:Math.round(tm*100)/100}} as Record<string,unknown>));
+    return sealResponse(NextResponse.json(sealResponse({reps,summary:{total:n,risk_counts:rc,pattern_counts:pc,severity_counts:sc,action_counts:ac,avg_discount_composite:Math.round(tc/n*10)/10,discount_gap_count:gc,intervention_count:ic,avg_frequency_score:Math.round(tf/n*10)/10,avg_depth_score:Math.round(td/n*10)/10,avg_discipline_score:Math.round(tdi/n*10)/10,avg_value_defense_score:Math.round(tv/n*10)/10,total_estimated_margin_erosion_usd:Math.round(tm*100)/100}} as Record<string,unknown>)));
   }
-  return NextResponse.json(await(await fetch(`${process.env.SWARM_API_URL}/sales-discount-leakage-margin-erosion-intelligence-engine`)).json());
+  return sealResponse(NextResponse.json(await(await fetch(`${process.env.SWARM_API_URL}/sales-discount-leakage-margin-erosion-intelligence-engine`, { next: { revalidate: 30 } })).json()));
 }

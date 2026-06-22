@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-burnout-risk-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockReps = [
@@ -97,7 +101,7 @@ export async function GET(request: Request) {
       if (risk)  url.searchParams.set("risk",  risk);
       if (stage) url.searchParams.set("stage", stage);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -126,7 +130,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total:                              n,
@@ -143,5 +147,5 @@ export async function GET(request: Request) {
       avg_social_engagement_score:        Math.round((total_social   / n) * 10) / 10,
       total_productivity_impact_pct:      Math.round(total_impact * 10) / 10,
     },
-  });
+  }));
 }

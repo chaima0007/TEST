@@ -106,28 +106,8 @@ function signal(inp: typeof MOCK_REPS[0], pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(inp => {
-      const st  = stScore(inp);
-      const eng = engScore(inp);
-      const hy  = hygScore(inp);
-      const pip = pipScore(inp);
-      const comp = composite(st, eng, hy, pip);
-      const pat  = pattern(inp);
-      const r    = risk(comp);
-      const sev  = severity(comp);
-      const act  = action(r, pat);
-      const stall = inp.late_stage_stall_rate_pct + inp.close_date_slip_count / 10;
-      const atRisk = inp.total_active_deals * inp.avg_deal_value_usd * Math.min(stall, 1.0) * (comp / 100);
-      return {
-        rep_id: inp.rep_id, region: inp.region,
-        velocity_risk: r, velocity_pattern: pat, velocity_severity: sev, recommended_action: act,
-        stage_stall_score: st, engagement_decay_score: eng, deal_hygiene_score: hy, pipeline_risk_score: pip,
-        velocity_composite: comp,
-        has_velocity_gap: comp >= 40 || inp.close_date_slip_count >= 2 || inp.no_activity_streak_days >= 10,
-        requires_velocity_intervention: comp >= 25 || inp.late_stage_stall_rate_pct >= 0.30 || inp.stage_regression_count >= 2,
-        estimated_at_risk_pipeline_usd: Math.round(atRisk * 100) / 100,
-        velocity_signal: signal(inp, pat, comp),
-      };
+  console.warn("[sales-deal-velocity-collapse-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts: Record<string,number> = {};
@@ -161,10 +141,10 @@ export async function GET() {
       avg_pipeline_risk_score: Math.round(total_pip/n*10)/10,
       total_estimated_at_risk_pipeline_usd: Math.round(total_ar*100)/100,
     };
-    return NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>));
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>)));
   }
 
-  const res = await fetch(`${process.env.SWARM_API_URL}/sales-deal-velocity-collapse-intelligence-engine`);
+  const res = await fetch(`${process.env.SWARM_API_URL}/sales-deal-velocity-collapse-intelligence-engine`, { next: { revalidate: 30 } });
   const data = await res.json();
-  return NextResponse.json(data);
+  return sealResponse(NextResponse.json(data));
 }

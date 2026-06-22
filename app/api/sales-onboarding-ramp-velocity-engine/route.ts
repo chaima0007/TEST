@@ -84,22 +84,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const ve = velocityScore(i), re = readinessScore(i), ac = activityScore(i), en = engagementScore(i);
-      const comp = composite(ve, re, ac, en), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const rampProgress = i.weeks_since_start / Math.max(i.expected_ramp_weeks, 1);
-      const quotaGap = Math.max(0, rampProgress - i.quota_attainment_at_ramp_pct);
-      const delay = Math.round(quotaGap * i.expected_ramp_weeks * (comp/100) * 10) / 10;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        ramp_risk: r, ramp_pattern: pat, ramp_severity: sev, recommended_action: act,
-        velocity_score: ve, readiness_score: re, activity_score: ac, engagement_score: en,
-        ramp_composite: comp,
-        has_ramp_gap: comp >= 40 || i.quota_attainment_at_ramp_pct <= rampProgress * 0.60 || i.pipeline_created_vs_benchmark_pct <= 0.40,
-        requires_intervention: comp >= 25 || i.product_certification_completion_pct <= 0.65 || i.outbound_activity_vs_benchmark_pct <= 0.55,
-        estimated_ramp_delay_weeks: delay,
-        ramp_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-onboarding-ramp-velocity-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tve=0,tre=0,tac=0,ten=0,tcomp=0,tdel=0,gc=0,ic=0;
@@ -111,7 +97,7 @@ export async function GET() {
       if (r.has_ramp_gap) gc++; if (r.requires_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_ramp_composite: Math.round(tcomp/n*10)/10,
       ramp_gap_count: gc, intervention_count: ic,
@@ -120,7 +106,7 @@ export async function GET() {
       avg_activity_score: Math.round(tac/n*10)/10,
       avg_engagement_score: Math.round(ten/n*10)/10,
       avg_estimated_ramp_delay_weeks: Math.round(tdel/n*10)/10,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-onboarding-ramp-velocity-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-onboarding-ramp-velocity-engine`, { next: { revalidate: 30 } })).json()));
 }

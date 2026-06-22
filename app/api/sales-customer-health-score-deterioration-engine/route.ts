@@ -72,21 +72,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const en = engagementScore(i), ad = adoptionScore(i), sa = satisfactionScore(i), rr = renewalReadinessScore(i);
-      const comp = composite(en, ad, sa, rr), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const churnP = (comp/100) * (1.0 - i.renewal_probability_score);
-      const ca = Math.round(i.total_accounts_managed * i.avg_arr_per_account_usd * churnP * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        health_risk: r, health_pattern: pat, health_severity: sev, recommended_action: act,
-        engagement_score: en, adoption_score: ad, satisfaction_score: sa, renewal_readiness_score: rr,
-        health_composite: comp,
-        has_health_gap: comp >= 40 || i.renewal_probability_score <= 0.65 || i.product_usage_trend_pct <= -0.05,
-        requires_health_intervention: comp >= 25 || i.competitor_evaluation_signals >= 1 || i.champion_change_events >= 1,
-        estimated_churn_arr_usd: ca,
-        health_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-customer-health-score-deterioration-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let ten=0, tad=0, tsa=0, trr=0, tcomp=0, tca=0, gc=0, ic=0;
@@ -98,7 +85,7 @@ export async function GET() {
       if (r.has_health_gap) gc++; if (r.requires_health_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_health_composite: Math.round(tcomp/n*10)/10,
       health_gap_count: gc, intervention_count: ic,
@@ -107,7 +94,7 @@ export async function GET() {
       avg_satisfaction_score: Math.round(tsa/n*10)/10,
       avg_renewal_readiness_score: Math.round(trr/n*10)/10,
       total_estimated_churn_arr_usd: Math.round(tca*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-customer-health-score-deterioration-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-customer-health-score-deterioration-engine`, { next: { revalidate: 30 } })).json()));
 }

@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[prospect-engagement-velocity] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -106,7 +111,7 @@ export async function GET(request: Request) {
       if (intent)   url.searchParams.set("intent", intent);
       if (region)   url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -136,7 +141,7 @@ export async function GET(request: Request) {
 
   const n = mockProspects.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     prospects,
     summary: {
       total: n,
@@ -153,5 +158,5 @@ export async function GET(request: Request) {
       avg_velocity_trend_score:      Math.round((total_vel / n) * 10) / 10,
       avg_days_to_re_engage:         Math.round((total_d2r / n) * 10) / 10,
     },
-  });
+  }));
 }

@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const ac = accuracyScore(i), di = disciplineScore(i), ti = timingScore(i), re = reliabilityScore(i);
-      const comp = composite(ac, di, ti, re), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const err = Math.round(i.total_commit_deals * i.avg_deal_value_usd * i.commit_vs_actual_variance_pct * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        forecast_risk: r, forecast_pattern: pat, forecast_severity: sev, recommended_action: act,
-        accuracy_score: ac, discipline_score: di, timing_score: ti, reliability_score: re,
-        forecast_composite: comp,
-        has_forecast_gap: comp >= 40 || i.forecast_miss_rate_pct >= 0.40 || i.rolling_3q_forecast_accuracy_pct <= 0.65,
-        requires_manager_review: comp >= 25 || i.commit_vs_actual_variance_pct >= 0.20 || i.push_out_frequency_pct >= 0.30,
-        estimated_forecast_error_usd: err,
-        forecast_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-forecast-accuracy-commit-reliability-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tac=0,tdi=0,tti=0,tre=0,tcomp=0,tfe=0,gc=0,mc=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_forecast_gap) gc++; if (r.requires_manager_review) mc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_forecast_composite: Math.round(tcomp/n*10)/10,
       forecast_gap_count: gc, manager_review_count: mc,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_timing_score: Math.round(tti/n*10)/10,
       avg_reliability_score: Math.round(tre/n*10)/10,
       total_estimated_forecast_error_usd: Math.round(tfe*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-forecast-accuracy-commit-reliability-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-forecast-accuracy-commit-reliability-engine`, { next: { revalidate: 30 } })).json()));
 }

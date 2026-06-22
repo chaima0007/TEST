@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-process-velocity-anomaly-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockDeals = [
@@ -97,7 +101,7 @@ export async function GET(request: Request) {
       if (anomaly) url.searchParams.set("anomaly", anomaly);
       if (risk)    url.searchParams.set("risk",    risk);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -126,7 +130,7 @@ export async function GET(request: Request) {
 
   const n = mockDeals.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     deals,
     summary: {
       total:                          n,
@@ -143,5 +147,5 @@ export async function GET(request: Request) {
       avg_pattern_risk_score:         Math.round((total_pat   / n) * 10) / 10,
       avg_pipeline_days_deviation:    Math.round((total_dev   / n) * 10) / 10,
     },
-  });
+  }));
 }

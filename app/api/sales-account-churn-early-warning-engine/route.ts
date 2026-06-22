@@ -77,19 +77,8 @@ function signal(i: Acct, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const accounts = MOCK_ACCOUNTS.map(i => {
-      const us = usageScore(i), re = relationshipScore(i), su = supportScore(i), va = valueScore(i);
-      const comp = composite(us, re, su, va), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        account_id: i.account_id, region: i.region,
-        churn_risk: r, churn_pattern: pat, churn_severity: sev, recommended_action: act,
-        usage_score: us, relationship_score: re, support_score: su, value_score: va,
-        churn_composite: comp,
-        has_churn_signal: comp >= 40 || i.product_usage_decay_pct >= 0.30 || i.days_to_renewal <= 90,
-        requires_executive_action: comp >= 25 || i.executive_sponsor_engaged <= 0.40 || i.competitive_evaluation_signal >= 0.35,
-        estimated_arr_at_risk_usd: Math.round(i.arr_usd * (comp/100) * 100) / 100,
-        churn_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-account-churn-early-warning-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tus=0,tre=0,tsu=0,tva=0,tcomp=0,tarr=0,gc=0,ec=0;
@@ -101,7 +90,7 @@ export async function GET() {
       if (a.has_churn_signal) gc++; if (a.requires_executive_action) ec++;
     }
     const n = accounts.length;
-    return NextResponse.json(sealResponse({ accounts, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ accounts, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_churn_composite: Math.round(tcomp/n*10)/10,
       churn_signal_count: gc, executive_action_count: ec,
@@ -110,7 +99,7 @@ export async function GET() {
       avg_support_score: Math.round(tsu/n*10)/10,
       avg_value_score: Math.round(tva/n*10)/10,
       total_estimated_arr_at_risk_usd: Math.round(tarr*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-account-churn-early-warning-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-account-churn-early-warning-engine`, { next: { revalidate: 30 } })).json()));
 }

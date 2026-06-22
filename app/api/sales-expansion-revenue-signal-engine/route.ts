@@ -77,19 +77,8 @@ function signal(i: Acct, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const accounts = MOCK_ACCOUNTS.map(i => {
-      const uc = usageCeilingScore(i), pg = productGapScore(i), en = engagementScore(i), re = relationshipScore(i);
-      const comp = composite(uc, pg, en, re), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        account_id: i.account_id, region: i.region,
-        expansion_risk: r, expansion_pattern: pat, expansion_severity: sev, recommended_action: act,
-        usage_ceiling_score: uc, product_gap_score: pg, engagement_score: en, relationship_score: re,
-        expansion_composite: comp,
-        has_expansion_signal: comp >= 40 || i.license_utilization_pct >= 0.75 || i.adjacent_product_fit_score >= 0.60,
-        requires_executive_engagement: comp >= 25 || i.executive_engagement_score >= 0.60 || i.upsell_budget_confirmed >= 0.50,
-        estimated_expansion_arr_usd: Math.round(i.potential_expansion_arr_usd * (comp/100) * 100) / 100,
-        expansion_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-expansion-revenue-signal-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tuc=0,tpg=0,ten=0,tre=0,tcomp=0,tarr=0,gc=0,ec=0;
@@ -101,7 +90,7 @@ export async function GET() {
       if (a.has_expansion_signal) gc++; if (a.requires_executive_engagement) ec++;
     }
     const n = accounts.length;
-    return NextResponse.json(sealResponse({ accounts, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ accounts, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_expansion_composite: Math.round(tcomp/n*10)/10,
       expansion_signal_count: gc, executive_engagement_count: ec,
@@ -110,7 +99,7 @@ export async function GET() {
       avg_engagement_score: Math.round(ten/n*10)/10,
       avg_relationship_score: Math.round(tre/n*10)/10,
       total_estimated_expansion_arr_usd: Math.round(tarr*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-expansion-revenue-signal-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-expansion-revenue-signal-engine`, { next: { revalidate: 30 } })).json()));
 }

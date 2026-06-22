@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-buyer-response-latency-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockReps = [
@@ -98,7 +102,7 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/api/sales-buyer-response-latency-intelligence-engine`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -122,7 +126,7 @@ export async function GET() {
   }
 
   const n = mockReps.length;
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps: mockReps,
     summary: {
       total:                                  n,
@@ -139,5 +143,5 @@ export async function GET() {
       avg_process_velocity_score:             Math.round((total_p / n) * 10) / 10,
       total_estimated_at_risk_revenue_usd:    Math.round(total_ar * 100) / 100,
     },
-  });
+  }));
 }

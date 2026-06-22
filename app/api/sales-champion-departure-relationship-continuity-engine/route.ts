@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const st = stabilityScore(i), co = coverageScore(i), re = resilienceScore(i), in_ = intelligenceScore(i);
-      const comp = composite(st, co, re, in_), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const atRisk = Math.round(i.champion_departure_detected_deals * i.avg_deal_value_usd * i.deal_ghosting_after_champion_loss_rate_pct * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        champion_risk: r, champion_pattern: pat, champion_severity: sev, recommended_action: act,
-        stability_score: st, coverage_score: co, resilience_score: re, intelligence_score: in_,
-        champion_composite: comp,
-        has_champion_gap: comp >= 40 || i.single_threaded_deal_rate_pct >= 0.40 || i.champion_engagement_drop_rate_pct >= 0.30,
-        requires_champion_intervention: comp >= 25 || i.backup_contact_coverage_rate_pct <= 0.50 || i.deal_ghosting_after_champion_loss_rate_pct >= 0.25,
-        estimated_at_risk_pipeline_usd: atRisk,
-        champion_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-champion-departure-relationship-continuity-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tst=0, tco=0, tre=0, tin=0, tcomp=0, tar=0, gc=0, ic=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_champion_gap) gc++; if (r.requires_champion_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_champion_composite: Math.round(tcomp/n*10)/10,
       champion_gap_count: gc, intervention_count: ic,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tre/n*10)/10,
       avg_intelligence_score: Math.round(tin/n*10)/10,
       total_estimated_at_risk_pipeline_usd: Math.round(tar*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-champion-departure-relationship-continuity-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-champion-departure-relationship-continuity-engine`, { next: { revalidate: 30 } })).json()));
 }

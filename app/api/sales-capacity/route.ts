@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-capacity] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -202,7 +207,7 @@ export async function GET(request: Request) {
       if (urgency) url.searchParams.set("urgency", urgency);
       if (region)  url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -227,7 +232,7 @@ export async function GET(request: Request) {
 
   const n = mockTeams.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     teams,
     summary: {
       total:                   n,
@@ -242,5 +247,5 @@ export async function GET(request: Request) {
       critical_count:          mockTeams.filter((t) => t.capacity_health === "critical").length,
       total_headcount_gap:     mockTeams.reduce((s, t) => s + t.headcount_gap, 0),
     },
-  });
+  }));
 }

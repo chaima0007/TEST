@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[revenue] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -198,7 +203,7 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/revenue`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
@@ -208,12 +213,12 @@ export async function GET() {
   const allPredictions = MOCK_DEALS.map(predictOne).sort((a, b) => b.weighted_value_eur - a.weighted_value_eur);
   const summary = computeSummary(allPredictions);
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     predictions: allPredictions,
     summary,
     quarterly,
     monthly,
     annual,
     last_updated: new Date().toISOString(),
-  });
+  }));
 }

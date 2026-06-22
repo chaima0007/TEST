@@ -79,21 +79,8 @@ function signal(i: Deal, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const deals = MOCK_DEALS.map(i => {
-      const st = stallScore(i), de = decisionScore(i), sk = stakeholderScore(i), ch = championScore(i);
-      const comp = composite(st, de, sk, ch), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const ageRatio = i.days_in_current_stage / Math.max(i.expected_stage_duration_days, 1);
-      const base = i.days_in_current_stage - i.expected_stage_duration_days;
-      return {
-        deal_id: i.deal_id, region: i.region, pipeline_stage: i.pipeline_stage,
-        velocity_risk: r, velocity_pattern: pat, velocity_severity: sev, recommended_action: act,
-        stall_score: st, decision_score: de, stakeholder_score: sk, champion_score: ch,
-        velocity_composite: comp,
-        has_velocity_gap: comp >= 40 || ageRatio >= 1.5 || i.decision_date_pushed_count >= 2,
-        requires_executive_bridge: comp >= 25 || i.economic_buyer_engaged <= 0.40 || i.stakeholder_response_rate_pct <= 0.35,
-        estimated_delay_days: Math.max(0, Math.round(base * (comp/100))),
-        velocity_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-deal-velocity-acceleration-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tst=0,tde=0,tsk=0,tch=0,tcomp=0,tdelay=0,gc=0,ec=0;
@@ -105,7 +92,7 @@ export async function GET() {
       if (d.has_velocity_gap) gc++; if (d.requires_executive_bridge) ec++;
     }
     const n = deals.length;
-    return NextResponse.json(sealResponse({ deals, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ deals, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_velocity_composite: Math.round(tcomp/n*10)/10,
       velocity_gap_count: gc, executive_bridge_count: ec,
@@ -114,7 +101,7 @@ export async function GET() {
       avg_stakeholder_score: Math.round(tsk/n*10)/10,
       avg_champion_score: Math.round(tch/n*10)/10,
       avg_estimated_delay_days: Math.round(tdelay/n*10)/10,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-deal-velocity-acceleration-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-deal-velocity-acceleration-engine`, { next: { revalidate: 30 } })).json()));
 }

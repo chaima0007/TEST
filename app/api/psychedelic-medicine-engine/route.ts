@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const cli  = clinicalScore(e);
-      const acc  = accessScore(e);
-      const reg  = regulatoryScore(e);
-      const eq   = equityScore(e);
-      const comp = compositeScore(cli, acc, reg, eq);
-      const risk = riskLevel(comp);
-      const pat  = psychedelicPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                       e.entity_id,
-        substance_category:              e.substance_category,
-        region:                          e.region,
-        clinical_score:                  cli,
-        access_score:                    acc,
-        regulatory_score:                reg,
-        equity_score:                    eq,
-        composite_score:                 comp,
-        risk_level:                      risk,
-        psychedelic_pattern:             pat,
-        severity:                        sev,
-        recommended_action:              action,
-        signal:                          sig,
-        clinical_trial_access:           e.clinical_trial_access,
-        racial_disparity_enforcement:    e.racial_disparity_enforcement,
-      };
+  console.warn("[psychedelic-medicine-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_drug_reform_index:    Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_clinical: avgClinical }, "psychedelic-medicine-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/psychedelic-medicine-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/psychedelic-medicine-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "psychedelic-medicine-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "psychedelic-medicine-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "psychedelic-medicine-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-coach] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -430,7 +435,7 @@ export async function GET(request: Request) {
       if (manager) url.searchParams.set("manager", manager);
       if (focus) url.searchParams.set("focus", focus);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -449,7 +454,7 @@ export async function GET(request: Request) {
   const avg_coaching_score = mockReps.reduce((s, r) => s + r.coaching_score, 0) / mockReps.length;
   const avg_quota_attainment = mockReps.reduce((s, r) => s + r.estimated_quota_attainment_pct, 0) / mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total_reps: mockReps.length,
@@ -459,5 +464,5 @@ export async function GET(request: Request) {
       avg_quota_attainment_pct: Math.round(avg_quota_attainment * 10) / 10,
       urgent_count: priority_counts.urgent,
     },
-  });
+  }));
 }

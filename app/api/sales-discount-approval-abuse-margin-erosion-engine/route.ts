@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const di = disciplineScore(i), pr = processScore(i), ou = outcomeScore(i), va = valueScore(i);
-      const comp = composite(di, pr, ou, va), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const erosion = Math.round(i.total_deals_closed * i.avg_deal_value_usd * i.avg_discount_pct * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        margin_risk: r, margin_pattern: pat, margin_severity: sev, recommended_action: act,
-        discipline_score: di, process_score: pr, outcome_score: ou, value_score: va,
-        margin_composite: comp,
-        has_margin_gap: comp >= 40 || i.avg_gross_margin_pct <= 0.35 || i.deals_below_floor_margin_pct >= 0.15,
-        requires_intervention: comp >= 25 || i.deal_desk_bypass_rate_pct >= 0.20 || i.avg_discount_pct >= 0.15,
-        estimated_margin_erosion_usd: erosion,
-        margin_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-discount-approval-abuse-margin-erosion-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tdi=0, tpr=0, tou=0, tva=0, tcomp=0, tme=0, gc=0, ic=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_margin_gap) gc++; if (r.requires_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_margin_composite: Math.round(tcomp/n*10)/10,
       margin_gap_count: gc, intervention_count: ic,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_outcome_score: Math.round(tou/n*10)/10,
       avg_value_score: Math.round(tva/n*10)/10,
       total_estimated_margin_erosion_usd: Math.round(tme*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-discount-approval-abuse-margin-erosion-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-discount-approval-abuse-margin-erosion-engine`, { next: { revalidate: 30 } })).json()));
 }

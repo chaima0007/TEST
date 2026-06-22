@@ -70,20 +70,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const pr = preparednessScore(i), ex = executionScore(i), int_ = intelligenceScore(i), po = positioningScore(i);
-      const comp = composite(pr, ex, int_, po), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const lr = Math.round(i.total_competitive_deals * i.avg_deal_value_usd * i.competitive_loss_rate_pct * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        competitive_risk: r, competitive_pattern: pat, competitive_severity: sev, recommended_action: act,
-        preparedness_score: pr, execution_score: ex, intelligence_score: int_, positioning_score: po,
-        competitive_composite: comp,
-        has_competitive_gap: comp >= 40 || i.competitive_win_rate_pct <= 0.40 || i.battle_card_usage_rate_pct <= 0.50,
-        requires_competitive_coaching: comp >= 25 || i.no_competitive_intel_rate_pct >= 0.30 || i.late_competitor_discovery_rate_pct >= 0.25,
-        estimated_lost_revenue_usd: lr,
-        competitive_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-competitive-intelligence-battle-card-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tpr=0, tex=0, tin=0, tpo=0, tcomp=0, tlr=0, gc=0, cc=0;
@@ -95,7 +83,7 @@ export async function GET() {
       if (r.has_competitive_gap) gc++; if (r.requires_competitive_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_competitive_composite: Math.round(tcomp/n*10)/10,
       competitive_gap_count: gc, coaching_count: cc,
@@ -104,7 +92,7 @@ export async function GET() {
       avg_intelligence_score: Math.round(tin/n*10)/10,
       avg_positioning_score: Math.round(tpo/n*10)/10,
       total_estimated_lost_revenue_usd: Math.round(tlr*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-competitive-intelligence-battle-card-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-competitive-intelligence-battle-card-engine`, { next: { revalidate: 30 } })).json()));
 }

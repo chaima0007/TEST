@@ -83,19 +83,8 @@ function signal(i: Entity, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(i => {
-      const pol = policyScore(i), aud = auditScore(i), rsk = riskScore(i), cul = cultureScore(i);
-      const comp = composite(pol, aud, rsk, cul), pat = compliancePattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        id: i.entity_id, region: i.region,
-        compliance_risk: r, compliance_pattern: pat, compliance_severity: sev, recommended_action: act,
-        policy_score: pol, audit_score: aud, risk_score: rsk, culture_score: cul,
-        compliance_composite: comp,
-        has_compliance_breach: comp >= 40 || i.sanction_history_score >= 0.4 || i.policy_adherence_score <= 0.4 || i.external_audit_score <= 0.4,
-        requires_executive_action: comp >= 25 || i.whistleblower_incident_rate >= 0.4 || i.regulatory_deadline_compliance <= 0.35,
-        estimated_sanction_risk_index: Math.min(Math.round(comp/100*(1-i.legal_counsel_access_score+0.01)*10*100)/100, 10.0),
-        compliance_signal: signal(i, pat, comp),
-      };
+  console.warn("[regulatory-compliance-legal-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tpol=0,taud=0,trsk=0,tcul=0,tcomp=0,tridx=0,breachC=0,execC=0;
@@ -110,7 +99,7 @@ export async function GET() {
       if (e.requires_executive_action) execC++;
     }
     const n = entities.length;
-    return NextResponse.json(sealResponse({ entities, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_compliance_composite: Math.round(tcomp/n*10)/10,
       compliance_breach_count: breachC, executive_action_count: execC,
@@ -119,7 +108,7 @@ export async function GET() {
       avg_risk_score: Math.round(trsk/n*10)/10,
       avg_culture_score: Math.round(tcul/n*10)/10,
       avg_estimated_sanction_risk_index: Math.round(tridx/n*100)/100,
-    } as Record<string, unknown>}, "regulatory-compliance-legal-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "regulatory-compliance-legal-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/regulatory-compliance-legal-engine`)).json(), "regulatory-compliance-legal-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/regulatory-compliance-legal-engine`, { next: { revalidate: 30 } })).json(), "regulatory-compliance-legal-engine") as Parameters<typeof NextResponse.json>[0]));
 }

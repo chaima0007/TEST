@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[prospects] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -36,7 +41,7 @@ export async function GET(req: Request) {
         next: { revalidate: 30 },
       });
       if (res.ok) {
-        return NextResponse.json({ source: "live", ...(await res.json()) });
+        return sealResponse(NextResponse.json({ source: "live", ...(await res.json()) }));
       }
     } catch {
       // fall through
@@ -55,5 +60,5 @@ export async function GET(req: Request) {
     );
   }
 
-  return NextResponse.json({ ...MOCK_PROSPECTS, prospects, source: "mock" });
+  return sealResponse(NextResponse.json({ ...MOCK_PROSPECTS, prospects, source: "mock" }));
 }

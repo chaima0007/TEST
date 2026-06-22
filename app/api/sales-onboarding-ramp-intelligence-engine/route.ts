@@ -70,21 +70,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const re = readinessScore(i), ac = activityScore(i), pi = pipelineScore(i), ms = managerSupportScore(i);
-      const comp = composite(re, ac, pi, ms), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const rampQuota = i.avg_deal_value_usd * 4;
-      const rr = Math.round(rampQuota * Math.max(0, 1 - i.quota_attainment_vs_ramp_plan_pct) * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        ramp_risk: r, ramp_pattern: pat, ramp_severity: sev, recommended_action: act,
-        readiness_score: re, activity_score: ac, pipeline_score: pi, manager_support_score: ms,
-        ramp_composite: comp,
-        has_ramp_gap: comp >= 40 || i.quota_attainment_vs_ramp_plan_pct <= 0.60 || i.pipeline_coverage_ratio <= 2.0,
-        requires_ramp_intervention: comp >= 25 || i.outbound_activity_vs_plan_pct <= 0.65 || i.product_certification_completion_pct <= 0.60,
-        estimated_ramp_revenue_risk_usd: rr,
-        ramp_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-onboarding-ramp-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tre=0, tac=0, tpi=0, tms=0, tcomp=0, trr=0, gc=0, ic=0;
@@ -96,7 +83,7 @@ export async function GET() {
       if (r.has_ramp_gap) gc++; if (r.requires_ramp_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_ramp_composite: Math.round(tcomp/n*10)/10,
       ramp_gap_count: gc, intervention_count: ic,
@@ -105,7 +92,7 @@ export async function GET() {
       avg_pipeline_score: Math.round(tpi/n*10)/10,
       avg_manager_support_score: Math.round(tms/n*10)/10,
       total_estimated_ramp_revenue_risk_usd: Math.round(trr*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-onboarding-ramp-intelligence-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-onboarding-ramp-intelligence-engine`, { next: { revalidate: 30 } })).json()));
 }

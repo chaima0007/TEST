@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[racial-discrimination-rights-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 if (!SWARM_API_URL) console.warn("[racial-discrimination-rights-engine] SWARM_API_URL not set");
 
@@ -39,8 +43,8 @@ export async function GET() {
   try {
     const upstream = await fetch(`${SWARM_API_URL}/racial-discrimination-rights-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(await sealResponse(data));
+    return sealResponse(NextResponse.json(await sealResponse(data)));
   } catch {
-    return NextResponse.json(await sealResponse({ error: "upstream_unavailable" }), { status: 502 });
+    return sealResponse(NextResponse.json(await sealResponse({ error: "upstream_unavailable" }), { status: 502 }));
   }
 }

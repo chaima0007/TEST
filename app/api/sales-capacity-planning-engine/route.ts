@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-capacity-planning-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockRegions = [
@@ -113,7 +117,7 @@ export async function GET(request: Request) {
       if (status) url.searchParams.set("status", status);
       if (risk)   url.searchParams.set("risk", risk);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -144,7 +148,7 @@ export async function GET(request: Request) {
   const total_curr = mockRegions.reduce((s, r) => s + r.current_headcount, 0);
   const total_req = mockRegions.reduce((s, r) => s + r.required_headcount, 0);
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     regions,
     summary: {
       total: n,
@@ -161,5 +165,5 @@ export async function GET(request: Request) {
       total_revenue_at_risk_usd:    Math.round(total_risk),
       optimal_headcount_range:      `${total_curr}-${total_req}`,
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

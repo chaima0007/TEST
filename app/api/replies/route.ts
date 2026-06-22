@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[replies] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -270,7 +275,7 @@ export async function GET(request: Request) {
       const url = new URL(`${SWARM_API_URL}/replies`);
       searchParams.forEach((v, k) => url.searchParams.set(k, v));
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {
       // fall through to mock
     }
@@ -283,7 +288,7 @@ export async function GET(request: Request) {
   if (objection) replies = replies.filter((r) => r.classification.objection_type === objection);
   if (priority) replies = replies.filter((r) => r.classification.priority === priority);
 
-  return NextResponse.json({ replies, summary: buildSummary(MOCK_REPLIES) });
+  return sealResponse(NextResponse.json({ replies, summary: buildSummary(MOCK_REPLIES) }));
 }
 
 export async function POST(request: Request) {
@@ -296,7 +301,7 @@ export async function POST(request: Request) {
         body: JSON.stringify(body),
         cache: "no-store",
       });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {
       // fall through
     }
@@ -304,6 +309,6 @@ export async function POST(request: Request) {
 
   const body = await request.json().catch(() => ({}));
   const text: string = body.text ?? "";
-  if (!text) return NextResponse.json({ error: "text required" }, { status: 400 });
-  return NextResponse.json({ classification: classify(text) });
+  if (!text) return sealResponse(NextResponse.json({ error: "text required" }, { status: 400 }));
+  return sealResponse(NextResponse.json({ classification: classify(text) }));
 }

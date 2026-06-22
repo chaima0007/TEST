@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[rep-ramp-intelligence] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockReps = [
@@ -115,7 +119,7 @@ export async function GET(request: Request) {
       if (phase)  url.searchParams.set("phase", phase);
       if (region) url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -144,7 +148,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total: n,
@@ -163,5 +167,5 @@ export async function GET(request: Request) {
         mockReps.reduce((s, r) => s + r.projected_full_ramp_days, 0) / n
       ),
     },
-  });
+  }));
 }

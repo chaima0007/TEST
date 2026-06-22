@@ -81,20 +81,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const en = engagementScore(i), si = signalScore(i), ch = championScore(i), fr = freshnessScore(i);
-      const comp = composite(en, si, ch, fr), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const cold = Math.round(i.deals_with_intent_decay * i.avg_deal_value_usd * (1 - Math.max(i.buying_committee_engagement_score, 0.05)) * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        intent_risk: r, intent_pattern: pat, intent_severity: sev, recommended_action: act,
-        engagement_score: en, signal_score: si, champion_score: ch, freshness_score: fr,
-        intent_composite: comp,
-        has_intent_gap: comp >= 40 || i.days_since_last_positive_signal >= 21 || i.buying_committee_engagement_score <= 0.35,
-        requires_reengagement: comp >= 25 || i.champion_response_latency_days >= 7.0 || i.website_visit_decay_rate_pct >= 0.30,
-        estimated_cold_pipeline_usd: cold,
-        intent_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-buyer-intent-signal-decay-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let ten=0, tsi=0, tch=0, tfr=0, tcomp=0, tcp=0, gc=0, re=0;
@@ -106,7 +94,7 @@ export async function GET() {
       if (r.has_intent_gap) gc++; if (r.requires_reengagement) re++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_intent_composite: Math.round(tcomp/n*10)/10,
       intent_gap_count: gc, reengagement_count: re,
@@ -115,7 +103,7 @@ export async function GET() {
       avg_champion_score: Math.round(tch/n*10)/10,
       avg_freshness_score: Math.round(tfr/n*10)/10,
       total_estimated_cold_pipeline_usd: Math.round(tcp*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-buyer-intent-signal-decay-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-buyer-intent-signal-decay-engine`, { next: { revalidate: 30 } })).json()));
 }

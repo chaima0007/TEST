@@ -91,19 +91,8 @@ function signal(e: Entity, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const coh = coherenceScore(e), con = contagionScore(e), pol = polarizationScore(e), res = resilienceScore(e);
-      const comp = composite(coh, con, pol, res), pat = emergencePattern(e), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        id: e.entity_id, collective_type: e.collective_type, region: e.region,
-        social_risk: r, emergence_pattern: pat, collective_severity: sev, recommended_action: act,
-        coherence_score: coh, contagion_score: con, polarization_score: pol, resilience_score: res,
-        social_composite: comp,
-        has_cascade_signal: comp >= 40 || e.information_cascade_velocity >= 0.65 || e.emotional_contagion_rate >= 0.65,
-        requires_collective_intervention: comp >= 25 || e.tribal_polarization_risk >= 0.70 || e.echo_chamber_density >= 0.70 || e.coordination_failure_risk >= 0.65,
-        estimated_collective_risk_index: Math.min(Math.round(comp / 100 * (1 - e.social_resilience_score + 0.01) * 10 * 100) / 100, 10.0),
-        social_signal: signal(e, pat, comp),
-      };
+  console.warn("[quantum-social-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -119,7 +108,7 @@ export async function GET() {
       if (ent.requires_collective_intervention) intervC++;
     }
     const n = entities.length;
-    return NextResponse.json(sealResponse({ entities, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_social_composite: Math.round(tcomp/n*10)/10,
       cascade_signal_count: cascC, collective_intervention_count: intervC,
@@ -128,7 +117,7 @@ export async function GET() {
       avg_polarization_score: Math.round(tpol/n*10)/10,
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_estimated_collective_risk_index: Math.round(tidx/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/quantum-social-intelligence-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/quantum-social-intelligence-engine`, { next: { revalidate: 30 } })).json()));
 }

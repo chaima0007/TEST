@@ -107,27 +107,8 @@ function signal(inp: typeof MOCK_REPS[0], pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(inp => {
-      const d   = disScore(inp);
-      const f   = fatScore(inp);
-      const se  = sentScore(inp);
-      const p   = perfScore(inp);
-      const comp = composite(d, f, se, p);
-      const pat  = pattern(inp);
-      const r    = risk(comp);
-      const sev  = severity(comp);
-      const act  = action(r, pat);
-      const repCost = 85000 * (1.5 + (inp.tenure_months / 24) * 0.5) * (comp / 100);
-      return {
-        rep_id: inp.rep_id, region: inp.region,
-        burnout_risk: r, burnout_pattern: pat, burnout_severity: sev, recommended_action: act,
-        disengagement_score: d, fatigue_score: f, sentiment_score: se, performance_erosion_score: p,
-        burnout_composite: comp,
-        has_burnout_gap: comp >= 40 || inp.activity_volume_trend_pct <= -0.20 || inp.consecutive_quota_miss_streak >= 2,
-        is_flight_risk: comp >= 25 || inp.internal_mobility_applications >= 1 || inp.comp_plan_satisfaction_score <= 0.40 || inp.exit_interview_signals >= 1,
-        estimated_replacement_cost_usd: Math.round(repCost * 100) / 100,
-        burnout_signal: signal(inp, pat, comp),
-      };
+  console.warn("[sales-rep-burnout-attrition-risk-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts: Record<string,number> = {};
@@ -161,10 +142,10 @@ export async function GET() {
       avg_performance_erosion_score: Math.round(total_perf/n*10)/10,
       total_estimated_replacement_cost_usd: Math.round(total_rc*100)/100,
     };
-    return NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>));
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>)));
   }
 
-  const res = await fetch(`${process.env.SWARM_API_URL}/sales-rep-burnout-attrition-risk-intelligence-engine`);
+  const res = await fetch(`${process.env.SWARM_API_URL}/sales-rep-burnout-attrition-risk-intelligence-engine`, { next: { revalidate: 30 } });
   const data = await res.json();
-  return NextResponse.json(data);
+  return sealResponse(NextResponse.json(data));
 }

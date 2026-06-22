@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const di = disciplineScore(i), le = leverageScore(i), pr = preparationScore(i), va = valueAnchoringScore(i);
-      const comp = composite(di, le, pr, va), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const margin = Math.round(i.total_closed_deals * i.avg_deal_value_usd * Math.min(i.concession_size_avg_pct * i.avg_concession_rounds_per_deal, 0.5) * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        negotiation_risk: r, negotiation_pattern: pat, negotiation_severity: sev, recommended_action: act,
-        discipline_score: di, leverage_score: le, preparation_score: pr, value_anchoring_score: va,
-        negotiation_composite: comp,
-        has_negotiation_gap: comp >= 40 || i.final_price_vs_list_pct <= 0.80 || i.first_concession_without_ask_pct >= 0.30,
-        requires_negotiation_coaching: comp >= 25 || i.price_anchor_usage_rate_pct <= 0.45 || i.deal_closed_below_floor_price_pct >= 0.10,
-        estimated_margin_left_usd: margin,
-        negotiation_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-price-sensitivity-negotiation-leverage-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tdi=0, tle=0, tpr=0, tva=0, tcomp=0, tmar=0, gc=0, cc=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_negotiation_gap) gc++; if (r.requires_negotiation_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_negotiation_composite: Math.round(tcomp/n*10)/10,
       negotiation_gap_count: gc, coaching_count: cc,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_preparation_score: Math.round(tpr/n*10)/10,
       avg_value_anchoring_score: Math.round(tva/n*10)/10,
       total_estimated_margin_left_usd: Math.round(tmar*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-price-sensitivity-negotiation-leverage-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-price-sensitivity-negotiation-leverage-engine`, { next: { revalidate: 30 } })).json()));
 }

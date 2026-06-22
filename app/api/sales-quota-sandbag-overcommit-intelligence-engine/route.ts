@@ -108,27 +108,8 @@ function signal(inp: typeof MOCK_REPS[0], pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(inp => {
-      const sb  = sbScore(inp);
-      const oc  = ocScore(inp);
-      const cal = calScore(inp);
-      const vol = volScore(inp);
-      const comp = composite(sb, oc, cal, vol);
-      const pat  = pattern(inp);
-      const r    = risk(comp);
-      const sev  = severity(comp);
-      const act  = action(r, pat);
-      const distortion = (comp/100) * Math.abs(1.0 - inp.commit_vs_actual_ratio) * inp.pipeline_to_quota_ratio * 100000;
-      return {
-        rep_id: inp.rep_id, region: inp.region,
-        quota_risk: r, quota_pattern: pat, quota_severity: sev, recommended_action: act,
-        sandbagging_score: sb, overcommit_score: oc, calibration_score: cal, volatility_score: vol,
-        quota_composite: comp,
-        has_quota_gap: comp >= 40 || inp.forecast_accuracy_pct <= 0.60 || inp.consecutive_miss_streak >= 2,
-        requires_quota_intervention: comp >= 25 || inp.sandbagging_index >= 0.40 || inp.mgr_trust_in_forecast_score <= 0.50,
-        estimated_quota_distortion_usd: Math.round(distortion * 100) / 100,
-        quota_signal: signal(inp, pat, comp),
-      };
+  console.warn("[sales-quota-sandbag-overcommit-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts: Record<string,number> = {};
@@ -162,10 +143,10 @@ export async function GET() {
       avg_volatility_score: Math.round(total_vol/n*10)/10,
       total_estimated_quota_distortion_usd: Math.round(total_dist*100)/100,
     };
-    return NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>));
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary } as Record<string,unknown>)));
   }
 
-  const res = await fetch(`${process.env.SWARM_API_URL}/sales-quota-sandbag-overcommit-intelligence-engine`);
+  const res = await fetch(`${process.env.SWARM_API_URL}/sales-quota-sandbag-overcommit-intelligence-engine`, { next: { revalidate: 30 } });
   const data = await res.json();
-  return NextResponse.json(data);
+  return sealResponse(NextResponse.json(data));
 }

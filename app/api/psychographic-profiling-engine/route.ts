@@ -178,33 +178,8 @@ function psychSignal(e: RawEntity, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const vs = valuesScore(e);
-      const ms = motivationScore(e);
-      const cs = cognitiveScore(e);
-      const ss = socialScore(e);
-      const composite = psychComposite(vs, ms, cs, ss);
-      const risk = psychRisk(composite);
-      const pattern = psychPattern(e);
-      const severity = psychSeverity(composite);
-      const action = recommendedAction(risk, pattern);
-      return {
-        id:                   e.entity_id,
-        region:                      e.region,
-        segment_type:                e.segment_type,
-        psych_risk:                  risk,
-        psych_pattern:               pattern,
-        psych_severity:              severity,
-        recommended_action:          action,
-        values_score:                vs,
-        motivation_score:            ms,
-        cognitive_score:             cs,
-        social_score:                ss,
-        psych_composite:             composite,
-        is_in_psych_crisis:          composite >= 60,
-        requires_psych_intervention: composite >= 40,
-        psych_signal:                psychSignal(e, risk, composite),
-      };
+  console.warn("[psychographic-profiling-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts:     Record<string, number> = {};
@@ -246,21 +221,21 @@ export async function GET() {
       avg_estimated_behavioral_resistance_index:  Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "psychographic-profiling-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/psychographic-profiling-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/psychographic-profiling-engine`, { next: { revalidate: 30 } });
     const json = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(json, "psychographic-profiling-engine")
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream psychographic profiling engine unavailable" }, "psychographic-profiling-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -84,19 +84,8 @@ function signal(i: Channel, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const channels = MOCK_CHANNELS.map(i => {
-      const perf = performanceScore(i), cov = coverageScore(i), hlth = healthScore(i), enab = enablementScore(i);
-      const comp = composite(perf, cov, hlth, enab), pat = channelPattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        channel_id: i.channel_id, region: i.region,
-        channel_risk: r, channel_pattern: pat, channel_severity: sev, recommended_action: act,
-        performance_score: perf, coverage_score: cov, health_score: hlth, enablement_score: enab,
-        channel_composite: comp,
-        has_channel_alert: comp >= 40 || i.partner_churn_risk >= 0.55 || i.conflict_index >= 0.5 || i.margin_per_channel <= 0.3,
-        requires_strategic_review: comp >= 25 || i.channel_coverage_score <= 0.35 || i.partner_performance_score <= 0.35,
-        estimated_channel_risk_index: Math.min(Math.round(comp/100*(1-i.partner_satisfaction_score+0.01)*10*100)/100, 10.0),
-        channel_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-channel-partnership-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tperf=0,tcov=0,thlth=0,tenab=0,tcomp=0,tridx=0,alertC=0,reviewC=0;
@@ -111,7 +100,7 @@ export async function GET() {
       if (e.requires_strategic_review) reviewC++;
     }
     const n = channels.length;
-    return NextResponse.json(sealResponse({ channels, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ channels, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_channel_composite: Math.round(tcomp/n*10)/10,
       channel_alert_count: alertC, strategic_review_count: reviewC,
@@ -120,7 +109,7 @@ export async function GET() {
       avg_health_score: Math.round(thlth/n*10)/10,
       avg_enablement_score: Math.round(tenab/n*10)/10,
       avg_estimated_channel_risk_index: Math.round(tridx/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-channel-partnership-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-channel-partnership-engine`, { next: { revalidate: 30 } })).json()));
 }

@@ -198,7 +198,7 @@ const MOCK = {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(await sealResponse(MOCK));
+    return sealResponse(NextResponse.json(await sealResponse(MOCK)));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/right-to-food-engine`, {
@@ -206,8 +206,8 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(await sealResponse(data));
+    return sealResponse(NextResponse.json(await sealResponse(data)));
   } catch {
-    return NextResponse.json(await sealResponse(MOCK), { status: 502 });
+    return sealResponse(NextResponse.json(await sealResponse(MOCK), { status: 502 }));
   }
 }

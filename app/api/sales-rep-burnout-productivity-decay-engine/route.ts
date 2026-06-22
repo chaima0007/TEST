@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const ac = activityScore(i), qu = qualityScore(i), en = engagementScore(i), st = stressScore(i);
-      const comp = composite(ac, qu, en, st), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const loss = Math.round(i.total_active_deals * i.avg_deal_value_usd * (1 - i.quota_attainment_trend) * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        burnout_risk: r, burnout_pattern: pat, burnout_severity: sev, recommended_action: act,
-        activity_score: ac, quality_score: qu, engagement_score: en, stress_score: st,
-        burnout_composite: comp,
-        has_burnout_signal: comp >= 40 || i.outbound_activity_decay_rate_pct >= 0.30 || i.quota_attainment_trend <= 0.70,
-        requires_manager_action: comp >= 25 || i.manager_meeting_attendance_rate_pct <= 0.75 || i.weekend_work_frequency_pct >= 0.30,
-        estimated_productivity_loss_usd: loss,
-        burnout_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-rep-burnout-productivity-decay-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tac=0, tqu=0, ten=0, tst=0, tcomp=0, tpl=0, gc=0, mc=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_burnout_signal) gc++; if (r.requires_manager_action) mc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_burnout_composite: Math.round(tcomp/n*10)/10,
       burnout_signal_count: gc, manager_action_count: mc,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_engagement_score: Math.round(ten/n*10)/10,
       avg_stress_score: Math.round(tst/n*10)/10,
       total_estimated_productivity_loss_usd: Math.round(tpl*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-rep-burnout-productivity-decay-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-rep-burnout-productivity-decay-engine`, { next: { revalidate: 30 } })).json()));
 }

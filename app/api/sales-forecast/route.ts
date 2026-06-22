@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-forecast] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -98,7 +103,7 @@ export async function GET(request: Request) {
       if (accuracy) url.searchParams.set("accuracy", accuracy);
       if (region)   url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -125,7 +130,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total:                   n,
@@ -141,5 +146,5 @@ export async function GET(request: Request) {
       total_upside_potential:  Math.round(total_upside * 100) / 100,
       avg_sandbagging_score:   Math.round((total_sand / n) * 10) / 10,
     },
-  });
+  }));
 }

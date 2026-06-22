@@ -89,20 +89,8 @@ function signal(inp: typeof MOCK_REPS[0], pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(inp => {
-      const ac = acScore(inp); const al = alScore(inp); const au = auScore(inp); const co = coScore(inp);
-      const comp = composite(ac, al, au, co);
-      const pat  = pattern(inp); const r = risk(comp); const sev = severity(comp); const act = action(r, pat);
-      const lossRate = Math.min(inp.lost_due_to_persona_mismatch_pct + comp/200, 1.0);
-      return {
-        rep_id: inp.rep_id, region: inp.region,
-        persona_risk: r, persona_pattern: pat, persona_severity: sev, recommended_action: act,
-        access_score: ac, alignment_score: al, authority_score: au, coverage_score: co, persona_composite: comp,
-        has_persona_gap: comp >= 40 || inp.economic_buyer_contact_rate_pct <= 0.50 || inp.decision_maker_access_rate_pct <= 0.55,
-        requires_persona_coaching: comp >= 25 || inp.lost_due_to_persona_mismatch_pct >= 0.20 || inp.influencer_only_rate_pct >= 0.35,
-        estimated_lost_deal_value_usd: Math.round(inp.total_deals_evaluated * inp.avg_deal_value_usd * lossRate * 100) / 100,
-        persona_signal: signal(inp, pat, comp),
-      };
+  console.warn("[sales-buyer-persona-mismatch-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts: Record<string,number>={}, pattern_counts: Record<string,number>={};
@@ -118,16 +106,16 @@ export async function GET() {
       if (r.has_persona_gap) gap++; if (r.requires_persona_coaching) coach++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total:n, risk_counts, pattern_counts, severity_counts, action_counts,
       avg_persona_composite: Math.round(total_comp/n*10)/10,
       persona_gap_count: gap, coaching_count: coach,
       avg_access_score: Math.round(total_ac/n*10)/10, avg_alignment_score: Math.round(total_al/n*10)/10,
       avg_authority_score: Math.round(total_au/n*10)/10, avg_coverage_score: Math.round(total_co/n*10)/10,
       total_estimated_lost_deal_value_usd: Math.round(total_lv*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
 
-  const res = await fetch(`${process.env.SWARM_API_URL}/sales-buyer-persona-mismatch-intelligence-engine`);
-  return NextResponse.json(await res.json());
+  const res = await fetch(`${process.env.SWARM_API_URL}/sales-buyer-persona-mismatch-intelligence-engine`, { next: { revalidate: 30 } });
+  return sealResponse(NextResponse.json(await res.json()));
 }

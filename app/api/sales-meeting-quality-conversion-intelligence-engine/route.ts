@@ -70,20 +70,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const co = conversionScore(i), qu = qualityScore(i), ex = executionScore(i), ad = advancementScore(i);
-      const comp = composite(co, qu, ex, ad), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const wasted = Math.round(i.total_meetings_held * 350 * (1 - i.meetings_to_opportunity_rate_pct) * (comp / 100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        meeting_risk: r, meeting_pattern: pat, meeting_severity: sev, recommended_action: act,
-        conversion_score: co, quality_score: qu, execution_score: ex, advancement_score: ad,
-        meeting_composite: comp,
-        has_meeting_gap: comp >= 40 || i.meetings_to_opportunity_rate_pct <= 0.40 || i.next_step_confirmed_rate_pct <= 0.55,
-        requires_meeting_coaching: comp >= 25 || i.discovery_completion_rate_pct <= 0.55 || i.no_show_rate_pct >= 0.15,
-        estimated_wasted_meeting_usd: wasted,
-        meeting_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-meeting-quality-conversion-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tco=0, tqu=0, tex=0, tad=0, tcomp=0, tw=0, gc=0, cc=0;
@@ -95,7 +83,7 @@ export async function GET() {
       if (r.has_meeting_gap) gc++; if (r.requires_meeting_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_meeting_composite: Math.round(tcomp/n*10)/10,
       meeting_gap_count: gc, coaching_count: cc,
@@ -104,7 +92,7 @@ export async function GET() {
       avg_execution_score: Math.round(tex/n*10)/10,
       avg_advancement_score: Math.round(tad/n*10)/10,
       total_estimated_wasted_meeting_usd: Math.round(tw*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-meeting-quality-conversion-intelligence-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-meeting-quality-conversion-intelligence-engine`, { next: { revalidate: 30 } })).json()));
 }

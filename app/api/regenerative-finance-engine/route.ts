@@ -82,19 +82,8 @@ function signal(f: Fund, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const funds = MOCK_FUNDS.map(f => {
-      const integ = integrityScore(f), imp = impactScore(f), incl = inclusionScore(f), verif = verificationScore(f);
-      const comp = composite(integ, imp, incl, verif), pat = impactPattern(f), r = riskLevel(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        fund_id: f.fund_id, fund_type: f.fund_type, region: f.region,
-        regen_finance_risk: r, impact_pattern: pat, impact_severity: sev, recommended_action: act,
-        integrity_score: integ, impact_score: imp, inclusion_score: incl, verification_score: verif,
-        regen_finance_composite: comp,
-        has_greenwashing_signal: comp >= 40 || f.greenwashing_risk >= 0.55 || f.carbon_integrity_score <= 0.35,
-        requires_impact_audit: comp >= 25 || f.impact_verification_rigor <= 0.35 || f.additionality_score <= 0.30,
-        estimated_impact_deficit_index: Math.min(Math.round(comp/100*(1-f.impact_verification_rigor+0.01)*10*100)/100, 10.0),
-        regen_signal: signal(f, pat, comp),
-      };
+  console.warn("[regenerative-finance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tInteg=0, tImp=0, tIncl=0, tVerif=0, tComp=0, tDef=0, gwC=0, auditC=0;
@@ -120,7 +109,7 @@ export async function GET() {
       avg_verification_score: Math.round(tVerif/n*10)/10,
       avg_estimated_impact_deficit_index: Math.round(tDef/n*100)/100,
     };
-    return NextResponse.json(sealResponse({ funds, summary }, "regenerative-finance-engine") as Parameters<typeof NextResponse.json>[0]);
+    return sealResponse(NextResponse.json(sealResponse({ funds, summary }, "regenerative-finance-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/regenerative-finance-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/regenerative-finance-engine`, { next: { revalidate: 30 } })).json()));
 }

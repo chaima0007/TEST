@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[quality-assurance-process-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockProcesses = [
@@ -99,7 +103,7 @@ export async function GET(request: Request) {
       if (pattern) url.searchParams.set("pattern", pattern);
       if (region)  url.searchParams.set("region",  region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -130,7 +134,7 @@ export async function GET(request: Request) {
 
   const n = mockProcesses.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     processes,
     summary: {
       total:                            n,
@@ -147,5 +151,5 @@ export async function GET(request: Request) {
       avg_supplier_score:               Math.round((total_sup / n) * 10) / 10,
       avg_estimated_quality_risk_index: Math.round((total_idx / n) * 100) / 100,
     },
-  });
+  }));
 }

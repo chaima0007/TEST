@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-data-access-anomaly-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockUsers = [
@@ -105,7 +109,7 @@ export async function GET(request: Request) {
       if (level) url.searchParams.set("level", level);
       if (risk)  url.searchParams.set("risk",  risk);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -134,7 +138,7 @@ export async function GET(request: Request) {
 
   const n = mockUsers.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     users,
     summary: {
       total:                              n,
@@ -151,5 +155,5 @@ export async function GET(request: Request) {
       avg_authentication_risk_score:      Math.round((total_auth        / n) * 10) / 10,
       total_data_exposure_mb:             Math.round(total_exposure * 10) / 10,
     },
-  });
+  }));
 }

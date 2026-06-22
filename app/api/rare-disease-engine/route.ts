@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const acc  = accessScore(e);
-      const res  = researchScore(e);
-      const aff  = affordabilityScore(e);
-      const reg  = regulatoryScore(e);
-      const comp = compositeScore(acc, res, aff, reg);
-      const risk = riskLevel(comp);
-      const pat  = rareDiseasePattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                  e.entity_id,
-        disease_category:           e.disease_category,
-        region:                     e.region,
-        access_score:               acc,
-        research_score:             res,
-        affordability_score:        aff,
-        regulatory_score:           reg,
-        composite_score:            comp,
-        risk_level:                 risk,
-        rare_disease_pattern:       pat,
-        severity:                   sev,
-        recommended_action:         action,
-        signal:                     sig,
-        orphan_drug_price_index:    e.orphan_drug_price_index,
-        diagnostic_delay_years:     e.diagnostic_delay_years,
-      };
+  console.warn("[rare-disease-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_rare_disease_access_index:    Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_access: avgAccess }, "rare-disease-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/rare-disease-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/rare-disease-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "rare-disease-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "rare-disease-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "rare-disease-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

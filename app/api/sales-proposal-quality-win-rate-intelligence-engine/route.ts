@@ -77,20 +77,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const qu = qualityScore(i), re = readinessScore(i), ex = executionScore(i), al = alignmentScore(i);
-      const comp = composite(qu, re, ex, al), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const loss = Math.round(i.total_proposals_sent * i.avg_deal_value_usd * (1 - i.proposal_to_close_rate_pct) * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        proposal_risk: r, proposal_pattern: pat, proposal_severity: sev, recommended_action: act,
-        quality_score: qu, readiness_score: re, execution_score: ex, alignment_score: al,
-        proposal_composite: comp,
-        has_proposal_gap: comp >= 40 || i.proposal_to_close_rate_pct <= 0.25 || i.unanswered_proposal_rate_pct >= 0.30,
-        requires_proposal_coaching: comp >= 25 || i.proposal_sent_without_discovery_rate_pct >= 0.30 || i.proposal_customization_score <= 0.50,
-        estimated_deal_loss_usd: loss,
-        proposal_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-proposal-quality-win-rate-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tqu=0, tre=0, tex=0, tal=0, tcomp=0, tloss=0, gc=0, cc=0;
@@ -102,7 +90,7 @@ export async function GET() {
       if (r.has_proposal_gap) gc++; if (r.requires_proposal_coaching) cc++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_proposal_composite: Math.round(tcomp/n*10)/10,
       proposal_gap_count: gc, coaching_count: cc,
@@ -111,7 +99,7 @@ export async function GET() {
       avg_execution_score: Math.round(tex/n*10)/10,
       avg_alignment_score: Math.round(tal/n*10)/10,
       total_estimated_deal_loss_usd: Math.round(tloss*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-proposal-quality-win-rate-intelligence-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-proposal-quality-win-rate-intelligence-engine`, { next: { revalidate: 30 } })).json()));
 }
