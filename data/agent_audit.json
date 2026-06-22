@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "description": "CaelumSwarm™ — Journal d'audit des démarrages d'agents",
-  "total_startups": 1,
+  "total_startups": 3,
   "blocked_startups": 1,
   "sessions": [
     {
@@ -19,7 +19,37 @@
         "clean_tree",
         "no_duplicates"
       ]
+    },
+    {
+      "timestamp": "2026-06-22T22:13:34.223769+00:00",
+      "group": "wave",
+      "wave": 483,
+      "domains": [
+        "laborfreedom",
+        "collectivebargaining",
+        "workersafety"
+      ],
+      "score": 85.0,
+      "ready": true,
+      "checks_failed": [
+        "no_duplicates"
+      ]
+    },
+    {
+      "timestamp": "2026-06-22T22:14:10.029796+00:00",
+      "group": "wave",
+      "wave": 484,
+      "domains": [
+        "biodiversityloss",
+        "deforestation",
+        "oceanpollution"
+      ],
+      "score": 80.0,
+      "ready": true,
+      "checks_failed": [
+        "clean_tree"
+      ]
     }
   ],
-  "last_startup": "2026-06-22T22:11:46.752166+00:00"
+  "last_startup": "2026-06-22T22:14:10.029796+00:00"
 }
