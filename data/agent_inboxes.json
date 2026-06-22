@@ -316,6 +316,14 @@
         "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
         "priority": "NORMAL",
         "index_path": "data/library_index.json"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
       }
     ],
     "QuantumAgent": [
@@ -375,6 +383,14 @@
         "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
         "content": "Système de relève opérationnel — jamais de fatigue",
         "priority": "NORMAL"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
       }
     ],
     "CoordAgent": [
@@ -457,6 +473,14 @@
         "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
         "priority": "NORMAL",
         "index_path": "data/library_index.json"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
       }
     ],
     "DashboardAgent": [],
@@ -485,6 +509,14 @@
           "astar_path"
         ],
         "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
       }
     ],
     "CSDDDResearcher": [
@@ -637,6 +669,16 @@
         "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
         "content": "wave_launch — 1,000,000 simulations — 96.01%",
         "priority": "CRITIQUE"
+      }
+    ],
+    "ResearchAgent": [
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
       }
     ]
   },
