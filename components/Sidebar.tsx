@@ -15953,6 +15953,29 @@ function IconNftadvertisingAdvertising({ size = 18, color = "currentColor" }: { 
     </svg>
   );
 }
+function IconBlockchainadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="6" height="10" rx="1"/><rect x="9" y="4" width="6" height="16" rx="1"/><rect x="16" y="7" width="6" height="10" rx="1"/>
+      <line x1="8" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="16" y2="12"/>
+    </svg>
+  );
+}
+function IconDecentralizedadsAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/>
+      <line x1="6" y1="7" x2="10" y2="10"/><line x1="18" y1="7" x2="14" y2="10"/><line x1="6" y1="17" x2="10" y2="14"/><line x1="18" y1="17" x2="14" y2="14"/>
+    </svg>
+  );
+}
+function IconTokenadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9"/><path d="M9 12h6"/><path d="M12 9v6"/><circle cx="12" cy="12" r="4"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19648,6 +19671,9 @@ const navSections: NavSection[] = [
       { label: "Metaverse Advertising", href: "/dashboard/metaverseadvertising-advertising", icon: IconMetaverseadvertisingAdvertising },
       { label: "Web3 Advertising", href: "/dashboard/web3advertising-advertising", icon: IconWeb3advertisingAdvertising },
       { label: "NFT Advertising", href: "/dashboard/nftadvertising-advertising", icon: IconNftadvertisingAdvertising },
+      { label: "Blockchain Advertising", href: "/dashboard/blockchainadvertising-advertising", icon: IconBlockchainadvertisingAdvertising },
+      { label: "Decentralized Ads", href: "/dashboard/decentralizedads-advertising", icon: IconDecentralizedadsAdvertising },
+      { label: "Token Advertising", href: "/dashboard/tokenadvertising-advertising", icon: IconTokenadvertisingAdvertising },
     ],
   },
   {
