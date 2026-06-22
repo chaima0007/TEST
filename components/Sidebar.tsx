@@ -15418,6 +15418,20 @@ function IconVideocommerceAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconAugmentedrealityAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 12l10-8 10 8"/><path d="M12 4v16"/><path d="M4 12v8h16v-8"/>
+    </svg>
+  );
+}
+function IconVirtualrealityAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="8" width="20" height="10" rx="2"/><path d="M8 12h.01"/><path d="M16 12h.01"/><path d="M8 16s1-2 4-2 4 2 4 2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19023,6 +19037,26 @@ const navSections: NavSection[] = [
         icon: IconMealkitAdvertising,
         category: "Publicité Visuelle",
       },
+      {
+        label: "Livestream Commerce Advertising",
+        href: "/dashboard/livestreamcommerce-advertising",
+        icon: IconLivestreamcommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Social Commerce Advertising",
+        href: "/dashboard/socialcommerce-advertising",
+        icon: IconSocialcommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Video Commerce Advertising",
+        href: "/dashboard/videocommerce-advertising",
+        icon: IconVideocommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      { label: "Augmented Reality Advertising", href: "/dashboard/augmentedreality-advertising", icon: IconAugmentedrealityAdvertising },
+      { label: "Virtual Reality Advertising", href: "/dashboard/virtualreality-advertising", icon: IconVirtualrealityAdvertising },
     ],
   },
   {
