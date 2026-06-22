@@ -14344,6 +14344,38 @@ function IconMultilingualAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconHyperlocalAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="10" r="4" />
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+      <circle cx="12" cy="10" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function IconSportsAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 3c0 0 3 4 3 9s-3 9-3 9" />
+      <path d="M12 3c0 0-3 4-3 9s3 9 3 9" />
+      <path d="M3 12h18" />
+    </svg>
+  );
+}
+
+function IconEsportsAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="7" width="20" height="13" rx="3" />
+      <path d="M8 11v4M6 13h4" />
+      <circle cx="16" cy="13" r="1" fill="currentColor" />
+      <circle cx="18" cy="11" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17161,6 +17193,24 @@ const navSections: NavSection[] = [
         label: "Multilingual Advertising",
         href: "/dashboard/multilingual-advertising-child-labor-rights",
         icon: IconMultilingualAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Hyperlocal Advertising",
+        href: "/dashboard/hyperlocal-advertising-child-labor-rights",
+        icon: IconHyperlocalAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Sports Advertising",
+        href: "/dashboard/sports-advertising-child-labor-rights",
+        icon: IconSportsAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Esports Advertising",
+        href: "/dashboard/esports-advertising-child-labor-rights",
+        icon: IconEsportsAdvertising,
         category: "Publicité Visuelle",
       },
     ],
