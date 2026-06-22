@@ -12115,6 +12115,40 @@ function IconIllegalFishingForcedLaborRights() {
   );
 }
 
+function IconTigerBoneTraditionalMedicineRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 12c0-5 3-9 9-9s9 4 9 9" />
+      <path d="M6 15c1-2 3-3 6-3s5 1 6 3" />
+      <line x1="8" y1="10" x2="8" y2="12" />
+      <line x1="16" y1="10" x2="16" y2="12" />
+    </svg>
+  );
+}
+
+function IconSharkFinFinningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#1e40af" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M2 18 Q6 18 9 10 L14 18 Z" />
+      <line x1="2" y1="18" x2="22" y2="18" />
+      <path d="M14 18 Q17 16 20 18" />
+    </svg>
+  );
+}
+
+function IconIllegalHardwoodLoggingRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="4" y="14" width="10" height="6" rx="1" />
+      <line x1="9" y1="14" x2="9" y2="20" />
+      <line x1="6" y1="17" x2="12" y2="17" />
+      <path d="M14 16 L20 10" />
+      <path d="M17 7 L21 11 L19 13 L15 9 Z" />
+      <line x1="4" y1="14" x2="9" y2="4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13941,6 +13975,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/uranium-mining-indigenous-rights", label: "Uranium Terres Autochtones", icon: IconUraniumMiningIndigenousRights },
       { href: "/dashboard/blood-diamond-conflict-mineral-rights", label: "Diamants du Sang", icon: IconBloodDiamondConflictMineralRights },
       { href: "/dashboard/illegal-fishing-forced-labor-rights", label: "Pêche Illégale Esclavage", icon: IconIllegalFishingForcedLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 284",
+    items: [
+      { href: "/dashboard/tiger-bone-traditional-medicine-rights", label: "Os de Tigre Médecine", icon: IconTigerBoneTraditionalMedicineRights },
+      { href: "/dashboard/shark-fin-finning-rights", label: "Aileronage Requins", icon: IconSharkFinFinningRights },
+      { href: "/dashboard/illegal-hardwood-logging-rights", label: "Bois Précieux Illégaux", icon: IconIllegalHardwoodLoggingRights },
     ],
   },
   {
