@@ -3760,6 +3760,9 @@ export const navSections: NavSection[] = [
       { label: "Performance Max Ads", href: "/dashboard/performancemax-advertising", icon: Icons.IconPerformancemaxAdvertising },
       { label: "Demand Generation", href: "/dashboard/demandgen-advertising", icon: Icons.IconDemandgenAdvertising },
       { label: "Conversational Advertising", href: "/dashboard/conversational-advertising", icon: Icons.IconConversationalAdvertising },
+      { label: "Social Media Advertising", href: "/dashboard/socialmedia-advertising", icon: Icons.IconSocialmediaAdvertising },
+      { label: "Brand Awareness Advertising", href: "/dashboard/brandawareness-advertising", icon: Icons.IconBrandawarenessAdvertising },
+      { label: "Account-Based Marketing", href: "/dashboard/accountbased-advertising", icon: Icons.IconAccountbasedAdvertising },
     ],
   },
   {
