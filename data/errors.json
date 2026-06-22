@@ -92,6 +92,19 @@
       "wave": null,
       "recurrence_count": 1,
       "status": "fixed"
+    },
+    {
+      "id": 8,
+      "timestamp": "2026-06-22T20:42:47.828416",
+      "error_type": "oom",
+      "file_path": "components/sidebar-icons.tsx",
+      "description": "Vercel OOM — sidebar-icons.tsx at 16,256 lines causes TypeScript/Turbopack OOM at 4min build",
+      "cause": "16,256-line single file with 1703 icon functions exceeds Turbopack memory capacity even with 8GB heap",
+      "fix_applied": "Split into 4 files (~4000 lines each): sidebar-icons-1.tsx through sidebar-icons-4.tsx + barrel re-export in sidebar-icons.tsx",
+      "resolution_time_minutes": 15,
+      "wave": null,
+      "recurrence_count": 2,
+      "status": "fixed"
     }
   ]
 }
