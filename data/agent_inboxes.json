@@ -1,0 +1,184 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Boîtes de réception des agents",
+  "inboxes": {
+    "GitAgent": [
+      {
+        "audit_id": "AUD-P001-20260622-223725-0333C0",
+        "problem_id": "P001",
+        "title": "Fichiers non-commités",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.935971+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      }
+    ],
+    "SidebarAgent": [
+      {
+        "audit_id": "AUD-P003-20260622-223725-9F17C4",
+        "problem_id": "P003",
+        "title": "Doublons icônes sidebar",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.994131+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      },
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      }
+    ],
+    "SecurityAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      }
+    ],
+    "EngineAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      }
+    ],
+    "CICDAgent": [
+      {
+        "audit_id": "AUD-P003-20260622-223725-9F17C4",
+        "problem_id": "P003",
+        "title": "Doublons icônes sidebar",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.994131+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      }
+    ],
+    "QAAgent": [
+      {
+        "audit_id": "AUD-P001-20260622-223725-0333C0",
+        "problem_id": "P001",
+        "title": "Fichiers non-commités",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.935971+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      },
+      {
+        "audit_id": "AUD-P003-20260622-223725-9F17C4",
+        "problem_id": "P003",
+        "title": "Doublons icônes sidebar",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.994131+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      },
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      }
+    ],
+    "QuantumAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      }
+    ],
+    "CoordAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      }
+    ],
+    "DashboardAgent": [],
+    "ComplianceAgent": []
+  },
+  "total_notifications": 11,
+  "last_update": "2026-06-22T22:39:05.057377+00:00"
+}

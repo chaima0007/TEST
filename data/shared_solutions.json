@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Solutions partagées entre agents",
+  "solutions": {
+    "P001": {
+      "problem_id": "P001",
+      "title": "Fichiers non-commités",
+      "audits": [
+        "AUD-P001-20260622-223725-0333C0"
+      ],
+      "best_solution": {
+        "steps": [
+          "git config user.email noreply@anthropic.com",
+          "git config user.name Claude",
+          "git add -A",
+          "git commit -m 'rescue: uncommitted files [AuditID]'",
+          "git push -u origin claude/swarm-50-agent-architecture-3l6cno"
+        ],
+        "by_agent": "GitAgent",
+        "confidence": 99,
+        "mc_score": 100.0,
+        "sources": [
+          "Git_SCM_Docs",
+          "CaelumSwarm_Protocol"
+        ],
+        "validated_at": "2026-06-22T22:37:25.935971+00:00"
+      },
+      "contributing_agents": [
+        "GitAgent",
+        "QAAgent"
+      ],
+      "last_updated": "2026-06-22T22:37:25.935971+00:00"
+    },
+    "P003": {
+      "problem_id": "P003",
+      "title": "Doublons icônes sidebar",
+      "audits": [
+        "AUD-P003-20260622-223725-9F17C4"
+      ],
+      "best_solution": {
+        "steps": [
+          "grep -n '^export function Icon' components/sidebar-icons-*.tsx | awk -F: '{print $2}' | sort | uniq -d",
+          "# Pour chaque doublon: garder la DERNIÈRE occurrence, supprimer toutes les précédentes",
+          "# Editer le fichier avec le doublon le plus ancien et supprimer la fonction",
+          "git add components/sidebar-icons-*.tsx",
+          "git commit -m 'fix(sidebar): remove duplicate icon functions'",
+          "git push -u origin claude/swarm-50-agent-architecture-3l6cno"
+        ],
+        "by_agent": "SidebarAgent",
+        "confidence": 100,
+        "mc_score": 100.0,
+        "sources": [
+          "TypeScript_Handbook",
+          "CaelumSwarm_Protocol"
+        ],
+        "validated_at": "2026-06-22T22:37:25.994131+00:00"
+      },
+      "contributing_agents": [
+        "CICDAgent",
+        "QAAgent",
+        "SidebarAgent"
+      ],
+      "last_updated": "2026-06-22T22:37:25.994131+00:00"
+    }
+  },
+  "total_audits_processed": 2,
+  "last_scan": "2026-06-22T22:37:25.994873+00:00"
+}
