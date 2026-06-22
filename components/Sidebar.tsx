@@ -14531,6 +14531,35 @@ function IconEmailMarketingAdvertising({ size = 20 }: { size?: number }) {
   );
 }
 
+function IconSmsMarketingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <line x1="9" y1="10" x2="15" y2="10"/>
+      <line x1="9" y1="14" x2="13" y2="14"/>
+    </svg>
+  );
+}
+function IconPushNotificationAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+      <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      <circle cx="19" cy="5" r="3" fill={color} stroke="none"/>
+    </svg>
+  );
+}
+function IconChatbotAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="14" rx="2"/>
+      <path d="M8 21l4-4 4 4"/>
+      <circle cx="9" cy="10" r="1" fill={color}/>
+      <circle cx="15" cy="10" r="1" fill={color}/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17174,6 +17203,24 @@ const navSections: NavSection[] = [
         label: "Email Marketing Advertising",
         href: "/dashboard/email-marketing-advertising-child-labor-rights",
         icon: IconEmailMarketingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "SMS Marketing Advertising",
+        href: "/dashboard/sms-marketing-child-labor-rights",
+        icon: IconSmsMarketingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Push Notification Advertising",
+        href: "/dashboard/push-notification-child-labor-rights",
+        icon: IconPushNotificationAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Chatbot Advertising",
+        href: "/dashboard/chatbot-child-labor-rights",
+        icon: IconChatbotAdvertising,
         category: "Publicité Visuelle",
       },
       {
