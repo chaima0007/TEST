@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Email Marketing Advertising Compliance Engine CSDDD 2024/1760"""
+"""CaelumSwarm™ — Influencer Marketing Advertising Compliance Engine CSDDD 2024/1760"""
 
 ENTITIES = [
-    ("Mailchimp / Intuit", 99, 97, 95, 93),
-    ("Klaviyo Platform", 93, 90, 88, 86),
-    ("Salesforce Marketing Cloud", 85, 82, 80, 78),
-    ("HubSpot Email Hub", 80, 77, 75, 73),
-    ("Brevo (Sendinblue)", 61, 58, 56, 54),
-    ("Constant Contact", 51, 48, 46, 44),
-    ("GetResponse", 32, 29, 27, 25),
-    ("AWeber Platform", 13, 11, 9, 7),
+    ("Meta / Instagram", 99, 97, 95, 93),
+    ("TikTok Creator Fund", 93, 90, 88, 86),
+    ("YouTube Partner Program", 85, 82, 80, 78),
+    ("Twitch Affiliates", 80, 77, 75, 73),
+    ("Pinterest Creators", 61, 58, 56, 54),
+    ("Snapchat Spotlight", 51, 48, 46, 44),
+    ("LinkedIn Influencers", 32, 29, 27, 25),
+    ("Twitter/X Monetization", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -24,7 +24,7 @@ def compute(entity):
         "name": name,
         "composite_score": score,
         "risk_level": level,
-        "estimated_emailmarketing_index": idx,
+        "estimated_influencermarketing_index": idx,
     }
 
 if __name__ == "__main__":
