@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Social Commerce Advertising Compliance Engine CSDDD 2024/1760"""
+"""CaelumSwarm™ — Mobile Advertising Compliance Engine CSDDD 2024/1760"""
 
 ENTITIES = [
-    ("TikTok Shop", 99, 97, 95, 93),
-    ("Instagram Shopping", 93, 90, 88, 86),
-    ("Pinterest Shopping", 85, 82, 80, 78),
-    ("Facebook Marketplace", 80, 77, 75, 73),
-    ("YouTube Shopping", 61, 58, 56, 54),
-    ("Snapchat Shopping", 51, 48, 46, 44),
-    ("Twitter/X Shopping", 32, 29, 27, 25),
-    ("LinkedIn B2B Commerce", 13, 11, 9, 7),
+    ("Google Mobile Ads", 99, 97, 95, 93),
+    ("Apple Search Ads", 93, 90, 88, 86),
+    ("Meta Audience Network", 85, 82, 80, 78),
+    ("Unity Ads", 80, 77, 75, 73),
+    ("IronSource / Unity LevelPlay", 61, 58, 56, 54),
+    ("AppLovin MAX", 51, 48, 46, 44),
+    ("InMobi Platform", 32, 29, 27, 25),
+    ("Verizon Media DSP", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -24,7 +24,7 @@ def compute(entity):
         "name": name,
         "composite_score": score,
         "risk_level": level,
-        "estimated_socialcommerce_index": idx,
+        "estimated_mobileadvertising_index": idx,
     }
 
 if __name__ == "__main__":

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Social Commerce Advertising Compliance Engine CSDDD 2024/1760"""
+"""CaelumSwarm™ — Geo-Targeting Advertising Compliance Engine CSDDD 2024/1760"""
 
 ENTITIES = [
-    ("TikTok Shop", 99, 97, 95, 93),
-    ("Instagram Shopping", 93, 90, 88, 86),
-    ("Pinterest Shopping", 85, 82, 80, 78),
-    ("Facebook Marketplace", 80, 77, 75, 73),
-    ("YouTube Shopping", 61, 58, 56, 54),
-    ("Snapchat Shopping", 51, 48, 46, 44),
-    ("Twitter/X Shopping", 32, 29, 27, 25),
-    ("LinkedIn B2B Commerce", 13, 11, 9, 7),
+    ("Google Local Campaigns", 99, 97, 95, 93),
+    ("Meta Local Awareness Ads", 93, 90, 88, 86),
+    ("Foursquare Attribution", 85, 82, 80, 78),
+    ("HERE Technologies", 80, 77, 75, 73),
+    ("Snap Location Ads", 61, 58, 56, 54),
+    ("Waze Local Ads", 51, 48, 46, 44),
+    ("Nextdoor Ads", 32, 29, 27, 25),
+    ("Yelp Advertising", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -24,7 +24,7 @@ def compute(entity):
         "name": name,
         "composite_score": score,
         "risk_level": level,
-        "estimated_socialcommerce_index": idx,
+        "estimated_geotargeting_index": idx,
     }
 
 if __name__ == "__main__":
