@@ -3763,6 +3763,9 @@ export const navSections: NavSection[] = [
       { label: "Social Media Advertising", href: "/dashboard/socialmedia-advertising", icon: Icons.IconSocialmediaAdvertising },
       { label: "Brand Awareness Advertising", href: "/dashboard/brandawareness-advertising", icon: Icons.IconBrandawarenessAdvertising },
       { label: "Account-Based Marketing", href: "/dashboard/accountbased-advertising", icon: Icons.IconAccountbasedAdvertising },
+      { label: "Micro-Moment Marketing", href: "/dashboard/micromoment-advertising", icon: Icons.IconMicromomentAdvertising },
+      { label: "Personalized Advertising", href: "/dashboard/personalizedadv-advertising", icon: Icons.IconPersonalizedadvAdvertising },
+      { label: "Interactive Advertising", href: "/dashboard/interactiveadv-advertising", icon: Icons.IconInteractiveadvAdvertising },
     ],
   },
   {
