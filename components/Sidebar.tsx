@@ -11275,6 +11275,30 @@ function IconRefugeeIntegrationRights({ className }: { className?: string }) {
   );
 }
 
+function IconAiWeaponsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    </svg>
+  );
+}
+
+function IconWaterConflictRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+    </svg>
+  );
+}
+
+function IconSupplyChainTransparencyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12853,6 +12877,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/colonial-genocide-rights-engine", label: "Colonial Genocide Rights", icon: IconColonialGenocideRights, color: "#7c2d12" },
       { href: "/dashboard/digital-divide-rural-rights-engine", label: "Digital Divide Rural Rights", icon: IconDigitalDivideRuralRights, color: "#166534" },
       { href: "/dashboard/refugee-integration-rights-engine", label: "Refugee Integration Rights", icon: IconRefugeeIntegrationRights, color: "#1e40af" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 253",
+    items: [
+      { href: "/dashboard/ai-weapons-rights-engine", label: "AI Weapons Rights", icon: IconAiWeaponsRights, color: "#1e293b" },
+      { href: "/dashboard/water-conflict-rights-engine", label: "Water Conflict Rights", icon: IconWaterConflictRights, color: "#0369a1" },
+      { href: "/dashboard/supply-chain-transparency-rights-engine", label: "Supply Chain Transparency Rights", icon: IconSupplyChainTransparencyRights, color: "#1d4ed8" },
     ],
   },
   {
