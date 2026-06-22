@@ -13752,6 +13752,35 @@ function IconRiskAlerts({ className }: { className?: string }) {
   );
 }
 
+function IconGameAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="4" width="14" height="9" rx="2" />
+      <line x1="8" y1="6" x2="8" y2="11" />
+      <line x1="5.5" y1="8.5" x2="10.5" y2="8.5" />
+    </svg>
+  );
+}
+
+function IconEsportsSponsorship({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 2l1.8 3.6L14 6.6l-3 2.9.7 4.1L8 11.5l-3.7 2.1.7-4.1-3-2.9 4.2-.6z" />
+    </svg>
+  );
+}
+
+function IconVirtualRealityContent({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M1 6h14v4H1z" rx="1" />
+      <circle cx="5" cy="8" r="1.5" />
+      <circle cx="11" cy="8" r="1.5" />
+      <path d="M7 8h2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16251,6 +16280,24 @@ const navSections: NavSection[] = [
         label: "Visual Effects Production",
         href: "/dashboard/visual-effects-production-child-labor-rights",
         icon: IconVisualEffects,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Game Advertising",
+        href: "/dashboard/game-advertising-child-labor-rights",
+        icon: IconGameAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Esports Sponsorship",
+        href: "/dashboard/esports-sponsorship-child-labor-rights",
+        icon: IconEsportsSponsorship,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Virtual Reality Content",
+        href: "/dashboard/virtual-reality-content-child-labor-rights",
+        icon: IconVirtualRealityContent,
         category: "Publicité Visuelle",
       },
     ],
