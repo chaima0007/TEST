@@ -10356,6 +10356,30 @@ function IconWhistleblowerRights({ className }: { className?: string }) {
   );
 }
 
+function IconEnvironmentalRacismRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="14" width="18" height="7" rx="1" />
+      <path d="M7 14V9a5 5 0 0 1 10 0v5" />
+      <path d="M12 4v2" />
+      <path d="M8 7l-2-2" />
+      <path d="M16 7l2-2" />
+      <path d="M5 17h14" />
+    </svg>
+  );
+}
+
+function IconChildPovertyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="8" r="3" />
+      <path d="M9 21v-4a3 3 0 0 1 6 0v4" />
+      <path d="M6 21H3a1 1 0 0 1-1-1v-2a4 4 0 0 1 4-4h1" />
+      <path d="M18 21h3a1 1 0 0 0 1-1v-2a4 4 0 0 0-4-4h-1" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11646,6 +11670,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/arms-trade-rights-engine", label: "Commerce d'Armes", icon: IconArmsTradeRights },
       { href: "/dashboard/disability-rights-engine", label: "Droits Handicap", icon: IconDisabilityRights },
       { href: "/dashboard/racial-discrimination-rights-engine", label: "Discrimination Raciale", icon: IconRacialDiscriminationRights },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 217",
+    items: [
+      { href: "/dashboard/environmental-racism-rights-engine", label: "Racisme Environnemental", icon: IconEnvironmentalRacismRights },
+      { href: "/dashboard/migrant-worker-rights-engine", label: "Travailleurs Migrants", icon: IconMigrantWorkerRights },
+      { href: "/dashboard/child-poverty-rights-engine", label: "Pauvreté Enfants", icon: IconChildPovertyRights },
     ],
   },
   {
