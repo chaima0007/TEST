@@ -15,7 +15,15 @@ Plateforme IA CaelumSwarm conformite CSDDD 2024. Algorithme scoring 8 entites. 3
 
 **Contact :** legal@caelumpartners.eu
 
+## Date de dépôt
+**Déposé le : 22 juin 2026**
+**Expiration : 22 juin 2031** ← RENOUVELER AVANT CETTE DATE
+
+## Rappel renouvellement
+**22 juin 2031 — Renouveler i-DEPOT BOIP (37€ pour 5 ans supplémentaires)**
+Site : my.boip.net — Contact : legal@caelumpartners.eu
+
 ## Rappels annuels (chaque 22 juin)
-- Renouveler i-DEPOT BOIP
+- Vérifier statut i-DEPOT BOIP
 - Vérifier noms de domaine
 - Mettre à jour marque EUIPO/OBPI
