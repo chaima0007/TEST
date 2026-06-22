@@ -10776,6 +10776,39 @@ function IconInternetCensorshipRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconMedicalExperimentationRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 3h6M9 3v6l-4 8a2 2 0 0 0 1.8 2.9h10.4A2 2 0 0 0 19 17l-4-8V3"/>
+      <line x1="6.5" y1="14" x2="17.5" y2="14"/>
+      <path d="M12 10v4M10 12h4"/>
+    </svg>
+  );
+}
+
+function IconEconomicSanctionsRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="10" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <line x1="2" y1="7" x2="22" y2="17"/>
+      <circle cx="12" cy="16" r="1" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function IconSolitaryConfinementRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="1"/>
+      <line x1="7" y1="3" x2="7" y2="21"/>
+      <line x1="11" y1="3" x2="11" y2="21"/>
+      <line x1="15" y1="3" x2="15" y2="21"/>
+      <circle cx="19" cy="12" r="1.5" fill="currentColor"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12210,6 +12243,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/organ-harvesting-rights-engine", label: "Trafic d'Organes", icon: IconOrganHarvestingRights },
       { href: "/dashboard/right-to-nationality-rights-engine", label: "Droit à la Nationalité", icon: IconRightToNationalityRights },
       { href: "/dashboard/internet-censorship-rights-engine", label: "Censure Internet", icon: IconInternetCensorshipRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 235",
+    items: [
+      { href: "/dashboard/medical-experimentation-rights-engine", label: "Expérimentation Médicale", icon: IconMedicalExperimentationRights },
+      { href: "/dashboard/economic-sanctions-rights-engine", label: "Sanctions Économiques", icon: IconEconomicSanctionsRights },
+      { href: "/dashboard/solitary-confinement-rights-engine", label: "Confinement Solitaire", icon: IconSolitaryConfinementRights },
     ],
   },
   {
