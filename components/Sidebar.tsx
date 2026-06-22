@@ -12248,6 +12248,41 @@ function IconCutFlowerLaborRights() {
   );
 }
 
+function IconSoyFarmingDeforestationRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M17 10c0 4-5 9-5 9S7 14 7 10a5 5 0 0 1 10 0z" />
+      <path d="M3 21l4-4" />
+      <path d="M3 17l2 2" />
+      <path d="M7 21l-2-2" />
+    </svg>
+  );
+}
+
+function IconAvocadoWaterTheftRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2C8 2 5 6 5 11c0 4 3.5 7 7 7s7-3 7-7c0-5-3-9-7-9z" />
+      <circle cx="12" cy="12" r="2" />
+      <path d="M19 3l-3 3" />
+      <path d="M21 6l-2-2" />
+      <path d="M16 2l1 3" />
+    </svg>
+  );
+}
+
+function IconQuinoaLandGrabRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2v10" />
+      <path d="M9 5c0 0-2 1-2 3h6c0-2-2-3-4-3z" />
+      <path d="M10 8c0 0-2 1-2 3h8c0-2-2-3-6-3z" />
+      <path d="M3 20h18" />
+      <path d="M5 20v-4h14v4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14106,6 +14141,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/cotton-child-labor-rights", label: "Travail Enfant Coton", icon: IconCottonChildLaborRights },
       { href: "/dashboard/tea-worker-rights", label: "Droits Cueilleuses de Thé", icon: IconTeaWorkerRights },
       { href: "/dashboard/cut-flower-labor-rights", label: "Droits Travailleurs Fleurs Coupées", icon: IconCutFlowerLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 288",
+    items: [
+      { href: "/dashboard/soy-farming-deforestation-rights", label: "Déforestation Soja", icon: IconSoyFarmingDeforestationRights },
+      { href: "/dashboard/avocado-water-theft-rights", label: "Vol d'Eau Avocats", icon: IconAvocadoWaterTheftRights },
+      { href: "/dashboard/quinoa-land-grab-rights", label: "Accaparement Terres Quinoa", icon: IconQuinoaLandGrabRights },
     ],
   },
   {
