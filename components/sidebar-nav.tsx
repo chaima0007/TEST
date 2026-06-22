@@ -3757,6 +3757,9 @@ export const navSections: NavSection[] = [
       { label: "Data-Driven Advertising", href: "/dashboard/datadriven-advertising", icon: Icons.IconDatadrivenAdvertising },
       { label: "Hyperlocal Advertising", href: "/dashboard/hyperlocal-advertising", icon: Icons.IconHyperlocalAdvertising },
       { label: "Cross-Device Advertising", href: "/dashboard/crossdevice-advertising", icon: Icons.IconCrossdeviceAdvertising },
+      { label: "Performance Max Ads", href: "/dashboard/performancemax-advertising", icon: Icons.IconPerformancemaxAdvertising },
+      { label: "Demand Generation", href: "/dashboard/demandgen-advertising", icon: Icons.IconDemandgenAdvertising },
+      { label: "Conversational Advertising", href: "/dashboard/conversational-advertising", icon: Icons.IconConversationalAdvertising },
     ],
   },
   {
