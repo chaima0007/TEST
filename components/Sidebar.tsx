@@ -16000,6 +16000,34 @@ function IconStreamingadvertisingAdvertising({ size = 18, color = "currentColor"
     </svg>
   );
 }
+function IconXadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 4l16 16M20 4L4 20"/>
+    </svg>
+  );
+}
+function IconPinterestadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 8c-2.2 0-4 1.8-4 4 0 1.7 1 3.1 2.4 3.7-.1-.4-.2-1-.1-1.5l.7-2.8s-.2-.4-.2-.9c0-.9.5-1.5 1.1-1.5.5 0 .8.4.8.9 0 .5-.3 1.3-.5 2-.1.6.3 1 .9 1 1.1 0 1.9-1.1 1.9-2.8 0-1.4-1-2.4-2.5-2.4-1.7 0-2.7 1.3-2.7 2.6 0 .5.2 1 .4 1.3"/>
+      <path d="M9.5 18.5l1-3.8"/>
+    </svg>
+  );
+}
+function IconRedditadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <circle cx="9" cy="13" r="1" fill={color} stroke="none"/>
+      <circle cx="15" cy="13" r="1" fill={color} stroke="none"/>
+      <path d="M9.5 16c.8.5 1.5.7 2.5.7s1.7-.2 2.5-.7"/>
+      <path d="M16 8a1.5 1.5 0 0 1 3 0c0 .8-.6 1.4-1.5 1.5"/>
+      <path d="M14.5 7.5L13 6l-2.5.5"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19704,6 +19732,9 @@ const navSections: NavSection[] = [
       { label: "Esports Advertising", href: "/dashboard/esportsadvertising-advertising", icon: IconEsportsadvertisingAdvertising },
       { label: "Streaming Advertising", href: "/dashboard/streamingadvertising-advertising", icon: IconStreamingadvertisingAdvertising },
       { label: "CTV Advertising", href: "/dashboard/ctvadvertising-advertising", icon: IconCtvadvertisingAdvertising },
+      { label: "X Advertising", href: "/dashboard/xadvertising-advertising", icon: IconXadvertisingAdvertising },
+      { label: "Pinterest Advertising", href: "/dashboard/pinterestadvertising-advertising", icon: IconPinterestadvertisingAdvertising },
+      { label: "Reddit Advertising", href: "/dashboard/redditadvertising-advertising", icon: IconRedditadvertisingAdvertising },
     ],
   },
   {
