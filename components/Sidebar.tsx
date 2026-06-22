@@ -13194,6 +13194,37 @@ function IconSaffronCultivationChildLaborRights({ size = 20, color = "currentCol
   );
 }
 
+function IconPaprikaHarvestingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2 Q14 4 13 7" />
+      <path d="M13 7 Q18 6 20 10 Q22 15 18 19 Q15 22 12 22 Q9 22 6 19 Q2 15 4 10 Q6 6 11 7" />
+      <path d="M11 7 Q10 4 12 2" />
+    </svg>
+  );
+}
+
+function IconCayennePepperChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 3 Q12 2 14 5" />
+      <path d="M14 5 Q20 4 21 9 Q22 16 17 20 Q13 23 9 20 Q4 16 5 9 Q6 4 8 3" />
+      <line x1={9} y1={10} x2={17} y2={10} />
+      <line x1={8} y1={14} x2={16} y2={14} />
+    </svg>
+  );
+}
+
+function IconChiliPepperChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 2 Q17 4 16 7" />
+      <path d="M16 7 Q20 6 21 11 Q22 17 17 21 Q13 24 9 21 Q5 18 6 12 Q7 7 11 6 Q14 5 16 7" />
+      <path d="M11 6 Q9 3 10 1" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15424,6 +15455,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Safran",
         icon: IconSaffronCultivationChildLaborRights,
         color: "#b45309",
+      },
+      {
+        href: "/dashboard/paprika-child-labor-rights",
+        label: "Droits Enfants Paprika",
+        icon: IconPaprikaHarvestingChildLaborRights,
+        color: "#b91c1c",
+      },
+      {
+        href: "/dashboard/cayenne-pepper-child-labor-rights",
+        label: "Droits Enfants Piment Cayenne",
+        icon: IconCayennePepperChildLaborRights,
+        color: "#dc2626",
+      },
+      {
+        href: "/dashboard/chili-pepper-child-labor-rights",
+        label: "Droits Enfants Piment Chili",
+        icon: IconChiliPepperChildLaborRights,
+        color: "#991b1b",
       },
     ],
   },
