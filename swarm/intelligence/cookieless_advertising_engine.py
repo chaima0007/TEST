@@ -11,7 +11,7 @@ ENTITIES = [
     {"name": "Integral Ad Science", "sub1": 13, "sub2": 11, "sub3": 9, "sub4": 7},
 ]
 
-domain = "audiostreaming"
+domain = "cookieless"
 
 results = []
 for e in ENTITIES:
