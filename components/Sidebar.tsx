@@ -15007,6 +15007,27 @@ function IconLogistechAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconEdtechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </svg>
+  );
+}
+function IconProptechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+  );
+}
+function IconCleantechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 6v6l4 2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18106,6 +18127,24 @@ const navSections: NavSection[] = [
         label: "Logistech Advertising",
         href: "/dashboard/logistech-advertising",
         icon: IconLogistechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Edtech Advertising",
+        href: "/dashboard/edtech-advertising",
+        icon: IconEdtechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Proptech Advertising",
+        href: "/dashboard/proptech-advertising",
+        icon: IconProptechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Cleantech Advertising",
+        href: "/dashboard/cleantech-advertising",
+        icon: IconCleantechAdvertising,
         category: "Publicité Visuelle",
       },
       {
