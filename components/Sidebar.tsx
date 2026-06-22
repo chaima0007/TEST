@@ -14133,6 +14133,40 @@ function IconVoiceSearchAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconConnectedCommerceAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M3 3h10l-1 7H4L3 3z" />
+      <circle cx="6" cy="13" r="1" />
+      <circle cx="11" cy="13" r="1" />
+      <path d="M1 1h2l.5 2" />
+      <path d="M10 6H6" />
+    </svg>
+  );
+}
+
+function IconOmnichannelAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="1" width="4" height="4" rx="0.5" />
+      <rect x="11" y="1" width="4" height="4" rx="0.5" />
+      <rect x="1" y="11" width="4" height="4" rx="0.5" />
+      <rect x="11" y="11" width="4" height="4" rx="0.5" />
+      <circle cx="8" cy="8" r="2" />
+      <path d="M5 3h3M8 3h3M3 5v3M3 8v3M13 5v3M13 8v3M5 13h3M8 13h3" />
+    </svg>
+  );
+}
+
+function IconNeuromarketingAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 2C5.2 2 3 4.2 3 7c0 1.5.6 2.8 1.5 3.8L5 14h6l.5-3.2C12.4 9.8 13 8.5 13 7c0-2.8-2.2-5-5-5z" />
+      <path d="M6 7h4M7 5v4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16824,6 +16858,24 @@ const navSections: NavSection[] = [
         label: "Voice Search Advertising",
         href: "/dashboard/voice-search-advertising-child-labor-rights",
         icon: IconVoiceSearchAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Connected Commerce Advertising",
+        href: "/dashboard/connected-commerce-advertising-child-labor-rights",
+        icon: IconConnectedCommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Omnichannel Advertising",
+        href: "/dashboard/omnichannel-advertising-child-labor-rights",
+        icon: IconOmnichannelAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Neuromarketing Advertising",
+        href: "/dashboard/neuromarketing-advertising-child-labor-rights",
+        icon: IconNeuromarketingAdvertising,
         category: "Publicité Visuelle",
       },
     ],
