@@ -14560,6 +14560,34 @@ function IconChatbotAdvertising({ size = 18, color = "currentColor" }: { size?: 
   );
 }
 
+function IconVideoAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="23 7 16 12 23 17 23 7"/>
+      <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+    </svg>
+  );
+}
+function IconDisplayAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <line x1="8" y1="21" x2="16" y2="21"/>
+      <line x1="12" y1="17" x2="12" y2="21"/>
+    </svg>
+  );
+}
+function IconSearchAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <line x1="8" y1="11" x2="14" y2="11"/>
+      <line x1="11" y1="8" x2="11" y2="14"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17221,6 +17249,24 @@ const navSections: NavSection[] = [
         label: "Chatbot Advertising",
         href: "/dashboard/chatbot-child-labor-rights",
         icon: IconChatbotAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Video Advertising",
+        href: "/dashboard/video-advertising-child-labor-rights",
+        icon: IconVideoAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Display Advertising",
+        href: "/dashboard/display-advertising-child-labor-rights",
+        icon: IconDisplayAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Search Advertising",
+        href: "/dashboard/search-advertising-child-labor-rights",
+        icon: IconSearchAdvertising,
         category: "Publicité Visuelle",
       },
       {
