@@ -12410,6 +12410,38 @@ function IconCharcoalBurningChildLaborRights() {
   );
 }
 
+function IconNailSalonWorkerRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+      <path d="M5 8h13" />
+      <path d="M7 8v10" />
+      <path d="M5 18h10" />
+      <circle cx="7" cy="5" r="2" />
+    </svg>
+  );
+}
+
+function IconRestavekChildDomesticLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+      <circle cx="12" cy="7" r="1" />
+    </svg>
+  );
+}
+
+function IconFishingVesselForcedLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M22 18H2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4z" />
+      <path d="M21 14l-9-10-9 10" />
+      <path d="M12 4v10" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14308,6 +14340,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/carpet-weaving-child-labor-rights", label: "Travail Enfant Tissage Tapis", icon: IconCarpetWeavingChildLaborRights },
       { href: "/dashboard/silk-production-child-labor-rights", label: "Travail Enfant Production Soie", icon: IconSilkProductionChildLaborRights },
       { href: "/dashboard/charcoal-burning-child-labor-rights", label: "Travail Enfant Charbon de Bois", icon: IconCharcoalBurningChildLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 293",
+    items: [
+      { href: "/dashboard/nail-salon-worker-rights", label: "Droits Travailleurs Manucure", icon: IconNailSalonWorkerRights },
+      { href: "/dashboard/restavek-child-domestic-labor-rights", label: "Enfants Domestiques Restavèk", icon: IconRestavekChildDomesticLaborRights },
+      { href: "/dashboard/fishing-vessel-forced-labor-rights", label: "Travail Forcé Bateaux Pêche", icon: IconFishingVesselForcedLaborRights },
     ],
   },
   {
