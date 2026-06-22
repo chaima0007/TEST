@@ -3,27 +3,30 @@ from dataclasses import dataclass, field
 from typing import List
 import statistics
 
+ACCENT_COLOR = "#818cf8"
+
+
 @dataclass
 class MentalHealthRightsEntity:
     entity_id: str
     name: str
     country: str
-    forced_institutionalization_coercion_severity_score: float
-    psychiatric_treatment_without_consent_scale_score: float
-    mental_health_service_access_gap_score: float
-    stigma_discrimination_mental_health_barrier_score: float
+    forced_psychiatry_score: float
+    treatment_access_gap_score: float
+    stigma_discrimination_score: float
+    legal_capacity_denial_score: float
     composite_score: float = field(init=False)
     risk_level: str = field(init=False)
     primary_pattern: str = ""
     estimated_mental_health_rights_index: float = field(init=False)
-    last_updated: str = "2026-06-21"
+    last_updated: str = "2026-06-22"
 
     def __post_init__(self):
         self.composite_score = round(
-            self.forced_institutionalization_coercion_severity_score * 0.30
-            + self.psychiatric_treatment_without_consent_scale_score * 0.25
-            + self.mental_health_service_access_gap_score * 0.25
-            + self.stigma_discrimination_mental_health_barrier_score * 0.20,
+            self.forced_psychiatry_score * 0.30
+            + self.treatment_access_gap_score * 0.25
+            + self.stigma_discrimination_score * 0.25
+            + self.legal_capacity_denial_score * 0.20,
             2,
         )
         if self.composite_score >= 60:
@@ -36,6 +39,7 @@ class MentalHealthRightsEntity:
             self.risk_level = "faible"
         self.estimated_mental_health_rights_index = round(self.composite_score / 100 * 10, 2)
 
+
 @dataclass
 class MentalHealthRightsEngineResult:
     agent: str = "Mental Health Rights Engine Agent"
@@ -47,93 +51,94 @@ class MentalHealthRightsEngineResult:
     pattern_distribution: dict = field(default_factory=dict)
     top_risk_entities: List[str] = field(default_factory=list)
     critical_alerts: List[str] = field(default_factory=list)
-    last_analysis: str = "2026-06-21"
+    last_analysis: str = "2026-06-22"
     engine_version: str = "1.0.0"
     avg_estimated_mental_health_rights_index: float = 0.0
     data_sources: List[str] = field(default_factory=list)
     entities: List[MentalHealthRightsEntity] = field(default_factory=list)
 
+
 def run_mental_health_rights_engine() -> MentalHealthRightsEngineResult:
     entities = [
         MentalHealthRightsEntity(
             entity_id="MHR-001",
-            name="Indonésie — 18 000 Personnes Enchaînées Pasung, Hôpitaux Surpeuplés & Zéro Psychiatres Ruraux",
-            country="Indonésie",
-            forced_institutionalization_coercion_severity_score=96.0,
-            psychiatric_treatment_without_consent_scale_score=94.0,
-            mental_health_service_access_gap_score=93.0,
-            stigma_discrimination_mental_health_barrier_score=92.0,
-            primary_pattern="forced_institutionalization_coercion_severity",
+            name="Chine — Ankang Psychiatrie Punitive Dissidents, 1,3M Lits Sans Recours Légal",
+            country="Chine",
+            forced_psychiatry_score=97.0,
+            treatment_access_gap_score=94.0,
+            stigma_discrimination_score=93.0,
+            legal_capacity_denial_score=95.0,
+            primary_pattern="forced_psychiatry",
         ),
         MentalHealthRightsEntity(
             entity_id="MHR-002",
-            name="Inde — 150M Besoins Santé Mentale, 0,3 Psychiatres/100k, Internement Forcé Famille & ECT Mineurs",
-            country="Inde",
-            forced_institutionalization_coercion_severity_score=93.0,
-            psychiatric_treatment_without_consent_scale_score=91.0,
-            mental_health_service_access_gap_score=90.0,
-            stigma_discrimination_mental_health_barrier_score=89.0,
-            primary_pattern="mental_health_service_access_gap",
+            name="Russie — Psychiatrie Punitive Héritage Soviétique, Centre Serbsky & Dissidents Internés",
+            country="Russie",
+            forced_psychiatry_score=91.0,
+            treatment_access_gap_score=87.0,
+            stigma_discrimination_score=86.0,
+            legal_capacity_denial_score=89.0,
+            primary_pattern="forced_psychiatry",
         ),
         MentalHealthRightsEntity(
             entity_id="MHR-003",
-            name="Afrique Sub-Saharienne — 1 Psychiatre/Million, Guérisseurs Traditionnels Seule Option & Chaînes Thérapeutiques",
-            country="Afrique Sub-Saharienne",
-            forced_institutionalization_coercion_severity_score=90.0,
-            psychiatric_treatment_without_consent_scale_score=87.0,
-            mental_health_service_access_gap_score=88.0,
-            stigma_discrimination_mental_health_barrier_score=86.0,
-            primary_pattern="mental_health_service_access_gap",
+            name="Inde — Mental Healthcare Act 2017 Non-Appliqué, 70% Soins Traditionnels & Chaînes",
+            country="Inde",
+            forced_psychiatry_score=85.0,
+            treatment_access_gap_score=82.0,
+            stigma_discrimination_score=81.0,
+            legal_capacity_denial_score=79.0,
+            primary_pattern="treatment_access_gap",
         ),
         MentalHealthRightsEntity(
             entity_id="MHR-004",
-            name="Russie — Hôpitaux Psychiatriques Punitifs Héritage Soviétique, Dissidents Internés & Zéro Consentement",
-            country="Russie",
-            forced_institutionalization_coercion_severity_score=87.0,
-            psychiatric_treatment_without_consent_scale_score=85.0,
-            mental_health_service_access_gap_score=84.0,
-            stigma_discrimination_mental_health_barrier_score=83.0,
-            primary_pattern="forced_institutionalization_coercion_severity",
+            name="Afrique Sub-Saharienne — 0,1 Psychiatre/100k Habitants, Médicaments Inaccessibles & Soins Nuls",
+            country="Afrique Sub-Saharienne",
+            forced_psychiatry_score=77.0,
+            treatment_access_gap_score=79.0,
+            stigma_discrimination_score=76.0,
+            legal_capacity_denial_score=72.0,
+            primary_pattern="treatment_access_gap",
         ),
         MentalHealthRightsEntity(
             entity_id="MHR-005",
-            name="USA — 500k Sans Abri Troubles Mentaux, Prisons Hôpitaux Psychiatrie, Isolement Cellulaire",
+            name="USA — Criminalisation Santé Mentale, 20% Détenus Trouble Psychiatrique Grave",
             country="USA",
-            forced_institutionalization_coercion_severity_score=56.0,
-            psychiatric_treatment_without_consent_scale_score=54.0,
-            mental_health_service_access_gap_score=53.0,
-            stigma_discrimination_mental_health_barrier_score=52.0,
-            primary_pattern="forced_institutionalization_coercion_severity",
+            forced_psychiatry_score=57.0,
+            treatment_access_gap_score=54.0,
+            stigma_discrimination_score=53.0,
+            legal_capacity_denial_score=52.0,
+            primary_pattern="forced_psychiatry",
         ),
         MentalHealthRightsEntity(
             entity_id="MHR-006",
-            name="Europe — ECT Sans Consentement Légal Plusieurs Pays, Contention Physique & Gaps Désinstitutionnalisation",
-            country="Europe",
-            forced_institutionalization_coercion_severity_score=53.0,
-            psychiatric_treatment_without_consent_scale_score=51.0,
-            mental_health_service_access_gap_score=50.0,
-            stigma_discrimination_mental_health_barrier_score=49.0,
-            primary_pattern="psychiatric_treatment_without_consent_scale",
+            name="Brésil — Réforme Psychiatrique Incomplète, CAPS Insuffisants & Hospitalisations Abusives",
+            country="Brésil",
+            forced_psychiatry_score=48.0,
+            treatment_access_gap_score=45.0,
+            stigma_discrimination_score=44.0,
+            legal_capacity_denial_score=43.0,
+            primary_pattern="treatment_access_gap",
         ),
         MentalHealthRightsEntity(
             entity_id="MHR-007",
-            name="WNUSP/MIND — Réforme Psychiatrie, CRPD Article 12 & Mouvement Survivants Psychiatriques",
-            country="Global",
-            forced_institutionalization_coercion_severity_score=27.0,
-            psychiatric_treatment_without_consent_scale_score=26.0,
-            mental_health_service_access_gap_score=25.0,
-            stigma_discrimination_mental_health_barrier_score=26.0,
-            primary_pattern="forced_institutionalization_coercion_severity",
+            name="France — Isolement/Contention en Hausse, Contrôleur Général Alerte & Réforme Attendue",
+            country="France",
+            forced_psychiatry_score=32.0,
+            treatment_access_gap_score=29.0,
+            stigma_discrimination_score=28.0,
+            legal_capacity_denial_score=28.0,
+            primary_pattern="stigma_discrimination",
         ),
         MentalHealthRightsEntity(
             entity_id="MHR-008",
-            name="ONU/CRPD — Article 12 Capacité Légale Égale, Rapporteur Santé Mentale & SDG 3.4 Bien-Être Mental",
-            country="Global",
-            forced_institutionalization_coercion_severity_score=4.0,
-            psychiatric_treatment_without_consent_scale_score=4.0,
-            mental_health_service_access_gap_score=5.0,
-            stigma_discrimination_mental_health_barrier_score=4.0,
-            primary_pattern="mental_health_service_access_gap",
+            name="Finlande/Pays-Bas — Open Dialogue, Care in Community & CRPD Art.12 Appliqué",
+            country="Finlande/Pays-Bas",
+            forced_psychiatry_score=10.0,
+            treatment_access_gap_score=9.0,
+            stigma_discrimination_score=9.0,
+            legal_capacity_denial_score=11.0,
+            primary_pattern="legal_capacity_denial",
         ),
     ]
 
@@ -164,20 +169,20 @@ def run_mental_health_rights_engine() -> MentalHealthRightsEngineResult:
         critical_alerts=alerts,
         avg_estimated_mental_health_rights_index=round(avg_composite / 100 * 10, 2),
         data_sources=[
-            "who_mental_health_atlas_global_psychiatry_resources",
-            "hrw_disability_rights_mental_health_institutionalization_report",
-            "crpd_committee_general_comment_1_legal_capacity_article12",
+            "who_mental_health_atlas_global_2023",
+            "hrw_mental_health_rights_violations_global",
+            "un_special_rapporteur_health_mental_health_2024",
+            "crpd_committee_mental_health_legal_capacity",
+            "global_mental_health_action_plan_2013_2030",
         ],
         entities=entities,
     )
 
+
 if __name__ == "__main__":
     result = run_mental_health_rights_engine()
     print(f"Agent: {result.agent}")
-    print(f"Total entities: {result.total_entities}")
     print(f"Avg composite: {result.avg_composite}")
-    print(f"Avg index: {result.avg_estimated_mental_health_rights_index}")
     print(f"Risk distribution: {result.risk_distribution}")
-    print(f"Pattern distribution: {result.pattern_distribution}")
     for e in result.entities:
         print(f"  {e.entity_id}: {e.composite_score} [{e.risk_level}]")
