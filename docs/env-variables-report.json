@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-22T08:27:47.437269",
+  "environment": "container/remote",
+  "variables": [
+    {
+      "key": "SWARM_API_URL",
+      "is_set": false,
+      "required": true,
+      "service": "CaelumSwarm API"
+    },
+    {
+      "key": "NEXT_PUBLIC_SWARM_API_URL",
+      "is_set": false,
+      "required": false,
+      "service": "CaelumSwarm API"
+    },
+    {
+      "key": "DATABASE_URL",
+      "is_set": false,
+      "required": false,
+      "service": "PostgreSQL"
+    },
+    {
+      "key": "DEMO_EMAIL",
+      "is_set": false,
+      "required": false,
+      "service": "Auth Demo"
+    },
+    {
+      "key": "DEMO_PASSWORD",
+      "is_set": false,
+      "required": false,
+      "service": "Auth Demo"
+    },
+    {
+      "key": "COMPOSIO_API_KEY",
+      "is_set": false,
+      "required": false,
+      "service": "Composio (email/calendar)"
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "is_set": false,
+      "required": false,
+      "service": "OpenAI GPT-4"
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "is_set": false,
+      "required": false,
+      "service": "Anthropic Claude"
+    },
+    {
+      "key": "NEXTAUTH_SECRET",
+      "is_set": false,
+      "required": false,
+      "service": "NextAuth.js"
+    },
+    {
+      "key": "NEXTAUTH_URL",
+      "is_set": false,
+      "required": false,
+      "service": "NextAuth.js"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "defined": 0,
+    "missing_required": 1
+  },
+  "composio_ready": false,
+  "swarm_api_ready": false
+}
