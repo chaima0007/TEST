@@ -277,6 +277,13 @@
         "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
         "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
         "priority": "NORMAL"
+      },
+      {
+        "from": "RotatingTeamRelay",
+        "timestamp": "2026-06-22T23:10:04.711410",
+        "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
+        "content": "Système de relève opérationnel — jamais de fatigue",
+        "priority": "NORMAL"
       }
     ],
     "QuantumAgent": [
@@ -328,6 +335,13 @@
         "timestamp": "2026-06-22T23:07:30.039262",
         "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
         "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "RotatingTeamRelay",
+        "timestamp": "2026-06-22T23:10:04.711410",
+        "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
+        "content": "Système de relève opérationnel — jamais de fatigue",
         "priority": "NORMAL"
       }
     ],
@@ -395,6 +409,13 @@
         "timestamp": "2026-06-22T23:07:30.039262",
         "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
         "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "RotatingTeamRelay",
+        "timestamp": "2026-06-22T23:10:04.711410",
+        "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
+        "content": "Système de relève opérationnel — jamais de fatigue",
         "priority": "NORMAL"
       }
     ],
