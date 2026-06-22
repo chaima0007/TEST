@@ -12545,6 +12545,45 @@ function IconElectronicGoldRecoveryRights({ size = 18, color = "#ca8a04" }: { si
   );
 }
 
+function IconCannedTunaLaborRights({ size = 18, color = "#0c4a6e" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="8" width="18" height="10" rx="2" />
+      <path d="M3 13h18" />
+      <path d="M7 8V6a5 5 0 0 1 10 0v2" />
+      <path d="M9 17c1-2 5-2 6 0" />
+      <path d="M12 11v2" />
+    </svg>
+  );
+}
+function IconShrimpFarmingMangroveRights({ size = 18, color = "#065f46" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3v10" />
+      <path d="M9 6c-2 1-3 3-1 5" />
+      <path d="M15 6c2 1 3 3 1 5" />
+      <path d="M9 9c-3 1-4 4-2 6" />
+      <path d="M15 9c3 1 4 4 2 6" />
+      <path d="M8 18c1-3 3-4 4-4s3 1 4 4" />
+      <path d="M5 21h14" />
+    </svg>
+  );
+}
+function IconLivestockAntibioticWorkerRights({ size = 18, color = "#7f1d1d" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="9" cy="13" rx="5" ry="4" />
+      <path d="M14 11c2-1 5 0 5 3" />
+      <path d="M4 13v3" />
+      <path d="M8 17v2" />
+      <path d="M14 17v2" />
+      <path d="M19 7h-4" />
+      <path d="M17 5v4" />
+      <circle cx="17" cy="9" r="1" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14475,6 +14514,14 @@ const navSections: NavSection[] = [
       { label: "Droits Communautés Extraction Eau Minérale", href: "/dashboard/mineral-water-extraction-community-rights", icon: IconMineralWaterExtractionCommunityRights, color: "#0891b2" },
       { label: "Droits Bois Santal Exploitation Illégale", href: "/dashboard/sandalwood-illegal-logging-rights", icon: IconSandalwoodIllegalLoggingRights, color: "#854d0e" },
       { label: "Droits Récupération Or Électronique", href: "/dashboard/electronic-gold-recovery-rights", icon: IconElectronicGoldRecoveryRights, color: "#ca8a04" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 297",
+    items: [
+      { label: "Droits Travailleurs Thon en Conserve", href: "/dashboard/canned-tuna-labor-rights", icon: IconCannedTunaLaborRights, color: "#0c4a6e" },
+      { label: "Droits Crevetticulture Mangrove", href: "/dashboard/shrimp-farming-mangrove-rights", icon: IconShrimpFarmingMangroveRights, color: "#065f46" },
+      { label: "Droits Travailleurs Antibiotiques Élevage", href: "/dashboard/livestock-antibiotic-worker-rights", icon: IconLivestockAntibioticWorkerRights, color: "#7f1d1d" },
     ],
   },
   {
