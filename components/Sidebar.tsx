@@ -12940,6 +12940,27 @@ function IconNettleFiberProcessingLaborRights({ size = 18 }: { size?: number }) 
     </svg>
   );
 }
+function IconBambooCharcoalProcessingLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v20M8 6l4-4 4 4M8 18l4 4 4-4"/>
+    </svg>
+  );
+}
+function IconMushroomCultivationChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8 2 4 6 4 10h16c0-4-4-8-8-8z"/><path d="M9 10v10M15 10v10"/>
+    </svg>
+  );
+}
+function IconMoringaPlantationLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12M12 12C12 12 7 9 5 5c4 0 7 3 7 7zM12 12c0 0 5-3 7-7-4 0-7 3-7 7z"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -14972,6 +14993,24 @@ const navSections: NavSection[] = [
         label: "Nettle Fiber Processing Labor",
         href: "/dashboard/nettle-fiber-processing-labor-rights",
         icon: IconNettleFiberProcessingLaborRights,
+        color: "#166534",
+      },
+      {
+        label: "Bamboo Charcoal Processing Labor",
+        href: "/dashboard/bamboo-charcoal-processing-labor-rights",
+        icon: IconBambooCharcoalProcessingLaborRights,
+        color: "#78350f",
+      },
+      {
+        label: "Mushroom Cultivation Child Labor",
+        href: "/dashboard/mushroom-cultivation-child-labor-rights",
+        icon: IconMushroomCultivationChildLaborRights,
+        color: "#713f12",
+      },
+      {
+        label: "Moringa Plantation Labor",
+        href: "/dashboard/moringa-plantation-labor-rights",
+        icon: IconMoringaPlantationLaborRights,
         color: "#166534",
       },
     ],
