@@ -28,10 +28,10 @@ interface Entity {
   risk_level: string;
   primary_pattern: string;
   last_updated: string;
-  wage_rights_score?: number;
-  safety_conditions_score?: number;
-  union_freedom_score?: number;
-  supply_chain_accountability_score?: number;
+  child_labor_score?: number;
+  mining_safety_score?: number;
+  environmental_impact_score?: number;
+  community_displacement_score?: number;
   [key: string]: unknown;
 }
 
@@ -53,10 +53,10 @@ const RISK_CONFIG: Record<string, { label: string; color: string; bg: string; bo
 };
 
 const SUB_SCORES = [
-  { key: "wage_rights_score", label: "Droits salariaux" },
-  { key: "safety_conditions_score", label: "Conditions de sécurité" },
-  { key: "union_freedom_score", label: "Liberté syndicale" },
-  { key: "supply_chain_accountability_score", label: "Responsabilité chaîne d'approvisionnement" },
+  { key: "child_labor_score", label: "Travail des enfants" },
+  { key: "mining_safety_score", label: "Sécurité minière" },
+  { key: "environmental_impact_score", label: "Impact environnemental" },
+  { key: "community_displacement_score", label: "Déplacement communautaire" },
 ];
 
 function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
@@ -126,8 +126,8 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
           )}
           {tab === "context" && (
             <div className="space-y-3 text-sm text-slate-300">
-              <p>Analyse des droits des travailleurs du textile : droits salariaux, conditions de sécurité, liberté syndicale et responsabilité de la chaîne d&apos;approvisionnement affectant les ouvriers du secteur de l&apos;habillement mondial.</p>
-              <p className="text-slate-400">Source : Garment Worker Rights Engine · Wave 268</p>
+              <p>Analyse des droits dans les mines de cobalt : travail des enfants, sécurité minière, impact environnemental et déplacement des communautés affectant les populations des zones d&apos;extraction en RDC et ailleurs.</p>
+              <p className="text-slate-400">Source : Cobalt Mining Rights Engine · Wave 268</p>
             </div>
           )}
         </div>
@@ -136,14 +136,14 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function GarmentWorkerRightsPage() {
+export default function CobaltMiningRightsPage() {
   const [data, setData] = useState<DashData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("tous");
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/garment-worker-rights").then(r => r.json()).then(d => { setData(d.payload ?? d); setLoading(false); });
+    fetch("/api/cobalt-mining-rights").then(r => r.json()).then(d => { setData(d.payload ?? d); setLoading(false); });
   }, []);
 
   if (loading) return (
@@ -165,8 +165,8 @@ export default function GarmentWorkerRightsPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
       <div className="mb-8 flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold" style={{ color: ACCENT }}>Droits des Travailleurs du Textile</h1>
-          <p className="text-slate-400 mt-1 text-sm">Droits Salariaux · Conditions de Sécurité · Liberté Syndicale · Responsabilité Chaîne d&apos;Approvisionnement</p>
+          <h1 className="text-2xl font-bold" style={{ color: ACCENT }}>Droits dans les Mines de Cobalt</h1>
+          <p className="text-slate-400 mt-1 text-sm">Travail des Enfants · Sécurité Minière · Impact Environnemental · Déplacement Communautaire</p>
         </div>
         <span className="text-xs text-slate-500 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
           {data.total_entities} entités analysées
