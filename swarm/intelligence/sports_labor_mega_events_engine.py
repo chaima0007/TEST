@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Artisanal Mining Rights Engine — CaelumSwarm™ Wave 201 | CSDDD Art.8-13"""
+"""Sports Labor Mega Events Engine — CaelumSwarm™ Wave 201 | CSDDD Art.8-13"""
 import json
 from datetime import datetime
 
-DOMAIN_CODE = "AMR"
-ACCENT_COLOR = "#78350f"
+DOMAIN_CODE = "SLM"
+ACCENT_COLOR = "#1d4ed8"
 
 ENTITIES = [
-    {"name": "Glencore",                        "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 88.0},
-    {"name": "China Molybdenum",                "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 84.0},
-    {"name": "Apple (cobalt)",                  "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 80.0},
-    {"name": "Tesla (cobalt)",                  "sub1": 82.0, "sub2": 80.0, "sub3": 78.0, "sub4": 76.0},
-    {"name": "Samsung SDI",                     "sub1": 58.0, "sub2": 56.0, "sub3": 54.0, "sub4": 52.0},
-    {"name": "LG Energy Solution",              "sub1": 52.0, "sub2": 50.0, "sub3": 48.0, "sub4": 46.0},
-    {"name": "Fairphone",                       "sub1": 30.0, "sub2": 28.0, "sub3": 26.0, "sub4": 24.0},
-    {"name": "Responsible Minerals Initiative", "sub1": 12.0, "sub2": 10.0, "sub3":  8.0, "sub4": 14.0},
+    {"name": "FIFA Qatar 2022",        "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 88.0},
+    {"name": "IOC Beijing 2022",       "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 84.0},
+    {"name": "Formula 1 Saudi Arabia", "sub1": 87.0, "sub2": 85.0, "sub3": 83.0, "sub4": 80.0},
+    {"name": "ATP/WTA Saudi",          "sub1": 83.0, "sub2": 81.0, "sub3": 79.0, "sub4": 76.0},
+    {"name": "UEFA Super League",      "sub1": 56.0, "sub2": 54.0, "sub3": 52.0, "sub4": 50.0},
+    {"name": "NBA China",              "sub1": 50.0, "sub2": 48.0, "sub3": 46.0, "sub4": 44.0},
+    {"name": "Premier League",         "sub1": 30.0, "sub2": 28.0, "sub3": 26.0, "sub4": 24.0},
+    {"name": "FIFPro",                 "sub1": 12.0, "sub2": 10.0, "sub3":  8.0, "sub4": 14.0},
 ]
 
 
