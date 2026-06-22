@@ -13781,6 +13781,36 @@ function IconVirtualRealityContent({ className }: { className?: string }) {
   );
 }
 
+function IconPodcastAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="7" r="3" />
+      <path d="M5 7v1a3 3 0 006 0V7" />
+      <line x1="8" y1="13" x2="8" y2="15" />
+      <line x1="5" y1="15" x2="11" y2="15" />
+    </svg>
+  );
+}
+
+function IconStreamingContent({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="3" width="14" height="9" rx="1" />
+      <path d="M6.5 6.5l4 2-4 2z" fill="currentColor" stroke="none" />
+      <line x1="4" y1="14" x2="12" y2="14" />
+    </svg>
+  );
+}
+
+function IconAugmentedRealityAds({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 5L8 2l6 3v6l-6 3-6-3z" />
+      <path d="M8 2v9M2 5l6 3 6-3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16298,6 +16328,24 @@ const navSections: NavSection[] = [
         label: "Virtual Reality Content",
         href: "/dashboard/virtual-reality-content-child-labor-rights",
         icon: IconVirtualRealityContent,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Podcast Advertising",
+        href: "/dashboard/podcast-advertising-child-labor-rights",
+        icon: IconPodcastAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Streaming Content",
+        href: "/dashboard/streaming-content-child-labor-rights",
+        icon: IconStreamingContent,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Augmented Reality Ads",
+        href: "/dashboard/augmented-reality-ads-child-labor-rights",
+        icon: IconAugmentedRealityAds,
         category: "Publicité Visuelle",
       },
     ],
