@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { competitors } from "@/lib/data";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[competitors/[id]] SWARM_API_URL non défini — mode local");
+}
 
 export async function GET(
   _req: NextRequest,
@@ -9,10 +14,10 @@ export async function GET(
   const competitor = competitors.find((c) => c.id === id);
 
   if (!competitor) {
-    return NextResponse.json({ error: "Competitor not found" }, { status: 404 });
+    return NextResponse.json(sealResponse({ error: "Competitor not found" }), { status: 404 });
   }
 
-  return NextResponse.json(competitor);
+  return NextResponse.json(sealResponse(competitor));
 }
 
 export async function PATCH(
@@ -21,7 +26,7 @@ export async function PATCH(
 ) {
   const { id } = await props.params;
   const competitor = competitors.find((c) => c.id === id);
-  if (!competitor) return NextResponse.json({ error: "Competitor not found" }, { status: 404 });
+  if (!competitor) return NextResponse.json(sealResponse({ error: "Competitor not found" }), { status: 404 });
 
   const body = await req.json() as {
     name?: string; website?: string; industry?: string;
@@ -38,7 +43,7 @@ export async function PATCH(
     lastUpdated: new Date().toISOString().split("T")[0],
   };
 
-  return NextResponse.json(updated);
+  return NextResponse.json(sealResponse(updated));
 }
 
 export async function DELETE(
@@ -49,8 +54,8 @@ export async function DELETE(
   const competitor = competitors.find((c) => c.id === id);
 
   if (!competitor) {
-    return NextResponse.json({ error: "Competitor not found" }, { status: 404 });
+    return NextResponse.json(sealResponse({ error: "Competitor not found" }), { status: 404 });
   }
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json(sealResponse({ success: true }));
 }

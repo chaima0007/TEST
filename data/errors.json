@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "last_id": 7,
+  "last_id": 9,
   "errors": [
     {
       "id": 1,
@@ -118,6 +118,32 @@
       "wave": null,
       "recurrence_count": 1,
       "status": "fixed"
+    },
+    {
+      "id": 8,
+      "timestamp": "2026-06-22T21:45:23.203452+00:00",
+      "error_type": "ci",
+      "file_path": "app/api/competitiveintel/, app/api/consumerinsights/, app/api/marketresearch/",
+      "description": "Stop hook triggered — untracked files detected in working tree",
+      "cause": "Les agents background créent des fichiers mais terminent avant d'exécuter git add/commit. Si le processus parent reprend sa surveillance trop tôt, le stop hook détecte ?? dans git status.",
+      "fix_applied": null,
+      "resolution_time_minutes": null,
+      "wave": null,
+      "recurrence_count": 1,
+      "status": "open"
+    },
+    {
+      "id": 9,
+      "timestamp": "2026-06-22T21:45:23.210709+00:00",
+      "error_type": "route",
+      "file_path": null,
+      "description": "3 routes API manquent sealResponse/SWARM_API_URL/502",
+      "cause": "Certains agents créent des routes API avec juste NextResponse.json(data) sans sealResponse.",
+      "fix_applied": null,
+      "resolution_time_minutes": null,
+      "wave": null,
+      "recurrence_count": 1,
+      "status": "open"
     }
   ]
 }
