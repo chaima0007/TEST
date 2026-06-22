@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[templates] SWARM_API_URL non défini — mode local");
+}
 
 interface SubjectVariant {
   variant_key: string;
@@ -284,43 +289,47 @@ const TEMPLATES: Template[] = [
 ];
 
 export async function GET() {
-  const totalSends = TEMPLATES.reduce((s, t) => s + t.stats.sends, 0);
-  const totalOpens = TEMPLATES.reduce((s, t) => s + t.stats.opens, 0);
-  const totalClicks = TEMPLATES.reduce((s, t) => s + t.stats.clicks, 0);
-  const totalReplies = TEMPLATES.reduce((s, t) => s + t.stats.replies, 0);
+  try {
+    const totalSends = TEMPLATES.reduce((s, t) => s + t.stats.sends, 0);
+    const totalOpens = TEMPLATES.reduce((s, t) => s + t.stats.opens, 0);
+    const totalClicks = TEMPLATES.reduce((s, t) => s + t.stats.clicks, 0);
+    const totalReplies = TEMPLATES.reduce((s, t) => s + t.stats.replies, 0);
 
-  const avgOpenRate =
-    Math.round(
-      (TEMPLATES.reduce((s, t) => s + t.stats.open_rate_pct, 0) / TEMPLATES.length) * 10
-    ) / 10;
-  const avgReplyRate =
-    Math.round(
-      (TEMPLATES.reduce((s, t) => s + t.stats.reply_rate_pct, 0) / TEMPLATES.length) * 10
-    ) / 10;
+    const avgOpenRate =
+      Math.round(
+        (TEMPLATES.reduce((s, t) => s + t.stats.open_rate_pct, 0) / TEMPLATES.length) * 10
+      ) / 10;
+    const avgReplyRate =
+      Math.round(
+        (TEMPLATES.reduce((s, t) => s + t.stats.reply_rate_pct, 0) / TEMPLATES.length) * 10
+      ) / 10;
 
-  const topTemplate = TEMPLATES.reduce((best, t) =>
-    t.stats.reply_rate_pct > best.stats.reply_rate_pct ? t : best
-  ).template_id;
+    const topTemplate = TEMPLATES.reduce((best, t) =>
+      t.stats.reply_rate_pct > best.stats.reply_rate_pct ? t : best
+    ).template_id;
 
-  const byTag: Record<string, number> = {};
-  for (const t of TEMPLATES) {
-    for (const tag of t.tags) {
-      byTag[tag] = (byTag[tag] ?? 0) + 1;
+    const byTag: Record<string, number> = {};
+    for (const t of TEMPLATES) {
+      for (const tag of t.tags) {
+        byTag[tag] = (byTag[tag] ?? 0) + 1;
+      }
     }
-  }
 
-  return NextResponse.json({
-    templates: TEMPLATES,
-    summary: {
-      templates_count: 11,
-      total_sends: totalSends,
-      total_opens: totalOpens,
-      total_clicks: totalClicks,
-      total_replies: totalReplies,
-      avg_open_rate_pct: avgOpenRate,
-      avg_reply_rate_pct: avgReplyRate,
-      top_template: topTemplate,
-    },
-    by_tag: byTag,
-  });
+    return NextResponse.json(sealResponse({
+      templates: TEMPLATES,
+      summary: {
+        templates_count: 11,
+        total_sends: totalSends,
+        total_opens: totalOpens,
+        total_clicks: totalClicks,
+        total_replies: totalReplies,
+        avg_open_rate_pct: avgOpenRate,
+        avg_reply_rate_pct: avgReplyRate,
+        top_template: topTemplate,
+      },
+      by_tag: byTag,
+    }));
+  } catch {
+    return NextResponse.json(sealResponse({ error: "upstream error" }), { status: 502 });
+  }
 }
