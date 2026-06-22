@@ -9964,6 +9964,15 @@ function IconDeathPenaltyWrongfulExecution({ className }: { className?: string }
   )
 }
 
+function IconDeathPenaltyRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <circle cx={12} cy={12} r={10}/>
+      <line x1={4.93} y1={4.93} x2={19.07} y2={19.07}/>
+    </svg>
+  );
+}
+
 function IconEnforcedDisappearancesExtrajudicial({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
@@ -11884,6 +11893,14 @@ const navSections: NavSection[] = [
       { label: "Maltraitance Seniors", href: "/dashboard/elder-abuse-rights-engine", icon: IconElderAbuseRights },
       { label: "Accès Internet", href: "/dashboard/internet-access-rights-engine", icon: IconInternetAccessRights },
       { label: "Conditions Détention", href: "/dashboard/prison-conditions-rights-engine", icon: IconPrisonConditionsRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 225",
+    items: [
+      { label: "Accaparement Terres", href: "/dashboard/land-grabbing-rights-engine", icon: IconLandGrabbingRights },
+      { label: "Droits Minorités", href: "/dashboard/minority-rights-engine", icon: IconMinorityRights },
+      { label: "Peine de Mort", href: "/dashboard/death-penalty-rights-engine", icon: IconDeathPenaltyRights },
     ],
   },
   {
