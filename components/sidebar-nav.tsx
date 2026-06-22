@@ -3266,6 +3266,12 @@ export const navSections: NavSection[] = [
         category: "Publicité Visuelle",
       },
       {
+        label: "eSports Advertising",
+        href: "/dashboard/esports-advertising",
+        icon: Icons.IconEsportsAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
         label: "IoT Advertising",
         href: "/dashboard/iot-advertising",
         icon: Icons.IconIotAdvertising,
