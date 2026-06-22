@@ -8,54 +8,54 @@ interface Entity {
   composite_score: number;
   risk_level: string;
   primary_pattern: string;
-  estimated_human_trafficking_modern_slavery_index: number;
+  estimated_water_pollution_corporate_liability_index: number;
 }
 interface EngineData {
   agent: string;
   total_entities: number;
   avg_composite: number;
   confidence_score: number;
-  avg_estimated_human_trafficking_modern_slavery_index: number;
+  avg_estimated_water_pollution_corporate_liability_index: number;
   risk_distribution: Record<string, number>;
   critical_alerts: string[];
   data_sources: string[];
   entities: Entity[];
 }
 
-const ACCENT = "#4a044e";
+const ACCENT = "#164e63";
 const RC: Record<string, string> = {
   critique: "#ef4444",
   "élevé": "#f97316",
   "modéré": "#eab308",
   faible: "#22c55e",
 };
-const INDEX_KEY = "estimated_human_trafficking_modern_slavery_index";
+const INDEX_KEY = "estimated_water_pollution_corporate_liability_index";
 
 const FALLBACK_ENTITIES: Entity[] = [
-  { id: "HTM-001", name: "Qatar construction", country: "Moyen-Orient", composite_score: 91.2, risk_level: "critique", primary_pattern: "travail_force_systeme_kafala", estimated_human_trafficking_modern_slavery_index: 9.12 },
-  { id: "HTM-002", name: "UAE domestic", country: "Moyen-Orient", composite_score: 87.5, risk_level: "critique", primary_pattern: "travail_domestique_force_exploitation", estimated_human_trafficking_modern_slavery_index: 8.75 },
-  { id: "HTM-003", name: "Malaysia Top Glove", country: "Asie du Sud-Est", composite_score: 83.1, risk_level: "critique", primary_pattern: "travail_force_industrie_gants", estimated_human_trafficking_modern_slavery_index: 8.31 },
-  { id: "HTM-004", name: "Saudi kafala", country: "Moyen-Orient", composite_score: 76.9, risk_level: "critique", primary_pattern: "systeme_kafala_servitude_contractuelle", estimated_human_trafficking_modern_slavery_index: 7.69 },
-  { id: "HTM-005", name: "Thailand seafood", country: "Asie du Sud-Est", composite_score: 55.8, risk_level: "élevé", primary_pattern: "esclavage_mer_peche_illegale", estimated_human_trafficking_modern_slavery_index: 5.58 },
-  { id: "HTM-006", name: "Mexico agriculture", country: "Amérique du Nord", composite_score: 51.4, risk_level: "élevé", primary_pattern: "travail_agricole_force_migration", estimated_human_trafficking_modern_slavery_index: 5.14 },
-  { id: "HTM-007", name: "UK care sector", country: "Europe", composite_score: 29.7, risk_level: "modéré", primary_pattern: "exploitation_travailleurs_soin", estimated_human_trafficking_modern_slavery_index: 2.97 },
-  { id: "HTM-008", name: "IJM", country: "International", composite_score: 11.3, risk_level: "faible", primary_pattern: "programme_liberation_victimes_traite", estimated_human_trafficking_modern_slavery_index: 1.13 },
+  { id: "WPC-001", name: "3M PFAS", country: "États-Unis", composite_score: 89.7, risk_level: "critique", primary_pattern: "contamination_pfas_eau_potable", estimated_water_pollution_corporate_liability_index: 8.97 },
+  { id: "WPC-002", name: "DuPont/Chemours", country: "États-Unis", composite_score: 85.9, risk_level: "critique", primary_pattern: "pollution_pfas_rivières_nappes_phreatiques", estimated_water_pollution_corporate_liability_index: 8.59 },
+  { id: "WPC-003", name: "Monsanto/Bayer", country: "Allemagne", composite_score: 82.3, risk_level: "critique", primary_pattern: "contamination_glyphosate_eau_surface", estimated_water_pollution_corporate_liability_index: 8.23 },
+  { id: "WPC-004", name: "Volkswagen", country: "Allemagne", composite_score: 76.1, risk_level: "critique", primary_pattern: "pollution_hydrocarbures_eaux_souterraines", estimated_water_pollution_corporate_liability_index: 7.61 },
+  { id: "WPC-005", name: "Syngenta", country: "Suisse", composite_score: 57.2, risk_level: "élevé", primary_pattern: "ruissellement_pesticides_cours_eau", estimated_water_pollution_corporate_liability_index: 5.72 },
+  { id: "WPC-006", name: "BASF", country: "Allemagne", composite_score: 53.8, risk_level: "élevé", primary_pattern: "rejets_chimiques_industriels_eau", estimated_water_pollution_corporate_liability_index: 5.38 },
+  { id: "WPC-007", name: "Corteva", country: "États-Unis", composite_score: 28.9, risk_level: "modéré", primary_pattern: "contamination_partielle_eau_agricole", estimated_water_pollution_corporate_liability_index: 2.89 },
+  { id: "WPC-008", name: "Waterkeeper", country: "International", composite_score: 10.1, risk_level: "faible", primary_pattern: "programme_surveillance_protection_bassins_versants", estimated_water_pollution_corporate_liability_index: 1.01 },
 ];
 
 const FALLBACK: EngineData = {
-  agent: "Traite Humaine & Esclavage Moderne",
+  agent: "Pollution Eau & Responsabilité Corp.",
   total_entities: 8,
-  avg_composite: 60.86,
-  confidence_score: 0.89,
-  avg_estimated_human_trafficking_modern_slavery_index: 6.086,
+  avg_composite: 60.5,
+  confidence_score: 0.88,
+  avg_estimated_water_pollution_corporate_liability_index: 6.05,
   risk_distribution: { critique: 4, "élevé": 2, "modéré": 1, faible: 1 },
   critical_alerts: [
-    "Qatar construction: travail_force_systeme_kafala",
-    "UAE domestic: travail_domestique_force_exploitation",
-    "Malaysia Top Glove: travail_force_industrie_gants",
-    "Saudi kafala: systeme_kafala_servitude_contractuelle",
+    "3M PFAS: contamination_pfas_eau_potable",
+    "DuPont/Chemours: pollution_pfas_rivières_nappes_phreatiques",
+    "Monsanto/Bayer: contamination_glyphosate_eau_surface",
+    "Volkswagen: pollution_hydrocarbures_eaux_souterraines",
   ],
-  data_sources: ["ilo_global_estimates_modern_slavery_2022", "unodc_global_trafficking_report_2023", "walk_free_global_slavery_index_2023", "polaris_project_national_human_trafficking_hotline"],
+  data_sources: ["epa_pfas_contamination_database", "who_drinking_water_quality_guidelines", "unep_water_pollution_corporate_accountability", "earthjustice_water_litigation_tracker"],
   entities: FALLBACK_ENTITIES,
 };
 
@@ -126,12 +126,12 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function HumanTraffickingModernSlaveryPage() {
+export default function WaterPollutionCorporateLiabilityPage() {
   const [data, setData] = useState<EngineData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/human-trafficking-modern-slavery-engine")
+    fetch("/api/water-pollution-corporate-liability-engine")
       .then(r => r.json())
       .then(d => setData(d.payload ?? d))
       .catch(() => setData(FALLBACK));
@@ -146,12 +146,12 @@ export default function HumanTraffickingModernSlaveryPage() {
         {/* Header */}
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
           <div>
-            <h1 style={{ fontSize: 24, fontWeight: "bold", color: "white" }}>Traite Humaine &amp; Esclavage Moderne</h1>
+            <h1 style={{ fontSize: 24, fontWeight: "bold", color: "white" }}>Pollution Eau &amp; Responsabilité Corp.</h1>
             <p style={{ color: "#94a3b8", fontSize: 14, marginTop: 4 }}>
               {d.total_entities} entités · Confiance {(d.confidence_score * 100).toFixed(0)}% · MAJ 2026-06-22
             </p>
           </div>
-          <GaugeRing value={d.avg_estimated_human_trafficking_modern_slavery_index} accent={ACCENT} />
+          <GaugeRing value={d.avg_estimated_water_pollution_corporate_liability_index} accent={ACCENT} />
         </div>
 
         {/* Stats */}
