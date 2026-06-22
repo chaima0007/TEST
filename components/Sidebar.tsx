@@ -12584,6 +12584,43 @@ function IconLivestockAntibioticWorkerRights({ size = 18, color = "#7f1d1d" }: {
   );
 }
 
+function IconBambooLaborRights({ size = 18, color = "#15803d" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <line x1="8" y1="2" x2="8" y2="22" />
+      <line x1="16" y1="2" x2="16" y2="22" />
+      <line x1="8" y1="8" x2="16" y2="8" />
+      <line x1="8" y1="15" x2="16" y2="15" />
+      <path d="M8 8 Q4 6 4 4M16 15 Q20 13 20 11" />
+    </svg>
+  );
+}
+
+function IconPearlDivingLaborRights({ size = 18, color = "#0369a1" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="15" r="3" />
+      <path d="M12 4c-2 0-4 1.5-4 4 0 1.5.5 2.5 1 3.5" />
+      <path d="M12 4c2 0 4 1.5 4 4 0 1.5-.5 2.5-1 3.5" />
+      <path d="M8 20c-2-1-4-3-4-5" />
+      <path d="M16 20c2-1 4-3 4-5" />
+      <path d="M9 4.5 Q12 2 15 4.5" />
+    </svg>
+  );
+}
+
+function IconSeaweedFarmingLaborRights({ size = 18, color = "#065f46" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 20 Q10 16 12 12 Q14 8 12 4" />
+      <path d="M12 14 Q8 12 7 8" />
+      <path d="M12 10 Q16 8 17 4" />
+      <path d="M12 17 Q8 19 6 22" />
+      <path d="M12 17 Q16 19 18 22" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14522,6 +14559,14 @@ const navSections: NavSection[] = [
       { label: "Droits Travailleurs Thon en Conserve", href: "/dashboard/canned-tuna-labor-rights", icon: IconCannedTunaLaborRights, color: "#0c4a6e" },
       { label: "Droits Crevetticulture Mangrove", href: "/dashboard/shrimp-farming-mangrove-rights", icon: IconShrimpFarmingMangroveRights, color: "#065f46" },
       { label: "Droits Travailleurs Antibiotiques Élevage", href: "/dashboard/livestock-antibiotic-worker-rights", icon: IconLivestockAntibioticWorkerRights, color: "#7f1d1d" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 298",
+    items: [
+      { label: "Droits Travailleurs Bambou", href: "/dashboard/bamboo-labor-rights", icon: IconBambooLaborRights, color: "#15803d" },
+      { label: "Droits Plongeurs Perles", href: "/dashboard/pearl-diving-labor-rights", icon: IconPearlDivingLaborRights, color: "#0369a1" },
+      { label: "Droits Aquaculteurs Algues", href: "/dashboard/seaweed-farming-labor-rights", icon: IconSeaweedFarmingLaborRights, color: "#065f46" },
     ],
   },
   {
