@@ -11540,6 +11540,34 @@ function IconOnlineViolenceWomenRights({ className }: { className?: string }) {
   );
 }
 
+function IconLandPollutionRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#84cc16" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+      <path d="M2 17l10 5 10-5" />
+      <path d="M2 12l10 5 10-5" />
+    </svg>
+  );
+}
+
+function IconAirQualityRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+    </svg>
+  );
+}
+
+function IconEndocrineDisruptorRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#a16207" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+      <line x1="12" y1="9" x2="12" y2="13" />
+      <line x1="12" y1="17" x2="12.01" y2="17" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13206,6 +13234,14 @@ const navSections: NavSection[] = [
       { label: "Elder Financial Abuse Rights", href: "/dashboard/elder-financial-abuse-rights-engine", icon: IconElderFinancialAbuseRights, color: "#b45309" },
       { label: "Digital Divide Rights", href: "/dashboard/digital-divide-rights-engine", icon: IconDigitalDivideRights, color: "#0284c7" },
       { label: "Online Violence Women Rights", href: "/dashboard/online-violence-women-rights-engine", icon: IconOnlineViolenceWomenRights, color: "#db2777" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 264",
+    items: [
+      { href: "/dashboard/land-pollution-rights", label: "Pollution des Terres", icon: IconLandPollutionRights },
+      { href: "/dashboard/air-quality-rights", label: "Qualité de l&apos;Air", icon: IconAirQualityRights },
+      { href: "/dashboard/endocrine-disruptor-rights", label: "Perturbateurs Endocriniens", icon: IconEndocrineDisruptorRights },
     ],
   },
   {
