@@ -95,29 +95,8 @@ function riskLevel(comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const cities = MOCK_CITIES.map(c => {
-      const surv = surveillanceScore(c), ctrl = controlScore(c), vuln = vulnerabilityScore(c), sov = sovereigntyScore(c);
-      const comp = compositeScore(surv, ctrl, vuln, sov);
-      const risk = riskLevel(comp);
-      const tsc  = c.camera_surveillance_density > 0.85 && c.facial_recognition_deployment > 0.80;
-      const asce = c.CCP_smart_city_export > 0.85 && c.dissent_suppression_capacity > 0.80;
-      const ptcp = c.private_tech_city_capture > 0.85 && c.citizen_data_monetization > 0.80;
-      const ppd  = c.predictive_policing_bias > 0.80 && c.algorithmic_urban_discrimination > 0.75;
-      const icc  = c.IoT_data_vulnerability > 0.80 && c.smart_grid_cyber_exposure > 0.75;
-      const patterns_detected: string[] = [];
-      if (tsc)  patterns_detected.push("total_surveillance_city");
-      if (asce) patterns_detected.push("authoritarian_smart_city_export");
-      if (ptcp) patterns_detected.push("private_tech_city_capture_pattern");
-      if (ppd)  patterns_detected.push("predictive_policing_dystopia");
-      if (icc)  patterns_detected.push("IoT_city_cyber_catastrophe");
-      return {
-        id: c.entity_id, city_type: c.city_type, region: c.region,
-        surveillance_score: surv, control_score: ctrl, vulnerability_score: vuln, sovereignty_score: sov,
-        composite_score: comp, risk_level: risk,
-        total_surveillance_city: tsc, authoritarian_smart_city_export: asce,
-        private_tech_city_capture_pattern: ptcp, predictive_policing_dystopia: ppd,
-        IoT_city_cyber_catastrophe: icc, patterns_detected,
-      };
+  console.warn("[smart-city-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     let tSurv = 0, tCtrl = 0, tVuln = 0, tComp = 0;
@@ -134,7 +113,7 @@ export async function GET() {
     }
     const n = cities.length;
     const avg_composite = Math.round(tComp / n * 100) / 100;
-    return NextResponse.json(sealResponse({ cities, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ cities, summary: {
       module_id: 388,
       module_name: "Smart City & Urban Surveillance Intelligence Engine",
       total: n,
@@ -145,7 +124,7 @@ export async function GET() {
       avg_surveillance_score: Math.round(tSurv / n * 100) / 100,
       avg_control_score:      Math.round(tCtrl / n * 100) / 100,
       avg_vulnerability_score: Math.round(tVuln / n * 100) / 100,
-    } as Record<string, unknown>}, "smart-city-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "smart-city-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/smart-city-engine`)).json(), "smart-city-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/smart-city-engine`, { next: { revalidate: 30 } })).json(), "smart-city-engine") as Parameters<typeof NextResponse.json>[0]));
 }

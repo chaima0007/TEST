@@ -80,19 +80,8 @@ function signal(i: Agt, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const agents = MOCK_AGENTS.map(i => {
-      const cr = credentialScore(i), ac = accessScore(i), inj = injectionScore(i), co = complianceScore(i);
-      const comp = composite(cr, ac, inj, co), pat = threatPattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        agent_id: i.agent_id, agent_type: i.agent_type, region: i.region,
-        security_risk: r, threat_pattern: pat, security_severity: sev, recommended_action: act,
-        credential_score: cr, access_score: ac, injection_score: inj, compliance_score: co,
-        security_composite: comp,
-        has_active_threat: comp >= 40 || i.prompt_injection_attempts >= 1 || i.unauthorized_access_attempts >= 5 || i.credential_in_plaintext_count >= 1,
-        requires_immediate_response: comp >= 25 || i.privilege_escalation_attempts >= 1 || i.hardcoded_secret_detected >= 0.40 || i.sql_injection_attempts >= 1,
-        estimated_exposure_severity: Math.min(Math.round(comp / 100 * (1 - i.gdpr_compliance_score + 0.01) * 10 * 100) / 100, 10.0),
-        security_signal: signal(i, pat, comp),
-      };
+  console.warn("[swarm-security-shield-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tcr=0,tac=0,tinj=0,tco=0,tcomp=0,texpos=0,gc=0,ec=0;
@@ -104,7 +93,7 @@ export async function GET() {
       if (a.has_active_threat) gc++; if (a.requires_immediate_response) ec++;
     }
     const n = agents.length;
-    return NextResponse.json(sealResponse({ agents, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ agents, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_security_composite: Math.round(tcomp/n*10)/10,
       active_threat_count: gc, immediate_response_count: ec,
@@ -113,7 +102,7 @@ export async function GET() {
       avg_injection_score: Math.round(tinj/n*10)/10,
       avg_compliance_score: Math.round(tco/n*10)/10,
       avg_estimated_exposure_severity: Math.round(texpos/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/swarm-security-shield-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/swarm-security-shield-engine`, { next: { revalidate: 30 } })).json()));
 }

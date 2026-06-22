@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[toxic-waste-environmental-health-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 if (!SWARM_API_URL) {
   console.warn("[toxic-waste-environmental-health-engine] SWARM_API_URL is not set — running in mock mode.");
@@ -97,14 +101,14 @@ export async function GET() {
       );
       if (res.ok) {
         const live = await res.json();
-        return NextResponse.json(sealResponse({ ...live, source: "live" }));
+        return sealResponse(NextResponse.json(sealResponse({ ...live, source: "live" })));
       }
     } catch {
       /* fall through to mock */
     }
   }
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({
       source: "mock",
       wave: WAVE,
@@ -113,5 +117,5 @@ export async function GET() {
       entity_count: ENTITIES.length,
       entities: ENTITIES,
     })
-  );
+  ));
 }

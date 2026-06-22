@@ -92,19 +92,8 @@ function signal(i: Swarm, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const swarms = MOCK_SWARMS.map(i => {
-      const cf = conflictScore(i), co = coordinationScore(i), ef = efficiencyScore(i), re = resilienceScore(i);
-      const comp = composite(cf, co, ef, re), pat = conflictPattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        swarm_id: i.swarm_id, region: i.region,
-        orchestration_risk: r, conflict_pattern: pat, orchestration_severity: sev, recommended_action: act,
-        conflict_score: cf, coordination_score: co, efficiency_score: ef, resilience_score: re,
-        orchestration_composite: comp,
-        has_orchestration_alert: comp >= 40 || i.deadlock_occurrence_count >= 1 || i.cascade_failure_risk_score >= 0.55 || i.task_conflict_rate >= 0.25,
-        requires_human_intervention: comp >= 25 || i.deadlock_occurrence_count >= 2 || i.human_escalation_rate >= 0.25 || i.cascade_failure_risk_score >= 0.65,
-        estimated_swarm_health_index: Math.min(Math.round((1 - comp/100) * i.orchestration_efficiency_score * 10 * 100) / 100, 10.0),
-        orchestration_signal: signal(i, pat, comp),
-      };
+  console.warn("[swarm-orchestration-conflict-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tcf=0,tco=0,tef=0,tre=0,tcomp=0,thealth=0,alertC=0,humanC=0;
@@ -119,7 +108,7 @@ export async function GET() {
       if (s.requires_human_intervention) humanC++;
     }
     const n = swarms.length;
-    return NextResponse.json(sealResponse({ swarms, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ swarms, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_orchestration_composite: Math.round(tcomp/n*10)/10,
       orchestration_alert_count: alertC, human_intervention_count: humanC,
@@ -128,7 +117,7 @@ export async function GET() {
       avg_efficiency_score: Math.round(tef/n*10)/10,
       avg_resilience_score: Math.round(tre/n*10)/10,
       avg_estimated_swarm_health_index: Math.round(thealth/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/swarm-orchestration-conflict-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/swarm-orchestration-conflict-engine`, { next: { revalidate: 30 } })).json()));
 }

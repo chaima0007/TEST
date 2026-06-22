@@ -147,33 +147,8 @@ function hegemonySignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const cult = culturalScore(e);
-      const info = informationScore(e);
-      const norm = normativeScore(e);
-      const pow  = powerScore(e);
-      const comp = composite(cult, info, norm, pow);
-      const pat  = hegemonyPattern(e);
-      const risk = riskLevel(comp);
-      const sev  = severity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                       e.entity_id,
-        region:                          e.region,
-        power_domain:                    e.power_domain,
-        hegemony_risk:                   risk,
-        hegemony_pattern:                pat,
-        hegemony_severity:               sev,
-        recommended_action:              act,
-        cultural_score:                  cult,
-        information_score:               info,
-        normative_score:                 norm,
-        power_score:                     pow,
-        hegemony_composite:              comp,
-        is_hegemony_crisis:              comp >= 60,
-        requires_hegemony_intervention:  comp >= 40,
-        hegemony_signal:                 hegemonySignal(e, risk, comp),
-      };
+  console.warn("[soft-power-hegemony-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -208,13 +183,13 @@ export async function GET() {
       avg_power_score:                Math.round(tPow  / n * 10) / 10,
       avg_estimated_hegemony_index:   Math.round(avgComp / 100 * 10 * 100) / 100,
     };
-    return NextResponse.json(sealResponse({ entities, summary }, "soft-power-hegemony-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "soft-power-hegemony-engine")));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/soft-power-hegemony-engine`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/soft-power-hegemony-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    return NextResponse.json(sealResponse(await res.json(), "soft-power-hegemony-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await res.json(), "soft-power-hegemony-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "upstream unavailable" }, "soft-power-hegemony-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "upstream unavailable" }, "soft-power-hegemony-engine"), { status: 502 }));
   }
 }

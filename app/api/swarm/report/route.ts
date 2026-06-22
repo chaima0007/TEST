@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[swarm/report] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 export async function GET() {
   if (SWARM_API_URL) {
     try {

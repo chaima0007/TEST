@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sales-velocity] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -226,7 +231,7 @@ export async function GET(request: Request) {
       if (action) url.searchParams.set("action", action);
       if (driver) url.searchParams.set("driver", driver);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -253,7 +258,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total: n,
@@ -266,5 +271,5 @@ export async function GET(request: Request) {
       stalled_count: mockReps.filter((r) => r.velocity_tier === "stalled").length,
       total_projected_arr_eur: total_projected,
     },
-  });
+  }));
 }

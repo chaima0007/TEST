@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[timing] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -129,23 +134,23 @@ export async function GET(request: Request) {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/timing/summary`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
   if (sector !== "all") {
-    return NextResponse.json({
+    return sealResponse(NextResponse.json({
       best: bestWindow(sector),
       top: topWindows(sector, 5),
       schedule: weeklySchedule(sector),
-    });
+    }));
   }
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     sectors: KNOWN_SECTORS.map((s) => ({
       ...bestWindow(s),
       top_windows: topWindows(s, 3),
     })),
     known_sectors: KNOWN_SECTORS,
-  });
+  }));
 }

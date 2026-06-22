@@ -191,34 +191,8 @@ function bioSignal(e: Entity, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const cont  = containmentScore(e);
-      const prol  = proliferationScore(e);
-      const gov   = governanceScore(e);
-      const prep  = preparednessScore(e);
-      const comp  = bioComposite(cont, prol, gov, prep);
-      const risk  = bioRisk(comp);
-      const pat   = bioPattern(e);
-      const sev   = bioSeverity(comp);
-      const act   = recommendedAction(risk, pat);
-      const sig   = bioSignal(e, risk, comp);
-      return {
-        id:               e.entity_id,
-        region:                  e.region,
-        bio_domain:              e.bio_domain,
-        bio_risk:                risk,
-        bio_pattern:             pat,
-        bio_severity:            sev,
-        recommended_action:      act,
-        containment_score:       cont,
-        proliferation_score:     prol,
-        governance_score:        gov,
-        preparedness_score:      prep,
-        bio_composite:           comp,
-        is_in_bio_crisis:        comp >= 60,
-        requires_bio_intervention: comp >= 40,
-        bio_signal:              sig,
-      };
+  console.warn("[synthetic-biology-risk-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {};
@@ -260,17 +234,17 @@ export async function GET() {
       avg_estimated_bio_risk_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "synthetic-biology-risk-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "synthetic-biology-risk-engine")));
   }
 
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/synthetic-biology-risk-engine`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/synthetic-biology-risk-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    return NextResponse.json(sealResponse(await res.json(), "synthetic-biology-risk-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await res.json(), "synthetic-biology-risk-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream biosecurity intelligence unavailable" }, "synthetic-biology-risk-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

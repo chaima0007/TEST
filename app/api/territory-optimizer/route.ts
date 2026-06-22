@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[territory-optimizer] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -235,7 +240,7 @@ export async function GET(request: Request) {
       if (action) url.searchParams.set("action", action);
       if (gap) url.searchParams.set("gap", gap);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -264,7 +269,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total: n,
@@ -278,5 +283,5 @@ export async function GET(request: Request) {
       restructure_count: mockReps.filter((r) => r.territory_action === "restructure").length,
       total_whitespace_eur: total_whitespace,
     },
-  });
+  }));
 }

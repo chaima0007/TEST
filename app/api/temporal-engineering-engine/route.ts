@@ -162,23 +162,8 @@ function signal(h: Horizon, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const horizons = MOCK_HORIZONS.map(h => {
-      const div = divergenceScore(h), ant = anticipationScore(h), syn = synchronizationScore(h), res = resilienceScore(h);
-      const comp = composite(div, ant, syn, res);
-      const pat  = temporalPattern(h), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        horizon_id: h.horizon_id, temporal_domain: h.temporal_domain, region: h.region,
-        temporal_risk: r, temporal_pattern: pat, temporal_severity: sev, recommended_action: act,
-        divergence_score:       Math.round(div * 100 * 100) / 100,
-        anticipation_score:     Math.round(ant * 100 * 100) / 100,
-        synchronization_score:  Math.round(syn * 100 * 100) / 100,
-        resilience_score:       Math.round(res * 100 * 100) / 100,
-        temporal_composite: comp,
-        has_bifurcation_signal: ["timeline_bifurcation","causal_loop_trap"].includes(pat),
-        requires_realignment: comp >= 25 || h.timeline_divergence_risk >= 0.55 || h.clock_speed_mismatch_risk >= 0.60,
-        estimated_temporal_risk_index: Math.min(Math.round(comp / 100 * (1 - h.temporal_resilience_score + 0.01) * 10 * 100) / 100, 10.0),
-        temporal_signal: signal(h, pat, comp),
-      };
+  console.warn("[temporal-engineering-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -205,10 +190,10 @@ export async function GET() {
       avg_estimated_temporal_risk_index: Math.round(tIdx/n*100)/100,
     };
 
-    return NextResponse.json(sealResponse({ horizons, summary }, "temporal-engineering-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ horizons, summary }, "temporal-engineering-engine")));
   }
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/temporal-engineering-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/temporal-engineering-engine`, { next: { revalidate: 30 } })).json(),
     "temporal-engineering-engine"
-  ));
+  )));
 }

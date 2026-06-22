@@ -172,35 +172,8 @@ function urbanSignal(e: EntityInput, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const surv      = surveillanceScore(e);
-      const res       = resilienceScore(e);
-      const soc       = socialScore(e);
-      const gov       = governanceScore(e);
-      const composite = urbanComposite(surv, res, soc, gov);
-      const risk      = urbanRisk(composite);
-      const pattern   = urbanPattern(e);
-      const severity  = urbanSeverity(composite);
-      const action    = recommendedAction(risk, pattern);
-      const signal    = urbanSignal(e, risk, composite);
-
-      return {
-        id:                    e.entity_id,
-        region:                       e.region,
-        city_type:                    e.city_type,
-        urban_risk:                   risk,
-        urban_pattern:                pattern,
-        urban_severity:               severity,
-        recommended_action:           action,
-        surveillance_score:           surv,
-        resilience_score:             res,
-        social_score:                 soc,
-        governance_score:             gov,
-        urban_composite:              composite,
-        is_urban_crisis:              composite >= 60,
-        requires_urban_intervention:  composite >= 40,
-        urban_signal:                 signal,
-      };
+  console.warn("[urban-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts: Record<string, number>     = {};
@@ -243,17 +216,17 @@ export async function GET() {
       avg_estimated_urban_risk_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "urban-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "urban-intelligence-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/urban-intelligence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/urban-intelligence-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "urban-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "urban-intelligence-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable" }, "urban-intelligence-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

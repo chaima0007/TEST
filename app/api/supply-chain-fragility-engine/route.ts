@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[supply-chain-fragility-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ── Mock entity input data ────────────────────────────────────────────────────
@@ -202,7 +206,7 @@ function processEntity(e: Entity) {
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" } as Record<string, unknown>), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" } as Record<string, unknown>), { status: 502 }));
   }
 
   const entities = MOCK_ENTITIES.map(processEntity);
@@ -226,7 +230,7 @@ export async function GET() {
   const dominantPattern = Object.entries(patternCounts).sort((a, b) => b[1] - a[1])[0]?.[0] ?? "none";
   const avgFragilityIndex = Math.round((avgComp / 100) * 10 * 100) / 100;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     module:                             "Module 311",
     engine:                             "Global Supply Chain Fragility Intelligence Engine",
     analyst:                            "Chaima Mhadbi, Fondatrice, Caelum Partners, Bruxelles",
@@ -240,5 +244,5 @@ export async function GET() {
     avg_estimated_chain_fragility_index: avgFragilityIndex,
     risk_distribution:                  riskDist,
     entities,
-  } as Record<string, unknown>), "supply-chain-fragility-engine");
+  } as Record<string, unknown>), "supply-chain-fragility-engine"));
 }

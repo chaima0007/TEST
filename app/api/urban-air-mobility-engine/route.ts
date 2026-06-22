@@ -156,31 +156,8 @@ function detectPatterns(e: UAMInput): string[] {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const sf   = safetyScore(e);
-      const inf  = infrastructureScore(e);
-      const reg  = regulatoryScore(e);
-      const eq   = equityScore(e);
-      const comp = compositeScore(sf, inf, reg, eq);
-      const risk = riskLevel(comp);
-      const pats = detectPatterns(e);
-      return {
-        id:                    e.entity_id,
-        vehicle_type:                 e.vehicle_type,
-        region:                       e.region,
-        composite_score:              comp,
-        risk_level:                   risk,
-        safety_score:                 sf,
-        infrastructure_score:         inf,
-        regulatory_score:             reg,
-        equity_score:                 eq,
-        patterns:                     pats,
-        collision_avoidance_gap:      e.collision_avoidance_gap,
-        noise_impact_residential:     e.noise_impact_residential,
-        equity_access_gap:            e.equity_access_gap,
-        regulatory_certification_delay: e.regulatory_certification_delay,
-        battery_energy_density_risk:  e.battery_energy_density_risk,
-      };
+  console.warn("[urban-air-mobility-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>    = {};
@@ -238,19 +215,19 @@ export async function GET() {
       avg_estimated_uam_readiness_index:   Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, module_id: 439, module_name: "Mobilité Aérienne Urbaine & Véhicules Volants" }, "urban-air-mobility-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/urban-air-mobility-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/urban-air-mobility-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "urban-air-mobility-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "urban-air-mobility-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "urban-air-mobility-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

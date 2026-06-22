@@ -172,33 +172,8 @@ function syntheticSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const det  = detectionScore(e);
-      const auth = authenticityScore(e);
-      const trust = trustScore(e);
-      const gov  = governanceScore(e);
-      const comp = composite(det, auth, trust, gov);
-      const pat  = syntheticPattern(e);
-      const risk = syntheticRisk(comp);
-      const sev  = syntheticSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                        e.entity_id,
-        region:                           e.region,
-        media_domain:                     e.media_domain,
-        synthetic_risk:                   risk,
-        synthetic_pattern:                pat,
-        synthetic_severity:               sev,
-        recommended_action:               act,
-        detection_score:                  det,
-        authenticity_score:               auth,
-        trust_score:                      trust,
-        governance_score:                 gov,
-        synthetic_composite:              comp,
-        is_in_synthetic_crisis:           comp >= 60,
-        requires_synthetic_intervention:  comp >= 40,
-        synthetic_signal:                 syntheticSignal(e, risk, comp),
-      };
+  console.warn("[synthetic-media-detection-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {};
@@ -239,23 +214,24 @@ export async function GET() {
       avg_estimated_synthetic_threat_index:   Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "synthetic-media-detection-engine")
-    );
+    ));
   }
 
   try {
     const upstream = await fetch(
-      `${process.env.SWARM_API_URL}/synthetic-media-detection-engine`
+      `${process.env.SWARM_API_URL}/synthetic-media-detection-engine`,
+      { next: { revalidate: 30 } }
     );
     const payload = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(payload, "synthetic-media-detection-engine")
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream swarm unavailable" }, "synthetic-media-detection-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

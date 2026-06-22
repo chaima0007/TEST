@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[win-loss-pattern-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockDeals = [
@@ -99,7 +103,7 @@ export async function GET(request: Request) {
       if (behavior) url.searchParams.set("behavior", behavior);
       if (region)   url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -130,7 +134,7 @@ export async function GET(request: Request) {
   const n = mockDeals.length;
   const wonCount = mockDeals.filter((d) => d.deal_outcome === "closed_won").length;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     deals,
     summary: {
       total: n,
@@ -147,5 +151,5 @@ export async function GET(request: Request) {
       avg_relationship_score:     Math.round((total_rel / n) * 10) / 10,
       avg_replication_value:      Math.round((total_repl / n) * 10) / 10,
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

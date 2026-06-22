@@ -218,8 +218,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(
-      sealResponse({ error: "SWARM_API_URL not configured" }, "wealth-concentration-engine") as Record<string, unknown>,
+  console.warn("[wealth-concentration-engine] SWARM_API_URL non défini — mode dégradé activé");
+}, "wealth-concentration-engine") as Record<string, unknown>,
       { status: 502 }
     );
   }
@@ -298,13 +298,13 @@ export async function GET() {
       avg_systemic_score:            Math.round(tSys  / n * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "wealth-concentration-engine") as Record<string, unknown>
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Erreur moteur concentration richesse" }, "wealth-concentration-engine") as Record<string, unknown>,
       { status: 502 }
-    );
+    ));
   }
 }

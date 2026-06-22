@@ -270,34 +270,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const sat  = saturationScore(e);
-      const trus = trustScore(e);
-      const frau = fraudScore(e);
-      const weap = weaponizationScore(e);
-      const comp = compositeScore(sat, trus, frau, weap);
-      const pat  = syntheticPattern(e);
-      const risk = riskLevel(comp);
-      const sev  = severity(comp);
-      const act  = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                        e.entity_id,
-        media_domain:                     e.media_domain,
-        region:                           e.region,
-        saturation_score:                 sat,
-        trust_score:                      trus,
-        fraud_score:                      frau,
-        weaponization_score:              weap,
-        composite_score:                  comp,
-        risk_level:                       risk,
-        synthetic_pattern:                pat,
-        severity:                         sev,
-        recommended_action:               act,
-        signal:                           sig,
-        deepfake_saturation_level:        e.deepfake_saturation_level,
-        social_trust_erosion:             e.social_trust_erosion,
-      };
+  console.warn("[synthetic-reality-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -337,17 +311,17 @@ export async function GET() {
       avg_estimated_synthetic_reality_index:  Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "synthetic-reality-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "synthetic-reality-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/synthetic-reality-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/synthetic-reality-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "synthetic-reality-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "synthetic-reality-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream synthetic reality engine unavailable" }, "synthetic-reality-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

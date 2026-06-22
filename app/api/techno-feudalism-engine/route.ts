@@ -286,34 +286,8 @@ function feudalSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const cap  = captureScore(e);
-      const rent = rentScore(e);
-      const dep  = dependencyScore(e);
-      const sov  = sovereigntyScore(e);
-      const comp = feudalComposite(cap, rent, dep, sov);
-      const pat  = feudalPattern(e);
-      const risk = feudalRisk(comp);
-      const sev  = feudalSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      const sig  = feudalSignal(e, risk, comp);
-      return {
-        id:                      e.entity_id,
-        region:                         e.region,
-        platform_domain:                e.platform_domain,
-        feudal_risk:                    risk,
-        feudal_pattern:                 pat,
-        feudal_severity:                sev,
-        recommended_action:             act,
-        capture_score:                  cap,
-        rent_score:                     rent,
-        dependency_score:               dep,
-        sovereignty_score:              sov,
-        feudal_composite:               comp,
-        is_feudal_crisis:               comp >= 60,
-        requires_feudal_intervention:   comp >= 40,
-        feudal_signal:                  sig,
-      };
+  console.warn("[techno-feudalism-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -354,17 +328,17 @@ export async function GET() {
       avg_estimated_feudalization_index:  Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "techno-feudalism-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "techno-feudalism-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/techno-feudalism-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/techno-feudalism-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "techno-feudalism-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "techno-feudalism-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream techno-feudalism engine unavailable" }, "techno-feudalism-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

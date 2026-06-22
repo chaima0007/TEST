@@ -92,19 +92,8 @@ function signal(i: Entity, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(i => {
-      const st = strategicScore(i), gov = governanceScore(i), fin = financialRiskScore(i), res = resilienceScore(i);
-      const comp = composite(st, gov, fin, res), pat = riskPattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        id: i.entity_id, region: i.region,
-        governance_risk: r, risk_pattern: pat, governance_severity: sev, recommended_action: act,
-        strategic_score: st, governance_score: gov, financial_risk_score: fin, resilience_score: res,
-        governance_composite: comp,
-        has_governance_alert: comp >= 40 || i.board_effectiveness_score <= 0.40 || i.reputational_risk_score >= 0.65 || i.financial_health_score <= 0.40,
-        requires_board_action: comp >= 25 || i.whistleblower_incident_count >= 2 || i.market_disruption_exposure >= 0.60 || i.strategic_goal_attainment <= 0.40,
-        estimated_strategic_risk_index: Math.min(Math.round(comp/100*(1-i.risk_appetite_alignment_score+0.01)*10*100)/100, 10.0),
-        governance_signal: signal(i, pat, comp),
-      };
+  console.warn("[strategic-risk-governance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tst=0,tgov=0,tfin=0,tres=0,tcomp=0,tridx=0,alertC=0,boardC=0;
@@ -119,7 +108,7 @@ export async function GET() {
       if (e.requires_board_action) boardC++;
     }
     const n = entities.length;
-    return NextResponse.json(sealResponse({ entities, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_governance_composite: Math.round(tcomp/n*10)/10,
       governance_alert_count: alertC, board_action_count: boardC,
@@ -128,7 +117,7 @@ export async function GET() {
       avg_financial_risk_score: Math.round(tfin/n*10)/10,
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_estimated_strategic_risk_index: Math.round(tridx/n*100)/100,
-    } as Record<string, unknown>}, "strategic-risk-governance-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "strategic-risk-governance-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/strategic-risk-governance-engine`)).json(), "strategic-risk-governance-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/strategic-risk-governance-engine`, { next: { revalidate: 30 } })).json(), "strategic-risk-governance-engine") as Parameters<typeof NextResponse.json>[0]));
 }

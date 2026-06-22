@@ -144,34 +144,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const deg  = degradationScore(e);
-      const seq  = sequestrationScore(e);
-      const pol  = policyScore(e);
-      const bio  = biodiversityScore(e);
-      const comp = compositeScore(deg, seq, pol, bio);
-      const risk = riskLevel(comp);
-      const pat  = carbonPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:              e.entity_id,
-        soil_type:              e.soil_type,
-        region:                 e.region,
-        degradation_score:      deg,
-        sequestration_score:    seq,
-        policy_score:           pol,
-        biodiversity_score:     bio,
-        composite_score:        comp,
-        risk_level:             risk,
-        carbon_pattern:         pat,
-        severity:               sev,
-        recommended_action:     action,
-        signal:                 sig,
-        carbon_loss_rate:       e.carbon_loss_rate,
-        sequestration_potential: e.sequestration_potential,
-      };
+  console.warn("[soil-carbon-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -214,19 +188,19 @@ export async function GET() {
       avg_estimated_soil_carbon_index:    Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_degradation: avgDegradation }, "soil-carbon-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/soil-carbon-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/soil-carbon-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "soil-carbon-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "soil-carbon-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "soil-carbon-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

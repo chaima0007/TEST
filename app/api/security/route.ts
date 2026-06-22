@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[security] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -71,18 +76,18 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/security`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
   const events = [...MOCK_EVENTS].sort((a, b) => b.timestamp - a.timestamp);
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     events,
     summary: computeSummary(events),
     blocked_ips: BLOCKED_IPS,
     banned_ips: BANNED_IPS,
     security_score: 72,
     last_scan: new Date().toISOString(),
-  });
+  }));
 }

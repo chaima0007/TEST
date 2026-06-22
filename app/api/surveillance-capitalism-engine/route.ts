@@ -278,34 +278,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const ext  = extractionScore(e);
-      const man  = manipulationScore(e);
-      const pro  = profilingScore(e);
-      const aut  = autonomyScore(e);
-      const comp = compositeScore(ext, man, pro, aut);
-      const pat  = surveillancePattern(e);
-      const risk = riskLevel(comp);
-      const sev  = severity(risk);
-      const act  = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                            e.entity_id,
-        platform_type:                        e.platform_type,
-        region:                               e.region,
-        extraction_score:                     ext,
-        manipulation_score:                   man,
-        profiling_score:                      pro,
-        autonomy_score:                       aut,
-        composite_score:                      comp,
-        risk_level:                           risk,
-        surveillance_pattern:                 pat,
-        severity:                             sev,
-        recommended_action:                   act,
-        signal:                               sig,
-        behavioral_surplus_extraction_rate:   e.behavioral_surplus_extraction_rate,
-        behavioral_totalitarianism_risk:      e.behavioral_totalitarianism_risk,
-      };
+  console.warn("[surveillance-capitalism-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const patternDist: Record<string, number> = {};
@@ -345,17 +319,17 @@ export async function GET() {
       avg_estimated_surveillance_capitalism_index:  Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "surveillance-capitalism-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "surveillance-capitalism-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/surveillance-capitalism-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/surveillance-capitalism-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "surveillance-capitalism-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "surveillance-capitalism-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream surveillance capitalism engine unavailable" }, "surveillance-capitalism-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

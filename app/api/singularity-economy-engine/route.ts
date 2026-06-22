@@ -93,18 +93,8 @@ function signal(i: Asset, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const assets = MOCK_ASSETS.map(i => {
-      const val = valuationScore(i), mkt = marketScore(i), res = resilienceScore(i), dis = disruptionScore(i);
-      const comp = composite(val, mkt, res, dis), pat = economyPattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        asset_id: i.asset_id, asset_class: i.asset_class, region: i.region,
-        economy_risk: r, economy_pattern: pat, economy_severity: sev, recommended_action: act,
-        valuation_score: val, market_score: mkt, resilience_score: res, disruption_score: dis,
-        singularity_composite: comp,
-        has_bubble_signal: comp >= 40 || i.speculative_premium_ratio >= 0.60 || i.market_manipulation_risk >= 0.65 || i.consensus_legitimacy_score <= 0.30,
-        estimated_bubble_risk_index: Math.min(Math.round(comp/100*(1-i.consensus_legitimacy_score+0.01)*10*100)/100, 10.0),
-        economy_signal: signal(i, pat, comp),
-      };
+  console.warn("[singularity-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tval=0,tmkt=0,tres=0,tdis=0,tcomp=0,tbri=0,bubbleC=0,emergC=0;
@@ -119,7 +109,7 @@ export async function GET() {
       if (a.recommended_action === "emergency_liquidation" || a.recommended_action === "regulatory_intervention") emergC++;
     }
     const n = assets.length;
-    return NextResponse.json(sealResponse({ assets, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ assets, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_singularity_composite: Math.round(tcomp/n*10)/10,
       bubble_alert_count: bubbleC,
@@ -129,7 +119,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_disruption_score: Math.round(tdis/n*10)/10,
       avg_estimated_bubble_risk_index: Math.round(tbri/n*100)/100,
-    } as Record<string, unknown>}, "singularity-economy-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "singularity-economy-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/singularity-economy-engine`)).json(), "singularity-economy-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/singularity-economy-engine`, { next: { revalidate: 30 } })).json(), "singularity-economy-engine") as Parameters<typeof NextResponse.json>[0]));
 }

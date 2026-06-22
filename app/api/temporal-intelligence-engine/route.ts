@@ -84,28 +84,8 @@ function timingSignal(d: Decision, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const decisions = MOCK_DECISIONS.map(d => {
-      const opp = opportunityScore(d), read = readinessScore(d), alig = alignmentScore(d), risk = riskScore(d);
-      const comp = compositeScore(opp, read, alig, risk);
-      const pat = timingPattern(d), r = temporalRisk(comp), sev = timingSeverity(comp), act = recommendedAction(r, pat);
-      return {
-        decision_id:                    d.decision_id,
-        decision_type:                  d.decision_type,
-        region:                         d.region,
-        temporal_risk:                  r,
-        timing_pattern:                 pat,
-        timing_severity:                sev,
-        recommended_action:             act,
-        opportunity_score:              opp,
-        readiness_score:                read,
-        alignment_score:                alig,
-        risk_score:                     risk,
-        temporal_composite:             comp,
-        missed_window:                  missedWindow(d, comp),
-        acceleration_required:          accelerationRequired(d, comp),
-        estimated_timing_loss_index:    estimatedTimingLossIndex(d, comp),
-        timing_signal:                  timingSignal(d, pat, comp),
-      };
+  console.warn("[temporal-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let topp=0, tread=0, talig=0, trisk=0, tcomp=0, tloss=0, mwC=0, arC=0;
@@ -124,7 +104,7 @@ export async function GET() {
       if (dec.acceleration_required) arC++;
     }
     const n = decisions.length;
-    return NextResponse.json(sealResponse({ decisions, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ decisions, summary: {
       total:                            n,
       risk_counts:                      rc,
       pattern_counts:                   pc,
@@ -138,7 +118,7 @@ export async function GET() {
       avg_alignment_score:              Math.round(talig / n * 10) / 10,
       avg_risk_score:                   Math.round(trisk / n * 10) / 10,
       avg_estimated_timing_loss_index:  Math.round(tloss / n * 100) / 100,
-    } as Record<string, unknown>}, "temporal-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "temporal-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/temporal-intelligence-engine`)).json(), "temporal-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/temporal-intelligence-engine`, { next: { revalidate: 30 } })).json(), "temporal-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
 }

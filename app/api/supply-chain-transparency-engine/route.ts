@@ -7,15 +7,15 @@ if (!process.env.SWARM_API_URL) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Supply Chain Transparency Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Supply Chain Transparency Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/supply-chain-transparency-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Supply Chain Transparency Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Supply Chain Transparency Agent")));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Supply Chain Transparency Agent"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Supply Chain Transparency Agent"), { status: 502 }));
   }
 }
 

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[social-media-roi] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ── Mock entities (8 client social profiles, 15 keys each) ────────────────────
@@ -172,12 +176,12 @@ const summary = {
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>)));
   }
   try {
     const url = new URL(`${SWARM_API_URL}/api/social-media-roi`);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json() as Record<string, unknown>));
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json() as Record<string, unknown>)));
   } catch {}
-  return NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 }));
 }

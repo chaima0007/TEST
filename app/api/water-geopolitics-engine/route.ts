@@ -213,34 +213,8 @@ function hydroSignal(risk: string, pattern: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const str = stressScore(e);
-      const con = conflictScore(e);
-      const dem = demandScore(e);
-      const inf = infrastructureScore(e);
-      const comp = hydroComposite(str, con, dem, inf);
-      const risk = hydroRisk(comp);
-      const pattern = hydroPattern(e);
-      const severity = hydroSeverity(comp);
-      const action = recommendedAction(risk, pattern);
-      const signal = hydroSignal(risk, pattern);
-      return {
-        id: e.entity_id,
-        region: e.region,
-        basin_type: e.basin_type,
-        hydro_risk: risk,
-        hydro_pattern: pattern,
-        hydro_severity: severity,
-        recommended_action: action,
-        stress_score: str,
-        conflict_score: con,
-        demand_score: dem,
-        infrastructure_score: inf,
-        hydro_composite: comp,
-        is_hydro_crisis: comp >= 60,
-        requires_hydro_intervention: comp >= 40,
-        hydro_signal: signal,
-      };
+  console.warn("[water-geopolitics-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -267,7 +241,7 @@ export async function GET() {
     const n = entities.length;
     const avgComp = tComp / n;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module: "WaterGeopoliticsEngine",
@@ -290,17 +264,17 @@ export async function GET() {
         severity_counts: sc,
         action_counts: ac,
       },
-    } as Record<string, unknown>, "water-geopolitics-engine"));
+    } as Record<string, unknown>, "water-geopolitics-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/water-geopolitics-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/water-geopolitics-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "water-geopolitics-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "water-geopolitics-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "SWARM_API_URL not configured" } as Record<string, unknown>, "water-geopolitics-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

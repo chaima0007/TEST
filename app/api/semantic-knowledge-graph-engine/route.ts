@@ -165,33 +165,8 @@ function kgSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const coh = coherenceScore(e);
-      const con = connectivityScore(e);
-      const fre = freshnesScore(e);
-      const sov = sovereigntyScore(e);
-      const comp = kgComposite(coh, con, fre, sov);
-      const risk = kgRisk(comp);
-      const pattern = kgPattern(e);
-      const severity = kgSeverity(comp);
-      const action = recommendedAction(risk, pattern);
-      return {
-        id: e.entity_id,
-        region: e.region,
-        graph_domain: e.graph_domain,
-        kg_risk: risk,
-        kg_pattern: pattern,
-        kg_severity: severity,
-        recommended_action: action,
-        coherence_score: coh,
-        connectivity_score: con,
-        freshness_score: fre,
-        sovereignty_score: sov,
-        kg_composite: comp,
-        is_in_kg_crisis: comp >= 60,
-        requires_kg_intervention: comp >= 40,
-        kg_signal: kgSignal(e, risk, comp),
-      };
+  console.warn("[semantic-knowledge-graph-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -233,18 +208,18 @@ export async function GET() {
       avg_estimated_kg_risk_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "semantic-knowledge-graph-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "semantic-knowledge-graph-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/semantic-knowledge-graph-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/semantic-knowledge-graph-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "semantic-knowledge-graph-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "semantic-knowledge-graph-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream swarm unavailable" }, "semantic-knowledge-graph-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

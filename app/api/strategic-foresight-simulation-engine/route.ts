@@ -84,12 +84,8 @@ export async function GET(request: Request) {
   const pattern = searchParams.get("pattern");
 
   if (!process.env.SWARM_API_URL) {
-    // mock computation path
-    let scenarios = [...mockScenarios];
-    if (risk)    scenarios = scenarios.filter((s) => s.foresight_risk === risk);
-    if (pattern) scenarios = scenarios.filter((s) => s.scenario_pattern === pattern);
-
-    const risk_counts:     Record<string, number> = {};
+  console.warn("[strategic-foresight-simulation-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     const pattern_counts:  Record<string, number> = {};
     const severity_counts: Record<string, number> = {};
     const action_counts:   Record<string, number> = {};
@@ -109,7 +105,7 @@ export async function GET(request: Request) {
     }
 
     const n = mockScenarios.length;
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       scenarios,
       summary: {
         total:                              n,
@@ -126,7 +122,7 @@ export async function GET(request: Request) {
         avg_exposure_score:                 Math.round((total_exp  / n) * 100) / 100,
         avg_estimated_scenario_risk_index:  Math.round((total_idx  / n) * 100) / 100,
       },
-    } as Record<string, unknown>, "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>, "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0]));
   }
 
   try {
@@ -134,8 +130,8 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json(), "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0]);
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json(), "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0]));
   } catch {}
 
-  return NextResponse.json(sealResponse({ scenarios: [], summary: {} }, "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0], { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ scenarios: [], summary: {} }, "strategic-foresight-simulation-engine") as Parameters<typeof NextResponse.json>[0], { status: 502 }));
 }

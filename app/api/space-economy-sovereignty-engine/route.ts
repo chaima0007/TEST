@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  // SWARM_API_URL guard — evaluated at module load time in dev,
-  // at request time in production edge runtime (no-op if set).
+  console.warn("[space-economy-sovereignty-engine] SWARM_API_URL non défini — mode dégradé activé");
 }
 
 const MOCK_ENTITIES = [
@@ -231,17 +230,17 @@ export async function GET() {
       avg_congestion_score: Math.round(totalCongestion / n * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "space-economy-sovereignty-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "space-economy-sovereignty-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/space-economy-sovereignty-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/space-economy-sovereignty-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "space-economy-sovereignty-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "space-economy-sovereignty-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "space-economy-sovereignty-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

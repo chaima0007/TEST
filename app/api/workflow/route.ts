@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[workflow] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -174,7 +179,7 @@ export async function GET(request: Request) {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/workflow/queue`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
@@ -187,7 +192,7 @@ export async function GET(request: Request) {
   if (action) decisions = decisions.filter((d) => d.action === action);
   if (limit) decisions = decisions.slice(0, parseInt(limit));
 
-  return NextResponse.json({ decisions, summary: buildSummary(MOCK_DECISIONS) });
+  return sealResponse(NextResponse.json({ decisions, summary: buildSummary(MOCK_DECISIONS) }));
 }
 
 export async function POST(request: Request) {
@@ -200,8 +205,8 @@ export async function POST(request: Request) {
         body: JSON.stringify(body),
         cache: "no-store",
       });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
-  return NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 501 });
+  return sealResponse(NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 501 }));
 }

@@ -177,7 +177,7 @@ function getMockData() {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Space Debris Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Space Debris Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/space-debris-engine`, {
@@ -185,8 +185,8 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Space Debris Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Space Debris Agent")));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Space Debris Agent"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Space Debris Agent"), { status: 502 }));
   }
 }

@@ -159,34 +159,8 @@ function spaceSignal(e: SpaceEntity, composite: number, risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const orbital     = orbitalScore(e);
-      const sovereignty = sovereigntyScore(e);
-      const commercial  = commercialScore(e);
-      const resilience  = resilienceScore(e);
-      const composite   = compositeScore(orbital, sovereignty, commercial, resilience);
-      const risk        = spaceRisk(composite);
-      const pattern     = spacePattern(e);
-      const severity    = spaceSeverity(composite);
-      const action      = recommendedAction(risk, pattern);
-      const signal      = spaceSignal(e, composite, risk);
-      return {
-        id:                  e.entity_id,
-        region:                     e.region,
-        space_segment:              e.space_segment,
-        space_risk:                 risk,
-        space_pattern:              pattern,
-        space_severity:             severity,
-        recommended_action:         action,
-        orbital_score:              orbital,
-        sovereignty_score:          sovereignty,
-        commercial_score:           commercial,
-        resilience_score:           resilience,
-        space_composite:            composite,
-        is_in_space_crisis:         composite >= 60,
-        requires_space_intervention: composite >= 40,
-        space_signal:               signal,
-      };
+  console.warn("[space-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {}, pc: Record<string,number> = {},
@@ -226,17 +200,17 @@ export async function GET() {
       avg_estimated_space_risk_index:  Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "space-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "space-economy-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/space-economy-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/space-economy-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "space-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "space-economy-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "space-economy-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

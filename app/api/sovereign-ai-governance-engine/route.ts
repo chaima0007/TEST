@@ -134,27 +134,8 @@ function governanceSignal(s: AISystem, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const systems = MOCK_SYSTEMS.map(s => {
-      const al = alignmentRiskScore(s), tr = transparencyScore(s), co = complianceScore(s), so = sovereigntyScore(s);
-      const comp = composite(al, tr, co, so), pat = governancePattern(s), risk = riskLevel(comp), sev = severity(comp), action = recommendedAction(risk, pat);
-      return {
-        system_id:                            s.system_id,
-        ai_domain:                            s.ai_domain,
-        region:                               s.region,
-        governance_risk:                      risk,
-        governance_pattern:                   pat,
-        governance_severity:                  sev,
-        recommended_action:                   action,
-        alignment_risk_score:                 Math.round(al * 100 * 100) / 100,
-        transparency_score:                   Math.round(tr * 100 * 100) / 100,
-        compliance_score:                     Math.round(co * 100 * 100) / 100,
-        sovereignty_score:                    Math.round(so * 100 * 100) / 100,
-        governance_composite:                 comp,
-        has_misalignment_signal:              comp >= 40 || s.alignment_score < 0.45 || s.autonomous_decision_risk > 0.60,
-        requires_immediate_intervention:      comp >= 25 || s.regulatory_ai_compliance < 0.35 || s.human_oversight_level < 0.30,
-        estimated_misalignment_severity_index: Math.min(Math.round(comp / 100 * (1 - s.alignment_score + 0.01) * 10 * 100) / 100, 10.0),
-        governance_signal:                    governanceSignal(s, pat, comp),
-      };
+  console.warn("[sovereign-ai-governance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -175,7 +156,7 @@ export async function GET() {
     }
     const n = systems.length;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       systems,
       summary: {
         total:                                      n,
@@ -192,11 +173,11 @@ export async function GET() {
         avg_sovereignty_score:                      Math.round(tSo / n * 10) / 10,
         avg_estimated_misalignment_severity_index:  Math.round(tGap / n * 100) / 100,
       },
-    }, "sovereign-ai-governance-engine"));
+    }, "sovereign-ai-governance-engine")));
   }
 
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/sovereign-ai-governance-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/sovereign-ai-governance-engine`, { next: { revalidate: 30 } })).json(),
     "sovereign-ai-governance-engine"
-  ));
+  )));
 }

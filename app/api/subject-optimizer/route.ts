@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[subject-optimizer] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -161,7 +166,7 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/subject-optimizer`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
@@ -171,7 +176,7 @@ export async function GET() {
 
   const avgRate = optimized.reduce((s, o) => s + o.predicted_open_rate, 0) / optimized.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     subjects: optimized,
     summary: {
       total: optimized.length,
@@ -180,7 +185,7 @@ export async function GET() {
       best_open_rate: optimized[0]?.predicted_open_rate ?? 0,
       pct_with_personalization: Math.round(optimized.filter((o) => o.has_personalization).length / optimized.length * 1000) / 1000,
     },
-  });
+  }));
 }
 
 export async function POST(req: NextRequest) {
@@ -188,7 +193,7 @@ export async function POST(req: NextRequest) {
   const { text, send_hour = 9, template_id, variant_key = "A" } = body;
 
   if (!text || typeof text !== "string") {
-    return NextResponse.json({ error: "text is required" }, { status: 400 });
+    return sealResponse(NextResponse.json({ error: "text is required" }, { status: 400 }));
   }
 
   const subject: SubjectLine = {
@@ -199,5 +204,5 @@ export async function POST(req: NextRequest) {
     send_hour: Number(send_hour),
   };
 
-  return NextResponse.json(optimizeSubject(subject));
+  return sealResponse(NextResponse.json(optimizeSubject(subject)));
 }

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  // mock mode — no external dependency required
+  console.warn("[worker-automation-engine] SWARM_API_URL non défini — mode dégradé activé");
 }
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
@@ -311,7 +311,7 @@ export async function GET() {
     const n             = mockEntities.length;
     const avg_composite = Math.round((total_composite / n) * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities: mockEntities,
       summary: {
         module_id:   393,
@@ -328,17 +328,17 @@ export async function GET() {
         action_distribution,
         avg_estimated_automation_displacement_index: Math.round((avg_composite / 100 * 10) * 100) / 100,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   try {
     const url = new URL(`${SWARM_API_URL}/api/worker-automation-engine`);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json()));
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json())));
   } catch {}
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({ entities: [], summary: {} } as Record<string, unknown>),
     { status: 502 },
-  );
+  ));
 }

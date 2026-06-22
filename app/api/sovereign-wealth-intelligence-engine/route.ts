@@ -173,33 +173,8 @@ function swSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const alloc = allocationScore(e);
-      const gov   = governanceScore(e);
-      const res   = resilienceScore(e);
-      const mand  = mandateScore(e);
-      const comp  = composite(alloc, gov, res, mand);
-      const pat   = swPattern(e);
-      const risk  = swRisk(comp);
-      const sev   = swSeverity(comp);
-      const act   = recommendedAction(risk, pat);
-      return {
-        id:               e.entity_id,
-        region:                  e.region,
-        fund_type:               e.fund_type,
-        sw_risk:                 risk,
-        sw_pattern:              pat,
-        sw_severity:             sev,
-        recommended_action:      act,
-        allocation_score:        alloc,
-        governance_score:        gov,
-        resilience_score:        res,
-        mandate_score:           mand,
-        sw_composite:            comp,
-        is_in_sw_crisis:         comp >= 60,
-        requires_sw_intervention: comp >= 40,
-        sw_signal:               swSignal(e, risk, comp),
-      };
+  console.warn("[sovereign-wealth-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {}, pc: Record<string,number> = {},
@@ -239,17 +214,17 @@ export async function GET() {
       avg_estimated_capital_risk_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "sovereign-wealth-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "sovereign-wealth-intelligence-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/sovereign-wealth-intelligence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/sovereign-wealth-intelligence-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "sovereign-wealth-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "sovereign-wealth-intelligence-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream swarm unavailable" }, "sovereign-wealth-intelligence-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

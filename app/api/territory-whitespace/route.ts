@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[territory-whitespace] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -98,7 +103,7 @@ export async function GET(request: Request) {
       if (type)     url.searchParams.set("type", type);
       if (region)   url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -129,7 +134,7 @@ export async function GET(request: Request) {
 
   const n = mockTerritories.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     territories,
     summary: {
       total: n,
@@ -146,5 +151,5 @@ export async function GET(request: Request) {
       avg_territory_coverage_score:   Math.round((total_cov / n) * 10) / 10,
       avg_icp_alignment_score:        Math.round((total_icp / n) * 10) / 10,
     },
-  });
+  }));
 }

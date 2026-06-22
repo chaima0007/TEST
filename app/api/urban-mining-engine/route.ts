@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const ew   = ewasteScore(e);
-      const rec  = recoveryScore(e);
-      const tox  = toxicityScore(e);
-      const gov  = governanceScore(e);
-      const comp = compositeScore(ew, rec, tox, gov);
-      const risk = riskLevel(comp);
-      const pat  = miningPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                    e.entity_id,
-        electronics_sector:           e.electronics_sector,
-        region:                       e.region,
-        ewaste_score:                 ew,
-        recovery_score:               rec,
-        toxicity_score:               tox,
-        governance_score:             gov,
-        composite_score:              comp,
-        risk_level:                   risk,
-        mining_pattern:               pat,
-        severity:                     sev,
-        recommended_action:           action,
-        signal:                       sig,
-        ewaste_volume_growth:         e.ewaste_volume_growth,
-        informal_recycling_rate:      e.informal_recycling_rate,
-      };
+  console.warn("[urban-mining-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_urban_mining_index:     Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_ewaste: avgEwaste }, "urban-mining-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/urban-mining-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/urban-mining-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "urban-mining-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "urban-mining-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "urban-mining-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

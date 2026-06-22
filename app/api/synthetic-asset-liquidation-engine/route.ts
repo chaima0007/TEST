@@ -92,19 +92,8 @@ function signal(p: Portfolio, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const portfolios = MOCK_PORTFOLIOS.map(p => {
-      const col = collateralScore(p), prot = protocolScore(p), liq = liquidityScore(p), sys = systemicScore(p);
-      const comp = composite(col, prot, liq, sys), pat = liquidationPattern(p), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        portfolio_id: p.portfolio_id, asset_class: p.asset_class, region: p.region,
-        liquidation_risk: r, liquidation_pattern: pat, liquidation_severity: sev, recommended_action: act,
-        collateral_score: col, protocol_score: prot, liquidity_score: liq, systemic_score: sys,
-        liquidation_composite: comp,
-        is_liquidation_imminent: comp >= 60 || p.collateral_health_ratio <= 0.15 || p.liquidation_threshold_proximity >= 0.90,
-        requires_collateral_top_up: comp >= 40 || p.collateral_health_ratio <= 0.35 || p.liquidation_threshold_proximity >= 0.65,
-        estimated_liquidation_risk_index: Math.min(Math.round(comp/100*(1-p.insurance_coverage_ratio+0.01)*10*100)/100, 10.0),
-        liquidation_signal: signal(p, pat, comp),
-      };
+  console.warn("[synthetic-asset-liquidation-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tcol=0,tprot=0,tliq=0,tsys=0,tcomp=0,tidx=0,imminentC=0,topupC=0;
@@ -119,7 +108,7 @@ export async function GET() {
       if (port.requires_collateral_top_up) topupC++;
     }
     const n = portfolios.length;
-    return NextResponse.json(sealResponse({ portfolios, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ portfolios, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_liquidation_composite: Math.round(tcomp/n*10)/10,
       liquidation_imminent_count: imminentC,
@@ -129,7 +118,7 @@ export async function GET() {
       avg_liquidity_score: Math.round(tliq/n*10)/10,
       avg_systemic_score: Math.round(tsys/n*10)/10,
       avg_estimated_liquidation_risk_index: Math.round(tidx/n*100)/100,
-    } as Record<string, unknown>}, "synthetic-asset-liquidation-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "synthetic-asset-liquidation-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/synthetic-asset-liquidation-engine`)).json(), "synthetic-asset-liquidation-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/synthetic-asset-liquidation-engine`, { next: { revalidate: 30 } })).json(), "synthetic-asset-liquidation-engine") as Parameters<typeof NextResponse.json>[0]));
 }

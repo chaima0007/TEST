@@ -3,6 +3,10 @@ import { DIVISIONS, SWARM_METRICS, LIVE_JOBS, SIMULATION_DIALOGUE } from "@/lib/
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[swarm] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 async function fetchFromPythonAPI() {
   if (!SWARM_API_URL) return null;
   try {

@@ -71,33 +71,8 @@ function debtSignal(i: Entity, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(i => {
-      const sol = Math.round(solvencyScore(i) * 100) / 100;
-      const liq = Math.round(liquidityScore(i) * 100) / 100;
-      const con = Math.round(contagionScore(i) * 100) / 100;
-      const conf = Math.round(confidenceScore(i) * 100) / 100;
-      const comp = compositeScore(sol, liq, con, conf);
-      const risk = debtRisk(comp);
-      const pattern = debtPattern(i);
-      const severity = debtSeverity(comp);
-      const action = recommendedAction(risk, pattern);
-      return {
-        id: i.entity_id,
-        region: i.region,
-        sovereign_type: i.sovereign_type,
-        debt_risk: risk,
-        debt_pattern: pattern,
-        debt_severity: severity,
-        recommended_action: action,
-        solvency_score: sol,
-        liquidity_score: liq,
-        contagion_score: con,
-        confidence_score: conf,
-        debt_composite: comp,
-        is_debt_crisis: comp >= 60,
-        requires_debt_intervention: comp >= 40,
-        debt_signal: debtSignal(i, pattern, comp),
-      };
+  console.warn("[sovereign-debt-crisis-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -116,7 +91,7 @@ export async function GET() {
     const n = entities.length;
     const avgComp = tComp / n;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         total: n,
@@ -133,13 +108,13 @@ export async function GET() {
         debt_intervention_count: interventionCount,
         avg_estimated_fiscal_stress_index: Math.round(avgComp/100*10*100)/100,
       },
-    } as Record<string,unknown>));
+    } as Record<string,unknown>)));
   }
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/sovereign-debt-crisis-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/sovereign-debt-crisis-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string,unknown>));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string,unknown>)));
   } catch {
-    return NextResponse.json(sealResponse({ error: "Upstream unavailable" } as Record<string,unknown>), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "Upstream unavailable" } as Record<string,unknown>), { status: 502 }));
   }
 }

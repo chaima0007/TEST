@@ -373,12 +373,8 @@ export async function GET(request: Request) {
   const pattern = searchParams.get("pattern");
 
   if (!process.env.SWARM_API_URL) {
-    // Mock computation path
-    let agents = [...mockAgents];
-    if (risk)    agents = agents.filter((a) => a.alignment_risk    === risk);
-    if (pattern) agents = agents.filter((a) => a.alignment_pattern === pattern);
-
-    const risk_counts:     Record<string, number> = {};
+  console.warn("[synthetic-consciousness-alignment-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     const pattern_counts:  Record<string, number> = {};
     const severity_counts: Record<string, number> = {};
     const action_counts:   Record<string, number> = {};
@@ -399,7 +395,7 @@ export async function GET(request: Request) {
 
     const n = mockAgents.length;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       agents,
       summary: {
         total:                            n,
@@ -416,7 +412,7 @@ export async function GET(request: Request) {
         avg_adaptability_score:           Math.round((total_ada / n) * 10) / 10,
         avg_estimated_misalignment_index: Math.round((total_idx / n) * 100) / 100,
       },
-    } as Record<string, unknown>, "synthetic-consciousness-alignment-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>, "synthetic-consciousness-alignment-engine") as Parameters<typeof NextResponse.json>[0]));
   }
 
   try {
@@ -424,10 +420,10 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json(), "synthetic-consciousness-alignment-engine") as Parameters<typeof NextResponse.json>[0]);
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json(), "synthetic-consciousness-alignment-engine") as Parameters<typeof NextResponse.json>[0]));
   } catch {}
 
-  return NextResponse.json(sealResponse({ agents: [], summary: {} }, "synthetic-consciousness-alignment-engine") as Parameters<typeof NextResponse.json>[0], { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ agents: [], summary: {} }, "synthetic-consciousness-alignment-engine") as Parameters<typeof NextResponse.json>[0], { status: 502 }));
 }
 
 export { coherenceScore, alignmentScore, safetyScore, adaptabilityScore, compositeScore, misalignmentIndex };

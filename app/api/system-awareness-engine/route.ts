@@ -245,8 +245,8 @@ function systemSignal(e: Entity, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(
-      sealResponse({ error: "SWARM_API_URL non configuré — service indisponible" }, "system-awareness-engine") as Record<string, unknown>,
+  console.warn("[system-awareness-engine] SWARM_API_URL non défini — mode dégradé activé");
+}, "system-awareness-engine") as Record<string, unknown>,
       { status: 502 }
     );
   }
@@ -327,13 +327,13 @@ export async function GET() {
       action_counts:                   ac,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "system-awareness-engine") as Record<string, unknown>
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Erreur moteur conscience systémique" }, "system-awareness-engine") as Record<string, unknown>,
       { status: 502 }
-    );
+    ));
   }
 }

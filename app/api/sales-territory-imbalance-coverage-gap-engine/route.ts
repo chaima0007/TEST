@@ -70,20 +70,8 @@ function signal(i: Rep, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const reps = MOCK_REPS.map(i => {
-      const lo = loadScore(i), co = coverageScore(i), pe = penetrationScore(i), ef = efficiencyScore(i);
-      const comp = composite(lo, co, pe, ef), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      const ur = Math.round(i.total_accounts_in_territory * i.whitespace_accounts_untouched_pct * i.avg_arr_per_account_usd * (comp/100) * 100) / 100;
-      return {
-        rep_id: i.rep_id, region: i.region,
-        territory_risk: r, territory_pattern: pat, territory_severity: sev, recommended_action: act,
-        load_score: lo, coverage_score: co, penetration_score: pe, efficiency_score: ef,
-        territory_composite: comp,
-        has_territory_gap: comp >= 40 || i.active_accounts_pct <= 0.55 || i.whitespace_accounts_untouched_pct >= 0.40,
-        requires_territory_intervention: comp >= 25 || i.renewal_coverage_rate_pct <= 0.75 || i.stale_account_rate_pct >= 0.28,
-        estimated_uncaptured_revenue_usd: ur,
-        territory_signal: signal(i, pat, comp),
-      };
+  console.warn("[sales-territory-imbalance-coverage-gap-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tlo=0, tco=0, tpe=0, tef=0, tcomp=0, tur=0, gc=0, ic=0;
@@ -95,7 +83,7 @@ export async function GET() {
       if (r.has_territory_gap) gc++; if (r.requires_territory_intervention) ic++;
     }
     const n = reps.length;
-    return NextResponse.json(sealResponse({ reps, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ reps, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_territory_composite: Math.round(tcomp/n*10)/10,
       territory_gap_count: gc, intervention_count: ic,
@@ -104,7 +92,7 @@ export async function GET() {
       avg_penetration_score: Math.round(tpe/n*10)/10,
       avg_efficiency_score: Math.round(tef/n*10)/10,
       total_estimated_uncaptured_revenue_usd: Math.round(tur*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-territory-imbalance-coverage-gap-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/sales-territory-imbalance-coverage-gap-engine`, { next: { revalidate: 30 } })).json()));
 }

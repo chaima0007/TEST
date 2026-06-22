@@ -7,15 +7,15 @@ if (!process.env.SWARM_API_URL) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Vertical Farming Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Vertical Farming Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/vertical-farming-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Vertical Farming Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Vertical Farming Agent")));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Vertical Farming Agent"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Vertical Farming Agent"), { status: 502 }));
   }
 }
 
