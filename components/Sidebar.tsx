@@ -12880,6 +12880,46 @@ function IconAbacaFiberChildLaborRights({ size = 18, color = "#0369a1" }: { size
   );
 }
 
+function IconKapokFiberChildLaborRights({ size = 18, color = "#f59e0b" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="7" r="3" />
+      <path d="M12 10v4" />
+      <path d="M9 11 Q5 14 7 19" />
+      <path d="M15 11 Q19 14 17 19" />
+      <path d="M8 19h8" />
+      <path d="M10 14 Q8 16 9 18" />
+      <path d="M14 14 Q16 16 15 18" />
+    </svg>
+  );
+}
+
+function IconRamieFiberProcessingLaborRights({ size = 18, color = "#0d9488" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2 Q8 5 9 10 Q10 14 12 15 Q14 14 15 10 Q16 5 12 2z" />
+      <path d="M9 10 Q6 12 5 16" />
+      <path d="M15 10 Q18 12 19 16" />
+      <path d="M7 18 Q10 17 12 19 Q14 17 17 18" />
+      <path d="M12 15v5" />
+    </svg>
+  );
+}
+
+function IconRaffiaPalmCraftLaborRights({ size = 18, color = "#78350f" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3 Q7 7 8 13" />
+      <path d="M12 3 Q17 7 16 13" />
+      <path d="M12 3 Q12 8 12 13" />
+      <path d="M8 13 Q10 15 12 14 Q14 15 16 13" />
+      <path d="M12 14v4" />
+      <path d="M9 18 Q10 16 12 17 Q14 16 15 18" />
+      <path d="M8 21h8" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14882,6 +14922,14 @@ const navSections: NavSection[] = [
       { label: "Droits Travailleurs Fibre Chanvre", href: "/dashboard/hemp-fiber-processing-labor-rights", icon: IconHempFiberProcessingLaborRights, color: "#15803d" },
       { label: "Droits Travailleurs Filatures Jute", href: "/dashboard/jute-mill-worker-rights", icon: IconJuteMillWorkerRights, color: "#a16207" },
       { label: "Droits Enfants Fibres Abaca", href: "/dashboard/abaca-fiber-child-labor-rights", icon: IconAbacaFiberChildLaborRights, color: "#0369a1" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 306",
+    items: [
+      { label: "Droits Enfants Fibres Kapok", href: "/dashboard/kapok-fiber-child-labor-rights", icon: IconKapokFiberChildLaborRights, color: "#f59e0b" },
+      { label: "Droits Travailleurs Transformation Ramie", href: "/dashboard/ramie-fiber-processing-labor-rights", icon: IconRamieFiberProcessingLaborRights, color: "#0d9488" },
+      { label: "Droits Artisans Palmier Raphia", href: "/dashboard/raffia-palm-craft-labor-rights", icon: IconRaffiaPalmCraftLaborRights, color: "#78350f" },
     ],
   },
   {
