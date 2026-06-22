@@ -4404,3 +4404,27 @@ export function IconBrandSafety({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconAdAttribution({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+    </svg>
+  );
+}
+
+export function IconMediaBuying({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-4"/><path d="M12 7v2M12 12v.01"/>
+    </svg>
+  );
+}
+
+export function IconProgrammatic({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+    </svg>
+  );
+}
