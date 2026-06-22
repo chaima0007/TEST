@@ -4220,3 +4220,27 @@ export function IconVrAds({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconCookielessAds({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><path d="M8 12h.01M12 8h.01M16 12h.01"/>
+    </svg>
+  );
+}
+
+export function IconCreatorEconomy({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/><circle cx="12" cy="8" r="2"/>
+    </svg>
+  );
+}
+
+export function IconB2bAds({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="2" y="7" width="9" height="14" rx="1"/><rect x="13" y="3" width="9" height="18" rx="1"/><path d="M6 7V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2"/>
+    </svg>
+  );
+}
