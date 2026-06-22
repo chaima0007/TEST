@@ -1,15 +1,15 @@
-"""CaelumSwarm™ — Social Commerce Advertising Child Labor Rights Engine
+"""CaelumSwarm™ — Livestream Commerce Advertising Child Labor Rights Engine
 © 2024-2026 Caelum Partners SPRL"""
 
 ENTITIES = [
-    ("Social Commerce Platform", 99, 97, 95, 93),
-    ("Brand Partnership Network", 93, 90, 88, 86),
-    ("Shoppable Content Co", 85, 82, 80, 78),
-    ("Social Payment Systems", 80, 77, 75, 73),
-    ("Community Marketplace Hub", 61, 58, 56, 54),
-    ("Micro-Influencer Agency", 51, 48, 46, 44),
-    ("User Review Platform Co", 32, 29, 27, 25),
-    ("Data Analytics Pool", 13, 11, 9, 7),
+    ("Livestream Platform Corp", 99, 97, 95, 93),
+    ("Creator Monetization Network", 93, 90, 88, 86),
+    ("Live Shopping Tech Co", 85, 82, 80, 78),
+    ("Payment Gateway Systems", 80, 77, 75, 73),
+    ("Product Fulfillment Hub", 61, 58, 56, 54),
+    ("Influencer Agency Network", 51, 48, 46, 44),
+    ("Content Moderation Co", 32, 29, 27, 25),
+    ("Gig Viewer Data Pool", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -20,7 +20,7 @@ def compute(entity):
     elif score >= 20: level = "modéré"
     else: level = "faible"
     idx = round(score / 100 * 10, 2)
-    return {"name": name, "composite_score": score, "risk_level": level, "estimated_socialcommerce_index": idx}
+    return {"name": name, "composite_score": score, "risk_level": level, "estimated_livestreamcommerce_index": idx}
 
 if __name__ == "__main__":
     results = [compute(e) for e in ENTITIES]
