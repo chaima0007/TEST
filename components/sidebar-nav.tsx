@@ -3784,6 +3784,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/voiceads", label: "Voice Ads", icon: Icons.IconVoiceAds },
       { href: "/dashboard/aiads", label: "AI Advertising", icon: Icons.IconAiAds },
       { href: "/dashboard/vrads", label: "VR Advertising", icon: Icons.IconVrAds },
+      { href: "/dashboard/cookielessads", label: "Cookieless Ads", icon: Icons.IconCookielessAds },
+      { href: "/dashboard/creatoreconomy", label: "Creator Economy", icon: Icons.IconCreatorEconomy },
+      { href: "/dashboard/b2bads", label: "B2B Advertising", icon: Icons.IconB2bAds },
     ],
   },
   {
