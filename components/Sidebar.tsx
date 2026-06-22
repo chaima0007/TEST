@@ -14455,6 +14455,38 @@ function IconGamingInAppAdvertising({ size = 20 }: { size?: number }) {
   );
 }
 
+function IconInfluencerMarketingPlatform({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="7" r="4" />
+      <path d="M5 21v-2a7 7 0 0 1 14 0v2" />
+      <path d="M17 9l2-2 2 2" />
+      <path d="M19 7v4" />
+    </svg>
+  );
+}
+
+function IconProgrammaticAudioAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
+      <path d="M3 9h3M3 12h3M3 15h3" />
+    </svg>
+  );
+}
+
+function IconNativeAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="3" width="20" height="14" rx="2" />
+      <path d="M7 7h5M7 10h8M7 13h4" />
+      <path d="M14 7h3v3h-3z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17056,6 +17088,24 @@ const navSections: NavSection[] = [
         label: "Connected TV Advertising",
         href: "/dashboard/connected-tv-advertising-child-labor-rights",
         icon: IconConnectedTvAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Influencer Marketing Platform",
+        href: "/dashboard/influencer-marketing-platform-child-labor-rights",
+        icon: IconInfluencerMarketingPlatform,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Programmatic Audio Advertising",
+        href: "/dashboard/programmatic-audio-advertising-child-labor-rights",
+        icon: IconProgrammaticAudioAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Native Advertising",
+        href: "/dashboard/native-advertising-child-labor-rights",
+        icon: IconNativeAdvertising,
         category: "Publicité Visuelle",
       },
       {
