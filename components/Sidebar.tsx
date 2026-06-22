@@ -10692,6 +10692,33 @@ function IconCollectiveBargainingRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconWomenPoliticalRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M12 12v4"/>
+      <path d="M9 16l3 3 3-3"/>
+      <path d="M8 20h8"/>
+    </svg>
+  );
+}
+
+function IconClimateChangeRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+    </svg>
+  );
+}
+
+function IconForcedSterilizationRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12102,6 +12129,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/right-to-fair-trial-rights-engine", label: "Procès Équitable", icon: IconRightToFairTrialRights },
       { href: "/dashboard/environmental-pollution-rights-engine", label: "Pollution Environnementale", icon: IconEnvironmentalPollutionRights },
       { href: "/dashboard/collective-bargaining-rights-engine", label: "Négociation Collective", icon: IconCollectiveBargainingRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 232",
+    items: [
+      { href: "/dashboard/women-political-rights-engine", label: "Droits Politiques Femmes", icon: IconWomenPoliticalRights },
+      { href: "/dashboard/climate-change-rights-engine", label: "Changement Climatique", icon: IconClimateChangeRights },
+      { href: "/dashboard/forced-sterilization-rights-engine", label: "Stérilisation Forcée", icon: IconForcedSterilizationRights },
     ],
   },
   {
