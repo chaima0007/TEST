@@ -14829,6 +14829,30 @@ function IconFintechAdvertising({ size = 18, color = "currentColor" }: { size?: 
   );
 }
 
+function IconEcommerceAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+    </svg>
+  );
+}
+function IconSaasAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+      <line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
+    </svg>
+  );
+}
+function IconCryptoAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 5.4m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17790,6 +17814,24 @@ const navSections: NavSection[] = [
         label: "Fintech Advertising",
         href: "/dashboard/fintech-advertising-child-labor-rights",
         icon: IconFintechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "E-Commerce Advertising",
+        href: "/dashboard/ecommerce-advertising-child-labor-rights",
+        icon: IconEcommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "SaaS Advertising",
+        href: "/dashboard/saas-advertising-child-labor-rights",
+        icon: IconSaasAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Crypto Advertising",
+        href: "/dashboard/crypto-advertising-child-labor-rights",
+        icon: IconCryptoAdvertising,
         category: "Publicité Visuelle",
       },
       {
