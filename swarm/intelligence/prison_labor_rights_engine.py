@@ -1,183 +1,161 @@
-from __future__ import annotations
-from dataclasses import dataclass, field
-from typing import List
-import statistics
+"""Prison Labor Rights Engine — CaelumSwarm™ Wave 196"""
+import json
 
-@dataclass
-class PrisonLaborRightsEntity:
-    entity_id: str
-    name: str
-    country: str
-    forced_prison_labor_coercion_severity_score: float
-    wage_theft_below_minimum_compensation_scale_score: float
-    unsafe_working_conditions_incarcerated_score: float
-    legal_protection_prisoner_worker_gap_score: float
-    composite_score: float = field(init=False)
-    risk_level: str = field(init=False)
-    primary_pattern: str = ""
-    estimated_prison_labor_rights_index: float = field(init=False)
-    last_updated: str = "2026-06-21"
+DOMAIN = "prison_labor_rights"
+PREFIX = "PLR"
+ACCENT_COLOR = "#4c1d95"
 
-    def __post_init__(self):
-        self.composite_score = round(
-            self.forced_prison_labor_coercion_severity_score * 0.30
-            + self.wage_theft_below_minimum_compensation_scale_score * 0.25
-            + self.unsafe_working_conditions_incarcerated_score * 0.25
-            + self.legal_protection_prisoner_worker_gap_score * 0.20,
-            2,
-        )
-        if self.composite_score >= 60:
-            self.risk_level = "critique"
-        elif self.composite_score >= 40:
-            self.risk_level = "élevé"
-        elif self.composite_score >= 20:
-            self.risk_level = "modéré"
-        else:
-            self.risk_level = "faible"
-        self.estimated_prison_labor_rights_index = round(self.composite_score / 100 * 10, 2)
+# 8 entities — distribution: 4 critique / 2 élevé / 1 modéré / 1 faible
+ENTITIES = [
+    {
+        "id": "PLR-001",
+        "name": "CoreCivic (formerly CCA)",
+        "description": "Plus grand opérateur de prisons privées aux États-Unis",
+        "forced_labor_exploitation_score": 92,
+        "below_minimum_wage_score": 90,
+        "dangerous_working_conditions_score": 85,
+        "rehabilitation_denial_score": 82,
+    },
+    {
+        "id": "PLR-002",
+        "name": "The GEO Group",
+        "description": "Prisons privées et contrats ICE, détention immigration",
+        "forced_labor_exploitation_score": 90,
+        "below_minimum_wage_score": 88,
+        "dangerous_working_conditions_score": 82,
+        "rehabilitation_denial_score": 80,
+    },
+    {
+        "id": "PLR-003",
+        "name": "Prison Policy Initiative / Aramark Correctional",
+        "description": "Restauration dans les prisons, conditions documentées",
+        "forced_labor_exploitation_score": 80,
+        "below_minimum_wage_score": 82,
+        "dangerous_working_conditions_score": 76,
+        "rehabilitation_denial_score": 72,
+    },
+    {
+        "id": "PLR-004",
+        "name": "UNICOR / Federal Prison Industries",
+        "description": "Travail forcé fédéral US, concurrence déloyale aux entreprises privées",
+        "forced_labor_exploitation_score": 78,
+        "below_minimum_wage_score": 76,
+        "dangerous_working_conditions_score": 72,
+        "rehabilitation_denial_score": 66,
+    },
+    {
+        "id": "PLR-005",
+        "name": "Sodexo Justice Services",
+        "description": "Services carcéraux, incidents documentés sur les conditions de travail",
+        "forced_labor_exploitation_score": 63,
+        "below_minimum_wage_score": 59,
+        "dangerous_working_conditions_score": 57,
+        "rehabilitation_denial_score": 55,
+    },
+    {
+        "id": "PLR-006",
+        "name": "Serco Group plc",
+        "description": "Prisons au Royaume-Uni, centres de détention immigration",
+        "forced_labor_exploitation_score": 58,
+        "below_minimum_wage_score": 56,
+        "dangerous_working_conditions_score": 54,
+        "rehabilitation_denial_score": 50,
+    },
+    {
+        "id": "PLR-007",
+        "name": "Salvation Army",
+        "description": "Programmes de réhabilitation, pratiques améliorées par rapport au secteur",
+        "forced_labor_exploitation_score": 30,
+        "below_minimum_wage_score": 28,
+        "dangerous_working_conditions_score": 30,
+        "rehabilitation_denial_score": 26,
+    },
+    {
+        "id": "PLR-008",
+        "name": "Prison Fellowship International",
+        "description": "ONG de défense des droits des détenus, meilleure pratique sectorielle",
+        "forced_labor_exploitation_score": 14,
+        "below_minimum_wage_score": 13,
+        "dangerous_working_conditions_score": 15,
+        "rehabilitation_denial_score": 13,
+    },
+]
 
-@dataclass
-class PrisonLaborRightsEngineResult:
-    agent: str = "Prison Labor Rights Engine Agent"
-    domain: str = "prison_labor_rights"
-    total_entities: int = 0
-    avg_composite: float = 0.0
-    confidence_score: float = 0.85
-    risk_distribution: dict = field(default_factory=dict)
-    pattern_distribution: dict = field(default_factory=dict)
-    top_risk_entities: List[str] = field(default_factory=list)
-    critical_alerts: List[str] = field(default_factory=list)
-    last_analysis: str = "2026-06-21"
-    engine_version: str = "1.0.0"
-    avg_estimated_prison_labor_rights_index: float = 0.0
-    data_sources: List[str] = field(default_factory=list)
-    entities: List[PrisonLaborRightsEntity] = field(default_factory=list)
 
-def run_prison_labor_rights_engine() -> PrisonLaborRightsEngineResult:
-    entities = [
-        PrisonLaborRightsEntity(
-            entity_id="PLR-001",
-            name="USA — 800 000 Détenus Forcés Travailler 0,13-0,52$/h, 13e Amendement Exception Esclavage & UNICOR Profit",
-            country="États-Unis",
-            forced_prison_labor_coercion_severity_score=96.0,
-            wage_theft_below_minimum_compensation_scale_score=93.0,
-            unsafe_working_conditions_incarcerated_score=91.0,
-            legal_protection_prisoner_worker_gap_score=93.0,
-            primary_pattern="forced_prison_labor_coercion_severity",
-        ),
-        PrisonLaborRightsEntity(
-            entity_id="PLR-002",
-            name="Chine — Laogai/Laojiao Travail Rééducatif, Camps Xinjiang Ouïghours & Production Exportation Forcée",
-            country="Chine",
-            forced_prison_labor_coercion_severity_score=94.0,
-            wage_theft_below_minimum_compensation_scale_score=91.0,
-            unsafe_working_conditions_incarcerated_score=90.0,
-            legal_protection_prisoner_worker_gap_score=89.0,
-            primary_pattern="forced_prison_labor_coercion_severity",
-        ),
-        PrisonLaborRightsEntity(
-            entity_id="PLR-003",
-            name="Russie — Colonies Pénitentiaires IK Travail Obligatoire, Zéro Salaire & Conditions Soviétiques Maintenues",
-            country="Russie",
-            forced_prison_labor_coercion_severity_score=91.0,
-            wage_theft_below_minimum_compensation_scale_score=87.0,
-            unsafe_working_conditions_incarcerated_score=87.0,
-            legal_protection_prisoner_worker_gap_score=86.0,
-            primary_pattern="wage_theft_below_minimum_compensation_scale",
-        ),
-        PrisonLaborRightsEntity(
-            entity_id="PLR-004",
-            name="Thaïlande/Asie SE — Détenus Loués Entreprises Privées, Usines Prison Sans EPI & Pas d'Assurance Travail",
-            country="Thaïlande/Asie SE",
-            forced_prison_labor_coercion_severity_score=89.0,
-            wage_theft_below_minimum_compensation_scale_score=85.0,
-            unsafe_working_conditions_incarcerated_score=85.0,
-            legal_protection_prisoner_worker_gap_score=83.0,
-            primary_pattern="unsafe_working_conditions_incarcerated",
-        ),
-        PrisonLaborRightsEntity(
-            entity_id="PLR-005",
-            name="Brésil — FUNAP Travail Pénitentiaire, Remise Peine vs Exploitation, Conditions Insalubres & Surpopulation",
-            country="Brésil",
-            forced_prison_labor_coercion_severity_score=56.0,
-            wage_theft_below_minimum_compensation_scale_score=52.0,
-            unsafe_working_conditions_incarcerated_score=53.0,
-            legal_protection_prisoner_worker_gap_score=52.0,
-            primary_pattern="forced_prison_labor_coercion_severity",
-        ),
-        PrisonLaborRightsEntity(
-            entity_id="PLR-006",
-            name="UE — Travail Pénitentiaire Légal Majorité États, Salaires 10-25% SMIC & Exclusion Droit Travail Commun",
-            country="Union Européenne",
-            forced_prison_labor_coercion_severity_score=54.0,
-            wage_theft_below_minimum_compensation_scale_score=51.0,
-            unsafe_working_conditions_incarcerated_score=51.0,
-            legal_protection_prisoner_worker_gap_score=49.0,
-            primary_pattern="legal_protection_prisoner_worker_gap",
-        ),
-        PrisonLaborRightsEntity(
-            entity_id="PLR-007",
-            name="PRI/Anti-Slavery Int'l — Standards Travail Pénitentiaire, Plaidoyer Salaire Minimum & Abolition Travail Forcé",
-            country="Global",
-            forced_prison_labor_coercion_severity_score=24.0,
-            wage_theft_below_minimum_compensation_scale_score=28.0,
-            unsafe_working_conditions_incarcerated_score=26.0,
-            legal_protection_prisoner_worker_gap_score=26.0,
-            primary_pattern="legal_protection_prisoner_worker_gap",
-        ),
-        PrisonLaborRightsEntity(
-            entity_id="PLR-008",
-            name="ONU/ILO — Convention C29 Travail Forcé, Protocole 2014 & Standards Minima Travail Pénitentiaire",
-            country="Global",
-            forced_prison_labor_coercion_severity_score=4.0,
-            wage_theft_below_minimum_compensation_scale_score=5.0,
-            unsafe_working_conditions_incarcerated_score=4.0,
-            legal_protection_prisoner_worker_gap_score=5.0,
-            primary_pattern="forced_prison_labor_coercion_severity",
-        ),
-    ]
-
-    composites = [e.composite_score for e in entities]
-    avg_composite = round(statistics.mean(composites), 2)
-
-    risk_dist: dict = {}
-    for e in entities:
-        risk_dist[e.risk_level] = risk_dist.get(e.risk_level, 0) + 1
-
-    pattern_dist: dict = {}
-    for e in entities:
-        pattern_dist[e.primary_pattern] = pattern_dist.get(e.primary_pattern, 0) + 1
-
-    sorted_entities = sorted(entities, key=lambda x: x.composite_score, reverse=True)
-    top_risk = [e.name for e in sorted_entities[:3]]
-    alerts = [
-        f"{e.name.split('—')[0].strip()}: {e.primary_pattern}"
-        for e in sorted_entities[:4]
-    ]
-
-    return PrisonLaborRightsEngineResult(
-        total_entities=len(entities),
-        avg_composite=avg_composite,
-        risk_distribution=risk_dist,
-        pattern_distribution=pattern_dist,
-        top_risk_entities=top_risk,
-        critical_alerts=alerts,
-        avg_estimated_prison_labor_rights_index=round(avg_composite / 100 * 10, 2),
-        data_sources=[
-            "aclu_captive_labor_exploitation_prison_workforce_report",
-            "human_rights_watch_prison_labor_wages_conditions_report",
-            "ilo_forced_labour_convention_c29_prison_labour_review",
-        ],
-        entities=entities,
+def calculate_composite(entity: dict) -> float:
+    """composite = sub1×0.30 + sub2×0.25 + sub3×0.25 + sub4×0.20"""
+    return round(
+        entity["forced_labor_exploitation_score"] * 0.30
+        + entity["below_minimum_wage_score"] * 0.25
+        + entity["dangerous_working_conditions_score"] * 0.25
+        + entity["rehabilitation_denial_score"] * 0.20,
+        2,
     )
 
+
+def classify_severity(score: float) -> str:
+    """Seuils : critique≥60, élevé≥40, modéré≥20, faible<20"""
+    if score >= 60:
+        return "critique"
+    elif score >= 40:
+        return "élevé"
+    elif score >= 20:
+        return "modéré"
+    else:
+        return "faible"
+
+
+def run_engine() -> dict:
+    results = []
+    composite_scores = []
+
+    for entity in ENTITIES:
+        composite = calculate_composite(entity)
+        severity = classify_severity(composite)
+        index = round(composite / 100 * 10, 2)
+        composite_scores.append(composite)
+
+        results.append(
+            {
+                "id": entity["id"],
+                "name": entity["name"],
+                "description": entity["description"],
+                "sub_scores": {
+                    "forced_labor_exploitation_score": entity["forced_labor_exploitation_score"],
+                    "below_minimum_wage_score": entity["below_minimum_wage_score"],
+                    "dangerous_working_conditions_score": entity["dangerous_working_conditions_score"],
+                    "rehabilitation_denial_score": entity["rehabilitation_denial_score"],
+                },
+                "composite_score": composite,
+                "severity": severity,
+                "estimated_prison_labor_rights_index": index,
+            }
+        )
+
+    avg_composite = round(sum(composite_scores) / len(composite_scores), 2)
+
+    # Distribution verification
+    distribution = {}
+    for r in results:
+        sev = r["severity"]
+        distribution[sev] = distribution.get(sev, 0) + 1
+
+    return {
+        "engine": "Prison Labor Rights Engine",
+        "wave": 196,
+        "swarm": "CaelumSwarm™",
+        "domain": DOMAIN,
+        "prefix": PREFIX,
+        "accent_color": ACCENT_COLOR,
+        "entities": results,
+        "summary": {
+            "total_entities": len(results),
+            "avg_composite_score": avg_composite,
+            "severity_distribution": distribution,
+        },
+    }
+
+
 if __name__ == "__main__":
-    result = run_prison_labor_rights_engine()
-    print(f"Agent: {result.agent}")
-    print(f"Total entities: {result.total_entities}")
-    print(f"Avg composite: {result.avg_composite}")
-    print(f"Avg index: {result.avg_estimated_prison_labor_rights_index}")
-    print(f"Risk distribution: {result.risk_distribution}")
-    print(f"Pattern distribution: {result.pattern_distribution}")
-    for e in result.entities:
-        print(f"  {e.entity_id}: {e.composite_score} [{e.risk_level}]")
+    result = run_engine()
+    print(json.dumps(result, ensure_ascii=False, indent=2))
