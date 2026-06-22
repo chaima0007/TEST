@@ -15362,6 +15362,27 @@ function IconResaleAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconRentaleconomyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+  );
+}
+function IconSharingeconomyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+    </svg>
+  );
+}
+function IconGigeconomyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18767,6 +18788,24 @@ const navSections: NavSection[] = [
         label: "Resale Advertising",
         href: "/dashboard/resale-advertising",
         icon: IconResaleAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Rental Economy Advertising",
+        href: "/dashboard/rentaleconomy-advertising",
+        icon: IconRentaleconomyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Sharing Economy Advertising",
+        href: "/dashboard/sharingeconomy-advertising",
+        icon: IconSharingeconomyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Gig Economy Advertising",
+        href: "/dashboard/gigeconomy-advertising",
+        icon: IconGigeconomyAdvertising,
         category: "Publicité Visuelle",
       },
       {
