@@ -1,51 +1,37 @@
-#!/usr/bin/env python3
-"""CaelumSwarm™ — Addressable TV Advertising Child Labor Rights Engine (Wave 346)"""
-import json, statistics
+"""
+CaelumSwarm™ — Addressable TV Advertising Child Labor Rights Engine
+© 2024-2026 Caelum Partners SPRL
+"""
 
 ENTITIES = [
-    ("IPTV Operator Ad Platforms", 99, 97, 95, 93),
-    ("HbbTV Programmatic Platforms", 93, 90, 88, 86),
-    ("Set-Top Box Data Providers", 85, 82, 80, 78),
-    ("CTV Programmatic Ad Exchanges", 80, 77, 75, 73),
-    ("Addressable TV Agencies", 61, 58, 56, 54),
-    ("TV Audience Measurement Firms", 51, 48, 46, 44),
-    ("FAST Channel Publishers", 32, 29, 27, 25),
-    ("TV Loyalty Data Providers", 13, 11, 9, 7),
+    # (name, sub1, sub2, sub3, sub4) — tuples FIXES
+    ("DirecTV Advertising",       99, 97, 95, 93),  # critique
+    ("Dish Network Ads",          93, 90, 88, 86),  # critique
+    ("Comcast Addressable TV",    85, 82, 80, 78),  # critique
+    ("Charter Spectrum Reach",    80, 77, 75, 73),  # critique
+    ("AT&T TV Ads",               61, 58, 56, 54),  # élevé
+    ("Hulu Addressable TV",       51, 48, 46, 44),  # élevé
+    ("YouTube TV Ads",            32, 29, 27, 25),  # modéré
+    ("Sling TV Advertising",      13, 11,  9,  7),  # faible
 ]
-WEIGHTS = (0.30, 0.25, 0.25, 0.20)
-THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
 
-def classify(score):
-    if score >= THRESHOLDS["critique"]: return "critique"
-    if score >= THRESHOLDS["élevé"]: return "élevé"
-    if score >= THRESHOLDS["modéré"]: return "modéré"
-    return "faible"
-
-def compute():
-    results = []
-    for entity in ENTITIES:
-        eid, *subs = entity
-        composite = sum(s * w for s, w in zip(subs, WEIGHTS))
-        results.append({
-            "entity": eid,
-            "composite_score": round(composite, 2),
-            "risk_level": classify(composite),
-            "estimated_addressable_tv_advertising_index": round(composite / 100 * 10, 2),
-        })
-    avg = statistics.mean(r["composite_score"] for r in results)
-    distribution = {}
-    for r in results:
-        distribution[r["risk_level"]] = distribution.get(r["risk_level"], 0) + 1
-    return {"entities": results, "avg_composite": round(avg, 2), "distribution": distribution}
+def compute(entity):
+    name, s1, s2, s3, s4 = entity
+    score = round(s1*0.30 + s2*0.25 + s3*0.25 + s4*0.20, 2)
+    if score >= 60: level = "critique"
+    elif score >= 40: level = "élevé"
+    elif score >= 20: level = "modéré"
+    else: level = "faible"
+    idx = round(score / 100 * 10, 2)
+    return {"name": name, "composite_score": score, "risk_level": level, "estimated_index": idx}
 
 if __name__ == "__main__":
-    output = compute()
-    print(json.dumps(output, indent=2, ensure_ascii=False))
-    avg = output["avg_composite"]
-    dist = output["distribution"]
-    assert avg >= 60
-    assert dist.get("critique", 0) == 4
-    assert dist.get("élevé", 0) == 2
-    assert dist.get("modéré", 0) == 1
-    assert dist.get("faible", 0) == 1
-    print("✓ Assertions passées")
+    results = [compute(e) for e in ENTITIES]
+    avg = round(sum(r["composite_score"] for r in results) / len(results), 2)
+    dist = {l: sum(1 for r in results if r["risk_level"] == l) for l in ["critique","élevé","modéré","faible"]}
+    print(f"avg_composite: {avg}")
+    print(f"Distribution: {dist}")
+    assert avg >= 60, f"avg trop bas: {avg}"
+    assert dist == {"critique": 4, "élevé": 2, "modéré": 1, "faible": 1}, f"Distribution invalide: {dist}"
+    for r in results:
+        print(r)

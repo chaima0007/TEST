@@ -1,18 +1,18 @@
 """
-CaelumSwarm™ — Social Media Advertising Child Labor Rights Engine
+CaelumSwarm™ — Mobile App Advertising Child Labor Rights Engine
 © 2024-2026 Caelum Partners SPRL
 """
 
 ENTITIES = [
     # (name, sub1, sub2, sub3, sub4) — tuples FIXES
-    ("Facebook Ads",   99, 97, 95, 93),  # critique
-    ("Instagram Ads",  93, 90, 88, 86),  # critique
-    ("Twitter/X Ads",  85, 82, 80, 78),  # critique
-    ("LinkedIn Ads",   80, 77, 75, 73),  # critique
-    ("TikTok Ads",     61, 58, 56, 54),  # élevé
-    ("Pinterest Ads",  51, 48, 46, 44),  # élevé
-    ("Snapchat Ads",   32, 29, 27, 25),  # modéré
-    ("BeReal Ads",     13, 11,  9,  7),  # faible
+    ("Google AdMob",        99, 97, 95, 93),  # critique
+    ("Meta Audience Network", 93, 90, 88, 86),  # critique
+    ("IronSource",          85, 82, 80, 78),  # critique
+    ("Unity Ads",           80, 77, 75, 73),  # critique
+    ("AppLovin",            61, 58, 56, 54),  # élevé
+    ("Vungle",              51, 48, 46, 44),  # élevé
+    ("InMobi",              32, 29, 27, 25),  # modéré
+    ("Digital Turbine",     13, 11,  9,  7),  # faible
 ]
 
 def compute(entity):
