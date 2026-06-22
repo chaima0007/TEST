@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[sentiment] SWARM_API_URL non défini — mode local");
+}
 
 type Sentiment = "Positif" | "Curieux" | "Sceptique" | "Méfiant" | "Négatif" | "Pressé" | "Fantôme";
 type AgentId = "3.5" | "3.1" | "3.2" | "3.3" | "3.7";
@@ -321,18 +326,26 @@ function classifyText(text: string, sector?: string): SentimentEntry {
 }
 
 export async function GET() {
-  return NextResponse.json({
-    entries: MOCK_ENTRIES,
-    summary: buildSummary(MOCK_ENTRIES),
-  });
+  try {
+    return NextResponse.json(sealResponse({
+      entries: MOCK_ENTRIES,
+      summary: buildSummary(MOCK_ENTRIES),
+    }));
+  } catch {
+    return NextResponse.json(sealResponse({ error: "upstream error" }), { status: 502 });
+  }
 }
 
 export async function POST(request: Request) {
-  const body = await request.json();
-  const { text, sector } = body as { text: string; sector?: string };
-  if (!text || typeof text !== "string") {
-    return NextResponse.json({ error: "text required" }, { status: 400 });
+  try {
+    const body = await request.json();
+    const { text, sector } = body as { text: string; sector?: string };
+    if (!text || typeof text !== "string") {
+      return NextResponse.json(sealResponse({ error: "text required" }), { status: 400 });
+    }
+    const entry = classifyText(text, sector);
+    return NextResponse.json(sealResponse(entry));
+  } catch {
+    return NextResponse.json(sealResponse({ error: "upstream error" }), { status: 502 });
   }
-  const entry = classifyText(text, sector);
-  return NextResponse.json(entry);
 }

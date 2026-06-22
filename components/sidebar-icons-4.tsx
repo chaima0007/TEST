@@ -4132,3 +4132,27 @@ export function IconMobileAdv({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconVideoAds({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="2" y="6" width="20" height="12" rx="2"/><polygon points="10,9 16,12 10,15"/>
+    </svg>
+  );
+}
+
+export function IconAppStoreAds({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M8 12l2.5 2.5L16 9"/>
+    </svg>
+  );
+}
+
+export function IconOttAds({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/>
+    </svg>
+  );
+}
