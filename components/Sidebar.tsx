@@ -14396,6 +14396,42 @@ function IconDigitalOutOfHomeAdvertising({ size = 20 }: { size?: number }) {
   );
 }
 
+function IconLiveStreamingAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="3" fill="currentColor" />
+      <path d="M6.3 6.3a8 8 0 0 0 0 11.4" />
+      <path d="M17.7 6.3a8 8 0 0 1 0 11.4" />
+      <path d="M9.2 9.2a4 4 0 0 0 0 5.6" />
+      <path d="M14.8 9.2a4 4 0 0 1 0 5.6" />
+    </svg>
+  );
+}
+
+function IconArAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 8V4h4" />
+      <path d="M22 8V4h-4" />
+      <path d="M2 16v4h4" />
+      <path d="M22 16v4h-4" />
+      <path d="M12 8l4 2-4 2-4-2z" />
+      <path d="M8 10v4l4 2 4-2v-4" />
+    </svg>
+  );
+}
+
+function IconVrAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="7" width="20" height="10" rx="4" />
+      <circle cx="9" cy="12" r="2" />
+      <circle cx="15" cy="12" r="2" />
+      <path d="M11 12h2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17249,6 +17285,24 @@ const navSections: NavSection[] = [
         label: "Digital Out of Home Advertising",
         href: "/dashboard/digital-out-of-home-advertising-child-labor-rights",
         icon: IconDigitalOutOfHomeAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Live Streaming Advertising",
+        href: "/dashboard/live-streaming-advertising-child-labor-rights",
+        icon: IconLiveStreamingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "AR Advertising",
+        href: "/dashboard/ar-advertising-child-labor-rights",
+        icon: IconArAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "VR Advertising",
+        href: "/dashboard/vr-advertising-child-labor-rights",
+        icon: IconVrAdvertising,
         category: "Publicité Visuelle",
       },
     ],
