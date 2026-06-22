@@ -3769,6 +3769,9 @@ export const navSections: NavSection[] = [
       { label: "Loyalty Program Advertising", href: "/dashboard/loyaltyprogram-advertising", icon: Icons.IconLoyaltyprogramAdvertising },
       { label: "Multi-Touch Attribution", href: "/dashboard/multitouch-advertising", icon: Icons.IconMultitouchAdvertising },
       { label: "Omnichannel Advertising", href: "/dashboard/omnichannel-advertising", icon: Icons.IconOmnichannelAdvertising },
+      { label: "Seasonal Advertising", href: "/dashboard/seasonaladv", icon: Icons.IconSeasonalAdv },
+      { label: "Event Marketing", href: "/dashboard/eventmarketing", icon: Icons.IconEventMarketing },
+      { label: "Mobile Advertising", href: "/dashboard/mobileadv", icon: Icons.IconMobileAdv },
     ],
   },
   {
