@@ -3965,6 +3965,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "ENVIRONMENTAL LAW & CLIMATE RISK",
+    items: [
+      { href: "/dashboard/environmentallaw", label: "Environmental Law", icon: Icons.IconEnvironmentalLaw },
+      { href: "/dashboard/climatelitig", label: "Climate Litigation", icon: Icons.IconClimateLitig },
+      { href: "/dashboard/carbontaxrisk", label: "Carbon Tax Risk", icon: Icons.IconCarbonTaxRisk },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
