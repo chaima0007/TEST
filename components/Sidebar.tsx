@@ -13599,6 +13599,43 @@ function IconSocialMediaInfluencerChildLaborRights({ size = 20, color = "current
   );
 }
 
+function IconStreetArtAdvertisingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={3} y={3} width={18} height={14} rx={1} />
+      <path d="M7 14 Q9 10 11 12 Q13 14 15 10 Q17 6 19 8" />
+      <circle cx={7} cy={7} r={1} />
+      <line x1={3} y1={17} x2={21} y2={17} />
+      <line x1={7} y1={17} x2={7} y2={21} />
+      <line x1={17} y1={17} x2={17} y2={21} />
+    </svg>
+  );
+}
+
+function IconOutdoorEventPromotionChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21 L12 3 L21 21" />
+      <line x1={6} y1={15} x2={18} y2={15} />
+      <line x1={12} y1={3} x2={12} y2={21} />
+      <path d="M3 21 Q12 17 21 21" />
+    </svg>
+  );
+}
+
+function IconPrintMediaProductionChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x={4} y={2} width={16} height={20} rx={2} />
+      <line x1={8} y1={7} x2={16} y2={7} />
+      <line x1={8} y1={11} x2={16} y2={11} />
+      <line x1={8} y1={15} x2={13} y2={15} />
+      <circle cx={17} cy={18} r={2} />
+      <line x1={19} y1={16} x2={22} y2={13} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16027,6 +16064,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Marketing Influenceurs",
         icon: IconSocialMediaInfluencerChildLaborRights,
         color: "#7c3aed",
+      },
+      {
+        href: "/dashboard/street-art-advertising-child-labor-rights",
+        label: "Droits Enfants Publicité Street Art",
+        icon: IconStreetArtAdvertisingChildLaborRights,
+        color: "#1e293b",
+      },
+      {
+        href: "/dashboard/outdoor-event-promotion-child-labor-rights",
+        label: "Droits Enfants Promotion Événementielle",
+        icon: IconOutdoorEventPromotionChildLaborRights,
+        color: "#065f46",
+      },
+      {
+        href: "/dashboard/print-media-production-child-labor-rights",
+        label: "Droits Enfants Médias Imprimés",
+        icon: IconPrintMediaProductionChildLaborRights,
+        color: "#1e40af",
       },
     ],
   },
