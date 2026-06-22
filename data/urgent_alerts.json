@@ -1,8 +1,58 @@
 {
   "version": "1.0",
   "description": "CaelumSwarm™ — Alertes Problèmes Urgents",
-  "total_alerts": 6,
+  "total_alerts": 9,
   "active_alerts": [
+    {
+      "id": "U003",
+      "urgency": "CRITIQUE",
+      "title": "Doublons icônes sidebar (2 doublons) — Build CI ECHOUE",
+      "detail": "Doublons: IconDataProtection, IconDigitalRights",
+      "auto_fix": false,
+      "fix_description": "python3 scripts/temporal_loop_detector.py",
+      "fix_cmd": [
+        "python3",
+        "scripts/temporal_loop_detector.py"
+      ],
+      "blocked_agents": "CI/CD + Deploy",
+      "detected_at": "2026-06-22T22:43:10.356818+00:00"
+    },
+    {
+      "id": "U004",
+      "urgency": "URGENT",
+      "title": "2 fichiers non-commités bloquent les autres agents",
+      "detail": "Fichiers: app/api/disabilityrights/, app/api/genderequality/",
+      "auto_fix": true,
+      "fix_description": "git add -A && git commit -m 'rescue: urgent uncommitted files'",
+      "fix_cmd": null,
+      "fix_steps": [
+        [
+          "git",
+          "config",
+          "user.email",
+          "noreply@anthropic.com"
+        ],
+        [
+          "git",
+          "config",
+          "user.name",
+          "Claude"
+        ],
+        [
+          "git",
+          "add",
+          "-A"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "rescue: urgent uncommitted files detected by UrgentManager"
+        ]
+      ],
+      "blocked_agents": "Sidebar agent + QA agents",
+      "detected_at": "2026-06-22T22:43:10.356818+00:00"
+    },
     {
       "id": "U008",
       "urgency": "IMPORTANT",
@@ -16,7 +66,7 @@
         "--scan"
       ],
       "blocked_agents": "QA agents",
-      "detected_at": "2026-06-22T22:39:20.911490+00:00"
+      "detected_at": "2026-06-22T22:43:10.356818+00:00"
     }
   ],
   "history": [
@@ -150,12 +200,77 @@
       ],
       "blocked_agents": "QA agents",
       "detected_at": "2026-06-22T22:39:20.911490+00:00"
+    },
+    {
+      "id": "U003",
+      "urgency": "CRITIQUE",
+      "title": "Doublons icônes sidebar (2 doublons) — Build CI ECHOUE",
+      "detail": "Doublons: IconDataProtection, IconDigitalRights",
+      "auto_fix": false,
+      "fix_description": "python3 scripts/temporal_loop_detector.py",
+      "fix_cmd": [
+        "python3",
+        "scripts/temporal_loop_detector.py"
+      ],
+      "blocked_agents": "CI/CD + Deploy",
+      "detected_at": "2026-06-22T22:43:10.356818+00:00"
+    },
+    {
+      "id": "U004",
+      "urgency": "URGENT",
+      "title": "2 fichiers non-commités bloquent les autres agents",
+      "detail": "Fichiers: app/api/disabilityrights/, app/api/genderequality/",
+      "auto_fix": true,
+      "fix_description": "git add -A && git commit -m 'rescue: urgent uncommitted files'",
+      "fix_cmd": null,
+      "fix_steps": [
+        [
+          "git",
+          "config",
+          "user.email",
+          "noreply@anthropic.com"
+        ],
+        [
+          "git",
+          "config",
+          "user.name",
+          "Claude"
+        ],
+        [
+          "git",
+          "add",
+          "-A"
+        ],
+        [
+          "git",
+          "commit",
+          "-m",
+          "rescue: urgent uncommitted files detected by UrgentManager"
+        ]
+      ],
+      "blocked_agents": "Sidebar agent + QA agents",
+      "detected_at": "2026-06-22T22:43:10.356818+00:00"
+    },
+    {
+      "id": "U008",
+      "urgency": "IMPORTANT",
+      "title": "11 erreurs non résolues dans errors.json",
+      "detail": "Types: ?",
+      "auto_fix": false,
+      "fix_description": "python3 scripts/problem_solver_agent.py --scan",
+      "fix_cmd": [
+        "python3",
+        "scripts/problem_solver_agent.py",
+        "--scan"
+      ],
+      "blocked_agents": "QA agents",
+      "detected_at": "2026-06-22T22:43:10.356818+00:00"
     }
   ],
-  "last_scan": "2026-06-22T22:39:20.943326+00:00",
+  "last_scan": "2026-06-22T22:43:10.390424+00:00",
   "summary": {
-    "CRITIQUE": 0,
-    "URGENT": 0,
+    "CRITIQUE": 1,
+    "URGENT": 1,
     "IMPORTANT": 1,
     "NORMAL": 0
   }
