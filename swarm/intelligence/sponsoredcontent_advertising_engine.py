@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Affiliate Marketing Advertising Compliance Engine CSDDD 2024/1760"""
+"""CaelumSwarm™ — Sponsored Content Advertising Compliance Engine CSDDD 2024/1760"""
 
 ENTITIES = [
-    ("Amazon Associates", 99, 97, 95, 93),
-    ("CJ Affiliate (Conversant)", 93, 90, 88, 86),
-    ("ShareASale / Awin", 85, 82, 80, 78),
-    ("Rakuten Advertising", 80, 77, 75, 73),
-    ("Impact Radius", 61, 58, 56, 54),
-    ("ClickBank Platform", 51, 48, 46, 44),
-    ("PartnerStack", 32, 29, 27, 25),
-    ("Refersion Network", 13, 11, 9, 7),
+    ("BuzzFeed Studios", 99, 97, 95, 93),
+    ("Vox Media Studios", 93, 90, 88, 86),
+    ("The Atlantic Re:think", 85, 82, 80, 78),
+    ("Forbes BrandVoice", 80, 77, 75, 73),
+    ("Condé Nast Brand Solutions", 61, 58, 56, 54),
+    ("Vice Media Studios", 51, 48, 46, 44),
+    ("Medium Partner Program", 32, 29, 27, 25),
+    ("Substack Sponsorships", 13, 11, 9, 7),
 ]
 
 def compute(entity):
@@ -20,7 +20,7 @@ def compute(entity):
     elif score >= 20: level = "modéré"
     else: level = "faible"
     idx = round(score / 100 * 10, 2)
-    return {"name": name, "composite_score": score, "risk_level": level, "estimated_affiliatemarketing_index": idx}
+    return {"name": name, "composite_score": score, "risk_level": level, "estimated_sponsoredcontent_index": idx}
 
 if __name__ == "__main__":
     results = [compute(e) for e in ENTITIES]
