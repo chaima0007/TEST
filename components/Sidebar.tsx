@@ -13944,6 +13944,38 @@ function IconBrandImageOptimizer({ className }: { className?: string }) {
   );
 }
 
+function IconRetailMediaAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 3h12l-1 7H3z" />
+      <circle cx="5.5" cy="13" r="1" />
+      <circle cx="10.5" cy="13" r="1" />
+      <line x1="1" y1="1" x2="3" y2="3" />
+    </svg>
+  );
+}
+
+function IconConnectedTvAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="3" width="12" height="8" rx="1" />
+      <line x1="5" y1="13" x2="11" y2="13" />
+      <line x1="8" y1="11" x2="8" y2="13" />
+      <path d="M10 7l-3 1.5L10 10z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function IconAudioAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M3 6h2l3-3v10l-3-3H3z" />
+      <path d="M10 5.5a3 3 0 010 5" />
+      <path d="M12 3.5a5.5 5.5 0 010 9" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16533,6 +16565,24 @@ const navSections: NavSection[] = [
         label: "Performance Marketing",
         href: "/dashboard/performance-marketing-child-labor-rights",
         icon: IconPerformanceMarketing,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Retail Media Advertising",
+        href: "/dashboard/retail-media-advertising-child-labor-rights",
+        icon: IconRetailMediaAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Connected TV Advertising",
+        href: "/dashboard/connected-tv-advertising-child-labor-rights",
+        icon: IconConnectedTvAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Audio Advertising",
+        href: "/dashboard/audio-advertising-child-labor-rights",
+        icon: IconAudioAdvertising,
         category: "Publicité Visuelle",
       },
     ],
