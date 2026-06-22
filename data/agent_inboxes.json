@@ -477,6 +477,78 @@
         "priority": "NORMAL",
         "db_path": "data/research_database.json"
       }
+    ],
+    "ProtocolGuardian": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "QuantumValidator": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "SecurityAuditor": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "GitSupervisor": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "QualityController": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "ComplianceOfficer": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "DatabaseGuardian": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "PerformanceMonitor": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
     ]
   },
   "total_notifications": 25,
