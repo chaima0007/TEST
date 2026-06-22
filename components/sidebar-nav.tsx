@@ -3868,6 +3868,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/dataprivacyads", label: "Data Privacy Ads", icon: Icons.IconDataPrivacyAds },
       { href: "/dashboard/gdprcompliance", label: "GDPR Compliance", icon: Icons.IconGdprCompliance },
       { href: "/dashboard/consentmanagement", label: "Consent Management", icon: Icons.IconConsentManagement },
+      { href: "/dashboard/adblocking", label: "Ad Blocking", icon: Icons.IconAdBlocking },
+      { href: "/dashboard/cookieless3p", label: "Cookieless 3P", icon: Icons.IconCookieless3p },
+      { href: "/dashboard/privacysandbox", label: "Privacy Sandbox", icon: Icons.IconPrivacySandbox },
     ],
   },
   {
