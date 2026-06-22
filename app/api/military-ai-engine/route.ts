@@ -127,27 +127,8 @@ function signal(c: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const aut = autonomyScore(e), esc = escalationScore(e), pro = proliferationScore(e), gov = governanceScore(e);
-      const comp = compositeScore(aut, esc, pro, gov);
-      const pat = militaryPattern(e), risk = riskLevel(comp);
-      return {
-        id: e.entity_id,
-        military_domain: e.military_domain,
-        region: e.region,
-        autonomy_score: aut,
-        escalation_score: esc,
-        proliferation_score: pro,
-        governance_score: gov,
-        composite_score: comp,
-        risk_level: risk,
-        military_ai_pattern: pat,
-        severity: severity(comp),
-        recommended_action: recommendedAction(comp),
-        signal: signal(comp),
-        autonomous_lethal_weapon_deployment: e.autonomous_lethal_weapon_deployment,
-        AI_nuclear_integration_risk: e.AI_nuclear_integration_risk,
-      };
+  console.warn("[military-ai-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const patDist: Record<string,number>  = {};
@@ -169,7 +150,7 @@ export async function GET() {
     const n = entities.length;
     const avgComposite = Math.round(totalComp / n * 10) / 10;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 337,
@@ -186,17 +167,17 @@ export async function GET() {
         action_distribution: actDist,
         avg_estimated_military_ai_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
       } as Record<string, unknown>,
-    } as Record<string, unknown>, "military-ai-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>, "military-ai-engine") as Parameters<typeof NextResponse.json>[0]));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/military-ai-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/military-ai-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "military-ai-engine") as Parameters<typeof NextResponse.json>[0]);
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "military-ai-engine") as Parameters<typeof NextResponse.json>[0]));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "upstream_unavailable" } as Record<string, unknown>, "military-ai-engine") as Parameters<typeof NextResponse.json>[0],
       { status: 502 }
-    );
+    ));
   }
 }

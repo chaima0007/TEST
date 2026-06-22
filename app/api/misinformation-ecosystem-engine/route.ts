@@ -281,34 +281,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const vel   = velocityScore(e);
-      const coord = coordinationScore(e);
-      const eros  = erosionScore(e);
-      const def   = defenseScore(e);
-      const comp  = compositeScore(vel, coord, eros, def);
-      const pat   = misinoPattern(e);
-      const risk  = riskLevel(comp);
-      const sev   = severity(comp);
-      const act   = recommendedAction(risk);
-      const sig   = signal(risk);
-      return {
-        id:                         e.entity_id,
-        info_domain:                       e.info_domain,
-        region:                            e.region,
-        velocity_score:                    vel,
-        coordination_score:                coord,
-        erosion_score:                     eros,
-        defense_score:                     def,
-        composite_score:                   comp,
-        risk_level:                        risk,
-        misinfo_pattern:                   pat,
-        severity:                          sev,
-        recommended_action:                act,
-        signal:                            sig,
-        viral_misinformation_velocity:     e.viral_misinformation_velocity,
-        source_trust_collapse_index:       e.source_trust_collapse_index,
-      };
+  console.warn("[misinformation-ecosystem-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -352,17 +326,17 @@ export async function GET() {
       avg_estimated_misinfo_index:  Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "misinformation-ecosystem-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "misinformation-ecosystem-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/misinformation-ecosystem-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/misinformation-ecosystem-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "misinformation-ecosystem-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "misinformation-ecosystem-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream misinformation ecosystem engine unavailable" }, "misinformation-ecosystem-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

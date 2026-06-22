@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[longevity-tech-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ── Mock entities ──────────────────────────────────────────────────────────────
@@ -355,18 +359,18 @@ export async function GET() {
       avg_estimated_longevity_disruption_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "longevity-tech-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "longevity-tech-engine")));
   }
 
   try {
-    const upstream = await fetch(`${SWARM_API_URL}/longevity-tech-engine`);
+    const upstream = await fetch(`${SWARM_API_URL}/longevity-tech-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "longevity-tech-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "longevity-tech-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream longevity-tech-engine unavailable" }, "longevity-tech-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

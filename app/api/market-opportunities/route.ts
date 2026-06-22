@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[market-opportunities] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -198,7 +203,7 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/market-opportunities`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
@@ -218,7 +223,7 @@ export async function GET() {
   const avgScore = opportunities.length ? opportunities.reduce((s, o) => s + o.opportunity_score, 0) / opportunities.length : 0;
   const topSector = Object.entries(sectorRevenue).sort(([, a], [, b]) => b - a)[0]?.[0] ?? null;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     opportunities,
     summary: {
       total: opportunities.length,
@@ -229,5 +234,5 @@ export async function GET() {
       top_sector: topSector,
     },
     last_updated: new Date().toISOString(),
-  });
+  }));
 }

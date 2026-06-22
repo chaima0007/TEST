@@ -225,33 +225,8 @@ function neuralSignal(e: NBCEntity, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const priv   = privacyScore(e);
-      const sec    = securityScore(e);
-      const rights = rightsScore(e);
-      const soc    = societalScore(e);
-      const comp   = composite(priv, sec, rights, soc);
-      const pattern = neuralPattern(e);
-      const risk   = riskLevel(comp);
-      const sev    = neuralSeverity(comp);
-      const act    = recommendedAction(risk, pattern);
-      return {
-        id:                   e.entity_id,
-        region:                      e.region,
-        technology_type:             e.technology_type,
-        neural_risk:                 risk,
-        neural_pattern:              pattern,
-        neural_severity:             sev,
-        recommended_action:          act,
-        privacy_score:               priv,
-        security_score:              sec,
-        rights_score:                rights,
-        societal_score:              soc,
-        neural_composite:            comp,
-        is_neural_crisis:            comp >= 60,
-        requires_neural_intervention: comp >= 40,
-        neural_signal:               neuralSignal(e, pattern, comp),
-      };
+  console.warn("[neuromorphic-bci-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -294,12 +269,12 @@ export async function GET() {
       avg_estimated_neural_risk_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "neuromorphic-bci-engine") as Parameters<typeof NextResponse.json>[0],
-    );
+    ));
   }
 
-  return NextResponse.json(
-    await (await fetch(`${process.env.SWARM_API_URL}/neuromorphic-bci-engine`)).json(),
-  );
+  return sealResponse(NextResponse.json(
+    await (await fetch(`${process.env.SWARM_API_URL}/neuromorphic-bci-engine`, { next: { revalidate: 30 } })).json(),
+  ));
 }

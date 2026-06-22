@@ -259,38 +259,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const theft       = theftScore(e);
-      const monopoly    = monopolyScore(e);
-      const access      = accessScore(e);
-      const geo         = geopoliticalScore(e);
-      const comp        = compositeScore(theft, monopoly, access, geo);
-      const risk        = riskLevel(comp);
-      const patterns    = patternsDetected(e);
-      const sev         = severity(risk);
-      const action      = actionRequired(risk);
-      const sig         = signal(risk);
-
-      return {
-        id:                    e.entity_id,
-        ip_domain:                    e.ip_domain,
-        region:                       e.region,
-        theft_score:                  theft,
-        monopoly_score:               monopoly,
-        access_score:                 access,
-        geopolitical_score:           geo,
-        composite_score:              comp,
-        risk_level:                   risk,
-        patterns_detected:            patterns,
-        severity:                     sev,
-        action_required:              action,
-        signal:                       sig,
-        estimated_ip_warfare_index:   Math.round(comp / 100 * 10 * 100) / 100,
-        metadata: {
-          state_IP_theft_intensity:       e.state_IP_theft_intensity,
-          geopolitical_IP_weaponization:  e.geopolitical_IP_weaponization,
-          pharmaceutical_evergreening:    e.pharmaceutical_evergreening,
-        },
+  console.warn("[ip-warfare-engine] SWARM_API_URL non défini — mode dégradé activé");
+},
       };
     });
 
@@ -336,14 +306,14 @@ export async function GET() {
       access_avg:                     Math.round(tAccess / n * 10) / 10,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "ip-warfare-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "ip-warfare-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/ip-warfare-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/ip-warfare-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "ip-warfare-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "ip-warfare-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "ip-warfare-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "ip-warfare-engine"), { status: 502 }));
   }
 }

@@ -86,18 +86,8 @@ function signal(s: CryptoSystem, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const systems = MOCK_SYSTEMS.map(s => {
-      const vuln = vulnerabilityScore(s), temp = temporalScore(s), res = resilienceScore(s), read = readinessScore(s);
-      const comp = composite(vuln, temp, res, read), pat = cryptoPattern(s), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        system_id: s.system_id, system_type: s.system_type, region: s.region,
-        crypto_risk: r, crypto_pattern: pat, crypto_severity: sev, recommended_action: act,
-        vulnerability_score: vuln, temporal_score: temp, resilience_score: res, readiness_score: read,
-        crypto_composite: comp,
-        is_quantum_vulnerable: s.quantum_vulnerability_score >= 0.60 || s.nist_pqc_compliance_score <= 0.30 || comp >= 40,
-        estimated_quantum_breach_index: Math.min(Math.round(comp/100*(1-s.nist_pqc_compliance_score+0.01)*10*100)/100, 10.0),
-        crypto_signal: signal(s, pat, comp),
-      };
+  console.warn("[post-quantum-cryptography-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tvuln=0, ttemp=0, tres=0, tread=0, tcomp=0, tqbi=0, compC=0, qvC=0;
@@ -113,7 +103,7 @@ export async function GET() {
       if (sys.is_quantum_vulnerable) qvC++;
     }
     const n = systems.length;
-    return NextResponse.json(sealResponse({ systems, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ systems, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_crypto_composite: Math.round(tcomp/n*10)/10,
       compromised_count: compC, quantum_vulnerable_count: qvC,
@@ -122,7 +112,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_readiness_score: Math.round(tread/n*10)/10,
       avg_estimated_quantum_breach_index: Math.round(tqbi/n*100)/100,
-    } as Record<string, unknown>}, "post-quantum-cryptography-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "post-quantum-cryptography-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/post-quantum-cryptography-engine`)).json(), "post-quantum-cryptography-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/post-quantum-cryptography-engine`, { next: { revalidate: 30 } })).json(), "post-quantum-cryptography-engine") as Parameters<typeof NextResponse.json>[0]));
 }

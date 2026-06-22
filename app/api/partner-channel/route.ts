@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[partner-channel] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -220,7 +225,7 @@ export async function GET(request: Request) {
       if (region) url.searchParams.set("region", region);
       if (type)   url.searchParams.set("type", type);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -249,7 +254,7 @@ export async function GET(request: Request) {
 
   const n = mockPartners.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     partners,
     summary: {
       total:                    n,
@@ -266,5 +271,5 @@ export async function GET(request: Request) {
       top_performer_count:      mockPartners.filter((p) => ["excellent", "healthy"].includes(p.channel_health)).length,
       needs_intervention_count: mockPartners.filter((p) => p.needs_intervention).length,
     },
-  });
+  }));
 }

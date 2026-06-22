@@ -177,7 +177,7 @@ function getMockData() {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Methane Crisis Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Methane Crisis Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/methane-crisis-engine`, {
@@ -185,8 +185,8 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Methane Crisis Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Methane Crisis Agent")));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Methane Crisis Agent"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Methane Crisis Agent"), { status: 502 }));
   }
 }

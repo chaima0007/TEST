@@ -189,35 +189,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const dom   = dominanceScore(e);
-      const sup   = supplyScore(e);
-      const geo   = geopoliticalScore(e);
-      const risk  = riskScore(e);
-      const comp  = compositeScore(dom, sup, geo, risk);
-      const rl    = riskLevel(comp);
-      const pat   = fusionPattern(e);
-      const sev   = severity(comp);
-      const act   = recommendedAction(rl);
-      const sig   = signal(rl);
-
-      return {
-        id:               e.entity_id,
-        fusion_program:          e.fusion_program,
-        region:                  e.region,
-        dominance_score:         dom,
-        supply_score:            sup,
-        geopolitical_score:      geo,
-        risk_score:              risk,
-        composite_score:         comp,
-        risk_level:              rl,
-        fusion_pattern:          pat,
-        severity:                sev,
-        recommended_action:      act,
-        signal:                  sig,
-        technological_lead:      e.technological_lead,
-        proliferation_risk:      e.proliferation_risk,
-      };
+  console.warn("[nuclear-fusion-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -258,14 +231,14 @@ export async function GET() {
       avg_estimated_fusion_dominance_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "nuclear-fusion-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "nuclear-fusion-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/nuclear-fusion-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/nuclear-fusion-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "nuclear-fusion-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "nuclear-fusion-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "nuclear-fusion-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "nuclear-fusion-engine"), { status: 502 }));
   }
 }

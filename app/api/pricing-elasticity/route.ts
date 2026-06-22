@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[pricing-elasticity] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -114,7 +119,7 @@ export async function GET(request: Request) {
       if (risk)     url.searchParams.set("risk", risk);
       if (region)   url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -145,7 +150,7 @@ export async function GET(request: Request) {
 
   const n = mockSegments.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     segments,
     summary: {
       total:                            n,
@@ -162,5 +167,5 @@ export async function GET(request: Request) {
       avg_competitive_pressure_score:   Math.round((total_comp / n) * 10) / 10,
       avg_optimal_price_adjustment_pct: Math.round((total_adj / n) * 10) / 10,
     },
-  });
+  }));
 }

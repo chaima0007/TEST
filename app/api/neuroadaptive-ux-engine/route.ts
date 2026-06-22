@@ -84,19 +84,8 @@ function signal(i: Interface, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const interfaces = MOCK_INTERFACES.map(i => {
-      const cog = cognitiveScore(i), eng = engagementScore(i), adp = adaptationScore(i), acc = accessibilityScore(i);
-      const comp = composite(cog, eng, adp, acc), pat = uxPattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        interface_id: i.interface_id, ux_domain: i.ux_domain, region: i.region,
-        ux_risk: r, ux_pattern: pat, ux_severity: sev, recommended_action: act,
-        cognitive_score: cog, engagement_score: eng, adaptation_score: adp, accessibility_score: acc,
-        ux_composite: comp,
-        has_load_signal: comp >= 40 || i.cognitive_load_score >= 0.60 || i.sensory_overload_risk >= 0.55 || i.decision_fatigue_risk >= 0.60,
-        requires_intervention: comp >= 25 || i.adaptive_personalization_score <= 0.35 || i.neuroadaptive_accuracy <= 0.35 || i.accessibility_compliance_score <= 0.55,
-        estimated_cognitive_friction_index: Math.min(Math.round(comp/100*(1-adp/100+0.01)*10*100)/100, 10.0),
-        ux_signal: signal(i, pat, comp),
-      };
+  console.warn("[neuroadaptive-ux-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tcog=0,teng=0,tadp=0,tacc=0,tcomp=0,tfri=0,loadC=0,intervC=0;
@@ -111,7 +100,7 @@ export async function GET() {
       if (iface.requires_intervention) intervC++;
     }
     const n = interfaces.length;
-    return NextResponse.json(sealResponse({ interfaces, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ interfaces, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_ux_composite: Math.round(tcomp/n*10)/10,
       load_signal_count: loadC, intervention_required_count: intervC,
@@ -120,7 +109,7 @@ export async function GET() {
       avg_adaptation_score: Math.round(tadp/n*10)/10,
       avg_accessibility_score: Math.round(tacc/n*10)/10,
       avg_estimated_cognitive_friction_index: Math.round(tfri/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/neuroadaptive-ux-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/neuroadaptive-ux-engine`, { next: { revalidate: 30 } })).json()));
 }

@@ -91,19 +91,8 @@ function signal(s: Segment, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const segments = MOCK_SEGMENTS.map(s => {
-      const rel = relevanceScore(s), fat = fatigueScore(s), priv = privacyScore(s), imp = impactScore(s);
-      const comp = composite(rel, fat, priv, imp), pat = personalizationPattern(s), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        segment_id: s.segment_id, channel_type: s.channel_type, region: s.region,
-        personalization_risk: r, personalization_pattern: pat, personalization_severity: sev, recommended_action: act,
-        relevance_score: rel, fatigue_score: fat, privacy_score: priv, impact_score: imp,
-        personalization_composite: comp,
-        has_targeting_gap: comp >= 35 || s.segment_granularity_score <= 0.30 || s.next_best_action_precision <= 0.30 || s.propensity_model_accuracy <= 0.30,
-        requires_consent_review: comp >= 25 || s.privacy_consent_compliance <= 0.40 || s.behavioral_signal_utilization >= 0.80 || s.attribution_clarity_score <= 0.30,
-        estimated_personalization_gap_index: Math.min(Math.round(comp / 100 * (1 - s.attribution_clarity_score + 0.01) * 10 * 100) / 100, 10.0),
-        personalization_signal: signal(s, pat, comp),
-      };
+  console.warn("[hyperpersonalization-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -119,7 +108,7 @@ export async function GET() {
       if (seg.requires_consent_review) consentC++;
     }
     const n = segments.length;
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       segments,
       summary: {
         total: n,
@@ -136,10 +125,10 @@ export async function GET() {
         avg_impact_score: Math.round(timp / n * 10) / 10,
         avg_estimated_personalization_gap_index: Math.round(tgap / n * 100) / 100,
       },
-    }, "hyperpersonalization-engine"));
+    }, "hyperpersonalization-engine")));
   }
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/hyperpersonalization-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/hyperpersonalization-engine`, { next: { revalidate: 30 } })).json(),
     "hyperpersonalization-engine"
-  ));
+  )));
 }

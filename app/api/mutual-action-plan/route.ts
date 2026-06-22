@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[mutual-action-plan] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -98,7 +103,7 @@ export async function GET(request: Request) {
       if (pattern) url.searchParams.set("pattern", pattern);
       if (region)  url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -129,7 +134,7 @@ export async function GET(request: Request) {
 
   const n = mockMAPs.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     maps,
     summary: {
       total: n,
@@ -146,5 +151,5 @@ export async function GET(request: Request) {
       avg_milestone_progress_score: Math.round((total_mile / n) * 10) / 10,
       avg_map_quality_score:        Math.round((total_qual / n) * 10) / 10,
     },
-  });
+  }));
 }

@@ -182,34 +182,8 @@ function omegaSignal(e: RawEntity, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const strat = strategicScore(e);
-      const conv  = convergenceScore(e);
-      const resil = resilienceScore(e);
-      const sov   = sovereigntyScore(e);
-      const comp  = omegaComposite(strat, conv, resil, sov);
-      const risk  = omegaRisk(comp);
-      const pat   = omegaPattern(e);
-      const sev   = omegaSeverity(comp);
-      const act   = recommendedAction(risk, pat);
-      const sig   = omegaSignal(e, risk, comp);
-      return {
-        id:                  e.entity_id,
-        region:                     e.region,
-        intelligence_domain:        e.intelligence_domain,
-        omega_risk:                 risk,
-        omega_pattern:              pat,
-        omega_severity:             sev,
-        recommended_action:         act,
-        strategic_score:            strat,
-        convergence_score:          conv,
-        resilience_score:           resil,
-        sovereignty_score:          sov,
-        omega_composite:            comp,
-        is_in_omega_crisis:         comp >= 60,
-        requires_omega_intervention:comp >= 40,
-        omega_signal:               sig,
-      };
+  console.warn("[omega-synthesis-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {};
@@ -250,17 +224,17 @@ export async function GET() {
       avg_estimated_omega_index:    Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "omega-synthesis-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "omega-synthesis-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/omega-synthesis-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/omega-synthesis-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "omega-synthesis-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "omega-synthesis-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "upstream_unavailable", message: "Le moteur OMEGA SYNTHESIS est temporairement inaccessible." }, "omega-synthesis-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

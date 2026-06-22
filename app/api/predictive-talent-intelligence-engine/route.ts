@@ -171,34 +171,8 @@ function talentSignal(t: Talent, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const talents = MOCK_TALENTS.map(t => {
-      const obs = obsolescenceScore(t);
-      const flt = flightScore(t);
-      const val = valueScore(t);
-      const suc = successionScore(t);
-      const comp = composite(obs, flt, val, suc);
-      const pattern = talentPattern(t);
-      const risk = talentRisk(comp);
-      const severity = talentSeverity(comp);
-      const action = recommendedAction(risk, pattern);
-      return {
-        talent_id: t.talent_id,
-        talent_segment: t.talent_segment,
-        region: t.region,
-        talent_risk: risk,
-        talent_pattern: pattern,
-        talent_severity: severity,
-        recommended_action: action,
-        obsolescence_score: Math.round(obs * 100 * 100) / 100,
-        flight_score: Math.round(flt * 100 * 100) / 100,
-        value_score: Math.round(val * 100 * 100) / 100,
-        succession_score: Math.round(suc * 100 * 100) / 100,
-        talent_composite: comp,
-        has_obsolescence_signal: comp >= 40 || t.skill_half_life_risk >= 0.60 || t.skills_future_alignment <= 0.30,
-        requires_urgent_intervention: comp >= 25 || t.flight_risk_index >= 0.65 || t.succession_pipeline_readiness <= 0.25,
-        estimated_talent_risk_index: Math.min(Math.round(comp / 100 * (1 - t.human_capital_value_score + 0.01) * 10 * 100) / 100, 10.0),
-        talent_signal: talentSignal(t, pattern, comp),
-      };
+  console.warn("[predictive-talent-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {};
@@ -239,13 +213,13 @@ export async function GET() {
       avg_estimated_talent_risk_index: Math.round(tRiskIdx / n * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ talents, summary }, "predictive-talent-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ talents, summary }, "predictive-talent-intelligence-engine")));
   }
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse(
-      await (await fetch(`${process.env.SWARM_API_URL}/predictive-talent-intelligence-engine`)).json(),
+      await (await fetch(`${process.env.SWARM_API_URL}/predictive-talent-intelligence-engine`, { next: { revalidate: 30 } })).json(),
       "predictive-talent-intelligence-engine",
     ),
-  );
+  ));
 }

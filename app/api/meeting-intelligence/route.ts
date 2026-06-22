@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[meeting-intelligence] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockMeetings = [
@@ -269,7 +273,7 @@ export async function GET(request: Request) {
       if (urgency)  url.searchParams.set("urgency", urgency);
       if (strength) url.searchParams.set("strength", strength);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -301,7 +305,7 @@ export async function GET(request: Request) {
 
   const n = mockMeetings.length;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     meetings,
     summary: {
       total: n,
@@ -315,5 +319,5 @@ export async function GET(request: Request) {
       advancement_rate:     Math.round((advanced_count / n) * 1000) / 10,
       immediate_follow_up_count: mockMeetings.filter((m) => m.follow_up_urgency === "immediate").length,
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

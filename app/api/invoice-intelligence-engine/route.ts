@@ -77,19 +77,8 @@ function signal(i: Inv, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const invoices = MOCK_INVOICES.map(i => {
-      const ov = overdueScore(i), di = disputeScore(i), ex = exposureScore(i), bh = behaviorScore(i);
-      const comp = composite(ov, di, ex, bh), pat = pattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        invoice_id: i.invoice_id, client_id: i.client_id, region: i.region,
-        invoice_risk: r, invoice_pattern: pat, invoice_severity: sev, recommended_action: act,
-        overdue_score: ov, dispute_score: di, exposure_score: ex, behavior_score: bh,
-        invoice_composite: comp,
-        has_collection_signal: comp >= 40 || i.days_overdue >= 15 || i.late_payment_frequency_pct >= 0.35,
-        requires_escalation: comp >= 25 || i.days_overdue >= 30 || i.promise_to_pay_broken_count >= 1,
-        estimated_bad_debt_usd: Math.round(i.total_outstanding_usd * (comp/100) * 100) / 100,
-        invoice_signal: signal(i, pat, comp),
-      };
+  console.warn("[invoice-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tov=0,tdi=0,tex=0,tbh=0,tcomp=0,tbd=0,gc=0,ec=0;
@@ -101,7 +90,7 @@ export async function GET() {
       if (inv.has_collection_signal) gc++; if (inv.requires_escalation) ec++;
     }
     const n = invoices.length;
-    return NextResponse.json(sealResponse({ invoices, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ invoices, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_invoice_composite: Math.round(tcomp/n*10)/10,
       collection_signal_count: gc, escalation_count: ec,
@@ -110,7 +99,7 @@ export async function GET() {
       avg_exposure_score: Math.round(tex/n*10)/10,
       avg_behavior_score: Math.round(tbh/n*10)/10,
       total_estimated_bad_debt_usd: Math.round(tbd*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/invoice-intelligence-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/invoice-intelligence-engine`, { next: { revalidate: 30 } })).json()));
 }

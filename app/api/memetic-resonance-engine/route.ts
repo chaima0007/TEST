@@ -92,21 +92,8 @@ function viralDisruptionIndex(m: Meme, comp: number): number {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const memes = MOCK_MEMES.map(m => {
-      const vir = viralityScore(m), res = resonanceScore(m), per = persistenceScore(m), rch = reachScore(m);
-      const comp = composite(vir, res, per, rch);
-      const risk = memeticRisk(comp), sev = memeticSeverity(comp);
-      const pat = memeticPattern(m), act = memeticAction(risk, pat);
-      return {
-        meme_id: m.meme_id, meme_type: m.meme_type, region: m.region,
-        memetic_risk: risk, memetic_pattern: pat, memetic_severity: sev, recommended_action: act,
-        virality_score: vir, resonance_score: res, persistence_score: per, reach_score: rch,
-        memetic_composite: comp,
-        is_epidemic_threat: comp >= 60,
-        requires_active_intervention: comp >= 40,
-        estimated_viral_disruption_index: viralDisruptionIndex(m, comp),
-        memetic_signal: memeticSignal(m, pat, comp),
-      };
+  console.warn("[memetic-resonance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -126,7 +113,7 @@ export async function GET() {
       if (mm.requires_active_intervention) interC++;
     }
     const n = memes.length;
-    return NextResponse.json(sealResponse({ memes, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ memes, summary: {
       total: n,
       risk_counts: rc,
       pattern_counts: pc,
@@ -140,7 +127,7 @@ export async function GET() {
       avg_persistence_score: Math.round(tper / n * 10) / 10,
       avg_reach_score: Math.round(trch / n * 10) / 10,
       avg_estimated_viral_disruption_index: Math.round(tdis / n * 100) / 100,
-    } as Record<string, unknown>}, "memetic-resonance-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "memetic-resonance-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/memetic-resonance-engine`)).json(), "memetic-resonance-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/memetic-resonance-engine`, { next: { revalidate: 30 } })).json(), "memetic-resonance-engine") as Parameters<typeof NextResponse.json>[0]));
 }

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[knowledge-gap-skills-analysis-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockEmployees = [
@@ -91,7 +95,7 @@ export async function GET(request: Request) {
       if (pattern)  url.searchParams.set("pattern",  pattern);
       if (severity) url.searchParams.set("severity", severity);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -121,7 +125,7 @@ export async function GET(request: Request) {
 
   const n = mockEmployees.length;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     employees,
     summary: {
       total:                            n,
@@ -138,5 +142,5 @@ export async function GET(request: Request) {
       avg_digital_score:                Math.round((total_digital / n) * 100) / 100,
       avg_estimated_performance_impact: Math.round((total_impact / n) * 100) / 100,
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

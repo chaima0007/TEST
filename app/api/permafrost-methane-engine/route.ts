@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const thaw  = thawScore(e);
-      const meth  = methaneScore(e);
-      const feed  = feedbackScore(e);
-      const gov   = governanceScore(e);
-      const comp  = compositeScore(thaw, meth, feed, gov);
-      const risk  = riskLevel(comp);
-      const pat   = permafrostPattern(e);
-      const sev   = severity(comp);
-      const action = recommendedAction(risk);
-      const sig   = signal(risk);
-      return {
-        id:                   e.entity_id,
-        ecosystem_type:              e.ecosystem_type,
-        region:                      e.region,
-        thaw_score:                  thaw,
-        methane_score:               meth,
-        feedback_score:              feed,
-        governance_score:            gov,
-        composite_score:             comp,
-        risk_level:                  risk,
-        permafrost_pattern:          pat,
-        severity:                    sev,
-        recommended_action:          action,
-        signal:                      sig,
-        permafrost_degradation_rate: e.permafrost_degradation_rate,
-        methane_flux_intensity:      e.methane_flux_intensity,
-      };
+  console.warn("[permafrost-methane-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_permafrost_risk_index:  Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_thaw: avgThaw }, "permafrost-methane-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/permafrost-methane-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/permafrost-methane-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "permafrost-methane-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "permafrost-methane-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "permafrost-methane-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

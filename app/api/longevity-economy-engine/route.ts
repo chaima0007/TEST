@@ -190,33 +190,8 @@ function longevitySignal(e: Entity, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map((e) => {
-      const aging = agingScore(e);
-      const financial = financialScore(e);
-      const health = healthScore(e);
-      const inclusion = inclusionScore(e);
-      const composite = longevityComposite(aging, financial, health, inclusion);
-      const pattern = longevityPattern(e);
-      const risk = longevityRisk(composite);
-      const severity = longevitySeverity(composite);
-      const action = recommendedAction(risk, pattern);
-      return {
-        id: e.entity_id,
-        region: e.region,
-        longevity_segment: e.longevity_segment,
-        longevity_risk: risk,
-        longevity_pattern: pattern,
-        longevity_severity: severity,
-        recommended_action: action,
-        aging_score: aging,
-        financial_score: financial,
-        health_score: health,
-        inclusion_score: inclusion,
-        longevity_composite: composite,
-        is_in_longevity_crisis: composite >= 60,
-        requires_longevity_intervention: composite >= 40,
-        longevity_signal: longevitySignal(e, risk, composite),
-      };
+  console.warn("[longevity-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -258,18 +233,18 @@ export async function GET() {
       avg_estimated_longevity_risk_index: Math.round((avgComposite / 100) * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "longevity-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "longevity-economy-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/longevity-economy-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/longevity-economy-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "longevity-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "longevity-economy-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream longevity-economy-engine unavailable" }, "longevity-economy-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

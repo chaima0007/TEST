@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[pipeline-coverage] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -98,7 +103,7 @@ export async function GET(request: Request) {
       if (gap)    url.searchParams.set("gap", gap);
       if (region) url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -127,7 +132,7 @@ export async function GET(request: Request) {
 
   const n = mockTeams.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     teams,
     summary: {
       total:                    n,
@@ -146,5 +151,5 @@ export async function GET(request: Request) {
         t.coverage_status === "over_covered" || t.coverage_status === "adequate"
       ).length,
     },
-  });
+  }));
 }

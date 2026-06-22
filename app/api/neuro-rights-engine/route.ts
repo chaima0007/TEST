@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const priv = mentalPrivacyScore(e);
-      const lib  = cognitiveLibertyScore(e);
-      const con  = consentScore(e);
-      const equ  = equityScore(e);
-      const comp = compositeScore(priv, lib, con, equ);
-      const risk = riskLevel(comp);
-      const pat  = neuroPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                  e.entity_id,
-        neurotechnology_type:       e.neurotechnology_type,
-        region:                     e.region,
-        mental_privacy_score:       priv,
-        cognitive_liberty_score:    lib,
-        consent_score:              con,
-        equity_score:               equ,
-        composite_score:            comp,
-        risk_level:                 risk,
-        neuro_pattern:              pat,
-        severity:                   sev,
-        recommended_action:         action,
-        signal:                     sig,
-        neural_data_collection:     e.neural_data_collection,
-        cognitive_manipulation_risk: e.cognitive_manipulation_risk,
-      };
+  console.warn("[neuro-rights-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_neuro_rights_index:   Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_mental_privacy: avgMentalPrivacy }, "neuro-rights-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/neuro-rights-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/neuro-rights-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "neuro-rights-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "neuro-rights-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream indisponible", code: 502 }, "neuro-rights-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

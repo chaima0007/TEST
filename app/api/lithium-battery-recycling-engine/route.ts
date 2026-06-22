@@ -96,28 +96,8 @@ function batterySignal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const rec = recoveryScore(e), tox = toxicityScore(e), sup = supplyScore(e), gov = governanceScore(e);
-      const comp = compositeScore(rec, tox, sup, gov);
-      const risk = riskLevel(comp);
-      const pattern = batteryPattern(e);
-      return {
-        id: e.entity_id,
-        battery_type: e.battery_type,
-        region: e.region,
-        recovery_score: rec,
-        toxicity_score: tox,
-        supply_score: sup,
-        governance_score: gov,
-        composite_score: comp,
-        risk_level: risk,
-        battery_pattern: pattern,
-        severity: severity(comp),
-        recommended_action: recommendedAction(risk),
-        signal: batterySignal(risk),
-        recycling_facility_capacity: e.recycling_facility_capacity,
-        circular_economy_score: e.circular_economy_score,
-      };
+  console.warn("[lithium-battery-recycling-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {}, pc: Record<string,number> = {}, sc: Record<string,number> = {}, ac: Record<string,number> = {};
@@ -144,7 +124,7 @@ export async function GET() {
     const n = entities.length;
     const avg_composite = Math.round(tcomp / n * 10) / 10;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 425,
@@ -161,10 +141,10 @@ export async function GET() {
         action_distribution: ac,
         avg_estimated_battery_circular_index: Math.round(avg_composite / 100 * 10 * 100) / 100,
       },
-    } as Record<string,unknown>));
+    } as Record<string,unknown>)));
   }
 
-  const upstream = await fetch(`${process.env.SWARM_API_URL}/api/lithium-battery-recycling-engine`);
-  if (!upstream.ok) return NextResponse.json({ error: "Upstream error" }, { status: 502 });
-  return NextResponse.json(await upstream.json());
+  const upstream = await fetch(`${process.env.SWARM_API_URL}/api/lithium-battery-recycling-engine`, { next: { revalidate: 30 } });
+  if (!upstream.ok) return sealResponse(NextResponse.json({ error: "Upstream error" }, { status: 502 }));
+  return sealResponse(NextResponse.json(await upstream.json()));
 }

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[lead-scoring-intelligence] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockLeads = [
@@ -249,7 +253,7 @@ export async function GET(request: Request) {
       if (action) url.searchParams.set("action", action);
       if (intent) url.searchParams.set("intent", intent);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -274,7 +278,7 @@ export async function GET(request: Request) {
 
   const n = mockLeads.length;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     leads,
     summary: {
       total: n,
@@ -288,5 +292,5 @@ export async function GET(request: Request) {
       disqualified_count: mockLeads.filter((l) => l.action === "disqualify").length,
       hot_rate_pct: Math.round((mockLeads.filter((l) => l.tier === "hot").length / n) * 1000) / 10,
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

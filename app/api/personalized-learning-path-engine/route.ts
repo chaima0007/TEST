@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[personalized-learning-path-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockLearners = [
@@ -91,7 +95,7 @@ export async function GET(request: Request) {
       if (pattern)  url.searchParams.set("pattern",  pattern);
       if (severity) url.searchParams.set("severity", severity);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -121,7 +125,7 @@ export async function GET(request: Request) {
 
   const n = mockLearners.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     learners,
     summary: {
       total:                                    n,
@@ -138,5 +142,5 @@ export async function GET(request: Request) {
       avg_alignment_score:                      Math.round((total_aln / n) * 100) / 100,
       avg_estimated_learning_velocity_index:    Math.round((total_vel / n) * 100) / 100,
     },
-  });
+  }));
 }

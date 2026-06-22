@@ -7,15 +7,15 @@ if (!process.env.SWARM_API_URL) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData() as Record<string, unknown>, "Hypersonic Weapons Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData() as Record<string, unknown>, "Hypersonic Weapons Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/hypersonic-weapons-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json() as Record<string, unknown>;
-    return NextResponse.json(sealResponse(data, "Hypersonic Weapons Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Hypersonic Weapons Agent")));
   } catch {
-    return NextResponse.json(sealResponse(getMockData() as Record<string, unknown>, "Hypersonic Weapons Agent"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(getMockData() as Record<string, unknown>, "Hypersonic Weapons Agent"), { status: 502 }));
   }
 }
 

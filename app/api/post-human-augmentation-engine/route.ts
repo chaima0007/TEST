@@ -186,35 +186,8 @@ function augmentationSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const adoption   = adoptionScore(e);
-      const equity     = equityScore(e);
-      const integrity  = integrityScore(e);
-      const transition = transitionScore(e);
-      const comp       = compositeScore(adoption, equity, integrity, transition);
-      const risk       = augmentationRisk(comp);
-      const pattern    = augmentationPattern(e);
-      const severity   = augmentationSeverity(comp);
-      const action     = recommendedAction(risk, pattern);
-      const sig        = augmentationSignal(e, risk, comp);
-
-      return {
-        id:                        e.entity_id,
-        region:                           e.region,
-        augmentation_domain:              e.augmentation_domain,
-        augmentation_risk:                risk,
-        augmentation_pattern:             pattern,
-        augmentation_severity:            severity,
-        recommended_action:               action,
-        adoption_score:                   adoption,
-        equity_score:                     equity,
-        integrity_score:                  integrity,
-        transition_score:                 transition,
-        augmentation_composite:           comp,
-        is_in_augmentation_crisis:        comp >= 60,
-        requires_augmentation_intervention: comp >= 40,
-        augmentation_signal:              sig,
-      };
+  console.warn("[post-human-augmentation-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -256,21 +229,21 @@ export async function GET() {
       avg_estimated_augmentation_disruption_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "post-human-augmentation-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/post-human-augmentation-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/post-human-augmentation-engine`, { next: { revalidate: 30 } });
     const json = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(json, "post-human-augmentation-engine")
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "upstream_unavailable" }, "post-human-augmentation-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -191,34 +191,8 @@ function pandemicSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const trans = transmissionScore(e);
-      const sev   = severityScore(e);
-      const prep  = preparednessScore(e);
-      const syst  = systemicScore(e);
-      const comp  = pandemicComposite(trans, sev, prep, syst);
-      const risk  = pandemicRisk(comp);
-      const pat   = pandemicPattern(e);
-      const severity = pandemicSeverity(comp);
-      const action   = recommendedAction(risk, pat);
-      const signal   = pandemicSignal(e, risk, comp);
-      return {
-        id:                       e.entity_id,
-        region:                          e.region,
-        pathogen_category:               e.pathogen_category,
-        pandemic_risk:                   risk,
-        pandemic_pattern:                pat,
-        pandemic_severity:               severity,
-        recommended_action:              action,
-        transmission_score:              trans,
-        severity_score:                  sev,
-        preparedness_score:              prep,
-        systemic_score:                  syst,
-        pandemic_composite:              comp,
-        is_pandemic_crisis:              comp >= 60,
-        requires_pandemic_intervention:  comp >= 40,
-        pandemic_signal:                 signal,
-      };
+  console.warn("[pandemic-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {};
@@ -282,17 +256,17 @@ export async function GET() {
       avg_pandemic_composite:              Math.round(avgComp * 10) / 10,
     };
 
-    return NextResponse.json(sealResponse(summary, "pandemic-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(summary, "pandemic-intelligence-engine")));
   }
 
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/pandemic-intelligence-engine`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/pandemic-intelligence-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    return NextResponse.json(sealResponse(await res.json(), "pandemic-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await res.json(), "pandemic-intelligence-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream pandemic intelligence unavailable" }, "pandemic-intelligence-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

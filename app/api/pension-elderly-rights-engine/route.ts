@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[pension-elderly-rights-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 if (!SWARM_API_URL) console.warn("[pension-elderly-rights-engine] SWARM_API_URL not set");
 
@@ -149,14 +153,14 @@ const MOCK = {
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json(await sealResponse(MOCK));
+    return sealResponse(NextResponse.json(await sealResponse(MOCK)));
   }
   try {
     const upstream = await fetch(`${SWARM_API_URL}/pension-elderly-rights-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`upstream ${upstream.status}`);
     const data = await upstream.json();
-    return NextResponse.json(await sealResponse(data.payload ?? data));
+    return sealResponse(NextResponse.json(await sealResponse(data.payload ?? data)));
   } catch {
-    return NextResponse.json(await sealResponse({ error: "upstream_unavailable" }), { status: 502 });
+    return sealResponse(NextResponse.json(await sealResponse({ error: "upstream_unavailable" }), { status: 502 }));
   }
 }

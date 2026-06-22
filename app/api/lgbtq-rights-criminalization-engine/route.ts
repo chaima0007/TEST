@@ -46,14 +46,14 @@ const MOCK = {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(MOCK));
+    return sealResponse(NextResponse.json(sealResponse(MOCK)));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/lgbtq-rights-criminalization-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data));
+    return sealResponse(NextResponse.json(sealResponse(data)));
   } catch {
-    return NextResponse.json(sealResponse(MOCK), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(MOCK), { status: 502 }));
   }
 }

@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[infrastructure-resilience-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ── Mock entities ──────────────────────────────────────────────────────────────
@@ -358,21 +362,21 @@ export async function GET() {
       avg_estimated_infra_risk_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "infrastructure-resilience-engine") as Record<string, unknown>
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${SWARM_API_URL}/infrastructure-resilience-engine`);
+    const upstream = await fetch(`${SWARM_API_URL}/infrastructure-resilience-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(data, "infrastructure-resilience-engine") as Record<string, unknown>
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream infrastructure resilience engine unavailable" }, "infrastructure-resilience-engine") as Record<string, unknown>,
       { status: 502 }
-    );
+    ));
   }
 }

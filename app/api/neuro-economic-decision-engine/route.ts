@@ -138,33 +138,8 @@ function decisionSignal(e: Entity, biasScoreVal: number, comp: number, risk: str
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const cog  = cognitiveScore(e);
-      const bias = biasScore(e);
-      const fat  = fatigueScore(e);
-      const coh  = coherenceScore(e);
-      const comp = decisionComposite(cog, bias, fat, coh);
-      const pat  = decisionPattern(e);
-      const risk = decisionRisk(comp);
-      const sev  = decisionSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                          e.entity_id,
-        region:                             e.region,
-        decision_domain:                    e.decision_domain,
-        decision_risk:                      risk,
-        decision_pattern:                   pat,
-        decision_severity:                  sev,
-        recommended_action:                 act,
-        cognitive_score:                    cog,
-        bias_score:                         bias,
-        fatigue_score:                      fat,
-        coherence_score:                    coh,
-        decision_composite:                 comp,
-        is_in_decision_crisis:              comp >= 60,
-        requires_architecture_intervention: comp >= 40,
-        decision_signal:                    decisionSignal(e, bias, comp, risk),
-      };
+  console.warn("[neuro-economic-decision-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -199,10 +174,10 @@ export async function GET() {
       avg_coherence_score:                 Math.round(tCoh  / n * 10) / 10,
       avg_estimated_decision_risk_index:   Math.round(avgComp / 100 * 10 * 100) / 100,
     };
-    return NextResponse.json(sealResponse({ entities, summary }, "neuro-economic-decision-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "neuro-economic-decision-engine")));
   }
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/neuro-economic-decision-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/neuro-economic-decision-engine`, { next: { revalidate: 30 } })).json(),
     "neuro-economic-decision-engine"
-  ));
+  )));
 }

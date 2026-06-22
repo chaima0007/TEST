@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[leads] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -162,7 +167,7 @@ export async function GET(request: Request) {
       const res = await fetch(`${SWARM_API_URL}/leads/weights`, { cache: "no-store" });
       if (res.ok) {
         const weightData = await res.json();
-        return NextResponse.json({ leads: SCORED_LEADS, summary: buildSummary(), ...weightData });
+        return sealResponse(NextResponse.json({ leads: SCORED_LEADS, summary: buildSummary(), ...weightData }));
       }
     } catch { /* fall through */ }
   }
@@ -171,15 +176,15 @@ export async function GET(request: Request) {
   if (grade) leads = leads.filter((l) => l.grade === grade.toUpperCase());
   if (limit) leads = leads.slice(0, parseInt(limit));
 
-  return NextResponse.json({ leads, summary: buildSummary() });
+  return sealResponse(NextResponse.json({ leads, summary: buildSummary() }));
 }
 
 export async function POST(request: Request) {
   const body = await request.json();
   const { company_id, pagespeed_score, load_time_ms, icp_fit, sector,
     company_size = "PME", open_rate = 0.0, reply_signal = 0.0 } = body;
-  if (!company_id) return NextResponse.json({ error: "company_id required" }, { status: 400 });
+  if (!company_id) return sealResponse(NextResponse.json({ error: "company_id required" }, { status: 400 }));
   const result = scoreLead(company_id, pagespeed_score ?? 50, load_time_ms ?? 3000,
     icp_fit ?? 0.5, sector ?? "artisan", company_size, open_rate, reply_signal);
-  return NextResponse.json(result);
+  return sealResponse(NextResponse.json(result));
 }

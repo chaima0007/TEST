@@ -171,17 +171,17 @@ function getMockData() {
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData() as Record<string, unknown>, "Media Integrity Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData() as Record<string, unknown>, "Media Integrity Agent")));
   }
   try {
     const res = await fetch(`${SWARM_API_URL}/media-integrity-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data as Record<string, unknown>, "Media Integrity Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data as Record<string, unknown>, "Media Integrity Agent")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData() as Record<string, unknown>, "Media Integrity Agent"),
       { status: 502 }
-    );
+    ));
   }
 }

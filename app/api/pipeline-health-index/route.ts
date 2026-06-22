@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[pipeline-health-index] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -234,7 +239,7 @@ export async function GET(request: Request) {
       if (action) url.searchParams.set("action", action);
       if (region) url.searchParams.set("region", region);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -262,7 +267,7 @@ export async function GET(request: Request) {
 
   const n = mockPipelines.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     pipelines,
     summary: {
       total: n,
@@ -277,5 +282,5 @@ export async function GET(request: Request) {
       critical_count:     mockPipelines.filter((p) => p.health_grade === "critical").length,
       severe_risk_count:  mockPipelines.filter((p) => p.pipeline_risk === "severe").length,
     },
-  });
+  }));
 }

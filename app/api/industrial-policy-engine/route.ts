@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  // SWARM_API_URL guard — will use mock data below
+  console.warn("[industrial-policy-engine] SWARM_API_URL non défini — mode dégradé activé");
 }
 
 const MOCK_ENTITIES = [
@@ -349,17 +349,17 @@ export async function GET() {
       avg_estimated_reshoring_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "industrial-policy-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "industrial-policy-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/industrial-policy-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/industrial-policy-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "industrial-policy-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "industrial-policy-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream industrial policy engine unavailable" }, "industrial-policy-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

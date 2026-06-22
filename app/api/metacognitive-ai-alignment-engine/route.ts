@@ -178,33 +178,8 @@ function alignmentSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const beh  = behavioralScore(e);
-      const cap  = capabilityScore(e);
-      const ove  = oversightScore(e);
-      const intg = integrityScore(e);
-      const comp = composite(beh, cap, ove, intg);
-      const risk = alignmentRisk(comp);
-      const pat  = alignmentPattern(e);
-      const sev  = alignmentSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                       e.entity_id,
-        region:                          e.region,
-        model_category:                  e.model_category,
-        alignment_risk:                  risk,
-        alignment_pattern:               pat,
-        alignment_severity:              sev,
-        recommended_action:              act,
-        behavioral_score:                beh,
-        capability_score:                cap,
-        oversight_score:                 ove,
-        integrity_score:                 intg,
-        alignment_composite:             comp,
-        is_in_alignment_crisis:          comp >= 60,
-        requires_alignment_intervention: comp >= 40,
-        alignment_signal:                alignmentSignal(e, risk, comp),
-      };
+  console.warn("[metacognitive-ai-alignment-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {}, pc: Record<string,number> = {},
@@ -244,21 +219,21 @@ export async function GET() {
       avg_estimated_misalignment_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "metacognitive-ai-alignment-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/metacognitive-ai-alignment-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/metacognitive-ai-alignment-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(data, "metacognitive-ai-alignment-engine")
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream swarm unavailable" }, "metacognitive-ai-alignment-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

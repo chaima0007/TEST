@@ -132,33 +132,8 @@ function fragilitySignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const topo = topologyScore(e);
-      const dep  = dependencyScore(e);
-      const sec  = securityScore(e);
-      const sov  = sovereigntyScore(e);
-      const comp = compositeScore(topo, dep, sec, sov);
-      const pat  = fragilityPattern(e);
-      const risk = fragilityrisk(comp);
-      const sev  = fragilitySeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                          e.entity_id,
-        region:                             e.region,
-        infrastructure_layer:               e.infrastructure_layer,
-        fragility_risk:                     risk,
-        fragility_pattern:                  pat,
-        fragility_severity:                 sev,
-        recommended_action:                 act,
-        topology_score:                     topo,
-        dependency_score:                   dep,
-        security_score:                     sec,
-        sovereignty_score:                  sov,
-        fragility_composite:                comp,
-        is_in_fragility_crisis:             comp >= 60,
-        requires_infrastructure_intervention: comp >= 40,
-        fragility_signal:                   fragilitySignal(e, risk, comp),
-      };
+  console.warn("[hyperconnectivity-fragility-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -193,12 +168,12 @@ export async function GET() {
       avg_sovereignty_score:            Math.round(tSov / n * 10) / 10,
       avg_estimated_fragility_index:    Math.round(avgComp / 100 * 10 * 100) / 100,
     };
-    return NextResponse.json(sealResponse({ entities, summary }, "hyperconnectivity-fragility-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "hyperconnectivity-fragility-engine")));
   }
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/hyperconnectivity-fragility-engine`);
-    return NextResponse.json(sealResponse(await upstream.json(), "hyperconnectivity-fragility-engine"));
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/hyperconnectivity-fragility-engine`, { next: { revalidate: 30 } });
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "hyperconnectivity-fragility-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "upstream unavailable" }, "hyperconnectivity-fragility-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "upstream unavailable" }, "hyperconnectivity-fragility-engine"), { status: 502 }));
   }
 }

@@ -172,35 +172,8 @@ function oceanSignal(e: EntityInput, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const eco       = ecologicalScore(e);
-      const econ      = economicScore(e);
-      const sec       = securityScore(e);
-      const geo       = geopoliticalScore(e);
-      const composite = oceanComposite(eco, econ, sec, geo);
-      const risk      = oceanRisk(composite);
-      const pattern   = oceanPattern(e);
-      const severity  = oceanSeverity(composite);
-      const action    = recommendedAction(risk, pattern);
-      const signal    = oceanSignal(e, risk, composite);
-
-      return {
-        id:                    e.entity_id,
-        region:                       e.region,
-        ocean_domain:                 e.ocean_domain,
-        ocean_risk:                   risk,
-        ocean_pattern:                pattern,
-        ocean_severity:               severity,
-        recommended_action:           action,
-        ecological_score:             eco,
-        economic_score:               econ,
-        security_score:               sec,
-        geopolitical_score:           geo,
-        ocean_composite:              composite,
-        is_ocean_crisis:              composite >= 60,
-        requires_ocean_intervention:  composite >= 40,
-        ocean_signal:                 signal,
-      };
+  console.warn("[ocean-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts: Record<string, number>     = {};
@@ -243,17 +216,17 @@ export async function GET() {
       avg_estimated_ocean_risk_index:  Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "ocean-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "ocean-intelligence-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/ocean-intelligence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/ocean-intelligence-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "ocean-intelligence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "ocean-intelligence-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable" }, "ocean-intelligence-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

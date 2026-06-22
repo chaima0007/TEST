@@ -244,13 +244,8 @@ export async function GET(request: Request) {
   const pattern = searchParams.get("pattern");
 
   if (!process.env.SWARM_API_URL) {
-    const allSystems = MOCK_SYSTEMS.map(computeSystem);
-
-    let systems = [...allSystems];
-    if (risk)    systems = systems.filter((s) => s.chaos_risk    === risk);
-    if (pattern) systems = systems.filter((s) => s.chaos_pattern === pattern);
-
-    const risk_counts:     Record<string, number> = {};
+  console.warn("[information-fluid-dynamics-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     const pattern_counts:  Record<string, number> = {};
     const severity_counts: Record<string, number> = {};
     const action_counts:   Record<string, number> = {};
@@ -274,7 +269,7 @@ export async function GET(request: Request) {
 
     const n = allSystems.length;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       systems,
       summary: {
         total:                         n,
@@ -291,7 +286,7 @@ export async function GET(request: Request) {
         avg_resilience_score:          Math.round((total_res  / n) * 10) / 10,
         avg_chaos_composite:           Math.round((total_comp / n) * 10) / 10,
       },
-    } as Record<string, unknown>, "information-fluid-dynamics-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>, "information-fluid-dynamics-engine") as Parameters<typeof NextResponse.json>[0]));
   }
 
   try {
@@ -299,8 +294,8 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json(), "information-fluid-dynamics-engine") as Parameters<typeof NextResponse.json>[0]);
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json(), "information-fluid-dynamics-engine") as Parameters<typeof NextResponse.json>[0]));
   } catch {}
 
-  return NextResponse.json(sealResponse({ systems: [], summary: {} }, "information-fluid-dynamics-engine") as Parameters<typeof NextResponse.json>[0], { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ systems: [], summary: {} }, "information-fluid-dynamics-engine") as Parameters<typeof NextResponse.json>[0], { status: 502 }));
 }

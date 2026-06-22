@@ -158,19 +158,8 @@ function transformationSignal(e: Entity, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const stag = stagnationScore(e), read = readinessScore(e), mom = momentumScore(e), align = alignmentScore(e);
-      const comp = composite(stag, read, mom, align);
-      const pat = metamorphicPattern(e), risk = transformationRisk(comp), sev = transformationSeverity(comp), act = recommendedAction(risk, pat);
-      return {
-        id: e.entity_id, region: e.region, transformation_stage: e.transformation_stage,
-        transformation_risk: risk, metamorphic_pattern: pat, transformation_severity: sev, recommended_action: act,
-        stagnation_score: stag, readiness_score: read, momentum_score: mom, alignment_score: align,
-        transformation_composite: comp,
-        is_in_metamorphic_crisis: comp >= 40 || e.legacy_anchor_risk >= 0.60 || e.resistance_to_change_index >= 0.60 || e.metamorphic_vision_clarity <= 0.25,
-        requires_immediate_intervention: comp >= 25 || e.transformation_leadership_strength <= 0.30 || e.financial_runway_adequacy <= 0.30 || e.post_transformation_market_fit <= 0.25,
-        transformation_signal: transformationSignal(e, pat, comp),
-      };
+  console.warn("[metamorphic-business-model-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string, number> = {}, pc: Record<string, number> = {}, sc: Record<string, number> = {}, ac: Record<string, number> = {};
     let tcomp = 0, tstag = 0, tread = 0, tmom = 0, talign = 0, tridx = 0, crisisC = 0, interventionC = 0;
@@ -189,7 +178,7 @@ export async function GET() {
       tridx += Math.min(Math.round(ent.transformation_composite / 100 * (1 - pmf + 0.01) * 10 * 100) / 100, 10.0);
     }
     const n = entities.length;
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
@@ -202,10 +191,10 @@ export async function GET() {
         avg_alignment_score: Math.round(talign / n * 10) / 10,
         avg_estimated_transformation_risk_index: Math.round(tridx / n * 100) / 100,
       },
-    }, "metamorphic-business-model-engine"));
+    }, "metamorphic-business-model-engine")));
   }
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/metamorphic-business-model-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/metamorphic-business-model-engine`, { next: { revalidate: 30 } })).json(),
     "metamorphic-business-model-engine"
-  ));
+  )));
 }

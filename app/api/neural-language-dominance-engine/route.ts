@@ -67,31 +67,8 @@ function signal(c: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map((e) => {
-      const dom = dominanceScore(e), exc = exclusionScore(e), hom = homogenizationScore(e), sov = sovereigntyScore(e);
-      const comp = compositeScore(dom, exc, hom, sov);
-      const pat  = languagePattern(e);
-      const risk = riskLevel(comp);
-      const sev  = severity(comp);
-      const act  = recommendedAction(risk);
-      const sig  = signal(comp);
-      return {
-        id:                          e.entity_id,
-        language_domain:                    e.language_domain,
-        region:                             e.region,
-        dominance_score:                    dom,
-        exclusion_score:                    exc,
-        homogenization_score:               hom,
-        sovereignty_score:                  sov,
-        composite_score:                    comp,
-        risk_level:                         risk,
-        language_pattern:                   pat,
-        severity:                           sev,
-        recommended_action:                 act,
-        signal:                             sig,
-        english_AI_training_bias:           e.english_AI_training_bias,
-        cognitive_sovereignty_erosion_index: e.cognitive_sovereignty_erosion_index,
-      };
+  console.warn("[neural-language-dominance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {}, pc: Record<string, number> = {}, sc: Record<string, number> = {}, ac: Record<string, number> = {};
@@ -110,7 +87,7 @@ export async function GET() {
     const n = entities.length;
     const avgComp = Math.round(tComp / n * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id:                                336,
@@ -131,17 +108,17 @@ export async function GET() {
         avg_homogenization_score:                 Math.round(tHom  / n * 10) / 10,
         avg_sovereignty_score:                    Math.round(tSov  / n * 10) / 10,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/neural-language-dominance-engine`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/neural-language-dominance-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    return NextResponse.json(sealResponse(await res.json() as Record<string, unknown>));
+    return sealResponse(NextResponse.json(sealResponse(await res.json() as Record<string, unknown>)));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 } as Record<string, unknown>),
       { status: 502 },
-    );
+    ));
   }
 }

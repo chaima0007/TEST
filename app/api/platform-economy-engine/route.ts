@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[platform-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const MOCK_ENTITIES = [
@@ -254,15 +258,15 @@ export async function GET() {
       avg_estimated_gig_rights_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary } as Record<string, unknown>, "platform-economy-engine")
-    );
+    ));
   }
 
   try {
     const url = new URL(`${SWARM_API_URL}/api/platform-economy-engine`);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json() as Record<string, unknown>, "platform-economy-engine"));
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json() as Record<string, unknown>, "platform-economy-engine")));
   } catch {}
-  return NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>, "platform-economy-engine"), { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>, "platform-economy-engine"), { status: 502 }));
 }

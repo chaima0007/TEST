@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[noise-pollution-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const MOCK_ENTITIES = [
   // NPE-001 — critical, chronic_cardiovascular_noise_crisis (cardio>0.85, noise_db>0.80)
   {
@@ -206,13 +210,13 @@ export async function GET() {
       avg_estimated_noise_health_index:   Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>)));
   }
 
   try {
     const url = new URL(`${SWARM_API_URL}/api/noise-pollution-engine`);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json()));
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json())));
   } catch {}
-  return NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 }));
 }

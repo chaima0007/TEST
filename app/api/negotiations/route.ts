@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[negotiations] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -309,13 +314,13 @@ export async function GET() {
         fetch(`${SWARM_API_URL}/negotiations/summary`, { next: { revalidate: 15 } }),
       ]);
       if (listRes.ok && sumRes.ok) {
-        return NextResponse.json({
+        return sealResponse(NextResponse.json({
           source: "live",
           negotiations: await listRes.json(),
           summary: await sumRes.json(),
-        });
+        }));
       }
     } catch { /* fall through */ }
   }
-  return NextResponse.json(buildMockData());
+  return sealResponse(NextResponse.json(buildMockData()));
 }

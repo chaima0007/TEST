@@ -72,21 +72,8 @@ function signal(z: Zone, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const zones = MOCK_ZONES.map(z => {
-      const bnd = boundaryScore(z), bio = biodiversityScore(z), deg = degradationScore(z), exp = exposureScore(z);
-      const comp = composite(bnd, bio, deg, exp), pat = ecosystemPattern(z), r = planetaryRisk(comp), sev = severity(comp), act = action(r, pat);
-      const isTipping = comp >= 60 || z.tipping_point_proximity >= 0.70;
-      const requiresEmergency = act === "ecosystem_emergency" || act === "tipping_point_intervention";
-      return {
-        zone_id: z.zone_id, ecosystem_type: z.ecosystem_type, region: z.region,
-        planetary_risk: r, ecosystem_pattern: pat, ecosystem_severity: sev, recommended_action: act,
-        boundary_score: bnd, biodiversity_score: bio, degradation_score: deg, exposure_score: exp,
-        planetary_risk_composite: comp,
-        is_tipping_point_risk: isTipping,
-        requires_emergency_intervention: requiresEmergency,
-        estimated_planetary_risk_index: Math.round(Math.min(comp / 100 * (z.planetary_boundary_breach_score + z.tipping_point_proximity) / 2 * 10, 10.0) * 100) / 100,
-        ecosystem_signal: signal(z, pat, comp),
-      };
+  console.warn("[planetary-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -106,7 +93,7 @@ export async function GET() {
       if (zone.requires_emergency_intervention) emergencyC++;
     }
     const n = zones.length;
-    return NextResponse.json(sealResponse({ zones, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ zones, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_planetary_risk_composite:       Math.round(tcomp / n * 10) / 10,
       tipping_point_risk_count:           tippingC,
@@ -116,7 +103,7 @@ export async function GET() {
       avg_degradation_score:              Math.round(tdeg  / n * 10) / 10,
       avg_exposure_score:                 Math.round(texp  / n * 10) / 10,
       avg_estimated_planetary_risk_index: Math.round(tridx / n * 100) / 100,
-    } as Record<string, unknown>}, "planetary-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "planetary-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/planetary-intelligence-engine`)).json(), "planetary-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/planetary-intelligence-engine`, { next: { revalidate: 30 } })).json(), "planetary-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
 }

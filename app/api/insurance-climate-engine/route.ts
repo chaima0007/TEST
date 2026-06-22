@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const u    = uninsurabilityScore(e);
-      const a    = affordabilityScore(e);
-      const m    = marketFailureScore(e);
-      const s    = systemicScore(e);
-      const comp = compositeScore(u, a, m, s);
-      const risk = riskLevel(comp);
-      const pat  = insurancePattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:               e.entity_id,
-        risk_category:           e.risk_category,
-        region:                  e.region,
-        uninsurability_score:    u,
-        affordability_score:     a,
-        market_failure_score:    m,
-        systemic_score:          s,
-        composite_score:         comp,
-        risk_level:              risk,
-        insurance_pattern:       pat,
-        severity:                sev,
-        recommended_action:      action,
-        signal:                  sig,
-        uninsurability_rate:     e.uninsurability_rate,
-        reinsurance_withdrawal:  e.reinsurance_withdrawal,
-      };
+  console.warn("[insurance-climate-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_insurance_retreat_index:    Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_uninsurability: avgUninsurability }, "insurance-climate-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/insurance-climate-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/insurance-climate-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "insurance-climate-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "insurance-climate-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "insurance-climate-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

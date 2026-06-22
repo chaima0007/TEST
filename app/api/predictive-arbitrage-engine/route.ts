@@ -104,36 +104,8 @@ function alphaDecayIndex(comp: number, signalAccuracy: number): number {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const signals = MOCK_SIGNALS.map(s => {
-      const sq  = signalQualityScore(s);
-      const ac  = alphaCaptureScore(s);
-      const ex  = executionScore(s);
-      const res = resilienceScore(s);
-      const comp = composite(sq, ac, ex, res);
-      const pat  = arbitragePattern(s);
-      const r    = risk(comp);
-      const sev  = severity(comp);
-      const act  = action(r, pat);
-      const sig  = arbitrageSignal(s, pat, comp);
-      const adi  = alphaDecayIndex(comp, s.signal_accuracy_score);
-      const alert = comp >= 40 || s.signal_accuracy_score <= 0.40 || s.overfitting_risk >= 0.60;
-      return {
-        signal_id:                       s.signal_id,
-        signal_type:                     s.signal_type,
-        region:                          s.region,
-        signal_quality_score:            sq,
-        alpha_capture_score:             ac,
-        execution_score:                 ex,
-        resilience_score:                res,
-        arbitrage_composite:             comp,
-        arbitrage_risk:                  r,
-        arbitrage_pattern:               pat,
-        arbitrage_severity:              sev,
-        recommended_action:              act,
-        arbitrage_signal:                sig,
-        avg_estimated_alpha_decay_index: adi,
-        has_active_alert:                alert,
-      };
+  console.warn("[predictive-arbitrage-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -153,7 +125,7 @@ export async function GET() {
       if (sig.recommended_action !== "no_action" && sig.recommended_action !== "performance_monitoring") transfC++;
     }
     const n = signals.length;
-    return NextResponse.json(sealResponse({ signals, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ signals, summary: {
       total:                            n,
       risk_counts:                      rc,
       pattern_counts:                   pc,
@@ -167,7 +139,7 @@ export async function GET() {
       avg_execution_score:              Math.round(tex  / n * 10) / 10,
       avg_resilience_score:             Math.round(tres / n * 10) / 10,
       avg_estimated_alpha_decay_index:  Math.round(tadi / n * 100) / 100,
-    } as Record<string, unknown>}, "predictive-arbitrage-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "predictive-arbitrage-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/predictive-arbitrage-engine`)).json(), "predictive-arbitrage-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/predictive-arbitrage-engine`, { next: { revalidate: 30 } })).json(), "predictive-arbitrage-engine") as Parameters<typeof NextResponse.json>[0]));
 }

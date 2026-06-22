@@ -136,34 +136,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const aff  = affordabilityScore(e);
-      const mon  = monopolyScore(e);
-      const avl  = availabilityScore(e);
-      const inn  = innovationScore(e);
-      const comp = compositeScore(aff, mon, avl, inn);
-      const risk = riskLevel(comp);
-      const pat  = pharmaPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:             e.entity_id,
-        therapeutic_area:      e.therapeutic_area,
-        region:                e.region,
-        affordability_score:   aff,
-        monopoly_score:        mon,
-        availability_score:    avl,
-        innovation_score:      inn,
-        composite_score:       comp,
-        risk_level:            risk,
-        pharma_pattern:        pat,
-        severity:              sev,
-        recommended_action:    action,
-        signal:                sig,
-        drug_price_index:      e.drug_price_index,
-        counterfeiting_risk:   e.counterfeiting_risk,
-      };
+  console.warn("[pharmaceutical-access-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -209,19 +183,19 @@ export async function GET() {
       avg_estimated_pharma_access_index:   Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_affordability: avgAffordability }, "pharmaceutical-access-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/pharmaceutical-access-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/pharmaceutical-access-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "pharmaceutical-access-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "pharmaceutical-access-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "pharmaceutical-access-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

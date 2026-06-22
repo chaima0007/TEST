@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[metacognitive-bias-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ─── Inline scoring functions ─────────────────────────────────────────────────
@@ -393,7 +397,7 @@ export async function GET(request: Request) {
     const n           = mockEntities.length;
     const avg_comp    = Math.round((total_comp / n) * 10) / 10;
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(
         {
           entities,
@@ -415,7 +419,7 @@ export async function GET(request: Request) {
         } as Record<string, unknown>,
         "metacognitive-bias-engine",
       ) as Parameters<typeof NextResponse.json>[0],
-    );
+    ));
   }
 
   try {
@@ -424,21 +428,21 @@ export async function GET(request: Request) {
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
     if (res.ok)
-      return NextResponse.json(
+      return sealResponse(NextResponse.json(
         sealResponse(
           await res.json(),
           "metacognitive-bias-engine",
         ) as Parameters<typeof NextResponse.json>[0],
-      );
+      ));
   } catch {}
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse(
       { entities: [], summary: {} },
       "metacognitive-bias-engine",
     ) as Parameters<typeof NextResponse.json>[0],
     { status: 502 },
-  );
+  ));
 }
 
 export {

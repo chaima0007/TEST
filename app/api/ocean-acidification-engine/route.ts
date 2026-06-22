@@ -178,7 +178,7 @@ function getMockData() {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Ocean Acidification Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Ocean Acidification Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/ocean-acidification-engine`, {
@@ -186,8 +186,8 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Ocean Acidification Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Ocean Acidification Agent")));
   } catch {
-    return NextResponse.json(sealResponse(getMockData(), "Ocean Acidification Agent"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Ocean Acidification Agent"), { status: 502 }));
   }
 }
