@@ -11086,6 +11086,30 @@ function IconDeepfakeRights({ className }: { className?: string }) {
   );
 }
 
+function IconOrganTraffickingRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+    </svg>
+  );
+}
+
+function IconRightToStrikeRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
+    </svg>
+  );
+}
+
+function IconJournalistProtectionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12600,6 +12624,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/housing-discrimination-rights-engine", label: "Housing Discrimination Rights", icon: IconHousingDiscriminationRights },
       { href: "/dashboard/forced-labor-supply-chain-rights-engine", label: "Forced Labor Supply Chain Rights", icon: IconForcedLaborSupplyChainRights },
       { href: "/dashboard/deepfake-rights-engine", label: "Deepfake Rights", icon: IconDeepfakeRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 245",
+    items: [
+      { href: "/dashboard/organ-trafficking-rights-engine", label: "Organ Trafficking Rights", icon: IconOrganTraffickingRights, color: "#dc2626" },
+      { href: "/dashboard/right-to-strike-rights-engine", label: "Right to Strike Rights", icon: IconRightToStrikeRights, color: "#ea580c" },
+      { href: "/dashboard/journalist-protection-rights-engine", label: "Journalist Protection Rights", icon: IconJournalistProtectionRights, color: "#0369a1" },
     ],
   },
   {
