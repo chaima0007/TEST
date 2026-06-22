@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "SPF"
 ACCENT_COLOR = "#3d1a00"
 ENTITIES = [
-    {"name": "Bayer/Monsanto",       "sub1": 92.0, "sub2": 88.0, "sub3": 84.0, "sub4": 80.0},
-    {"name": "Corteva (DowDuPont)", "sub1": 88.0, "sub2": 84.0, "sub3": 80.0, "sub4": 76.0},
-    {"name": "Syngenta/ChemChina",  "sub1": 86.0, "sub2": 80.0, "sub3": 78.0, "sub4": 76.0},
-    {"name": "BASF Seeds",          "sub1": 82.0, "sub2": 77.0, "sub3": 75.0, "sub4": 74.0},
-    {"name": "Limagrain",           "sub1": 64.0, "sub2": 60.0, "sub3": 58.0, "sub4": 56.0},
-    {"name": "KWS Seeds",           "sub1": 58.0, "sub2": 54.0, "sub3": 52.0, "sub4": 50.0},
-    {"name": "Rijk Zwaan",          "sub1": 40.0, "sub2": 36.0, "sub3": 34.0, "sub4": 32.0},
-    {"name": "La Via Campesina",    "sub1": 18.0, "sub2": 17.0, "sub3": 16.0, "sub4": 14.0},
+    {"name": "Bayer/Monsanto",            "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Corteva (DowDuPont)",       "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Syngenta/ChemChina",        "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "BASF Seeds",                "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Limagrain",                 "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "KWS Seeds",                 "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Rijk Zwaan",                "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "La Via Campesina",          "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

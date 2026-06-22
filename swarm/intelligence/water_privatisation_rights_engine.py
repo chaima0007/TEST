@@ -7,14 +7,14 @@ DOMAIN_CODE = "WPR"
 ACCENT_COLOR = "#042f2e"
 
 ENTITIES = [
-    {"name": "Veolia Water",          "sub1": 93, "sub2": 91, "sub3": 88, "sub4": 85},
-    {"name": "Suez Environnement",    "sub1": 89, "sub2": 87, "sub3": 83, "sub4": 81},
-    {"name": "Thames Water UK",       "sub1": 85, "sub2": 83, "sub3": 79, "sub4": 75},
-    {"name": "Nestlé Pure Life",      "sub1": 79, "sub2": 77, "sub3": 73, "sub4": 69},
-    {"name": "American Water Works",  "sub1": 61, "sub2": 59, "sub3": 57, "sub4": 53},
-    {"name": "United Utilities",      "sub1": 57, "sub2": 55, "sub3": 53, "sub4": 49},
-    {"name": "WWF Water",             "sub1": 32, "sub2": 30, "sub3": 31, "sub4": 28},
-    {"name": "Blue Planet Project",   "sub1": 16, "sub2": 15, "sub3": 17, "sub4": 14},
+    {"name": "Veolia Water",              "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Suez Environnement",        "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Thames Water UK",           "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Nestlé Pure Life",          "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "American Water Works",      "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "United Utilities",          "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "WWF Water",                 "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Blue Planet Project",       "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 def compute_score(e):

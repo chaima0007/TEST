@@ -10,14 +10,14 @@ ACCENT_COLOR = "#7f1d1d"
 # sub3: supply_chain_audit_compliance (third-party audit results)
 # sub4: regulatory_reporting_score (Dodd-Frank / OECD reporting)
 ENTITIES = [
-    {"name": "Intel",        "sub1": 83.0, "sub2": 90.0, "sub3": 85.0, "sub4": 87.0},  # critique
-    {"name": "Apple",        "sub1": 85.0, "sub2": 92.0, "sub3": 87.0, "sub4": 84.0},  # critique
-    {"name": "Microsoft",    "sub1": 80.0, "sub2": 88.0, "sub3": 83.0, "sub4": 85.0},  # critique
-    {"name": "Samsung",      "sub1": 84.0, "sub2": 91.0, "sub3": 86.0, "sub4": 82.0},  # critique
-    {"name": "Dell",         "sub1": 52.0, "sub2": 56.0, "sub3": 50.0, "sub4": 54.0},  # élevé
-    {"name": "HP",           "sub1": 50.0, "sub2": 54.0, "sub3": 52.0, "sub4": 56.0},  # élevé
-    {"name": "Fairphone",    "sub1": 28.0, "sub2": 34.0, "sub3": 32.0, "sub4": 30.0},  # modéré
-    {"name": "ITRI/iTSCi",  "sub1": 10.0, "sub2": 14.0, "sub3": 12.0, "sub4": 11.0},  # faible
+    {"name": "Intel",                     "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Apple",                     "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Microsoft",                 "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Samsung",                   "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Dell",                      "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "HP",                        "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Fairphone",                 "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "ITRI/iTSCi",                "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "CSA"
 ACCENT_COLOR = "#450a0a"
 ENTITIES = [
-    {"name": "LRA (Lord's Resistance Army)",  "sub1": 94.0, "sub2": 88.0, "sub3": 85.0, "sub4": 82.0},
-    {"name": "Al-Shabaab",                    "sub1": 90.0, "sub2": 86.0, "sub3": 82.0, "sub4": 78.0},
-    {"name": "Myanmar Military (Tatmadaw)",   "sub1": 88.0, "sub2": 84.0, "sub3": 80.0, "sub4": 76.0},
-    {"name": "Wagner Group",                  "sub1": 84.0, "sub2": 78.0, "sub3": 76.0, "sub4": 74.0},
-    {"name": "Houthi forces",                 "sub1": 62.0, "sub2": 58.0, "sub3": 56.0, "sub4": 54.0},
-    {"name": "M23 (DRC)",                     "sub1": 56.0, "sub2": 52.0, "sub3": 50.0, "sub4": 48.0},
-    {"name": "UN Peacekeeping (violations)",  "sub1": 38.0, "sub2": 34.0, "sub3": 32.0, "sub4": 30.0},
-    {"name": "Child Soldiers International",  "sub1": 16.0, "sub2": 15.0, "sub3": 14.0, "sub4": 14.0},
+    {"name": "LRA (Lord's Resistance Army)", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Al-Shabaab",                "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Myanmar Military (Tatmadaw)", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Wagner Group",              "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Houthi forces",             "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "M23 (DRC)",                 "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "UN Peacekeeping (violations)", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Child Soldiers International", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

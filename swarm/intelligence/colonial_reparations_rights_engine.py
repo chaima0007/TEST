@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "CRR"
 ACCENT_COLOR = "#6b3a2a"
 ENTITIES = [
-    {"name": "UK (British Museum)",          "sub1": 90.0, "sub2": 87.0, "sub3": 85.0, "sub4": 89.0},
-    {"name": "France (Louvre colonial)",     "sub1": 88.0, "sub2": 84.0, "sub3": 83.0, "sub4": 87.0},
-    {"name": "Belgium (Congo)",              "sub1": 84.0, "sub2": 80.0, "sub3": 79.0, "sub4": 83.0},
-    {"name": "Netherlands (VOC)",            "sub1": 78.0, "sub2": 75.0, "sub3": 73.0, "sub4": 77.0},
-    {"name": "Germany (Herero reparations)", "sub1": 62.0, "sub2": 58.0, "sub3": 57.0, "sub4": 60.0},
-    {"name": "Portugal",                     "sub1": 56.0, "sub2": 52.0, "sub3": 51.0, "sub4": 54.0},
-    {"name": "Italy",                        "sub1": 38.0, "sub2": 33.0, "sub3": 35.0, "sub4": 30.0},
-    {"name": "ICOM (museum ethics)",         "sub1": 18.0, "sub2": 13.0, "sub3": 15.0, "sub4": 11.0},
+    {"name": "UK (British Museum)",       "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "France (Louvre colonial)",  "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Belgium (Congo)",           "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Netherlands (VOC)",         "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Germany (Herero reparations)", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Portugal",                  "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Italy",                     "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "ICOM (museum ethics)",      "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

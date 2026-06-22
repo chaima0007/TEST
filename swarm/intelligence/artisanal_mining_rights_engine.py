@@ -7,14 +7,14 @@ DOMAIN_CODE = "AMR"
 ACCENT_COLOR = "#78350f"
 
 ENTITIES = [
-    {"name": "Glencore",                        "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 88.0},
-    {"name": "China Molybdenum",                "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 84.0},
-    {"name": "Apple (cobalt)",                  "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 80.0},
-    {"name": "Tesla (cobalt)",                  "sub1": 82.0, "sub2": 80.0, "sub3": 78.0, "sub4": 76.0},
-    {"name": "Samsung SDI",                     "sub1": 58.0, "sub2": 56.0, "sub3": 54.0, "sub4": 52.0},
-    {"name": "LG Energy Solution",              "sub1": 52.0, "sub2": 50.0, "sub3": 48.0, "sub4": 46.0},
-    {"name": "Fairphone",                       "sub1": 30.0, "sub2": 28.0, "sub3": 26.0, "sub4": 24.0},
-    {"name": "Responsible Minerals Initiative", "sub1": 12.0, "sub2": 10.0, "sub3":  8.0, "sub4": 14.0},
+    {"name": "Glencore",                  "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "China Molybdenum",          "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Apple (cobalt)",            "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Tesla (cobalt)",            "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Samsung SDI",               "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "LG Energy Solution",        "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Fairphone",                 "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Responsible Minerals Initiative", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

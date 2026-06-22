@@ -11,18 +11,14 @@ DOMAIN_CODE = "GPG"
 ACCENT_COLOR = "#be185d"
 
 ENTITIES = [
-    # 4 critique (composite ≥ 60)
-    {"name": "Amazon",       "sub1": 92.0, "sub2": 90.0, "sub3": 88.0, "sub4": 86.0},
-    {"name": "Walmart",      "sub1": 88.0, "sub2": 85.0, "sub3": 84.0, "sub4": 82.0},
-    {"name": "Goldman Sachs","sub1": 85.0, "sub2": 82.0, "sub3": 80.0, "sub4": 78.0},
-    {"name": "Apple",        "sub1": 80.0, "sub2": 78.0, "sub3": 76.0, "sub4": 74.0},
-    # 2 élevé (40 ≤ composite < 60)
-    {"name": "Microsoft",    "sub1": 58.0, "sub2": 55.0, "sub3": 52.0, "sub4": 50.0},
-    {"name": "Google",       "sub1": 55.0, "sub2": 52.0, "sub3": 50.0, "sub4": 48.0},
-    # 1 modéré (20 ≤ composite < 40)
-    {"name": "Salesforce",   "sub1": 38.0, "sub2": 35.0, "sub3": 32.0, "sub4": 30.0},
-    # 1 faible (composite < 20)
-    {"name": "Buffer",       "sub1": 14.0, "sub2": 12.0, "sub3": 10.0, "sub4":  8.0},
+    {"name": "Amazon",                    "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Walmart",                   "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Goldman Sachs",             "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Apple",                     "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Microsoft",                 "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Google",                    "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Salesforce",                "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Buffer",                    "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

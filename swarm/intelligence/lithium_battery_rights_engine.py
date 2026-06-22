@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "LBR"
 ACCENT_COLOR = "#1a2e05"
 ENTITIES = [
-    {"name": "SQM (Chile)", "sub1": 96.0, "sub2": 92.0, "sub3": 89.0, "sub4": 86.0},
-    {"name": "Albemarle Corporation", "sub1": 92.0, "sub2": 88.0, "sub3": 84.0, "sub4": 81.0},
-    {"name": "Ganfeng Lithium", "sub1": 88.0, "sub2": 84.0, "sub3": 80.0, "sub4": 77.0},
-    {"name": "Livent Corporation", "sub1": 82.0, "sub2": 76.0, "sub3": 74.0, "sub4": 70.0},
-    {"name": "Tesla Lithium Sourcing", "sub1": 58.0, "sub2": 52.0, "sub3": 50.0, "sub4": 48.0},
-    {"name": "BYD Company", "sub1": 55.0, "sub2": 49.0, "sub3": 47.0, "sub4": 44.0},
-    {"name": "Panasonic Energy", "sub1": 38.0, "sub2": 33.0, "sub3": 30.0, "sub4": 27.0},
-    {"name": "Lithium Americas (ESG Pioneer)", "sub1": 16.0, "sub2": 13.0, "sub3": 11.0, "sub4": 9.0},
+    {"name": "SQM (Chile)",               "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Albemarle Corporation",     "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Ganfeng Lithium",           "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Livent Corporation",        "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Tesla Lithium Sourcing",    "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "BYD Company",               "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Panasonic Energy",          "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Lithium Americas (ESG Pioneer)", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

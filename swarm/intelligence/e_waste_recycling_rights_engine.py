@@ -6,18 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "EWR"
 ACCENT_COLOR = "#713f12"
 ENTITIES = [
-    # critique (≥60)
-    {"name": "Apple (iPhone obsolescence)", "sub1": 92.0, "sub2": 90.0, "sub3": 89.0, "sub4": 87.0},
-    {"name": "Samsung", "sub1": 90.0, "sub2": 87.0, "sub3": 86.0, "sub4": 84.0},
-    {"name": "HP (printer cartridges)", "sub1": 85.0, "sub2": 82.0, "sub3": 81.0, "sub4": 79.0},
-    {"name": "Dell", "sub1": 80.0, "sub2": 77.0, "sub3": 76.0, "sub4": 74.0},
-    # élevé (40-59)
-    {"name": "Lenovo", "sub1": 57.0, "sub2": 54.0, "sub3": 53.0, "sub4": 51.0},
-    {"name": "Asus", "sub1": 55.0, "sub2": 52.0, "sub3": 51.0, "sub4": 49.0},
-    # modéré (20-39)
-    {"name": "Fairphone", "sub1": 30.0, "sub2": 28.0, "sub3": 27.0, "sub4": 25.0},
-    # faible (<20)
-    {"name": "Basel Action Network", "sub1": 14.0, "sub2": 12.0, "sub3": 11.0, "sub4": 10.0},
+    {"name": "Apple (iPhone obsolescence)", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Samsung",                   "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "HP (printer cartridges)",   "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Dell",                      "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Lenovo",                    "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Asus",                      "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Fairphone",                 "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Basel Action Network",      "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

@@ -6,18 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "NEC"
 ACCENT_COLOR = "#14532d"
 ENTITIES = [
-    # critique (≥60)
-    {"name": "EDF (France)", "sub1": 90.0, "sub2": 88.0, "sub3": 87.0, "sub4": 85.0},
-    {"name": "Tepco (Japan Fukushima)", "sub1": 92.0, "sub2": 90.0, "sub3": 88.0, "sub4": 86.0},
-    {"name": "Rosatom", "sub1": 86.0, "sub2": 84.0, "sub3": 83.0, "sub4": 80.0},
-    {"name": "Électricité de France Cattenom", "sub1": 84.0, "sub2": 82.0, "sub3": 81.0, "sub4": 79.0},
-    # élevé (40-59)
-    {"name": "Exelon (USA)", "sub1": 57.0, "sub2": 54.0, "sub3": 53.0, "sub4": 51.0},
-    {"name": "EDF Energy UK", "sub1": 53.0, "sub2": 50.0, "sub3": 49.0, "sub4": 47.0},
-    # modéré (20-39)
-    {"name": "Vattenfall", "sub1": 30.0, "sub2": 28.0, "sub3": 27.0, "sub4": 25.0},
-    # faible (<20)
-    {"name": "Nuclear Free Local Authorities", "sub1": 14.0, "sub2": 12.0, "sub3": 11.0, "sub4": 10.0},
+    {"name": "EDF (France)",              "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Tepco (Japan Fukushima)",   "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Rosatom",                   "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Électricité de France Cattenom", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Exelon (USA)",              "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "EDF Energy UK",             "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Vattenfall",                "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Nuclear Free Local Authorities", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

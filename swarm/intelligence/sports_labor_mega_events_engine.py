@@ -7,14 +7,14 @@ DOMAIN_CODE = "SLM"
 ACCENT_COLOR = "#1d4ed8"
 
 ENTITIES = [
-    {"name": "FIFA Qatar 2022",        "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 88.0},
-    {"name": "IOC Beijing 2022",       "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 84.0},
-    {"name": "Formula 1 Saudi Arabia", "sub1": 87.0, "sub2": 85.0, "sub3": 83.0, "sub4": 80.0},
-    {"name": "ATP/WTA Saudi",          "sub1": 83.0, "sub2": 81.0, "sub3": 79.0, "sub4": 76.0},
-    {"name": "UEFA Super League",      "sub1": 56.0, "sub2": 54.0, "sub3": 52.0, "sub4": 50.0},
-    {"name": "NBA China",              "sub1": 50.0, "sub2": 48.0, "sub3": 46.0, "sub4": 44.0},
-    {"name": "Premier League",         "sub1": 30.0, "sub2": 28.0, "sub3": 26.0, "sub4": 24.0},
-    {"name": "FIFPro",                 "sub1": 12.0, "sub2": 10.0, "sub3":  8.0, "sub4": 14.0},
+    {"name": "FIFA Qatar 2022",           "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "IOC Beijing 2022",          "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Formula 1 Saudi Arabia",    "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "ATP/WTA Saudi",             "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "UEFA Super League",         "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "NBA China",                 "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Premier League",            "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "FIFPro",                    "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

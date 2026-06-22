@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "DPC"
 ACCENT_COLOR = "#312e81"
 ENTITIES = [
-    {"name": "Amazon (Drip Pricing)", "sub1": 96.0, "sub2": 92.0, "sub3": 89.0, "sub4": 86.0},
-    {"name": "LinkedIn", "sub1": 91.0, "sub2": 87.0, "sub3": 83.0, "sub4": 80.0},
-    {"name": "Booking.com (False Urgency)", "sub1": 87.0, "sub2": 83.0, "sub3": 79.0, "sub4": 76.0},
-    {"name": "Instagram (Infinite Scroll)", "sub1": 83.0, "sub2": 78.0, "sub3": 75.0, "sub4": 72.0},
-    {"name": "Spotify (Cancel Difficult)", "sub1": 58.0, "sub2": 52.0, "sub3": 50.0, "sub4": 47.0},
-    {"name": "TripAdvisor", "sub1": 55.0, "sub2": 49.0, "sub3": 47.0, "sub4": 44.0},
-    {"name": "YouTube", "sub1": 38.0, "sub2": 33.0, "sub3": 30.0, "sub4": 27.0},
-    {"name": "Consumer Reports Digital Lab", "sub1": 15.0, "sub2": 12.0, "sub3": 10.0, "sub4": 8.0},
+    {"name": "Amazon (Drip Pricing)",     "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "LinkedIn",                  "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Booking.com (False Urgency)", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Instagram (Infinite Scroll)", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Spotify (Cancel Difficult)", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "TripAdvisor",               "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "YouTube",                   "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Consumer Reports Digital Lab", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

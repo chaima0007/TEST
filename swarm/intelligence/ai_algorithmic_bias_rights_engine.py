@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "AAB"
 ACCENT_COLOR = "#1e3a5f"
 ENTITIES = [
-    {"name": "Amazon (Rekognition)",               "sub1": 88.0, "sub2": 85.0, "sub3": 83.0, "sub4": 87.0},
-    {"name": "Meta (ad targeting)",                "sub1": 86.0, "sub2": 82.0, "sub3": 81.0, "sub4": 85.0},
-    {"name": "COMPAS (recidivism)",                "sub1": 83.0, "sub2": 79.0, "sub3": 78.0, "sub4": 82.0},
-    {"name": "HireVue",                            "sub1": 77.0, "sub2": 74.0, "sub3": 72.0, "sub4": 76.0},
-    {"name": "Google (Search bias)",               "sub1": 61.0, "sub2": 57.0, "sub3": 56.0, "sub4": 59.0},
-    {"name": "Apple (credit card algorithm)",      "sub1": 55.0, "sub2": 51.0, "sub3": 50.0, "sub4": 53.0},
-    {"name": "IBM (facial recognition moratorium)","sub1": 39.0, "sub2": 34.0, "sub3": 36.0, "sub4": 31.0},
-    {"name": "Partnership on AI",                  "sub1": 17.0, "sub2": 12.0, "sub3": 14.0, "sub4": 10.0},
+    {"name": "Amazon (Rekognition)",      "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Meta (ad targeting)",       "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "COMPAS (recidivism)",       "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "HireVue",                   "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Google (Search bias)",      "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Apple (credit card algorithm)", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "IBM (facial recognition moratorium)", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Partnership on AI",         "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

@@ -10,14 +10,14 @@ DOMAIN_CODE = "MCP"
 ACCENT_COLOR = "#dc2626"
 
 ENTITIES = [
-    {"name": "North Korea", "sub1": 92.0, "sub2": 90.0, "sub3": 88.0, "sub4": 90.0},
-    {"name": "Eritrea", "sub1": 88.0, "sub2": 86.0, "sub3": 85.0, "sub4": 84.0},
-    {"name": "Turkmenistan", "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 83.0},
-    {"name": "China", "sub1": 80.0, "sub2": 78.0, "sub3": 76.0, "sub4": 78.0},
-    {"name": "Russia", "sub1": 58.0, "sub2": 55.0, "sub3": 57.0, "sub4": 54.0},
-    {"name": "Belarus", "sub1": 55.0, "sub2": 53.0, "sub3": 56.0, "sub4": 52.0},
-    {"name": "Egypt", "sub1": 35.0, "sub2": 32.0, "sub3": 34.0, "sub4": 30.0},
-    {"name": "CPJ (Committee to Protect Journalists)", "sub1": 8.0, "sub2": 6.0, "sub3": 5.0, "sub4": 10.0},
+    {"name": "North Korea",               "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Eritrea",                   "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Turkmenistan",              "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "China",                     "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Russia",                    "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Belarus",                   "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Egypt",                     "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "CPJ (Committee to Protect Journalists)", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

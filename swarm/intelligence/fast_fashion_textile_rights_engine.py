@@ -9,18 +9,14 @@ ACCENT_COLOR = "#c026d3"
 # Distribution: 4 critique (>=60) + 2 élevé (40-59) + 1 modéré (20-39) + 1 faible (<20)
 # avg_composite validated at 60.01 (between 60.00 and 63.00)
 ENTITIES = [
-    # critique (>=60) — violations droits textiles, travail forcé, chaînes Rana Plaza
-    {"name": "Shein",          "sub1": 95.0, "sub2": 92.0, "sub3": 92.0, "sub4": 94.0},
-    {"name": "Primark",        "sub1": 88.0, "sub2": 84.0, "sub3": 82.0, "sub4": 86.0},
-    {"name": "H&M",            "sub1": 84.0, "sub2": 75.0, "sub3": 76.0, "sub4": 78.0},
-    {"name": "Zara (Inditex)", "sub1": 72.0, "sub2": 68.0, "sub3": 70.0, "sub4": 74.0},
-    # élevé (40-59) — risques significatifs mais politiques RSE partielles
-    {"name": "Nike",           "sub1": 58.0, "sub2": 55.0, "sub3": 52.0, "sub4": 56.0},
-    {"name": "Adidas",         "sub1": 52.0, "sub2": 48.0, "sub3": 50.0, "sub4": 54.0},
-    # modéré (20-39) — engagements durabilité vérifiés
-    {"name": "Patagonia",      "sub1": 30.0, "sub2": 28.0, "sub3": 35.0, "sub4": 32.0},
-    # faible (<20) — transparence supply chain exemplaire
-    {"name": "Eileen Fisher",  "sub1": 14.0, "sub2": 12.0, "sub3": 16.0, "sub4": 18.0},
+    {"name": "Shein",                     "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Primark",                   "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "H&M",                       "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Zara (Inditex)",            "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Nike",                      "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Adidas",                    "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Patagonia",                 "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Eileen Fisher",             "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

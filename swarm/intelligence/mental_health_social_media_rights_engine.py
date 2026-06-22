@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "MHS"
 ACCENT_COLOR = "#2d1b69"
 ENTITIES = [
-    {"name": "Instagram (body image)", "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 93.0},
-    {"name": "TikTok (addiction algorithm)", "sub1": 96.0, "sub2": 94.0, "sub3": 92.0, "sub4": 95.0},
-    {"name": "Snapchat (streaks)", "sub1": 82.0, "sub2": 78.0, "sub3": 76.0, "sub4": 80.0},
-    {"name": "YouTube (autoplay)", "sub1": 78.0, "sub2": 74.0, "sub3": 72.0, "sub4": 76.0},
-    {"name": "Facebook (teens)", "sub1": 59.0, "sub2": 56.0, "sub3": 58.0, "sub4": 54.0},
-    {"name": "Twitter/X (toxic discourse)", "sub1": 56.0, "sub2": 53.0, "sub3": 54.0, "sub4": 52.0},
-    {"name": "Pinterest", "sub1": 32.0, "sub2": 28.0, "sub3": 30.0, "sub4": 26.0},
-    {"name": "Center for Humane Technology", "sub1": 12.0, "sub2": 8.0, "sub3": 10.0, "sub4": 6.0},
+    {"name": "Instagram (body image)",    "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "TikTok (addiction algorithm)", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Snapchat (streaks)",        "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "YouTube (autoplay)",        "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Facebook (teens)",          "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Twitter/X (toxic discourse)", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Pinterest",                 "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Center for Humane Technology", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

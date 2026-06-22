@@ -9,18 +9,14 @@ ACCENT_COLOR = "#7c2d12"
 # Distribution: 4 critique (>=60) + 2 élevé (40-59) + 1 modéré (20-39) + 1 faible (<20)
 # avg_composite validated at 60.78 (between 60.00 and 63.00)
 ENTITIES = [
-    # critique (>=60) — collecte ADN massive, risques discrimination assurance/emploi
-    {"name": "23andMe",        "sub1": 92.0, "sub2": 90.0, "sub3": 90.0, "sub4": 94.0},
-    {"name": "AncestryDNA",    "sub1": 88.0, "sub2": 84.0, "sub3": 86.0, "sub4": 82.0},
-    {"name": "BGI Genomics",   "sub1": 96.0, "sub2": 94.0, "sub3": 93.0, "sub4": 95.0},
-    {"name": "Illumina",       "sub1": 74.0, "sub2": 70.0, "sub3": 68.0, "sub4": 72.0},
-    # élevé (40-59) — politiques données ambiguës, partage tiers partiellement encadré
-    {"name": "MyHeritage",     "sub1": 56.0, "sub2": 54.0, "sub3": 55.0, "sub4": 52.0},
-    {"name": "FamilyTreeDNA",  "sub1": 50.0, "sub2": 46.0, "sub3": 48.0, "sub4": 44.0},
-    # modéré (20-39) — chiffrement end-to-end, consentement granulaire
-    {"name": "Nebula Genomics","sub1": 32.0, "sub2": 28.0, "sub3": 30.0, "sub4": 26.0},
-    # faible (<20) — accès ouvert encadré, conformité RGPD exemplaire
-    {"name": "Broad Institute","sub1": 12.0, "sub2": 10.0, "sub3": 14.0, "sub4": 16.0},
+    {"name": "23andMe",                   "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "AncestryDNA",               "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "BGI Genomics",              "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Illumina",                  "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "MyHeritage",                "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "FamilyTreeDNA",             "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Nebula Genomics",           "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Broad Institute",           "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

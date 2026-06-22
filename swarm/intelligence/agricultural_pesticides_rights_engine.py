@@ -7,14 +7,14 @@ DOMAIN_CODE = "APR"
 ACCENT_COLOR = "#083344"
 
 ENTITIES = [
-    {"name": "Bayer CropScience",    "sub1": 94, "sub2": 92, "sub3": 89, "sub4": 86},
-    {"name": "Syngenta Pesticides",  "sub1": 90, "sub2": 88, "sub3": 84, "sub4": 82},
-    {"name": "BASF Crop Protection", "sub1": 86, "sub2": 84, "sub3": 80, "sub4": 76},
-    {"name": "Corteva Pesticides",   "sub1": 80, "sub2": 78, "sub3": 74, "sub4": 70},
-    {"name": "Dow Chemical",         "sub1": 62, "sub2": 60, "sub3": 58, "sub4": 54},
-    {"name": "Nufarm Agricultural",  "sub1": 58, "sub2": 56, "sub3": 54, "sub4": 50},
-    {"name": "FiBL Research",        "sub1": 33, "sub2": 31, "sub3": 32, "sub4": 29},
-    {"name": "PAN Pesticide Action", "sub1": 17, "sub2": 16, "sub3": 18, "sub4": 15},
+    {"name": "Bayer CropScience",         "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Syngenta Pesticides",       "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "BASF Crop Protection",      "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Corteva Pesticides",        "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Dow Chemical",              "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Nufarm Agricultural",       "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "FiBL Research",             "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "PAN Pesticide Action",      "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 def compute_score(e):

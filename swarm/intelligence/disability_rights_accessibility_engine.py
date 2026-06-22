@@ -10,14 +10,14 @@ DOMAIN_CODE = "DRA"
 ACCENT_COLOR = "#4338ca"
 
 ENTITIES = [
-    {"name": "Uber (inaccessibilité)", "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 85.0},
-    {"name": "Airbnb (discrimination)", "sub1": 88.0, "sub2": 86.0, "sub3": 84.0, "sub4": 82.0},
-    {"name": "Amazon (refus adaptations)", "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 80.0},
-    {"name": "Walmart (inaccessibilité)", "sub1": 84.0, "sub2": 82.0, "sub3": 80.0, "sub4": 78.0},
-    {"name": "Apple (accessibilité numérique limitée)", "sub1": 58.0, "sub2": 56.0, "sub3": 55.0, "sub4": 53.0},
-    {"name": "Facebook/Meta (accessibilité)", "sub1": 55.0, "sub2": 53.0, "sub3": 52.0, "sub4": 50.0},
-    {"name": "Microsoft (WCAG partiel)", "sub1": 32.0, "sub2": 30.0, "sub3": 28.0, "sub4": 34.0},
-    {"name": "Blind Institute Technology", "sub1": 12.0, "sub2": 10.0, "sub3": 8.0, "sub4": 14.0},
+    {"name": "Uber (inaccessibilité)",    "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Airbnb (discrimination)",   "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Amazon (refus adaptations)", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Walmart (inaccessibilité)", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Apple (accessibilité numérique limitée)", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Facebook/Meta (accessibilité)", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Microsoft (WCAG partiel)",  "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Blind Institute Technology", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

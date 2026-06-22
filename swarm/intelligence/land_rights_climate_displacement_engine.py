@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "LRC"
 ACCENT_COLOR = "#1c3d1c"
 ENTITIES = [
-    {"name": "Bangladesh (Inondations)", "sub1": 95.0, "sub2": 91.0, "sub3": 88.0, "sub4": 85.0},
-    {"name": "Pacific Islands (Submersion)", "sub1": 92.0, "sub2": 88.0, "sub3": 84.0, "sub4": 81.0},
-    {"name": "Mozambique (Cyclones Idai/Kenneth)", "sub1": 88.0, "sub2": 84.0, "sub3": 80.0, "sub4": 77.0},
-    {"name": "Sudan (Sécheresse)", "sub1": 84.0, "sub2": 79.0, "sub3": 76.0, "sub4": 73.0},
-    {"name": "Philippines (Typhons)", "sub1": 58.0, "sub2": 52.0, "sub3": 50.0, "sub4": 47.0},
-    {"name": "Ethiopia (Sécheresse)", "sub1": 55.0, "sub2": 49.0, "sub3": 47.0, "sub4": 44.0},
-    {"name": "UNHCR Climate", "sub1": 37.0, "sub2": 32.0, "sub3": 29.0, "sub4": 26.0},
-    {"name": "Climate Displaced People Alliance", "sub1": 16.0, "sub2": 13.0, "sub3": 11.0, "sub4": 9.0},
+    {"name": "Bangladesh (Inondations)",  "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Pacific Islands (Submersion)", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Mozambique (Cyclones Idai/Kenneth)", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Sudan (Sécheresse)",        "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Philippines (Typhons)",     "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Ethiopia (Sécheresse)",     "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "UNHCR Climate",             "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Climate Displaced People Alliance", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

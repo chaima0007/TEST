@@ -7,14 +7,14 @@ DOMAIN_CODE = "PAP"
 ACCENT_COLOR = "#134e4a"
 
 ENTITIES = [
-    {"name": "Pfizer",               "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 88.0},
-    {"name": "Johnson & Johnson",    "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 84.0},
-    {"name": "AbbVie",               "sub1": 86.0, "sub2": 84.0, "sub3": 82.0, "sub4": 80.0},
-    {"name": "Novartis",             "sub1": 82.0, "sub2": 80.0, "sub3": 78.0, "sub4": 76.0},
-    {"name": "Roche",                "sub1": 56.0, "sub2": 54.0, "sub3": 52.0, "sub4": 50.0},
-    {"name": "Sanofi",               "sub1": 50.0, "sub2": 48.0, "sub3": 46.0, "sub4": 44.0},
-    {"name": "Gilead Sciences",      "sub1": 30.0, "sub2": 28.0, "sub3": 26.0, "sub4": 24.0},
-    {"name": "MSF Access Campaign",  "sub1": 12.0, "sub2": 10.0, "sub3":  8.0, "sub4": 14.0},
+    {"name": "Pfizer",                    "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Johnson & Johnson",         "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "AbbVie",                    "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Novartis",                  "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Roche",                     "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Sanofi",                    "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Gilead Sciences",           "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "MSF Access Campaign",       "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

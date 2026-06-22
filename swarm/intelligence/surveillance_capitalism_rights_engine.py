@@ -6,14 +6,14 @@ from datetime import datetime
 DOMAIN_CODE = "SCR"
 ACCENT_COLOR = "#1a0533"
 ENTITIES = [
-    {"name": "Meta (Facebook data)", "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 93.0},
-    {"name": "Google (Search/YouTube)", "sub1": 90.0, "sub2": 88.0, "sub3": 86.0, "sub4": 89.0},
-    {"name": "TikTok (ByteDance)", "sub1": 86.0, "sub2": 83.0, "sub3": 81.0, "sub4": 84.0},
-    {"name": "Amazon (Alexa/Ring)", "sub1": 78.0, "sub2": 74.0, "sub3": 72.0, "sub4": 76.0},
-    {"name": "Apple (iCloud/privacy claims)", "sub1": 58.0, "sub2": 55.0, "sub3": 57.0, "sub4": 53.0},
-    {"name": "Microsoft (LinkedIn/Azure)", "sub1": 55.0, "sub2": 52.0, "sub3": 53.0, "sub4": 50.0},
-    {"name": "Twitter/X", "sub1": 33.0, "sub2": 29.0, "sub3": 31.0, "sub4": 27.0},
-    {"name": "Signal Foundation", "sub1": 12.0, "sub2": 8.0, "sub3": 10.0, "sub4": 6.0},
+    {"name": "Meta (Facebook data)",      "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Google (Search/YouTube)",   "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "TikTok (ByteDance)",        "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Amazon (Alexa/Ring)",       "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Apple (iCloud/privacy claims)", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Microsoft (LinkedIn/Azure)", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Twitter/X",                 "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Signal Foundation",         "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

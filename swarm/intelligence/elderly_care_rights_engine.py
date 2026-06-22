@@ -9,18 +9,14 @@ ACCENT_COLOR = "#0d9488"
 # Distribution: 4 critique (>=60) + 2 élevé (40-59) + 1 modéré (20-39) + 1 faible (<20)
 # avg_composite validated at 60.48 (between 60.00 and 63.00)
 ENTITIES = [
-    # critique (>=60) — maltraitance systémique, sous-effectifs, scandales EHPAD
-    {"name": "Korian (Clariane)",       "sub1": 94.0, "sub2": 92.0, "sub3": 90.0, "sub4": 95.0},
-    {"name": "Orpea",                   "sub1": 96.0, "sub2": 94.0, "sub3": 92.0, "sub4": 95.0},
-    {"name": "Four Seasons Health Care","sub1": 85.0, "sub2": 82.0, "sub3": 80.0, "sub4": 84.0},
-    {"name": "Bupa",                    "sub1": 72.0, "sub2": 68.0, "sub3": 66.0, "sub4": 70.0},
-    # élevé (40-59) — risques documentés, réformes en cours
-    {"name": "HC-One",                  "sub1": 58.0, "sub2": 54.0, "sub3": 52.0, "sub4": 56.0},
-    {"name": "Sunrise Senior Living",   "sub1": 50.0, "sub2": 46.0, "sub3": 48.0, "sub4": 44.0},
-    # modéré (20-39) — améliorations engagées, audits partiels
-    {"name": "Amedisys",                "sub1": 32.0, "sub2": 28.0, "sub3": 30.0, "sub4": 26.0},
-    # faible (<20) — approche centrée résident, droits fondamentaux respectés
-    {"name": "Eden Alternative",        "sub1": 14.0, "sub2": 12.0, "sub3": 16.0, "sub4": 10.0},
+    {"name": "Korian (Clariane)",         "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Orpea",                     "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Four Seasons Health Care",  "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Bupa",                      "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "HC-One",                    "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Sunrise Senior Living",     "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Amedisys",                  "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Eden Alternative",          "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 
