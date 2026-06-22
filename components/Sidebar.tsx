@@ -14807,6 +14807,27 @@ function IconRealEstateAdvertising({ size = 18, color = "currentColor" }: { size
     </svg>
   );
 }
+function IconHealthcareAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </svg>
+  );
+}
+function IconEducationAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    </svg>
+  );
+}
+function IconFintechAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="5" width="20" height="14" rx="2" /><line x1="2" y1="10" x2="22" y2="10" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -17751,6 +17772,24 @@ const navSections: NavSection[] = [
         label: "Real Estate Advertising",
         href: "/dashboard/real-estate-advertising-child-labor-rights",
         icon: IconRealEstateAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Healthcare Advertising",
+        href: "/dashboard/healthcare-advertising-child-labor-rights",
+        icon: IconHealthcareAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Education Advertising",
+        href: "/dashboard/education-advertising-child-labor-rights",
+        icon: IconEducationAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Fintech Advertising",
+        href: "/dashboard/fintech-advertising-child-labor-rights",
+        icon: IconFintechAdvertising,
         category: "Publicité Visuelle",
       },
       {
