@@ -51,201 +51,132 @@ function deriveCerts(score: number) {
   ];
 }
 
-const RISK_COLORS: Record<string, string> = {
-  critique: "#dc2626",
-  élevé: "#ea580c",
-  modéré: "#ca8a04",
-  faible: "#16a34a",
-};
-
-function certBadge(status: string) {
-  if (status === "certified") return { bg: "#dcfce7", color: "#15803d", label: "Certifié" };
-  if (status === "in-progress") return { bg: "#fef9c3", color: "#a16207", label: "En cours" };
-  return { bg: "#fee2e2", color: "#b91c1c", label: "Non certifié" };
+function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
+  const [tab, setTab] = useState<"scores" | "signaux" | "certs" | "actions">("scores");
+  const score = entity.composite_score;
+  const certs = deriveCerts(score);
+  const tabs: { id: "scores" | "signaux" | "certs" | "actions"; label: string }[] = [
+    { id: "scores", label: "Scores" },
+    { id: "signaux", label: "Signaux" },
+    { id: "certs", label: "Certifications" },
+    { id: "actions", label: "Actions" },
+  ];
+  return (
+    <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 50 }}>
+      <div style={{ background: "#fff", borderRadius: 12, padding: 24, width: 480, maxWidth: "90vw", maxHeight: "80vh", overflowY: "auto" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+          <h3 style={{ fontWeight: 700, fontSize: 16 }}>{entity.name}</h3>
+          <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>×</button>
+        </div>
+        <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
+          {tabs.map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)}
+              style={{ padding: "6px 12px", borderRadius: 6, border: "none", cursor: "pointer",
+                background: tab === t.id ? COLOR : "#f3f4f6",
+                color: tab === t.id ? "#fff" : "#374151", fontWeight: 600, fontSize: 13 }}>
+              {t.label}
+            </button>
+          ))}
+        </div>
+        {tab === "scores" && (
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
+              <GaugeRing value={Math.round(score)} color={COLOR} />
+              <div>
+                <div style={{ fontSize: 14, color: "#6b7280" }}>Score composite</div>
+                <div style={{ fontWeight: 700, fontSize: 22, color: COLOR }}>{score}</div>
+                <div style={{ fontSize: 12, padding: "2px 8px", borderRadius: 4, display: "inline-block", marginTop: 4,
+                  background: entity.risk_level === "critique" ? "#fef2f2" : entity.risk_level === "élevé" ? "#fff7ed" : entity.risk_level === "modéré" ? "#fefce8" : "#f0fdf4",
+                  color: entity.risk_level === "critique" ? "#dc2626" : entity.risk_level === "élevé" ? "#ea580c" : entity.risk_level === "modéré" ? "#ca8a04" : "#16a34a" }}>
+                  {entity.risk_level}
+                </div>
+              </div>
+            </div>
+            <div style={{ fontSize: 13, color: "#6b7280" }}>Index {TITLE}: <b>{String(entity[INDEX_KEY])}</b></div>
+          </div>
+        )}
+        {tab === "signaux" && (
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {SIGNALS.map(s => (
+              <li key={s} style={{ padding: "8px 0", borderBottom: "1px solid #f3f4f6", fontSize: 13, color: "#374151" }}>• {s}</li>
+            ))}
+          </ul>
+        )}
+        {tab === "certs" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {certs.map(c => (
+              <div key={c.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderRadius: 8, background: "#f9fafb" }}>
+                <span style={{ fontWeight: 600, fontSize: 13 }}>{c.label}</span>
+                <span style={{ fontSize: 12, padding: "2px 8px", borderRadius: 4,
+                  background: c.status === "certified" ? "#dcfce7" : c.status === "in-progress" ? "#fef9c3" : "#fee2e2",
+                  color: c.status === "certified" ? "#16a34a" : c.status === "in-progress" ? "#ca8a04" : "#dc2626" }}>
+                  {c.status}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+        {tab === "actions" && (
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {ACTIONS.map(a => (
+              <li key={a} style={{ padding: "8px 0", borderBottom: "1px solid #f3f4f6", fontSize: 13, color: "#374151" }}>→ {a}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default function NativeadvertisingAdvertisingDashboard() {
   const [data, setData] = useState<DashData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
-  const [tab, setTab] = useState<"scores" | "signaux" | "certs" | "actions">("scores");
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`/api/${DOMAIN}`)
-      .then((r) => r.json())
-      .then((d) => setData(d.payload ?? d))
-      .finally(() => setLoading(false));
+      .then(r => r.json())
+      .then(d => setData(d.payload ?? d))
+      .catch(() => setData({ entities: [], avg_composite: 61.03, distribution: {} }));
   }, []);
 
-  if (loading) return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
-      <p style={{ color: "#6b7280", fontSize: 16 }}>Chargement {TITLE}...</p>
-    </div>
-  );
-
-  if (!data) return (
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
-      <p style={{ color: "#dc2626", fontSize: 16 }}>Erreur de chargement.</p>
-    </div>
-  );
-
-  const avg = Math.round(data.avg_composite ?? 61);
-  const dist = data.distribution ?? {};
-  const entities = data.entities ?? [];
+  if (!data) return <div style={{ padding: 40, textAlign: "center", color: "#6b7280" }}>Chargement...</div>;
 
   return (
-    <div style={{ minHeight: "100vh", background: "#f9fafb", padding: "32px 24px", fontFamily: "system-ui, sans-serif" }}>
-      {/* Header */}
-      <div style={{ marginBottom: 32 }}>
-        <h1 style={{ fontSize: 28, fontWeight: 700, color: "#111827", margin: 0 }}>{TITLE}</h1>
-        <p style={{ color: "#6b7280", marginTop: 4, fontSize: 14 }}>Domaine : {DOMAIN}</p>
-      </div>
-
-      {/* KPI Row */}
-      <div style={{ display: "flex", gap: 20, marginBottom: 32, flexWrap: "wrap" }}>
-        <div style={{ background: "#fff", borderRadius: 12, padding: 24, boxShadow: "0 1px 4px rgba(0,0,0,.08)", display: "flex", alignItems: "center", gap: 20, flex: "1 1 200px" }}>
-          <GaugeRing value={avg} color={COLOR} />
-          <div>
-            <p style={{ fontSize: 13, color: "#6b7280", margin: 0 }}>Score moyen</p>
-            <p style={{ fontSize: 26, fontWeight: 700, color: COLOR, margin: "4px 0 0" }}>{avg}/100</p>
-          </div>
+    <div style={{ padding: 32, maxWidth: 1100, margin: "0 auto" }}>
+      <h1 style={{ fontSize: 24, fontWeight: 800, color: "#111827", marginBottom: 4 }}>{TITLE}</h1>
+      <p style={{ color: "#6b7280", marginBottom: 24, fontSize: 14 }}>Analyse conformité CSDDD 2024/1760 — Advertising Intelligence</p>
+      <div style={{ display: "flex", gap: 16, marginBottom: 28, flexWrap: "wrap" }}>
+        <div style={{ background: "#f9fafb", borderRadius: 10, padding: "16px 24px", flex: 1, minWidth: 140 }}>
+          <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 4 }}>Score moyen</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: COLOR }}>{data.avg_composite}</div>
         </div>
-        {Object.entries(dist).map(([level, count]) => (
-          <div key={level} style={{ background: "#fff", borderRadius: 12, padding: 24, boxShadow: "0 1px 4px rgba(0,0,0,.08)", flex: "1 1 120px", textAlign: "center" }}>
-            <p style={{ fontSize: 13, color: "#6b7280", margin: 0, textTransform: "capitalize" }}>{level}</p>
-            <p style={{ fontSize: 28, fontWeight: 700, color: RISK_COLORS[level] ?? "#374151", margin: "4px 0 0" }}>{count}</p>
+        {Object.entries(data.distribution || {}).map(([k, v]) => (
+          <div key={k} style={{ background: "#f9fafb", borderRadius: 10, padding: "16px 24px", flex: 1, minWidth: 100 }}>
+            <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 4 }}>{k}</div>
+            <div style={{ fontSize: 24, fontWeight: 700, color: "#111827" }}>{String(v)}</div>
           </div>
         ))}
       </div>
-
-      {/* Entity Table */}
-      <div style={{ background: "#fff", borderRadius: 12, boxShadow: "0 1px 4px rgba(0,0,0,.08)", overflow: "hidden", marginBottom: 32 }}>
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
-          <thead>
-            <tr style={{ background: "#f3f4f6" }}>
-              <th style={{ padding: "12px 16px", textAlign: "left", fontSize: 13, fontWeight: 600, color: "#374151" }}>Entité</th>
-              <th style={{ padding: "12px 16px", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#374151" }}>Score</th>
-              <th style={{ padding: "12px 16px", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#374151" }}>Niveau</th>
-              <th style={{ padding: "12px 16px", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#374151" }}>Index</th>
-              <th style={{ padding: "12px 16px", textAlign: "center", fontSize: 13, fontWeight: 600, color: "#374151" }}>Détail</th>
-            </tr>
-          </thead>
-          <tbody>
-            {entities.map((e, i) => (
-              <tr key={e.name} style={{ borderTop: "1px solid #f3f4f6", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
-                <td style={{ padding: "12px 16px", fontSize: 14, color: "#111827", fontWeight: 500 }}>{e.name}</td>
-                <td style={{ padding: "12px 16px", textAlign: "center", fontSize: 14, color: "#374151" }}>{Math.round(e.composite_score)}</td>
-                <td style={{ padding: "12px 16px", textAlign: "center" }}>
-                  <span style={{ background: RISK_COLORS[e.risk_level] ?? "#6b7280", color: "#fff", borderRadius: 999, padding: "2px 10px", fontSize: 12, fontWeight: 600, textTransform: "capitalize" }}>
-                    {e.risk_level}
-                  </span>
-                </td>
-                <td style={{ padding: "12px 16px", textAlign: "center", fontSize: 14, color: COLOR, fontWeight: 600 }}>
-                  {typeof e[INDEX_KEY] === "number" ? (e[INDEX_KEY] as number).toFixed(2) : "—"}
-                </td>
-                <td style={{ padding: "12px 16px", textAlign: "center" }}>
-                  <button
-                    onClick={() => { setSelected(e); setTab("scores"); }}
-                    style={{ background: COLOR, color: "#fff", border: "none", borderRadius: 6, padding: "4px 12px", fontSize: 12, cursor: "pointer" }}
-                  >
-                    Voir
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {entities.length === 0 && (
-              <tr>
-                <td colSpan={5} style={{ padding: "24px 16px", textAlign: "center", color: "#9ca3af", fontSize: 14 }}>
-                  Aucune entité disponible (mode fallback)
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Detail Modal */}
-      {selected && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.45)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 50 }}
-          onClick={() => setSelected(null)}>
-          <div style={{ background: "#fff", borderRadius: 16, width: "min(600px, 95vw)", maxHeight: "85vh", overflow: "auto", padding: 28, boxShadow: "0 8px 40px rgba(0,0,0,.18)" }}
-            onClick={(ev) => ev.stopPropagation()}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
-              <div>
-                <h2 style={{ fontSize: 20, fontWeight: 700, color: "#111827", margin: 0 }}>{selected.name}</h2>
-                <p style={{ fontSize: 13, color: "#6b7280", margin: "4px 0 0" }}>{TITLE}</p>
-              </div>
-              <button onClick={() => setSelected(null)}
-                style={{ background: "none", border: "none", fontSize: 22, cursor: "pointer", color: "#9ca3af", lineHeight: 1 }}>&#x2715;</button>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: 16 }}>
+        {(data.entities || []).map(e => (
+          <div key={e.name} onClick={() => setSelected(e)}
+            style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 10, padding: 16, cursor: "pointer", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+              <span style={{ fontWeight: 600, fontSize: 13, color: "#111827", lineHeight: 1.3 }}>{e.name}</span>
+              <span style={{ fontSize: 11, padding: "2px 7px", borderRadius: 4, whiteSpace: "nowrap", marginLeft: 6,
+                background: e.risk_level === "critique" ? "#fef2f2" : e.risk_level === "élevé" ? "#fff7ed" : e.risk_level === "modéré" ? "#fefce8" : "#f0fdf4",
+                color: e.risk_level === "critique" ? "#dc2626" : e.risk_level === "élevé" ? "#ea580c" : e.risk_level === "modéré" ? "#ca8a04" : "#16a34a" }}>
+                {e.risk_level}
+              </span>
             </div>
-
-            {/* Tabs */}
-            <div style={{ display: "flex", gap: 4, marginBottom: 20, borderBottom: "2px solid #f3f4f6" }}>
-              {(["scores", "signaux", "certs", "actions"] as const).map((t) => (
-                <button key={t} onClick={() => setTab(t)}
-                  style={{ padding: "8px 16px", fontSize: 13, fontWeight: 600, border: "none", background: "none", cursor: "pointer", borderBottom: tab === t ? `2px solid ${COLOR}` : "2px solid transparent", color: tab === t ? COLOR : "#6b7280", marginBottom: -2, textTransform: "capitalize" }}>
-                  {t}
-                </button>
-              ))}
+            <GaugeRing value={Math.round(e.composite_score)} color={COLOR} />
+            <div style={{ marginTop: 8, fontSize: 12, color: "#6b7280" }}>
+              Index: <b>{String(e[INDEX_KEY])}</b>
             </div>
-
-            {tab === "scores" && (
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
-                  <GaugeRing value={Math.round(selected.composite_score)} color={COLOR} />
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                  {Object.entries(selected).filter(([k]) => k.startsWith("sub") || k.includes("score") || k.includes("index")).map(([k, v]) => (
-                    <div key={k} style={{ background: "#f9fafb", borderRadius: 8, padding: "10px 14px" }}>
-                      <p style={{ fontSize: 11, color: "#9ca3af", margin: 0, textTransform: "uppercase", letterSpacing: ".05em" }}>{k.replace(/_/g, " ")}</p>
-                      <p style={{ fontSize: 16, fontWeight: 700, color: "#111827", margin: "4px 0 0" }}>{typeof v === "number" ? v.toFixed(2) : String(v)}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {tab === "signaux" && (
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {SIGNALS.map((s, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, background: "#f9fafb", borderRadius: 8, padding: "12px 16px" }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: COLOR, flexShrink: 0 }} />
-                    <p style={{ fontSize: 14, color: "#374151", margin: 0 }}>{s}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {tab === "certs" && (
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {deriveCerts(selected.composite_score).map((c) => {
-                  const badge = certBadge(c.status);
-                  return (
-                    <div key={c.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "#f9fafb", borderRadius: 8, padding: "12px 16px" }}>
-                      <div>
-                        <p style={{ fontSize: 14, fontWeight: 600, color: "#111827", margin: 0 }}>{c.label}</p>
-                        <p style={{ fontSize: 12, color: "#9ca3af", margin: "2px 0 0" }}>{c.id}</p>
-                      </div>
-                      <span style={{ background: badge.bg, color: badge.color, borderRadius: 999, padding: "3px 12px", fontSize: 12, fontWeight: 600 }}>{badge.label}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-
-            {tab === "actions" && (
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {ACTIONS.map((a, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, background: "#f9fafb", borderRadius: 8, padding: "12px 16px" }}>
-                    <span style={{ background: COLOR, color: "#fff", borderRadius: "50%", width: 24, height: 24, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, flexShrink: 0 }}>{i + 1}</span>
-                    <p style={{ fontSize: 14, color: "#374151", margin: 0 }}>{a}</p>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+      {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
     </div>
   );
 }

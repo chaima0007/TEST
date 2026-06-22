@@ -19773,6 +19773,8 @@ const navSections: NavSection[] = [
       { label: "Amazon Advertising", href: "/dashboard/amazonadvertising-advertising", icon: IconAmazonadvertisingAdvertising },
       { label: "Apple Search Ads", href: "/dashboard/applesearchads-advertising", icon: IconApplesearchadsAdvertising },
       { label: "Microsoft Advertising", href: "/dashboard/microsoftadvertising-advertising", icon: IconMicrosoftadvertisingAdvertising },
+      { label: "Contextual Advertising", href: "/dashboard/contextual-advertising", icon: IconContextualAdvertising },
+      { label: "Programmatic Advertising", href: "/dashboard/programmatic-advertising", icon: IconProgrammaticAdvertising },
     ],
   },
   {
