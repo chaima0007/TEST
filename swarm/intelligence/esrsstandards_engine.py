@@ -30,9 +30,11 @@ for e in ENTITIES:
 
 avg_composite = round(sum(r["composite_score"] for r in results) / len(results), 2)
 estimated_esrsstandards_index = round(avg_composite / 100 * 10, 2)
+dist = {l: sum(1 for r in results if r["risk_level"] == l) for l in ["critique", "élevé", "modéré", "faible"]}
 
 if __name__ == "__main__":
+    print(f"avg_composite: {avg_composite}")
+    print(f"distribution: {dist}")
+    print(f"estimated_esrsstandards_index: {estimated_esrsstandards_index}")
     for r in results:
-        print(f"{r['risk_level']:10} | {r['composite_score']:5.2f} | {r['name']}")
-    print(f"\navg_composite = {avg_composite}")
-    print(f"estimated_esrsstandards_index = {estimated_esrsstandards_index}")
+        print(f"  {r['name']}: {r['composite_score']} ({r['risk_level']})")
