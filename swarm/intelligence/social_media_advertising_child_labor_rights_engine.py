@@ -4,15 +4,14 @@ CaelumSwarm™ — Social Media Advertising Child Labor Rights Engine
 """
 
 ENTITIES = [
-    # (name, sub1, sub2, sub3, sub4) — tuples FIXES
-    ("Facebook Ads",   99, 97, 95, 93),  # critique
-    ("Instagram Ads",  93, 90, 88, 86),  # critique
-    ("Twitter/X Ads",  85, 82, 80, 78),  # critique
-    ("LinkedIn Ads",   80, 77, 75, 73),  # critique
-    ("TikTok Ads",     61, 58, 56, 54),  # élevé
-    ("Pinterest Ads",  51, 48, 46, 44),  # élevé
-    ("Snapchat Ads",   32, 29, 27, 25),  # modéré
-    ("BeReal Ads",     13, 11,  9,  7),  # faible
+    ("Meta (Facebook)", 99, 97, 95, 93),
+    ("TikTok",          93, 90, 88, 86),
+    ("Instagram",       85, 82, 80, 78),
+    ("Twitter/X",       80, 77, 75, 73),
+    ("LinkedIn",        61, 58, 56, 54),
+    ("Snapchat",        51, 48, 46, 44),
+    ("Pinterest",       32, 29, 27, 25),
+    ("Reddit",          13, 11,  9,  7),
 ]
 
 def compute(entity):
@@ -30,8 +29,7 @@ if __name__ == "__main__":
     avg = round(sum(r["composite_score"] for r in results) / len(results), 2)
     dist = {l: sum(1 for r in results if r["risk_level"] == l) for l in ["critique","élevé","modéré","faible"]}
     print(f"avg_composite: {avg}")
-    print(f"Distribution: {dist}")
+    print(f"distribution: {dist}")
     assert avg >= 60, f"avg trop bas: {avg}"
-    assert dist == {"critique": 4, "élevé": 2, "modéré": 1, "faible": 1}, f"Distribution invalide: {dist}"
-    for r in results:
-        print(r)
+    assert dist == {"critique": 4, "élevé": 2, "modéré": 1, "faible": 1}, f"distribution incorrecte: {dist}"
+    print("✓ Engine valide")

@@ -1,17 +1,17 @@
 """
-CaelumSwarm™ — Gaming Advertising Child Labor Rights Engine
+CaelumSwarm™ — Streaming Advertising Child Labor Rights Engine
 © 2024-2026 Caelum Partners SPRL
 """
 
 ENTITIES = [
-    ("Activision Blizzard", 99, 97, 95, 93),
-    ("Electronic Arts",     93, 90, 88, 86),
-    ("Ubisoft",             85, 82, 80, 78),
-    ("Nintendo",            80, 77, 75, 73),
-    ("Sony PlayStation",    61, 58, 56, 54),
-    ("Microsoft Xbox",      51, 48, 46, 44),
-    ("Epic Games",          32, 29, 27, 25),
-    ("Riot Games",          13, 11,  9,  7),
+    ("Netflix",        99, 97, 95, 93),
+    ("Disney+",        93, 90, 88, 86),
+    ("Amazon Prime",   85, 82, 80, 78),
+    ("HBO Max",        80, 77, 75, 73),
+    ("Hulu",           61, 58, 56, 54),
+    ("Apple TV+",      51, 48, 46, 44),
+    ("Spotify",        32, 29, 27, 25),
+    ("YouTube Premium",13, 11,  9,  7),
 ]
 
 def compute(entity):
