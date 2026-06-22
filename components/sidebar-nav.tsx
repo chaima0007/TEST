@@ -4021,6 +4021,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "FAIR WAGES & ENVIRONMENT",
+    items: [
+      { href: "/dashboard/fairwages-engine", label: "Salaires Équitables", icon: Icons.IconFairWages },
+      { href: "/dashboard/scope3emissions-engine", label: "Émissions Scope 3", icon: Icons.IconScope3Emissions },
+      { href: "/dashboard/waterstewardship-engine", label: "Gestion Eau", icon: Icons.IconWaterStewardship },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
