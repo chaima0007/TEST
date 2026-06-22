@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
-if (!process.env.SWARM_API_URL) { console.warn("[podcast-advertising-child-labor-rights] SWARM_API_URL non défini — mode dégradé activé"); }
+if (!process.env.SWARM_API_URL) { console.warn("[music-streaming-advertising-child-labor-rights] SWARM_API_URL non défini — mode dégradé activé"); }
 export async function GET() {
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/podcast_advertising_child_labor_rights`, { next: { revalidate: 30 } });
+    const res = await fetch(`${process.env.SWARM_API_URL}/music_streaming_advertising_child_labor_rights`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
     return sealResponse(NextResponse.json(data));
