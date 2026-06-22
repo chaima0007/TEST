@@ -15741,6 +15741,34 @@ function IconDigitaloutofhomeAdvertising({ size = 18, color = "currentColor" }: 
     </svg>
   );
 }
+function IconCrossdeviceadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="5" y="2" width="14" height="20" rx="2"/>
+      <rect x="2" y="7" width="6" height="10" rx="1"/>
+      <rect x="16" y="7" width="6" height="10" rx="1"/>
+    </svg>
+  );
+}
+function IconSemanticadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+      <path d="M2 17l10 5 10-5"/>
+      <path d="M2 12l10 5 10-5"/>
+    </svg>
+  );
+}
+function IconAidrivenadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/>
+      <path d="M12 14c-4.41 0-8 1.79-8 4v2h16v-2c0-2.21-3.59-4-8-4"/>
+      <path d="M18 8l2 2-2 2"/>
+      <path d="M6 8L4 10l2 2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19412,6 +19440,9 @@ const navSections: NavSection[] = [
       { label: "Interactive Advertising", href: "/dashboard/interactiveadvertising-advertising", icon: IconInteractiveadvertisingAdvertising },
       { label: "Addressable TV", href: "/dashboard/addressabletv-advertising", icon: IconAddressabletvAdvertising },
       { label: "Digital Out-of-Home", href: "/dashboard/digitaloutofhome-advertising", icon: IconDigitaloutofhomeAdvertising },
+      { label: "Cross-Device Advertising", href: "/dashboard/crossdeviceadvertising-advertising", icon: IconCrossdeviceadvertisingAdvertising },
+      { label: "Semantic Advertising", href: "/dashboard/semanticadvertising-advertising", icon: IconSemanticadvertisingAdvertising },
+      { label: "AI-Driven Advertising", href: "/dashboard/aidrivenadvertising-advertising", icon: IconAidrivenadvertisingAdvertising },
     ],
   },
   {
