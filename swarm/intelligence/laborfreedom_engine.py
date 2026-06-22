@@ -15,12 +15,10 @@ ENTITIES = [
 def compute(e):
     return e["sub1"]*0.30 + e["sub2"]*0.25 + e["sub3"]*0.25 + e["sub4"]*0.20
 
-SEUILS = {"critique": 60, "élevé": 40, "modéré": 20}
-
 def classify(score):
-    if score >= SEUILS["critique"]: return "critique"
-    if score >= SEUILS["élevé"]: return "élevé"
-    if score >= SEUILS["modéré"]: return "modéré"
+    if score >= 60: return "critique"
+    if score >= 40: return "élevé"
+    if score >= 20: return "modéré"
     return "faible"
 
 results = []
@@ -29,10 +27,12 @@ for e in ENTITIES:
     results.append({**e, "composite_score": round(score, 2), "risk_level": classify(score)})
 
 avg_composite = round(sum(r["composite_score"] for r in results) / len(results), 2)
+dist = {l: sum(1 for r in results if r["risk_level"] == l) for l in ["critique", "élevé", "modéré", "faible"]}
 estimated_laborfreedom_index = round(avg_composite / 100 * 10, 2)
 
 if __name__ == "__main__":
+    print(f"avg_composite: {avg_composite}")
+    print(f"distribution: {dist}")
+    print(f"estimated_laborfreedom_index: {estimated_laborfreedom_index}")
     for r in results:
-        print(f"{r['risk_level']:10} | {r['composite_score']:5.2f} | {r['name']}")
-    print(f"\navg_composite = {avg_composite}")
-    print(f"estimated_laborfreedom_index = {estimated_laborfreedom_index}")
+        print(f"  {r['name']}: {r['composite_score']} ({r['risk_level']})")
