@@ -3957,6 +3957,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "SUPPLY CHAIN & ESG RISK",
+    items: [
+      { href: "/dashboard/supplychain", label: "Supply Chain", icon: Icons.IconSupplyChain },
+      { href: "/dashboard/esg", label: "ESG Risk", icon: Icons.IconEsg },
+      { href: "/dashboard/sustainablesourcing", label: "Sustainable Sourcing", icon: Icons.IconSustainableSourcing },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
