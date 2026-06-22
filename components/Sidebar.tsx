@@ -12377,6 +12377,39 @@ function IconPhosphateMiningIndigenousRights() {
   );
 }
 
+function IconCarpetWeavingChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <line x1="3" y1="9" x2="21" y2="9" />
+      <line x1="3" y1="15" x2="21" y2="15" />
+      <line x1="9" y1="3" x2="9" y2="21" />
+      <line x1="15" y1="3" x2="15" y2="21" />
+    </svg>
+  );
+}
+
+function IconSilkProductionChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <ellipse cx="12" cy="12" rx="5" ry="8" />
+      <path d="M12 4C10 2 7 2 6 4" />
+      <path d="M12 20c2 2 5 2 6 0" />
+      <path d="M7 12c-2 0-4-1-4-3" />
+      <path d="M17 12c2 0 4-1 4-3" />
+    </svg>
+  );
+}
+
+function IconCharcoalBurningChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#1c1917" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2c0 0-6 6-6 12a6 6 0 0 0 12 0c0-6-6-12-6-12z" />
+      <path d="M12 10c0 0-2 2-2 4a2 2 0 0 0 4 0c0-2-2-4-2-4z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14267,6 +14300,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/jute-child-labor-rights", label: "Travail Enfant Moulins Jute", icon: IconJuteChildLaborRights },
       { href: "/dashboard/salt-pans-child-labor-rights", label: "Travail Enfant Marais Salants", icon: IconSaltPansChildLaborRights },
       { href: "/dashboard/phosphate-mining-indigenous-rights", label: "Droits Autochtones Phosphate", icon: IconPhosphateMiningIndigenousRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 292",
+    items: [
+      { href: "/dashboard/carpet-weaving-child-labor-rights", label: "Travail Enfant Tissage Tapis", icon: IconCarpetWeavingChildLaborRights },
+      { href: "/dashboard/silk-production-child-labor-rights", label: "Travail Enfant Production Soie", icon: IconSilkProductionChildLaborRights },
+      { href: "/dashboard/charcoal-burning-child-labor-rights", label: "Travail Enfant Charbon de Bois", icon: IconCharcoalBurningChildLaborRights },
     ],
   },
   {
