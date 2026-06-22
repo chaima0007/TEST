@@ -12079,6 +12079,42 @@ function IconMatchstickChildLaborRights() {
   );
 }
 
+function IconUraniumMiningIndigenousRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="3" />
+      <ellipse cx="12" cy="12" rx="10" ry="4" />
+      <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
+      <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
+    </svg>
+  );
+}
+
+function IconBloodDiamondConflictMineralRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M6 3 L2 9 L12 21 L22 9 L18 3 Z" />
+      <path d="M2 9 L12 9 L22 9" />
+      <path d="M6 3 L12 9 L18 3" />
+      <path d="M9 15 Q10 17 9 19" />
+      <path d="M13 13 Q14 15 13 17" />
+    </svg>
+  );
+}
+
+function IconIllegalFishingForcedLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 17 L7 13 L13 13 L21 17 L21 19 L3 19 Z" />
+      <path d="M7 13 L7 9 L15 9 L15 13" />
+      <line x1="11" y1="9" x2="11" y2="5" />
+      <path d="M8 5 L11 5 L14 5" />
+      <path d="M5 20 Q6 22 7 20 Q8 22 9 20" />
+      <path d="M14 17 L16 15 L18 17 L16 19 Z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13897,6 +13933,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/sugarcane-labor-rights", label: "Travailleurs Canne à Sucre", icon: IconSugarcaneLaborRights },
       { href: "/dashboard/palm-oil-peatland-rights", label: "Huile de Palme Tourbières", icon: IconPalmOilPeatlandRights },
       { href: "/dashboard/matchstick-child-labor-rights", label: "Enfants Fabriques Allumettes", icon: IconMatchstickChildLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 283",
+    items: [
+      { href: "/dashboard/uranium-mining-indigenous-rights", label: "Uranium Terres Autochtones", icon: IconUraniumMiningIndigenousRights },
+      { href: "/dashboard/blood-diamond-conflict-mineral-rights", label: "Diamants du Sang", icon: IconBloodDiamondConflictMineralRights },
+      { href: "/dashboard/illegal-fishing-forced-labor-rights", label: "Pêche Illégale Esclavage", icon: IconIllegalFishingForcedLaborRights },
     ],
   },
   {
