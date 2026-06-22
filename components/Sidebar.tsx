@@ -12689,6 +12689,47 @@ function IconFlowerPackingChemicalRights({ size = 18, color = "#be185d" }: { siz
   );
 }
 
+function IconCeramicDustSilicosisRights({ size = 18, color = "#b45309" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 3h6l2 6H7L9 3z" />
+      <path d="M7 9v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9" />
+      <path d="M5 7c-1 1-1 3 0 4" />
+      <path d="M19 7c1 1 1 3 0 4" />
+      <path d="M10 13 Q12 11 14 13" />
+      <path d="M9 16 Q12 14 15 16" />
+    </svg>
+  );
+}
+
+function IconLeadPaintManufacturingWorkerRights({ size = 18, color = "#475569" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="7" y="8" width="10" height="10" rx="1" />
+      <path d="M10 8V6a2 2 0 0 1 4 0v2" />
+      <path d="M12 13v2" />
+      <circle cx="12" cy="12" r="1" />
+      <path d="M4 19 Q6 17 8 18" />
+      <path d="M3 16 Q5 14 7 15" />
+      <path d="M19 5l2-2" />
+      <path d="M17 4l1-3" />
+      <path d="M20 8l3-1" />
+    </svg>
+  );
+}
+
+function IconCoalWasheryWorkerRights({ size = 18, color = "#1c1917" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20 Q6 16 5 12 Q4 8 7 6 Q10 4 12 7 Q14 4 17 6 Q20 8 19 12 Q18 16 20 20" />
+      <path d="M4 20 h16" />
+      <path d="M9 20 Q10 17 12 16 Q14 17 15 20" />
+      <path d="M8 12 Q10 10 12 12 Q14 10 16 12" />
+      <path d="M9 15 Q12 13 15 15" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14651,6 +14692,14 @@ const navSections: NavSection[] = [
       { label: "Droits Artisans Bijouterie Or", href: "/dashboard/gold-jewelry-artisan-rights", icon: IconGoldJewelryArtisanRights, color: "#ca8a04" },
       { label: "Droits Carriers Silicose Pierre", href: "/dashboard/stone-quarry-silicosis-rights", icon: IconStoneQuarrySilicosisRights, color: "#78716c" },
       { label: "Droits Emballeurs Fleurs Pesticides", href: "/dashboard/flower-packing-chemical-rights", icon: IconFlowerPackingChemicalRights, color: "#be185d" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 301",
+    items: [
+      { label: "Droits Travailleurs Silicose Céramique", href: "/dashboard/ceramic-dust-silicosis-rights", icon: IconCeramicDustSilicosisRights, color: "#b45309" },
+      { label: "Droits Travailleurs Peintures Plomb", href: "/dashboard/lead-paint-manufacturing-worker-rights", icon: IconLeadPaintManufacturingWorkerRights, color: "#475569" },
+      { label: "Droits Travailleurs Laveries Charbon", href: "/dashboard/coal-washery-worker-rights", icon: IconCoalWasheryWorkerRights, color: "#1c1917" },
     ],
   },
   {
