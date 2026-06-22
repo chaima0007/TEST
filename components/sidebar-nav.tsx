@@ -3793,6 +3793,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/brandlift", label: "Brand Lift", icon: Icons.IconBrandLift },
       { href: "/dashboard/incrementality", label: "Incrementality", icon: Icons.IconIncrementality },
       { href: "/dashboard/crosschannelads", label: "Cross-Channel Ads", icon: Icons.IconCrossChannelAds },
+      { href: "/dashboard/adtech", label: "Ad Technology", icon: Icons.IconAdTech },
+      { href: "/dashboard/dsp", label: "DSP Risk", icon: Icons.IconDsp },
+      { href: "/dashboard/ssp", label: "SSP Risk", icon: Icons.IconSsp },
     ],
   },
   {

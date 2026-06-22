@@ -4317,6 +4317,22 @@ export function IconContextualInt({ className }: { className?: string }) {
   );
 }
 
+export function IconAudienceSeg({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/><path d="M12 12l-4-4M12 12l4 4"/>
+    </svg>
+  );
+}
+
+export function IconLookalike({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="9" cy="8" r="4"/><circle cx="17" cy="8" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4"/><path d="M13 21v-2a4 4 0 0 1 4-4h4"/>
+    </svg>
+  );
+}
+
 export function IconAdTech({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
