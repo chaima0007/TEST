@@ -15285,6 +15285,27 @@ function IconEnergystorageAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconSmartgridAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+    </svg>
+  );
+}
+function IconMicrogridAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/>
+    </svg>
+  );
+}
+function IconVirtualpowerplantAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l3 3 3-3 3 3"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18618,6 +18639,24 @@ const navSections: NavSection[] = [
         label: "Energy Storage Advertising",
         href: "/dashboard/energystorage-advertising",
         icon: IconEnergystorageAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Smart Grid Advertising",
+        href: "/dashboard/smartgrid-advertising",
+        icon: IconSmartgridAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Microgrid Advertising",
+        href: "/dashboard/microgrid-advertising",
+        icon: IconMicrogridAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Virtual Power Plant Advertising",
+        href: "/dashboard/virtualpowerplant-advertising",
+        icon: IconVirtualpowerplantAdvertising,
         category: "Publicité Visuelle",
       },
       {
