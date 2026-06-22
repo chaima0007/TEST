@@ -1,51 +1,35 @@
-#!/usr/bin/env python3
-"""CaelumSwarm™ — Sports Advertising Child Labor Rights Engine (Wave 352)"""
-import json, statistics
+"""
+CaelumSwarm™ — Sports Advertising Child Labor Rights Engine
+© 2024-2026 Caelum Partners SPRL
+"""
 
 ENTITIES = [
-    ("Nike / Adidas sponsors", 99, 97, 95, 93),
-    ("diffuseurs sportifs (beIN Sports, DAZN)", 93, 90, 88, 86),
-    ("plateformes stadium digital", 85, 82, 80, 78),
-    ("agences sports marketing", 80, 77, 75, 73),
-    ("fournisseurs jersey sponsoring", 61, 58, 56, 54),
-    ("fantasy sports platforms", 51, 48, 46, 44),
-    ("sports data providers", 32, 29, 27, 25),
-    ("in-venue advertising networks", 13, 11, 9, 7),
+    ("Nike",          99, 97, 95, 93),
+    ("Adidas",        93, 90, 88, 86),
+    ("Puma",          85, 82, 80, 78),
+    ("Under Armour",  80, 77, 75, 73),
+    ("New Balance",   61, 58, 56, 54),
+    ("Reebok",        51, 48, 46, 44),
+    ("ASICS",         32, 29, 27, 25),
+    ("Fila",          13, 11,  9,  7),
 ]
-WEIGHTS = (0.30, 0.25, 0.25, 0.20)
-THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
 
-def classify(score):
-    if score >= THRESHOLDS["critique"]: return "critique"
-    if score >= THRESHOLDS["élevé"]: return "élevé"
-    if score >= THRESHOLDS["modéré"]: return "modéré"
-    return "faible"
-
-def compute():
-    results = []
-    for entity in ENTITIES:
-        eid, *subs = entity
-        composite = sum(s * w for s, w in zip(subs, WEIGHTS))
-        results.append({
-            "entity": eid,
-            "composite_score": round(composite, 2),
-            "risk_level": classify(composite),
-            "estimated_sports_advertising_index": round(composite / 100 * 10, 2),
-        })
-    avg = statistics.mean(r["composite_score"] for r in results)
-    distribution = {}
-    for r in results:
-        distribution[r["risk_level"]] = distribution.get(r["risk_level"], 0) + 1
-    return {"entities": results, "avg_composite": round(avg, 2), "distribution": distribution}
+def compute(entity):
+    name, s1, s2, s3, s4 = entity
+    score = round(s1*0.30 + s2*0.25 + s3*0.25 + s4*0.20, 2)
+    if score >= 60: level = "critique"
+    elif score >= 40: level = "élevé"
+    elif score >= 20: level = "modéré"
+    else: level = "faible"
+    idx = round(score / 100 * 10, 2)
+    return {"name": name, "composite_score": score, "risk_level": level, "estimated_index": idx}
 
 if __name__ == "__main__":
-    output = compute()
-    print(json.dumps(output, indent=2, ensure_ascii=False))
-    avg = output["avg_composite"]
-    dist = output["distribution"]
-    assert avg >= 60
-    assert dist.get("critique", 0) == 4
-    assert dist.get("élevé", 0) == 2
-    assert dist.get("modéré", 0) == 1
-    assert dist.get("faible", 0) == 1
-    print("✓ Assertions passées")
+    results = [compute(e) for e in ENTITIES]
+    avg = round(sum(r["composite_score"] for r in results) / len(results), 2)
+    dist = {l: sum(1 for r in results if r["risk_level"] == l) for l in ["critique","élevé","modéré","faible"]}
+    print(f"avg_composite: {avg}")
+    print(f"distribution: {dist}")
+    assert avg >= 60, f"avg trop bas: {avg}"
+    assert dist == {"critique": 4, "élevé": 2, "modéré": 1, "faible": 1}, f"distribution incorrecte: {dist}"
+    print("✓ Engine valide")

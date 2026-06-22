@@ -1,17 +1,17 @@
 """
-CaelumSwarm™ — Luxury Advertising Child Labor Rights Engine
+CaelumSwarm™ — Music Advertising Child Labor Rights Engine
 © 2024-2026 Caelum Partners SPRL
 """
 
 ENTITIES = [
-    ("LVMH",      99, 97, 95, 93),
-    ("Richemont",  93, 90, 88, 86),
-    ("Kering",     85, 82, 80, 78),
-    ("Hermès",     80, 77, 75, 73),
-    ("Chanel",     61, 58, 56, 54),
-    ("Prada",      51, 48, 46, 44),
-    ("Burberry",   32, 29, 27, 25),
-    ("Rolex",      13, 11,  9,  7),
+    ("Universal Music", 99, 97, 95, 93),
+    ("Sony Music",      93, 90, 88, 86),
+    ("Warner Music",    85, 82, 80, 78),
+    ("Live Nation",     80, 77, 75, 73),
+    ("Ticketmaster",    61, 58, 56, 54),
+    ("Spotify",         51, 48, 46, 44),
+    ("Apple Music",     32, 29, 27, 25),
+    ("Amazon Music",    13, 11,  9,  7),
 ]
 
 def compute(entity):
