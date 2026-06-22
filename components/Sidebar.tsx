@@ -10181,6 +10181,30 @@ function IconRefugeeCampRights({ className }: { className?: string }) {
     </svg>
   );
 }
+function IconPensionElderlyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="6" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M7 9.5 C7 9.5 5 10 5 13 L5 16" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path d="M13 9.5 C13 9.5 15 10 15 13 L15 16" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <line x1="10" y1="9" x2="10" y2="14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M13 12 L15.5 14 L17 13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+    </svg>
+  );
+}
+function IconDarkWebRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+      <circle cx="10" cy="10" r="3" fill="none" stroke="currentColor" strokeWidth="1.2" />
+      <line x1="10" y1="2.5" x2="10" y2="7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+      <line x1="10" y1="13" x2="10" y2="17.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+      <line x1="2.5" y1="10" x2="7" y2="10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+      <line x1="13" y1="10" x2="17.5" y2="10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+      <circle cx="10" cy="10" r="1" fill="currentColor" />
+    </svg>
+  );
+}
 function IconCorporateImpunityLegal({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -11582,6 +11606,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/medical-debt-rights-engine", label: "Dettes Médicales", icon: IconMedicalDebtRights },
       { href: "/dashboard/cultural-heritage-rights-engine", label: "Patrimoine Culturel", icon: IconCulturalHeritageRights },
       { href: "/dashboard/whistleblower-rights-engine", label: "Lanceurs d'Alerte", icon: IconWhistleblowerRights },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 215",
+    items: [
+      { href: "/dashboard/refugee-camp-rights-engine", label: "Camps de Réfugiés", icon: IconRefugeeCampRights },
+      { href: "/dashboard/pension-elderly-rights-engine", label: "Pension & Personnes Âgées", icon: IconPensionElderlyRights },
+      { href: "/dashboard/dark-web-rights-engine", label: "Droits & Dark Web", icon: IconDarkWebRights },
     ],
   },
   {
