@@ -12149,6 +12149,38 @@ function IconIllegalHardwoodLoggingRights() {
   );
 }
 
+function IconBearBileFarmingRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#78350f" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M8 12c-2 1-4 3-4 6h16c0-3-2-5-4-6" />
+      <path d="M10 16l2 4 2-4" />
+    </svg>
+  );
+}
+
+function IconRhinocerosHornPoachinRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M4 18c0-4 3-7 8-7s8 3 8 7" />
+      <path d="M12 11V4l4 5" />
+      <circle cx="12" cy="18" r="1" />
+    </svg>
+  );
+}
+
+function IconCocoaChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <ellipse cx="12" cy="12" rx="5" ry="8" />
+      <path d="M12 4V2" />
+      <path d="M9 8l-3-2" />
+      <path d="M15 8l3-2" />
+      <circle cx="12" cy="19" r="2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13983,6 +14015,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/tiger-bone-traditional-medicine-rights", label: "Os de Tigre Médecine", icon: IconTigerBoneTraditionalMedicineRights },
       { href: "/dashboard/shark-fin-finning-rights", label: "Aileronage Requins", icon: IconSharkFinFinningRights },
       { href: "/dashboard/illegal-hardwood-logging-rights", label: "Bois Précieux Illégaux", icon: IconIllegalHardwoodLoggingRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 285",
+    items: [
+      { href: "/dashboard/bear-bile-farming-rights", label: "Élevage Ours pour Bile", icon: IconBearBileFarmingRights },
+      { href: "/dashboard/rhinoceros-horn-poaching-rights", label: "Braconnage Rhinocéros", icon: IconRhinocerosHornPoachinRights },
+      { href: "/dashboard/cocoa-child-labor-rights", label: "Travail Enfant Cacao", icon: IconCocoaChildLaborRights },
     ],
   },
   {
