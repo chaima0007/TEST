@@ -11110,6 +11110,30 @@ function IconJournalistProtectionRights({ className }: { className?: string }) {
   );
 }
 
+function IconAntiMoneyLaunderingRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+    </svg>
+  );
+}
+
+function IconSexualViolenceConflictRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function IconAlgorithmicDiscriminationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12632,6 +12656,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/organ-trafficking-rights-engine", label: "Organ Trafficking Rights", icon: IconOrganTraffickingRights, color: "#dc2626" },
       { href: "/dashboard/right-to-strike-rights-engine", label: "Right to Strike Rights", icon: IconRightToStrikeRights, color: "#ea580c" },
       { href: "/dashboard/journalist-protection-rights-engine", label: "Journalist Protection Rights", icon: IconJournalistProtectionRights, color: "#0369a1" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 246",
+    items: [
+      { href: "/dashboard/anti-money-laundering-rights-engine", label: "Anti-Money Laundering Rights", icon: IconAntiMoneyLaunderingRights, color: "#065f46" },
+      { href: "/dashboard/sexual-violence-conflict-rights-engine", label: "Sexual Violence Conflict Rights", icon: IconSexualViolenceConflictRights, color: "#9f1239" },
+      { href: "/dashboard/algorithmic-discrimination-rights-engine", label: "Algorithmic Discrimination Rights", icon: IconAlgorithmicDiscriminationRights, color: "#4338ca" },
     ],
   },
   {
