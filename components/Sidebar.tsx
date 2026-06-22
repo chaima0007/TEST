@@ -13453,6 +13453,44 @@ function IconCashmereCombingChildLaborRights({ size = 20, color = "currentColor"
   );
 }
 
+function IconIndigoDyeCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22 L12 8" />
+      <path d="M12 8 Q7 5 4 6 Q6 2 10 4 Q8 1 12 2 Q16 1 14 4 Q18 2 20 6 Q17 5 12 8" />
+      <rect x={8} y={14} width={8} height={6} rx={1} />
+      <line x1={10} y1={14} x2={10} y2={20} />
+      <line x1={14} y1={14} x2={14} y2={20} />
+    </svg>
+  );
+}
+
+function IconWoadDyeCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={10} />
+      <path d="M12 10 Q8 7 5 8" />
+      <path d="M12 10 Q16 7 19 8" />
+      <path d="M5 8 Q4 5 6 4 Q8 3 9 5" />
+      <path d="M19 8 Q20 5 18 4 Q16 3 15 5" />
+      <path d="M9 5 Q10 3 12 4 Q14 3 15 5" />
+    </svg>
+  );
+}
+
+function IconMadderRootDyeChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={4} x2={12} y2={10} />
+      <path d="M12 10 Q8 12 6 16" />
+      <path d="M12 10 Q16 12 18 16" />
+      <path d="M12 10 Q11 14 10 18" />
+      <path d="M12 10 Q13 14 14 18" />
+      <circle cx={12} cy={3} r={2} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15809,6 +15847,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Peignage Cachemire",
         icon: IconCashmereCombingChildLaborRights,
         color: "#0e7490",
+      },
+      {
+        href: "/dashboard/indigo-dye-child-labor-rights",
+        label: "Droits Enfants Teinture Indigo",
+        icon: IconIndigoDyeCultivationChildLaborRights,
+        color: "#312e81",
+      },
+      {
+        href: "/dashboard/woad-dye-child-labor-rights",
+        label: "Droits Enfants Teinture Pastel",
+        icon: IconWoadDyeCultivationChildLaborRights,
+        color: "#1e3a5f",
+      },
+      {
+        href: "/dashboard/madder-root-dye-child-labor-rights",
+        label: "Droits Enfants Teinture Garance",
+        icon: IconMadderRootDyeChildLaborRights,
+        color: "#7f1d1d",
       },
     ],
   },
