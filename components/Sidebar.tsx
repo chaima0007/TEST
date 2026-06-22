@@ -14167,6 +14167,37 @@ function IconNeuromarketingAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconDynamicCreativeOptimization({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="1" width="14" height="10" rx="1" />
+      <path d="M4 8l2-3 2 2 2-3 2 2" />
+      <path d="M3 14h10" />
+    </svg>
+  );
+}
+
+function IconAddressableTvAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="2" width="14" height="10" rx="1" />
+      <path d="M5 15h6M8 12v3" />
+      <circle cx="8" cy="7" r="2" />
+      <path d="M5.5 4.5l1.5 1M9 9l1.5 1.5M10.5 4.5L9 6M7 9l-1.5 1.5" />
+    </svg>
+  );
+}
+
+function IconRetailDataAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 14V6l6-4 6 4v8H2z" />
+      <rect x="6" y="9" width="4" height="5" />
+      <path d="M5 6h2M9 6h2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16876,6 +16907,24 @@ const navSections: NavSection[] = [
         label: "Neuromarketing Advertising",
         href: "/dashboard/neuromarketing-advertising-child-labor-rights",
         icon: IconNeuromarketingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Dynamic Creative Optimization",
+        href: "/dashboard/dynamic-creative-optimization-child-labor-rights",
+        icon: IconDynamicCreativeOptimization,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Addressable TV Advertising",
+        href: "/dashboard/addressable-tv-advertising-child-labor-rights",
+        icon: IconAddressableTvAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Retail Data Advertising",
+        href: "/dashboard/retail-data-advertising-child-labor-rights",
+        icon: IconRetailDataAdvertising,
         category: "Publicité Visuelle",
       },
     ],
