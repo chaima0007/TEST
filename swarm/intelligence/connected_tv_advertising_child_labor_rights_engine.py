@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Connected TV Advertising Child Labor Rights Engine (Wave 339)"""
+"""CaelumSwarm™ — Connected TV Advertising Child Labor Rights Engine (Wave 355)"""
 import json, statistics
 
 ENTITIES = [
-    ("CTV-001", 99, 97, 95, 93),
-    ("CTV-002", 93, 90, 88, 86),
-    ("CTV-003", 85, 82, 80, 78),
-    ("CTV-004", 80, 77, 75, 73),
-    ("CTV-005", 61, 58, 56, 54),
-    ("CTV-006", 51, 48, 46, 44),
-    ("CTV-007", 32, 29, 27, 25),
-    ("CTV-008", 13, 11, 9, 7),
+    ("Roku OneView", 99, 97, 95, 93),
+    ("Amazon Fire TV Ads", 93, 90, 88, 86),
+    ("Samsung Ads", 85, 82, 80, 78),
+    ("LG Ads Solutions", 80, 77, 75, 73),
+    ("Vizio Ads", 61, 58, 56, 54),
+    ("FreeWheel (Comcast)", 51, 48, 46, 44),
+    ("Magnite CTV", 32, 29, 27, 25),
+    ("SpotX", 13, 11, 9, 7),
 ]
 WEIGHTS = (0.30, 0.25, 0.25, 0.20)
 THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
