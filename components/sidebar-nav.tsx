@@ -4037,6 +4037,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "DATA & DIGITAL RIGHTS",
+    items: [
+      { href: "/dashboard/dataprotection-engine", label: "Protection Données", icon: Icons.IconDataProtection },
+      { href: "/dashboard/privacyrights-engine", label: "Droits Vie Privée", icon: Icons.IconPrivacyRights },
+      { href: "/dashboard/digitalrights-engine", label: "Droits Numériques", icon: Icons.IconDigitalRights },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
