@@ -6344,6 +6344,22 @@ function IconCorporateTaxEvasion({ className }: { className?: string }) {
   );
 }
 
+function IconMentalHealthWorkplace({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.032-4.5-4.5-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.782 3.75 3.75 5.765 3.75 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+    </svg>
+  );
+}
+
+function IconMediaCensorshipPress({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6V7.5z" />
+    </svg>
+  );
+}
+
 // ─── Nav structure ───────────────────────────────────────────────────────────
 
 type NavItem = {
@@ -11130,6 +11146,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/gender-pay-gap-discrimination-engine", label: "Discrimination Salariale Genre", icon: IconGenderPayGap },
       { href: "/dashboard/refugee-asylum-rights-engine", label: "Droits des Réfugiés", icon: IconRefugeeAsylumRights },
       { href: "/dashboard/corporate-tax-evasion-engine", label: "Évasion Fiscale Corp.", icon: IconCorporateTaxEvasion },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 199",
+    items: [
+      { href: "/dashboard/mental-health-workplace-rights-engine", label: "Santé Mentale Travail", icon: IconMentalHealthWorkplace },
+      { href: "/dashboard/media-censorship-press-freedom-engine", label: "Censure & Liberté Presse", icon: IconMediaCensorshipPress },
+      { href: "/dashboard/disability-rights-accessibility-engine", label: "Droits Handicap", icon: IconDisabilityRightsAccessibility },
     ],
   },
   {
