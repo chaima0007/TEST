@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[objections] SWARM_API_URL non défini — mode local");
+}
 
 type ObjectionType =
   | "price"
@@ -242,54 +247,58 @@ function buildStats(rebuttal_id: string): RebuttalStats {
 }
 
 export async function GET() {
-  const statsMap: Record<string, RebuttalStats> = {};
-  for (const id of Object.keys(WIN_RATES)) {
-    const win_rate_pct = WIN_RATES[id];
-    const total = id === "trust_social_proof" ? 97
-      : id === "price_roi" ? 84
-      : id === "timing_now_or_never" ? 79
-      : id === "trust_free_audit" ? 72
-      : id === "no_budget_starter" ? 65
-      : id === "authority_decision_kit" ? 60
-      : id === "timing_low_effort" ? 56
-      : id === "competitor_differentiation" ? 53
-      : id === "relevance_sector_data" ? 49
-      : id === "price_payment_plan" ? 44
-      : id === "satisfied_benchmark" ? 42
-      : id === "price_competitor_compare" ? 39
-      : id === "too_busy_autonomous" ? 36
-      : 32;
-    const wins = Math.round((win_rate_pct / 100) * total);
-    statsMap[id] = { total, wins, win_rate_pct };
+  try {
+    const statsMap: Record<string, RebuttalStats> = {};
+    for (const id of Object.keys(WIN_RATES)) {
+      const win_rate_pct = WIN_RATES[id];
+      const total = id === "trust_social_proof" ? 97
+        : id === "price_roi" ? 84
+        : id === "timing_now_or_never" ? 79
+        : id === "trust_free_audit" ? 72
+        : id === "no_budget_starter" ? 65
+        : id === "authority_decision_kit" ? 60
+        : id === "timing_low_effort" ? 56
+        : id === "competitor_differentiation" ? 53
+        : id === "relevance_sector_data" ? 49
+        : id === "price_payment_plan" ? 44
+        : id === "satisfied_benchmark" ? 42
+        : id === "price_competitor_compare" ? 39
+        : id === "too_busy_autonomous" ? 36
+        : 32;
+      const wins = Math.round((win_rate_pct / 100) * total);
+      statsMap[id] = { total, wins, win_rate_pct };
+    }
+
+    const rebuttals: RebuttalWithStats[] = REBUTTALS.map(r => ({
+      ...r,
+      stats: statsMap[r.rebuttal_id] ?? buildStats(r.rebuttal_id),
+    }));
+
+    const totalOutcomes = rebuttals.reduce((s, r) => s + r.stats.total, 0);
+    const avgWinRate = Math.round(
+      rebuttals.reduce((s, r) => s + r.stats.win_rate_pct, 0) / rebuttals.length * 10
+    ) / 10;
+    const bestRebuttal = rebuttals.reduce((best, r) =>
+      r.stats.win_rate_pct > best.stats.win_rate_pct ? r : best
+    );
+
+    const byObjection: Record<string, number> = {};
+    for (const r of rebuttals) {
+      byObjection[r.objection] = (byObjection[r.objection] ?? 0) + 1;
+    }
+
+    return NextResponse.json(sealResponse({
+      rebuttals,
+      summary: {
+        total_rebuttals: 14,
+        objection_types: 9,
+        avg_win_rate_pct: avgWinRate,
+        best_rebuttal: bestRebuttal.rebuttal_id,
+        total_outcomes: totalOutcomes,
+      },
+      by_objection: byObjection,
+    }));
+  } catch {
+    return NextResponse.json(sealResponse({ error: "upstream error" }), { status: 502 });
   }
-
-  const rebuttals: RebuttalWithStats[] = REBUTTALS.map(r => ({
-    ...r,
-    stats: statsMap[r.rebuttal_id] ?? buildStats(r.rebuttal_id),
-  }));
-
-  const totalOutcomes = rebuttals.reduce((s, r) => s + r.stats.total, 0);
-  const avgWinRate = Math.round(
-    rebuttals.reduce((s, r) => s + r.stats.win_rate_pct, 0) / rebuttals.length * 10
-  ) / 10;
-  const bestRebuttal = rebuttals.reduce((best, r) =>
-    r.stats.win_rate_pct > best.stats.win_rate_pct ? r : best
-  );
-
-  const byObjection: Record<string, number> = {};
-  for (const r of rebuttals) {
-    byObjection[r.objection] = (byObjection[r.objection] ?? 0) + 1;
-  }
-
-  return NextResponse.json({
-    rebuttals,
-    summary: {
-      total_rebuttals: 14,
-      objection_types: 9,
-      avg_win_rate_pct: avgWinRate,
-      best_rebuttal: bestRebuttal.rebuttal_id,
-      total_outcomes: totalOutcomes,
-    },
-    by_objection: byObjection,
-  });
 }
