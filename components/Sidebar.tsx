@@ -11481,6 +11481,14 @@ const navSections: NavSection[] = [
     ],
   },
   {
+    label: "DROITS — WAVE 211",
+    items: [
+      { href: "/dashboard/digital-colonialism-rights-engine", label: "Colonialisme Numérique", icon: IconDigitalColonialism },
+      { href: "/dashboard/reproductive-rights-engine", label: "Droits Reproductifs", icon: IconReproductiveRights },
+      { href: "/dashboard/indigenous-land-rights-engine", label: "Droits Fonciers Autochtones", icon: IconIndigenousLandRights },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: IconSettings },

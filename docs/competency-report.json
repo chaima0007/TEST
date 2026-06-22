@@ -1,0 +1,253 @@
+[
+  {
+    "agent_name": "compliance-audit-agent.py",
+    "type": "support_agent",
+    "scores": {
+      "domain_expertise": 90,
+      "code_quality": 85,
+      "data_accuracy": 88,
+      "output_completeness": 92,
+      "error_handling": 80,
+      "performance": 75,
+      "autonomy": 88,
+      "improvement_potential": 20
+    },
+    "score_global": 87.05,
+    "niveau": "expert",
+    "competences_manquantes": [
+      "CSDDD phase 2 entreprises 250+ salariés"
+    ],
+    "plan_amelioration": [
+      "Lire EU 2024/1760 article 37",
+      "Mettre à jour seuils compliance"
+    ],
+    "certification_recommandee": "ISO 26000 Lead Implementer"
+  },
+  {
+    "agent_name": "cicd-pipeline-agent.py",
+    "type": "monitoring",
+    "scores": {
+      "domain_expertise": 88,
+      "code_quality": 85,
+      "data_accuracy": 82,
+      "output_completeness": 88,
+      "error_handling": 85,
+      "performance": 92,
+      "autonomy": 90,
+      "improvement_potential": 20
+    },
+    "score_global": 86.2,
+    "niveau": "expert",
+    "competences_manquantes": [
+      "GitHub Actions advanced workflows"
+    ],
+    "plan_amelioration": [
+      "Implémenter reusable workflows",
+      "Ajouter OIDC pour authentification sécurisée"
+    ],
+    "certification_recommandee": "GitHub Actions Certification"
+  },
+  {
+    "agent_name": "carbon-optimization-agent.py",
+    "type": "support_agent",
+    "scores": {
+      "domain_expertise": 88,
+      "code_quality": 74,
+      "data_accuracy": 85,
+      "output_completeness": 80,
+      "error_handling": 65,
+      "performance": 72,
+      "autonomy": 78,
+      "improvement_potential": 40
+    },
+    "score_global": 79.8,
+    "niveau": "avancé",
+    "competences_manquantes": [
+      "protocole GHG Scope 3 détaillé",
+      "calcul intensité carbone sectorielle"
+    ],
+    "plan_amelioration": [
+      "Lire GHG Protocol Corporate Standard",
+      "Intégrer données ADEME pour secteurs français"
+    ],
+    "certification_recommandee": "CDP Carbon Disclosure Certification"
+  },
+  {
+    "agent_name": "code-quality-review-agent.py",
+    "type": "support_agent",
+    "scores": {
+      "domain_expertise": 72,
+      "code_quality": 93,
+      "data_accuracy": 68,
+      "output_completeness": 85,
+      "error_handling": 88,
+      "performance": 80,
+      "autonomy": 76,
+      "improvement_potential": 30
+    },
+    "score_global": 79.55,
+    "niveau": "avancé",
+    "competences_manquantes": [
+      "analyse sécurité statique",
+      "détection secrets dans code"
+    ],
+    "plan_amelioration": [
+      "Intégrer bandit (Python security linter)",
+      "Ajouter règles détection tokens API"
+    ],
+    "certification_recommandee": "OWASP Top 10 Awareness"
+  },
+  {
+    "agent_name": "health-latency-monitor-agent.py",
+    "type": "monitoring",
+    "scores": {
+      "domain_expertise": 85,
+      "code_quality": 78,
+      "data_accuracy": 72,
+      "output_completeness": 80,
+      "error_handling": 70,
+      "performance": 88,
+      "autonomy": 82,
+      "improvement_potential": 45
+    },
+    "score_global": 78.75,
+    "niveau": "avancé",
+    "competences_manquantes": [
+      "connaissance Prometheus metrics",
+      "intégration Grafana"
+    ],
+    "plan_amelioration": [
+      "Lire doc Prometheus",
+      "Implémenter /metrics endpoint"
+    ],
+    "certification_recommandee": "Google Cloud Monitoring"
+  },
+  {
+    "agent_name": "architecture-review-agent.py",
+    "type": "support_agent",
+    "scores": {
+      "domain_expertise": 78,
+      "code_quality": 82,
+      "data_accuracy": 75,
+      "output_completeness": 78,
+      "error_handling": 72,
+      "performance": 70,
+      "autonomy": 80,
+      "improvement_potential": 35
+    },
+    "score_global": 77.3,
+    "niveau": "avancé",
+    "competences_manquantes": [
+      "patterns microservices avancés",
+      "event-driven architecture"
+    ],
+    "plan_amelioration": [
+      "Étudier CQRS / Event Sourcing",
+      "Documenter les décisions ADR (Architecture Decision Records)"
+    ],
+    "certification_recommandee": "AWS Solutions Architect Associate"
+  },
+  {
+    "agent_name": "ai-ethics-governance-agent.py",
+    "type": "support_agent",
+    "scores": {
+      "domain_expertise": 82,
+      "code_quality": 76,
+      "data_accuracy": 80,
+      "output_completeness": 75,
+      "error_handling": 68,
+      "performance": 65,
+      "autonomy": 72,
+      "improvement_potential": 38
+    },
+    "score_global": 76.6,
+    "niveau": "avancé",
+    "competences_manquantes": [
+      "EU AI Act obligations par risque",
+      "bias detection algorithms"
+    ],
+    "plan_amelioration": [
+      "Lire EU AI Act Article 9-15 (systèmes haut risque)",
+      "Implémenter tests de biais sur datasets"
+    ],
+    "certification_recommandee": "Responsible AI Practitioner (IEEE)"
+  },
+  {
+    "agent_name": "bundle-size-monitor-agent.py",
+    "type": "monitoring",
+    "scores": {
+      "domain_expertise": 65,
+      "code_quality": 80,
+      "data_accuracy": 70,
+      "output_completeness": 72,
+      "error_handling": 75,
+      "performance": 90,
+      "autonomy": 82,
+      "improvement_potential": 50
+    },
+    "score_global": 73.15,
+    "niveau": "avancé",
+    "competences_manquantes": [
+      "tree-shaking analysis",
+      "Core Web Vitals impact",
+      "webpack bundle analyzer avancé"
+    ],
+    "plan_amelioration": [
+      "Étudier Lighthouse CI pour automatisation",
+      "Configurer seuils LCP/CLS/FID"
+    ],
+    "certification_recommandee": "Google Web Performance Certification"
+  },
+  {
+    "agent_name": "community-local-impact-agent.py",
+    "type": "support_agent",
+    "scores": {
+      "domain_expertise": 70,
+      "code_quality": 65,
+      "data_accuracy": 68,
+      "output_completeness": 60,
+      "error_handling": 55,
+      "performance": 58,
+      "autonomy": 65,
+      "improvement_potential": 55
+    },
+    "score_global": 64.75,
+    "niveau": "avancé",
+    "competences_manquantes": [
+      "indicateurs bien-être communautaire",
+      "méthodes participatives locales",
+      "cartographie parties prenantes"
+    ],
+    "plan_amelioration": [
+      "Étudier les indicateurs OCDE Better Life Index",
+      "Lire Guide ONU engagement communautaire"
+    ],
+    "certification_recommandee": "Community Development Professional (CDP)"
+  },
+  {
+    "agent_name": "automated-expert-prospecting-agent.py",
+    "type": "support_agent",
+    "scores": {
+      "domain_expertise": 55,
+      "code_quality": 70,
+      "data_accuracy": 58,
+      "output_completeness": 65,
+      "error_handling": 50,
+      "performance": 60,
+      "autonomy": 62,
+      "improvement_potential": 65
+    },
+    "score_global": 60.2,
+    "niveau": "intermédiaire",
+    "competences_manquantes": [
+      "scoring qualification leads B2B",
+      "RGPD prospection commerciale",
+      "enrichissement données entreprises"
+    ],
+    "plan_amelioration": [
+      "Étudier le cadre légal RGPD pour prospection",
+      "Intégrer scoring BANT (Budget, Authority, Need, Timeline)"
+    ],
+    "certification_recommandee": "Salesforce Certified Sales Cloud Consultant"
+  }
+]
