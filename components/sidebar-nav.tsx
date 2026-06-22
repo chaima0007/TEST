@@ -3973,6 +3973,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "HUMAN RIGHTS RISK",
+    items: [
+      { href: "/dashboard/humanrights", label: "Human Rights", icon: Icons.IconHumanRights },
+      { href: "/dashboard/indigenousrights", label: "Indigenous Rights", icon: Icons.IconIndigenousRights },
+      { href: "/dashboard/minorityrights", label: "Minority Rights", icon: Icons.IconMinorityRights },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
