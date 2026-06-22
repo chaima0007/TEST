@@ -3748,6 +3748,9 @@ export const navSections: NavSection[] = [
       { label: "Influencer Marketing", href: "/dashboard/influencer-advertising", icon: Icons.IconInfluencerAdvertising },
       { label: "Audio Advertising", href: "/dashboard/audioadvertising-advertising", icon: Icons.IconAudioadvertisingAdvertising },
       { label: "Podcast v2 Advertising", href: "/dashboard/podcastv2-advertising", icon: Icons.IconPodcastv2Advertising },
+      { label: "Livestreaming Advertising", href: "/dashboard/livestreaming-advertising", icon: Icons.IconLivestreamingAdvertising },
+      { label: "Short-Form Video Ads", href: "/dashboard/shortformvideo-advertising", icon: Icons.IconShortformvideoAdvertising },
+      { label: "UGC Advertising", href: "/dashboard/ugc-advertising", icon: Icons.IconUgcAdvertising },
     ],
   },
   {
