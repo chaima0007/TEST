@@ -12961,6 +12961,27 @@ function IconMoringaPlantationLaborRights({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconNeemPlantationLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12M6 8C6 8 4 12 8 14s6-2 6-2-2-6-8-4zM18 8c0 0 2 4-2 6s-6-2-6-2 2-6 8-4z"/>
+    </svg>
+  );
+}
+function IconCassavaProcessingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 6h18M3 12h18M3 18h18"/><circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="7" cy="12" r="1" fill="currentColor"/>
+    </svg>
+  );
+}
+function IconSorghumHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V8M8 4c0 0 1 4 4 4s4-4 4-4"/><path d="M6 8l6 2M18 8l-6 2"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -15012,6 +15033,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/moringa-plantation-labor-rights",
         icon: IconMoringaPlantationLaborRights,
         color: "#166534",
+      },
+      {
+        label: "Neem Plantation Labor",
+        href: "/dashboard/neem-plantation-labor-rights",
+        icon: IconNeemPlantationLaborRights,
+        color: "#15803d",
+      },
+      {
+        label: "Cassava Processing Child Labor",
+        href: "/dashboard/cassava-processing-child-labor-rights",
+        icon: IconCassavaProcessingChildLaborRights,
+        color: "#b45309",
+      },
+      {
+        label: "Sorghum Harvesting Child Labor",
+        href: "/dashboard/sorghum-harvesting-child-labor-rights",
+        icon: IconSorghumHarvestingChildLaborRights,
+        color: "#92400e",
       },
     ],
   },
