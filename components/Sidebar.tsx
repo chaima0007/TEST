@@ -14674,6 +14674,29 @@ function IconEventSponsorshipAdvertising({ size = 18, color = "currentColor" }: 
   );
 }
 
+function IconLoyaltyProgramAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+    </svg>
+  );
+}
+function IconReferralMarketingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+    </svg>
+  );
+}
+function IconCoBrandingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="8" cy="12" r="5"/>
+      <circle cx="16" cy="12" r="5"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17527,6 +17550,24 @@ const navSections: NavSection[] = [
         label: "Event Sponsorship",
         href: "/dashboard/event-sponsorship-advertising-child-labor-rights",
         icon: IconEventSponsorshipAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Loyalty Program Advertising",
+        href: "/dashboard/loyalty-program-advertising-child-labor-rights",
+        icon: IconLoyaltyProgramAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Referral Marketing Advertising",
+        href: "/dashboard/referral-marketing-advertising-child-labor-rights",
+        icon: IconReferralMarketingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Co-Branding Advertising",
+        href: "/dashboard/co-branding-advertising-child-labor-rights",
+        icon: IconCoBrandingAdvertising,
         category: "Publicité Visuelle",
       },
       {
