@@ -3775,6 +3775,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/videoads", label: "Video Ads", icon: Icons.IconVideoAds },
       { href: "/dashboard/appstoreads", label: "App Store Ads", icon: Icons.IconAppStoreAds },
       { href: "/dashboard/ottads", label: "OTT/CTV Ads", icon: Icons.IconOttAds },
+      { href: "/dashboard/connectedtv", label: "Connected TV", icon: Icons.IconConnectedTv },
+      { href: "/dashboard/gamingads", label: "Gaming Ads", icon: Icons.IconGamingAds },
+      { href: "/dashboard/podcastads", label: "Podcast Ads", icon: Icons.IconPodcastAds },
     ],
   },
   {
