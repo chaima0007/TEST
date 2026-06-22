@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#0891b2";
-const DOMAIN = "augmentedreality-advertising";
-const INDEX_KEY = "estimated_augmentedreality_index";
-const TITLE = "Augmented Reality Advertising";
+const COLOR = "#7c3aed";
+const DOMAIN = "cookieless-advertising";
+const INDEX_KEY = "estimated_cookieless_index";
+const TITLE = "Cookieless Advertising";
 
 type Entity = {
   name: string;
@@ -41,19 +41,19 @@ function deriveCerts(score: number) {
 }
 
 const SIGNALS = [
-  "AR consent collection",
-  "Biometric data handling",
-  "Immersive ad disclosure",
-  "Child protection in AR",
-  "Data minimization",
+  "First-party data collection",
+  "Contextual targeting",
+  "Privacy sandbox adoption",
+  "Identity resolution",
+  "Consent management",
 ];
 
 const ACTIONS = [
-  "Enforce AR consent",
-  "Protect biometric data",
-  "Label immersive ads",
-  "Deploy child filters",
-  "Minimize AR data collection",
+  "Deploy first-party data strategy",
+  "Implement contextual targeting",
+  "Adopt Privacy Sandbox APIs",
+  "Build identity graph",
+  "Strengthen consent flows",
 ];
 
 function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
@@ -133,7 +133,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function AugmentedrealityAdvertisingDashboard() {
+export default function CookielessAdvertisingDashboard() {
   const [data, setData] = useState<DashData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
 

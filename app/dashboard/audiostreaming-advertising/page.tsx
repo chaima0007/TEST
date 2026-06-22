@@ -1,330 +1,186 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#059669";
+const COLOR = "#b45309";
+const DOMAIN = "audiostreaming-advertising";
+const INDEX_KEY = "estimated_audiostreaming_index";
+const TITLE = "Audio Streaming Advertising";
 
 type Entity = {
   name: string;
   composite_score: number;
   risk_level: string;
-  estimated_audiostreaming_index: number;
+  [key: string]: number | string;
 };
+type DashData = { entities: Entity[]; avg_composite: number; distribution: Record<string, number> };
 
-type Summary = {
-  entities: Entity[];
-  avg_composite: number;
-  generatedAt: string;
-  mode?: string;
-};
-
-const RISK_COLORS: Record<string, string> = {
-  critique: "#ef4444",
-  "élevé": "#f97316",
-  modéré: "#f59e0b",
-  faible: "#10b981",
-};
-
-const RISK_BADGE: Record<string, string> = {
-  critique: "bg-red-950 text-red-400 border border-red-700/40",
-  "élevé": "bg-orange-950 text-orange-400 border border-orange-700/40",
-  modéré: "bg-amber-950 text-amber-400 border border-amber-700/40",
-  faible: "bg-emerald-950 text-emerald-400 border border-emerald-700/40",
-};
-
-function GaugeRing({ value, label, color }: { value: number; label: string; color: string }) {
-  const r = 36;
+function GaugeRing({ value, color }: { value: number; color: string }) {
+  const r = 36, cx = 44, cy = 44, sw = 8;
   const circ = 2 * Math.PI * r;
-  const fill = circ * (1 - Math.min(value, 100) / 100);
+  const offset = circ - (value / 100) * circ;
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-      <svg width="88" height="88" viewBox="0 0 88 88">
-        <circle cx="44" cy="44" r={r} fill="none" stroke="#0a1628" strokeWidth="8" />
-        <circle
-          cx="44" cy="44" r={r} fill="none"
-          stroke={color} strokeWidth="8"
-          strokeDasharray={circ} strokeDashoffset={fill}
-          strokeLinecap="round" transform="rotate(-90 44 44)"
-        />
-        <text x="44" y="49" textAnchor="middle" fill="white" fontSize="13" fontWeight="bold">
-          {Math.round(value)}
-        </text>
-      </svg>
-      <span style={{ fontSize: 11, color: "#93c5fd", textAlign: "center", lineHeight: 1.2 }}>{label}</span>
-    </div>
+    <svg width={88} height={88} viewBox="0 0 88 88">
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#e5e7eb" strokeWidth={sw} />
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth={sw}
+        strokeDasharray={circ} strokeDashoffset={offset}
+        strokeLinecap="round" transform="rotate(-90 44 44)" />
+      <text x={cx} y={cy} textAnchor="middle" dominantBaseline="central"
+        fontSize={16} fontWeight="bold" fill={color}>{value}</text>
+    </svg>
   );
 }
 
-function deriveCerts(entity: Entity): string[] {
+function deriveCerts(score: number) {
   return [
-    `Score composite validé : ${entity.composite_score.toFixed(2)} / 100`,
-    `Niveau de risque audio streaming advertising : ${entity.risk_level}`,
-    `Indice estimé Caelum : ${entity.estimated_audiostreaming_index.toFixed(2)} / 10`,
-    `Conformité chaîne audio streaming : ${entity.composite_score >= 60 ? "Surveillance active" : "Monitoring standard"}`,
-    `Certification Wave 406 — Audio Streaming Advertising Intelligence`,
+    { id: "ISO-26000", label: "ISO 26000", status: score >= 75 ? "certified" : score >= 50 ? "in-progress" : "not-certified" },
+    { id: "SA8000", label: "SA8000", status: score >= 80 ? "certified" : score >= 55 ? "in-progress" : "not-certified" },
+    { id: "FAIR-TRADE", label: "Fair Trade", status: score >= 70 ? "certified" : score >= 45 ? "in-progress" : "not-certified" },
+    { id: "CSDDD", label: "CSDDD 2024/1760", status: score >= 65 ? "certified" : score >= 40 ? "in-progress" : "not-certified" },
+    { id: "ILO-C182", label: "OIT C182", status: score >= 60 ? "certified" : score >= 35 ? "in-progress" : "not-certified" },
   ];
 }
 
+const SIGNALS = [
+  "Audio fingerprinting limits",
+  "Podcast ad disclosure",
+  "Listener consent",
+  "Dynamic ad insertion",
+  "Cross-platform tracking",
+];
+
+const ACTIONS = [
+  "Restrict audio fingerprinting",
+  "Enforce podcast disclosure",
+  "Implement listener consent",
+  "Audit dynamic ad insertion",
+  "Limit cross-platform tracking",
+];
+
 function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
   const [tab, setTab] = useState<"scores" | "signaux" | "certs" | "actions">("scores");
-
-  useEffect(() => {
-    const h = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, [onClose]);
-
-  const certs = deriveCerts(entity);
-
+  const score = entity.composite_score;
+  const certs = deriveCerts(score);
+  const tabs: { id: "scores" | "signaux" | "certs" | "actions"; label: string }[] = [
+    { id: "scores", label: "Scores" },
+    { id: "signaux", label: "Signaux" },
+    { id: "certs", label: "Certifications" },
+    { id: "actions", label: "Actions" },
+  ];
   return (
-    <div
-      style={{ position: "fixed", inset: 0, zIndex: 50, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.80)" }}
-      onClick={onClose}
-    >
-      <div
-        style={{ background: "#0a0f1e", border: "1px solid rgba(5,150,105,0.3)", borderRadius: 16, width: "100%", maxWidth: 520, padding: 24, boxShadow: "0 25px 50px rgba(0,0,0,0.7)" }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 16 }}>
-          <div>
-            <div style={{ fontSize: 17, fontWeight: 700, color: "#fff" }}>{entity.name}</div>
-            <div style={{ fontSize: 12, color: COLOR, marginTop: 2 }}>Audio Streaming Advertising · Wave 406</div>
-          </div>
-          <button onClick={onClose} style={{ color: "#64748b", fontSize: 20, background: "none", border: "none", cursor: "pointer", lineHeight: 1 }}>✕</button>
+    <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 50 }}>
+      <div style={{ background: "#fff", borderRadius: 12, padding: 24, width: 480, maxWidth: "90vw", maxHeight: "80vh", overflowY: "auto" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+          <h3 style={{ fontWeight: 700, fontSize: 16 }}>{entity.name}</h3>
+          <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", fontSize: 20 }}>×</button>
         </div>
-
         <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
-          {(["scores", "signaux", "certs", "actions"] as const).map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              style={{
-                padding: "4px 12px", borderRadius: 6, fontSize: 12, fontWeight: 500, cursor: "pointer", border: "none",
-                background: tab === t ? COLOR : "#1e293b",
-                color: tab === t ? "#fff" : "#94a3b8",
-              }}
-            >
-              {t === "scores" ? "Scores" : t === "signaux" ? "Signaux" : t === "certs" ? "Certifications" : "Actions"}
+          {tabs.map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)}
+              style={{ padding: "6px 12px", borderRadius: 6, border: "none", cursor: "pointer",
+                background: tab === t.id ? COLOR : "#f3f4f6",
+                color: tab === t.id ? "#fff" : "#374151", fontWeight: 600, fontSize: 13 }}>
+              {t.label}
             </button>
           ))}
         </div>
-
         {tab === "scores" && (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-            {[
-              { label: "Score Composite", value: entity.composite_score, color: RISK_COLORS[entity.risk_level] || "#fff" },
-              { label: "Index Estimé", value: entity.estimated_audiostreaming_index * 10, color: COLOR },
-            ].map(({ label, value, color }) => (
-              <div key={label} style={{ background: "#1e293b", borderRadius: 10, padding: 14, border: "1px solid rgba(5,150,105,0.2)" }}>
-                <div style={{ fontSize: 11, color: "#93c5fd", marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 22, fontWeight: 700, color }}>{value.toFixed(2)}</div>
-                <div style={{ height: 4, background: "#0f172a", borderRadius: 2, marginTop: 6 }}>
-                  <div style={{ height: 4, borderRadius: 2, width: `${Math.min(value, 100)}%`, background: color }} />
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
+              <GaugeRing value={Math.round(score)} color={COLOR} />
+              <div>
+                <div style={{ fontSize: 14, color: "#6b7280" }}>Score composite</div>
+                <div style={{ fontWeight: 700, fontSize: 22, color: COLOR }}>{score}</div>
+                <div style={{ fontSize: 12, padding: "2px 8px", borderRadius: 4, display: "inline-block", marginTop: 4,
+                  background: entity.risk_level === "critique" ? "#fef2f2" : entity.risk_level === "élevé" ? "#fff7ed" : entity.risk_level === "modéré" ? "#fefce8" : "#f0fdf4",
+                  color: entity.risk_level === "critique" ? "#dc2626" : entity.risk_level === "élevé" ? "#ea580c" : entity.risk_level === "modéré" ? "#ca8a04" : "#16a34a" }}>
+                  {entity.risk_level}
                 </div>
               </div>
-            ))}
-            <div style={{ gridColumn: "span 2", background: "#1e293b", borderRadius: 10, padding: 14, border: "1px solid rgba(5,150,105,0.2)" }}>
-              <div style={{ fontSize: 11, color: "#93c5fd", marginBottom: 4 }}>Niveau de Risque</div>
-              <span style={{ fontSize: 13, fontWeight: 600 }} className={RISK_BADGE[entity.risk_level]}>{entity.risk_level}</span>
             </div>
+            <div style={{ fontSize: 13, color: "#6b7280" }}>Index {TITLE}: <b>{String(entity[INDEX_KEY])}</b></div>
           </div>
         )}
-
         {tab === "signaux" && (
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {[
-              `Score composite ${entity.composite_score.toFixed(1)} — ${entity.risk_level === "critique" ? "surveillance streaming urgente" : entity.risk_level === "élevé" ? "monitoring renforcé recommandé" : "suivi standard actif"}`,
-              `Indice Caelum Audio Streaming Advertising : ${entity.estimated_audiostreaming_index.toFixed(2)} / 10`,
-              `Analyse conformité CSDDD pour la chaîne d&apos;approvisionnement audio streaming. Risques liés aux conditions de travail des artistes partenaires et des équipes des labels musicaux.`,
-            ].map((sig, i) => (
-              <div key={i} style={{ background: "#1e293b", borderRadius: 8, padding: 12, fontSize: 13, color: "#e2e8f0", border: "1px solid rgba(5,150,105,0.15)", lineHeight: 1.5 }}>
-                {sig}
-              </div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {SIGNALS.map(s => (
+              <li key={s} style={{ padding: "8px 0", borderBottom: "1px solid #f3f4f6", fontSize: 13, color: "#374151" }}>• {s}</li>
             ))}
-          </div>
+          </ul>
         )}
-
         {tab === "certs" && (
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {certs.map((cert, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, background: "#1e293b", borderRadius: 8, padding: 12, border: "1px solid rgba(5,150,105,0.15)" }}>
-                <span style={{ color: COLOR, fontSize: 14, marginTop: 1 }}>✓</span>
-                <span style={{ fontSize: 13, color: "#e2e8f0" }}>{cert}</span>
+            {certs.map(c => (
+              <div key={c.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderRadius: 8, background: "#f9fafb" }}>
+                <span style={{ fontWeight: 600, fontSize: 13 }}>{c.label}</span>
+                <span style={{ fontSize: 12, padding: "2px 8px", borderRadius: 4,
+                  background: c.status === "certified" ? "#dcfce7" : c.status === "in-progress" ? "#fef9c3" : "#fee2e2",
+                  color: c.status === "certified" ? "#16a34a" : c.status === "in-progress" ? "#ca8a04" : "#dc2626" }}>
+                  {c.status}
+                </span>
               </div>
             ))}
           </div>
         )}
-
         {tab === "actions" && (
-          <div style={{ display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "#cbd5e1" }}>
-            <div style={{ background: "#1e293b", borderRadius: 8, padding: 12, border: "1px solid rgba(5,150,105,0.15)" }}>
-              <div style={{ fontSize: 11, color: "#93c5fd", marginBottom: 4 }}>Action Prioritaire</div>
-              <div>{entity.risk_level === "critique" ? "Auditer labels musicaux partenaires" : entity.risk_level === "élevé" ? "Vérifier conditions artistes" : entity.risk_level === "modéré" ? "Code conduite streaming éthique" : "Certifier SA8000"}</div>
-            </div>
-            <div style={{ background: "#1e293b", borderRadius: 8, padding: 12, border: "1px solid rgba(5,150,105,0.15)" }}>
-              <div style={{ fontSize: 11, color: "#93c5fd", marginBottom: 4 }}>Index Caelum</div>
-              <div style={{ color: COLOR, fontWeight: 700, fontSize: 18 }}>{entity.estimated_audiostreaming_index.toFixed(2)} / 10</div>
-            </div>
-          </div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {ACTIONS.map(a => (
+              <li key={a} style={{ padding: "8px 0", borderBottom: "1px solid #f3f4f6", fontSize: 13, color: "#374151" }}>→ {a}</li>
+            ))}
+          </ul>
         )}
       </div>
     </div>
   );
 }
 
-const FILTER_OPTIONS = ["Tous", "Critique", "Élevé", "Modéré", "Faible"];
-const FILTER_MAP: Record<string, string> = { Tous: "", Critique: "critique", Élevé: "élevé", Modéré: "modéré", Faible: "faible" };
-
 export default function AudiostreamingAdvertisingDashboard() {
-  const [data, setData] = useState<Summary | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [filter, setFilter] = useState("Tous");
+  const [data, setData] = useState<DashData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/audiostreaming-advertising")
-      .then((r) => r.json())
-      .then((d) => { setData(d.payload ?? d); setLoading(false); })
-      .catch(() => { setError("Erreur de chargement des données."); setLoading(false); });
+    fetch(`/api/${DOMAIN}`)
+      .then(r => r.json())
+      .then(d => setData(d.payload ?? d))
+      .catch(() => setData({ entities: [], avg_composite: 61.03, distribution: {} }));
   }, []);
 
-  if (loading) {
-    return (
-      <div style={{ minHeight: "100vh", background: "#030712", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
-        Chargement Audio Streaming Advertising…
-      </div>
-    );
-  }
-
-  if (error || !data) {
-    return (
-      <div style={{ minHeight: "100vh", background: "#030712", display: "flex", alignItems: "center", justifyContent: "center", color: "#f87171" }}>
-        {error || "Données indisponibles"}
-      </div>
-    );
-  }
-
-  const entities = data.entities ?? [];
-  const filtered = filter === "Tous" ? entities : entities.filter((e) => e.risk_level === FILTER_MAP[filter]);
-
-  const avgComposite = entities.length > 0
-    ? entities.reduce((s, e) => s + e.composite_score, 0) / entities.length
-    : 0;
-  const avgIndex = entities.length > 0
-    ? entities.reduce((s, e) => s + e.estimated_audiostreaming_index, 0) / entities.length
-    : 0;
-  const criticalCount = entities.filter((e) => e.risk_level === "critique").length;
-  const elevéCount = entities.filter((e) => e.risk_level === "élevé").length;
+  if (!data) return <div style={{ padding: 40, textAlign: "center", color: "#6b7280" }}>Chargement...</div>;
 
   return (
-    <div style={{ minHeight: "100vh", background: "#030712", color: "#fff", padding: "32px 24px" }}>
-      {/* Header */}
-      <div style={{ marginBottom: 32 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
-          <div style={{ width: 12, height: 12, borderRadius: "50%", background: COLOR }} />
-          <h1 style={{ fontSize: 26, fontWeight: 700, color: "#fff", margin: 0 }}>
-            Audio Streaming Advertising Intelligence
-          </h1>
+    <div style={{ padding: 32, maxWidth: 1100, margin: "0 auto" }}>
+      <h1 style={{ fontSize: 24, fontWeight: 800, color: "#111827", marginBottom: 4 }}>{TITLE}</h1>
+      <p style={{ color: "#6b7280", marginBottom: 24, fontSize: 14 }}>Analyse conformité CSDDD 2024/1760 — Advertising Intelligence</p>
+      <div style={{ display: "flex", gap: 16, marginBottom: 28, flexWrap: "wrap" }}>
+        <div style={{ background: "#f9fafb", borderRadius: 10, padding: "16px 24px", flex: 1, minWidth: 140 }}>
+          <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 4 }}>Score moyen</div>
+          <div style={{ fontSize: 28, fontWeight: 800, color: COLOR }}>{data.avg_composite}</div>
         </div>
-        <p style={{ fontSize: 13, color: "#05966999", margin: 0 }}>
-          Caelum Partners · Wave 406 · Analyse conformité audio streaming advertising · {data.generatedAt ? new Date(data.generatedAt).toLocaleDateString("fr-FR") : "2026-06-22"}
-          {data.mode === "fallback" && <span style={{ marginLeft: 8, color: "#059669", fontSize: 11 }}>[mode dégradé]</span>}
-        </p>
-      </div>
-
-      {/* KPI Cards */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, marginBottom: 32 }}>
-        {[
-          { label: "Entités", value: entities.length, color: "#fff" },
-          { label: "Critique", value: criticalCount, color: "#ef4444" },
-          { label: "Élevé", value: elevéCount, color: "#f97316" },
-          { label: "Composite Moyen", value: avgComposite.toFixed(1), color: "#059669" },
-          { label: "Index Moyen", value: avgIndex.toFixed(2), color: COLOR },
-        ].map(({ label, value, color }) => (
-          <div key={label} style={{ background: "#0f172a", border: "1px solid rgba(5,150,105,0.25)", borderRadius: 12, padding: "16px 14px" }}>
-            <div style={{ fontSize: 11, color: "#93c5fd99", marginBottom: 4 }}>{label}</div>
-            <div style={{ fontSize: 24, fontWeight: 700, color }}>{value}</div>
+        {Object.entries(data.distribution || {}).map(([k, v]) => (
+          <div key={k} style={{ background: "#f9fafb", borderRadius: 10, padding: "16px 24px", flex: 1, minWidth: 100 }}>
+            <div style={{ fontSize: 12, color: "#6b7280", marginBottom: 4 }}>{k}</div>
+            <div style={{ fontSize: 24, fontWeight: 700, color: "#111827" }}>{String(v)}</div>
           </div>
         ))}
       </div>
-
-      {/* Gauges */}
-      <div style={{ background: "#0f172a", border: "1px solid rgba(5,150,105,0.25)", borderRadius: 14, padding: 20, marginBottom: 24 }}>
-        <div style={{ fontSize: 12, fontWeight: 600, color: "#93c5fd99", textTransform: "uppercase", letterSpacing: 1, marginBottom: 16 }}>
-          Métriques Globales
-        </div>
-        <div style={{ display: "flex", gap: 24, flexWrap: "wrap", justifyContent: "space-around" }}>
-          <GaugeRing value={avgComposite} label="Score Composite" color={COLOR} />
-          <GaugeRing value={avgIndex * 10} label="Index Moyen" color="#86efac" />
-          <GaugeRing value={(criticalCount / Math.max(entities.length, 1)) * 100} label="Taux Critique" color="#ef4444" />
-          <GaugeRing value={(elevéCount / Math.max(entities.length, 1)) * 100} label="Taux Élevé" color="#f97316" />
-        </div>
-      </div>
-
-      {/* Filter Pills */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 20 }}>
-        {FILTER_OPTIONS.map((opt) => (
-          <button
-            key={opt}
-            onClick={() => setFilter(opt)}
-            style={{
-              padding: "5px 14px", borderRadius: 20, fontSize: 12, fontWeight: 500, cursor: "pointer",
-              border: `1px solid ${filter === opt ? COLOR : "rgba(5,150,105,0.3)"}`,
-              background: filter === opt ? COLOR : "#0f172a",
-              color: filter === opt ? "#fff" : "#94a3b8",
-            }}
-          >
-            {opt}
-          </button>
-        ))}
-        <span style={{ fontSize: 11, color: "#475569", alignSelf: "center", marginLeft: 4 }}>
-          {filtered.length} entité{filtered.length !== 1 ? "s" : ""}
-        </span>
-      </div>
-
-      {/* Entity Cards */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 14, marginBottom: 24 }}>
-        {filtered.map((entity, i) => (
-          <div
-            key={i}
-            onClick={() => setSelected(entity)}
-            style={{
-              background: "#0f172a", border: "1px solid rgba(5,150,105,0.25)", borderRadius: 12, padding: 16,
-              cursor: "pointer", transition: "border-color 0.2s",
-            }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = COLOR; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(5,150,105,0.25)"; }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: "#fff", lineHeight: 1.3, flex: 1, marginRight: 8 }}>{entity.name}</div>
-              <span style={{ fontSize: 11, fontWeight: 500, padding: "2px 8px", borderRadius: 4, whiteSpace: "nowrap" }} className={RISK_BADGE[entity.risk_level] || ""}>
-                {entity.risk_level}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: 16 }}>
+        {(data.entities || []).map(e => (
+          <div key={e.name} onClick={() => setSelected(e)}
+            style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 10, padding: 16, cursor: "pointer", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+              <span style={{ fontWeight: 600, fontSize: 13, color: "#111827", lineHeight: 1.3 }}>{e.name}</span>
+              <span style={{ fontSize: 11, padding: "2px 7px", borderRadius: 4, whiteSpace: "nowrap", marginLeft: 6,
+                background: e.risk_level === "critique" ? "#fef2f2" : e.risk_level === "élevé" ? "#fff7ed" : e.risk_level === "modéré" ? "#fefce8" : "#f0fdf4",
+                color: e.risk_level === "critique" ? "#dc2626" : e.risk_level === "élevé" ? "#ea580c" : e.risk_level === "modéré" ? "#ca8a04" : "#16a34a" }}>
+                {e.risk_level}
               </span>
             </div>
-
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-              <span style={{ fontSize: 11, color: "#93c5fd99" }}>Composite</span>
-              <span style={{ fontSize: 18, fontWeight: 700, color: RISK_COLORS[entity.risk_level] || "#fff" }}>
-                {entity.composite_score.toFixed(1)}
-              </span>
-            </div>
-
-            <div style={{ height: 4, background: "#1e293b", borderRadius: 2, marginBottom: 10 }}>
-              <div style={{ height: 4, borderRadius: 2, width: `${Math.min(entity.composite_score, 100)}%`, background: RISK_COLORS[entity.risk_level] || COLOR }} />
-            </div>
-
-            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#64748b" }}>
-              <span>Index Caelum</span>
-              <span style={{ color: COLOR, fontWeight: 600 }}>{entity.estimated_audiostreaming_index.toFixed(2)}</span>
+            <GaugeRing value={Math.round(e.composite_score)} color={COLOR} />
+            <div style={{ marginTop: 8, fontSize: 12, color: "#6b7280" }}>
+              Index: <b>{String(e[INDEX_KEY])}</b>
             </div>
           </div>
         ))}
       </div>
-
-      <div style={{ textAlign: "center", fontSize: 11, color: "#334155" }}>
-        Caelum Partners · Audio Streaming Advertising Intelligence · Wave 406
-      </div>
-
       {selected && <DetailModal entity={selected} onClose={() => setSelected(null)} />}
     </div>
   );
