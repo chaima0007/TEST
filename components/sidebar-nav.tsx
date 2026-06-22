@@ -3876,6 +3876,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "NATIVE ADV RISK",
+    items: [
+      { href: "/dashboard/nativeadv", label: "Native Advertising", icon: Icons.IconNativeAdv },
+      { href: "/dashboard/sponsoredcontent", label: "Sponsored Content", icon: Icons.IconSponsoredContent },
+      { href: "/dashboard/contentmarketing", label: "Content Marketing", icon: Icons.IconContentMarketing },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
