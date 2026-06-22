@@ -11788,6 +11788,34 @@ function IconMigrantDomesticWorkerRights() {
   );
 }
 
+function IconPlatformWorkerRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+      <line x1="8" y1="21" x2="16" y2="21" />
+      <line x1="12" y1="17" x2="12" y2="21" />
+    </svg>
+  );
+}
+
+function IconRareEarthMiningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#a16207" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+    </svg>
+  );
+}
+
+function IconAgriculturalChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#15803d" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13534,6 +13562,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nuclear-waste-rights", label: "Déchets Nucléaires", icon: IconNuclearWasteRights },
       { href: "/dashboard/migrant-domestic-worker-rights", label: "Travailleurs Domestiques Migrants", icon: IconMigrantDomesticWorkerRights },
       { href: "/dashboard/informal-economy-rights", label: "Économie Informelle", icon: IconInformalEconomyRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 274",
+    items: [
+      { href: "/dashboard/platform-worker-rights", label: "Travailleurs de Plateformes", icon: IconPlatformWorkerRights },
+      { href: "/dashboard/rare-earth-mining-rights", label: "Mines de Terres Rares", icon: IconRareEarthMiningRights },
+      { href: "/dashboard/agricultural-child-labor-rights", label: "Travail Enfant Agricole", icon: IconAgriculturalChildLaborRights },
     ],
   },
   {
