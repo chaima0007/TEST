@@ -19110,6 +19110,9 @@ const navSections: NavSection[] = [
       { label: "Conversational AI Advertising", href: "/dashboard/conversationalai-advertising", icon: IconConversationalaiAdvertising },
       { label: "Chatbot Marketing Advertising", href: "/dashboard/chatbotmarketing-advertising", icon: IconChatbotmarketingAdvertising },
       { label: "Native Ads Advertising", href: "/dashboard/nativeads-advertising", icon: IconNativeadsAdvertising },
+      { label: "Affiliate Marketing Advertising", href: "/dashboard/affiliatemarketing-advertising", icon: IconAffiliatemarketingAdvertising },
+      { label: "Email Marketing Advertising", href: "/dashboard/emailmarketing-advertising", icon: IconEmailmarketingAdvertising },
+      { label: "SMS Marketing Advertising", href: "/dashboard/smsmarketing-advertising", icon: IconSmsmarketingAdvertising },
     ],
   },
   {
