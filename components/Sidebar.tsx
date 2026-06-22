@@ -16098,6 +16098,32 @@ function IconRewardedvideoAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconDynamicpricingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="1" x2="12" y2="23"/>
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+    </svg>
+  );
+}
+function IconShoppabletvAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <line x1="8" y1="21" x2="16" y2="21"/>
+      <line x1="12" y1="17" x2="12" y2="21"/>
+      <polyline points="9 10 12 7 15 10"/>
+    </svg>
+  );
+}
+function IconConnectedhomeAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19817,6 +19843,9 @@ const navSections: NavSection[] = [
       { label: "Second Screen Ads", href: "/dashboard/secondscreenads-advertising", icon: IconSecondscreenadsAdvertising },
       { label: "Interstitial Ads", href: "/dashboard/interstitial-advertising", icon: IconInterstitialAdvertising },
       { label: "Rewarded Video Ads", href: "/dashboard/rewardedvideo-advertising", icon: IconRewardedvideoAdvertising },
+      { label: "Dynamic Pricing Ads", href: "/dashboard/dynamicpricing-advertising", icon: IconDynamicpricingAdvertising },
+      { label: "Shoppable TV Ads", href: "/dashboard/shoppabletv-advertising", icon: IconShoppabletvAdvertising },
+      { label: "Connected Home Ads", href: "/dashboard/connectedhome-advertising", icon: IconConnectedhomeAdvertising },
     ],
   },
   {
