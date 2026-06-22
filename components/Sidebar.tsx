@@ -11713,6 +11713,35 @@ function IconFastFashionRights() {
   );
 }
 
+function IconWageTheftRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b91c1c" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <line x1="12" y1="1" x2="12" y2="23" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </svg>
+  );
+}
+
+function IconDroneSurveillanceRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#4338ca" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="2" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      <path d="M2 12h20" />
+    </svg>
+  );
+}
+
+function IconPlasticPollutionRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0891b2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13435,6 +13464,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/indigenous-cultural-heritage-rights", label: "Patrimoine Autochtone", icon: IconIndigenousCulturalHeritageRights },
       { href: "/dashboard/deep-sea-mining-rights", label: "Mines des Fonds Marins", icon: IconDeepSeaMiningRights },
       { href: "/dashboard/fast-fashion-rights", label: "Fast Fashion", icon: IconFastFashionRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 271",
+    items: [
+      { href: "/dashboard/wage-theft-rights", label: "Vol de Salaire", icon: IconWageTheftRights },
+      { href: "/dashboard/drone-surveillance-rights", label: "Surveillance par Drones", icon: IconDroneSurveillanceRights },
+      { href: "/dashboard/plastic-pollution-rights", label: "Pollution Plastique", icon: IconPlasticPollutionRights },
     ],
   },
   {
