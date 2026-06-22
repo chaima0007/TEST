@@ -13260,6 +13260,43 @@ function IconCannabisHarvestingChildLaborRights({ size = 20, color = "currentCol
   );
 }
 
+function IconRubberTappingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 12 Q8 6 12 4 Q16 6 19 12" />
+      <path d="M5 12 Q8 18 12 20 Q16 18 19 12" />
+      <line x1={12} y1={4} x2={12} y2={20} />
+      <path d="M8 10 Q10 12 8 14" />
+      <circle cx={6} cy={15} r={2} />
+    </svg>
+  );
+}
+
+function IconPalmKernelExtractionChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={10} />
+      <path d="M12 10 Q6 8 4 4" />
+      <path d="M12 10 Q18 8 20 4" />
+      <path d="M12 10 Q9 5 12 2" />
+      <path d="M12 10 Q15 5 12 2" />
+      <ellipse cx={12} cy={16} rx={4} ry={3} />
+    </svg>
+  );
+}
+
+function IconSheaNutHarvestingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx={12} cy={13} rx={7} ry={8} />
+      <path d="M12 5 Q14 2 16 3" />
+      <line x1={8} y1={11} x2={16} y2={11} />
+      <line x1={7} y1={15} x2={17} y2={15} />
+      <line x1={9} y1={19} x2={15} y2={19} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15526,6 +15563,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Cannabis",
         icon: IconCannabisHarvestingChildLaborRights,
         color: "#166534",
+      },
+      {
+        href: "/dashboard/rubber-tapping-child-labor-rights",
+        label: "Droits Enfants Saignée Caoutchouc",
+        icon: IconRubberTappingChildLaborRights,
+        color: "#1c1917",
+      },
+      {
+        href: "/dashboard/palm-kernel-child-labor-rights",
+        label: "Droits Enfants Palmiste",
+        icon: IconPalmKernelExtractionChildLaborRights,
+        color: "#713f12",
+      },
+      {
+        href: "/dashboard/shea-nut-child-labor-rights",
+        label: "Droits Enfants Karité",
+        icon: IconSheaNutHarvestingChildLaborRights,
+        color: "#92400e",
       },
     ],
   },
