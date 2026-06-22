@@ -3917,6 +3917,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "REPUTATION & PR RISK",
+    items: [
+      { href: "/dashboard/reputationrisk", label: "Reputation Risk", icon: Icons.IconReputationRisk },
+      { href: "/dashboard/brandcrisis", label: "Brand Crisis", icon: Icons.IconBrandCrisis },
+      { href: "/dashboard/prmanagement", label: "PR Management", icon: Icons.IconPrManagement },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
