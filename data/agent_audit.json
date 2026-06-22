@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "description": "CaelumSwarm™ — Journal d'audit des démarrages d'agents",
-  "total_startups": 3,
+  "total_startups": 5,
   "blocked_startups": 1,
   "sessions": [
     {
@@ -49,7 +49,35 @@
       "checks_failed": [
         "clean_tree"
       ]
+    },
+    {
+      "timestamp": "2026-06-22T22:21:30.898052+00:00",
+      "group": "wave",
+      "wave": 485,
+      "domains": [
+        "esgrating",
+        "tcfdreporting",
+        "esrsstandards"
+      ],
+      "score": 100.0,
+      "ready": true,
+      "checks_failed": []
+    },
+    {
+      "timestamp": "2026-06-22T22:22:02.231491+00:00",
+      "group": "wave",
+      "wave": 486,
+      "domains": [
+        "supplieraudit",
+        "traceability",
+        "conflictminerals"
+      ],
+      "score": 80.0,
+      "ready": true,
+      "checks_failed": [
+        "clean_tree"
+      ]
     }
   ],
-  "last_startup": "2026-06-22T22:14:10.029796+00:00"
+  "last_startup": "2026-06-22T22:22:02.231491+00:00"
 }
