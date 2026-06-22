@@ -3925,6 +3925,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "CUSTOMER EXPERIENCE RISK",
+    items: [
+      { href: "/dashboard/customerexperience", label: "Customer Experience", icon: Icons.IconCustomerExperience },
+      { href: "/dashboard/nps", label: "NPS Risk", icon: Icons.IconNps },
+      { href: "/dashboard/churnprediction", label: "Churn Prediction", icon: Icons.IconChurnPrediction },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
