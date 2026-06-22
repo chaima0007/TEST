@@ -12040,6 +12040,45 @@ function IconArtisanalGoldMercuryRights() {
   );
 }
 
+function IconSugarcaneLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <line x1="12" y1="2" x2="12" y2="18" />
+      <line x1="8" y1="6" x2="12" y2="4" />
+      <line x1="8" y1="10" x2="12" y2="8" />
+      <line x1="8" y1="14" x2="12" y2="12" />
+      <path d="M8 20l8-4" />
+    </svg>
+  );
+}
+
+function IconPalmOilPeatlandRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <line x1="12" y1="20" x2="12" y2="10" />
+      <path d="M12 10 Q8 6 5 8" />
+      <path d="M12 10 Q16 6 19 8" />
+      <path d="M12 13 Q9 10 7 11" />
+      <path d="M12 13 Q15 10 17 11" />
+      <path d="M6 20 Q8 17 10 18" />
+      <path d="M10 18 Q11 16 12 17" />
+    </svg>
+  );
+}
+
+function IconMatchstickChildLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b91c1c" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <line x1="12" y1="22" x2="12" y2="8" />
+      <circle cx="12" cy="6" r="2" />
+      <path d="M10 4 Q12 1 14 4" />
+      <circle cx="7" cy="18" r="2" />
+      <line x1="7" y1="16" x2="7" y2="12" />
+      <line x1="5" y1="14" x2="9" y2="14" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13850,6 +13889,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/tobacco-child-labor-rights", label: "Travail Enfant Tabac", icon: IconTobaccoChildLaborRights },
       { href: "/dashboard/shrimp-fishing-forced-labor-rights", label: "Esclavage Crevettiers", icon: IconShrimpFishingForcedLaborRights },
       { href: "/dashboard/artisanal-gold-mercury-rights", label: "Orpaillage et Mercure", icon: IconArtisanalGoldMercuryRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 282",
+    items: [
+      { href: "/dashboard/sugarcane-labor-rights", label: "Travailleurs Canne à Sucre", icon: IconSugarcaneLaborRights },
+      { href: "/dashboard/palm-oil-peatland-rights", label: "Huile de Palme Tourbières", icon: IconPalmOilPeatlandRights },
+      { href: "/dashboard/matchstick-child-labor-rights", label: "Enfants Fabriques Allumettes", icon: IconMatchstickChildLaborRights },
     ],
   },
   {
