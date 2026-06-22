@@ -3890,6 +3890,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "MARKETING TECH RISK",
+    items: [
+      { href: "/dashboard/emailautomation", label: "Email Automation", icon: Icons.IconEmailAutomation },
+      { href: "/dashboard/marketingops", label: "Marketing Ops", icon: Icons.IconMarketingOps },
+      { href: "/dashboard/crmdata", label: "CRM Data", icon: Icons.IconCrmData },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
