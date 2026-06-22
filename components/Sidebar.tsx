@@ -12442,6 +12442,37 @@ function IconFishingVesselForcedLaborRights() {
   );
 }
 
+function IconSurrogacyExploitationRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#9d174d" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2a5 5 0 0 1 5 5v4a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z" />
+      <path d="M7 13c-2 1-3 3-3 5h16c0-2-1-4-3-5" />
+      <circle cx="12" cy="8" r="1" />
+    </svg>
+  );
+}
+
+function IconHairHarvestingLaborRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M6 3c0 0 2 2 2 6s-2 6-2 9" />
+      <path d="M12 3c0 0 2 2 2 6s-2 6-2 9" />
+      <path d="M18 3c0 0 2 2 2 6s-2 6-2 9" />
+      <path d="M4 14h16" />
+    </svg>
+  );
+}
+
+function IconBloodPlasmaDonationRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#b91c1c" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2L8 8h8L12 2z" />
+      <path d="M12 8v8" />
+      <circle cx="12" cy="18" r="3" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14348,6 +14379,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/nail-salon-worker-rights", label: "Droits Travailleurs Manucure", icon: IconNailSalonWorkerRights },
       { href: "/dashboard/restavek-child-domestic-labor-rights", label: "Enfants Domestiques Restavèk", icon: IconRestavekChildDomesticLaborRights },
       { href: "/dashboard/fishing-vessel-forced-labor-rights", label: "Travail Forcé Bateaux Pêche", icon: IconFishingVesselForcedLaborRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 294",
+    items: [
+      { href: "/dashboard/surrogacy-exploitation-rights", label: "Exploitation Mères Porteuses", icon: IconSurrogacyExploitationRights },
+      { href: "/dashboard/hair-harvesting-labor-rights", label: "Droits Récolte Cheveux", icon: IconHairHarvestingLaborRights },
+      { href: "/dashboard/blood-plasma-donation-rights", label: "Droits Donneurs Plasma Sanguin", icon: IconBloodPlasmaDonationRights },
     ],
   },
   {
