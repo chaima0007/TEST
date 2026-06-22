@@ -14697,6 +14697,33 @@ function IconCoBrandingAdvertising({ size = 18, color = "currentColor" }: { size
   );
 }
 
+function IconCauseMarketingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  );
+}
+function IconGreenAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 8C8 10 5.9 16.17 3.82 19.98a2 2 0 0 0 3.47 1.98C9.5 17.5 12 14 17 12"/>
+      <path d="M17 8l3-3"/>
+      <path d="M17 8v4"/>
+    </svg>
+  );
+}
+function IconDiversityEquityInclusionAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+      <line x1="3" y1="12" x2="6" y2="12"/>
+      <line x1="18" y1="12" x2="21" y2="12"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17568,6 +17595,24 @@ const navSections: NavSection[] = [
         label: "Co-Branding Advertising",
         href: "/dashboard/co-branding-advertising-child-labor-rights",
         icon: IconCoBrandingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Cause Marketing Advertising",
+        href: "/dashboard/cause-marketing-advertising-child-labor-rights",
+        icon: IconCauseMarketingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Green Advertising",
+        href: "/dashboard/green-advertising-child-labor-rights",
+        icon: IconGreenAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "DEI Advertising",
+        href: "/dashboard/diversity-equity-inclusion-advertising-child-labor-rights",
+        icon: IconDiversityEquityInclusionAdvertising,
         category: "Publicité Visuelle",
       },
       {
