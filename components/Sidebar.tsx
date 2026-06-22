@@ -11182,6 +11182,30 @@ function IconEcocideRights({ className }: { className?: string }) {
   );
 }
 
+function IconPlatformWorkersRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3m-3 3.75h3m-6-3.75H6.75m3.75 3.75H6.75" />
+    </svg>
+  );
+}
+
+function IconRightToWaterRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3.75v16.5M2.25 12h19.5M6.375 17.25a4.875 4.875 0 004.875-4.875V12m6.375 5.25a4.875 4.875 0 01-4.875-4.875V12m-9 8.25h16.5a1.5 1.5 0 001.5-1.5V5.25a1.5 1.5 0 00-1.5-1.5H3.75a1.5 1.5 0 00-1.5 1.5v13.5a1.5 1.5 0 001.5 1.5zm12.621-9.44c-1.409 1.41-4.242 1.061-4.242 1.061s-.349-2.833 1.06-4.242a2.25 2.25 0 013.182 3.182zM10.773 7.63c1.409 1.409 1.06 4.242 1.06 4.242S9 12.22 7.592 10.811a2.25 2.25 0 013.182-3.182z" />
+    </svg>
+  );
+}
+
+function IconLandMineVictimsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12728,6 +12752,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/right-to-science-rights-engine", label: "Right to Science Rights", icon: IconRightToScienceRights, color: "#0c4a6e" },
       { href: "/dashboard/indigenous-self-determination-rights-engine", label: "Indigenous Self Determination Rights", icon: IconIndigenousSelfDeterminationRights, color: "#14532d" },
       { href: "/dashboard/ecocide-rights-engine", label: "Ecocide Rights", icon: IconEcocideRights, color: "#166534" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 249",
+    items: [
+      { href: "/dashboard/platform-workers-rights-engine", label: "Platform Workers Rights", icon: IconPlatformWorkersRights, color: "#1e40af" },
+      { href: "/dashboard/right-to-water-rights-engine", label: "Right to Water Rights", icon: IconRightToWaterRights, color: "#0369a1" },
+      { href: "/dashboard/land-mine-victims-rights-engine", label: "Land Mine Victims Rights", icon: IconLandMineVictimsRights, color: "#92400e" },
     ],
   },
   {
