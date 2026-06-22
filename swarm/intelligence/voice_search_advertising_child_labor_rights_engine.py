@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""CaelumSwarm™ — Augmented Reality Ads Child Labor Rights Engine (Wave 344)"""
+"""CaelumSwarm™ — Voice Search Advertising Child Labor Rights Engine (Wave 344)"""
 import json, statistics
 
 ENTITIES = [
-    ("Plateformes AR (Snapchat Lens, Meta Spark)", 99, 97, 95, 93),
-    ("Développeurs AR", 93, 90, 88, 86),
-    ("Marques luxury AR", 85, 82, 80, 78),
-    ("Plateformes retail AR", 80, 77, 75, 73),
-    ("Agences créatives AR", 61, 58, 56, 54),
-    ("Fournisseurs SLAM tech", 51, 48, 46, 44),
-    ("Distributeurs hardware AR", 32, 29, 27, 25),
-    ("Studios expériences immersives", 13, 11, 9, 7),
+    ("Amazon Alexa Ads", 99, 97, 95, 93),
+    ("Google Assistant Ads", 93, 90, 88, 86),
+    ("Apple Siri Ads", 85, 82, 80, 78),
+    ("Fabricants smart speakers", 80, 77, 75, 73),
+    ("Agences SEO vocal", 61, 58, 56, 54),
+    ("Plateformes podcasts ads", 51, 48, 46, 44),
+    ("Fournisseurs NLP", 32, 29, 27, 25),
+    ("Développeurs skills/actions", 13, 11, 9, 7),
 ]
 WEIGHTS = (0.30, 0.25, 0.25, 0.20)
 THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
@@ -30,7 +30,7 @@ def compute():
             "entity": eid,
             "composite_score": round(composite, 2),
             "risk_level": classify(composite),
-            "estimated_augmented_reality_ads_index": round(composite / 100 * 10, 2),
+            "estimated_voice_search_advertising_index": round(composite / 100 * 10, 2),
         })
     avg = statistics.mean(r["composite_score"] for r in results)
     distribution = {}
