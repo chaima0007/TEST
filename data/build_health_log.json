@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-22T23:32:25.086967",
-  "overall": "FAIL",
+  "timestamp": "2026-06-22T23:44:37.297143",
+  "overall": "OK",
   "agents": [
     {
       "status": "OK",
@@ -26,252 +26,22 @@
       "fix": "Créer sidebar-icons-5.tsx et déplacer les dernières 2000 lignes"
     },
     {
-      "status": "FAIL",
+      "status": "OK",
       "check": "engine_pattern",
-      "fails": [
-        {
-          "engine": "algorithmic_justice_bias_rights_engine.py",
-          "avg": 60.14,
-          "expected": 61.03
-        },
-        {
-          "engine": "anti_corruption_accountability_engine.py",
-          "avg": 62.08,
-          "expected": 61.03
-        },
-        {
-          "engine": "arbitrary_detention_political_prisoners_engine.py",
-          "avg": 59.79,
-          "expected": 61.03
-        },
-        {
-          "engine": "biotech_genetic_discrimination_rights_engine.py",
-          "avg": 62.02,
-          "expected": 61.03
-        },
-        {
-          "engine": "carbon_colonialism_climate_justice_engine.py",
-          "avg": 61.97,
-          "expected": 61.03
-        },
-        {
-          "engine": "colonial_restitution_cultural_heritage_engine.py",
-          "avg": 59.24,
-          "expected": 61.03
-        },
-        {
-          "engine": "dark_web_cybercrime_rights_engine.py",
-          "avg": 63.11,
-          "expected": 61.03
-        },
-        {
-          "engine": "deepfake_synthetic_media_rights_engine.py",
-          "avg": 59.63,
-          "expected": 61.03
-        },
-        {
-          "engine": "digital_feudalism_platform_rights_engine.py",
-          "avg": 62.49,
-          "expected": 61.03
-        },
-        {
-          "engine": "femicide_gender_based_killings_engine.py",
-          "avg": 60.46,
-          "expected": 61.03
-        },
-        {
-          "engine": "gender_based_violence_femicide_engine.py",
-          "avg": 61.64,
-          "expected": 61.03
-        },
-        {
-          "engine": "gig_economy_labor_exploitation_engine.py",
-          "avg": 62.61,
-          "expected": 61.03
-        },
-        {
-          "engine": "indigenous_language_extinction_rights_engine.py",
-          "avg": 63.08,
-          "expected": 61.03
-        },
-        {
-          "engine": "land_rights_eviction_indigenous_territories_engine.py",
-          "avg": 57.16,
-          "expected": 61.03
-        },
-        {
-          "engine": "neurotech_cognitive_liberty_rights_engine.py",
-          "avg": 58.56,
-          "expected": 61.03
-        },
-        {
-          "engine": "nuclear_testing_radiation_victims_engine.py",
-          "avg": 61.98,
-          "expected": 61.03
-        },
-        {
-          "engine": "nuclear_weapons_humanitarian_impact_engine.py",
-          "avg": 62.19,
-          "expected": 61.03
-        },
-        {
-          "engine": "offshore_tax_haven_rights_engine.py",
-          "avg": 62.26,
-          "expected": 61.03
-        },
-        {
-          "engine": "post_quantum_cryptography_rights_engine.py",
-          "avg": 60.36,
-          "expected": 61.03
-        },
-        {
-          "engine": "predictive_arbitrage_engine.py",
-          "error": "Traceback (most recent call last):\n  File \"/home/user/TEST/swarm/intelligence/predictive_arbitrage_engine.py\", line 305, in <module>\n    from swarm.intelligence.predictive_arbitrage_engine import (\nMo"
-        },
-        {
-          "engine": "prison_industrial_complex_rights_engine.py",
-          "avg": 60.71,
-          "expected": 61.03
-        },
-        {
-          "engine": "private_military_contractors_accountability_engine.py",
-          "avg": 60.63,
-          "expected": 61.03
-        },
-        {
-          "engine": "quantum_supremacy_arms_race_engine.py",
-          "avg": 57.28,
-          "expected": 61.03
-        },
-        {
-          "engine": "quantum_surveillance_privacy_rights_engine.py",
-          "avg": 60.18,
-          "expected": 61.03
-        },
-        {
-          "engine": "right_to_asylum_refugee_protection_engine.py",
-          "avg": 61.34,
-          "expected": 61.03
-        },
-        {
-          "engine": "romani_sinti_anti_ziganism_rights_engine.py",
-          "avg": 58.94,
-          "expected": 61.03
-        },
-        {
-          "engine": "space_colonization_indigenous_rights_engine.py",
-          "avg": 59.97,
-          "expected": 61.03
-        },
-        {
-          "engine": "stateless_persons_documentation_crisis_engine.py",
-          "avg": 58.12,
-          "expected": 61.03
-        },
-        {
-          "engine": "statelessness_document_rights_engine.py",
-          "avg": 62.29,
-          "expected": 61.03
-        },
-        {
-          "engine": "synthetic_biology_biosafety_rights_engine.py",
-          "avg": 60.89,
-          "expected": 61.03
-        },
-        {
-          "engine": "trafficking_forced_labor_modern_slavery_engine.py",
-          "avg": 58.92,
-          "expected": 61.03
-        },
-        {
-          "engine": "water_privatization_commons_rights_engine.py",
-          "avg": 60.0,
-          "expected": 61.03
-        },
-        {
-          "engine": "youth_rights_intergenerational_justice_engine.py",
-          "avg": 62.16,
-          "expected": 61.03
-        }
-      ],
-      "fix": "Utiliser les tuples EXACTS: (99,97,95,93)/(93,90,88,86)/.../(13,11,9,7)"
+      "standard_ok": 121,
+      "dataclass_ok": 1646
     },
     {
-      "status": "FAIL",
+      "status": "OK",
       "check": "route_security",
-      "violations": [
-        {
-          "route": "app/api/alerts/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/auth/login/route.ts",
-          "missing": [
-            "sealResponse",
-            "SWARM_API_URL",
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/auth/logout/route.ts",
-          "missing": [
-            "sealResponse",
-            "SWARM_API_URL",
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/branding/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/competitors/[id]/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/competitors/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/editorial/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/objections/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/performance/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        },
-        {
-          "route": "app/api/portfolio/route.ts",
-          "missing": [
-            "revalidate_30"
-          ]
-        }
-      ],
-      "fix": "Ajouter sealResponse + SWARM_API_URL guard + revalidate:30 + 502 (pas 503)"
+      "routes_ok": 178,
+      "skipped_auth": 2
     }
   ],
   "monte_carlo": {
     "simulations": 100000,
-    "failures": 4982,
-    "risk_pct": 4.98,
-    "confidence": 95.02
+    "failures": 4931,
+    "risk_pct": 4.93,
+    "confidence": 95.07
   }
 }

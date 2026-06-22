@@ -8,70 +8,14 @@ import math
 from datetime import datetime
 
 ENTITIES = [
-    {
-        "id": "MSL-001",
-        "name": "Corée du Nord/Travail Forcé Étatique — 2.6M Travailleurs Forcés Camps Kwanliso Exportés Chine Russie",
-        "sub1": 96,
-        "sub2": 94,
-        "sub3": 92,
-        "sub4": 90,
-    },
-    {
-        "id": "MSL-002",
-        "name": "Érythrée/Service National Indéfini — Conscription Forcée Vie Entière Salaire $30/Mois Fuite Criminel",
-        "sub1": 90,
-        "sub2": 88,
-        "sub3": 86,
-        "sub4": 84,
-    },
-    {
-        "id": "MSL-003",
-        "name": "Mauritanie/Esclavage Héréditaire — 90 000 Esclaves Haratin Nés Esclavage Criminalisation 2007 Impunité",
-        "sub1": 84,
-        "sub2": 82,
-        "sub3": 80,
-        "sub4": 78,
-    },
-    {
-        "id": "MSL-004",
-        "name": "Inde/Travail Bonded — 18M Travailleurs Endettés Agriculture Briques Carrières Caste Dalits",
-        "sub1": 76,
-        "sub2": 74,
-        "sub3": 72,
-        "sub4": 70,
-    },
-    {
-        "id": "MSL-005",
-        "name": "Qatar/Kafala Mondial — 2M Travailleurs Migrants Passeport Confisqué Réforme 2021 Partielle FIFA",
-        "sub1": 62,
-        "sub2": 58,
-        "sub3": 56,
-        "sub4": 54,
-    },
-    {
-        "id": "MSL-006",
-        "name": "UAE/Kafala Construction — 500 000 Travailleurs Domestiques Exclus Labour Law Abus Dénoncés",
-        "sub1": 54,
-        "sub2": 50,
-        "sub3": 48,
-        "sub4": 46,
-    },
-    {
-        "id": "MSL-007",
-        "name": "Brésil/Trabalho Escravo — Opération Liberdade 3 000 Libérés/An Agriculture Textile Liste Suja",
-        "sub1": 38,
-        "sub2": 34,
-        "sub3": 32,
-        "sub4": 28,
-    },
-    {
-        "id": "MSL-008",
-        "name": "Portugal/Plan Anti-Traite — Décriminalisation Victimes Accès Justice Réseau Support ONG",
-        "sub1": 18,
-        "sub2": 14,
-        "sub3": 12,
-        "sub4": 10,
-    },
+    {"name": "Corée du Nord/Travail Forcé Étatique — 2.6M Travailleurs Forcés Camps Kwanliso Exportés Chine Russie", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Érythrée/Service National Indéfini — Conscription Forcée Vie Entière Salaire $30/Mois Fuite Criminel", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Mauritanie/Esclavage Héréditaire — 90 000 Esclaves Haratin Nés Esclavage Criminalisation 2007 Impunité", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Inde/Travail Bonded — 18M Travailleurs Endettés Agriculture Briques Carrières Caste Dalits", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Qatar/Kafala Mondial — 2M Travailleurs Migrants Passeport Confisqué Réforme 2021 Partielle FIFA", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "UAE/Kafala Construction — 500 000 Travailleurs Domestiques Exclus Labour Law Abus Dénoncés", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Brésil/Trabalho Escravo — Opération Liberdade 3 000 Libérés/An Agriculture Textile Liste Suja", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Portugal/Plan Anti-Traite — Décriminalisation Victimes Accès Justice Réseau Support ONG", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

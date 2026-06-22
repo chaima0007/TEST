@@ -7,70 +7,14 @@ Distribution: 4 critique / 2 élevé / 1 modéré / 1 faible
 from datetime import datetime
 
 ENTITIES = [
-    {
-        "id": "CJR-001",
-        "name": "Bangladesh/Cyclones Déplacement — 13M Déplacés Climatiques 2050 Delta Submergé Chars Flottants Adaption",
-        "sub1": 96,
-        "sub2": 94,
-        "sub3": 92,
-        "sub4": 90,
-    },
-    {
-        "id": "CJR-002",
-        "name": "Tuvalu/Disparition Totale — Nation Insulaire 11 000 Habitants Submersion 2050 Accord NZ Migration Dignité",
-        "sub1": 92,
-        "sub2": 90,
-        "sub3": 88,
-        "sub4": 86,
-    },
-    {
-        "id": "CJR-003",
-        "name": "Pakistan/Inondations 2022 — 33M Affectés 1/3 Pays Sous Eau Pertes $30Mds Compensation Nulle Pollueurs",
-        "sub1": 84,
-        "sub2": 82,
-        "sub3": 80,
-        "sub4": 78,
-    },
-    {
-        "id": "CJR-004",
-        "name": "Somalie/Sécheresse Conflit — 7.8M Insécurité Alimentaire Déplacement Triple Nexus Conflit-Climat-Faim",
-        "sub1": 78,
-        "sub2": 76,
-        "sub3": 74,
-        "sub4": 72,
-    },
-    {
-        "id": "CJR-005",
-        "name": "Philippines/Yolanda Typhon — 6 300 Morts 4M Déplacés Reconstruction Inégale Droit Reconstruction Refusé",
-        "sub1": 62,
-        "sub2": 58,
-        "sub3": 56,
-        "sub4": 54,
-    },
-    {
-        "id": "CJR-006",
-        "name": "Mozambique/Idai Cyclone — 3M Affectés 2019 Reconstruction Lente Justice Climatique Procès Énergéticiens",
-        "sub1": 54,
-        "sub2": 50,
-        "sub3": 48,
-        "sub4": 46,
-    },
-    {
-        "id": "CJR-007",
-        "name": "USA/Puerto Rico Maria — $90Mds Dégâts Réponse Fédérale Discriminatoire Lenteur Reconstruction",
-        "sub1": 38,
-        "sub2": 34,
-        "sub3": 32,
-        "sub4": 28,
-    },
-    {
-        "id": "CJR-008",
-        "name": "Allemagne/Klimaseniorinnen — Cour Européenne DH Obligation Climatique États Modèle Litiges Stratégiques",
-        "sub1": 18,
-        "sub2": 14,
-        "sub3": 12,
-        "sub4": 10,
-    },
+    {"name": "Bangladesh/Cyclones Déplacement — 13M Déplacés Climatiques 2050 Delta Submergé Chars Flottants Adaption", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Tuvalu/Disparition Totale — Nation Insulaire 11 000 Habitants Submersion 2050 Accord NZ Migration Dignité", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Pakistan/Inondations 2022 — 33M Affectés 1/3 Pays Sous Eau Pertes $30Mds Compensation Nulle Pollueurs", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Somalie/Sécheresse Conflit — 7.8M Insécurité Alimentaire Déplacement Triple Nexus Conflit-Climat-Faim", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Philippines/Yolanda Typhon — 6 300 Morts 4M Déplacés Reconstruction Inégale Droit Reconstruction Refusé", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Mozambique/Idai Cyclone — 3M Affectés 2019 Reconstruction Lente Justice Climatique Procès Énergéticiens", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "USA/Puerto Rico Maria — $90Mds Dégâts Réponse Fédérale Discriminatoire Lenteur Reconstruction", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Allemagne/Klimaseniorinnen — Cour Européenne DH Obligation Climatique États Modèle Litiges Stratégiques", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

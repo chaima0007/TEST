@@ -7,70 +7,14 @@ Distribution: 4 critique / 2 élevé / 1 modéré / 1 faible
 from datetime import datetime
 
 ENTITIES = [
-    {
-        "id": "SCT-001",
-        "name": "USA/ADX Florence — Supermax Isolement Total 23h/Jour 400+ Détenus Suicide Taux Élevé HRW Torture Psychologique",
-        "sub1": 94,
-        "sub2": 92,
-        "sub3": 90,
-        "sub4": 88,
-    },
-    {
-        "id": "SCT-002",
-        "name": "Chine/Laojiao Réforme — Éducation Forcée Ouïghours Falun Gong Privation Sommeil Torture Mentale Aveux Contraints",
-        "sub1": 92,
-        "sub2": 90,
-        "sub3": 88,
-        "sub4": 86,
-    },
-    {
-        "id": "SCT-003",
-        "name": "Russie/SHIZO Punition — Cellules Punitives Isolement Absolu Navalny Décès Conditions Inhumaines CPT Rapport",
-        "sub1": 87,
-        "sub2": 85,
-        "sub3": 83,
-        "sub4": 81,
-    },
-    {
-        "id": "SCT-004",
-        "name": "Turquie/Type F Prison — Isolement Cellulaire Individuel Réservé Politiques Kurdes Longue Durée CPT Critique",
-        "sub1": 80,
-        "sub2": 78,
-        "sub3": 76,
-        "sub4": 74,
-    },
-    {
-        "id": "SCT-005",
-        "name": "Israël/Incommunicado — Détention Prolongée Sans Contact Gazaouis 2023 Installations Sde Teiman Témoignages Abus",
-        "sub1": 62,
-        "sub2": 60,
-        "sub3": 58,
-        "sub4": 54,
-    },
-    {
-        "id": "SCT-006",
-        "name": "Égypte/Disparitions Forcées — Détention Incommunicado Opposants Politique 60 000+ Prisonniers Politiques Estimés AI",
-        "sub1": 56,
-        "sub2": 54,
-        "sub3": 52,
-        "sub4": 48,
-    },
-    {
-        "id": "SCT-007",
-        "name": "Danemark/Réforme Isolement — Interdiction Isolement Préventif -18 Ans Limite 4 Semaines Adultes Modèle Nordic",
-        "sub1": 30,
-        "sub2": 26,
-        "sub3": 24,
-        "sub4": 20,
-    },
-    {
-        "id": "SCT-008",
-        "name": "Règles Nelson Mandela ONU — Standard Minimum Traitement Détenus 2015 Révisées Isolement Max 15 Jours Consécutifs",
-        "sub1": 14,
-        "sub2": 10,
-        "sub3": 8,
-        "sub4": 6,
-    },
+    {"name": "USA/ADX Florence — Supermax Isolement Total 23h/Jour 400+ Détenus Suicide Taux Élevé HRW Torture Psychologique", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"name": "Chine/Laojiao Réforme — Éducation Forcée Ouïghours Falun Gong Privation Sommeil Torture Mentale Aveux Contraints", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"name": "Russie/SHIZO Punition — Cellules Punitives Isolement Absolu Navalny Décès Conditions Inhumaines CPT Rapport", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"name": "Turquie/Type F Prison — Isolement Cellulaire Individuel Réservé Politiques Kurdes Longue Durée CPT Critique", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"name": "Israël/Incommunicado — Détention Prolongée Sans Contact Gazaouis 2023 Installations Sde Teiman Témoignages Abus", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"name": "Égypte/Disparitions Forcées — Détention Incommunicado Opposants Politique 60 000+ Prisonniers Politiques Estimés AI", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"name": "Danemark/Réforme Isolement — Interdiction Isolement Préventif -18 Ans Limite 4 Semaines Adultes Modèle Nordic", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"name": "Règles Nelson Mandela ONU — Standard Minimum Traitement Détenus 2015 Révisées Isolement Max 15 Jours Consécutifs", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 
