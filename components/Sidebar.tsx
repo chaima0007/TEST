@@ -16060,6 +16060,16 @@ function IconMicrosoftadvertisingAdvertising({ size = 18, color = "currentColor"
     </svg>
   );
 }
+function IconCookielessAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+      <circle cx="9" cy="9" r="1" fill="currentColor"/>
+      <circle cx="15" cy="12" r="1" fill="currentColor"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19775,6 +19785,7 @@ const navSections: NavSection[] = [
       { label: "Microsoft Advertising", href: "/dashboard/microsoftadvertising-advertising", icon: IconMicrosoftadvertisingAdvertising },
       { label: "Contextual Advertising", href: "/dashboard/contextual-advertising", icon: IconContextualAdvertising },
       { label: "Programmatic Advertising", href: "/dashboard/programmatic-advertising", icon: IconProgrammaticAdvertising },
+      { label: "Cookieless Advertising", href: "/dashboard/cookieless-advertising", icon: IconCookielessAdvertising },
     ],
   },
   {
