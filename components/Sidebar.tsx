@@ -13152,6 +13152,48 @@ function IconCloveHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconStarAniseHarvestingChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx={12} cy={12} r={3} />
+      <line x1={12} y1={2} x2={12} y2={9} />
+      <line x1={12} y1={15} x2={12} y2={22} />
+      <line x1={2} y1={12} x2={9} y2={12} />
+      <line x1={15} y1={12} x2={22} y2={12} />
+      <line x1={4.93} y1={4.93} x2={9.17} y2={9.17} />
+      <line x1={14.83} y1={14.83} x2={19.07} y2={19.07} />
+      <line x1={19.07} y1={4.93} x2={14.83} y2={9.17} />
+      <line x1={9.17} y1={14.83} x2={4.93} y2={19.07} />
+    </svg>
+  );
+}
+
+function IconNutmegCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx={12} cy={14} rx={6} ry={8} />
+      <path d="M12 6 Q14 2 18 3" />
+      <line x1={9} y1={10} x2={15} y2={10} />
+      <line x1={8} y1={14} x2={16} y2={14} />
+      <line x1={9} y1={18} x2={15} y2={18} />
+    </svg>
+  );
+}
+
+function IconSaffronCultivationChildLaborRights({ size = 20, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1={12} y1={22} x2={12} y2={10} />
+      <path d="M12 10 Q8 6 5 7" />
+      <path d="M12 10 Q16 6 19 7" />
+      <path d="M12 10 Q12 4 12 2" />
+      <line x1={5} y1={7} x2={5} y2={4} />
+      <line x1={19} y1={7} x2={19} y2={4} />
+      <line x1={12} y1={2} x2={12} y2={0} />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -15364,6 +15406,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/clove-harvesting-child-labor-rights",
         icon: IconCloveHarvestingChildLaborRights,
         color: "#991b1b",
+      },
+      {
+        href: "/dashboard/star-anise-child-labor-rights",
+        label: "Droits Enfants Anis Étoilé",
+        icon: IconStarAniseHarvestingChildLaborRights,
+        color: "#7e22ce",
+      },
+      {
+        href: "/dashboard/nutmeg-child-labor-rights",
+        label: "Droits Enfants Muscade",
+        icon: IconNutmegCultivationChildLaborRights,
+        color: "#92400e",
+      },
+      {
+        href: "/dashboard/saffron-child-labor-rights",
+        label: "Droits Enfants Safran",
+        icon: IconSaffronCultivationChildLaborRights,
+        color: "#b45309",
       },
     ],
   },
