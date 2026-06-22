@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Nuclear Energy Community Rights Engine — CaelumSwarm™ Wave 205 | CSDDD Art.8-13"""
+"""E-Waste Recycling Rights Engine — CaelumSwarm™ Wave 205 | CSDDD Art.8-13"""
 import json
 from datetime import datetime
 
-DOMAIN_CODE = "NEC"
-ACCENT_COLOR = "#14532d"
+DOMAIN_CODE = "EWR"
+ACCENT_COLOR = "#713f12"
 ENTITIES = [
     # critique (≥60)
-    {"name": "EDF (France)", "sub1": 90.0, "sub2": 88.0, "sub3": 87.0, "sub4": 85.0},
-    {"name": "Tepco (Japan Fukushima)", "sub1": 92.0, "sub2": 90.0, "sub3": 88.0, "sub4": 86.0},
-    {"name": "Rosatom", "sub1": 86.0, "sub2": 84.0, "sub3": 83.0, "sub4": 80.0},
-    {"name": "Électricité de France Cattenom", "sub1": 84.0, "sub2": 82.0, "sub3": 81.0, "sub4": 79.0},
+    {"name": "Apple (iPhone obsolescence)", "sub1": 92.0, "sub2": 90.0, "sub3": 89.0, "sub4": 87.0},
+    {"name": "Samsung", "sub1": 90.0, "sub2": 87.0, "sub3": 86.0, "sub4": 84.0},
+    {"name": "HP (printer cartridges)", "sub1": 85.0, "sub2": 82.0, "sub3": 81.0, "sub4": 79.0},
+    {"name": "Dell", "sub1": 80.0, "sub2": 77.0, "sub3": 76.0, "sub4": 74.0},
     # élevé (40-59)
-    {"name": "Exelon (USA)", "sub1": 57.0, "sub2": 54.0, "sub3": 53.0, "sub4": 51.0},
-    {"name": "EDF Energy UK", "sub1": 53.0, "sub2": 50.0, "sub3": 49.0, "sub4": 47.0},
+    {"name": "Lenovo", "sub1": 57.0, "sub2": 54.0, "sub3": 53.0, "sub4": 51.0},
+    {"name": "Asus", "sub1": 55.0, "sub2": 52.0, "sub3": 51.0, "sub4": 49.0},
     # modéré (20-39)
-    {"name": "Vattenfall", "sub1": 30.0, "sub2": 28.0, "sub3": 27.0, "sub4": 25.0},
+    {"name": "Fairphone", "sub1": 30.0, "sub2": 28.0, "sub3": 27.0, "sub4": 25.0},
     # faible (<20)
-    {"name": "Nuclear Free Local Authorities", "sub1": 14.0, "sub2": 12.0, "sub3": 11.0, "sub4": 10.0},
+    {"name": "Basel Action Network", "sub1": 14.0, "sub2": 12.0, "sub3": 11.0, "sub4": 10.0},
 ]
 
 
