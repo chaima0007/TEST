@@ -1,49 +1,37 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const API_URL = "/api/digital-out-of-home-advertising-child-labor-rights";
-const TITLE = "Droits Enfants Publicité Out-of-Home Digitale";
-const COLOR = "#1d4ed8";
+const COLOR = "#0369a1";
+const riskColors: Record<string, string> = { critique: "#dc2626", élevé: "#f59e0b", modéré: "#3b82f6", faible: "#16a34a" };
 
-type Entity = { entity: string; composite_score: number; risk_level: string };
-type ApiData = { entities: Entity[]; avg_composite: number; distribution: Record<string, number> };
-type CertStatus = "certifié" | "en cours" | "non certifié";
-interface Cert { code: string; label: string; issuer: string; status: CertStatus; year?: number }
+interface Entity {
+  entity: string;
+  composite_score: number;
+  risk_level: string;
+}
 
-const CERTS_TEMPLATE: Omit<Cert, "status" | "year">[] = [
-  { code: "ISO-26000", label: "ISO 26000", issuer: "ISO" },
-  { code: "SA8000", label: "SA8000", issuer: "Social Accountability International" },
-  { code: "FAIR-TRADE", label: "Fair Trade Certified", issuer: "Fairtrade International" },
-  { code: "CSDDD", label: "CSDDD 2024/1760", issuer: "Union Européenne" },
-  { code: "ILO-C182", label: "Convention OIT C182", issuer: "OIT" },
-];
-
-const STATUS_COLOR: Record<CertStatus, string> = {
-  "certifié": "#16a34a", "en cours": "#d97706", "non certifié": "#dc2626",
-};
-const STATUS_ICON: Record<CertStatus, string> = {
-  "certifié": "✓", "en cours": "⏳", "non certifié": "✗",
-};
-
-function deriveCerts(score: number): Cert[] {
-  return CERTS_TEMPLATE.map((t, i) => {
-    const thresholds = [80, 65, 70, 75, 60];
-    const s: CertStatus = score >= thresholds[i] + 15 ? "certifié" : score >= thresholds[i] ? "en cours" : "non certifié";
-    return { ...t, status: s, year: s === "certifié" ? (score >= 90 ? 2023 : 2024) : undefined };
-  });
+function deriveCerts(score: number) {
+  return [
+    { id: "ISO-26000", label: "ISO 26000", status: score >= 75 ? "certified" : score >= 50 ? "in-progress" : "not-certified" },
+    { id: "SA8000", label: "SA8000", status: score >= 80 ? "certified" : score >= 55 ? "in-progress" : "not-certified" },
+    { id: "FAIR-TRADE", label: "Fair Trade", status: score >= 70 ? "certified" : score >= 45 ? "in-progress" : "not-certified" },
+    { id: "CSDDD", label: "CSDDD 2024/1760", status: score >= 65 ? "certified" : score >= 40 ? "in-progress" : "not-certified" },
+    { id: "ILO-C182", label: "OIT C182", status: score >= 60 ? "certified" : score >= 35 ? "in-progress" : "not-certified" },
+  ];
 }
 
 function GaugeRing({ value, color }: { value: number; color: string }) {
   const r = 36, cx = 44, cy = 44, sw = 8;
   const circ = 2 * Math.PI * r;
-  const pct = Math.min(Math.max(value, 0), 100);
+  const offset = circ - (value / 100) * circ;
   return (
     <svg width={88} height={88} viewBox="0 0 88 88">
       <circle cx={cx} cy={cy} r={r} fill="none" stroke="#e5e7eb" strokeWidth={sw} />
       <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth={sw}
-        strokeDasharray={`${(pct / 100) * circ} ${circ}`}
-        strokeLinecap="round" transform={`rotate(-90 ${cx} ${cy})`} />
-      <text x={cx} y={cy + 5} textAnchor="middle" fontSize={14} fontWeight="bold" fill={color}>{Math.round(pct)}</text>
+        strokeDasharray={circ} strokeDashoffset={offset}
+        strokeLinecap="round" transform="rotate(-90 44 44)" />
+      <text x={cx} y={cy} textAnchor="middle" dominantBaseline="central"
+        fontSize={16} fontWeight="bold" fill={color}>{value}</text>
     </svg>
   );
 }
@@ -51,48 +39,63 @@ function GaugeRing({ value, color }: { value: number; color: string }) {
 function DetailModal({ entity, color, onClose }: { entity: Entity; color: string; onClose: () => void }) {
   const [tab, setTab] = useState<"apercu" | "indicateurs" | "recommandations" | "certifications">("apercu");
   const certs = deriveCerts(entity.composite_score);
+  const certColor = (s: string) => s === "certified" ? "#16a34a" : s === "in-progress" ? "#d97706" : "#dc2626";
+  const certLabel = (s: string) => s === "certified" ? "Certifié" : s === "in-progress" ? "En cours" : "Non certifié";
   return (
-    <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 50 }}>
-      <div style={{ background: "#fff", borderRadius: 12, padding: 24, width: 520, maxWidth: "90vw", maxHeight: "80vh", overflowY: "auto" }}>
+    <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000 }}
+      onClick={onClose}>
+      <div style={{ background: "#fff", borderRadius: 16, padding: 32, width: "90%", maxWidth: 560, maxHeight: "85vh", overflowY: "auto" }}
+        onClick={e => e.stopPropagation()}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
-          <h2 style={{ fontWeight: "bold", fontSize: 18 }}>{entity.entity}</h2>
-          <button onClick={onClose} style={{ cursor: "pointer", fontSize: 20 }}>×</button>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: "#1e293b", margin: 0 }}>{entity.entity}</h2>
+          <button onClick={onClose} style={{ background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "#6b7280" }}>✕</button>
         </div>
-        <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
           {(["apercu", "indicateurs", "recommandations", "certifications"] as const).map(t => (
             <button key={t} onClick={() => setTab(t)}
-              style={{ padding: "4px 10px", borderRadius: 6, border: "1px solid #e5e7eb", fontSize: 12,
-                background: tab === t ? color : "#f9fafb", color: tab === t ? "#fff" : "#374151", cursor: "pointer" }}>
-              {t.charAt(0).toUpperCase() + t.slice(1)}
+              style={{ padding: "6px 14px", borderRadius: 20, border: "none", cursor: "pointer", fontSize: 12, fontWeight: 600,
+                background: tab === t ? color : "#f1f5f9", color: tab === t ? "#fff" : "#475569" }}>
+              {t === "apercu" ? "Aperçu" : t === "indicateurs" ? "Indicateurs" : t === "recommandations" ? "Recommandations" : "Certifications"}
             </button>
           ))}
         </div>
         {tab === "apercu" && (
-          <div>
-            <p style={{ marginBottom: 8 }}>Score : <strong>{entity.composite_score}</strong></p>
-            <p>Risque : <strong style={{ color }}>{entity.risk_level}</strong></p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <GaugeRing value={entity.composite_score} color={color} />
+              <div>
+                <div style={{ fontSize: 13, color: "#6b7280" }}>Score composite</div>
+                <div style={{ fontSize: 24, fontWeight: 700, color }}>{entity.composite_score}</div>
+                <span style={{ fontSize: 11, padding: "2px 10px", borderRadius: 9999, background: color + "20", color, fontWeight: 700 }}>{entity.risk_level}</span>
+              </div>
+            </div>
           </div>
         )}
-        {tab === "indicateurs" && <p>Conformité CSDDD 2024/1760 — surveillance active requise.</p>}
-        {tab === "recommandations" && <p>Renforcer la surveillance des chaînes d&apos;approvisionnement et appliquer les normes CSDDD 2024/1760.</p>}
+        {tab === "indicateurs" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {[["Droits fondamentaux", "sub1"], ["Conditions travail", "sub2"], ["Accès éducation", "sub3"], ["Protection légale", "sub4"]].map(([label]) => (
+              <div key={label} style={{ display: "flex", justifyContent: "space-between", padding: "8px 12px", background: "#f8fafc", borderRadius: 8 }}>
+                <span style={{ fontSize: 13, color: "#374151" }}>{label}</span>
+                <span style={{ fontSize: 13, fontWeight: 600, color }}>{entity.composite_score}%</span>
+              </div>
+            ))}
+          </div>
+        )}
+        {tab === "recommandations" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {["Audit fournisseurs tier-1 et tier-2", "Clause CSDDD dans contrats", "Formation équipes conformité", "Reporting annuel droits humains"].map(r => (
+              <div key={r} style={{ padding: "8px 12px", background: "#fffbeb", borderRadius: 8, fontSize: 13, color: "#92400e" }}>• {r}</div>
+            ))}
+          </div>
+        )}
         {tab === "certifications" && (
-          <div>
-            <p style={{ fontSize: 12, color: "#6b7280", marginBottom: 12 }}>Attestations de conformité — {entity.entity}</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {certs.map(cert => (
-                <div key={cert.code} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", borderRadius: 8, border: `1px solid ${STATUS_COLOR[cert.status]}30`, background: STATUS_COLOR[cert.status] + "08" }}>
-                  <span style={{ fontSize: 16, color: STATUS_COLOR[cert.status], fontWeight: "bold", width: 20, textAlign: "center" }}>{STATUS_ICON[cert.status]}</span>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 600, fontSize: 13 }}>{cert.label}</div>
-                    <div style={{ fontSize: 11, color: "#6b7280" }}>{cert.issuer}</div>
-                  </div>
-                  <div style={{ textAlign: "right" }}>
-                    <span style={{ fontSize: 11, fontWeight: 600, color: STATUS_COLOR[cert.status], padding: "2px 8px", borderRadius: 9999, background: STATUS_COLOR[cert.status] + "18" }}>{cert.status}</span>
-                    {cert.year && <div style={{ fontSize: 10, color: "#9ca3af", marginTop: 2 }}>{cert.year}</div>}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            {certs.map(c => (
+              <div key={c.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", background: "#f8fafc", borderRadius: 8 }}>
+                <span style={{ fontSize: 13, fontWeight: 600, color: "#374151" }}>{c.label}</span>
+                <span style={{ fontSize: 11, padding: "2px 10px", borderRadius: 9999, background: certColor(c.status) + "20", color: certColor(c.status), fontWeight: 700 }}>{certLabel(c.status)}</span>
+              </div>
+            ))}
           </div>
         )}
       </div>
@@ -100,35 +103,36 @@ function DetailModal({ entity, color, onClose }: { entity: Entity; color: string
   );
 }
 
-export default function Page() {
-  const [data, setData] = useState<ApiData | null>(null);
+export default function DigitalOutOfHomeAdvertisingPage() {
+  const [data, setData] = useState<{ entities: Entity[]; avg_composite: number } | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
+
   useEffect(() => {
-    fetch(API_URL).then(r => r.json()).then(d => setData(d.payload ?? d)).catch(console.error);
+    fetch("/api/digital-out-of-home-advertising-child-labor-rights")
+      .then(r => r.json())
+      .then(d => setData(d.payload ?? d));
   }, []);
-  if (!data) return <div style={{ padding: 32, textAlign: "center" }}>Chargement…</div>;
-  const riskColors: Record<string, string> = { critique: "#dc2626", élevé: "#ea580c", modéré: "#d97706", faible: "#16a34a" };
+
+  if (!data) return <div style={{ padding: 32, color: "#6b7280" }}>Chargement...</div>;
+
   return (
     <div style={{ padding: 32, fontFamily: "sans-serif", maxWidth: 900, margin: "0 auto" }}>
-      <h1 style={{ fontSize: 28, fontWeight: "bold", color: COLOR, marginBottom: 8 }}>{TITLE}</h1>
-      <p style={{ color: "#6b7280", marginBottom: 24 }}>Score moyen composite : <strong>{data.avg_composite}</strong></p>
-      <div style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
-        {Object.entries(data.distribution).map(([level, count]) => (
-          <div key={level} style={{ background: "#f9fafb", border: "1px solid #e5e7eb", borderRadius: 8, padding: "12px 20px", minWidth: 120, textAlign: "center" }}>
-            <div style={{ fontSize: 24, fontWeight: "bold", color: riskColors[level] ?? "#374151" }}>{count as number}</div>
-            <div style={{ fontSize: 12, color: "#6b7280", textTransform: "capitalize" }}>{level}</div>
-          </div>
-        ))}
+      <h1 style={{ fontSize: 24, fontWeight: 700, color: "#1e293b", marginBottom: 8 }}>Digital Out of Home Advertising — Droits de l&apos;Enfant</h1>
+      <p style={{ color: "#6b7280", marginBottom: 24 }}>Analyse conformité droits de l&apos;enfant — CaelumSwarm™</p>
+      <div style={{ background: COLOR + "15", border: `1px solid ${COLOR}40`, borderRadius: 12, padding: 20, marginBottom: 24 }}>
+        <div style={{ fontSize: 13, color: "#6b7280", marginBottom: 4 }}>Score moyen composite</div>
+        <div style={{ fontSize: 32, fontWeight: 700, color: COLOR }}>{data.avg_composite}</div>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 16 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: 16 }}>
         {data.entities.map(e => (
           <div key={e.entity} onClick={() => setSelected(e)}
-            style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 10, padding: 16, cursor: "pointer", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-              <span style={{ fontWeight: 600, fontSize: 13 }}>{e.entity}</span>
-              <span style={{ fontSize: 11, padding: "2px 8px", borderRadius: 9999, background: (riskColors[e.risk_level] ?? "#374151") + "20", color: riskColors[e.risk_level] ?? "#374151" }}>{e.risk_level}</span>
-            </div>
+            style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: 20, cursor: "pointer", display: "flex", alignItems: "center", gap: 16 }}>
             <GaugeRing value={e.composite_score} color={riskColors[e.risk_level] ?? COLOR} />
+            <div>
+              <div style={{ fontWeight: 600, fontSize: 14, color: "#1e293b", marginBottom: 4 }}>{e.entity}</div>
+              <span style={{ fontSize: 11, padding: "2px 10px", borderRadius: 9999,
+                background: (riskColors[e.risk_level] ?? "#374151") + "20", color: riskColors[e.risk_level] ?? "#374151" }}>{e.risk_level}</span>
+            </div>
           </div>
         ))}
       </div>
