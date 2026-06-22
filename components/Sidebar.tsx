@@ -14869,6 +14869,34 @@ function IconMusicAdvertising({ size = 18, color = "currentColor" }: { size?: nu
   );
 }
 
+function IconMediaAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+      <polyline points="17 2 12 7 7 2" />
+    </svg>
+  );
+}
+function IconPublishingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    </svg>
+  );
+}
+function IconEntertainmentAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+      <line x1="7" y1="2" x2="7" y2="22" /><line x1="17" y1="2" x2="17" y2="22" />
+      <line x1="2" y1="12" x2="22" y2="12" /><line x1="2" y1="7" x2="7" y2="7" />
+      <line x1="2" y1="17" x2="7" y2="17" /><line x1="17" y1="17" x2="22" y2="17" />
+      <line x1="17" y1="7" x2="22" y2="7" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17860,6 +17888,24 @@ const navSections: NavSection[] = [
         label: "Music Advertising",
         href: "/dashboard/music-advertising-child-labor-rights",
         icon: IconMusicAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Media Advertising",
+        href: "/dashboard/media-advertising-child-labor-rights",
+        icon: IconMediaAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Publishing Advertising",
+        href: "/dashboard/publishing-advertising-child-labor-rights",
+        icon: IconPublishingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Entertainment Advertising",
+        href: "/dashboard/entertainment-advertising-child-labor-rights",
+        icon: IconEntertainmentAdvertising,
         category: "Publicité Visuelle",
       },
       {
