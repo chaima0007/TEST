@@ -3909,6 +3909,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "MARKET INTELLIGENCE RISK",
+    items: [
+      { href: "/dashboard/competitiveintel", label: "Competitive Intel", icon: Icons.IconCompetitiveIntel },
+      { href: "/dashboard/marketresearch", label: "Market Research", icon: Icons.IconMarketResearch },
+      { href: "/dashboard/consumerinsights", label: "Consumer Insights", icon: Icons.IconConsumerInsights },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
