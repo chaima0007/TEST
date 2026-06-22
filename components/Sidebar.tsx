@@ -16124,6 +16124,30 @@ function IconConnectedhomeAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconQrcodeAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+      <rect x="5" y="5" width="3" height="3" fill="currentColor" stroke="none"/><rect x="16" y="5" width="3" height="3" fill="currentColor" stroke="none"/><rect x="5" y="16" width="3" height="3" fill="currentColor" stroke="none"/>
+      <line x1="14" y1="14" x2="14" y2="14"/><line x1="18" y1="14" x2="18" y2="14"/><line x1="21" y1="14" x2="21" y2="14"/><line x1="14" y1="18" x2="14" y2="21"/><line x1="18" y1="18" x2="21" y2="21"/>
+    </svg>
+  );
+}
+function IconOutofhomedigitalAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="13" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="16" x2="12" y2="21"/>
+      <path d="M7 8h10M7 12h6"/>
+    </svg>
+  );
+}
+function IconCinemaadvertisingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/>
+    </svg>
+  );
+}
 function IconSmsmessagingAdvertising({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -19921,6 +19945,9 @@ const navSections: NavSection[] = [
       { label: "Podcast Advertising", href: "/dashboard/podcastadvertising-advertising", icon: IconPodcastadvertisingAdvertising },
       { label: "Video Streaming Ads", href: "/dashboard/videostreaming-advertising", icon: IconVideostreamingAdvertising },
       { label: "Location-Based Ads", href: "/dashboard/locationbased-advertising", icon: IconLocationbasedAdvertising },
+      { label: "QR Code Advertising", href: "/dashboard/qrcode-advertising", icon: IconQrcodeAdvertising },
+      { label: "Digital Out-of-Home", href: "/dashboard/outofhomedigital-advertising", icon: IconOutofhomedigitalAdvertising },
+      { label: "Cinema Advertising", href: "/dashboard/cinemaadvertising-advertising", icon: IconCinemaadvertisingAdvertising },
       { label: "SMS Messaging Ads", href: "/dashboard/smsmessaging-advertising", icon: IconSmsmessagingAdvertising },
       { label: "WhatsApp Marketing", href: "/dashboard/whatsappmarketing-advertising", icon: IconWhatsappmarketingAdvertising },
       { label: "Chatbot Advertising", href: "/dashboard/chatbotadvertising-advertising", icon: IconChatbotadvertisingAdvertising },
