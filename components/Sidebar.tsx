@@ -15794,6 +15794,32 @@ function IconEmotionadvertisingAdvertising({ size = 18, color = "currentColor" }
     </svg>
   );
 }
+function IconSociallisteningAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+      <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+    </svg>
+  );
+}
+function IconBrandadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+      <line x1="7" y1="7" x2="7.01" y2="7"/>
+    </svg>
+  );
+}
+function IconPerformanceadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="20" x2="18" y2="10"/>
+      <line x1="12" y1="20" x2="12" y2="4"/>
+      <line x1="6" y1="20" x2="6" y2="14"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19471,6 +19497,9 @@ const navSections: NavSection[] = [
       { label: "Hyper-Local Advertising", href: "/dashboard/hyperlocaladvertising-advertising", icon: IconHyperlocaladvertisingAdvertising },
       { label: "Weather-Based Advertising", href: "/dashboard/weatherbasedadvertising-advertising", icon: IconWeatherbasedadvertisingAdvertising },
       { label: "Emotion Advertising", href: "/dashboard/emotionadvertising-advertising", icon: IconEmotionadvertisingAdvertising },
+      { label: "Social Listening Ads", href: "/dashboard/sociallistening-advertising", icon: IconSociallisteningAdvertising },
+      { label: "Brand Advertising", href: "/dashboard/brandadvertising-advertising", icon: IconBrandadvertisingAdvertising },
+      { label: "Performance Advertising", href: "/dashboard/performanceadvertising-advertising", icon: IconPerformanceadvertisingAdvertising },
     ],
   },
   {
