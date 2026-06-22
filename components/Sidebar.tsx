@@ -11516,6 +11516,30 @@ function IconPsychiatricAbuseRights({ className }: { className?: string }) {
   );
 }
 
+function IconElderFinancialAbuseRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+    </svg>
+  );
+}
+
+function IconDigitalDivideRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0z" />
+    </svg>
+  );
+}
+
+function IconOnlineViolenceWomenRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0zm-9 3.75h.008v.008H12v-.008z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13174,6 +13198,14 @@ const navSections: NavSection[] = [
       { label: "Economic Abuse Rights", href: "/dashboard/economic-abuse-rights-engine", icon: IconEconomicAbuseRights, color: "#ca8a04" },
       { label: "Mental Health Detention Rights", href: "/dashboard/mental-health-detention-rights-engine", icon: IconMentalHealthDetentionRights, color: "#7e22ce" },
       { label: "Psychiatric Abuse Rights", href: "/dashboard/psychiatric-abuse-rights-engine", icon: IconPsychiatricAbuseRights, color: "#1e3a5f" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 263",
+    items: [
+      { label: "Elder Financial Abuse Rights", href: "/dashboard/elder-financial-abuse-rights-engine", icon: IconElderFinancialAbuseRights, color: "#b45309" },
+      { label: "Digital Divide Rights", href: "/dashboard/digital-divide-rights-engine", icon: IconDigitalDivideRights, color: "#0284c7" },
+      { label: "Online Violence Women Rights", href: "/dashboard/online-violence-women-rights-engine", icon: IconOnlineViolenceWomenRights, color: "#db2777" },
     ],
   },
   {
