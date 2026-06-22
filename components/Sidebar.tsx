@@ -14941,6 +14941,27 @@ function IconTextileAdvertising({ size = 18, color = "currentColor" }: { size?: 
     </svg>
   );
 }
+function IconConstructionAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="14" width="6" height="8"/><rect x="9" y="10" width="6" height="12"/><rect x="16" y="6" width="6" height="16"/>
+    </svg>
+  );
+}
+function IconAerospaceAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L8 8H4l2 4-4 2 4 1-1 4 4-2 1 4 3-5 3 5 1-4 4 2-1-4 4-1-4-2 2-4H16z"/>
+    </svg>
+  );
+}
+function IconEnergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17986,6 +18007,24 @@ const navSections: NavSection[] = [
         label: "Textile Advertising",
         href: "/dashboard/textile-advertising-child-labor-rights",
         icon: IconTextileAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Construction Advertising",
+        href: "/dashboard/construction-advertising",
+        icon: IconConstructionAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Aerospace Advertising",
+        href: "/dashboard/aerospace-advertising",
+        icon: IconAerospaceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Energy Advertising",
+        href: "/dashboard/energy-advertising",
+        icon: IconEnergyAdvertising,
         category: "Publicité Visuelle",
       },
       {
