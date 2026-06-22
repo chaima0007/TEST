@@ -14920,6 +14920,27 @@ function IconLogisticsAdvertising({ size = 18, color = "currentColor" }: { size?
     </svg>
   );
 }
+function IconAgricultureAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12M12 12C12 12 7 10 4 6c3 0 6 1 8 6zM12 12c0 0 5-2 8-6-3 0-6 1-8 6z" />
+    </svg>
+  );
+}
+function IconMiningAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 20h20M6 20V10l6-6 6 6v10" /><rect x="9" y="14" width="6" height="6" />
+    </svg>
+  );
+}
+function IconTextileAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H5v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10h1.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" />
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17947,6 +17968,24 @@ const navSections: NavSection[] = [
         label: "Logistics Advertising",
         href: "/dashboard/logistics-advertising-child-labor-rights",
         icon: IconLogisticsAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Agriculture Advertising",
+        href: "/dashboard/agriculture-advertising-child-labor-rights",
+        icon: IconAgricultureAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Mining Advertising",
+        href: "/dashboard/mining-advertising-child-labor-rights",
+        icon: IconMiningAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Textile Advertising",
+        href: "/dashboard/textile-advertising-child-labor-rights",
+        icon: IconTextileAdvertising,
         category: "Publicité Visuelle",
       },
       {
