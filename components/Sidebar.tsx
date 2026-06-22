@@ -15341,6 +15341,27 @@ function IconGroupbuyingAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconDropshippingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+    </svg>
+  );
+}
+function IconMarketplaceAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+  );
+}
+function IconResaleAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18728,6 +18749,24 @@ const navSections: NavSection[] = [
         label: "Group Buying Advertising",
         href: "/dashboard/groupbuying-advertising",
         icon: IconGroupbuyingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Dropshipping Advertising",
+        href: "/dashboard/dropshipping-advertising",
+        icon: IconDropshippingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Marketplace Advertising",
+        href: "/dashboard/marketplace-advertising",
+        icon: IconMarketplaceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Resale Advertising",
+        href: "/dashboard/resale-advertising",
+        icon: IconResaleAdvertising,
         category: "Publicité Visuelle",
       },
       {
