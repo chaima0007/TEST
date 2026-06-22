@@ -10564,6 +10564,29 @@ function IconQuantumDigitalDivideRights({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconChildMarriageRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <circle cx={9} cy={7} r={3}/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+      <line x1={18} y1={8} x2={23} y2={13}/><line x1={23} y1={8} x2={18} y2={13}/>
+    </svg>
+  );
+}
+function IconFreedomExpressionRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <line x1={9} y1={10} x2={15} y2={10}/>
+    </svg>
+  );
+}
+function IconSanitationHygieneRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path d="M4 12h16M4 6h16M4 18h16"/><circle cx={20} cy={6} r={2}/><circle cx={20} cy={18} r={2}/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -11935,6 +11958,14 @@ const navSections: NavSection[] = [
       { label: "Surveillance Quantique", href: "/dashboard/quantum-surveillance-rights-engine", icon: IconQuantumSurveillanceRights },
       { label: "Bioéthique Quantique", href: "/dashboard/quantum-bioethics-rights-engine", icon: IconQuantumBioethicsRights },
       { label: "Fracture Quantique", href: "/dashboard/quantum-digital-divide-rights-engine", icon: IconQuantumDigitalDivideRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 227",
+    items: [
+      { label: "Mariage Enfants & MGF", href: "/dashboard/child-marriage-rights-engine", icon: IconChildMarriageRights },
+      { label: "Liberté Expression", href: "/dashboard/freedom-expression-rights-engine", icon: IconFreedomExpressionRights },
+      { label: "Assainissement & Hygiène", href: "/dashboard/sanitation-hygiene-rights-engine", icon: IconSanitationHygieneRights },
     ],
   },
   {
