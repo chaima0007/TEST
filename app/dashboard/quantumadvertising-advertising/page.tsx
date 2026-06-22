@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#0d9488";
-const DOMAIN = "voiceadvertising-advertising";
-const INDEX_KEY = "estimated_voiceadvertising_index";
-const TITLE = "Voice Advertising";
+const COLOR = "#6d28d9";
+const DOMAIN = "quantumadvertising-advertising";
+const INDEX_KEY = "estimated_quantumadvertising_index";
+const TITLE = "Quantum Advertising";
 
 type Entity = {
   name: string;
@@ -41,18 +41,18 @@ function deriveCerts(score: number) {
 }
 
 const SIGNALS = [
-  "Voice consent management",
-  "Audio data retention",
-  "Speaker identification",
-  "Child voice protection",
-  "Voice profiling limits",
+  "Quantum encryption standards",
+  "Algorithm transparency",
+  "Quantum bias detection",
+  "Cross-quantum data flows",
+  "Quantum consent protocols",
 ];
 const ACTIONS = [
-  "Enforce voice consent",
-  "Limit audio retention",
-  "Restrict speaker ID",
-  "Deploy child voice filters",
-  "Cap voice profiling",
+  "Implement quantum encryption",
+  "Audit quantum algorithms",
+  "Deploy bias detection",
+  "Secure cross-quantum flows",
+  "Establish consent protocols",
 ];
 
 function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
@@ -132,7 +132,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function VoiceadvertisingAdvertisingDashboard() {
+export default function QuantumadvertisingAdvertisingDashboard() {
   const [data, setData] = useState<DashData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
 
