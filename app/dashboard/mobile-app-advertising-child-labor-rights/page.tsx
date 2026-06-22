@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#ec4899";
+const COLOR = "#f97316";
 const riskColors: Record<string, string> = { critique: "#dc2626", élevé: "#f59e0b", modéré: "#3b82f6", faible: "#16a34a" };
 interface Entity { name: string; composite_score: number; risk_level: string; }
 
@@ -56,14 +56,14 @@ function DetailModal({ entity, color, onClose }: { entity: Entity; color: string
   );
 }
 
-export default function SocialMediaAdvertisingChildLaborRightsPage() {
+export default function MobileAppAdvertisingChildLaborRightsPage() {
   const [data,setData]=useState<{entities:Entity[];avg_composite:number}|null>(null);
   const [selected,setSelected]=useState<Entity|null>(null);
-  useEffect(()=>{ fetch("/api/social-media-advertising-child-labor-rights").then(r=>r.json()).then(d=>setData(d.payload??d)); },[]);
+  useEffect(()=>{ fetch("/api/mobile-app-advertising-child-labor-rights").then(r=>r.json()).then(d=>setData(d.payload??d)); },[]);
   if(!data) return <div style={{ padding:32,color:"#6b7280" }}>Chargement...</div>;
   return (
     <div style={{ padding:32,fontFamily:"sans-serif",maxWidth:900,margin:"0 auto" }}>
-      <h1 style={{ fontSize:24,fontWeight:700,color:"#1e293b",marginBottom:8 }}>Publicité Réseaux Sociaux — Droits de l&apos;Enfant</h1>
+      <h1 style={{ fontSize:24,fontWeight:700,color:"#1e293b",marginBottom:8 }}>Publicité Applications Mobiles — Droits de l&apos;Enfant</h1>
       <p style={{ color:"#6b7280",marginBottom:24 }}>Analyse conformité droits de l&apos;enfant — CaelumSwarm™</p>
       <div style={{ background:COLOR+"15",border:`1px solid ${COLOR}40`,borderRadius:12,padding:20,marginBottom:24 }}>
         <div style={{ fontSize:13,color:"#6b7280",marginBottom:4 }}>Score moyen composite</div>
