@@ -93,19 +93,8 @@ function signal(i: Initiative, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const initiatives = MOCK_INITIATIVES.map(i => {
-      const pr = processScore(i), inn = innovationScore(i), ex = executionScore(i), mat = maturityScore(i);
-      const comp = composite(pr, inn, ex, mat), pat = improvementPattern(i), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        initiative_id: i.initiative_id, region: i.region,
-        improvement_risk: r, improvement_pattern: pat, improvement_severity: sev, recommended_action: act,
-        process_score: pr, innovation_score: inn, execution_score: ex, maturity_score: mat,
-        improvement_composite: comp,
-        has_stagnation_signal: comp >= 40 || i.process_efficiency_trend <= 0 || i.kpi_attainment_rate <= 0.55 || i.waste_reduction_pct <= 0.25,
-        requires_transformation: comp >= 25 || i.benchmark_performance_gap >= 0.50 || i.retrospective_action_completion <= 0.35 || i.lean_methodology_adherence <= 0.30,
-        estimated_improvement_gap_index: Math.min(Math.round(comp/100*(1-i.measurement_system_maturity+0.01)*10*100)/100, 10.0),
-        improvement_signal: signal(i, pat, comp),
-      };
+  console.warn("[continuous-improvement-excellence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tpr=0,tinn=0,tex=0,tmat=0,tcomp=0,tgap=0,stagC=0,transfC=0;
@@ -120,7 +109,7 @@ export async function GET() {
       if (init.requires_transformation) transfC++;
     }
     const n = initiatives.length;
-    return NextResponse.json(sealResponse({ initiatives, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ initiatives, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_improvement_composite: Math.round(tcomp/n*10)/10,
       stagnation_signal_count: stagC, transformation_required_count: transfC,
@@ -129,7 +118,7 @@ export async function GET() {
       avg_execution_score: Math.round(tex/n*10)/10,
       avg_maturity_score: Math.round(tmat/n*10)/10,
       avg_estimated_improvement_gap_index: Math.round(tgap/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/continuous-improvement-excellence-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/continuous-improvement-excellence-engine`, { next: { revalidate: 30 } })).json()));
 }

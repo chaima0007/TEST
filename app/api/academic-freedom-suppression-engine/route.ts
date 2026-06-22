@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[academic-freedom-suppression-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 if (!SWARM_API_URL) {
   console.warn("[academic-freedom-suppression-engine] SWARM_API_URL is not set — running in mock mode.");
@@ -92,13 +96,13 @@ export const revalidate = 30;
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" }), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" }), { status: 502 }));
   }
   try {
     const res = await fetch(`${SWARM_API_URL}/api/academic-freedom-suppression-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data));
+    return sealResponse(NextResponse.json(sealResponse(data)));
   } catch {
     const fallback = {
       source: "mock",
@@ -108,6 +112,6 @@ export async function GET() {
       entity_count: ENTITIES.length,
       entities: ENTITIES,
     };
-    return NextResponse.json(sealResponse(fallback), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse(fallback), { status: 502 }));
   }
 }

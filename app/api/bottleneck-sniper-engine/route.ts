@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[bottleneck-sniper-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ── hardcoded entities ────────────────────────────────────────────────────────
@@ -204,7 +208,7 @@ function processEntity(e: Entity) {
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 502 });
+    return sealResponse(NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 502 }));
   }
 
   const entities = MOCK_ENTITIES.map(processEntity);
@@ -262,5 +266,5 @@ export async function GET() {
     avg_estimated_constraint_index: round2(avg_composite / 100 * 10),
   };
 
-  return NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>));
+  return sealResponse(NextResponse.json(sealResponse({ entities, summary } as Record<string, unknown>)));
 }

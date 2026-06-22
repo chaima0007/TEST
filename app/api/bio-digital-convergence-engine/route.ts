@@ -150,33 +150,8 @@ function convergenceSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const intg = integrationScore(e);
-      const syn  = syntheticScore(e);
-      const bio  = biocomputeScore(e);
-      const coh  = coherenceScore(e);
-      const comp = composite(intg, syn, bio, coh);
-      const pat  = convergencePattern(e);
-      const risk = convergenceRisk(comp);
-      const sev  = convergenceSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                 e.entity_id,
-        region:                    e.region,
-        convergence_domain:        e.convergence_domain,
-        convergence_risk:          risk,
-        convergence_pattern:       pat,
-        convergence_severity:      sev,
-        recommended_action:        act,
-        integration_score:         intg,
-        synthetic_score:           syn,
-        biocompute_score:          bio,
-        coherence_score:           coh,
-        convergence_composite:     comp,
-        is_in_convergence_crisis:  comp >= 60,
-        requires_bio_intervention: comp >= 40,
-        convergence_signal:        convergenceSignal(e, risk, comp),
-      };
+  console.warn("[bio-digital-convergence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -211,16 +186,16 @@ export async function GET() {
       avg_coherence_score:                Math.round(tCoh  / n * 10) / 10,
       avg_estimated_bio_digital_index:    Math.round(avgComp / 100 * 10 * 100) / 100,
     };
-    return NextResponse.json(sealResponse({ entities, summary }, "bio-digital-convergence-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "bio-digital-convergence-engine")));
   }
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/bio-digital-convergence-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/bio-digital-convergence-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "bio-digital-convergence-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "bio-digital-convergence-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "upstream unavailable" }, "bio-digital-convergence-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

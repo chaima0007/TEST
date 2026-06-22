@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[competitive-win-rate] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -106,7 +111,7 @@ export async function GET(request: Request) {
       if (risk)     url.searchParams.set("risk", risk);
       if (product)  url.searchParams.set("product", product);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -136,7 +141,7 @@ export async function GET(request: Request) {
 
   const n = mockMatchups.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     matchups,
     summary: {
       total:                   n,
@@ -153,5 +158,5 @@ export async function GET(request: Request) {
       avg_cycle_efficiency:    Math.round((total_cycle / n) * 100) / 100,
       dominant_count:          mockMatchups.filter((m) => m.win_rate_category === "dominant").length,
     },
-  });
+  }));
 }

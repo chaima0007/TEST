@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[climate-finance-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ─── Math (mirrors Python exactly) ───────────────────────────────────────────
@@ -322,7 +326,7 @@ export async function GET(request: Request) {
     const n = mockEntities.length;
     const avg_composite = Math.round((total_comp / n) * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id:                              359,
@@ -339,7 +343,7 @@ export async function GET(request: Request) {
         action_distribution,
         avg_estimated_climate_finance_index:    Math.round((avg_composite / 100 * 10) * 100) / 100,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   try {
@@ -347,11 +351,11 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch { /* fall through to 502 */ }
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({ entities: [], summary: {} } as Record<string, unknown>),
     { status: 502 },
-  );
+  ));
 }

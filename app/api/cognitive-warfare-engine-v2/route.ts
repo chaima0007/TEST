@@ -343,12 +343,8 @@ const ENTITIES: CognitiveWarfareEntity[] = [
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const results: CognitiveWarfareResult[] = ENTITIES.map(analyzeEntity);
-
-    const composites = results.map((r) => r.warfare_composite);
-    const avgComposite = composites.reduce((a, b) => a + b, 0) / composites.length;
-
-    const riskDist: Record<string, number> = {};
+  console.warn("[cognitive-warfare-engine-v2] SWARM_API_URL non défini — mode dégradé activé");
+};
     const patternDist: Record<string, number> = {};
     for (const r of results) {
       riskDist[r.warfare_risk] = (riskDist[r.warfare_risk] ?? 0) + 1;
@@ -377,18 +373,18 @@ export async function GET() {
       entities: results,
     };
 
-    return NextResponse.json(sealResponse(summary));
+    return sealResponse(NextResponse.json(sealResponse(summary)));
   }
 
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/api/cognitive-warfare-engine-v2`, {
       cache: "no-store",
     });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch {}
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({ error: "Cognitive warfare analysis failed" }),
     { status: 502 }
-  );
+  ));
 }

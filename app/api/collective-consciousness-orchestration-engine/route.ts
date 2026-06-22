@@ -77,27 +77,8 @@ function swarmSignal(n: SwarmNode, pattern: string, coh: number, con: number, re
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const nodes = MOCK_NODES.map(n => {
-      const coh = coherenceScore(n), int_ = intelligenceScore(n), con = consensusScore(n), res = resilienceScore(n);
-      const comp = composite(coh, int_, con, res);
-      const pattern = swarmPattern(n), risk = swarmRisk(comp), severity = swarmSeverity(comp), action = swarmAction(risk, pattern);
-      return {
-        node_id: n.node_id,
-        node_role: n.node_role,
-        region: n.region,
-        swarm_risk: risk,
-        swarm_pattern: pattern,
-        swarm_severity: severity,
-        recommended_action: action,
-        coherence_score: coh,
-        intelligence_score: int_,
-        consensus_score: con,
-        resilience_score: res,
-        swarm_composite: comp,
-        has_fragmentation_signal: comp >= 0.40 || n.swarm_drift_detection_score >= 0.50 || n.inter_agent_coherence <= 0.30,
-        requires_emergency_reset: comp >= 0.25 || n.orchestration_overhead_ratio >= 0.60 || n.consensus_alignment_score <= 0.30,
-        swarm_signal: swarmSignal(n, pattern, coh, con, res, comp),
-      };
+  console.warn("[collective-consciousness-orchestration-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {}, pc: Record<string, number> = {}, sc: Record<string, number> = {}, ac: Record<string, number> = {};
@@ -115,7 +96,7 @@ export async function GET() {
     const n2 = nodes.length;
     const avgComp = Math.round(tcomp / n2 * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       nodes,
       summary: {
         total: n2,
@@ -132,10 +113,10 @@ export async function GET() {
         avg_resilience_score: Math.round(tres / n2 * 100) / 100,
         avg_estimated_swarm_entropy_index: Math.round(nodes.reduce((s, nd) => s + Math.min(nd.swarm_composite * 10, 10.0), 0) / n2 * 100) / 100,
       },
-    }, "Collective Consciousness Orchestration Engine"));
+    }, "Collective Consciousness Orchestration Engine")));
   }
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/collective-consciousness-orchestration-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/collective-consciousness-orchestration-engine`, { next: { revalidate: 30 } })).json(),
     "Collective Consciousness Orchestration Engine"
-  ));
+  )));
 }

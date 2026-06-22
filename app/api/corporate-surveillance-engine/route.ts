@@ -275,34 +275,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const mon  = monitoringScore(e);
-      const man  = manipulationScore(e);
-      const ext  = extractionScore(e);
-      const ctrl = controlScore(e);
-      const comp = compositeScore(mon, man, ext, ctrl);
-      const pat  = surveillancePattern(e);
-      const risk = riskLevel(comp);
-      const sev  = severity(risk);
-      const act  = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                      e.entity_id,
-        industry_type:                  e.industry_type,
-        region:                         e.region,
-        monitoring_score:               mon,
-        manipulation_score:             man,
-        extraction_score:               ext,
-        control_score:                  ctrl,
-        composite_score:                comp,
-        risk_level:                     risk,
-        surveillance_pattern:           pat,
-        severity:                       sev,
-        recommended_action:             act,
-        signal:                         sig,
-        employee_monitoring_intensity:  e.employee_monitoring_intensity,
-        biometric_workplace_data:       e.biometric_workplace_data,
-      };
+  console.warn("[corporate-surveillance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const patternDist:  Record<string, number> = {};
@@ -342,17 +316,17 @@ export async function GET() {
       avg_estimated_corporate_surveillance_index:  Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "corporate-surveillance-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "corporate-surveillance-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/corporate-surveillance-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/corporate-surveillance-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "corporate-surveillance-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "corporate-surveillance-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream corporate surveillance engine unavailable" }, "corporate-surveillance-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

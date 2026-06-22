@@ -194,40 +194,8 @@ function neuralSignal(i: ARInterface, pattern: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const interfaces = MOCK_INTERFACES.map(i => {
-      const nr = neuralRiskScore(i);
-      const im = immersionScore(i);
-      const sa = safetyScore(i);
-      const ig = integrityScore(i);
-      const comp = composite(nr, im, sa, ig);
-      const pattern = neuralPattern(i);
-      const risk = riskLevel(comp);
-      const sev = severity(comp);
-      const act = recommendedAction(risk, pattern);
-      return {
-        interface_id: i.interface_id,
-        interface_type: i.interface_type,
-        region: i.region,
-        neural_risk: risk,
-        neural_pattern: pattern,
-        neural_severity: sev,
-        recommended_action: act,
-        neural_risk_score: Math.round(nr * 100 * 100) / 100,
-        immersion_score: Math.round(im * 100 * 100) / 100,
-        safety_score: Math.round(sa * 100 * 100) / 100,
-        integrity_score: Math.round(ig * 100 * 100) / 100,
-        neural_risk_composite: Math.round(comp * 100 * 100) / 100,
-        has_critical_signal:
-          comp >= 0.40 || i.neural_latency_risk >= 0.70 || i.bci_safety_compliance <= 0.30,
-        requires_disconnect:
-          comp >= 0.25 || i.neural_fatigue_accumulation >= 0.65 || i.biometric_privacy_exposure >= 0.70,
-        estimated_neural_risk_index:
-          Math.min(
-            Math.round(comp * (1 - i.neural_signal_integrity + 0.01) * 10 * 100) / 100,
-            10.0,
-          ),
-        neural_signal: neuralSignal(i, pattern, comp),
-      };
+  console.warn("[augmented-reality-neural-interface-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -269,12 +237,12 @@ export async function GET() {
       avg_estimated_neural_risk_index: Math.round(tIdx / n * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ interfaces, summary }, "augmented-reality-neural-interface-engine") as Parameters<typeof NextResponse.json>[0],
-    );
+    ));
   }
 
-  return NextResponse.json(
-    await (await fetch(`${process.env.SWARM_API_URL}/augmented-reality-neural-interface-engine`)).json(),
-  );
+  return sealResponse(NextResponse.json(
+    await (await fetch(`${process.env.SWARM_API_URL}/augmented-reality-neural-interface-engine`, { next: { revalidate: 30 } })).json(),
+  ));
 }

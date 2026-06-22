@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[certification-standards-tracker-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockCerts = [
@@ -91,7 +95,7 @@ export async function GET(request: Request) {
       if (pattern)  url.searchParams.set("pattern",  pattern);
       if (severity) url.searchParams.set("severity", severity);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -121,7 +125,7 @@ export async function GET(request: Request) {
 
   const n = mockCerts.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     certs,
     summary: {
       total:                                   n,
@@ -138,5 +142,5 @@ export async function GET(request: Request) {
       avg_compliance_score:                    Math.round((total_cmp / n) * 100) / 100,
       avg_estimated_compliance_gap_index:      Math.round((total_idx / n) * 100) / 100,
     },
-  });
+  }));
 }

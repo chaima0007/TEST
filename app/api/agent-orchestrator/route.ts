@@ -7,20 +7,20 @@ if (!process.env.SWARM_API_URL) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData(), "Agent Orchestrator Agent"),
-    );
+    ));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/agent-orchestrator`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Agent Orchestrator Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Agent Orchestrator Agent")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData(), "Agent Orchestrator Agent"),
       { status: 502 },
-    );
+    ));
   }
 }
 

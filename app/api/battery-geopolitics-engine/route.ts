@@ -181,35 +181,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const supply      = supplyScore(e);
-      const geo         = geopoliticalScore(e);
-      const humanitarian = humanitarianScore(e);
-      const sovereignty  = sovereigntyScore(e);
-      const comp         = compositeScore(supply, geo, humanitarian, sovereignty);
-      const risk         = riskLevel(comp);
-      const pattern      = batteryPattern(e);
-      const sev          = severity(comp);
-      const action       = recommendedAction(risk);
-      const sig          = signal(risk);
-
-      return {
-        id:                     e.entity_id,
-        mineral_type:                  e.mineral_type,
-        region:                        e.region,
-        supply_score:                  supply,
-        geopolitical_score:            geo,
-        humanitarian_score:            humanitarian,
-        sovereignty_score:             sovereignty,
-        composite_score:               comp,
-        risk_level:                    risk,
-        battery_pattern:               pattern,
-        severity:                      sev,
-        recommended_action:            action,
-        signal:                        sig,
-        lithium_supply_concentration:  e.lithium_supply_concentration,
-        green_tech_supply_weaponization: e.green_tech_supply_weaponization,
-      };
+  console.warn("[battery-geopolitics-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -250,14 +223,14 @@ export async function GET() {
       avg_estimated_battery_geopolitics_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "battery-geopolitics-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "battery-geopolitics-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/battery-geopolitics-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/battery-geopolitics-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "battery-geopolitics-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "battery-geopolitics-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "battery-geopolitics-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "Upstream unavailable" }, "battery-geopolitics-engine"), { status: 502 }));
   }
 }

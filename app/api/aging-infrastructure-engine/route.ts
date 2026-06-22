@@ -316,9 +316,8 @@ function analyzeEntity(e: AieInput) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(analyzeEntity);
-
-    const risk_distribution: Record<string, number> = {};
+  console.warn("[aging-infrastructure-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     const pattern_distribution: Record<string, number> = {};
     const severity_distribution: Record<string, number> = {};
     const action_distribution: Record<string, number> = {};
@@ -339,7 +338,7 @@ export async function GET() {
     const n = entities.length;
     const avgComp = Math.round((tComp / n) * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 392,
@@ -362,17 +361,17 @@ export async function GET() {
         avg_investment_score: Math.round(tInv / n * 100) / 100,
         avg_cascade_score: Math.round(tCas / n * 100) / 100,
       },
-    } as Record<string, unknown>, "aging-infrastructure-engine"));
+    } as Record<string, unknown>, "aging-infrastructure-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/aging-infrastructure-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/aging-infrastructure-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "aging-infrastructure-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "aging-infrastructure-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "SWARM_API_URL unreachable" } as Record<string, unknown>, "aging-infrastructure-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

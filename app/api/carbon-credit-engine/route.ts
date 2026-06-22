@@ -265,7 +265,8 @@ const mockEntities = (() => {
 
 export async function GET(request: Request) {
   if (!process.env.SWARM_API_URL) {
-    const { searchParams } = new URL(request.url);
+  console.warn("[carbon-credit-engine] SWARM_API_URL non défini — mode dégradé activé");
+} = new URL(request.url);
     const risk    = searchParams.get("risk");
     const pattern = searchParams.get("pattern");
 
@@ -292,7 +293,7 @@ export async function GET(request: Request) {
     const n = mockEntities.length;
     const avg_composite = Math.round((total_comp / n) * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id:                        369,
@@ -309,7 +310,7 @@ export async function GET(request: Request) {
         severity_distribution,
         action_distribution,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   const { searchParams } = new URL(request.url);
@@ -321,11 +322,11 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch { /* fall through to 502 */ }
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({ entities: [], summary: {} } as Record<string, unknown>),
     { status: 502 },
-  );
+  ));
 }

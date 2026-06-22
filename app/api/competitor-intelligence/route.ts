@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[competitor-intelligence] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockCompetitors = [
@@ -186,7 +190,7 @@ export async function GET(request: Request) {
       if (level) url.searchParams.set("level", level);
       if (type) url.searchParams.set("type", type);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -210,7 +214,7 @@ export async function GET(request: Request) {
 
   const n = mockCompetitors.length;
 
-  return NextResponse.json(sealResponse({
+  return sealResponse(NextResponse.json(sealResponse({
     competitors,
     summary: {
       total: n,
@@ -219,5 +223,5 @@ export async function GET(request: Request) {
       avg_threat_score: Math.round((total_threat / n) * 10) / 10,
       avg_win_probability: Math.round((total_win / n) * 10) / 10,
     },
-  } as Record<string,unknown>));
+  } as Record<string,unknown>)));
 }

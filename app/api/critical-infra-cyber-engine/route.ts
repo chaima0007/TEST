@@ -215,7 +215,7 @@ function getMockData() {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Critical Infra Cyber Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Critical Infra Cyber Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/critical-infra-cyber-engine`, {
@@ -223,11 +223,11 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Critical Infra Cyber Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Critical Infra Cyber Agent")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData(), "Critical Infra Cyber Agent"),
       { status: 502 }
-    );
+    ));
   }
 }

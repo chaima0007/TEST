@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[climate-change-rights-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const UPSTREAM = process.env.SWARM_API_URL;
 if (!UPSTREAM) console.warn("[climate-change-rights-engine] SWARM_API_URL not set — running in offline mode");
 

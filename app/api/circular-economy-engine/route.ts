@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[circular-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // 8 mock entities covering all 5 patterns and all 4 risk levels
@@ -200,7 +204,7 @@ export async function GET() {
     const n = entities.length;
     const avgComposite = Math.round(totalComp / n * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id: 329,
@@ -217,13 +221,13 @@ export async function GET() {
         action_distribution: actionDist,
         avg_estimated_circularity_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   try {
-    const res = await fetch(`${SWARM_API_URL}/circular-economy-engine`);
-    if (res.ok) return NextResponse.json(sealResponse(await res.json() as Record<string, unknown>));
+    const res = await fetch(`${SWARM_API_URL}/circular-economy-engine`, { next: { revalidate: 30 } });
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json() as Record<string, unknown>)));
   } catch {}
 
-  return NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 });
+  return sealResponse(NextResponse.json(sealResponse({ entities: [], summary: {} } as Record<string, unknown>), { status: 502 }));
 }

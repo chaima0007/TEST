@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[contract-renewal] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -299,7 +304,7 @@ export async function GET(request: Request) {
       if (action) url.searchParams.set("action", action);
       if (uplift) url.searchParams.set("uplift", uplift);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -328,7 +333,7 @@ export async function GET(request: Request) {
 
   const n = mockContracts.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     contracts,
     summary: {
       total: n,
@@ -342,5 +347,5 @@ export async function GET(request: Request) {
       needs_save_count: mockContracts.filter((c) => c.renewal_action === "save").length,
       high_uplift_count: mockContracts.filter((c) => c.uplift_potential === "high").length,
     },
-  });
+  }));
 }

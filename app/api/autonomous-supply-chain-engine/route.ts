@@ -103,28 +103,8 @@ function disruptionSignal(n: Node, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const nodes = MOCK_NODES.map(n => {
-      const conc = concentrationScore(n), disr = disruptionScore(n), res = resilienceScore(n), intel = intelligenceScore(n);
-      const comp = composite(conc, disr, res, intel);
-      const pat  = disruptionPattern(n), r = disruptionRisk(comp), sev = disruptionSeverity(comp), act = recommendedAction(r, pat);
-      return {
-        node_id:    n.node_id,
-        node_type:  n.node_type,
-        region:     n.region,
-        disruption_risk:     r,
-        disruption_pattern:  pat,
-        disruption_severity: sev,
-        recommended_action:  act,
-        concentration_score: conc,
-        disruption_score:    disr,
-        resilience_score:    res,
-        intelligence_score:  intel,
-        supply_chain_composite: comp,
-        has_critical_exposure:           comp >= 40 || n.supplier_concentration_risk >= 0.70 || n.single_source_dependency >= 0.75 || n.geopolitical_disruption_exposure >= 0.65,
-        requires_immediate_intervention: comp >= 25 || n.climate_disruption_risk >= 0.65 || n.digital_twin_coverage <= 0.20 || n.disruption_recovery_speed <= 0.20,
-        estimated_disruption_impact_index: Math.min(Math.round(comp / 100 * (1 - n.demand_forecast_accuracy + 0.01) * 10 * 100) / 100, 10.0),
-        disruption_signal: disruptionSignal(n, pat, comp),
-      };
+  console.warn("[autonomous-supply-chain-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -142,7 +122,7 @@ export async function GET() {
       if (nd.requires_immediate_intervention) intervC++;
     }
     const n = nodes.length;
-    return NextResponse.json(sealResponse({ nodes, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ nodes, summary: {
       total: n,
       risk_counts:     rc,
       pattern_counts:  pc,
@@ -156,7 +136,7 @@ export async function GET() {
       avg_resilience_score:                    Math.round(tRes   / n * 10) / 10,
       avg_intelligence_score:                  Math.round(tIntel / n * 10) / 10,
       avg_estimated_disruption_impact_index:   Math.round(tImpact/ n * 100) / 100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/autonomous-supply-chain-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/autonomous-supply-chain-engine`, { next: { revalidate: 30 } })).json()));
 }

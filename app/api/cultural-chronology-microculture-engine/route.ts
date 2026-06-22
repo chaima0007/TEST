@@ -84,11 +84,8 @@ export async function GET(request: Request) {
   const pattern = searchParams.get("pattern");
 
   if (!process.env.SWARM_API_URL) {
-    let cultures = [...mockCultures];
-    if (risk)    cultures = cultures.filter((c) => c.cultural_risk === risk);
-    if (pattern) cultures = cultures.filter((c) => c.cultural_pattern === pattern);
-
-    const risk_counts:     Record<string, number> = {};
+  console.warn("[cultural-chronology-microculture-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     const pattern_counts:  Record<string, number> = {};
     const severity_counts: Record<string, number> = {};
     const action_counts:   Record<string, number> = {};
@@ -110,7 +107,7 @@ export async function GET(request: Request) {
 
     const n = mockCultures.length;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       cultures,
       summary: {
         total:                                    n,
@@ -127,7 +124,7 @@ export async function GET(request: Request) {
         avg_resilience_score:                     Math.round((total_res  / n) * 10) / 10,
         avg_estimated_culture_dissolution_index:  Math.round((total_diss / n) * 100) / 100,
       },
-    } as Record<string,unknown>));
+    } as Record<string,unknown>)));
   }
 
   try {
@@ -135,8 +132,8 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch {}
 
-  return NextResponse.json(sealResponse({ cultures: [], summary: {} } as Record<string,unknown>));
+  return sealResponse(NextResponse.json(sealResponse({ cultures: [], summary: {} } as Record<string,unknown>)));
 }

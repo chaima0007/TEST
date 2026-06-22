@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[agents-health] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -106,11 +111,11 @@ export async function GET() {
         next: { revalidate: 15 },
       });
       if (res.ok) {
-        return NextResponse.json({ source: "live", ...(await res.json()) });
+        return sealResponse(NextResponse.json({ source: "live", ...(await res.json()) }));
       }
     } catch {
       // fall through to mock
     }
   }
-  return NextResponse.json(buildMockData());
+  return sealResponse(NextResponse.json(buildMockData()));
 }

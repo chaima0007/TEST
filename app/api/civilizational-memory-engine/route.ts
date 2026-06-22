@@ -149,33 +149,8 @@ function memorySignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const pres  = preservationScore(e);
-      const trans = transmissionScore(e);
-      const ident = identityScore(e);
-      const resil = resilienceScore(e);
-      const comp  = composite(pres, trans, ident, resil);
-      const pat   = memoryPattern(e);
-      const risk  = riskLevel(comp);
-      const sev   = severity(comp);
-      const act   = recommendedAction(risk, pat);
-      return {
-        id:                      e.entity_id,
-        region:                         e.region,
-        heritage_category:              e.heritage_category,
-        memory_risk:                    risk,
-        memory_pattern:                 pat,
-        memory_severity:                sev,
-        recommended_action:             act,
-        preservation_score:             pres,
-        transmission_score:             trans,
-        identity_score:                 ident,
-        resilience_score:               resil,
-        memory_composite:               comp,
-        is_in_memory_crisis:            comp >= 60,
-        requires_heritage_intervention: comp >= 40,
-        memory_signal:                  memorySignal(e, risk, comp),
-      };
+  console.warn("[civilizational-memory-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -210,13 +185,13 @@ export async function GET() {
       avg_resilience_score:            Math.round(tResil / n * 10) / 10,
       avg_estimated_memory_loss_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
-    return NextResponse.json(sealResponse({ entities, summary }, "civilizational-memory-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "civilizational-memory-engine")));
   }
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/civilizational-memory-engine`);
+    const res = await fetch(`${process.env.SWARM_API_URL}/civilizational-memory-engine`, { next: { revalidate: 30 } });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    return NextResponse.json(sealResponse(await res.json(), "civilizational-memory-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await res.json(), "civilizational-memory-engine")));
   } catch {
-    return NextResponse.json(sealResponse({ error: "upstream unavailable" }, "civilizational-memory-engine"), { status: 502 });
+    return sealResponse(NextResponse.json(sealResponse({ error: "upstream unavailable" }, "civilizational-memory-engine"), { status: 502 }));
   }
 }

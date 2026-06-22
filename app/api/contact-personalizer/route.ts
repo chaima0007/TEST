@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[contact-personalizer] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -433,7 +438,7 @@ export async function GET(request: Request) {
       if (level) url.searchParams.set("level", level);
       if (channel) url.searchParams.set("channel", channel);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -455,7 +460,7 @@ export async function GET(request: Request) {
 
   const n = mockContacts.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     contacts,
     summary: {
       total: n,
@@ -466,5 +471,5 @@ export async function GET(request: Request) {
       hot_count,
       dnc_count: 0,
     },
-  });
+  }));
 }

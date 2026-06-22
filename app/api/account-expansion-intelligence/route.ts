@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[account-expansion-intelligence] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockAccounts = [
@@ -107,7 +111,7 @@ export async function GET(request: Request) {
       if (priority)    url.searchParams.set("priority", priority);
       if (health)      url.searchParams.set("health", health);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -138,7 +142,7 @@ export async function GET(request: Request) {
 
   const n = mockAccounts.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     accounts,
     summary: {
       total: n,
@@ -155,5 +159,5 @@ export async function GET(request: Request) {
       avg_risk_score:                   Math.round((total_risk / n) * 10) / 10,
       total_expansion_arr_potential_usd: Math.round(total_arr),
     },
-  });
+  }));
 }

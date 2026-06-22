@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[competitive-battlecard] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -314,7 +319,7 @@ export async function GET(request: Request) {
       if (action) url.searchParams.set("action", action);
       if (win_prob) url.searchParams.set("win_prob", win_prob);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -337,7 +342,7 @@ export async function GET(request: Request) {
 
   const n = mockBattlecards.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     battlecards: cards,
     summary: {
       total: n,
@@ -348,5 +353,5 @@ export async function GET(request: Request) {
       critical_count: mockBattlecards.filter((c) => c.threat_level === "critical").length,
       escalation_count: mockBattlecards.filter((c) => c.battlecard_action === "escalate").length,
     },
-  });
+  }));
 }

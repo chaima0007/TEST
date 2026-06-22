@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[account-executive-ramp-velocity-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 const mockReps = [
@@ -97,7 +101,7 @@ export async function GET(request: Request) {
       if (risk)    url.searchParams.set("risk", risk);
       if (blocker) url.searchParams.set("blocker", blocker);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -126,7 +130,7 @@ export async function GET(request: Request) {
 
   const n = mockReps.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     reps,
     summary: {
       total:                              n,
@@ -143,5 +147,5 @@ export async function GET(request: Request) {
       avg_activity_quality_score:         Math.round((total_act  / n) * 10) / 10,
       avg_estimated_quota_attainment_pct: Math.round((total_quota / n) * 10) / 10,
     },
-  });
+  }));
 }

@@ -84,11 +84,8 @@ export async function GET(request: Request) {
   const pattern = searchParams.get("pattern");
 
   if (!process.env.SWARM_API_URL) {
-    let territories = [...mockTerritories];
-    if (risk)    territories = territories.filter((t) => t.terraforming_risk === risk);
-    if (pattern) territories = territories.filter((t) => t.eco_pattern === pattern);
-
-    const risk_counts:     Record<string, number> = {};
+  console.warn("[anthropocene-terraforming-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     const pattern_counts:  Record<string, number> = {};
     const severity_counts: Record<string, number> = {};
     const action_counts:   Record<string, number> = {};
@@ -110,7 +107,7 @@ export async function GET(request: Request) {
 
     const n = mockTerritories.length;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       territories,
       summary: {
         total:                                n,
@@ -127,7 +124,7 @@ export async function GET(request: Request) {
         avg_resilience_score:                 Math.round((total_resil    / n) * 10) / 10,
         avg_estimated_ecological_risk_index:  Math.round((total_risk_idx / n) * 100) / 100,
       },
-    } as Record<string,unknown>));
+    } as Record<string,unknown>)));
   }
 
   try {
@@ -135,8 +132,8 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch {}
 
-  return NextResponse.json(sealResponse({ territories: [], summary: {} } as Record<string,unknown>));
+  return sealResponse(NextResponse.json(sealResponse({ territories: [], summary: {} } as Record<string,unknown>)));
 }

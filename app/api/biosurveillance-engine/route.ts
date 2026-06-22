@@ -136,34 +136,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const det  = detectionScore(e);
-      const res  = responseScore(e);
-      const gov  = governanceScore(e);
-      const sys  = systemicScore(e);
-      const comp = compositeScore(det, res, gov, sys);
-      const risk = riskLevel(comp);
-      const pat  = biosurveillancePattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                   e.entity_id,
-        surveillance_system:         e.surveillance_system,
-        region:                      e.region,
-        detection_score:             det,
-        response_score:              res,
-        governance_score:            gov,
-        systemic_score:              sys,
-        composite_score:             comp,
-        risk_level:                  risk,
-        biosurveillance_pattern:     pat,
-        severity:                    sev,
-        recommended_action:          action,
-        signal:                      sig,
-        outbreak_detection_delay:    e.outbreak_detection_delay,
-        genomic_sequencing_gap:      e.genomic_sequencing_gap,
-      };
+  console.warn("[biosurveillance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -204,17 +178,17 @@ export async function GET() {
       avg_estimated_biosurveillance_index: Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "biosurveillance-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "biosurveillance-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/biosurveillance-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/biosurveillance-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "biosurveillance-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "biosurveillance-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "biosurveillance-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

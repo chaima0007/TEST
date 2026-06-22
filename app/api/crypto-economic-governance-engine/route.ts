@@ -199,34 +199,8 @@ function defiSignal(e: Entity, risk: string, composite: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map((e) => {
-      const gov = governanceScore(e);
-      const sec = securityScore(e);
-      const liq = liquidityScore(e);
-      const reg = regulatoryScore(e);
-      const comp = defiComposite(gov, sec, liq, reg);
-      const risk = defiRisk(comp);
-      const pattern = defiPattern(e);
-      const severity = defiSeverity(comp);
-      const action = recommendedAction(risk, pattern);
-
-      return {
-        id: e.entity_id,
-        region: e.region,
-        defi_segment: e.defi_segment,
-        defi_risk: risk,
-        defi_pattern: pattern,
-        defi_severity: severity,
-        recommended_action: action,
-        governance_score: Math.round(gov * 100) / 100,
-        security_score: Math.round(sec * 100) / 100,
-        liquidity_score: Math.round(liq * 100) / 100,
-        regulatory_score: Math.round(reg * 100) / 100,
-        defi_composite: Math.round(comp * 100) / 100,
-        is_in_defi_crisis: comp >= 60,
-        requires_defi_intervention: comp >= 40,
-        defi_signal: defiSignal(e, risk, comp),
-      };
+  console.warn("[crypto-economic-governance-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const riskCounts: Record<string, number> = {};
@@ -275,21 +249,22 @@ export async function GET() {
       avg_estimated_defi_risk_index: Math.round((avgComposite / 100) * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "crypto-economic-governance-engine")
-    );
+    ));
   }
 
   try {
     const upstream = await fetch(
-      `${process.env.SWARM_API_URL}/crypto-economic-governance-engine`
+      `${process.env.SWARM_API_URL}/crypto-economic-governance-engine`,
+      { next: { revalidate: 30 } }
     );
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "crypto-economic-governance-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "crypto-economic-governance-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream swarm unavailable" }, "crypto-economic-governance-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[competitive-win-loss] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -213,7 +218,7 @@ export async function GET(request: Request) {
       if (position) url.searchParams.set("position", position);
       if (action) url.searchParams.set("action", action);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -237,7 +242,7 @@ export async function GET(request: Request) {
     total_arr_lost += c.arr_lost_eur;
   }
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     competitors,
     summary: {
       total_competitors: mockCompetitors.length,
@@ -251,5 +256,5 @@ export async function GET(request: Request) {
       needs_battlecard_count: mockCompetitors.filter((c) => c.action === "battlecard").length,
       most_common_loss_reason: "price",
     },
-  });
+  }));
 }

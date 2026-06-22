@@ -278,34 +278,8 @@ function agentSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const disp = displacementScore(e);
-      const gov  = governanceScore(e);
-      const eq   = equityScore(e);
-      const saf  = safetyScore(e);
-      const comp = agentComposite(disp, gov, eq, saf);
-      const pat  = agentPattern(e);
-      const risk = agentRisk(comp);
-      const sev  = agentSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      const sig  = agentSignal(e, risk, comp);
-      return {
-        id:                    e.entity_id,
-        region:                       e.region,
-        agent_category:               e.agent_category,
-        agent_risk:                   risk,
-        agent_pattern:                pat,
-        agent_severity:               sev,
-        recommended_action:           act,
-        displacement_score:           disp,
-        governance_score:             gov,
-        equity_score:                 eq,
-        safety_score:                 saf,
-        agent_composite:              comp,
-        is_in_agent_crisis:           comp >= 60,
-        requires_agent_intervention:  comp >= 40,
-        agent_signal:                 sig,
-      };
+  console.warn("[autonomous-agent-economy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {};
@@ -346,17 +320,17 @@ export async function GET() {
       avg_estimated_agent_disruption_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "autonomous-agent-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "autonomous-agent-economy-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/autonomous-agent-economy-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/autonomous-agent-economy-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "autonomous-agent-economy-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "autonomous-agent-economy-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream agent economy engine unavailable" }, "autonomous-agent-economy-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

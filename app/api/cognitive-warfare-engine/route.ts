@@ -84,19 +84,8 @@ function signal(t: Target, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const targets = MOCK_TARGETS.map(t => {
-      const exp = exposureScore(t), det = detectionScore(t), res = resilienceScore(t), sov = sovereigntyScore(t);
-      const comp = composite(exp, det, res, sov), pat = warfarePattern(t), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        target_id: t.target_id, region: t.region, threat_domain: t.threat_domain,
-        cognitive_warfare_risk: r, warfare_pattern: pat, cognitive_severity: sev, recommended_action: act,
-        exposure_score: exp, detection_score: det, resilience_score: res, sovereignty_score: sov,
-        cognitive_warfare_composite: comp,
-        has_active_threat: comp >= 40 || t.disinformation_exposure_rate >= 0.6 || t.adversarial_bot_density >= 0.6,
-        requires_immediate_response: comp >= 25 || t.manipulation_detection_latency >= 0.65 || t.epistemic_resilience_score <= 0.3,
-        estimated_cognitive_vulnerability_index: Math.min(Math.round(comp / 100 * (1 - t.epistemic_resilience_score + 0.01) * 10 * 100) / 100, 10.0),
-        cognitive_warfare_signal: signal(t, pat, comp),
-      };
+  console.warn("[cognitive-warfare-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tcomp=0, texp=0, tdet=0, tres=0, tsov=0, tvuln=0, activeC=0, immC=0;
@@ -115,7 +104,7 @@ export async function GET() {
       if (tgt.requires_immediate_response) immC++;
     }
     const n = targets.length;
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       targets,
       summary: {
         total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
@@ -128,7 +117,7 @@ export async function GET() {
         avg_sovereignty_score: Math.round(tsov / n * 10) / 10,
         avg_estimated_cognitive_vulnerability_index: Math.round(tvuln / n * 100) / 100,
       },
-    }, "cognitive-warfare-engine"));
+    }, "cognitive-warfare-engine")));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/cognitive-warfare-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/cognitive-warfare-engine`, { next: { revalidate: 30 } })).json()));
 }

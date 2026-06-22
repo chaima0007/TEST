@@ -158,33 +158,8 @@ function ecosystemSignal(e: Entity, risk: string, comp: number, gov: number): st
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const liq  = liquidityScore(e);
-      const gov  = governanceScore(e);
-      const micro = microstructureScore(e);
-      const cont = contagionScore(e);
-      const comp = ecosystemComposite(liq, gov, micro, cont);
-      const risk = ecosystemRisk(comp);
-      const pat  = ecosystemPattern(e);
-      const sev  = ecosystemSeverity(comp);
-      const act  = recommendedAction(risk, pat);
-      return {
-        id:                       e.entity_id,
-        region:                          e.region,
-        ecosystem_type:                  e.ecosystem_type,
-        ecosystem_risk:                  risk,
-        ecosystem_pattern:               pat,
-        ecosystem_severity:              sev,
-        recommended_action:              act,
-        liquidity_score:                 liq,
-        governance_score:                gov,
-        microstructure_score:            micro,
-        contagion_score:                 cont,
-        ecosystem_composite:             comp,
-        is_in_ecosystem_crisis:          comp >= 60,
-        requires_ecosystem_intervention: comp >= 40,
-        ecosystem_signal:                ecosystemSignal(e, risk, comp, gov),
-      };
+  console.warn("[autonomous-financial-ecosystem-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number> = {}, pc: Record<string,number> = {},
@@ -224,11 +199,11 @@ export async function GET() {
       avg_estimated_ecosystem_stress_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "autonomous-financial-ecosystem-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "autonomous-financial-ecosystem-engine")));
   }
 
-  return NextResponse.json(sealResponse(
-    await (await fetch(`${process.env.SWARM_API_URL}/autonomous-financial-ecosystem-engine`)).json(),
+  return sealResponse(NextResponse.json(sealResponse(
+    await (await fetch(`${process.env.SWARM_API_URL}/autonomous-financial-ecosystem-engine`, { next: { revalidate: 30 } })).json(),
     "autonomous-financial-ecosystem-engine"
-  ));
+  )));
 }

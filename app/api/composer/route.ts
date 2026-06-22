@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[composer] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -134,10 +139,10 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/templates`, { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
-  return NextResponse.json({ templates: TEMPLATES });
+  return sealResponse(NextResponse.json({ templates: TEMPLATES }));
 }
 
 export async function POST(request: Request) {
@@ -152,13 +157,13 @@ export async function POST(request: Request) {
         body: JSON.stringify({ template_id, variables, variant_key }),
         cache: "no-store",
       });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch { /* fall through */ }
   }
 
   const tmpl = getTemplate(template_id);
   if (!tmpl) {
-    return NextResponse.json({ error: `Template '${template_id}' not found` }, { status: 404 });
+    return sealResponse(NextResponse.json({ error: `Template '${template_id}' not found` }, { status: 404 }));
   }
 
   const subjectVariant = tmpl.subject_variants.find((v) => v.variant_key === variant_key)
@@ -170,7 +175,7 @@ export async function POST(request: Request) {
 
   const missing = tmpl.required_variables.filter((v) => !(v in variables));
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     template_id,
     variant_key,
     subject,
@@ -179,5 +184,5 @@ export async function POST(request: Request) {
     channel: tmpl.channel,
     is_complete: missing.length === 0,
     missing_vars: missing,
-  });
+  }));
 }

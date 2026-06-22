@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  // SWARM_API_URL guard — will use mock data below
+  console.warn("[corporate-capture-engine] SWARM_API_URL non défini — mode dégradé activé");
 }
 
 const MOCK_ENTITIES = [
@@ -348,17 +348,17 @@ export async function GET() {
       avg_estimated_capture_index:  Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "corporate-capture-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "corporate-capture-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/corporate-capture-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/corporate-capture-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "corporate-capture-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "corporate-capture-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream corporate capture engine unavailable" }, "corporate-capture-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

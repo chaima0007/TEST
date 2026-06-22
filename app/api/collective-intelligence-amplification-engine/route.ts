@@ -160,33 +160,8 @@ function ciSignal(e: Entity, risk: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const acc   = accuracyScore(e);
-      const div   = diversityScore(e);
-      const agg   = aggregationScore(e);
-      const integ = integrityScore(e);
-      const comp  = ciComposite(acc, div, agg, integ);
-      const pat   = ciPattern(e);
-      const risk  = ciRisk(comp);
-      const sev   = ciSeverity(comp);
-      const action = recommendedAction(risk, pat);
-      return {
-        id:               e.entity_id,
-        region:                  e.region,
-        aggregation_method:      e.aggregation_method,
-        ci_risk:                 risk,
-        ci_pattern:              pat,
-        ci_severity:             sev,
-        recommended_action:      action,
-        accuracy_score:          acc,
-        diversity_score:         div,
-        aggregation_score:       agg,
-        integrity_score:         integ,
-        ci_composite:            comp,
-        is_in_ci_crisis:         comp >= 60,
-        requires_ci_intervention: comp >= 40,
-        ci_signal:               ciSignal(e, risk, comp),
-      };
+  console.warn("[collective-intelligence-amplification-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string, number> = {};
@@ -228,23 +203,24 @@ export async function GET() {
       avg_estimated_ci_dysfunction_index: Math.round(avgComp / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "collective-intelligence-amplification-engine")
-    );
+    ));
   }
 
   try {
     const upstream = await fetch(
-      `${process.env.SWARM_API_URL}/collective-intelligence-amplification-engine`
+      `${process.env.SWARM_API_URL}/collective-intelligence-amplification-engine`,
+      { next: { revalidate: 30 } }
     );
     const json = await upstream.json();
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(json, "collective-intelligence-amplification-engine")
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "upstream_unavailable" }, "collective-intelligence-amplification-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

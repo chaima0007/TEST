@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[biometric-surveillance-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // 8 mock entities covering all 5 patterns and all 4 risk levels
@@ -317,7 +321,7 @@ export async function GET(request: Request) {
     const n             = mockEntities.length;
     const avg_composite = Math.round((total_composite / n) * 100) / 100;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id:   333,
@@ -335,7 +339,7 @@ export async function GET(request: Request) {
         avg_estimated_surveillance_index: Math.round((avg_composite / 100 * 10) * 100) / 100,
         avg_facial_recognition_density:   Math.round((total_facial / n) * 100) / 100,
       },
-    } as Record<string, unknown>));
+    } as Record<string, unknown>)));
   }
 
   try {
@@ -346,11 +350,11 @@ export async function GET(request: Request) {
     if (risk)    url.searchParams.set("risk",    risk);
     if (pattern) url.searchParams.set("pattern", pattern);
     const res = await fetch(url.toString(), { cache: "no-store" });
-    if (res.ok) return NextResponse.json(await res.json());
+    if (res.ok) return sealResponse(NextResponse.json(await res.json()));
   } catch {}
 
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({ entities: [], summary: {} } as Record<string, unknown>),
     { status: 502 },
-  );
+  ));
 }

@@ -251,7 +251,7 @@ function getMockData() {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Cognitive Enhancement Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Cognitive Enhancement Agent")));
   }
   try {
     const res = await fetch(
@@ -260,11 +260,11 @@ export async function GET() {
     );
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Cognitive Enhancement Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Cognitive Enhancement Agent")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData(), "Cognitive Enhancement Agent"),
       { status: 502 }
-    );
+    ));
   }
 }

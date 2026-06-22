@@ -79,20 +79,8 @@ function bioSignal(o: Organoid, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const organoids = MOCK_ORGANOIDS.map(o => {
-      const vs = viabilityScore(o), cs = computationScore(o), ss = stabilityScore(o), es = emergenceScore(o);
-      const comp = bioComposite(vs, cs, ss, es), pat = bioPattern(o), risk = bioRisk(comp), sev = bioSeverity(comp), act = bioAction(risk, pat);
-      const collapseIndex = Math.min(Math.round(comp / 100 * (o.mutation_drift_rate + o.environmental_sensitivity) / 2 * 10 * 100) / 100, 10.0);
-      return {
-        organoid_id: o.organoid_id, substrate_type: o.substrate_type, region: o.region,
-        bio_risk: risk, bio_pattern: pat, bio_severity: sev, recommended_action: act,
-        viability_sub_score: vs, computation_sub_score: cs, stability_sub_score: ss, emergence_sub_score: es,
-        bio_composite: comp,
-        critical_collapse_risk: risk === "critical",
-        requires_emergency: act === "emergency_stabilization" || act === "substrate_isolation",
-        estimated_collapse_index: collapseIndex,
-        bio_signal: bioSignal(o, pat, comp),
-      };
+  console.warn("[bio-computational-intelligence-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tv=0, tc=0, ts=0, te=0, tcomp=0, tci=0, collapseC=0, emergC=0;
@@ -108,7 +96,7 @@ export async function GET() {
       if (org.requires_emergency)     emergC++;
     }
     const n = organoids.length;
-    return NextResponse.json(sealResponse({ organoids, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ organoids, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_bio_composite: Math.round(tcomp / n * 10) / 10,
       critical_collapse_count: collapseC, emergency_count: emergC,
@@ -117,7 +105,7 @@ export async function GET() {
       avg_stability_score:   Math.round(ts / n * 10) / 10,
       avg_emergence_score:   Math.round(te / n * 10) / 10,
       avg_estimated_collapse_index: Math.round(tci / n * 100) / 100,
-    } as Record<string, unknown>}, "bio-computational-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+    } as Record<string, unknown>}, "bio-computational-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
   }
-  return NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/bio-computational-intelligence-engine`)).json(), "bio-computational-intelligence-engine") as Parameters<typeof NextResponse.json>[0]);
+  return sealResponse(NextResponse.json(sealResponse(await (await fetch(`${process.env.SWARM_API_URL}/bio-computational-intelligence-engine`, { next: { revalidate: 30 } })).json(), "bio-computational-intelligence-engine") as Parameters<typeof NextResponse.json>[0]));
 }

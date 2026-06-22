@@ -7,7 +7,7 @@ if (!process.env.SWARM_API_URL) {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Biopiracy Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Biopiracy Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/biopiracy-engine`, {
@@ -15,12 +15,12 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Biopiracy Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Biopiracy Agent")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData(), "Biopiracy Agent"),
       { status: 502 }
-    );
+    ));
   }
 }
 

@@ -90,19 +90,8 @@ function signal(o: Organism, pat: string, comp: number): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const organisms = MOCK_ORGANISMS.map(o => {
-      const fit = fitnessScore(o), ada = adaptationScore(o), res = resilienceScore(o), syn = synergyScore(o);
-      const comp = composite(fit, ada, res, syn), pat = evolutionaryPattern(o), r = risk(comp), sev = severity(comp), act = action(r, pat);
-      return {
-        organism_id: o.organism_id, region: o.region,
-        biomimetic_risk: r, evolutionary_pattern: pat, biomimetic_severity: sev, recommended_action: act,
-        fitness_score: fit, adaptation_score: ada, resilience_score: res, synergy_score: syn,
-        biomimetic_composite: comp,
-        has_extinction_signal: comp >= 40 || o.extinction_vulnerability >= 0.60 || o.environmental_fit_score <= 0.30 || o.niche_differentiation_score <= 0.25,
-        requires_evolutionary_intervention: comp >= 25 || o.extinction_vulnerability >= 0.45 || o.adaptive_mutation_rate <= 0.30,
-        estimated_extinction_risk_index: Math.min(Math.round(comp/100*(1-o.resilience_redundancy+0.01)*10*100)/100, 10.0),
-        biomimetic_signal: signal(o, pat, comp),
-      };
+  console.warn("[biomimetic-strategy-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
     let tfit=0,tada=0,tres=0,tsyn=0,tcomp=0,trisk=0,extC=0,intervC=0;
@@ -117,7 +106,7 @@ export async function GET() {
       if (org.requires_evolutionary_intervention) intervC++;
     }
     const n = organisms.length;
-    return NextResponse.json(sealResponse({ organisms, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ organisms, summary: {
       total: n, risk_counts: rc, pattern_counts: pc, severity_counts: sc, action_counts: ac,
       avg_biomimetic_composite: Math.round(tcomp/n*10)/10,
       extinction_signal_count: extC, evolutionary_intervention_count: intervC,
@@ -126,7 +115,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres/n*10)/10,
       avg_synergy_score: Math.round(tsyn/n*10)/10,
       avg_estimated_extinction_risk_index: Math.round(trisk/n*100)/100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/biomimetic-strategy-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/biomimetic-strategy-engine`, { next: { revalidate: 30 } })).json()));
 }

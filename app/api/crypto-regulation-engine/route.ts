@@ -203,34 +203,8 @@ function cryptoSignal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const col  = collapseScore(e);
-      const man  = manipulationScore(e);
-      const reg  = regulatoryScore(e);
-      const con  = concentrationScore(e);
-      const comp = compositeScore(col, man, reg, con);
-      const risk = cryptoRisk(comp);
-      const pat  = cryptoPattern(e);
-      const sev  = cryptoSeverity(risk);
-      const act  = recommendedAction(risk);
-      const sig  = cryptoSignal(risk);
-      return {
-        id:                    e.entity_id,
-        exchange_type:                e.exchange_type,
-        region:                       e.region,
-        collapse_score:               col,
-        manipulation_score:           man,
-        regulatory_score:             reg,
-        concentration_score:          con,
-        composite_score:              comp,
-        risk_level:                   risk,
-        crypto_pattern:               pat,
-        severity:                     sev,
-        recommended_action:           act,
-        signal:                       sig,
-        exchange_collapse_risk:       e.exchange_collapse_risk,
-        crypto_oligopoly_formation:   e.crypto_oligopoly_formation,
-      };
+  console.warn("[crypto-regulation-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const pc: Record<string, number> = {};
@@ -256,7 +230,7 @@ export async function GET() {
     const avgMan  = tMan  / n;
     const avgReg  = tReg  / n;
 
-    return NextResponse.json(sealResponse({
+    return sealResponse(NextResponse.json(sealResponse({
       entities,
       summary: {
         module_id:                             386,
@@ -278,17 +252,17 @@ export async function GET() {
         avg_manipulation_score:                Math.round(avgMan  * 100) / 100,
         avg_regulatory_score:                  Math.round(avgReg  * 100) / 100,
       },
-    } as Record<string, unknown>, "crypto-regulation-engine"));
+    } as Record<string, unknown>, "crypto-regulation-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/crypto-regulation-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/crypto-regulation-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "crypto-regulation-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json() as Record<string, unknown>, "crypto-regulation-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "SWARM_API_URL upstream error" } as Record<string, unknown>, "crypto-regulation-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

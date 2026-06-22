@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[alternative-protein-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 if (!SWARM_API_URL) {
@@ -118,11 +122,11 @@ const MOCK_ENTITIES = [
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "SWARM_API_URL not configured" } as Record<string, unknown>,
         "alternative-protein-engine"),
       { status: 502 }
-    );
+    ));
   }
 
   try {
@@ -130,15 +134,16 @@ export async function GET() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(MOCK_ENTITIES),
+      next: { revalidate: 30 },
     });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
     const data = await upstream.json() as Record<string, unknown>;
-    return NextResponse.json(sealResponse(data, "alternative-protein-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "alternative-protein-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable" } as Record<string, unknown>,
         "alternative-protein-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -90,27 +90,8 @@ function cascadeRiskIndex(n: Network, comp: number): number {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const networks = MOCK_NETWORKS.map(n => {
-      const topo = topologyScore(n), dyn = dynamicsScore(n), res = resilienceScore(n), emg = emergenceScore(n);
-      const comp = composite(topo, dyn, res, emg);
-      const risk = networkRisk(comp), pat = networkPattern(n), sev = networkSeverity(comp), act = recommendedAction(risk, pat);
-      return {
-        network_id: n.network_id,
-        network_type: n.network_type,
-        region: n.region,
-        network_risk: risk,
-        network_pattern: pat,
-        network_severity: sev,
-        recommended_action: act,
-        topology_score: topo,
-        dynamics_score: dyn,
-        resilience_score: res,
-        emergence_score: emg,
-        network_composite: comp,
-        cascade_vulnerability_score: n.cascade_vulnerability_score,
-        network_signal: networkSignal(n, pat, comp),
-        estimated_cascade_risk_index: cascadeRiskIndex(n, comp),
-      };
+  console.warn("[complex-network-physics-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const rc: Record<string,number>={}, pc: Record<string,number>={}, sc: Record<string,number>={}, ac: Record<string,number>={};
@@ -127,7 +108,7 @@ export async function GET() {
       if (net.network_risk === "critical" || net.network_risk === "high") interventionC++;
     }
     const n = networks.length;
-    return NextResponse.json(sealResponse({ networks, summary: {
+    return sealResponse(NextResponse.json(sealResponse({ networks, summary: {
       total: n,
       risk_counts: rc,
       pattern_counts: pc,
@@ -141,7 +122,7 @@ export async function GET() {
       avg_resilience_score: Math.round(tres / n * 10) / 10,
       avg_emergence_score: Math.round(temg / n * 10) / 10,
       avg_estimated_cascade_risk_index: Math.round(tcri / n * 100) / 100,
-    }} as Record<string,unknown>));
+    }} as Record<string,unknown>)));
   }
-  return NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/complex-network-physics-engine`)).json());
+  return sealResponse(NextResponse.json(await (await fetch(`${process.env.SWARM_API_URL}/complex-network-physics-engine`, { next: { revalidate: 30 } })).json()));
 }

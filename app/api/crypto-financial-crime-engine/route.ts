@@ -215,7 +215,7 @@ function getMockData() {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    return NextResponse.json(sealResponse(getMockData(), "Crypto Financial Crime Agent"));
+    return sealResponse(NextResponse.json(sealResponse(getMockData(), "Crypto Financial Crime Agent")));
   }
   try {
     const res = await fetch(`${process.env.SWARM_API_URL}/crypto-financial-crime-engine`, {
@@ -223,11 +223,11 @@ export async function GET() {
     });
     if (!res.ok) throw new Error(`Upstream ${res.status}`);
     const data = await res.json();
-    return NextResponse.json(sealResponse(data, "Crypto Financial Crime Agent"));
+    return sealResponse(NextResponse.json(sealResponse(data, "Crypto Financial Crime Agent")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse(getMockData(), "Crypto Financial Crime Agent"),
       { status: 502 }
-    );
+    ));
   }
 }

@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[competitive-positioning] SWARM_API_URL non défini — mode dégradé activé");
+}
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -258,7 +263,7 @@ export async function GET(request: Request) {
       if (threat)      url.searchParams.set("threat", threat);
       if (probability) url.searchParams.set("probability", probability);
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return sealResponse(NextResponse.json(await res.json()));
     } catch {}
   }
 
@@ -286,7 +291,7 @@ export async function GET(request: Request) {
 
   const n = mockDeals.length;
 
-  return NextResponse.json({
+  return sealResponse(NextResponse.json({
     deals,
     summary: {
       total:                  n,
@@ -303,5 +308,5 @@ export async function GET(request: Request) {
       escalation_count:       mockDeals.filter((d) => d.recommended_action === "executive_escalation").length,
       avg_competitive_gap:    Math.round((total_gap / n) * 10) / 10,
     },
-  });
+  }));
 }

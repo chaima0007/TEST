@@ -214,18 +214,18 @@ export async function GET() {
       engine_version: "1.0.0",
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary } as Record<string, unknown>)
-    );
+    ));
   }
 
   try {
     const url = new URL(`${SWARM_API_URL}/api/autonomous-weapons-ai-warfare-rights-engine`);
     const res = await fetch(url.toString(), { next: { revalidate: 30 } });
-    if (res.ok) return NextResponse.json(sealResponse(await res.json()));
+    if (res.ok) return sealResponse(NextResponse.json(sealResponse(await res.json())));
   } catch {}
-  return NextResponse.json(
+  return sealResponse(NextResponse.json(
     sealResponse({ entities: [], summary: {} } as Record<string, unknown>),
     { status: 502 }
-  );
+  ));
 }

@@ -172,35 +172,8 @@ function scarcitySignal(e: EntityInput, risk: string, composite: number): string
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const supply     = supplyScore(e);
-      const demand     = demandScore(e);
-      const geo        = geopoliticalScore(e);
-      const sust       = sustainabilityScore(e);
-      const composite  = scarcityComposite(supply, demand, geo, sust);
-      const risk       = scarcityRisk(composite);
-      const pattern    = scarcityPattern(e);
-      const severity   = scarcitySeverity(composite);
-      const action     = recommendedAction(risk, pattern);
-      const signal     = scarcitySignal(e, risk, composite);
-
-      return {
-        id:                     e.entity_id,
-        region:                        e.region,
-        resource_category:             e.resource_category,
-        scarcity_risk:                 risk,
-        scarcity_pattern:              pattern,
-        scarcity_severity:             severity,
-        recommended_action:            action,
-        supply_score:                  supply,
-        demand_score:                  demand,
-        geopolitical_score:            geo,
-        sustainability_score:          sust,
-        scarcity_composite:            composite,
-        is_in_scarcity_crisis:         composite >= 60,
-        requires_scarcity_intervention: composite >= 40,
-        scarcity_signal:               signal,
-      };
+  console.warn("[critical-resource-scarcity-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_counts: Record<string, number>     = {};
@@ -243,17 +216,17 @@ export async function GET() {
       avg_estimated_scarcity_index:   Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(sealResponse({ entities, summary }, "critical-resource-scarcity-engine"));
+    return sealResponse(NextResponse.json(sealResponse({ entities, summary }, "critical-resource-scarcity-engine")));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/critical-resource-scarcity-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/critical-resource-scarcity-engine`, { next: { revalidate: 30 } });
     const data = await upstream.json();
-    return NextResponse.json(sealResponse(data, "critical-resource-scarcity-engine"));
+    return sealResponse(NextResponse.json(sealResponse(data, "critical-resource-scarcity-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable" }, "critical-resource-scarcity-engine"),
       { status: 502 }
-    );
+    ));
   }
 }

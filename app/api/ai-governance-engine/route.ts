@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
+if (!process.env.SWARM_API_URL) {
+  console.warn("[ai-governance-engine] SWARM_API_URL non défini — mode dégradé activé");
+}
+
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
 // ── Mock entities ──────────────────────────────────────────────────────────────
@@ -287,10 +291,10 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!SWARM_API_URL) {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "SWARM_API_URL not configured" }, "ai-governance-engine") as Record<string, unknown>,
       { status: 502 }
-    );
+    ));
   }
 
   try {
@@ -360,13 +364,13 @@ export async function GET() {
       avg_regulatory_score:               Math.round(tReg / n * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary }, "ai-governance-engine") as Record<string, unknown>
-    );
+    ));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Erreur moteur gouvernance IA" }, "ai-governance-engine") as Record<string, unknown>,
       { status: 502 }
-    );
+    ));
   }
 }

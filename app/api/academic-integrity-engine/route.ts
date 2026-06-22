@@ -160,34 +160,8 @@ function signal(risk: string): string {
 
 export async function GET() {
   if (!process.env.SWARM_API_URL) {
-    const entities = MOCK_ENTITIES.map(e => {
-      const fr   = fraudScore(e);
-      const pub  = publishingScore(e);
-      const rep  = replicationScore(e);
-      const gov  = governanceScore(e);
-      const comp = compositeScore(fr, pub, rep, gov);
-      const risk = riskLevel(comp);
-      const pat  = integrityPattern(e);
-      const sev  = severity(comp);
-      const action = recommendedAction(risk);
-      const sig  = signal(risk);
-      return {
-        id:                       e.entity_id,
-        research_field:                  e.research_field,
-        region:                          e.region,
-        fraud_score:                     fr,
-        publishing_score:                pub,
-        replication_score:               rep,
-        governance_score:                gov,
-        composite_score:                 comp,
-        risk_level:                      risk,
-        integrity_pattern:               pat,
-        severity:                        sev,
-        recommended_action:              action,
-        signal:                          sig,
-        retraction_rate:                 e.retraction_rate,
-        data_fabrication_index:          e.data_fabrication_index,
-      };
+  console.warn("[academic-integrity-engine] SWARM_API_URL non défini — mode dégradé activé");
+};
     });
 
     const risk_distribution: Record<string, number>     = {};
@@ -233,19 +207,19 @@ export async function GET() {
       avg_estimated_research_integrity_index:     Math.round(avgComposite / 100 * 10 * 100) / 100,
     };
 
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ entities, summary, avg_fraud: avgFraud }, "academic-integrity-engine")
-    );
+    ));
   }
 
   try {
-    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/academic-integrity-engine`);
+    const upstream = await fetch(`${process.env.SWARM_API_URL}/api/academic-integrity-engine`, { next: { revalidate: 30 } });
     if (!upstream.ok) throw new Error(`Upstream ${upstream.status}`);
-    return NextResponse.json(sealResponse(await upstream.json(), "academic-integrity-engine"));
+    return sealResponse(NextResponse.json(sealResponse(await upstream.json(), "academic-integrity-engine")));
   } catch {
-    return NextResponse.json(
+    return sealResponse(NextResponse.json(
       sealResponse({ error: "Upstream unavailable", code: 502 }, "academic-integrity-engine"),
       { status: 502 }
-    );
+    ));
   }
 }
