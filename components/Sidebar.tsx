@@ -15710,6 +15710,37 @@ function IconRetargetingadvertisingAdvertising({ size = 18, color = "currentColo
     </svg>
   );
 }
+function IconInteractiveadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 15s1.5-1 4-1c2 0 3 1 3 1"/>
+      <path d="M2 9l10-7 10 7"/>
+      <path d="M2 9v11a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V9"/>
+      <rect x="9" y="12" width="6" height="8"/>
+    </svg>
+  );
+}
+function IconAddressabletvAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="20" height="15" rx="2"/>
+      <path d="M8 21h8"/>
+      <path d="M12 17v4"/>
+      <path d="M10 9l4 3-4 3V9z"/>
+    </svg>
+  );
+}
+function IconDigitaloutofhomeAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="2" width="18" height="12" rx="1"/>
+      <path d="M3 14h18"/>
+      <path d="M9 22V14"/>
+      <path d="M15 22V14"/>
+      <path d="M9 22h6"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19378,6 +19409,9 @@ const navSections: NavSection[] = [
       { label: "Native Advertising", href: "/dashboard/nativeadvertising-advertising", icon: IconNativeadvertisingAdvertising },
       { label: "Contextual Advertising", href: "/dashboard/contextualadvertising-advertising", icon: IconContextualadvertisingAdvertising },
       { label: "Retargeting Advertising", href: "/dashboard/retargetingadvertising-advertising", icon: IconRetargetingadvertisingAdvertising },
+      { label: "Interactive Advertising", href: "/dashboard/interactiveadvertising-advertising", icon: IconInteractiveadvertisingAdvertising },
+      { label: "Addressable TV", href: "/dashboard/addressabletv-advertising", icon: IconAddressabletvAdvertising },
+      { label: "Digital Out-of-Home", href: "/dashboard/digitaloutofhome-advertising", icon: IconDigitaloutofhomeAdvertising },
     ],
   },
   {
