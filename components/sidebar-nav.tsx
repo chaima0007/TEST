@@ -3879,6 +3879,9 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/influencerfraud", label: "Influencer Fraud", icon: Icons.IconInfluencerFraud },
       { href: "/dashboard/fakereviews", label: "Fake Reviews", icon: Icons.IconFakeReviews },
       { href: "/dashboard/astroturfing", label: "Astroturfing", icon: Icons.IconAstroturfing },
+      { href: "/dashboard/adverification", label: "Ad Verification", icon: Icons.IconAdVerification },
+      { href: "/dashboard/trafficquality", label: "Traffic Quality", icon: Icons.IconTrafficQuality },
+      { href: "/dashboard/clickfraud", label: "Click Fraud", icon: Icons.IconClickFraud },
     ],
   },
   {
