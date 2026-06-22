@@ -10884,6 +10884,40 @@ function IconJuvenileJusticeRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconArmsTradeHumanRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 12h10"/>
+      <path d="M13 9l4 3-4 3"/>
+      <path d="M17 12h2a2 2 0 0 0 2-2V8"/>
+      <path d="M19 8l-2-2"/>
+      <circle cx="6" cy="12" r="1.5"/>
+      <path d="M10 7l1-3 2 1"/>
+    </svg>
+  );
+}
+
+function IconRightToTruthRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="7"/>
+      <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+      <path d="M8 11h6"/>
+      <path d="M11 8v6"/>
+    </svg>
+  );
+}
+
+function IconBiometricDataRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2C8.5 2 6 4.5 6 8c0 5 6 12 6 12s6-7 6-12c0-3.5-2.5-6-6-6z"/>
+      <circle cx="12" cy="8" r="2"/>
+      <path d="M9 8c0-1.7 1.3-3 3-3s3 1.3 3 3"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12342,6 +12376,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/freedom-of-assembly-rights-engine", label: "Liberté de Réunion", icon: IconFreedomOfAssemblyRights },
       { href: "/dashboard/right-to-housing-rights-engine", label: "Droit au Logement", icon: IconRightToHousingRights },
       { href: "/dashboard/juvenile-justice-rights-engine", label: "Justice des Mineurs", icon: IconJuvenileJusticeRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 238",
+    items: [
+      { href: "/dashboard/arms-trade-human-rights-engine", label: "Commerce des Armes", icon: IconArmsTradeHumanRights },
+      { href: "/dashboard/right-to-truth-rights-engine", label: "Droit à la Vérité", icon: IconRightToTruthRights },
+      { href: "/dashboard/biometric-data-rights-engine", label: "Données Biométriques", icon: IconBiometricDataRights },
     ],
   },
   {
