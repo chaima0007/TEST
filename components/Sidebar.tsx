@@ -10809,6 +10809,43 @@ function IconSolitaryConfinementRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconNetNeutralityRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <line x1="2" y1="6" x2="22" y2="6"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <line x1="2" y1="18" x2="22" y2="18"/>
+      <circle cx="6" cy="6" r="1.5" fill="currentColor"/>
+      <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+      <circle cx="18" cy="18" r="1.5" fill="currentColor"/>
+      <line x1="6" y1="6" x2="6" y2="18"/>
+    </svg>
+  );
+}
+
+function IconRightToBeForgottenRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L4 7v5c0 4.418 3.134 8.545 8 9.5 4.866-.955 8-5.082 8-9.5V7l-8-5z"/>
+      <line x1="9" y1="9" x2="15" y2="15"/>
+      <line x1="15" y1="9" x2="9" y2="15"/>
+    </svg>
+  );
+}
+
+function IconDigitalAccessibilityRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="4" r="1.5"/>
+      <path d="M8 8h8l-1 5h-6L8 8z"/>
+      <line x1="12" y1="13" x2="12" y2="20"/>
+      <line x1="9" y1="20" x2="15" y2="20"/>
+      <rect x="3" y="14" width="5" height="4" rx="1"/>
+      <rect x="16" y="14" width="5" height="4" rx="1"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12251,6 +12288,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/medical-experimentation-rights-engine", label: "Expérimentation Médicale", icon: IconMedicalExperimentationRights },
       { href: "/dashboard/economic-sanctions-rights-engine", label: "Sanctions Économiques", icon: IconEconomicSanctionsRights },
       { href: "/dashboard/solitary-confinement-rights-engine", label: "Confinement Solitaire", icon: IconSolitaryConfinementRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 236",
+    items: [
+      { href: "/dashboard/net-neutrality-rights-engine", label: "Neutralité du Net", icon: IconNetNeutralityRights },
+      { href: "/dashboard/right-to-be-forgotten-rights-engine", label: "Droit à l'Oubli", icon: IconRightToBeForgottenRights },
+      { href: "/dashboard/digital-accessibility-rights-engine", label: "Accessibilité Numérique", icon: IconDigitalAccessibilityRights },
     ],
   },
   {
