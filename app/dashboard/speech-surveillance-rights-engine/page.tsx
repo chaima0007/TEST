@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const ACCENT = "#b45309";
+const ACCENT = "#0f766e";
 const RC: Record<string, string> = { critique: "text-red-400", "élevé": "text-orange-400", modéré: "text-yellow-400", faible: "text-emerald-400" };
 const RB: Record<string, string> = { critique: "border-red-500/30 bg-red-500/10", "élevé": "border-orange-500/30 bg-orange-500/10", modéré: "border-yellow-500/30 bg-yellow-500/10", faible: "border-emerald-500/30 bg-emerald-500/10" };
 
@@ -28,10 +28,10 @@ interface Entity {
   risk_level: string;
   primary_pattern: string;
   last_updated: string;
-  corporate_impunity_score?: number;
-  supply_chain_violation_score?: number;
-  whistleblower_suppression_score?: number;
-  due_diligence_failure_score?: number;
+  online_speech_monitoring_score?: number;
+  journalist_surveillance_score?: number;
+  political_speech_suppression_score?: number;
+  whistleblower_tracking_score?: number;
   [key: string]: unknown;
 }
 
@@ -53,10 +53,10 @@ const RISK_CONFIG: Record<string, { label: string; color: string; bg: string; bo
 };
 
 const SUB_SCORES = [
-  { key: "corporate_impunity_score", label: "Impunité corporative" },
-  { key: "supply_chain_violation_score", label: "Violations chaîne d&apos;approvisionnement" },
-  { key: "whistleblower_suppression_score", label: "Suppression lanceurs d&apos;alerte" },
-  { key: "due_diligence_failure_score", label: "Défaillance diligence raisonnable" },
+  { key: "online_speech_monitoring_score", label: "Surveillance discours en ligne" },
+  { key: "journalist_surveillance_score", label: "Surveillance journalistes" },
+  { key: "political_speech_suppression_score", label: "Suppression discours politique" },
+  { key: "whistleblower_tracking_score", label: "Traçage lanceurs d&apos;alerte" },
 ];
 
 function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void }) {
@@ -126,8 +126,8 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
           )}
           {tab === "context" && (
             <div className="space-y-3 text-sm text-slate-300">
-              <p>Analyse de la responsabilité des entreprises : impunité corporative, violations des chaînes d&apos;approvisionnement, suppression des lanceurs d&apos;alerte et défaillances de la diligence raisonnable EU CSDDD.</p>
-              <p className="text-slate-400">Source : Corporate Accountability Rights Engine · Wave 257</p>
+              <p>Analyse de la surveillance des discours : monitoring du discours en ligne, surveillance des journalistes, suppression du discours politique et traçage des lanceurs d&apos;alerte.</p>
+              <p className="text-slate-400">Source : Speech Surveillance Rights Engine · Wave 257</p>
             </div>
           )}
         </div>
@@ -136,14 +136,14 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function CorporateAccountabilityRightsPage() {
+export default function SpeechSurveillanceRightsPage() {
   const [data, setData] = useState<DashData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("tous");
   const [selected, setSelected] = useState<Entity | null>(null);
 
   useEffect(() => {
-    fetch("/api/corporate-accountability-rights-engine").then(r => r.json()).then(d => { setData(d.payload ?? d); setLoading(false); });
+    fetch("/api/speech-surveillance-rights-engine").then(r => r.json()).then(d => { setData(d.payload ?? d); setLoading(false); });
   }, []);
 
   if (loading) return (
@@ -165,8 +165,8 @@ export default function CorporateAccountabilityRightsPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-6">
       <div className="mb-8 flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold" style={{ color: ACCENT }}>Corporate Accountability Rights Engine</h1>
-          <p className="text-slate-400 mt-1 text-sm">Impunité Corporative · Chaînes d&apos;Approvisionnement · Lanceurs d&apos;Alerte · Diligence</p>
+          <h1 className="text-2xl font-bold" style={{ color: ACCENT }}>Speech Surveillance Rights Engine</h1>
+          <p className="text-slate-400 mt-1 text-sm">Surveillance En Ligne · Journalistes · Discours Politique · Traçage</p>
         </div>
         <span className="text-xs text-slate-500 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
           {data.total_entities} entités analysées
@@ -204,9 +204,9 @@ export default function CorporateAccountabilityRightsPage() {
         {["tous", "critique", "élevé", "modéré", "faible"].map(f => (
           <button key={f} onClick={() => setFilter(f)}
             className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${filter === f
-              ? "border-amber-900/40 text-amber-300"
+              ? "border-teal-900/40 text-teal-300"
               : "border-slate-700 text-slate-400 hover:border-slate-500"}`}
-            style={filter === f ? { backgroundColor: "#b4530920" } : {}}>
+            style={filter === f ? { backgroundColor: "#0f766e20" } : {}}>
             {f.charAt(0).toUpperCase() + f.slice(1)}
           </button>
         ))}
