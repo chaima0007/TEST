@@ -10380,6 +10380,38 @@ function IconChildPovertyRights({ className }: { className?: string }) {
   );
 }
 
+function IconTorturePreventionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2L4 6v6c0 5.25 3.5 9.74 8 11 4.5-1.26 8-5.75 8-11V6l-8-4z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function IconFreedomAssemblyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="9" cy="7" r="2" />
+      <circle cx="15" cy="7" r="2" />
+      <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+      <path d="M3 21v-1a3 3 0 0 1 3-3" />
+      <path d="M21 21v-1a3 3 0 0 0-3-3" />
+    </svg>
+  );
+}
+
+function IconCorporateTaxEvasionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+      <path d="M12 12v4" />
+      <path d="M10 14h4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11678,6 +11710,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/environmental-racism-rights-engine", label: "Racisme Environnemental", icon: IconEnvironmentalRacismRights },
       { href: "/dashboard/migrant-worker-rights-engine", label: "Travailleurs Migrants", icon: IconMigrantWorkerRights },
       { href: "/dashboard/child-poverty-rights-engine", label: "Pauvreté Enfants", icon: IconChildPovertyRights },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 218",
+    items: [
+      { href: "/dashboard/torture-prevention-rights-engine", label: "Prévention Torture", icon: IconTorturePreventionRights },
+      { href: "/dashboard/freedom-assembly-rights-engine", label: "Liberté de Réunion", icon: IconFreedomAssemblyRights },
+      { href: "/dashboard/corporate-tax-evasion-rights-engine", label: "Évasion Fiscale Entreprises", icon: IconCorporateTaxEvasionRights },
     ],
   },
   {
