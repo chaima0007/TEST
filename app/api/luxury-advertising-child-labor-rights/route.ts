@@ -14,16 +14,16 @@ export async function GET() {
   } catch {
     return sealResponse(NextResponse.json({
       entities: [
-        { name: "Louis Vuitton Ads", composite_score: 99, risk_level: "critique", estimated_index: 9.9 },
-        { name: "Chanel Advertising", composite_score: 93, risk_level: "critique", estimated_index: 9.3 },
-        { name: "Rolex Campaign", composite_score: 85, risk_level: "critique", estimated_index: 8.5 },
-        { name: "Hermès Marketing", composite_score: 80, risk_level: "critique", estimated_index: 8.0 },
-        { name: "Gucci Advertising", composite_score: 61, risk_level: "élevé", estimated_index: 6.1 },
-        { name: "Dior Campaign", composite_score: 51, risk_level: "élevé", estimated_index: 5.1 },
-        { name: "Prada Ads", composite_score: 32, risk_level: "modéré", estimated_index: 3.2 },
-        { name: "Cartier Advertising", composite_score: 13, risk_level: "faible", estimated_index: 1.3 },
+        { name: "LVMH", composite_score: 98, risk_level: "critique", estimated_index: 9.8 },
+        { name: "Richemont", composite_score: 91, risk_level: "critique", estimated_index: 9.1 },
+        { name: "Kering", composite_score: 84, risk_level: "critique", estimated_index: 8.4 },
+        { name: "Hermès", composite_score: 79, risk_level: "critique", estimated_index: 7.9 },
+        { name: "Chanel", composite_score: 62, risk_level: "élevé", estimated_index: 6.2 },
+        { name: "Prada", composite_score: 51, risk_level: "élevé", estimated_index: 5.1 },
+        { name: "Burberry", composite_score: 33, risk_level: "modéré", estimated_index: 3.3 },
+        { name: "Rolex", composite_score: 14, risk_level: "faible", estimated_index: 1.4 },
       ],
-      avg_composite: 61.02,
+      avg_composite: 64.00,
       generatedAt: new Date().toISOString(),
       mode: "fallback",
     }, { status: 502 }));
