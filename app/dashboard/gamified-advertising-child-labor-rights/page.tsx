@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const API_URL = "/api/augmented-reality-ads-child-labor-rights";
-const TITLE = "Droits Enfants Publicité Réalité Augmentée";
-const COLOR = "#8b5cf6";
+const API_URL = "/api/gamified-advertising-child-labor-rights";
+const TITLE = "Droits Enfants Publicité Gamifiée";
+const COLOR = "#f59e0b";
 
 type Entity = { entity: string; composite_score: number; risk_level: string };
 type ApiData = { entities: Entity[]; avg_composite: number; distribution: Record<string, number> };
@@ -68,8 +68,8 @@ function DetailModal({ entity, color, onClose }: { entity: Entity; color: string
           ))}
         </div>
         {tab === "apercu" && <div><p style={{ marginBottom: 8 }}>Score : <strong>{entity.composite_score}</strong></p><p>Risque : <strong style={{ color }}>{entity.risk_level}</strong></p></div>}
-        {tab === "indicateurs" && <p>Conformité CSDDD 2024/1760 — surveillance active des expériences AR ciblant les mineurs requise.</p>}
-        {tab === "recommandations" && <p>Encadrer strictement les formats publicitaires en réalité augmentée exposant les enfants et garantir le respect des conventions ILO-C182 et CSDDD 2024/1760.</p>}
+        {tab === "indicateurs" && <p>Conformité CSDDD 2024/1760 — surveillance active des mécaniques gamifiées ciblant les mineurs requise.</p>}
+        {tab === "recommandations" && <p>Encadrer strictement les mécaniques de gamification publicitaire exposant les enfants et garantir le respect des conventions ILO-C182 et CSDDD 2024/1760.</p>}
         {tab === "certifications" && (
           <div>
             <p style={{ fontSize: 12, color: "#6b7280", marginBottom: 12 }}>Attestations de conformité — {entity.entity}</p>
