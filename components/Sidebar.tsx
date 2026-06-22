@@ -12982,6 +12982,27 @@ function IconSorghumHarvestingChildLaborRights({ size = 18 }: { size?: number })
     </svg>
   );
 }
+function IconMilletHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v20M9 5l3-3 3 3M9 9l3-3 3 3M9 13l3-3 3 3"/>
+    </svg>
+  );
+}
+function IconTeffCultivationLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="12" cy="8" rx="4" ry="6"/><path d="M12 14v8M8 18h8"/>
+    </svg>
+  );
+}
+function IconAmaranthHarvestingLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v20M6 6l6 4 6-4M6 12l6 4 6-4"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -15051,6 +15072,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/sorghum-harvesting-child-labor-rights",
         icon: IconSorghumHarvestingChildLaborRights,
         color: "#92400e",
+      },
+      {
+        label: "Millet Harvesting Child Labor",
+        href: "/dashboard/millet-harvesting-child-labor-rights",
+        icon: IconMilletHarvestingChildLaborRights,
+        color: "#92400e",
+      },
+      {
+        label: "Teff Cultivation Labor",
+        href: "/dashboard/teff-cultivation-labor-rights",
+        icon: IconTeffCultivationLaborRights,
+        color: "#78350f",
+      },
+      {
+        label: "Amaranth Harvesting Labor",
+        href: "/dashboard/amaranth-harvesting-labor-rights",
+        icon: IconAmaranthHarvestingLaborRights,
+        color: "#7f1d1d",
       },
     ],
   },
