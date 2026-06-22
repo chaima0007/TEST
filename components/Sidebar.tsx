@@ -15180,6 +15180,27 @@ function IconArvRAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconBlockchainAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="6" height="6" rx="1"/><rect x="16" y="7" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><path d="M8 10h2M14 10h2M12 8v2M12 14v2"/>
+    </svg>
+  );
+}
+function IconWeb3Advertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/>
+    </svg>
+  );
+}
+function IconMetaverseAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 8l10 6 10-6M2 8v8l10 6 10-6V8"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18423,6 +18444,24 @@ const navSections: NavSection[] = [
         label: "AR/VR Advertising",
         href: "/dashboard/arvr-advertising",
         icon: IconArvRAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Blockchain Advertising",
+        href: "/dashboard/blockchain-advertising",
+        icon: IconBlockchainAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Web3 Advertising",
+        href: "/dashboard/web3-advertising",
+        icon: IconWeb3Advertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Metaverse Advertising",
+        href: "/dashboard/metaverse-advertising",
+        icon: IconMetaverseAdvertising,
         category: "Publicité Visuelle",
       },
       {
