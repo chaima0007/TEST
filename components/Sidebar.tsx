@@ -13672,6 +13672,38 @@ function IconCatalogPhotographyChildLaborRights({ size = 20, color = "currentCol
   );
 }
 
+function IconWindowDisplay({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="2" width="14" height="12" rx="1" />
+      <line x1="1" y1="6" x2="15" y2="6" />
+      <rect x="4" y="8" width="3" height="4" />
+      <rect x="9" y="8" width="3" height="4" />
+    </svg>
+  );
+}
+
+function IconTradeShow({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M1 13V7l7-5 7 5v6z" />
+      <rect x="5" y="9" width="2.5" height="4" />
+      <rect x="8.5" y="9" width="2.5" height="4" />
+    </svg>
+  );
+}
+
+function IconProductLabel({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="3" width="12" height="10" rx="1.5" />
+      <line x1="5" y1="7" x2="11" y2="7" />
+      <line x1="5" y1="10" x2="9" y2="10" />
+      <circle cx="12" cy="4" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16136,6 +16168,24 @@ const navSections: NavSection[] = [
         label: "Droits Enfants Photographie Catalogue",
         icon: IconCatalogPhotographyChildLaborRights,
         color: "#b45309",
+      },
+      {
+        label: "Window Display Design",
+        href: "/dashboard/window-display-design-child-labor-rights",
+        icon: IconWindowDisplay,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Trade Show Exhibit",
+        href: "/dashboard/trade-show-exhibit-child-labor-rights",
+        icon: IconTradeShow,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Product Label Design",
+        href: "/dashboard/product-label-design-child-labor-rights",
+        icon: IconProductLabel,
+        category: "Publicité Visuelle",
       },
     ],
   },
