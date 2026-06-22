@@ -15264,6 +15264,27 @@ function IconGeothermalenergyAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconBiomassenergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12M12 12C10 7 5 6 3 9M12 12C14 7 19 6 21 9M3 9c0 6 4 10 9 10M21 9c0 6-4 10-9 10"/>
+    </svg>
+  );
+}
+function IconWastoetoenergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6M10 11v6M14 11v6M9 6V4h6v2"/>
+    </svg>
+  );
+}
+function IconEnergystorageAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v3M10 13.5h4"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18579,6 +18600,24 @@ const navSections: NavSection[] = [
         label: "Geothermal Energy Advertising",
         href: "/dashboard/geothermalenergy-advertising",
         icon: IconGeothermalenergyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Biomass Energy Advertising",
+        href: "/dashboard/biomassenergy-advertising",
+        icon: IconBiomassenergyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Waste to Energy Advertising",
+        href: "/dashboard/wastetoenergy-advertising",
+        icon: IconWastoetoenergyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Energy Storage Advertising",
+        href: "/dashboard/energystorage-advertising",
+        icon: IconEnergystorageAdvertising,
         category: "Publicité Visuelle",
       },
       {
