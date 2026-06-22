@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Journal d'audit des démarrages d'agents",
+  "total_startups": 1,
+  "blocked_startups": 1,
+  "sessions": [
+    {
+      "timestamp": "2026-06-22T22:11:46.752166+00:00",
+      "group": "wave",
+      "wave": 481,
+      "domains": [
+        "waterrights",
+        "foodsovereignty",
+        "housingright"
+      ],
+      "score": 65.0,
+      "ready": false,
+      "checks_failed": [
+        "clean_tree",
+        "no_duplicates"
+      ]
+    }
+  ],
+  "last_startup": "2026-06-22T22:11:46.752166+00:00"
+}
