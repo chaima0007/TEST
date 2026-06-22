@@ -15901,6 +15901,34 @@ function IconNanoinfluencerAdvertising({ size = 18, color = "currentColor" }: { 
     </svg>
   );
 }
+function IconCreatoreconomyAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+      <line x1="12" y1="19" x2="12" y2="22"/>
+      <line x1="8" y1="22" x2="16" y2="22"/>
+    </svg>
+  );
+}
+function IconVirtualinfluencerAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <circle cx="12" cy="10" r="3"/>
+      <path d="M7 21v-1a5 5 0 0 1 10 0v1"/>
+    </svg>
+  );
+}
+function IconDeepfakeadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <line x1="9" y1="12" x2="15" y2="12"/>
+      <line x1="12" y1="9" x2="12" y2="15"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19590,6 +19618,9 @@ const navSections: NavSection[] = [
       { label: "Influencer Vetting", href: "/dashboard/influencervetting-advertising", icon: IconInfluencervettingAdvertising },
       { label: "Micro-Influencer Ads", href: "/dashboard/microinfluencer-advertising", icon: IconMicroinfluencerAdvertising },
       { label: "Nano-Influencer Ads", href: "/dashboard/nanoinfluencer-advertising", icon: IconNanoinfluencerAdvertising },
+      { label: "Creator Economy Ads", href: "/dashboard/creatoreconomy-advertising", icon: IconCreatoreconomyAdvertising },
+      { label: "Virtual Influencer", href: "/dashboard/virtualinfluencer-advertising", icon: IconVirtualinfluencerAdvertising },
+      { label: "Deepfake Advertising", href: "/dashboard/deepfakeadvertising-advertising", icon: IconDeepfakeadvertisingAdvertising },
     ],
   },
   {
