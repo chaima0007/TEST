@@ -14509,6 +14509,28 @@ function IconAccountBasedMarketing({ size = 20 }: { size?: number }) {
   );
 }
 
+function IconAffiliateNetworkAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="12" cy="12" r="3" />
+      <circle cx="4" cy="6" r="2" />
+      <circle cx="20" cy="6" r="2" />
+      <circle cx="4" cy="18" r="2" />
+      <circle cx="20" cy="18" r="2" />
+      <path d="M6 6l4 4M14 14l4 4M18 6l-4 4M10 14l-4 4" />
+    </svg>
+  );
+}
+
+function IconEmailMarketingAdvertising({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="M2 7l10 7 10-7" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17140,6 +17162,18 @@ const navSections: NavSection[] = [
         label: "Account-Based Marketing",
         href: "/dashboard/account-based-marketing-child-labor-rights",
         icon: IconAccountBasedMarketing,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Affiliate Network Advertising",
+        href: "/dashboard/affiliate-network-advertising-child-labor-rights",
+        icon: IconAffiliateNetworkAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Email Marketing Advertising",
+        href: "/dashboard/email-marketing-advertising-child-labor-rights",
+        icon: IconEmailMarketingAdvertising,
         category: "Publicité Visuelle",
       },
       {
