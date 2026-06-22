@@ -16052,6 +16052,31 @@ function IconSpotifyadvertisingAdvertising({ size = 18, color = "currentColor" }
     </svg>
   );
 }
+function IconAmazonadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 16.5A8.5 8.5 0 0 1 12 6a8.5 8.5 0 0 1 8 5.5"/>
+      <path d="M2 19c2.5 1.5 5.5 2 9.5 1 3-.7 5.5-2 7.5-3.5"/>
+      <path d="M16 17l2 2 2-2"/>
+    </svg>
+  );
+}
+function IconApplesearchadsAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2a7 7 0 0 1 5.2 11.7l3.3 3.3-1.4 1.4-3.3-3.3A7 7 0 1 1 12 2z"/>
+      <circle cx="12" cy="9" r="3"/>
+    </svg>
+  );
+}
+function IconMicrosoftadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/>
+      <rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19762,6 +19787,9 @@ const navSections: NavSection[] = [
       { label: "LinkedIn Advertising", href: "/dashboard/linkedinadvertising-advertising", icon: IconLinkedinadvertisingAdvertising },
       { label: "Snapchat Advertising", href: "/dashboard/snapchatadvertising-advertising", icon: IconSnapchatadvertisingAdvertising },
       { label: "Spotify Advertising", href: "/dashboard/spotifyadvertising-advertising", icon: IconSpotifyadvertisingAdvertising },
+      { label: "Amazon Advertising", href: "/dashboard/amazonadvertising-advertising", icon: IconAmazonadvertisingAdvertising },
+      { label: "Apple Search Ads", href: "/dashboard/applesearchads-advertising", icon: IconApplesearchadsAdvertising },
+      { label: "Microsoft Advertising", href: "/dashboard/microsoftadvertising-advertising", icon: IconMicrosoftadvertisingAdvertising },
     ],
   },
   {
