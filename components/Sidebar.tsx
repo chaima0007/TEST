@@ -15656,6 +15656,33 @@ function IconDoohdigitalAdvertising({ size = 18, color = "currentColor" }: { siz
     </svg>
   );
 }
+function IconShoppablevideoadsAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="5 3 19 12 5 21 5 3"/>
+      <circle cx="17" cy="7" r="3"/>
+    </svg>
+  );
+}
+function IconPodcastsponsorshipAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="2"/>
+      <path d="M16.72 9.28a6 6 0 0 1 0 5.44"/>
+      <path d="M19.07 6.93a10 10 0 0 1 0 10.14"/>
+      <path d="M7.28 9.28a6 6 0 0 0 0 5.44"/>
+      <path d="M4.93 6.93a10 10 0 0 0 0 10.14"/>
+    </svg>
+  );
+}
+function IconLivestreamadvertisingAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -19318,6 +19345,9 @@ const navSections: NavSection[] = [
       { label: "Data-Driven Advertising", href: "/dashboard/datadrivenadvertising-advertising", icon: IconDatadrivenadvertisingAdvertising },
       { label: "Behavioral Targeting", href: "/dashboard/behavioraltargeting-advertising", icon: IconBehavioraltargetingAdvertising },
       { label: "DOOH Digital", href: "/dashboard/doohdigital-advertising", icon: IconDoohdigitalAdvertising },
+      { label: "Shoppable Video Ads", href: "/dashboard/shoppablevideoads-advertising", icon: IconShoppablevideoadsAdvertising },
+      { label: "Podcast Sponsorship", href: "/dashboard/podcastsponsorship-advertising", icon: IconPodcastsponsorshipAdvertising },
+      { label: "Livestream Advertising", href: "/dashboard/livestreamadvertising-advertising", icon: IconLivestreamadvertisingAdvertising },
     ],
   },
   {
