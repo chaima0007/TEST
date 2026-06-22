@@ -4074,4 +4074,12 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/environmentaldefender", label: "Environmental Defender Rights", icon: Icons.IconEnvironmentalDefenderRights },
     ],
   },
+  {
+    title: "PERSONS & CORPORATE RIGHTS",
+    items: [
+      { href: "/dashboard/statelesspersons", label: "Stateless Persons", icon: Icons.IconStatelessPersonsRights },
+      { href: "/dashboard/childsoldier", label: "Child Soldier Rehab", icon: Icons.IconChildSoldierRehabilitation },
+      { href: "/dashboard/corporateespionage", label: "Corporate Espionage", icon: Icons.IconCorporateEspionageRights },
+    ],
+  },
 ];
