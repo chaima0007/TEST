@@ -11251,6 +11251,30 @@ function IconMassIncarcerationRights({ className }: { className?: string }) {
   );
 }
 
+function IconColonialGenocideRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+    </svg>
+  );
+}
+
+function IconDigitalDivideRuralRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />
+    </svg>
+  );
+}
+
+function IconRefugeeIntegrationRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12821,6 +12845,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/cultural-appropriation-rights-engine", label: "Cultural Appropriation Rights", icon: IconCulturalAppropriationRights, color: "#92400e" },
       { href: "/dashboard/hate-speech-online-rights-engine", label: "Hate Speech Online Rights", icon: IconHateSpeechOnlineRights, color: "#dc2626" },
       { href: "/dashboard/mass-incarceration-rights-engine", label: "Mass Incarceration Rights", icon: IconMassIncarcerationRights, color: "#1e3a5f" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 252",
+    items: [
+      { href: "/dashboard/colonial-genocide-rights-engine", label: "Colonial Genocide Rights", icon: IconColonialGenocideRights, color: "#7c2d12" },
+      { href: "/dashboard/digital-divide-rural-rights-engine", label: "Digital Divide Rural Rights", icon: IconDigitalDivideRuralRights, color: "#166534" },
+      { href: "/dashboard/refugee-integration-rights-engine", label: "Refugee Integration Rights", icon: IconRefugeeIntegrationRights, color: "#1e40af" },
     ],
   },
   {
