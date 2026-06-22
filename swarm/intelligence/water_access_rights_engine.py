@@ -1,7 +1,7 @@
 """
-CaelumSwarm™ — Wave 197
+CaelumSwarm™ — Wave 221
 Engine  : Water Access Rights
-Domain  : Accès à l'eau potable et droits humains
+Domain  : Accès à l'eau potable & droits WASH
 Prefix  : WAR
 Color   : #0ea5e9
 """
@@ -16,14 +16,14 @@ from typing import List
 
 PREFIX       = "WAR"
 ACCENT_COLOR = "#0ea5e9"
-WAVE         = 197
+WAVE         = 221
 DOMAIN       = "water_access_rights"
 
 WEIGHTS = {
-    "water_privatization_harm_score": 0.30,
-    "water_pollution_score":          0.25,
-    "access_denial_marginalized_score": 0.25,
-    "conservation_failure_score":     0.20,
+    "water_scarcity_score":              0.30,
+    "sanitation_gap_score":              0.25,
+    "water_privatization_score":         0.25,
+    "climate_water_vulnerability_score": 0.20,
 }
 
 THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
@@ -34,22 +34,25 @@ THRESHOLDS = {"critique": 60, "élevé": 40, "modéré": 20}
 
 @dataclass
 class WAREntity:
-    id:                                str
-    name:                              str
-    water_privatization_harm_score:    float
-    water_pollution_score:             float
-    access_denial_marginalized_score:  float
-    conservation_failure_score:        float
-    composite_score:                   float = field(init=False)
-    risk_level:                        str   = field(init=False)
+    entity_id:                          str
+    name:                               str
+    country:                            str
+    water_scarcity_score:               float
+    sanitation_gap_score:               float
+    water_privatization_score:          float
+    climate_water_vulnerability_score:  float
+    primary_pattern:                    str = ""
+    last_updated:                       str = "2026-06-22"
+    composite_score:                    float = field(init=False)
+    risk_level:                         str   = field(init=False)
     estimated_water_access_rights_index: float = field(init=False)
 
     def __post_init__(self) -> None:
         self.composite_score = round(
-            self.water_privatization_harm_score * WEIGHTS["water_privatization_harm_score"]
-            + self.water_pollution_score        * WEIGHTS["water_pollution_score"]
-            + self.access_denial_marginalized_score * WEIGHTS["access_denial_marginalized_score"]
-            + self.conservation_failure_score   * WEIGHTS["conservation_failure_score"],
+            self.water_scarcity_score              * WEIGHTS["water_scarcity_score"]
+            + self.sanitation_gap_score            * WEIGHTS["sanitation_gap_score"]
+            + self.water_privatization_score       * WEIGHTS["water_privatization_score"]
+            + self.climate_water_vulnerability_score * WEIGHTS["climate_water_vulnerability_score"],
             2,
         )
         if   self.composite_score >= THRESHOLDS["critique"]: self.risk_level = "critique"
@@ -65,106 +68,122 @@ class WAREntity:
 # ---------------------------------------------------------------------------
 # Entities  —  distribution 4 critique / 2 élevé / 1 modéré / 1 faible
 # ---------------------------------------------------------------------------
-# Target composites (approx): 88, 84, 81, 77, 57, 53, 28, 13
-# avg target ≈ 60.25  →  inside [60, 63]
-# composite = sub1×0.30 + sub2×0.25 + sub3×0.25 + sub4×0.20
+# Target composites (approx): 96, 90, 84, 78, 56, 47, 31, 10
+# avg target = (96+90+84+78+56+47+31+10)/8 = 492/8 = 61.50  → inside [60, 63]
+# composite = water_scarcity×0.30 + sanitation_gap×0.25 + water_privatization×0.25 + climate_water×0.20
 
 ENTITIES: List[WAREntity] = [
 
-    # 1 — critique ~88
+    # 1 — critique ~96
     WAREntity(
-        id   = "WAR-001",
-        name = "Nestlé Waters",
-        water_privatization_harm_score   = 95.0,
-        water_pollution_score            = 82.0,
-        access_denial_marginalized_score = 90.0,
-        conservation_failure_score       = 84.0,
-        # 95×0.30 + 82×0.25 + 90×0.25 + 84×0.20
-        # = 28.50 + 20.50 + 22.50 + 16.80 = 88.30
+        entity_id = "WAR-001",
+        name      = "Yémen — Guerre Détruisant 50% Infrastructures Eau, 21M Sans Accès Eau Potable & Épidémie Choléra",
+        country   = "Yémen",
+        water_scarcity_score             = 99.0,
+        sanitation_gap_score             = 96.0,
+        water_privatization_score        = 94.0,
+        climate_water_vulnerability_score = 95.0,
+        primary_pattern = "Bombardements infrastructures WASH, choléra 2,5M cas, aquifères surexploités avant guerre",
+        # 99×0.30 + 96×0.25 + 94×0.25 + 95×0.20
+        # = 29.70 + 24.00 + 23.50 + 19.00 = 96.20
     ),
 
-    # 2 — critique ~84
+    # 2 — critique ~90
     WAREntity(
-        id   = "WAR-002",
-        name = "Suez Water Technologies",
-        water_privatization_harm_score   = 90.0,
-        water_pollution_score            = 78.0,
-        access_denial_marginalized_score = 86.0,
-        conservation_failure_score       = 80.0,
-        # 90×0.30 + 78×0.25 + 86×0.25 + 80×0.20
-        # = 27.00 + 19.50 + 21.50 + 16.00 = 84.00
+        entity_id = "WAR-002",
+        name      = "Éthiopie & Somalie — Sécheresses Horn of Africa, 40M Sans Accès Eau & Crise Humanitaire 2022-2026",
+        country   = "Éthiopie/Somalie",
+        water_scarcity_score             = 94.0,
+        sanitation_gap_score             = 90.0,
+        water_privatization_score        = 87.0,
+        climate_water_vulnerability_score = 92.0,
+        primary_pattern = "5 saisons sèches consécutives, déplacement 4M personnes, aquifères asséchés",
+        # 94×0.30 + 90×0.25 + 87×0.25 + 92×0.20
+        # = 28.20 + 22.50 + 21.75 + 18.40 = 90.85
     ),
 
-    # 3 — critique ~81
+    # 3 — critique ~84
     WAREntity(
-        id   = "WAR-003",
-        name = "Veolia Water",
-        water_privatization_harm_score   = 85.0,
-        water_pollution_score            = 79.0,
-        access_denial_marginalized_score = 80.0,
-        conservation_failure_score       = 78.0,
-        # 85×0.30 + 79×0.25 + 80×0.25 + 78×0.20
-        # = 25.50 + 19.75 + 20.00 + 15.60 = 80.85
+        entity_id = "WAR-003",
+        name      = "RDC — Kinshasa 15M Habitants, 70% Sans Eau Potable Fiable & Choléra Endémique Zones Rurales",
+        country   = "République Démocratique du Congo",
+        water_scarcity_score             = 88.0,
+        sanitation_gap_score             = 84.0,
+        water_privatization_score        = 80.0,
+        climate_water_vulnerability_score = 82.0,
+        primary_pattern = "Paradoxe eau: 52% ressources eau douce Afrique mais 70% population sans accès fiable",
+        # 88×0.30 + 84×0.25 + 80×0.25 + 82×0.20
+        # = 26.40 + 21.00 + 20.00 + 16.40 = 83.80
     ),
 
-    # 4 — critique ~77
+    # 4 — critique ~78
     WAREntity(
-        id   = "WAR-004",
-        name = "POSCO Holdings",
-        water_privatization_harm_score   = 72.0,
-        water_pollution_score            = 85.0,
-        access_denial_marginalized_score = 78.0,
-        conservation_failure_score       = 74.0,
-        # 72×0.30 + 85×0.25 + 78×0.25 + 74×0.20
-        # = 21.60 + 21.25 + 19.50 + 14.80 = 77.15
+        entity_id = "WAR-004",
+        name      = "Gaza & Palestine — Aquifère Côtier 97% Impropre, Eau Dessalée Rationnée 4L/Jour Par Personne",
+        country   = "Palestine",
+        water_scarcity_score             = 82.0,
+        sanitation_gap_score             = 79.0,
+        water_privatization_score        = 74.0,
+        climate_water_vulnerability_score = 76.0,
+        primary_pattern = "Destruction infrastructure eau par conflits, aquifère contaminé sel et nitrates, blocus pièces détachées",
+        # 82×0.30 + 79×0.25 + 74×0.25 + 76×0.20
+        # = 24.60 + 19.75 + 18.50 + 15.20 = 78.05
     ),
 
-    # 5 — élevé ~57
+    # 5 — élevé ~56
     WAREntity(
-        id   = "WAR-005",
-        name = "Coca-Cola Company",
-        water_privatization_harm_score   = 58.0,
-        water_pollution_score            = 54.0,
-        access_denial_marginalized_score = 60.0,
-        conservation_failure_score       = 55.0,
-        # 58×0.30 + 54×0.25 + 60×0.25 + 55×0.20
-        # = 17.40 + 13.50 + 15.00 + 11.00 = 56.90
+        entity_id = "WAR-005",
+        name      = "Inde — 163M Sans Eau Potable Fiable, Gestion Inter-États Conflictuelle & Pollution Industrielle",
+        country   = "Inde",
+        water_scarcity_score             = 59.0,
+        sanitation_gap_score             = 55.0,
+        water_privatization_score        = 54.0,
+        climate_water_vulnerability_score = 57.0,
+        primary_pattern = "Conflits inter-États Cauvery/Krishna, nappes phréatiques surexploitées, inégalités caste/eau",
+        # 59×0.30 + 55×0.25 + 54×0.25 + 57×0.20
+        # = 17.70 + 13.75 + 13.50 + 11.40 = 56.35
     ),
 
-    # 6 — élevé ~53
+    # 6 — élevé ~47
     WAREntity(
-        id   = "WAR-006",
-        name = "PepsiCo Inc",
-        water_privatization_harm_score   = 53.0,
-        water_pollution_score            = 50.0,
-        access_denial_marginalized_score = 56.0,
-        conservation_failure_score       = 51.0,
-        # 53×0.30 + 50×0.25 + 56×0.25 + 51×0.20
-        # = 15.90 + 12.50 + 14.00 + 10.20 = 52.60
+        entity_id = "WAR-006",
+        name      = "Brésil — Privatisation Sabesp & Rio Águas, Favelas & Communautés Périphériques Exclues Services",
+        country   = "Brésil",
+        water_scarcity_score             = 48.0,
+        sanitation_gap_score             = 50.0,
+        water_privatization_score        = 46.0,
+        climate_water_vulnerability_score = 44.0,
+        primary_pattern = "Privatisation services eau Sabesp, sécheresses São Paulo 2015-2021, quilombolas sans accès",
+        # 48×0.30 + 50×0.25 + 46×0.25 + 44×0.20
+        # = 14.40 + 12.50 + 11.50 + 8.80 = 47.20
     ),
 
-    # 7 — modéré ~28
+    # 7 — modéré ~31
     WAREntity(
-        id   = "WAR-007",
-        name = "Thames Water",
-        water_privatization_harm_score   = 30.0,
-        water_pollution_score            = 32.0,
-        access_denial_marginalized_score = 22.0,
-        conservation_failure_score       = 28.0,
-        # 30×0.30 + 32×0.25 + 22×0.25 + 28×0.20
-        # = 9.00 + 8.00 + 5.50 + 5.60 = 28.10
+        entity_id = "WAR-007",
+        name      = "USA — Crises Flint & Jackson Mississippi, Inégalités Raciales Accès Eau Potable Récurrentes",
+        country   = "États-Unis",
+        water_scarcity_score             = 30.0,
+        sanitation_gap_score             = 28.0,
+        water_privatization_score        = 35.0,
+        climate_water_vulnerability_score = 32.0,
+        primary_pattern = "Plomb dans eau Flint 2014-2019, Jackson sans eau 2022, infrastructures vieillissantes zones pauvres",
+        # 30×0.30 + 28×0.25 + 35×0.25 + 32×0.20
+        # = 9.00 + 7.00 + 8.75 + 6.40 = 31.15
     ),
 
-    # 8 — faible ~13
+    # 8 — faible ~10
     WAREntity(
-        id   = "WAR-008",
-        name = "Xylem Inc",
-        water_privatization_harm_score   = 10.0,
-        water_pollution_score            = 12.0,
-        access_denial_marginalized_score = 15.0,
-        conservation_failure_score       = 14.0,
-        # 10×0.30 + 12×0.25 + 15×0.25 + 14×0.20
-        # = 3.00 + 3.00 + 3.75 + 2.80 = 12.55
+        entity_id = "WAR-008",
+        name      = "Islande, Suède & Finlande — WASH Universel Garanti, Eau Droit Constitutionnel & Qualité Exemplaire",
+        country   = "Islande/Suède/Finlande",
+        water_scarcity_score             = 8.0,
+        sanitation_gap_score             = 10.0,
+        water_privatization_score        = 12.0,
+        climate_water_vulnerability_score = 9.0,
+        primary_pattern = "Eau publique constitutionnellement protégée, 100% accès eau potable, tarification solidaire",
+        # 8×0.30 + 10×0.25 + 12×0.25 + 9×0.20
+        # = 2.40 + 2.50 + 3.00 + 1.80 = 9.70
     ),
 ]
 
@@ -191,7 +210,7 @@ def run_validation(entities: List[WAREntity]) -> None:
 
     for e in entities:
         print(
-            f"[{e.id}] {e.name:<35} "
+            f"[{e.entity_id}] {e.name[:45]:<45} "
             f"composite={e.composite_score:>6.2f}  "
             f"risk={e.risk_level:<8}  "
             f"index={e.estimated_water_access_rights_index}"
