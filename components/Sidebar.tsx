@@ -14782,6 +14782,32 @@ function IconFoodBeverageAdvertising({ size = 18, color = "currentColor" }: { si
   );
 }
 
+function IconTravelAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19 2s-4 0-5.5 1.5L10 7 1.8 5.2C1.3 5.1 0.9 5.4 0.7 5.9L0 8.4c-.1.5.2 1.1.7 1.3l7.6 3L6 15l-2 1.5L3 15l-1.5 1.5L4 19l3.5 2.5 1-2 2-2 3 7.6c.2.5.8.8 1.3.7l2.5-.7c.5-.2.8-.6.7-1.1z"/>
+    </svg>
+  );
+}
+function IconAutomotiveAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="2"/>
+      <path d="M16 8h4l3 3v4h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+  );
+}
+function IconRealEstateAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -17707,6 +17733,24 @@ const navSections: NavSection[] = [
         label: "Food & Beverage Advertising",
         href: "/dashboard/food-beverage-advertising-child-labor-rights",
         icon: IconFoodBeverageAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Travel Advertising",
+        href: "/dashboard/travel-advertising-child-labor-rights",
+        icon: IconTravelAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Automotive Advertising",
+        href: "/dashboard/automotive-advertising-child-labor-rights",
+        icon: IconAutomotiveAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Real Estate Advertising",
+        href: "/dashboard/real-estate-advertising-child-labor-rights",
+        icon: IconRealEstateAdvertising,
         category: "Publicité Visuelle",
       },
       {
