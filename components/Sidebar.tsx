@@ -14018,6 +14018,70 @@ function IconIPProtection({ className }: { className?: string }) {
   );
 }
 
+function IconAffiliateMarketingNetwork({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="2" />
+      <circle cx="2" cy="4" r="1.5" />
+      <circle cx="14" cy="4" r="1.5" />
+      <circle cx="2" cy="12" r="1.5" />
+      <circle cx="14" cy="12" r="1.5" />
+      <path d="M3.5 4.5L6 7M10 7l2.5-2.5M3.5 11.5L6 9M10 9l2.5 2.5" />
+    </svg>
+  );
+}
+
+function IconShoppableMedia({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="3" width="14" height="9" rx="1" />
+      <path d="M5 8h6M8 5v6" />
+      <path d="M4 14h8" />
+    </svg>
+  );
+}
+
+function IconCrossPlatformAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="1" width="6" height="5" rx="1" />
+      <rect x="9" y="1" width="6" height="5" rx="1" />
+      <rect x="1" y="10" width="6" height="5" rx="1" />
+      <rect x="9" y="10" width="6" height="5" rx="1" />
+      <path d="M7 3.5h2M7 12.5h2M4 6v4M12 6v4" />
+    </svg>
+  );
+}
+
+function IconDataDrivenAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M2 13L5 9l3 2 3-5 3 3" />
+      <circle cx="13" cy="9" r="1" fill="currentColor" />
+      <path d="M1 14h14" />
+    </svg>
+  );
+}
+
+function IconContextualAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="8" r="6" />
+      <circle cx="8" cy="8" r="2" />
+      <path d="M8 2v2M8 12v2M2 8h2M12 8h2" />
+    </svg>
+  );
+}
+
+function IconLocationBasedAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 1C5.8 1 4 2.8 4 5c0 3.5 4 9 4 9s4-5.5 4-9c0-2.2-1.8-4-4-4z" />
+      <circle cx="8" cy="5" r="1.5" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16643,6 +16707,42 @@ const navSections: NavSection[] = [
         label: "Creator Monetization",
         href: "/dashboard/creator-monetization-child-labor-rights",
         icon: IconCreatorMonetization,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Affiliate Marketing Network",
+        href: "/dashboard/affiliate-marketing-network-child-labor-rights",
+        icon: IconAffiliateMarketingNetwork,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Shoppable Media",
+        href: "/dashboard/shoppable-media-child-labor-rights",
+        icon: IconShoppableMedia,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Cross-Platform Advertising",
+        href: "/dashboard/cross-platform-advertising-child-labor-rights",
+        icon: IconCrossPlatformAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Data-Driven Advertising",
+        href: "/dashboard/data-driven-advertising-child-labor-rights",
+        icon: IconDataDrivenAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Contextual Advertising",
+        href: "/dashboard/contextual-advertising-child-labor-rights",
+        icon: IconContextualAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Location-Based Advertising",
+        href: "/dashboard/location-based-advertising-child-labor-rights",
+        icon: IconLocationBasedAdvertising,
         category: "Publicité Visuelle",
       },
     ],
