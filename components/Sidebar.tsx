@@ -11872,6 +11872,33 @@ function IconSandMiningRights() {
     </svg>
   );
 }
+function IconIvoryTradePoachinRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#78350f" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M7 3c0 8 4 13 9 13" />
+      <path d="M17 3c0 8-4 13-9 13" />
+    </svg>
+  );
+}
+function IconGarmentFactoryFireRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <rect x="3" y="10" width="18" height="11" rx="1" />
+      <path d="M9 10V7h6v3" />
+      <path d="M12 14c0-2 2-3 2-5" />
+      <path d="M9 14c0-2 2-3 2-5" />
+    </svg>
+  );
+}
+function IconChildBrideEarlyMarriageRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="7" />
+      <line x1="9" y1="9" x2="15" y2="15" />
+      <line x1="15" y1="9" x2="9" y2="15" />
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -13643,6 +13670,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/whistleblower-protection-rights", label: "Lanceurs d'Alerte", icon: IconWhistleblowerProtectionRights },
       { href: "/dashboard/e-waste-rights", label: "Déchets Électroniques", icon: IconEWasteRights },
       { href: "/dashboard/sand-mining-rights", label: "Extraction de Sable", icon: IconSandMiningRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 277",
+    items: [
+      { href: "/dashboard/ivory-trade-poaching-rights", label: "Commerce d'Ivoire", icon: IconIvoryTradePoachinRights },
+      { href: "/dashboard/garment-factory-fire-rights", label: "Incendies Usines Textiles", icon: IconGarmentFactoryFireRights },
+      { href: "/dashboard/child-bride-early-marriage-rights", label: "Mariage Précoce", icon: IconChildBrideEarlyMarriageRights },
     ],
   },
   {
