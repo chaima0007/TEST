@@ -14082,6 +14082,36 @@ function IconLocationBasedAdvertising({ className }: { className?: string }) {
   );
 }
 
+function IconInfluencerVettingPlatform({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="5" r="3" />
+      <path d="M3 14c0-2.8 2.2-5 5-5s5 2.2 5 5" />
+      <path d="M11 7l1.5 1.5L15 6" />
+    </svg>
+  );
+}
+
+function IconSocialCommerceAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M6 2H2v4l7 7 4-4-7-7z" />
+      <circle cx="4.5" cy="4.5" r="0.5" fill="currentColor" />
+      <path d="M14 6l-2-2" />
+    </svg>
+  );
+}
+
+function IconInteractiveAdvertising({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="1" y="3" width="14" height="10" rx="1" />
+      <path d="M6 8l2 2 4-4" />
+      <path d="M4 6h2" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -16743,6 +16773,24 @@ const navSections: NavSection[] = [
         label: "Location-Based Advertising",
         href: "/dashboard/location-based-advertising-child-labor-rights",
         icon: IconLocationBasedAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Influencer Vetting Platform",
+        href: "/dashboard/influencer-vetting-platform-child-labor-rights",
+        icon: IconInfluencerVettingPlatform,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Social Commerce Advertising",
+        href: "/dashboard/social-commerce-advertising-child-labor-rights",
+        icon: IconSocialCommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Interactive Advertising",
+        href: "/dashboard/interactive-advertising-child-labor-rights",
+        icon: IconInteractiveAdvertising,
         category: "Publicité Visuelle",
       },
     ],
