@@ -13109,6 +13109,27 @@ function IconFenugreekCultivationLaborRights({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconTurmericCultivationChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V14M7 10c0-4 2-8 5-8s5 4 5 8-3 4-5 4-5 0-5-4z"/>
+    </svg>
+  );
+}
+function IconGingerHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 18c0 0-2-5 0-8s6-4 9-2 3 7 0 10-9 0-9 0z"/><path d="M12 16v6"/>
+    </svg>
+  );
+}
+function IconBlackPepperHarvestingChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 6c0-2 2-4 4-4s4 2 4 4"/><circle cx="10" cy="11" r="2"/><circle cx="14" cy="11" r="2"/><circle cx="12" cy="16" r="2"/><path d="M12 18v4"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -15286,6 +15307,24 @@ const navSections: NavSection[] = [
         href: "/dashboard/fenugreek-cultivation-labor-rights",
         icon: IconFenugreekCultivationLaborRights,
         color: "#0e7490",
+      },
+      {
+        label: "Turmeric Cultivation Child Labor",
+        href: "/dashboard/turmeric-cultivation-child-labor-rights",
+        icon: IconTurmericCultivationChildLaborRights,
+        color: "#ca8a04",
+      },
+      {
+        label: "Ginger Harvesting Child Labor",
+        href: "/dashboard/ginger-harvesting-child-labor-rights",
+        icon: IconGingerHarvestingChildLaborRights,
+        color: "#ea580c",
+      },
+      {
+        label: "Black Pepper Harvesting Child Labor",
+        href: "/dashboard/black-pepper-harvesting-child-labor-rights",
+        icon: IconBlackPepperHarvestingChildLaborRights,
+        color: "#1c1917",
       },
     ],
   },
