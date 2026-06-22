@@ -15222,6 +15222,27 @@ function IconDigitaltwinAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconCleanenergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+  );
+}
+function IconHydrogenenergyAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 4v16M20 4v16M4 12h16"/>
+    </svg>
+  );
+}
+function IconCarboncaptureAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22V12M12 12C12 7 7 4 3 6M12 12C12 7 17 4 21 6M3 6c0 6 4 10 9 10M21 6c0 6-4 10-9 10"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18501,6 +18522,24 @@ const navSections: NavSection[] = [
         label: "Digital Twin Advertising",
         href: "/dashboard/digitaltwin-advertising",
         icon: IconDigitaltwinAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Clean Energy Advertising",
+        href: "/dashboard/cleanenergy-advertising",
+        icon: IconCleanenergyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Hydrogen Energy Advertising",
+        href: "/dashboard/hydrogenenergy-advertising",
+        icon: IconHydrogenenergyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Carbon Capture Advertising",
+        href: "/dashboard/carboncapture-advertising",
+        icon: IconCarboncaptureAdvertising,
         category: "Publicité Visuelle",
       },
       {
