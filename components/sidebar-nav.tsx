@@ -3772,6 +3772,9 @@ export const navSections: NavSection[] = [
       { label: "Seasonal Advertising", href: "/dashboard/seasonaladv", icon: Icons.IconSeasonalAdv },
       { label: "Event Marketing", href: "/dashboard/eventmarketing", icon: Icons.IconEventMarketing },
       { label: "Mobile Advertising", href: "/dashboard/mobileadv", icon: Icons.IconMobileAdv },
+      { href: "/dashboard/videoads", label: "Video Ads", icon: Icons.IconVideoAds },
+      { href: "/dashboard/appstoreads", label: "App Store Ads", icon: Icons.IconAppStoreAds },
+      { href: "/dashboard/ottads", label: "OTT/CTV Ads", icon: Icons.IconOttAds },
     ],
   },
   {
