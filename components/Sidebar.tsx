@@ -15072,6 +15072,29 @@ function IconHrtechAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconCybersecurityAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+  );
+}
+function IconDevopsAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+    </svg>
+  );
+}
+function IconDatatechAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18225,6 +18248,24 @@ const navSections: NavSection[] = [
         label: "Hrtech Advertising",
         href: "/dashboard/hrtech-advertising",
         icon: IconHrtechAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Cybersecurity Advertising",
+        href: "/dashboard/cybersecurity-advertising",
+        icon: IconCybersecurityAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Devops Advertising",
+        href: "/dashboard/devops-advertising",
+        icon: IconDevopsAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Datatech Advertising",
+        href: "/dashboard/datatech-advertising",
+        icon: IconDatatechAdvertising,
         category: "Publicité Visuelle",
       },
       {
