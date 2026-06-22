@@ -12919,6 +12919,27 @@ function IconRaffiaPalmCraftLaborRights({ size = 18, color = "#78350f" }: { size
     </svg>
   );
 }
+function IconCoirFiberProcessingLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/>
+    </svg>
+  );
+}
+function IconAgaveFiberChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+    </svg>
+  );
+}
+function IconNettleFiberProcessingLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -14930,6 +14951,29 @@ const navSections: NavSection[] = [
       { label: "Droits Enfants Fibres Kapok", href: "/dashboard/kapok-fiber-child-labor-rights", icon: IconKapokFiberChildLaborRights, color: "#f59e0b" },
       { label: "Droits Travailleurs Transformation Ramie", href: "/dashboard/ramie-fiber-processing-labor-rights", icon: IconRamieFiberProcessingLaborRights, color: "#0d9488" },
       { label: "Droits Artisans Palmier Raphia", href: "/dashboard/raffia-palm-craft-labor-rights", icon: IconRaffiaPalmCraftLaborRights, color: "#78350f" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 307",
+    items: [
+      {
+        label: "Coir Fiber Processing Labor",
+        href: "/dashboard/coir-fiber-processing-labor-rights",
+        icon: IconCoirFiberProcessingLaborRights,
+        color: "#92400e",
+      },
+      {
+        label: "Agave Fiber Child Labor",
+        href: "/dashboard/agave-fiber-child-labor-rights",
+        icon: IconAgaveFiberChildLaborRights,
+        color: "#4d7c0f",
+      },
+      {
+        label: "Nettle Fiber Processing Labor",
+        href: "/dashboard/nettle-fiber-processing-labor-rights",
+        icon: IconNettleFiberProcessingLaborRights,
+        color: "#166534",
+      },
     ],
   },
   {
