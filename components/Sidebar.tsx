@@ -11684,6 +11684,35 @@ function IconClimateDisplacementRights() {
   );
 }
 
+function IconIndigenousCulturalHeritageRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#7c2d12" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 2L2 19h20L12 2z" />
+      <path d="M12 7v6" />
+      <circle cx="12" cy="17" r="1" fill="#7c2d12" />
+    </svg>
+  );
+}
+
+function IconDeepSeaMiningRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#1e3a8a" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M2 12h20" />
+      <path d="M12 2v20" />
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 16v6" />
+    </svg>
+  );
+}
+
+function IconFastFashionRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13398,6 +13427,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/deforestation-rights", label: "Droits contre la Déforestation", icon: IconDeforestationRights },
       { href: "/dashboard/mica-mining-rights", label: "Extraction du Mica", icon: IconMicaMiningRights },
       { href: "/dashboard/climate-displacement-rights", label: "Déplacés Climatiques", icon: IconClimateDisplacementRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 270",
+    items: [
+      { href: "/dashboard/indigenous-cultural-heritage-rights", label: "Patrimoine Autochtone", icon: IconIndigenousCulturalHeritageRights },
+      { href: "/dashboard/deep-sea-mining-rights", label: "Mines des Fonds Marins", icon: IconDeepSeaMiningRights },
+      { href: "/dashboard/fast-fashion-rights", label: "Fast Fashion", icon: IconFastFashionRights },
     ],
   },
   {
