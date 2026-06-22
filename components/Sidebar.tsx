@@ -10631,6 +10631,38 @@ function IconIndigenousKnowledgeRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconGenderBasedViolenceRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M12 12v8"/>
+      <path d="M8 16h8"/>
+      <path d="M9 21l3-3 3 3"/>
+    </svg>
+  );
+}
+
+function IconChildLaborRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  );
+}
+
+function IconTaxJusticeRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="5" width="20" height="14" rx="2"/>
+      <line x1="2" y1="10" x2="22" y2="10"/>
+      <path d="M6 15h.01M10 15h4"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12025,6 +12057,14 @@ const navSections: NavSection[] = [
       { label: "Droit d'Asile", href: "/dashboard/asylum-rights-engine", icon: IconAsylumRights },
       { label: "Santé Mentale", href: "/dashboard/mental-health-rights-engine", icon: IconMentalHealthRights },
       { label: "Savoirs Autochtones", href: "/dashboard/indigenous-knowledge-rights-engine", icon: IconIndigenousKnowledgeRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 230",
+    items: [
+      { href: "/dashboard/gender-based-violence-rights-engine", label: "Violences de Genre", icon: IconGenderBasedViolenceRights },
+      { href: "/dashboard/child-labor-rights-engine", label: "Travail des Enfants", icon: IconChildLaborRights },
+      { href: "/dashboard/tax-justice-rights-engine", label: "Justice Fiscale", icon: IconTaxJusticeRights },
     ],
   },
   {
