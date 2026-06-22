@@ -15306,6 +15306,20 @@ function IconVirtualpowerplantAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconSocialcommerceAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  );
+}
+function IconLivestreamshoppingAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M20.66 4a10 10 0 0 1 0 16M3.34 20a10 10 0 0 1 0-16"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18657,6 +18671,24 @@ const navSections: NavSection[] = [
         label: "Virtual Power Plant Advertising",
         href: "/dashboard/virtualpowerplant-advertising",
         icon: IconVirtualpowerplantAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "E-Commerce Advertising",
+        href: "/dashboard/ecommerce-advertising",
+        icon: IconEcommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Social Commerce Advertising",
+        href: "/dashboard/socialcommerce-advertising",
+        icon: IconSocialcommerceAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Livestream Shopping Advertising",
+        href: "/dashboard/livestreamshopping-advertising",
+        icon: IconLivestreamshoppingAdvertising,
         category: "Publicité Visuelle",
       },
       {
