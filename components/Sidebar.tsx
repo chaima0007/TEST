@@ -10719,6 +10719,35 @@ function IconForcedSterilizationRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconStatelessChildrenRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <line x1="17" y1="11" x2="23" y2="11"/>
+    </svg>
+  );
+}
+
+function IconHateSpeechIncitementRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <line x1="9" y1="10" x2="15" y2="10"/>
+    </svg>
+  );
+}
+
+function IconLandRestitutionRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+      <path d="M12 7v5"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12137,6 +12166,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/women-political-rights-engine", label: "Droits Politiques Femmes", icon: IconWomenPoliticalRights },
       { href: "/dashboard/climate-change-rights-engine", label: "Changement Climatique", icon: IconClimateChangeRights },
       { href: "/dashboard/forced-sterilization-rights-engine", label: "Stérilisation Forcée", icon: IconForcedSterilizationRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 233",
+    items: [
+      { href: "/dashboard/stateless-children-rights-engine", label: "Enfants Apatrides", icon: IconStatelessChildrenRights },
+      { href: "/dashboard/hate-speech-incitement-rights-engine", label: "Discours Haineux", icon: IconHateSpeechIncitementRights },
+      { href: "/dashboard/land-restitution-rights-engine", label: "Restitution des Terres", icon: IconLandRestitutionRights },
     ],
   },
   {
