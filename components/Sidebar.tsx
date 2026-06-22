@@ -10412,6 +10412,38 @@ function IconCorporateTaxEvasionRights({ className }: { className?: string }) {
   );
 }
 
+function IconGenderPayGapRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2Z" />
+      <path d="M12 12v10" />
+      <path d="M9 15h6" />
+      <path d="M9 19h6" />
+      <path d="M3 7l3 3" />
+      <path d="M21 7l-3 3" />
+    </svg>
+  );
+}
+
+function IconHealthcareAccessRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Z" />
+      <path d="M12 8v8" />
+      <path d="M8 12h8" />
+    </svg>
+  );
+}
+
+function IconAntiCorruptionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2Z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -11718,6 +11750,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/torture-prevention-rights-engine", label: "Prévention Torture", icon: IconTorturePreventionRights },
       { href: "/dashboard/freedom-assembly-rights-engine", label: "Liberté de Réunion", icon: IconFreedomAssemblyRights },
       { href: "/dashboard/corporate-tax-evasion-rights-engine", label: "Évasion Fiscale Entreprises", icon: IconCorporateTaxEvasionRights },
+    ],
+  },
+  {
+    label: "DROITS — WAVE 219",
+    items: [
+      { href: "/dashboard/gender-pay-gap-rights-engine", label: "Écart Salarial Femmes", icon: IconGenderPayGapRights },
+      { href: "/dashboard/healthcare-access-rights-engine", label: "Accès aux Soins", icon: IconHealthcareAccessRights },
+      { href: "/dashboard/anti-corruption-rights-engine", label: "Droits Anticorruption", icon: IconAntiCorruptionRights },
     ],
   },
   {
