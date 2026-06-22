@@ -11420,6 +11420,30 @@ function IconCobaltMiningRights({ className }: { className?: string }) {
   );
 }
 
+function IconCognitiveLibertyRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09zM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456zM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423z" />
+    </svg>
+  );
+}
+
+function IconRightToRepairRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l5.654-4.654m5.65-4.654 3.029-2.498a1.875 1.875 0 0 1 2.582.14l.036.036a1.875 1.875 0 0 1 .14 2.582l-2.497 3.03m-6.321 4.484-1.43-1.43m6.321-4.484L17.25 6.75" />
+    </svg>
+  );
+}
+
+function IconNeuroethicsRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13046,6 +13070,14 @@ const navSections: NavSection[] = [
       { label: "Lethal Autonomous Weapons Rights", href: "/dashboard/lethal-autonomous-weapons-rights-engine", icon: IconLethalAutonomousWeaponsRights, color: "#dc2626" },
       { label: "Protest Criminalization Rights", href: "/dashboard/protest-criminalization-rights-engine", icon: IconProtestCriminalizationRights, color: "#ea580c" },
       { label: "Cobalt Mining Rights", href: "/dashboard/cobalt-mining-rights-engine", icon: IconCobaltMiningRights, color: "#92400e" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 259",
+    items: [
+      { label: "Cognitive Liberty Rights", href: "/dashboard/cognitive-liberty-rights-engine", icon: IconCognitiveLibertyRights, color: "#6366f1" },
+      { label: "Right to Repair Rights", href: "/dashboard/right-to-repair-rights-engine", icon: IconRightToRepairRights, color: "#16a34a" },
+      { label: "Neuroethics Rights", href: "/dashboard/neuroethics-rights-engine", icon: IconNeuroethicsRights, color: "#8b5cf6" },
     ],
   },
   {
