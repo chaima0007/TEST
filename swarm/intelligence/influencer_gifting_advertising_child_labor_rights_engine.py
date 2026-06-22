@@ -1,17 +1,17 @@
 """
-CaelumSwarm™ — Contextual Advertising Child Labor Rights Engine
+CaelumSwarm™ — Influencer Gifting Advertising Child Labor Rights Engine
 © 2024-2026 Caelum Partners SPRL
 """
 
 ENTITIES = [
-    ("Google Contextual Ads", 99, 97, 95, 93),
-    ("Oracle Contextual", 93, 90, 88, 86),
-    ("Integral Ad Science", 85, 82, 80, 78),
-    ("DoubleVerify Contextual", 80, 77, 75, 73),
-    ("Seedtag", 61, 58, 56, 54),
-    ("GumGum", 51, 48, 46, 44),
-    ("Peer39", 32, 29, 27, 25),
-    ("Grapeshot (Oracle)", 13, 11,  9,  7),
+    ("AspireIQ Gifting", 99, 97, 95, 93),
+    ("Grin Gifting", 93, 90, 88, 86),
+    ("Creator.co", 85, 82, 80, 78),
+    ("Mavrck Gifting", 80, 77, 75, 73),
+    ("Traackr Gifting", 61, 58, 56, 54),
+    ("Upfluence Gifting", 51, 48, 46, 44),
+    ("Julius Gifting", 32, 29, 27, 25),
+    ("Klear Gifting", 13, 11,  9,  7),
 ]
 
 def compute(entity):

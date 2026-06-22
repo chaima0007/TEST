@@ -1,17 +1,17 @@
 """
-CaelumSwarm™ — Contextual Advertising Child Labor Rights Engine
+CaelumSwarm™ — Retargeting Advertising Child Labor Rights Engine
 © 2024-2026 Caelum Partners SPRL
 """
 
 ENTITIES = [
-    ("Google Contextual Ads", 99, 97, 95, 93),
-    ("Oracle Contextual", 93, 90, 88, 86),
-    ("Integral Ad Science", 85, 82, 80, 78),
-    ("DoubleVerify Contextual", 80, 77, 75, 73),
-    ("Seedtag", 61, 58, 56, 54),
-    ("GumGum", 51, 48, 46, 44),
-    ("Peer39", 32, 29, 27, 25),
-    ("Grapeshot (Oracle)", 13, 11,  9,  7),
+    ("Google Remarketing", 99, 97, 95, 93),
+    ("Meta Retargeting", 93, 90, 88, 86),
+    ("Criteo Retargeting", 85, 82, 80, 78),
+    ("AdRoll Retargeting", 80, 77, 75, 73),
+    ("RTB House Retargeting", 61, 58, 56, 54),
+    ("Quantcast Retargeting", 51, 48, 46, 44),
+    ("Perfect Audience", 32, 29, 27, 25),
+    ("Steelhouse Retargeting", 13, 11,  9,  7),
 ]
 
 def compute(entity):
