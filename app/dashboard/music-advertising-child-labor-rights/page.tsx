@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const COLOR = "#16a34a";
-const TITLE = "Publicité Sport & Équipement";
-const API_URL = "/api/sports-advertising-child-labor-rights";
+const COLOR = "#ec4899";
+const TITLE = "Publicité Musique & Divertissement";
+const API_URL = "/api/music-advertising-child-labor-rights";
 
 const riskColors: Record<string, string> = { critique: "#dc2626", élevé: "#f59e0b", modéré: "#3b82f6", faible: "#16a34a" };
 
@@ -76,8 +76,8 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
         )}
         {tab === "recommandations" && (
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {["Audit fournisseurs équipements sportifs tier-1 et tier-2", "Clause CSDDD dans contrats de sponsoring", "Formation équipes conformité droits humains", "Reporting annuel droits de l&apos;enfant dans la chaîne sportive"].map(r => (
-              <div key={r} style={{ padding: "8px 12px", background: "#f0fdf4", borderRadius: 8, fontSize: 13, color: "#14532d" }}>• {r}</div>
+            {["Audit pratiques publicitaires ciblant les mineurs", "Clause CSDDD dans contrats avec artistes mineurs", "Formation équipes conformité droits de l&apos;enfant", "Reporting annuel droits de l&apos;enfant dans le divertissement"].map(r => (
+              <div key={r} style={{ padding: "8px 12px", background: "#fdf2f8", borderRadius: 8, fontSize: 13, color: "#831843" }}>• {r}</div>
             ))}
           </div>
         )}
@@ -96,7 +96,7 @@ function DetailModal({ entity, onClose }: { entity: Entity; onClose: () => void 
   );
 }
 
-export default function SportsAdvertisingChildLaborRightsPage() {
+export default function MusicAdvertisingChildLaborRightsPage() {
   const [data, setData] = useState<ApiData | null>(null);
   const [selected, setSelected] = useState<Entity | null>(null);
   useEffect(() => {
