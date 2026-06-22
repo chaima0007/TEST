@@ -14753,6 +14753,34 @@ function IconGamingAdvertising({ size = 18, color = "currentColor" }: { size?: n
     </svg>
   );
 }
+function IconFashionAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/>
+    </svg>
+  );
+}
+function IconBeautyAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>
+      <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+      <line x1="9" y1="9" x2="9.01" y2="9"/>
+      <line x1="15" y1="9" x2="15.01" y2="9"/>
+    </svg>
+  );
+}
+function IconFoodBeverageAdvertising({ size = 18, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+      <line x1="6" y1="1" x2="6" y2="4"/>
+      <line x1="10" y1="1" x2="10" y2="4"/>
+      <line x1="14" y1="1" x2="14" y2="4"/>
+    </svg>
+  );
+}
 
 const navSections: NavSection[] = [
   {
@@ -17661,6 +17689,24 @@ const navSections: NavSection[] = [
         label: "Gaming Advertising",
         href: "/dashboard/gaming-advertising-child-labor-rights",
         icon: IconGamingAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Fashion Advertising",
+        href: "/dashboard/fashion-advertising-child-labor-rights",
+        icon: IconFashionAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Beauty Advertising",
+        href: "/dashboard/beauty-advertising-child-labor-rights",
+        icon: IconBeautyAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Food & Beverage Advertising",
+        href: "/dashboard/food-beverage-advertising-child-labor-rights",
+        icon: IconFoodBeverageAdvertising,
         category: "Publicité Visuelle",
       },
       {
