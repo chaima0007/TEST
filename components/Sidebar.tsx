@@ -10663,6 +10663,35 @@ function IconTaxJusticeRights({ size = 18 }: { size?: number }) {
   );
 }
 
+function IconRightToFairTrialRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+  );
+}
+
+function IconEnvironmentalPollutionRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/>
+      <path d="M12 8v4"/>
+      <path d="M12 16h.01"/>
+    </svg>
+  );
+}
+
+function IconCollectiveBargainingRights({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12065,6 +12094,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/gender-based-violence-rights-engine", label: "Violences de Genre", icon: IconGenderBasedViolenceRights },
       { href: "/dashboard/child-labor-rights-engine", label: "Travail des Enfants", icon: IconChildLaborRights },
       { href: "/dashboard/tax-justice-rights-engine", label: "Justice Fiscale", icon: IconTaxJusticeRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 231",
+    items: [
+      { href: "/dashboard/right-to-fair-trial-rights-engine", label: "Procès Équitable", icon: IconRightToFairTrialRights },
+      { href: "/dashboard/environmental-pollution-rights-engine", label: "Pollution Environnementale", icon: IconEnvironmentalPollutionRights },
+      { href: "/dashboard/collective-bargaining-rights-engine", label: "Négociation Collective", icon: IconCollectiveBargainingRights },
     ],
   },
   {
