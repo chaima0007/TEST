@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Human Trafficking & Modern Slavery Engine — CaelumSwarm™ Wave 204 | CSDDD Art.8-13"""
+"""Water Pollution Corporate Liability Engine — CaelumSwarm™ Wave 204 | CSDDD Art.8-13"""
 import json
 from datetime import datetime
 
-DOMAIN_CODE = "HTM"
-ACCENT_COLOR = "#4a044e"
-# sub1: forced_labour_exposure (prevalence of forced labour in supply chain)
-# sub2: recruitment_fee_risk (deceptive recruitment and debt bondage)
-# sub3: freedom_of_movement (restriction of movement / document confiscation)
-# sub4: grievance_mechanism_score (accessible worker complaint channels)
+DOMAIN_CODE = "WPC"
+ACCENT_COLOR = "#164e63"
+# sub1: contamination_severity (PFAS / mercury / pesticide contamination level)
+# sub2: liability_exposure (pending litigation and regulatory fines)
+# sub3: remediation_deficit (gap between pollution output and cleanup investment)
+# sub4: disclosure_transparency (environmental impact reporting quality)
 ENTITIES = [
-    {"name": "Qatar construction sector",         "sub1": 88.0, "sub2": 91.0, "sub3": 90.0, "sub4": 82.0},  # critique
-    {"name": "UAE domestic workers",              "sub1": 85.0, "sub2": 87.0, "sub3": 89.0, "sub4": 80.0},  # critique
-    {"name": "Malaysia rubber gloves (Top Glove)","sub1": 83.0, "sub2": 86.0, "sub3": 84.0, "sub4": 85.0},  # critique
-    {"name": "Saudi kafala system",               "sub1": 86.0, "sub2": 90.0, "sub3": 92.0, "sub4": 78.0},  # critique
-    {"name": "Thailand seafood industry",         "sub1": 52.0, "sub2": 57.0, "sub3": 53.0, "sub4": 50.0},  # élevé
-    {"name": "Mexico agriculture",                "sub1": 50.0, "sub2": 54.0, "sub3": 51.0, "sub4": 55.0},  # élevé
-    {"name": "UK care sector",                    "sub1": 30.0, "sub2": 33.0, "sub3": 28.0, "sub4": 32.0},  # modéré
-    {"name": "International Justice Mission",     "sub1": 12.0, "sub2": 10.0, "sub3": 14.0, "sub4": 11.0},  # faible
+    {"name": "3M (PFAS)",               "sub1": 87.0, "sub2": 89.0, "sub3": 85.0, "sub4": 83.0},  # critique
+    {"name": "DuPont/Chemours (PFAS)",  "sub1": 85.0, "sub2": 91.0, "sub3": 88.0, "sub4": 80.0},  # critique
+    {"name": "Monsanto/Bayer (glyphosate)", "sub1": 83.0, "sub2": 86.0, "sub3": 84.0, "sub4": 82.0},  # critique
+    {"name": "Volkswagen (nitrates)",   "sub1": 80.0, "sub2": 84.0, "sub3": 82.0, "sub4": 85.0},  # critique
+    {"name": "Syngenta",                "sub1": 53.0, "sub2": 56.0, "sub3": 52.0, "sub4": 54.0},  # élevé
+    {"name": "BASF",                    "sub1": 50.0, "sub2": 55.0, "sub3": 51.0, "sub4": 53.0},  # élevé
+    {"name": "Corteva Agriscience",     "sub1": 30.0, "sub2": 32.0, "sub3": 29.0, "sub4": 31.0},  # modéré
+    {"name": "Waterkeeper Alliance",    "sub1": 11.0, "sub2": 13.0, "sub3": 10.0, "sub4": 12.0},  # faible
 ]
 
 

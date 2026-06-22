@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Human Trafficking & Modern Slavery Engine — CaelumSwarm™ Wave 204 | CSDDD Art.8-13"""
+"""Conflict Minerals DRC Engine — CaelumSwarm™ Wave 204 | CSDDD Art.8-13"""
 import json
 from datetime import datetime
 
-DOMAIN_CODE = "HTM"
-ACCENT_COLOR = "#4a044e"
-# sub1: forced_labour_exposure (prevalence of forced labour in supply chain)
-# sub2: recruitment_fee_risk (deceptive recruitment and debt bondage)
-# sub3: freedom_of_movement (restriction of movement / document confiscation)
-# sub4: grievance_mechanism_score (accessible worker complaint channels)
+DOMAIN_CODE = "CMD"
+ACCENT_COLOR = "#7f1d1d"
+# sub1: sourcing_transparency (due diligence traceability)
+# sub2: armed_group_financing_risk (conflict financing exposure)
+# sub3: supply_chain_audit_compliance (third-party audit results)
+# sub4: regulatory_reporting_score (Dodd-Frank / OECD reporting)
 ENTITIES = [
-    {"name": "Qatar construction sector",         "sub1": 88.0, "sub2": 91.0, "sub3": 90.0, "sub4": 82.0},  # critique
-    {"name": "UAE domestic workers",              "sub1": 85.0, "sub2": 87.0, "sub3": 89.0, "sub4": 80.0},  # critique
-    {"name": "Malaysia rubber gloves (Top Glove)","sub1": 83.0, "sub2": 86.0, "sub3": 84.0, "sub4": 85.0},  # critique
-    {"name": "Saudi kafala system",               "sub1": 86.0, "sub2": 90.0, "sub3": 92.0, "sub4": 78.0},  # critique
-    {"name": "Thailand seafood industry",         "sub1": 52.0, "sub2": 57.0, "sub3": 53.0, "sub4": 50.0},  # élevé
-    {"name": "Mexico agriculture",                "sub1": 50.0, "sub2": 54.0, "sub3": 51.0, "sub4": 55.0},  # élevé
-    {"name": "UK care sector",                    "sub1": 30.0, "sub2": 33.0, "sub3": 28.0, "sub4": 32.0},  # modéré
-    {"name": "International Justice Mission",     "sub1": 12.0, "sub2": 10.0, "sub3": 14.0, "sub4": 11.0},  # faible
+    {"name": "Intel",        "sub1": 83.0, "sub2": 90.0, "sub3": 85.0, "sub4": 87.0},  # critique
+    {"name": "Apple",        "sub1": 85.0, "sub2": 92.0, "sub3": 87.0, "sub4": 84.0},  # critique
+    {"name": "Microsoft",    "sub1": 80.0, "sub2": 88.0, "sub3": 83.0, "sub4": 85.0},  # critique
+    {"name": "Samsung",      "sub1": 84.0, "sub2": 91.0, "sub3": 86.0, "sub4": 82.0},  # critique
+    {"name": "Dell",         "sub1": 52.0, "sub2": 56.0, "sub3": 50.0, "sub4": 54.0},  # élevé
+    {"name": "HP",           "sub1": 50.0, "sub2": 54.0, "sub3": 52.0, "sub4": 56.0},  # élevé
+    {"name": "Fairphone",    "sub1": 28.0, "sub2": 34.0, "sub3": 32.0, "sub4": 30.0},  # modéré
+    {"name": "ITRI/iTSCi",  "sub1": 10.0, "sub2": 14.0, "sub3": 12.0, "sub4": 11.0},  # faible
 ]
 
 
@@ -49,6 +49,9 @@ def run_engine():
         })
     scores = [r["composite_score"] for r in results]
     avg = round(sum(scores) / len(scores), 2)
+    dist = {}
+    for r in results:
+        dist[r["level"]] = dist.get(r["level"], 0) + 1
     output = {
         "engine": f"{DOMAIN_CODE}_ENGINE",
         "version": "1.0.0",
