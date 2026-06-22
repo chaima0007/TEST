@@ -15201,6 +15201,27 @@ function IconMetaverseAdvertising({ size = 18 }: { size?: number }) {
     </svg>
   );
 }
+function IconIotAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3"/><path d="M6.3 6.3a8 8 0 0 0 0 11.4M17.7 6.3a8 8 0 0 1 0 11.4M3.5 3.5a12 12 0 0 0 0 17M20.5 3.5a12 12 0 0 1 0 17"/>
+    </svg>
+  );
+}
+function IconSmartcityAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+    </svg>
+  );
+}
+function IconDigitaltwinAdvertising({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="9" height="18" rx="1"/><rect x="13" y="3" width="9" height="18" rx="1"/><path d="M11 8h2M11 12h2M11 16h2"/>
+    </svg>
+  );
+}
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -18462,6 +18483,24 @@ const navSections: NavSection[] = [
         label: "Metaverse Advertising",
         href: "/dashboard/metaverse-advertising",
         icon: IconMetaverseAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "IoT Advertising",
+        href: "/dashboard/iot-advertising",
+        icon: IconIotAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Smart City Advertising",
+        href: "/dashboard/smartcity-advertising",
+        icon: IconSmartcityAdvertising,
+        category: "Publicité Visuelle",
+      },
+      {
+        label: "Digital Twin Advertising",
+        href: "/dashboard/digitaltwin-advertising",
+        icon: IconDigitaltwinAdvertising,
         category: "Publicité Visuelle",
       },
       {
