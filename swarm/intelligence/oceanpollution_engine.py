@@ -32,7 +32,10 @@ avg_composite = round(sum(r["composite_score"] for r in results) / len(results),
 estimated_oceanpollution_index = round(avg_composite / 100 * 10, 2)
 
 if __name__ == "__main__":
+    dist: dict[str, int] = {}
     for r in results:
+        dist[r["risk_level"]] = dist.get(r["risk_level"], 0) + 1
         print(f"{r['risk_level']:10} | {r['composite_score']:5.2f} | {r['name']}")
-    print(f"\navg_composite = {avg_composite}")
-    print(f"estimated_oceanpollution_index = {estimated_oceanpollution_index}")
+    print(f"avg_composite: {avg_composite}")
+    print(f"distribution: {dist}")
+    print(f"estimated_oceanpollution_index: {estimated_oceanpollution_index}")
