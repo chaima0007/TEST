@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
 if (!process.env.SWARM_API_URL) {
-  console.warn("[corporate-accountability-rights-engine] SWARM_API_URL is not set");
+  console.warn("[ethnic-cleansing-rights-engine] SWARM_API_URL is not set");
 }
 
 export async function GET() {
   try {
     const res = await fetch(
-      `${process.env.SWARM_API_URL}/corporate-accountability-rights-engine`,
+      `${process.env.SWARM_API_URL}/ethnic-cleansing-rights-engine`,
       { next: { revalidate: 30 } }
     );
     if (!res.ok) throw new Error(`Upstream error: ${res.status}`);
