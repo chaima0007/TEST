@@ -11206,6 +11206,30 @@ function IconLandMineVictimsRights({ className }: { className?: string }) {
   );
 }
 
+function IconStatelessAdultRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+    </svg>
+  );
+}
+
+function IconArmedGroupRecruitmentRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function IconRightToDevelopmentRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -12760,6 +12784,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/platform-workers-rights-engine", label: "Platform Workers Rights", icon: IconPlatformWorkersRights, color: "#1e40af" },
       { href: "/dashboard/right-to-water-rights-engine", label: "Right to Water Rights", icon: IconRightToWaterRights, color: "#0369a1" },
       { href: "/dashboard/land-mine-victims-rights-engine", label: "Land Mine Victims Rights", icon: IconLandMineVictimsRights, color: "#92400e" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 250",
+    items: [
+      { href: "/dashboard/stateless-adult-rights-engine", label: "Stateless Adult Rights", icon: IconStatelessAdultRights, color: "#374151" },
+      { href: "/dashboard/armed-group-recruitment-rights-engine", label: "Armed Group Recruitment Rights", icon: IconArmedGroupRecruitmentRights, color: "#7f1d1d" },
+      { href: "/dashboard/right-to-development-rights-engine", label: "Right to Development Rights", icon: IconRightToDevelopmentRights, color: "#065f46" },
     ],
   },
   {
