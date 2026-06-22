@@ -3997,6 +3997,14 @@ export const navSections: NavSection[] = [
     ],
   },
   {
+    title: "LABOR RIGHTS & SAFETY",
+    items: [
+      { href: "/dashboard/laborfreedom", label: "Labor Freedom", icon: Icons.IconLaborFreedom },
+      { href: "/dashboard/collectivebargaining", label: "Collective Bargaining", icon: Icons.IconCollectiveBargaining },
+      { href: "/dashboard/workersafety", label: "Worker Safety", icon: Icons.IconWorkerSafety },
+    ],
+  },
+  {
     title: "COMPTE",
     items: [
       { href: "/dashboard/settings", label: "Paramètres", icon: Icons.IconSettings },
