@@ -12844,6 +12844,42 @@ function IconSisalCultivationLaborRights({ size = 18, color = "#b45309" }: { siz
   );
 }
 
+function IconHempFiberProcessingLaborRights({ size = 18, color = "#15803d" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2c0 0-5 4-5 10s5 10 5 10 5-4 5-10S12 2 12 2z" />
+      <path d="M7 8h10" />
+      <path d="M7 12h10" />
+      <path d="M7 16h10" />
+    </svg>
+  );
+}
+
+function IconJuteMillWorkerRights({ size = 18, color = "#a16207" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="8" width="16" height="8" rx="4" />
+      <path d="M4 12h16" />
+      <path d="M8 8V6" />
+      <path d="M16 8V6" />
+      <path d="M6 16v2" />
+      <path d="M18 16v2" />
+    </svg>
+  );
+}
+
+function IconAbacaFiberChildLaborRights({ size = 18, color = "#0369a1" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2 Q6 6 6 12 Q6 18 12 22 Q18 18 18 12 Q18 6 12 2z" />
+      <path d="M12 2v20" />
+      <path d="M6 12 Q9 10 12 11 Q15 10 18 12" />
+      <path d="M7 7 Q10 9 12 8 Q14 9 17 7" />
+      <path d="M7 17 Q10 15 12 16 Q14 15 17 17" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -14838,6 +14874,14 @@ const navSections: NavSection[] = [
       { label: "Droits Travailleurs Saignée Caoutchouc", href: "/dashboard/rubber-tapping-forced-labor-rights", icon: IconRubberTappingForcedLaborRights, color: "#16a34a" },
       { label: "Droits Travailleurs Cultures Vanille", href: "/dashboard/vanilla-farming-labor-rights", icon: IconVanillaFarmingLaborRights, color: "#7c3aed" },
       { label: "Droits Travailleurs Sisal", href: "/dashboard/sisal-cultivation-labor-rights", icon: IconSisalCultivationLaborRights, color: "#b45309" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 305",
+    items: [
+      { label: "Droits Travailleurs Fibre Chanvre", href: "/dashboard/hemp-fiber-processing-labor-rights", icon: IconHempFiberProcessingLaborRights, color: "#15803d" },
+      { label: "Droits Travailleurs Filatures Jute", href: "/dashboard/jute-mill-worker-rights", icon: IconJuteMillWorkerRights, color: "#a16207" },
+      { label: "Droits Enfants Fibres Abaca", href: "/dashboard/abaca-fiber-child-labor-rights", icon: IconAbacaFiberChildLaborRights, color: "#0369a1" },
     ],
   },
   {
