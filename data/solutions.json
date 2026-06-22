@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total_problems": 2,
+  "total_problems": 3,
   "total_auto_fixed": 1,
   "sessions": [
     {
@@ -36,7 +36,21 @@
       "problems": [],
       "total_found": 0,
       "total_auto_fixed": 0
+    },
+    {
+      "timestamp": "2026-06-22T22:39:23.821008+00:00",
+      "problems": [
+        {
+          "id": "P001",
+          "name": "Fichiers non-commités (stop hook)",
+          "severity": "CRITIQUE",
+          "auto_fixed": false,
+          "data_summary": "{'files': ['data/urgent_alerts.json'], 'count': 1}"
+        }
+      ],
+      "total_found": 1,
+      "total_auto_fixed": 0
     }
   ],
-  "last_run": "2026-06-22T22:25:23.062533+00:00"
+  "last_run": "2026-06-22T22:39:23.821045+00:00"
 }
