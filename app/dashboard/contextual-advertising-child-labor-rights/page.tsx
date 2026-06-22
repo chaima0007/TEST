@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 
 const API_URL = "/api/contextual-advertising-child-labor-rights";
-const TITLE = "Droits Enfants Publicité Contextuelle";
-const COLOR = "#0891b2";
+const TITLE = "Publicité Contextuelle — Droits de l'Enfant";
+const COLOR = "#16a34a";
 
 type Entity = { entity: string; composite_score: number; risk_level: string };
 type ApiData = { entities: Entity[]; avg_composite: number; distribution: Record<string, number> };
