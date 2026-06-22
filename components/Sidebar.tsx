@@ -11468,6 +11468,30 @@ function IconLgbtqCriminalizationRights({ className }: { className?: string }) {
   );
 }
 
+function IconFemicideAccountabilityRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.25-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function IconStreetHarassmentRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0zM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+    </svg>
+  );
+}
+
+function IconReproductiveCoercionRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13110,6 +13134,14 @@ const navSections: NavSection[] = [
       { label: "SLAPP Suit Rights", href: "/dashboard/slapp-suit-rights-engine", icon: IconSlappSuitRights, color: "#f59e0b" },
       { label: "Conversion Therapy Rights", href: "/dashboard/conversion-therapy-rights-engine", icon: IconConversionTherapyRights, color: "#ec4899" },
       { label: "LGBTQ Criminalization Rights", href: "/dashboard/lgbtq-criminalization-rights-engine", icon: IconLgbtqCriminalizationRights, color: "#a855f7" },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 261",
+    items: [
+      { label: "Femicide Accountability Rights", href: "/dashboard/femicide-accountability-rights-engine", icon: IconFemicideAccountabilityRights, color: "#be123c" },
+      { label: "Street Harassment Rights", href: "/dashboard/street-harassment-rights-engine", icon: IconStreetHarassmentRights, color: "#ea580c" },
+      { label: "Reproductive Coercion Rights", href: "/dashboard/reproductive-coercion-rights-engine", icon: IconReproductiveCoercionRights, color: "#be185d" },
     ],
   },
   {
