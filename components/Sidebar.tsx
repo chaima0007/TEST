@@ -11766,6 +11766,28 @@ function IconLithiumMiningRights() {
   );
 }
 
+function IconNuclearWasteRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#854d0e" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="2" />
+      <path d="M12 2a10 10 0 0 1 8.66 5" />
+      <path d="M12 2a10 10 0 0 0-8.66 5" />
+      <path d="M12 22v-4" />
+    </svg>
+  );
+}
+
+function IconMigrantDomesticWorkerRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#0e7490" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+      <path d="M20 4l-8 4-8-4" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13504,6 +13526,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/supply-chain-transparency-rights", label: "Transparence des Chaînes", icon: IconSupplyChainTransparencyRights },
       { href: "/dashboard/heat-stress-labor-rights", label: "Stress Thermique au Travail", icon: IconHeatStressLaborRights },
       { href: "/dashboard/lithium-mining-rights", label: "Mines de Lithium", icon: IconLithiumMiningRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 273",
+    items: [
+      { href: "/dashboard/nuclear-waste-rights", label: "Déchets Nucléaires", icon: IconNuclearWasteRights },
+      { href: "/dashboard/migrant-domestic-worker-rights", label: "Travailleurs Domestiques Migrants", icon: IconMigrantDomesticWorkerRights },
+      { href: "/dashboard/informal-economy-rights", label: "Économie Informelle", icon: IconInformalEconomyRights },
     ],
   },
   {
