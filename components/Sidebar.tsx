@@ -11595,6 +11595,31 @@ function IconToxicWasteDumpingRights() {
   );
 }
 
+function IconBiopiacyRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  );
+}
+
+function IconConflictMineralRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  );
+}
+
+function IconForcedRelocationRights() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  );
+}
+
 const navSections: NavSection[] = [
   {
     title: "ANALYSE",
@@ -13277,6 +13302,14 @@ const navSections: NavSection[] = [
       { href: "/dashboard/food-desert-rights", label: "Déserts Alimentaires", icon: IconFoodDesertRights },
       { href: "/dashboard/ocean-rights", label: "Droits Océaniques", icon: IconOceanRights },
       { href: "/dashboard/toxic-waste-dumping-rights", label: "Déchets Toxiques", icon: IconToxicWasteDumpingRights },
+    ],
+  },
+  {
+    title: "DROITS — WAVE 266",
+    items: [
+      { href: "/dashboard/biopiracy-rights", label: "Biopiraterie", icon: IconBiopiacyRights },
+      { href: "/dashboard/conflict-mineral-rights", label: "Minérais de Conflit", icon: IconConflictMineralRights },
+      { href: "/dashboard/forced-relocation-rights", label: "Déplacements Forcés", icon: IconForcedRelocationRights },
     ],
   },
   {
