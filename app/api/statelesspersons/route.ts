@@ -1,20 +1,17 @@
 import { NextResponse } from "next/server";
 import { sealResponse } from "@/lib/digital-seal";
 
-if (!process.env.SWARM_API_URL) {
-  console.warn("[statelesspersons] SWARM_API_URL is not defined");
-}
+const SWARM_API_URL = process.env.SWARM_API_URL;
+if (!SWARM_API_URL) console.warn("[statelesspersons] SWARM_API_URL is not set");
 
 export async function GET() {
   try {
-    const res = await fetch(`${process.env.SWARM_API_URL}/statelesspersons`, {
-      next: { revalidate: 30 },
-    });
-    const d = await res.json();
-    return await sealResponse(NextResponse.json(d.payload ?? d));
+    if (!SWARM_API_URL) throw new Error("SWARM_API_URL not configured");
+    const res = await fetch(`${SWARM_API_URL}/statelesspersons`, { next: { revalidate: 30 } });
+    if (!res.ok) throw new Error(`Upstream error: ${res.status}`);
+    const data = await res.json();
+    return sealResponse(NextResponse.json(data.payload ?? data));
   } catch {
-    return await sealResponse(
-      NextResponse.json({ error: "Stateless Persons service unavailable" }, { status: 502 })
-    );
+    return sealResponse(NextResponse.json({ error: "Service unavailable" }, { status: 502 }));
   }
 }
