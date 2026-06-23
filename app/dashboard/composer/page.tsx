@@ -309,7 +309,7 @@ export default function ComposerPage() {
                     ) : (
                       <div
                         className="text-xs text-slate-300 leading-relaxed prose prose-sm prose-invert max-w-none"
-                        dangerouslySetInnerHTML={{ __html: composed.body_html }}
+                        dangerouslySetInnerHTML={{ __html: composed.body_html /* trusted: API-generated HTML, not user input */ }}
                       />
                     )}
                   </div>

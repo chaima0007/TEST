@@ -205,7 +205,13 @@ Je peux analyser vos risques droits humains, vous expliquer vos obligations lég
   }
 
   const formatContent = (content: string) => {
-    return content
+    const escaped = content
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#x27;");
+    return escaped
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       .replace(/\n/g, "<br/>")
       .replace(/•/g, "•")
