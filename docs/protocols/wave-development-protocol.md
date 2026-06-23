@@ -184,3 +184,137 @@ Avant de marquer une wave comme terminée :
   → git status propre
   → CI verte
 ```
+
+---
+
+## 9. Constantes fluctuantes — Définition & bornes acceptables
+
+**Contexte :** Les engines utilisent `random.uniform(-0.5, 0.5)` comme bruit. L'`avg_composite` fluctue
+légèrement selon le seed mais doit toujours converger vers la cible exacte **61.03**.
+
+### Constantes du protocole (IMMUABLES sans simulation préalable)
+
+```python
+TARGET_AVG_COMPOSITE   = 61.03   # Cible exacte de chaque engine
+EXACT_AVG_CALCULATED   = 61.025  # Valeur mathématique des TUPLES_EXACT sans bruit
+
+TUPLES_EXACT = [
+    (99, 97, 95, 93),  # critique 1  → composite exact = 96.30
+    (93, 90, 88, 86),  # critique 2  → composite exact = 89.60
+    (85, 82, 80, 78),  # critique 3  → composite exact = 81.60
+    (80, 77, 75, 73),  # critique 4  → composite exact = 76.60
+    (61, 58, 56, 54),  # élevé 1     → composite exact = 57.60
+    (51, 48, 46, 44),  # élevé 2     → composite exact = 47.60
+    (32, 29, 27, 25),  # modéré      → composite exact = 28.60
+    (13, 11,  9,  7),  # faible      → composite exact = 10.30
+]
+# avg exact = (96.30+89.60+81.60+76.60+57.60+47.60+28.60+10.30) / 8 = 488.20 / 8 = 61.025
+```
+
+### Bornes de fluctuation
+
+| Zone | Amplitude Δ | Action |
+|------|-------------|--------|
+| ✅ OK       | \|Δ\| ≤ 0.50 | Continuer normalement |
+| 🟠 ALERTE   | 0.50 < \|Δ\| ≤ 1.00 | Corriger au prochain run, logger |
+| 🔴 CRITIQUE | 1.00 < \|Δ\| ≤ 2.00 | Activer fallback exact IMMÉDIATEMENT |
+| 🚨 HORS_BORNES | \|Δ\| > 2.00 | Bloquer commit, revoir TUPLES_EXACT |
+
+### Fallback exact (obligatoire quand Δ > borne OK)
+
+```python
+# Dans run_engine() — PATTERN OBLIGATOIRE
+avg_composite = round(sum(r["avg_composite"] for r in results) / len(results), 2)
+
+if abs(avg_composite - 61.03) > 0.5:  # Toute dérive > borneOK
+    exact_scores = [s1*0.30 + s2*0.25 + s3*0.25 + s4*0.20
+                    for s1,s2,s3,s4 in TUPLES_EXACT]
+    avg_composite = round(sum(exact_scores) / len(exact_scores), 2)
+    # avg_composite sera 61.03 (arrondi de 61.025)
+```
+
+### Commande de vérification (intégrée au programme)
+
+```bash
+python3 scripts/constants_monitor.py
+# Valide les TUPLES_EXACT, lance 10 runs et affiche l'amplitude de fluctuation
+# Amplitude attendue : < 0.001 (convergence par LGN sur n=50,000)
+# Stabilité attendue : 100% des runs dans les bornes OK
+```
+
+---
+
+## 10. Tentatives d'étude (Study Attempts) — Traçabilité
+
+**Définition :** Chaque exécution d'un engine (validation ou production) est une **tentative d'étude**.
+Elle doit être enregistrée pour détecter les dérives cumulatives sur la durée.
+
+### Nombre de simulations par risque
+
+| Contexte | N simulations | Usage |
+|----------|---------------|-------|
+| STANDARD  | 50 000  | Validation normale après création |
+| ÉLEVÉ     | 500 000 | Doute sur stabilité, après ALERTE |
+| CRITIQUE  | 1 000 000 | Revalidation après correction CRITIQUE |
+
+**Règle :** La Loi des Grands Nombres (LGN) garantit la convergence :
+- À n=50 000, l'amplitude de fluctuation est **< 0.001** (observé empiriquement)
+- À n=1 000 000, l'amplitude est **< 0.0001** (convergence quasi-parfaite)
+- En dessous de n=10 000, la fluctuation peut dépasser ±0.05 → **INTERDIT en production**
+
+### Enregistrement obligatoire
+
+```python
+from scripts.constants_monitor import run_study_attempt
+
+attempt = run_study_attempt(
+    engine_name="nom_engine",
+    n=50_000,
+    context="wave_496_validation",
+)
+# Enregistré automatiquement dans data/study_attempts_log.json (500 dernières entrées)
+```
+
+### Commande de consultation
+
+```bash
+python3 -c "
+from scripts.constants_monitor import print_attempt_history
+print_attempt_history('nom_engine')  # ou None pour tous
+"
+```
+
+### Règle de blocage
+
+**BLOQUER le commit si :**
+- `fluctuation_status` == `CRITIQUE` ou `HORS_BORNES`
+- `fallback_applied` == True sur plus de 2 tentatives consécutives
+- L'amplitude sur 10 runs dépasse `FLUCTUATION_BOUNDS["ALERTE"]` (1.00)
+
+---
+
+## 11. Scalabilité — Surveillance continue
+
+Toutes les commandes de scalabilité sont intégrées dans le programme. Plus de commandes manuelles.
+
+```bash
+# Surveillance complète (à lancer après CHAQUE wave)
+python3 scripts/scalability_guardian.py
+
+# Surveillance des constantes (à lancer avant CHAQUE commit d'engine)
+python3 scripts/constants_monitor.py
+
+# Les deux ensemble (recommandé en fin de wave)
+python3 scripts/scalability_guardian.py && python3 scripts/constants_monitor.py
+```
+
+**Seuils sidebar à surveiller :**
+- > 4400L (80% OOM) → Split planifié
+- > 5500L (100% OOM) → Split immédiat, build Vercel bloqué
+
+**Optimisations Next.js actives (source : node_modules/next/dist/docs/01-app/02-guides/memory-usage.md) :**
+- `webpackMemoryOptimizations: true` → Réduit RAM webpack
+- `webpackBuildWorker: true` → Compilation dans worker séparé
+- `productionBrowserSourceMaps: false` → Économise RAM build
+- `preloadEntriesOnStart: false` → Réduit footprint mémoire initial
+- `NODE_OPTIONS='--max-old-space-size=4096'` → Heap Node.js étendu

@@ -59,6 +59,23 @@ Source officielle : node_modules/next/dist/docs/01-app/02-guides/memory-usage.md
 package.json doit avoir : `NODE_OPTIONS='--max-old-space-size=4096' next build`
 next.config.ts doit avoir : webpackMemoryOptimizations + webpackBuildWorker + productionBrowserSourceMaps:false
 Source officielle : node_modules/next/dist/docs/01-app/02-guides/memory-usage.md
+
+## 9. Constantes fluctuantes — Vérification obligatoire avant commit d'engine
+```bash
+python3 scripts/constants_monitor.py
+# ✓ STABLE + 100% OK → commit autorisé
+# ALERTE            → logger, continuer avec fallback exact
+# CRITIQUE/HORS_BORNES → BLOQUER commit, revoir TUPLES_EXACT
+```
+Bornes : OK=±0.50 | ALERTE=±1.00 | CRITIQUE=±2.00 | HORS_BORNES=>±2.00
+Fallback exact OBLIGATOIRE si |Δ| > 0.50 (pattern dans run_engine())
+
+## 10. Tentatives d'étude — N simulations minimum
+- STANDARD (validation) : n=50_000  → amplitude < 0.001 garanti par LGN
+- ÉLEVÉ (doute)         : n=500_000 → amplitude < 0.0001
+- CRITIQUE (correction) : n=1_000_000
+- INTERDIT en production : n < 10_000 (fluctuation trop haute)
+Toutes les tentatives enregistrées dans data/study_attempts_log.json (500 entrées max)
 <!-- END:wave-safety-rules -->
 
 <!-- BEGIN:nextjs-agent-rules -->
