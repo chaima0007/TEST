@@ -5062,3 +5062,34 @@ export function IconInvisibleLaborCare({ className }: { className?: string }) {
     </svg>
   );
 }
+export function IconPredictivePolicingPrecrime({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="6" r="3" />
+      <path d="M5 9.5L2 14M11 9.5l3 4.5" />
+      <path d="M4 6h1M11 6h1M8 3v1" />
+      <path d="M6 6.5l1.5 1L10 5" />
+    </svg>
+  );
+}
+export function IconCashBailPretrial({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="3" y="4" width="10" height="8" rx="1" />
+      <path d="M8 6v4M6 8h4" />
+      <path d="M5 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+      <path d="M6 12l-2 2M10 12l2 2" />
+    </svg>
+  );
+}
+export function IconSchoolToPrisonPipeline({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="5" width="5" height="4" rx="0.5" />
+      <rect x="9" y="5" width="5" height="4" rx="0.5" />
+      <path d="M7 7h2" />
+      <path d="M4 9l-1 4M12 9l1 4" />
+      <path d="M4.5 3L8 1.5 11.5 3" />
+    </svg>
+  );
+}

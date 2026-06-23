@@ -4098,4 +4098,12 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/invisible-labor-care", label: "Invisible Labor & Care", icon: Icons.IconInvisibleLaborCare },
     ],
   },
+  {
+    title: "CRIMINAL JUSTICE REFORM",
+    items: [
+      { href: "/dashboard/predictive-policing-precrime", label: "Predictive Policing", icon: Icons.IconPredictivePolicingPrecrime },
+      { href: "/dashboard/cash-bail-pretrial", label: "Cash Bail Reform", icon: Icons.IconCashBailPretrial },
+      { href: "/dashboard/school-to-prison-pipeline", label: "School-to-Prison Pipeline", icon: Icons.IconSchoolToPrisonPipeline },
+    ],
+  },
 ];
