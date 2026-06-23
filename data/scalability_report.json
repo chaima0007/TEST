@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-23T00:56:51.469010",
+  "timestamp": "2026-06-23T01:36:17.430402",
   "sidebar_icons": {
     "sidebar-icons-1.tsx": {
       "lines": 2126,
@@ -32,9 +32,9 @@
       "status": "OK"
     },
     "sidebar-icons-5.tsx": {
-      "lines": 1639,
-      "icons": 203,
-      "pct_oom": 29.8,
+      "lines": 1703,
+      "icons": 209,
+      "pct_oom": 31.0,
       "status": "OK"
     },
     "sidebar-icons.tsx": {
@@ -45,8 +45,8 @@
     }
   },
   "sidebar_nav": {
-    "lines": 4117,
-    "pct_lag": 137.2,
+    "lines": 4157,
+    "pct_lag": 138.6,
     "status": "ALERTE"
   },
   "data_files": {
@@ -57,35 +57,45 @@
     }
   },
   "engines": {
-    "count": 1787,
+    "count": 1790,
     "size_mb": 13.4,
-    "pct_max": 59.6,
+    "pct_max": 59.7,
     "status": "OK"
   },
   "api_routes": {
-    "count": 192,
-    "pct_max": 54.9,
+    "count": 198,
+    "pct_max": 56.6,
     "status": "OK"
   },
   "dashboards": {
-    "count": 283,
-    "pct_max": 70.8,
+    "count": 289,
+    "pct_max": 72.2,
     "status": "OK"
   },
   "duplicate_icons": {
-    "total_icons": 1846,
-    "duplicates": [],
-    "status": "OK"
+    "total_icons": 1852,
+    "duplicates": [
+      {
+        "icon": "IconSovereignDebt",
+        "files": [
+          "sidebar-icons-1b.tsx",
+          "sidebar-icons-5.tsx"
+        ]
+      }
+    ],
+    "status": "CRITIQUE"
   },
   "next_config": {
     "checks": {
       "productionBrowserSourceMaps: false": true,
       "webpackMemoryOptimizations: true": true,
       "webpackBuildWorker: true": true,
-      "preloadEntriesOnStart: false": true
+      "preloadEntriesOnStart: false": false
     },
-    "missing": [],
-    "status": "OK"
+    "missing": [
+      "preloadEntriesOnStart: false"
+    ],
+    "status": "ALERTE"
   },
   "package_json": {
     "build_cmd": "NODE_OPTIONS='--max-old-space-size=4096' next build",
@@ -93,9 +103,9 @@
     "status": "OK"
   },
   "summary": {
-    "global_status": "ALERTE",
-    "critique_count": 0,
-    "alerte_count": 1,
-    "ok_count": 14
+    "global_status": "CRITIQUE",
+    "critique_count": 1,
+    "alerte_count": 2,
+    "ok_count": 12
   }
 }
