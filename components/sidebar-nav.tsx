@@ -4106,4 +4106,12 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/school-to-prison-pipeline", label: "School-to-Prison Pipeline", icon: Icons.IconSchoolToPrisonPipeline },
     ],
   },
+  {
+    title: "JUSTICE SOCIALE & SANTÉ",
+    items: [
+      { href: "/dashboard/pharmaceutical-access", label: "Accès Médicaments", icon: Icons.IconPharmaceuticalAccess },
+      { href: "/dashboard/carceral-capitalism", label: "Capitalisme Carcéral", icon: Icons.IconCarceralCapitalism },
+      { href: "/dashboard/immigration-detention", label: "Détention Migrants", icon: Icons.IconImmigrationDetention },
+    ],
+  },
 ];
