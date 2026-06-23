@@ -1,0 +1,500 @@
+[
+  {
+    "seal_id": "SEAL-27A02225290B47FB",
+    "timestamp": "2026-06-23T01:08:13.660688+00:00",
+    "action": "wave-498",
+    "context": "Lancement 3 nouveaux domaines droits humains",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.8353,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.624,
+          "SÉCURITÉ": 85.94,
+          "SCALABILITÉ": 81.24,
+          "RÉVERSIBILITÉ": 74.95
+        },
+        "composite": 83.9722,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.793,
+          "SÉCURITÉ": 82.344,
+          "SCALABILITÉ": 78.282,
+          "RÉVERSIBILITÉ": 70.959
+        },
+        "composite": 79.7862,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.703,
+          "SÉCURITÉ": 80.56,
+          "SCALABILITÉ": 75.28,
+          "RÉVERSIBILITÉ": 69.047
+        },
+        "composite": 77.5803,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.315,
+          "SÉCURITÉ": 78.841,
+          "SCALABILITÉ": 74.256,
+          "RÉVERSIBILITÉ": 68.058
+        },
+        "composite": 75.9804,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.359,
+          "SÉCURITÉ": 72.172,
+          "SCALABILITÉ": 69.478,
+          "RÉVERSIBILITÉ": 64.867
+        },
+        "composite": 71.8936,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.8986,
+      "robustness_pct": 100.0,
+      "min_score": 75.0183,
+      "max_score": 81.6916
+    }
+  },
+  {
+    "seal_id": "SEAL-9F877BD9D4F3D6DB",
+    "timestamp": "2026-06-23T01:08:13.681550+00:00",
+    "action": "engine-validation",
+    "context": "Engine avg=61.03 validé par python3",
+    "category": "engine",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.5514,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 86.388,
+          "SÉCURITÉ": 85.023,
+          "SCALABILITÉ": 82.755,
+          "RÉVERSIBILITÉ": 72.746
+        },
+        "composite": 82.4101,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.736,
+          "SÉCURITÉ": 81.671,
+          "SCALABILITÉ": 77.822,
+          "RÉVERSIBILITÉ": 71.617
+        },
+        "composite": 79.6175,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.086,
+          "SÉCURITÉ": 79.859,
+          "SCALABILITÉ": 75.126,
+          "RÉVERSIBILITÉ": 66.102
+        },
+        "composite": 76.5924,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.692,
+          "SÉCURITÉ": 79.43,
+          "SCALABILITÉ": 73.813,
+          "RÉVERSIBILITÉ": 66.776
+        },
+        "composite": 76.1735,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.481,
+          "SÉCURITÉ": 75.717,
+          "SCALABILITÉ": 72.273,
+          "RÉVERSIBILITÉ": 62.11
+        },
+        "composite": 72.3638,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.8303,
+      "robustness_pct": 100.0,
+      "min_score": 74.814,
+      "max_score": 81.0338
+    }
+  },
+  {
+    "seal_id": "SEAL-91EA583AE46E1ED3",
+    "timestamp": "2026-06-23T01:08:13.698512+00:00",
+    "action": "commit-sidebar",
+    "context": "Ajout icônes wave-498 sans doublons",
+    "category": "sidebar",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9246,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 87.788,
+          "SÉCURITÉ": 85.214,
+          "SCALABILITÉ": 81.139,
+          "RÉVERSIBILITÉ": 78.079
+        },
+        "composite": 83.5404,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.342,
+          "SÉCURITÉ": 83.849,
+          "SCALABILITÉ": 81.482,
+          "RÉVERSIBILITÉ": 75.769
+        },
+        "composite": 81.7891,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.068,
+          "SÉCURITÉ": 76.507,
+          "SCALABILITÉ": 78.785,
+          "RÉVERSIBILITÉ": 70.284
+        },
+        "composite": 77.8002,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 78.13,
+          "SÉCURITÉ": 78.761,
+          "SCALABILITÉ": 73.66,
+          "RÉVERSIBILITÉ": 69.083
+        },
+        "composite": 75.3608,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.408,
+          "SÉCURITÉ": 74.245,
+          "SCALABILITÉ": 75.503,
+          "RÉVERSIBILITÉ": 64.951
+        },
+        "composite": 73.6496,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.5802,
+      "robustness_pct": 100.0,
+      "min_score": 74.8979,
+      "max_score": 80.0794
+    }
+  },
+  {
+    "seal_id": "SEAL-71185465EEFFF15B",
+    "timestamp": "2026-06-23T01:08:13.715268+00:00",
+    "action": "build-fix",
+    "context": "Correction erreur TypeScript dans page.tsx",
+    "category": "build",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.4442,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 86.555,
+          "SÉCURITÉ": 85.223,
+          "SCALABILITÉ": 81.994,
+          "RÉVERSIBILITÉ": 76.061
+        },
+        "composite": 82.9829,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.889,
+          "SÉCURITÉ": 83.715,
+          "SCALABILITÉ": 78.936,
+          "RÉVERSIBILITÉ": 69.794
+        },
+        "composite": 80.6882,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 85.236,
+          "SÉCURITÉ": 81.891,
+          "SCALABILITÉ": 78.825,
+          "RÉVERSIBILITÉ": 70.996
+        },
+        "composite": 79.949,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 79.862,
+          "SÉCURITÉ": 81.45,
+          "SCALABILITÉ": 73.767,
+          "RÉVERSIBILITÉ": 66.677
+        },
+        "composite": 76.0983,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.021,
+          "SÉCURITÉ": 75.356,
+          "SCALABILITÉ": 69.074,
+          "RÉVERSIBILITÉ": 62.086
+        },
+        "composite": 71.631,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0901,
+      "robustness_pct": 100.0,
+      "min_score": 74.2912,
+      "max_score": 82.5332
+    }
+  },
+  {
+    "seal_id": "SEAL-C94C626973103D1F",
+    "timestamp": "2026-06-23T01:08:13.731981+00:00",
+    "action": "split-sidebar",
+    "context": "sidebar-icons-5.tsx dépasse 5500L → split nécessaire",
+    "category": "sidebar",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0528,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.123,
+          "SÉCURITÉ": 84.924,
+          "SCALABILITÉ": 84.433,
+          "RÉVERSIBILITÉ": 75.015
+        },
+        "composite": 84.3791,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.717,
+          "SÉCURITÉ": 82.481,
+          "SCALABILITÉ": 81.722,
+          "RÉVERSIBILITÉ": 70.742
+        },
+        "composite": 80.6142,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.167,
+          "SÉCURITÉ": 82.642,
+          "SCALABILITÉ": 75.711,
+          "RÉVERSIBILITÉ": 68.647
+        },
+        "composite": 78.2677,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 82.934,
+          "SÉCURITÉ": 78.081,
+          "SCALABILITÉ": 78.177,
+          "RÉVERSIBILITÉ": 63.856
+        },
+        "composite": 76.7159,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 75.54,
+          "SÉCURITÉ": 74.007,
+          "SCALABILITÉ": 71.799,
+          "RÉVERSIBILITÉ": 63.141
+        },
+        "composite": 71.7417,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.7203,
+      "robustness_pct": 100.0,
+      "min_score": 73.731,
+      "max_score": 80.85
+    }
+  },
+  {
+    "seal_id": "SEAL-B979690C125D01C0",
+    "timestamp": "2026-06-23T01:09:22.693263+00:00",
+    "action": "wave-498",
+    "context": "3 nouveaux domaines droits humains: dette souveraine, surveillance génétique, travail domestique",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.8059,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.331,
+          "SÉCURITÉ": 85.549,
+          "SCALABILITÉ": 79.082,
+          "RÉVERSIBILITÉ": 74.836
+        },
+        "composite": 83.2242,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 83.641,
+          "SÉCURITÉ": 82.474,
+          "SCALABILITÉ": 77.512,
+          "RÉVERSIBILITÉ": 71.959
+        },
+        "composite": 79.4806,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 84.274,
+          "SÉCURITÉ": 80.982,
+          "SCALABILITÉ": 75.334,
+          "RÉVERSIBILITÉ": 66.643
+        },
+        "composite": 77.6898,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 83.798,
+          "SÉCURITÉ": 78.896,
+          "SCALABILITÉ": 70.143,
+          "RÉVERSIBILITÉ": 67.86
+        },
+        "composite": 75.9711,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 81.677,
+          "SÉCURITÉ": 73.716,
+          "SCALABILITÉ": 70.48,
+          "RÉVERSIBILITÉ": 61.86
+        },
+        "composite": 72.9241,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.8308,
+      "robustness_pct": 100.0,
+      "min_score": 74.4549,
+      "max_score": 80.5005
+    }
+  }
+]

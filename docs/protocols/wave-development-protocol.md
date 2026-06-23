@@ -318,3 +318,86 @@ python3 scripts/scalability_guardian.py && python3 scripts/constants_monitor.py
 - `productionBrowserSourceMaps: false` → Économise RAM build
 - `preloadEntriesOnStart: false` → Réduit footprint mémoire initial
 - `NODE_OPTIONS='--max-old-space-size=4096'` → Heap Node.js étendu
+
+---
+
+## 12. Simulation Multi-Perspectives (§12)
+
+Chaque valeur critique est évaluée depuis **5 points de vue** (biais optimiste → pessimiste) avec consensus pondéré.
+
+```python
+PERSPECTIVES = [
+    {"id": "OPTIMISTE",   "bias": +1.5, "weight": 0.10},
+    {"id": "LÉGÈRE_PLUS", "bias": +0.5, "weight": 0.20},
+    {"id": "NEUTRE",      "bias":  0.0, "weight": 0.40},
+    {"id": "LÉGÈRE_MOINS","bias": -0.5, "weight": 0.20},
+    {"id": "PESSIMISTE",  "bias": -1.5, "weight": 0.10},
+]
+consensus = Σ(avg_pov × weight_pov)
+```
+
+Commande : `python3 scripts/multi_perspective_simulator.py --engine <nom>`
+Seuils : OK si consensus dans [60.53; 61.53], ALERTE sinon.
+
+---
+
+## 13. Simulation Multivers (§13)
+
+**100 univers parallèles** avec paramètres légèrement perturbés (biais gaussien, amplitude variable).
+
+- Médiane des univers stables = valeur de référence
+- Robustesse = % univers dont composite reste dans ±5.0 de la médiane
+- Seuil OK : robustesse ≥ 80%
+- consensus_final = (consensus_POV + médiane_multivers) / 2
+
+Commande : `python3 scripts/multi_perspective_simulator.py --engine <nom> --multiverse`
+
+---
+
+## 14. Sceau de Protocole (§14) — OBLIGATOIRE avant toute décision
+
+Chaque décision importante (wave, build, sidebar-split, protocol-change) **DOIT** être scellée avant exécution.
+
+### Niveaux de risque :
+| Catégorie  | Risque    | Simulation | Score min |
+|------------|-----------|------------|-----------|
+| build      | CRITIQUE  | Oui        | 60.0      |
+| protocol   | CRITIQUE  | Oui        | 60.0      |
+| sidebar    | ÉLEVÉ     | Oui        | 58.0      |
+| split      | ÉLEVÉ     | Oui        | 58.0      |
+| route      | ÉLEVÉ     | Non        | 55.0      |
+| wave       | MOYEN     | Oui        | 60.0      |
+| engine     | MOYEN     | Oui        | 60.0      |
+| commit     | FAIBLE    | Non        | 50.0      |
+| data       | FAIBLE    | Non        | 50.0      |
+
+### Commandes :
+```bash
+# Sceller une décision (interactive)
+python3 scripts/decision_seal.py --action "wave-498" --context "3 nouveaux domaines"
+
+# Sceller + orchestrer en une commande
+python3 scripts/wave_orchestrator.py --wave 498 --full --seal
+
+# Vérifier un sceau
+python3 scripts/decision_seal.py --verify SEAL-XXXXXXXXXXXXXXXX
+
+# Rapport des 10 derniers sceaux
+python3 scripts/decision_seal.py --report
+```
+
+### Structure du sceau :
+```json
+{
+  "seal_id":         "SEAL-27A02225290B47FB",
+  "timestamp":       "2026-06-23T...",
+  "action":          "wave-498",
+  "status":          "APPROUVÉ",
+  "final_consensus": 77.8353,
+  "robustness_pct":  100.0,
+  "protocol_score":  75.0
+}
+```
+
+**Règle absolue** : Toute décision CRITIQUE ou ÉLEVÉE sans sceau APPROUVÉ = BLOQUÉE.
+Les sceaux sont enregistrés dans `data/decision_seals_log.json` (500 max, FIFO).

@@ -337,9 +337,25 @@ if __name__ == "__main__":
     parser.add_argument("--check", action="store_true", help="Pré-checks seulement")
     parser.add_argument("--post",  action="store_true", help="Post-checks seulement")
     parser.add_argument("--full",  action="store_true", help="Pré + post checks")
+    parser.add_argument("--seal",  action="store_true", help="Générer un sceau de protocole avant d'exécuter")
     args = parser.parse_args()
 
     wave = args.wave or 0
+
+    # Sceau de protocole optionnel avant exécution
+    if args.seal:
+        try:
+            sys.path.insert(0, str(ROOT / "scripts"))
+            from decision_seal import seal_decision
+            action = f"wave-{wave}" if wave else "orchestrator-run"
+            context = f"wave_orchestrator --wave {wave} " + ("--check" if args.check else "--post" if args.post else "--full")
+            rec = seal_decision(action, context, verbose=True)
+            print(f"\n  🔏 Sceau approuvé : {rec['seal_id']}")
+        except ValueError as e:
+            print(f"\n  ❌ {e}")
+            sys.exit(1)
+        except ImportError:
+            print("  ⚠ decision_seal.py introuvable — sceau ignoré")
 
     if args.check or args.full:
         results = run_pre_checks(wave)

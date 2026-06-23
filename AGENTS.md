@@ -76,6 +76,22 @@ Fallback exact OBLIGATOIRE si |Δ| > 0.50 (pattern dans run_engine())
 - CRITIQUE (correction) : n=1_000_000
 - INTERDIT en production : n < 10_000 (fluctuation trop haute)
 Toutes les tentatives enregistrées dans data/study_attempts_log.json (500 entrées max)
+
+## 11. Sceau de Protocole — OBLIGATOIRE avant décision CRITIQUE/ÉLEVÉE
+```bash
+# Avant chaque wave, build-fix, sidebar-split, protocol-change :
+python3 scripts/decision_seal.py --action "<type-decision>" --context "<raison>"
+# OU en combiné avec orchestrator :
+python3 scripts/wave_orchestrator.py --wave N --full --seal
+
+# Vérifier un sceau existant :
+python3 scripts/decision_seal.py --verify SEAL-XXXXXXXXXXXXXXXX
+
+# Rapport des derniers sceaux :
+python3 scripts/decision_seal.py --report
+```
+Règle absolue : Toute décision de risque CRITIQUE ou ÉLEVÉ sans sceau APPROUVÉ = BLOQUÉE.
+Sceaux enregistrés dans data/decision_seals_log.json (500 max, FIFO).
 <!-- END:wave-safety-rules -->
 
 <!-- BEGIN:nextjs-agent-rules -->
