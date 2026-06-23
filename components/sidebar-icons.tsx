@@ -5,6 +5,7 @@
 // TypeScript/Turbopack OOM during Vercel builds.
 
 export * from "./sidebar-icons-1";
+export * from "./sidebar-icons-1b";
 export * from "./sidebar-icons-2";
 export * from "./sidebar-icons-3";
 export * from "./sidebar-icons-4";

@@ -34,6 +34,31 @@ Always `git pull` immediately before editing Sidebar.tsx.
 
 ## 5. Commit immediately after each file group is done
 Do NOT batch everything at the end. Commit engines → commit routes → commit sidebar → commit dashboards.
+
+## 6. Scalability Guardian — run after EVERY wave (intégré au programme)
+```bash
+python3 scripts/scalability_guardian.py
+# CRITIQUE → bloquer le commit, corriger immédiatement
+# ALERTE   → planifier split avant la wave suivante
+# OK       → continuer
+```
+Rapport sauvegardé automatiquement dans data/scalability_report.json
+
+## 7. Sidebar icons — split automatique si ALERTE
+Si un fichier sidebar-icons-N.tsx dépasse 4400L (80% OOM Vercel) :
+```bash
+# Le guardian détecte et recommande le split
+# Créer sidebar-icons-Nb.tsx + mettre à jour sidebar-icons.tsx barrel
+# Vérifier 0 doublon entre TOUS les fichiers après split
+grep -h "^export function Icon" components/sidebar-icons-*.tsx | sort | uniq -d
+# Doit retourner VIDE
+```
+Source officielle : node_modules/next/dist/docs/01-app/02-guides/memory-usage.md
+
+## 8. Build memory — NODE_OPTIONS obligatoire
+package.json doit avoir : `NODE_OPTIONS='--max-old-space-size=4096' next build`
+next.config.ts doit avoir : webpackMemoryOptimizations + webpackBuildWorker + productionBrowserSourceMaps:false
+Source officielle : node_modules/next/dist/docs/01-app/02-guides/memory-usage.md
 <!-- END:wave-safety-rules -->
 
 <!-- BEGIN:nextjs-agent-rules -->
