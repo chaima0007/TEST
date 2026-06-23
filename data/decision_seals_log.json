@@ -1741,5 +1741,254 @@
       "min_score": 75.927,
       "max_score": 83.1835
     }
+  },
+  {
+    "seal_id": "SEAL-AA45606F92E67B6D",
+    "timestamp": "2026-06-23T02:56:56.384582+00:00",
+    "action": "route-wave-500",
+    "context": "3 routes API : migrantremittances, statelesspersons, prisonlabor",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.8561,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.167,
+          "SÉCURITÉ": 89.53,
+          "SCALABILITÉ": 82.026,
+          "RÉVERSIBILITÉ": 72.941
+        },
+        "composite": 84.5273,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.574,
+          "SÉCURITÉ": 82.88,
+          "SCALABILITÉ": 81.05,
+          "RÉVERSIBILITÉ": 73.341
+        },
+        "composite": 81.6229,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 84.002,
+          "SÉCURITÉ": 82.758,
+          "SCALABILITÉ": 79.005,
+          "RÉVERSIBILITÉ": 71.686
+        },
+        "composite": 79.9785,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 82.623,
+          "SÉCURITÉ": 79.024,
+          "SCALABILITÉ": 76.352,
+          "RÉVERSIBILITÉ": 66.603
+        },
+        "composite": 76.9515,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.157,
+          "SÉCURITÉ": 76.489,
+          "SCALABILITÉ": 69.575,
+          "RÉVERSIBILITÉ": 64.584
+        },
+        "composite": 72.8799,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2652,
+      "robustness_pct": 100.0,
+      "min_score": 74.9855,
+      "max_score": 80.2557
+    }
+  },
+  {
+    "seal_id": "SEAL-418652D6E2553831",
+    "timestamp": "2026-06-23T02:57:39.771757+00:00",
+    "action": "sidebar-wave-500",
+    "context": "3 icônes + nav : migrants-remittances, apatrides, travail-prison",
+    "category": "sidebar",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.3278,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.648,
+          "SÉCURITÉ": 84.29,
+          "SCALABILITÉ": 84.002,
+          "RÉVERSIBILITÉ": 75.717
+        },
+        "composite": 84.1108,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.032,
+          "SÉCURITÉ": 79.752,
+          "SCALABILITÉ": 79.556,
+          "RÉVERSIBILITÉ": 70.365
+        },
+        "composite": 79.7096,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.944,
+          "SÉCURITÉ": 79.965,
+          "SCALABILITÉ": 77.573,
+          "RÉVERSIBILITÉ": 70.51
+        },
+        "composite": 78.6697,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.631,
+          "SÉCURITÉ": 77.422,
+          "SCALABILITÉ": 76.119,
+          "RÉVERSIBILITÉ": 66.354
+        },
+        "composite": 76.1454,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.873,
+          "SÉCURITÉ": 75.166,
+          "SCALABILITÉ": 73.562,
+          "RÉVERSIBILITÉ": 64.71
+        },
+        "composite": 73.7859,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.227,
+      "robustness_pct": 100.0,
+      "min_score": 73.3917,
+      "max_score": 81.3192
+    }
+  },
+  {
+    "seal_id": "SEAL-344EB7FD3F12133D",
+    "timestamp": "2026-06-23T02:59:01.691635+00:00",
+    "action": "data-wave-500-dashboards",
+    "context": "3 dashboards React : migrant-remittances, stateless-persons, prison-labor",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9546,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 91.169,
+          "SÉCURITÉ": 85.09,
+          "SCALABILITÉ": 77.722,
+          "RÉVERSIBILITÉ": 74.06
+        },
+        "composite": 82.8657,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.476,
+          "SÉCURITÉ": 82.24,
+          "SCALABILITÉ": 76.525,
+          "RÉVERSIBILITÉ": 70.37
+        },
+        "composite": 79.408,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 86.371,
+          "SÉCURITÉ": 79.975,
+          "SCALABILITÉ": 74.287,
+          "RÉVERSIBILITÉ": 68.516
+        },
+        "composite": 78.18,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 83.288,
+          "SÉCURITÉ": 78.225,
+          "SCALABILITÉ": 73.014,
+          "RÉVERSIBILITÉ": 66.471
+        },
+        "composite": 76.0904,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.122,
+          "SÉCURITÉ": 75.186,
+          "SCALABILITÉ": 72.03,
+          "RÉVERSIBILITÉ": 64.921
+        },
+        "composite": 73.2248,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.9285,
+      "robustness_pct": 100.0,
+      "min_score": 74.4917,
+      "max_score": 81.9743
+    }
   }
 ]
