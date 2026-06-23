@@ -27,7 +27,11 @@ SEAL_LOG = Path("data/decision_seals_log.json")
 SEAL_LOG.parent.mkdir(exist_ok=True)
 
 # Catégories de décisions et leur niveau de risque
+# ── Catégories existantes ──────────────────────────────────────────────────────
+# ── Catégories ajoutées §14-v2 (2026-06-23) ──────────────────────────────────
+# SEAL-927AF2CEE9DDFD98 + analyse patterns projet CaelumSwarm™
 DECISION_CATEGORIES = {
+    # ── Core existant ──
     "wave":         {"risk": "MOYEN",    "requires_simulation": True,  "min_pov_score": 60.0},
     "sidebar":      {"risk": "ÉLEVÉ",    "requires_simulation": True,  "min_pov_score": 58.0},
     "build":        {"risk": "CRITIQUE", "requires_simulation": True,  "min_pov_score": 60.0},
@@ -37,6 +41,23 @@ DECISION_CATEGORIES = {
     "engine":       {"risk": "MOYEN",    "requires_simulation": True,  "min_pov_score": 60.0},
     "data":         {"risk": "FAIBLE",   "requires_simulation": False, "min_pov_score": 50.0},
     "commit":       {"risk": "FAIBLE",   "requires_simulation": False, "min_pov_score": 50.0},
+
+    # ── §14-v2 : Nouvelles catégories (ajout 2026-06-23) ──────────────────────
+    # Adoption outils tiers (Mistral, GitHub repos, Canva MCP, etc.)
+    "integration":  {"risk": "ÉLEVÉ",    "requires_simulation": True,  "min_pov_score": 58.0},
+    # Migration base de données (Prisma, LibSQL/Turso, SQLite)
+    "migration":    {"risk": "CRITIQUE", "requires_simulation": True,  "min_pov_score": 62.0},
+    # Ajout/suppression dépendances npm/pip (changement package.json / requirements.txt)
+    "dependency":   {"risk": "MOYEN",    "requires_simulation": False, "min_pov_score": 55.0},
+    # Correctifs sécurité urgents (CVE, XSS, injection, credentials exposés)
+    "security-fix": {"risk": "CRITIQUE", "requires_simulation": True,  "min_pov_score": 65.0},
+    # Déploiement production (Vercel, Cloudflare Workers, push tags)
+    "deploy":       {"risk": "CRITIQUE", "requires_simulation": True,  "min_pov_score": 62.0},
+    # Refactoring majeur (renommage modules, restructuration répertoires)
+    "refactor":     {"risk": "MOYEN",    "requires_simulation": True,  "min_pov_score": 58.0},
+    # Rollback production (revert commit, git reset --hard, restore backup)
+    "rollback":     {"risk": "CRITIQUE", "requires_simulation": True,  "min_pov_score": 65.0},
+
     "default":      {"risk": "MOYEN",    "requires_simulation": True,  "min_pov_score": 58.0},
 }
 
@@ -73,10 +94,14 @@ def _evaluate_criterion(criterion_id: str, action: str, context: str, bias: floa
     # Bonus/malus selon la nature de l'action
     action_lower = action.lower()
     bonuses = {
-        "COHÉRENCE":     2.0 if "wave" in action_lower else 1.0,
-        "SÉCURITÉ":      3.0 if "build" in action_lower or "route" in action_lower else 1.0,
-        "SCALABILITÉ":   3.0 if "split" in action_lower or "sidebar" in action_lower else 1.0,
-        "RÉVERSIBILITÉ": 1.0 if "commit" in action_lower else -1.0,
+        "COHÉRENCE":     2.0 if "wave" in action_lower or "protocol" in action_lower else 1.0,
+        "SÉCURITÉ":      4.0 if any(k in action_lower for k in ["security", "cve", "rollback", "credential"]) else
+                         3.0 if "build" in action_lower or "route" in action_lower else 1.0,
+        "SCALABILITÉ":   3.0 if "split" in action_lower or "sidebar" in action_lower else
+                         2.0 if "migration" in action_lower or "refactor" in action_lower else 1.0,
+        "RÉVERSIBILITÉ": 2.0 if "rollback" in action_lower else
+                         1.0 if "commit" in action_lower else
+                        -2.0 if "deploy" in action_lower or "migration" in action_lower else -1.0,
     }
 
     base = base_scores.get(criterion_id, 75.0) + bonuses.get(criterion_id, 0.0)
@@ -145,8 +170,27 @@ def _run_multiverse(action: str, context: str, n_universes: int = 50, seed: int 
 
 def _detect_category(action: str) -> str:
     action_lower = action.lower()
-    for cat in DECISION_CATEGORIES:
-        if cat in action_lower:
+    # Correspondances explicites par mot-clé (ordre : plus spécifique en premier)
+    keyword_map = {
+        "security-fix": ["security-fix", "security_fix", "securityfix", "cve", "xss", "injection", "credential"],
+        "rollback":     ["rollback", "revert", "roll-back", "restore-backup", "reset-hard"],
+        "deploy":       ["deploy", "deployment", "vercel", "cloudflare", "push-tag", "release"],
+        "migration":    ["migration", "migrate", "prisma", "libsql", "turso", "db-schema"],
+        "integration":  ["integration", "adopt", "mistral", "canva", "github-adopt", "install"],
+        "dependency":   ["dependency", "npm-add", "pip-install", "package", "requirements"],
+        "refactor":     ["refactor", "restructure", "rename-module", "reorganize"],
+        "build":        ["build", "build-fix", "ci"],
+        "protocol":     ["protocol", "protocol-change", "seal-update"],
+        "sidebar":      ["sidebar", "sidebar-split", "sidebar-icons"],
+        "split":        ["split"],
+        "wave":         ["wave"],
+        "route":        ["route", "api-route"],
+        "engine":       ["engine", "validation"],
+        "data":         ["data", "json", "catalog", "export"],
+        "commit":       ["commit"],
+    }
+    for cat, keywords in keyword_map.items():
+        if any(kw in action_lower for kw in keywords):
             return cat
     return "default"
 

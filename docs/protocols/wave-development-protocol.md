@@ -358,7 +358,9 @@ Commande : `python3 scripts/multi_perspective_simulator.py --engine <nom> --mult
 
 Chaque décision importante (wave, build, sidebar-split, protocol-change) **DOIT** être scellée avant exécution.
 
-### Niveaux de risque :
+### Niveaux de risque — §14-v2 (2026-06-23) :
+
+#### Catégories existantes
 | Catégorie  | Risque    | Simulation | Score min |
 |------------|-----------|------------|-----------|
 | build      | CRITIQUE  | Oui        | 60.0      |
@@ -370,6 +372,17 @@ Chaque décision importante (wave, build, sidebar-split, protocol-change) **DOIT
 | engine     | MOYEN     | Oui        | 60.0      |
 | commit     | FAIBLE    | Non        | 50.0      |
 | data       | FAIBLE    | Non        | 50.0      |
+
+#### Nouvelles catégories ajoutées §14-v2
+| Catégorie    | Risque    | Simulation | Score min | Déclencheurs                                    |
+|--------------|-----------|------------|-----------|-------------------------------------------------|
+| security-fix | CRITIQUE  | Oui        | 65.0      | CVE, XSS, injection SQL, credentials exposés    |
+| rollback     | CRITIQUE  | Oui        | 65.0      | `git reset --hard`, revert prod, restore backup |
+| deploy       | CRITIQUE  | Oui        | 62.0      | Vercel push, Cloudflare deploy, release tags    |
+| migration    | CRITIQUE  | Oui        | 62.0      | Prisma migrate, LibSQL schema, db-schema change |
+| integration  | ÉLEVÉ     | Oui        | 58.0      | Adoption repos GitHub, Mistral, Canva, outils   |
+| dependency   | MOYEN     | Non        | 55.0      | npm add/rm, pip install, package.json changes   |
+| refactor     | MOYEN     | Oui        | 58.0      | Renommage modules, restructure répertoires      |
 
 ### Commandes :
 ```bash

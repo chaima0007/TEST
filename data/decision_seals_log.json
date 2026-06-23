@@ -828,5 +828,420 @@
       "min_score": 75.7306,
       "max_score": 82.788
     }
+  },
+  {
+    "seal_id": "SEAL-C8BB584EBC134C35",
+    "timestamp": "2026-06-23T01:35:04.236318+00:00",
+    "action": "integration-mistral",
+    "context": "Adoption Mistral registry et 3 repos GitHub vérifiés",
+    "category": "integration",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.1129,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 87.966,
+          "SÉCURITÉ": 85.326,
+          "SCALABILITÉ": 83.317,
+          "RÉVERSIBILITÉ": 75.88
+        },
+        "composite": 83.7266,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.37,
+          "SÉCURITÉ": 79.125,
+          "SCALABILITÉ": 81.831,
+          "RÉVERSIBILITÉ": 70.57
+        },
+        "composite": 79.664,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 84.821,
+          "SÉCURITÉ": 79.354,
+          "SCALABILITÉ": 76.41,
+          "RÉVERSIBILITÉ": 68.063
+        },
+        "composite": 77.9999,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 79.578,
+          "SÉCURITÉ": 78.0,
+          "SCALABILITÉ": 74.002,
+          "RÉVERSIBILITÉ": 68.242
+        },
+        "composite": 75.5223,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.162,
+          "SÉCURITÉ": 75.138,
+          "SCALABILITÉ": 67.706,
+          "RÉVERSIBILITÉ": 62.773
+        },
+        "composite": 71.4142,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.4744,
+      "robustness_pct": 100.0,
+      "min_score": 74.3504,
+      "max_score": 81.0515
+    }
+  },
+  {
+    "seal_id": "SEAL-FFFCE283B0256BD9",
+    "timestamp": "2026-06-23T01:35:10.133600+00:00",
+    "action": "deploy-vercel",
+    "context": "Déploiement production wave-499 CaelumSwarm",
+    "category": "deploy",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.5957,
+    "min_required": 62.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 91.837,
+          "SÉCURITÉ": 82.159,
+          "SCALABILITÉ": 81.646,
+          "RÉVERSIBILITÉ": 73.269
+        },
+        "composite": 83.1562,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 83.632,
+          "SÉCURITÉ": 80.476,
+          "SCALABILITÉ": 79.637,
+          "RÉVERSIBILITÉ": 71.767
+        },
+        "composite": 79.4712,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.802,
+          "SÉCURITÉ": 78.271,
+          "SCALABILITÉ": 74.115,
+          "RÉVERSIBILITÉ": 68.051
+        },
+        "composite": 76.2473,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.073,
+          "SÉCURITÉ": 77.597,
+          "SCALABILITÉ": 75.814,
+          "RÉVERSIBILITÉ": 65.605
+        },
+        "composite": 75.4956,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.634,
+          "SÉCURITÉ": 71.25,
+          "SCALABILITÉ": 70.052,
+          "RÉVERSIBILITÉ": 63.157
+        },
+        "composite": 70.9471,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2888,
+      "robustness_pct": 100.0,
+      "min_score": 74.8379,
+      "max_score": 81.9676
+    }
+  },
+  {
+    "seal_id": "SEAL-A3E8F9E9BC10B9A0",
+    "timestamp": "2026-06-23T01:35:10.208310+00:00",
+    "action": "rollback-prod",
+    "context": "Revert build cassé sur branche principale",
+    "category": "rollback",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.6689,
+    "min_required": 65.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 92.416,
+          "SÉCURITÉ": 90.227,
+          "SCALABILITÉ": 81.694,
+          "RÉVERSIBILITÉ": 77.621
+        },
+        "composite": 86.2293,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.929,
+          "SÉCURITÉ": 83.806,
+          "SCALABILITÉ": 78.307,
+          "RÉVERSIBILITÉ": 75.575
+        },
+        "composite": 81.1219,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.979,
+          "SÉCURITÉ": 81.747,
+          "SCALABILITÉ": 75.941,
+          "RÉVERSIBILITÉ": 71.627
+        },
+        "composite": 78.6411,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.085,
+          "SÉCURITÉ": 81.264,
+          "SCALABILITÉ": 72.179,
+          "RÉVERSIBILITÉ": 71.393
+        },
+        "composite": 76.9648,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 75.841,
+          "SÉCURITÉ": 79.523,
+          "SCALABILITÉ": 68.751,
+          "RÉVERSIBILITÉ": 68.677
+        },
+        "composite": 73.5562,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2855,
+      "robustness_pct": 100.0,
+      "min_score": 74.7357,
+      "max_score": 80.6934
+    }
+  },
+  {
+    "seal_id": "SEAL-066F99300D523922",
+    "timestamp": "2026-06-23T01:35:10.280249+00:00",
+    "action": "security-fix-cve",
+    "context": "Patch dépendance critique CVE",
+    "category": "security-fix",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.6559,
+    "min_required": 65.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 85.872,
+          "SÉCURITÉ": 92.339,
+          "SCALABILITÉ": 79.673,
+          "RÉVERSIBILITÉ": 75.361
+        },
+        "composite": 83.8368,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 83.908,
+          "SÉCURITÉ": 85.113,
+          "SCALABILITÉ": 77.083,
+          "RÉVERSIBILITÉ": 67.433
+        },
+        "composite": 79.208,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.668,
+          "SÉCURITÉ": 80.741,
+          "SCALABILITÉ": 76.685,
+          "RÉVERSIBILITÉ": 69.677
+        },
+        "composite": 78.0923,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 78.564,
+          "SÉCURITÉ": 81.537,
+          "SCALABILITÉ": 71.972,
+          "RÉVERSIBILITÉ": 68.202
+        },
+        "composite": 75.5868,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.401,
+          "SÉCURITÉ": 72.762,
+          "SCALABILITÉ": 70.165,
+          "RÉVERSIBILITÉ": 63.123
+        },
+        "composite": 71.2767,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.6045,
+      "robustness_pct": 100.0,
+      "min_score": 74.8501,
+      "max_score": 81.7356
+    }
+  },
+  {
+    "seal_id": "SEAL-C872CB85E94356EF",
+    "timestamp": "2026-06-23T01:35:33.568852+00:00",
+    "action": "protocol-seal-v2",
+    "context": "Ajout 7 nouvelles catégories §14-v2 : security-fix, rollback, deploy, migration, integration, dependency, refactor",
+    "category": "protocol",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.6306,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 91.522,
+          "SÉCURITÉ": 88.727,
+          "SCALABILITÉ": 81.304,
+          "RÉVERSIBILITÉ": 72.074
+        },
+        "composite": 84.3791,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 87.643,
+          "SÉCURITÉ": 79.293,
+          "SCALABILITÉ": 75.841,
+          "RÉVERSIBILITÉ": 70.776
+        },
+        "composite": 79.2316,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.273,
+          "SÉCURITÉ": 77.918,
+          "SCALABILITÉ": 74.066,
+          "RÉVERSIBILITÉ": 66.871
+        },
+        "composite": 76.3521,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.538,
+          "SÉCURITÉ": 77.338,
+          "SCALABILITÉ": 73.476,
+          "RÉVERSIBILITÉ": 63.853
+        },
+        "composite": 74.6355,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.694,
+          "SÉCURITÉ": 75.181,
+          "SCALABILITÉ": 69.181,
+          "RÉVERSIBILITÉ": 65.548
+        },
+        "composite": 72.5083,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2582,
+      "robustness_pct": 100.0,
+      "min_score": 75.2847,
+      "max_score": 80.4658
+    }
   }
 ]
