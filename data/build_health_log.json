@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-06-22T23:53:53.668403",
+  "timestamp": "2026-06-23T00:17:08.156660",
   "overall": "OK",
   "agents": [
     {
       "status": "OK",
       "check": "missing_icons",
-      "referenced": 1831,
-      "defined": 1835
+      "referenced": 1833,
+      "defined": 1837
     },
     {
       "status": "OK",
       "check": "duplicate_icons",
-      "total_unique": 1835
+      "total_unique": 1837
     },
     {
       "status": "WARN",
@@ -19,8 +19,8 @@
       "alerts": [
         {
           "file": "sidebar-icons-4.tsx",
-          "lines": 5017,
-          "status": "WARNING — 91% du seuil"
+          "lines": 5036,
+          "status": "WARNING — 92% du seuil"
         }
       ],
       "fix": "Créer sidebar-icons-5.tsx et déplacer les dernières 2000 lignes"
@@ -28,20 +28,20 @@
     {
       "status": "OK",
       "check": "engine_pattern",
-      "standard_ok": 121,
+      "standard_ok": 124,
       "dataclass_ok": 1646
     },
     {
       "status": "OK",
       "check": "route_security",
-      "routes_ok": 178,
+      "routes_ok": 181,
       "skipped_auth": 2
     }
   ],
   "monte_carlo": {
     "simulations": 100000,
-    "failures": 4887,
-    "risk_pct": 4.89,
-    "confidence": 95.11
+    "failures": 4977,
+    "risk_pct": 4.98,
+    "confidence": 95.02
   }
 }

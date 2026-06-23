@@ -1,0 +1,89 @@
+{
+  "agent": "Digital Colonialism & Data Sovereignty Engine",
+  "domain": "digital_colonialism_data_sovereignty",
+  "wave": 493,
+  "total_entities": 8,
+  "avg_composite": 61.03,
+  "risk_distribution": {
+    "critique": 4,
+    "élevé": 2,
+    "modéré": 1,
+    "faible": 1
+  },
+  "estimated_digital_colonialism_data_sovereignty_index": 6.1,
+  "last_analysis": "2026-06-23",
+  "engine_version": "1.0.0",
+  "data_sources": [
+    "algorithmic_watch_data_colonialism_global_report",
+    "decolonising_digital_data_governance_initiative",
+    "unctad_digital_economy_report_data_sovereignty",
+    "african_union_malabo_convention_cybersecurity",
+    "un_secretary_general_our_common_agenda_digital"
+  ],
+  "entities": [
+    {
+      "id": "DCDS-001",
+      "name": "Meta/Google — Extraction Massive Données Africaines sans Consentement, Profit Unilatéral & Absence Cadre Légal Local",
+      "region": "Afrique Sub-Saharienne",
+      "composite": 96.3,
+      "risk_level": "critique",
+      "primary_pattern": "data_extraction_without_consent"
+    },
+    {
+      "id": "DCDS-002",
+      "name": "Câbles Sous-Marins & Infrastructure Cloud — Monopole Occidental sur Routage Données Globales du Sud",
+      "region": "Global Sud",
+      "composite": 89.6,
+      "risk_level": "critique",
+      "primary_pattern": "infrastructure_control"
+    },
+    {
+      "id": "DCDS-003",
+      "name": "Inde — Pression GAFAM contre Loi Protection Données Personnelles & Souveraineté Numérique",
+      "region": "Asie du Sud",
+      "composite": 81.6,
+      "risk_level": "critique",
+      "primary_pattern": "sovereignty_erosion"
+    },
+    {
+      "id": "DCDS-004",
+      "name": "Brésil/Amérique Latine — Dépendance Plateformes US, Fuite Données Communautés Indigènes & LGPD Contournée",
+      "region": "Amérique Latine",
+      "composite": 76.6,
+      "risk_level": "critique",
+      "primary_pattern": "indigenous_data_exploitation"
+    },
+    {
+      "id": "DCDS-005",
+      "name": "Union Africaine — Cadre Malabo Cybersécurité, Ratifications Limitées & Souveraineté Numérique Continentale",
+      "region": "Afrique",
+      "composite": 57.6,
+      "risk_level": "élevé",
+      "primary_pattern": "regulatory_gap"
+    },
+    {
+      "id": "DCDS-006",
+      "name": "Startups Fintech Asie du Sud-Est — APIs Étrangères Imposées, Dépendance Technologique & Capture Données",
+      "region": "Asie du Sud-Est",
+      "composite": 47.6,
+      "risk_level": "élevé",
+      "primary_pattern": "api_dependency_capture"
+    },
+    {
+      "id": "DCDS-007",
+      "name": "RGPD UE — Standard de Référence Souveraineté Données, Influence Limitée hors Europe",
+      "region": "Europe",
+      "composite": 28.6,
+      "risk_level": "modéré",
+      "primary_pattern": "partial_regulatory_protection"
+    },
+    {
+      "id": "DCDS-008",
+      "name": "ONU — Groupe Experts Gouvernance Internet, Résolutions Souveraineté Numérique & Impact Limité",
+      "region": "Global",
+      "composite": 10.3,
+      "risk_level": "faible",
+      "primary_pattern": "international_advocacy"
+    }
+  ]
+}
