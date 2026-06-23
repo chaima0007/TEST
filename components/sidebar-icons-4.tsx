@@ -5034,3 +5034,31 @@ export function IconAlgorithmicWageTheft({ className }: { className?: string }) 
     </svg>
   );
 }
+export function IconAiTrainingDataConsent({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <circle cx="8" cy="5" r="3" />
+      <path d="M3 14c0-2.5 2.2-4 5-4s5 1.5 5 4" />
+      <path d="M6 5l1.5 1.5L10 3.5" />
+    </svg>
+  );
+}
+export function IconContentModerationTrauma({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="3" width="12" height="8" rx="1" />
+      <path d="M6 7h4M8 5.5v3" />
+      <path d="M5 11l-2 3M11 11l2 3" />
+      <circle cx="8" cy="7" r="0.5" fill="currentColor" />
+    </svg>
+  );
+}
+export function IconInvisibleLaborCare({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 3c-1.5 0-3 1-3 2.5C5 8 8 10 8 10s3-2 3-4.5C11 4 9.5 3 8 3z" />
+      <path d="M3 13c1-2 2.5-3 5-3s4 1 5 3" />
+      <path d="M2 7l2 1M14 7l-2 1" />
+    </svg>
+  );
+}

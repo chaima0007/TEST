@@ -4090,4 +4090,12 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/algorithmic-wage-theft", label: "Algorithmic Wage Theft", icon: Icons.IconAlgorithmicWageTheft },
     ],
   },
+  {
+    title: "AI RIGHTS & CARE ECONOMY",
+    items: [
+      { href: "/dashboard/ai-training-data-consent", label: "AI Training Data Consent", icon: Icons.IconAiTrainingDataConsent },
+      { href: "/dashboard/content-moderation-trauma", label: "Content Moderation Trauma", icon: Icons.IconContentModerationTrauma },
+      { href: "/dashboard/invisible-labor-care", label: "Invisible Labor & Care", icon: Icons.IconInvisibleLaborCare },
+    ],
+  },
 ];
