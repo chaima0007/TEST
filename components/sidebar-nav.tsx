@@ -4134,4 +4134,24 @@ export const navSections: NavSection[] = [
       },
     ],
   },
+  {
+    title: "DETTE & SURVEILLANCE (W498)",
+    items: [
+      {
+        href: "/dashboard/sovereign-debt",
+        label: "Dette Souveraine",
+        icon: Icons.IconSovereignDebt,
+      },
+      {
+        href: "/dashboard/biometric-surveillance",
+        label: "Surveillance Biométrique",
+        icon: Icons.IconBiometricSurveillanceRights,
+      },
+      {
+        href: "/dashboard/domestic-work",
+        label: "Travail Domestique",
+        icon: Icons.IconDomesticCareWork,
+      },
+    ],
+  },
 ];

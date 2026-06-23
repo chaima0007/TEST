@@ -1670,3 +1670,34 @@ export function IconAusterityPoverty({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconSovereignDebt({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v20" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      <path d="M3 3l18 18" strokeOpacity="0.4" />
+      <circle cx="19" cy="5" r="3" />
+    </svg>
+  );
+}
+
+export function IconBiometricSurveillanceRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M9 3.5a9 9 0 0 0 0 17" strokeOpacity="0.4" />
+    </svg>
+  );
+}
+
+export function IconDomesticCareWork({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+      <path d="M12 7v2" strokeOpacity="0.6" />
+    </svg>
+  );
+}
