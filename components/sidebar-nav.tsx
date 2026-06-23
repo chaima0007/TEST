@@ -4114,4 +4114,24 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/immigration-detention", label: "Détention Migrants", icon: Icons.IconImmigrationDetention },
     ],
   },
+  {
+    title: "VIOLENCE NUMÉRIQUE & PRÉCARITÉ",
+    items: [
+      {
+        href: "/dashboard/deepfake-abuse",
+        label: "Abus Deepfake",
+        icon: Icons.IconDeepfakeAbuse,
+      },
+      {
+        href: "/dashboard/ghost-workers",
+        label: "Travailleurs Fantômes",
+        icon: Icons.IconGhostWorkers,
+      },
+      {
+        href: "/dashboard/austerity-poverty",
+        label: "Austérité & Pauvreté",
+        icon: Icons.IconAusterityPoverty,
+      },
+    ],
+  },
 ];
