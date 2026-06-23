@@ -1658,5 +1658,88 @@
       "min_score": 74.7783,
       "max_score": 80.4022
     }
+  },
+  {
+    "seal_id": "SEAL-25AA61ABD85B655C",
+    "timestamp": "2026-06-23T02:00:02.124539+00:00",
+    "action": "sidebar-dedup-icons",
+    "context": "Supprimer 3 doublons : IconSovereignDebt (icons-1b+icons-5), IconWaterSanitationRights et IconEnvironmentalDefendersRights (icons-3+icons-5)",
+    "category": "sidebar",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9977,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 98.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 87.6,
+          "SÉCURITÉ": 88.342,
+          "SCALABILITÉ": 84.88,
+          "RÉVERSIBILITÉ": 75.076
+        },
+        "composite": 84.6007,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.557,
+          "SÉCURITÉ": 85.937,
+          "SCALABILITÉ": 80.336,
+          "RÉVERSIBILITÉ": 73.687
+        },
+        "composite": 81.6728,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 80.563,
+          "SÉCURITÉ": 79.134,
+          "SCALABILITÉ": 78.444,
+          "RÉVERSIBILITÉ": 67.97
+        },
+        "composite": 77.1574,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.239,
+          "SÉCURITÉ": 77.034,
+          "SCALABILITÉ": 76.449,
+          "RÉVERSIBILITÉ": 64.563
+        },
+        "composite": 75.3551,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.846,
+          "SÉCURITÉ": 72.574,
+          "SCALABILITÉ": 72.122,
+          "RÉVERSIBILITÉ": 62.468
+        },
+        "composite": 72.0214,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0646,
+      "robustness_pct": 98.0,
+      "min_score": 75.927,
+      "max_score": 83.1835
+    }
   }
 ]

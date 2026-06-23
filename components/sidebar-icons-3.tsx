@@ -306,15 +306,6 @@ export function IconWarCrimesAccountability({ className }: { className?: string 
   );
 }
 
-export function IconEnvironmentalDefendersRights({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C8 3 4 7 4 11c0 5 8 10 8 10s8-5 8-10c0-4-4-8-8-8z" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M8 7l4 4 4-4" />
-    </svg>
-  );
-}
-
 export function IconAntiterrorismLawsRightsAbuse({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
@@ -949,13 +940,6 @@ export function IconHousingForcedEvictionRights({ className }: { className?: str
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-    </svg>
-  );
-}
-export function IconWaterSanitationRights({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-4.97 5.97-7.5 9.5-7.5 12a7.5 7.5 0 0015 0c0-2.5-2.53-6.03-7.5-12z" />
     </svg>
   );
 }

@@ -1532,16 +1532,6 @@ export function IconUrbanIntel({ className }: { className?: string }) {
   );
 }
 
-export function IconSovereignDebt({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="10" cy="10" r="8"/>
-      <path d="M10 6v2m0 4v2"/>
-      <path d="M7.5 8.5A2.5 2.5 0 0 1 10 7c1.38 0 2.5.84 2.5 2 0 1.5-2.5 2-2.5 3.5"/>
-    </svg>
-  );
-}
-
 export function IconNeuroBCI({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
