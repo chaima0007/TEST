@@ -745,5 +745,88 @@
       "min_score": 74.2685,
       "max_score": 81.7862
     }
+  },
+  {
+    "seal_id": "SEAL-927AF2CEE9DDFD98",
+    "timestamp": "2026-06-23T01:28:09.567343+00:00",
+    "action": "mistral-platform-integration",
+    "context": "Catalogue plateformes Mistral AI gratuites + code open-source vérifié protocole",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0417,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.287,
+          "SÉCURITÉ": 85.591,
+          "SCALABILITÉ": 80.921,
+          "RÉVERSIBILITÉ": 74.408
+        },
+        "composite": 83.2957,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.913,
+          "SÉCURITÉ": 81.427,
+          "SCALABILITÉ": 79.318,
+          "RÉVERSIBILITÉ": 69.718
+        },
+        "composite": 79.9038,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 80.82,
+          "SÉCURITÉ": 79.285,
+          "SCALABILITÉ": 76.493,
+          "RÉVERSIBILITÉ": 71.39
+        },
+        "composite": 77.4685,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.817,
+          "SÉCURITÉ": 78.292,
+          "SCALABILITÉ": 73.274,
+          "RÉVERSIBILITÉ": 69.254
+        },
+        "composite": 75.9874,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 75.787,
+          "SÉCURITÉ": 74.747,
+          "SCALABILITÉ": 70.441,
+          "RÉVERSIBILITÉ": 61.064
+        },
+        "composite": 71.2459,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.4636,
+      "robustness_pct": 100.0,
+      "min_score": 75.7306,
+      "max_score": 82.788
+    }
   }
 ]
