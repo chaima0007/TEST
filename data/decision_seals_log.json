@@ -496,5 +496,254 @@
       "min_score": 74.4549,
       "max_score": 80.5005
     }
+  },
+  {
+    "seal_id": "SEAL-E5DA3C69E63A88CC",
+    "timestamp": "2026-06-23T01:17:48.151781+00:00",
+    "action": "tools-registry",
+    "context": "Création registre outils gratuits Linux+Windows sécurisé soumis protocole",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.2413,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 87.953,
+          "SÉCURITÉ": 85.406,
+          "SCALABILITÉ": 81.496,
+          "RÉVERSIBILITÉ": 74.421
+        },
+        "composite": 82.9956,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.38,
+          "SÉCURITÉ": 81.925,
+          "SCALABILITÉ": 77.647,
+          "RÉVERSIBILITÉ": 72.541
+        },
+        "composite": 80.3152,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.685,
+          "SÉCURITÉ": 80.417,
+          "SCALABILITÉ": 81.109,
+          "RÉVERSIBILITÉ": 70.531
+        },
+        "composite": 79.2932,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 82.12,
+          "SÉCURITÉ": 78.508,
+          "SCALABILITÉ": 75.85,
+          "RÉVERSIBILITÉ": 65.44
+        },
+        "composite": 76.3135,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.61,
+          "SÉCURITÉ": 72.206,
+          "SCALABILITÉ": 71.984,
+          "RÉVERSIBILITÉ": 61.596
+        },
+        "composite": 71.9497,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.9451,
+      "robustness_pct": 100.0,
+      "min_score": 74.2202,
+      "max_score": 81.6759
+    }
+  },
+  {
+    "seal_id": "SEAL-3EC310829B1868E3",
+    "timestamp": "2026-06-23T01:20:30.016060+00:00",
+    "action": "install-ollama",
+    "context": "Installation ollama — LLM local (Llama3, Mistral, Gemma) — GRATUIT sans API",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0534,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.919,
+          "SÉCURITÉ": 87.866,
+          "SCALABILITÉ": 80.87,
+          "RÉVERSIBILITÉ": 75.178
+        },
+        "composite": 83.8953,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.989,
+          "SÉCURITÉ": 81.246,
+          "SCALABILITÉ": 80.535,
+          "RÉVERSIBILITÉ": 70.324
+        },
+        "composite": 80.3068,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 84.838,
+          "SÉCURITÉ": 78.873,
+          "SCALABILITÉ": 76.529,
+          "RÉVERSIBILITÉ": 69.335
+        },
+        "composite": 78.1689,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 77.977,
+          "SÉCURITÉ": 80.683,
+          "SCALABILITÉ": 76.611,
+          "RÉVERSIBILITÉ": 68.779
+        },
+        "composite": 76.4724,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 74.75,
+          "SÉCURITÉ": 74.203,
+          "SCALABILITÉ": 69.934,
+          "RÉVERSIBILITÉ": 63.506
+        },
+        "composite": 71.1604,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.9778,
+      "robustness_pct": 100.0,
+      "min_score": 75.6362,
+      "max_score": 81.4494
+    }
+  },
+  {
+    "seal_id": "SEAL-59110F5E14860D37",
+    "timestamp": "2026-06-23T01:23:13.161842+00:00",
+    "action": "github-adopt-octopoda-os",
+    "context": "RyjoxTechnologies/Octopoda-OS — score=92.0 verdict=ADOPTÉ",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.5538,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.855,
+          "SÉCURITÉ": 84.559,
+          "SCALABILITÉ": 81.668,
+          "RÉVERSIBILITÉ": 77.16
+        },
+        "composite": 83.6453,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.645,
+          "SÉCURITÉ": 78.204,
+          "SCALABILITÉ": 75.779,
+          "RÉVERSIBILITÉ": 72.406
+        },
+        "composite": 78.9704,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.984,
+          "SÉCURITÉ": 80.401,
+          "SCALABILITÉ": 73.979,
+          "RÉVERSIBILITÉ": 68.863
+        },
+        "composite": 76.9628,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 79.738,
+          "SÉCURITÉ": 79.797,
+          "SCALABILITÉ": 70.977,
+          "RÉVERSIBILITÉ": 68.172
+        },
+        "composite": 75.2493,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.872,
+          "SÉCURITÉ": 76.857,
+          "SCALABILITÉ": 68.886,
+          "RÉVERSIBILITÉ": 62.25
+        },
+        "composite": 72.2473,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.8894,
+      "robustness_pct": 100.0,
+      "min_score": 74.2685,
+      "max_score": 81.7862
+    }
   }
 ]
