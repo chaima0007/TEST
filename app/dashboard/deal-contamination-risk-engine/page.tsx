@@ -257,19 +257,20 @@ export default function DealContaminationPage() {
   const [riskFilter, setRiskFilter] = useState<string>("all");
   const [selected, setSelected] = useState<DealData | null>(null);
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (levelFilter !== "all") params.set("level", levelFilter);
-          if (riskFilter !== "all")  params.set("risk", riskFilter);
-          const res = await fetch(`/api/deal-contamination-risk-engine?${params}`);
-          setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (levelFilter !== "all") params.set("level", levelFilter);
+        if (riskFilter !== "all")  params.set("risk", riskFilter);
+        const res = await fetch(`/api/deal-contamination-risk-engine?${params}`);
+        setData(await res.json());
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [levelFilter, riskFilter]);
 

@@ -254,19 +254,20 @@ export default function SalesCapacityPage() {
   const [riskFilter, setRiskFilter] = useState<string>("all");
   const [selected, setSelected] = useState<RegionData | null>(null);
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (statusFilter !== "all") params.set("status", statusFilter);
-          if (riskFilter !== "all")   params.set("risk", riskFilter);
-          const res = await fetch(`/api/sales-capacity-planning-engine?${params}`);
-          setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (statusFilter !== "all") params.set("status", statusFilter);
+        if (riskFilter !== "all")   params.set("risk", riskFilter);
+        const res = await fetch(`/api/sales-capacity-planning-engine?${params}`);
+        setData(await res.json());
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [statusFilter, riskFilter]);
 

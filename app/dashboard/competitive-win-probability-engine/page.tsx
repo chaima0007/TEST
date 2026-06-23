@@ -245,19 +245,20 @@ export default function CompetitiveWinPage() {
   const [riskFilter, setRiskFilter] = useState<string>("all");
   const [selected, setSelected] = useState<DealData | null>(null);
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (tierFilter !== "all") params.set("tier", tierFilter);
-          if (riskFilter !== "all") params.set("risk", riskFilter);
-          const res = await fetch(`/api/competitive-win-probability-engine?${params}`);
-          setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (tierFilter !== "all") params.set("tier", tierFilter);
+        if (riskFilter !== "all") params.set("risk", riskFilter);
+        const res = await fetch(`/api/competitive-win-probability-engine?${params}`);
+        setData(await res.json());
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [tierFilter, riskFilter]);
 

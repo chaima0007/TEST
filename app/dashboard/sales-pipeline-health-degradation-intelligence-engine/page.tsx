@@ -257,20 +257,21 @@ export default function SalesPipelineHealthDegradationPage() {
   const [patternFilter, setPatternFilter] = useState("all");
   const [selected, setSelected]   = useState<Rep | null>(null);
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (riskFilter    !== "all") params.set("risk",    riskFilter);
-          if (patternFilter !== "all") params.set("pattern", patternFilter);
-          const res  = await fetch(`/api/sales-pipeline-health-degradation-intelligence-engine?${params}`);
-          const json = await res.json();
-          setData(json);
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (riskFilter    !== "all") params.set("risk",    riskFilter);
+        if (patternFilter !== "all") params.set("pattern", patternFilter);
+        const res  = await fetch(`/api/sales-pipeline-health-degradation-intelligence-engine?${params}`);
+        const json = await res.json();
+        setData(json);
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [riskFilter, patternFilter]);
 

@@ -256,19 +256,20 @@ export default function CompetitiveWinLossPage() {
   const [positionFilter, setPositionFilter] = useState("");
   const [actionFilter, setActionFilter] = useState("");
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (positionFilter) params.set("position", positionFilter);
-          if (actionFilter) params.set("action", actionFilter);
-          const res = await fetch(`/api/competitive-win-loss?${params}`);
-          if (res.ok) setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (positionFilter) params.set("position", positionFilter);
+        if (actionFilter) params.set("action", actionFilter);
+        const res = await fetch(`/api/competitive-win-loss?${params}`);
+        if (res.ok) setData(await res.json());
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [positionFilter, actionFilter]);
 

@@ -406,20 +406,21 @@ export default function PartnerChannelPage() {
   const [regionFilter, setRegionFilter] = useState("");
   const [selected, setSelected] = useState<Partner | null>(null);
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (tierFilter)   params.set("tier", tierFilter);
-          if (healthFilter) params.set("health", healthFilter);
-          if (regionFilter) params.set("region", regionFilter);
-          const res = await fetch(`/api/partner-channel?${params}`);
-          if (res.ok) setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (tierFilter)   params.set("tier", tierFilter);
+        if (healthFilter) params.set("health", healthFilter);
+        if (regionFilter) params.set("region", regionFilter);
+        const res = await fetch(`/api/partner-channel?${params}`);
+        if (res.ok) setData(await res.json());
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [tierFilter, healthFilter, regionFilter]);
 

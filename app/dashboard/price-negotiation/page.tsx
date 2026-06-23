@@ -336,19 +336,20 @@ export default function PriceNegotiationPage() {
   const [strategyFilter, setStrategyFilter] = useState("");
   const [selected, setSelected]             = useState<Deal | null>(null);
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (riskFilter)     params.set("risk", riskFilter);
-          if (strategyFilter) params.set("strategy", strategyFilter);
-          const res = await fetch(`/api/price-negotiation?${params}`);
-          if (res.ok) setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (riskFilter)     params.set("risk", riskFilter);
+        if (strategyFilter) params.set("strategy", strategyFilter);
+        const res = await fetch(`/api/price-negotiation?${params}`);
+        if (res.ok) setData(await res.json());
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [riskFilter, strategyFilter]);
 

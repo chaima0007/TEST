@@ -261,19 +261,20 @@ export default function SalesVelocityPage() {
   const [tierFilter, setTierFilter] = useState("");
   const [actionFilter, setActionFilter] = useState("");
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (tierFilter) params.set("tier", tierFilter);
-          if (actionFilter) params.set("action", actionFilter);
-          const res = await fetch(`/api/sales-velocity?${params}`);
-          if (res.ok) setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (tierFilter) params.set("tier", tierFilter);
+        if (actionFilter) params.set("action", actionFilter);
+        const res = await fetch(`/api/sales-velocity?${params}`);
+        if (res.ok) setData(await res.json());
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     load();
   }, [tierFilter, actionFilter]);
 
