@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ──────────────────────────────────────────────────────────────────────
 interface DriftDeal {
@@ -358,22 +358,23 @@ export default function BuyerPersonaDriftPage() {
   const [sevFilter, setSevFilter]     = useState("all");
   const [patternFilter, setPatternFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (sevFilter !== "all")     params.set("severity", sevFilter);
-      if (patternFilter !== "all") params.set("pattern", patternFilter);
-      const r = await fetch(`/api/buyer-persona-drift?${params}`);
-      const j = await r.json();
-      setDeals(j.deals);
-      setSummary(j.summary);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (sevFilter !== "all")     params.set("severity", sevFilter);
+          if (patternFilter !== "all") params.set("pattern", patternFilter);
+          const r = await fetch(`/api/buyer-persona-drift?${params}`);
+          const j = await r.json();
+          setDeals(j.deals);
+          setSummary(j.summary);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [sevFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const severe = deals.filter((d) => d.needs_exec_reengagement);
 

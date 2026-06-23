@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -389,20 +389,21 @@ export default function CustomerOnboardingPage() {
   const [filterRisk, setFilterRisk] = useState<string>("all");
   const [filterPhase, setFilterPhase] = useState<string>("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterRisk !== "all")  params.set("risk", filterRisk);
-      if (filterPhase !== "all") params.set("phase", filterPhase);
-      const res = await fetch(`/api/customer-onboarding?${params}`);
-      setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterRisk !== "all")  params.set("risk", filterRisk);
+          if (filterPhase !== "all") params.set("phase", filterPhase);
+          const res = await fetch(`/api/customer-onboarding?${params}`);
+          setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [filterRisk, filterPhase]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

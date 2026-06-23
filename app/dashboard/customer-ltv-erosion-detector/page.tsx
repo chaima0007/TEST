@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface CustomerLTV {
   customer_id: string;
@@ -213,14 +213,15 @@ export default function CustomerLTVErosionPage() {
   const [riskFilter, setRiskFilter] = useState("all");
   const [selected, setSelected] = useState<CustomerLTV | null>(null);
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (riskFilter !== "all") params.set("risk", riskFilter);
-    const res = await fetch(`/api/customer-ltv-erosion-detector?${params}`);
-    if (res.ok) setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (riskFilter !== "all") params.set("risk", riskFilter);
+        const res = await fetch(`/api/customer-ltv-erosion-detector?${params}`);
+        if (res.ok) setData(await res.json());
+  }
+    load();
   }, [riskFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const summary = data?.summary;
   const customers = data?.customers ?? [];

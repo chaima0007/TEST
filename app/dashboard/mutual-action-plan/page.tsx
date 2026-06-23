@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ──────────────────────────────────────────────────────────────────────
 interface MAPRecord {
@@ -382,22 +382,23 @@ export default function MutualActionPlanPage() {
   const [healthFilter, setHealthFilter]   = useState("all");
   const [patternFilter, setPatternFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (healthFilter !== "all")  params.set("health", healthFilter);
-      if (patternFilter !== "all") params.set("pattern", patternFilter);
-      const r = await fetch(`/api/mutual-action-plan?${params}`);
-      const j = await r.json();
-      setMaps(j.maps);
-      setSummary(j.summary);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (healthFilter !== "all")  params.set("health", healthFilter);
+          if (patternFilter !== "all") params.set("pattern", patternFilter);
+          const r = await fetch(`/api/mutual-action-plan?${params}`);
+          const j = await r.json();
+          setMaps(j.maps);
+          setSummary(j.summary);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [healthFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const broken = maps.filter((m) => m.needs_map_reset);
 

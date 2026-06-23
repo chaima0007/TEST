@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface CustomerRep {
   customer_id: string; customer_name: string; rep_id: string;
@@ -159,17 +159,18 @@ export default function CustomerReferralIntelligencePage() {
   const [levelF, setLevelF]     = useState("all");
   const [selected, setSelected] = useState<CustomerRep|null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const p = new URLSearchParams();
-    if (velocityF !== "all") p.set("velocity", velocityF);
-    if (levelF !== "all")    p.set("level", levelF);
-    const res = await fetch(`/api/customer-referral-intelligence?${p}`);
-    setData(await res.json());
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const p = new URLSearchParams();
+        if (velocityF !== "all") p.set("velocity", velocityF);
+        if (levelF !== "all")    p.set("level", levelF);
+        const res = await fetch(`/api/customer-referral-intelligence?${p}`);
+        setData(await res.json());
+        setLoading(false);
+  }
+    load();
   }, [velocityF, levelF]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
   const fmt = (n:number) => n>=1e6 ? `$${(n/1e6).toFixed(1)}M` : n>=1e3 ? `$${(n/1e3).toFixed(0)}K` : `$${n}`;

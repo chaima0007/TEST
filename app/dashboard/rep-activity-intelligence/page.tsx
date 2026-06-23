@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -417,21 +417,22 @@ export default function RepActivityIntelligencePage() {
   const [tierFilter, setTierFilter]     = useState("all");
   const [actionFilter, setActionFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (tierFilter !== "all")   params.set("tier", tierFilter);
-      if (actionFilter !== "all") params.set("action", actionFilter);
-      const res = await fetch(`/api/rep-activity-intelligence?${params}`);
-      const data = await res.json();
-      setReps(data.reps ?? []);
-      setSummary(data.summary ?? null);
-    } catch {}
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (tierFilter !== "all")   params.set("tier", tierFilter);
+          if (actionFilter !== "all") params.set("action", actionFilter);
+          const res = await fetch(`/api/rep-activity-intelligence?${params}`);
+          const data = await res.json();
+          setReps(data.reps ?? []);
+          setSummary(data.summary ?? null);
+        } catch {}
+        setLoading(false);
+  }
+    load();
   }, [tierFilter, actionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const TIER_TABS = [
     { key: "all",      label: "Tous" },

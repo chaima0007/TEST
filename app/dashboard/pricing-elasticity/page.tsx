@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ─────────────────────────────────────────────────────────────────────
 
@@ -338,22 +338,23 @@ export default function PricingElasticityPage() {
   const [filterCategory, setFilterCategory] = useState("all");
   const [filterRisk, setFilterRisk] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterCategory !== "all") params.set("category", filterCategory);
-      if (filterRisk     !== "all") params.set("risk", filterRisk);
-      const res = await fetch(`/api/pricing-elasticity?${params}`);
-      const data = await res.json();
-      setSegments(data.segments ?? []);
-      setSummary(data.summary ?? null);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterCategory !== "all") params.set("category", filterCategory);
+          if (filterRisk     !== "all") params.set("risk", filterRisk);
+          const res = await fetch(`/api/pricing-elasticity?${params}`);
+          const data = await res.json();
+          setSegments(data.segments ?? []);
+          setSummary(data.summary ?? null);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [filterCategory, filterRisk]);
-
-  useEffect(() => { load(); }, [load]);
 
   const categories = ["all", "inelastic", "low", "moderate", "high", "extreme"];
   const risks = ["all", "low", "medium", "high", "critical"];

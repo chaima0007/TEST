@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface Deal {
   deal_id: string; rep_id: string; deal_name: string;
@@ -161,17 +161,18 @@ export default function DealMultithreadingIntelligencePage() {
   const [riskF, setRiskF]     = useState("all");
   const [selected, setSelected] = useState<Deal|null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const p = new URLSearchParams();
-    if (statusF !== "all") p.set("status", statusF);
-    if (riskF !== "all")   p.set("risk", riskF);
-    const res = await fetch(`/api/deal-multithreading-intelligence?${p}`);
-    setData(await res.json());
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const p = new URLSearchParams();
+        if (statusF !== "all") p.set("status", statusF);
+        if (riskF !== "all")   p.set("risk", riskF);
+        const res = await fetch(`/api/deal-multithreading-intelligence?${p}`);
+        setData(await res.json());
+        setLoading(false);
+  }
+    load();
   }, [statusF, riskF]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
   const fmt = (n:number) => n>=1e6 ? `$${(n/1e6).toFixed(1)}M` : n>=1e3 ? `$${(n/1e3).toFixed(0)}K` : `$${n}`;

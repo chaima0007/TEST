@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -398,24 +398,25 @@ export default function CompetitivePositioningPage() {
   const [threatFilter, setThreatFilter]     = useState<string>("all");
   const [selected, setSelected]             = useState<Deal | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const params = new URLSearchParams();
-      if (strengthFilter !== "all") params.set("strength", strengthFilter);
-      if (threatFilter   !== "all") params.set("threat", threatFilter);
-      const res = await fetch(`/api/competitive-positioning?${params}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setData(await res.json());
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Erreur inconnue");
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        setError(null);
+        try {
+          const params = new URLSearchParams();
+          if (strengthFilter !== "all") params.set("strength", strengthFilter);
+          if (threatFilter   !== "all") params.set("threat", threatFilter);
+          const res = await fetch(`/api/competitive-positioning?${params}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          setData(await res.json());
+        } catch (e: unknown) {
+          setError(e instanceof Error ? e.message : "Erreur inconnue");
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [strengthFilter, threatFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

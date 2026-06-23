@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface Deal {
@@ -287,19 +287,20 @@ export default function ObjectionPatternAnalyzerPage() {
   const [filterType,   setFilterType]   = useState("all");
   const [filterRegion, setFilterRegion] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterType   !== "all") params.set("type",   filterType);
-    if (filterRegion !== "all") params.set("region", filterRegion);
-    const res = await fetch(`/api/objection-pattern-analyzer?${params}`);
-    const data = await res.json();
-    setDeals(data.deals);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterType   !== "all") params.set("type",   filterType);
+        if (filterRegion !== "all") params.set("region", filterRegion);
+        const res = await fetch(`/api/objection-pattern-analyzer?${params}`);
+        const data = await res.json();
+        setDeals(data.deals);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterType, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const dealBreakerDeals = deals.filter((d) => d.objection_severity === "deal_breaker");
 

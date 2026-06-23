@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface VelocityDeal {
   deal_id: string;
@@ -253,18 +253,19 @@ export default function SalesProcessVelocityAnomalyPage() {
   const [riskFilter, setRiskFilter]       = useState<string>("");
   const [selected, setSelected] = useState<VelocityDeal | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (anomalyFilter) params.set("anomaly", anomalyFilter);
-    if (riskFilter)    params.set("risk",    riskFilter);
-    const res  = await fetch(`/api/sales-process-velocity-anomaly-engine?${params}`);
-    const json = await res.json();
-    setData(json);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (anomalyFilter) params.set("anomaly", anomalyFilter);
+        if (riskFilter)    params.set("risk",    riskFilter);
+        const res  = await fetch(`/api/sales-process-velocity-anomaly-engine?${params}`);
+        const json = await res.json();
+        setData(json);
+        setLoading(false);
+  }
+    load();
   }, [anomalyFilter, riskFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
   const deals = data?.deals ?? [];

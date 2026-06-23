@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -299,7 +299,7 @@ export default function RevenueForecastPage() {
   const [selected, setSelected] = useState<Deal | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = useCallback(async (risk: string) => {
+  const fetchData = async (risk: string) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -311,7 +311,7 @@ export default function RevenueForecastPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   useEffect(() => { fetchData(riskFilter); }, [fetchData, riskFilter]);
 

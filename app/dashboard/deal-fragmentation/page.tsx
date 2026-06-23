@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -389,20 +389,21 @@ export default function DealFragmentationPage() {
   const [filterPattern, setFilterPattern] = useState("all");
   const [filterRegion, setFilterRegion]   = useState("all");
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterRisk !== "all")    params.set("risk", filterRisk);
-      if (filterPattern !== "all") params.set("pattern", filterPattern);
-      if (filterRegion !== "all")  params.set("region", filterRegion);
-      const res = await fetch(`/api/deal-fragmentation?${params}`);
-      if (res.ok) setData(await res.json());
-    } catch {}
-    setLoading(false);
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterRisk !== "all")    params.set("risk", filterRisk);
+          if (filterPattern !== "all") params.set("pattern", filterPattern);
+          if (filterRegion !== "all")  params.set("region", filterRegion);
+          const res = await fetch(`/api/deal-fragmentation?${params}`);
+          if (res.ok) setData(await res.json());
+        } catch {}
+        setLoading(false);
+  }
+    fetchData();
   }, [filterRisk, filterPattern, filterRegion]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const s = data?.summary;
   const riskOrder = ["fragmenting", "at_risk", "early_signal", "stable"];

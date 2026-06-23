@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface RepData {
   rep_id: string;
@@ -285,7 +285,7 @@ export default function RepIncentiveMisalignmentEnginePage() {
   const [filter, setFilter] = useState<RatingFilter>("all");
   const [selected, setSelected] = useState<RepData | null>(null);
 
-  const fetchData = useCallback(async (rating: RatingFilter) => {
+  const fetchData = async (rating: RatingFilter) => {
     setLoading(true);
     const params = new URLSearchParams();
     if (rating !== "all") params.set("rating", rating);
@@ -293,7 +293,7 @@ export default function RepIncentiveMisalignmentEnginePage() {
     const json = await res.json();
     setData(json);
     setLoading(false);
-  }, []);
+  };
 
   useEffect(() => { fetchData(filter); }, [filter, fetchData]);
 

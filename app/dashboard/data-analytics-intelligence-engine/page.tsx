@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface DataPipeline {
   pipeline_id: string;
@@ -255,15 +255,16 @@ export default function DataAnalyticsIntelligenceEnginePage() {
   const [riskFilter, setRiskFilter] = useState("all");
   const [patternFilter, setPatternFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (riskFilter !== "all")    params.set("risk", riskFilter);
-    if (patternFilter !== "all") params.set("pattern", patternFilter);
-    const res = await fetch(`/api/data-analytics-intelligence-engine?${params}`);
-    setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (riskFilter !== "all")    params.set("risk", riskFilter);
+        if (patternFilter !== "all") params.set("pattern", patternFilter);
+        const res = await fetch(`/api/data-analytics-intelligence-engine?${params}`);
+        setData(await res.json());
+  }
+    load();
   }, [riskFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const summary = data?.summary;
   const pipelines = data?.pipelines ?? [];

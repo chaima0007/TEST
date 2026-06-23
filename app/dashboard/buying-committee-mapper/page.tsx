@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface Deal {
@@ -288,20 +288,21 @@ export default function BuyingCommitteeMapperPage() {
   const [filterRisk,     setFilterRisk]     = useState("all");
   const [filterRegion,   setFilterRegion]   = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterCoverage !== "all") params.set("coverage", filterCoverage);
-    if (filterRisk     !== "all") params.set("risk",     filterRisk);
-    if (filterRegion   !== "all") params.set("region",   filterRegion);
-    const res = await fetch(`/api/buying-committee-mapper?${params}`);
-    const data = await res.json();
-    setDeals(data.deals);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterCoverage !== "all") params.set("coverage", filterCoverage);
+        if (filterRisk     !== "all") params.set("risk",     filterRisk);
+        if (filterRegion   !== "all") params.set("region",   filterRegion);
+        const res = await fetch(`/api/buying-committee-mapper?${params}`);
+        const data = await res.json();
+        setDeals(data.deals);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterCoverage, filterRisk, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const singleThreaded = deals.filter((d) => d.committee_coverage === "single_threaded");
 

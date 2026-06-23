@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface MatchupData {
   matchup_id: string;
@@ -288,21 +288,22 @@ export default function CompetitiveWinRatePage() {
   const [filterCat, setFilterCat]   = useState("all");
   const [filterRisk, setFilterRisk] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterCat  !== "all") params.set("category", filterCat);
-      if (filterRisk !== "all") params.set("risk", filterRisk);
-      const res = await fetch(`/api/competitive-win-rate?${params}`);
-      const data = await res.json();
-      setMatchups(data.matchups || []);
-      setSummary(data.summary || null);
-    } catch {}
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterCat  !== "all") params.set("category", filterCat);
+          if (filterRisk !== "all") params.set("risk", filterRisk);
+          const res = await fetch(`/api/competitive-win-rate?${params}`);
+          const data = await res.json();
+          setMatchups(data.matchups || []);
+          setSummary(data.summary || null);
+        } catch {}
+        setLoading(false);
+  }
+    load();
   }, [filterCat, filterRisk]);
-
-  useEffect(() => { load(); }, [load]);
 
   const categories = ["all", "dominant", "strong", "competitive", "weak", "critical"];
   const risks      = ["all", "low", "medium", "high", "critical"];

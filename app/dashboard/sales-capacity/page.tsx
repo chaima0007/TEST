@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -385,20 +385,21 @@ export default function SalesCapacityPage() {
   const [filterStatus, setFilterStatus] = useState<string>("all");
   const [filterRegion, setFilterRegion] = useState<string>("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterStatus !== "all") params.set("status", filterStatus);
-      if (filterRegion !== "all") params.set("region", filterRegion);
-      const res = await fetch(`/api/sales-capacity?${params}`);
-      setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterStatus !== "all") params.set("status", filterStatus);
+          if (filterRegion !== "all") params.set("region", filterRegion);
+          const res = await fetch(`/api/sales-capacity?${params}`);
+          setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [filterStatus, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

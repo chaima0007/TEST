@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface JurisdictionRecord {
@@ -339,19 +339,20 @@ export default function LegalRegulatoryWatchEnginePage() {
   const [filterRisk,   setFilterRisk]     = useState("all");
   const [filterRegion, setFilterRegion]   = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterRisk   !== "all") params.set("risk",   filterRisk);
-    if (filterRegion !== "all") params.set("region", filterRegion);
-    const res  = await fetch(`/api/legal-regulatory-watch-engine?${params}`);
-    const data = await res.json();
-    setJurisdictions(data.jurisdictions);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterRisk   !== "all") params.set("risk",   filterRisk);
+        if (filterRegion !== "all") params.set("region", filterRegion);
+        const res  = await fetch(`/api/legal-regulatory-watch-engine?${params}`);
+        const data = await res.json();
+        setJurisdictions(data.jurisdictions);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterRisk, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const distributions = [
     {

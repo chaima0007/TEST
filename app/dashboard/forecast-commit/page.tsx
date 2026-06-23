@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -350,26 +350,27 @@ export default function ForecastCommitPage() {
   const [confFilter, setConf]   = useState("all");
   const [selected, setSelected] = useState<CommitDeal | null>(null);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const params = new URLSearchParams();
-      if (catFilter !== "all")  params.set("category",   catFilter);
-      if (confFilter !== "all") params.set("confidence", confFilter);
-      const res = await fetch(`/api/forecast-commit?${params}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      setDeals(data.deals ?? []);
-      setSummary(data.summary ?? null);
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Erreur inconnue");
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        setError(null);
+        try {
+          const params = new URLSearchParams();
+          if (catFilter !== "all")  params.set("category",   catFilter);
+          if (confFilter !== "all") params.set("confidence", confFilter);
+          const res = await fetch(`/api/forecast-commit?${params}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          setDeals(data.deals ?? []);
+          setSummary(data.summary ?? null);
+        } catch (e: unknown) {
+          setError(e instanceof Error ? e.message : "Erreur inconnue");
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [catFilter, confFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const categories  = ["all", "commit", "upside", "pipeline", "at_risk", "omitted"];
   const confidences = ["all", "high", "medium", "low", "very_low"];

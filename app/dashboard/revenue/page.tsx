@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type RevenuePeriod = "monthly" | "quarterly" | "annual";
 type ConfidenceLevel = "low" | "medium" | "high" | "very_high";
@@ -273,16 +273,17 @@ export default function RevenuePage() {
   const [confFilter, setConfFilter] = useState<ConfidenceLevel | "all">("all");
   const [selected, setSelected] = useState<RevenuePrediction | null>(null);
 
-  const load = useCallback(async () => {
-    try {
-      const res = await fetch("/api/revenue", { cache: "no-store" });
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        try {
+          const res = await fetch("/api/revenue", { cache: "no-store" });
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, []);
-
-  useEffect(() => { load(); }, [load]);
 
   const forecast: PeriodForecast | null = data ? data[period] : null;
   const summary = data?.summary;

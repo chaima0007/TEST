@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -193,7 +193,7 @@ export default function ProspectsPage() {
   const [search, setSearch] = useState("");
   const [emailTarget, setEmailTarget] = useState<Prospect | null>(null);
 
-  const fetchProspects = useCallback((tier: string, q: string) => {
+  const fetchProspects = (tier: string, q: string) => {
     const params = new URLSearchParams();
     if (tier !== "all") params.set("tier", tier);
     if (q) params.set("q", q);
@@ -202,7 +202,7 @@ export default function ProspectsPage() {
       .then((r) => r.json())
       .then(setData)
       .finally(() => setLoading(false));
-  }, []);
+  };
 
   useEffect(() => {
     fetchProspects(activeTier, search);

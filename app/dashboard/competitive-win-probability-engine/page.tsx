@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface DealData {
   deal_id: string;
@@ -245,20 +245,21 @@ export default function CompetitiveWinPage() {
   const [riskFilter, setRiskFilter] = useState<string>("all");
   const [selected, setSelected] = useState<DealData | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (tierFilter !== "all") params.set("tier", tierFilter);
-      if (riskFilter !== "all") params.set("risk", riskFilter);
-      const res = await fetch(`/api/competitive-win-probability-engine?${params}`);
-      setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (tierFilter !== "all") params.set("tier", tierFilter);
+          if (riskFilter !== "all") params.set("risk", riskFilter);
+          const res = await fetch(`/api/competitive-win-probability-engine?${params}`);
+          setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [tierFilter, riskFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

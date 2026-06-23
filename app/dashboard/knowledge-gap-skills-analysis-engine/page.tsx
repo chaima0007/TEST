@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface EmployeeData {
   employee_id: string;
@@ -300,7 +300,7 @@ export default function KnowledgeGapSkillsAnalysisEnginePage() {
   const [filter, setFilter] = useState<RiskFilter>("all");
   const [selected, setSelected] = useState<EmployeeData | null>(null);
 
-  const fetchData = useCallback(async (risk: RiskFilter) => {
+  const fetchData = async (risk: RiskFilter) => {
     setLoading(true);
     const params = new URLSearchParams();
     if (risk !== "all") params.set("risk", risk);
@@ -308,7 +308,7 @@ export default function KnowledgeGapSkillsAnalysisEnginePage() {
     const json = await res.json();
     setData(json);
     setLoading(false);
-  }, []);
+  };
 
   useEffect(() => { fetchData(filter); }, [filter, fetchData]);
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -383,20 +383,21 @@ export default function SalesForecastPage() {
   const [filterBand, setFilterBand] = useState<string>("all");
   const [filterRegion, setFilterRegion] = useState<string>("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterBand !== "all")   params.set("band", filterBand);
-      if (filterRegion !== "all") params.set("region", filterRegion);
-      const res = await fetch(`/api/sales-forecast?${params}`);
-      setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterBand !== "all")   params.set("band", filterBand);
+          if (filterRegion !== "all") params.set("region", filterRegion);
+          const res = await fetch(`/api/sales-forecast?${params}`);
+          setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [filterBand, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

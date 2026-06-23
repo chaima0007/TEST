@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ──────────────────────────────────────────────────────────────────────
 interface Prospect {
@@ -331,22 +331,23 @@ export default function ProspectDigitalFootprintPage() {
   const [tierFilter, setTierFilter]       = useState("all");
   const [patternFilter, setPatternFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (tierFilter !== "all")    params.set("tier", tierFilter);
-      if (patternFilter !== "all") params.set("pattern", patternFilter);
-      const r = await fetch(`/api/prospect-digital-footprint?${params}`);
-      const j = await r.json();
-      setProspects(j.prospects);
-      setSummary(j.summary);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (tierFilter !== "all")    params.set("tier", tierFilter);
+          if (patternFilter !== "all") params.set("pattern", patternFilter);
+          const r = await fetch(`/api/prospect-digital-footprint?${params}`);
+          const j = await r.json();
+          setProspects(j.prospects);
+          setSummary(j.summary);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [tierFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const hotQueue = prospects.filter((p) => p.needs_immediate_outreach);
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface Territory {
   territory_id: string;
@@ -315,15 +315,16 @@ export default function TerritoryWhitespacePage() {
   const [filterPriority, setFilterPriority] = useState("all");
   const [filterType, setFilterType] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (filterPriority !== "all") params.set("priority", filterPriority);
-    if (filterType !== "all")     params.set("type", filterType);
-    const res = await fetch(`/api/territory-whitespace?${params}`);
-    setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (filterPriority !== "all") params.set("priority", filterPriority);
+        if (filterType !== "all")     params.set("type", filterType);
+        const res = await fetch(`/api/territory-whitespace?${params}`);
+        setData(await res.json());
+  }
+    load();
   }, [filterPriority, filterType]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

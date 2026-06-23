@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface QualityRep {
   rep_id: string;
@@ -249,18 +249,19 @@ export default function CRMDataQualityPage() {
   const [modeFilter, setModeFilter] = useState<string>("");
   const [selected, setSelected] = useState<QualityRep | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (riskFilter) params.set("risk", riskFilter);
-    if (modeFilter) params.set("mode", modeFilter);
-    const res  = await fetch(`/api/crm-data-quality-risk-engine?${params}`);
-    const json = await res.json();
-    setData(json);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (riskFilter) params.set("risk", riskFilter);
+        if (modeFilter) params.set("mode", modeFilter);
+        const res  = await fetch(`/api/crm-data-quality-risk-engine?${params}`);
+        const json = await res.json();
+        setData(json);
+        setLoading(false);
+  }
+    load();
   }, [riskFilter, modeFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s    = data?.summary;
   const reps = data?.reps ?? [];

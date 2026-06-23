@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface UserRecord {
   user_id: string;
@@ -233,12 +233,12 @@ export default function SalesDataAccessAnomalyEnginePage() {
   const [filter, setFilter]   = useState("all");
   const [selected, setSelected] = useState<UserRecord | null>(null);
 
-  const load = useCallback((level?: string) => {
+  const load = (level?: string) => {
     const params = level && level !== "all" ? `?level=${level}` : "";
     fetch(`/api/sales-data-access-anomaly-engine${params}`)
       .then((r) => r.json())
       .then(setData);
-  }, []);
+  };
 
   useEffect(() => { load(); }, [load]);
 

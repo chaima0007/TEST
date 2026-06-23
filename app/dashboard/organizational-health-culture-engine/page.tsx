@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface OrgUnit {
@@ -306,19 +306,20 @@ export default function OrganizationalHealthCultureEnginePage() {
   const [filterRisk,    setFilterRisk]    = useState("all");
   const [filterPattern, setFilterPattern] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterRisk    !== "all") params.set("risk",    filterRisk);
-    if (filterPattern !== "all") params.set("pattern", filterPattern);
-    const res  = await fetch(`/api/organizational-health-culture-engine?${params}`);
-    const data = await res.json();
-    setUnits(data.units);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterRisk    !== "all") params.set("risk",    filterRisk);
+        if (filterPattern !== "all") params.set("pattern", filterPattern);
+        const res  = await fetch(`/api/organizational-health-culture-engine?${params}`);
+        const data = await res.json();
+        setUnits(data.units);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterRisk, filterPattern]);
-
-  useEffect(() => { load(); }, [load]);
 
   const distributions = [
     { title: "Patterns Culture",  counts: summary?.pattern_counts ?? {},  colors: { toxic_culture: "bg-rose-500", disengagement_spiral: "bg-orange-500", leadership_void: "bg-amber-500", change_resistance: "bg-yellow-500", diversity_gap: "bg-teal-500", none: "bg-slate-500" } },

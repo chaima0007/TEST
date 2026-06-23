@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface DealData {
   deal_id: string;
@@ -257,20 +257,21 @@ export default function DealContaminationPage() {
   const [riskFilter, setRiskFilter] = useState<string>("all");
   const [selected, setSelected] = useState<DealData | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (levelFilter !== "all") params.set("level", levelFilter);
-      if (riskFilter !== "all")  params.set("risk", riskFilter);
-      const res = await fetch(`/api/deal-contamination-risk-engine?${params}`);
-      setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (levelFilter !== "all") params.set("level", levelFilter);
+          if (riskFilter !== "all")  params.set("risk", riskFilter);
+          const res = await fetch(`/api/deal-contamination-risk-engine?${params}`);
+          setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [levelFilter, riskFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

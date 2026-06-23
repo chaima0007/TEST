@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 type Team = {
   team_id: string;
@@ -440,23 +440,24 @@ export default function PipelineCoveragePage() {
   const [gapFilter, setGap]         = useState("all");
   const [selected, setSelected]     = useState<Team | null>(null);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (statusFilter !== "all") params.set("status", statusFilter);
-      if (gapFilter !== "all")    params.set("gap", gapFilter);
-      const qs = params.toString();
-      const res = await fetch(`/api/pipeline-coverage${qs ? `?${qs}` : ""}`, { cache: "no-store" });
-      const data = await res.json();
-      setTeams(data.teams ?? []);
-      setSummary(data.summary ?? null);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (statusFilter !== "all") params.set("status", statusFilter);
+          if (gapFilter !== "all")    params.set("gap", gapFilter);
+          const qs = params.toString();
+          const res = await fetch(`/api/pipeline-coverage${qs ? `?${qs}` : ""}`, { cache: "no-store" });
+          const data = await res.json();
+          setTeams(data.teams ?? []);
+          setSummary(data.summary ?? null);
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [statusFilter, gapFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   return (
     <div className="min-h-screen bg-slate-950 p-4 md:p-6 space-y-6">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ─────────────────────────────────────────────────────────────────────
 
@@ -389,22 +389,23 @@ export default function SalesRepBurnoutPage() {
   const [filterRisk, setFilterRisk] = useState("all");
   const [filterCategory, setFilterCategory] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterRisk     !== "all") params.set("risk", filterRisk);
-      if (filterCategory !== "all") params.set("category", filterCategory);
-      const res = await fetch(`/api/sales-rep-burnout?${params}`);
-      const data = await res.json();
-      setReps(data.reps ?? []);
-      setSummary(data.summary ?? null);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterRisk     !== "all") params.set("risk", filterRisk);
+          if (filterCategory !== "all") params.set("category", filterCategory);
+          const res = await fetch(`/api/sales-rep-burnout?${params}`);
+          const data = await res.json();
+          setReps(data.reps ?? []);
+          setSummary(data.summary ?? null);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [filterRisk, filterCategory]);
-
-  useEffect(() => { load(); }, [load]);
 
   const risks      = ["all", "minimal", "building", "high", "critical"];
   const categories = ["all", "healthy", "stressed", "overloaded", "burned_out"];

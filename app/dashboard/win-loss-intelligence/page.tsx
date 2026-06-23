@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -404,7 +404,7 @@ export default function WinLossIntelligencePage() {
   const [qualityFilter, setQualityFilter] = useState<QualityFilter>("all");
   const [selected, setSelected] = useState<WinLossDeal | null>(null);
 
-  const fetchData = useCallback(async (outcome: OutcomeFilter, quality: QualityFilter) => {
+  const fetchData = async (outcome: OutcomeFilter, quality: QualityFilter) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -415,7 +415,7 @@ export default function WinLossIntelligencePage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   useEffect(() => { fetchData(outcomeFilter, qualityFilter); }, [outcomeFilter, qualityFilter, fetchData]);
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { DIVISIONS } from "@/lib/swarm-data";
 import type { SwarmAgent, Division } from "@/lib/swarm-data";
 
@@ -140,9 +140,9 @@ export default function AgentsPage() {
   const [divFilter, setDivFilter] = useState<number | null>(null);
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
 
-  const allAgents = useMemo(() => DIVISIONS.flatMap((d) => d.agents), []);
+  const allAgents = DIVISIONS.flatMap((d) => d.agents);
 
-  const filtered = useMemo(() => {
+  const filtered = {
     return allAgents.filter((a) => {
       if (divFilter !== null && a.division !== divFilter) return false;
       if (statusFilter !== null && a.status !== statusFilter) return false;
@@ -152,23 +152,23 @@ export default function AgentsPage() {
       }
       return true;
     });
-  }, [allAgents, divFilter, statusFilter, search]);
+  };
 
-  const stats = useMemo(() => ({
+  const stats = ({
     total: allAgents.length,
     active: allAgents.filter((a) => a.status === "active").length,
     idle: allAgents.filter((a) => a.status === "idle").length,
     error: allAgents.filter((a) => a.status === "error").length,
     managers: allAgents.filter((a) => a.isManager).length,
     totalTasks: allAgents.reduce((s, a) => s + a.tasksCompleted, 0),
-  }), [allAgents]);
+  });
 
-  const groupedByDivision = useMemo(() => {
+  const groupedByDivision = {
     return DIVISIONS.map((div) => ({
       div,
       agents: filtered.filter((a) => a.division === div.id),
     })).filter((g) => g.agents.length > 0);
-  }, [filtered]);
+  };
 
   return (
     <div className="min-h-screen bg-slate-50">

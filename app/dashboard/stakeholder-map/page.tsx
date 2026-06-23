@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -449,24 +449,25 @@ export default function StakeholderMapPage() {
   const [engFilter, setEngFilter]       = useState<string>("all");
   const [selected, setSelected]         = useState<Stakeholder | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const params = new URLSearchParams();
-      if (roleFilter !== "all") params.set("role", roleFilter);
-      if (engFilter  !== "all") params.set("engagement", engFilter);
-      const res = await fetch(`/api/stakeholder-map?${params}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setData(await res.json());
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Erreur inconnue");
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        setError(null);
+        try {
+          const params = new URLSearchParams();
+          if (roleFilter !== "all") params.set("role", roleFilter);
+          if (engFilter  !== "all") params.set("engagement", engFilter);
+          const res = await fetch(`/api/stakeholder-map?${params}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          setData(await res.json());
+        } catch (e: unknown) {
+          setError(e instanceof Error ? e.message : "Erreur inconnue");
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [roleFilter, engFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

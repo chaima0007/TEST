@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -572,26 +572,27 @@ export default function ITSystemsHealthMonitoringPage() {
   const [patternFilter, setPattern] = useState("all");
   const [selected, setSelected]   = useState<SystemItem | null>(null);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (riskFilter !== "all")    params.set("risk", riskFilter);
-      if (patternFilter !== "all") params.set("pattern", patternFilter);
-      const qs = params.toString();
-      const res = await fetch(
-        `/api/it-systems-health-monitoring-engine${qs ? `?${qs}` : ""}`,
-        { cache: "no-store" },
-      );
-      const data = await res.json();
-      setSystems(data.systems ?? []);
-      setSummary(data.summary ?? null);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (riskFilter !== "all")    params.set("risk", riskFilter);
+          if (patternFilter !== "all") params.set("pattern", patternFilter);
+          const qs = params.toString();
+          const res = await fetch(
+            `/api/it-systems-health-monitoring-engine${qs ? `?${qs}` : ""}`,
+            { cache: "no-store" },
+          );
+          const data = await res.json();
+          setSystems(data.systems ?? []);
+          setSummary(data.summary ?? null);
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [riskFilter, patternFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   return (
     <div className="min-h-screen bg-slate-950 p-4 md:p-6 space-y-6">

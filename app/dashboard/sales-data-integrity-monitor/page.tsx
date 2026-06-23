@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 interface RecordData {
   record_id: string;
@@ -293,15 +293,16 @@ export default function SalesDataIntegrityMonitorPage() {
   const [filterRisk, setFilterRisk] = useState("all");
   const [filterQuality, setFilterQuality] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (filterRisk !== "all") params.set("risk", filterRisk);
-    if (filterQuality !== "all") params.set("quality", filterQuality);
-    const res = await fetch(`/api/sales-data-integrity-monitor?${params}`);
-    if (res.ok) setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (filterRisk !== "all") params.set("risk", filterRisk);
+        if (filterQuality !== "all") params.set("quality", filterQuality);
+        const res = await fetch(`/api/sales-data-integrity-monitor?${params}`);
+        if (res.ok) setData(await res.json());
+  }
+    load();
   }, [filterRisk, filterQuality]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
   const kpis = [

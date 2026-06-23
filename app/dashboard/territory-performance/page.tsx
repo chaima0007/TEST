@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface TerritoryData {
   territory_id: string;
@@ -295,21 +295,22 @@ export default function TerritoryPerformancePage() {
   const [filterStatus, setFilterStatus] = useState("all");
   const [filterRisk, setFilterRisk]     = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterStatus !== "all") params.set("status", filterStatus);
-      if (filterRisk   !== "all") params.set("risk", filterRisk);
-      const res = await fetch(`/api/territory-performance?${params}`);
-      const data = await res.json();
-      setTerritories(data.territories || []);
-      setSummary(data.summary || null);
-    } catch {}
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterStatus !== "all") params.set("status", filterStatus);
+          if (filterRisk   !== "all") params.set("risk", filterRisk);
+          const res = await fetch(`/api/territory-performance?${params}`);
+          const data = await res.json();
+          setTerritories(data.territories || []);
+          setSummary(data.summary || null);
+        } catch {}
+        setLoading(false);
+  }
+    load();
   }, [filterStatus, filterRisk]);
-
-  useEffect(() => { load(); }, [load]);
 
   const statuses = ["all", "overperforming", "on_target", "underperforming", "critical"];
   const risks    = ["all", "low", "medium", "high", "critical"];

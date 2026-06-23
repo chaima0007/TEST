@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface ResourceItem {
@@ -302,19 +302,20 @@ export default function ResourceOptimizationCapacityEnginePage() {
   const [filterRisk,    setFilterRisk]    = useState("all");
   const [filterPattern, setFilterPattern] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterRisk    !== "all") params.set("risk",    filterRisk);
-    if (filterPattern !== "all") params.set("pattern", filterPattern);
-    const res  = await fetch(`/api/resource-optimization-capacity-engine?${params}`);
-    const data = await res.json();
-    setResources(data.resources);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterRisk    !== "all") params.set("risk",    filterRisk);
+        if (filterPattern !== "all") params.set("pattern", filterPattern);
+        const res  = await fetch(`/api/resource-optimization-capacity-engine?${params}`);
+        const data = await res.json();
+        setResources(data.resources);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterRisk, filterPattern]);
-
-  useEffect(() => { load(); }, [load]);
 
   const distributions = [
     { title: "Utilisation Moy.",  counts: summary?.risk_counts ?? {},    colors: { critical: "bg-rose-500", high: "bg-amber-500", moderate: "bg-yellow-500", low: "bg-slate-500" } },

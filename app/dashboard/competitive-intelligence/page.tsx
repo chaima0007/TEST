@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 interface Deal {
@@ -340,20 +340,21 @@ export default function CompetitiveIntelligencePage() {
   const [positionFilter, setPositionFilter] = useState<string>("all");
   const [loading, setLoading] = useState(true);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (threatFilter !== "all")   params.set("threat", threatFilter);
-      if (positionFilter !== "all") params.set("position", positionFilter);
-      const res = await fetch(`/api/competitive-intelligence?${params.toString()}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (threatFilter !== "all")   params.set("threat", threatFilter);
+          if (positionFilter !== "all") params.set("position", positionFilter);
+          const res = await fetch(`/api/competitive-intelligence?${params.toString()}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [threatFilter, positionFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const s = data?.summary;
 

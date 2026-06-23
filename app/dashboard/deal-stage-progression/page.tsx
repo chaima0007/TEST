@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -435,21 +435,22 @@ export default function DealStageProgressionPage() {
   const [riskFilter, setRiskFilter]   = useState("all");
   const [actionFilter, setActionFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (riskFilter !== "all")   params.set("risk", riskFilter);
-      if (actionFilter !== "all") params.set("action", actionFilter);
-      const res = await fetch(`/api/deal-stage-progression?${params}`);
-      const data = await res.json();
-      setDeals(data.deals ?? []);
-      setSummary(data.summary ?? null);
-    } catch {}
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (riskFilter !== "all")   params.set("risk", riskFilter);
+          if (actionFilter !== "all") params.set("action", actionFilter);
+          const res = await fetch(`/api/deal-stage-progression?${params}`);
+          const data = await res.json();
+          setDeals(data.deals ?? []);
+          setSummary(data.summary ?? null);
+        } catch {}
+        setLoading(false);
+  }
+    load();
   }, [riskFilter, actionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const RISK_TABS = [
     { key: "all",       label: "Tous" },

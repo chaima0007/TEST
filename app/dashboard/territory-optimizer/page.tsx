@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface RepData {
   rep_id: string;
@@ -243,20 +243,21 @@ export default function TerritoryOptimizerPage() {
   const [healthFilter, setHealthFilter] = useState("");
   const [actionFilter, setActionFilter] = useState("");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (healthFilter) params.set("health", healthFilter);
-      if (actionFilter) params.set("action", actionFilter);
-      const res = await fetch(`/api/territory-optimizer?${params}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (healthFilter) params.set("health", healthFilter);
+          if (actionFilter) params.set("action", actionFilter);
+          const res = await fetch(`/api/territory-optimizer?${params}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [healthFilter, actionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const sum = data?.summary;
   const reps = data?.reps ?? [];

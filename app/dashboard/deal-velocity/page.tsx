@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 type Deal = {
   deal_id: string;
@@ -475,23 +475,24 @@ export default function DealVelocityPage() {
   const [outcomeFilter, setOutcome] = useState("all");
   const [selected, setSelected]   = useState<Deal | null>(null);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (trendFilter !== "all")   params.set("trend", trendFilter);
-      if (outcomeFilter !== "all") params.set("outcome", outcomeFilter);
-      const qs = params.toString();
-      const res = await fetch(`/api/deal-velocity${qs ? `?${qs}` : ""}`, { cache: "no-store" });
-      const data = await res.json();
-      setDeals(data.deals ?? []);
-      setSummary(data.summary ?? null);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (trendFilter !== "all")   params.set("trend", trendFilter);
+          if (outcomeFilter !== "all") params.set("outcome", outcomeFilter);
+          const qs = params.toString();
+          const res = await fetch(`/api/deal-velocity${qs ? `?${qs}` : ""}`, { cache: "no-store" });
+          const data = await res.json();
+          setDeals(data.deals ?? []);
+          setSummary(data.summary ?? null);
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [trendFilter, outcomeFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const totalValue = deals.reduce((s, d) => s + d.deal_value, 0);
 

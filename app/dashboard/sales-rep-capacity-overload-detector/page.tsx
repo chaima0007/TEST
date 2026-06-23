@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface RepCapacity {
   rep_id: string;
@@ -207,14 +207,15 @@ export default function CapacityOverloadPage() {
   const [riskFilter, setRiskFilter] = useState("all");
   const [selected, setSelected] = useState<RepCapacity | null>(null);
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (riskFilter !== "all") params.set("risk", riskFilter);
-    const res = await fetch(`/api/sales-rep-capacity-overload-detector?${params}`);
-    if (res.ok) setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (riskFilter !== "all") params.set("risk", riskFilter);
+        const res = await fetch(`/api/sales-rep-capacity-overload-detector?${params}`);
+        if (res.ok) setData(await res.json());
+  }
+    load();
   }, [riskFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const summary = data?.summary;
   const reps = data?.reps ?? [];

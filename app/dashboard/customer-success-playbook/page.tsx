@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -405,7 +405,7 @@ export default function CustomerSuccessPlaybookPage() {
   const [riskFilter, setRiskFilter] = useState<RiskFilter>("all");
   const [selected, setSelected] = useState<CSAccount | null>(null);
 
-  const fetchData = useCallback(async (motion: MotionFilter, risk: RiskFilter) => {
+  const fetchData = async (motion: MotionFilter, risk: RiskFilter) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -416,7 +416,7 @@ export default function CustomerSuccessPlaybookPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   useEffect(() => { fetchData(motionFilter, riskFilter); }, [motionFilter, riskFilter, fetchData]);
 

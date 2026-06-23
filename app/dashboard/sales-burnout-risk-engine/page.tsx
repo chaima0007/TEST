@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface RepData {
   rep_id: string;
@@ -293,7 +293,7 @@ export default function SalesBurnoutRiskEnginePage() {
   const [filter, setFilter] = useState<RiskFilter>("all");
   const [selected, setSelected] = useState<RepData | null>(null);
 
-  const fetchData = useCallback(async (risk: RiskFilter) => {
+  const fetchData = async (risk: RiskFilter) => {
     setLoading(true);
     const params = new URLSearchParams();
     if (risk !== "all") params.set("risk", risk);
@@ -301,7 +301,7 @@ export default function SalesBurnoutRiskEnginePage() {
     const json = await res.json();
     setData(json);
     setLoading(false);
-  }, []);
+  };
 
   useEffect(() => { fetchData(filter); }, [filter, fetchData]);
 

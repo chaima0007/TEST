@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface BurnoutRep {
   rep_id: string;
@@ -220,14 +220,15 @@ export default function SalesRepBurnoutPage() {
   const [selected, setSelected] = useState<BurnoutRep | null>(null);
   const [riskFilter, setRiskFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (riskFilter !== "all") params.set("risk", riskFilter);
-    const res = await fetch(`/api/sales-rep-burnout-disengagement-engine?${params}`);
-    setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (riskFilter !== "all") params.set("risk", riskFilter);
+        const res = await fetch(`/api/sales-rep-burnout-disengagement-engine?${params}`);
+        setData(await res.json());
+  }
+    load();
   }, [riskFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const summary = data?.summary;
   const reps = data?.reps ?? [];

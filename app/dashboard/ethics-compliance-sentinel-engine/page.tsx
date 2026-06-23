@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface ComplianceAgent {
   agent_id: string;
@@ -255,18 +255,19 @@ export default function EthicsComplianceSentinelPage() {
   const [patternFilter, setPatternFilter] = useState<string>("");
   const [selected, setSelected]   = useState<ComplianceAgent | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (riskFilter)    params.set("risk",    riskFilter);
-    if (patternFilter) params.set("pattern", patternFilter);
-    const res  = await fetch(`/api/ethics-compliance-sentinel-engine?${params}`);
-    const json = await res.json();
-    setData(json);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (riskFilter)    params.set("risk",    riskFilter);
+        if (patternFilter) params.set("pattern", patternFilter);
+        const res  = await fetch(`/api/ethics-compliance-sentinel-engine?${params}`);
+        const json = await res.json();
+        setData(json);
+        setLoading(false);
+  }
+    load();
   }, [riskFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s      = data?.summary;
   const agents = data?.agents ?? [];

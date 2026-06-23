@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -397,24 +397,25 @@ export default function EmailPersonalizationPage() {
   const [actionFilter, setActionFilter] = useState<string>("all");
   const [selected, setSelected]         = useState<EmailRecord | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const params = new URLSearchParams();
-      if (levelFilter  !== "all") params.set("level", levelFilter);
-      if (actionFilter !== "all") params.set("action", actionFilter);
-      const res = await fetch(`/api/email-personalization?${params}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setData(await res.json());
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Erreur inconnue");
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        setError(null);
+        try {
+          const params = new URLSearchParams();
+          if (levelFilter  !== "all") params.set("level", levelFilter);
+          if (actionFilter !== "all") params.set("action", actionFilter);
+          const res = await fetch(`/api/email-personalization?${params}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          setData(await res.json());
+        } catch (e: unknown) {
+          setError(e instanceof Error ? e.message : "Erreur inconnue");
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [levelFilter, actionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

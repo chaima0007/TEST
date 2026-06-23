@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface CompetitiveRep {
   rep_id: string;
@@ -226,14 +226,15 @@ export default function CompetitorWinLossPage() {
   const [selected, setSelected] = useState<CompetitiveRep | null>(null);
   const [riskFilter, setRiskFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (riskFilter !== "all") params.set("risk", riskFilter);
-    const res = await fetch(`/api/competitor-win-loss-intelligence-engine?${params}`);
-    setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (riskFilter !== "all") params.set("risk", riskFilter);
+        const res = await fetch(`/api/competitor-win-loss-intelligence-engine?${params}`);
+        setData(await res.json());
+  }
+    load();
   }, [riskFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const summary = data?.summary;
   const reps = data?.reps ?? [];

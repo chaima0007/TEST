@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface RepData {
   rep_id: string;
@@ -325,21 +325,22 @@ export default function QuotaAttainmentPage() {
   const [filterLikelihood, setFilterLikelihood] = useState("all");
   const [filterRisk, setFilterRisk]             = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterLikelihood !== "all") params.set("likelihood", filterLikelihood);
-      if (filterRisk !== "all")       params.set("risk", filterRisk);
-      const res = await fetch(`/api/quota-attainment?${params}`);
-      const data = await res.json();
-      setReps(data.reps || []);
-      setSummary(data.summary || null);
-    } catch {}
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterLikelihood !== "all") params.set("likelihood", filterLikelihood);
+          if (filterRisk !== "all")       params.set("risk", filterRisk);
+          const res = await fetch(`/api/quota-attainment?${params}`);
+          const data = await res.json();
+          setReps(data.reps || []);
+          setSummary(data.summary || null);
+        } catch {}
+        setLoading(false);
+  }
+    load();
   }, [filterLikelihood, filterRisk]);
-
-  useEffect(() => { load(); }, [load]);
 
   const likelihoods = ["all", "very_likely", "likely", "possible", "unlikely", "very_unlikely"];
   const risks       = ["all", "low", "medium", "high", "critical"];

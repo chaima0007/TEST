@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ──────────────────────────────────────────────────────────────────────
 interface Contract {
@@ -339,22 +339,23 @@ export default function ContractClauseRiskPage() {
   const [riskFilter, setRiskFilter]       = useState("all");
   const [patternFilter, setPatternFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (riskFilter !== "all")    params.set("risk", riskFilter);
-      if (patternFilter !== "all") params.set("pattern", patternFilter);
-      const r = await fetch(`/api/contract-clause-risk?${params}`);
-      const j = await r.json();
-      setContracts(j.contracts);
-      setSummary(j.summary);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (riskFilter !== "all")    params.set("risk", riskFilter);
+          if (patternFilter !== "all") params.set("pattern", patternFilter);
+          const r = await fetch(`/api/contract-clause-risk?${params}`);
+          const j = await r.json();
+          setContracts(j.contracts);
+          setSummary(j.summary);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [riskFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const blocked = contracts.filter((c) => c.needs_legal_escalation);
 

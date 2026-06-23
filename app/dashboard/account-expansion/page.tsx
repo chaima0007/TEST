@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -336,20 +336,21 @@ export default function AccountExpansionPage() {
   const [churnFilter, setChurnFilter]         = useState("");
   const [selected, setSelected]               = useState<Account | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (readinessFilter) params.set("readiness", readinessFilter);
-      if (churnFilter)     params.set("churn", churnFilter);
-      const res = await fetch(`/api/account-expansion?${params}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (readinessFilter) params.set("readiness", readinessFilter);
+          if (churnFilter)     params.set("churn", churnFilter);
+          const res = await fetch(`/api/account-expansion?${params}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [readinessFilter, churnFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s        = data?.summary;
   const accounts = data?.accounts ?? [];

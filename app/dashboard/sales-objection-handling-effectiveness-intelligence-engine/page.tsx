@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 /* ── types ──────────────────────────────────────────────────────────────── */
 interface Rep {
@@ -257,21 +257,22 @@ export default function SalesObjectionHandlingEffectivenessPage() {
   const [patternFilter, setPatternFilter] = useState("all");
   const [selected, setSelected]   = useState<Rep | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (riskFilter    !== "all") params.set("risk",    riskFilter);
-      if (patternFilter !== "all") params.set("pattern", patternFilter);
-      const res  = await fetch(`/api/sales-objection-handling-effectiveness-intelligence-engine?${params}`);
-      const json = await res.json();
-      setData(json);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (riskFilter    !== "all") params.set("risk",    riskFilter);
+          if (patternFilter !== "all") params.set("pattern", patternFilter);
+          const res  = await fetch(`/api/sales-objection-handling-effectiveness-intelligence-engine?${params}`);
+          const json = await res.json();
+          setData(json);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [riskFilter, patternFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -397,7 +397,7 @@ export default function ContractRenewalPage() {
   const [upliftFilter, setUpliftFilter] = useState<"all" | UpliftPotential>("all");
   const [selected, setSelected] = useState<Contract | null>(null);
 
-  const fetchData = useCallback(async (risk: RiskFilter, uplift: "all" | UpliftPotential) => {
+  const fetchData = async (risk: RiskFilter, uplift: "all" | UpliftPotential) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -408,7 +408,7 @@ export default function ContractRenewalPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   useEffect(() => { fetchData(riskFilter, upliftFilter); }, [riskFilter, upliftFilter, fetchData]);
 

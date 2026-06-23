@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface Deal {
@@ -303,19 +303,20 @@ export default function WinLossPatternEnginePage() {
   const [filterOutcome, setFilterOutcome] = useState("all");
   const [filterRegion,  setFilterRegion]  = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterOutcome !== "all") params.set("outcome", filterOutcome);
-    if (filterRegion  !== "all") params.set("region",  filterRegion);
-    const res = await fetch(`/api/win-loss-pattern-engine?${params}`);
-    const data = await res.json();
-    setDeals(data.deals);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterOutcome !== "all") params.set("outcome", filterOutcome);
+        if (filterRegion  !== "all") params.set("region",  filterRegion);
+        const res = await fetch(`/api/win-loss-pattern-engine?${params}`);
+        const data = await res.json();
+        setDeals(data.deals);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterOutcome, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 p-6">

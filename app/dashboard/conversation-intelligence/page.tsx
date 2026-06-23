@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface Call {
   call_id: string;
@@ -310,15 +310,16 @@ export default function ConversationIntelligencePage() {
   const [filterQuality, setFilterQuality] = useState("all");
   const [filterPattern, setFilterPattern] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (filterQuality !== "all") params.set("quality", filterQuality);
-    if (filterPattern !== "all") params.set("pattern", filterPattern);
-    const res = await fetch(`/api/conversation-intelligence?${params}`);
-    setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (filterQuality !== "all") params.set("quality", filterQuality);
+        if (filterPattern !== "all") params.set("pattern", filterPattern);
+        const res = await fetch(`/api/conversation-intelligence?${params}`);
+        setData(await res.json());
+  }
+    load();
   }, [filterQuality, filterPattern]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface SandbaggingRep {
   rep_id: string;
@@ -210,18 +210,19 @@ export default function SalesForecastSandbaggingDetectionEnginePage() {
   const [patFilter,  setPatFilter]  = useState("all");
   const [selected,   setSelected]   = useState<SandbaggingRep | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (riskFilter !== "all") params.set("risk", riskFilter);
-      if (patFilter  !== "all") params.set("pattern", patFilter);
-      const res = await fetch(`/api/sales-forecast-sandbagging-detection-engine?${params}`);
-      setData(await res.json());
-    } finally { setLoading(false); }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (riskFilter !== "all") params.set("risk", riskFilter);
+          if (patFilter  !== "all") params.set("pattern", patFilter);
+          const res = await fetch(`/api/sales-forecast-sandbagging-detection-engine?${params}`);
+          setData(await res.json());
+        } finally { setLoading(false); }
+  }
+    load();
   }, [riskFilter, patFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

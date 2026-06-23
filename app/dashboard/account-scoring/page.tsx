@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ─────────────────────────────────────────────────────────────────────
 
@@ -413,22 +413,23 @@ export default function AccountScoringPage() {
   const [filterTier, setFilterTier] = useState("all");
   const [filterHealth, setFilterHealth] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterTier   !== "all") params.set("tier",   filterTier);
-      if (filterHealth !== "all") params.set("health", filterHealth);
-      const res = await fetch(`/api/account-scoring?${params}`);
-      const data = await res.json();
-      setAccounts(data.accounts ?? []);
-      setSummary(data.summary ?? null);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterTier   !== "all") params.set("tier",   filterTier);
+          if (filterHealth !== "all") params.set("health", filterHealth);
+          const res = await fetch(`/api/account-scoring?${params}`);
+          const data = await res.json();
+          setAccounts(data.accounts ?? []);
+          setSummary(data.summary ?? null);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [filterTier, filterHealth]);
-
-  useEffect(() => { load(); }, [load]);
 
   const tiers   = ["all", "strategic", "enterprise", "growth", "smb", "starter"];
   const healths = ["all", "excellent", "good", "fair", "at_risk", "churning"];

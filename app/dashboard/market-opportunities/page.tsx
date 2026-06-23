@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type OpportunityPhase = "emerging" | "growing" | "mature" | "declining";
 type RiskLevel = "low" | "medium" | "high" | "critical";
@@ -256,16 +256,17 @@ export default function MarketOpportunitiesPage() {
   const [phaseFilter, setPhaseFilter] = useState<OpportunityPhase | "all">("all");
   const [selected, setSelected] = useState<ScoredOpportunity | null>(null);
 
-  const load = useCallback(async () => {
-    try {
-      const res = await fetch("/api/market-opportunities", { cache: "no-store" });
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        try {
+          const res = await fetch("/api/market-opportunities", { cache: "no-store" });
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, []);
-
-  useEffect(() => { load(); }, [load]);
 
   const filtered = data?.opportunities.filter(o => phaseFilter === "all" || o.opportunity_phase === phaseFilter) ?? [];
   const summary = data?.summary;

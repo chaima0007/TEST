@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -328,7 +328,7 @@ export default function OnboardingHealthPage() {
   const [selected, setSelected] = useState<Account | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = useCallback(async (status: string) => {
+  const fetchData = async (status: string) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -340,7 +340,7 @@ export default function OnboardingHealthPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   useEffect(() => { fetchData(statusFilter); }, [fetchData, statusFilter]);
 

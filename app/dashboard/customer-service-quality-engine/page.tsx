@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface TicketRecord {
   ticket_id: string;
@@ -345,8 +345,7 @@ export default function CustomerServiceQualityEnginePage() {
   const [selected, setSelected] = useState<TicketRecord | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const load = useCallback(
-    (risk: string, pattern: string) => {
+  const load = (risk: string, pattern: string) => {
       setLoading(true);
       const params = new URLSearchParams();
       if (risk !== "all")    params.set("risk",    risk);
@@ -360,7 +359,7 @@ export default function CustomerServiceQualityEnginePage() {
     [],
   );
 
-  useEffect(() => { load(riskFilter, patternFilter); }, [load, riskFilter, patternFilter]);
+  useEffect(() => { load(riskFilter, patternFilter); };
 
   const handleRisk = (v: string) => { setRiskFilter(v); };
   const handlePattern = (v: string) => { setPatternFilter(v); };

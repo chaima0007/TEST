@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type ProposalTier = "weak" | "fair" | "good" | "strong";
 
@@ -239,16 +239,17 @@ export default function ProposalsPage() {
   const [tierFilter, setTierFilter] = useState<ProposalTier | "all">("all");
   const [selected, setSelected] = useState<ScoredProposal | null>(null);
 
-  const load = useCallback(async () => {
-    try {
-      const res = await fetch("/api/proposals", { cache: "no-store" });
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        try {
+          const res = await fetch("/api/proposals", { cache: "no-store" });
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, []);
-
-  useEffect(() => { load(); }, [load]);
 
   const filtered = data?.proposals.filter(p => tierFilter === "all" || p.proposal_tier === tierFilter) ?? [];
   const summary = data?.summary;

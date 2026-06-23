@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -279,19 +279,20 @@ export default function ForecastAccuracyEnginePage() {
   const [accuracyFilter, setAccuracyFilter] = useState<string>("all");
   const [actionFilter, setActionFilter] = useState<string>("all");
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (accuracyFilter !== "all") params.set("accuracy", accuracyFilter);
-    if (actionFilter !== "all") params.set("action", actionFilter);
-    const res = await fetch(`/api/forecast-accuracy-engine?${params}`);
-    const data = await res.json();
-    setReps(data.reps ?? []);
-    setSummary(data.summary ?? null);
-    setLoading(false);
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (accuracyFilter !== "all") params.set("accuracy", accuracyFilter);
+        if (actionFilter !== "all") params.set("action", actionFilter);
+        const res = await fetch(`/api/forecast-accuracy-engine?${params}`);
+        const data = await res.json();
+        setReps(data.reps ?? []);
+        setSummary(data.summary ?? null);
+        setLoading(false);
+  }
+    fetchData();
   }, [accuracyFilter, actionFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const accuracyTiers: ForecastAccuracy[] = ["excellent", "good", "fair", "poor"];
   const actions: ForecastAction[] = ["celebrate", "calibrate", "improve", "overhaul"];

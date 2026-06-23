@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface RepData {
   rep_id: string;
@@ -261,20 +261,21 @@ export default function SalesVelocityPage() {
   const [tierFilter, setTierFilter] = useState("");
   const [actionFilter, setActionFilter] = useState("");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (tierFilter) params.set("tier", tierFilter);
-      if (actionFilter) params.set("action", actionFilter);
-      const res = await fetch(`/api/sales-velocity?${params}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (tierFilter) params.set("tier", tierFilter);
+          if (actionFilter) params.set("action", actionFilter);
+          const res = await fetch(`/api/sales-velocity?${params}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [tierFilter, actionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const sum = data?.summary;
   const reps = data?.reps ?? [];

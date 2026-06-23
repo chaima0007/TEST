@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -400,21 +400,22 @@ export default function RevenueAttributionPage() {
   const [actionFilter, setActionFilter] = useState("");
   const [selected, setSelected] = useState<Deal | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (modelFilter)  params.set("model", modelFilter);
-      if (riskFilter)   params.set("risk", riskFilter);
-      if (actionFilter) params.set("action", actionFilter);
-      const res = await fetch(`/api/revenue-attribution?${params}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (modelFilter)  params.set("model", modelFilter);
+          if (riskFilter)   params.set("risk", riskFilter);
+          if (actionFilter) params.set("action", actionFilter);
+          const res = await fetch(`/api/revenue-attribution?${params}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [modelFilter, riskFilter, actionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
   const deals = data?.deals ?? [];

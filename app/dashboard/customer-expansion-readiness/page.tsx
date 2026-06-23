@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -404,20 +404,21 @@ export default function CustomerExpansionReadinessPage() {
   const [filterMotion, setFilterMotion] = useState("all");
   const [filterRegion, setFilterRegion] = useState("all");
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (filterTier !== "all")   params.set("tier", filterTier);
-      if (filterMotion !== "all") params.set("motion", filterMotion);
-      if (filterRegion !== "all") params.set("region", filterRegion);
-      const res = await fetch(`/api/customer-expansion-readiness?${params}`);
-      if (res.ok) setData(await res.json());
-    } catch {}
-    setLoading(false);
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (filterTier !== "all")   params.set("tier", filterTier);
+          if (filterMotion !== "all") params.set("motion", filterMotion);
+          if (filterRegion !== "all") params.set("region", filterRegion);
+          const res = await fetch(`/api/customer-expansion-readiness?${params}`);
+          if (res.ok) setData(await res.json());
+        } catch {}
+        setLoading(false);
+  }
+    fetchData();
   }, [filterTier, filterMotion, filterRegion]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const s = data?.summary;
   const tierOrder = ["primed", "ready", "building", "not_ready"];

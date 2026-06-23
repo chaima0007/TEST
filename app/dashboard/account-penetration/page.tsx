@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 interface Account {
@@ -325,20 +325,21 @@ export default function AccountPenetrationPage() {
   const [riskFilter, setRiskFilter] = useState<string>("all");
   const [loading, setLoading] = useState(true);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (levelFilter !== "all") params.set("level", levelFilter);
-      if (riskFilter !== "all")  params.set("risk", riskFilter);
-      const res = await fetch(`/api/account-penetration?${params.toString()}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (levelFilter !== "all") params.set("level", levelFilter);
+          if (riskFilter !== "all")  params.set("risk", riskFilter);
+          const res = await fetch(`/api/account-penetration?${params.toString()}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [levelFilter, riskFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const s = data?.summary;
 

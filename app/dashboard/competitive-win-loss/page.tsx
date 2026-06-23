@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface CompetitorData {
   competitor: string;
@@ -256,20 +256,21 @@ export default function CompetitiveWinLossPage() {
   const [positionFilter, setPositionFilter] = useState("");
   const [actionFilter, setActionFilter] = useState("");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (positionFilter) params.set("position", positionFilter);
-      if (actionFilter) params.set("action", actionFilter);
-      const res = await fetch(`/api/competitive-win-loss?${params}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (positionFilter) params.set("position", positionFilter);
+          if (actionFilter) params.set("action", actionFilter);
+          const res = await fetch(`/api/competitive-win-loss?${params}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [positionFilter, actionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const sum = data?.summary;
   const competitors = data?.competitors ?? [];

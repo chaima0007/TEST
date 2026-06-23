@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 interface AccountData {
   account_id: string;
@@ -312,15 +312,16 @@ export default function AccountExpansionIntelligencePage() {
   const [filterOpp, setFilterOpp] = useState("all");
   const [filterHealth, setFilterHealth] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (filterOpp !== "all") params.set("opportunity", filterOpp);
-    if (filterHealth !== "all") params.set("health", filterHealth);
-    const res = await fetch(`/api/account-expansion-intelligence?${params}`);
-    if (res.ok) setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (filterOpp !== "all") params.set("opportunity", filterOpp);
+        if (filterHealth !== "all") params.set("health", filterHealth);
+        const res = await fetch(`/api/account-expansion-intelligence?${params}`);
+        if (res.ok) setData(await res.json());
+  }
+    load();
   }, [filterOpp, filterHealth]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
   const kpis = [

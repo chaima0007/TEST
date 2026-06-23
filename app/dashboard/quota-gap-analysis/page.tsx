@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -434,21 +434,22 @@ export default function QuotaGapAnalysisPage() {
   const [regionFilter, setRegionFilter] = useState("");
   const [selected, setSelected]         = useState<Rep | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (tierFilter)   params.set("tier", tierFilter);
-      if (riskFilter)   params.set("risk", riskFilter);
-      if (regionFilter) params.set("region", regionFilter);
-      const res = await fetch(`/api/quota-gap-analysis?${params}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (tierFilter)   params.set("tier", tierFilter);
+          if (riskFilter)   params.set("risk", riskFilter);
+          if (regionFilter) params.set("region", regionFilter);
+          const res = await fetch(`/api/quota-gap-analysis?${params}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [tierFilter, riskFilter, regionFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s    = data?.summary;
   const reps = data?.reps ?? [];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface RepData {
   rep_id: string;
@@ -244,20 +244,21 @@ export default function ForecastCalibrationPage() {
   const [biasFilter, setBiasFilter] = useState<string>("all");
   const [selected, setSelected] = useState<RepData | null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (ratingFilter !== "all") params.set("rating", ratingFilter);
-      if (biasFilter !== "all") params.set("bias", biasFilter);
-      const res = await fetch(`/api/forecast-calibration-engine?${params}`);
-      setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (ratingFilter !== "all") params.set("rating", ratingFilter);
+          if (biasFilter !== "all") params.set("bias", biasFilter);
+          const res = await fetch(`/api/forecast-calibration-engine?${params}`);
+          setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [ratingFilter, biasFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

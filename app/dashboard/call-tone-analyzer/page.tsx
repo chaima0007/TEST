@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ──────────────────────────────────────────────────────────────────────
 interface CallRecord {
@@ -357,22 +357,23 @@ export default function CallToneAnalyzerPage() {
   const [sentFilter, setSentFilter] = useState("all");
   const [toneFilter, setToneFilter] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (sentFilter !== "all") params.set("sentiment", sentFilter);
-      if (toneFilter !== "all") params.set("tone", toneFilter);
-      const r = await fetch(`/api/call-tone-analyzer?${params}`);
-      const j = await r.json();
-      setCalls(j.calls);
-      setSummary(j.summary);
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (sentFilter !== "all") params.set("sentiment", sentFilter);
+          if (toneFilter !== "all") params.set("tone", toneFilter);
+          const r = await fetch(`/api/call-tone-analyzer?${params}`);
+          const j = await r.json();
+          setCalls(j.calls);
+          setSummary(j.summary);
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, [sentFilter, toneFilter]);
-
-  useEffect(() => { load(); }, [load]);
 
   const urgentCoaching = calls.filter((c) => c.needs_immediate_coaching);
 

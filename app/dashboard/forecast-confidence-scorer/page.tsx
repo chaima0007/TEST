@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface Rep {
@@ -293,19 +293,20 @@ export default function ForecastConfidenceScorerPage() {
   const [filterConf,   setFilterConf]   = useState("all");
   const [filterRegion, setFilterRegion] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterConf   !== "all") params.set("confidence", filterConf);
-    if (filterRegion !== "all") params.set("region", filterRegion);
-    const res = await fetch(`/api/forecast-confidence-scorer?${params}`);
-    const data = await res.json();
-    setReps(data.reps);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterConf   !== "all") params.set("confidence", filterConf);
+        if (filterRegion !== "all") params.set("region", filterRegion);
+        const res = await fetch(`/api/forecast-confidence-scorer?${params}`);
+        const data = await res.json();
+        setReps(data.reps);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterConf, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const scrubQueue = reps.filter((r) => r.needs_forecast_scrub);
 

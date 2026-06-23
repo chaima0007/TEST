@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 interface Prospect {
@@ -331,20 +331,21 @@ export default function BuyerIntentPage() {
   const [trendFilter, setTrendFilter] = useState<string>("all");
   const [loading, setLoading] = useState(true);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    try {
-      const params = new URLSearchParams();
-      if (levelFilter !== "all") params.set("level", levelFilter);
-      if (trendFilter !== "all") params.set("trend", trendFilter);
-      const res = await fetch(`/api/buyer-intent?${params.toString()}`);
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        try {
+          const params = new URLSearchParams();
+          if (levelFilter !== "all") params.set("level", levelFilter);
+          if (trendFilter !== "all") params.set("trend", trendFilter);
+          const res = await fetch(`/api/buyer-intent?${params.toString()}`);
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [levelFilter, trendFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const s = data?.summary;
   const levelOptions = ["all", "hot", "warm", "lukewarm", "cold", "unknown"];

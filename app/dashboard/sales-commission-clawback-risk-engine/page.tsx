@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface DealRecord {
   deal_id: string;
@@ -226,10 +226,10 @@ export default function SalesCommissionClawbackRiskEnginePage() {
   const [filter, setFilter] = useState("all");
   const [selected, setSelected] = useState<DealRecord | null>(null);
 
-  const load = useCallback((risk?: string) => {
+  const load = (risk?: string) => {
     const params = risk && risk !== "all" ? `?risk=${risk}` : "";
     fetch(`/api/sales-commission-clawback-risk-engine${params}`).then((r) => r.json()).then(setData);
-  }, []);
+  };
 
   useEffect(() => { load(); }, [load]);
   const handleFilter = (f: string) => { setFilter(f); load(f === "all" ? undefined : f); };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface Deal {
@@ -297,20 +297,21 @@ export default function DealVelocityTrackerPage() {
   const [filterSlip,   setFilterSlip]   = useState("all");
   const [filterRegion, setFilterRegion] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterStatus !== "all") params.set("status", filterStatus);
-    if (filterSlip   !== "all") params.set("slip",   filterSlip);
-    if (filterRegion !== "all") params.set("region", filterRegion);
-    const res = await fetch(`/api/deal-velocity-tracker?${params}`);
-    const data = await res.json();
-    setDeals(data.deals);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterStatus !== "all") params.set("status", filterStatus);
+        if (filterSlip   !== "all") params.set("slip",   filterSlip);
+        if (filterRegion !== "all") params.set("region", filterRegion);
+        const res = await fetch(`/api/deal-velocity-tracker?${params}`);
+        const data = await res.json();
+        setDeals(data.deals);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterStatus, filterSlip, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const boostNeeded = deals.filter((d) => d.needs_velocity_boost);
 

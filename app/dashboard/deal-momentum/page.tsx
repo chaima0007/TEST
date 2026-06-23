@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -367,26 +367,27 @@ export default function DealMomentumPage() {
   const [trendFilter, setTrend] = useState("all");
   const [selected, setSelected] = useState<DealData | null>(null);
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const params = new URLSearchParams();
-      if (levelFilter !== "all") params.set("level", levelFilter);
-      if (trendFilter !== "all") params.set("trend", trendFilter);
-      const res = await fetch(`/api/deal-momentum?${params}`);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      setDeals(data.deals ?? []);
-      setSummary(data.summary ?? null);
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Erreur inconnue");
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        setError(null);
+        try {
+          const params = new URLSearchParams();
+          if (levelFilter !== "all") params.set("level", levelFilter);
+          if (trendFilter !== "all") params.set("trend", trendFilter);
+          const res = await fetch(`/api/deal-momentum?${params}`);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          setDeals(data.deals ?? []);
+          setSummary(data.summary ?? null);
+        } catch (e: unknown) {
+          setError(e instanceof Error ? e.message : "Erreur inconnue");
+        } finally {
+          setLoading(false);
+        }
+  }
+    fetchData();
   }, [levelFilter, trendFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const levels  = ["all", "accelerating", "positive", "neutral", "stalling", "declining", "stalled"];
   const trends  = ["all", "improving", "stable", "deteriorating", "critical"];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -294,19 +294,20 @@ export default function RenewalIntelligenceEnginePage() {
   const [riskFilter, setRiskFilter] = useState<string>("all");
   const [actionFilter, setActionFilter] = useState<string>("all");
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (riskFilter !== "all") params.set("risk", riskFilter);
-    if (actionFilter !== "all") params.set("action", actionFilter);
-    const res = await fetch(`/api/renewal-intelligence-engine?${params}`);
-    const data = await res.json();
-    setRenewals(data.renewals ?? []);
-    setSummary(data.summary ?? null);
-    setLoading(false);
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (riskFilter !== "all") params.set("risk", riskFilter);
+        if (actionFilter !== "all") params.set("action", actionFilter);
+        const res = await fetch(`/api/renewal-intelligence-engine?${params}`);
+        const data = await res.json();
+        setRenewals(data.renewals ?? []);
+        setSummary(data.summary ?? null);
+        setLoading(false);
+  }
+    fetchData();
   }, [riskFilter, actionFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const riskLevels: RenewalRisk[] = ["low", "moderate", "high", "critical"];
   const actions: RenewalAction[] = ["close", "nurture", "intervene", "escalate"];

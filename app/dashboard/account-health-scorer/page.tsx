@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -265,19 +265,20 @@ export default function AccountHealthScorerPage() {
   const [tierFilter, setTierFilter] = useState<string>("all");
   const [actionFilter, setActionFilter] = useState<string>("all");
 
-  const fetchData = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (tierFilter !== "all") params.set("tier", tierFilter);
-    if (actionFilter !== "all") params.set("action", actionFilter);
-    const res = await fetch(`/api/account-health-scorer?${params}`);
-    const data = await res.json();
-    setAccounts(data.accounts ?? []);
-    setSummary(data.summary ?? null);
-    setLoading(false);
+  useEffect(() => {
+    async function fetchData() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (tierFilter !== "all") params.set("tier", tierFilter);
+        if (actionFilter !== "all") params.set("action", actionFilter);
+        const res = await fetch(`/api/account-health-scorer?${params}`);
+        const data = await res.json();
+        setAccounts(data.accounts ?? []);
+        setSummary(data.summary ?? null);
+        setLoading(false);
+  }
+    fetchData();
   }, [tierFilter, actionFilter]);
-
-  useEffect(() => { fetchData(); }, [fetchData]);
 
   const tiers: HealthTier[] = ["champion", "healthy", "at_risk", "critical"];
   const actions: HealthAction[] = ["celebrate", "maintain", "intervene", "escalate"];

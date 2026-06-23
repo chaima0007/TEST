@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface AccountRecord {
   account_id: string;
@@ -216,10 +216,10 @@ export default function CustomerSentimentDecayEnginePage() {
   const [filter, setFilter] = useState("all");
   const [selected, setSelected] = useState<AccountRecord | null>(null);
 
-  const load = useCallback((stage?: string) => {
+  const load = (stage?: string) => {
     const params = stage && stage !== "all" ? `?stage=${stage}` : "";
     fetch(`/api/customer-sentiment-decay-engine${params}`).then((r) => r.json()).then(setData);
-  }, []);
+  };
 
   useEffect(() => { load(); }, [load]);
   const handleFilter = (f: string) => { setFilter(f); load(f === "all" ? undefined : f); };

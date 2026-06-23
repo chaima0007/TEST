@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -329,7 +329,7 @@ export default function LeadEnrichmentPage() {
   const [selected, setSelected] = useState<Lead | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = useCallback(async (priority: string) => {
+  const fetchData = async (priority: string) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -341,7 +341,7 @@ export default function LeadEnrichmentPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   useEffect(() => { fetchData(priorityFilter); }, [fetchData, priorityFilter]);
 

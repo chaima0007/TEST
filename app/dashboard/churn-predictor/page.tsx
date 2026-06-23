@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -313,7 +313,7 @@ export default function ChurnPredictorPage() {
   const [selected, setSelected] = useState<Account | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = useCallback(async (risk: string) => {
+  const fetchData = async (risk: string) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
@@ -325,7 +325,7 @@ export default function ChurnPredictorPage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   useEffect(() => { fetchData(riskFilter); }, [fetchData, riskFilter]);
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 type ThreatLevel = "benign" | "suspicious" | "malicious" | "apt";
 
@@ -255,16 +255,17 @@ export default function ThreatIntelPage() {
   const [selectedActor, setSelectedActor] = useState<ThreatActor | null>(null);
   const [selectedEndpoint, setSelectedEndpoint] = useState<EndpointVulnerability | null>(null);
 
-  const load = useCallback(async () => {
-    try {
-      const res = await fetch("/api/threat-intel", { cache: "no-store" });
-      if (res.ok) setData(await res.json());
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    async function load() {
+        try {
+          const res = await fetch("/api/threat-intel", { cache: "no-store" });
+          if (res.ok) setData(await res.json());
+        } finally {
+          setLoading(false);
+        }
+  }
+    load();
   }, []);
-
-  useEffect(() => { load(); }, [load]);
 
   const filteredActors = data?.actors.filter(a => levelFilter === "all" || a.threat_level === levelFilter) ?? [];
 

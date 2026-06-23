@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface RepAttrition {
   rep_id: string; rep_name: string; region: string;
@@ -165,17 +165,18 @@ export default function RepAttritionRiskPage() {
   const [regionF, setRegionF] = useState("all");
   const [selected, setSelected] = useState<RepAttrition|null>(null);
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const p = new URLSearchParams();
-    if (riskF !== "all")   p.set("risk", riskF);
-    if (regionF !== "all") p.set("region", regionF);
-    const res = await fetch(`/api/rep-attrition-risk-engine?${p}`);
-    setData(await res.json());
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const p = new URLSearchParams();
+        if (riskF !== "all")   p.set("risk", riskF);
+        if (regionF !== "all") p.set("region", regionF);
+        const res = await fetch(`/api/rep-attrition-risk-engine?${p}`);
+        setData(await res.json());
+        setLoading(false);
+  }
+    load();
   }, [riskF, regionF]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
   const fmt = (n:number) => n>=1e6?`$${(n/1e6).toFixed(1)}M`:n>=1e3?`$${(n/1e3).toFixed(0)}K`:`$${n}`;

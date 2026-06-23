@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 interface Thread {
   thread_id: string;
@@ -316,15 +316,16 @@ export default function EmailSentimentTrackerPage() {
   const [filterSentiment, setFilterSentiment] = useState("all");
   const [filterTrajectory, setFilterTrajectory] = useState("all");
 
-  const load = useCallback(async () => {
-    const params = new URLSearchParams();
-    if (filterSentiment !== "all")  params.set("sentiment", filterSentiment);
-    if (filterTrajectory !== "all") params.set("trajectory", filterTrajectory);
-    const res = await fetch(`/api/email-sentiment-tracker?${params}`);
-    setData(await res.json());
+  useEffect(() => {
+    async function load() {
+        const params = new URLSearchParams();
+        if (filterSentiment !== "all")  params.set("sentiment", filterSentiment);
+        if (filterTrajectory !== "all") params.set("trajectory", filterTrajectory);
+        const res = await fetch(`/api/email-sentiment-tracker?${params}`);
+        setData(await res.json());
+  }
+    load();
   }, [filterSentiment, filterTrajectory]);
-
-  useEffect(() => { load(); }, [load]);
 
   const s = data?.summary;
 

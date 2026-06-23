@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── types ────────────────────────────────────────────────────────────────────
 interface Deal {
@@ -296,20 +296,21 @@ export default function ChampionRiskMonitorPage() {
   const [filterRisk,   setFilterRisk]   = useState("all");
   const [filterRegion, setFilterRegion] = useState("all");
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const params = new URLSearchParams();
-    if (filterStatus !== "all") params.set("status", filterStatus);
-    if (filterRisk   !== "all") params.set("risk",   filterRisk);
-    if (filterRegion !== "all") params.set("region", filterRegion);
-    const res = await fetch(`/api/champion-risk-monitor?${params}`);
-    const data = await res.json();
-    setDeals(data.deals);
-    setSummary(data.summary);
-    setLoading(false);
+  useEffect(() => {
+    async function load() {
+        setLoading(true);
+        const params = new URLSearchParams();
+        if (filterStatus !== "all") params.set("status", filterStatus);
+        if (filterRisk   !== "all") params.set("risk",   filterRisk);
+        if (filterRegion !== "all") params.set("region", filterRegion);
+        const res = await fetch(`/api/champion-risk-monitor?${params}`);
+        const data = await res.json();
+        setDeals(data.deals);
+        setSummary(data.summary);
+        setLoading(false);
+  }
+    load();
   }, [filterStatus, filterRisk, filterRegion]);
-
-  useEffect(() => { load(); }, [load]);
 
   const criticalDeals = deals.filter((d) => d.champion_risk === "critical");
 
