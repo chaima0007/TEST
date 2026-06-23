@@ -4154,4 +4154,24 @@ export const navSections: NavSection[] = [
       },
     ],
   },
+  {
+    title: "ENFANTS, EAU & DÉFENSEURS (W499)",
+    items: [
+      {
+        href: "/dashboard/child-labor-digital",
+        label: "Travail Enfants Numérique",
+        icon: Icons.IconChildLaborDigitalChains,
+      },
+      {
+        href: "/dashboard/water-sanitation",
+        label: "Eau & Assainissement",
+        icon: Icons.IconWaterSanitationRights,
+      },
+      {
+        href: "/dashboard/environmental-defenders",
+        label: "Défenseurs Environnement",
+        icon: Icons.IconEnvironmentalDefendersRights,
+      },
+    ],
+  },
 ];

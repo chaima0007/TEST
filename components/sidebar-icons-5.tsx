@@ -1701,3 +1701,38 @@ export function IconDomesticCareWork({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconChildLaborDigitalChains(p: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <circle cx="12" cy="7" r="3" />
+      <path d="M12 10v4" />
+      <path d="M9 21l3-7 3 7" />
+      <path d="M5 8h2M17 8h2" strokeOpacity="0.5" />
+      <rect x="2" y="14" width="4" height="4" rx="1" strokeOpacity="0.6" />
+      <rect x="18" y="14" width="4" height="4" rx="1" strokeOpacity="0.6" />
+      <path d="M6 16h3M15 16h3" strokeOpacity="0.4" />
+    </svg>
+  );
+}
+
+export function IconWaterSanitationRights(p: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M12 2C12 2 6 8.5 6 13a6 6 0 0 0 12 0c0-4.5-6-11-6-11z" />
+      <path d="M9 14c0 1.66 1.34 3 3 3" strokeOpacity="0.5" />
+      <path d="M3 21h18" strokeOpacity="0.4" />
+      <path d="M6 21v-2M10 21v-2M14 21v-2M18 21v-2" strokeOpacity="0.4" />
+    </svg>
+  );
+}
+
+export function IconEnvironmentalDefendersRights(p: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path d="M9 12l2 2 4-4" strokeOpacity="0.7" />
+      <path d="M12 7v1" strokeOpacity="0.4" />
+    </svg>
+  );
+}
