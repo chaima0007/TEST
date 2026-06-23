@@ -4174,4 +4174,24 @@ export const navSections: NavSection[] = [
       },
     ],
   },
+  {
+    title: "MIGRANTS, APATRIDES & PRISON (W500)",
+    items: [
+      {
+        href: "/dashboard/migrant-remittances",
+        label: "Migrants & Remittances",
+        icon: Icons.IconMigrantRemittanceRights,
+      },
+      {
+        href: "/dashboard/stateless-persons",
+        label: "Personnes Apatrides",
+        icon: Icons.IconStatelessPersonsRights,
+      },
+      {
+        href: "/dashboard/prison-labor",
+        label: "Travail en Prison",
+        icon: Icons.IconPrisonLaborRights,
+      },
+    ],
+  },
 ];
