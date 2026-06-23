@@ -1637,3 +1637,36 @@ export function IconImmigrationDetention({ className }: { className?: string }) 
     </svg>
   );
 }
+
+export function IconDeepfakeAbuse({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M12 12v2" />
+      <path d="M8 16h8" />
+      <path d="M3 20c0-3.3 4-6 9-6s9 2.7 9 6" />
+      <line x1="3" y1="3" x2="21" y2="21" />
+    </svg>
+  );
+}
+
+export function IconGhostWorkers({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" opacity="0.4" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" opacity="0.4" />
+    </svg>
+  );
+}
+
+export function IconAusterityPoverty({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v20" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      <line x1="3" y1="3" x2="21" y2="21" />
+    </svg>
+  );
+}
