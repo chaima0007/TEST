@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Water & Sanitation Rights Engine — CaelumSwarm Intelligence Layer
-Droit à l'eau et à l'assainissement — accès, qualité, infrastructure
+Child Labor in Digital Supply Chains Engine — CaelumSwarm Intelligence Layer
+Travail des enfants dans les chaînes d'approvisionnement numériques
+(cobalt, coltan, assemblage électronique, recyclage e-déchets)
 """
 import random
 import json
@@ -21,15 +22,15 @@ TUPLES_EXACT = [
 def run_engine(n: int = 50_000, seed: int = 42) -> dict:
     rng = random.Random(seed)
     entities = [
-        # name,         s1,  s2,  s3,  s4
-        ("Éthiopie",   99,  97,  95,  93),  # critique 1
-        ("Niger",      93,  90,  88,  86),  # critique 2
-        ("Haïti",      85,  82,  80,  78),  # critique 3
-        ("Pakistan",   80,  77,  75,  73),  # critique 4
-        ("Inde/Bihar", 61,  58,  56,  54),  # élevé 1
-        ("Bolivie",    51,  48,  46,  44),  # élevé 2
-        ("Yémen",      32,  29,  27,  25),  # modéré
-        ("Madagascar", 13,  11,   9,   7),  # faible
+        # name,                          s1,  s2,  s3,  s4
+        ("RDC/Cobalt",                   99,  97,  95,  93),  # critique 1
+        ("Philippines/Électronique",     93,  90,  88,  86),  # critique 2
+        ("Bangladesh/Câbles",            85,  82,  80,  78),  # critique 3
+        ("Inde/Recyclage-E",             80,  77,  75,  73),  # critique 4
+        ("Chine/Assemblage",             61,  58,  56,  54),  # élevé 1
+        ("Ghana/Déchets-Élec",          51,  48,  46,  44),  # élevé 2
+        ("Bolivie/Lithium",              32,  29,  27,  25),  # modéré
+        ("Malawi/Tabac-Tech",            13,  11,   9,   7),  # faible
     ]
     results = []
     for name, s1, s2, s3, s4 in entities:
@@ -70,7 +71,7 @@ def run_engine(n: int = 50_000, seed: int = 42) -> dict:
     domain_index = round(avg_composite / 100 * 10, 2)
 
     return {
-        "engine": "water_sanitation_rights_engine",
+        "engine": "child_labor_digital_supply_chains_engine",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "n_simulations": n,
         "avg_composite": avg_composite,
@@ -79,7 +80,7 @@ def run_engine(n: int = 50_000, seed: int = 42) -> dict:
             {"entity": r["entity"], "level": r["level"], "final": r["final"]}
             for r in results
         ],
-        "estimated_water_sanitation_index": domain_index,
+        "estimated_child_labor_digital_index": domain_index,
     }
 
 

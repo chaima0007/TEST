@@ -1326,5 +1326,88 @@
       "min_score": 74.3018,
       "max_score": 80.5977
     }
+  },
+  {
+    "seal_id": "SEAL-7478097A502011AE",
+    "timestamp": "2026-06-23T01:52:33.996308+00:00",
+    "action": "wave-499",
+    "context": "3 nouveaux domaines droits humains : travail des enfants dans les chaînes numériques, droit à l'eau et assainissement, défenseurs des droits environnementaux",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.117,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 91.339,
+          "SÉCURITÉ": 84.915,
+          "SCALABILITÉ": 82.733,
+          "RÉVERSIBILITÉ": 74.789
+        },
+        "composite": 84.2715,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.417,
+          "SÉCURITÉ": 83.552,
+          "SCALABILITÉ": 75.424,
+          "RÉVERSIBILITÉ": 69.763
+        },
+        "composite": 79.3217,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.368,
+          "SÉCURITÉ": 82.606,
+          "SCALABILITÉ": 77.798,
+          "RÉVERSIBILITÉ": 67.622
+        },
+        "composite": 78.6358,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.562,
+          "SÉCURITÉ": 75.534,
+          "SCALABILITÉ": 72.401,
+          "RÉVERSIBILITÉ": 67.411
+        },
+        "composite": 74.9346,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.86,
+          "SÉCURITÉ": 73.806,
+          "SCALABILITÉ": 70.985,
+          "RÉVERSIBILITÉ": 64.332
+        },
+        "composite": 72.4222,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2589,
+      "robustness_pct": 100.0,
+      "min_score": 75.9476,
+      "max_score": 81.6772
+    }
   }
 ]
