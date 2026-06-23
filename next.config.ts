@@ -28,7 +28,6 @@ const nextConfig: NextConfig = {
   experimental: {
     webpackMemoryOptimizations: true,
     webpackBuildWorker: true,
-    preloadEntriesOnStart: false,
   },
   images: {
     remotePatterns: [

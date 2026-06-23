@@ -345,21 +345,19 @@ export default function CustomerServiceQualityEnginePage() {
   const [selected, setSelected] = useState<TicketRecord | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const load = (risk: string, pattern: string) => {
-      setLoading(true);
-      const params = new URLSearchParams();
-      if (risk !== "all")    params.set("risk",    risk);
-      if (pattern !== "all") params.set("pattern", pattern);
-      const qs = params.toString() ? `?${params}` : "";
-      fetch(`/api/customer-service-quality-engine${qs}`, { cache: "no-store" })
-        .then((r) => r.json())
-        .then(setData)
-        .finally(() => setLoading(false));
-    },
-    [],
-  );
+  function load(risk: string, pattern: string) {
+    setLoading(true);
+    const params = new URLSearchParams();
+    if (risk !== "all")    params.set("risk",    risk);
+    if (pattern !== "all") params.set("pattern", pattern);
+    const qs = params.toString() ? `?${params}` : "";
+    fetch(`/api/customer-service-quality-engine${qs}`, { cache: "no-store" })
+      .then((r) => r.json())
+      .then(setData)
+      .finally(() => setLoading(false));
+  }
 
-  useEffect(() => { load(riskFilter, patternFilter); };
+  useEffect(() => { load(riskFilter, patternFilter); }, []);
 
   const handleRisk = (v: string) => { setRiskFilter(v); };
   const handlePattern = (v: string) => { setPatternFilter(v); };

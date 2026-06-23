@@ -142,33 +142,29 @@ export default function AgentsPage() {
 
   const allAgents = DIVISIONS.flatMap((d) => d.agents);
 
-  const filtered = {
-    return allAgents.filter((a) => {
-      if (divFilter !== null && a.division !== divFilter) return false;
-      if (statusFilter !== null && a.status !== statusFilter) return false;
-      if (search) {
-        const q = search.toLowerCase();
-        return a.id.includes(q) || a.role.toLowerCase().includes(q);
-      }
-      return true;
-    });
-  };
+  const filtered = allAgents.filter((a) => {
+    if (divFilter !== null && a.division !== divFilter) return false;
+    if (statusFilter !== null && a.status !== statusFilter) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      return a.id.includes(q) || a.role.toLowerCase().includes(q);
+    }
+    return true;
+  });
 
-  const stats = ({
+  const stats = {
     total: allAgents.length,
     active: allAgents.filter((a) => a.status === "active").length,
     idle: allAgents.filter((a) => a.status === "idle").length,
     error: allAgents.filter((a) => a.status === "error").length,
     managers: allAgents.filter((a) => a.isManager).length,
     totalTasks: allAgents.reduce((s, a) => s + a.tasksCompleted, 0),
-  });
-
-  const groupedByDivision = {
-    return DIVISIONS.map((div) => ({
-      div,
-      agents: filtered.filter((a) => a.division === div.id),
-    })).filter((g) => g.agents.length > 0);
   };
+
+  const groupedByDivision = DIVISIONS.map((div) => ({
+    div,
+    agents: filtered.filter((a) => a.division === div.id),
+  })).filter((g) => g.agents.length > 0);
 
   return (
     <div className="min-h-screen bg-slate-50">
