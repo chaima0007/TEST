@@ -5015,3 +5015,22 @@ export function IconCorporateEspionageRights({ className }: { className?: string
     </svg>
   );
 }
+export function IconLgbtqAsylumRights({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <path d="M8 2a3 3 0 0 1 3 3c0 2-3 5-3 5S5 7 5 5a3 3 0 0 1 3-3z" />
+      <path d="M3 14c0-2.5 2.2-4 5-4s5 1.5 5 4" />
+      <circle cx="8" cy="5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+export function IconAlgorithmicWageTheft({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={1.5}>
+      <rect x="2" y="4" width="12" height="8" rx="1" />
+      <path d="M6 8h4M8 6v4" />
+      <path d="M5 2l1 2M11 2l-1 2" />
+      <path d="M4 12l-1 2M12 12l1 2" />
+    </svg>
+  );
+}

@@ -4082,4 +4082,12 @@ export const navSections: NavSection[] = [
       { href: "/dashboard/corporateespionage", label: "Corporate Espionage", icon: Icons.IconCorporateEspionageRights },
     ],
   },
+  {
+    title: "DIGITAL RIGHTS & GIG ECONOMY",
+    items: [
+      { href: "/dashboard/digital-colonialism", label: "Digital Colonialism", icon: Icons.IconDigitalColonialism },
+      { href: "/dashboard/lgbtq-asylum", label: "LGBTQ+ Asylum Rights", icon: Icons.IconLgbtqAsylumRights },
+      { href: "/dashboard/algorithmic-wage-theft", label: "Algorithmic Wage Theft", icon: Icons.IconAlgorithmicWageTheft },
+    ],
+  },
 ];
