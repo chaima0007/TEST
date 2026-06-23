@@ -1243,5 +1243,88 @@
       "min_score": 75.2847,
       "max_score": 80.4658
     }
+  },
+  {
+    "seal_id": "SEAL-3EE89F0D58DBA728",
+    "timestamp": "2026-06-23T01:50:27.924315+00:00",
+    "action": "build-fix",
+    "context": "21 dashboards : load() définie dans useEffect mais appelée via onClick={load} dans JSX — ReferenceError Turbopack prerendering. Fix : hissée au niveau composant.",
+    "category": "build",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.3247,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.273,
+          "SÉCURITÉ": 88.911,
+          "SCALABILITÉ": 83.553,
+          "RÉVERSIBILITÉ": 76.633
+        },
+        "composite": 85.2245,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.534,
+          "SÉCURITÉ": 84.112,
+          "SCALABILITÉ": 76.763,
+          "RÉVERSIBILITÉ": 71.763
+        },
+        "composite": 80.2315,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.487,
+          "SÉCURITÉ": 83.298,
+          "SCALABILITÉ": 76.909,
+          "RÉVERSIBILITÉ": 69.866
+        },
+        "composite": 78.4711,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 83.309,
+          "SÉCURITÉ": 76.721,
+          "SCALABILITÉ": 73.875,
+          "RÉVERSIBILITÉ": 66.211
+        },
+        "composite": 75.8839,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.172,
+          "SÉCURITÉ": 76.941,
+          "SCALABILITÉ": 69.023,
+          "RÉVERSIBILITÉ": 64.224
+        },
+        "composite": 72.7874,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2367,
+      "robustness_pct": 100.0,
+      "min_score": 74.3018,
+      "max_score": 80.5977
+    }
   }
 ]
