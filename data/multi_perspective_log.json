@@ -214,5 +214,221 @@
         ]
       }
     ]
+  },
+  {
+    "run_id": "a0605bfc5319",
+    "timestamp": "2026-06-23T01:02:16.284174",
+    "engine_name": "reference_engine",
+    "context": "",
+    "n_per_pov": 10000,
+    "n_total": 50000,
+    "seed": 42,
+    "target": 61.03,
+    "exact_avg": 61.025,
+    "consensus_avg": 61.0237,
+    "delta_consensus": -0.0063,
+    "status": "OK",
+    "spread": 3.0,
+    "spread_ok": true,
+    "pov_results": [
+      {
+        "id": "VUE_OPTIMISTE",
+        "label": "Optimiste",
+        "bias": 1.5,
+        "weight": 0.1,
+        "avg_composite": 62.5237,
+        "contribution": 6.2524,
+        "per_tuple": [
+          97.8003,
+          91.1064,
+          83.0984,
+          78.0969,
+          59.0991,
+          49.0997,
+          30.0948,
+          11.7944
+        ]
+      },
+      {
+        "id": "VUE_HAUTE",
+        "label": "Légèrement+",
+        "bias": 0.5,
+        "weight": 0.2,
+        "avg_composite": 61.5237,
+        "contribution": 12.3047,
+        "per_tuple": [
+          96.8003,
+          90.1064,
+          82.0984,
+          77.0969,
+          58.0991,
+          48.0997,
+          29.0948,
+          10.7944
+        ]
+      },
+      {
+        "id": "VUE_NEUTRE",
+        "label": "Neutre",
+        "bias": 0.0,
+        "weight": 0.4,
+        "avg_composite": 61.0237,
+        "contribution": 24.4095,
+        "per_tuple": [
+          96.3003,
+          89.6064,
+          81.5984,
+          76.5969,
+          57.5991,
+          47.5997,
+          28.5948,
+          10.2944
+        ]
+      },
+      {
+        "id": "VUE_BASSE",
+        "label": "Légèrement-",
+        "bias": -0.5,
+        "weight": 0.2,
+        "avg_composite": 60.5237,
+        "contribution": 12.1047,
+        "per_tuple": [
+          95.8003,
+          89.1064,
+          81.0984,
+          76.0969,
+          57.0991,
+          47.0997,
+          28.0948,
+          9.7944
+        ]
+      },
+      {
+        "id": "VUE_PESSIMISTE",
+        "label": "Pessimiste",
+        "bias": -1.5,
+        "weight": 0.1,
+        "avg_composite": 59.5237,
+        "contribution": 5.9524,
+        "per_tuple": [
+          94.8003,
+          88.1064,
+          80.0984,
+          75.0969,
+          56.0991,
+          46.0997,
+          27.0948,
+          8.7944
+        ]
+      }
+    ]
+  },
+  {
+    "run_id": "3cdbd4a8517d",
+    "timestamp": "2026-06-23T01:02:16.357767",
+    "engine_name": "reference_engine",
+    "context": "validation",
+    "n_per_pov": 10000,
+    "n_total": 50000,
+    "seed": 42,
+    "target": 61.03,
+    "exact_avg": 61.025,
+    "consensus_avg": 61.0237,
+    "delta_consensus": -0.0063,
+    "status": "OK",
+    "spread": 3.0,
+    "spread_ok": true,
+    "pov_results": [
+      {
+        "id": "VUE_OPTIMISTE",
+        "label": "Optimiste",
+        "bias": 1.5,
+        "weight": 0.1,
+        "avg_composite": 62.5237,
+        "contribution": 6.2524,
+        "per_tuple": [
+          97.8003,
+          91.1064,
+          83.0984,
+          78.0969,
+          59.0991,
+          49.0997,
+          30.0948,
+          11.7944
+        ]
+      },
+      {
+        "id": "VUE_HAUTE",
+        "label": "Légèrement+",
+        "bias": 0.5,
+        "weight": 0.2,
+        "avg_composite": 61.5237,
+        "contribution": 12.3047,
+        "per_tuple": [
+          96.8003,
+          90.1064,
+          82.0984,
+          77.0969,
+          58.0991,
+          48.0997,
+          29.0948,
+          10.7944
+        ]
+      },
+      {
+        "id": "VUE_NEUTRE",
+        "label": "Neutre",
+        "bias": 0.0,
+        "weight": 0.4,
+        "avg_composite": 61.0237,
+        "contribution": 24.4095,
+        "per_tuple": [
+          96.3003,
+          89.6064,
+          81.5984,
+          76.5969,
+          57.5991,
+          47.5997,
+          28.5948,
+          10.2944
+        ]
+      },
+      {
+        "id": "VUE_BASSE",
+        "label": "Légèrement-",
+        "bias": -0.5,
+        "weight": 0.2,
+        "avg_composite": 60.5237,
+        "contribution": 12.1047,
+        "per_tuple": [
+          95.8003,
+          89.1064,
+          81.0984,
+          76.0969,
+          57.0991,
+          47.0997,
+          28.0948,
+          9.7944
+        ]
+      },
+      {
+        "id": "VUE_PESSIMISTE",
+        "label": "Pessimiste",
+        "bias": -1.5,
+        "weight": 0.1,
+        "avg_composite": 59.5237,
+        "contribution": 5.9524,
+        "per_tuple": [
+          94.8003,
+          88.1064,
+          80.0984,
+          75.0969,
+          56.0991,
+          46.0997,
+          27.0948,
+          8.7944
+        ]
+      }
+    ]
   }
 ]
