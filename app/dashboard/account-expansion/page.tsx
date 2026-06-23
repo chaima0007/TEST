@@ -336,19 +336,20 @@ export default function AccountExpansionPage() {
   const [churnFilter, setChurnFilter]         = useState("");
   const [selected, setSelected]               = useState<Account | null>(null);
 
-  useEffect(() => {
-    async function load() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (readinessFilter) params.set("readiness", readinessFilter);
-          if (churnFilter)     params.set("churn", churnFilter);
-          const res = await fetch(`/api/account-expansion?${params}`);
-          if (res.ok) setData(await res.json());
-        } finally {
-          setLoading(false);
-        }
+  async function load() {
+    setLoading(true);
+    try {
+      const params = new URLSearchParams();
+      if (readinessFilter) params.set("readiness", readinessFilter);
+      if (churnFilter)     params.set("churn", churnFilter);
+      const res = await fetch(`/api/account-expansion?${params}`);
+      if (res.ok) setData(await res.json());
+    } finally {
+      setLoading(false);
+    }
   }
+
+  useEffect(() => {
     load();
   }, [readinessFilter, churnFilter]);
 
