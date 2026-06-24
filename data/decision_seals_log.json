@@ -4833,5 +4833,88 @@
       "min_score": 74.1771,
       "max_score": 81.2674
     }
+  },
+  {
+    "seal_id": "SEAL-9A2B8FE7F8DD11E5",
+    "timestamp": "2026-06-24T18:11:31.382668+00:00",
+    "action": "modele-economique-freemium",
+    "context": "Edition France et Belgique : info juridique gratuite (mission, SEO, credibilite) + monetisation des services a valeur (documents personnalises, mise en relation avocat, guides premium, B2B). Decision deleguee par l'utilisateur, choix expert.",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.1661,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.826,
+          "SÉCURITÉ": 85.159,
+          "SCALABILITÉ": 80.022,
+          "RÉVERSIBILITÉ": 73.427
+        },
+        "composite": 83.2284,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.422,
+          "SÉCURITÉ": 82.85,
+          "SCALABILITÉ": 80.656,
+          "RÉVERSIBILITÉ": 71.872
+        },
+        "composite": 80.5775,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 85.261,
+          "SÉCURITÉ": 81.966,
+          "SCALABILITÉ": 75.258,
+          "RÉVERSIBILITÉ": 69.423
+        },
+        "composite": 78.7689,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.867,
+          "SÉCURITÉ": 77.916,
+          "SCALABILITÉ": 72.234,
+          "RÉVERSIBILITÉ": 65.564
+        },
+        "composite": 74.9104,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.08,
+          "SÉCURITÉ": 74.853,
+          "SCALABILITÉ": 69.673,
+          "RÉVERSIBILITÉ": 63.332
+        },
+        "composite": 71.6219,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.242,
+      "robustness_pct": 100.0,
+      "min_score": 73.7353,
+      "max_score": 80.7768
+    }
   }
 ]
