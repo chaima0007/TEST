@@ -10,6 +10,7 @@ type Spe = {
   t: string;
   quand: string;
   docs: string[];
+  href?: string;
 };
 
 const specialisations: Spe[] = [
@@ -36,6 +37,7 @@ const specialisations: Spe[] = [
       "La lettre de licenciement / C4 le cas échéant",
       "Emails, avertissements, certificats médicaux, témoignages",
     ],
+    href: "/loi-avec-moi/avocat/travail",
   },
   {
     id: "penal",
@@ -196,6 +198,11 @@ export default function TrouverUnAvocatPage() {
                         </li>
                       ))}
                     </ul>
+                    {s.href && (
+                      <Link href={s.href} className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg px-4 py-2.5 transition-colors">
+                        📖 Fiche détaillée &amp; documents officiels →
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
