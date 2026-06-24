@@ -137,6 +137,7 @@ const themes = [
   {
     t: "Créer son entreprise",
     d: "Statuts, obligations légales, mentions d'un site, facturation, RGPD : les bases pour démarrer en règle.",
+    href: "/loi-avec-moi/creer-entreprise",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M3 21h18M5 21V8l7-4 7 4v13" strokeLinecap="round" strokeLinejoin="round" />
