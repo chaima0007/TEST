@@ -3729,5 +3729,32 @@
       "min_score": 74.8889,
       "max_score": 80.635
     }
+  },
+  {
+    "seal_id": "SEAL-BD974043234BF3AA",
+    "timestamp": "2026-06-24T15:29:37.451567+00:00",
+    "action": "route-simulation",
+    "context": "Page Simulation et anticipation : modelisation multi-scenarios, analyse predictive, protocole multi-couches. Honnete (pas de quantique), impressionnant.",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0479,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0958,
+      "robustness_pct": 100.0,
+      "min_score": 74.5309,
+      "max_score": 82.3802
+    }
   }
 ]
