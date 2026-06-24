@@ -3397,5 +3397,88 @@
       "min_score": 74.4947,
       "max_score": 80.9496
     }
+  },
+  {
+    "seal_id": "SEAL-17484101AB4A7A1C",
+    "timestamp": "2026-06-24T15:12:42.212976+00:00",
+    "action": "service-business-plan",
+    "context": "Ajout service Business plan & strategie : redaction de plans d'affaires, etudes, strategie. Dans notre maitrise (GTM, revenus deja produits).",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0093,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.178,
+          "SÉCURITÉ": 88.16,
+          "SCALABILITÉ": 78.712,
+          "RÉVERSIBILITÉ": 72.824
+        },
+        "composite": 83.0362,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 82.084,
+          "SÉCURITÉ": 81.197,
+          "SCALABILITÉ": 78.804,
+          "RÉVERSIBILITÉ": 69.921
+        },
+        "composite": 78.6097,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 84.568,
+          "SÉCURITÉ": 79.287,
+          "SCALABILITÉ": 76.128,
+          "RÉVERSIBILITÉ": 69.608
+        },
+        "composite": 78.1457,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.527,
+          "SÉCURITÉ": 78.201,
+          "SCALABILITÉ": 75.059,
+          "RÉVERSIBILITÉ": 69.191
+        },
+        "composite": 76.6113,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.285,
+          "SÉCURITÉ": 76.531,
+          "SCALABILITÉ": 70.652,
+          "RÉVERSIBILITÉ": 65.812
+        },
+        "composite": 72.8436,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.1281,
+      "robustness_pct": 100.0,
+      "min_score": 74.641,
+      "max_score": 81.4453
+    }
   }
 ]

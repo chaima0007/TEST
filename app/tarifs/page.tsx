@@ -42,6 +42,19 @@ const offers = [
     ],
     highlight: false,
   },
+  {
+    name: "Business plan",
+    price: "dès 400 €",
+    tagline: "Un plan d'affaires clair pour convaincre.",
+    features: [
+      "Plan d'affaires structuré",
+      "Analyse marché & concurrence",
+      "Chiffrage et projections",
+      "Stratégie de croissance",
+      "Présentation prête à pitcher",
+    ],
+    highlight: false,
+  },
 ];
 
 const faq = [
@@ -80,7 +93,7 @@ export default function TarifsPage() {
 
       {/* Offres */}
       <section className="px-6 max-w-6xl mx-auto pb-8">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {offers.map((o) => (
             <div key={o.name}
               className={`rounded-2xl border p-7 flex flex-col ${o.highlight ? "border-blue-500 ring-2 ring-blue-200 shadow-lg" : "border-slate-200"}`}>

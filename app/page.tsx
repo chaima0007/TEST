@@ -50,6 +50,19 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "Business plan & stratégie",
+    desc: "Un plan d'affaires clair et professionnel pour convaincre, lever des fonds ou structurer votre croissance. Analyse, chiffrage et stratégie inclus.",
+    points: ["Plan d'affaires structuré", "Analyse marché & chiffrage", "Présentation prête à pitcher"],
+    accent: "from-amber-500/15 to-amber-600/5",
+    ring: "text-amber-400",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
+        <path d="M4 4v16h16" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 16l3-5 3 2 4-7" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
 ];
 
 const steps = [
@@ -153,7 +166,7 @@ export default function Home() {
           <p className="text-slate-500 mt-4">Trois savoir-faire, une même exigence : du concret qui vous sert vraiment.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
             <div key={s.title} className={`rounded-2xl border border-slate-200 p-7 bg-gradient-to-b ${s.accent} hover:shadow-lg hover:-translate-y-1 transition-all`}>
               <div className={`w-14 h-14 rounded-xl bg-slate-900 ${s.ring} flex items-center justify-center mb-5`}>
