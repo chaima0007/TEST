@@ -88,6 +88,18 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "Protéger les animaux",
+    d: "Animal trouvé, blessé, maltraité ou perdu, partir en vacances : leurs droits et qui contacter, par situation.",
+    href: "/loi-avec-moi/animaux",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <circle cx="6.5" cy="11" r="1.6" /><circle cx="10" cy="7.5" r="1.6" />
+        <circle cx="14" cy="7.5" r="1.6" /><circle cx="17.5" cy="11" r="1.6" />
+        <path d="M12 12c-2.2 0-4 1.7-4 3.7 0 1.6 1.3 2.3 2.6 2.3.7 0 1-.3 1.4-.3s.7.3 1.4.3c1.3 0 2.6-.7 2.6-2.3 0-2-1.8-3.7-4-3.7z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
 ];
 
 const sources = [

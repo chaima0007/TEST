@@ -4501,5 +4501,88 @@
       "min_score": 73.8776,
       "max_score": 80.9126
     }
+  },
+  {
+    "seal_id": "SEAL-7CF0D033219546EE",
+    "timestamp": "2026-06-24T16:40:41.337825+00:00",
+    "action": "wave-animaux-assurance",
+    "context": "Page protection animaux par situation + assurance voyage CEAM sur belge-etranger",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9649,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 87.88,
+          "SÉCURITÉ": 84.807,
+          "SCALABILITÉ": 81.054,
+          "RÉVERSIBILITÉ": 77.002
+        },
+        "composite": 83.2297,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.387,
+          "SÉCURITÉ": 83.106,
+          "SCALABILITÉ": 78.728,
+          "RÉVERSIBILITÉ": 67.049
+        },
+        "composite": 79.4844,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.473,
+          "SÉCURITÉ": 80.774,
+          "SCALABILITÉ": 76.245,
+          "RÉVERSIBILITÉ": 68.519
+        },
+        "composite": 77.7005,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.35,
+          "SÉCURITÉ": 78.996,
+          "SCALABILITÉ": 74.637,
+          "RÉVERSIBILITÉ": 67.879
+        },
+        "composite": 76.389,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 75.506,
+          "SÉCURITÉ": 76.016,
+          "SCALABILITÉ": 67.083,
+          "RÉVERSIBILITÉ": 64.68
+        },
+        "composite": 71.3625,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2157,
+      "robustness_pct": 100.0,
+      "min_score": 74.969,
+      "max_score": 80.5309
+    }
   }
 ]

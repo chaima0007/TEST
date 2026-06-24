@@ -25,6 +25,12 @@ const steps = [
 
 const avant = [
   {
+    t: "Prenez une assurance avant de partir",
+    d: "Dans l'UE/EEE + Suisse : la Carte Européenne d'Assurance Maladie (CEAM) est GRATUITE via votre mutuelle et couvre les soins médicaux nécessaires. Hors UE, une assurance assistance-rapatriement est vivement conseillée : sans elle, des soins ou un rapatriement peuvent coûter des dizaines de milliers d'euros. Vérifiez aussi ce que couvre déjà votre carte bancaire.",
+    cta: "Carte Européenne d'Assurance Maladie (officiel)",
+    url: "https://www.belgium.be/fr/sante/en_voyage/carte_europeenne",
+  },
+  {
     t: "Inscrivez-vous sur « Travellers Online »",
     d: "Avant un voyage, enregistrez-vous gratuitement sur le service des Affaires étrangères. En cas de crise (catastrophe, attentat, guerre), l'État sait que vous êtes sur place et peut vous contacter.",
     cta: "Travellers Online (officiel)",
