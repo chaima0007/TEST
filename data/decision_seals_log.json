@@ -3206,5 +3206,32 @@
       "min_score": 74.7032,
       "max_score": 81.566
     }
+  },
+  {
+    "seal_id": "SEAL-294DC48AF0C7EC7D",
+    "timestamp": "2026-06-24T14:46:57.912157+00:00",
+    "action": "data-espace-gestion",
+    "context": "Espace de gestion privé : centre de contrôle où arrivent les demandes clients, suivi par statut, pilotage simple sans compétence technique",
+    "category": "data",
+    "risk_level": "FAIBLE",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0363,
+    "min_required": 50.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0726,
+      "robustness_pct": 100.0,
+      "min_score": 74.9858,
+      "max_score": 81.9166
+    }
   }
 ]
