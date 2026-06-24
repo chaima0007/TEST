@@ -238,7 +238,7 @@ class SalesTerritoryCoverageIntelligenceEngine:
     def _composite(self, b: float, p: float, w: float, c: float) -> float:
         return round((b + p + w + c) / 4.0, 1)
 
-    def _risk(self, composite: float) -> CoverageRisk:
+    def _risk_level(self, composite: float) -> CoverageRisk:
         if composite >= 60:
             return CoverageRisk.critical
         if composite >= 40:
@@ -247,13 +247,90 @@ class SalesTerritoryCoverageIntelligenceEngine:
             return CoverageRisk.moderate
         return CoverageRisk.low
 
+    def _severity(self, composite: float) -> CoverageSeverity:
+        if composite >= 60:
+            return CoverageSeverity.critical
+        if composite >= 40:
+            return CoverageSeverity.underserved
+        if composite >= 20:
+            return CoverageSeverity.gaps_detected
+        return CoverageSeverity.optimized
+
+    def _detect_pattern(
+        self,
+        inp: TerritoryCoverageInput,
+        breadth: float,
+        prioritization: float,
+        whitespace: float,
+        churn: float,
+    ) -> CoveragePattern:
+        churn_ratio = inp.churn_risk_accounts_contacted / max(inp.churn_risk_accounts_total, 1)
+        hv_ratio = inp.high_value_accounts_engaged_count / max(inp.high_value_accounts_total, 1)
+        acted_ratio = inp.expansion_signals_acted_upon / max(inp.expansion_signals_identified, 1)
+
+        if inp.top_account_revenue_concentration_pct >= 0.70 and prioritization >= 30:
+            return CoveragePattern.revenue_concentration
+        if churn >= 30 and churn_ratio < 0.40:
+            return CoveragePattern.churn_risk_uncovered
+        if prioritization >= 35 and hv_ratio < 0.60:
+            return CoveragePattern.high_value_underserved
+        if whitespace >= 35 and acted_ratio < 0.20:
+            return CoveragePattern.whitespace_ignored
+        if breadth >= 30 and inp.accounts_neglected_count >= 5:
+            return CoveragePattern.account_neglect
+        return CoveragePattern.none
+
+    def _action(self, risk: CoverageRisk, pattern: CoveragePattern) -> CoverageAction:
+        if risk == CoverageRisk.low:
+            return CoverageAction.no_action
+        if risk == CoverageRisk.critical:
+            if pattern == CoveragePattern.churn_risk_uncovered:
+                return CoverageAction.churn_prevention_sprint
+            return CoverageAction.territory_restructure
+        if risk == CoverageRisk.high:
+            if pattern == CoveragePattern.churn_risk_uncovered:
+                return CoverageAction.churn_prevention_sprint
+            if pattern == CoveragePattern.whitespace_ignored:
+                return CoverageAction.whitespace_expansion
+            if pattern == CoveragePattern.high_value_underserved:
+                return CoverageAction.high_value_focus
+            return CoverageAction.account_outreach_blitz
+        # moderate
+        if pattern == CoveragePattern.whitespace_ignored:
+            return CoverageAction.whitespace_expansion
+        return CoverageAction.account_outreach_blitz
+
+    def _has_coverage_gap(self, composite: float, inp: TerritoryCoverageInput) -> bool:
+        if composite >= 40:
+            return True
+        if inp.accounts_neglected_count >= 5:
+            return True
+        if inp.churn_risk_accounts_total > 0:
+            ratio = inp.churn_risk_accounts_contacted / inp.churn_risk_accounts_total
+            if ratio < 0.40:
+                return True
+        return False
+
+    def _requires_territory_rebalance(self, composite: float, inp: TerritoryCoverageInput) -> bool:
+        if composite >= 30:
+            return True
+        if inp.top_account_revenue_concentration_pct >= 0.70:
+            return True
+        hv_ratio = inp.high_value_accounts_engaged_count / max(inp.high_value_accounts_total, 1)
+        if hv_ratio < 0.40:
+            return True
+        return False
+
     def assess(self, inp: TerritoryCoverageInput) -> TerritoryCoverageResult:
         b = self._account_breadth_score(inp)
         p = self._account_prioritization_score(inp)
         w = self._whitespace_exploitation_score(inp)
         c = self._churn_prevention_score(inp)
         composite = self._composite(b, p, w, c)
-        risk = self._risk(composite)
+        risk = self._risk_level(composite)
+        pattern = self._detect_pattern(inp, b, p, w, c)
+        severity = self._severity(composite)
+        action = self._action(risk, pattern)
 
         result = TerritoryCoverageResult(
             rep_id=inp.rep_id,
@@ -265,9 +342,9 @@ class SalesTerritoryCoverageIntelligenceEngine:
             churn_prevention_score=c,
             composite_score=composite,
             risk=risk,
-            pattern=CoveragePattern.none,
-            severity=CoverageSeverity.optimized,
-            action=CoverageAction.no_action,
+            pattern=pattern,
+            severity=severity,
+            action=action,
         )
         self._results.append(result)
         return result
