@@ -77,6 +77,17 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "Belge à l'étranger",
+    d: "Papiers perdus ou volés loin de chez vous, ambassade la plus proche, que faire en cas de crise ou de guerre.",
+    href: "/loi-avec-moi/belge-a-letranger",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="10" />
+      </svg>
+    ),
+  },
 ];
 
 const sources = [

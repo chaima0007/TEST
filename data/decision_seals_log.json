@@ -4418,5 +4418,88 @@
       "min_score": 74.5688,
       "max_score": 81.1782
     }
+  },
+  {
+    "seal_id": "SEAL-4356747A9E911661",
+    "timestamp": "2026-06-24T16:36:35.818558+00:00",
+    "action": "wave-belge-etranger",
+    "context": "Page papiers perdus etranger procedure DOC STOP + annuaire ambassades officiel + note guerre",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.138,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.374,
+          "SÉCURITÉ": 86.155,
+          "SCALABILITÉ": 81.105,
+          "RÉVERSIBILITÉ": 79.436
+        },
+        "composite": 84.5144,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 83.309,
+          "SÉCURITÉ": 80.819,
+          "SCALABILITÉ": 78.914,
+          "RÉVERSIBILITÉ": 69.369
+        },
+        "composite": 78.7998,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 86.12,
+          "SÉCURITÉ": 82.223,
+          "SCALABILITÉ": 76.64,
+          "RÉVERSIBILITÉ": 69.153
+        },
+        "composite": 79.3824,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.746,
+          "SÉCURITÉ": 77.665,
+          "SCALABILITÉ": 72.205,
+          "RÉVERSIBILITÉ": 66.381
+        },
+        "composite": 74.9675,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.246,
+          "SÉCURITÉ": 74.85,
+          "SCALABILITÉ": 68.444,
+          "RÉVERSIBILITÉ": 66.589
+        },
+        "composite": 72.3151,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0865,
+      "robustness_pct": 100.0,
+      "min_score": 73.8776,
+      "max_score": 80.9126
+    }
   }
 ]
