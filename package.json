@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postinstall": "prisma generate",
     "build": "NODE_OPTIONS='--max-old-space-size=4096' next build",
     "build:debug": "NODE_OPTIONS='--max-old-space-size=4096 --inspect' next build --experimental-debug-memory-usage",
     "start": "next start",
