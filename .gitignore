@@ -48,7 +48,8 @@ next-env.d.ts
 /lib/generated/prisma
 dev.db
 prisma/dev.db
-.claude/
+.claude/*
+!.claude/settings.json
 
 # Runtime artifacts (infra modules demos)
 data/checkpoints/
