@@ -58,12 +58,12 @@ export default function NotreForcePage() {
       <header className="border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
               <span className="text-white text-xs font-black">C</span>
             </div>
             <span className="font-bold text-lg tracking-tight">Caelum</span>
           </Link>
-          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+          <Link href="/contact" className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
             Demander un devis
           </Link>
         </div>
@@ -78,7 +78,7 @@ export default function NotreForcePage() {
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
             La qualité n&apos;est pas une option,
-            <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">
               c&apos;est notre méthode
             </span>
           </h1>
@@ -94,7 +94,7 @@ export default function NotreForcePage() {
         <div className="grid md:grid-cols-2 gap-6">
           {pillars.map((p) => (
             <div key={p.title} className="rounded-2xl border border-slate-200 p-7 hover:shadow-lg transition-all">
-              <div className="w-14 h-14 rounded-xl bg-slate-900 text-blue-400 flex items-center justify-center mb-5">
+              <div className="w-14 h-14 rounded-xl bg-slate-900 text-indigo-300 flex items-center justify-center mb-5">
                 {p.icon}
               </div>
               <h3 className="text-xl font-bold">{p.title}</h3>
@@ -126,7 +126,7 @@ export default function NotreForcePage() {
       <section className="py-24 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold">Envie de travailler avec une équipe qui ne laisse rien au hasard ?</h2>
-          <Link href="/contact" className="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-600/20">
+          <Link href="/contact" className="inline-block mt-8 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/20">
             Parlons de votre projet
           </Link>
         </div>

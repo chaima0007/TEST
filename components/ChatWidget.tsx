@@ -62,7 +62,7 @@ export default function ChatWidget() {
       {/* Bouton flottant */}
       {!open && (
         <button onClick={() => setOpen(true)}
-          className="fixed bottom-5 right-5 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg shadow-blue-600/30 w-14 h-14 flex items-center justify-center transition-transform hover:scale-105"
+          className="fixed bottom-5 right-5 z-50 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-lg shadow-indigo-600/30 w-14 h-14 flex items-center justify-center transition-transform hover:scale-105"
           aria-label="Ouvrir l'assistant">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
             <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" strokeLinecap="round" strokeLinejoin="round" />
@@ -73,7 +73,7 @@ export default function ChatWidget() {
       {/* Fenêtre de chat */}
       {open && (
         <div className="fixed bottom-5 right-5 z-50 w-[92vw] max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden" style={{ height: "70vh", maxHeight: 540 }}>
-          <div className="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-4 py-3 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-4 py-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-300" />
               <span className="font-semibold text-sm">Assistant Caelum · en ligne 24/7</span>
@@ -84,7 +84,7 @@ export default function ChatWidget() {
           <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50">
             {msgs.map((m, i) => (
               <div key={i} className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}>
-                <div className={`max-w-[80%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed ${m.from === "user" ? "bg-blue-600 text-white" : "bg-white border border-slate-200 text-slate-700"}`}>
+                <div className={`max-w-[80%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed ${m.from === "user" ? "bg-indigo-600 text-white" : "bg-white border border-slate-200 text-slate-700"}`}>
                   {m.text}
                 </div>
               </div>
@@ -95,8 +95,8 @@ export default function ChatWidget() {
             <input value={input} onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => { if (e.key === "Enter") send(); }}
               placeholder="Votre question…"
-              className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <button onClick={send} className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 text-sm font-medium">Envoyer</button>
+              className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+            <button onClick={send} className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-4 text-sm font-medium">Envoyer</button>
           </div>
         </div>
       )}

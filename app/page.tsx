@@ -16,8 +16,8 @@ const services = [
     title: "Sites web sur-mesure",
     desc: "Des sites modernes, rapides et soignés qui inspirent confiance dès la première seconde. Pensés pour vos clients, pas pour faire joli.",
     points: ["Design moderne & responsive", "Optimisé mobile et rapidité", "Livré en quelques jours"],
-    accent: "from-blue-500/15 to-blue-600/5",
-    ring: "text-blue-400",
+    accent: "from-indigo-500/15 to-indigo-600/5",
+    ring: "text-indigo-300",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
         <rect x="3" y="4" width="18" height="14" rx="2" />
@@ -42,7 +42,7 @@ const services = [
     title: "Automatisations",
     desc: "Libérez-vous des tâches répétitives. On automatise ce qui vous fait perdre du temps pour que vous vous concentriez sur l'essentiel.",
     points: ["Gain de temps mesurable", "Moins d'erreurs manuelles", "Adapté à vos outils"],
-    accent: "from-violet-500/15 to-violet-600/5",
+    accent: "from-indigo-500/15 to-indigo-700/5",
     ring: "text-violet-400",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
@@ -95,7 +95,7 @@ export default function Home() {
       <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center shadow-sm">
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center shadow-sm">
               <span className="text-white text-xs font-black tracking-tight">C</span>
             </div>
             <span className={`text-lg font-bold transition-colors ${scrolled ? "text-slate-900" : "text-white"}`}>Caelum</span>
@@ -111,7 +111,7 @@ export default function Home() {
           </div>
 
           <Link href="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors shadow-sm">
+            className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors shadow-sm">
             Demander un devis
           </Link>
         </div>
@@ -133,7 +133,7 @@ export default function Home() {
 
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.1]">
             Des outils digitaux
-            <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">
               qui font avancer votre activité
             </span>
           </h1>
@@ -145,7 +145,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <Link href="/contact"
-              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-600/20">
+              className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/20">
               Démarrer un projet
             </Link>
             <a href="#services"
@@ -161,7 +161,7 @@ export default function Home() {
       {/* ── Services ── */}
       <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Nos services</span>
+          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Nos services</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-3">Ce que nous construisons pour vous</h2>
           <p className="text-slate-500 mt-4">Trois savoir-faire, une même exigence : du concret qui vous sert vraiment.</p>
         </div>
@@ -193,14 +193,14 @@ export default function Home() {
       <section id="methode" className="py-24 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Notre méthode</span>
+            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Notre méthode</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3">Simple, rapide, sans surprise</h2>
             <p className="text-slate-500 mt-4">De votre idée à un résultat en ligne, en trois étapes claires.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {steps.map((st) => (
               <div key={st.n} className="relative bg-white rounded-2xl border border-slate-200 p-7">
-                <div className="w-11 h-11 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-lg mb-4">{st.n}</div>
+                <div className="w-11 h-11 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-lg mb-4">{st.n}</div>
                 <h3 className="text-lg font-bold">{st.title}</h3>
                 <p className="text-slate-600 mt-2 text-sm leading-relaxed">{st.desc}</p>
               </div>
@@ -209,11 +209,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Crédibilité / Notre force ── */}
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Pourquoi nous faire confiance</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mt-3 tracking-tight">Une méthode rigoureuse, pas du hasard</h2>
+          <p className="text-slate-500 mt-4">Ce qui se passe en coulisse pour que chaque livrable tienne la route.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="rounded-2xl border border-slate-200 p-7 hover:shadow-lg transition-shadow">
+            <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+                <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold tracking-tight">Sources officielles &amp; vérifiables</h3>
+            <p className="text-slate-600 mt-2 text-sm leading-relaxed">
+              Nos analyses s&apos;appuient sur des textes légaux et des données publiques que l&apos;on peut
+              citer et tracer — pas sur des suppositions. Vous savez toujours d&apos;où vient l&apos;information.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 p-7 hover:shadow-lg transition-shadow">
+            <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+                <path d="M3 3v18h18" strokeLinecap="round" />
+                <path d="M7 15l3-3 3 2 4-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold tracking-tight">Moteur de simulation multi-scénarios</h3>
+            <p className="text-slate-600 mt-2 text-sm leading-relaxed">
+              Avant chaque recommandation, on teste des milliers de scénarios pour ne garder que ce
+              qui tient vraiment. Vous décidez sur des chiffres éprouvés, pas sur une intuition.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-slate-200 p-7 hover:shadow-lg transition-shadow">
+            <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21c0-4 3.5-6 8-6s8 2 8 6" strokeLinecap="round" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold tracking-tight">Supervision humaine systématique</h3>
+            <p className="text-slate-600 mt-2 text-sm leading-relaxed">
+              La puissance de l&apos;automatisation, toujours validée par un regard humain avant livraison.
+              La rapidité de l&apos;IA, la fiabilité d&apos;un vrai suivi.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── Approche / valeurs ── */}
       <section id="approche" className="py-24 px-6 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Notre approche</span>
+            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Notre approche</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-3">Un partenaire, pas juste un prestataire</h2>
             <p className="text-slate-500 mt-4 leading-relaxed">
               Nous sommes une jeune structure à taille humaine. Ça veut dire un interlocuteur
@@ -239,7 +289,7 @@ export default function Home() {
       {/* ── Services express ── */}
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-5xl mx-auto text-center">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Services express</span>
+          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Services express</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-3">Besoin d&apos;aller vite ? On est là.</h2>
           <p className="text-slate-500 mt-4 max-w-2xl mx-auto">La rapidité sans sacrifier la qualité — c&apos;est notre marque de fabrique.</p>
           <div className="grid sm:grid-cols-3 gap-5 mt-10">
@@ -249,7 +299,7 @@ export default function Home() {
               <p className="text-slate-500 text-sm mt-2">Un diagnostic offert de votre site ou de votre besoin, sous 24h. Sans engagement.</p>
             </div>
             <div className="bg-white rounded-2xl border border-slate-200 p-6">
-              <div className="text-blue-600 font-bold text-sm">⚡ RAPIDE</div>
+              <div className="text-indigo-600 font-bold text-sm">⚡ RAPIDE</div>
               <h3 className="text-lg font-bold mt-2">Devis en 1h</h3>
               <p className="text-slate-500 text-sm mt-2">Une réponse claire et un prix en moins d&apos;une heure. On ne vous fait pas attendre.</p>
             </div>
@@ -276,7 +326,7 @@ export default function Home() {
               faire pour vous — et combien ça coûte.
             </p>
             <Link href="/contact"
-              className="inline-block mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-600/30">
+              className="inline-block mt-8 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/30">
               Demander un devis gratuit
             </Link>
           </div>
@@ -287,7 +337,7 @@ export default function Home() {
       <footer className="border-t border-slate-100 py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-violet-600 rounded-md flex items-center justify-center">
+            <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-md flex items-center justify-center">
               <span className="text-white text-[10px] font-black">C</span>
             </div>
             <span className="font-semibold text-slate-700">Caelum</span>

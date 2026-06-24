@@ -22,12 +22,12 @@ export default function AssistantReglementairePage() {
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
               <span className="text-white text-xs font-black">C</span>
             </div>
             <span className="font-bold text-lg tracking-tight">Caelum</span>
           </Link>
-          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">Demander un devis</Link>
+          <Link href="/contact" className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">Demander un devis</Link>
         </div>
       </header>
 
@@ -40,7 +40,7 @@ export default function AssistantReglementairePage() {
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
             Comprenez vos obligations,
-            <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">sans jargon, en quelques minutes</span>
+            <span className="block bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">sans jargon, en quelques minutes</span>
           </h1>
           <p className="text-lg text-slate-300 mt-6 leading-relaxed">
             On utilise l'IA pour vous aider à <strong className="text-white">comprendre et naviguer</strong> vos
@@ -54,7 +54,7 @@ export default function AssistantReglementairePage() {
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((s) => (
             <div key={s.n} className="bg-white rounded-2xl border border-slate-200 p-7">
-              <div className="w-11 h-11 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-lg mb-4">{s.n}</div>
+              <div className="w-11 h-11 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-lg mb-4">{s.n}</div>
               <h3 className="text-lg font-bold">{s.t}</h3>
               <p className="text-slate-600 mt-2 text-sm leading-relaxed">{s.d}</p>
             </div>
@@ -97,7 +97,7 @@ export default function AssistantReglementairePage() {
       <section className="px-6 pb-24 text-center">
         <h2 className="text-3xl font-bold">Une question qui vous bloque ?</h2>
         <p className="text-slate-500 mt-3">Posez-la — on vous éclaire, gratuitement, et on vous oriente si besoin.</p>
-        <Link href="/contact" className="inline-block mt-7 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-600/20">
+        <Link href="/contact" className="inline-block mt-7 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/20">
           Poser ma question
         </Link>
       </section>

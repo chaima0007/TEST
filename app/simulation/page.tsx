@@ -59,12 +59,12 @@ export default function SimulationPage() {
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
               <span className="text-white text-xs font-black">C</span>
             </div>
             <span className="font-bold text-lg tracking-tight">Caelum</span>
           </Link>
-          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+          <Link href="/contact" className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
             Demander un devis
           </Link>
         </div>
@@ -81,7 +81,7 @@ export default function SimulationPage() {
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
             Voyez vos problèmes
-            <span className="block bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">
               avant qu&apos;ils n&apos;arrivent
             </span>
           </h1>
@@ -137,7 +137,7 @@ export default function SimulationPage() {
           <div className="relative z-10">
             <h2 className="text-3xl font-bold text-white">Anticipez l&apos;avenir de votre activité</h2>
             <p className="text-slate-300 mt-3">Discutons de ce qu&apos;on peut simuler pour vous — gratuitement.</p>
-            <Link href="/contact" className="inline-block mt-7 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-600/30">
+            <Link href="/contact" className="inline-block mt-7 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/30">
               Parlons-en
             </Link>
           </div>

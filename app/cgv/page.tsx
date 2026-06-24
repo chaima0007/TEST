@@ -8,7 +8,7 @@ export default function CGV() {
       <header className="border-b border-slate-100">
         <div className="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
               <span className="text-white text-xs font-black">C</span>
             </div>
             <span className="font-bold text-lg tracking-tight">Caelum</span>

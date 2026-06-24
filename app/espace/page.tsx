@@ -17,7 +17,7 @@ interface Lead {
 interface Counts { total: number; nouveau: number; en_cours: number; termine: number; }
 
 const STATUS_META: Record<string, { label: string; cls: string }> = {
-  nouveau:  { label: "Nouveau",  cls: "bg-blue-100 text-blue-700 border-blue-200" },
+  nouveau:  { label: "Nouveau",  cls: "bg-indigo-100 text-indigo-700 border-indigo-200" },
   en_cours: { label: "En cours", cls: "bg-amber-100 text-amber-700 border-amber-200" },
   termine:  { label: "Terminé",  cls: "bg-emerald-100 text-emerald-700 border-emerald-200" },
 };
@@ -55,7 +55,7 @@ export default function EspaceGestionPage() {
       <header className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
               <span className="text-white text-xs font-black">C</span>
             </div>
             <div>
@@ -77,12 +77,12 @@ export default function EspaceGestionPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
           {[
             { key: "all", label: "Total", value: counts.total, color: "text-slate-900" },
-            { key: "nouveau", label: "Nouveaux", value: counts.nouveau, color: "text-blue-600" },
+            { key: "nouveau", label: "Nouveaux", value: counts.nouveau, color: "text-indigo-600" },
             { key: "en_cours", label: "En cours", value: counts.en_cours, color: "text-amber-600" },
             { key: "termine", label: "Terminés", value: counts.termine, color: "text-emerald-600" },
           ].map((c) => (
             <button key={c.key} onClick={() => setFilter(c.key as typeof filter)}
-              className={`text-left bg-white rounded-xl border p-4 transition-all hover:shadow-sm ${filter === c.key ? "border-blue-400 ring-1 ring-blue-200" : "border-slate-200"}`}>
+              className={`text-left bg-white rounded-xl border p-4 transition-all hover:shadow-sm ${filter === c.key ? "border-indigo-400 ring-1 ring-indigo-200" : "border-slate-200"}`}>
               <div className={`text-2xl font-bold ${c.color}`}>{c.value}</div>
               <div className="text-sm text-slate-500 mt-0.5">{c.label}</div>
             </button>
@@ -105,7 +105,7 @@ export default function EspaceGestionPage() {
               <p className="text-slate-400 text-sm mt-1">
                 Dès qu&apos;un client remplit le formulaire de contact, sa demande apparaîtra ici automatiquement.
               </p>
-              <Link href="/contact" className="inline-block mt-4 text-sm text-blue-600 hover:underline">
+              <Link href="/contact" className="inline-block mt-4 text-sm text-indigo-600 hover:underline">
                 Voir le formulaire de contact →
               </Link>
             </div>

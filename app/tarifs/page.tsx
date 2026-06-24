@@ -71,12 +71,12 @@ export default function TarifsPage() {
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
               <span className="text-white text-xs font-black">C</span>
             </div>
             <span className="font-bold text-lg tracking-tight">Caelum</span>
           </Link>
-          <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+          <Link href="/contact" className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
             Demander un devis
           </Link>
         </div>
@@ -84,7 +84,7 @@ export default function TarifsPage() {
 
       {/* Hero */}
       <section className="text-center px-6 pt-20 pb-12 max-w-3xl mx-auto">
-        <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Services &amp; Tarifs</span>
+        <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Services &amp; Tarifs</span>
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mt-3">Des prix clairs, sans surprise</h1>
         <p className="text-slate-500 mt-4 text-lg">
           Vous savez exactement ce que vous payez, avant de commencer. Devis gratuit et sans engagement.
@@ -96,9 +96,9 @@ export default function TarifsPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {offers.map((o) => (
             <div key={o.name}
-              className={`rounded-2xl border p-7 flex flex-col ${o.highlight ? "border-blue-500 ring-2 ring-blue-200 shadow-lg" : "border-slate-200"}`}>
+              className={`rounded-2xl border p-7 flex flex-col ${o.highlight ? "border-indigo-500 ring-2 ring-indigo-200 shadow-lg" : "border-slate-200"}`}>
               {o.highlight && (
-                <span className="self-start text-xs font-semibold bg-blue-600 text-white px-3 py-1 rounded-full mb-3">Le plus demandé</span>
+                <span className="self-start text-xs font-semibold bg-indigo-600 text-white px-3 py-1 rounded-full mb-3">Le plus demandé</span>
               )}
               <h3 className="text-xl font-bold">{o.name}</h3>
               <p className="text-slate-500 text-sm mt-1">{o.tagline}</p>
@@ -114,7 +114,7 @@ export default function TarifsPage() {
                 ))}
               </ul>
               <Link href="/contact"
-                className={`mt-7 text-center font-semibold px-5 py-3 rounded-xl transition-colors ${o.highlight ? "bg-blue-600 hover:bg-blue-700 text-white" : "bg-slate-900 hover:bg-slate-700 text-white"}`}>
+                className={`mt-7 text-center font-semibold px-5 py-3 rounded-xl transition-colors ${o.highlight ? "bg-indigo-600 hover:bg-indigo-700 text-white" : "bg-slate-900 hover:bg-slate-700 text-white"}`}>
                 Demander un devis
               </Link>
             </div>
@@ -168,7 +168,7 @@ export default function TarifsPage() {
             <h2 className="text-3xl font-bold text-white">Un projet en tête ?</h2>
             <p className="text-slate-300 mt-3">Recevez un devis clair et gratuit sous 24h.</p>
             <Link href="/contact"
-              className="inline-block mt-7 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-600/30">
+              className="inline-block mt-7 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/30">
               Demander mon devis gratuit
             </Link>
           </div>
