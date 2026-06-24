@@ -68,6 +68,17 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "Trouver le bon avocat",
+    d: "Aide juridictionnelle, annuaire officiel des avocats, consultations gratuites, honoraires : le bon avocat, au bon prix.",
+    href: "/la-loi-avec-moi-france/trouver-un-avocat",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M12 3v7M5 10h14M6 10l-3 6a3 3 0 006 0zM18 10l-3 6a3 3 0 006 0z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 21h6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 export default function LoiAvecMoiFrancePage() {
