@@ -64,7 +64,7 @@ const documentsOfficiels = [
   },
   {
     label: "Service de Médiation pour le Consommateur",
-    url: "https://mediationconsommateur.be/fr",
+    url: "https://mediationconsommateur.be/",
   },
 ];
 
@@ -196,7 +196,7 @@ export default function ConsommationPage() {
             « protection juridique » peut vous accompagner.
           </p>
           <div className="mt-4 flex flex-col gap-2.5">
-            <a href="https://mediationconsommateur.be/fr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-700 bg-white border border-indigo-200 hover:bg-indigo-100 rounded-lg px-4 py-2.5 transition-colors">
+            <a href="https://mediationconsommateur.be/introduire-un-dossier/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-700 bg-white border border-indigo-200 hover:bg-indigo-100 rounded-lg px-4 py-2.5 transition-colors">
               🔗 Service de Médiation pour le Consommateur
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3 h-3"><path d="M7 17L17 7M17 7H8M17 7v9" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </a>
