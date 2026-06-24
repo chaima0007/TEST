@@ -179,7 +179,24 @@ export default function ModelesPage() {
         </div>
       </section>
 
-      <section className="py-16 px-6 max-w-3xl mx-auto space-y-8">
+      <section className="pt-12 px-6 max-w-3xl mx-auto">
+        <Link
+          href="/loi-avec-moi/documents"
+          className="group flex items-center justify-between gap-4 rounded-2xl border border-indigo-200 bg-indigo-50 p-5 hover:bg-indigo-100 transition-colors"
+        >
+          <div>
+            <p className="font-bold tracking-tight text-indigo-900">✨ Besoin d&apos;une lettre personnalisée ?</p>
+            <p className="text-indigo-800/90 text-sm mt-1 leading-relaxed">
+              Notre générateur remplit le document avec vos infos et le met en forme — prêt à imprimer ou en PDF.
+            </p>
+          </div>
+          <span className="flex-shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-indigo-600 group-hover:bg-indigo-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors">
+            Générateur →
+          </span>
+        </Link>
+      </section>
+
+      <section className="py-12 px-6 max-w-3xl mx-auto space-y-8">
         {letters.map((l) => (
           <LetterCard key={l.id} l={l} />
         ))}
