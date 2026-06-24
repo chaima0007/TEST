@@ -67,6 +67,17 @@ const themes = [
     ),
   },
   {
+    t: "Conflit de voisinage",
+    d: "Bruit, plantations, vues, mitoyenneté : les voies amiables (médiation, conciliation gratuite au juge de paix) et l'arbitrage, du plus simple au plus formel.",
+    href: "/loi-avec-moi/voisinage",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M3 10l5-4 5 4v9H3z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13 12l4-3 4 3v7h-8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     t: "Logement & bail",
     d: "Vos droits de locataire ou de propriétaire : bail, caution, préavis, réparations, indexation du loyer.",
     href: "/loi-avec-moi/logement",
