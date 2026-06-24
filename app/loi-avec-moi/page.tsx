@@ -347,6 +347,28 @@ export default function LoiAvecMoiPage() {
         </div>
       </section>
 
+      {/* Quiz CTA */}
+      <section className="px-6 pb-4 max-w-5xl mx-auto">
+        <Link href="/loi-avec-moi/quiz" className="group block relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 to-indigo-800 text-white p-8 sm:p-10 hover:shadow-xl transition-all">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_90%_10%,rgba(255,255,255,0.15),transparent_55%)]" />
+          <div className="relative z-10 sm:flex items-center justify-between gap-6">
+            <div>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/20 text-sm font-medium mb-4">
+                🧠 Quiz gratuit
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Connais-tu tes droits ?</h2>
+              <p className="text-indigo-100 mt-3 max-w-xl leading-relaxed">
+                8 situations du quotidien en Belgique. Chaque réponse est expliquée et renvoie vers une fiche sourcée.
+                Aucun piège — juste de quoi apprendre en 3 minutes.
+              </p>
+            </div>
+            <span className="mt-6 sm:mt-0 flex-shrink-0 inline-flex items-center gap-2 rounded-2xl bg-white text-indigo-700 font-semibold px-6 py-3.5 group-hover:translate-x-1 transition-transform">
+              Commencer le quiz →
+            </span>
+          </div>
+        </Link>
+      </section>
+
       {/* Sources officielles */}
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
