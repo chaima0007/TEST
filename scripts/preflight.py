@@ -28,6 +28,8 @@ CHECKS = [
      "cmd": ["python3", "scripts/build_guard.py", "--scan"], "critical": True},
     {"id": "deps",   "label": "Scan sécurité des dépendances",
      "cmd": ["python3", "scripts/dependency_scanner.py", "--scan"], "critical": True},
+    {"id": "site",   "label": "Gardien de cohérence du site (marque, contenu)",
+     "cmd": ["python3", "scripts/site_guard.py", "--scan", "--quiet"], "critical": True},
 ]
 
 
