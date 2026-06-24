@@ -47,6 +47,26 @@ const themes = [
     ),
   },
   {
+    t: "En cas d'injustice",
+    d: "Discrimination, problème avec une administration, la police, un commerçant : le bon service officiel à contacter, souvent gratuit.",
+    href: "/loi-avec-moi/en-cas-injustice",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 006 0L7 7zM17 7l-3 7a3 3 0 006 0l-3-7z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    t: "Vos droits à l'aéroport",
+    d: "Vol retardé, annulé, refus d'embarquement, bagage perdu : ce que la loi européenne garantit et combien réclamer.",
+    href: "/loi-avec-moi/droits-aeroport",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 00-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     t: "Logement & bail",
     d: "Vos droits de locataire ou de propriétaire : bail, caution, préavis, réparations, indexation du loyer.",
     href: "/loi-avec-moi/logement",
