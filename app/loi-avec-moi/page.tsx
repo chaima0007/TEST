@@ -4,6 +4,17 @@ import Link from "next/link";
 
 const themes = [
   {
+    t: "En danger ? Où aller",
+    d: "Violences, agression, détresse, enfant ou animal en danger : les numéros d'aide gratuits, par situation, à appeler en un tap.",
+    href: "/loi-avec-moi/en-danger",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 8v4M12 15.5v.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     t: "Logement & bail",
     d: "Vos droits de locataire ou de propriétaire : bail, caution, préavis, réparations, indexation du loyer.",
     href: "/loi-avec-moi/logement",

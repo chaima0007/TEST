@@ -4584,5 +4584,88 @@
       "min_score": 74.969,
       "max_score": 80.5309
     }
+  },
+  {
+    "seal_id": "SEAL-0A4916A5AB564560",
+    "timestamp": "2026-06-24T16:43:46.792035+00:00",
+    "action": "wave-en-danger",
+    "context": "Page En danger numeros aide verifies violences detresse enfants + lien animaux",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.8194,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 91.056,
+          "SÉCURITÉ": 88.036,
+          "SCALABILITÉ": 82.715,
+          "RÉVERSIBILITÉ": 74.129
+        },
+        "composite": 84.8303,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.013,
+          "SÉCURITÉ": 80.646,
+          "SCALABILITÉ": 76.821,
+          "RÉVERSIBILITÉ": 71.741
+        },
+        "composite": 79.2189,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 85.421,
+          "SÉCURITÉ": 79.806,
+          "SCALABILITÉ": 74.111,
+          "RÉVERSIBILITÉ": 67.477
+        },
+        "composite": 77.6009,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 85.657,
+          "SÉCURITÉ": 77.033,
+          "SCALABILITÉ": 70.92,
+          "RÉVERSIBILITÉ": 66.673
+        },
+        "composite": 76.0199,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 79.904,
+          "SÉCURITÉ": 75.293,
+          "SCALABILITÉ": 68.256,
+          "RÉVERSIBILITÉ": 62.854
+        },
+        "composite": 72.4292,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.8246,
+      "robustness_pct": 100.0,
+      "min_score": 74.5032,
+      "max_score": 81.4659
+    }
   }
 ]
