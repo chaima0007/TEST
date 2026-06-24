@@ -140,8 +140,7 @@ export default function Home() {
 
           <p className="text-lg sm:text-xl text-slate-300 mt-6 max-w-2xl mx-auto leading-relaxed">
             Sites web, tableaux de bord et automatisations sur-mesure.
-            Une automatisation puissante, mais toujours <span className="text-white font-medium">maîtrisée et supervisée</span> —
-            conçue avec soin, livrée rapidement, à prix accessible.
+            <span className="block mt-2 text-white font-medium">La qualité d&apos;une agence, au prix d&apos;un freelance bruxellois.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
