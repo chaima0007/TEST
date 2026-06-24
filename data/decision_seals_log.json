@@ -4059,5 +4059,32 @@
       "min_score": 74.0349,
       "max_score": 80.7766
     }
+  },
+  {
+    "seal_id": "SEAL-AAC68DFEA906F529",
+    "timestamp": "2026-06-24T16:02:37.131293+00:00",
+    "action": "route-loi-avec-moi",
+    "context": "nouvelle page publique gratuite : comprendre ses droits/obligations en Belgique, info+orientation (pas conseil), sources officielles",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0675,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.135,
+      "robustness_pct": 100.0,
+      "min_score": 75.3585,
+      "max_score": 80.6441
+    }
   }
 ]
