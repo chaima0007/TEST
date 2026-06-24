@@ -58,6 +58,7 @@ const specialisations: Spe[] = [
     emoji: "🏠",
     t: "Bail & immobilier",
     quand: "Conflit de bail, caution non rendue, expulsion, vices, voisinage, copropriété.",
+    href: "/loi-avec-moi/avocat/bail",
     docs: [
       "Le bail signé et l'état des lieux d'entrée/sortie",
       "Les preuves de paiement du loyer et de la caution",
