@@ -3756,5 +3756,88 @@
       "min_score": 74.5309,
       "max_score": 82.3802
     }
+  },
+  {
+    "seal_id": "SEAL-CF40F484257DDAF5",
+    "timestamp": "2026-06-24T15:32:57.346442+00:00",
+    "action": "feature-chatbot-24-7",
+    "context": "Chatbot FAQ 24/7 sur le site : repond aux questions courantes (services, prix, delais), oriente vers contact. Gratuit, fiable, sans hallucination.",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.7548,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 86.069,
+          "SÉCURITÉ": 88.467,
+          "SCALABILITÉ": 81.692,
+          "RÉVERSIBILITÉ": 76.244
+        },
+        "composite": 83.6093,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.998,
+          "SÉCURITÉ": 81.791,
+          "SCALABILITÉ": 79.415,
+          "RÉVERSIBILITÉ": 69.667
+        },
+        "composite": 79.7343,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.095,
+          "SÉCURITÉ": 79.316,
+          "SCALABILITÉ": 72.964,
+          "RÉVERSIBILITÉ": 66.311
+        },
+        "composite": 76.2607,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.448,
+          "SÉCURITÉ": 78.69,
+          "SCALABILITÉ": 76.069,
+          "RÉVERSIBILITÉ": 67.186
+        },
+        "composite": 76.5614,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.644,
+          "SÉCURITÉ": 74.752,
+          "SCALABILITÉ": 72.093,
+          "RÉVERSIBILITÉ": 62.215
+        },
+        "composite": 72.1475,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.1705,
+      "robustness_pct": 100.0,
+      "min_score": 74.3665,
+      "max_score": 80.8052
+    }
   }
 ]
