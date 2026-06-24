@@ -98,8 +98,8 @@ export default function AvocatAccidentsPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-rose-100 bg-rose-50/60 p-5">
           <AgentAvocat
-            name="Maître Sofia"
-            role="Référente · accidents & dommage corporel"
+            name="Sofia"
+            role="Assistante · accidents & dommage corporel"
             accent="rose"
             message="Après un accident, on a juste envie que ça se termine — et c'est là qu'on signe trop vite. Prenez le temps : votre santé future a une valeur, on la chiffre correctement."
           />

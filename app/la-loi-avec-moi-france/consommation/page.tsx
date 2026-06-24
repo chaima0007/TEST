@@ -108,8 +108,8 @@ export default function ConsommationFrancePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5">
           <AgentAvocat
-            name="Maître Juliette"
-            role="Référente · droit de la consommation (France)"
+            name="Juliette"
+            role="Assistante · droit de la consommation (France)"
             accent="emerald"
             message="Un achat qui tourne mal, ça arrive à tout le monde. La bonne nouvelle : en France, la loi est plutôt de votre côté. Gardez vos preuves et réclamez par écrit — ça suffit très souvent."
           />

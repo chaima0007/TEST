@@ -109,8 +109,8 @@ export default function DemarchesFrancePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-sky-100 bg-sky-50/60 p-5">
           <AgentAvocat
-            name="Maître Hugo"
-            role="Référent · droit administratif (France)"
+            name="Hugo"
+            role="Assistant · droit administratif (France)"
             accent="sky"
             message="Face à l'administration, le temps est votre meilleur allié ou votre pire ennemi. La règle d'or : repérez le délai de 2 mois, et lancez un recours gracieux gratuit avant qu'il ne soit trop tard. Un courrier bien fait suffit souvent."
           />

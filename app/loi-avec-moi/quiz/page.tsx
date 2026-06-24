@@ -284,8 +284,8 @@ export default function QuizPage() {
 
             <div className="mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/60 p-5">
               <AgentAvocat
-                name="Maître Léa"
-                role="Votre guide juridique"
+                name="Léa"
+                role="Votre assistante juridique"
                 accent={v!.accent}
                 message={v!.texte}
               />

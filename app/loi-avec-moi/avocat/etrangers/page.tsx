@@ -98,8 +98,8 @@ export default function AvocatEtrangersPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-sky-100 bg-sky-50/60 p-5">
           <AgentAvocat
-            name="Maître Yasmine"
-            role="Référente · droit des étrangers"
+            name="Yasmine"
+            role="Assistante · droit des étrangers"
             accent="sky"
             message="Une décision de l'administration, c'est stressant — surtout avec un délai. Le bon réflexe : noter la date de réception et consulter un avocat tout de suite."
           />

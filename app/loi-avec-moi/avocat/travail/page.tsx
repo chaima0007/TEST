@@ -94,8 +94,8 @@ export default function AvocatTravailPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5">
           <AgentAvocat
-            name="Maître Yann"
-            role="Référent · droit du travail"
+            name="Yann"
+            role="Assistant · droit du travail"
             accent="indigo"
             message="Perdre ou quitter un emploi, c'est stressant. On va à l'essentiel, vous saurez quoi vérifier et quoi préparer."
           />

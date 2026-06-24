@@ -110,8 +110,8 @@ export default function DemarchesPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-sky-100 bg-sky-50/60 p-5">
           <AgentAvocat
-            name="Maître Adrien"
-            role="Référent · droit administratif"
+            name="Adrien"
+            role="Assistant · droit administratif"
             accent="sky"
             message="Une lettre administrative, ça impressionne — mais ça suit des règles précises qui vous protègent. La décision doit être motivée et vous indiquer comment réagir. Le réflexe n°1 : repérer la date de réception et le délai, tout de suite."
           />

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import BanniereLangues from "@/components/BanniereLangues";
 
 const themes = [
   {
@@ -244,6 +245,7 @@ const sources = [
 export default function LoiAvecMoiPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
+      <BanniereLangues theme="indigo" />
       {/* Header */}
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -273,6 +275,9 @@ export default function LoiAvecMoiPage() {
             Vos droits et obligations,
             <span className="block bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">enfin expliqués simplement</span>
           </h1>
+          <p className="mt-4 text-base sm:text-lg font-semibold tracking-wide text-indigo-200">
+            Le droit accessible pour tous.
+          </p>
           <p className="text-lg text-slate-300 mt-6 leading-relaxed">
             Comprendre la loi belge ne devrait pas demander un avocat à chaque question.
             On vous explique vos droits <strong className="text-white">en langage clair</strong>, à partir des
@@ -413,7 +418,11 @@ export default function LoiAvecMoiPage() {
 
       {/* Footer mini */}
       <footer className="border-t border-slate-100 py-8 px-6 text-center text-sm text-slate-500">
-        <Link href="/" className="hover:text-slate-900">← Retour à l&apos;accueil Caelum</Link>
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <Link href="/loi-avec-moi/nos-assistants" className="text-indigo-700 hover:text-indigo-900 font-medium">Qui sont nos assistants ?</Link>
+          <Link href="/la-loi-avec-moi-france" className="text-indigo-700 hover:text-indigo-900 font-medium">🇫🇷 Voir la version France →</Link>
+          <Link href="/" className="hover:text-slate-900">← Accueil Caelum</Link>
+        </div>
       </footer>
     </main>
   );

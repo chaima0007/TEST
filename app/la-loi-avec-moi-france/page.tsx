@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BanniereLangues from "@/components/BanniereLangues";
 
 const themes = [
   {
@@ -84,6 +85,7 @@ const themes = [
 export default function LoiAvecMoiFrancePage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
+      <BanniereLangues theme="blue" />
       {/* Header */}
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -105,6 +107,9 @@ export default function LoiAvecMoiFrancePage() {
             🇫🇷 Édition France
           </span>
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight">Vos droits, expliqués simplement</h1>
+          <p className="mt-4 text-base sm:text-lg font-semibold tracking-wide text-blue-200">
+            Le droit accessible pour tous.
+          </p>
           <p className="text-lg text-slate-300 mt-6 leading-relaxed max-w-2xl mx-auto">
             Comprendre la loi en France sans jargon, avec des <strong className="text-white">sources officielles</strong>.
             Un espace clair, pensé pour le mobile — et entièrement <strong className="text-white">distinct</strong> du site belge.
@@ -189,7 +194,10 @@ export default function LoiAvecMoiFrancePage() {
 
       <footer className="border-t border-slate-100 py-10 px-6 text-center text-sm text-slate-500">
         <p>« La loi avec moi · France » — informations générales, ne remplace pas un conseil juridique personnalisé.</p>
-        <Link href="/loi-avec-moi" className="inline-block mt-3 text-blue-700 hover:text-blue-900 font-medium">🇧🇪 Voir la version Belgique →</Link>
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          <Link href="/la-loi-avec-moi-france/nos-assistants" className="text-blue-700 hover:text-blue-900 font-medium">Qui sont nos assistants ?</Link>
+          <Link href="/loi-avec-moi" className="text-blue-700 hover:text-blue-900 font-medium">🇧🇪 Voir la version Belgique →</Link>
+        </div>
       </footer>
     </main>
   );

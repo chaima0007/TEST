@@ -98,8 +98,8 @@ export default function AvocatBailPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-teal-100 bg-teal-50/60 p-5">
           <AgentAvocat
-            name="Maître Hugo"
-            role="Référent · bail & immobilier"
+            name="Hugo"
+            role="Assistant · bail & immobilier"
             accent="teal"
             message="Un souci de bail, ça angoisse vite quand c'est votre toit. On clarifie vos droits — et on regarde d'abord la règle de VOTRE région."
           />

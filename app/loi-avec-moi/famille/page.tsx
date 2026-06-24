@@ -114,8 +114,8 @@ export default function FamillePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-violet-100 bg-violet-50/60 p-5">
           <AgentAvocat
-            name="Maître Camille"
-            role="Référente · droit de la famille & vie privée"
+            name="Camille"
+            role="Assistante · droit de la famille & vie privée"
             accent="violet"
             message="Les questions de famille touchent au plus intime. Le bon réflexe est presque toujours le même : posez les choses par écrit, et privilégiez l'accord. Un notaire ou un médiateur familial coûte bien moins cher qu'un long conflit."
           />

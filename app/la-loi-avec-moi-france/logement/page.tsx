@@ -108,8 +108,8 @@ export default function LogementFrancePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-teal-100 bg-teal-50/60 p-5">
           <AgentAvocat
-            name="Maître Thomas"
-            role="Référent · droit du logement (France)"
+            name="Thomas"
+            role="Assistant · droit du logement (France)"
             accent="teal"
             message="Le logement, c'est le litige n°1 du quotidien. Bonne nouvelle : la loi de 1989 encadre tout et protège fortement le locataire. Le réflexe clé : un état des lieux détaillé, et tout par écrit en recommandé."
           />

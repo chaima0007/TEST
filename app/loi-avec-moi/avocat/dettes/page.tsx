@@ -98,8 +98,8 @@ export default function AvocatDettesPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5">
           <AgentAvocat
-            name="Maître Tom"
-            role="Référent · dettes & surendettement"
+            name="Tom"
+            role="Assistant · dettes & surendettement"
             accent="emerald"
             message="Les dettes, ça isole et ça fait honte — à tort. La loi prévoit une vraie sortie : on protège votre dignité pendant qu'on rembourse à votre rythme."
           />

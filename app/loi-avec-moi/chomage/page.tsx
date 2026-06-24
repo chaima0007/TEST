@@ -102,8 +102,8 @@ export default function ChomagePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5">
           <AgentAvocat
-            name="Maître Bruno"
-            role="Référent · chômage & sécurité sociale"
+            name="Bruno"
+            role="Assistant · chômage & sécurité sociale"
             accent="indigo"
             message="Bonne nouvelle : travailler un peu pendant le chômage est possible. La seule règle d'or, c'est de tout déclarer AVANT. C'est ce qui vous protège."
           />

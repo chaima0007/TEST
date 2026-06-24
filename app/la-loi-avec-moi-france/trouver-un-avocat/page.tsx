@@ -110,8 +110,8 @@ export default function TrouverAvocatFrancePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-amber-100 bg-amber-50/60 p-5">
           <AgentAvocat
-            name="Maître Sofia"
-            role="Référente · accès au droit (France)"
+            name="Sofia"
+            role="Assistante · accès au droit (France)"
             accent="amber"
             message="Un bon avocat, ce n'est pas forcément le plus cher. Le réflexe malin : vérifier d'abord l'aide juridictionnelle et votre assurance protection juridique, profiter d'une consultation gratuite, puis exiger une convention d'honoraires écrite. Vous gardez la main."
           />

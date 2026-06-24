@@ -106,8 +106,8 @@ export default function PorterPlaintePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5">
           <AgentAvocat
-            name="Maître Léa"
-            role="Référente · droits du citoyen"
+            name="Léa"
+            role="Assistante · droits du citoyen"
             accent="indigo"
             message="Respirez. Vous avez des droits clairs, et des solutions existent même si ça coince. On les voit ensemble, calmement."
           />
@@ -162,7 +162,7 @@ export default function PorterPlaintePage() {
       {/* Comportement anormal / témoin */}
       <section className="py-14 px-6 max-w-3xl mx-auto">
         <div className="flex items-start gap-4 mb-6">
-          <AgentAvocat name="Maître Sami" role="Référent · contrôle de la police" accent="sky" size={84} />
+          <AgentAvocat name="Sami" role="Assistant · contrôle de la police" accent="sky" size={84} />
         </div>
         <h2 className="text-2xl font-bold tracking-tight">👀 Comportement anormal de la police, ou vous êtes témoin ?</h2>
         <p className="text-slate-700 mt-3 text-sm leading-relaxed">

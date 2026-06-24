@@ -98,8 +98,8 @@ export default function AvocatEntreprisePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-blue-100 bg-blue-50/60 p-5">
           <AgentAvocat
-            name="Maître Karim"
-            role="Référent · entreprise & commercial"
+            name="Karim"
+            role="Assistant · entreprise & commercial"
             accent="blue"
             message="Diriger, c'est gérer des risques. Une difficulté n'est pas une faute : prise tôt, elle se traite. On sécurise vos contrats et, s'il le faut, on protège l'entreprise."
           />

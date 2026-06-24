@@ -98,8 +98,8 @@ export default function AvocatPenalPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-rose-100 bg-rose-50/60 p-5">
           <AgentAvocat
-            name="Maître Adil"
-            role="Référent · droit pénal"
+            name="Adil"
+            role="Assistant · droit pénal"
             accent="rose"
             message="Être convoqué·e fait peur, c'est normal. Retenez l'essentiel : vous pouvez vous taire, et vous avez droit à un avocat avant de parler."
           />

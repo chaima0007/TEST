@@ -109,8 +109,8 @@ export default function CreerEntreprisePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-amber-100 bg-amber-50/60 p-5">
           <AgentAvocat
-            name="Maître Nadia"
-            role="Référente · droit des entreprises"
+            name="Nadia"
+            role="Assistante · droit des entreprises"
             accent="amber"
             message="Se lancer fait peur, mais le parcours est balisé. L'essentiel : vous inscrire à la BCE avant de démarrer, et bien choisir votre statut. Un guichet d'entreprises agréé fait une grande partie des démarches avec vous."
           />

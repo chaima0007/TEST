@@ -94,8 +94,8 @@ export default function DroitsAeroportPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-sky-100 bg-sky-50/60 p-5">
           <AgentAvocat
-            name="Maître Nora"
-            role="Référente · droits des voyageurs"
+            name="Nora"
+            role="Assistante · droits des voyageurs"
             accent="sky"
             message="Un vol qui dérape, ça gâche le voyage — mais vous avez des droits chiffrés. On regarde ce que vous pouvez réclamer."
           />

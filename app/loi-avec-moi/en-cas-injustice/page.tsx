@@ -120,8 +120,8 @@ export default function EnCasInjusticePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5">
           <AgentAvocat
-            name="Maître Inès"
-            role="Référente · recours & droits"
+            name="Inès"
+            role="Assistante · recours & droits"
             accent="emerald"
             message="Se sentir traité·e injustement, c'est éprouvant. La bonne nouvelle : il existe presque toujours un recours, et souvent gratuit."
           />

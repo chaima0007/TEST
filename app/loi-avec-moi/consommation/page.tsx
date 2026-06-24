@@ -109,8 +109,8 @@ export default function ConsommationPage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5">
           <AgentAvocat
-            name="Maître Élodie"
-            role="Référente · droit de la consommation"
+            name="Élodie"
+            role="Assistante · droit de la consommation"
             accent="emerald"
             message="Un achat qui tourne mal, ça arrive à tout le monde. La bonne nouvelle : la loi est plutôt de votre côté. Gardez vos preuves, et réclamez par écrit — ça suffit souvent."
           />

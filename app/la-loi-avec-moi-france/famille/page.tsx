@@ -98,8 +98,8 @@ export default function FamilleFrancePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-rose-100 bg-rose-50/60 p-5">
           <AgentAvocat
-            name="Maître Inès"
-            role="Référente · droit de la famille (France)"
+            name="Inès"
+            role="Assistante · droit de la famille (France)"
             accent="rose"
             message="La famille, c'est l'émotion — mais le droit, lui, est précis. Le point que trop de gens ignorent : pacsés, vous n'héritez PAS l'un de l'autre sans testament. Un document simple peut tout changer pour protéger ceux qu'on aime."
           />

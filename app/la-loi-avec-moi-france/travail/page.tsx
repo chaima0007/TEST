@@ -109,8 +109,8 @@ export default function TravailFrancePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/60 p-5">
           <AgentAvocat
-            name="Maître Karim"
-            role="Référent · droit du travail (France)"
+            name="Karim"
+            role="Assistant · droit du travail (France)"
             accent="indigo"
             message="Au travail, vos droits sont solides — encore faut-il les connaître. Le réflexe gagnant : tout par écrit, on garde chaque fiche de paie, et on ne laisse jamais filer le délai de 12 mois pour contester un licenciement."
           />

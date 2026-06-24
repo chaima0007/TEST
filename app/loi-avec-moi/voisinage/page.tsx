@@ -117,8 +117,8 @@ export default function VoisinagePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-teal-100 bg-teal-50/60 p-5">
           <AgentAvocat
-            name="Maître Léna"
-            role="Référente · voisinage & modes amiables"
+            name="Léna"
+            role="Assistante · voisinage & modes amiables"
             accent="teal"
             message="Un conflit de voisinage empoisonne le quotidien — mais le tribunal n'est pas la première étape. Souvent, une conciliation gratuite au juge de paix suffit à tout débloquer."
           />

@@ -98,8 +98,8 @@ export default function AvocatFamillePage() {
       <section className="px-6">
         <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5">
           <AgentAvocat
-            name="Maître Clara"
-            role="Référente · droit de la famille"
+            name="Clara"
+            role="Assistante · droit de la famille"
             accent="violet"
             message="Une séparation touche au plus intime. Ici, on garde le cap sur l'essentiel : vos droits, et surtout l'intérêt de l'enfant."
           />

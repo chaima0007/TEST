@@ -272,8 +272,8 @@ export default function QuizFrancePage() {
 
             <div className="mt-8 rounded-2xl border border-blue-100 bg-blue-50/60 p-5">
               <AgentAvocat
-                name="Maître Léa"
-                role="Votre guide juridique (France)"
+                name="Léa"
+                role="Votre assistante juridique (France)"
                 accent={v!.accent}
                 message={v!.texte}
               />

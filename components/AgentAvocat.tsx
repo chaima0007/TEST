@@ -1,9 +1,13 @@
 "use client";
 
-// Agent animé « avocat-référent ».
+// Agent animé « assistant juridique ».
 // Objectif : humaniser et dédramatiser le juridique — sobre, chaleureux, JAMAIS enfantin.
 // Style : figure géométrique épurée (buste), palette professionnelle, micro-animations discrètes
 // (flottement lent, clignement, légère respiration). Pas de gros yeux cartoon, pas de couleurs criardes.
+//
+// TRANSPARENCE (obligatoire, sans exception) : ces personnages sont des ASSISTANTS VIRTUELS
+// (IA + supervision humaine), PAS de vrais avocats. La mention est affichée automatiquement
+// sous chaque avatar — impossible d'en oublier un. Voir la page « Qui sont nos assistants ? ».
 
 type Accent = "indigo" | "rose" | "emerald" | "amber" | "sky" | "blue" | "violet" | "teal";
 
@@ -78,11 +82,24 @@ export default function AgentAvocat({
       {(name || role || message) && (
         <div className="min-w-0">
           {(name || role) && (
-            <p className="font-bold tracking-tight leading-tight" style={{ color: c.text }}>
-              {name}
-              {role && <span className="block text-xs font-medium opacity-70">{role}</span>}
+            <p className="leading-tight" style={{ color: c.text }}>
+              <span className="font-bold tracking-tight">{name}</span>
+              {role && (
+                <span className="text-xs font-medium opacity-70">
+                  {name ? " · " : ""}
+                  {role}
+                </span>
+              )}
             </p>
           )}
+          {/* Mention de transparence — affichée automatiquement sur CHAQUE avatar (sans exception) */}
+          <span
+            className="mt-1 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
+            style={{ backgroundColor: c.soft, color: c.text, border: `1px solid ${c.ring}` }}
+            title="Ces assistants sont des personnages virtuels (IA + supervision humaine). Ce ne sont pas de vrais avocats."
+          >
+            <span aria-hidden="true">✦</span> Assistant virtuel · pas un avocat réel
+          </span>
           {message && (
             <div
               className="relative mt-2 inline-block rounded-2xl rounded-tl-sm px-3.5 py-2 text-sm leading-relaxed"
