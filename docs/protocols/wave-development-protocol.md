@@ -414,3 +414,35 @@ python3 scripts/decision_seal.py --report
 
 **Règle absolue** : Toute décision CRITIQUE ou ÉLEVÉE sans sceau APPROUVÉ = BLOQUÉE.
 Les sceaux sont enregistrés dans `data/decision_seals_log.json` (500 max, FIFO).
+
+---
+
+## 15. Garde Anti-Collision de Branche (§15) — OBLIGATOIRE avant écriture
+
+Empêche deux sessions Claude d'écraser mutuellement leur travail sur la même branche.
+**À lancer AVANT tout commit/push**, et idéalement au démarrage de session.
+
+### Statuts détectés :
+| Statut | Sens | Action |
+|--------|------|--------|
+| ✅ SYNC | local == origin | Écriture sûre |
+| ✅ AHEAD | commits locaux non poussés | Push autorisé |
+| ✅ NEW_BRANCH | branche distante inexistante | Première poussée OK |
+| 🛑 BEHIND | une autre session a poussé | `git pull --rebase` AVANT d'écrire |
+| 🛑 DIVERGED | les deux ont bougé | Collision — résoudre |
+| 🚨 SWAPPED | aucune histoire commune | Lignée écrasée — DANGER MAX |
+
+### Commandes :
+```bash
+# Vérifier avant toute écriture (code retour non-zéro si dangereux)
+python3 scripts/branch_guard.py --check
+
+# Version courte pour hook/CI
+python3 scripts/branch_guard.py --check --quiet
+```
+
+### Règle absolue :
+- **Une session = une branche.** Jamais deux sessions sur la même branche simultanément.
+- Si `branch_guard` renvoie BEHIND/DIVERGED/SWAPPED → **STOP**, ne jamais forcer le push.
+- Sauvegarder toute lignée concurrente sur sa propre branche avant de réaligner.
+- Logs : `data/branch_guard_log.json` (300 max, FIFO).
