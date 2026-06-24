@@ -71,6 +71,7 @@ const specialisations: Spe[] = [
     emoji: "🌍",
     t: "Droit des étrangers / séjour",
     quand: "Titre de séjour, regroupement familial, asile, recours contre une décision (CGRA, Office des étrangers).",
+    href: "/loi-avec-moi/avocat/etrangers",
     docs: [
       "Votre passeport et tout titre de séjour / annexe reçus",
       "La décision contestée et son enveloppe (la date compte !)",
