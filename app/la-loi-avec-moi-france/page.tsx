@@ -35,6 +35,7 @@ const themes = [
   {
     t: "Consommation",
     d: "Garanties, droit de rétractation, achats en ligne, litiges : vos protections de consommateur en France.",
+    href: "/la-loi-avec-moi-france/consommation",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M6 6h15l-1.5 9h-12z" strokeLinecap="round" strokeLinejoin="round" />
