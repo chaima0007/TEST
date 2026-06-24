@@ -3949,5 +3949,32 @@
       "min_score": 74.5575,
       "max_score": 80.6759
     }
+  },
+  {
+    "seal_id": "SEAL-11DAA18C1E13F172",
+    "timestamp": "2026-06-24T15:47:50.553565+00:00",
+    "action": "route-assistant-reglementaire",
+    "context": "Page service Assistant reglementaire IA : information et orientation (pas conseil), reseau de partenaires experts. Legal, vendeur, honnete.",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9597,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.9195,
+      "robustness_pct": 100.0,
+      "min_score": 75.1829,
+      "max_score": 81.1617
+    }
   }
 ]

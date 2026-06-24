@@ -295,6 +295,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4 flex-wrap">
             <a href="#services" className="hover:text-slate-900">Services</a>
+            <Link href="/assistant-reglementaire" className="hover:text-slate-900">Assistant réglementaire</Link>
             <Link href="/contact" className="hover:text-slate-900">Contact</Link>
             <Link href="/mentions-legales" className="hover:text-slate-900">Mentions légales</Link>
             <Link href="/confidentialite" className="hover:text-slate-900">Confidentialité</Link>
