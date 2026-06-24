@@ -143,6 +143,24 @@ export default function LoiAvecMoiFrancePage() {
         </div>
       </section>
 
+      {/* CTA Quiz */}
+      <section className="px-6 pb-4">
+        <Link href="/la-loi-avec-moi-france/quiz" className="group block max-w-4xl mx-auto rounded-3xl bg-gradient-to-br from-blue-600 to-blue-800 text-white p-8 sm:p-10 hover:shadow-xl transition-shadow">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+            <div>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white/90 text-xs font-semibold mb-3">🧠 Quiz gratuit</span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Connaissez-vous vraiment vos droits ?</h2>
+              <p className="text-blue-100 mt-2 text-sm sm:text-base leading-relaxed max-w-xl">
+                8 questions sur des situations du quotidien en France. Chaque réponse est expliquée et renvoie vers une fiche sourcée.
+              </p>
+            </div>
+            <span className="flex-shrink-0 inline-flex items-center gap-2 bg-white text-blue-800 font-semibold px-6 py-3.5 rounded-xl group-hover:translate-x-1 transition-transform">
+              Faire le quiz →
+            </span>
+          </div>
+        </Link>
+      </section>
+
       {/* Confiance / source */}
       <section className="py-16 px-6 bg-slate-50">
         <div className="max-w-3xl mx-auto text-center">
