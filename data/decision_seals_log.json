@@ -3069,5 +3069,88 @@
       "min_score": 74.8885,
       "max_score": 80.4901
     }
+  },
+  {
+    "seal_id": "SEAL-75B5D0F9C291DD36",
+    "timestamp": "2026-06-24T13:56:54.009298+00:00",
+    "action": "wave-502",
+    "context": "3 domaines : assainissement manuel (manual scavenging), iles englouties par le climat, demantelement naval (shipbreaking)",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.3167,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.469,
+          "SÉCURITÉ": 84.754,
+          "SCALABILITÉ": 82.408,
+          "RÉVERSIBILITÉ": 76.987
+        },
+        "composite": 83.7286,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.484,
+          "SÉCURITÉ": 83.319,
+          "SCALABILITÉ": 75.598,
+          "RÉVERSIBILITÉ": 71.225
+        },
+        "composite": 79.3195,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 84.232,
+          "SÉCURITÉ": 83.049,
+          "SCALABILITÉ": 76.752,
+          "RÉVERSIBILITÉ": 71.854
+        },
+        "composite": 79.5907,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 82.301,
+          "SÉCURITÉ": 76.959,
+          "SCALABILITÉ": 73.483,
+          "RÉVERSIBILITÉ": 65.042
+        },
+        "composite": 75.3092,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.563,
+          "SÉCURITÉ": 72.516,
+          "SCALABILITÉ": 70.027,
+          "RÉVERSIBILITÉ": 62.551
+        },
+        "composite": 71.7148,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.327,
+      "robustness_pct": 100.0,
+      "min_score": 74.569,
+      "max_score": 82.2048
+    }
   }
 ]
