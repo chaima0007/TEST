@@ -43,9 +43,7 @@ export default function JuridischeHulpPage() {
       <header className="border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/de-wet-met-mij" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-black">W</span>
-            </div>
+            <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
             <span className="font-bold text-lg tracking-tight">De wet met mij</span>
           </Link>
           <Link href="/de-wet-met-mij/wonen" className="text-sm font-semibold text-emerald-700 hover:text-emerald-900">
