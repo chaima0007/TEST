@@ -440,22 +440,23 @@ export default function PipelineCoveragePage() {
   const [gapFilter, setGap]         = useState("all");
   const [selected, setSelected]     = useState<Team | null>(null);
 
-  useEffect(() => {
-    async function fetchData() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (statusFilter !== "all") params.set("status", statusFilter);
-          if (gapFilter !== "all")    params.set("gap", gapFilter);
-          const qs = params.toString();
-          const res = await fetch(`/api/pipeline-coverage${qs ? `?${qs}` : ""}`, { cache: "no-store" });
-          const data = await res.json();
-          setTeams(data.teams ?? []);
-          setSummary(data.summary ?? null);
-        } finally {
-          setLoading(false);
-        }
+  async function fetchData() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (statusFilter !== "all") params.set("status", statusFilter);
+        if (gapFilter !== "all")    params.set("gap", gapFilter);
+        const qs = params.toString();
+        const res = await fetch(`/api/pipeline-coverage${qs ? `?${qs}` : ""}`, { cache: "no-store" });
+        const data = await res.json();
+        setTeams(data.teams ?? []);
+        setSummary(data.summary ?? null);
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     fetchData();
   }, [statusFilter, gapFilter]);
 

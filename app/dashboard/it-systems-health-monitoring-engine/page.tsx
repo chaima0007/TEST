@@ -572,25 +572,26 @@ export default function ITSystemsHealthMonitoringPage() {
   const [patternFilter, setPattern] = useState("all");
   const [selected, setSelected]   = useState<SystemItem | null>(null);
 
-  useEffect(() => {
-    async function fetchData() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (riskFilter !== "all")    params.set("risk", riskFilter);
-          if (patternFilter !== "all") params.set("pattern", patternFilter);
-          const qs = params.toString();
-          const res = await fetch(
-            `/api/it-systems-health-monitoring-engine${qs ? `?${qs}` : ""}`,
-            { cache: "no-store" },
-          );
-          const data = await res.json();
-          setSystems(data.systems ?? []);
-          setSummary(data.summary ?? null);
-        } finally {
-          setLoading(false);
-        }
+  async function fetchData() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (riskFilter !== "all")    params.set("risk", riskFilter);
+        if (patternFilter !== "all") params.set("pattern", patternFilter);
+        const qs = params.toString();
+        const res = await fetch(
+          `/api/it-systems-health-monitoring-engine${qs ? `?${qs}` : ""}`,
+          { cache: "no-store" },
+        );
+        const data = await res.json();
+        setSystems(data.systems ?? []);
+        setSummary(data.summary ?? null);
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     fetchData();
   }, [riskFilter, patternFilter]);
 

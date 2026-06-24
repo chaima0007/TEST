@@ -367,25 +367,26 @@ export default function DealMomentumPage() {
   const [trendFilter, setTrend] = useState("all");
   const [selected, setSelected] = useState<DealData | null>(null);
 
-  useEffect(() => {
-    async function fetchData() {
-        setLoading(true);
-        setError(null);
-        try {
-          const params = new URLSearchParams();
-          if (levelFilter !== "all") params.set("level", levelFilter);
-          if (trendFilter !== "all") params.set("trend", trendFilter);
-          const res = await fetch(`/api/deal-momentum?${params}`);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const data = await res.json();
-          setDeals(data.deals ?? []);
-          setSummary(data.summary ?? null);
-        } catch (e: unknown) {
-          setError(e instanceof Error ? e.message : "Erreur inconnue");
-        } finally {
-          setLoading(false);
-        }
+  async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        const params = new URLSearchParams();
+        if (levelFilter !== "all") params.set("level", levelFilter);
+        if (trendFilter !== "all") params.set("trend", trendFilter);
+        const res = await fetch(`/api/deal-momentum?${params}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        setDeals(data.deals ?? []);
+        setSummary(data.summary ?? null);
+      } catch (e: unknown) {
+        setError(e instanceof Error ? e.message : "Erreur inconnue");
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     fetchData();
   }, [levelFilter, trendFilter]);
 

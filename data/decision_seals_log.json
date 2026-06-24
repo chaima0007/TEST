@@ -1990,5 +1990,88 @@
       "min_score": 74.4917,
       "max_score": 81.9743
     }
+  },
+  {
+    "seal_id": "SEAL-A37D114E5B68348F",
+    "timestamp": "2026-06-24T11:29:41.622703+00:00",
+    "action": "build-guard-system",
+    "context": "Création build_guard.py anti-récurrence + correction auto 6 dashboards fetchData-dans-useEffect (deal-momentum, sales-skills, deal-velocity, pipeline-coverage, forecast-commit, it-systems-health)",
+    "category": "build",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9573,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.246,
+          "SÉCURITÉ": 85.75,
+          "SCALABILITÉ": 81.505,
+          "RÉVERSIBILITÉ": 72.533
+        },
+        "composite": 83.0941,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 88.733,
+          "SÉCURITÉ": 80.277,
+          "SCALABILITÉ": 78.758,
+          "RÉVERSIBILITÉ": 71.373
+        },
+        "composite": 80.6532,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.397,
+          "SÉCURITÉ": 81.19,
+          "SCALABILITÉ": 78.452,
+          "RÉVERSIBILITÉ": 68.7
+        },
+        "composite": 78.0696,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.82,
+          "SÉCURITÉ": 80.602,
+          "SCALABILITÉ": 73.911,
+          "RÉVERSIBILITÉ": 67.152
+        },
+        "composite": 76.3047,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.572,
+          "SÉCURITÉ": 76.748,
+          "SCALABILITÉ": 69.12,
+          "RÉVERSIBILITÉ": 63.132
+        },
+        "composite": 72.065,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.7794,
+      "robustness_pct": 100.0,
+      "min_score": 73.4061,
+      "max_score": 79.946
+    }
   }
 ]

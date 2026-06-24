@@ -310,25 +310,26 @@ export default function SalesSkillsPage() {
   const [priorityFilter, setPrio] = useState("all");
   const [selected, setSelected]   = useState<RepData | null>(null);
 
-  useEffect(() => {
-    async function fetchData() {
-        setLoading(true);
-        setError(null);
-        try {
-          const params = new URLSearchParams();
-          if (levelFilter !== "all")    params.set("level", levelFilter);
-          if (priorityFilter !== "all") params.set("priority", priorityFilter);
-          const res = await fetch(`/api/sales-skills?${params}`);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const data = await res.json();
-          setReps(data.reps ?? []);
-          setSummary(data.summary ?? null);
-        } catch (e: unknown) {
-          setError(e instanceof Error ? e.message : "Erreur inconnue");
-        } finally {
-          setLoading(false);
-        }
+  async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        const params = new URLSearchParams();
+        if (levelFilter !== "all")    params.set("level", levelFilter);
+        if (priorityFilter !== "all") params.set("priority", priorityFilter);
+        const res = await fetch(`/api/sales-skills?${params}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        setReps(data.reps ?? []);
+        setSummary(data.summary ?? null);
+      } catch (e: unknown) {
+        setError(e instanceof Error ? e.message : "Erreur inconnue");
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     fetchData();
   }, [levelFilter, priorityFilter]);
 

@@ -475,22 +475,23 @@ export default function DealVelocityPage() {
   const [outcomeFilter, setOutcome] = useState("all");
   const [selected, setSelected]   = useState<Deal | null>(null);
 
-  useEffect(() => {
-    async function fetchData() {
-        setLoading(true);
-        try {
-          const params = new URLSearchParams();
-          if (trendFilter !== "all")   params.set("trend", trendFilter);
-          if (outcomeFilter !== "all") params.set("outcome", outcomeFilter);
-          const qs = params.toString();
-          const res = await fetch(`/api/deal-velocity${qs ? `?${qs}` : ""}`, { cache: "no-store" });
-          const data = await res.json();
-          setDeals(data.deals ?? []);
-          setSummary(data.summary ?? null);
-        } finally {
-          setLoading(false);
-        }
+  async function fetchData() {
+      setLoading(true);
+      try {
+        const params = new URLSearchParams();
+        if (trendFilter !== "all")   params.set("trend", trendFilter);
+        if (outcomeFilter !== "all") params.set("outcome", outcomeFilter);
+        const qs = params.toString();
+        const res = await fetch(`/api/deal-velocity${qs ? `?${qs}` : ""}`, { cache: "no-store" });
+        const data = await res.json();
+        setDeals(data.deals ?? []);
+        setSummary(data.summary ?? null);
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     fetchData();
   }, [trendFilter, outcomeFilter]);
 

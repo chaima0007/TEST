@@ -350,25 +350,26 @@ export default function ForecastCommitPage() {
   const [confFilter, setConf]   = useState("all");
   const [selected, setSelected] = useState<CommitDeal | null>(null);
 
-  useEffect(() => {
-    async function fetchData() {
-        setLoading(true);
-        setError(null);
-        try {
-          const params = new URLSearchParams();
-          if (catFilter !== "all")  params.set("category",   catFilter);
-          if (confFilter !== "all") params.set("confidence", confFilter);
-          const res = await fetch(`/api/forecast-commit?${params}`);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const data = await res.json();
-          setDeals(data.deals ?? []);
-          setSummary(data.summary ?? null);
-        } catch (e: unknown) {
-          setError(e instanceof Error ? e.message : "Erreur inconnue");
-        } finally {
-          setLoading(false);
-        }
+  async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        const params = new URLSearchParams();
+        if (catFilter !== "all")  params.set("category",   catFilter);
+        if (confFilter !== "all") params.set("confidence", confFilter);
+        const res = await fetch(`/api/forecast-commit?${params}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        setDeals(data.deals ?? []);
+        setSummary(data.summary ?? null);
+      } catch (e: unknown) {
+        setError(e instanceof Error ? e.message : "Erreur inconnue");
+      } finally {
+        setLoading(false);
+      }
   }
+
+  useEffect(() => {
     fetchData();
   }, [catFilter, confFilter]);
 
