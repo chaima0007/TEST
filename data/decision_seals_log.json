@@ -3646,5 +3646,88 @@
       "min_score": 75.7124,
       "max_score": 82.1848
     }
+  },
+  {
+    "seal_id": "SEAL-A93FF8C311DB8467",
+    "timestamp": "2026-06-24T15:25:06.885709+00:00",
+    "action": "service-express",
+    "context": "Section services express : audit gratuit 24h (aimant a clients), devis 1h, site express 48h. Argument rapidite.",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0978,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.551,
+          "SÉCURITÉ": 86.47,
+          "SCALABILITÉ": 84.022,
+          "RÉVERSIBILITÉ": 74.566
+        },
+        "composite": 84.7015,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 83.853,
+          "SÉCURITÉ": 81.213,
+          "SCALABILITÉ": 79.186,
+          "RÉVERSIBILITÉ": 70.726
+        },
+        "composite": 79.4009,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.779,
+          "SÉCURITÉ": 79.174,
+          "SCALABILITÉ": 74.282,
+          "RÉVERSIBILITÉ": 71.333
+        },
+        "composite": 77.1643,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 84.188,
+          "SÉCURITÉ": 80.516,
+          "SCALABILITÉ": 74.388,
+          "RÉVERSIBILITÉ": 67.863
+        },
+        "composite": 77.555,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.179,
+          "SÉCURITÉ": 73.336,
+          "SCALABILITÉ": 68.269,
+          "RÉVERSIBILITÉ": 63.243
+        },
+        "composite": 71.5036,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.3182,
+      "robustness_pct": 100.0,
+      "min_score": 74.8889,
+      "max_score": 80.635
+    }
   }
 ]

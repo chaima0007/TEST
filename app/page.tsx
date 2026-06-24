@@ -236,6 +236,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Services express ── */}
+      <section className="py-20 px-6 bg-slate-50">
+        <div className="max-w-5xl mx-auto text-center">
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Services express</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mt-3">Besoin d&apos;aller vite ? On est là.</h2>
+          <p className="text-slate-500 mt-4 max-w-2xl mx-auto">La rapidité sans sacrifier la qualité — c&apos;est notre marque de fabrique.</p>
+          <div className="grid sm:grid-cols-3 gap-5 mt-10">
+            <div className="bg-white rounded-2xl border-2 border-emerald-300 p-6">
+              <div className="text-emerald-600 font-bold text-sm">🎁 GRATUIT</div>
+              <h3 className="text-lg font-bold mt-2">Audit express 24h</h3>
+              <p className="text-slate-500 text-sm mt-2">Un diagnostic offert de votre site ou de votre besoin, sous 24h. Sans engagement.</p>
+            </div>
+            <div className="bg-white rounded-2xl border border-slate-200 p-6">
+              <div className="text-blue-600 font-bold text-sm">⚡ RAPIDE</div>
+              <h3 className="text-lg font-bold mt-2">Devis en 1h</h3>
+              <p className="text-slate-500 text-sm mt-2">Une réponse claire et un prix en moins d&apos;une heure. On ne vous fait pas attendre.</p>
+            </div>
+            <div className="bg-white rounded-2xl border border-slate-200 p-6">
+              <div className="text-violet-600 font-bold text-sm">🚀 EXPRESS</div>
+              <h3 className="text-lg font-bold mt-2">Site express 48h</h3>
+              <p className="text-slate-500 text-sm mt-2">Pour les projets simples, votre site en ligne en 48h chrono.</p>
+            </div>
+          </div>
+          <Link href="/contact" className="inline-block mt-10 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-emerald-600/20">
+            Demander mon audit gratuit
+          </Link>
+        </div>
+      </section>
+
       {/* ── CTA final ── */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 px-8 py-16 text-center relative overflow-hidden">
