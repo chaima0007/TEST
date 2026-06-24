@@ -55,3 +55,4 @@ data/checkpoints/
 data/observability/
 data/resilience_log.json
 data/dependency_scan_log.json
+data/build_guard_log.json
