@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import AgentAvocat from "@/components/AgentAvocat";
 
 // Fiche « avocat-référent » — Droit du travail (Belgique).
 // Adossée aux documents officiels du SPF Emploi et au Code du travail.
@@ -89,9 +90,21 @@ export default function AvocatTravailPage() {
         </div>
       </section>
 
+      {/* Agent rassurant */}
+      <section className="px-6">
+        <div className="max-w-3xl mx-auto mt-8 rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5">
+          <AgentAvocat
+            name="Maître Yann"
+            role="Référent · droit du travail"
+            accent="indigo"
+            message="Perdre ou quitter un emploi, c'est stressant. On va à l'essentiel, vous saurez quoi vérifier et quoi préparer."
+          />
+        </div>
+      </section>
+
       {/* Avertissement honnête */}
       <section className="px-6">
-        <div className="max-w-3xl mx-auto mt-8 rounded-2xl border-2 border-amber-200 bg-amber-50 p-5">
+        <div className="max-w-3xl mx-auto mt-6 rounded-2xl border-2 border-amber-200 bg-amber-50 p-5">
           <p className="text-amber-900 text-sm leading-relaxed">
             ⚠️ Cette fiche est une <strong>information générale fondée sur des sources officielles</strong>, pas un
             conseil juridique personnalisé. Chaque situation est particulière (secteur, ancienneté, conventions

@@ -35,6 +35,18 @@ const themes = [
     ),
   },
   {
+    t: "Porter plainte & police",
+    d: "Ce que vous pouvez exiger, que faire si le commissariat refuse votre plainte, et comment signaler un comportement anormal de la police (Comité P).",
+    href: "/loi-avec-moi/porter-plainte",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M4 4h11l5 5v11H4z" strokeLinejoin="round" />
+        <path d="M8 13h8M8 16h5" strokeLinecap="round" />
+        <path d="M12 4v5h5" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     t: "Logement & bail",
     d: "Vos droits de locataire ou de propriétaire : bail, caution, préavis, réparations, indexation du loyer.",
     href: "/loi-avec-moi/logement",
