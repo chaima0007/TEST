@@ -126,6 +126,7 @@ const themes = [
   {
     t: "Famille & vie privée",
     d: "Mariage, cohabitation, séparation, succession, et vos droits sur vos données personnelles (RGPD).",
+    href: "/loi-avec-moi/famille",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2" />
