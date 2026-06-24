@@ -38,7 +38,7 @@ class StakeholderAction(str, Enum):
 
 
 @dataclass
-class StakeholderInput:
+class StakeholderMappingInput:
     rep_id:                          str
     region:                          str
     evaluation_period_id:            str
@@ -64,7 +64,7 @@ class StakeholderInput:
 
 
 @dataclass
-class StakeholderResult:
+class StakeholderMappingResult:
     rep_id:                          str
     region:                          str
     stakeholder_risk:                StakeholderRisk
@@ -105,11 +105,11 @@ class SalesStakeholderMappingIntelligenceEngine:
     """Detects per-rep stakeholder blindspots — single-threading, champion dependency, economic buyer gaps."""
 
     def __init__(self) -> None:
-        self._results: List[StakeholderResult] = []
+        self._results: List[StakeholderMappingResult] = []
 
     # ── sub-scores ────────────────────────────────────────────────────────
 
-    def _coverage_score(self, inp: StakeholderInput) -> float:
+    def _coverage_score(self, inp: StakeholderMappingInput) -> float:
         s = 0.0
         if   inp.multi_contact_deal_pct       <= 0.40: s += 40
         elif inp.multi_contact_deal_pct       <= 0.60: s += 22
@@ -120,7 +120,7 @@ class SalesStakeholderMappingIntelligenceEngine:
         elif inp.org_chart_mapped_pct         <= 0.55: s += 12
         return min(s, 100.0)
 
-    def _champion_quality_score(self, inp: StakeholderInput) -> float:
+    def _champion_quality_score(self, inp: StakeholderMappingInput) -> float:
         s = 0.0
         if   inp.champion_identified_pct      <= 0.40: s += 40
         elif inp.champion_identified_pct      <= 0.65: s += 22
@@ -131,7 +131,7 @@ class SalesStakeholderMappingIntelligenceEngine:
         elif inp.coach_to_champion_pct        <= 0.45: s += 12
         return min(s, 100.0)
 
-    def _economic_alignment_score(self, inp: StakeholderInput) -> float:
+    def _economic_alignment_score(self, inp: StakeholderMappingInput) -> float:
         s = 0.0
         if   inp.economic_buyer_identified_pct <= 0.35: s += 45
         elif inp.economic_buyer_identified_pct <= 0.60: s += 25
@@ -142,7 +142,7 @@ class SalesStakeholderMappingIntelligenceEngine:
         elif inp.single_threaded_deal_pct      >= 0.30: s += 12
         return min(s, 100.0)
 
-    def _process_intelligence_score(self, inp: StakeholderInput) -> float:
+    def _process_intelligence_score(self, inp: StakeholderMappingInput) -> float:
         s = 0.0
         if   inp.decision_process_mapped_pct  <= 0.30: s += 40
         elif inp.decision_process_mapped_pct  <= 0.55: s += 22
@@ -160,7 +160,7 @@ class SalesStakeholderMappingIntelligenceEngine:
 
     # ── pattern ───────────────────────────────────────────────────────────
 
-    def _pattern(self, inp: StakeholderInput) -> StakeholderPattern:
+    def _pattern(self, inp: StakeholderMappingInput) -> StakeholderPattern:
         if inp.single_threaded_deal_pct >= 0.55 and inp.avg_stakeholders_per_deal <= 1.5:
             return StakeholderPattern.single_threaded
         if inp.champion_strength_score <= 0.30 and inp.coach_to_champion_pct <= 0.20:
@@ -210,14 +210,14 @@ class SalesStakeholderMappingIntelligenceEngine:
 
     # ── flags ─────────────────────────────────────────────────────────────
 
-    def _has_gap(self, inp: StakeholderInput, composite: float) -> bool:
+    def _has_gap(self, inp: StakeholderMappingInput, composite: float) -> bool:
         return (
             composite >= 40
             or inp.single_threaded_deal_pct         >= 0.35
             or inp.economic_buyer_identified_pct    <= 0.60
         )
 
-    def _requires_coaching(self, inp: StakeholderInput, composite: float) -> bool:
+    def _requires_coaching(self, inp: StakeholderMappingInput, composite: float) -> bool:
         return (
             composite >= 25
             or inp.champion_strength_score           <= 0.50
@@ -226,7 +226,7 @@ class SalesStakeholderMappingIntelligenceEngine:
 
     # ── dollar impact ─────────────────────────────────────────────────────
 
-    def _deal_risk(self, inp: StakeholderInput, composite: float) -> float:
+    def _deal_risk(self, inp: StakeholderMappingInput, composite: float) -> float:
         risk_multiplier = max(0.0, inp.single_threaded_deal_pct) * (composite / 100)
         return round(
             inp.total_active_deals
@@ -245,7 +245,7 @@ class SalesStakeholderMappingIntelligenceEngine:
         StakeholderPattern.org_chart_gap:       "Org chart gap",
     }
 
-    def _signal(self, inp: StakeholderInput, pattern: StakeholderPattern, composite: float) -> str:
+    def _signal(self, inp: StakeholderMappingInput, pattern: StakeholderPattern, composite: float) -> str:
         if composite < 20:
             return (
                 "Stakeholder mapping strong — multi-threading, champion quality, "
@@ -264,7 +264,7 @@ class SalesStakeholderMappingIntelligenceEngine:
 
     # ── public API ────────────────────────────────────────────────────────
 
-    def assess(self, inp: StakeholderInput) -> StakeholderResult:
+    def assess(self, inp: StakeholderMappingInput) -> StakeholderMappingResult:
         co  = self._coverage_score(inp)
         cq  = self._champion_quality_score(inp)
         ea  = self._economic_alignment_score(inp)
@@ -276,7 +276,7 @@ class SalesStakeholderMappingIntelligenceEngine:
         severity = self._severity(comp)
         action   = self._action(risk, pattern)
 
-        result = StakeholderResult(
+        result = StakeholderMappingResult(
             rep_id                      = inp.rep_id,
             region                      = inp.region,
             stakeholder_risk            = risk,
@@ -296,7 +296,7 @@ class SalesStakeholderMappingIntelligenceEngine:
         self._results.append(result)
         return result
 
-    def assess_batch(self, inputs: List[StakeholderInput]) -> List[StakeholderResult]:
+    def assess_batch(self, inputs: List[StakeholderMappingInput]) -> List[StakeholderMappingResult]:
         return [self.assess(i) for i in inputs]
 
     def summary(self) -> Dict:
