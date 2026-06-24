@@ -58,3 +58,4 @@ data/resilience_log.json
 data/dependency_scan_log.json
 data/build_guard_log.json
 data/branch_guard_log.json
+data/decision_advisor_log.json

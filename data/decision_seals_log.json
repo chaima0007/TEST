@@ -2571,5 +2571,88 @@
       "min_score": 74.1569,
       "max_score": 80.5657
     }
+  },
+  {
+    "seal_id": "SEAL-41606F0C63FF3B57",
+    "timestamp": "2026-06-24T12:58:57.037621+00:00",
+    "action": "decision-advisor",
+    "context": "Conseiller de décision : scoring multi-critères/multi-perspectives, confiance quantifiée jamais 100%, abstention si incertain, red-team auto",
+    "category": "build",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0161,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.069,
+          "SÉCURITÉ": 88.755,
+          "SCALABILITÉ": 81.023,
+          "RÉVERSIBILITÉ": 74.524
+        },
+        "composite": 83.77,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 89.051,
+          "SÉCURITÉ": 83.885,
+          "SCALABILITÉ": 78.308,
+          "RÉVERSIBILITÉ": 71.025
+        },
+        "composite": 81.4685,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.379,
+          "SÉCURITÉ": 79.961,
+          "SCALABILITÉ": 75.663,
+          "RÉVERSIBILITÉ": 70.267
+        },
+        "composite": 77.9731,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.664,
+          "SÉCURITÉ": 79.19,
+          "SCALABILITÉ": 71.964,
+          "RÉVERSIBILITÉ": 66.003
+        },
+        "composite": 75.1883,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 74.35,
+          "SÉCURITÉ": 72.802,
+          "SCALABILITÉ": 69.499,
+          "RÉVERSIBILITÉ": 60.608
+        },
+        "composite": 70.0018,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.1343,
+      "robustness_pct": 100.0,
+      "min_score": 73.8369,
+      "max_score": 80.2176
+    }
   }
 ]
