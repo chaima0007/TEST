@@ -26,6 +26,7 @@ const themes = [
   {
     t: "Travail & emploi",
     d: "Contrat, préavis, congés, rupture conventionnelle, salaire : ce que le Code du travail prévoit pour les salariés en France.",
+    href: "/la-loi-avec-moi-france/travail",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <rect x="3" y="7" width="18" height="13" rx="2" />
@@ -107,7 +108,7 @@ export default function LoiAvecMoiFrancePage() {
       <section className="bg-blue-50 border-b border-blue-100 px-6 py-4">
         <p className="max-w-3xl mx-auto text-center text-sm text-blue-900/80 leading-relaxed">
           🚧 <strong>Édition France en construction.</strong> Nous ouvrons les rubriques une par une, chacune vérifiée
-          sur des sources officielles françaises (service-public.fr, etc.). Les rubriques « En danger », « Consommation » et « Logement & bail » sont déjà disponibles.
+          sur des sources officielles françaises (service-public.fr, etc.). Les rubriques « En danger », « Consommation », « Logement & bail » et « Travail & emploi » sont déjà disponibles.
         </p>
       </section>
 
