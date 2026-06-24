@@ -2073,5 +2073,337 @@
       "min_score": 73.4061,
       "max_score": 79.946
     }
+  },
+  {
+    "seal_id": "SEAL-1E01B716D4B8CCD6",
+    "timestamp": "2026-06-24T11:31:23.932417+00:00",
+    "action": "license-issue-pro",
+    "context": "Émission licence pro pour ACME-Corp (12 mois)",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0079,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.858,
+          "SÉCURITÉ": 85.111,
+          "SCALABILITÉ": 82.176,
+          "RÉVERSIBILITÉ": 75.136
+        },
+        "composite": 83.5063,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.188,
+          "SÉCURITÉ": 84.322,
+          "SCALABILITÉ": 76.971,
+          "RÉVERSIBILITÉ": 70.869
+        },
+        "composite": 80.3535,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 85.708,
+          "SÉCURITÉ": 81.677,
+          "SCALABILITÉ": 74.92,
+          "RÉVERSIBILITÉ": 65.8
+        },
+        "composite": 78.0216,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 82.678,
+          "SÉCURITÉ": 80.573,
+          "SCALABILITÉ": 72.913,
+          "RÉVERSIBILITÉ": 67.294
+        },
+        "composite": 76.6337,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.119,
+          "SÉCURITÉ": 72.399,
+          "SCALABILITÉ": 69.558,
+          "RÉVERSIBILITÉ": 63.715
+        },
+        "composite": 71.6679,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.8924,
+      "robustness_pct": 100.0,
+      "min_score": 74.2696,
+      "max_score": 80.8099
+    }
+  },
+  {
+    "seal_id": "SEAL-ABF764DB6261CC6E",
+    "timestamp": "2026-06-24T11:31:33.140721+00:00",
+    "action": "license-issue-enterprise",
+    "context": "Émission licence enterprise pour Hopital-Bruxelles (24 mois)",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9798,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.657,
+          "SÉCURITÉ": 84.501,
+          "SCALABILITÉ": 82.226,
+          "RÉVERSIBILITÉ": 75.865
+        },
+        "composite": 83.4519,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.632,
+          "SÉCURITÉ": 83.067,
+          "SCALABILITÉ": 77.463,
+          "RÉVERSIBILITÉ": 72.618
+        },
+        "composite": 80.0457,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.19,
+          "SÉCURITÉ": 80.562,
+          "SCALABILITÉ": 78.135,
+          "RÉVERSIBILITÉ": 69.028
+        },
+        "composite": 78.1368,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 79.481,
+          "SÉCURITÉ": 78.851,
+          "SCALABILITÉ": 73.368,
+          "RÉVERSIBILITÉ": 65.451
+        },
+        "composite": 74.9892,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.899,
+          "SÉCURITÉ": 73.243,
+          "SCALABILITÉ": 70.964,
+          "RÉVERSIBILITÉ": 63.492
+        },
+        "composite": 72.1198,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.1407,
+      "robustness_pct": 100.0,
+      "min_score": 76.0296,
+      "max_score": 80.7378
+    }
+  },
+  {
+    "seal_id": "SEAL-69D591C62E4E0E95",
+    "timestamp": "2026-06-24T11:31:50.045612+00:00",
+    "action": "license-issue-enterprise",
+    "context": "Émission licence enterprise pour Hopital-Bruxelles (24 mois)",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0794,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 86.42,
+          "SÉCURITÉ": 84.947,
+          "SCALABILITÉ": 85.164,
+          "RÉVERSIBILITÉ": 79.368
+        },
+        "composite": 84.3273,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 89.639,
+          "SÉCURITÉ": 83.3,
+          "SCALABILITÉ": 77.26,
+          "RÉVERSIBILITÉ": 72.46
+        },
+        "composite": 81.5237,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.675,
+          "SÉCURITÉ": 79.416,
+          "SCALABILITÉ": 76.047,
+          "RÉVERSIBILITÉ": 68.351
+        },
+        "composite": 77.6385,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 83.193,
+          "SÉCURITÉ": 78.252,
+          "SCALABILITÉ": 73.56,
+          "RÉVERSIBILITÉ": 64.843
+        },
+        "composite": 75.8795,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.525,
+          "SÉCURITÉ": 71.141,
+          "SCALABILITÉ": 69.563,
+          "RÉVERSIBILITÉ": 64.136
+        },
+        "composite": 71.5607,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0341,
+      "robustness_pct": 100.0,
+      "min_score": 75.6561,
+      "max_score": 79.807
+    }
+  },
+  {
+    "seal_id": "SEAL-F19028FC3CE19509",
+    "timestamp": "2026-06-24T11:31:59.387876+00:00",
+    "action": "license-manager-agent",
+    "context": "Agent gestion licences : 4 tiers, 6 modules louables, clés HMAC signées, validation, projection ARR 355K€",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.2866,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 86.829,
+          "SÉCURITÉ": 87.28,
+          "SCALABILITÉ": 85.382,
+          "RÉVERSIBILITÉ": 74.023
+        },
+        "composite": 84.0188,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.106,
+          "SÉCURITÉ": 83.915,
+          "SCALABILITÉ": 81.904,
+          "RÉVERSIBILITÉ": 70.623
+        },
+        "composite": 80.8111,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.068,
+          "SÉCURITÉ": 80.266,
+          "SCALABILITÉ": 75.88,
+          "RÉVERSIBILITÉ": 69.934
+        },
+        "composite": 77.9437,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.386,
+          "SÉCURITÉ": 79.55,
+          "SCALABILITÉ": 73.666,
+          "RÉVERSIBILITÉ": 69.55
+        },
+        "composite": 76.6298,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.22,
+          "SÉCURITÉ": 73.486,
+          "SCALABILITÉ": 68.974,
+          "RÉVERSIBILITÉ": 64.525
+        },
+        "composite": 71.686,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.3371,
+      "robustness_pct": 100.0,
+      "min_score": 75.7109,
+      "max_score": 81.493
+    }
   }
 ]
