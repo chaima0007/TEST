@@ -67,6 +67,18 @@ const themes = [
     ),
   },
   {
+    t: "Chômage : pouvez-vous travailler ?",
+    d: "Travailler en touchant des allocations : la déclaration obligatoire (carte eC3.2), l'impact sur vos allocations et les pièges à éviter. Sources ONEM.",
+    href: "/loi-avec-moi/chomage",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2" strokeLinecap="round" />
+        <path d="M3 12h18" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     t: "Conflit de voisinage",
     d: "Bruit, plantations, vues, mitoyenneté : les voies amiables (médiation, conciliation gratuite au juge de paix) et l'arbitrage, du plus simple au plus formel.",
     href: "/loi-avec-moi/voisinage",
