@@ -2654,5 +2654,88 @@
       "min_score": 73.8369,
       "max_score": 80.2176
     }
+  },
+  {
+    "seal_id": "SEAL-41360D25CF621342",
+    "timestamp": "2026-06-24T13:10:51.731988+00:00",
+    "action": "preflight-system",
+    "context": "Commande unique de vérification avant déploiement : branch_guard + build_guard + dependency_scanner",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.638,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.699,
+          "SÉCURITÉ": 84.787,
+          "SCALABILITÉ": 83.904,
+          "RÉVERSIBILITÉ": 74.211
+        },
+        "composite": 83.9246,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.55,
+          "SÉCURITÉ": 83.112,
+          "SCALABILITÉ": 79.416,
+          "RÉVERSIBILITÉ": 72.643
+        },
+        "composite": 80.8256,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.081,
+          "SÉCURITÉ": 77.597,
+          "SCALABILITÉ": 73.907,
+          "RÉVERSIBILITÉ": 70.231
+        },
+        "composite": 76.2465,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 78.701,
+          "SÉCURITÉ": 76.672,
+          "SCALABILITÉ": 72.48,
+          "RÉVERSIBILITÉ": 64.449
+        },
+        "composite": 73.7881,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 78.504,
+          "SÉCURITÉ": 74.551,
+          "SCALABILITÉ": 68.534,
+          "RÉVERSIBILITÉ": 63.971
+        },
+        "composite": 72.1167,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2506,
+      "robustness_pct": 100.0,
+      "min_score": 74.8284,
+      "max_score": 80.5898
+    }
   }
 ]
