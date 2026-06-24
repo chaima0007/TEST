@@ -3233,5 +3233,32 @@
       "min_score": 74.9858,
       "max_score": 81.9166
     }
+  },
+  {
+    "seal_id": "SEAL-B5BF55BDF4E4B0D6",
+    "timestamp": "2026-06-24T14:52:00.910625+00:00",
+    "action": "route-services-tarifs",
+    "context": "Page Services et Tarifs : offres detaillees, prix transparents, garantie satisfaction, CTA devis. Cle en main pour vendre.",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.1167,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.2334,
+      "robustness_pct": 100.0,
+      "min_score": 74.2132,
+      "max_score": 82.4725
+    }
   }
 ]

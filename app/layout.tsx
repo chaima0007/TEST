@@ -7,8 +7,8 @@ import "./globals.css";
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
-  title: "CompeteIQ — Intelligence Concurrentielle",
-  description: "Suivez et analysez vos concurrents en temps réel",
+  title: "Caelum — Studio web & data",
+  description: "Sites web, tableaux de bord et automatisations sur-mesure pour les PME et indépendants. Conçus avec soin, livrés rapidement.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

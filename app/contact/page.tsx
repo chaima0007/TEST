@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const TIERS = ["Découverte (Free)", "Pro (99€/mo)", "Enterprise (990€/mo)", "White-Label (4900€/mo)", "Je ne sais pas encore"];
+const BESOINS = ["Site web", "Tableau de bord", "Automatisation", "Je ne sais pas encore"];
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", company: "", tier: "", message: "" });
@@ -33,7 +33,7 @@ export default function ContactPage() {
       }
     } catch {
       setStatus("error");
-      setError("Impossible d'envoyer pour le moment. Réessaie.");
+      setError("Impossible d'envoyer pour le moment. Veuillez réessayer.");
     }
   }
 
@@ -42,7 +42,12 @@ export default function ContactPage() {
       {/* Header */}
       <header className="border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-          <Link href="/" className="font-bold text-lg tracking-tight">CaelumSwarm</Link>
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-violet-600 rounded-lg flex items-center justify-center">
+              <span className="text-white text-xs font-black">C</span>
+            </div>
+            <span className="font-bold text-lg tracking-tight">Caelum</span>
+          </Link>
           <Link href="/" className="text-sm text-slate-500 hover:text-slate-900">← Retour</Link>
         </div>
       </header>
@@ -50,12 +55,12 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto px-6 py-16">
         <div className="text-center mb-10">
           <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-medium mb-4">
-            Liste d&apos;attente — lancement 2026
+            Premier échange sans engagement
           </span>
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Parlons de votre conformité IA</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Parlons de votre projet</h1>
           <p className="text-slate-500 mt-3">
-            Conformité AI Act, CSDDD &amp; RGPD automatisée. Laisse tes coordonnées —
-            on te recontacte pour une démonstration personnalisée.
+            Site web, tableau de bord ou automatisation : laissez vos coordonnées,
+            nous vous recontactons sous 24h pour en discuter et vous proposer un devis clair.
           </p>
         </div>
 
@@ -64,7 +69,7 @@ export default function ContactPage() {
             <div className="text-4xl mb-3">✅</div>
             <h2 className="text-xl font-semibold text-emerald-800">Merci {form.name.split(" ")[0]} !</h2>
             <p className="text-emerald-700 mt-2">
-              Ta demande est bien enregistrée. On revient vers toi très vite à {form.email}.
+              Votre demande est bien enregistrée. Nous revenons vers vous très vite à {form.email}.
             </p>
             <Link href="/" className="inline-block mt-6 text-sm text-emerald-700 underline">Retour à l&apos;accueil</Link>
           </div>
@@ -75,34 +80,34 @@ export default function ContactPage() {
                 <label className="block text-sm font-medium mb-1.5">Nom *</label>
                 <input required value={form.name} onChange={(e) => update("name", e.target.value)}
                   className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Ton nom" />
+                  placeholder="Votre nom" />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-1.5">Email *</label>
                 <input required type="email" value={form.email} onChange={(e) => update("email", e.target.value)}
                   className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="ton@email.com" />
+                  placeholder="votre@email.com" />
               </div>
             </div>
             <div>
               <label className="block text-sm font-medium mb-1.5">Organisation</label>
               <input value={form.company} onChange={(e) => update("company", e.target.value)}
                 className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Hôpital, entreprise, cabinet…" />
+                placeholder="Votre entreprise (facultatif)" />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1.5">Formule qui t&apos;intéresse</label>
+              <label className="block text-sm font-medium mb-1.5">Votre besoin</label>
               <select value={form.tier} onChange={(e) => update("tier", e.target.value)}
                 className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="">— Sélectionne —</option>
-                {TIERS.map((t) => <option key={t} value={t}>{t}</option>)}
+                <option value="">— Sélectionnez —</option>
+                {BESOINS.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
             </div>
             <div>
               <label className="block text-sm font-medium mb-1.5">Message</label>
               <textarea value={form.message} onChange={(e) => update("message", e.target.value)} rows={4}
                 className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Ton besoin en quelques mots…" />
+                placeholder="Décrivez votre projet en quelques mots…" />
             </div>
 
             {status === "error" && (
@@ -111,10 +116,10 @@ export default function ContactPage() {
 
             <button type="submit" disabled={status === "sending"}
               className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white font-medium rounded-lg px-4 py-3 transition-colors">
-              {status === "sending" ? "Envoi…" : "Rejoindre la liste d'attente"}
+              {status === "sending" ? "Envoi…" : "Envoyer ma demande"}
             </button>
             <p className="text-xs text-slate-400 text-center">
-              Pas de spam. Tes données restent confidentielles (RGPD).
+              Pas de spam. Vos données restent confidentielles (RGPD).
             </p>
           </form>
         )}
