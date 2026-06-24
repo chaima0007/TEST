@@ -132,6 +132,38 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "La loi en forêt",
+    d: "Bivouac, camping sauvage, feu, promenade : où dormir légalement en forêt belge et ce que je risque. Aires de bivouac officielles.",
+    href: "/loi-avec-moi/loi-en-foret",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M12 3l4 6h-2.5l3 5H13v7h-2v-7H7.5l3-5H8l4-6z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    t: "Déchets & environnement",
+    d: "Jeter un papier dans la rue, la forêt ou la mer : l'amende que tu risques, et l'impact réel sur la nature. Chiffres officiels.",
+    href: "/loi-avec-moi/dechets-environnement",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M4 7h16M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M6 7l1 13a2 2 0 002 2h6a2 2 0 002-2l1-13" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10 11v6M14 11v6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    t: "Vivre en communauté",
+    d: "Musique trop forte, poubelles au mauvais moment, uriner en rue, parties communes : les règles du vivre-ensemble et ce qu'on risque.",
+    href: "/loi-avec-moi/vivre-en-communaute",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <circle cx="8" cy="8" r="2.5" /><circle cx="16" cy="8" r="2.5" />
+        <path d="M3.5 19c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5M12 19c0-2.5 2-4.5 4.5-4.5s4 2 4 4.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 const sources = [
