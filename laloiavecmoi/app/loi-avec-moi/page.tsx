@@ -250,9 +250,7 @@ export default function LoiAvecMoiPage() {
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/loi-avec-moi" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-black">L</span>
-            </div>
+            <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
             <span className="font-bold text-lg tracking-tight">La loi avec moi</span>
           </Link>
           <div className="hidden sm:flex items-center gap-1">

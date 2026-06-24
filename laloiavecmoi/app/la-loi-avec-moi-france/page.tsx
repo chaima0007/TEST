@@ -90,9 +90,7 @@ export default function LoiAvecMoiFrancePage() {
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/la-loi-avec-moi-france" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-black">L</span>
-            </div>
+            <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
             <span className="font-bold text-lg tracking-tight">La loi avec moi <span className="text-blue-700">· France</span></span>
           </Link>
           <Link href="/loi-avec-moi" className="text-sm font-medium text-slate-500 hover:text-slate-900">🇧🇪 Version Belgique →</Link>
