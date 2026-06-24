@@ -6,6 +6,7 @@ const themes = [
   {
     t: "Logement & bail",
     d: "Vos droits de locataire ou de propriétaire : bail, caution, préavis, réparations, indexation du loyer.",
+    href: "/loi-avec-moi/logement",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path d="M3 11l9-7 9 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -16,6 +17,7 @@ const themes = [
   {
     t: "Travail & emploi",
     d: "Contrat, préavis, congés, licenciement, salaire : ce que la loi prévoit pour les travailleurs en Belgique.",
+    href: "/loi-avec-moi/travail",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <rect x="3" y="7" width="18" height="13" rx="2" />
@@ -158,13 +160,23 @@ export default function LoiAvecMoiPage() {
           <p className="text-slate-500 mt-4">Les questions que tout le monde se pose un jour — sans savoir où chercher.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {themes.map((th) => (
-            <div key={th.t} className="rounded-2xl border border-slate-200 p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5">{th.icon}</div>
-              <h3 className="text-lg font-bold tracking-tight">{th.t}</h3>
-              <p className="text-slate-600 mt-2 text-sm leading-relaxed">{th.d}</p>
-            </div>
-          ))}
+          {themes.map((th) =>
+            th.href ? (
+              <Link key={th.t} href={th.href} className="group rounded-2xl border border-slate-200 p-7 hover:shadow-lg hover:-translate-y-1 hover:border-indigo-300 transition-all">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5">{th.icon}</div>
+                <h3 className="text-lg font-bold tracking-tight">{th.t}</h3>
+                <p className="text-slate-600 mt-2 text-sm leading-relaxed">{th.d}</p>
+                <span className="inline-block mt-4 text-indigo-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">Voir mes droits →</span>
+              </Link>
+            ) : (
+              <div key={th.t} className="rounded-2xl border border-slate-200 p-7 opacity-80">
+                <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-400 flex items-center justify-center mb-5">{th.icon}</div>
+                <h3 className="text-lg font-bold tracking-tight text-slate-700">{th.t}</h3>
+                <p className="text-slate-500 mt-2 text-sm leading-relaxed">{th.d}</p>
+                <span className="inline-block mt-4 text-slate-400 font-medium text-xs">Bientôt disponible</span>
+              </div>
+            )
+          )}
         </div>
       </section>
 
