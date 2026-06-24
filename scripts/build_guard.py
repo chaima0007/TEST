@@ -67,6 +67,13 @@ CODE_PATTERNS = [
         "auto_fixable": False,
         "occurrences": 2,
     },
+    {
+        "id": "INVALID_FN_NAME",
+        "label": "Nom de composant invalide (tiret dans export default function) — Turbopack échoue",
+        "severity": "CRITIQUE",
+        "auto_fixable": True,
+        "occurrences": 3,  # wave-501 dashboards
+    },
 ]
 
 
@@ -121,6 +128,21 @@ def _detect_const_arrow_residue(txt: str) -> list:
     return re.findall(r'const\s+(\w+)\s*=\s*\([^)]*\)\s*=>\s*\{.*?\}\s*,\s*\[[^\]]*\]\s*;', txt, re.DOTALL)
 
 
+def _detect_invalid_fn_name(txt: str) -> list:
+    # export default function Nom-invalide() → tiret = identifiant JS illégal
+    return re.findall(r'export default function\s+(\w*-[\w-]*)\s*\(', txt)
+
+
+def _fix_invalid_fn_name(txt: str) -> tuple:
+    # Transforme "Foo-bar-bazPage" en "FooBarBazPage" (PascalCase sans tiret)
+    def repl(m):
+        name = m.group(1)
+        fixed = "".join(part[:1].upper() + part[1:] for part in name.split("-") if part)
+        return f"export default function {fixed}("
+    new_txt = re.sub(r'export default function\s+(\w*-[\w-]*)\s*\(', repl, txt)
+    return new_txt, new_txt != txt
+
+
 # ── Scan global ────────────────────────────────────────────────────────────────
 
 def scan(apply_fix: bool = False) -> dict:
@@ -157,6 +179,16 @@ def scan(apply_fix: bool = False) -> dict:
         cr = _detect_const_arrow_residue(txt)
         if cr:
             report["CONST_ARROW_RESIDUE"]["hits"].append({"file": str(p), "detail": cr})
+
+        bad_fn = _detect_invalid_fn_name(txt)
+        if bad_fn:
+            report["INVALID_FN_NAME"]["hits"].append({"file": str(p), "detail": bad_fn})
+            if apply_fix:
+                new_txt, ok = _fix_invalid_fn_name(txt)
+                if ok:
+                    txt = new_txt
+                    changed = True
+                    fixed_count += 1
 
         if changed:
             p.write_text(txt)
