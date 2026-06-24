@@ -31,7 +31,7 @@ const RISK_GAUGE: Record<string, string> = {
   critique: "#ef4444", élevé: "#f97316", modéré: "#eab308", faible: "#22c55e",
 };
 
-export default function Leprosy-stigmaPage() {
+export default function LeprosyStigmaPage() {
   const [data, setData] = useState<SwarmData | null>(null);
   const [loading, setLoading] = useState(true);
 
