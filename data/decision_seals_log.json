@@ -3260,5 +3260,32 @@
       "min_score": 74.2132,
       "max_score": 82.4725
     }
+  },
+  {
+    "seal_id": "SEAL-C00CD02EC90014DA",
+    "timestamp": "2026-06-24T14:57:12.928536+00:00",
+    "action": "route-notre-force",
+    "context": "Page savoir-faire : montre la verification multi-niveaux (zero erreur) comme force, en marketing, sans reveler l'implementation pour proteger l'IP",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.222,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.4441,
+      "robustness_pct": 100.0,
+      "min_score": 74.3479,
+      "max_score": 81.994
+    }
   }
 ]
