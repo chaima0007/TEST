@@ -4,14 +4,14 @@ from enum import Enum
 from typing import List, Dict
 
 
-class TerritoryRisk(str, Enum):
+class CoverageRisk(str, Enum):
     low      = "low"
     moderate = "moderate"
     high     = "high"
     critical = "critical"
 
 
-class TerritoryPattern(str, Enum):
+class CoveragePattern(str, Enum):
     none                = "none"
     whitespace_neglect  = "whitespace_neglect"
     density_imbalance   = "density_imbalance"
@@ -20,14 +20,14 @@ class TerritoryPattern(str, Enum):
     renewal_anchoring   = "renewal_anchoring"
 
 
-class TerritorySeverity(str, Enum):
+class CoverageSeverity(str, Enum):
     optimal    = "optimal"
     adequate   = "adequate"
     underserved = "underserved"
     neglected  = "neglected"
 
 
-class TerritoryAction(str, Enum):
+class CoverageAction(str, Enum):
     no_action                       = "no_action"
     territory_monitoring            = "territory_monitoring"
     whitespace_prospecting_coaching = "whitespace_prospecting_coaching"
@@ -38,7 +38,7 @@ class TerritoryAction(str, Enum):
 
 
 @dataclass
-class TerritoryInput:
+class TerritoryCoverageInput:
     rep_id:                         str
     region:                         str
     evaluation_period_id:           str
@@ -64,13 +64,13 @@ class TerritoryInput:
 
 
 @dataclass
-class TerritoryResult:
+class TerritoryCoverageResult:
     rep_id:                         str
     region:                         str
-    territory_risk:                 TerritoryRisk
-    territory_pattern:              TerritoryPattern
-    territory_severity:             TerritorySeverity
-    recommended_action:             TerritoryAction
+    territory_risk:                 CoverageRisk
+    territory_pattern:              CoveragePattern
+    territory_severity:             CoverageSeverity
+    recommended_action:             CoverageAction
     coverage_score:                 float
     prospecting_score:              float
     efficiency_score:               float
@@ -101,15 +101,15 @@ class TerritoryResult:
         }
 
 
-class SalesTerritoryConverageIntelligenceEngine:
+class SalesTerritoryCoverageIntelligenceEngine:
     """Detects territory gaps — whitespace neglect, density imbalance, travel inefficiency, vertical blind spots."""
 
     def __init__(self) -> None:
-        self._results: List[TerritoryResult] = []
+        self._results: List[TerritoryCoverageResult] = []
 
     # ── sub-scores ────────────────────────────────────────────────────────
 
-    def _coverage_score(self, inp: TerritoryInput) -> float:
+    def _coverage_score(self, inp: TerritoryCoverageInput) -> float:
         s = 0.0
         if   inp.accounts_touched_pct        <= 0.40: s += 40
         elif inp.accounts_touched_pct        <= 0.60: s += 22
@@ -120,7 +120,7 @@ class SalesTerritoryConverageIntelligenceEngine:
         elif inp.high_potential_untouched_pct >= 0.25: s += 12
         return min(s, 100.0)
 
-    def _prospecting_score(self, inp: TerritoryInput) -> float:
+    def _prospecting_score(self, inp: TerritoryCoverageInput) -> float:
         s = 0.0
         if   inp.whitespace_accounts_touched_pct <= 0.15: s += 40
         elif inp.whitespace_accounts_touched_pct <= 0.35: s += 22
@@ -131,7 +131,7 @@ class SalesTerritoryConverageIntelligenceEngine:
         elif inp.conquest_account_coverage_pct   <= 0.40: s += 12
         return min(s, 100.0)
 
-    def _efficiency_score(self, inp: TerritoryInput) -> float:
+    def _efficiency_score(self, inp: TerritoryCoverageInput) -> float:
         s = 0.0
         if   inp.travel_time_pct_of_selling  >= 0.35: s += 40
         elif inp.travel_time_pct_of_selling  >= 0.25: s += 22
@@ -142,7 +142,7 @@ class SalesTerritoryConverageIntelligenceEngine:
         elif inp.geographic_concentration_pct >= 0.55: s += 12
         return min(s, 100.0)
 
-    def _segmentation_score(self, inp: TerritoryInput) -> float:
+    def _segmentation_score(self, inp: TerritoryCoverageInput) -> float:
         s = 0.0
         if   inp.segmentation_adherence_pct  <= 0.40: s += 45
         elif inp.segmentation_adherence_pct  <= 0.60: s += 25
@@ -160,64 +160,64 @@ class SalesTerritoryConverageIntelligenceEngine:
 
     # ── pattern ───────────────────────────────────────────────────────────
 
-    def _pattern(self, inp: TerritoryInput) -> TerritoryPattern:
+    def _pattern(self, inp: TerritoryCoverageInput) -> CoveragePattern:
         if inp.whitespace_accounts_touched_pct <= 0.15 and inp.high_potential_untouched_pct >= 0.35:
-            return TerritoryPattern.whitespace_neglect
+            return CoveragePattern.whitespace_neglect
         if inp.geographic_concentration_pct >= 0.65 and inp.inactive_account_pct >= 0.35:
-            return TerritoryPattern.density_imbalance
+            return CoveragePattern.density_imbalance
         if inp.travel_time_pct_of_selling >= 0.30 and inp.repeat_visit_rate_pct >= 0.55:
-            return TerritoryPattern.travel_inefficiency
+            return CoveragePattern.travel_inefficiency
         if inp.vertical_coverage_pct <= 0.30 and inp.icp_alignment_pct <= 0.50:
-            return TerritoryPattern.vertical_blind_spot
+            return CoveragePattern.vertical_blind_spot
         if inp.repeat_visit_rate_pct >= 0.60 and inp.new_logo_attempts_per_month <= 3:
-            return TerritoryPattern.renewal_anchoring
-        return TerritoryPattern.none
+            return CoveragePattern.renewal_anchoring
+        return CoveragePattern.none
 
     # ── thresholds ────────────────────────────────────────────────────────
 
-    def _risk(self, composite: float) -> TerritoryRisk:
-        if   composite >= 60: return TerritoryRisk.critical
-        elif composite >= 40: return TerritoryRisk.high
-        elif composite >= 20: return TerritoryRisk.moderate
-        return TerritoryRisk.low
+    def _risk(self, composite: float) -> CoverageRisk:
+        if   composite >= 60: return CoverageRisk.critical
+        elif composite >= 40: return CoverageRisk.high
+        elif composite >= 20: return CoverageRisk.moderate
+        return CoverageRisk.low
 
-    def _severity(self, composite: float) -> TerritorySeverity:
-        if   composite >= 60: return TerritorySeverity.neglected
-        elif composite >= 40: return TerritorySeverity.underserved
-        elif composite >= 20: return TerritorySeverity.adequate
-        return TerritorySeverity.optimal
+    def _severity(self, composite: float) -> CoverageSeverity:
+        if   composite >= 60: return CoverageSeverity.neglected
+        elif composite >= 40: return CoverageSeverity.underserved
+        elif composite >= 20: return CoverageSeverity.adequate
+        return CoverageSeverity.optimal
 
-    def _action(self, risk: TerritoryRisk, pattern: TerritoryPattern) -> TerritoryAction:
-        if risk == TerritoryRisk.critical:
-            if pattern == TerritoryPattern.whitespace_neglect:
-                return TerritoryAction.territory_strategy_reset
-            return TerritoryAction.territory_rebalancing
-        if risk == TerritoryRisk.high:
-            if pattern == TerritoryPattern.whitespace_neglect:
-                return TerritoryAction.whitespace_prospecting_coaching
-            if pattern == TerritoryPattern.density_imbalance:
-                return TerritoryAction.territory_rebalancing
-            if pattern == TerritoryPattern.travel_inefficiency:
-                return TerritoryAction.route_optimization_coaching
-            if pattern == TerritoryPattern.vertical_blind_spot:
-                return TerritoryAction.vertical_expansion_coaching
-            if pattern == TerritoryPattern.renewal_anchoring:
-                return TerritoryAction.whitespace_prospecting_coaching
-            return TerritoryAction.territory_rebalancing
-        if risk == TerritoryRisk.moderate:
-            return TerritoryAction.territory_monitoring
-        return TerritoryAction.no_action
+    def _action(self, risk: CoverageRisk, pattern: CoveragePattern) -> CoverageAction:
+        if risk == CoverageRisk.critical:
+            if pattern == CoveragePattern.whitespace_neglect:
+                return CoverageAction.territory_strategy_reset
+            return CoverageAction.territory_rebalancing
+        if risk == CoverageRisk.high:
+            if pattern == CoveragePattern.whitespace_neglect:
+                return CoverageAction.whitespace_prospecting_coaching
+            if pattern == CoveragePattern.density_imbalance:
+                return CoverageAction.territory_rebalancing
+            if pattern == CoveragePattern.travel_inefficiency:
+                return CoverageAction.route_optimization_coaching
+            if pattern == CoveragePattern.vertical_blind_spot:
+                return CoverageAction.vertical_expansion_coaching
+            if pattern == CoveragePattern.renewal_anchoring:
+                return CoverageAction.whitespace_prospecting_coaching
+            return CoverageAction.territory_rebalancing
+        if risk == CoverageRisk.moderate:
+            return CoverageAction.territory_monitoring
+        return CoverageAction.no_action
 
     # ── flags ─────────────────────────────────────────────────────────────
 
-    def _has_gap(self, inp: TerritoryInput, composite: float) -> bool:
+    def _has_gap(self, inp: TerritoryCoverageInput, composite: float) -> bool:
         return (
             composite >= 40
             or inp.accounts_touched_pct          <= 0.60
             or inp.high_potential_untouched_pct  >= 0.30
         )
 
-    def _requires_coaching(self, inp: TerritoryInput, composite: float) -> bool:
+    def _requires_coaching(self, inp: TerritoryCoverageInput, composite: float) -> bool:
         return (
             composite >= 25
             or inp.whitespace_accounts_touched_pct <= 0.40
@@ -226,7 +226,7 @@ class SalesTerritoryConverageIntelligenceEngine:
 
     # ── dollar impact ─────────────────────────────────────────────────────
 
-    def _missed_revenue(self, inp: TerritoryInput, composite: float) -> float:
+    def _missed_revenue(self, inp: TerritoryCoverageInput, composite: float) -> float:
         untouched_pct = max(0.0, 1.0 - inp.accounts_touched_pct)
         return round(
             inp.total_territory_arr_usd
@@ -238,14 +238,14 @@ class SalesTerritoryConverageIntelligenceEngine:
     # ── signal ────────────────────────────────────────────────────────────
 
     _PATTERN_LABELS = {
-        TerritoryPattern.whitespace_neglect:  "Whitespace neglect",
-        TerritoryPattern.density_imbalance:   "Density imbalance",
-        TerritoryPattern.travel_inefficiency: "Travel inefficiency",
-        TerritoryPattern.vertical_blind_spot: "Vertical blind spot",
-        TerritoryPattern.renewal_anchoring:   "Renewal anchoring",
+        CoveragePattern.whitespace_neglect:  "Whitespace neglect",
+        CoveragePattern.density_imbalance:   "Density imbalance",
+        CoveragePattern.travel_inefficiency: "Travel inefficiency",
+        CoveragePattern.vertical_blind_spot: "Vertical blind spot",
+        CoveragePattern.renewal_anchoring:   "Renewal anchoring",
     }
 
-    def _signal(self, inp: TerritoryInput, pattern: TerritoryPattern, composite: float) -> str:
+    def _signal(self, inp: TerritoryCoverageInput, pattern: CoveragePattern, composite: float) -> str:
         if composite < 20:
             return (
                 "Territory coverage optimal — accounts touched, whitespace prospecting, "
@@ -264,7 +264,7 @@ class SalesTerritoryConverageIntelligenceEngine:
 
     # ── public API ────────────────────────────────────────────────────────
 
-    def assess(self, inp: TerritoryInput) -> TerritoryResult:
+    def assess(self, inp: TerritoryCoverageInput) -> TerritoryCoverageResult:
         co  = self._coverage_score(inp)
         pr  = self._prospecting_score(inp)
         ef  = self._efficiency_score(inp)
@@ -276,7 +276,7 @@ class SalesTerritoryConverageIntelligenceEngine:
         severity = self._severity(comp)
         action   = self._action(risk, pattern)
 
-        result = TerritoryResult(
+        result = TerritoryCoverageResult(
             rep_id                      = inp.rep_id,
             region                      = inp.region,
             territory_risk              = risk,
@@ -296,7 +296,7 @@ class SalesTerritoryConverageIntelligenceEngine:
         self._results.append(result)
         return result
 
-    def assess_batch(self, inputs: List[TerritoryInput]) -> List[TerritoryResult]:
+    def assess_batch(self, inputs: List[TerritoryCoverageInput]) -> List[TerritoryCoverageResult]:
         return [self.assess(i) for i in inputs]
 
     def summary(self) -> Dict:
