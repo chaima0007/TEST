@@ -3179,5 +3179,32 @@
       "min_score": 74.8496,
       "max_score": 81.7973
     }
+  },
+  {
+    "seal_id": "SEAL-D515703728E977A0",
+    "timestamp": "2026-06-24T14:41:39.897010+00:00",
+    "action": "route-landing-agency",
+    "context": "Refonte page accueil en site agence web pro : services maitrises (sites, dashboards, automatisations), honnete et expert, CTA contact",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.1543,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.3087,
+      "robustness_pct": 100.0,
+      "min_score": 74.7032,
+      "max_score": 81.566
+    }
   }
 ]
