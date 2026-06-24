@@ -25,6 +25,16 @@ const themes = [
     ),
   },
   {
+    t: "Trouver le bon avocat",
+    d: "La bonne spécialisation selon votre situation, les documents à apporter, et l'aide juridique gratuite (pro deo). Vous arrivez préparé·e.",
+    href: "/loi-avec-moi/trouver-un-avocat",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M12 3v4M5 7h14M7 7l-3 7a3 3 0 006 0L7 7zM17 7l-3 7a3 3 0 006 0l-3-7zM9 21h6M12 7v14" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     t: "Logement & bail",
     d: "Vos droits de locataire ou de propriétaire : bail, caution, préavis, réparations, indexation du loyer.",
     href: "/loi-avec-moi/logement",
