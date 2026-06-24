@@ -4667,5 +4667,88 @@
       "min_score": 74.5032,
       "max_score": 81.4659
     }
+  },
+  {
+    "seal_id": "SEAL-6F1509AF4C17FB43",
+    "timestamp": "2026-06-24T16:46:12.551789+00:00",
+    "action": "wave-aide-alimentaire",
+    "context": "Page aide alimentaire CPAS Croix-Rouge Restos coeur epiceries sociales adresses officielles",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.8396,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.785,
+          "SÉCURITÉ": 87.036,
+          "SCALABILITÉ": 81.719,
+          "RÉVERSIBILITÉ": 73.659
+        },
+        "composite": 83.556,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.87,
+          "SÉCURITÉ": 83.72,
+          "SCALABILITÉ": 76.469,
+          "RÉVERSIBILITÉ": 70.188
+        },
+        "composite": 79.5459,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.913,
+          "SÉCURITÉ": 80.966,
+          "SCALABILITÉ": 75.725,
+          "RÉVERSIBILITÉ": 71.764
+        },
+        "composite": 78.6994,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 84.401,
+          "SÉCURITÉ": 78.545,
+          "SCALABILITÉ": 75.386,
+          "RÉVERSIBILITÉ": 65.188
+        },
+        "composite": 76.8406,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.821,
+          "SÉCURITÉ": 73.253,
+          "SCALABILITÉ": 69.102,
+          "RÉVERSIBILITÉ": 62.632
+        },
+        "composite": 71.4614,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.4204,
+      "robustness_pct": 100.0,
+      "min_score": 74.741,
+      "max_score": 82.4081
+    }
   }
 ]

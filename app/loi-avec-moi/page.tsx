@@ -15,6 +15,16 @@ const themes = [
     ),
   },
   {
+    t: "Si vous avez faim",
+    d: "Aide alimentaire près de chez vous : CPAS, Croix-Rouge, Restos du Cœur, épiceries sociales. Adresses officielles.",
+    href: "/loi-avec-moi/aide-alimentaire",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M6 3v7a3 3 0 006 0V3M9 3v18M18 3c-1.5 0-2.5 2-2.5 5s1 4 2.5 4v9" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
     t: "Logement & bail",
     d: "Vos droits de locataire ou de propriétaire : bail, caution, préavis, réparations, indexation du loyer.",
     href: "/loi-avec-moi/logement",
