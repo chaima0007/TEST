@@ -58,7 +58,7 @@ La CSDDD impose d'analyser toute votre chaîne de valeur, pas seulement vos four
 • Audit de second niveau si risques identifiés
 
 **Étape 3 — Surveillance continue**
-• CaelumSwarm monitore 180+ domaines de risque en temps réel
+• Caelum monitore 180+ domaines de risque en temps réel
 • Alertes automatiques si un fournisseur apparaît dans nos bases de données
 • Rapport CSDDD généré automatiquement
 
@@ -76,7 +76,7 @@ Le rapport de due diligence doit être publié annuellement et contenir :
 ✓ **Consultation des parties prenantes** (employés, communautés affectées)
 ✓ **Mécanisme de réclamation** disponible
 
-**CaelumSwarm génère automatiquement** ce rapport en conformité avec les exigences CSDDD, ESRS et UN Guiding Principles.`,
+**Caelum génère automatiquement** ce rapport en conformité avec les exigences CSDDD, ESRS et UN Guiding Principles.`,
 
   "fournisseur": `**Gestion des fournisseurs non conformes — Que faire ?**
 
@@ -128,7 +128,7 @@ Je peux vous aider à :
 Quelle est votre question ?`
   }
   if (msg.includes("prix") || msg.includes("tarif") || msg.includes("combien") || msg.includes("coût caelum")) {
-    return `**Tarifs CaelumSwarm — Plans disponibles**
+    return `**Tarifs Caelum — Plans disponibles**
 
 | Plan | Prix | Entreprises |
 |------|------|-------------|
@@ -235,7 +235,7 @@ Je peux analyser vos risques droits humains, vous expliquer vos obligations lég
           </div>
         </div>
         <div style={{ marginLeft: "auto" }}>
-          <Link href="/demo" style={{ background: ACCENT, color: "#fff", borderRadius: 8, padding: "8px 14px", fontSize: 12, fontWeight: 600, textDecoration: "none" }}>
+          <Link href="/contact" style={{ background: ACCENT, color: "#fff", borderRadius: 8, padding: "8px 14px", fontSize: 12, fontWeight: 600, textDecoration: "none" }}>
             Lancer la démo →
           </Link>
         </div>

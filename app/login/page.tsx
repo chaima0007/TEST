@@ -97,7 +97,7 @@ function LoginForm() {
             <p className="text-xs text-indigo-600">Utilisez le compte de démonstration pour explorer l&apos;application.</p>
             <button
               type="button"
-              onClick={() => { setEmail("demo@competeiq.com"); setPassword("demo123"); }}
+              onClick={() => { setEmail("demo@caelum.be"); setPassword("demo123"); }}
               className="mt-2 text-xs text-indigo-700 font-semibold hover:underline"
             >
               Remplir automatiquement →
