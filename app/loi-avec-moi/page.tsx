@@ -147,6 +147,7 @@ const themes = [
   {
     t: "Démarches administratives",
     d: "Comprendre une lettre de l'administration, vos délais, vos recours, où vous adresser. On débroussaille.",
+    href: "/loi-avec-moi/demarches",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <rect x="5" y="3" width="14" height="18" rx="2" />
