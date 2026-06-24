@@ -66,6 +66,17 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "Comprendre la Belgique",
+    d: "Qui décide quoi ? Fédéral, Régions, Communautés, langues : savoir à quel niveau s'adresser selon votre démarche.",
+    href: "/loi-avec-moi/comprendre-la-belgique",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 const sources = [
