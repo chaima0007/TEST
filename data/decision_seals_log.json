@@ -3563,5 +3563,88 @@
       "min_score": 76.0034,
       "max_score": 81.3377
     }
+  },
+  {
+    "seal_id": "SEAL-3DDEF8D0872DABCD",
+    "timestamp": "2026-06-24T15:17:29.065213+00:00",
+    "action": "protocol-defense-profondeur",
+    "context": "Defense en profondeur : ajout hook pre-commit (3e couche) en plus de pre-push et CI. Plusieurs gardiens independants pour rendre une erreur quasi impossible.",
+    "category": "protocol",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.5185,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 92.0,
+          "SÉCURITÉ": 81.988,
+          "SCALABILITÉ": 79.859,
+          "RÉVERSIBILITÉ": 73.59
+        },
+        "composite": 82.7797,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 87.028,
+          "SÉCURITÉ": 80.262,
+          "SCALABILITÉ": 75.232,
+          "RÉVERSIBILITÉ": 71.06
+        },
+        "composite": 79.1939,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.959,
+          "SÉCURITÉ": 79.897,
+          "SCALABILITÉ": 74.83,
+          "RÉVERSIBILITÉ": 67.828
+        },
+        "composite": 76.8351,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.69,
+          "SÉCURITÉ": 77.499,
+          "SCALABILITÉ": 74.459,
+          "RÉVERSIBILITÉ": 68.377
+        },
+        "composite": 75.8719,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 79.732,
+          "SÉCURITÉ": 73.656,
+          "SCALABILITÉ": 69.466,
+          "RÉVERSIBILITÉ": 62.548
+        },
+        "composite": 72.2097,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.7908,
+      "robustness_pct": 100.0,
+      "min_score": 75.7124,
+      "max_score": 82.1848
+    }
   }
 ]

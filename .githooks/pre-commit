@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# pre-commit — Gardiens qualité AVANT chaque commit (défense en profondeur, couche 1)
+set -e
+
+# Ne bloque que si les scripts existent
+fail=0
+
+if [ -f scripts/build_guard.py ]; then
+  echo "🔧 Gardien build…"
+  python3 scripts/build_guard.py --scan >/tmp/_bg.log 2>&1 || { echo "🛑 build_guard a détecté un problème :"; tail -5 /tmp/_bg.log; fail=1; }
+fi
+
+if [ -f scripts/site_guard.py ]; then
+  echo "✨ Gardien cohérence du site…"
+  python3 scripts/site_guard.py --scan --quiet || { echo "🛑 site_guard a détecté une incohérence."; fail=1; }
+fi
+
+if [ "$fail" = "1" ]; then
+  echo ""
+  echo "🛑 COMMIT BLOQUÉ par les gardiens. Corrige les problèmes ci-dessus."
+  echo "   (Pour forcer en connaissance de cause : git commit --no-verify)"
+  exit 1
+fi
+echo "✅ Gardiens OK — commit autorisé."
+exit 0
