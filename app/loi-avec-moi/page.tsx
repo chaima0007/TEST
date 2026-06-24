@@ -121,6 +121,17 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "La loi à la mer",
+    d: "À la plage, sur la côte belge : ce que je peux faire et pas (chiens, feu, camping, baignade) et les drapeaux de sécurité.",
+    href: "/loi-avec-moi/loi-a-la-mer",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M3 16c1.5 0 1.5 1.5 3 1.5S10.5 16 12 16s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5M3 20c1.5 0 1.5 1.5 3 1.5S10.5 20 12 20s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M15 12V4l5 2-5 2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
 ];
 
 const sources = [
