@@ -97,6 +97,7 @@ const specialisations: Spe[] = [
     emoji: "🚑",
     t: "Accidents & responsabilité",
     quand: "Accident de la route, dommage corporel, litige avec une assurance, faute médicale.",
+    href: "/loi-avec-moi/avocat/accidents",
     docs: [
       "Le constat d'accident et le PV de police",
       "Tous les certificats et rapports médicaux",
@@ -109,6 +110,7 @@ const specialisations: Spe[] = [
     emoji: "🏢",
     t: "Entreprise & commercial",
     quand: "Litige entre sociétés, contrats commerciaux, impayés B2B, faillite, statuts.",
+    href: "/loi-avec-moi/avocat/entreprise",
     docs: [
       "Les statuts et données d'entreprise (numéro BCE)",
       "Les contrats et bons de commande concernés",
