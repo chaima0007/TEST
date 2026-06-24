@@ -3480,5 +3480,88 @@
       "min_score": 74.641,
       "max_score": 81.4453
     }
+  },
+  {
+    "seal_id": "SEAL-544C60BDC312CCDA",
+    "timestamp": "2026-06-24T15:16:14.361540+00:00",
+    "action": "ci-quality-guards",
+    "context": "Job CI gardiens automatiques : build_guard + site_guard + dependency_scanner a chaque push, sans Claude",
+    "category": "build",
+    "risk_level": "CRITIQUE",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.1262,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 88.298,
+          "SÉCURITÉ": 88.255,
+          "SCALABILITÉ": 82.183,
+          "RÉVERSIBILITÉ": 74.264
+        },
+        "composite": 83.9517,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 82.579,
+          "SÉCURITÉ": 84.002,
+          "SCALABILITÉ": 78.789,
+          "RÉVERSIBILITÉ": 72.138
+        },
+        "composite": 79.899,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 87.463,
+          "SÉCURITÉ": 78.323,
+          "SCALABILITÉ": 77.398,
+          "RÉVERSIBILITÉ": 70.763
+        },
+        "composite": 79.3218,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 78.91,
+          "SÉCURITÉ": 76.424,
+          "SCALABILITÉ": 74.244,
+          "RÉVERSIBILITÉ": 65.652
+        },
+        "composite": 74.4704,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 79.587,
+          "SÉCURITÉ": 73.9,
+          "SCALABILITÉ": 68.242,
+          "RÉVERSIBILITÉ": 64.728
+        },
+        "composite": 72.3572,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0189,
+      "robustness_pct": 100.0,
+      "min_score": 76.0034,
+      "max_score": 81.3377
+    }
   }
 ]
