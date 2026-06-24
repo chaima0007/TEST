@@ -2820,5 +2820,171 @@
       "min_score": 74.9581,
       "max_score": 81.7327
     }
+  },
+  {
+    "seal_id": "SEAL-64D69DBA628F2B55",
+    "timestamp": "2026-06-24T13:42:17.274367+00:00",
+    "action": "route-wave-501",
+    "context": "3 routes API : leprosystigma, dowryviolence, widowdiscrimination",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.2019,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.761,
+          "SÉCURITÉ": 87.138,
+          "SCALABILITÉ": 80.994,
+          "RÉVERSIBILITÉ": 73.831
+        },
+        "composite": 84.0275,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.492,
+          "SÉCURITÉ": 86.299,
+          "SCALABILITÉ": 76.022,
+          "RÉVERSIBILITÉ": 70.303
+        },
+        "composite": 80.5884,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.079,
+          "SÉCURITÉ": 82.609,
+          "SCALABILITÉ": 79.042,
+          "RÉVERSIBILITÉ": 66.765
+        },
+        "composite": 78.3895,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.809,
+          "SÉCURITÉ": 79.089,
+          "SCALABILITÉ": 72.317,
+          "RÉVERSIBILITÉ": 68.385
+        },
+        "composite": 75.7712,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 82.973,
+          "SÉCURITÉ": 75.601,
+          "SCALABILITÉ": 70.409,
+          "RÉVERSIBILITÉ": 62.242
+        },
+        "composite": 73.8428,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.9891,
+      "robustness_pct": 100.0,
+      "min_score": 73.9829,
+      "max_score": 80.3667
+    }
+  },
+  {
+    "seal_id": "SEAL-E803B04482AA14B0",
+    "timestamp": "2026-06-24T13:42:55.950063+00:00",
+    "action": "data-wave-501-dashboards",
+    "context": "3 dashboards : leprosy-stigma, dowry-violence, widow-discrimination",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0615,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 91.025,
+          "SÉCURITÉ": 84.211,
+          "SCALABILITÉ": 83.346,
+          "RÉVERSIBILITÉ": 74.053
+        },
+        "composite": 84.0074,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 84.99,
+          "SÉCURITÉ": 81.435,
+          "SCALABILITÉ": 79.136,
+          "RÉVERSIBILITÉ": 71.131
+        },
+        "composite": 79.8659,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.212,
+          "SÉCURITÉ": 79.301,
+          "SCALABILITÉ": 75.844,
+          "RÉVERSIBILITÉ": 70.633
+        },
+        "composite": 77.5764,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.927,
+          "SÉCURITÉ": 79.079,
+          "SCALABILITÉ": 72.117,
+          "RÉVERSIBILITÉ": 66.373
+        },
+        "composite": 75.6517,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.88,
+          "SÉCURITÉ": 70.377,
+          "SCALABILITÉ": 68.771,
+          "RÉVERSIBILITÉ": 63.343
+        },
+        "composite": 70.5196,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.5362,
+      "robustness_pct": 100.0,
+      "min_score": 76.4042,
+      "max_score": 80.8387
+    }
   }
 ]
