@@ -4335,5 +4335,88 @@
       "min_score": 75.4581,
       "max_score": 81.3537
     }
+  },
+  {
+    "seal_id": "SEAL-17FE386961AE0992",
+    "timestamp": "2026-06-24T16:33:04.092486+00:00",
+    "action": "wave-sos-mobile",
+    "context": "Bouton SOS flottant mobile avec appel police 101 et urgence 112 + layout loi-avec-moi",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.8863,
+    "min_required": 60.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.931,
+          "SÉCURITÉ": 85.255,
+          "SCALABILITÉ": 80.139,
+          "RÉVERSIBILITÉ": 70.366
+        },
+        "composite": 82.401,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.0,
+          "SÉCURITÉ": 80.395,
+          "SCALABILITÉ": 78.76,
+          "RÉVERSIBILITÉ": 69.059
+        },
+        "composite": 79.4006,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.127,
+          "SÉCURITÉ": 79.017,
+          "SCALABILITÉ": 76.562,
+          "RÉVERSIBILITÉ": 68.861
+        },
+        "composite": 77.605,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 83.05,
+          "SÉCURITÉ": 76.195,
+          "SCALABILITÉ": 75.111,
+          "RÉVERSIBILITÉ": 66.858
+        },
+        "composite": 76.1131,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.964,
+          "SÉCURITÉ": 75.708,
+          "SCALABILITÉ": 69.206,
+          "RÉVERSIBILITÉ": 62.324
+        },
+        "composite": 72.0825,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.1794,
+      "robustness_pct": 100.0,
+      "min_score": 74.5688,
+      "max_score": 81.1782
+    }
   }
 ]
