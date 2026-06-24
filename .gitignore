@@ -60,3 +60,4 @@ data/build_guard_log.json
 data/branch_guard_log.json
 data/decision_advisor_log.json
 data/customer_health_log.json
+data/prospect_scans.json

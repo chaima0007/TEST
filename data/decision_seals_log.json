@@ -3839,5 +3839,88 @@
       "min_score": 74.3665,
       "max_score": 80.8052
     }
+  },
+  {
+    "seal_id": "SEAL-4CDD8FAA12634E7D",
+    "timestamp": "2026-06-24T15:42:14.583010+00:00",
+    "action": "tool-prospect-scanner",
+    "context": "Scanner de prospects : analyse lacunes digitales publiques (site, data, automatisation), mappe aux services Caelum, genere pitch honnete. Pas de hacking, pas de fausses failles.",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.9023,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.214,
+          "SÉCURITÉ": 83.252,
+          "SCALABILITÉ": 82.248,
+          "RÉVERSIBILITÉ": 75.624
+        },
+        "composite": 83.264,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 83.777,
+          "SÉCURITÉ": 82.637,
+          "SCALABILITÉ": 79.037,
+          "RÉVERSIBILITÉ": 70.768
+        },
+        "composite": 79.7052,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 85.157,
+          "SÉCURITÉ": 80.196,
+          "SCALABILITÉ": 76.961,
+          "RÉVERSIBILITÉ": 67.806
+        },
+        "composite": 78.3975,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 81.457,
+          "SÉCURITÉ": 77.16,
+          "SCALABILITÉ": 74.632,
+          "RÉVERSIBILITÉ": 67.699
+        },
+        "composite": 75.9249,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 77.068,
+          "SÉCURITÉ": 74.329,
+          "SCALABILITÉ": 67.46,
+          "RÉVERSIBILITÉ": 62.915
+        },
+        "composite": 71.1506,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.878,
+      "robustness_pct": 100.0,
+      "min_score": 74.4972,
+      "max_score": 81.4435
+    }
   }
 ]
