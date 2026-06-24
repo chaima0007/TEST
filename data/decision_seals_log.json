@@ -4750,5 +4750,88 @@
       "min_score": 74.741,
       "max_score": 82.4081
     }
+  },
+  {
+    "seal_id": "SEAL-725CC392DFD7B4EC",
+    "timestamp": "2026-06-24T16:50:18.921164+00:00",
+    "action": "page-loi-a-la-mer",
+    "context": "Nouvelle page La loi a la mer : regles plage cote belge (chiens, feu, camping, baignade, drapeaux IKWV), sources officielles cliquables",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.2287,
+    "min_required": 58.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 86.077,
+          "SÉCURITÉ": 83.618,
+          "SCALABILITÉ": 83.952,
+          "RÉVERSIBILITÉ": 78.135
+        },
+        "composite": 83.3426,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 85.86,
+          "SÉCURITÉ": 82.739,
+          "SCALABILITÉ": 80.292,
+          "RÉVERSIBILITÉ": 70.898
+        },
+        "composite": 80.6953,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 83.51,
+          "SÉCURITÉ": 81.916,
+          "SCALABILITÉ": 77.525,
+          "RÉVERSIBILITÉ": 68.526
+        },
+        "composite": 78.6185,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 80.686,
+          "SÉCURITÉ": 79.551,
+          "SCALABILITÉ": 72.478,
+          "RÉVERSIBILITÉ": 65.117
+        },
+        "composite": 75.2364,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.792,
+          "SÉCURITÉ": 74.815,
+          "SCALABILITÉ": 69.402,
+          "RÉVERSIBILITÉ": 63.541
+        },
+        "composite": 71.8,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.3095,
+      "robustness_pct": 100.0,
+      "min_score": 74.1771,
+      "max_score": 81.2674
+    }
   }
 ]
