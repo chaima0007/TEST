@@ -3370,5 +3370,32 @@
       "min_score": 75.8016,
       "max_score": 80.4833
     }
+  },
+  {
+    "seal_id": "SEAL-F87295D1601CCA5D",
+    "timestamp": "2026-06-24T15:09:51.213540+00:00",
+    "action": "route-services-tarifs-v2",
+    "context": "Page Services et Tarifs pro : 3 offres, prix transparents Belgique, garantie satisfaction, FAQ, CTA. Complete le tunnel de vente.",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.936,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.872,
+      "robustness_pct": 100.0,
+      "min_score": 74.4947,
+      "max_score": 80.9496
+    }
   }
 ]
