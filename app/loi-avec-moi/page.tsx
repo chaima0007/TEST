@@ -420,6 +420,7 @@ export default function LoiAvecMoiPage() {
       <footer className="border-t border-slate-100 py-8 px-6 text-center text-sm text-slate-500">
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
           <Link href="/loi-avec-moi/nos-assistants" className="text-indigo-700 hover:text-indigo-900 font-medium">Qui sont nos assistants ?</Link>
+          <Link href="/de-wet-met-mij" className="text-indigo-700 hover:text-indigo-900 font-medium">🇧🇪 Nederlandse versie →</Link>
           <Link href="/la-loi-avec-moi-france" className="text-indigo-700 hover:text-indigo-900 font-medium">🇫🇷 Voir la version France →</Link>
           <Link href="/" className="hover:text-slate-900">← Accueil Caelum</Link>
         </div>
