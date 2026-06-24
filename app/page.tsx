@@ -293,9 +293,12 @@ export default function Home() {
             <span className="font-semibold text-slate-700">Caelum</span>
             <span className="text-slate-400">· Studio web &amp; data · Bruxelles</span>
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-4 flex-wrap">
             <a href="#services" className="hover:text-slate-900">Services</a>
             <Link href="/contact" className="hover:text-slate-900">Contact</Link>
+            <Link href="/mentions-legales" className="hover:text-slate-900">Mentions légales</Link>
+            <Link href="/confidentialite" className="hover:text-slate-900">Confidentialité</Link>
+            <Link href="/cgv" className="hover:text-slate-900">CGV</Link>
           </div>
         </div>
       </footer>

@@ -3922,5 +3922,32 @@
       "min_score": 74.4972,
       "max_score": 81.4435
     }
+  },
+  {
+    "seal_id": "SEAL-3535FCB938DBFB76",
+    "timestamp": "2026-06-24T15:46:20.718611+00:00",
+    "action": "route-pages-legales",
+    "context": "Pages legales : mentions legales, confidentialite RGPD, CGV. Obligatoires pour vendre legalement en Belgique.",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.0237,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.0473,
+      "robustness_pct": 100.0,
+      "min_score": 74.5575,
+      "max_score": 80.6759
+    }
   }
 ]
