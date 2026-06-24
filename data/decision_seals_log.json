@@ -2737,5 +2737,88 @@
       "min_score": 74.8284,
       "max_score": 80.5898
     }
+  },
+  {
+    "seal_id": "SEAL-AFA9E963F667D6E0",
+    "timestamp": "2026-06-24T13:39:04.550427+00:00",
+    "action": "wave-501",
+    "context": "3 domaines droits humains : terres autochtones et extractivisme, deplaces climatiques, droits des personnes handicapees en institution",
+    "category": "wave",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 78.236,
+    "min_required": 60.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 90.685,
+          "SÉCURITÉ": 88.718,
+          "SCALABILITÉ": 82.227,
+          "RÉVERSIBILITÉ": 76.482
+        },
+        "composite": 85.2382,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 86.962,
+          "SÉCURITÉ": 81.432,
+          "SCALABILITÉ": 78.362,
+          "RÉVERSIBILITÉ": 69.108
+        },
+        "composite": 79.8587,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 81.001,
+          "SÉCURITÉ": 83.892,
+          "SCALABILITÉ": 78.132,
+          "RÉVERSIBILITÉ": 67.681
+        },
+        "composite": 78.3425,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 82.793,
+          "SÉCURITÉ": 79.024,
+          "SCALABILITÉ": 73.22,
+          "RÉVERSIBILITÉ": 66.095
+        },
+        "composite": 76.1179,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 75.701,
+          "SÉCURITÉ": 74.382,
+          "SCALABILITÉ": 72.863,
+          "RÉVERSIBILITÉ": 63.254
+        },
+        "composite": 72.1723,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 78.1985,
+      "robustness_pct": 100.0,
+      "min_score": 74.9581,
+      "max_score": 81.7327
+    }
   }
 ]
