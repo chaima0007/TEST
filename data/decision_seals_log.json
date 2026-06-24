@@ -3152,5 +3152,32 @@
       "min_score": 74.569,
       "max_score": 82.2048
     }
+  },
+  {
+    "seal_id": "SEAL-C9231286B5A628E0",
+    "timestamp": "2026-06-24T14:00:42.815205+00:00",
+    "action": "route-contact-waitlist",
+    "context": "Page /contact liste d'attente (repare lien casse de la home) + API /api/waitlist pour capter les prospects",
+    "category": "route",
+    "risk_level": "ÉLEVÉ",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.8558,
+    "min_required": 55.0,
+    "protocol_score": 100.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": true,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.7115,
+      "robustness_pct": 100.0,
+      "min_score": 74.8496,
+      "max_score": 81.7973
+    }
   }
 ]
