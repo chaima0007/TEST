@@ -16,9 +16,9 @@ const themas: Thema[] = [
   { titel: "Wonen & huur", beschrijving: "Huurwaarborg, plaatsbeschrijving, opzeg, herstellingen.", href: "/de-wet-met-mij/wonen", emoji: "🏠" },
   { titel: "Werk", beschrijving: "Opzeg, ontslag, C4, minimumloon, verlof.", href: "/de-wet-met-mij/werk", emoji: "💼" },
   { titel: "Juridische hulp", beschrijving: "Gratis eerste advies en pro-Deo-advocaat volgens inkomen.", href: "/de-wet-met-mij/juridische-hulp", emoji: "⚖️" },
-  { titel: "Consumentenrecht", beschrijving: "Herroepingsrecht, garantie, aankopen.", emoji: "🛒" },
-  { titel: "Familie & privacy", beschrijving: "Samenwonen, scheiding, GDPR-rechten.", emoji: "👪" },
-  { titel: "Administratieve stappen", beschrijving: "Beroep, termijnen, ombudsman.", emoji: "📄" },
+  { titel: "Consumentenrecht", beschrijving: "Herroepingsrecht, garantie, aankopen.", href: "/de-wet-met-mij/consumentenrecht", emoji: "🛒" },
+  { titel: "Familie & privacy", beschrijving: "Samenwonen, scheiding, GDPR-rechten.", href: "/de-wet-met-mij/familie", emoji: "👪" },
+  { titel: "Administratieve stappen", beschrijving: "Beroep, termijnen, ombudsman.", href: "/de-wet-met-mij/administratie", emoji: "📄" },
 ];
 
 export default function DeWetMetMijPage() {
