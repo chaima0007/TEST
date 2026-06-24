@@ -3,7 +3,8 @@ Sales Territory Coverage Intelligence Engine.
 
 Évalue la couverture d'un territoire de vente (comptes actifs/négligés, comptes
 à forte valeur, whitespace/expansion, prévention du churn) et produit un score
-de risque composite avec pattern, sévérité et action recommandée.
+de risque composite avec pattern, sévérité, action, flags, revenue-at-risk et
+un signal lisible.
 
 Sous-scores : plus le score est élevé, plus le risque est élevé.
 """
@@ -84,37 +85,38 @@ class TerritoryCoverageInput:
 class TerritoryCoverageResult:
     rep_id: str
     region: str
-    evaluation_period_id: str
     account_breadth_score: float
     account_prioritization_score: float
     whitespace_exploitation_score: float
     churn_prevention_score: float
-    composite_score: float
-    risk: CoverageRisk
-    pattern: CoveragePattern
-    severity: CoverageSeverity
-    action: CoverageAction
-    flags: List[str] = field(default_factory=list)
-    revenue_at_risk_usd: float = 0.0
-    signals: List[str] = field(default_factory=list)
+    territory_coverage_composite: float
+    coverage_risk: CoverageRisk
+    coverage_pattern: CoveragePattern
+    coverage_severity: CoverageSeverity
+    recommended_action: CoverageAction
+    has_coverage_gap: bool
+    requires_territory_rebalance: bool
+    estimated_revenue_at_risk_usd: float
+    coverage_signal: str
+    evaluation_period_id: str = ""
 
     def to_dict(self) -> Dict:
         return {
             "rep_id": self.rep_id,
             "region": self.region,
-            "evaluation_period_id": self.evaluation_period_id,
+            "coverage_risk": self.coverage_risk.value,
+            "coverage_pattern": self.coverage_pattern.value,
+            "coverage_severity": self.coverage_severity.value,
+            "recommended_action": self.recommended_action.value,
             "account_breadth_score": self.account_breadth_score,
             "account_prioritization_score": self.account_prioritization_score,
             "whitespace_exploitation_score": self.whitespace_exploitation_score,
             "churn_prevention_score": self.churn_prevention_score,
-            "composite_score": self.composite_score,
-            "risk": self.risk.value,
-            "pattern": self.pattern.value,
-            "severity": self.severity.value,
-            "action": self.action.value,
-            "flags": list(self.flags),
-            "revenue_at_risk_usd": self.revenue_at_risk_usd,
-            "signals": list(self.signals),
+            "territory_coverage_composite": self.territory_coverage_composite,
+            "has_coverage_gap": self.has_coverage_gap,
+            "requires_territory_rebalance": self.requires_territory_rebalance,
+            "estimated_revenue_at_risk_usd": self.estimated_revenue_at_risk_usd,
+            "coverage_signal": self.coverage_signal,
         }
 
 
@@ -233,10 +235,11 @@ class SalesTerritoryCoverageIntelligenceEngine:
 
         return float(min(score, 100.0))
 
-    # ---- Composite & évaluation (base ; affinage ultérieur) ---------------
+    # ---- Composite, niveaux, pattern, action, flags -----------------------
 
     def _composite(self, b: float, p: float, w: float, c: float) -> float:
-        return round((b + p + w + c) / 4.0, 1)
+        weighted = b * 0.25 + p * 0.30 + w * 0.25 + c * 0.20
+        return float(min(round(weighted, 1), 100.0))
 
     def _risk_level(self, composite: float) -> CoverageRisk:
         if composite >= 60:
@@ -321,6 +324,41 @@ class SalesTerritoryCoverageIntelligenceEngine:
             return True
         return False
 
+    def _estimated_revenue_at_risk(self, inp: TerritoryCoverageInput, composite: float) -> float:
+        return round(inp.accounts_neglected_count * inp.avg_account_revenue_usd * (composite / 100.0), 2)
+
+    def _signal(self, inp: TerritoryCoverageInput, pattern: CoveragePattern, composite: float) -> str:
+        if pattern == CoveragePattern.none and composite < 20:
+            return "Territory coverage optimized across all segments"
+
+        parts: List[str] = []
+        if inp.accounts_neglected_count >= 3:
+            parts.append(f"{inp.accounts_neglected_count} accounts neglected")
+
+        hv_ratio = inp.high_value_accounts_engaged_count / max(inp.high_value_accounts_total, 1)
+        if hv_ratio < 0.60:
+            parts.append(f"high-value coverage at {hv_ratio * 100:.0f}%")
+
+        acted_ratio = inp.expansion_signals_acted_upon / max(inp.expansion_signals_identified, 1)
+        if acted_ratio < 0.40:
+            parts.append("whitespace opportunities missed")
+
+        churn_ratio = inp.churn_risk_accounts_contacted / max(inp.churn_risk_accounts_total, 1)
+        if churn_ratio < 0.50:
+            parts.append(f"churn risk contacts at {churn_ratio * 100:.0f}%")
+
+        if pattern == CoveragePattern.none:
+            prefix = "Coverage risk"
+        else:
+            prefix = pattern.value.replace("_", " ").capitalize()
+
+        if not parts:
+            parts.append("territory coverage gaps detected")
+
+        return f"{prefix}: {'; '.join(parts)} (composite {composite:.0f})"
+
+    # ---- Assess / batch / summary -----------------------------------------
+
     def assess(self, inp: TerritoryCoverageInput) -> TerritoryCoverageResult:
         b = self._account_breadth_score(inp)
         p = self._account_prioritization_score(inp)
@@ -340,11 +378,15 @@ class SalesTerritoryCoverageIntelligenceEngine:
             account_prioritization_score=p,
             whitespace_exploitation_score=w,
             churn_prevention_score=c,
-            composite_score=composite,
-            risk=risk,
-            pattern=pattern,
-            severity=severity,
-            action=action,
+            territory_coverage_composite=composite,
+            coverage_risk=risk,
+            coverage_pattern=pattern,
+            coverage_severity=severity,
+            recommended_action=action,
+            has_coverage_gap=self._has_coverage_gap(composite, inp),
+            requires_territory_rebalance=self._requires_territory_rebalance(composite, inp),
+            estimated_revenue_at_risk_usd=self._estimated_revenue_at_risk(inp, composite),
+            coverage_signal=self._signal(inp, pattern, composite),
         )
         self._results.append(result)
         return result
@@ -355,10 +397,48 @@ class SalesTerritoryCoverageIntelligenceEngine:
     def summary(self) -> Dict:
         n = len(self._results)
         if n == 0:
-            return {"count": 0}
+            return {
+                "total": 0,
+                "risk_counts": {},
+                "pattern_counts": {},
+                "severity_counts": {},
+                "action_counts": {},
+                "avg_territory_coverage_composite": 0.0,
+                "coverage_gap_count": 0,
+                "rebalance_count": 0,
+                "avg_account_breadth_score": 0.0,
+                "avg_account_prioritization_score": 0.0,
+                "avg_whitespace_exploitation_score": 0.0,
+                "avg_churn_prevention_score": 0.0,
+                "total_estimated_revenue_at_risk_usd": 0.0,
+            }
+
+        def counts(attr: str) -> Dict[str, int]:
+            out: Dict[str, int] = {}
+            for r in self._results:
+                key = getattr(r, attr).value
+                out[key] = out.get(key, 0) + 1
+            return out
+
+        def avg(attr: str) -> float:
+            return round(sum(getattr(r, attr) for r in self._results) / n, 1)
+
         return {
-            "count": n,
-            "avg_composite": round(sum(r.composite_score for r in self._results) / n, 1),
+            "total": n,
+            "risk_counts": counts("coverage_risk"),
+            "pattern_counts": counts("coverage_pattern"),
+            "severity_counts": counts("coverage_severity"),
+            "action_counts": counts("recommended_action"),
+            "avg_territory_coverage_composite": avg("territory_coverage_composite"),
+            "coverage_gap_count": sum(1 for r in self._results if r.has_coverage_gap),
+            "rebalance_count": sum(1 for r in self._results if r.requires_territory_rebalance),
+            "avg_account_breadth_score": avg("account_breadth_score"),
+            "avg_account_prioritization_score": avg("account_prioritization_score"),
+            "avg_whitespace_exploitation_score": avg("whitespace_exploitation_score"),
+            "avg_churn_prevention_score": avg("churn_prevention_score"),
+            "total_estimated_revenue_at_risk_usd": round(
+                sum(r.estimated_revenue_at_risk_usd for r in self._results), 2
+            ),
         }
 
 
