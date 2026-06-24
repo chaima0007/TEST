@@ -49,3 +49,9 @@ next-env.d.ts
 dev.db
 prisma/dev.db
 .claude/
+
+# Runtime artifacts (infra modules demos)
+data/checkpoints/
+data/observability/
+data/resilience_log.json
+data/dependency_scan_log.json
