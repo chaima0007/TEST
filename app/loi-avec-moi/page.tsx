@@ -78,13 +78,17 @@ export default function LoiAvecMoiPage() {
       {/* Header */}
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/loi-avec-moi" className="flex items-center gap-2.5">
             <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-black">C</span>
+              <span className="text-white text-xs font-black">L</span>
             </div>
-            <span className="font-bold text-lg tracking-tight">Caelum</span>
+            <span className="font-bold text-lg tracking-tight">La loi avec moi</span>
           </Link>
-          <Link href="/contact" className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">Poser ma question</Link>
+          <div className="hidden sm:flex items-center gap-1">
+            <Link href="/loi-avec-moi/mes-droits-maintenant" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Mes droits</Link>
+            <Link href="/loi-avec-moi/modeles" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Lettres</Link>
+            <Link href="/loi-avec-moi/enfants-places" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Enfants placés</Link>
+          </div>
         </div>
       </header>
 
@@ -111,8 +115,43 @@ export default function LoiAvecMoiPage() {
         </div>
       </section>
 
+      {/* Accès rapide */}
+      <section className="py-20 px-6 max-w-5xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Accès rapide</span>
+          <h2 className="text-3xl font-bold mt-3 tracking-tight">Où voulez-vous aller ?</h2>
+          <p className="text-slate-500 mt-4">Trois espaces clairs. Choisissez celui dont vous avez besoin maintenant.</p>
+        </div>
+        <div className="grid sm:grid-cols-3 gap-6">
+          <Link href="/loi-avec-moi/mes-droits-maintenant" className="group rounded-2xl border-2 border-rose-200 p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div className="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mb-5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round" /><path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </div>
+            <h3 className="text-lg font-bold tracking-tight">Mes droits maintenant</h3>
+            <p className="text-slate-600 mt-2 text-sm leading-relaxed">Police, perte de carte d&apos;identité, si on vous fait du mal. Droits essentiels + lecture vocale.</p>
+            <span className="inline-block mt-4 text-rose-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">Accéder →</span>
+          </Link>
+          <Link href="/loi-avec-moi/modeles" className="group rounded-2xl border-2 border-indigo-200 p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6"><path d="M4 4h11l5 5v11H4z" strokeLinejoin="round" /><path d="M9 13h6M9 16h6" strokeLinecap="round" /></svg>
+            </div>
+            <h3 className="text-lg font-bold tracking-tight">Lettres pré-écrites</h3>
+            <p className="text-slate-600 mt-2 text-sm leading-relaxed">Plainte, harcèlement à l&apos;école, demande d&apos;avocat, lettre au juge. À copier et envoyer.</p>
+            <span className="inline-block mt-4 text-indigo-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">Accéder →</span>
+          </Link>
+          <Link href="/loi-avec-moi/enfants-places" className="group rounded-2xl border-2 border-emerald-200 p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6"><circle cx="12" cy="8" r="3.5" /><path d="M5 21c0-3.5 3-6 7-6s7 2.5 7 6" strokeLinecap="round" /></svg>
+            </div>
+            <h3 className="text-lg font-bold tracking-tight">Enfants placés</h3>
+            <p className="text-slate-600 mt-2 text-sm leading-relaxed">Tes droits, parler à ton juge, demander un avocat. Écrit avec douceur, lisible à voix haute.</p>
+            <span className="inline-block mt-4 text-emerald-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">Accéder →</span>
+          </Link>
+        </div>
+      </section>
+
       {/* Thèmes */}
-      <section className="py-24 px-6 max-w-6xl mx-auto">
+      <section className="py-16 px-6 max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Ce qu&apos;on peut éclaircir</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-3 tracking-tight">Les sujets du quotidien</h2>

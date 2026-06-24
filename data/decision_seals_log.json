@@ -4086,5 +4086,88 @@
       "min_score": 75.3585,
       "max_score": 80.6441
     }
+  },
+  {
+    "seal_id": "SEAL-16C098770D73F7D1",
+    "timestamp": "2026-06-24T16:16:55.960368+00:00",
+    "action": "feature-loi-avec-moi-hub",
+    "context": "espace citoyen separe : voix rassurante, droits d'urgence verifies (sources officielles), lettres pre-ecrites, enfants places",
+    "category": "default",
+    "risk_level": "MOYEN",
+    "status": "APPROUVÉ",
+    "final_consensus": 77.8345,
+    "min_required": 58.0,
+    "protocol_score": 75.0,
+    "robustness_pct": 100.0,
+    "protocol_checks": {
+      "BRANCHE_CORRECTE": true,
+      "WORKING_TREE_PROPRE": false,
+      "CONTEXTE_FOURNI": true,
+      "ACTION_DÉFINIE": true
+    },
+    "pov_results": [
+      {
+        "perspective": "OPTIMISTE",
+        "criteria": {
+          "COHÉRENCE": 89.8,
+          "SÉCURITÉ": 89.559,
+          "SCALABILITÉ": 84.184,
+          "RÉVERSIBILITÉ": 72.493
+        },
+        "composite": 84.8743,
+        "weight": 0.1
+      },
+      {
+        "perspective": "LÉGÈRE_PLUS",
+        "criteria": {
+          "COHÉRENCE": 83.251,
+          "SÉCURITÉ": 82.907,
+          "SCALABILITÉ": 77.3,
+          "RÉVERSIBILITÉ": 71.762
+        },
+        "composite": 79.3795,
+        "weight": 0.2
+      },
+      {
+        "perspective": "NEUTRE",
+        "criteria": {
+          "COHÉRENCE": 82.277,
+          "SÉCURITÉ": 79.935,
+          "SCALABILITÉ": 77.325,
+          "RÉVERSIBILITÉ": 70.196
+        },
+        "composite": 78.0373,
+        "weight": 0.4
+      },
+      {
+        "perspective": "LÉGÈRE_MOINS",
+        "criteria": {
+          "COHÉRENCE": 82.877,
+          "SÉCURITÉ": 78.56,
+          "SCALABILITÉ": 74.357,
+          "RÉVERSIBILITÉ": 68.128
+        },
+        "composite": 76.718,
+        "weight": 0.2
+      },
+      {
+        "perspective": "PESSIMISTE",
+        "criteria": {
+          "COHÉRENCE": 76.434,
+          "SÉCURITÉ": 75.292,
+          "SCALABILITÉ": 68.239,
+          "RÉVERSIBILITÉ": 60.74
+        },
+        "composite": 70.9609,
+        "weight": 0.1
+      }
+    ],
+    "multiverse": {
+      "n_universes": 50,
+      "median_score": 77.651,
+      "robustness_pct": 100.0,
+      "min_score": 73.8489,
+      "max_score": 80.4102
+    }
   }
 ]
