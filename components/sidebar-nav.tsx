@@ -4194,4 +4194,24 @@ export const navSections: NavSection[] = [
       },
     ],
   },
+  {
+    title: "STIGMATE, DOT & VEUVES (W501)",
+    items: [
+      {
+        href: "/dashboard/leprosy-stigma",
+        label: "Lèpre & Stigmatisation",
+        icon: Icons.IconLeprosyStigma,
+      },
+      {
+        href: "/dashboard/dowry-violence",
+        label: "Violences de Dot",
+        icon: Icons.IconDowryViolence,
+      },
+      {
+        href: "/dashboard/widow-discrimination",
+        label: "Discrimination des Veuves",
+        icon: Icons.IconWidowDiscrimination,
+      },
+    ],
+  },
 ];

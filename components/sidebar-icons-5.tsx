@@ -1736,3 +1736,35 @@ export function IconEnvironmentalDefendersRights(p: React.SVGProps<SVGSVGElement
     </svg>
   );
 }
+
+export function IconLeprosyStigma(p: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+      <path d="M10 7l1 1M14 7l-1 1M11 10h2" strokeOpacity="0.5" />
+      <path d="M3 3l18 18" strokeOpacity="0.6" />
+    </svg>
+  );
+}
+
+export function IconDowryViolence(p: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="M12 3l3 4-3 3-3-3 3-4z" />
+      <path d="M5 10h14l-2 9H7l-2-9z" />
+      <path d="M10 14l4 3M14 14l-4 3" strokeOpacity="0.6" />
+    </svg>
+  );
+}
+
+export function IconWidowDiscrimination(p: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <circle cx="12" cy="7" r="3" />
+      <path d="M7 21v-3a5 5 0 0 1 10 0v3" />
+      <path d="M12 10v4" strokeOpacity="0.5" />
+      <path d="M4 4l16 16" strokeOpacity="0.6" />
+    </svg>
+  );
+}
