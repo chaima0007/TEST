@@ -84,6 +84,7 @@ const specialisations: Spe[] = [
     emoji: "💳",
     t: "Dettes & consommation",
     quand: "Surendettement, litige avec un commerçant, crédit, huissier, médiation de dettes.",
+    href: "/loi-avec-moi/avocat/dettes",
     docs: [
       "Les contrats et factures litigieux",
       "Les mises en demeure et courriers d'huissier",
