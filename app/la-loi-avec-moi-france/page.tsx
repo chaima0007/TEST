@@ -49,6 +49,7 @@ const themes = [
   {
     t: "Famille & vie privée",
     d: "Mariage, PACS, séparation, succession, et vos droits sur vos données personnelles (RGPD / CNIL).",
+    href: "/la-loi-avec-moi-france/famille",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2" />
@@ -59,6 +60,7 @@ const themes = [
   {
     t: "Démarches administratives",
     d: "Comprendre un courrier de l'administration, vos délais, vos recours, où vous adresser. On débroussaille.",
+    href: "/la-loi-avec-moi-france/demarches",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <rect x="5" y="3" width="14" height="18" rx="2" />
@@ -107,8 +109,9 @@ export default function LoiAvecMoiFrancePage() {
       {/* Bandeau de lancement honnête */}
       <section className="bg-blue-50 border-b border-blue-100 px-6 py-4">
         <p className="max-w-3xl mx-auto text-center text-sm text-blue-900/80 leading-relaxed">
-          🚧 <strong>Édition France en construction.</strong> Nous ouvrons les rubriques une par une, chacune vérifiée
-          sur des sources officielles françaises (service-public.fr, etc.). Les rubriques « En danger », « Consommation », « Logement & bail » et « Travail & emploi » sont déjà disponibles.
+          ✅ <strong>Les 6 rubriques de l&apos;édition France sont en ligne</strong>, chacune vérifiée sur des sources
+          officielles françaises (service-public.fr, CNIL, Légifrance, Défenseur des droits). Nous continuons à les
+          enrichir et à les tenir à jour.
         </p>
       </section>
 
