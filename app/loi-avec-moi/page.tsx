@@ -245,7 +245,7 @@ const sources = [
 export default function LoiAvecMoiPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <BanniereLangues theme="indigo" />
+      <BanniereLangues theme="indigo" href="/loi-avec-moi/bienvenue" />
       {/* Header */}
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">

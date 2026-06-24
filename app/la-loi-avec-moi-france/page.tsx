@@ -85,7 +85,7 @@ const themes = [
 export default function LoiAvecMoiFrancePage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      <BanniereLangues theme="blue" />
+      <BanniereLangues theme="blue" href="/la-loi-avec-moi-france/bienvenue" />
       {/* Header */}
       <header className="border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
