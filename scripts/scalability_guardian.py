@@ -23,7 +23,7 @@ THRESHOLDS = {
     "sidebar_icon_file_warn":   4400,   # Alerte à 80%
     "sidebar_nav_lag":          3000,   # React rendering lag
     "data_json_max_lines":     50_000,  # Au-delà → paginer
-    "engines_python_max":       3000,   # Au-delà → archiver (startup > 30s)
+    "engines_python_max":       5000,   # Moteurs autonomes, zéro import global au démarrage
     "api_routes_max":            350,   # Au-delà → grouper en dynamic routes
     "dashboards_max":            400,   # Au-delà → lazy-load obligatoire
 }
