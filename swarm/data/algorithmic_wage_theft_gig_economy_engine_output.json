@@ -1,0 +1,89 @@
+{
+  "agent": "Algorithmic Wage Theft & Gig Economy Engine",
+  "domain": "algorithmic_wage_theft_gig_economy",
+  "wave": 493,
+  "total_entities": 8,
+  "avg_composite": 61.03,
+  "risk_distribution": {
+    "critique": 4,
+    "élevé": 2,
+    "modéré": 1,
+    "faible": 1
+  },
+  "estimated_algorithmic_wage_theft_gig_economy_index": 6.1,
+  "last_analysis": "2026-06-23",
+  "engine_version": "1.0.0",
+  "data_sources": [
+    "economic_policy_institute_wage_theft_gig_economy_report",
+    "ilo_world_employment_social_outlook_platform_work",
+    "algorithmic_management_worker_surveillance_uc_berkeley",
+    "eu_platform_work_directive_impact_assessment_2024",
+    "gig_workers_collective_wage_theft_documentation"
+  ],
+  "entities": [
+    {
+      "id": "AWGE-001",
+      "name": "Uber/Lyft USA — Algorithmes Tarification Dynamique, Désactivation Arbitraire & Vol Salaire Documenté 1.4 Mrd$",
+      "region": "Amérique du Nord",
+      "composite": 96.3,
+      "risk_level": "critique",
+      "primary_pattern": "algorithmic_deactivation_wage_theft"
+    },
+    {
+      "id": "AWGE-002",
+      "name": "Amazon Flex/Mechanical Turk — Rémunération sous SMIC, Surveillance IA Conducteurs & Réduction Paiements Rétroactive",
+      "region": "Amérique du Nord",
+      "composite": 89.6,
+      "risk_level": "critique",
+      "primary_pattern": "algorithmic_pay_reduction"
+    },
+    {
+      "id": "AWGE-003",
+      "name": "Deliveroo/Glovo Europe — Tarification par Course Opaque, Zéro Transparence Algorithme & Syndicats Bloqués",
+      "region": "Europe Occidentale",
+      "composite": 81.6,
+      "risk_level": "critique",
+      "primary_pattern": "opaque_algorithmic_pricing"
+    },
+    {
+      "id": "AWGE-004",
+      "name": "Plateformes Gig Inde (Zomato/Swiggy/Ola) — 50M+ Travailleurs, Absence Contrat & Frais Cachés Déduits Algorithme",
+      "region": "Asie du Sud",
+      "composite": 76.6,
+      "risk_level": "critique",
+      "primary_pattern": "hidden_fee_algorithmic_deduction"
+    },
+    {
+      "id": "AWGE-005",
+      "name": "Fiverr/Upwork Global — Commissions Opaques 20%, Scores Rétrogradation Arbitraire & Blocage Comptes sans Recours",
+      "region": "Global",
+      "composite": 57.6,
+      "risk_level": "élevé",
+      "primary_pattern": "platform_commission_opacity"
+    },
+    {
+      "id": "AWGE-006",
+      "name": "Gig Workers Collective — Organisation Résistance, Grèves Nationales & Litiges Collectifs vs Plateformes",
+      "region": "Amérique du Nord",
+      "composite": 47.6,
+      "risk_level": "élevé",
+      "primary_pattern": "worker_collective_action"
+    },
+    {
+      "id": "AWGE-007",
+      "name": "Directive EU Travailleurs Plateforme 2024 — Présomption Salariat, Application Nationale Variable & Résistance Lobbying",
+      "region": "Europe",
+      "composite": 28.6,
+      "risk_level": "modéré",
+      "primary_pattern": "regulatory_framework_partial"
+    },
+    {
+      "id": "AWGE-008",
+      "name": "OIT — Recommandation Travail Décent Économie Plateforme, Ratification Limitée & Impact Terrain Minimal",
+      "region": "Global",
+      "composite": 10.3,
+      "risk_level": "faible",
+      "primary_pattern": "international_labour_standard"
+    }
+  ]
+}

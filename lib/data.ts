@@ -16,7 +16,7 @@ export const competitors = [
     pricing: [
       { name: "Starter", price: 25, currency: "€", interval: "mois", features: ["Contact Management", "Email Integration", "Mobile App"] },
       { name: "Professional", price: 80, currency: "€", interval: "mois", features: ["Tout Starter", "Collaboration Tools", "API Access", "Forecasting"] },
-      { name: "Enterprise", price: 165, currency: "€", interval: "mois", features: ["Tout Pro", "Advanced Analytics", "Custom Workflows", "AI Features"] },
+      { name: "Enterprise", price: 300, currency: "€", interval: "mois", features: ["Tout Pro", "Advanced Analytics", "Custom Workflows", "AI Features"] },
       { name: "Unlimited", price: 330, currency: "€", interval: "mois", features: ["Tout Enterprise", "Unlimited Customization", "Premier Support"] },
     ],
     features: [
@@ -51,7 +51,7 @@ export const competitors = [
     pricing: [
       { name: "Gratuit", price: 0, currency: "€", interval: "mois", features: ["CRM de base", "Email limité", "Formulaires"] },
       { name: "Starter", price: 20, currency: "€", interval: "mois", features: ["Tout Gratuit", "Email Marketing", "Live Chat"] },
-      { name: "Professional", price: 890, currency: "€", interval: "mois", features: ["Tout Starter", "Automation avancée", "Reporting"] },
+      { name: "Sales Hub Professional", price: 100, currency: "€", interval: "mois", features: ["Tout Starter", "Automation avancée", "Reporting"] },
       { name: "Enterprise", price: 3600, currency: "€", interval: "mois", features: ["Tout Pro", "Teams", "Custom Objects"] },
     ],
     features: [
@@ -175,8 +175,8 @@ export const alerts = [
   { id: "3", type: "acquisition", message: "Salesforce acquiert DataRobot pour 1,2 Md$", competitorId: "1", competitorName: "Salesforce", isRead: false, date: "2026-06-08" },
   { id: "4", type: "product", message: "Pipedrive lance AI Sales Assistant en version bêta", competitorId: "3", competitorName: "Pipedrive", isRead: true, date: "2026-06-05" },
   { id: "5", type: "partnership", message: "HubSpot signe un partenariat stratégique avec Google Workspace", competitorId: "2", competitorName: "HubSpot", isRead: true, date: "2026-05-28" },
-  { id: "6", type: "website", message: "Zoho CRM met à jour son site et sa page tarifaire", competitorId: "4", competitorName: "Zoho CRM", isRead: true, date: "2026-05-20" },
-  { id: "7", type: "pricing", message: "Pipedrive réduit son plan Essential de 17€ à 15€", competitorId: "3", competitorName: "Pipedrive", isRead: true, date: "2026-05-15" },
+  { id: "6", type: "acquisition", message: "Salesforce acquiert Spiff pour 419M$ — implications directes sur votre segment CPQ", competitorId: "sf1", competitorName: "Salesforce", date: "2026-06-15", isRead: false },
+  { id: "7", type: "partnership", message: "HubSpot annonce un partenariat stratégique avec Microsoft Teams — intégration native Q3 2026", competitorId: "hs1", competitorName: "HubSpot", date: "2026-06-14", isRead: false },
   { id: "8", type: "product", message: "Monday.com déploie Monday AI en disponibilité générale", competitorId: "5", competitorName: "Monday.com", isRead: true, date: "2026-05-10" },
 ];
 
@@ -212,4 +212,6 @@ export const stats = {
   activeAlerts: 3,
   reportsGenerated: 3,
   marketScore: 74,
+  slaUptime: 99.8,
+  avgResponseTime: "< 2h",
 };

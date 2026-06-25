@@ -1,0 +1,89 @@
+{
+  "agent": "LGBTQ+ Asylum & Refugee Rights Engine",
+  "domain": "lgbtq_asylum_refugee_rights",
+  "wave": 493,
+  "total_entities": 8,
+  "avg_composite": 61.03,
+  "risk_distribution": {
+    "critique": 4,
+    "élevé": 2,
+    "modéré": 1,
+    "faible": 1
+  },
+  "estimated_lgbtq_asylum_refugee_rights_index": 6.1,
+  "last_analysis": "2026-06-23",
+  "engine_version": "1.0.0",
+  "data_sources": [
+    "ilga_world_state_sponsored_homophobia_report",
+    "unhcr_lgbtq_refugee_protection_guidelines",
+    "human_rights_watch_lgbtq_asylum_seeker_report",
+    "rainbow_railroad_global_crisis_report",
+    "amnesty_international_lgbtq_persecution_global"
+  ],
+  "entities": [
+    {
+      "id": "LGAR-001",
+      "name": "Tchétchénie/Russie — Purges Violentes Personnes LGBTQ+, Détentions Secrètes & Impunité Totale des Persécuteurs",
+      "region": "Europe de l'Est",
+      "composite": 96.3,
+      "risk_level": "critique",
+      "primary_pattern": "state_persecution_lgbtq"
+    },
+    {
+      "id": "LGAR-002",
+      "name": "Afghanistan Taliban — Peine de Mort Homosexualité, Persécution Systématique & Fuite Massive vers Pays Tiers",
+      "region": "Asie Centrale",
+      "composite": 89.6,
+      "risk_level": "critique",
+      "primary_pattern": "death_penalty_lgbtq"
+    },
+    {
+      "id": "LGAR-003",
+      "name": "Ouganda — Loi Anti-Homosexualité 2023 (Peine de Mort), Fuite Réfugiés & Rejet Demandes Asile Voisins",
+      "region": "Afrique de l'Est",
+      "composite": 81.6,
+      "risk_level": "critique",
+      "primary_pattern": "criminalization_persecution"
+    },
+    {
+      "id": "LGAR-004",
+      "name": "Iran — Exécutions LGBTQ+ sous Charia, Demandeurs Asile Renvoyés & Probléme Preuve Orientation Sexuelle",
+      "region": "Moyen-Orient",
+      "composite": 76.6,
+      "risk_level": "critique",
+      "primary_pattern": "execution_persecution"
+    },
+    {
+      "id": "LGAR-005",
+      "name": "Hongrie/Pologne — Refus Asile Motif LGBTQ+, Zones Anti-LGBT & Conformité CEDH Défaillante",
+      "region": "Europe Centrale",
+      "composite": 57.6,
+      "risk_level": "élevé",
+      "primary_pattern": "eu_member_state_lgbtq_regression"
+    },
+    {
+      "id": "LGAR-006",
+      "name": "Camps Réfugiés Kenya/Malawi — Violence Homophobe entre Réfugiés, Protection UNHCR Insuffisante",
+      "region": "Afrique de l'Est",
+      "composite": 47.6,
+      "risk_level": "élevé",
+      "primary_pattern": "intra_camp_violence"
+    },
+    {
+      "id": "LGAR-007",
+      "name": "UNHCR — Directives Protection LGBTQ+ Réfugiés, Application Partielle & Manque Financement Dédié",
+      "region": "Global",
+      "composite": 28.6,
+      "risk_level": "modéré",
+      "primary_pattern": "international_protection_gaps"
+    },
+    {
+      "id": "LGAR-008",
+      "name": "ILGA World — Réseau Plaidoyer Droits LGBTQ+ Global, Rapports Annuels & Impact Législatif Limité",
+      "region": "Global",
+      "composite": 10.3,
+      "risk_level": "faible",
+      "primary_pattern": "advocacy_monitoring"
+    }
+  ]
+}

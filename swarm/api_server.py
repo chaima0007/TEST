@@ -50,6 +50,15 @@ from intelligence.lead_qualification import (
 from intelligence.followup_scheduler import (
     FollowUpScheduler, ActionType, Priority as FUPriority,
 )
+from intelligence.workflow_orchestrator import (
+    WorkflowOrchestrator, ProspectSignals, DivisionTarget, WorkflowAction,
+)
+from intelligence.prospect_scorecard import (
+    ProspectScorecard, BANTDimension, BehavioralDimension,
+    TemporalDimension, MarketFitDimension, ScorecardTier,
+)
+from intelligence.prospect_enricher import ProspectEnricher
+from intelligence.contact_timing_optimizer import ContactTimingOptimizer
 from exporters.report_generator import ReportGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -103,6 +112,10 @@ _negotiation_manager = NegotiationManager()
 _invoice_manager = InvoiceManager()
 _qualification_engine = LeadQualificationEngine()
 _followup_scheduler = FollowUpScheduler()
+_workflow_orchestrator = WorkflowOrchestrator()
+_prospect_scorecard = ProspectScorecard()
+_prospect_enricher = ProspectEnricher()
+_contact_timing = ContactTimingOptimizer()
 
 
 # ── Pydantic schemas ──────────────────────────────────────────────────────────
@@ -1446,6 +1459,198 @@ def followup_remove(prospect_id: str):
 def followup_reset():
     _followup_scheduler.reset()
     return {"status": "reset"}
+
+
+# ── Workflow Orchestrator ─────────────────────────────────────────────────────
+
+@app.post("/workflow/decide", tags=["Workflow"])
+def workflow_decide(body: dict):
+    signals = ProspectSignals(**body)
+    decision = _workflow_orchestrator.decide(signals)
+    return decision.to_dict()
+
+
+@app.post("/workflow/batch", tags=["Workflow"])
+def workflow_batch(body: dict):
+    signals_list = [ProspectSignals(**s) for s in body.get("signals", [])]
+    decisions = _workflow_orchestrator.decide_batch(signals_list)
+    return {"decisions": [d.to_dict() for d in decisions]}
+
+
+@app.get("/workflow/queue", tags=["Workflow"])
+def workflow_queue(limit: Optional[int] = None):
+    return {"queue": [d.to_dict() for d in _workflow_orchestrator.get_queue(limit=limit)]}
+
+
+@app.get("/workflow/summary", tags=["Workflow"])
+def workflow_summary():
+    return _workflow_orchestrator.summary()
+
+
+@app.get("/workflow/{prospect_id}", tags=["Workflow"])
+def workflow_get(prospect_id: str):
+    d = _workflow_orchestrator.get(prospect_id)
+    if not d:
+        raise HTTPException(status_code=404, detail="No decision for prospect")
+    return d.to_dict()
+
+
+@app.delete("/workflow/reset", tags=["Workflow"])
+def workflow_reset():
+    _workflow_orchestrator.reset()
+    return {"status": "reset"}
+
+
+# ── Prospect Scorecard ────────────────────────────────────────────────────────
+
+@app.post("/scorecard", tags=["Scorecard"])
+def scorecard_score(body: dict):
+    bant = BANTDimension(**body["bant"]) if "bant" in body else None
+    behav = BehavioralDimension(**body["behavioral"]) if "behavioral" in body else None
+    temp = TemporalDimension(**body["temporal"]) if "temporal" in body else None
+    fit = MarketFitDimension(**body["market_fit"]) if "market_fit" in body else None
+    card = _prospect_scorecard.score(
+        prospect_id=body["prospect_id"],
+        company_name=body.get("company_name", ""),
+        sector=body.get("sector", ""),
+        bant=bant, behavioral=behav, temporal=temp, market_fit=fit,
+        notes=body.get("notes", ""),
+    )
+    return card.to_dict()
+
+
+@app.get("/scorecard", tags=["Scorecard"])
+def scorecard_list(limit: Optional[int] = None):
+    return {"scorecards": [c.to_dict() for c in _prospect_scorecard.all_scorecards(limit=limit)]}
+
+
+@app.get("/scorecard/summary", tags=["Scorecard"])
+def scorecard_summary():
+    return _prospect_scorecard.summary()
+
+
+@app.get("/scorecard/top", tags=["Scorecard"])
+def scorecard_top(n: int = 10):
+    return {"scorecards": [c.to_dict() for c in _prospect_scorecard.top_n(n)]}
+
+
+@app.get("/scorecard/{prospect_id}", tags=["Scorecard"])
+def scorecard_get(prospect_id: str):
+    c = _prospect_scorecard.get(prospect_id)
+    if not c:
+        raise HTTPException(status_code=404, detail="Scorecard not found")
+    return c.to_dict()
+
+
+@app.delete("/scorecard/reset", tags=["Scorecard"])
+def scorecard_reset():
+    _prospect_scorecard.reset()
+    return {"status": "reset"}
+
+
+# ── Prospect Enricher ─────────────────────────────────────────────────────────
+
+class EnrichReq(BaseModel):
+    company_id:     str
+    name:           str
+    sector:         str
+    website:        str = ""
+    contact_email:  str = ""
+    pagespeed_score: int = 50
+    load_time_ms:   int = 3000
+
+
+class EnrichBatchReq(BaseModel):
+    prospects:  List[Dict[str, Any]]
+    min_score:  Optional[int] = None
+
+
+@app.post("/enrich", tags=["Enricher"])
+def enrich_prospect(req: EnrichReq):
+    enriched = _prospect_enricher.enrich(req.dict())
+    return enriched.to_dict()
+
+
+@app.post("/enrich/batch", tags=["Enricher"])
+def enrich_batch(req: EnrichBatchReq):
+    if req.min_score is not None:
+        results = _prospect_enricher.filter_priority(req.prospects, min_score=req.min_score)
+    else:
+        results = _prospect_enricher.enrich_batch(req.prospects)
+    return {"count": len(results), "prospects": [e.to_dict() for e in results]}
+
+
+@app.post("/enrich/tier-a", tags=["Enricher"])
+def enrich_tier_a(req: EnrichBatchReq):
+    results = _prospect_enricher.get_tier_a(req.prospects)
+    return {"count": len(results), "prospects": [e.to_dict() for e in results]}
+
+
+# ── Contact Timing Optimizer ──────────────────────────────────────────────────
+
+@app.get("/timing/best", tags=["Timing"])
+def timing_best(sector: str = "PME"):
+    return _contact_timing.best_window(sector).to_dict()
+
+
+@app.get("/timing/top", tags=["Timing"])
+def timing_top(sector: str = "PME", n: int = 3):
+    return [w.to_dict() for w in _contact_timing.top_windows(sector, n=n)]
+
+
+@app.get("/timing/schedule", tags=["Timing"])
+def timing_schedule(sector: str = "PME"):
+    return _contact_timing.weekly_schedule(sector)
+
+
+@app.get("/timing/summary", tags=["Timing"])
+def timing_summary():
+    return {"windows": _contact_timing.sector_summary()}
+
+
+# ── Lead Scorer ───────────────────────────────────────────────────────────────
+
+class LeadScoreReq(BaseModel):
+    company_id:     str
+    pagespeed_score: int
+    load_time_ms:   int
+    icp_fit:        float
+    sector:         str
+    company_size:   str = "PME"
+    open_rate:      float = 0.0
+    reply_signal:   float = 0.0
+
+
+class LeadBatchReq(BaseModel):
+    leads:     List[Dict[str, Any]]
+    min_grade: str = "B"
+
+
+@app.post("/leads/score", tags=["Leads"])
+def lead_score(req: LeadScoreReq):
+    result = _lead_scorer.score(
+        req.company_id, req.pagespeed_score, req.load_time_ms,
+        req.icp_fit, req.sector, req.company_size,
+        req.open_rate, req.reply_signal,
+    )
+    return result.to_dict()
+
+
+@app.post("/leads/batch", tags=["Leads"])
+def lead_batch(req: LeadBatchReq):
+    scored = _lead_scorer.filter_actionable(req.leads, min_grade=req.min_grade)
+    return {"count": len(scored), "leads": [s.to_dict() for s in scored]}
+
+
+@app.post("/leads/top", tags=["Leads"])
+def lead_top_n(req: LeadBatchReq, n: int = 10):
+    top = _lead_scorer.top_n(req.leads, n=n)
+    return [s.to_dict() for s in top]
+
+
+@app.get("/leads/weights", tags=["Leads"])
+def lead_weights():
+    return {"weights": _lead_scorer.WEIGHTS, "grade_thresholds": _lead_scorer.GRADE_THRESHOLDS}
 
 
 if __name__ == "__main__":

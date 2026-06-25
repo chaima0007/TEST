@@ -1,0 +1,70 @@
+{
+  "id": "carrefour",
+  "slug": "carrefour",
+  "name": "Carrefour SA",
+  "country": "France",
+  "city": "Massy",
+  "sector": "Retail",
+  "size": {
+    "revenue_bn_eur": 90,
+    "employees": 320000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "20.4 Low Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Directeur RSE Groupe / Directeur des Achats",
+    "team": "Direction RSE, Achats Responsables, Qualité & Contrôle des Risques",
+    "location": "Massy (siège), Paris (direction générale), Bruxelles (affaires réglementaires)",
+    "process": "Plan de vigilance annuel publié, comité RSE trimestriel, processus de qualification fournisseurs avec critères sociaux et environnementaux"
+  },
+  "pain_points": [
+    "Filières alimentaires à risque : viande bovine (Brésil/déforestation), huile de palme (Indonésie), crevettes (Asie du Sud-Est/travail forcé), cacao (Côte d'Ivoire)",
+    "Marques propres Carrefour : 15 000+ références avec responsabilité directe de l'enseigne sur les conditions de production — exposition DDH maximale",
+    "Conformité loi de vigilance : plan 2023 jugé insuffisant sur la cartographie Tier 2 et 3 selon Sherpa et CCFD-Terre Solidaire",
+    "Conditions de travail des employés de caisse et logistique en France et en Europe : pressions syndicales sur les horaires atypiques et les cadences",
+    "Fournisseurs locaux dans les pays d'opération (Brésil, Argentine, Pologne, Roumanie, Espagne) : disparités des standards sociaux nationaux vs. exigences groupe",
+    "Réglementation EUDR : filières cacao, café, bois, caoutchouc dans les produits distributeur à cartographier géographiquement avant 2025"
+  ],
+  "observed_failures": [
+    "Plan de vigilance 2023 : évaluation Sherpa/CCFD — lacunes dans la cartographie des risques fournisseurs Tier 2, absence de mécanisme de réclamation accessible aux travailleurs",
+    "Fournisseur viande Brésil 2022 : rapport Global Witness liant des fournisseurs indirects Carrefour à de la déforestation illégale en Amazonie",
+    "Enquête Collectif Éthique sur Étiquette 2021 : conditions de travail dans une usine textile Bangladesh produisant pour les marques propres Carrefour — heures et salaires non conformes"
+  ],
+  "signals_of_risk": [
+    "Exposition massive aux filières agricoles à risque via les marques propres (MDD) qui représentent 30%+ du chiffre d'affaires",
+    "Présence dans des marchés émergents (Brésil, Pologne, Espagne, Roumanie) avec des standards sociaux hétérogènes",
+    "Pression réglementaire EUDR et CSDDD simultanée sur les filières alimentaires complexes"
+  ],
+  "signals_of_trust": [
+    "Engagement Carrefour Act for Food : 2,4 Mrd EUR investis dans la transition alimentaire durable d'ici 2025",
+    "Partenariat avec WWF France sur les filières durables (pêche, forêts)",
+    "Programme Carrefour Agir : sourcing local prioritaire avec critères sociaux pour les agriculteurs français",
+    "Rapport RSE intégré publié annuellement avec vérification externe (EY)"
+  ],
+  "recommended_actions": [
+    "Proposer un outil de cartographie DDH spécialisé pour les marques propres (MDD) avec focus filières alimentaires à risque",
+    "Démontrer la conformité EUDR pour les filières cacao, café et huile de palme avec géolocalisation des parcelles fournisseurs",
+    "Présenter un module de mécanisme de réclamation accessible aux travailleurs de la supply chain (multilingue, confidentiel)",
+    "Organiser une session avec la Direction RSE autour de l'amélioration du plan de vigilance face aux critiques Sherpa/CCFD"
+  ],
+  "local_tone": "Ton direct et pragmatique, typique de la grande distribution française. Valoriser les gains d'efficacité et la réduction des risques réglementaires. Les références à la loi de vigilance française et aux attentes des ONG partenaires sont des leviers d'engagement. Éviter un discours trop théorique.",
+  "cultural_notes": "Carrefour est une entreprise française historique avec une culture de la négociation commerciale dure. Les équipes RSE travaillent souvent avec des contraintes budgétaires serrées. Valoriser le ROI des investissements DDH et montrer comment la conformité peut devenir un avantage compétitif dans les appels d'offres BtoB.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.carrefour.com/sites/default/files/2024-04/carrefour-plan-de-vigilance-2023.pdf",
+    "https://www.asso-sherpa.org/carrefour-plan-vigilance-evaluation",
+    "https://www.globalwitness.org/en/campaigns/forests/carrefour-amazon-deforestation/"
+  ]
+}

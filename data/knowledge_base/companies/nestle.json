@@ -1,0 +1,70 @@
+{
+  "id": "nestle",
+  "slug": "nestle",
+  "name": "Nestlé SA",
+  "country": "Switzerland",
+  "city": "Vevey",
+  "sector": "Agrifood",
+  "size": {
+    "revenue_bn_eur": 93,
+    "employees": 275000,
+    "index": "SMI"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": true,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB+",
+      "sustainalytics": "25.1 Medium Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / VP Responsible Sourcing",
+    "team": "Nestlé for Healthier Kids, Responsible Sourcing & Supply Chain Excellence teams",
+    "location": "Vevey (siège global), Lausanne (opérations), Bruxelles (affaires réglementaires UE)",
+    "process": "Comité de durabilité intégré au conseil d'administration, revue annuelle des fournisseurs stratégiques avec scoring DDH, processus d'escalade pour incidents critiques"
+  },
+  "pain_points": [
+    "Travail des enfants dans les filières cacao (Côte d'Ivoire, Ghana) : audit CLMRS couvrant seulement 50% des ménages agriculteurs fournisseurs",
+    "Swiss HRDD (initiative contre les multinationales irresponsables) : pression ONG malgré rejet par référendum, obligations de diligence raisonnable applicables",
+    "Conditions de travail des travailleurs saisonniers dans l'approvisionnement café (Brésil, Colombie, Vietnam) : risques travail forcé et salaires insuffisants",
+    "Chaîne huile de palme : déforestation liée aux fournisseurs malaisiens et indonésiens avec implications droits des peuples autochtones",
+    "Gestion de l'eau dans les zones de stress hydrique : droits à l'eau des communautés locales en Inde, Pakistan, Éthiopie",
+    "Conformité CSRD pour 5 000+ fournisseurs agricoles directs dans 80+ pays avec systèmes de données fragmentés"
+  ],
+  "observed_failures": [
+    "Rapport Mighty Earth 2022 : fournisseurs cacao Nestlé liés à déforestation illégale en Côte d'Ivoire — 10 000 hectares identifiés",
+    "Enquête Bloomberg 2021 sur le cacao : travail des enfants documenté chez des fournisseurs de 3ème rang malgré le programme CLMRS",
+    "Controverse eau Pakistan (Bhimber) : exploitation des nappes phréatiques soulevant des questions sur les droits à l'eau des agriculteurs locaux, rapport SOMO 2022"
+  ],
+  "signals_of_risk": [
+    "Dépendance à des filières agricoles structurellement exposées (cacao, café, huile de palme) dans des pays à gouvernance faible",
+    "Pression croissante des consommateurs et investisseurs ESG sur la traçabilité alimentaire end-to-end",
+    "Swiss HRDD potential : bien que le référendum ait échoué, la pression parlementaire pour une loi alternative reste forte"
+  ],
+  "signals_of_trust": [
+    "Programme Nescafé Plan 2030 : 200M CHF investis dans la formation de 500 000 agriculteurs aux pratiques durables",
+    "Membre de l'Initiative Cacao et Forêts (ICF) avec engagements zéro déforestation vérifiables",
+    "Rapport sur les droits de l'homme publié annuellement depuis 2018 selon les UNGP",
+    "Certification Rainforest Alliance sur 90%+ du café sourcing direct"
+  ],
+  "recommended_actions": [
+    "Présenter une solution de traçabilité géospatiale pour la filière cacao permettant d'identifier les parcelles à risque déforestation et travail des enfants en temps réel",
+    "Proposer un module d'évaluation DDH fournisseurs agricoles adapté aux contextes de faible littératie numérique (mobile-first, local language support)",
+    "Démontrer comment notre plateforme s'aligne avec les exigences Swiss HRDD et anticipe les obligations CSDDD 2026",
+    "Organiser une session de travail avec l'équipe Responsible Sourcing autour du gap analysis CLMRS vs. CSDDD"
+  ],
+  "local_tone": "Ton professionnel suisse : discret, précis, orienté solutions concrètes. Éviter le sensationnalisme. Valoriser la longévité des partenariats et la stabilité. Les références aux normes internationales (ISO, GRI, UNGP) sont appréciées. La neutralité et l'équilibre dans la présentation des risques sont des marqueurs de crédibilité.",
+  "cultural_notes": "Nestlé est une entreprise globale avec une culture suisse de discrétion et de pragmatisme. Les équipes sont très internationales mais le siège reste ancré dans les valeurs suisses : consensus, qualité, long terme. Éviter les approches agressives ou les comparaisons directes avec des concurrents. La confiance se construit progressivement.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.nestle.com/sites/default/files/2024-03/nestle-human-rights-report-2023.pdf",
+    "https://www.mightyearth.org/nestle-chocolate-deforestation/",
+    "https://www.business-humanrights.org/en/companies/nestle/"
+  ]
+}

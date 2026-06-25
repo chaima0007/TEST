@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { DIVISIONS } from "@/lib/swarm-data";
 import type { SwarmAgent, Division } from "@/lib/swarm-data";
 
@@ -140,35 +140,31 @@ export default function AgentsPage() {
   const [divFilter, setDivFilter] = useState<number | null>(null);
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
 
-  const allAgents = useMemo(() => DIVISIONS.flatMap((d) => d.agents), []);
+  const allAgents = DIVISIONS.flatMap((d) => d.agents);
 
-  const filtered = useMemo(() => {
-    return allAgents.filter((a) => {
-      if (divFilter !== null && a.division !== divFilter) return false;
-      if (statusFilter !== null && a.status !== statusFilter) return false;
-      if (search) {
-        const q = search.toLowerCase();
-        return a.id.includes(q) || a.role.toLowerCase().includes(q);
-      }
-      return true;
-    });
-  }, [allAgents, divFilter, statusFilter, search]);
+  const filtered = allAgents.filter((a) => {
+    if (divFilter !== null && a.division !== divFilter) return false;
+    if (statusFilter !== null && a.status !== statusFilter) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      return a.id.includes(q) || a.role.toLowerCase().includes(q);
+    }
+    return true;
+  });
 
-  const stats = useMemo(() => ({
+  const stats = {
     total: allAgents.length,
     active: allAgents.filter((a) => a.status === "active").length,
     idle: allAgents.filter((a) => a.status === "idle").length,
     error: allAgents.filter((a) => a.status === "error").length,
     managers: allAgents.filter((a) => a.isManager).length,
     totalTasks: allAgents.reduce((s, a) => s + a.tasksCompleted, 0),
-  }), [allAgents]);
+  };
 
-  const groupedByDivision = useMemo(() => {
-    return DIVISIONS.map((div) => ({
-      div,
-      agents: filtered.filter((a) => a.division === div.id),
-    })).filter((g) => g.agents.length > 0);
-  }, [filtered]);
+  const groupedByDivision = DIVISIONS.map((div) => ({
+    div,
+    agents: filtered.filter((a) => a.division === div.id),
+  })).filter((g) => g.agents.length > 0);
 
   return (
     <div className="min-h-screen bg-slate-50">

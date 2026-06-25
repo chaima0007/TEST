@@ -851,40 +851,10 @@ ALL_AGENTS: List[AgentConfig] = (
 )
 
 DIVISION_METADATA = {
-    1: {
-        "name": "Détection & Scouting",
-        "color": "#3B82F6",
-        "emoji": "🔍",
-        "description": "Identifie et qualifie les prospects B2B par secteur géographique et industrie.",
-    },
-    2: {
-        "name": "Rédaction & Outreach",
-        "color": "#8B5CF6",
-        "emoji": "✍️",
-        "description": "Rédige les messages de prospection personnalisés et gère les séquences d'outreach.",
-    },
-    3: {
-        "name": "Relation & Négociation",
-        "color": "#F59E0B",
-        "emoji": "🤝",
-        "description": "Gère la relation prospect, traite les objections et conduit les négociations commerciales.",
-    },
-    4: {
-        "name": "Production & Design",
-        "color": "#10B981",
-        "emoji": "⚙️",
-        "description": "Produit les livrables clients : sites, contenus, visuels et outils digitaux.",
-    },
-    5: {
-        "name": "Finance & Conformité",
-        "color": "#EF4444",
-        "emoji": "🛡️",
-        "description": "Gère la facturation, les paiements, la comptabilité et la conformité réglementaire.",
-    },
-    6: {
-        "name": "Documentation & Branding",
-        "color": "#EC4899",
-        "emoji": "✨",
-        "description": "Crée et maintient la documentation, les assets de marque et les supports de communication.",
-    },
+    1: {"name": "Détection & Scouting",    "color": "#3B82F6", "emoji": "🔍", "description": "Détecte automatiquement les artisans et PME cibles via scraping web, Google Maps et réseaux sociaux."},
+    2: {"name": "Rédaction & Outreach",    "color": "#8B5CF6", "emoji": "✍️", "description": "Rédige des emails ultra-personnalisés, gère les séquences multi-touches et optimise les campagnes outreach."},
+    3: {"name": "Relation & Négociation",  "color": "#F59E0B", "emoji": "🤝", "description": "Analyse les réponses, gère les objections et conduit les négociations jusqu'à la signature du contrat."},
+    4: {"name": "Production & Design",     "color": "#10B981", "emoji": "⚙️", "description": "Crée les livrables clients : sites web, visuels, audits SEO et tous les assets de production."},
+    5: {"name": "Finance & Conformité",    "color": "#EF4444", "emoji": "🛡️", "description": "Génère les devis, factures, gère les paiements Stripe et assure la conformité juridique et comptable."},
+    6: {"name": "Documentation & Branding","color": "#EC4899", "emoji": "✨", "description": "Maintient la mémoire des prospects, produit les rapports et renforce le personal branding de l'agence."},
 }

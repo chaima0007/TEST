@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CaelumSwarm™ — Demo Live</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#0a1628;--blue:#1e3a5f;--accent:#3b82f6;--accent2:#06b6d4;
+    --critique:#ef4444;--eleve:#f97316;--modere:#eab308;--faible:#22c55e;
+    --text:#f8fafc;--muted:#94a3b8;--card:#0f2340;--border:#1e3a5f;
+  }
+  body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:radial-gradient(ellipse at 20% 50%,#1e3a5f55 0%,transparent 60%),
+               radial-gradient(ellipse at 80% 20%,#06b6d420 0%,transparent 50%),var(--navy);
+    padding:40px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(0deg,transparent,transparent 50px,#ffffff04 50px,#ffffff04 51px),
+               repeating-linear-gradient(90deg,transparent,transparent 50px,#ffffff04 50px,#ffffff04 51px);}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#06b6d415;border:1px solid #06b6d440;
+    color:var(--accent2);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:600;
+    letter-spacing:.05em;text-transform:uppercase;margin-bottom:24px;}
+  .badge-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
+  h1{font-size:clamp(36px,6vw,72px);font-weight:900;line-height:1.05;margin-bottom:16px;
+    background:linear-gradient(135deg,#f8fafc 0%,#94a3b8 50%,#3b82f6 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .hero-sub{font-size:clamp(16px,2vw,22px);color:var(--muted);max-width:600px;line-height:1.6;margin-bottom:40px;}
+  .hero-stats{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;margin-bottom:48px;}
+  .stat{text-align:center;}
+  .stat-num{font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#fff;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;border:none;cursor:pointer;
+    text-decoration:none;transition:transform .2s,box-shadow .2s;}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px #3b82f640;}
+  .scroll-hint{position:absolute;bottom:32px;color:var(--muted);font-size:12px;animation:bounce 2s infinite;}
+  @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+  /* SECTION */
+  section{padding:80px 40px;max-width:1200px;margin:0 auto;}
+  .section-label{font-size:12px;font-weight:700;color:var(--accent2);text-transform:uppercase;
+    letter-spacing:.1em;margin-bottom:12px;}
+  h2{font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2;}
+  .section-desc{color:var(--muted);font-size:16px;max-width:560px;line-height:1.7;margin-bottom:48px;}
+
+  /* DASHBOARD DEMO */
+  .dashboard-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;
+    overflow:hidden;box-shadow:0 32px 80px #00000060;}
+  .dash-header{background:#091525;padding:16px 24px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);}
+  .dash-dots{display:flex;gap:6px;}
+  .dash-dot{width:10px;height:10px;border-radius:50%;}
+  .dash-title{font-size:13px;color:var(--muted);margin-left:8px;flex:1;}
+  .dash-live{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--accent2);font-weight:600;}
+  .dash-live-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:pulse 1.5s infinite;}
+  .dash-body{padding:24px;}
+  .dash-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px;}
+  .metric{background:#091525;border:1px solid var(--border);border-radius:10px;padding:16px;}
+  .metric-label{font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
+  .metric-val{font-size:26px;font-weight:800;}
+  .metric-val.blue{color:var(--accent);}
+  .metric-val.cyan{color:var(--accent2);}
+  .entity-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+  .entity-card{background:#091525;border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;
+    transition:border-color .2s,transform .2s;}
+  .entity-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .entity-name{font-size:12px;font-weight:600;margin-bottom:12px;line-height:1.4;flex:1;}
+  .entity-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:8px;}
+  .risk-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+  .risk-critique{background:#fef2f2;color:#dc2626;}
+  .risk-eleve{background:#fff7ed;color:#ea580c;}
+  .risk-modere{background:#fefce8;color:#ca8a04;}
+  .risk-faible{background:#f0fdf4;color:#16a34a;}
+  .gauge-wrap{display:flex;align-items:center;justify-content:center;margin:8px 0;}
+  .entity-index{font-size:11px;color:var(--muted);margin-top:8px;}
+
+  /* FEATURES */
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+  .feature{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;
+    transition:border-color .3s;}
+  .feature:hover{border-color:var(--accent);}
+  .feature-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--accent)20,var(--accent2)20);
+    border:1px solid var(--accent)40;border-radius:12px;display:flex;align-items:center;
+    justify-content:center;margin-bottom:16px;font-size:22px;}
+  .feature h3{font-size:16px;font-weight:700;margin-bottom:8px;}
+  .feature p{font-size:14px;color:var(--muted);line-height:1.6;}
+
+  /* CERTS */
+  .certs-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;}
+  .cert{background:var(--card);border:1px solid var(--border);border-radius:8px;
+    padding:8px 16px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;}
+  .cert-ok{border-color:#22c55e40;color:#22c55e;}
+  .cert-prog{border-color:#eab30840;color:#eab308;}
+  .cert-no{border-color:#ef444440;color:#ef4444;}
+
+  /* PRICING */
+  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+  .price-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;}
+  .price-card.featured{border-color:var(--accent);background:linear-gradient(135deg,#1e3a5f,var(--card));}
+  .price-card h3{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--muted);}
+  .price-amount{font-size:32px;font-weight:900;margin:12px 0 4px;color:var(--text);}
+  .price-period{font-size:13px;color:var(--muted);margin-bottom:20px;}
+  .price-list{list-style:none;}
+  .price-list li{font-size:13px;color:var(--muted);padding:5px 0;display:flex;align-items:center;gap:8px;}
+  .price-list li::before{content:'✓';color:var(--accent2);font-weight:700;flex-shrink:0;}
+
+  /* IP */
+  .ip-box{background:linear-gradient(135deg,#0a1628,#1e3a5f);border:1px solid var(--accent)40;
+    border-radius:16px;padding:40px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;}
+  .ip-shield{font-size:64px;}
+  .ip-info h3{font-size:24px;font-weight:800;margin-bottom:12px;}
+  .ip-info p{color:var(--muted);font-size:14px;line-height:1.7;}
+  .ip-ref{display:inline-block;margin-top:16px;background:#3b82f620;border:1px solid #3b82f640;
+    color:var(--accent2);padding:6px 16px;border-radius:6px;font-size:12px;font-weight:700;font-family:monospace;}
+
+  /* CONTACT */
+  .contact-section{text-align:center;padding:80px 40px;
+    background:radial-gradient(ellipse at 50% 0%,#1e3a5f40,transparent 70%);}
+  .contact-section h2{margin-bottom:16px;}
+  .contact-email{font-size:20px;font-weight:700;color:var(--accent2);margin:24px 0;
+    text-decoration:none;display:inline-block;}
+  .contact-email:hover{text-decoration:underline;}
+  .boip-badge{display:inline-flex;align-items:center;gap:8px;background:#22c55e10;
+    border:1px solid #22c55e40;color:#22c55e;padding:8px 20px;border-radius:8px;
+    font-size:13px;font-weight:600;margin-top:16px;}
+
+  /* FOOTER */
+  footer{text-align:center;padding:32px 40px;border-top:1px solid var(--border);
+    color:var(--muted);font-size:12px;}
+
+  /* ANIMATIONS */
+  .fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:none;}
+
+  /* Counter animation */
+  .counter{display:inline-block;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge"><span class="badge-dot"></span>LIVE PLATFORM DEMO — EU CSDDD 2024/1760</div>
+  <h1>CaelumSwarm™</h1>
+  <p class="hero-sub">La première plateforme IA multi-agents au monde dédiée à la conformité CSDDD 2024/1760 — 340+ moteurs d'intelligence sectorielle en temps réel</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num counter" data-target="340">0</div><div class="stat-label">Moteurs IA Actifs</div></div>
+    <div class="stat"><div class="stat-num counter" data-target="400">0</div><div class="stat-label">Secteurs Couverts</div></div>
+    <div class="stat"><div class="stat-num counter" data-target="3200">0</div><div class="stat-label">Entités Analysées</div></div>
+    <div class="stat"><div class="stat-num">80%</div><div class="stat-label">Réduction Coûts Audit</div></div>
+  </div>
+  <a href="#dashboard" class="cta">Voir la démo en direct ↓</a>
+  <div class="scroll-hint">↓ Faites défiler pour explorer</div>
+</div>
+
+<!-- LIVE DASHBOARD -->
+<div style="padding:0 40px 80px;max-width:1200px;margin:0 auto;" id="dashboard">
+  <div class="section-label">Tableau de bord en direct</div>
+  <h2 class="fade-in">Intelligence Advertising — <span style="color:var(--accent2)">Geo-Targeting</span></h2>
+  <p class="section-desc fade-in">Visualisation temps réel des risques CSDDD sur la chaîne d'approvisionnement publicitaire mondiale</p>
+  <div class="dashboard-wrap fade-in">
+    <div class="dash-header">
+      <div class="dash-dots">
+        <div class="dash-dot" style="background:#ef4444"></div>
+        <div class="dash-dot" style="background:#f97316"></div>
+        <div class="dash-dot" style="background:#22c55e"></div>
+      </div>
+      <div class="dash-title">CaelumSwarm™ / Advertising Intelligence / Geo-Targeting</div>
+      <div class="dash-live"><div class="dash-live-dot"></div>LIVE</div>
+    </div>
+    <div class="dash-body">
+      <div class="dash-metrics">
+        <div class="metric"><div class="metric-label">Score Moyen Global</div><div class="metric-val blue">61.03</div></div>
+        <div class="metric"><div class="metric-label">Niveau Critique</div><div class="metric-val" style="color:var(--critique)">4</div></div>
+        <div class="metric"><div class="metric-label">Niveau Élevé</div><div class="metric-val" style="color:var(--eleve)">2</div></div>
+        <div class="metric"><div class="metric-label">Modéré / Faible</div><div class="metric-val cyan">1 / 1</div></div>
+      </div>
+      <div class="entity-grid" id="entityGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="fade-in">
+  <div class="section-label">Architecture Swarm</div>
+  <h2>Comment fonctionne CaelumSwarm™</h2>
+  <p class="section-desc">Un essaim de 340+ moteurs IA indépendants travaillant en parallèle pour couvrir l'intégralité des exigences CSDDD</p>
+  <div class="features-grid">
+    <div class="feature">
+      <div class="feature-icon">🧠</div>
+      <h3>Moteurs IA Spécialisés</h3>
+      <p>340+ engines Python indépendants, chacun expert d'un domaine sectoriel. Analyse 8 entités avec 4 sous-indicateurs pondérés.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>Scoring Temps Réel</h3>
+      <p>Calcul composite automatique toutes les 30 secondes. Score pondéré : s1×30% + s2×25% + s3×25% + s4×20%.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <h3>API Scellée</h3>
+      <p>Toutes les réponses API portent notre Digital Seal™ propriétaire. Guard SWARM_API_URL, revalidation 30s, fallback 502.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h3>4 Niveaux de Risque</h3>
+      <p>Classification automatique : Critique (≥60) · Élevé (≥40) · Modéré (≥20) · Faible (&lt;20). Distribution standard 4/2/1/1.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌍</div>
+      <h3>400+ Secteurs</h3>
+      <p>Advertising · Finance · Labour · Environment · Technology · Health · Agriculture · Mining · Textiles · Energy · Pharma · Media</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🚀</div>
+      <h3>Déploiement Express</h3>
+      <p>Nouveau domaine intégré en moins de 2 heures. Zéro infrastructure côté client. Conforme RGPD sur infrastructure EU.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="fade-in">
+  <div class="section-label">Conformité & Certifications</div>
+  <h2>Aligné sur les standards internationaux</h2>
+  <p class="section-desc">Chaque analyse CaelumSwarm™ évalue le statut de conformité aux 5 certifications clés CSDDD</p>
+  <div class="certs-row">
+    <div class="cert cert-ok">✓ ISO 26000</div>
+    <div class="cert cert-ok">✓ SA8000</div>
+    <div class="cert cert-ok">✓ Fair Trade</div>
+    <div class="cert cert-prog">⟳ CSDDD 2024/1760</div>
+    <div class="cert cert-prog">⟳ OIT C182</div>
+  </div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;">
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;font-weight:600;">EXEMPLE — Entité score 95/100 (Critique)</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#091525;border-radius:8px;">
+        <span style="font-size:13px;font-weight:600;">ISO 26000</span><span style="font-size:12px;padding:2px 10px;border-radius:4px;background:#dcfce7;color:#16a34a;font-weight:600;">certified</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#091525;border-radius:8px;">
+        <span style="font-size:13px;font-weight:600;">SA8000</span><span style="font-size:12px;padding:2px 10px;border-radius:4px;background:#dcfce7;color:#16a34a;font-weight:600;">certified</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#091525;border-radius:8px;">
+        <span style="font-size:13px;font-weight:600;">Fair Trade</span><span style="font-size:12px;padding:2px 10px;border-radius:4px;background:#dcfce7;color:#16a34a;font-weight:600;">certified</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#091525;border-radius:8px;">
+        <span style="font-size:13px;font-weight:600;">CSDDD 2024/1760</span><span style="font-size:12px;padding:2px 10px;border-radius:4px;background:#dcfce7;color:#16a34a;font-weight:600;">certified</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#091525;border-radius:8px;">
+        <span style="font-size:13px;font-weight:600;">OIT C182</span><span style="font-size:12px;padding:2px 10px;border-radius:4px;background:#dcfce7;color:#16a34a;font-weight:600;">certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="fade-in">
+  <div class="section-label">Services & Investissement</div>
+  <h2>Tarification transparente</h2>
+  <p class="section-desc">Des formules adaptées à chaque organisation — de la PME au cabinet de conseil international</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Développement Custom</h3>
+      <div class="price-amount">€120</div>
+      <div class="price-period">par heure</div>
+      <ul class="price-list">
+        <li>Moteurs IA sur mesure</li>
+        <li>Intégration API dédiée</li>
+        <li>Support technique prioritaire</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <h3>Accès Plateforme</h3>
+      <div class="price-amount">€2 500</div>
+      <div class="price-period">par mois — secteurs illimités</div>
+      <ul class="price-list">
+        <li>340+ moteurs IA inclus</li>
+        <li>Dashboards temps réel</li>
+        <li>Export PDF / CSV / API</li>
+        <li>Mise à jour toutes les 30s</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Audit CSDDD Complet</h3>
+      <div class="price-amount">€5 000</div>
+      <div class="price-period">par projet</div>
+      <ul class="price-list">
+        <li>Analyse full supply chain</li>
+        <li>Rapport de conformité</li>
+        <li>Plan de remédiation</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Accompagnement Annuel</h3>
+      <div class="price-amount">€12 000</div>
+      <div class="price-period">par an</div>
+      <ul class="price-list">
+        <li>Suivi conformité continu</li>
+        <li>Formation équipes</li>
+        <li>White-label disponible</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- IP -->
+<section class="fade-in">
+  <div class="section-label">Propriété Intellectuelle</div>
+  <h2>Protégée & Certifiée</h2>
+  <div class="ip-box">
+    <div class="ip-shield">🛡️</div>
+    <div class="ip-info">
+      <h3>CaelumSwarm™ — BOIP i-DEPOT</h3>
+      <p>Propriété intellectuelle déposée et protégée dans l'espace Benelux et Europe.<br>
+      Date de dépôt : <strong>22 juin 2026 à 19:04</strong> · Validité : jusqu'au <strong>22 juin 2031</strong></p>
+      <div class="ip-ref">Réf. paiement : 4009X0062X8234</div>
+      <div style="margin-top:12px;font-size:13px;color:var(--muted);">
+        Couverture : Belgium · Luxembourg · Netherlands · Europe<br>
+        © 2026 Caelum Partners SPRL — Tous droits réservés
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section fade-in">
+  <div class="section-label">Passez à l'action</div>
+  <h2>Prêt à vous mettre en conformité CSDDD ?</h2>
+  <p style="color:var(--muted);font-size:16px;max-width:480px;margin:0 auto 24px;line-height:1.7;">
+    Contactez Chaima Mhadbi, Fondatrice de Caelum Partners SPRL, pour une démonstration personnalisée.
+  </p>
+  <a href="mailto:chaima.caelumpartners@gmail.com" class="contact-email">chaima.caelumpartners@gmail.com</a>
+  <div style="margin-top:8px;color:var(--muted);font-size:14px;">Caelum Partners SPRL · Bruxelles, Belgique</div>
+  <div class="boip-badge">🛡️ BOIP i-DEPOT Protégé · 22 juin 2026 · Réf. 4009X0062X8234</div>
+</div>
+
+<footer>
+  © 2026 CaelumSwarm™ — Caelum Partners SPRL — Tous droits réservés ·
+  Propriété intellectuelle protégée BOIP i-DEPOT · chaima.caelumpartners@gmail.com
+</footer>
+
+<script>
+// === ENTITIES DATA ===
+const entities = [
+  {name:"Google Location Services",score:96.3,level:"critique",idx:9.63},
+  {name:"Meta Geofencing Ads",score:90.2,level:"critique",idx:9.02},
+  {name:"The Trade Desk Geo",score:82.5,level:"critique",idx:8.25},
+  {name:"Amazon Location Ads",score:77.8,level:"critique",idx:7.78},
+  {name:"Foursquare Targeting",score:60.1,level:"critique",idx:6.01},
+  {name:"GroundTruth Platform",score:50.4,level:"élevé",idx:5.04},
+  {name:"Blis Media Geo",score:31.2,level:"modéré",idx:3.12},
+  {name:"Unacast Targeting",score:12.5,level:"faible",idx:1.25},
+];
+
+const COLOR = "#0f766e";
+
+function createGauge(value, color) {
+  const r=36,cx=44,cy=44,sw=8;
+  const circ=2*Math.PI*r;
+  const offset=circ-(value/100)*circ;
+  return `<svg width="88" height="88" viewBox="0 0 88 88">
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#1e3a5f" stroke-width="${sw}"/>
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="${sw}"
+      stroke-dasharray="${circ}" stroke-dashoffset="${circ}"
+      stroke-linecap="round" transform="rotate(-90 44 44)"
+      class="gauge-arc" data-offset="${offset}"/>
+    <text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central"
+      font-size="16" font-weight="bold" fill="${color}">${Math.round(value)}</text>
+  </svg>`;
+}
+
+function getRiskClass(level) {
+  if(level==="critique") return "risk-critique";
+  if(level==="élevé") return "risk-eleve";
+  if(level==="modéré") return "risk-modere";
+  return "risk-faible";
+}
+
+// Render entities
+const grid = document.getElementById('entityGrid');
+entities.forEach(e => {
+  const card = document.createElement('div');
+  card.className = 'entity-card';
+  card.innerHTML = `
+    <div class="entity-top">
+      <span class="entity-name">${e.name}</span>
+      <span class="risk-badge ${getRiskClass(e.level)}">${e.level}</span>
+    </div>
+    <div class="gauge-wrap">${createGauge(e.score, COLOR)}</div>
+    <div class="entity-index">Index geo: <b>${e.idx}</b></div>
+  `;
+  grid.appendChild(card);
+});
+
+// Animate gauges
+setTimeout(() => {
+  document.querySelectorAll('.gauge-arc').forEach(arc => {
+    const target = parseFloat(arc.dataset.offset);
+    const circ = 2*Math.PI*36;
+    arc.style.transition = 'stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)';
+    arc.style.strokeDashoffset = target;
+  });
+}, 400);
+
+// Counter animation
+function animateCounter(el, target, duration=1800) {
+  const start = Date.now();
+  const tick = () => {
+    const p = Math.min(1,(Date.now()-start)/duration);
+    const ease = 1-Math.pow(1-p,3);
+    el.textContent = Math.round(ease*target) + (target>999?'+':'+');
+    if(p<1) requestAnimationFrame(tick);
+    else el.textContent = target + '+';
+  };
+  tick();
+}
+
+// Intersection Observer for fade-in and counters
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      const counters = entry.target.querySelectorAll ? entry.target.querySelectorAll('.counter') : [];
+      counters.forEach(c => animateCounter(c, parseInt(c.dataset.target)));
+    }
+  });
+}, {threshold:.15});
+
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+// Animate hero counters on load
+window.addEventListener('load', () => {
+  document.querySelectorAll('.counter').forEach(c => {
+    animateCounter(c, parseInt(c.dataset.target));
+  });
+  // Animate hero section gauges after a short delay
+  setTimeout(() => {
+    document.querySelectorAll('.gauge-arc').forEach(arc => {
+      arc.style.strokeDashoffset = arc.dataset.offset;
+    });
+  }, 600);
+});
+
+// Smooth scroll
+document.querySelector('.cta').addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('dashboard').scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>

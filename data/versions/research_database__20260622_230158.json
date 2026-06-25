@@ -1,0 +1,1197 @@
+{
+  "db_key": "research_database",
+  "timestamp": "20260622_230158",
+  "reason": "scheduled_report",
+  "checksum": "24b18a429b376400",
+  "data": {
+    "version": "1.0.0",
+    "created": "2026-06-22T22:59:40.208978",
+    "total_entries": 54,
+    "agents": {
+      "CSDDDResearcher": {
+        "topics_researched": 7,
+        "avg_confidence": 0.9443,
+        "sources": [
+          "eu.eur-lex.europa.eu/CSDDD",
+          "ec.europa.eu/environment"
+        ]
+      },
+      "SecurityResearcher": {
+        "topics_researched": 7,
+        "avg_confidence": 0.949,
+        "sources": [
+          "owasp.org/www-project-top-ten",
+          "cve.mitre.org",
+          "nist.gov/cybersecurity"
+        ]
+      },
+      "NextJSResearcher": {
+        "topics_researched": 7,
+        "avg_confidence": 0.9101,
+        "sources": [
+          "nextjs.org/docs",
+          "react.dev/reference",
+          "vercel.com/docs"
+        ]
+      },
+      "PythonResearcher": {
+        "topics_researched": 7,
+        "avg_confidence": 0.9153,
+        "sources": [
+          "python.org/3/reference",
+          "docs.python.org/3/library"
+        ]
+      },
+      "GitResearcher": {
+        "topics_researched": 6,
+        "avg_confidence": 0.9265,
+        "sources": [
+          "git-scm.com/docs",
+          "docs.github.com/actions"
+        ]
+      },
+      "AnthropicResearcher": {
+        "topics_researched": 7,
+        "avg_confidence": 0.9234,
+        "sources": [
+          "docs.anthropic.com",
+          "github.com/anthropics"
+        ]
+      },
+      "QuantumResearcher": {
+        "topics_researched": 6,
+        "avg_confidence": 0.9167,
+        "sources": [
+          "qiskit.org/documentation",
+          "arxiv.org/cs.ET"
+        ]
+      },
+      "HumanRightsResearcher": {
+        "topics_researched": 7,
+        "avg_confidence": 0.9381,
+        "sources": [
+          "ohchr.org/en",
+          "ilo.org/international-labour-standards"
+        ]
+      }
+    },
+    "knowledge": {
+      "CSDDDResearcher::forced_labor": {
+        "topic": "forced_labor",
+        "researcher": "CSDDDResearcher",
+        "domain": "EU CSDDD Compliance",
+        "timestamp": "2026-06-22T22:59:40.209097",
+        "confidence": 0.9478,
+        "sources": [
+          "ec.europa.eu/environment",
+          "eu.eur-lex.europa.eu/CSDDD"
+        ],
+        "content": {
+          "definition": "Travail obtenu sous la menace ou la contrainte, violant la liberté individuelle",
+          "sources": [
+            "ILO Convention 29",
+            "EU CSDDD Art.3",
+            "UN Guiding Principles"
+          ],
+          "indicators": [
+            "confiscation documents",
+            "restriction mouvements",
+            "dette bondage",
+            "menaces"
+          ],
+          "caelum_checks": [
+            "supply_chain_audit",
+            "supplier_certification",
+            "worker_interviews"
+          ],
+          "risk_score": 95.0
+        },
+        "hash": "69865ce61a1cdbf2"
+      },
+      "CSDDDResearcher::child_labor": {
+        "topic": "child_labor",
+        "researcher": "CSDDDResearcher",
+        "domain": "EU CSDDD Compliance",
+        "timestamp": "2026-06-22T22:59:40.209159",
+        "confidence": 0.9681,
+        "sources": [
+          "eu.eur-lex.europa.eu/CSDDD",
+          "ec.europa.eu/environment"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: child_labor",
+          "sources": [
+            "eu.eur-lex.europa.eu/CSDDD",
+            "ec.europa.eu/environment"
+          ],
+          "status": "documented"
+        },
+        "hash": "3b7480373fbb897b"
+      },
+      "CSDDDResearcher::supply_chain_due_diligence": {
+        "topic": "supply_chain_due_diligence",
+        "researcher": "CSDDDResearcher",
+        "domain": "EU CSDDD Compliance",
+        "timestamp": "2026-06-22T22:59:40.209177",
+        "confidence": 0.9859,
+        "sources": [
+          "ec.europa.eu/environment",
+          "eu.eur-lex.europa.eu/CSDDD"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: supply_chain_due_diligence",
+          "sources": [
+            "ec.europa.eu/environment",
+            "eu.eur-lex.europa.eu/CSDDD"
+          ],
+          "status": "documented"
+        },
+        "hash": "07775e4c9130bf8e"
+      },
+      "CSDDDResearcher::environmental_compliance": {
+        "topic": "environmental_compliance",
+        "researcher": "CSDDDResearcher",
+        "domain": "EU CSDDD Compliance",
+        "timestamp": "2026-06-22T22:59:40.209193",
+        "confidence": 0.9133,
+        "sources": [
+          "ec.europa.eu/environment",
+          "eu.eur-lex.europa.eu/CSDDD"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: environmental_compliance",
+          "sources": [
+            "ec.europa.eu/environment",
+            "eu.eur-lex.europa.eu/CSDDD"
+          ],
+          "status": "documented"
+        },
+        "hash": "9ebd1b572cd25f07"
+      },
+      "CSDDDResearcher::human_rights_reporting": {
+        "topic": "human_rights_reporting",
+        "researcher": "CSDDDResearcher",
+        "domain": "EU CSDDD Compliance",
+        "timestamp": "2026-06-22T22:59:40.209205",
+        "confidence": 0.886,
+        "sources": [
+          "eu.eur-lex.europa.eu/CSDDD",
+          "ec.europa.eu/environment"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: human_rights_reporting",
+          "sources": [
+            "eu.eur-lex.europa.eu/CSDDD",
+            "ec.europa.eu/environment"
+          ],
+          "status": "documented"
+        },
+        "hash": "da91319878cb13bc"
+      },
+      "CSDDDResearcher::remediation_obligations": {
+        "topic": "remediation_obligations",
+        "researcher": "CSDDDResearcher",
+        "domain": "EU CSDDD Compliance",
+        "timestamp": "2026-06-22T22:59:40.209218",
+        "confidence": 0.953,
+        "sources": [
+          "ec.europa.eu/environment",
+          "eu.eur-lex.europa.eu/CSDDD"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: remediation_obligations",
+          "sources": [
+            "ec.europa.eu/environment",
+            "eu.eur-lex.europa.eu/CSDDD"
+          ],
+          "status": "documented"
+        },
+        "hash": "814145b21f5317a6"
+      },
+      "CSDDDResearcher::stakeholder_engagement": {
+        "topic": "stakeholder_engagement",
+        "researcher": "CSDDDResearcher",
+        "domain": "EU CSDDD Compliance",
+        "timestamp": "2026-06-22T22:59:40.209229",
+        "confidence": 0.9561,
+        "sources": [
+          "ec.europa.eu/environment",
+          "eu.eur-lex.europa.eu/CSDDD"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: stakeholder_engagement",
+          "sources": [
+            "ec.europa.eu/environment",
+            "eu.eur-lex.europa.eu/CSDDD"
+          ],
+          "status": "documented"
+        },
+        "hash": "a1cd0950268bb1e0"
+      },
+      "SecurityResearcher::injection_attacks": {
+        "topic": "injection_attacks",
+        "researcher": "SecurityResearcher",
+        "domain": "Security & OWASP",
+        "timestamp": "2026-06-22T22:59:40.209257",
+        "confidence": 0.9814,
+        "sources": [
+          "cve.mitre.org",
+          "nist.gov/cybersecurity"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: injection_attacks",
+          "sources": [
+            "cve.mitre.org",
+            "nist.gov/cybersecurity"
+          ],
+          "status": "documented"
+        },
+        "hash": "d40b54f80d569e5e"
+      },
+      "SecurityResearcher::broken_authentication": {
+        "topic": "broken_authentication",
+        "researcher": "SecurityResearcher",
+        "domain": "Security & OWASP",
+        "timestamp": "2026-06-22T22:59:40.209270",
+        "confidence": 0.9561,
+        "sources": [
+          "nist.gov/cybersecurity",
+          "owasp.org/www-project-top-ten"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: broken_authentication",
+          "sources": [
+            "nist.gov/cybersecurity",
+            "owasp.org/www-project-top-ten"
+          ],
+          "status": "documented"
+        },
+        "hash": "6d23c150aa17f0ab"
+      },
+      "SecurityResearcher::xss": {
+        "topic": "xss",
+        "researcher": "SecurityResearcher",
+        "domain": "Security & OWASP",
+        "timestamp": "2026-06-22T22:59:40.209283",
+        "confidence": 0.9701,
+        "sources": [
+          "nist.gov/cybersecurity",
+          "owasp.org/www-project-top-ten"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: xss",
+          "sources": [
+            "nist.gov/cybersecurity",
+            "owasp.org/www-project-top-ten"
+          ],
+          "status": "documented"
+        },
+        "hash": "bc0f9e9b68ed0b12"
+      },
+      "SecurityResearcher::api_security": {
+        "topic": "api_security",
+        "researcher": "SecurityResearcher",
+        "domain": "Security & OWASP",
+        "timestamp": "2026-06-22T22:59:40.209293",
+        "confidence": 0.9319,
+        "sources": [
+          "cve.mitre.org",
+          "owasp.org/www-project-top-ten"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: api_security",
+          "sources": [
+            "cve.mitre.org",
+            "owasp.org/www-project-top-ten"
+          ],
+          "status": "documented"
+        },
+        "hash": "d6571c3fe1b51627"
+      },
+      "SecurityResearcher::data_encryption": {
+        "topic": "data_encryption",
+        "researcher": "SecurityResearcher",
+        "domain": "Security & OWASP",
+        "timestamp": "2026-06-22T22:59:40.209304",
+        "confidence": 0.9697,
+        "sources": [
+          "cve.mitre.org",
+          "owasp.org/www-project-top-ten"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: data_encryption",
+          "sources": [
+            "cve.mitre.org",
+            "owasp.org/www-project-top-ten"
+          ],
+          "status": "documented"
+        },
+        "hash": "80c1701059129075"
+      },
+      "SecurityResearcher::access_control": {
+        "topic": "access_control",
+        "researcher": "SecurityResearcher",
+        "domain": "Security & OWASP",
+        "timestamp": "2026-06-22T22:59:40.209313",
+        "confidence": 0.9786,
+        "sources": [
+          "cve.mitre.org",
+          "nist.gov/cybersecurity"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: access_control",
+          "sources": [
+            "cve.mitre.org",
+            "nist.gov/cybersecurity"
+          ],
+          "status": "documented"
+        },
+        "hash": "b9058cc3ffdf8eb5"
+      },
+      "SecurityResearcher::supply_chain_security": {
+        "topic": "supply_chain_security",
+        "researcher": "SecurityResearcher",
+        "domain": "Security & OWASP",
+        "timestamp": "2026-06-22T22:59:40.209376",
+        "confidence": 0.8553,
+        "sources": [
+          "owasp.org/www-project-top-ten",
+          "nist.gov/cybersecurity"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: supply_chain_security",
+          "sources": [
+            "owasp.org/www-project-top-ten",
+            "nist.gov/cybersecurity"
+          ],
+          "status": "documented"
+        },
+        "hash": "9bf304cf37ba471f"
+      },
+      "NextJSResearcher::app_router": {
+        "topic": "app_router",
+        "researcher": "NextJSResearcher",
+        "domain": "Next.js & React",
+        "timestamp": "2026-06-22T22:59:40.209400",
+        "confidence": 0.9132,
+        "sources": [
+          "nextjs.org/docs",
+          "react.dev/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: app_router",
+          "sources": [
+            "nextjs.org/docs",
+            "react.dev/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "9cf5cf8f1e017bdd"
+      },
+      "NextJSResearcher::server_components": {
+        "topic": "server_components",
+        "researcher": "NextJSResearcher",
+        "domain": "Next.js & React",
+        "timestamp": "2026-06-22T22:59:40.209411",
+        "confidence": 0.8704,
+        "sources": [
+          "nextjs.org/docs",
+          "react.dev/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: server_components",
+          "sources": [
+            "nextjs.org/docs",
+            "react.dev/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "ac47a16e86567cc9"
+      },
+      "NextJSResearcher::client_components": {
+        "topic": "client_components",
+        "researcher": "NextJSResearcher",
+        "domain": "Next.js & React",
+        "timestamp": "2026-06-22T22:59:40.209421",
+        "confidence": 0.8942,
+        "sources": [
+          "nextjs.org/docs",
+          "vercel.com/docs"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: client_components",
+          "sources": [
+            "nextjs.org/docs",
+            "vercel.com/docs"
+          ],
+          "status": "documented"
+        },
+        "hash": "6f9f6a210ff16ff6"
+      },
+      "NextJSResearcher::api_routes": {
+        "topic": "api_routes",
+        "researcher": "NextJSResearcher",
+        "domain": "Next.js & React",
+        "timestamp": "2026-06-22T22:59:40.209429",
+        "confidence": 0.9756,
+        "sources": [
+          "react.dev/reference",
+          "vercel.com/docs"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: api_routes",
+          "sources": [
+            "react.dev/reference",
+            "vercel.com/docs"
+          ],
+          "status": "documented"
+        },
+        "hash": "d84caaa475d6d42d"
+      },
+      "NextJSResearcher::revalidation": {
+        "topic": "revalidation",
+        "researcher": "NextJSResearcher",
+        "domain": "Next.js & React",
+        "timestamp": "2026-06-22T22:59:40.209438",
+        "confidence": 0.8862,
+        "sources": [
+          "nextjs.org/docs",
+          "react.dev/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: revalidation",
+          "sources": [
+            "nextjs.org/docs",
+            "react.dev/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "d5b082718f923e45"
+      },
+      "NextJSResearcher::streaming": {
+        "topic": "streaming",
+        "researcher": "NextJSResearcher",
+        "domain": "Next.js & React",
+        "timestamp": "2026-06-22T22:59:40.209447",
+        "confidence": 0.9448,
+        "sources": [
+          "vercel.com/docs",
+          "react.dev/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: streaming",
+          "sources": [
+            "vercel.com/docs",
+            "react.dev/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "10cd12997534dfaf"
+      },
+      "NextJSResearcher::middleware": {
+        "topic": "middleware",
+        "researcher": "NextJSResearcher",
+        "domain": "Next.js & React",
+        "timestamp": "2026-06-22T22:59:40.209455",
+        "confidence": 0.8861,
+        "sources": [
+          "nextjs.org/docs",
+          "vercel.com/docs"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: middleware",
+          "sources": [
+            "nextjs.org/docs",
+            "vercel.com/docs"
+          ],
+          "status": "documented"
+        },
+        "hash": "04f0139553498e84"
+      },
+      "PythonResearcher::f_strings_312": {
+        "topic": "f_strings_312",
+        "researcher": "PythonResearcher",
+        "domain": "Python & Algorithms",
+        "timestamp": "2026-06-22T22:59:40.209473",
+        "confidence": 0.978,
+        "sources": [
+          "python.org/3/reference",
+          "docs.python.org/3/library"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: f_strings_312",
+          "sources": [
+            "python.org/3/reference",
+            "docs.python.org/3/library"
+          ],
+          "status": "documented"
+        },
+        "hash": "8c5f7f01916e34c1"
+      },
+      "PythonResearcher::type_hints": {
+        "topic": "type_hints",
+        "researcher": "PythonResearcher",
+        "domain": "Python & Algorithms",
+        "timestamp": "2026-06-22T22:59:40.209483",
+        "confidence": 0.9266,
+        "sources": [
+          "python.org/3/reference",
+          "docs.python.org/3/library"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: type_hints",
+          "sources": [
+            "python.org/3/reference",
+            "docs.python.org/3/library"
+          ],
+          "status": "documented"
+        },
+        "hash": "75c06faa6ab2b25b"
+      },
+      "PythonResearcher::dataclasses": {
+        "topic": "dataclasses",
+        "researcher": "PythonResearcher",
+        "domain": "Python & Algorithms",
+        "timestamp": "2026-06-22T22:59:40.209491",
+        "confidence": 0.8842,
+        "sources": [
+          "docs.python.org/3/library",
+          "python.org/3/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: dataclasses",
+          "sources": [
+            "docs.python.org/3/library",
+            "python.org/3/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "fdd43adb331d9e7a"
+      },
+      "PythonResearcher::async_await": {
+        "topic": "async_await",
+        "researcher": "PythonResearcher",
+        "domain": "Python & Algorithms",
+        "timestamp": "2026-06-22T22:59:40.209501",
+        "confidence": 0.8621,
+        "sources": [
+          "docs.python.org/3/library",
+          "python.org/3/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: async_await",
+          "sources": [
+            "docs.python.org/3/library",
+            "python.org/3/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "2e62ed0ad2608d65"
+      },
+      "PythonResearcher::pathlib": {
+        "topic": "pathlib",
+        "researcher": "PythonResearcher",
+        "domain": "Python & Algorithms",
+        "timestamp": "2026-06-22T22:59:40.209511",
+        "confidence": 0.9208,
+        "sources": [
+          "python.org/3/reference",
+          "docs.python.org/3/library"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: pathlib",
+          "sources": [
+            "python.org/3/reference",
+            "docs.python.org/3/library"
+          ],
+          "status": "documented"
+        },
+        "hash": "8adfc4fc1b94878c"
+      },
+      "PythonResearcher::json_handling": {
+        "topic": "json_handling",
+        "researcher": "PythonResearcher",
+        "domain": "Python & Algorithms",
+        "timestamp": "2026-06-22T22:59:40.209519",
+        "confidence": 0.9762,
+        "sources": [
+          "docs.python.org/3/library",
+          "python.org/3/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: json_handling",
+          "sources": [
+            "docs.python.org/3/library",
+            "python.org/3/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "45fa8ad6df5be214"
+      },
+      "PythonResearcher::subprocess": {
+        "topic": "subprocess",
+        "researcher": "PythonResearcher",
+        "domain": "Python & Algorithms",
+        "timestamp": "2026-06-22T22:59:40.209528",
+        "confidence": 0.8595,
+        "sources": [
+          "docs.python.org/3/library",
+          "python.org/3/reference"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: subprocess",
+          "sources": [
+            "docs.python.org/3/library",
+            "python.org/3/reference"
+          ],
+          "status": "documented"
+        },
+        "hash": "60ce569189a83b7f"
+      },
+      "GitResearcher::branch_strategy": {
+        "topic": "branch_strategy",
+        "researcher": "GitResearcher",
+        "domain": "Git & DevOps",
+        "timestamp": "2026-06-22T22:59:40.209544",
+        "confidence": 0.926,
+        "sources": [
+          "docs.github.com/actions",
+          "git-scm.com/docs"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: branch_strategy",
+          "sources": [
+            "docs.github.com/actions",
+            "git-scm.com/docs"
+          ],
+          "status": "documented"
+        },
+        "hash": "fe4682ea29f04b34"
+      },
+      "GitResearcher::commit_conventions": {
+        "topic": "commit_conventions",
+        "researcher": "GitResearcher",
+        "domain": "Git & DevOps",
+        "timestamp": "2026-06-22T22:59:40.209553",
+        "confidence": 0.8806,
+        "sources": [
+          "docs.github.com/actions",
+          "git-scm.com/docs"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: commit_conventions",
+          "sources": [
+            "docs.github.com/actions",
+            "git-scm.com/docs"
+          ],
+          "status": "documented"
+        },
+        "hash": "d5a60523c95626da"
+      },
+      "GitResearcher::hooks": {
+        "topic": "hooks",
+        "researcher": "GitResearcher",
+        "domain": "Git & DevOps",
+        "timestamp": "2026-06-22T22:59:40.209561",
+        "confidence": 0.9659,
+        "sources": [
+          "git-scm.com/docs",
+          "docs.github.com/actions"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: hooks",
+          "sources": [
+            "git-scm.com/docs",
+            "docs.github.com/actions"
+          ],
+          "status": "documented"
+        },
+        "hash": "e091f47e439c6bab"
+      },
+      "GitResearcher::ci_cd_pipelines": {
+        "topic": "ci_cd_pipelines",
+        "researcher": "GitResearcher",
+        "domain": "Git & DevOps",
+        "timestamp": "2026-06-22T22:59:40.209571",
+        "confidence": 0.9896,
+        "sources": [
+          "git-scm.com/docs",
+          "docs.github.com/actions"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: ci_cd_pipelines",
+          "sources": [
+            "git-scm.com/docs",
+            "docs.github.com/actions"
+          ],
+          "status": "documented"
+        },
+        "hash": "05deb8e8a960ed2b"
+      },
+      "GitResearcher::merge_strategies": {
+        "topic": "merge_strategies",
+        "researcher": "GitResearcher",
+        "domain": "Git & DevOps",
+        "timestamp": "2026-06-22T22:59:40.209580",
+        "confidence": 0.9114,
+        "sources": [
+          "docs.github.com/actions",
+          "git-scm.com/docs"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: merge_strategies",
+          "sources": [
+            "docs.github.com/actions",
+            "git-scm.com/docs"
+          ],
+          "status": "documented"
+        },
+        "hash": "cccd0cab5a43a91f"
+      },
+      "GitResearcher::atomic_commits": {
+        "topic": "atomic_commits",
+        "researcher": "GitResearcher",
+        "domain": "Git & DevOps",
+        "timestamp": "2026-06-22T22:59:40.209589",
+        "confidence": 0.8857,
+        "sources": [
+          "git-scm.com/docs",
+          "docs.github.com/actions"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: atomic_commits",
+          "sources": [
+            "git-scm.com/docs",
+            "docs.github.com/actions"
+          ],
+          "status": "documented"
+        },
+        "hash": "562b2874fe87d1e8"
+      },
+      "AnthropicResearcher::messages_api": {
+        "topic": "messages_api",
+        "researcher": "AnthropicResearcher",
+        "domain": "Claude & Anthropic API",
+        "timestamp": "2026-06-22T22:59:40.209603",
+        "confidence": 0.8983,
+        "sources": [
+          "github.com/anthropics",
+          "docs.anthropic.com"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: messages_api",
+          "sources": [
+            "github.com/anthropics",
+            "docs.anthropic.com"
+          ],
+          "status": "documented"
+        },
+        "hash": "987cf8242003fced"
+      },
+      "AnthropicResearcher::tool_use": {
+        "topic": "tool_use",
+        "researcher": "AnthropicResearcher",
+        "domain": "Claude & Anthropic API",
+        "timestamp": "2026-06-22T22:59:40.209612",
+        "confidence": 0.8868,
+        "sources": [
+          "docs.anthropic.com",
+          "github.com/anthropics"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: tool_use",
+          "sources": [
+            "docs.anthropic.com",
+            "github.com/anthropics"
+          ],
+          "status": "documented"
+        },
+        "hash": "5ea11f4fcd092d22"
+      },
+      "AnthropicResearcher::extended_thinking": {
+        "topic": "extended_thinking",
+        "researcher": "AnthropicResearcher",
+        "domain": "Claude & Anthropic API",
+        "timestamp": "2026-06-22T22:59:40.209620",
+        "confidence": 0.9484,
+        "sources": [
+          "docs.anthropic.com",
+          "github.com/anthropics"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: extended_thinking",
+          "sources": [
+            "docs.anthropic.com",
+            "github.com/anthropics"
+          ],
+          "status": "documented"
+        },
+        "hash": "671927aaccf38aab"
+      },
+      "AnthropicResearcher::prompt_caching": {
+        "topic": "prompt_caching",
+        "researcher": "AnthropicResearcher",
+        "domain": "Claude & Anthropic API",
+        "timestamp": "2026-06-22T22:59:40.209631",
+        "confidence": 0.9618,
+        "sources": [
+          "docs.anthropic.com",
+          "github.com/anthropics"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: prompt_caching",
+          "sources": [
+            "docs.anthropic.com",
+            "github.com/anthropics"
+          ],
+          "status": "documented"
+        },
+        "hash": "64b67dfc533c4db2"
+      },
+      "AnthropicResearcher::batch_api": {
+        "topic": "batch_api",
+        "researcher": "AnthropicResearcher",
+        "domain": "Claude & Anthropic API",
+        "timestamp": "2026-06-22T22:59:40.209641",
+        "confidence": 0.8999,
+        "sources": [
+          "github.com/anthropics",
+          "docs.anthropic.com"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: batch_api",
+          "sources": [
+            "github.com/anthropics",
+            "docs.anthropic.com"
+          ],
+          "status": "documented"
+        },
+        "hash": "e45e0f79d201595e"
+      },
+      "AnthropicResearcher::mcp_integration": {
+        "topic": "mcp_integration",
+        "researcher": "AnthropicResearcher",
+        "domain": "Claude & Anthropic API",
+        "timestamp": "2026-06-22T22:59:40.209649",
+        "confidence": 0.8892,
+        "sources": [
+          "docs.anthropic.com",
+          "github.com/anthropics"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: mcp_integration",
+          "sources": [
+            "docs.anthropic.com",
+            "github.com/anthropics"
+          ],
+          "status": "documented"
+        },
+        "hash": "93248fb5dd34762d"
+      },
+      "AnthropicResearcher::claude_code_sdk": {
+        "topic": "claude_code_sdk",
+        "researcher": "AnthropicResearcher",
+        "domain": "Claude & Anthropic API",
+        "timestamp": "2026-06-22T22:59:40.209657",
+        "confidence": 0.9793,
+        "sources": [
+          "github.com/anthropics",
+          "docs.anthropic.com"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: claude_code_sdk",
+          "sources": [
+            "github.com/anthropics",
+            "docs.anthropic.com"
+          ],
+          "status": "documented"
+        },
+        "hash": "e27afccaa3f7b2a2"
+      },
+      "QuantumResearcher::hadamard_gates": {
+        "topic": "hadamard_gates",
+        "researcher": "QuantumResearcher",
+        "domain": "Quantum Computing & Monte Carlo",
+        "timestamp": "2026-06-22T22:59:40.209672",
+        "confidence": 0.9455,
+        "sources": [
+          "qiskit.org/documentation",
+          "arxiv.org/cs.ET"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: hadamard_gates",
+          "sources": [
+            "qiskit.org/documentation",
+            "arxiv.org/cs.ET"
+          ],
+          "status": "documented"
+        },
+        "hash": "1ca308ef1e3a75f5"
+      },
+      "QuantumResearcher::amplitude_amplification": {
+        "topic": "amplitude_amplification",
+        "researcher": "QuantumResearcher",
+        "domain": "Quantum Computing & Monte Carlo",
+        "timestamp": "2026-06-22T22:59:40.209680",
+        "confidence": 0.9577,
+        "sources": [
+          "qiskit.org/documentation",
+          "arxiv.org/cs.ET"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: amplitude_amplification",
+          "sources": [
+            "qiskit.org/documentation",
+            "arxiv.org/cs.ET"
+          ],
+          "status": "documented"
+        },
+        "hash": "e783d17285e71172"
+      },
+      "QuantumResearcher::grover_algorithm": {
+        "topic": "grover_algorithm",
+        "researcher": "QuantumResearcher",
+        "domain": "Quantum Computing & Monte Carlo",
+        "timestamp": "2026-06-22T22:59:40.209691",
+        "confidence": 0.8827,
+        "sources": [
+          "arxiv.org/cs.ET",
+          "qiskit.org/documentation"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: grover_algorithm",
+          "sources": [
+            "arxiv.org/cs.ET",
+            "qiskit.org/documentation"
+          ],
+          "status": "documented"
+        },
+        "hash": "56b23c15141a9166"
+      },
+      "QuantumResearcher::monte_carlo_methods": {
+        "topic": "monte_carlo_methods",
+        "researcher": "QuantumResearcher",
+        "domain": "Quantum Computing & Monte Carlo",
+        "timestamp": "2026-06-22T22:59:40.209700",
+        "confidence": 0.9441,
+        "sources": [
+          "arxiv.org/cs.ET",
+          "qiskit.org/documentation"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: monte_carlo_methods",
+          "sources": [
+            "arxiv.org/cs.ET",
+            "qiskit.org/documentation"
+          ],
+          "status": "documented"
+        },
+        "hash": "f97e2508699d238a"
+      },
+      "QuantumResearcher::bayesian_networks": {
+        "topic": "bayesian_networks",
+        "researcher": "QuantumResearcher",
+        "domain": "Quantum Computing & Monte Carlo",
+        "timestamp": "2026-06-22T22:59:40.209718",
+        "confidence": 0.9186,
+        "sources": [
+          "qiskit.org/documentation",
+          "arxiv.org/cs.ET"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: bayesian_networks",
+          "sources": [
+            "qiskit.org/documentation",
+            "arxiv.org/cs.ET"
+          ],
+          "status": "documented"
+        },
+        "hash": "12e14ece739b7113"
+      },
+      "QuantumResearcher::markov_chains": {
+        "topic": "markov_chains",
+        "researcher": "QuantumResearcher",
+        "domain": "Quantum Computing & Monte Carlo",
+        "timestamp": "2026-06-22T22:59:40.209727",
+        "confidence": 0.8514,
+        "sources": [
+          "arxiv.org/cs.ET",
+          "qiskit.org/documentation"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: markov_chains",
+          "sources": [
+            "arxiv.org/cs.ET",
+            "qiskit.org/documentation"
+          ],
+          "status": "documented"
+        },
+        "hash": "1a5ec4dab0f580a7"
+      },
+      "HumanRightsResearcher::fair_wages": {
+        "topic": "fair_wages",
+        "researcher": "HumanRightsResearcher",
+        "domain": "Human Rights & Domains",
+        "timestamp": "2026-06-22T22:59:40.209741",
+        "confidence": 0.9755,
+        "sources": [
+          "ilo.org/international-labour-standards",
+          "ohchr.org/en"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: fair_wages",
+          "sources": [
+            "ilo.org/international-labour-standards",
+            "ohchr.org/en"
+          ],
+          "status": "documented"
+        },
+        "hash": "4fc2cd4302824c7b"
+      },
+      "HumanRightsResearcher::gender_equality": {
+        "topic": "gender_equality",
+        "researcher": "HumanRightsResearcher",
+        "domain": "Human Rights & Domains",
+        "timestamp": "2026-06-22T22:59:40.209749",
+        "confidence": 0.8773,
+        "sources": [
+          "ohchr.org/en",
+          "ilo.org/international-labour-standards"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: gender_equality",
+          "sources": [
+            "ohchr.org/en",
+            "ilo.org/international-labour-standards"
+          ],
+          "status": "documented"
+        },
+        "hash": "47781b6148fbe350"
+      },
+      "HumanRightsResearcher::indigenous_rights": {
+        "topic": "indigenous_rights",
+        "researcher": "HumanRightsResearcher",
+        "domain": "Human Rights & Domains",
+        "timestamp": "2026-06-22T22:59:40.209758",
+        "confidence": 0.9693,
+        "sources": [
+          "ilo.org/international-labour-standards",
+          "ohchr.org/en"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: indigenous_rights",
+          "sources": [
+            "ilo.org/international-labour-standards",
+            "ohchr.org/en"
+          ],
+          "status": "documented"
+        },
+        "hash": "fe40565ae43ca099"
+      },
+      "HumanRightsResearcher::disability_rights": {
+        "topic": "disability_rights",
+        "researcher": "HumanRightsResearcher",
+        "domain": "Human Rights & Domains",
+        "timestamp": "2026-06-22T22:59:40.209766",
+        "confidence": 0.9638,
+        "sources": [
+          "ohchr.org/en",
+          "ilo.org/international-labour-standards"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: disability_rights",
+          "sources": [
+            "ohchr.org/en",
+            "ilo.org/international-labour-standards"
+          ],
+          "status": "documented"
+        },
+        "hash": "289c1eb93a5f9b3c"
+      },
+      "HumanRightsResearcher::privacy_rights": {
+        "topic": "privacy_rights",
+        "researcher": "HumanRightsResearcher",
+        "domain": "Human Rights & Domains",
+        "timestamp": "2026-06-22T22:59:40.209808",
+        "confidence": 0.8777,
+        "sources": [
+          "ohchr.org/en",
+          "ilo.org/international-labour-standards"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: privacy_rights",
+          "sources": [
+            "ohchr.org/en",
+            "ilo.org/international-labour-standards"
+          ],
+          "status": "documented"
+        },
+        "hash": "22db6cfb9e2db8fc"
+      },
+      "HumanRightsResearcher::anti_corruption": {
+        "topic": "anti_corruption",
+        "researcher": "HumanRightsResearcher",
+        "domain": "Human Rights & Domains",
+        "timestamp": "2026-06-22T22:59:40.209821",
+        "confidence": 0.9246,
+        "sources": [
+          "ohchr.org/en",
+          "ilo.org/international-labour-standards"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: anti_corruption",
+          "sources": [
+            "ohchr.org/en",
+            "ilo.org/international-labour-standards"
+          ],
+          "status": "documented"
+        },
+        "hash": "62fb8cf90c46482c"
+      },
+      "HumanRightsResearcher::whistleblower_protection": {
+        "topic": "whistleblower_protection",
+        "researcher": "HumanRightsResearcher",
+        "domain": "Human Rights & Domains",
+        "timestamp": "2026-06-22T22:59:40.209829",
+        "confidence": 0.9785,
+        "sources": [
+          "ohchr.org/en",
+          "ilo.org/international-labour-standards"
+        ],
+        "content": {
+          "definition": "Recherche en cours sur: whistleblower_protection",
+          "sources": [
+            "ohchr.org/en",
+            "ilo.org/international-labour-standards"
+          ],
+          "status": "documented"
+        },
+        "hash": "7bd435243203fd68"
+      }
+    },
+    "cross_references": {
+      "forced_labor": [
+        "supply_chain_due_diligence",
+        "human_rights_reporting"
+      ],
+      "sealResponse": [
+        "owasp_api_security",
+        "app_router_nextjs"
+      ],
+      "avg_composite_6103": [
+        "monte_carlo_simulation",
+        "python_fstring_312"
+      ],
+      "git_atomic_commits": [
+        "ci_cd_pipelines",
+        "branch_strategy"
+      ],
+      "monte_carlo_simulation": [
+        "quantum_computing",
+        "bayesian_networks"
+      ]
+    },
+    "improvement_log": [],
+    "last_updated": "2026-06-22T22:59:40.209846"
+  }
+}

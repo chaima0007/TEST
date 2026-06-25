@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-06-23T01:36:17.430402",
+  "sidebar_icons": {
+    "sidebar-icons-1.tsx": {
+      "lines": 2126,
+      "icons": 212,
+      "pct_oom": 38.7,
+      "status": "OK"
+    },
+    "sidebar-icons-1b.tsx": {
+      "lines": 2337,
+      "icons": 213,
+      "pct_oom": 42.5,
+      "status": "OK"
+    },
+    "sidebar-icons-2.tsx": {
+      "lines": 4087,
+      "icons": 423,
+      "pct_oom": 74.3,
+      "status": "OK"
+    },
+    "sidebar-icons-3.tsx": {
+      "lines": 3720,
+      "icons": 425,
+      "pct_oom": 67.6,
+      "status": "OK"
+    },
+    "sidebar-icons-4.tsx": {
+      "lines": 3489,
+      "icons": 370,
+      "pct_oom": 63.4,
+      "status": "OK"
+    },
+    "sidebar-icons-5.tsx": {
+      "lines": 1703,
+      "icons": 209,
+      "pct_oom": 31.0,
+      "status": "OK"
+    },
+    "sidebar-icons.tsx": {
+      "lines": 12,
+      "icons": 0,
+      "pct_oom": 0.2,
+      "status": "OK"
+    }
+  },
+  "sidebar_nav": {
+    "lines": 4157,
+    "pct_lag": 138.6,
+    "status": "ALERTE"
+  },
+  "data_files": {
+    "library_index.json": {
+      "size_kb": 1058.9,
+      "lines": 22101,
+      "status": "OK"
+    }
+  },
+  "engines": {
+    "count": 1790,
+    "size_mb": 13.4,
+    "pct_max": 59.7,
+    "status": "OK"
+  },
+  "api_routes": {
+    "count": 198,
+    "pct_max": 56.6,
+    "status": "OK"
+  },
+  "dashboards": {
+    "count": 289,
+    "pct_max": 72.2,
+    "status": "OK"
+  },
+  "duplicate_icons": {
+    "total_icons": 1852,
+    "duplicates": [
+      {
+        "icon": "IconSovereignDebt",
+        "files": [
+          "sidebar-icons-1b.tsx",
+          "sidebar-icons-5.tsx"
+        ]
+      }
+    ],
+    "status": "CRITIQUE"
+  },
+  "next_config": {
+    "checks": {
+      "productionBrowserSourceMaps: false": true,
+      "webpackMemoryOptimizations: true": true,
+      "webpackBuildWorker: true": true,
+      "preloadEntriesOnStart: false": false
+    },
+    "missing": [
+      "preloadEntriesOnStart: false"
+    ],
+    "status": "ALERTE"
+  },
+  "package_json": {
+    "build_cmd": "NODE_OPTIONS='--max-old-space-size=4096' next build",
+    "has_NODE_OPTIONS": true,
+    "status": "OK"
+  },
+  "summary": {
+    "global_status": "CRITIQUE",
+    "critique_count": 1,
+    "alerte_count": 2,
+    "ok_count": 12
+  }
+}

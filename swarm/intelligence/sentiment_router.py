@@ -36,7 +36,7 @@ logger = logging.getLogger("swarm.sentiment")
 
 _POSITIVE_KEYWORDS = [
     "intéressé", "super", "parfait", "excellent", "d'accord", "ok", "oui",
-    "bonne idée", "top", "impressionné", "bravo", "quand", "commencer",
+    "bonne idée", "top", "impressionné", "bravo", "merci", "quand", "commencer",
     "allons-y", "enchanté", "disponible", "rendez-vous",
 ]
 
@@ -59,7 +59,7 @@ _SUSPICIOUS_KEYWORDS = [
 ]
 
 _NEGATIVE_KEYWORDS = [
-    "non merci", "non", "pas intéressé", "pas besoin", "laissez-moi", "ne pas contacter",
+    "non", "pas intéressé", "pas besoin", "laissez-moi", "ne pas contacter",
     "trop cher", "aucun intérêt", "occupé", "plus tard peut-être",
     "cousin", "déjà quelqu'un", "interne",
 ]
@@ -166,7 +166,11 @@ class SentimentRouter:
                 keywords_matched=scores["Méfiant"],
             )
 
-        best = max(scores, key=lambda k: len(scores[k]))
+        # Négatif wins ties — a rejection is never ambiguous
+        def _rank(k: str) -> tuple:
+            return (len(scores[k]), 1 if k == "Négatif" else 0)
+
+        best = max(scores, key=_rank)
         matched = scores[best]
 
         if not matched:

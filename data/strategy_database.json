@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "created": "2026-06-22T23:12:33.831179",
+  "strategies": [
+    {
+      "id": "STR-45C541A3",
+      "domain": "CSDDD_LEADERSHIP",
+      "emoji": "🌍",
+      "description": "Être le leader mondial de la compliance EU CSDDD 2024/1760",
+      "mc_score": 2.2493,
+      "mc_ci_lower": 2.2427,
+      "mc_ci_upper": 2.2559,
+      "market_size_bn": 12.4,
+      "competition_score": 3.2,
+      "caelum_advantage": 9.1,
+      "differentiators": [
+        "Premier SaaS à couvrir 100% des articles CSDDD",
+        "Engines IA spécialisés par domaine droits humains",
+        "Score composite unique avg=61.03 calibré sur 8 entités",
+        "Rapports signés numériquement (sealResponse)",
+        "Mise à jour réglementaire automatique"
+      ],
+      "n_simulations": 100000,
+      "timestamp": "2026-06-22 23:12:33"
+    },
+    {
+      "id": "STR-BB72BB0F",
+      "domain": "MULTI_AGENT_AI",
+      "emoji": "🤖",
+      "description": "Architecture multi-agents IA la plus avancée pour compliance",
+      "mc_score": 1.6541,
+      "mc_ci_lower": 1.6504,
+      "mc_ci_upper": 1.6577,
+      "market_size_bn": 8.7,
+      "competition_score": 4.1,
+      "caelum_advantage": 8.8,
+      "differentiators": [
+        "10+ agents spécialisés collaborant en temps réel",
+        "Simulateur quantique 16 qubits intégré",
+        "Monte Carlo 1M+ simulations par décision",
+        "Relève automatique équipes (anti-fatigue)",
+        "Autocontrôle permanent 34 checks"
+      ],
+      "n_simulations": 100000,
+      "timestamp": "2026-06-22 23:12:33"
+    },
+    {
+      "id": "STR-7EDF43D0",
+      "domain": "SPEED_ACCURACY",
+      "emoji": "⚡",
+      "description": "Le plus rapide ET le plus précis du marché",
+      "mc_score": 1.2845,
+      "mc_ci_lower": 1.2828,
+      "mc_ci_upper": 1.2861,
+      "market_size_bn": 15.2,
+      "competition_score": 5.8,
+      "caelum_advantage": 8.4,
+      "differentiators": [
+        "Wave complète en 15.7 min (67% plus rapide que baseline)",
+        "avg_composite = 61.03 EXACT garanti",
+        "Algorithmes UNIQUES: CaelumQuantumScorer, CaelumBayesianRisk",
+        "Cache résultats simulation (réponse <1ms)",
+        "Parallélisation intelligente (sidebar toujours séquentiel)"
+      ],
+      "n_simulations": 100000,
+      "timestamp": "2026-06-22 23:12:33"
+    },
+    {
+      "id": "STR-A30A7F1D",
+      "domain": "INFINITE_KNOWLEDGE",
+      "emoji": "📚",
+      "description": "Base de connaissances infinie et auto-apprenante",
+      "mc_score": 2.4202,
+      "mc_ci_lower": 2.4122,
+      "mc_ci_upper": 2.4281,
+      "market_size_bn": 6.3,
+      "competition_score": 2.9,
+      "caelum_advantage": 9.3,
+      "differentiators": [
+        "54+ sujets documentés par 8 agents chercheurs",
+        "Base solutions jamais supprimée (accumulation permanente)",
+        "12 sources officielles vérifiées",
+        "Versioning complet avec rollback",
+        "Cross-références automatiques entre domaines"
+      ],
+      "n_simulations": 100000,
+      "timestamp": "2026-06-22 23:12:33"
+    },
+    {
+      "id": "STR-5B83ECD2",
+      "domain": "SECURITY_TRUST",
+      "emoji": "🔒",
+      "description": "La plateforme de compliance la plus sécurisée",
+      "mc_score": 1.2018,
+      "mc_ci_lower": 1.2003,
+      "mc_ci_upper": 1.2033,
+      "market_size_bn": 9.8,
+      "competition_score": 6.2,
+      "caelum_advantage": 8.9,
+      "differentiators": [
+        "sealResponse sur 100% des endpoints",
+        "Zéro credentials dans le code (validé automatiquement)",
+        "OWASP Top 10 compliance vérifiée en continu",
+        "Audit trail complet de chaque décision",
+        "Fallback 502 (jamais 503) pour disponibilité maximale"
+      ],
+      "n_simulations": 100000,
+      "timestamp": "2026-06-22 23:12:33"
+    },
+    {
+      "id": "STR-4E82A8BF",
+      "domain": "HUMAN_RIGHTS_COVERAGE",
+      "emoji": "⚖️",
+      "description": "La couverture droits humains la plus complète",
+      "mc_score": 3.7453,
+      "mc_ci_lower": 3.7332,
+      "mc_ci_upper": 3.7574,
+      "market_size_bn": 4.1,
+      "competition_score": 1.8,
+      "caelum_advantage": 9.7,
+      "differentiators": [
+        "490+ waves couvrant tous les domaines CSDDD",
+        "Domaines uniques: gender_equality, indigenous_rights, disability_rights",
+        "Scoring par seuils calibrés (critique/élevé/modéré/faible)",
+        "Conformité automatique à la directive EU 2024/1760",
+        "Rapports prêts pour audit tiers"
+      ],
+      "n_simulations": 100000,
+      "timestamp": "2026-06-22 23:12:33"
+    }
+  ],
+  "top_strategy": "HUMAN_RIGHTS_COVERAGE",
+  "total_calculated": 6,
+  "market_opportunity_bn": 50.27,
+  "last_run": "2026-06-22 23:12:33"
+}

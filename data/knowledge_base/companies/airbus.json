@@ -1,0 +1,70 @@
+{
+  "id": "airbus",
+  "slug": "airbus",
+  "name": "Airbus SE",
+  "country": "France",
+  "city": "Toulouse",
+  "sector": "Aéronautique",
+  "size": {
+    "revenue_bn_eur": 68,
+    "employees": 134000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "22.6 Medium Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / VP Procurement & Supply Chain",
+    "team": "Sustainability & Responsibility team, Supply Chain Ethics & Compliance",
+    "location": "Toulouse (siège, aérocommercial), Hamburg (A320), Madrid (A400M), Leiden (siège légal)",
+    "process": "Comité Sustainability trimestriel, qualification fournisseurs avec critères ESG (FICAS scoring), plan de vigilance publié annuellement"
+  },
+  "pain_points": [
+    "Chaîne d'approvisionnement aéronautique : 12 000+ fournisseurs actifs avec délégation de fabrication critique (structures, moteurs, avionique) — traçabilité DDH complexe",
+    "Conformité loi de vigilance française pour les opérations propres et la supply chain : cartographie des risques dans les pays de production (Mexique, Maroc, Inde, Chine)",
+    "Minerais critiques pour l'aéronautique (titane, cobalt, aluminium) : exposition aux risques DDH en Russie (titane post-2022) et en RDC (cobalt)",
+    "Conditions de travail dans les joint-ventures et usines locales en Inde (Airbus India) et Chine (Airbus Tianjin) : alignement avec les standards européens",
+    "Dual-use : ventes de technologies à des États avec historique de violations des droits humains — arbitrage entre obligations commerciales et éthique",
+    "Impact social de la transition vers les avions zéro émission (hydrogène) sur les emplois dans la supply chain traditionnelle"
+  ],
+  "observed_failures": [
+    "Affaire corruption Airbus 2020 : amende record 3,6 Mrd EUR pour corruption dans 5 pays — révélant des failles systémiques dans la gouvernance des partenariats commerciaux",
+    "Rapport Sherpa 2022 : plan de vigilance Airbus insuffisant sur la cartographie des risques DDH Tier 2 et Tier 3, comparé aux standards Best Practices UNGP",
+    "Fournisseur Maroc 2023 : conditions de travail non conformes dans une usine de câblage aéronautique à Casablanca (heures supplémentaires forcées) — audit FICAS révision nécessaire"
+  ],
+  "signals_of_risk": [
+    "Dépendance au titane russe (substitution en cours mais coûteuse) révélant la vulnérabilité des chaînes critiques",
+    "Pression croissante sur les ventes dual-use vers des régimes autoritaires (Arabie Saoudite, Émirats Arabes Unis)",
+    "Plan de vigilance sous scrutin régulier des ONG françaises spécialisées (Sherpa, CCFD)"
+  ],
+  "signals_of_trust": [
+    "Publication du plan de vigilance depuis 2017, avec amélioration progressive de la cartographie des risques",
+    "Programme FICAS (Fournisseurs d'Intérêt Critique pour Airbus et la Sécurité) avec scoring ESG intégré",
+    "Engagement zéro émission nette 2050 avec programme ZEROe (avion à hydrogène) comme vision industrielle",
+    "Membre de l'initiative AeroMAPS pour la modélisation des impacts climatiques et sociaux du secteur"
+  ],
+  "recommended_actions": [
+    "Proposer un audit de maturité DDH du plan de vigilance Airbus par rapport aux standards UNGP et préparer les évolutions CSDDD",
+    "Démontrer comment notre solution peut enrichir le scoring FICAS avec des indicateurs droits humains pour les fournisseurs Tier 2",
+    "Présenter une solution de cartographie des minerais critiques (titane, cobalt) avec indicateurs DDH par pays d'origine",
+    "Organiser une session avec l'équipe Supply Chain Ethics autour de la gestion des risques dans les joint-ventures en Asie"
+  ],
+  "local_tone": "Ton professionnel avec sensibilité pour les enjeux de souveraineté industrielle européenne. Airbus est fier de sa dimension paneuropéenne — valoriser les approches qui renforcent la conformité sans fragiliser la compétitivité. Références aux obligations françaises (loi de vigilance) avant les directives UE.",
+  "cultural_notes": "Culture d'ingénieurs aéronautiques avec une forte conscience de la sécurité et de la qualité. La dimension multinationale (France, Allemagne, Espagne) crée des dynamiques culturelles complexes — adapter le ton selon l'interlocuteur. La sensibilité post-affaire corruption est réelle — la gouvernance éthique est un sujet traité avec sérieux.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.airbus.com/en/sustainability",
+    "https://www.asso-sherpa.org/vigilance-plan-airbus-analysis-2022",
+    "https://www.business-humanrights.org/en/companies/airbus/"
+  ]
+}

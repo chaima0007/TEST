@@ -89,6 +89,26 @@ export default function ReportsPage() {
 
   return (
     <div className="space-y-8">
+      {/* Plan banner */}
+      <div className="flex items-center justify-between gap-4 rounded-xl bg-[#0f1e3c] px-5 py-3.5">
+        <div className="flex items-center gap-3">
+          <span className="flex-shrink-0 w-2 h-2 rounded-full bg-indigo-400" />
+          <p className="text-sm text-slate-200">
+            <span className="font-semibold text-white">Vous êtes sur le Plan Performance</span>
+            <span className="mx-2 text-slate-500">·</span>
+            <span className="text-slate-300">Renouvellement le 15 juillet 2026</span>
+            <span className="mx-2 text-slate-500">·</span>
+            <span className="font-semibold text-white">2 490€/mois</span>
+          </p>
+        </div>
+        <a
+          href="#"
+          className="flex-shrink-0 text-xs font-semibold text-indigo-300 hover:text-indigo-100 transition-colors whitespace-nowrap"
+        >
+          Passer au Plan Stratégique →
+        </a>
+      </div>
+
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>

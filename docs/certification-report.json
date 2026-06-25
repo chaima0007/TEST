@@ -1,0 +1,75 @@
+{
+  "engine": {
+    "certifié": true,
+    "filepath": "/home/user/TEST/scripts/../swarm/intelligence/forced_marriage_rights_engine.py",
+    "agent_type": "engine_python",
+    "score": 100.0,
+    "score_minimum_requis": 85,
+    "validité_mois": 6,
+    "critères_ok": [
+      "distribution_4_2_1_1",
+      "avg_composite_60_63",
+      "estimated_index_present",
+      "json_output"
+    ],
+    "critères_manquants": [],
+    "check_details": {
+      "distribution_4_2_1_1": {
+        "passed": true,
+        "detail": "8+ entités détectées (8)"
+      },
+      "avg_composite_60_63": {
+        "passed": true,
+        "detail": "Calcul avg_composite détecté"
+      },
+      "estimated_index_present": {
+        "passed": true,
+        "detail": "Index estimé trouvé : estimated_forced_marriage_rights_index"
+      },
+      "json_output": {
+        "passed": true,
+        "detail": "Output JSON détecté"
+      }
+    },
+    "recommandations": []
+  },
+  "route": {
+    "certifié": true,
+    "filepath": "/home/user/TEST/scripts/../app/api/forced-marriage-rights-engine/route.ts",
+    "agent_type": "api_route",
+    "score": 100.0,
+    "score_minimum_requis": 90,
+    "validité_mois": 12,
+    "critères_ok": [
+      "sealResponse",
+      "SWARM_API_URL_guard",
+      "revalidate_30",
+      "status_502_fallback"
+    ],
+    "critères_manquants": [],
+    "check_details": {
+      "sealResponse": {
+        "passed": true,
+        "detail": "sealResponse importé et utilisé"
+      },
+      "SWARM_API_URL_guard": {
+        "passed": true,
+        "detail": "Guard SWARM_API_URL présent"
+      },
+      "revalidate_30": {
+        "passed": true,
+        "detail": "revalidate: 30 présent"
+      },
+      "status_502_fallback": {
+        "passed": true,
+        "detail": "Fallback 502 correct (pas de 503)"
+      }
+    },
+    "recommandations": []
+  },
+  "batch_summary": {
+    "total": 120,
+    "certified": 55,
+    "avg_score": 86.25
+  }
+}

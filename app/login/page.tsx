@@ -43,7 +43,7 @@ function LoginForm() {
             <div className="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
               <span className="text-white text-sm font-bold">IQ</span>
             </div>
-            <span className="text-xl font-bold text-slate-900">CompeteIQ</span>
+            <span className="text-xl font-bold text-slate-900">Caelum</span>
           </div>
           <h1 className="text-2xl font-bold text-slate-900">Connexion</h1>
           <p className="text-slate-500 text-sm mt-1">Accédez à votre tableau de bord</p>
@@ -97,7 +97,7 @@ function LoginForm() {
             <p className="text-xs text-indigo-600">Utilisez le compte de démonstration pour explorer l&apos;application.</p>
             <button
               type="button"
-              onClick={() => { setEmail("demo@competeiq.com"); setPassword("demo123"); }}
+              onClick={() => { setEmail("demo@caelum.be"); setPassword("demo123"); }}
               className="mt-2 text-xs text-indigo-700 font-semibold hover:underline"
             >
               Remplir automatiquement →

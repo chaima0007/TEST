@@ -1,0 +1,233 @@
+{
+  "db_key": "autocontrol_report",
+  "timestamp": "20260622_230158",
+  "reason": "scheduled_report",
+  "checksum": "1392fd9c295f9f99",
+  "data": {
+    "timestamp": "2026-06-22 22:56:46",
+    "score_global": 82.35,
+    "checks_ok": 28,
+    "checks_fail": 6,
+    "total_checks": 34,
+    "fixes_required": [
+      {
+        "domain": "git",
+        "check": "working_tree_clean",
+        "fix": "git add -A && git commit -m 'chore: uncommitted files'"
+      },
+      {
+        "domain": "engines",
+        "check": "avg_composite_exact",
+        "fix": "Corriger: system_awareness_engine.py, autonomous_agent_economy_engine.py, access_water_sanitation_rights_engine.py"
+      },
+      {
+        "domain": "security",
+        "check": "seal_response_present",
+        "fix": "Ajouter sealResponse: app/api/auth/logout/route.ts, app/api/auth/login/route.ts"
+      },
+      {
+        "domain": "security",
+        "check": "no_hardcoded_credentials",
+        "fix": "Vérifier: app/api/auth/login/route.ts"
+      },
+      {
+        "domain": "dashboards",
+        "check": "gauge_ring_correct",
+        "fix": "Corriger GaugeRing r=36 cx=44 cy=44: app/dashboard/[slug]/page.tsx"
+      },
+      {
+        "domain": "dashboards",
+        "check": "no_use_callback_usememo",
+        "fix": "Supprimer hooks: app/dashboard/sales-pipeline-health-degradation-intelligence-engine/page.tsx"
+      }
+    ],
+    "domains": {
+      "git": {
+        "branch_correcte": {
+          "ok": true,
+          "value": "claude/swarm-50-agent-architecture-3l6cno",
+          "fix": null
+        },
+        "email_auteur_valide": {
+          "ok": true,
+          "value": "noreply@anthropic.com",
+          "fix": null
+        },
+        "no_index_lock": {
+          "ok": true,
+          "value": "absent",
+          "fix": null
+        },
+        "working_tree_clean": {
+          "ok": false,
+          "value": "1 fichiers non-commités",
+          "fix": "git add -A && git commit -m 'chore: uncommitted files'"
+        },
+        "remote_sync": {
+          "ok": true,
+          "value": "0 commits non-pushés",
+          "fix": null
+        }
+      },
+      "engines": {
+        "avg_composite_exact": {
+          "ok": false,
+          "value": "1866 engines, 5 sans 61.03",
+          "fix": "Corriger: system_awareness_engine.py, autonomous_agent_economy_engine.py, access_water_sanitation_rights_engine.py"
+        },
+        "distribution_4_2_1_1": {
+          "ok": true,
+          "value": "0 engines avec distribution suspecte",
+          "fix": null
+        },
+        "poids_sum_100": {
+          "ok": true,
+          "value": "0.30+0.25+0.25+0.20=1.00 ✓",
+          "fix": null
+        },
+        "no_python_errors": {
+          "ok": true,
+          "value": "1866 engines présents",
+          "fix": null
+        },
+        "entities_count_8": {
+          "ok": true,
+          "value": "Pattern standard: 8 entités",
+          "fix": null
+        }
+      },
+      "sidebar": {
+        "no_duplicate_icons": {
+          "ok": true,
+          "value": "0 icônes total, 0 doublons",
+          "fix": null
+        },
+        "icon_naming_convention": {
+          "ok": true,
+          "value": "0 noms non-conformes",
+          "fix": null
+        },
+        "barrel_exports_valid": {
+          "ok": true,
+          "value": "sidebar-icons.tsx existe ✓",
+          "fix": null
+        },
+        "nav_entries_valid": {
+          "ok": true,
+          "value": "sidebar-nav.tsx existe ✓",
+          "fix": null
+        }
+      },
+      "security": {
+        "seal_response_present": {
+          "ok": false,
+          "value": "172/174 routes avec sealResponse",
+          "fix": "Ajouter sealResponse: app/api/auth/logout/route.ts, app/api/auth/login/route.ts"
+        },
+        "swarm_api_url_guard": {
+          "ok": true,
+          "value": "0 routes sans guard SWARM_API_URL",
+          "fix": null
+        },
+        "no_hardcoded_credentials": {
+          "ok": false,
+          "value": "1 fichiers suspects",
+          "fix": "Vérifier: app/api/auth/login/route.ts"
+        },
+        "revalidate_30_present": {
+          "ok": true,
+          "value": "0 routes sans revalidate",
+          "fix": null
+        },
+        "no_503_status": {
+          "ok": true,
+          "value": "0 routes avec status 503 (interdit)",
+          "fix": null
+        }
+      },
+      "dashboards": {
+        "use_client_first_line": {
+          "ok": true,
+          "value": "265/265 pages avec 'use client'",
+          "fix": null
+        },
+        "gauge_ring_correct": {
+          "ok": false,
+          "value": "1 GaugeRing avec paramètres incorrects",
+          "fix": "Corriger GaugeRing r=36 cx=44 cy=44: app/dashboard/[slug]/page.tsx"
+        },
+        "no_use_callback_usememo": {
+          "ok": false,
+          "value": "16 pages avec useCallback/useMemo (interdit)",
+          "fix": "Supprimer hooks: app/dashboard/sales-pipeline-health-degradation-intelligence-engine/page.tsx"
+        },
+        "apostrophes_jsx_escaped": {
+          "ok": true,
+          "value": "apostrophes vérifiées ✓",
+          "fix": null
+        }
+      },
+      "data": {
+        "json_files_valid": {
+          "ok": true,
+          "value": "0 fichiers JSON invalides",
+          "fix": null
+        },
+        "agent_inboxes_valid": {
+          "ok": true,
+          "value": "agent_inboxes.json présent ✓",
+          "fix": null
+        },
+        "solutions_db_intact": {
+          "ok": true,
+          "value": "infinite_solutions.json ✓",
+          "fix": null
+        },
+        "no_empty_files": {
+          "ok": true,
+          "value": "0 fichiers vides",
+          "fix": null
+        }
+      },
+      "scripts": {
+        "all_scripts_exist": {
+          "ok": true,
+          "value": "10/10 scripts présents",
+          "fix": null
+        },
+        "no_syntax_errors": {
+          "ok": true,
+          "value": "0 scripts avec erreurs syntaxe",
+          "fix": null
+        },
+        "scripts_executable": {
+          "ok": true,
+          "value": "Scripts Python lisibles ✓",
+          "fix": null
+        },
+        "imports_valid": {
+          "ok": true,
+          "value": "Imports vérifiés ✓",
+          "fix": null
+        }
+      },
+      "docs": {
+        "master_protocol_exists": {
+          "ok": true,
+          "value": "MASTER-PROTOCOL-CAELUM.md ✓",
+          "fix": null
+        },
+        "systems_doc_exists": {
+          "ok": true,
+          "value": "SYSTEMES-DOCUMENTATION.md ✓",
+          "fix": null
+        },
+        "wave_protocol_exists": {
+          "ok": true,
+          "value": "wave-development-protocol.md ✓",
+          "fix": null
+        }
+      }
+    }
+  }
+}

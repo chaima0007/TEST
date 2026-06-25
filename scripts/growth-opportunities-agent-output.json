@@ -1,0 +1,328 @@
+{
+  "agent": "growth-opportunities-agent",
+  "generated_at": "2026-06-22T07:38:42.644423",
+  "total_leviers": 20,
+  "budget_total_estime_eur": 715000,
+  "leviers_par_categorie": {
+    "partenariats": [
+      {
+        "nom": "Alliance Big4 (Deloitte/EY/KPMG/PwC) — white-label",
+        "description": "Intégrer CaelumSwarm dans les offres CSDDD des Big4 en marque blanche. Chaque cabinet dispose d'une base de 500+ clients grands groupes.",
+        "type": "partenariat",
+        "impact": 9,
+        "effort": 8,
+        "delai_mois": 9,
+        "cout_eur_estime": 45000,
+        "kpi_succes": "2 accords signés en 12 mois"
+      },
+      {
+        "nom": "Réseau cabinets avocats compliance EU",
+        "description": "Partenariats avec 20+ cabinets avocats spécialisés droits humains/compliance. Référencement outil recommandé dans leurs missions CSDDD.",
+        "type": "partenariat",
+        "impact": 7,
+        "effort": 4,
+        "delai_mois": 4,
+        "cout_eur_estime": 12000,
+        "kpi_succes": "15 cabinets partenaires actifs"
+      },
+      {
+        "nom": "Consultants ESG indépendants (réseau 500+)",
+        "description": "Programme de partenaires certifiés CaelumSwarm pour consultants ESG. Commission 20% sur les contrats apportés.",
+        "type": "partenariat",
+        "impact": 6,
+        "effort": 3,
+        "delai_mois": 3,
+        "cout_eur_estime": 8000,
+        "kpi_succes": "50 consultants certifiés actifs"
+      },
+      {
+        "nom": "Intégration ERP SAP (module plug-in)",
+        "description": "Développer un connecteur SAP S/4HANA pour importer automatiquement les données fournisseurs dans CaelumSwarm. SAP marketplace = accès à 450k clients.",
+        "type": "partenariat_tech",
+        "impact": 8,
+        "effort": 9,
+        "delai_mois": 12,
+        "cout_eur_estime": 85000,
+        "kpi_succes": "Plugin certifié SAP Store"
+      }
+    ],
+    "canaux_acquisition": [
+      {
+        "nom": "LinkedIn B2B — campagnes ciblées DG Compliance / RSE",
+        "description": "Campagnes LinkedIn Ads ciblant responsables compliance, DRH, RSE dans les entreprises EU +500 salariés. Content marketing : études de cas CSDDD + calculateurs de risques.",
+        "type": "acquisition_digitale",
+        "impact": 7,
+        "effort": 4,
+        "delai_mois": 2,
+        "cout_eur_estime": 24000,
+        "kpi_succes": "500 leads qualifiés/trimestre"
+      },
+      {
+        "nom": "Conférences ESG (Sustainable Finance Summit, Bruxelles ESG Week)",
+        "description": "Présence active dans les 5 grandes conférences ESG EU/an. Speaking slots + stands. Networking direct avec décideurs.",
+        "type": "acquisition_evenementielle",
+        "impact": 7,
+        "effort": 5,
+        "delai_mois": 4,
+        "cout_eur_estime": 35000,
+        "kpi_succes": "200 contacts qualifiés/événement"
+      },
+      {
+        "nom": "Appels à projets EU (Horizon Europe, Just Transition Fund)",
+        "description": "Candidater aux financements EU pour outils de compliance droits humains. Potentiel grant : 500k-2M EUR + visibilité institutionnelle.",
+        "type": "financement_public",
+        "impact": 8,
+        "effort": 6,
+        "delai_mois": 10,
+        "cout_eur_estime": 18000,
+        "kpi_succes": "1 grant EU obtenu en 18 mois"
+      },
+      {
+        "nom": "SEO/Content : hub d'expertise CSDDD francophone",
+        "description": "Créer le référentiel SEO #1 sur CSDDD/CS3D en français et néerlandais. Guides, checklist, calculateurs de conformité gratuits = lead magnets.",
+        "type": "acquisition_organique",
+        "impact": 7,
+        "effort": 4,
+        "delai_mois": 5,
+        "cout_eur_estime": 15000,
+        "kpi_succes": "10k visites organiques/mois en 6 mois"
+      },
+      {
+        "nom": "Programme pilote gratuit 90 jours (grands groupes)",
+        "description": "Offrir accès complet 90 jours à 10 grands groupes belges ciblés. Objectif : 7/10 convertis → social proof + références sectorielles.",
+        "type": "acquisition_trial",
+        "impact": 9,
+        "effort": 5,
+        "delai_mois": 3,
+        "cout_eur_estime": 0,
+        "kpi_succes": "7 grands comptes convertis en payant"
+      }
+    ],
+    "fonctionnalites_differenciantes": [
+      {
+        "nom": "Certification ISO 26000 / SA8000 intégrée",
+        "description": "Module de préparation et suivi certification ISO 26000 (RS) et SA8000 (droits travailleurs). Gap analysis automatisée + plan d'action IA.",
+        "type": "produit",
+        "impact": 8,
+        "effort": 7,
+        "delai_mois": 8,
+        "cout_eur_estime": 55000,
+        "kpi_succes": "Module utilisé par 30% des clients Enterprise"
+      },
+      {
+        "nom": "Rapport CSRD auto-généré (Word/PDF)",
+        "description": "Génération automatique du rapport de durabilité CSRD (ESRS S1-S4) à partir des données CaelumSwarm. Time-to-report : 2h vs 3 semaines.",
+        "type": "produit",
+        "impact": 10,
+        "effort": 7,
+        "delai_mois": 6,
+        "cout_eur_estime": 68000,
+        "kpi_succes": "100+ rapports CSRD générés en 12 mois"
+      },
+      {
+        "nom": "API publique + webhooks pour intégration client",
+        "description": "REST API documentée (OpenAPI 3.1) permettant aux clients d'intégrer CaelumSwarm dans leurs SI internes. SDK Python + JS.",
+        "type": "produit_tech",
+        "impact": 8,
+        "effort": 5,
+        "delai_mois": 4,
+        "cout_eur_estime": 32000,
+        "kpi_succes": "50+ intégrations actives clients"
+      },
+      {
+        "nom": "Score de risque fournisseur en temps réel (watchlist)",
+        "description": "Monitoring continu des fournisseurs : alerte automatique si un événement adverse est détecté (scandale, grève, condamnation). Feeds : actualités, ONG, bases sanctions.",
+        "type": "produit",
+        "impact": 9,
+        "effort": 6,
+        "delai_mois": 5,
+        "cout_eur_estime": 42000,
+        "kpi_succes": "Taux d'alerte actionné > 80% par les clients"
+      }
+    ],
+    "expansion_geographique": [
+      {
+        "nom": "Belgique — marché domestique (phase actuelle)",
+        "description": "Consolider la présence en Belgique. Cibler les 500 plus grands groupes belges.",
+        "type": "geo",
+        "impact": 9,
+        "effort": 3,
+        "delai_mois": 0,
+        "cout_eur_estime": 0,
+        "kpi_succes": "50 clients belges actifs"
+      },
+      {
+        "nom": "France — expansion prioritaire (CAC40 + ETI)",
+        "description": "La France a la Loi de Vigilance depuis 2017 + CSDDD = culture compliance forte. Marché 5x Belgique. Bureau Paris + 2 commerciaux France.",
+        "type": "geo",
+        "impact": 9,
+        "effort": 6,
+        "delai_mois": 6,
+        "cout_eur_estime": 120000,
+        "kpi_succes": "80 clients France en 18 mois"
+      },
+      {
+        "nom": "Luxembourg — fonds ESG & finance responsable",
+        "description": "Luxembourg = hub européen des fonds ESG (3500+ fonds SFDR). Faible distance culturelle/géographique depuis Belgique.",
+        "type": "geo",
+        "impact": 7,
+        "effort": 4,
+        "delai_mois": 4,
+        "cout_eur_estime": 35000,
+        "kpi_succes": "20 fonds ESG clients actifs"
+      },
+      {
+        "nom": "Pays-Bas — marché DURABLE et compliance avancée",
+        "description": "NL a des multinationales compliance-matures (Shell, Unilever, Philips). Version EN + NL de la plateforme nécessaire.",
+        "type": "geo",
+        "impact": 7,
+        "effort": 7,
+        "delai_mois": 10,
+        "cout_eur_estime": 85000,
+        "kpi_succes": "40 clients NL en 24 mois"
+      }
+    ],
+    "pricing_strategy": [
+      {
+        "nom": "Freemium — accès limité 3 engines (acquisition virale)",
+        "description": "Plan gratuit avec 3 engines, 5 fournisseurs, export PDF watermarked. Objectif : 10k utilisateurs gratuits → 5% conversion payant.",
+        "type": "pricing",
+        "impact": 7,
+        "effort": 3,
+        "delai_mois": 2,
+        "cout_eur_estime": 8000,
+        "kpi_succes": "10k comptes free, 500 conversions/an"
+      },
+      {
+        "nom": "Plan PME 199 EUR/mois — up à 20 fournisseurs",
+        "description": "Tier PME accessible pour le marché belge/français. Inclut 10 engines, 20 fournisseurs, rapport CSDDD basique.",
+        "type": "pricing",
+        "impact": 6,
+        "effort": 2,
+        "delai_mois": 1,
+        "cout_eur_estime": 3000,
+        "kpi_succes": "200 clients PME en 12 mois"
+      },
+      {
+        "nom": "Plan Enterprise 2500 EUR/mois — illimité + SLA",
+        "description": "Tier Enterprise : engines illimités, fournisseurs illimités, API dédiée, SLA 99.9%, account manager dédié, onboarding custom.",
+        "type": "pricing",
+        "impact": 9,
+        "effort": 4,
+        "delai_mois": 3,
+        "cout_eur_estime": 25000,
+        "kpi_succes": "30 clients Enterprise en 12 mois → 75k MRR"
+      }
+    ]
+  },
+  "top5_recommandations": [
+    {
+      "nom": "Belgique — marché domestique (phase actuelle)",
+      "description": "Consolider la présence en Belgique. Cibler les 500 plus grands groupes belges.",
+      "type": "geo",
+      "impact": 9,
+      "effort": 3,
+      "delai_mois": 0,
+      "cout_eur_estime": 0,
+      "kpi_succes": "50 clients belges actifs",
+      "categorie": "expansion_geographique",
+      "score_global": 6.0
+    },
+    {
+      "nom": "Plan PME 199 EUR/mois — up à 20 fournisseurs",
+      "description": "Tier PME accessible pour le marché belge/français. Inclut 10 engines, 20 fournisseurs, rapport CSDDD basique.",
+      "type": "pricing",
+      "impact": 6,
+      "effort": 2,
+      "delai_mois": 1,
+      "cout_eur_estime": 3000,
+      "kpi_succes": "200 clients PME en 12 mois",
+      "categorie": "pricing_strategy",
+      "score_global": 6.0
+    },
+    {
+      "nom": "Freemium — accès limité 3 engines (acquisition virale)",
+      "description": "Plan gratuit avec 3 engines, 5 fournisseurs, export PDF watermarked. Objectif : 10k utilisateurs gratuits → 5% conversion payant.",
+      "type": "pricing",
+      "impact": 7,
+      "effort": 3,
+      "delai_mois": 2,
+      "cout_eur_estime": 8000,
+      "kpi_succes": "10k comptes free, 500 conversions/an",
+      "categorie": "pricing_strategy",
+      "score_global": 4.67
+    },
+    {
+      "nom": "Plan Enterprise 2500 EUR/mois — illimité + SLA",
+      "description": "Tier Enterprise : engines illimités, fournisseurs illimités, API dédiée, SLA 99.9%, account manager dédié, onboarding custom.",
+      "type": "pricing",
+      "impact": 9,
+      "effort": 4,
+      "delai_mois": 3,
+      "cout_eur_estime": 25000,
+      "kpi_succes": "30 clients Enterprise en 12 mois → 75k MRR",
+      "categorie": "pricing_strategy",
+      "score_global": 4.5
+    },
+    {
+      "nom": "Consultants ESG indépendants (réseau 500+)",
+      "description": "Programme de partenaires certifiés CaelumSwarm pour consultants ESG. Commission 20% sur les contrats apportés.",
+      "type": "partenariat",
+      "impact": 6,
+      "effort": 3,
+      "delai_mois": 3,
+      "cout_eur_estime": 8000,
+      "kpi_succes": "50 consultants certifiés actifs",
+      "categorie": "partenariats",
+      "score_global": 4.0
+    }
+  ],
+  "roadmap_12_mois": [
+    {
+      "levier": "Belgique — marché domestique (phase actuelle)",
+      "categorie": "expansion_geographique",
+      "score": 6.0,
+      "debut": "2026-07",
+      "fin": "2026-07",
+      "cout_eur": 0,
+      "kpi": "50 clients belges actifs"
+    },
+    {
+      "levier": "Plan PME 199 EUR/mois — up à 20 fournisseurs",
+      "categorie": "pricing_strategy",
+      "score": 6.0,
+      "debut": "2026-07",
+      "fin": "2026-07",
+      "cout_eur": 3000,
+      "kpi": "200 clients PME en 12 mois"
+    },
+    {
+      "levier": "Freemium — accès limité 3 engines (acquisition virale)",
+      "categorie": "pricing_strategy",
+      "score": 4.67,
+      "debut": "2026-07",
+      "fin": "2026-08",
+      "cout_eur": 8000,
+      "kpi": "10k comptes free, 500 conversions/an"
+    },
+    {
+      "levier": "Plan Enterprise 2500 EUR/mois — illimité + SLA",
+      "categorie": "pricing_strategy",
+      "score": 4.5,
+      "debut": "2026-07",
+      "fin": "2026-09",
+      "cout_eur": 25000,
+      "kpi": "30 clients Enterprise en 12 mois → 75k MRR"
+    },
+    {
+      "levier": "Consultants ESG indépendants (réseau 500+)",
+      "categorie": "partenariats",
+      "score": 4.0,
+      "debut": "2026-07",
+      "fin": "2026-09",
+      "cout_eur": 8000,
+      "kpi": "50 consultants certifiés actifs"
+    }
+  ],
+  "methode_scoring": "score = (impact × 2) / effort"
+}

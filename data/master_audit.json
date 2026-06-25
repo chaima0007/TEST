@@ -1,0 +1,41 @@
+{
+  "entries": [
+    {
+      "id": "51b0572749d2df98",
+      "ts": "2026-06-23T00:02:09.396642",
+      "agent": "SECURITY",
+      "action": "system_security_audit",
+      "risk": "LOW",
+      "result_hash": "d5acd53c256b66a0c3d2547e65886cb01d57b0f7be13b7d63d8d7fdc51326b96",
+      "signature": "53553205999ead2ec230f4138b4abdfde7e990ffbfa251ec5e064ed78f35d8bb"
+    },
+    {
+      "id": "5a7767e8059f6962",
+      "ts": "2026-06-23T00:02:09.963251",
+      "agent": "PATENT",
+      "action": "portfolio_monte_carlo",
+      "risk": "MEDIUM",
+      "result_hash": "6cfe736906208bc97651c854ba43d5c21594c451bc6c7c888e4815ed6fefb453",
+      "signature": "b47cf9bc17c25184992481ef20b977156e69bb5c1012c3ecf03e006ea15732f5"
+    },
+    {
+      "id": "b83832f4db43a322",
+      "ts": "2026-06-23T00:02:10.411398",
+      "agent": "GTM",
+      "action": "channel_simulation",
+      "risk": "LOW",
+      "result_hash": "7a6e3771c435d1672990317a5b316c4af9cc7eab97725696c8c7ebd59535d590",
+      "signature": "b7bcc9f26db740a0eff043c1c7b2394e872e90d3008877a71545b140212e218a"
+    },
+    {
+      "id": "67cac8efec48c642",
+      "ts": "2026-06-23T00:02:11.852217",
+      "agent": "REVENUE",
+      "action": "scenario_monte_carlo",
+      "risk": "LOW",
+      "result_hash": "7770ab101e61f1a67517fd727f7b2f3731d110c7b79a257f2af3efc4e6c9bbf6",
+      "signature": "7d5756e189095bac203bc2258db64d00d85a099264caa6235773d56b5239d105"
+    }
+  ],
+  "total": 4
+}

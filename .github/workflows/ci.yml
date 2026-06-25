@@ -9,7 +9,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  sidebar-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for duplicate Icon function definitions in Sidebar.tsx
+        run: |
+          DUPS=$(grep "^function Icon" components/Sidebar.tsx | awk -F'[{ ]' '{print $3}' | sort | uniq -d)
+          if [ -n "$DUPS" ]; then
+            echo "❌ Duplicate Icon functions found in components/Sidebar.tsx:"
+            echo "$DUPS"
+            echo ""
+            echo "Each icon function must be defined exactly once."
+            echo "Remove the earlier occurrence(s) for each duplicate listed above."
+            exit 1
+          fi
+          echo "✅ No duplicate Icon functions — Sidebar.tsx is clean"
+
   nextjs-build:
+    needs: sidebar-lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,4 +65,26 @@ jobs:
         run: pip install pytest pytest-cov crewai langchain-anthropic anthropic
 
       - name: Run swarm tests
-        run: cd swarm && pytest tests/ -v --tb=short --cov=. --cov-report=term-missing 2>&1 | head -200 || true
+        run: cd swarm && pytest tests/ -v --tb=short --cov=. --cov-report=term-missing 2>&1 | head -200
+
+  # ── Gardiens automatiques : vérifient le travail à chaque changement,
+  # ── sans Claude ni intervention humaine. Le travail continue tout seul.
+  quality-guards:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Gardien build (patterns d'erreurs connues)
+        run: python3 scripts/build_guard.py --scan
+
+      - name: Gardien cohérence du site (marque, contenu)
+        run: python3 scripts/site_guard.py --scan
+
+      - name: Gardien sécurité des dépendances
+        run: python3 scripts/dependency_scanner.py --scan

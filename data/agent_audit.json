@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Journal d'audit des démarrages d'agents",
+  "total_startups": 5,
+  "blocked_startups": 1,
+  "sessions": [
+    {
+      "timestamp": "2026-06-22T22:11:46.752166+00:00",
+      "group": "wave",
+      "wave": 481,
+      "domains": [
+        "waterrights",
+        "foodsovereignty",
+        "housingright"
+      ],
+      "score": 65.0,
+      "ready": false,
+      "checks_failed": [
+        "clean_tree",
+        "no_duplicates"
+      ]
+    },
+    {
+      "timestamp": "2026-06-22T22:13:34.223769+00:00",
+      "group": "wave",
+      "wave": 483,
+      "domains": [
+        "laborfreedom",
+        "collectivebargaining",
+        "workersafety"
+      ],
+      "score": 85.0,
+      "ready": true,
+      "checks_failed": [
+        "no_duplicates"
+      ]
+    },
+    {
+      "timestamp": "2026-06-22T22:14:10.029796+00:00",
+      "group": "wave",
+      "wave": 484,
+      "domains": [
+        "biodiversityloss",
+        "deforestation",
+        "oceanpollution"
+      ],
+      "score": 80.0,
+      "ready": true,
+      "checks_failed": [
+        "clean_tree"
+      ]
+    },
+    {
+      "timestamp": "2026-06-22T22:21:30.898052+00:00",
+      "group": "wave",
+      "wave": 485,
+      "domains": [
+        "esgrating",
+        "tcfdreporting",
+        "esrsstandards"
+      ],
+      "score": 100.0,
+      "ready": true,
+      "checks_failed": []
+    },
+    {
+      "timestamp": "2026-06-22T22:22:02.231491+00:00",
+      "group": "wave",
+      "wave": 486,
+      "domains": [
+        "supplieraudit",
+        "traceability",
+        "conflictminerals"
+      ],
+      "score": 80.0,
+      "ready": true,
+      "checks_failed": [
+        "clean_tree"
+      ]
+    }
+  ],
+  "last_startup": "2026-06-22T22:22:02.231491+00:00"
+}

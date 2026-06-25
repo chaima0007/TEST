@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -121,13 +121,13 @@ export default function SectorsPage() {
   const [loading, setLoading] = useState(true);
   const [sortBy, setSortBy] = useState<"priority" | "market" | "roi" | "competition">("priority");
 
-  const load = useCallback(() => {
+  const load = () => {
     setLoading(true);
     fetch("/api/sectors")
       .then((r) => r.json())
       .then(setData)
       .finally(() => setLoading(false));
-  }, []);
+  };
 
   useEffect(() => { load(); }, [load]);
 
