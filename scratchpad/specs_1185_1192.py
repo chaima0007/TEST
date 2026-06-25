@@ -1,0 +1,118 @@
+# Specs waves 1185-1192 — 24 nouveaux moteurs de droits humains
+# Préfixes vérifiés : 0 collision externe, 0 doublon interne
+# Remplacements : small_claims_court_access(existe)→court_filing_fee_waiver(CFFR) ;
+#                 curriculum_censorship_history(CCHR pris)→school_history_ban(SHCB)
+# (filename, title, wave, desc, prefix, idx)
+SPECS = [
+    # Wave 1185 — Assurance: mauvaise foi & abus d'assureurs (inédits)
+    ("homeowner_insurance_claim_delay_rights_engine.py",
+     "Délais abusifs de traitement des sinistres habitation & mauvaise foi des assureurs dans les déclarations légitimes", "Wave 1185",
+     "Propriétaires avec sinistres habitation légitimes attendant des mois sans réponse pendant que leurs assureurs utilisent des tactiques dilatoires.",
+     "HICD", "homeown_insur_delay"),
+    ("insurance_bad_faith_punitive_rights_engine.py",
+     "Dommages punitifs pour mauvaise foi des assureurs & protections insuffisantes des assurés contre les refus abusifs", "Wave 1185",
+     "Assurés dont les réclamations valides sont refusées de mauvaise foi sans que les assureurs risquent des sanctions dissuasives.",
+     "IBFP", "insur_bad_faith_punit"),
+    ("insurance_coverage_dispute_third_party_rights_engine.py",
+     "Litiges de couverture assurance tiers & droits des victimes face aux assureurs du responsable refusant d'indemniser", "Wave 1185",
+     "Victimes d'accidents blessées par des tiers dont l'assureur refuse la couverture ou offre des règlements insuffisants.",
+     "ICDP", "insur_cov_dispute"),
+
+    # Wave 1186 — École: liberté d'expression & religion (inédits)
+    ("school_prayer_coach_rights_engine.py",
+     "Prière dirigée par un entraîneur scolaire & droits des élèves à ne pas être contraints à la participation religieuse", "Wave 1186",
+     "Élèves se sentant obligés de participer aux prières dirigées par des entraîneurs scolaires sous pression de groupe implicite.",
+     "SPCR", "school_prayer_coach"),
+    ("school_newspaper_censorship_rights_engine.py",
+     "Censure des journaux scolaires par les administrateurs & droits des élèves journalistes à la liberté de presse", "Wave 1186",
+     "Élèves journalistes dont les articles critiques de l'administration scolaire sont censurés avant publication par les directeurs.",
+     "SNCS", "school_news_censor"),
+    ("student_political_expression_rights_engine.py",
+     "Expression politique des étudiants sur campus & restrictions inconstitutionnelles des zones de parole libre", "Wave 1186",
+     "Étudiants universitaires empêchés de distribuer des tracts ou de manifester en dehors de zones de libre expression restrictives.",
+     "SPER", "student_pol_express"),
+
+    # Wave 1187 — Justice: dommages civils & accès (inédits)
+    ("court_filing_fee_waiver_rights_engine.py",
+     "Dérogations aux frais de dossier judiciaire pour personnes à faibles revenus & obstacles aux procédures in forma pauperis", "Wave 1187",
+     "Plaignants à faibles revenus incapables d'accéder aux tribunaux civils en raison de frais de dossier prohibitifs sans dérogation automatique.",
+     "CFFR", "court_filing_fee"),
+    ("civil_lawsuit_litigation_funding_rights_engine.py",
+     "Financement externe des procès civils & droits des plaignants à accéder aux accords de financement de litige tiers", "Wave 1187",
+     "Plaignants ayant des cas valides incapables de financer des litiges longs contre des défendeurs aux ressources illimitées.",
+     "CLFL", "civil_litig_fund"),
+    ("damage_cap_tort_reform_rights_engine.py",
+     "Plafonds de dommages dans les réformes de la responsabilité délictuelle & restrictions du droit des victimes à une compensation complète", "Wave 1187",
+     "Victimes de négligences médicales graves ou d'accidents industriels dont la compensation est artificiellement plafonnée par loi d'État.",
+     "DCTR", "damage_cap_tort"),
+
+    # Wave 1188 — Travail: régulation des plateformes (inédits)
+    ("gig_worker_benefit_portability_rights_engine.py",
+     "Portabilité des avantages sociaux pour travailleurs de plateformes & absence de protection entre missions et employeurs", "Wave 1188",
+     "Travailleurs de gig economy sans assurance maladie ni retraite portables d'une plateforme à l'autre malgré des années de travail.",
+     "GWBP", "gig_benefit_portab"),
+    ("app_based_worker_transparency_rights_engine.py",
+     "Transparence des algorithmes pour travailleurs d'apps & droits à comprendre les critères de tarification et d'attribution", "Wave 1188",
+     "Chauffeurs et livreurs sur plateforme dont les revenus fluctuent sans explication transparente des algorithmes de l'application.",
+     "ABWT", "app_worker_transp"),
+    ("platform_worker_deactivation_rights_engine.py",
+     "Désactivation sans préavis des travailleurs de plateformes & absence de procédure d'appel formelle avant suspension de compte", "Wave 1188",
+     "Travailleurs de plateformes numériques désactivés sans avertissement ni explication précise perdant leur source de revenus principale.",
+     "PWDA", "platform_deactivat"),
+
+    # Wave 1189 — Environnement: énergie & propriété (inédits)
+    ("pipeline_eminent_domain_rights_engine.py",
+     "Expropriation par servitude pour pipelines & droits des propriétaires fonciers face aux sociétés d'énergie", "Wave 1189",
+     "Propriétaires fonciers contraints d'accorder des servitudes pour des pipelines privés via l'expropriation sans compensation adéquate.",
+     "PEDP", "pipeline_emin_dom"),
+    ("wind_farm_neighbor_nuisance_rights_engine.py",
+     "Nuisances des éoliennes pour les riverains & droits à la compensation pour bruit, ombres et dévaluation immobilière", "Wave 1189",
+     "Résidents proches d'éoliennes industrielles subissant nuisances sonores et dévaluation de propriété sans recours adéquat.",
+     "WFNN", "wind_farm_nuisance"),
+    ("solar_panel_hoa_restriction_rights_engine.py",
+     "Restrictions HOA sur les panneaux solaires & droits des propriétaires à installer des systèmes solaires malgré les règlements", "Wave 1189",
+     "Propriétaires voulant installer des panneaux solaires refusés par leur HOA malgré les lois étatiques autorisant cette installation.",
+     "SPHR", "solar_hoa_restrict"),
+
+    # Wave 1190 — Santé: médecine alternative & intégrative (inédits)
+    ("chiropractic_insurance_coverage_rights_engine.py",
+     "Couverture d'assurance pour soins chiropratiques & limitations artificielles des visites pour traitements chroniques", "Wave 1190",
+     "Patients souffrant de douleurs chroniques limités à un nombre arbitraire de séances chiropratiques couvertes malgré un besoin médical.",
+     "CICR", "chiropract_insur"),
+    ("acupuncture_insurance_coverage_rights_engine.py",
+     "Couverture d'assurance pour l'acupuncture & exclusion injustifiée des soins traditionnels dans les plans médicaux", "Wave 1190",
+     "Patients préférant l'acupuncture aux opioïdes pour la gestion de la douleur refusés de couverture pour cette alternative validée.",
+     "ACCR", "acupunct_insur_cov"),
+    ("naturopathic_doctor_licensing_rights_engine.py",
+     "Licences des médecins naturopathes & restrictions à la pratique dans les États sans loi de reconnaissance de la profession", "Wave 1190",
+     "Praticiens naturopathes qualifiés incapables d'exercer légalement dans des États ne reconnaissant pas la profession formellement.",
+     "NDOR", "naturopath_licens"),
+
+    # Wave 1191 — Droits des personnes âgées: établissements & soins (inédits)
+    ("nursing_home_discharge_rights_engine.py",
+     "Droits des résidents de maisons de retraite contre les sorties forcées & procédures de transfert abusives", "Wave 1191",
+     "Résidents de maisons de retraite expulsés de force vers d'autres établissements pour des raisons financières sans procédure légale.",
+     "NHDR", "nursing_home_disch"),
+    ("assisted_living_contract_rights_engine.py",
+     "Contrats d'établissements de soins assistés & clauses abusives cachant les augmentations de prix et les exclusions de services", "Wave 1191",
+     "Familles signant des contrats d'hébergement assisté découvrant des augmentations massives non annoncées ou des exclusions de services essentiels.",
+     "ALCR", "assist_living_contr"),
+    ("continuing_care_retirement_community_rights_engine.py",
+     "Droits des résidents de communautés de retraite à soins continus & risques de faillite et perte des frais d'entrée", "Wave 1191",
+     "Seniors ayant versé des centaines de milliers en frais d'entrée dans des CCRC qui font faillite sans remboursement garanti.",
+     "CCRC", "continu_care_retire"),
+
+    # Wave 1192 — Éducation: liberté académique & censure (inédits)
+    ("teacher_academic_freedom_rights_engine.py",
+     "Liberté académique des enseignants & licenciements pour contenu pédagogique considéré politiquement sensible", "Wave 1192",
+     "Enseignants renvoyés ou sanctionnés pour avoir enseigné des sujets historiques ou scientifiques jugés controversés par les administrateurs.",
+     "TAFR", "teacher_acad_free"),
+    ("book_ban_school_library_rights_engine.py",
+     "Interdiction de livres dans les bibliothèques scolaires & droits des élèves à accéder à des œuvres littéraires diverses", "Wave 1192",
+     "Élèves privés d'accès à des livres primés retirés des bibliothèques scolaires suite à des pressions de groupes de pression locaux.",
+     "BBSL", "book_ban_school"),
+    ("school_history_ban_rights_engine.py",
+     "Interdiction légale d'enseigner certains faits historiques dans les écoles & impact sur la formation civique des élèves", "Wave 1192",
+     "Enseignants contraints par des lois étatiques d'omettre des faits historiques sur l'esclavage, la ségrégation ou d'autres injustices.",
+     "SHCB", "school_hist_ban"),
+]
