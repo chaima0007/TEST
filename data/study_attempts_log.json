@@ -1478,5 +1478,745 @@
         "fluctuation_pct": 0.021
       }
     ]
+  },
+  {
+    "attempt_id": "d2cb9104c3c7",
+    "timestamp": "2026-06-25T07:48:33.894046",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_0",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 0,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0255,
+    "delta_from_target": -0.0045,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2984,
+        "delta": -0.0016,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6001,
+        "delta": 0.0001,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6003,
+        "delta": 0.0003,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6006,
+        "delta": 0.0006,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.6011,
+        "delta": 0.0011,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6005,
+        "delta": 0.0005,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.6011,
+        "delta": 0.0011,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.302,
+        "delta": 0.002,
+        "fluctuation_pct": 0.019
+      }
+    ]
+  },
+  {
+    "attempt_id": "1e0e79c47cc2",
+    "timestamp": "2026-06-25T07:48:36.679066",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_1",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 137,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0255,
+    "delta_from_target": -0.0045,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2985,
+        "delta": -0.0015,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6002,
+        "delta": 0.0002,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6005,
+        "delta": 0.0005,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.6011,
+        "delta": 0.0011,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3019,
+        "delta": 0.0019,
+        "fluctuation_pct": 0.018
+      }
+    ]
+  },
+  {
+    "attempt_id": "01e65420bd32",
+    "timestamp": "2026-06-25T07:48:39.478694",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_2",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 274,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0255,
+    "delta_from_target": -0.0045,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2985,
+        "delta": -0.0015,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6003,
+        "delta": 0.0003,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6005,
+        "delta": 0.0005,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.6011,
+        "delta": 0.0011,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3019,
+        "delta": 0.0019,
+        "fluctuation_pct": 0.018
+      }
+    ]
+  },
+  {
+    "attempt_id": "4f5f435bad53",
+    "timestamp": "2026-06-25T07:48:42.247404",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_3",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 411,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0255,
+    "delta_from_target": -0.0045,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2985,
+        "delta": -0.0015,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6005,
+        "delta": 0.0005,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3018,
+        "delta": 0.0018,
+        "fluctuation_pct": 0.018
+      }
+    ]
+  },
+  {
+    "attempt_id": "438b4dac7c30",
+    "timestamp": "2026-06-25T07:48:45.017964",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_4",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 548,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0256,
+    "delta_from_target": -0.0044,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2983,
+        "delta": -0.0017,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6005,
+        "delta": 0.0005,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6006,
+        "delta": 0.0006,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.6009,
+        "delta": 0.0009,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6006,
+        "delta": 0.0006,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.302,
+        "delta": 0.002,
+        "fluctuation_pct": 0.02
+      }
+    ]
+  },
+  {
+    "attempt_id": "8386c2dc2707",
+    "timestamp": "2026-06-25T07:48:47.808231",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_5",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 685,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0256,
+    "delta_from_target": -0.0044,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2984,
+        "delta": -0.0016,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6003,
+        "delta": 0.0003,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6006,
+        "delta": 0.0006,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.6009,
+        "delta": 0.0009,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6006,
+        "delta": 0.0006,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.6011,
+        "delta": 0.0011,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3023,
+        "delta": 0.0023,
+        "fluctuation_pct": 0.022
+      }
+    ]
+  },
+  {
+    "attempt_id": "644245eecbcf",
+    "timestamp": "2026-06-25T07:48:50.604793",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_6",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 822,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0256,
+    "delta_from_target": -0.0044,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2985,
+        "delta": -0.0015,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6003,
+        "delta": 0.0003,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6007,
+        "delta": 0.0007,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6008,
+        "delta": 0.0008,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3023,
+        "delta": 0.0023,
+        "fluctuation_pct": 0.022
+      }
+    ]
+  },
+  {
+    "attempt_id": "6f8b170ee544",
+    "timestamp": "2026-06-25T07:48:53.393762",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_7",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 959,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0257,
+    "delta_from_target": -0.0043,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2986,
+        "delta": -0.0014,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6005,
+        "delta": 0.0005,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6003,
+        "delta": 0.0003,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6009,
+        "delta": 0.0009,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6007,
+        "delta": 0.0007,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.6011,
+        "delta": 0.0011,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3022,
+        "delta": 0.0022,
+        "fluctuation_pct": 0.022
+      }
+    ]
+  },
+  {
+    "attempt_id": "07e2f2361ee6",
+    "timestamp": "2026-06-25T07:48:56.185005",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_8",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 1096,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0257,
+    "delta_from_target": -0.0043,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2985,
+        "delta": -0.0015,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6004,
+        "delta": 0.0004,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6002,
+        "delta": 0.0002,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.601,
+        "delta": 0.001,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.6009,
+        "delta": 0.0009,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6008,
+        "delta": 0.0008,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.6012,
+        "delta": 0.0012,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3023,
+        "delta": 0.0023,
+        "fluctuation_pct": 0.022
+      }
+    ]
+  },
+  {
+    "attempt_id": "856ed5a3144b",
+    "timestamp": "2026-06-25T07:48:58.980536",
+    "engine_name": "reference_engine",
+    "context": "convergence_run_9",
+    "n_simulations": 50000,
+    "noise_amplitude": 0.5,
+    "seed": 1233,
+    "target_avg": 61.03,
+    "exact_avg": 61.025,
+    "observed_avg": 61.0257,
+    "delta_from_target": -0.0043,
+    "fluctuation_status": "OK",
+    "fallback_applied": false,
+    "corrected_avg": 61.03,
+    "entities": [
+      {
+        "tuple_index": 0,
+        "exact_composite": 96.3,
+        "avg_noisy": 96.2985,
+        "delta": -0.0015,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 1,
+        "exact_composite": 89.6,
+        "avg_noisy": 89.6006,
+        "delta": 0.0006,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 2,
+        "exact_composite": 81.6,
+        "avg_noisy": 81.6003,
+        "delta": 0.0003,
+        "fluctuation_pct": 0.0
+      },
+      {
+        "tuple_index": 3,
+        "exact_composite": 76.6,
+        "avg_noisy": 76.6009,
+        "delta": 0.0009,
+        "fluctuation_pct": 0.001
+      },
+      {
+        "tuple_index": 4,
+        "exact_composite": 57.6,
+        "avg_noisy": 57.6009,
+        "delta": 0.0009,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 5,
+        "exact_composite": 47.6,
+        "avg_noisy": 47.6009,
+        "delta": 0.0009,
+        "fluctuation_pct": 0.002
+      },
+      {
+        "tuple_index": 6,
+        "exact_composite": 28.6,
+        "avg_noisy": 28.6011,
+        "delta": 0.0011,
+        "fluctuation_pct": 0.004
+      },
+      {
+        "tuple_index": 7,
+        "exact_composite": 10.3,
+        "avg_noisy": 10.3022,
+        "delta": 0.0022,
+        "fluctuation_pct": 0.021
+      }
+    ]
   }
 ]
