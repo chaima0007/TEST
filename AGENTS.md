@@ -1,6 +1,27 @@
 <!-- BEGIN:wave-safety-rules -->
 # WAVE SAFETY — Run these checks every time, no exceptions
 
+## 0-BIS. ANTI-DOUBLON OBLIGATOIRE (avant de créer TOUT nouveau moteur)
+> Règle permanente ajoutée après l'incident des doublons sémantiques.
+> Ne JAMAIS créer un moteur sans avoir vérifié qu'aucun moteur de droits
+> ne couvre déjà le même sujet — même si les mots sont dans un ordre différent.
+
+```bash
+# 1. Vérif sémantique AVANT création (le générateur la fait automatiquement) :
+python3 scripts/wave_engine_generator.py <spec.py>
+#    → refuse tout nom exact OU doublon sémantique (mêmes mots-clés, ordre ignoré)
+
+# 2. Vérif APRÈS création — DOIT afficher "✓ Aucun doublon sémantique" :
+python3 scripts/engine_verifier.py --wave <N>-<M>
+#    → contrôle exécution, distribution 4/2/1/1, préfixes, noms ET sujets
+
+# 3. CI permanente : swarm/tests/test_wave_engines_integrity.py
+#    inclut test_session_no_semantic_duplicates (bloquant)
+```
+**Doublon sémantique = `mercury_artisanal_gold` ≡ `artisanal_gold_mercury`** (mêmes
+mots dans un ordre différent). Interdit. Le préfixe d'entité doit aussi être unique
+dans la session (le générateur/vérificateur le contrôle).
+
 ## 0. Startup (copy-paste this block at the start of EVERY wave task)
 ```bash
 git config user.email noreply@anthropic.com && git config user.name Claude

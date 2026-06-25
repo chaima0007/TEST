@@ -120,3 +120,11 @@ def test_session_no_duplicate_prefixes(session_results):
             prefix_map[r["prefix"]].append(r["engine"])
     dups = {p: e for p, e in prefix_map.items() if len(e) > 1}
     assert not dups, f"Préfixes dupliqués dans la session : {dups}"
+
+
+def test_session_no_semantic_duplicates(verifier, session_results):
+    """Aucun moteur de la session ne duplique le SUJET d'un autre moteur de
+    droits (mêmes mots-clés, ordre ignoré) — invariant anti-doublon sémantique."""
+    engines, _ = session_results
+    dups = verifier._detect_semantic_duplicates(engines)
+    assert not dups, f"Doublons sémantiques détectés : {dups}"

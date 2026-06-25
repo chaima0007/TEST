@@ -143,6 +143,43 @@ def verify_one(name, path):
     return result
 
 
+_SEMANTIC_STOP = {"rights", "engine", "child", "labor", "py"}
+
+
+def _topic_tokens(filename):
+    """Ensemble de mots-clés significatifs d'un nom de moteur (ordre ignoré)."""
+    base = (filename.replace("_rights_engine.py", "")
+                    .replace("_engine.py", "")
+                    .replace(".py", ""))
+    return frozenset(t for t in base.split("_") if t and t not in _SEMANTIC_STOP)
+
+
+def _detect_semantic_duplicates(engines):
+    """Pour chaque moteur analysé, trouve un AUTRE moteur de DROITS
+    (*_rights_engine.py) ayant exactement le même ensemble de mots-clés
+    (doublon sémantique réel, ordre des mots ignoré).
+
+    On ne compare QU'ENTRE moteurs de droits : le pattern accepté
+    `X_engine.py` (domaine/écologie) + `X_rights_engine.py` (droits) n'est
+    donc pas signalé comme doublon. Retourne {moteur: [autres_même_sujet]}."""
+    rights_files = [n for n in os.listdir(ENGINES_DIR)
+                    if n.endswith("_rights_engine.py")]
+    by_topic = defaultdict(list)
+    for f in rights_files:
+        tk = _topic_tokens(f)
+        if tk:
+            by_topic[tk].append(f)
+    dups = {}
+    for name, _, _ in engines:
+        if not name.endswith("_rights_engine.py"):
+            continue
+        tk = _topic_tokens(name)
+        siblings = [f for f in by_topic.get(tk, []) if f != name]
+        if siblings:
+            dups[name] = sorted(siblings)
+    return dups
+
+
 def run(wave_range=None, quiet=False, as_json=False):
     engines = discover_engines(wave_range)
     results = [verify_one(name, path) for name, path, _ in engines]
@@ -157,6 +194,12 @@ def run(wave_range=None, quiet=False, as_json=False):
     # contrôle doublons de noms (sur tout le répertoire, pas seulement la plage)
     all_names = [n for n in os.listdir(ENGINES_DIR) if n.endswith("_rights_engine.py")]
     name_dups = {n for n in all_names if all_names.count(n) > 1}
+
+    # contrôle DOUBLONS SÉMANTIQUES : même ensemble de mots-clés (ordre ignoré)
+    # qu'un AUTRE moteur du répertoire (tous *_engine.py, pas que les rights).
+    # C'est l'invariant qui manquait : il attrape "mercury_artisanal_gold" vs
+    # "artisanal_gold_mercury", ou "reparations_colonial" vs "colonial_reparations".
+    semantic_dups = _detect_semantic_duplicates(engines)
 
     # INVARIANTS BLOQUANTS (vrais échecs) :
     #   - le moteur s'exécute sans erreur Python
@@ -189,8 +232,10 @@ def run(wave_range=None, quiet=False, as_json=False):
         "failed": len(failed),
         "duplicate_prefixes": dup_prefixes,
         "duplicate_filenames": sorted(name_dups),
-        # Seuls les échecs bloquants et les doublons de NOMS de fichiers cassent le vert.
-        "all_green": len(failed) == 0 and not name_dups,
+        "semantic_duplicates": semantic_dups,
+        # BLOQUANTS : échecs moteur + doublons de NOMS + doublons SÉMANTIQUES.
+        "all_green": (len(failed) == 0 and not name_dups
+                      and not semantic_dups),
         "failures": [
             {"engine": r["engine"], "errors": r["errors"]} for r in failed
         ],
@@ -224,6 +269,12 @@ def run(wave_range=None, quiet=False, as_json=False):
             print(f"  🔴 Doublons de noms : {sorted(name_dups)}")
         else:
             print("  ✓ Noms de fichiers uniques")
+        if semantic_dups:
+            print(f"  🔴 Doublons SÉMANTIQUES (même sujet) : {len(semantic_dups)}")
+            for eng, sibs in list(semantic_dups.items())[:20]:
+                print(f"      ✗ {eng}  ≈  {sibs}")
+        else:
+            print("  ✓ Aucun doublon sémantique")
         if failed:
             print("\n── ÉCHECS ──")
             for r in failed:
