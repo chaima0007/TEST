@@ -36,7 +36,7 @@ logger = logging.getLogger("swarm.sentiment")
 
 _POSITIVE_KEYWORDS = [
     "intéressé", "super", "parfait", "excellent", "d'accord", "ok", "oui",
-    "bonne idée", "top", "impressionné", "bravo", "merci", "quand", "commencer",
+    "bonne idée", "top", "impressionné", "bravo", "quand", "commencer",
     "allons-y", "enchanté", "disponible", "rendez-vous",
 ]
 
@@ -59,7 +59,7 @@ _SUSPICIOUS_KEYWORDS = [
 ]
 
 _NEGATIVE_KEYWORDS = [
-    "non", "pas intéressé", "pas besoin", "laissez-moi", "ne pas contacter",
+    "non merci", "non", "pas intéressé", "pas besoin", "laissez-moi", "ne pas contacter",
     "trop cher", "aucun intérêt", "occupé", "plus tard peut-être",
     "cousin", "déjà quelqu'un", "interne",
 ]

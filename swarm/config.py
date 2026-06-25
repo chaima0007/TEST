@@ -851,10 +851,40 @@ ALL_AGENTS: List[AgentConfig] = (
 )
 
 DIVISION_METADATA = {
-    1: {"name": "Détection & Scouting", "color": "#3B82F6", "emoji": "🔍"},
-    2: {"name": "Rédaction & Outreach", "color": "#8B5CF6", "emoji": "✍️"},
-    3: {"name": "Relation & Négociation", "color": "#F59E0B", "emoji": "🤝"},
-    4: {"name": "Production & Design", "color": "#10B981", "emoji": "⚙️"},
-    5: {"name": "Finance & Conformité", "color": "#EF4444", "emoji": "🛡️"},
-    6: {"name": "Documentation & Branding", "color": "#EC4899", "emoji": "✨"},
+    1: {
+        "name": "Détection & Scouting",
+        "color": "#3B82F6",
+        "emoji": "🔍",
+        "description": "Identifie et qualifie les prospects B2B par secteur géographique et industrie.",
+    },
+    2: {
+        "name": "Rédaction & Outreach",
+        "color": "#8B5CF6",
+        "emoji": "✍️",
+        "description": "Rédige les messages de prospection personnalisés et gère les séquences d'outreach.",
+    },
+    3: {
+        "name": "Relation & Négociation",
+        "color": "#F59E0B",
+        "emoji": "🤝",
+        "description": "Gère la relation prospect, traite les objections et conduit les négociations commerciales.",
+    },
+    4: {
+        "name": "Production & Design",
+        "color": "#10B981",
+        "emoji": "⚙️",
+        "description": "Produit les livrables clients : sites, contenus, visuels et outils digitaux.",
+    },
+    5: {
+        "name": "Finance & Conformité",
+        "color": "#EF4444",
+        "emoji": "🛡️",
+        "description": "Gère la facturation, les paiements, la comptabilité et la conformité réglementaire.",
+    },
+    6: {
+        "name": "Documentation & Branding",
+        "color": "#EC4899",
+        "emoji": "✨",
+        "description": "Crée et maintient la documentation, les assets de marque et les supports de communication.",
+    },
 }
