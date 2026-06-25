@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-25T07:59:10.773912",
+  "timestamp": "2026-06-25T08:21:53.985232",
   "sidebar_icons": {
     "sidebar-icons-1.tsx": {
       "lines": 2126,
@@ -59,12 +59,17 @@
       "size_kb": 1058.9,
       "lines": 22101,
       "status": "OK"
+    },
+    "study_attempts_log.json": {
+      "size_kb": 138.5,
+      "lines": 5922,
+      "status": "OK"
     }
   },
   "engines": {
-    "count": 1822,
-    "size_mb": 13.5,
-    "pct_max": 60.7,
+    "count": 1939,
+    "size_mb": 13.8,
+    "pct_max": 64.6,
     "status": "OK"
   },
   "api_routes": {
@@ -103,6 +108,6 @@
     "global_status": "ALERTE",
     "critique_count": 0,
     "alerte_count": 2,
-    "ok_count": 14
+    "ok_count": 15
   }
 }
