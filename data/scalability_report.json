@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-25T11:08:53.661809",
+  "timestamp": "2026-06-25T11:24:30.746505",
   "sidebar_icons": {
     "sidebar-icons-1.tsx": {
       "lines": 2126,
@@ -67,9 +67,9 @@
     }
   },
   "engines": {
-    "count": 2464,
-    "size_mb": 15.0,
-    "pct_max": 82.1,
+    "count": 2584,
+    "size_mb": 15.2,
+    "pct_max": 86.1,
     "status": "ALERTE"
   },
   "api_routes": {
