@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-23T01:36:17.430402",
+  "timestamp": "2026-06-25T07:59:10.773912",
   "sidebar_icons": {
     "sidebar-icons-1.tsx": {
       "lines": 2126,
@@ -8,9 +8,9 @@
       "status": "OK"
     },
     "sidebar-icons-1b.tsx": {
-      "lines": 2337,
-      "icons": 213,
-      "pct_oom": 42.5,
+      "lines": 2327,
+      "icons": 212,
+      "pct_oom": 42.3,
       "status": "OK"
     },
     "sidebar-icons-2.tsx": {
@@ -20,9 +20,9 @@
       "status": "OK"
     },
     "sidebar-icons-3.tsx": {
-      "lines": 3720,
-      "icons": 425,
-      "pct_oom": 67.6,
+      "lines": 3704,
+      "icons": 423,
+      "pct_oom": 67.3,
       "status": "OK"
     },
     "sidebar-icons-4.tsx": {
@@ -32,9 +32,9 @@
       "status": "OK"
     },
     "sidebar-icons-5.tsx": {
-      "lines": 1703,
-      "icons": 209,
-      "pct_oom": 31.0,
+      "lines": 1770,
+      "icons": 215,
+      "pct_oom": 32.2,
       "status": "OK"
     },
     "sidebar-icons.tsx": {
@@ -45,11 +45,16 @@
     }
   },
   "sidebar_nav": {
-    "lines": 4157,
-    "pct_lag": 138.6,
+    "lines": 4217,
+    "pct_lag": 140.6,
     "status": "ALERTE"
   },
   "data_files": {
+    "decision_seals_log.json": {
+      "size_kb": 126.8,
+      "lines": 4920,
+      "status": "OK"
+    },
     "library_index.json": {
       "size_kb": 1058.9,
       "lines": 22101,
@@ -57,33 +62,25 @@
     }
   },
   "engines": {
-    "count": 1790,
-    "size_mb": 13.4,
-    "pct_max": 59.7,
+    "count": 1822,
+    "size_mb": 13.5,
+    "pct_max": 60.7,
     "status": "OK"
   },
   "api_routes": {
-    "count": 198,
-    "pct_max": 56.6,
+    "count": 228,
+    "pct_max": 65.1,
     "status": "OK"
   },
   "dashboards": {
-    "count": 289,
-    "pct_max": 72.2,
+    "count": 298,
+    "pct_max": 74.5,
     "status": "OK"
   },
   "duplicate_icons": {
-    "total_icons": 1852,
-    "duplicates": [
-      {
-        "icon": "IconSovereignDebt",
-        "files": [
-          "sidebar-icons-1b.tsx",
-          "sidebar-icons-5.tsx"
-        ]
-      }
-    ],
-    "status": "CRITIQUE"
+    "total_icons": 1855,
+    "duplicates": [],
+    "status": "OK"
   },
   "next_config": {
     "checks": {
@@ -103,9 +100,9 @@
     "status": "OK"
   },
   "summary": {
-    "global_status": "CRITIQUE",
-    "critique_count": 1,
+    "global_status": "ALERTE",
+    "critique_count": 0,
     "alerte_count": 2,
-    "ok_count": 12
+    "ok_count": 14
   }
 }
