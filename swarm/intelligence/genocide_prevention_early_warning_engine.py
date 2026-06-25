@@ -7,14 +7,14 @@ Distribution: 4 critique / 2 élevé / 1 modéré / 1 faible
 from datetime import datetime
 
 ENTITIES = [
-    {"name": "Myanmar/Rohingya Génocide — 700 000 Déplacés Bangladesh CIJ Cas Génocide Documenté Armée Tatmadaw Crimes Contre Humanité", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
-    {"name": "Soudan/Darfour Récurrence — RSF Retour Violences 2023 El Fasher Assauts Civils ONU Alertes Génocide Imminentes", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
-    {"name": "Éthiopie/Tigré — 500 000 Morts Estimés Famine Arme Nettoyage Ethnique Documenté Amnesty HRW Preuves Satellitaires", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
-    {"name": "Chine/Ouïghours — Camps Détention 1M+ Stérilisations Forcées Destruction Mosquées ONU Violations Graves Droits", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
-    {"name": "RD Congo/Est — Massacres Communautaires Répétés FDLR ADF Groupes Armés Kyvu ONU Alerte Précoce Ignorée", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
-    {"name": "Inde/Manipur — Violence Ethnique Kuki-Meitei 2023 220+ Morts Déplacements Massifs Impunité Accusations Nettoyage", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
-    {"name": "Rwanda/Mémorial Génocide — Gacaca Tribunaux Réconciliation Modèle Prévention ICGLR Mécanisme Alerte Régional", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
-    {"name": "Canada/R2P Doctrine — Responsabilité Protéger ONU 2005 ICISS Rapport Normes Intervention Humanitaire Modèle", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
+    {"id": "GPEW-001", "name": "Myanmar/Rohingya Génocide — 700 000 Déplacés Bangladesh CIJ Cas Génocide Documenté Armée Tatmadaw Crimes Contre Humanité", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"id": "GPEW-002", "name": "Soudan/Darfour Récurrence — RSF Retour Violences 2023 El Fasher Assauts Civils ONU Alertes Génocide Imminentes", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"id": "GPEW-003", "name": "Éthiopie/Tigré — 500 000 Morts Estimés Famine Arme Nettoyage Ethnique Documenté Amnesty HRW Preuves Satellitaires", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"id": "GPEW-004", "name": "Chine/Ouïghours — Camps Détention 1M+ Stérilisations Forcées Destruction Mosquées ONU Violations Graves Droits", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"id": "GPEW-005", "name": "RD Congo/Est — Massacres Communautaires Répétés FDLR ADF Groupes Armés Kyvu ONU Alerte Précoce Ignorée", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"id": "GPEW-006", "name": "Inde/Manipur — Violence Ethnique Kuki-Meitei 2023 220+ Morts Déplacements Massifs Impunité Accusations Nettoyage", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"id": "GPEW-007", "name": "Rwanda/Mémorial Génocide — Gacaca Tribunaux Réconciliation Modèle Prévention ICGLR Mécanisme Alerte Régional", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"id": "GPEW-008", "name": "Canada/R2P Doctrine — Responsabilité Protéger ONU 2005 ICISS Rapport Normes Intervention Humanitaire Modèle", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 

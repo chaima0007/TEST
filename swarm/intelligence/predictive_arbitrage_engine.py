@@ -302,9 +302,8 @@ def signal_id_val(a: ArbitrageInput) -> str:
 
 
 if __name__ == "__main__":
-    from swarm.intelligence.predictive_arbitrage_engine import (
-        ArbitrageInput, PredictiveArbitrageEngine,
-    )
+    # ArbitrageInput et PredictiveArbitrageEngine sont définis ci-dessus dans ce
+    # même module — pas besoin de réimporter (l'import cassait l'exécution standalone).
     MOCK = [
         ArbitrageInput(signal_id="ARB-001", signal_type="price_momentum", region="EMEA",
             signal_accuracy_score=0.18, model_confidence=0.22, backtesting_sharpe_ratio=0.15,

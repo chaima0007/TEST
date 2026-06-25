@@ -7,14 +7,14 @@ Distribution: 4 critique / 2 élevé / 1 modéré / 1 faible
 from datetime import datetime
 
 ENTITIES = [
-    {"name": "RD Congo/M23 Recrutement — 3 000+ Enfants Soldats M23 CNDP Kyvu 2023 ONU Rapport Enrôlement Forcé Dès 8 Ans", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
-    {"name": "Somalie/Al-Shabaab — 5 000+ Enfants Recrutés Annuellement Suicide Bombing Enfants ONU Cas Documentés UNICEF", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
-    {"name": "Soudan/RSF Enfants — Forces Appui Rapide Recrutent Enfants Darfour 2023 12-17 Ans Formation Paramilitaire", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
-    {"name": "Yémen/Houthis — 3 500+ Enfants Soldats Houthis ONU Vérifiés Coalition Saoudienne Aussi Documentée UNICEF", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
-    {"name": "Myanmar/Tatmadaw — Armée Birmane Recrutement Enfants Persistant Malgré Interdiction CPI Enquêtes 2023", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
-    {"name": "Mali/Groupes Armés — JNIM Katiba Macina Recrutement Enfants Sahel 1 200 Cas ONU 2023 Filles Esclavage Sexuel", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
-    {"name": "Philippines/Lumad — Enfants Autochtones Lumad Recrutement Contesté NPA Armée Droits Humains Alert", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
-    {"name": "Allemagne/Loi Interdiction — Modèle Législatif Stricte Prohibition Recrutement Mineurs Coopération ICC Coalition Stop", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
+    {"id": "CSAR-001", "name": "RD Congo/M23 Recrutement — 3 000+ Enfants Soldats M23 CNDP Kyvu 2023 ONU Rapport Enrôlement Forcé Dès 8 Ans", "sub1": 99, "sub2": 97, "sub3": 95, "sub4": 93},
+    {"id": "CSAR-002", "name": "Somalie/Al-Shabaab — 5 000+ Enfants Recrutés Annuellement Suicide Bombing Enfants ONU Cas Documentés UNICEF", "sub1": 93, "sub2": 90, "sub3": 88, "sub4": 86},
+    {"id": "CSAR-003", "name": "Soudan/RSF Enfants — Forces Appui Rapide Recrutent Enfants Darfour 2023 12-17 Ans Formation Paramilitaire", "sub1": 85, "sub2": 82, "sub3": 80, "sub4": 78},
+    {"id": "CSAR-004", "name": "Yémen/Houthis — 3 500+ Enfants Soldats Houthis ONU Vérifiés Coalition Saoudienne Aussi Documentée UNICEF", "sub1": 80, "sub2": 77, "sub3": 75, "sub4": 73},
+    {"id": "CSAR-005", "name": "Myanmar/Tatmadaw — Armée Birmane Recrutement Enfants Persistant Malgré Interdiction CPI Enquêtes 2023", "sub1": 61, "sub2": 58, "sub3": 56, "sub4": 54},
+    {"id": "CSAR-006", "name": "Mali/Groupes Armés — JNIM Katiba Macina Recrutement Enfants Sahel 1 200 Cas ONU 2023 Filles Esclavage Sexuel", "sub1": 51, "sub2": 48, "sub3": 46, "sub4": 44},
+    {"id": "CSAR-007", "name": "Philippines/Lumad — Enfants Autochtones Lumad Recrutement Contesté NPA Armée Droits Humains Alert", "sub1": 32, "sub2": 29, "sub3": 27, "sub4": 25},
+    {"id": "CSAR-008", "name": "Allemagne/Loi Interdiction — Modèle Législatif Stricte Prohibition Recrutement Mineurs Coopération ICC Coalition Stop", "sub1": 13, "sub2": 11, "sub3":  9, "sub4":  7}
 ]
 
 
