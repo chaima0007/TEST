@@ -2,6 +2,15 @@ name: CI
 
 on:
   push:
+    # N'exécute la CI que si un fichier du SITE déployé change.
+    # Les commits ne touchant que swarm/ (moteurs Python), scripts/, data/,
+    # docs/ ou *.md ne builddent pas le site → économie de minutes.
+    paths-ignore:
+      - 'swarm/**'
+      - 'scripts/**'
+      - 'data/**'
+      - 'docs/**'
+      - '**.md'
   pull_request:
 
 concurrency:
