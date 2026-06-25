@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-25T09:21:35.183635",
+  "timestamp": "2026-06-25T11:08:53.661809",
   "sidebar_icons": {
     "sidebar-icons-1.tsx": {
       "lines": 2126,
@@ -61,16 +61,16 @@
       "status": "OK"
     },
     "study_attempts_log.json": {
-      "size_kb": 259.7,
-      "lines": 11102,
+      "size_kb": 328.9,
+      "lines": 14062,
       "status": "OK"
     }
   },
   "engines": {
-    "count": 2155,
-    "size_mb": 14.3,
-    "pct_max": 71.8,
-    "status": "OK"
+    "count": 2464,
+    "size_mb": 15.0,
+    "pct_max": 82.1,
+    "status": "ALERTE"
   },
   "api_routes": {
     "count": 228,
@@ -92,12 +92,10 @@
       "productionBrowserSourceMaps: false": true,
       "webpackMemoryOptimizations: true": true,
       "webpackBuildWorker: true": true,
-      "preloadEntriesOnStart: false": false
+      "preloadEntriesOnStart: false": true
     },
-    "missing": [
-      "preloadEntriesOnStart: false"
-    ],
-    "status": "ALERTE"
+    "missing": [],
+    "status": "OK"
   },
   "package_json": {
     "build_cmd": "NODE_OPTIONS='--max-old-space-size=4096' next build",

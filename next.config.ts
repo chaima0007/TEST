@@ -28,6 +28,11 @@ const nextConfig: NextConfig = {
   experimental: {
     webpackMemoryOptimizations: true,
     webpackBuildWorker: true,
+    // Réduit le footprint mémoire au démarrage du build (grosse app : milliers
+    // d'icônes + centaines de dashboards) — source: memory-usage.md §preloadEntriesOnStart
+    preloadEntriesOnStart: false,
+    // Pas de source maps serveur en prod → économie RAM build — source: memory-usage.md
+    serverSourceMaps: false,
   },
   images: {
     remotePatterns: [
