@@ -42,9 +42,14 @@ def all_results(verifier):
     return engines, [verifier.verify_one(n, p) for n, p, _ in engines]
 
 
+# Plage des waves produites au pattern strict (61.03 ± 0.50, assertions vertes).
+# Élargie au fil des waves pour couvrir toute la session.
+SESSION_RANGE = (498, 999)
+
+
 @pytest.fixture(scope="module")
 def session_results(verifier):
-    engines = verifier.discover_engines((498, 561))
+    engines = verifier.discover_engines(SESSION_RANGE)
     return engines, [verifier.verify_one(n, p) for n, p, _ in engines]
 
 
