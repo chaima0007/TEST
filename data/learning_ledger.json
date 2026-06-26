@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 19,
+    "total_savoirs": 22,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -64,6 +64,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-REP-001",
+      "sujet": "Qui paie les réparations à Bruxelles : locataire ou bailleur ?",
+      "reference_legale": "Code bruxellois du Logement + liste des réparations (M.B. 08/12/2017)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_flandre",
       "id": "BVLG-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
@@ -119,6 +130,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-REP-001",
+      "sujet": "Qui paie les réparations en Flandre : locataire ou bailleur ?",
+      "reference_legale": "Vlaams Woninghuurdecreet + liste des réparations (M.B. 19/12/2018)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_wallonie",
       "id": "BWAL-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?",
@@ -167,6 +189,17 @@
       "id": "BWAL-EDL-001",
       "sujet": "L'état des lieux est-il obligatoire en Wallonie et qui paie ?",
       "reference_legale": "Décret du 15 mars 2018 — état des lieux ; enregistrement : SPF Finances",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-REP-001",
+      "sujet": "Qui paie les réparations en Wallonie : locataire ou bailleur ?",
+      "reference_legale": "Décret du 15 mars 2018 + liste non limitative des réparations locatives (M.B. 31/08/2018)",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",

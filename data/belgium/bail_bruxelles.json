@@ -67,6 +67,17 @@
         {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-REP-001",
+      "question": "Qui paie les réparations à Bruxelles : locataire ou bailleur ?",
+      "reponse": "Le bailleur prend en charge les grosses réparations (toiture, chauffage, canalisations, remplacement d'appareils vétustes) ; le locataire les petites réparations et l'entretien courant. Bruxelles a établi une liste non limitative (Moniteur belge du 8 décembre 2017), applicable à tous les baux et obligatoire (sans dérogation).",
+      "reference_legale": "Code bruxellois du Logement + liste des réparations (M.B. 08/12/2017)",
+      "sources": [
+        {"type": "officiel", "url": "https://be.brussels/en/housing/rental/lease-contracts/division-repairs-between-tenant-and-landlord", "intitule": "be.brussels — Répartition des réparations locataire/bailleur"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

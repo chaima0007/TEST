@@ -16,8 +16,8 @@ import glob
 REGIONS = {"BWAL": "Wallonie", "BBRU": "Bruxelles", "BVLG": "Flandre"}
 THEMES = {"DUREE": "Durée du bail", "GARANTIE": "Garantie locative",
           "PREAVIS": "Préavis / résiliation", "INDEX": "Indexation du loyer",
-          "EDL": "État des lieux"}
-ORDRE_THEMES = ["DUREE", "GARANTIE", "PREAVIS", "INDEX", "EDL"]
+          "EDL": "État des lieux", "REP": "Réparations & entretien (qui paie quoi)"}
+ORDRE_THEMES = ["DUREE", "GARANTIE", "PREAVIS", "INDEX", "EDL", "REP"]
 
 
 def main():

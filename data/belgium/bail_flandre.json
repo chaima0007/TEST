@@ -67,6 +67,17 @@
         {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-REP-001",
+      "question": "Qui paie les réparations en Flandre : locataire ou bailleur ?",
+      "reponse": "Le bailleur assume les grosses réparations (toiture, chauffage, canalisations, remplacement d'appareils vétustes), le locataire l'entretien courant et les petites réparations. La Flandre a publié une liste (Moniteur belge du 19 décembre 2018), applicable aux baux conclus depuis le 01/01/2019 ; le bail peut prévoir d'autres dispositions si elles sont plus favorables au locataire.",
+      "reference_legale": "Vlaams Woninghuurdecreet + liste des réparations (M.B. 19/12/2018)",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/louer-un-logement/quels-sont-les-frais-de-reparation-ou-dentretien", "intitule": "Wikifin (FSMA) — Frais de réparation/entretien"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

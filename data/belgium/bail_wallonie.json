@@ -67,6 +67,17 @@
         {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BWAL-REP-001",
+      "question": "Qui paie les réparations en Wallonie : locataire ou bailleur ?",
+      "reponse": "Le bailleur assume les grosses réparations et l'entretien majeur (toiture, chaudière, canalisations, remplacement d'appareils vétustes). Le locataire assume les réparations locatives et l'entretien courant liés à l'usage normal. La Wallonie a publié une liste non limitative (Moniteur belge du 31 août 2018), obligatoire et sans dérogation possible.",
+      "reference_legale": "Décret du 15 mars 2018 + liste non limitative des réparations locatives (M.B. 31/08/2018)",
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/droits-devoirs-bailleur-travaux-pendant-location", "intitule": "SPW Logement — Travaux du bailleur pendant la location"},
+        {"type": "officiel", "url": "https://lampspw.wallonie.be/dgo4/tinymvc/apps/logement/views/documents/baux/fiches/FR/liste_non_limitative_des_reparations_locatives.pdf", "intitule": "SPW — Liste non limitative des réparations locatives (PDF)"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

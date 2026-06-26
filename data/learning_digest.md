@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **19**
+- Savoirs enregistrés : **22**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `2dab3e6bbfd92dec…`)
+- Certification système : **PASS** (sceau `806515c416abef67…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -18,6 +18,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code bruxellois du Logement, titre XI (indexation) ; enregistrement : SPF Finances · sources off. : 1 · revu : 2026-06-26
 - ✅ **L'état des lieux est-il obligatoire à Bruxelles et quand l'enregistrer ?**  
   Réf : Code bruxellois du Logement — état des lieux ; enregistrement : SPF Finances · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qui paie les réparations à Bruxelles : locataire ou bailleur ?**  
+  Réf : Code bruxellois du Logement + liste des réparations (M.B. 08/12/2017) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?**  
   Réf : Vlaams Woninghuurdecreet (décret du 9 novembre 2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant maximum de la garantie locative en Flandre ?**  
@@ -28,6 +30,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Vlaams Woninghuurdecreet — indexation du loyer · sources off. : 1 · revu : 2026-06-26
 - ✅ **L'état des lieux est-il obligatoire en Flandre ?**  
   Réf : Vlaams Woninghuurdecreet — plaatsbeschrijving ; enregistrement : SPF Finances · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qui paie les réparations en Flandre : locataire ou bailleur ?**  
+  Réf : Vlaams Woninghuurdecreet + liste des réparations (M.B. 19/12/2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?**  
   Réf : Décret du 15 mars 2018, art. 56 et suivants · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont les délais de préavis pour mettre fin au bail ?**  
@@ -38,6 +42,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Décret du 15 mars 2018, art. 26 · sources off. : 2 · revu : 2026-06-26
 - ✅ **L'état des lieux est-il obligatoire en Wallonie et qui paie ?**  
   Réf : Décret du 15 mars 2018 — état des lieux ; enregistrement : SPF Finances · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qui paie les réparations en Wallonie : locataire ou bailleur ?**  
+  Réf : Décret du 15 mars 2018 + liste non limitative des réparations locatives (M.B. 31/08/2018) · sources off. : 2 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

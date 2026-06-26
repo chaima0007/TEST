@@ -32,3 +32,8 @@
 - **Bruxelles** — Un état des lieux d'entrée détaillé et contradictoire est obligatoire et doit être enregistré, lorsque le bien est encore inoccupé ou au plus tard dans le mois suivant la remise des clés. L'enregistrement est gratuit via MyRent (SPF Finances) ; les frais d'expert éventuels sont en principe partagés.
 - **Flandre** — Un état des lieux détaillé (plaatsbeschrijving) et contradictoire est obligatoire. Il est annexé au bail et déposé avec celui-ci lors de l'enregistrement (gratuit via MyRent du SPF Finances). Les frais d'expert éventuels sont en principe partagés entre les parties.
 
+## Réparations & entretien (qui paie quoi)
+- **Wallonie** — Le bailleur assume les grosses réparations et l'entretien majeur (toiture, chaudière, canalisations, remplacement d'appareils vétustes). Le locataire assume les réparations locatives et l'entretien courant liés à l'usage normal. La Wallonie a publié une liste non limitative (Moniteur belge du 31 août 2018), obligatoire et sans dérogation possible.
+- **Bruxelles** — Le bailleur prend en charge les grosses réparations (toiture, chauffage, canalisations, remplacement d'appareils vétustes) ; le locataire les petites réparations et l'entretien courant. Bruxelles a établi une liste non limitative (Moniteur belge du 8 décembre 2017), applicable à tous les baux et obligatoire (sans dérogation).
+- **Flandre** — Le bailleur assume les grosses réparations (toiture, chauffage, canalisations, remplacement d'appareils vétustes), le locataire l'entretien courant et les petites réparations. La Flandre a publié une liste (Moniteur belge du 19 décembre 2018), applicable aux baux conclus depuis le 01/01/2019 ; le bail peut prévoir d'autres dispositions si elles sont plus favorables au locataire.
+
