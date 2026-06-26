@@ -93,6 +93,12 @@
       "nom": "Sobriété des protocoles",
       "regle": "N'ajouter un protocole que s'il aide ou protège réellement. Pas de surcharge : viser l'expertise absolue, pas la bureaucratie. Revoir et retirer ce qui ne sert plus.",
       "verif": "revue périodique"
+    },
+    {
+      "id": "P-SAS",
+      "nom": "Sas de contrôle (anti-surcharge)",
+      "regle": "Avant une livraison/commit, traverser des sas étanches (entrée→intégrité→contenu→livraison). Arrêt au 1er sas rouge. Double contrôle indépendant SEULEMENT au sas critique (sobriété).",
+      "verif": "python3 scripts/control_gates_protocol.py"
     }
   ]
 }
