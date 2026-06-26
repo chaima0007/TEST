@@ -1,12 +1,56 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 8,
+    "total_savoirs": 12,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
   },
   "savoirs": [
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-DUREE-001",
+      "sujet": "Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?",
+      "reference_legale": "Code bruxellois du Logement, titre XI",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-GARANTIE-001",
+      "sujet": "Quel est le montant maximum de la garantie locative à Bruxelles ?",
+      "reference_legale": "Code bruxellois du Logement, art. 248 §2 (réforme ordonnance du 4 avril 2024)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-PREAVIS-001",
+      "sujet": "Comment résilier un bail de résidence principale à Bruxelles ?",
+      "reference_legale": "Code bruxellois du Logement, titre XI, chapitre relatif à la fin du bail",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-INDEX-001",
+      "sujet": "Quand le loyer peut-il être indexé à Bruxelles ?",
+      "reference_legale": "Code bruxellois du Logement, titre XI (indexation) ; enregistrement : SPF Finances",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
     {
       "categorie": "droit_belge",
       "module": "bail_residence_principale_wallonie",

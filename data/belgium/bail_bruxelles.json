@@ -1,0 +1,61 @@
+{
+  "module": "bail_residence_principale_bruxelles",
+  "titre": "Bail de résidence principale — Région de Bruxelles-Capitale",
+  "juridiction": "BE-BRU",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code bruxellois du Logement (titre XI — du bail d'habitation), réformé par l'ordonnance du 4 avril 2024",
+    "entree_en_vigueur_reforme": "2024-11-01",
+    "portee": "Baux de résidence principale en Région de Bruxelles-Capitale",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil juridique individualisé. Vérifier la version en vigueur du Code bruxellois du Logement avant toute démarche.",
+  "faits": [
+    {
+      "id": "BBRU-DUREE-001",
+      "question": "Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?",
+      "reponse": "À Bruxelles, le bail de résidence principale est réputé conclu pour 9 ans. Le bail de courte durée a une durée maximale de 3 ans ; un bail conclu entre 3 et 9 ans est assimilé à un bail de 9 ans.",
+      "reference_legale": "Code bruxellois du Logement, titre XI",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel / Belgisch Staatsblad — Code bruxellois du Logement"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/te-loger/les-caracteristiques-du-bail-de-residence-principale-et-les-differentes-durees/", "intitule": "Bruxelles-J — Bail de résidence principale et durées"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-GARANTIE-001",
+      "question": "Quel est le montant maximum de la garantie locative à Bruxelles ?",
+      "reponse": "La garantie locative est plafonnée à 2 mois de loyer si elle est constituée sur un compte individualisé bloqué, et à 3 mois si elle prend la forme d'une garantie bancaire. Depuis la réforme du 1er novembre 2024, le bailleur dispose de 2 mois après la fin du bail pour débloquer la garantie, sous peine de devoir 10% du loyer par mois de retard.",
+      "reference_legale": "Code bruxellois du Logement, art. 248 §2 (réforme ordonnance du 4 avril 2024)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement, art. 248"},
+        {"type": "secondaire", "url": "https://www.garloc.be/loi-garantie-locative/bruxelles/", "intitule": "Garloc — Garantie locative Bruxelles"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-PREAVIS-001",
+      "question": "Comment résilier un bail de résidence principale à Bruxelles ?",
+      "reponse": "Le preneur peut mettre fin au bail à tout moment moyennant un préavis de 3 mois (une indemnité dégressive peut être due en cas de rupture anticipée durant les trois premières années d'un bail de 9 ans). Le bailleur ne peut résilier que dans les cas et délais prévus par le Code (préavis et motifs encadrés).",
+      "reference_legale": "Code bruxellois du Logement, titre XI, chapitre relatif à la fin du bail",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
+        {"type": "secondaire", "url": "https://ijbxl.be/logement/les-baux-en-region-bruxelloise-regles-generales-duree-et-possibilites-de-rupture/", "intitule": "Infor Jeunes Bruxelles — Baux : règles, durée, rupture"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-INDEX-001",
+      "question": "Quand le loyer peut-il être indexé à Bruxelles ?",
+      "reponse": "L'indexation du loyer est possible une fois par an, à la date anniversaire du bail, selon la formule légale (indice santé). Point essentiel : si le bail n'a pas été enregistré auprès du SPF Finances, le bailleur ne peut pas indexer le loyer.",
+      "reference_legale": "Code bruxellois du Logement, titre XI (indexation) ; enregistrement : SPF Finances",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/actus/des-nouvelles-regles-en-matiere-de-bail/", "intitule": "Bruxelles-J — Nouvelles règles de bail"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
