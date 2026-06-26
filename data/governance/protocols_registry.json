@@ -81,6 +81,18 @@
       "nom": "Orchestrateur global",
       "regle": "Après chaque ajout de savoir : tout régénérer d'un geste, puis envoyer les comptes-rendus dans le Drive.",
       "verif": "python3 scripts/update_all_reports.py"
+    },
+    {
+      "id": "P-DELEGATION",
+      "nom": "Délégation gouvernée",
+      "regle": "Tout agent délégué (niveau expert, jamais 'junior') est soumis à TOUS les protocoles ; ses livrables sont vérifiés avant acceptation. Aucune exception.",
+      "verif": "data/governance/delegation_protocol.json"
+    },
+    {
+      "id": "P-SOBRIETE",
+      "nom": "Sobriété des protocoles",
+      "regle": "N'ajouter un protocole que s'il aide ou protège réellement. Pas de surcharge : viser l'expertise absolue, pas la bureaucratie. Revoir et retirer ce qui ne sert plus.",
+      "verif": "revue périodique"
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "protocole": "Délégation gouvernée — excellence sous contrôle",
+  "but": "Permettre de déléguer à des agents expérimentés (haut niveau) TOUT en garantissant que personne n'échappe aux protocoles. Excellence ET contrôle.",
+  "derniere_revue": "2026-06-26",
+  "principe": "Tout agent — délégué ou non, quel que soit son niveau — est soumis à TOUS les protocoles en vigueur (data/governance/protocols_registry.json). Aucune exception.",
+  "regles_de_delegation": [
+    "D1 — Chaque agent délégué reçoit la charte (agent_charter.json), le standard technique (engineering_standards.json) et le registre des protocoles AVANT d'agir.",
+    "D2 — Niveau attendu : Senior → CTO (expertise), jamais 'junior'. Excellence et perfection visées.",
+    "D3 — Sources : tout livrable d'un agent suit le protocole de sources (officiel, daté, vérifié) ; sinon rejeté.",
+    "D4 — Vérification : aucun livrable d'agent n'est accepté ni envoyé sans passer les contrôles (certification + vérification avant envoi).",
+    "D5 — Séparation : chaque agent respecte la propriété des données (project_registry.json) ; interdiction de mélanger.",
+    "D6 — Sécurité : zéro credential ; secrets via variables d'environnement uniquement.",
+    "D7 — Traçabilité : décisions et livrables journalisés ; Chaima reste la décideuse finale.",
+    "D8 — Honnêteté : un agent signale ses incertitudes et ce qu'il n'a pas vérifié ; jamais d'invention."
+  ],
+  "controle_qualite": "Les livrables des agents passent par : legal_content_verifier (si contenu), certification_protocol (système), identity_guard (si nominatif), avant acceptation.",
+  "note_honnete": "La délégation se fait à la demande, par des sous-agents que je pilote et dont je vérifie les sorties. Il ne s'agit pas d'agents autonomes tournant en permanence sans supervision."
+}
