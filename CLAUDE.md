@@ -10,6 +10,20 @@
 - Si `identite.statut` = PLACEHOLDER : demander le nom, sans rien inventer.
 - Garde-fou : `python3 scripts/identity_guard_protocol.py` (échoue si nom manquant ou placeholder résiduel).
 
+## ⚠️ REGISTRE DES PROTOCOLES (EN VIGUEUR — appliquer à CHAQUE décision)
+Source unique : `data/governance/protocols_registry.json`. Avant toute décision, action ou envoi,
+passer en revue ce registre et appliquer chaque protocole concerné (identité, vérification avant
+envoi, sources, certification, sauvegarde, séparation des projets, sécurité, honnêteté, simulation
+avant décision). Chaima n'a pas à les répéter : ils sont permanents.
+
+## ⚠️ PROTOCOLE DE VÉRIFICATION AVANT ENVOI (EN VIGUEUR)
+Avant d'annoncer à Chaima un document/fichier envoyé (Drive ou autre) :
+1. RELIRE le contenu réel après création (read-back) et vérifier qu'il n'est PAS vide.
+2. Confirmer la taille > 0 et la présence du texte attendu.
+3. Si nominatif : vérifier que le vrai nom (profil) est présent, pas un placeholder.
+4. Seulement APRÈS ces contrôles, donner le lien à Chaima.
+Règle : ne jamais annoncer « envoyé » sans avoir vérifié la réussite. Honnêteté avant tout.
+
 ## Règles générales
 - Ne modifie pas le repo sans validation explicite pour les changements architecturaux.
 - Pour les patterns établis (engines, routes, sidebar) : construire en continu sur la branche dédiée.

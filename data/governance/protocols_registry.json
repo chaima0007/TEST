@@ -1,0 +1,86 @@
+{
+  "registre": "PROTOCOLES EN VIGUEUR — à appliquer à CHAQUE décision/action",
+  "but": "Chaima ne doit jamais avoir à répéter ces règles. Elles sont permanentes et vérifiées.",
+  "derniere_revue": "2026-06-26",
+  "regle_maitresse": "Avant toute décision, action ou envoi : passer en revue ce registre et appliquer chaque protocole concerné. Honnêteté absolue, toujours.",
+  "protocoles": [
+    {
+      "id": "P-IDENTITE",
+      "nom": "Identité",
+      "regle": "Lire data/governance/profile.json en premier. Utiliser le vrai nom (Chaima Mhadbi). Ne jamais inventer une donnée perso.",
+      "verif": "python3 scripts/identity_guard_protocol.py"
+    },
+    {
+      "id": "P-VERIF-ENVOI",
+      "nom": "Vérification avant envoi",
+      "regle": "Relire le contenu réel d'un document (read-back) et confirmer qu'il n'est pas vide AVANT d'annoncer l'envoi.",
+      "verif": "read-back Drive (assistant)"
+    },
+    {
+      "id": "P-SOURCES",
+      "nom": "Contenu sourcé",
+      "regle": "Aucun fait publié sans source officielle, datée et vérifiée. En cas de doute : ne pas publier.",
+      "verif": "python3 scripts/legal_content_verifier.py"
+    },
+    {
+      "id": "P-CERTIF",
+      "nom": "Certification système",
+      "regle": "Tout doit compiler, être intègre, sans régression ; sceau SHA-256 + probabilité (consultative).",
+      "verif": "python3 scripts/certification_protocol.py"
+    },
+    {
+      "id": "P-SAUVEGARDE",
+      "nom": "Sauvegarde",
+      "regle": "Sauvegarder les données critiques (manifeste SHA-256). Le remote git est la sauvegarde durable : committer et pousser.",
+      "verif": "python3 scripts/backup_protocol.py"
+    },
+    {
+      "id": "P-APPRENTISSAGE",
+      "nom": "Registre d'apprentissage",
+      "regle": "Ne consigner que le savoir validé et sourcé ; tenir le compte-rendu à jour.",
+      "verif": "python3 scripts/learning_ledger_protocol.py"
+    },
+    {
+      "id": "P-AVANCEMENT",
+      "nom": "Comptes-rendus d'avancement & rêves",
+      "regle": "Tenir à jour l'avancement (actions véritables uniquement) et le récit de progrès ; envoyer dans le Drive.",
+      "verif": "python3 scripts/progress_report_protocol.py ; python3 scripts/dream_tracker_protocol.py"
+    },
+    {
+      "id": "P-RESOLUTION",
+      "nom": "Résolution rapide",
+      "regle": "Détecter, scorer, prioriser, router et journaliser tout problème ; vite mais fiable.",
+      "verif": "python3 scripts/rapid_resolution_protocol.py"
+    },
+    {
+      "id": "P-SIMULATION",
+      "nom": "Simuler avant de décider",
+      "regle": "Pour toute décision importante : ≥2 options scorées, choisir la meilleure avec justification (cf. CLAUDE.md).",
+      "verif": "raisonnement documenté"
+    },
+    {
+      "id": "P-SEPARATION",
+      "nom": "Séparation des projets",
+      "regle": "Identifier le projet propriétaire avant d'écrire une donnée (data/governance/project_registry.json). Ne jamais mélanger.",
+      "verif": "registre des projets"
+    },
+    {
+      "id": "P-SECURITE",
+      "nom": "Sécurité & secrets",
+      "regle": "Zéro credential dans le code. Secrets via variables d'environnement uniquement.",
+      "verif": "revue de code"
+    },
+    {
+      "id": "P-HONNETETE",
+      "nom": "Honnêteté",
+      "regle": "Dire la vérité, même quand c'est moins beau. Pas de promesse magique. Signaler ce qui n'est pas validé.",
+      "verif": "principe permanent"
+    },
+    {
+      "id": "P-ORCHESTRATION",
+      "nom": "Orchestrateur global",
+      "regle": "Après chaque ajout de savoir : tout régénérer d'un geste, puis envoyer les comptes-rendus dans le Drive.",
+      "verif": "python3 scripts/update_all_reports.py"
+    }
+  ]
+}
