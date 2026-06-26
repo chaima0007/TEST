@@ -56,6 +56,17 @@
         {"type": "secondaire", "url": "https://www.bruxelles-j.be/actus/des-nouvelles-regles-en-matiere-de-bail/", "intitule": "Bruxelles-J — Nouvelles règles de bail"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-EDL-001",
+      "question": "L'état des lieux est-il obligatoire à Bruxelles et quand l'enregistrer ?",
+      "reponse": "Un état des lieux d'entrée détaillé et contradictoire est obligatoire et doit être enregistré, lorsque le bien est encore inoccupé ou au plus tard dans le mois suivant la remise des clés. L'enregistrement est gratuit via MyRent (SPF Finances) ; les frais d'expert éventuels sont en principe partagés.",
+      "reference_legale": "Code bruxellois du Logement — état des lieux ; enregistrement : SPF Finances",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
+        {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

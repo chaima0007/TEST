@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **16**
+- Savoirs enregistrés : **19**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `21bc805918f6f1a4…`)
+- Certification système : **PASS** (sceau `2dab3e6bbfd92dec…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -16,6 +16,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code bruxellois du Logement, titre XI, chapitre relatif à la fin du bail · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quand le loyer peut-il être indexé à Bruxelles ?**  
   Réf : Code bruxellois du Logement, titre XI (indexation) ; enregistrement : SPF Finances · sources off. : 1 · revu : 2026-06-26
+- ✅ **L'état des lieux est-il obligatoire à Bruxelles et quand l'enregistrer ?**  
+  Réf : Code bruxellois du Logement — état des lieux ; enregistrement : SPF Finances · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?**  
   Réf : Vlaams Woninghuurdecreet (décret du 9 novembre 2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant maximum de la garantie locative en Flandre ?**  
@@ -24,6 +26,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Vlaams Woninghuurdecreet — fin du bail (opzegging) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quand le loyer peut-il être indexé en Flandre ?**  
   Réf : Vlaams Woninghuurdecreet — indexation du loyer · sources off. : 1 · revu : 2026-06-26
+- ✅ **L'état des lieux est-il obligatoire en Flandre ?**  
+  Réf : Vlaams Woninghuurdecreet — plaatsbeschrijving ; enregistrement : SPF Finances · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?**  
   Réf : Décret du 15 mars 2018, art. 56 et suivants · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont les délais de préavis pour mettre fin au bail ?**  
@@ -32,6 +36,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Décret du 15 mars 2018, art. 62 · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment et quand le loyer peut-il être indexé en Wallonie ?**  
   Réf : Décret du 15 mars 2018, art. 26 · sources off. : 2 · revu : 2026-06-26
+- ✅ **L'état des lieux est-il obligatoire en Wallonie et qui paie ?**  
+  Réf : Décret du 15 mars 2018 — état des lieux ; enregistrement : SPF Finances · sources off. : 2 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

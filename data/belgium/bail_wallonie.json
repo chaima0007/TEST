@@ -56,6 +56,17 @@
         {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018, art. 26"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BWAL-EDL-001",
+      "question": "L'état des lieux est-il obligatoire en Wallonie et qui paie ?",
+      "reponse": "Un état des lieux d'entrée détaillé et contradictoire est obligatoire. Il doit être joint au bail et enregistré (gratuitement via MyRent du SPF Finances) au plus tard 1 mois après l'entrée. En cas de recours à un expert, les frais sont en principe partagés à parts égales entre bailleur et locataire.",
+      "reference_legale": "Décret du 15 mars 2018 — état des lieux ; enregistrement : SPF Finances",
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/etat-des-lieux-entree", "intitule": "SPW Logement — L'état des lieux d'entrée"},
+        {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

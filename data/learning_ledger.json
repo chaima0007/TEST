@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 16,
+    "total_savoirs": 19,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -53,6 +53,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-EDL-001",
+      "sujet": "L'état des lieux est-il obligatoire à Bruxelles et quand l'enregistrer ?",
+      "reference_legale": "Code bruxellois du Logement — état des lieux ; enregistrement : SPF Finances",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_flandre",
       "id": "BVLG-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
@@ -97,6 +108,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-EDL-001",
+      "sujet": "L'état des lieux est-il obligatoire en Flandre ?",
+      "reference_legale": "Vlaams Woninghuurdecreet — plaatsbeschrijving ; enregistrement : SPF Finances",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_wallonie",
       "id": "BWAL-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?",
@@ -134,6 +156,17 @@
       "id": "BWAL-INDEX-001",
       "sujet": "Comment et quand le loyer peut-il être indexé en Wallonie ?",
       "reference_legale": "Décret du 15 mars 2018, art. 26",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-EDL-001",
+      "sujet": "L'état des lieux est-il obligatoire en Wallonie et qui paie ?",
+      "reference_legale": "Décret du 15 mars 2018 — état des lieux ; enregistrement : SPF Finances",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",

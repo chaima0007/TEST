@@ -27,3 +27,8 @@
 - **Bruxelles** — L'indexation du loyer est possible une fois par an, à la date anniversaire du bail, selon la formule légale (indice santé). Point essentiel : si le bail n'a pas été enregistré auprès du SPF Finances, le bailleur ne peut pas indexer le loyer.
 - **Flandre** — L'indexation du loyer est possible une fois par an, au plus tôt à la date anniversaire de l'entrée en vigueur du bail, selon la formule légale basée sur l'indice santé. Elle n'est pas automatique : le bailleur doit la demander.
 
+## État des lieux
+- **Wallonie** — Un état des lieux d'entrée détaillé et contradictoire est obligatoire. Il doit être joint au bail et enregistré (gratuitement via MyRent du SPF Finances) au plus tard 1 mois après l'entrée. En cas de recours à un expert, les frais sont en principe partagés à parts égales entre bailleur et locataire.
+- **Bruxelles** — Un état des lieux d'entrée détaillé et contradictoire est obligatoire et doit être enregistré, lorsque le bien est encore inoccupé ou au plus tard dans le mois suivant la remise des clés. L'enregistrement est gratuit via MyRent (SPF Finances) ; les frais d'expert éventuels sont en principe partagés.
+- **Flandre** — Un état des lieux détaillé (plaatsbeschrijving) et contradictoire est obligatoire. Il est annexé au bail et déposé avec celui-ci lors de l'enregistrement (gratuit via MyRent du SPF Finances). Les frais d'expert éventuels sont en principe partagés entre les parties.
+

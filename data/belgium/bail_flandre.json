@@ -56,6 +56,17 @@
         {"type": "secondaire", "url": "https://www.mijnhabitat.be/nl/nieuws/het-vlaams-woninghuurdecreet-van-a-tot-z", "intitule": "Habitat — Le Vlaams Woninghuurdecreet de A à Z"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-EDL-001",
+      "question": "L'état des lieux est-il obligatoire en Flandre ?",
+      "reponse": "Un état des lieux détaillé (plaatsbeschrijving) et contradictoire est obligatoire. Il est annexé au bail et déposé avec celui-ci lors de l'enregistrement (gratuit via MyRent du SPF Finances). Les frais d'expert éventuels sont en principe partagés entre les parties.",
+      "reference_legale": "Vlaams Woninghuurdecreet — plaatsbeschrijving ; enregistrement : SPF Finances",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"},
+        {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }
