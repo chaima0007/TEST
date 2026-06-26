@@ -105,6 +105,12 @@
       "nom": "Indice d'expertise (preuve de progrès)",
       "regle": "L'expertise ne progresse QUE par du savoir vérifié et sourcé. L'indice le mesure et le journalise ; il ne monte jamais sans preuve réelle.",
       "verif": "python3 scripts/expertise_index_protocol.py"
+    },
+    {
+      "id": "P-CARNET",
+      "nom": "Carnet de bord du travail",
+      "regle": "Journaliser UNIQUEMENT le travail réel (depuis git, daté), pas les bavardages. Preuve fiable pour la confiance en soi et l'école.",
+      "verif": "python3 scripts/work_journal_protocol.py"
     }
   ]
 }

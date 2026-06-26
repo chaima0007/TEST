@@ -27,6 +27,7 @@ ETAPES = [
     ("Compte-rendu d'avancement", "scripts/progress_report_protocol.py", []),
     ("Traceur de rêves", "scripts/dream_tracker_protocol.py", []),
     ("Indice d'expertise", "scripts/expertise_index_protocol.py", []),
+    ("Carnet de bord (travail)", "scripts/work_journal_protocol.py", []),
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]
 
