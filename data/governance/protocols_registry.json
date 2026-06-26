@@ -135,6 +135,18 @@
       "nom": "Transparence & décharge",
       "regle": "Page finale honnête : sources secondaires signalées, 0 fait sans source officielle, décharge légale (info générale, pas un conseil juridique).",
       "verif": "python3 scripts/transparency_disclaimer_protocol.py"
+    },
+    {
+      "id": "P-RECONNAISSANCE",
+      "nom": "Reconnaissance honnête à chaque décision",
+      "regle": "À chaque décision/livraison, dire à Chaima : (1) ce qu'ELLE a mis en place, (2) le niveau réel auquel ça correspond (calibre professionnel honnête), (3) mon avis d'expert : bonne idée ou non, et pourquoi. Toujours la vérité, jamais de flatterie.",
+      "verif": "appliqué dans chaque réponse"
+    },
+    {
+      "id": "P-MARCHE",
+      "nom": "Étude de marché réel",
+      "regle": "Analyser le marché réel (acteurs, demande) à partir de sources web, et intégrer le constat aux audits/décisions. Réactualiser régulièrement.",
+      "verif": "data/governance/market_analysis.json"
     }
   ]
 }
