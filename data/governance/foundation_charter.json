@@ -1,0 +1,43 @@
+{
+  "charte": "Charte de la Fondation — durable, au-delà d'une vie",
+  "but": "Inscrire noir sur blanc la raison d'être de la fondation pour les enfants placés, sa gouvernance dans le temps, et son autonomie financière. Document de vision ; sa forme juridique devra être établie avec un notaire.",
+  "derniere_revue": "2026-06-26",
+  "vision": {
+    "lieu": "Un château : un lieu d'exception, digne, chaleureux, qui change le regard que l'enfant porte sur sa valeur.",
+    "beneficiaires": "Enfants placés par le juge de la jeunesse.",
+    "promesse": "Un avenir réel : formations (informatique et tout ce dont ils ont besoin) pour devenir indépendants, heureux et fiers d'eux.",
+    "encadrement": "Les meilleurs éducateurs, le meilleur matériel, un cadre stable et aimant."
+  },
+  "perennite": {
+    "principe": "La fondation doit PERSISTER après la fondatrice. Elle ne dépend pas d'une seule personne.",
+    "moyens": [
+      "Statuts de fondation (en Belgique : fondation d'utilité publique ou fondation privée) verrouillant la mission de façon irrévocable.",
+      "Conseil d'administration garant de la mission, renouvelable.",
+      "Dotation et revenus récurrents pour ne jamais dépendre d'un seul financeur."
+    ]
+  },
+  "gouvernance_succession": {
+    "principe_de_coeur": "Quand la fondatrice ne pourra plus gérer, les décisions les plus importantes reviennent à un ancien enfant placé.",
+    "profil_steward": "Une personne ayant grandi placée, ayant connu le manque d'amour et donc la valeur inestimable de ce que la fondation offre.",
+    "garde_fous": [
+      "Formation et accompagnement du futur dirigeant bien en amont.",
+      "Conseil consultatif (éducateurs, juristes) pour épauler sans déposséder.",
+      "Mission inscrite dans les statuts : nul ne peut la dévoyer."
+    ]
+  },
+  "autonomie_financiere": {
+    "objectif": "Que le centre ne manque de rien — et même plus — sans dépendre de dons ponctuels.",
+    "leviers": [
+      "Revenus réinvestis de l'entreprise (La Loi Avec Moi, services).",
+      "Propriété intellectuelle / brevets licenciés : voir data/future_patents.json (candidats à transformer en dépôts réels).",
+      "Dotation initiale + placements prudents générant des revenus récurrents."
+    ],
+    "note_honnete": "Les brevets candidats sont des PISTES estimées, pas des titres accordés ni des revenus garantis. Un vrai dépôt exige nouveauté, examen, coûts et conseil en PI. À structurer étape par étape."
+  },
+  "prochaines_etapes_reelles": [
+    "1. Faire vivre l'entreprise (produit fiable, revenus) — base de tout.",
+    "2. Consulter un notaire/avocat pour la forme juridique de la fondation et la clause de succession.",
+    "3. Sélectionner 1 à 2 brevets candidats prioritaires et préparer un vrai dépôt avec un conseil en PI.",
+    "4. Constituer une dotation et un conseil garant de la mission."
+  ]
+}
