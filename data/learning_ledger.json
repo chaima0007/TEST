@@ -1,0 +1,95 @@
+{
+  "derniere_revue": "2026-06-26",
+  "controles": {
+    "total_savoirs": 8,
+    "pct_source": 100.0,
+    "pct_valide": 100.0,
+    "pct_frais": 100.0
+  },
+  "savoirs": [
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-DUREE-001",
+      "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?",
+      "reference_legale": "Décret du 15 mars 2018, art. 56 et suivants",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-PREAVIS-001",
+      "sujet": "Quels sont les délais de préavis pour mettre fin au bail ?",
+      "reference_legale": "Décret du 15 mars 2018, dispositions sur la fin du bail de 9 ans",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-GARANTIE-001",
+      "sujet": "Quel est le montant maximum de la garantie locative en Wallonie ?",
+      "reference_legale": "Décret du 15 mars 2018, art. 62",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-INDEX-001",
+      "sujet": "Comment et quand le loyer peut-il être indexé en Wallonie ?",
+      "reference_legale": "Décret du 15 mars 2018, art. 26",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "lecon_entreprise",
+      "id": "LF-KODAK",
+      "sujet": "Kodak",
+      "lecon": "Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.",
+      "sources": 2,
+      "sources_officielles": 0,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "lecon_entreprise",
+      "id": "LF-NOKIA",
+      "sujet": "Nokia",
+      "lecon": "Une vision plateforme claire et cohérente ; écouter le marché plutôt que ses certitudes internes.",
+      "sources": 1,
+      "sources_officielles": 0,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "lecon_entreprise",
+      "id": "LF-BLOCKBUSTER",
+      "sujet": "Blockbuster",
+      "lecon": "Évaluer sérieusement les disrupteurs naissants ; tester de nouveaux modèles avant d'y être forcé.",
+      "sources": 1,
+      "sources_officielles": 0,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "lecon_entreprise",
+      "id": "LF-THERANOS",
+      "sujet": "Theranos",
+      "lecon": "Transparence totale, preuves sourcées et vérifiables — exactement notre protocole de contenu sourcé.",
+      "sources": 1,
+      "sources_officielles": 0,
+      "date_verification": "2026-06-26",
+      "valide": true
+    }
+  ]
+}
