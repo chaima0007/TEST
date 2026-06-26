@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 28,
+    "total_savoirs": 31,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -97,6 +97,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-PEB-001",
+      "sujet": "Quelles sont les obligations PEB (énergie) pour louer à Bruxelles ?",
+      "reference_legale": "Réglementation PEB bruxelloise (Bruxelles Environnement)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_flandre",
       "id": "BVLG-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
@@ -185,6 +196,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-PEB-001",
+      "sujet": "Quelles sont les obligations EPC/PEB (énergie) pour louer en Flandre ?",
+      "reference_legale": "Réglementation énergétique flamande (EPC) — exigences évolutives",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_wallonie",
       "id": "BWAL-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?",
@@ -266,6 +288,17 @@
       "id": "BWAL-EXP-001",
       "sujet": "Comment se déroule une expulsion en Wallonie ?",
       "reference_legale": "Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-PEB-001",
+      "sujet": "Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?",
+      "reference_legale": "Réglementation PEB wallonne (énergie) — calendrier en évolution",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",

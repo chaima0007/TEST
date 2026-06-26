@@ -100,6 +100,17 @@
         {"type": "secondaire", "url": "https://www.huissiersdejustice.be/expulsion", "intitule": "Huissiers de justice — Expulsion"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BWAL-PEB-001",
+      "question": "Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?",
+      "reponse": "Un certificat PEB valide est obligatoire pour mettre un logement en location et doit être mentionné dans l'annonce. Le label PEB a aussi un impact direct : un logement classé F ou G ne peut pas voir son loyer indexé. Des exigences minimales de performance pour la location sont introduites progressivement, MAIS le calendrier a été réajusté fin 2025 — il faut vérifier la version en vigueur auprès de la source officielle avant toute décision.",
+      "reference_legale": "Réglementation PEB wallonne (énergie) — calendrier en évolution",
+      "sources": [
+        {"type": "officiel", "url": "https://www.wallonie.be/en/demarches/sellingbuyingleasing-obtaining-epb-certificate", "intitule": "Wallonie.be — Obtenir un certificat PEB (vente/achat/location)"},
+        {"type": "secondaire", "url": "https://www.peb-connect.be/actualites/changements-peb-en-wallonie-calendrier-aides-et-impacts-pour-les-propritaires-source-officielle", "intitule": "PEB Connect — Changements PEB Wallonie (calendrier)"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

@@ -100,6 +100,17 @@
         {"type": "secondaire", "url": "https://www.jeminforme.be/l-expulsion-d-un-locataire/", "intitule": "Infor Jeunes — L'expulsion d'un locataire"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-PEB-001",
+      "question": "Quelles sont les obligations EPC/PEB (énergie) pour louer en Flandre ?",
+      "reponse": "En Flandre, un certificat de performance énergétique (EPC) valide est obligatoire pour louer un logement et le label énergétique doit figurer dans les annonces. La Flandre renforce progressivement ses exigences de rénovation énergétique : vérifiez les obligations en vigueur auprès de l'agence flamande de l'énergie avant toute mise en location.",
+      "reference_legale": "Réglementation énergétique flamande (EPC) — exigences évolutives",
+      "sources": [
+        {"type": "officiel", "url": "https://www.energiesparen.be/", "intitule": "Vlaams Energie- en Klimaatagentschap — EPC"},
+        {"type": "secondaire", "url": "https://weinvest.be/fr-BE/blog/b2c/peb-calendar-by-region", "intitule": "We Invest — Échéances PEB par région"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

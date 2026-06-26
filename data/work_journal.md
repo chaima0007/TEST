@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 2941 réalisations concrètes enregistrées
+### 📌 Total : 2945 réalisations concrètes enregistrées
 
 
 ## 2026-06-26
-**32 réalisations** · de **10:23** à **13:08** (fenêtre de travail : 2h45)
+**36 réalisations** · de **10:23** à **13:24** (fenêtre de travail : 3h01)
 
 - 🕒 10:23 — Add 24 human rights engines waves 1345-1352
 - 🕒 10:27 — Add 24 human rights engines waves 1353-1360
@@ -39,6 +39,10 @@
 - 🕒 12:59 — carnet de bord du travail (git, daté, sans bavardage) — preuve confiance & école
 - 🕒 13:06 — 7e thème 'salubrité / logement décent' sur les 3 régions — 21 faits, indice 48->54
 - 🕒 13:08 — méta-audit — l'expertise sur l'expertise (auto-critique qualité)
+- 🕒 13:15 — 8e thème expulsion (24 faits) + radar fraîcheur + valorisation projets + transparence/décharge
+- 🕒 13:16 — étude de marché réel (sourcée) + règle de reconnaissance honnête à chaque décision
+- 🕒 13:19 — détection du marché (signaux sourcés) — réforme PEB avril 2026 détectée
+- 🕒 13:24 — confiance des sources (liste blanche tier1) + détecteur de changement
 
 ## 2026-06-25
 **314 réalisations** · de **00:11** à **16:35** (fenêtre de travail : 16h24)

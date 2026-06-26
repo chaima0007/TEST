@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **28**
+- Savoirs enregistrés : **31**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `7c62fcc3b614ad55…`)
+- Certification système : **PASS** (sceau `199b461932c3d622…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -24,6 +24,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code bruxellois du Logement — normes minimales (sécurité, salubrité, équipement) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment se déroule une expulsion à Bruxelles ?**  
   Réf : Code judiciaire (juge de paix) + Code bruxellois du Logement — expulsion ; trêve hivernale · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelles sont les obligations PEB (énergie) pour louer à Bruxelles ?**  
+  Réf : Réglementation PEB bruxelloise (Bruxelles Environnement) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?**  
   Réf : Vlaams Woninghuurdecreet (décret du 9 novembre 2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant maximum de la garantie locative en Flandre ?**  
@@ -40,6 +42,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Vlaamse Wooncode / Vlaams Woninghuurdecreet — normes de qualité du logement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment se déroule une expulsion en Flandre ?**  
   Réf : Code judiciaire (juge de paix) + Vlaams Woninghuurdecreet — expulsion · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelles sont les obligations EPC/PEB (énergie) pour louer en Flandre ?**  
+  Réf : Réglementation énergétique flamande (EPC) — exigences évolutives · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?**  
   Réf : Décret du 15 mars 2018, art. 56 et suivants · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont les délais de préavis pour mettre fin au bail ?**  
@@ -56,6 +60,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code wallon de l'Habitation durable + arrêté déterminant les critères de salubrité · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment se déroule une expulsion en Wallonie ?**  
   Réf : Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?**  
+  Réf : Réglementation PEB wallonne (énergie) — calendrier en évolution · sources off. : 1 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

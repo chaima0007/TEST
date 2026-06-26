@@ -100,6 +100,17 @@
         {"type": "secondaire", "url": "https://www.jeminforme.be/l-expulsion-d-un-locataire/", "intitule": "Infor Jeunes — L'expulsion d'un locataire"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-PEB-001",
+      "question": "Quelles sont les obligations PEB (énergie) pour louer à Bruxelles ?",
+      "reponse": "À Bruxelles, un certificat PEB valide est obligatoire pour mettre un logement en location et ses informations (classe énergétique) doivent figurer dans les annonces immobilières. Les exigences énergétiques évoluent : vérifiez les obligations en vigueur auprès de Bruxelles Environnement avant toute mise en location.",
+      "reference_legale": "Réglementation PEB bruxelloise (Bruxelles Environnement)",
+      "sources": [
+        {"type": "officiel", "url": "https://environnement.brussels/", "intitule": "Bruxelles Environnement — Certificat PEB"},
+        {"type": "secondaire", "url": "https://weinvest.be/fr-BE/blog/b2c/peb-calendar-by-region", "intitule": "We Invest — Échéances PEB par région"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }
