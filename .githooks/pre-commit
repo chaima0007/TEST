@@ -15,6 +15,11 @@ if [ -f scripts/site_guard.py ]; then
   python3 scripts/site_guard.py --scan --quiet || { echo "🛑 site_guard a détecté une incohérence."; fail=1; }
 fi
 
+if [ -f scripts/control_gates_protocol.py ]; then
+  echo "🚪 Sas de contrôle (pré-vol)…"
+  python3 scripts/control_gates_protocol.py >/tmp/_gates.log 2>&1 || { echo "🛑 Un sas de contrôle est rouge :"; tail -8 /tmp/_gates.log; fail=1; }
+fi
+
 if [ "$fail" = "1" ]; then
   echo ""
   echo "🛑 COMMIT BLOQUÉ par les gardiens. Corrige les problèmes ci-dessus."
