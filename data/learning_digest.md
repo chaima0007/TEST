@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **31**
+- Savoirs enregistrés : **35**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `199b461932c3d622…`)
+- Certification système : **PASS** (sceau `d4c81d3181598b2d…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -62,6 +62,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?**  
   Réf : Réglementation PEB wallonne (énergie) — calendrier en évolution · sources off. : 1 · revu : 2026-06-26
+- ✅ **Qu'est-ce que le règlement collectif de dettes et où le demander ?**  
+  Réf : Code judiciaire, art. 1675/2 et suivants · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelles sont les conditions pour accéder au RCD ?**  
+  Réf : Code judiciaire — conditions d'admissibilité au RCD · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quel est le rôle du médiateur de dettes et qu'est-ce que le pécule de médiation ?**  
+  Réf : Code judiciaire — médiation de dettes / pécule de médiation · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quels sont les effets et la durée du RCD ?**  
+  Réf : Code judiciaire — effets du RCD et effacement du solde · sources off. : 1 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

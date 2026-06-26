@@ -37,7 +37,7 @@ def main():
     inconnus = []        # domaine dans aucune liste
     total_src = 0
 
-    for f in sorted(glob.glob("data/belgium/bail_*.json")):
+    for f in sorted(glob.glob("data/belgium/*.json")):
         try:
             mod = json.load(open(f, encoding="utf-8"))
         except (json.JSONDecodeError, OSError):

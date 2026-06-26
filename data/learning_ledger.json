@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 31,
+    "total_savoirs": 35,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -299,6 +299,50 @@
       "id": "BWAL-PEB-001",
       "sujet": "Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?",
       "reference_legale": "Réglementation PEB wallonne (énergie) — calendrier en évolution",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-RCD-001",
+      "sujet": "Qu'est-ce que le règlement collectif de dettes et où le demander ?",
+      "reference_legale": "Code judiciaire, art. 1675/2 et suivants",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-COND-001",
+      "sujet": "Quelles sont les conditions pour accéder au RCD ?",
+      "reference_legale": "Code judiciaire — conditions d'admissibilité au RCD",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-MED-001",
+      "sujet": "Quel est le rôle du médiateur de dettes et qu'est-ce que le pécule de médiation ?",
+      "reference_legale": "Code judiciaire — médiation de dettes / pécule de médiation",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-EFFET-001",
+      "sujet": "Quels sont les effets et la durée du RCD ?",
+      "reference_legale": "Code judiciaire — effets du RCD et effacement du solde",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",

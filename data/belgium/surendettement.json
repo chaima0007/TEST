@@ -1,0 +1,60 @@
+{
+  "module": "surendettement_reglement_collectif_dettes",
+  "titre": "Surendettement — Règlement collectif de dettes (RCD)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Règlement collectif de dettes (Code judiciaire, art. 1675/2 et suivants) — procédure devant le tribunal du travail",
+    "portee": "Personnes physiques surendettées de manière durable en Belgique (procédure fédérale)",
+    "source_officielle": "https://finances.belgium.be/fr/pai/r%C3%A8glement-collectif-de-dettes"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil juridique individualisé. Pour entamer une démarche, s'adresser à un médiateur de dettes agréé, un CPAS ou un service de médiation de dettes.",
+  "faits": [
+    {
+      "id": "SURE-RCD-001",
+      "question": "Qu'est-ce que le règlement collectif de dettes et où le demander ?",
+      "reponse": "Le règlement collectif de dettes (RCD) est une procédure légale qui traite les situations de surendettement durable. Elle se déroule devant le tribunal du travail : la personne surendettée dépose une requête. Un médiateur de dettes est désigné pour gérer la situation.",
+      "reference_legale": "Code judiciaire, art. 1675/2 et suivants",
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/pai/r%C3%A8glement-collectif-de-dettes", "intitule": "SPF Finances — Règlement collectif de dettes"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-reglement-collectif-de-dettes-rcd", "intitule": "Droits Quotidiens — Comment demander un RCD"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-COND-001",
+      "question": "Quelles sont les conditions pour accéder au RCD ?",
+      "reponse": "Il faut être une personne physique (les sociétés sont exclues), ne pas avoir la qualité d'entreprise (ou avoir cessé l'activité indépendante depuis au moins 6 mois), être dans l'impossibilité durable de payer ses dettes exigibles, ne pas avoir organisé frauduleusement son insolvabilité, et avoir son domicile ou centre d'intérêts principaux en Belgique.",
+      "reference_legale": "Code judiciaire — conditions d'admissibilité au RCD",
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/pai/r%C3%A8glement-collectif-de-dettes", "intitule": "SPF Finances — Règlement collectif de dettes"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-reglement-collectif-de-dettes-rcd", "intitule": "Droits Quotidiens — RCD"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-MED-001",
+      "question": "Quel est le rôle du médiateur de dettes et qu'est-ce que le pécule de médiation ?",
+      "reponse": "Le médiateur désigné gère l'ensemble des revenus de la personne, négocie avec les créanciers, et reverse chaque mois un montant insaisissable appelé pécule de médiation, destiné à couvrir les charges incompressibles (loyer, alimentation, énergie). On peut s'adresser à un médiateur de dettes agréé, un CPAS ou un service de médiation de dettes.",
+      "reference_legale": "Code judiciaire — médiation de dettes / pécule de médiation",
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/pai/r%C3%A8glement-collectif-de-dettes", "intitule": "SPF Finances — Règlement collectif de dettes"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-reglement-collectif-de-dettes-rcd", "intitule": "Droits Quotidiens — RCD"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-EFFET-001",
+      "question": "Quels sont les effets et la durée du RCD ?",
+      "reponse": "Dès la déclaration d'admissibilité, le débiteur ne peut plus disposer librement de son patrimoine (qui sert à rembourser les créanciers) et les voies d'exécution sont suspendues. La procédure d'apurement dure en principe entre 3 et 5 ans ; à l'issue, et sous réserve du respect strict des obligations, le juge peut accorder l'effacement du solde des dettes.",
+      "reference_legale": "Code judiciaire — effets du RCD et effacement du solde",
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/pai/r%C3%A8glement-collectif-de-dettes", "intitule": "SPF Finances — Règlement collectif de dettes"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-reglement-collectif-de-dettes-rcd", "intitule": "Droits Quotidiens — RCD"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
