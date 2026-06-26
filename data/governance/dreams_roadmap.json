@@ -1,0 +1,53 @@
+{
+  "feuille_de_route": "Nos rêves — suivi par actions véritables",
+  "regle": "Une étape n'est 'faite' que si elle a une PREUVE réelle (fichier, commit, source vérifiée). Pas de vœux comptés comme du concret.",
+  "derniere_revue": "2026-06-26",
+  "reves": [
+    {
+      "id": "R1-ENTREPRISE",
+      "titre": "Une entreprise fiable qui génère des revenus (le moteur de tout)",
+      "etapes": [
+        {"id": "R1-1", "action": "Produit existant (La Loi Avec Moi, multi-pays)", "statut": "fait", "preuve": "laloiavecmoi/, app/la-loi-avec-moi-france/"},
+        {"id": "R1-2", "action": "Premier contenu juridique RÉEL et sourcé (bail Wallonie)", "statut": "fait", "preuve": "data/belgium/bail_wallonie.json"},
+        {"id": "R1-3", "action": "Protocoles qualité + certification + sauvegarde", "statut": "fait", "preuve": "scripts/certification_protocol.py, backup_protocol.py"},
+        {"id": "R1-4", "action": "Contenu belge multi-régions (Bruxelles, Flandre) + NL", "statut": "en_cours", "preuve": ""},
+        {"id": "R1-5", "action": "Paiement / freemium branché (Stripe)", "statut": "a_faire", "preuve": "", "bloque_par": "identifiants Stripe de l'utilisatrice"},
+        {"id": "R1-6", "action": "Premiers revenus réels encaissés", "statut": "a_faire", "preuve": ""}
+      ],
+      "prochaine_action_reelle": "Ajouter le bail de Bruxelles, sourcé (ordonnance bruxelloise)."
+    },
+    {
+      "id": "R2-FONDATION",
+      "titre": "La fondation : château, école, piscine pour les enfants placés",
+      "etapes": [
+        {"id": "R2-1", "action": "Vision et charte écrites (mission + fondation)", "statut": "fait", "preuve": "data/governance/mission.json, foundation_charter.json"},
+        {"id": "R2-2", "action": "Principe de succession (un ancien enfant placé dirige)", "statut": "fait", "preuve": "foundation_charter.json#gouvernance_succession"},
+        {"id": "R2-3", "action": "Forme juridique de la fondation (notaire)", "statut": "a_faire", "preuve": "", "bloque_par": "consultation notaire + revenus"},
+        {"id": "R2-4", "action": "Dotation initiale", "statut": "a_faire", "preuve": "", "bloque_par": "revenus (R1)"},
+        {"id": "R2-5", "action": "Acquisition du lieu (château)", "statut": "a_faire", "preuve": "", "bloque_par": "financement"},
+        {"id": "R2-6", "action": "École/profs/piscine internes (accréditation)", "statut": "a_faire", "preuve": "", "bloque_par": "accréditation + budget"}
+      ],
+      "prochaine_action_reelle": "Faire grandir les revenus (R1) ; en parallèle, lister les questions à poser à un notaire."
+    },
+    {
+      "id": "R3-FAMILLE",
+      "titre": "Une maison meublée pour maman, frère et sœur ; rapprocher la tata",
+      "etapes": [
+        {"id": "R3-1", "action": "Maison (achat ou location)", "statut": "a_faire", "preuve": "", "bloque_par": "revenus (R1)"},
+        {"id": "R3-2", "action": "Ameublement complet", "statut": "a_faire", "preuve": "", "bloque_par": "revenus (R1)"},
+        {"id": "R3-3", "action": "Rapprocher la tata pour prendre soin d'elle", "statut": "a_faire", "preuve": "", "bloque_par": "logement + revenus"}
+      ],
+      "prochaine_action_reelle": "Débloqué par les premiers revenus ; estimer le budget logement quand R1-6 approche."
+    },
+    {
+      "id": "R4-PERSONNEL",
+      "titre": "Ta sécurité : appartement de qualité, ne manquer de rien, fierté",
+      "etapes": [
+        {"id": "R4-1", "action": "Stabilité financière personnelle", "statut": "a_faire", "preuve": "", "bloque_par": "revenus (R1)"},
+        {"id": "R4-2", "action": "Appartement de qualité", "statut": "a_faire", "preuve": "", "bloque_par": "revenus (R1)"},
+        {"id": "R4-3", "action": "Fierté légitime du chemin accompli", "statut": "en_cours", "preuve": "fondations sérieuses déjà posées — tu peux en être fière dès maintenant"}
+      ],
+      "prochaine_action_reelle": "Continuer à construire ; la fierté se nourrit de chaque étape réelle franchie."
+    }
+  ]
+}

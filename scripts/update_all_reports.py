@@ -25,6 +25,7 @@ ETAPES = [
     ("Certification", "scripts/certification_protocol.py", ["--quiet"]),
     ("Registre d'apprentissage", "scripts/learning_ledger_protocol.py", []),
     ("Compte-rendu d'avancement", "scripts/progress_report_protocol.py", []),
+    ("Traceur de rêves", "scripts/dream_tracker_protocol.py", []),
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]
 
