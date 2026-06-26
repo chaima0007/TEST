@@ -78,6 +78,17 @@
         {"type": "secondaire", "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/louer-un-logement/quels-sont-les-frais-de-reparation-ou-dentretien", "intitule": "Wikifin (FSMA) — Frais de réparation/entretien"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-SALUB-001",
+      "question": "Quelles sont les normes de qualité d'un logement loué en Flandre ?",
+      "reponse": "En Flandre, le logement loué doit respecter les normes de qualité (woningkwaliteitsnormen) en matière de sécurité, de santé et de qualité de base ; la surface doit être suffisante pour une occupation normale. Un certificat de conformité (conformiteitsattest) peut attester du respect de ces normes. Le non-respect entraîne des sanctions.",
+      "reference_legale": "Vlaamse Wooncode / Vlaams Woninghuurdecreet — normes de qualité du logement",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"},
+        {"type": "secondaire", "url": "https://flora.insure/fr/blog/normes-habitabilite-guide/", "intitule": "Guide normes d'habitabilité en Belgique (3 régions)"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

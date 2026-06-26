@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 22,
+    "total_savoirs": 25,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -75,6 +75,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-SALUB-001",
+      "sujet": "Quelles sont les normes minimales d'un logement loué à Bruxelles ?",
+      "reference_legale": "Code bruxellois du Logement — normes minimales (sécurité, salubrité, équipement)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_flandre",
       "id": "BVLG-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
@@ -141,6 +152,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-SALUB-001",
+      "sujet": "Quelles sont les normes de qualité d'un logement loué en Flandre ?",
+      "reference_legale": "Vlaamse Wooncode / Vlaams Woninghuurdecreet — normes de qualité du logement",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_wallonie",
       "id": "BWAL-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?",
@@ -200,6 +222,17 @@
       "id": "BWAL-REP-001",
       "sujet": "Qui paie les réparations en Wallonie : locataire ou bailleur ?",
       "reference_legale": "Décret du 15 mars 2018 + liste non limitative des réparations locatives (M.B. 31/08/2018)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-SALUB-001",
+      "sujet": "Quelles sont les normes de salubrité d'un logement loué en Wallonie ?",
+      "reference_legale": "Code wallon de l'Habitation durable + arrêté déterminant les critères de salubrité",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",

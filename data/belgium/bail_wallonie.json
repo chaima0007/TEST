@@ -78,6 +78,17 @@
         {"type": "officiel", "url": "https://lampspw.wallonie.be/dgo4/tinymvc/apps/logement/views/documents/baux/fiches/FR/liste_non_limitative_des_reparations_locatives.pdf", "intitule": "SPW — Liste non limitative des réparations locatives (PDF)"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BWAL-SALUB-001",
+      "question": "Quelles sont les normes de salubrité d'un logement loué en Wallonie ?",
+      "reponse": "Tout logement loué doit respecter des critères de salubrité (stabilité, étanchéité, ventilation, absence d'humidité et de nuisibles, sécurité électrique et gaz) et des critères de surpeuplement, fixés par le Code wallon de l'Habitation durable. En cas de manquement, une enquête de salubrité peut être demandée ; le bailleur doit réaliser les travaux, sous peine de sanctions.",
+      "reference_legale": "Code wallon de l'Habitation durable + arrêté déterminant les critères de salubrité",
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/page/la-qualite-des-logements-en-wallonie", "intitule": "SPW Logement — La qualité des logements en Wallonie"},
+        {"type": "officiel", "url": "https://wallex.wallonie.be/contents/acts/2/2046/1.html", "intitule": "WALLEX — Arrêté critères de salubrité"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

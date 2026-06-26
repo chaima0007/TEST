@@ -78,6 +78,17 @@
         {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-SALUB-001",
+      "question": "Quelles sont les normes minimales d'un logement loué à Bruxelles ?",
+      "reponse": "Le logement loué doit respecter les normes minimales de sécurité, de salubrité et d'équipement du Code bruxellois du Logement (par ex. une surface d'au moins 18 m² pour une personne, +10 m² par occupant supplémentaire, un séjour avec lumière naturelle, une cuisine et des sanitaires). Le contrôle relève de la DIRL (Direction de l'Inspection régionale du Logement) ; le non-respect entraîne des sanctions.",
+      "reference_legale": "Code bruxellois du Logement — normes minimales (sécurité, salubrité, équipement)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
+        {"type": "secondaire", "url": "https://www.lebonbail.be/articles/les-normes-du-logement-mis-en-location", "intitule": "Le Bon Bail — Normes du logement mis en location"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }
