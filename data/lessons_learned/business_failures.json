@@ -1,0 +1,57 @@
+{
+  "base": "Leçons d'erreurs d'entreprises — de la petite à la grande",
+  "but": "Repérer les erreurs qui ont coulé des entreprises pour ne JAMAIS les répéter, et savoir y répondre.",
+  "derniere_revue": "2026-06-26",
+  "principe_meta": "Dilemme de l'innovateur : une technologie/un modèle disruptif menace le revenu existant, ce qui pousse les leaders à hésiter — jusqu'à se faire dépasser. Surveiller activement la disruption et oser cannibaliser son propre produit.",
+  "cas": [
+    {
+      "id": "LF-KODAK",
+      "entreprise": "Kodak",
+      "erreur": "A inventé le premier appareil photo numérique (1975) mais a refusé de le développer par peur de cannibaliser son business du film. Faillite en 2012.",
+      "signal_precoce": "Leader dominant qui protège sa vache à lait au lieu d'investir dans la rupture qu'il a lui-même créée.",
+      "comment_eviter": "Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.",
+      "applicable_a_nous": "Ne pas se contenter du volume de moteurs (vache à lait) : investir tôt dans le contenu sourcé qui est la vraie rupture de valeur.",
+      "sources": [
+        {"type": "secondaire", "url": "https://www.annales.org/gc/2024/gc157/GC_2024_09_04.pdf", "intitule": "Annales — Is Kodak's collapse a closed case?"},
+        {"type": "secondaire", "url": "https://www.researchgate.net/publication/395397814_Top_Business_Failures_A_Comparative_Case_Study_of_Nokia_and_Kodak", "intitule": "Comparative Case Study of Nokia and Kodak"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "LF-NOKIA",
+      "entreprise": "Nokia",
+      "erreur": "N'a pas anticipé l'essor des smartphones ; stratégie technologique fragmentée, pas de système d'exploitation moderne prioritaire.",
+      "signal_precoce": "Développement produit incohérent, déni de la nouvelle catégorie créée par les concurrents.",
+      "comment_eviter": "Une vision plateforme claire et cohérente ; écouter le marché plutôt que ses certitudes internes.",
+      "applicable_a_nous": "Garder une architecture cohérente (registre des projets, charte des agents) pour ne pas se fragmenter.",
+      "sources": [
+        {"type": "secondaire", "url": "https://www.researchgate.net/publication/395397814_Top_Business_Failures_A_Comparative_Case_Study_of_Nokia_and_Kodak", "intitule": "Comparative Case Study of Nokia and Kodak"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "LF-BLOCKBUSTER",
+      "entreprise": "Blockbuster",
+      "erreur": "A ignoré le streaming et a refusé d'acheter Netflix à ses débuts. A perdu son leadership.",
+      "signal_precoce": "Rejet d'un partenariat/rachat d'un disrupteur naissant ; confort du modèle existant.",
+      "comment_eviter": "Évaluer sérieusement les disrupteurs naissants ; tester de nouveaux modèles avant d'y être forcé.",
+      "applicable_a_nous": "Brancher tôt le modèle freemium/abonnement plutôt qu'attendre que la concurrence le fasse.",
+      "sources": [
+        {"type": "secondaire", "url": "https://healthmanagement.org/c/healthmanagement/IssueArticle/the-high-cost-of-complacency-lessons-from-kodak-blockbuster-and-nokia", "intitule": "Lessons from Kodak, Blockbuster, and Nokia"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "LF-THERANOS",
+      "entreprise": "Theranos",
+      "erreur": "A promis une technologie révolutionnaire non prouvée ; fraude, absence de transparence et de validation.",
+      "signal_precoce": "Affirmations non vérifiables, secret sur les preuves, survente.",
+      "comment_eviter": "Transparence totale, preuves sourcées et vérifiables — exactement notre protocole de contenu sourcé.",
+      "applicable_a_nous": "C'est LA raison d'être de nos protocoles : jamais d'affirmation non sourcée. La crédibilité est l'actif.",
+      "sources": [
+        {"type": "secondaire", "url": "https://link.springer.com/chapter/10.1007/978-3-031-81068-8_4", "intitule": "Business Blunders — Springer Nature"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

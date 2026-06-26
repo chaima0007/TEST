@@ -64,3 +64,6 @@ data/prospect_scans.json
 
 # Rendus temporaires logo
 scratchpad-logo/
+
+# Snapshots locaux de sauvegarde (le remote git est la sauvegarde durable)
+data/backups/
