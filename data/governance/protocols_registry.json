@@ -99,6 +99,12 @@
       "nom": "Sas de contrôle (anti-surcharge)",
       "regle": "Avant une livraison/commit, traverser des sas étanches (entrée→intégrité→contenu→livraison). Arrêt au 1er sas rouge. Double contrôle indépendant SEULEMENT au sas critique (sobriété).",
       "verif": "python3 scripts/control_gates_protocol.py"
+    },
+    {
+      "id": "P-EXPERTISE",
+      "nom": "Indice d'expertise (preuve de progrès)",
+      "regle": "L'expertise ne progresse QUE par du savoir vérifié et sourcé. L'indice le mesure et le journalise ; il ne monte jamais sans preuve réelle.",
+      "verif": "python3 scripts/expertise_index_protocol.py"
     }
   ]
 }
