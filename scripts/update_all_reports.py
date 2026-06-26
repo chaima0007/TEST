@@ -32,6 +32,7 @@ ETAPES = [
     ("Radar de fraicheur", "scripts/freshness_radar_protocol.py", []),
     ("Valorisation projets", "scripts/project_valuation_protocol.py", []),
     ("Transparence & decharge", "scripts/transparency_disclaimer_protocol.py", []),
+    ("Détection du marché", "scripts/market_detection_protocol.py", []),
 
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]
