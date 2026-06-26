@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 35,
+    "total_savoirs": 38,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -345,6 +345,39 @@
       "reference_legale": "Code judiciaire — effets du RCD et effacement du solde",
       "sources": 2,
       "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-SAISIE-001",
+      "sujet": "Peut-on saisir tout mon salaire en cas de dettes, ou existe-t-il une part protégée ?",
+      "reference_legale": "Code judiciaire, art. 1408 à 1412 (sommes insaisissables et quotités saisissables) ; indexation annuelle au 1er janvier",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-AMIABLE-001",
+      "sujet": "Quelle est la différence entre la médiation de dettes amiable et le règlement collectif de dettes ?",
+      "reference_legale": "Loi du 3 mai 2024 portant dispositions diverses en matière d'économie (médiation de dettes amiable, insérée dans le Code de droit économique) ; Code judiciaire art. 1675/2 et s. (RCD)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-CPAS-001",
+      "sujet": "Où trouver une aide gratuite pour mes dettes, et le CPAS peut-il aider ?",
+      "reference_legale": "Réglementation régionale sur l'agrément des services de médiation de dettes (Wallonie) ; loi organique des CPAS du 8 juillet 1976",
+      "sources": 2,
+      "sources_officielles": 2,
       "date_verification": "2026-06-26",
       "valide": true
     },

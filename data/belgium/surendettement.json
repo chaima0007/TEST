@@ -55,6 +55,39 @@
         {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-reglement-collectif-de-dettes-rcd", "intitule": "Droits Quotidiens — RCD"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-SAISIE-001",
+      "question": "Peut-on saisir tout mon salaire en cas de dettes, ou existe-t-il une part protégée ?",
+      "reponse": "Non, le salaire ne peut jamais être saisi en totalité. La loi protège un minimum vital : la quotité saisissable (ou cessible) est calculée sur la rémunération NETTE, par tranches de revenus auxquelles s'appliquent des pourcentages plafonnés. Les plafonds sont majorés par enfant à charge, et certaines sommes sont totalement insaisissables (allocations familiales, allocations aux personnes handicapées, aide sociale du CPAS). Les seuils sont indexés chaque 1er janvier : pour les montants exacts en vigueur, se référer à la source officielle (les chiffres changent chaque année).",
+      "reference_legale": "Code judiciaire, art. 1408 à 1412 (sommes insaisissables et quotités saisissables) ; indexation annuelle au 1er janvier",
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/remuneration/protection-de-la-remuneration/saisie-et-cession-sur-salaires", "intitule": "SPF Emploi — Saisie et cession sur salaires"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quel-montant-peut-saisir-sur-mes-revenus", "intitule": "Droits Quotidiens — Quel montant peut-on saisir sur mes revenus ?"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-AMIABLE-001",
+      "question": "Quelle est la différence entre la médiation de dettes amiable et le règlement collectif de dettes ?",
+      "reponse": "La médiation de dettes amiable cherche un accord négocié, à l'amiable, entre la personne endettée et ses créanciers (plan d'apurement), sans passer par un juge. Le règlement collectif de dettes (RCD) est une procédure judiciaire, devant le tribunal du travail, qui s'impose aux créanciers même sans leur accord. On commence souvent par l'amiable ; si cela échoue ou si l'endettement est trop lourd, on peut basculer vers le RCD. La médiation amiable est encadrée depuis la loi du 3 mai 2024 (Code de droit économique).",
+      "reference_legale": "Loi du 3 mai 2024 portant dispositions diverses en matière d'économie (médiation de dettes amiable, insérée dans le Code de droit économique) ; Code judiciaire art. 1675/2 et s. (RCD)",
+      "sources": [
+        {"type": "officiel", "url": "http://socialsante.wallonie.be/surendettement/citoyen/?q=mediation", "intitule": "Portail wallon du surendettement — La médiation de dettes amiable"},
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/pai/r%C3%A8glement-collectif-de-dettes", "intitule": "SPF Finances — Règlement collectif de dettes"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-CPAS-001",
+      "question": "Où trouver une aide gratuite pour mes dettes, et le CPAS peut-il aider ?",
+      "reponse": "Oui. Les services de médiation de dettes agréés aident gratuitement à négocier un plan d'apurement avec les créanciers. Beaucoup sont hébergés dans les CPAS (en Wallonie, plus de 200 services agréés, principalement en CPAS), d'autres dans des ASBL ou mutualités agréées. Le service est gratuit. Pour être agréé, un service doit respecter les conditions légales régionales (en principe une institution agréée par commune, avec une institution supplémentaire par tranche de 30.000 habitants au-delà de ce seuil). Le CPAS peut aussi octroyer une aide sociale et orienter vers le médiateur compétent.",
+      "reference_legale": "Réglementation régionale sur l'agrément des services de médiation de dettes (Wallonie) ; loi organique des CPAS du 8 juillet 1976",
+      "sources": [
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/obtenir-un-agrement-pour-un-service-de-mediation-de-dettes", "intitule": "Wallonie — Agrément d'un service de médiation de dettes"},
+        {"type": "officiel", "url": "http://socialsante.wallonie.be/surendettement/citoyen/?q=services-mediation-dettes", "intitule": "Portail wallon du surendettement — Le service de médiation de dettes"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }
