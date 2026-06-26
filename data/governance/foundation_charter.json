@@ -25,6 +25,16 @@
       "Mission inscrite dans les statuts : nul ne peut la dévoyer."
     ]
   },
+  "autonomie_excellence": {
+    "principe": "Ne plus dépendre d'organismes extérieurs pour offrir le meilleur : l'excellence est INTERNE au centre.",
+    "moyens": [
+      "École et formations propres au sein de la fondation (informatique et besoins réels), avec reconnaissance/accréditation officielle.",
+      "Professeurs et éducateurs employés directement (privés), choisis pour leur excellence et leur bienveillance.",
+      "Infrastructures de qualité : piscine, installations sportives, espaces d'arts et d'activités.",
+      "Programme d'activités riche : sport, culture, nature, numérique — pour l'épanouissement complet de l'enfant."
+    ],
+    "note_honnete": "Une école/formation reconnue exige une accréditation (en Belgique, règles des Communautés) et un budget conséquent. C'est atteignable, mais c'est une étape qui se prépare avec des experts et un financement solide — d'où l'importance de l'autonomie financière ci-dessous."
+  },
   "autonomie_financiere": {
     "objectif": "Que le centre ne manque de rien — et même plus — sans dépendre de dons ponctuels.",
     "leviers": [
