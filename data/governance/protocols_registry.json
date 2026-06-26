@@ -111,6 +111,12 @@
       "nom": "Carnet de bord du travail",
       "regle": "Journaliser UNIQUEMENT le travail réel (depuis git, daté), pas les bavardages. Preuve fiable pour la confiance en soi et l'école.",
       "verif": "python3 scripts/work_journal_protocol.py"
+    },
+    {
+      "id": "P-METAAUDIT",
+      "nom": "Méta-audit de l'expertise",
+      "regle": "Auditer notre propre expertise sans complaisance : couverture, sources, fraîcheur. Trouver nos faiblesses avant les autres ; note /100 + recommandations.",
+      "verif": "python3 scripts/expertise_audit_protocol.py"
     }
   ]
 }
