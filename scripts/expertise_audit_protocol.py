@@ -18,9 +18,10 @@ from datetime import date, datetime
 
 REGIONS = {"BWAL": "Wallonie", "BBRU": "Bruxelles", "BVLG": "Flandre"}
 THEMES = {"DUREE": "Durée", "GARANTIE": "Garantie locative", "PREAVIS": "Préavis",
-          "INDEX": "Indexation", "EDL": "État des lieux", "REP": "Réparations", "SALUB": "Salubrité"}
+          "INDEX": "Indexation", "EDL": "État des lieux", "REP": "Réparations",
+          "SALUB": "Salubrité", "EXP": "Expulsion"}
 # Thèmes importants encore possibles (pistes de croissance de l'expertise)
-THEMES_CANDIDATS = ["Sous-location", "Colocation / bail étudiant", "Expulsion (procédure)",
+THEMES_CANDIDATS = ["Sous-location", "Colocation / bail étudiant",
                     "Charges & décompte", "Discrimination au logement", "Permis de location"]
 OUT = "data/belgium/audit_expertise.md"
 

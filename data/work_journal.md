@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 2939 réalisations concrètes enregistrées
+### 📌 Total : 2941 réalisations concrètes enregistrées
 
 
 ## 2026-06-26
-**30 réalisations** · de **10:23** à **12:59** (fenêtre de travail : 2h36)
+**32 réalisations** · de **10:23** à **13:08** (fenêtre de travail : 2h45)
 
 - 🕒 10:23 — Add 24 human rights engines waves 1345-1352
 - 🕒 10:27 — Add 24 human rights engines waves 1353-1360
@@ -37,6 +37,8 @@
 - 🕒 12:50 — indice d'expertise mesurable & traçable (progrès prouvé, jamais sans preuve)
 - 🕒 12:57 — 6e thème 'réparations & entretien' sur les 3 régions — 18 faits sourcés, indice 42->48
 - 🕒 12:59 — carnet de bord du travail (git, daté, sans bavardage) — preuve confiance & école
+- 🕒 13:06 — 7e thème 'salubrité / logement décent' sur les 3 régions — 21 faits, indice 48->54
+- 🕒 13:08 — méta-audit — l'expertise sur l'expertise (auto-critique qualité)
 
 ## 2026-06-25
 **314 réalisations** · de **00:11** à **16:35** (fenêtre de travail : 16h24)

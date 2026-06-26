@@ -89,6 +89,17 @@
         {"type": "secondaire", "url": "https://www.lebonbail.be/articles/les-normes-du-logement-mis-en-location", "intitule": "Le Bon Bail — Normes du logement mis en location"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BBRU-EXP-001",
+      "question": "Comment se déroule une expulsion à Bruxelles ?",
+      "reponse": "Une expulsion requiert toujours une décision du juge de paix ; le bailleur doit assigner le locataire. Le CPAS est averti de la procédure. À Bruxelles, une trêve hivernale interdit les expulsions entre le 1er novembre et le 15 mars (logement social ET privé). Après jugement, le locataire dispose en principe d'un mois pour partir (délai modulable par le juge).",
+      "reference_legale": "Code judiciaire (juge de paix) + Code bruxellois du Logement — expulsion ; trêve hivernale",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ccc-ggc.brussels/sites/default/files/documents/graphics/rapports-externes/juridique-expulsions_fr.pdf", "intitule": "CCC Bruxelles — Les expulsions de logement : aspects juridiques"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be/l-expulsion-d-un-locataire/", "intitule": "Infor Jeunes — L'expulsion d'un locataire"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

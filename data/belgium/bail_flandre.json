@@ -89,6 +89,17 @@
         {"type": "secondaire", "url": "https://flora.insure/fr/blog/normes-habitabilite-guide/", "intitule": "Guide normes d'habitabilité en Belgique (3 régions)"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-EXP-001",
+      "question": "Comment se déroule une expulsion en Flandre ?",
+      "reponse": "Une expulsion n'est possible qu'avec une décision du juge de paix ; le bailleur doit introduire une procédure et le CPAS/OCMW est informé. Après jugement, le locataire dispose en principe d'un mois pour quitter (délai modulable par le juge). Contrairement à Bruxelles et à la Wallonie, la Flandre ne prévoit pas de trêve hivernale spécifique des expulsions.",
+      "reference_legale": "Code judiciaire (juge de paix) + Vlaams Woninghuurdecreet — expulsion",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be/l-expulsion-d-un-locataire/", "intitule": "Infor Jeunes — L'expulsion d'un locataire"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

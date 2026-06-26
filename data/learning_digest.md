@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **25**
+- Savoirs enregistrés : **28**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `d3036066a3b1db7c…`)
+- Certification système : **PASS** (sceau `7c62fcc3b614ad55…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -22,6 +22,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code bruxellois du Logement + liste des réparations (M.B. 08/12/2017) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quelles sont les normes minimales d'un logement loué à Bruxelles ?**  
   Réf : Code bruxellois du Logement — normes minimales (sécurité, salubrité, équipement) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment se déroule une expulsion à Bruxelles ?**  
+  Réf : Code judiciaire (juge de paix) + Code bruxellois du Logement — expulsion ; trêve hivernale · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?**  
   Réf : Vlaams Woninghuurdecreet (décret du 9 novembre 2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant maximum de la garantie locative en Flandre ?**  
@@ -36,6 +38,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Vlaams Woninghuurdecreet + liste des réparations (M.B. 19/12/2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les normes de qualité d'un logement loué en Flandre ?**  
   Réf : Vlaamse Wooncode / Vlaams Woninghuurdecreet — normes de qualité du logement · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment se déroule une expulsion en Flandre ?**  
+  Réf : Code judiciaire (juge de paix) + Vlaams Woninghuurdecreet — expulsion · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?**  
   Réf : Décret du 15 mars 2018, art. 56 et suivants · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont les délais de préavis pour mettre fin au bail ?**  
@@ -50,6 +54,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Décret du 15 mars 2018 + liste non limitative des réparations locatives (M.B. 31/08/2018) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quelles sont les normes de salubrité d'un logement loué en Wallonie ?**  
   Réf : Code wallon de l'Habitation durable + arrêté déterminant les critères de salubrité · sources off. : 2 · revu : 2026-06-26
+- ✅ **Comment se déroule une expulsion en Wallonie ?**  
+  Réf : Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion · sources off. : 1 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

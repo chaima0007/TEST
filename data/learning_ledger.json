@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 25,
+    "total_savoirs": 28,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -86,6 +86,17 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bail_residence_principale_bruxelles",
+      "id": "BBRU-EXP-001",
+      "sujet": "Comment se déroule une expulsion à Bruxelles ?",
+      "reference_legale": "Code judiciaire (juge de paix) + Code bruxellois du Logement — expulsion ; trêve hivernale",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "bail_residence_principale_flandre",
       "id": "BVLG-DUREE-001",
       "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
@@ -156,6 +167,17 @@
       "id": "BVLG-SALUB-001",
       "sujet": "Quelles sont les normes de qualité d'un logement loué en Flandre ?",
       "reference_legale": "Vlaamse Wooncode / Vlaams Woninghuurdecreet — normes de qualité du logement",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-EXP-001",
+      "sujet": "Comment se déroule une expulsion en Flandre ?",
+      "reference_legale": "Code judiciaire (juge de paix) + Vlaams Woninghuurdecreet — expulsion",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
@@ -235,6 +257,17 @@
       "reference_legale": "Code wallon de l'Habitation durable + arrêté déterminant les critères de salubrité",
       "sources": 2,
       "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_wallonie",
+      "id": "BWAL-EXP-001",
+      "sujet": "Comment se déroule une expulsion en Wallonie ?",
+      "reference_legale": "Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion",
+      "sources": 2,
+      "sources_officielles": 1,
       "date_verification": "2026-06-26",
       "valide": true
     },

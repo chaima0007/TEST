@@ -29,6 +29,10 @@ ETAPES = [
     ("Indice d'expertise", "scripts/expertise_index_protocol.py", []),
     ("Carnet de bord (travail)", "scripts/work_journal_protocol.py", []),
     ("Méta-audit expertise", "scripts/expertise_audit_protocol.py", []),
+    ("Radar de fraicheur", "scripts/freshness_radar_protocol.py", []),
+    ("Valorisation projets", "scripts/project_valuation_protocol.py", []),
+    ("Transparence & decharge", "scripts/transparency_disclaimer_protocol.py", []),
+
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]
 

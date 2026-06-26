@@ -17,8 +17,8 @@ REGIONS = {"BWAL": "Wallonie", "BBRU": "Bruxelles", "BVLG": "Flandre"}
 THEMES = {"DUREE": "Durée du bail", "GARANTIE": "Garantie locative",
           "PREAVIS": "Préavis / résiliation", "INDEX": "Indexation du loyer",
           "EDL": "État des lieux", "REP": "Réparations & entretien (qui paie quoi)",
-          "SALUB": "Salubrité / logement décent"}
-ORDRE_THEMES = ["DUREE", "GARANTIE", "PREAVIS", "INDEX", "EDL", "REP", "SALUB"]
+          "SALUB": "Salubrité / logement décent", "EXP": "Expulsion (procédure)"}
+ORDRE_THEMES = ["DUREE", "GARANTIE", "PREAVIS", "INDEX", "EDL", "REP", "SALUB", "EXP"]
 
 
 def main():

@@ -117,6 +117,24 @@
       "nom": "Méta-audit de l'expertise",
       "regle": "Auditer notre propre expertise sans complaisance : couverture, sources, fraîcheur. Trouver nos faiblesses avant les autres ; note /100 + recommandations.",
       "verif": "python3 scripts/expertise_audit_protocol.py"
+    },
+    {
+      "id": "P-RADAR",
+      "nom": "Radar de fraîcheur (remise à niveau)",
+      "regle": "Surveiller l'âge de chaque fait et planifier sa re-vérification (cadence 180 j). Remettre à niveau = re-vérifier la source officielle, pas changer la date.",
+      "verif": "python3 scripts/freshness_radar_protocol.py"
+    },
+    {
+      "id": "P-VALORISATION",
+      "nom": "Valorisation des projets",
+      "regle": "Évaluer le potentiel de chaque projet (multi-critères, /100). Score indicatif, pas un prix en euros. Guide l'effort.",
+      "verif": "python3 scripts/project_valuation_protocol.py"
+    },
+    {
+      "id": "P-TRANSPARENCE",
+      "nom": "Transparence & décharge",
+      "regle": "Page finale honnête : sources secondaires signalées, 0 fait sans source officielle, décharge légale (info générale, pas un conseil juridique).",
+      "verif": "python3 scripts/transparency_disclaimer_protocol.py"
     }
   ]
 }
