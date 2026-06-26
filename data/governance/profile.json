@@ -3,10 +3,10 @@
   "but": "Garantir que mon nom/prénom et mes préférences ne soient JAMAIS oubliés ni inventés. Persisté dans git → survit à chaque session.",
   "derniere_revue": "2026-06-26",
   "identite": {
-    "prenom": "[À COMPLÉTER]",
-    "nom": "[À COMPLÉTER]",
+    "prenom": "Chaima",
+    "nom": "Mhadbi",
     "email": "retrouvetonsmile@gmail.com",
-    "statut": "PLACEHOLDER — en attente du prénom/nom communiqué par l'utilisatrice"
+    "statut": "CONFIRMÉ par l'utilisatrice le 2026-06-26"
   },
   "preferences": {
     "langue": "fr",
