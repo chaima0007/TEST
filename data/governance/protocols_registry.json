@@ -153,6 +153,18 @@
       "nom": "Détection du marché",
       "regle": "Scanner régulièrement (web) les signaux: lois, concurrents, demande, niches. Journaliser et intégrer aux décisions. Cadence mensuelle.",
       "verif": "python3 scripts/market_detection_protocol.py"
+    },
+    {
+      "id": "P-CONFIANCE-SOURCES",
+      "nom": "Filtrage & confiance des sources",
+      "regle": "Toute source 'officiel' doit venir d'un domaine de la liste blanche (tier1). Filtrer le reste. Vérification croisée (≥2 sources fiables) pour confirmer un signal.",
+      "verif": "python3 scripts/source_trust_protocol.py"
+    },
+    {
+      "id": "P-CHANGEMENT",
+      "nom": "Détecteur de changement des sources",
+      "regle": "Comparer l'empreinte des sources officielles pour repérer les changements (lois qui évoluent). Vérification quotidienne possible UNIQUEMENT avec réseau + planificateur persistant.",
+      "verif": "python3 scripts/source_change_detector.py"
     }
   ]
 }
