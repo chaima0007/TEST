@@ -3,6 +3,13 @@
 
 # Guide de collaboration — Caelum Partners
 
+## ⚠️ PROTOCOLE IDENTITÉ (EN VIGUEUR — à lire EN PREMIER, chaque session)
+- L'identité de la fondatrice est stockée dans `data/governance/profile.json` (source unique de vérité).
+- AU DÉBUT de chaque session, lire ce fichier pour connaître son prénom/nom et ses préférences.
+- Utiliser ce prénom/nom dans TOUT document nominatif. NE JAMAIS inventer un nom ni une donnée perso.
+- Si `identite.statut` = PLACEHOLDER : demander le nom, sans rien inventer.
+- Garde-fou : `python3 scripts/identity_guard_protocol.py` (échoue si nom manquant ou placeholder résiduel).
+
 ## Règles générales
 - Ne modifie pas le repo sans validation explicite pour les changements architecturaux.
 - Pour les patterns établis (engines, routes, sidebar) : construire en continu sur la branche dédiée.
