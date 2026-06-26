@@ -5,7 +5,7 @@
 
 
 ## Une entreprise fiable qui génère des revenus (le moteur de tout)
-`████████████░░░░░░░░` **58%**  (3/6 étapes prouvées)
+`███████████░░░░░░░░░` **57%**  (4/7 étapes prouvées)
 
 - ✅ Produit existant (La Loi Avec Moi, multi-pays)  
   ↳ preuve : `laloiavecmoi/, app/la-loi-avec-moi-france/`
@@ -13,12 +13,14 @@
   ↳ preuve : `data/belgium/bail_wallonie.json`
 - ✅ Protocoles qualité + certification + sauvegarde  
   ↳ preuve : `scripts/certification_protocol.py, backup_protocol.py`
-- 🔧 Contenu belge multi-régions (Bruxelles, Flandre) + NL
+- ✅ Contenu belge 3 régions FR (Wallonie, Bruxelles, Flandre) + comparateur inter-régional  
+  ↳ preuve : `data/belgium/ (12 faits sourcés) + data/belgium/comparatif_regions.md`
 - ⬜ Paiement / freemium branché (Stripe)  
   ↳ débloqué par : identifiants Stripe de l'utilisatrice
 - ⬜ Premiers revenus réels encaissés
+- ⬜ Versions néerlandais (NL) du contenu belge
 
-➡️ **Prochaine action réelle :** Ajouter le bail de Bruxelles, sourcé (ordonnance bruxelloise).
+➡️ **Prochaine action réelle :** Préparer la mise en ligne du contenu sourcé (front) ou la version NL ; puis le paiement (Stripe) avec tes identifiants.
 
 ## La fondation : château, école, piscine pour les enfants placés
 `███████░░░░░░░░░░░░░` **33%**  (2/6 étapes prouvées)

@@ -1,0 +1,61 @@
+{
+  "module": "bail_residence_principale_flandre",
+  "titre": "Bail de résidence principale — Région flamande",
+  "juridiction": "BE-VLG",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Vlaams Woninghuurdecreet (décret du 9 novembre 2018)",
+    "entree_en_vigueur": "2019-01-01",
+    "portee": "Baux d'habitation à titre de résidence principale en Région flamande",
+    "source_officielle": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil juridique individualisé. Vérifier la version en vigueur du Vlaams Woninghuurdecreet (Vlaamse Codex) avant toute démarche.",
+  "faits": [
+    {
+      "id": "BVLG-DUREE-001",
+      "question": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
+      "reponse": "En Flandre, le bail de résidence principale est en principe conclu pour 9 ans. Un bail de courte durée a une durée maximale de 3 ans (renouvelable une fois sans dépasser 3 ans au total).",
+      "reference_legale": "Vlaams Woninghuurdecreet (décret du 9 novembre 2018)",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"},
+        {"type": "secondaire", "url": "https://www.dewaele.com/nl/advies/vlaams-huurdecreet-nieuw", "intitule": "Dewaele — Vlaams Woninghuurdecreet (depuis le 01/01/2019)"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-GARANTIE-001",
+      "question": "Quel est le montant maximum de la garantie locative en Flandre ?",
+      "reponse": "En Région flamande, la garantie locative (huurwaarborg) peut atteindre un maximum de 3 mois de loyer. Un prêt de garantie locative sans intérêt peut être sollicité auprès du Vlaams Woningfonds pour les locataires qui en remplissent les conditions.",
+      "reference_legale": "Vlaams Woninghuurdecreet — dispositions sur la huurwaarborg",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet (huurwaarborg)"},
+        {"type": "secondaire", "url": "https://callmepower.be/nl/verhuizen/huurcontract/vlaams-woninghuurdecreet", "intitule": "Callmepower — Vlaams Woninghuurdecreet expliqué"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-PREAVIS-001",
+      "question": "Comment résilier un bail de résidence principale en Flandre ?",
+      "reponse": "Pour un bail de 9 ans, le preneur peut résilier à tout moment moyennant un préavis de 3 mois (avec indemnité dégressive en cas de rupture durant les 3 premières années). Pour un bail de courte durée (≤ 3 ans), la résiliation se fait en principe au terme moyennant un préavis de 3 mois.",
+      "reference_legale": "Vlaams Woninghuurdecreet — fin du bail (opzegging)",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"},
+        {"type": "secondaire", "url": "https://www.mijnhabitat.be/nl/nieuws/einde-of-opzeg-van-de-huurovereenkomst", "intitule": "Habitat — Fin ou résiliation du bail"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-INDEX-001",
+      "question": "Quand le loyer peut-il être indexé en Flandre ?",
+      "reponse": "L'indexation du loyer est possible une fois par an, au plus tôt à la date anniversaire de l'entrée en vigueur du bail, selon la formule légale basée sur l'indice santé. Elle n'est pas automatique : le bailleur doit la demander.",
+      "reference_legale": "Vlaams Woninghuurdecreet — indexation du loyer",
+      "sources": [
+        {"type": "officiel", "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true", "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"},
+        {"type": "secondaire", "url": "https://www.mijnhabitat.be/nl/nieuws/het-vlaams-woninghuurdecreet-van-a-tot-z", "intitule": "Habitat — Le Vlaams Woninghuurdecreet de A à Z"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

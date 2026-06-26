@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **12**
+- Savoirs enregistrés : **16**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `90beab386fbaba82…`)
+- Certification système : **PASS** (sceau `21bc805918f6f1a4…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -16,6 +16,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code bruxellois du Logement, titre XI, chapitre relatif à la fin du bail · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quand le loyer peut-il être indexé à Bruxelles ?**  
   Réf : Code bruxellois du Logement, titre XI (indexation) ; enregistrement : SPF Finances · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?**  
+  Réf : Vlaams Woninghuurdecreet (décret du 9 novembre 2018) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quel est le montant maximum de la garantie locative en Flandre ?**  
+  Réf : Vlaams Woninghuurdecreet — dispositions sur la huurwaarborg · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment résilier un bail de résidence principale en Flandre ?**  
+  Réf : Vlaams Woninghuurdecreet — fin du bail (opzegging) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quand le loyer peut-il être indexé en Flandre ?**  
+  Réf : Vlaams Woninghuurdecreet — indexation du loyer · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?**  
   Réf : Décret du 15 mars 2018, art. 56 et suivants · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont les délais de préavis pour mettre fin au bail ?**  

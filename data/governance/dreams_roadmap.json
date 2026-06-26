@@ -10,11 +10,12 @@
         {"id": "R1-1", "action": "Produit existant (La Loi Avec Moi, multi-pays)", "statut": "fait", "preuve": "laloiavecmoi/, app/la-loi-avec-moi-france/"},
         {"id": "R1-2", "action": "Premier contenu juridique RÉEL et sourcé (bail Wallonie)", "statut": "fait", "preuve": "data/belgium/bail_wallonie.json"},
         {"id": "R1-3", "action": "Protocoles qualité + certification + sauvegarde", "statut": "fait", "preuve": "scripts/certification_protocol.py, backup_protocol.py"},
-        {"id": "R1-4", "action": "Contenu belge multi-régions (Bruxelles, Flandre) + NL", "statut": "en_cours", "preuve": ""},
+        {"id": "R1-4", "action": "Contenu belge 3 régions FR (Wallonie, Bruxelles, Flandre) + comparateur inter-régional", "statut": "fait", "preuve": "data/belgium/ (12 faits sourcés) + data/belgium/comparatif_regions.md"},
         {"id": "R1-5", "action": "Paiement / freemium branché (Stripe)", "statut": "a_faire", "preuve": "", "bloque_par": "identifiants Stripe de l'utilisatrice"},
-        {"id": "R1-6", "action": "Premiers revenus réels encaissés", "statut": "a_faire", "preuve": ""}
+        {"id": "R1-6", "action": "Premiers revenus réels encaissés", "statut": "a_faire", "preuve": ""},
+        {"id": "R1-7", "action": "Versions néerlandais (NL) du contenu belge", "statut": "a_faire", "preuve": ""}
       ],
-      "prochaine_action_reelle": "Ajouter le bail de Bruxelles, sourcé (ordonnance bruxelloise)."
+      "prochaine_action_reelle": "Préparer la mise en ligne du contenu sourcé (front) ou la version NL ; puis le paiement (Stripe) avec tes identifiants."
     },
     {
       "id": "R2-FONDATION",

@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 12,
+    "total_savoirs": 16,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -46,6 +46,50 @@
       "id": "BBRU-INDEX-001",
       "sujet": "Quand le loyer peut-il être indexé à Bruxelles ?",
       "reference_legale": "Code bruxellois du Logement, titre XI (indexation) ; enregistrement : SPF Finances",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-DUREE-001",
+      "sujet": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
+      "reference_legale": "Vlaams Woninghuurdecreet (décret du 9 novembre 2018)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-GARANTIE-001",
+      "sujet": "Quel est le montant maximum de la garantie locative en Flandre ?",
+      "reference_legale": "Vlaams Woninghuurdecreet — dispositions sur la huurwaarborg",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-PREAVIS-001",
+      "sujet": "Comment résilier un bail de résidence principale en Flandre ?",
+      "reference_legale": "Vlaams Woninghuurdecreet — fin du bail (opzegging)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_residence_principale_flandre",
+      "id": "BVLG-INDEX-001",
+      "sujet": "Quand le loyer peut-il être indexé en Flandre ?",
+      "reference_legale": "Vlaams Woninghuurdecreet — indexation du loyer",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
