@@ -1,0 +1,61 @@
+{
+  "module": "bail_residence_principale_wallonie",
+  "titre": "Bail de résidence principale — Région wallonne",
+  "juridiction": "BE-WAL",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret du 15 mars 2018 relatif au bail d'habitation",
+    "entree_en_vigueur": "2018-09-01",
+    "portee": "S'applique à tous les baux d'habitation en Région wallonne",
+    "source_officielle": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil juridique individualisé. Vérifier la version en vigueur sur la source officielle WALLEX avant toute démarche.",
+  "faits": [
+    {
+      "id": "BWAL-DUREE-001",
+      "question": "Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?",
+      "reponse": "Le bail de résidence principale a en principe une durée de 9 ans. Il existe trois exceptions : le bail de courte durée (3 ans ou moins), le bail de longue durée (plus de 9 ans) et le bail à vie (jusqu'au décès du locataire).",
+      "reference_legale": "Décret du 15 mars 2018, art. 56 et suivants",
+      "sources": [
+        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018 relatif au bail d'habitation"},
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail", "intitule": "SPW Logement — Le bail d'habitation"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BWAL-PREAVIS-001",
+      "question": "Quels sont les délais de préavis pour mettre fin au bail ?",
+      "reponse": "Le locataire peut mettre fin au bail à tout moment moyennant un préavis de 3 mois. Le bailleur peut mettre fin au bail au terme de celui-ci moyennant un préavis de 6 mois (des motifs et délais spécifiques s'appliquent pour une résiliation anticipée par le bailleur).",
+      "reference_legale": "Décret du 15 mars 2018, dispositions sur la fin du bail de 9 ans",
+      "sources": [
+        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018"},
+        {"type": "secondaire", "url": "https://www.uvcw.be/logement/focus/art-6981", "intitule": "UVCW — L'habitat en Wallonie : le bail d'habitation"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BWAL-GARANTIE-001",
+      "question": "Quel est le montant maximum de la garantie locative en Wallonie ?",
+      "reponse": "La garantie locative est plafonnée à 2 mois de loyer si elle est constituée sur un compte individualisé bloqué au nom du locataire, et à 3 mois de loyer si elle prend la forme d'une garantie bancaire reconstituée progressivement. Le décret prévoit trois modes de constitution (compte bloqué, garantie bancaire, garantie bancaire via contrat-type CPAS).",
+      "reference_legale": "Décret du 15 mars 2018, art. 62",
+      "sources": [
+        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018, art. 62"},
+        {"type": "officiel", "url": "https://logement.wallonie.be/storage/logement/documents/content/news/decret-bail/decret-decret-du--15032018-relatif-au-bail-habitation.pdf", "intitule": "SPW Logement — Texte du Décret du 15 mars 2018 (PDF)"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BWAL-INDEX-001",
+      "question": "Comment et quand le loyer peut-il être indexé en Wallonie ?",
+      "reponse": "L'indexation du loyer peut se faire une seule fois par an, au plus tôt à la date anniversaire de l'entrée en vigueur du bail, selon la formule légale (loyer de base × nouvel indice santé / indice santé de départ). L'indexation n'est pas automatique : elle doit être demandée par le bailleur et ne peut être réclamée rétroactivement que pour les mois en cours et les 3 mois précédant la demande.",
+      "reference_legale": "Décret du 15 mars 2018, art. 26",
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/indexation-loyer", "intitule": "SPW Logement — L'indexation du loyer"},
+        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018, art. 26"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
