@@ -5,7 +5,7 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
 ## ✅ Contrôles qualité
 - Savoirs enregistrés : **8**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `eee78ef1cd099057…`)
+- Certification système : **PASS** (sceau `d9bb12aabf6fdcc5…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?**  

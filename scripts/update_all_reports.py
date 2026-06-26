@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+"""
+update_all_reports.py — ORCHESTRATEUR : un seul geste met TOUT à jour.
+
+À lancer après chaque ajout de savoir. Enchaîne, dans l'ordre :
+  1. certification_protocol      (vérifie que tout fonctionne + sceau + probabilité)
+  2. learning_ledger_protocol    (registre d'apprentissage contrôlé + digest)
+  3. progress_report_protocol    (compte-rendu d'avancement, agréable à lire)
+  4. backup_protocol             (sauvegarde horodatée + manifeste)
+
+Puis affiche les 2 fichiers à envoyer dans le Drive :
+  - data/learning_digest.md      (« tout ce que je dois savoir »)
+  - data/progress_report.md      (« nos réussites »)
+
+NB honnête : l'envoi vers Google Drive se fait par l'assistant via la connexion sécurisée
+Google (un script ne doit JAMAIS détenir tes identifiants — règle zéro credential). Cet
+orchestrateur prépare tout ; l'assistant pousse ensuite les 2 fichiers dans le Drive.
+
+Usage : python3 scripts/update_all_reports.py
+"""
+import subprocess
+import sys
+
+ETAPES = [
+    ("Certification", "scripts/certification_protocol.py", ["--quiet"]),
+    ("Registre d'apprentissage", "scripts/learning_ledger_protocol.py", []),
+    ("Compte-rendu d'avancement", "scripts/progress_report_protocol.py", []),
+    ("Sauvegarde", "scripts/backup_protocol.py", []),
+]
+
+
+def main():
+    print("═══ MISE À JOUR GLOBALE DES COMPTES-RENDUS ═══")
+    echecs = 0
+    for nom, script, extra in ETAPES:
+        r = subprocess.run([sys.executable, script, *extra], capture_output=True, text=True)
+        etat = "✓" if r.returncode == 0 else "✗"
+        if r.returncode != 0:
+            echecs += 1
+        # dernière ligne utile de chaque protocole
+        derniere = (r.stdout.strip().splitlines() or [""])[-1]
+        print(f"  {etat} {nom:30s} {derniere}")
+
+    print("\n📂 À envoyer dans le Drive (l'assistant s'en charge via la connexion Google sécurisée) :")
+    print("   - data/learning_digest.md   (tout ce que je dois savoir)")
+    print("   - data/progress_report.md   (nos réussites)")
+    if echecs:
+        print(f"\n⚠️  {echecs} étape(s) en erreur — à vérifier avant publication.")
+        return 1
+    print("\n✓ Tout est à jour et cohérent.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

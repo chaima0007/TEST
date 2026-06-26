@@ -18,7 +18,7 @@ On s'est doté de **6 protocoles clés sur table** — certification, sauvegarde
 - `learning_ledger_protocol.py`
 - `progress_report_protocol.py`
 
-Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `eee78ef1cd09…`), avec un indicateur de probabilité honnête à **42%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
+Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `d9bb12aabf6f…`), avec un indicateur de probabilité honnête à **42%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
 
 ## 🌱 Là où on va
 
