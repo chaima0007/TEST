@@ -1,6 +1,6 @@
 {
   "certification": "PASS",
-  "horodatage_utc": "2026-06-27T11:57:38Z",
+  "horodatage_utc": "2026-06-27T11:57:51Z",
   "moteurs_certifies": 3392,
   "protocoles": [
     {
@@ -31,7 +31,7 @@
     },
     {
       "protocole": "P3_INTEGRITE_JSON",
-      "total": 123,
+      "total": 133,
       "echecs": [],
       "ok": true
     },
@@ -49,13 +49,13 @@
     {
       "protocole": "P7_PROBABILITE",
       "probabilite_integrite": 0.4264,
-      "ic90_bas": 0.0883,
-      "ic90_haut": 0.8096,
+      "ic90_bas": 0.0891,
+      "ic90_haut": 0.8032,
       "simulations": 10000,
       "niveau": "DETTE À RÉSORBER",
       "ok": true,
       "note": "P(tout opérationnel) — Monte Carlo bayésien Beta ; consultatif"
     }
   ],
-  "sceau_sha256": "3a4924b25a3b80fc230881420b7d72c996ad5cceaa31d693a7e8f012870f6445"
+  "sceau_sha256": "7fe3cb0ea473e91c3353cba006ff976ab07cd64486c9acb698727ccef4a2c6b9"
 }
