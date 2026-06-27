@@ -105,9 +105,9 @@
     {
       "cle": "fiscalite",
       "nom": "Fiscalité (impôts)",
-      "statut": "partiel",
+      "statut": "couvert",
       "modules": [
-        "via surendettement (dettes fiscales)"
+        "impots"
       ],
       "priorite": "moyenne"
     },
