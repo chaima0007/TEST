@@ -9,7 +9,7 @@
     "portee": "Citoyen qui veut démarrer une activité indépendante en Belgique",
     "source_officielle": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-27",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Un guichet d'entreprises agréé et un comptable peuvent vous accompagner. Cette catégorie aide le citoyen à se lancer ; les obligations des entreprises plus complexes relèvent d'un accompagnement spécialisé.",
   "faits": [
@@ -19,11 +19,23 @@
       "reponse": "En résumé : ouvrir un compte bancaire professionnel, vérifier les accès éventuels à la profession, s'inscrire à la Banque-Carrefour des Entreprises (BCE) via un guichet d'entreprises agréé (vous recevez un numéro d'entreprise à 10 chiffres), activer votre numéro de TVA si nécessaire, et vous affilier à une caisse d'assurances sociales et à une mutuelle. Un guichet d'entreprises est le point de contact central pour ces formalités.",
       "reference_legale": "Code de droit économique (BCE) ; statut social des indépendants",
       "contacts": [
-        {"nom": "Guichet d'entreprises agréé", "lien": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/demarches-aupres-dun-guichet/les-guichets-dentreprises", "pour": "inscription BCE, formalités"}
+        {
+          "nom": "Guichet d'entreprises agréé",
+          "lien": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/demarches-aupres-dun-guichet/les-guichets-dentreprises",
+          "pour": "inscription BCE, formalités"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur", "intitule": "SPF Economie — Démarches pour un indépendant"},
-        {"type": "officiel", "url": "https://www.belgium.be/fr/economie/entreprise/creation", "intitule": "Belgium.be — Création d'entreprise"}
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur",
+          "intitule": "SPF Economie — Démarches pour un indépendant"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/economie/entreprise/creation",
+          "intitule": "Belgium.be — Création d'entreprise"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -33,15 +45,192 @@
       "reponse": "Oui. Tout indépendant doit s'affilier à une caisse d'assurances sociales et payer des cotisations sociales. En échange, vous ouvrez des droits : soins de santé (via une mutuelle, affiliation obligatoire), incapacité de travail, pension, allocations familiales, congé de maternité, et une assurance en cas de faillite. Au début, prévoyez une trésorerie pour ces cotisations.",
       "reference_legale": "Arrêté royal n° 38 — statut social des travailleurs indépendants",
       "contacts": [
-        {"nom": "Caisse d'assurances sociales", "pour": "affiliation et cotisations"},
-        {"nom": "Mutuelle", "pour": "soins de santé (obligatoire)"}
+        {
+          "nom": "Caisse d'assurances sociales",
+          "pour": "affiliation et cotisations"
+        },
+        {
+          "nom": "Mutuelle",
+          "pour": "soins de santé (obligatoire)"
+        }
       ],
       "alerte_delai": "Affiliez-vous AVANT de démarrer l'activité : l'affiliation à une caisse d'assurances sociales est obligatoire dès le début.",
       "sources": [
-        {"type": "officiel", "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/groupes-cibles-specifiques/vos-droits-en-tant-quindependant", "intitule": "SPF Sécurité sociale — Vos droits en tant qu'indépendant"},
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur", "intitule": "SPF Economie — Démarches indépendant"}
+        {
+          "type": "officiel",
+          "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/groupes-cibles-specifiques/vos-droits-en-tant-quindependant",
+          "intitule": "SPF Sécurité sociale — Vos droits en tant qu'indépendant"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur",
+          "intitule": "SPF Economie — Démarches indépendant"
+        }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "IND-NORMES-001",
+      "question": "Comment être sûr d'être aux normes pour me lancer ? (la check-list légale)",
+      "reponse": "Avant de démarrer, mettez ces points en ordre : 1) ouvrir un compte bancaire professionnel ; 2) vous inscrire à la Banque-Carrefour des Entreprises (BCE) via un guichet d'entreprises agréé, qui vous donne votre numéro d'entreprise ; 3) activer votre numéro de TVA si votre activité y est soumise ; 4) vous affilier à une caisse d'assurances sociales pour indépendants ET à une mutuelle ; 5) vérifier les autorisations/accès à la profession éventuels selon votre métier ; 6) prévoir une comptabilité conforme (et l'e-facturation B2B désormais obligatoire). Le guichet d'entreprises est votre point d'entrée unique pour la plupart de ces étapes.",
+      "reference_legale": "Loi du 16 janvier 2003 portant création d'une Banque-Carrefour des Entreprises ; Code de la TVA ; arrêté royal n° 38 du 27 juillet 1967 (statut social des indépendants)",
+      "alerte_delai": "L'affiliation à une caisse d'assurances sociales doit se faire au plus tard le jour du début de l'activité (ne pas démarrer sans être affilié).",
+      "contacts": [
+        {
+          "nom": "Guichet d'entreprises agréé",
+          "pour": "inscription BCE, TVA, formalités de départ"
+        },
+        {
+          "nom": "Caisse d'assurances sociales pour indépendants",
+          "pour": "affiliation et cotisations sociales"
+        },
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "accès à la profession, information"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise",
+          "intitule": "SPF Économie — Créer une entreprise"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Statut social des indépendants"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "IND-RISQUES-001",
+      "question": "Quels sont les risques quand on se lance, et comment les limiter ?",
+      "reponse": "Les principaux risques : des revenus irréguliers au début, des cotisations sociales calculées provisoirement (avec régularisation plus tard), et, en entreprise individuelle, votre patrimoine personnel qui peut être engagé. Comment les limiter : demander une réduction des cotisations si vos revenus de départ sont faibles ; protéger votre logement familial par une déclaration d'insaisissabilité chez le notaire ; envisager une société (responsabilité limitée) selon le projet ; souscrire une assurance revenu garanti et une RC professionnelle ; et garder une réserve de trésorerie. En cas de coup dur, le droit passerelle peut vous aider (voir ci-dessous).",
+      "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (statut social, cotisations) ; loi du 22 décembre 2016 instaurant un droit passerelle ; Code de droit économique (formes de sociétés)",
+      "contacts": [
+        {
+          "nom": "Caisse d'assurances sociales",
+          "pour": "réduction/dispense de cotisations en début d'activité"
+        },
+        {
+          "nom": "Notaire",
+          "pour": "déclaration d'insaisissabilité du logement"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr/cotisations",
+          "intitule": "INASTI — Cotisations sociales des indépendants"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr/droit-passerelle",
+          "intitule": "INASTI — Droit passerelle"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "IND-AIDE-001",
+      "question": "J'ai peur d'échouer : qui peut m'aider, et comment ne pas lâcher prise ?",
+      "reponse": "Vous n'êtes pas seul·e, et douter ne veut pas dire renoncer. Des organismes accompagnent gratuitement ou à faible coût : les guichets d'entreprises (formalités), le 1819 à Bruxelles (info et orientation), les structures régionales (hub.brussels, 1890 en Wallonie), les coopératives d'activités qui permettent de TESTER son activité avant de se lancer pour de bon, et les organisations d'indépendants (ex. UCM). Filet de sécurité légal : le droit passerelle protège l'indépendant qui doit cesser ou traverse de grandes difficultés (revenu de remplacement temporaire). Avancez par étapes, entourez-vous, et rappelez-vous : beaucoup d'indépendants à succès ont d'abord douté. Demander de l'aide, c'est déjà avancer.",
+      "reference_legale": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants",
+      "contacts": [
+        {
+          "nom": "1819 (Bruxelles)",
+          "lien": "https://1819.brussels",
+          "pour": "information et orientation des entrepreneurs"
+        },
+        {
+          "nom": "1890 (Wallonie)",
+          "lien": "https://www.1890.be",
+          "pour": "accompagnement des entrepreneurs en Wallonie"
+        },
+        {
+          "nom": "Caisse d'assurances sociales",
+          "pour": "demande de droit passerelle en cas de difficulté"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr/droit-passerelle",
+          "intitule": "INASTI — Droit passerelle"
+        },
+        {
+          "type": "officiel",
+          "url": "https://1819.brussels/fr",
+          "intitule": "1819 Brussels — Accompagnement des entrepreneurs"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "IND-BUSINESSPLAN-001",
+      "question": "Comment faire un business plan (et un plan financier) ?",
+      "reponse": "Un business plan, c'est votre projet mis noir sur blanc : 1) ce que vous vendez et à qui ; 2) votre marché et vos concurrents ; 3) votre stratégie commerciale (prix, communication) ; 4) le plan financier (coûts de départ, charges, chiffre d'affaires prévu, point d'équilibre, trésorerie sur 1 à 3 ans). Si vous créez une société (ex. SRL), un plan financier écrit est même OBLIGATOIRE à la constitution : il justifie que votre capital de départ est suffisant. Des organismes vous aident gratuitement à le bâtir (1819 à Bruxelles, 1890 en Wallonie, organisations d'indépendants). Astuce : un bon plan financier sert aussi à décrocher un prêt ou une subvention.",
+      "reference_legale": "Code des sociétés et des associations (plan financier obligatoire à la constitution d'une SRL, art. 5:4)",
+      "contacts": [
+        {
+          "nom": "1819 (Bruxelles)",
+          "lien": "https://1819.brussels",
+          "pour": "aide à la construction du business plan"
+        },
+        {
+          "nom": "1890 (Wallonie)",
+          "lien": "https://www.1890.be",
+          "pour": "accompagnement et outils de plan financier"
+        },
+        {
+          "nom": "Expert-comptable",
+          "pour": "plan financier (obligatoire pour une société)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise",
+          "intitule": "SPF Économie — Créer une entreprise"
+        },
+        {
+          "type": "officiel",
+          "url": "https://1819.brussels/fr",
+          "intitule": "1819 Brussels — Construire son projet"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "IND-CONSEILS-JURIDIQUES-001",
+      "question": "Quels points juridiques vérifier pour être bien protégé ?",
+      "reponse": "Les essentiels à mettre en ordre : 1) le statut juridique (personne physique simple, ou société à responsabilité limitée pour protéger votre patrimoine) ; 2) des contrats et des conditions générales (CGV) écrits, clairs sur le prix, les délais et les paiements ; 3) des factures conformes avec mentions légales et délais de paiement (la loi protège contre les retards de paiement entre entreprises) ; 4) la protection de votre logement par une déclaration d'insaisissabilité chez le notaire ; 5) le respect du RGPD si vous traitez des données de clients ; 6) les assurances utiles (RC professionnelle, revenu garanti). Pour un avis adapté à VOTRE cas, consultez un professionnel — et si vos moyens sont limités, pensez à l'aide juridique (avocat pro deo).",
+      "reference_legale": "Code des sociétés et des associations ; loi du 2 août 2002 concernant la lutte contre le retard de paiement dans les transactions commerciales ; loi du 25 avril 2007 (insaisissabilité de la résidence principale de l'indépendant) ; Règlement (UE) 2016/679 (RGPD)",
+      "contacts": [
+        {
+          "nom": "Notaire",
+          "pour": "déclaration d'insaisissabilité, constitution de société"
+        },
+        {
+          "nom": "Bureau d'aide juridique (BAJ)",
+          "pour": "avocat gratuit/pro deo selon vos revenus"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises",
+          "intitule": "SPF Économie — Entreprises"
+        },
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr",
+          "intitule": "SPF Justice — Aide juridique"
+        }
+      ],
+      "date_verification": "2026-06-27"
     }
   ]
 }
