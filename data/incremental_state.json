@@ -52,6 +52,7 @@
     "mobilite_douce.json": "098563f754dd03bdc319c0b50ad79543d4a0494073141439d91c6e1b108dcc0c",
     "naissance.json": "6efeb1565ad18f316677d63ba24a9898c01e5933d604fc79b32380c6613fc9bc",
     "pension.json": "6d6a13a895cc1f7bcdc856b78941927f7eae466c41c9f893d3b1a54db0cc02c7",
+    "permis_urbanisme.json": "c51cd932fab4f19517a9780fe8155e0e89c3e6016f34468359eec5272a4890f8",
     "premier_emploi.json": "391053710c086a7e1e50f232ce7feb4136cc378650f6ba13abed256a0b9ef5f3",
     "protection_personne.json": "bfef69e4bd1ab5da772bbf81f356d19f638267a69272e2556ba562562d7ba477",
     "recours_administration.json": "64346aedfa7a2a122f7dfd58c8dd79e7c012dd2c823950efdd63554af0b8cb2c",
@@ -66,7 +67,8 @@
     "vie_privee_rgpd.json": "e8e8039f584cc8a1bfe1bff3a70c75bc8f88e4af6e6a2a484e341c0162d29e41",
     "violences_conjugales.json": "68a6113b61676f5e0acd6a5ef8e9498ffb641dc37ad4d11356c4be00a30300bf",
     "voisinage.json": "45bb90acab7eed69019068a98163d08fbc40430e093904742d43ba9fd8e6f9f5",
-    "vote_electoral.json": "ec0652b16be8f1d3da80882a4150c30291361d7ee865b192f54e55c51a871724"
+    "vote_electoral.json": "ec0652b16be8f1d3da80882a4150c30291361d7ee865b192f54e55c51a871724",
+    "voyages.json": "eb3d9aeabb8f48738353a411a0e0c8da26ce2742526ed6a8c77d02aefecee9e3"
   },
   "caelum": {
     "appels_projets.json": "9218af6a109cc274aa2881780eac1cccc831bd7d57a626d6165464cee0e6036d",

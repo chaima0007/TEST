@@ -80,7 +80,9 @@
         "achat_logement",
         "assurance_auto",
         "credit_hypothecaire",
-        "copropriete"
+        "copropriete",
+        "permis_urbanisme",
+        "voyages"
       ]
     }
   }

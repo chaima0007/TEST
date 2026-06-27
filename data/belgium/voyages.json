@@ -1,0 +1,48 @@
+{
+  "module": "voyages",
+  "titre": "Voyages à forfait — annulation & remboursement",
+  "domaine": "Voyages",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 21 novembre 2017 relative à la vente de voyages à forfait, de prestations de voyage liées et de services de voyage",
+    "portee": "Droits du voyageur : annulation, remboursement, faillite de l'organisateur",
+    "source_officielle": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/voyages"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Ces règles visent les « voyages à forfait » (au moins deux prestations combinées) ; un simple billet seul suit d'autres règles. Vérifiez votre contrat.",
+  "faits": [
+    {
+      "id": "VOY-ANNULATION-001",
+      "question": "Puis-je annuler mon voyage à forfait et être remboursé ?",
+      "reponse": "Vous pouvez résilier votre voyage à forfait à tout moment avant le départ, mais l'organisateur peut réclamer des frais de résiliation raisonnables (souvent fixés par le contrat). Exception importante : si des circonstances exceptionnelles et inévitables surviennent à destination (catastrophe, troubles graves) avec un impact important sur le voyage, vous pouvez annuler SANS frais et être remboursé (sans dédommagement en plus). Si c'est l'organisateur qui annule, il doit vous rembourser intégralement, en principe dans les 14 jours.",
+      "reference_legale": "Loi du 21 novembre 2017 relative à la vente de voyages à forfait (droit de résiliation et remboursement)",
+      "alerte_delai": "En cas d'annulation par l'organisateur ou pour circonstances exceptionnelles : remboursement en principe dans les 14 jours.",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "droits du voyageur, plainte"},
+        {"nom": "Centre Européen des Consommateurs (CEC)", "lien": "https://www.cecbelgique.be", "pour": "litige transfrontalier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/voyages/vos-droits-en-tant-que/vous-avez-reserve-un-voyage/vos-droits-en-cas-dannulation", "intitule": "SPF Économie — Annulation d'un voyage à forfait"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/themes/voyages/voyages-a-forfait/resilier-un-voyage-a-forfait", "intitule": "CEC Belgique — Résilier un voyage à forfait"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "VOY-FAILLITE-001",
+      "question": "Que se passe-t-il si l'agence de voyages fait faillite ?",
+      "reponse": "Vous êtes protégé. Les organisateurs de voyages à forfait ont l'obligation légale de garantir le remboursement des sommes versées et, si vous êtes déjà en voyage, votre rapatriement, en cas d'insolvabilité ou de faillite. Concrètement, ils souscrivent une garantie auprès d'un fonds ou assureur agréé. Gardez vos preuves de paiement et le contrat. Par ailleurs, une nouvelle règle européenne précise que vous ne pouvez jamais être obligé d'accepter un bon (avoir) à la place d'un remboursement.",
+      "reference_legale": "Loi du 21 novembre 2017 relative à la vente de voyages à forfait (protection contre l'insolvabilité de l'organisateur)",
+      "contacts": [
+        {"nom": "Fonds de garantie voyages / assureur de l'organisateur", "pour": "remboursement et rapatriement en cas de faillite"},
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "information et plainte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/voyages", "intitule": "SPF Économie — Voyages"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/themes/voyages/voyages-a-forfait/resilier-un-voyage-a-forfait", "intitule": "CEC Belgique — Voyages à forfait"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

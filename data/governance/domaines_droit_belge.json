@@ -587,6 +587,24 @@
         "copropriete"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "permis_urbanisme",
+      "nom": "Urbanisme & travaux",
+      "statut": "couvert",
+      "modules": [
+        "permis_urbanisme"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "voyages",
+      "nom": "Voyages",
+      "statut": "couvert",
+      "modules": [
+        "voyages"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
