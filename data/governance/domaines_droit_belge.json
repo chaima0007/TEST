@@ -272,6 +272,15 @@
         "pension"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "logement_social",
+      "nom": "Logement social",
+      "statut": "couvert",
+      "modules": [
+        "logement_social"
+      ],
+      "priorite": "haute"
     }
   ]
 }
