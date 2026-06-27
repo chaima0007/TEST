@@ -207,6 +207,12 @@
       "nom": "Veille juridique",
       "regle": "Suivre les changements de loi connus (veille_juridique.json) et revérifier les fiches selon une cadence. L agent signale ; mise à jour seulement après vérification de la source officielle.",
       "verif": "python3 scripts/veille_juridique_protocol.py"
+    },
+    {
+      "id": "P-RENTABILITE",
+      "nom": "Expertise rentabilité",
+      "regle": "Pour chaque domaine : expert dédié + analyse honnête de la rentabilité (demande, concurrence, pistes de revenus). Modèle freemium : info gratuite, services payants. Aucun chiffre € inventé.",
+      "verif": "python3 scripts/rentabilite_protocol.py"
     }
   ]
 }
