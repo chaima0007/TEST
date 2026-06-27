@@ -114,9 +114,9 @@
     {
       "cle": "circulation",
       "nom": "Circulation routière",
-      "statut": "partiel",
+      "statut": "couvert",
       "modules": [
-        "via justice (amendes)"
+        "circulation"
       ],
       "priorite": "moyenne"
     },
