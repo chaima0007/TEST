@@ -2,7 +2,7 @@
   "fichier": "Point de reprise — où on en est",
   "but": "Permettre de TOUJOURS reprendre exactement où on s'est arrêté, même après un redémarrage du conteneur. Mis à jour au fur et à mesure.",
   "derniere_maj": "2026-06-27",
-  "focus_actuel": "Consolider sur le GRAND site Next.js (Belgique FR+NL, i18n, scalable). Fiabiliser son contenu. Pas de doublon.",
+  "focus_actuel": "La Loi Avec Moi = site séparé (jamais mélangé à Caelum Partner). Cloner les infos sourcées sur LE site La Loi Avec Moi. Penser rentabilité + 1 expert/domaine.",
   "fait_recemment": [
     "Domaine Travail & emploi (5 faits sourcés)",
     "DÉCOUVERTE: le grand site Next.js (app/) est le vrai produit (31 domaines FR + NL + France)",
@@ -10,7 +10,7 @@
     "COPYRIGHT.md (© La Loi Avec Moi, auteure Chaima Mhadbi)",
     "Veille juridique (s'ajuster aux changements de loi)"
   ],
-  "prochaine_etape": "1) Consolider: faire du grand site le produit unique (Belgique FR+NL), brancher la base sourcée + protocoles. 2) Analytics de visite (attend compte Chaima). 3) Compléter NL. France = APRÈS les projets belges.",
+  "prochaine_etape": "1) Business plan (✅). 2) Fiabiliser/cloner le contenu sourcé dans le site La Loi Avec Moi. 3) Mise en ligne (FR+NL). 4) Documents payants (Stripe de Chaima) + analytics.",
   "projets": {
     "loi_avec_moi": {
       "etat": "actif — site 12 pages, base sourcée, accessible",

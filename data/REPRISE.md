@@ -2,15 +2,15 @@
 
 *Mémo régénéré le 2026-06-27. À lire en premier après un redémarrage.*
 
-**Focus actuel :** Consolider sur le GRAND site Next.js (Belgique FR+NL, i18n, scalable). Fiabiliser son contenu. Pas de doublon.
+**Focus actuel :** La Loi Avec Moi = site séparé (jamais mélangé à Caelum Partner). Cloner les infos sourcées sur LE site La Loi Avec Moi. Penser rentabilité + 1 expert/domaine.
 
 ## 👉 Prochaine étape
-1) Consolider: faire du grand site le produit unique (Belgique FR+NL), brancher la base sourcée + protocoles. 2) Analytics de visite (attend compte Chaima). 3) Compléter NL. France = APRÈS les projets belges.
+1) Business plan (✅). 2) Fiabiliser/cloner le contenu sourcé dans le site La Loi Avec Moi. 3) Mise en ligne (FR+NL). 4) Documents payants (Stripe de Chaima) + analytics.
 
 ## 📊 État réel (chiffres vérifiés)
-- Réponses sourcées : **53**
-- Modules : 7 · sources officielles : 69
-- Fiches avec contacts : 10 · alertes de délai : 15
+- Réponses sourcées : **64**
+- Modules : 10 · sources officielles : 83
+- Fiches avec contacts : 20 · alertes de délai : 19
 
 ## ✅ Fait récemment
 - Domaine Travail & emploi (5 faits sourcés)
