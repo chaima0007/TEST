@@ -177,6 +177,12 @@
       "nom": "Résilience & incidents",
       "regle": "Chaque problème est enregistré (data/governance/incidents.json) avec cause, solution, comment y arriver, protocole. Un agent simule les incidents connus et vérifie que les défenses tiennent. Auto-sync au boot. Commit/push fréquents.",
       "verif": "python3 scripts/resilience_simulator.py"
+    },
+    {
+      "id": "P-ACCESSIBILITE",
+      "nom": "Accessibilité (WCAG 2.2 / EAA)",
+      "regle": "Le site doit être accessible aux personnes handicapées (visuel, moteur, cognitif, auditif). Cadre : European Accessibility Act (UE 2019/882, depuis 28/06/2025), WCAG 2.2 AA, EN 301 549. Audit automatique à chaque build ; tests humains planifiés. Experts définis dans accessibility_charter.json.",
+      "verif": "python3 scripts/accessibility_audit_agent.py"
     }
   ]
 }

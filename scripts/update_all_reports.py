@@ -35,6 +35,7 @@ ETAPES = [
     ("Détection du marché", "scripts/market_detection_protocol.py", []),
     ("Comité de direction", "scripts/direction_committee_protocol.py", []),
     ("Agent de résilience", "scripts/resilience_simulator.py", []),
+    ("Audit accessibilité", "scripts/accessibility_audit_agent.py", []),
 
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]

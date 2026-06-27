@@ -91,6 +91,22 @@ footer.site{border-top:1px solid var(--bord);background:var(--gris);color:var(--
 footer.site .wrap{max-width:920px;margin:0 auto;padding:1.3rem 1.25rem}
 .back{display:inline-block;margin-bottom:1rem;font-size:.9rem}
 h2.sec{color:var(--bleu);border-bottom:2px solid var(--bord);padding-bottom:.3rem;margin-top:2rem}
+/* --- Accessibilité (WCAG 2.2) --- */
+.skip-link{position:absolute;left:-9999px;top:0;background:#fff;color:var(--bleu);padding:.6rem 1rem;border:2px solid var(--bleu);border-radius:0 0 8px 0;z-index:1000;font-weight:700}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid #ffbf47;outline-offset:2px;border-radius:4px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.search input{min-height:44px}
+.card,.back,nav.top a{min-height:24px}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto !important}}
+@media (prefers-color-scheme: dark){
+  body{background:#0f1620;color:#e6edf3}
+  .card,.fait{background:#161f2b;border-color:#2a3746}
+  .badge{background:#1d2733;border-color:#2a3746;color:#aab8c6}
+  .card h3,.fait h3,.hero h1,h2.sec{color:#7fb2e6}
+  a{color:#7fb2e6}
+  footer.site{background:#0c121a;color:#aab8c6}
+}
 """
 
 AVERTISSEMENT_GLOBAL = (
@@ -108,6 +124,7 @@ def page(titre, contenu, actif=""):
     nav = (
         navlink("index.html", "Accueil", "accueil")
         + navlink("transparence.html", "Transparence", "transparence")
+        + navlink("accessibilite.html", "Accessibilité", "accessibilite")
     )
     return f"""<!doctype html>
 <html lang="fr">
@@ -115,18 +132,19 @@ def page(titre, contenu, actif=""):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(titre)} — La Loi Avec Moi</title>
-<meta name="description" content="Informations juridiques belges fiables et sourcées : bail, surendettement.">
+<meta name="description" content="Informations juridiques belges fiables et sourcées : bail, surendettement, justice.">
 <style>{CSS}</style>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 <header class="site"><div class="wrap">
-  <a href="index.html"><span class="brand">La Loi Avec Moi<small>Le droit belge, clair et sourcé</small></span></a>
-  <nav class="top">{nav}</nav>
+  <a href="index.html" aria-label="La Loi Avec Moi — accueil"><span class="brand">La Loi Avec Moi<small>Le droit belge, clair et sourcé</small></span></a>
+  <nav class="top" aria-label="Navigation principale">{nav}</nav>
 </div></header>
-<main>
+<main id="contenu" tabindex="-1">
 {contenu}
 </main>
-<footer class="site"><div class="wrap">
+<footer class="site"><div class="wrap" role="contentinfo">
   <strong>Avertissement.</strong> {esc(AVERTISSEMENT_GLOBAL)}<br><br>
   © {annee} La Loi Avec Moi · Chaque réponse cite ses sources officielles · Contenu généré à partir d'une base vérifiée.
 </div></footer>
@@ -141,7 +159,8 @@ def rendre_fait(fait):
         cls = "src-officiel" if typ == "officiel" else ""
         tag = "officiel" if typ == "officiel" else "complément"
         srcs.append(
-            f'<li><a href="{esc(s.get("url"))}" target="_blank" rel="noopener">{esc(s.get("intitule"))}</a> '
+            f'<li><a href="{esc(s.get("url"))}" target="_blank" rel="noopener">{esc(s.get("intitule"))}'
+            f'<span class="visually-hidden"> (s\'ouvre dans un nouvel onglet)</span></a> '
             f'<span class="{cls}">[{tag}]</span></li>'
         )
     src_html = ""
@@ -182,8 +201,10 @@ def construire():
         "<p>Des réponses fiables à vos questions de tous les jours — bail, loyer, "
         "surendettement — chacune accompagnée de sa source officielle et de sa date de vérification.</p>"
         "</section>"
-        f'<div class="disclaimer">ℹ️ {esc(AVERTISSEMENT_GLOBAL)}</div>'
-        '<div class="search"><input id="q" type="search" '
+        f'<div class="disclaimer" role="note">ℹ️ {esc(AVERTISSEMENT_GLOBAL)}</div>'
+        '<div class="search"><label for="q" class="visually-hidden">Rechercher une thématique</label>'
+        '<input id="q" type="search" '
+        'aria-label="Rechercher une thématique" '
         'placeholder="Rechercher une question (ex. garantie locative, saisie, préavis)…" '
         'oninput="filtrer()"></div>'
         f'<h2 class="sec">Thématiques ({total_faits} réponses)</h2>'
@@ -202,7 +223,8 @@ def construire():
         base_html = ""
         if base:
             url = base.get("source_officielle", "")
-            lien = f' — <a href="{esc(url)}" target="_blank" rel="noopener">source officielle</a>' if url else ""
+            lien = (f' — <a href="{esc(url)}" target="_blank" rel="noopener">source officielle'
+                    f'<span class="visually-hidden"> (s\'ouvre dans un nouvel onglet)</span></a>') if url else ""
             base_html = (
                 f'<div class="ref">Base légale principale : {esc(base.get("intitule",""))}{lien}</div>'
             )
@@ -213,7 +235,9 @@ def construire():
             f'<div class="meta"><span class="badge">{esc(region)}</span>'
             f'<span class="badge">{len(m.get("faits", []))} réponses</span></div>'
             f"{base_html}"
-            '<div class="search"><input type="search" placeholder="Filtrer dans cette page…" '
+            '<div class="search"><label for="qf" class="visually-hidden">Filtrer les questions de cette page</label>'
+            '<input id="qf" type="search" aria-label="Filtrer les questions de cette page" '
+            'placeholder="Filtrer dans cette page…" '
             'oninput="var v=this.value.toLowerCase();document.querySelectorAll(\'.fait\').forEach('
             "function(a){a.style.display=a.dataset.q.indexOf(v)>=0?'':'none';});\"></div>"
             f"{faits_html}"
@@ -260,12 +284,48 @@ def construire():
         page("Transparence", transp, actif="transparence"), encoding="utf-8"
     )
 
+    # --- page déclaration d'accessibilité ---
+    today = datetime.date.today().isoformat()
+    acc = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#0b3d6e">Déclaration d\'accessibilité</h1>'
+        "<p>Nous voulons que <strong>toute personne</strong>, y compris en situation de "
+        "handicap, puisse accéder à l'information juridique. L'accessibilité n'est pas une "
+        "option : c'est une question de dignité — et, en Europe, une <strong>obligation légale</strong>.</p>"
+        '<h2 class="sec">Cadre légal (ce à quoi on se réfère)</h2>'
+        "<ul>"
+        "<li><strong>European Accessibility Act</strong> (directive UE 2019/882), applicable "
+        "depuis le 28 juin 2025 : de nombreux services numériques doivent être accessibles.</li>"
+        "<li><strong>WCAG 2.2</strong> (niveau AA visé) et la norme européenne <strong>EN 301 549</strong>.</li>"
+        "</ul>"
+        '<h2 class="sec">Ce qui est déjà en place</h2>'
+        "<ul>"
+        "<li>Langue de la page déclarée, structure par titres, repères (<code>main</code>, navigation, pied de page).</li>"
+        "<li>Lien « aller au contenu », focus clairement visible au clavier, cibles tactiles agrandies.</li>"
+        "<li>Champs de recherche avec étiquettes ; liens ouvrant un nouvel onglet signalés aux lecteurs d'écran.</li>"
+        "<li>Respect du « mouvement réduit » et prise en charge du <strong>mode sombre</strong> (confort visuel).</li>"
+        "<li>Texte agrandissable (zoom non bloqué), contrastes renforcés.</li>"
+        "<li>Un <strong>audit d'accessibilité automatique</strong> est lancé à chaque génération du site.</li>"
+        "</ul>"
+        '<h2 class="sec">Limites & engagement (honnêtement)</h2>'
+        "<ul>"
+        "<li>Notre audit automatique ne remplace pas un test par de vraies personnes "
+        "(lecteur d'écran, navigation clavier, handicap cognitif) : c'est notre prochaine étape.</li>"
+        "<li>Si une page vous pose problème, dites-le nous : nous corrigerons en priorité.</li>"
+        "</ul>"
+        f"<p style='color:var(--muted);font-size:.85rem'>Déclaration revue le {esc(today)}. "
+        "Objectif visé : WCAG 2.2 niveau AA.</p>"
+    )
+    (DIST / "accessibilite.html").write_text(
+        page("Accessibilité", acc, actif="accessibilite"), encoding="utf-8"
+    )
+
     return {
         "modules": len(modules),
         "faits": total_faits,
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
-        "pages": len(modules) + 2,
+        "pages": len(modules) + 3,
     }
 
 
