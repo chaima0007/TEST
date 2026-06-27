@@ -308,6 +308,15 @@
         "job_etudiant"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "discrimination",
+      "nom": "Discrimination & égalité",
+      "statut": "couvert",
+      "modules": [
+        "discrimination"
+      ],
+      "priorite": "haute"
     }
   ]
 }

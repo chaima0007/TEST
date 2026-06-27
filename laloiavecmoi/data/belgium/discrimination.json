@@ -1,0 +1,57 @@
+{
+  "module": "discrimination",
+  "titre": "Discrimination — reconnaître, signaler, agir",
+  "domaine": "Discrimination & égalité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 10 mai 2007 (lutte contre la discrimination) ; loi antiracisme du 30 juillet 1981 ; loi 'genre' du 10 mai 2007",
+    "portee": "Protection contre les discriminations en Belgique",
+    "source_officielle": "https://www.unia.be/fr/discrimination-dans-la-loi"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour un cas concret, contactez Unia (ou le Vlaams Mensenrechteninstituut en Flandre) ou un avocat. Des délais s'appliquent — n'attendez pas.",
+  "faits": [
+    {
+      "id": "DISC-CRITERES-001",
+      "question": "Qu'est-ce qu'une discrimination interdite ?",
+      "reponse": "C'est le fait de traiter une personne moins favorablement à cause d'un critère protégé : par exemple l'origine, la couleur, la conviction, le handicap, l'âge, l'état de santé, l'orientation sexuelle, le sexe, la fortune, etc. C'est interdit dans de nombreux domaines (emploi, logement, biens et services…). Le critère peut être réel ou supposé. Les discours et délits de haine sont aussi punis.",
+      "reference_legale": "Loi du 10 mai 2007 (anti-discrimination) ; loi antiracisme du 30 juillet 1981 ; loi 'genre' du 10 mai 2007",
+      "sources": [
+        {"type": "officiel", "url": "https://www.unia.be/fr/discrimination-dans-la-loi", "intitule": "Unia — La discrimination dans la loi"},
+        {"type": "officiel", "url": "https://www.unia.be/fr/lois-fédérales-antidiscrimination-en-détail/loi-antidiscrimination-en-détail", "intitule": "Unia — Loi antidiscrimination en détail"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DISC-SIGNALER-001",
+      "question": "Je suis victime ou témoin de discrimination : que faire ?",
+      "reponse": "Vous pouvez le signaler à Unia (organisme public indépendant) : en ligne ou par téléphone au numéro gratuit 0800 12 800 (jours ouvrables). Unia écoute, informe et peut aider à trouver une solution (parfois à l'amiable, parfois en justice). En Flandre, l'institut flamand des droits humains (VMRI) est compétent pour certaines matières ; Unia reste compétent pour les discours et délits de haine. Gardez les preuves (messages, témoins, dates).",
+      "reference_legale": "Lois antidiscrimination — missions d'Unia",
+      "contacts": [
+        {"nom": "Unia", "numero": "0800 12 800", "lien": "https://www.unia.be", "pour": "signaler une discrimination"}
+      ],
+      "alerte_delai": "Conservez les preuves tout de suite et agissez vite : des délais de prescription s'appliquent (parfois courts, ex. 1 an en matière de travail).",
+      "sources": [
+        {"type": "officiel", "url": "https://www.unia.be", "intitule": "Unia — Signaler"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/lexique/aide-juridique-de-deuxieme-ligne", "intitule": "Droits Quotidiens — Aide juridique"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DISC-RECOURS-001",
+      "question": "Quels recours et quelles réparations ?",
+      "reponse": "Selon les cas, on peut obtenir l'arrêt de la discrimination et une indemnisation (la loi prévoit notamment une indemnité forfaitaire pour les victimes). On peut agir devant les tribunaux ; Unia peut accompagner. Attention aux délais : par exemple, en matière de contrat de travail terminé, l'action se prescrit en principe par 1 an, contre 5 ans après le fait dans d'autres cas. Faites-vous conseiller rapidement.",
+      "reference_legale": "Loi du 10 mai 2007 — sanctions civiles, indemnité forfaitaire et délais de prescription",
+      "contacts": [
+        {"nom": "Unia / avocat", "pour": "évaluer le recours et l'indemnisation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.unia.be/fr/lois-fédérales-antidiscrimination-en-détail/loi-antidiscrimination-en-détail", "intitule": "Unia — Loi antidiscrimination (sanctions, délais)"},
+        {"type": "officiel", "url": "https://www.unia.be/fr/discrimination-dans-la-loi", "intitule": "Unia — Discrimination dans la loi"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
