@@ -479,6 +479,24 @@
         "expulsion"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "accident_travail",
+      "nom": "Risques professionnels",
+      "statut": "couvert",
+      "modules": [
+        "accident_travail"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "divorce",
+      "nom": "Divorce & séparation",
+      "statut": "couvert",
+      "modules": [
+        "divorce"
+      ],
+      "priorite": "haute"
     }
   ]
 }

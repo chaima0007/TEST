@@ -67,7 +67,9 @@
         "chomage",
         "incapacite_travail",
         "saisies_huissier",
-        "expulsion"
+        "expulsion",
+        "accident_travail",
+        "divorce"
       ]
     }
   }

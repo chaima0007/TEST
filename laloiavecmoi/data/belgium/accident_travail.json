@@ -1,0 +1,48 @@
+{
+  "module": "accident_travail",
+  "titre": "Accident du travail & maladie professionnelle",
+  "domaine": "Risques professionnels",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 10 avril 1971 sur les accidents du travail ; lois coordonnées du 3 juin 1970 relatives aux maladies professionnelles",
+    "portee": "Déclaration, indemnisation et droits de la victime",
+    "source_officielle": "https://www.fedris.be/fr"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les démarches passent par l'assureur de l'employeur et/ou Fedris ; vérifiez votre situation auprès d'eux.",
+  "faits": [
+    {
+      "id": "ACCT-DECLARER-001",
+      "question": "J'ai eu un accident au travail (ou sur le chemin) : que faire ?",
+      "reponse": "Prévenez immédiatement votre employeur et faites constater vos lésions par un médecin. L'employeur doit déclarer l'accident à son assurance « accidents du travail » (il peut passer par son secrétariat social). Sont couverts les accidents survenus dans le cours et par le fait du travail, ainsi que sur le chemin du travail. Conservez tous les documents (certificat médical, témoins). Si l'accident n'est pas déclaré, vous pouvez le signaler vous-même à l'assureur ou à Fedris.",
+      "reference_legale": "Loi du 10 avril 1971 sur les accidents du travail",
+      "alerte_delai": "Signalez l'accident à l'employeur sans tarder et faites constater les lésions par un médecin le jour même si possible.",
+      "contacts": [
+        {"nom": "Employeur / son assurance accidents du travail", "pour": "déclaration de l'accident"},
+        {"nom": "Fedris — Agence fédérale des risques professionnels", "lien": "https://www.fedris.be/fr", "pour": "information, litige, déclaration"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fedris.be/fr/employeur/secteur-prive/declaration.html", "intitule": "Fedris — Déclaration d'accident du travail"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/maladie-professionnelle", "intitule": "Sécurité sociale — Accidents et maladies professionnelles"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ACCT-MALADIE-PRO-001",
+      "question": "Ma maladie est liée à mon travail : ai-je droit à une indemnité ?",
+      "reponse": "Oui, si vous avez été exposé au risque dans le cadre de votre travail. L'indemnité de maladie professionnelle se demande à Fedris : vous remplissez un formulaire de demande et votre médecin complète un formulaire médical. L'indemnité dépend de votre rémunération de base et de votre taux d'incapacité. Cela couvre aussi les soins liés. N'hésitez pas à introduire une demande même en cas de doute : c'est Fedris qui évalue le lien avec le travail.",
+      "reference_legale": "Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles",
+      "contacts": [
+        {"nom": "Fedris", "lien": "https://www.fedris.be/fr", "pour": "demande d'indemnisation maladie professionnelle"},
+        {"nom": "Votre médecin", "pour": "formulaire médical de la demande"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/indemnites-suite-a-une-maladie-professionnelle", "intitule": "Sécurité sociale — Indemnités maladie professionnelle"},
+        {"type": "officiel", "url": "https://www.fedris.be/fr", "intitule": "Fedris — Risques professionnels"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

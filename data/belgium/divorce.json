@@ -1,0 +1,47 @@
+{
+  "module": "divorce",
+  "titre": "Divorce & séparation",
+  "domaine": "Divorce & séparation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — divorce par consentement mutuel et divorce pour désunion irrémédiable (art. 229 et suivants) ; obligation d'entretien des enfants (art. 203)",
+    "portee": "Formes de divorce, enfants, pension et contribution alimentaire",
+    "source_officielle": "https://www.notaire.be/relations-et-vivre-ensemble/separation-et-divorce"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le divorce a des conséquences importantes (biens, enfants, pension) ; un avocat ou un notaire vous conseille selon votre situation.",
+  "faits": [
+    {
+      "id": "DIV-TYPES-001",
+      "question": "Quelles sont les façons de divorcer en Belgique ?",
+      "reponse": "Il existe deux voies. 1) Le divorce par consentement mutuel : les époux sont d'accord sur tout (biens, logement, enfants, pension) et déposent une convention au tribunal de la famille — c'est généralement le plus rapide et le moins coûteux. 2) Le divorce pour désunion irrémédiable : quand il n'y a pas d'accord. Il peut être demandé conjointement après une période de séparation, ou unilatéralement après une séparation plus longue, ou en prouvant que la vie commune est devenue impossible. Dans les deux cas, tout passe par le tribunal de la famille.",
+      "reference_legale": "Code civil — divorce par consentement mutuel et pour désunion irrémédiable (art. 229 et suivants)",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "dépôt de la requête en divorce"},
+        {"nom": "Avocat / Notaire", "pour": "convention, partage des biens, conseil"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/relations-et-vivre-ensemble/separation-et-divorce", "intitule": "Notaire.be — Séparation et divorce"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Famille"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "DIV-ENFANTS-001",
+      "question": "Et les enfants : garde et pension alimentaire ?",
+      "reponse": "Les décisions concernant les enfants se prennent dans leur intérêt. L'hébergement peut être égalitaire (alterné) ou principal chez l'un avec un droit aux relations pour l'autre ; en cas de désaccord, c'est le tribunal de la famille qui tranche. Les deux parents restent tenus de contribuer à l'entretien et à l'éducation : une contribution alimentaire pour les enfants est fixée selon les ressources de chacun, les besoins de l'enfant et le mode d'hébergement. Une pension alimentaire entre ex-époux peut aussi être prévue si l'un est dans le besoin. En cas de non-paiement, le SECAL (Service des créances alimentaires) peut aider.",
+      "reference_legale": "Code civil — obligation d'entretien des enfants (art. 203) et hébergement ; loi du 21 février 2003 créant le Service des créances alimentaires (SECAL)",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "hébergement, contribution alimentaire"},
+        {"nom": "SECAL (SPF Finances)", "lien": "https://finances.belgium.be/fr/particuliers/famille/pension_alimentaire", "pour": "avances et recouvrement des pensions alimentaires impayées"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/famille/pension_alimentaire", "intitule": "SPF Finances — SECAL / pensions alimentaires"},
+        {"type": "officiel", "url": "https://www.notaire.be/relations-et-vivre-ensemble/separation-et-divorce", "intitule": "Notaire.be — Séparation et divorce"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}
