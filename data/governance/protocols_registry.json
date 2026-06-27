@@ -255,6 +255,12 @@
       "nom": "Développement incrémental sécurisé",
       "regle": "Tout ajout se fait de manière INCRÉMENTALE : on s appuie sur l historique (checkpoint des empreintes), on ne traite que le delta (nouveau/modifié), et on applique les normes de sécurité (sourcage officiel, référence légale, séparation stricte des projets) AVANT publication. Intégré à la flotte via update_all_reports.py.",
       "verif": "python3 scripts/incremental_protocol.py"
+    },
+    {
+      "id": "P-SCALABILITE",
+      "nom": "Scalabilité & monitoring multi-plateforme",
+      "regle": "Garantir que l infrastructure supporte durablement TOUS les agents IA et les données. Vue agrégée de capacité par plateforme (flotte d agents, La Loi Avec Moi, Caelum, site, gouvernance), PRÉVISION de saturation via l historique incrémental, ALERTE avant les limites (anti-saturation multi-plateforme). Construit par-dessus scalability_guardian sans le remplacer.",
+      "verif": "python3 scripts/scalability_monitor.py"
     }
   ]
 }

@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3037 réalisations concrètes enregistrées
+### 📌 Total : 3038 réalisations concrètes enregistrées
 
 
 ## 2026-06-27
-**89 réalisations** · de **00:28** à **21:31** (fenêtre de travail : 21h03)
+**90 réalisations** · de **00:28** à **21:37** (fenêtre de travail : 21h09)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
@@ -96,6 +96,7 @@
 - 🕒 21:28 — +2 domaines majeurs (chômage/ONEM, maladie & incapacité de travail) — 49 domaines / 202 réponses, 100% lois + sources
 - 🕒 21:29 — +2 domaines (saisies & huissier / quotité insaisissable, expulsion du logement) — 51 domaines / 206 réponses, 100% lois + sources
 - 🕒 21:31 — +2 domaines (accident du travail/maladie professionnelle Fedris, divorce & séparation + SECAL) — 53 domaines / 210 réponses, 100% lois + sources
+- 🕒 21:37 — agent incrémental sécurisé (P-INCREMENTAL) — checkpoint d'historique + delta-only + normes de sécurité (sourcage, séparation projets), intégré à la flotte (orchestrateur + registre)
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)

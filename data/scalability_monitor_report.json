@@ -1,0 +1,73 @@
+{
+  "protocole": "P-SCALABILITE",
+  "verdict_global": "OK",
+  "dimensions": [
+    {
+      "plateforme": "Flotte d'agents",
+      "dimension": "Agents IA (scripts .py)",
+      "valeur": 231,
+      "seuil_alerte": 320,
+      "seuil_critique": 450,
+      "pct_du_critique": 51.3,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "La Loi Avec Moi",
+      "dimension": "Modules juridiques",
+      "valeur": 57,
+      "seuil_alerte": 400,
+      "seuil_critique": 600,
+      "pct_du_critique": 9.5,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "La Loi Avec Moi",
+      "dimension": "Plus gros JSON (lignes)",
+      "valeur": 265,
+      "seuil_alerte": 40000,
+      "seuil_critique": 50000,
+      "pct_du_critique": 0.5,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Caelum",
+      "dimension": "Modules conformité",
+      "valeur": 2,
+      "seuil_alerte": 60,
+      "seuil_critique": 120,
+      "pct_du_critique": 1.7,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Site (Next.js)",
+      "dimension": "Routes (page.tsx)",
+      "valeur": 366,
+      "seuil_alerte": 380,
+      "seuil_critique": 480,
+      "pct_du_critique": 76.2,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Site (Next.js)",
+      "dimension": "Composants (.tsx)",
+      "valeur": 17,
+      "seuil_alerte": 600,
+      "seuil_critique": 900,
+      "pct_du_critique": 1.9,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Gouvernance",
+      "dimension": "Fichiers de données (governance)",
+      "valeur": 28,
+      "seuil_alerte": 80,
+      "seuil_critique": 150,
+      "pct_du_critique": 18.7,
+      "statut": "OK"
+    }
+  ],
+  "prevision": {
+    "note": "rythme observé : 14.8 nouveau(x) module(s)/passage sur 4 passages",
+    "runway_passages_avant_saturation_modules": 36
+  }
+}

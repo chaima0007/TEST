@@ -37,7 +37,7 @@ On s'est doté de **25 protocoles clés sur table** — certification, sauvegard
 - `veille_juridique_protocol.py`
 - `work_journal_protocol.py`
 
-Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `543acb5e453f…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
+Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `6935e0a58221…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
 
 ## 🌱 Là où on va
 
