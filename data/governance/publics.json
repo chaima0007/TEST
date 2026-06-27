@@ -78,7 +78,9 @@
         "premier_emploi",
         "bail_etudiant",
         "achat_logement",
-        "assurance_auto"
+        "assurance_auto",
+        "credit_hypothecaire",
+        "copropriete"
       ]
     }
   }

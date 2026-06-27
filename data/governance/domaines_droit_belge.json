@@ -569,6 +569,24 @@
         "assurance_auto"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "credit_hypothecaire",
+      "nom": "Crédit hypothécaire",
+      "statut": "couvert",
+      "modules": [
+        "credit_hypothecaire"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "copropriete",
+      "nom": "Copropriété",
+      "statut": "couvert",
+      "modules": [
+        "copropriete"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

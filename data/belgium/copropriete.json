@@ -1,0 +1,48 @@
+{
+  "module": "copropriete",
+  "titre": "Copropriété — vivre en appartement",
+  "domaine": "Copropriété",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — copropriété forcée des immeubles ou groupes d'immeubles bâtis (art. 577-3 et suivants)",
+    "portee": "Syndic, assemblée générale, charges et droits des copropriétaires",
+    "source_officielle": "https://justice.belgium.be"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le règlement de copropriété de votre immeuble précise beaucoup de règles ; consultez-le et, en cas de litige, un avocat ou le juge de paix peut aider.",
+  "faits": [
+    {
+      "id": "COPRO-SYNDIC-001",
+      "question": "C'est quoi le syndic et l'assemblée générale dans un immeuble ?",
+      "reponse": "Quand un immeuble est divisé en appartements appartenant à plusieurs propriétaires, la loi organise une copropriété. L'assemblée générale (réunion de tous les copropriétaires) est l'organe de décision : elle vote, selon l'importance des décisions, à des majorités définies par la loi. Le syndic est le gestionnaire (administratif, financier, technique) qui exécute ces décisions et entretient les parties communes. Chaque copropriétaire est membre de droit de l'assemblée et peut y voter selon ses quotes-parts.",
+      "reference_legale": "Code civil — copropriété forcée (art. 577-3 et suivants ; rôle du syndic et de l'assemblée générale)",
+      "contacts": [
+        {"nom": "Syndic de votre immeuble", "pour": "gestion, convocation de l'assemblée générale"},
+        {"nom": "Juge de paix", "pour": "litige de copropriété"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/sites/default/files/Mede-Eigendom%20FR.pdf", "intitule": "SPF Justice — La copropriété"},
+        {"type": "secondaire", "url": "https://www.justifit.be/b/coproprietaires-quels-sont-vos-droits-et-obligations/", "intitule": "Justifit — Droits et obligations des copropriétaires"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "COPRO-CHARGES-001",
+      "question": "Comment sont calculées mes charges de copropriété ?",
+      "reponse": "Vos charges (entretien, nettoyage, ascenseur, assurance de l'immeuble, réserve…) sont réparties selon vos quotes-parts, c'est-à-dire la part que représente votre appartement dans l'ensemble de l'immeuble. Ces quotes-parts figurent dans l'acte de base et déterminent aussi votre poids de vote. Vous avez le droit de consulter les comptes et de contester une décision de l'assemblée générale devant le juge de paix dans un délai légal si elle vous paraît irrégulière ou abusive.",
+      "reference_legale": "Code civil — copropriété forcée (quotes-parts, art. 577-3 et suivants ; recours contre les décisions de l'assemblée)",
+      "alerte_delai": "Une décision de l'assemblée générale peut être contestée devant le juge de paix dans un délai légal (en principe 4 mois) ; ne tardez pas.",
+      "contacts": [
+        {"nom": "Syndic", "pour": "comptes, décompte des charges"},
+        {"nom": "Juge de paix", "pour": "contester une décision de l'assemblée générale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/sites/default/files/Mede-Eigendom%20FR.pdf", "intitule": "SPF Justice — La copropriété"},
+        {"type": "secondaire", "url": "https://www.choisirunsyndic.be/dossiers/quotites-en-copropriete/", "intitule": "Choisir un syndic — Quotités en copropriété"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

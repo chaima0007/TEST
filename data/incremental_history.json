@@ -135,5 +135,15 @@
     "modifies": [],
     "violations": [],
     "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T22:18:08+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/copropriete.json",
+      "la_loi_avec_moi/credit_hypothecaire.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
   }
 ]
