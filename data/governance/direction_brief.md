@@ -6,18 +6,18 @@
 
 | Indicateur | Valeur |
 |---|---|
-| Modules | 9 |
-| Réponses sourcées | 48 |
-| Sources officielles | 63 |
-| Sources de complément | 34 |
+| Modules | 10 |
+| Réponses sourcées | 53 |
+| Sources officielles | 69 |
+| Sources de complément | 38 |
 | Faits datés | 100% |
 | Indice d'expertise | 66.0 |
-| Domaines officiels de confiance | 22 |
+| Domaines officiels de confiance | 23 |
 
 ## Avis des directeurs
 
 ### Directeur Juridique
-- **Constat :** 48 faits ; 100% datés ; 65% des sources sont officielles ; 22 domaines officiels de confiance.
+- **Constat :** 53 faits ; 100% datés ; 64% des sources sont officielles ; 23 domaines officiels de confiance.
 - **Recommandation :** Maintenir 100% de faits sourcés/datés ; planifier une remise à niveau dès qu'une loi évolue (PEB, baux régionaux).
 
 ### Directeur Qualité & Conformité
@@ -25,11 +25,11 @@
 - **Recommandation :** Continuer à bloquer toute régression ; aucune livraison hors sas.
 
 ### Directeur Produit & Diffusion
-- **Constat :** Site généré depuis la base (48 réponses, 9 modules) ; projet séparé de competeiq.
+- **Constat :** Site généré depuis la base (53 réponses, 10 modules) ; projet séparé de competeiq.
 - **Recommandation :** Préparer la mise en ligne (hébergement au nom de Chaima) ; ajouter versions NL ensuite.
 
 ### Directeur Stratégie & Marché
-- **Constat :** Couverture actuelle : _catalogue, _lexique, _textes_legaux, Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Harcèlement & violences — qui contacter, quels recours, Accès à la justice — droits, avocat, casier judiciaire, Surendettement — Règlement collectif de dettes (RCD).
+- **Constat :** Couverture actuelle : _catalogue, _lexique, _textes_legaux, Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Harcèlement & violences — qui contacter, quels recours, Accès à la justice — droits, avocat, casier judiciaire, Surendettement — Règlement collectif de dettes (RCD), Travail & emploi — licenciement, préavis, chômage.
 - **Recommandation :** Garder l'avance via niches sous-servies déjà ouvertes (surendettement, justice) ; surveiller la demande réelle.
 
 ### Directeur Éthique & Transparence

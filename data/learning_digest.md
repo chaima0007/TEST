@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **52**
+- Savoirs enregistrés : **57**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `966a6b4563e67035…`)
+- Certification système : **PASS** (sceau `a2b52a6f8a1be3b0…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -104,6 +104,16 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Facilités de paiement des dettes fiscales — SPF Finances (Code du recouvrement amiable et forcé des créances fiscales et non fiscales) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Si je ne rembourse plus, peut-on saisir et vendre ma maison ? Comment ça se passe ?**  
   Réf : Code judiciaire, art. 1560 à 1626 — saisie-exécution immobilière (commandement, saisie, vente publique par notaire) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quel délai de préavis en cas de licenciement, et sous quelle forme ?**  
+  Réf : Loi du 3 juillet 1978 relative aux contrats de travail ; régime des délais de préavis (réforme du statut unique, 1er janvier 2014) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qu'est-ce que le C4 et pourquoi est-il important ?**  
+  Réf : Réglementation du chômage (arrêté royal du 25 novembre 1991) ; documents sociaux de fin de contrat · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment demander des allocations de chômage et peut-on être sanctionné ?**  
+  Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (admissibilité, sanctions) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Mon employeur ne paie pas mon salaire : que faire ?**  
+  Réf : Loi du 12 avril 1965 concernant la protection de la rémunération des travailleurs ; loi du 3 juillet 1978 (contrats de travail) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je veux démissionner : quel préavis dois-je respecter ?**  
+  Réf : Loi du 3 juillet 1978 relative aux contrats de travail (préavis du travailleur, contre-préavis) · sources off. : 1 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

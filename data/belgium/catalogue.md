@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-27. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**48 réponses · 6 modules · 63 sources officielles · 5 fiches avec contacts · 10 alertes de délai**
+**53 réponses · 7 modules · 69 sources officielles · 10 fiches avec contacts · 15 alertes de délai**
 
 ## Modules en ligne
 
@@ -14,6 +14,7 @@
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 5 | 8 | 5 | 5 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
+| Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 
 ## Couverture des domaines du droit belge
 
@@ -23,7 +24,7 @@
 | Surendettement & dettes | couvert | haute |
 | Justice & pénal (accès au droit) | couvert | haute |
 | Harcèlement & violences | couvert | haute |
-| Travail & emploi | a_venir | haute |
+| Travail & emploi | couvert | haute |
 | Famille (divorce, garde, pensions alimentaires) | a_venir | haute |
 | Aide sociale & CPAS | a_venir | haute |
 | Consommation & contrats | a_venir | moyenne |

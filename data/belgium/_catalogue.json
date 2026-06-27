@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 6,
-    "faits": 48,
-    "sources_officielles": 63,
-    "faits_avec_contacts": 5,
-    "faits_avec_alerte_delai": 10
+    "modules": 7,
+    "faits": 53,
+    "sources_officielles": 69,
+    "faits_avec_contacts": 10,
+    "faits_avec_alerte_delai": 15
   },
   "modules": [
     {
@@ -80,6 +80,18 @@
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "travail.json",
+      "module": "travail_emploi",
+      "titre": "Travail & emploi — licenciement, préavis, chômage",
+      "domaine": "Travail & emploi",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 5,
+      "faits_avec_alerte_delai": 5,
+      "derniere_revue": "2026-06-26"
     }
   ],
   "domaines": [
@@ -124,8 +136,10 @@
     {
       "cle": "travail",
       "nom": "Travail & emploi",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "travail_emploi"
+      ],
       "priorite": "haute"
     },
     {

@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 52,
+    "total_savoirs": 57,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -531,6 +531,61 @@
       "sujet": "Si je ne rembourse plus, peut-on saisir et vendre ma maison ? Comment ça se passe ?",
       "reference_legale": "Code judiciaire, art. 1560 à 1626 — saisie-exécution immobilière (commandement, saisie, vente publique par notaire)",
       "sources": 3,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "travail_emploi",
+      "id": "TRAV-PREAVIS-001",
+      "sujet": "Quel délai de préavis en cas de licenciement, et sous quelle forme ?",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail ; régime des délais de préavis (réforme du statut unique, 1er janvier 2014)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "travail_emploi",
+      "id": "TRAV-C4-001",
+      "sujet": "Qu'est-ce que le C4 et pourquoi est-il important ?",
+      "reference_legale": "Réglementation du chômage (arrêté royal du 25 novembre 1991) ; documents sociaux de fin de contrat",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "travail_emploi",
+      "id": "TRAV-CHOMAGE-001",
+      "sujet": "Comment demander des allocations de chômage et peut-on être sanctionné ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (admissibilité, sanctions)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "travail_emploi",
+      "id": "TRAV-SALAIRE-001",
+      "sujet": "Mon employeur ne paie pas mon salaire : que faire ?",
+      "reference_legale": "Loi du 12 avril 1965 concernant la protection de la rémunération des travailleurs ; loi du 3 juillet 1978 (contrats de travail)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "travail_emploi",
+      "id": "TRAV-DEMISSION-001",
+      "sujet": "Je veux démissionner : quel préavis dois-je respecter ?",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (préavis du travailleur, contre-préavis)",
+      "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
       "valide": true

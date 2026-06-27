@@ -8,9 +8,9 @@
 1) Créer le module Travail & emploi (sourcé). 2) Démarrer les versions NL (interface d'abord). 3) Avancer sur le projet competeiq.
 
 ## 📊 État réel (chiffres vérifiés)
-- Réponses sourcées : **48**
-- Modules : 6 · sources officielles : 63
-- Fiches avec contacts : 5 · alertes de délai : 10
+- Réponses sourcées : **53**
+- Modules : 7 · sources officielles : 69
+- Fiches avec contacts : 10 · alertes de délai : 15
 
 ## ✅ Fait récemment
 - Domaine Harcèlement & violences (5 faits sourcés, contacts d'urgence)

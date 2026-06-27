@@ -6,14 +6,15 @@
 
 Aujourd'hui, **3392 moteurs** veillent dans notre système — une cartographie immense des droits et des sujets qui comptent. Mais tu sais quoi ? On a fait mieux que grandir : on a **mûri**.
 
-On a posé les fondations d'un vrai savoir d'expert. **48 faits juridiques belges**, sourcés à **100.0%** auprès des sources officielles (le Décret wallon, WALLEX, le SPW). Pas du vent : du solide, vérifiable, daté. Le genre de chose sur laquelle on peut bâtir 50 ans.
+On a posé les fondations d'un vrai savoir d'expert. **53 faits juridiques belges**, sourcés à **100.0%** auprès des sources officielles (le Décret wallon, WALLEX, le SPW). Pas du vent : du solide, vérifiable, daté. Le genre de chose sur laquelle on peut bâtir 50 ans.
 
 ## 🛡️ Nos garde-fous (parce qu'on ne laisse rien au hasard)
 
-On s'est doté de **19 protocoles clés sur table** — certification, sauvegarde, registre d'apprentissage. Chacun veille pendant qu'on avance :
+On s'est doté de **20 protocoles clés sur table** — certification, sauvegarde, registre d'apprentissage. Chacun veille pendant qu'on avance :
 - `backup_protocol.py`
 - `build_health_protocol.py`
 - `certification_protocol.py`
+- `checkpoint_protocol.py`
 - `control_gates_protocol.py`
 - `decision_protocol.py`
 - `direction_committee_protocol.py`
@@ -31,7 +32,7 @@ On s'est doté de **19 protocoles clés sur table** — certification, sauvegard
 - `transparency_disclaimer_protocol.py`
 - `work_journal_protocol.py`
 
-Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `966a6b4563e6…`), avec un indicateur de probabilité honnête à **42%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
+Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `a2b52a6f8a1b…`), avec un indicateur de probabilité honnête à **42%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
 
 ## 🌱 Là où on va
 
