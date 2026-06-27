@@ -19,8 +19,16 @@
       "reponse": "Les conditions varient un peu selon la Région, mais en général il faut : être inscrit au registre de la population ou des étrangers d'une commune belge, avoir des revenus nets imposables sous certains plafonds d'admission, et ne pas être propriétaire d'un autre logement. On ne peut s'inscrire qu'en tant que membre d'un seul ménage. Renseignez-vous sur les plafonds exacts de votre région.",
       "reference_legale": "Réglementation régionale du logement social (Code wallon de l'Habitation durable ; Code bruxellois du Logement)",
       "sources": [
-        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/logement_social/inscription_et_attribution", "intitule": "Belgium.be — Logement social : inscription et attribution"},
-        {"type": "officiel", "url": "https://slrb-bghm.brussels/fr/devenir-locataire/conditions-dadmission", "intitule": "SLRB — Conditions d'admission"}
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/logement/logement_social/inscription_et_attribution",
+          "intitule": "Belgium.be — Logement social : inscription et attribution"
+        },
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire/conditions-dadmission",
+          "intitule": "SLRB — Conditions d'admission"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -28,13 +36,25 @@
       "id": "LOGSOC-INSCRIPTION-001",
       "question": "Comment s'inscrire pour un logement social ?",
       "reponse": "L'inscription se fait au moyen d'un formulaire, et c'est gratuit. Vous l'envoyez ou le déposez auprès de la société de logement de votre région (en Wallonie : une Société de logement de service public ; à Bruxelles : une SISP). Vous recevez un accusé de réception : la date de réception du formulaire complet fait foi pour votre place. Ne payez jamais pour vous inscrire.",
-      "reference_legale": "Réglementation régionale — inscription auprès des sociétés de logement social",
+      "reference_legale": "Code wallon de l'Habitation durable ; Code bruxellois du Logement — inscription auprès des sociétés de logement",
       "contacts": [
-        {"nom": "Société de logement de votre région (SLSP / SISP)", "lien": "https://www.wallonie.be/fr/demarches/sinscrire-comme-candidat-aupres-dune-societe-de-logement-de-service-public-slsp", "pour": "s'inscrire (gratuit)"}
+        {
+          "nom": "Société de logement de votre région (SLSP / SISP)",
+          "lien": "https://www.wallonie.be/fr/demarches/sinscrire-comme-candidat-aupres-dune-societe-de-logement-de-service-public-slsp",
+          "pour": "s'inscrire (gratuit)"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://slrb-bghm.brussels/fr/devenir-locataire/sinscrire-un-logement-social", "intitule": "SLRB — S'inscrire à un logement social"},
-        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-logement-social-wallonie", "intitule": "Droits Quotidiens — Demander un logement social (Wallonie)"}
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire/sinscrire-un-logement-social",
+          "intitule": "SLRB — S'inscrire à un logement social"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-logement-social-wallonie",
+          "intitule": "Droits Quotidiens — Demander un logement social (Wallonie)"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -42,11 +62,19 @@
       "id": "LOGSOC-ATTENTE-001",
       "question": "Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?",
       "reponse": "L'attribution se fait généralement selon une liste chronologique des candidatures (ordre d'inscription, avec des priorités possibles selon la situation). Les délais d'attente peuvent être longs. Important : il faut en principe confirmer/renouveler sa candidature chaque année (souvent avant une date fixée, par ex. mi-février) — sinon vous risquez de perdre votre place. Vérifiez la date auprès de votre société de logement.",
-      "reference_legale": "Réglementation régionale — attribution et renouvellement des candidatures",
+      "reference_legale": "Code wallon de l'Habitation durable ; Code bruxellois du Logement — attribution et renouvellement des candidatures",
       "alerte_delai": "Confirmez votre candidature chaque année (souvent avant la mi-février) pour ne pas perdre votre place sur la liste.",
       "sources": [
-        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/logement_social/inscription_et_attribution", "intitule": "Belgium.be — Inscription et attribution"},
-        {"type": "officiel", "url": "https://slrb-bghm.brussels/fr/devenir-locataire", "intitule": "SLRB — Devenir locataire"}
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/logement/logement_social/inscription_et_attribution",
+          "intitule": "Belgium.be — Inscription et attribution"
+        },
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire",
+          "intitule": "SLRB — Devenir locataire"
+        }
       ],
       "date_verification": "2026-06-26"
     }
