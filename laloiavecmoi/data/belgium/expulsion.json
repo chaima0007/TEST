@@ -1,0 +1,49 @@
+{
+  "module": "expulsion",
+  "titre": "Expulsion du logement — vos droits",
+  "domaine": "Logement — expulsion",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code judiciaire (procédure devant le juge de paix, art. 1344bis et suivants) et législations régionales sur le bail",
+    "portee": "Procédure d'expulsion, délais, protections et aide",
+    "source_officielle": "https://logement.wallonie.be/fr/bail/procedure-expulsion"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles de bail et d'expulsion dépendent de votre Région ; vérifiez auprès du service logement régional ou d'un service d'aide juridique.",
+  "faits": [
+    {
+      "id": "EXPUL-PROCEDURE-001",
+      "question": "Mon propriétaire peut-il m'expulser du jour au lendemain ?",
+      "reponse": "Non. Personne ne peut vous mettre dehors sans décision de justice. Le propriétaire doit saisir le juge de paix ; la procédure est précédée d'un délai (au moins un mois après la mise en demeure) pendant lequel le CPAS est informé et peut intervenir. Seul un jugement peut autoriser l'expulsion, exécutée ensuite par un huissier, avec un préavis. Vous avez le droit de vous défendre à l'audience et, en général, 30 jours pour contester le jugement. Ne quittez pas les lieux sans avoir fait valoir vos droits.",
+      "reference_legale": "Code judiciaire — procédure devant le juge de paix (art. 1344bis et suivants)",
+      "alerte_delai": "Vous avez en principe 30 jours après la notification du jugement pour le contester. Réagissez dès la convocation au juge de paix.",
+      "contacts": [
+        {"nom": "Juge de paix", "pour": "audience, défense, demande de délai"},
+        {"nom": "CPAS", "pour": "aide, relogement, défense du locataire"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo selon revenus"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/procedure-expulsion", "intitule": "Wallonie — La procédure d'expulsion"},
+        {"type": "secondaire", "url": "https://www.huissiersdejustice.be/expulsion", "intitule": "Huissiers de justice — Expulsion"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "EXPUL-HIVER-001",
+      "question": "Peut-on m'expulser en plein hiver ?",
+      "reponse": "Cela dépend de la Région. À Bruxelles, les expulsions de logement sont interdites durant la période hivernale (en principe du 1er novembre au 15 mars). En Wallonie, une protection hivernale existe notamment pour le logement social. Le juge de paix peut aussi reporter ou suspendre une expulsion si votre situation sociale est difficile. Dans tous les cas, contactez vite le CPAS : il peut aider à la défense, à trouver un nouveau logement et parfois à une aide financière.",
+      "reference_legale": "Code judiciaire (pouvoir du juge de paix de surseoir) et réglementations régionales du logement",
+      "contacts": [
+        {"nom": "CPAS", "pour": "relogement, aide, défense"},
+        {"nom": "Service logement de votre Région", "pour": "règles d'expulsion et trêve hivernale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://be.brussels/en/housing/rental/eviction-and-lease-termination/eviction-procedures-understanding-eviction-process", "intitule": "Bruxelles — Procédure d'expulsion"},
+        {"type": "secondaire", "url": "https://www.mc.be/en-marche/vos-droits/familles/lexpulsion-dun-logement-est-elle-interdite-en-hiver", "intitule": "Mutualité chrétienne — Expulsion en hiver"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

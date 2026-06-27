@@ -461,6 +461,24 @@
         "incapacite_travail"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "saisies_huissier",
+      "nom": "Saisies & recouvrement",
+      "statut": "couvert",
+      "modules": [
+        "saisies_huissier"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "expulsion",
+      "nom": "Logement — expulsion",
+      "statut": "couvert",
+      "modules": [
+        "expulsion"
+      ],
+      "priorite": "haute"
     }
   ]
 }
