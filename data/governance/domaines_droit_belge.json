@@ -263,6 +263,15 @@
         "deces_demarches"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "pension",
+      "nom": "Pension & retraite",
+      "statut": "couvert",
+      "modules": [
+        "pension"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
