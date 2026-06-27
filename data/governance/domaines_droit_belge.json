@@ -443,6 +443,24 @@
         "fraude_arnaques"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "chomage",
+      "nom": "Chômage & emploi",
+      "statut": "couvert",
+      "modules": [
+        "chomage"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "incapacite_travail",
+      "nom": "Maladie & incapacité",
+      "statut": "couvert",
+      "modules": [
+        "incapacite_travail"
+      ],
+      "priorite": "haute"
     }
   ]
 }

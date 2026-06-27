@@ -1,0 +1,48 @@
+{
+  "module": "incapacite_travail",
+  "titre": "Maladie & incapacité de travail",
+  "domaine": "Maladie & incapacité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 ; loi du 3 juillet 1978 relative aux contrats de travail (salaire garanti)",
+    "portee": "Que faire en cas de maladie, salaire garanti et indemnités de la mutualité",
+    "source_officielle": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les délais et montants peuvent varier (statut, ancienneté) ; vérifiez auprès de votre mutualité ou de l'INAMI.",
+  "faits": [
+    {
+      "id": "INCAP-DECLARER-001",
+      "question": "Je suis malade et ne peux pas travailler : que dois-je faire ?",
+      "reponse": "Trois réflexes : 1) prévenez immédiatement votre employeur ; 2) faites établir un certificat médical par votre médecin et remettez-le à l'employeur dans le délai prévu (souvent précisé dans le règlement de travail ou la convention) ; 3) si l'incapacité se prolonge, envoyez un certificat à votre mutualité dans le délai imparti pour ouvrir vos indemnités. Attention : déclarer en retard à la mutualité peut réduire vos indemnités. Depuis 2026, un certificat pour la mutualité couvre au maximum 3 mois (renouvelable).",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (assurance indemnités) ; loi du 3 juillet 1978 relative aux contrats de travail",
+      "alerte_delai": "Remettez le certificat à l'employeur sans tarder, et à la mutualité dans le délai prévu : un retard peut réduire vos indemnités.",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "déclaration d'incapacité, indemnités"},
+        {"nom": "Votre médecin", "pour": "certificat médical d'incapacité"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail", "intitule": "Sécurité sociale — Incapacité de travail"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/declarer-son-incapacite-de-travail", "intitule": "INAMI — Déclarer son incapacité de travail"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "INCAP-REVENU-001",
+      "question": "Vais-je continuer à être payé pendant ma maladie ?",
+      "reponse": "Au début, oui : l'employeur verse le « salaire garanti » pendant une période déterminée (sa durée dépend de votre statut, ouvrier ou employé, et de votre ancienneté). Ensuite, c'est votre mutualité qui prend le relais avec une indemnité d'incapacité (un pourcentage de votre salaire brut plafonné). Pour les indépendants, il n'y a pas de salaire garanti : l'indemnité de la mutualité peut intervenir dès le début de l'incapacité reconnue. Renseignez-vous tôt pour éviter tout trou de revenu.",
+      "reference_legale": "Loi du 3 juillet 1978 (salaire garanti) ; loi coordonnée du 14 juillet 1994 (indemnités d'incapacité)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "calcul et versement de l'indemnité"},
+        {"nom": "INAMI", "lien": "https://www.inami.fgov.be", "pour": "règles d'indemnisation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/calculer-votre-indemnite", "intitule": "INAMI — Calcul de l'indemnité d'incapacité"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/independants/declarer-son-incapacite-de-travail", "intitule": "INAMI — Incapacité de travail des indépendants"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

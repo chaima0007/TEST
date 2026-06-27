@@ -63,7 +63,9 @@
         "documents_identite",
         "burnout_bienetre",
         "aide_juridique",
-        "fraude_arnaques"
+        "fraude_arnaques",
+        "chomage",
+        "incapacite_travail"
       ]
     }
   }

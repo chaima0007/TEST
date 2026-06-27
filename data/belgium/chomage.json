@@ -1,0 +1,47 @@
+{
+  "module": "chomage",
+  "titre": "Chômage — droits, démarches et sanctions",
+  "domaine": "Chômage & emploi",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage",
+    "portee": "Conditions, demande et maintien des allocations de chômage",
+    "source_officielle": "https://www.onem.be/citoyens"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La réglementation du chômage fait l'objet de réformes ; vérifiez votre situation auprès de l'ONEM ou de votre organisme de paiement.",
+  "faits": [
+    {
+      "id": "CHOM-DEMANDE-001",
+      "question": "Comment demander mes allocations de chômage ?",
+      "reponse": "Deux étapes : 1) inscrivez-vous comme demandeur d'emploi auprès du service régional (Forem en Wallonie, Actiris à Bruxelles, VDAB en Flandre, ADG en communauté germanophone) ; 2) introduisez votre demande d'allocations auprès d'un organisme de paiement : un syndicat, OU la CAPAC si vous ne voulez pas être syndiqué. Gardez bien votre C4 (remis par l'employeur à la fin du contrat), qui sert à constituer le dossier. C'est l'ONEM qui décide du droit, l'organisme de paiement qui verse.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage",
+      "contacts": [
+        {"nom": "CAPAC", "lien": "https://www.capac.fgov.be", "pour": "payer les allocations sans être syndiqué"},
+        {"nom": "Forem / Actiris / VDAB", "pour": "inscription comme demandeur d'emploi"},
+        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "information sur le droit aux allocations"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens", "intitule": "ONEM — Citoyens"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/droits-sociaux/tes-droits-au-chomage/a-qui-tadresser/", "intitule": "Bruxelles-J — À qui s'adresser pour le chômage"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CHOM-DEMISSION-001",
+      "question": "Si je démissionne, ai-je quand même droit au chômage ?",
+      "reponse": "Attention : quitter volontairement son emploi sans motif légitime peut entraîner une sanction de l'ONEM. Selon les cas, cela va de l'avertissement à une exclusion temporaire du droit aux allocations (la réglementation prévoit des fourchettes en semaines selon la situation : démission, abandon d'emploi, licenciement pour faute). À la fin de la période de sanction, vous pouvez à nouveau demander des allocations si vous remplissez les conditions. Avant de démissionner, renseignez-vous auprès de votre organisme de paiement.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage volontaire et sanctions)",
+      "contacts": [
+        {"nom": "Votre organisme de paiement (syndicat ou CAPAC)", "pour": "vérifier l'impact d'une démission AVANT de l'envoyer"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens/chomage-complet/pouvez-vous-perdre-votre-droit-aux-allocations-/dans-quels-cas-pouvez-vous-etre-sanctionnee-chomage-complet", "intitule": "ONEM — Dans quels cas pouvez-vous être sanctionné ?"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/droits-sociaux/tes-droits-au-chomage/quelles-sont-les-sanctions-de-lonem/", "intitule": "Bruxelles-J — Les sanctions de l'ONEM"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}
