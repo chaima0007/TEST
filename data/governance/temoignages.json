@@ -1,0 +1,24 @@
+{
+  "registre": "Témoignages vérifiés",
+  "but": "Recueillir et publier UNIQUEMENT de vrais témoignages, vérifiés et consentis. Aucune invention (protocole d'honnêteté).",
+  "regle_absolue": "Ne jamais créer, romancer ou compléter un témoignage. Pas de témoignage = liste vide. Un témoignage n'est publié qu'après vérification ET consentement écrit.",
+  "separation": "Champ 'projet' obligatoire : 'la_loi_avec_moi' (citoyens) ou 'caelum' (entreprises). Ne pas mélanger.",
+  "schema_temoignage": {
+    "id": "identifiant unique",
+    "projet": "la_loi_avec_moi | caelum",
+    "prenom_ou_alias": "prénom réel OU alias choisi par la personne (jamais inventé)",
+    "texte": "mots réels de la personne",
+    "consentement": "écrit, daté (obligatoire avant publication)",
+    "preuve": "référence de la preuve conservée (e-mail, formulaire signé) — non publiée",
+    "date_verification": "AAAA-MM-JJ",
+    "statut": "verifie | en_attente | refuse"
+  },
+  "etapes_verification": [
+    "1. Recueillir le témoignage et le consentement écrit de la personne.",
+    "2. Vérifier l'identité/la réalité de l'expérience (preuve conservée, non publiée).",
+    "3. Marquer statut='verifie' + date_verification.",
+    "4. Publier uniquement les témoignages 'verifie'. Anonymiser si la personne le demande."
+  ],
+  "derniere_revue": "2026-06-27",
+  "temoignages": []
+}

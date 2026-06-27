@@ -231,6 +231,35 @@
         }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "IND-ERREURS-001",
+      "question": "Quelles sont les erreurs à ne pas faire quand on se lance ?",
+      "reponse": "Les pièges les plus fréquents : 1) démarrer son activité SANS s'être affilié à une caisse d'assurances sociales (obligatoire dès le 1er jour) ; 2) oublier que les cotisations de début sont PROVISOIRES et seront régularisées plus tard — il faut mettre de l'argent de côté ; 3) ne pas provisionner la TVA et l'impôt (cet argent n'est pas à vous) ; 4) mélanger compte personnel et compte professionnel ; 5) travailler sans contrat ni conditions générales écrites ; 6) ne pas protéger son logement (déclaration d'insaisissabilité) ; 7) négliger l'e-facturation B2B désormais obligatoire. La bonne nouvelle : chacune de ces erreurs s'évite avec une simple mise en ordre au départ.",
+      "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (statut social, affiliation et cotisations) ; Code de la TVA ; loi du 16 janvier 2003 (Banque-Carrefour des Entreprises)",
+      "contacts": [
+        {
+          "nom": "Caisse d'assurances sociales",
+          "pour": "affiliation, estimation des cotisations"
+        },
+        {
+          "nom": "Expert-comptable",
+          "pour": "provisions TVA/impôt, comptabilité"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr/cotisations",
+          "intitule": "INASTI — Cotisations sociales des indépendants"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise",
+          "intitule": "SPF Économie — Créer une entreprise"
+        }
+      ],
+      "date_verification": "2026-06-27"
     }
   ]
 }
