@@ -161,6 +161,15 @@
         "aidants_proches"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "vote",
+      "nom": "Vote & démocratie",
+      "statut": "couvert",
+      "modules": [
+        "vote_electoral"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

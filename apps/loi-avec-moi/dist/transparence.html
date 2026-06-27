@@ -65,6 +65,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   a{color:#7fb2e6}
   footer.site{background:#0c121a;color:#aab8c6}
 }
+.btn-print{display:inline-block;background:var(--bleu);color:#fff;border:0;border-radius:8px;padding:.55rem 1rem;font-size:.95rem;cursor:pointer;margin:.5rem 0}
+.btn-print:hover{background:var(--bleu2)}
+/* --- Fiche à emporter : impression propre --- */
+@media print{
+  header.site,nav.top,footer.site,.search,.skip-link,.back,.btn-print,.disclaimer{display:none !important}
+  body{background:#fff;color:#000;font-size:12pt}
+  main{max-width:100%;padding:0}
+  .fait,.urgent-card{break-inside:avoid;border:1px solid #999}
+  .fait a[href^="http"]::after,.src a[href^="http"]::after{content:" — " attr(href);font-size:9pt;color:#333;word-break:break-all}
+  h1{font-size:18pt}
+  .print-foot{display:block !important;margin-top:1rem;font-size:9pt;color:#333;border-top:1px solid #999;padding-top:.5rem}
+}
+.print-foot{display:none}
 </style>
 </head>
 <body>
@@ -74,7 +87,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   <nav class="top" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="urgences.html">Urgences &amp; délais</a><a href="specialistes.html">Nos spécialistes</a><a href="textes.html">Textes de loi</a><a href="sources.html">Nos sources</a><a href="lexique.html">Lexique</a><a href="transparence.html" style="font-weight:700">Transparence</a><a href="accessibilite.html">Accessibilité</a></nav>
 </div></header>
 <main id="contenu" tabindex="-1">
-<a class="back" href="index.html">← Accueil</a><h1 style="color:#0b3d6e">Transparence & fiabilité</h1><p>Nous croyons qu'une information juridique n'a de valeur que si elle est <strong>traçable</strong>. Voici nos règles, sans rien cacher.</p><h2 class="sec">Nos engagements</h2><ul><li>Chaque réponse cite <strong>au moins une source officielle</strong> (texte de loi, administration publique) et porte une <strong>date de vérification</strong>.</li><li>Les sources sont classées : <span class='src-officiel'>[officiel]</span> (loi, service public) ou [complément] (sources secondaires de qualité, en appui).</li><li>Le site est généré <strong>automatiquement à partir d'une base vérifiée</strong> : il ne peut pas afficher une information non sourcée.</li></ul><h2 class="sec">Comptage des sources</h2><p>83 sources officielles · 46 sources de complément.</p><h2 class="sec">Limites (en toute honnêteté)</h2><ul><li>Le droit évolue : certaines dates d'entrée en vigueur peuvent être réajustées. En cas de doute, la source officielle liée fait foi.</li><li>Ce site donne une information <strong>générale</strong>, pas un conseil individualisé. Pour votre cas précis, consultez un professionnel.</li></ul><div class="disclaimer">⚖️ Information juridique générale, à jour à la date indiquée pour chaque réponse. Ne constitue pas un conseil juridique individualisé. Pour une situation précise, consultez un professionnel (avocat, médiateur de dettes agréé, CPAS, Justice de paix).</div>
+<a class="back" href="index.html">← Accueil</a><h1 style="color:#0b3d6e">Transparence & fiabilité</h1><p>Nous croyons qu'une information juridique n'a de valeur que si elle est <strong>traçable</strong>. Voici nos règles, sans rien cacher.</p><h2 class="sec">Nos engagements</h2><ul><li>Chaque réponse cite <strong>au moins une source officielle</strong> (texte de loi, administration publique) et porte une <strong>date de vérification</strong>.</li><li>Les sources sont classées : <span class='src-officiel'>[officiel]</span> (loi, service public) ou [complément] (sources secondaires de qualité, en appui).</li><li>Le site est généré <strong>automatiquement à partir d'une base vérifiée</strong> : il ne peut pas afficher une information non sourcée.</li></ul><h2 class="sec">Comptage des sources</h2><p>91 sources officielles · 46 sources de complément.</p><h2 class="sec">Limites (en toute honnêteté)</h2><ul><li>Le droit évolue : certaines dates d'entrée en vigueur peuvent être réajustées. En cas de doute, la source officielle liée fait foi.</li><li>Ce site donne une information <strong>générale</strong>, pas un conseil individualisé. Pour votre cas précis, consultez un professionnel.</li></ul><div class="disclaimer">⚖️ Information juridique générale, à jour à la date indiquée pour chaque réponse. Ne constitue pas un conseil juridique individualisé. Pour une situation précise, consultez un professionnel (avocat, médiateur de dettes agréé, CPAS, Justice de paix).</div>
 </main>
 <footer class="site"><div class="wrap" role="contentinfo">
   <strong>Avertissement.</strong> Information juridique générale, à jour à la date indiquée pour chaque réponse. Ne constitue pas un conseil juridique individualisé. Pour une situation précise, consultez un professionnel (avocat, médiateur de dettes agréé, CPAS, Justice de paix).<br><br>

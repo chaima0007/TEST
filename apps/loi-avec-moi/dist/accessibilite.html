@@ -65,6 +65,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   a{color:#7fb2e6}
   footer.site{background:#0c121a;color:#aab8c6}
 }
+.btn-print{display:inline-block;background:var(--bleu);color:#fff;border:0;border-radius:8px;padding:.55rem 1rem;font-size:.95rem;cursor:pointer;margin:.5rem 0}
+.btn-print:hover{background:var(--bleu2)}
+/* --- Fiche à emporter : impression propre --- */
+@media print{
+  header.site,nav.top,footer.site,.search,.skip-link,.back,.btn-print,.disclaimer{display:none !important}
+  body{background:#fff;color:#000;font-size:12pt}
+  main{max-width:100%;padding:0}
+  .fait,.urgent-card{break-inside:avoid;border:1px solid #999}
+  .fait a[href^="http"]::after,.src a[href^="http"]::after{content:" — " attr(href);font-size:9pt;color:#333;word-break:break-all}
+  h1{font-size:18pt}
+  .print-foot{display:block !important;margin-top:1rem;font-size:9pt;color:#333;border-top:1px solid #999;padding-top:.5rem}
+}
+.print-foot{display:none}
 </style>
 </head>
 <body>

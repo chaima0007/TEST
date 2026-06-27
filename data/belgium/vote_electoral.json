@@ -1,0 +1,64 @@
+{
+  "module": "vote_electoral",
+  "titre": "Vote électoral — pour qui et pourquoi on vote",
+  "domaine": "Vote & démocratie",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Organisation des pouvoirs et des élections en Belgique (Constitution, Code électoral)",
+    "portee": "Comprendre les niveaux de pouvoir, pour qui on vote et pourquoi",
+    "source_officielle": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/democratie/elections"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour les modalités précises d'un scrutin, consultez le SPF Intérieur (Élections) et votre commune.",
+  "faits": [
+    {
+      "id": "VOTE-NIVEAUX-001",
+      "question": "Pour qui vote-t-on en Belgique (quels niveaux de pouvoir) ?",
+      "reponse": "La Belgique a plusieurs niveaux de pouvoir, et on vote pour chacun : la commune (conseil communal, le niveau le plus proche de vous), la Région et la Communauté (parlements wallon, flamand, bruxellois, germanophone), l'État fédéral (la Chambre) et le Parlement européen. Chaque élection désigne des élus différents, qui décident de matières différentes. Comprendre ces niveaux aide à voter en connaissance de cause.",
+      "reference_legale": "Constitution belge — structure de l'État et niveaux de pouvoir",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/democratie/elections", "intitule": "Belgium.be — Élections"},
+        {"type": "officiel", "url": "https://elections.fgov.be/informations-generales/structure-et-fonctionnement-electoral-et-parlementaire-belges", "intitule": "SPF Intérieur — Structure électorale et parlementaire"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "VOTE-QUIFAITQUOI-001",
+      "question": "Qui décide de quoi : fédéral, Régions, Communautés, communes ?",
+      "reponse": "Pour savoir pour qui voter, il faut savoir qui fait quoi. L'État fédéral gère notamment les finances, la justice, la sécurité sociale, l'armée, les affaires étrangères. Les Régions gèrent l'économie, l'emploi, le logement, l'environnement, l'aménagement du territoire, l'énergie, le transport. Les Communautés s'occupent de l'enseignement, de la culture, de l'aide aux personnes. La commune gère les besoins locaux (état civil, propreté, urbanisme local, sécurité de proximité).",
+      "reference_legale": "Répartition constitutionnelle des compétences (fédéral / Régions / Communautés / communes)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics", "intitule": "Belgium.be — Pouvoirs publics et compétences"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/democratie/trois_pouvoirs", "intitule": "Belgium.be — Les trois pouvoirs"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "VOTE-POURQUOI-001",
+      "question": "Pourquoi voter, et le vote blanc compte-t-il ?",
+      "reponse": "Voter, c'est choisir les personnes qui feront les lois et géreront l'argent public qui touche votre vie quotidienne (logement, école, santé, sécurité). En Belgique, le vote est obligatoire dès 18 ans pour les scrutins concernés. Vous n'êtes pas obligé de choisir un parti : vous pouvez voter blanc. Le vote blanc exprime un mécontentement mais n'est pas attribué à un parti ; il ne « répartit » pas de sièges. Voter reste le moyen d'avoir voix au chapitre.",
+      "reference_legale": "Code électoral — obligation de vote ; vote blanc",
+      "sources": [
+        {"type": "officiel", "url": "https://elections.fgov.be/electeurs/faq", "intitule": "SPF Intérieur — FAQ électeurs"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/democratie/elections", "intitule": "Belgium.be — Élections"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "VOTE-COMMENT-001",
+      "question": "Comment se passe le jour du vote ?",
+      "reponse": "Vous recevez une convocation indiquant votre bureau de vote, la date et l'heure. Munissez-vous de votre carte d'identité et de la convocation. Sur place, vous votez (papier ou électronique selon la commune), dans le secret de l'isoloir. Si vous ne pouvez pas vous déplacer, une procuration est possible dans certains cas. En cas d'empêchement, des justificatifs peuvent être exigés.",
+      "reference_legale": "Code électoral — modalités du vote, procuration",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "convocation, bureau de vote, procuration"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://elections.fgov.be/electeurs/faq", "intitule": "SPF Intérieur — FAQ électeurs"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/democratie/elections", "intitule": "Belgium.be — Élections"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

@@ -117,6 +117,19 @@ a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visibl
   a{color:#7fb2e6}
   footer.site{background:#0c121a;color:#aab8c6}
 }
+.btn-print{display:inline-block;background:var(--bleu);color:#fff;border:0;border-radius:8px;padding:.55rem 1rem;font-size:.95rem;cursor:pointer;margin:.5rem 0}
+.btn-print:hover{background:var(--bleu2)}
+/* --- Fiche à emporter : impression propre --- */
+@media print{
+  header.site,nav.top,footer.site,.search,.skip-link,.back,.btn-print,.disclaimer{display:none !important}
+  body{background:#fff;color:#000;font-size:12pt}
+  main{max-width:100%;padding:0}
+  .fait,.urgent-card{break-inside:avoid;border:1px solid #999}
+  .fait a[href^="http"]::after,.src a[href^="http"]::after{content:" — " attr(href);font-size:9pt;color:#333;word-break:break-all}
+  h1{font-size:18pt}
+  .print-foot{display:block !important;margin-top:1rem;font-size:9pt;color:#333;border-top:1px solid #999;padding-top:.5rem}
+}
+.print-foot{display:none}
 """
 
 AVERTISSEMENT_GLOBAL = (
@@ -278,12 +291,17 @@ def construire():
             f'<div class="meta"><span class="badge">{esc(region)}</span>'
             f'<span class="badge">{len(m.get("faits", []))} réponses</span></div>'
             f"{base_html}"
+            '<button class="btn-print" onclick="window.print()" '
+            'aria-label="Imprimer cette fiche pour l\'emporter">🖨️ Imprimer / emporter cette fiche</button>'
             '<div class="search"><label for="qf" class="visually-hidden">Filtrer les questions de cette page</label>'
             '<input id="qf" type="search" aria-label="Filtrer les questions de cette page" '
             'placeholder="Filtrer dans cette page…" '
             'oninput="var v=this.value.toLowerCase();document.querySelectorAll(\'.fait\').forEach('
             "function(a){a.style.display=a.dataset.q.indexOf(v)>=0?'':'none';});\"></div>"
             f"{faits_html}"
+            '<div class="print-foot">La Loi Avec Moi — information générale vérifiée à partir de '
+            "sources officielles. Ne remplace pas un conseil juridique individualisé. "
+            "Les versions officielles des textes font foi.</div>"
         )
         (DIST / f"{m['_slug']}.html").write_text(
             page(m.get("titre", m["_slug"]), contenu), encoding="utf-8"
