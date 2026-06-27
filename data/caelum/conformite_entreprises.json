@@ -1,0 +1,110 @@
+{
+  "module": "conformite_entreprises",
+  "projet": "Caelum Partners",
+  "titre": "Veille conformité entreprises — les normes ont changé",
+  "but": "Source unique des normes entreprises récentes/modifiées. Pour chaque norme : ce qui change, qui est concerné (seuils), la sanction chiffrée, l'échéance, et la solution Caelum (dont la part automatisable par la plateforme).",
+  "juridiction": "BE/UE",
+  "langue": "fr",
+  "separation": "Projet ENTREPRISES (B2B). Ne pas mélanger avec La Loi Avec Moi (citoyens).",
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale à but commercial/pédagogique, à jour à la date de revue. Les seuils et montants évoluent ; toute décision importante est validée avec notre réseau d'experts (avocats, comptables). Sources officielles citées pour chaque norme.",
+  "normes": [
+    {
+      "id": "EFACT-2026",
+      "norme": "Facturation électronique structurée B2B obligatoire",
+      "changement": "Depuis le 1er janvier 2026, toute entreprise assujettie à la TVA et établie en Belgique doit émettre ET recevoir ses factures B2B en format électronique structuré (Peppol BIS / norme EN 16931). La facture papier ou le simple PDF perdent leur validité fiscale.",
+      "concernes": "TOUTES les entreprises et indépendants assujettis à la TVA en Belgique (marché de masse, pas seulement les grands groupes).",
+      "sanction": "Amendes pour non-conformité et surtout remise en cause de la déduction de la TVA. Période de tolérance prévue de janvier à mars 2026, puis application pleine.",
+      "echeance": "Obligation depuis le 01/01/2026 (tolérance jan→mars 2026).",
+      "reference_legale": "Loi du 6 février 2024 (art. 53, §2bis du Code de la TVA) ; arrêté royal du 8 juillet 2025 d'exécution",
+      "solution_caelum": "Onboarding Peppol guidé, connexion du logiciel de facturation, vérification du format EN 16931, et bascule assistée. Produit d'appel accessible à toutes les PME.",
+      "automatisation": "ÉLEVÉE — détection du statut TVA, génération/validation automatique du format, alerte si une facture sortante n'est pas conforme.",
+      "sources": [
+        {"type": "officiel", "url": "https://efacture.belgium.be/fr/article/pour-qui-la-facturation-electronique-deviendra-t-elle-obligatoire", "intitule": "SPF Finances — e-facture : pour qui ?"},
+        {"type": "officiel", "url": "https://finances.wallonie.be/accueil-entreprises/actualites/actualites/facturation-electronique-une-obligation-des-le-1er-janvier-2026-etes-vous-prets.html", "intitule": "SPW Finances — Obligation 1er janvier 2026"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "NIS2-BE",
+      "norme": "NIS2 — cybersécurité des entités essentielles et importantes",
+      "changement": "La loi NIS2 impose des mesures de cybersécurité, une gestion des incidents, un enregistrement auprès du CCB et renforce fortement la responsabilité personnelle des dirigeants.",
+      "concernes": "Entités « essentielles » et « importantes » : moyennes et grandes entreprises de secteurs critiques (énergie, transport, santé, eau, numérique, fabrication, etc.). Le CCB peut aussi classer de plus petites entités.",
+      "sanction": "Amendes administratives jusqu'à 10 millions € ou 2 % du chiffre d'affaires annuel mondial pour les entités essentielles ; 7 millions € ou 1,4 % pour les entités importantes (le montant le plus élevé s'applique).",
+      "echeance": "Loi en vigueur depuis le 18 octobre 2024 ; enregistrement auprès du CCB attendu pour le 18 mars 2025.",
+      "reference_legale": "Loi du 26 avril 2024 établissant un cadre pour la cybersécurité (transposition de la directive (UE) 2022/2555 — NIS2)",
+      "solution_caelum": "Diagnostic « suis-je concerné ? », accompagnement à l'enregistrement CCB, mise en place des mesures de base et plan de gestion des incidents. Argument fort : protéger le dirigeant.",
+      "automatisation": "MOYENNE — auto-évaluation du périmètre, checklist de mesures, rappels d'échéances ; mise en œuvre technique escaladée à des partenaires.",
+      "sources": [
+        {"type": "officiel", "url": "https://ccb.belgium.be/fr/nis2", "intitule": "Centre pour la Cybersécurité Belgique — NIS2"},
+        {"type": "officiel", "url": "https://ccb.belgium.be/fr/news/mesures-administratives-et-amendes-sous-nis2", "intitule": "CCB — Mesures administratives et amendes NIS2"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CSRD-OMNIBUS",
+      "norme": "CSRD — rapport de durabilité (revu par l'Omnibus)",
+      "changement": "Le paquet « Omnibus » a fortement réduit le champ d'application de la CSRD et reporté les échéances. Beaucoup d'entreprises qui pensaient être concernées ne le sont plus directement — mais leurs grands clients, eux, le restent.",
+      "concernes": "Désormais : entités de l'UE de plus de 1 000 salariés ET plus de 450 millions € de chiffre d'affaires net. En dessous : reporting non obligatoire (mais souvent demandé par les donneurs d'ordre).",
+      "sanction": "Sanctions fixées par chaque État membre lors de la transposition ; risque réputationnel et perte de marchés en cas d'absence de données fiables.",
+      "echeance": "Application aux exercices ouverts à partir du 1er janvier 2027 (premiers rapports en 2028) ; transposition par les États pour le 19 mars 2027.",
+      "reference_legale": "Directive (UE) 2026/470 (« Omnibus I ») modifiant la directive (UE) 2022/2464 (CSRD)",
+      "solution_caelum": "Test de périmètre à jour (suis-je encore dans le scope ?), préparation des données ESG, et surtout aide aux PME pour répondre aux exigences ESG de leurs grands clients.",
+      "automatisation": "MOYENNE — test d'éligibilité automatique, collecte guidée des indicateurs, modèles de réponses ESG.",
+      "sources": [
+        {"type": "officiel", "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en", "intitule": "Commission européenne — Due diligence durabilité"},
+        {"type": "secondaire", "url": "https://accountancyeurope.eu/publications/omnibus-explained-key-changes-to-the-csrd-and-csddd/", "intitule": "Accountancy Europe — Omnibus : changements CSRD/CSDDD"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CSDDD-OMNIBUS",
+      "norme": "CSDDD — devoir de vigilance (revu par l'Omnibus)",
+      "changement": "L'Omnibus a réduit le champ d'environ 70 %, retiré l'obligation de plan de transition climatique, et changé les sanctions : le plancher « au moins 5 % du CA » est supprimé, remplacé par un plafond maximal de 3 % du chiffre d'affaires mondial net.",
+      "concernes": "Très grandes entreprises : plus de 5 000 salariés ET plus de 1,5 milliard € de CA (UE) ; entreprises hors UE réalisant plus de 1,5 milliard € de CA dans l'UE.",
+      "sanction": "Amendes plafonnées à 3 % du chiffre d'affaires mondial net (le détail est fixé à la transposition nationale + lignes directrices de la Commission).",
+      "echeance": "Transposition par les États pour le 26 juillet 2028 ; application à partir du 26 juillet 2029 (obligations de reporting de l'art. 16 : exercices à partir du 1er janvier 2030).",
+      "reference_legale": "Directive (UE) 2026/470 (« Omnibus I ») modifiant la directive (UE) 2024/1760 (CSDDD)",
+      "solution_caelum": "Pour les grands groupes : cartographie du devoir de vigilance. Pour les PME fournisseurs : se préparer à l'effet de cascade (les grands donneurs d'ordre répercutent leurs obligations le long de la chaîne de valeur).",
+      "automatisation": "MOYENNE — cartographie de la chaîne de valeur, questionnaires fournisseurs, suivi des actions.",
+      "sources": [
+        {"type": "officiel", "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en", "intitule": "Commission européenne — Due diligence durabilité"},
+        {"type": "secondaire", "url": "https://www.business-humanrights.org/en/latest-news/csddd-omnibus/", "intitule": "BHRRC — CSDDD : amendements Omnibus entrés en vigueur"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "RGPD",
+      "norme": "RGPD — protection des données personnelles",
+      "changement": "Cadre stable mais largement sous-appliqué par les PME. Toute entreprise qui traite des données (clients, employés, prospects, cookies) est concernée. Les contrôles et plaintes augmentent.",
+      "concernes": "TOUTES les entreprises, quelle que soit leur taille, qui traitent des données personnelles.",
+      "sanction": "Amendes jusqu'à 20 millions € ou 4 % du chiffre d'affaires annuel mondial (le montant le plus élevé), prononcées par l'Autorité de protection des données.",
+      "echeance": "En vigueur (applicable depuis 2018, contrôles renforcés).",
+      "reference_legale": "Règlement (UE) 2016/679 (RGPD) ; loi du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données",
+      "solution_caelum": "Audit RGPD express, registre des traitements, politique de confidentialité et bandeau cookies conformes, plan de mise en conformité priorisé.",
+      "automatisation": "ÉLEVÉE — questionnaire d'audit, génération automatique du registre et des mentions, détection des manquements fréquents.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen", "intitule": "Autorité de protection des données (APD)"},
+        {"type": "officiel", "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679", "intitule": "EUR-Lex — Règlement (UE) 2016/679 (RGPD)"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "LANCEURS-ALERTE",
+      "norme": "Lanceurs d'alerte — canal de signalement interne",
+      "changement": "Les entreprises du secteur privé d'une certaine taille doivent mettre en place un canal de signalement interne sécurisé et protéger les lanceurs d'alerte contre les représailles.",
+      "concernes": "Entreprises du secteur privé à partir de 50 travailleurs (avec un calendrier selon la taille).",
+      "sanction": "Sanctions pénales et administratives en cas d'absence de canal ou de représailles contre un lanceur d'alerte.",
+      "echeance": "En vigueur (loi de transposition de 2022).",
+      "reference_legale": "Loi du 28 novembre 2022 sur la protection des personnes qui signalent des violations (transposition de la directive (UE) 2019/1937)",
+      "solution_caelum": "Mise en place d'un canal de signalement conforme, procédure de traitement, et information du personnel.",
+      "automatisation": "ÉLEVÉE — canal de signalement fourni en ligne, accusés de réception et suivi des délais automatisés.",
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/line-business/protection-des-lanceurs-dalerte", "intitule": "SPF Économie — Protection des lanceurs d'alerte"},
+        {"type": "officiel", "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32019L1937", "intitule": "EUR-Lex — Directive (UE) 2019/1937"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}
