@@ -179,6 +179,15 @@
         "drogues_prevention"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "enfants_places",
+      "nom": "Enfants placés & aide à la jeunesse",
+      "statut": "couvert",
+      "modules": [
+        "enfants_places"
+      ],
+      "priorite": "haute"
     }
   ]
 }

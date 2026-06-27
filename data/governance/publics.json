@@ -5,12 +5,32 @@
     "mineurs": {
       "titre": "Espace enfants & jeunes",
       "intro": "Tes droits expliqués simplement. Si tu as peur ou un souci, tu n'es pas seul·e : il y a toujours quelqu'un à qui en parler.",
-      "modules": ["harcelement_violences", "drogues_prevention", "justice_penal_acces", "famille"]
+      "modules": [
+        "enfants_places",
+        "harcelement_violences",
+        "drogues_prevention",
+        "justice_penal_acces",
+        "famille"
+      ]
     },
     "adultes": {
       "titre": "Espace adultes",
       "intro": "Tous les domaines pour faire valoir vos droits au quotidien.",
-      "modules": ["bail_wallonie", "bail_bruxelles", "bail_flandre", "surendettement_reglement_collectif_dettes", "travail_emploi", "famille", "justice_penal_acces", "harcelement_violences", "drogues_prevention", "surendettement", "citoyen_droits_devoirs", "aidants_proches", "vote_electoral"]
+      "modules": [
+        "bail_wallonie",
+        "bail_bruxelles",
+        "bail_flandre",
+        "surendettement_reglement_collectif_dettes",
+        "travail_emploi",
+        "famille",
+        "justice_penal_acces",
+        "harcelement_violences",
+        "drogues_prevention",
+        "surendettement",
+        "citoyen_droits_devoirs",
+        "aidants_proches",
+        "vote_electoral"
+      ]
     }
   }
 }
