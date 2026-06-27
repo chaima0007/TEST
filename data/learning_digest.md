@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **40**
+- Savoirs enregistrés : **44**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `94144ca249aa27ca…`)
+- Certification système : **PASS** (sceau `f56b0b8699cf126f…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -62,6 +62,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?**  
   Réf : Réglementation PEB wallonne (énergie) — calendrier en évolution · sources off. : 1 · revu : 2026-06-26
+- ✅ **Puis-je avoir un avocat gratuit ou moins cher (aide juridique de 2ᵉ ligne, ex « pro deo ») ?**  
+  Réf : Code judiciaire, art. 508/1 et suivants (aide juridique de deuxième ligne) ; seuils indexés annuellement · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment obtenir mon extrait de casier judiciaire (ex « certificat de bonnes vie et mœurs ») ?**  
+  Réf : Code d'instruction criminelle, art. 589 et suivants (casier judiciaire) ; arrêtés relatifs aux modèles 595/596 · sources off. : 1 · revu : 2026-06-26
+- ✅ **Ai-je droit à un avocat si je suis entendu(e) par la police ou la justice ?**  
+  Réf : Code d'instruction criminelle, art. 47bis (droits de la personne auditionnée — « loi Salduz ») · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je suis victime d'une infraction : comment intervenir dans la procédure pénale ?**  
+  Réf : Code d'instruction criminelle (déclaration de personne lésée, constitution de partie civile) ; droits des victimes · sources off. : 1 · revu : 2026-06-26
 - ✅ **Qu'est-ce que le règlement collectif de dettes et où le demander ?**  
   Réf : Code judiciaire, art. 1675/2 et suivants · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les conditions pour accéder au RCD ?**  

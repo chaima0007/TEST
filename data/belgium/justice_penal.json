@@ -1,0 +1,60 @@
+{
+  "module": "justice_penal_acces",
+  "titre": "Accès à la justice — droits, avocat, casier judiciaire",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Accès à la justice en Belgique — aide juridique, droits de la défense, casier judiciaire (compétence fédérale, SPF Justice)",
+    "portee": "Information générale sur l'accès à la justice et les droits fondamentaux des personnes (procédure)",
+    "source_officielle": "https://justice.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "AVERTISSEMENT RENFORCÉ — Information juridique générale, à jour à la date de revue. Le droit pénal et la procédure engagent la liberté et les droits des personnes : ceci NE remplace JAMAIS l'avis d'un avocat. Si vous êtes convoqué, entendu, poursuivi ou victime, contactez sans tarder un avocat (au besoin via l'aide juridique gratuite) ou le service d'accueil de la justice. Les montants et seuils sont indexés et changent : vérifiez toujours le chiffre en vigueur sur la source officielle.",
+  "faits": [
+    {
+      "id": "JUST-AIDE-001",
+      "question": "Puis-je avoir un avocat gratuit ou moins cher (aide juridique de 2ᵉ ligne, ex « pro deo ») ?",
+      "reponse": "Oui, sous conditions. L'aide juridique de 2ᵉ ligne (anciennement « pro deo ») donne droit à l'assistance d'un avocat, totalement ou partiellement gratuite. Elle est accordée soit parce que vous appartenez à une catégorie présumée (bénéficiaire du revenu d'intégration/CPAS, mineur, etc.), soit parce que vos revenus nets sont sous certains seuils. À titre indicatif (seuils au 1er septembre 2025) : gratuité totale pour une personne isolée dont les revenus nets sont inférieurs à 1.612 €, et pour un cohabitant si les revenus nets du ménage sont inférieurs à 1.920 € ; gratuité partielle entre ces deux montants. Une déduction par personne à charge s'applique (362,31 € depuis le 1er mars 2026). Ces montants étant indexés, vérifiez le seuil en vigueur. On s'adresse au Bureau d'aide juridique (BAJ).",
+      "reference_legale": "Code judiciaire, art. 508/1 et suivants (aide juridique de deuxième ligne) ; seuils indexés annuellement",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/nouvelles/autres_communiques/aide_juridique_de_deuxieme_ligne_nouvelles_regles", "intitule": "SPF Justice — Aide juridique de deuxième ligne : nouvelles règles"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/puis-je-avoir-laide-gratuite-dun-avocat-aide-juridique-de-2eme-ligne-ex-pro-deo", "intitule": "Droits Quotidiens — L'aide juridique de 2ᵉ ligne"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "JUST-CASIER-001",
+      "question": "Comment obtenir mon extrait de casier judiciaire (ex « certificat de bonnes vie et mœurs ») ?",
+      "reponse": "L'extrait de casier judiciaire se demande en principe à l'administration communale de votre domicile (la commune en fixe les modalités, souvent en ligne). Il existe trois modèles selon l'usage : le modèle 595 (modèle de base), le modèle 596-1 (activités réglementées : taxi, détective, gardien de la paix, détention d'arme, permis de pêche…) et le modèle 596-2 (activités en lien avec les mineurs : enseignement, accueil, aide à la jeunesse, encadrement de mineurs…). Les personnes non inscrites dans une commune belge s'adressent au Casier judiciaire central (SPF Justice).",
+      "reference_legale": "Code d'instruction criminelle, art. 589 et suivants (casier judiciaire) ; arrêtés relatifs aux modèles 595/596",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/documents/demander_des_documents/extrait_de_casier_judiciaire", "intitule": "SPF Justice — Extrait de casier judiciaire"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/ou-demander-mon-extrait-de-casier-judiciaire", "intitule": "Droits Quotidiens — Où demander mon extrait de casier judiciaire"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "JUST-AVOCAT-001",
+      "question": "Ai-je droit à un avocat si je suis entendu(e) par la police ou la justice ?",
+      "reponse": "Oui. Toute personne entendue bénéficie de droits, dont celui d'être assistée par un avocat et celui de garder le silence (ne pas s'auto-incriminer). Selon la gravité et le statut (simple témoin, suspect, personne privée de liberté), l'assistance peut intervenir avant et pendant l'audition (régime dit « Salduz »). Si vous n'avez pas d'avocat ou pas les moyens, vous pouvez demander l'aide juridique. Il est vivement conseillé de ne pas signer une déposition que vous n'avez pas comprise et de demander à consulter un avocat.",
+      "reference_legale": "Code d'instruction criminelle, art. 47bis (droits de la personne auditionnée — « loi Salduz »)",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/que_faire_comme/cite/assistance_dun_avocat", "intitule": "SPF Justice — Assistance d'un avocat"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/puis-je-avoir-laide-gratuite-dun-avocat-aide-juridique-de-2eme-ligne-ex-pro-deo", "intitule": "Droits Quotidiens — Aide d'un avocat"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "JUST-VICTIME-001",
+      "question": "Je suis victime d'une infraction : comment intervenir dans la procédure pénale ?",
+      "reponse": "En tant que victime, vous pouvez faire valoir vos droits de plusieurs façons : déposer plainte, demander à être tenu informé (déclaration de personne lésée) et, pour obtenir réparation de votre préjudice, vous constituer partie civile. Vous avez aussi droit à un accueil et à de l'information : des services d'accueil des victimes existent au sein de la justice. Selon vos revenus, vous pouvez bénéficier de l'aide juridique pour être assisté par un avocat. Agir dans les délais est important — un avocat ou le service d'accueil peut vous orienter.",
+      "reference_legale": "Code d'instruction criminelle (déclaration de personne lésée, constitution de partie civile) ; droits des victimes",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/que_faire_comme/victime/intervenir_dans_la_procedure_en_tant_que_victime/en", "intitule": "SPF Justice — Intervenir dans la procédure en tant que victime"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/lexique/aide-juridique-de-deuxieme-ligne", "intitule": "Droits Quotidiens — Lexique justice"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 40,
+    "total_savoirs": 44,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -299,6 +299,50 @@
       "id": "BWAL-PEB-001",
       "sujet": "Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?",
       "reference_legale": "Réglementation PEB wallonne (énergie) — calendrier en évolution",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "justice_penal_acces",
+      "id": "JUST-AIDE-001",
+      "sujet": "Puis-je avoir un avocat gratuit ou moins cher (aide juridique de 2ᵉ ligne, ex « pro deo ») ?",
+      "reference_legale": "Code judiciaire, art. 508/1 et suivants (aide juridique de deuxième ligne) ; seuils indexés annuellement",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "justice_penal_acces",
+      "id": "JUST-CASIER-001",
+      "sujet": "Comment obtenir mon extrait de casier judiciaire (ex « certificat de bonnes vie et mœurs ») ?",
+      "reference_legale": "Code d'instruction criminelle, art. 589 et suivants (casier judiciaire) ; arrêtés relatifs aux modèles 595/596",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "justice_penal_acces",
+      "id": "JUST-AVOCAT-001",
+      "sujet": "Ai-je droit à un avocat si je suis entendu(e) par la police ou la justice ?",
+      "reference_legale": "Code d'instruction criminelle, art. 47bis (droits de la personne auditionnée — « loi Salduz »)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "justice_penal_acces",
+      "id": "JUST-VICTIME-001",
+      "sujet": "Je suis victime d'une infraction : comment intervenir dans la procédure pénale ?",
+      "reference_legale": "Code d'instruction criminelle (déclaration de personne lésée, constitution de partie civile) ; droits des victimes",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
