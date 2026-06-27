@@ -148,6 +148,7 @@ def page(titre, contenu, actif=""):
         navlink("index.html", "Accueil", "accueil")
         + navlink("espace-mineurs.html", "Enfants & jeunes", "mineurs")
         + navlink("urgences.html", "Urgences & délais", "urgences")
+        + navlink("annuaire.html", "Près de chez vous", "annuaire")
         + navlink("specialistes.html", "Nos spécialistes", "specialistes")
         + navlink("textes.html", "Textes de loi", "textes")
         + navlink("sources.html", "Nos sources", "sources")
@@ -537,6 +538,31 @@ def construire():
         page("Nos sources", srcpage, actif="sources"), encoding="utf-8"
     )
 
+    # --- page Annuaire (près de chez vous, via outils officiels) ---
+    anp = REPO / "data" / "governance" / "annuaire.json"
+    services = json.loads(anp.read_text(encoding="utf-8")).get("services", []) if anp.exists() else []
+    cartes_an = []
+    for s in services:
+        tag = '<span class="src-officiel">[officiel]</span>' if s.get("officiel") else "[annuaire pro]"
+        cartes_an.append(
+            '<div class="contacts">'
+            f'<strong>{esc(s.get("service",""))}</strong> {tag}<br>'
+            f'{esc(s.get("comment",""))}<br>'
+            f'<a href="{esc(s.get("annuaire"))}" target="_blank" rel="noopener">Trouver près de chez vous'
+            "<span class=\"visually-hidden\"> (s'ouvre dans un nouvel onglet)</span></a></div>"
+        )
+    anpage = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#0b3d6e">Près de chez vous</h1>'
+        "<p>Trouvez le bon service local. Nous renvoyons vers les <strong>annuaires officiels</strong> "
+        "qui donnent les coordonnées exactes par commune (nous n'inventons pas d'adresses).</p>"
+        f'<div class="disclaimer" role="note">ℹ️ En cas de danger immédiat : 112 ou 101.</div>'
+        + "".join(cartes_an)
+    )
+    (DIST / "annuaire.html").write_text(
+        page("Près de chez vous", anpage, actif="annuaire"), encoding="utf-8"
+    )
+
     # --- espaces par public (enfants/mineurs & adultes) ---
     mod2slug = {m["_module"]: m["_slug"] for m in modules}
     mod2titre = {m["_module"]: m.get("titre", m["_slug"]) for m in modules}
@@ -571,7 +597,7 @@ def construire():
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
         "urgences": len(urgents),
-        "pages": len(modules) + 10,
+        "pages": len(modules) + 11,
     }
 
 
