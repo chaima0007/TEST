@@ -5,6 +5,39 @@
   "principe_honnete": "Assistants guidés (contenu vérifié + contacts), pas des avocats.",
   "specialistes": [
     {
+      "id": "SPE-ACCIDENT-TRAVAIL",
+      "titre": "Spécialiste — Risques professionnels",
+      "domaine": "Risques professionnels",
+      "module": "accident_travail",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « risques professionnels », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai eu un accident au travail (ou sur le chemin) : que faire ?",
+        "Ma maladie est liée à mon travail : ai-je droit à une indemnité ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Employeur / son assurance accidents du travail",
+          "pour": "déclaration de l'accident"
+        },
+        {
+          "nom": "Fedris — Agence fédérale des risques professionnels",
+          "lien": "https://www.fedris.be/fr",
+          "pour": "information, litige, déclaration"
+        },
+        {
+          "nom": "Fedris",
+          "lien": "https://www.fedris.be/fr",
+          "pour": "demande d'indemnisation maladie professionnelle"
+        },
+        {
+          "nom": "Votre médecin",
+          "pour": "formulaire médical de la demande"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-AIDANTS-PROCHES",
       "titre": "Spécialiste — Aidants proches",
       "domaine": "Aidants proches",
@@ -23,6 +56,34 @@
           "nom": "ONEM",
           "lien": "https://www.onem.be",
           "pour": "allocation d'interruption (congé)"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-AIDE-JURIDIQUE",
+      "titre": "Spécialiste — Accès à la justice",
+      "domaine": "Accès à la justice",
+      "module": "aide_juridique",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « accès à la justice », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je n'ai pas les moyens de payer un avocat. Puis-je en avoir un gratuitement ?",
+        "Comment obtenir cet avocat, et quels documents apporter ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Bureau d'aide juridique (BAJ)",
+          "lien": "https://www.rechtbanken-tribunaux.be/fr/node/2078",
+          "pour": "désignation d'un avocat gratuit/pro deo"
+        },
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "attestation de situation sociale"
+        },
+        {
+          "nom": "Bureau d'aide juridique (BAJ)",
+          "pour": "dépôt du dossier, désignation d'avocat"
         }
       ],
       "nb_reponses": 2,
@@ -213,6 +274,112 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-BANQUE",
+      "titre": "Spécialiste — Services bancaires",
+      "domaine": "Services bancaires",
+      "module": "banque",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « services bancaires », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Une banque peut-elle me refuser un compte ? Ai-je droit à un compte ?",
+        "J'ai un litige avec ma banque, à qui m'adresser ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "service bancaire de base, refus de compte"
+        },
+        {
+          "nom": "Ombudsfin — Médiateur en conflits financiers",
+          "lien": "https://www.ombudsfin.be",
+          "pour": "litige avec une banque"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-BURNOUT-BIENETRE",
+      "titre": "Spécialiste — Bien-être & burnout",
+      "domaine": "Bien-être & burnout",
+      "module": "burnout_bienetre",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « bien-être & burnout », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?",
+        "Je me sens harcelé·e au travail mais je n'ose rien dire. Que puis-je faire ?",
+        "Comment mettre un frein avant de craquer, et où trouver du soutien ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre médecin généraliste",
+          "pour": "constat d'épuisement, certificat d'incapacité, orientation"
+        },
+        {
+          "nom": "Médecin du travail",
+          "pour": "aménagement ou reprise adaptée du travail (confidentiel)"
+        },
+        {
+          "nom": "Conseiller en prévention aspects psychosociaux / personne de confiance",
+          "pour": "écoute et intervention, secret professionnel"
+        },
+        {
+          "nom": "Contrôle du bien-être au travail (SPF Emploi)",
+          "lien": "https://emploi.belgique.be",
+          "pour": "si rien n'aboutit en interne"
+        },
+        {
+          "nom": "Télé-Accueil",
+          "numero": "107",
+          "lien": "https://www.tele-accueil.be",
+          "pour": "écoute 24h/24, gratuite et anonyme"
+        },
+        {
+          "nom": "Centre de Prévention du Suicide",
+          "numero": "0800 32 123",
+          "pour": "si vous allez très mal (24h/24)"
+        },
+        {
+          "nom": "Votre médecin / psychologue de première ligne",
+          "pour": "accompagnement, souvent remboursé (INAMI)"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CHOMAGE",
+      "titre": "Spécialiste — Chômage & emploi",
+      "domaine": "Chômage & emploi",
+      "module": "chomage",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « chômage & emploi », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment demander mes allocations de chômage ?",
+        "Si je démissionne, ai-je quand même droit au chômage ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "CAPAC",
+          "lien": "https://www.capac.fgov.be",
+          "pour": "payer les allocations sans être syndiqué"
+        },
+        {
+          "nom": "Forem / Actiris / VDAB",
+          "pour": "inscription comme demandeur d'emploi"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "information sur le droit aux allocations"
+        },
+        {
+          "nom": "Votre organisme de paiement (syndicat ou CAPAC)",
+          "pour": "vérifier l'impact d'une démission AVANT de l'envoyer"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-CIRCULATION",
       "titre": "Spécialiste — Circulation routière",
       "domaine": "Circulation routière",
@@ -369,6 +536,29 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-DECHETS",
+      "titre": "Spécialiste — Déchets & environnement",
+      "domaine": "Déchets & environnement",
+      "module": "dechets",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « déchets & environnement », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Que risque-t-on pour un dépôt sauvage de déchets ?",
+        "Suis-je obligé de trier mes déchets ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service environnement / propreté de votre commune",
+          "pour": "règlement local, amendes, signalement"
+        },
+        {
+          "nom": "Votre intercommunale de gestion des déchets",
+          "pour": "règles de tri, recyparc, jours de collecte"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-DISCRIMINATION",
       "titre": "Spécialiste — Discrimination & égalité",
       "domaine": "Discrimination & égalité",
@@ -392,6 +582,67 @@
         }
       ],
       "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-DIVORCE",
+      "titre": "Spécialiste — Divorce & séparation",
+      "domaine": "Divorce & séparation",
+      "module": "divorce",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « divorce & séparation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelles sont les façons de divorcer en Belgique ?",
+        "Et les enfants : garde et pension alimentaire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "dépôt de la requête en divorce"
+        },
+        {
+          "nom": "Avocat / Notaire",
+          "pour": "convention, partage des biens, conseil"
+        },
+        {
+          "nom": "SECAL (SPF Finances)",
+          "lien": "https://finances.belgium.be/fr/particuliers/famille/pension_alimentaire",
+          "pour": "avances et recouvrement des pensions alimentaires impayées"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-DOCUMENTS-IDENTITE",
+      "titre": "Spécialiste — Documents d'identité",
+      "domaine": "Documents d'identité",
+      "module": "documents_identite",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « documents d'identité », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai perdu (ou on m'a volé) ma carte d'identité, que faire ?",
+        "Comment déclarer la perte de mon permis de conduire ou demander un passeport ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "DOC STOP",
+          "numero": "00800 2123 2123",
+          "pour": "bloquer un document d'identité perdu/volé (24h/24)"
+        },
+        {
+          "nom": "Service population de votre commune",
+          "pour": "déclaration de perte, nouvelle carte"
+        },
+        {
+          "nom": "Police locale",
+          "numero": "101",
+          "pour": "déclaration de vol, procès-verbal"
+        },
+        {
+          "nom": "Administration communale",
+          "pour": "duplicata de permis, demande de passeport"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -429,6 +680,36 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-EAU",
+      "titre": "Spécialiste — Eau & distribution",
+      "domaine": "Eau & distribution",
+      "module": "eau",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « eau & distribution », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Mon distributeur peut-il me couper l'eau si je n'ai pas payé ?",
+        "Doit-on me faire payer des frais dès le premier rappel ?",
+        "Je n'arrive pas à payer ma facture d'eau, existe-t-il une aide ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre distributeur d'eau (ex. SWDE)",
+          "lien": "https://www.swde.be",
+          "pour": "plan de paiement, contestation"
+        },
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "Fonds social de l'eau, aide au paiement"
+        },
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "frais de rappel abusifs, information consommateur"
+        }
+      ],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -592,6 +873,37 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-EXPULSION",
+      "titre": "Spécialiste — Logement — expulsion",
+      "domaine": "Logement — expulsion",
+      "module": "expulsion",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « logement — expulsion », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Mon propriétaire peut-il m'expulser du jour au lendemain ?",
+        "Peut-on m'expulser en plein hiver ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Juge de paix",
+          "pour": "audience, défense, demande de délai"
+        },
+        {
+          "nom": "CPAS",
+          "pour": "aide, relogement, défense du locataire"
+        },
+        {
+          "nom": "Bureau d'aide juridique (BAJ)",
+          "pour": "avocat gratuit/pro deo selon revenus"
+        },
+        {
+          "nom": "Service logement de votre Région",
+          "pour": "règles d'expulsion et trêve hivernale"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-FAMILLE",
       "titre": "Spécialiste — Famille",
       "domaine": "Famille",
@@ -637,6 +949,41 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-FRAUDE-ARNAQUES",
+      "titre": "Spécialiste — Fraude & sécurité numérique",
+      "domaine": "Fraude & sécurité numérique",
+      "module": "fraude_arnaques",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « fraude & sécurité numérique », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai été victime d'une arnaque (paiement, données envoyées). Que faire en urgence ?",
+        "J'ai reçu un message suspect (banque, livraison, administration). Comment réagir ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Card Stop",
+          "numero": "078 170 170",
+          "pour": "bloquer cartes bancaires (24h/24)"
+        },
+        {
+          "nom": "Police locale",
+          "numero": "101",
+          "pour": "porter plainte (urgence : 112)"
+        },
+        {
+          "nom": "SPF Économie — Point de contact",
+          "lien": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/stop-arnaques",
+          "pour": "signaler l'arnaque"
+        },
+        {
+          "nom": "Safeonweb — suspect@safeonweb.be",
+          "lien": "https://safeonweb.be/fr",
+          "pour": "transférer un message de phishing"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -782,6 +1129,34 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-INCAPACITE-TRAVAIL",
+      "titre": "Spécialiste — Maladie & incapacité",
+      "domaine": "Maladie & incapacité",
+      "module": "incapacite_travail",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « maladie & incapacité », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je suis malade et ne peux pas travailler : que dois-je faire ?",
+        "Vais-je continuer à être payé pendant ma maladie ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre mutualité",
+          "pour": "déclaration d'incapacité, indemnités"
+        },
+        {
+          "nom": "Votre médecin",
+          "pour": "certificat médical d'incapacité"
+        },
+        {
+          "nom": "INAMI",
+          "lien": "https://www.inami.fgov.be",
+          "pour": "règles d'indemnisation"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-INDEPENDANT",
       "titre": "Spécialiste — Indépendant & activité",
       "domaine": "Indépendant & activité",
@@ -789,7 +1164,13 @@
       "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « indépendant & activité », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
       "peut_vous_aider_a": [
         "Quelles sont les étapes pour devenir indépendant ?",
-        "Dois-je payer des cotisations sociales et m'affilier quelque part ?"
+        "Dois-je payer des cotisations sociales et m'affilier quelque part ?",
+        "Comment être sûr d'être aux normes pour me lancer ? (la check-list légale)",
+        "Quels sont les risques quand on se lance, et comment les limiter ?",
+        "J'ai peur d'échouer : qui peut m'aider, et comment ne pas lâcher prise ?",
+        "Comment faire un business plan (et un plan financier) ?",
+        "Quels points juridiques vérifier pour être bien protégé ?",
+        "Quelles sont les erreurs à ne pas faire quand on se lance ?"
       ],
       "contacts_cles": [
         {
@@ -804,9 +1185,44 @@
         {
           "nom": "Mutuelle",
           "pour": "soins de santé (obligatoire)"
+        },
+        {
+          "nom": "Guichet d'entreprises agréé",
+          "pour": "inscription BCE, TVA, formalités de départ"
+        },
+        {
+          "nom": "Caisse d'assurances sociales pour indépendants",
+          "pour": "affiliation et cotisations sociales"
+        },
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "accès à la profession, information"
+        },
+        {
+          "nom": "Notaire",
+          "pour": "déclaration d'insaisissabilité du logement"
+        },
+        {
+          "nom": "1819 (Bruxelles)",
+          "lien": "https://1819.brussels",
+          "pour": "information et orientation des entrepreneurs"
+        },
+        {
+          "nom": "1890 (Wallonie)",
+          "lien": "https://www.1890.be",
+          "pour": "accompagnement des entrepreneurs en Wallonie"
+        },
+        {
+          "nom": "Expert-comptable",
+          "pour": "plan financier (obligatoire pour une société)"
+        },
+        {
+          "nom": "Bureau d'aide juridique (BAJ)",
+          "pour": "avocat gratuit/pro deo selon vos revenus"
         }
       ],
-      "nb_reponses": 2,
+      "nb_reponses": 8,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -871,6 +1287,74 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-MOBILITE-DOUCE",
+      "titre": "Spécialiste — Mobilité douce",
+      "domaine": "Mobilité douce",
+      "module": "mobilite_douce",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « mobilité douce », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "À partir de quel âge peut-on rouler en trottinette électrique ?",
+        "Où ai-je le droit de rouler en trottinette électrique ?",
+        "Faut-il une assurance pour ma trottinette électrique ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SPF Mobilité et Transports",
+          "lien": "https://mobilit.belgium.be/fr",
+          "pour": "règles en vigueur, âge, équipement"
+        },
+        {
+          "nom": "Police locale",
+          "numero": "101",
+          "pour": "infraction, accident (urgence : 112)"
+        },
+        {
+          "nom": "Votre assureur",
+          "pour": "RC vie privée / familiale, RC spécifique"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-NAISSANCE",
+      "titre": "Spécialiste — Naissance & filiation",
+      "domaine": "Naissance & filiation",
+      "module": "naissance",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « naissance & filiation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Dans quel délai dois-je déclarer la naissance de mon enfant ?",
+        "Mon couple n'est pas marié : comment reconnaître mon enfant ?",
+        "Ai-je droit à un congé à la naissance de mon enfant ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Administration communale (état civil) du lieu de naissance",
+          "pour": "déclaration de naissance, acte de naissance"
+        },
+        {
+          "nom": "Administration communale (état civil)",
+          "pour": "reconnaissance d'enfant"
+        },
+        {
+          "nom": "ONE — Office de la naissance et de l'enfance",
+          "lien": "https://www.one.be",
+          "pour": "information aux parents"
+        },
+        {
+          "nom": "Votre mutualité",
+          "pour": "indemnités congé de naissance / maternité"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "congés liés à la naissance"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-PENSION",
       "titre": "Spécialiste — Pension & retraite",
       "domaine": "Pension & retraite",
@@ -922,6 +1406,38 @@
         {
           "nom": "Médecin",
           "pour": "certificat médical circonstancié"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-SAISIES-HUISSIER",
+      "titre": "Spécialiste — Saisies & recouvrement",
+      "domaine": "Saisies & recouvrement",
+      "module": "saisies_huissier",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « saisies & recouvrement », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Un huissier peut-il prendre tout mon salaire ?",
+        "Et l'argent sur mon compte en banque, est-il protégé ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service de médiation de dettes / CPAS",
+          "pour": "vérifier le calcul, plan d'apurement"
+        },
+        {
+          "nom": "Chambre des huissiers de justice",
+          "lien": "https://www.huissiersdejustice.be",
+          "pour": "information sur les montants insaisissables"
+        },
+        {
+          "nom": "Service de médiation de dettes",
+          "pour": "débloquer la part insaisissable, négocier"
+        },
+        {
+          "nom": "Votre banque",
+          "pour": "comprendre le blocage du compte"
         }
       ],
       "nb_reponses": 2,
@@ -1061,6 +1577,36 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-TRANSPORT-PASSAGERS",
+      "titre": "Spécialiste — Droits des passagers",
+      "domaine": "Droits des passagers",
+      "module": "transport_passagers",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « droits des passagers », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?",
+        "Mon vol est annulé, retardé ou refusé à l'embarquement, quels sont mes droits ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SNCB — Service clientèle / compensation",
+          "lien": "https://www.belgiantrain.be/fr/support/customer-service/compensation",
+          "pour": "demande de compensation / remboursement"
+        },
+        {
+          "nom": "Ombudsrail — Médiateur pour les voyageurs ferroviaires",
+          "lien": "https://www.ombudsrail.be",
+          "pour": "litige avec le transporteur"
+        },
+        {
+          "nom": "SPF Mobilité — Denied Boarding Authority",
+          "lien": "https://mobilit.belgium.be/fr",
+          "pour": "plainte droits des passagers aériens"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-TRAVAIL-EMPLOI",
       "titre": "Spécialiste — Travail & emploi",
       "domaine": "Travail & emploi",
@@ -1133,6 +1679,61 @@
         }
       ],
       "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-VIOLENCES-CONJUGALES",
+      "titre": "Spécialiste — Violences conjugales",
+      "domaine": "Violences conjugales",
+      "module": "violences_conjugales",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « violences conjugales », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je subis des violences de mon partenaire, qui appeler ?",
+        "Peut-on obliger l'auteur des violences à quitter le domicile ?",
+        "Comment me protéger et constituer un dossier ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Secours / Police",
+          "numero": "112 / 101",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Écoute Violences Conjugales",
+          "numero": "0800/30.030",
+          "lien": "https://www.ecouteviolencesconjugales.be",
+          "pour": "écoute, conseils, orientation (gratuit, confidentiel)"
+        },
+        {
+          "nom": "1712",
+          "numero": "1712",
+          "lien": "https://www.1712.be",
+          "pour": "information violence et maltraitance"
+        },
+        {
+          "nom": "Police locale",
+          "numero": "101",
+          "pour": "signaler le danger, demande d'éloignement"
+        },
+        {
+          "nom": "Procureur du Roi (via la police)",
+          "pour": "interdiction temporaire de résidence"
+        },
+        {
+          "nom": "Médecin / certificat médical",
+          "pour": "constat des blessures (y compris psychologiques)"
+        },
+        {
+          "nom": "CPAS",
+          "pour": "hébergement d'urgence, aide sociale"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "porter plainte"
+        }
+      ],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {

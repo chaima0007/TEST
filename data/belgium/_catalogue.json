@@ -2,13 +2,25 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 40,
-    "faits": 165,
-    "sources_officielles": 243,
-    "faits_avec_contacts": 80,
-    "faits_avec_alerte_delai": 54
+    "modules": 57,
+    "faits": 210,
+    "sources_officielles": 320,
+    "faits_avec_contacts": 125,
+    "faits_avec_alerte_delai": 64
   },
   "modules": [
+    {
+      "fichier": "accident_travail.json",
+      "module": "accident_travail",
+      "titre": "Accident du travail & maladie professionnelle",
+      "domaine": "Risques professionnels",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
     {
       "fichier": "aidants_proches.json",
       "module": "aidants_proches",
@@ -20,6 +32,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "aide_juridique.json",
+      "module": "aide_juridique",
+      "titre": "Aide juridique — un avocat (presque) gratuit",
+      "domaine": "Accès à la justice",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "aide_urgence.json",
@@ -106,6 +130,42 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "banque.json",
+      "module": "banque",
+      "titre": "Banque & compte de base",
+      "domaine": "Services bancaires",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "burnout_bienetre.json",
+      "module": "burnout_bienetre",
+      "titre": "Santé d'abord — burnout, fatigue & mettre des limites",
+      "domaine": "Bien-être & burnout",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "chomage.json",
+      "module": "chomage",
+      "titre": "Chômage — droits, démarches et sanctions",
+      "domaine": "Chômage & emploi",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "circulation.json",
       "module": "circulation",
       "titre": "Circulation routière — accident, constat, permis",
@@ -178,6 +238,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "dechets.json",
+      "module": "dechets",
+      "titre": "Déchets, tri & propreté",
+      "domaine": "Déchets & environnement",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "discrimination.json",
       "module": "discrimination",
       "titre": "Discrimination — reconnaître, signaler, agir",
@@ -190,6 +262,30 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "divorce.json",
+      "module": "divorce",
+      "titre": "Divorce & séparation",
+      "domaine": "Divorce & séparation",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "documents_identite.json",
+      "module": "documents_identite",
+      "titre": "Documents d'identité — carte, passeport, permis",
+      "domaine": "Documents d'identité",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "drogues.json",
       "module": "drogues_prevention",
       "titre": "Drogues — prévention, ravages et information",
@@ -200,6 +296,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "eau.json",
+      "module": "eau",
+      "titre": "Eau — facture, impayés et coupure",
+      "domaine": "Eau & distribution",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "energie.json",
@@ -250,6 +358,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "expulsion.json",
+      "module": "expulsion",
+      "titre": "Expulsion du logement — vos droits",
+      "domaine": "Logement — expulsion",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "famille.json",
       "module": "famille",
       "titre": "Famille — séparation, enfants, pensions alimentaires",
@@ -260,6 +380,18 @@
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "fraude_arnaques.json",
+      "module": "fraude_arnaques",
+      "titre": "Arnaques & fraude en ligne — réagir vite",
+      "domaine": "Fraude & sécurité numérique",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "gouvernement.json",
@@ -310,16 +442,28 @@
       "derniere_revue": "2026-06-26"
     },
     {
-      "fichier": "independant.json",
-      "module": "independant",
-      "titre": "Devenir indépendant — démarches pour se lancer",
-      "domaine": "Indépendant & activité",
+      "fichier": "incapacite_travail.json",
+      "module": "incapacite_travail",
+      "titre": "Maladie & incapacité de travail",
+      "domaine": "Maladie & incapacité",
       "juridiction": "BE",
       "faits": 2,
       "sources_officielles": 4,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-26"
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "independant.json",
+      "module": "independant",
+      "titre": "Devenir indépendant — démarches pour se lancer",
+      "domaine": "Indépendant & activité",
+      "juridiction": "BE",
+      "faits": 8,
+      "sources_officielles": 16,
+      "faits_avec_contacts": 8,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "job_etudiant.json",
@@ -358,6 +502,30 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "mobilite_douce.json",
+      "module": "mobilite_douce",
+      "titre": "Vélo & trottinette — règles et assurance",
+      "domaine": "Mobilité douce",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "naissance.json",
+      "module": "naissance",
+      "titre": "Naissance & filiation",
+      "domaine": "Naissance & filiation",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "pension.json",
       "module": "pension",
       "titre": "Pension & retraite — âge, demande, calcul",
@@ -380,6 +548,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "saisies_huissier.json",
+      "module": "saisies_huissier",
+      "titre": "Saisies & huissier — ce qui peut être pris (ou non)",
+      "domaine": "Saisies & recouvrement",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "sante_mentale.json",
@@ -442,6 +622,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "transport_passagers.json",
+      "module": "transport_passagers",
+      "titre": "Voyageurs — train & avion (retard, annulation)",
+      "domaine": "Droits des passagers",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "travail.json",
       "module": "travail_emploi",
       "titre": "Travail & emploi — licenciement, préavis, chômage",
@@ -464,6 +656,18 @@
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "violences_conjugales.json",
+      "module": "violences_conjugales",
+      "titre": "Violences conjugales & familiales — se protéger",
+      "domaine": "Violences conjugales",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "voisinage.json",
@@ -816,6 +1020,159 @@
         "protection_personne"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "eau",
+      "nom": "Eau & distribution",
+      "statut": "couvert",
+      "modules": [
+        "eau"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "mobilite_douce",
+      "nom": "Mobilité douce (vélo, trottinette)",
+      "statut": "couvert",
+      "modules": [
+        "mobilite_douce"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "naissance",
+      "nom": "Naissance & filiation",
+      "statut": "couvert",
+      "modules": [
+        "naissance"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "dechets",
+      "nom": "Déchets & environnement",
+      "statut": "couvert",
+      "modules": [
+        "dechets"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "banque",
+      "nom": "Services bancaires",
+      "statut": "couvert",
+      "modules": [
+        "banque"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "transport_passagers",
+      "nom": "Droits des passagers (train, avion)",
+      "statut": "couvert",
+      "modules": [
+        "transport_passagers"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "violences_conjugales",
+      "nom": "Violences conjugales & familiales",
+      "statut": "couvert",
+      "modules": [
+        "violences_conjugales"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "documents_identite",
+      "nom": "Documents d identité",
+      "statut": "couvert",
+      "modules": [
+        "documents_identite"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "burnout_bienetre",
+      "nom": "Bien-être & burnout",
+      "statut": "couvert",
+      "modules": [
+        "burnout_bienetre"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "aide_juridique",
+      "nom": "Accès à la justice (aide juridique)",
+      "statut": "couvert",
+      "modules": [
+        "aide_juridique"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "fraude_arnaques",
+      "nom": "Fraude & sécurité numérique",
+      "statut": "couvert",
+      "modules": [
+        "fraude_arnaques"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "chomage",
+      "nom": "Chômage & emploi",
+      "statut": "couvert",
+      "modules": [
+        "chomage"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "incapacite_travail",
+      "nom": "Maladie & incapacité",
+      "statut": "couvert",
+      "modules": [
+        "incapacite_travail"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "saisies_huissier",
+      "nom": "Saisies & recouvrement",
+      "statut": "couvert",
+      "modules": [
+        "saisies_huissier"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "expulsion",
+      "nom": "Logement — expulsion",
+      "statut": "couvert",
+      "modules": [
+        "expulsion"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "accident_travail",
+      "nom": "Risques professionnels",
+      "statut": "couvert",
+      "modules": [
+        "accident_travail"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "divorce",
+      "nom": "Divorce & séparation",
+      "statut": "couvert",
+      "modules": [
+        "divorce"
+      ],
+      "priorite": "haute"
     }
   ]
 }

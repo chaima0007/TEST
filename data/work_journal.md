@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3023 réalisations concrètes enregistrées
+### 📌 Total : 3037 réalisations concrètes enregistrées
 
 
 ## 2026-06-27
-**75 réalisations** · de **00:28** à **20:51** (fenêtre de travail : 20h23)
+**89 réalisations** · de **00:28** à **21:31** (fenêtre de travail : 21h03)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
@@ -82,6 +82,20 @@
 - 🕒 20:47 — +8 lettres prêtes à envoyer (résiliation, contestation facture, délai paiement, salaire impayé, préavis bail, RGPD, CPAS urgence, contestation amende) — copier-coller
 - 🕒 20:51 — fait détaillé — adulte au comportement déplacé à l'école, signaler sans représailles (canaux indépendants DGDE/SOS Enfants/103/police)
 - 🕒 20:51 — administration de biens, demande au juge de paix — 2 faits sourcés (+sync)
+- 🕒 20:52 — 7 références légales précisées (allocations, discrimination, job étudiant, logement social, santé mentale) -> 100% lois (+sync)
+- 🕒 20:58 — +4 domaines citoyens (eau, mobilité douce vélo/trottinette, naissance & filiation, déchets) — 44 domaines / 176 réponses, 100% lois + sources officielles
+- 🕒 20:59 — +2 domaines (banque & compte de base, droits des passagers train/avion) — 42 domaines / 180 réponses, 100% lois + sources
+- 🕒 21:03 — +3 domaines sensibles (violences conjugales, documents identité, santé d'abord/burnout) — 45 domaines / 188 réponses, 100% lois + sources
+- 🕒 21:06 — +2 domaines clés (aide juridique/pro deo, fraude & arnaques en ligne) — 47 domaines / 192 réponses, 100% lois + sources
+- 🕒 21:12 — veille conformité entreprises (6 normes 2026 sourcées + chiffres) & pont commercial 'les normes ont changé, la solution c'est nous'
+- 🕒 21:16 — capacité 'appels à projets' (subventions + marchés publics) — playbook sourcé, Go/No-Go, avis stratégique
+- 🕒 21:21 — agent 'Appels & Financements' (veille/Go-NoGo/matching) + simulateur /appels-projets + lien nav
+- 🕒 21:23 — indépendant enrichi — normes pour se lancer, risques, organismes d'aide/ne pas lâcher prise, business plan & conseils juridiques (5 nouveaux faits) — 197 réponses, 100% lois + sources
+- 🕒 21:25 — 'erreurs à ne pas faire' (indépendant) + système de témoignages VÉRIFIÉS (anti-invention) + protocole P-TEMOIGNAGES — 198 réponses, 100%
+- 🕒 21:26 — témoignages — référence aux vrais recueils publiés (UCM, RTBF, Acerta) avec liens-source vérifiables, sans invention ni reproduction sans consentement
+- 🕒 21:28 — +2 domaines majeurs (chômage/ONEM, maladie & incapacité de travail) — 49 domaines / 202 réponses, 100% lois + sources
+- 🕒 21:29 — +2 domaines (saisies & huissier / quotité insaisissable, expulsion du logement) — 51 domaines / 206 réponses, 100% lois + sources
+- 🕒 21:31 — +2 domaines (accident du travail/maladie professionnelle Fedris, divorce & séparation + SECAL) — 53 domaines / 210 réponses, 100% lois + sources
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)

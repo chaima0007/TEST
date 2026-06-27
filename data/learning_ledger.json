@@ -1,12 +1,34 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 169,
+    "total_savoirs": 214,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
   },
   "savoirs": [
+    {
+      "categorie": "droit_belge",
+      "module": "accident_travail",
+      "id": "ACCT-DECLARER-001",
+      "sujet": "J'ai eu un accident au travail (ou sur le chemin) : que faire ?",
+      "reference_legale": "Loi du 10 avril 1971 sur les accidents du travail",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "accident_travail",
+      "id": "ACCT-MALADIE-PRO-001",
+      "sujet": "Ma maladie est liée à mon travail : ai-je droit à une indemnité ?",
+      "reference_legale": "Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
     {
       "categorie": "droit_belge",
       "module": "aidants_proches",
@@ -27,6 +49,28 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "aide_juridique",
+      "id": "AJ-PRODEO-001",
+      "sujet": "Je n'ai pas les moyens de payer un avocat. Puis-je en avoir un gratuitement ?",
+      "reference_legale": "Code judiciaire — aide juridique de deuxième ligne (art. 508/1 et suivants)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "aide_juridique",
+      "id": "AJ-DEMARCHE-001",
+      "sujet": "Comment obtenir cet avocat, et quels documents apporter ?",
+      "reference_legale": "Code judiciaire — aide juridique (art. 508/1 et s.) et assistance judiciaire (art. 664 et s.)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {
@@ -89,7 +133,7 @@
       "module": "allocations_familiales",
       "id": "ALLOC-DROIT-001",
       "sujet": "Qui a droit aux allocations familiales et qui peut les demander ?",
-      "reference_legale": "Décrets régionaux sur les prestations familiales (régionalisation depuis 2019)",
+      "reference_legale": "Décret régional sur les prestations familiales (Code wallon ; ordonnance bruxelloise ; décret flamand Groeipakket) — régionalisation depuis 2019",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
@@ -100,7 +144,7 @@
       "module": "allocations_familiales",
       "id": "ALLOC-MONTANT-001",
       "sujet": "Quel est le montant, et jusqu'à quel âge ?",
-      "reference_legale": "Décrets régionaux sur les prestations familiales (montants et suppléments)",
+      "reference_legale": "Décret régional sur les prestations familiales (montants et suppléments) — Code wallon / ordonnance bruxelloise / décret flamand",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
@@ -471,6 +515,83 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "banque",
+      "id": "BANQ-COMPTE-BASE-001",
+      "sujet": "Une banque peut-elle me refuser un compte ? Ai-je droit à un compte ?",
+      "reference_legale": "Code de droit économique, livre VII — service bancaire de base",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "banque",
+      "id": "BANQ-LITIGE-001",
+      "sujet": "J'ai un litige avec ma banque, à qui m'adresser ?",
+      "reference_legale": "Code de droit économique, livre VII et livre XVI (règlement extrajudiciaire des litiges de consommation)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "burnout_bienetre",
+      "id": "BIEN-SANTE-DABORD-001",
+      "sujet": "Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?",
+      "reference_legale": "Loi du 4 août 1996 relative au bien-être des travailleurs (volet risques psychosociaux : stress, burnout)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "burnout_bienetre",
+      "id": "BIEN-HARCELE-TRAVAIL-001",
+      "sujet": "Je me sens harcelé·e au travail mais je n'ose rien dire. Que puis-je faire ?",
+      "reference_legale": "Loi du 4 août 1996 relative au bien-être des travailleurs — protection contre le harcèlement et les risques psychosociaux",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "burnout_bienetre",
+      "id": "BIEN-LIMITES-001",
+      "sujet": "Comment mettre un frein avant de craquer, et où trouver du soutien ?",
+      "reference_legale": "Loi du 4 août 1996 relative au bien-être des travailleurs ; convention INAMI relative à l'accompagnement psychologique de première ligne",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "chomage",
+      "id": "CHOM-DEMANDE-001",
+      "sujet": "Comment demander mes allocations de chômage ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "chomage",
+      "id": "CHOM-DEMISSION-001",
+      "sujet": "Si je démissionne, ai-je quand même droit au chômage ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage volontaire et sanctions)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "circulation",
       "id": "CIRC-ACCIDENT-001",
       "sujet": "J'ai un accident de la route : que dois-je faire ?",
@@ -691,6 +812,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "dechets",
+      "id": "DECH-DEPOT-SAUVAGE-001",
+      "sujet": "Que risque-t-on pour un dépôt sauvage de déchets ?",
+      "reference_legale": "Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets (sanctions administratives)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "dechets",
+      "id": "DECH-TRI-001",
+      "sujet": "Suis-je obligé de trier mes déchets ?",
+      "reference_legale": "Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets — obligation de tri",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "discrimination",
       "id": "DISC-CRITERES-001",
       "sujet": "Qu'est-ce qu'une discrimination interdite ?",
@@ -705,7 +848,7 @@
       "module": "discrimination",
       "id": "DISC-SIGNALER-001",
       "sujet": "Je suis victime ou témoin de discrimination : que faire ?",
-      "reference_legale": "Lois antidiscrimination — missions d'Unia",
+      "reference_legale": "Loi du 10 mai 2007 (anti-discrimination) ; loi antiracisme du 30 juillet 1981 — missions d'Unia",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
@@ -720,6 +863,50 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "divorce",
+      "id": "DIV-TYPES-001",
+      "sujet": "Quelles sont les façons de divorcer en Belgique ?",
+      "reference_legale": "Code civil — divorce par consentement mutuel et pour désunion irrémédiable (art. 229 et suivants)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "divorce",
+      "id": "DIV-ENFANTS-001",
+      "sujet": "Et les enfants : garde et pension alimentaire ?",
+      "reference_legale": "Code civil — obligation d'entretien des enfants (art. 203) et hébergement ; loi du 21 février 2003 créant le Service des créances alimentaires (SECAL)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "documents_identite",
+      "id": "DOC-PERTE-VOL-001",
+      "sujet": "J'ai perdu (ou on m'a volé) ma carte d'identité, que faire ?",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "documents_identite",
+      "id": "DOC-PERMIS-001",
+      "sujet": "Comment déclarer la perte de mon permis de conduire ou demander un passeport ?",
+      "reference_legale": "Arrêté royal du 23 mars 1998 relatif au permis de conduire ; réglementation sur les passeports (SPF Affaires étrangères)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {
@@ -775,6 +962,39 @@
       "sources": 3,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "eau",
+      "id": "EAU-COUPURE-001",
+      "sujet": "Mon distributeur peut-il me couper l'eau si je n'ai pas payé ?",
+      "reference_legale": "Code de l'eau (Région wallonne) — Règlement général de distribution d'eau en Région wallonne",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "eau",
+      "id": "EAU-RAPPEL-001",
+      "sujet": "Doit-on me faire payer des frais dès le premier rappel ?",
+      "reference_legale": "Loi du 4 mai 2023 (livre XIX « Dettes du consommateur » du Code de droit économique)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "eau",
+      "id": "EAU-FONDS-SOCIAL-001",
+      "sujet": "Je n'arrive pas à payer ma facture d'eau, existe-t-il une aide ?",
+      "reference_legale": "Code de l'eau (Région wallonne) — Fonds social de l'eau",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {
@@ -944,6 +1164,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "expulsion",
+      "id": "EXPUL-PROCEDURE-001",
+      "sujet": "Mon propriétaire peut-il m'expulser du jour au lendemain ?",
+      "reference_legale": "Code judiciaire — procédure devant le juge de paix (art. 1344bis et suivants)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "expulsion",
+      "id": "EXPUL-HIVER-001",
+      "sujet": "Peut-on m'expulser en plein hiver ?",
+      "reference_legale": "Code judiciaire (pouvoir du juge de paix de surseoir) et réglementations régionales du logement",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "famille",
       "id": "FAM-AUTORITE-001",
       "sujet": "Après une séparation, qui exerce l'autorité parentale ?",
@@ -995,6 +1237,28 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "fraude_arnaques",
+      "id": "FRAUDE-VICTIME-001",
+      "sujet": "J'ai été victime d'une arnaque (paiement, données envoyées). Que faire en urgence ?",
+      "reference_legale": "Code pénal — escroquerie (art. 496) et fraude informatique (art. 504quater)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "fraude_arnaques",
+      "id": "FRAUDE-PHISHING-001",
+      "sujet": "J'ai reçu un message suspect (banque, livraison, administration). Comment réagir ?",
+      "reference_legale": "Code pénal — fraude informatique (art. 504quater) et faux informatique (art. 210bis)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {
@@ -1186,6 +1450,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "incapacite_travail",
+      "id": "INCAP-DECLARER-001",
+      "sujet": "Je suis malade et ne peux pas travailler : que dois-je faire ?",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (assurance indemnités) ; loi du 3 juillet 1978 relative aux contrats de travail",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "incapacite_travail",
+      "id": "INCAP-REVENU-001",
+      "sujet": "Vais-je continuer à être payé pendant ma maladie ?",
+      "reference_legale": "Loi du 3 juillet 1978 (salaire garanti) ; loi coordonnée du 14 juillet 1994 (indemnités d'incapacité)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "independant",
       "id": "IND-DEMARRER-001",
       "sujet": "Quelles sont les étapes pour devenir indépendant ?",
@@ -1208,6 +1494,72 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "independant",
+      "id": "IND-NORMES-001",
+      "sujet": "Comment être sûr d'être aux normes pour me lancer ? (la check-list légale)",
+      "reference_legale": "Loi du 16 janvier 2003 portant création d'une Banque-Carrefour des Entreprises ; Code de la TVA ; arrêté royal n° 38 du 27 juillet 1967 (statut social des indépendants)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "independant",
+      "id": "IND-RISQUES-001",
+      "sujet": "Quels sont les risques quand on se lance, et comment les limiter ?",
+      "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (statut social, cotisations) ; loi du 22 décembre 2016 instaurant un droit passerelle ; Code de droit économique (formes de sociétés)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "independant",
+      "id": "IND-AIDE-001",
+      "sujet": "J'ai peur d'échouer : qui peut m'aider, et comment ne pas lâcher prise ?",
+      "reference_legale": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "independant",
+      "id": "IND-BUSINESSPLAN-001",
+      "sujet": "Comment faire un business plan (et un plan financier) ?",
+      "reference_legale": "Code des sociétés et des associations (plan financier obligatoire à la constitution d'une SRL, art. 5:4)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "independant",
+      "id": "IND-CONSEILS-JURIDIQUES-001",
+      "sujet": "Quels points juridiques vérifier pour être bien protégé ?",
+      "reference_legale": "Code des sociétés et des associations ; loi du 2 août 2002 concernant la lutte contre le retard de paiement dans les transactions commerciales ; loi du 25 avril 2007 (insaisissabilité de la résidence principale de l'indépendant) ; Règlement (UE) 2016/679 (RGPD)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "independant",
+      "id": "IND-ERREURS-001",
+      "sujet": "Quelles sont les erreurs à ne pas faire quand on se lance ?",
+      "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (statut social, affiliation et cotisations) ; Code de la TVA ; loi du 16 janvier 2003 (Banque-Carrefour des Entreprises)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "job_etudiant",
       "id": "ETU-CONTRAT-001",
       "sujet": "Faut-il un contrat pour un job étudiant ?",
@@ -1222,7 +1574,7 @@
       "module": "job_etudiant",
       "id": "ETU-QUOTA-001",
       "sujet": "Combien d'heures puis-je travailler à cotisations réduites ?",
-      "reference_legale": "Réglementation ONSS — cotisation de solidarité sur le travail étudiant (quota d'heures)",
+      "reference_legale": "Arrêté royal du 28 novembre 1969 (exécution ONSS) — cotisation de solidarité sur le travail étudiant",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
@@ -1332,7 +1684,7 @@
       "module": "logement_social",
       "id": "LOGSOC-INSCRIPTION-001",
       "sujet": "Comment s'inscrire pour un logement social ?",
-      "reference_legale": "Réglementation régionale — inscription auprès des sociétés de logement social",
+      "reference_legale": "Code wallon de l'Habitation durable ; Code bruxellois du Logement — inscription auprès des sociétés de logement",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
@@ -1343,10 +1695,76 @@
       "module": "logement_social",
       "id": "LOGSOC-ATTENTE-001",
       "sujet": "Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?",
-      "reference_legale": "Réglementation régionale — attribution et renouvellement des candidatures",
+      "reference_legale": "Code wallon de l'Habitation durable ; Code bruxellois du Logement — attribution et renouvellement des candidatures",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "mobilite_douce",
+      "id": "MOB-TROT-AGE-001",
+      "sujet": "À partir de quel âge peut-on rouler en trottinette électrique ?",
+      "reference_legale": "Arrêté royal du 1er décembre 1975 (Code de la route) — engins de déplacement motorisés",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "mobilite_douce",
+      "id": "MOB-TROT-OU-001",
+      "sujet": "Où ai-je le droit de rouler en trottinette électrique ?",
+      "reference_legale": "Arrêté royal du 1er décembre 1975 (Code de la route) — usagers assimilés aux cyclistes",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "mobilite_douce",
+      "id": "MOB-TROT-ASSUR-001",
+      "sujet": "Faut-il une assurance pour ma trottinette électrique ?",
+      "reference_legale": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "naissance",
+      "id": "NAIS-DECLARATION-001",
+      "sujet": "Dans quel délai dois-je déclarer la naissance de mon enfant ?",
+      "reference_legale": "Code civil — déclaration de naissance à l'officier de l'état civil",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "naissance",
+      "id": "NAIS-RECONNAISSANCE-001",
+      "sujet": "Mon couple n'est pas marié : comment reconnaître mon enfant ?",
+      "reference_legale": "Code civil — établissement de la filiation par reconnaissance",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "naissance",
+      "id": "NAIS-CONGE-001",
+      "sujet": "Ai-je droit à un congé à la naissance de mon enfant ?",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail — congé de naissance ; réglementation de l'assurance indemnités (INAMI/mutualité)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {
@@ -1406,6 +1824,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "saisies_huissier",
+      "id": "SAIS-QUOTITE-001",
+      "sujet": "Un huissier peut-il prendre tout mon salaire ?",
+      "reference_legale": "Code judiciaire — quotité saisissable (art. 1409 et s.) et sommes insaisissables (art. 1410)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "saisies_huissier",
+      "id": "SAIS-COMPTE-001",
+      "sujet": "Et l'argent sur mon compte en banque, est-il protégé ?",
+      "reference_legale": "Code judiciaire — protection des sommes insaisissables versées sur compte (art. 1411bis et s.)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "sante_mentale",
       "id": "PSY-REMBOURSEMENT-001",
       "sujet": "L'aide psychologique est-elle remboursée ?",
@@ -1420,7 +1860,7 @@
       "module": "sante_mentale",
       "id": "PSY-ECOUTE-001",
       "sujet": "Je ne vais pas bien : à qui parler tout de suite ?",
-      "reference_legale": "Dispositifs publics d'aide en santé mentale et de prévention",
+      "reference_legale": "Convention INAMI relative aux soins de santé mentale ; dispositifs publics de prévention",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
@@ -1637,6 +2077,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "transport_passagers",
+      "id": "TRANS-TRAIN-RETARD-001",
+      "sujet": "Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?",
+      "reference_legale": "Règlement (UE) 2021/782 relatif aux droits et obligations des voyageurs ferroviaires",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "transport_passagers",
+      "id": "TRANS-AVION-001",
+      "sujet": "Mon vol est annulé, retardé ou refusé à l'embarquement, quels sont mes droits ?",
+      "reference_legale": "Règlement (CE) 261/2004 (indemnisation et assistance des passagers aériens)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "travail_emploi",
       "id": "TRAV-PREAVIS-001",
       "sujet": "Quel délai de préavis en cas de licenciement, et sous quelle forme ?",
@@ -1732,6 +2194,39 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "violences_conjugales",
+      "id": "VIOL-URGENCE-001",
+      "sujet": "Je subis des violences de mon partenaire, qui appeler ?",
+      "reference_legale": "Code pénal — coups et blessures volontaires, menaces ; intervention policière",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "violences_conjugales",
+      "id": "VIOL-ELOIGNEMENT-001",
+      "sujet": "Peut-on obliger l'auteur des violences à quitter le domicile ?",
+      "reference_legale": "Loi du 15 mai 2012 relative à l'interdiction temporaire de résidence en cas de violence domestique",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "violences_conjugales",
+      "id": "VIOL-PREUVES-001",
+      "sujet": "Comment me protéger et constituer un dossier ?",
+      "reference_legale": "Code pénal — infractions de violence ; Code d'instruction criminelle (dépôt de plainte)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {

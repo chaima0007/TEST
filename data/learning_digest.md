@@ -3,15 +3,23 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **169**
+- Savoirs enregistrés : **214**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `3bb7f8a083cc6194…`)
+- Certification système : **PASS** (sceau `543acb5e453fcff0…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
+- ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
+  Réf : Loi du 10 avril 1971 sur les accidents du travail · sources off. : 2 · revu : 2026-06-27
+- ✅ **Ma maladie est liée à mon travail : ai-je droit à une indemnité ?**  
+  Réf : Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles · sources off. : 2 · revu : 2026-06-27
 - ✅ **Qu'est-ce qu'un aidant proche et comment être reconnu ?**  
   Réf : Loi relative à la reconnaissance de l'aidant proche et à l'octroi de droits sociaux · sources off. : 1 · revu : 2026-06-26
 - ✅ **Ai-je droit à un congé en tant qu'aidant proche ?**  
   Réf : Loi du 17 mai 2019 reconnaissant les aidants proches ; arrêté royal relatif au congé pour aidants proches (interruption de carrière) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je n'ai pas les moyens de payer un avocat. Puis-je en avoir un gratuitement ?**  
+  Réf : Code judiciaire — aide juridique de deuxième ligne (art. 508/1 et suivants) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment obtenir cet avocat, et quels documents apporter ?**  
+  Réf : Code judiciaire — aide juridique (art. 508/1 et s.) et assistance judiciaire (art. 664 et s.) · sources off. : 1 · revu : 2026-06-27
 - ✅ **J'ai faim / je n'ai plus de quoi manger : où aller ?**  
   Réf : Loi organique des CPAS du 8 juillet 1976 — droit à l'aide sociale · sources off. : 1 · revu : 2026-06-26
 - ✅ **Je n'ai pas (ou plus) de logement : où aller ?**  
@@ -23,9 +31,9 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
 - ✅ **Je me sens en danger : où aller (selon mon âge / ma situation) ?**  
   Réf : Code pénal (protection des personnes) ; arrêté royal relatif aux numéros d'urgence (112/101) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Qui a droit aux allocations familiales et qui peut les demander ?**  
-  Réf : Décrets régionaux sur les prestations familiales (régionalisation depuis 2019) · sources off. : 1 · revu : 2026-06-26
+  Réf : Décret régional sur les prestations familiales (Code wallon ; ordonnance bruxelloise ; décret flamand Groeipakket) — régionalisation depuis 2019 · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant, et jusqu'à quel âge ?**  
-  Réf : Décrets régionaux sur les prestations familiales (montants et suppléments) · sources off. : 2 · revu : 2026-06-26
+  Réf : Décret régional sur les prestations familiales (montants et suppléments) — Code wallon / ordonnance bruxelloise / décret flamand · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont mes devoirs quand j'ai un animal ?**  
   Réf : Code wallon du Bien-être des animaux (décret du 4 octobre 2018) ; codes régionaux équivalents · sources off. : 2 · revu : 2026-06-26
 - ✅ **Dois-je identifier et enregistrer mon chien ou mon chat ?**  
@@ -92,6 +100,20 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?**  
   Réf : Décret wallon relatif à la performance énergétique des bâtiments (PEB) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Une banque peut-elle me refuser un compte ? Ai-je droit à un compte ?**  
+  Réf : Code de droit économique, livre VII — service bancaire de base · sources off. : 2 · revu : 2026-06-27
+- ✅ **J'ai un litige avec ma banque, à qui m'adresser ?**  
+  Réf : Code de droit économique, livre VII et livre XVI (règlement extrajudiciaire des litiges de consommation) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?**  
+  Réf : Loi du 4 août 1996 relative au bien-être des travailleurs (volet risques psychosociaux : stress, burnout) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Je me sens harcelé·e au travail mais je n'ose rien dire. Que puis-je faire ?**  
+  Réf : Loi du 4 août 1996 relative au bien-être des travailleurs — protection contre le harcèlement et les risques psychosociaux · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment mettre un frein avant de craquer, et où trouver du soutien ?**  
+  Réf : Loi du 4 août 1996 relative au bien-être des travailleurs ; convention INAMI relative à l'accompagnement psychologique de première ligne · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment demander mes allocations de chômage ?**  
+  Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage · sources off. : 1 · revu : 2026-06-27
+- ✅ **Si je démissionne, ai-je quand même droit au chômage ?**  
+  Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage volontaire et sanctions) · sources off. : 1 · revu : 2026-06-27
 - ✅ **J'ai un accident de la route : que dois-je faire ?**  
   Réf : Arrêté royal du 1er décembre 1975 portant règlement général sur la police de la circulation routière (code de la route) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Le constat à l'amiable, comment ça marche ?**  
@@ -132,12 +154,24 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — acte/certificat d'hérédité ; règles de déblocage des comptes après décès · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quels organismes prévenir, et dans quels délais ?**  
   Réf : Code des droits de succession (déclaration) ; obligations contractuelles diverses · sources off. : 1 · revu : 2026-06-26
+- ✅ **Que risque-t-on pour un dépôt sauvage de déchets ?**  
+  Réf : Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets (sanctions administratives) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Suis-je obligé de trier mes déchets ?**  
+  Réf : Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets — obligation de tri · sources off. : 1 · revu : 2026-06-27
 - ✅ **Qu'est-ce qu'une discrimination interdite ?**  
   Réf : Loi du 10 mai 2007 (anti-discrimination) ; loi antiracisme du 30 juillet 1981 ; loi 'genre' du 10 mai 2007 · sources off. : 2 · revu : 2026-06-26
 - ✅ **Je suis victime ou témoin de discrimination : que faire ?**  
-  Réf : Lois antidiscrimination — missions d'Unia · sources off. : 1 · revu : 2026-06-26
+  Réf : Loi du 10 mai 2007 (anti-discrimination) ; loi antiracisme du 30 juillet 1981 — missions d'Unia · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quels recours et quelles réparations ?**  
   Réf : Loi du 10 mai 2007 — sanctions civiles, indemnité forfaitaire et délais de prescription · sources off. : 2 · revu : 2026-06-26
+- ✅ **Quelles sont les façons de divorcer en Belgique ?**  
+  Réf : Code civil — divorce par consentement mutuel et pour désunion irrémédiable (art. 229 et suivants) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Et les enfants : garde et pension alimentaire ?**  
+  Réf : Code civil — obligation d'entretien des enfants (art. 203) et hébergement ; loi du 21 février 2003 créant le Service des créances alimentaires (SECAL) · sources off. : 2 · revu : 2026-06-27
+- ✅ **J'ai perdu (ou on m'a volé) ma carte d'identité, que faire ?**  
+  Réf : Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment déclarer la perte de mon permis de conduire ou demander un passeport ?**  
+  Réf : Arrêté royal du 23 mars 1998 relatif au permis de conduire ; réglementation sur les passeports (SPF Affaires étrangères) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Les drogues sont-elles interdites en Belgique, et que risque-t-on ?**  
   Réf : Loi du 24 février 1921 sur les stupéfiants ; législation et directives relatives au cannabis · sources off. : 1 · revu : 2026-06-26
 - ✅ **Et pour les mineurs ?**  
@@ -148,6 +182,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 24 février 1921 sur les stupéfiants (cadre) ; dispositifs régionaux d'aide en assuétudes · sources off. : 1 · revu : 2026-06-26
 - ✅ **Des témoignages réels de personnes qui s'en sont sorties ?**  
   Réf : Loi du 24 février 1921 sur les stupéfiants (cadre) ; dispositifs de réduction des risques · sources off. : 1 · revu : 2026-06-26
+- ✅ **Mon distributeur peut-il me couper l'eau si je n'ai pas payé ?**  
+  Réf : Code de l'eau (Région wallonne) — Règlement général de distribution d'eau en Région wallonne · sources off. : 2 · revu : 2026-06-27
+- ✅ **Doit-on me faire payer des frais dès le premier rappel ?**  
+  Réf : Loi du 4 mai 2023 (livre XIX « Dettes du consommateur » du Code de droit économique) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Je n'arrive pas à payer ma facture d'eau, existe-t-il une aide ?**  
+  Réf : Code de l'eau (Région wallonne) — Fonds social de l'eau · sources off. : 2 · revu : 2026-06-27
 - ✅ **Je n'arrive pas à payer mes factures d'énergie : que faire ?**  
   Réf : Décret régional relatif au marché de l'électricité et du gaz ; arrêté relatif aux clients protégés (procédure de défaut de paiement) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Puis-je changer de fournisseur d'énergie, et à quelles conditions ?**  
@@ -178,6 +218,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 15 décembre 1980 — regroupement familial · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment demander l'asile (protection internationale) ?**  
   Réf : Loi du 15 décembre 1980 — protection internationale ; compétence du CGRA · sources off. : 2 · revu : 2026-06-26
+- ✅ **Mon propriétaire peut-il m'expulser du jour au lendemain ?**  
+  Réf : Code judiciaire — procédure devant le juge de paix (art. 1344bis et suivants) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Peut-on m'expulser en plein hiver ?**  
+  Réf : Code judiciaire (pouvoir du juge de paix de surseoir) et réglementations régionales du logement · sources off. : 1 · revu : 2026-06-27
 - ✅ **Après une séparation, qui exerce l'autorité parentale ?**  
   Réf : Code civil — autorité parentale (exercice conjoint) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment est fixé l'hébergement (la « garde ») des enfants ?**  
@@ -188,6 +232,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — pension alimentaire après divorce (état de besoin) ; obligation d'entretien des enfants · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les grandes voies de divorce en Belgique ?**  
   Réf : Code civil — divorce par consentement mutuel et pour désunion irrémédiable ; Code judiciaire (tribunal de la famille) · sources off. : 1 · revu : 2026-06-26
+- ✅ **J'ai été victime d'une arnaque (paiement, données envoyées). Que faire en urgence ?**  
+  Réf : Code pénal — escroquerie (art. 496) et fraude informatique (art. 504quater) · sources off. : 2 · revu : 2026-06-27
+- ✅ **J'ai reçu un message suspect (banque, livraison, administration). Comment réagir ?**  
+  Réf : Code pénal — fraude informatique (art. 504quater) et faux informatique (art. 210bis) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment la Belgique est-elle organisée (les niveaux de pouvoir) ?**  
   Réf : Constitution belge — État fédéral, Régions et Communautés · sources off. : 2 · revu : 2026-06-26
 - ✅ **C'est quoi les « trois pouvoirs » ?**  
@@ -222,14 +270,30 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code des impôts sur les revenus 1992 — proposition de déclaration simplifiée · sources off. : 2 · revu : 2026-06-26
 - ✅ **Que se passe-t-il si je ne rentre pas ma déclaration ?**  
   Réf : Code des impôts sur les revenus 1992 — taxation d'office, accroissements et amendes · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je suis malade et ne peux pas travailler : que dois-je faire ?**  
+  Réf : Loi coordonnée du 14 juillet 1994 (assurance indemnités) ; loi du 3 juillet 1978 relative aux contrats de travail · sources off. : 2 · revu : 2026-06-27
+- ✅ **Vais-je continuer à être payé pendant ma maladie ?**  
+  Réf : Loi du 3 juillet 1978 (salaire garanti) ; loi coordonnée du 14 juillet 1994 (indemnités d'incapacité) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Quelles sont les étapes pour devenir indépendant ?**  
   Réf : Code de droit économique (BCE) ; statut social des indépendants · sources off. : 2 · revu : 2026-06-26
 - ✅ **Dois-je payer des cotisations sociales et m'affilier quelque part ?**  
   Réf : Arrêté royal n° 38 — statut social des travailleurs indépendants · sources off. : 2 · revu : 2026-06-26
+- ✅ **Comment être sûr d'être aux normes pour me lancer ? (la check-list légale)**  
+  Réf : Loi du 16 janvier 2003 portant création d'une Banque-Carrefour des Entreprises ; Code de la TVA ; arrêté royal n° 38 du 27 juillet 1967 (statut social des indépendants) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Quels sont les risques quand on se lance, et comment les limiter ?**  
+  Réf : Arrêté royal n° 38 du 27 juillet 1967 (statut social, cotisations) ; loi du 22 décembre 2016 instaurant un droit passerelle ; Code de droit économique (formes de sociétés) · sources off. : 2 · revu : 2026-06-27
+- ✅ **J'ai peur d'échouer : qui peut m'aider, et comment ne pas lâcher prise ?**  
+  Réf : Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment faire un business plan (et un plan financier) ?**  
+  Réf : Code des sociétés et des associations (plan financier obligatoire à la constitution d'une SRL, art. 5:4) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Quels points juridiques vérifier pour être bien protégé ?**  
+  Réf : Code des sociétés et des associations ; loi du 2 août 2002 concernant la lutte contre le retard de paiement dans les transactions commerciales ; loi du 25 avril 2007 (insaisissabilité de la résidence principale de l'indépendant) ; Règlement (UE) 2016/679 (RGPD) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Quelles sont les erreurs à ne pas faire quand on se lance ?**  
+  Réf : Arrêté royal n° 38 du 27 juillet 1967 (statut social, affiliation et cotisations) ; Code de la TVA ; loi du 16 janvier 2003 (Banque-Carrefour des Entreprises) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Faut-il un contrat pour un job étudiant ?**  
   Réf : Loi du 3 juillet 1978 relative aux contrats de travail — contrat d'occupation d'étudiant · sources off. : 2 · revu : 2026-06-26
 - ✅ **Combien d'heures puis-je travailler à cotisations réduites ?**  
-  Réf : Réglementation ONSS — cotisation de solidarité sur le travail étudiant (quota d'heures) · sources off. : 2 · revu : 2026-06-26
+  Réf : Arrêté royal du 28 novembre 1969 (exécution ONSS) — cotisation de solidarité sur le travail étudiant · sources off. : 2 · revu : 2026-06-26
 - ✅ **Travailler peut-il impacter mes allocations familiales ou mon statut fiscal ?**  
   Réf : Réglementation sur les allocations familiales et le Code des impôts sur les revenus (personne à charge) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Puis-je avoir un avocat gratuit ou moins cher (aide juridique de 2ᵉ ligne, ex « pro deo ») ?**  
@@ -249,9 +313,21 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
 - ✅ **Qui peut demander un logement social ?**  
   Réf : Réglementation régionale du logement social (Code wallon de l'Habitation durable ; Code bruxellois du Logement) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment s'inscrire pour un logement social ?**  
-  Réf : Réglementation régionale — inscription auprès des sociétés de logement social · sources off. : 1 · revu : 2026-06-26
+  Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — inscription auprès des sociétés de logement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?**  
-  Réf : Réglementation régionale — attribution et renouvellement des candidatures · sources off. : 2 · revu : 2026-06-26
+  Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — attribution et renouvellement des candidatures · sources off. : 2 · revu : 2026-06-26
+- ✅ **À partir de quel âge peut-on rouler en trottinette électrique ?**  
+  Réf : Arrêté royal du 1er décembre 1975 (Code de la route) — engins de déplacement motorisés · sources off. : 1 · revu : 2026-06-27
+- ✅ **Où ai-je le droit de rouler en trottinette électrique ?**  
+  Réf : Arrêté royal du 1er décembre 1975 (Code de la route) — usagers assimilés aux cyclistes · sources off. : 1 · revu : 2026-06-27
+- ✅ **Faut-il une assurance pour ma trottinette électrique ?**  
+  Réf : Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs · sources off. : 1 · revu : 2026-06-27
+- ✅ **Dans quel délai dois-je déclarer la naissance de mon enfant ?**  
+  Réf : Code civil — déclaration de naissance à l'officier de l'état civil · sources off. : 2 · revu : 2026-06-27
+- ✅ **Mon couple n'est pas marié : comment reconnaître mon enfant ?**  
+  Réf : Code civil — établissement de la filiation par reconnaissance · sources off. : 2 · revu : 2026-06-27
+- ✅ **Ai-je droit à un congé à la naissance de mon enfant ?**  
+  Réf : Loi du 3 juillet 1978 relative aux contrats de travail — congé de naissance ; réglementation de l'assurance indemnités (INAMI/mutualité) · sources off. : 2 · revu : 2026-06-27
 - ✅ **À quel âge puis-je prendre ma pension ?**  
   Réf : Arrêté royal n° 50 du 24 octobre 1967 relatif à la pension de retraite et de survie des travailleurs salariés ; législation sur l'âge légal de la pension · sources off. : 2 · revu : 2026-06-26
 - ✅ **Dois-je demander ma pension, et comment ?**  
@@ -262,10 +338,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — protection judiciaire des majeurs (administration de biens et de la personne) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Qui peut demander la mise sous administration, et comment ?**  
   Réf : Code civil — demande de protection judiciaire ; mandat de protection extrajudiciaire · sources off. : 1 · revu : 2026-06-26
+- ✅ **Un huissier peut-il prendre tout mon salaire ?**  
+  Réf : Code judiciaire — quotité saisissable (art. 1409 et s.) et sommes insaisissables (art. 1410) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Et l'argent sur mon compte en banque, est-il protégé ?**  
+  Réf : Code judiciaire — protection des sommes insaisissables versées sur compte (art. 1411bis et s.) · sources off. : 1 · revu : 2026-06-27
 - ✅ **L'aide psychologique est-elle remboursée ?**  
   Réf : Convention INAMI — soins psychologiques de première ligne via les réseaux de santé mentale · sources off. : 2 · revu : 2026-06-26
 - ✅ **Je ne vais pas bien : à qui parler tout de suite ?**  
-  Réf : Dispositifs publics d'aide en santé mentale et de prévention · sources off. : 2 · revu : 2026-06-26
+  Réf : Convention INAMI relative aux soins de santé mentale ; dispositifs publics de prévention · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont mes droits en tant que patient ?**  
   Réf : Loi du 22 août 2002 relative aux droits du patient (modifiée le 6 février 2024) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Peut-on me soigner sans mon accord ?**  
@@ -304,6 +384,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code de droit économique — communications électroniques ; missions du Service de médiation télécom · sources off. : 1 · revu : 2026-06-26
 - ✅ **Puis-je changer d'opérateur ou résilier facilement ?**  
   Réf : Code de droit économique — communications électroniques (résiliation, portabilité du numéro) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?**  
+  Réf : Règlement (UE) 2021/782 relatif aux droits et obligations des voyageurs ferroviaires · sources off. : 2 · revu : 2026-06-27
+- ✅ **Mon vol est annulé, retardé ou refusé à l'embarquement, quels sont mes droits ?**  
+  Réf : Règlement (CE) 261/2004 (indemnisation et assistance des passagers aériens) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Quel délai de préavis en cas de licenciement, et sous quelle forme ?**  
   Réf : Loi du 3 juillet 1978 relative aux contrats de travail ; régime des délais de préavis (réforme du statut unique, 1er janvier 2014) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Qu'est-ce que le C4 et pourquoi est-il important ?**  
@@ -322,6 +406,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : RGPD — droit à l'effacement (art. 17) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Une organisation ne respecte pas mes droits : que faire ?**  
   Réf : RGPD et loi du 30 juillet 2018 — compétence de l'Autorité de protection des données · sources off. : 2 · revu : 2026-06-26
+- ✅ **Je subis des violences de mon partenaire, qui appeler ?**  
+  Réf : Code pénal — coups et blessures volontaires, menaces ; intervention policière · sources off. : 2 · revu : 2026-06-27
+- ✅ **Peut-on obliger l'auteur des violences à quitter le domicile ?**  
+  Réf : Loi du 15 mai 2012 relative à l'interdiction temporaire de résidence en cas de violence domestique · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment me protéger et constituer un dossier ?**  
+  Réf : Code pénal — infractions de violence ; Code d'instruction criminelle (dépôt de plainte) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Conflit avec un voisin : par quoi commencer ?**  
   Réf : Principe des troubles de voisinage (Code civil) ; médiation locale · sources off. : 1 · revu : 2026-06-26
 - ✅ **Mon voisin fait trop de bruit : que faire ?**  

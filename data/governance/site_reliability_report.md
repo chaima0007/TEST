@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-27. Mesure la présence et la qualité des sources citées dans les pages.*
 
-**Liens sources : 195 · officiels : 113 (58%) · institutionnels : 22 · hors liste : 60**
+**Liens sources : 203 · officiels : 121 (60%) · institutionnels : 19 · hors liste : 63**
 **Pages de contenu sans aucune source : 322**
 
 ## Par section
@@ -10,6 +10,7 @@
 | Section | Pages | Pages avec source | Off. | Inst. | Hors liste |
 |---|---|---|---|---|---|
 | (racine) | 4 | 0 | 0 | 0 | 0 |
+| appels-projets | 1 | 1 | 5 | 0 | 3 |
 | assistant | 1 | 0 | 0 | 0 | 0 |
 | assistant-reglementaire | 1 | 0 | 0 | 0 | 0 |
 | cgv | 1 | 0 | 0 | 0 | 0 |
@@ -20,7 +21,7 @@
 | espace | 1 | 0 | 0 | 0 | 0 |
 | la-loi-avec-moi-france | 12 | 7 | 0 | 0 | 33 |
 | login | 1 | 0 | 0 | 0 | 0 |
-| loi-avec-moi | 38 | 29 | 90 | 17 | 22 |
+| loi-avec-moi | 38 | 29 | 93 | 14 | 22 |
 | mentions-legales | 1 | 0 | 0 | 0 | 0 |
 | notre-force | 1 | 0 | 0 | 0 | 0 |
 | simulation | 1 | 0 | 0 | 0 | 0 |
@@ -118,6 +119,9 @@
 - anil.org (2)
 - code.travail.gouv.fr (2)
 - cnb.avocat.fr (2)
+- digitalwallonia.be (1)
+- innoviris.brussels (1)
+- vlaio.be (1)
 - ${competitor.website}`} (1)
 - federaalombudsman.be (1)
 - consumentenombudsdienst.be (1)
