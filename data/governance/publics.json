@@ -10,7 +10,8 @@
         "harcelement_violences",
         "drogues_prevention",
         "justice_penal_acces",
-        "famille"
+        "famille",
+        "aide_urgence"
       ]
     },
     "adultes": {
@@ -30,7 +31,8 @@
         "citoyen_droits_devoirs",
         "aidants_proches",
         "vote_electoral",
-        "voisinage"
+        "voisinage",
+        "aide_urgence"
       ]
     }
   }
