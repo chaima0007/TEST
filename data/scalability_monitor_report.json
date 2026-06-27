@@ -66,6 +66,47 @@
       "statut": "OK"
     }
   ],
+  "latence_proxies": [
+    {
+      "plateforme": "Site (Next.js)",
+      "proxy": "Routes (coût de build/cold-start)",
+      "valeur": 366,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Données",
+      "proxy": "Plus gros JSON (coût de parse/SSR, lignes)",
+      "valeur": 265,
+      "statut": "OK"
+    }
+  ],
+  "cout": {
+    "devise": "EUR",
+    "periode": "mensuel",
+    "plateformes": {
+      "la_loi_avec_moi": {
+        "total_connu": 0,
+        "postes_manquants": [
+          "hebergement",
+          "base_de_donnees",
+          "nom_de_domaine",
+          "api_ia",
+          "autres"
+        ]
+      },
+      "caelum": {
+        "total_connu": 0,
+        "postes_manquants": [
+          "hebergement",
+          "base_de_donnees",
+          "nom_de_domaine",
+          "api_ia",
+          "autres"
+        ]
+      }
+    },
+    "postes_a_completer": 10
+  },
   "prevision": {
     "note": "rythme observé : 14.8 nouveau(x) module(s)/passage sur 4 passages",
     "runway_passages_avant_saturation_modules": 36

@@ -497,6 +497,24 @@
         "divorce"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "adoption",
+      "nom": "Adoption",
+      "statut": "couvert",
+      "modules": [
+        "adoption"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fin_de_vie",
+      "nom": "Fin de vie",
+      "statut": "couvert",
+      "modules": [
+        "fin_de_vie"
+      ],
+      "priorite": "haute"
     }
   ]
 }

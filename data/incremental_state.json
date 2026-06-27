@@ -1,6 +1,7 @@
 {
   "la_loi_avec_moi": {
     "accident_travail.json": "1b746a4e9bbcaaa52981e18cfc724c1ae722416c0dfc8b08ce8e2adfeaf8d0af",
+    "adoption.json": "760748ed65640363bc33558c1957f0c303f309b0e255c2f63964a26809b9ee3b",
     "aidants_proches.json": "3f207013be47a39d02bb702f5dd17c632aff95ebcddf661db9f9fcca8374a2fc",
     "aide_juridique.json": "0d198e25cc3afb274399e3fe34b1b6113025fb5da0dba199031aefec342af819",
     "aide_urgence.json": "e5d2536319a662a831ae9b0915ca7999b5121556ba7bb9fda7bae8a2535b1696",
@@ -31,6 +32,7 @@
     "etrangers.json": "9da5fe69f483958fcf03f50ea28e064b3c93565f68fe5e123e436ab8f2ea06b1",
     "expulsion.json": "b883bcb3d09d9fffaf72435bf7cead933c021a41eb3a6caf278116e9354cebf8",
     "famille.json": "9a5b9f70b2d2adc92e0a296568d1a08d408d0b3ea3fad09bd87af6512cb37fd5",
+    "fin_de_vie.json": "773c7238cc8b71e925c6753747a80bfebacc21ace50b0890c77291864b11883e",
     "fraude_arnaques.json": "8aaa944ffa9e01496e3cf481869ccd827c9a40d8a58c23e62cc435d3229fd01c",
     "gouvernement.json": "b32280b9392717d10254e73aecb3c6d7aedadf4d7ee814906f04a876348a0441",
     "handicap.json": "6f9d6888dd5b8940941d66ca6d1befcdaee2f2e0ba53dcd0e66a8d7beef14a47",

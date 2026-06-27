@@ -1,0 +1,47 @@
+{
+  "module": "fin_de_vie",
+  "titre": "Fin de vie — déclarations anticipées & droits",
+  "domaine": "Fin de vie",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 28 mai 2002 relative à l'euthanasie ; loi du 22 août 2002 relative aux droits du patient ; loi du 14 juin 2002 relative aux soins palliatifs",
+    "portee": "Exprimer ses volontés de fin de vie, refuser un traitement, accéder aux soins palliatifs",
+    "source_officielle": "https://www.health.belgium.be/fr/sante/prenez-soin-de-vous/debut-et-fin-de-vie/euthanasie"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Sujet sensible. Information générale, à jour à la date de revue. Pour vos volontés personnelles, parlez-en à votre médecin et, si besoin, faites-vous accompagner. Les démarches officielles se font selon les modèles légaux.",
+  "faits": [
+    {
+      "id": "FIN-DECLARATIONS-001",
+      "question": "Comment exprimer à l'avance mes volontés de fin de vie ?",
+      "reponse": "Vous pouvez rédiger des déclarations anticipées, valables juridiquement, tant que vous êtes capable de décider. Il en existe plusieurs : la déclaration anticipée d'euthanasie (selon un modèle légal, avec deux témoins, pour le cas où vous seriez inconscient de façon irréversible), la déclaration de refus de certains traitements (refus anticipé de soins), la désignation d'une personne de confiance/un représentant, ainsi que des volontés relatives au don d'organes, au don du corps ou aux funérailles. La déclaration anticipée d'euthanasie peut être enregistrée à la commune.",
+      "reference_legale": "Loi du 28 mai 2002 relative à l'euthanasie (déclaration anticipée) ; loi du 22 août 2002 relative aux droits du patient",
+      "contacts": [
+        {"nom": "Votre médecin", "pour": "information, volontés, accompagnement"},
+        {"nom": "Administration communale", "pour": "enregistrement de la déclaration anticipée d'euthanasie"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/euthanasie/declaration-anticipee-deuthanasie", "intitule": "SPF Santé publique — Déclaration anticipée d'euthanasie"},
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/formulaire-de-declaration-anticipee-relative-leuthanasie", "intitule": "SPF Santé publique — Formulaire officiel"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "FIN-REFUS-PALLIATIFS-001",
+      "question": "Puis-je refuser un traitement, et ai-je droit aux soins palliatifs ?",
+      "reponse": "Oui aux deux. Comme tout patient, vous avez le droit de refuser ou d'interrompre un traitement, même vital, après information claire : ce refus doit être respecté (vous pouvez le consigner par écrit). Et toute personne a droit aux soins palliatifs : un accompagnement qui vise le confort et la dignité (gestion de la douleur, soutien) en fin de vie, à l'hôpital, en maison de repos ou à domicile. Parlez-en tôt à votre médecin et à vos proches pour que vos volontés soient connues et respectées.",
+      "reference_legale": "Loi du 22 août 2002 relative aux droits du patient (consentement et refus de soins) ; loi du 14 juin 2002 relative aux soins palliatifs",
+      "contacts": [
+        {"nom": "Médecin / équipe de soins palliatifs", "pour": "accompagnement, gestion de la douleur"},
+        {"nom": "Plateforme de soins palliatifs de votre région", "pour": "soutien à domicile ou en institution"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/sante/prenez-soin-de-vous/debut-et-fin-de-vie/soins-palliatifs", "intitule": "SPF Santé publique — Soins palliatifs"},
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/sante/prenez-soin-de-vous/debut-et-fin-de-vie/euthanasie", "intitule": "SPF Santé publique — Fin de vie / euthanasie"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

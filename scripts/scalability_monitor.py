@@ -105,6 +105,40 @@ def charger(path, defaut):
         return defaut
 
 
+COST_MODEL = os.path.join(BASE, "data", "cost_model.json")
+
+
+def latence_proxies():
+    """Proxies de latence mesurables HORS-LIGNE (build/SSR/cold-start). La latence runtime
+    réelle est mesurée séparément par scripts/health-latency-monitor-agent.py (serveur requis)."""
+    routes = _compter("app", "page.tsx")
+    plus_gros_json = max(_max_lignes_json(os.path.join(BASE, "data", "belgium")),
+                         _max_lignes_json(os.path.join(BASE, "data", "caelum")))
+    return [
+        ("Site (Next.js)", "Routes (coût de build/cold-start)", routes, 380, 480),
+        ("Données", "Plus gros JSON (coût de parse/SSR, lignes)", plus_gros_json, 40000, 50000),
+    ]
+
+
+def cout():
+    """Lit le modèle de coût (data/cost_model.json). N'invente AUCUN montant : signale les postes
+    non renseignés au lieu de les remplir."""
+    m = charger(COST_MODEL, None)
+    if not m:
+        return None
+    res = {"devise": m.get("devise", "EUR"), "periode": m.get("periode", "mensuel"),
+           "plateformes": {}, "postes_a_completer": 0}
+    for plat, postes in m.get("plateformes", {}).items():
+        connus = [v for v in postes.values() if isinstance(v, (int, float))]
+        manquants = [k for k, v in postes.items() if not isinstance(v, (int, float))]
+        res["postes_a_completer"] += len(manquants)
+        res["plateformes"][plat] = {
+            "total_connu": round(sum(connus), 2) if connus else 0,
+            "postes_manquants": manquants,
+        }
+    return res
+
+
 def auto_test():
     assert statut(10, 5, 8) == "CRITIQUE"
     assert statut(6, 5, 8) == "ALERTE"
@@ -141,10 +175,21 @@ def main():
             restant = mod["seuil_critique"] - mod["valeur"]
             runway = int(restant / rythme) if restant > 0 else 0
 
+    # Latence (proxies hors-ligne)
+    lat = []
+    for plateforme, libelle, val, al, cr in latence_proxies():
+        st = statut(val, al, cr)
+        lat.append({"plateforme": plateforme, "proxy": libelle, "valeur": val, "statut": st})
+        if ordre[st] > ordre[pire]:
+            pire = st
+    cm = cout()
+
     rapport = {
         "protocole": "P-SCALABILITE",
         "verdict_global": pire,
         "dimensions": resultats,
+        "latence_proxies": lat,
+        "cout": cm,
         "prevision": {"note": note_prev, "runway_passages_avant_saturation_modules": runway},
     }
     json.dump(rapport, open(REPORT, "w"), ensure_ascii=False, indent=2)
@@ -158,6 +203,18 @@ def main():
     for r in resultats:
         icone = {"OK": "✅", "ALERTE": "🟠", "CRITIQUE": "🔴"}[r["statut"]]
         print(f"  {icone} {r['plateforme']:18s} {r['dimension']:32s} {r['valeur']:>6} / {r['seuil_critique']} ({r['pct_du_critique']}%)")
+    print("  — Latence (proxies build/SSR) —")
+    for l in lat:
+        icone = {"OK": "✅", "ALERTE": "🟠", "CRITIQUE": "🔴"}[l["statut"]]
+        print(f"    {icone} {l['plateforme']:18s} {l['proxy']:42s} {l['valeur']}")
+    print("    ↳ latence runtime réelle : scripts/health-latency-monitor-agent.py (serveur requis)")
+    if cm:
+        print("  — Coût (modèle, sans montants inventés) —")
+        for plat, info in cm["plateformes"].items():
+            manq = f"{len(info['postes_manquants'])} poste(s) à compléter" if info["postes_manquants"] else "complet"
+            print(f"    • {plat:18s} {info['total_connu']} {cm['devise']}/{cm['periode']} ({manq})")
+        if cm["postes_a_completer"]:
+            print(f"    ⚠️ {cm['postes_a_completer']} poste(s) de coût à renseigner avec les vraies factures.")
     print(f"  Prévision : {note_prev}")
     if runway is not None:
         print(f"  Marge avant saturation des modules : ~{runway} passages au rythme actuel.")

@@ -69,7 +69,9 @@
         "saisies_huissier",
         "expulsion",
         "accident_travail",
-        "divorce"
+        "divorce",
+        "adoption",
+        "fin_de_vie"
       ]
     }
   }
