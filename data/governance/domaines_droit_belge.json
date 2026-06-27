@@ -218,6 +218,15 @@
         "enseignement"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "animaux",
+      "nom": "Animaux",
+      "statut": "couvert",
+      "modules": [
+        "animaux"
+      ],
+      "priorite": "basse"
     }
   ]
 }
