@@ -257,6 +257,7 @@ export default function LoiAvecMoiPage() {
             <Link href="/loi-avec-moi/mes-droits-maintenant" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Mes droits</Link>
             <Link href="/loi-avec-moi/modeles" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Lettres</Link>
             <Link href="/loi-avec-moi/enfants-places" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Enfants placés</Link>
+            <Link href="/base-juridique" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Toutes mes réponses</Link>
           </div>
         </div>
       </header>
