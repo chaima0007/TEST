@@ -2,15 +2,15 @@
   "fichier": "Point de reprise — où on en est",
   "but": "Permettre de TOUJOURS reprendre exactement où on s'est arrêté, même après un redémarrage du conteneur. Mis à jour au fur et à mesure.",
   "derniere_maj": "2026-06-27",
-  "focus_actuel": "Enrichir le contenu (domaine Travail), puis versions néerlandaises.",
+  "focus_actuel": "Consolider sur le GRAND site Next.js (Belgique FR+NL, i18n, scalable). Fiabiliser son contenu. Pas de doublon.",
   "fait_recemment": [
-    "Domaine Harcèlement & violences (5 faits sourcés, contacts d'urgence)",
-    "Base unique : catalogue central + taxonomie des domaines du droit belge",
-    "Crédibilité : textes de loi officiels (liens Justel vérifiés) + page dédiée",
-    "Lexique en langage clair (26 termes) + page Lexique",
-    "Système de reprise + sauvegarde (ce point)"
+    "Domaine Travail & emploi (5 faits sourcés)",
+    "DÉCOUVERTE: le grand site Next.js (app/) est le vrai produit (31 domaines FR + NL + France)",
+    "Audit de fiabilité du grand site (56% sources officielles après enrichissement whitelist)",
+    "COPYRIGHT.md (© La Loi Avec Moi, auteure Chaima Mhadbi)",
+    "Veille juridique (s'ajuster aux changements de loi)"
   ],
-  "prochaine_etape": "1) Créer le module Travail & emploi (sourcé). 2) Démarrer les versions NL (interface d'abord). 3) Avancer sur le projet competeiq.",
+  "prochaine_etape": "1) Consolider: faire du grand site le produit unique (Belgique FR+NL), brancher la base sourcée + protocoles. 2) Analytics de visite (attend compte Chaima). 3) Compléter NL. France = APRÈS les projets belges.",
   "projets": {
     "loi_avec_moi": {
       "etat": "actif — site 12 pages, base sourcée, accessible",
@@ -22,5 +22,17 @@
       "prochaine_etape": "vérifier la santé (build/tests) et proposer une amélioration sûre"
     }
   },
-  "regle_or": "Commit + push après CHAQUE étape. Le remote est le filet. En cas de doute, lire ce fichier et data/REPRISE.md."
+  "regle_or": "Commit + push après CHAQUE étape. Le remote est le filet. En cas de doute, lire ce fichier et data/REPRISE.md.",
+  "decisions_validees": {
+    "consolidation": "Grand site = produit unique. On arrête le doublon statique.",
+    "perimetre": "Belgique d'abord (FR+NL), architecture i18n prête pour toutes les langues, scalable (millions de visiteurs).",
+    "france": "À faire une fois les projets belges finis.",
+    "audit_existant": "Oui — fiabiliser le contenu du grand site."
+  },
+  "en_attente_de_chaima": [
+    "Compte analytics (Plausible/Matomo/Vercel) pour les statistiques de visite",
+    "Dépôt de marque BOIP (nom/logo)",
+    "Clés Stripe (paiement) le moment venu",
+    "Hébergement/domaine"
+  ]
 }
