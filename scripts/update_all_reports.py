@@ -44,6 +44,7 @@ ETAPES = [
     ("Contrôle de tous les agents", "scripts/agents_healthcheck.py", []),
     ("Agent prédictif", "scripts/agent_predictif.py", []),
     ("Audit références légales", "scripts/loi_reference_audit.py", []),
+    ("Protocole incrémental", "scripts/incremental_protocol.py", []),
     ("Point de reprise", "scripts/checkpoint_protocol.py", []),
     ("Audit fiabilité grand site", "scripts/site_reliability_audit.py", []),
     ("Veille juridique", "scripts/veille_juridique_protocol.py", []),

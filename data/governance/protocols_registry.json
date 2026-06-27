@@ -249,6 +249,12 @@
       "nom": "Témoignages vérifiés",
       "regle": "Ne JAMAIS inventer un témoignage, un nom ou une citation. Publier seulement de vrais témoignages avec consentement écrit + vérification. Source : data/governance/temoignages.json. Séparer par projet (la_loi_avec_moi / caelum).",
       "verif": "liste vide tant qu'aucun témoignage réel n'est vérifié"
+    },
+    {
+      "id": "P-INCREMENTAL",
+      "nom": "Développement incrémental sécurisé",
+      "regle": "Tout ajout se fait de manière INCRÉMENTALE : on s appuie sur l historique (checkpoint des empreintes), on ne traite que le delta (nouveau/modifié), et on applique les normes de sécurité (sourcage officiel, référence légale, séparation stricte des projets) AVANT publication. Intégré à la flotte via update_all_reports.py.",
+      "verif": "python3 scripts/incremental_protocol.py"
     }
   ]
 }
