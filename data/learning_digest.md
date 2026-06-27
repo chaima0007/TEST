@@ -5,7 +5,7 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
 ## ✅ Contrôles qualité
 - Savoirs enregistrés : **52**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `aa15ab638f666709…`)
+- Certification système : **PASS** (sceau `966a6b4563e67035…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  

@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 2957 réalisations concrètes enregistrées
+### 📌 Total : 2958 réalisations concrètes enregistrées
 
 
 ## 2026-06-27
-**9 réalisations** · de **00:28** à **13:36** (fenêtre de travail : 13h08)
+**10 réalisations** · de **00:28** à **13:45** (fenêtre de travail : 13h17)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
@@ -16,6 +16,7 @@
 - 🕒 12:08 — experts + audit WCAG 2.2 + site accessible par construction
 - 🕒 12:39 — priorise les besoins immédiats — alertes de délais + page Urgences
 - 🕒 13:36 — domaine harcèlement sourcé + catalogue central unifié
+- 🕒 13:45 — textes de loi officiels (liens Justel vérifiés) + page dédiée
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)

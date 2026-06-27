@@ -1,8 +1,8 @@
 # Rapport d'audit d'accessibilité (WCAG 2.2)
 
-*Généré le 2026-06-27 sur 12 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
+*Généré le 2026-06-27 sur 13 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
 
-**Contrôles réussis : 120 · à corriger : 0**
+**Contrôles réussis : 130 · à corriger : 0**
 
 ## ✅ _catalogue.html
 - ✅ Langue de page déclarée (lang)
@@ -25,7 +25,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (8 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (9 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ bail_bruxelles.html
@@ -37,7 +37,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (27 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (28 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (19 lien(s) _blank)
 
 ## ✅ bail_flandre.html
@@ -49,7 +49,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (27 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (28 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (19 lien(s) _blank)
 
 ## ✅ bail_wallonie.html
@@ -61,7 +61,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (27 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (28 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (19 lien(s) _blank)
 
 ## ✅ harcelement.html
@@ -73,7 +73,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (30 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (31 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (16 lien(s) _blank)
 
 ## ✅ index.html
@@ -85,7 +85,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (13 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (14 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ justice_penal.html
@@ -97,8 +97,20 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (24 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (15 lien(s) _blank)
+
+## ✅ lexique.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (9 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ surendettement.html
 - ✅ Langue de page déclarée (lang)
@@ -109,7 +121,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (28 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (29 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (20 lien(s) _blank)
 
 ## ✅ textes.html
@@ -121,7 +133,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (15 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (16 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (7 lien(s) _blank)
 
 ## ✅ transparence.html
@@ -133,7 +145,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (8 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (9 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ urgences.html
@@ -145,7 +157,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (18 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (19 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## Limite honnête

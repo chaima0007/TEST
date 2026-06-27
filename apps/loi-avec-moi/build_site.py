@@ -135,6 +135,7 @@ def page(titre, contenu, actif=""):
         navlink("index.html", "Accueil", "accueil")
         + navlink("urgences.html", "Urgences & délais", "urgences")
         + navlink("textes.html", "Textes de loi", "textes")
+        + navlink("lexique.html", "Lexique", "lexique")
         + navlink("transparence.html", "Transparence", "transparence")
         + navlink("accessibilite.html", "Accessibilité", "accessibilite")
     )
@@ -420,13 +421,47 @@ def construire():
         page("Textes de loi", txt, actif="textes"), encoding="utf-8"
     )
 
+    # --- page Lexique (langage clair / accessibilité cognitive) ---
+    termes = []
+    lx = DATA / "_lexique.json"
+    if lx.exists():
+        termes = json.loads(lx.read_text(encoding="utf-8")).get("termes", [])
+    termes = sorted(termes, key=lambda t: t.get("terme", "").lower())
+    lignes_lx = []
+    for t in termes:
+        dom = t.get("domaine", "")
+        dom_html = f'<span class="badge">{esc(dom)}</span>' if dom else ""
+        lignes_lx.append(
+            '<article class="fait" data-q="' + esc(t.get("terme", "")).lower() + ' '
+            + esc(t.get("definition", "")).lower() + '">'
+            f'<h3>{esc(t.get("terme",""))}</h3>'
+            f'<p>{esc(t.get("definition",""))}</p>'
+            f'<div class="meta">{dom_html}</div></article>'
+        )
+    lex = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#0b3d6e">Lexique en langage clair</h1>'
+        "<p>Le droit utilise des mots compliqués. Ici, on les explique <strong>simplement</strong>. "
+        "Cette page sert tout le monde — et particulièrement les personnes pour qui le jargon est un obstacle.</p>"
+        '<div class="search"><label for="ql" class="visually-hidden">Rechercher un terme</label>'
+        '<input id="ql" type="search" aria-label="Rechercher un terme" '
+        'placeholder="Rechercher un terme (ex. préavis, saisie, prescription)…" '
+        'oninput="var v=this.value.toLowerCase();document.querySelectorAll(\'.fait\').forEach('
+        "function(a){a.style.display=a.dataset.q.indexOf(v)>=0?'':'none';});\"></div>"
+        f'<p class="contact-meta">{len(termes)} termes expliqués</p>'
+        + "".join(lignes_lx)
+    )
+    (DIST / "lexique.html").write_text(
+        page("Lexique", lex, actif="lexique"), encoding="utf-8"
+    )
+
     return {
         "modules": len(modules),
         "faits": total_faits,
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
         "urgences": len(urgents),
-        "pages": len(modules) + 5,
+        "pages": len(modules) + 6,
     }
 
 

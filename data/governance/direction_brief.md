@@ -6,7 +6,7 @@
 
 | Indicateur | Valeur |
 |---|---|
-| Modules | 8 |
+| Modules | 9 |
 | Réponses sourcées | 48 |
 | Sources officielles | 63 |
 | Sources de complément | 34 |
@@ -25,11 +25,11 @@
 - **Recommandation :** Continuer à bloquer toute régression ; aucune livraison hors sas.
 
 ### Directeur Produit & Diffusion
-- **Constat :** Site généré depuis la base (48 réponses, 8 modules) ; projet séparé de competeiq.
+- **Constat :** Site généré depuis la base (48 réponses, 9 modules) ; projet séparé de competeiq.
 - **Recommandation :** Préparer la mise en ligne (hébergement au nom de Chaima) ; ajouter versions NL ensuite.
 
 ### Directeur Stratégie & Marché
-- **Constat :** Couverture actuelle : _catalogue, _textes_legaux, Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Harcèlement & violences — qui contacter, quels recours, Accès à la justice — droits, avocat, casier judiciaire, Surendettement — Règlement collectif de dettes (RCD).
+- **Constat :** Couverture actuelle : _catalogue, _lexique, _textes_legaux, Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Harcèlement & violences — qui contacter, quels recours, Accès à la justice — droits, avocat, casier judiciaire, Surendettement — Règlement collectif de dettes (RCD).
 - **Recommandation :** Garder l'avance via niches sous-servies déjà ouvertes (surendettement, justice) ; surveiller la demande réelle.
 
 ### Directeur Éthique & Transparence
