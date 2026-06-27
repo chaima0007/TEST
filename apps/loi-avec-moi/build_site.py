@@ -134,6 +134,7 @@ def page(titre, contenu, actif=""):
     nav = (
         navlink("index.html", "Accueil", "accueil")
         + navlink("urgences.html", "Urgences & délais", "urgences")
+        + navlink("textes.html", "Textes de loi", "textes")
         + navlink("transparence.html", "Transparence", "transparence")
         + navlink("accessibilite.html", "Accessibilité", "accessibilite")
     )
@@ -388,13 +389,44 @@ def construire():
         page("Urgences & délais", urg, actif="urgences"), encoding="utf-8"
     )
 
+    # --- page Textes de loi (crédibilité : la source légale officielle) ---
+    textes = []
+    tx = DATA / "_textes_legaux.json"
+    if tx.exists():
+        textes = json.loads(tx.read_text(encoding="utf-8")).get("textes", [])
+    lignes_tx = []
+    for t in textes:
+        arts = t.get("articles_cles", [])
+        arts_html = ("<br><span class='contact-meta'>" + esc(" · ".join(arts)) + "</span>") if arts else ""
+        lignes_tx.append(
+            '<div class="urgent-card" style="border-left-color:#0b3d6e">'
+            f'<h3 style="color:#0b3d6e">{esc(t.get("nom",""))}</h3>'
+            f'<div class="meta"><span class="badge">{esc(t.get("niveau",""))}</span></div>'
+            f'<p class="lien"><a href="{esc(t.get("url"))}" target="_blank" rel="noopener">'
+            "Lire le texte officiel (consolidé)"
+            "<span class=\"visually-hidden\"> (s'ouvre dans un nouvel onglet)</span></a></p>"
+            f"{arts_html}</div>"
+        )
+    txt = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#0b3d6e">Textes de loi</h1>'
+        "<p>La crédibilité, c'est pouvoir <strong>vérifier à la source</strong>. Voici les textes "
+        "légaux officiels (versions consolidées) derrière nos réponses. Chaque réponse cite l'article "
+        "applicable ; ici vous accédez au texte complet.</p>"
+        f'<div class="disclaimer" role="note">ℹ️ Les versions officielles font foi. {esc(AVERTISSEMENT_GLOBAL)}</div>'
+        + ("".join(lignes_tx) if lignes_tx else "<p>Registre en construction.</p>")
+    )
+    (DIST / "textes.html").write_text(
+        page("Textes de loi", txt, actif="textes"), encoding="utf-8"
+    )
+
     return {
         "modules": len(modules),
         "faits": total_faits,
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
         "urgences": len(urgents),
-        "pages": len(modules) + 4,
+        "pages": len(modules) + 5,
     }
 
 
