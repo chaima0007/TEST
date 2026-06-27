@@ -150,9 +150,9 @@
     {
       "cle": "energie",
       "nom": "Énergie & PEB (lié au logement)",
-      "statut": "partiel",
+      "statut": "couvert",
       "modules": [
-        "via bail (PEB)"
+        "energie"
       ],
       "priorite": "moyenne"
     },
