@@ -348,6 +348,7 @@ export default function Home() {
             <a href="#services" className="hover:text-slate-900">Services</a>
             <Link href="/loi-avec-moi" className="hover:text-slate-900">La loi avec moi</Link>
             <Link href="/assistant-reglementaire" className="hover:text-slate-900">Assistant réglementaire</Link>
+            <Link href="/appels-projets" className="hover:text-slate-900">Appels à projets</Link>
             <Link href="/contact" className="hover:text-slate-900">Contact</Link>
             <Link href="/mentions-legales" className="hover:text-slate-900">Mentions légales</Link>
             <Link href="/confidentialite" className="hover:text-slate-900">Confidentialité</Link>
