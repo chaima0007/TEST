@@ -1,0 +1,142 @@
+{
+  "module": "drogues_prevention",
+  "titre": "Drogues — prévention, ravages et information",
+  "domaine": "Drogues & prévention",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 24 février 1921 concernant le trafic des substances vénéneuses, soporifiques, stupéfiantes ; législation cannabis (2003) et directives",
+    "portee": "Interdiction des drogues illicites en Belgique, prévention et aide",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/securite_et_criminalite/drogues/principe_d_interdiction"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "mission": "Protéger, sensibiliser, informer.",
+  "avertissement": "Page de prévention et d'information. En cas d'urgence vitale (overdose, détresse), appelez le 112. Cette information est générale ; pour de l'aide, contactez un service spécialisé ou un médecin. Aucun témoignage de cette page n'est inventé : les récits réels sont à retrouver via les services spécialisés.",
+  "faits": [
+    {
+      "id": "DROG-LOI-001",
+      "question": "Les drogues sont-elles interdites en Belgique, et que risque-t-on ?",
+      "reponse": "Oui. La détention, l'usage, la culture et le trafic de drogues illicites sont interdits et punissables (amende et/ou prison). Pour le cannabis, la détention reste une infraction : seule la détention par un adulte d'une très petite quantité pour usage strictement personnel (max. 3 g), sans trouble à l'ordre public ni circonstance aggravante, fait l'objet d'une priorité de poursuite plus basse — mais cela reste illégal. Au-delà, des poursuites sont engagées. L'interdiction est totale.",
+      "reference_legale": "Loi du 24 février 1921 sur les stupéfiants ; législation et directives relatives au cannabis",
+      "contacts": [
+        {
+          "nom": "Urgences (overdose, détresse vitale)",
+          "numero": "112",
+          "pour": "danger immédiat"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/securite_et_criminalite/drogues/cannabis",
+          "intitule": "SPF Justice — Cannabis"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://infordrogues.be/informations/legislation/principaux-textes-de-loi/",
+          "intitule": "Infor-Drogues — Principaux textes de loi"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DROG-MINEURS-001",
+      "question": "Et pour les mineurs ?",
+      "reponse": "Pour les mineurs, c'est la tolérance zéro : aucune quantité n'est tolérée. Si un mineur est concerné, les parents sont avertis, un procès-verbal est établi et transmis à la police. La protection des jeunes est une priorité : mieux vaut en parler tôt, sans jugement, à un adulte de confiance ou à un service d'aide.",
+      "reference_legale": "Législation drogues — interdiction totale pour les mineurs",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/securite_et_criminalite/drogues/principe_d_interdiction",
+          "intitule": "SPF Justice — Principe d'interdiction"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5344/fr/questions/prevention/est-ce-legal-de-consommer-des-stupefiants",
+          "intitule": "Police — Est-ce légal de consommer des stupéfiants ?"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DROG-RAVAGES-001",
+      "question": "Pourquoi les drogues font-elles autant de ravages ?",
+      "reponse": "Au-delà de l'interdit légal, les drogues peuvent détruire une vie petit à petit : dépendance qui prend le contrôle, santé physique et mentale qui se dégrade, études et emploi qui s'effondrent, dettes, isolement, perte des proches et parfois de tout. Ce qui commence comme « juste une fois » peut devenir un engrenage très difficile à arrêter seul. Le plus important à retenir : demander de l'aide tôt change tout, et il n'est jamais trop tard pour s'en sortir — accompagné.",
+      "reference_legale": "Information de prévention (santé publique)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/securite_et_criminalite/drogues/principe_d_interdiction",
+          "intitule": "SPF Justice — Drogues : principe d'interdiction"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://infordrogues.be/faq/",
+          "intitule": "Infor-Drogues — FAQ"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DROG-AIDE-001",
+      "question": "Où trouver de l'aide (pour soi ou un proche) ?",
+      "reponse": "On n'est jamais obligé d'affronter ça seul. On peut en parler à son médecin traitant (confidentiel), à un service spécialisé comme Infor-Drogues (information et écoute, anonyme), ou à un centre d'aide aux personnes dépendantes. Pour un proche inquiet, ces services aident aussi l'entourage. Demander de l'aide n'est pas un échec : c'est le premier pas pour reprendre sa vie en main.",
+      "reference_legale": "Dispositifs d'aide et de prévention en matière d'assuétudes",
+      "contacts": [
+        {
+          "nom": "Infor-Drogues (information & écoute, anonyme)",
+          "lien": "https://infordrogues.be",
+          "pour": "soi ou un proche"
+        },
+        {
+          "nom": "Médecin traitant",
+          "pour": "aide confidentielle, orientation"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "détresse vitale / overdose"
+        }
+      ],
+      "alerte_delai": "Plus on demande de l'aide tôt, plus c'est facile de s'en sortir. N'attendez pas que tout s'effondre.",
+      "sources": [
+        {
+          "type": "secondaire",
+          "url": "https://infordrogues.be",
+          "intitule": "Infor-Drogues & Addictions"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5344/fr/questions/prevention/est-ce-legal-de-consommer-des-stupefiants",
+          "intitule": "Police — Prévention drogues"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DROG-TEMOIGNAGES-001",
+      "question": "Des témoignages réels de personnes qui s'en sont sorties ?",
+      "reponse": "Oui — et ce sont de vrais récits, pas des histoires inventées. Par exemple, la FEDITO BXL (fédération bruxelloise des institutions spécialisées en assuétudes) publie le témoignage de Margaret, « J'ai franchi la porte de la guérison », sur sa lutte contre la toxicomanie après la prison. Ces parcours montrent deux choses : à quel point l'addiction peut tout emporter, et qu'on peut s'en sortir quand on est accompagné. Si vous vous reconnaissez, parlez-en : des services existent (voir « Où trouver de l'aide »).",
+      "reference_legale": "Ressources de prévention et de réduction des risques (secteur assuétudes)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5344/fr/questions/prevention/est-ce-legal-de-consommer-des-stupefiants",
+          "intitule": "Police — Prévention (drogues)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://feditobxl.be/fr/2021/12/temoignage-jai-franchi-la-porte-de-la-guerison-le-recit-de-margaret-sur-sa-lutte-contre-la-toxicomanie-apres-la-prison/",
+          "intitule": "FEDITO BXL — Témoignage de Margaret"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://infordrogues.be/services/service-permanence/permanence-telephonique/",
+          "intitule": "Infor-Drogues — Permanence téléphonique (écoute)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

@@ -170,6 +170,15 @@
         "vote_electoral"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "drogues",
+      "nom": "Drogues & prévention",
+      "statut": "couvert",
+      "modules": [
+        "drogues_prevention"
+      ],
+      "priorite": "haute"
     }
   ]
 }
