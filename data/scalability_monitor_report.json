@@ -5,19 +5,19 @@
     {
       "plateforme": "Flotte d'agents",
       "dimension": "Agents IA (scripts .py)",
-      "valeur": 231,
+      "valeur": 232,
       "seuil_alerte": 320,
       "seuil_critique": 450,
-      "pct_du_critique": 51.3,
+      "pct_du_critique": 51.6,
       "statut": "OK"
     },
     {
       "plateforme": "La Loi Avec Moi",
       "dimension": "Modules juridiques",
-      "valeur": 57,
+      "valeur": 59,
       "seuil_alerte": 400,
       "seuil_critique": 600,
-      "pct_du_critique": 9.5,
+      "pct_du_critique": 9.8,
       "statut": "OK"
     },
     {
@@ -59,10 +59,10 @@
     {
       "plateforme": "Gouvernance",
       "dimension": "Fichiers de données (governance)",
-      "valeur": 28,
+      "valeur": 29,
       "seuil_alerte": 80,
       "seuil_critique": 150,
-      "pct_du_critique": 18.7,
+      "pct_du_critique": 19.3,
       "statut": "OK"
     }
   ],
@@ -108,7 +108,7 @@
     "postes_a_completer": 10
   },
   "prevision": {
-    "note": "rythme observé : 14.8 nouveau(x) module(s)/passage sur 4 passages",
-    "runway_passages_avant_saturation_modules": 36
+    "note": "rythme observé : 10.2 nouveau(x) module(s)/passage sur 6 passages",
+    "runway_passages_avant_saturation_modules": 53
   }
 }

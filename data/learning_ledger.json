@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 214,
+    "total_savoirs": 218,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -24,6 +24,28 @@
       "id": "ACCT-MALADIE-PRO-001",
       "sujet": "Ma maladie est liée à mon travail : ai-je droit à une indemnité ?",
       "reference_legale": "Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "adoption",
+      "id": "ADOPT-FORMES-001",
+      "sujet": "Quelle différence entre adoption simple et adoption plénière ?",
+      "reference_legale": "Code civil — adoption simple et adoption plénière (art. 343 et suivants)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "adoption",
+      "id": "ADOPT-PROCEDURE-001",
+      "sujet": "Comment se passe la procédure d'adoption ?",
+      "reference_legale": "Loi du 24 avril 2003 réformant l'adoption ; Code judiciaire (compétence du tribunal de la famille)",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-27",
@@ -1237,6 +1259,28 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "fin_de_vie",
+      "id": "FIN-DECLARATIONS-001",
+      "sujet": "Comment exprimer à l'avance mes volontés de fin de vie ?",
+      "reference_legale": "Loi du 28 mai 2002 relative à l'euthanasie (déclaration anticipée) ; loi du 22 août 2002 relative aux droits du patient",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "fin_de_vie",
+      "id": "FIN-REFUS-PALLIATIFS-001",
+      "sujet": "Puis-je refuser un traitement, et ai-je droit aux soins palliatifs ?",
+      "reference_legale": "Loi du 22 août 2002 relative aux droits du patient (consentement et refus de soins) ; loi du 14 juin 2002 relative aux soins palliatifs",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {

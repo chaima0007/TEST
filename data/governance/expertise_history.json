@@ -223,5 +223,14 @@
     "pct_sources_officielles": 100,
     "pct_a_jour": 100,
     "indice_expertise": 66.0
+  },
+  {
+    "date": "2026-06-26",
+    "faits": 27,
+    "themes": 9,
+    "regions": 3,
+    "pct_sources_officielles": 100,
+    "pct_a_jour": 100,
+    "indice_expertise": 66.0
   }
 ]

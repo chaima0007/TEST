@@ -2,13 +2,14 @@
 
 *Généré le 2026-06-27. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**210 réponses · 57 modules · 320 sources officielles · 125 fiches avec contacts · 64 alertes de délai**
+**214 réponses · 59 modules · 328 sources officielles · 129 fiches avec contacts · 64 alertes de délai**
 
 ## Modules en ligne
 
 | Domaine | Module | Réponses | Sources off. | Contacts | Délais |
 |---|---|---|---|---|---|
 | Risques professionnels | Accident du travail & maladie professionnelle | 2 | 4 | 2 | 1 |
+| Adoption | Adoption — formes et procédure | 2 | 4 | 2 | 0 |
 | Aidants proches | Aidants proches — reconnaissance, congé, droits | 2 | 2 | 2 | 1 |
 | Accès à la justice | Aide juridique — un avocat (presque) gratuit | 2 | 3 | 2 | 1 |
 | Aide sociale & urgence | Où aller quand ça va mal — faim, sans-abri, danger, sans papiers | 5 | 7 | 5 | 3 |
@@ -39,6 +40,7 @@
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 3 | 4 | 3 | 1 |
 | Logement — expulsion | Expulsion du logement — vos droits | 2 | 2 | 2 | 1 |
 | Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
+| Fin de vie | Fin de vie — déclarations anticipées & droits | 2 | 4 | 2 | 0 |
 | Fraude & sécurité numérique | Arnaques & fraude en ligne — réagir vite | 2 | 4 | 2 | 1 |
 | Gouvernement & institutions | Gouvernement & institutions — comment la Belgique est gouvernée | 5 | 10 | 0 | 0 |
 | Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 3 | 6 | 3 | 0 |
@@ -123,3 +125,5 @@
 | Logement — expulsion | couvert | haute |
 | Risques professionnels | couvert | haute |
 | Divorce & séparation | couvert | haute |
+| Adoption | couvert | moyenne |
+| Fin de vie | couvert | haute |

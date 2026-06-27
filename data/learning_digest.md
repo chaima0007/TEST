@@ -3,15 +3,19 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **214**
+- Savoirs enregistrés : **218**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `6935e0a58221ccd9…`)
+- Certification système : **PASS** (sceau `b92ea0c45248f76f…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
   Réf : Loi du 10 avril 1971 sur les accidents du travail · sources off. : 2 · revu : 2026-06-27
 - ✅ **Ma maladie est liée à mon travail : ai-je droit à une indemnité ?**  
   Réf : Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles · sources off. : 2 · revu : 2026-06-27
+- ✅ **Quelle différence entre adoption simple et adoption plénière ?**  
+  Réf : Code civil — adoption simple et adoption plénière (art. 343 et suivants) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment se passe la procédure d'adoption ?**  
+  Réf : Loi du 24 avril 2003 réformant l'adoption ; Code judiciaire (compétence du tribunal de la famille) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Qu'est-ce qu'un aidant proche et comment être reconnu ?**  
   Réf : Loi relative à la reconnaissance de l'aidant proche et à l'octroi de droits sociaux · sources off. : 1 · revu : 2026-06-26
 - ✅ **Ai-je droit à un congé en tant qu'aidant proche ?**  
@@ -232,6 +236,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — pension alimentaire après divorce (état de besoin) ; obligation d'entretien des enfants · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les grandes voies de divorce en Belgique ?**  
   Réf : Code civil — divorce par consentement mutuel et pour désunion irrémédiable ; Code judiciaire (tribunal de la famille) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment exprimer à l'avance mes volontés de fin de vie ?**  
+  Réf : Loi du 28 mai 2002 relative à l'euthanasie (déclaration anticipée) ; loi du 22 août 2002 relative aux droits du patient · sources off. : 2 · revu : 2026-06-27
+- ✅ **Puis-je refuser un traitement, et ai-je droit aux soins palliatifs ?**  
+  Réf : Loi du 22 août 2002 relative aux droits du patient (consentement et refus de soins) ; loi du 14 juin 2002 relative aux soins palliatifs · sources off. : 2 · revu : 2026-06-27
 - ✅ **J'ai été victime d'une arnaque (paiement, données envoyées). Que faire en urgence ?**  
   Réf : Code pénal — escroquerie (art. 496) et fraude informatique (art. 504quater) · sources off. : 2 · revu : 2026-06-27
 - ✅ **J'ai reçu un message suspect (banque, livraison, administration). Comment réagir ?**  

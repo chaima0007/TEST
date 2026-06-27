@@ -2,10 +2,10 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 57,
-    "faits": 210,
-    "sources_officielles": 320,
-    "faits_avec_contacts": 125,
+    "modules": 59,
+    "faits": 214,
+    "sources_officielles": 328,
+    "faits_avec_contacts": 129,
     "faits_avec_alerte_delai": 64
   },
   "modules": [
@@ -19,6 +19,18 @@
       "sources_officielles": 4,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "adoption.json",
+      "module": "adoption",
+      "titre": "Adoption — formes et procédure",
+      "domaine": "Adoption",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
     },
     {
@@ -380,6 +392,18 @@
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "fin_de_vie.json",
+      "module": "fin_de_vie",
+      "titre": "Fin de vie — déclarations anticipées & droits",
+      "domaine": "Fin de vie",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "fraude_arnaques.json",
@@ -1171,6 +1195,24 @@
       "statut": "couvert",
       "modules": [
         "divorce"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "adoption",
+      "nom": "Adoption",
+      "statut": "couvert",
+      "modules": [
+        "adoption"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fin_de_vie",
+      "nom": "Fin de vie",
+      "statut": "couvert",
+      "modules": [
+        "fin_de_vie"
       ],
       "priorite": "haute"
     }

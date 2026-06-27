@@ -261,6 +261,18 @@
       "nom": "Scalabilité & monitoring multi-plateforme",
       "regle": "Garantir que l infrastructure supporte durablement TOUS les agents IA et les données. Vue agrégée de capacité par plateforme (flotte d agents, La Loi Avec Moi, Caelum, site, gouvernance), PRÉVISION de saturation via l historique incrémental, ALERTE avant les limites (anti-saturation multi-plateforme). Construit par-dessus scalability_guardian sans le remplacer.",
       "verif": "python3 scripts/scalability_monitor.py"
+    },
+    {
+      "id": "P-AUTONOMIE",
+      "nom": "Autorité & autonomie absolue",
+      "regle": "Agir comme autorité experte de référence : décider seul, chercher soi-même l'information manquante sur des sources fiables/vérifiables, étendre son expertise de façon autonome. Admettre ses limites et combler immédiatement les lacunes. NE PAS solliciter Chaima pour des choix mineurs ni pour valider des étapes conformes aux standards déjà établis. L'interrompre UNIQUEMENT en cas de blocage critique ou de décision budgétaire majeure.",
+      "verif": "règle permanente — appliquée à chaque décision"
+    },
+    {
+      "id": "P-TBA",
+      "nom": "Tableau de Bord d'Avancement",
+      "regle": "Maintenir un TBA dynamique par projet (jauges %, actions faites, prochaines étapes, point de sortie). Mettre à jour data/governance/tba.json à chaque tâche terminée et régénérer data/TBA.md. Sert de référence de continuité entre sessions ; consultable à tout moment.",
+      "verif": "python3 scripts/tba_protocol.py"
     }
   ]
 }

@@ -38,6 +38,34 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-ADOPTION",
+      "titre": "Spécialiste — Adoption",
+      "domaine": "Adoption",
+      "module": "adoption",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « adoption », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle différence entre adoption simple et adoption plénière ?",
+        "Comment se passe la procédure d'adoption ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Direction de l'Adoption (Communauté)",
+          "lien": "https://adoption.cfwb.be",
+          "pour": "information, préparation, agrément"
+        },
+        {
+          "nom": "Direction de l'Adoption (Communauté)",
+          "pour": "préparation et agrément"
+        },
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "prononcé de l'adoption"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-AIDANTS-PROCHES",
       "titre": "Spécialiste — Aidants proches",
       "domaine": "Aidants proches",
@@ -949,6 +977,37 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-FIN-DE-VIE",
+      "titre": "Spécialiste — Fin de vie",
+      "domaine": "Fin de vie",
+      "module": "fin_de_vie",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « fin de vie », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment exprimer à l'avance mes volontés de fin de vie ?",
+        "Puis-je refuser un traitement, et ai-je droit aux soins palliatifs ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre médecin",
+          "pour": "information, volontés, accompagnement"
+        },
+        {
+          "nom": "Administration communale",
+          "pour": "enregistrement de la déclaration anticipée d'euthanasie"
+        },
+        {
+          "nom": "Médecin / équipe de soins palliatifs",
+          "pour": "accompagnement, gestion de la douleur"
+        },
+        {
+          "nom": "Plateforme de soins palliatifs de votre région",
+          "pour": "soutien à domicile ou en institution"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
