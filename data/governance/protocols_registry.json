@@ -213,6 +213,12 @@
       "nom": "Expertise rentabilité",
       "regle": "Pour chaque domaine : expert dédié + analyse honnête de la rentabilité (demande, concurrence, pistes de revenus). Modèle freemium : info gratuite, services payants. Aucun chiffre € inventé.",
       "verif": "python3 scripts/rentabilite_protocol.py"
+    },
+    {
+      "id": "P-ANALYSE-TRAVAIL",
+      "nom": "Analyse du travail",
+      "regle": "Analyser le travail de Chaima court terme (production) et long terme (trajectoire, durabilité), à partir de données réelles. Sans flatterie.",
+      "verif": "python3 scripts/travail_analyse_protocol.py"
     }
   ]
 }

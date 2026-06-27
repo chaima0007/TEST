@@ -39,6 +39,7 @@ ETAPES = [
     ("Base unique (catalogue)", "scripts/build_kb_index.py", []),
     ("Spécialistes par domaine", "scripts/build_specialistes.py", []),
     ("Expertise rentabilité", "scripts/rentabilite_protocol.py", []),
+    ("Analyse du travail", "scripts/travail_analyse_protocol.py", []),
     ("Point de reprise", "scripts/checkpoint_protocol.py", []),
     ("Audit fiabilité grand site", "scripts/site_reliability_audit.py", []),
     ("Veille juridique", "scripts/veille_juridique_protocol.py", []),
