@@ -19,14 +19,35 @@
       "reponse": "En cas de danger immédiat, appelez le 112 (secours) ou le 101 (police). Pour en parler et être orienté : les enfants et adolescents peuvent appeler le 103 (Écoute-Enfants, service de la Fédération Wallonie-Bruxelles, tous les jours de 10h à minuit, anonyme et gratuit). Pour un adulte en détresse, des lignes d'écoute existent (voir les services officiels). Selon la situation, on s'adresse ensuite à la police (pour porter plainte), au conseiller en prévention (au travail), ou à l'école (harcèlement scolaire).",
       "reference_legale": "Numéros d'urgence officiels (112 / 101) ; service Écoute-Enfants 103 (Fédération Wallonie-Bruxelles)",
       "contacts": [
-        {"nom": "Urgences (secours, ambulance, pompiers)", "numero": "112", "pour": "danger immédiat"},
-        {"nom": "Police", "numero": "101", "pour": "danger / déposer plainte"},
-        {"nom": "Écoute-Enfants", "numero": "103", "pour": "enfants & ados", "dispo": "tous les jours 10h–minuit, anonyme"}
+        {
+          "nom": "Urgences (secours, ambulance, pompiers)",
+          "numero": "112",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "danger / déposer plainte"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & ados",
+          "dispo": "tous les jours 10h–minuit, anonyme"
+        }
       ],
       "alerte_delai": "En cas de danger immédiat, n'attendez pas : 112 ou 101. Plus tôt la situation est signalée, mieux elle peut être protégée et documentée.",
       "sources": [
-        {"type": "officiel", "url": "https://www.103ecoute.be/", "intitule": "103 Écoute-Enfants (Fédération Wallonie-Bruxelles)"},
-        {"type": "officiel", "url": "https://www.belgium.be/fr/emploi/sante_et_bien-etre/harcelement", "intitule": "Belgium.be — Harcèlement"}
+        {
+          "type": "officiel",
+          "url": "https://www.103ecoute.be/",
+          "intitule": "103 Écoute-Enfants (Fédération Wallonie-Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/emploi/sante_et_bien-etre/harcelement",
+          "intitule": "Belgium.be — Harcèlement"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -36,14 +57,35 @@
       "reponse": "Il faut en parler vite : à un adulte de confiance, à l'école (titulaire, direction, centre PMS) et, si besoin, aux services d'aide. En Fédération Wallonie-Bruxelles, l'enseignement met à disposition de l'information et un numéro vert « Écoute École » pour les adultes confrontés à la violence scolaire ; les enfants peuvent appeler le 103. Les équipes SOS Enfants (ONE) traitent les situations de maltraitance. Conservez les preuves (messages, captures). En cas d'infraction, on peut porter plainte à la police.",
       "reference_legale": "Dispositifs de la Fédération Wallonie-Bruxelles (enseignement, climat scolaire) ; art. 442bis du Code pénal en cas d'infraction",
       "contacts": [
-        {"nom": "Écoute-Enfants", "numero": "103", "pour": "enfants & ados", "dispo": "tous les jours 10h–minuit"},
-        {"nom": "Écoute École (FW-B)", "lien": "https://www.enseignement.be/ecouteecole", "pour": "adultes face à la violence scolaire"},
-        {"nom": "SOS Enfants (ONE)", "lien": "https://www.one.be", "pour": "situations de maltraitance d'enfants"}
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & ados",
+          "dispo": "tous les jours 10h–minuit"
+        },
+        {
+          "nom": "Écoute École (FW-B)",
+          "lien": "https://www.enseignement.be/ecouteecole",
+          "pour": "adultes face à la violence scolaire"
+        },
+        {
+          "nom": "SOS Enfants (ONE)",
+          "lien": "https://www.one.be",
+          "pour": "situations de maltraitance d'enfants"
+        }
       ],
       "alerte_delai": "N'attendez pas que la situation s'aggrave : signalez à l'école rapidement et conservez les preuves dès le début.",
       "sources": [
-        {"type": "officiel", "url": "http://www.enseignement.be/index.php?page=27585&navi=4222", "intitule": "Enseignement.be — Harcèlement à l'école : se faire aider"},
-        {"type": "officiel", "url": "https://www.enseignement.be/ecouteecole", "intitule": "Enseignement.be — Numéro vert Écoute École"}
+        {
+          "type": "officiel",
+          "url": "http://www.enseignement.be/index.php?page=27585&navi=4222",
+          "intitule": "Enseignement.be — Harcèlement à l'école : se faire aider"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.enseignement.be/ecouteecole",
+          "intitule": "Enseignement.be — Numéro vert Écoute École"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -53,13 +95,29 @@
       "reponse": "Ne répondez pas aux messages, mais conservez les preuves (captures d'écran, liens, dates). Signalez le contenu à la plateforme, et bloquez l'auteur. Parlez-en à un adulte de confiance ou à un service d'aide ; Child Focus accompagne les mineurs et leurs proches. Le cyberharcèlement peut constituer une infraction (notamment le harcèlement, art. 442bis du Code pénal) : on peut porter plainte à la police. Pour les contenus graves en ligne, des points de signalement officiels existent.",
       "reference_legale": "Art. 442bis du Code pénal (harcèlement) ; législation sur les communications électroniques",
       "contacts": [
-        {"nom": "Child Focus", "lien": "https://childfocus.be/fr", "pour": "mineurs & cyberharcèlement"},
-        {"nom": "Police", "numero": "101", "pour": "déposer plainte"}
+        {
+          "nom": "Child Focus",
+          "lien": "https://childfocus.be/fr",
+          "pour": "mineurs & cyberharcèlement"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "déposer plainte"
+        }
       ],
       "alerte_delai": "Conservez les preuves immédiatement (captures, dates) : elles peuvent disparaître. Agir vite facilite l'enquête.",
       "sources": [
-        {"type": "officiel", "url": "http://www.enseignement.be/index.php?page=27434&navi=4368", "intitule": "Enseignement.be — Qu'est-ce que le cyberharcèlement ?"},
-        {"type": "secondaire", "url": "https://childfocus.be/fr/prevention/securite-en-ligne/professionnels/les-reseaux-sociaux/cyber-harcelement-que-peut-faire", "intitule": "Child Focus — Cyberharcèlement"}
+        {
+          "type": "officiel",
+          "url": "http://www.enseignement.be/index.php?page=27434&navi=4368",
+          "intitule": "Enseignement.be — Qu'est-ce que le cyberharcèlement ?"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://childfocus.be/fr/prevention/securite-en-ligne/professionnels/les-reseaux-sociaux/cyber-harcelement-que-peut-faire",
+          "intitule": "Child Focus — Cyberharcèlement"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -69,13 +127,28 @@
       "reponse": "Vous pouvez vous adresser au conseiller en prévention aspects psychosociaux (interne ou d'un service externe) ou à la personne de confiance de l'entreprise. Une voie informelle (conciliation) est possible ; sinon, vous pouvez introduire une « demande d'intervention psychosociale formelle » pour faits de violence ou de harcèlement. Vous êtes alors protégé contre les représailles (l'employeur ne peut pas vous licencier pour ces démarches). En dernier recours, on peut saisir l'inspection (Contrôle du bien-être au travail) et la justice.",
       "reference_legale": "Loi du 4 août 1996 sur le bien-être au travail et Code du bien-être au travail (risques psychosociaux) ; protection contre les représailles",
       "contacts": [
-        {"nom": "Conseiller en prévention aspects psychosociaux", "pour": "1er interlocuteur en entreprise"},
-        {"nom": "Contrôle du bien-être au travail (SPF Emploi)", "lien": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail", "pour": "inspection"}
+        {
+          "nom": "Conseiller en prévention aspects psychosociaux",
+          "pour": "1er interlocuteur en entreprise"
+        },
+        {
+          "nom": "Contrôle du bien-être au travail (SPF Emploi)",
+          "lien": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail",
+          "pour": "inspection"
+        }
       ],
       "alerte_delai": "La protection contre le licenciement-représailles est liée à vos démarches : entamez-les officiellement et gardez une trace écrite (dates, courriers).",
       "sources": [
-        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail/moyens-daction-du-travailleur-la-9", "intitule": "SPF Emploi — Demande pour faits de violence/harcèlement au travail"},
-        {"type": "officiel", "url": "https://www.belgium.be/fr/emploi/sante_et_bien-etre/harcelement/lutte", "intitule": "Belgium.be — Lutte contre le harcèlement au travail"}
+        {
+          "type": "officiel",
+          "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail/moyens-daction-du-travailleur-la-9",
+          "intitule": "SPF Emploi — Demande pour faits de violence/harcèlement au travail"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/emploi/sante_et_bien-etre/harcelement/lutte",
+          "intitule": "Belgium.be — Lutte contre le harcèlement au travail"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -85,13 +158,61 @@
       "reponse": "Le harcèlement est une infraction (art. 442bis du Code pénal), dans la sphère privée comme professionnelle. Particularité : il ne peut être poursuivi que sur plainte de la personne harcelée ; cette plainte n'exige aucune forme particulière. On la dépose à la police (ou au parquet). Concernant le délai : des règles de prescription s'appliquent (en règle générale, plusieurs années pour un délit). Le délai exact et son point de départ dépendent de la situation — n'attendez pas et faites-vous conseiller rapidement par un avocat (au besoin via l'aide juridique gratuite).",
       "reference_legale": "Art. 442bis du Code pénal (harcèlement, poursuite sur plainte de la victime) ; règles de prescription des infractions (titre préliminaire du Code de procédure pénale)",
       "contacts": [
-        {"nom": "Police", "numero": "101", "pour": "déposer plainte"},
-        {"nom": "Aide juridique (avocat gratuit, sous conditions)", "lien": "https://justice.belgium.be/fr", "pour": "se faire conseiller"}
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "déposer plainte"
+        },
+        {
+          "nom": "Aide juridique (avocat gratuit, sous conditions)",
+          "lien": "https://justice.belgium.be/fr",
+          "pour": "se faire conseiller"
+        }
       ],
       "alerte_delai": "Des délais de prescription courent : n'attendez pas pour déposer plainte et consultez vite un avocat pour connaître le délai exact applicable à votre cas.",
       "sources": [
-        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/que_faire_comme/victime/intervenir_dans_la_procedure_en_tant_que_victime/en", "intitule": "SPF Justice — Intervenir comme victime"},
-        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/je-suis-victime-de-harcelement-au-travail-que-puis-je-faire", "intitule": "Droits Quotidiens — Victime de harcèlement"}
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/que_faire_comme/victime/intervenir_dans_la_procedure_en_tant_que_victime/en",
+          "intitule": "SPF Justice — Intervenir comme victime"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/je-suis-victime-de-harcelement-au-travail-que-puis-je-faire",
+          "intitule": "Droits Quotidiens — Victime de harcèlement"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "HARC-PROTECTION-ENFANT-001",
+      "question": "Comment apprendre à un enfant à protéger sa « bulle » et à dire non à un adulte ?",
+      "reponse": "On peut expliquer simplement à un enfant que son corps lui appartient : personne n'a le droit de le toucher d'une manière qui le met mal à l'aise, même un adulte qu'il connaît. Quelques repères : tu as le droit de dire NON et de partir ; un secret qui te rend triste ou qui fait peur doit toujours être dit à un adulte de confiance ; aucun adulte ne devrait te demander de garder ce genre de secret. L'essentiel, côté adultes, n'est pas de faire peur mais d'écouter, de croire l'enfant et de garder le dialogue ouvert. En cas d'inquiétude, on contacte le 103 (Écoute-Enfants), SOS Enfants ou la police.",
+      "reference_legale": "Prévention de la maltraitance des enfants (programmes de la Fédération Wallonie-Bruxelles)",
+      "contacts": [
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & ados",
+          "dispo": "tous les jours 10h–minuit"
+        },
+        {
+          "nom": "SOS Enfants (ONE)",
+          "lien": "https://www.one.be",
+          "pour": "situations de maltraitance"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.yapaka.be/page/faut-il-prevenir-les-enfants-des-abus-sexuels",
+          "intitule": "Yapaka (FW-B) — Prévenir les enfants des abus"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://childfocus.be/fr",
+          "intitule": "Child Focus — Protection des enfants"
+        }
       ],
       "date_verification": "2026-06-26"
     }
