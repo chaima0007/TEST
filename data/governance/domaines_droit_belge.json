@@ -119,8 +119,10 @@
     {
       "cle": "sante_patient",
       "nom": "Santé & droits du patient",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "sante_patient"
+      ],
       "priorite": "moyenne"
     },
     {

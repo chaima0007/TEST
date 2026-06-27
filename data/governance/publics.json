@@ -32,7 +32,8 @@
         "aidants_proches",
         "vote_electoral",
         "voisinage",
-        "aide_urgence"
+        "aide_urgence",
+        "sante_patient"
       ]
     }
   }
