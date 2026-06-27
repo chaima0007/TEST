@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 17,
-    "faits": 95,
-    "sources_officielles": 130,
-    "faits_avec_contacts": 38,
-    "faits_avec_alerte_delai": 26
+    "modules": 30,
+    "faits": 138,
+    "sources_officielles": 199,
+    "faits_avec_contacts": 62,
+    "faits_avec_alerte_delai": 40
   },
   "modules": [
     {
@@ -31,6 +31,18 @@
       "sources_officielles": 7,
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "animaux.json",
+      "module": "animaux",
+      "titre": "Animaux — bien-être, responsabilités, maltraitance",
+      "domaine": "Animaux",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -70,6 +82,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "circulation.json",
+      "module": "circulation",
+      "titre": "Circulation routière — accident, constat, permis",
+      "domaine": "Circulation routière",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "citoyen.json",
       "module": "citoyen_droits_devoirs",
       "titre": "Droits et devoirs du citoyen",
@@ -94,6 +118,42 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "couple.json",
+      "module": "couple",
+      "titre": "Couple — mariage, cohabitation légale, union libre",
+      "domaine": "Couple & vie commune",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "credit.json",
+      "module": "credit",
+      "titre": "Crédit & fichage — emprunts, défaut de paiement, Centrale des crédits",
+      "domaine": "Crédit & fichage",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "deces.json",
+      "module": "deces_demarches",
+      "titre": "Décès — démarches pratiques après le décès d'un proche",
+      "domaine": "Décès & démarches",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "drogues.json",
       "module": "drogues_prevention",
       "titre": "Drogues — prévention, ravages et information",
@@ -106,6 +166,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "energie.json",
+      "module": "energie",
+      "titre": "Énergie — factures, fournisseur, difficultés de paiement",
+      "domaine": "Énergie",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "enfants_places.json",
       "module": "enfants_places",
       "titre": "Enfants placés — tes droits, tes devoirs, ta parole",
@@ -114,6 +186,30 @@
       "faits": 5,
       "sources_officielles": 10,
       "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "enseignement.json",
+      "module": "enseignement",
+      "titre": "École & enseignement — inscription, gratuité, obligation scolaire",
+      "domaine": "Enseignement",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "etrangers.json",
+      "module": "etrangers_sejour",
+      "titre": "Étrangers & séjour — titres, regroupement familial, asile",
+      "domaine": "Étrangers & séjour",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
@@ -130,6 +226,30 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "gouvernement.json",
+      "module": "gouvernement",
+      "titre": "Gouvernement & institutions — comment la Belgique est gouvernée",
+      "domaine": "Gouvernement & institutions",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 10,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "handicap.json",
+      "module": "handicap",
+      "titre": "Handicap — reconnaissance, allocations, carte de stationnement",
+      "domaine": "Handicap",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "harcelement.json",
       "module": "harcelement_violences",
       "titre": "Harcèlement & violences — qui contacter, quels recours",
@@ -139,6 +259,18 @@
       "sources_officielles": 9,
       "faits_avec_contacts": 6,
       "faits_avec_alerte_delai": 5,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "independant.json",
+      "module": "independant",
+      "titre": "Devenir indépendant — démarches pour se lancer",
+      "domaine": "Indépendant & activité",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -166,6 +298,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "successions.json",
+      "module": "successions",
+      "titre": "Successions & héritage — accepter, renoncer, délais",
+      "domaine": "Successions",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "surendettement.json",
       "module": "surendettement_reglement_collectif_dettes",
       "titre": "Surendettement — Règlement collectif de dettes (RCD)",
@@ -187,6 +331,18 @@
       "sources_officielles": 6,
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 5,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "vie_privee_rgpd.json",
+      "module": "vie_privee_rgpd",
+      "titre": "Vie privée & données personnelles (RGPD)",
+      "domaine": "Vie privée & données",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -292,8 +448,10 @@
     {
       "cle": "etrangers",
       "nom": "Étrangers & séjour",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "etrangers_sejour"
+      ],
       "priorite": "moyenne"
     },
     {
@@ -308,9 +466,9 @@
     {
       "cle": "circulation",
       "nom": "Circulation routière",
-      "statut": "partiel",
+      "statut": "couvert",
       "modules": [
-        "via justice (amendes)"
+        "circulation"
       ],
       "priorite": "moyenne"
     },
@@ -326,23 +484,27 @@
     {
       "cle": "vie_privee",
       "nom": "Vie privée & données (RGPD)",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "vie_privee_rgpd"
+      ],
       "priorite": "moyenne"
     },
     {
       "cle": "successions",
       "nom": "Successions & héritage",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "successions"
+      ],
       "priorite": "basse"
     },
     {
       "cle": "energie",
       "nom": "Énergie & PEB (lié au logement)",
-      "statut": "partiel",
+      "statut": "couvert",
       "modules": [
-        "via bail (PEB)"
+        "energie"
       ],
       "priorite": "moyenne"
     },
@@ -390,6 +552,69 @@
         "enfants_places"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "gouvernement",
+      "nom": "Gouvernement & institutions",
+      "statut": "couvert",
+      "modules": [
+        "gouvernement"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "enseignement",
+      "nom": "Enseignement",
+      "statut": "couvert",
+      "modules": [
+        "enseignement"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "animaux",
+      "nom": "Animaux",
+      "statut": "couvert",
+      "modules": [
+        "animaux"
+      ],
+      "priorite": "basse"
+    },
+    {
+      "cle": "entreprise",
+      "nom": "Indépendant & activité",
+      "statut": "couvert",
+      "modules": [
+        "independant"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "couple",
+      "nom": "Couple & vie commune",
+      "statut": "couvert",
+      "modules": [
+        "couple"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "credit",
+      "nom": "Crédit & fichage",
+      "statut": "couvert",
+      "modules": [
+        "credit"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "deces",
+      "nom": "Décès & démarches",
+      "statut": "couvert",
+      "modules": [
+        "deces_demarches"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

@@ -1,8 +1,8 @@
 # Rapport d'audit d'accessibilité (WCAG 2.2)
 
-*Généré le 2026-06-27 sur 37 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
+*Généré le 2026-06-27 sur 43 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
 
-**Contrôles réussis : 370 · à corriger : 0**
+**Contrôles réussis : 430 · à corriger : 0**
 
 ## ✅ _catalogue.html
 - ✅ Langue de page déclarée (lang)
@@ -64,6 +64,18 @@
 - ✅ Liens avec intitulé (29 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (11 lien(s) _blank)
 
+## ✅ animaux.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (7 lien(s) _blank)
+
 ## ✅ annuaire.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -112,6 +124,18 @@
 - ✅ Liens avec intitulé (33 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (19 lien(s) _blank)
 
+## ✅ circulation.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (25 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
+
 ## ✅ citoyen.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -135,6 +159,42 @@
 - ✅ Champs de saisie étiquetés (1 champ(s))
 - ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
+
+## ✅ couple.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (21 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (7 lien(s) _blank)
+
+## ✅ credit.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (22 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (8 lien(s) _blank)
+
+## ✅ deces.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (21 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (7 lien(s) _blank)
 
 ## ✅ drogues.html
 - ✅ Langue de page déclarée (lang)
@@ -193,7 +253,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (34 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (40 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ espace-mineurs.html
@@ -268,6 +328,18 @@
 - ✅ Liens avec intitulé (40 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (19 lien(s) _blank)
 
+## ✅ independant.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (20 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (6 lien(s) _blank)
+
 ## ✅ index.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -277,7 +349,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (37 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (43 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ justice_penal.html
@@ -325,8 +397,8 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (72 lien(s), 0 vide(s))
-- ✅ Ouvertures dans un nouvel onglet signalées (56 lien(s) _blank)
+- ✅ Liens avec intitulé (73 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (57 lien(s) _blank)
 
 ## ✅ specialistes.html
 - ✅ Langue de page déclarée (lang)
@@ -409,7 +481,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (47 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (54 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ vie_privee_rgpd.html

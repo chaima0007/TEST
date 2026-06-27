@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-27. Mesure la présence et la qualité des sources citées dans les pages.*
 
-**Liens sources : 195 · officiels : 109 (56%) · institutionnels : 23 · hors liste : 63**
+**Liens sources : 195 · officiels : 111 (57%) · institutionnels : 23 · hors liste : 61**
 **Pages de contenu sans aucune source : 322**
 
 ## Par section
@@ -20,7 +20,7 @@
 | espace | 1 | 0 | 0 | 0 | 0 |
 | la-loi-avec-moi-france | 12 | 7 | 0 | 0 | 33 |
 | login | 1 | 0 | 0 | 0 | 0 |
-| loi-avec-moi | 38 | 29 | 86 | 18 | 25 |
+| loi-avec-moi | 38 | 29 | 88 | 18 | 23 |
 | mentions-legales | 1 | 0 | 0 | 0 | 0 |
 | notre-force | 1 | 0 | 0 | 0 | 0 |
 | simulation | 1 | 0 | 0 | 0 | 0 |
@@ -130,7 +130,6 @@
 - aide-alimentaire.croix-rouge.be (1)
 - restosducoeur.be (1)
 - pro.guidesocial.be (1)
-- cgra.be (1)
 - rvv-cce.be (1)
 - justice-en-ligne.be (1)
 - travellersonline.diplomatie.be (1)
@@ -141,7 +140,6 @@
 - federalinstituthumanrights.be (1)
 - ecouteviolencesconjugales.be (1)
 - violencessexuelles.be (1)
-- autoriteprotectiondonnees.be (1)
 - fr.ikwv.be (1)
 - dewestkust.be (1)
 - bivouacchezmoi.be (1)

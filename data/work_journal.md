@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 2980 réalisations concrètes enregistrées
+### 📌 Total : 3006 réalisations concrètes enregistrées
 
 
 ## 2026-06-27
-**32 réalisations** · de **00:28** à **17:02** (fenêtre de travail : 16h34)
+**58 réalisations** · de **00:28** à **19:09** (fenêtre de travail : 18h41)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
@@ -39,6 +39,32 @@
 - 🕒 16:47 — analyse d'impact du site (retombées sociales, économiques, risques) + avis sur l'annuaire par ville
 - 🕒 17:01 — droits du patient (loi 2002 mod. 2024) — 4 faits sourcés SPF Santé
 - 🕒 17:02 — garantie 2 ans, rétractation 14j, médiation + Test-Achats — 3 faits sourcés SPF Economie
+- 🕒 17:07 — reconnaissance, allocations ARR/AI, carte stationnement — 3 faits sourcés (DG Personnes handicapées)
+- 🕒 17:08 — business plan global (3 projets) + agent d'analyse du travail (court/long terme)
+- 🕒 17:11 — page 'Comment ça marche & à qui ça s'adresse' (fonctionnement + publics)
+- 🕒 17:28 — citer la citoyenneté (et autres domaines) dans la page 'Comment ça marche'
+- 🕒 17:31 — module institutions — niveaux, 3 pouvoirs, fédéral/Chambre, formation du gouvernement, partis (neutre, daté, sourcé Belgium.be)
+- 🕒 17:36 — plan de revenus traçable + suivi à la trace (étapes/indicateurs/état) + idées non-évidentes
+- 🕒 17:37 — analyse de niches inexploitées à fort potentiel (EAA accessibilité, CSDDD PME, RGPD TPE...) reliées aux projets + financement fondation
+- 🕒 17:41 — séjour, titres/annexes, regroupement familial, asile (CGRA) — 3 faits sourcés Office des étrangers
+- 🕒 17:42 — vie privée & données — droits, accès, effacement, plainte APD — 4 faits sourcés
+- 🕒 17:43 — note stratégie trafic-first (idée business séparée, non liée au contenu du site)
+- 🕒 17:45 — héritage — 3 options, bénéfice d'inventaire, délais, renonciation — 4 faits sourcés
+- 🕒 17:48 — factures, difficultés paiement, changer fournisseur, rétractation — 3 faits sourcés (CWaPE/SPW)
+- 🕒 17:53 — obligation scolaire, gratuité (art.24 Const.), refus d'inscription — 3 faits sourcés FW-B
+- 🕒 17:54 — cap technologique avant-gardiste (assistant IA bridé sur sources, multilingue, PWA offline, lecture vocale, explique-moi simplement) avec garde-fous
+- 🕒 17:55 — superviseur — contrôle régulier de TOUS les agents (compilation + exécution contrôleurs) + P-SUPERVISION
+- 🕒 17:58 — agent prédictif & avant-gardiste (maintenance prédictive, changements de loi, prochains domaines, pics saisonniers) + P-PREDICTION
+- 🕒 18:27 — bien-être animal, devoirs du propriétaire, identification, maltraitance (1718) — 3 faits sourcés
+- 🕒 18:28 — accident, constat européen, déchéance du permis — 3 faits sourcés (SPF Mobilité/Police)
+- 🕒 18:29 — devenir indépendant — étapes BCE/guichet, cotisations/affiliation — 2 faits sourcés
+- 🕒 18:30 — +fait 'comment dessiner le croquis de l'accident' + infos pertinentes (croquis, photos, témoins) — sourcé Police
+- 🕒 18:33 — chaque réponse adossée à une vraie loi en vigueur (98%->~100%) + agent d'audit des références légales (P intégré orchestrateur)
+- 🕒 18:34 — dernière référence légale précisée (vote) -> 100% des réponses adossées à une loi écrite
+- 🕒 19:05 — brief design page d'accueil (à tester sur claude.ai/design)
+- 🕒 19:07 — mariage, cohabitation légale, union libre, protection du logement familial — 3 faits sourcés
+- 🕒 19:08 — fichage Centrale des crédits (BNB), délais (1 an/10 ans), droit de consultation — 3 faits sourcés
+- 🕒 19:09 — démarches après un décès — déclaration/acte, déblocage comptes, organismes à prévenir — 3 faits sourcés
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)

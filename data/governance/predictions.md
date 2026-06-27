@@ -14,7 +14,6 @@
 
 ## 3. Prochains domaines à construire (prédiction de besoin)
 - Fiscalité (impôts) — priorité moyenne (partiel)
-- Circulation routière — priorité moyenne (partiel)
 
 ## 4. Signaux saisonniers (pics de demande à préparer à l'avance)
 - **1er janvier** : Indexations annuelles (loyers, aide juridique, quotités, fiscalité) → revoir les montants.

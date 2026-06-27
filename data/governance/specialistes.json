@@ -74,6 +74,36 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-ANIMAUX",
+      "titre": "Spécialiste — Animaux",
+      "domaine": "Animaux",
+      "module": "animaux",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « animaux », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quels sont mes devoirs quand j'ai un animal ?",
+        "Dois-je identifier et enregistrer mon chien ou mon chat ?",
+        "Je suis témoin de maltraitance animale : que faire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Vétérinaire",
+          "pour": "identification (puce) et enregistrement"
+        },
+        {
+          "nom": "Signalement maltraitance (Wallonie)",
+          "numero": "1718",
+          "pour": "négligence/maltraitance (option 2)"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "cas urgent / infraction"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-BAIL-RESIDENCE-PRINCIPALE-BRUXELLES",
       "titre": "Spécialiste — Bail de résidence principale — Région de Bruxelles-Capitale",
       "domaine": "Bail de résidence principale — Région de Bruxelles-Capitale",
@@ -137,6 +167,37 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-CIRCULATION",
+      "titre": "Spécialiste — Circulation routière",
+      "domaine": "Circulation routière",
+      "module": "circulation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « circulation routière », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai un accident de la route : que dois-je faire ?",
+        "Le constat à l'amiable, comment ça marche ?",
+        "Dans quels cas peut-on perdre (déchéance) son permis de conduire ?",
+        "Comment bien dessiner (le croquis de) l'accident sur le constat ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "accident avec dégâts/désaccord"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "blessés"
+        },
+        {
+          "nom": "Avocat (roulage)",
+          "pour": "défense et conséquences"
+        }
+      ],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-CITOYEN-DROITS-DEVOIRS",
       "titre": "Spécialiste — Citoyenneté",
       "domaine": "Citoyenneté",
@@ -185,6 +246,83 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-COUPLE",
+      "titre": "Spécialiste — Couple & vie commune",
+      "domaine": "Couple & vie commune",
+      "module": "couple",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « couple & vie commune », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "C'est quoi la cohabitation légale et comment la faire ?",
+        "Quelle différence entre mariage, cohabitation légale et union libre ?",
+        "Comment mon logement et mon partenaire sont-ils protégés ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Administration communale (état civil)",
+          "pour": "déclaration de cohabitation légale"
+        },
+        {
+          "nom": "Notaire",
+          "pour": "protéger le logement, le partenaire, l'héritage"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CREDIT",
+      "titre": "Spécialiste — Crédit & fichage",
+      "domaine": "Crédit & fichage",
+      "module": "credit",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « crédit & fichage », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Si je ne paie plus mon crédit, suis-je « fiché » ?",
+        "Combien de temps reste-t-on fiché en cas de défaut ?",
+        "Comment savoir ce qui est enregistré sur moi ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Banque nationale de Belgique (CCP)",
+          "lien": "https://www.nbb.be/fr/centrales-des-credits",
+          "pour": "consulter vos données"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-DECES-DEMARCHES",
+      "titre": "Spécialiste — Décès & démarches",
+      "domaine": "Décès & démarches",
+      "module": "deces_demarches",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « décès & démarches », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Que faire en premier après un décès ?",
+        "Les comptes bancaires sont bloqués : comment les débloquer ?",
+        "Quels organismes prévenir, et dans quels délais ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Administration communale (état civil)",
+          "pour": "déclaration et acte de décès"
+        },
+        {
+          "nom": "Pompes funèbres",
+          "pour": "peuvent gérer les formalités"
+        },
+        {
+          "nom": "Notaire",
+          "pour": "acte d'hérédité, déblocage"
+        },
+        {
+          "nom": "Banque du défunt",
+          "pour": "signaler le décès"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-DROGUES-PREVENTION",
       "titre": "Spécialiste — Drogues & prévention",
       "domaine": "Drogues & prévention",
@@ -219,6 +357,35 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ENERGIE",
+      "titre": "Spécialiste — Énergie",
+      "domaine": "Énergie",
+      "module": "energie",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « énergie », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je n'arrive pas à payer mes factures d'énergie : que faire ?",
+        "Puis-je changer de fournisseur d'énergie, et à quelles conditions ?",
+        "J'ai signé un contrat d'énergie par téléphone/internet : puis-je revenir en arrière ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre fournisseur d'énergie",
+          "pour": "plan de paiement"
+        },
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "aide au paiement / client protégé"
+        },
+        {
+          "nom": "Régulateur régional (CWaPE / BRUGEL / VREG)",
+          "lien": "https://www.cwape.be/choix-fournisseur",
+          "pour": "infos changement de fournisseur"
+        }
+      ],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -261,6 +428,69 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ENSEIGNEMENT",
+      "titre": "Spécialiste — Enseignement",
+      "domaine": "Enseignement",
+      "module": "enseignement",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « enseignement », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Jusqu'à quel âge l'école est-elle obligatoire ?",
+        "L'école peut-elle me réclamer de l'argent à l'inscription ?",
+        "Une école refuse d'inscrire mon enfant : quels sont mes droits ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service des inscriptions (FW-B)",
+          "lien": "https://www.enseignement.be",
+          "pour": "refus / aide à l'inscription"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ETRANGERS-SEJOUR",
+      "titre": "Spécialiste — Étrangers & séjour",
+      "domaine": "Étrangers & séjour",
+      "module": "etrangers_sejour",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « étrangers & séjour », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment fonctionne un titre de séjour, et c'est quoi une « annexe » ?",
+        "Comment demander un regroupement familial ?",
+        "Comment demander l'asile (protection internationale) ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Administration communale (service étrangers)",
+          "pour": "introduire/suivre la demande"
+        },
+        {
+          "nom": "Office des étrangers",
+          "lien": "https://dofi.ibz.be/fr",
+          "pour": "infos sur les procédures"
+        },
+        {
+          "nom": "Administration communale",
+          "pour": "dépôt de la demande"
+        },
+        {
+          "nom": "Service spécialisé / avocat en droit des étrangers",
+          "pour": "accompagnement"
+        },
+        {
+          "nom": "CGRA (Commissariat général aux réfugiés et apatrides)",
+          "lien": "https://www.cgra.be/fr",
+          "pour": "examen de la demande d'asile"
+        },
+        {
+          "nom": "Avocat / service d'aide aux demandeurs d'asile",
+          "pour": "accompagnement"
+        }
+      ],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -309,6 +539,58 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-GOUVERNEMENT",
+      "titre": "Spécialiste — Gouvernement & institutions",
+      "domaine": "Gouvernement & institutions",
+      "module": "gouvernement",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « gouvernement & institutions », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment la Belgique est-elle organisée (les niveaux de pouvoir) ?",
+        "C'est quoi les « trois pouvoirs » ?",
+        "Le gouvernement fédéral et la Chambre, comment ça marche ?",
+        "Comment se forme un gouvernement après les élections ?",
+        "Quels sont les partis politiques, et pourquoi y en a-t-il autant ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-HANDICAP",
+      "titre": "Spécialiste — Handicap",
+      "domaine": "Handicap",
+      "module": "handicap",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « handicap », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment faire reconnaître mon handicap ?",
+        "À quelles allocations puis-je avoir droit ?",
+        "Comment obtenir une carte de stationnement pour personne handicapée ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "DG Personnes handicapées (My Handicap)",
+          "lien": "https://handicap.belgium.be/fr/myhandicap/manuel-myhandicap",
+          "pour": "introduire la demande"
+        },
+        {
+          "nom": "Service social de votre commune / mutualité",
+          "pour": "aide à la demande"
+        },
+        {
+          "nom": "DG Personnes handicapées",
+          "lien": "https://handicap.belgium.be",
+          "pour": "demande d'allocations"
+        },
+        {
+          "nom": "DG Personnes handicapées",
+          "lien": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement",
+          "pour": "demande de carte de stationnement"
+        }
+      ],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -376,6 +658,34 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-INDEPENDANT",
+      "titre": "Spécialiste — Indépendant & activité",
+      "domaine": "Indépendant & activité",
+      "module": "independant",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « indépendant & activité », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelles sont les étapes pour devenir indépendant ?",
+        "Dois-je payer des cotisations sociales et m'affilier quelque part ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Guichet d'entreprises agréé",
+          "lien": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/demarches-aupres-dun-guichet/les-guichets-dentreprises",
+          "pour": "inscription BCE, formalités"
+        },
+        {
+          "nom": "Caisse d'assurances sociales",
+          "pour": "affiliation et cotisations"
+        },
+        {
+          "nom": "Mutuelle",
+          "pour": "soins de santé (obligatoire)"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-JUSTICE-PENAL-ACCES",
       "titre": "Spécialiste — Accès à la justice — droits, avocat, casier judiciaire",
       "domaine": "Accès à la justice — droits, avocat, casier judiciaire",
@@ -411,6 +721,27 @@
           "nom": "Service de médiation fédéral « Droits du patient »",
           "lien": "https://www.health.belgium.be/fr/le-service-de-mediation-federal-droits-du-patient",
           "pour": "plainte / médiation"
+        }
+      ],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-SUCCESSIONS",
+      "titre": "Spécialiste — Successions",
+      "domaine": "Successions",
+      "module": "successions",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « successions », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Suis-je obligé d'accepter un héritage ?",
+        "J'ai peur que l'héritage contienne des dettes : que faire ?",
+        "Quels délais pour la déclaration et les droits de succession ?",
+        "Comment renoncer concrètement à une succession ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Notaire",
+          "pour": "vous conseiller et acter votre choix"
         }
       ],
       "nb_reponses": 4,
@@ -488,6 +819,28 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-VIE-PRIVEE-RGPD",
+      "titre": "Spécialiste — Vie privée & données",
+      "domaine": "Vie privée & données",
+      "module": "vie_privee_rgpd",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « vie privée & données », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quels sont mes droits sur mes données personnelles ?",
+        "Puis-je obtenir une copie des données qu'une organisation détient sur moi ?",
+        "Puis-je faire supprimer mes données (« droit à l'oubli ») ?",
+        "Une organisation ne respecte pas mes droits : que faire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Autorité de protection des données (APD)",
+          "lien": "https://www.autoriteprotectiondonnees.be",
+          "pour": "déposer une plainte"
+        }
+      ],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
