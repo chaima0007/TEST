@@ -290,6 +290,15 @@
         "allocations_familiales"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "assurances",
+      "nom": "Assurances",
+      "statut": "couvert",
+      "modules": [
+        "assurances"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
