@@ -29,6 +29,51 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-AIDE-URGENCE",
+      "titre": "Spécialiste — Aide sociale & urgence",
+      "domaine": "Aide sociale & urgence",
+      "module": "aide_urgence",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « aide sociale & urgence », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai faim / je n'ai plus de quoi manger : où aller ?",
+        "Je n'ai pas (ou plus) de logement : où aller ?",
+        "C'est urgent, je ne peux pas attendre : comment obtenir de l'aide vite ?",
+        "Je suis sans papiers / en séjour illégal : ai-je droit à une aide ?",
+        "Je me sens en danger : où aller (selon mon âge / ma situation) ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "aide financière, colis alimentaires"
+        },
+        {
+          "nom": "CPAS (commune où vous êtes)",
+          "pour": "hébergement d'urgence, adresse de référence"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "détresse vitale (froid, santé)"
+        },
+        {
+          "nom": "Président·e du CPAS de votre commune",
+          "pour": "demande d'aide en urgence"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "danger / plainte"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & jeunes"
+        }
+      ],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-BAIL-RESIDENCE-PRINCIPALE-BRUXELLES",
       "titre": "Spécialiste — Bail de résidence principale — Région de Bruxelles-Capitale",
       "domaine": "Bail de résidence principale — Région de Bruxelles-Capitale",
@@ -119,6 +164,106 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-CONSOMMATION",
+      "titre": "Spécialiste — Consommation",
+      "domaine": "Consommation",
+      "module": "consommation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « consommation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Combien de temps suis-je couvert par la garantie ?",
+        "J'ai acheté en ligne et je regrette : puis-je annuler ?",
+        "Litige avec un vendeur : à qui m'adresser ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service de médiation pour le consommateur",
+          "lien": "https://mediationconsommateur.be",
+          "pour": "litige avec un vendeur belge"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-DROGUES-PREVENTION",
+      "titre": "Spécialiste — Drogues & prévention",
+      "domaine": "Drogues & prévention",
+      "module": "drogues_prevention",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « drogues & prévention », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Les drogues sont-elles interdites en Belgique, et que risque-t-on ?",
+        "Et pour les mineurs ?",
+        "Pourquoi les drogues font-elles autant de ravages ?",
+        "Où trouver de l'aide (pour soi ou un proche) ?",
+        "Des témoignages réels de personnes qui s'en sont sorties ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Urgences (overdose, détresse vitale)",
+          "numero": "112",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Infor-Drogues (information & écoute, anonyme)",
+          "lien": "https://infordrogues.be",
+          "pour": "soi ou un proche"
+        },
+        {
+          "nom": "Médecin traitant",
+          "pour": "aide confidentielle, orientation"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "détresse vitale / overdose"
+        }
+      ],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ENFANTS-PLACES",
+      "titre": "Spécialiste — Enfants placés & aide à la jeunesse",
+      "domaine": "Enfants placés & aide à la jeunesse",
+      "module": "enfants_places",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « enfants placés & aide à la jeunesse », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quels sont mes droits quand je suis placé·e ?",
+        "Est-ce que j'ai le droit de parler au juge et d'être entendu·e ?",
+        "Comment apprendre à m'exprimer et à me faire entendre ?",
+        "Est-ce que j'ai aussi des devoirs ?",
+        "À qui parler si quelque chose ne va pas (ou si on ne respecte pas mes droits) ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "parler, être écouté·e",
+          "dispo": "tous les jours 10h–minuit"
+        },
+        {
+          "nom": "Ton avocat",
+          "pour": "défendre tes droits"
+        },
+        {
+          "nom": "Ton avocat (jeunesse)",
+          "pour": "t'accompagner devant le juge"
+        },
+        {
+          "nom": "Délégué général aux droits de l'enfant",
+          "lien": "https://www.dgde.cfwb.be",
+          "pour": "droits non respectés"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "danger immédiat"
+        }
+      ],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-FAMILLE",
       "titre": "Spécialiste — Famille",
       "domaine": "Famille",
@@ -177,7 +322,8 @@
         "Harcèlement à l'école : que peuvent faire l'enfant et les parents ?",
         "Cyberharcèlement : que faire face au harcèlement en ligne ?",
         "Harcèlement moral ou sexuel au travail : quelles démarches ?",
-        "Comment porter plainte pour harcèlement, et dans quel délai ?"
+        "Comment porter plainte pour harcèlement, et dans quel délai ?",
+        "Comment apprendre à un enfant à protéger sa « bulle » et à dire non à un adulte ?"
       ],
       "contacts_cles": [
         {
@@ -226,7 +372,7 @@
           "pour": "se faire conseiller"
         }
       ],
-      "nb_reponses": 5,
+      "nb_reponses": 6,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -246,6 +392,28 @@
       ],
       "contacts_cles": [],
       "nb_reponses": 7,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-SANTE-PATIENT",
+      "titre": "Spécialiste — Santé & patient",
+      "domaine": "Santé & patient",
+      "module": "sante_patient",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « santé & patient », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quels sont mes droits en tant que patient ?",
+        "Peut-on me soigner sans mon accord ?",
+        "Puis-je consulter mon dossier médical ?",
+        "Un de mes droits de patient n'a pas été respecté : que faire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service de médiation fédéral « Droits du patient »",
+          "lien": "https://www.health.belgium.be/fr/le-service-de-mediation-federal-droits-du-patient",
+          "pour": "plainte / médiation"
+        }
+      ],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -320,6 +488,61 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-VOISINAGE",
+      "titre": "Spécialiste — Voisinage",
+      "domaine": "Voisinage",
+      "module": "voisinage",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « voisinage », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Conflit avec un voisin : par quoi commencer ?",
+        "Mon voisin fait trop de bruit : que faire ?",
+        "Les arbres ou la haie du voisin me dérangent : quelles règles ?",
+        "Comment fonctionne la conciliation devant le juge de paix ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service de médiation de votre commune",
+          "pour": "médiation gratuite (si disponible)"
+        },
+        {
+          "nom": "Commune (règlement bruit)",
+          "pour": "nuisances sonores"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "tapage / trouble persistant"
+        },
+        {
+          "nom": "Greffe de la justice de paix de votre canton",
+          "pour": "demande de conciliation (gratuite)"
+        }
+      ],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-VOTE-ELECTORAL",
+      "titre": "Spécialiste — Vote & démocratie",
+      "domaine": "Vote & démocratie",
+      "module": "vote_electoral",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « vote & démocratie », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Pour qui vote-t-on en Belgique (quels niveaux de pouvoir) ?",
+        "Qui décide de quoi : fédéral, Régions, Communautés, communes ?",
+        "Pourquoi voter, et le vote blanc compte-t-il ?",
+        "Comment se passe le jour du vote ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Administration communale",
+          "pour": "convocation, bureau de vote, procuration"
+        }
+      ],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     }
   ]

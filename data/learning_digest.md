@@ -3,11 +3,25 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **57**
+- Savoirs enregistrés : **99**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `a2b52a6f8a1be3b0…`)
+- Certification système : **PASS** (sceau `85baf62a54bc6be3…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
+- ✅ **Qu'est-ce qu'un aidant proche et comment être reconnu ?**  
+  Réf : Loi relative à la reconnaissance de l'aidant proche et à l'octroi de droits sociaux · sources off. : 1 · revu : 2026-06-26
+- ✅ **Ai-je droit à un congé en tant qu'aidant proche ?**  
+  Réf : Réglementation sur le congé pour aidant proche (interruption de carrière thématique) et les droits sociaux associés · sources off. : 1 · revu : 2026-06-26
+- ✅ **J'ai faim / je n'ai plus de quoi manger : où aller ?**  
+  Réf : Loi organique des CPAS du 8 juillet 1976 — droit à l'aide sociale · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je n'ai pas (ou plus) de logement : où aller ?**  
+  Réf : Aide sociale (CPAS) ; adresse de référence ; logement d'urgence · sources off. : 2 · revu : 2026-06-26
+- ✅ **C'est urgent, je ne peux pas attendre : comment obtenir de l'aide vite ?**  
+  Réf : Loi organique des CPAS — aide urgente / décision du président · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je suis sans papiers / en séjour illégal : ai-je droit à une aide ?**  
+  Réf : Aide médicale urgente (AMU) — réglementation aide sociale aux personnes en séjour illégal · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je me sens en danger : où aller (selon mon âge / ma situation) ?**  
+  Réf : Dispositifs de protection et d'aide aux victimes ; numéros d'urgence officiels · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
   Réf : Code bruxellois du Logement, titre XI · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant maximum de la garantie locative à Bruxelles ?**  
@@ -62,6 +76,50 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?**  
   Réf : Réglementation PEB wallonne (énergie) — calendrier en évolution · sources off. : 1 · revu : 2026-06-26
+- ✅ **Qu'est-ce que la citoyenneté belge implique comme droits et devoirs ?**  
+  Réf : Constitution belge ; règles sur la nationalité et la citoyenneté · sources off. : 2 · revu : 2026-06-26
+- ✅ **Le vote est-il obligatoire en Belgique ?**  
+  Réf : Code électoral — obligation de vote · sources off. : 2 · revu : 2026-06-26
+- ✅ **Carte d'identité : quelles obligations, et que faire en cas de perte ou de vol ?**  
+  Réf : Réglementation sur la carte d'identité électronique et le registre national · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelles obligations administratives de base (domicile, déménagement) ?**  
+  Réf : Réglementation sur les registres de la population et la déclaration de changement de résidence · sources off. : 2 · revu : 2026-06-26
+- ✅ **Combien de temps suis-je couvert par la garantie ?**  
+  Réf : Code de droit économique — garantie légale de conformité (2 ans) · sources off. : 2 · revu : 2026-06-26
+- ✅ **J'ai acheté en ligne et je regrette : puis-je annuler ?**  
+  Réf : Code de droit économique — droit de rétractation (vente à distance, 14 jours) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Litige avec un vendeur : à qui m'adresser ?**  
+  Réf : Code de droit économique — règlement extrajudiciaire des litiges de consommation · sources off. : 1 · revu : 2026-06-26
+- ✅ **Les drogues sont-elles interdites en Belgique, et que risque-t-on ?**  
+  Réf : Loi du 24 février 1921 sur les stupéfiants ; législation et directives relatives au cannabis · sources off. : 1 · revu : 2026-06-26
+- ✅ **Et pour les mineurs ?**  
+  Réf : Législation drogues — interdiction totale pour les mineurs · sources off. : 2 · revu : 2026-06-26
+- ✅ **Pourquoi les drogues font-elles autant de ravages ?**  
+  Réf : Information de prévention (santé publique) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Où trouver de l'aide (pour soi ou un proche) ?**  
+  Réf : Dispositifs d'aide et de prévention en matière d'assuétudes · sources off. : 1 · revu : 2026-06-26
+- ✅ **Des témoignages réels de personnes qui s'en sont sorties ?**  
+  Réf : Ressources de prévention et de réduction des risques (secteur assuétudes) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quels sont mes droits quand je suis placé·e ?**  
+  Réf : Décret de la Fédération Wallonie-Bruxelles sur l'aide à la jeunesse ; Convention internationale des droits de l'enfant · sources off. : 2 · revu : 2026-06-26
+- ✅ **Est-ce que j'ai le droit de parler au juge et d'être entendu·e ?**  
+  Réf : Droit de l'enfant à être entendu (procédure devant le tribunal de la jeunesse ; audition du mineur) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Comment apprendre à m'exprimer et à me faire entendre ?**  
+  Réf : Droit de participation et d'expression de l'enfant (Convention des droits de l'enfant, art. 12) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Est-ce que j'ai aussi des devoirs ?**  
+  Réf : Règles de vie en institution / famille d'accueil (cadre de l'aide à la jeunesse) · sources off. : 2 · revu : 2026-06-26
+- ✅ **À qui parler si quelque chose ne va pas (ou si on ne respecte pas mes droits) ?**  
+  Réf : Mission du Délégué général aux droits de l'enfant ; droit à l'aide et à la protection · sources off. : 2 · revu : 2026-06-26
+- ✅ **Après une séparation, qui exerce l'autorité parentale ?**  
+  Réf : Code civil — autorité parentale (exercice conjoint) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment est fixé l'hébergement (la « garde ») des enfants ?**  
+  Réf : Code civil et Code judiciaire — tribunal de la famille ; mesures urgentes et provisoires · sources off. : 1 · revu : 2026-06-26
+- ✅ **Qu'est-ce que la contribution alimentaire pour les enfants ?**  
+  Réf : Code civil — obligation d'entretien des enfants (contribution alimentaire) ; indexation · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelle différence entre pension alimentaire entre ex-époux et contribution pour les enfants ?**  
+  Réf : Code civil — pension alimentaire après divorce (état de besoin) ; obligation d'entretien des enfants · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelles sont les grandes voies de divorce en Belgique ?**  
+  Réf : Code civil — divorce par consentement mutuel et pour désunion irrémédiable ; Code judiciaire (tribunal de la famille) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Je suis (ou mon enfant est) harcelé(e) : qui contacter en premier ?**  
   Réf : Numéros d'urgence officiels (112 / 101) ; service Écoute-Enfants 103 (Fédération Wallonie-Bruxelles) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Harcèlement à l'école : que peuvent faire l'enfant et les parents ?**  
@@ -72,6 +130,8 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 4 août 1996 sur le bien-être au travail et Code du bien-être au travail (risques psychosociaux) ; protection contre les représailles · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment porter plainte pour harcèlement, et dans quel délai ?**  
   Réf : Art. 442bis du Code pénal (harcèlement, poursuite sur plainte de la victime) ; règles de prescription des infractions (titre préliminaire du Code de procédure pénale) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment apprendre à un enfant à protéger sa « bulle » et à dire non à un adulte ?**  
+  Réf : Prévention de la maltraitance des enfants (programmes de la Fédération Wallonie-Bruxelles) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Puis-je avoir un avocat gratuit ou moins cher (aide juridique de 2ᵉ ligne, ex « pro deo ») ?**  
   Réf : Code judiciaire, art. 508/1 et suivants (aide juridique de deuxième ligne) ; seuils indexés annuellement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment obtenir mon extrait de casier judiciaire (ex « certificat de bonnes vie et mœurs ») ?**  
@@ -86,6 +146,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code d'instruction criminelle — accès au dossier / droits de la défense · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne une amende routière : perception immédiate, transaction, ordre de paiement ?**  
   Réf : Loi relative à la police de la circulation routière (perception immédiate, transaction, ordre de paiement) ; Code d'instruction criminelle · sources off. : 2 · revu : 2026-06-26
+- ✅ **Quels sont mes droits en tant que patient ?**  
+  Réf : Loi du 22 août 2002 relative aux droits du patient (modifiée le 6 février 2024) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Peut-on me soigner sans mon accord ?**  
+  Réf : Loi du 22 août 2002 — consentement éclairé · sources off. : 1 · revu : 2026-06-26
+- ✅ **Puis-je consulter mon dossier médical ?**  
+  Réf : Loi du 22 août 2002 — accès au dossier du patient · sources off. : 2 · revu : 2026-06-26
+- ✅ **Un de mes droits de patient n'a pas été respecté : que faire ?**  
+  Réf : Loi du 22 août 2002 — droit à la médiation (service de médiation Droits du patient) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Qu'est-ce que le règlement collectif de dettes et où le demander ?**  
   Réf : Code judiciaire, art. 1675/2 et suivants · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les conditions pour accéder au RCD ?**  
@@ -114,6 +182,22 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 12 avril 1965 concernant la protection de la rémunération des travailleurs ; loi du 3 juillet 1978 (contrats de travail) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Je veux démissionner : quel préavis dois-je respecter ?**  
   Réf : Loi du 3 juillet 1978 relative aux contrats de travail (préavis du travailleur, contre-préavis) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Conflit avec un voisin : par quoi commencer ?**  
+  Réf : Principe des troubles de voisinage (Code civil) ; médiation locale · sources off. : 1 · revu : 2026-06-26
+- ✅ **Mon voisin fait trop de bruit : que faire ?**  
+  Réf : Règlements communaux sur le bruit ; tapage (Code pénal) ; troubles de voisinage (Code civil) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Les arbres ou la haie du voisin me dérangent : quelles règles ?**  
+  Réf : Code civil — distances de plantation et branches ; règlements communaux · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment fonctionne la conciliation devant le juge de paix ?**  
+  Réf : Code judiciaire — conciliation devant le juge de paix · sources off. : 1 · revu : 2026-06-26
+- ✅ **Pour qui vote-t-on en Belgique (quels niveaux de pouvoir) ?**  
+  Réf : Constitution belge — structure de l'État et niveaux de pouvoir · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qui décide de quoi : fédéral, Régions, Communautés, communes ?**  
+  Réf : Répartition constitutionnelle des compétences (fédéral / Régions / Communautés / communes) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Pourquoi voter, et le vote blanc compte-t-il ?**  
+  Réf : Code électoral — obligation de vote ; vote blanc · sources off. : 2 · revu : 2026-06-26
+- ✅ **Comment se passe le jour du vote ?**  
+  Réf : Code électoral — modalités du vote, procuration · sources off. : 2 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

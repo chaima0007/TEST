@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 2960 réalisations concrètes enregistrées
+### 📌 Total : 2980 réalisations concrètes enregistrées
 
 
 ## 2026-06-27
-**12 réalisations** · de **00:28** à **15:15** (fenêtre de travail : 14h47)
+**32 réalisations** · de **00:28** à **17:02** (fenêtre de travail : 16h34)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
@@ -19,6 +19,26 @@
 - 🕒 13:45 — textes de loi officiels (liens Justel vérifiés) + page dédiée
 - 🕒 14:06 — lexique en langage clair (26 termes) + page Lexique
 - 🕒 15:15 — système 'reprendre où on s'est arrêté' + sauvegarde d'urgence
+- 🕒 15:17 — nouveau domaine Travail & emploi (5 faits sourcés)
+- 🕒 15:33 — audit fiabilité du grand site + protection droits d'auteur
+- 🕒 15:34 — veille juridique — s'ajuster aux changements de loi (signalement)
+- 🕒 15:49 — tableau de bord clair des 3 projets + viabilité court/long terme
+- 🕒 15:51 — nouveau domaine Famille (5 faits sourcés)
+- 🕒 16:21 — 2 nouveaux domaines sourcés
+- 🕒 16:24 — un spécialiste par domaine + page Nos sources fiables
+- 🕒 16:28 — module Vote électoral + histoire des lois (année/contexte) + fiches à emporter (impression)
+- 🕒 16:32 — expertise travail + rentabilité par domaine (un expert/domaine)
+- 🕒 16:33 — business plan + plan d'action par phases
+- 🕒 16:37 — catégorie prévention drogues — protéger, sensibiliser, informer
+- 🕒 16:38 — espace Enfants/jeunes + espace Adultes (navigation par public)
+- 🕒 16:40 — sensibilisation protection enfants (Yapaka) + évaluation de toutes les circonstances de vie
+- 🕒 16:41 — catégorie dédiée — droits, devoirs et parole (mission de cœur)
+- 🕒 16:43 — catégorie voisinage + exemples de compromis
+- 🕒 16:45 — 'Où aller quand ça va mal' (faim, sans-abri, CPAS urgent, sans-papiers/AMU, danger)
+- 🕒 16:46 — page 'Près de chez vous' (renvoi vers annuaires officiels, zéro adresse inventée)
+- 🕒 16:47 — analyse d'impact du site (retombées sociales, économiques, risques) + avis sur l'annuaire par ville
+- 🕒 17:01 — droits du patient (loi 2002 mod. 2024) — 4 faits sourcés SPF Santé
+- 🕒 17:02 — garantie 2 ans, rétractation 14j, médiation + Test-Achats — 3 faits sourcés SPF Economie
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)

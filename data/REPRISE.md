@@ -8,9 +8,9 @@
 1) Business plan (✅). 2) Fiabiliser/cloner le contenu sourcé dans le site La Loi Avec Moi. 3) Mise en ligne (FR+NL). 4) Documents payants (Stripe de Chaima) + analytics.
 
 ## 📊 État réel (chiffres vérifiés)
-- Réponses sourcées : **64**
-- Modules : 10 · sources officielles : 83
-- Fiches avec contacts : 20 · alertes de délai : 19
+- Réponses sourcées : **95**
+- Modules : 17 · sources officielles : 130
+- Fiches avec contacts : 38 · alertes de délai : 26
 
 ## ✅ Fait récemment
 - Domaine Travail & emploi (5 faits sourcés)

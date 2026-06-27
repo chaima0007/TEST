@@ -15,6 +15,16 @@ if [ -f scripts/site_guard.py ]; then
   python3 scripts/site_guard.py --scan --quiet || { echo "🛑 site_guard a détecté une incohérence."; fail=1; }
 fi
 
+if [ -f scripts/legal_content_verifier.py ]; then
+  echo "📚 Vérificateur de contenu (sources officielles + dates)…"
+  python3 scripts/legal_content_verifier.py >/tmp/_lcv.log 2>&1 || { echo "🛑 Contenu non sourcé/daté :"; tail -6 /tmp/_lcv.log; fail=1; }
+fi
+
+if [ -f scripts/source_trust_protocol.py ]; then
+  echo "🔒 Confiance des sources…"
+  python3 scripts/source_trust_protocol.py >/tmp/_st.log 2>&1 || { echo "🛑 Source 'officiel' hors liste de confiance :"; tail -6 /tmp/_st.log; fail=1; }
+fi
+
 if [ -f scripts/control_gates_protocol.py ]; then
   echo "🚪 Sas de contrôle (pré-vol)…"
   python3 scripts/control_gates_protocol.py >/tmp/_gates.log 2>&1 || { echo "🛑 Un sas de contrôle est rouge :"; tail -8 /tmp/_gates.log; fail=1; }

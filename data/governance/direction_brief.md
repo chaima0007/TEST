@@ -6,18 +6,18 @@
 
 | Indicateur | Valeur |
 |---|---|
-| Modules | 10 |
-| Réponses sourcées | 53 |
-| Sources officielles | 69 |
-| Sources de complément | 38 |
+| Modules | 20 |
+| Réponses sourcées | 95 |
+| Sources officielles | 130 |
+| Sources de complément | 63 |
 | Faits datés | 100% |
 | Indice d'expertise | 66.0 |
-| Domaines officiels de confiance | 23 |
+| Domaines officiels de confiance | 38 |
 
 ## Avis des directeurs
 
 ### Directeur Juridique
-- **Constat :** 53 faits ; 100% datés ; 64% des sources sont officielles ; 23 domaines officiels de confiance.
+- **Constat :** 95 faits ; 100% datés ; 67% des sources sont officielles ; 38 domaines officiels de confiance.
 - **Recommandation :** Maintenir 100% de faits sourcés/datés ; planifier une remise à niveau dès qu'une loi évolue (PEB, baux régionaux).
 
 ### Directeur Qualité & Conformité
@@ -25,11 +25,11 @@
 - **Recommandation :** Continuer à bloquer toute régression ; aucune livraison hors sas.
 
 ### Directeur Produit & Diffusion
-- **Constat :** Site généré depuis la base (53 réponses, 10 modules) ; projet séparé de competeiq.
+- **Constat :** Site généré depuis la base (95 réponses, 20 modules) ; projet séparé de competeiq.
 - **Recommandation :** Préparer la mise en ligne (hébergement au nom de Chaima) ; ajouter versions NL ensuite.
 
 ### Directeur Stratégie & Marché
-- **Constat :** Couverture actuelle : _catalogue, _lexique, _textes_legaux, Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Harcèlement & violences — qui contacter, quels recours, Accès à la justice — droits, avocat, casier judiciaire, Surendettement — Règlement collectif de dettes (RCD), Travail & emploi — licenciement, préavis, chômage.
+- **Constat :** Couverture actuelle : _catalogue, _lexique, _textes_legaux, Aidants proches — reconnaissance, congé, droits, Où aller quand ça va mal — faim, sans-abri, danger, sans papiers, Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Droits et devoirs du citoyen, Consommation — garanties, achats, arnaques, Drogues — prévention, ravages et information, Enfants placés — tes droits, tes devoirs, ta parole, Famille — séparation, enfants, pensions alimentaires, Harcèlement & violences — qui contacter, quels recours, Accès à la justice — droits, avocat, casier judiciaire, Santé — droits du patient, Surendettement — Règlement collectif de dettes (RCD), Travail & emploi — licenciement, préavis, chômage, Voisinage — bien s'entendre et régler les conflits, Vote électoral — pour qui et pourquoi on vote.
 - **Recommandation :** Garder l'avance via niches sous-servies déjà ouvertes (surendettement, justice) ; surveiller la demande réelle.
 
 ### Directeur Éthique & Transparence

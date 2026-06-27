@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 10,
-    "faits": 64,
-    "sources_officielles": 83,
-    "faits_avec_contacts": 20,
-    "faits_avec_alerte_delai": 19
+    "modules": 17,
+    "faits": 95,
+    "sources_officielles": 130,
+    "faits_avec_contacts": 38,
+    "faits_avec_alerte_delai": 26
   },
   "modules": [
     {
@@ -19,6 +19,18 @@
       "sources_officielles": 2,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "aide_urgence.json",
+      "module": "aide_urgence",
+      "titre": "Où aller quand ça va mal — faim, sans-abri, danger, sans papiers",
+      "domaine": "Aide sociale & urgence",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 5,
+      "faits_avec_alerte_delai": 3,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -70,6 +82,42 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "consommation.json",
+      "module": "consommation",
+      "titre": "Consommation — garanties, achats, arnaques",
+      "domaine": "Consommation",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "drogues.json",
+      "module": "drogues_prevention",
+      "titre": "Drogues — prévention, ravages et information",
+      "domaine": "Drogues & prévention",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "enfants_places.json",
+      "module": "enfants_places",
+      "titre": "Enfants placés — tes droits, tes devoirs, ta parole",
+      "domaine": "Enfants placés & aide à la jeunesse",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 10,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "famille.json",
       "module": "famille",
       "titre": "Famille — séparation, enfants, pensions alimentaires",
@@ -87,9 +135,9 @@
       "titre": "Harcèlement & violences — qui contacter, quels recours",
       "domaine": "Harcèlement & violences",
       "juridiction": "BE",
-      "faits": 5,
-      "sources_officielles": 8,
-      "faits_avec_contacts": 5,
+      "faits": 6,
+      "sources_officielles": 9,
+      "faits_avec_contacts": 6,
       "faits_avec_alerte_delai": 5,
       "derniere_revue": "2026-06-26"
     },
@@ -103,6 +151,18 @@
       "sources_officielles": 8,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "sante_patient.json",
+      "module": "sante_patient",
+      "titre": "Santé — droits du patient",
+      "domaine": "Santé & patient",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -127,6 +187,30 @@
       "sources_officielles": 6,
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 5,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "voisinage.json",
+      "module": "voisinage",
+      "titre": "Voisinage — bien s'entendre et régler les conflits",
+      "domaine": "Voisinage",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "vote_electoral.json",
+      "module": "vote_electoral",
+      "titre": "Vote électoral — pour qui et pourquoi on vote",
+      "domaine": "Vote & démocratie",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-26"
     }
   ],
@@ -190,15 +274,19 @@
     {
       "cle": "aide_sociale",
       "nom": "Aide sociale & CPAS",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "aide_urgence"
+      ],
       "priorite": "haute"
     },
     {
       "cle": "consommation",
       "nom": "Consommation & contrats",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "consommation"
+      ],
       "priorite": "moyenne"
     },
     {
@@ -229,8 +317,10 @@
     {
       "cle": "sante_patient",
       "nom": "Santé & droits du patient",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "sante_patient"
+      ],
       "priorite": "moyenne"
     },
     {
@@ -271,6 +361,33 @@
       "statut": "couvert",
       "modules": [
         "aidants_proches"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "vote",
+      "nom": "Vote & démocratie",
+      "statut": "couvert",
+      "modules": [
+        "vote_electoral"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "drogues",
+      "nom": "Drogues & prévention",
+      "statut": "couvert",
+      "modules": [
+        "drogues_prevention"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "enfants_places",
+      "nom": "Enfants placés & aide à la jeunesse",
+      "statut": "couvert",
+      "modules": [
+        "enfants_places"
       ],
       "priorite": "haute"
     }

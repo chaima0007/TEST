@@ -1,8 +1,8 @@
 # Rapport d'audit d'accessibilité (WCAG 2.2)
 
-*Généré le 2026-06-27 sur 27 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
+*Généré le 2026-06-27 sur 29 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
 
-**Contrôles réussis : 270 · à corriger : 0**
+**Contrôles réussis : 290 · à corriger : 0**
 
 ## ✅ _catalogue.html
 - ✅ Langue de page déclarée (lang)
@@ -112,6 +112,18 @@
 - ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
 
+## ✅ consommation.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (22 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
+
 ## ✅ drogues.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -145,7 +157,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (24 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (26 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ espace-mineurs.html
@@ -193,7 +205,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (27 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (29 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ justice_penal.html
@@ -219,6 +231,18 @@
 - ✅ Champs de saisie étiquetés (1 champ(s))
 - ✅ Liens avec intitulé (13 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
+
+## ✅ sante_patient.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (10 lien(s) _blank)
 
 ## ✅ sources.html
 - ✅ Langue de page déclarée (lang)
@@ -301,7 +325,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (37 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (39 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ voisinage.html
