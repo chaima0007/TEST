@@ -201,6 +201,12 @@
       "nom": "Droits d auteur & PI",
       "regle": "Le contenu original est protégé (© La Loi Avec Moi, auteure Chaima Mhadbi). Voir COPYRIGHT.md. Les textes de loi officiels restent publics et sont cités. La marque (nom/logo) nécessite un dépôt BOIP (action de Chaima).",
       "verif": "test -f COPYRIGHT.md"
+    },
+    {
+      "id": "P-VEILLE",
+      "nom": "Veille juridique",
+      "regle": "Suivre les changements de loi connus (veille_juridique.json) et revérifier les fiches selon une cadence. L agent signale ; mise à jour seulement après vérification de la source officielle.",
+      "verif": "python3 scripts/veille_juridique_protocol.py"
     }
   ]
 }
