@@ -1,0 +1,47 @@
+{
+  "module": "assurance_auto",
+  "titre": "Assurance auto obligatoire (RC)",
+  "domaine": "Assurance véhicule",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs",
+    "portee": "Obligation d'assurance, sanctions et Fonds commun de garantie",
+    "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/assurances/auto/rc-auto"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour votre contrat et vos garanties, vérifiez auprès de votre assureur.",
+  "faits": [
+    {
+      "id": "AUTO-OBLIGATION-001",
+      "question": "Quelle assurance est obligatoire pour ma voiture ?",
+      "reponse": "L'assurance responsabilité civile (RC auto) est obligatoire : elle couvre les dommages que votre véhicule cause à autrui. Sans elle, vous ne pouvez pas immatriculer ni circuler. Les autres garanties (omnium, assistance) sont facultatives. Rouler sans RC est une infraction sérieuse : amende, voire déchéance du droit de conduire et saisie du véhicule. Et en cas d'accident, vous devrez rembourser vous-même tous les dommages causés — souvent ruineux.",
+      "reference_legale": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs",
+      "contacts": [
+        {"nom": "Votre assureur", "pour": "souscription RC auto, attestation"},
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "information assurance auto"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/auto/rc-auto/vehicules-soumis-lobligation", "intitule": "SPF Économie — Véhicules soumis à l'obligation"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=fr&la=F&cn=1989112130&table_name=loi", "intitule": "Justel — Loi du 21 novembre 1989"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "AUTO-FONDS-GARANTIE-001",
+      "question": "Que se passe-t-il si l'autre conducteur n'est pas assuré ou prend la fuite ?",
+      "reponse": "Vous n'êtes pas sans recours. Le Fonds commun de garantie belge peut indemniser les victimes d'accidents de la route dans certains cas : conducteur responsable non assuré, véhicule non identifié (délit de fuite), vol du véhicule, ou défaillance de l'assureur. Déclarez l'accident à la police et conservez toutes les preuves. Le Fonds intervient selon des conditions précises ; votre assureur ou un avocat peut vous orienter.",
+      "reference_legale": "Loi du 21 novembre 1989 (missions du Fonds commun de garantie belge)",
+      "contacts": [
+        {"nom": "Fonds commun de garantie belge", "pour": "indemnisation (non-assuré, délit de fuite, vol)"},
+        {"nom": "Police", "numero": "101", "pour": "constat et déclaration de l'accident"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/auto/rc-auto", "intitule": "SPF Économie — RC auto"},
+        {"type": "secondaire", "url": "https://www.assuralia.be/fr/infos-secteur/contexte-juridique/contexte-juridique-de-lassurance-automobile", "intitule": "Assuralia — Contexte juridique assurance auto"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

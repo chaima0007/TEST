@@ -5,15 +5,15 @@
   "projets": [
     {
       "nom": "La Loi Avec Moi (citoyens)",
-      "point_de_sortie": "57 domaines / 218 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.",
+      "point_de_sortie": "61 domaines / 226 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.",
       "taches": [
         {
           "nom": "Base juridique sourcée (domaines + réponses)",
           "pct": 90,
           "statut": "en cours",
           "actions_faites": [
-            "57 domaines couverts",
-            "218 réponses, 100% loi concrète",
+            "61 domaines couverts",
+            "226 réponses, 100% loi concrète",
             "100% sources officielles",
             "double vérification + agent incrémental"
           ],

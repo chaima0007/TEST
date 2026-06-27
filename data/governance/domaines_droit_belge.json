@@ -551,6 +551,24 @@
         "bail_etudiant"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "achat_logement",
+      "nom": "Achat immobilier",
+      "statut": "couvert",
+      "modules": [
+        "achat_logement"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "assurance_auto",
+      "nom": "Assurance véhicule",
+      "statut": "couvert",
+      "modules": [
+        "assurance_auto"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

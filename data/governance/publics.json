@@ -76,7 +76,9 @@
         "recours_administration",
         "mediation_conflits",
         "premier_emploi",
-        "bail_etudiant"
+        "bail_etudiant",
+        "achat_logement",
+        "assurance_auto"
       ]
     }
   }

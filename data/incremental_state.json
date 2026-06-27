@@ -1,12 +1,14 @@
 {
   "la_loi_avec_moi": {
     "accident_travail.json": "1b746a4e9bbcaaa52981e18cfc724c1ae722416c0dfc8b08ce8e2adfeaf8d0af",
+    "achat_logement.json": "85043d826c616dd49d8127e7b8ff65d9cf416c85cc24a8ddf160a87a53719442",
     "adoption.json": "760748ed65640363bc33558c1957f0c303f309b0e255c2f63964a26809b9ee3b",
     "aidants_proches.json": "3f207013be47a39d02bb702f5dd17c632aff95ebcddf661db9f9fcca8374a2fc",
     "aide_juridique.json": "0d198e25cc3afb274399e3fe34b1b6113025fb5da0dba199031aefec342af819",
     "aide_urgence.json": "e5d2536319a662a831ae9b0915ca7999b5121556ba7bb9fda7bae8a2535b1696",
     "allocations_familiales.json": "8dfaa23cb6257691e79d956a67f0e6e28ba7bf6f939b2a00b890e50e1becf2f7",
     "animaux.json": "10aa794bb497e59d052bc7db4e21431031e347b92642d9f67bb123bd1fdf1ef2",
+    "assurance_auto.json": "6e27d7e6ee27f7cea6286fb9579825219d92cff0f81efb1bbc24265e049910fa",
     "assurances.json": "e83878a140fa5709306204c368740fdd23cbd8d2883145b24f384f76c5838a73",
     "bail_bruxelles.json": "877da5d7a8194ca5e17bc56664725a63887cb6278e99d581fb2822ea6d93a201",
     "bail_etudiant.json": "066598a67934ce2e497720ea435d47dac909d830265441fdb53db87bada4a30f",

@@ -1,0 +1,46 @@
+{
+  "module": "achat_logement",
+  "titre": "Acheter un logement — compromis & notaire",
+  "domaine": "Achat immobilier",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil (vente) ; Code des droits d'enregistrement ; loi de ventôse sur le notariat",
+    "portee": "Étapes de l'achat, valeur du compromis, rôle du notaire et délais",
+    "source_officielle": "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les droits d'enregistrement et abattements varient selon la Région ; faites-vous accompagner par un notaire avant de signer.",
+  "faits": [
+    {
+      "id": "ACHAT-COMPROMIS-001",
+      "question": "Le compromis de vente, est-ce déjà un engagement définitif ?",
+      "reponse": "Oui : en Belgique, « compromis vaut vente ». Dès que vendeur et acheteur signent un compromis reprenant les éléments essentiels (bien, prix), ils sont engagés — même si une meilleure offre arrive ensuite. Pour vous protéger, on y insère des conditions suspensives (la plus fréquente : la vente n'a lieu que si vous obtenez votre prêt hypothécaire). Lisez bien le compromis AVANT de signer : c'est lui qui fixe vos droits. En cas de doute, faites-le relire par un notaire.",
+      "reference_legale": "Code civil — formation et effets de la vente (le compromis lie les parties)",
+      "contacts": [
+        {"nom": "Notaire", "lien": "https://www.notaire.be", "pour": "relecture du compromis, conditions suspensives"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier", "intitule": "Notaire.be — Acheter et vendre un bien"},
+        {"type": "secondaire", "url": "https://www.droitbelge.be/fiches_detail.asp?idcat=9&id=3", "intitule": "Droitbelge.be — Compromis vaut vente"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ACHAT-NOTAIRE-001",
+      "question": "Que fait le notaire et dans quel délai signe-t-on l'acte ?",
+      "reponse": "Après le compromis, le notaire réalise toutes les vérifications (hypothèques, urbanisme, état du sol, dettes éventuelles) et prépare l'acte authentique. Cet acte doit en principe être signé, et les droits d'enregistrement payés, dans les quatre mois suivant le compromis. C'est à la signature de l'acte que vous devenez officiellement propriétaire et que vous payez le prix et les frais (droits d'enregistrement + honoraires). Le notaire est neutre et garant de la sécurité juridique de la vente.",
+      "reference_legale": "Code des droits d'enregistrement (enregistrement et paiement dans les 4 mois) ; loi de ventôse sur le notariat",
+      "alerte_delai": "L'acte authentique et le paiement des droits d'enregistrement doivent intervenir dans les 4 mois suivant le compromis.",
+      "contacts": [
+        {"nom": "Notaire", "pour": "vérifications, acte authentique, frais"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-differentes-etapes-dun-achat-immobilier/signer-lacte-de-vente", "intitule": "Notaire.be — Signer l'acte de vente"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/achat_d_un_logement", "intitule": "Belgium.be — Achat d'un logement"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

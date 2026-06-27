@@ -12,7 +12,7 @@ _Dernière mise à jour : 2026-06-27_
 ## La Loi Avec Moi (citoyens) — 45%
 `█████████░░░░░░░░░░░` 45%
 
-> **Point de sortie :** 57 domaines / 218 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.
+> **Point de sortie :** 61 domaines / 226 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.
 
 | Tâche | Avancement | Statut |
 |---|---|---|
