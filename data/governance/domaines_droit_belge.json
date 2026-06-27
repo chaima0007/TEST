@@ -281,6 +281,15 @@
         "logement_social"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "allocations_familiales",
+      "nom": "Allocations familiales",
+      "statut": "couvert",
+      "modules": [
+        "allocations_familiales"
+      ],
+      "priorite": "haute"
     }
   ]
 }

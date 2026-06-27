@@ -1,0 +1,43 @@
+{
+  "module": "allocations_familiales",
+  "titre": "Allocations familiales — qui, comment, combien",
+  "domaine": "Allocations familiales",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Allocations familiales (compétence régionale) : Groeipakket (Flandre), Famiris/Iriscare (Bruxelles), AVIQ/FAMIWAL (Wallonie)",
+    "portee": "Droit aux allocations familiales pour les enfants en Belgique",
+    "source_officielle": "https://www.belgium.be/fr/famille/enfants/allocations_familiales"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les allocations familiales sont RÉGIONALES : les montants et règles dépendent de la Région de l'enfant. Adressez-vous à la caisse de votre région.",
+  "faits": [
+    {
+      "id": "ALLOC-DROIT-001",
+      "question": "Qui a droit aux allocations familiales et qui peut les demander ?",
+      "reponse": "Presque tous les enfants vivant en Belgique y ont droit. Depuis 2019, c'est l'enfant lui-même qui ouvre le droit (plus besoin d'un parent « attributaire » lié à un statut professionnel). La demande peut être faite par le père, la mère ou toute personne qui élève l'enfant. La caisse compétente dépend de la Région : Groeipakket en Flandre, Famiris (et autres caisses) à Bruxelles, FAMIWAL/AVIQ en Wallonie.",
+      "reference_legale": "Décrets régionaux sur les prestations familiales (régionalisation depuis 2019)",
+      "contacts": [
+        {"nom": "Caisse d'allocations familiales de votre région", "lien": "https://www.belgium.be/fr/famille/enfants/allocations_familiales", "pour": "demander / s'affilier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/allocations_familiales", "intitule": "Belgium.be — Allocations familiales"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/est-ce-toujours-le-pere-qui-demande-les-allocations-familiales", "intitule": "Droits Quotidiens — Qui demande les allocations"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ALLOC-MONTANT-001",
+      "question": "Quel est le montant, et jusqu'à quel âge ?",
+      "reponse": "Le montant dépend de la Région, de l'âge et de la situation (suppléments possibles selon les revenus, le handicap, le nombre d'enfants). Les allocations sont versées au moins jusqu'à la majorité, et se prolongent en cas d'études/formation sous conditions (souvent jusqu'à 25 ans). Pour le montant exact, utilisez le simulateur ou contactez la caisse de votre région — les chiffres changent et sont indexés.",
+      "reference_legale": "Décrets régionaux sur les prestations familiales (montants et suppléments)",
+      "alerte_delai": "À la majorité, vérifiez les conditions de prolongation (études) pour ne pas perdre le droit.",
+      "sources": [
+        {"type": "officiel", "url": "https://famiris.brussels/fr/calculer-mes-allocations-familiales/", "intitule": "Famiris — Calculer mes allocations (Bruxelles)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/allocations_familiales", "intitule": "Belgium.be — Allocations familiales"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
