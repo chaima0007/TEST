@@ -132,8 +132,10 @@
     {
       "cle": "vie_privee",
       "nom": "Vie privée & données (RGPD)",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "vie_privee_rgpd"
+      ],
       "priorite": "moyenne"
     },
     {

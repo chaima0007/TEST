@@ -37,7 +37,8 @@
         "consommation",
         "handicap",
         "gouvernement",
-        "etrangers_sejour"
+        "etrangers_sejour",
+        "vie_privee_rgpd"
       ]
     }
   }
