@@ -209,6 +209,15 @@
         "gouvernement"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "enseignement",
+      "nom": "Enseignement",
+      "statut": "couvert",
+      "modules": [
+        "enseignement"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
