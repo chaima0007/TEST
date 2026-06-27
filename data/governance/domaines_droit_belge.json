@@ -335,6 +335,15 @@
         "sante_mentale"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "protection_personne",
+      "nom": "Protection des personnes vulnérables",
+      "statut": "couvert",
+      "modules": [
+        "protection_personne"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

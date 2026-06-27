@@ -1,0 +1,48 @@
+{
+  "module": "protection_personne",
+  "titre": "Personnes vulnérables — administration de biens & protection",
+  "domaine": "Protection des personnes vulnérables",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Protection judiciaire des majeurs (Code civil) — administration de biens et/ou de la personne, ordonnée par le juge de paix",
+    "portee": "Protéger une personne majeure devenue incapable de gérer ses affaires",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/protection_judiciaire"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour une situation concrète, le juge de paix et un notaire/avocat peuvent vous guider.",
+  "faits": [
+    {
+      "id": "PROT-ADMIN-001",
+      "question": "Comment protéger un proche qui ne peut plus gérer ses affaires (maladie, handicap, grand âge) ?",
+      "reponse": "On peut demander une mesure de protection judiciaire : l'administration de biens et/ou de la personne, ordonnée par le juge de paix. Le juge désigne un administrateur (en priorité un proche) qui assiste ou représente la personne. La protection est faite « sur mesure » : le juge précise ce que la personne peut encore faire seule et ce pour quoi elle est aidée. Cela évite les abus tout en respectant son autonomie.",
+      "reference_legale": "Code civil — protection judiciaire des majeurs (administration de biens et de la personne)",
+      "contacts": [
+        {"nom": "Juge de paix du domicile de la personne", "pour": "demander la mesure"},
+        {"nom": "Notaire / avocat", "pour": "conseil"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/protection_judiciaire", "intitule": "SPF Justice — Protection judiciaire"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/mission_de_l_administrateur", "intitule": "SPF Justice — Mission de l'administrateur"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PROT-DEMANDE-001",
+      "question": "Qui peut demander la mise sous administration, et comment ?",
+      "reponse": "La demande peut être introduite par la personne elle-même, sa famille, un autre intéressé (voisin, aidant, assistant social) ou le procureur du Roi. Elle se dépose auprès du juge de paix du lieu de résidence de la personne à protéger, avec un certificat médical circonstancié. Le juge entend la personne autant que possible. On peut aussi anticiper de son vivant via une « déclaration » désignant à l'avance son administrateur de confiance.",
+      "reference_legale": "Code civil — demande de protection judiciaire ; mandat de protection extrajudiciaire",
+      "contacts": [
+        {"nom": "Justice de paix", "pour": "introduire la requête"},
+        {"nom": "Médecin", "pour": "certificat médical circonstancié"}
+      ],
+      "alerte_delai": "En cas d'urgence (personne vulnérable exposée à des abus financiers), saisissez vite le juge de paix.",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/protection_judiciaire/demander_une_mesure_de_protection_judiciaire", "intitule": "SPF Justice — Demander une mesure de protection"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/ou-et-comment-introduire-la-demande-de-mise-sous-administration-de-biens-etou-de-la", "intitule": "Droits Quotidiens — Introduire la demande"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
