@@ -1,0 +1,26 @@
+{
+  "fichier": "Point de reprise — où on en est",
+  "but": "Permettre de TOUJOURS reprendre exactement où on s'est arrêté, même après un redémarrage du conteneur. Mis à jour au fur et à mesure.",
+  "derniere_maj": "2026-06-27",
+  "focus_actuel": "Enrichir le contenu (domaine Travail), puis versions néerlandaises.",
+  "fait_recemment": [
+    "Domaine Harcèlement & violences (5 faits sourcés, contacts d'urgence)",
+    "Base unique : catalogue central + taxonomie des domaines du droit belge",
+    "Crédibilité : textes de loi officiels (liens Justel vérifiés) + page dédiée",
+    "Lexique en langage clair (26 termes) + page Lexique",
+    "Système de reprise + sauvegarde (ce point)"
+  ],
+  "prochaine_etape": "1) Créer le module Travail & emploi (sourcé). 2) Démarrer les versions NL (interface d'abord). 3) Avancer sur le projet competeiq.",
+  "projets": {
+    "loi_avec_moi": {
+      "etat": "actif — site 12 pages, base sourcée, accessible",
+      "branche": "claude/swarm-50-agent-architecture-3l6cno",
+      "prochaine_etape": "module Travail, puis NL"
+    },
+    "competeiq": {
+      "etat": "présent (CRM, app Next.js à la racine) — séparé de loi_avec_moi",
+      "prochaine_etape": "vérifier la santé (build/tests) et proposer une amélioration sûre"
+    }
+  },
+  "regle_or": "Commit + push après CHAQUE étape. Le remote est le filet. En cas de doute, lire ce fichier et data/REPRISE.md."
+}

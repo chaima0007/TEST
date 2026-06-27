@@ -189,6 +189,12 @@
       "nom": "Base unique & taxonomie",
       "regle": "Une seule base organisée : catalogue central (data/belgium/_catalogue.json) qui voit tous les modules, croisé avec la taxonomie des domaines du droit belge (domaines_droit_belge.json). Chaque module reste un fichier séparé (rien mélangé). Schéma de fait commun à tous les domaines.",
       "verif": "python3 scripts/build_kb_index.py"
+    },
+    {
+      "id": "P-REPRISE",
+      "nom": "Reprise & continuité",
+      "regle": "Toujours pouvoir reprendre où on s'est arrêté. data/governance/reprise.json tient le fil ; data/REPRISE.md est le mémo lu en premier après un redémarrage. Commit+push après chaque étape.",
+      "verif": "python3 scripts/checkpoint_protocol.py"
     }
   ]
 }
