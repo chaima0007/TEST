@@ -1,8 +1,8 @@
 # Rapport d'audit d'accessibilité (WCAG 2.2)
 
-*Généré le 2026-06-27 sur 14 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
+*Généré le 2026-06-27 sur 17 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
 
-**Contrôles réussis : 140 · à corriger : 0**
+**Contrôles réussis : 170 · à corriger : 0**
 
 ## ✅ _catalogue.html
 - ✅ Langue de page déclarée (lang)
@@ -27,6 +27,18 @@
 - ✅ Champs de saisie étiquetés (0 champ(s))
 - ✅ Liens avec intitulé (9 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
+
+## ✅ aidants_proches.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (15 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (6 lien(s) _blank)
 
 ## ✅ bail_bruxelles.html
 - ✅ Langue de page déclarée (lang)
@@ -64,6 +76,30 @@
 - ✅ Liens avec intitulé (28 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (19 lien(s) _blank)
 
+## ✅ citoyen.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (19 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
+
+## ✅ famille.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (22 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (13 lien(s) _blank)
+
 ## ✅ harcelement.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -85,7 +121,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (15 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (18 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ justice_penal.html
@@ -169,7 +205,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (24 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (28 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## Limite honnête

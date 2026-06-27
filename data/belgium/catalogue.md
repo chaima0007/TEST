@@ -2,15 +2,17 @@
 
 *Généré le 2026-06-27. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**58 réponses · 8 modules · 74 sources officielles · 15 fiches avec contacts · 16 alertes de délai**
+**64 réponses · 10 modules · 83 sources officielles · 20 fiches avec contacts · 19 alertes de délai**
 
 ## Modules en ligne
 
 | Domaine | Module | Réponses | Sources off. | Contacts | Délais |
 |---|---|---|---|---|---|
+| Aidants proches | Aidants proches — reconnaissance, congé, droits | 2 | 2 | 2 | 1 |
 | — | Bail de résidence principale — Région de Bruxelles-Capitale | 9 | 11 | 0 | 0 |
 | — | Bail de résidence principale — Région flamande | 9 | 10 | 0 | 0 |
 | — | Bail de résidence principale — Région wallonne | 9 | 15 | 0 | 0 |
+| Citoyenneté | Droits et devoirs du citoyen | 4 | 7 | 3 | 2 |
 | Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 5 | 8 | 5 | 5 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
@@ -36,3 +38,5 @@
 | Vie privée & données (RGPD) | a_venir | moyenne |
 | Successions & héritage | a_venir | basse |
 | Énergie & PEB (lié au logement) | partiel | moyenne |
+| Citoyenneté (droits & devoirs) | couvert | haute |
+| Aidants proches | couvert | haute |

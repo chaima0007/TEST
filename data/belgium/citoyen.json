@@ -1,0 +1,73 @@
+{
+  "module": "citoyen_droits_devoirs",
+  "titre": "Droits et devoirs du citoyen",
+  "domaine": "Citoyenneté",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Citoyenneté belge — droits et obligations (Constitution, Code électoral, registre de la population)",
+    "portee": "Grands droits et devoirs des personnes en Belgique : vote, identité, obligations administratives",
+    "source_officielle": "https://www.belgium.be/fr/formation/enseignement/droits_et_devoirs"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Ne remplace pas un conseil individualisé. Pour une démarche précise, adressez-vous à votre administration communale ou au service public concerné.",
+  "faits": [
+    {
+      "id": "CIT-DROITS-001",
+      "question": "Qu'est-ce que la citoyenneté belge implique comme droits et devoirs ?",
+      "reponse": "La citoyenneté relie une personne à l'État belge : elle ouvre des droits (par exemple voter, être protégé par la loi, accéder aux services publics) et impose des devoirs (par exemple respecter la loi, participer aux élections, payer ses impôts, répondre à certaines obligations administratives). Droits et devoirs vont ensemble : c'est l'équilibre de la vie en société.",
+      "reference_legale": "Constitution belge ; règles sur la nationalité et la citoyenneté",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/formation/enseignement/droits_et_devoirs", "intitule": "Belgium.be — Droits et devoirs"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CIT-VOTE-001",
+      "question": "Le vote est-il obligatoire en Belgique ?",
+      "reponse": "Oui. Si vous êtes inscrit dans une commune belge, le vote est obligatoire à partir de 18 ans pour les élections concernées (Chambre, Parlement européen, parlements régionaux et communautaires). L'inscription est automatique : vous recevez une convocation et devez vous rendre au bureau de vote. Vous n'êtes pas obligé de voter pour un parti : le vote blanc est permis. Ne pas voter sans motif valable peut en principe être sanctionné.",
+      "reference_legale": "Code électoral — obligation de vote",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "convocation, bureau de vote"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://elections.fgov.be/electeurs/faq", "intitule": "SPF Intérieur — Élections, FAQ électeurs"},
+        {"type": "officiel", "url": "https://elections.fgov.be/node/111505", "intitule": "SPF Intérieur — Le vote est-il obligatoire ?"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CIT-IDENTITE-001",
+      "question": "Carte d'identité : quelles obligations, et que faire en cas de perte ou de vol ?",
+      "reponse": "Toute personne doit pouvoir justifier de son identité. En cas de perte ou de vol de la carte d'identité, agissez vite : appelez DOC STOP (gratuit, 24h/24) pour bloquer vos documents, signalez le vol à la police, puis demandez une nouvelle carte à votre commune. Même sans carte, on peut voter avec une attestation de la police ou un autre document d'identité valable.",
+      "reference_legale": "Réglementation sur la carte d'identité électronique et le registre national",
+      "contacts": [
+        {"nom": "DOC STOP", "numero": "00800 2123 2123", "pour": "bloquer une carte perdue/volée", "dispo": "gratuit, 24h/24"},
+        {"nom": "Administration communale", "pour": "nouvelle carte d'identité"}
+      ],
+      "alerte_delai": "En cas de perte ou de vol, bloquez la carte immédiatement (DOC STOP) pour éviter une usurpation d'identité.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/papiers_didentite", "intitule": "Belgium.be — Papiers d'identité"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/actualites/carte-didentite-perdue-comment-voter", "intitule": "Droits Quotidiens — Carte d'identité perdue"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CIT-ADRESSE-001",
+      "question": "Quelles obligations administratives de base (domicile, déménagement) ?",
+      "reponse": "Vous devez être inscrit au registre de la population de votre commune et y déclarer votre adresse réelle. En cas de déménagement, vous devez déclarer votre nouvelle adresse à la commune (généralement dans un délai déterminé) ; un agent vient ensuite vérifier la résidence effective. Tenir son adresse à jour est important : beaucoup de droits et de courriers officiels en dépendent (élections, impôts, mutuelle).",
+      "reference_legale": "Réglementation sur les registres de la population et la déclaration de changement de résidence",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "inscription, changement d'adresse"}
+      ],
+      "alerte_delai": "Déclarez tout déménagement à la commune sans tarder : un retard peut bloquer des démarches et des courriers officiels.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/demenagement", "intitule": "Belgium.be — Déménagement"},
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/registre-national/", "intitule": "SPF Intérieur — Registre national"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

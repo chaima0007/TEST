@@ -2,13 +2,25 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 8,
-    "faits": 58,
-    "sources_officielles": 74,
-    "faits_avec_contacts": 15,
-    "faits_avec_alerte_delai": 16
+    "modules": 10,
+    "faits": 64,
+    "sources_officielles": 83,
+    "faits_avec_contacts": 20,
+    "faits_avec_alerte_delai": 19
   },
   "modules": [
+    {
+      "fichier": "aidants_proches.json",
+      "module": "aidants_proches",
+      "titre": "Aidants proches — reconnaissance, congé, droits",
+      "domaine": "Aidants proches",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
     {
       "fichier": "bail_bruxelles.json",
       "module": "bail_residence_principale_bruxelles",
@@ -43,6 +55,18 @@
       "sources_officielles": 15,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "citoyen.json",
+      "module": "citoyen_droits_devoirs",
+      "titre": "Droits et devoirs du citoyen",
+      "domaine": "Citoyenneté",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -231,6 +255,24 @@
         "via bail (PEB)"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "citoyennete",
+      "nom": "Citoyenneté (droits & devoirs)",
+      "statut": "couvert",
+      "modules": [
+        "citoyen_droits_devoirs"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "aidants_proches",
+      "nom": "Aidants proches",
+      "statut": "couvert",
+      "modules": [
+        "aidants_proches"
+      ],
+      "priorite": "haute"
     }
   ]
 }

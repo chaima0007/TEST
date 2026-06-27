@@ -1,0 +1,47 @@
+{
+  "module": "aidants_proches",
+  "titre": "Aidants proches — reconnaissance, congé, droits",
+  "domaine": "Aidants proches",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Reconnaissance de l'aidant proche et octroi de droits sociaux (compétence fédérale, SPF Sécurité sociale)",
+    "portee": "Personnes qui aident de manière régulière un proche en situation de dépendance (maladie, handicap, âge)",
+    "source_officielle": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Ne remplace pas un conseil individualisé. Pour une demande, contactez votre mutualité, qui examine votre situation.",
+  "faits": [
+    {
+      "id": "AID-RECONNAISSANCE-001",
+      "question": "Qu'est-ce qu'un aidant proche et comment être reconnu ?",
+      "reponse": "L'aidant proche est la personne qui apporte, gratuitement et de façon régulière, un soutien et une aide à un proche en situation de dépendance, avec le concours d'au moins un professionnel de la santé. Il existe deux reconnaissances : une reconnaissance simple (sans droits sociaux) et une reconnaissance spécifique ouvrant des droits sociaux (notamment le congé). Conditions générales : aide gratuite et régulière, relation de proximité, personne réellement dépendante, résider en Belgique et être inscrit au registre. La demande passe par la mutualité.",
+      "reference_legale": "Loi relative à la reconnaissance de l'aidant proche et à l'octroi de droits sociaux",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "introduire la demande de reconnaissance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche", "intitule": "SPF Sécurité sociale — Aidant proche"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-obtenir-la-reconnaissance-daidant-proche", "intitule": "Droits Quotidiens — Reconnaissance d'aidant proche"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "AID-CONGE-001",
+      "question": "Ai-je droit à un congé en tant qu'aidant proche ?",
+      "reponse": "Oui, si vous avez la reconnaissance spécifique ouvrant des droits sociaux. Pour celle-ci, vous devez consacrer au moins 50 heures par mois (ou 600 heures par an) à aider la personne. Le travailleur reconnu peut alors prendre un congé pour aidant proche, assorti d'une allocation : en principe jusqu'à 3 mois à temps plein (ou 6 mois à temps partiel) par personne aidée. Renseignez-vous tôt, car les conditions et la procédure passent par la mutualité et l'employeur.",
+      "reference_legale": "Réglementation sur le congé pour aidant proche (interruption de carrière thématique) et les droits sociaux associés",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "reconnaissance avec droits sociaux"},
+        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "allocation d'interruption (congé)"}
+      ],
+      "alerte_delai": "Anticipez : la reconnaissance avec droits sociaux et le congé demandent des démarches (mutualité + employeur). N'attendez pas le dernier moment.",
+      "sources": [
+        {"type": "officiel", "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche", "intitule": "SPF Sécurité sociale — Aidant proche"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/ai-je-droit-un-conge-en-tant-quaidant-proche", "intitule": "Droits Quotidiens — Congé pour aidant proche"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

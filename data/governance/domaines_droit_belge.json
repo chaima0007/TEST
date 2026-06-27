@@ -143,6 +143,24 @@
         "via bail (PEB)"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "citoyennete",
+      "nom": "Citoyenneté (droits & devoirs)",
+      "statut": "couvert",
+      "modules": [
+        "citoyen_droits_devoirs"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "aidants_proches",
+      "nom": "Aidants proches",
+      "statut": "couvert",
+      "modules": [
+        "aidants_proches"
+      ],
+      "priorite": "haute"
     }
   ]
 }
