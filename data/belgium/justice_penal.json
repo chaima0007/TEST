@@ -55,6 +55,39 @@
         {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/lexique/aide-juridique-de-deuxieme-ligne", "intitule": "Droits Quotidiens — Lexique justice"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "JUST-CONVOC-001",
+      "question": "Je suis convoqué(e) (cité(e)) devant le tribunal : que dois-je faire ?",
+      "reponse": "La citation indique la date, l'heure, le lieu (palais de justice et chambre) où comparaître, ainsi que les faits reprochés. Présentez-vous à l'heure, muni de la citation et de votre carte d'identité. Vous n'êtes pas obligé de comparaître en personne : vous pouvez vous faire représenter par un avocat. Si vous n'avez pas les moyens de payer les frais, vous pouvez demander l'assistance judiciaire (requête au président de la chambre) ; les frais sont alors avancés par l'État. Il est fortement conseillé de consulter un avocat, qui examinera le dossier.",
+      "reference_legale": "Code d'instruction criminelle (citation à comparaître) ; Code judiciaire (assistance judiciaire)",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/que_faire_comme/cite/convocation", "intitule": "SPF Justice — Convocation (vous êtes cité)"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/puis-je-avoir-laide-gratuite-dun-avocat-aide-juridique-de-2eme-ligne-ex-pro-deo", "intitule": "Droits Quotidiens — Aide d'un avocat"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "JUST-DOSSIER-001",
+      "question": "Ai-je le droit de consulter le dossier de mon affaire avant l'audience ?",
+      "reponse": "Oui. Si vous êtes cité, vous (ou votre avocat) pouvez en principe consulter le dossier répressif avant l'audience pour préparer votre défense. C'est un droit important : on ne se défend bien qu'en sachant ce qui figure au dossier. La consultation se fait selon les modalités fixées par la juridiction ; votre avocat parcourra le dossier, le cas échéant en votre présence. N'hésitez pas à demander cet accès suffisamment tôt.",
+      "reference_legale": "Code d'instruction criminelle — accès au dossier / droits de la défense",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/que_faire_comme/cite/consultation_du_dossier", "intitule": "SPF Justice — Consultation du dossier"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/lexique/aide-juridique-de-deuxieme-ligne", "intitule": "Droits Quotidiens — Lexique justice"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "JUST-AMENDE-001",
+      "question": "Comment fonctionne une amende routière : perception immédiate, transaction, ordre de paiement ?",
+      "reponse": "Pour une infraction de roulage, la police peut proposer une perception immédiate (paiement rapide qui éteint l'affaire). Pour une personne domiciliée en Belgique, la perception immédiate est en principe exclue si le montant total dépasse 347 €. À défaut de paiement, le parquet peut proposer une transaction (souvent le montant + un supplément). En cas de refus persistant de payer (après plusieurs rappels), le ministère public peut émettre un ordre de paiement, titre exécutoire majoré, à régler dans les 30 jours. On peut contester un PV de roulage dans les formes et délais prévus — mieux vaut réagir vite et, si besoin, consulter un avocat.",
+      "reference_legale": "Loi relative à la police de la circulation routière (perception immédiate, transaction, ordre de paiement) ; Code d'instruction criminelle",
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr/route/conduire/code-de-la-route-violations-et-sanctions/sanctions/amendes-et-perceptions-immediates", "intitule": "SPF Mobilité — Amendes et perceptions immédiates"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/nouvelles/communiques_de_presse/amendes_routieres_perception_de_plus_en_plus_rapide", "intitule": "SPF Justice — Amendes routières (ordre de paiement)"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }
