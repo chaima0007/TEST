@@ -67,7 +67,11 @@
     "igvm-iefh.belgium.be",
     "ibz.rrn.fgov.be",
     "beswic.be",
-    "sesentirbienautravail.be"
+    "sesentirbienautravail.be",
+    "justice.belgium.be",
+    "rechtbanken-tribunaux.be",
+    "safeonweb.be",
+    "ccb.belgium.be"
   ],
   "tier2_institutionnel": [
     "uvcw.be",
@@ -108,7 +112,8 @@
     "ombudsfin.be",
     "wikifin.be",
     "ecouteviolencesconjugales.be",
-    "tele-accueil.be"
+    "tele-accueil.be",
+    "mc.be"
   ],
   "regles": [
     "R1 — Un fait publié doit avoir au moins UNE source de tier1 (officiel).",

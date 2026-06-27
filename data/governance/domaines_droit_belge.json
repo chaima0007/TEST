@@ -425,6 +425,24 @@
         "burnout_bienetre"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "aide_juridique",
+      "nom": "Accès à la justice (aide juridique)",
+      "statut": "couvert",
+      "modules": [
+        "aide_juridique"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "fraude_arnaques",
+      "nom": "Fraude & sécurité numérique",
+      "statut": "couvert",
+      "modules": [
+        "fraude_arnaques"
+      ],
+      "priorite": "haute"
     }
   ]
 }

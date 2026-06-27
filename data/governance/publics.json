@@ -61,7 +61,9 @@
         "transport_passagers",
         "violences_conjugales",
         "documents_identite",
-        "burnout_bienetre"
+        "burnout_bienetre",
+        "aide_juridique",
+        "fraude_arnaques"
       ]
     }
   }
