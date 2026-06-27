@@ -1,0 +1,60 @@
+{
+  "module": "deces_demarches",
+  "titre": "Décès — démarches pratiques après le décès d'un proche",
+  "domaine": "Décès & démarches",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "État civil (déclaration de décès) ; blocage et déblocage des comptes (Code civil, acte d'hérédité) ; déclaration de succession (Code des droits de succession)",
+    "portee": "Formalités concrètes à accomplir après un décès en Belgique",
+    "source_officielle": "https://www.belgium.be/fr/famille/deces"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les pompes funèbres et le notaire peuvent vous accompagner dans ces démarches, dans un moment difficile.",
+  "faits": [
+    {
+      "id": "DECES-DECLARATION-001",
+      "question": "Que faire en premier après un décès ?",
+      "reponse": "Le décès doit être déclaré au service de l'état civil de la commune ; vous recevez un extrait d'acte de décès. Souvent, l'entreprise de pompes funèbres s'occupe de cette formalité. Conseil important : demandez plusieurs copies de l'acte de décès — elles seront nécessaires pour le notaire, les banques, les assurances, la mutuelle, l'employeur, etc.",
+      "reference_legale": "Code civil — état civil et déclaration de décès",
+      "contacts": [
+        {"nom": "Administration communale (état civil)", "pour": "déclaration et acte de décès"},
+        {"nom": "Pompes funèbres", "pour": "peuvent gérer les formalités"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces", "intitule": "Belgium.be — Décès"},
+        {"type": "secondaire", "url": "https://www.notaire.be/actualites/qui-contacter-en-cas-de-deces-dun-proche", "intitule": "Notaire.be — Qui contacter en cas de décès"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DECES-COMPTES-001",
+      "question": "Les comptes bancaires sont bloqués : comment les débloquer ?",
+      "reponse": "À l'annonce du décès, la banque bloque les comptes et coffres du défunt (et souvent ceux du conjoint) pour dresser la liste des avoirs. Pour débloquer, la banque doit connaître les héritiers : il faut en général un acte d'hérédité (ou un certificat d'hérédité) établi par le notaire (ou, dans les cas simples, par le bureau Sécurité juridique). Cela peut prendre quelques semaines. Des montants limités peuvent parfois être libérés pour les frais urgents (funérailles, dépenses du ménage).",
+      "reference_legale": "Code civil — acte/certificat d'hérédité ; règles de déblocage des comptes après décès",
+      "contacts": [
+        {"nom": "Notaire", "pour": "acte d'hérédité, déblocage"},
+        {"nom": "Banque du défunt", "pour": "signaler le décès"}
+      ],
+      "alerte_delai": "Prévoyez du temps (souvent ~4 semaines pour l'acte d'hérédité). Demandez la libération des frais urgents si besoin.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/impots/succession/blocage_compte_et_coffre", "intitule": "Belgium.be — Blocage des comptes et coffres"},
+        {"type": "secondaire", "url": "https://www.notaire.be/heritage-et-donations/heritage/procedure-apres-deces/deblocage-des-comptes-bancaires", "intitule": "Notaire.be — Déblocage des comptes"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DECES-ORGANISMES-001",
+      "question": "Quels organismes prévenir, et dans quels délais ?",
+      "reponse": "Prévenez (avec une copie de l'acte de décès) : l'employeur ou l'organisme de revenus de remplacement (chômage, mutuelle, CPAS), les banques et assurances, la mutuelle, le propriétaire/locataire, les fournisseurs (énergie, télécom), le comptable le cas échéant. Côté succession : si le décès a eu lieu en Belgique, les héritiers ont en principe 4 mois pour déposer la déclaration de succession (voir la catégorie Successions).",
+      "reference_legale": "Code des droits de succession (déclaration) ; obligations contractuelles diverses",
+      "alerte_delai": "Déclaration de succession : ~4 mois après le décès. Prévenez vite l'employeur/organisme de revenus.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces", "intitule": "Belgium.be — Décès (démarches)"},
+        {"type": "secondaire", "url": "https://www.notaire.be/donations-successions/formalites-apres-un-deces", "intitule": "Notaire.be — Formalités après un décès"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

@@ -254,6 +254,15 @@
         "credit"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "deces",
+      "nom": "Décès & démarches",
+      "statut": "couvert",
+      "modules": [
+        "deces_demarches"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
