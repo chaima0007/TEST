@@ -1,0 +1,54 @@
+{
+  "module": "credit",
+  "titre": "Crédit & fichage — emprunts, défaut de paiement, Centrale des crédits",
+  "domaine": "Crédit & fichage",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique (crédit à la consommation et hypothécaire) ; Centrale des crédits aux particuliers (Banque nationale de Belgique)",
+    "portee": "Crédits des particuliers, fichage en cas de défaut, droit de consultation",
+    "source_officielle": "https://www.nbb.be/fr/centrales-des-credits/centrale-des-credits-aux-particuliers"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En cas de difficulté à rembourser un crédit, réagissez vite (médiateur de dettes, CPAS) — voir aussi la catégorie Surendettement.",
+  "faits": [
+    {
+      "id": "CRED-FICHAGE-001",
+      "question": "Si je ne paie plus mon crédit, suis-je « fiché » ?",
+      "reponse": "Oui. Tous les crédits à la consommation et hypothécaires des particuliers sont enregistrés dans la Centrale des crédits aux particuliers (Banque nationale) : un volet positif (tous les crédits) et un volet négatif (les défauts de paiement). Un défaut de paiement y est inscrit. Être fiché complique l'obtention d'un nouveau crédit : mieux vaut donc agir avant le défaut (plan de paiement).",
+      "reference_legale": "Code de droit économique — Centrale des crédits aux particuliers (CCP)",
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/centrale-des-credits-aux/volet-negatif-de-la-centrale", "intitule": "SPF Economie — Volet négatif de la CCP"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/si-je-ne-paie-plus-mon-credit-la-consommation-suis-je-fiche-la-banque-nationale", "intitule": "Droits Quotidiens — Fichage à la Banque nationale"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CRED-DELAIS-001",
+      "question": "Combien de temps reste-t-on fiché en cas de défaut ?",
+      "reponse": "En cas de défaut de paiement : si vous régularisez (vous remboursez), les données sont conservées encore 1 an à partir de la régularisation. Si vous ne régularisez pas, elles sont conservées 10 ans à partir de la première date de défaut. Une fois tout remboursé, le prêteur transmet une attestation à la Banque nationale, qui radie l'inscription.",
+      "reference_legale": "Code de droit économique — délais de conservation à la CCP",
+      "alerte_delai": "Régulariser réduit fortement la durée du fichage (1 an après régularisation au lieu de 10 ans) : agissez vite.",
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/centrale-des-credits-aux/volet-negatif-de-la-centrale", "intitule": "SPF Economie — Volet négatif (délais)"},
+        {"type": "officiel", "url": "https://www.nbb.be/fr/centrales-des-credits", "intitule": "Banque nationale — Centrales des crédits"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CRED-CONSULTER-001",
+      "question": "Comment savoir ce qui est enregistré sur moi ?",
+      "reponse": "Vous avez le droit de consulter gratuitement vos données à la Centrale des crédits aux particuliers. En ligne avec votre carte d'identité électronique (eID) ou l'application itsme®, vous obtenez un aperçu : nom du prêteur, référence du contrat, montant et éventuels défauts. C'est utile pour vérifier que tout est exact et faire corriger une erreur.",
+      "reference_legale": "Code de droit économique — droit de consultation de la CCP ; RGPD (droit d'accès)",
+      "contacts": [
+        {"nom": "Banque nationale de Belgique (CCP)", "lien": "https://www.nbb.be/fr/centrales-des-credits", "pour": "consulter vos données"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/centrale-des-credits-aux/droit-de-consultation-des", "intitule": "SPF Economie — Droit de consultation"},
+        {"type": "officiel", "url": "https://www.nbb.be/fr/centrales-des-credits", "intitule": "Banque nationale — Centrales des crédits"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

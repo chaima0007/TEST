@@ -1,0 +1,93 @@
+{
+  "module": "famille",
+  "titre": "Famille — séparation, enfants, pensions alimentaires",
+  "domaine": "Famille",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Droit de la famille (Code civil) ; compétence du tribunal de la famille (compétence fédérale)",
+    "portee": "Séparation et divorce, autorité parentale, hébergement des enfants, contributions et pensions alimentaires",
+    "source_officielle": "https://www.belgium.be/fr/famille/couple/divorce_et_separation"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Ne remplace pas un conseil individualisé. Pour votre situation (surtout s'il y a des enfants ou un désaccord), consultez un avocat, un notaire, un médiateur familial ou le tribunal de la famille. L'aide juridique gratuite est possible sous conditions.",
+  "faits": [
+    {
+      "id": "FAM-AUTORITE-001",
+      "question": "Après une séparation, qui exerce l'autorité parentale ?",
+      "reponse": "En principe, les deux parents continuent d'exercer ensemble l'autorité parentale, qu'ils soient séparés ou divorcés. Cela signifie qu'ils prennent ensemble les décisions importantes concernant l'enfant (santé, éducation, formation, loisirs, orientation religieuse ou philosophique). Le juge peut décider autrement dans l'intérêt de l'enfant. Mieux vaut se mettre d'accord ; à défaut, le tribunal de la famille tranche.",
+      "reference_legale": "Code civil — autorité parentale (exercice conjoint)",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "trancher en cas de désaccord"},
+        {"nom": "Médiateur familial / avocat", "pour": "trouver un accord"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/couple/divorce_et_separation/autorite_parentale", "intitule": "Belgium.be — Séparation et enfants (autorité parentale)"},
+        {"type": "secondaire", "url": "https://www.notaire.be/separation-et-divorce/les-decisions-relatives-aux-enfants/lautorite-parentale", "intitule": "Notaire.be — L'autorité parentale"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "FAM-GARDE-001",
+      "question": "Comment est fixé l'hébergement (la « garde ») des enfants ?",
+      "reponse": "L'hébergement des enfants se règle d'abord, idéalement, à l'amiable entre les parents. À défaut d'accord, le tribunal de la famille décide selon l'intérêt de l'enfant ; il peut prévoir un hébergement égalitaire ou non. Avant ou pendant le divorce, on peut demander des mesures urgentes et provisoires pour organiser rapidement la situation (logement, enfants, charges). Conservez les éléments utiles et faites-vous accompagner.",
+      "reference_legale": "Code civil et Code judiciaire — tribunal de la famille ; mesures urgentes et provisoires",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "fixer l'hébergement, mesures provisoires"},
+        {"nom": "Médiateur familial", "pour": "accord amiable"}
+      ],
+      "alerte_delai": "En cas d'urgence (désaccord grave, déménagement), on peut demander des mesures provisoires rapidement : n'attendez pas, consultez un avocat.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/couple/divorce_et_separation/autorite_parentale", "intitule": "Belgium.be — Séparation et enfants"},
+        {"type": "secondaire", "url": "https://droitsquotidiens.be/fr/question/puis-je-demander-au-tribunal-de-la-famille-la-garde-des-enfants-avant-que-le-divorce-soit", "intitule": "Droits Quotidiens — Hébergement avant le divorce"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "FAM-CONTRIB-001",
+      "question": "Qu'est-ce que la contribution alimentaire pour les enfants ?",
+      "reponse": "Les deux parents doivent contribuer aux frais d'entretien et d'éducation de leurs enfants, en proportion de leurs moyens, même après une séparation. C'est la « contribution alimentaire » (à ne pas confondre avec la pension entre ex-époux). Son montant peut être fixé à l'amiable ou par le tribunal de la famille, et il est en principe indexé. En cas de non-paiement, des solutions existent (dont le SECAL pour avancer/récupérer certaines créances).",
+      "reference_legale": "Code civil — obligation d'entretien des enfants (contribution alimentaire) ; indexation",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "fixer la contribution"},
+        {"nom": "SECAL (Service des créances alimentaires, SPF Finances)", "lien": "https://finances.belgium.be/fr/particuliers/famille/pensions_alimentaires", "pour": "non-paiement / avances"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.notaire.be/separation-et-divorce/les-decisions-relatives-aux-enfants/la-contribution-alimentaire", "intitule": "Notaire.be — La contribution alimentaire"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/couple/divorce_et_separation", "intitule": "Belgium.be — Divorce et séparation"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "FAM-PENSION-001",
+      "question": "Quelle différence entre pension alimentaire entre ex-époux et contribution pour les enfants ?",
+      "reponse": "La pension alimentaire entre ex-époux est une somme qu'un époux peut devoir verser à l'autre pour couvrir son état de besoin après le divorce ; elle n'est pas automatique et dépend de la situation. La contribution alimentaire, elle, concerne les enfants (frais d'entretien et d'éducation). Les deux peuvent coexister. Le montant et la durée de la pension entre ex-époux sont encadrés et peuvent être révisés.",
+      "reference_legale": "Code civil — pension alimentaire après divorce (état de besoin) ; obligation d'entretien des enfants",
+      "contacts": [
+        {"nom": "Avocat / notaire", "pour": "évaluer vos droits"},
+        {"nom": "Tribunal de la famille", "pour": "fixer ou réviser"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.notaire.be/separation-et-divorce/pension-alimentaire-apres-divorce", "intitule": "Notaire.be — Pension alimentaire après divorce"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/couple/divorce_et_separation", "intitule": "Belgium.be — Divorce et séparation"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "FAM-DIVORCE-001",
+      "question": "Quelles sont les grandes voies de divorce en Belgique ?",
+      "reponse": "Il existe principalement deux voies : le divorce par consentement mutuel (les époux s'accordent sur tout — biens, enfants, pensions — dans une convention) et le divorce pour désunion irrémédiable (lorsqu'il n'y a pas d'accord complet, prouvée par le temps de séparation ou d'autres éléments). La procédure passe par le tribunal de la famille. Un avocat ou un notaire peut vous accompagner ; l'aide juridique gratuite est possible sous conditions.",
+      "reference_legale": "Code civil — divorce par consentement mutuel et pour désunion irrémédiable ; Code judiciaire (tribunal de la famille)",
+      "contacts": [
+        {"nom": "Avocat ou notaire", "pour": "préparer le divorce"},
+        {"nom": "Aide juridique (sous conditions)", "lien": "https://justice.belgium.be/fr", "pour": "avocat gratuit/partiellement gratuit"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/couple/divorce_et_separation", "intitule": "Belgium.be — Divorce et séparation"},
+        {"type": "secondaire", "url": "https://www.notaire.be/separation-et-divorce", "intitule": "Notaire.be — Séparation et divorce"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

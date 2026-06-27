@@ -1,0 +1,99 @@
+{
+  "module": "handicap",
+  "titre": "Handicap — reconnaissance, allocations, carte de stationnement",
+  "domaine": "Handicap",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Reconnaissance du handicap et octroi de droits (DG Personnes handicapées, SPF Sécurité sociale)",
+    "portee": "Personnes en situation de handicap : reconnaissance, aides, mobilité",
+    "source_officielle": "https://handicap.belgium.be/fr/reconnaissance-de-votre-handicap/procedure-reconnaissance"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les démarches passent par la DG Personnes handicapées (plateforme My Handicap) et, souvent, votre commune ou mutualité.",
+  "faits": [
+    {
+      "id": "HAND-RECONNAISSANCE-001",
+      "question": "Comment faire reconnaître mon handicap ?",
+      "reponse": "La reconnaissance se demande à la DG Personnes handicapées (SPF Sécurité sociale), en principe via la plateforme « My Handicap ». Vous introduisez une demande et décrivez précisément l'impact du handicap sur votre vie quotidienne (donnez beaucoup d'exemples concrets : cela compte). Cette reconnaissance ouvre l'accès à des aides sociales et fiscales selon votre situation.",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (reconnaissance et octroi de droits)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées (My Handicap)",
+          "lien": "https://handicap.belgium.be/fr/myhandicap/manuel-myhandicap",
+          "pour": "introduire la demande"
+        },
+        {
+          "nom": "Service social de votre commune / mutualité",
+          "pour": "aide à la demande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/reconnaissance-de-votre-handicap/procedure-reconnaissance",
+          "intitule": "Handicap Belgium — Procédure de reconnaissance"
+        },
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/reconnaissance-de-votre-handicap/conditions-de-reconnaissance",
+          "intitule": "Handicap Belgium — Conditions"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "HAND-ALLOCATIONS-001",
+      "question": "À quelles allocations puis-je avoir droit ?",
+      "reponse": "Deux allocations principales existent : l'allocation de remplacement de revenus (ARR), pour les personnes dont l'état réduit fortement la capacité de gain, et l'allocation d'intégration (AI), pour celles qui doivent supporter des frais supplémentaires à cause d'une perte d'autonomie. L'octroi et le montant dépendent d'une évaluation et de conditions (revenus, degré d'autonomie). La demande se fait via la DG Personnes handicapées.",
+      "reference_legale": "Loi relative aux allocations aux personnes handicapées (ARR / AI)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées",
+          "lien": "https://handicap.belgium.be",
+          "pour": "demande d'allocations"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://socialsecurity.belgium.be/fr/octroi-de-droits-aux-personnes-handicapees",
+          "intitule": "SPF Sécurité sociale — Octroi de droits aux personnes handicapées"
+        },
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/contact/faq",
+          "intitule": "Handicap Belgium — FAQ"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "HAND-STATIONNEMENT-001",
+      "question": "Comment obtenir une carte de stationnement pour personne handicapée ?",
+      "reponse": "La carte de stationnement permet de se garer sur les emplacements réservés en Belgique (et, dans certaines communes, gratuitement). On peut y avoir droit notamment en cas d'incapacité permanente d'un certain degré (par ex. 50 % pour un handicap des jambes, 80 % pour d'autres handicaps), de paralysie ou d'amputation des deux bras, ou d'une réduction d'autonomie/mobilité. La demande passe par la DG Personnes handicapées.",
+      "reference_legale": "Arrêté ministériel du 7 mai 1999 relatif à la carte de stationnement pour personnes handicapées",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées",
+          "lien": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement",
+          "pour": "demande de carte de stationnement"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement",
+          "intitule": "Handicap Belgium — Carte de stationnement"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/mobilite/vehicules/personnes_handicapees/parking_fr",
+          "intitule": "Belgium.be — Parking personnes handicapées"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

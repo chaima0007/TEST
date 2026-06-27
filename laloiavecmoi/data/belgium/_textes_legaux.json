@@ -1,0 +1,89 @@
+{
+  "registre": "Textes de loi — liens officiels vérifiés",
+  "but": "Donner accès au texte légal officiel (consolidé) derrière chaque domaine. Marqueur de crédibilité : on cite la loi ET on permet de la lire à la source.",
+  "date": "2026-06-26",
+  "textes": [
+    {
+      "cle": "code_penal",
+      "nom": "Code pénal",
+      "niveau": "Fédéral",
+      "url": "https://www.ejustice.just.fgov.be/eli/loi/1867/06/08/1867060850/justel",
+      "articles_cles": [
+        "442bis — harcèlement"
+      ],
+      "annee": 1867,
+      "contexte": "Adopté en 1867, peu après l'indépendance de la Belgique (1830), pour unifier le droit pénal du jeune État."
+    },
+    {
+      "cle": "code_judiciaire",
+      "nom": "Code judiciaire",
+      "niveau": "Fédéral",
+      "url": "https://www.ejustice.just.fgov.be/eli/loi/1967/10/10/1967101056/justel",
+      "articles_cles": [
+        "1675/2 et s. — règlement collectif de dettes",
+        "1560-1626 — saisie immobilière",
+        "508/1 et s. — aide juridique",
+        "1408-1412 — biens et sommes (in)saisissables"
+      ],
+      "annee": 1967,
+      "contexte": "Grande codification de 1967 organisant les tribunaux et la procédure civile, pour moderniser et unifier la justice."
+    },
+    {
+      "cle": "code_droit_economique",
+      "nom": "Code de droit économique",
+      "niveau": "Fédéral",
+      "url": "https://www.ejustice.just.fgov.be/eli/loi/2013/02/28/2013A11134/justel",
+      "articles_cles": [
+        "médiation de dettes amiable (loi du 3 mai 2024)"
+      ],
+      "annee": 2013,
+      "contexte": "Créé en 2013 pour rassembler en un seul code les règles économiques éparses (concurrence, consommation, entreprises)."
+    },
+    {
+      "cle": "bien_etre_travail",
+      "nom": "Bien-être au travail (loi du 4 août 1996) & risques psychosociaux",
+      "niveau": "Fédéral",
+      "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail",
+      "articles_cles": [
+        "harcèlement moral/sexuel au travail",
+        "demande d'intervention psychosociale formelle"
+      ],
+      "annee": 1996,
+      "contexte": "Loi de 1996 instaurant une approche moderne du bien-être au travail (prévention des risques, dont psychosociaux)."
+    },
+    {
+      "cle": "decret_wallon_bail",
+      "nom": "Décret wallon du 15 mars 2018 relatif au bail d'habitation",
+      "niveau": "Wallonie",
+      "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01",
+      "articles_cles": [
+        "durée, garantie, préavis, état des lieux, salubrité"
+      ],
+      "annee": 2018,
+      "contexte": "Décret de 2018 : la Wallonie exerce sa compétence régionale sur le bail d'habitation (régionalisée en 2014)."
+    },
+    {
+      "cle": "code_bxl_logement",
+      "nom": "Code bruxellois du Logement (titre XI — bail d'habitation)",
+      "niveau": "Bruxelles",
+      "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+      "articles_cles": [
+        "bail de résidence principale",
+        "réforme en vigueur 01/11/2024"
+      ],
+      "annee": 2003,
+      "contexte": "Code bruxellois du Logement (2003), réformé en profondeur, dernière réforme du bail en vigueur le 01/11/2024."
+    },
+    {
+      "cle": "woninghuurdecreet",
+      "nom": "Vlaams Woninghuurdecreet (décret du 9 novembre 2018)",
+      "niveau": "Flandre",
+      "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+      "articles_cles": [
+        "huurwaarborg, opzegging, plaatsbeschrijving"
+      ],
+      "annee": 2018,
+      "contexte": "Décret flamand de 2018 : la Flandre fixe ses propres règles de bail après la régionalisation de la matière."
+    }
+  ]
+}
