@@ -6,6 +6,173 @@ import ReadAloud from "@/components/ReadAloud";
 
 const letters = [
   {
+    id: "resiliation-abonnement",
+    tag: "Consommation",
+    title: "Résilier un abonnement / contrat",
+    desc: "Pour mettre fin à un abonnement (télécom, salle de sport, etc.) dans les règles.",
+    body: `Objet : Résiliation de mon contrat / abonnement n° [référence]
+
+Madame, Monsieur,
+
+Par la présente, je vous notifie la résiliation de mon contrat n° [référence], conformément aux conditions de résiliation prévues.
+
+Je vous demande de :
+- confirmer par écrit la date de fin du contrat ;
+- cesser tout prélèvement après cette date ;
+- me rembourser, le cas échéant, les sommes payées d'avance.
+
+Merci de m'envoyer une confirmation écrite.
+
+Nom et prénom : ______________________
+Adresse / n° client : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "contestation-facture",
+    tag: "Consommation",
+    title: "Contester une facture",
+    desc: "Pour contester par écrit une facture erronée (énergie, télécom, etc.).",
+    body: `Objet : Contestation de la facture n° [référence] du [date]
+
+Madame, Monsieur,
+
+Je conteste la facture mentionnée ci-dessus pour le motif suivant :
+[Expliquez : montant erroné, service non fourni, double facturation…]
+
+Je vous demande de corriger cette facture et de m'envoyer un décompte rectifié.
+Dans l'attente, je conteste le montant litigieux.
+
+Je joins les éléments utiles : [preuves, relevés, échanges].
+
+Nom et prénom : ______________________
+N° client : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "delai-paiement",
+    tag: "Argent",
+    title: "Demander un délai / plan de paiement",
+    desc: "Pour demander un étalement à un créancier, au SPF Finances, à un fournisseur…",
+    body: `Objet : Demande de facilités de paiement — dossier [référence]
+
+Madame, Monsieur,
+
+Je rencontre des difficultés financières temporaires et ne peux pas régler en une fois la somme de [montant] € due au titre de [dette / facture].
+
+Je sollicite un plan de paiement échelonné, par exemple [montant] € par mois à partir du [date], jusqu'à apurement complet.
+
+Je m'engage à respecter cet échéancier. Merci de me confirmer votre accord par écrit.
+
+Nom et prénom : ______________________
+Référence / n° de dossier : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "mise-en-demeure-salaire",
+    tag: "Travail",
+    title: "Réclamer un salaire impayé (mise en demeure)",
+    desc: "Pour réclamer formellement à l'employeur un salaire non payé.",
+    body: `Objet : Mise en demeure — paiement de la rémunération due
+
+Madame, Monsieur,
+
+Je constate que ma rémunération du mois de [mois/année], d'un montant de [montant] €, ne m'a pas été payée à ce jour.
+
+Par la présente, je vous mets en demeure de me verser cette somme dans un délai de 8 jours.
+
+À défaut, je me réserve le droit de saisir le Contrôle des lois sociales et/ou le tribunal du travail.
+
+Nom et prénom : ______________________
+Fonction / n° de registre : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "preavis-bail",
+    tag: "Logement",
+    title: "Donner mon préavis (quitter un logement)",
+    desc: "Pour notifier au propriétaire la fin du bail dans les formes.",
+    body: `Objet : Préavis de fin de bail — [adresse du logement]
+
+Madame, Monsieur,
+
+Par la présente (recommandé), je vous donne mon préavis pour le logement situé [adresse], conformément au bail et à la réglementation régionale applicable.
+
+Date de prise de cours du préavis : [date].
+Je resterai à votre disposition pour organiser l'état des lieux de sortie.
+
+Merci d'accuser réception de ce courrier.
+
+Nom et prénom : ______________________
+Adresse du logement : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "rgpd-acces-effacement",
+    tag: "Vie privée",
+    title: "Demander mes données / leur effacement (RGPD)",
+    desc: "Pour exercer votre droit d'accès ou d'effacement auprès d'une organisation.",
+    body: `Objet : Exercice de mes droits RGPD (accès / effacement)
+
+Madame, Monsieur,
+
+Conformément au Règlement général sur la protection des données (RGPD), je vous demande :
+[ ] une copie de toutes les données personnelles que vous détenez sur moi (droit d'accès) ;
+[ ] l'effacement de mes données personnelles (droit à l'effacement), s'il n'existe plus de raison valable de les conserver.
+
+Merci de me répondre dans le délai légal d'un mois.
+
+Nom et prénom : ______________________
+Coordonnées : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "cpas-aide-urgente",
+    tag: "Aide sociale",
+    title: "Demander une aide d'urgence au CPAS",
+    desc: "Pour solliciter rapidement une aide (alimentaire, financière) au CPAS.",
+    body: `Objet : Demande d'aide sociale en urgence
+
+Madame la Présidente, Monsieur le Président du CPAS,
+
+Je me trouve dans une situation d'urgence : [expliquez : pas de revenus, risque de coupure, sans logement, besoin alimentaire…].
+
+Je sollicite une aide d'urgence (financière et/ou alimentaire) et un rendez-vous dans les meilleurs délais.
+
+Je joins les documents utiles : [composition de ménage, revenus, factures…].
+
+Nom et prénom : ______________________
+Adresse : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "contestation-amende",
+    tag: "Justice",
+    title: "Contester une amende / un PV",
+    desc: "Pour contester par écrit une amende (roulage ou administrative).",
+    body: `Objet : Contestation du PV / de l'amende n° [référence]
+
+Madame, Monsieur,
+
+Je conteste l'amende mentionnée ci-dessus pour le motif suivant :
+[Expliquez : erreur sur les faits, sur l'identité, circonstances…].
+
+Je joins les éléments à l'appui : [preuves, photos, témoignages].
+
+Je vous demande de réexaminer le dossier et de m'informer de la suite réservée à ma contestation, dans le respect des délais.
+
+Nom et prénom : ______________________
+Référence du PV : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
     id: "plainte",
     tag: "Police",
     title: "Déposer une plainte",
