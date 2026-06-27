@@ -141,8 +141,10 @@
     {
       "cle": "successions",
       "nom": "Successions & héritage",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "successions"
+      ],
       "priorite": "basse"
     },
     {
