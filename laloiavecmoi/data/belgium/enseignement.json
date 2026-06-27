@@ -77,6 +77,53 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ENS-ADULTE-DEPLACE-001",
+      "question": "Un professeur (ou un adulte de l'école) a un comportement déplacé : comment réagir et signaler sans que ça se retourne contre moi/mon enfant ?",
+      "reponse": "D'abord : ce n'est jamais la faute de l'enfant, et signaler de bonne foi est un droit. Voici comment agir, étape par étape, en te protégeant. 1) Mets l'enfant en sécurité et écoute-le sans le juger ; note précisément les faits (quoi, quand, où, témoins) et garde toutes les preuves (messages, captures). 2) Signale par ÉCRIT à la direction (e-mail ou recommandé) en demandant un accusé de réception et une réponse écrite : tu gardes ainsi une trace datée, ce qui te protège. 3) Si la direction ne réagit pas, ou si tu crains qu'elle protège l'adulte, ne reste pas dépendant de l'école : utilise des canaux INDÉPENDANTS qui ne sont pas sous son autorité — le centre PMS, le service de l'inspection / pouvoir organisateur, le Délégué général aux droits de l'enfant, l'équipe SOS Enfants (ONE), et le 103 (Écoute-Enfants). 4) Si les faits sont graves (attouchements, violences, propos sexuels), contacte la police (101) ou le 112 : c'est une infraction, pas une simple affaire interne à l'école. Tu peux aussi déposer plainte. Important : signaler des faits de bonne foi ne peut pas légalement justifier des représailles ; et passer par des canaux externes garantit que le signalement ne sera pas étouffé.",
+      "reference_legale": "Code pénal (infractions contre les mineurs) ; Code de l'Aide à la jeunesse (FW-B) ; missions du Délégué général aux droits de l'enfant ; Convention internationale des droits de l'enfant",
+      "contacts": [
+        {
+          "nom": "Urgence / faits graves",
+          "numero": "112",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "déposer plainte (infraction)"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "l'enfant, anonyme, 10h–minuit"
+        },
+        {
+          "nom": "SOS Enfants (ONE)",
+          "lien": "https://www.one.be",
+          "pour": "maltraitance d'enfants"
+        },
+        {
+          "nom": "Délégué général aux droits de l'enfant",
+          "lien": "https://www.dgde.cfwb.be",
+          "pour": "canal indépendant si l'école n'agit pas"
+        }
+      ],
+      "alerte_delai": "Agis vite : mets l'enfant en sécurité, garde les preuves immédiatement, et signale par écrit (avec accusé de réception). Pour des faits graves, n'attends pas — 101/112.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "http://www.enseignement.be/index.php?page=27585&navi=4222",
+          "intitule": "Enseignement.be — Violences à l'école : se faire aider"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.dgde.cfwb.be",
+          "intitule": "Délégué général aux droits de l'enfant (FW-B)"
+        }
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }
