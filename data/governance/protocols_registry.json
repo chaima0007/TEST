@@ -195,6 +195,12 @@
       "nom": "Reprise & continuité",
       "regle": "Toujours pouvoir reprendre où on s'est arrêté. data/governance/reprise.json tient le fil ; data/REPRISE.md est le mémo lu en premier après un redémarrage. Commit+push après chaque étape.",
       "verif": "python3 scripts/checkpoint_protocol.py"
+    },
+    {
+      "id": "P-COPYRIGHT",
+      "nom": "Droits d auteur & PI",
+      "regle": "Le contenu original est protégé (© La Loi Avec Moi, auteure Chaima Mhadbi). Voir COPYRIGHT.md. Les textes de loi officiels restent publics et sont cités. La marque (nom/logo) nécessite un dépôt BOIP (action de Chaima).",
+      "verif": "test -f COPYRIGHT.md"
     }
   ]
 }

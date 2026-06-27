@@ -38,6 +38,7 @@ ETAPES = [
     ("Audit accessibilité", "scripts/accessibility_audit_agent.py", []),
     ("Base unique (catalogue)", "scripts/build_kb_index.py", []),
     ("Point de reprise", "scripts/checkpoint_protocol.py", []),
+    ("Audit fiabilité grand site", "scripts/site_reliability_audit.py", []),
 
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]

@@ -25,7 +25,20 @@
     "enseignement.be",
     "one.be",
     "103ecoute.be",
-    "onem.be"
+    "onem.be",
+    "police.be",
+    "mediateurfederal.be",
+    "raadvst-consetat.be",
+    "werk.belgie.be",
+    "logement.brussels",
+    "comitep.be",
+    "economie.fgov.be",
+    "mi-is.be",
+    "inami.fgov.be",
+    "riziv.fgov.be",
+    "health.belgium.be",
+    "ibz.be",
+    "dofi.ibz.be"
   ],
   "tier2_institutionnel": [
     "uvcw.be",
@@ -35,7 +48,12 @@
     "huissiersdejustice.be",
     "notaire.be",
     "childfocus.be",
-    "victimes.be"
+    "victimes.be",
+    "avocats.be",
+    "advocaat.be",
+    "notaris.be",
+    "mediationconsommateur.be",
+    "ordreexpertscomptables.be"
   ],
   "tier3_secondaire_complement": [
     "mijnhabitat.be",
