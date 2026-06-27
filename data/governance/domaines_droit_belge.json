@@ -150,8 +150,10 @@
     {
       "cle": "energie",
       "nom": "Énergie & PEB (lié au logement)",
-      "statut": "parked",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "energie"
+      ],
       "priorite": "moyenne"
     },
     {
