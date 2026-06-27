@@ -87,8 +87,10 @@
     {
       "cle": "consommation",
       "nom": "Consommation & contrats",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "consommation"
+      ],
       "priorite": "moyenne"
     },
     {

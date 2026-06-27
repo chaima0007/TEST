@@ -71,7 +71,8 @@
     "peb-connect.be",
     "weinvest.be",
     "notrebelgique.be",
-    "captain.legal"
+    "captain.legal",
+    "test-achats.be"
   ],
   "regles": [
     "R1 — Un fait publié doit avoir au moins UNE source de tier1 (officiel).",
