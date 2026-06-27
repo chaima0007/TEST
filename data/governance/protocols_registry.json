@@ -219,6 +219,12 @@
       "nom": "Analyse du travail",
       "regle": "Analyser le travail de Chaima court terme (production) et long terme (trajectoire, durabilité), à partir de données réelles. Sans flatterie.",
       "verif": "python3 scripts/travail_analyse_protocol.py"
+    },
+    {
+      "id": "P-PERIMETRE",
+      "nom": "Périmètre des projets (règle de Chaima)",
+      "regle": "RÈGLE SIMPLE: La Loi Avec Moi = CITOYENS (droits du quotidien). Caelum/CaelumSwarm = ENTREPRISES (conformité CSDDD). Un sujet citoyen va dans La Loi Avec Moi ; un sujet entreprise va dans Caelum. Jamais de mélange.",
+      "verif": "manuel — vérifier le public cible avant de classer un sujet"
     }
   ]
 }
