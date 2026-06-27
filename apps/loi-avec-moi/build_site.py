@@ -146,6 +146,7 @@ def page(titre, contenu, actif=""):
         return f'<a href="{href}"{cls}>{esc(label)}</a>'
     nav = (
         navlink("index.html", "Accueil", "accueil")
+        + navlink("espace-mineurs.html", "Enfants & jeunes", "mineurs")
         + navlink("urgences.html", "Urgences & délais", "urgences")
         + navlink("specialistes.html", "Nos spécialistes", "specialistes")
         + navlink("textes.html", "Textes de loi", "textes")
@@ -536,13 +537,41 @@ def construire():
         page("Nos sources", srcpage, actif="sources"), encoding="utf-8"
     )
 
+    # --- espaces par public (enfants/mineurs & adultes) ---
+    mod2slug = {m["_module"]: m["_slug"] for m in modules}
+    mod2titre = {m["_module"]: m.get("titre", m["_slug"]) for m in modules}
+    pubp = REPO / "data" / "governance" / "publics.json"
+    publics = json.loads(pubp.read_text(encoding="utf-8")).get("publics", {}) if pubp.exists() else {}
+    pages_publics = {"mineurs": "espace-mineurs.html", "adultes": "espace-adultes.html"}
+    for cle, fichier in pages_publics.items():
+        bloc = publics.get(cle, {})
+        vus, cartes_p = set(), []
+        for mod in bloc.get("modules", []):
+            slug = mod2slug.get(mod)
+            if not slug or slug in vus:
+                continue
+            vus.add(slug)
+            cartes_p.append(
+                f'<a class="card" href="{esc(slug)}.html"><h3>{esc(mod2titre.get(mod, slug))}</h3></a>'
+            )
+        contenu_p = (
+            '<a class="back" href="index.html">← Accueil</a>'
+            f'<h1 style="color:#0b3d6e">{esc(bloc.get("titre", cle))}</h1>'
+            f'<p>{esc(bloc.get("intro", ""))}</p>'
+            f'<div class="disclaimer" role="note">ℹ️ {esc(AVERTISSEMENT_GLOBAL)}</div>'
+            f'<div class="cards">{"".join(cartes_p)}</div>'
+        )
+        (DIST / fichier).write_text(
+            page(bloc.get("titre", cle), contenu_p, actif=cle), encoding="utf-8"
+        )
+
     return {
         "modules": len(modules),
         "faits": total_faits,
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
         "urgences": len(urgents),
-        "pages": len(modules) + 8,
+        "pages": len(modules) + 10,
     }
 
 
