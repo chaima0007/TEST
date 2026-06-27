@@ -19,8 +19,16 @@
       "reponse": "À Bruxelles, le bail de résidence principale est réputé conclu pour 9 ans. Le bail de courte durée a une durée maximale de 3 ans ; un bail conclu entre 3 et 9 ans est assimilé à un bail de 9 ans.",
       "reference_legale": "Code bruxellois du Logement, titre XI",
       "sources": [
-        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel / Belgisch Staatsblad — Code bruxellois du Logement"},
-        {"type": "secondaire", "url": "https://www.bruxelles-j.be/te-loger/les-caracteristiques-du-bail-de-residence-principale-et-les-differentes-durees/", "intitule": "Bruxelles-J — Bail de résidence principale et durées"}
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+          "intitule": "Justel / Belgisch Staatsblad — Code bruxellois du Logement"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.bruxelles-j.be/te-loger/les-caracteristiques-du-bail-de-residence-principale-et-les-differentes-durees/",
+          "intitule": "Bruxelles-J — Bail de résidence principale et durées"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -30,8 +38,16 @@
       "reponse": "La garantie locative est plafonnée à 2 mois de loyer si elle est constituée sur un compte individualisé bloqué, et à 3 mois si elle prend la forme d'une garantie bancaire. Depuis la réforme du 1er novembre 2024, le bailleur dispose de 2 mois après la fin du bail pour débloquer la garantie, sous peine de devoir 10% du loyer par mois de retard.",
       "reference_legale": "Code bruxellois du Logement, art. 248 §2 (réforme ordonnance du 4 avril 2024)",
       "sources": [
-        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement, art. 248"},
-        {"type": "secondaire", "url": "https://www.garloc.be/loi-garantie-locative/bruxelles/", "intitule": "Garloc — Garantie locative Bruxelles"}
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+          "intitule": "Justel — Code bruxellois du Logement, art. 248"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.garloc.be/loi-garantie-locative/bruxelles/",
+          "intitule": "Garloc — Garantie locative Bruxelles"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -41,8 +57,16 @@
       "reponse": "Le preneur peut mettre fin au bail à tout moment moyennant un préavis de 3 mois (une indemnité dégressive peut être due en cas de rupture anticipée durant les trois premières années d'un bail de 9 ans). Le bailleur ne peut résilier que dans les cas et délais prévus par le Code (préavis et motifs encadrés).",
       "reference_legale": "Code bruxellois du Logement, titre XI, chapitre relatif à la fin du bail",
       "sources": [
-        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
-        {"type": "secondaire", "url": "https://ijbxl.be/logement/les-baux-en-region-bruxelloise-regles-generales-duree-et-possibilites-de-rupture/", "intitule": "Infor Jeunes Bruxelles — Baux : règles, durée, rupture"}
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+          "intitule": "Justel — Code bruxellois du Logement"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://ijbxl.be/logement/les-baux-en-region-bruxelloise-regles-generales-duree-et-possibilites-de-rupture/",
+          "intitule": "Infor Jeunes Bruxelles — Baux : règles, durée, rupture"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -52,8 +76,16 @@
       "reponse": "L'indexation du loyer est possible une fois par an, à la date anniversaire du bail, selon la formule légale (indice santé). Point essentiel : si le bail n'a pas été enregistré auprès du SPF Finances, le bailleur ne peut pas indexer le loyer.",
       "reference_legale": "Code bruxellois du Logement, titre XI (indexation) ; enregistrement : SPF Finances",
       "sources": [
-        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
-        {"type": "secondaire", "url": "https://www.bruxelles-j.be/actus/des-nouvelles-regles-en-matiere-de-bail/", "intitule": "Bruxelles-J — Nouvelles règles de bail"}
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+          "intitule": "Justel — Code bruxellois du Logement"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.bruxelles-j.be/actus/des-nouvelles-regles-en-matiere-de-bail/",
+          "intitule": "Bruxelles-J — Nouvelles règles de bail"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -63,8 +95,16 @@
       "reponse": "Un état des lieux d'entrée détaillé et contradictoire est obligatoire et doit être enregistré, lorsque le bien est encore inoccupé ou au plus tard dans le mois suivant la remise des clés. L'enregistrement est gratuit via MyRent (SPF Finances) ; les frais d'expert éventuels sont en principe partagés.",
       "reference_legale": "Code bruxellois du Logement — état des lieux ; enregistrement : SPF Finances",
       "sources": [
-        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
-        {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+          "intitule": "Justel — Code bruxellois du Logement"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement",
+          "intitule": "SPF Finances — Enregistrement du bail (MyRent)"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -74,8 +114,16 @@
       "reponse": "Le bailleur prend en charge les grosses réparations (toiture, chauffage, canalisations, remplacement d'appareils vétustes) ; le locataire les petites réparations et l'entretien courant. Bruxelles a établi une liste non limitative (Moniteur belge du 8 décembre 2017), applicable à tous les baux et obligatoire (sans dérogation).",
       "reference_legale": "Code bruxellois du Logement + liste des réparations (M.B. 08/12/2017)",
       "sources": [
-        {"type": "officiel", "url": "https://be.brussels/en/housing/rental/lease-contracts/division-repairs-between-tenant-and-landlord", "intitule": "be.brussels — Répartition des réparations locataire/bailleur"},
-        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"}
+        {
+          "type": "officiel",
+          "url": "https://be.brussels/en/housing/rental/lease-contracts/division-repairs-between-tenant-and-landlord",
+          "intitule": "be.brussels — Répartition des réparations locataire/bailleur"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+          "intitule": "Justel — Code bruxellois du Logement"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -85,8 +133,16 @@
       "reponse": "Le logement loué doit respecter les normes minimales de sécurité, de salubrité et d'équipement du Code bruxellois du Logement (par ex. une surface d'au moins 18 m² pour une personne, +10 m² par occupant supplémentaire, un séjour avec lumière naturelle, une cuisine et des sanitaires). Le contrôle relève de la DIRL (Direction de l'Inspection régionale du Logement) ; le non-respect entraîne des sanctions.",
       "reference_legale": "Code bruxellois du Logement — normes minimales (sécurité, salubrité, équipement)",
       "sources": [
-        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel", "intitule": "Justel — Code bruxellois du Logement"},
-        {"type": "secondaire", "url": "https://www.lebonbail.be/articles/les-normes-du-logement-mis-en-location", "intitule": "Le Bon Bail — Normes du logement mis en location"}
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/ordonnance/2003/07/17/2013A31614/justel",
+          "intitule": "Justel — Code bruxellois du Logement"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.lebonbail.be/articles/les-normes-du-logement-mis-en-location",
+          "intitule": "Le Bon Bail — Normes du logement mis en location"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -96,8 +152,16 @@
       "reponse": "Une expulsion requiert toujours une décision du juge de paix ; le bailleur doit assigner le locataire. Le CPAS est averti de la procédure. À Bruxelles, une trêve hivernale interdit les expulsions entre le 1er novembre et le 15 mars (logement social ET privé). Après jugement, le locataire dispose en principe d'un mois pour partir (délai modulable par le juge).",
       "reference_legale": "Code judiciaire (juge de paix) + Code bruxellois du Logement — expulsion ; trêve hivernale",
       "sources": [
-        {"type": "officiel", "url": "https://www.ccc-ggc.brussels/sites/default/files/documents/graphics/rapports-externes/juridique-expulsions_fr.pdf", "intitule": "CCC Bruxelles — Les expulsions de logement : aspects juridiques"},
-        {"type": "secondaire", "url": "https://www.jeminforme.be/l-expulsion-d-un-locataire/", "intitule": "Infor Jeunes — L'expulsion d'un locataire"}
+        {
+          "type": "officiel",
+          "url": "https://www.ccc-ggc.brussels/sites/default/files/documents/graphics/rapports-externes/juridique-expulsions_fr.pdf",
+          "intitule": "CCC Bruxelles — Les expulsions de logement : aspects juridiques"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.jeminforme.be/l-expulsion-d-un-locataire/",
+          "intitule": "Infor Jeunes — L'expulsion d'un locataire"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -105,10 +169,18 @@
       "id": "BBRU-PEB-001",
       "question": "Quelles sont les obligations PEB (énergie) pour louer à Bruxelles ?",
       "reponse": "À Bruxelles, un certificat PEB valide est obligatoire pour mettre un logement en location et ses informations (classe énergétique) doivent figurer dans les annonces immobilières. Les exigences énergétiques évoluent : vérifiez les obligations en vigueur auprès de Bruxelles Environnement avant toute mise en location.",
-      "reference_legale": "Réglementation PEB bruxelloise (Bruxelles Environnement)",
+      "reference_legale": "Ordonnance bruxelloise (COBRACE) relative à la performance énergétique des bâtiments (Bruxelles Environnement)",
       "sources": [
-        {"type": "officiel", "url": "https://environnement.brussels/", "intitule": "Bruxelles Environnement — Certificat PEB"},
-        {"type": "secondaire", "url": "https://weinvest.be/fr-BE/blog/b2c/peb-calendar-by-region", "intitule": "We Invest — Échéances PEB par région"}
+        {
+          "type": "officiel",
+          "url": "https://environnement.brussels/",
+          "intitule": "Bruxelles Environnement — Certificat PEB"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://weinvest.be/fr-BE/blog/b2c/peb-calendar-by-region",
+          "intitule": "We Invest — Échéances PEB par région"
+        }
       ],
       "date_verification": "2026-06-26"
     }

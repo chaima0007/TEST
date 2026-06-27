@@ -17,15 +17,29 @@
       "id": "ENER-PAIEMENT-001",
       "question": "Je n'arrive pas à payer mes factures d'énergie : que faire ?",
       "reponse": "Réagissez vite : en cas de retard, le fournisseur doit en principe vous laisser un délai (au moins 15 jours en Wallonie) pour payer. Vous pouvez demander un plan de paiement à votre fournisseur, demander l'aide du CPAS (qui peut aussi intervenir financièrement), et, selon votre situation, le statut de client protégé. Ne laissez pas la dette grossir : un plan évite la coupure et les frais.",
-      "reference_legale": "Réglementation régionale énergie — procédure de défaut de paiement",
+      "reference_legale": "Décret régional relatif au marché de l'électricité et du gaz ; arrêté relatif aux clients protégés (procédure de défaut de paiement)",
       "contacts": [
-        {"nom": "Votre fournisseur d'énergie", "pour": "plan de paiement"},
-        {"nom": "CPAS de votre commune", "pour": "aide au paiement / client protégé"}
+        {
+          "nom": "Votre fournisseur d'énergie",
+          "pour": "plan de paiement"
+        },
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "aide au paiement / client protégé"
+        }
       ],
       "alerte_delai": "Délai court : agissez dès le rappel (en Wallonie, au moins 15 jours pour payer). N'attendez pas la mise en demeure.",
       "sources": [
-        {"type": "officiel", "url": "https://www.cwape.be/node/183", "intitule": "CWaPE — Difficulté de paiement"},
-        {"type": "officiel", "url": "https://energie.wallonie.be/home/au-quotidien/a-la-maison/gaz-et-electricite/protection-des-consommateurs/en-cas-de-difficulte-de-paiement-des-factures-d-energie.html", "intitule": "SPW Énergie — Difficultés de paiement"}
+        {
+          "type": "officiel",
+          "url": "https://www.cwape.be/node/183",
+          "intitule": "CWaPE — Difficulté de paiement"
+        },
+        {
+          "type": "officiel",
+          "url": "https://energie.wallonie.be/home/au-quotidien/a-la-maison/gaz-et-electricite/protection-des-consommateurs/en-cas-de-difficulte-de-paiement-des-factures-d-energie.html",
+          "intitule": "SPW Énergie — Difficultés de paiement"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -33,13 +47,25 @@
       "id": "ENER-FOURNISSEUR-001",
       "question": "Puis-je changer de fournisseur d'énergie, et à quelles conditions ?",
       "reponse": "Oui. Un client résidentiel (ou une PME) peut mettre fin à tout moment et sans indemnité à un contrat de gaz ou d'électricité, qu'il soit à durée déterminée ou indéterminée, moyennant un préavis d'un mois. Le changement de fournisseur est gratuit et le nouveau fournisseur s'occupe en général des démarches. Comparez les offres avant de changer.",
-      "reference_legale": "Réglementation énergie — droit de résiliation et changement de fournisseur",
+      "reference_legale": "Décret régional relatif au marché de l'électricité et du gaz (droit de résiliation et changement de fournisseur)",
       "contacts": [
-        {"nom": "Régulateur régional (CWaPE / BRUGEL / VREG)", "lien": "https://www.cwape.be/choix-fournisseur", "pour": "infos changement de fournisseur"}
+        {
+          "nom": "Régulateur régional (CWaPE / BRUGEL / VREG)",
+          "lien": "https://www.cwape.be/choix-fournisseur",
+          "pour": "infos changement de fournisseur"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.cwape.be/choix-fournisseur", "intitule": "CWaPE — Je change de fournisseur"},
-        {"type": "officiel", "url": "https://energie.wallonie.be/home/au-quotidien/a-la-maison/gaz-et-electricite/comment-changer-de-fournisseur.html", "intitule": "SPW Énergie — Changer de fournisseur"}
+        {
+          "type": "officiel",
+          "url": "https://www.cwape.be/choix-fournisseur",
+          "intitule": "CWaPE — Je change de fournisseur"
+        },
+        {
+          "type": "officiel",
+          "url": "https://energie.wallonie.be/home/au-quotidien/a-la-maison/gaz-et-electricite/comment-changer-de-fournisseur.html",
+          "intitule": "SPW Énergie — Changer de fournisseur"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -50,8 +76,16 @@
       "reference_legale": "Code de droit économique — droit de rétractation (vente à distance / hors établissement)",
       "alerte_delai": "14 jours pour renoncer à un contrat signé par téléphone/internet : agissez dans ce délai.",
       "sources": [
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs", "intitule": "SPF Economie — Protection des consommateurs"},
-        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quelle-procedure-en-cas-de-defaut-de-paiement-de-mes-factures-de-gaz-et-delectricite-0", "intitule": "Droits Quotidiens — Factures d'énergie"}
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs",
+          "intitule": "SPF Economie — Protection des consommateurs"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/quelle-procedure-en-cas-de-defaut-de-paiement-de-mes-factures-de-gaz-et-delectricite-0",
+          "intitule": "Droits Quotidiens — Factures d'énergie"
+        }
       ],
       "date_verification": "2026-06-26"
     }

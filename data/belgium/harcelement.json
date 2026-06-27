@@ -17,7 +17,7 @@
       "id": "HARC-URGENCE-001",
       "question": "Je suis (ou mon enfant est) harcelé(e) : qui contacter en premier ?",
       "reponse": "En cas de danger immédiat, appelez le 112 (secours) ou le 101 (police). Pour en parler et être orienté : les enfants et adolescents peuvent appeler le 103 (Écoute-Enfants, service de la Fédération Wallonie-Bruxelles, tous les jours de 10h à minuit, anonyme et gratuit). Pour un adulte en détresse, des lignes d'écoute existent (voir les services officiels). Selon la situation, on s'adresse ensuite à la police (pour porter plainte), au conseiller en prévention (au travail), ou à l'école (harcèlement scolaire).",
-      "reference_legale": "Numéros d'urgence officiels (112 / 101) ; service Écoute-Enfants 103 (Fédération Wallonie-Bruxelles)",
+      "reference_legale": "Article 442bis du Code pénal (harcèlement) ; arrêté royal relatif aux numéros d'urgence (112/101) ; service Écoute-Enfants 103 (FW-B)",
       "contacts": [
         {
           "nom": "Urgences (secours, ambulance, pompiers)",
@@ -55,7 +55,7 @@
       "id": "HARC-ENFANT-001",
       "question": "Harcèlement à l'école : que peuvent faire l'enfant et les parents ?",
       "reponse": "Il faut en parler vite : à un adulte de confiance, à l'école (titulaire, direction, centre PMS) et, si besoin, aux services d'aide. En Fédération Wallonie-Bruxelles, l'enseignement met à disposition de l'information et un numéro vert « Écoute École » pour les adultes confrontés à la violence scolaire ; les enfants peuvent appeler le 103. Les équipes SOS Enfants (ONE) traitent les situations de maltraitance. Conservez les preuves (messages, captures). En cas d'infraction, on peut porter plainte à la police.",
-      "reference_legale": "Dispositifs de la Fédération Wallonie-Bruxelles (enseignement, climat scolaire) ; art. 442bis du Code pénal en cas d'infraction",
+      "reference_legale": "Article 442bis du Code pénal ; dispositifs de la Fédération Wallonie-Bruxelles (climat scolaire)",
       "contacts": [
         {
           "nom": "Écoute-Enfants",
@@ -188,7 +188,7 @@
       "id": "HARC-PROTECTION-ENFANT-001",
       "question": "Comment apprendre à un enfant à protéger sa « bulle » et à dire non à un adulte ?",
       "reponse": "On peut expliquer simplement à un enfant que son corps lui appartient : personne n'a le droit de le toucher d'une manière qui le met mal à l'aise, même un adulte qu'il connaît. Quelques repères : tu as le droit de dire NON et de partir ; un secret qui te rend triste ou qui fait peur doit toujours être dit à un adulte de confiance ; aucun adulte ne devrait te demander de garder ce genre de secret. L'essentiel, côté adultes, n'est pas de faire peur mais d'écouter, de croire l'enfant et de garder le dialogue ouvert. En cas d'inquiétude, on contacte le 103 (Écoute-Enfants), SOS Enfants ou la police.",
-      "reference_legale": "Prévention de la maltraitance des enfants (programmes de la Fédération Wallonie-Bruxelles)",
+      "reference_legale": "Convention internationale des droits de l'enfant ; article 442bis du Code pénal ; programmes de prévention (Fédération Wallonie-Bruxelles)",
       "contacts": [
         {
           "nom": "Écoute-Enfants",

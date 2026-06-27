@@ -19,8 +19,16 @@
       "reponse": "Le bail de résidence principale a en principe une durée de 9 ans. Il existe trois exceptions : le bail de courte durée (3 ans ou moins), le bail de longue durée (plus de 9 ans) et le bail à vie (jusqu'au décès du locataire).",
       "reference_legale": "Décret du 15 mars 2018, art. 56 et suivants",
       "sources": [
-        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018 relatif au bail d'habitation"},
-        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail", "intitule": "SPW Logement — Le bail d'habitation"}
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01",
+          "intitule": "WALLEX — Décret du 15 mars 2018 relatif au bail d'habitation"
+        },
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/fr/bail",
+          "intitule": "SPW Logement — Le bail d'habitation"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -30,8 +38,16 @@
       "reponse": "Le locataire peut mettre fin au bail à tout moment moyennant un préavis de 3 mois. Le bailleur peut mettre fin au bail au terme de celui-ci moyennant un préavis de 6 mois (des motifs et délais spécifiques s'appliquent pour une résiliation anticipée par le bailleur).",
       "reference_legale": "Décret du 15 mars 2018, dispositions sur la fin du bail de 9 ans",
       "sources": [
-        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018"},
-        {"type": "secondaire", "url": "https://www.uvcw.be/logement/focus/art-6981", "intitule": "UVCW — L'habitat en Wallonie : le bail d'habitation"}
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01",
+          "intitule": "WALLEX — Décret du 15 mars 2018"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.uvcw.be/logement/focus/art-6981",
+          "intitule": "UVCW — L'habitat en Wallonie : le bail d'habitation"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -41,8 +57,16 @@
       "reponse": "La garantie locative est plafonnée à 2 mois de loyer si elle est constituée sur un compte individualisé bloqué au nom du locataire, et à 3 mois de loyer si elle prend la forme d'une garantie bancaire reconstituée progressivement. Le décret prévoit trois modes de constitution (compte bloqué, garantie bancaire, garantie bancaire via contrat-type CPAS).",
       "reference_legale": "Décret du 15 mars 2018, art. 62",
       "sources": [
-        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018, art. 62"},
-        {"type": "officiel", "url": "https://logement.wallonie.be/storage/logement/documents/content/news/decret-bail/decret-decret-du--15032018-relatif-au-bail-habitation.pdf", "intitule": "SPW Logement — Texte du Décret du 15 mars 2018 (PDF)"}
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01",
+          "intitule": "WALLEX — Décret du 15 mars 2018, art. 62"
+        },
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/storage/logement/documents/content/news/decret-bail/decret-decret-du--15032018-relatif-au-bail-habitation.pdf",
+          "intitule": "SPW Logement — Texte du Décret du 15 mars 2018 (PDF)"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -52,8 +76,16 @@
       "reponse": "L'indexation du loyer peut se faire une seule fois par an, au plus tôt à la date anniversaire de l'entrée en vigueur du bail, selon la formule légale (loyer de base × nouvel indice santé / indice santé de départ). L'indexation n'est pas automatique : elle doit être demandée par le bailleur et ne peut être réclamée rétroactivement que pour les mois en cours et les 3 mois précédant la demande.",
       "reference_legale": "Décret du 15 mars 2018, art. 26",
       "sources": [
-        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/indexation-loyer", "intitule": "SPW Logement — L'indexation du loyer"},
-        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01", "intitule": "WALLEX — Décret du 15 mars 2018, art. 26"}
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/fr/bail/indexation-loyer",
+          "intitule": "SPW Logement — L'indexation du loyer"
+        },
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/eli/loi-decret/2018/03/15/2018201408/2018/09/01",
+          "intitule": "WALLEX — Décret du 15 mars 2018, art. 26"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -63,8 +95,16 @@
       "reponse": "Un état des lieux d'entrée détaillé et contradictoire est obligatoire. Il doit être joint au bail et enregistré (gratuitement via MyRent du SPF Finances) au plus tard 1 mois après l'entrée. En cas de recours à un expert, les frais sont en principe partagés à parts égales entre bailleur et locataire.",
       "reference_legale": "Décret du 15 mars 2018 — état des lieux ; enregistrement : SPF Finances",
       "sources": [
-        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/etat-des-lieux-entree", "intitule": "SPW Logement — L'état des lieux d'entrée"},
-        {"type": "officiel", "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement", "intitule": "SPF Finances — Enregistrement du bail (MyRent)"}
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/fr/bail/etat-des-lieux-entree",
+          "intitule": "SPW Logement — L'état des lieux d'entrée"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement",
+          "intitule": "SPF Finances — Enregistrement du bail (MyRent)"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -74,8 +114,16 @@
       "reponse": "Le bailleur assume les grosses réparations et l'entretien majeur (toiture, chaudière, canalisations, remplacement d'appareils vétustes). Le locataire assume les réparations locatives et l'entretien courant liés à l'usage normal. La Wallonie a publié une liste non limitative (Moniteur belge du 31 août 2018), obligatoire et sans dérogation possible.",
       "reference_legale": "Décret du 15 mars 2018 + liste non limitative des réparations locatives (M.B. 31/08/2018)",
       "sources": [
-        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/droits-devoirs-bailleur-travaux-pendant-location", "intitule": "SPW Logement — Travaux du bailleur pendant la location"},
-        {"type": "officiel", "url": "https://lampspw.wallonie.be/dgo4/tinymvc/apps/logement/views/documents/baux/fiches/FR/liste_non_limitative_des_reparations_locatives.pdf", "intitule": "SPW — Liste non limitative des réparations locatives (PDF)"}
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/fr/bail/droits-devoirs-bailleur-travaux-pendant-location",
+          "intitule": "SPW Logement — Travaux du bailleur pendant la location"
+        },
+        {
+          "type": "officiel",
+          "url": "https://lampspw.wallonie.be/dgo4/tinymvc/apps/logement/views/documents/baux/fiches/FR/liste_non_limitative_des_reparations_locatives.pdf",
+          "intitule": "SPW — Liste non limitative des réparations locatives (PDF)"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -85,8 +133,16 @@
       "reponse": "Tout logement loué doit respecter des critères de salubrité (stabilité, étanchéité, ventilation, absence d'humidité et de nuisibles, sécurité électrique et gaz) et des critères de surpeuplement, fixés par le Code wallon de l'Habitation durable. En cas de manquement, une enquête de salubrité peut être demandée ; le bailleur doit réaliser les travaux, sous peine de sanctions.",
       "reference_legale": "Code wallon de l'Habitation durable + arrêté déterminant les critères de salubrité",
       "sources": [
-        {"type": "officiel", "url": "https://logement.wallonie.be/fr/page/la-qualite-des-logements-en-wallonie", "intitule": "SPW Logement — La qualité des logements en Wallonie"},
-        {"type": "officiel", "url": "https://wallex.wallonie.be/contents/acts/2/2046/1.html", "intitule": "WALLEX — Arrêté critères de salubrité"}
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/fr/page/la-qualite-des-logements-en-wallonie",
+          "intitule": "SPW Logement — La qualité des logements en Wallonie"
+        },
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/contents/acts/2/2046/1.html",
+          "intitule": "WALLEX — Arrêté critères de salubrité"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -96,8 +152,16 @@
       "reponse": "Une expulsion exige toujours une décision du juge de paix : le bailleur doit assigner le locataire pour obtenir la résolution du bail et l'autorisation d'expulser. Le CPAS est informé de toute procédure visant la résidence principale. Après jugement, le locataire dispose en principe d'un mois pour quitter (le juge peut moduler ce délai). Une trêve hivernale (1er novembre – 15 mars) protège les locataires de logement social.",
       "reference_legale": "Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion",
       "sources": [
-        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/procedure-expulsion", "intitule": "SPW Logement — La procédure d'expulsion"},
-        {"type": "secondaire", "url": "https://www.huissiersdejustice.be/expulsion", "intitule": "Huissiers de justice — Expulsion"}
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/fr/bail/procedure-expulsion",
+          "intitule": "SPW Logement — La procédure d'expulsion"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.huissiersdejustice.be/expulsion",
+          "intitule": "Huissiers de justice — Expulsion"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -105,10 +169,18 @@
       "id": "BWAL-PEB-001",
       "question": "Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?",
       "reponse": "Un certificat PEB valide est obligatoire pour mettre un logement en location et doit être mentionné dans l'annonce. Le label PEB a aussi un impact direct : un logement classé F ou G ne peut pas voir son loyer indexé. Des exigences minimales de performance pour la location sont introduites progressivement, MAIS le calendrier a été réajusté fin 2025 — il faut vérifier la version en vigueur auprès de la source officielle avant toute décision.",
-      "reference_legale": "Réglementation PEB wallonne (énergie) — calendrier en évolution",
+      "reference_legale": "Décret wallon relatif à la performance énergétique des bâtiments (PEB)",
       "sources": [
-        {"type": "officiel", "url": "https://www.wallonie.be/en/demarches/sellingbuyingleasing-obtaining-epb-certificate", "intitule": "Wallonie.be — Obtenir un certificat PEB (vente/achat/location)"},
-        {"type": "secondaire", "url": "https://www.peb-connect.be/actualites/changements-peb-en-wallonie-calendrier-aides-et-impacts-pour-les-propritaires-source-officielle", "intitule": "PEB Connect — Changements PEB Wallonie (calendrier)"}
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/en/demarches/sellingbuyingleasing-obtaining-epb-certificate",
+          "intitule": "Wallonie.be — Obtenir un certificat PEB (vente/achat/location)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.peb-connect.be/actualites/changements-peb-en-wallonie-calendrier-aides-et-impacts-pour-les-propritaires-source-officielle",
+          "intitule": "PEB Connect — Changements PEB Wallonie (calendrier)"
+        }
       ],
       "date_verification": "2026-06-26"
     }

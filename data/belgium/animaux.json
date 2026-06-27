@@ -19,8 +19,16 @@
       "reponse": "Toute personne qui détient un animal doit lui donner des soins appropriés : nourriture, eau, abri, soins de santé, et la possibilité de bouger. Il est notamment interdit de garder un animal attaché en permanence ou de restreindre exagérément sa liberté de mouvement. Avoir un animal, c'est une responsabilité légale, pas seulement affective.",
       "reference_legale": "Code wallon du Bien-être des animaux (décret du 4 octobre 2018) ; codes régionaux équivalents",
       "sources": [
-        {"type": "officiel", "url": "https://www.wallonie.be/fr/vivre-en-wallonie/environnement-et-agriculture/bien-etre-animal", "intitule": "Wallonie — Bien-être animal"},
-        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2018/10/04/2018015578/2019/01/01", "intitule": "WALLEX — Code wallon du Bien-être des animaux"}
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/vivre-en-wallonie/environnement-et-agriculture/bien-etre-animal",
+          "intitule": "Wallonie — Bien-être animal"
+        },
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/eli/loi-decret/2018/10/04/2018015578/2019/01/01",
+          "intitule": "WALLEX — Code wallon du Bien-être des animaux"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -28,13 +36,24 @@
       "id": "ANI-IDENTIFICATION-001",
       "question": "Dois-je identifier et enregistrer mon chien ou mon chat ?",
       "reponse": "Oui, l'identification et l'enregistrement des chiens (et des chats, sous conditions) sont obligatoires. Une fois l'animal identifié et enregistré, la personne inscrite comme responsable est présumée en être le propriétaire. C'est important : ça permet de retrouver un animal perdu et d'établir qui est responsable en cas de problème.",
-      "reference_legale": "Réglementation régionale — identification et enregistrement des animaux de compagnie",
+      "reference_legale": "Arrêté royal relatif à l'identification et l'enregistrement des chiens et chats ; Code wallon du Bien-être des animaux (décret du 4 octobre 2018)",
       "contacts": [
-        {"nom": "Vétérinaire", "pour": "identification (puce) et enregistrement"}
+        {
+          "nom": "Vétérinaire",
+          "pour": "identification (puce) et enregistrement"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.wallonie.be/fr/vivre-en-wallonie/environnement-et-agriculture/bien-etre-animal", "intitule": "Wallonie — Bien-être animal"},
-        {"type": "secondaire", "url": "https://bienetreanimal.wallonie.be/communes", "intitule": "Bien-être animal Wallonie — Communes"}
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/vivre-en-wallonie/environnement-et-agriculture/bien-etre-animal",
+          "intitule": "Wallonie — Bien-être animal"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://bienetreanimal.wallonie.be/communes",
+          "intitule": "Bien-être animal Wallonie — Communes"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -44,13 +63,29 @@
       "reponse": "Signalez-le. En Wallonie, on peut dénoncer une négligence ou une maltraitance via le numéro 1718 (option 2), ou s'adresser à la commune et à la police. La maltraitance animale est sévèrement punie (amendes lourdes et, dans les cas les plus graves, peines de prison). Notez un maximum d'éléments (lieu, photos, dates) pour appuyer le signalement.",
       "reference_legale": "Code wallon du Bien-être des animaux — sanctions de la maltraitance",
       "contacts": [
-        {"nom": "Signalement maltraitance (Wallonie)", "numero": "1718", "pour": "négligence/maltraitance (option 2)"},
-        {"nom": "Police", "numero": "101", "pour": "cas urgent / infraction"}
+        {
+          "nom": "Signalement maltraitance (Wallonie)",
+          "numero": "1718",
+          "pour": "négligence/maltraitance (option 2)"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "cas urgent / infraction"
+        }
       ],
       "alerte_delai": "Agissez vite et documentez (photos, date, lieu) : les preuves peuvent disparaître.",
       "sources": [
-        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/porter-plainte-en-cas-de-negligence-ou-de-maltraitance-dun-animal", "intitule": "Wallonie — Porter plainte (maltraitance animale)"},
-        {"type": "officiel", "url": "https://bienetreanimal.wallonie.be/demandes/2896_porter-plainte-en-cas-de-negligence-ou-de-maltraitance-d-un-animal.html", "intitule": "Bien-être animal Wallonie — Porter plainte"}
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/demarches/porter-plainte-en-cas-de-negligence-ou-de-maltraitance-dun-animal",
+          "intitule": "Wallonie — Porter plainte (maltraitance animale)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://bienetreanimal.wallonie.be/demandes/2896_porter-plainte-en-cas-de-negligence-ou-de-maltraitance-d-un-animal.html",
+          "intitule": "Bien-être animal Wallonie — Porter plainte"
+        }
       ],
       "date_verification": "2026-06-26"
     }
