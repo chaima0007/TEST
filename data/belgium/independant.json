@@ -1,0 +1,47 @@
+{
+  "module": "independant",
+  "titre": "Devenir indépendant — démarches pour se lancer",
+  "domaine": "Indépendant & activité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Statut social des travailleurs indépendants ; inscription à la Banque-Carrefour des Entreprises (BCE) via un guichet d'entreprises",
+    "portee": "Citoyen qui veut démarrer une activité indépendante en Belgique",
+    "source_officielle": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Un guichet d'entreprises agréé et un comptable peuvent vous accompagner. Cette catégorie aide le citoyen à se lancer ; les obligations des entreprises plus complexes relèvent d'un accompagnement spécialisé.",
+  "faits": [
+    {
+      "id": "IND-DEMARRER-001",
+      "question": "Quelles sont les étapes pour devenir indépendant ?",
+      "reponse": "En résumé : ouvrir un compte bancaire professionnel, vérifier les accès éventuels à la profession, s'inscrire à la Banque-Carrefour des Entreprises (BCE) via un guichet d'entreprises agréé (vous recevez un numéro d'entreprise à 10 chiffres), activer votre numéro de TVA si nécessaire, et vous affilier à une caisse d'assurances sociales et à une mutuelle. Un guichet d'entreprises est le point de contact central pour ces formalités.",
+      "reference_legale": "Code de droit économique (BCE) ; statut social des indépendants",
+      "contacts": [
+        {"nom": "Guichet d'entreprises agréé", "lien": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/demarches-aupres-dun-guichet/les-guichets-dentreprises", "pour": "inscription BCE, formalités"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur", "intitule": "SPF Economie — Démarches pour un indépendant"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/economie/entreprise/creation", "intitule": "Belgium.be — Création d'entreprise"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "IND-COTISATIONS-001",
+      "question": "Dois-je payer des cotisations sociales et m'affilier quelque part ?",
+      "reponse": "Oui. Tout indépendant doit s'affilier à une caisse d'assurances sociales et payer des cotisations sociales. En échange, vous ouvrez des droits : soins de santé (via une mutuelle, affiliation obligatoire), incapacité de travail, pension, allocations familiales, congé de maternité, et une assurance en cas de faillite. Au début, prévoyez une trésorerie pour ces cotisations.",
+      "reference_legale": "Arrêté royal n° 38 — statut social des travailleurs indépendants",
+      "contacts": [
+        {"nom": "Caisse d'assurances sociales", "pour": "affiliation et cotisations"},
+        {"nom": "Mutuelle", "pour": "soins de santé (obligatoire)"}
+      ],
+      "alerte_delai": "Affiliez-vous AVANT de démarrer l'activité : l'affiliation à une caisse d'assurances sociales est obligatoire dès le début.",
+      "sources": [
+        {"type": "officiel", "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/groupes-cibles-specifiques/vos-droits-en-tant-quindependant", "intitule": "SPF Sécurité sociale — Vos droits en tant qu'indépendant"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-un-travailleur", "intitule": "SPF Economie — Démarches indépendant"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

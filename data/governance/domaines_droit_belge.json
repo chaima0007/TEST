@@ -227,6 +227,15 @@
         "animaux"
       ],
       "priorite": "basse"
+    },
+    {
+      "cle": "entreprise",
+      "nom": "Indépendant & activité",
+      "statut": "couvert",
+      "modules": [
+        "independant"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
