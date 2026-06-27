@@ -1,8 +1,8 @@
 # Rapport d'audit d'accessibilité (WCAG 2.2)
 
-*Généré le 2026-06-27 sur 43 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
+*Généré le 2026-06-27 sur 45 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
 
-**Contrôles réussis : 430 · à corriger : 0**
+**Contrôles réussis : 450 · à corriger : 0**
 
 ## ✅ _catalogue.html
 - ✅ Langue de page déclarée (lang)
@@ -253,7 +253,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (40 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (42 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ espace-mineurs.html
@@ -328,6 +328,18 @@
 - ✅ Liens avec intitulé (40 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (19 lien(s) _blank)
 
+## ✅ impots.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
+
 ## ✅ independant.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -349,7 +361,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (43 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (45 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ justice_penal.html
@@ -375,6 +387,18 @@
 - ✅ Champs de saisie étiquetés (1 champ(s))
 - ✅ Liens avec intitulé (14 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
+
+## ✅ pension.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
 
 ## ✅ sante_patient.html
 - ✅ Langue de page déclarée (lang)
@@ -481,7 +505,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (54 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (58 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ vie_privee_rgpd.html

@@ -74,6 +74,26 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-ALLOCATIONS-FAMILIALES",
+      "titre": "Spécialiste — Allocations familiales",
+      "domaine": "Allocations familiales",
+      "module": "allocations_familiales",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « allocations familiales », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qui a droit aux allocations familiales et qui peut les demander ?",
+        "Quel est le montant, et jusqu'à quel âge ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Caisse d'allocations familiales de votre région",
+          "lien": "https://www.belgium.be/fr/famille/enfants/allocations_familiales",
+          "pour": "demander / s'affilier"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-ANIMAUX",
       "titre": "Spécialiste — Animaux",
       "domaine": "Animaux",
@@ -98,6 +118,32 @@
           "nom": "Police",
           "numero": "101",
           "pour": "cas urgent / infraction"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ASSURANCES",
+      "titre": "Spécialiste — Assurances",
+      "domaine": "Assurances",
+      "module": "assurances",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « assurances », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle assurance est obligatoire pour un véhicule ?",
+        "L'assurance RC familiale est-elle obligatoire, et à quoi sert-elle ?",
+        "Litige avec mon assureur : que faire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Wikifin (FSMA) — comparateur",
+          "lien": "https://www.wikifin.be",
+          "pour": "comparer les RC familiales gratuitement"
+        },
+        {
+          "nom": "Ombudsman des Assurances",
+          "lien": "https://www.ombudsman-insurance.be",
+          "pour": "médiation gratuite"
         }
       ],
       "nb_reponses": 3,
@@ -323,6 +369,32 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-DISCRIMINATION",
+      "titre": "Spécialiste — Discrimination & égalité",
+      "domaine": "Discrimination & égalité",
+      "module": "discrimination",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « discrimination & égalité », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'une discrimination interdite ?",
+        "Je suis victime ou témoin de discrimination : que faire ?",
+        "Quels recours et quelles réparations ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Unia",
+          "numero": "0800 12 800",
+          "lien": "https://www.unia.be",
+          "pour": "signaler une discrimination"
+        },
+        {
+          "nom": "Unia / avocat",
+          "pour": "évaluer le recours et l'indemnisation"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-DROGUES-PREVENTION",
       "titre": "Spécialiste — Drogues & prévention",
       "domaine": "Drogues & prévention",
@@ -439,16 +511,42 @@
       "peut_vous_aider_a": [
         "Jusqu'à quel âge l'école est-elle obligatoire ?",
         "L'école peut-elle me réclamer de l'argent à l'inscription ?",
-        "Une école refuse d'inscrire mon enfant : quels sont mes droits ?"
+        "Une école refuse d'inscrire mon enfant : quels sont mes droits ?",
+        "Un professeur (ou un adulte de l'école) a un comportement déplacé : comment réagir et signaler sans que ça se retourne contre moi/mon enfant ?"
       ],
       "contacts_cles": [
         {
           "nom": "Service des inscriptions (FW-B)",
           "lien": "https://www.enseignement.be",
           "pour": "refus / aide à l'inscription"
+        },
+        {
+          "nom": "Urgence / faits graves",
+          "numero": "112",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "déposer plainte (infraction)"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "l'enfant, anonyme, 10h–minuit"
+        },
+        {
+          "nom": "SOS Enfants (ONE)",
+          "lien": "https://www.one.be",
+          "pour": "maltraitance d'enfants"
+        },
+        {
+          "nom": "Délégué général aux droits de l'enfant",
+          "lien": "https://www.dgde.cfwb.be",
+          "pour": "canal indépendant si l'école n'agit pas"
         }
       ],
-      "nb_reponses": 3,
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -658,6 +756,32 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-IMPOTS",
+      "titre": "Spécialiste — Impôts & fiscalité",
+      "domaine": "Impôts & fiscalité",
+      "module": "impots",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « impôts & fiscalité », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment et quand déclarer mes impôts ?",
+        "J'ai reçu une « proposition de déclaration simplifiée » : que faire ?",
+        "Que se passe-t-il si je ne rentre pas ma déclaration ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SPF Finances (Tax-on-web)",
+          "lien": "https://finances.belgium.be/fr/E-services/Tax-on-web",
+          "pour": "déclarer en ligne"
+        },
+        {
+          "nom": "SPF Finances",
+          "lien": "https://fin.belgium.be",
+          "pour": "régulariser, poser une question"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-INDEPENDANT",
       "titre": "Spécialiste — Indépendant & activité",
       "domaine": "Indépendant & activité",
@@ -686,6 +810,27 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-JOB-ETUDIANT",
+      "titre": "Spécialiste — Job étudiant",
+      "domaine": "Job étudiant",
+      "module": "job_etudiant",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « job étudiant », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Faut-il un contrat pour un job étudiant ?",
+        "Combien d'heures puis-je travailler à cotisations réduites ?",
+        "Travailler peut-il impacter mes allocations familiales ou mon statut fiscal ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "student@work (ONSS)",
+          "lien": "https://www.studentatwork.be/fr/",
+          "pour": "vérifier votre solde d'heures"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-JUSTICE-PENAL-ACCES",
       "titre": "Spécialiste — Accès à la justice — droits, avocat, casier judiciaire",
       "domaine": "Accès à la justice — droits, avocat, casier judiciaire",
@@ -702,6 +847,128 @@
       ],
       "contacts_cles": [],
       "nb_reponses": 7,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-LOGEMENT-SOCIAL",
+      "titre": "Spécialiste — Logement social",
+      "domaine": "Logement social",
+      "module": "logement_social",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « logement social », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qui peut demander un logement social ?",
+        "Comment s'inscrire pour un logement social ?",
+        "Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Société de logement de votre région (SLSP / SISP)",
+          "lien": "https://www.wallonie.be/fr/demarches/sinscrire-comme-candidat-aupres-dune-societe-de-logement-de-service-public-slsp",
+          "pour": "s'inscrire (gratuit)"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-PENSION",
+      "titre": "Spécialiste — Pension & retraite",
+      "domaine": "Pension & retraite",
+      "module": "pension",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « pension & retraite », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "À quel âge puis-je prendre ma pension ?",
+        "Dois-je demander ma pension, et comment ?",
+        "Puis-je continuer à travailler une fois pensionné ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "mypension.be (Service fédéral des Pensions)",
+          "lien": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/",
+          "pour": "votre date exacte de pension"
+        },
+        {
+          "nom": "mypension.be",
+          "lien": "https://www.belgium.be/fr/services_en_ligne/app_demande_pension_en_ligne",
+          "pour": "demande de pension en ligne"
+        }
+      ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-PROTECTION-PERSONNE",
+      "titre": "Spécialiste — Protection des personnes vulnérables",
+      "domaine": "Protection des personnes vulnérables",
+      "module": "protection_personne",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « protection des personnes vulnérables », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment protéger un proche qui ne peut plus gérer ses affaires (maladie, handicap, grand âge) ?",
+        "Qui peut demander la mise sous administration, et comment ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Juge de paix du domicile de la personne",
+          "pour": "demander la mesure"
+        },
+        {
+          "nom": "Notaire / avocat",
+          "pour": "conseil"
+        },
+        {
+          "nom": "Justice de paix",
+          "pour": "introduire la requête"
+        },
+        {
+          "nom": "Médecin",
+          "pour": "certificat médical circonstancié"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-SANTE-MENTALE",
+      "titre": "Spécialiste — Santé mentale",
+      "domaine": "Santé mentale",
+      "module": "sante_mentale",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « santé mentale », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "L'aide psychologique est-elle remboursée ?",
+        "Je ne vais pas bien : à qui parler tout de suite ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Réseau de santé mentale de votre région (psy conventionnés)",
+          "lien": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale",
+          "pour": "trouver un psy conventionné"
+        },
+        {
+          "nom": "Votre mutualité",
+          "pour": "infos remboursement"
+        },
+        {
+          "nom": "Urgence (danger immédiat)",
+          "numero": "112",
+          "pour": "détresse vitale"
+        },
+        {
+          "nom": "Centre de Prévention du Suicide",
+          "numero": "0800 32 123",
+          "pour": "écoute, 24h/24, gratuit"
+        },
+        {
+          "nom": "Télé-Accueil",
+          "numero": "107",
+          "pour": "écoute, détresse"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & jeunes"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -766,6 +1033,31 @@
       ],
       "contacts_cles": [],
       "nb_reponses": 9,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-TELECOM",
+      "titre": "Spécialiste — Télécommunications",
+      "domaine": "Télécommunications",
+      "module": "telecom",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « télécommunications », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai un litige avec mon opérateur (facture, coupure) : que faire ?",
+        "Puis-je changer d'opérateur ou résilier facilement ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service de médiation pour les télécommunications",
+          "lien": "https://www.mediateurtelecom.be",
+          "pour": "litige avec un opérateur (gratuit)"
+        },
+        {
+          "nom": "IBPT",
+          "lien": "https://www.bipt.be/consommateurs",
+          "pour": "infos consommateurs télécom"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {

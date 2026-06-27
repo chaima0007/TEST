@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3006 réalisations concrètes enregistrées
+### 📌 Total : 3023 réalisations concrètes enregistrées
 
 
 ## 2026-06-27
-**58 réalisations** · de **00:28** à **19:09** (fenêtre de travail : 18h41)
+**75 réalisations** · de **00:28** à **20:51** (fenêtre de travail : 20h23)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
@@ -65,6 +65,23 @@
 - 🕒 19:07 — mariage, cohabitation légale, union libre, protection du logement familial — 3 faits sourcés
 - 🕒 19:08 — fichage Centrale des crédits (BNB), délais (1 an/10 ans), droit de consultation — 3 faits sourcés
 - 🕒 19:09 — démarches après un décès — déclaration/acte, déblocage comptes, organismes à prévenir — 3 faits sourcés
+- 🕒 19:10 — brief design COMPLET pour Claude Design (identité, style, navigation, pages, composant fiche-réponse, 26 domaines)
+- 🕒 19:20 — complément design 'vendeur' & attractivité partenaires (preuve, CTA, devenir partenaire, presse)
+- 🕒 19:26 — déclaration IPP, proposition simplifiée, retard/taxation d'office — 3 faits sourcés (dates non figées, renvoi SPF Finances)
+- 🕒 19:27 — âge (évolutif), demande via mypension, travail après pension — 3 faits sourcés (SFP)
+- 🕒 19:28 — références légales concrètes (AR n°50 1967, AR 21 déc 1967, cumul) -> 100% lois
+- 🕒 19:39 — injecte la base vérifiée (144 réponses) + page /base-juridique (composant serveur, lit data/belgium)
+- 🕒 19:41 — lien 'Toutes mes réponses' (/base-juridique) dans la navigation d'accueil
+- 🕒 19:48 — conditions, inscription gratuite, liste d'attente/renouvellement — 3 faits sourcés (+ sync site)
+- 🕒 19:54 — droit, demande, montant/âge (régionalisé) — 2 faits sourcés (+ sync site)
+- 🕒 19:55 — RC auto obligatoire, RC familiale, litige/ombudsman — 3 faits sourcés (+ sync site)
+- 🕒 20:41 — contrat écrit, quota d'heures (650h) cotisations réduites, impact allocations/fiscal — 3 faits sourcés (+ sync)
+- 🕒 20:44 — critères protégés, signaler à Unia (0800 12 800), recours/indemnité — 3 faits sourcés (+sync)
+- 🕒 20:45 — litige opérateur (médiateur télécom), résiliation/portabilité (IBPT) — 2 faits sourcés (+sync)
+- 🕒 20:46 — aide psy remboursée (INAMI), lignes d'écoute (112/0800 32 123/107/103) — 2 faits sourcés (+sync)
+- 🕒 20:47 — +8 lettres prêtes à envoyer (résiliation, contestation facture, délai paiement, salaire impayé, préavis bail, RGPD, CPAS urgence, contestation amende) — copier-coller
+- 🕒 20:51 — fait détaillé — adulte au comportement déplacé à l'école, signaler sans représailles (canaux indépendants DGDE/SOS Enfants/103/police)
+- 🕒 20:51 — administration de biens, demande au juge de paix — 2 faits sourcés (+sync)
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)

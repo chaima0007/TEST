@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 30,
-    "faits": 138,
-    "sources_officielles": 199,
-    "faits_avec_contacts": 62,
-    "faits_avec_alerte_delai": 40
+    "modules": 40,
+    "faits": 165,
+    "sources_officielles": 243,
+    "faits_avec_contacts": 80,
+    "faits_avec_alerte_delai": 54
   },
   "modules": [
     {
@@ -34,6 +34,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "allocations_familiales.json",
+      "module": "allocations_familiales",
+      "titre": "Allocations familiales — qui, comment, combien",
+      "domaine": "Allocations familiales",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "animaux.json",
       "module": "animaux",
       "titre": "Animaux — bien-être, responsabilités, maltraitance",
@@ -41,6 +53,18 @@
       "juridiction": "BE",
       "faits": 3,
       "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "assurances.json",
+      "module": "assurances",
+      "titre": "Assurances — auto obligatoire, RC familiale, litiges",
+      "domaine": "Assurances",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
@@ -154,6 +178,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "discrimination.json",
+      "module": "discrimination",
+      "titre": "Discrimination — reconnaître, signaler, agir",
+      "domaine": "Discrimination & égalité",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "drogues.json",
       "module": "drogues_prevention",
       "titre": "Drogues — prévention, ravages et information",
@@ -195,10 +231,10 @@
       "titre": "École & enseignement — inscription, gratuité, obligation scolaire",
       "domaine": "Enseignement",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 5,
-      "faits_avec_contacts": 1,
-      "faits_avec_alerte_delai": 1,
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -262,6 +298,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "impots.json",
+      "module": "impots",
+      "titre": "Impôts — déclaration des personnes physiques",
+      "domaine": "Impôts & fiscalité",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "independant.json",
       "module": "independant",
       "titre": "Devenir indépendant — démarches pour se lancer",
@@ -274,6 +322,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "job_etudiant.json",
+      "module": "job_etudiant",
+      "titre": "Job étudiant — contrat, quota d'heures, cotisations réduites",
+      "domaine": "Job étudiant",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-26"
+    },
+    {
       "fichier": "justice_penal.json",
       "module": "justice_penal_acces",
       "titre": "Accès à la justice — droits, avocat, casier judiciaire",
@@ -283,6 +343,54 @@
       "sources_officielles": 8,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "logement_social.json",
+      "module": "logement_social",
+      "titre": "Logement social — conditions, inscription, attribution",
+      "domaine": "Logement social",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "pension.json",
+      "module": "pension",
+      "titre": "Pension & retraite — âge, demande, calcul",
+      "domaine": "Pension & retraite",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "protection_personne.json",
+      "module": "protection_personne",
+      "titre": "Personnes vulnérables — administration de biens & protection",
+      "domaine": "Protection des personnes vulnérables",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "sante_mentale.json",
+      "module": "sante_mentale",
+      "titre": "Santé mentale — aide psychologique, remboursement, écoute",
+      "domaine": "Santé mentale",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -319,6 +427,18 @@
       "sources_officielles": 11,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "telecom.json",
+      "module": "telecom",
+      "titre": "Télécom — internet, téléphone, litiges",
+      "domaine": "Télécommunications",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -457,9 +577,9 @@
     {
       "cle": "fiscalite",
       "nom": "Fiscalité (impôts)",
-      "statut": "partiel",
+      "statut": "couvert",
       "modules": [
-        "via surendettement (dettes fiscales)"
+        "impots"
       ],
       "priorite": "moyenne"
     },
@@ -613,6 +733,87 @@
       "statut": "couvert",
       "modules": [
         "deces_demarches"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "pension",
+      "nom": "Pension & retraite",
+      "statut": "couvert",
+      "modules": [
+        "pension"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "logement_social",
+      "nom": "Logement social",
+      "statut": "couvert",
+      "modules": [
+        "logement_social"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "allocations_familiales",
+      "nom": "Allocations familiales",
+      "statut": "couvert",
+      "modules": [
+        "allocations_familiales"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "assurances",
+      "nom": "Assurances",
+      "statut": "couvert",
+      "modules": [
+        "assurances"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "job_etudiant",
+      "nom": "Job étudiant",
+      "statut": "couvert",
+      "modules": [
+        "job_etudiant"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "discrimination",
+      "nom": "Discrimination & égalité",
+      "statut": "couvert",
+      "modules": [
+        "discrimination"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "telecom",
+      "nom": "Télécommunications",
+      "statut": "couvert",
+      "modules": [
+        "telecom"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "sante_mentale",
+      "nom": "Santé mentale",
+      "statut": "couvert",
+      "modules": [
+        "sante_mentale"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "protection_personne",
+      "nom": "Protection des personnes vulnérables",
+      "statut": "couvert",
+      "modules": [
+        "protection_personne"
       ],
       "priorite": "moyenne"
     }

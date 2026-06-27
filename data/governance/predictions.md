@@ -13,7 +13,7 @@
 - **Délais de préavis (statut unique, évolutions)** (Belgique) — Ajustements des règles de préavis / indemnités.
 
 ## 3. Prochains domaines à construire (prédiction de besoin)
-- Fiscalité (impôts) — priorité moyenne (partiel)
+- Tous les domaines prévus sont couverts ✅
 
 ## 4. Signaux saisonniers (pics de demande à préparer à l'avance)
 - **1er janvier** : Indexations annuelles (loyers, aide juridique, quotités, fiscalité) → revoir les montants.

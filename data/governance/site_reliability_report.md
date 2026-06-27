@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-27. Mesure la présence et la qualité des sources citées dans les pages.*
 
-**Liens sources : 195 · officiels : 111 (57%) · institutionnels : 23 · hors liste : 61**
+**Liens sources : 195 · officiels : 113 (58%) · institutionnels : 22 · hors liste : 60**
 **Pages de contenu sans aucune source : 322**
 
 ## Par section
@@ -20,7 +20,7 @@
 | espace | 1 | 0 | 0 | 0 | 0 |
 | la-loi-avec-moi-france | 12 | 7 | 0 | 0 | 33 |
 | login | 1 | 0 | 0 | 0 | 0 |
-| loi-avec-moi | 38 | 29 | 88 | 18 | 23 |
+| loi-avec-moi | 38 | 29 | 90 | 17 | 22 |
 | mentions-legales | 1 | 0 | 0 | 0 | 0 |
 | notre-force | 1 | 0 | 0 | 0 | 0 |
 | simulation | 1 | 0 | 0 | 0 | 0 |
@@ -136,7 +136,6 @@
 - bewapp.be (1)
 - arp-gan.be (1)
 - cecbelgique.be (1)
-- unia.be (1)
 - federalinstituthumanrights.be (1)
 - ecouteviolencesconjugales.be (1)
 - violencessexuelles.be (1)
