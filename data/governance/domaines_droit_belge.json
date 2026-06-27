@@ -245,6 +245,15 @@
         "couple"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "credit",
+      "nom": "Crédit & fichage",
+      "statut": "couvert",
+      "modules": [
+        "credit"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
