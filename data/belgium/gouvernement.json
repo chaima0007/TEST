@@ -1,0 +1,72 @@
+{
+  "module": "gouvernement",
+  "titre": "Gouvernement & institutions — comment la Belgique est gouvernée",
+  "domaine": "Gouvernement & institutions",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Constitution belge — organisation des pouvoirs ; gouvernement et Parlement fédéraux",
+    "portee": "Comprendre la structure de l'État, la formation du gouvernement et les partis, pour voter et participer en connaissance de cause",
+    "source_officielle": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale et NEUTRE. Nous ne soutenons aucun parti. La composition des gouvernements et la liste des partis évoluent : vérifiez la source officielle pour l'état actuel.",
+  "faits": [
+    {
+      "id": "GOUV-NIVEAUX-001",
+      "question": "Comment la Belgique est-elle organisée (les niveaux de pouvoir) ?",
+      "reponse": "La Belgique est un État fédéral à plusieurs niveaux : l'État fédéral ; trois Régions (wallonne, flamande, bruxelloise) ; trois Communautés (française, flamande, germanophone) ; les provinces ; et les communes (le niveau le plus proche du citoyen). Chaque niveau a ses compétences et son assemblée élue. Cette organisation répartit le pouvoir au lieu de tout concentrer.",
+      "reference_legale": "Constitution belge — État fédéral, Régions et Communautés",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics", "intitule": "Belgium.be — Pouvoirs publics"},
+        {"type": "officiel", "url": "https://elections.fgov.be/informations-generales/structure-et-fonctionnement-electoral-et-parlementaire-belges", "intitule": "SPF Intérieur — Structure parlementaire"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "GOUV-TROIS-POUVOIRS-001",
+      "question": "C'est quoi les « trois pouvoirs » ?",
+      "reponse": "La démocratie repose sur la séparation des pouvoirs : le pouvoir législatif (le Parlement) fait les lois ; le pouvoir exécutif (le gouvernement et l'administration) les applique ; le pouvoir judiciaire (les cours et tribunaux) juge et tranche les litiges. Cette séparation empêche qu'une seule personne ou un seul groupe détienne tout le pouvoir.",
+      "reference_legale": "Constitution belge — séparation des pouvoirs",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/democratie/trois_pouvoirs", "intitule": "Belgium.be — Les trois pouvoirs"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics", "intitule": "Belgium.be — Pouvoirs publics"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "GOUV-FEDERAL-001",
+      "question": "Le gouvernement fédéral et la Chambre, comment ça marche ?",
+      "reponse": "La Chambre des représentants compte 150 membres élus directement (réparti·e·s en 62 francophones et 88 néerlandophones). Le gouvernement fédéral exerce le pouvoir exécutif : il est limité à 15 ministres et compte, hormis éventuellement le Premier ministre, autant de néerlandophones que de francophones (parité linguistique). Le gouvernement doit avoir la confiance de la Chambre pour gouverner.",
+      "reference_legale": "Constitution belge — Chambre des représentants et gouvernement fédéral",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/autorites_federales", "intitule": "Belgium.be — Autorités fédérales"},
+        {"type": "officiel", "url": "https://elections.fgov.be/informations-generales-depouillement-repartition-des-sieges-et-designation-des-elus/chambre-des", "intitule": "SPF Intérieur — Chambre des représentants"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "GOUV-FORMATION-001",
+      "question": "Comment se forme un gouvernement après les élections ?",
+      "reponse": "Après les élections, le Roi consulte les présidents des assemblées et des principaux partis, puis désigne un informateur (pour explorer les coalitions possibles) et un formateur. Le formateur négocie un accord de gouvernement avec les partis qui formeront la coalition, puis on répartit les ministères. Après la prestation de serment, le Premier ministre présente la déclaration gouvernementale ; si la Chambre vote la confiance, le gouvernement peut agir pour une législature (maximum 5 ans).",
+      "reference_legale": "Pratique constitutionnelle — formation du gouvernement fédéral",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/autorites_federales/gouvernement_federal/formation_gouvernement", "intitule": "Belgium.be — Formation du gouvernement"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics", "intitule": "Belgium.be — Pouvoirs publics"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "GOUV-PARTIS-001",
+      "question": "Quels sont les partis politiques, et pourquoi y en a-t-il autant ?",
+      "reponse": "En Belgique, les partis sont organisés surtout par communauté linguistique (francophone et néerlandophone) et couvrent un large éventail d'opinions (de la gauche à la droite, écologistes, régionalistes…). Cette diversité reflète des sensibilités différentes ; comme aucun parti n'a la majorité seul, ils gouvernent en coalition. À titre indicatif (susceptible d'évoluer), parmi les partis représentés : côté francophone PS, MR, Les Engagés, Ecolo, PTB, DéFI ; côté néerlandophone N-VA, Vlaams Belang, CD&V, Open Vld, Vooruit, Groen, PVDA. Nous restons neutres : informez-vous sur leurs programmes via les sources officielles avant de voter.",
+      "reference_legale": "Liberté d'association politique (Constitution) ; financement et reconnaissance des partis",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/democratie/partis_politiques", "intitule": "Belgium.be — Partis politiques"},
+        {"type": "officiel", "url": "https://elections.fgov.be", "intitule": "SPF Intérieur — Élections (résultats officiels)"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

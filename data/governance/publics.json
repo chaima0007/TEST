@@ -35,7 +35,8 @@
         "aide_urgence",
         "sante_patient",
         "consommation",
-        "handicap"
+        "handicap",
+        "gouvernement"
       ]
     }
   }

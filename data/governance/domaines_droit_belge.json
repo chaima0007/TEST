@@ -194,6 +194,15 @@
         "enfants_places"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "gouvernement",
+      "nom": "Gouvernement & institutions",
+      "statut": "couvert",
+      "modules": [
+        "gouvernement"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
