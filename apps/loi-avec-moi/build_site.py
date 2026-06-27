@@ -85,6 +85,11 @@ main{max-width:920px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
 .fait .src ul{margin:.3rem 0 0;padding-left:1.1rem}
 .fait .date{font-size:.78rem;color:var(--muted);margin-top:.5rem}
 .src-officiel{color:var(--ok);font-weight:600}
+.alerte{background:#fdecec;border:1px solid #f3b4b4;border-left:5px solid #c0392b;border-radius:8px;padding:.6rem .8rem;margin:.6rem 0;font-size:.9rem;color:#7a1f1f}
+.alerte strong{color:#c0392b}
+.urgent-card{border:1px solid #f3b4b4;border-left:5px solid #c0392b;border-radius:12px;padding:1rem 1.1rem;margin:1rem 0;background:#fff}
+.urgent-card h3{margin:.1rem 0 .4rem;color:#c0392b;font-size:1.05rem}
+.urgent-card .lien{font-size:.85rem;margin-top:.4rem}
 .search{margin:1.2rem 0}
 .search input{width:100%;padding:.7rem .9rem;border:1px solid var(--bord);border-radius:10px;font-size:1rem}
 footer.site{border-top:1px solid var(--bord);background:var(--gris);color:var(--muted);font-size:.85rem}
@@ -123,6 +128,7 @@ def page(titre, contenu, actif=""):
         return f'<a href="{href}"{cls}>{esc(label)}</a>'
     nav = (
         navlink("index.html", "Accueil", "accueil")
+        + navlink("urgences.html", "Urgences & délais", "urgences")
         + navlink("transparence.html", "Transparence", "transparence")
         + navlink("accessibilite.html", "Accessibilité", "accessibilite")
     )
@@ -170,11 +176,14 @@ def rendre_fait(fait):
     ref_html = f'<div class="ref">⚖️ {esc(ref)}</div>' if ref else ""
     date = fait.get("date_verification", "")
     date_html = f'<div class="date">Vérifié le {esc(date)}</div>' if date else ""
+    alerte = fait.get("alerte_delai", "")
+    alerte_html = (f'<div class="alerte" role="note">⏱ <strong>À ne pas tarder.</strong> '
+                   f'{esc(alerte)}</div>') if alerte else ""
     q = esc(fait.get("question"))
     r = esc(fait.get("reponse"))
     return (
         f'<article class="fait" data-q="{q.lower()}">'
-        f"<h3>{q}</h3><p>{r}</p>{ref_html}{src_html}{date_html}</article>"
+        f"<h3>{q}</h3><p>{r}</p>{alerte_html}{ref_html}{src_html}{date_html}</article>"
     )
 
 
@@ -320,12 +329,42 @@ def construire():
         page("Accessibilité", acc, actif="accessibilite"), encoding="utf-8"
     )
 
+    # --- page Urgences & délais (besoins immédiats d'abord) ---
+    urgents = []
+    for m in modules:
+        for f in m.get("faits", []):
+            if f.get("alerte_delai"):
+                urgents.append((m, f))
+    cartes_u = []
+    for m, f in urgents:
+        cartes_u.append(
+            '<div class="urgent-card">'
+            f'<h3>⏱ {esc(f.get("question"))}</h3>'
+            f'<p><strong>À ne pas tarder :</strong> {esc(f.get("alerte_delai"))}</p>'
+            f'<p class="lien"><a href="{esc(m["_slug"])}.html">Lire la réponse complète et les sources →</a></p>'
+            "</div>"
+        )
+    urg = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#c0392b">Urgences &amp; délais</h1>'
+        "<p>Certaines situations n'attendent pas : un délai manqué peut coûter cher. "
+        "Voici les cas où il faut <strong>agir vite</strong>. En cas de doute, contactez sans tarder "
+        "un avocat (au besoin via l'aide juridique gratuite), un médiateur de dettes agréé ou un CPAS.</p>"
+        f'<div class="disclaimer" role="note">ℹ️ {esc(AVERTISSEMENT_GLOBAL)}</div>'
+        + ("".join(cartes_u) if cartes_u
+           else "<p>Aucune alerte de délai enregistrée pour le moment.</p>")
+    )
+    (DIST / "urgences.html").write_text(
+        page("Urgences & délais", urg, actif="urgences"), encoding="utf-8"
+    )
+
     return {
         "modules": len(modules),
         "faits": total_faits,
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
-        "pages": len(modules) + 3,
+        "urgences": len(urgents),
+        "pages": len(modules) + 4,
     }
 
 
