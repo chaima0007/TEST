@@ -50,7 +50,11 @@
         "credit",
         "deces_demarches",
         "impots",
-        "pension"
+        "pension",
+        "eau",
+        "mobilite_douce",
+        "naissance",
+        "dechets"
       ]
     }
   }

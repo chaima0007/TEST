@@ -1,0 +1,62 @@
+{
+  "module": "naissance",
+  "titre": "Naissance & filiation",
+  "domaine": "Naissance & filiation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — actes de l'état civil, déclaration de naissance et filiation ; loi sur le congé de naissance",
+    "portee": "Déclarer une naissance, reconnaître un enfant, établir la filiation et prendre son congé",
+    "source_officielle": "https://www.belgium.be/fr/famille/enfants/declaration_de_naissance"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les démarches se font à la commune de naissance ou de résidence ; renseignez-vous auprès d'elle pour les documents exacts et les délais.",
+  "faits": [
+    {
+      "id": "NAIS-DECLARATION-001",
+      "question": "Dans quel délai dois-je déclarer la naissance de mon enfant ?",
+      "reponse": "La naissance doit être déclarée à l'officier de l'état civil de la commune où l'enfant est né, dans les 15 jours qui suivent la naissance. Si le dernier jour est un samedi, un dimanche ou un jour férié, le délai est prolongé jusqu'au prochain jour ouvrable. C'est cette déclaration qui crée l'acte de naissance, document de base pour tous les droits de l'enfant.",
+      "reference_legale": "Code civil — déclaration de naissance à l'officier de l'état civil",
+      "alerte_delai": "La déclaration doit être faite dans les 15 jours suivant la naissance, à la commune du lieu de naissance.",
+      "contacts": [
+        {"nom": "Administration communale (état civil) du lieu de naissance", "pour": "déclaration de naissance, acte de naissance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/declaration_de_naissance", "intitule": "Belgium.be — Déclaration de naissance"},
+        {"type": "officiel", "url": "https://www.bruxelles.be/declaration-de-naissance", "intitule": "Ville de Bruxelles — Déclaration de naissance"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "NAIS-RECONNAISSANCE-001",
+      "question": "Mon couple n'est pas marié : comment reconnaître mon enfant ?",
+      "reponse": "Quand les parents ne sont pas mariés, le lien de filiation paternelle (ou de coparenté) n'est pas automatique : il faut une reconnaissance devant l'officier de l'état civil. Elle peut se faire avant la naissance (durant les mois qui la précèdent), au moment de la déclaration de naissance, ou plus tard, quel que soit l'âge de l'enfant. La reconnaissance crée des droits et des devoirs (nom, autorité parentale, héritage, obligation d'entretien).",
+      "reference_legale": "Code civil — établissement de la filiation par reconnaissance",
+      "contacts": [
+        {"nom": "Administration communale (état civil)", "pour": "reconnaissance d'enfant"},
+        {"nom": "ONE — Office de la naissance et de l'enfance", "lien": "https://www.one.be", "pour": "information aux parents"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/reconnaissance", "intitule": "Belgium.be — Reconnaissance d'un enfant"},
+        {"type": "officiel", "url": "https://www.one.be/public/3-6-ans/mes-droits/la-reconnaissance-denfant/", "intitule": "ONE — La reconnaissance d'enfant"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "NAIS-CONGE-001",
+      "question": "Ai-je droit à un congé à la naissance de mon enfant ?",
+      "reponse": "Oui. Le second parent (généralement le père ou la coparente) salarié a droit à un congé de naissance (anciennement congé de paternité), à prendre dans les mois qui suivent la naissance. Le nombre de jours a été augmenté ces dernières années ; une partie est payée par l'employeur et une partie par la mutualité. La mère, elle, bénéficie du congé de maternité. Comme la durée évolue, vérifiez le nombre de jours en vigueur auprès de votre mutualité ou de l'ONEM.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail — congé de naissance ; réglementation de l'assurance indemnités (INAMI/mutualité)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "indemnités congé de naissance / maternité"},
+        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "congés liés à la naissance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants", "intitule": "Belgium.be — Famille / enfants"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/famille/conges-thematiques", "intitule": "Sécurité sociale — Congés liés à la famille"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

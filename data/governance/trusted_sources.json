@@ -1,7 +1,7 @@
 {
   "liste_blanche": "Sources sûres et connues (filtrage de fiabilité)",
   "but": "N'accepter comme 'officiel' que des domaines de confiance vérifiés. Filtrer le reste. Vérification croisée obligatoire pour les signaux.",
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-27",
   "tier1_officiel": [
     "wallex.wallonie.be",
     "logement.wallonie.be",
@@ -57,7 +57,10 @@
     "unia.be",
     "bipt.be",
     "mediateurtelecom.be",
-    "ombudsmantelecom.be"
+    "ombudsmantelecom.be",
+    "bruxelles.be",
+    "mobilit.belgium.be",
+    "environnement.wallonie.be"
   ],
   "tier2_institutionnel": [
     "uvcw.be",
@@ -89,7 +92,12 @@
     "weinvest.be",
     "notrebelgique.be",
     "captain.legal",
-    "test-achats.be"
+    "test-achats.be",
+    "bewapp.be",
+    "swde.be",
+    "traxio.be",
+    "assuralia.be",
+    "ombudsman-insurance.be"
   ],
   "regles": [
     "R1 — Un fait publié doit avoir au moins UNE source de tier1 (officiel).",

@@ -344,6 +344,42 @@
         "protection_personne"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "eau",
+      "nom": "Eau & distribution",
+      "statut": "couvert",
+      "modules": [
+        "eau"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "mobilite_douce",
+      "nom": "Mobilité douce (vélo, trottinette)",
+      "statut": "couvert",
+      "modules": [
+        "mobilite_douce"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "naissance",
+      "nom": "Naissance & filiation",
+      "statut": "couvert",
+      "modules": [
+        "naissance"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "dechets",
+      "nom": "Déchets & environnement",
+      "statut": "couvert",
+      "modules": [
+        "dechets"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

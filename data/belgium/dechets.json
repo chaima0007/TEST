@@ -1,0 +1,45 @@
+{
+  "module": "dechets",
+  "titre": "Déchets, tri & propreté",
+  "domaine": "Déchets & environnement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret wallon du 9 mars 2023 relatif aux déchets et règlements communaux ; Ordonnance bruxelloise relative aux déchets",
+    "portee": "Obligations de tri, dépôt sauvage, amendes et propreté publique",
+    "source_officielle": "https://www.belgium.be/fr/environnement/consommation_durable/dechets/delits"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles de tri, les jours de collecte et les montants d'amende dépendent de votre Région et surtout de votre commune ou intercommunale ; vérifiez le règlement local.",
+  "faits": [
+    {
+      "id": "DECH-DEPOT-SAUVAGE-001",
+      "question": "Que risque-t-on pour un dépôt sauvage de déchets ?",
+      "reponse": "Le dépôt sauvage, c'est abandonner des déchets ailleurs que dans les endroits autorisés (poubelles publiques, parc à conteneurs, collecte prévue). C'est une infraction sanctionnée par des amendes, qui varient fortement selon la Région et la gravité (du simple sac abandonné au dépôt important), avec récidive plus lourdement punie. La commune peut mener l'enquête à partir d'indices trouvés dans les déchets. En cas de doute sur le montant, référez-vous au règlement de votre commune.",
+      "reference_legale": "Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets (sanctions administratives)",
+      "contacts": [
+        {"nom": "Service environnement / propreté de votre commune", "pour": "règlement local, amendes, signalement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/environnement/consommation_durable/dechets/delits", "intitule": "Belgium.be — Délits liés aux déchets"},
+        {"type": "officiel", "url": "https://wallex.wallonie.be/contents/acts/1/1934/1.html", "intitule": "WALLEX — Décret relatif aux déchets"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "DECH-TRI-001",
+      "question": "Suis-je obligé de trier mes déchets ?",
+      "reponse": "Oui. Le tri des déchets ménagers est obligatoire et organisé par votre commune ou intercommunale : sacs ou conteneurs distincts selon les flux (organique, papier-carton, PMC, verre, résiduel…). Les règles précises (couleurs des sacs, jours de collecte, ce qui va dans quel flux) sont fixées localement. Ne pas trier correctement peut entraîner le refus de la collecte et une amende. Le parc à conteneurs / recyparc accueille les déchets qui ne passent pas par la collecte habituelle.",
+      "reference_legale": "Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets — obligation de tri",
+      "contacts": [
+        {"nom": "Votre intercommunale de gestion des déchets", "pour": "règles de tri, recyparc, jours de collecte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/environnement/consommation_durable/dechets", "intitule": "Belgium.be — Déchets"},
+        {"type": "secondaire", "url": "https://www.bewapp.be/proprete-publique/", "intitule": "Be WaPP — Propreté publique (Wallonie)"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}
