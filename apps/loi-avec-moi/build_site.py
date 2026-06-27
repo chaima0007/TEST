@@ -146,6 +146,7 @@ def page(titre, contenu, actif=""):
         return f'<a href="{href}"{cls}>{esc(label)}</a>'
     nav = (
         navlink("index.html", "Accueil", "accueil")
+        + navlink("a-propos.html", "Comment ça marche", "apropos")
         + navlink("espace-mineurs.html", "Enfants & jeunes", "mineurs")
         + navlink("urgences.html", "Urgences & délais", "urgences")
         + navlink("annuaire.html", "Près de chez vous", "annuaire")
@@ -538,6 +539,43 @@ def construire():
         page("Nos sources", srcpage, actif="sources"), encoding="utf-8"
     )
 
+    # --- page À propos / Comment ça marche ---
+    apropos = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#0b3d6e">Comment ça marche &amp; à qui ça s\'adresse</h1>'
+        "<p>La Loi Avec Moi rend le droit belge <strong>clair, fiable et gratuit</strong> pour "
+        "l'information. Notre devise : <strong>protéger, sensibiliser, informer</strong>.</p>"
+        '<h2 class="sec">Comment ça marche</h2>'
+        "<ul>"
+        "<li><strong>Des réponses sourcées</strong> : chaque réponse cite au moins une source "
+        "officielle (loi, administration) et une date de vérification.</li>"
+        "<li><strong>En langage clair</strong> : on explique simplement, avec un lexique pour les mots difficiles.</li>"
+        "<li><strong>Par domaine</strong> : logement, travail, famille, dettes, justice, drogues, etc.</li>"
+        "<li><strong>Outils pratiques</strong> : page « Urgences &amp; délais », « Près de chez vous », "
+        "fiches à imprimer pour les emporter, contacts utiles.</li>"
+        "<li><strong>Accessible à tous</strong> : compatible lecteurs d'écran, navigation clavier, "
+        "mode sombre, conforme aux règles d'accessibilité.</li>"
+        "<li><strong>Toujours vérifié</strong> : le site est généré à partir d'une base contrôlée ; "
+        "il ne peut pas afficher d'information non sourcée.</li>"
+        "</ul>"
+        '<h2 class="sec">À qui ça s\'adresse</h2>'
+        "<ul>"
+        "<li><strong>Tout le monde</strong> en Belgique, face à un souci du quotidien.</li>"
+        "<li><strong>Les personnes fragiles</strong> : surendettées, sans-abri, victimes de violences, "
+        "enfants placés, aidants proches — on les oriente vite vers la bonne aide.</li>"
+        "<li><strong>Les enfants &amp; les jeunes</strong> : un espace dédié, en mots simples.</li>"
+        "<li><strong>Les adultes</strong> : tous les domaines pour faire valoir leurs droits.</li>"
+        "</ul>"
+        '<h2 class="sec">Ce que le site n\'est pas</h2>'
+        "<p>Ce site donne une information <strong>générale</strong> : il ne remplace pas un conseil "
+        "personnalisé. Pour votre situation précise, consultez un professionnel (avocat, médiateur, CPAS…). "
+        "L'aide juridique gratuite existe sous conditions.</p>"
+        f'<div class="disclaimer" role="note">⚖️ {esc(AVERTISSEMENT_GLOBAL)}</div>'
+    )
+    (DIST / "a-propos.html").write_text(
+        page("Comment ça marche", apropos, actif="apropos"), encoding="utf-8"
+    )
+
     # --- page Annuaire (près de chez vous, via outils officiels) ---
     anp = REPO / "data" / "governance" / "annuaire.json"
     services = json.loads(anp.read_text(encoding="utf-8")).get("services", []) if anp.exists() else []
@@ -597,7 +635,7 @@ def construire():
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
         "urgences": len(urgents),
-        "pages": len(modules) + 11,
+        "pages": len(modules) + 12,
     }
 
 
