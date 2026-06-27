@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-27",
   "totaux": {
-    "modules": 7,
-    "faits": 53,
-    "sources_officielles": 69,
-    "faits_avec_contacts": 10,
-    "faits_avec_alerte_delai": 15
+    "modules": 8,
+    "faits": 58,
+    "sources_officielles": 74,
+    "faits_avec_contacts": 15,
+    "faits_avec_alerte_delai": 16
   },
   "modules": [
     {
@@ -43,6 +43,18 @@
       "sources_officielles": 15,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "famille.json",
+      "module": "famille",
+      "titre": "Famille — séparation, enfants, pensions alimentaires",
+      "domaine": "Famille",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 5,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
     {
@@ -145,8 +157,10 @@
     {
       "cle": "famille",
       "nom": "Famille (divorce, garde, pensions alimentaires)",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "famille"
+      ],
       "priorite": "haute"
     },
     {

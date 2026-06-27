@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-27. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**53 réponses · 7 modules · 69 sources officielles · 10 fiches avec contacts · 15 alertes de délai**
+**58 réponses · 8 modules · 74 sources officielles · 15 fiches avec contacts · 16 alertes de délai**
 
 ## Modules en ligne
 
@@ -11,6 +11,7 @@
 | — | Bail de résidence principale — Région de Bruxelles-Capitale | 9 | 11 | 0 | 0 |
 | — | Bail de résidence principale — Région flamande | 9 | 10 | 0 | 0 |
 | — | Bail de résidence principale — Région wallonne | 9 | 15 | 0 | 0 |
+| Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 5 | 8 | 5 | 5 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
@@ -25,7 +26,7 @@
 | Justice & pénal (accès au droit) | couvert | haute |
 | Harcèlement & violences | couvert | haute |
 | Travail & emploi | couvert | haute |
-| Famille (divorce, garde, pensions alimentaires) | a_venir | haute |
+| Famille (divorce, garde, pensions alimentaires) | couvert | haute |
 | Aide sociale & CPAS | a_venir | haute |
 | Consommation & contrats | a_venir | moyenne |
 | Étrangers & séjour | a_venir | moyenne |

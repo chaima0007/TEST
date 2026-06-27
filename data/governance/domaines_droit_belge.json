@@ -69,8 +69,10 @@
     {
       "cle": "famille",
       "nom": "Famille (divorce, garde, pensions alimentaires)",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "famille"
+      ],
       "priorite": "haute"
     },
     {
