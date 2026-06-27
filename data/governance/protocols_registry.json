@@ -183,6 +183,12 @@
       "nom": "Accessibilité (WCAG 2.2 / EAA)",
       "regle": "Le site doit être accessible aux personnes handicapées (visuel, moteur, cognitif, auditif). Cadre : European Accessibility Act (UE 2019/882, depuis 28/06/2025), WCAG 2.2 AA, EN 301 549. Audit automatique à chaque build ; tests humains planifiés. Experts définis dans accessibility_charter.json.",
       "verif": "python3 scripts/accessibility_audit_agent.py"
+    },
+    {
+      "id": "P-BASE-UNIQUE",
+      "nom": "Base unique & taxonomie",
+      "regle": "Une seule base organisée : catalogue central (data/belgium/_catalogue.json) qui voit tous les modules, croisé avec la taxonomie des domaines du droit belge (domaines_droit_belge.json). Chaque module reste un fichier séparé (rien mélangé). Schéma de fait commun à tous les domaines.",
+      "verif": "python3 scripts/build_kb_index.py"
     }
   ]
 }

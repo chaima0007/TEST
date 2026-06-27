@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **47**
+- Savoirs enregistrés : **52**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `b121ed01dafdaa2e…`)
+- Certification système : **PASS** (sceau `551dcf0cd6c6d263…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -62,6 +62,16 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire (juge de paix) + Code wallon de l'Habitation durable — expulsion · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?**  
   Réf : Réglementation PEB wallonne (énergie) — calendrier en évolution · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je suis (ou mon enfant est) harcelé(e) : qui contacter en premier ?**  
+  Réf : Numéros d'urgence officiels (112 / 101) ; service Écoute-Enfants 103 (Fédération Wallonie-Bruxelles) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Harcèlement à l'école : que peuvent faire l'enfant et les parents ?**  
+  Réf : Dispositifs de la Fédération Wallonie-Bruxelles (enseignement, climat scolaire) ; art. 442bis du Code pénal en cas d'infraction · sources off. : 2 · revu : 2026-06-26
+- ✅ **Cyberharcèlement : que faire face au harcèlement en ligne ?**  
+  Réf : Art. 442bis du Code pénal (harcèlement) ; législation sur les communications électroniques · sources off. : 1 · revu : 2026-06-26
+- ✅ **Harcèlement moral ou sexuel au travail : quelles démarches ?**  
+  Réf : Loi du 4 août 1996 sur le bien-être au travail et Code du bien-être au travail (risques psychosociaux) ; protection contre les représailles · sources off. : 2 · revu : 2026-06-26
+- ✅ **Comment porter plainte pour harcèlement, et dans quel délai ?**  
+  Réf : Art. 442bis du Code pénal (harcèlement, poursuite sur plainte de la victime) ; règles de prescription des infractions (titre préliminaire du Code de procédure pénale) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Puis-je avoir un avocat gratuit ou moins cher (aide juridique de 2ᵉ ligne, ex « pro deo ») ?**  
   Réf : Code judiciaire, art. 508/1 et suivants (aide juridique de deuxième ligne) ; seuils indexés annuellement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment obtenir mon extrait de casier judiciaire (ex « certificat de bonnes vie et mœurs ») ?**  

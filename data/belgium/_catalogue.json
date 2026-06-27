@@ -1,0 +1,208 @@
+{
+  "catalogue": "Base unique — La Loi Avec Moi",
+  "genere_le": "2026-06-27",
+  "totaux": {
+    "modules": 6,
+    "faits": 48,
+    "sources_officielles": 63,
+    "faits_avec_contacts": 5,
+    "faits_avec_alerte_delai": 10
+  },
+  "modules": [
+    {
+      "fichier": "bail_bruxelles.json",
+      "module": "bail_residence_principale_bruxelles",
+      "titre": "Bail de résidence principale — Région de Bruxelles-Capitale",
+      "domaine": "—",
+      "juridiction": "BE-BRU",
+      "faits": 9,
+      "sources_officielles": 11,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "bail_flandre.json",
+      "module": "bail_residence_principale_flandre",
+      "titre": "Bail de résidence principale — Région flamande",
+      "domaine": "—",
+      "juridiction": "BE-VLG",
+      "faits": 9,
+      "sources_officielles": 10,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "bail_wallonie.json",
+      "module": "bail_residence_principale_wallonie",
+      "titre": "Bail de résidence principale — Région wallonne",
+      "domaine": "—",
+      "juridiction": "BE-WAL",
+      "faits": 9,
+      "sources_officielles": 15,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "harcelement.json",
+      "module": "harcelement_violences",
+      "titre": "Harcèlement & violences — qui contacter, quels recours",
+      "domaine": "Harcèlement & violences",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 5,
+      "faits_avec_alerte_delai": 5,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "justice_penal.json",
+      "module": "justice_penal_acces",
+      "titre": "Accès à la justice — droits, avocat, casier judiciaire",
+      "domaine": "Justice & pénal (accès au droit)",
+      "juridiction": "BE",
+      "faits": 7,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "surendettement.json",
+      "module": "surendettement_reglement_collectif_dettes",
+      "titre": "Surendettement — Règlement collectif de dettes (RCD)",
+      "domaine": "Surendettement & dettes",
+      "juridiction": "BE",
+      "faits": 9,
+      "sources_officielles": 11,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-26"
+    }
+  ],
+  "domaines": [
+    {
+      "cle": "logement_bail",
+      "nom": "Logement & bail",
+      "statut": "couvert",
+      "modules": [
+        "bail_wallonie",
+        "bail_bruxelles",
+        "bail_flandre"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "surendettement",
+      "nom": "Surendettement & dettes",
+      "statut": "couvert",
+      "modules": [
+        "surendettement_reglement_collectif_dettes"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "justice_penal",
+      "nom": "Justice & pénal (accès au droit)",
+      "statut": "couvert",
+      "modules": [
+        "justice_penal_acces"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "harcelement",
+      "nom": "Harcèlement & violences",
+      "statut": "couvert",
+      "modules": [
+        "harcelement_violences"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "travail",
+      "nom": "Travail & emploi",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "haute"
+    },
+    {
+      "cle": "famille",
+      "nom": "Famille (divorce, garde, pensions alimentaires)",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "haute"
+    },
+    {
+      "cle": "aide_sociale",
+      "nom": "Aide sociale & CPAS",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "haute"
+    },
+    {
+      "cle": "consommation",
+      "nom": "Consommation & contrats",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "etrangers",
+      "nom": "Étrangers & séjour",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fiscalite",
+      "nom": "Fiscalité (impôts)",
+      "statut": "partiel",
+      "modules": [
+        "via surendettement (dettes fiscales)"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "circulation",
+      "nom": "Circulation routière",
+      "statut": "partiel",
+      "modules": [
+        "via justice (amendes)"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "sante_patient",
+      "nom": "Santé & droits du patient",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "vie_privee",
+      "nom": "Vie privée & données (RGPD)",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "successions",
+      "nom": "Successions & héritage",
+      "statut": "a_venir",
+      "modules": [],
+      "priorite": "basse"
+    },
+    {
+      "cle": "energie",
+      "nom": "Énergie & PEB (lié au logement)",
+      "statut": "partiel",
+      "modules": [
+        "via bail (PEB)"
+      ],
+      "priorite": "moyenne"
+    }
+  ]
+}

@@ -6,18 +6,18 @@
 
 | Indicateur | Valeur |
 |---|---|
-| Modules | 5 |
-| Réponses sourcées | 43 |
-| Sources officielles | 55 |
-| Sources de complément | 32 |
+| Modules | 7 |
+| Réponses sourcées | 48 |
+| Sources officielles | 63 |
+| Sources de complément | 34 |
 | Faits datés | 100% |
 | Indice d'expertise | 66.0 |
-| Domaines officiels de confiance | 19 |
+| Domaines officiels de confiance | 22 |
 
 ## Avis des directeurs
 
 ### Directeur Juridique
-- **Constat :** 43 faits ; 100% datés ; 63% des sources sont officielles ; 19 domaines officiels de confiance.
+- **Constat :** 48 faits ; 100% datés ; 65% des sources sont officielles ; 22 domaines officiels de confiance.
 - **Recommandation :** Maintenir 100% de faits sourcés/datés ; planifier une remise à niveau dès qu'une loi évolue (PEB, baux régionaux).
 
 ### Directeur Qualité & Conformité
@@ -25,11 +25,11 @@
 - **Recommandation :** Continuer à bloquer toute régression ; aucune livraison hors sas.
 
 ### Directeur Produit & Diffusion
-- **Constat :** Site généré depuis la base (43 réponses, 5 modules) ; projet séparé de competeiq.
+- **Constat :** Site généré depuis la base (48 réponses, 7 modules) ; projet séparé de competeiq.
 - **Recommandation :** Préparer la mise en ligne (hébergement au nom de Chaima) ; ajouter versions NL ensuite.
 
 ### Directeur Stratégie & Marché
-- **Constat :** Couverture actuelle : Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Accès à la justice — droits, avocat, casier judiciaire, Surendettement — Règlement collectif de dettes (RCD).
+- **Constat :** Couverture actuelle : _catalogue, Bail de résidence principale — Région de Bruxelles-Capitale, Bail de résidence principale — Région flamande, Bail de résidence principale — Région wallonne, Harcèlement & violences — qui contacter, quels recours, Accès à la justice — droits, avocat, casier judiciaire, Surendettement — Règlement collectif de dettes (RCD).
 - **Recommandation :** Garder l'avance via niches sous-servies déjà ouvertes (surendettement, justice) ; surveiller la demande réelle.
 
 ### Directeur Éthique & Transparence

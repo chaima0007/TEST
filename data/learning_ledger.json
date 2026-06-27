@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 47,
+    "total_savoirs": 52,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -299,6 +299,61 @@
       "id": "BWAL-PEB-001",
       "sujet": "Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?",
       "reference_legale": "Réglementation PEB wallonne (énergie) — calendrier en évolution",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "harcelement_violences",
+      "id": "HARC-URGENCE-001",
+      "sujet": "Je suis (ou mon enfant est) harcelé(e) : qui contacter en premier ?",
+      "reference_legale": "Numéros d'urgence officiels (112 / 101) ; service Écoute-Enfants 103 (Fédération Wallonie-Bruxelles)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "harcelement_violences",
+      "id": "HARC-ENFANT-001",
+      "sujet": "Harcèlement à l'école : que peuvent faire l'enfant et les parents ?",
+      "reference_legale": "Dispositifs de la Fédération Wallonie-Bruxelles (enseignement, climat scolaire) ; art. 442bis du Code pénal en cas d'infraction",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "harcelement_violences",
+      "id": "HARC-CYBER-001",
+      "sujet": "Cyberharcèlement : que faire face au harcèlement en ligne ?",
+      "reference_legale": "Art. 442bis du Code pénal (harcèlement) ; législation sur les communications électroniques",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "harcelement_violences",
+      "id": "HARC-TRAVAIL-001",
+      "sujet": "Harcèlement moral ou sexuel au travail : quelles démarches ?",
+      "reference_legale": "Loi du 4 août 1996 sur le bien-être au travail et Code du bien-être au travail (risques psychosociaux) ; protection contre les représailles",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "harcelement_violences",
+      "id": "HARC-PLAINTE-001",
+      "sujet": "Comment porter plainte pour harcèlement, et dans quel délai ?",
+      "reference_legale": "Art. 442bis du Code pénal (harcèlement, poursuite sur plainte de la victime) ; règles de prescription des infractions (titre préliminaire du Code de procédure pénale)",
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",

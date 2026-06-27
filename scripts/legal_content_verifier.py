@@ -117,7 +117,8 @@ def main():
         i = args.index("--max-age-days")
         max_age = int(args[i + 1])
         del args[i:i + 2]
-    cibles = args or sorted(glob.glob(CONTENT_GLOB))
+    cibles = args or [p for p in sorted(glob.glob(CONTENT_GLOB))
+                      if not os.path.basename(p).startswith("_")]
 
     if not cibles:
         print("Aucun module à vérifier (data/belgium/*.json).")

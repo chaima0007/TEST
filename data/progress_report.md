@@ -6,7 +6,7 @@
 
 Aujourd'hui, **3392 moteurs** veillent dans notre système — une cartographie immense des droits et des sujets qui comptent. Mais tu sais quoi ? On a fait mieux que grandir : on a **mûri**.
 
-On a posé les fondations d'un vrai savoir d'expert. **43 faits juridiques belges**, sourcés à **100.0%** auprès des sources officielles (le Décret wallon, WALLEX, le SPW). Pas du vent : du solide, vérifiable, daté. Le genre de chose sur laquelle on peut bâtir 50 ans.
+On a posé les fondations d'un vrai savoir d'expert. **48 faits juridiques belges**, sourcés à **100.0%** auprès des sources officielles (le Décret wallon, WALLEX, le SPW). Pas du vent : du solide, vérifiable, daté. Le genre de chose sur laquelle on peut bâtir 50 ans.
 
 ## 🛡️ Nos garde-fous (parce qu'on ne laisse rien au hasard)
 
@@ -31,7 +31,7 @@ On s'est doté de **19 protocoles clés sur table** — certification, sauvegard
 - `transparency_disclaimer_protocol.py`
 - `work_journal_protocol.py`
 
-Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `b121ed01dafd…`), avec un indicateur de probabilité honnête à **42%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
+Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `551dcf0cd6c6…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
 
 ## 🌱 Là où on va
 

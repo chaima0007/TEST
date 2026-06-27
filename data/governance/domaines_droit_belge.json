@@ -1,0 +1,27 @@
+{
+  "referentiel": "Domaines du droit belge — taxonomie unique",
+  "but": "Carte unique de TOUS les domaines du droit belge utiles au citoyen, pour organiser la base et montrer ce qui est couvert et ce qui reste à construire. Une seule structure, des sections clairement séparées (rien n'est mélangé).",
+  "date": "2026-06-26",
+  "schema_fait_commun": {
+    "champs_obligatoires": ["id", "question", "reponse", "reference_legale", "sources", "date_verification"],
+    "champs_optionnels": ["alerte_delai", "contacts", "domaine"],
+    "regle_sources": "≥1 source officielle (tier1) par fait ; date de vérification obligatoire."
+  },
+  "domaines": [
+    {"cle": "logement_bail", "nom": "Logement & bail", "statut": "couvert", "modules": ["bail_wallonie", "bail_bruxelles", "bail_flandre"], "priorite": "haute"},
+    {"cle": "surendettement", "nom": "Surendettement & dettes", "statut": "couvert", "modules": ["surendettement_reglement_collectif_dettes"], "priorite": "haute"},
+    {"cle": "justice_penal", "nom": "Justice & pénal (accès au droit)", "statut": "couvert", "modules": ["justice_penal_acces"], "priorite": "haute"},
+    {"cle": "harcelement", "nom": "Harcèlement & violences", "statut": "couvert", "modules": ["harcelement_violences"], "priorite": "haute"},
+    {"cle": "travail", "nom": "Travail & emploi", "statut": "a_venir", "modules": [], "priorite": "haute"},
+    {"cle": "famille", "nom": "Famille (divorce, garde, pensions alimentaires)", "statut": "a_venir", "modules": [], "priorite": "haute"},
+    {"cle": "aide_sociale", "nom": "Aide sociale & CPAS", "statut": "a_venir", "modules": [], "priorite": "haute"},
+    {"cle": "consommation", "nom": "Consommation & contrats", "statut": "a_venir", "modules": [], "priorite": "moyenne"},
+    {"cle": "etrangers", "nom": "Étrangers & séjour", "statut": "a_venir", "modules": [], "priorite": "moyenne"},
+    {"cle": "fiscalite", "nom": "Fiscalité (impôts)", "statut": "partiel", "modules": ["via surendettement (dettes fiscales)"], "priorite": "moyenne"},
+    {"cle": "circulation", "nom": "Circulation routière", "statut": "partiel", "modules": ["via justice (amendes)"], "priorite": "moyenne"},
+    {"cle": "sante_patient", "nom": "Santé & droits du patient", "statut": "a_venir", "modules": [], "priorite": "moyenne"},
+    {"cle": "vie_privee", "nom": "Vie privée & données (RGPD)", "statut": "a_venir", "modules": [], "priorite": "moyenne"},
+    {"cle": "successions", "nom": "Successions & héritage", "statut": "a_venir", "modules": [], "priorite": "basse"},
+    {"cle": "energie", "nom": "Énergie & PEB (lié au logement)", "statut": "partiel", "modules": ["via bail (PEB)"], "priorite": "moyenne"}
+  ]
+}

@@ -36,6 +36,7 @@ ETAPES = [
     ("Comité de direction", "scripts/direction_committee_protocol.py", []),
     ("Agent de résilience", "scripts/resilience_simulator.py", []),
     ("Audit accessibilité", "scripts/accessibility_audit_agent.py", []),
+    ("Base unique (catalogue)", "scripts/build_kb_index.py", []),
 
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]

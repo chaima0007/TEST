@@ -42,6 +42,8 @@ def charger_modules():
     """Charge tous les modules JSON et renvoie une liste de dicts."""
     modules = []
     for fp in sorted(DATA.glob("*.json")):
+        if fp.name.startswith("_"):
+            continue  # fichiers techniques (ex. _catalogue.json), pas des modules
         with open(fp, encoding="utf-8") as f:
             d = json.load(f)
         d["_slug"] = fp.stem
@@ -90,6 +92,9 @@ main{max-width:920px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
 .urgent-card{border:1px solid #f3b4b4;border-left:5px solid #c0392b;border-radius:12px;padding:1rem 1.1rem;margin:1rem 0;background:#fff}
 .urgent-card h3{margin:.1rem 0 .4rem;color:#c0392b;font-size:1.05rem}
 .urgent-card .lien{font-size:.85rem;margin-top:.4rem}
+.contacts{background:#eef6ff;border:1px solid #bcd9f5;border-left:5px solid var(--bleu2);border-radius:8px;padding:.6rem .8rem;margin:.6rem 0;font-size:.9rem}
+.contacts ul{margin:.3rem 0 0;padding-left:1.1rem}
+.contacts .contact-meta{color:var(--muted);font-size:.85rem}
 .search{margin:1.2rem 0}
 .search input{width:100%;padding:.7rem .9rem;border:1px solid var(--bord);border-radius:10px;font-size:1rem}
 footer.site{border-top:1px solid var(--bord);background:var(--gris);color:var(--muted);font-size:.85rem}
@@ -179,11 +184,36 @@ def rendre_fait(fait):
     alerte = fait.get("alerte_delai", "")
     alerte_html = (f'<div class="alerte" role="note">⏱ <strong>À ne pas tarder.</strong> '
                    f'{esc(alerte)}</div>') if alerte else ""
+    contacts = fait.get("contacts", [])
+    contacts_html = ""
+    if contacts:
+        items = []
+        for c in contacts:
+            nom = esc(c.get("nom", ""))
+            num = c.get("numero")
+            lien = c.get("lien")
+            dispo = c.get("dispo")
+            pour = c.get("pour")
+            tete = f'<strong>{nom}</strong>'
+            if num:
+                tete += f' — <a href="tel:{esc(num)}">{esc(num)}</a>'
+            elif lien:
+                tete += (f' — <a href="{esc(lien)}" target="_blank" rel="noopener">site officiel'
+                         f'<span class="visually-hidden"> (s\'ouvre dans un nouvel onglet)</span></a>')
+            extra = []
+            if pour:
+                extra.append(esc(pour))
+            if dispo:
+                extra.append(esc(dispo))
+            suff = f' <span class="contact-meta">({" · ".join(extra)})</span>' if extra else ""
+            items.append(f"<li>{tete}{suff}</li>")
+        contacts_html = ('<div class="contacts"><strong>📞 Qui contacter :</strong><ul>'
+                         + "".join(items) + "</ul></div>")
     q = esc(fait.get("question"))
     r = esc(fait.get("reponse"))
     return (
         f'<article class="fait" data-q="{q.lower()}">'
-        f"<h3>{q}</h3><p>{r}</p>{alerte_html}{ref_html}{src_html}{date_html}</article>"
+        f"<h3>{q}</h3><p>{r}</p>{alerte_html}{contacts_html}{ref_html}{src_html}{date_html}</article>"
     )
 
 
