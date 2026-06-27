@@ -36,7 +36,8 @@
         "sante_patient",
         "consommation",
         "handicap",
-        "gouvernement"
+        "gouvernement",
+        "etrangers_sejour"
       ]
     }
   }

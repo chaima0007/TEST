@@ -96,8 +96,10 @@
     {
       "cle": "etrangers",
       "nom": "Étrangers & séjour",
-      "statut": "a_venir",
-      "modules": [],
+      "statut": "couvert",
+      "modules": [
+        "etrangers_sejour"
+      ],
       "priorite": "moyenne"
     },
     {
