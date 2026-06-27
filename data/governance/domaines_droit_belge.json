@@ -326,6 +326,15 @@
         "telecom"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "sante_mentale",
+      "nom": "Santé mentale",
+      "statut": "couvert",
+      "modules": [
+        "sante_mentale"
+      ],
+      "priorite": "haute"
     }
   ]
 }
