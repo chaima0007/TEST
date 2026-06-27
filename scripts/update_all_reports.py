@@ -37,6 +37,7 @@ ETAPES = [
     ("Agent de résilience", "scripts/resilience_simulator.py", []),
     ("Audit accessibilité", "scripts/accessibility_audit_agent.py", []),
     ("Base unique (catalogue)", "scripts/build_kb_index.py", []),
+    ("Spécialistes par domaine", "scripts/build_specialistes.py", []),
     ("Point de reprise", "scripts/checkpoint_protocol.py", []),
     ("Audit fiabilité grand site", "scripts/site_reliability_audit.py", []),
     ("Veille juridique", "scripts/veille_juridique_protocol.py", []),

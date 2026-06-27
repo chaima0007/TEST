@@ -134,7 +134,9 @@ def page(titre, contenu, actif=""):
     nav = (
         navlink("index.html", "Accueil", "accueil")
         + navlink("urgences.html", "Urgences & délais", "urgences")
+        + navlink("specialistes.html", "Nos spécialistes", "specialistes")
         + navlink("textes.html", "Textes de loi", "textes")
+        + navlink("sources.html", "Nos sources", "sources")
         + navlink("lexique.html", "Lexique", "lexique")
         + navlink("transparence.html", "Transparence", "transparence")
         + navlink("accessibilite.html", "Accessibilité", "accessibilite")
@@ -455,13 +457,74 @@ def construire():
         page("Lexique", lex, actif="lexique"), encoding="utf-8"
     )
 
+    # --- page Nos spécialistes (un assistant guidé par domaine) ---
+    specs = []
+    sp = REPO / "data" / "governance" / "specialistes.json"
+    if sp.exists():
+        specs = json.loads(sp.read_text(encoding="utf-8")).get("specialistes", [])
+    cartes_sp = []
+    for s in specs:
+        contacts = s.get("contacts_cles", [])
+        cont_html = ""
+        if contacts:
+            items = []
+            for c in contacts[:4]:
+                num = f" — {esc(c.get('numero'))}" if c.get("numero") else ""
+                items.append(f"<li>{esc(c.get('nom',''))}{num}</li>")
+            cont_html = "<ul>" + "".join(items) + "</ul>"
+        cartes_sp.append(
+            '<div class="urgent-card" style="border-left-color:#0b3d6e">'
+            f'<h3 style="color:#0b3d6e">{esc(s.get("titre",""))}</h3>'
+            f'<p>{esc(s.get("mission",""))}</p>'
+            f'<div class="meta"><span class="badge">{s.get("nb_reponses",0)} réponses sourcées</span></div>'
+            f'{cont_html}'
+            f'<p class="contact-meta">{esc(s.get("gouvernance",""))}</p></div>'
+        )
+    spg = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#0b3d6e">Nos spécialistes</h1>'
+        "<p>Pour chaque domaine, un <strong>spécialiste</strong> (assistant guidé) vous aide à "
+        "comprendre et à <strong>faire valoir vos droits</strong>, à partir de sources officielles. "
+        "Ce sont des assistants guidés, pas des avocats : en cas de doute, ils vous orientent vers un professionnel.</p>"
+        + "".join(cartes_sp)
+    )
+    (DIST / "specialistes.html").write_text(
+        page("Nos spécialistes", spg, actif="specialistes"), encoding="utf-8"
+    )
+
+    # --- page Nos sources fiables (l'endroit central des sources) ---
+    tr = REPO / "data" / "governance" / "trusted_sources.json"
+    wl = json.loads(tr.read_text(encoding="utf-8")) if tr.exists() else {}
+    t1 = sorted(wl.get("tier1_officiel", []))
+    t2 = sorted(wl.get("tier2_institutionnel", []))
+    def doms(lst):
+        return "".join(f'<li><a href="https://{esc(d)}" target="_blank" rel="noopener">{esc(d)}'
+                       "<span class=\"visually-hidden\"> (s'ouvre dans un nouvel onglet)</span></a></li>"
+                       for d in lst)
+    srcpage = (
+        '<a class="back" href="index.html">← Accueil</a>'
+        '<h1 style="color:#0b3d6e">Nos sources fiables</h1>'
+        "<p>La confiance, ça se vérifie. Tout notre contenu s'appuie sur des sources "
+        "<strong>officielles</strong> (lois, administrations publiques). Voici les sources de référence du site.</p>"
+        f'<h2 class="sec">Sources officielles (autorités publiques) — {len(t1)}</h2>'
+        f"<ul>{doms(t1)}</ul>"
+        f'<h2 class="sec">Sources institutionnelles (en appui) — {len(t2)}</h2>'
+        f"<ul>{doms(t2)}</ul>"
+        '<p class="contact-meta">Les textes de loi complets sont accessibles depuis la page '
+        '<a href="textes.html">Textes de loi</a>. Le détail de notre méthode figure sur la page '
+        '<a href="transparence.html">Transparence</a>.</p>'
+    )
+    (DIST / "sources.html").write_text(
+        page("Nos sources", srcpage, actif="sources"), encoding="utf-8"
+    )
+
     return {
         "modules": len(modules),
         "faits": total_faits,
         "sources_officielles": nb_off,
         "sources_complement": nb_sec,
         "urgences": len(urgents),
-        "pages": len(modules) + 6,
+        "pages": len(modules) + 8,
     }
 
 

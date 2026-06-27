@@ -1,0 +1,326 @@
+{
+  "registre": "Spécialistes par catégorie",
+  "but": "Un assistant guidé par domaine pour aider chacun à faire valoir ses droits.",
+  "genere_le": "2026-06-27",
+  "principe_honnete": "Assistants guidés (contenu vérifié + contacts), pas des avocats.",
+  "specialistes": [
+    {
+      "id": "SPE-AIDANTS-PROCHES",
+      "titre": "Spécialiste — Aidants proches",
+      "domaine": "Aidants proches",
+      "module": "aidants_proches",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « aidants proches », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'un aidant proche et comment être reconnu ?",
+        "Ai-je droit à un congé en tant qu'aidant proche ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre mutualité",
+          "pour": "introduire la demande de reconnaissance"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "allocation d'interruption (congé)"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-BAIL-RESIDENCE-PRINCIPALE-BRUXELLES",
+      "titre": "Spécialiste — Bail de résidence principale — Région de Bruxelles-Capitale",
+      "domaine": "Bail de résidence principale — Région de Bruxelles-Capitale",
+      "module": "bail_residence_principale_bruxelles",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « bail de résidence principale — région de bruxelles-capitale », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?",
+        "Quel est le montant maximum de la garantie locative à Bruxelles ?",
+        "Comment résilier un bail de résidence principale à Bruxelles ?",
+        "Quand le loyer peut-il être indexé à Bruxelles ?",
+        "L'état des lieux est-il obligatoire à Bruxelles et quand l'enregistrer ?",
+        "Qui paie les réparations à Bruxelles : locataire ou bailleur ?",
+        "Quelles sont les normes minimales d'un logement loué à Bruxelles ?",
+        "Comment se déroule une expulsion à Bruxelles ?",
+        "Quelles sont les obligations PEB (énergie) pour louer à Bruxelles ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 9,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-BAIL-RESIDENCE-PRINCIPALE-FLANDRE",
+      "titre": "Spécialiste — Bail de résidence principale — Région flamande",
+      "domaine": "Bail de résidence principale — Région flamande",
+      "module": "bail_residence_principale_flandre",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « bail de résidence principale — région flamande », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
+        "Quel est le montant maximum de la garantie locative en Flandre ?",
+        "Comment résilier un bail de résidence principale en Flandre ?",
+        "Quand le loyer peut-il être indexé en Flandre ?",
+        "L'état des lieux est-il obligatoire en Flandre ?",
+        "Qui paie les réparations en Flandre : locataire ou bailleur ?",
+        "Quelles sont les normes de qualité d'un logement loué en Flandre ?",
+        "Comment se déroule une expulsion en Flandre ?",
+        "Quelles sont les obligations EPC/PEB (énergie) pour louer en Flandre ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 9,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-BAIL-RESIDENCE-PRINCIPALE-WALLONIE",
+      "titre": "Spécialiste — Bail de résidence principale — Région wallonne",
+      "domaine": "Bail de résidence principale — Région wallonne",
+      "module": "bail_residence_principale_wallonie",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « bail de résidence principale — région wallonne », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle est la durée par défaut d'un bail de résidence principale en Wallonie ?",
+        "Quels sont les délais de préavis pour mettre fin au bail ?",
+        "Quel est le montant maximum de la garantie locative en Wallonie ?",
+        "Comment et quand le loyer peut-il être indexé en Wallonie ?",
+        "L'état des lieux est-il obligatoire en Wallonie et qui paie ?",
+        "Qui paie les réparations en Wallonie : locataire ou bailleur ?",
+        "Quelles sont les normes de salubrité d'un logement loué en Wallonie ?",
+        "Comment se déroule une expulsion en Wallonie ?",
+        "Quelles sont les obligations PEB (énergie) pour louer en Wallonie ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 9,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CITOYEN-DROITS-DEVOIRS",
+      "titre": "Spécialiste — Citoyenneté",
+      "domaine": "Citoyenneté",
+      "module": "citoyen_droits_devoirs",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « citoyenneté », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que la citoyenneté belge implique comme droits et devoirs ?",
+        "Le vote est-il obligatoire en Belgique ?",
+        "Carte d'identité : quelles obligations, et que faire en cas de perte ou de vol ?",
+        "Quelles obligations administratives de base (domicile, déménagement) ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Administration communale",
+          "pour": "convocation, bureau de vote"
+        },
+        {
+          "nom": "DOC STOP",
+          "numero": "00800 2123 2123",
+          "pour": "bloquer une carte perdue/volée",
+          "dispo": "gratuit, 24h/24"
+        }
+      ],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-FAMILLE",
+      "titre": "Spécialiste — Famille",
+      "domaine": "Famille",
+      "module": "famille",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « famille », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Après une séparation, qui exerce l'autorité parentale ?",
+        "Comment est fixé l'hébergement (la « garde ») des enfants ?",
+        "Qu'est-ce que la contribution alimentaire pour les enfants ?",
+        "Quelle différence entre pension alimentaire entre ex-époux et contribution pour les enfants ?",
+        "Quelles sont les grandes voies de divorce en Belgique ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "trancher en cas de désaccord"
+        },
+        {
+          "nom": "Médiateur familial / avocat",
+          "pour": "trouver un accord"
+        },
+        {
+          "nom": "Médiateur familial",
+          "pour": "accord amiable"
+        },
+        {
+          "nom": "SECAL (Service des créances alimentaires, SPF Finances)",
+          "lien": "https://finances.belgium.be/fr/particuliers/famille/pensions_alimentaires",
+          "pour": "non-paiement / avances"
+        },
+        {
+          "nom": "Avocat / notaire",
+          "pour": "évaluer vos droits"
+        },
+        {
+          "nom": "Avocat ou notaire",
+          "pour": "préparer le divorce"
+        },
+        {
+          "nom": "Aide juridique (sous conditions)",
+          "lien": "https://justice.belgium.be/fr",
+          "pour": "avocat gratuit/partiellement gratuit"
+        }
+      ],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-HARCELEMENT-VIOLENCES",
+      "titre": "Spécialiste — Harcèlement & violences",
+      "domaine": "Harcèlement & violences",
+      "module": "harcelement_violences",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « harcèlement & violences », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je suis (ou mon enfant est) harcelé(e) : qui contacter en premier ?",
+        "Harcèlement à l'école : que peuvent faire l'enfant et les parents ?",
+        "Cyberharcèlement : que faire face au harcèlement en ligne ?",
+        "Harcèlement moral ou sexuel au travail : quelles démarches ?",
+        "Comment porter plainte pour harcèlement, et dans quel délai ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Urgences (secours, ambulance, pompiers)",
+          "numero": "112",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "danger / déposer plainte"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & ados",
+          "dispo": "tous les jours 10h–minuit, anonyme"
+        },
+        {
+          "nom": "Écoute École (FW-B)",
+          "lien": "https://www.enseignement.be/ecouteecole",
+          "pour": "adultes face à la violence scolaire"
+        },
+        {
+          "nom": "SOS Enfants (ONE)",
+          "lien": "https://www.one.be",
+          "pour": "situations de maltraitance d'enfants"
+        },
+        {
+          "nom": "Child Focus",
+          "lien": "https://childfocus.be/fr",
+          "pour": "mineurs & cyberharcèlement"
+        },
+        {
+          "nom": "Conseiller en prévention aspects psychosociaux",
+          "pour": "1er interlocuteur en entreprise"
+        },
+        {
+          "nom": "Contrôle du bien-être au travail (SPF Emploi)",
+          "lien": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail",
+          "pour": "inspection"
+        },
+        {
+          "nom": "Aide juridique (avocat gratuit, sous conditions)",
+          "lien": "https://justice.belgium.be/fr",
+          "pour": "se faire conseiller"
+        }
+      ],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-JUSTICE-PENAL-ACCES",
+      "titre": "Spécialiste — Accès à la justice — droits, avocat, casier judiciaire",
+      "domaine": "Accès à la justice — droits, avocat, casier judiciaire",
+      "module": "justice_penal_acces",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « accès à la justice — droits, avocat, casier judiciaire », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Puis-je avoir un avocat gratuit ou moins cher (aide juridique de 2ᵉ ligne, ex « pro deo ») ?",
+        "Comment obtenir mon extrait de casier judiciaire (ex « certificat de bonnes vie et mœurs ») ?",
+        "Ai-je droit à un avocat si je suis entendu(e) par la police ou la justice ?",
+        "Je suis victime d'une infraction : comment intervenir dans la procédure pénale ?",
+        "Je suis convoqué(e) (cité(e)) devant le tribunal : que dois-je faire ?",
+        "Ai-je le droit de consulter le dossier de mon affaire avant l'audience ?",
+        "Comment fonctionne une amende routière : perception immédiate, transaction, ordre de paiement ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 7,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-SURENDETTEMENT-REGLEMENT-COLLECTIF-DETTES",
+      "titre": "Spécialiste — Surendettement — Règlement collectif de dettes (RCD)",
+      "domaine": "Surendettement — Règlement collectif de dettes (RCD)",
+      "module": "surendettement_reglement_collectif_dettes",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « surendettement — règlement collectif de dettes (rcd) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que le règlement collectif de dettes et où le demander ?",
+        "Quelles sont les conditions pour accéder au RCD ?",
+        "Quel est le rôle du médiateur de dettes et qu'est-ce que le pécule de médiation ?",
+        "Quels sont les effets et la durée du RCD ?",
+        "Peut-on saisir tout mon salaire en cas de dettes, ou existe-t-il une part protégée ?",
+        "Quelle est la différence entre la médiation de dettes amiable et le règlement collectif de dettes ?",
+        "Où trouver une aide gratuite pour mes dettes, et le CPAS peut-il aider ?",
+        "Je n'arrive pas à payer mes impôts : puis-je obtenir un plan de paiement auprès du SPF Finances ?",
+        "Si je ne rembourse plus, peut-on saisir et vendre ma maison ? Comment ça se passe ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 9,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-TRAVAIL-EMPLOI",
+      "titre": "Spécialiste — Travail & emploi",
+      "domaine": "Travail & emploi",
+      "module": "travail_emploi",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « travail & emploi », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quel délai de préavis en cas de licenciement, et sous quelle forme ?",
+        "Qu'est-ce que le C4 et pourquoi est-il important ?",
+        "Comment demander des allocations de chômage et peut-on être sanctionné ?",
+        "Mon employeur ne paie pas mon salaire : que faire ?",
+        "Je veux démissionner : quel préavis dois-je respecter ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre syndicat (FGTB/CSC/CGSLB)",
+          "pour": "vérifier le calcul, vous défendre"
+        },
+        {
+          "nom": "Contrôle des lois sociales (SPF Emploi)",
+          "lien": "https://emploi.belgique.be/fr/propos-du-spf/structure-et-organisation/controle-des-lois-sociales",
+          "pour": "infractions au droit du travail"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be/formulaires-attestations/c4-certificat-de-chomage",
+          "pour": "infos sur le C4"
+        },
+        {
+          "nom": "Syndicat ou CAPAC",
+          "pour": "introduire la demande d'allocations"
+        },
+        {
+          "nom": "Syndicat (FGTB/CSC/CGSLB) ou CAPAC",
+          "pour": "introduire la demande"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "décision sur le droit aux allocations"
+        },
+        {
+          "nom": "Tribunal du travail",
+          "pour": "réclamer le paiement (dernier recours)"
+        },
+        {
+          "nom": "Votre syndicat",
+          "pour": "calculer votre préavis avant de démissionner"
+        }
+      ],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    }
+  ]
+}
