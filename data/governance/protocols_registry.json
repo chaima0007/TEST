@@ -165,6 +165,12 @@
       "nom": "Détecteur de changement des sources",
       "regle": "Comparer l'empreinte des sources officielles pour repérer les changements (lois qui évoluent). Vérification quotidienne possible UNIQUEMENT avec réseau + planificateur persistant.",
       "verif": "python3 scripts/source_change_detector.py"
+    },
+    {
+      "id": "P-DIRECTION",
+      "nom": "Comité de direction",
+      "regle": "Couche de pilotage : 5 rôles de direction (juridique, qualité, produit, stratégie, éthique), tous SOUMIS à tous les protocoles. Aucun rôle au-dessus des protocoles. Décision finale = Chaima Mhadbi.",
+      "verif": "python3 scripts/direction_committee_protocol.py"
     }
   ]
 }

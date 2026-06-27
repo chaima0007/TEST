@@ -1,0 +1,69 @@
+{
+  "charte": "Direction & expertise de pilotage — La Loi Avec Moi",
+  "version": "1.0",
+  "date": "2026-06-26",
+  "principe_honnete": "Les 'directeurs' ci-dessous sont des RÔLES de gouvernance (fonctions, mandats, indicateurs), pas des personnes ni des agents autonomes. Ils définissent une grille d'exigences de niveau direction appliquée au projet. Toute décision réelle revient à Chaima Mhadbi ; l'IA propose et exécute sous protocole.",
+  "regle_commune": "Chaque rôle de direction est SOUMIS À TOUS LES PROTOCOLES en vigueur (identité, sources, certification, sas, transparence). Aucun rôle n'est au-dessus des protocoles.",
+  "directeurs": [
+    {
+      "id": "DIR-JURIDIQUE",
+      "titre": "Directeur·rice Juridique (fiabilité du droit)",
+      "mandat": "Garantir que chaque information juridique est exacte, sourcée officiellement, datée et à jour.",
+      "responsabilites": [
+        "Exiger ≥1 source officielle (tier1) et une date de vérification par fait",
+        "Déclencher une remise à niveau quand une loi change",
+        "Refuser toute affirmation non vérifiable (zéro mémoire non sourcée)"
+      ],
+      "indicateurs": ["% faits avec source officielle", "% faits à jour", "nb de faits bloqués par le vérificateur"],
+      "protocoles_lies": ["P-SOURCES", "P-CERTIF", "P-CHANGEMENT", "P-CONFIANCE-SOURCES"]
+    },
+    {
+      "id": "DIR-QUALITE",
+      "titre": "Directeur·rice Qualité & Conformité",
+      "mandat": "Garantir que rien n'est livré sans avoir franchi les contrôles, et que la qualité ne régresse jamais.",
+      "responsabilites": [
+        "Faire passer chaque livraison par les sas de contrôle",
+        "Maintenir la non-régression (le double protocole : test avant ET après)",
+        "Tenir le méta-audit (expertise sur l'expertise) au plus haut"
+      ],
+      "indicateurs": ["sas franchis (4/4)", "note méta-audit /100", "incidents de régression évités"],
+      "protocoles_lies": ["P-SAS", "P-CERTIF", "P-VERIF-ENVOI"]
+    },
+    {
+      "id": "DIR-PRODUIT",
+      "titre": "Directeur·rice Produit & Diffusion",
+      "mandat": "Transformer l'expertise vérifiée en un produit clair, accessible et réellement utile aux gens.",
+      "responsabilites": [
+        "Maintenir le site généré depuis la source de vérité unique (jamais de contenu hors base)",
+        "Garantir lisibilité, recherche, avertissements visibles",
+        "Préparer la mise en ligne sans mélanger les projets"
+      ],
+      "indicateurs": ["nb de pages publiées", "nb de réponses accessibles", "% pages avec sources + avertissement"],
+      "protocoles_lies": ["P-SOBRIETE", "P-VERIF-ENVOI"]
+    },
+    {
+      "id": "DIR-STRATEGIE",
+      "titre": "Directeur·rice Stratégie & Marché",
+      "mandat": "Choisir les bons combats : niches sous-servies, demande réelle, durabilité 50 ans.",
+      "responsabilites": [
+        "Suivre la détection de marché (sources corroborées)",
+        "Prioriser les niches à forte demande et faible concurrence",
+        "Évaluer la valorisation des projets honnêtement"
+      ],
+      "indicateurs": ["nb de niches ouvertes", "signaux marché corroborés", "valorisation argumentée (sans chiffre inventé)"],
+      "protocoles_lies": ["P-MARCHE", "P-DETECTION"]
+    },
+    {
+      "id": "DIR-ETHIQUE",
+      "titre": "Directeur·rice Éthique, Transparence & Mission",
+      "mandat": "Garder le cœur au centre : honnêteté, protection de l'utilisateur, fidélité à la mission (enfants placés, famille).",
+      "responsabilites": [
+        "Maintenir la page transparence (forces ET faiblesses)",
+        "Veiller à l'avertissement renforcé sur les sujets sensibles (pénal)",
+        "Protéger l'identité de Chaima (jamais inventée), zéro credential dans le code"
+      ],
+      "indicateurs": ["page transparence à jour", "présence des avertissements", "0 donnée sensible exposée"],
+      "protocoles_lies": ["P-IDENTITE", "P-SOBRIETE", "P-CONFIANCE-SOURCES"]
+    }
+  ]
+}
