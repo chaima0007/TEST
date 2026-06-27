@@ -605,6 +605,24 @@
         "voyages"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "benevolat",
+      "nom": "Volontariat",
+      "statut": "couvert",
+      "modules": [
+        "benevolat"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fonction_publique",
+      "nom": "Fonction publique",
+      "statut": "couvert",
+      "modules": [
+        "fonction_publique"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

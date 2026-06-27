@@ -155,5 +155,17 @@
     "modifies": [],
     "violations": [],
     "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T22:49:13+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/benevolat.json",
+      "la_loi_avec_moi/fonction_publique.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/permis_urbanisme.json"
+    ],
+    "violations": [],
+    "statut": "OK"
   }
 ]

@@ -82,7 +82,9 @@
         "credit_hypothecaire",
         "copropriete",
         "permis_urbanisme",
-        "voyages"
+        "voyages",
+        "benevolat",
+        "fonction_publique"
       ]
     }
   }

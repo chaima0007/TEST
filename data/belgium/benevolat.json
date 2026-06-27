@@ -1,0 +1,46 @@
+{
+  "module": "benevolat",
+  "titre": "Bénévolat & volontariat — vos droits",
+  "domaine": "Volontariat",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 3 juillet 2005 relative aux droits des volontaires",
+    "portee": "Droits du volontaire, défraiement, assurance et information",
+    "source_officielle": "https://conseilsuperieurvolontaires.belgium.be/fr/legislation/loi-030705.htm"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les plafonds de défraiement sont indexés chaque année ; vérifiez le montant en vigueur avant d'accepter un défraiement.",
+  "faits": [
+    {
+      "id": "BENE-DROITS-001",
+      "question": "Quels sont mes droits quand je suis bénévole ?",
+      "reponse": "Le bénévolat est encadré par la loi du 3 juillet 2005. L'organisation qui vous accueille doit vous remettre une note d'information (qui fait quoi, assurance, défraiement éventuel) avant le début de l'activité. Votre responsabilité de volontaire est limitée : en principe, c'est l'organisation qui répond des dommages que vous causez à des tiers (sauf faute grave, dol ou faute légère répétée). Vous restez libre : le bénévolat est non rémunéré et volontaire.",
+      "reference_legale": "Loi du 3 juillet 2005 relative aux droits des volontaires (note d'information, limitation de responsabilité)",
+      "contacts": [
+        {"nom": "Plateforme francophone du Volontariat", "lien": "https://www.levolontariat.be", "pour": "information et droits des volontaires"},
+        {"nom": "L'organisation qui vous accueille", "pour": "note d'information, assurance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://conseilsuperieurvolontaires.belgium.be/fr/legislation/loi-030705.htm", "intitule": "Conseil supérieur des Volontaires — Loi du 3 juillet 2005"},
+        {"type": "secondaire", "url": "https://www.levolontariat.be/la-loi-relative-aux-droits-des-volontaires", "intitule": "Plateforme du Volontariat — La loi"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BENE-DEFRAIEMENT-001",
+      "question": "Puis-je être remboursé de mes frais, et suis-je assuré ?",
+      "reponse": "Oui aux deux. Le bénévolat n'est pas payé, mais l'organisation peut vous défrayer : soit le remboursement de vos frais réels (sur justificatifs), soit un défraiement forfaitaire plafonné par jour et par an (montants indexés chaque année — vérifiez le plafond en vigueur). Attention à ne pas mélanger les deux systèmes au-delà des limites, sinon le défraiement peut être requalifié en rémunération. Côté assurance : l'organisation a l'obligation de couvrir au minimum votre responsabilité civile de volontaire (sauf rares exceptions).",
+      "reference_legale": "Loi du 3 juillet 2005 relative aux droits des volontaires (défraiement et obligation d'assurance)",
+      "contacts": [
+        {"nom": "L'organisation qui vous accueille", "pour": "défraiement, attestation d'assurance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://conseilsuperieurvolontaires.belgium.be/fr/legislation/loi-030705.htm", "intitule": "Conseil supérieur des Volontaires — Loi du 3 juillet 2005"},
+        {"type": "secondaire", "url": "https://www.levolontariat.be/ce-que-dit-la-loi", "intitule": "Plateforme du Volontariat — Ce que dit la loi"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}
