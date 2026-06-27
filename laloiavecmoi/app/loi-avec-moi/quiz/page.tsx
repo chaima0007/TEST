@@ -179,7 +179,7 @@ export default function QuizPage() {
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/loi-avec-moi" className="flex items-center gap-2.5">
             <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
-            <span className="font-bold text-lg tracking-tight">La loi avec moi</span>
+            <span className="font-bold text-lg tracking-tight">La Loi Avec Moi</span>
           </Link>
           <Link href="/loi-avec-moi" className="text-sm font-semibold text-indigo-700 hover:text-indigo-900">Tous les sujets →</Link>
         </div>

@@ -91,7 +91,7 @@ export default function LoiAvecMoiFrancePage() {
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/la-loi-avec-moi-france" className="flex items-center gap-2.5">
             <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
-            <span className="font-bold text-lg tracking-tight">La loi avec moi <span className="text-blue-700">· France</span></span>
+            <span className="font-bold text-lg tracking-tight">La Loi Avec Moi <span className="text-blue-700">· France</span></span>
           </Link>
           <Link href="/loi-avec-moi" className="text-sm font-medium text-slate-500 hover:text-slate-900">🇧🇪 Version Belgique →</Link>
         </div>
@@ -191,7 +191,7 @@ export default function LoiAvecMoiFrancePage() {
       </section>
 
       <footer className="border-t border-slate-100 py-10 px-6 text-center text-sm text-slate-500">
-        <p>« La loi avec moi · France » — informations générales, ne remplace pas un conseil juridique personnalisé.</p>
+        <p>« La Loi Avec Moi · France » — informations générales, ne remplace pas un conseil juridique personnalisé.</p>
         <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
           <Link href="/la-loi-avec-moi-france/nos-assistants" className="text-blue-700 hover:text-blue-900 font-medium">Qui sont nos assistants ?</Link>
           <Link href="/loi-avec-moi" className="text-blue-700 hover:text-blue-900 font-medium">🇧🇪 Voir la version Belgique →</Link>

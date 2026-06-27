@@ -251,7 +251,7 @@ export default function LoiAvecMoiPage() {
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/loi-avec-moi" className="flex items-center gap-2.5">
             <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
-            <span className="font-bold text-lg tracking-tight">La loi avec moi</span>
+            <span className="font-bold text-lg tracking-tight">La Loi Avec Moi</span>
           </Link>
           <div className="hidden sm:flex items-center gap-1">
             <Link href="/loi-avec-moi/mes-droits-maintenant" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Mes droits</Link>
@@ -267,7 +267,7 @@ export default function LoiAvecMoiPage() {
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 text-sm font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            La loi avec moi · gratuit
+            La Loi Avec Moi · gratuit
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
             Vos droits et obligations,
@@ -396,7 +396,7 @@ export default function LoiAvecMoiPage() {
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
           <h3 className="font-semibold text-amber-900">⚖️ En toute transparence</h3>
           <p className="text-amber-800 text-sm mt-2 leading-relaxed">
-            « La loi avec moi » fournit de l&apos;<strong>information et de l&apos;orientation</strong> pour comprendre
+            « La Loi Avec Moi » fournit de l&apos;<strong>information et de l&apos;orientation</strong> pour comprendre
             vos droits — ce n&apos;est <strong>pas un conseil juridique personnalisé</strong> (une activité réservée
             aux professionnels agréés). Pour toute décision importante ou litige, nous vous orientons vers le
             bon expert (avocat, notaire, médiateur). L&apos;objectif : vous donner de la clarté, gratuitement,

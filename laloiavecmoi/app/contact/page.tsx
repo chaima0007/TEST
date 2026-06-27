@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-// Page contact du site indépendant « La loi avec moi ».
+// Page contact du site indépendant « La Loi Avec Moi ».
 // Adresse e-mail à personnaliser (placeholder) — à remplacer par ton adresse définitive.
 
 export default function ContactPage() {
@@ -9,7 +9,7 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-950 to-slate-900 text-white">
         <div className="relative max-w-3xl mx-auto px-6 py-20 text-center">
           <Link href="/" className="inline-block text-blue-200 hover:text-white text-sm font-medium mb-6">
-            ← La loi avec moi
+            ← La Loi Avec Moi
           </Link>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">Nous contacter</h1>
           <p className="mt-5 text-lg text-blue-100 leading-relaxed">

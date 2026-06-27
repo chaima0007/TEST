@@ -5,7 +5,7 @@ import "./globals.css";
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
-  title: "La loi avec moi — Le droit accessible pour tous",
+  title: "La Loi Avec Moi — Le droit accessible pour tous",
   description:
     "Comprenez vos droits en langage clair, gratuitement, à partir des sources officielles. Belgique (FR / NL) et France.",
 };

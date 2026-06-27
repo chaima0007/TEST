@@ -1,4 +1,4 @@
-# 🚀 Mettre « La loi avec moi » en ligne — guide ultra-simple
+# 🚀 Mettre « La Loi Avec Moi » en ligne — guide ultra-simple
 
 > À faire quand tu es reposée. **5 minutes, 6 étapes.** Rien d'autre à préparer :
 > le site est déjà construit et testé (build ✓). Aucun risque pour ton code.
@@ -13,7 +13,7 @@
 6. Clique **« Deploy »** 🎉
 
 → Au bout de ~2 min : une adresse type `laloiavecmoi-xxx.vercel.app` qui affiche
-**uniquement** ton site juridique (page d'accueil « La loi avec moi », **zéro Caelum**).
+**uniquement** ton site juridique (page d'accueil « La Loi Avec Moi », **zéro Caelum**).
 
 ## Après (optionnel)
 - **Nom de domaine** : Project → Settings → **Domains** → ajoute `laloiavecmoi.be`.

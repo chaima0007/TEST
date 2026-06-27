@@ -79,7 +79,7 @@ export default function LogementFrancePage() {
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/la-loi-avec-moi-france" className="flex items-center gap-2.5">
             <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
-            <span className="font-bold text-lg tracking-tight">La loi avec moi <span className="text-blue-700">· France</span></span>
+            <span className="font-bold text-lg tracking-tight">La Loi Avec Moi <span className="text-blue-700">· France</span></span>
           </Link>
           <Link href="/la-loi-avec-moi-france" className="text-sm font-semibold text-blue-700 hover:text-blue-900">Tous les sujets →</Link>
         </div>

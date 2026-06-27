@@ -1,4 +1,4 @@
-# 🌙 Backlog autonome — « La loi avec moi »
+# 🌙 Backlog autonome — « La Loi Avec Moi »
 
 Tâches sûres, à valeur sûre, faisables sans décision risquée. Cochées au fur et à mesure.
 Tout est commité/poussé après chaque tâche. En cas de pause, reprendre à la 1re non cochée.

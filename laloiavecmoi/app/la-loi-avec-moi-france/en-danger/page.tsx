@@ -71,7 +71,7 @@ export default function EnDangerFrancePage() {
         <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/la-loi-avec-moi-france" className="flex items-center gap-2.5">
             <img src="/logo-laloiavecmoi-mark.svg" alt="" className="w-9 h-9" />
-            <span className="font-bold text-lg tracking-tight">La loi avec moi <span className="text-blue-700">· France</span></span>
+            <span className="font-bold text-lg tracking-tight">La Loi Avec Moi <span className="text-blue-700">· France</span></span>
           </Link>
           <Link href="/la-loi-avec-moi-france" className="text-sm font-semibold text-blue-700 hover:text-blue-900">Tous les sujets →</Link>
         </div>
@@ -146,7 +146,7 @@ export default function EnDangerFrancePage() {
       </section>
 
       <footer className="border-t border-slate-100 py-8 px-6 text-center text-sm text-slate-500">
-        <Link href="/la-loi-avec-moi-france" className="hover:text-slate-900">← Retour à « La loi avec moi · France »</Link>
+        <Link href="/la-loi-avec-moi-france" className="hover:text-slate-900">← Retour à « La Loi Avec Moi · France »</Link>
       </footer>
     </main>
   );

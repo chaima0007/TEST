@@ -134,7 +134,7 @@ export default function BienvenuePage() {
 
       <footer className="border-t border-slate-100 py-8 px-6 text-center text-sm text-slate-500">
         <Link href={HUB} className="hover:text-slate-900">
-          ← La loi avec moi
+          ← La Loi Avec Moi
         </Link>
       </footer>
     </main>

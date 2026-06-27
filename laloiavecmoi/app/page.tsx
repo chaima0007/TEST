@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-// Page d'accueil du site indépendant « La loi avec moi ».
+// Page d'accueil du site indépendant « La Loi Avec Moi ».
 // Aucune référence à Caelum : c'est l'entrée d'un site juridique autonome.
 // Oriente vers les 3 éditions (Belgique FR, Belgique NL, France) + l'accueil multilingue.
 
@@ -45,13 +45,13 @@ export default function Home() {
           <div className="flex justify-center mb-8">
             <img
               src="/logo-laloiavecmoi-mark.svg"
-              alt="La loi avec moi"
+              alt="La Loi Avec Moi"
               width={84}
               height={84}
             />
           </div>
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight">
-            La loi avec moi
+            La Loi Avec Moi
           </h1>
           <p className="mt-4 text-lg sm:text-xl font-semibold tracking-wide text-blue-200">
             Le droit accessible pour tous.
@@ -106,7 +106,7 @@ export default function Home() {
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
           <h2 className="font-semibold text-amber-900">⚖️ En toute transparence</h2>
           <p className="text-amber-800 text-sm mt-2 leading-relaxed">
-            « La loi avec moi » fournit de l&apos;<strong>information et de l&apos;orientation</strong> pour
+            « La Loi Avec Moi » fournit de l&apos;<strong>information et de l&apos;orientation</strong> pour
             comprendre vos droits — ce n&apos;est <strong>pas un conseil juridique personnalisé</strong>
             (réservé aux professionnels agréés). Pour une décision importante, nous vous orientons vers le bon
             expert. L&apos;objectif&nbsp;: de la clarté, gratuitement, en toute sécurité.
@@ -115,7 +115,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-slate-100 py-8 px-6 text-center text-sm text-slate-500">
-        <p>« La loi avec moi » — Le droit accessible pour tous.</p>
+        <p>« La Loi Avec Moi » — Le droit accessible pour tous.</p>
         <Link href="/contact" className="inline-block mt-3 text-blue-700 hover:text-blue-900 font-medium">
           Nous contacter
         </Link>

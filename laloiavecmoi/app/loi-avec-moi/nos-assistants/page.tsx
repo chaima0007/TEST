@@ -57,7 +57,7 @@ export default function NosAssistantsPage() {
             href="/loi-avec-moi"
             className="inline-block text-indigo-200 hover:text-white text-sm font-medium mb-6"
           >
-            ← La loi avec moi
+            ← La Loi Avec Moi
           </Link>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
             Qui sont nos assistants&nbsp;?
@@ -148,7 +148,7 @@ export default function NosAssistantsPage() {
 
       <footer className="border-t border-slate-100 py-8 px-6 text-center text-sm text-slate-500">
         <Link href="/loi-avec-moi" className="hover:text-slate-900">
-          ← Retour à « La loi avec moi »
+          ← Retour à « La Loi Avec Moi »
         </Link>
       </footer>
     </main>
