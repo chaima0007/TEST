@@ -33,6 +33,8 @@ ETAPES = [
     ("Valorisation projets", "scripts/project_valuation_protocol.py", []),
     ("Transparence & decharge", "scripts/transparency_disclaimer_protocol.py", []),
     ("Détection du marché", "scripts/market_detection_protocol.py", []),
+    ("Comité de direction", "scripts/direction_committee_protocol.py", []),
+    ("Agent de résilience", "scripts/resilience_simulator.py", []),
 
     ("Sauvegarde", "scripts/backup_protocol.py", []),
 ]

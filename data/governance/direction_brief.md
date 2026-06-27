@@ -12,12 +12,12 @@
 | Sources de complément | 32 |
 | Faits datés | 100% |
 | Indice d'expertise | 66.0 |
-| Domaines officiels de confiance | 18 |
+| Domaines officiels de confiance | 19 |
 
 ## Avis des directeurs
 
 ### Directeur Juridique
-- **Constat :** 43 faits ; 100% datés ; 63% des sources sont officielles ; 18 domaines officiels de confiance.
+- **Constat :** 43 faits ; 100% datés ; 63% des sources sont officielles ; 19 domaines officiels de confiance.
 - **Recommandation :** Maintenir 100% de faits sourcés/datés ; planifier une remise à niveau dès qu'une loi évolue (PEB, baux régionaux).
 
 ### Directeur Qualité & Conformité

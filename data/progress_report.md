@@ -31,7 +31,7 @@ On s'est doté de **19 protocoles clés sur table** — certification, sauvegard
 - `transparency_disclaimer_protocol.py`
 - `work_journal_protocol.py`
 
-Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `aed2e277c154…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
+Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `3a4924b25a3b…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
 
 ## 🌱 Là où on va
 
