@@ -317,6 +317,15 @@
         "discrimination"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "telecom",
+      "nom": "Télécommunications",
+      "statut": "couvert",
+      "modules": [
+        "telecom"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

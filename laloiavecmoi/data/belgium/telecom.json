@@ -1,0 +1,47 @@
+{
+  "module": "telecom",
+  "titre": "Télécom — internet, téléphone, litiges",
+  "domaine": "Télécommunications",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique (services de communications électroniques) ; Service de médiation pour les télécommunications ; IBPT",
+    "portee": "Droits des clients des opérateurs internet/téléphone/mobile",
+    "source_officielle": "https://www.bipt.be/consommateurs"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Avant la médiation, contactez d'abord le service client de votre opérateur et gardez une trace écrite.",
+  "faits": [
+    {
+      "id": "TEL-LITIGE-001",
+      "question": "J'ai un litige avec mon opérateur (facture, coupure) : que faire ?",
+      "reponse": "D'abord, contestez par écrit auprès du service client de votre opérateur (gardez une copie, c'est obligatoire avant d'aller plus loin). Si vous n'obtenez pas de solution satisfaisante, vous pouvez saisir gratuitement le Service de médiation pour les télécommunications (par formulaire, courrier ou e-mail). Bon à savoir : si votre plainte est recevable, vous ne devez pas payer la facture contestée tant que la médiation est en cours.",
+      "reference_legale": "Code de droit économique — communications électroniques ; missions du Service de médiation télécom",
+      "contacts": [
+        {"nom": "Service de médiation pour les télécommunications", "lien": "https://www.mediateurtelecom.be", "pour": "litige avec un opérateur (gratuit)"},
+        {"nom": "IBPT", "lien": "https://www.bipt.be/consommateurs", "pour": "infos consommateurs télécom"}
+      ],
+      "alerte_delai": "Contestez d'abord par écrit chez l'opérateur (étape obligatoire) ; si la plainte est recevable, la facture contestée est suspendue.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.mediateurtelecom.be/introduire-une-plainte/comment-introduire-une-plainte/", "intitule": "Médiateur télécom — Introduire une plainte"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/jai-depose-plainte-au-mediateur-telecom-dois-je-quand-meme-payer-ma-facture-de-telephonie", "intitule": "Droits Quotidiens — Plainte médiateur télécom"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "TEL-RESILIATION-001",
+      "question": "Puis-je changer d'opérateur ou résilier facilement ?",
+      "reponse": "Oui. La réglementation facilite le changement d'opérateur et encadre la résiliation (notamment la possibilité de résilier sans indemnité après une certaine durée, et la conservation de votre numéro). Vérifiez les conditions de votre contrat et, en cas d'abus (frais indus, blocage), le médiateur télécom peut intervenir. Comparez les offres avant de changer.",
+      "reference_legale": "Code de droit économique — communications électroniques (résiliation, portabilité du numéro)",
+      "contacts": [
+        {"nom": "IBPT", "lien": "https://www.bipt.be/consommateurs", "pour": "droits de résiliation / portabilité"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.bipt.be/operateurs/telecoms/protection-des-consommateurs/transparence", "intitule": "IBPT — Transparence des contrats"},
+        {"type": "officiel", "url": "https://www.bipt.be/consommateurs", "intitule": "IBPT — Consommateurs"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
