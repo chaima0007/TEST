@@ -1,0 +1,47 @@
+{
+  "module": "bail_etudiant",
+  "titre": "Logement étudiant (kot) — bail & droits",
+  "domaine": "Logement étudiant",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret wallon du 15 mars 2018 relatif au bail d'habitation (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017 (bail étudiant)",
+    "portee": "Règles propres au bail étudiant : durée, garantie, résiliation",
+    "source_officielle": "https://logement.wallonie.be/fr/bail/le-bail-etudiant"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles de bail dépendent de la Région où se trouve le kot (Wallonie, Bruxelles, Flandre) ; vérifiez la règle locale.",
+  "faits": [
+    {
+      "id": "KOT-DUREE-001",
+      "question": "Combien de temps dure un bail étudiant et quelle garantie peut-on me demander ?",
+      "reponse": "Le bail étudiant a en principe une durée d'un an (une durée plus courte, ex. 10 mois, est possible). Il prend fin à l'échéance sans préavis ; si vous restez avec l'accord du propriétaire, il est prolongé aux mêmes conditions. La garantie locative ne peut pas dépasser deux mois de loyer. En cas de difficulté à constituer la garantie, des aides existent (en Wallonie, un prêt à taux zéro de la Société wallonne du Crédit social, sous conditions).",
+      "reference_legale": "Décret wallon du 15 mars 2018 relatif au bail d'habitation (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017",
+      "contacts": [
+        {"nom": "Service logement de votre Région", "pour": "règles du bail étudiant"},
+        {"nom": "Infor Jeunes", "lien": "https://www.jeminforme.be", "pour": "aide et information kot"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/le-bail-etudiant", "intitule": "Wallonie — Le bail étudiant"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/te-loger/kots-et-bail-etudiant-des-regles-specifiques/", "intitule": "Bruxelles-J — Kots et bail étudiant"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "KOT-RESILIATION-001",
+      "question": "Puis-je quitter mon kot avant la fin du bail ?",
+      "reponse": "Oui, le bail étudiant peut être résilié avant l'échéance, mais les conditions diffèrent selon la Région. À Bruxelles, vous pouvez résilier à tout moment avec un préavis de deux mois (par recommandé) sans indemnité. En Wallonie, vous pouvez résilier jusqu'au 15 mars avec un préavis de deux mois et, sauf exceptions, une indemnité d'environ trois mois de loyer ; aucune indemnité n'est due dans certains cas (refus d'inscription/abandon d'études justifié, cession de bail acceptée, décès d'un parent). Envoyez toujours votre préavis par écrit recommandé.",
+      "reference_legale": "Décret wallon du 15 mars 2018 (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017 (bail étudiant)",
+      "alerte_delai": "Le préavis (en général deux mois) doit être envoyé par lettre recommandée ; en Wallonie, la résiliation est possible jusqu'au 15 mars.",
+      "contacts": [
+        {"nom": "Service logement de votre Région", "pour": "vérifier préavis et indemnité"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/le-bail-etudiant", "intitule": "Wallonie — Le bail étudiant"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be/louer-un-kot-etudiant-a-bruxelles/", "intitule": "Infor Jeunes — Louer un kot à Bruxelles"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

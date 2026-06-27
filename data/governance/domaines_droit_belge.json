@@ -533,6 +533,24 @@
         "mediation_conflits"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "premier_emploi",
+      "nom": "Jeunes & premier emploi",
+      "statut": "couvert",
+      "modules": [
+        "premier_emploi"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "bail_etudiant",
+      "nom": "Logement étudiant",
+      "statut": "couvert",
+      "modules": [
+        "bail_etudiant"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

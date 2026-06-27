@@ -1,0 +1,47 @@
+{
+  "module": "premier_emploi",
+  "titre": "Jeunes — premier emploi & stage d'insertion",
+  "domaine": "Jeunes & premier emploi",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (stage et allocations d'insertion)",
+    "portee": "Démarches après les études, stage d'insertion et allocations d'insertion",
+    "source_officielle": "https://www.onem.be/citoyens"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles d'insertion (durées, âge, conditions) ont été réformées récemment ; vérifiez les modalités en vigueur auprès de l'ONEM et de votre service régional de l'emploi.",
+  "faits": [
+    {
+      "id": "JEUNE-INSCRIPTION-001",
+      "question": "Je viens de finir mes études : quelle est la première chose à faire ?",
+      "reponse": "Inscrivez-vous sans tarder comme demandeur d'emploi auprès de votre service régional (Forem en Wallonie, Actiris à Bruxelles, VDAB en Flandre, ADG en communauté germanophone). C'est le point de départ du « stage d'insertion professionnelle » : une période d'attente pendant laquelle vous cherchez activement du travail. Votre recherche est évaluée ; un résultat positif est nécessaire pour ouvrir, plus tard, un éventuel droit aux allocations d'insertion. Vous inscrire tôt, c'est faire courir le compteur au plus vite.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (stage d'insertion)",
+      "contacts": [
+        {"nom": "Forem / Actiris / VDAB / ADG", "pour": "inscription comme demandeur d'emploi"},
+        {"nom": "Infor Jeunes", "lien": "https://www.jeminforme.be", "pour": "accompagnement des jeunes"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens", "intitule": "ONEM — Citoyens"},
+        {"type": "officiel", "url": "https://www.leforem.be/citoyens/allocations-insertion-et-chomage.html", "intitule": "Le Forem — Allocations d'insertion et chômage"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "JEUNE-ALLOCATION-001",
+      "question": "Ai-je droit à une allocation après mes études ?",
+      "reponse": "Peut-être : ce sont les « allocations d'insertion ». Pour y prétendre, il faut notamment avoir terminé son stage d'insertion (période d'attente), avoir obtenu des évaluations positives de sa recherche d'emploi, et respecter une condition d'âge (en principe avoir moins de 25 ans au moment de la demande, avec des exceptions). La durée et les conditions ont été modifiées par des réformes récentes : vérifiez précisément auprès de l'ONEM ou de votre organisme de paiement (syndicat ou CAPAC) ce qui s'applique à votre situation.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (allocations d'insertion)",
+      "contacts": [
+        {"nom": "Organisme de paiement (syndicat ou CAPAC)", "pour": "demande d'allocations d'insertion"},
+        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "conditions et durée en vigueur"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/page/avez-vous-droit-aux-allocations-apres-des-etudes-allocations-d-insertion-et-pendant-combien-de-temps", "intitule": "ONEM — Allocations d'insertion après les études"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be/allocations-d-insertion-professionnelle/", "intitule": "Infor Jeunes — Allocations d'insertion"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

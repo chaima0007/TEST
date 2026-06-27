@@ -14,7 +14,8 @@
         "aide_urgence",
         "enseignement",
         "violences_conjugales",
-        "burnout_bienetre"
+        "burnout_bienetre",
+        "premier_emploi"
       ]
     },
     "adultes": {
@@ -73,7 +74,9 @@
         "adoption",
         "fin_de_vie",
         "recours_administration",
-        "mediation_conflits"
+        "mediation_conflits",
+        "premier_emploi",
+        "bail_etudiant"
       ]
     }
   }
