@@ -231,6 +231,12 @@
       "nom": "Supervision des agents",
       "regle": "Contrôler régulièrement TOUS les agents (compilation + exécution des contrôleurs clés). Contrôle des contrôleurs, en plus des protocoles. Tout agent cassé est signalé et corrigé avant livraison.",
       "verif": "python3 scripts/agents_healthcheck.py"
+    },
+    {
+      "id": "P-PREDICTION",
+      "nom": "Anticipation (agent prédictif)",
+      "regle": "Anticiper par règles et signaux: maintenance prédictive (revoir avant péremption), changements de loi attendus, prochains domaines, pics saisonniers. Pas de divination; préparer AVANT la demande.",
+      "verif": "python3 scripts/agent_predictif.py"
     }
   ]
 }
