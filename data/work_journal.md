@@ -1,14 +1,17 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 2950 réalisations concrètes enregistrées
+### 📌 Total : 2953 réalisations concrètes enregistrées
 
 
 ## 2026-06-27
-**2 réalisations** · de **00:28** à **10:00** (fenêtre de travail : 9h32)
+**5 réalisations** · de **00:28** à **11:44** (fenêtre de travail : 11h16)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
+- 🕒 10:03 — nouveau module sourcé accès à la justice (+4 faits)
+- 🕒 11:42 — +3 faits (convocation tribunal, consultation dossier, amende routière)
+- 🕒 11:44 — couche d'expertise de direction + protocole comité de direction
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)

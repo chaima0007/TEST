@@ -171,6 +171,12 @@
       "nom": "Comité de direction",
       "regle": "Couche de pilotage : 5 rôles de direction (juridique, qualité, produit, stratégie, éthique), tous SOUMIS à tous les protocoles. Aucun rôle au-dessus des protocoles. Décision finale = Chaima Mhadbi.",
       "verif": "python3 scripts/direction_committee_protocol.py"
+    },
+    {
+      "id": "P-RESILIENCE",
+      "nom": "Résilience & incidents",
+      "regle": "Chaque problème est enregistré (data/governance/incidents.json) avec cause, solution, comment y arriver, protocole. Un agent simule les incidents connus et vérifie que les défenses tiennent. Auto-sync au boot. Commit/push fréquents.",
+      "verif": "python3 scripts/resilience_simulator.py"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 44,
+    "total_savoirs": 47,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -345,6 +345,39 @@
       "reference_legale": "Code d'instruction criminelle (déclaration de personne lésée, constitution de partie civile) ; droits des victimes",
       "sources": 2,
       "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "justice_penal_acces",
+      "id": "JUST-CONVOC-001",
+      "sujet": "Je suis convoqué(e) (cité(e)) devant le tribunal : que dois-je faire ?",
+      "reference_legale": "Code d'instruction criminelle (citation à comparaître) ; Code judiciaire (assistance judiciaire)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "justice_penal_acces",
+      "id": "JUST-DOSSIER-001",
+      "sujet": "Ai-je le droit de consulter le dossier de mon affaire avant l'audience ?",
+      "reference_legale": "Code d'instruction criminelle — accès au dossier / droits de la défense",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "justice_penal_acces",
+      "id": "JUST-AMENDE-001",
+      "sujet": "Comment fonctionne une amende routière : perception immédiate, transaction, ordre de paiement ?",
+      "reference_legale": "Loi relative à la police de la circulation routière (perception immédiate, transaction, ordre de paiement) ; Code d'instruction criminelle",
+      "sources": 2,
+      "sources_officielles": 2,
       "date_verification": "2026-06-26",
       "valide": true
     },

@@ -31,8 +31,17 @@ CHAMPS_MODULE_REQUIS = ("module", "titre", "juridiction", "base_legale_principal
 
 
 def _today():
-    # Date injectée pour rester déterministe en environnement de reprise.
-    return date(2026, 6, 26)
+    # Utilise l'horloge réelle de la machine (et non une date figée, qui
+    # bloquait à tort les faits datés du jour). Robuste aux reprises.
+    try:
+        return date.today()
+    except Exception:
+        return date(2026, 6, 26)
+
+
+# Tolérance (jours) absorbant tout décalage de fuseau/horloge entre la
+# rédaction du contenu et l'horloge machine : évite les faux « date future ».
+GRACE_FUTUR_JOURS = 2
 
 
 def _parse_date(s):
@@ -93,7 +102,7 @@ def verifier_module(chemin, max_age_days):
             erreurs.append(f"{nom}/{fid}: date_verification absente ou invalide")
         else:
             age = (_today() - dv).days
-            if age < 0:
+            if age < -GRACE_FUTUR_JOURS:
                 erreurs.append(f"{nom}/{fid}: date_verification dans le futur")
             elif age > max_age_days:
                 alertes.append(f"{nom}/{fid}: revue ancienne ({age} j > {max_age_days} j) — à re-sourcer")

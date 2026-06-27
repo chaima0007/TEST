@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **44**
+- Savoirs enregistrés : **47**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `f56b0b8699cf126f…`)
+- Certification système : **PASS** (sceau `aed2e277c154ba69…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -70,6 +70,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code d'instruction criminelle, art. 47bis (droits de la personne auditionnée — « loi Salduz ») · sources off. : 1 · revu : 2026-06-26
 - ✅ **Je suis victime d'une infraction : comment intervenir dans la procédure pénale ?**  
   Réf : Code d'instruction criminelle (déclaration de personne lésée, constitution de partie civile) ; droits des victimes · sources off. : 1 · revu : 2026-06-26
+- ✅ **Je suis convoqué(e) (cité(e)) devant le tribunal : que dois-je faire ?**  
+  Réf : Code d'instruction criminelle (citation à comparaître) ; Code judiciaire (assistance judiciaire) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Ai-je le droit de consulter le dossier de mon affaire avant l'audience ?**  
+  Réf : Code d'instruction criminelle — accès au dossier / droits de la défense · sources off. : 1 · revu : 2026-06-26
+- ✅ **Comment fonctionne une amende routière : perception immédiate, transaction, ordre de paiement ?**  
+  Réf : Loi relative à la police de la circulation routière (perception immédiate, transaction, ordre de paiement) ; Code d'instruction criminelle · sources off. : 2 · revu : 2026-06-26
 - ✅ **Qu'est-ce que le règlement collectif de dettes et où le demander ?**  
   Réf : Code judiciaire, art. 1675/2 et suivants · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les conditions pour accéder au RCD ?**  
