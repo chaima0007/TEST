@@ -2,7 +2,7 @@
 
 import { competitors } from "@/lib/data";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 const featureNames = [
   "Intelligence Artificielle",
@@ -99,33 +99,22 @@ export default function ComparePage() {
     });
   }
 
-  const selected = useMemo(
-    () => competitors.filter((c) => selectedIds.includes(c.id)),
-    [selectedIds]
-  );
+  const selected = competitors.filter((c) => selectedIds.includes(c.id));
 
-  const scores = useMemo(
-    () =>
-      selected
+  const scores = selected
         .map((c) => ({ id: c.id, name: c.name, color: c.color, score: getCompetitorScore(c) }))
-        .sort((a, b) => b.score - a.score),
-    [selected]
-  );
+        .sort((a, b) => b.score - a.score);
 
   const bestId = scores[0]?.id ?? null;
-  const aiInsight = useMemo(() => generateAIInsight(selected), [selected]);
+  const aiInsight = generateAIInsight(selected);
 
-  const featureAvailableCounts = useMemo(
-    () =>
-      featureNames.map((featureName) => ({
+  const featureAvailableCounts = featureNames.map((featureName) => ({
         name: featureName,
         count: selected.filter((c) => {
           const f = getFeatureForCompetitor(c, featureName);
           return f?.available ?? false;
         }).length,
-      })),
-    [selected]
-  );
+      }));
 
   return (
     <div className="space-y-8">

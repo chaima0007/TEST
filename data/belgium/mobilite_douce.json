@@ -1,0 +1,59 @@
+{
+  "module": "mobilite_douce",
+  "titre": "Vélo & trottinette — règles et assurance",
+  "domaine": "Mobilité douce",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 1er décembre 1975 portant règlement général sur la police de la circulation routière (Code de la route) — engins de déplacement",
+    "portee": "Règles d'usage du vélo et de la trottinette électrique, âge, assurance",
+    "source_officielle": "https://mobilit.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le Code de la route évolue régulièrement pour les engins de déplacement (âge, casque, vitesse) ; vérifiez la règle en vigueur auprès du SPF Mobilité ou de votre commune avant de circuler.",
+  "faits": [
+    {
+      "id": "MOB-TROT-AGE-001",
+      "question": "À partir de quel âge peut-on rouler en trottinette électrique ?",
+      "reponse": "La règle de base fixe un âge minimum pour conduire un engin de déplacement motorisé (comme la trottinette électrique) sur la voie publique. Cet âge a été relevé ces dernières années. Comme cette règle a changé récemment, vérifiez l'âge exact en vigueur auprès du SPF Mobilité avant de laisser un mineur circuler. Les utilisateurs de trottinette motorisée sont assimilés aux cyclistes : ils suivent les mêmes règles du code de la route.",
+      "reference_legale": "Arrêté royal du 1er décembre 1975 (Code de la route) — engins de déplacement motorisés",
+      "contacts": [
+        {"nom": "SPF Mobilité et Transports", "lien": "https://mobilit.belgium.be/fr", "pour": "règles en vigueur, âge, équipement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité et Transports"},
+        {"type": "secondaire", "url": "https://www.uvcw.be/mobilite/articles/art-7648", "intitule": "UVCW — Code de la route et engins de déplacement"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "MOB-TROT-OU-001",
+      "question": "Où ai-je le droit de rouler en trottinette électrique ?",
+      "reponse": "Comme un cycliste : vous devez en principe circuler sur la piste cyclable lorsqu'elle est praticable, sinon sur la chaussée. Rouler sur le trottoir est interdit (sauf si vous roulez à l'allure du pas dans certains cas prévus). Le transport d'un passager est interdit si l'engin n'est pas conçu pour plusieurs personnes. Respectez la vitesse maximale prévue pour ces engins (limitée par construction).",
+      "reference_legale": "Arrêté royal du 1er décembre 1975 (Code de la route) — usagers assimilés aux cyclistes",
+      "contacts": [
+        {"nom": "Police locale", "numero": "101", "pour": "infraction, accident (urgence : 112)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité et Transports"},
+        {"type": "secondaire", "url": "https://www.traxio.be/fr/articles/quelles-regles-pour-les-trottinettes-electriques-et-autres-engins-de-deplacement", "intitule": "Traxio — Règles engins de déplacement"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "MOB-TROT-ASSUR-001",
+      "question": "Faut-il une assurance pour ma trottinette électrique ?",
+      "reponse": "Cela dépend de l'engin. Pour une trottinette « standard » (bridée à la vitesse réglementaire), l'assurance responsabilité civile n'est en principe pas obligatoire, mais elle est fortement recommandée ; votre assurance familiale (RC vie privée) peut couvrir certains dommages. En revanche, un engin plus rapide ou plus lourd que les seuils légaux est considéré autrement et une assurance RC spécifique devient obligatoire. Vérifiez les seuils en vigueur et votre contrat avant de rouler.",
+      "reference_legale": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs",
+      "contacts": [
+        {"nom": "Votre assureur", "pour": "RC vie privée / familiale, RC spécifique"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.assuralia.be/fr/article/check-list-sur-la-trottinette-electrique", "intitule": "Assuralia — Check-list trottinette électrique"},
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité et Transports"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "module": "fraude_arnaques",
+  "titre": "Arnaques & fraude en ligne — réagir vite",
+  "domaine": "Fraude & sécurité numérique",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code pénal — escroquerie (art. 496) et fraude informatique (art. 504quater) ; Code de droit économique (pratiques commerciales déloyales)",
+    "portee": "Reconnaître, signaler et limiter les dégâts d'une arnaque ou d'un phishing",
+    "source_officielle": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/stop-arnaques"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En cas de fraude bancaire, chaque minute compte : bloquez vos cartes d'abord, signalez ensuite.",
+  "faits": [
+    {
+      "id": "FRAUDE-VICTIME-001",
+      "question": "J'ai été victime d'une arnaque (paiement, données envoyées). Que faire en urgence ?",
+      "reponse": "Agissez dans l'ordre. 1) Si vous avez communiqué des données bancaires ou si de l'argent disparaît : appelez immédiatement Card Stop au 078 170 170 pour bloquer vos cartes, et prévenez votre banque. 2) Portez plainte à la police (procès-verbal utile pour la banque et l'assurance). 3) Signalez l'arnaque au SPF Économie (Point de contact) pour que d'autres soient protégés. Ne renvoyez plus rien à l'escroc et conservez toutes les preuves (messages, captures, références de paiement).",
+      "reference_legale": "Code pénal — escroquerie (art. 496) et fraude informatique (art. 504quater)",
+      "alerte_delai": "Bloquez vos cartes via Card Stop (078 170 170) immédiatement, avant toute autre démarche.",
+      "contacts": [
+        {"nom": "Card Stop", "numero": "078 170 170", "pour": "bloquer cartes bancaires (24h/24)"},
+        {"nom": "Police locale", "numero": "101", "pour": "porter plainte (urgence : 112)"},
+        {"nom": "SPF Économie — Point de contact", "lien": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/stop-arnaques", "pour": "signaler l'arnaque"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/stop-arnaques/victime-dune-arnaque-que-faire", "intitule": "SPF Économie — Victime d'une arnaque, que faire ?"},
+        {"type": "officiel", "url": "https://safeonweb.be/fr", "intitule": "Safeonweb (Centre pour la Cybersécurité Belgique)"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "FRAUDE-PHISHING-001",
+      "question": "J'ai reçu un message suspect (banque, livraison, administration). Comment réagir ?",
+      "reponse": "C'est probablement du phishing : un faux message qui imite un organisme connu pour vous voler vos codes ou votre argent. Ne cliquez sur aucun lien, n'ouvrez pas les pièces jointes, ne communiquez jamais vos codes (une vraie banque ou administration ne les demande jamais ainsi). Transférez le message suspect à suspect@safeonweb.be (le Centre pour la Cybersécurité le neutralise), puis supprimez-le. Dans le doute, contactez l'organisme via son numéro officiel, jamais celui du message.",
+      "reference_legale": "Code pénal — fraude informatique (art. 504quater) et faux informatique (art. 210bis)",
+      "contacts": [
+        {"nom": "Safeonweb — suspect@safeonweb.be", "lien": "https://safeonweb.be/fr", "pour": "transférer un message de phishing"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://safeonweb.be/fr", "intitule": "Safeonweb — Signaler un message suspect"},
+        {"type": "officiel", "url": "https://ccb.belgium.be", "intitule": "Centre pour la Cybersécurité Belgique (CCB)"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

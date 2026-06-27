@@ -1,0 +1,46 @@
+{
+  "module": "mediation_conflits",
+  "titre": "Médiation & règlement amiable des conflits",
+  "domaine": "Règlement des conflits",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code judiciaire — médiation (art. 1723 et suivants) et conciliation devant le juge de paix",
+    "portee": "Résoudre un litige à l'amiable, sans procès long et coûteux",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/mediation"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La médiation est volontaire ; un médiateur agréé ou le juge de paix peut vous accompagner.",
+  "faits": [
+    {
+      "id": "MED-MEDIATION-001",
+      "question": "Comment régler un conflit sans aller au procès ?",
+      "reponse": "La médiation permet de résoudre un litige (famille, voisinage, location, affaires) avec l'aide d'un médiateur agréé, neutre et impartial. C'est volontaire : les parties cherchent ensemble une solution et signent un protocole. Si un accord est trouvé, il peut être homologué par le juge, ce qui lui donne la même force qu'un jugement. La médiation est souvent plus rapide, moins coûteuse et moins conflictuelle qu'un procès, et préserve mieux les relations.",
+      "reference_legale": "Code judiciaire — médiation (art. 1723 et suivants)",
+      "contacts": [
+        {"nom": "Médiateur agréé", "lien": "https://www.cfm-fbc.be", "pour": "médiation civile, familiale, commerciale"},
+        {"nom": "SPF Justice", "lien": "https://justice.belgium.be/fr/themes_et_dossiers/mediation", "pour": "information sur la médiation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/mediation", "intitule": "SPF Justice — Médiation"},
+        {"type": "officiel", "url": "https://www.rechtbanken-tribunaux.be/fr/procedures-dans-les-tribunaux/mediation", "intitule": "Cours & Tribunaux — Médiation"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "MED-CONCILIATION-001",
+      "question": "C'est quoi la conciliation devant le juge de paix ?",
+      "reponse": "La conciliation est une tentative d'accord à l'amiable organisée gratuitement devant le juge de paix, avant ou à la place d'un procès. Elle est facultative, rapide, sans frais administratifs et ne nécessite pas d'avocat. Le juge tente de rapprocher les points de vue ; si un accord est trouvé, il est acté dans un procès-verbal qui a valeur exécutoire. C'est une excellente première étape pour les conflits du quotidien (voisinage, petites dettes, location).",
+      "reference_legale": "Code judiciaire — conciliation (art. 731 et suivants)",
+      "contacts": [
+        {"nom": "Justice de paix de votre canton", "lien": "https://www.tribunaux-rechtbanken.be/fr/le-systeme-judiciaire-belge/justice-de-paix", "pour": "demande de conciliation (gratuit)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.cfm-fbc.be/fr/content/conciliation-devant-le-juge", "intitule": "Commission fédérale de médiation — Conciliation devant le juge"},
+        {"type": "officiel", "url": "https://www.tribunaux-rechtbanken.be/fr/le-systeme-judiciaire-belge/justice-de-paix", "intitule": "Cours & Tribunaux — Justice de paix"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

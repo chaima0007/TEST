@@ -1,0 +1,72 @@
+{
+  "module": "successions",
+  "titre": "Successions & héritage — accepter, renoncer, délais",
+  "domaine": "Successions",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Droit des successions (Code civil) ; droits de succession (régionaux) — déclaration via SPF Finances et notaire",
+    "portee": "Que faire après un décès : options de l'héritier, délais, droits de succession",
+    "source_officielle": "https://www.belgium.be/fr/famille/deces/heritage"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les droits de succession (taux) dépendent de la Région : vérifiez auprès du SPF Finances / de votre Région. Un notaire vous accompagne pour les démarches.",
+  "faits": [
+    {
+      "id": "SUCC-OPTIONS-001",
+      "question": "Suis-je obligé d'accepter un héritage ?",
+      "reponse": "Non. Personne n'est obligé d'accepter une succession. Vous avez trois options : l'acceptation pure et simple (vous recevez l'actif mais aussi toutes les dettes), l'acceptation sous bénéfice d'inventaire (vous ne payez les dettes que dans la limite de ce que vous recevez — utile si vous craignez des dettes), ou la renonciation (vous n'êtes plus héritier et ne supportez pas les dettes, sauf en principe les frais funéraires).",
+      "reference_legale": "Code civil — options de l'héritier (acceptation, bénéfice d'inventaire, renonciation)",
+      "contacts": [
+        {"nom": "Notaire", "pour": "vous conseiller et acter votre choix"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage"},
+        {"type": "secondaire", "url": "https://www.notaire.be/heritage-et-donations/heritage/procedure-apres-deces/accepter-ou-renoncer-une-succession", "intitule": "Notaire.be — Accepter ou renoncer"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SUCC-DETTES-001",
+      "question": "J'ai peur que l'héritage contienne des dettes : que faire ?",
+      "reponse": "Si vous craignez que les dettes dépassent l'actif, n'acceptez pas « purement et simplement ». Choisissez plutôt l'acceptation sous bénéfice d'inventaire (vous êtes protégé : les dettes ne sont payées que jusqu'à hauteur de ce que vous héritez) ou la renonciation (vous n'êtes plus tenu des dettes). Attention : certains gestes (utiliser/vendre des biens du défunt) peuvent valoir acceptation tacite — soyez prudent et demandez conseil avant d'agir.",
+      "reference_legale": "Code civil — bénéfice d'inventaire et renonciation",
+      "contacts": [
+        {"nom": "Notaire", "pour": "sécuriser votre choix avant tout geste"}
+      ],
+      "alerte_delai": "Ne touchez pas aux biens du défunt avant d'avoir décidé : un geste peut valoir acceptation des dettes.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage"},
+        {"type": "secondaire", "url": "https://www.notaire.be/heritage-et-donations/heritage/procedure-apres-deces/accepter-ou-renoncer-une-succession/accepter-une-succession-sous-benefice-dinventaire", "intitule": "Notaire.be — Bénéfice d'inventaire"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SUCC-DELAIS-001",
+      "question": "Quels délais pour la déclaration et les droits de succession ?",
+      "reponse": "Quand le décès a lieu en Belgique, la déclaration de succession doit en principe être déposée dans les 4 mois du décès, et les droits de succession payés dans les 6 mois. Les taux des droits de succession dépendent de la Région (Wallonie, Bruxelles, Flandre) et du lien de parenté. Pour accepter ou renoncer, le délai est en théorie très long, mais mieux vaut ne pas trop attendre.",
+      "reference_legale": "Code des droits de succession (régionalisé) ; délais de déclaration et de paiement",
+      "alerte_delai": "Délais courts : déclaration ~4 mois, paiement ~6 mois après le décès. Anticipez avec le notaire.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage / succession"},
+        {"type": "secondaire", "url": "https://www.notaire.be/faq/heritage/de-combien-de-temps-disposons-nous-pour-payer-les-droits-de-succession", "intitule": "Notaire.be — Délais des droits de succession"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SUCC-RENONCER-001",
+      "question": "Comment renoncer concrètement à une succession ?",
+      "reponse": "La renonciation se fait par une déclaration devant le notaire de votre choix, sous la forme d'un acte authentique ; elle est ensuite publiée au Moniteur belge dans les 15 jours. Une fois la renonciation signée, vous perdez la qualité d'héritier et n'êtes plus tenu des dettes (hors frais funéraires en principe). Cette démarche est désormais accessible et fréquente.",
+      "reference_legale": "Code civil — acte de renonciation à succession",
+      "contacts": [
+        {"nom": "Notaire", "pour": "acter la renonciation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage"},
+        {"type": "secondaire", "url": "https://www.notaire.be/heritage-et-donations/heritage/procedure-apres-deces/accepter-ou-renoncer-une-succession/renoncer-une-succession", "intitule": "Notaire.be — Renoncer à une succession"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

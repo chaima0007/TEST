@@ -1,0 +1,29 @@
+{
+  "registre": "Évaluation — toutes les circonstances de vie",
+  "but": "Évaluer TOUT ce qui peut aider une personne, dans n'importe quelle situation, et voir ce qui est couvert ou à construire. Objectif : un site complet.",
+  "date": "2026-06-26",
+  "circonstances": [
+    {"situation": "Se loger / problème de bail / expulsion", "domaine": "Logement & bail", "statut": "couvert"},
+    {"situation": "Dettes / saisie / surendettement", "domaine": "Surendettement", "statut": "couvert"},
+    {"situation": "Perdre son emploi / salaire impayé / chômage", "domaine": "Travail & emploi", "statut": "couvert"},
+    {"situation": "Séparation / divorce / garde / pension", "domaine": "Famille", "statut": "couvert"},
+    {"situation": "Affaire pénale / avocat / casier / être victime", "domaine": "Justice & pénal", "statut": "couvert"},
+    {"situation": "Violences / harcèlement (enfant & adulte)", "domaine": "Harcèlement & violences", "statut": "couvert"},
+    {"situation": "Drogues / addiction / prévention", "domaine": "Drogues & prévention", "statut": "couvert"},
+    {"situation": "Citoyenneté / vote / papiers", "domaine": "Citoyenneté & Vote", "statut": "couvert"},
+    {"situation": "Aider un proche dépendant", "domaine": "Aidants proches", "statut": "couvert"},
+    {"situation": "Aide sociale / revenu d'intégration / CPAS", "domaine": "Aide sociale & CPAS", "statut": "a_venir", "priorite": "haute"},
+    {"situation": "Achats / arnaques / garanties / crédit conso", "domaine": "Consommation", "statut": "a_venir", "priorite": "haute"},
+    {"situation": "Santé / droits du patient / hôpital", "domaine": "Santé & patient", "statut": "a_venir", "priorite": "haute"},
+    {"situation": "Handicap / reconnaissance / allocations", "domaine": "Handicap", "statut": "a_venir", "priorite": "haute"},
+    {"situation": "Séjour / asile / nationalité (étrangers)", "domaine": "Étrangers & séjour", "statut": "a_venir", "priorite": "moyenne"},
+    {"situation": "Vie privée / données personnelles (RGPD)", "domaine": "Vie privée & données", "statut": "a_venir", "priorite": "moyenne"},
+    {"situation": "École / inscription / harcèlement scolaire", "domaine": "Enseignement", "statut": "partiel", "priorite": "moyenne"},
+    {"situation": "Voiture / amendes / accident de la route", "domaine": "Circulation routière", "statut": "partiel", "priorite": "moyenne"},
+    {"situation": "Décès / héritage / funérailles", "domaine": "Successions", "statut": "a_venir", "priorite": "moyenne"},
+    {"situation": "Voisinage / nuisances / mitoyenneté", "domaine": "Voisinage", "statut": "a_venir", "priorite": "basse"},
+    {"situation": "Animaux / responsabilité / bien-être animal", "domaine": "Animaux", "statut": "a_venir", "priorite": "basse"},
+    {"situation": "Énergie / PEB / factures", "domaine": "Énergie", "statut": "partiel", "priorite": "moyenne"},
+    {"situation": "Créer / gérer une entreprise / indépendant", "domaine": "Entreprise & indépendants", "statut": "a_venir", "priorite": "moyenne"}
+  ]
+}

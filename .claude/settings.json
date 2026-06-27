@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/setup-hooks.sh 2>/dev/null || true",
+            "statusMessage": "Activation du garde anti-collision de branche…"
+          }
+        ]
+      }
+    ]
+  }
+}

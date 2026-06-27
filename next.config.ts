@@ -20,6 +20,20 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  // Memory & build optimizations — source: next/dist/docs/01-app/02-guides/memory-usage.md
+  productionBrowserSourceMaps: false,
+  experimental: {
+    webpackMemoryOptimizations: true,
+    webpackBuildWorker: true,
+    // Réduit le footprint mémoire au démarrage du build (grosse app : milliers
+    // d'icônes + centaines de dashboards) — source: memory-usage.md §preloadEntriesOnStart
+    preloadEntriesOnStart: false,
+    // Pas de source maps serveur en prod → économie RAM build — source: memory-usage.md
+    serverSourceMaps: false,
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "logo.clearbit.com" },

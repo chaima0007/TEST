@@ -1,0 +1,83 @@
+{
+  "module": "job_etudiant",
+  "titre": "Job étudiant — contrat, quota d'heures, cotisations réduites",
+  "domaine": "Job étudiant",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 3 juillet 1978 relative aux contrats de travail (contrat d'occupation d'étudiant) ; réglementation ONSS (cotisations de solidarité)",
+    "portee": "Travail des étudiants en Belgique",
+    "source_officielle": "https://www.belgium.be/fr/emploi/recherche_d_emploi/job_etudiant"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le quota d'heures est indexé/modifié dans le temps : vérifiez le nombre exact et votre solde sur student@work.",
+  "faits": [
+    {
+      "id": "ETU-CONTRAT-001",
+      "question": "Faut-il un contrat pour un job étudiant ?",
+      "reponse": "Oui. L'employeur doit conclure avec vous un contrat d'occupation d'étudiant, par écrit et à durée déterminée, en deux exemplaires (un pour vous, un pour l'employeur). Exigez votre exemplaire et lisez-le (horaires, rémunération, fonction). C'est votre protection.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail — contrat d'occupation d'étudiant",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/contrats-de-travail-particuliers/contrat-doccupation-detudiants",
+          "intitule": "SPF Emploi — Contrat d'occupation d'étudiants"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/emploi/recherche_d_emploi/job_etudiant",
+          "intitule": "Belgium.be — Job étudiant"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ETU-QUOTA-001",
+      "question": "Combien d'heures puis-je travailler à cotisations réduites ?",
+      "reponse": "Comme étudiant, vous bénéficiez d'un quota annuel d'heures (650 heures par an depuis 2025) pour lesquelles vous payez des cotisations sociales réduites (cotisation de solidarité) au lieu des cotisations normales. Au-delà du quota, vous payez les cotisations ordinaires. Le compteur repart chaque 1er janvier. Vérifiez votre solde d'heures sur la plateforme student@work avant d'accepter des heures.",
+      "reference_legale": "Arrêté royal du 28 novembre 1969 (exécution ONSS) — cotisation de solidarité sur le travail étudiant",
+      "contacts": [
+        {
+          "nom": "student@work (ONSS)",
+          "lien": "https://www.studentatwork.be/fr/",
+          "pour": "vérifier votre solde d'heures"
+        }
+      ],
+      "alerte_delai": "Surveillez votre quota : dépasser les heures fait basculer aux cotisations normales (salaire net plus bas).",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.studentatwork.be/fr/quota-heures-et-impact.html",
+          "intitule": "student@work — Quota d'heures et impact"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.socialsecurity.be/site_fr/employer/applics/studentatwork/index.htm",
+          "intitule": "ONSS — Student at work"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ETU-IMPACT-001",
+      "question": "Travailler peut-il impacter mes allocations familiales ou mon statut fiscal ?",
+      "reponse": "Oui, si vous dépassez certaines limites. Travailler beaucoup (au-delà du quota et de certains plafonds) peut avoir un impact sur les allocations familiales et sur votre statut de personne à charge fiscale de vos parents. Tant que vous restez dans les limites, en principe pas de souci. Vérifiez les seuils en vigueur (ils sont indexés) et, en cas de doute, renseignez-vous avant d'accumuler trop d'heures/revenus.",
+      "reference_legale": "Réglementation sur les allocations familiales et le Code des impôts sur les revenus (personne à charge)",
+      "alerte_delai": "Avant d'accumuler beaucoup d'heures, vérifiez les plafonds (allocations familiales / personne à charge) pour ne pas perdre un droit.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.studentatwork.be/fr/quota-heures-et-impact.html",
+          "intitule": "student@work — Impact (allocations, fiscalité)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/quest-ce-que-le-travail-etudiant",
+          "intitule": "Droits Quotidiens — Le travail étudiant"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

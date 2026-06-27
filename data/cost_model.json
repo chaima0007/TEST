@@ -1,0 +1,24 @@
+{
+  "modele": "Coût d'infrastructure par plateforme",
+  "but": "Suivre le coût réel par plateforme pour éviter les mauvaises surprises et anticiper la scalabilité. À COMPLÉTER avec les VRAIES factures (aucun montant n'est inventé).",
+  "devise": "EUR",
+  "periode": "mensuel",
+  "avertissement": "Les montants sont à null tant que les vrais chiffres des fournisseurs (hébergement, base de données, domaine, e-mail, API IA) ne sont pas renseignés par Chaima. Le monitor signale les postes non renseignés au lieu d'inventer.",
+  "plateformes": {
+    "la_loi_avec_moi": {
+      "hebergement": null,
+      "base_de_donnees": null,
+      "nom_de_domaine": null,
+      "api_ia": null,
+      "autres": null
+    },
+    "caelum": {
+      "hebergement": null,
+      "base_de_donnees": null,
+      "nom_de_domaine": null,
+      "api_ia": null,
+      "autres": null
+    }
+  },
+  "derniere_revue": "2026-06-27"
+}

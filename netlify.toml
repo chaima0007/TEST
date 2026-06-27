@@ -1,0 +1,12 @@
+[build]
+  command = "npx prisma generate && npm run build"
+  publish = ".next"
+  # Annule le build si seuls les moteurs Python / scripts / docs ont changé
+  # (ils ne font pas partie du site déployé) → économise les crédits Netlify.
+  ignore = "bash scripts/netlify-ignore-build.sh"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--max-old-space-size=1536"
+  NEXT_TELEMETRY_DISABLED = "1"
+  PRISMA_GENERATE_SKIP_AUTOINSTALL = "true"

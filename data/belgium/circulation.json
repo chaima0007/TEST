@@ -1,0 +1,113 @@
+{
+  "module": "circulation",
+  "titre": "Circulation routière — accident, constat, permis",
+  "domaine": "Circulation routière",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Réglementation de la circulation routière ; loi sur la police de la circulation routière (constat, permis, déchéance)",
+    "portee": "Que faire en cas d'accident, le constat, le permis de conduire",
+    "source_officielle": "https://mobilit.belgium.be/fr/route"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En cas d'accident avec blessés, appelez le 112. Pour les amendes routières, voir aussi la catégorie « Justice & pénal ».",
+  "faits": [
+    {
+      "id": "CIRC-ACCIDENT-001",
+      "question": "J'ai un accident de la route : que dois-je faire ?",
+      "reponse": "S'il y a des blessés ou des dégâts importants, appelez toujours la police (101) — et le 112 en cas de blessés. S'il n'y a pas de blessé et que vous êtes d'accord sur les circonstances, remplissez un constat européen (« constat à l'amiable ») avec l'autre conducteur. Sécurisez d'abord les lieux (gilet, triangle) et notez un maximum d'informations (plaques, témoins, photos).",
+      "reference_legale": "Arrêté royal du 1er décembre 1975 portant règlement général sur la police de la circulation routière (code de la route)",
+      "contacts": [
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "accident avec dégâts/désaccord"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "blessés"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5998/fr/questions/circulation/que-faire-en-cas-daccident",
+          "intitule": "Police Fédérale — Que faire en cas d'accident"
+        },
+        {
+          "type": "officiel",
+          "url": "https://mobilit.belgium.be/fr/route",
+          "intitule": "SPF Mobilité — Route"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CIRC-CONSTAT-001",
+      "question": "Le constat à l'amiable, comment ça marche ?",
+      "reponse": "Le constat européen permet de noter ensemble les circonstances de l'accident ; les assurances détermineront ensuite les responsabilités. Important : signer le constat n'est PAS une reconnaissance de responsabilité. Chaque conducteur garde un exemplaire (original ou copie) et transmet le tout à son assureur dans les 8 jours. Même en cas de désaccord, on peut remplir le constat en indiquant le désaccord.",
+      "reference_legale": "Pratique assurantielle (constat européen d'accident) ; loi sur le contrat d'assurance",
+      "alerte_delai": "Transmettez le constat à votre assureur dans les 8 jours.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5294/questions/accident-de-la-route/constat-a-lamiable-ou-police",
+          "intitule": "Police — Constat à l'amiable ou police ?"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.police.be/5293/actualites/le-constat-a-lamiable-quels-recours-en-cas-de-desaccord-par-la-suite",
+          "intitule": "Police — Constat et désaccord"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CIRC-PERMIS-001",
+      "question": "Dans quels cas peut-on perdre (déchéance) son permis de conduire ?",
+      "reponse": "La déchéance du droit de conduire fait suite à une condamnation pour une infraction de roulage ou à un accident causé par le conducteur. Prononcée comme peine, elle prend effet le 5e jour après sa notification par le ministère public. Selon les cas, la récupération du permis peut être soumise à des examens (médical, psychologique, théorique, pratique). Un avocat peut vous défendre et expliquer les conséquences exactes.",
+      "reference_legale": "Loi relative à la police de la circulation routière — déchéance du droit de conduire",
+      "contacts": [
+        {
+          "nom": "Avocat (roulage)",
+          "pour": "défense et conséquences"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://mobilit.belgium.be/fr/route/conduire/permis-de-conduire/renouveller-son-permis-de-conduire/decheance-du-droit-de-conduite",
+          "intitule": "SPF Mobilité — Déchéance du droit de conduire"
+        },
+        {
+          "type": "officiel",
+          "url": "https://mobilit.belgium.be/fr/route",
+          "intitule": "SPF Mobilité — Route"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CIRC-CROQUIS-001",
+      "question": "Comment bien dessiner (le croquis de) l'accident sur le constat ?",
+      "reponse": "Le croquis aide les assurances à comprendre ce qui s'est passé. Dessinez une vue de dessus (comme vue du ciel) : tracez les routes et leur configuration (carrefour, rond-point, sens de circulation, bandes), placez les panneaux, feux et marquages au sol. Représentez chaque véhicule par un rectangle avec sa lettre (A et B, comme dans le constat) et une flèche indiquant son sens de déplacement. Indiquez le point de choc (souvent par une croix), les noms des rues et le sens du Nord si possible. Ajoutez tout détail utile : météo, état de la route, visibilité, vitesse approximative, présence de témoins (avec coordonnées). Conseils : remplissez le constat sur place tant que les souvenirs sont frais, prenez aussi des photos (véhicules, dégâts, lieux, plaques), et ne signez que si vous êtes d'accord avec ce qui est écrit. Signer le constat ne reconnaît PAS votre responsabilité.",
+      "reference_legale": "Constat européen d'accident (pratique assurantielle) ; loi sur le contrat d'assurance",
+      "alerte_delai": "Faites le croquis et les photos sur place : après, les éléments disparaissent. Transmettez à l'assureur dans les 8 jours.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5328/actualites/quand-et-comment-rediger-un-constat-europeen-daccident-0",
+          "intitule": "Police — Quand et comment rédiger un constat européen"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5998/fr/questions/circulation/que-faire-en-cas-daccident",
+          "intitule": "Police Fédérale — Que faire en cas d'accident"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

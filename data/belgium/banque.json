@@ -1,0 +1,46 @@
+{
+  "module": "banque",
+  "titre": "Banque & compte de base",
+  "domaine": "Services bancaires",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique, livre VII — services de paiement et service bancaire de base",
+    "portee": "Droit d'avoir un compte, refus de la banque, médiation",
+    "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les conditions précises et les frais évoluent ; vérifiez auprès du SPF Économie ou de Wikifin pour votre situation.",
+  "faits": [
+    {
+      "id": "BANQ-COMPTE-BASE-001",
+      "question": "Une banque peut-elle me refuser un compte ? Ai-je droit à un compte ?",
+      "reponse": "Oui, vous avez en principe droit à un « service bancaire de base ». Toute personne résidant légalement dans l'Union européenne peut demander ce compte de base auprès d'une banque qui propose des comptes à vue aux particuliers. Il comprend un compte à vue avec carte de débit permettant dépôts, retraits, virements, ordres permanents, domiciliations et paiements par carte. La banque ne peut le refuser que dans des cas précis prévus par la loi (par exemple si vous avez déjà un tel compte ailleurs, ou en cas d'obligation anti-blanchiment).",
+      "reference_legale": "Code de droit économique, livre VII — service bancaire de base",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "service bancaire de base, refus de compte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base", "intitule": "SPF Économie — Service bancaire de base"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/economie/commerce_et_consommation/protection_du_consommateur/services_financiers/service_bancaire_de_base", "intitule": "Belgium.be — Service bancaire de base"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BANQ-LITIGE-001",
+      "question": "J'ai un litige avec ma banque, à qui m'adresser ?",
+      "reponse": "Adressez d'abord une plainte écrite au service de gestion des plaintes de votre banque. Si la réponse ne vous satisfait pas, vous pouvez saisir gratuitement Ombudsfin, le médiateur en conflits financiers, qui examine le différend de façon indépendante. Pour les questions générales sur vos droits de consommateur de services financiers, le SPF Économie informe également.",
+      "reference_legale": "Code de droit économique, livre VII et livre XVI (règlement extrajudiciaire des litiges de consommation)",
+      "contacts": [
+        {"nom": "Ombudsfin — Médiateur en conflits financiers", "lien": "https://www.ombudsfin.be", "pour": "litige avec une banque"},
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "droits du consommateur financier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base", "intitule": "SPF Économie — Services de paiement"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/compte-vue/le-service-bancaire-de-base", "intitule": "Wikifin (FSMA) — Service bancaire de base"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

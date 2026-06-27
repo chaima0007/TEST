@@ -1,0 +1,47 @@
+{
+  "module": "aide_juridique",
+  "titre": "Aide juridique — un avocat (presque) gratuit",
+  "domaine": "Accès à la justice",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code judiciaire — aide juridique de première et deuxième ligne (art. 508/1 et suivants) et assistance judiciaire",
+    "portee": "Obtenir un avocat gratuit ou peu coûteux selon ses revenus, et la prise en charge des frais de justice",
+    "source_officielle": "https://justice.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les plafonds de revenus sont réindexés chaque année ; vérifiez les montants en vigueur auprès du Bureau d'aide juridique (BAJ) ou sur justice.belgium.be.",
+  "faits": [
+    {
+      "id": "AJ-PRODEO-001",
+      "question": "Je n'ai pas les moyens de payer un avocat. Puis-je en avoir un gratuitement ?",
+      "reponse": "Oui, c'est l'aide juridique de deuxième ligne (l'ancien « pro deo »). Selon vos revenus, l'assistance d'un avocat est totalement gratuite ou partiellement gratuite (vous ne payez alors qu'une participation réduite). Certaines situations donnent accès automatiquement à la gratuité (bénéficiaire du CPAS/revenu d'intégration, mineur, demandeur d'asile, etc.). Pour les autres, c'est une question de revenus, sous un plafond réindexé chaque année. Une première information juridique gratuite (aide de première ligne) existe aussi, sans condition de revenus.",
+      "reference_legale": "Code judiciaire — aide juridique de deuxième ligne (art. 508/1 et suivants)",
+      "contacts": [
+        {"nom": "Bureau d'aide juridique (BAJ)", "lien": "https://www.rechtbanken-tribunaux.be/fr/node/2078", "pour": "désignation d'un avocat gratuit/pro deo"},
+        {"nom": "CPAS de votre commune", "pour": "attestation de situation sociale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/nouvelles/autres_communiques/aide_juridique_de_deuxieme_ligne_nouvelles_regles", "intitule": "SPF Justice — Aide juridique de deuxième ligne"},
+        {"type": "officiel", "url": "https://www.rechtbanken-tribunaux.be/fr/node/2078", "intitule": "Cours & Tribunaux — Avocat pro deo"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "AJ-DEMARCHE-001",
+      "question": "Comment obtenir cet avocat, et quels documents apporter ?",
+      "reponse": "Rendez-vous au Bureau d'aide juridique (BAJ) du tribunal de votre arrondissement (souvent au palais de justice). Apportez une preuve de votre situation : composition de ménage récente, preuve de revenus des derniers mois et dernier avertissement-extrait de rôle (impôts), ou attestation du CPAS si vous êtes aidé. Le BAJ vérifie et désigne un avocat. Pensez aussi à l'assistance judiciaire, qui peut couvrir les frais de procédure (greffe, huissier, expert) si vos revenus sont modestes.",
+      "reference_legale": "Code judiciaire — aide juridique (art. 508/1 et s.) et assistance judiciaire (art. 664 et s.)",
+      "alerte_delai": "Ne tardez pas si vous avez reçu une convocation ou un délai de recours : demandez l'aide juridique dès réception, pour que l'avocat ait le temps d'agir.",
+      "contacts": [
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "dépôt du dossier, désignation d'avocat"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Aide juridique"},
+        {"type": "secondaire", "url": "https://www.mc.be/en-marche/vos-droits/familles/beneficier-dune-aide-juridique-partiellement-gratuite", "intitule": "Mutualité chrétienne — Aide juridique (partiellement) gratuite"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

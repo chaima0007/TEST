@@ -1,0 +1,129 @@
+{
+  "module": "enseignement",
+  "titre": "École & enseignement — inscription, gratuité, obligation scolaire",
+  "domaine": "Enseignement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Droit à l'enseignement (art. 24 de la Constitution) ; réglementation de la Fédération Wallonie-Bruxelles (obligation scolaire, gratuité, inscriptions)",
+    "portee": "Droits des élèves et des familles : obligation scolaire, gratuité, inscription",
+    "source_officielle": "https://www.belgium.be/fr/formation/enseignement"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles précises dépendent de la Communauté (Fédération Wallonie-Bruxelles, Communauté flamande, germanophone). Pour un problème d'inscription, contactez le service compétent de votre Communauté.",
+  "faits": [
+    {
+      "id": "ENS-OBLIGATION-001",
+      "question": "Jusqu'à quel âge l'école est-elle obligatoire ?",
+      "reponse": "L'obligation scolaire commence l'année scolaire de l'année civile où l'enfant atteint 5 ans, et se termine à la fin de l'année scolaire de l'année où il atteint 18 ans. « Obligation scolaire » ne veut pas dire « obligation d'école » au sens strict : l'enseignement à domicile est possible sous conditions. Les parents sont responsables du respect de cette obligation.",
+      "reference_legale": "Loi sur l'obligation scolaire ; art. 24 de la Constitution",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/formation/enseignement/droits_et_devoirs/obligation_scolaire",
+          "intitule": "Belgium.be — Obligation scolaire"
+        },
+        {
+          "type": "officiel",
+          "url": "https://enseignement.be/index.php?page=24546",
+          "intitule": "Enseignement.be — L'obligation scolaire"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ENS-GRATUITE-001",
+      "question": "L'école peut-elle me réclamer de l'argent à l'inscription ?",
+      "reponse": "Non. L'accès à l'enseignement est gratuit jusqu'à la fin de l'obligation scolaire (art. 24 de la Constitution). Une école ne peut, lors de l'inscription, réclamer aucun paiement, direct ou indirect, obligatoire ou « facultatif » (argent, services, fournitures). Et le non-paiement de frais ne peut jamais justifier un refus d'inscription ou une exclusion définitive. Certains frais limités (sorties, repas) restent possibles en cours de scolarité, encadrés par la réglementation.",
+      "reference_legale": "Art. 24 de la Constitution ; réglementation FW-B sur la gratuité scolaire",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/formation/cout_des_etudes/gratuite_scolaire",
+          "intitule": "Belgium.be — Gratuité scolaire"
+        },
+        {
+          "type": "officiel",
+          "url": "http://www.enseignement.be/index.php?page=26782&navi=3390",
+          "intitule": "Enseignement.be — Gratuité d'accès"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ENS-REFUS-001",
+      "question": "Une école refuse d'inscrire mon enfant : quels sont mes droits ?",
+      "reponse": "Si une école ne peut pas inscrire votre enfant, elle doit vous remettre une attestation de demande d'inscription, qui indique les services (commissions d'inscription) où obtenir de l'aide pour trouver une place dans une école organisée ou subventionnée par la Fédération Wallonie-Bruxelles. Vous n'êtes donc pas laissé sans solution : un service vous accompagne.",
+      "reference_legale": "Article 24 de la Constitution ; décret 'Inscriptions' de la Fédération Wallonie-Bruxelles",
+      "contacts": [
+        {
+          "nom": "Service des inscriptions (FW-B)",
+          "lien": "https://www.enseignement.be",
+          "pour": "refus / aide à l'inscription"
+        }
+      ],
+      "alerte_delai": "Demandez tout de suite l'attestation de demande d'inscription : elle ouvre l'accès à l'aide d'une commission.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.enseignement.be",
+          "intitule": "Enseignement.be — Inscriptions"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/lexique/aide-juridique-de-deuxieme-ligne",
+          "intitule": "Droits Quotidiens — Lexique"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ENS-ADULTE-DEPLACE-001",
+      "question": "Un professeur (ou un adulte de l'école) a un comportement déplacé : comment réagir et signaler sans que ça se retourne contre moi/mon enfant ?",
+      "reponse": "D'abord : ce n'est jamais la faute de l'enfant, et signaler de bonne foi est un droit. Voici comment agir, étape par étape, en te protégeant. 1) Mets l'enfant en sécurité et écoute-le sans le juger ; note précisément les faits (quoi, quand, où, témoins) et garde toutes les preuves (messages, captures). 2) Signale par ÉCRIT à la direction (e-mail ou recommandé) en demandant un accusé de réception et une réponse écrite : tu gardes ainsi une trace datée, ce qui te protège. 3) Si la direction ne réagit pas, ou si tu crains qu'elle protège l'adulte, ne reste pas dépendant de l'école : utilise des canaux INDÉPENDANTS qui ne sont pas sous son autorité — le centre PMS, le service de l'inspection / pouvoir organisateur, le Délégué général aux droits de l'enfant, l'équipe SOS Enfants (ONE), et le 103 (Écoute-Enfants). 4) Si les faits sont graves (attouchements, violences, propos sexuels), contacte la police (101) ou le 112 : c'est une infraction, pas une simple affaire interne à l'école. Tu peux aussi déposer plainte. Important : signaler des faits de bonne foi ne peut pas légalement justifier des représailles ; et passer par des canaux externes garantit que le signalement ne sera pas étouffé.",
+      "reference_legale": "Code pénal (infractions contre les mineurs) ; Code de l'Aide à la jeunesse (FW-B) ; missions du Délégué général aux droits de l'enfant ; Convention internationale des droits de l'enfant",
+      "contacts": [
+        {
+          "nom": "Urgence / faits graves",
+          "numero": "112",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "déposer plainte (infraction)"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "l'enfant, anonyme, 10h–minuit"
+        },
+        {
+          "nom": "SOS Enfants (ONE)",
+          "lien": "https://www.one.be",
+          "pour": "maltraitance d'enfants"
+        },
+        {
+          "nom": "Délégué général aux droits de l'enfant",
+          "lien": "https://www.dgde.cfwb.be",
+          "pour": "canal indépendant si l'école n'agit pas"
+        }
+      ],
+      "alerte_delai": "Agis vite : mets l'enfant en sécurité, garde les preuves immédiatement, et signale par écrit (avec accusé de réception). Pour des faits graves, n'attends pas — 101/112.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "http://www.enseignement.be/index.php?page=27585&navi=4222",
+          "intitule": "Enseignement.be — Violences à l'école : se faire aider"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.dgde.cfwb.be",
+          "intitule": "Délégué général aux droits de l'enfant (FW-B)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

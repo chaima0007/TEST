@@ -1,0 +1,65 @@
+{
+  "module": "sante_patient",
+  "titre": "Santé — droits du patient",
+  "domaine": "Santé & patient",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 22 août 2002 relative aux droits du patient (modifiée par la loi du 6 février 2024)",
+    "portee": "Droits de toute personne qui reçoit des soins de santé en Belgique",
+    "source_officielle": "https://www.health.belgium.be/fr/loi-du-22-aout-2002-relative-aux-droits-du-patient"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En cas d'urgence médicale, appelez le 112. Pour un litige, le service de médiation « Droits du patient » peut vous aider.",
+  "faits": [
+    {
+      "id": "PAT-DROITS-001",
+      "question": "Quels sont mes droits en tant que patient ?",
+      "reponse": "La loi vous garantit notamment : une information claire sur votre état de santé, des soins de qualité, le libre choix du praticien, le consentement libre et éclairé avant tout soin, l'accès à votre dossier médical, et le respect de votre vie privée. Ces droits valent face à tout professionnel de santé.",
+      "reference_legale": "Loi du 22 août 2002 relative aux droits du patient (modifiée le 6 février 2024)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/vous-tant-patient/vos-droits-tant-patient", "intitule": "SPF Santé publique — Vos droits en tant que patient"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/sante/soins_de_sante/droits_du_patient", "intitule": "Belgium.be — Droits du patient"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PAT-CONSENTEMENT-001",
+      "question": "Peut-on me soigner sans mon accord ?",
+      "reponse": "Non, en principe. Tout soin nécessite votre consentement libre et éclairé : le praticien doit d'abord vous informer (but, risques, alternatives), et vous pouvez accepter ou refuser. Vous pouvez aussi retirer votre consentement. Des règles particulières existent pour les urgences vitales et pour les personnes incapables d'exprimer leur volonté.",
+      "reference_legale": "Loi du 22 août 2002 — consentement éclairé",
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/sante/prenez-soin-de-vous/themes-pour-les-patients/droits-des-patients/quels-sont-les-droits-du", "intitule": "SPF Santé publique — Quels sont les droits du patient"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quels-sont-mes-droits-en-tant-que-patient", "intitule": "Droits Quotidiens — Droits du patient"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PAT-DOSSIER-001",
+      "question": "Puis-je consulter mon dossier médical ?",
+      "reponse": "Oui. Vous avez le droit d'accéder à votre dossier médical, tenu soigneusement et conservé en sécurité, et d'en obtenir une copie. Certaines annotations personnelles du praticien et les données concernant des tiers peuvent être exclues. La demande se fait auprès du praticien ou de l'hôpital.",
+      "reference_legale": "Loi du 22 août 2002 — accès au dossier du patient",
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/professionnels/professionnels-sante/sante-humaine/qualite-securite-soins-sante/droits-patients/droits-patient", "intitule": "SPF Santé publique — Les droits du patient"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/sante/soins_de_sante/droits_du_patient", "intitule": "Belgium.be — Droits du patient"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PAT-PLAINTE-001",
+      "question": "Un de mes droits de patient n'a pas été respecté : que faire ?",
+      "reponse": "Vous pouvez déposer une plainte auprès d'un service de médiation « Droits du patient » : local (dans l'hôpital) ou fédéral. Le médiateur tente de résoudre le désaccord avec le patient et le professionnel, gratuitement et de façon neutre. C'est souvent la voie la plus rapide avant d'envisager une action en justice.",
+      "reference_legale": "Loi du 22 août 2002 — droit à la médiation (service de médiation Droits du patient)",
+      "contacts": [
+        {"nom": "Service de médiation fédéral « Droits du patient »", "lien": "https://www.health.belgium.be/fr/le-service-de-mediation-federal-droits-du-patient", "pour": "plainte / médiation"}
+      ],
+      "alerte_delai": "Signalez assez tôt : la médiation est plus efficace quand les faits sont récents et documentés.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/le-service-de-mediation-federal-droits-du-patient", "intitule": "SPF Santé publique — Service de médiation Droits du patient"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quels-sont-mes-droits-en-tant-que-patient", "intitule": "Droits Quotidiens — Droits du patient"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

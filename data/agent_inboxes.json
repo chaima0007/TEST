@@ -1,0 +1,715 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Boîtes de réception des agents",
+  "inboxes": {
+    "GitAgent": [
+      {
+        "audit_id": "AUD-P001-20260622-223725-0333C0",
+        "problem_id": "P001",
+        "title": "Fichiers non-commités",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.935971+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      },
+      {
+        "type": "CAPABILITIES_UPDATE",
+        "total_capabilities": 11,
+        "avg_score": 87.42,
+        "high_priority": 6,
+        "source": "anthropic_capabilities_db.py",
+        "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "AutoControlSystem",
+        "timestamp": "2026-06-22 22:56:46",
+        "subject": "Rapport autocontrôle: 82.4%",
+        "content": "28/34 contrôles OK — 6 corrections requises",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
+        "priority": "NORMAL"
+      }
+    ],
+    "SidebarAgent": [
+      {
+        "audit_id": "AUD-P003-20260622-223725-9F17C4",
+        "problem_id": "P003",
+        "title": "Doublons icônes sidebar",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.994131+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      },
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
+      }
+    ],
+    "SecurityAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      },
+      {
+        "type": "CAPABILITIES_UPDATE",
+        "total_capabilities": 11,
+        "avg_score": 87.42,
+        "high_priority": 6,
+        "source": "anthropic_capabilities_db.py",
+        "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "AutoControlSystem",
+        "timestamp": "2026-06-22 22:56:46",
+        "subject": "Rapport autocontrôle: 82.4%",
+        "content": "28/34 contrôles OK — 6 corrections requises",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
+        "priority": "NORMAL"
+      }
+    ],
+    "EngineAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      },
+      {
+        "type": "CAPABILITIES_UPDATE",
+        "total_capabilities": 11,
+        "avg_score": 87.42,
+        "high_priority": 6,
+        "source": "anthropic_capabilities_db.py",
+        "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "SpeedOptimizerAgent",
+        "timestamp": "2026-06-22T23:07:30.039262",
+        "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
+        "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
+      }
+    ],
+    "CICDAgent": [
+      {
+        "audit_id": "AUD-P003-20260622-223725-9F17C4",
+        "problem_id": "P003",
+        "title": "Doublons icônes sidebar",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.994131+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      }
+    ],
+    "QAAgent": [
+      {
+        "audit_id": "AUD-P001-20260622-223725-0333C0",
+        "problem_id": "P001",
+        "title": "Fichiers non-commités",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.935971+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      },
+      {
+        "audit_id": "AUD-P003-20260622-223725-9F17C4",
+        "problem_id": "P003",
+        "title": "Doublons icônes sidebar",
+        "severity": "CRITIQUE",
+        "status": "OPEN",
+        "created_at": "2026-06-22T22:37:25.994131+00:00",
+        "best_solution_validated": true,
+        "action_required": false
+      },
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      },
+      {
+        "type": "CAPABILITIES_UPDATE",
+        "total_capabilities": 11,
+        "avg_score": 87.42,
+        "high_priority": 6,
+        "source": "anthropic_capabilities_db.py",
+        "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "AutoControlSystem",
+        "timestamp": "2026-06-22 22:56:46",
+        "subject": "Rapport autocontrôle: 82.4%",
+        "content": "28/34 contrôles OK — 6 corrections requises",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      },
+      {
+        "from": "SpeedOptimizerAgent",
+        "timestamp": "2026-06-22T23:07:30.039262",
+        "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
+        "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "RotatingTeamRelay",
+        "timestamp": "2026-06-22T23:10:04.711410",
+        "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
+        "content": "Système de relève opérationnel — jamais de fatigue",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
+        "priority": "NORMAL"
+      }
+    ],
+    "QuantumAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      },
+      {
+        "type": "CAPABILITIES_UPDATE",
+        "total_capabilities": 11,
+        "avg_score": 87.42,
+        "high_priority": 6,
+        "source": "anthropic_capabilities_db.py",
+        "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "SpeedOptimizerAgent",
+        "timestamp": "2026-06-22T23:07:30.039262",
+        "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
+        "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "RotatingTeamRelay",
+        "timestamp": "2026-06-22T23:10:04.711410",
+        "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
+        "content": "Système de relève opérationnel — jamais de fatigue",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
+      }
+    ],
+    "CoordAgent": [
+      {
+        "type": "TIME_ESTIMATE",
+        "wave": 489,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "total_minutes": 44.4,
+        "range": [
+          37.7,
+          53.3
+        ],
+        "estimated_completion": "23:23 UTC",
+        "risks": [],
+        "confidence": "HAUTE",
+        "sent_at": "2026-06-22T22:39:05.057307+00:00"
+      },
+      {
+        "type": "CAPABILITIES_UPDATE",
+        "total_capabilities": 11,
+        "avg_score": 87.42,
+        "high_priority": 6,
+        "source": "anthropic_capabilities_db.py",
+        "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "AutoControlSystem",
+        "timestamp": "2026-06-22 22:56:46",
+        "subject": "Rapport autocontrôle: 82.4%",
+        "content": "28/34 contrôles OK — 6 corrections requises",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      },
+      {
+        "from": "SpeedOptimizerAgent",
+        "timestamp": "2026-06-22T23:07:30.039262",
+        "subject": "Optimisations validées: 8 stratégies, -31.3min/wave",
+        "content": "Stratégies approuvées: parallel_engines, parallel_routes, parallel_dashboards...",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "RotatingTeamRelay",
+        "timestamp": "2026-06-22T23:10:04.711410",
+        "subject": "Équipe active: DELTA | 20 tâches | 13 relèves",
+        "content": "Système de relève opérationnel — jamais de fatigue",
+        "priority": "NORMAL"
+      },
+      {
+        "from": "LibraryIndexAgent",
+        "timestamp": "2026-06-22T23:11:26.356286",
+        "subject": "Bibliothèque indexée: 2497 fichiers",
+        "content": "Consulter data/library_index.json pour accéder à tous les fichiers",
+        "priority": "NORMAL",
+        "index_path": "data/library_index.json"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
+      },
+      {
+        "from": "ErrorToStrengthAgent",
+        "timestamp": "2026-06-22 23:16:38",
+        "subject": "10 erreurs → forces | Prévention: 100.0%",
+        "content": "Consulter data/error_strength_db.json",
+        "priority": "NORMAL"
+      }
+    ],
+    "DashboardAgent": [],
+    "ComplianceAgent": [
+      {
+        "type": "CAPABILITIES_UPDATE",
+        "total_capabilities": 11,
+        "avg_score": 87.42,
+        "high_priority": 6,
+        "source": "anthropic_capabilities_db.py",
+        "sent_at": "2026-06-22T22:43:33.753937+00:00"
+      },
+      {
+        "type": "NEW_ALGORITHMS",
+        "unique_count": 3,
+        "known_count": 6,
+        "algorithms": [
+          "quantum_scorer",
+          "bayesian_network",
+          "supply_chain_graph",
+          "sha3_fingerprint",
+          "huffman_compression",
+          "bloom_filter",
+          "gradient_descent",
+          "simulated_annealing",
+          "astar_path"
+        ],
+        "sent_at": "2026-06-22T22:49:08.261523+00:00"
+      },
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
+      }
+    ],
+    "CSDDDResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "SecurityResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "NextJSResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "PythonResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "GitResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "AnthropicResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "QuantumResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "HumanRightsResearcher": [
+      {
+        "from": "ResearchDocumentationAgent",
+        "timestamp": "2026-06-22T22:59:40.211114",
+        "subject": "Base recherche mise à jour: 54 sujets",
+        "content": "Confiance globale: 92.8% — Consulter data/research_database.json",
+        "priority": "NORMAL",
+        "db_path": "data/research_database.json"
+      }
+    ],
+    "ProtocolGuardian": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "QuantumValidator": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "SecurityAuditor": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "GitSupervisor": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "QualityController": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "ComplianceOfficer": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "DatabaseGuardian": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "PerformanceMonitor": [
+      {
+        "from": "TeamControlSystem",
+        "timestamp": "2026-06-22 23:04:45",
+        "subject": "Décision DEC-ee9636527c61: ✗ REFUSÉ",
+        "content": "wave_launch — 1,000,000 simulations — 96.01%",
+        "priority": "CRITIQUE"
+      }
+    ],
+    "ResearchAgent": [
+      {
+        "from": "StrategyCalculatorAgent",
+        "timestamp": "2026-06-22T23:12:34.779681",
+        "subject": "Stratégie prioritaire: HUMAN_RIGHTS_COVERAGE — $50.3B opportunité",
+        "content": "Top 3: HUMAN_RIGHTS_COVERAGE, INFINITE_KNOWLEDGE, CSDDD_LEADERSHIP",
+        "priority": "NORMAL",
+        "db_path": "data/strategy_database.json"
+      }
+    ]
+  },
+  "total_notifications": 25,
+  "last_update": "2026-06-22T22:49:08.261523+00:00"
+}

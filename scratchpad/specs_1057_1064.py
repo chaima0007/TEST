@@ -1,0 +1,118 @@
+# Specs waves 1057-1064 — 24 nouveaux moteurs de droits humains
+# Préfixes vérifiés : PBSR→PBUR ; 0 collision après correction, 0 doublon interne
+# Remplacements : native_icwa_threat(trop proche)→tribal_elder_probate ; genetic_discrimin(existe)→pharmacogenomics
+# Corrections post-génération : juvenile_solitary(doublon)→juvenile_probation_condition(JPCR) ; tribal_sovereignty_gaming(doublon)→tribal_law_enforcement_jurisdiction(TLEJ)
+# (filename, title, wave, desc, prefix, idx)
+SPECS = [
+    # Wave 1057 — Santé mentale des professionnels de la santé (inédits)
+    ("physician_burnout_support_rights_engine.py",
+     "Épuisement professionnel des médecins & manque de ressources de soutien institutionnel", "Wave 1057",
+     "Médecins épuisés sans accès à un soutien en santé mentale par peur des répercussions sur leur licence.",
+     "PBUR", "physician_burnout"),
+    ("nurse_mental_health_stigma_rights_engine.py",
+     "Stigmatisation de la santé mentale chez les infirmières & droits aux soins", "Wave 1057",
+     "Infirmières cachant leur détresse psychologique par peur de pertes de licence ou d'emploi.",
+     "NMHS", "nurse_mental_stigma"),
+    ("first_responder_ptsd_comp_rights_engine.py",
+     "PTSD des premiers intervenants & refus d'indemnisation professionnelle", "Wave 1057",
+     "Pompiers, policiers et ambulanciers développant un PTSD refusés pour indemnisation worker's comp.",
+     "FRPC", "first_resp_ptsd"),
+
+    # Wave 1058 — Justice juvénile & éducation (inédits)
+    ("youth_arrest_expungement_rights_engine.py",
+     "Effacement des arrestations juvéniles & persistance des traces numériques", "Wave 1058",
+     "Jeunes adultes dont les arrestations juvéniles effacées réapparaissent dans les bases de données privées.",
+     "YAER", "youth_arrest_expunge"),
+    ("incarcerated_minor_education_rights_engine.py",
+     "Éducation des mineurs incarcérés & droit à la scolarisation en détention", "Wave 1058",
+     "Mineurs détenus dans des établissements juvéniles sans accès garanti à l'éducation secondaire diplômante.",
+     "IMED", "minor_incarcerated_edu"),
+    ("juvenile_probation_condition_rights_engine.py",
+     "Conditions abusives de probation juvénile & obstacles à la réinsertion des mineurs", "Wave 1058",
+     "Jeunes en probation soumis à des conditions impossibles à respecter (couvre-feux stricts, amendes) entraînant leur réincarcération.",
+     "JPCR", "juvenile_probation"),
+
+    # Wave 1059 — Logement & propriété (inédits)
+    ("coop_board_discrimination_rights_engine.py",
+     "Discrimination des conseils de coopératives immobilières & exclusion raciale", "Wave 1059",
+     "Acheteurs noirs et latinos systématiquement rejetés par des conseils de co-op sans explication valable.",
+     "CBDR", "coop_board_discrim"),
+    ("historic_preservation_barrier_rights_engine.py",
+     "Préservations historiques & barrières aux propriétaires pour rénover", "Wave 1059",
+     "Propriétaires dans des districts historiques bloqués pour des rénovations nécessaires par des réglementations strictes.",
+     "HPBR", "historic_preserve"),
+    ("accessible_renovation_coop_rights_engine.py",
+     "Rénovations d'accessibilité refusées par les copropriétés & droits ADA", "Wave 1059",
+     "Personnes handicapées refusées pour des rénovations d'accessibilité dans leur appartement en copropriété.",
+     "ARCR", "accessible_renovate"),
+
+    # Wave 1060 — Professionnels de santé & conditions de travail (inédits)
+    ("noncompete_physician_rights_engine.py",
+     "Clauses de non-concurrence médicales & impact sur l'accès aux soins des patients", "Wave 1060",
+     "Médecins bloqués par des clauses de non-concurrence qui les empêchent de soigner leurs anciens patients.",
+     "NCPM", "noncompete_physician"),
+    ("locum_tenens_benefits_rights_engine.py",
+     "Médecins intérimaires locum tenens & absence d'avantages sociaux et protections", "Wave 1060",
+     "Médecins intérimaires classifiés comme indépendants sans assurance santé ni retraite des salariés.",
+     "LTBS", "locum_tenens"),
+    ("gig_healthcare_worker_rights_engine.py",
+     "Soignants à la demande & absence de protection accident et avantages sociaux", "Wave 1060",
+     "Infirmières et aides-soignants gig sans assurance accident ni worker's comp lors d'une blessure en mission.",
+     "GHWR", "gig_healthcare"),
+
+    # Wave 1061 — Finance & épargne-retraite (inédits)
+    ("retirement_401k_fee_rights_engine.py",
+     "Frais cachés des plans 401(k) & érosion silencieuse de l'épargne retraite", "Wave 1061",
+     "Épargnants perdant des dizaines de milliers en frais de gestion 401k sans divulgation claire.",
+     "FKFD", "401k_fee_disclosure"),
+    ("ira_rollover_fraud_rights_engine.py",
+     "Fraudes de rollover IRA & droits des retraités victimes de conseillers véreux", "Wave 1061",
+     "Retraités perdant leurs épargnes lors de transferts IRA manipulés par des conseillers non fiduciaires.",
+     "IRRV", "ira_rollover_fraud"),
+    ("pension_cliff_vesting_rights_engine.py",
+     "Licenciement avant l'acquisition des droits retraite & vol de pension", "Wave 1061",
+     "Employés licenciés juste avant le vesting de leur pension, perdant des années de cotisations.",
+     "PCVS", "pension_cliff_vest"),
+
+    # Wave 1062 — Santé & dépistage (inédits)
+    ("colon_cancer_screening_gap_rights_engine.py",
+     "Barrières de dépistage du cancer colorectal selon l'assurance & accès inégal", "Wave 1062",
+     "Patients non assurés ou sous-assurés incapables d'accéder aux coloscopies préventives gratuites recommandées.",
+     "CCSG", "colon_cancer_screen"),
+    ("pharmacogenomics_insurance_barrier_rights_engine.py",
+     "Pharmacogénomique & refus de couverture pour les tests de médecine personnalisée", "Wave 1062",
+     "Patients refusés pour des tests génétiques permettant d'optimiser leur traitement médicamenteux.",
+     "PGIB", "pharmacogenom_insur"),
+    ("menopause_treatment_gap_rights_engine.py",
+     "Traitement de la ménopause & sous-financement de la recherche et soins insuffisants", "Wave 1062",
+     "Femmes ménopausées sans accès à un traitement hormonal adéquat faute de formation médicale spécialisée.",
+     "MTRG", "menopause_treat"),
+
+    # Wave 1063 — Droits autochtones (inédits)
+    ("tribal_law_enforcement_jurisdiction_rights_engine.py",
+     "Juridiction des forces de l'ordre tribales & lacunes légales pour les crimes hors-réserve", "Wave 1063",
+     "Nations autochtones incapables de poursuivre les non-membres commettant des crimes sur les terres tribales en raison de trous juridictionnels.",
+     "TLEJ", "tribal_law_enforce"),
+    ("tribal_elder_probate_rights_engine.py",
+     "Succession des aînés tribaux & application des lois étatiques sur les terres tribales", "Wave 1063",
+     "Familles tribales soumises aux lois successorales étatiques pour les terres en allotissement fragmentant l'héritage.",
+     "TPEL", "tribal_elder_probate"),
+    ("tribal_water_compact_rights_engine.py",
+     "Compacts d'eau tribaux & violations par les États dans les zones arides", "Wave 1063",
+     "Nations autochtones dont les droits à l'eau garantis par compacts sont ignorés lors des sécheresses.",
+     "TWCR", "tribal_water_compact"),
+
+    # Wave 1064 — Éducation avancée & recherche (inédits)
+    ("lab_researcher_chemical_rights_engine.py",
+     "Exposition chimique des chercheurs en laboratoire & lacunes de protection OSHA", "Wave 1064",
+     "Chercheurs universitaires exposés à des produits chimiques dangereux sans équipement de protection adéquat.",
+     "LRCE", "lab_chem_exposure"),
+    ("phd_stipend_poverty_rights_engine.py",
+     "Allocations de thèse sous le seuil de pauvreté & exploitation des doctorants", "Wave 1064",
+     "Doctorants vivant sous le seuil de pauvreté avec des stipendes insuffisants sans droits du travail.",
+     "PDSP", "phd_stipend"),
+    ("academic_visa_dependent_rights_engine.py",
+     "Époux en visa dépendant d'étudiants & interdiction de travail aux USA", "Wave 1064",
+     "Conjoints de titulaires de visa F-1 ou J-1 incapables de travailler pendant des années d'études.",
+     "AVDR", "academic_visa_dep"),
+]

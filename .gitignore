@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
 # dependencies
 /node_modules
 /.pnp
@@ -43,3 +48,22 @@ next-env.d.ts
 /lib/generated/prisma
 dev.db
 prisma/dev.db
+.claude/*
+!.claude/settings.json
+
+# Runtime artifacts (infra modules demos)
+data/checkpoints/
+data/observability/
+data/resilience_log.json
+data/dependency_scan_log.json
+data/build_guard_log.json
+data/branch_guard_log.json
+data/decision_advisor_log.json
+data/customer_health_log.json
+data/prospect_scans.json
+
+# Rendus temporaires logo
+scratchpad-logo/
+
+# Snapshots locaux de sauvegarde (le remote git est la sauvegarde durable)
+data/backups/

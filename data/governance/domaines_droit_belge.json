@@ -1,0 +1,628 @@
+{
+  "referentiel": "Domaines du droit belge — taxonomie unique",
+  "but": "Carte unique de TOUS les domaines du droit belge utiles au citoyen, pour organiser la base et montrer ce qui est couvert et ce qui reste à construire. Une seule structure, des sections clairement séparées (rien n'est mélangé).",
+  "date": "2026-06-26",
+  "schema_fait_commun": {
+    "champs_obligatoires": [
+      "id",
+      "question",
+      "reponse",
+      "reference_legale",
+      "sources",
+      "date_verification"
+    ],
+    "champs_optionnels": [
+      "alerte_delai",
+      "contacts",
+      "domaine"
+    ],
+    "regle_sources": "≥1 source officielle (tier1) par fait ; date de vérification obligatoire."
+  },
+  "domaines": [
+    {
+      "cle": "logement_bail",
+      "nom": "Logement & bail",
+      "statut": "couvert",
+      "modules": [
+        "bail_wallonie",
+        "bail_bruxelles",
+        "bail_flandre"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "surendettement",
+      "nom": "Surendettement & dettes",
+      "statut": "couvert",
+      "modules": [
+        "surendettement_reglement_collectif_dettes"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "justice_penal",
+      "nom": "Justice & pénal (accès au droit)",
+      "statut": "couvert",
+      "modules": [
+        "justice_penal_acces"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "harcelement",
+      "nom": "Harcèlement & violences",
+      "statut": "couvert",
+      "modules": [
+        "harcelement_violences"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "travail",
+      "nom": "Travail & emploi",
+      "statut": "couvert",
+      "modules": [
+        "travail_emploi"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "famille",
+      "nom": "Famille (divorce, garde, pensions alimentaires)",
+      "statut": "couvert",
+      "modules": [
+        "famille"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "aide_sociale",
+      "nom": "Aide sociale & CPAS",
+      "statut": "couvert",
+      "modules": [
+        "aide_urgence"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "consommation",
+      "nom": "Consommation & contrats",
+      "statut": "couvert",
+      "modules": [
+        "consommation"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "etrangers",
+      "nom": "Étrangers & séjour",
+      "statut": "couvert",
+      "modules": [
+        "etrangers_sejour"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fiscalite",
+      "nom": "Fiscalité (impôts)",
+      "statut": "couvert",
+      "modules": [
+        "impots"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "circulation",
+      "nom": "Circulation routière",
+      "statut": "couvert",
+      "modules": [
+        "circulation"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "sante_patient",
+      "nom": "Santé & droits du patient",
+      "statut": "couvert",
+      "modules": [
+        "sante_patient"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "vie_privee",
+      "nom": "Vie privée & données (RGPD)",
+      "statut": "couvert",
+      "modules": [
+        "vie_privee_rgpd"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "successions",
+      "nom": "Successions & héritage",
+      "statut": "couvert",
+      "modules": [
+        "successions"
+      ],
+      "priorite": "basse"
+    },
+    {
+      "cle": "energie",
+      "nom": "Énergie & PEB (lié au logement)",
+      "statut": "couvert",
+      "modules": [
+        "energie"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "citoyennete",
+      "nom": "Citoyenneté (droits & devoirs)",
+      "statut": "couvert",
+      "modules": [
+        "citoyen_droits_devoirs"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "aidants_proches",
+      "nom": "Aidants proches",
+      "statut": "couvert",
+      "modules": [
+        "aidants_proches"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "vote",
+      "nom": "Vote & démocratie",
+      "statut": "couvert",
+      "modules": [
+        "vote_electoral"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "drogues",
+      "nom": "Drogues & prévention",
+      "statut": "couvert",
+      "modules": [
+        "drogues_prevention"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "enfants_places",
+      "nom": "Enfants placés & aide à la jeunesse",
+      "statut": "couvert",
+      "modules": [
+        "enfants_places"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "gouvernement",
+      "nom": "Gouvernement & institutions",
+      "statut": "couvert",
+      "modules": [
+        "gouvernement"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "enseignement",
+      "nom": "Enseignement",
+      "statut": "couvert",
+      "modules": [
+        "enseignement"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "animaux",
+      "nom": "Animaux",
+      "statut": "couvert",
+      "modules": [
+        "animaux"
+      ],
+      "priorite": "basse"
+    },
+    {
+      "cle": "entreprise",
+      "nom": "Indépendant & activité",
+      "statut": "couvert",
+      "modules": [
+        "independant"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "couple",
+      "nom": "Couple & vie commune",
+      "statut": "couvert",
+      "modules": [
+        "couple"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "credit",
+      "nom": "Crédit & fichage",
+      "statut": "couvert",
+      "modules": [
+        "credit"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "deces",
+      "nom": "Décès & démarches",
+      "statut": "couvert",
+      "modules": [
+        "deces_demarches"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "pension",
+      "nom": "Pension & retraite",
+      "statut": "couvert",
+      "modules": [
+        "pension"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "logement_social",
+      "nom": "Logement social",
+      "statut": "couvert",
+      "modules": [
+        "logement_social"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "allocations_familiales",
+      "nom": "Allocations familiales",
+      "statut": "couvert",
+      "modules": [
+        "allocations_familiales"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "assurances",
+      "nom": "Assurances",
+      "statut": "couvert",
+      "modules": [
+        "assurances"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "job_etudiant",
+      "nom": "Job étudiant",
+      "statut": "couvert",
+      "modules": [
+        "job_etudiant"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "discrimination",
+      "nom": "Discrimination & égalité",
+      "statut": "couvert",
+      "modules": [
+        "discrimination"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "telecom",
+      "nom": "Télécommunications",
+      "statut": "couvert",
+      "modules": [
+        "telecom"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "sante_mentale",
+      "nom": "Santé mentale",
+      "statut": "couvert",
+      "modules": [
+        "sante_mentale"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "protection_personne",
+      "nom": "Protection des personnes vulnérables",
+      "statut": "couvert",
+      "modules": [
+        "protection_personne"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "eau",
+      "nom": "Eau & distribution",
+      "statut": "couvert",
+      "modules": [
+        "eau"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "mobilite_douce",
+      "nom": "Mobilité douce (vélo, trottinette)",
+      "statut": "couvert",
+      "modules": [
+        "mobilite_douce"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "naissance",
+      "nom": "Naissance & filiation",
+      "statut": "couvert",
+      "modules": [
+        "naissance"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "dechets",
+      "nom": "Déchets & environnement",
+      "statut": "couvert",
+      "modules": [
+        "dechets"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "banque",
+      "nom": "Services bancaires",
+      "statut": "couvert",
+      "modules": [
+        "banque"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "transport_passagers",
+      "nom": "Droits des passagers (train, avion)",
+      "statut": "couvert",
+      "modules": [
+        "transport_passagers"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "violences_conjugales",
+      "nom": "Violences conjugales & familiales",
+      "statut": "couvert",
+      "modules": [
+        "violences_conjugales"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "documents_identite",
+      "nom": "Documents d identité",
+      "statut": "couvert",
+      "modules": [
+        "documents_identite"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "burnout_bienetre",
+      "nom": "Bien-être & burnout",
+      "statut": "couvert",
+      "modules": [
+        "burnout_bienetre"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "aide_juridique",
+      "nom": "Accès à la justice (aide juridique)",
+      "statut": "couvert",
+      "modules": [
+        "aide_juridique"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "fraude_arnaques",
+      "nom": "Fraude & sécurité numérique",
+      "statut": "couvert",
+      "modules": [
+        "fraude_arnaques"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "chomage",
+      "nom": "Chômage & emploi",
+      "statut": "couvert",
+      "modules": [
+        "chomage"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "incapacite_travail",
+      "nom": "Maladie & incapacité",
+      "statut": "couvert",
+      "modules": [
+        "incapacite_travail"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "saisies_huissier",
+      "nom": "Saisies & recouvrement",
+      "statut": "couvert",
+      "modules": [
+        "saisies_huissier"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "expulsion",
+      "nom": "Logement — expulsion",
+      "statut": "couvert",
+      "modules": [
+        "expulsion"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "accident_travail",
+      "nom": "Risques professionnels",
+      "statut": "couvert",
+      "modules": [
+        "accident_travail"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "divorce",
+      "nom": "Divorce & séparation",
+      "statut": "couvert",
+      "modules": [
+        "divorce"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "adoption",
+      "nom": "Adoption",
+      "statut": "couvert",
+      "modules": [
+        "adoption"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fin_de_vie",
+      "nom": "Fin de vie",
+      "statut": "couvert",
+      "modules": [
+        "fin_de_vie"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "recours_administration",
+      "nom": "Recours administratifs",
+      "statut": "couvert",
+      "modules": [
+        "recours_administration"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "mediation_conflits",
+      "nom": "Règlement des conflits",
+      "statut": "couvert",
+      "modules": [
+        "mediation_conflits"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "premier_emploi",
+      "nom": "Jeunes & premier emploi",
+      "statut": "couvert",
+      "modules": [
+        "premier_emploi"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "bail_etudiant",
+      "nom": "Logement étudiant",
+      "statut": "couvert",
+      "modules": [
+        "bail_etudiant"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "achat_logement",
+      "nom": "Achat immobilier",
+      "statut": "couvert",
+      "modules": [
+        "achat_logement"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "assurance_auto",
+      "nom": "Assurance véhicule",
+      "statut": "couvert",
+      "modules": [
+        "assurance_auto"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "credit_hypothecaire",
+      "nom": "Crédit hypothécaire",
+      "statut": "couvert",
+      "modules": [
+        "credit_hypothecaire"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "copropriete",
+      "nom": "Copropriété",
+      "statut": "couvert",
+      "modules": [
+        "copropriete"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "permis_urbanisme",
+      "nom": "Urbanisme & travaux",
+      "statut": "couvert",
+      "modules": [
+        "permis_urbanisme"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "voyages",
+      "nom": "Voyages",
+      "statut": "couvert",
+      "modules": [
+        "voyages"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "benevolat",
+      "nom": "Volontariat",
+      "statut": "couvert",
+      "modules": [
+        "benevolat"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fonction_publique",
+      "nom": "Fonction publique",
+      "statut": "couvert",
+      "modules": [
+        "fonction_publique"
+      ],
+      "priorite": "moyenne"
+    }
+  ]
+}

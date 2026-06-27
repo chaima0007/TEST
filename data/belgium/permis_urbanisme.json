@@ -1,0 +1,48 @@
+{
+  "module": "permis_urbanisme",
+  "titre": "Permis d'urbanisme — travaux & rénovation",
+  "domaine": "Urbanisme & travaux",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire",
+    "portee": "Quand un permis est requis pour construire, transformer ou rénover",
+    "source_officielle": "https://www.belgium.be/fr/logement/construire_et_renover/permis_d_urbanisme"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles d'urbanisme dépendent fortement de la Région ET de la commune (zones protégées) ; vérifiez TOUJOURS auprès du service urbanisme communal avant de commencer.",
+  "faits": [
+    {
+      "id": "URBA-PERMIS-001",
+      "question": "Pour quels travaux ai-je besoin d'un permis d'urbanisme ?",
+      "reponse": "Le principe est large : la plupart des travaux de construction, démolition ou transformation (intérieure comme extérieure) nécessitent un permis d'urbanisme ; la dispense est l'exception. Les règles varient selon la Région et la commune : à Bruxelles et en Flandre, un permis est généralement requis dès qu'on modifie l'aspect d'une façade visible de la rue ; en Wallonie, beaucoup de petites rénovations de façade sont dispensées, sauf en zone protégée. Certains travaux exigent aussi l'intervention d'un architecte. Avant de commencer, demandez confirmation au service urbanisme de votre commune.",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire",
+      "alerte_delai": "Demandez le permis AVANT de commencer : des travaux sans permis peuvent entraîner une remise en état et une amende.",
+      "contacts": [
+        {"nom": "Service urbanisme de votre commune", "pour": "savoir si un permis est requis, déposer la demande"},
+        {"nom": "Architecte", "pour": "travaux nécessitant son intervention"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover/permis_d_urbanisme", "intitule": "Belgium.be — Permis d'urbanisme"},
+        {"type": "officiel", "url": "https://urbanisme.irisnet.be/lepermisdurbanisme/quand-faut-il-un-permis-durbanisme", "intitule": "Urbanisme Bruxelles — Quand faut-il un permis ?"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "URBA-DEMARCHE-001",
+      "question": "Comment demander un permis et que risque-t-on sans permis ?",
+      "reponse": "La demande se dépose à la commune (souvent via un formulaire régional, parfois avec un dossier établi par un architecte). La commune instruit, peut organiser une enquête publique, puis accorde ou refuse ; un recours est possible en cas de refus. Faire des travaux soumis à permis sans l'avoir obtenu est une infraction urbanistique : vous risquez l'arrêt du chantier, une remise en état (parfois la démolition) et une amende, et cela peut bloquer une vente future. Mieux vaut donc régulariser ou demander avant.",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — procédure de demande et sanctions des infractions urbanistiques",
+      "contacts": [
+        {"nom": "Service urbanisme de votre commune", "pour": "dépôt et suivi de la demande, recours"},
+        {"nom": "Service logement de votre Région", "pour": "formulaires et règles régionales"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/demander-un-permis-durbanisme", "intitule": "Wallonie — Demander un permis d'urbanisme"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/acheter-construire-renover-une-habitation/construire-et-renover-0", "intitule": "Wikifin (FSMA) — Construire et rénover"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

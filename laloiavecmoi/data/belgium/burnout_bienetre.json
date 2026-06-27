@@ -1,0 +1,63 @@
+{
+  "module": "burnout_bienetre",
+  "titre": "Santé d'abord — burnout, fatigue & mettre des limites",
+  "domaine": "Bien-être & burnout",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 4 août 1996 relative au bien-être des travailleurs lors de l'exécution de leur travail (risques psychosociaux : stress, harcèlement, burnout)",
+    "portee": "Droit à un travail qui ne nuit pas à la santé, recours et accompagnement",
+    "source_officielle": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Votre santé passe avant tout : ces lignes ne remplacent pas un avis médical. Si vous allez très mal ou avez des pensées noires, parlez-en maintenant — Centre de Prévention du Suicide 0800 32 123 (24h/24), ou 112 en urgence.",
+  "faits": [
+    {
+      "id": "BIEN-SANTE-DABORD-001",
+      "question": "Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?",
+      "reponse": "Oui, et c'est même la chose responsable à faire. Votre santé passe avant le travail : la loi reconnaît que le travail ne doit pas nuire à votre santé physique ET mentale. Si vous ressentez des signes d'épuisement (fatigue qui ne passe plus, troubles du sommeil, perte d'envie, irritabilité, sensation de ne plus y arriver), consultez votre médecin : il peut vous mettre en incapacité de travail avec un certificat, sans que vous ayez à vous justifier auprès de qui que ce soit. S'arrêter à temps n'est pas un échec, c'est se protéger. Vous n'avez pas à « tenir » jusqu'à l'effondrement.",
+      "reference_legale": "Loi du 4 août 1996 relative au bien-être des travailleurs (volet risques psychosociaux : stress, burnout)",
+      "contacts": [
+        {"nom": "Votre médecin généraliste", "pour": "constat d'épuisement, certificat d'incapacité, orientation"},
+        {"nom": "Médecin du travail", "pour": "aménagement ou reprise adaptée du travail (confidentiel)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail", "intitule": "SPF Emploi — Risques psychosociaux au travail"},
+        {"type": "officiel", "url": "https://beswic.be/fr/themes/risques-psychosociaux-rps/burnout", "intitule": "Beswic (SPF Emploi) — Burnout"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BIEN-HARCELE-TRAVAIL-001",
+      "question": "Je me sens harcelé·e au travail mais je n'ose rien dire. Que puis-je faire ?",
+      "reponse": "Vous n'avez pas à subir, et vous pouvez agir sans vous mettre en première ligne. Chaque entreprise doit disposer d'un conseiller en prévention aspects psychosociaux (ou d'une personne de confiance), tenu au secret professionnel : vous pouvez le contacter pour une intervention informelle (juste être écouté·e et conseillé·e) ou formelle, sans que votre employeur soit prévenu sans votre accord. Notez les faits (dates, ce qui s'est passé, témoins). Si rien n'est possible en interne, l'Inspection du Contrôle du bien-être au travail peut être saisie. Demander de l'aide n'est pas se plaindre : c'est faire respecter un droit.",
+      "reference_legale": "Loi du 4 août 1996 relative au bien-être des travailleurs — protection contre le harcèlement et les risques psychosociaux",
+      "contacts": [
+        {"nom": "Conseiller en prévention aspects psychosociaux / personne de confiance", "pour": "écoute et intervention, secret professionnel"},
+        {"nom": "Contrôle du bien-être au travail (SPF Emploi)", "lien": "https://emploi.belgique.be", "pour": "si rien n'aboutit en interne"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail/moyens-daction-du-travailleur-la", "intitule": "SPF Emploi — Moyens d'action du travailleur"},
+        {"type": "officiel", "url": "https://beswic.be/fr/themes/risques-psychosociaux-rps/contact-avec-le-conseiller-en-prevention-aspects-psychosociaux", "intitule": "Beswic — Contacter le conseiller en prévention"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BIEN-LIMITES-001",
+      "question": "Comment mettre un frein avant de craquer, et où trouver du soutien ?",
+      "reponse": "Mettre une limite n'est pas être faible : c'est se respecter. Concrètement : repérez vos signaux d'alerte (sommeil, irritabilité, plus d'envie), autorisez-vous à dire non et à déconnecter en dehors du travail, et parlez-en à une personne de confiance. Pour être écouté·e, gratuitement et anonymement : Télé-Accueil au 107 (24h/24), ou votre médecin. Rappelez-vous : vous êtes capable de changer les choses dans votre vie, vous n'êtes pas obligé·e de tout subir, et demander de l'aide est le premier pas — pas le dernier recours.",
+      "reference_legale": "Loi du 4 août 1996 relative au bien-être des travailleurs ; convention INAMI relative à l'accompagnement psychologique de première ligne",
+      "contacts": [
+        {"nom": "Télé-Accueil", "numero": "107", "lien": "https://www.tele-accueil.be", "pour": "écoute 24h/24, gratuite et anonyme"},
+        {"nom": "Centre de Prévention du Suicide", "numero": "0800 32 123", "pour": "si vous allez très mal (24h/24)"},
+        {"nom": "Votre médecin / psychologue de première ligne", "pour": "accompagnement, souvent remboursé (INAMI)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://sesentirbienautravail.be/", "intitule": "SPF Emploi — Se sentir bien au travail"},
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail", "intitule": "SPF Emploi — Risques psychosociaux"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

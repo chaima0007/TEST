@@ -1,0 +1,47 @@
+{
+  "module": "saisies_huissier",
+  "titre": "Saisies & huissier — ce qui peut être pris (ou non)",
+  "domaine": "Saisies & recouvrement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code judiciaire — quotité saisissable des revenus (art. 1409 et suivants) et sommes insaisissables (art. 1410)",
+    "portee": "Protection d'un revenu minimum face aux saisies, rôle de l'huissier",
+    "source_officielle": "https://emploi.belgique.be/fr/themes/remuneration/protection-de-la-remuneration/saisie-et-cession-sur-salaires"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les seuils de revenus saisissables sont indexés chaque année ; vérifiez les montants en vigueur auprès du SPF Emploi ou d'un service de médiation de dettes.",
+  "faits": [
+    {
+      "id": "SAIS-QUOTITE-001",
+      "question": "Un huissier peut-il prendre tout mon salaire ?",
+      "reponse": "Non. La loi garantit qu'on vous laisse toujours un revenu minimum pour vivre. Seule une partie de votre salaire net est « saisissable », par tranches (plus le revenu est élevé, plus la part saisissable augmente), et une part reste toujours protégée. Certaines sommes sont même totalement insaisissables : allocations familiales, revenu d'intégration et aides du CPAS, allocations pour personnes handicapées, etc. Si vous avez des enfants à charge, la part protégée est augmentée. En cas de doute sur le calcul, faites-le vérifier.",
+      "reference_legale": "Code judiciaire — quotité saisissable (art. 1409 et s.) et sommes insaisissables (art. 1410)",
+      "contacts": [
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "vérifier le calcul, plan d'apurement"},
+        {"nom": "Chambre des huissiers de justice", "lien": "https://www.huissiersdejustice.be", "pour": "information sur les montants insaisissables"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/remuneration/protection-de-la-remuneration/saisie-et-cession-sur-salaires", "intitule": "SPF Emploi — Saisie et cession sur salaires"},
+        {"type": "secondaire", "url": "https://www.huissiersdejustice.be/lhuissier-de-justice/informations-pratiques/montants-insaisissables", "intitule": "Huissiers de justice — Montants insaisissables"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "SAIS-COMPTE-001",
+      "question": "Et l'argent sur mon compte en banque, est-il protégé ?",
+      "reponse": "Oui, en partie. Quand des revenus protégés (salaire, allocations) sont versés sur votre compte à vue, la part qui n'aurait pas pu être saisie reste protégée pendant un certain temps sur le compte : un créancier ne peut pas vider tout le compte. Cette protection est codée par un mécanisme légal. Si une saisie sur compte vous prive de tout, signalez-le rapidement (huissier, médiation de dettes) pour faire débloquer la part insaisissable.",
+      "reference_legale": "Code judiciaire — protection des sommes insaisissables versées sur compte (art. 1411bis et s.)",
+      "contacts": [
+        {"nom": "Service de médiation de dettes", "pour": "débloquer la part insaisissable, négocier"},
+        {"nom": "Votre banque", "pour": "comprendre le blocage du compte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/remuneration/protection-de-la-remuneration/saisie-et-cession-sur-salaires", "intitule": "SPF Emploi — Protection de la rémunération"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quel-montant-peut-saisir-sur-mes-revenus", "intitule": "Droits Quotidiens — Quel montant peut-on saisir ?"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

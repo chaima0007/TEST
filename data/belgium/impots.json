@@ -1,0 +1,59 @@
+{
+  "module": "impots",
+  "titre": "Impôts — déclaration des personnes physiques",
+  "domaine": "Impôts & fiscalité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code des impôts sur les revenus 1992 (CIR 92) — impôt des personnes physiques",
+    "portee": "Déclaration et obligations fiscales du citoyen",
+    "source_officielle": "https://www.belgium.be/fr/impots/impot_sur_les_revenus/particuliers_et_independants/declaration"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. ATTENTION : les dates limites de déclaration changent CHAQUE ANNÉE — vérifiez toujours la date exacte de l'année en cours sur le SPF Finances (fin.belgium.be).",
+  "faits": [
+    {
+      "id": "IMP-DECLARATION-001",
+      "question": "Comment et quand déclarer mes impôts ?",
+      "reponse": "Chaque année, vous devez rentrer votre déclaration à l'impôt des personnes physiques, sauf si vous recevez une proposition de déclaration simplifiée correcte. La voie la plus simple est en ligne via Tax-on-web (avec eID ou itsme). Les délais changent chaque année : en général fin juin pour la version papier et mi-juillet pour Tax-on-web (plus tard en cas de revenus spécifiques). Vérifiez toujours la date exacte de l'année sur le SPF Finances. Ne ratez pas l'échéance.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (CIR 92) — obligation de déclaration",
+      "contacts": [
+        {"nom": "SPF Finances (Tax-on-web)", "lien": "https://finances.belgium.be/fr/E-services/Tax-on-web", "pour": "déclarer en ligne"}
+      ],
+      "alerte_delai": "Délai chaque année (souvent fin juin papier / mi-juillet en ligne) : vérifiez la date exacte de l'année et ne la ratez pas.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/impots/impot_sur_les_revenus/particuliers_et_independants/declaration", "intitule": "Belgium.be — Déclaration IPP"},
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/E-services/Tax-on-web", "intitule": "SPF Finances — Tax-on-web"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "IMP-SIMPLIFIEE-001",
+      "question": "J'ai reçu une « proposition de déclaration simplifiée » : que faire ?",
+      "reponse": "Si vous recevez une proposition de déclaration simplifiée, vous ne devez en principe plus remplir de déclaration : vérifiez seulement que les données sont correctes et complètes. Si tout est exact, vous n'avez rien à faire. Si quelque chose est incorrect ou manque (par ex. des frais, une situation familiale), vous devez la corriger dans les délais (formulaire papier ou Tax-on-web).",
+      "reference_legale": "Code des impôts sur les revenus 1992 — proposition de déclaration simplifiée",
+      "alerte_delai": "Si une correction est nécessaire, faites-la dans le délai indiqué sur la proposition (sinon les données proposées sont considérées comme acceptées).",
+      "sources": [
+        {"type": "officiel", "url": "https://fin.belgium.be/fr/particuliers/declaration-impot", "intitule": "SPF Finances — Déclaration d'impôt"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/impots/impot_sur_les_revenus/particuliers_et_independants/declaration", "intitule": "Belgium.be — Déclaration"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "IMP-RETARD-001",
+      "question": "Que se passe-t-il si je ne rentre pas ma déclaration ?",
+      "reponse": "Ne pas rentrer sa déclaration (ou la rentrer en retard) peut entraîner une taxation d'office, des accroissements d'impôt et des amendes. L'administration peut estimer vos revenus elle-même, souvent à votre désavantage. Si vous avez un empêchement ou des difficultés, contactez le SPF Finances : il vaut toujours mieux régulariser ou demander de l'aide que de laisser traîner.",
+      "reference_legale": "Code des impôts sur les revenus 1992 — taxation d'office, accroissements et amendes",
+      "contacts": [
+        {"nom": "SPF Finances", "lien": "https://fin.belgium.be", "pour": "régulariser, poser une question"}
+      ],
+      "alerte_delai": "Agissez vite : un retard entraîne taxation d'office, accroissements et amendes.",
+      "sources": [
+        {"type": "officiel", "url": "https://fin.belgium.be/fr/particuliers/declaration-impot/apres-declaration", "intitule": "SPF Finances — Après la déclaration"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/que-se-passe-t-il-si-je-ne-rentre-pas-ma-declaration-fiscale", "intitule": "Droits Quotidiens — Pas de déclaration"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-06-23T00:25:46.802592",
+  "overall": "OK",
+  "agents": [
+    {
+      "status": "OK",
+      "check": "missing_icons",
+      "referenced": 1839,
+      "defined": 1843
+    },
+    {
+      "status": "OK",
+      "check": "duplicate_icons",
+      "total_unique": 1843
+    },
+    {
+      "status": "WARN",
+      "check": "sidebar_size",
+      "alerts": [
+        {
+          "file": "sidebar-icons-4.tsx",
+          "lines": 5095,
+          "status": "WARNING — 93% du seuil"
+        }
+      ],
+      "fix": "Créer sidebar-icons-5.tsx et déplacer les dernières 2000 lignes"
+    },
+    {
+      "status": "OK",
+      "check": "engine_pattern",
+      "standard_ok": 130,
+      "dataclass_ok": 1646
+    },
+    {
+      "status": "OK",
+      "check": "route_security",
+      "routes_ok": 187,
+      "skipped_auth": 2
+    }
+  ],
+  "monte_carlo": {
+    "simulations": 100000,
+    "failures": 4887,
+    "risk_pct": 4.89,
+    "confidence": 95.11
+  }
+}

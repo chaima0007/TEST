@@ -1,0 +1,65 @@
+{
+  "module": "vie_privee_rgpd",
+  "titre": "Vie privée & données personnelles (RGPD)",
+  "domaine": "Vie privée & données",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Règlement général sur la protection des données (RGPD) ; loi du 30 juillet 2018 ; Autorité de protection des données (APD)",
+    "portee": "Droits de toute personne sur ses données personnelles en Belgique",
+    "source_officielle": "https://www.autoriteprotectiondonnees.be/citoyen/vie-privee/quels-sont-mes-droits-"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour une plainte, l'Autorité de protection des données (APD) est l'organe compétent.",
+  "faits": [
+    {
+      "id": "RGPD-DROITS-001",
+      "question": "Quels sont mes droits sur mes données personnelles ?",
+      "reponse": "Le RGPD vous donne plusieurs droits face à celui qui traite vos données : être informé, accéder à vos données, les faire rectifier, les faire effacer (sous conditions), limiter ou vous opposer à leur traitement, et la portabilité. Vous exercez ces droits auprès du « responsable du traitement » (l'organisation qui détient vos données).",
+      "reference_legale": "RGPD (règlement UE 2016/679) ; loi du 30 juillet 2018",
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen/vie-privee/quels-sont-mes-droits-", "intitule": "APD — Quels sont mes droits ?"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee/protection_des_donnees_personnelles/droits_des_interesses", "intitule": "Belgium.be — Droits de la personne concernée"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "RGPD-ACCES-001",
+      "question": "Puis-je obtenir une copie des données qu'une organisation détient sur moi ?",
+      "reponse": "Oui. Vous avez le droit d'obtenir gratuitement une copie de vos données personnelles traitées. Pour des copies supplémentaires, des frais raisonnables (coût administratif) peuvent être demandés. L'organisation doit répondre en principe dans un délai d'un mois (prolongeable de deux mois pour les demandes complexes, si elle vous en informe).",
+      "reference_legale": "RGPD — droit d'accès (art. 15)",
+      "alerte_delai": "L'organisation a en principe 1 mois pour répondre : notez la date de votre demande.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/professionnel/rgpd-/droits-des-citoyens/droit-d-acces", "intitule": "APD — Droit d'accès"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee/protection_des_donnees_personnelles/droits_des_interesses", "intitule": "Belgium.be — Droits"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "RGPD-EFFACEMENT-001",
+      "question": "Puis-je faire supprimer mes données (« droit à l'oubli ») ?",
+      "reponse": "Vous pouvez demander l'effacement de vos données lorsqu'il n'y a plus de raison valable de les traiter (par ex. consentement retiré, données plus nécessaires). Mais ce droit n'est pas absolu : l'organisation peut devoir conserver certaines données (obligation légale, défense de droits en justice, etc.).",
+      "reference_legale": "RGPD — droit à l'effacement (art. 17)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/professionnel/rgpd-/droits-des-citoyens/droit-a-l-effacement", "intitule": "APD — Droit à l'effacement"},
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/professionnel/rgpd-/droits-des-citoyens", "intitule": "APD — Droits des citoyens"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "RGPD-PLAINTE-001",
+      "question": "Une organisation ne respecte pas mes droits : que faire ?",
+      "reponse": "Adressez d'abord votre demande par écrit au responsable du traitement (gardez une preuve). S'il ne respecte pas vos droits, vous pouvez introduire une plainte auprès de l'Autorité de protection des données (APD) et, le cas échéant, agir en justice. L'APD est l'autorité belge compétente pour faire respecter le RGPD.",
+      "reference_legale": "RGPD et loi du 30 juillet 2018 — compétence de l'Autorité de protection des données",
+      "contacts": [
+        {"nom": "Autorité de protection des données (APD)", "lien": "https://www.autoriteprotectiondonnees.be", "pour": "déposer une plainte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen/vie-privee/quels-sont-mes-droits-", "intitule": "APD — Mes droits"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee", "intitule": "Belgium.be — Respect de la vie privée"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

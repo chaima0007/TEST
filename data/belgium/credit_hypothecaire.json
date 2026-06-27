@@ -1,0 +1,47 @@
+{
+  "module": "credit_hypothecaire",
+  "titre": "Crédit hypothécaire — emprunter pour un logement",
+  "domaine": "Crédit hypothécaire",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique, livre VII — crédit hypothécaire (information précontractuelle, rétractation, remboursement anticipé)",
+    "portee": "Droits de l'emprunteur lors d'un prêt logement",
+    "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/credit-hypothecaire"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les taux et conditions varient selon les banques et votre profil ; comparez les offres et faites-vous conseiller avant de signer.",
+  "faits": [
+    {
+      "id": "HYPO-OFFRE-001",
+      "question": "Avant de signer mon prêt logement, ai-je un délai pour réfléchir ou me rétracter ?",
+      "reponse": "Oui. La banque doit vous remettre une information précontractuelle claire et une offre de crédit avec toutes les conditions (montant, taux, durée, coût total). Vous disposez d'un droit de rétractation de 14 jours calendaires après la conclusion du contrat de crédit, sans devoir vous justifier. Prenez ce temps pour comparer plusieurs offres : à conditions proches, de petites différences de taux pèsent lourd sur 20-25 ans. Ne signez jamais sous pression.",
+      "reference_legale": "Code de droit économique, livre VII — crédit hypothécaire (information précontractuelle et droit de rétractation)",
+      "alerte_delai": "Droit de rétractation : 14 jours calendaires après la conclusion du contrat de crédit.",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "droits de l'emprunteur, information"},
+        {"nom": "Plusieurs banques / courtier", "pour": "comparer les offres avant de signer"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/credit-hypothecaire", "intitule": "SPF Économie — Crédit hypothécaire"},
+        {"type": "secondaire", "url": "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-differentes-etapes-dun-achat-immobilier/credit-immobilier/le-remboursement-du-credit-hypothecaire", "intitule": "Notaire.be — Le remboursement du crédit hypothécaire"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "HYPO-ANTICIPE-001",
+      "question": "Puis-je rembourser mon prêt plus tôt, et à quel coût ?",
+      "reponse": "Oui. Vous pouvez toujours rembourser tout ou partie de votre crédit hypothécaire par anticipation : la banque ne peut pas l'interdire. En contrepartie, elle peut réclamer une indemnité de remploi, plafonnée par la loi à trois mois d'intérêts sur le montant remboursé par anticipation. C'est souvent intéressant en cas de vente, d'héritage ou de baisse des taux (refinancement). Faites le calcul : l'économie d'intérêts dépasse souvent l'indemnité.",
+      "reference_legale": "Code de droit économique, livre VII — remboursement anticipé du crédit hypothécaire (indemnité plafonnée à 3 mois d'intérêts)",
+      "contacts": [
+        {"nom": "Votre banque", "pour": "calcul de l'indemnité de remploi, remboursement anticipé"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/credit-hypothecaire", "intitule": "SPF Économie — Crédit hypothécaire"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/que-se-passe-t-il-si-je-ne-paie-pas-mon-credit-hypothecaire", "intitule": "Droits Quotidiens — Crédit hypothécaire impayé"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "module": "sante_mentale",
+  "titre": "Santé mentale — aide psychologique, remboursement, écoute",
+  "domaine": "Santé mentale",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Soins psychologiques de première ligne remboursés via les réseaux de santé mentale (convention INAMI)",
+    "portee": "Accès à l'aide psychologique et à l'écoute en Belgique",
+    "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "AVERTISSEMENT — En cas de détresse ou de pensées suicidaires, vous n'êtes pas seul·e : appelez le 112 (urgence) ou une ligne d'écoute. Demander de l'aide est un acte de courage, pas une faiblesse.",
+  "faits": [
+    {
+      "id": "PSY-REMBOURSEMENT-001",
+      "question": "L'aide psychologique est-elle remboursée ?",
+      "reponse": "Oui. Les soins psychologiques de première ligne sont remboursés via les réseaux de santé mentale conventionnés avec l'INAMI, chez un psychologue/orthopédagogue clinicien conventionné. Pas besoin de prescription médicale. À titre indicatif : la 1re séance individuelle est gratuite, puis vous payez environ 11 € (ou 4 € avec l'intervention majorée) par séance. Les montants peuvent évoluer — vérifiez sur l'INAMI.",
+      "reference_legale": "Convention INAMI — soins psychologiques de première ligne via les réseaux de santé mentale",
+      "contacts": [
+        {
+          "nom": "Réseau de santé mentale de votre région (psy conventionnés)",
+          "lien": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale",
+          "pour": "trouver un psy conventionné"
+        },
+        {
+          "nom": "Votre mutualité",
+          "pour": "infos remboursement"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale/vos-soins-psychologiques-de-1re-ligne-rembourses-via-les-reseaux-de-sante-mentale",
+          "intitule": "INAMI — Soins psychologiques de 1re ligne remboursés"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale",
+          "intitule": "INAMI — Remboursement des soins en santé mentale"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PSY-ECOUTE-001",
+      "question": "Je ne vais pas bien : à qui parler tout de suite ?",
+      "reponse": "Parler aide, et c'est confidentiel. En cas de danger immédiat ou de pensées suicidaires, appelez le 112. Pour être écouté·e à tout moment, des lignes existent : le Centre de Prévention du Suicide (0800 32 123, gratuit, 24h/24) et Télé-Accueil (107). Les jeunes peuvent appeler le 103 (Écoute-Enfants). Votre médecin généraliste est aussi une bonne première porte, sans jugement.",
+      "reference_legale": "Convention INAMI relative aux soins de santé mentale ; dispositifs publics de prévention",
+      "contacts": [
+        {
+          "nom": "Urgence (danger immédiat)",
+          "numero": "112",
+          "pour": "détresse vitale"
+        },
+        {
+          "nom": "Centre de Prévention du Suicide",
+          "numero": "0800 32 123",
+          "pour": "écoute, 24h/24, gratuit"
+        },
+        {
+          "nom": "Télé-Accueil",
+          "numero": "107",
+          "pour": "écoute, détresse"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & jeunes"
+        }
+      ],
+      "alerte_delai": "N'attends pas que ça empire : un appel peut suffire à passer un cap. 112 si danger immédiat.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/sante/aide_et_assistance",
+          "intitule": "Belgium.be — Aide et assistance"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale",
+          "intitule": "INAMI — Soins de santé mentale"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

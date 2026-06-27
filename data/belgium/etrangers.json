@@ -1,0 +1,63 @@
+{
+  "module": "etrangers_sejour",
+  "titre": "Étrangers & séjour — titres, regroupement familial, asile",
+  "domaine": "Étrangers & séjour",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 15 décembre 1980 sur l'accès au territoire, le séjour, l'établissement et l'éloignement des étrangers ; Office des étrangers (SPF Intérieur)",
+    "portee": "Séjour des personnes étrangères en Belgique : titres, regroupement familial, protection internationale",
+    "source_officielle": "https://dofi.ibz.be/fr"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Domaine complexe et à fort enjeu. Information générale uniquement. Faites-vous accompagner par un service spécialisé (ex. service social, association d'aide aux étrangers) ou un avocat en droit des étrangers. Les procédures et délais évoluent.",
+  "faits": [
+    {
+      "id": "ETR-TITRE-001",
+      "question": "Comment fonctionne un titre de séjour, et c'est quoi une « annexe » ?",
+      "reponse": "C'est l'Office des étrangers (OE) qui examine les demandes de séjour. Pendant une procédure, la commune vous remet une « annexe » : un document (formulaire) dont le modèle dépend de votre situation (par exemple l'annexe 26 concerne la protection internationale). Il existe différentes cartes de séjour selon le statut. Les démarches passent en général par l'administration communale de votre lieu de résidence.",
+      "reference_legale": "Loi du 15 décembre 1980 sur les étrangers ; arrêtés d'exécution",
+      "contacts": [
+        {"nom": "Administration communale (service étrangers)", "pour": "introduire/suivre la demande"},
+        {"nom": "Office des étrangers", "lien": "https://dofi.ibz.be/fr", "pour": "infos sur les procédures"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr", "intitule": "Office des étrangers (SPF Intérieur)"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/une-annexe-pour-quel-sejour", "intitule": "Droits Quotidiens — Une annexe, pour quel séjour ?"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ETR-REGROUPEMENT-001",
+      "question": "Comment demander un regroupement familial ?",
+      "reponse": "Le regroupement familial permet, sous conditions, de rejoindre un membre de famille séjournant en Belgique (Belge, Européen, ou ressortissant d'un pays tiers selon son statut). La demande se fait en principe auprès de l'administration communale du lieu où réside le membre de famille (ou via un poste diplomatique). Des conditions s'appliquent (lien familial, revenus, logement, assurance). Le titre obtenu dépend de la situation de la personne rejointe.",
+      "reference_legale": "Loi du 15 décembre 1980 — regroupement familial",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "dépôt de la demande"},
+        {"nom": "Service spécialisé / avocat en droit des étrangers", "pour": "accompagnement"}
+      ],
+      "alerte_delai": "Préparez les documents tôt et respectez les délais : un dossier incomplet ou tardif peut être refusé.",
+      "sources": [
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr/themes/ressortissants-dun-pays-tiers/regroupement-familial", "intitule": "Office des étrangers — Regroupement familial"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/je-suis-non-europeen-et-demande-le-regroupement-familial-avec-un-belge-comment-le-demander", "intitule": "Droits Quotidiens — Regroupement familial avec un Belge"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ETR-ASILE-001",
+      "question": "Comment demander l'asile (protection internationale) ?",
+      "reponse": "La demande de protection internationale (asile) s'introduit auprès des autorités compétentes ; la personne reçoit une annexe 26. La demande est examinée par le Commissariat général aux réfugiés et aux apatrides (CGRA), qui décide d'accorder ou non le statut de réfugié ou la protection subsidiaire. Pendant la procédure, un accueil et un accompagnement sont prévus. Il est vivement conseillé d'être assisté (avocat, service spécialisé).",
+      "reference_legale": "Loi du 15 décembre 1980 — protection internationale ; compétence du CGRA",
+      "contacts": [
+        {"nom": "CGRA (Commissariat général aux réfugiés et apatrides)", "lien": "https://www.cgra.be/fr", "pour": "examen de la demande d'asile"},
+        {"nom": "Avocat / service d'aide aux demandeurs d'asile", "pour": "accompagnement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.cgra.be/fr", "intitule": "CGRA — Protection internationale"},
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr", "intitule": "Office des étrangers"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

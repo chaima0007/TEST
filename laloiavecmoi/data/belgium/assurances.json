@@ -1,0 +1,57 @@
+{
+  "module": "assurances",
+  "titre": "Assurances — auto obligatoire, RC familiale, litiges",
+  "domaine": "Assurances",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 4 avril 2014 relative aux assurances ; assurance RC automobile obligatoire (loi du 21 novembre 1989)",
+    "portee": "Assurances du quotidien : véhicule, vie privée, litiges",
+    "source_officielle": "https://www.belgium.be/fr/mobilite/vehicules/taxe_de_circulation_et_assurance/assurance"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Comparez les offres (outil gratuit Wikifin/FSMA) et lisez bien les conditions avant de signer.",
+  "faits": [
+    {
+      "id": "ASSU-AUTO-001",
+      "question": "Quelle assurance est obligatoire pour un véhicule ?",
+      "reponse": "Tout véhicule à moteur mis en circulation doit être assuré au minimum en responsabilité civile (RC auto). Cette assurance indemnise les dommages (corporels, matériels, moraux) causés à des tiers quand vous êtes en tort. Rouler sans assurance est une infraction grave. Les autres garanties (omnium, etc.) sont facultatives.",
+      "reference_legale": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs",
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/mobilite/vehicules/taxe_de_circulation_et_assurance/assurance", "intitule": "Belgium.be — Assurance véhicule"},
+        {"type": "officiel", "url": "https://www.fsma.be/fr/liste-des-assurances-obligatoires", "intitule": "FSMA — Liste des assurances obligatoires"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ASSU-FAMILIALE-001",
+      "question": "L'assurance RC familiale est-elle obligatoire, et à quoi sert-elle ?",
+      "reponse": "Non, elle n'est pas légalement obligatoire, mais elle est vivement recommandée. L'assurance RC familiale (« vie privée ») indemnise les dommages que vous, vos enfants ou les membres du ménage causez à autrui dans la vie privée (ex. un enfant qui casse quelque chose chez un voisin). Beaucoup de contrats incluent une protection juridique (frais d'avocat). Vous pouvez comparer gratuitement les offres via Wikifin (FSMA).",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (assurance RC vie privée — facultative)",
+      "contacts": [
+        {"nom": "Wikifin (FSMA) — comparateur", "lien": "https://www.wikifin.be", "pour": "comparer les RC familiales gratuitement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fsma.be/fr", "intitule": "FSMA — Autorité des services et marchés financiers"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quoi-sert-lassurance-rc-familiale-assurance-vie-privee", "intitule": "Droits Quotidiens — RC familiale"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ASSU-LITIGE-001",
+      "question": "Litige avec mon assureur : que faire ?",
+      "reponse": "D'abord, adressez une réclamation écrite à votre assureur (gardez une copie). Si le désaccord persiste, vous pouvez saisir gratuitement l'Ombudsman des Assurances (médiation neutre). En dernier recours, le tribunal. Une assurance protection juridique peut couvrir vos frais d'avocat. Conservez tous les documents (contrat, courriers, preuves).",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances ; règlement extrajudiciaire des litiges",
+      "contacts": [
+        {"nom": "Ombudsman des Assurances", "lien": "https://www.ombudsman-insurance.be", "pour": "médiation gratuite"}
+      ],
+      "alerte_delai": "Réclamez par écrit et respectez les délais indiqués au contrat ; gardez toutes les preuves.",
+      "sources": [
+        {"type": "secondaire", "url": "https://www.ombudsman-insurance.be", "intitule": "Ombudsman des Assurances"},
+        {"type": "officiel", "url": "https://www.fsma.be/fr", "intitule": "FSMA"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

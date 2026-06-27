@@ -1,0 +1,54 @@
+{
+  "registre": "Veille juridique — s'ajuster aux changements de loi",
+  "but": "Suivre les changements de loi connus/attendus et savoir quelles fiches revoir, et quand. L'agent SIGNALE ; un humain (ou l'IA sous protocole) valide la mise à jour.",
+  "principe_honnete": "Pas de surveillance autonome 24h/24 ici (réseau du bac à sable limité). Cette veille garantit qu'aucun changement connu n'est oublié et fixe une cadence de revue.",
+  "cadence_revue_jours": 180,
+  "derniere_revue": "2026-06-27",
+  "signaux": [
+    {
+      "id": "VEIL-PEB",
+      "sujet": "Calendrier PEB/exigences énergétiques (bail)",
+      "regions": ["Wallonie", "Bruxelles", "Flandre"],
+      "a_surveiller": "Échéances PEB régulièrement réajustées ; obligations de rénovation évolutives.",
+      "modules_impactes": ["bail_wallonie", "bail_bruxelles", "bail_flandre"],
+      "priorite": "haute",
+      "statut": "à surveiller"
+    },
+    {
+      "id": "VEIL-BXL-LOGEMENT",
+      "sujet": "Réforme du Code bruxellois du Logement (en vigueur 01/11/2024)",
+      "regions": ["Bruxelles"],
+      "a_surveiller": "Vérifier les arrêtés d'exécution et ajustements post-réforme.",
+      "modules_impactes": ["bail_bruxelles"],
+      "priorite": "moyenne",
+      "statut": "en vigueur — vérifier exécution"
+    },
+    {
+      "id": "VEIL-INDEX",
+      "sujet": "Indexations annuelles (1er janvier)",
+      "regions": ["Belgique"],
+      "a_surveiller": "Seuils aide juridique, quotités (in)saisissables, montants fiscaux — réindexés chaque année.",
+      "modules_impactes": ["justice_penal_acces", "surendettement_reglement_collectif_dettes"],
+      "priorite": "haute",
+      "statut": "récurrent annuel"
+    },
+    {
+      "id": "VEIL-MEDIATION-2024",
+      "sujet": "Médiation de dettes amiable (loi du 3 mai 2024)",
+      "regions": ["Belgique"],
+      "a_surveiller": "Suivre les arrêtés et la mise en œuvre pratique.",
+      "modules_impactes": ["surendettement_reglement_collectif_dettes"],
+      "priorite": "moyenne",
+      "statut": "à surveiller"
+    },
+    {
+      "id": "VEIL-STATUT-UNIQUE",
+      "sujet": "Délais de préavis (statut unique, évolutions)",
+      "regions": ["Belgique"],
+      "a_surveiller": "Ajustements des règles de préavis / indemnités.",
+      "modules_impactes": ["travail_emploi"],
+      "priorite": "moyenne",
+      "statut": "à surveiller"
+    }
+  ]
+}

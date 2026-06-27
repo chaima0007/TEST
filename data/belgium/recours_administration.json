@@ -1,0 +1,48 @@
+{
+  "module": "recours_administration",
+  "titre": "Recours contre l'administration — médiateur & Conseil d'État",
+  "domaine": "Recours administratifs",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 22 mars 1995 instaurant des médiateurs fédéraux ; lois coordonnées sur le Conseil d'État (recours en annulation)",
+    "portee": "Contester une décision ou un mauvais fonctionnement d'un service public",
+    "source_officielle": "https://www.mediateurfederal.be"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le médiateur compétent dépend du niveau de pouvoir (fédéral, régional, communal) ; vérifiez l'ombudsman concerné.",
+  "faits": [
+    {
+      "id": "ADM-MEDIATEUR-001",
+      "question": "Un service public me traite mal ou ne répond pas : que faire ?",
+      "reponse": "Commencez toujours par contacter le service concerné par écrit, pour lui laisser la chance de corriger. S'il ne réagit pas ou si vous estimez ne pas être pris au sérieux, saisissez le médiateur (ombudsman) compétent : le Médiateur fédéral pour les services publics fédéraux, ou le médiateur de la Région/commune concernée. C'est gratuit, indépendant et impartial. Le médiateur examine votre réclamation et cherche une solution, mais ne peut pas annuler lui-même une décision.",
+      "reference_legale": "Loi du 22 mars 1995 instaurant des médiateurs fédéraux",
+      "contacts": [
+        {"nom": "Médiateur fédéral", "lien": "https://www.mediateurfederal.be", "pour": "plainte contre un service public fédéral (gratuit)"},
+        {"nom": "Médiateur de votre Région / commune", "pour": "services régionaux ou communaux"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime/plaintes_et_declarations/ombudsman", "intitule": "Belgium.be — Ombudsman"},
+        {"type": "officiel", "url": "https://www.mediateurfederal.be", "intitule": "Médiateur fédéral"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ADM-CONSEIL-ETAT-001",
+      "question": "Comment faire annuler une décision administrative illégale ?",
+      "reponse": "Quand une décision administrative vous semble illégale, vous pouvez en demander l'annulation au Conseil d'État (recours en annulation). Attention : le délai est court — en principe 60 jours à partir de la notification ou de la connaissance de la décision. La procédure est technique : faites-vous aider par un avocat (et pensez à l'aide juridique si vos moyens sont limités). Avant cela, vérifiez s'il existe un recours administratif organisé (réclamation interne) à exercer d'abord.",
+      "reference_legale": "Loi du 12 janvier 1973 (lois coordonnées) sur le Conseil d'État — recours en annulation",
+      "alerte_delai": "Le recours en annulation au Conseil d'État doit en principe être introduit dans les 60 jours de la décision.",
+      "contacts": [
+        {"nom": "Conseil d'État", "lien": "https://www.conseildetat.be", "pour": "recours en annulation"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo selon revenus"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.conseildetat.be", "intitule": "Conseil d'État"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime/plaintes_et_declarations/ombudsman", "intitule": "Belgium.be — Plaintes et recours"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

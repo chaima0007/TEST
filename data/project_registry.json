@@ -1,0 +1,46 @@
+{
+  "registre": "Carte des projets & propriété des données",
+  "but": "Séparer clairement chaque projet et savoir quelle donnée appartient à quoi — pour ne jamais mélanger l'information.",
+  "derniere_revue": "2026-06-26",
+  "projets": [
+    {
+      "id": "laloiavecmoi",
+      "nom": "La Loi Avec Moi",
+      "statut": "ACTIF — prioritaire (monétisation)",
+      "description": "Plateforme legal-tech grand public, multi-pays/langues (FR Belgique, NL Belgique, FR France). Info juridique fiable et sourcée + services payants (freemium).",
+      "repertoires": ["laloiavecmoi/", "app/la-loi-avec-moi-france/", "app/loi-avec-moi/", "app/de-wet-met-mij/"],
+      "donnees_proprietaires": ["data/belgium/"],
+      "sources_reference": ["WALLEX (Wallonie)", "Moniteur belge / Belgisch Staatsblad", "SPF Justice / Justice.belgium.be", "SPW Logement"],
+      "regle_donnees": "Tout fait juridique DOIT être sourcé officiellement (protocole legal_content_verifier). Zéro contenu non vérifié."
+    },
+    {
+      "id": "caelum_swarm",
+      "nom": "CaelumSwarm — Moteurs d'intelligence",
+      "statut": "ACTIF — base de couverture/cartographie",
+      "description": "3300+ moteurs thématiques (droits humains, marché, ESG). Squelette de couverture et de scoring. NB : scores synthétiques, pas des sources juridiques — à enrichir progressivement.",
+      "repertoires": ["swarm/intelligence/", "swarm/divisions/", "swarm/exporters/"],
+      "donnees_proprietaires": ["data/engine_verification_report.json", "data/full_engine_sweep_report.json", "data/certification_report.json", "data/certification_baseline.json"],
+      "outils": ["scripts/wave_engine_generator.py", "scripts/engine_verifier.py", "scripts/scalability_guardian.py", "scripts/certification_protocol.py"],
+      "regle_donnees": "Préfixes d'entité uniques par moteur ; dette legacy (115 collisions) gelée et anti-régression active."
+    },
+    {
+      "id": "competeiq",
+      "nom": "CompeteIQ — Suite intelligence commerciale",
+      "statut": "ACTIF — produit B2B",
+      "description": "Application Next.js (nom paquet: competeiq) : CRM/marketing, pipeline, devis/factures, dashboards, modules intelligence commerciale.",
+      "repertoires": ["app/dashboard/", "app/api/", "components/", "lib/", "prisma/"],
+      "donnees_proprietaires": ["data/pipeline*.json", "data/negotiations*.json", "data/invoices*.json", "data/customer_health_score*.json", "prisma/"],
+      "regle_donnees": "Données clients/commerciales — NE PAS mélanger avec le contenu juridique (laloiavecmoi) ni les moteurs (caelum_swarm)."
+    },
+    {
+      "id": "agents_ops",
+      "nom": "Agents opérationnels & gouvernance",
+      "statut": "ACTIF — infrastructure transverse",
+      "description": "Bibliothèque d'agents (certification, audit, sécurité, sourcing, veille) et protocoles de gouvernance.",
+      "repertoires": ["scripts/", "SYSTÈME_AGENTS/", "infra/", "tools/"],
+      "donnees_proprietaires": ["data/agent_audit.json", "data/decision_protocol_log.json", "data/decision_seals_log.json", "data/governance/", "data/lessons_learned/", "data/backups/"],
+      "regle_donnees": "Logs et protocoles transverses ; chaque agent déclare sa politique de sources (voir data/governance/agent_charter.json)."
+    }
+  ],
+  "regle_or": "Avant d'écrire une donnée, identifier le projet propriétaire dans ce registre. En cas de doute, ne pas mélanger : créer la donnée dans le périmètre du bon projet."
+}

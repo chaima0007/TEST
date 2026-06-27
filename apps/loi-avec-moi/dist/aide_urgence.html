@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Où aller quand ça va mal — faim, sans-abri, danger, sans papiers — La Loi Avec Moi</title>
+<meta name="description" content="Informations juridiques belges fiables et sourcées : bail, surendettement, justice.">
+<style>
+:root{--bleu:#0b3d6e;--bleu2:#11578f;--gris:#f4f6f9;--txt:#1c2733;--muted:#5b6b7b;--bord:#e2e8f0;--ok:#0a7d4f}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--txt);line-height:1.6;background:#fff}
+a{color:var(--bleu2);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:linear-gradient(135deg,var(--bleu),var(--bleu2));color:#fff;padding:1.1rem 1.25rem}
+header.site .wrap{max-width:920px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+header.site a{color:#fff}
+.brand{font-weight:700;font-size:1.15rem;letter-spacing:.2px}
+.brand small{display:block;font-weight:400;opacity:.85;font-size:.72rem}
+nav.top a{margin-left:1rem;font-size:.92rem;opacity:.95}
+main{max-width:920px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
+.hero{padding:1.5rem 0 .5rem}
+.hero h1{font-size:1.8rem;margin:.2rem 0 .4rem;color:var(--bleu)}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:640px}
+.disclaimer{background:#fff8e6;border:1px solid #f3e2a8;border-radius:10px;padding:.8rem 1rem;margin:1rem 0;font-size:.9rem;color:#6b5710}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-top:1rem}
+.card{border:1px solid var(--bord);border-radius:12px;padding:1.1rem;background:#fff;transition:.15s;display:block}
+.card:hover{border-color:var(--bleu2);box-shadow:0 4px 18px rgba(11,61,110,.08);text-decoration:none}
+.card h3{margin:.1rem 0 .35rem;color:var(--bleu)}
+.card .meta{color:var(--muted);font-size:.85rem}
+.badge{display:inline-block;background:var(--gris);border:1px solid var(--bord);border-radius:999px;padding:.05rem .55rem;font-size:.74rem;color:var(--muted);margin-right:.3rem}
+.fait{border:1px solid var(--bord);border-radius:12px;padding:1.1rem 1.2rem;margin:1rem 0;background:#fff}
+.fait h3{margin:.1rem 0 .5rem;color:var(--bleu);font-size:1.12rem}
+.fait .ref{font-size:.86rem;color:var(--muted);margin:.5rem 0}
+.fait .src{font-size:.86rem;margin-top:.5rem}
+.fait .src ul{margin:.3rem 0 0;padding-left:1.1rem}
+.fait .date{font-size:.78rem;color:var(--muted);margin-top:.5rem}
+.src-officiel{color:var(--ok);font-weight:600}
+.alerte{background:#fdecec;border:1px solid #f3b4b4;border-left:5px solid #c0392b;border-radius:8px;padding:.6rem .8rem;margin:.6rem 0;font-size:.9rem;color:#7a1f1f}
+.alerte strong{color:#c0392b}
+.urgent-card{border:1px solid #f3b4b4;border-left:5px solid #c0392b;border-radius:12px;padding:1rem 1.1rem;margin:1rem 0;background:#fff}
+.urgent-card h3{margin:.1rem 0 .4rem;color:#c0392b;font-size:1.05rem}
+.urgent-card .lien{font-size:.85rem;margin-top:.4rem}
+.contacts{background:#eef6ff;border:1px solid #bcd9f5;border-left:5px solid var(--bleu2);border-radius:8px;padding:.6rem .8rem;margin:.6rem 0;font-size:.9rem}
+.contacts ul{margin:.3rem 0 0;padding-left:1.1rem}
+.contacts .contact-meta{color:var(--muted);font-size:.85rem}
+.search{margin:1.2rem 0}
+.search input{width:100%;padding:.7rem .9rem;border:1px solid var(--bord);border-radius:10px;font-size:1rem}
+footer.site{border-top:1px solid var(--bord);background:var(--gris);color:var(--muted);font-size:.85rem}
+footer.site .wrap{max-width:920px;margin:0 auto;padding:1.3rem 1.25rem}
+.back{display:inline-block;margin-bottom:1rem;font-size:.9rem}
+h2.sec{color:var(--bleu);border-bottom:2px solid var(--bord);padding-bottom:.3rem;margin-top:2rem}
+/* --- Accessibilité (WCAG 2.2) --- */
+.skip-link{position:absolute;left:-9999px;top:0;background:#fff;color:var(--bleu);padding:.6rem 1rem;border:2px solid var(--bleu);border-radius:0 0 8px 0;z-index:1000;font-weight:700}
+.skip-link:focus{left:0}
+a:focus-visible,button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid #ffbf47;outline-offset:2px;border-radius:4px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.search input{min-height:44px}
+.card,.back,nav.top a{min-height:24px}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;scroll-behavior:auto !important}}
+@media (prefers-color-scheme: dark){
+  body{background:#0f1620;color:#e6edf3}
+  .card,.fait{background:#161f2b;border-color:#2a3746}
+  .badge{background:#1d2733;border-color:#2a3746;color:#aab8c6}
+  .card h3,.fait h3,.hero h1,h2.sec{color:#7fb2e6}
+  a{color:#7fb2e6}
+  footer.site{background:#0c121a;color:#aab8c6}
+}
+.btn-print{display:inline-block;background:var(--bleu);color:#fff;border:0;border-radius:8px;padding:.55rem 1rem;font-size:.95rem;cursor:pointer;margin:.5rem 0}
+.btn-print:hover{background:var(--bleu2)}
+/* --- Fiche à emporter : impression propre --- */
+@media print{
+  header.site,nav.top,footer.site,.search,.skip-link,.back,.btn-print,.disclaimer{display:none !important}
+  body{background:#fff;color:#000;font-size:12pt}
+  main{max-width:100%;padding:0}
+  .fait,.urgent-card{break-inside:avoid;border:1px solid #999}
+  .fait a[href^="http"]::after,.src a[href^="http"]::after{content:" — " attr(href);font-size:9pt;color:#333;word-break:break-all}
+  h1{font-size:18pt}
+  .print-foot{display:block !important;margin-top:1rem;font-size:9pt;color:#333;border-top:1px solid #999;padding-top:.5rem}
+}
+.print-foot{display:none}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
+<header class="site"><div class="wrap">
+  <a href="index.html" aria-label="La Loi Avec Moi — accueil"><span class="brand">La Loi Avec Moi<small>Le droit belge, clair et sourcé</small></span></a>
+  <nav class="top" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="a-propos.html">Comment ça marche</a><a href="espace-mineurs.html">Enfants &amp; jeunes</a><a href="urgences.html">Urgences &amp; délais</a><a href="annuaire.html">Près de chez vous</a><a href="specialistes.html">Nos spécialistes</a><a href="textes.html">Textes de loi</a><a href="sources.html">Nos sources</a><a href="lexique.html">Lexique</a><a href="transparence.html">Transparence</a><a href="accessibilite.html">Accessibilité</a></nav>
+</div></header>
+<main id="contenu" tabindex="-1">
+<a class="back" href="index.html">← Toutes les thématiques</a><h1 style="color:#0b3d6e">Où aller quand ça va mal — faim, sans-abri, danger, sans papiers</h1><div class="meta"><span class="badge">Belgique (fédéral)</span><span class="badge">5 réponses</span></div><div class="ref">Base légale principale : Aide sociale et droit à l&#x27;aide (loi organique des CPAS du 8 juillet 1976 ; SPP Intégration Sociale) — <a href="https://www.belgium.be/fr/famille/aide_sociale/cpas" target="_blank" rel="noopener">source officielle<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a></div><button class="btn-print" onclick="window.print()" aria-label="Imprimer cette fiche pour l'emporter">🖨️ Imprimer / emporter cette fiche</button><div class="search"><label for="qf" class="visually-hidden">Filtrer les questions de cette page</label><input id="qf" type="search" aria-label="Filtrer les questions de cette page" placeholder="Filtrer dans cette page…" oninput="var v=this.value.toLowerCase();document.querySelectorAll('.fait').forEach(function(a){a.style.display=a.dataset.q.indexOf(v)>=0?'':'none';});"></div><article class="fait" data-q="j&#x27;ai faim / je n&#x27;ai plus de quoi manger : où aller ?"><h3>J&#x27;ai faim / je n&#x27;ai plus de quoi manger : où aller ?</h3><p>Adressez-vous au CPAS de votre commune (il y en a un partout) : il peut fournir une aide financière, des colis alimentaires et une aide d&#x27;urgence. Des associations distribuent aussi des repas et des colis. Demander de l&#x27;aide est un droit, pas une honte. Si la situation est très urgente, voyez la fiche « aide sociale en urgence ».</p><div class="alerte" role="note">⏱ <strong>À ne pas tarder.</strong> Si vous ne pouvez pas attendre, demandez explicitement une aide d&#x27;urgence (voir fiche dédiée).</div><div class="contacts"><strong>📞 Qui contacter :</strong><ul><li><strong>CPAS de votre commune</strong> <span class="contact-meta">(aide financière, colis alimentaires)</span></li></ul></div><div class="ref">⚖️ Loi organique des CPAS du 8 juillet 1976 — droit à l&#x27;aide sociale</div><div class="src"><strong>Sources :</strong><ul><li><a href="https://www.belgium.be/fr/famille/aide_sociale/cpas" target="_blank" rel="noopener">Belgium.be — CPAS<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="src-officiel">[officiel]</span></li><li><a href="https://www.bruxelles-j.be/droits-sociaux/obtenir-de-laide-du-cpas/quelles-sont-les-aides-fournies-par-le-cpas/" target="_blank" rel="noopener">Bruxelles-J — Les aides du CPAS<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="">[complément]</span></li></ul></div><div class="date">Vérifié le 2026-06-26</div></article><article class="fait" data-q="je n&#x27;ai pas (ou plus) de logement : où aller ?"><h3>Je n&#x27;ai pas (ou plus) de logement : où aller ?</h3><p>Le CPAS aide les personnes sans abri : aide financière, adresse de référence (pour garder des droits sans domicile fixe), aide à trouver un logement, et parfois un logement d&#x27;urgence (location de courte durée, en principe 6 mois renouvelable une fois). Dans les grandes villes, des dispositifs d&#x27;accueil et d&#x27;hébergement d&#x27;urgence existent. Le CPAS de la commune où vous vous trouvez est le point de départ.</p><div class="contacts"><strong>📞 Qui contacter :</strong><ul><li><strong>CPAS (commune où vous êtes)</strong> <span class="contact-meta">(hébergement d&#x27;urgence, adresse de référence)</span></li><li><strong>Urgences</strong> — <a href="tel:112">112</a> <span class="contact-meta">(détresse vitale (froid, santé))</span></li></ul></div><div class="ref">⚖️ Loi organique des CPAS du 8 juillet 1976 ; loi du 26 mai 2002 concernant le droit à l&#x27;intégration sociale (adresse de référence, logement d&#x27;urgence)</div><div class="src"><strong>Sources :</strong><ul><li><a href="https://www.belgium.be/fr/logement/logement_social/sans-abri" target="_blank" rel="noopener">Belgium.be — Sans-abri<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="src-officiel">[officiel]</span></li><li><a href="https://www.mi-is.be/fr/logement-durgence-0" target="_blank" rel="noopener">SPP Intégration Sociale — Logement d&#x27;urgence<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="src-officiel">[officiel]</span></li></ul></div><div class="date">Vérifié le 2026-06-26</div></article><article class="fait" data-q="c&#x27;est urgent, je ne peux pas attendre : comment obtenir de l&#x27;aide vite ?"><h3>C&#x27;est urgent, je ne peux pas attendre : comment obtenir de l&#x27;aide vite ?</h3><p>Si votre situation est trop urgente pour attendre la procédure normale, vous pouvez demander une aide sociale en urgence au président ou à la présidente du CPAS : en demandant à le/la rencontrer, ou par courrier recommandé expliquant pourquoi c&#x27;est urgent. Gardez une copie de votre demande. Le CPAS doit examiner votre situation.</p><div class="alerte" role="note">⏱ <strong>À ne pas tarder.</strong> Formulez la demande comme « urgente » et par écrit (recommandé) pour accélérer et garder une preuve.</div><div class="contacts"><strong>📞 Qui contacter :</strong><ul><li><strong>Président·e du CPAS de votre commune</strong> <span class="contact-meta">(demande d&#x27;aide en urgence)</span></li></ul></div><div class="ref">⚖️ Loi organique des CPAS — aide urgente / décision du président</div><div class="src"><strong>Sources :</strong><ul><li><a href="https://www.belgium.be/fr/famille/aide_sociale/cpas" target="_blank" rel="noopener">Belgium.be — CPAS<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="src-officiel">[officiel]</span></li><li><a href="https://www.bruxelles-j.be/ton-autonomie/tu-es-mineur/laide-sociale-comment-subvenir-a-mes-besoins/" target="_blank" rel="noopener">Bruxelles-J — L&#x27;aide sociale<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="">[complément]</span></li></ul></div><div class="date">Vérifié le 2026-06-26</div></article><article class="fait" data-q="je suis sans papiers / en séjour illégal : ai-je droit à une aide ?"><h3>Je suis sans papiers / en séjour illégal : ai-je droit à une aide ?</h3><p>Même en séjour illégal, vous avez droit à l&#x27;aide médicale urgente (AMU) : c&#x27;est une prise en charge des frais médicaux nécessaires (soins urgents ou de prévention), via le CPAS, sur attestation d&#x27;un médecin. D&#x27;autres aides peuvent exister selon la situation (notamment pour les familles avec enfants). Renseignez-vous auprès du CPAS ou d&#x27;une association spécialisée.</p><div class="contacts"><strong>📞 Qui contacter :</strong><ul><li><strong>CPAS de votre commune</strong> <span class="contact-meta">(aide médicale urgente (AMU))</span></li></ul></div><div class="ref">⚖️ Arrêté royal du 12 décembre 1996 relatif à l&#x27;aide médicale urgente ; loi organique des CPAS du 8 juillet 1976</div><div class="src"><strong>Sources :</strong><ul><li><a href="https://www.mi-is.be/fr/themes/aide-medicale/aide-medicale-urgente" target="_blank" rel="noopener">SPP Intégration Sociale — Aide médicale urgente<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="src-officiel">[officiel]</span></li><li><a href="https://www.bruxelles-j.be/droits-sociaux/obtenir-de-laide-du-cpas/comment-le-cpas-peut-il-aider-les-personnes-qui-sont-en-sejour-illegal-en-belgique-les-sans-papiers/" target="_blank" rel="noopener">Bruxelles-J — CPAS et personnes sans papiers<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="">[complément]</span></li></ul></div><div class="date">Vérifié le 2026-06-26</div></article><article class="fait" data-q="je me sens en danger : où aller (selon mon âge / ma situation) ?"><h3>Je me sens en danger : où aller (selon mon âge / ma situation) ?</h3><p>En danger immédiat : 112 (secours) ou 101 (police), pour tout le monde. Si tu es un enfant ou un jeune : le 103 (Écoute-Enfants), ou un adulte de confiance. En cas de violences (notamment conjugales ou intrafamiliales), des lignes d&#x27;écoute et des structures d&#x27;accueil/refuges existent pour mettre les victimes en sécurité — voir la catégorie « Harcèlement &amp; violences » pour les contacts. Tu n&#x27;as pas à rester seul·e face au danger.</p><div class="alerte" role="note">⏱ <strong>À ne pas tarder.</strong> Si tu es en danger, n&#x27;attends pas : mets-toi d&#x27;abord en sécurité, puis appelle.</div><div class="contacts"><strong>📞 Qui contacter :</strong><ul><li><strong>Urgences</strong> — <a href="tel:112">112</a> <span class="contact-meta">(danger immédiat)</span></li><li><strong>Police</strong> — <a href="tel:101">101</a> <span class="contact-meta">(danger / plainte)</span></li><li><strong>Écoute-Enfants</strong> — <a href="tel:103">103</a> <span class="contact-meta">(enfants &amp; jeunes)</span></li></ul></div><div class="ref">⚖️ Code pénal (protection des personnes) ; arrêté royal relatif aux numéros d&#x27;urgence (112/101)</div><div class="src"><strong>Sources :</strong><ul><li><a href="https://www.belgium.be/fr/sante/aide_et_assistance" target="_blank" rel="noopener">Belgium.be — Aide et assistance<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="src-officiel">[officiel]</span></li><li><a href="https://www.belgium.be/fr/famille/aide_sociale/cpas" target="_blank" rel="noopener">Belgium.be — CPAS<span class="visually-hidden"> (s'ouvre dans un nouvel onglet)</span></a> <span class="src-officiel">[officiel]</span></li></ul></div><div class="date">Vérifié le 2026-06-26</div></article><div class="print-foot">La Loi Avec Moi — information générale vérifiée à partir de sources officielles. Ne remplace pas un conseil juridique individualisé. Les versions officielles des textes font foi.</div>
+</main>
+<footer class="site"><div class="wrap" role="contentinfo">
+  <strong>Avertissement.</strong> Information juridique générale, à jour à la date indiquée pour chaque réponse. Ne constitue pas un conseil juridique individualisé. Pour une situation précise, consultez un professionnel (avocat, médiateur de dettes agréé, CPAS, Justice de paix).<br><br>
+  © 2026 La Loi Avec Moi · Chaque réponse cite ses sources officielles · Contenu généré à partir d'une base vérifiée.
+</div></footer>
+</body>
+</html>

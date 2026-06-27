@@ -4,154 +4,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
-// ─── SVG Icons ──────────────────────────────────────────────────────────────
-
-function IconDashboard({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <rect x="2" y="2" width="7" height="7" rx="1" />
-      <rect x="11" y="2" width="7" height="7" rx="1" />
-      <rect x="2" y="11" width="7" height="7" rx="1" />
-      <rect x="11" y="11" width="7" height="7" rx="1" />
-    </svg>
-  );
-}
-
-function IconCompetitors({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path d="M3 7h4v10H3V7zM8 4h4v13H8V4zM13 9h4v8h-4V9z" />
-    </svg>
-  );
-}
-
-function IconComparison({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path d="M2 10a8 8 0 1 1 16 0A8 8 0 0 1 2 10zm8-5v5h3l-4 5-4-5h3V5h2z" />
-    </svg>
-  );
-}
-
-function IconPricing({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path
-        fillRule="evenodd"
-        d="M17.707 9.293l-7-7A1 1 0 0 0 10 2H4a2 2 0 0 0-2 2v6a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l7-7a1 1 0 0 0 0-1.414zM6 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-function IconAlerts({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path d="M10 2a6 6 0 0 0-6 6v2.586l-.707.707A1 1 0 0 0 4 13h12a1 1 0 0 0 .707-1.707L16 10.586V8a6 6 0 0 0-6-6zM8.5 17a1.5 1.5 0 0 0 3 0H8.5z" />
-    </svg>
-  );
-}
-
-function IconReports({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path
-        fillRule="evenodd"
-        d="M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.414A2 2 0 0 0 17.414 6L13 1.586A2 2 0 0 0 11.586 2H4zm7 1.5V7h3.5L11 3.5zM6 11h8v1.5H6V11zm0 3h5v1.5H6V14zm0-6h3v1.5H6V8z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-function IconSettings({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path
-        fillRule="evenodd"
-        d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 0 1-2.286.948c-1.372-.836-2.942.734-2.106 2.106a1.533 1.533 0 0 1-.948 2.287c-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 0 1 .948 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 0 1 2.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 0 1 2.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 0 1 .947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 0 1-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 0 1-2.287-.947zM10 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-function IconChevronLeft({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path
-        fillRule="evenodd"
-        d="M12.707 5.293a1 1 0 0 1 0 1.414L9.414 10l3.293 3.293a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-function IconChevronRight({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path
-        fillRule="evenodd"
-        d="M7.293 14.707a1 1 0 0 1 0-1.414L10.586 10 7.293 6.707a1 1 0 0 1 1.414-1.414l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414 0z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-function IconLogout({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path
-        fillRule="evenodd"
-        d="M3 3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 1 0 0-2H4V5h5a1 1 0 1 0 0-2H3zm10.293 4.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L14.586 11H8a1 1 0 1 1 0-2h6.586l-1.293-1.293a1 1 0 0 1 0-1.414z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-// ─── Nav structure ───────────────────────────────────────────────────────────
-
-type NavItem = {
-  href: string;
-  label: string;
-  icon: React.ComponentType<{ className?: string }>;
-  exact?: boolean;
-  badge?: number;
-};
-
-type NavSection = {
-  title: string;
-  items: NavItem[];
-};
-
-const navSections: NavSection[] = [
-  {
-    title: "ANALYSE",
-    items: [
-      { href: "/dashboard", label: "Tableau de bord", icon: IconDashboard, exact: true },
-      { href: "/dashboard/compare", label: "Comparaison", icon: IconComparison },
-      { href: "/dashboard/pricing", label: "Tarification", icon: IconPricing },
-    ],
-  },
-  {
-    title: "SURVEILLANCE",
-    items: [
-      { href: "/dashboard/competitors", label: "Concurrents", icon: IconCompetitors },
-      { href: "/dashboard/alerts", label: "Alertes", icon: IconAlerts, badge: 3 },
-      { href: "/dashboard/reports", label: "Rapports", icon: IconReports },
-    ],
-  },
-  {
-    title: "COMPTE",
-    items: [
-      { href: "/dashboard/settings", label: "Paramètres", icon: IconSettings },
-    ],
-  },
-];
+import { navSections } from "./sidebar-nav";
+import { IconChevronLeft, IconChevronRight, IconLogout } from "./sidebar-icons";
 
 // ─── Inner nav content ───────────────────────────────────────────────────────
 
@@ -201,7 +55,6 @@ function NavContent({
       <nav className="flex-1 overflow-y-auto px-2 py-3 space-y-4">
         {navSections.map((section) => (
           <div key={section.title}>
-            {/* Section label — hidden when collapsed */}
             {!collapsed && (
               <p className="px-3 mb-1 text-[10px] font-semibold tracking-widest text-slate-500 uppercase select-none">
                 {section.title}
@@ -232,7 +85,6 @@ function NavContent({
                             : "text-slate-400 hover:bg-slate-800 hover:text-white"
                         }`}
                     >
-                      {/* Icon + optional badge wrapper */}
                       <span className="relative flex-shrink-0">
                         <Icon className="w-5 h-5" />
                         {item.badge !== undefined && item.badge > 0 && (
@@ -245,7 +97,6 @@ function NavContent({
                       {!collapsed && (
                         <>
                           <span className="flex-1 truncate">{item.label}</span>
-                          {/* Badge also shows inline when expanded */}
                           {item.badge !== undefined && item.badge > 0 && (
                             <span className="ml-auto bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[18px] h-[18px] flex items-center justify-center px-1">
                               {item.badge > 9 ? "9+" : item.badge}
@@ -289,7 +140,6 @@ function NavContent({
             </>
           )}
         </div>
-        {/* Logout when collapsed — separate row */}
         {collapsed && (
           <button
             onClick={handleLogout}

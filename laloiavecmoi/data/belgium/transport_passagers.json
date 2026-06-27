@@ -1,0 +1,47 @@
+{
+  "module": "transport_passagers",
+  "titre": "Voyageurs — train & avion (retard, annulation)",
+  "domaine": "Droits des passagers",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Règlement (UE) 2021/782 (voyageurs ferroviaires) et Règlement (CE) 261/2004 (passagers aériens)",
+    "portee": "Indemnisation et assistance en cas de retard ou d'annulation",
+    "source_officielle": "https://www.belgium.be/fr/mobilite/en_avion_et_en_bateau/droits_des_passagers/droits_des_passagers_aeriens"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les seuils et montants d'indemnisation et les délais de réclamation peuvent changer ; vérifiez auprès du transporteur, du SPF Mobilité ou de l'Ombudsman avant d'agir.",
+  "faits": [
+    {
+      "id": "TRANS-TRAIN-RETARD-001",
+      "question": "Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?",
+      "reponse": "Oui. Les voyageurs ferroviaires sont protégés par le règlement européen 2021/782. En cas de retard important, vous pouvez avoir droit à une compensation (un pourcentage du prix du billet selon la durée du retard) et, si l'annulation ou le gros retard est prévisible, au choix entre le remboursement, un réacheminement ou la poursuite ultérieure du voyage. La demande se fait auprès du transporteur (SNCB), dans le délai prévu après le voyage. En cas de désaccord, le médiateur Ombudsrail peut intervenir.",
+      "reference_legale": "Règlement (UE) 2021/782 relatif aux droits et obligations des voyageurs ferroviaires",
+      "alerte_delai": "La demande de compensation auprès de la SNCB est soumise à un délai après le voyage (vérifiez le délai exact, en général quelques mois).",
+      "contacts": [
+        {"nom": "SNCB — Service clientèle / compensation", "lien": "https://www.belgiantrain.be/fr/support/customer-service/compensation", "pour": "demande de compensation / remboursement"},
+        {"nom": "Ombudsrail — Médiateur pour les voyageurs ferroviaires", "lien": "https://www.ombudsrail.be", "pour": "litige avec le transporteur"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/en/rail/passengers/passenger-rights/compensation", "intitule": "SPF Mobilité — Compensation voyageurs ferroviaires"},
+        {"type": "officiel", "url": "https://www.ombudsrail.be/fr/vos-droits/Compensation%20ou%20remboursement", "intitule": "Ombudsrail — Compensation ou remboursement"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "TRANS-AVION-001",
+      "question": "Mon vol est annulé, retardé ou refusé à l'embarquement, quels sont mes droits ?",
+      "reponse": "En cas de refus d'embarquement, d'annulation ou de retard important, le règlement européen 261/2004 prévoit, selon les cas, une indemnisation forfaitaire, une assistance (repas, hébergement) et/ou le remboursement ou le réacheminement. Adressez d'abord votre demande à la compagnie aérienne. En Belgique, l'autorité de contrôle (Denied Boarding Authority) du SPF Mobilité veille à l'application de ces droits et peut être saisie si la compagnie ne respecte pas le règlement.",
+      "reference_legale": "Règlement (CE) 261/2004 (indemnisation et assistance des passagers aériens)",
+      "contacts": [
+        {"nom": "SPF Mobilité — Denied Boarding Authority", "lien": "https://mobilit.belgium.be/fr", "pour": "plainte droits des passagers aériens"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/mobilite/en_avion_et_en_bateau/droits_des_passagers/droits_des_passagers_aeriens", "intitule": "Belgium.be — Droits des passagers aériens"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/travel/passenger-rights/rail/index_fr.htm", "intitule": "Your Europe — Droits des passagers"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

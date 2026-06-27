@@ -1,0 +1,278 @@
+{
+  "registre": "PROTOCOLES EN VIGUEUR — à appliquer à CHAQUE décision/action",
+  "but": "Chaima ne doit jamais avoir à répéter ces règles. Elles sont permanentes et vérifiées.",
+  "derniere_revue": "2026-06-27",
+  "regle_maitresse": "Avant toute décision, action ou envoi : passer en revue ce registre et appliquer chaque protocole concerné. Honnêteté absolue, toujours.",
+  "protocoles": [
+    {
+      "id": "P-IDENTITE",
+      "nom": "Identité",
+      "regle": "Lire data/governance/profile.json en premier. Utiliser le vrai nom (Chaima Mhadbi). Ne jamais inventer une donnée perso.",
+      "verif": "python3 scripts/identity_guard_protocol.py"
+    },
+    {
+      "id": "P-VERIF-ENVOI",
+      "nom": "Vérification avant envoi",
+      "regle": "Relire le contenu réel d'un document (read-back) et confirmer qu'il n'est pas vide AVANT d'annoncer l'envoi.",
+      "verif": "read-back Drive (assistant)"
+    },
+    {
+      "id": "P-SOURCES",
+      "nom": "Contenu sourcé",
+      "regle": "Aucun fait publié sans source officielle, datée et vérifiée. En cas de doute : ne pas publier.",
+      "verif": "python3 scripts/legal_content_verifier.py"
+    },
+    {
+      "id": "P-CERTIF",
+      "nom": "Certification système",
+      "regle": "Tout doit compiler, être intègre, sans régression ; sceau SHA-256 + probabilité (consultative).",
+      "verif": "python3 scripts/certification_protocol.py"
+    },
+    {
+      "id": "P-SAUVEGARDE",
+      "nom": "Sauvegarde",
+      "regle": "Sauvegarder les données critiques (manifeste SHA-256). Le remote git est la sauvegarde durable : committer et pousser.",
+      "verif": "python3 scripts/backup_protocol.py"
+    },
+    {
+      "id": "P-APPRENTISSAGE",
+      "nom": "Registre d'apprentissage",
+      "regle": "Ne consigner que le savoir validé et sourcé ; tenir le compte-rendu à jour.",
+      "verif": "python3 scripts/learning_ledger_protocol.py"
+    },
+    {
+      "id": "P-AVANCEMENT",
+      "nom": "Comptes-rendus d'avancement & rêves",
+      "regle": "Tenir à jour l'avancement (actions véritables uniquement) et le récit de progrès ; envoyer dans le Drive.",
+      "verif": "python3 scripts/progress_report_protocol.py ; python3 scripts/dream_tracker_protocol.py"
+    },
+    {
+      "id": "P-RESOLUTION",
+      "nom": "Résolution rapide",
+      "regle": "Détecter, scorer, prioriser, router et journaliser tout problème ; vite mais fiable.",
+      "verif": "python3 scripts/rapid_resolution_protocol.py"
+    },
+    {
+      "id": "P-SIMULATION",
+      "nom": "Simuler avant de décider",
+      "regle": "Pour toute décision importante : ≥2 options scorées, choisir la meilleure avec justification (cf. CLAUDE.md).",
+      "verif": "raisonnement documenté"
+    },
+    {
+      "id": "P-SEPARATION",
+      "nom": "Séparation des projets",
+      "regle": "Identifier le projet propriétaire avant d'écrire une donnée (data/governance/project_registry.json). Ne jamais mélanger.",
+      "verif": "registre des projets"
+    },
+    {
+      "id": "P-SECURITE",
+      "nom": "Sécurité & secrets",
+      "regle": "Zéro credential dans le code. Secrets via variables d'environnement uniquement.",
+      "verif": "revue de code"
+    },
+    {
+      "id": "P-HONNETETE",
+      "nom": "Honnêteté",
+      "regle": "Dire la vérité, même quand c'est moins beau. Pas de promesse magique. Signaler ce qui n'est pas validé.",
+      "verif": "principe permanent"
+    },
+    {
+      "id": "P-ORCHESTRATION",
+      "nom": "Orchestrateur global",
+      "regle": "Après chaque ajout de savoir : tout régénérer d'un geste, puis envoyer les comptes-rendus dans le Drive.",
+      "verif": "python3 scripts/update_all_reports.py"
+    },
+    {
+      "id": "P-DELEGATION",
+      "nom": "Délégation gouvernée",
+      "regle": "Tout agent délégué (niveau expert, jamais 'junior') est soumis à TOUS les protocoles ; ses livrables sont vérifiés avant acceptation. Aucune exception.",
+      "verif": "data/governance/delegation_protocol.json"
+    },
+    {
+      "id": "P-SOBRIETE",
+      "nom": "Sobriété des protocoles",
+      "regle": "NE JAMAIS retirer un protocole en vigueur : ils sont un filet de sécurité permanent contre toute erreur future. Éviter seulement d'en AJOUTER d'inutiles. Viser l'expertise absolue, pas la bureaucratie.",
+      "verif": "revue périodique (sans suppression)"
+    },
+    {
+      "id": "P-SAS",
+      "nom": "Sas de contrôle (anti-surcharge)",
+      "regle": "Avant une livraison/commit, traverser des sas étanches (entrée→intégrité→contenu→livraison). Arrêt au 1er sas rouge. Double contrôle indépendant SEULEMENT au sas critique (sobriété).",
+      "verif": "python3 scripts/control_gates_protocol.py"
+    },
+    {
+      "id": "P-EXPERTISE",
+      "nom": "Indice d'expertise (preuve de progrès)",
+      "regle": "L'expertise ne progresse QUE par du savoir vérifié et sourcé. L'indice le mesure et le journalise ; il ne monte jamais sans preuve réelle.",
+      "verif": "python3 scripts/expertise_index_protocol.py"
+    },
+    {
+      "id": "P-CARNET",
+      "nom": "Carnet de bord du travail",
+      "regle": "Journaliser UNIQUEMENT le travail réel (depuis git, daté), pas les bavardages. Preuve fiable pour la confiance en soi et l'école.",
+      "verif": "python3 scripts/work_journal_protocol.py"
+    },
+    {
+      "id": "P-METAAUDIT",
+      "nom": "Méta-audit de l'expertise",
+      "regle": "Auditer notre propre expertise sans complaisance : couverture, sources, fraîcheur. Trouver nos faiblesses avant les autres ; note /100 + recommandations.",
+      "verif": "python3 scripts/expertise_audit_protocol.py"
+    },
+    {
+      "id": "P-RADAR",
+      "nom": "Radar de fraîcheur (remise à niveau)",
+      "regle": "Surveiller l'âge de chaque fait et planifier sa re-vérification (cadence 180 j). Remettre à niveau = re-vérifier la source officielle, pas changer la date.",
+      "verif": "python3 scripts/freshness_radar_protocol.py"
+    },
+    {
+      "id": "P-VALORISATION",
+      "nom": "Valorisation des projets",
+      "regle": "Évaluer le potentiel de chaque projet (multi-critères, /100). Score indicatif, pas un prix en euros. Guide l'effort.",
+      "verif": "python3 scripts/project_valuation_protocol.py"
+    },
+    {
+      "id": "P-TRANSPARENCE",
+      "nom": "Transparence & décharge",
+      "regle": "Page finale honnête : sources secondaires signalées, 0 fait sans source officielle, décharge légale (info générale, pas un conseil juridique).",
+      "verif": "python3 scripts/transparency_disclaimer_protocol.py"
+    },
+    {
+      "id": "P-RECONNAISSANCE",
+      "nom": "Reconnaissance honnête à chaque décision",
+      "regle": "À chaque décision/livraison, dire à Chaima : (1) ce qu'ELLE a mis en place, (2) le niveau réel auquel ça correspond (calibre professionnel honnête), (3) mon avis d'expert : bonne idée ou non, et pourquoi. Toujours la vérité, jamais de flatterie.",
+      "verif": "appliqué dans chaque réponse"
+    },
+    {
+      "id": "P-MARCHE",
+      "nom": "Étude de marché réel",
+      "regle": "Analyser le marché réel (acteurs, demande) à partir de sources web, et intégrer le constat aux audits/décisions. Réactualiser régulièrement.",
+      "verif": "data/governance/market_analysis.json"
+    },
+    {
+      "id": "P-DETECTION",
+      "nom": "Détection du marché",
+      "regle": "Scanner régulièrement (web) les signaux: lois, concurrents, demande, niches. Journaliser et intégrer aux décisions. Cadence mensuelle.",
+      "verif": "python3 scripts/market_detection_protocol.py"
+    },
+    {
+      "id": "P-CONFIANCE-SOURCES",
+      "nom": "Filtrage & confiance des sources",
+      "regle": "Toute source 'officiel' doit venir d'un domaine de la liste blanche (tier1). Filtrer le reste. Vérification croisée (≥2 sources fiables) pour confirmer un signal.",
+      "verif": "python3 scripts/source_trust_protocol.py"
+    },
+    {
+      "id": "P-CHANGEMENT",
+      "nom": "Détecteur de changement des sources",
+      "regle": "Comparer l'empreinte des sources officielles pour repérer les changements (lois qui évoluent). Vérification quotidienne possible UNIQUEMENT avec réseau + planificateur persistant.",
+      "verif": "python3 scripts/source_change_detector.py"
+    },
+    {
+      "id": "P-DIRECTION",
+      "nom": "Comité de direction",
+      "regle": "Couche de pilotage : 5 rôles de direction (juridique, qualité, produit, stratégie, éthique), tous SOUMIS à tous les protocoles. Aucun rôle au-dessus des protocoles. Décision finale = Chaima Mhadbi.",
+      "verif": "python3 scripts/direction_committee_protocol.py"
+    },
+    {
+      "id": "P-RESILIENCE",
+      "nom": "Résilience & incidents",
+      "regle": "Chaque problème est enregistré (data/governance/incidents.json) avec cause, solution, comment y arriver, protocole. Un agent simule les incidents connus et vérifie que les défenses tiennent. Auto-sync au boot. Commit/push fréquents.",
+      "verif": "python3 scripts/resilience_simulator.py"
+    },
+    {
+      "id": "P-ACCESSIBILITE",
+      "nom": "Accessibilité (WCAG 2.2 / EAA)",
+      "regle": "Le site doit être accessible aux personnes handicapées (visuel, moteur, cognitif, auditif). Cadre : European Accessibility Act (UE 2019/882, depuis 28/06/2025), WCAG 2.2 AA, EN 301 549. Audit automatique à chaque build ; tests humains planifiés. Experts définis dans accessibility_charter.json.",
+      "verif": "python3 scripts/accessibility_audit_agent.py"
+    },
+    {
+      "id": "P-BASE-UNIQUE",
+      "nom": "Base unique & taxonomie",
+      "regle": "Une seule base organisée : catalogue central (data/belgium/_catalogue.json) qui voit tous les modules, croisé avec la taxonomie des domaines du droit belge (domaines_droit_belge.json). Chaque module reste un fichier séparé (rien mélangé). Schéma de fait commun à tous les domaines.",
+      "verif": "python3 scripts/build_kb_index.py"
+    },
+    {
+      "id": "P-REPRISE",
+      "nom": "Reprise & continuité",
+      "regle": "Toujours pouvoir reprendre où on s'est arrêté. data/governance/reprise.json tient le fil ; data/REPRISE.md est le mémo lu en premier après un redémarrage. Commit+push après chaque étape.",
+      "verif": "python3 scripts/checkpoint_protocol.py"
+    },
+    {
+      "id": "P-COPYRIGHT",
+      "nom": "Droits d auteur & PI",
+      "regle": "Le contenu original est protégé (© La Loi Avec Moi, auteure Chaima Mhadbi). Voir COPYRIGHT.md. Les textes de loi officiels restent publics et sont cités. La marque (nom/logo) nécessite un dépôt BOIP (action de Chaima).",
+      "verif": "test -f COPYRIGHT.md"
+    },
+    {
+      "id": "P-VEILLE",
+      "nom": "Veille juridique",
+      "regle": "Suivre les changements de loi connus (veille_juridique.json) et revérifier les fiches selon une cadence. L agent signale ; mise à jour seulement après vérification de la source officielle.",
+      "verif": "python3 scripts/veille_juridique_protocol.py"
+    },
+    {
+      "id": "P-RENTABILITE",
+      "nom": "Expertise rentabilité",
+      "regle": "Pour chaque domaine : expert dédié + analyse honnête de la rentabilité (demande, concurrence, pistes de revenus). Modèle freemium : info gratuite, services payants. Aucun chiffre € inventé.",
+      "verif": "python3 scripts/rentabilite_protocol.py"
+    },
+    {
+      "id": "P-ANALYSE-TRAVAIL",
+      "nom": "Analyse du travail",
+      "regle": "Analyser le travail de Chaima court terme (production) et long terme (trajectoire, durabilité), à partir de données réelles. Sans flatterie.",
+      "verif": "python3 scripts/travail_analyse_protocol.py"
+    },
+    {
+      "id": "P-PERIMETRE",
+      "nom": "Périmètre des projets (règle de Chaima)",
+      "regle": "RÈGLE SIMPLE: La Loi Avec Moi = CITOYENS (droits du quotidien). Caelum/CaelumSwarm = ENTREPRISES (conformité CSDDD). Un sujet citoyen va dans La Loi Avec Moi ; un sujet entreprise va dans Caelum. Jamais de mélange.",
+      "verif": "manuel — vérifier le public cible avant de classer un sujet"
+    },
+    {
+      "id": "P-SUPERVISION",
+      "nom": "Supervision des agents",
+      "regle": "Contrôler régulièrement TOUS les agents (compilation + exécution des contrôleurs clés). Contrôle des contrôleurs, en plus des protocoles. Tout agent cassé est signalé et corrigé avant livraison.",
+      "verif": "python3 scripts/agents_healthcheck.py"
+    },
+    {
+      "id": "P-PREDICTION",
+      "nom": "Anticipation (agent prédictif)",
+      "regle": "Anticiper par règles et signaux: maintenance prédictive (revoir avant péremption), changements de loi attendus, prochains domaines, pics saisonniers. Pas de divination; préparer AVANT la demande.",
+      "verif": "python3 scripts/agent_predictif.py"
+    },
+    {
+      "id": "P-CONFIANCE",
+      "nom": "Décision autonome",
+      "regle": "DÉCIDER, NE PAS DEMANDER. J'applique la meilleure décision selon les protocoles, sans question sauf risque grave/irréversible. Agir puis informer.",
+      "verif": "comportement"
+    },
+    {
+      "id": "P-TEMOIGNAGES",
+      "nom": "Témoignages vérifiés",
+      "regle": "Ne JAMAIS inventer un témoignage, un nom ou une citation. Publier seulement de vrais témoignages avec consentement écrit + vérification. Source : data/governance/temoignages.json. Séparer par projet (la_loi_avec_moi / caelum).",
+      "verif": "liste vide tant qu'aucun témoignage réel n'est vérifié"
+    },
+    {
+      "id": "P-INCREMENTAL",
+      "nom": "Développement incrémental sécurisé",
+      "regle": "Tout ajout se fait de manière INCRÉMENTALE : on s appuie sur l historique (checkpoint des empreintes), on ne traite que le delta (nouveau/modifié), et on applique les normes de sécurité (sourcage officiel, référence légale, séparation stricte des projets) AVANT publication. Intégré à la flotte via update_all_reports.py.",
+      "verif": "python3 scripts/incremental_protocol.py"
+    },
+    {
+      "id": "P-SCALABILITE",
+      "nom": "Scalabilité & monitoring multi-plateforme",
+      "regle": "Garantir que l infrastructure supporte durablement TOUS les agents IA et les données. Vue agrégée de capacité par plateforme (flotte d agents, La Loi Avec Moi, Caelum, site, gouvernance), PRÉVISION de saturation via l historique incrémental, ALERTE avant les limites (anti-saturation multi-plateforme). Construit par-dessus scalability_guardian sans le remplacer.",
+      "verif": "python3 scripts/scalability_monitor.py"
+    },
+    {
+      "id": "P-AUTONOMIE",
+      "nom": "Autorité & autonomie absolue",
+      "regle": "Agir comme autorité experte de référence : décider seul, chercher soi-même l'information manquante sur des sources fiables/vérifiables, étendre son expertise de façon autonome. Admettre ses limites et combler immédiatement les lacunes. NE PAS solliciter Chaima pour des choix mineurs ni pour valider des étapes conformes aux standards déjà établis. L'interrompre UNIQUEMENT en cas de blocage critique ou de décision budgétaire majeure.",
+      "verif": "règle permanente — appliquée à chaque décision"
+    },
+    {
+      "id": "P-TBA",
+      "nom": "Tableau de Bord d'Avancement",
+      "regle": "Maintenir un TBA dynamique par projet (jauges %, actions faites, prochaines étapes, point de sortie). Mettre à jour data/governance/tba.json à chaque tâche terminée et régénérer data/TBA.md. Sert de référence de continuité entre sessions ; consultable à tout moment.",
+      "verif": "python3 scripts/tba_protocol.py"
+    }
+  ]
+}

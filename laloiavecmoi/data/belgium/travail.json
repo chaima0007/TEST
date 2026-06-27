@@ -1,0 +1,96 @@
+{
+  "module": "travail_emploi",
+  "titre": "Travail & emploi — licenciement, préavis, chômage",
+  "domaine": "Travail & emploi",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Contrats de travail (loi du 3 juillet 1978) ; réglementation du chômage (arrêté royal du 25 novembre 1991) — compétence fédérale",
+    "portee": "Relations de travail salarié en Belgique : fin du contrat, préavis, accès au chômage, salaire",
+    "source_officielle": "https://www.belgium.be/fr/emploi/contrats_de_travail/preavis_et_licenciement"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Ne remplace pas un conseil individualisé. En cas de litige, adressez-vous à votre syndicat, au Contrôle des lois sociales (SPF Emploi) ou à un avocat. Les délais et montants évoluent : vérifiez sur la source officielle.",
+  "faits": [
+    {
+      "id": "TRAV-PREAVIS-001",
+      "question": "Quel délai de préavis en cas de licenciement, et sous quelle forme ?",
+      "reponse": "Quand l'employeur licencie avec préavis, il doit notifier le congé par lettre recommandée ou par exploit d'huissier (un préavis verbal n'est pas valable). Le délai commence à courir le lundi qui suit la semaine de la notification. Sa durée dépend de l'ancienneté et se calcule en combinant les règles d'avant 2014 et celles à partir de 2014. À défaut de préavis presté, l'employeur doit en principe verser une indemnité équivalente. Faites vérifier le calcul (syndicat ou avocat) : une erreur est fréquente.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail ; régime des délais de préavis (réforme du statut unique, 1er janvier 2014)",
+      "contacts": [
+        {"nom": "Votre syndicat (FGTB/CSC/CGSLB)", "pour": "vérifier le calcul, vous défendre"},
+        {"nom": "Contrôle des lois sociales (SPF Emploi)", "lien": "https://emploi.belgique.be/fr/propos-du-spf/structure-et-organisation/controle-des-lois-sociales", "pour": "infractions au droit du travail"}
+      ],
+      "alerte_delai": "Le préavis doit respecter la forme (recommandé/huissier) et le bon décompte : une notification irrégulière peut être contestée. Réagissez vite et faites vérifier le calcul.",
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/fin-du-contrat-de-travail/fin-du-contrat-duree-indeterminee-3", "intitule": "SPF Emploi — Congé moyennant préavis"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/emploi/contrats_de_travail/preavis_et_licenciement", "intitule": "Belgium.be — Préavis et licenciement"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "TRAV-C4-001",
+      "question": "Qu'est-ce que le C4 et pourquoi est-il important ?",
+      "reponse": "Le C4 est le certificat de chômage que l'employeur doit délivrer à la fin du contrat de travail. Il mentionne notamment la durée de l'occupation et le motif de la fin du contrat. Il est indispensable pour faire valoir vos droits aux allocations de chômage. Vérifiez les mentions (surtout le motif) : elles peuvent influencer votre dossier. En cas de désaccord sur le motif indiqué, faites-vous aider par votre syndicat.",
+      "reference_legale": "Réglementation du chômage (arrêté royal du 25 novembre 1991) ; documents sociaux de fin de contrat",
+      "contacts": [
+        {"nom": "ONEM", "lien": "https://www.onem.be/formulaires-attestations/c4-certificat-de-chomage", "pour": "infos sur le C4"},
+        {"nom": "Syndicat ou CAPAC", "pour": "introduire la demande d'allocations"}
+      ],
+      "alerte_delai": "Réclamez votre C4 dès la fin du contrat : sans lui, l'ouverture du droit au chômage est retardée.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/formulaires-attestations/c4-certificat-de-chomage", "intitule": "ONEM — C4, certificat de chômage"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/que-faire-si-mon-employeur-ne-me-donne-pas-mon-c4", "intitule": "Droits Quotidiens — C4"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "TRAV-CHOMAGE-001",
+      "question": "Comment demander des allocations de chômage et peut-on être sanctionné ?",
+      "reponse": "Après la fin du contrat, vous introduisez votre demande d'allocations via un organisme de paiement : un syndicat (FGTB, CSC, CGSLB) ou la CAPAC (organisme public). C'est l'ONEM qui décide du droit. Attention : si vous êtes considéré comme responsable de votre chômage (par exemple un abandon d'emploi sans motif valable), vous pouvez recevoir un avertissement ou être exclu des allocations pendant un certain temps. N'attendez pas pour introduire votre dossier et conservez tous les documents.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (admissibilité, sanctions)",
+      "contacts": [
+        {"nom": "Syndicat (FGTB/CSC/CGSLB) ou CAPAC", "pour": "introduire la demande"},
+        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "décision sur le droit aux allocations"}
+      ],
+      "alerte_delai": "Introduisez votre demande rapidement après la fin du contrat : un retard peut faire perdre des jours d'allocations.",
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens/chomage-complet/pouvez-vous-perdre-votre-droit-aux-allocations-/dans-quels-cas-pouvez-vous-etre-sanctionnee-chomage-complet", "intitule": "ONEM — Sanctions en chômage complet"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-introduire-une-demande-dallocations-de-chomage", "intitule": "Droits Quotidiens — Demande d'allocations"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "TRAV-SALAIRE-001",
+      "question": "Mon employeur ne paie pas mon salaire : que faire ?",
+      "reponse": "Le paiement du salaire est une obligation légale. Commencez par une mise en demeure écrite (de préférence par recommandé) réclamant les sommes dues. Si rien ne change, vous pouvez saisir le Contrôle des lois sociales (inspection du SPF Emploi) et, en dernier recours, le tribunal du travail pour obtenir le paiement. Votre syndicat peut vous accompagner gratuitement si vous êtes affilié. Conservez vos fiches de paie, contrat et échanges écrits.",
+      "reference_legale": "Loi du 12 avril 1965 concernant la protection de la rémunération des travailleurs ; loi du 3 juillet 1978 (contrats de travail)",
+      "contacts": [
+        {"nom": "Contrôle des lois sociales (SPF Emploi)", "lien": "https://emploi.belgique.be/fr/propos-du-spf/structure-et-organisation/controle-des-lois-sociales", "pour": "salaire impayé, infractions"},
+        {"nom": "Tribunal du travail", "pour": "réclamer le paiement (dernier recours)"}
+      ],
+      "alerte_delai": "N'attendez pas : adressez une mise en demeure écrite rapidement et gardez les preuves. Des délais de prescription s'appliquent aux créances salariales.",
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/remuneration", "intitule": "SPF Emploi — Rémunération"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/que-faire-si-mon-employeur-ne-paie-pas-mon-salaire", "intitule": "Droits Quotidiens — Salaire impayé"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "TRAV-DEMISSION-001",
+      "question": "Je veux démissionner : quel préavis dois-je respecter ?",
+      "reponse": "En cas de démission, le travailleur doit lui aussi notifier un préavis, par lettre recommandée ou exploit d'huissier (ou remise d'un écrit signé par l'employeur). Le délai de préavis du travailleur est en principe plus court que celui de l'employeur et dépend de l'ancienneté. Si vous avez été licencié avec préavis et que vous trouvez un autre emploi, vous pouvez donner un « contre-préavis » réduit. Vérifiez le délai exact avant de poser votre démission.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (préavis du travailleur, contre-préavis)",
+      "contacts": [
+        {"nom": "Votre syndicat", "pour": "calculer votre préavis avant de démissionner"}
+      ],
+      "alerte_delai": "Calculez le délai AVANT de notifier votre démission : une fois donnée, elle vous engage.",
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/fin-du-contrat-de-travail/fin-du-contrat-duree-indeterminee-2", "intitule": "SPF Emploi — Fin du contrat à durée indéterminée"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quel-preavis-dois-je-respecter-si-je-demissionne", "intitule": "Droits Quotidiens — Préavis de démission"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

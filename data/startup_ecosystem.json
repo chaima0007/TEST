@@ -1,0 +1,389 @@
+{
+  "timestamp": "2026-06-22T23:53:55.405197",
+  "startups": [
+    {
+      "startup": "CaelumComply™",
+      "domain": "Conformité CSDDD / Droits Humains",
+      "composite": 96.3,
+      "level": "critique",
+      "market_size_bn": 12.4,
+      "monte_carlo": {
+        "success_rate": 96.7,
+        "avg_revenue_y1": 68190385.0,
+        "approved": true
+      },
+      "patent": {
+        "patent_value_m": 2812.9,
+        "licensing_targets": 50,
+        "filing_cost_usd": 15000,
+        "roi_patent": 187530.0
+      },
+      "model": "SaaS $2K-$15K/mois par entreprise",
+      "days_to_revenue": 90,
+      "brevet_claim": "Méthode d'analyse multi-agents pour conformité CSDDD automatisée",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 62
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 99
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 37
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 24
+        }
+      ]
+    },
+    {
+      "startup": "SwarmIntel™",
+      "domain": "Intelligence Artificielle Éthique",
+      "composite": 89.6,
+      "level": "critique",
+      "market_size_bn": 8.7,
+      "monte_carlo": {
+        "success_rate": 94.4,
+        "avg_revenue_y1": 47945592.0,
+        "approved": true
+      },
+      "patent": {
+        "patent_value_m": 1847.6,
+        "licensing_targets": 50,
+        "filing_cost_usd": 15000,
+        "roi_patent": 123170.0
+      },
+      "model": "Audit ponctuel $50K + abonnement $5K/mois",
+      "days_to_revenue": 120,
+      "brevet_claim": "Système d'agents autonomes pour détection biais algorithmiques ESG",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 43
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 69
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 26
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 17
+        }
+      ]
+    },
+    {
+      "startup": "QuantumESG™",
+      "domain": "Finance ESG / Impact",
+      "composite": 81.6,
+      "level": "critique",
+      "market_size_bn": 6.2,
+      "monte_carlo": {
+        "success_rate": 90.3,
+        "avg_revenue_y1": 34146434.0,
+        "approved": true
+      },
+      "patent": {
+        "patent_value_m": 1226.1,
+        "licensing_targets": 50,
+        "filing_cost_usd": 15000,
+        "roi_patent": 81742.0
+      },
+      "model": "API $0.10/scoring + abonnement dashboard $3K/mois",
+      "days_to_revenue": 60,
+      "brevet_claim": "Algorithme Monte Carlo quantique pour évaluation risque ESG portefeuille",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 31
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 49
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 18
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 12
+        }
+      ]
+    },
+    {
+      "startup": "SupplyGuard™",
+      "domain": "Supply Chain / Logistique",
+      "composite": 76.6,
+      "level": "critique",
+      "market_size_bn": 4.8,
+      "monte_carlo": {
+        "success_rate": 86.3,
+        "avg_revenue_y1": 26395947.0,
+        "approved": true
+      },
+      "patent": {
+        "patent_value_m": 957.1,
+        "licensing_targets": 48,
+        "filing_cost_usd": 15000,
+        "roi_patent": 63806.0
+      },
+      "model": "Per-supplier $200/mois + implementation $25K",
+      "days_to_revenue": 150,
+      "brevet_claim": "Protocole de vérification distribuée pour détection travail forcé supply chain",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 24
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 38
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 14
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 9
+        }
+      ]
+    },
+    {
+      "startup": "HRMonitor™",
+      "domain": "Ressources Humaines / DEI",
+      "composite": 57.6,
+      "level": "élevé",
+      "market_size_bn": 3.1,
+      "monte_carlo": {
+        "success_rate": 58.0,
+        "avg_revenue_y1": 17042436.0,
+        "approved": false
+      },
+      "patent": {
+        "patent_value_m": 447.1,
+        "licensing_targets": 31,
+        "filing_cost_usd": 15000,
+        "roi_patent": 29807.0
+      },
+      "model": "Audit annuel $15K + monitoring mensuel $2K",
+      "days_to_revenue": 180,
+      "brevet_claim": "Système multi-agents pour audit biais discrimination emploi",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 15
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 24
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 9
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 6
+        }
+      ]
+    },
+    {
+      "startup": "ClimateTrace™",
+      "domain": "Climat / Environnement",
+      "composite": 47.6,
+      "level": "élevé",
+      "market_size_bn": 2.9,
+      "monte_carlo": {
+        "success_rate": 34.1,
+        "avg_revenue_y1": 15953510.0,
+        "approved": false
+      },
+      "patent": {
+        "patent_value_m": 870.3,
+        "licensing_targets": 29,
+        "filing_cost_usd": 15000,
+        "roi_patent": 58018.0
+      },
+      "model": "SaaS $800/mois PME + $5K/mois grands groupes",
+      "days_to_revenue": 90,
+      "brevet_claim": "Méthode d'agrégation automatisée émissions Scope 1-2-3 par agents distribués",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 14
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 23
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 8
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 5
+        }
+      ]
+    },
+    {
+      "startup": "DataRights™",
+      "domain": "Données / Vie Privée",
+      "composite": 28.6,
+      "level": "modéré",
+      "market_size_bn": 1.8,
+      "monte_carlo": {
+        "success_rate": 0.9,
+        "avg_revenue_y1": 10132906.0,
+        "approved": false
+      },
+      "patent": {
+        "patent_value_m": 374.5,
+        "licensing_targets": 18,
+        "filing_cost_usd": 15000,
+        "roi_patent": 24967.0
+      },
+      "model": "Abonnement $500/mois + $50 par DSAR traité",
+      "days_to_revenue": 45,
+      "brevet_claim": "Système automatisé traitement demandes droits personnes (DSAR) par agents IA",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 9
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 14
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 5
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 3
+        }
+      ]
+    },
+    {
+      "startup": "OpenComply™",
+      "domain": "Open Source / Communauté",
+      "composite": 10.3,
+      "level": "faible",
+      "market_size_bn": 0.9,
+      "monte_carlo": {
+        "success_rate": 0.0,
+        "avg_revenue_y1": 0,
+        "approved": false
+      },
+      "patent": {
+        "patent_value_m": 265.3,
+        "licensing_targets": 9,
+        "filing_cost_usd": 15000,
+        "roi_patent": 17685.0
+      },
+      "model": "Gratuit → upsell $99/mois pro + $999/mois business",
+      "days_to_revenue": 30,
+      "brevet_claim": "Architecture open-source d'agents conformité modulaires (Apache 2.0)",
+      "channels_free": [
+        {
+          "channel": "LinkedIn thought leadership (CSDDD)",
+          "days": 30,
+          "cost": 0,
+          "leads": 4
+        },
+        {
+          "channel": "GitHub open-source + ProductHunt",
+          "days": 14,
+          "cost": 0,
+          "leads": 7
+        },
+        {
+          "channel": "EU Compliance newsletter / Substack",
+          "days": 45,
+          "cost": 0,
+          "leads": 2
+        },
+        {
+          "channel": "Cold outreach Fortune 500 compliance officers",
+          "days": 60,
+          "cost": 0,
+          "leads": 1
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "avg_composite": 61.03,
+    "total_market_bn": 40.8,
+    "patent_portfolio_m": 8800.9,
+    "viable_startups": 4,
+    "optimal_first": "CaelumComply™"
+  },
+  "protocol": "Monte Carlo 50K sims par startup | Quantum-validated"
+}

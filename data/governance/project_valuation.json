@@ -1,0 +1,27 @@
+{
+  "valorisation": "Évaluation multi-critères des projets (potentiel de valeur)",
+  "note_honnete": "Score indicatif de POTENTIEL, pas une valorisation financière en euros (impossible à chiffrer sans données de marché réelles). Soumis aux protocoles.",
+  "derniere_revue": "2026-06-26",
+  "criteres": {
+    "valeur_strategique": "Importance pour la mission (0-5)",
+    "maturite": "Niveau d'avancement réel (0-5)",
+    "preuve_fiabilite": "Sources/vérification/qualité prouvée (0-5)",
+    "potentiel_revenu": "Capacité à générer des revenus (0-5)",
+    "risque": "Risque/dette (0-5 ; plus haut = plus risqué, compté à l'envers)"
+  },
+  "ponderation": {"valeur_strategique": 0.25, "maturite": 0.15, "preuve_fiabilite": 0.25, "potentiel_revenu": 0.25, "risque": 0.10},
+  "projets": [
+    {"id": "laloiavecmoi", "nom": "La Loi Avec Moi",
+     "valeur_strategique": 5, "maturite": 3, "preuve_fiabilite": 5, "potentiel_revenu": 4, "risque": 2,
+     "justification": "Cœur de la mission ; contenu 100% sourcé (24 faits, 3 régions) ; revenus pas encore branchés (paiement manquant)."},
+    {"id": "competeiq", "nom": "CompeteIQ (intelligence commerciale)",
+     "valeur_strategique": 4, "maturite": 3, "preuve_fiabilite": 3, "potentiel_revenu": 4, "risque": 3,
+     "justification": "Produit B2B avec dashboards ; potentiel commercial réel ; à consolider/valider."},
+    {"id": "caelum_swarm", "nom": "CaelumSwarm (moteurs)",
+     "valeur_strategique": 3, "maturite": 4, "preuve_fiabilite": 2, "potentiel_revenu": 2, "risque": 2,
+     "justification": "Grande couverture/SEO mais scores synthétiques (pas de sources) ; valeur surtout comme cartographie à enrichir."},
+    {"id": "agents_ops", "nom": "Agents & gouvernance",
+     "valeur_strategique": 3, "maturite": 4, "preuve_fiabilite": 4, "potentiel_revenu": 1, "risque": 1,
+     "justification": "Infrastructure transverse (protocoles, sas, sauvegarde) ; n'apporte pas de revenu direct mais protège et accélère tout le reste."}
+  ]
+}

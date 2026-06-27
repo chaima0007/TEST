@@ -1,0 +1,278 @@
+{
+  "generated_at": "2026-06-22T07:39:53.207706+00:00",
+  "agent": "GoogleCertificationTrackerAgent",
+  "version": "1.0.0",
+  "context": "Caelum Partners — AI compliance startup, 2026",
+  "summary": {
+    "total_certifications": 7,
+    "certifications_gratuites": 6,
+    "certifications_paid_exam": 1,
+    "heures_totales": 1044,
+    "heures_annee_1": 312,
+    "mois_couverts": 3
+  },
+  "certifications": [
+    {
+      "nom": "Google Cybersecurity Certificate",
+      "plateforme": "Coursera",
+      "duree_heures": 182,
+      "niveau": "débutant",
+      "pertinence_caelum": 9,
+      "lien_inscription": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 8,
+      "gratuit": true,
+      "note_pertinence": "Fondamental pour Caelum: sécurité des données clients, conformité CSDDD, protection infrastructure IA",
+      "priorite": 1,
+      "domaines_couverts": [
+        "Network security",
+        "Linux",
+        "SQL",
+        "Python basics",
+        "SIEM tools",
+        "Incident response",
+        "Risk management"
+      ],
+      "priorite_score": 0.8508
+    },
+    {
+      "nom": "Google Data Analytics Certificate",
+      "plateforme": "Coursera",
+      "duree_heures": 180,
+      "niveau": "débutant",
+      "pertinence_caelum": 8,
+      "lien_inscription": "https://www.coursera.org/professional-certificates/google-data-analytics",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 8,
+      "gratuit": true,
+      "note_pertinence": "Clé pour analyser les scores ESG, risk indices et swarm engine outputs; visualisation des données de conformité",
+      "priorite": 2,
+      "domaines_couverts": [
+        "Spreadsheets",
+        "SQL",
+        "Tableau",
+        "R programming",
+        "Data cleaning",
+        "Visualization",
+        "Case studies"
+      ],
+      "priorite_score": 0.6418
+    },
+    {
+      "nom": "Google AI Essentials",
+      "plateforme": "Coursera",
+      "duree_heures": 10,
+      "niveau": "débutant",
+      "pertinence_caelum": 9,
+      "lien_inscription": "https://www.coursera.org/learn/google-ai-essentials",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 5,
+      "gratuit": true,
+      "note_pertinence": "Directement aligné avec le positionnement IA de Caelum; compréhension des LLM et outils IA pour conformité",
+      "priorite": 1,
+      "domaines_couverts": [
+        "Generative AI",
+        "Prompt engineering",
+        "AI tools",
+        "Responsible AI",
+        "AI in the workplace"
+      ],
+      "priorite_score": 0.9351
+    },
+    {
+      "nom": "Google Project Management Certificate",
+      "plateforme": "Coursera",
+      "duree_heures": 180,
+      "niveau": "débutant",
+      "pertinence_caelum": 7,
+      "lien_inscription": "https://www.coursera.org/professional-certificates/google-project-management",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 6,
+      "gratuit": true,
+      "note_pertinence": "Utile pour gérer les projets de conformité, audits clients et déploiements swarm; méthodologies Agile pour équipe startup",
+      "priorite": 3,
+      "domaines_couverts": [
+        "Project lifecycle",
+        "Agile & Scrum",
+        "Risk management",
+        "Stakeholder communication",
+        "Budgeting",
+        "Capstone project"
+      ],
+      "priorite_score": 0.5318
+    },
+    {
+      "nom": "Google UX Design Certificate",
+      "plateforme": "Coursera",
+      "duree_heures": 204,
+      "niveau": "débutant",
+      "pertinence_caelum": 5,
+      "lien_inscription": "https://www.coursera.org/professional-certificates/google-ux-design",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 7,
+      "gratuit": true,
+      "note_pertinence": "Pertinent pour améliorer l'UX des dashboards Caelum et l'expérience utilisateur des rapports de conformité; moins prioritaire que cyber/data/AI",
+      "priorite": 4,
+      "domaines_couverts": [
+        "User research",
+        "Wireframing",
+        "Prototyping",
+        "Figma",
+        "Usability testing",
+        "Design systems"
+      ],
+      "priorite_score": 0.375
+    },
+    {
+      "nom": "Google Digital Marketing & E-commerce Certificate",
+      "plateforme": "Coursera",
+      "duree_heures": 168,
+      "niveau": "débutant",
+      "pertinence_caelum": 6,
+      "lien_inscription": "https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 7,
+      "gratuit": true,
+      "note_pertinence": "Utile pour le go-to-market Caelum, acquisition clients B2B conformité, stratégie contenu CSDDD",
+      "priorite": 4,
+      "domaines_couverts": [
+        "SEO/SEM",
+        "Email marketing",
+        "Social media",
+        "Analytics",
+        "E-commerce",
+        "Marketing strategy"
+      ],
+      "priorite_score": 0.4526
+    },
+    {
+      "nom": "Google Cloud Associate Cloud Engineer",
+      "plateforme": "Google Cloud Skills Boost",
+      "duree_heures": 120,
+      "niveau": "intermédiaire",
+      "pertinence_caelum": 8,
+      "lien_inscription": "https://cloud.google.com/learn/certification/cloud-engineer",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 10,
+      "gratuit": false,
+      "note_gratuite": "Formation gratuite sur Cloud Skills Boost; examen payant (~$200 USD)",
+      "note_pertinence": "Infrastructure cloud pour déploiement Caelum Swarm, sécurité cloud et scalabilité des engines IA",
+      "priorite": 2,
+      "domaines_couverts": [
+        "GCP infrastructure",
+        "Compute Engine",
+        "GKE",
+        "Cloud Storage",
+        "IAM",
+        "Networking",
+        "Monitoring"
+      ],
+      "priorite_score": 0.6712
+    }
+  ],
+  "roadmap_12_mois": [
+    {
+      "certification": "Google AI Essentials",
+      "mois_debut": 1,
+      "mois_fin": 1,
+      "heures_totales": 10,
+      "heures_par_mois": 20,
+      "priorite_score": 0.9351,
+      "statut": "non_commencé",
+      "gratuit": true
+    },
+    {
+      "certification": "Google Cybersecurity Certificate",
+      "mois_debut": 2,
+      "mois_fin": 11,
+      "heures_totales": 182,
+      "heures_par_mois": 20,
+      "priorite_score": 0.8508,
+      "statut": "non_commencé",
+      "gratuit": true
+    },
+    {
+      "certification": "Google Cloud Associate Cloud Engineer",
+      "mois_debut": 12,
+      "mois_fin": 12,
+      "heures_totales": 120,
+      "heures_par_mois": 20,
+      "priorite_score": 0.6712,
+      "statut": "non_commencé",
+      "gratuit": false
+    },
+    {
+      "certification": "Google Data Analytics Certificate",
+      "mois_debut": "Year 2",
+      "mois_fin": "Year 2",
+      "heures_totales": 180,
+      "heures_par_mois": 20,
+      "priorite_score": 0.6418,
+      "statut": "non_commencé",
+      "gratuit": true
+    },
+    {
+      "certification": "Google Project Management Certificate",
+      "mois_debut": "Year 2",
+      "mois_fin": "Year 2",
+      "heures_totales": 180,
+      "heures_par_mois": 20,
+      "priorite_score": 0.5318,
+      "statut": "non_commencé",
+      "gratuit": true
+    },
+    {
+      "certification": "Google Digital Marketing & E-commerce Certificate",
+      "mois_debut": "Year 2",
+      "mois_fin": "Year 2",
+      "heures_totales": 168,
+      "heures_par_mois": 20,
+      "priorite_score": 0.4526,
+      "statut": "non_commencé",
+      "gratuit": true
+    },
+    {
+      "certification": "Google UX Design Certificate",
+      "mois_debut": "Year 2",
+      "mois_fin": "Year 2",
+      "heures_totales": 204,
+      "heures_par_mois": 20,
+      "priorite_score": 0.375,
+      "statut": "non_commencé",
+      "gratuit": true
+    }
+  ],
+  "recommendations": [
+    {
+      "priorite": "IMMEDIATE",
+      "action": "Commencer Google AI Essentials",
+      "raison": "Seulement ~10h, pertinence 9/10, positionne Caelum sur l'IA responsable",
+      "lien": "https://www.coursera.org/learn/google-ai-essentials"
+    },
+    {
+      "priorite": "MOIS_1_2",
+      "action": "Lancer Google Cybersecurity Certificate",
+      "raison": "Pertinence 9/10 pour la sécurité des données CSDDD; 8 modules structurés",
+      "lien": "https://www.coursera.org/professional-certificates/google-cybersecurity"
+    },
+    {
+      "priorite": "MOIS_3_6",
+      "action": "Google Data Analytics + Cloud ACE training",
+      "raison": "Data Analytics (8/10) pour analyser les outputs swarm; Cloud pour l'infra",
+      "lien": "https://cloud.google.com/learn/training"
+    },
+    {
+      "priorite": "MOIS_7_12",
+      "action": "Google Project Management Certificate",
+      "raison": "Formaliser la gestion de projets conformité clients",
+      "lien": "https://www.coursera.org/professional-certificates/google-project-management"
+    }
+  ]
+}

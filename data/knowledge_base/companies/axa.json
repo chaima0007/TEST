@@ -1,0 +1,70 @@
+{
+  "id": "axa",
+  "slug": "axa",
+  "name": "AXA SA",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Assurance",
+  "size": {
+    "revenue_bn_eur": 110,
+    "employees": 145000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "18.7 Low Risk",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Group Chief Sustainability Officer / Chief Investment Officer",
+    "team": "AXA Investment Managers (AXA IM) ESG Team, Group Sustainability",
+    "location": "Paris (Tour AXA, La Défense), Paris 8e (siège historique)",
+    "process": "Comité de responsabilité d'entreprise trimestriel, processus d'exclusion sectorielle géré par AXA IM, due diligence ESG intégrée à la souscription"
+  },
+  "pain_points": [
+    "Intégration des droits humains dans les décisions d'investissement : AXA IM gère 850 Mrd EUR avec des exigences SFDR croissantes sur les PAI sociaux",
+    "Souscription dans les secteurs extractifs : évaluation des risques DDH pour les polices d'assurance responsabilité civile des entreprises pétro-gazières",
+    "Conformité SFDR Article 8/9 pour les fonds AXA IM : documentation des mécanismes de due diligence droits humains",
+    "Risques climatiques liés aux droits humains : modélisation de l'impact des événements climatiques extrêmes sur les droits des communautés assurées",
+    "Chaîne d'approvisionnement propre : prestataires IT, facilities management, marketing — conformité CSDDD pour les achats indirects",
+    "Cohérence entre la politique d'exclusion investissement (charbon) et les pratiques de souscription dans les mêmes secteurs"
+  ],
+  "observed_failures": [
+    "Rapport Insure Our Future 2023 : AXA maintient des capacités de souscription pour des projets d'expansion pétro-gazière malgré ses engagements climatiques — contradictions documentées",
+    "Fonds Article 9 AXA IM : 3 fonds reclassés article 8 en 2023 suite à la révision SFDR niveau 2, soulevant des questions sur la robustesse des critères sociaux",
+    "Controverse Myanmar 2021 : AXA assurait des entités liées à la junte militaire post-coup d'état, avant de se retirer sous pression ONG en juin 2021"
+  ],
+  "signals_of_risk": [
+    "Tension structurelle entre activités d'assurance commerciale (souscription) et engagements d'investissement ESG",
+    "Pression réglementaire SFDR niveau 2 avec exigences PAI (Principal Adverse Impacts) sociaux insuffisamment standardisées",
+    "Exposition aux litiges climatiques via la souscription de polices pour des entreprises visées par des contentieux climatiques"
+  ],
+  "signals_of_trust": [
+    "Signataire des UN Principles for Responsible Investment (UNPRI) depuis 2012 avec rapport annuel",
+    "Politique d'exclusion charbon parmi les plus strictes du secteur (GCEL - Global Coal Exit List)",
+    "AXA IM Impact Investing : 20 Mrd EUR alloués aux investissements à impact social mesuré",
+    "Membre du Net-Zero Insurance Alliance (NZIA) — engagement sur les émissions financées via la souscription"
+  ],
+  "recommended_actions": [
+    "Proposer une solution d'intégration des PAI sociaux (SFDR) dans le processus de sélection des actifs AXA IM avec documentation automatisée",
+    "Développer un module d'évaluation DDH pour les décisions de souscription dans les secteurs à risque élevé (extractif, infrastructure)",
+    "Présenter comment notre outil résout la tension entre critères d'exclusion investissement et pratiques de souscription via une approche cohérente",
+    "Organiser un atelier avec les équipes AXA IM et Group Sustainability autour de la convergence CSDDD/SFDR pour les assureurs"
+  ],
+  "local_tone": "Ton formel parisien avec sensibilité financière et réglementaire. AXA est très sensible à sa réputation internationale — aborder les risques sous l'angle de la gestion des risques institutionnelle. Références aux frameworks UNPRI, NZIA et SFDR sont des signaux de crédibilité.",
+  "cultural_notes": "AXA est une entreprise avec une forte culture de risque et d'analyse actuarielle. Les équipes ESG travaillent en étroite collaboration avec les équipes investissement et souscription — l'approche doit être quantitative et documentée. La réputation de 'leader ESG dans l'assurance' est une source de fierté institutionnelle.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.axa.com/en/about-us/our-commitment-to-esg",
+    "https://insureourfuture.co.org/2023-scorecard/axa/",
+    "https://www.axa-im.com/responsible-investing/our-approach"
+  ]
+}

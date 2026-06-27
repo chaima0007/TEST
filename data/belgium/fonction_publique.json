@@ -1,0 +1,46 @@
+{
+  "module": "fonction_publique",
+  "titre": "Travailler dans le secteur public",
+  "domaine": "Fonction publique",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État ; statuts régionaux et communaux",
+    "portee": "Recrutement statutaire et contractuel dans la fonction publique",
+    "source_officielle": "https://www.travaillerpour.be"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les procédures varient selon le niveau (fédéral, régional, communal) ; consultez l'offre concernée.",
+  "faits": [
+    {
+      "id": "FONCT-POSTULER-001",
+      "question": "Comment postuler à un emploi dans le secteur public ?",
+      "reponse": "Les offres publiques sont centralisées en ligne (au niveau fédéral, sur Travaillerpour.be, l'ancien Selor ; les Régions et communes ont aussi leurs portails). Vous créez un profil, postulez à une offre, puis passez une procédure de sélection objective : screening générique (compétences générales) puis screening spécifique (liés à la fonction). Il faut généralement atteindre un seuil (souvent 50 %) pour passer à l'étape suivante. La sélection est encadrée pour garantir l'égalité de traitement entre candidats.",
+      "reference_legale": "Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État (recrutement objectif)",
+      "contacts": [
+        {"nom": "Travaillerpour.be (fédéral, ex-Selor)", "lien": "https://www.travaillerpour.be", "pour": "offres et sélections fédérales"},
+        {"nom": "Portails emploi des Régions/communes", "pour": "offres régionales et locales"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/postuler-un-emploi-statutaire-au-sein-de-la-fonction-publique-de-wallonie", "intitule": "Wallonie — Postuler un emploi statutaire"},
+        {"type": "officiel", "url": "https://be.brussels/en/employment/job-brussels/what-work-are-you-looking/working-public-sector", "intitule": "Bruxelles — Travailler dans le secteur public"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "FONCT-STATUTAIRE-001",
+      "question": "Quelle différence entre agent statutaire et contractuel ?",
+      "reponse": "Le statutaire est nommé à titre définitif après avoir réussi une procédure de sélection officielle : son emploi est stable et régi par un statut (droits et obligations propres au service public). Le contractuel, lui, est engagé via un contrat de travail (à durée déterminée ou indéterminée), comme dans le privé. Les emplois contractuels sont en principe ouverts à tous ; pour un emploi statutaire, il faut généralement être Belge ou ressortissant de l'Espace économique européen (sauf fonctions ouvertes plus largement).",
+      "reference_legale": "Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État ; loi du 3 juillet 1978 relative aux contrats de travail (contractuels)",
+      "contacts": [
+        {"nom": "Service du personnel de l'administration concernée", "pour": "conditions du poste (statutaire/contractuel)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.travaillerpour.be", "intitule": "Travaillerpour.be — Emplois publics fédéraux"},
+        {"type": "officiel", "url": "https://www.federation-wallonie-bruxelles.be/index.php?id=187", "intitule": "Fédération Wallonie-Bruxelles — Emploi"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

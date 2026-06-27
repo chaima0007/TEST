@@ -1,0 +1,169 @@
+/**
+ * seed-errors — CaelumSwarm™ historical error seed script
+ *
+ * Pre-populates data/errors.json with the 7 known recurring errors
+ * documented during audit sessions. Run once:
+ *
+ *   npx tsx scripts/seed-errors.ts
+ *   # or
+ *   ts-node scripts/seed-errors.ts
+ *
+ * Safe to re-run: checks if DB already has records before inserting.
+ */
+
+import { ErrorDB } from "../lib/error-db";
+import type { ErrorRecord } from "../lib/error-db";
+
+const HISTORICAL_ERRORS: Omit<ErrorRecord, "id">[] = [
+  {
+    timestamp: "2025-01-01T00:00:00.000Z",
+    error_type: "build",
+    file_path: "app/**",
+    description: "Vercel Build Timeout — build exceeded 45 minutes",
+    cause:
+      "Missing catch-all route handlers forced Next.js to statically analyse every "
+      + "page segment individually, ballooning build time past Vercel's 45-min limit.",
+    fix_applied:
+      "Added universal catch-all routes for dynamic segments; reduced static "
+      + "pre-rendering scope via generateStaticParams.",
+    resolution_time_minutes: 120,
+    wave: null,
+    recurrence_count: 3,
+    status: "fixed",
+  },
+  {
+    timestamp: "2025-02-10T00:00:00.000Z",
+    error_type: "oom",
+    file_path: null,
+    description: "Vercel OOM — Node.js heap exhausted during build",
+    cause:
+      "Default Node.js heap (512 MB) too small for the combined size of "
+      + "TypeScript compilation + next build bundling.",
+    fix_applied:
+      "Set NODE_OPTIONS=--max-old-space-size=8192 in Vercel environment "
+      + "variables to allocate 8 GB heap.",
+    resolution_time_minutes: 30,
+    wave: null,
+    recurrence_count: 2,
+    status: "fixed",
+  },
+  {
+    timestamp: "2025-03-05T00:00:00.000Z",
+    error_type: "oom",
+    file_path: "components/Sidebar.tsx",
+    description:
+      "Vercel OOM — Sidebar.tsx grew to ~20 000 lines causing compiler heap overflow",
+    cause:
+      "Multiple waves added icon functions and nav entries to the same file "
+      + "without pruning; TypeScript language service ran out of memory analysing it.",
+    fix_applied:
+      "Split Sidebar.tsx into 3 files: Sidebar.tsx (core), "
+      + "SidebarIcons.tsx (icon functions), SidebarNav.tsx (nav entries).",
+    resolution_time_minutes: 45,
+    wave: null,
+    recurrence_count: 1,
+    status: "fixed",
+  },
+  {
+    timestamp: "2025-04-12T00:00:00.000Z",
+    error_type: "sidebar",
+    file_path: "components/Sidebar.tsx",
+    description:
+      "Sidebar NavContent — missing imports caused 'NavContent is not defined' runtime error",
+    cause:
+      "A wave agent extracted NavContent to a separate file but forgot to "
+      + "re-export it; subsequent import in Sidebar.tsx silently failed at runtime.",
+    fix_applied:
+      "Moved NavContent definition back inline into Sidebar.tsx; "
+      + "added explicit export from the correct file.",
+    resolution_time_minutes: 20,
+    wave: null,
+    recurrence_count: 2,
+    status: "fixed",
+  },
+  {
+    timestamp: "2025-05-01T00:00:00.000Z",
+    error_type: "ci",
+    file_path: null,
+    description:
+      "Stop hook triggered — untracked files detected in working tree at session end",
+    cause:
+      "Wave agents created engine/route/dashboard files but did not commit "
+      + "before finishing; the stop hook detects '??' lines in git status and blocks.",
+    fix_applied:
+      "Rule added to AGENTS.md: run git status --short at end of every session; "
+      + "git add + commit + push any untracked file before session ends.",
+    resolution_time_minutes: 5,
+    wave: null,
+    recurrence_count: 8,
+    status: "recurring",
+  },
+  {
+    timestamp: "2025-05-20T00:00:00.000Z",
+    error_type: "route",
+    file_path: "app/api/[slug]/route.ts",
+    description:
+      "Wave 433 domain mismatch — crosschannel route missing, upstream returned 404",
+    cause:
+      "Wave 433 engine referenced /api/crosschannel but the route was never "
+      + "created; dashboard received 404 and showed blank data.",
+    fix_applied:
+      "Created app/api/crosschannel/route.ts manually with correct engine "
+      + "proxy pattern; verified sealResponse + guard.",
+    resolution_time_minutes: 15,
+    wave: 433,
+    recurrence_count: 1,
+    status: "fixed",
+  },
+  {
+    timestamp: "2025-06-01T00:00:00.000Z",
+    error_type: "route",
+    file_path: "app/api/**",
+    description:
+      "955 API routes missing sealResponse — responses exposed unsealed payloads",
+    cause:
+      "Early wave routes were created before the digital-seal pattern was "
+      + "established; nobody audited existing routes when the standard was introduced.",
+    fix_applied:
+      "Automated batch repair script applied sealResponse to all 955 routes; "
+      + "added pre-commit check to wave protocol.",
+    resolution_time_minutes: 180,
+    wave: null,
+    recurrence_count: 1,
+    status: "fixed",
+  },
+];
+
+function main() {
+  const db = ErrorDB.getInstance();
+
+  // Check if DB already has records to avoid duplicate seeding
+  const existing = db.getErrors();
+  if (existing.length > 0) {
+    console.log(
+      `[seed-errors] DB already contains ${existing.length} records — skipping seed.`
+    );
+    console.log(
+      "[seed-errors] To re-seed, delete data/errors.json and run again."
+    );
+    process.exit(0);
+  }
+
+  console.log("[seed-errors] Seeding historical errors...");
+
+  for (const record of HISTORICAL_ERRORS) {
+    const inserted = db.insertRaw(record);
+    console.log(
+      `  [${inserted.id}] ${inserted.error_type.toUpperCase().padEnd(8)} — ${inserted.description.slice(0, 70)}`
+    );
+  }
+
+  const summary = db.getSummary();
+  console.log("\n[seed-errors] Done.");
+  console.log(`  Total records  : ${summary.total}`);
+  console.log(`  Recurring      : ${summary.recurring_count}`);
+  console.log(`  By type        :`, summary.by_type);
+  console.log(`  By status      :`, summary.by_status);
+}
+
+main();

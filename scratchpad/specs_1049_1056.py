@@ -1,0 +1,118 @@
+# Specs waves 1049-1056 — 24 nouveaux moteurs de droits humains
+# Préfixes vérifiés : 0 collision externe, 0 doublon interne
+# Remplacements : hospice(trop proche palliative)→grief_therapy ; end_of_life_directive(trop proche)→hospital_discharge ;
+#                 indigenous_sacred_site(trop proche sacred_site_destruction)→human_remains_repatriation
+# (filename, title, wave, desc, prefix, idx)
+SPECS = [
+    # Wave 1049 — Fin de vie & soins (inédits)
+    ("grief_therapy_insurance_rights_engine.py",
+     "Thérapie de deuil & refus de couverture par les assureurs santé", "Wave 1049",
+     "Personnes en deuil refusées pour une thérapie psychologique par leurs assureurs qualifiant le deuil de 'normal'.",
+     "GVTR", "grief_therapy_insur"),
+    ("do_not_resuscitate_rights_engine.py",
+     "Ordres DNR & refus des équipes médicales de les respecter en urgence", "Wave 1049",
+     "Patients ayant signé des ordres DNR dont les vœux sont ignorés par les équipes d'urgence lors de crises.",
+     "DNRR", "dnr_rights"),
+    ("hospital_discharge_premature_rights_engine.py",
+     "Sorties d'hôpital prématurées sous pression des assureurs & droits des patients", "Wave 1049",
+     "Patients renvoyés prématurément à domicile sous pression des assureurs avant d'être médicalement stables.",
+     "HDPR", "premature_discharge"),
+
+    # Wave 1050 — Travail & sécurité en milieu spécifique (inédits)
+    ("outdoor_heat_worker_rights_engine.py",
+     "Travailleurs extérieurs & protections insuffisantes contre la chaleur extrême", "Wave 1050",
+     "Ouvriers travaillant en plein soleil sans pauses ni eau suffisantes lors de vagues de chaleur meurtrières.",
+     "OHWP", "outdoor_heat_worker"),
+    ("ergonomic_injury_warehouse_rights_engine.py",
+     "Blessures ergonomiques en entrepôt & refus d'adaptation du poste par l'employeur", "Wave 1050",
+     "Travailleurs d'entrepôt souffrant de troubles musculo-squelettiques refusés pour des aménagements ergonomiques.",
+     "EIWR", "ergonomic_warehouse"),
+    ("night_security_guard_safety_rights_engine.py",
+     "Sécurité des gardes de nuit isolés & absence de protocoles de protection", "Wave 1050",
+     "Agents de sécurité travaillant seuls la nuit sans système de vérification régulière ni équipement d'urgence.",
+     "NSGR", "security_guard_night"),
+
+    # Wave 1051 — Liberté religieuse & emploi (inédits)
+    ("religious_schedule_accommodation_rights_engine.py",
+     "Aménagement du temps de travail pour le sabbat ou la prière & droits religieux", "Wave 1051",
+     "Travailleurs dont les demandes d'aménagement pour le sabbat ou la prière sont refusées sans motif valable.",
+     "RWSA", "religious_schedule"),
+    ("religious_attire_workplace_rights_engine.py",
+     "Vêtements religieux au travail (hijab, kippa, turban) & discrimination", "Wave 1051",
+     "Employés portant des vêtements religieux harcelés ou contraints de les retirer sous pression de l'employeur.",
+     "RAWP", "religious_attire_work"),
+    ("hospital_chaplain_access_rights_engine.py",
+     "Accès aux aumôniers hospitaliers de toutes religions & soins spirituels", "Wave 1051",
+     "Patients d'hôpitaux sans accès à un aumônier de leur religion, niant leur droit aux soins spirituels.",
+     "CHHA", "chaplain_hospital"),
+
+    # Wave 1052 — Consommateurs vulnérables & escroqueries (inédits)
+    ("door_to_door_elderly_sales_rights_engine.py",
+     "Vente à domicile ciblant les personnes âgées & pratiques prédatrices", "Wave 1052",
+     "Personnes âgées ciblées par des vendeurs porte-à-porte vendant des produits inutiles avec des contrats piège.",
+     "DDES", "door_door_elderly"),
+    ("charity_fraud_solicitation_rights_engine.py",
+     "Sollicitations de charité frauduleuses & droits des donateurs victimes", "Wave 1052",
+     "Donateurs trompés par des fausses associations caritatives imitant des œuvres légitimes pour siphonner des fonds.",
+     "CFRS", "charity_fraud"),
+    ("mlm_pyramid_consumer_harm_rights_engine.py",
+     "Marketing à paliers (MLM) & dommages financiers pour les participants", "Wave 1052",
+     "Participants à des entreprises MLM perdant des milliers de dollars en stocks et frais sans recours légal clair.",
+     "MLMP", "mlm_pyramid_harm"),
+
+    # Wave 1053 — Qualité de l'air intérieur & santé au travail (inédits)
+    ("indoor_air_quality_office_rights_engine.py",
+     "Qualité de l'air intérieur des bureaux & droits des employés à un milieu sain", "Wave 1053",
+     "Employés souffrant de symptômes chroniques dans des bâtiments à mauvaise qualité d'air sans recours OSHA.",
+     "IAQO", "indoor_air_office"),
+    ("mold_workplace_exposure_rights_engine.py",
+     "Exposition aux moisissures au travail & refus de reconnaissance en maladie professionnelle", "Wave 1053",
+     "Travailleurs dans des bâtiments infestés de moisissures toxiques sans droit à une indemnisation.",
+     "MWEC", "mold_workplace_exp"),
+    ("school_asbestos_students_rights_engine.py",
+     "Exposition à l'amiante scolaire & droits des élèves et enseignants", "Wave 1053",
+     "Élèves et enseignants dans des écoles à l'amiante non décontaminées malgré des rapports d'inspection alarmants.",
+     "SASR", "school_asbestos"),
+
+    # Wave 1054 — Technologie & accessibilité pour handicapés (inédits)
+    ("ai_voice_accent_bias_rights_engine.py",
+     "Biais des assistants vocaux contre les accents non natifs & exclusion", "Wave 1054",
+     "Personnes avec des accents non américains incapables d'utiliser les assistants vocaux pour des services essentiels.",
+     "AVAB", "ai_voice_accent"),
+    ("automated_caption_quality_rights_engine.py",
+     "Qualité des sous-titres automatiques & exclusion des personnes sourdes", "Wave 1054",
+     "Sous-titres automatiques inexacts excluant les personnes sourdes des réunions et formations en ligne.",
+     "ACQD", "auto_caption_quality"),
+    ("digital_id_accessibility_rights_engine.py",
+     "Identité numérique & exclusion des personnes sans smartphone ou connexion", "Wave 1054",
+     "Services publics exigeant une identité numérique inaccessible aux personnes âgées sans smartphone.",
+     "DIDA", "digital_id_access"),
+
+    # Wave 1055 — Santé des communautés rurales (inédits)
+    ("rural_physician_shortage_rights_engine.py",
+     "Pénurie de médecins ruraux & droits des patients à des soins primaires accessibles", "Wave 1055",
+     "Comtés ruraux sans aucun médecin généraliste, forçant les habitants à parcourir des heures pour des soins de base.",
+     "RPSR", "rural_physician"),
+    ("air_ambulance_rural_billing_rights_engine.py",
+     "Facturation abusive des hélicoptères médicaux ruraux & droits des patients", "Wave 1055",
+     "Patients ruraux transportés par hélicoptère médical hors réseau recevant des factures de 50 000 dollars.",
+     "AABR", "air_ambulance_rural"),
+    ("rural_maternal_care_desert_rights_engine.py",
+     "Déserts de soins maternels ruraux après fermetures de maternités", "Wave 1055",
+     "Femmes rurales conduisant 100 km pour accoucher après la fermeture de la maternité locale.",
+     "RMDR", "rural_maternal_desert"),
+
+    # Wave 1056 — Droits culturels & patrimoine autochtone (inédits)
+    ("indigenous_human_remains_rights_engine.py",
+     "Retour des restes humains autochtones des musées & droits NAGPRA", "Wave 1056",
+     "Nations autochtones attendant des décennies le retour de restes ancestraux retenus par des musées.",
+     "IHRR", "indigenous_remains"),
+    ("cultural_patrimony_museum_rights_engine.py",
+     "Restitution d'objets patrimoniaux autochtones aux tribus & lois NAGPRA", "Wave 1056",
+     "Tribus dont les objets sacrés et cérémoniels restent dans des musées malgré les revendications légales.",
+     "CPRR", "cultural_patrimony"),
+    ("native_language_revitalization_rights_engine.py",
+     "Revitalisation des langues autochtones & financement fédéral insuffisant", "Wave 1056",
+     "Nations autochtones perdant leurs langues faute de financement des programmes d'immersion linguistique.",
+     "LRVF", "lang_revitalize"),
+]

@@ -1,0 +1,111 @@
+{
+  "timestamp": "2026-06-26T10:27:34.724377",
+  "sidebar_icons": {
+    "sidebar-icons-1.tsx": {
+      "lines": 2126,
+      "icons": 212,
+      "pct_oom": 38.7,
+      "status": "OK"
+    },
+    "sidebar-icons-1b.tsx": {
+      "lines": 2327,
+      "icons": 212,
+      "pct_oom": 42.3,
+      "status": "OK"
+    },
+    "sidebar-icons-2.tsx": {
+      "lines": 4087,
+      "icons": 423,
+      "pct_oom": 74.3,
+      "status": "OK"
+    },
+    "sidebar-icons-3.tsx": {
+      "lines": 3704,
+      "icons": 423,
+      "pct_oom": 67.3,
+      "status": "OK"
+    },
+    "sidebar-icons-4.tsx": {
+      "lines": 3489,
+      "icons": 370,
+      "pct_oom": 63.4,
+      "status": "OK"
+    },
+    "sidebar-icons-5.tsx": {
+      "lines": 1770,
+      "icons": 215,
+      "pct_oom": 32.2,
+      "status": "OK"
+    },
+    "sidebar-icons.tsx": {
+      "lines": 12,
+      "icons": 0,
+      "pct_oom": 0.2,
+      "status": "OK"
+    }
+  },
+  "sidebar_nav": {
+    "lines": 4217,
+    "pct_lag": 140.6,
+    "status": "ALERTE"
+  },
+  "data_files": {
+    "decision_seals_log.json": {
+      "size_kb": 126.8,
+      "lines": 4920,
+      "status": "OK"
+    },
+    "library_index.json": {
+      "size_kb": 1058.9,
+      "lines": 22101,
+      "status": "OK"
+    },
+    "study_attempts_log.json": {
+      "size_kb": 363.5,
+      "lines": 15542,
+      "status": "OK"
+    }
+  },
+  "engines": {
+    "count": 4384,
+    "size_mb": 19.4,
+    "pct_max": 87.7,
+    "status": "ALERTE"
+  },
+  "api_routes": {
+    "count": 228,
+    "pct_max": 65.1,
+    "status": "OK"
+  },
+  "dashboards": {
+    "count": 298,
+    "pct_max": 74.5,
+    "status": "OK"
+  },
+  "duplicate_icons": {
+    "total_icons": 1855,
+    "duplicates": [],
+    "status": "OK"
+  },
+  "next_config": {
+    "checks": {
+      "productionBrowserSourceMaps: false": true,
+      "webpackMemoryOptimizations: true": true,
+      "webpackBuildWorker: true": true,
+      "preloadEntriesOnStart: false": true
+    },
+    "missing": [],
+    "status": "OK"
+  },
+  "package_json": {
+    "build_cmd": "NODE_OPTIONS='--max-old-space-size=4096' next build",
+    "has_NODE_OPTIONS": true,
+    "status": "OK"
+  },
+  "summary": {
+    "global_status": "ALERTE",
+    "critique_count": 0,
+    "alerte_count": 2,
+    "ok_count": 15
+  }
+}

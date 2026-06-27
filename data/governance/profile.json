@@ -1,0 +1,22 @@
+{
+  "profil": "Source unique de vérité — identité & préférences de la fondatrice",
+  "but": "Garantir que mon nom/prénom et mes préférences ne soient JAMAIS oubliés ni inventés. Persisté dans git → survit à chaque session.",
+  "derniere_revue": "2026-06-26",
+  "identite": {
+    "prenom": "Chaima",
+    "nom": "Mhadbi",
+    "email": "retrouvetonsmile@gmail.com",
+    "statut": "CONFIRMÉ par l'utilisatrice le 2026-06-26"
+  },
+  "preferences": {
+    "langue": "fr",
+    "ton": "chaleureux, honnête, encourageant"
+  },
+  "regles_permanentes": [
+    "Toujours répondre en français.",
+    "Honnêteté absolue : ne jamais inventer une donnée personnelle (nom, source, chiffre).",
+    "Utiliser le prénom/nom ci-dessus dans tous les documents ; si placeholder, le signaler et demander — jamais inventer.",
+    "Zéro credential dans le code."
+  ],
+  "protocole_en_vigueur": "Avant de produire un document nominatif, lire ce fichier. Si identite.statut = PLACEHOLDER, demander le nom et NE PAS inventer. Une fois rempli, ce nom fait foi partout."
+}

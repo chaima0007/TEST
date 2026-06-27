@@ -1,0 +1,70 @@
+{
+  "id": "danone",
+  "slug": "danone",
+  "name": "Danone SA",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Agrifood",
+  "size": {
+    "revenue_bn_eur": 28,
+    "employees": 97000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "14.6 Low Risk",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / VP Procurement",
+    "team": "Danone Impact Journey team, Sustainable Sourcing & Agriculture",
+    "location": "Paris (siège, rue de Téhéran), Palaiseau (R&D), Amsterdam (opérations nord-européennes)",
+    "process": "Sustainability Progress Review trimestriel, Danone Ecosystem Fund governance, processus d'évaluation SPRING (Sustainability Progress through Regenerative and Inclusive Growth in Nature) pour fournisseurs agricoles"
+  },
+  "pain_points": [
+    "Filière lait : conditions de travail des fermiers et travailleurs agricoles dans les bassins laitiers (France, USA, Argentine, Russie) avec questions sur le salaire décent",
+    "Lait de formule infantile : marketing responsable dans les pays à faibles revenus, respect du Code international de commercialisation des substituts du lait maternel (OMS)",
+    "Eaux embouteillées (Evian, Volvic, Badoit) : droits à l'eau des communautés riveraines des sources — conflits locaux en France et en Indonésie",
+    "Filières lait Inde et Indonésie (Danone) : conditions de travail des collecteurs de lait et petits éleveurs — revenus insuffisants, pas d'accords collectifs",
+    "Transition post-Emmanuel Faber : gouvernance RSE fragilisée après le départ du PDG sous pression d'activistes financiers — maintien des engagements sociaux ambitieux",
+    "Packaging et déchets : responsabilité sociale des producteurs dans les pays sans système de collecte (Asie du Sud-Est, Afrique)"
+  ],
+  "observed_failures": [
+    "Conflit eau Volvic (Auvergne, 2021-2023) : arrêtés préfectoraux pour prélèvements excessifs impactant les nappes phréatiques locales — plaintes d'agriculteurs et d'associations",
+    "Rapport IBFAN 2022 : violations du Code OMS dans la promotion des laits infantiles Danone en Indonésie et aux Philippines malgré les engagements groupe",
+    "Danone Russia (jusqu'en 2022) : maintien d'activités dans un contexte de guerre documentant la tension entre engagements droits humains et intérêts commerciaux"
+  ],
+  "signals_of_risk": [
+    "Tension entre les ambitions ESG très affichées (one planet, one health) et les contraintes financières post-crise 2020-2022",
+    "Conflits locaux autour des sources d'eau minérale naturelle (Volvic, Font Vella) en période de stress hydrique croissant",
+    "Pression des actionnaires activistes (Artisan Partners, Bluebell) pouvant fragiliser les investissements DDH"
+  ],
+  "signals_of_trust": [
+    "Note MSCI AA — parmi les meilleures de son secteur dans l'agrifood mondial",
+    "Statut d'Entreprise à Mission adopté en 2020 — Danone est la plus grande entreprise au monde avec ce statut",
+    "Danone Ecosystem Fund : 100M EUR investis dans des projets d'entrepreneuriat social liés à la supply chain depuis 2009",
+    "Programme SPRING pour la rémunération équitable des agriculteurs fournisseurs (Living Income)"
+  ],
+  "recommended_actions": [
+    "Proposer un outil de mesure du Living Income (revenu décent) pour les agriculteurs fournisseurs lait et fruits, aligné avec les exigences CSDDD",
+    "Démontrer comment documenter les engagements de l'Entreprise à Mission avec des indicateurs DDH vérifiables par les commissaires aux comptes",
+    "Présenter une solution de cartographie des droits à l'eau pour les sites d'extraction d'eau minérale en zones de stress hydrique",
+    "Organiser une session avec l'équipe Sustainable Sourcing autour du programme SPRING et des lacunes vs. CSDDD 2026"
+  ],
+  "local_tone": "Ton inspirant et orienté impact, en phase avec la culture de l'Entreprise à Mission de Danone. Les interlocuteurs apprécient les approches qui mêlent rigueur méthodologique et vision de transformation positive. Référencer l'héritage Antoine Riboud (discours de Marseille 1972) comme ancrage culturel.",
+  "cultural_notes": "Danone a une culture d'entreprise très particulière — profondément engagée dans la 'double finalité' (économique et sociale) depuis les années 1970. Les équipes RSE sont parmi les plus sophistiquées du CAC40. Après la crise de gouvernance 2020-2021, il est important de valoriser la continuité des engagements tout en montrant comment les renforcer.",
+  "priority": 2,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.danone.com/impact/planet-reconnecting-people-nature/sustainable-agriculture-sourcing.html",
+    "https://www.ibfan.org/danone-code-violations-2022/",
+    "https://www.business-humanrights.org/en/companies/danone/"
+  ]
+}

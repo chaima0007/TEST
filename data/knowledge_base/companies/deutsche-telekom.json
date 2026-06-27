@@ -1,0 +1,70 @@
+{
+  "id": "deutsche-telekom",
+  "slug": "deutsche-telekom",
+  "name": "Deutsche Telekom AG",
+  "country": "Germany",
+  "city": "Bonn",
+  "sector": "Télécoms",
+  "size": {
+    "revenue_bn_eur": 113,
+    "employees": 210000,
+    "index": "DAX40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "12.1 Low Risk",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Officer Corporate Responsibility / Chief Procurement Officer",
+    "team": "Corporate Responsibility department, Procurement & Supply Chain Sustainability",
+    "location": "Bonn (siège), Berlin (T-Systems), Vienne (Autriche & Europe centrale)",
+    "process": "Sustainability Board trimestriel, processus de qualification fournisseurs (SQS) avec critères ESG, LkSG compliance system déployé depuis 2023"
+  },
+  "pain_points": [
+    "Chaîne d'approvisionnement télécom : équipements réseau (Ericsson, Huawei, Nokia) avec composants provenant de zones à risque DDH en Asie",
+    "LkSG conformité pour les sous-traitants de maintenance réseau (techniciens externalisés) en Allemagne et en Europe centrale",
+    "Infrastructure câbles sous-marins : conditions de travail des équipages des navires câbliers et des travailleurs dans les zones d'atterrissage",
+    "Politique Huawei : exclusion progressive des équipements chinois avec implications sur la supply chain et les partenariats locaux",
+    "Droits numériques et vie privée des utilisateurs : position DDH sur la coopération avec les États demandant l'accès aux données clients",
+    "Conditions de travail des centres d'appels externalisés (Philippines, Inde, Maroc, Pologne) : standards sociaux et droits syndicaux"
+  ],
+  "observed_failures": [
+    "Rapport CorA 2023 : Deutsche Telekom identifiée parmi les entreprises DAX avec des failles dans la documentation LkSG pour les fournisseurs de niveau 2",
+    "Centre d'appels Maroc (2022) : conditions de travail dégradées documentées par l'Alliance des travailleurs — turnover élevé, pression sur les performances, restrictions syndicales",
+    "Partenariat T-Systems Myanmar (jusqu'en 2022) : fourniture de services IT à des entités contrôlées par la junte militaire avant le retrait sous pression ONG"
+  ],
+  "signals_of_risk": [
+    "Dépendance à des fournisseurs d'équipements concentrés dans des zones géopolitiquement sensibles (Chine, Asie du Sud-Est)",
+    "Expansion de T-Mobile US dans des contextes de droit du travail américain différents des standards européens DT",
+    "Pression croissante sur les droits numériques dans les marchés où DT opère (Grèce, Hongrie, Pologne)"
+  ],
+  "signals_of_trust": [
+    "Note MSCI AA — leader dans le secteur télécom européen pour la durabilité",
+    "Rapport CR (Corporate Responsibility) publié depuis 2000, certifié GRI et aligné SDGs",
+    "LkSG Compliance Management System opérationnel avec portail fournisseurs dédié",
+    "Initiative Fair Finance : engagement sur les droits numériques et la protection des données des utilisateurs"
+  ],
+  "recommended_actions": [
+    "Proposer une solution de scoring DDH pour les fournisseurs d'équipements réseau avec focus minerais critiques et conditions de fabrication",
+    "Démontrer l'intégration avec le portail fournisseurs LkSG existant pour enrichir les données DDH sans créer de processus parallèles",
+    "Présenter un module spécialisé sur les droits numériques comme extension de la due diligence DDH standard",
+    "Organiser un workshop avec l'équipe CR autour des obligations LkSG pour les centres d'appels externalisés"
+  ],
+  "local_tone": "Ton professionnel allemand : structuré, documenté, orienté processus. Deutsche Telekom apprécie les approches systématiques avec documentation claire. Références aux normes LkSG, GRI et DAX ESG guidelines sont des marqueurs de crédibilité. La ponctualité et la préparation sont essentielles.",
+  "cultural_notes": "Deutsche Telekom a une culture d'ancienne entreprise d'État (Deutsche Bundespost) avec forte présence syndicale (ver.di) et co-détermination au conseil de surveillance. Les décisions prennent du temps mais sont durables. La rigueur administrative et la documentation formelle sont des attentes non négociables.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.telekom.com/en/company/corporate-responsibility",
+    "https://www.cora-netz.de/en/deutsche-telekom-lksg-2023/",
+    "https://www.business-humanrights.org/en/companies/deutsche-telekom/"
+  ]
+}

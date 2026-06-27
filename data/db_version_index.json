@@ -1,0 +1,124 @@
+{
+  "databases": {
+    "agent_inboxes": {
+      "versions": [
+        {
+          "file": "agent_inboxes__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "8ca438a2fe54bbc9",
+          "reason": "scheduled_report",
+          "size_bytes": 15337
+        }
+      ],
+      "last_checksum": "8ca438a2fe54bbc9",
+      "description": "Messagerie inter-agents"
+    },
+    "infinite_solutions": {
+      "versions": [
+        {
+          "file": "infinite_solutions__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "f2c2b43dd5daaacd",
+          "reason": "scheduled_report",
+          "size_bytes": 27759
+        }
+      ],
+      "last_checksum": "f2c2b43dd5daaacd",
+      "description": "Base infinie de solutions P001-P012"
+    },
+    "research_database": {
+      "versions": [
+        {
+          "file": "research_database__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "24b18a429b376400",
+          "reason": "scheduled_report",
+          "size_bytes": 37172
+        }
+      ],
+      "last_checksum": "24b18a429b376400",
+      "description": "Base recherche 8 agents 54 sujets"
+    },
+    "generated_codes": {
+      "versions": [
+        {
+          "file": "generated_codes__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "58450a6bffe6c268",
+          "reason": "scheduled_report",
+          "size_bytes": 4919
+        }
+      ],
+      "last_checksum": "58450a6bffe6c268",
+      "description": "Algorithmes UNIQUE + CONNUS"
+    },
+    "anthropic_capabilities": {
+      "versions": [
+        {
+          "file": "anthropic_capabilities__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "0a0dd8c830a004cb",
+          "reason": "scheduled_report",
+          "size_bytes": 14395
+        }
+      ],
+      "last_checksum": "0a0dd8c830a004cb",
+      "description": "Capacités publiques Anthropic"
+    },
+    "monte_carlo_results": {
+      "versions": [
+        {
+          "file": "monte_carlo_results__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "1f8057c317a992c3",
+          "reason": "scheduled_report",
+          "size_bytes": 2207
+        }
+      ],
+      "last_checksum": "1f8057c317a992c3",
+      "description": "Résultats 2M simulations"
+    },
+    "autocontrol_report": {
+      "versions": [
+        {
+          "file": "autocontrol_report__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "1392fd9c295f9f99",
+          "reason": "scheduled_report",
+          "size_bytes": 6737
+        }
+      ],
+      "last_checksum": "1392fd9c295f9f99",
+      "description": "Rapport autocontrôle 82.4%"
+    },
+    "problem_audits": {
+      "versions": [
+        {
+          "file": "problem_audits__20260622_230158.json",
+          "timestamp": "20260622_230158",
+          "checksum": "1a4dd66d1fd5ebb9",
+          "reason": "scheduled_report",
+          "size_bytes": 6620
+        }
+      ],
+      "last_checksum": "1a4dd66d1fd5ebb9",
+      "description": "Audits officiels multi-agents"
+    }
+  },
+  "global_snapshots": [
+    {
+      "timestamp": "20260622_230158",
+      "reason": "scheduled_report",
+      "databases_snapped": [
+        "agent_inboxes",
+        "infinite_solutions",
+        "research_database",
+        "generated_codes",
+        "anthropic_capabilities",
+        "monte_carlo_results",
+        "autocontrol_report",
+        "problem_audits"
+      ]
+    }
+  ]
+}

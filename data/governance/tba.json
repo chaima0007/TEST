@@ -1,0 +1,214 @@
+{
+  "registre": "Tableau de Bord d'Avancement (TBA)",
+  "but": "Référence opérationnelle unique : état réel de chaque projet, jauges %, actions faites, prochaines étapes et point de sortie (dernier état validé) pour une continuité totale entre sessions.",
+  "derniere_mise_a_jour": "2026-06-27",
+  "projets": [
+    {
+      "nom": "La Loi Avec Moi (citoyens)",
+      "point_de_sortie": "67 domaines / 238 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.",
+      "taches": [
+        {
+          "nom": "Base juridique sourcée (domaines + réponses)",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "67 domaines couverts",
+            "238 réponses, 100% loi concrète",
+            "100% sources officielles",
+            "double vérification + agent incrémental"
+          ],
+          "prochaines_etapes": [
+            "Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)"
+          ]
+        },
+        {
+          "nom": "Page « Base juridique » (rendu serveur)",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Composant serveur lisant data/belgium",
+            "Affichage question/réponse/alerte/contacts/source/date"
+          ],
+          "prochaines_etapes": [
+            "Filtre par domaine",
+            "Recherche plein texte"
+          ]
+        },
+        {
+          "nom": "Modèles de documents prêts à l'emploi",
+          "pct": 70,
+          "statut": "en cours",
+          "actions_faites": [
+            "12 modèles copier-coller (résiliation, contestation, mise en demeure, RGPD, CPAS, amende…)"
+          ],
+          "prochaines_etapes": [
+            "Ajouter modèles bail/logement et travail",
+            "Bouton export PDF"
+          ]
+        },
+        {
+          "nom": "Espace enfants & jeunes / mineurs",
+          "pct": 60,
+          "statut": "en cours",
+          "actions_faites": [
+            "Mapping publics mineurs/adultes",
+            "Modules harcèlement, drogues, enfants placés, violences"
+          ],
+          "prochaines_etapes": [
+            "Langage très simple + pictos",
+            "Page dédiée douce"
+          ]
+        },
+        {
+          "nom": "Versions multilingues (NL en premier)",
+          "pct": 5,
+          "statut": "à faire",
+          "actions_faites": [
+            "Architecture data prête (champ langue)"
+          ],
+          "prochaines_etapes": [
+            "Traduction NL des modules prioritaires"
+          ]
+        },
+        {
+          "nom": "Déploiement & hébergement",
+          "pct": 0,
+          "statut": "bloqué (décision Chaima)",
+          "actions_faites": [],
+          "prochaines_etapes": [
+            "Choix hébergeur + domaine (décision budgétaire = Chaima)"
+          ]
+        },
+        {
+          "nom": "Cartographie d'adresses officielles par ville",
+          "pct": 0,
+          "statut": "à faire",
+          "actions_faites": [],
+          "prochaines_etapes": [
+            "Trouver une source open-data officielle (jamais d'adresse inventée)"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Caelum (entreprises B2B)",
+      "point_de_sortie": "Veille conformité 2026 (6 normes sourcées + chiffres), agent « Appels & Financements » et simulateur /appels-projets en ligne. Séparé de La Loi Avec Moi.",
+      "taches": [
+        {
+          "nom": "Veille conformité 2026 (normes entreprises)",
+          "pct": 80,
+          "statut": "en cours",
+          "actions_faites": [
+            "6 normes sourcées (e-facture, NIS2, CSRD, CSDDD, RGPD, lanceurs d'alerte)",
+            "Chiffres/%/échéances vérifiés"
+          ],
+          "prochaines_etapes": [
+            "Ajouter UBO, AML, autres obligations sectorielles"
+          ]
+        },
+        {
+          "nom": "Simulateur « Appels à projets »",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Page /appels-projets (4 questions → aides + marchés)",
+            "Lien nav"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Agent « Appels & Financements »",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Veille/Go-NoGo/Matching testés (auto-test OK)"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Page « Conformité 2026 » + simulateur « Suis-je concerné ? »",
+          "pct": 0,
+          "statut": "à faire",
+          "actions_faites": [
+            "Données prêtes (data/caelum)"
+          ],
+          "prochaines_etapes": [
+            "Coder la page + simulateur 4 questions"
+          ]
+        },
+        {
+          "nom": "Positionnement commercial & business plan",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Pont commercial chiffré",
+            "Avis appels à projets",
+            "Cheat code conformité=marchés publics"
+          ],
+          "prochaines_etapes": [
+            "Mettre en page sur le site"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Infrastructure & Gouvernance (flotte d'agents)",
+      "point_de_sortie": "43 protocoles. Agents incrémental + scalabilité/monitoring intégrés à l'orchestrateur, verdict global OK.",
+      "taches": [
+        {
+          "nom": "Protocoles de gouvernance",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "43 protocoles au registre",
+            "Orchestrateur 1-geste"
+          ],
+          "prochaines_etapes": [
+            "Revue périodique"
+          ]
+        },
+        {
+          "nom": "Protocole incrémental (P-INCREMENTAL)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Checkpoint d'historique + delta-only + normes de sécurité",
+            "Intégré flotte"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Scalabilité & monitoring (P-SCALABILITE)",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "Capacity planning multi-plateforme",
+            "Prévision de saturation",
+            "Latence (proxies) + coût (modèle)"
+          ],
+          "prochaines_etapes": [
+            "Renseigner les vrais coûts (décision Chaima)"
+          ]
+        },
+        {
+          "nom": "Charte d'autonomie (P-AUTONOMIE)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Intégrée au protocole central + mémoire permanente"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Tableau de Bord d'Avancement (P-TBA)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "TBA dynamique + générateur + intégration orchestrateur"
+          ],
+          "prochaines_etapes": []
+        }
+      ]
+    }
+  ]
+}

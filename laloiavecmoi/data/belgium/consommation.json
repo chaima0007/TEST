@@ -1,0 +1,87 @@
+{
+  "module": "consommation",
+  "titre": "Consommation — garanties, achats, arnaques",
+  "domaine": "Consommation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique — protection du consommateur (garantie légale, vente à distance)",
+    "portee": "Droits des consommateurs face aux entreprises en Belgique",
+    "source_officielle": "https://economie.fgov.be/fr/themes/protection-des-consommateurs"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour un litige, tentez d'abord un accord écrit avec le vendeur, puis le Service de médiation pour le consommateur.",
+  "faits": [
+    {
+      "id": "CONSO-GARANTIE-001",
+      "question": "Combien de temps suis-je couvert par la garantie ?",
+      "reponse": "Pour un achat d'un consommateur auprès d'une entreprise, la garantie légale est de 2 ans à partir de la livraison, partout dans l'UE (même à distance). Si le produit présente un défaut de conformité dans ce délai, le vendeur doit le réparer ou le remplacer (et, à défaut, rembourser). Cette garantie légale est gratuite et s'ajoute à toute garantie commerciale.",
+      "reference_legale": "Code de droit économique — garantie légale de conformité (2 ans)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/economie/commerce_et_consommation/protection_du_consommateur/garanties",
+          "intitule": "Belgium.be — Garanties"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs",
+          "intitule": "SPF Economie — Protection des consommateurs"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CONSO-RETRACTATION-001",
+      "question": "J'ai acheté en ligne et je regrette : puis-je annuler ?",
+      "reponse": "Oui. Pour un achat à distance (internet, téléphone, démarchage), vous avez un droit de rétractation de 14 jours à compter de la réception, sans devoir vous justifier. Vous informez le vendeur, puis renvoyez le bien dans les 14 jours ; l'entreprise rembourse tous les paiements, y compris les frais de livraison standard. Certaines exceptions existent (produits personnalisés, périssables, etc.).",
+      "reference_legale": "Code de droit économique — droit de rétractation (vente à distance, 14 jours)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/faire-valoir-ses-droits/achats/annuler-un-achat/quand-pouvez-vous/droit-de-retractation-en-cas",
+          "intitule": "SPF Economie — Droit de rétractation"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/ventes/reglementation/delais-de-retractation",
+          "intitule": "SPF Economie — Délais de rétractation"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CONSO-LITIGE-001",
+      "question": "Litige avec un vendeur : à qui m'adresser ?",
+      "reponse": "Tentez d'abord un accord à l'amiable, par écrit (gardez une trace). Si cela échoue et que le vendeur est en Belgique, contactez le Service de médiation pour le consommateur (gratuit). Si le vendeur est dans un autre pays de l'UE, adressez-vous au Centre Européen des Consommateurs. La médiation évite souvent un procès.",
+      "reference_legale": "Code de droit économique — règlement extrajudiciaire des litiges de consommation",
+      "contacts": [
+        {
+          "nom": "Service de médiation pour le consommateur",
+          "lien": "https://mediationconsommateur.be",
+          "pour": "litige avec un vendeur belge"
+        }
+      ],
+      "alerte_delai": "Réclamez vite et par écrit : gardez factures et échanges, et agissez dans le délai de garantie (2 ans).",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs",
+          "intitule": "SPF Economie — Protection des consommateurs"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://mediationconsommateur.be/la-possibilite-de-changer-davis-le-droit-de-retractation-pour-les-achats-a-distance/",
+          "intitule": "Médiation Consommateur — Rétractation"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.test-achats.be",
+          "intitule": "Test-Achats — association de consommateurs (comparatifs, conseils)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

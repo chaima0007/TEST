@@ -1,0 +1,60 @@
+{
+  "module": "eau",
+  "titre": "Eau — facture, impayés et coupure",
+  "domaine": "Eau & distribution",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de l'eau (Région wallonne) — Règlement général de distribution d'eau ; loi fédérale du 4 mai 2023 sur les rappels de paiement au consommateur",
+    "portee": "Droits du consommateur face à sa facture d'eau, protection contre la coupure, aide sociale",
+    "source_officielle": "https://environnement.wallonie.be/legis/eau/eaali017.htm"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles et les montants (frais de rappel, intervention sociale) sont fixés par votre Région et votre distributeur ; vérifiez auprès d'eux pour votre cas précis. Les règles ci-dessous visent principalement la Wallonie.",
+  "faits": [
+    {
+      "id": "EAU-COUPURE-001",
+      "question": "Mon distributeur peut-il me couper l'eau si je n'ai pas payé ?",
+      "reponse": "Non, pas de sa propre initiative. En Wallonie, le distributeur ne peut pas couper l'eau d'un logement habité pour un simple impayé : la coupure n'est possible qu'en exécution d'une décision de justice qui l'autorise expressément. Beaucoup de juges refusent d'ailleurs la coupure, considérée comme contraire à la dignité humaine. Avant d'en arriver là, contactez vite votre distributeur pour un plan de paiement et le CPAS pour le Fonds social de l'eau.",
+      "reference_legale": "Code de l'eau (Région wallonne) — Règlement général de distribution d'eau en Région wallonne",
+      "contacts": [
+        {"nom": "Votre distributeur d'eau (ex. SWDE)", "lien": "https://www.swde.be", "pour": "plan de paiement, contestation"},
+        {"nom": "CPAS de votre commune", "pour": "Fonds social de l'eau, aide au paiement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://environnement.wallonie.be/legis/eau/eaali017.htm", "intitule": "Wallonie — Règlement général de distribution d'eau"},
+        {"type": "officiel", "url": "http://socialsante.wallonie.be/surendettement/professionnel/?q=information-contrat-eau-acces", "intitule": "Portail wallon surendettement — Fourniture d'eau"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "EAU-RAPPEL-001",
+      "question": "Doit-on me faire payer des frais dès le premier rappel ?",
+      "reponse": "Pas tout de suite. Depuis la loi fédérale du 4 mai 2023 sur les dettes du consommateur, un premier rappel doit en principe être gratuit pour les particuliers, et les frais et intérêts de retard ne peuvent commencer qu'après un délai (au moins 14 jours après l'envoi du rappel). Les montants de frais sont aussi plafonnés. Si votre facture d'eau vous réclame des frais dès le premier rappel, vous pouvez le contester.",
+      "reference_legale": "Loi du 4 mai 2023 (livre XIX « Dettes du consommateur » du Code de droit économique)",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "frais de rappel abusifs, information consommateur"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/dettes-du-consommateur", "intitule": "SPF Économie — Dettes du consommateur"},
+        {"type": "secondaire", "url": "https://www.swde.be/fr/depuis-le-1er-septembre-2023-une-loi-federale-impose-dans-certains-cas-la-gratuite-pour-le-1er", "intitule": "SWDE — Gratuité du 1er rappel"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "EAU-FONDS-SOCIAL-001",
+      "question": "Je n'arrive pas à payer ma facture d'eau, existe-t-il une aide ?",
+      "reponse": "Oui. En Wallonie comme à Bruxelles, un Fonds social de l'eau permet d'intervenir dans la facture des ménages en difficulté de paiement. La demande passe par le CPAS de votre commune, qui examine votre situation. N'attendez pas l'accumulation : plus tôt vous contactez le distributeur et le CPAS, plus il est facile d'éviter les frais et la procédure judiciaire.",
+      "reference_legale": "Code de l'eau (Région wallonne) — Fonds social de l'eau",
+      "contacts": [
+        {"nom": "CPAS de votre commune", "pour": "Fonds social de l'eau, plan d'aide"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "http://socialsante.wallonie.be/surendettement/professionnel/?q=information-contrat-eau-acces", "intitule": "Portail wallon surendettement — Eau"},
+        {"type": "officiel", "url": "https://environnement.wallonie.be/legis/eau/eaali017.htm", "intitule": "Wallonie — Règlement général de distribution d'eau"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

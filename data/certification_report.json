@@ -1,0 +1,61 @@
+{
+  "certification": "PASS",
+  "horodatage_utc": "2026-06-27T21:59:42Z",
+  "moteurs_certifies": 3392,
+  "protocoles": [
+    {
+      "protocole": "P1_COMPILATION",
+      "total": 3392,
+      "echecs": [],
+      "ok": true
+    },
+    {
+      "protocole": "P2_UNICITE_PREFIXES",
+      "prefixes": 3122,
+      "collisions": 115,
+      "baseline_collisions": 115,
+      "doublons_apercu": [
+        "AFC: abaca_fiber_child_labor_rights_engine.py ↔ agave_fiber_child_labor_rights_engine.py",
+        "ALG: agribusiness_land_grab_community_rights_engine.py ↔ algorithmic_management_rights_engine.py",
+        "ACR: ai_child_risk_predict_rights_engine.py ↔ anti_corruption_rights_engine.py",
+        "AML: anti_money_laundering_human_rights_engine.py ↔ anti_money_laundering_rights_engine.py",
+        "ATR: ai_tenant_risk_score_rights_engine.py ↔ arms_trade_rights_engine.py",
+        "ASR: ai_surveillance_rights_engine.py ↔ asylum_rights_engine.py",
+        "AWR: ai_weapons_rights_engine.py ↔ autonomous_weapons_ai_warfare_rights_engine.py",
+        "ADT: adoption_trafficking_rights_engine.py ↔ azo_dye_textile_worker_rights_engine.py",
+        "BPD: blood_plasma_donation_rights_engine.py ↔ bride_price_debt_rights_engine.py",
+        "CCL: caraway_cultivation_labor_rights_engine.py ↔ cardamom_child_labor_rights_engine.py"
+      ],
+      "ok": true,
+      "note": "dette legacy gelée — anti-régression actif"
+    },
+    {
+      "protocole": "P3_INTEGRITE_JSON",
+      "total": 403,
+      "echecs": [],
+      "ok": true
+    },
+    {
+      "protocole": "P4_CONTENU_SOURCE",
+      "ok": true,
+      "resume": "✓ TOUT VERT — chaque fait est sourcé officiellement. Actif fiable."
+    },
+    {
+      "protocole": "P5_NON_REGRESSION",
+      "baseline": 3392,
+      "actuel": 3392,
+      "ok": true
+    },
+    {
+      "protocole": "P7_PROBABILITE",
+      "probabilite_integrite": 0.4272,
+      "ic90_bas": 0.0883,
+      "ic90_haut": 0.8115,
+      "simulations": 10000,
+      "niveau": "DETTE À RÉSORBER",
+      "ok": true,
+      "note": "P(tout opérationnel) — Monte Carlo bayésien Beta ; consultatif"
+    }
+  ],
+  "sceau_sha256": "840a94d036fed4f063eaaa8540d7296d91c0bfb2c075943714ebd0404ca6f5be"
+}

@@ -1,0 +1,69 @@
+{
+  "registre": "Incidents & solutions — La Loi Avec Moi",
+  "but": "Enregistrer CHAQUE problème rencontré, sa cause racine, sa solution, comment on y est arrivé, et le protocole de prévention. Objectif : ne jamais répéter une erreur — la régler une fois, pour toutes.",
+  "principe": "Honnêteté totale : on consigne aussi les problèmes qu'on ne contrôle pas entièrement (infrastructure), avec la meilleure parade.",
+  "derniere_revue": "2026-06-27",
+  "incidents": [
+    {
+      "id": "INC-001",
+      "titre": "Démarrage figé du conteneur (checkout obsolète)",
+      "date_detection": "2026-06-27",
+      "gravite": "haute",
+      "recurrences": 4,
+      "symptome": "Au démarrage, le dépôt local est au vieux commit 1699dd9 ; les fichiers récents (data/belgium, scripts, apps) sont absents. Il faut resynchroniser à la main.",
+      "cause_racine": "Le conteneur d'exécution distant boote sur un instantané épinglé au commit 1699dd9 et ne tire pas automatiquement la dernière version. Le remote, lui, a toujours tout le travail.",
+      "solution": "Auto-synchronisation au démarrage : le hook SessionStart exécute scripts/setup-hooks.sh qui fait git fetch + git merge --ff-only sur la branche de travail (fast-forward uniquement, jamais destructif, ignoré si modifications non commitées).",
+      "comment_y_arriver": [
+        "Constater via git reflog que HEAD boote à 1699dd9 à chaque session",
+        "Vérifier que 1699dd9 est un ancêtre du remote (ff-merge donc toujours sûr)",
+        "Confirmer que le remote contient tout le travail (aucune perte)",
+        "Ajouter l'auto-sync dans scripts/setup-hooks.sh (déjà appelé par le hook SessionStart)",
+        "Rendre le tout NON bloquant (exit 0) pour ne jamais empêcher la session"
+      ],
+      "protocole_prevention": "P-RESILIENCE : auto-sync au boot + commit/push fréquents (le remote est le filet).",
+      "limite_honnete": "La cause profonde (instantané épinglé) relève de l'infrastructure managée. Parade fiable côté utilisateur : recréer/rafraîchir l'environnement cloud pour que sa base = dernier commit.",
+      "statut": "réglé (parade automatique en place)",
+      "test_simulation": "verifier_auto_sync"
+    },
+    {
+      "id": "INC-002",
+      "titre": "Date de vérification figée (faux « date dans le futur »)",
+      "date_detection": "2026-06-27",
+      "gravite": "moyenne",
+      "recurrences": 2,
+      "symptome": "Le vérificateur juridique bloquait tout fait daté du jour réel, en disant « date_verification dans le futur ».",
+      "cause_racine": "La fonction _today() du vérificateur renvoyait une date codée en dur (2026-06-26), inférieure à la date réelle (2026-06-27).",
+      "solution": "Utiliser l'horloge réelle (date.today()) + une tolérance de 2 jours absorbant tout décalage de fuseau/horloge.",
+      "comment_y_arriver": [
+        "Repérer le message « date dans le futur » au moment d'ajouter des faits",
+        "Localiser _today() codé en dur dans legal_content_verifier.py",
+        "Remplacer par date.today() avec repli sûr",
+        "Ajouter GRACE_FUTUR_JOURS=2 pour éviter tout faux positif"
+      ],
+      "protocole_prevention": "P-SOURCES : la date de vérification suit l'horloge réelle, jamais une constante.",
+      "limite_honnete": "Aucune ; entièrement sous contrôle.",
+      "statut": "réglé",
+      "test_simulation": "verifier_date_du_jour"
+    },
+    {
+      "id": "INC-003",
+      "titre": "Domaine officiel hors liste blanche",
+      "date_detection": "2026-06-27",
+      "gravite": "moyenne",
+      "recurrences": 3,
+      "symptome": "À chaque nouvelle niche, un domaine officiel réel (emploi.belgique.be, mobilit.belgium.be…) était signalé « officiel hors tier1 » et bloquait.",
+      "cause_racine": "La liste blanche ne contenait pas toutes les bases officielles ; chaque sous-domaine devait être ajouté un par un.",
+      "solution": "Ajouter les bases officielles larges (belgique.be, fgov.be…). La correspondance étant par suffixe, tous leurs sous-domaines sont désormais couverts automatiquement.",
+      "comment_y_arriver": [
+        "Lire le rapport source_trust pour identifier le domaine signalé",
+        "Vérifier qu'il s'agit bien d'un domaine gouvernemental officiel",
+        "Confirmer que le matching est par suffixe (endswith)",
+        "Ajouter la base officielle (ex. fgov.be) plutôt que le sous-domaine seul"
+      ],
+      "protocole_prevention": "P-CONFIANCE-SOURCES : whitelist par bases officielles (suffixe), pas sous-domaine par sous-domaine.",
+      "limite_honnete": "Les domaines en .brussels restent ajoutés au cas par cas (extension ouverte au public).",
+      "statut": "réglé",
+      "test_simulation": "verifier_domaines_officiels"
+    }
+  ]
+}

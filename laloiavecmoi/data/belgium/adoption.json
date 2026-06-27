@@ -1,0 +1,46 @@
+{
+  "module": "adoption",
+  "titre": "Adoption — formes et procédure",
+  "domaine": "Adoption",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — adoption simple et adoption plénière ; loi du 24 avril 2003 réformant l'adoption",
+    "portee": "Formes d'adoption, conditions, agrément et tribunal compétent",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La préparation et l'agrément relèvent de votre Communauté (Fédération Wallonie-Bruxelles, Communauté flamande/germanophone) ; renseignez-vous auprès d'elle.",
+  "faits": [
+    {
+      "id": "ADOPT-FORMES-001",
+      "question": "Quelle différence entre adoption simple et adoption plénière ?",
+      "reponse": "L'adoption simple crée un lien de filiation avec les adoptants tout en maintenant certains liens avec la famille d'origine (l'enfant garde par exemple des droits successoraux dans sa famille d'origine), mais l'autorité parentale passe aux adoptants. L'adoption plénière, elle, donne à l'enfant exactement le même statut qu'un enfant né des adoptants et rompt les liens juridiques avec la famille d'origine. Le choix dépend de la situation (adoption de l'enfant du conjoint, adoption d'un mineur, etc.).",
+      "reference_legale": "Code civil — adoption simple et adoption plénière (art. 343 et suivants)",
+      "contacts": [
+        {"nom": "Direction de l'Adoption (Communauté)", "lien": "https://adoption.cfwb.be", "pour": "information, préparation, agrément"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption", "intitule": "SPF Justice — Adoption"},
+        {"type": "officiel", "url": "https://adoption.cfwb.be/ressources-utiles/fiches-thematiques/adoption-simple-et-adoption-pleniere/", "intitule": "Direction de l'Adoption (FWB) — Simple et plénière"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ADOPT-PROCEDURE-001",
+      "question": "Comment se passe la procédure d'adoption ?",
+      "reponse": "En général : 1) une préparation et, dans beaucoup de cas (adoption plénière, adoption internationale), un agrément délivré par votre Communauté, qui atteste de votre capacité à accueillir un enfant ; 2) le recueil des consentements requis (notamment l'enfant de plus de 12 ans, les parents d'origine ou le tuteur) ; 3) le passage devant le tribunal (tribunal de la famille/jeunesse pour un mineur, première instance pour un majeur), qui prononce l'adoption. Pour une adoption intrafamiliale (ex. enfant du conjoint), l'agrément n'est pas toujours requis.",
+      "reference_legale": "Loi du 24 avril 2003 réformant l'adoption ; Code judiciaire (compétence du tribunal de la famille)",
+      "contacts": [
+        {"nom": "Direction de l'Adoption (Communauté)", "pour": "préparation et agrément"},
+        {"nom": "Tribunal de la famille", "pour": "prononcé de l'adoption"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption/procedures_particuliere", "intitule": "SPF Justice — Procédures d'adoption"},
+        {"type": "officiel", "url": "https://adoption.cfwb.be", "intitule": "Direction de l'Adoption (FWB)"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

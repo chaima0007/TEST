@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const DEMO_EMAIL = process.env.DEMO_EMAIL ?? "demo@competeiq.com";
+const DEMO_EMAIL = process.env.DEMO_EMAIL ?? "demo@caelum.be";
 const DEMO_PASSWORD = process.env.DEMO_PASSWORD ?? "demo123";
 
 export async function POST(req: NextRequest) {

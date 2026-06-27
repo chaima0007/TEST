@@ -1,0 +1,70 @@
+{
+  "id": "engie",
+  "slug": "engie",
+  "name": "ENGIE SA",
+  "country": "France",
+  "city": "Courbevoie",
+  "sector": "Énergie/Infrastructure",
+  "size": {
+    "revenue_bn_eur": 78,
+    "employees": 96000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB+",
+      "sustainalytics": "19.8 Low Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Ethics & Compliance Officer / Directeur RSE",
+    "team": "Direction Développement Durable, Ethics & Compliance, Achats Responsables",
+    "location": "Courbevoie La Défense (siège), Paris (relations institutionnelles), Bruxelles (régulation)",
+    "process": "Plan de vigilance annuel, comité éthique et conformité mensuel, processus de due diligence projets avec grille d'évaluation DDH intégrée"
+  },
+  "pain_points": [
+    "Projets d'infrastructure énergétique dans des pays à risque : barrages hydroélectriques (Brésil, Pérou), réseaux électriques (Afrique subsaharienne) avec déplacements de communautés",
+    "Conformité loi de vigilance française : plan 2023 avec lacunes identifiées par des ONG sur la cartographie fournisseurs Tier 2 et les mécanismes de réclamation",
+    "Transition énergétique et impacts sociaux : reconversion des sites charbon et gaz en France et en Belgique (centrale Havre, terminal Zeebrugge)",
+    "Fournisseurs de matériaux de construction et d'équipements : conditions de travail dans les chantiers en Afrique du Nord et Moyen-Orient",
+    "Communautés riveraines des projets éoliens et solaires en France : processus de consultation et droits de participation insuffisants",
+    "Partenariats avec des États dans les marchés émergents : risques d'association avec des gouvernements violant les droits humains"
+  ],
+  "observed_failures": [
+    "Projet Gaztransport & Technigaz (GTT, affilié ENGIE) : implication dans des terminaux GNL liés à des régimes autoritaires (Qatar, Russie avant 2022)",
+    "Évaluation ONG Sherpa 2022 : plan de vigilance ENGIE noté insuffisant sur 4 critères sur 5 selon la grille d'évaluation loi de vigilance",
+    "Projet hydroélectrique Brésil (ENGIE Energias) : conflits fonciers avec communautés ribeirinhas documentés par ISA (Institut Socio-Ambiental) en 2021"
+  ],
+  "signals_of_risk": [
+    "Expansion géographique agressive dans des marchés à haut risque DDH pour accélérer la croissance des renouvelables",
+    "Tension entre ambitions de transition énergétique rapide et respect des délais de consultation communautaire",
+    "Pression réglementaire simultanée loi de vigilance (France) et CSDDD (UE) pour une entreprise très exposée aux projets d'infrastructure"
+  ],
+  "signals_of_trust": [
+    "Stratégie ENGIE Impact : 65 Mrd EUR investis dans les renouvelables d'ici 2026 avec volet social structuré",
+    "Charte éthique groupe et système de réclamation 'Ethics Line' accessible aux parties prenantes externes",
+    "Partenariat avec GDF (Gaz de France) pour la transition sociale des salariés des sites en reconversion",
+    "Rapport développement durable intégré publié selon GRI Standards avec vérification EY"
+  ],
+  "recommended_actions": [
+    "Proposer un outil de due diligence DDH spécialisé pour les projets d'infrastructure energétique avec focus communautés affectées",
+    "Démontrer comment améliorer le plan de vigilance sur les 4 critères défaillants identifiés par Sherpa",
+    "Présenter un module de consultation et de suivi des parties prenantes communautaires pour les projets renouvelables",
+    "Organiser une session avec l'équipe Ethics & Compliance autour du cas Brésil et des meilleures pratiques hydroélectrique DDH"
+  ],
+  "local_tone": "Ton formel avec sensibilité aux enjeux de service public et d'intérêt général. ENGIE a des racines dans l'énergie publique française (GDF-Suez) — valoriser les approches qui placent la durabilité sociale au cœur de la mission d'énergie pour tous. Références aux obligations réglementaires françaises prioritaires.",
+  "cultural_notes": "Culture issue de la fusion d'entités publiques et privées (Gaz de France, Suez) avec forte présence syndicale. La décision est souvent collective et lente. L'histoire de service public crée une sensibilité aux questions d'accès à l'énergie et d'impact social. Le mot 'conformité' seul est insuffisant — il faut montrer l'impact concret.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.engie.com/groupe/gouvernance/ethique-et-conformite",
+    "https://www.asso-sherpa.org/engie-plan-vigilance-evaluation-2022",
+    "https://www.business-humanrights.org/en/companies/engie/"
+  ]
+}
