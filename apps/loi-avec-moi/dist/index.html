@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accueil — La Loi Avec Moi</title>
+<meta name="description" content="Informations juridiques belges fiables et sourcées : bail, surendettement.">
+<style>
+:root{--bleu:#0b3d6e;--bleu2:#11578f;--gris:#f4f6f9;--txt:#1c2733;--muted:#5b6b7b;--bord:#e2e8f0;--ok:#0a7d4f}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--txt);line-height:1.6;background:#fff}
+a{color:var(--bleu2);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:linear-gradient(135deg,var(--bleu),var(--bleu2));color:#fff;padding:1.1rem 1.25rem}
+header.site .wrap{max-width:920px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+header.site a{color:#fff}
+.brand{font-weight:700;font-size:1.15rem;letter-spacing:.2px}
+.brand small{display:block;font-weight:400;opacity:.85;font-size:.72rem}
+nav.top a{margin-left:1rem;font-size:.92rem;opacity:.95}
+main{max-width:920px;margin:0 auto;padding:1.5rem 1.25rem 3rem}
+.hero{padding:1.5rem 0 .5rem}
+.hero h1{font-size:1.8rem;margin:.2rem 0 .4rem;color:var(--bleu)}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:640px}
+.disclaimer{background:#fff8e6;border:1px solid #f3e2a8;border-radius:10px;padding:.8rem 1rem;margin:1rem 0;font-size:.9rem;color:#6b5710}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin-top:1rem}
+.card{border:1px solid var(--bord);border-radius:12px;padding:1.1rem;background:#fff;transition:.15s;display:block}
+.card:hover{border-color:var(--bleu2);box-shadow:0 4px 18px rgba(11,61,110,.08);text-decoration:none}
+.card h3{margin:.1rem 0 .35rem;color:var(--bleu)}
+.card .meta{color:var(--muted);font-size:.85rem}
+.badge{display:inline-block;background:var(--gris);border:1px solid var(--bord);border-radius:999px;padding:.05rem .55rem;font-size:.74rem;color:var(--muted);margin-right:.3rem}
+.fait{border:1px solid var(--bord);border-radius:12px;padding:1.1rem 1.2rem;margin:1rem 0;background:#fff}
+.fait h3{margin:.1rem 0 .5rem;color:var(--bleu);font-size:1.12rem}
+.fait .ref{font-size:.86rem;color:var(--muted);margin:.5rem 0}
+.fait .src{font-size:.86rem;margin-top:.5rem}
+.fait .src ul{margin:.3rem 0 0;padding-left:1.1rem}
+.fait .date{font-size:.78rem;color:var(--muted);margin-top:.5rem}
+.src-officiel{color:var(--ok);font-weight:600}
+.search{margin:1.2rem 0}
+.search input{width:100%;padding:.7rem .9rem;border:1px solid var(--bord);border-radius:10px;font-size:1rem}
+footer.site{border-top:1px solid var(--bord);background:var(--gris);color:var(--muted);font-size:.85rem}
+footer.site .wrap{max-width:920px;margin:0 auto;padding:1.3rem 1.25rem}
+.back{display:inline-block;margin-bottom:1rem;font-size:.9rem}
+h2.sec{color:var(--bleu);border-bottom:2px solid var(--bord);padding-bottom:.3rem;margin-top:2rem}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a href="index.html"><span class="brand">La Loi Avec Moi<small>Le droit belge, clair et sourcé</small></span></a>
+  <nav class="top"><a href="index.html" style="font-weight:700">Accueil</a><a href="transparence.html">Transparence</a></nav>
+</div></header>
+<main>
+<section class="hero"><h1>Le droit belge, clair et sourcé</h1><p>Des réponses fiables à vos questions de tous les jours — bail, loyer, surendettement — chacune accompagnée de sa source officielle et de sa date de vérification.</p></section><div class="disclaimer">ℹ️ Information juridique générale, à jour à la date indiquée pour chaque réponse. Ne constitue pas un conseil juridique individualisé. Pour une situation précise, consultez un professionnel (avocat, médiateur de dettes agréé, CPAS, Justice de paix).</div><div class="search"><input id="q" type="search" placeholder="Rechercher une question (ex. garantie locative, saisie, préavis)…" oninput="filtrer()"></div><h2 class="sec">Thématiques (36 réponses)</h2><div class="cards" id="cards"><a class="card" href="surendettement.html"><h3>Surendettement — Règlement collectif de dettes (RCD)</h3><div class="meta"><span class="badge">Belgique (fédéral)</span><span class="badge">9 réponses sourcées</span></div></a><a class="card" href="bail_bruxelles.html"><h3>Bail de résidence principale — Région de Bruxelles-Capitale</h3><div class="meta"><span class="badge">Bruxelles</span><span class="badge">9 réponses sourcées</span></div></a><a class="card" href="bail_flandre.html"><h3>Bail de résidence principale — Région flamande</h3><div class="meta"><span class="badge">Flandre</span><span class="badge">9 réponses sourcées</span></div></a><a class="card" href="bail_wallonie.html"><h3>Bail de résidence principale — Région wallonne</h3><div class="meta"><span class="badge">Wallonie</span><span class="badge">9 réponses sourcées</span></div></a></div><script>function filtrer(){var v=document.getElementById('q').value.toLowerCase();var cs=document.querySelectorAll('#cards .card');cs.forEach(function(c){c.style.display = c.textContent.toLowerCase().indexOf(v)>=0?'':'none';});}</script>
+</main>
+<footer class="site"><div class="wrap">
+  <strong>Avertissement.</strong> Information juridique générale, à jour à la date indiquée pour chaque réponse. Ne constitue pas un conseil juridique individualisé. Pour une situation précise, consultez un professionnel (avocat, médiateur de dettes agréé, CPAS, Justice de paix).<br><br>
+  © 2026 La Loi Avec Moi · Chaque réponse cite ses sources officielles · Contenu généré à partir d'une base vérifiée.
+</div></footer>
+</body>
+</html>
