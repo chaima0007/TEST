@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-27. Chaque réponse doit citer une loi écrite et en vigueur.*
 
-**129 réponses · 129 citent un instrument légal concret (100%) · 57 avec article/année.**
+**132 réponses · 132 citent un instrument légal concret (100%) · 57 avec article/année.**
 
 ## ✅ Toutes les réponses citent un instrument légal concret.
 

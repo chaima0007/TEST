@@ -236,6 +236,15 @@
         "independant"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "couple",
+      "nom": "Couple & vie commune",
+      "statut": "couvert",
+      "modules": [
+        "couple"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
