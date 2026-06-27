@@ -88,6 +88,29 @@
         {"type": "officiel", "url": "http://socialsante.wallonie.be/surendettement/citoyen/?q=services-mediation-dettes", "intitule": "Portail wallon du surendettement — Le service de médiation de dettes"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-FISC-001",
+      "question": "Je n'arrive pas à payer mes impôts : puis-je obtenir un plan de paiement auprès du SPF Finances ?",
+      "reponse": "Oui. En cas de difficulté, on peut demander un plan de paiement (facilités de paiement) au SPF Finances, le plus simplement via le portail MyMinFin (ou par formulaire/courrier). Un plan est en principe accordé pour 4 à 12 mois ; si la dette ne peut être remboursée dans ce délai, le Directeur régional peut accorder jusqu'à 60 mois (5 ans) maximum. Important : même avec un plan, les intérêts de retard restent dus — il vaut donc mieux agir vite. Les conditions exactes et le formulaire figurent sur le site du SPF Finances.",
+      "reference_legale": "Facilités de paiement des dettes fiscales — SPF Finances (Code du recouvrement amiable et forcé des créances fiscales et non fiscales)",
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/declaration_impot/payer_ou_etre_rembourse/difficultes_paiement", "intitule": "SPF Finances — Difficultés de paiement"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/puis-je-demander-des-facilites-de-paiement-pour-mes-impots", "intitule": "Droits Quotidiens — Facilités de paiement pour les impôts"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SURE-IMMO-001",
+      "question": "Si je ne rembourse plus, peut-on saisir et vendre ma maison ? Comment ça se passe ?",
+      "reponse": "Oui, mais c'est une procédure longue et encadrée, qui n'est pas immédiate. Elle commence par un commandement de payer signifié par un huissier (valable 6 mois), transcrit au bureau de sécurité juridique, ce qui rend le bien indisponible. Faute d'opposition dans les 15 jours, la saisie est pratiquée. Le juge des saisies désigne ensuite un notaire qui organise la vente publique (adjudication) dans les 6 mois ; le notaire répartit le prix entre les créanciers selon leurs privilèges. Le débiteur peut s'opposer et se faire conseiller à chaque étape. Un règlement collectif de dettes peut, lui, suspendre les voies d'exécution.",
+      "reference_legale": "Code judiciaire, art. 1560 à 1626 — saisie-exécution immobilière (commandement, saisie, vente publique par notaire)",
+      "sources": [
+        {"type": "officiel", "url": "http://socialsante.wallonie.be/surendettement/citoyen/?q=credit-hypo-saisie", "intitule": "Portail wallon du surendettement — La saisie immobilière"},
+        {"type": "secondaire", "url": "https://www.notaire.be/acheter-louer-emprunter/sanctions/saisie-immobiliere", "intitule": "Notaire.be — Saisie immobilière"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-se-deroule-la-saisie-immobiliere", "intitule": "Droits Quotidiens — Comment se déroule la saisie immobilière"}
+      ],
+      "date_verification": "2026-06-26"
     }
   ]
 }

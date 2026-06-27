@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 2947 réalisations concrètes enregistrées
+### 📌 Total : 2948 réalisations concrètes enregistrées
 
 
 ## 2026-06-26
-**38 réalisations** · de **10:23** à **13:34** (fenêtre de travail : 3h11)
+**39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)
 
 - 🕒 10:23 — Add 24 human rights engines waves 1345-1352
 - 🕒 10:27 — Add 24 human rights engines waves 1353-1360
@@ -45,6 +45,7 @@
 - 🕒 13:24 — confiance des sources (liste blanche tier1) + détecteur de changement
 - 🕒 13:27 — 9e thème PEB/énergie (location) sur les 3 régions + liste blanche sources énergie
 - 🕒 13:34 — nouvelle niche sous-servie — surendettement / règlement collectif de dettes (sourcé)
+- 🕒 16:35 — +3 faits sourcés (quotités insaisissables, médiation amiable vs RCD, CPAS/agrément)
 
 ## 2026-06-25
 **314 réalisations** · de **00:11** à **16:35** (fenêtre de travail : 16h24)

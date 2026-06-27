@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 38,
+    "total_savoirs": 40,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -378,6 +378,28 @@
       "reference_legale": "Réglementation régionale sur l'agrément des services de médiation de dettes (Wallonie) ; loi organique des CPAS du 8 juillet 1976",
       "sources": 2,
       "sources_officielles": 2,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-FISC-001",
+      "sujet": "Je n'arrive pas à payer mes impôts : puis-je obtenir un plan de paiement auprès du SPF Finances ?",
+      "reference_legale": "Facilités de paiement des dettes fiscales — SPF Finances (Code du recouvrement amiable et forcé des créances fiscales et non fiscales)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "surendettement_reglement_collectif_dettes",
+      "id": "SURE-IMMO-001",
+      "sujet": "Si je ne rembourse plus, peut-on saisir et vendre ma maison ? Comment ça se passe ?",
+      "reference_legale": "Code judiciaire, art. 1560 à 1626 — saisie-exécution immobilière (commandement, saisie, vente publique par notaire)",
+      "sources": 3,
+      "sources_officielles": 1,
       "date_verification": "2026-06-26",
       "valide": true
     },

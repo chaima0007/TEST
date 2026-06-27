@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **38**
+- Savoirs enregistrés : **40**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `ea77600ddd4c049a…`)
+- Certification système : **PASS** (sceau `94144ca249aa27ca…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
@@ -76,6 +76,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 3 mai 2024 portant dispositions diverses en matière d'économie (médiation de dettes amiable, insérée dans le Code de droit économique) ; Code judiciaire art. 1675/2 et s. (RCD) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Où trouver une aide gratuite pour mes dettes, et le CPAS peut-il aider ?**  
   Réf : Réglementation régionale sur l'agrément des services de médiation de dettes (Wallonie) ; loi organique des CPAS du 8 juillet 1976 · sources off. : 2 · revu : 2026-06-26
+- ✅ **Je n'arrive pas à payer mes impôts : puis-je obtenir un plan de paiement auprès du SPF Finances ?**  
+  Réf : Facilités de paiement des dettes fiscales — SPF Finances (Code du recouvrement amiable et forcé des créances fiscales et non fiscales) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Si je ne rembourse plus, peut-on saisir et vendre ma maison ? Comment ça se passe ?**  
+  Réf : Code judiciaire, art. 1560 à 1626 — saisie-exécution immobilière (commandement, saisie, vente publique par notaire) · sources off. : 1 · revu : 2026-06-26
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.
