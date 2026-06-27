@@ -12,11 +12,11 @@ _Dernière mise à jour : 2026-06-27_
 ## La Loi Avec Moi (citoyens) — 45%
 `█████████░░░░░░░░░░░` 45%
 
-> **Point de sortie :** 55 domaines / 214 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé (commit 5ea1df38).
+> **Point de sortie :** 57 domaines / 218 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.
 
 | Tâche | Avancement | Statut |
 |---|---|---|
-| Base juridique sourcée (domaines + réponses) | `███████████░` 88% | en cours |
+| Base juridique sourcée (domaines + réponses) | `███████████░` 90% | en cours |
 | Page « Base juridique » (rendu serveur) | `███████████░` 90% | en cours |
 | Modèles de documents prêts à l'emploi | `████████░░░░` 70% | en cours |
 | Espace enfants & jeunes / mineurs | `███████░░░░░` 60% | en cours |

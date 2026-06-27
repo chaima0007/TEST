@@ -515,6 +515,24 @@
         "fin_de_vie"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "recours_administration",
+      "nom": "Recours administratifs",
+      "statut": "couvert",
+      "modules": [
+        "recours_administration"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "mediation_conflits",
+      "nom": "Règlement des conflits",
+      "statut": "couvert",
+      "modules": [
+        "mediation_conflits"
+      ],
+      "priorite": "haute"
     }
   ]
 }

@@ -71,7 +71,9 @@
         "accident_travail",
         "divorce",
         "adoption",
-        "fin_de_vie"
+        "fin_de_vie",
+        "recours_administration",
+        "mediation_conflits"
       ]
     }
   }
