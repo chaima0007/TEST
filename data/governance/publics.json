@@ -12,7 +12,9 @@
         "justice_penal_acces",
         "famille",
         "aide_urgence",
-        "enseignement"
+        "enseignement",
+        "violences_conjugales",
+        "burnout_bienetre"
       ]
     },
     "adultes": {
@@ -56,7 +58,10 @@
         "naissance",
         "dechets",
         "banque",
-        "transport_passagers"
+        "transport_passagers",
+        "violences_conjugales",
+        "documents_identite",
+        "burnout_bienetre"
       ]
     }
   }

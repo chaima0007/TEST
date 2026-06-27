@@ -62,7 +62,12 @@
     "mobilit.belgium.be",
     "environnement.wallonie.be",
     "ombudsrail.be",
-    "europa.eu"
+    "europa.eu",
+    "1712.be",
+    "igvm-iefh.belgium.be",
+    "ibz.rrn.fgov.be",
+    "beswic.be",
+    "sesentirbienautravail.be"
   ],
   "tier2_institutionnel": [
     "uvcw.be",
@@ -101,7 +106,9 @@
     "assuralia.be",
     "ombudsman-insurance.be",
     "ombudsfin.be",
-    "wikifin.be"
+    "wikifin.be",
+    "ecouteviolencesconjugales.be",
+    "tele-accueil.be"
   ],
   "regles": [
     "R1 — Un fait publié doit avoir au moins UNE source de tier1 (officiel).",

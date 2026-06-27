@@ -1,0 +1,65 @@
+{
+  "module": "violences_conjugales",
+  "titre": "Violences conjugales & familiales — se protéger",
+  "domaine": "Violences conjugales",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code pénal (coups et blessures, menaces) et loi du 15 mai 2012 relative à l'interdiction temporaire de résidence en cas de violence domestique",
+    "portee": "Protection des victimes, éloignement de l'auteur, aide et recours",
+    "source_officielle": "https://www.1712.be"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En danger immédiat, appelez le 112. Vous n'êtes pas responsable des violences subies et vous n'êtes pas seul·e : des services gratuits et confidentiels existent.",
+  "faits": [
+    {
+      "id": "VIOL-URGENCE-001",
+      "question": "Je subis des violences de mon partenaire, qui appeler ?",
+      "reponse": "En danger immédiat, appelez le 112 (secours) ou le 101 (police) : la police peut intervenir, constater les faits et, en cas de danger, demander l'éloignement de l'auteur. Pour en parler, être conseillé·e et orienté·e gratuitement et en toute confidentialité, appelez la ligne « Écoute Violences Conjugales » 0800/30.030 (Belgique francophone) ou le 1712 (information violence). Vous pouvez appeler même si vous hésitez encore à porter plainte.",
+      "reference_legale": "Code pénal — coups et blessures volontaires, menaces ; intervention policière",
+      "alerte_delai": "En danger immédiat, appelez le 112 ou le 101 sans attendre.",
+      "contacts": [
+        {"nom": "Secours / Police", "numero": "112 / 101", "pour": "danger immédiat"},
+        {"nom": "Écoute Violences Conjugales", "numero": "0800/30.030", "lien": "https://www.ecouteviolencesconjugales.be", "pour": "écoute, conseils, orientation (gratuit, confidentiel)"},
+        {"nom": "1712", "numero": "1712", "lien": "https://www.1712.be", "pour": "information violence et maltraitance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.1712.be", "intitule": "1712 — Ligne violence et maltraitance"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/covid19/violences-conjugales-et-intrafamiliales", "intitule": "Wallonie — Violences conjugales et intrafamiliales"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "VIOL-ELOIGNEMENT-001",
+      "question": "Peut-on obliger l'auteur des violences à quitter le domicile ?",
+      "reponse": "Oui. La loi prévoit une interdiction temporaire de résidence : en cas de danger grave et immédiat, le procureur du Roi peut décider d'éloigner du domicile la personne qui menace, avec interdiction d'y revenir et de prendre contact avec les personnes protégées, pour une durée déterminée (prolongeable par le juge). C'est la victime qui reste au logement, et non l'inverse. Signalez le danger à la police, qui en informe le parquet.",
+      "reference_legale": "Loi du 15 mai 2012 relative à l'interdiction temporaire de résidence en cas de violence domestique",
+      "contacts": [
+        {"nom": "Police locale", "numero": "101", "pour": "signaler le danger, demande d'éloignement"},
+        {"nom": "Procureur du Roi (via la police)", "pour": "interdiction temporaire de résidence"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.1712.be", "intitule": "1712 — Où trouver de l'aide"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/covid19/violences-conjugales-et-intrafamiliales", "intitule": "Wallonie — Violences conjugales et intrafamiliales"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "VIOL-PREUVES-001",
+      "question": "Comment me protéger et constituer un dossier ?",
+      "reponse": "Mettez-vous d'abord en sécurité (un proche, un refuge, le CPAS peut aider à un hébergement d'urgence). Conservez les preuves : SMS, e-mails, messages, photos des blessures, et consultez un médecin qui établira un certificat médical détaillé (utile aussi pour les violences psychologiques). Vous pouvez porter plainte à la police à tout moment. Une astuce existe en pharmacie : demander « masque 19 » permet de signaler discrètement que vous êtes en danger si vous ne pouvez pas parler librement.",
+      "reference_legale": "Code pénal — infractions de violence ; Code d'instruction criminelle (dépôt de plainte)",
+      "contacts": [
+        {"nom": "Médecin / certificat médical", "pour": "constat des blessures (y compris psychologiques)"},
+        {"nom": "CPAS", "pour": "hébergement d'urgence, aide sociale"},
+        {"nom": "Police", "numero": "101", "pour": "porter plainte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.1712.be/en/where-else-go-help", "intitule": "1712 — Où trouver de l'aide"},
+        {"type": "officiel", "url": "https://igvm-iefh.belgium.be/sites/default/files/138_-_manuel_code_de_signalement_violences_conjugales.pdf", "intitule": "Institut pour l'égalité des femmes et des hommes — Signalement des violences conjugales"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}

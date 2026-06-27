@@ -398,6 +398,33 @@
         "transport_passagers"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "violences_conjugales",
+      "nom": "Violences conjugales & familiales",
+      "statut": "couvert",
+      "modules": [
+        "violences_conjugales"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "documents_identite",
+      "nom": "Documents d identité",
+      "statut": "couvert",
+      "modules": [
+        "documents_identite"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "burnout_bienetre",
+      "nom": "Bien-être & burnout",
+      "statut": "couvert",
+      "modules": [
+        "burnout_bienetre"
+      ],
+      "priorite": "haute"
     }
   ]
 }

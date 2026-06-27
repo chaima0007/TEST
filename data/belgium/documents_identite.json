@@ -1,0 +1,49 @@
+{
+  "module": "documents_identite",
+  "titre": "Documents d'identité — carte, passeport, permis",
+  "domaine": "Documents d'identité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité ; réglementation sur les passeports et permis de conduire",
+    "portee": "Obtenir, renouveler, déclarer la perte ou le vol de ses documents",
+    "source_officielle": "https://www.belgium.be/fr/famille/identite"
+  },
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les délais et procédures peuvent varier selon votre commune ; vérifiez auprès d'elle ou de l'IBZ.",
+  "faits": [
+    {
+      "id": "DOC-PERTE-VOL-001",
+      "question": "J'ai perdu (ou on m'a volé) ma carte d'identité, que faire ?",
+      "reponse": "Agissez vite en deux temps. 1) Faites bloquer le document en appelant gratuitement DOC STOP (00800 2123 2123, ou +32 2 518 2123) disponible 24h/24, pour éviter une utilisation frauduleuse. 2) Déclarez la perte au service population de votre commune (ou, en cas de vol, à la police, qui dresse un procès-verbal). Vous recevez une attestation provisoire, puis une nouvelle carte. En cas de vol, déposez plainte à la police.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité",
+      "alerte_delai": "Appelez DOC STOP immédiatement pour bloquer le document, avant toute autre démarche.",
+      "contacts": [
+        {"nom": "DOC STOP", "numero": "00800 2123 2123", "pour": "bloquer un document d'identité perdu/volé (24h/24)"},
+        {"nom": "Service population de votre commune", "pour": "déclaration de perte, nouvelle carte"},
+        {"nom": "Police locale", "numero": "101", "pour": "déclaration de vol, procès-verbal"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/identite/carte_d_identite/perte_ou_vol", "intitule": "Belgium.be — Perte ou vol de la carte d'identité"},
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/citoyen/documents-didentite/carte-didentite-provisoire", "intitule": "IBZ — Carte d'identité provisoire"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "DOC-PERMIS-001",
+      "question": "Comment déclarer la perte de mon permis de conduire ou demander un passeport ?",
+      "reponse": "Permis de conduire perdu ou volé : déclarez-le à la police, qui vous remet une attestation de perte ; demandez ensuite un duplicata à l'administration communale. Passeport : il se demande à la commune ; comptez un délai de fabrication (une procédure d'urgence accélérée existe, plus chère). Pour voyager, vérifiez toujours la validité de vos documents bien avant le départ.",
+      "reference_legale": "Arrêté royal du 23 mars 1998 relatif au permis de conduire ; réglementation sur les passeports (SPF Affaires étrangères)",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "duplicata de permis, demande de passeport"},
+        {"nom": "Police locale", "numero": "101", "pour": "déclaration de perte/vol du permis"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/identite", "intitule": "Belgium.be — Identité"},
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/documents-didentite/eid/faq/", "intitule": "IBZ — eID, questions fréquentes"}
+      ],
+      "date_verification": "2026-06-27"
+    }
+  ]
+}
