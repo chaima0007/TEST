@@ -225,6 +225,12 @@
       "nom": "Périmètre des projets (règle de Chaima)",
       "regle": "RÈGLE SIMPLE: La Loi Avec Moi = CITOYENS (droits du quotidien). Caelum/CaelumSwarm = ENTREPRISES (conformité CSDDD). Un sujet citoyen va dans La Loi Avec Moi ; un sujet entreprise va dans Caelum. Jamais de mélange.",
       "verif": "manuel — vérifier le public cible avant de classer un sujet"
+    },
+    {
+      "id": "P-SUPERVISION",
+      "nom": "Supervision des agents",
+      "regle": "Contrôler régulièrement TOUS les agents (compilation + exécution des contrôleurs clés). Contrôle des contrôleurs, en plus des protocoles. Tout agent cassé est signalé et corrigé avant livraison.",
+      "verif": "python3 scripts/agents_healthcheck.py"
     }
   ]
 }

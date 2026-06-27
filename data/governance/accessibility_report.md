@@ -1,8 +1,8 @@
 # Rapport d'audit d'accessibilité (WCAG 2.2)
 
-*Généré le 2026-06-27 sur 31 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
+*Généré le 2026-06-27 sur 37 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
 
-**Contrôles réussis : 310 · à corriger : 0**
+**Contrôles réussis : 370 · à corriger : 0**
 
 ## ✅ _catalogue.html
 - ✅ Langue de page déclarée (lang)
@@ -148,6 +148,18 @@
 - ✅ Liens avec intitulé (29 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (13 lien(s) _blank)
 
+## ✅ energie.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (22 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (8 lien(s) _blank)
+
 ## ✅ enfants_places.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -160,6 +172,18 @@
 - ✅ Liens avec intitulé (30 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (12 lien(s) _blank)
 
+## ✅ enseignement.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (22 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (8 lien(s) _blank)
+
 ## ✅ espace-adultes.html
 - ✅ Langue de page déclarée (lang)
 - ✅ Titre de page présent et non vide
@@ -169,7 +193,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (28 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (34 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ espace-mineurs.html
@@ -181,8 +205,20 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (20 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (21 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
+
+## ✅ etrangers.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
 
 ## ✅ famille.html
 - ✅ Langue de page déclarée (lang)
@@ -195,6 +231,18 @@
 - ✅ Champs de saisie étiquetés (1 champ(s))
 - ✅ Liens avec intitulé (27 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (13 lien(s) _blank)
+
+## ✅ gouvernement.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (25 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (11 lien(s) _blank)
 
 ## ✅ handicap.html
 - ✅ Langue de page déclarée (lang)
@@ -229,7 +277,7 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (1 champ(s))
-- ✅ Liens avec intitulé (31 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (37 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
 
 ## ✅ justice_penal.html
@@ -277,8 +325,8 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (69 lien(s), 0 vide(s))
-- ✅ Ouvertures dans un nouvel onglet signalées (53 lien(s) _blank)
+- ✅ Liens avec intitulé (72 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (56 lien(s) _blank)
 
 ## ✅ specialistes.html
 - ✅ Langue de page déclarée (lang)
@@ -291,6 +339,18 @@
 - ✅ Champs de saisie étiquetés (0 champ(s))
 - ✅ Liens avec intitulé (14 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
+
+## ✅ successions.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (23 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (9 lien(s) _blank)
 
 ## ✅ surendettement.html
 - ✅ Langue de page déclarée (lang)
@@ -349,8 +409,20 @@
 - ✅ Repère <main> ciblable présent
 - ✅ Images avec texte alternatif (0 img, 0 sans alt)
 - ✅ Champs de saisie étiquetés (0 champ(s))
-- ✅ Liens avec intitulé (40 lien(s), 0 vide(s))
+- ✅ Liens avec intitulé (47 lien(s), 0 vide(s))
 - ✅ Ouvertures dans un nouvel onglet signalées (0 lien(s) _blank)
+
+## ✅ vie_privee_rgpd.html
+- ✅ Langue de page déclarée (lang)
+- ✅ Titre de page présent et non vide
+- ✅ Zoom non bloqué (viewport)
+- ✅ Exactement un titre h1 (trouvé : 1)
+- ✅ Lien « aller au contenu »
+- ✅ Repère <main> ciblable présent
+- ✅ Images avec texte alternatif (0 img, 0 sans alt)
+- ✅ Champs de saisie étiquetés (1 champ(s))
+- ✅ Liens avec intitulé (24 lien(s), 0 vide(s))
+- ✅ Ouvertures dans un nouvel onglet signalées (10 lien(s) _blank)
 
 ## ✅ voisinage.html
 - ✅ Langue de page déclarée (lang)

@@ -41,6 +41,7 @@ ETAPES = [
     ("Expertise rentabilité", "scripts/rentabilite_protocol.py", []),
     ("Analyse du travail", "scripts/travail_analyse_protocol.py", []),
     ("Suivi des revenus", "scripts/revenus_suivi_protocol.py", []),
+    ("Contrôle de tous les agents", "scripts/agents_healthcheck.py", []),
     ("Point de reprise", "scripts/checkpoint_protocol.py", []),
     ("Audit fiabilité grand site", "scripts/site_reliability_audit.py", []),
     ("Veille juridique", "scripts/veille_juridique_protocol.py", []),
