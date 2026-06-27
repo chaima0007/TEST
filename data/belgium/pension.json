@@ -17,13 +17,25 @@
       "id": "PEN-AGE-001",
       "question": "À quel âge puis-je prendre ma pension ?",
       "reponse": "L'âge légal de la pension augmente progressivement (il passe vers 66 puis 67 ans selon les années — vérifiez votre cas). Un départ anticipé est possible sous conditions à partir de 60 ans, en fonction de la durée de votre carrière. Le plus sûr est de consulter mypension.be : vous y voyez votre première date possible de départ, calculée sur votre carrière réelle.",
-      "reference_legale": "Législation pensions — âge légal et conditions de pension anticipée",
+      "reference_legale": "Arrêté royal n° 50 du 24 octobre 1967 relatif à la pension de retraite et de survie des travailleurs salariés ; législation sur l'âge légal de la pension",
       "contacts": [
-        {"nom": "mypension.be (Service fédéral des Pensions)", "lien": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/", "pour": "votre date exacte de pension"}
+        {
+          "nom": "mypension.be (Service fédéral des Pensions)",
+          "lien": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/",
+          "pour": "votre date exacte de pension"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.sfpd.fgov.be/fr/age-de-la-pension/quand", "intitule": "Service fédéral des Pensions — Quand puis-je prendre ma pension ?"},
-        {"type": "officiel", "url": "https://www.belgium.be/fr/services_en_ligne/app_mypension", "intitule": "Belgium.be — mypension"}
+        {
+          "type": "officiel",
+          "url": "https://www.sfpd.fgov.be/fr/age-de-la-pension/quand",
+          "intitule": "Service fédéral des Pensions — Quand puis-je prendre ma pension ?"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/services_en_ligne/app_mypension",
+          "intitule": "Belgium.be — mypension"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -31,14 +43,26 @@
       "id": "PEN-DEMANDE-001",
       "question": "Dois-je demander ma pension, et comment ?",
       "reponse": "Si vous partez à l'âge légal, l'examen de votre droit est en principe automatique : pas besoin de demande. Si vous partez avant (pension anticipée) ou dans certaines situations, vous devez introduire une demande — facilement via mypension.be, au plus tôt environ un an avant la date souhaitée. mypension.be permet aussi de voir votre carrière et d'estimer votre montant.",
-      "reference_legale": "Législation pensions — demande et examen automatique du droit",
+      "reference_legale": "Arrêté royal du 21 décembre 1967 portant règlement général du régime de pension de retraite et de survie des travailleurs salariés (demande, examen du droit)",
       "contacts": [
-        {"nom": "mypension.be", "lien": "https://www.belgium.be/fr/services_en_ligne/app_demande_pension_en_ligne", "pour": "demande de pension en ligne"}
+        {
+          "nom": "mypension.be",
+          "lien": "https://www.belgium.be/fr/services_en_ligne/app_demande_pension_en_ligne",
+          "pour": "demande de pension en ligne"
+        }
       ],
       "alerte_delai": "Pour un départ anticipé, introduisez la demande à l'avance (au plus tôt ~1 an avant la date souhaitée).",
       "sources": [
-        {"type": "officiel", "url": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/", "intitule": "Service fédéral des Pensions — Droit à la pension"},
-        {"type": "officiel", "url": "https://www.belgium.be/fr/services_en_ligne/app_demande_pension_en_ligne", "intitule": "Belgium.be — Demande de pension en ligne"}
+        {
+          "type": "officiel",
+          "url": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/",
+          "intitule": "Service fédéral des Pensions — Droit à la pension"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/services_en_ligne/app_demande_pension_en_ligne",
+          "intitule": "Belgium.be — Demande de pension en ligne"
+        }
       ],
       "date_verification": "2026-06-26"
     },
@@ -46,10 +70,18 @@
       "id": "PEN-TRAVAIL-001",
       "question": "Puis-je continuer à travailler une fois pensionné ?",
       "reponse": "Oui, on peut en principe travailler en étant pensionné, mais des règles encadrent les revenus autorisés selon votre âge et votre situation (au-delà d'un certain âge ou d'une longue carrière, le cumul est souvent libre ; sinon des plafonds s'appliquent). Renseignez-vous avant de commencer pour éviter une réduction de pension. mypension.be et le Service fédéral des Pensions vous renseignent.",
-      "reference_legale": "Législation pensions — cumul d'une pension avec une activité",
+      "reference_legale": "Arrêté royal relatif au cumul d'une pension avec une activité professionnelle (revenus autorisés)",
       "sources": [
-        {"type": "officiel", "url": "https://www.sfpd.fgov.be/fr/montant-de-la-pension/calcul/", "intitule": "Service fédéral des Pensions — Montant et calcul"},
-        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/puis-je-continuer-travailler-si-je-suis-pensionne", "intitule": "Droits Quotidiens — Travailler en étant pensionné"}
+        {
+          "type": "officiel",
+          "url": "https://www.sfpd.fgov.be/fr/montant-de-la-pension/calcul/",
+          "intitule": "Service fédéral des Pensions — Montant et calcul"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/puis-je-continuer-travailler-si-je-suis-pensionne",
+          "intitule": "Droits Quotidiens — Travailler en étant pensionné"
+        }
       ],
       "date_verification": "2026-06-26"
     }
