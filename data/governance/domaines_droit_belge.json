@@ -299,6 +299,15 @@
         "assurances"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "job_etudiant",
+      "nom": "Job étudiant",
+      "statut": "couvert",
+      "modules": [
+        "job_etudiant"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
