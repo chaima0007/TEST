@@ -34,7 +34,8 @@
         "voisinage",
         "aide_urgence",
         "sante_patient",
-        "consommation"
+        "consommation",
+        "handicap"
       ]
     }
   }
