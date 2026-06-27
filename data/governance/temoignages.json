@@ -20,5 +20,40 @@
     "4. Publier uniquement les témoignages 'verifie'. Anonymiser si la personne le demande."
   ],
   "derniere_revue": "2026-06-27",
-  "temoignages": []
+  "temoignages": [],
+  "note_internet": "De vrais témoignages existent en ligne (recueils publiés). On RENVOIE vers la source cliquable (vérifiable), on ne recopie pas la citation sans consentement, on n'invente jamais. Pour publier un témoignage SUR le site : consentement écrit de la personne obligatoire.",
+  "sources_temoignages_reels": [
+    {
+      "projet": "la_loi_avec_moi",
+      "theme": "indépendants — parcours & leçons",
+      "intitule": "UCM — Ma bonne idée : témoignages d'entrepreneurs",
+      "url": "https://www.ucm.be/Actualites/Ma-bonne-idee-decouvrez-le-temoignage-d-entrepreneurs",
+      "type": "officiel_organisation",
+      "verifie_existant": true
+    },
+    {
+      "projet": "la_loi_avec_moi",
+      "theme": "indépendants — récits audio",
+      "intitule": "UCM — Podcast « Le Son d'Entreprendre »",
+      "url": "https://www.ucm.be/le-son-dentreprendre",
+      "type": "officiel_organisation",
+      "verifie_existant": true
+    },
+    {
+      "projet": "la_loi_avec_moi",
+      "theme": "indépendant en difficulté / faillite",
+      "intitule": "Acerta — Faillite : tomber et se relever",
+      "url": "https://www.acerta.be/fr/independants/themes-et-dossiers/faillite-et-dette/faillite",
+      "type": "organisation",
+      "verifie_existant": true
+    },
+    {
+      "projet": "la_loi_avec_moi",
+      "theme": "aides aux indépendants débutants",
+      "intitule": "RTBF — Aides et droits des indépendants débutants",
+      "url": "https://www.rtbf.be/article/a-quelles-aides-peuvent-pretendre-les-independants-debutants-perdent-ils-leurs-droits-au-chomage-en-cas-de-pepin-11643447",
+      "type": "presse",
+      "verifie_existant": true
+    }
+  ]
 }
