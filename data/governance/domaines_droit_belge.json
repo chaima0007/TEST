@@ -380,6 +380,24 @@
         "dechets"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "banque",
+      "nom": "Services bancaires",
+      "statut": "couvert",
+      "modules": [
+        "banque"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "transport_passagers",
+      "nom": "Droits des passagers (train, avion)",
+      "statut": "couvert",
+      "modules": [
+        "transport_passagers"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

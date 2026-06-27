@@ -60,7 +60,9 @@
     "ombudsmantelecom.be",
     "bruxelles.be",
     "mobilit.belgium.be",
-    "environnement.wallonie.be"
+    "environnement.wallonie.be",
+    "ombudsrail.be",
+    "europa.eu"
   ],
   "tier2_institutionnel": [
     "uvcw.be",
@@ -97,7 +99,9 @@
     "swde.be",
     "traxio.be",
     "assuralia.be",
-    "ombudsman-insurance.be"
+    "ombudsman-insurance.be",
+    "ombudsfin.be",
+    "wikifin.be"
   ],
   "regles": [
     "R1 — Un fait publié doit avoir au moins UNE source de tier1 (officiel).",

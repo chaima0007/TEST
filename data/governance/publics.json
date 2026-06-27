@@ -54,7 +54,9 @@
         "eau",
         "mobilite_douce",
         "naissance",
-        "dechets"
+        "dechets",
+        "banque",
+        "transport_passagers"
       ]
     }
   }
