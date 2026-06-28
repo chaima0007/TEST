@@ -641,6 +641,24 @@
         "garde_enfants"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "recouvrement_amiable",
+      "nom": "Recouvrement de dettes",
+      "statut": "couvert",
+      "modules": [
+        "recouvrement_amiable"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "malfacons_travaux",
+      "nom": "Construction & travaux",
+      "statut": "couvert",
+      "modules": [
+        "malfacons_travaux"
+      ],
+      "priorite": "haute"
     }
   ]
 }

@@ -184,5 +184,15 @@
     "modifies": [],
     "violations": [],
     "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T13:56:50+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/malfacons_travaux.json",
+      "la_loi_avec_moi/recouvrement_amiable.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
   }
 ]

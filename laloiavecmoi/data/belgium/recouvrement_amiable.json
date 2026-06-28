@@ -1,0 +1,46 @@
+{
+  "module": "recouvrement_amiable",
+  "titre": "Recouvrement amiable — sociétés de recouvrement",
+  "domaine": "Recouvrement de dettes",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 4 mai 2023 portant insertion du livre XIX « Dettes du consommateur » dans le Code de droit économique",
+    "portee": "Vos protections face à une société de recouvrement (frais, harcèlement, contestation)",
+    "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/endettement/recouvrement-de-dettes/pratiques-interdites-lors-du"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Si une société de recouvrement vous réclame des frais abusifs ou vous harcèle, vous pouvez signaler au SPF Économie.",
+  "faits": [
+    {
+      "id": "RECOUV-DROITS-001",
+      "question": "Une société de recouvrement me réclame de l'argent : quels sont mes droits ?",
+      "reponse": "Depuis la loi du 4 mai 2023, vous êtes mieux protégé. Le premier rappel doit être gratuit, et des frais de retard ne peuvent commencer qu'après un délai (au moins 14 jours après le rappel). Les frais réclamés sont plafonnés par la loi. La société doit, à votre demande, vous fournir sans délai les pièces justificatives de la dette et vous expliquer comment la contester. Si vous n'êtes pas sûr de devoir cette somme : demandez les preuves par écrit AVANT de payer, et contestez par écrit si nécessaire.",
+      "reference_legale": "Loi du 4 mai 2023 (livre XIX « Dettes du consommateur » du Code de droit économique)",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "frais abusifs, signalement"},
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "aide si vous ne pouvez pas payer"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/endettement/recouvrement-de-dettes/pratiques-interdites-lors-du", "intitule": "SPF Économie — Pratiques interdites lors du recouvrement"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/dettes-du-consommateur", "intitule": "SPF Économie — Dettes du consommateur"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "RECOUV-INTERDIT-001",
+      "question": "Une société de recouvrement a-t-elle le droit de me harceler ?",
+      "reponse": "Non. La loi interdit les pratiques abusives : pas de menaces, pas de pression psychologique, pas d'appels à des heures indues, pas de frais non prévus. Il est aussi interdit de réclamer la dette à une personne qui n'est PAS le débiteur (par exemple un voisin ou un membre de la famille). Une société de recouvrement ne peut pas non plus se faire passer pour un huissier ou un tribunal. En cas d'abus, conservez les preuves (courriers, SMS, appels) et signalez au SPF Économie.",
+      "reference_legale": "Loi du 4 mai 2023 (livre XIX du Code de droit économique) — pratiques interdites de recouvrement",
+      "contacts": [
+        {"nom": "SPF Économie — Point de contact", "lien": "https://economie.fgov.be", "pour": "signaler le harcèlement / pratiques abusives"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/endettement/recouvrement-de-dettes/pratiques-interdites-lors-du", "intitule": "SPF Économie — Pratiques interdites"},
+        {"type": "secondaire", "url": "https://www.ucm.be/actualites/reforme-du-recouvrement-amiable-de-dettes", "intitule": "UCM — Réforme du recouvrement amiable"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}
