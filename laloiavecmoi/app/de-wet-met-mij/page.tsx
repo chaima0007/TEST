@@ -19,6 +19,8 @@ const themas: Thema[] = [
   { titel: "Consumentenrecht", beschrijving: "Herroepingsrecht, garantie, aankopen.", href: "/de-wet-met-mij/consumentenrecht", emoji: "🛒" },
   { titel: "Familie & privacy", beschrijving: "Samenwonen, scheiding, GDPR-rechten.", href: "/de-wet-met-mij/familie", emoji: "👪" },
   { titel: "Administratieve stappen", beschrijving: "Beroep, termijnen, ombudsman.", href: "/de-wet-met-mij/administratie", emoji: "📄" },
+  { titel: "Schulden", beschrijving: "Collectieve schuldenregeling, schuldbemiddelaar, bescherming van uw loon.", href: "/de-wet-met-mij/schulden", emoji: "💶" },
+  { titel: "Geweld & slachtofferhulp", beschrijving: "1712, tijdelijk huisverbod, klacht, gratis slachtofferhulp.", href: "/de-wet-met-mij/geweld", emoji: "🆘" },
 ];
 
 export default function DeWetMetMijPage() {

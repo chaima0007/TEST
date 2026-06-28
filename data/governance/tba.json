@@ -62,15 +62,17 @@
         },
         {
           "nom": "Versions multilingues (NL en premier)",
-          "pct": 20,
-          "statut": "à faire",
+          "pct": 40,
+          "statut": "en cours",
           "actions_faites": [
             "Bannière multilingue (14 langues, slogan)",
             "Aide à la traduction auto sur la base juridique",
-            "Version NL /de-wet-met-mij existante"
+            "Espace NL /de-wet-met-mij (8 thèmes prioritaires)",
+            "Fiches NL sourcées : wonen, werk, juridische-hulp, consumentenrecht, familie, administratie, schulden, geweld",
+            "Sources officielles NL vérifiées (FOD Economie, FOD Financiën, hulplijn 1712, Vlaanderen.be)"
           ],
           "prochaines_etapes": [
-            "Traduire les modules prioritaires en NL"
+            "Poursuivre la traduction NL des modules restants (santé, énergie, aînés)"
           ]
         },
         {
