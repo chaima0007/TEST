@@ -5,19 +5,19 @@ _Dernière mise à jour : 2026-06-27_
 ## 🚀 Avancement global de la flotte : **79%**
 `████████████████░░░░` 79%
 
-- **La Loi Avec Moi (citoyens)** — `██████░░░░░░░░` 45%
+- **La Loi Avec Moi (citoyens)** — `██████░░░░░░░░` 46%
 - **Caelum (entreprises B2B)** — `█████████████░` 94%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
 
-## La Loi Avec Moi (citoyens) — 45%
-`█████████░░░░░░░░░░░` 45%
+## La Loi Avec Moi (citoyens) — 46%
+`█████████░░░░░░░░░░░` 46%
 
 > **Point de sortie :** 67 domaines / 238 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.
 
 | Tâche | Avancement | Statut |
 |---|---|---|
 | Base juridique sourcée (domaines + réponses) | `███████████░` 90% | en cours |
-| Page « Base juridique » (rendu serveur) | `███████████░` 90% | en cours |
+| Page « Base juridique » (rendu serveur) | `████████████` 100% | terminé |
 | Modèles de documents prêts à l'emploi | `████████░░░░` 70% | en cours |
 | Espace enfants & jeunes / mineurs | `███████░░░░░` 60% | en cours |
 | Versions multilingues (NL en premier) | `█░░░░░░░░░░░` 5% | à faire |
@@ -25,7 +25,6 @@ _Dernière mise à jour : 2026-06-27_
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
 
 - **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
-- **Page « Base juridique » (rendu serveur)** → prochaines étapes : Filtre par domaine, Recherche plein texte
 - **Modèles de documents prêts à l'emploi** → prochaines étapes : Ajouter modèles bail/logement et travail, Bouton export PDF
 - **Espace enfants & jeunes / mineurs** → prochaines étapes : Langage très simple + pictos, Page dédiée douce
 - **Versions multilingues (NL en premier)** → prochaines étapes : Traduction NL des modules prioritaires

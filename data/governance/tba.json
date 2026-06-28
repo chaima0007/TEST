@@ -23,16 +23,15 @@
         },
         {
           "nom": "Page « Base juridique » (rendu serveur)",
-          "pct": 90,
-          "statut": "en cours",
+          "pct": 100,
+          "statut": "terminé",
           "actions_faites": [
             "Composant serveur lisant data/belgium",
-            "Affichage question/réponse/alerte/contacts/source/date"
-          ],
-          "prochaines_etapes": [
+            "Recherche plein texte (tolérante aux accents)",
             "Filtre par domaine",
-            "Recherche plein texte"
-          ]
+            "Compteur de résultats accessible"
+          ],
+          "prochaines_etapes": []
         },
         {
           "nom": "Modèles de documents prêts à l'emploi",
