@@ -67,3 +67,6 @@ scratchpad-logo/
 
 # Snapshots locaux de sauvegarde (le remote git est la sauvegarde durable)
 data/backups/
+
+# Log runtime auto-réparation (append à chaque run)
+data/self_healing_log.json
