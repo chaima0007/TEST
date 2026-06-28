@@ -358,5 +358,14 @@
     "modifies": [],
     "violations": [],
     "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:49:44+00:00",
+    "nouveaux": [],
+    "modifies": [
+      "la_loi_avec_moi/recours_europeens.json"
+    ],
+    "violations": [],
+    "statut": "OK"
   }
 ]
