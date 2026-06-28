@@ -23,7 +23,7 @@ export default function MentionsLegalesPage() {
           <p className="text-slate-700 text-sm leading-relaxed mt-2">
             [Nom de l'éditeur / société] · [Forme juridique] · [Adresse]<br />
             Numéro d'entreprise (BCE) : [à compléter] · TVA : [à compléter]<br />
-            Contact : chaima.caelumpartners@gmail.com
+            Contact : contact@laloiavecmoi.be
           </p>
           <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-2">
             ⚠️ Champs à compléter par l'éditeur avant la mise en ligne (identité légale réelle).

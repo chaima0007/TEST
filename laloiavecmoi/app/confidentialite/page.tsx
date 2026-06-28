@@ -42,7 +42,7 @@ export default function ConfidentialitePage() {
           <h2 className="text-lg font-bold">Vos droits (RGPD)</h2>
           <p className="text-slate-700 text-sm leading-relaxed mt-2">
             Vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de portabilité de vos
-            données. Pour les exercer : chaima.caelumpartners@gmail.com. Vous pouvez aussi introduire une plainte auprès
+            données. Pour les exercer : contact@laloiavecmoi.be. Vous pouvez aussi introduire une plainte auprès
             de l'Autorité de protection des données (APD).
           </p>
           <p className="text-slate-700 text-sm mt-2">
