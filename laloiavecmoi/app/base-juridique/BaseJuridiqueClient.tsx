@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 // Composant client : recherche plein texte + filtre par domaine sur les réponses sourcées.
 // Reçoit les modules chargés côté serveur (data/belgium) et n'affiche que ce qui correspond.
@@ -111,7 +112,11 @@ export default function BaseJuridiqueClient({ modules }: { modules: Module[] }) 
 
       {modulesFiltres.map((m) => (
         <section key={m.module} id={m.module} className="mb-12 scroll-mt-24">
-          <h2 className="text-2xl font-bold text-blue-900 border-b-2 border-slate-100 pb-2">{m.titre}</h2>
+          <h2 className="text-2xl font-bold text-blue-900 border-b-2 border-slate-100 pb-2">
+            <Link href={`/loi/${m.module}`} className="hover:underline">
+              {m.titre}
+            </Link>
+          </h2>
           <div className="mt-6 grid gap-5">
             {m.faits.map((f) => (
               <article key={f.id} className="rounded-2xl border border-slate-200 p-5 bg-white">

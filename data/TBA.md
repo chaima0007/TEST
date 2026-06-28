@@ -2,10 +2,10 @@
 
 _Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **82%**
-`████████████████░░░░` 82%
+## 🚀 Avancement global de la flotte : **84%**
+`█████████████████░░░` 84%
 
-- **La Loi Avec Moi (citoyens)** — `███████░░░░░░░` 53%
+- **La Loi Avec Moi (citoyens)** — `████████░░░░░░` 59%
 - **Caelum (entreprises B2B)** — `█████████████░` 95%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
 
@@ -15,8 +15,8 @@ _Dernière mise à jour : 2026-06-28_
 - **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).
 - **Choisir hébergeur + domaine** — Décision pour mettre les sites en ligne (déploiement).
 
-## La Loi Avec Moi (citoyens) — 53%
-`███████████░░░░░░░░░` 53%
+## La Loi Avec Moi (citoyens) — 59%
+`████████████░░░░░░░░` 59%
 
 > **Point de sortie :** 67 domaines / 238 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.
 
@@ -29,6 +29,7 @@ _Dernière mise à jour : 2026-06-28_
 | Versions multilingues (NL en premier) | `█░░░░░░░░░░░` 5% | à faire |
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
+| Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
 
 - **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
 - **Modèles de documents prêts à l'emploi** → prochaines étapes : Bouton export PDF

@@ -87,6 +87,17 @@
           "prochaines_etapes": [
             "Trouver une source open-data officielle (jamais d'adresse inventée)"
           ]
+        },
+        {
+          "nom": "Pages SEO par domaine (acquisition)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Route /loi/[domaine] générée depuis data/belgium",
+            "generateStaticParams + metadata par domaine (67 pages)",
+            "Maillage interne depuis la base juridique"
+          ],
+          "prochaines_etapes": []
         }
       ]
     },
