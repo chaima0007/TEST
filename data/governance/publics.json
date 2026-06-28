@@ -15,7 +15,8 @@
         "enseignement",
         "violences_conjugales",
         "burnout_bienetre",
-        "premier_emploi"
+        "premier_emploi",
+        "sexisme_espace_public"
       ]
     },
     "adultes": {
@@ -90,7 +91,9 @@
         "recouvrement_amiable",
         "malfacons_travaux",
         "credit_consommation",
-        "voiture_occasion"
+        "voiture_occasion",
+        "voyage_mineur",
+        "sexisme_espace_public"
       ]
     }
   }

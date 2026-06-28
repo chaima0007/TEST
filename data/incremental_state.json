@@ -66,6 +66,7 @@
     "saisies_huissier.json": "90d8c853ef7e98116ac41cbd4d7244414081d900c5e3f0d99608e8895050eb39",
     "sante_mentale.json": "32df439cae3be1aef35129d7a1dabcc939f18de321eaf61078b4d18e0da144f2",
     "sante_patient.json": "f09755945432dfb497cdf216d24166fb8a2635917e177003e8758b0fd54e9325",
+    "sexisme_espace_public.json": "3c4a791d4c54ba2eb9fc7e760920b2356892b1dccdef1a7da4ad5ccbc2e4e616",
     "successions.json": "d6145e24a4b1d75a42e2c64ffd8376b1d48b7a9ab74881f39b54bc79a59c587a",
     "surendettement.json": "2b08a08a78143df9353ef98d4dd0e5b345a49dec060cf3bdd9b7ba522f77b371",
     "telecom.json": "2ba7a159e6280f951fc5561cdfc439c7e7a730a65c2e60454cdd8b2d3e56ef55",
@@ -76,6 +77,7 @@
     "voisinage.json": "45bb90acab7eed69019068a98163d08fbc40430e093904742d43ba9fd8e6f9f5",
     "voiture_occasion.json": "4f60b09e8f7c63f3d4d84b59263ba5d7da4c4f03f5d6384d66cd529e22861b48",
     "vote_electoral.json": "ec0652b16be8f1d3da80882a4150c30291361d7ee865b192f54e55c51a871724",
+    "voyage_mineur.json": "1f01f8031dbc54cb69f06b586aa8268c76f64e09f8c66241a5b2ba7523939183",
     "voyages.json": "eb3d9aeabb8f48738353a411a0e0c8da26ce2742526ed6a8c77d02aefecee9e3"
   },
   "caelum": {

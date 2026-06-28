@@ -1,0 +1,48 @@
+{
+  "module": "sexisme_espace_public",
+  "titre": "Sexisme & harcèlement dans l'espace public",
+  "domaine": "Sexisme & espace public",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 22 mai 2014 tendant à lutter contre le sexisme dans l'espace public",
+    "portee": "Reconnaître le sexisme/harcèlement de rue et savoir comment réagir",
+    "source_officielle": "https://igvm-iefh.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En cas de danger immédiat, appelez le 112. Vous n'êtes jamais responsable du comportement de l'auteur.",
+  "faits": [
+    {
+      "id": "SEX-LOI-001",
+      "question": "Le harcèlement de rue / sexisme est-il puni par la loi ?",
+      "reponse": "Oui. La loi du 22 mai 2014 érige le sexisme dans l'espace public en infraction : un geste ou un propos qui a pour objet d'exprimer un mépris envers une personne en raison de son sexe, ou de la considérer comme inférieure, et qui porte gravement atteinte à sa dignité, est punissable. Selon la gravité, d'autres infractions peuvent s'appliquer (injures, attentat à la pudeur, coups). Vous avez le droit de porter plainte. Personne n'a le droit de vous rabaisser ou de vous toucher sans votre consentement.",
+      "reference_legale": "Loi du 22 mai 2014 tendant à lutter contre le sexisme dans l'espace public",
+      "contacts": [
+        {"nom": "Police", "numero": "101", "pour": "porter plainte (urgence : 112)"},
+        {"nom": "Institut pour l'égalité des femmes et des hommes", "lien": "https://igvm-iefh.belgium.be", "pour": "information, signalement, accompagnement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://igvm-iefh.belgium.be/fr", "intitule": "Institut pour l'égalité des femmes et des hommes"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Victime : vos droits"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "SEX-REAGIR-001",
+      "question": "Que faire si je subis (ou je vois) du harcèlement sexiste ?",
+      "reponse": "Mettez d'abord votre sécurité en avant (éloignez-vous, rejoignez un lieu/des gens). Si vous le pouvez, notez ce qui s'est passé (date, lieu, description, témoins) et conservez les preuves (photos, captures, messages). Vous pouvez porter plainte à la police et signaler les faits à l'Institut pour l'égalité des femmes et des hommes, qui peut vous accompagner. Si vous êtes témoin, votre soutien compte : vous pouvez aider la personne, alerter, ou témoigner. En ligne aussi, le harcèlement sexiste peut être poursuivi.",
+      "reference_legale": "Loi du 22 mai 2014 (sexisme) ; Code pénal (injures, harcèlement, attentat à la pudeur selon les cas)",
+      "contacts": [
+        {"nom": "Police", "numero": "101", "pour": "plainte, constat"},
+        {"nom": "Institut pour l'égalité des femmes et des hommes", "lien": "https://igvm-iefh.belgium.be", "pour": "signalement et accompagnement gratuit"},
+        {"nom": "1712", "numero": "1712", "pour": "écoute violences et maltraitance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://igvm-iefh.belgium.be/fr", "intitule": "Institut pour l'égalité des femmes et des hommes"},
+        {"type": "officiel", "url": "https://www.1712.be", "intitule": "1712 — Écoute violences"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

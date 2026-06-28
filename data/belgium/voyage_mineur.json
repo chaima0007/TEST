@@ -1,0 +1,48 @@
+{
+  "module": "voyage_mineur",
+  "titre": "Voyage d'un mineur — Kids-ID & autorisation parentale",
+  "domaine": "Voyage d'un enfant",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 19 juillet 1991 (cartes d'identité, Kids-ID) ; Code civil — autorité parentale (art. 371 et suivants)",
+    "portee": "Documents et autorisations pour qu'un enfant voyage",
+    "source_officielle": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les exigences varient selon le pays de destination ; vérifiez auprès du SPF Affaires étrangères et de l'ambassade du pays visité.",
+  "faits": [
+    {
+      "id": "VOYMIN-KIDSID-001",
+      "question": "Quel document d'identité pour faire voyager mon enfant ?",
+      "reponse": "Pour un enfant belge de moins de 12 ans, il existe une carte d'identité spécifique, la Kids-ID, à demander à l'administration communale (présence de l'enfant et d'un parent requise ; prévoyez un délai de fabrication d'environ 3 semaines, plus en urgence). Au-delà de 12 ans, l'enfant a une carte d'identité classique. Selon la destination, un passeport peut être nécessaire. Anticipez : vérifiez la validité des documents bien avant le départ.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité (Kids-ID)",
+      "alerte_delai": "Comptez environ 3 semaines de délai pour la Kids-ID : demandez-la bien avant le voyage.",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "demande de Kids-ID"},
+        {"nom": "SPF Affaires étrangères", "lien": "https://diplomatie.belgium.be", "pour": "conditions selon la destination"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/citoyen/documents-didentite/kids-id", "intitule": "IBZ — Kids-ID"},
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "VOYMIN-AUTORISATION-001",
+      "question": "Mon enfant voyage sans moi (ou avec un seul parent) : faut-il une autorisation ?",
+      "reponse": "Il n'existe pas de formulaire belge unique obligatoire, mais c'est fortement recommandé. Si l'enfant voyage seul, avec un tiers, ou avec un seul de ses parents, rédigez une autorisation parentale écrite et faites légaliser la signature à votre commune (le parent qui autorise s'y rend avec sa carte d'identité). Emportez ce document en voyage. Si l'enfant et le parent n'ont pas le même nom, ajoutez une copie de l'acte de naissance pour prouver le lien. Les deux parents exercent l'autorité parentale : l'accord de l'autre parent est important.",
+      "reference_legale": "Code civil — exercice conjoint de l'autorité parentale (art. 371 et suivants)",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "légalisation de la signature de l'autorisation"},
+        {"nom": "SPF Affaires étrangères", "lien": "https://diplomatie.belgium.be", "pour": "exigences du pays de destination"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"},
+        {"type": "officiel", "url": "https://www.bruxelles.be/autorisation-parentale", "intitule": "Ville de Bruxelles — Autorisation parentale"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

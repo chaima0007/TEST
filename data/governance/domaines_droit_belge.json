@@ -677,6 +677,24 @@
         "voiture_occasion"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "voyage_mineur",
+      "nom": "Voyage d un enfant",
+      "statut": "couvert",
+      "modules": [
+        "voyage_mineur"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "sexisme_espace_public",
+      "nom": "Sexisme & espace public",
+      "statut": "couvert",
+      "modules": [
+        "sexisme_espace_public"
+      ],
+      "priorite": "haute"
     }
   ]
 }
