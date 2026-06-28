@@ -149,6 +149,20 @@
           "prochaines_etapes": [
             "Fixer les prix (décision Chaima)"
           ]
+        },
+        {
+          "nom": "Pages SEO programmatiques (acquisition)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Hub /conformite",
+            "6 pages /conformite/[norme] générées depuis la base vérifiée",
+            "generateStaticParams + metadata SEO par norme",
+            "CTA vers simulateur + offres"
+          ],
+          "prochaines_etapes": [
+            "Pages par secteur (longue traîne) quand le trafic le justifiera"
+          ]
         }
       ]
     },

@@ -1,0 +1,46 @@
+import fs from "node:fs";
+import path from "node:path";
+
+// Source : data/caelum/conformite_entreprises.json (base vérifiée, séparée de La Loi Avec Moi).
+// Utilitaire serveur partagé par le hub /conformite et les pages SEO /conformite/[norme].
+
+export type Source = { type?: string; url?: string; intitule?: string };
+export type Norme = {
+  id: string;
+  norme: string;
+  changement: string;
+  concernes: string;
+  sanction: string;
+  echeance: string;
+  reference_legale: string;
+  solution_caelum?: string;
+  sources?: Source[];
+};
+
+// Slugs lisibles et stables pour le SEO.
+const SLUGS: Record<string, string> = {
+  "EFACT-2026": "e-facturation",
+  "NIS2-BE": "nis2",
+  "CSRD-OMNIBUS": "csrd",
+  "CSDDD-OMNIBUS": "csddd",
+  RGPD: "rgpd",
+  "LANCEURS-ALERTE": "lanceurs-alerte",
+};
+
+export function loadNormes(): Norme[] {
+  try {
+    const p = path.join(process.cwd(), "data", "caelum", "conformite_entreprises.json");
+    const d = JSON.parse(fs.readFileSync(p, "utf-8"));
+    return Array.isArray(d.normes) ? d.normes : [];
+  } catch {
+    return [];
+  }
+}
+
+export function slugFor(n: Norme): string {
+  return SLUGS[n.id] ?? n.id.toLowerCase();
+}
+
+export function normeBySlug(slug: string): Norme | undefined {
+  return loadNormes().find((n) => slugFor(n) === slug);
+}
