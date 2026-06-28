@@ -319,7 +319,7 @@
     {
       "priorite": 4,
       "action": "Déployer les 2 sites séparément",
-      "comment": "laloiavecmoi/ (citoyens) et app/ racine (Caelum) sont 2 apps distinctes qui se buildent. Choisir hébergeur + domaine pour chacune (ex. Vercel). Je te guide.",
+      "comment": "Guide clé en main prêt: DEPLOIEMENT.md (Vercel, 2 projets séparés, variables d env, webhook leads). Build des 2 apps vérifié. Dis \"go déploiement\" et je te guide écran par écran.",
       "statut": "en attente",
       "depuis": "2026-06-28"
     },

@@ -13,7 +13,7 @@ _Dernière mise à jour : 2026-06-28_
 - **Activer la capture de leads** — Créer un webhook (Zapier "Catch Hook" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.
 - **Fixer les prix des offres conformité** — Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.
 - **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).
-- **Déployer les 2 sites séparément** — laloiavecmoi/ (citoyens) et app/ racine (Caelum) sont 2 apps distinctes qui se buildent. Choisir hébergeur + domaine pour chacune (ex. Vercel). Je te guide.
+- **Déployer les 2 sites séparément** — Guide clé en main prêt: DEPLOIEMENT.md (Vercel, 2 projets séparés, variables d env, webhook leads). Build des 2 apps vérifié. Dis "go déploiement" et je te guide écran par écran.
 - **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.
 
 ## La Loi Avec Moi (citoyens) — 59%
