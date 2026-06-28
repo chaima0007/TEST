@@ -5,16 +5,16 @@
   "projets": [
     {
       "nom": "La Loi Avec Moi (citoyens)",
-      "point_de_sortie": "79 domaines / 262 réponses, 100% lois + sources. App laloiavecmoi/ séparée, build + charge vérifiés.",
+      "point_de_sortie": "81 domaines / 266 réponses, 100% lois + sources. App laloiavecmoi/ séparée, build + charge vérifiés.",
       "taches": [
         {
           "nom": "Base juridique sourcée (domaines + réponses)",
           "pct": 90,
           "statut": "en cours",
           "actions_faites": [
-            "79 domaines couverts",
-            "262 réponses, 100% loi concrète",
-            "100% sources officielles",
+            "81 domaines couverts",
+            "266 réponses, 100% loi concrète",
+            "100% sources officielles (vérif tier1)",
             "build + tests de charge vérifiés"
           ],
           "prochaines_etapes": [

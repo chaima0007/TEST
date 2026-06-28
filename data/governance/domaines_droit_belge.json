@@ -731,6 +731,24 @@
         "maltraitance_aines"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "adresse_reference",
+      "nom": "Sans-abri & domiciliation",
+      "statut": "couvert",
+      "modules": [
+        "adresse_reference"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "testament",
+      "nom": "Testament & donations",
+      "statut": "couvert",
+      "modules": [
+        "testament"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

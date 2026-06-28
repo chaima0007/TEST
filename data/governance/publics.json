@@ -99,7 +99,9 @@
         "bourse_etudes",
         "droit_image",
         "colocation",
-        "maltraitance_aines"
+        "maltraitance_aines",
+        "adresse_reference",
+        "testament"
       ]
     }
   }

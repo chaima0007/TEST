@@ -1,0 +1,47 @@
+{
+  "module": "adresse_reference",
+  "titre": "Adresse de référence (sans logement)",
+  "domaine": "Sans-abri & domiciliation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 19 juillet 1991 relative aux registres de la population (adresse de référence) ; loi organique des CPAS du 8 juillet 1976",
+    "portee": "Garder une adresse officielle et ses droits sociaux quand on n'a pas de logement",
+    "source_officielle": "https://www.droitsquotidiens.be/fr/question/quelles-conditions-pour-avoir-une-adresse-de-reference-au-cpas"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La demande passe par le CPAS de la commune où vous passez le plus de temps ; il réalise une enquête sociale.",
+  "faits": [
+    {
+      "id": "ADRREF-DROIT-001",
+      "question": "Je n'ai plus de logement : à quoi sert une adresse de référence ?",
+      "reponse": "L'adresse de référence vous permet de rester inscrit au registre de la population sans avoir de logement fixe — et donc de garder vos droits : recevoir votre courrier, et conserver mutuelle, revenu d'intégration (RIS), chômage, allocations, etc. Sans adresse officielle, on perd l'accès à la plupart des droits sociaux. C'est un outil essentiel pour les personnes sans-abri ou hébergées provisoirement.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (adresse de référence)",
+      "contacts": [
+        {"nom": "CPAS de votre commune", "pour": "demander une adresse de référence"},
+        {"nom": "Service population de la commune", "pour": "inscription après accord du CPAS"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/registre-national/", "intitule": "IBZ — Registre national / population"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quelles-conditions-pour-avoir-une-adresse-de-reference-au-cpas", "intitule": "Droits Quotidiens — Adresse de référence au CPAS"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "ADRREF-DEMANDE-001",
+      "question": "Comment l'obtenir et qui peut en bénéficier ?",
+      "reponse": "Deux conditions : être sans abri (rue, squat, maison d'accueil, hébergé·e provisoirement, sans moyens d'avoir un logement) ET ne pas déjà avoir d'adresse au registre. La demande se fait au CPAS de la commune où vous passez le plus de temps. Le CPAS réalise une enquête sociale ; s'il accepte, vous déposez le formulaire signé à la commune qui vous inscrit. Vous pouvez avoir une adresse de référence au CPAS lui-même, ou (dans des cas particuliers) chez un particulier. C'est gratuit.",
+      "reference_legale": "Loi du 19 juillet 1991 (adresse de référence) ; loi organique des CPAS du 8 juillet 1976 (enquête sociale)",
+      "contacts": [
+        {"nom": "CPAS de la commune où vous séjournez", "pour": "demande + enquête sociale"},
+        {"nom": "Infor Jeunes / services sociaux", "lien": "https://www.jeminforme.be", "pour": "aide à la démarche"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/registre-national/", "intitule": "IBZ — Registre national / population"},
+        {"type": "secondaire", "url": "https://aide-sociale.be/adresse-reference-personnes-sans-domicile/", "intitule": "Aide-sociale.be — Adresse de référence"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}
