@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Conformité 2026", href: "/conformite-2026" },
   { label: "Tarifs", href: "/tarifs" },
-  { label: "La loi avec moi", href: "/loi-avec-moi" },
   { label: "Simulation", href: "/simulation" },
   { label: "Notre force", href: "/notre-force" },
   { label: "Contact", href: "/contact" },
@@ -347,7 +346,6 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4 flex-wrap">
             <a href="#services" className="hover:text-slate-900">Services</a>
-            <Link href="/loi-avec-moi" className="hover:text-slate-900">La loi avec moi</Link>
             <Link href="/assistant-reglementaire" className="hover:text-slate-900">Assistant réglementaire</Link>
             <Link href="/appels-projets" className="hover:text-slate-900">Appels à projets</Link>
             <Link href="/contact" className="hover:text-slate-900">Contact</Link>
