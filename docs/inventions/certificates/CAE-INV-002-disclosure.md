@@ -22,7 +22,7 @@ sera invalide pour défaut de nouveauté.
 |-------|--------|
 | ID Invention | CAE-INV-002 |
 | Inventrice | Chaima Mhadbi |
-| Email | retrouvetonsmile@gmail.com |
+| Email | chaima.caelumpartners@gmail.com |
 | Déposant | Caelum Partners SPRL |
 | Date de divulgation | 2026-06-21 |
 | Génération | G1 |

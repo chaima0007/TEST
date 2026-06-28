@@ -103,7 +103,7 @@ PRESS_RELEASE_TEMPLATES = {
             "PARAGRAPHE 4 — CITATION CEO: Quote de la directrice de Caelum Partners",
             "PARAGRAPHE 5 — APPEL À L'ACTION: Rapport disponible + démo CaelumSwarm™",
             "À PROPOS: Caelum Partners SPRL — Bruxelles, Belgique",
-            "CONTACT PRESSE: retrouvetonsmile@gmail.com",
+            "CONTACT PRESSE: chaima.caelumpartners@gmail.com",
         ],
         "ideal_length_words": 400,
         "embargo": True,
@@ -149,7 +149,7 @@ Disponible pour un appel de 15 minutes cette semaine ?
 
 Cordialement,
 Équipe Presse Caelum Partners
-retrouvetonsmile@gmail.com""",
+chaima.caelumpartners@gmail.com""",
 
     "FOLLOW_UP": """Objet: Re: [Rappel] Wave {wave} — données disponibles sous embargo
 
@@ -177,7 +177,7 @@ Elle peut développer 3 angles :
 
 Réponse sous 2h. Interview possible aujourd'hui.
 
-Caelum Partners Press — retrouvetonsmile@gmail.com""",
+Caelum Partners Press — chaima.caelumpartners@gmail.com""",
 }
 
 

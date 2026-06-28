@@ -183,12 +183,12 @@ Les éléments suivants sont protégés comme **secrets commerciaux** (Directive
 Google Patents Alert :
   Requête : ("human rights" OR "droits humains") AND ("machine learning" OR "artificial intelligence") AND (scoring OR index)
   Fréquence : Hebdomadaire
-  Email : retrouvetonsmile@gmail.com
+  Email : chaima.caelumpartners@gmail.com
 
 Google Patents Alert :
   Requête : ("CSDDD" OR "CS3D" OR "supply chain due diligence") AND ("artificial intelligence" OR "compliance")
   Fréquence : Quotidienne (URGENCE CAE-INV-005)
-  Email : retrouvetonsmile@gmail.com
+  Email : chaima.caelumpartners@gmail.com
 ```
 
 ---

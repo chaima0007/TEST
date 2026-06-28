@@ -44,7 +44,7 @@ export default function AccessibilitePage() {
             L'accessibilité est un travail continu : certaines pages peuvent encore être améliorées. Un test par des
             utilisateurs concernés est prévu. Si vous rencontrez un obstacle, dites-le nous : nous corrigerons.
           </p>
-          <p className="text-slate-700 text-sm mt-2">Contact accessibilité : [adresse e-mail à compléter].</p>
+          <p className="text-slate-700 text-sm mt-2">Contact accessibilité : chaima.caelumpartners@gmail.com.</p>
         </section>
       </article>
     </main>

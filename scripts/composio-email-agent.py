@@ -32,7 +32,7 @@ Vous trouverez en pièce jointe notre dossier de candidature complet.
 Dans l'attente de votre retour,
 Chaima Mhadbi
 Fondatrice, Caelum Partners SPRL
-retrouvetonsmile@gmail.com
+chaima.caelumpartners@gmail.com
 Bruxelles, Belgique""",
         "destinataires": [],
         "pj_suggérées": [
@@ -66,7 +66,7 @@ Chaima Mhadbi | Caelum Partners""",
             "Cordialement,\n"
             "Chaima Mhadbi\n"
             "Fondatrice, Caelum Partners SPRL\n"
-            "retrouvetonsmile@gmail.com"
+            "chaima.caelumpartners@gmail.com"
         ),
     },
     "partenariat_academia": {
@@ -83,7 +83,7 @@ Chaima Mhadbi | Caelum Partners""",
             "Cordialement,\n"
             "Chaima Mhadbi\n"
             "Fondatrice, Caelum Partners SPRL\n"
-            "retrouvetonsmile@gmail.com"
+            "chaima.caelumpartners@gmail.com"
         ),
     },
 }

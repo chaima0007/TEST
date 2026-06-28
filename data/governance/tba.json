@@ -106,7 +106,7 @@
         },
         {
           "nom": "Pages légales (mentions, confidentialité, accessibilité)",
-          "pct": 80,
+          "pct": 90,
           "statut": "en cours",
           "actions_faites": [
             "Mentions légales (placeholders éditeur)",
@@ -115,8 +115,7 @@
             "sitemap + build OK"
           ],
           "prochaines_etapes": [
-            "Compléter l identité légale de l éditeur (Chaima)",
-            "Lier dans le pied de page"
+            "Compléter l identité légale de l éditeur (BCE/TVA/adresse)"
           ]
         }
       ]

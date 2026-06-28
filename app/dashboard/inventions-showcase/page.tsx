@@ -124,7 +124,7 @@ export default function InventionsShowcasePage() {
             </div>
             <div className="hidden md:block text-right">
               <div className="text-xs text-slate-600 mb-1">Licensing</div>
-              <div className="text-sm font-mono text-slate-400">retrouvetonsmile@gmail.com</div>
+              <div className="text-sm font-mono text-slate-400">chaima.caelumpartners@gmail.com</div>
               <div className="mt-3 px-4 py-2 rounded-lg text-xs font-medium text-center"
                 style={{ backgroundColor: GOLD + "20", color: GOLD, border: `1px solid ${GOLD}40` }}>
                 Licences disponibles
@@ -223,7 +223,7 @@ export default function InventionsShowcasePage() {
             ))}
           </div>
           <div className="mt-6 text-sm text-slate-400">
-            Contact : <span className="font-mono" style={{ color: GOLD }}>retrouvetonsmile@gmail.com</span>
+            Contact : <span className="font-mono" style={{ color: GOLD }}>chaima.caelumpartners@gmail.com</span>
           </div>
         </div>
 

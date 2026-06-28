@@ -427,6 +427,12 @@ export default function LoiAvecMoiPage() {
           <Link href="/la-loi-avec-moi-france" className="text-indigo-700 hover:text-indigo-900 font-medium">🇫🇷 Voir la version France →</Link>
           <Link href="/" className="hover:text-slate-900">← Accueil</Link>
         </div>
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-3 text-xs text-slate-400">
+          <Link href="/transparence" className="hover:text-slate-700">Nos sources</Link>
+          <Link href="/mentions-legales" className="hover:text-slate-700">Mentions légales</Link>
+          <Link href="/confidentialite" className="hover:text-slate-700">Confidentialité</Link>
+          <Link href="/accessibilite" className="hover:text-slate-700">Accessibilité</Link>
+        </div>
       </footer>
     </main>
   );

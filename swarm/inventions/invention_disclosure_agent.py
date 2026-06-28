@@ -10,7 +10,7 @@ class InventionDisclosure:
     patent_id: str
     title: str
     inventor_name: str = "Chaima Mhadbi"
-    inventor_email: str = "retrouvetonsmile@gmail.com"
+    inventor_email: str = "chaima.caelumpartners@gmail.com"
     applicant: str = "Caelum Partners SPRL"
     address: str = "Bruxelles, Belgique"
     disclosure_date: str = "2026-06-21"

@@ -143,7 +143,7 @@ Tous les plans incluent :
 ✓ Alertes en temps réel
 ✓ Support compliance dédié
 
-**Contactez-nous** pour un devis personnalisé : retrouvetonsmile@gmail.com`
+**Contactez-nous** pour un devis personnalisé : chaima.caelumpartners@gmail.com`
   }
 
   return `Merci pour votre question sur **"${userMessage}"**.
@@ -151,7 +151,7 @@ Tous les plans incluent :
 Je suis en train d'analyser cette problématique compliance. Pour une réponse précise et personnalisée, je vous recommande de :
 
 1. **Consulter notre démo** pour voir l'analyse de votre situation spécifique → [Lancer la démo](/demo)
-2. **Contacter notre équipe** pour un audit personnalisé : retrouvetonsmile@gmail.com
+2. **Contacter notre équipe** pour un audit personnalisé : chaima.caelumpartners@gmail.com
 
 En attendant, voici les domaines CSDDD les plus fréquemment posés en question :
 • Calcul de l'exposition financière aux sanctions

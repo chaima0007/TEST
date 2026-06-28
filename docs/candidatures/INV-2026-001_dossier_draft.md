@@ -13,7 +13,7 @@ Caelum Partners développe **CaelumSwarm™**, la première plateforme IA multi-
 Dans le cadre du programme **Innoviris — Proof of Concept** (Innoviris (Bruxelles)), nous sollicitons un financement de **100,000 EUR** (taux de cofinancement : 70%) pour mener à bien un projet sur 12 mois visant à finaliser notre MVP et obtenir nos premiers clients payants en Europe.
 
 **Porteur de projet :** Chaima Mhadbi, fondatrice & CEO — SPRL immatriculée à Bruxelles, Belgique (2024-12)
-**Contact :** retrouvetonsmile@gmail.com | caelumpartners.be
+**Contact :** chaima.caelumpartners@gmail.com | caelumpartners.be
 
 ## 2. Le Problème
 
@@ -177,4 +177,4 @@ CaelumSwarm™ représente une **innovation de rupture** sur trois axes :
 
 *Dossier généré automatiquement par dossier-auto-generator-agent.py*
 
-*Caelum Partners — retrouvetonsmile@gmail.com*
+*Caelum Partners — chaima.caelumpartners@gmail.com*

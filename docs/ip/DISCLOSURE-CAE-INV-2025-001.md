@@ -13,7 +13,7 @@
 | **Date de divulgation** | 21 juin 2025 |
 | **Inventrice** | Chaima Mhadbi |
 | **Titulaire** | Caelum Partners SPRL, Bruxelles, Belgique |
-| **Email contact** | retrouvetonsmile@gmail.com |
+| **Email contact** | chaima.caelumpartners@gmail.com |
 | **Statut** | Divulgation interne — priorité établie |
 
 ---

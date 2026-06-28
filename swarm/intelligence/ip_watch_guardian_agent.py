@@ -1,6 +1,6 @@
 """
 IP Watch Guardian Agent — Caelum Partners SPRL
-Surveille le vol de propriété intellectuelle et alerte retrouvetonsmile@gmail.com
+Surveille le vol de propriété intellectuelle et alerte chaima.caelumpartners@gmail.com
 """
 
 from dataclasses import dataclass, field
@@ -40,7 +40,7 @@ class IPWatchGuardianAgent:
     AGENT_NAME = "IP Watch Guardian Agent"
     DOMAIN = "ip_protection_monitoring"
     VERSION = "1.0.0"
-    ALERT_EMAIL = "retrouvetonsmile@gmail.com"
+    ALERT_EMAIL = "chaima.caelumpartners@gmail.com"
 
     PROTECTED_ASSETS = {
         "inventions": [

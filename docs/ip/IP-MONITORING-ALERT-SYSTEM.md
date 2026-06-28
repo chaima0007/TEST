@@ -1,7 +1,7 @@
 # Système de Surveillance & Alertes Anti-Vol IP — Caelum Partners SPRL
 
 **Propriétaire :** Chaima Mhadbi  
-**Contact alerte :** retrouvetonsmile@gmail.com  
+**Contact alerte :** chaima.caelumpartners@gmail.com  
 **Statut :** ACTIF depuis le 21 juin 2025
 
 ---
@@ -29,7 +29,7 @@
    - `"swarm agents human rights compliance"`
    - `"DueDiligenceOS"`
    - `"ComplianceIQ droits humains"`
-3. Sélectionne : fréquence "Dès que c'est publié" → Email retrouvetonsmile@gmail.com
+3. Sélectionne : fréquence "Dès que c'est publié" → Email chaima.caelumpartners@gmail.com
 
 ### 3. EUIPO TMview — Hebdomadaire
 **Surveiller :** tmview.euipo.europa.eu
@@ -97,7 +97,7 @@ La meilleure preuve de priorité que tu as **gratuitement** :
 |--------|-----------|-----------------|
 | **Commits Git horodatés** | github.com/chaima0007/TEST | Très forte (SHA cryptographique) |
 | **Notes divulgation IP** | docs/ip/DISCLOSURE-*.md | Forte (date dans le repo) |
-| **Emails GitHub** | retrouvetonsmile@gmail.com | Forte (date serveur) |
+| **Emails GitHub** | chaima.caelumpartners@gmail.com | Forte (date serveur) |
 | **Docs inventions existants** | docs/inventions/ | Forte |
 
 **En pratique :** si quelqu'un essaie de voler CAE-INV-2025-001, tu peux prouver que tu l'as créé avant eux grâce aux commits Git sur GitHub. Les tribunaux belges et européens acceptent cette preuve.
@@ -118,7 +118,7 @@ La meilleure preuve de priorité que tu as **gratuitement** :
 
 ## Contact en cas d'urgence
 
-**Ton seul point de contact :** retrouvetonsmile@gmail.com  
+**Ton seul point de contact :** chaima.caelumpartners@gmail.com  
 **Dossier de référence :** Caelum Partners SPRL — IP Portfolio 2025  
 **Preuve numéro 1 :** github.com/chaima0007/TEST (commits datés)
 

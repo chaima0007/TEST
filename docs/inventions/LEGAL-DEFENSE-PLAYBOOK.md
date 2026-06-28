@@ -2,7 +2,7 @@
 
 **Inventrice :** Chaima Mhadbi  
 **Titulaire :** Caelum Partners SPRL, Bruxelles, Belgique  
-**Email :** retrouvetonsmile@gmail.com
+**Email :** chaima.caelumpartners@gmail.com
 
 ## Preuve de Propriété — Ce Qui Nous Appartient
 

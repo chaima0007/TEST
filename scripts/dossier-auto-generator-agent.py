@@ -18,7 +18,7 @@ CAELUM_INFO = {
     "effectif": 2,
     "ca_annuel_eur": 45000,
     "site_web": "caelumpartners.be",
-    "email": "retrouvetonsmile@gmail.com",
+    "email": "chaima.caelumpartners@gmail.com",
     "tech_stack": ["Next.js", "Python", "IA multi-agents", "API REST"],
     "clients_beta": 3,
     "domaine_innovation": "Conformité CSDDD (Directive EU 2024/1760)",

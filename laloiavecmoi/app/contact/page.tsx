@@ -24,10 +24,10 @@ export default function ContactPage() {
             Pour toute demande, contactez-nous par e-mail&nbsp;:
           </p>
           <a
-            href="mailto:contact@laloiavecmoi.be"
+            href="mailto:chaima.caelumpartners@gmail.com"
             className="inline-block mt-4 text-xl font-bold text-blue-700 hover:text-blue-900"
           >
-            contact@laloiavecmoi.be
+            chaima.caelumpartners@gmail.com
           </a>
           <p className="text-slate-400 text-sm mt-6 leading-relaxed">
             (Adresse à personnaliser une fois ton nom de domaine et ta boîte e-mail configurés.)

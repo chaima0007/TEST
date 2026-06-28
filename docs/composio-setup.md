@@ -101,5 +101,5 @@ composio actions --app googlecalendar --query "create event"
 
 ---
 
-Contact : retrouvetonsmile@gmail.com
+Contact : chaima.caelumpartners@gmail.com
 Caelum Partners SPRL — Bruxelles, Belgique

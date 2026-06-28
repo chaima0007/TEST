@@ -9,7 +9,7 @@ OWNER = {
     "inventor": "Chaima Mhadbi",
     "applicant": "Caelum Partners SPRL",
     "address": "Bruxelles, Belgique",
-    "email": "retrouvetonsmile@gmail.com",
+    "email": "chaima.caelumpartners@gmail.com",
     "legal_basis": ["EPO Art.54(2) CBE", "35 U.S.C. §102", "Paris Convention Art.4", "TRIPS Art.29"],
 }
 
