@@ -1,0 +1,47 @@
+{
+  "module": "recours_europeens",
+  "titre": "Recours européens — SOLVIT, médiateur, pétition",
+  "domaine": "Recours dans l'Union européenne",
+  "juridiction": "UE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Recommandation 2013/461/UE (réseau SOLVIT) ; Traité sur le fonctionnement de l'UE — droit de pétition (art. 227) et Médiateur européen (art. 228)",
+    "portee": "Faire valoir ses droits européens quand une administration ne les respecte pas",
+    "source_officielle": "https://europa.eu/youreurope/citizens/"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale (niveau UE), à jour à la date de revue. Ces recours sont gratuits ; pour un cas précis, passez par Your Europe.",
+  "faits": [
+    {
+      "id": "UEREC-SOLVIT-001",
+      "question": "Une administration d'un autre pays de l'UE ne respecte pas mes droits européens : que faire ?",
+      "reponse": "Saisissez SOLVIT, un service GRATUIT présent dans chaque pays de l'UE. Il aide quand une autorité publique d'un autre État membre ne respecte pas vos droits européens (reconnaissance de diplôme, sécurité sociale, séjour, immatriculation de véhicule, droits du travailleur…). SOLVIT cherche une solution à l'amiable, en général dans un délai de quelques semaines. C'est souvent plus rapide qu'une procédure judiciaire. Gardez vos documents et décrivez clairement le problème.",
+      "reference_legale": "Recommandation 2013/461/UE (réseau SOLVIT), fondée sur le droit du marché intérieur de l'UE (directives et règlements applicables à la libre circulation)",
+      "contacts": [
+        {"nom": "SOLVIT", "lien": "https://europa.eu/youreurope/citizens/national-contact-points/index_fr.htm", "pour": "problème avec une administration d'un autre pays de l'UE (gratuit)"},
+        {"nom": "Your Europe", "lien": "https://europa.eu/youreurope/citizens/", "pour": "orientation sur vos droits européens"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/national-contact-points/index_fr.htm", "intitule": "Your Europe — SOLVIT"},
+        {"type": "officiel", "url": "https://commission.europa.eu/about/contact/problems-and-complaints/help-defending-your-rights/solvit_fr", "intitule": "Commission européenne — SOLVIT"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UEREC-MEDIATEUR-001",
+      "question": "Puis-je me plaindre des institutions européennes ou pétitionner ?",
+      "reponse": "Oui, deux droits existent. 1) Le Médiateur européen examine les plaintes pour mauvaise administration des institutions et organes de l'UE (manque de transparence, refus injustifié, retards). 2) Le droit de pétition : tout citoyen de l'UE peut adresser une pétition au Parlement européen sur un sujet qui le concerne et qui relève de l'UE. Ces démarches sont gratuites. Pour un litige avec une administration nationale, c'est plutôt SOLVIT (voir ci-dessus).",
+      "reference_legale": "Règlement (UE, Euratom) 2021/1163 fixant le statut du Médiateur européen ; droit de pétition au Parlement européen (art. 227 TFUE)",
+      "contacts": [
+        {"nom": "Médiateur européen", "lien": "https://www.ombudsman.europa.eu/fr/home", "pour": "mauvaise administration des institutions UE"},
+        {"nom": "Parlement européen — Pétitions", "lien": "https://www.europarl.europa.eu/petitions/fr/home", "pour": "déposer une pétition"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ombudsman.europa.eu/fr/home", "intitule": "Médiateur européen"},
+        {"type": "officiel", "url": "https://www.europarl.europa.eu/petitions/fr/home", "intitule": "Parlement européen — Droit de pétition"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

@@ -72,6 +72,14 @@ export default function BaseJuridiquePage() {
         </div>
       </section>
 
+      <div className="max-w-5xl mx-auto px-6 pt-6">
+        <p className="text-sm rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-600">
+          🌐 <strong>Une autre langue ?</strong> Cette page peut être traduite automatiquement par votre navigateur
+          (menu « Traduire »). Version néerlandaise : <a href="/de-wet-met-mij" className="text-indigo-700 hover:underline">de wet met mij</a>.
+          La traduction automatique peut comporter des imprécisions — le texte sourcé de référence reste en français.
+        </p>
+      </div>
+
       <BaseJuridiqueClient index={index} />
     </main>
   );

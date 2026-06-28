@@ -767,6 +767,15 @@
         "litiges_transfrontaliers"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "recours_europeens",
+      "nom": "Recours dans l Union européenne",
+      "statut": "couvert",
+      "modules": [
+        "recours_europeens"
+      ],
+      "priorite": "haute"
     }
   ]
 }

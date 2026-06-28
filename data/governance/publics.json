@@ -103,7 +103,8 @@
         "adresse_reference",
         "testament",
         "citoyen_europeen",
-        "litiges_transfrontaliers"
+        "litiges_transfrontaliers",
+        "recours_europeens"
       ]
     }
   }

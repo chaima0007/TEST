@@ -5,7 +5,7 @@
   "projets": [
     {
       "nom": "La Loi Avec Moi (citoyens)",
-      "point_de_sortie": "83 domaines / 270 réponses (dont couche UE), 100% lois + sources. Build + 1200 simulations OK (p95<111ms, 0% erreur).",
+      "point_de_sortie": "84 domaines / 272 réponses (couche UE renforcée), 100% lois + sources. Build OK, 1200 simulations OK.",
       "taches": [
         {
           "nom": "Base juridique sourcée (domaines + réponses)",
@@ -62,13 +62,15 @@
         },
         {
           "nom": "Versions multilingues (NL en premier)",
-          "pct": 5,
+          "pct": 20,
           "statut": "à faire",
           "actions_faites": [
-            "Architecture data prête (champ langue)"
+            "Bannière multilingue (14 langues, slogan)",
+            "Aide à la traduction auto sur la base juridique",
+            "Version NL /de-wet-met-mij existante"
           ],
           "prochaines_etapes": [
-            "Traduction NL des modules prioritaires"
+            "Traduire les modules prioritaires en NL"
           ]
         },
         {
