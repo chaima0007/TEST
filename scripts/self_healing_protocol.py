@@ -76,6 +76,33 @@ SERVICES = [
 ]
 
 
+def scanner_flotte():
+    """Étend l'auto-surveillance à TOUS les agents du registre : chaque script référencé
+    doit exister ET compiler. Détecte un agent cassé/manquant avant qu'il ne plante en prod."""
+    import py_compile
+    import re
+    casses = []
+    try:
+        reg = json.load(open(os.path.join(BASE, "data", "governance", "protocols_registry.json"), encoding="utf-8"))
+    except Exception as e:
+        return [{"agent": "registre", "probleme": f"illisible: {e}"}], 0
+    scripts = set()
+    for p in reg.get("protocoles", []):
+        m = re.search(r"scripts/([\w\-/]+\.py)", p.get("verif", "") or "")
+        if m:
+            scripts.add(m.group(1))
+    for rel in sorted(scripts):
+        path = os.path.join(BASE, "scripts", rel)
+        if not os.path.exists(path):
+            casses.append({"agent": rel, "probleme": "manquant"})
+            continue
+        try:
+            py_compile.compile(path, doraise=True)
+        except Exception as e:
+            casses.append({"agent": rel, "probleme": f"ne compile pas: {str(e)[:60]}"})
+    return casses, len(scripts)
+
+
 def soigner(simuler_panne=None):
     etat = []
     for nom, primaire, secours in SERVICES:
@@ -114,14 +141,20 @@ def main():
     hist = hist[-200:]
     json.dump(hist, open(LOG, "w"), ensure_ascii=False, indent=2)
 
+    casses, total_agents = scanner_flotte()
+
     print("═══ AUTO-RÉPARATION (réaffectation sur panne) ═══")
     for e in etat:
         ic = {"OK": "✅", "RÉPARÉ": "🛠️", "DÉGRADÉ": "🔻"}[e["statut"]]
         print(f"  {ic} {e['service']:26s} [{e['via']}] {e['detail'][:70]}")
     print(f"  Test de bascule (panne simulée) : {'✅ continuité assurée' if bascule_ok else '⚠️'}")
+    print(f"  Scan flotte complète : {total_agents} agents vérifiés · cassés/manquants : {len(casses)}")
+    for c in casses[:10]:
+        print(f"     🔻 {c['agent']} — {c['probleme']}")
     degrade = [e for e in etat if e["statut"] == "DÉGRADÉ"]
-    print(f"  → {len(degrade)} service(s) en mode dégradé." if degrade else "  → Tous les services assurés.")
-    return 1 if degrade else 0
+    if not degrade and not casses:
+        print("  → Tous les services assurés, toute la flotte saine.")
+    return 1 if (degrade or casses) else 0
 
 
 if __name__ == "__main__":

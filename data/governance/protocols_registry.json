@@ -277,7 +277,7 @@
     {
       "id": "P-AUTO-REPARATION",
       "nom": "Auto-réparation (réaffectation sur panne)",
-      "regle": "Si un agent/contrôle critique tombe, basculer immédiatement sur une routine de secours pour assurer la continuité du service. Journaliser chaque réparation.",
+      "regle": "Si un contrôle critique tombe, basculer immédiatement sur une routine de secours (continuité). + Scan de TOUTE la flotte : chaque agent du registre doit exister ET compiler ; tout agent cassé/manquant est détecté avant la prod. Journalisé.",
       "verif": "python3 scripts/self_healing_protocol.py"
     },
     {
