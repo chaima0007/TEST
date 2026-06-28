@@ -1,7 +1,7 @@
 {
   "registre": "Spécialistes par catégorie",
   "but": "Un assistant guidé par domaine pour aider chacun à faire valoir ses droits.",
-  "genere_le": "2026-06-27",
+  "genere_le": "2026-06-28",
   "principe_honnete": "Assistants guidés (contenu vérifié + contacts), pas des avocats.",
   "specialistes": [
     {
@@ -32,6 +32,30 @@
         {
           "nom": "Votre médecin",
           "pour": "formulaire médical de la demande"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ACHAT-LOGEMENT",
+      "titre": "Spécialiste — Achat immobilier",
+      "domaine": "Achat immobilier",
+      "module": "achat_logement",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « achat immobilier », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Le compromis de vente, est-ce déjà un engagement définitif ?",
+        "Que fait le notaire et dans quel délai signe-t-on l'acte ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Notaire",
+          "lien": "https://www.notaire.be",
+          "pour": "relecture du compromis, conditions suspensives"
+        },
+        {
+          "nom": "Notaire",
+          "pour": "vérifications, acte authentique, frais"
         }
       ],
       "nb_reponses": 2,
@@ -213,6 +237,72 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-ASSURANCE-AUTO",
+      "titre": "Spécialiste — Assurance véhicule",
+      "domaine": "Assurance véhicule",
+      "module": "assurance_auto",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « assurance véhicule », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle assurance est obligatoire pour ma voiture ?",
+        "Que se passe-t-il si l'autre conducteur n'est pas assuré ou prend la fuite ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre assureur",
+          "pour": "souscription RC auto, attestation"
+        },
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "information assurance auto"
+        },
+        {
+          "nom": "Fonds commun de garantie belge",
+          "pour": "indemnisation (non-assuré, délit de fuite, vol)"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "constat et déclaration de l'accident"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ASSURANCE-HABITATION",
+      "titre": "Spécialiste — Assurance logement",
+      "domaine": "Assurance logement",
+      "module": "assurance_habitation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « assurance logement », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Suis-je obligé d'assurer mon logement (incendie) ?",
+        "J'ai un dégât des eaux ou un incendie : que faire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Votre assureur",
+          "pour": "souscrire / vérifier la couverture incendie + dégâts des eaux"
+        },
+        {
+          "nom": "Service logement de votre Région",
+          "pour": "obligation selon la Région et le bail"
+        },
+        {
+          "nom": "Secours",
+          "numero": "112",
+          "pour": "incendie, danger"
+        },
+        {
+          "nom": "Ombudsman des assurances",
+          "lien": "https://www.ombudsman-insurance.be",
+          "pour": "litige avec l'assureur"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-ASSURANCES",
       "titre": "Spécialiste — Assurances",
       "domaine": "Assurances",
@@ -257,6 +347,30 @@
       ],
       "contacts_cles": [],
       "nb_reponses": 9,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-BAIL-ETUDIANT",
+      "titre": "Spécialiste — Logement étudiant",
+      "domaine": "Logement étudiant",
+      "module": "bail_etudiant",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « logement étudiant », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Combien de temps dure un bail étudiant et quelle garantie peut-on me demander ?",
+        "Puis-je quitter mon kot avant la fin du bail ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service logement de votre Région",
+          "pour": "règles du bail étudiant"
+        },
+        {
+          "nom": "Infor Jeunes",
+          "lien": "https://www.jeminforme.be",
+          "pour": "aide et information kot"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -321,6 +435,30 @@
           "nom": "Ombudsfin — Médiateur en conflits financiers",
           "lien": "https://www.ombudsfin.be",
           "pour": "litige avec une banque"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-BENEVOLAT",
+      "titre": "Spécialiste — Volontariat",
+      "domaine": "Volontariat",
+      "module": "benevolat",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « volontariat », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quels sont mes droits quand je suis bénévole ?",
+        "Puis-je être remboursé de mes frais, et suis-je assuré ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Plateforme francophone du Volontariat",
+          "lien": "https://www.levolontariat.be",
+          "pour": "information et droits des volontaires"
+        },
+        {
+          "nom": "L'organisation qui vous accueille",
+          "pour": "note d'information, assurance"
         }
       ],
       "nb_reponses": 2,
@@ -487,6 +625,33 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-COPROPRIETE",
+      "titre": "Spécialiste — Copropriété",
+      "domaine": "Copropriété",
+      "module": "copropriete",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « copropriété », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "C'est quoi le syndic et l'assemblée générale dans un immeuble ?",
+        "Comment sont calculées mes charges de copropriété ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Syndic de votre immeuble",
+          "pour": "gestion, convocation de l'assemblée générale"
+        },
+        {
+          "nom": "Juge de paix",
+          "pour": "litige de copropriété"
+        },
+        {
+          "nom": "Syndic",
+          "pour": "comptes, décompte des charges"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-COUPLE",
       "titre": "Spécialiste — Couple & vie commune",
       "domaine": "Couple & vie commune",
@@ -529,6 +694,34 @@
         }
       ],
       "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CREDIT-HYPOTHECAIRE",
+      "titre": "Spécialiste — Crédit hypothécaire",
+      "domaine": "Crédit hypothécaire",
+      "module": "credit_hypothecaire",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « crédit hypothécaire », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Avant de signer mon prêt logement, ai-je un délai pour réfléchir ou me rétracter ?",
+        "Puis-je rembourser mon prêt plus tôt, et à quel coût ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "droits de l'emprunteur, information"
+        },
+        {
+          "nom": "Plusieurs banques / courtier",
+          "pour": "comparer les offres avant de signer"
+        },
+        {
+          "nom": "Votre banque",
+          "pour": "calcul de l'indemnité de remploi, remboursement anticipé"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -1011,6 +1204,34 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-FONCTION-PUBLIQUE",
+      "titre": "Spécialiste — Fonction publique",
+      "domaine": "Fonction publique",
+      "module": "fonction_publique",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « fonction publique », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment postuler à un emploi dans le secteur public ?",
+        "Quelle différence entre agent statutaire et contractuel ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Travaillerpour.be (fédéral, ex-Selor)",
+          "lien": "https://www.travaillerpour.be",
+          "pour": "offres et sélections fédérales"
+        },
+        {
+          "nom": "Portails emploi des Régions/communes",
+          "pour": "offres régionales et locales"
+        },
+        {
+          "nom": "Service du personnel de l'administration concernée",
+          "pour": "conditions du poste (statutaire/contractuel)"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-FRAUDE-ARNAQUES",
       "titre": "Spécialiste — Fraude & sécurité numérique",
       "domaine": "Fraude & sécurité numérique",
@@ -1040,6 +1261,40 @@
           "nom": "Safeonweb — suspect@safeonweb.be",
           "lien": "https://safeonweb.be/fr",
           "pour": "transférer un message de phishing"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-GARDE-ENFANTS",
+      "titre": "Spécialiste — Petite enfance & accueil",
+      "domaine": "Petite enfance & accueil",
+      "module": "garde_enfants",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « petite enfance & accueil », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment inscrire mon enfant en crèche, et quand s'y prendre ?",
+        "Combien coûte une place d'accueil ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "ONE (Office de la naissance et de l'enfance)",
+          "lien": "https://my.one.be",
+          "pour": "pré-inscription, trouver une place (francophone)"
+        },
+        {
+          "nom": "Kind en Gezin / Opgroeien",
+          "lien": "https://www.kindengezin.be",
+          "pour": "accueil en Flandre"
+        },
+        {
+          "nom": "Le milieu d'accueil",
+          "pour": "contrat d'accueil, tarif, projet d'accueil"
+        },
+        {
+          "nom": "ONE",
+          "lien": "https://www.one.be",
+          "pour": "barème et milieux subventionnés"
         }
       ],
       "nb_reponses": 2,
@@ -1346,6 +1601,63 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-MALFACONS-TRAVAUX",
+      "titre": "Spécialiste — Construction & travaux",
+      "domaine": "Construction & travaux",
+      "module": "malfacons_travaux",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « construction & travaux », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Des défauts après mes travaux : que faire selon le moment ?",
+        "L'entrepreneur doit-il être assuré, et est-ce utile pour moi ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Entrepreneur / architecte",
+          "pour": "mise en demeure écrite de réparer"
+        },
+        {
+          "nom": "Avocat en droit de la construction / expert",
+          "pour": "litige important, expertise"
+        },
+        {
+          "nom": "Son assureur décennale",
+          "pour": "intervention en cas de défaut grave couvert"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-MEDIATION-CONFLITS",
+      "titre": "Spécialiste — Règlement des conflits",
+      "domaine": "Règlement des conflits",
+      "module": "mediation_conflits",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « règlement des conflits », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment régler un conflit sans aller au procès ?",
+        "C'est quoi la conciliation devant le juge de paix ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Médiateur agréé",
+          "lien": "https://www.cfm-fbc.be",
+          "pour": "médiation civile, familiale, commerciale"
+        },
+        {
+          "nom": "SPF Justice",
+          "lien": "https://justice.belgium.be/fr/themes_et_dossiers/mediation",
+          "pour": "information sur la médiation"
+        },
+        {
+          "nom": "Justice de paix de votre canton",
+          "lien": "https://www.tribunaux-rechtbanken.be/fr/le-systeme-judiciaire-belge/justice-de-paix",
+          "pour": "demande de conciliation (gratuit)"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-MOBILITE-DOUCE",
       "titre": "Spécialiste — Mobilité douce",
       "domaine": "Mobilité douce",
@@ -1440,6 +1752,66 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-PERMIS-URBANISME",
+      "titre": "Spécialiste — Urbanisme & travaux",
+      "domaine": "Urbanisme & travaux",
+      "module": "permis_urbanisme",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « urbanisme & travaux », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Pour quels travaux ai-je besoin d'un permis d'urbanisme ?",
+        "Comment demander un permis et que risque-t-on sans permis ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service urbanisme de votre commune",
+          "pour": "savoir si un permis est requis, déposer la demande"
+        },
+        {
+          "nom": "Architecte",
+          "pour": "travaux nécessitant son intervention"
+        },
+        {
+          "nom": "Service logement de votre Région",
+          "pour": "formulaires et règles régionales"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-PREMIER-EMPLOI",
+      "titre": "Spécialiste — Jeunes & premier emploi",
+      "domaine": "Jeunes & premier emploi",
+      "module": "premier_emploi",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « jeunes & premier emploi », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je viens de finir mes études : quelle est la première chose à faire ?",
+        "Ai-je droit à une allocation après mes études ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Forem / Actiris / VDAB / ADG",
+          "pour": "inscription comme demandeur d'emploi"
+        },
+        {
+          "nom": "Infor Jeunes",
+          "lien": "https://www.jeminforme.be",
+          "pour": "accompagnement des jeunes"
+        },
+        {
+          "nom": "Organisme de paiement (syndicat ou CAPAC)",
+          "pour": "demande d'allocations d'insertion"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "conditions et durée en vigueur"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-PROTECTION-PERSONNE",
       "titre": "Spécialiste — Protection des personnes vulnérables",
       "domaine": "Protection des personnes vulnérables",
@@ -1465,6 +1837,68 @@
         {
           "nom": "Médecin",
           "pour": "certificat médical circonstancié"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-RECOURS-ADMINISTRATION",
+      "titre": "Spécialiste — Recours administratifs",
+      "domaine": "Recours administratifs",
+      "module": "recours_administration",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « recours administratifs », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Un service public me traite mal ou ne répond pas : que faire ?",
+        "Comment faire annuler une décision administrative illégale ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Médiateur fédéral",
+          "lien": "https://www.mediateurfederal.be",
+          "pour": "plainte contre un service public fédéral (gratuit)"
+        },
+        {
+          "nom": "Médiateur de votre Région / commune",
+          "pour": "services régionaux ou communaux"
+        },
+        {
+          "nom": "Conseil d'État",
+          "lien": "https://www.conseildetat.be",
+          "pour": "recours en annulation"
+        },
+        {
+          "nom": "Bureau d'aide juridique (BAJ)",
+          "pour": "avocat gratuit/pro deo selon revenus"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-RECOUVREMENT-AMIABLE",
+      "titre": "Spécialiste — Recouvrement de dettes",
+      "domaine": "Recouvrement de dettes",
+      "module": "recouvrement_amiable",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « recouvrement de dettes », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Une société de recouvrement me réclame de l'argent : quels sont mes droits ?",
+        "Une société de recouvrement a-t-elle le droit de me harceler ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "frais abusifs, signalement"
+        },
+        {
+          "nom": "Service de médiation de dettes / CPAS",
+          "pour": "aide si vous ne pouvez pas payer"
+        },
+        {
+          "nom": "SPF Économie — Point de contact",
+          "lien": "https://economie.fgov.be",
+          "pour": "signaler le harcèlement / pratiques abusives"
         }
       ],
       "nb_reponses": 2,
@@ -1848,6 +2282,35 @@
         }
       ],
       "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-VOYAGES",
+      "titre": "Spécialiste — Voyages",
+      "domaine": "Voyages",
+      "module": "voyages",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « voyages », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Puis-je annuler mon voyage à forfait et être remboursé ?",
+        "Que se passe-t-il si l'agence de voyages fait faillite ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "droits du voyageur, plainte"
+        },
+        {
+          "nom": "Centre Européen des Consommateurs (CEC)",
+          "lien": "https://www.cecbelgique.be",
+          "pour": "litige transfrontalier"
+        },
+        {
+          "nom": "Fonds de garantie voyages / assureur de l'organisateur",
+          "pour": "remboursement et rapatriement en cas de faillite"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     }
   ]

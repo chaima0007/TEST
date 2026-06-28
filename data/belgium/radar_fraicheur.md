@@ -2,7 +2,7 @@
 
 *Cadence de re-vérification : tous les 180 jours. Remettre à niveau = re-vérifier la source officielle (les lois changent), pas seulement la date. Revu le 2026-06-26.*
 
-## Synthèse : 🔴 0 en retard · 🟠 0 bientôt · total 27 faits
+## Synthèse : 🔴 0 en retard · 🟠 0 bientôt · total 29 faits
 
 | État | Fait | Module | À re-vérifier avant |
 |---|---|---|---|
@@ -33,6 +33,8 @@
 | 🟢 À JOUR | BWAL-SALUB-001 | Région wallonne | 2026-12-23 |
 | 🟢 À JOUR | BWAL-EXP-001 | Région wallonne | 2026-12-23 |
 | 🟢 À JOUR | BWAL-PEB-001 | Région wallonne | 2026-12-23 |
+| 🟢 À JOUR | KOT-DUREE-001 | Logement étudiant (kot) — bail & droits | 2026-12-24 |
+| 🟢 À JOUR | KOT-RESILIATION-001 | Logement étudiant (kot) — bail & droits | 2026-12-24 |
 
 ## Recommandation
 🟢 Tout est frais. Prochaine revue planifiée selon la cadence.

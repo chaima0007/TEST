@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 218,
+    "total_savoirs": 250,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -24,6 +24,28 @@
       "id": "ACCT-MALADIE-PRO-001",
       "sujet": "Ma maladie est liée à mon travail : ai-je droit à une indemnité ?",
       "reference_legale": "Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "achat_logement",
+      "id": "ACHAT-COMPROMIS-001",
+      "sujet": "Le compromis de vente, est-ce déjà un engagement définitif ?",
+      "reference_legale": "Code civil — formation et effets de la vente (le compromis lie les parties)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "achat_logement",
+      "id": "ACHAT-NOTAIRE-001",
+      "sujet": "Que fait le notaire et dans quel délai signe-t-on l'acte ?",
+      "reference_legale": "Code des droits d'enregistrement (enregistrement et paiement dans les 4 mois) ; loi de ventôse sur le notariat",
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-27",
@@ -207,6 +229,50 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "assurance_auto",
+      "id": "AUTO-OBLIGATION-001",
+      "sujet": "Quelle assurance est obligatoire pour ma voiture ?",
+      "reference_legale": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_auto",
+      "id": "AUTO-FONDS-GARANTIE-001",
+      "sujet": "Que se passe-t-il si l'autre conducteur n'est pas assuré ou prend la fuite ?",
+      "reference_legale": "Loi du 21 novembre 1989 (missions du Fonds commun de garantie belge)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_habitation",
+      "id": "ASSHAB-OBLIGATION-001",
+      "sujet": "Suis-je obligé d'assurer mon logement (incendie) ?",
+      "reference_legale": "Décret wallon du 15 mars 2018 sur le bail d'habitation ; ordonnance bruxelloise relative au bail d'habitation ; Code flamand du logement",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_habitation",
+      "id": "ASSHAB-SINISTRE-001",
+      "sujet": "J'ai un dégât des eaux ou un incendie : que faire ?",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (déclaration de sinistre et obligations) ; Code civil (responsabilité)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "assurances",
       "id": "ASSU-AUTO-001",
       "sujet": "Quelle assurance est obligatoire pour un véhicule ?",
@@ -335,6 +401,28 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_etudiant",
+      "id": "KOT-DUREE-001",
+      "sujet": "Combien de temps dure un bail étudiant et quelle garantie peut-on me demander ?",
+      "reference_legale": "Décret wallon du 15 mars 2018 relatif au bail d'habitation (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_etudiant",
+      "id": "KOT-RESILIATION-001",
+      "sujet": "Puis-je quitter mon kot avant la fin du bail ?",
+      "reference_legale": "Décret wallon du 15 mars 2018 (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017 (bail étudiant)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {
@@ -559,6 +647,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "benevolat",
+      "id": "BENE-DROITS-001",
+      "sujet": "Quels sont mes droits quand je suis bénévole ?",
+      "reference_legale": "Loi du 3 juillet 2005 relative aux droits des volontaires (note d'information, limitation de responsabilité)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "benevolat",
+      "id": "BENE-DEFRAIEMENT-001",
+      "sujet": "Puis-je être remboursé de mes frais, et suis-je assuré ?",
+      "reference_legale": "Loi du 3 juillet 2005 relative aux droits des volontaires (défraiement et obligation d'assurance)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "burnout_bienetre",
       "id": "BIEN-SANTE-DABORD-001",
       "sujet": "Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?",
@@ -735,6 +845,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "copropriete",
+      "id": "COPRO-SYNDIC-001",
+      "sujet": "C'est quoi le syndic et l'assemblée générale dans un immeuble ?",
+      "reference_legale": "Code civil — copropriété forcée (art. 577-3 et suivants ; rôle du syndic et de l'assemblée générale)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "copropriete",
+      "id": "COPRO-CHARGES-001",
+      "sujet": "Comment sont calculées mes charges de copropriété ?",
+      "reference_legale": "Code civil — copropriété forcée (quotes-parts, art. 577-3 et suivants ; recours contre les décisions de l'assemblée)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "couple",
       "id": "COUP-COHAB-001",
       "sujet": "C'est quoi la cohabitation légale et comment la faire ?",
@@ -797,6 +929,28 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "credit_hypothecaire",
+      "id": "HYPO-OFFRE-001",
+      "sujet": "Avant de signer mon prêt logement, ai-je un délai pour réfléchir ou me rétracter ?",
+      "reference_legale": "Code de droit économique, livre VII — crédit hypothécaire (information précontractuelle et droit de rétractation)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "credit_hypothecaire",
+      "id": "HYPO-ANTICIPE-001",
+      "sujet": "Puis-je rembourser mon prêt plus tôt, et à quel coût ?",
+      "reference_legale": "Code de droit économique, livre VII — remboursement anticipé du crédit hypothécaire (indemnité plafonnée à 3 mois d'intérêts)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {
@@ -1285,6 +1439,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "fonction_publique",
+      "id": "FONCT-POSTULER-001",
+      "sujet": "Comment postuler à un emploi dans le secteur public ?",
+      "reference_legale": "Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État (recrutement objectif)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "fonction_publique",
+      "id": "FONCT-STATUTAIRE-001",
+      "sujet": "Quelle différence entre agent statutaire et contractuel ?",
+      "reference_legale": "Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État ; loi du 3 juillet 1978 relative aux contrats de travail (contractuels)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "fraude_arnaques",
       "id": "FRAUDE-VICTIME-001",
       "sujet": "J'ai été victime d'une arnaque (paiement, données envoyées). Que faire en urgence ?",
@@ -1303,6 +1479,28 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "garde_enfants",
+      "id": "GARDE-INSCRIPTION-001",
+      "sujet": "Comment inscrire mon enfant en crèche, et quand s'y prendre ?",
+      "reference_legale": "Décret de la Communauté française du 21 février 2019 relatif à la qualité de l'accueil de la petite enfance",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "garde_enfants",
+      "id": "GARDE-COUT-001",
+      "sujet": "Combien coûte une place d'accueil ?",
+      "reference_legale": "Décret de la Communauté française du 21 février 2019 (participation financière des parents) ; Code des impôts sur les revenus (déduction frais de garde)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
       "valide": true
     },
     {
@@ -1747,6 +1945,50 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "malfacons_travaux",
+      "id": "MALF-RECEPTION-001",
+      "sujet": "Des défauts après mes travaux : que faire selon le moment ?",
+      "reference_legale": "Code civil — réception des travaux et vices ; responsabilité décennale (art. 1792 et 2270)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "malfacons_travaux",
+      "id": "MALF-ASSURANCE-001",
+      "sujet": "L'entrepreneur doit-il être assuré, et est-ce utile pour moi ?",
+      "reference_legale": "Loi du 31 mai 2017 relative à l'assurance obligatoire de la responsabilité civile décennale (construction)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "mediation_conflits",
+      "id": "MED-MEDIATION-001",
+      "sujet": "Comment régler un conflit sans aller au procès ?",
+      "reference_legale": "Code judiciaire — médiation (art. 1723 et suivants)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "mediation_conflits",
+      "id": "MED-CONCILIATION-001",
+      "sujet": "C'est quoi la conciliation devant le juge de paix ?",
+      "reference_legale": "Code judiciaire — conciliation (art. 731 et suivants)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "mobilite_douce",
       "id": "MOB-TROT-AGE-001",
       "sujet": "À partir de quel âge peut-on rouler en trottinette électrique ?",
@@ -1846,6 +2088,50 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "permis_urbanisme",
+      "id": "URBA-PERMIS-001",
+      "sujet": "Pour quels travaux ai-je besoin d'un permis d'urbanisme ?",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "permis_urbanisme",
+      "id": "URBA-DEMARCHE-001",
+      "sujet": "Comment demander un permis et que risque-t-on sans permis ?",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — procédure de demande et sanctions des infractions urbanistiques",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "premier_emploi",
+      "id": "JEUNE-INSCRIPTION-001",
+      "sujet": "Je viens de finir mes études : quelle est la première chose à faire ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (stage d'insertion)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "premier_emploi",
+      "id": "JEUNE-ALLOCATION-001",
+      "sujet": "Ai-je droit à une allocation après mes études ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (allocations d'insertion)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "protection_personne",
       "id": "PROT-ADMIN-001",
       "sujet": "Comment protéger un proche qui ne peut plus gérer ses affaires (maladie, handicap, grand âge) ?",
@@ -1864,6 +2150,50 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "recours_administration",
+      "id": "ADM-MEDIATEUR-001",
+      "sujet": "Un service public me traite mal ou ne répond pas : que faire ?",
+      "reference_legale": "Loi du 22 mars 1995 instaurant des médiateurs fédéraux",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "recours_administration",
+      "id": "ADM-CONSEIL-ETAT-001",
+      "sujet": "Comment faire annuler une décision administrative illégale ?",
+      "reference_legale": "Loi du 12 janvier 1973 (lois coordonnées) sur le Conseil d'État — recours en annulation",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "recouvrement_amiable",
+      "id": "RECOUV-DROITS-001",
+      "sujet": "Une société de recouvrement me réclame de l'argent : quels sont mes droits ?",
+      "reference_legale": "Loi du 4 mai 2023 (livre XIX « Dettes du consommateur » du Code de droit économique)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "recouvrement_amiable",
+      "id": "RECOUV-INTERDIT-001",
+      "sujet": "Une société de recouvrement a-t-elle le droit de me harceler ?",
+      "reference_legale": "Loi du 4 mai 2023 (livre XIX du Code de droit économique) — pratiques interdites de recouvrement",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
       "valide": true
     },
     {
@@ -2359,6 +2689,28 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "voyages",
+      "id": "VOY-ANNULATION-001",
+      "sujet": "Puis-je annuler mon voyage à forfait et être remboursé ?",
+      "reference_legale": "Loi du 21 novembre 2017 relative à la vente de voyages à forfait (droit de résiliation et remboursement)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "voyages",
+      "id": "VOY-FAILLITE-001",
+      "sujet": "Que se passe-t-il si l'agence de voyages fait faillite ?",
+      "reference_legale": "Loi du 21 novembre 2017 relative à la vente de voyages à forfait (protection contre l'insolvabilité de l'organisateur)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-27",
       "valide": true
     },
     {

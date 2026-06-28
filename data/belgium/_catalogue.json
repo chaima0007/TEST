@@ -1,12 +1,12 @@
 {
   "catalogue": "Base unique — La Loi Avec Moi",
-  "genere_le": "2026-06-27",
+  "genere_le": "2026-06-28",
   "totaux": {
-    "modules": 59,
-    "faits": 214,
-    "sources_officielles": 328,
-    "faits_avec_contacts": 129,
-    "faits_avec_alerte_delai": 64
+    "modules": 75,
+    "faits": 246,
+    "sources_officielles": 372,
+    "faits_avec_contacts": 161,
+    "faits_avec_alerte_delai": 73
   },
   "modules": [
     {
@@ -17,6 +17,18 @@
       "juridiction": "BE",
       "faits": 2,
       "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "achat_logement.json",
+      "module": "achat_logement",
+      "titre": "Acheter un logement — compromis & notaire",
+      "domaine": "Achat immobilier",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
@@ -94,6 +106,30 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "assurance_auto.json",
+      "module": "assurance_auto",
+      "titre": "Assurance auto obligatoire (RC)",
+      "domaine": "Assurance véhicule",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "assurance_habitation.json",
+      "module": "assurance_habitation",
+      "titre": "Assurance habitation & incendie",
+      "domaine": "Assurance logement",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "assurances.json",
       "module": "assurances",
       "titre": "Assurances — auto obligatoire, RC familiale, litiges",
@@ -116,6 +152,18 @@
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "bail_etudiant.json",
+      "module": "bail_etudiant",
+      "titre": "Logement étudiant (kot) — bail & droits",
+      "domaine": "Logement étudiant",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "bail_flandre.json",
@@ -149,6 +197,18 @@
       "juridiction": "BE",
       "faits": 2,
       "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "benevolat.json",
+      "module": "benevolat",
+      "titre": "Bénévolat & volontariat — vos droits",
+      "domaine": "Volontariat",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
@@ -214,6 +274,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "copropriete.json",
+      "module": "copropriete",
+      "titre": "Copropriété — vivre en appartement",
+      "domaine": "Copropriété",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "couple.json",
       "module": "couple",
       "titre": "Couple — mariage, cohabitation légale, union libre",
@@ -236,6 +308,18 @@
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "credit_hypothecaire.json",
+      "module": "credit_hypothecaire",
+      "titre": "Crédit hypothécaire — emprunter pour un logement",
+      "domaine": "Crédit hypothécaire",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
     },
     {
       "fichier": "deces.json",
@@ -406,6 +490,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "fonction_publique.json",
+      "module": "fonction_publique",
+      "titre": "Travailler dans le secteur public",
+      "domaine": "Fonction publique",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "fraude_arnaques.json",
       "module": "fraude_arnaques",
       "titre": "Arnaques & fraude en ligne — réagir vite",
@@ -416,6 +512,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "garde_enfants.json",
+      "module": "garde_enfants",
+      "titre": "Garde d'enfants — crèche & milieux d'accueil",
+      "domaine": "Petite enfance & accueil",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "gouvernement.json",
@@ -526,6 +634,30 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "malfacons_travaux.json",
+      "module": "malfacons_travaux",
+      "titre": "Malfaçons & garantie décennale (travaux)",
+      "domaine": "Construction & travaux",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
+    },
+    {
+      "fichier": "mediation_conflits.json",
+      "module": "mediation_conflits",
+      "titre": "Médiation & règlement amiable des conflits",
+      "domaine": "Règlement des conflits",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "mobilite_douce.json",
       "module": "mobilite_douce",
       "titre": "Vélo & trottinette — règles et assurance",
@@ -562,6 +694,30 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "permis_urbanisme.json",
+      "module": "permis_urbanisme",
+      "titre": "Permis d'urbanisme — travaux & rénovation",
+      "domaine": "Urbanisme & travaux",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "premier_emploi.json",
+      "module": "premier_emploi",
+      "titre": "Jeunes — premier emploi & stage d'insertion",
+      "domaine": "Jeunes & premier emploi",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-27"
+    },
+    {
       "fichier": "protection_personne.json",
       "module": "protection_personne",
       "titre": "Personnes vulnérables — administration de biens & protection",
@@ -572,6 +728,30 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "recours_administration.json",
+      "module": "recours_administration",
+      "titre": "Recours contre l'administration — médiateur & Conseil d'État",
+      "domaine": "Recours administratifs",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "recouvrement_amiable.json",
+      "module": "recouvrement_amiable",
+      "titre": "Recouvrement amiable — sociétés de recouvrement",
+      "domaine": "Recouvrement de dettes",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "saisies_huissier.json",
@@ -716,6 +896,18 @@
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "voyages.json",
+      "module": "voyages",
+      "titre": "Voyages à forfait — annulation & remboursement",
+      "domaine": "Voyages",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-27"
     }
   ],
   "domaines": [
@@ -1213,6 +1405,150 @@
       "statut": "couvert",
       "modules": [
         "fin_de_vie"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "recours_administration",
+      "nom": "Recours administratifs",
+      "statut": "couvert",
+      "modules": [
+        "recours_administration"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "mediation_conflits",
+      "nom": "Règlement des conflits",
+      "statut": "couvert",
+      "modules": [
+        "mediation_conflits"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "premier_emploi",
+      "nom": "Jeunes & premier emploi",
+      "statut": "couvert",
+      "modules": [
+        "premier_emploi"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "bail_etudiant",
+      "nom": "Logement étudiant",
+      "statut": "couvert",
+      "modules": [
+        "bail_etudiant"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "achat_logement",
+      "nom": "Achat immobilier",
+      "statut": "couvert",
+      "modules": [
+        "achat_logement"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "assurance_auto",
+      "nom": "Assurance véhicule",
+      "statut": "couvert",
+      "modules": [
+        "assurance_auto"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "credit_hypothecaire",
+      "nom": "Crédit hypothécaire",
+      "statut": "couvert",
+      "modules": [
+        "credit_hypothecaire"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "copropriete",
+      "nom": "Copropriété",
+      "statut": "couvert",
+      "modules": [
+        "copropriete"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "permis_urbanisme",
+      "nom": "Urbanisme & travaux",
+      "statut": "couvert",
+      "modules": [
+        "permis_urbanisme"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "voyages",
+      "nom": "Voyages",
+      "statut": "couvert",
+      "modules": [
+        "voyages"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "benevolat",
+      "nom": "Volontariat",
+      "statut": "couvert",
+      "modules": [
+        "benevolat"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "fonction_publique",
+      "nom": "Fonction publique",
+      "statut": "couvert",
+      "modules": [
+        "fonction_publique"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "assurance_habitation",
+      "nom": "Assurance logement",
+      "statut": "couvert",
+      "modules": [
+        "assurance_habitation"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "garde_enfants",
+      "nom": "Petite enfance & accueil",
+      "statut": "couvert",
+      "modules": [
+        "garde_enfants"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "recouvrement_amiable",
+      "nom": "Recouvrement de dettes",
+      "statut": "couvert",
+      "modules": [
+        "recouvrement_amiable"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "malfacons_travaux",
+      "nom": "Construction & travaux",
+      "statut": "couvert",
+      "modules": [
+        "malfacons_travaux"
       ],
       "priorite": "haute"
     }

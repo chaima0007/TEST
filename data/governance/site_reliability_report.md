@@ -1,9 +1,9 @@
 # Audit de fiabilité — grand site (app/)
 
-*Généré le 2026-06-27. Mesure la présence et la qualité des sources citées dans les pages.*
+*Généré le 2026-06-28. Mesure la présence et la qualité des sources citées dans les pages.*
 
-**Liens sources : 203 · officiels : 121 (60%) · institutionnels : 19 · hors liste : 63**
-**Pages de contenu sans aucune source : 322**
+**Liens sources : 9 · officiels : 5 (56%) · institutionnels : 0 · hors liste : 4**
+**Pages de contenu sans aucune source : 315**
 
 ## Par section
 
@@ -15,23 +15,28 @@
 | assistant-reglementaire | 1 | 0 | 0 | 0 | 0 |
 | cgv | 1 | 0 | 0 | 0 | 0 |
 | confidentialite | 1 | 0 | 0 | 0 | 0 |
+| conformite | 3 | 0 | 0 | 0 | 0 |
+| conformite-2026 | 1 | 0 | 0 | 0 | 0 |
 | contact | 1 | 0 | 0 | 0 | 0 |
 | dashboard | 301 | 1 | 0 | 0 | 1 |
-| de-wet-met-mij | 7 | 6 | 23 | 5 | 4 |
 | espace | 1 | 0 | 0 | 0 | 0 |
-| la-loi-avec-moi-france | 12 | 7 | 0 | 0 | 33 |
 | login | 1 | 0 | 0 | 0 | 0 |
-| loi-avec-moi | 38 | 29 | 93 | 14 | 22 |
 | mentions-legales | 1 | 0 | 0 | 0 | 0 |
 | notre-force | 1 | 0 | 0 | 0 | 0 |
+| offres-conformite | 1 | 0 | 0 | 0 | 0 |
 | simulation | 1 | 0 | 0 | 0 | 0 |
 | tarifs | 1 | 0 | 0 | 0 | 0 |
+| veille | 1 | 0 | 0 | 0 | 0 |
 
 ## ⚠️ Pages de contenu sans source citée (à enrichir)
 - assistant/page.tsx
 - assistant-reglementaire/page.tsx
 - cgv/page.tsx
 - confidentialite/page.tsx
+- conformite/[norme]/page.tsx
+- conformite/page.tsx
+- conformite/secteur/[secteur]/page.tsx
+- conformite-2026/page.tsx
 - contact/page.tsx
 - dashboard/[slug]/page.tsx
 - dashboard/abtesting/page.tsx
@@ -104,49 +109,12 @@
 - dashboard/deal-complexity-intelligence/page.tsx
 - dashboard/deal-contamination-risk-engine/page.tsx
 - dashboard/deal-fragmentation/page.tsx
-- dashboard/deal-ghosting-risk-engine/page.tsx
-- dashboard/deal-momentum/page.tsx
-- dashboard/deal-multithreading-intelligence/page.tsx
-- dashboard/deal-risk-analyzer/page.tsx
 
 ## Domaines cités hors liste blanche (à vérifier / classer)
-- service-public.gouv.fr (15)
-- droitsquotidiens.be (6)
-- signal.conso.gouv.fr (2)
-- legifrance.gouv.fr (2)
-- defenseurdesdroits.fr (2)
-- cnil.fr (2)
-- anil.org (2)
-- code.travail.gouv.fr (2)
-- cnb.avocat.fr (2)
 - digitalwallonia.be (1)
 - innoviris.brussels (1)
 - vlaio.be (1)
 - ${competitor.website}`} (1)
-- federaalombudsman.be (1)
-- consumentenombudsdienst.be (1)
-- gegevensbeschermingsautoriteit.be (1)
-- rva.be (1)
-- economie.gouv.fr (1)
-- arretonslesviolences.gouv.fr (1)
-- e-enfance.org (1)
-- justice.gouv.fr (1)
-- aide-alimentaire.croix-rouge.be (1)
-- restosducoeur.be (1)
-- pro.guidesocial.be (1)
-- rvv-cce.be (1)
-- justice-en-ligne.be (1)
-- travellersonline.diplomatie.be (1)
-- bewapp.be (1)
-- arp-gan.be (1)
-- cecbelgique.be (1)
-- federalinstituthumanrights.be (1)
-- ecouteviolencesconjugales.be (1)
-- violencessexuelles.be (1)
-- fr.ikwv.be (1)
-- dewestkust.be (1)
-- bivouacchezmoi.be (1)
-- om-mp.be (1)
 
 ## Lecture honnête
 - Un % officiel élevé = bonne base de fiabilité. Les « hors liste » ne sont pas forcément faux : ce sont des domaines à vérifier puis à classer (tier1/2/3).

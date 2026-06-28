@@ -1,11 +1,11 @@
 # 🩺 Contrôle de tous les agents
 
-*Généré le 2026-06-27. Contrôle DES contrôleurs, en plus des protocoles.*
+*Généré le 2026-06-28. Contrôle DES contrôleurs, en plus des protocoles.*
 
 **✅ TOUS LES AGENTS EN BONNE SANTÉ**
 
-- Agents (scripts) analysés : **232**
-- Compilent sans erreur : **232/232**
+- Agents (scripts) analysés : **233**
+- Compilent sans erreur : **233/233**
 - Agents de contrôle exécutés OK : **5/5**
 
 ## Exécution des agents de contrôle clés

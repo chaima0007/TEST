@@ -5,19 +5,19 @@
     {
       "plateforme": "Flotte d'agents",
       "dimension": "Agents IA (scripts .py)",
-      "valeur": 232,
+      "valeur": 233,
       "seuil_alerte": 320,
       "seuil_critique": 450,
-      "pct_du_critique": 51.6,
+      "pct_du_critique": 51.8,
       "statut": "OK"
     },
     {
       "plateforme": "La Loi Avec Moi",
       "dimension": "Modules juridiques",
-      "valeur": 59,
+      "valeur": 75,
       "seuil_alerte": 400,
       "seuil_critique": 600,
-      "pct_du_critique": 9.8,
+      "pct_du_critique": 12.5,
       "statut": "OK"
     },
     {
@@ -41,19 +41,19 @@
     {
       "plateforme": "Site (Next.js)",
       "dimension": "Routes (page.tsx)",
-      "valeur": 366,
+      "valeur": 317,
       "seuil_alerte": 380,
       "seuil_critique": 480,
-      "pct_du_critique": 76.2,
+      "pct_du_critique": 66.0,
       "statut": "OK"
     },
     {
       "plateforme": "Site (Next.js)",
       "dimension": "Composants (.tsx)",
-      "valeur": 17,
+      "valeur": 15,
       "seuil_alerte": 600,
       "seuil_critique": 900,
-      "pct_du_critique": 1.9,
+      "pct_du_critique": 1.7,
       "statut": "OK"
     },
     {
@@ -70,7 +70,7 @@
     {
       "plateforme": "Site (Next.js)",
       "proxy": "Routes (coût de build/cold-start)",
-      "valeur": 366,
+      "valeur": 317,
       "statut": "OK"
     },
     {
@@ -108,7 +108,7 @@
     "postes_a_completer": 10
   },
   "prevision": {
-    "note": "rythme observé : 10.2 nouveau(x) module(s)/passage sur 6 passages",
-    "runway_passages_avant_saturation_modules": 53
+    "note": "rythme observé : 4.8 nouveau(x) module(s)/passage sur 16 passages",
+    "runway_passages_avant_saturation_modules": 109
   }
 }

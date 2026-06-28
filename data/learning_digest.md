@@ -3,15 +3,19 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **218**
+- Savoirs enregistrés : **250**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `b92ea0c45248f76f…`)
+- Certification système : **PASS** (sceau `895aff2f32805fa3…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
   Réf : Loi du 10 avril 1971 sur les accidents du travail · sources off. : 2 · revu : 2026-06-27
 - ✅ **Ma maladie est liée à mon travail : ai-je droit à une indemnité ?**  
   Réf : Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles · sources off. : 2 · revu : 2026-06-27
+- ✅ **Le compromis de vente, est-ce déjà un engagement définitif ?**  
+  Réf : Code civil — formation et effets de la vente (le compromis lie les parties) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Que fait le notaire et dans quel délai signe-t-on l'acte ?**  
+  Réf : Code des droits d'enregistrement (enregistrement et paiement dans les 4 mois) ; loi de ventôse sur le notariat · sources off. : 2 · revu : 2026-06-27
 - ✅ **Quelle différence entre adoption simple et adoption plénière ?**  
   Réf : Code civil — adoption simple et adoption plénière (art. 343 et suivants) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment se passe la procédure d'adoption ?**  
@@ -44,6 +48,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Arrêté royal relatif à l'identification et l'enregistrement des chiens et chats ; Code wallon du Bien-être des animaux (décret du 4 octobre 2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Je suis témoin de maltraitance animale : que faire ?**  
   Réf : Code wallon du Bien-être des animaux — sanctions de la maltraitance · sources off. : 2 · revu : 2026-06-26
+- ✅ **Quelle assurance est obligatoire pour ma voiture ?**  
+  Réf : Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs · sources off. : 2 · revu : 2026-06-27
+- ✅ **Que se passe-t-il si l'autre conducteur n'est pas assuré ou prend la fuite ?**  
+  Réf : Loi du 21 novembre 1989 (missions du Fonds commun de garantie belge) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Suis-je obligé d'assurer mon logement (incendie) ?**  
+  Réf : Décret wallon du 15 mars 2018 sur le bail d'habitation ; ordonnance bruxelloise relative au bail d'habitation ; Code flamand du logement · sources off. : 1 · revu : 2026-06-28
+- ✅ **J'ai un dégât des eaux ou un incendie : que faire ?**  
+  Réf : Loi du 4 avril 2014 relative aux assurances (déclaration de sinistre et obligations) ; Code civil (responsabilité) · sources off. : 1 · revu : 2026-06-28
 - ✅ **Quelle assurance est obligatoire pour un véhicule ?**  
   Réf : Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs · sources off. : 2 · revu : 2026-06-26
 - ✅ **L'assurance RC familiale est-elle obligatoire, et à quoi sert-elle ?**  
@@ -68,6 +80,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire (juge de paix) + Code bruxellois du Logement — expulsion ; trêve hivernale · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les obligations PEB (énergie) pour louer à Bruxelles ?**  
   Réf : Ordonnance bruxelloise (COBRACE) relative à la performance énergétique des bâtiments (Bruxelles Environnement) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Combien de temps dure un bail étudiant et quelle garantie peut-on me demander ?**  
+  Réf : Décret wallon du 15 mars 2018 relatif au bail d'habitation (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017 · sources off. : 1 · revu : 2026-06-27
+- ✅ **Puis-je quitter mon kot avant la fin du bail ?**  
+  Réf : Décret wallon du 15 mars 2018 (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017 (bail étudiant) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?**  
   Réf : Vlaams Woninghuurdecreet (décret du 9 novembre 2018) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant maximum de la garantie locative en Flandre ?**  
@@ -108,6 +124,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code de droit économique, livre VII — service bancaire de base · sources off. : 2 · revu : 2026-06-27
 - ✅ **J'ai un litige avec ma banque, à qui m'adresser ?**  
   Réf : Code de droit économique, livre VII et livre XVI (règlement extrajudiciaire des litiges de consommation) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Quels sont mes droits quand je suis bénévole ?**  
+  Réf : Loi du 3 juillet 2005 relative aux droits des volontaires (note d'information, limitation de responsabilité) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Puis-je être remboursé de mes frais, et suis-je assuré ?**  
+  Réf : Loi du 3 juillet 2005 relative aux droits des volontaires (défraiement et obligation d'assurance) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?**  
   Réf : Loi du 4 août 1996 relative au bien-être des travailleurs (volet risques psychosociaux : stress, burnout) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Je me sens harcelé·e au travail mais je n'ose rien dire. Que puis-je faire ?**  
@@ -140,6 +160,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code de droit économique — droit de rétractation (vente à distance, 14 jours) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Litige avec un vendeur : à qui m'adresser ?**  
   Réf : Code de droit économique — règlement extrajudiciaire des litiges de consommation · sources off. : 1 · revu : 2026-06-26
+- ✅ **C'est quoi le syndic et l'assemblée générale dans un immeuble ?**  
+  Réf : Code civil — copropriété forcée (art. 577-3 et suivants ; rôle du syndic et de l'assemblée générale) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Comment sont calculées mes charges de copropriété ?**  
+  Réf : Code civil — copropriété forcée (quotes-parts, art. 577-3 et suivants ; recours contre les décisions de l'assemblée) · sources off. : 1 · revu : 2026-06-27
 - ✅ **C'est quoi la cohabitation légale et comment la faire ?**  
   Réf : Code civil — cohabitation légale (déclaration à l'état civil) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelle différence entre mariage, cohabitation légale et union libre ?**  
@@ -152,6 +176,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code de droit économique — délais de conservation à la CCP · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment savoir ce qui est enregistré sur moi ?**  
   Réf : Code de droit économique — droit de consultation de la CCP ; RGPD (droit d'accès) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Avant de signer mon prêt logement, ai-je un délai pour réfléchir ou me rétracter ?**  
+  Réf : Code de droit économique, livre VII — crédit hypothécaire (information précontractuelle et droit de rétractation) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Puis-je rembourser mon prêt plus tôt, et à quel coût ?**  
+  Réf : Code de droit économique, livre VII — remboursement anticipé du crédit hypothécaire (indemnité plafonnée à 3 mois d'intérêts) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Que faire en premier après un décès ?**  
   Réf : Code civil — état civil et déclaration de décès · sources off. : 1 · revu : 2026-06-26
 - ✅ **Les comptes bancaires sont bloqués : comment les débloquer ?**  
@@ -240,10 +268,18 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 28 mai 2002 relative à l'euthanasie (déclaration anticipée) ; loi du 22 août 2002 relative aux droits du patient · sources off. : 2 · revu : 2026-06-27
 - ✅ **Puis-je refuser un traitement, et ai-je droit aux soins palliatifs ?**  
   Réf : Loi du 22 août 2002 relative aux droits du patient (consentement et refus de soins) ; loi du 14 juin 2002 relative aux soins palliatifs · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment postuler à un emploi dans le secteur public ?**  
+  Réf : Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État (recrutement objectif) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Quelle différence entre agent statutaire et contractuel ?**  
+  Réf : Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État ; loi du 3 juillet 1978 relative aux contrats de travail (contractuels) · sources off. : 2 · revu : 2026-06-27
 - ✅ **J'ai été victime d'une arnaque (paiement, données envoyées). Que faire en urgence ?**  
   Réf : Code pénal — escroquerie (art. 496) et fraude informatique (art. 504quater) · sources off. : 2 · revu : 2026-06-27
 - ✅ **J'ai reçu un message suspect (banque, livraison, administration). Comment réagir ?**  
   Réf : Code pénal — fraude informatique (art. 504quater) et faux informatique (art. 210bis) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment inscrire mon enfant en crèche, et quand s'y prendre ?**  
+  Réf : Décret de la Communauté française du 21 février 2019 relatif à la qualité de l'accueil de la petite enfance · sources off. : 2 · revu : 2026-06-28
+- ✅ **Combien coûte une place d'accueil ?**  
+  Réf : Décret de la Communauté française du 21 février 2019 (participation financière des parents) ; Code des impôts sur les revenus (déduction frais de garde) · sources off. : 1 · revu : 2026-06-28
 - ✅ **Comment la Belgique est-elle organisée (les niveaux de pouvoir) ?**  
   Réf : Constitution belge — État fédéral, Régions et Communautés · sources off. : 2 · revu : 2026-06-26
 - ✅ **C'est quoi les « trois pouvoirs » ?**  
@@ -324,6 +360,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — inscription auprès des sociétés de logement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?**  
   Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — attribution et renouvellement des candidatures · sources off. : 2 · revu : 2026-06-26
+- ✅ **Des défauts après mes travaux : que faire selon le moment ?**  
+  Réf : Code civil — réception des travaux et vices ; responsabilité décennale (art. 1792 et 2270) · sources off. : 1 · revu : 2026-06-28
+- ✅ **L'entrepreneur doit-il être assuré, et est-ce utile pour moi ?**  
+  Réf : Loi du 31 mai 2017 relative à l'assurance obligatoire de la responsabilité civile décennale (construction) · sources off. : 1 · revu : 2026-06-28
+- ✅ **Comment régler un conflit sans aller au procès ?**  
+  Réf : Code judiciaire — médiation (art. 1723 et suivants) · sources off. : 2 · revu : 2026-06-27
+- ✅ **C'est quoi la conciliation devant le juge de paix ?**  
+  Réf : Code judiciaire — conciliation (art. 731 et suivants) · sources off. : 2 · revu : 2026-06-27
 - ✅ **À partir de quel âge peut-on rouler en trottinette électrique ?**  
   Réf : Arrêté royal du 1er décembre 1975 (Code de la route) — engins de déplacement motorisés · sources off. : 1 · revu : 2026-06-27
 - ✅ **Où ai-je le droit de rouler en trottinette électrique ?**  
@@ -342,10 +386,26 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Arrêté royal du 21 décembre 1967 portant règlement général du régime de pension de retraite et de survie des travailleurs salariés (demande, examen du droit) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Puis-je continuer à travailler une fois pensionné ?**  
   Réf : Arrêté royal relatif au cumul d'une pension avec une activité professionnelle (revenus autorisés) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Pour quels travaux ai-je besoin d'un permis d'urbanisme ?**  
+  Réf : Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment demander un permis et que risque-t-on sans permis ?**  
+  Réf : Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — procédure de demande et sanctions des infractions urbanistiques · sources off. : 1 · revu : 2026-06-27
+- ✅ **Je viens de finir mes études : quelle est la première chose à faire ?**  
+  Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (stage d'insertion) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Ai-je droit à une allocation après mes études ?**  
+  Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (allocations d'insertion) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Comment protéger un proche qui ne peut plus gérer ses affaires (maladie, handicap, grand âge) ?**  
   Réf : Code civil — protection judiciaire des majeurs (administration de biens et de la personne) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Qui peut demander la mise sous administration, et comment ?**  
   Réf : Code civil — demande de protection judiciaire ; mandat de protection extrajudiciaire · sources off. : 1 · revu : 2026-06-26
+- ✅ **Un service public me traite mal ou ne répond pas : que faire ?**  
+  Réf : Loi du 22 mars 1995 instaurant des médiateurs fédéraux · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment faire annuler une décision administrative illégale ?**  
+  Réf : Loi du 12 janvier 1973 (lois coordonnées) sur le Conseil d'État — recours en annulation · sources off. : 2 · revu : 2026-06-27
+- ✅ **Une société de recouvrement me réclame de l'argent : quels sont mes droits ?**  
+  Réf : Loi du 4 mai 2023 (livre XIX « Dettes du consommateur » du Code de droit économique) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Une société de recouvrement a-t-elle le droit de me harceler ?**  
+  Réf : Loi du 4 mai 2023 (livre XIX du Code de droit économique) — pratiques interdites de recouvrement · sources off. : 1 · revu : 2026-06-28
 - ✅ **Un huissier peut-il prendre tout mon salaire ?**  
   Réf : Code judiciaire — quotité saisissable (art. 1409 et s.) et sommes insaisissables (art. 1410) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Et l'argent sur mon compte en banque, est-il protégé ?**  
@@ -436,6 +496,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code électoral — obligation de vote ; vote blanc · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment se passe le jour du vote ?**  
   Réf : Code électoral — modalités du vote, procuration · sources off. : 2 · revu : 2026-06-26
+- ✅ **Puis-je annuler mon voyage à forfait et être remboursé ?**  
+  Réf : Loi du 21 novembre 2017 relative à la vente de voyages à forfait (droit de résiliation et remboursement) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Que se passe-t-il si l'agence de voyages fait faillite ?**  
+  Réf : Loi du 21 novembre 2017 relative à la vente de voyages à forfait (protection contre l'insolvabilité de l'organisateur) · sources off. : 1 · revu : 2026-06-27
 
 ## 🏢 Leçons d'erreurs d'entreprises (à ne pas répéter)
 - **Kodak** → Investir dans la rupture même si elle menace le revenu actuel ; mesurer l'adoption technologique réelle, pas l'espérée.

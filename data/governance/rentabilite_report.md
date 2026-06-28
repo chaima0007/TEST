@@ -1,6 +1,6 @@
 # 💶 Expertise — rentabilité par domaine
 
-*Généré le 2026-06-27. Évaluation qualitative honnête, sans chiffre inventé.*
+*Généré le 2026-06-28. Évaluation qualitative honnête, sans chiffre inventé.*
 
 **Modèle global :** Freemium : l'information reste GRATUITE (confiance + trafic + conformité accessibilité). On monétise les SERVICES : génération de documents/lettres, assistant premium, mise en relation de professionnels, et partenariats B2B (communes, CPAS, mutuelles, syndicats). Dons possibles pour la mission (enfants placés).
 

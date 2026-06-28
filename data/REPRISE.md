@@ -1,6 +1,6 @@
 # 🧭 REPRISE — où on en est
 
-*Mémo régénéré le 2026-06-27. À lire en premier après un redémarrage.*
+*Mémo régénéré le 2026-06-28. À lire en premier après un redémarrage.*
 
 **Focus actuel :** La Loi Avec Moi = site séparé (jamais mélangé à Caelum Partner). Cloner les infos sourcées sur LE site La Loi Avec Moi. Penser rentabilité + 1 expert/domaine.
 
@@ -8,9 +8,9 @@
 1) Business plan (✅). 2) Fiabiliser/cloner le contenu sourcé dans le site La Loi Avec Moi. 3) Mise en ligne (FR+NL). 4) Documents payants (Stripe de Chaima) + analytics.
 
 ## 📊 État réel (chiffres vérifiés)
-- Réponses sourcées : **214**
-- Modules : 59 · sources officielles : 328
-- Fiches avec contacts : 129 · alertes de délai : 64
+- Réponses sourcées : **246**
+- Modules : 75 · sources officielles : 372
+- Fiches avec contacts : 161 · alertes de délai : 73
 
 ## ✅ Fait récemment
 - Domaine Travail & emploi (5 faits sourcés)

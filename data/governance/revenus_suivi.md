@@ -1,6 +1,6 @@
 # 💶 Suivi des revenus — à la trace
 
-*Généré le 2026-06-27. Avancement : 0/10 étapes faites. Aucun revenu garanti : on mesure et on ajuste.*
+*Généré le 2026-06-28. Avancement : 0/10 étapes faites. Aucun revenu garanti : on mesure et on ajuste.*
 
 | # | Étape | Qui | Indicateur | État |
 |---|---|---|---|---|

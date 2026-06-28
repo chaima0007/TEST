@@ -1,6 +1,6 @@
 # Rapport d'audit d'accessibilité (WCAG 2.2)
 
-*Généré le 2026-06-27 sur 45 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
+*Généré le 2026-06-28 sur 45 page(s). Audit automatique : attrape les erreurs mécaniques, ne remplace pas un test humain.*
 
 **Contrôles réussis : 450 · à corriger : 0**
 

@@ -1,11 +1,35 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3040 réalisations concrètes enregistrées
+### 📌 Total : 3067 réalisations concrètes enregistrées
 
+
+## 2026-06-28
+**20 réalisations** · de **10:56** à **14:04** (fenêtre de travail : 3h08)
+
+- 🕒 10:56 — page « Conformité 2026 » + simulateur « Suis-je concerné ? » (6 normes post-Omnibus, effet cascade) + lien nav; TBA actualisé
+- 🕒 10:59 — recherche plein texte + filtre par domaine sur la base juridique (composant client) — UX 238 réponses; TBA actualisé
+- 🕒 11:51 — +4 modèles de documents (garantie locative, réparations bailleur, démission, motifs de licenciement) — 16 modèles; TBA actualisé
+- 🕒 11:58 — logique d'entreprise (moat + modèle récurrent + 10 leviers) + page /offres-conformite (3 offres, combo subvention, canal fiduciaires); TBA actualisé
+- 🕒 12:00 — stratégie marketing best-in-class (playbooks prouvés SEO/outil gratuit/newsletter/fiduciaires + 10 leviers non-évidents + plan 90j)
+- 🕒 12:04 — SEO programmatique — hub /conformite + 6 pages /conformite/[norme] générées depuis la base vérifiée (generateStaticParams + metadata), CTA simulateur/offres
+- 🕒 12:08 — capture de leads sur le simulateur (formulaire e-mail + API /api/leads sans credential, transmission via webhook env LEADS_WEBHOOK_URL); TBA actualisé
+- 🕒 12:24 — section 'Actions qui t'attendent' en tête du tableau de bord (rappel permanent : activer la capture de leads, fixer les prix, coûts, déploiement)
+- 🕒 12:25 — compteur d'ancienneté sur les actions en attente (⚠️ au-delà de 3 jours) pour des rappels qui s'intensifient
+- 🕒 12:27 — page /veille (newsletter réglementaire, canal possédé) réutilisant /api/leads + source par canal; TBA actualisé
+- 🕒 12:29 — SEO longue traîne — 8 pages /conformite/secteur/[secteur] (normes par métier) + maillage interne depuis le hub
+- 🕒 12:33 — Espace enfants & jeunes (/loi-avec-moi/jeunes) — langage simple, numéros d'aide 103/112/1712, cartes vers sujets clés + lien nav; TBA actualisé
+- 🕒 13:03 — SEO par domaine — route /loi/[domaine] (67 pages indexables générées depuis la base vérifiée) + maillage interne; TBA actualisé
+- 🕒 13:27 — sitemap + robots Caelum (normes + secteurs) et sitemap La Loi Avec Moi enrichi (/loi/[domaine], /jeunes, /base-juridique) — indexation des pages programmatiques; TBA actualisé
+- 🕒 13:41 — La Loi Avec Moi -> laloiavecmoi/ (canonique, build vérifié) ; app/ racine = Caelum uniquement (routes citoyennes dupliquées retirées + nav nettoyée + registre à jour)
+- 🕒 13:47 — +2 domaines (assurance habitation/incendie, garde d'enfants/crèche & milieux d'accueil) — 69 domaines / 242 réponses, 100%; TBA actualisé
+- 🕒 13:49 — page 'Nos sources & méthode' (/transparence) — stats de vérification calculées depuis la base + liste des sources officielles; nav + sitemap; build vérifié
+- 🕒 13:56 — simulateur de montée en charge (p50/p95/p99 + débit) + base-juridique en index léger (p95 410->88ms, debit x4.8) + ancres /loi/[domaine]#id; build vérifié
+- 🕒 14:01 — +2 domaines (recouvrement amiable/sociétés de recouvrement, malfaçons & garantie décennale) — 71 domaines / 246 réponses, 100%; TBA actualisé
+- 🕒 14:04 — page 'Urgences & délais' (/loi-avec-moi/urgences) — agrège tous les délais critiques depuis la base + numéros d'urgence; nav + sitemap; build vérifié
 
 ## 2026-06-27
-**92 réalisations** · de **00:28** à **21:44** (fenêtre de travail : 21h16)
+**99 réalisations** · de **00:28** à **23:20** (fenêtre de travail : 22h52)
 
 - 🕒 00:28 — +2 faits (plan paiement SPF Finances, saisie immobilière)
 - 🕒 10:00 — site public statique SÉPARÉ généré depuis la base vérifiée
@@ -99,6 +123,13 @@
 - 🕒 21:37 — agent incrémental sécurisé (P-INCREMENTAL) — checkpoint d'historique + delta-only + normes de sécurité (sourcage, séparation projets), intégré à la flotte (orchestrateur + registre)
 - 🕒 21:40 — scalabilité & monitoring multi-plateforme (P-SCALABILITE) — capacity planning agrégé par plateforme, prévision de saturation via historique, alerte anti-saturation; intégré orchestrateur + registre
 - 🕒 21:44 — monitoring étendu (latence proxies + coût sans montants inventés) + 2 domaines citoyens (adoption, fin de vie/directives anticipées) — 55 domaines / 214 réponses, 100%
+- 🕒 21:59 — charte d'autonomie (P-AUTONOMIE) + Tableau de Bord d'Avancement dynamique (P-TBA, jauges %/point de sortie) — intégrés au registre (45 protocoles) et à l'orchestrateur
+- 🕒 22:12 — +2 domaines (recours contre l'administration/médiateur+Conseil d'État, médiation & conciliation) — 57 domaines / 218 réponses, 100%; TBA actualisé
+- 🕒 22:14 — +2 domaines (jeunes/premier emploi & stage d'insertion, logement étudiant/kot) — 59 domaines / 222 réponses, 100%
+- 🕒 22:18 — +2 domaines (achat d'un logement/compromis+notaire, assurance auto obligatoire RC) — 61 domaines / 226 réponses, 100%; TBA actualisé
+- 🕒 22:32 — +2 domaines (crédit hypothécaire/prêt logement, copropriété/syndic & charges) — 63 domaines / 230 réponses, 100%; TBA actualisé
+- 🕒 22:49 — +2 domaines (permis d'urbanisme/travaux & rénovation, voyages à forfait/annulation & faillite) — 65 domaines / 234 réponses, 100%; TBA actualisé
+- 🕒 23:20 — +2 domaines (bénévolat/volontariat, fonction publique/recrutement) — 67 domaines / 238 réponses, 100%; TBA actualisé
 
 ## 2026-06-26
 **39 réalisations** · de **10:23** à **16:35** (fenêtre de travail : 6h12)
