@@ -303,6 +303,12 @@
       "nom": "Pilotage stratégique de la croissance",
       "regle": "Couche de synthèse : prioriser où concentrer la flotte par score de levier = (impact × probabilité × scalabilité) / effort. Garde-fou : ne pas pousser la croissance si la scalabilité est CRITIQUE. Aide à la décision, sans revenu promis. Ne duplique pas P-MARCHE/P-VALORISATION/P-DIRECTION (les utilise comme entrées).",
       "verif": "python3 scripts/croissance_protocol.py"
+    },
+    {
+      "id": "P-SYNC-NORMES",
+      "nom": "Validation croisée des normes (anti-désync)",
+      "regle": "Toute norme de data/caelum doit être câblée PARTOUT : correspondance déclarée (normes_simulateur_map.json), présente dans le simulateur (conformite-2026) et en page SEO (slug data.ts). Bloque si une norme est ajoutée sans être répercutée dans tout le système.",
+      "verif": "python3 scripts/sync_normes_protocol.py"
     }
   ]
 }

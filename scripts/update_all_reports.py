@@ -51,6 +51,7 @@ ETAPES = [
 
     ("Arbitrage fournisseurs API", "scripts/provider_arbitrage_protocol.py", []),
     ("Auto-réparation", "scripts/self_healing_protocol.py", []),
+    ("Validation croisée normes", "scripts/sync_normes_protocol.py", []),
     ("Résolution de conflit", "scripts/conflict_resolution_protocol.py", []),
     ("Amélioration continue", "scripts/continuous_improvement_protocol.py", []),
     ("Point de reprise", "scripts/checkpoint_protocol.py", []),
