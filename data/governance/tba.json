@@ -103,6 +103,15 @@
             "Maillage interne depuis la base juridique"
           ],
           "prochaines_etapes": []
+        },
+        {
+          "nom": "Pages légales (mentions, confidentialité, accessibilité)",
+          "pct": 0,
+          "statut": "à faire",
+          "actions_faites": [],
+          "prochaines_etapes": [
+            "Créer mentions légales + politique de confidentialité RGPD + déclaration accessibilité"
+          ]
         }
       ]
     },
@@ -322,7 +331,7 @@
     {
       "priorite": 4,
       "action": "Déployer les 2 sites séparément",
-      "comment": "Guide clé en main prêt: DEPLOIEMENT.md (Vercel, 2 projets séparés, variables d env, webhook leads). Build des 2 apps vérifié. Dis \"go déploiement\" et je te guide écran par écran.",
+      "comment": "EN ATTENTE : valider d abord la stratégie A→Z (STRATEGIE_LANCEMENT_AZ.md) + cocher la checklist GO/NO-GO. Pas de lancement avant.",
       "statut": "en attente",
       "depuis": "2026-06-28"
     },

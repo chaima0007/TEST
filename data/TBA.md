@@ -2,10 +2,10 @@
 
 _Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **84%**
-`█████████████████░░░` 84%
+## 🚀 Avancement global de la flotte : **82%**
+`████████████████░░░░` 82%
 
-- **La Loi Avec Moi (citoyens)** — `█████████░░░░░` 62%
+- **La Loi Avec Moi (citoyens)** — `████████░░░░░░` 55%
 - **Caelum (entreprises B2B)** — `█████████████░` 95%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
@@ -13,11 +13,11 @@ _Dernière mise à jour : 2026-06-28_
 - **Activer la capture de leads** — Créer un webhook (Zapier "Catch Hook" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.
 - **Fixer les prix des offres conformité** — Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.
 - **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).
-- **Déployer les 2 sites séparément** — Guide clé en main prêt: DEPLOIEMENT.md (Vercel, 2 projets séparés, variables d env, webhook leads). Build des 2 apps vérifié. Dis "go déploiement" et je te guide écran par écran.
+- **Déployer les 2 sites séparément** — EN ATTENTE : valider d abord la stratégie A→Z (STRATEGIE_LANCEMENT_AZ.md) + cocher la checklist GO/NO-GO. Pas de lancement avant.
 - **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.
 
-## La Loi Avec Moi (citoyens) — 62%
-`████████████░░░░░░░░` 62%
+## La Loi Avec Moi (citoyens) — 55%
+`███████████░░░░░░░░░` 55%
 
 > **Point de sortie :** 84 domaines / 272 réponses (couche UE renforcée), 100% lois + sources. Build OK, 1200 simulations OK.
 
@@ -31,6 +31,7 @@ _Dernière mise à jour : 2026-06-28_
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
 | Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
+| Pages légales (mentions, confidentialité, accessibilité) | `░░░░░░░░░░░░` 0% | à faire |
 
 - **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
 - **Modèles de documents prêts à l'emploi** → prochaines étapes : (option) export PDF mis en page
@@ -38,6 +39,7 @@ _Dernière mise à jour : 2026-06-28_
 - **Versions multilingues (NL en premier)** → prochaines étapes : Traduire les modules prioritaires en NL
 - **Déploiement & hébergement** → prochaines étapes : Hébergeur + domaine + NEXT_PUBLIC_SITE_URL
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
+- **Pages légales (mentions, confidentialité, accessibilité)** → prochaines étapes : Créer mentions légales + politique de confidentialité RGPD + déclaration accessibilité
 
 ## Caelum (entreprises B2B) — 95%
 `███████████████████░` 95%
