@@ -103,6 +103,7 @@ export default function Conformite2026Page() {
           email: email.trim(),
           profil: p,
           normes: res ? res.directs.map((n) => n.nom) : [],
+          source: "simulateur-conformite-2026",
         }),
       });
       const data = await r.json();

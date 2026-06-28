@@ -27,7 +27,7 @@ export async function POST(request: Request) {
           email,
           profil: body.profil ?? null,
           normes: body.normes ?? null,
-          source: "conformite-2026",
+          source: (body as { source?: string }).source ?? "site",
           recu_le: new Date().toISOString(),
         }),
       });

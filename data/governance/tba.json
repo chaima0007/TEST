@@ -1,7 +1,7 @@
 {
   "registre": "Tableau de Bord d'Avancement (TBA)",
   "but": "Référence opérationnelle unique : état réel de chaque projet, jauges %, actions faites, prochaines étapes et point de sortie (dernier état validé) pour une continuité totale entre sessions.",
-  "derniere_mise_a_jour": "2026-06-27",
+  "derniere_mise_a_jour": "2026-06-28",
   "projets": [
     {
       "nom": "La Loi Avec Moi (citoyens)",
@@ -176,6 +176,19 @@
           ],
           "prochaines_etapes": [
             "Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima"
+          ]
+        },
+        {
+          "nom": "Newsletter de veille (canal possédé)",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Page /veille (landing newsletter)",
+            "Inscription via /api/leads (source newsletter-veille)",
+            "Sans credential (webhook env)"
+          ],
+          "prochaines_etapes": [
+            "Brancher l envoi réel quand LEADS_WEBHOOK_URL / outil e-mail sera choisi"
           ]
         }
       ]

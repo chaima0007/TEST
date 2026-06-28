@@ -1,12 +1,12 @@
 # 📊 Tableau de Bord d'Avancement — Caelum Partners
 
-_Dernière mise à jour : 2026-06-27_
+_Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **81%**
-`████████████████░░░░` 81%
+## 🚀 Avancement global de la flotte : **80%**
+`████████████████░░░░` 80%
 
 - **La Loi Avec Moi (citoyens)** — `███████░░░░░░░` 49%
-- **Caelum (entreprises B2B)** — `█████████████░` 96%
+- **Caelum (entreprises B2B)** — `█████████████░` 95%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
 
 ## 🔔 Actions qui t'attendent (Chaima)
@@ -37,8 +37,8 @@ _Dernière mise à jour : 2026-06-27_
 - **Déploiement & hébergement** → prochaines étapes : Choix hébergeur + domaine (décision budgétaire = Chaima)
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
 
-## Caelum (entreprises B2B) — 96%
-`███████████████████░` 96%
+## Caelum (entreprises B2B) — 95%
+`███████████████████░` 95%
 
 > **Point de sortie :** Veille conformité 2026 (6 normes sourcées + chiffres), agent « Appels & Financements » et simulateur /appels-projets en ligne. Séparé de La Loi Avec Moi.
 
@@ -51,11 +51,13 @@ _Dernière mise à jour : 2026-06-27_
 | Positionnement commercial & business plan | `████████████` 100% | terminé |
 | Pages SEO programmatiques (acquisition) | `████████████` 100% | terminé |
 | Capture de leads (simulateur) | `███████████░` 90% | en cours |
+| Newsletter de veille (canal possédé) | `███████████░` 90% | en cours |
 
 - **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Ajouter UBO, AML, autres obligations sectorielles
 - **Positionnement commercial & business plan** → prochaines étapes : Fixer les prix (décision Chaima)
 - **Pages SEO programmatiques (acquisition)** → prochaines étapes : Pages par secteur (longue traîne) quand le trafic le justifiera
 - **Capture de leads (simulateur)** → prochaines étapes : Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima
+- **Newsletter de veille (canal possédé)** → prochaines étapes : Brancher l envoi réel quand LEADS_WEBHOOK_URL / outil e-mail sera choisi
 
 ## Infrastructure & Gouvernance (flotte d'agents) — 97%
 `███████████████████░` 97%
