@@ -6,7 +6,7 @@ _Dernière mise à jour : 2026-06-27_
 `████████████████░░░░` 81%
 
 - **La Loi Avec Moi (citoyens)** — `███████░░░░░░░` 49%
-- **Caelum (entreprises B2B)** — `██████████████` 97%
+- **Caelum (entreprises B2B)** — `█████████████░` 96%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
 
 ## La Loi Avec Moi (citoyens) — 49%
@@ -31,8 +31,8 @@ _Dernière mise à jour : 2026-06-27_
 - **Déploiement & hébergement** → prochaines étapes : Choix hébergeur + domaine (décision budgétaire = Chaima)
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
 
-## Caelum (entreprises B2B) — 97%
-`███████████████████░` 97%
+## Caelum (entreprises B2B) — 96%
+`███████████████████░` 96%
 
 > **Point de sortie :** Veille conformité 2026 (6 normes sourcées + chiffres), agent « Appels & Financements » et simulateur /appels-projets en ligne. Séparé de La Loi Avec Moi.
 
@@ -44,10 +44,12 @@ _Dernière mise à jour : 2026-06-27_
 | Page « Conformité 2026 » + simulateur « Suis-je concerné ? » | `████████████` 100% | terminé |
 | Positionnement commercial & business plan | `████████████` 100% | terminé |
 | Pages SEO programmatiques (acquisition) | `████████████` 100% | terminé |
+| Capture de leads (simulateur) | `███████████░` 90% | en cours |
 
 - **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Ajouter UBO, AML, autres obligations sectorielles
 - **Positionnement commercial & business plan** → prochaines étapes : Fixer les prix (décision Chaima)
 - **Pages SEO programmatiques (acquisition)** → prochaines étapes : Pages par secteur (longue traîne) quand le trafic le justifiera
+- **Capture de leads (simulateur)** → prochaines étapes : Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima
 
 ## Infrastructure & Gouvernance (flotte d'agents) — 97%
 `███████████████████░` 97%

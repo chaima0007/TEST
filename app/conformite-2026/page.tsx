@@ -84,8 +84,33 @@ const NORMES: Norme[] = [
 export default function Conformite2026Page() {
   const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "" });
   const [res, setRes] = useState<{ directs: Norme[]; cascade: Norme[] } | null>(null);
+  const [email, setEmail] = useState("");
+  const [envoi, setEnvoi] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
   const pret = p.tva && p.taille && p.secteur && p.donnees;
+
+  async function envoyerLead() {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setEnvoi("erreur");
+      return;
+    }
+    setEnvoi("envoi");
+    try {
+      const r = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email.trim(),
+          profil: p,
+          normes: res ? res.directs.map((n) => n.nom) : [],
+        }),
+      });
+      const data = await r.json();
+      setEnvoi(data.ok ? "ok" : "erreur");
+    } catch {
+      setEnvoi("erreur");
+    }
+  }
 
   function analyser() {
     if (!pret) return;
@@ -252,7 +277,54 @@ export default function Conformite2026Page() {
               </div>
             )}
 
-            <div className="mt-8 rounded-2xl bg-indigo-600 text-white p-7 text-center">
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-7">
+              {envoi === "ok" ? (
+                <p className="text-center text-emerald-700 font-semibold">
+                  ✅ Merci ! Votre rapport personnalisé arrive. On vous recontacte pour la mise en conformité.
+                </p>
+              ) : (
+                <>
+                  <h3 className="text-lg font-bold text-slate-900">Recevoir mon rapport par e-mail</h3>
+                  <p className="text-slate-600 text-sm mt-1">
+                    Le détail des normes qui vous concernent + les premières actions. Sans engagement.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                    <label htmlFor="lead-email" className="sr-only">
+                      Votre adresse e-mail
+                    </label>
+                    <input
+                      id="lead-email"
+                      type="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (envoi === "erreur") setEnvoi("idle");
+                      }}
+                      placeholder="vous@entreprise.be"
+                      className="flex-1 rounded-xl border border-slate-300 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                    <button
+                      type="button"
+                      onClick={envoyerLead}
+                      disabled={envoi === "envoi"}
+                      className="bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+                    >
+                      {envoi === "envoi" ? "Envoi…" : "Recevoir mon rapport"}
+                    </button>
+                  </div>
+                  {envoi === "erreur" && (
+                    <p className="text-sm text-red-600 mt-2">
+                      Vérifiez votre adresse e-mail et réessayez.
+                    </p>
+                  )}
+                  <p className="text-xs text-slate-400 mt-3">
+                    Vos données servent uniquement à vous recontacter. Aucun partage à des tiers.
+                  </p>
+                </>
+              )}
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-indigo-600 text-white p-7 text-center">
               <h3 className="text-xl font-bold">On vous met en conformité</h3>
               <p className="text-indigo-100 mt-2 text-sm leading-relaxed">
                 Diagnostic, mise en règle (automatisée quand c&apos;est possible), et veille continue.

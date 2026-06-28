@@ -163,6 +163,20 @@
           "prochaines_etapes": [
             "Pages par secteur (longue traîne) quand le trafic le justifiera"
           ]
+        },
+        {
+          "nom": "Capture de leads (simulateur)",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Formulaire e-mail sur le simulateur",
+            "API /api/leads SANS credential",
+            "Transmission via webhook (variable d env LEADS_WEBHOOK_URL)",
+            "Confirmation + RGPD mini-mention"
+          ],
+          "prochaines_etapes": [
+            "Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima"
+          ]
         }
       ]
     },
