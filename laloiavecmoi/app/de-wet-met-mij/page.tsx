@@ -21,6 +21,9 @@ const themas: Thema[] = [
   { titel: "Administratieve stappen", beschrijving: "Beroep, termijnen, ombudsman.", href: "/de-wet-met-mij/administratie", emoji: "📄" },
   { titel: "Schulden", beschrijving: "Collectieve schuldenregeling, schuldbemiddelaar, bescherming van uw loon.", href: "/de-wet-met-mij/schulden", emoji: "💶" },
   { titel: "Geweld & slachtofferhulp", beschrijving: "1712, tijdelijk huisverbod, klacht, gratis slachtofferhulp.", href: "/de-wet-met-mij/geweld", emoji: "🆘" },
+  { titel: "Gezondheid & patiëntenrechten", beschrijving: "Toestemming, inzage in uw dossier, klachtrecht en ombudsfunctie.", href: "/de-wet-met-mij/gezondheid", emoji: "🩺" },
+  { titel: "Energie", beschrijving: "Betalingsmoeilijkheden, sociaal tarief, afsluiting, van leverancier veranderen.", href: "/de-wet-met-mij/energie", emoji: "⚡" },
+  { titel: "Bescherming van ouderen", beschrijving: "Ouderenmis(be)handeling herkennen, 1712, Woonzorglijn, VLOCO.", href: "/de-wet-met-mij/ouderen", emoji: "🧓" },
 ];
 
 export default function DeWetMetMijPage() {

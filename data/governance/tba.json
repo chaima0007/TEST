@@ -62,17 +62,18 @@
         },
         {
           "nom": "Versions multilingues (NL en premier)",
-          "pct": 40,
+          "pct": 55,
           "statut": "en cours",
           "actions_faites": [
             "Bannière multilingue (14 langues, slogan)",
             "Aide à la traduction auto sur la base juridique",
-            "Espace NL /de-wet-met-mij (8 thèmes prioritaires)",
-            "Fiches NL sourcées : wonen, werk, juridische-hulp, consumentenrecht, familie, administratie, schulden, geweld",
-            "Sources officielles NL vérifiées (FOD Economie, FOD Financiën, hulplijn 1712, Vlaanderen.be)"
+            "Espace NL /de-wet-met-mij (11 thèmes prioritaires)",
+            "Fiches NL sourcées : wonen, werk, juridische-hulp, consumentenrecht, familie, administratie, schulden, geweld, gezondheid, energie, ouderen",
+            "Énergie NL = règles FLAMANDES (VREG/Fluvius/LAC), pas les règles wallonnes (régionalisation respectée)",
+            "Sources officielles NL vérifiées (FOD Volksgezondheid, eJustice, FOD Economie, FOD Financiën, 1712, Vlaanderen.be, Vlaamse Nutsregulator, VLOCO)"
           ],
           "prochaines_etapes": [
-            "Poursuivre la traduction NL des modules restants (santé, énergie, aînés)"
+            "Poursuivre la traduction NL (logement/huur détaillé, famille approfondie) selon le trafic"
           ]
         },
         {
