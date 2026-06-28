@@ -25,6 +25,7 @@
     "copropriete.json": "e526d0f38d6781e36e50a5e41340dd5fb9cfd49ba0c818a266028d2374c9f543",
     "couple.json": "322255867e69213b73ffb8e84f91ec3ba22bc6d9c279479384b800880443b74a",
     "credit.json": "7aef58223ed01ba6605af4bb7f57afd51a0f641d76e75b28771df3e08691c62b",
+    "credit_consommation.json": "88a08ce3982846a92aaaeba59808769321a33dbee4d585ef81c165e5e1e4d970",
     "credit_hypothecaire.json": "11fb15955a2beca0fe719f9f410c7535a6fe1a866789925b306dd26172ebb1a7",
     "deces.json": "586de708e01c7a71e8ac923bfaef0603fa23b902aaa241dca5322153210a53f4",
     "dechets.json": "44d206c56cd94c6989db237b464a1e4d92305933b5d6421e1438f8089febbc56",
@@ -73,6 +74,7 @@
     "vie_privee_rgpd.json": "e8e8039f584cc8a1bfe1bff3a70c75bc8f88e4af6e6a2a484e341c0162d29e41",
     "violences_conjugales.json": "68a6113b61676f5e0acd6a5ef8e9498ffb641dc37ad4d11356c4be00a30300bf",
     "voisinage.json": "45bb90acab7eed69019068a98163d08fbc40430e093904742d43ba9fd8e6f9f5",
+    "voiture_occasion.json": "4f60b09e8f7c63f3d4d84b59263ba5d7da4c4f03f5d6384d66cd529e22861b48",
     "vote_electoral.json": "ec0652b16be8f1d3da80882a4150c30291361d7ee865b192f54e55c51a871724",
     "voyages.json": "eb3d9aeabb8f48738353a411a0e0c8da26ce2742526ed6a8c77d02aefecee9e3"
   },

@@ -88,7 +88,9 @@
         "assurance_habitation",
         "garde_enfants",
         "recouvrement_amiable",
-        "malfacons_travaux"
+        "malfacons_travaux",
+        "credit_consommation",
+        "voiture_occasion"
       ]
     }
   }

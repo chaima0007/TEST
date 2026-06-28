@@ -659,6 +659,24 @@
         "malfacons_travaux"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "credit_consommation",
+      "nom": "Crédit à la consommation",
+      "statut": "couvert",
+      "modules": [
+        "credit_consommation"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "voiture_occasion",
+      "nom": "Achat véhicule d occasion",
+      "statut": "couvert",
+      "modules": [
+        "voiture_occasion"
+      ],
+      "priorite": "haute"
     }
   ]
 }

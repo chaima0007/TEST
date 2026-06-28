@@ -1,0 +1,47 @@
+{
+  "module": "credit_consommation",
+  "titre": "Crédit à la consommation (prêt à tempérament)",
+  "domaine": "Crédit à la consommation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique, livre VII — crédit à la consommation (prêt à tempérament, ouverture de crédit)",
+    "portee": "Droits de l'emprunteur : information, rétractation, TAEG plafonné",
+    "source_officielle": "https://economie.fgov.be/fr/themes/ventes/reglementation/delais-de-retractation/credit-la-consommation"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Un crédit vous engage et doit être remboursé. Les taux et plafonds évoluent ; comparez et ne signez jamais sous pression.",
+  "faits": [
+    {
+      "id": "CREDITCONSO-RETRACTATION-001",
+      "question": "J'ai signé un prêt et je regrette : puis-je revenir en arrière ?",
+      "reponse": "Oui. Pour un crédit à la consommation, vous avez un droit de rétractation de 14 jours après la conclusion du contrat, sans devoir vous justifier. Envoyez un courrier recommandé au prêteur pour l'informer que vous renoncez. Vous devrez rembourser les sommes déjà reçues, plus les intérêts dus, en principe dans les 30 jours. Profitez de ce délai pour relire le contrat à tête reposée : montant, durée, mensualités, coût total.",
+      "reference_legale": "Code de droit économique, livre VII — droit de rétractation du crédit à la consommation (art. VII.83)",
+      "alerte_delai": "Droit de rétractation : 14 jours après la signature, par lettre recommandée au prêteur.",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "droits de l'emprunteur, rétractation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/ventes/reglementation/delais-de-retractation/credit-la-consommation", "intitule": "SPF Économie — Crédit à la consommation"},
+        {"type": "officiel", "url": "https://consumerconnect.be/fr/themes/services-financiers/pret/credit-a-la-consommation/droit-de-retractation", "intitule": "ConsumerConnect — Droit de rétractation d'un crédit"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "CREDITCONSO-TAEG-001",
+      "question": "Comment savoir si le taux qu'on me propose est correct ?",
+      "reponse": "Regardez le TAEG (taux annuel effectif global) : c'est le coût réel du crédit, qui inclut le taux d'intérêt ET tous les frais (dossier, gestion, assurance obligatoire éventuelle). Comparez toujours les offres sur le TAEG, pas sur la mensualité. Le SPF Économie fixe chaque trimestre un TAEG maximum légal selon le montant emprunté : un taux qui dépasse ce plafond est illégal. Avant de signer, vérifiez aussi que le prêteur a bien évalué votre capacité de remboursement (c'est une obligation légale).",
+      "reference_legale": "Code de droit économique, livre VII — TAEG et taux maximaux du crédit à la consommation",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "TAEG maximums légaux"},
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "si le remboursement devient difficile"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/credit-la-consommation", "intitule": "SPF Économie — Crédit à la consommation"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/emprunter/le-credit-la-consommation", "intitule": "Wikifin (FSMA) — Le crédit à la consommation"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}
