@@ -47,6 +47,7 @@ ETAPES = [
     ("Protocole incrémental", "scripts/incremental_protocol.py", []),
     ("Scalabilité & monitoring", "scripts/scalability_monitor.py", []),
     ("Tableau de bord d'avancement", "scripts/tba_protocol.py", []),
+    ("Arbitrage fournisseurs API", "scripts/provider_arbitrage_protocol.py", []),
     ("Auto-réparation", "scripts/self_healing_protocol.py", []),
     ("Résolution de conflit", "scripts/conflict_resolution_protocol.py", []),
     ("Amélioration continue", "scripts/continuous_improvement_protocol.py", []),

@@ -1,0 +1,29 @@
+{
+  "registre": "Arbitrage des fournisseurs d'API / services externes",
+  "but": "Choisir en continu le meilleur fournisseur par service (qualité/prix/latence) et basculer automatiquement en cas de panne ou de meilleure offre.",
+  "ponderation": {"qualite": 0.5, "prix": 0.3, "latence": 0.2},
+  "avertissement": "Valeurs à calibrer avec les VRAIS chiffres des fournisseurs (aucune donnée vendeur inventée). L'exemple ci-dessous illustre la logique ; remplacez par vos contrats réels.",
+  "exemple": true,
+  "services": [
+    {
+      "service": "LLM",
+      "fournisseurs": [
+        {"nom": "fournisseur_principal", "prix": 3, "qualite": 0.95, "latence_ms": 800, "dispo": true, "actif": true},
+        {"nom": "fournisseur_secours", "prix": 2, "qualite": 0.85, "latence_ms": 600, "dispo": true, "actif": false}
+      ]
+    },
+    {
+      "service": "Hebergement",
+      "fournisseurs": [
+        {"nom": "hebergeur_A", "prix": 2, "qualite": 0.9, "latence_ms": 120, "dispo": true, "actif": true},
+        {"nom": "hebergeur_B", "prix": 1, "qualite": 0.88, "latence_ms": 140, "dispo": true, "actif": false}
+      ]
+    },
+    {
+      "service": "Email",
+      "fournisseurs": [
+        {"nom": "email_A", "prix": 1, "qualite": 0.9, "latence_ms": 300, "dispo": true, "actif": true}
+      ]
+    }
+  ]
+}

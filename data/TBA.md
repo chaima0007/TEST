@@ -14,6 +14,7 @@ _Dernière mise à jour : 2026-06-28_
 - **Fixer les prix des offres conformité** — Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.
 - **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).
 - **Déployer les 2 sites séparément** — laloiavecmoi/ (citoyens) et app/ racine (Caelum) sont 2 apps distinctes qui se buildent. Choisir hébergeur + domaine pour chacune (ex. Vercel). Je te guide.
+- **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.
 
 ## La Loi Avec Moi (citoyens) — 59%
 `████████████░░░░░░░░` 59%

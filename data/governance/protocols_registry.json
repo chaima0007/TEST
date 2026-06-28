@@ -291,6 +291,12 @@
       "nom": "Amélioration continue (auto-réglage borné)",
       "regle": "Les agents analysent leurs résultats et auto-règlent leurs paramètres (seuils) dans des bornes sûres, journalisées et réversibles. PAS de réécriture de code arbitraire.",
       "verif": "python3 scripts/continuous_improvement_protocol.py"
+    },
+    {
+      "id": "P-ARBITRAGE-API",
+      "nom": "Arbitrage des fournisseurs d API/services",
+      "regle": "Choisir en continu le meilleur fournisseur par service (score pondéré qualité/prix/latence) et basculer automatiquement : failover si le fournisseur actif tombe, recommandation si meilleure offre. Arbitre parmi les fournisseurs configurés (api_providers.json).",
+      "verif": "python3 scripts/provider_arbitrage_protocol.py"
     }
   ]
 }

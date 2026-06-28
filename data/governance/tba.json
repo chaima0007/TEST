@@ -322,6 +322,13 @@
       "comment": "laloiavecmoi/ (citoyens) et app/ racine (Caelum) sont 2 apps distinctes qui se buildent. Choisir hébergeur + domaine pour chacune (ex. Vercel). Je te guide.",
       "statut": "en attente",
       "depuis": "2026-06-28"
+    },
+    {
+      "priorite": 5,
+      "action": "Calibrer les fournisseurs d API",
+      "comment": "Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.",
+      "statut": "en attente",
+      "depuis": "2026-06-28"
     }
   ]
 }
