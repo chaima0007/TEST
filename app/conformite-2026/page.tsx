@@ -15,7 +15,7 @@ type Norme = {
   concerne: (p: Profil) => "oui" | "cascade" | "non";
 };
 
-type Profil = { tva: string; taille: string; secteur: string; donnees: string };
+type Profil = { tva: string; taille: string; secteur: string; donnees: string; ia: string; numerique_public: string };
 
 // taille en nombre d'employés (seuils simplifiés, croisés avec le CA dans les libellés)
 const TAILLES = [
@@ -79,15 +79,39 @@ const NORMES: Norme[] = [
     echeance: "Application 26/07/2029",
     concerne: (p) => (nEmp(p.taille) >= 5000 ? "oui" : nEmp(p.taille) >= 250 ? "cascade" : "non"),
   },
+  {
+    id: "ubo",
+    nom: "Registre UBO — bénéficiaires effectifs",
+    change: "Déclarer ses bénéficiaires effectifs au registre UBO et CONFIRMER les données chaque année (même sans changement).",
+    sanction: "Amende administrative de 250 € à 50 000 € + risque de radiation de la BCE",
+    echeance: "Déclaration sous 30 j + confirmation annuelle",
+    concerne: () => "oui",
+  },
+  {
+    id: "ai-act",
+    nom: "AI Act — règlement IA",
+    change: "Obligations graduées selon le risque pour qui développe, fournit ou UTILISE des systèmes d'IA.",
+    sanction: "Jusqu'à 35 M€ ou 7 % du CA mondial (pratiques interdites) · 15 M€ ou 3 % (autres)",
+    echeance: "Échelonné : 2025 → 2027",
+    concerne: (p) => (p.ia === "oui" ? "oui" : "non"),
+  },
+  {
+    id: "eaa",
+    nom: "Accessibilité numérique (European Accessibility Act)",
+    change: "Sites, applis, e-commerce et services numériques grand public doivent être accessibles (+ déclaration d'accessibilité).",
+    sanction: "Amendes (jusqu'à ~200 000 € par manquement) · retrait possible du marché",
+    echeance: "Depuis le 28/06/2025",
+    concerne: (p) => (p.numerique_public === "oui" ? "oui" : "non"),
+  },
 ];
 
 export default function Conformite2026Page() {
-  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "" });
+  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "" });
   const [res, setRes] = useState<{ directs: Norme[]; cascade: Norme[] } | null>(null);
   const [email, setEmail] = useState("");
   const [envoi, setEnvoi] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
-  const pret = p.tva && p.taille && p.secteur && p.donnees;
+  const pret = p.tva && p.taille && p.secteur && p.donnees && p.ia && p.numerique_public;
 
   async function envoyerLead() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
@@ -215,6 +239,16 @@ export default function Conformite2026Page() {
           <Choix
             titre="4. Traitez-vous des données personnelles (clients, employés) ?"
             cle="donnees"
+            options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
+          />
+          <Choix
+            titre="5. Utilisez-vous de l'intelligence artificielle (outils, automatisation) ?"
+            cle="ia"
+            options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non / je ne sais pas" }]}
+          />
+          <Choix
+            titre="6. Proposez-vous un site/service numérique au grand public (e-commerce, app) ?"
+            cle="numerique_public"
             options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
           />
 

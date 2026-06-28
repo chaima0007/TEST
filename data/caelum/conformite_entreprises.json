@@ -6,7 +6,7 @@
   "juridiction": "BE/UE",
   "langue": "fr",
   "separation": "Projet ENTREPRISES (B2B). Ne pas mélanger avec La Loi Avec Moi (citoyens).",
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-28",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale à but commercial/pédagogique, à jour à la date de revue. Les seuils et montants évoluent ; toute décision importante est validée avec notre réseau d'experts (avocats, comptables). Sources officielles citées pour chaque norme.",
   "normes": [
@@ -21,8 +21,16 @@
       "solution_caelum": "Onboarding Peppol guidé, connexion du logiciel de facturation, vérification du format EN 16931, et bascule assistée. Produit d'appel accessible à toutes les PME.",
       "automatisation": "ÉLEVÉE — détection du statut TVA, génération/validation automatique du format, alerte si une facture sortante n'est pas conforme.",
       "sources": [
-        {"type": "officiel", "url": "https://efacture.belgium.be/fr/article/pour-qui-la-facturation-electronique-deviendra-t-elle-obligatoire", "intitule": "SPF Finances — e-facture : pour qui ?"},
-        {"type": "officiel", "url": "https://finances.wallonie.be/accueil-entreprises/actualites/actualites/facturation-electronique-une-obligation-des-le-1er-janvier-2026-etes-vous-prets.html", "intitule": "SPW Finances — Obligation 1er janvier 2026"}
+        {
+          "type": "officiel",
+          "url": "https://efacture.belgium.be/fr/article/pour-qui-la-facturation-electronique-deviendra-t-elle-obligatoire",
+          "intitule": "SPF Finances — e-facture : pour qui ?"
+        },
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/accueil-entreprises/actualites/actualites/facturation-electronique-une-obligation-des-le-1er-janvier-2026-etes-vous-prets.html",
+          "intitule": "SPW Finances — Obligation 1er janvier 2026"
+        }
       ],
       "date_verification": "2026-06-27"
     },
@@ -37,8 +45,16 @@
       "solution_caelum": "Diagnostic « suis-je concerné ? », accompagnement à l'enregistrement CCB, mise en place des mesures de base et plan de gestion des incidents. Argument fort : protéger le dirigeant.",
       "automatisation": "MOYENNE — auto-évaluation du périmètre, checklist de mesures, rappels d'échéances ; mise en œuvre technique escaladée à des partenaires.",
       "sources": [
-        {"type": "officiel", "url": "https://ccb.belgium.be/fr/nis2", "intitule": "Centre pour la Cybersécurité Belgique — NIS2"},
-        {"type": "officiel", "url": "https://ccb.belgium.be/fr/news/mesures-administratives-et-amendes-sous-nis2", "intitule": "CCB — Mesures administratives et amendes NIS2"}
+        {
+          "type": "officiel",
+          "url": "https://ccb.belgium.be/fr/nis2",
+          "intitule": "Centre pour la Cybersécurité Belgique — NIS2"
+        },
+        {
+          "type": "officiel",
+          "url": "https://ccb.belgium.be/fr/news/mesures-administratives-et-amendes-sous-nis2",
+          "intitule": "CCB — Mesures administratives et amendes NIS2"
+        }
       ],
       "date_verification": "2026-06-27"
     },
@@ -53,8 +69,16 @@
       "solution_caelum": "Test de périmètre à jour (suis-je encore dans le scope ?), préparation des données ESG, et surtout aide aux PME pour répondre aux exigences ESG de leurs grands clients.",
       "automatisation": "MOYENNE — test d'éligibilité automatique, collecte guidée des indicateurs, modèles de réponses ESG.",
       "sources": [
-        {"type": "officiel", "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en", "intitule": "Commission européenne — Due diligence durabilité"},
-        {"type": "secondaire", "url": "https://accountancyeurope.eu/publications/omnibus-explained-key-changes-to-the-csrd-and-csddd/", "intitule": "Accountancy Europe — Omnibus : changements CSRD/CSDDD"}
+        {
+          "type": "officiel",
+          "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en",
+          "intitule": "Commission européenne — Due diligence durabilité"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://accountancyeurope.eu/publications/omnibus-explained-key-changes-to-the-csrd-and-csddd/",
+          "intitule": "Accountancy Europe — Omnibus : changements CSRD/CSDDD"
+        }
       ],
       "date_verification": "2026-06-27"
     },
@@ -69,8 +93,16 @@
       "solution_caelum": "Pour les grands groupes : cartographie du devoir de vigilance. Pour les PME fournisseurs : se préparer à l'effet de cascade (les grands donneurs d'ordre répercutent leurs obligations le long de la chaîne de valeur).",
       "automatisation": "MOYENNE — cartographie de la chaîne de valeur, questionnaires fournisseurs, suivi des actions.",
       "sources": [
-        {"type": "officiel", "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en", "intitule": "Commission européenne — Due diligence durabilité"},
-        {"type": "secondaire", "url": "https://www.business-humanrights.org/en/latest-news/csddd-omnibus/", "intitule": "BHRRC — CSDDD : amendements Omnibus entrés en vigueur"}
+        {
+          "type": "officiel",
+          "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en",
+          "intitule": "Commission européenne — Due diligence durabilité"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.business-humanrights.org/en/latest-news/csddd-omnibus/",
+          "intitule": "BHRRC — CSDDD : amendements Omnibus entrés en vigueur"
+        }
       ],
       "date_verification": "2026-06-27"
     },
@@ -85,8 +117,16 @@
       "solution_caelum": "Audit RGPD express, registre des traitements, politique de confidentialité et bandeau cookies conformes, plan de mise en conformité priorisé.",
       "automatisation": "ÉLEVÉE — questionnaire d'audit, génération automatique du registre et des mentions, détection des manquements fréquents.",
       "sources": [
-        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen", "intitule": "Autorité de protection des données (APD)"},
-        {"type": "officiel", "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679", "intitule": "EUR-Lex — Règlement (UE) 2016/679 (RGPD)"}
+        {
+          "type": "officiel",
+          "url": "https://www.autoriteprotectiondonnees.be/citoyen",
+          "intitule": "Autorité de protection des données (APD)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679",
+          "intitule": "EUR-Lex — Règlement (UE) 2016/679 (RGPD)"
+        }
       ],
       "date_verification": "2026-06-27"
     },
@@ -101,10 +141,90 @@
       "solution_caelum": "Mise en place d'un canal de signalement conforme, procédure de traitement, et information du personnel.",
       "automatisation": "ÉLEVÉE — canal de signalement fourni en ligne, accusés de réception et suivi des délais automatisés.",
       "sources": [
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/line-business/protection-des-lanceurs-dalerte", "intitule": "SPF Économie — Protection des lanceurs d'alerte"},
-        {"type": "officiel", "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32019L1937", "intitule": "EUR-Lex — Directive (UE) 2019/1937"}
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/line-business/protection-des-lanceurs-dalerte",
+          "intitule": "SPF Économie — Protection des lanceurs d'alerte"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32019L1937",
+          "intitule": "EUR-Lex — Directive (UE) 2019/1937"
+        }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "AI-ACT",
+      "norme": "AI Act — règlement européen sur l'intelligence artificielle",
+      "changement": "Le règlement encadre la conception, la fourniture ET l'usage de systèmes d'IA, avec des obligations graduées selon le risque (interdits, haut risque, IA générative, transparence).",
+      "concernes": "Toute entreprise qui développe, fournit ou UTILISE des systèmes d'IA dans l'UE (large : RH, crédit, marketing, support…).",
+      "sanction": "Amendes jusqu'à 35 millions € ou 7 % du chiffre d'affaires mondial (pratiques interdites) ; jusqu'à 15 millions € ou 3 % pour les autres manquements (le montant le plus élevé s'applique).",
+      "echeance": "Pratiques interdites applicables depuis le 2 février 2025 ; modèles d'IA générale depuis le 2 août 2025 ; gros des obligations le 2 août 2026 ; systèmes à haut risque (annexe III) au 2 décembre 2027.",
+      "reference_legale": "Règlement (UE) 2024/1689 du 13 juin 2024 établissant des règles harmonisées sur l'intelligence artificielle (AI Act)",
+      "solution_caelum": "Inventaire des usages d'IA, classement par niveau de risque, mise en conformité (transparence, documentation, supervision humaine) et veille des échéances.",
+      "automatisation": "MOYENNE — auto-questionnaire de classification des usages IA, checklist par niveau de risque, rappels d'échéances.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689",
+          "intitule": "EUR-Lex — Règlement (UE) 2024/1689 (AI Act)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai",
+          "intitule": "Commission européenne — Cadre réglementaire de l'IA"
+        }
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "EAA",
+      "norme": "Accessibilité numérique — European Accessibility Act",
+      "changement": "Les produits et services numériques destinés aux consommateurs doivent être accessibles (sites, applis, e-commerce, banque en ligne, télécoms, distributeurs, e-books…), avec une déclaration d'accessibilité publiée.",
+      "concernes": "Entreprises offrant ces produits/services aux consommateurs en Belgique (e-commerce, banques, télécoms…). Exemption pour les micro-entreprises de moins de 10 salariés ET moins de 2 M€ de CA.",
+      "sanction": "Amendes (jusqu'à environ 200 000 € par manquement selon gravité et taille) ; produits non conformes pouvant être retirés/rappelés du marché.",
+      "echeance": "Applicable depuis le 28 juin 2025 ; période de transition pour certains produits physiques jusqu'au 28 juin 2030.",
+      "reference_legale": "Directive (UE) 2019/882 (European Accessibility Act) et sa transposition en droit belge",
+      "solution_caelum": "Audit d'accessibilité (WCAG 2.2 AA / EN 301 549), plan de correction priorisé et rédaction de la déclaration d'accessibilité.",
+      "automatisation": "MOYENNE — pré-scan d'accessibilité, checklist WCAG, génération de la déclaration d'accessibilité.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en",
+          "intitule": "Commission européenne — European Accessibility Act"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32019L0882",
+          "intitule": "EUR-Lex — Directive (UE) 2019/882"
+        }
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UBO",
+      "norme": "Registre UBO — bénéficiaires effectifs",
+      "changement": "Toute entité juridique doit déclarer ses bénéficiaires effectifs au registre UBO et CONFIRMER ces données chaque année (même sans changement), en plus de toute mise à jour.",
+      "concernes": "Toutes les sociétés (SRL, SA, SC…), ASBL, fondations et constructions juridiques. Un bénéficiaire effectif = personne détenant, directement ou non, plus de 25 % des parts/droits de vote.",
+      "sanction": "Amende administrative de 250 € à 50 000 € (à charge solidaire des dirigeants) ; risque de radiation de la Banque-Carrefour des Entreprises.",
+      "echeance": "Déclaration dans les 30 jours suivant la constitution ; confirmation ANNUELLE obligatoire.",
+      "reference_legale": "Loi du 18 septembre 2017 (prévention du blanchiment — registre UBO) et arrêté royal du 30 juillet 2018",
+      "solution_caelum": "Identification des bénéficiaires effectifs, dépôt initial et mise en place d'un rappel de confirmation annuelle.",
+      "automatisation": "ÉLEVÉE — détection de l'obligation, rappel annuel automatique, checklist de dépôt.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/E-services/ubo-register",
+          "intitule": "SPF Finances — Registre UBO"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/enregistrement-des",
+          "intitule": "SPF Économie — Enregistrement des bénéficiaires effectifs"
+        }
+      ],
+      "date_verification": "2026-06-28"
     }
   ]
 }

@@ -25,6 +25,9 @@ const SLUGS: Record<string, string> = {
   "CSDDD-OMNIBUS": "csddd",
   RGPD: "rgpd",
   "LANCEURS-ALERTE": "lanceurs-alerte",
+  "AI-ACT": "ai-act",
+  EAA: "accessibilite-numerique",
+  UBO: "registre-ubo",
 };
 
 export function loadNormes(): Norme[] {
