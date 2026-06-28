@@ -276,6 +276,20 @@
           "prochaines_etapes": [
             "Définir NEXT_PUBLIC_SITE_URL au déploiement (Caelum)"
           ]
+        },
+        {
+          "nom": "Tests de charge & latence",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "Simulateur de charge (p50/p95/p99 + débit + erreurs)",
+            "Test réel sur build local",
+            "Optimisation base-juridique: p95 410ms->88ms, debit x4.8",
+            "Routes clés <100ms p95, 0% erreur"
+          ],
+          "prochaines_etapes": [
+            "Re-tester sur l hébergement réel après déploiement"
+          ]
         }
       ]
     }

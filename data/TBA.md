@@ -2,12 +2,12 @@
 
 _Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **84%**
-`█████████████████░░░` 84%
+## 🚀 Avancement global de la flotte : **83%**
+`█████████████████░░░` 83%
 
 - **La Loi Avec Moi (citoyens)** — `████████░░░░░░` 59%
 - **Caelum (entreprises B2B)** — `█████████████░` 95%
-- **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
+- **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
 ## 🔔 Actions qui t'attendent (Chaima)
 - **Activer la capture de leads** — Créer un webhook (Zapier "Catch Hook" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.
@@ -60,8 +60,8 @@ _Dernière mise à jour : 2026-06-28_
 - **Capture de leads (simulateur)** → prochaines étapes : Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima
 - **Newsletter de veille (canal possédé)** → prochaines étapes : Brancher l envoi réel quand LEADS_WEBHOOK_URL / outil e-mail sera choisi
 
-## Infrastructure & Gouvernance (flotte d'agents) — 97%
-`███████████████████░` 97%
+## Infrastructure & Gouvernance (flotte d'agents) — 96%
+`███████████████████░` 96%
 
 > **Point de sortie :** 43 protocoles. Agents incrémental + scalabilité/monitoring intégrés à l'orchestrateur, verdict global OK.
 
@@ -73,7 +73,9 @@ _Dernière mise à jour : 2026-06-28_
 | Charte d'autonomie (P-AUTONOMIE) | `████████████` 100% | terminé |
 | Tableau de Bord d'Avancement (P-TBA) | `████████████` 100% | terminé |
 | SEO technique (sitemap + robots) | `███████████░` 95% | en cours |
+| Tests de charge & latence | `███████████░` 95% | en cours |
 
 - **Protocoles de gouvernance** → prochaines étapes : Revue périodique
 - **Scalabilité & monitoring (P-SCALABILITE)** → prochaines étapes : Renseigner les vrais coûts (décision Chaima)
 - **SEO technique (sitemap + robots)** → prochaines étapes : Définir NEXT_PUBLIC_SITE_URL au déploiement (Caelum)
+- **Tests de charge & latence** → prochaines étapes : Re-tester sur l hébergement réel après déploiement

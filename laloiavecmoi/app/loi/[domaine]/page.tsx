@@ -86,7 +86,7 @@ export default async function DomainePage({ params }: { params: Promise<{ domain
 
       <div className="max-w-3xl mx-auto px-6 py-10 grid gap-5">
         {m.faits.map((f) => (
-          <article key={f.id} className="rounded-2xl border border-slate-200 p-5 bg-white">
+          <article key={f.id} id={f.id} className="rounded-2xl border border-slate-200 p-5 bg-white scroll-mt-24">
             <h2 className="font-semibold text-lg text-slate-900">{f.question}</h2>
             <p className="mt-2 text-slate-700 leading-relaxed">{f.reponse}</p>
 

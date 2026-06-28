@@ -3,25 +3,14 @@ import fs from "node:fs";
 import path from "node:path";
 import BaseJuridiqueClient from "./BaseJuridiqueClient";
 
-// Page "Base juridique vérifiée" — charge les réponses sourcées de data/belgium/*.json (serveur)
-// et délègue l'affichage + la recherche/filtre au composant client.
-// Source de vérité unique = la base vérifiée.
+// Page "Base juridique vérifiée" — INDEX LÉGER + recherche (rendu statique).
+// On ne charge PAS les 242 réponses complètes (trop lourd) : on passe un index compact
+// (domaine + questions) ; les réponses complètes vivent sur /loi/[domaine] (rapides).
 
-type Source = { type?: string; url?: string; intitule?: string };
-type Contact = { nom?: string; numero?: string; lien?: string; pour?: string; dispo?: string };
-type Fait = {
-  id: string;
-  question: string;
-  reponse: string;
-  reference_legale?: string;
-  alerte_delai?: string;
-  contacts?: Contact[];
-  sources?: Source[];
-  date_verification?: string;
-};
-type Module = { module: string; titre: string; domaine?: string; faits: Fait[] };
+type FaitLeger = { id: string; question: string };
+type ModuleLeger = { module: string; titre: string; faits: FaitLeger[] };
 
-function chargerModules(): Module[] {
+function chargerIndex(): ModuleLeger[] {
   const dir = path.join(process.cwd(), "data", "belgium");
   let fichiers: string[] = [];
   try {
@@ -29,27 +18,36 @@ function chargerModules(): Module[] {
   } catch {
     return [];
   }
-  const mods: Module[] = [];
+  const mods: ModuleLeger[] = [];
   for (const f of fichiers.sort()) {
     try {
       const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
-      if (d && Array.isArray(d.faits) && d.faits.length) mods.push(d);
+      if (d && Array.isArray(d.faits) && d.faits.length) {
+        mods.push({
+          module: d.module,
+          titre: d.titre,
+          faits: d.faits.map((x: { id: string; question: string }) => ({ id: x.id, question: x.question })),
+        });
+      }
     } catch {
-      /* ignore fichier illisible */
+      /* ignore */
     }
   }
   return mods.sort((a, b) => (a.titre || "").localeCompare(b.titre || ""));
 }
 
+// Rendu statique : index figé au build → page légère servie instantanément, tient la charge.
+export const dynamic = "force-static";
+
 export const metadata = {
   title: "Base juridique vérifiée — La Loi Avec Moi",
   description:
-    "Toutes nos réponses juridiques, chacune avec sa source officielle, sa référence légale et sa date de vérification. Recherche et filtre par domaine.",
+    "Toutes nos réponses juridiques par domaine, chacune sourcée et datée. Recherchez votre question ou choisissez un domaine.",
 };
 
 export default function BaseJuridiquePage() {
-  const modules = chargerModules();
-  const totalFaits = modules.reduce((n, m) => n + m.faits.length, 0);
+  const index = chargerIndex();
+  const totalFaits = index.reduce((n, m) => n + m.faits.length, 0);
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -68,13 +66,13 @@ export default function BaseJuridiquePage() {
         <div className="max-w-5xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-bold">Base juridique vérifiée</h1>
           <p className="mt-3 text-blue-100 max-w-2xl">
-            {totalFaits} réponses sur {modules.length} domaines — chacune avec sa source officielle,
-            sa référence légale et sa date de vérification.
+            {totalFaits} réponses sur {index.length} domaines — chacune sourcée et datée. Cherchez votre question
+            ou choisissez un domaine.
           </p>
         </div>
       </section>
 
-      <BaseJuridiqueClient modules={modules} />
+      <BaseJuridiqueClient index={index} />
     </main>
   );
 }

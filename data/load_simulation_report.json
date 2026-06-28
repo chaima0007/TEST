@@ -1,0 +1,60 @@
+{
+  "cible": "http://127.0.0.1:3212",
+  "concurrence": 60,
+  "requetes_par_route": 360,
+  "seuils_ms": {
+    "alerte": 300,
+    "critique": 800
+  },
+  "verdict_global": "OK",
+  "routes": [
+    {
+      "route": "/loi-avec-moi",
+      "requetes": 360,
+      "succes": 360,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 70.9,
+      "p95_ms": 80.3,
+      "p99_ms": 82.3,
+      "max_ms": 83.7,
+      "debit_req_s": 775.5,
+      "statut": "OK"
+    },
+    {
+      "route": "/base-juridique",
+      "requetes": 360,
+      "succes": 360,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 81.1,
+      "p95_ms": 88.0,
+      "p99_ms": 88.5,
+      "max_ms": 88.6,
+      "debit_req_s": 703.8,
+      "statut": "OK"
+    },
+    {
+      "route": "/transparence",
+      "requetes": 360,
+      "succes": 360,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 51.9,
+      "p95_ms": 57.4,
+      "p99_ms": 57.5,
+      "max_ms": 59.8,
+      "debit_req_s": 1012.7,
+      "statut": "OK"
+    },
+    {
+      "route": "/loi/accident_travail",
+      "requetes": 360,
+      "succes": 360,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 60.4,
+      "p95_ms": 62.3,
+      "p99_ms": 63.4,
+      "max_ms": 67.1,
+      "debit_req_s": 931.1,
+      "statut": "OK"
+    }
+  ]
+}
