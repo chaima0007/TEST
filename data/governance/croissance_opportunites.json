@@ -1,0 +1,15 @@
+{
+  "registre": "Opportunités de croissance — pilotage stratégique",
+  "but": "Prioriser OÙ concentrer la flotte. Score de levier = (impact × probabilité × scalabilité) / effort. Notes 1-5 à ajuster avec le réel.",
+  "avertissement": "Aide à la décision. Scores estimés (pas de revenu promis). La croissance se pilote, elle ne se décrète pas.",
+  "echelle": "1 (faible) à 5 (fort) ; effort 1 (rapide) à 5 (lourd)",
+  "opportunites": [
+    {"nom": "Activer la capture de leads (webhook)", "impact": 4, "probabilite": 5, "scalabilite": 5, "effort": 1},
+    {"nom": "Déployer les 2 sites en ligne", "impact": 5, "probabilite": 5, "scalabilite": 5, "effort": 2},
+    {"nom": "SEO de contenu (citoyen → autorité B2B)", "impact": 4, "probabilite": 4, "scalabilite": 5, "effort": 2},
+    {"nom": "Produit d'appel e-facturation (Caelum)", "impact": 4, "probabilite": 4, "scalabilite": 4, "effort": 3},
+    {"nom": "Signer des fiduciaires (canal B2B2B)", "impact": 5, "probabilite": 3, "scalabilite": 5, "effort": 3},
+    {"nom": "Version NL (marché flamand)", "impact": 4, "probabilite": 3, "scalabilite": 4, "effort": 4},
+    {"nom": "Licence / API du moteur vérifié", "impact": 5, "probabilite": 2, "scalabilite": 5, "effort": 4}
+  ]
+}

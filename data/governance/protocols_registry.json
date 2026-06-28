@@ -297,6 +297,12 @@
       "nom": "Arbitrage des fournisseurs d API/services",
       "regle": "Choisir en continu le meilleur fournisseur par service (score pondéré qualité/prix/latence) et basculer automatiquement : failover si le fournisseur actif tombe, recommandation si meilleure offre. Arbitre parmi les fournisseurs configurés (api_providers.json).",
       "verif": "python3 scripts/provider_arbitrage_protocol.py"
+    },
+    {
+      "id": "P-CROISSANCE",
+      "nom": "Pilotage stratégique de la croissance",
+      "regle": "Couche de synthèse : prioriser où concentrer la flotte par score de levier = (impact × probabilité × scalabilité) / effort. Garde-fou : ne pas pousser la croissance si la scalabilité est CRITIQUE. Aide à la décision, sans revenu promis. Ne duplique pas P-MARCHE/P-VALORISATION/P-DIRECTION (les utilise comme entrées).",
+      "verif": "python3 scripts/croissance_protocol.py"
     }
   ]
 }

@@ -1,0 +1,66 @@
+{
+  "verdict_scalabilite": "OK",
+  "classement": [
+    {
+      "nom": "Activer la capture de leads (webhook)",
+      "impact": 4,
+      "probabilite": 5,
+      "scalabilite": 5,
+      "effort": 1,
+      "score_levier": 100.0
+    },
+    {
+      "nom": "Déployer les 2 sites en ligne",
+      "impact": 5,
+      "probabilite": 5,
+      "scalabilite": 5,
+      "effort": 2,
+      "score_levier": 62.5
+    },
+    {
+      "nom": "SEO de contenu (citoyen → autorité B2B)",
+      "impact": 4,
+      "probabilite": 4,
+      "scalabilite": 5,
+      "effort": 2,
+      "score_levier": 40.0
+    },
+    {
+      "nom": "Signer des fiduciaires (canal B2B2B)",
+      "impact": 5,
+      "probabilite": 3,
+      "scalabilite": 5,
+      "effort": 3,
+      "score_levier": 25.0
+    },
+    {
+      "nom": "Produit d'appel e-facturation (Caelum)",
+      "impact": 4,
+      "probabilite": 4,
+      "scalabilite": 4,
+      "effort": 3,
+      "score_levier": 21.3
+    },
+    {
+      "nom": "Licence / API du moteur vérifié",
+      "impact": 5,
+      "probabilite": 2,
+      "scalabilite": 5,
+      "effort": 4,
+      "score_levier": 12.5
+    },
+    {
+      "nom": "Version NL (marché flamand)",
+      "impact": 4,
+      "probabilite": 3,
+      "scalabilite": 4,
+      "effort": 4,
+      "score_levier": 12.0
+    }
+  ],
+  "top3": [
+    "Activer la capture de leads (webhook)",
+    "Déployer les 2 sites en ligne",
+    "SEO de contenu (citoyen → autorité B2B)"
+  ]
+}
