@@ -2,11 +2,11 @@
 
 _Dernière mise à jour : 2026-06-27_
 
-## 🚀 Avancement global de la flotte : **72%**
-`██████████████░░░░░░` 72%
+## 🚀 Avancement global de la flotte : **79%**
+`████████████████░░░░` 79%
 
 - **La Loi Avec Moi (citoyens)** — `██████░░░░░░░░` 45%
-- **Caelum (entreprises B2B)** — `██████████░░░░` 74%
+- **Caelum (entreprises B2B)** — `█████████████░` 94%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
 
 ## La Loi Avec Moi (citoyens) — 45%
@@ -32,8 +32,8 @@ _Dernière mise à jour : 2026-06-27_
 - **Déploiement & hébergement** → prochaines étapes : Choix hébergeur + domaine (décision budgétaire = Chaima)
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
 
-## Caelum (entreprises B2B) — 74%
-`███████████████░░░░░` 74%
+## Caelum (entreprises B2B) — 94%
+`███████████████████░` 94%
 
 > **Point de sortie :** Veille conformité 2026 (6 normes sourcées + chiffres), agent « Appels & Financements » et simulateur /appels-projets en ligne. Séparé de La Loi Avec Moi.
 
@@ -42,11 +42,10 @@ _Dernière mise à jour : 2026-06-27_
 | Veille conformité 2026 (normes entreprises) | `██████████░░` 80% | en cours |
 | Simulateur « Appels à projets » | `████████████` 100% | terminé |
 | Agent « Appels & Financements » | `████████████` 100% | terminé |
-| Page « Conformité 2026 » + simulateur « Suis-je concerné ? » | `░░░░░░░░░░░░` 0% | à faire |
+| Page « Conformité 2026 » + simulateur « Suis-je concerné ? » | `████████████` 100% | terminé |
 | Positionnement commercial & business plan | `███████████░` 90% | en cours |
 
 - **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Ajouter UBO, AML, autres obligations sectorielles
-- **Page « Conformité 2026 » + simulateur « Suis-je concerné ? »** → prochaines étapes : Coder la page + simulateur 4 questions
 - **Positionnement commercial & business plan** → prochaines étapes : Mettre en page sur le site
 
 ## Infrastructure & Gouvernance (flotte d'agents) — 97%

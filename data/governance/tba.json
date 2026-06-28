@@ -127,14 +127,15 @@
         },
         {
           "nom": "Page « Conformité 2026 » + simulateur « Suis-je concerné ? »",
-          "pct": 0,
-          "statut": "à faire",
+          "pct": 100,
+          "statut": "terminé",
           "actions_faites": [
-            "Données prêtes (data/caelum)"
+            "Page /conformite-2026",
+            "Simulateur « Suis-je concerné ? » (4 questions)",
+            "Effet cascade + CTA",
+            "Lien dans la nav"
           ],
-          "prochaines_etapes": [
-            "Coder la page + simulateur 4 questions"
-          ]
+          "prochaines_etapes": []
         },
         {
           "nom": "Positionnement commercial & business plan",
