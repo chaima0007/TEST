@@ -138,15 +138,16 @@
         },
         {
           "nom": "Positionnement commercial & business plan",
-          "pct": 90,
-          "statut": "en cours",
+          "pct": 100,
+          "statut": "terminé",
           "actions_faites": [
-            "Pont commercial chiffré",
-            "Avis appels à projets",
-            "Cheat code conformité=marchés publics"
+            "Logique d entreprise (moat + modèle récurrent)",
+            "Page /offres-conformite (3 offres)",
+            "Combo conformité+subvention",
+            "Canal fiduciaires B2B2B"
           ],
           "prochaines_etapes": [
-            "Mettre en page sur le site"
+            "Fixer les prix (décision Chaima)"
           ]
         }
       ]
