@@ -44,6 +44,7 @@ const routes = [
   "/loi-avec-moi/nos-assistants",
   "/loi-avec-moi/en-danger",
   "/loi-avec-moi/jeunes",
+  "/loi-avec-moi/urgences",
   "/base-juridique",
   "/transparence",
   // Belgique NL
