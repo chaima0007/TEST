@@ -90,6 +90,38 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-ADRESSE-REFERENCE",
+      "titre": "Spécialiste — Sans-abri & domiciliation",
+      "domaine": "Sans-abri & domiciliation",
+      "module": "adresse_reference",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « sans-abri & domiciliation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Je n'ai plus de logement : à quoi sert une adresse de référence ?",
+        "Comment l'obtenir et qui peut en bénéficier ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "demander une adresse de référence"
+        },
+        {
+          "nom": "Service population de la commune",
+          "pour": "inscription après accord du CPAS"
+        },
+        {
+          "nom": "CPAS de la commune où vous séjournez",
+          "pour": "demande + enquête sociale"
+        },
+        {
+          "nom": "Infor Jeunes / services sociaux",
+          "lien": "https://www.jeminforme.be",
+          "pour": "aide à la démarche"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-AIDANTS-PROCHES",
       "titre": "Spécialiste — Aidants proches",
       "domaine": "Aidants proches",
@@ -631,6 +663,37 @@
         }
       ],
       "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-COLOCATION",
+      "titre": "Spécialiste — Colocation",
+      "domaine": "Colocation",
+      "module": "colocation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « colocation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment fonctionne un bail de colocation et la clause de solidarité ?",
+        "Je veux quitter la colocation : quel préavis et quelles obligations ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Service logement de votre Région",
+          "pour": "règles de colocation, modèles de bail/pacte"
+        },
+        {
+          "nom": "Tous les colocataires",
+          "pour": "rédiger le pacte de colocation"
+        },
+        {
+          "nom": "Colocataires + bailleur",
+          "pour": "remplaçant, avenant au bail, garantie"
+        },
+        {
+          "nom": "Juge de paix",
+          "pour": "litige de colocation (conciliation gratuite possible)"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -1707,6 +1770,46 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-MALTRAITANCE-AINES",
+      "titre": "Spécialiste — Protection des aînés",
+      "domaine": "Protection des aînés",
+      "module": "maltraitance_aines",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « protection des aînés », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que la maltraitance d'une personne âgée et qui peut agir ?",
+        "Je suis (ou je vois) une personne âgée maltraitée : que faire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Respect Seniors (Wallonie)",
+          "numero": "0800 30 330",
+          "lien": "https://www.respectseniors.be",
+          "pour": "écoute et accompagnement gratuits"
+        },
+        {
+          "nom": "1712",
+          "numero": "1712",
+          "pour": "violences et maltraitance"
+        },
+        {
+          "nom": "Respect Seniors (Wallonie)",
+          "numero": "0800 30 330",
+          "pour": "signaler, être accompagné"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "porter plainte (par la victime ou un témoin)"
+        },
+        {
+          "nom": "Médecin",
+          "pour": "constat médical des blessures"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-MEDIATION-CONFLITS",
       "titre": "Spécialiste — Règlement des conflits",
       "domaine": "Règlement des conflits",
@@ -2173,6 +2276,30 @@
           "nom": "IBPT",
           "lien": "https://www.bipt.be/consommateurs",
           "pour": "infos consommateurs télécom"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-TESTAMENT",
+      "titre": "Spécialiste — Testament & donations",
+      "domaine": "Testament & donations",
+      "module": "testament",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « testament & donations », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment faire un testament valable, et puis-je tout donner à qui je veux ?",
+        "Vaut-il mieux donner de son vivant (donation) ou léguer par testament ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Notaire",
+          "lien": "https://www.notaire.be",
+          "pour": "testament authentique, conseil, enregistrement"
+        },
+        {
+          "nom": "Notaire",
+          "pour": "stratégie donation/testament, simulation des droits"
         }
       ],
       "nb_reponses": 2,

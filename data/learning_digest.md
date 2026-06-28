@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **262**
+- Savoirs enregistrés : **270**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `895e46639cdc14ff…`)
+- Certification système : **PASS** (sceau `474dcddec085941c…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
@@ -20,6 +20,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — adoption simple et adoption plénière (art. 343 et suivants) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment se passe la procédure d'adoption ?**  
   Réf : Loi du 24 avril 2003 réformant l'adoption ; Code judiciaire (compétence du tribunal de la famille) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Je n'ai plus de logement : à quoi sert une adresse de référence ?**  
+  Réf : Loi du 19 juillet 1991 relative aux registres de la population (adresse de référence) · sources off. : 1 · revu : 2026-06-28
+- ✅ **Comment l'obtenir et qui peut en bénéficier ?**  
+  Réf : Loi du 19 juillet 1991 (adresse de référence) ; loi organique des CPAS du 8 juillet 1976 (enquête sociale) · sources off. : 1 · revu : 2026-06-28
 - ✅ **Qu'est-ce qu'un aidant proche et comment être reconnu ?**  
   Réf : Loi relative à la reconnaissance de l'aidant proche et à l'octroi de droits sociaux · sources off. : 1 · revu : 2026-06-26
 - ✅ **Ai-je droit à un congé en tant qu'aidant proche ?**  
@@ -158,6 +162,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles obligations administratives de base (domicile, déménagement) ?**  
   Réf : Loi du 19 juillet 1991 relative aux registres de la population (déclaration de changement de résidence) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Comment fonctionne un bail de colocation et la clause de solidarité ?**  
+  Réf : Décret wallon du 15 mars 2018 (colocation) ; ordonnance bruxelloise relative au bail d'habitation · sources off. : 1 · revu : 2026-06-28
+- ✅ **Je veux quitter la colocation : quel préavis et quelles obligations ?**  
+  Réf : Décret wallon du 15 mars 2018 (colocation — préavis et solidarité) ; ordonnance bruxelloise relative au bail d'habitation · sources off. : 1 · revu : 2026-06-28
 - ✅ **Combien de temps suis-je couvert par la garantie ?**  
   Réf : Code de droit économique — garantie légale de conformité (2 ans) · sources off. : 2 · revu : 2026-06-26
 - ✅ **J'ai acheté en ligne et je regrette : puis-je annuler ?**  
@@ -376,6 +384,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — réception des travaux et vices ; responsabilité décennale (art. 1792 et 2270) · sources off. : 1 · revu : 2026-06-28
 - ✅ **L'entrepreneur doit-il être assuré, et est-ce utile pour moi ?**  
   Réf : Loi du 31 mai 2017 relative à l'assurance obligatoire de la responsabilité civile décennale (construction) · sources off. : 1 · revu : 2026-06-28
+- ✅ **Qu'est-ce que la maltraitance d'une personne âgée et qui peut agir ?**  
+  Réf : Code pénal — abus de la faiblesse (art. 442quater) et infractions de violence · sources off. : 2 · revu : 2026-06-28
+- ✅ **Je suis (ou je vois) une personne âgée maltraitée : que faire ?**  
+  Réf : Code pénal — abus de la faiblesse (art. 442quater) ; Code d'instruction criminelle (dépôt de plainte par la victime ou un tiers) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Comment régler un conflit sans aller au procès ?**  
   Réf : Code judiciaire — médiation (art. 1723 et suivants) · sources off. : 2 · revu : 2026-06-27
 - ✅ **C'est quoi la conciliation devant le juge de paix ?**  
@@ -468,6 +480,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code de droit économique — communications électroniques ; missions du Service de médiation télécom · sources off. : 1 · revu : 2026-06-26
 - ✅ **Puis-je changer d'opérateur ou résilier facilement ?**  
   Réf : Code de droit économique — communications électroniques (résiliation, portabilité du numéro) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Comment faire un testament valable, et puis-je tout donner à qui je veux ?**  
+  Réf : Code civil — testaments (art. 967 et suivants) et réserve héréditaire des descendants · sources off. : 2 · revu : 2026-06-28
+- ✅ **Vaut-il mieux donner de son vivant (donation) ou léguer par testament ?**  
+  Réf : Code civil — donations et testaments ; droits de succession/donation (régionaux) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?**  
   Réf : Règlement (UE) 2021/782 relatif aux droits et obligations des voyageurs ferroviaires · sources off. : 2 · revu : 2026-06-27
 - ✅ **Mon vol est annulé, retardé ou refusé à l'embarquement, quels sont mes droits ?**  

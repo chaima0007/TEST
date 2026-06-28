@@ -4,8 +4,8 @@
 
 **✅ TOUS LES AGENTS EN BONNE SANTÉ**
 
-- Agents (scripts) analysés : **237**
-- Compilent sans erreur : **237/237**
+- Agents (scripts) analysés : **239**
+- Compilent sans erreur : **239/239**
 - Agents de contrôle exécutés OK : **5/5**
 
 ## Exécution des agents de contrôle clés

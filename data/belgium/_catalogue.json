@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-28",
   "totaux": {
-    "modules": 81,
-    "faits": 258,
-    "sources_officielles": 391,
-    "faits_avec_contacts": 173,
-    "faits_avec_alerte_delai": 77
+    "modules": 85,
+    "faits": 266,
+    "sources_officielles": 403,
+    "faits_avec_contacts": 181,
+    "faits_avec_alerte_delai": 79
   },
   "modules": [
     {
@@ -44,6 +44,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "adresse_reference.json",
+      "module": "adresse_reference",
+      "titre": "Adresse de référence (sans logement)",
+      "domaine": "Sans-abri & domiciliation",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "aidants_proches.json",
@@ -272,6 +284,18 @@
       "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "colocation.json",
+      "module": "colocation",
+      "titre": "Colocation — bail commun & règles",
+      "domaine": "Colocation",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "consommation.json",
@@ -682,6 +706,18 @@
       "derniere_revue": "2026-06-28"
     },
     {
+      "fichier": "maltraitance_aines.json",
+      "module": "maltraitance_aines",
+      "titre": "Maltraitance des aînés — réagir & protéger",
+      "domaine": "Protection des aînés",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "mediation_conflits.json",
       "module": "mediation_conflits",
       "titre": "Médiation & règlement amiable des conflits",
@@ -872,6 +908,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "testament.json",
+      "module": "testament",
+      "titre": "Testament & planifier sa succession",
+      "domaine": "Testament & donations",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "transport_passagers.json",
@@ -1677,6 +1725,42 @@
         "droit_image"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "colocation",
+      "nom": "Colocation",
+      "statut": "couvert",
+      "modules": [
+        "colocation"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "maltraitance_aines",
+      "nom": "Protection des aînés",
+      "statut": "couvert",
+      "modules": [
+        "maltraitance_aines"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "adresse_reference",
+      "nom": "Sans-abri & domiciliation",
+      "statut": "couvert",
+      "modules": [
+        "adresse_reference"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "testament",
+      "nom": "Testament & donations",
+      "statut": "couvert",
+      "modules": [
+        "testament"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }

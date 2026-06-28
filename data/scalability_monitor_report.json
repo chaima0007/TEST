@@ -5,19 +5,19 @@
     {
       "plateforme": "Flotte d'agents",
       "dimension": "Agents IA (scripts .py)",
-      "valeur": 237,
+      "valeur": 239,
       "seuil_alerte": 320,
       "seuil_critique": 450,
-      "pct_du_critique": 52.7,
+      "pct_du_critique": 53.1,
       "statut": "OK"
     },
     {
       "plateforme": "La Loi Avec Moi",
       "dimension": "Modules juridiques",
-      "valeur": 81,
+      "valeur": 85,
       "seuil_alerte": 400,
       "seuil_critique": 600,
-      "pct_du_critique": 13.5,
+      "pct_du_critique": 14.2,
       "statut": "OK"
     },
     {
@@ -32,10 +32,10 @@
     {
       "plateforme": "Caelum",
       "dimension": "Modules conformité",
-      "valeur": 2,
+      "valeur": 3,
       "seuil_alerte": 60,
       "seuil_critique": 120,
-      "pct_du_critique": 1.7,
+      "pct_du_critique": 2.5,
       "statut": "OK"
     },
     {
@@ -59,10 +59,10 @@
     {
       "plateforme": "Gouvernance",
       "dimension": "Fichiers de données (governance)",
-      "valeur": 31,
+      "valeur": 33,
       "seuil_alerte": 80,
       "seuil_critique": 150,
-      "pct_du_critique": 20.7,
+      "pct_du_critique": 22.0,
       "statut": "OK"
     }
   ],
@@ -108,7 +108,7 @@
     "postes_a_completer": 10
   },
   "prevision": {
-    "note": "rythme observé : 3.8 nouveau(x) module(s)/passage sur 22 passages",
-    "runway_passages_avant_saturation_modules": 137
+    "note": "rythme observé : 3.1 nouveau(x) module(s)/passage sur 30 passages",
+    "runway_passages_avant_saturation_modules": 167
   }
 }

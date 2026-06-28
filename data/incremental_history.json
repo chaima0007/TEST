@@ -272,5 +272,80 @@
     "modifies": [],
     "violations": [],
     "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
   }
 ]

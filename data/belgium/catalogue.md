@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-28. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**258 réponses · 81 modules · 391 sources officielles · 173 fiches avec contacts · 77 alertes de délai**
+**266 réponses · 85 modules · 403 sources officielles · 181 fiches avec contacts · 79 alertes de délai**
 
 ## Modules en ligne
 
@@ -11,6 +11,7 @@
 | Risques professionnels | Accident du travail & maladie professionnelle | 2 | 4 | 2 | 1 |
 | Achat immobilier | Acheter un logement — compromis & notaire | 2 | 3 | 2 | 1 |
 | Adoption | Adoption — formes et procédure | 2 | 4 | 2 | 0 |
+| Sans-abri & domiciliation | Adresse de référence (sans logement) | 2 | 2 | 2 | 0 |
 | Aidants proches | Aidants proches — reconnaissance, congé, droits | 2 | 2 | 2 | 1 |
 | Accès à la justice | Aide juridique — un avocat (presque) gratuit | 2 | 3 | 2 | 1 |
 | Aide sociale & urgence | Où aller quand ça va mal — faim, sans-abri, danger, sans papiers | 5 | 7 | 5 | 3 |
@@ -30,6 +31,7 @@
 | Chômage & emploi | Chômage — droits, démarches et sanctions | 2 | 2 | 2 | 0 |
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
 | Citoyenneté | Droits et devoirs du citoyen | 4 | 7 | 3 | 2 |
+| Colocation | Colocation — bail commun & règles | 2 | 2 | 2 | 1 |
 | Consommation | Consommation — garanties, achats, arnaques | 3 | 5 | 1 | 1 |
 | Copropriété | Copropriété — vivre en appartement | 2 | 2 | 2 | 1 |
 | Couple & vie commune | Couple — mariage, cohabitation légale, union libre | 3 | 3 | 2 | 0 |
@@ -64,6 +66,7 @@
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | Logement social | Logement social — conditions, inscription, attribution | 3 | 5 | 1 | 1 |
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 2 | 2 | 2 | 1 |
+| Protection des aînés | Maltraitance des aînés — réagir & protéger | 2 | 4 | 2 | 1 |
 | Règlement des conflits | Médiation & règlement amiable des conflits | 2 | 4 | 2 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 3 | 3 | 3 | 0 |
 | Naissance & filiation | Naissance & filiation | 3 | 6 | 3 | 1 |
@@ -80,6 +83,7 @@
 | Successions | Successions & héritage — accepter, renoncer, délais | 4 | 4 | 3 | 2 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 2 | 3 | 2 | 1 |
+| Testament & donations | Testament & planifier sa succession | 2 | 4 | 2 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 2 | 4 | 2 | 1 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
@@ -171,3 +175,7 @@
 | Sexisme & espace public | couvert | haute |
 | Allocation d études | couvert | haute |
 | Droit à l image | couvert | haute |
+| Colocation | couvert | haute |
+| Protection des aînés | couvert | haute |
+| Sans-abri & domiciliation | couvert | haute |
+| Testament & donations | couvert | moyenne |

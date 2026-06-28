@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3075 réalisations concrètes enregistrées
+### 📌 Total : 3083 réalisations concrètes enregistrées
 
 
 ## 2026-06-28
-**28 réalisations** · de **10:56** à **14:40** (fenêtre de travail : 3h44)
+**36 réalisations** · de **10:56** à **15:14** (fenêtre de travail : 4h18)
 
 - 🕒 10:56 — page « Conformité 2026 » + simulateur « Suis-je concerné ? » (6 normes post-Omnibus, effet cascade) + lien nav; TBA actualisé
 - 🕒 10:59 — recherche plein texte + filtre par domaine sur la base juridique (composant client) — UX 238 réponses; TBA actualisé
@@ -35,6 +35,14 @@
 - 🕒 14:30 — règle enrichie en multi-sources PONDÉRÉES (tiers de confiance, poids cumulé type Nash) + audit de la force probante par fait (258 faits, 0 preuve faible)
 - 🕒 14:34 — scan de toute la flotte (34 agents : existence + compilation) en plus de la bascule de secours — détecte un agent cassé avant la prod
 - 🕒 14:40 — arbitrage des fournisseurs d'API (score pondéré qualité/prix/latence + failover) — NOUVEAU; #1 énergie & #3 conformité confirmés déjà couverts (anti-doublon)
+- 🕒 14:45 — +2 domaines (colocation/bail commun & solidarité, maltraitance des aînés/Respect Seniors) — 79 domaines / 262 réponses, 100%; TBA
+- 🕒 14:48 — +2 domaines (adresse de référence/sans-abri, testament & donations) — 81 domaines / 266 réponses, 100% lois + sources (étiquetage tier1 corrigé)
+- 🕒 14:52 — pilotage stratégique de croissance — score de levier (impact×proba×scalabilité/effort) + garde-fou scalabilité — NOUVEAU (couche de synthèse, ne duplique pas marché/valorisation/direction)
+- 🕒 14:56 — guide de déploiement clé en main (DEPLOIEMENT.md) — 2 apps séparées sur Vercel, variables d'env, webhook leads; ressource intégrée pour le levier n°1
+- 🕒 15:07 — +3 normes conformité (AI Act, European Accessibility Act, registre UBO) — base + pages SEO + simulateur (9 normes), build & rendu vérifiés
+- 🕒 15:08 — validation croisée base↔simulateur↔pages SEO — bloque toute désynchronisation des normes (corrige la cause racine signalée)
+- 🕒 15:11 — bouton Télécharger (.txt) sur chaque modèle de document — build vérifié; TBA modèles 85->95%
+- 🕒 15:14 — page 'Qui contacter' (/loi-avec-moi/contacts) — annuaire des services/numéros agrégé depuis la base + nav + sitemap; build vérifié
 
 ## 2026-06-27
 **99 réalisations** · de **00:28** à **23:20** (fenêtre de travail : 22h52)

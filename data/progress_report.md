@@ -6,11 +6,11 @@
 
 Aujourd'hui, **3392 moteurs** veillent dans notre système — une cartographie immense des droits et des sujets qui comptent. Mais tu sais quoi ? On a fait mieux que grandir : on a **mûri**.
 
-On a posé les fondations d'un vrai savoir d'expert. **258 faits juridiques belges**, sourcés à **100.0%** auprès des sources officielles (le Décret wallon, WALLEX, le SPW). Pas du vent : du solide, vérifiable, daté. Le genre de chose sur laquelle on peut bâtir 50 ans.
+On a posé les fondations d'un vrai savoir d'expert. **266 faits juridiques belges**, sourcés à **100.0%** auprès des sources officielles (le Décret wallon, WALLEX, le SPW). Pas du vent : du solide, vérifiable, daté. Le genre de chose sur laquelle on peut bâtir 50 ans.
 
 ## 🛡️ Nos garde-fous (parce qu'on ne laisse rien au hasard)
 
-On s'est doté de **30 protocoles clés sur table** — certification, sauvegarde, registre d'apprentissage. Chacun veille pendant qu'on avance :
+On s'est doté de **32 protocoles clés sur table** — certification, sauvegarde, registre d'apprentissage. Chacun veille pendant qu'on avance :
 - `backup_protocol.py`
 - `build_health_protocol.py`
 - `certification_protocol.py`
@@ -18,6 +18,7 @@ On s'est doté de **30 protocoles clés sur table** — certification, sauvegard
 - `conflict_resolution_protocol.py`
 - `continuous_improvement_protocol.py`
 - `control_gates_protocol.py`
+- `croissance_protocol.py`
 - `decision_protocol.py`
 - `direction_committee_protocol.py`
 - `dream_tracker_protocol.py`
@@ -36,13 +37,14 @@ On s'est doté de **30 protocoles clés sur table** — certification, sauvegard
 - `revenus_suivi_protocol.py`
 - `self_healing_protocol.py`
 - `source_trust_protocol.py`
+- `sync_normes_protocol.py`
 - `tba_protocol.py`
 - `transparency_disclaimer_protocol.py`
 - `travail_analyse_protocol.py`
 - `veille_juridique_protocol.py`
 - `work_journal_protocol.py`
 
-Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `895e46639cdc…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
+Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `474dcddec085…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
 
 ## 🌱 Là où on va
 

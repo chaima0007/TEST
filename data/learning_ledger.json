@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 262,
+    "total_savoirs": 270,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -71,6 +71,28 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "adresse_reference",
+      "id": "ADRREF-DROIT-001",
+      "sujet": "Je n'ai plus de logement : à quoi sert une adresse de référence ?",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (adresse de référence)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "adresse_reference",
+      "id": "ADRREF-DEMANDE-001",
+      "sujet": "Comment l'obtenir et qui peut en bénéficier ?",
+      "reference_legale": "Loi du 19 juillet 1991 (adresse de référence) ; loi organique des CPAS du 8 juillet 1976 (enquête sociale)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
       "valide": true
     },
     {
@@ -830,6 +852,28 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "colocation",
+      "id": "COLOC-BAIL-001",
+      "sujet": "Comment fonctionne un bail de colocation et la clause de solidarité ?",
+      "reference_legale": "Décret wallon du 15 mars 2018 (colocation) ; ordonnance bruxelloise relative au bail d'habitation",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "colocation",
+      "id": "COLOC-DEPART-001",
+      "sujet": "Je veux quitter la colocation : quel préavis et quelles obligations ?",
+      "reference_legale": "Décret wallon du 15 mars 2018 (colocation — préavis et solidarité) ; ordonnance bruxelloise relative au bail d'habitation",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
       "valide": true
     },
     {
@@ -2033,6 +2077,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "maltraitance_aines",
+      "id": "AINE-RECONNAITRE-001",
+      "sujet": "Qu'est-ce que la maltraitance d'une personne âgée et qui peut agir ?",
+      "reference_legale": "Code pénal — abus de la faiblesse (art. 442quater) et infractions de violence",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "maltraitance_aines",
+      "id": "AINE-AGIR-001",
+      "sujet": "Je suis (ou je vois) une personne âgée maltraitée : que faire ?",
+      "reference_legale": "Code pénal — abus de la faiblesse (art. 442quater) ; Code d'instruction criminelle (dépôt de plainte par la victime ou un tiers)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "mediation_conflits",
       "id": "MED-MEDIATION-001",
       "sujet": "Comment régler un conflit sans aller au procès ?",
@@ -2535,6 +2601,28 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "testament",
+      "id": "TEST-FORMES-001",
+      "sujet": "Comment faire un testament valable, et puis-je tout donner à qui je veux ?",
+      "reference_legale": "Code civil — testaments (art. 967 et suivants) et réserve héréditaire des descendants",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "testament",
+      "id": "TEST-DONATION-001",
+      "sujet": "Vaut-il mieux donner de son vivant (donation) ou léguer par testament ?",
+      "reference_legale": "Code civil — donations et testaments ; droits de succession/donation (régionaux)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
       "valide": true
     },
     {

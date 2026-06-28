@@ -1,4 +1,5 @@
 {
+  "separation": "Projet ENTREPRISES (Caelum). Ne pas mélanger avec La Loi Avec Moi.",
   "but": "Lier chaque norme de la base (data/caelum) à son entrée dans le simulateur (app/conformite-2026). Toute norme ajoutée à la base DOIT avoir une correspondance ici ET être câblée dans le simulateur — sinon le garde P-SYNC-NORMES bloque.",
   "correspondance": {
     "EFACT-2026": "efacture",
