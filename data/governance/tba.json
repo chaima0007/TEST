@@ -239,5 +239,31 @@
         }
       ]
     }
+  ],
+  "actions_chaima": [
+    {
+      "priorite": 1,
+      "action": "Activer la capture de leads",
+      "comment": "Créer un webhook (Zapier \"Catch Hook\" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.",
+      "statut": "en attente"
+    },
+    {
+      "priorite": 2,
+      "action": "Fixer les prix des offres conformité",
+      "comment": "Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.",
+      "statut": "en attente"
+    },
+    {
+      "priorite": 3,
+      "action": "Renseigner les vrais coûts",
+      "comment": "Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).",
+      "statut": "en attente"
+    },
+    {
+      "priorite": 4,
+      "action": "Choisir hébergeur + domaine",
+      "comment": "Décision pour mettre les sites en ligne (déploiement).",
+      "statut": "en attente"
+    }
   ]
 }

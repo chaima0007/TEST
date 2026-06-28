@@ -9,6 +9,12 @@ _Dernière mise à jour : 2026-06-27_
 - **Caelum (entreprises B2B)** — `█████████████░` 96%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
 
+## 🔔 Actions qui t'attendent (Chaima)
+- **Activer la capture de leads** — Créer un webhook (Zapier "Catch Hook" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.
+- **Fixer les prix des offres conformité** — Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.
+- **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).
+- **Choisir hébergeur + domaine** — Décision pour mettre les sites en ligne (déploiement).
+
 ## La Loi Avec Moi (citoyens) — 49%
 `██████████░░░░░░░░░░` 49%
 

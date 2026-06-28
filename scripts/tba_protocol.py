@@ -69,6 +69,13 @@ def main():
         lignes.append(f"- **{nom}** — `{jauge(g, 14)}` {g}%")
     lignes.append("")
 
+    actions = [a for a in d.get("actions_chaima", []) if a.get("statut") != "fait"]
+    if actions:
+        lignes.append("## 🔔 Actions qui t'attendent (Chaima)")
+        for a in sorted(actions, key=lambda x: x.get("priorite", 99)):
+            lignes.append(f"- **{a['action']}** — {a.get('comment', '')}")
+        lignes.append("")
+
     for p in projets:
         g = avancement_projet(p)
         lignes.append(f"## {p['nom']} — {g}%")
