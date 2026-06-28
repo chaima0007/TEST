@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3070 réalisations concrètes enregistrées
+### 📌 Total : 3075 réalisations concrètes enregistrées
 
 
 ## 2026-06-28
-**23 réalisations** · de **10:56** à **14:15** (fenêtre de travail : 3h19)
+**28 réalisations** · de **10:56** à **14:40** (fenêtre de travail : 3h44)
 
 - 🕒 10:56 — page « Conformité 2026 » + simulateur « Suis-je concerné ? » (6 normes post-Omnibus, effet cascade) + lien nav; TBA actualisé
 - 🕒 10:59 — recherche plein texte + filtre par domaine sur la base juridique (composant client) — UX 238 réponses; TBA actualisé
@@ -30,6 +30,11 @@
 - 🕒 14:08 — +2 domaines (crédit à la consommation, achat voiture d'occasion/vices cachés & Car-Pass) — 73 domaines / 250 réponses, 100%; TBA actualisé
 - 🕒 14:11 — +2 domaines (voyage d'un mineur/Kids-ID & autorisation parentale, sexisme & harcèlement espace public/loi 22 mai 2014) — 75 domaines / 254 réponses, 100%; TBA
 - 🕒 14:15 — +2 domaines (bourse/allocation d'études, droit à l'image) — 77 domaines / 258 réponses, 100%; flotte de protocoles exécutée + TBA
+- 🕒 14:20 — +3 protocoles avancés — auto-réparation (P-AUTO-REPARATION), résolution de conflit théorie des jeux (P-CONFLIT), amélioration continue auto-réglage borné (P-AMELIORATION) — testés + intégrés flotte (48 protocoles)
+- 🕒 14:22 — évaluation stratégique de viabilité de la flotte multi-agents (gap marché, potentiel commercial, facteurs tech & financiers, risques) — nouveau, sans doublon
+- 🕒 14:30 — règle enrichie en multi-sources PONDÉRÉES (tiers de confiance, poids cumulé type Nash) + audit de la force probante par fait (258 faits, 0 preuve faible)
+- 🕒 14:34 — scan de toute la flotte (34 agents : existence + compilation) en plus de la bascule de secours — détecte un agent cassé avant la prod
+- 🕒 14:40 — arbitrage des fournisseurs d'API (score pondéré qualité/prix/latence + failover) — NOUVEAU; #1 énergie & #3 conformité confirmés déjà couverts (anti-doublon)
 
 ## 2026-06-27
 **99 réalisations** · de **00:28** à **23:20** (fenêtre de travail : 22h52)

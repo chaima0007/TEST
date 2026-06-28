@@ -10,7 +10,7 @@ On a posé les fondations d'un vrai savoir d'expert. **258 faits juridiques belg
 
 ## 🛡️ Nos garde-fous (parce qu'on ne laisse rien au hasard)
 
-On s'est doté de **29 protocoles clés sur table** — certification, sauvegarde, registre d'apprentissage. Chacun veille pendant qu'on avance :
+On s'est doté de **30 protocoles clés sur table** — certification, sauvegarde, registre d'apprentissage. Chacun veille pendant qu'on avance :
 - `backup_protocol.py`
 - `build_health_protocol.py`
 - `certification_protocol.py`
@@ -30,6 +30,7 @@ On s'est doté de **29 protocoles clés sur table** — certification, sauvegard
 - `market_detection_protocol.py`
 - `progress_report_protocol.py`
 - `project_valuation_protocol.py`
+- `provider_arbitrage_protocol.py`
 - `rapid_resolution_protocol.py`
 - `rentabilite_protocol.py`
 - `revenus_suivi_protocol.py`
@@ -41,7 +42,7 @@ On s'est doté de **29 protocoles clés sur table** — certification, sauvegard
 - `veille_juridique_protocol.py`
 - `work_journal_protocol.py`
 
-Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `492cb8d75f03…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
+Et la cerise : notre **certification est au vert** (statut **PASS**, sceau `895e46639cdc…`), avec un indicateur de probabilité honnête à **43%** qui nous dit précisément où encore progresser. On ne se ment pas — c'est ça, la confiance.
 
 ## 🌱 Là où on va
 
