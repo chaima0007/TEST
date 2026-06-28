@@ -15,6 +15,7 @@ Usage : python3 scripts/tba_protocol.py
 import json
 import os
 import sys
+from datetime import date
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TBA = os.path.join(BASE, "data", "governance", "tba.json")
@@ -73,7 +74,19 @@ def main():
     if actions:
         lignes.append("## 🔔 Actions qui t'attendent (Chaima)")
         for a in sorted(actions, key=lambda x: x.get("priorite", 99)):
-            lignes.append(f"- **{a['action']}** — {a.get('comment', '')}")
+            age = ""
+            depuis = a.get("depuis")
+            if depuis:
+                try:
+                    y, m, j = (int(x) for x in depuis.split("-"))
+                    n = (date.today() - date(y, m, j)).days
+                    if n >= 3:
+                        age = f" ⚠️ **en attente depuis {n} j**"
+                    elif n > 0:
+                        age = f" _(en attente depuis {n} j)_"
+                except Exception:
+                    age = ""
+            lignes.append(f"- **{a['action']}** — {a.get('comment', '')}{age}")
         lignes.append("")
 
     for p in projets:
