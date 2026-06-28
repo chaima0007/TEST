@@ -2,15 +2,15 @@
 
 _Dernière mise à jour : 2026-06-27_
 
-## 🚀 Avancement global de la flotte : **79%**
-`████████████████░░░░` 79%
+## 🚀 Avancement global de la flotte : **80%**
+`████████████████░░░░` 80%
 
-- **La Loi Avec Moi (citoyens)** — `██████░░░░░░░░` 46%
+- **La Loi Avec Moi (citoyens)** — `███████░░░░░░░` 49%
 - **Caelum (entreprises B2B)** — `█████████████░` 94%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `██████████████` 97%
 
-## La Loi Avec Moi (citoyens) — 46%
-`█████████░░░░░░░░░░░` 46%
+## La Loi Avec Moi (citoyens) — 49%
+`██████████░░░░░░░░░░` 49%
 
 > **Point de sortie :** 67 domaines / 238 réponses, 100% lois en vigueur + 100% sources officielles. Tout vérifié et poussé.
 
@@ -18,14 +18,14 @@ _Dernière mise à jour : 2026-06-27_
 |---|---|---|
 | Base juridique sourcée (domaines + réponses) | `███████████░` 90% | en cours |
 | Page « Base juridique » (rendu serveur) | `████████████` 100% | terminé |
-| Modèles de documents prêts à l'emploi | `████████░░░░` 70% | en cours |
+| Modèles de documents prêts à l'emploi | `██████████░░` 85% | en cours |
 | Espace enfants & jeunes / mineurs | `███████░░░░░` 60% | en cours |
 | Versions multilingues (NL en premier) | `█░░░░░░░░░░░` 5% | à faire |
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
 
 - **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
-- **Modèles de documents prêts à l'emploi** → prochaines étapes : Ajouter modèles bail/logement et travail, Bouton export PDF
+- **Modèles de documents prêts à l'emploi** → prochaines étapes : Bouton export PDF
 - **Espace enfants & jeunes / mineurs** → prochaines étapes : Langage très simple + pictos, Page dédiée douce
 - **Versions multilingues (NL en premier)** → prochaines étapes : Traduction NL des modules prioritaires
 - **Déploiement & hébergement** → prochaines étapes : Choix hébergeur + domaine (décision budgétaire = Chaima)

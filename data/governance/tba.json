@@ -35,13 +35,13 @@
         },
         {
           "nom": "Modèles de documents prêts à l'emploi",
-          "pct": 70,
+          "pct": 85,
           "statut": "en cours",
           "actions_faites": [
-            "12 modèles copier-coller (résiliation, contestation, mise en demeure, RGPD, CPAS, amende…)"
+            "16 modèles copier-coller",
+            "Logement (garantie, réparations), Travail (démission, motifs licenciement), conso, RGPD, CPAS, amende, plainte, école, avocat, juge"
           ],
           "prochaines_etapes": [
-            "Ajouter modèles bail/logement et travail",
             "Bouton export PDF"
           ]
         },

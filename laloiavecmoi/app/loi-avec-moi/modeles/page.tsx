@@ -279,6 +279,101 @@ Merci de m'avoir lu.
 Prénom et nom : ______________________
 Date : ______________________`,
   },
+  {
+    id: "garantie-locative",
+    tag: "Logement",
+    title: "Récupérer ma garantie locative",
+    desc: "Pour réclamer au propriétaire la restitution de la garantie après l'état des lieux de sortie.",
+    body: `Objet : Restitution de la garantie locative — [adresse du logement]
+
+Madame, Monsieur,
+
+J'ai occupé le logement situé [adresse] jusqu'au [date de fin du bail].
+L'état des lieux de sortie a été réalisé le [date] et le logement a été rendu
+dans l'état convenu.
+
+Je vous demande de me restituer la garantie locative de [montant] €,
+sur le compte [IBAN], dans un délai raisonnable.
+
+À défaut de restitution ou d'accord sur d'éventuelles retenues justifiées
+(avec preuves) dans les [15] jours, je me réserve le droit de saisir
+gratuitement le juge de paix en conciliation.
+
+Je vous remercie pour votre diligence.
+
+Nom et prénom : ______________________
+Adresse / IBAN : ______________________
+Date : ______________________`,
+  },
+  {
+    id: "reparations-bailleur",
+    tag: "Logement",
+    title: "Demander des réparations au propriétaire",
+    desc: "Pour signaler un problème (chauffage, humidité, fuite…) et demander une réparation au bailleur.",
+    body: `Objet : Demande de réparation — [adresse du logement]
+
+Madame, Monsieur,
+
+Locataire du logement situé [adresse], je constate le problème suivant :
+[décrire : panne de chauffage, infiltration, humidité, etc.], apparu le [date].
+
+Ce problème relève de l'entretien à charge du propriétaire. Je vous demande
+d'y remédier dans un délai raisonnable de [15] jours.
+
+Sans réaction de votre part, je me réserve le droit de solliciter le juge de paix.
+Je reste disponible pour convenir d'un rendez-vous.
+
+Je vous remercie.
+
+Nom et prénom : ______________________
+Adresse : ______________________
+Date : ______________________`,
+  },
+  {
+    id: "demission",
+    tag: "Travail",
+    title: "Donner ma démission",
+    desc: "Lettre de démission claire, avec mention du préavis. À remettre en main propre (avec accusé) ou par recommandé.",
+    body: `Objet : Démission — préavis
+
+Madame, Monsieur,
+
+Par la présente, je vous informe de ma décision de démissionner de mon poste
+de [fonction] au sein de [entreprise].
+
+Conformément à la loi et à mon contrat, je preste un préavis de [durée],
+qui débute le [date de début du préavis] pour se terminer le [date de fin].
+
+Je vous remercie de me confirmer la bonne réception de ce courrier ainsi que
+les modalités de mon départ (solde de tout compte, documents sociaux : C4, etc.).
+
+Je vous prie d'agréer mes salutations distinguées.
+
+Nom et prénom : ______________________
+Date : ______________________
+Signature : ______________________`,
+  },
+  {
+    id: "motifs-licenciement",
+    tag: "Travail",
+    title: "Demander les motifs de mon licenciement",
+    desc: "Pour demander par écrit les raisons concrètes d'un licenciement (utile en cas de contestation).",
+    body: `Objet : Demande des motifs de mon licenciement
+
+Madame, Monsieur,
+
+J'ai été licencié·e le [date]. Je souhaite connaître les motifs concrets
+qui ont conduit à cette décision.
+
+Je vous demande de me communiquer ces motifs par écrit. Cette demande me permet
+d'apprécier la régularité de la rupture et, le cas échéant, de faire valoir mes droits
+(notamment en cas de licenciement manifestement déraisonnable).
+
+Je vous remercie de votre réponse dans les meilleurs délais.
+
+Nom et prénom : ______________________
+Date : ______________________`,
+  },
 ];
 
 function LetterCard({ l }: { l: typeof letters[number] }) {
