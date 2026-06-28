@@ -282,8 +282,8 @@
     },
     {
       "id": "P-CONFLIT",
-      "nom": "Résolution de conflit décentralisée",
-      "regle": "Trancher les divergences entre sources sans humain via une règle de théorie des jeux : confiance (payoff) > récence > majorité. La source canonique l emporte.",
+      "nom": "Résolution de conflit décentralisée & pondérée",
+      "regle": "Trancher les divergences sans humain par SOURCES PONDÉRÉES (tier1 officiel=1.0 > tier2 institutionnel=0.6 > tier3 secondaire=0.3 > inconnu=0.1). Issue stable = valeur au poids cumulé maximal (Nash) > récence > majorité. Couvre aussi la force probante de chaque fait.",
       "verif": "python3 scripts/conflict_resolution_protocol.py"
     },
     {
