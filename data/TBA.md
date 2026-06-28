@@ -2,11 +2,11 @@
 
 _Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **85%**
-`█████████████████░░░` 85%
+## 🚀 Avancement global de la flotte : **86%**
+`█████████████████░░░` 86%
 
 - **La Loi Avec Moi (citoyens)** — `█████████░░░░░` 65%
-- **Caelum (entreprises B2B)** — `█████████████░` 95%
+- **Caelum (entreprises B2B)** — `█████████████░` 96%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
 ## 🔔 Actions qui t'attendent (Chaima)
@@ -41,8 +41,8 @@ _Dernière mise à jour : 2026-06-28_
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
 - **Pages légales (mentions, confidentialité, accessibilité)** → prochaines étapes : Compléter l identité légale de l éditeur (BCE/TVA/adresse)
 
-## Caelum (entreprises B2B) — 95%
-`███████████████████░` 95%
+## Caelum (entreprises B2B) — 96%
+`███████████████████░` 96%
 
 > **Point de sortie :** Veille conformité 2026 (6 normes sourcées + chiffres), agent « Appels & Financements » et simulateur /appels-projets en ligne. Séparé de La Loi Avec Moi.
 
@@ -56,12 +56,14 @@ _Dernière mise à jour : 2026-06-28_
 | Pages SEO programmatiques (acquisition) | `████████████` 100% | terminé |
 | Capture de leads (simulateur) | `███████████░` 90% | en cours |
 | Newsletter de veille (canal possédé) | `███████████░` 90% | en cours |
+| Kit de contenu de lancement (posts + e-mails + FAQ) | `████████████` 100% | terminé |
 
 - **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Ajouter UBO, AML, autres obligations sectorielles
 - **Positionnement commercial & business plan** → prochaines étapes : Fixer les prix (décision Chaima)
 - **Pages SEO programmatiques (acquisition)** → prochaines étapes : Pages par secteur (longue traîne) quand le trafic le justifiera
 - **Capture de leads (simulateur)** → prochaines étapes : Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima
 - **Newsletter de veille (canal possédé)** → prochaines étapes : Brancher l envoi réel quand LEADS_WEBHOOK_URL / outil e-mail sera choisi
+- **Kit de contenu de lancement (posts + e-mails + FAQ)** → prochaines étapes : Remplacer les [lien] par les URLs réelles après mise en ligne
 
 ## Infrastructure & Gouvernance (flotte d'agents) — 96%
 `███████████████████░` 96%

@@ -222,6 +222,21 @@
           "prochaines_etapes": [
             "Brancher l envoi réel quand LEADS_WEBHOOK_URL / outil e-mail sera choisi"
           ]
+        },
+        {
+          "nom": "Kit de contenu de lancement (posts + e-mails + FAQ)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "5 posts LinkedIn founder-led (faits sourcés, aucun prix inventé)",
+            "3 e-mails (bienvenue veille, nurture simulateur, approche fiduciaire B2B2B)",
+            "FAQ citoyens & entreprises",
+            "Projets séparés, liens [lien] à remplacer après déploiement",
+            "KIT_CONTENU_LANCEMENT.md"
+          ],
+          "prochaines_etapes": [
+            "Remplacer les [lien] par les URLs réelles après mise en ligne"
+          ]
         }
       ]
     },
