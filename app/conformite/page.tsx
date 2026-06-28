@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { loadNormes, slugFor } from "./data";
+import { SECTEURS } from "./secteurs";
 
 export const metadata = {
   title: "Conformité 2026 des entreprises — toutes les normes | Caelum",
@@ -56,6 +57,22 @@ export default function ConformiteHubPage() {
             <span className="inline-block mt-3 text-sm font-semibold text-indigo-700">En savoir plus →</span>
           </Link>
         ))}
+      </section>
+
+      <section className="max-w-5xl mx-auto px-6 pb-16">
+        <h2 className="text-2xl font-bold">Et selon votre secteur ?</h2>
+        <p className="text-slate-600 mt-1 mb-5 text-sm">Les obligations qui comptent vraiment pour votre métier.</p>
+        <div className="flex flex-wrap gap-2">
+          {SECTEURS.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/conformite/secteur/${s.slug}`}
+              className="text-sm px-3 py-1.5 rounded-full border border-slate-200 hover:border-indigo-400 hover:text-indigo-700"
+            >
+              {s.nom}
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   );
