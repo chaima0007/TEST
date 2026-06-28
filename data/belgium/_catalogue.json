@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-28",
   "totaux": {
-    "modules": 75,
-    "faits": 246,
-    "sources_officielles": 372,
-    "faits_avec_contacts": 161,
-    "faits_avec_alerte_delai": 73
+    "modules": 81,
+    "faits": 258,
+    "sources_officielles": 391,
+    "faits_avec_contacts": 173,
+    "faits_avec_alerte_delai": 77
   },
   "modules": [
     {
@@ -214,6 +214,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "bourse_etudes.json",
+      "module": "bourse_etudes",
+      "titre": "Bourse / allocation d'études",
+      "domaine": "Allocation d'études",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "burnout_bienetre.json",
       "module": "burnout_bienetre",
       "titre": "Santé d'abord — burnout, fatigue & mettre des limites",
@@ -310,6 +322,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "credit_consommation.json",
+      "module": "credit_consommation",
+      "titre": "Crédit à la consommation (prêt à tempérament)",
+      "domaine": "Crédit à la consommation",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "credit_hypothecaire.json",
       "module": "credit_hypothecaire",
       "titre": "Crédit hypothécaire — emprunter pour un logement",
@@ -392,6 +416,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "droit_image.json",
+      "module": "droit_image",
+      "titre": "Droit à l'image — photos & vidéos",
+      "domaine": "Droit à l'image",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "eau.json",
@@ -790,6 +826,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "sexisme_espace_public.json",
+      "module": "sexisme_espace_public",
+      "titre": "Sexisme & harcèlement dans l'espace public",
+      "domaine": "Sexisme & espace public",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "successions.json",
       "module": "successions",
       "titre": "Successions & héritage — accepter, renoncer, délais",
@@ -886,6 +934,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "voiture_occasion.json",
+      "module": "voiture_occasion",
+      "titre": "Acheter une voiture d'occasion",
+      "domaine": "Achat véhicule d'occasion",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "vote_electoral.json",
       "module": "vote_electoral",
       "titre": "Vote électoral — pour qui et pourquoi on vote",
@@ -896,6 +956,18 @@
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "voyage_mineur.json",
+      "module": "voyage_mineur",
+      "titre": "Voyage d'un mineur — Kids-ID & autorisation parentale",
+      "domaine": "Voyage d'un enfant",
+      "juridiction": "BE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "voyages.json",
@@ -1549,6 +1621,60 @@
       "statut": "couvert",
       "modules": [
         "malfacons_travaux"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "credit_consommation",
+      "nom": "Crédit à la consommation",
+      "statut": "couvert",
+      "modules": [
+        "credit_consommation"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "voiture_occasion",
+      "nom": "Achat véhicule d occasion",
+      "statut": "couvert",
+      "modules": [
+        "voiture_occasion"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "voyage_mineur",
+      "nom": "Voyage d un enfant",
+      "statut": "couvert",
+      "modules": [
+        "voyage_mineur"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "sexisme_espace_public",
+      "nom": "Sexisme & espace public",
+      "statut": "couvert",
+      "modules": [
+        "sexisme_espace_public"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "bourse_etudes",
+      "nom": "Allocation d études",
+      "statut": "couvert",
+      "modules": [
+        "bourse_etudes"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "droit_image",
+      "nom": "Droit à l image",
+      "statut": "couvert",
+      "modules": [
+        "droit_image"
       ],
       "priorite": "haute"
     }

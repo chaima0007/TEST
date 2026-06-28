@@ -16,7 +16,9 @@
         "violences_conjugales",
         "burnout_bienetre",
         "premier_emploi",
-        "sexisme_espace_public"
+        "sexisme_espace_public",
+        "bourse_etudes",
+        "droit_image"
       ]
     },
     "adultes": {
@@ -93,7 +95,9 @@
         "credit_consommation",
         "voiture_occasion",
         "voyage_mineur",
-        "sexisme_espace_public"
+        "sexisme_espace_public",
+        "bourse_etudes",
+        "droit_image"
       ]
     }
   }

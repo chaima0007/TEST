@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3067 réalisations concrètes enregistrées
+### 📌 Total : 3069 réalisations concrètes enregistrées
 
 
 ## 2026-06-28
-**20 réalisations** · de **10:56** à **14:04** (fenêtre de travail : 3h08)
+**22 réalisations** · de **10:56** à **14:11** (fenêtre de travail : 3h15)
 
 - 🕒 10:56 — page « Conformité 2026 » + simulateur « Suis-je concerné ? » (6 normes post-Omnibus, effet cascade) + lien nav; TBA actualisé
 - 🕒 10:59 — recherche plein texte + filtre par domaine sur la base juridique (composant client) — UX 238 réponses; TBA actualisé
@@ -27,6 +27,8 @@
 - 🕒 13:56 — simulateur de montée en charge (p50/p95/p99 + débit) + base-juridique en index léger (p95 410->88ms, debit x4.8) + ancres /loi/[domaine]#id; build vérifié
 - 🕒 14:01 — +2 domaines (recouvrement amiable/sociétés de recouvrement, malfaçons & garantie décennale) — 71 domaines / 246 réponses, 100%; TBA actualisé
 - 🕒 14:04 — page 'Urgences & délais' (/loi-avec-moi/urgences) — agrège tous les délais critiques depuis la base + numéros d'urgence; nav + sitemap; build vérifié
+- 🕒 14:08 — +2 domaines (crédit à la consommation, achat voiture d'occasion/vices cachés & Car-Pass) — 73 domaines / 250 réponses, 100%; TBA actualisé
+- 🕒 14:11 — +2 domaines (voyage d'un mineur/Kids-ID & autorisation parentale, sexisme & harcèlement espace public/loi 22 mai 2014) — 75 domaines / 254 réponses, 100%; TBA
 
 ## 2026-06-27
 **99 réalisations** · de **00:28** à **23:20** (fenêtre de travail : 22h52)

@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 250,
+    "total_savoirs": 262,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -669,6 +669,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "bourse_etudes",
+      "id": "BOURSE-DROIT-001",
+      "sujet": "Ai-je droit à une bourse d'études et combien ?",
+      "reference_legale": "Décret de la Communauté française du 7 novembre 1983 relatif aux allocations et prêts d'études",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bourse_etudes",
+      "id": "BOURSE-DEMANDE-001",
+      "sujet": "Comment et quand demander ma bourse ?",
+      "reference_legale": "Décret de la Communauté française du 7 novembre 1983 (procédure de demande des allocations d'études)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "burnout_bienetre",
       "id": "BIEN-SANTE-DABORD-001",
       "sujet": "Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?",
@@ -933,6 +955,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "credit_consommation",
+      "id": "CREDITCONSO-RETRACTATION-001",
+      "sujet": "J'ai signé un prêt et je regrette : puis-je revenir en arrière ?",
+      "reference_legale": "Code de droit économique, livre VII — droit de rétractation du crédit à la consommation (art. VII.83)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "credit_consommation",
+      "id": "CREDITCONSO-TAEG-001",
+      "sujet": "Comment savoir si le taux qu'on me propose est correct ?",
+      "reference_legale": "Code de droit économique, livre VII — TAEG et taux maximaux du crédit à la consommation",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "credit_hypothecaire",
       "id": "HYPO-OFFRE-001",
       "sujet": "Avant de signer mon prêt logement, ai-je un délai pour réfléchir ou me rétracter ?",
@@ -1138,6 +1182,28 @@
       "sources": 3,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "droit_image",
+      "id": "IMAGE-CONSENTEMENT-001",
+      "sujet": "Peut-on me photographier ou me filmer et publier mon image sans mon accord ?",
+      "reference_legale": "Code de droit économique, art. XI.174 (droit de la personne représentée) ; Constitution art. 22 (vie privée)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "droit_image",
+      "id": "IMAGE-RETRAIT-001",
+      "sujet": "Une photo/vidéo de moi est publiée sans accord : comment la faire retirer ?",
+      "reference_legale": "RGPD (droit à l'effacement) ; Code de droit économique art. XI.174 ; Code pénal (diffusion d'images sans consentement selon les cas)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
       "valide": true
     },
     {
@@ -2286,6 +2352,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "sexisme_espace_public",
+      "id": "SEX-LOI-001",
+      "sujet": "Le harcèlement de rue / sexisme est-il puni par la loi ?",
+      "reference_legale": "Loi du 22 mai 2014 tendant à lutter contre le sexisme dans l'espace public",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "sexisme_espace_public",
+      "id": "SEX-REAGIR-001",
+      "sujet": "Que faire si je subis (ou je vois) du harcèlement sexiste ?",
+      "reference_legale": "Loi du 22 mai 2014 (sexisme) ; Code pénal (injures, harcèlement, attentat à la pudeur selon les cas)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "successions",
       "id": "SUCC-OPTIONS-001",
       "sujet": "Suis-je obligé d'accepter un héritage ?",
@@ -2649,6 +2737,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "voiture_occasion",
+      "id": "VOIT-GARANTIE-001",
+      "sujet": "Quelle garantie ai-je pour une voiture d'occasion ?",
+      "reference_legale": "Code de droit économique — garantie légale de conformité ; Code civil — vices cachés (art. 1641)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "voiture_occasion",
+      "id": "VOIT-VICE-CACHE-001",
+      "sujet": "La voiture a un défaut grave non signalé : que faire ?",
+      "reference_legale": "Code civil — garantie des vices cachés (art. 1641 et suivants) ; loi du 11 juin 2004 réprimant la fraude au compteur kilométrique (Car-Pass)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "vote_electoral",
       "id": "VOTE-NIVEAUX-001",
       "sujet": "Pour qui vote-t-on en Belgique (quels niveaux de pouvoir) ?",
@@ -2689,6 +2799,28 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "voyage_mineur",
+      "id": "VOYMIN-KIDSID-001",
+      "sujet": "Quel document d'identité pour faire voyager mon enfant ?",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité (Kids-ID)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "voyage_mineur",
+      "id": "VOYMIN-AUTORISATION-001",
+      "sujet": "Mon enfant voyage sans moi (ou avec un seul parent) : faut-il une autorisation ?",
+      "reference_legale": "Code civil — exercice conjoint de l'autorité parentale (art. 371 et suivants)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
       "valide": true
     },
     {

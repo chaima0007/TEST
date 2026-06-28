@@ -695,6 +695,24 @@
         "sexisme_espace_public"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "bourse_etudes",
+      "nom": "Allocation d études",
+      "statut": "couvert",
+      "modules": [
+        "bourse_etudes"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "droit_image",
+      "nom": "Droit à l image",
+      "statut": "couvert",
+      "modules": [
+        "droit_image"
+      ],
+      "priorite": "haute"
     }
   ]
 }

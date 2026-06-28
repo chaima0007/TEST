@@ -465,6 +465,36 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-BOURSE-ETUDES",
+      "titre": "Spécialiste — Allocation d'études",
+      "domaine": "Allocation d'études",
+      "module": "bourse_etudes",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « allocation d'études », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Ai-je droit à une bourse d'études et combien ?",
+        "Comment et quand demander ma bourse ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Allocations d'études (FWB)",
+          "lien": "https://allocations-etudes.cfwb.be/",
+          "pour": "conditions, barèmes, demande"
+        },
+        {
+          "nom": "Infor Jeunes",
+          "lien": "https://www.jeminforme.be",
+          "pour": "aide pour constituer le dossier"
+        },
+        {
+          "nom": "Allocations d'études (FWB) — Mon Espace",
+          "lien": "https://allocations-etudes.cfwb.be/",
+          "pour": "introduire et suivre la demande"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-BURNOUT-BIENETRE",
       "titre": "Spécialiste — Bien-être & burnout",
       "domaine": "Bien-être & burnout",
@@ -697,6 +727,30 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-CREDIT-CONSOMMATION",
+      "titre": "Spécialiste — Crédit à la consommation",
+      "domaine": "Crédit à la consommation",
+      "module": "credit_consommation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « crédit à la consommation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai signé un prêt et je regrette : puis-je revenir en arrière ?",
+        "Comment savoir si le taux qu'on me propose est correct ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "droits de l'emprunteur, rétractation"
+        },
+        {
+          "nom": "Service de médiation de dettes / CPAS",
+          "pour": "si le remboursement devient difficile"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-CREDIT-HYPOTHECAIRE",
       "titre": "Spécialiste — Crédit hypothécaire",
       "domaine": "Crédit hypothécaire",
@@ -901,6 +955,31 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-DROIT-IMAGE",
+      "titre": "Spécialiste — Droit à l'image",
+      "domaine": "Droit à l'image",
+      "module": "droit_image",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « droit à l'image », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Peut-on me photographier ou me filmer et publier mon image sans mon accord ?",
+        "Une photo/vidéo de moi est publiée sans accord : comment la faire retirer ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Autorité de protection des données (APD)",
+          "lien": "https://www.autoriteprotectiondonnees.be",
+          "pour": "image = donnée personnelle (RGPD)"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "contenu grave, images intimes (urgence : 112)"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -2003,6 +2082,36 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-SEXISME-ESPACE-PUBLIC",
+      "titre": "Spécialiste — Sexisme & espace public",
+      "domaine": "Sexisme & espace public",
+      "module": "sexisme_espace_public",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « sexisme & espace public », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Le harcèlement de rue / sexisme est-il puni par la loi ?",
+        "Que faire si je subis (ou je vois) du harcèlement sexiste ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "porter plainte (urgence : 112)"
+        },
+        {
+          "nom": "Institut pour l'égalité des femmes et des hommes",
+          "lien": "https://igvm-iefh.belgium.be",
+          "pour": "information, signalement, accompagnement"
+        },
+        {
+          "nom": "1712",
+          "numero": "1712",
+          "pour": "écoute violences et maltraitance"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-SUCCESSIONS",
       "titre": "Spécialiste — Successions",
       "domaine": "Successions",
@@ -2264,6 +2373,43 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-VOITURE-OCCASION",
+      "titre": "Spécialiste — Achat véhicule d'occasion",
+      "domaine": "Achat véhicule d'occasion",
+      "module": "voiture_occasion",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « achat véhicule d'occasion », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle garantie ai-je pour une voiture d'occasion ?",
+        "La voiture a un défaut grave non signalé : que faire ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Vendeur",
+          "pour": "faire jouer la garantie / signaler le défaut par écrit"
+        },
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "litige avec un vendeur professionnel"
+        },
+        {
+          "nom": "Garage / expert automobile",
+          "pour": "constat du vice caché"
+        },
+        {
+          "nom": "Car-Pass",
+          "lien": "https://www.car-pass.be",
+          "pour": "vérifier le kilométrage certifié"
+        },
+        {
+          "nom": "Juge de paix",
+          "pour": "litige (conciliation possible, gratuite)"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-VOTE-ELECTORAL",
       "titre": "Spécialiste — Vote & démocratie",
       "domaine": "Vote & démocratie",
@@ -2282,6 +2428,30 @@
         }
       ],
       "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-VOYAGE-MINEUR",
+      "titre": "Spécialiste — Voyage d'un enfant",
+      "domaine": "Voyage d'un enfant",
+      "module": "voyage_mineur",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « voyage d'un enfant », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quel document d'identité pour faire voyager mon enfant ?",
+        "Mon enfant voyage sans moi (ou avec un seul parent) : faut-il une autorisation ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Administration communale",
+          "pour": "demande de Kids-ID"
+        },
+        {
+          "nom": "SPF Affaires étrangères",
+          "lien": "https://diplomatie.belgium.be",
+          "pour": "conditions selon la destination"
+        }
+      ],
+      "nb_reponses": 2,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {

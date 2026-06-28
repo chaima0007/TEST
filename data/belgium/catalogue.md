@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-28. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**246 réponses · 75 modules · 372 sources officielles · 161 fiches avec contacts · 73 alertes de délai**
+**258 réponses · 81 modules · 391 sources officielles · 173 fiches avec contacts · 77 alertes de délai**
 
 ## Modules en ligne
 
@@ -25,6 +25,7 @@
 | — | Bail de résidence principale — Région wallonne | 9 | 15 | 0 | 0 |
 | Services bancaires | Banque & compte de base | 2 | 3 | 2 | 0 |
 | Volontariat | Bénévolat & volontariat — vos droits | 2 | 2 | 2 | 0 |
+| Allocation d'études | Bourse / allocation d'études | 2 | 2 | 2 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 3 | 6 | 3 | 0 |
 | Chômage & emploi | Chômage — droits, démarches et sanctions | 2 | 2 | 2 | 0 |
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
@@ -33,6 +34,7 @@
 | Copropriété | Copropriété — vivre en appartement | 2 | 2 | 2 | 1 |
 | Couple & vie commune | Couple — mariage, cohabitation légale, union libre | 3 | 3 | 2 | 0 |
 | Crédit & fichage | Crédit & fichage — emprunts, défaut de paiement, Centrale des crédits | 3 | 5 | 1 | 1 |
+| Crédit à la consommation | Crédit à la consommation (prêt à tempérament) | 2 | 3 | 2 | 1 |
 | Crédit hypothécaire | Crédit hypothécaire — emprunter pour un logement | 2 | 2 | 2 | 1 |
 | Décès & démarches | Décès — démarches pratiques après le décès d'un proche | 3 | 3 | 2 | 2 |
 | Déchets & environnement | Déchets, tri & propreté | 2 | 3 | 2 | 0 |
@@ -40,6 +42,7 @@
 | Divorce & séparation | Divorce & séparation | 2 | 4 | 2 | 0 |
 | Documents d'identité | Documents d'identité — carte, passeport, permis | 2 | 4 | 2 | 1 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
+| Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 3 | 5 | 3 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 3 | 5 | 2 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
@@ -73,6 +76,7 @@
 | Saisies & recouvrement | Saisies & huissier — ce qui peut être pris (ou non) | 2 | 2 | 2 | 0 |
 | Santé mentale | Santé mentale — aide psychologique, remboursement, écoute | 2 | 4 | 2 | 1 |
 | Santé & patient | Santé — droits du patient | 4 | 6 | 1 | 1 |
+| Sexisme & espace public | Sexisme & harcèlement dans l'espace public | 2 | 4 | 2 | 0 |
 | Successions | Successions & héritage — accepter, renoncer, délais | 4 | 4 | 3 | 2 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 2 | 3 | 2 | 1 |
@@ -81,7 +85,9 @@
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
 | Violences conjugales | Violences conjugales & familiales — se protéger | 3 | 6 | 3 | 1 |
 | Voisinage | Voisinage — bien s'entendre et régler les conflits | 4 | 4 | 3 | 0 |
+| Achat véhicule d'occasion | Acheter une voiture d'occasion | 2 | 2 | 2 | 1 |
 | Vote & démocratie | Vote électoral — pour qui et pourquoi on vote | 4 | 8 | 1 | 0 |
+| Voyage d'un enfant | Voyage d'un mineur — Kids-ID & autorisation parentale | 2 | 4 | 2 | 1 |
 | Voyages | Voyages à forfait — annulation & remboursement | 2 | 2 | 2 | 1 |
 
 ## Couverture des domaines du droit belge
@@ -159,3 +165,9 @@
 | Petite enfance & accueil | couvert | haute |
 | Recouvrement de dettes | couvert | haute |
 | Construction & travaux | couvert | haute |
+| Crédit à la consommation | couvert | haute |
+| Achat véhicule d occasion | couvert | haute |
+| Voyage d un enfant | couvert | moyenne |
+| Sexisme & espace public | couvert | haute |
+| Allocation d études | couvert | haute |
+| Droit à l image | couvert | haute |

@@ -1,0 +1,47 @@
+{
+  "module": "bourse_etudes",
+  "titre": "Bourse / allocation d'études",
+  "domaine": "Allocation d'études",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret de la Communauté française du 7 novembre 1983 relatif aux allocations et prêts d'études",
+    "portee": "Aide financière aux études (secondaire et supérieur) selon les revenus",
+    "source_officielle": "https://allocations-etudes.cfwb.be/"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Montants et plafonds sont fixés chaque année ; vérifiez sur le site officiel des allocations d'études. En Flandre, l'organisme compétent est différent.",
+  "faits": [
+    {
+      "id": "BOURSE-DROIT-001",
+      "question": "Ai-je droit à une bourse d'études et combien ?",
+      "reponse": "En Fédération Wallonie-Bruxelles, une allocation d'études (bourse) est accordée aux familles à revenus modestes, pour le secondaire comme pour le supérieur. Le montant dépend des revenus du ménage, du nombre de personnes à charge, du niveau d'études et de votre situation de logement (kot ou non). À titre indicatif, les montants vont de quelques dizaines d'euros à plusieurs milliers selon les cas — vérifiez le barème de l'année en cours. Posséder certains biens immobiliers (hors logement familial) au-delà d'un seuil peut exclure le droit.",
+      "reference_legale": "Décret de la Communauté française du 7 novembre 1983 relatif aux allocations et prêts d'études",
+      "contacts": [
+        {"nom": "Allocations d'études (FWB)", "lien": "https://allocations-etudes.cfwb.be/", "pour": "conditions, barèmes, demande"},
+        {"nom": "Infor Jeunes", "lien": "https://www.jeminforme.be", "pour": "aide pour constituer le dossier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://allocations-etudes.cfwb.be/", "intitule": "Fédération Wallonie-Bruxelles — Allocations d'études"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/etudier-se-former/enseignement-superieur/obtenir-une-allocation-detude-dans-lenseignement-superieur/", "intitule": "Bruxelles-J — Obtenir une allocation d'études"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "BOURSE-DEMANDE-001",
+      "question": "Comment et quand demander ma bourse ?",
+      "reponse": "La demande se fait chaque année, en ligne via « Mon Espace » (le guichet électronique de la Fédération Wallonie-Bruxelles) — méthode recommandée car le suivi est automatique — ou sur papier par recommandé. Pour le supérieur, joignez une attestation d'inscription définitive. Attention au délai : la demande s'introduit dans une période précise (en général de l'été jusqu'au 31 octobre). Ne tardez pas : une demande hors délai est refusée.",
+      "reference_legale": "Décret de la Communauté française du 7 novembre 1983 (procédure de demande des allocations d'études)",
+      "alerte_delai": "La demande doit être introduite dans le délai annuel (en général jusqu'au 31 octobre) — au-delà, elle est refusée.",
+      "contacts": [
+        {"nom": "Allocations d'études (FWB) — Mon Espace", "lien": "https://allocations-etudes.cfwb.be/", "pour": "introduire et suivre la demande"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://allocations-etudes.cfwb.be/", "intitule": "FWB — Allocations d'études (demande)"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be/allocation-detudes-dans-lenseignement-superieur-conditions-montants-et-minerval/", "intitule": "Infor Jeunes — Allocation d'études (supérieur)"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

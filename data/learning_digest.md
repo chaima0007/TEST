@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **250**
+- Savoirs enregistrés : **262**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `895aff2f32805fa3…`)
+- Certification système : **PASS** (sceau `ecaaec51f8d150cb…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
@@ -128,6 +128,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 3 juillet 2005 relative aux droits des volontaires (note d'information, limitation de responsabilité) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Puis-je être remboursé de mes frais, et suis-je assuré ?**  
   Réf : Loi du 3 juillet 2005 relative aux droits des volontaires (défraiement et obligation d'assurance) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Ai-je droit à une bourse d'études et combien ?**  
+  Réf : Décret de la Communauté française du 7 novembre 1983 relatif aux allocations et prêts d'études · sources off. : 1 · revu : 2026-06-28
+- ✅ **Comment et quand demander ma bourse ?**  
+  Réf : Décret de la Communauté française du 7 novembre 1983 (procédure de demande des allocations d'études) · sources off. : 1 · revu : 2026-06-28
 - ✅ **Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?**  
   Réf : Loi du 4 août 1996 relative au bien-être des travailleurs (volet risques psychosociaux : stress, burnout) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Je me sens harcelé·e au travail mais je n'ose rien dire. Que puis-je faire ?**  
@@ -176,6 +180,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code de droit économique — délais de conservation à la CCP · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment savoir ce qui est enregistré sur moi ?**  
   Réf : Code de droit économique — droit de consultation de la CCP ; RGPD (droit d'accès) · sources off. : 2 · revu : 2026-06-26
+- ✅ **J'ai signé un prêt et je regrette : puis-je revenir en arrière ?**  
+  Réf : Code de droit économique, livre VII — droit de rétractation du crédit à la consommation (art. VII.83) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Comment savoir si le taux qu'on me propose est correct ?**  
+  Réf : Code de droit économique, livre VII — TAEG et taux maximaux du crédit à la consommation · sources off. : 1 · revu : 2026-06-28
 - ✅ **Avant de signer mon prêt logement, ai-je un délai pour réfléchir ou me rétracter ?**  
   Réf : Code de droit économique, livre VII — crédit hypothécaire (information précontractuelle et droit de rétractation) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Puis-je rembourser mon prêt plus tôt, et à quel coût ?**  
@@ -214,6 +222,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 24 février 1921 sur les stupéfiants (cadre) ; dispositifs régionaux d'aide en assuétudes · sources off. : 1 · revu : 2026-06-26
 - ✅ **Des témoignages réels de personnes qui s'en sont sorties ?**  
   Réf : Loi du 24 février 1921 sur les stupéfiants (cadre) ; dispositifs de réduction des risques · sources off. : 1 · revu : 2026-06-26
+- ✅ **Peut-on me photographier ou me filmer et publier mon image sans mon accord ?**  
+  Réf : Code de droit économique, art. XI.174 (droit de la personne représentée) ; Constitution art. 22 (vie privée) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Une photo/vidéo de moi est publiée sans accord : comment la faire retirer ?**  
+  Réf : RGPD (droit à l'effacement) ; Code de droit économique art. XI.174 ; Code pénal (diffusion d'images sans consentement selon les cas) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Mon distributeur peut-il me couper l'eau si je n'ai pas payé ?**  
   Réf : Code de l'eau (Région wallonne) — Règlement général de distribution d'eau en Région wallonne · sources off. : 2 · revu : 2026-06-27
 - ✅ **Doit-on me faire payer des frais dès le premier rappel ?**  
@@ -422,6 +434,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 22 août 2002 — accès au dossier du patient · sources off. : 2 · revu : 2026-06-26
 - ✅ **Un de mes droits de patient n'a pas été respecté : que faire ?**  
   Réf : Loi du 22 août 2002 — droit à la médiation (service de médiation Droits du patient) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Le harcèlement de rue / sexisme est-il puni par la loi ?**  
+  Réf : Loi du 22 mai 2014 tendant à lutter contre le sexisme dans l'espace public · sources off. : 2 · revu : 2026-06-28
+- ✅ **Que faire si je subis (ou je vois) du harcèlement sexiste ?**  
+  Réf : Loi du 22 mai 2014 (sexisme) ; Code pénal (injures, harcèlement, attentat à la pudeur selon les cas) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Suis-je obligé d'accepter un héritage ?**  
   Réf : Code civil — options de l'héritier (acceptation, bénéfice d'inventaire, renonciation) · sources off. : 1 · revu : 2026-06-26
 - ✅ **J'ai peur que l'héritage contienne des dettes : que faire ?**  
@@ -488,6 +504,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — distances de plantation et branches ; règlements communaux · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne la conciliation devant le juge de paix ?**  
   Réf : Code judiciaire — conciliation devant le juge de paix · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelle garantie ai-je pour une voiture d'occasion ?**  
+  Réf : Code de droit économique — garantie légale de conformité ; Code civil — vices cachés (art. 1641) · sources off. : 1 · revu : 2026-06-28
+- ✅ **La voiture a un défaut grave non signalé : que faire ?**  
+  Réf : Code civil — garantie des vices cachés (art. 1641 et suivants) ; loi du 11 juin 2004 réprimant la fraude au compteur kilométrique (Car-Pass) · sources off. : 1 · revu : 2026-06-28
 - ✅ **Pour qui vote-t-on en Belgique (quels niveaux de pouvoir) ?**  
   Réf : Constitution belge — structure de l'État et niveaux de pouvoir · sources off. : 2 · revu : 2026-06-26
 - ✅ **Qui décide de quoi : fédéral, Régions, Communautés, communes ?**  
@@ -496,6 +516,10 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code électoral — obligation de vote ; vote blanc · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment se passe le jour du vote ?**  
   Réf : Code électoral — modalités du vote, procuration · sources off. : 2 · revu : 2026-06-26
+- ✅ **Quel document d'identité pour faire voyager mon enfant ?**  
+  Réf : Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité (Kids-ID) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Mon enfant voyage sans moi (ou avec un seul parent) : faut-il une autorisation ?**  
+  Réf : Code civil — exercice conjoint de l'autorité parentale (art. 371 et suivants) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Puis-je annuler mon voyage à forfait et être remboursé ?**  
   Réf : Loi du 21 novembre 2017 relative à la vente de voyages à forfait (droit de résiliation et remboursement) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Que se passe-t-il si l'agence de voyages fait faillite ?**  
