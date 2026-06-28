@@ -262,6 +262,18 @@
             "TBA dynamique + générateur + intégration orchestrateur"
           ],
           "prochaines_etapes": []
+        },
+        {
+          "nom": "SEO technique (sitemap + robots)",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "sitemap.ts + robots.ts Caelum (normes + secteurs)",
+            "sitemap La Loi Avec Moi enrichi (/loi/[domaine], /jeunes, /base-juridique)"
+          ],
+          "prochaines_etapes": [
+            "Définir NEXT_PUBLIC_SITE_URL au déploiement (Caelum)"
+          ]
         }
       ]
     }

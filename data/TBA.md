@@ -72,6 +72,8 @@ _Dernière mise à jour : 2026-06-28_
 | Scalabilité & monitoring (P-SCALABILITE) | `███████████░` 95% | en cours |
 | Charte d'autonomie (P-AUTONOMIE) | `████████████` 100% | terminé |
 | Tableau de Bord d'Avancement (P-TBA) | `████████████` 100% | terminé |
+| SEO technique (sitemap + robots) | `███████████░` 95% | en cours |
 
 - **Protocoles de gouvernance** → prochaines étapes : Revue périodique
 - **Scalabilité & monitoring (P-SCALABILITE)** → prochaines étapes : Renseigner les vrais coûts (décision Chaima)
+- **SEO technique (sitemap + robots)** → prochaines étapes : Définir NEXT_PUBLIC_SITE_URL au déploiement (Caelum)
