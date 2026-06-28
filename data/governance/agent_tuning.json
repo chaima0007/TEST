@@ -1,0 +1,17 @@
+{
+  "parametres": {
+    "latence_alerte_ms": 132,
+    "latence_critique_ms": 800,
+    "fraicheur_max_jours": 365
+  },
+  "historique": [
+    [
+      {
+        "param": "latence_alerte_ms",
+        "avant": 300,
+        "apres": 132,
+        "raison": "p95 réel max=88.0ms → on peut viser plus strict"
+      }
+    ]
+  ]
+}

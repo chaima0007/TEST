@@ -1,7 +1,7 @@
 {
   "registre": "PROTOCOLES EN VIGUEUR — à appliquer à CHAQUE décision/action",
   "but": "Chaima ne doit jamais avoir à répéter ces règles. Elles sont permanentes et vérifiées.",
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-28",
   "regle_maitresse": "Avant toute décision, action ou envoi : passer en revue ce registre et appliquer chaque protocole concerné. Honnêteté absolue, toujours.",
   "protocoles": [
     {
@@ -273,6 +273,24 @@
       "nom": "Tableau de Bord d'Avancement",
       "regle": "Maintenir un TBA dynamique par projet (jauges %, actions faites, prochaines étapes, point de sortie). Mettre à jour data/governance/tba.json à chaque tâche terminée et régénérer data/TBA.md. Sert de référence de continuité entre sessions ; consultable à tout moment.",
       "verif": "python3 scripts/tba_protocol.py"
+    },
+    {
+      "id": "P-AUTO-REPARATION",
+      "nom": "Auto-réparation (réaffectation sur panne)",
+      "regle": "Si un agent/contrôle critique tombe, basculer immédiatement sur une routine de secours pour assurer la continuité du service. Journaliser chaque réparation.",
+      "verif": "python3 scripts/self_healing_protocol.py"
+    },
+    {
+      "id": "P-CONFLIT",
+      "nom": "Résolution de conflit décentralisée",
+      "regle": "Trancher les divergences entre sources sans humain via une règle de théorie des jeux : confiance (payoff) > récence > majorité. La source canonique l emporte.",
+      "verif": "python3 scripts/conflict_resolution_protocol.py"
+    },
+    {
+      "id": "P-AMELIORATION",
+      "nom": "Amélioration continue (auto-réglage borné)",
+      "regle": "Les agents analysent leurs résultats et auto-règlent leurs paramètres (seuils) dans des bornes sûres, journalisées et réversibles. PAS de réécriture de code arbitraire.",
+      "verif": "python3 scripts/continuous_improvement_protocol.py"
     }
   ]
 }

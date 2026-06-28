@@ -5,10 +5,10 @@
     {
       "plateforme": "Flotte d'agents",
       "dimension": "Agents IA (scripts .py)",
-      "valeur": 233,
+      "valeur": 236,
       "seuil_alerte": 320,
       "seuil_critique": 450,
-      "pct_du_critique": 51.8,
+      "pct_du_critique": 52.4,
       "statut": "OK"
     },
     {
@@ -59,10 +59,10 @@
     {
       "plateforme": "Gouvernance",
       "dimension": "Fichiers de données (governance)",
-      "valeur": 29,
+      "valeur": 30,
       "seuil_alerte": 80,
       "seuil_critique": 150,
-      "pct_du_critique": 19.3,
+      "pct_du_critique": 20.0,
       "statut": "OK"
     }
   ],
@@ -108,7 +108,7 @@
     "postes_a_completer": 10
   },
   "prevision": {
-    "note": "rythme observé : 4.2 nouveau(x) module(s)/passage sur 20 passages",
-    "runway_passages_avant_saturation_modules": 125
+    "note": "rythme observé : 4.0 nouveau(x) module(s)/passage sur 21 passages",
+    "runway_passages_avant_saturation_modules": 131
   }
 }

@@ -9,7 +9,7 @@
 - Verdict court terme : production soutenue, chaque réponse sourcée et datée. Base utile et publiable.
 
 ## Long terme (trajectoire & durabilité)
-- Indice d'expertise : 42.0 → **75.0** (en hausse, sur 28 mesures)
+- Indice d'expertise : 42.0 → **75.0** (en hausse, sur 29 mesures)
 - Mécanismes de durabilité en place : veille juridique, sauvegardes, reprise, protocoles appliqués automatiquement à chaque sauvegarde.
 - Verdict long terme : viable **si** la mise à jour continue (veille) et la monétisation s'activent. Les garde-fous existent déjà.
 

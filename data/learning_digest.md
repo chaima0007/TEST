@@ -5,7 +5,7 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
 ## ✅ Contrôles qualité
 - Savoirs enregistrés : **262**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `ecaaec51f8d150cb…`)
+- Certification système : **PASS** (sceau `492cb8d75f03da3c…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
