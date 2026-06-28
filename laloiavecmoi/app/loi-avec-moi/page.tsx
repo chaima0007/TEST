@@ -259,6 +259,7 @@ export default function LoiAvecMoiPage() {
             <Link href="/loi-avec-moi/enfants-places" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Enfants placés</Link>
             <Link href="/loi-avec-moi/jeunes" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Jeunes</Link>
             <Link href="/loi-avec-moi/urgences" className="px-3 py-2 text-sm rounded-lg text-rose-600 hover:text-rose-800 hover:bg-rose-50 font-semibold">Urgences</Link>
+            <Link href="/loi-avec-moi/contacts" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Qui contacter</Link>
             <Link href="/base-juridique" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Toutes mes réponses</Link>
             <Link href="/transparence" className="px-3 py-2 text-sm rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium">Nos sources</Link>
           </div>
