@@ -35,14 +35,15 @@
         },
         {
           "nom": "Modèles de documents prêts à l'emploi",
-          "pct": 85,
+          "pct": 95,
           "statut": "en cours",
           "actions_faites": [
             "16 modèles copier-coller",
-            "Logement (garantie, réparations), Travail (démission, motifs licenciement), conso, RGPD, CPAS, amende, plainte, école, avocat, juge"
+            "Bouton Télécharger (.txt) par modèle",
+            "Lecture audio (accessibilité)"
           ],
           "prochaines_etapes": [
-            "Bouton export PDF"
+            "(option) export PDF mis en page"
           ]
         },
         {

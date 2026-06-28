@@ -2,10 +2,10 @@
 
 _Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **83%**
-`█████████████████░░░` 83%
+## 🚀 Avancement global de la flotte : **84%**
+`█████████████████░░░` 84%
 
-- **La Loi Avec Moi (citoyens)** — `████████░░░░░░` 59%
+- **La Loi Avec Moi (citoyens)** — `████████░░░░░░` 60%
 - **Caelum (entreprises B2B)** — `█████████████░` 95%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
@@ -16,8 +16,8 @@ _Dernière mise à jour : 2026-06-28_
 - **Déployer les 2 sites séparément** — Guide clé en main prêt: DEPLOIEMENT.md (Vercel, 2 projets séparés, variables d env, webhook leads). Build des 2 apps vérifié. Dis "go déploiement" et je te guide écran par écran.
 - **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.
 
-## La Loi Avec Moi (citoyens) — 59%
-`████████████░░░░░░░░` 59%
+## La Loi Avec Moi (citoyens) — 60%
+`████████████░░░░░░░░` 60%
 
 > **Point de sortie :** 81 domaines / 266 réponses, 100% lois + sources. App laloiavecmoi/ séparée, build + charge vérifiés.
 
@@ -25,7 +25,7 @@ _Dernière mise à jour : 2026-06-28_
 |---|---|---|
 | Base juridique sourcée (domaines + réponses) | `███████████░` 90% | en cours |
 | Page « Base juridique » (rendu serveur) | `████████████` 100% | terminé |
-| Modèles de documents prêts à l'emploi | `██████████░░` 85% | en cours |
+| Modèles de documents prêts à l'emploi | `███████████░` 95% | en cours |
 | Espace enfants & jeunes / mineurs | `███████████░` 90% | en cours |
 | Versions multilingues (NL en premier) | `█░░░░░░░░░░░` 5% | à faire |
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
@@ -33,7 +33,7 @@ _Dernière mise à jour : 2026-06-28_
 | Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
 
 - **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
-- **Modèles de documents prêts à l'emploi** → prochaines étapes : Bouton export PDF
+- **Modèles de documents prêts à l'emploi** → prochaines étapes : (option) export PDF mis en page
 - **Espace enfants & jeunes / mineurs** → prochaines étapes : Pictos illustrés / version lecture facile
 - **Versions multilingues (NL en premier)** → prochaines étapes : Traduction NL des modules prioritaires
 - **Déploiement & hébergement** → prochaines étapes : Hébergeur + domaine + NEXT_PUBLIC_SITE_URL
