@@ -1,0 +1,47 @@
+{
+  "module": "citoyen_europeen",
+  "titre": "Citoyen européen — vivre, travailler, étudier dans l'UE",
+  "domaine": "Droits dans l'Union européenne",
+  "juridiction": "UE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Directive 2004/38/CE (libre circulation des citoyens de l'Union) ; Règlement (CE) 883/2004 (coordination de la sécurité sociale)",
+    "portee": "Droits de circuler, séjourner, travailler et étudier dans un autre pays de l'UE",
+    "source_officielle": "https://europa.eu/youreurope/citizens/"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale au niveau de l'UE, à jour à la date de revue. Chaque pays peut avoir des formalités locales ; vérifiez via Your Europe et l'administration du pays d'accueil.",
+  "faits": [
+    {
+      "id": "UE-CIRCULATION-001",
+      "question": "Puis-je aller vivre, travailler ou étudier dans un autre pays de l'UE ?",
+      "reponse": "Oui. En tant que citoyen de l'Union, vous pouvez vous installer dans n'importe quel pays de l'UE pour y vivre, travailler (salarié ou indépendant, sans permis de travail), étudier, chercher un emploi ou prendre votre retraite. Vous pouvez séjourner jusqu'à 3 mois avec une carte d'identité ou un passeport valides ; au-delà, une inscription/enregistrement auprès des autorités locales peut être exigée (et, selon les cas, prouver des ressources et une assurance maladie).",
+      "reference_legale": "Directive 2004/38/CE relative au droit des citoyens de l'Union de circuler et séjourner librement",
+      "contacts": [
+        {"nom": "Your Europe (Commission européenne)", "lien": "https://europa.eu/youreurope/citizens/", "pour": "droits de séjour, formalités par pays"},
+        {"nom": "Europe Direct", "lien": "https://european-union.europa.eu/contact-eu_fr", "pour": "questions sur vos droits dans l'UE"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/residence/residence-rights/index_fr.htm", "intitule": "Your Europe — Droits de séjour dans l'UE"},
+        {"type": "officiel", "url": "https://european-union.europa.eu/live-work-study/living-eu_en", "intitule": "Union européenne — Vivre dans l'UE"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UE-SANTE-DIPLOMES-001",
+      "question": "Et ma santé et mes diplômes quand je bouge en Europe ?",
+      "reponse": "Santé : demandez la Carte européenne d'assurance maladie (CEAM) à votre mutualité — elle couvre les soins médicalement nécessaires lors d'un séjour temporaire dans l'UE. Si vous vous installez durablement, vos droits de sécurité sociale sont coordonnés entre pays (règlement européen). Diplômes : pour exercer une profession réglementée dans un autre pays de l'UE, vous pouvez demander la reconnaissance de vos qualifications professionnelles. Your Europe explique la marche à suivre par pays et par métier.",
+      "reference_legale": "Règlement (CE) 883/2004 (coordination de la sécurité sociale) ; Directive 2005/36/CE (reconnaissance des qualifications professionnelles)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "Carte européenne d'assurance maladie (CEAM)"},
+        {"nom": "Your Europe", "lien": "https://europa.eu/youreurope/citizens/", "pour": "reconnaissance des diplômes, sécurité sociale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/work/professional-qualifications/recognition-of-professional-qualifications/index_fr.htm", "intitule": "Your Europe — Reconnaissance des qualifications"},
+        {"type": "officiel", "url": "https://european-union.europa.eu/live-work-study/working-eu_en", "intitule": "Union européenne — Travailler dans l'UE"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

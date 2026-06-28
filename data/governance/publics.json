@@ -101,7 +101,9 @@
         "colocation",
         "maltraitance_aines",
         "adresse_reference",
-        "testament"
+        "testament",
+        "citoyen_europeen",
+        "litiges_transfrontaliers"
       ]
     }
   }

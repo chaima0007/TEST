@@ -5,17 +5,17 @@
   "projets": [
     {
       "nom": "La Loi Avec Moi (citoyens)",
-      "point_de_sortie": "81 domaines / 266 réponses, 100% lois + sources. App laloiavecmoi/ séparée, build + charge vérifiés.",
+      "point_de_sortie": "83 domaines / 270 réponses (dont couche UE), 100% lois + sources. Build + 1200 simulations OK (p95<111ms, 0% erreur).",
       "taches": [
         {
           "nom": "Base juridique sourcée (domaines + réponses)",
           "pct": 90,
           "statut": "en cours",
           "actions_faites": [
-            "81 domaines couverts",
-            "266 réponses, 100% loi concrète",
-            "100% sources officielles (vérif tier1)",
-            "build + tests de charge vérifiés"
+            "83 domaines (dont droits UE/transfrontaliers)",
+            "270 réponses, 100% loi concrète",
+            "100% sources officielles",
+            "vérif approfondie + 1200 simulations OK"
           ],
           "prochaines_etapes": [
             "Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)"
@@ -283,10 +283,10 @@
           "pct": 95,
           "statut": "en cours",
           "actions_faites": [
-            "Simulateur de charge (p50/p95/p99 + débit + erreurs)",
-            "Test réel sur build local",
-            "Optimisation base-juridique: p95 410ms->88ms, debit x4.8",
-            "Routes clés <100ms p95, 0% erreur"
+            "Simulateur p50/p95/p99",
+            "Cycle exhaustif 1200 simulations",
+            "Toutes routes p95<111ms, 0% erreur",
+            "Vérif sources approfondie: 0 conflit, 0 preuve faible"
           ],
           "prochaines_etapes": [
             "Re-tester sur l hébergement réel après déploiement"

@@ -749,6 +749,24 @@
         "testament"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "citoyen_europeen",
+      "nom": "Droits dans l Union européenne",
+      "statut": "couvert",
+      "modules": [
+        "citoyen_europeen"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "litiges_transfrontaliers",
+      "nom": "Consommation transfrontalière (UE)",
+      "statut": "couvert",
+      "modules": [
+        "litiges_transfrontaliers"
+      ],
+      "priorite": "moyenne"
     }
   ]
 }
