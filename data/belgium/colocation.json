@@ -1,0 +1,48 @@
+{
+  "module": "colocation",
+  "titre": "Colocation — bail commun & règles",
+  "domaine": "Colocation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret wallon du 15 mars 2018 relatif au bail d'habitation (colocation) ; ordonnance bruxelloise relative au bail d'habitation",
+    "portee": "Bail de colocation, solidarité, pacte entre colocataires, départ",
+    "source_officielle": "https://logement.wallonie.be/fr/bail/colocation"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles dépendent de la Région ; vérifiez votre bail et le service logement régional.",
+  "faits": [
+    {
+      "id": "COLOC-BAIL-001",
+      "question": "Comment fonctionne un bail de colocation et la clause de solidarité ?",
+      "reponse": "En Wallonie (depuis le 01/09/2018) comme à Bruxelles, la colocation est encadrée : un contrat unique réunit le bailleur et tous les colocataires. Très souvent, le bail contient une clause de solidarité : chaque colocataire peut alors être tenu responsable de la TOTALITÉ du loyer et des dégâts, même s'il n'en est pas l'auteur. Lisez bien cette clause avant de signer. À côté du bail, un pacte de colocation organise la vie commune entre colocataires (loyer, charges, départ) — obligatoire en Wallonie, vivement recommandé à Bruxelles.",
+      "reference_legale": "Décret wallon du 15 mars 2018 (colocation) ; ordonnance bruxelloise relative au bail d'habitation",
+      "contacts": [
+        {"nom": "Service logement de votre Région", "pour": "règles de colocation, modèles de bail/pacte"},
+        {"nom": "Tous les colocataires", "pour": "rédiger le pacte de colocation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/colocation", "intitule": "Wallonie — La colocation"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/te-loger/la-co-location-quel-impact-sur-le-bail-et-sur-les-responsabilites/", "intitule": "Bruxelles-J — Colocation et responsabilités"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "COLOC-DEPART-001",
+      "question": "Je veux quitter la colocation : quel préavis et quelles obligations ?",
+      "reponse": "Vous pouvez partir avant les autres, mais en respectant un préavis (en principe 3 mois en Wallonie, 2 mois à Bruxelles) et les règles du pacte de colocation. Souvent, le colocataire sortant doit aider à trouver un remplaçant ; à défaut, la clause de solidarité peut continuer à vous engager un temps. Chaque colocataire doit aussi être couvert par une assurance incendie pour sa responsabilité. Faites tout par écrit (préavis recommandé, état des lieux, accord sur la garantie) pour éviter les litiges.",
+      "reference_legale": "Décret wallon du 15 mars 2018 (colocation — préavis et solidarité) ; ordonnance bruxelloise relative au bail d'habitation",
+      "alerte_delai": "Respectez le préavis (≈ 3 mois en Wallonie, 2 mois à Bruxelles), par écrit recommandé.",
+      "contacts": [
+        {"nom": "Colocataires + bailleur", "pour": "remplaçant, avenant au bail, garantie"},
+        {"nom": "Juge de paix", "pour": "litige de colocation (conciliation gratuite possible)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/colocation", "intitule": "Wallonie — La colocation"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/louer-un-logement/contrat-de-bail/la-colocation-me-tente-y-t-il", "intitule": "Wikifin (FSMA) — La colocation"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

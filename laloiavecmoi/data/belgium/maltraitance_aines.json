@@ -1,0 +1,49 @@
+{
+  "module": "maltraitance_aines",
+  "titre": "Maltraitance des aînés — réagir & protéger",
+  "domaine": "Protection des aînés",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code pénal — coups et blessures, abus de la faiblesse (art. 442quater) ; dispositifs régionaux de lutte contre la maltraitance des aînés",
+    "portee": "Reconnaître la maltraitance d'une personne âgée et savoir comment agir",
+    "source_officielle": "https://www.respectseniors.be/"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Sujet sensible. En cas de danger immédiat, appelez le 112. La maltraitance peut être physique, psychologique, financière ou par négligence — vous avez le droit d'agir, en tant que victime OU témoin.",
+  "faits": [
+    {
+      "id": "AINE-RECONNAITRE-001",
+      "question": "Qu'est-ce que la maltraitance d'une personne âgée et qui peut agir ?",
+      "reponse": "La maltraitance d'un aîné peut prendre plusieurs formes : physique (coups), psychologique (humiliations, isolement), financière (vol, abus pour lui faire signer/donner de l'argent), sexuelle, ou par négligence (soins, nourriture, hygiène). La loi protège : abuser de la faiblesse d'une personne vulnérable pour lui faire poser un acte préjudiciable est une infraction. N'importe qui peut agir : la victime, un proche, un voisin ou un professionnel. Parler, c'est déjà protéger.",
+      "reference_legale": "Code pénal — abus de la faiblesse (art. 442quater) et infractions de violence",
+      "contacts": [
+        {"nom": "Respect Seniors (Wallonie)", "numero": "0800 30 330", "lien": "https://www.respectseniors.be", "pour": "écoute et accompagnement gratuits"},
+        {"nom": "1712", "numero": "1712", "pour": "violences et maltraitance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.respectseniors.be/maltraitance-des-aines/", "intitule": "Respect Seniors — La maltraitance des aînés"},
+        {"type": "officiel", "url": "https://www.iriscare.brussels/fr/citoyens/aines/maltraitance/", "intitule": "Iriscare (Bruxelles) — Maltraitance des aînés"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "AINE-AGIR-001",
+      "question": "Je suis (ou je vois) une personne âgée maltraitée : que faire ?",
+      "reponse": "En danger immédiat : 112. Sinon, parlez-en sans tarder à un service spécialisé, gratuit et confidentiel : Respect Seniors au 0800 30 330 (Wallonie), Écoute Seniors / Infor-Homes (Bruxelles), ou le 1712. Ils écoutent, conseillent et accompagnent, sans rien imposer. Notez les faits (dates, observations), conservez les preuves (en cas d'abus financier : relevés, documents signés). Vous pouvez porter plainte à la police : la plainte peut être déposée par la victime, un proche OU un témoin. Le médecin peut aussi constater les blessures.",
+      "reference_legale": "Code pénal — abus de la faiblesse (art. 442quater) ; Code d'instruction criminelle (dépôt de plainte par la victime ou un tiers)",
+      "alerte_delai": "En danger immédiat, appelez le 112 sans attendre.",
+      "contacts": [
+        {"nom": "Respect Seniors (Wallonie)", "numero": "0800 30 330", "pour": "signaler, être accompagné"},
+        {"nom": "Police", "numero": "101", "pour": "porter plainte (par la victime ou un témoin)"},
+        {"nom": "Médecin", "pour": "constat médical des blessures"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.respectseniors.be/", "intitule": "Respect Seniors — Agence wallonne"},
+        {"type": "officiel", "url": "https://www.1712.be", "intitule": "1712 — Écoute violences et maltraitance"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

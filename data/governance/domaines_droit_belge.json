@@ -713,6 +713,24 @@
         "droit_image"
       ],
       "priorite": "haute"
+    },
+    {
+      "cle": "colocation",
+      "nom": "Colocation",
+      "statut": "couvert",
+      "modules": [
+        "colocation"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "maltraitance_aines",
+      "nom": "Protection des aînés",
+      "statut": "couvert",
+      "modules": [
+        "maltraitance_aines"
+      ],
+      "priorite": "haute"
     }
   ]
 }
