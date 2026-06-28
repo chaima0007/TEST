@@ -13,7 +13,7 @@ _Dernière mise à jour : 2026-06-28_
 - **Activer la capture de leads** — Créer un webhook (Zapier "Catch Hook" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.
 - **Fixer les prix des offres conformité** — Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.
 - **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).
-- **Choisir hébergeur + domaine** — Décision pour mettre les sites en ligne (déploiement).
+- **Déployer les 2 sites séparément** — laloiavecmoi/ (citoyens) et app/ racine (Caelum) sont 2 apps distinctes qui se buildent. Choisir hébergeur + domaine pour chacune (ex. Vercel). Je te guide.
 
 ## La Loi Avec Moi (citoyens) — 59%
 `████████████░░░░░░░░` 59%
@@ -35,7 +35,7 @@ _Dernière mise à jour : 2026-06-28_
 - **Modèles de documents prêts à l'emploi** → prochaines étapes : Bouton export PDF
 - **Espace enfants & jeunes / mineurs** → prochaines étapes : Pictos illustrés / version lecture facile
 - **Versions multilingues (NL en premier)** → prochaines étapes : Traduction NL des modules prioritaires
-- **Déploiement & hébergement** → prochaines étapes : Choix hébergeur + domaine (décision budgétaire = Chaima)
+- **Déploiement & hébergement** → prochaines étapes : Hébergeur + domaine + NEXT_PUBLIC_SITE_URL
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
 
 ## Caelum (entreprises B2B) — 95%

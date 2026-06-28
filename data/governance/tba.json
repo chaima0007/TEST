@@ -74,9 +74,11 @@
           "nom": "Déploiement & hébergement",
           "pct": 0,
           "statut": "bloqué (décision Chaima)",
-          "actions_faites": [],
+          "actions_faites": [
+            "App laloiavecmoi/ séparée et build vérifié (71 pages SEO prérendues)"
+          ],
           "prochaines_etapes": [
-            "Choix hébergeur + domaine (décision budgétaire = Chaima)"
+            "Hébergeur + domaine + NEXT_PUBLIC_SITE_URL"
           ]
         },
         {
@@ -302,8 +304,8 @@
     },
     {
       "priorite": 4,
-      "action": "Choisir hébergeur + domaine",
-      "comment": "Décision pour mettre les sites en ligne (déploiement).",
+      "action": "Déployer les 2 sites séparément",
+      "comment": "laloiavecmoi/ (citoyens) et app/ racine (Caelum) sont 2 apps distinctes qui se buildent. Choisir hébergeur + domaine pour chacune (ex. Vercel). Je te guide.",
       "statut": "en attente",
       "depuis": "2026-06-28"
     }
