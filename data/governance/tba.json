@@ -47,15 +47,16 @@
         },
         {
           "nom": "Espace enfants & jeunes / mineurs",
-          "pct": 60,
+          "pct": 90,
           "statut": "en cours",
           "actions_faites": [
-            "Mapping publics mineurs/adultes",
-            "Modules harcèlement, drogues, enfants placés, violences"
+            "Page /loi-avec-moi/jeunes (langage simple, gros repères)",
+            "Numéros d aide 103/112/1712",
+            "Cartes vers sujets clés",
+            "Lien dans la nav"
           ],
           "prochaines_etapes": [
-            "Langage très simple + pictos",
-            "Page dédiée douce"
+            "Pictos illustrés / version lecture facile"
           ]
         },
         {
