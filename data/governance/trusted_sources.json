@@ -88,7 +88,9 @@
     "urbanisme.irisnet.be",
     "conseilsuperieurvolontaires.belgium.be",
     "travaillerpour.be",
-    "federation-wallonie-bruxelles.be"
+    "federation-wallonie-bruxelles.be",
+    "my.one.be",
+    "kindengezin.be"
   ],
   "tier2_institutionnel": [
     "uvcw.be",
@@ -138,7 +140,8 @@
     "choisirunsyndic.be",
     "justifit.be",
     "cecbelgique.be",
-    "levolontariat.be"
+    "levolontariat.be",
+    "parentia.be"
   ],
   "regles": [
     "R1 — Un fait publié doit avoir au moins UNE source de tier1 (officiel).",

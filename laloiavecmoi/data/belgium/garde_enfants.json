@@ -1,0 +1,47 @@
+{
+  "module": "garde_enfants",
+  "titre": "Garde d'enfants — crèche & milieux d'accueil",
+  "domaine": "Petite enfance & accueil",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret de la Communauté française du 21 février 2019 relatif à la qualité de l'accueil de la petite enfance (ONE) ; réglementation Kind en Gezin (Flandre)",
+    "portee": "Trouver une place d'accueil agréée, inscription et coût",
+    "source_officielle": "https://www.one.be/public/grossesse/creche-accueillante/trouver-une-creche/"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. L'organisme compétent dépend de votre Communauté : ONE (francophone) ou Kind en Gezin / Opgroeien (néerlandophone).",
+  "faits": [
+    {
+      "id": "GARDE-INSCRIPTION-001",
+      "question": "Comment inscrire mon enfant en crèche, et quand s'y prendre ?",
+      "reponse": "Le plus tôt possible : les places sont rares. Côté francophone, vous pouvez créer une demande de pré-inscription dès le début de la grossesse (et au plus tard vers le 4e mois) via la plateforme de l'ONE (my.one.be). Il existe plusieurs formes d'accueil agréées : crèches, accueillant(e)s conventionné(e)s ou autonomes, co-accueillant(e)s — toutes encadrées et contrôlées par l'ONE (ou Kind en Gezin en Flandre). Multipliez les demandes pour augmenter vos chances.",
+      "reference_legale": "Décret de la Communauté française du 21 février 2019 relatif à la qualité de l'accueil de la petite enfance",
+      "contacts": [
+        {"nom": "ONE (Office de la naissance et de l'enfance)", "lien": "https://my.one.be", "pour": "pré-inscription, trouver une place (francophone)"},
+        {"nom": "Kind en Gezin / Opgroeien", "lien": "https://www.kindengezin.be", "pour": "accueil en Flandre"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.one.be/public/grossesse/creche-accueillante/trouver-une-creche/", "intitule": "ONE — Trouver une crèche"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/choisir-un-milieu-daccueil-pour-mon-enfant", "intitule": "Wallonie — Choisir un milieu d'accueil"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "GARDE-COUT-001",
+      "question": "Combien coûte une place d'accueil ?",
+      "reponse": "Dans les milieux d'accueil subventionnés par l'ONE, le tarif est en principe calculé selon vos revenus (barème progressif et obligatoire) : plus les revenus du ménage sont modestes, moins vous payez. Dans les milieux non subventionnés, le prix est libre. Avant de signer, lisez le projet d'accueil et le contrat d'accueil (jours, congés, préavis, frais) que le milieu doit vous remettre. Des aides et déductions fiscales pour frais de garde existent aussi.",
+      "reference_legale": "Décret de la Communauté française du 21 février 2019 (participation financière des parents) ; Code des impôts sur les revenus (déduction frais de garde)",
+      "contacts": [
+        {"nom": "Le milieu d'accueil", "pour": "contrat d'accueil, tarif, projet d'accueil"},
+        {"nom": "ONE", "lien": "https://www.one.be", "pour": "barème et milieux subventionnés"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://my.one.be/information/milieux-accueil/", "intitule": "ONE — Crèches, accueillantes et accueillants"},
+        {"type": "secondaire", "url": "https://www.parentia.be/fr/administration-familiale/combien-coute-une-creche-ou-un-milieu-daccueil-un-apercu-complet", "intitule": "Parentia — Combien coûte une crèche ?"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

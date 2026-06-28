@@ -1,0 +1,49 @@
+{
+  "module": "assurance_habitation",
+  "titre": "Assurance habitation & incendie",
+  "domaine": "Assurance logement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décrets/ordonnances régionaux sur le bail d'habitation (obligation d'assurance) ; Code civil (responsabilité du locataire)",
+    "portee": "Qui doit assurer le logement, contre quoi, et que se passe-t-il en cas de sinistre",
+    "source_officielle": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/sassurer/habiter/qui-doit-souscrire-une-assurance-habitation"
+  },
+  "derniere_revue": "2026-06-28",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les obligations dépendent de la Région et de la date du bail ; vérifiez votre situation et votre contrat.",
+  "faits": [
+    {
+      "id": "ASSHAB-OBLIGATION-001",
+      "question": "Suis-je obligé d'assurer mon logement (incendie) ?",
+      "reponse": "Cela dépend de votre Région et de votre statut. En Wallonie, le locataire qui y a sa résidence principale doit souscrire une assurance couvrant l'incendie et les dégâts des eaux (pour les baux depuis le 01/09/2018). À Bruxelles, le locataire doit assurer sa responsabilité incendie et dégâts des eaux avant d'occuper le bien (baux conclus/renouvelés depuis le 01/11/2024). En Flandre, l'obligation pèse sur le locataire ET le bailleur. Une alternative existe : le bailleur assure le bien avec une clause d'abandon de recours, dispensant le locataire. Vérifiez ce que dit votre bail.",
+      "reference_legale": "Décret wallon du 15 mars 2018 sur le bail d'habitation ; ordonnance bruxelloise relative au bail d'habitation ; Code flamand du logement",
+      "contacts": [
+        {"nom": "Votre assureur", "pour": "souscrire / vérifier la couverture incendie + dégâts des eaux"},
+        {"nom": "Service logement de votre Région", "pour": "obligation selon la Région et le bail"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/sassurer/habiter/qui-doit-souscrire-une-assurance-habitation", "intitule": "Wikifin (FSMA) — Qui doit souscrire une assurance habitation ?"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances", "intitule": "SPF Économie — Assurances"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "ASSHAB-SINISTRE-001",
+      "question": "J'ai un dégât des eaux ou un incendie : que faire ?",
+      "reponse": "Réagissez vite : mettez les personnes en sécurité (en cas d'incendie, appelez le 112), limitez les dégâts si possible, et prévenez votre assureur dans le délai prévu par le contrat (souvent quelques jours). Conservez les preuves (photos, factures des biens endommagés) et, en cas de dégât des eaux, faites remplir un constat amiable avec le voisin concerné si nécessaire. Si vous êtes locataire, prévenez aussi le propriétaire. L'assurance couvre généralement les dommages au logement et votre responsabilité envers les voisins.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (déclaration de sinistre et obligations) ; Code civil (responsabilité)",
+      "alerte_delai": "Déclarez le sinistre à votre assureur dans le délai prévu au contrat (souvent quelques jours) pour ne pas perdre vos droits.",
+      "contacts": [
+        {"nom": "Secours", "numero": "112", "pour": "incendie, danger"},
+        {"nom": "Votre assureur", "pour": "déclaration de sinistre, expertise"},
+        {"nom": "Ombudsman des assurances", "lien": "https://www.ombudsman-insurance.be", "pour": "litige avec l'assureur"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/assurances-de-dommages/lassurance-incendie", "intitule": "SPF Économie — L'assurance incendie"},
+        {"type": "secondaire", "url": "https://www.assuralia.be/fr/theme/habitation/assurance-responsabilite-civile-locataire", "intitule": "Assuralia — RC locataire"}
+      ],
+      "date_verification": "2026-06-28"
+    }
+  ]
+}

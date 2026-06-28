@@ -623,6 +623,24 @@
         "fonction_publique"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "assurance_habitation",
+      "nom": "Assurance logement",
+      "statut": "couvert",
+      "modules": [
+        "assurance_habitation"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "garde_enfants",
+      "nom": "Petite enfance & accueil",
+      "statut": "couvert",
+      "modules": [
+        "garde_enfants"
+      ],
+      "priorite": "haute"
     }
   ]
 }
