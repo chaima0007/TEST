@@ -48,6 +48,9 @@ const routes = [
   "/loi-avec-moi/contacts",
   "/base-juridique",
   "/transparence",
+  "/mentions-legales",
+  "/confidentialite",
+  "/accessibilite",
   // Belgique NL
   "/de-wet-met-mij",
   "/de-wet-met-mij/wonen",

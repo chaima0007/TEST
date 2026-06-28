@@ -2,10 +2,10 @@
 
 _Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **82%**
-`████████████████░░░░` 82%
+## 🚀 Avancement global de la flotte : **85%**
+`█████████████████░░░` 85%
 
-- **La Loi Avec Moi (citoyens)** — `████████░░░░░░` 55%
+- **La Loi Avec Moi (citoyens)** — `█████████░░░░░` 64%
 - **Caelum (entreprises B2B)** — `█████████████░` 95%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
@@ -16,8 +16,8 @@ _Dernière mise à jour : 2026-06-28_
 - **Déployer les 2 sites séparément** — EN ATTENTE : valider d abord la stratégie A→Z (STRATEGIE_LANCEMENT_AZ.md) + cocher la checklist GO/NO-GO. Pas de lancement avant.
 - **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.
 
-## La Loi Avec Moi (citoyens) — 55%
-`███████████░░░░░░░░░` 55%
+## La Loi Avec Moi (citoyens) — 64%
+`█████████████░░░░░░░` 64%
 
 > **Point de sortie :** 84 domaines / 272 réponses (couche UE renforcée), 100% lois + sources. Build OK, 1200 simulations OK.
 
@@ -31,7 +31,7 @@ _Dernière mise à jour : 2026-06-28_
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
 | Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
-| Pages légales (mentions, confidentialité, accessibilité) | `░░░░░░░░░░░░` 0% | à faire |
+| Pages légales (mentions, confidentialité, accessibilité) | `██████████░░` 80% | en cours |
 
 - **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
 - **Modèles de documents prêts à l'emploi** → prochaines étapes : (option) export PDF mis en page
@@ -39,7 +39,7 @@ _Dernière mise à jour : 2026-06-28_
 - **Versions multilingues (NL en premier)** → prochaines étapes : Traduire les modules prioritaires en NL
 - **Déploiement & hébergement** → prochaines étapes : Hébergeur + domaine + NEXT_PUBLIC_SITE_URL
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
-- **Pages légales (mentions, confidentialité, accessibilité)** → prochaines étapes : Créer mentions légales + politique de confidentialité RGPD + déclaration accessibilité
+- **Pages légales (mentions, confidentialité, accessibilité)** → prochaines étapes : Compléter l identité légale de l éditeur (Chaima), Lier dans le pied de page
 
 ## Caelum (entreprises B2B) — 95%
 `███████████████████░` 95%

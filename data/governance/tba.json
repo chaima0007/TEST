@@ -106,11 +106,17 @@
         },
         {
           "nom": "Pages légales (mentions, confidentialité, accessibilité)",
-          "pct": 0,
-          "statut": "à faire",
-          "actions_faites": [],
+          "pct": 80,
+          "statut": "en cours",
+          "actions_faites": [
+            "Mentions légales (placeholders éditeur)",
+            "Confidentialité RGPD",
+            "Déclaration accessibilité",
+            "sitemap + build OK"
+          ],
           "prochaines_etapes": [
-            "Créer mentions légales + politique de confidentialité RGPD + déclaration accessibilité"
+            "Compléter l identité légale de l éditeur (Chaima)",
+            "Lier dans le pied de page"
           ]
         }
       ]
