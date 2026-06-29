@@ -77,6 +77,47 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "LOGSOC-REGIONAL-001",
+      "question": "À quel opérateur de logement social m'adresser selon ma région ?",
+      "reponse": "Le logement social est une compétence régionale, avec un opérateur faîtier par région. En WALLONIE : la Société wallonne du Logement (SWL) et les 62 sociétés de logement de service public (SLSP) qui gèrent le parc public local. En FLANDRE : la VMSW (Vlaamse Maatschappij voor Sociaal Wonen) avec Wonen in Vlaanderen et les sociétés de logement locales (woonmaatschappijen). À BRUXELLES : la SLRB-BGHM (Société du Logement de la Région de Bruxelles-Capitale) et les sociétés immobilières de service public (SISP). Pour la région de langue allemande, le logement relève du cadre régional avec des sociétés de logement locales en Ostbelgien. Adressez votre candidature à la société de logement de votre commune.",
+      "reference_legale": "Compétence régionale du logement : Code wallon de l'Habitation durable (SWL/SLSP) ; Code flamand du logement / réglementation flamande (VMSW — Wonen in Vlaanderen) ; Code bruxellois du Logement (SLRB-BGHM)",
+      "contacts": [
+        {
+          "nom": "SWL (Wallonie)",
+          "lien": "https://www.swl.be/",
+          "pour": "logement public en Wallonie (via les SLSP)"
+        },
+        {
+          "nom": "VMSW / Wonen in Vlaanderen (Flandre)",
+          "lien": "https://www.vmsw.be/",
+          "pour": "sociaal wonen en Flandre"
+        },
+        {
+          "nom": "SLRB-BGHM (Bruxelles)",
+          "lien": "https://slrb-bghm.brussels/fr/devenir-locataire",
+          "pour": "logement social à Bruxelles (via les SISP)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.swl.be/",
+          "intitule": "Société wallonne du Logement (SWL) — portail du logement public wallon"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vmsw.be/",
+          "intitule": "VMSW — Vlaamse Maatschappij voor Sociaal Wonen (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire",
+          "intitule": "SLRB-BGHM — logement social à Bruxelles"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

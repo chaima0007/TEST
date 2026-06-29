@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 484,
-    "sources_officielles": 668,
-    "faits_avec_contacts": 216,
+    "faits": 485,
+    "sources_officielles": 677,
+    "faits_avec_contacts": 217,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -40,7 +40,7 @@
       "domaine": "Achat immobilier",
       "juridiction": "BE",
       "faits": 2,
-      "sources_officielles": 3,
+      "sources_officielles": 1,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
@@ -388,7 +388,7 @@
       "domaine": "Couple & patrimoine",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 4,
+      "sources_officielles": 5,
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
@@ -676,7 +676,7 @@
       "domaine": "—",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 4,
+      "sources_officielles": 6,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
@@ -736,7 +736,7 @@
       "domaine": "Famille & jeunesse",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 4,
+      "sources_officielles": 5,
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
@@ -1095,9 +1095,9 @@
       "titre": "Logement social — conditions, inscription, attribution",
       "domaine": "Logement social",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 5,
-      "faits_avec_contacts": 1,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },
@@ -1240,7 +1240,7 @@
       "domaine": "Succession & patrimoine",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 5,
+      "sources_officielles": 4,
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
@@ -1588,7 +1588,7 @@
       "domaine": "Successions",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 4,
+      "sources_officielles": 8,
       "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
@@ -1684,7 +1684,7 @@
       "domaine": "—",
       "juridiction": "BE",
       "faits": 3,
-      "sources_officielles": 3,
+      "sources_officielles": 4,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"

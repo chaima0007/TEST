@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**484 réponses · 149 modules · 668 sources officielles · 216 fiches avec contacts · 99 alertes de délai**
+**485 réponses · 149 modules · 677 sources officielles · 217 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|
 | Risques professionnels | Accident du travail & maladie professionnelle | 2 | 4 | 2 | 1 |
 | — | Accident de la route — indemnisation | 3 | 3 | 0 | 1 |
-| Achat immobilier | Acheter un logement — compromis & notaire | 2 | 3 | 2 | 1 |
+| Achat immobilier | Acheter un logement — compromis & notaire | 2 | 1 | 2 | 1 |
 | Adoption | Adoption — formes et procédure | 2 | 4 | 2 | 0 |
 | Sans-abri & domiciliation | Adresse de référence (sans logement) | 2 | 2 | 2 | 0 |
 | Aidants proches | Aidants proches — reconnaissance, congé, droits | 2 | 2 | 2 | 1 |
@@ -39,7 +39,7 @@
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
 | État civil & identité | Changer la mention de sexe à l'état civil | 4 | 7 | 1 | 0 |
 | — | Changement de nom ou de prénom | 3 | 3 | 0 | 0 |
-| Couple & patrimoine | Changer de régime matrimonial | 4 | 4 | 1 | 0 |
+| Couple & patrimoine | Changer de régime matrimonial | 4 | 5 | 1 | 0 |
 | Chômage & emploi | Chômage — droits, démarches et sanctions | 2 | 2 | 2 | 0 |
 | — | Chômage temporaire | 4 | 4 | 0 | 1 |
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
@@ -63,12 +63,12 @@
 | Documents d'identité | Documents d'identité — carte, passeport, permis | 2 | 4 | 2 | 1 |
 | — | Domiciliation & changement d'adresse | 3 | 3 | 0 | 2 |
 | — | Don d'organes | 3 | 3 | 0 | 0 |
-| — | Donations | 4 | 4 | 0 | 0 |
+| — | Donations | 4 | 6 | 0 | 0 |
 | — | Dossier médical global (DMG) | 3 | 3 | 0 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 3 | 5 | 3 | 0 |
-| Famille & jeunesse | Émancipation d'un mineur | 4 | 4 | 1 | 0 |
+| Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 3 | 5 | 2 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
 | Enseignement | École & enseignement — inscription, gratuité, obligation scolaire | 4 | 7 | 2 | 2 |
@@ -98,7 +98,7 @@
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | — | Légalisation & apostille de documents | 3 | 4 | 0 | 0 |
 | Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
-| Logement social | Logement social — conditions, inscription, attribution | 3 | 5 | 1 | 1 |
+| Logement social | Logement social — conditions, inscription, attribution | 4 | 8 | 2 | 1 |
 | — | Achat sur plan / clé-sur-porte (loi Breyne) | 3 | 4 | 0 | 0 |
 | — | Maladie professionnelle | 3 | 3 | 0 | 0 |
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 2 | 2 | 2 | 1 |
@@ -110,7 +110,7 @@
 | Naissance & filiation | Naissance & filiation | 3 | 6 | 3 | 1 |
 | — | Nationalité belge | 4 | 4 | 0 | 0 |
 | — | Occupation sans titre d'un bien (squat) | 3 | 3 | 0 | 1 |
-| Succession & patrimoine | Pacte successoral | 4 | 5 | 1 | 0 |
+| Succession & patrimoine | Pacte successoral | 4 | 4 | 1 | 0 |
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
 | Famille & argent | Pension alimentaire impayée — le SECAL | 4 | 5 | 2 | 0 |
 | — | Pension complémentaire (2e pilier) | 3 | 3 | 0 | 0 |
@@ -139,7 +139,7 @@
 | Sexisme & espace public | Sexisme & harcèlement dans l'espace public | 2 | 4 | 2 | 0 |
 | — | Soins de santé à l'étranger (remboursement) | 3 | 3 | 0 | 1 |
 | — | Statut social de l'artiste (travail des arts) | 3 | 4 | 0 | 0 |
-| Successions | Successions & héritage — accepter, renoncer, délais | 4 | 4 | 3 | 2 |
+| Successions | Successions & héritage — accepter, renoncer, délais | 4 | 8 | 3 | 2 |
 | — | Succession internationale | 3 | 3 | 0 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 2 | 3 | 2 | 1 |
@@ -147,7 +147,7 @@
 | — | Titres-services (aide à domicile) | 3 | 3 | 0 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 2 | 4 | 2 | 1 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
-| — | Tutelle d'un enfant mineur | 3 | 3 | 0 | 0 |
+| — | Tutelle d'un enfant mineur | 3 | 4 | 0 | 0 |
 | — | Vices cachés (garantie de l'acheteur) | 3 | 3 | 0 | 1 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
 | Violences conjugales | Violences conjugales & familiales — se protéger | 3 | 6 | 3 | 1 |
