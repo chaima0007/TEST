@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 147,
-    "faits": 477,
-    "sources_officielles": 651,
-    "faits_avec_contacts": 209,
-    "faits_avec_alerte_delai": 98
+    "modules": 148,
+    "faits": 481,
+    "sources_officielles": 660,
+    "faits_avec_contacts": 213,
+    "faits_avec_alerte_delai": 99
   },
   "modules": [
     {
@@ -584,6 +584,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "demandeur_emploi.json",
+      "module": "demandeur_emploi",
+      "titre": "Demandeur d'emploi — inscription et accompagnement (Forem / VDAB / Actiris / ADG)",
+      "domaine": "Demandeur d'emploi",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 9,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "discrimination.json",

@@ -1,0 +1,143 @@
+{
+  "module": "demandeur_emploi",
+  "titre": "Demandeur d'emploi — inscription et accompagnement (Forem / VDAB / Actiris / ADG)",
+  "domaine": "Demandeur d'emploi",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Placement et accompagnement des demandeurs d'emploi (compétence RÉGIONALE : Forem en Wallonie, VDAB en Flandre, Actiris à Bruxelles, ADG en Communauté germanophone) ; les allocations relèvent du FÉDÉRAL (ONEM)",
+    "portee": "Personnes sans emploi ou cherchant un nouvel emploi, et jeunes sortant des études",
+    "source_officielle": "https://www.leforem.be/"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le service compétent dépend de votre RÉGION de domicile. L'inscription et l'accompagnement (régional) sont distincts du paiement des allocations (fédéral, ONEM via votre organisme de paiement). Ne remplace pas un conseil individualisé.",
+  "faits": [
+    {
+      "id": "DEM-INSCRIPTION-001",
+      "question": "Où et pourquoi m'inscrire comme demandeur d'emploi ?",
+      "reponse": "L'inscription se fait auprès du service public de l'emploi de votre RÉGION : le Forem en Wallonie, le VDAB en Flandre, Actiris à Bruxelles, l'ADG en Communauté germanophone. S'inscrire vous donne accès à l'accompagnement, aux offres d'emploi, aux formations et à divers outils de recherche. L'inscription est aussi une étape nécessaire dans la plupart des cas pour ouvrir ou conserver un droit aux allocations (chômage, insertion) : le service régional gère l'inscription et l'accompagnement, tandis que le paiement des allocations relève du fédéral (ONEM, via votre organisme de paiement).",
+      "reference_legale": "Compétence régionale de placement et d'accompagnement des demandeurs d'emploi (décret wallon, décret flamand et ordonnance bruxelloise relatifs à l'emploi)",
+      "contacts": [
+        {
+          "nom": "Le Forem (Wallonie)",
+          "lien": "https://www.leforem.be/",
+          "pour": "inscription et accompagnement en Wallonie"
+        },
+        {
+          "nom": "VDAB (Flandre)",
+          "lien": "https://www.vdab.be/",
+          "pour": "inscription (« Schrijf je in als werkzoekende ») et accompagnement en Flandre"
+        },
+        {
+          "nom": "Actiris (Bruxelles)",
+          "lien": "https://www.actiris.brussels/fr/citoyens/",
+          "pour": "inscription / réinscription et accompagnement à Bruxelles"
+        },
+        {
+          "nom": "ADG (Communauté germanophone)",
+          "pour": "inscription et accompagnement en région de langue allemande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.leforem.be/",
+          "intitule": "Le Forem — Citoyens (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vdab.be/",
+          "intitule": "VDAB — Inschrijven als werkzoekende (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.actiris.brussels/fr/citoyens/",
+          "intitule": "Actiris — Citoyens : s'inscrire / se réinscrire (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DEM-JEUNES-001",
+      "question": "Je viens de terminer mes études : que dois-je faire et dans quel délai ?",
+      "reponse": "Inscrivez-vous le plus vite possible comme demandeur d'emploi auprès du service de votre région (Forem, VDAB, Actiris ou ADG). Cette inscription fait démarrer votre stage d'insertion professionnelle (en Flandre, « beroepsinschakelingstijd ») et vous donne accès à un accompagnement pour trouver du travail. Ne tardez pas : la date d'inscription détermine le point de départ de ce stage et peut conditionner l'accès ultérieur à certaines allocations.",
+      "reference_legale": "Compétence régionale d'accompagnement des demandeurs d'emploi (décret/ordonnance régionaux relatifs à l'emploi) ; stage d'insertion encadré par l'arrêté royal portant réglementation du chômage (volet fédéral)",
+      "alerte_delai": "Après la fin des études : inscrivez-vous au plus vite. La date d'inscription fixe le début du stage d'insertion et peut conditionner l'accès aux allocations d'insertion.",
+      "contacts": [
+        {
+          "nom": "Service régional de l'emploi (Forem / VDAB / Actiris / ADG)",
+          "pour": "inscription des jeunes sortant des études"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.vdab.be/",
+          "intitule": "VDAB — « Bijna klaar met studeren? Schrijf je zo snel mogelijk in »"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.actiris.brussels/fr/citoyens/",
+          "intitule": "Actiris — Jeunes : premier emploi et inscription"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DEM-ACCOMPAGNEMENT-001",
+      "question": "Quel accompagnement vais-je recevoir, et quelles sont mes obligations ?",
+      "reponse": "Une fois inscrit, vous avez accès à un accompagnement : offres d'emploi, conseils, ateliers de recherche, formations (y compris pour des métiers en pénurie, souvent gratuites pour les demandeurs d'emploi). En contrepartie, vous devez rechercher activement un emploi et rester disponible sur le marché du travail. Des dispenses de disponibilité existent dans certains cas (par exemple pour suivre une formation, un stage ou des études). Le non-respect des obligations de recherche/disponibilité peut avoir des conséquences sur les allocations.",
+      "reference_legale": "Compétence régionale d'accompagnement (décret/ordonnance régionaux relatifs à l'emploi) ; disponibilité et dispenses encadrées par l'arrêté royal portant réglementation du chômage",
+      "contacts": [
+        {
+          "nom": "Votre service régional de l'emploi",
+          "pour": "accompagnement, formations et dispenses de disponibilité"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.actiris.brussels/fr/citoyens/",
+          "intitule": "Actiris — Dispense de disponibilité et accompagnement"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.leforem.be/",
+          "intitule": "Le Forem — Outils de recherche d'emploi, formations, aides"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DEM-COMPETENCE-001",
+      "question": "Qui gère quoi : mon inscription et mes allocations, est-ce le même organisme ?",
+      "reponse": "Non, ce sont deux niveaux différents. Votre INSCRIPTION, votre ACCOMPAGNEMENT et vos FORMATIONS relèvent du service RÉGIONAL de l'emploi (Forem, VDAB, Actiris, ADG). Le PAIEMENT des allocations de chômage ou d'insertion relève du niveau FÉDÉRAL : c'est l'ONEM qui fixe les règles, et le versement passe par votre organisme de paiement (la CAPAC, organisme public, ou le service chômage de votre syndicat). Pour toute question sur le montant ou le droit aux allocations, adressez-vous à votre organisme de paiement ; pour l'inscription et l'emploi, à votre service régional.",
+      "reference_legale": "Répartition des compétences : compétence régionale de placement (décret/ordonnance régionaux) ; allocations de chômage relevant de l'arrêté royal portant réglementation du chômage (ONEM, compétence fédérale)",
+      "contacts": [
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "règles des allocations (fédéral)"
+        },
+        {
+          "nom": "CAPAC ou service chômage de votre syndicat",
+          "pour": "paiement des allocations"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be",
+          "intitule": "ONEM — allocations de chômage (fédéral)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.leforem.be/",
+          "intitule": "Le Forem — service régional de l'emploi (Wallonie)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
