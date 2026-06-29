@@ -48,7 +48,7 @@ _Dernière mise à jour : 2026-06-28_
 
 | Tâche | Avancement | Statut |
 |---|---|---|
-| Veille conformité 2026 (normes entreprises) | `███████████░` 90% | en cours |
+| Veille conformité 2026 (normes entreprises) | `███████████░` 95% | en cours |
 | Simulateur « Appels à projets » | `████████████` 100% | terminé |
 | Agent « Appels & Financements » | `████████████` 100% | terminé |
 | Page « Conformité 2026 » + simulateur « Suis-je concerné ? » | `████████████` 100% | terminé |
@@ -58,7 +58,7 @@ _Dernière mise à jour : 2026-06-28_
 | Newsletter de veille (canal possédé) | `███████████░` 90% | en cours |
 | Kit de contenu de lancement (posts + e-mails + FAQ) | `████████████` 100% | terminé |
 
-- **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Ajouter d'autres obligations sectorielles (DAC7, PPWR emballages) selon la demande
+- **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Veille continue: ajouter les futures obligations dès publication officielle
 - **Positionnement commercial & business plan** → prochaines étapes : Fixer les prix (décision Chaima)
 - **Pages SEO programmatiques (acquisition)** → prochaines étapes : Pages par secteur (longue traîne) quand le trafic le justifiera
 - **Capture de leads (simulateur)** → prochaines étapes : Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima

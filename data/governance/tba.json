@@ -135,16 +135,16 @@
       "taches": [
         {
           "nom": "Veille conformité 2026 (normes entreprises)",
-          "pct": 90,
+          "pct": 95,
           "statut": "en cours",
           "actions_faites": [
-            "11 normes sourcées (e-facture, NIS2, CSRD, CSDDD, RGPD, lanceurs d'alerte, AI Act, EAA, UBO, DORA, transparence salariale)",
-            "Chiffres/%/échéances vérifiés (EUR-Lex, FSMA, régulateurs)",
-            "DORA (Règl. UE 2022/2554) + Transparence salariale (Dir. UE 2023/970) câblées partout (P-SYNC-NORMES vert)",
-            "Nouvelle question simulateur « secteur financier » pour DORA"
+            "13 normes sourcées (e-facture, NIS2, CSRD, CSDDD, RGPD, lanceurs d'alerte, AI Act, EAA, UBO, DORA, transparence salariale, DAC7, PPWR)",
+            "Chiffres/%/échéances vérifiés (EUR-Lex, SPF Finances, FSMA, régulateurs)",
+            "Toutes câblées base+map+simulateur+SEO (P-SYNC-NORMES vert, 13 normes)",
+            "Questions simulateur ajoutées: secteur financier (DORA), plateforme numérique (DAC7), emballages (PPWR)"
           ],
           "prochaines_etapes": [
-            "Ajouter d'autres obligations sectorielles (DAC7, PPWR emballages) selon la demande"
+            "Veille continue: ajouter les futures obligations dès publication officielle"
           ]
         },
         {

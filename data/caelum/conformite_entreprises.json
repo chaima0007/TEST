@@ -268,6 +268,49 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DAC7-2024",
+      "norme": "DAC7 — déclaration des opérateurs de plateformes numériques",
+      "changement": "Les opérateurs de plateformes numériques qui mettent en relation des vendeurs/prestataires avec des clients doivent appliquer des procédures de diligence raisonnable, collecter les données des vendeurs (location de biens, services, vente de biens, location de moyens de transport) et les déclarer chaque année au SPF Finances, qui les échange avec les autres États membres.",
+      "concernes": "Les opérateurs de plateformes numériques (places de marché, plateformes de location, de services, de mobilité) ayant des vendeurs à déclarer.",
+      "sanction": "Amendes administratives en cas de non-déclaration ou de déclaration tardive/incomplète au SPF Finances.",
+      "echeance": "En vigueur (déclaration annuelle via MyMinfin DPI-DAC7).",
+      "reference_legale": "Directive (UE) 2021/514 du 22 mars 2021 (DAC7) ; loi du 21 décembre 2022",
+      "solution_caelum": "Mise en place des procédures de due diligence, collecte structurée des données vendeurs et génération du fichier de déclaration DPI-DAC7 prêt pour MyMinfin.",
+      "automatisation": "ÉLEVÉE — collecte et validation automatisées des données vendeurs, génération du fichier XML de déclaration, rappel de l'échéance annuelle.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/E-services/dac7/presentation",
+          "intitule": "SPF Finances — DPI/DAC7"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2022/12/21/2022043134/justel",
+          "intitule": "Justel — Loi du 21 décembre 2022 (DAC7)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PPWR-2026",
+      "norme": "PPWR — règlement sur les emballages et déchets d'emballages",
+      "changement": "À partir du 12 août 2026, le règlement européen sur les emballages (PPWR) s'applique directement dans tous les États membres : réduction du suremballage, exigences de recyclabilité, taux minimal de contenu recyclé (par étapes), étiquetage harmonisé du tri, et documentation/déclaration UE de conformité pour les emballages mis sur le marché.",
+      "concernes": "Tous les opérateurs économiques qui mettent des emballages ou des produits emballés sur le marché de l'UE : fabricants, producteurs de produits emballés, importateurs, distributeurs, e-commerce et HORECA.",
+      "sanction": "Mesures et sanctions prévues par le cadre de surveillance du marché (retrait/rappel possible des emballages non conformes).",
+      "echeance": "Application à partir du 12/08/2026 (objectifs de contenu recyclé et de réemploi échelonnés 2028→2035).",
+      "reference_legale": "Règlement (UE) 2025/40 du 19 décembre 2024 relatif aux emballages et aux déchets d'emballages (PPWR)",
+      "solution_caelum": "Diagnostic des emballages (recyclabilité, suremballage, étiquetage), constitution de la documentation de conformité et feuille de route vers les seuils de contenu recyclé.",
+      "automatisation": "MOYENNE — check-list de conformité et veille des échéances automatisées ; l'analyse matière reste accompagnée.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/fra",
+          "intitule": "EUR-Lex — Règlement (UE) 2025/40 (PPWR)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

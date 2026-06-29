@@ -30,6 +30,8 @@ const SLUGS: Record<string, string> = {
   UBO: "registre-ubo",
   "DORA-2025": "dora-resilience-numerique",
   "PAYEQUITY-2026": "transparence-salariale",
+  "DAC7-2024": "dac7-plateformes-numeriques",
+  "PPWR-2026": "emballages-ppwr",
 };
 
 export function loadNormes(): Norme[] {

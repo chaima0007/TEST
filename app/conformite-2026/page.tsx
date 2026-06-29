@@ -15,7 +15,7 @@ type Norme = {
   concerne: (p: Profil) => "oui" | "cascade" | "non";
 };
 
-type Profil = { tva: string; taille: string; secteur: string; donnees: string; ia: string; numerique_public: string; secteur_financier: string };
+type Profil = { tva: string; taille: string; secteur: string; donnees: string; ia: string; numerique_public: string; secteur_financier: string; plateforme: string; emballages: string };
 
 // taille en nombre d'employés (seuils simplifiés, croisés avec le CA dans les libellés)
 const TAILLES = [
@@ -119,15 +119,31 @@ const NORMES: Norme[] = [
     echeance: "Transposition au plus tard le 07/06/2026",
     concerne: (p) => (nEmp(p.taille) >= 100 ? "oui" : nEmp(p.taille) >= 1 ? "cascade" : "non"),
   },
+  {
+    id: "dac7",
+    nom: "DAC7 — plateformes numériques",
+    change: "Les opérateurs de plateformes doivent collecter les données de leurs vendeurs et les déclarer chaque année au SPF Finances.",
+    sanction: "Amendes administratives (non-déclaration / déclaration tardive)",
+    echeance: "En vigueur (déclaration annuelle)",
+    concerne: (p) => (p.plateforme === "oui" ? "oui" : "non"),
+  },
+  {
+    id: "ppwr",
+    nom: "PPWR — emballages",
+    change: "Réduction du suremballage, recyclabilité, contenu recyclé, étiquetage harmonisé et documentation de conformité pour les emballages mis sur le marché.",
+    sanction: "Surveillance du marché : retrait/rappel possible des emballages non conformes",
+    echeance: "À partir du 12/08/2026",
+    concerne: (p) => (p.emballages === "oui" ? "oui" : "non"),
+  },
 ];
 
 export default function Conformite2026Page() {
-  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "", secteur_financier: "" });
+  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "", secteur_financier: "", plateforme: "", emballages: "" });
   const [res, setRes] = useState<{ directs: Norme[]; cascade: Norme[] } | null>(null);
   const [email, setEmail] = useState("");
   const [envoi, setEnvoi] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
-  const pret = p.tva && p.taille && p.secteur && p.donnees && p.ia && p.numerique_public && p.secteur_financier;
+  const pret = p.tva && p.taille && p.secteur && p.donnees && p.ia && p.numerique_public && p.secteur_financier && p.plateforme && p.emballages;
 
   async function envoyerLead() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
@@ -270,6 +286,16 @@ export default function Conformite2026Page() {
           <Choix
             titre="7. Êtes-vous une entité du secteur financier (banque, assurance, investissement, paiement, crypto) ?"
             cle="secteur_financier"
+            options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
+          />
+          <Choix
+            titre="8. Exploitez-vous une plateforme numérique mettant en relation des vendeurs/prestataires avec des clients ?"
+            cle="plateforme"
+            options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
+          />
+          <Choix
+            titre="9. Mettez-vous sur le marché des produits emballés ou des emballages ?"
+            cle="emballages"
             options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
           />
 
