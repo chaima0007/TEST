@@ -1,11 +1,11 @@
 {
-  "genere_le": "2026-06-29T13:59:48.646554+00:00",
+  "genere_le": "2026-06-29T16:54:19.957523+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
-    "reponses": 486,
-    "sources": 807,
+    "reponses": 489,
+    "sources": 815,
     "modules": 149,
-    "sources_officielles": 680,
+    "sources_officielles": 688,
     "caelum_normes": 17,
     "caelum": {
       "normes": 17,
@@ -18,7 +18,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 42,
+      "ms": 44,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -26,7 +26,7 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 55,
+      "ms": 66,
       "sortie": "  → data/governance/source_trust_report.md",
       "verdict": "OK"
     },
@@ -34,7 +34,7 @@
       "protocole": "legal_change_sensor",
       "cmd": "python3 scripts/legal_change_sensor.py",
       "returncode": 0,
-      "ms": 81,
+      "ms": 97,
       "sortie": "  → data/legal_change.json",
       "verdict": "OK"
     },
@@ -42,7 +42,7 @@
       "protocole": "norm_hierarchy_guard",
       "cmd": "python3 scripts/norm_hierarchy_guard.py",
       "returncode": 0,
-      "ms": 80,
+      "ms": 92,
       "sortie": "  → data/governance/norm_hierarchy_report.json",
       "verdict": "OK"
     },
@@ -50,7 +50,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 450,
+      "ms": 479,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -110,8 +110,8 @@
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
-      "urls_impactees_moy": 9,
-      "pct_corpus": 1.07,
+      "urls_impactees_moy": 8,
+      "pct_corpus": 0.95,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -119,8 +119,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 39,
-      "pct_corpus": 4.83,
+      "urls_impactees_moy": 41,
+      "pct_corpus": 5.02,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -129,7 +129,7 @@
       "type": "stress",
       "taux_casse_pct": 15.0,
       "urls_impactees_moy": 122,
-      "pct_corpus": 15.07,
+      "pct_corpus": 14.91,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -181,7 +181,7 @@
     {
       "scenario": "Données · Couverture sources officielles",
       "type": "etat",
-      "pct_officiel": 84.3,
+      "pct_officiel": 84.4,
       "verdict": "OK",
       "mitigation": "protocole de confiance des sources (tier1)"
     },
@@ -207,9 +207,9 @@
       "scenario": "Croissance · Corpus",
       "type": "etat",
       "verdict": "OK",
-      "reponses": 486,
+      "reponses": 489,
       "modules": 149,
-      "depuis_naissance": 58,
+      "depuis_naissance": 61,
       "battements_sans_croissance": 0,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
@@ -230,7 +230,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 32,
+      "battements_sans_progres": 33,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -266,7 +266,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629135948",
+    "seal_id": "AUTO-20260629165419",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 76.7,
@@ -291,8 +291,8 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 55,
-    "age_jours": 0.19,
+    "battements": 56,
+    "age_jours": 0.31,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {

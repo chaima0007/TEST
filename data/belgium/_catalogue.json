@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 488,
-    "sources_officielles": 686,
-    "faits_avec_contacts": 220,
+    "faits": 489,
+    "sources_officielles": 688,
+    "faits_avec_contacts": 221,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -591,9 +591,9 @@
       "titre": "Déchets, tri & propreté",
       "domaine": "Déchets & environnement",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
     },

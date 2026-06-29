@@ -602,3 +602,14 @@ Pour le droit belge, la **base légale** d'une fiche pointe vers le **texte cano
 | Code civil — Livre III T.I-II (art. 711-1100 : successions, libéralités) | `/eli/loi/1804/03/21/1804032152/justel` |
 | Code civil — Livre III T.III-V (art. 1101-1581 : contrats, régimes matrimoniaux) | `/eli/loi/1804/03/21/1804032153/justel` |
 | Code judiciaire | `/eli/loi/1967/10/10/1967101052/justel` |
+
+---
+
+## 23. Discipline d'exécution (§23, P-DISCIPLINE-EXECUTION)
+
+**Directive (Chaima, 2026-06-29)** : exécution **directe et disciplinée**.
+
+- **Interdit** : proposer des menus d'options, demander l'avis sur « comment procéder », étiqueter une proposition « recommandée » et attendre un choix, hésiter.
+- **Règle** : prendre la décision opérationnelle, l'**exécuter**, puis rendre compte du **résultat**.
+- **Seules questions permises** : (1) décisions strictement réservées à Chaima (**prix, identité légale, webhook**) ; (2) action **irréversible/destructive** nécessitant une autorisation explicite.
+- Toute déviation (laxisme, hésitation, options superflues) est une faiblesse à proscrire.

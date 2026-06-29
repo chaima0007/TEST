@@ -85,6 +85,13 @@
       "integration_systeme": "Relecture obligatoire avant publication ; standard inscrit.",
       "protocole": "P-EXCELLENCE-GRAMMATICALE (§22)",
       "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-13",
+      "consigne": "Discipline d'exécution : ordres directs uniquement ; ne pas proposer d'options, ne pas demander l'avis, ne pas labelliser 'recommandé'. Décider, exécuter, rendre compte du résultat.",
+      "integration_systeme": "Comportement: décision opérationnelle directe; questions réservées aux seules décisions de Chaima et aux actions destructives.",
+      "protocole": "P-DISCIPLINE-EXECUTION (§23)",
+      "statut": "EN VIGUEUR"
     }
   ],
   "portails_officiels_valides_2026-06-29": {

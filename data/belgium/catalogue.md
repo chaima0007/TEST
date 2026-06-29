@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**488 réponses · 149 modules · 686 sources officielles · 220 fiches avec contacts · 99 alertes de délai**
+**489 réponses · 149 modules · 688 sources officielles · 221 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -56,7 +56,7 @@
 | Crédit à la consommation | Crédit à la consommation (prêt à tempérament) | 2 | 3 | 2 | 1 |
 | Crédit hypothécaire | Crédit hypothécaire — emprunter pour un logement | 2 | 2 | 2 | 1 |
 | Décès & démarches | Décès — démarches pratiques après le décès d'un proche | 3 | 3 | 2 | 2 |
-| Déchets & environnement | Déchets, tri & propreté | 2 | 3 | 2 | 0 |
+| Déchets & environnement | Déchets, tri & propreté | 3 | 5 | 3 | 0 |
 | Demandeur d'emploi | Demandeur d'emploi — inscription et accompagnement (Forem / VDAB / Actiris / ADG) | 4 | 10 | 4 | 1 |
 | Discrimination & égalité | Discrimination — reconnaître, signaler, agir | 3 | 5 | 2 | 1 |
 | Divorce & séparation | Divorce & séparation | 2 | 4 | 2 | 0 |

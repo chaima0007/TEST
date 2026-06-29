@@ -363,6 +363,12 @@
       "nom": "Excellence grammaticale et correction absolue (toutes langues)",
       "regle": "DIRECTIVE (Chaima, 2026-06-29) : tout contenu publié (fiches, pages, documents, e-mails, les DEUX projets) doit respecter une orthographe, une grammaire et une conjugaison IMPECCABLES, dans CHAQUE langue de publication (FR, NL, DE, EN), quel que soit le pays. Attention particulière à la conjugaison correcte des verbes du TROISIÈME GROUPE (verbes irréguliers français : faire, devoir, pouvoir, prendre, mettre, etc.) et à leurs équivalents irréguliers dans les autres langues. Une relecture (read-back) est obligatoire avant publication (cohérent avec le protocole de vérification avant envoi). Aucune approximation linguistique tolérée — elle décrédibilise l'analyse.",
       "verif": "relecture systématique avant publication ; en cas de doute sur une conjugaison/forme, vérifier (Bescherelle/règle), corriger, puis publier ; jamais publier un texte non relu"
+    },
+    {
+      "id": "P-DISCIPLINE-EXECUTION",
+      "nom": "Discipline d'exécution — ordres directs, pas d'options",
+      "regle": "DIRECTIVE (Chaima, 2026-06-29) : exécution directe et disciplinée. NE PAS proposer de menus d'options, NE PAS demander l'avis sur la manière de procéder, NE PAS étiqueter une proposition « recommandée » en attendant un choix. Prendre la décision opérationnelle, l'exécuter, puis rendre compte du RÉSULTAT. Seules exceptions où une question est permise : (1) décisions strictement réservées à Chaima (prix, identité légale, webhook) ; (2) action irréversible/destructive nécessitant une autorisation explicite. Hors ces cas : décider et faire. Toute déviation (laxisme, hésitation, options superflues) est une faiblesse à proscrire.",
+      "verif": "revue comportementale : une réponse se termine par un résultat livré, pas par une question ni un menu d'options (sauf décisions réservées à Chaima ou action destructive)"
     }
   ]
 }

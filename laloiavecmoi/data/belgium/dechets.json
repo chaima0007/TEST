@@ -19,11 +19,22 @@
       "reponse": "Le dépôt sauvage, c'est abandonner des déchets ailleurs que dans les endroits autorisés (poubelles publiques, parc à conteneurs, collecte prévue). C'est une infraction sanctionnée par des amendes, qui varient fortement selon la Région et la gravité (du simple sac abandonné au dépôt important), avec récidive plus lourdement punie. La commune peut mener l'enquête à partir d'indices trouvés dans les déchets. En cas de doute sur le montant, référez-vous au règlement de votre commune.",
       "reference_legale": "Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets (sanctions administratives)",
       "contacts": [
-        {"nom": "Service environnement / propreté de votre commune", "pour": "règlement local, amendes, signalement"}
+        {
+          "nom": "Service environnement / propreté de votre commune",
+          "pour": "règlement local, amendes, signalement"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.belgium.be/fr/environnement/consommation_durable/dechets/delits", "intitule": "Belgium.be — Délits liés aux déchets"},
-        {"type": "officiel", "url": "https://wallex.wallonie.be/contents/acts/1/1934/1.html", "intitule": "WALLEX — Décret relatif aux déchets"}
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/environnement/consommation_durable/dechets/delits",
+          "intitule": "Belgium.be — Délits liés aux déchets"
+        },
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/contents/acts/1/1934/1.html",
+          "intitule": "WALLEX — Décret relatif aux déchets"
+        }
       ],
       "date_verification": "2026-06-27"
     },
@@ -33,13 +44,59 @@
       "reponse": "Oui. Le tri des déchets ménagers est obligatoire et organisé par votre commune ou intercommunale : sacs ou conteneurs distincts selon les flux (organique, papier-carton, PMC, verre, résiduel…). Les règles précises (couleurs des sacs, jours de collecte, ce qui va dans quel flux) sont fixées localement. Ne pas trier correctement peut entraîner le refus de la collecte et une amende. Le parc à conteneurs / recyparc accueille les déchets qui ne passent pas par la collecte habituelle.",
       "reference_legale": "Décret wallon du 9 mars 2023 relatif aux déchets ; Ordonnance bruxelloise relative aux déchets — obligation de tri",
       "contacts": [
-        {"nom": "Votre intercommunale de gestion des déchets", "pour": "règles de tri, recyparc, jours de collecte"}
+        {
+          "nom": "Votre intercommunale de gestion des déchets",
+          "pour": "règles de tri, recyparc, jours de collecte"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.belgium.be/fr/environnement/consommation_durable/dechets", "intitule": "Belgium.be — Déchets"},
-        {"type": "secondaire", "url": "https://www.bewapp.be/proprete-publique/", "intitule": "Be WaPP — Propreté publique (Wallonie)"}
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/environnement/consommation_durable/dechets",
+          "intitule": "Belgium.be — Déchets"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.bewapp.be/proprete-publique/",
+          "intitule": "Be WaPP — Propreté publique (Wallonie)"
+        }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "DECH-REGIONAL-001",
+      "question": "Qui gère la collecte et le tri des déchets selon ma région ?",
+      "reponse": "La gestion des déchets est une compétence RÉGIONALE, avec des modalités propres à chaque région. En WALLONIE : la Région fixe le cadre et la collecte est assurée localement par votre intercommunale de gestion des déchets (calendriers, parcs à conteneurs/recyparcs, sacs). En FLANDRE : l'OVAM (Openbare Vlaamse Afvalstoffenmaatschappij) pilote la politique des déchets et des matériaux, la collecte étant organisée localement (intercommunales). À BRUXELLES : Bruxelles-Propreté (ARP) assure la collecte des sacs, les Recypark et le calendrier de tri. Consultez l'organisme de votre région ou commune pour les jours de collecte et les règles de tri exactes.",
+      "reference_legale": "Compétence régionale de la gestion des déchets : décret wallon relatif aux déchets ; décret flamand sur les matériaux (Materialendecreet — OVAM) ; ordonnance bruxelloise relative aux déchets (Bruxelles-Propreté)",
+      "contacts": [
+        {
+          "nom": "Votre intercommunale de déchets (Wallonie)",
+          "pour": "collecte, recyparc, calendrier en Wallonie"
+        },
+        {
+          "nom": "OVAM (Flandre)",
+          "lien": "https://ovam.vlaanderen.be/",
+          "pour": "politique déchets et matériaux en Flandre"
+        },
+        {
+          "nom": "Bruxelles-Propreté / ARP (Bruxelles)",
+          "lien": "https://www.arp-gan.be/fr",
+          "pour": "collecte, Recypark et tri à Bruxelles (0800/981 81)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://ovam.vlaanderen.be/",
+          "intitule": "OVAM — Openbare Vlaamse Afvalstoffenmaatschappij (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.arp-gan.be/fr",
+          "intitule": "Bruxelles-Propreté (ARP) — collecte et tri (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }
