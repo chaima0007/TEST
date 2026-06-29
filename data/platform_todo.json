@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T10:46:22.593507+00:00",
+  "genere_le": "2026-06-29T10:50:53.319926+00:00",
   "total": 5,
   "par_priorite": {
     "haute": 0,
@@ -39,7 +39,7 @@
       "titre": "Plan stratégique · Avancement",
       "categorie": "état",
       "priorite": "moyenne",
-      "action_suggeree": "Avancer le plan : Compléter l'identité légale (mentions légales)",
+      "action_suggeree": "Avancer le plan : Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
       "humain": true,
       "organe": "scénario"
     },

@@ -339,9 +339,20 @@ def etat_plan() -> dict:
     faits = sum(1 for j in jalons if j.get("fait"))
     pct = round(100 * faits / total) if total else 0
     bloquants = [j["titre"] for j in jalons if j.get("bloquant") and not j.get("fait")]
-    prochaine = next((j["titre"] for j in jalons if not j.get("fait")), None)
+    # Retards : date butoir dépassée et non fait
+    today = datetime.now(timezone.utc).date().isoformat()
+    en_retard = [
+        {"titre": j["titre"], "date_butoir": j.get("date_butoir")}
+        for j in jalons if not j.get("fait") and j.get("date_butoir") and j["date_butoir"] < today
+    ]
+    # Prochaine étape non faite, triée par date butoir
+    restants = [j for j in jalons if not j.get("fait")]
+    restants.sort(key=lambda j: j.get("date_butoir") or "9999")
+    prochaine = restants[0]["titre"] if restants else None
+    prochaine_date = restants[0].get("date_butoir") if restants else None
     return {"objectif": plan.get("objectif"), "total": total, "faits": faits, "pct": pct,
-            "bloquants_restants": bloquants, "prochaine_etape": prochaine, "jalons": jalons}
+            "bloquants_restants": bloquants, "prochaine_etape": prochaine,
+            "prochaine_date": prochaine_date, "en_retard": en_retard, "jalons": jalons}
 
 
 def scn_plan() -> list:
@@ -361,17 +372,23 @@ def scn_plan() -> list:
             stagn += 1
         else:
             break
-    if p["bloquants_restants"]:
+    if p["en_retard"]:
+        verdict = ALERTE
+    elif p["bloquants_restants"]:
         verdict = ALERTE
     elif p["pct"] < 100 and stagn >= SEUIL:
         verdict = ALERTE
     else:
         verdict = OK
+    proch = p["prochaine_etape"]
+    if proch and p.get("prochaine_date"):
+        proch = f"{proch} (avant le {p['prochaine_date']})"
     return [{
         "scenario": "Plan stratégique · Avancement", "type": "etat", "verdict": verdict,
         "plan_pct": p["pct"], "plan_faits": p["faits"], "plan_total": p["total"],
-        "prochaine_etape": p["prochaine_etape"], "battements_sans_progres": stagn,
-        "mitigation": "avancer le plan (PLAN_MARKETING_GRANDS_COMPTES_CAELUM.md) — ne pas stagner"
+        "prochaine_etape": proch, "battements_sans_progres": stagn,
+        "en_retard": len(p["en_retard"]),
+        "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     }]
 
 

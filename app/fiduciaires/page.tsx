@@ -126,6 +126,27 @@ export default function FiduciairesPage() {
       </section>
 
       <section className="py-12 px-6 max-w-3xl mx-auto">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 className="font-semibold text-slate-900">🔌 Le diagnostic en marque blanche, sur votre site</h3>
+          <p className="text-slate-600 mt-2 text-sm leading-relaxed">
+            Intégrez le diagnostic de conformité directement sur le site de votre cabinet, à vos couleurs.
+            Vos clients le passent chez vous, vous gardez la relation — Caelum fournit le moteur. Un simple
+            bloc à copier-coller :
+          </p>
+          <pre className="mt-3 overflow-x-auto rounded-lg bg-slate-900 text-slate-100 text-xs p-4">
+{`<iframe
+  src="https://VOTRE-DOMAINE-CAELUM/embed/conformite?cabinet=VotreCabinet"
+  width="100%" height="520" style="border:0;border-radius:16px"
+  title="Diagnostic conformité 2026"></iframe>`}
+          </pre>
+          <p className="text-[11px] text-slate-500 mt-2">
+            Remplacez <code>VOTRE-DOMAINE-CAELUM</code> et <code>VotreCabinet</code>. Personnalisation poussée
+            (couleurs, logo) disponible dans le cadre du partenariat.
+          </p>
+        </div>
+      </section>
+
+      <section className="pb-12 px-6 max-w-3xl mx-auto">
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
           <h3 className="font-semibold text-amber-900">⚖️ En toute transparence</h3>
           <p className="text-amber-800 text-sm mt-2 leading-relaxed">
