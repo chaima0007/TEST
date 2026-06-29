@@ -1,0 +1,64 @@
+{
+  "module": "pension_alimentaire_secal",
+  "titre": "Pension alimentaire impayée — le SECAL",
+  "domaine": "Famille & argent",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 21 février 2003 créant un Service des créances alimentaires au sein du SPF Finances",
+    "portee": "Aide publique pour récupérer une pension alimentaire impayée et, sous conditions, recevoir des avances",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2003/02/21/2003003146/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les montants et conditions peuvent évoluer : vérifiez sur le site du SPF Finances avant toute démarche.",
+  "faits": [
+    {
+      "id": "SECAL-001",
+      "question": "C'est quoi le SECAL et que peut-il faire pour moi ?",
+      "reponse": "Le SECAL (Service des créances alimentaires), créé au sein du SPF Finances, aide les personnes qui ont du mal à recevoir la pension alimentaire qui leur est due (pour un ex-partenaire et/ou un enfant). Il dispose de plus de moyens qu'un particulier : il peut négocier un plan de paiement avec celui qui doit payer et, s'il ne coopère pas, engager des mesures de recouvrement forcées (saisie sur salaire ou sur compte). Sous conditions, il peut aussi vous verser des avances.",
+      "reference_legale": "Loi du 21 février 2003 créant un Service des créances alimentaires (SPF Finances)",
+      "contacts": [
+        {"nom": "SECAL — SPF Finances", "pour": "demande d'intervention (via MyMinfin)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://fin.belgium.be/fr/particuliers/autres-services/pension-alimentaire-secal/role", "intitule": "SPF Finances — Comprendre le rôle du SECAL"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2003/02/21/2003003146/justel", "intitule": "Loi du 21 février 2003 (Justel)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SECAL-002",
+      "question": "Quelles conditions pour que le SECAL récupère une pension impayée ?",
+      "reponse": "Le créancier (la personne qui a droit à la pension) doit résider en Belgique, ainsi que les enfants concernés. Vous devez posséder un titre exécutoire fixant la pension (jugement ou acte notarié) qui précise le montant, la période et le ou les bénéficiaires. Enfin, vous ne devez pas avoir reçu la pension due, en tout ou en partie, pendant 2 mois (consécutifs ou non) au cours des 12 derniers mois précédant la demande. La personne qui doit payer, elle, n'est pas obligée de résider en Belgique.",
+      "reference_legale": "Loi du 21 février 2003 (conditions d'intervention du SECAL)",
+      "sources": [
+        {"type": "officiel", "url": "https://fin.belgium.be/fr/particuliers/autres-services/pension-alimentaire-secal/recuperer", "intitule": "SPF Finances — Récupérer la pension alimentaire (conditions)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SECAL-003",
+      "question": "Puis-je recevoir des avances en attendant ?",
+      "reponse": "Oui, sous conditions, le SECAL peut verser des avances mensuelles, mais uniquement pour les pensions dues à un enfant (pas pour un ex-partenaire). Il faut notamment encore avoir droit à une pension pour l'avenir et que le SECAL intervienne pour la pension courante et future (pas seulement les arriérés). Les avances sont versées le 3ᵉ lundi du mois. Le montant est actuellement de 175 € maximum par enfant ayant droit à une pension (montant indexable, à vérifier).",
+      "reference_legale": "Loi du 21 février 2003 (octroi du droit aux avances)",
+      "sources": [
+        {"type": "officiel", "url": "https://fin.belgium.be/fr/particuliers/autres-services/pension-alimentaire-secal/recuperer", "intitule": "SPF Finances — Conditions d'octroi des avances"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SECAL-004",
+      "question": "Comment introduire ma demande ?",
+      "reponse": "La demande se fait auprès du SECAL, principalement en ligne via la plateforme MyMinfin (un dossier électronique permet d'introduire et de suivre votre demande). Préparez votre titre exécutoire (jugement ou acte notarié) et, pour les avances, les attestations utiles (droit aux allocations familiales, fréquentation scolaire ou inscription comme demandeur d'emploi en stage d'insertion). Pendant toute l'intervention, signalez immédiatement tout changement de situation.",
+      "reference_legale": "Loi du 21 février 2003 (procédure devant le SPF Finances)",
+      "contacts": [
+        {"nom": "MyMinfin (SPF Finances)", "pour": "introduire et suivre la demande SECAL"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://fin.belgium.be/fr/particuliers/autres-services/pension-alimentaire-secal", "intitule": "SPF Finances — Pension alimentaire (SECAL)"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

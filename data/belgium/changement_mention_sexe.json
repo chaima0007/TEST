@@ -1,0 +1,63 @@
+{
+  "module": "changement_mention_sexe",
+  "titre": "Changer la mention de sexe à l'état civil",
+  "domaine": "État civil & identité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 25 juin 2017 réformant des régimes relatifs aux personnes transgenres (modification de l'enregistrement du sexe dans les actes de l'état civil)",
+    "portee": "Procédure administrative pour modifier la mention M/F de l'acte de naissance",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2017/06/25/2017012964/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La procédure se fait à l'état civil de votre commune ; les frais éventuels varient d'une commune à l'autre.",
+  "faits": [
+    {
+      "id": "SEXE-001",
+      "question": "Qui peut faire modifier la mention de sexe sur son acte de naissance ?",
+      "reponse": "Toute personne convaincue que le sexe inscrit sur son acte de naissance ne correspond pas à son identité de genre vécue : les Belges majeurs, les mineurs émancipés, et les étrangers inscrits au registre de la population ou au registre des étrangers. Dès 16 ans, un mineur non émancipé peut aussi le faire, mais en étant assisté de ses parents ou de son représentant légal et en produisant une attestation d'un pédopsychiatre confirmant un choix libre et conscient. Les personnes inscrites au registre d'attente ne peuvent pas entamer la démarche.",
+      "reference_legale": "Loi du 25 juin 2017 (articles 135/1 et 135/2 de l'ancien Code civil)",
+      "contacts": [
+        {"nom": "Service de l'état civil de votre commune", "pour": "déclaration de modification de l'enregistrement du sexe"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/personnes_transgenres", "intitule": "SPF Justice — Les personnes transgenres"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/06/25/2017012964/justel", "intitule": "Loi du 25 juin 2017 (Justel)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SEXE-002",
+      "question": "Comment se déroule la procédure ?",
+      "reponse": "C'est une procédure purement administrative, devant l'officier de l'état civil de la commune où vous êtes inscrit. Vous faites une déclaration signée indiquant votre conviction ; l'état civil demande l'avis du procureur du Roi. À défaut d'avis dans les trois mois, il est réputé favorable. Vous vous présentez ensuite une seconde fois (la seconde comparution) pour confirmer : l'acte de modification est alors établi. Cette seconde comparution a lieu au plus tôt 3 mois et au plus tard 6 mois après la déclaration.",
+      "reference_legale": "Loi du 25 juin 2017 (procédure devant l'état civil)",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/personnes_transgenres", "intitule": "SPF Justice — procédure"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/proceder-la-modification-de-sexe", "intitule": "Wallonie — Procéder à la modification de sexe"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SEXE-003",
+      "question": "Qu'est-ce qui a changé depuis la loi de 2023 ?",
+      "reponse": "Depuis la loi du 20 juillet 2023 (en vigueur le 1er octobre 2023), il est possible de modifier plusieurs fois l'enregistrement du sexe et le prénom selon la même procédure. De plus, il n'est plus nécessaire de faire une seconde déclaration : une seconde comparution suffit pour confirmer. Cette réforme fait suite à des décisions ayant remis en cause certains aspects du régime initial de 2017.",
+      "reference_legale": "Loi du 20 juillet 2023 modifiant des dispositions concernant la modification de l'enregistrement du sexe",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/personnes_transgenres", "intitule": "SPF Justice — réforme 2023"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SEXE-004",
+      "question": "Et le changement de prénom ? Combien ça coûte ?",
+      "reponse": "Le changement de prénom et la modification de la mention de sexe sont deux procédures séparées, mais toutes deux se font auprès du service de l'état civil ; vous pouvez faire l'une puis l'autre, dans l'ordre que vous voulez. Le changement de prénom devant l'état civil dure au maximum trois mois. Le coût varie selon la commune : la démarche est en général gratuite ou peu coûteuse (jusqu'à environ 50 € selon la commune) — renseignez-vous auprès de la vôtre.",
+      "reference_legale": "Loi du 25 juin 2017 (procédures distinctes prénom / mention de sexe)",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/sites/default/files/Trans%20A5%20FR.pdf", "intitule": "SPF Justice — Changer de prénom et modifier l'enregistrement du sexe (brochure)"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/proceder-la-modification-de-sexe", "intitule": "Wallonie — coût indicatif et délais"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
