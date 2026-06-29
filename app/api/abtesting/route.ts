@@ -49,7 +49,13 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const { agent_id, opened, replied, paid } = await req.json();
+  let body: { agent_id?: string; opened?: boolean; replied?: boolean; paid?: boolean };
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Corps de requête invalide" }, { status: 400 });
+  }
+  const { agent_id, opened, replied, paid } = body;
   if (SWARM_API_URL) {
     try {
       const params = new URLSearchParams({

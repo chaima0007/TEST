@@ -12,9 +12,16 @@ export async function POST(request: Request) {
   }
 
   const email = (body.email || "").toString().trim();
-  const emailValide = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const emailValide = email.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if (!emailValide) {
     return Response.json({ ok: false, error: "Adresse e-mail invalide." }, { status: 422 });
+  }
+
+  // Garde-fou anti-abus (taille des champs) avant tout traitement/transfert.
+  const source = ((body as { source?: string }).source ?? "site").toString().slice(0, 60);
+  const tropGros = JSON.stringify(body.profil ?? "").length > 4000 || JSON.stringify(body.normes ?? "").length > 4000;
+  if (tropGros) {
+    return Response.json({ ok: false, error: "Charge utile trop volumineuse." }, { status: 413 });
   }
 
   const webhook = process.env.LEADS_WEBHOOK_URL;
@@ -27,7 +34,7 @@ export async function POST(request: Request) {
           email,
           profil: body.profil ?? null,
           normes: body.normes ?? null,
-          source: (body as { source?: string }).source ?? "site",
+          source,
           recu_le: new Date().toISOString(),
         }),
       });

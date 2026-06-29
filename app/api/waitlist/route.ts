@@ -47,7 +47,8 @@ export async function POST(req: Request) {
 
     leads.unshift(lead); // plus récent en premier
     if (leads.length > 500) leads.length = 500;
-    console.log("[waitlist] nouvelle demande:", JSON.stringify(lead));
+    // RGPD : ne jamais logger de données personnelles. On journalise un événement neutre.
+    console.log("[waitlist] nouvelle demande enregistrée");
 
     return NextResponse.json({ ok: true, message: "Demande reçue. Merci !" });
   } catch {

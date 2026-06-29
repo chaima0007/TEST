@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IDENTITE_CAELUM as ID } from "@/data/identite";
 
 export const metadata = { title: "Politique de confidentialité (RGPD) — Caelum" };
 
@@ -23,7 +24,7 @@ export default function Confidentialite() {
           <p><strong>Données collectées</strong> — Via le formulaire de contact : nom, email, organisation, et le message que vous envoyez. Aucune donnée n'est collectée à votre insu.</p>
           <p><strong>Finalité</strong> — Ces données servent uniquement à vous recontacter au sujet de votre demande. Elles ne sont ni vendues, ni cédées à des tiers.</p>
           <p><strong>Conservation</strong> — Vos données sont conservées le temps nécessaire au traitement de votre demande, puis supprimées sur simple demande.</p>
-          <p><strong>Vos droits</strong> — Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données en écrivant à [email]. Vous pouvez aussi introduire une réclamation auprès de l'Autorité de protection des données (Belgique).</p>
+          <p><strong>Vos droits</strong> — Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données en écrivant à {ID.email}. Vous pouvez aussi introduire une réclamation auprès de l'Autorité de protection des données (Belgique).</p>
           <p><strong>Cookies</strong> — Ce site utilise un minimum de cookies techniques nécessaires à son fonctionnement et à la mesure d'audience.</p>
         </div>
         <p className="mt-10 text-xs text-slate-400">Dernière mise à jour : 2026. Document à faire valider par un juriste pour une conformité complète.</p>
