@@ -20,7 +20,8 @@ type Scenario = { scenario: string; type?: string; verdict: string; mitigation?:
   modules?: number; frais?: number; a_reverifier?: number; prioritaire?: number; sources_modifiees?: number;
   reponses?: number; depuis_naissance?: number; battements_sans_croissance?: number;
   plan_pct?: number; plan_faits?: number; plan_total?: number; prochaine_etape?: string;
-  caelum_normes?: number; caelum_sources?: number; caelum_aides?: number };
+  caelum_normes?: number; caelum_sources?: number; caelum_aides?: number;
+  opp_total?: number; opp_nouveau?: number; prochaine_opp?: string };
 
 function lire(rel: string): Record<string, unknown> {
   try {
@@ -153,6 +154,9 @@ export default function PlateformeAutonome() {
                 )}
                 {typeof s.caelum_normes === "number" && (
                   <p className="text-xs text-slate-300 mt-1">🏢 {s.caelum_normes} normes · {s.caelum_sources} sources · {s.caelum_aides} aides publiques</p>
+                )}
+                {typeof s.opp_total === "number" && (
+                  <p className="text-xs text-slate-300 mt-1">📡 {s.opp_total} opportunités · 🆕 {s.opp_nouveau} à instruire{s.prochaine_opp ? ` · ${s.prochaine_opp}` : ""}</p>
                 )}
                 {s.mitigation && <p className="text-xs text-slate-400 mt-1.5">🛡️ {s.mitigation}</p>}
               </div>

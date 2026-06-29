@@ -421,6 +421,23 @@ def scn_veille() -> list:
     }]
 
 
+def scn_veille_marche() -> list:
+    """Organe Veille marché : opportunités émergentes non encore traitées (adapter vite)."""
+    try:
+        d = json.load(open(os.path.join(ROOT, "data", "market_opportunities.json"), encoding="utf-8"))
+    except Exception:
+        return []
+    opp = d.get("opportunites", [])
+    nouveaux = [o for o in opp if o.get("statut") == "nouveau"]
+    return [{
+        "scenario": "Veille marché · Opportunités", "type": "etat",
+        "verdict": ALERTE if nouveaux else OK,
+        "opp_total": len(opp), "opp_nouveau": len(nouveaux),
+        "prochaine_opp": (sorted(nouveaux, key=lambda x: {"haute": 0, "moyenne": 1, "basse": 2}.get(x.get("priorite"), 9))[0]["id"] if nouveaux else None),
+        "mitigation": "instruire les opportunités 'nouveau' (radar market_opportunities.json)"
+    }]
+
+
 def scn_langues() -> list:
     """Langues : visiteur non francophone. Mitigation : FR/NL natifs + barre 🌐 + EN Caelum."""
     return [{
@@ -442,6 +459,7 @@ def moteur_scenarios(n: int, corpus: dict) -> list:
     scenarios += scn_croissance(corpus)
     scenarios += scn_caelum(corpus)
     scenarios += scn_plan()
+    scenarios += scn_veille_marche()
     scenarios += scn_langues()
     return scenarios
 
@@ -461,11 +479,13 @@ def sceller(sante: list, scenarios: list) -> dict:
     fragilites = [s["scenario"] for s in stress if s.get("verdict") == CRITIQUE]
     a_corriger = [p["scenario"] for p in scenarios if p.get("type") == "etat" and p.get("verdict") == ALERTE]
 
-    # Autonomie : ce que la plateforme CONTRÔLE seule (hors décisions humaines de Chaima).
-    HUMAIN = ("Webhook", "Identité", "Plan stratégique")
+    # Autonomie = santé TECHNIQUE que la plateforme contrôle seule.
+    # On exclut les décisions humaines (Chaima) ET la couche stratégique (plan, veille marché).
+    HUMAIN = ("Webhook", "Identité")
+    EXCLU = HUMAIN + ("Plan stratégique", "Veille marché")
     sys_etat = [p.get("verdict", OK) for p in sante] + [
         s.get("verdict", OK) for s in scenarios
-        if s.get("type") == "etat" and not any(h in s["scenario"] for h in HUMAIN)
+        if s.get("type") == "etat" and not any(h in s["scenario"] for h in EXCLU)
     ]
     sys_ok = sum(1 for v in sys_etat if v == OK)
     autonomie_pct = round(100 * sys_ok / len(sys_etat), 1) if sys_etat else 100.0

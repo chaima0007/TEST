@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T11:31:12.653353+00:00",
+  "genere_le": "2026-06-29T11:36:00.035395+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
     "reponses": 459,
@@ -18,7 +18,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 41,
+      "ms": 38,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -34,7 +34,7 @@
       "protocole": "legal_change_sensor",
       "cmd": "python3 scripts/legal_change_sensor.py",
       "returncode": 0,
-      "ms": 72,
+      "ms": 73,
       "sortie": "  → data/legal_change.json",
       "verdict": "OK"
     },
@@ -42,7 +42,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 409,
+      "ms": 356,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -87,7 +87,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 101,
+      "p99_ms": 102,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -102,8 +102,8 @@
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
-      "urls_impactees_moy": 8,
-      "pct_corpus": 1.03,
+      "urls_impactees_moy": 7,
+      "pct_corpus": 0.94,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -112,7 +112,7 @@
       "type": "stress",
       "taux_casse_pct": 5.0,
       "urls_impactees_moy": 38,
-      "pct_corpus": 4.91,
+      "pct_corpus": 4.95,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -120,8 +120,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 120,
-      "pct_corpus": 15.54,
+      "urls_impactees_moy": 113,
+      "pct_corpus": 14.66,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -202,7 +202,7 @@
       "reponses": 459,
       "modules": 143,
       "depuis_naissance": 31,
-      "battements_sans_croissance": 6,
+      "battements_sans_croissance": 8,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -222,9 +222,18 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 7,
+      "battements_sans_progres": 9,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
+    },
+    {
+      "scenario": "Veille marché · Opportunités",
+      "type": "etat",
+      "verdict": "ALERTE",
+      "opp_total": 6,
+      "opp_nouveau": 3,
+      "prochaine_opp": "OPP-AI-ACT",
+      "mitigation": "instruire les opportunités 'nouveau' (radar market_opportunities.json)"
     },
     {
       "scenario": "Langues · Visiteur non francophone",
@@ -234,17 +243,16 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629113112",
+    "seal_id": "AUTO-20260629113600",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 76.9,
+    "score_resilience": 74.1,
     "verts": 20,
-    "total": 26,
+    "total": 27,
     "autonomie_systeme_pct": 94.1,
     "decisions_humaines_en_attente": [
       "Déploiement · Webhook leads non configuré",
-      "Données · Identité légale Caelum",
-      "Plan stratégique · Avancement"
+      "Données · Identité légale Caelum"
     ],
     "fragilites_stress": [
       "Sources · Panne large"
@@ -253,21 +261,22 @@
       "Déploiement · Webhook leads non configuré",
       "Données · Identité légale Caelum",
       "Croissance · Corpus",
-      "Plan stratégique · Avancement"
+      "Plan stratégique · Avancement",
+      "Veille marché · Opportunités"
     ],
     "regle": "BLOQUÉ seulement si l'ÉTAT ACTUEL (santé + scénarios 'etat') a un CRITIQUE ; les scénarios extrêmes 'stress' alimentent la résilience et la liste des fragilités."
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 30,
-    "age_jours": 0.08,
+    "battements": 32,
+    "age_jours": 0.09,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
-    "total": 5,
+    "total": 6,
     "par_priorite": {
       "haute": 0,
-      "moyenne": 4,
+      "moyenne": 5,
       "basse": 1
     }
   },
