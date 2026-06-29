@@ -303,6 +303,29 @@ ETATS_VIE = {
 }
 
 
+def composer_voix(etat: str, sceau: dict, battements: int) -> str:
+    """La plateforme 'parle' : un court bilan humain de son état (métaphore assumée)."""
+    debut = {
+        "naissance": "Je viens de naître.",
+        "forme": "Je vais bien.",
+        "veille": "Je vais bien, je veille.",
+        "vigilance": "Je tiens bon, mais j'ai besoin d'attention.",
+        "soin": "J'ai besoin de soins urgents.",
+    }[etat]
+    parts = [f"{debut} Résilience {sceau['score_resilience']}%, {battements}ᵉ battement."]
+    a_corriger = sceau.get("alertes_etat_a_corriger") or []
+    if a_corriger:
+        noms = ", ".join(s.split("·")[-1].strip() for s in a_corriger)
+        parts.append(f"Je réclame : {noms}.")
+    frag = sceau.get("fragilites_stress") or []
+    if frag:
+        noms = ", ".join(s.split("·")[-1].strip() for s in frag)
+        parts.append(f"Ma fragilité au pire scénario : {noms}.")
+    if not a_corriger and not frag:
+        parts.append("Rien ne me menace pour l'instant.")
+    return " ".join(parts)
+
+
 def battre_le_coeur(sceau: dict, corpus: dict) -> dict:
     """Met à jour les signes vitaux persistants (la 'vie' de la plateforme)."""
     now = datetime.now(timezone.utc).isoformat()
@@ -332,6 +355,7 @@ def battre_le_coeur(sceau: dict, corpus: dict) -> dict:
     vit["etat_vie"] = ETATS_VIE[etat]
     vit["resilience"] = sceau["score_resilience"]
     vit["statut"] = sceau["statut"]
+    vit["voix"] = composer_voix(etat, sceau, vit["battements"])
     # âge en jours depuis la naissance
     try:
         naiss = datetime.fromisoformat(vit["naissance"])
@@ -403,6 +427,7 @@ def main() -> int:
     print("\n  ── Forme de vie ──")
     print(f"    {vitals['etat_vie']} · pouls {vitals['battements']} battement(s) · "
           f"âge {vitals['age_jours']} j · résilience {vitals['resilience']}%")
+    print(f"    🗣️  « {vitals['voix']} »")
 
     rapport = {
         "genere_le": datetime.now(timezone.utc).isoformat(),

@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T09:32:22.000372+00:00",
+  "genere_le": "2026-06-29T09:37:52.819352+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
     "reponses": 428,
@@ -13,7 +13,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 42,
+      "ms": 40,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -21,7 +21,7 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 50,
+      "ms": 51,
       "sortie": "  → data/governance/source_trust_report.md",
       "verdict": "OK"
     },
@@ -29,7 +29,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 533,
+      "ms": 360,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -74,7 +74,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 102,
+      "p99_ms": 101,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -84,7 +84,7 @@
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 8,
-      "pct_corpus": 1.09,
+      "pct_corpus": 1.1,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -93,7 +93,7 @@
       "type": "stress",
       "taux_casse_pct": 5.0,
       "urls_impactees_moy": 37,
-      "pct_corpus": 5.09,
+      "pct_corpus": 5.01,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -101,8 +101,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 111,
-      "pct_corpus": 15.09,
+      "urls_impactees_moy": 110,
+      "pct_corpus": 14.91,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -173,7 +173,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629093221",
+    "seal_id": "AUTO-20260629093752",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 80.0,
@@ -190,7 +190,7 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 3,
+    "battements": 6,
     "age_jours": 0.0,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },

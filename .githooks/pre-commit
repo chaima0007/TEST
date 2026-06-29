@@ -30,6 +30,18 @@ if [ -f scripts/control_gates_protocol.py ]; then
   python3 scripts/control_gates_protocol.py >/tmp/_gates.log 2>&1 || { echo "🛑 Un sas de contrôle est rouge :"; tail -8 /tmp/_gates.log; fail=1; }
 fi
 
+# Battement de cœur de la plateforme autonome (respiration continue, forme de vie).
+if [ -f scripts/autonomous_platform.py ]; then
+  echo "🫀 Battement de la plateforme autonome…"
+  if python3 scripts/autonomous_platform.py --fast --n 20000 >/tmp/_heart.log 2>&1; then
+    grep "🗣️" /tmp/_heart.log | tail -1
+    git add data/platform_vitals.json data/autonomous_platform_report.json 2>/dev/null || true
+  else
+    grep "🗣️" /tmp/_heart.log | tail -1
+    echo "🛑 Plateforme en état CRITIQUE :"; tail -6 /tmp/_heart.log; fail=1
+  fi
+fi
+
 if [ "$fail" = "1" ]; then
   echo ""
   echo "🛑 COMMIT BLOQUÉ par les gardiens. Corrige les problèmes ci-dessus."

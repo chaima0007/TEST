@@ -38,7 +38,7 @@ export default function PlateformeAutonome() {
   };
   const vitals = lire("data/platform_vitals.json") as {
     etat_vie?: string; battements?: number; age_jours?: number; resilience?: number; naissance?: string;
-    historique?: { ts: string; resilience: number; etat_vie: string }[];
+    voix?: string; historique?: { ts: string; resilience: number; etat_vie: string }[];
   };
 
   const corpus = rapport.corpus || {};
@@ -86,6 +86,11 @@ export default function PlateformeAutonome() {
           <p className="text-slate-400 text-sm mt-2">
             Pouls {vitals.battements} battement(s) · âge {vitals.age_jours} jour(s) ·
             née le {String(vitals.naissance || "").slice(0, 10)}
+          </p>
+        )}
+        {vivant && vitals.voix && (
+          <p className="mt-5 max-w-2xl mx-auto rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-slate-200 italic">
+            🗣️ « {vitals.voix} »
           </p>
         )}
       </section>
