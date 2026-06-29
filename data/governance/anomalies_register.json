@@ -1,0 +1,27 @@
+{
+  "objet": "Registre des anomalies — documentations/données obsolètes ou contradictoires (P-DOC-OBSOLETE). Capturer, signaler, dépasser par la source officielle, sans jamais stopper l'agent.",
+  "revue": "2026-06-29",
+  "regle_or": "Une donnée obsolète ne stoppe JAMAIS un agent : elle est capturée, signalée, et dépassée par la preuve juridique/technique officielle. Seule la SORTIE affectée est gelée, pas la mission.",
+  "anomalies": [
+    {
+      "id": "ANO-001",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "Page de synthèse Commission CSDDD (mention 3 %) vs croyance interne « 5 % » ; risque de citer 5 % comme valeur en vigueur",
+      "nature": "obsolescence/contradiction temporelle",
+      "ecart": "Le plafond des sanctions CSDDD « au moins 5 % » (Directive 2024/1760) a été ABAISSÉ à 3 % par l'Omnibus I (Directive (UE) 2026/470, en vigueur 18/03/2026). Citer 5 % comme actuel = obsolète.",
+      "source_canonique": "EUR-Lex (Directive (UE) 2024/1760, art. 27) + Commission européenne",
+      "action": "Données alignées sur 3 % (en vigueur) avec le 5 % marqué comme ancien ; garde norm_hierarchy ajoutée.",
+      "statut": "resolu"
+    },
+    {
+      "id": "ANO-002",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "/ai-act — échéance unique « 2 août 2026 » sans distinguer l'art. 50(2)",
+      "nature": "imprécision/échéance incomplète",
+      "ecart": "Manquait la distinction : transparence générale (art. 50) au 02/08/2026 vs marquage machine-readable (art. 50(2), fournisseurs, systèmes pré-existants) au 02/12/2026 (Digital Omnibus).",
+      "source_canonique": "EUR-Lex (Règlement (UE) 2024/1689) + Commission / Office européen pour l'IA (digital-strategy.ec.europa.eu)",
+      "action": "/ai-act corrigée (échéances 02/08/2026, 02/12/2026, 02/02/2027).",
+      "statut": "resolu"
+    }
+  ]
+}

@@ -321,6 +321,12 @@
       "nom": "Hiérarchie des normes (UE > fédéral > régional)",
       "regle": "Chaque agent DOIT vérifier la hiérarchie des normes : droit UE (primauté) > législation fédérale belge > réglementations régionales. Tout CONFLIT temporel (texte périmé vs en vigueur) ou TERRITORIAL (compétence fédérale traitée comme régionale, ou l'inverse) déclenche un GEL IMMÉDIAT des décisions + un audit croisé sur sources officielles AVANT toute poursuite des opérations.",
       "verif": "python3 scripts/norm_hierarchy_guard.py (verdict GEL = bloquant)"
+    },
+    {
+      "id": "P-DOC-OBSOLETE",
+      "nom": "Gestion des documentations obsolètes/contradictoires",
+      "regle": "INTERDICTION d'ignorer une page ou de stopper la mission face à une donnée obsolète/contradictoire. Appliquer : (1) IDENTIFIER & MARQUER — isoler l'item, créer une alerte au registre des anomalies (URL, date, nature). (2) SOURCE CANONIQUE — court-circuiter la source douteuse, se référer EXCLUSIVEMENT aux bases officielles validées (EUR-Lex/Commission/AI Office ; portails fédéraux/régionaux). (3) RAPPORT D'ÉCART — consigner l'écart obsolète vs réalité officielle, planifier la MAJ, puis POURSUIVRE immédiatement. Règle d'or : une donnée obsolète ne stoppe jamais l'agent ; seule la SORTIE affectée est gelée (cf. P-HIERARCHIE-NORMES).",
+      "verif": "python3 scripts/anomaly_register.py (NON bloquant ; ALERTE si anomalies ouvertes)"
     }
   ]
 }

@@ -437,6 +437,22 @@ def scn_hierarchie_normes() -> list:
     }]
 
 
+def scn_anomalies() -> list:
+    """Organe Anomalies (P-DOC-OBSOLETE) : NON bloquant — ALERTE si anomalies ouvertes, jamais GEL."""
+    try:
+        d = json.load(open(os.path.join(ROOT, "data", "governance", "anomalies_register.json"), encoding="utf-8"))
+    except Exception:
+        return []
+    a = d.get("anomalies", [])
+    ouverts = [x for x in a if x.get("statut") != "resolu"]
+    return [{
+        "scenario": "Anomalies doc · Obsolescence", "type": "etat",
+        "verdict": ALERTE if ouverts else OK,
+        "anomalies_total": len(a), "anomalies_ouvertes": len(ouverts),
+        "mitigation": "capturer + source canonique + rapport d'écart, sans jamais stopper la mission"
+    }]
+
+
 def scn_veille_marche() -> list:
     """Organe Veille marché : opportunités émergentes non encore traitées (adapter vite)."""
     try:
@@ -476,6 +492,7 @@ def moteur_scenarios(n: int, corpus: dict) -> list:
     scenarios += scn_caelum(corpus)
     scenarios += scn_plan()
     scenarios += scn_hierarchie_normes()
+    scenarios += scn_anomalies()
     scenarios += scn_veille_marche()
     scenarios += scn_langues()
     return scenarios

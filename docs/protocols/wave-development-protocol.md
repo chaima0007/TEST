@@ -489,3 +489,20 @@ Inscrit au registre : `data/governance/protocols_registry.json` → `P-SOURCES-O
 python3 scripts/norm_hierarchy_guard.py   # verdict GEL => conflit => décisions gelées
 ```
 Branché dans la plateforme autonome (organe « Hiérarchie des normes » : un conflit = CRITIQUE => sceau BLOQUÉ = gel).
+
+---
+
+## 18. Documentations obsolètes / contradictoires (§18, P-DOC-OBSOLETE) — ne jamais bloquer, dépasser
+
+**Interdiction absolue** d'ignorer une page litigieuse ou d'interrompre la mission. Protocole en 3 temps :
+1. **Identifier & marquer** — isoler l'item, créer une alerte au **registre des anomalies** (`data/governance/anomalies_register.json` : URL, date, nature).
+2. **Source canonique** — court-circuiter la source douteuse, se référer **exclusivement** aux bases officielles validées (EUR-Lex / Commission / AI Office ; portails fédéraux/régionaux — cf. §16).
+3. **Rapport d'écart** — consigner l'écart (obsolète vs officiel), planifier la MAJ (auto/humaine), puis **poursuivre immédiatement**.
+
+**Règle d'or** : une donnée obsolète ne stoppe **jamais** un agent — elle est *capturée, signalée, dépassée* par la preuve officielle.
+**Articulation avec §17** : le « gel » ne concerne que la **SORTIE affectée** (ne pas publier la donnée fausse), **jamais la mission**.
+
+```bash
+python3 scripts/anomaly_register.py                                  # rapport d'écart (non bloquant)
+python3 scripts/anomaly_register.py --add "url|nature|ecart|source_canonique"   # capture immédiate
+```

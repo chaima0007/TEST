@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T12:13:58.249754+00:00",
+  "genere_le": "2026-06-29T12:18:27.934830+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
     "reponses": 467,
@@ -18,7 +18,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 62,
+      "ms": 52,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -26,7 +26,7 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 64,
+      "ms": 50,
       "sortie": "  → data/governance/source_trust_report.md",
       "verdict": "OK"
     },
@@ -34,7 +34,7 @@
       "protocole": "legal_change_sensor",
       "cmd": "python3 scripts/legal_change_sensor.py",
       "returncode": 0,
-      "ms": 82,
+      "ms": 81,
       "sortie": "  → data/legal_change.json",
       "verdict": "OK"
     },
@@ -42,7 +42,7 @@
       "protocole": "norm_hierarchy_guard",
       "cmd": "python3 scripts/norm_hierarchy_guard.py",
       "returncode": 0,
-      "ms": 71,
+      "ms": 70,
       "sortie": "  → data/governance/norm_hierarchy_report.json",
       "verdict": "OK"
     },
@@ -50,7 +50,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 410,
+      "ms": 366,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -62,7 +62,7 @@
       "rps": 5,
       "cache_pct": 60,
       "p95_ms": 45,
-      "p99_ms": 49,
+      "p99_ms": 50,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -95,7 +95,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 101,
+      "p99_ms": 102,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -110,8 +110,8 @@
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
-      "urls_impactees_moy": 6,
-      "pct_corpus": 0.8,
+      "urls_impactees_moy": 8,
+      "pct_corpus": 0.96,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -119,8 +119,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 40,
-      "pct_corpus": 5.15,
+      "urls_impactees_moy": 39,
+      "pct_corpus": 5.04,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -128,8 +128,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 115,
-      "pct_corpus": 14.67,
+      "urls_impactees_moy": 121,
+      "pct_corpus": 15.45,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -210,7 +210,7 @@
       "reponses": 467,
       "modules": 145,
       "depuis_naissance": 39,
-      "battements_sans_croissance": 3,
+      "battements_sans_croissance": 4,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -230,7 +230,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 22,
+      "battements_sans_progres": 23,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -240,6 +240,14 @@
       "verdict": "OK",
       "conflits": 0,
       "mitigation": "GEL des décisions + audit croisé sources officielles (UE>fédéral>régional) si conflit"
+    },
+    {
+      "scenario": "Anomalies doc · Obsolescence",
+      "type": "etat",
+      "verdict": "OK",
+      "anomalies_total": 2,
+      "anomalies_ouvertes": 0,
+      "mitigation": "capturer + source canonique + rapport d'écart, sans jamais stopper la mission"
     },
     {
       "scenario": "Veille marché · Opportunités",
@@ -258,12 +266,12 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629121358",
+    "seal_id": "AUTO-20260629121827",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 79.3,
-    "verts": 23,
-    "total": 29,
+    "score_resilience": 80.0,
+    "verts": 24,
+    "total": 30,
     "autonomie_systeme_pct": 100.0,
     "decisions_humaines_en_attente": [
       "Déploiement · Webhook leads non configuré",
@@ -282,8 +290,8 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 45,
-    "age_jours": 0.11,
+    "battements": 46,
+    "age_jours": 0.12,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
