@@ -1,0 +1,32 @@
+{
+  "objet": "Inventaire source-de-vérité des noms de domaine & DNS (Caelum + La Loi Avec Moi). À compléter avec les données réelles des comptes registrars. Lu par scripts/domains_audit.py.",
+  "revue": "2026-06-29",
+  "cible_consolidation": {
+    "registrar_unique": "OVH ou Gandi (UE, gèrent .be ET .com/.eu/gTLD)",
+    "dns_unique": "Cloudflare DNS (gratuit, rapide, DNSSEC) pour TOUTES les zones",
+    "principe": "Séparer registrar et DNS ; centraliser chacun ; 1 compte propriétaire dédié (pas de comptes personnels éparpillés)."
+  },
+  "securite_baseline": ["transfer_lock", "2FA", "auto_renew", "dnssec", "whois_privacy", "expiry_monitoring", "epp_code_coffre"],
+  "domaines": [
+    {
+      "domaine": "laloiavecmoi.be",
+      "projet": "La Loi Avec Moi",
+      "registrar_actuel": "[à confirmer : OVH / Register / Porkbun ?]",
+      "dns_actuel": "[à confirmer]",
+      "expiration": "[à confirmer]",
+      "auto_renew": null, "transfer_lock": null, "dnssec": null, "2fa_compte": null,
+      "statut": "à_auditer"
+    },
+    {
+      "domaine": "[caelum — domaine .com/.be à confirmer]",
+      "projet": "Caelum",
+      "registrar_actuel": "[à confirmer]",
+      "dns_actuel": "[à confirmer]",
+      "expiration": "[à confirmer]",
+      "auto_renew": null, "transfer_lock": null, "dnssec": null, "2fa_compte": null,
+      "statut": "à_auditer"
+    }
+  ],
+  "registrars_constates": ["OVH", "Register", "Porkbun"],
+  "note": "Les valeurs null/[à confirmer] sont à renseigner depuis les comptes réels. Le script d'audit signale la fragmentation (plusieurs registrars) et les manques de sécurité."
+}
