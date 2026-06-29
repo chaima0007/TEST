@@ -1,0 +1,68 @@
+{
+  "module": "epargne_pension",
+  "titre": "Épargne-pension (3e pilier)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code des impôts sur les revenus 1992 (réduction d'impôt pour épargne-pension)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/epargne-pension"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les plafonds sont fixés annuellement : vérifiez les montants de l'année en cours auprès du SPF Finances.",
+  "faits": [
+    {
+      "id": "EPARGNE-001",
+      "question": "Qu'est-ce que l'épargne-pension (3e pilier) ?",
+      "reponse": "L'épargne-pension est une épargne individuelle et volontaire que vous constituez en vue de votre retraite, en plus de votre pension légale. Vous épargnez via un fonds d'épargne-pension (banque) ou une assurance-vie (branche 21 ou 23). L'État encourage cette épargne par une réduction d'impôt.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (réduction d'impôt pour épargne-pension)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/epargne-pension",
+          "intitule": "SPF Finances — Épargne-pension"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.wikifin.be/fr/impots-emploi-et-revenus/declaration-dimpots/reductions-fiscales/lepargne-pension",
+          "intitule": "Wikifin — L'épargne-pension"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EPARGNE-002",
+      "question": "Combien puis-je épargner et quel est l'avantage fiscal ?",
+      "reponse": "Pour 2026, il existe deux plafonds : jusqu'à 1.050 € donnent droit à une réduction d'impôt de 30 % ; jusqu'à 1.350 € donnent droit à une réduction de 25 %. Attention à la « zone piège » : verser entre 1.050 € et 1.260 € peut rapporter moins qu'en versant 1.050 €, car au-delà de 1.050 € c'est le taux de 25 % qui s'applique sur tout le montant.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (plafonds et taux de la réduction épargne-pension)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/epargne-pension",
+          "intitule": "SPF Finances — Montants et réduction d'impôt"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EPARGNE-003",
+      "question": "Quelles conditions pour avoir droit à la réduction ?",
+      "reponse": "Il faut notamment avoir au moins 18 ans, et le dernier versement peut être effectué au plus tard le 31 décembre de l'année de vos 64 ans. Pour une même année, la réduction ne vaut que pour un seul contrat. Le montant à reporter figure sur l'attestation 281.60 de votre banque ou assureur. Si votre impôt est nul, vous n'avez droit à aucune réduction (et à une réduction limitée si votre impôt est inférieur à l'avantage).",
+      "reference_legale": "Code des impôts sur les revenus 1992 (conditions de la réduction pour épargne-pension)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/epargne-pension",
+          "intitule": "SPF Finances — Conditions de la réduction"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.wikifin.be/fr/impots-emploi-et-revenus/declaration-dimpots/reductions-fiscales/lepargne-pension",
+          "intitule": "Wikifin — Conditions de l'épargne-pension"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

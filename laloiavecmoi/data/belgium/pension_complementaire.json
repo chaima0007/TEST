@@ -1,0 +1,58 @@
+{
+  "module": "pension_complementaire",
+  "titre": "Pension complémentaire (2e pilier)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 28 avril 2003 relative aux pensions complémentaires (LPC)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2003/04/28/2003022481/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Consultez mypension.be et, au besoin, votre organisme de pension.",
+  "faits": [
+    {
+      "id": "PENCOMP-001",
+      "question": "Qu'est-ce que la pension complémentaire (2e pilier) ?",
+      "reponse": "La pension complémentaire s'ajoute à votre pension légale. Elle se constitue pendant que vous travaillez, le plus souvent via votre employeur ou votre secteur (plan de pension d'entreprise ou sectoriel), ou comme indépendant. Elle est encadrée par la loi sur les pensions complémentaires.",
+      "reference_legale": "Loi du 28 avril 2003 relative aux pensions complémentaires (LPC)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2003/04/28/2003022481/justel",
+          "intitule": "Justel — Loi du 28 avril 2003 (LPC)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PENCOMP-002",
+      "question": "Où puis-je voir ma pension complémentaire ?",
+      "reponse": "Sur mypension.be, le volet « Ma pension complémentaire » vous donne une vue globale : la réserve déjà constituée, une estimation du montant attendu, l'éventuelle couverture décès, et même les droits « dormants » auprès d'anciens employeurs. C'est gratuit et personnalisé.",
+      "reference_legale": "Loi du 28 avril 2003 (information de l'affilié)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.socialsecurity.be/citizen/fr/static/applics/mypension/index.htm",
+          "intitule": "Sécurité sociale — mypension.be (pension complémentaire)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PENCOMP-003",
+      "question": "Que deviennent mes droits si je change d'employeur ?",
+      "reponse": "En cas de « sortie » (par exemple la fin de votre contrat de travail), vos réserves acquises de pension complémentaire sont protégées par la loi : vous ne les perdez pas. Vous avez des choix (les laisser auprès de l'organisme, les transférer…). Vérifiez vos droits sur mypension.be.",
+      "reference_legale": "Loi du 28 avril 2003 (réserves acquises et sortie)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2003/04/28/2003022481/justel",
+          "intitule": "Justel — Loi du 28 avril 2003 (sortie)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
