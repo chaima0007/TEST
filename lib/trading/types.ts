@@ -32,19 +32,34 @@ export interface Signal {
   action: Action;
   /** Niveau de stop-loss recommandé (si position ouverte). */
   stopLoss: number | null;
-  /** Niveau de take-profit recommandé (si position ouverte). */
+  /** Premier objectif (prise partielle). */
+  takeProfit1: number | null;
+  /** Objectif final / take-profit (si position ouverte). */
   takeProfit: number | null;
   /** Score de confiance 0..1 dérivé de la confluence des indicateurs. */
   confidence: number;
+  /** Confluences validées (cases cochées) sur le total évalué. */
+  score: { passed: number; total: number };
   /** Explication lisible des conditions déclenchées. */
   reason: string;
   /** Snapshot des indicateurs à la dernière bougie. */
   indicators: {
     emaFast: number;
     emaSlow: number;
+    emaTrend: number;
     vwap: number;
     rsi: number;
     atr: number;
+    macd: number;
+    macdSignal: number;
+    macdHist: number;
+    adx: number;
+    plusDI: number;
+    minusDI: number;
+    bbUpper: number;
+    bbLower: number;
+    stochK: number;
+    relVolume: number;
   };
 }
 
@@ -52,6 +67,8 @@ export interface Signal {
 export interface StrategyParams {
   emaFast: number;
   emaSlow: number;
+  /** EMA de tendance long terme (filtre de fond). */
+  emaTrend: number;
   rsiPeriod: number;
   atrPeriod: number;
   /** RSI minimal pour valider un long. */
@@ -60,10 +77,49 @@ export interface StrategyParams {
   rsiLongMax: number;
   /** RSI maximal pour valider un short. */
   rsiShortMax: number;
+  /** Périodes MACD. */
+  macdFast: number;
+  macdSlow: number;
+  macdSignal: number;
+  /** Période ADX et seuil minimal de force de tendance. */
+  adxPeriod: number;
+  adxMin: number;
+  /** Bandes de Bollinger. */
+  bbPeriod: number;
+  bbMult: number;
+  /** Stochastique. */
+  stochPeriod: number;
+  /** Volume relatif minimal pour confirmer une entrée. */
+  volPeriod: number;
+  volMinRatio: number;
+  /** Nombre minimal de confluences pour déclencher un signal. */
+  minConfluences: number;
   /** Multiplicateur d'ATR pour le stop-loss. */
   atrStopMult: number;
-  /** Multiplicateur d'ATR pour le take-profit. */
+  /** Multiplicateur d'ATR pour le take-profit final. */
   atrTargetMult: number;
+}
+
+/** Paramètres de gestion de position (money & risk management). */
+export interface RiskParams {
+  /** Premier objectif exprimé en multiple de R (risque initial). */
+  tp1RMultiple: number;
+  /** Fraction de la position clôturée au TP1 (0..1). */
+  partialExitPct: number;
+  /** Déplace le stop au point d'entrée après ce multiple de R. */
+  breakevenAtR: number;
+  /** Active le stop suiveur après ce multiple de R. */
+  trailActivateR: number;
+  /** Distance du stop suiveur (chandelier) en multiples d'ATR. */
+  trailAtrMult: number;
+  /** Nombre maximum de trades par jour. */
+  maxTradesPerDay: number;
+  /** Arrêt des entrées du jour après cette perte cumulée (en R). */
+  dailyLossLimitR: number;
+  /** Pas de nouvelle entrée dans les N dernières bougies de la séance. */
+  noEntryLastBars: number;
+  /** Frais + slippage par côté (%). */
+  feePct: number;
 }
 
 /** Résultat d'un backtest. */
@@ -88,7 +144,11 @@ export interface BacktestTrade {
   entryTime: number;
   entryPrice: number;
   exitTime: number;
+  /** Prix de sortie du reliquat (le partiel éventuel est dans `partial`). */
   exitPrice: number;
+  /** Rendement net pondéré de la position (partiel + reliquat), en %. */
   returnPct: number;
-  exitReason: "stop" | "target" | "signal" | "eod";
+  exitReason: "stop" | "target" | "signal" | "eod" | "trail" | "breakeven";
+  /** Prise partielle au TP1, si elle a eu lieu. */
+  partial?: { price: number; portion: number; returnPct: number };
 }

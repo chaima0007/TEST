@@ -13,10 +13,25 @@ interface SignalResp {
     action: string;
     price: number;
     confidence: number;
+    score: { passed: number; total: number };
     reason: string;
     stopLoss: number | null;
+    takeProfit1: number | null;
     takeProfit: number | null;
-    indicators: { emaFast: number; emaSlow: number; vwap: number; rsi: number; atr: number };
+    indicators: {
+      emaFast: number;
+      emaSlow: number;
+      emaTrend: number;
+      vwap: number;
+      rsi: number;
+      atr: number;
+      macdHist: number;
+      adx: number;
+      plusDI: number;
+      minusDI: number;
+      stochK: number;
+      relVolume: number;
+    };
   };
 }
 
@@ -172,18 +187,23 @@ export default function TradingPage() {
                 </p>
               </div>
               <span className={`px-3 py-1.5 rounded-full text-sm font-bold uppercase ${sideColor(signal.signal.side)}`}>
-                {signal.signal.side} · {(signal.signal.confidence * 100).toFixed(0)}%
+                {signal.signal.side} · {(signal.signal.confidence * 100).toFixed(0)}% · {signal.signal.score.passed}/{signal.signal.score.total}
               </span>
             </div>
             <p className="text-sm text-slate-600 mb-4">{signal.signal.reason}</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-              <Stat label="EMA rapide" value={fmt(signal.signal.indicators.emaFast)} />
-              <Stat label="EMA lente" value={fmt(signal.signal.indicators.emaSlow)} />
+              <Stat label="EMA 9 / 21" value={`${fmt(signal.signal.indicators.emaFast)} / ${fmt(signal.signal.indicators.emaSlow)}`} />
+              <Stat label="EMA 50 (tendance)" value={fmt(signal.signal.indicators.emaTrend)} />
               <Stat label="VWAP" value={fmt(signal.signal.indicators.vwap)} />
               <Stat label="RSI" value={fmt(signal.signal.indicators.rsi, 0)} />
+              <Stat label="ADX (force)" value={fmt(signal.signal.indicators.adx, 0)} />
+              <Stat label="+DI / -DI" value={`${fmt(signal.signal.indicators.plusDI, 0)} / ${fmt(signal.signal.indicators.minusDI, 0)}`} />
+              <Stat label="MACD hist" value={fmt(signal.signal.indicators.macdHist, 3)} />
+              <Stat label="Stoch %K" value={fmt(signal.signal.indicators.stochK, 0)} />
+              <Stat label="Vol. relatif" value={`${fmt(signal.signal.indicators.relVolume, 2)}×`} />
               <Stat label="ATR" value={fmt(signal.signal.indicators.atr)} />
               <Stat label="Stop-loss" value={fmt(signal.signal.stopLoss)} />
-              <Stat label="Take-profit" value={fmt(signal.signal.takeProfit)} />
+              <Stat label="TP1 / TP2" value={`${fmt(signal.signal.takeProfit1)} / ${fmt(signal.signal.takeProfit)}`} />
             </div>
 
             <div className="flex flex-wrap gap-3 mt-6">
