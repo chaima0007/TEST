@@ -1,0 +1,19 @@
+{
+  "objectif": "Atteindre le 1er million d'ARR — devenir le partenaire conformité des grands comptes (voir PLAN_MARKETING_GRANDS_COMPTES_CAELUM.md)",
+  "revue": "2026-06-29",
+  "note": "Plan lu par la plateforme autonome (organe Plan). Chaque jalon a un statut ; certains sont auto-détectés, d'autres mis à jour à la main par la fondatrice. But : avancer, ne pas stagner.",
+  "jalons": [
+    {"id": "socle_seo", "titre": "Socle SEO (normes × secteurs) en ligne", "auto": "static_done", "fait": true, "bloquant": false},
+    {"id": "diagnostic", "titre": "Auto-diagnostic + checklist + attestation en ligne", "auto": "static_done", "fait": true, "bloquant": false},
+    {"id": "financement", "titre": "Module conformité finançable (aides régionales)", "auto": "static_done", "fait": true, "bloquant": false},
+    {"id": "fiduciaires_page", "titre": "Page programme partenaire fiduciaires", "auto": "static_done", "fait": true, "bloquant": false},
+    {"id": "version_en", "titre": "Version anglaise du site Caelum", "auto": "static_done", "fait": true, "bloquant": false},
+    {"id": "identite", "titre": "Compléter l'identité légale (mentions légales)", "auto": "file_no_placeholder:data/identite.ts", "fait": false, "bloquant": true, "ordre": 1},
+    {"id": "prix", "titre": "Figer la grille de prix grands comptes", "auto": "none", "fait": false, "bloquant": true, "ordre": 2},
+    {"id": "webhook", "titre": "Activer le webhook leads (capture des prospects)", "auto": "env:LEADS_WEBHOOK_URL", "fait": false, "bloquant": true, "ordre": 3},
+    {"id": "abm_top200", "titre": "Constituer la liste ABM top-200 grands comptes", "auto": "none", "fait": false, "bloquant": false, "ordre": 4},
+    {"id": "fiduciaires_pilotes", "titre": "Signer 10 cabinets fiduciaires pilotes", "auto": "none", "fait": false, "bloquant": false, "ordre": 5},
+    {"id": "webinaires", "titre": "Animer 2 webinaires (CSRD / NIS2)", "auto": "none", "fait": false, "bloquant": false, "ordre": 6},
+    {"id": "premier_million", "titre": "Atteindre le 1er million d'ARR", "auto": "none", "fait": false, "bloquant": false, "ordre": 7}
+  ]
+}

@@ -80,6 +80,25 @@ def compter_pages_build() -> dict:
     return {"caelum_normes": n_normes}
 
 
+def compter_caelum() -> dict:
+    """Corpus Caelum (B2B) : normes de conformité, sources, aides publiques."""
+    out = {"normes": 0, "sources": 0, "aides": 0}
+    try:
+        d = json.load(open(os.path.join(ROOT, "data/caelum/conformite_entreprises.json"), encoding="utf-8"))
+        normes = d.get("normes", [])
+        out["normes"] = len(normes)
+        for n in normes:
+            out["sources"] += len(n.get("sources", []) or [])
+    except Exception:
+        pass
+    try:
+        a = json.load(open(os.path.join(ROOT, "data/caelum/aides_publiques.json"), encoding="utf-8"))
+        out["aides"] = len(a.get("aides", []) or [])
+    except Exception:
+        pass
+    return out
+
+
 # ───────────────────────────── 1. SANTÉ (protocoles réels) ───────────────────
 # Protocoles sûrs, sans argument, qui s'exécutent vite. On capture le code retour.
 PROTOCOLES = [
@@ -298,6 +317,77 @@ def scn_croissance(corpus: dict) -> list:
     }]
 
 
+def etat_plan() -> dict:
+    """Lit le plan stratégique Caelum et calcule l'avancement (avec auto-détection)."""
+    try:
+        plan = json.load(open(os.path.join(ROOT, "data", "strategic_plan.json"), encoding="utf-8"))
+    except Exception:
+        return {}
+    jalons = plan.get("jalons", [])
+    for j in jalons:
+        auto = j.get("auto", "none")
+        if auto.startswith("env:"):
+            j["fait"] = bool(os.environ.get(auto.split(":", 1)[1]))
+        elif auto.startswith("file_no_placeholder:"):
+            path = os.path.join(ROOT, auto.split(":", 1)[1])
+            try:
+                j["fait"] = "[à compléter]" not in open(path, encoding="utf-8").read()
+            except Exception:
+                j["fait"] = False
+        # 'static_done' et 'none' : on garde la valeur 'fait' du fichier
+    total = len(jalons)
+    faits = sum(1 for j in jalons if j.get("fait"))
+    pct = round(100 * faits / total) if total else 0
+    bloquants = [j["titre"] for j in jalons if j.get("bloquant") and not j.get("fait")]
+    prochaine = next((j["titre"] for j in jalons if not j.get("fait")), None)
+    return {"objectif": plan.get("objectif"), "total": total, "faits": faits, "pct": pct,
+            "bloquants_restants": bloquants, "prochaine_etape": prochaine, "jalons": jalons}
+
+
+def scn_plan() -> list:
+    """Organe Plan : la plateforme comprend le plan, suit l'avancement et signale la stagnation."""
+    p = etat_plan()
+    if not p:
+        return []
+    SEUIL = 5
+    # stagnation : avancement identique sur les derniers battements
+    try:
+        hist = json.load(open(VITALS, encoding="utf-8")).get("historique", [])
+    except Exception:
+        hist = []
+    stagn = 0
+    for h in reversed(hist):
+        if h.get("plan_pct") == p["pct"]:
+            stagn += 1
+        else:
+            break
+    if p["bloquants_restants"]:
+        verdict = ALERTE
+    elif p["pct"] < 100 and stagn >= SEUIL:
+        verdict = ALERTE
+    else:
+        verdict = OK
+    return [{
+        "scenario": "Plan stratégique · Avancement", "type": "etat", "verdict": verdict,
+        "plan_pct": p["pct"], "plan_faits": p["faits"], "plan_total": p["total"],
+        "prochaine_etape": p["prochaine_etape"], "battements_sans_progres": stagn,
+        "mitigation": "avancer le plan (PLAN_MARKETING_GRANDS_COMPTES_CAELUM.md) — ne pas stagner"
+    }]
+
+
+def scn_caelum(corpus: dict) -> list:
+    """Organe Conformité Caelum : couverture des normes B2B et de leurs sources."""
+    c = corpus.get("caelum", {})
+    if not c:
+        return []
+    verdict = OK if c.get("normes", 0) >= 10 else ALERTE
+    return [{
+        "scenario": "Caelum · Conformité B2B", "type": "etat", "verdict": verdict,
+        "caelum_normes": c.get("normes"), "caelum_sources": c.get("sources"), "caelum_aides": c.get("aides"),
+        "mitigation": "base de normes vérifiées + aides publiques sourcées"
+    }]
+
+
 def scn_veille() -> list:
     """Veille juridique : fraîcheur des fiches + changements de sources (organe réel)."""
     try:
@@ -333,6 +423,8 @@ def moteur_scenarios(n: int, corpus: dict) -> list:
     scenarios += scn_securite(n)
     scenarios += scn_veille()
     scenarios += scn_croissance(corpus)
+    scenarios += scn_caelum(corpus)
+    scenarios += scn_plan()
     scenarios += scn_langues()
     return scenarios
 
@@ -396,6 +488,12 @@ def composer_voix(etat: str, sceau: dict, battements: int) -> str:
         parts.append(f"Ma fragilité au pire scénario : {noms}.")
     if not a_corriger and not frag:
         parts.append("Rien ne me menace pour l'instant.")
+    # Plan stratégique : avancer, ne pas stagner
+    p = etat_plan()
+    if p:
+        parts.append(f"Plan à {p['pct']}%.")
+        if p.get("prochaine_etape"):
+            parts.append(f"Prochaine étape : {p['prochaine_etape']}.")
     return " ".join(parts)
 
 
@@ -437,10 +535,12 @@ def battre_le_coeur(sceau: dict, corpus: dict) -> dict:
         vit["age_jours"] = 0
 
     # mémoire : on garde les 200 dernières pulsations
+    plan = etat_plan()
     vit["historique"].append({
         "ts": now, "resilience": sceau["score_resilience"],
         "statut": sceau["statut"], "etat_vie": ETATS_VIE[etat],
         "reponses": corpus["reponses"], "modules": corpus["modules"],
+        "plan_pct": plan.get("pct") if plan else None,
     })
     vit["historique"] = vit["historique"][-200:]
 
@@ -476,8 +576,11 @@ def generer_taches(sceau: dict, scenarios: list, corpus: dict) -> dict:
         if s.get("type") != "etat" or s.get("verdict") == OK:
             continue
         prio = "haute" if s["verdict"] == CRITIQUE else "moyenne"
-        action, humain = next(((a, h) for k, (a, h) in ACTIONS.items() if k in s["scenario"]),
-                              (s.get("mitigation", "À examiner."), False))
+        if s.get("prochaine_etape"):  # organe Plan : action = prochaine étape concrète
+            action, humain = f"Avancer le plan : {s['prochaine_etape']}", True
+        else:
+            action, humain = next(((a, h) for k, (a, h) in ACTIONS.items() if k in s["scenario"]),
+                                  (s.get("mitigation", "À examiner."), False))
         ajouter(s["scenario"], "état", prio, action, humain, "scénario")
 
     # 2) Fragilités stress CRITIQUE → à surveiller (priorité basse, non bloquant)
@@ -539,8 +642,11 @@ def main() -> int:
 
     corpus = compter_corpus()
     corpus.update(compter_pages_build())
-    print(f"  Corpus : {corpus['modules']} modules · {corpus['reponses']} réponses · "
+    corpus["caelum"] = compter_caelum()
+    print(f"  La Loi Avec Moi : {corpus['modules']} modules · {corpus['reponses']} réponses · "
           f"{corpus['sources']} sources ({corpus['sources_officielles']} officielles)")
+    print(f"  Caelum : {corpus['caelum']['normes']} normes · {corpus['caelum']['sources']} sources · "
+          f"{corpus['caelum']['aides']} aides publiques")
 
     sante = [] if fast else lancer_protocoles()
     if sante:

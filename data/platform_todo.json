@@ -1,9 +1,9 @@
 {
-  "genere_le": "2026-06-29T10:11:19.694998+00:00",
-  "total": 3,
+  "genere_le": "2026-06-29T10:14:38.083761+00:00",
+  "total": 4,
   "par_priorite": {
     "haute": 0,
-    "moyenne": 2,
+    "moyenne": 3,
     "basse": 1
   },
   "taches": [
@@ -27,6 +27,15 @@
     },
     {
       "id": "T03",
+      "titre": "Plan stratégique · Avancement",
+      "categorie": "état",
+      "priorite": "moyenne",
+      "action_suggeree": "Avancer le plan : Compléter l'identité légale (mentions légales)",
+      "humain": true,
+      "organe": "scénario"
+    },
+    {
+      "id": "T04",
       "titre": "Fragilité : Sources · Panne large",
       "categorie": "résilience",
       "priorite": "basse",
