@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T09:42:50.858046+00:00",
+  "genere_le": "2026-06-29T09:46:58.378279+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
     "reponses": 428,
@@ -13,7 +13,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 38,
+      "ms": 40,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -21,15 +21,23 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 46,
+      "ms": 53,
       "sortie": "  → data/governance/source_trust_report.md",
+      "verdict": "OK"
+    },
+    {
+      "protocole": "legal_change_sensor",
+      "cmd": "python3 scripts/legal_change_sensor.py",
+      "returncode": 0,
+      "ms": 74,
+      "sortie": "  → data/legal_change.json",
       "verdict": "OK"
     },
     {
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 484,
+      "ms": 456,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -74,7 +82,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 102,
+      "p99_ms": 101,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -89,8 +97,8 @@
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
-      "urls_impactees_moy": 8,
-      "pct_corpus": 1.04,
+      "urls_impactees_moy": 6,
+      "pct_corpus": 0.85,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -98,8 +106,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 37,
-      "pct_corpus": 4.98,
+      "urls_impactees_moy": 36,
+      "pct_corpus": 4.95,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -108,7 +116,7 @@
       "type": "stress",
       "taux_casse_pct": 15.0,
       "urls_impactees_moy": 110,
-      "pct_corpus": 14.9,
+      "pct_corpus": 14.95,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -172,6 +180,17 @@
       "mitigation": "limites taille/longueur + 413"
     },
     {
+      "scenario": "Veille juridique · Fraîcheur des fiches",
+      "type": "etat",
+      "modules": 135,
+      "frais": 135,
+      "a_reverifier": 0,
+      "prioritaire": 0,
+      "sources_modifiees": 0,
+      "verdict": "OK",
+      "mitigation": "capteur de changement juridique (fraîcheur + empreinte sources)"
+    },
+    {
       "scenario": "Langues · Visiteur non francophone",
       "type": "etat",
       "verdict": "OK",
@@ -179,12 +198,12 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629094250",
+    "seal_id": "AUTO-20260629094658",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 81.0,
-    "verts": 17,
-    "total": 21,
+    "score_resilience": 82.6,
+    "verts": 19,
+    "total": 23,
     "fragilites_stress": [
       "Sources · Panne large"
     ],
@@ -196,7 +215,7 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 8,
+    "battements": 9,
     "age_jours": 0.01,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },

@@ -85,6 +85,7 @@ def compter_pages_build() -> dict:
 PROTOCOLES = [
     ("loi_reference_audit", ["python3", "scripts/loi_reference_audit.py"]),
     ("source_trust_protocol", ["python3", "scripts/source_trust_protocol.py"]),
+    ("legal_change_sensor", ["python3", "scripts/legal_change_sensor.py"]),
     ("branch_guard", ["python3", "scripts/branch_guard.py", "--check", "--quiet"]),
 ]
 
@@ -264,6 +265,22 @@ def scn_securite(n: int) -> list:
     }]
 
 
+def scn_veille() -> list:
+    """Veille juridique : fraîcheur des fiches + changements de sources (organe réel)."""
+    try:
+        lc = json.load(open(os.path.join(ROOT, "data", "legal_change.json"), encoding="utf-8"))
+    except Exception:
+        return []
+    return [{
+        "scenario": "Veille juridique · Fraîcheur des fiches", "type": "etat",
+        "modules": lc.get("total_modules"), "frais": lc.get("frais"),
+        "a_reverifier": lc.get("a_reverifier"), "prioritaire": lc.get("prioritaire"),
+        "sources_modifiees": len(lc.get("sources_modifiees", [])),
+        "verdict": lc.get("verdict", OK),
+        "mitigation": "capteur de changement juridique (fraîcheur + empreinte sources)"
+    }]
+
+
 def scn_langues() -> list:
     """Langues : visiteur non francophone. Mitigation : FR/NL natifs + barre 🌐 + EN Caelum."""
     return [{
@@ -281,6 +298,7 @@ def moteur_scenarios(n: int, corpus: dict) -> list:
     scenarios += scn_deploiement()
     scenarios += scn_donnees(corpus)
     scenarios += scn_securite(n)
+    scenarios += scn_veille()
     scenarios += scn_langues()
     return scenarios
 
