@@ -15,7 +15,8 @@ export const metadata = {
 
 type Scenario = { scenario: string; type?: string; verdict: string; mitigation?: string;
   p95_ms?: number; p99_ms?: number; pct_sous_200ms?: number; pct_corpus?: number;
-  urls_impactees_moy?: number; pages_estimees?: number };
+  urls_impactees_moy?: number; pages_estimees?: number;
+  urls_testees?: number; vivantes_pct?: number; mortes?: number };
 
 function lire(rel: string): Record<string, unknown> {
   try {
@@ -130,6 +131,9 @@ export default function PlateformeAutonome() {
                   <span className="font-semibold text-sm text-slate-100">{s.scenario}</span>
                   <span className="text-xs font-bold">{s.verdict}</span>
                 </div>
+                {typeof s.vivantes_pct === "number" && (
+                  <p className="text-xs text-slate-300 mt-1">{s.urls_testees} URL testées · {s.vivantes_pct}% vivantes{s.mortes ? ` · ${s.mortes} mortes` : ""}</p>
+                )}
                 {s.mitigation && <p className="text-xs text-slate-400 mt-1.5">🛡️ {s.mitigation}</p>}
               </div>
             ))}

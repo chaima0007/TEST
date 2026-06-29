@@ -1,6 +1,6 @@
 {
   "naissance": "2026-06-29T09:31:18.850752+00:00",
-  "battements": 6,
+  "battements": 8,
   "historique": [
     {
       "ts": "2026-06-29T09:31:18.850752+00:00",
@@ -49,12 +49,28 @@
       "etat_vie": "🟠 Vigilance",
       "reponses": 428,
       "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:42:24.424583+00:00",
+      "resilience": 77.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:42:50.857502+00:00",
+      "resilience": 81.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
     }
   ],
-  "derniere_pulsation": "2026-06-29T09:37:52.818786+00:00",
+  "derniere_pulsation": "2026-06-29T09:42:50.857502+00:00",
   "etat_vie": "🟠 Vigilance",
-  "resilience": 80.0,
+  "resilience": 81.0,
   "statut": "APPROUVÉ",
-  "age_jours": 0.0,
-  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 80.0%, 6ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum. Ma fragilité au pire scénario : Panne large."
+  "age_jours": 0.01,
+  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 81.0%, 8ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum. Ma fragilité au pire scénario : Panne large."
 }

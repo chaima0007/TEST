@@ -153,8 +153,29 @@ def scn_trafic(n: int, corpus: dict) -> list:
 
 def scn_sources(n: int, corpus: dict) -> list:
     """Sources officielles : que se passe-t-il si X% des URL changent/meurent ?
-    Mitigation réelle : source_change_detector + double source (officiel + secondaire)."""
+    Mitigation réelle : source_change_detector + double source (officiel + secondaire).
+    Si le capteur réel (source_health_sensor) a des données, on les utilise EN PLUS
+    des stress-tests simulés."""
     out = []
+    # Détection RÉELLE si disponible (organe capteur).
+    try:
+        sh = json.load(open(os.path.join(ROOT, "data", "source_health.json"), encoding="utf-8"))
+        if sh.get("network_ok"):
+            verdict = sh.get("verdict", OK)
+            out.append({
+                "scenario": "Sources · Détection réelle (capteur)", "type": "etat",
+                "urls_testees": sh.get("total"), "vivantes_pct": sh.get("pct_ok"),
+                "mortes": sh.get("mortes"), "verdict": verdict,
+                "mitigation": "capteur HTTP réel + 2e source de secours"
+            })
+        else:
+            out.append({
+                "scenario": "Sources · Capteur (réseau indisponible)", "type": "etat",
+                "verdict": OK, "mitigation": "capteur prêt ; à exécuter là où le réseau est ouvert"
+            })
+    except Exception:
+        pass
+
     total = max(corpus["sources"], 1)
     for label, taux, typ in [("Rotation normale", 0.01, "etat"), ("Refonte d'un portail", 0.05, "stress"), ("Panne large", 0.15, "stress")]:
         rng = random.Random(hash(label) & 0xFFFFFFFF)

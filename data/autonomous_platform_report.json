@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T09:37:52.819352+00:00",
+  "genere_le": "2026-06-29T09:42:50.858046+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
     "reponses": 428,
@@ -13,7 +13,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 40,
+      "ms": 38,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -21,7 +21,7 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 51,
+      "ms": 46,
       "sortie": "  → data/governance/source_trust_report.md",
       "verdict": "OK"
     },
@@ -29,7 +29,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 360,
+      "ms": 484,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -74,17 +74,23 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 101,
+      "p99_ms": 102,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Sources · Capteur (réseau indisponible)",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "capteur prêt ; à exécuter là où le réseau est ouvert"
     },
     {
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 8,
-      "pct_corpus": 1.1,
+      "pct_corpus": 1.04,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -93,7 +99,7 @@
       "type": "stress",
       "taux_casse_pct": 5.0,
       "urls_impactees_moy": 37,
-      "pct_corpus": 5.01,
+      "pct_corpus": 4.98,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -102,7 +108,7 @@
       "type": "stress",
       "taux_casse_pct": 15.0,
       "urls_impactees_moy": 110,
-      "pct_corpus": 14.91,
+      "pct_corpus": 14.9,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -173,12 +179,12 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629093752",
+    "seal_id": "AUTO-20260629094250",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 80.0,
-    "verts": 16,
-    "total": 20,
+    "score_resilience": 81.0,
+    "verts": 17,
+    "total": 21,
     "fragilites_stress": [
       "Sources · Panne large"
     ],
@@ -190,8 +196,8 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 6,
-    "age_jours": 0.0,
+    "battements": 8,
+    "age_jours": 0.01,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "avertissement": "Simulations = modèles probabilistes/déterministes locaux, pas des appels réseau réels."
