@@ -169,9 +169,31 @@ const NORMES: Norme[] = [
   },
 ];
 
+// Actions clés de conformité par norme — pour le formulaire « Suis-je déjà en règle ? ».
+const CHECKS: Record<string, string[]> = {
+  efacture: ["J'émets ET je reçois mes factures B2B en format électronique structuré (Peppol)"],
+  rgpd: ["Je tiens un registre des traitements", "J'informe les personnes et gère les demandes (accès, effacement) et les incidents"],
+  lanceurs: ["J'ai un canal de signalement interne sécurisé", "Je protège les lanceurs d'alerte contre les représailles"],
+  nis2: ["J'ai des mesures de cybersécurité (MFA, sauvegardes, gestion des accès)", "Je sais notifier un incident au CCB", "La gouvernance cyber est suivie par la direction"],
+  csrd: ["Je prépare un rapport de durabilité (normes ESRS)"],
+  csddd: ["J'ai un devoir de vigilance sur ma chaîne de valeur"],
+  ubo: ["Mes bénéficiaires effectifs sont déclarés au registre UBO", "Je confirme les données chaque année"],
+  "ai-act": ["J'ai inventorié mes systèmes d'IA et leur niveau de risque"],
+  eaa: ["Mon site/app respecte l'accessibilité (WCAG) + déclaration d'accessibilité"],
+  dora: ["J'ai un cadre de gestion du risque informatique (TIC) + tests + notification d'incidents"],
+  "transparence-salariale": ["J'indique une fourchette de rémunération dès l'offre d'emploi", "Je peux justifier mes écarts de rémunération F/H"],
+  dac7: ["Je collecte et déclare les données des vendeurs au SPF Finances"],
+  ppwr: ["Mes emballages respectent recyclabilité/étiquetage + documentation de conformité"],
+  "delais-paiement": ["Mes CGV et contrats prévoient des délais de paiement ≤ 60 jours"],
+  cbam: ["J'ai le statut de déclarant MACF + un suivi des émissions importées"],
+  eudr: ["J'ai un système de diligence raisonnée (traçabilité) + déclaration"],
+  aml: ["J'applique la vigilance client (KYC) + déclaration des opérations suspectes (CTIF)"],
+};
+
 export default function Conformite2026Page() {
   const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "", secteur_financier: "", plateforme: "", emballages: "", import_produits: "" });
   const [res, setRes] = useState<{ directs: Norme[]; cascade: Norme[] } | null>(null);
+  const [coches, setCoches] = useState<Record<string, boolean>>({});
   const [email, setEmail] = useState("");
   const [envoi, setEnvoi] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
@@ -456,6 +478,70 @@ export default function Conformite2026Page() {
                 </article>
               ))}
             </div>
+
+            {/* 2e étape : Suis-je déjà EN RÈGLE ? (checklist) */}
+            {res.directs.length > 0 && (() => {
+              const items = res.directs.flatMap((n) => (CHECKS[n.id] || []).map((c, i) => ({ key: `${n.id}:${i}`, norme: n.nom, texte: c })));
+              const total = items.length;
+              const faits = items.filter((it) => coches[it.key]).length;
+              const pct = total ? Math.round((faits / total) * 100) : 0;
+              const manques = items.filter((it) => !coches[it.key]);
+              // Classes Tailwind complètes (le JIT ne génère pas les noms dynamiques `bg-${x}-500`).
+              const txtScore = pct >= 80 ? "text-emerald-600" : pct >= 40 ? "text-amber-600" : "text-rose-600";
+              const barScore = pct >= 80 ? "bg-emerald-500" : pct >= 40 ? "bg-amber-500" : "bg-rose-500";
+              return (
+                <div className="mt-10 rounded-2xl border border-slate-200 p-6 bg-white">
+                  <h3 className="text-xl font-bold">Êtes-vous déjà en règle ?</h3>
+                  <p className="text-slate-600 text-sm mt-1">Cochez ce qui est déjà fait. Votre score se met à jour en direct.</p>
+
+                  <div className="mt-5 space-y-4">
+                    {res.directs.map((n) => (
+                      (CHECKS[n.id] || []).length > 0 && (
+                        <div key={n.id}>
+                          <p className="font-semibold text-sm text-slate-800">{n.nom}</p>
+                          <div className="mt-1.5 space-y-1.5">
+                            {(CHECKS[n.id] || []).map((c, i) => {
+                              const key = `${n.id}:${i}`;
+                              return (
+                                <label key={key} className="flex items-start gap-2.5 text-sm text-slate-700 cursor-pointer">
+                                  <input
+                                    type="checkbox"
+                                    checked={!!coches[key]}
+                                    onChange={(e) => setCoches({ ...coches, [key]: e.target.checked })}
+                                    className="mt-0.5 h-4 w-4 rounded border-slate-300 text-indigo-600"
+                                  />
+                                  <span>{c}</span>
+                                </label>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )
+                    ))}
+                  </div>
+
+                  {/* Score en règle */}
+                  <div className="mt-6 rounded-xl bg-slate-50 border border-slate-200 p-4">
+                    <p className="text-sm text-slate-500">Vous êtes en règle à</p>
+                    <p className={`text-3xl font-bold ${txtScore}`}>{pct}%</p>
+                    <div className="mt-2 h-2.5 w-full rounded-full bg-slate-200 overflow-hidden">
+                      <div className={`h-full ${barScore}`} style={{ width: `${pct}%` }} />
+                    </div>
+                    {manques.length > 0 ? (
+                      <div className="mt-3">
+                        <p className="text-sm font-semibold text-slate-800">Ce qu&apos;il reste à faire ({manques.length}) :</p>
+                        <ul className="mt-1 list-disc list-inside text-sm text-slate-600 space-y-0.5">
+                          {manques.slice(0, 8).map((m) => <li key={m.key}>{m.texte}</li>)}
+                        </ul>
+                        <p className="mt-3 text-sm font-medium text-indigo-700">👉 Caelum peut combler ces écarts pour vous.</p>
+                      </div>
+                    ) : (
+                      <p className="mt-3 text-sm font-medium text-emerald-700">🎉 Bravo : sur ces points, vous semblez en règle ! Une veille reste utile pour le rester.</p>
+                    )}
+                  </div>
+                </div>
+              );
+            })()}
 
             {res.cascade.length > 0 && (
               <div className="mt-8">
