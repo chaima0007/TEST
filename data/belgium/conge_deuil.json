@@ -1,0 +1,78 @@
+{
+  "module": "conge_deuil",
+  "titre": "Congé de deuil (petit chômage pour décès)",
+  "domaine": "Travail & deuil",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 27 juin 2021 allongeant le congé de deuil accordé lors du décès du partenaire ou d'un enfant et flexibilisant sa prise (petit chômage)",
+    "portee": "Droit du travailleur de s'absenter, rémunéré, en cas de décès d'un proche",
+    "source_officielle": "https://werk.belgie.be/fr/actualites/prolongation-du-conge-de-deuil-petit-chomage-pour-cause-de-deces"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les modalités précises peuvent dépendre de votre situation : vérifiez auprès de votre employeur ou de votre syndicat.",
+  "faits": [
+    {
+      "id": "DEUIL-001",
+      "question": "C'est quoi le congé de deuil ?",
+      "reponse": "C'est une forme de « petit chômage » (congé de circonstance) : le droit de s'absenter du travail, en gardant votre rémunération (à charge de l'employeur), lors du décès d'un proche. La loi du 27 juin 2021 a allongé et assoupli ce congé, notamment pour le décès du partenaire ou d'un enfant.",
+      "reference_legale": "Loi du 27 juin 2021 (congé de deuil / petit chômage)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://werk.belgie.be/fr/actualites/prolongation-du-conge-de-deuil-petit-chomage-pour-cause-de-deces",
+          "intitule": "SPF Emploi — Congé de deuil"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2021/06/27/2021203289/justel",
+          "intitule": "Loi du 27 juin 2021 (Justel)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DEUIL-002",
+      "question": "Combien de jours en cas de décès du conjoint/partenaire ou d'un enfant ?",
+      "reponse": "10 jours. Vous devez prendre les 3 premiers jours dans la période qui va du jour du décès au jour des funérailles ; les 7 jours restants peuvent être pris librement dans l'année qui suit le décès. Cela vaut pour le décès du conjoint, du partenaire cohabitant, ou d'un enfant (le vôtre, celui de votre conjoint ou de votre partenaire cohabitant).",
+      "reference_legale": "Loi du 27 juin 2021 (10 jours — conjoint/partenaire/enfant)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://werk.belgie.be/fr/actualites/prolongation-du-conge-de-deuil-petit-chomage-pour-cause-de-deces",
+          "intitule": "SPF Emploi — 10 jours"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DEUIL-003",
+      "question": "Et pour le décès d'un autre proche (frère, grand-parent, petit-enfant…) ?",
+      "reponse": "La durée dépend du lien et du domicile. Pour un frère, une sœur, un beau-frère, une belle-sœur, un grand-parent, un petit-enfant, un arrière-grand-parent, un arrière-petit-enfant, un gendre ou une bru (du travailleur ou de son partenaire) : 2 jours si la personne décédée vivait sous le même toit que vous, sinon le jour des funérailles.",
+      "reference_legale": "Arrêté royal du 28 août 1963 relatif au petit chômage (jours selon le lien de parenté)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://werk.belgie.be/fr/actualites/prolongation-du-conge-de-deuil-petit-chomage-pour-cause-de-deces",
+          "intitule": "SPF Emploi — autres proches"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DEUIL-004",
+      "question": "Puis-je décaler ces jours ?",
+      "reponse": "Oui, avec souplesse : à votre demande et avec l'accord de votre employeur, il est possible de déroger aux périodes pendant lesquelles les jours doivent normalement être pris. Cela permet d'adapter le congé à votre situation réelle de deuil.",
+      "reference_legale": "Loi du 27 juin 2021 (flexibilisation de la prise du congé de deuil)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://werk.belgie.be/fr/actualites/prolongation-du-conge-de-deuil-petit-chomage-pour-cause-de-deces",
+          "intitule": "SPF Emploi — flexibilité"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

@@ -48,7 +48,16 @@ Aussi : bibliothèques publiques, écoles (modules 16-18 ans), asbl d'intégrati
 7. **Preuve par l'usage** : citer un relais (CPAS, bibliothèque) **avec son accord**, jamais de faux avis.
 
 ## 7. Pépites de rupture
-- 🥇 **Présence sourcée là où les gens cherchent** (r/belgium, groupes FB d'entraide, Wikipédia belge) — répondre utile + source, jamais spammer.
+- 🥇 **Présence sourcée là où les gens cherchent** (groupes Facebook d'entraide locaux, r/belgium, forums de quartier) — répondre utile + citer la source officielle, jamais spammer.
 - **Générateur de lettre type sourcée** (bail, conso, travail) avec l'article de loi cité.
 - **Fiches en audio** (accessibilité radicale : âgés, malvoyants, allophones).
 - **« Droit de la semaine »** format vidéo court, ultra-répétable.
+
+> ⚠️ **Pas de Wikipédia** (décision Chaima). Ni comme source de contenu (on n'utilise QUE des sources
+> officielles tier1 : ejustice, SPF, régions, notaire.be…), ni comme canal de diffusion.
+> Canaux fiables privilégiés à la place :
+> - **Référencement par des institutions** (CPAS, communes, bibliothèques, Maisons de Justice, Infor Jeunes) — sceau de confiance officiel.
+> - **Portails publics & annuaires d'aide** (liens depuis les pages « services citoyens »).
+> - **Médias associatifs & presse locale** (interviews, tribunes utiles).
+> - **Réseaux sociaux propres** (contenu vidéo « 1 droit = 1 réponse », newsletter d'asbl partenaires).
+> - **Bouche-à-oreille structuré** via les ambassadeurs de confiance (médiateurs, profs, asbl communautaires).

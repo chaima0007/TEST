@@ -1,0 +1,61 @@
+{
+  "module": "pacte_successoral",
+  "titre": "Pacte successoral",
+  "domaine": "Succession & patrimoine",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 31 juillet 2017 modifiant le Code civil en ce qui concerne les successions et les libéralités (pactes successoraux)",
+    "portee": "Accords de famille sur une succession future, encadrés et passés devant notaire",
+    "source_officielle": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Un pacte successoral a un impact important sur le patrimoine : l'intervention d'un notaire est obligatoire et il vous conseillera selon votre situation.",
+  "faits": [
+    {
+      "id": "PACT-001",
+      "question": "C'est quoi un pacte successoral ?",
+      "reponse": "C'est un accord conclu entre les membres d'une famille au sujet d'une succession future. Ce n'est pas un testament (acte strictement personnel) : c'est un outil pour garantir l'équilibre entre héritiers et éviter les contestations au moment du décès. En Belgique, les pactes successoraux sont en principe interdits, sauf ceux que la loi autorise — et toujours devant notaire.",
+      "reference_legale": "Loi du 31 juillet 2017 (Code civil — successions et libéralités)",
+      "contacts": [
+        {"nom": "Notaire", "pour": "établissement obligatoire du pacte successoral"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral", "intitule": "Notaire.be — Le pacte successoral"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/07/31/2017013015/justel", "intitule": "Loi du 31 juillet 2017 (Justel)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PACT-002",
+      "question": "Quels sont les deux types autorisés ?",
+      "reponse": "Le pacte global (familial) : un parent (ou les deux) et l'ensemble des descendants présumés (enfants, parfois petits-enfants) constatent ensemble l'existence d'un équilibre — subjectif, pas une stricte égalité — compte tenu des donations déjà faites. Le pacte ponctuel : il ne nécessite pas l'accord de toute la famille et porte sur un point précis (par ex. sécuriser une donation déterminée).",
+      "reference_legale": "Loi du 31 juillet 2017 (pacte global et pacte ponctuel)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral", "intitule": "Notaire.be — Pacte global et ponctuel"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PACT-003",
+      "question": "Pourquoi le notaire est-il obligatoire et comment ça se passe ?",
+      "reponse": "Vu l'impact sur le patrimoine, la loi impose l'intervention d'un notaire et une procédure stricte. Chacun reçoit d'abord un projet de pacte ; une réunion explicative est fixée au minimum 15 jours après, puis chacun dispose d'un délai pour marquer son accord — le délai total ne peut être inférieur à six semaines. Le but est de s'assurer que chacun a bien pesé les conséquences.",
+      "reference_legale": "Loi du 31 juillet 2017 (procédure de signature du pacte successoral)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral", "intitule": "Notaire.be — Procédure"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PACT-004",
+      "question": "Quels effets, par rapport à un testament ?",
+      "reponse": "En signant un pacte global, les parties renoncent à réclamer plus tard la réduction ou le rapport des libéralités qui y sont mentionnées : on ne rediscutera plus de ces donations au moment du partage. Le pacte ne sert pas à répartir vos biens (ça, c'est le testament) mais à sécuriser des donations et constater un équilibre. Pacte et testament sont donc complémentaires.",
+      "reference_legale": "Loi du 31 juillet 2017 (effets du pacte successoral)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral", "intitule": "Notaire.be — Pacte et testament"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
