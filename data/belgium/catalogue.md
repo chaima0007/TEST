@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**492 réponses · 149 modules · 698 sources officielles · 224 fiches avec contacts · 99 alertes de délai**
+**493 réponses · 150 modules · 701 sources officielles · 225 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -120,6 +120,7 @@
 | — | Plainte contre la police (Comité P) | 3 | 3 | 0 | 0 |
 | — | Précompte immobilier | 3 | 4 | 0 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |
+| Primes rénovation | Primes à la rénovation et à l'énergie (logement) | 1 | 3 | 1 | 1 |
 | Santé & famille | PMA — procréation médicalement assistée | 4 | 5 | 1 | 0 |
 | — | Produits défectueux (responsabilité) | 3 | 3 | 0 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 2 | 3 | 2 | 1 |

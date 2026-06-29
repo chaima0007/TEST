@@ -1,11 +1,11 @@
 {
-  "genere_le": "2026-06-29T17:40:34.167284+00:00",
+  "genere_le": "2026-06-29T17:41:53.726889+00:00",
   "monte_carlo_n": 20000,
   "corpus": {
-    "reponses": 492,
-    "sources": 825,
-    "modules": 149,
-    "sources_officielles": 698,
+    "reponses": 493,
+    "sources": 828,
+    "modules": 150,
+    "sources_officielles": 701,
     "caelum_normes": 17,
     "caelum": {
       "normes": 17,
@@ -20,8 +20,8 @@
       "type": "etat",
       "rps": 5,
       "cache_pct": 60,
-      "p95_ms": 46,
-      "p99_ms": 49,
+      "p95_ms": 45,
+      "p99_ms": 50,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -43,7 +43,7 @@
       "rps": 300,
       "cache_pct": 85,
       "p95_ms": 55,
-      "p99_ms": 59,
+      "p99_ms": 58,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -54,7 +54,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 98,
-      "p99_ms": 101,
+      "p99_ms": 102,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -70,7 +70,7 @@
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 8,
-      "pct_corpus": 0.95,
+      "pct_corpus": 0.97,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -78,8 +78,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 41,
-      "pct_corpus": 4.97,
+      "urls_impactees_moy": 40,
+      "pct_corpus": 4.83,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -87,29 +87,29 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 125,
-      "pct_corpus": 15.19,
+      "urls_impactees_moy": 121,
+      "pct_corpus": 14.63,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
     {
       "scenario": "Build · Aujourd'hui",
       "type": "etat",
-      "pages_estimees": 196,
+      "pages_estimees": 197,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +1 an (x2)",
       "type": "stress",
-      "pages_estimees": 392,
+      "pages_estimees": 394,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +3 ans (x4)",
       "type": "stress",
-      "pages_estimees": 784,
+      "pages_estimees": 788,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
@@ -140,7 +140,7 @@
     {
       "scenario": "Données · Couverture sources officielles",
       "type": "etat",
-      "pct_officiel": 84.6,
+      "pct_officiel": 84.7,
       "verdict": "OK",
       "mitigation": "protocole de confiance des sources (tier1)"
     },
@@ -166,9 +166,9 @@
       "scenario": "Croissance · Corpus",
       "type": "etat",
       "verdict": "OK",
-      "reponses": 492,
-      "modules": 149,
-      "depuis_naissance": 64,
+      "reponses": 493,
+      "modules": 150,
+      "depuis_naissance": 65,
       "battements_sans_croissance": 0,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
@@ -189,7 +189,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 41,
+      "battements_sans_progres": 42,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -225,7 +225,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629174034",
+    "seal_id": "AUTO-20260629174153",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 72.0,
@@ -250,7 +250,7 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 64,
+    "battements": 65,
     "age_jours": 0.34,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },

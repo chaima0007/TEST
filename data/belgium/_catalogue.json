@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 149,
-    "faits": 492,
-    "sources_officielles": 698,
-    "faits_avec_contacts": 224,
-    "faits_avec_alerte_delai": 99
+    "modules": 150,
+    "faits": 493,
+    "sources_officielles": 701,
+    "faits_avec_contacts": 225,
+    "faits_avec_alerte_delai": 100
   },
   "modules": [
     {
@@ -1352,6 +1352,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "primes_renovation.json",
+      "module": "primes_renovation",
+      "titre": "Primes à la rénovation et à l'énergie (logement)",
+      "domaine": "Primes rénovation",
+      "juridiction": "BE",
+      "faits": 1,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "procreation_medicalement_assistee.json",

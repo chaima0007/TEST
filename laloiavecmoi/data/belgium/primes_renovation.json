@@ -1,0 +1,59 @@
+{
+  "module": "primes_renovation",
+  "titre": "Primes à la rénovation et à l'énergie (logement)",
+  "domaine": "Primes rénovation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Aides régionales à la rénovation et aux économies d'énergie du logement (compétence régionale)",
+    "portee": "Propriétaires et locataires réalisant des travaux de rénovation/énergie",
+    "source_officielle": "https://www.mijnverbouwpremie.be/"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Les dispositifs, conditions et montants des primes changent souvent et varient par région : vérifiez le portail officiel de votre région avant tout engagement de travaux. Ne remplace pas un conseil individualisé.",
+  "faits": [
+    {
+      "id": "PRIME-REGIONAL-001",
+      "question": "À quel dispositif de primes rénovation puis-je prétendre selon ma région ?",
+      "reponse": "Les primes à la rénovation et à l'énergie sont une compétence RÉGIONALE, avec un dispositif et un portail par région. En WALLONIE : les primes habitation/énergie sont gérées par la Région (portail energie.wallonie.be ; demande souvent via Mon Espace, avec audit logement préalable selon les cas). En FLANDRE : Mijn VerbouwPremie, prime unique pour la rénovation et les investissements économiseurs d'énergie (réformée à partir du 1er mars 2026), complétée par Mijn VerbouwLening. À BRUXELLES : le portail RENOLUTION centralise l'information ; à ce jour aucune nouvelle aide financière n'est actée par le gouvernement bruxellois (situation en redéfinition — vérifiez les annonces officielles). Demandez toujours la prime AVANT/selon les règles de votre région.",
+      "reference_legale": "Compétence régionale énergie/logement : arrêté du Gouvernement wallon relatif aux primes habitation/énergie ; décret flamand relatif à Mijn VerbouwPremie ; arrêté du Gouvernement de la Région de Bruxelles-Capitale relatif aux primes rénovation (RENOLUTION)",
+      "alerte_delai": "Les primes obéissent à des conditions de calendrier (demande avant/après travaux, audit préalable) propres à chaque région : vérifiez la procédure AVANT de commencer les travaux.",
+      "contacts": [
+        {
+          "nom": "energie.wallonie.be (Wallonie)",
+          "lien": "https://energie.wallonie.be/",
+          "pour": "primes habitation/énergie en Wallonie"
+        },
+        {
+          "nom": "Mijn VerbouwPremie (Flandre)",
+          "lien": "https://www.mijnverbouwpremie.be/",
+          "pour": "prime rénovation/énergie en Flandre"
+        },
+        {
+          "nom": "RENOLUTION (Bruxelles)",
+          "lien": "https://renolution.brussels/fr",
+          "pour": "information rénovation à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mijnverbouwpremie.be/",
+          "intitule": "Mijn VerbouwPremie — prime rénovation/énergie (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://renolution.brussels/fr",
+          "intitule": "RENOLUTION — portail rénovation (Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://energie.wallonie.be/",
+          "intitule": "Énergie Wallonie — primes habitation/énergie"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
