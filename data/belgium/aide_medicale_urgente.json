@@ -1,0 +1,73 @@
+{
+  "module": "aide_medicale_urgente",
+  "titre": "Aide médicale urgente (CPAS)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 12 décembre 1996 relatif à l'aide médicale urgente ; loi du 8 juillet 1976 organique des CPAS, art. 57, §2",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.mi-is.be/fr"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Adressez-vous au CPAS de votre commune ; en urgence vitale, appelez le 112.",
+  "faits": [
+    {
+      "id": "AMU-001",
+      "question": "Qu'est-ce que l'aide médicale urgente et qui y a droit ?",
+      "reponse": "L'aide médicale urgente permet aux personnes en séjour illégal (qui ne peuvent pas s'affilier à une mutuelle) de recevoir des soins. Il s'agit d'une aide à caractère exclusivement médical (préventif ou curatif), dont le caractère urgent est attesté par un certificat médical. La demande se fait auprès du CPAS de la commune.",
+      "reference_legale": "Loi du 8 juillet 1976 organique des CPAS, art. 57, §2 ; arrêté royal du 12 décembre 1996",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale — Aide médicale urgente"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.fedasilinfo.be/fr/vous-etes-en-sejour-illegal-et-necessitez-une-aide-medicale",
+          "intitule": "Fedasil Info — Aide médicale urgente"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AMU-002",
+      "question": "Que couvre-t-elle et qu'est-ce qui est exclu ?",
+      "reponse": "Elle peut couvrir une consultation chez le médecin ou le dentiste, des médicaments sur prescription, des examens médicaux, et dans certains cas une opération et la revalidation. Sont exclues les aides non médicales : l'aide financière, le logement, la nourriture et les vêtements.",
+      "reference_legale": "Arrêté royal du 12 décembre 1996 (aide à caractère exclusivement médical)",
+      "sources": [
+        {
+          "type": "secondaire",
+          "url": "https://www.fedasilinfo.be/fr/vous-etes-en-sejour-illegal-et-necessitez-une-aide-medicale",
+          "intitule": "Fedasil Info — Ce que couvre l'aide médicale urgente"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale — Aide médicale urgente"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AMU-003",
+      "question": "Comment la demander ?",
+      "reponse": "Contactez le CPAS de la commune de votre lieu de séjour. Le CPAS vérifie votre situation (séjour illégal et état de besoin) et accepte de prendre en charge les frais médicaux ; vous vous présentez ensuite chez le médecin ou à l'hôpital. En cas d'urgence vitale, composez le 112 ; l'hôpital peut alors s'adresser au CPAS en votre nom.",
+      "reference_legale": "Loi du 8 juillet 1976 organique des CPAS, art. 57, §2 (procédure devant le CPAS)",
+      "sources": [
+        {
+          "type": "secondaire",
+          "url": "https://www.fedasilinfo.be/fr/vous-etes-en-sejour-illegal-et-necessitez-une-aide-medicale",
+          "intitule": "Fedasil Info — Demander l'aide médicale urgente"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

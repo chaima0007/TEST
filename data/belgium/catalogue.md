@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**335 réponses · 105 modules · 485 sources officielles · 187 fiches avec contacts · 87 alertes de délai**
+**347 réponses · 109 modules · 499 sources officielles · 187 fiches avec contacts · 88 alertes de délai**
 
 ## Modules en ligne
 
@@ -14,6 +14,7 @@
 | Sans-abri & domiciliation | Adresse de référence (sans logement) | 2 | 2 | 2 | 0 |
 | Aidants proches | Aidants proches — reconnaissance, congé, droits | 2 | 2 | 2 | 1 |
 | Accès à la justice | Aide juridique — un avocat (presque) gratuit | 2 | 3 | 2 | 1 |
+| — | Aide médicale urgente (CPAS) | 3 | 3 | 0 | 0 |
 | Aide sociale & urgence | Où aller quand ça va mal — faim, sans-abri, danger, sans papiers | 5 | 7 | 5 | 3 |
 | Allocations familiales | Allocations familiales — qui, comment, combien | 2 | 3 | 1 | 1 |
 | Animaux | Animaux — bien-être, responsabilités, maltraitance | 3 | 5 | 2 | 1 |
@@ -60,6 +61,7 @@
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
 | Enseignement | École & enseignement — inscription, gratuité, obligation scolaire | 4 | 7 | 2 | 2 |
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 3 | 4 | 3 | 1 |
+| — | Expropriation pour cause d'utilité publique | 3 | 3 | 0 | 0 |
 | Logement — expulsion | Expulsion du logement — vos droits | 2 | 2 | 2 | 1 |
 | Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
 | — | Filiation & reconnaissance d'un enfant | 3 | 3 | 0 | 0 |
@@ -89,12 +91,14 @@
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
 | — | Permis de conduire | 4 | 6 | 0 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 2 | 3 | 2 | 1 |
+| — | Précompte immobilier | 3 | 4 | 0 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 2 | 3 | 2 | 1 |
 | Recours administratifs | Recours contre l'administration — médiateur & Conseil d'État | 2 | 4 | 2 | 1 |
 | Recours dans l'Union européenne | Recours européens — SOLVIT, médiateur, pétition | 2 | 4 | 2 | 0 |
 | Recouvrement de dettes | Recouvrement amiable — sociétés de recouvrement | 2 | 3 | 2 | 0 |
 | — | Revenu d'intégration & aide du CPAS | 5 | 10 | 0 | 1 |
+| — | Saisie immobilière (vente forcée d'un immeuble) | 3 | 4 | 0 | 0 |
 | Saisies & recouvrement | Saisies & huissier — ce qui peut être pris (ou non) | 2 | 2 | 2 | 0 |
 | Santé mentale | Santé mentale — aide psychologique, remboursement, écoute | 2 | 4 | 2 | 1 |
 | Santé & patient | Santé — droits du patient | 4 | 6 | 1 | 1 |

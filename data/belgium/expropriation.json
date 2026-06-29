@@ -1,0 +1,58 @@
+{
+  "module": "expropriation",
+  "titre": "Expropriation pour cause d'utilité publique",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Constitution, art. 16 (nul ne peut être privé de sa propriété que pour cause d'utilité publique, moyennant une juste et préalable indemnité) ; procédures régionalisées (ex. décret wallon du 22 novembre 2018)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.wallonie.be/fr/demarches/solliciter-un-arrete-dexpropriation-pour-cause-dutilite-publique"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. L'expropriation est régionalisée : faites-vous assister (avocat, géomètre-expert) pour défendre votre indemnité.",
+  "faits": [
+    {
+      "id": "EXPRO-001",
+      "question": "Qu'est-ce que l'expropriation et comment suis-je protégé ?",
+      "reponse": "L'expropriation est la cession, amiable ou forcée, d'un droit sur un bien immobilier dans un but d'utilité publique. La Constitution vous protège : nul ne peut être privé de sa propriété que pour cause d'utilité publique, dans les cas prévus par la loi, et moyennant une juste et préalable indemnité.",
+      "reference_legale": "Constitution, art. 16 (juste et préalable indemnité) ; Premier Protocole additionnel à la CEDH, art. 1er",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/demarches/solliciter-un-arrete-dexpropriation-pour-cause-dutilite-publique",
+          "intitule": "Wallonie.be — Expropriation pour cause d'utilité publique"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EXPRO-002",
+      "question": "Comment se déroule la procédure ?",
+      "reponse": "La procédure comprend une phase administrative (un arrêté d'expropriation autorise l'expropriant), une tentative de cession amiable, puis, à défaut d'accord, une phase judiciaire devant le juge. La matière est régionalisée : la Wallonie, la Flandre et Bruxelles ont chacune leur procédure d'expropriation.",
+      "reference_legale": "Décret wallon du 22 novembre 2018 relatif à la procédure d'expropriation (et équivalents régionaux)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://interieur.wallonie.be/home/marches-et-patrimoine/expropriation-pour-cause-d-utilite-publique.html",
+          "intitule": "SPW — Procédure d'expropriation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EXPRO-003",
+      "question": "À quelle indemnité ai-je droit comme exproprié ?",
+      "reponse": "Vous avez droit à une indemnité juste et préalable : elle doit réparer l'intégralité du préjudice subi du fait de l'expropriation et être payée avant la prise de possession. Si vous contestez le montant ou la régularité de l'expropriation, vous pouvez saisir le juge.",
+      "reference_legale": "Constitution, art. 16 (juste et préalable indemnité)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/demarches/solliciter-un-arrete-dexpropriation-pour-cause-dutilite-publique",
+          "intitule": "Wallonie.be — Indemnité d'expropriation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

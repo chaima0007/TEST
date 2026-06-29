@@ -1,0 +1,63 @@
+{
+  "module": "saisie_immobiliere",
+  "titre": "Saisie immobilière (vente forcée d'un immeuble)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code judiciaire, art. 1560 à 1626 (saisie-exécution immobilière) ; art. 1494 (titre exécutoire)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://e-justice.europa.eu/topics/court-procedures/civil-cases/recognition-enforcement-court-decisions/how-enforce-court-decision/be_fr"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Face à une saisie, consultez rapidement un avocat ou un médiateur de dettes : des solutions existent souvent avant la vente.",
+  "faits": [
+    {
+      "id": "SAISIM-001",
+      "question": "Qu'est-ce qu'une saisie immobilière ?",
+      "reponse": "La saisie-exécution immobilière est la procédure par laquelle un créancier, muni d'un titre exécutoire (jugement, acte notarié, contrainte fiscale…), fait vendre un immeuble du débiteur pour être payé sur le prix. Elle est strictement encadrée par le Code judiciaire.",
+      "reference_legale": "Code judiciaire, art. 1494 (titre exécutoire) et art. 1560 et suivants (saisie-exécution immobilière)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://e-justice.europa.eu/topics/court-procedures/civil-cases/recognition-enforcement-court-decisions/how-enforce-court-decision/be_fr",
+          "intitule": "Portail e-Justice (UE) — Exécution en Belgique"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SAISIM-002",
+      "question": "Quelles sont les grandes étapes ?",
+      "reponse": "Le créancier fait d'abord signifier un commandement de payer par huissier ; à défaut de paiement, l'immeuble est saisi (la saisie est transcrite). Le créancier demande ensuite au juge des saisies la nomination d'un notaire chargé d'organiser la vente, en principe publique. Le notaire établit un cahier des charges et fixe le jour de la vente.",
+      "reference_legale": "Code judiciaire, art. 1564 et suivants (commandement, saisie, nomination du notaire)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://e-justice.europa.eu/topics/court-procedures/civil-cases/recognition-enforcement-court-decisions/how-enforce-court-decision/be_fr",
+          "intitule": "Portail e-Justice (UE) — Saisie-exécution immobilière"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.notaire.be/",
+          "intitule": "Notaire.be — Vente sur saisie"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SAISIM-003",
+      "question": "Comment le débiteur saisi est-il protégé ?",
+      "reponse": "Le juge des saisies contrôle la légalité et la régularité de la saisie avant de nommer le notaire. Le débiteur peut former opposition et contester le cahier des charges (dans les délais légaux). Le produit de la vente est réparti entre les créanciers selon un ordre strictement prévu par la loi.",
+      "reference_legale": "Code judiciaire, art. 1580 et suivants (cahier des charges, contestations, ordre de répartition)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://e-justice.europa.eu/topics/court-procedures/civil-cases/recognition-enforcement-court-decisions/how-enforce-court-decision/be_fr",
+          "intitule": "Portail e-Justice (UE) — Protection du débiteur"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

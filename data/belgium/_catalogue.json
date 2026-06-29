@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 105,
-    "faits": 335,
-    "sources_officielles": 485,
+    "modules": 109,
+    "faits": 347,
+    "sources_officielles": 499,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 87
+    "faits_avec_alerte_delai": 88
   },
   "modules": [
     {
@@ -80,6 +80,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "aide_medicale_urgente.json",
+      "module": "aide_medicale_urgente",
+      "titre": "Aide médicale urgente (CPAS)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "aide_urgence.json",
@@ -634,6 +646,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "expropriation.json",
+      "module": "expropriation",
+      "titre": "Expropriation pour cause d'utilité publique",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "expulsion.json",
       "module": "expulsion",
       "titre": "Expulsion du logement — vos droits",
@@ -982,6 +1006,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "precompte_immobilier.json",
+      "module": "precompte_immobilier",
+      "titre": "Précompte immobilier",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "premier_emploi.json",
       "module": "premier_emploi",
       "titre": "Jeunes — premier emploi & stage d'insertion",
@@ -1051,6 +1087,18 @@
       "sources_officielles": 10,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "saisie_immobiliere.json",
+      "module": "saisie_immobiliere",
+      "titre": "Saisie immobilière (vente forcée d'un immeuble)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
     },
     {
