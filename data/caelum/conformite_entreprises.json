@@ -85,7 +85,7 @@
     {
       "id": "CSDDD-OMNIBUS",
       "norme": "CSDDD — devoir de vigilance (revu par l'Omnibus)",
-      "changement": "L'Omnibus a réduit le champ d'environ 70 %, retiré l'obligation de plan de transition climatique, et changé les sanctions : le plancher « au moins 5 % du CA » est supprimé, remplacé par un plafond maximal de 3 % du chiffre d'affaires mondial net.",
+      "changement": "L'Omnibus I (Directive (UE) 2026/470, publiée au JO le 26/02/2026, en vigueur le 18/03/2026) a réduit le champ, retiré l'obligation de plan de transition climatique, et modifié l'art. 27(4) : l'ancien plancher « au moins 5 % du CA » (CSDDD 2024/1760) a été ABAISSÉ à un plafond maximal de 3 % du chiffre d'affaires mondial net. ⚠️ Le 5 % est donc la valeur ANCIENNE (pré-Omnibus) ; le 3 % est la valeur EN VIGUEUR (vérifié : Noerr, DLA Piper, Weil, Latham & Watkins).",
       "concernes": "Très grandes entreprises : plus de 5 000 salariés ET plus de 1,5 milliard € de CA (UE) ; entreprises hors UE réalisant plus de 1,5 milliard € de CA dans l'UE.",
       "sanction": "Amendes plafonnées à 3 % du chiffre d'affaires mondial net (le détail est fixé à la transposition nationale + lignes directrices de la Commission).",
       "echeance": "Transposition par les États pour le 26 juillet 2028 ; application à partir du 26 juillet 2029 (obligations de reporting de l'art. 16 : exercices à partir du 1er janvier 2030).",
@@ -102,6 +102,11 @@
           "type": "secondaire",
           "url": "https://www.business-humanrights.org/en/latest-news/csddd-omnibus/",
           "intitule": "BHRRC — CSDDD : amendements Omnibus entrés en vigueur"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.noerr.com/en/insights/csddd-amending-directive-published-in-the-official-journal-of-the-european-union",
+          "intitule": "Noerr — Directive (UE) 2026/470 : plafond des sanctions ramené de 5 % à 3 %"
         }
       ],
       "date_verification": "2026-06-27"
