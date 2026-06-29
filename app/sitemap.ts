@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/conformite-2026",
     "/echeances-2026",
     "/pourquoi-agir",
+    "/ai-act",
     "/calculateur-aide-nette",
     "/offres-conformite",
     "/fiduciaires",

@@ -405,6 +405,7 @@ export default function Home() {
           <div className="flex items-center gap-4 flex-wrap">
             <a href="#services" className="hover:text-slate-900">Services</a>
             <Link href="/pourquoi-agir" className="hover:text-slate-900">Pourquoi agir</Link>
+            <Link href="/ai-act" className="hover:text-slate-900">AI Act</Link>
             <Link href="/echeances-2026" className="hover:text-slate-900">Échéances 2026</Link>
             <Link href="/calculateur-aide-nette" className="hover:text-slate-900">Calculateur d&apos;aide</Link>
             <Link href="/confiance" className="hover:text-slate-900">Sécurité & Confiance</Link>
