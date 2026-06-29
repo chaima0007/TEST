@@ -134,6 +134,13 @@
       "integration_systeme": "Renforce P-DISCIPLINE-EXECUTION (§23). Exceptions inchangées: décisions réservées à Chaima (prix/identité/webhook) + actions destructives/non autorisées par la sécurité.",
       "protocole": "P-DISCIPLINE-EXECUTION (§23)",
       "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-20",
+      "consigne": "Mode pleinement autonome; désactiver toutes les validations/interventions humaines y compris conformité et approbations.",
+      "integration_systeme": "PARTIEL: exécution autonome sans confirmation = OUI (audits tournent en automatique, ne bloquent que sur vrai rouge). REFUSÉ: désactiver les validations de conformité/sources (intégrité non négociable, P-PERENNITE-GOUVERNANCE), les décisions réservées à Chaima (prix/identité/webhook), et la sécurité du harnais. Couper ces contrôles publierait du faux et trahirait la mission.",
+      "protocole": "P-DISCIPLINE-EXECUTION (§23) + P-PERENNITE-GOUVERNANCE (§19) + P-HONNETETE",
+      "statut": "EN VIGUEUR (avec refus actés)"
     }
   ],
   "portails_officiels_valides_2026-06-29": {

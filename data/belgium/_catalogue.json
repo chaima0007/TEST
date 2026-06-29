@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 150,
-    "faits": 493,
-    "sources_officielles": 701,
-    "faits_avec_contacts": 225,
+    "faits": 494,
+    "sources_officielles": 704,
+    "faits_avec_contacts": 226,
     "faits_avec_alerte_delai": 100
   },
   "modules": [
@@ -771,9 +771,9 @@
       "titre": "École & enseignement — inscription, gratuité, obligation scolaire",
       "domaine": "Enseignement",
       "juridiction": "BE",
-      "faits": 4,
-      "sources_officielles": 7,
-      "faits_avec_contacts": 2,
+      "faits": 5,
+      "sources_officielles": 10,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
     },

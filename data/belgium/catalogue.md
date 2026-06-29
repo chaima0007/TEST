@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**493 réponses · 150 modules · 701 sources officielles · 225 fiches avec contacts · 100 alertes de délai**
+**494 réponses · 150 modules · 704 sources officielles · 226 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -71,7 +71,7 @@
 | Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 4 | 8 | 3 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
-| Enseignement | École & enseignement — inscription, gratuité, obligation scolaire | 4 | 7 | 2 | 2 |
+| Enseignement | École & enseignement — inscription, gratuité, obligation scolaire | 5 | 10 | 3 | 2 |
 | — | Épargne-pension (3e pilier) | 3 | 5 | 0 | 0 |
 | — | Équivalence d'un diplôme étranger | 3 | 3 | 0 | 0 |
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 3 | 4 | 3 | 1 |

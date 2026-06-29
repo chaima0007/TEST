@@ -124,6 +124,47 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ENS-COMMUNAUTE-001",
+      "question": "De quelle autorité dépend mon école selon la langue/communauté ?",
+      "reponse": "L'enseignement est une compétence COMMUNAUTAIRE (pas régionale). Si votre enfant est scolarisé en français (Wallonie et Bruxelles francophone) : la Fédération Wallonie-Bruxelles (enseignement.be). En néerlandais (Flandre et Bruxelles néerlandophone) : la Communauté flamande (onderwijs.vlaanderen.be). En région de langue allemande (Ostbelgien) : la Communauté germanophone (ostbelgienbildung.be). Les règles d'inscription, l'obligation scolaire et la gratuité s'appliquent dans chaque communauté, avec des modalités propres : référez-vous au portail de la communauté concernée.",
+      "reference_legale": "Compétence communautaire de l'enseignement : décret de la Communauté française relatif à l'enseignement obligatoire ; décret de la Communauté flamande relatif à l'enseignement ; décret de la Communauté germanophone relatif à l'enseignement",
+      "contacts": [
+        {
+          "nom": "Fédération Wallonie-Bruxelles",
+          "lien": "https://www.enseignement.be/",
+          "pour": "enseignement en français"
+        },
+        {
+          "nom": "Onderwijs Vlaanderen",
+          "lien": "https://onderwijs.vlaanderen.be/",
+          "pour": "enseignement en néerlandais"
+        },
+        {
+          "nom": "Ostbelgien Bildung",
+          "lien": "https://ostbelgienbildung.be/",
+          "pour": "enseignement en région de langue allemande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.enseignement.be/",
+          "intitule": "Fédération Wallonie-Bruxelles — enseignement"
+        },
+        {
+          "type": "officiel",
+          "url": "https://onderwijs.vlaanderen.be/",
+          "intitule": "Onderwijs Vlaanderen — enseignement (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://ostbelgienbildung.be/",
+          "intitule": "Ostbelgien Bildung — enseignement (Communauté germanophone)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }
