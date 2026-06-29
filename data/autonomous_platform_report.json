@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T18:30:51.433138+00:00",
+  "genere_le": "2026-06-29T18:32:16.440163+00:00",
   "monte_carlo_n": 20000,
   "corpus": {
     "reponses": 505,
@@ -21,7 +21,7 @@
       "rps": 5,
       "cache_pct": 60,
       "p95_ms": 45,
-      "p99_ms": 50,
+      "p99_ms": 49,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -32,7 +32,7 @@
       "rps": 50,
       "cache_pct": 75,
       "p95_ms": 47,
-      "p99_ms": 51,
+      "p99_ms": 52,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -53,8 +53,8 @@
       "type": "stress",
       "rps": 1500,
       "cache_pct": 92,
-      "p95_ms": 97,
-      "p99_ms": 101,
+      "p95_ms": 98,
+      "p99_ms": 102,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -78,8 +78,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 40,
-      "pct_corpus": 4.58,
+      "urls_impactees_moy": 45,
+      "pct_corpus": 5.2,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -87,8 +87,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 129,
-      "pct_corpus": 15.0,
+      "urls_impactees_moy": 130,
+      "pct_corpus": 15.08,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -169,7 +169,7 @@
       "reponses": 505,
       "modules": 151,
       "depuis_naissance": 77,
-      "battements_sans_croissance": 5,
+      "battements_sans_croissance": 6,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -189,7 +189,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 57,
+      "battements_sans_progres": 58,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -225,7 +225,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629183051",
+    "seal_id": "AUTO-20260629183216",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 76.0,
@@ -249,8 +249,8 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 80,
-    "age_jours": 0.37,
+    "battements": 81,
+    "age_jours": 0.38,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
