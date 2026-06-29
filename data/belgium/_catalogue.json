@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 151,
-    "faits": 504,
-    "sources_officielles": 730,
-    "faits_avec_contacts": 236,
+    "faits": 505,
+    "sources_officielles": 733,
+    "faits_avec_contacts": 237,
     "faits_avec_alerte_delai": 101
   },
   "modules": [
@@ -615,9 +615,9 @@
       "titre": "Discrimination — reconnaître, signaler, agir",
       "domaine": "Discrimination & égalité",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 5,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },

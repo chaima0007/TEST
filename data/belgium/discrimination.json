@@ -84,6 +84,47 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DISC-ORGANISMES-001",
+      "question": "À quel organisme signaler une discrimination selon ma situation ?",
+      "reponse": "L'organisme compétent dépend du critère et du territoire. Pour la plupart des critères (origine, handicap, âge, conviction, orientation sexuelle…), c'est UNIA, organisme INTERFÉDÉRAL (compétent au niveau fédéral, en Wallonie, à Bruxelles et en Communauté germanophone). IMPORTANT : depuis 2023, la FLANDRE ne fait plus partie d'UNIA — pour les compétences flamandes, c'est le Vlaams Mensenrechteninstituut (VMRI) qui reçoit les signalements (melding), propose une médiation et dispose d'une Chambre de litiges. Pour la discrimination fondée sur le SEXE ou le genre (partout en Belgique) : l'Institut pour l'égalité des femmes et des hommes (IEFH). Signalez à l'organisme correspondant à votre cas.",
+      "reference_legale": "Lois fédérales anti-discrimination du 10 mai 2007 (critères généraux et égalité femmes-hommes) ; décret flamand portant création du Vlaams Mensenrechteninstituut ; décrets et ordonnances régionaux anti-discrimination",
+      "contacts": [
+        {
+          "nom": "UNIA (interfédéral)",
+          "lien": "https://www.unia.be/",
+          "pour": "discrimination (fédéral, Wallonie, Bruxelles, Communauté germanophone)"
+        },
+        {
+          "nom": "Vlaams Mensenrechteninstituut (Flandre)",
+          "lien": "https://www.vlaamsmensenrechteninstituut.be/",
+          "pour": "discrimination relevant des compétences flamandes"
+        },
+        {
+          "nom": "Institut pour l égalité des femmes et des hommes (IEFH)",
+          "lien": "https://igvm-iefh.belgium.be/fr",
+          "pour": "discrimination fondée sur le sexe/genre"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.unia.be/",
+          "intitule": "UNIA — organisme interfédéral anti-discrimination"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaamsmensenrechteninstituut.be/",
+          "intitule": "Vlaams Mensenrechteninstituut (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://igvm-iefh.belgium.be/fr",
+          "intitule": "IEFH — égalité femmes-hommes (genre)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

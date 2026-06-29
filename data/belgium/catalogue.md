@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**504 réponses · 151 modules · 730 sources officielles · 236 fiches avec contacts · 101 alertes de délai**
+**505 réponses · 151 modules · 733 sources officielles · 237 fiches avec contacts · 101 alertes de délai**
 
 ## Modules en ligne
 
@@ -58,7 +58,7 @@
 | Décès & démarches | Décès — démarches pratiques après le décès d'un proche | 3 | 3 | 2 | 2 |
 | Déchets & environnement | Déchets, tri & propreté | 3 | 5 | 3 | 0 |
 | Demandeur d'emploi | Demandeur d'emploi — inscription et accompagnement (Forem / VDAB / Actiris / ADG) | 4 | 10 | 4 | 1 |
-| Discrimination & égalité | Discrimination — reconnaître, signaler, agir | 3 | 5 | 2 | 1 |
+| Discrimination & égalité | Discrimination — reconnaître, signaler, agir | 4 | 8 | 3 | 1 |
 | Divorce & séparation | Divorce & séparation | 2 | 4 | 2 | 0 |
 | Documents d'identité | Documents d'identité — carte, passeport, permis | 2 | 4 | 2 | 1 |
 | — | Domiciliation & changement d'adresse | 3 | 3 | 0 | 2 |
