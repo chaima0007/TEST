@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IDENTITE_EDITEUR as ID, identiteIncomplete } from "@/data/identite";
 
 export const metadata = {
   title: "Mentions légales — La Loi Avec Moi",
@@ -21,18 +22,20 @@ export default function MentionsLegalesPage() {
         <section>
           <h2 className="text-lg font-bold">Éditeur du site</h2>
           <p className="text-slate-700 text-sm leading-relaxed mt-2">
-            [Nom de l'éditeur / société] · [Forme juridique] · [Adresse]<br />
-            Numéro d'entreprise (BCE) : [à compléter] · TVA : [à compléter]<br />
-            Contact : contact@laloiavecmoi.be
+            {ID.denomination} · {ID.forme_juridique} · {ID.adresse}<br />
+            Numéro d'entreprise (BCE) : {ID.bce} · TVA : {ID.tva}<br />
+            Contact : {ID.email}
           </p>
-          <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-2">
-            ⚠️ Champs à compléter par l'éditeur avant la mise en ligne (identité légale réelle).
-          </p>
+          {identiteIncomplete() && (
+            <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-2">
+              ⚠️ Identité légale à compléter par l'éditeur avant la mise en ligne (fichier <code>data/identite.ts</code>).
+            </p>
+          )}
         </section>
 
         <section>
           <h2 className="text-lg font-bold">Hébergeur</h2>
-          <p className="text-slate-700 text-sm mt-2">[Nom et coordonnées de l'hébergeur]</p>
+          <p className="text-slate-700 text-sm mt-2">{ID.hebergeur}</p>
         </section>
 
         <section>
