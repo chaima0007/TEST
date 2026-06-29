@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Cadence de revue : 180 jours. L'agent signale ; la mise à jour se fait après vérification de la source officielle.*
 
-**Signaux suivis : 5 · fiches à revérifier (cadence dépassée) : 0/371**
+**Signaux suivis : 5 · fiches à revérifier (cadence dépassée) : 0/416**
 
 ## Signaux de changement à surveiller
 

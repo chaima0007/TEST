@@ -3,9 +3,9 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **375**
+- Savoirs enregistrés : **420**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `e7166dc562a806a4…`)
+- Certification système : **PASS** (sceau `cdc7bb16dd7156c4…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
@@ -302,6 +302,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment déclarer la perte de mon permis de conduire ou demander un passeport ?**  
   Réf : Arrêté royal du 23 mars 1998 relatif au permis de conduire ; réglementation sur les passeports (SPF Affaires étrangères) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Dois-je déclarer mon changement d'adresse, et dans quel délai ?**  
+  Réf : Loi du 19 juillet 1991 relative aux registres de la population (obligation d'inscription) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment se déroule l'enregistrement ?**  
+  Réf : Arrêté royal du 16 juillet 1992 relatif aux registres de la population (enquête de résidence) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Que faire en cas de désaccord avec la commune ?**  
+  Réf : Loi du 19 juillet 1991 (recours en matière de résidence principale) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Suis-je automatiquement donneur d'organes en Belgique ?**  
   Réf : Loi du 13 juin 1986 (consentement présumé au prélèvement d'organes) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment exprimer mon choix (opposition ou accord) ?**  
@@ -372,6 +378,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code des impôts sur les revenus 1992 (plafonds et taux de la réduction épargne-pension) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Quelles conditions pour avoir droit à la réduction ?**  
   Réf : Code des impôts sur les revenus 1992 (conditions de la réduction pour épargne-pension) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Quand ai-je besoin d'une équivalence de diplôme ?**  
+  Réf : Décret de la Communauté française sur l'équivalence des diplômes (matière communautaire) · sources off. : 1 · revu : 2026-06-29
+- ✅ **À qui dois-je m'adresser ?**  
+  Réf : Décret de la Communauté française sur l'équivalence des diplômes (services des équivalences ; centres NARIC pour le supérieur) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelques points d'attention**  
+  Réf : Décret de la Communauté française sur l'équivalence des diplômes (procédure et pièces à fournir) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment fonctionne un titre de séjour, et c'est quoi une « annexe » ?**  
   Réf : Loi du 15 décembre 1980 sur les étrangers ; arrêtés d'exécution · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment demander un regroupement familial ?**  
@@ -482,6 +494,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code des sociétés et des associations ; loi du 2 août 2002 concernant la lutte contre le retard de paiement dans les transactions commerciales ; loi du 25 avril 2007 (insaisissabilité de la résidence principale de l'indépendant) ; Règlement (UE) 2016/679 (RGPD) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Quelles sont les erreurs à ne pas faire quand on se lance ?**  
   Réf : Arrêté royal n° 38 du 27 juillet 1967 (statut social, affiliation et cotisations) ; Code de la TVA ; loi du 16 janvier 2003 (Banque-Carrefour des Entreprises) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Dans quel cadre l'IVG est-elle autorisée ?**  
+  Réf : Loi du 15 octobre 2018 relative à l'interruption volontaire de grossesse (délai de 12 semaines) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Y a-t-il un délai de réflexion ?**  
+  Réf : Loi du 15 octobre 2018 (délai d'attente d'au moins 6 jours) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Et au-delà du délai légal ? Quel accompagnement ?**  
+  Réf : Loi du 15 octobre 2018 (conditions au-delà du délai et accompagnement) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Faut-il un contrat pour un job étudiant ?**  
   Réf : Loi du 3 juillet 1978 relative aux contrats de travail — contrat d'occupation d'étudiant · sources off. : 2 · revu : 2026-06-26
 - ✅ **Combien d'heures puis-je travailler à cotisations réduites ?**  
@@ -502,6 +520,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code d'instruction criminelle — accès au dossier / droits de la défense · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne une amende routière : perception immédiate, transaction, ordre de paiement ?**  
   Réf : Loi relative à la police de la circulation routière (perception immédiate, transaction, ordre de paiement) ; Code d'instruction criminelle · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qu'est-ce que la légalisation ou l'apostille d'un document ?**  
+  Réf : Convention de La Haye du 5 octobre 1961 supprimant l'exigence de la légalisation (apostille) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Comment faire légaliser un document belge pour l'étranger ?**  
+  Réf : Convention de La Haye du 5 octobre 1961 (apostille électronique) ; procédure du SPF Affaires étrangères · sources off. : 1 · revu : 2026-06-29
+- ✅ **Et un document étranger à utiliser en Belgique ?**  
+  Réf : Convention de La Haye du 5 octobre 1961 ; règles de légalisation des documents étrangers · sources off. : 1 · revu : 2026-06-29
 - ✅ **J'ai un problème avec un vendeur d'un autre pays de l'UE : qui peut m'aider ?**  
   Réf : Directive 2011/83/UE (droits des consommateurs) ; Directive 2013/11/UE (règlement extrajudiciaire des litiges) · sources off. : 1 · revu : 2026-06-28
 - ✅ **Comment régler un petit litige transfrontalier sans gros frais ?**  
@@ -512,6 +536,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — inscription auprès des sociétés de logement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?**  
   Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — attribution et renouvellement des candidatures · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qu'est-ce que la loi Breyne et qui protège-t-elle ?**  
+  Réf : Loi du 9 juillet 1971 (loi Breyne) — champ d'application · sources off. : 2 · revu : 2026-06-29
+- ✅ **Quelles protections concrètes pour l'acheteur ?**  
+  Réf : Loi du 9 juillet 1971 (paiements par tranches, garantie d'achèvement, réception) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Que faire en cas de problème avec le promoteur ?**  
+  Réf : Loi du 9 juillet 1971 (nullité des clauses contraires, protection d'ordre public) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Qu'est-ce qu'une maladie professionnelle et qui l'indemnise ?**  
   Réf : Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment introduire une demande de reconnaissance ?**  
@@ -526,6 +556,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code pénal — abus de la faiblesse (art. 442quater) et infractions de violence · sources off. : 2 · revu : 2026-06-28
 - ✅ **Je suis (ou je vois) une personne âgée maltraitée : que faire ?**  
   Réf : Code pénal — abus de la faiblesse (art. 442quater) ; Code d'instruction criminelle (dépôt de plainte par la victime ou un tiers) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Qu'est-ce qu'un « marchand de sommeil » ?**  
+  Réf : Code pénal, art. 433decies (marchand de sommeil) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles sanctions encourt un marchand de sommeil ?**  
+  Réf : Code pénal, art. 433decies et suivants (peines et confiscation) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Je suis victime : que puis-je faire ?**  
+  Réf : Code pénal, art. 433decies (protection de la victime) ; Code d'instruction criminelle (plainte) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment régler un conflit sans aller au procès ?**  
   Réf : Code judiciaire — médiation (art. 1723 et suivants) · sources off. : 2 · revu : 2026-06-27
 - ✅ **C'est quoi la conciliation devant le juge de paix ?**  
@@ -580,6 +616,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment demander un permis et que risque-t-on sans permis ?**  
   Réf : Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — procédure de demande et sanctions des infractions urbanistiques · sources off. : 1 · revu : 2026-06-27
+- ✅ **Je suis mécontent d'une intervention policière : que faire ?**  
+  Réf : Loi organique du 18 juillet 1991 (contrôle des services de police) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce que le Comité P ?**  
+  Réf : Loi organique du 18 juillet 1991 (institution et missions du Comité P) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Et si les faits sont graves (coups, corruption…) ?**  
+  Réf : Loi organique du 18 juillet 1991 ; Code d'instruction criminelle (plainte pénale) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Qu'est-ce que le précompte immobilier ?**  
   Réf : Code des impôts sur les revenus 1992 (précompte immobilier, compétence régionale) · sources off. : 2 · revu : 2026-06-29
 - ✅ **Comment est-il calculé ?**  
@@ -590,10 +632,22 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (stage d'insertion) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Ai-je droit à une allocation après mes études ?**  
   Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (allocations d'insertion) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Qui est responsable si un produit défectueux me cause un dommage ?**  
+  Réf : Code civil, livre 6, art. 6.41 et suivants (responsabilité du fait des produits défectueux) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce qu'un produit « défectueux » ?**  
+  Réf : Code civil, livre 6 (notion de produit défectueux et dommages réparables) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Y a-t-il des délais pour agir ?**  
+  Réf : Directive (UE) 2024/2853 du 23 octobre 2024 (délais et protection des victimes) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment protéger un proche qui ne peut plus gérer ses affaires (maladie, handicap, grand âge) ?**  
   Réf : Code civil — protection judiciaire des majeurs (administration de biens et de la personne) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Qui peut demander la mise sous administration, et comment ?**  
   Réf : Code civil — demande de protection judiciaire ; mandat de protection extrajudiciaire · sources off. : 1 · revu : 2026-06-26
+- ✅ **Ai-je le droit de consulter des documents de l'administration ?**  
+  Réf : Loi du 11 avril 1994 relative à la publicité de l'administration (droit d'accès) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Comment introduire une demande ?**  
+  Réf : Loi du 11 avril 1994 (modalités de la demande) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Que faire en cas de refus ?**  
+  Réf : Loi du 11 avril 1994, art. 6 (motifs d'exception) et voies de recours · sources off. : 1 · revu : 2026-06-29
 - ✅ **Un service public me traite mal ou ne répond pas : que faire ?**  
   Réf : Loi du 22 mars 1995 instaurant des médiateurs fédéraux · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment faire annuler une décision administrative illégale ?**  
@@ -626,6 +680,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire — quotité saisissable (art. 1409 et s.) et sommes insaisissables (art. 1410) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Et l'argent sur mon compte en banque, est-il protégé ?**  
   Réf : Code judiciaire — protection des sommes insaisissables versées sur compte (art. 1411bis et s.) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Qu'est-ce qu'une sanction administrative communale (SAC) ?**  
+  Réf : Loi du 24 juin 2013 relative aux sanctions administratives communales (montants maximaux) · sources off. : 1 · revu : 2026-06-29
+- ✅ **L'amende est-elle la seule sanction possible ?**  
+  Réf : Loi du 24 juin 2013 (médiation, prestation citoyenne, mesures administratives) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment contester une amende SAC ?**  
+  Réf : Loi du 24 juin 2013, art. 31 (recours devant le tribunal de police dans le mois) · sources off. : 1 · revu : 2026-06-29
 - ✅ **L'aide psychologique est-elle remboursée ?**  
   Réf : Convention INAMI — soins psychologiques de première ligne via les réseaux de santé mentale · sources off. : 2 · revu : 2026-06-26
 - ✅ **Je ne vais pas bien : à qui parler tout de suite ?**  
@@ -648,6 +708,18 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 22 mai 2014 tendant à lutter contre le sexisme dans l'espace public · sources off. : 2 · revu : 2026-06-28
 - ✅ **Que faire si je subis (ou je vois) du harcèlement sexiste ?**  
   Réf : Loi du 22 mai 2014 (sexisme) ; Code pénal (injures, harcèlement, attentat à la pudeur selon les cas) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Puis-je être remboursé de soins reçus dans un autre pays de l'UE ?**  
+  Réf : Directive 2011/24/UE et règlements (CE) 883/2004 et 987/2009 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Soins imprévus ou soins planifiés : quelle différence ?**  
+  Réf : Règlements (CE) 883/2004 et 987/2009 (CEAM, document S2) ; Directive 2011/24/UE · sources off. : 1 · revu : 2026-06-29
+- ✅ **La mutualité peut-elle refuser l'autorisation, et en combien de temps répond-elle ?**  
+  Réf : Directive 2011/24/UE (autorisation préalable, délai de décision) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce que l'attestation du travail des arts ?**  
+  Réf : Loi du 16 décembre 2022 (attestation du travail des arts) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Qui décide de l'octroi de l'attestation ?**  
+  Réf : Loi du 16 décembre 2022 (Commission du travail des arts) · sources off. : 1 · revu : 2026-06-29
+- ✅ **À quoi sert l'attestation et comment la demander ?**  
+  Réf : Loi du 16 décembre 2022 (droits liés à l'attestation, plateforme Working in the Arts) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Suis-je obligé d'accepter un héritage ?**  
   Réf : Code civil — options de l'héritier (acceptation, bénéfice d'inventaire, renonciation) · sources off. : 1 · revu : 2026-06-26
 - ✅ **J'ai peur que l'héritage contienne des dettes : que faire ?**  
@@ -688,6 +760,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — testaments (art. 967 et suivants) et réserve héréditaire des descendants · sources off. : 2 · revu : 2026-06-28
 - ✅ **Vaut-il mieux donner de son vivant (donation) ou léguer par testament ?**  
   Réf : Code civil — donations et testaments ; droits de succession/donation (régionaux) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Qu'est-ce que le système des titres-services ?**  
+  Réf : Loi du 20 juillet 2001 (titres-services) — système régionalisé · sources off. : 1 · revu : 2026-06-29
+- ✅ **Ai-je droit à une réduction d'impôt sur les titres-services ?**  
+  Réf : Loi du 20 juillet 2001 (réduction d'impôt régionalisée pour titres-services) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles conditions pratiques pour la réduction ?**  
+  Réf : Loi du 20 juillet 2001 (conditions de la réduction d'impôt) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?**  
   Réf : Règlement (UE) 2021/782 relatif aux droits et obligations des voyageurs ferroviaires · sources off. : 2 · revu : 2026-06-27
 - ✅ **Mon vol est annulé, retardé ou refusé à l'embarquement, quels sont mes droits ?**  
@@ -708,6 +786,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — désignation du tuteur (testament ou juge de paix) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Quel est le rôle du tuteur et comment est-il contrôlé ?**  
   Réf : Code civil — pouvoirs du tuteur et autorisations du juge de paix · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce qu'un vice caché ?**  
+  Réf : Code civil (ancien), art. 1641 à 1649 (garantie des vices cachés) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Le vendeur est-il responsable même s'il ignorait le défaut ?**  
+  Réf : Code civil (ancien), art. 1641 à 1645 (effets de la garantie) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Dans quel délai agir ?**  
+  Réf : Code civil (ancien), art. 1648 (action à bref délai) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Quels sont mes droits sur mes données personnelles ?**  
   Réf : RGPD (règlement UE 2016/679) ; loi du 30 juillet 2018 · sources off. : 2 · revu : 2026-06-26
 - ✅ **Puis-je obtenir une copie des données qu'une organisation détient sur moi ?**  
@@ -722,6 +806,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 15 mai 2012 relative à l'interdiction temporaire de résidence en cas de violence domestique · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment me protéger et constituer un dossier ?**  
   Réf : Code pénal — infractions de violence ; Code d'instruction criminelle (dépôt de plainte) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Où trouver de l'aide après des violences sexuelles ?**  
+  Réf : Code pénal — infractions contre l'intégrité sexuelle (loi du 21 mars 2022 réformant le droit pénal sexuel) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Puis-je porter plainte et faire constater les faits au CPVS ?**  
+  Réf : Code d'instruction criminelle (dépôt de plainte) ; Code pénal — infractions sexuelles · sources off. : 1 · revu : 2026-06-29
+- ✅ **Existe-t-il une aide d'écoute gratuite ?**  
+  Réf : Code pénal — infractions contre l'intégrité sexuelle (cadre de la prise en charge des victimes) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Conflit avec un voisin : par quoi commencer ?**  
   Réf : Principe des troubles de voisinage (Code civil) ; médiation locale · sources off. : 1 · revu : 2026-06-26
 - ✅ **Mon voisin fait trop de bruit : que faire ?**  

@@ -14,10 +14,10 @@
     {
       "plateforme": "La Loi Avec Moi",
       "dimension": "Modules juridiques",
-      "valeur": 117,
+      "valeur": 132,
       "seuil_alerte": 400,
       "seuil_critique": 600,
-      "pct_du_critique": 19.5,
+      "pct_du_critique": 22.0,
       "statut": "OK"
     },
     {
@@ -108,7 +108,7 @@
     "postes_a_completer": 10
   },
   "prevision": {
-    "note": "rythme observé : 4.4 nouveau(x) module(s)/passage sur 35 passages",
-    "runway_passages_avant_saturation_modules": 110
+    "note": "rythme observé : 4.5 nouveau(x) module(s)/passage sur 37 passages",
+    "runway_passages_avant_saturation_modules": 103
   }
 }

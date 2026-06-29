@@ -1,11 +1,11 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3105 réalisations concrètes enregistrées
+### 📌 Total : 3110 réalisations concrètes enregistrées
 
 
 ## 2026-06-29
-**12 réalisations** · de **00:18** à **02:14** (fenêtre de travail : 1h56)
+**17 réalisations** · de **00:18** à **07:50** (fenêtre de travail : 7h32)
 
 - 🕒 00:18 — enrichissement fiches néerlandaises — Wonen aligné sur le Vlaams Woninghuurdecreet (waarborg 3 mois, durée 9 ans, indexation, qualité, EPC), Consumentenrecht (+crédit conso) et Juridische-hulp (+rechtsbijstand/documents); sources officielles vérifiées; build OK; TBA à jour
 - 🕒 00:24 — enrichissement fiche Familie — onderhoudsbijdrage (obligation d'entretien), DAVO (recouvrement + voorschot max €175/kind, source FOD Financiën vérifiée) et familiale bemiddeling (art. 1723 GerW); 6→9 fiches; build OK; TBA à jour
@@ -19,6 +19,11 @@
 - 🕒 02:06 — +4 domaines citoyens — aide médicale urgente (CPAS, AR 12/12/1996), expropriation (Const. art.16 + décret wallon), saisie immobilière (Code judiciaire 1560s.), précompte immobilier (CIR 1992, régional); 347 réponses, audits verts; build OK (185 pages); catalogue + TBA à jour
 - 🕒 02:09 — +4 domaines citoyens — accident de la route/usagers faibles (loi 21/11/1989 art.29bis), assurance hospitalisation (loi 4/04/2014), succession internationale (Règl. UE 650/2012), service bancaire de base (CDE livre VII); 359 réponses, audits verts; build OK (189 pages); catalogue + TBA à jour
 - 🕒 02:14 — +4 domaines citoyens — don d'organes (loi 13/06/1986), pension complémentaire 2e pilier (loi 28/04/2003), dossier médical global (INAMI), épargne-pension 3e pilier (CIR 1992); anti-doublon respecté (handicap/etrangers non dupliqués); 371 réponses, audits verts; build OK (193 pages)
+- 🕒 02:15 — DON-004 source notaire.be marquée officielle (tier1) → 371/371 faits sourcés, cert=PASS; checkpoint incrémental avancé; self-healing & orchestrateur 100% verts; rapports régénérés
+- 🕒 07:35 — +4 domaines citoyens — titres-services (loi 20/07/2001), violences sexuelles/CPVS (Code pénal réforme 2022), équivalence de diplômes (décret communautaire), IVG (loi 15/10/2018); 383 réponses, audits verts; build OK (197 pages)
+- 🕒 07:40 — +4 domaines citoyens — SAC (loi 24/06/2013), marchand de sommeil (CP art.433decies), accès aux documents administratifs (loi 11/04/1994), plainte contre la police/Comité P (loi 18/07/1991); 395 réponses, audits verts; build OK (201 pages)
+- 🕒 07:46 — +3 domaines citoyens — loi Breyne/achat sur plan (loi 9/07/1971), vices cachés (Code civil art.1641-1649), domiciliation/changement d'adresse (loi 19/07/1991); produits défectueux écarté (loi 1991 abrogée, base en transition); 404 réponses, audits verts; build OK (204 pages)
+- 🕒 07:50 — +4 domaines citoyens — soins santé transfrontaliers (Dir. 2011/24/UE), légalisation/apostille (Convention La Haye 1961), statut social de l'artiste (loi 16/12/2022), produits défectueux (Code civil livre 6 / Dir. UE 2024/2853); 416 réponses, audits verts; build OK (208 pages)
 
 ## 2026-06-28
 **46 réalisations** · de **10:56** à **16:10** (fenêtre de travail : 5h14)

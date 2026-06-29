@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 375,
+    "total_savoirs": 420,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -1626,6 +1626,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "domiciliation",
+      "id": "DOMIC-001",
+      "sujet": "Dois-je déclarer mon changement d'adresse, et dans quel délai ?",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (obligation d'inscription)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "domiciliation",
+      "id": "DOMIC-002",
+      "sujet": "Comment se déroule l'enregistrement ?",
+      "reference_legale": "Arrêté royal du 16 juillet 1992 relatif aux registres de la population (enquête de résidence)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "domiciliation",
+      "id": "DOMIC-003",
+      "sujet": "Que faire en cas de désaccord avec la commune ?",
+      "reference_legale": "Loi du 19 juillet 1991 (recours en matière de résidence principale)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "don_organes",
       "id": "DONORG-001",
       "sujet": "Suis-je automatiquement donneur d'organes en Belgique ?",
@@ -2006,6 +2039,39 @@
       "reference_legale": "Code des impôts sur les revenus 1992 (conditions de la réduction pour épargne-pension)",
       "sources": 2,
       "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "equivalence_diplomes",
+      "id": "EQUIV-001",
+      "sujet": "Quand ai-je besoin d'une équivalence de diplôme ?",
+      "reference_legale": "Décret de la Communauté française sur l'équivalence des diplômes (matière communautaire)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "equivalence_diplomes",
+      "id": "EQUIV-002",
+      "sujet": "À qui dois-je m'adresser ?",
+      "reference_legale": "Décret de la Communauté française sur l'équivalence des diplômes (services des équivalences ; centres NARIC pour le supérieur)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "equivalence_diplomes",
+      "id": "EQUIV-003",
+      "sujet": "Quelques points d'attention",
+      "reference_legale": "Décret de la Communauté française sur l'équivalence des diplômes (procédure et pièces à fournir)",
+      "sources": 1,
+      "sources_officielles": 1,
       "date_verification": "2026-06-29",
       "valide": true
     },
@@ -2616,6 +2682,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "ivg",
+      "id": "IVG-001",
+      "sujet": "Dans quel cadre l'IVG est-elle autorisée ?",
+      "reference_legale": "Loi du 15 octobre 2018 relative à l'interruption volontaire de grossesse (délai de 12 semaines)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "ivg",
+      "id": "IVG-002",
+      "sujet": "Y a-t-il un délai de réflexion ?",
+      "reference_legale": "Loi du 15 octobre 2018 (délai d'attente d'au moins 6 jours)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "ivg",
+      "id": "IVG-003",
+      "sujet": "Et au-delà du délai légal ? Quel accompagnement ?",
+      "reference_legale": "Loi du 15 octobre 2018 (conditions au-delà du délai et accompagnement)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "job_etudiant",
       "id": "ETU-CONTRAT-001",
       "sujet": "Faut-il un contrat pour un job étudiant ?",
@@ -2726,6 +2825,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "legalisation_apostille",
+      "id": "LEGAL-001",
+      "sujet": "Qu'est-ce que la légalisation ou l'apostille d'un document ?",
+      "reference_legale": "Convention de La Haye du 5 octobre 1961 supprimant l'exigence de la légalisation (apostille)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "legalisation_apostille",
+      "id": "LEGAL-002",
+      "sujet": "Comment faire légaliser un document belge pour l'étranger ?",
+      "reference_legale": "Convention de La Haye du 5 octobre 1961 (apostille électronique) ; procédure du SPF Affaires étrangères",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "legalisation_apostille",
+      "id": "LEGAL-003",
+      "sujet": "Et un document étranger à utiliser en Belgique ?",
+      "reference_legale": "Convention de La Haye du 5 octobre 1961 ; règles de légalisation des documents étrangers",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "litiges_transfrontaliers",
       "id": "TRANSF-LITIGE-001",
       "sujet": "J'ai un problème avec un vendeur d'un autre pays de l'UE : qui peut m'aider ?",
@@ -2777,6 +2909,39 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "loi_breyne",
+      "id": "BREYNE-001",
+      "sujet": "Qu'est-ce que la loi Breyne et qui protège-t-elle ?",
+      "reference_legale": "Loi du 9 juillet 1971 (loi Breyne) — champ d'application",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "loi_breyne",
+      "id": "BREYNE-002",
+      "sujet": "Quelles protections concrètes pour l'acheteur ?",
+      "reference_legale": "Loi du 9 juillet 1971 (paiements par tranches, garantie d'achèvement, réception)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "loi_breyne",
+      "id": "BREYNE-003",
+      "sujet": "Que faire en cas de problème avec le promoteur ?",
+      "reference_legale": "Loi du 9 juillet 1971 (nullité des clauses contraires, protection d'ordre public)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -2854,6 +3019,39 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "marchand_de_sommeil",
+      "id": "MARCHSOM-001",
+      "sujet": "Qu'est-ce qu'un « marchand de sommeil » ?",
+      "reference_legale": "Code pénal, art. 433decies (marchand de sommeil)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "marchand_de_sommeil",
+      "id": "MARCHSOM-002",
+      "sujet": "Quelles sanctions encourt un marchand de sommeil ?",
+      "reference_legale": "Code pénal, art. 433decies et suivants (peines et confiscation)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "marchand_de_sommeil",
+      "id": "MARCHSOM-003",
+      "sujet": "Je suis victime : que puis-je faire ?",
+      "reference_legale": "Code pénal, art. 433decies (protection de la victime) ; Code d'instruction criminelle (plainte)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -3155,6 +3353,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "plaintes_police_comite_p",
+      "id": "PLAINPOL-001",
+      "sujet": "Je suis mécontent d'une intervention policière : que faire ?",
+      "reference_legale": "Loi organique du 18 juillet 1991 (contrôle des services de police)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "plaintes_police_comite_p",
+      "id": "PLAINPOL-002",
+      "sujet": "Qu'est-ce que le Comité P ?",
+      "reference_legale": "Loi organique du 18 juillet 1991 (institution et missions du Comité P)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "plaintes_police_comite_p",
+      "id": "PLAINPOL-003",
+      "sujet": "Et si les faits sont graves (coups, corruption…) ?",
+      "reference_legale": "Loi organique du 18 juillet 1991 ; Code d'instruction criminelle (plainte pénale)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "precompte_immobilier",
       "id": "PRECI-001",
       "sujet": "Qu'est-ce que le précompte immobilier ?",
@@ -3210,6 +3441,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "produits_defectueux",
+      "id": "PRODDEF-001",
+      "sujet": "Qui est responsable si un produit défectueux me cause un dommage ?",
+      "reference_legale": "Code civil, livre 6, art. 6.41 et suivants (responsabilité du fait des produits défectueux)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "produits_defectueux",
+      "id": "PRODDEF-002",
+      "sujet": "Qu'est-ce qu'un produit « défectueux » ?",
+      "reference_legale": "Code civil, livre 6 (notion de produit défectueux et dommages réparables)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "produits_defectueux",
+      "id": "PRODDEF-003",
+      "sujet": "Y a-t-il des délais pour agir ?",
+      "reference_legale": "Directive (UE) 2024/2853 du 23 octobre 2024 (délais et protection des victimes)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "protection_personne",
       "id": "PROT-ADMIN-001",
       "sujet": "Comment protéger un proche qui ne peut plus gérer ses affaires (maladie, handicap, grand âge) ?",
@@ -3228,6 +3492,39 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "publicite_administration",
+      "id": "PUBADM-001",
+      "sujet": "Ai-je le droit de consulter des documents de l'administration ?",
+      "reference_legale": "Loi du 11 avril 1994 relative à la publicité de l'administration (droit d'accès)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "publicite_administration",
+      "id": "PUBADM-002",
+      "sujet": "Comment introduire une demande ?",
+      "reference_legale": "Loi du 11 avril 1994 (modalités de la demande)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "publicite_administration",
+      "id": "PUBADM-003",
+      "sujet": "Que faire en cas de refus ?",
+      "reference_legale": "Loi du 11 avril 1994, art. 6 (motifs d'exception) et voies de recours",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -3408,6 +3705,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "sanctions_administratives_communales",
+      "id": "SAC-001",
+      "sujet": "Qu'est-ce qu'une sanction administrative communale (SAC) ?",
+      "reference_legale": "Loi du 24 juin 2013 relative aux sanctions administratives communales (montants maximaux)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "sanctions_administratives_communales",
+      "id": "SAC-002",
+      "sujet": "L'amende est-elle la seule sanction possible ?",
+      "reference_legale": "Loi du 24 juin 2013 (médiation, prestation citoyenne, mesures administratives)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "sanctions_administratives_communales",
+      "id": "SAC-003",
+      "sujet": "Comment contester une amende SAC ?",
+      "reference_legale": "Loi du 24 juin 2013, art. 31 (recours devant le tribunal de police dans le mois)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "sante_mentale",
       "id": "PSY-REMBOURSEMENT-001",
       "sujet": "L'aide psychologique est-elle remboursée ?",
@@ -3525,6 +3855,72 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "soins_sante_transfrontaliers",
+      "id": "SSTRANS-001",
+      "sujet": "Puis-je être remboursé de soins reçus dans un autre pays de l'UE ?",
+      "reference_legale": "Directive 2011/24/UE et règlements (CE) 883/2004 et 987/2009",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "soins_sante_transfrontaliers",
+      "id": "SSTRANS-002",
+      "sujet": "Soins imprévus ou soins planifiés : quelle différence ?",
+      "reference_legale": "Règlements (CE) 883/2004 et 987/2009 (CEAM, document S2) ; Directive 2011/24/UE",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "soins_sante_transfrontaliers",
+      "id": "SSTRANS-003",
+      "sujet": "La mutualité peut-elle refuser l'autorisation, et en combien de temps répond-elle ?",
+      "reference_legale": "Directive 2011/24/UE (autorisation préalable, délai de décision)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "statut_social_artiste",
+      "id": "ARTISTE-001",
+      "sujet": "Qu'est-ce que l'attestation du travail des arts ?",
+      "reference_legale": "Loi du 16 décembre 2022 (attestation du travail des arts)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "statut_social_artiste",
+      "id": "ARTISTE-002",
+      "sujet": "Qui décide de l'octroi de l'attestation ?",
+      "reference_legale": "Loi du 16 décembre 2022 (Commission du travail des arts)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "statut_social_artiste",
+      "id": "ARTISTE-003",
+      "sujet": "À quoi sert l'attestation et comment la demander ?",
+      "reference_legale": "Loi du 16 décembre 2022 (droits liés à l'attestation, plateforme Working in the Arts)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -3749,6 +4145,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "titres_services",
+      "id": "TS-001",
+      "sujet": "Qu'est-ce que le système des titres-services ?",
+      "reference_legale": "Loi du 20 juillet 2001 (titres-services) — système régionalisé",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "titres_services",
+      "id": "TS-002",
+      "sujet": "Ai-je droit à une réduction d'impôt sur les titres-services ?",
+      "reference_legale": "Loi du 20 juillet 2001 (réduction d'impôt régionalisée pour titres-services)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "titres_services",
+      "id": "TS-003",
+      "sujet": "Quelles conditions pratiques pour la réduction ?",
+      "reference_legale": "Loi du 20 juillet 2001 (conditions de la réduction d'impôt)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "transport_passagers",
       "id": "TRANS-TRAIN-RETARD-001",
       "sujet": "Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?",
@@ -3859,6 +4288,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "vices_caches",
+      "id": "VICES-001",
+      "sujet": "Qu'est-ce qu'un vice caché ?",
+      "reference_legale": "Code civil (ancien), art. 1641 à 1649 (garantie des vices cachés)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "vices_caches",
+      "id": "VICES-002",
+      "sujet": "Le vendeur est-il responsable même s'il ignorait le défaut ?",
+      "reference_legale": "Code civil (ancien), art. 1641 à 1645 (effets de la garantie)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "vices_caches",
+      "id": "VICES-003",
+      "sujet": "Dans quel délai agir ?",
+      "reference_legale": "Code civil (ancien), art. 1648 (action à bref délai)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "vie_privee_rgpd",
       "id": "RGPD-DROITS-001",
       "sujet": "Quels sont mes droits sur mes données personnelles ?",
@@ -3932,6 +4394,39 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "violences_sexuelles_cpvs",
+      "id": "VSEX-001",
+      "sujet": "Où trouver de l'aide après des violences sexuelles ?",
+      "reference_legale": "Code pénal — infractions contre l'intégrité sexuelle (loi du 21 mars 2022 réformant le droit pénal sexuel)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "violences_sexuelles_cpvs",
+      "id": "VSEX-002",
+      "sujet": "Puis-je porter plainte et faire constater les faits au CPVS ?",
+      "reference_legale": "Code d'instruction criminelle (dépôt de plainte) ; Code pénal — infractions sexuelles",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "violences_sexuelles_cpvs",
+      "id": "VSEX-003",
+      "sujet": "Existe-t-il une aide d'écoute gratuite ?",
+      "reference_legale": "Code pénal — infractions contre l'intégrité sexuelle (cadre de la prise en charge des victimes)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {

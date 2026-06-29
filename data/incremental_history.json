@@ -456,5 +456,35 @@
     "modifies": [],
     "violations": [],
     "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T07:50:19+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/domiciliation.json",
+      "la_loi_avec_moi/equivalence_diplomes.json",
+      "la_loi_avec_moi/ivg.json",
+      "la_loi_avec_moi/legalisation_apostille.json",
+      "la_loi_avec_moi/loi_breyne.json",
+      "la_loi_avec_moi/marchand_de_sommeil.json",
+      "la_loi_avec_moi/plaintes_police_comite_p.json",
+      "la_loi_avec_moi/produits_defectueux.json",
+      "la_loi_avec_moi/publicite_administration.json",
+      "la_loi_avec_moi/sanctions_administratives_communales.json",
+      "la_loi_avec_moi/soins_sante_transfrontaliers.json",
+      "la_loi_avec_moi/statut_social_artiste.json",
+      "la_loi_avec_moi/titres_services.json",
+      "la_loi_avec_moi/vices_caches.json",
+      "la_loi_avec_moi/violences_sexuelles_cpvs.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T07:50:19+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
   }
 ]
