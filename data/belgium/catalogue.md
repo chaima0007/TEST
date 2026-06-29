@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**404 réponses · 128 modules · 562 sources officielles · 187 fiches avec contacts · 95 alertes de délai**
+**416 réponses · 132 modules · 576 sources officielles · 187 fiches avec contacts · 96 alertes de délai**
 
 ## Modules en ligne
 
@@ -86,6 +86,7 @@
 | — | Interruption volontaire de grossesse (IVG) | 3 | 3 | 0 | 1 |
 | Job étudiant | Job étudiant — contrat, quota d'heures, cotisations réduites | 3 | 5 | 1 | 2 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
+| — | Légalisation & apostille de documents | 3 | 4 | 0 | 0 |
 | Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
 | Logement social | Logement social — conditions, inscription, attribution | 3 | 5 | 1 | 1 |
 | — | Achat sur plan / clé-sur-porte (loi Breyne) | 3 | 4 | 0 | 0 |
@@ -105,6 +106,7 @@
 | — | Plainte contre la police (Comité P) | 3 | 3 | 0 | 0 |
 | — | Précompte immobilier | 3 | 4 | 0 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |
+| — | Produits défectueux (responsabilité) | 3 | 3 | 0 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 2 | 3 | 2 | 1 |
 | — | Accès aux documents administratifs | 3 | 4 | 0 | 0 |
 | Recours administratifs | Recours contre l'administration — médiateur & Conseil d'État | 2 | 4 | 2 | 1 |
@@ -118,6 +120,8 @@
 | Santé & patient | Santé — droits du patient | 4 | 6 | 1 | 1 |
 | — | Service bancaire de base (droit au compte) | 3 | 3 | 0 | 0 |
 | Sexisme & espace public | Sexisme & harcèlement dans l'espace public | 2 | 4 | 2 | 0 |
+| — | Soins de santé à l'étranger (remboursement) | 3 | 3 | 0 | 1 |
+| — | Statut social de l'artiste (travail des arts) | 3 | 4 | 0 | 0 |
 | Successions | Successions & héritage — accepter, renoncer, délais | 4 | 4 | 3 | 2 |
 | — | Succession internationale | 3 | 3 | 0 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |

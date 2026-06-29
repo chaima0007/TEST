@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 128,
-    "faits": 404,
-    "sources_officielles": 562,
+    "modules": 132,
+    "faits": 416,
+    "sources_officielles": 576,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 95
+    "faits_avec_alerte_delai": 96
   },
   "modules": [
     {
@@ -946,6 +946,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "legalisation_apostille.json",
+      "module": "legalisation_apostille",
+      "titre": "Légalisation & apostille de documents",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "litiges_transfrontaliers.json",
       "module": "litiges_transfrontaliers",
       "titre": "Litiges transfrontaliers (achats dans l'UE)",
@@ -1174,6 +1186,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "produits_defectueux.json",
+      "module": "produits_defectueux",
+      "titre": "Produits défectueux (responsabilité)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "protection_personne.json",
       "module": "protection_personne",
       "titre": "Personnes vulnérables — administration de biens & protection",
@@ -1328,6 +1352,30 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-28"
+    },
+    {
+      "fichier": "soins_sante_transfrontaliers.json",
+      "module": "soins_sante_transfrontaliers",
+      "titre": "Soins de santé à l'étranger (remboursement)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "statut_social_artiste.json",
+      "module": "statut_social_artiste",
+      "titre": "Statut social de l'artiste (travail des arts)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "successions.json",

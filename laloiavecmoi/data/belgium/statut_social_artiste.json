@@ -1,0 +1,63 @@
+{
+  "module": "statut_social_artiste",
+  "titre": "Statut social de l'artiste (travail des arts)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 16 décembre 2022 portant création de la Commission du travail des arts et améliorant la protection sociale des travailleurs des arts",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.workinginthearts.fgov.be/fr/professionnel/commission"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Pour votre situation, consultez la plateforme Working in the Arts ou un guichet des arts.",
+  "faits": [
+    {
+      "id": "ARTISTE-001",
+      "question": "Qu'est-ce que l'attestation du travail des arts ?",
+      "reponse": "Depuis la réforme de 2022, l'« attestation du travail des arts » reconnaît officiellement votre activité professionnelle dans les arts et conditionne l'accès à une protection sociale adaptée (statut social des travailleurs des arts). Elle remplace l'ancien « visa artiste » et est délivrée par la Commission du travail des arts.",
+      "reference_legale": "Loi du 16 décembre 2022 (attestation du travail des arts)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.workinginthearts.fgov.be/fr/professionnel/commission",
+          "intitule": "Working in the Arts — Commission du travail des arts"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2022/12/16/2022042979/justel",
+          "intitule": "Justel — Loi du 16 décembre 2022"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ARTISTE-002",
+      "question": "Qui décide de l'octroi de l'attestation ?",
+      "reponse": "C'est la Commission du travail des arts, composée d'experts du secteur et de représentants de la sécurité sociale et des partenaires sociaux. Elle traite les demandes, informe et conseille, et fait office de centre d'expertise du travail des arts.",
+      "reference_legale": "Loi du 16 décembre 2022 (Commission du travail des arts)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.workinginthearts.fgov.be/fr/professionnel/commission",
+          "intitule": "Working in the Arts — Missions de la Commission"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ARTISTE-003",
+      "question": "À quoi sert l'attestation et comment la demander ?",
+      "reponse": "L'attestation ouvre l'accès à des droits sociaux propres aux travailleurs des arts et encadre des dispositifs comme l'indemnité des arts en amateurs. La demande s'introduit via la plateforme numérique « Working in the Arts » de la sécurité sociale.",
+      "reference_legale": "Loi du 16 décembre 2022 (droits liés à l'attestation, plateforme Working in the Arts)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.workinginthearts.fgov.be/fr/professionnel/commission",
+          "intitule": "Working in the Arts — Demande d'attestation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

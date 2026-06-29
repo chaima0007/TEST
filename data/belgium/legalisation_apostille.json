@@ -1,0 +1,63 @@
+{
+  "module": "legalisation_apostille",
+  "titre": "Légalisation & apostille de documents",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Convention de La Haye du 5 octobre 1961 (apostille) ; légalisation par le SPF Affaires étrangères",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://diplomatie.belgium.be/fr/legalisation-de-documents"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Vérifiez toujours la formalité (apostille ou légalisation) selon le pays concerné avant de payer ou de vous déplacer.",
+  "faits": [
+    {
+      "id": "LEGAL-001",
+      "question": "Qu'est-ce que la légalisation ou l'apostille d'un document ?",
+      "reponse": "C'est une formalité administrative qui donne à un document (belge ou étranger) la force probante nécessaire pour être utilisé à l'étranger ou en Belgique. Elle ne confère aucune authenticité au contenu. Selon le pays concerné, une apostille suffit (pays de la Convention de La Haye) ou une légalisation complète est requise.",
+      "reference_legale": "Convention de La Haye du 5 octobre 1961 supprimant l'exigence de la légalisation (apostille)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr/themes/personnes_et_familles/legalisation",
+          "intitule": "SPF Justice — Légalisation"
+        },
+        {
+          "type": "officiel",
+          "url": "https://diplomatie.belgium.be/fr/legalisation-de-documents",
+          "intitule": "SPF Affaires étrangères — Légalisation de documents"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "LEGAL-002",
+      "question": "Comment faire légaliser un document belge pour l'étranger ?",
+      "reponse": "Le service Légalisation du SPF Affaires étrangères légalise les documents délivrés en Belgique ou y appose l'apostille. Depuis le 1er mai 2018, l'apostille est uniquement électronique ; les documents notariés ou électroniques passent par la plateforme eLegalization (introduite par l'autorité émettrice). Le coût d'une légalisation est de 20 € (par carte).",
+      "reference_legale": "Convention de La Haye du 5 octobre 1961 (apostille électronique) ; procédure du SPF Affaires étrangères",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://diplomatie.belgium.be/fr/legalisation-de-documents",
+          "intitule": "SPF Affaires étrangères — Procédure de légalisation/apostille"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "LEGAL-003",
+      "question": "Et un document étranger à utiliser en Belgique ?",
+      "reponse": "Un document étranger doit en principe être légalisé selon les règles de son pays d'origine (apostille ou légalisation) et, s'il est rédigé dans une langue étrangère, traduit dans une langue nationale (par un traducteur juré). Vérifiez la formalité exacte requise auprès du service compétent du SPF Affaires étrangères avant toute démarche.",
+      "reference_legale": "Convention de La Haye du 5 octobre 1961 ; règles de légalisation des documents étrangers",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr/themes/personnes_et_familles/legalisation",
+          "intitule": "SPF Justice — Documents étrangers en Belgique"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

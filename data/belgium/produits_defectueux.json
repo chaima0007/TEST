@@ -1,0 +1,58 @@
+{
+  "module": "produits_defectueux",
+  "titre": "Produits défectueux (responsabilité)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil, livre 6 (loi du 27 février 2024), art. 6.41 et suivants — responsabilité du fait des produits défectueux ; Directive (UE) 2024/2853",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2024/02/27/2024A01600/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Conservez le produit, la preuve d'achat et tout élément médical ; consultez un avocat pour les délais applicables à votre cas.",
+  "faits": [
+    {
+      "id": "PRODDEF-001",
+      "question": "Qui est responsable si un produit défectueux me cause un dommage ?",
+      "reponse": "Le producteur (fabricant, ou importateur dans l'UE, et dans certains cas le fournisseur) est responsable du dommage causé par un produit défectueux, même sans faute de sa part : c'est une responsabilité objective. Vous devez prouver le défaut, le dommage et le lien entre les deux.",
+      "reference_legale": "Code civil, livre 6, art. 6.41 et suivants (responsabilité du fait des produits défectueux)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2024/02/27/2024A01600/justel",
+          "intitule": "Justel — Code civil, livre 6 (loi du 27 février 2024)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PRODDEF-002",
+      "question": "Qu'est-ce qu'un produit « défectueux » ?",
+      "reponse": "Un produit est défectueux lorsqu'il n'offre pas la sécurité à laquelle on peut légitimement s'attendre, compte tenu notamment de sa présentation, de son usage raisonnablement prévisible et du moment de sa mise en circulation. Sont visés les dommages corporels et, sous conditions, certains dommages matériels.",
+      "reference_legale": "Code civil, livre 6 (notion de produit défectueux et dommages réparables)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2024/02/27/2024A01600/justel",
+          "intitule": "Justel — Code civil, livre 6 (produits défectueux)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PRODDEF-003",
+      "question": "Y a-t-il des délais pour agir ?",
+      "reponse": "Oui. La responsabilité du producteur est limitée dans le temps après la mise sur le marché du produit, et la victime dispose d'un délai pour introduire son action en réparation. La nouvelle directive européenne (UE) 2024/2853, applicable aux produits mis sur le marché à partir du 9 décembre 2026, renforce la protection des victimes (notamment pour les dommages corporels tardifs).",
+      "reference_legale": "Directive (UE) 2024/2853 du 23 octobre 2024 (délais et protection des victimes)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/FR/legal-content/summary/defective-products-liability.html",
+          "intitule": "EUR-Lex — Directive (UE) 2024/2853 (produits défectueux)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

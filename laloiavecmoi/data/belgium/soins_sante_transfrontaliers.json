@@ -1,0 +1,59 @@
+{
+  "module": "soins_sante_transfrontaliers",
+  "titre": "Soins de santé à l'étranger (remboursement)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Directive 2011/24/UE relative aux soins de santé transfrontaliers ; règlements (CE) 883/2004 et 987/2009 (coordination de la sécurité sociale)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.health.belgium.be/fr/themes/sante/votre-sante/soins-sante-transfrontaliers/soins-sante-letranger/remboursement-frais-medicaux-selon-reglementation-europeenne"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Demandez conseil à votre mutualité avant des soins planifiés à l'étranger.",
+  "faits": [
+    {
+      "id": "SSTRANS-001",
+      "question": "Puis-je être remboursé de soins reçus dans un autre pays de l'UE ?",
+      "reponse": "Oui, sous conditions, via votre assurance maladie obligatoire belge. Deux systèmes coexistent : les règlements européens de sécurité sociale et la Directive 2011/24/UE (utile notamment pour des soins dans une clinique privée, que vous payez d'abord puis vous faites rembourser selon les tarifs belges). Cela s'applique dans les 27 États de l'UE ainsi qu'en Islande, au Liechtenstein, en Norvège et en Suisse.",
+      "reference_legale": "Directive 2011/24/UE et règlements (CE) 883/2004 et 987/2009",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/soins-sante-transfrontaliers/soins-sante-letranger/remboursement-frais-medicaux-selon-reglementation-europeenne",
+          "intitule": "SPF Santé publique — Remboursement des soins à l'étranger"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SSTRANS-002",
+      "question": "Soins imprévus ou soins planifiés : quelle différence ?",
+      "reponse": "Pour des soins imprévus pendant un séjour temporaire, la Carte européenne d'assurance maladie (CEAM) vous couvre. Pour des soins planifiés, une autorisation préalable de votre mutualité est souvent nécessaire : le document S2 (système des règlements) permet d'être soigné aux conditions du pays de soins, facture réglée entre pays.",
+      "reference_legale": "Règlements (CE) 883/2004 et 987/2009 (CEAM, document S2) ; Directive 2011/24/UE",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/soins-sante-transfrontaliers/soins-sante-letranger/soins-medicaux-planifies-letranger",
+          "intitule": "SPF Santé publique — Soins planifiés à l'étranger"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SSTRANS-003",
+      "question": "La mutualité peut-elle refuser l'autorisation, et en combien de temps répond-elle ?",
+      "reponse": "Le médecin-conseil ne peut pas refuser l'autorisation si un traitement équivalent n'est pas possible en Belgique dans un délai médicalement justifié ET que le soin est remboursé par l'assurance belge. Important : si vous ne recevez pas de réponse dans les 45 jours, l'autorisation préalable est automatiquement accordée.",
+      "reference_legale": "Directive 2011/24/UE (autorisation préalable, délai de décision)",
+      "alerte_delai": "Sans réponse de la mutualité dans les 45 jours, l'autorisation est automatiquement accordée.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/soins-sante-transfrontaliers/soins-sante-letranger/soins-medicaux-planifies-letranger",
+          "intitule": "SPF Santé publique — Autorisation préalable"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
