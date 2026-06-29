@@ -5,6 +5,18 @@ set -e
 # Ne bloque que si les scripts existent
 fail=0
 
+# §24 — Intégrité de l'environnement (anti-désync conteneur) : gardien PRIORITAIRE.
+# Refuse tout commit depuis un checkout étranger / mauvaise branche / dossiers clés manquants.
+if [ -f scripts/env_integrity_check.py ]; then
+  echo "🧭 Contrôle d'intégrité de l'environnement (§24)…"
+  if ! python3 scripts/env_integrity_check.py >/tmp/_env.log 2>&1; then
+    echo "🛑 DÉSYNCHRONISATION DE L'ENVIRONNEMENT — commit REFUSÉ :"; tail -8 /tmp/_env.log
+    echo "   → git fetch puis réaligner (sur autorisation) avant de commiter."
+    echo "   → Ne jamais commiter depuis un checkout étranger (§24)."
+    exit 1
+  fi
+fi
+
 if [ -f scripts/build_guard.py ]; then
   echo "🔧 Gardien build…"
   python3 scripts/build_guard.py --scan >/tmp/_bg.log 2>&1 || { echo "🛑 build_guard a détecté un problème :"; tail -5 /tmp/_bg.log; fail=1; }

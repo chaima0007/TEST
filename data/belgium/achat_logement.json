@@ -27,6 +27,11 @@
       ],
       "sources": [
         {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032154/justel",
+          "intitule": "Ancien Code civil — Livre III, De la vente (art. 1582 et s.)"
+        },
+        {
           "type": "secondaire",
           "url": "https://www.droitbelge.be/fiches_detail.asp?idcat=9&id=3",
           "intitule": "Droitbelge.be — Compromis vaut vente"

@@ -1,11 +1,11 @@
 {
-  "genere_le": "2026-06-29T16:54:19.957523+00:00",
-  "monte_carlo_n": 100000,
+  "genere_le": "2026-06-29T17:21:38.573268+00:00",
+  "monte_carlo_n": 20000,
   "corpus": {
     "reponses": 489,
-    "sources": 815,
+    "sources": 816,
     "modules": 149,
-    "sources_officielles": 688,
+    "sources_officielles": 689,
     "caelum_normes": 17,
     "caelum": {
       "normes": 17,
@@ -13,48 +13,7 @@
       "aides": 3
     }
   },
-  "sante": [
-    {
-      "protocole": "loi_reference_audit",
-      "cmd": "python3 scripts/loi_reference_audit.py",
-      "returncode": 0,
-      "ms": 44,
-      "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
-      "verdict": "OK"
-    },
-    {
-      "protocole": "source_trust_protocol",
-      "cmd": "python3 scripts/source_trust_protocol.py",
-      "returncode": 0,
-      "ms": 66,
-      "sortie": "  → data/governance/source_trust_report.md",
-      "verdict": "OK"
-    },
-    {
-      "protocole": "legal_change_sensor",
-      "cmd": "python3 scripts/legal_change_sensor.py",
-      "returncode": 0,
-      "ms": 97,
-      "sortie": "  → data/legal_change.json",
-      "verdict": "OK"
-    },
-    {
-      "protocole": "norm_hierarchy_guard",
-      "cmd": "python3 scripts/norm_hierarchy_guard.py",
-      "returncode": 0,
-      "ms": 92,
-      "sortie": "  → data/governance/norm_hierarchy_report.json",
-      "verdict": "OK"
-    },
-    {
-      "protocole": "branch_guard",
-      "cmd": "python3 scripts/branch_guard.py --check --quiet",
-      "returncode": 0,
-      "ms": 479,
-      "sortie": "✅ SYNC — local == origin — écriture sûre",
-      "verdict": "OK"
-    }
-  ],
+  "sante": [],
   "scenarios": [
     {
       "scenario": "Trafic · Trafic normal",
@@ -62,7 +21,7 @@
       "rps": 5,
       "cache_pct": 60,
       "p95_ms": 45,
-      "p99_ms": 49,
+      "p99_ms": 50,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -95,7 +54,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 101,
+      "p99_ms": 102,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -111,7 +70,7 @@
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 8,
-      "pct_corpus": 0.95,
+      "pct_corpus": 0.98,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -119,8 +78,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 41,
-      "pct_corpus": 5.02,
+      "urls_impactees_moy": 43,
+      "pct_corpus": 5.27,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -128,8 +87,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 122,
-      "pct_corpus": 14.91,
+      "urls_impactees_moy": 124,
+      "pct_corpus": 15.24,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -188,7 +147,7 @@
     {
       "scenario": "Sécurité · Abus formulaire (payload/email)",
       "type": "etat",
-      "pct_bloque_attendu": 68.5,
+      "pct_bloque_attendu": 69.0,
       "verdict": "OK",
       "mitigation": "limites taille/longueur + 413"
     },
@@ -210,7 +169,7 @@
       "reponses": 489,
       "modules": 149,
       "depuis_naissance": 61,
-      "battements_sans_croissance": 0,
+      "battements_sans_croissance": 2,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -230,7 +189,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 33,
+      "battements_sans_progres": 35,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -266,13 +225,13 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629165419",
+    "seal_id": "AUTO-20260629172138",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 76.7,
-    "verts": 23,
-    "total": 30,
-    "autonomie_systeme_pct": 95.0,
+    "score_resilience": 72.0,
+    "verts": 18,
+    "total": 25,
+    "autonomie_systeme_pct": 93.3,
     "decisions_humaines_en_attente": [
       "Déploiement · Webhook leads non configuré",
       "Données · Identité légale Caelum"
@@ -291,8 +250,8 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 56,
-    "age_jours": 0.31,
+    "battements": 58,
+    "age_jours": 0.33,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
