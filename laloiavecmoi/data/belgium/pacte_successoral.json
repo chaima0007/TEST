@@ -26,11 +26,6 @@
       ],
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral",
-          "intitule": "Notaire.be — Le pacte successoral"
-        },
-        {
           "type": "officiel",
           "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/07/31/2017013015/justel",
           "intitule": "Loi du 31 juillet 2017 (Justel)"
@@ -45,9 +40,9 @@
       "reference_legale": "Loi du 31 juillet 2017 (pacte global et pacte ponctuel)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral",
-          "intitule": "Notaire.be — Pacte global et ponctuel"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/07/31/2017013015/justel",
+          "intitule": "Source officielle de référence de la fiche"
         }
       ],
       "date_verification": "2026-06-29"
@@ -59,9 +54,9 @@
       "reference_legale": "Loi du 31 juillet 2017 (procédure de signature du pacte successoral)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral",
-          "intitule": "Notaire.be — Procédure"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/07/31/2017013015/justel",
+          "intitule": "Source officielle de référence de la fiche"
         }
       ],
       "date_verification": "2026-06-29"
@@ -73,9 +68,9 @@
       "reference_legale": "Loi du 31 juillet 2017 (effets du pacte successoral)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/heritage-et-donations/planifier-sa-succession/le-pacte-successoral",
-          "intitule": "Notaire.be — Pacte et testament"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/07/31/2017013015/justel",
+          "intitule": "Source officielle de référence de la fiche"
         }
       ],
       "date_verification": "2026-06-29"

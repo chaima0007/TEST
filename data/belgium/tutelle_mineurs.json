@@ -6,7 +6,7 @@
   "base_legale_principale": {
     "intitule": "Code civil — tutelle des mineurs (art. 389 et suivants)",
     "portee": "Citoyens en Belgique",
-    "source_officielle": "https://justice.belgium.be/fr"
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel"
   },
   "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
@@ -24,9 +24,9 @@
           "intitule": "SPF Justice — autorite competente (droit civil et de la famille)"
         },
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/faq/heritage/ses-deux-parents-sont-decedes-le-mineur-est-alors-mis-sous-tutelle-que-cela-signifie-t-il",
-          "intitule": "Notaire.be — La tutelle du mineur"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (tutelle des mineurs)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -38,9 +38,9 @@
       "reference_legale": "Code civil — désignation du tuteur (testament ou juge de paix)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/faq/heritage/ses-deux-parents-sont-decedes-le-mineur-est-alors-mis-sous-tutelle-que-cela-signifie-t-il",
-          "intitule": "Notaire.be — Désignation du tuteur"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (tutelle des mineurs)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -52,9 +52,9 @@
       "reference_legale": "Code civil — pouvoirs du tuteur et autorisations du juge de paix",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/faq/heritage/ses-deux-parents-sont-decedes-le-mineur-est-alors-mis-sous-tutelle-que-cela-signifie-t-il",
-          "intitule": "Notaire.be — Rôle du tuteur"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (tutelle des mineurs)"
         }
       ],
       "date_verification": "2026-06-29"

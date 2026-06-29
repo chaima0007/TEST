@@ -7,7 +7,7 @@
   "base_legale_principale": {
     "intitule": "Code civil — divorce par consentement mutuel et divorce pour désunion irrémédiable (art. 229 et suivants) ; obligation d'entretien des enfants (art. 203)",
     "portee": "Formes de divorce, enfants, pension et contribution alimentaire",
-    "source_officielle": "https://justice.belgium.be/fr"
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel"
   },
   "derniere_revue": "2026-06-27",
   "statut_fiabilite": "verifie",
@@ -30,9 +30,9 @@
       ],
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/relations-et-vivre-ensemble/separation-et-divorce",
-          "intitule": "Notaire.be — Séparation et divorce"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (divorce)"
         },
         {
           "type": "officiel",
@@ -65,9 +65,9 @@
           "intitule": "SPF Finances — SECAL / pensions alimentaires"
         },
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/relations-et-vivre-ensemble/separation-et-divorce",
-          "intitule": "Notaire.be — Séparation et divorce"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (divorce)"
         }
       ],
       "date_verification": "2026-06-27"

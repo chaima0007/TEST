@@ -28,11 +28,6 @@
       "sources": [
         {
           "type": "secondaire",
-          "url": "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier",
-          "intitule": "Notaire.be — Acheter et vendre un bien"
-        },
-        {
-          "type": "secondaire",
           "url": "https://www.droitbelge.be/fiches_detail.asp?idcat=9&id=3",
           "intitule": "Droitbelge.be — Compromis vaut vente"
         }
@@ -52,11 +47,6 @@
         }
       ],
       "sources": [
-        {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-differentes-etapes-dun-achat-immobilier/signer-lacte-de-vente",
-          "intitule": "Notaire.be — Signer l'acte de vente"
-        },
         {
           "type": "officiel",
           "url": "https://www.belgium.be/fr/logement/achat_d_un_logement",

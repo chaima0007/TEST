@@ -7,7 +7,7 @@
   "base_legale_principale": {
     "intitule": "Code civil — modification du régime matrimonial par acte notarié (art. 1392 et suivants) ; Loi du 23 mars 2019 (suppression du délai d'attente)",
     "portee": "Adapter ou changer entièrement de régime matrimonial pendant le mariage",
-    "source_officielle": "https://justice.belgium.be/fr"
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel"
   },
   "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
@@ -31,9 +31,9 @@
           "intitule": "SPF Justice — autorite competente (droit civil et de la famille)"
         },
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage",
-          "intitule": "Notaire.be — Changer de régime matrimonial"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre V : Du contrat de mariage et des régimes matrimoniaux (art. 1387 et s.)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -45,9 +45,9 @@
       "reference_legale": "Code civil, art. 1392 et suivants (modification du régime matrimonial)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage",
-          "intitule": "Notaire.be — Les deux possibilités"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre V : Du contrat de mariage et des régimes matrimoniaux (art. 1387 et s.)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -59,9 +59,9 @@
       "reference_legale": "Code civil, art. 1394 (inventaire en cas de modification du régime matrimonial)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage",
-          "intitule": "Notaire.be — Inventaire avec ou sans"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre V : Du contrat de mariage et des régimes matrimoniaux (art. 1387 et s.)"
         },
         {
           "type": "secondaire",
@@ -78,9 +78,9 @@
       "reference_legale": "Code civil, art. 1395 (effets et opposabilité du changement de régime matrimonial)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage",
-          "intitule": "Notaire.be — Effets du changement"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre V : Du contrat de mariage et des régimes matrimoniaux (art. 1387 et s.)"
         },
         {
           "type": "secondaire",

@@ -71,6 +71,20 @@
       "integration_systeme": "Présent journal + P-COUVERTURE-TERRITORIALE + P-QUALIFICATION-SOURCES + §20/§21.",
       "protocole": "Méta-directive (ce fichier)",
       "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-11",
+      "consigne": "Finaliser le retrait de notaire.be comme source et le remplacer par ejustice.just.fgov.be ; vérifier chaque fiche pour que la base légale pointe vers cette source canonique.",
+      "integration_systeme": "notaire.be remplacé par les URL ejustice exactes (Ancien Code civil Livres I/III, Code judiciaire) dans les fiches concernées ; retiré ailleurs ; conservé uniquement comme CONTACT (trouver un notaire).",
+      "protocole": "P-QUALIFICATION-SOURCES (§21) + base ejustice (§22)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-12",
+      "consigne": "Excellence grammaticale et correction absolue dans toutes les langues ; conjugaison correcte des verbes du 3e groupe ; intégrer définitivement au protocole.",
+      "integration_systeme": "Relecture obligatoire avant publication ; standard inscrit.",
+      "protocole": "P-EXCELLENCE-GRAMMATICALE (§22)",
+      "statut": "EN VIGUEUR"
     }
   ],
   "portails_officiels_valides_2026-06-29": {

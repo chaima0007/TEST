@@ -578,3 +578,27 @@ python3 scripts/norm_hierarchy_guard.py && python3 scripts/anomaly_register.py
 - **Base légale d'une fiche** : pointer vers le **texte canonique** (de préférence `ejustice.just.fgov.be` pour le droit belge), jamais vers une fédération professionnelle.
 
 > Journal consolidé des directives du jour : `data/governance/directives_session_2026-06-29.json` (suivi des consignes, zéro répétition).
+
+---
+
+## 22. Excellence grammaticale et correction absolue (§22, P-EXCELLENCE-GRAMMATICALE)
+
+**Directive (Chaima, 2026-06-29)** : tout contenu publié (fiches, pages, documents, e-mails — **les deux projets**) doit présenter une **orthographe, une grammaire et une conjugaison impeccables**, dans **chaque langue** de publication (FR, NL, DE, EN), quel que soit le pays.
+
+- Vigilance particulière sur la **conjugaison des verbes du troisième groupe** (irréguliers : *faire, devoir, pouvoir, prendre, mettre, vouloir, venir…*) et leurs équivalents irréguliers en NL/DE/EN.
+- **Relecture (read-back) obligatoire avant publication** (cohérent avec le protocole de vérification avant envoi).
+- En cas de doute sur une forme : **vérifier la règle, corriger, puis publier**. Aucune approximation linguistique — elle décrédibilise l'analyse.
+
+---
+
+### Base légale des fiches — source canonique ejustice (acté 2026-06-29)
+
+Pour le droit belge, la **base légale** d'une fiche pointe vers le **texte canonique sur `ejustice.just.fgov.be`** (jamais vers une fédération professionnelle). Ancrages vérifiés (Ancien Code civil) :
+
+| Texte | URL ejustice |
+|-------|--------------|
+| Code civil — Livre I (Des personnes, art. 1-515) | `/eli/loi/1804/03/21/1804032150/justel` |
+| Code civil — Livre II (Des biens, art. 516-710bis) | `/eli/loi/1804/03/21/1804032151/justel` |
+| Code civil — Livre III T.I-II (art. 711-1100 : successions, libéralités) | `/eli/loi/1804/03/21/1804032152/justel` |
+| Code civil — Livre III T.III-V (art. 1101-1581 : contrats, régimes matrimoniaux) | `/eli/loi/1804/03/21/1804032153/justel` |
+| Code judiciaire | `/eli/loi/1967/10/10/1967101052/justel` |

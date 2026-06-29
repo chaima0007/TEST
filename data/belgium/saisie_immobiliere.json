@@ -6,7 +6,7 @@
   "base_legale_principale": {
     "intitule": "Code judiciaire, art. 1560 à 1626 (saisie-exécution immobilière) ; art. 1494 (titre exécutoire)",
     "portee": "Citoyens en Belgique",
-    "source_officielle": "https://e-justice.europa.eu/topics/court-procedures/civil-cases/recognition-enforcement-court-decisions/how-enforce-court-decision/be_fr"
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1967/10/10/1967101052/justel"
   },
   "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
@@ -38,9 +38,9 @@
           "intitule": "Portail e-Justice (UE) — Saisie-exécution immobilière"
         },
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/",
-          "intitule": "Notaire.be — Vente sur saisie"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1967/10/10/1967101052/justel",
+          "intitule": "Code judiciaire (saisie-exécution immobilière)"
         }
       ],
       "date_verification": "2026-06-29"

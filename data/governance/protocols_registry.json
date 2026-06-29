@@ -357,6 +357,12 @@
       "nom": "Qualification stricte des sources (officiel vs secondaire) + vocabulaire",
       "regle": "DIRECTIVE (Chaima, 2026-06-29) : seuls le LÉGISLATEUR et les AUTORITÉS PUBLIQUES (EUR-Lex, Commission, AI Office, SPF/SPW/portails .fgov.be/.belgium.be/régionaux, Moniteur belge, agences publiques) peuvent être typés 'officiel'. Une FÉDÉRATION PROFESSIONNELLE (ex. notaire.be), la presse, les forums, les agrégateurs et les moteurs généralistes ne sont JAMAIS 'officiel' — au mieux 'secondaire'. VOCABULAIRE : employer 'source officielle' / 'document canonique' ; proscrire les termes flous ('source vive'). Pour une source remplacée/fermée : 'antérieure / abrogée / migrée'.",
       "verif": "python3 scripts/source_trust_protocol.py (tout 'officiel' doit être une autorité publique tier1) + revue manuelle : aucune fédération pro/presse/forum typée 'officiel'"
+    },
+    {
+      "id": "P-EXCELLENCE-GRAMMATICALE",
+      "nom": "Excellence grammaticale et correction absolue (toutes langues)",
+      "regle": "DIRECTIVE (Chaima, 2026-06-29) : tout contenu publié (fiches, pages, documents, e-mails, les DEUX projets) doit respecter une orthographe, une grammaire et une conjugaison IMPECCABLES, dans CHAQUE langue de publication (FR, NL, DE, EN), quel que soit le pays. Attention particulière à la conjugaison correcte des verbes du TROISIÈME GROUPE (verbes irréguliers français : faire, devoir, pouvoir, prendre, mettre, etc.) et à leurs équivalents irréguliers dans les autres langues. Une relecture (read-back) est obligatoire avant publication (cohérent avec le protocole de vérification avant envoi). Aucune approximation linguistique tolérée — elle décrédibilise l'analyse.",
+      "verif": "relecture systématique avant publication ; en cas de doute sur une conjugaison/forme, vérifier (Bescherelle/règle), corriger, puis publier ; jamais publier un texte non relu"
     }
   ]
 }

@@ -6,7 +6,7 @@
   "base_legale_principale": {
     "intitule": "Code des droits d'enregistrement, d'hypothèque et de greffe (droits de donation — compétence régionale)",
     "portee": "Personnes souhaitant donner un bien de leur vivant. L'impôt (droit de donation) est régional",
-    "source_officielle": "https://fin.belgium.be/fr/particuliers/autres-services/donations"
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel"
   },
   "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
@@ -24,9 +24,9 @@
           "intitule": "SPF Finances — Donations"
         },
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/heritage-et-donations/donations/donation-mobiliere",
-          "intitule": "Notaire.be — Donation mobilière"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre II : Des donations entre vifs et des testaments (art. 893 et s.)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -52,9 +52,9 @@
       "reference_legale": "Code des droits de succession (réintégration des donations non enregistrées dans la succession — période suspecte régionale)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/heritage-et-donations/donations/donation-mobiliere",
-          "intitule": "Notaire.be — Donation mobilière et période suspecte"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre II : Des donations entre vifs et des testaments (art. 893 et s.)"
         },
         {
           "type": "officiel",
@@ -71,9 +71,9 @@
       "reference_legale": "Code civil — donations (modalités et conditions de la donation)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/heritage-et-donations/donations/donation-immobiliere",
-          "intitule": "Notaire.be — Donation immobilière"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre II : Des donations entre vifs et des testaments (art. 893 et s.)"
         }
       ],
       "date_verification": "2026-06-29"

@@ -7,7 +7,7 @@
   "base_legale_principale": {
     "intitule": "Code civil — émancipation du mineur (art. 476 à 488)",
     "portee": "Conditions et effets de l'émancipation (par mariage ou par décision du tribunal de la famille)",
-    "source_officielle": "https://justice.belgium.be/fr"
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel"
   },
   "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
@@ -25,9 +25,9 @@
           "intitule": "SPF Justice — autorite competente (droit civil et de la famille)"
         },
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
-          "intitule": "Notaire.be — L'émancipation d'un mineur"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (émancipation)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -45,9 +45,9 @@
       ],
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
-          "intitule": "Notaire.be — Les deux voies d'émancipation"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (émancipation)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -59,9 +59,9 @@
       "reference_legale": "Code civil — procédure d'émancipation (art. 477 et suivants)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
-          "intitule": "Notaire.be — Conditions et procédure"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (émancipation)"
         }
       ],
       "date_verification": "2026-06-29"
@@ -73,9 +73,9 @@
       "reference_legale": "Code civil — effets de l'émancipation et assistance du curateur (art. 481-484)",
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
-          "intitule": "Notaire.be — Effets et limites"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (émancipation)"
         }
       ],
       "date_verification": "2026-06-29"

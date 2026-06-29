@@ -7,7 +7,7 @@
   "base_legale_principale": {
     "intitule": "Code civil — testaments (art. 967 et suivants), réserve héréditaire et donations",
     "portee": "Organiser de son vivant la transmission de ses biens, dans les limites de la loi",
-    "source_officielle": "https://www.belgium.be/fr/famille/deces/heritage"
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel"
   },
   "derniere_revue": "2026-06-28",
   "statut_fiabilite": "verifie",
@@ -27,9 +27,9 @@
       ],
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/donations-successions/preparer-sa-succession/le-testament",
-          "intitule": "Notaire.be — Le testament"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre II : Des donations entre vifs et des testaments"
         },
         {
           "type": "officiel",
@@ -52,9 +52,9 @@
       ],
       "sources": [
         {
-          "type": "secondaire",
-          "url": "https://www.notaire.be/donations-successions",
-          "intitule": "Notaire.be — Donations & successions"
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel",
+          "intitule": "Ancien Code civil — Livre III, Titre II : Des donations entre vifs et des testaments"
         },
         {
           "type": "officiel",
