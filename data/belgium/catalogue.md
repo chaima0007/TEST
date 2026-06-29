@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**497 réponses · 151 modules · 709 sources officielles · 229 fiches avec contacts · 100 alertes de délai**
+**498 réponses · 151 modules · 712 sources officielles · 230 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -146,7 +146,7 @@
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 2 | 3 | 2 | 1 |
 | Testament & donations | Testament & planifier sa succession | 2 | 4 | 2 | 0 |
-| — | Titres-services (aide à domicile) | 3 | 3 | 0 | 0 |
+| — | Titres-services (aide à domicile) | 4 | 6 | 1 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 2 | 4 | 2 | 1 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | — | Tutelle d'un enfant mineur | 3 | 4 | 0 | 0 |

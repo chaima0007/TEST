@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 151,
-    "faits": 497,
-    "sources_officielles": 709,
-    "faits_avec_contacts": 229,
+    "faits": 498,
+    "sources_officielles": 712,
+    "faits_avec_contacts": 230,
     "faits_avec_alerte_delai": 100
   },
   "modules": [
@@ -1671,9 +1671,9 @@
       "titre": "Titres-services (aide à domicile)",
       "domaine": "—",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 0,
+      "faits": 4,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
     },
