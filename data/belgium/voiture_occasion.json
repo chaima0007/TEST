@@ -19,12 +19,27 @@
       "reponse": "Cela dépend du vendeur. Chez un VENDEUR PROFESSIONNEL, vous avez une garantie légale obligatoire d'au moins un an (la garantie légale de conformité est en principe de 2 ans, mais le pro peut la réduire à 1 an pour une occasion). Entre PARTICULIERS, il n'y a pas de garantie légale obligatoire, MAIS le vendeur reste responsable des vices cachés. Dans tous les cas, exigez les documents : le Car-Pass (kilométrage certifié, obligatoire) et le certificat de contrôle technique « occasion » valide.",
       "reference_legale": "Code de droit économique — garantie légale de conformité ; Code civil — vices cachés (art. 1641)",
       "contacts": [
-        {"nom": "Vendeur", "pour": "faire jouer la garantie / signaler le défaut par écrit"},
-        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "litige avec un vendeur professionnel"}
+        {
+          "nom": "Vendeur",
+          "pour": "faire jouer la garantie / signaler le défaut par écrit"
+        },
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "litige avec un vendeur professionnel"
+        }
       ],
       "sources": [
-        {"type": "secondaire", "url": "https://www.test-achats.be/famille-prive/droits-des-consommateurs/dossier/garantie/produits-de-seconde-main", "intitule": "Test Achats — Garantie produits de seconde main"},
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/garantie", "intitule": "SPF Économie — La garantie"}
+        {
+          "type": "secondaire",
+          "url": "https://www.test-achats.be/famille-prive/droits-des-consommateurs/dossier/garantie/produits-de-seconde-main",
+          "intitule": "Test Achats — Garantie produits de seconde main"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/garantie",
+          "intitule": "SPF Économie — La garantie"
+        }
       ],
       "date_verification": "2026-06-28"
     },
@@ -35,15 +50,74 @@
       "reference_legale": "Code civil — garantie des vices cachés (art. 1641 et suivants) ; loi du 11 juin 2004 réprimant la fraude au compteur kilométrique (Car-Pass)",
       "alerte_delai": "Agissez à bref délai après la découverte du vice : signalez par écrit recommandé et faites constater le défaut sans tarder.",
       "contacts": [
-        {"nom": "Garage / expert automobile", "pour": "constat du vice caché"},
-        {"nom": "Car-Pass", "lien": "https://www.car-pass.be", "pour": "vérifier le kilométrage certifié"},
-        {"nom": "Juge de paix", "pour": "litige (conciliation possible, gratuite)"}
+        {
+          "nom": "Garage / expert automobile",
+          "pour": "constat du vice caché"
+        },
+        {
+          "nom": "Car-Pass",
+          "lien": "https://www.car-pass.be",
+          "pour": "vérifier le kilométrage certifié"
+        },
+        {
+          "nom": "Juge de paix",
+          "pour": "litige (conciliation possible, gratuite)"
+        }
       ],
       "sources": [
-        {"type": "secondaire", "url": "https://www.justifit.be/b/vices-caches/", "intitule": "Justifit — Les vices cachés pour une voiture"},
-        {"type": "officiel", "url": "https://www.car-pass.be", "intitule": "Car-Pass — Kilométrage certifié"}
+        {
+          "type": "secondaire",
+          "url": "https://www.justifit.be/b/vices-caches/",
+          "intitule": "Justifit — Les vices cachés pour une voiture"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.car-pass.be",
+          "intitule": "Car-Pass — Kilométrage certifié"
+        }
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "VOIT-TAXES-REGIONAL-001",
+      "question": "Quelles taxes auto vais-je payer, et qui les perçoit ?",
+      "reponse": "Deux taxes automobiles sont des impôts RÉGIONAUX, dont le montant varie selon la région où vous êtes domicilié : la TAXE DE MISE EN CIRCULATION (TMC), due une seule fois lors de l'immatriculation, et la TAXE DE CIRCULATION annuelle. Leur calcul (puissance, cylindrée, émissions/critères écologiques) diffère d'une région à l'autre. Administrations : SPW Fiscalité en WALLONIE, Vlaamse Belastingdienst (verkeersbelasting et BIV) en FLANDRE, Bruxelles Fiscalité à BRUXELLES. Anticipez ces coûts dans votre budget d'achat ; vous recevrez l'invitation à payer après l'immatriculation.",
+      "reference_legale": "Compétence régionale des taxes de circulation et de mise en circulation : Code des taxes assimilées aux impôts sur les revenus (régionalisé) en Wallonie et à Bruxelles ; Vlaamse Codex Fiscaliteit (verkeersbelasting / belasting op de inverkeerstelling) en Flandre",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "taxes auto en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "verkeersbelasting / BIV en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "taxes auto à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité — taxes de circulation (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaamse Belastingdienst — verkeersbelasting/BIV (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité — taxes auto (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

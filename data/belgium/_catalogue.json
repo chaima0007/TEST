@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 151,
-    "faits": 503,
-    "sources_officielles": 727,
-    "faits_avec_contacts": 235,
+    "faits": 504,
+    "sources_officielles": 730,
+    "faits_avec_contacts": 236,
     "faits_avec_alerte_delai": 101
   },
   "modules": [
@@ -1779,9 +1779,9 @@
       "titre": "Acheter une voiture d'occasion",
       "domaine": "Achat véhicule d'occasion",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-28"
     },

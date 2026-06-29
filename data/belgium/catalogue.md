@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**503 réponses · 151 modules · 727 sources officielles · 235 fiches avec contacts · 101 alertes de délai**
+**504 réponses · 151 modules · 730 sources officielles · 236 fiches avec contacts · 101 alertes de délai**
 
 ## Modules en ligne
 
@@ -155,7 +155,7 @@
 | Violences conjugales | Violences conjugales & familiales — se protéger | 3 | 6 | 3 | 1 |
 | — | Violences sexuelles — aide et CPVS | 3 | 3 | 0 | 0 |
 | Voisinage | Voisinage — bien s'entendre et régler les conflits | 4 | 4 | 3 | 0 |
-| Achat véhicule d'occasion | Acheter une voiture d'occasion | 2 | 2 | 2 | 1 |
+| Achat véhicule d'occasion | Acheter une voiture d'occasion | 3 | 5 | 3 | 1 |
 | Vote & démocratie | Vote électoral — pour qui et pourquoi on vote | 4 | 8 | 1 | 0 |
 | Voyage d'un enfant | Voyage d'un mineur — Kids-ID & autorisation parentale | 2 | 4 | 2 | 1 |
 | Voyages | Voyages à forfait — annulation & remboursement | 2 | 2 | 2 | 1 |
