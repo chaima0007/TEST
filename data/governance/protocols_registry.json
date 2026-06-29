@@ -345,6 +345,18 @@
       "nom": "Pérennité de la gouvernance — vigilance permanente & boucle de contrôle",
       "regle": "DIRECTIVE EXÉCUTIVE (Chaima, 2026-06-29) : vigilance permanente et respect absolu des protocoles d'audit et de non-affectation en cas d'obsolescence ; zéro approximation, la crédibilité de la plateforme ne tolère aucune. Tout relâchement, hallucination ou tentative de contournement des bases officielles déclenche une BOUCLE DE CONTRÔLE EXÉCUTABLE (et non une menace symbolique — une IA ne répond pas à la sanction mais à la structure) : (1) AUDIT IMMÉDIAT — scripts bloquants avant commit (loi_reference_audit, source_trust_protocol, norm_hierarchy_guard). (2) RÉINITIALISATION CIBLÉE — git revert de la SEULE sortie affectée + fallback exact ; jamais d'arrêt de mission (cohérent P-DOC-OBSOLETE/§18). (3) CORRECTION IMMÉDIATE — capture au registre des anomalies, rectification sur SOURCE CANONIQUE, puis poursuite. (4) NON-CONTOURNEMENT des bases officielles (P-NO-MOTEUR-GENERALISTE + P-RESILIENCE-RESEAU). Principe d'ingénierie : la discipline anti-hallucination vit dans les garde-fous structurels (vérification avant sortie, provenance tracée, audits bloquants), pas dans la dissuasion.",
       "verif": "python3 scripts/loi_reference_audit.py && python3 scripts/source_trust_protocol.py && python3 scripts/norm_hierarchy_guard.py && python3 scripts/anomaly_register.py ; tout audit en échec = commit BLOQUÉ + revert ciblé + correction canonique avant poursuite"
+    },
+    {
+      "id": "P-COUVERTURE-TERRITORIALE",
+      "nom": "Couverture territoriale intégrale (4 entités + fédéral)",
+      "regle": "DIRECTIVE (Chaima, 2026-06-29) : toute analyse/fiche portant sur le territoire belge DOIT intégrer, de manière INDISSOCIABLE, les QUATRE entités fédérées — Wallonie, Flandre, Région de Bruxelles-Capitale, Communauté germanophone (Ostbelgien) — ET le niveau FÉDÉRAL lorsqu'il est compétent. Pour chaque entité, citer le portail OFFICIEL compétent du domaine, dont la racine a été vérifiée active (cf. P-RESILIENCE-RESEAU). Respecter la répartition des compétences (P-HIERARCHIE-NORMES). Le NON-RESPECT de cette exhaustivité entraîne le REJET du livrable. Portails validés au 2026-06-29 : voir data/governance/directives_session_2026-06-29.json (handicap, emploi, APA).",
+      "verif": "revue manuelle : présence des 4 entités + fédéral si compétent ; chaque source = portail officiel à racine vérifiée ; python3 scripts/norm_hierarchy_guard.py (0 conflit territorial)"
+    },
+    {
+      "id": "P-QUALIFICATION-SOURCES",
+      "nom": "Qualification stricte des sources (officiel vs secondaire) + vocabulaire",
+      "regle": "DIRECTIVE (Chaima, 2026-06-29) : seuls le LÉGISLATEUR et les AUTORITÉS PUBLIQUES (EUR-Lex, Commission, AI Office, SPF/SPW/portails .fgov.be/.belgium.be/régionaux, Moniteur belge, agences publiques) peuvent être typés 'officiel'. Une FÉDÉRATION PROFESSIONNELLE (ex. notaire.be), la presse, les forums, les agrégateurs et les moteurs généralistes ne sont JAMAIS 'officiel' — au mieux 'secondaire'. VOCABULAIRE : employer 'source officielle' / 'document canonique' ; proscrire les termes flous ('source vive'). Pour une source remplacée/fermée : 'antérieure / abrogée / migrée'.",
+      "verif": "python3 scripts/source_trust_protocol.py (tout 'officiel' doit être une autorité publique tier1) + revue manuelle : aucune fédération pro/presse/forum typée 'officiel'"
     }
   ]
 }

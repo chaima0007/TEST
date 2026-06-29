@@ -550,3 +550,31 @@ python3 scripts/anomaly_register.py --add "url|nature|ecart|source_canonique"   
 python3 scripts/loi_reference_audit.py && python3 scripts/source_trust_protocol.py && \
 python3 scripts/norm_hierarchy_guard.py && python3 scripts/anomaly_register.py
 ```
+
+---
+
+## 20. Couverture territoriale intégrale (§20, P-COUVERTURE-TERRITORIALE)
+
+**Directive (Chaima, 2026-06-29)** : toute analyse/fiche portant sur le territoire belge **DOIT** intégrer, de manière **indissociable**, les **quatre entités fédérées** + le **fédéral** (quand il est compétent) :
+
+| Entité | Exemple handicap | Exemple emploi | Exemple APA |
+|--------|------------------|----------------|-------------|
+| Fédéral | handicap.belgium.be (DG HAN) | onem.be (allocations) | — (régionalisé) |
+| Wallonie | aviq.be | leforem.be | aviq.be |
+| Flandre | vaph.be | vdab.be | vlaamsesocialebescherming.be |
+| Bruxelles | handicap.brussels (PHARE/COCOF) | actiris.brussels | iriscare.brussels |
+| Communauté germanophone | selbstbestimmt.be (DSL) | adg.be | selbstbestimmt.be |
+
+**Règles :** chaque entité citée via son **portail officiel** à **racine vérifiée active** (cf. §16-bis) ; **répartition des compétences** respectée (§17). **Le non-respect de l'exhaustivité = REJET du livrable.** Portails validés : `data/governance/directives_session_2026-06-29.json`.
+
+---
+
+## 21. Qualification stricte des sources (§21, P-QUALIFICATION-SOURCES)
+
+**Directive (Chaima, 2026-06-29) :**
+- Sont **'officiel'** UNIQUEMENT : le **législateur** et les **autorités publiques** (EUR-Lex, Commission, AI Office, SPF/SPW, `.fgov.be`/`.belgium.be`/portails régionaux, Moniteur belge, agences publiques).
+- Ne sont **JAMAIS 'officiel'** (au mieux `secondaire`) : **fédérations professionnelles** (ex. `notaire.be`), presse, blogs, forums, agrégateurs, moteurs généralistes.
+- **Vocabulaire** : « source officielle » / « document canonique ». **Proscrits** : termes flous (« source vive »). Source remplacée/fermée → « antérieure / abrogée / migrée ».
+- **Base légale d'une fiche** : pointer vers le **texte canonique** (de préférence `ejustice.just.fgov.be` pour le droit belge), jamais vers une fédération professionnelle.
+
+> Journal consolidé des directives du jour : `data/governance/directives_session_2026-06-29.json` (suivi des consignes, zéro répétition).
