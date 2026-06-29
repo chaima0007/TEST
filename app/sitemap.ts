@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/en",
     "/conformite",
     "/conformite-2026",
+    "/echeances-2026",
     "/offres-conformite",
     "/fiduciaires",
     "/faq",
