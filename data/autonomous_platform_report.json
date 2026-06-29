@@ -1,11 +1,11 @@
 {
-  "genere_le": "2026-06-29T10:17:55.970249+00:00",
+  "genere_le": "2026-06-29T10:23:07.539090+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
-    "reponses": 443,
-    "sources": 755,
-    "modules": 139,
-    "sources_officielles": 610,
+    "reponses": 451,
+    "sources": 764,
+    "modules": 141,
+    "sources_officielles": 619,
     "caelum_normes": 17,
     "caelum": {
       "normes": 17,
@@ -18,7 +18,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 39,
+      "ms": 40,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -34,7 +34,7 @@
       "protocole": "legal_change_sensor",
       "cmd": "python3 scripts/legal_change_sensor.py",
       "returncode": 0,
-      "ms": 74,
+      "ms": 73,
       "sortie": "  → data/legal_change.json",
       "verdict": "OK"
     },
@@ -42,7 +42,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 322,
+      "ms": 422,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -103,7 +103,7 @@
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 8,
-      "pct_corpus": 1.05,
+      "pct_corpus": 1.06,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -111,8 +111,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 39,
-      "pct_corpus": 5.18,
+      "urls_impactees_moy": 40,
+      "pct_corpus": 5.21,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -120,29 +120,29 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 113,
-      "pct_corpus": 14.92,
+      "urls_impactees_moy": 116,
+      "pct_corpus": 15.15,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
     {
       "scenario": "Build · Aujourd'hui",
       "type": "etat",
-      "pages_estimees": 186,
+      "pages_estimees": 188,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +1 an (x2)",
       "type": "stress",
-      "pages_estimees": 372,
+      "pages_estimees": 376,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +3 ans (x4)",
       "type": "stress",
-      "pages_estimees": 744,
+      "pages_estimees": 752,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
@@ -173,7 +173,7 @@
     {
       "scenario": "Données · Couverture sources officielles",
       "type": "etat",
-      "pct_officiel": 80.8,
+      "pct_officiel": 81.0,
       "verdict": "OK",
       "mitigation": "protocole de confiance des sources (tier1)"
     },
@@ -187,8 +187,8 @@
     {
       "scenario": "Veille juridique · Fraîcheur des fiches",
       "type": "etat",
-      "modules": 139,
-      "frais": 139,
+      "modules": 141,
+      "frais": 141,
       "a_reverifier": 0,
       "prioritaire": 0,
       "sources_modifiees": 0,
@@ -199,10 +199,10 @@
       "scenario": "Croissance · Corpus",
       "type": "etat",
       "verdict": "OK",
-      "reponses": 443,
-      "modules": 139,
-      "depuis_naissance": 15,
-      "battements_sans_croissance": 3,
+      "reponses": 451,
+      "modules": 141,
+      "depuis_naissance": 23,
+      "battements_sans_croissance": 0,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -222,7 +222,7 @@
       "plan_faits": 5,
       "plan_total": 12,
       "prochaine_etape": "Compléter l'identité légale (mentions légales)",
-      "battements_sans_progres": 2,
+      "battements_sans_progres": 3,
       "mitigation": "avancer le plan (PLAN_MARKETING_GRANDS_COMPTES_CAELUM.md) — ne pas stagner"
     },
     {
@@ -233,7 +233,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629101755",
+    "seal_id": "AUTO-20260629102307",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 80.8,
@@ -251,8 +251,8 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 16,
-    "age_jours": 0.03,
+    "battements": 17,
+    "age_jours": 0.04,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
