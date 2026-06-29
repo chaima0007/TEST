@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/calculateur-aide-nette",
     "/offres-conformite",
     "/fiduciaires",
+    "/confiance",
     "/faq",
     "/plateforme-autonome",
     "/veille",
