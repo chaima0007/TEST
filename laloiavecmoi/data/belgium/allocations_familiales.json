@@ -58,6 +58,51 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ALLOC-REGIONAL-001",
+      "question": "À quelle caisse m'adresser selon ma région ?",
+      "reponse": "Depuis la 6e réforme de l'État, les allocations familiales sont une compétence RÉGIONALE/COMMUNAUTAIRE : la caisse dépend du lieu de résidence de l'enfant. En WALLONIE : FAMIWAL (caisse publique) ou une caisse privée agréée. En FLANDRE : le Groeipakket, via l'un des cinq organismes payeurs (avec un montant de départ unique à la naissance/adoption). À BRUXELLES : FAMIRIS (caisse publique) ou une caisse privée. En COMMUNAUTÉ GERMANOPHONE (Ostbelgien) : les prestations familiales sont gérées par le Ministère de la Communauté germanophone. Les montants et suppléments varient selon l'entité : adressez-vous à votre caisse.",
+      "reference_legale": "Compétence régionalisée des prestations familiales : décret wallon relatif aux allocations familiales (FAMIWAL) ; décret flamand relatif au Groeipakket ; ordonnance bruxelloise relative aux prestations familiales (FAMIRIS) ; décret de la Communauté germanophone relatif aux prestations familiales",
+      "contacts": [
+        {
+          "nom": "FAMIWAL (Wallonie)",
+          "lien": "https://www.famiwal.be/",
+          "pour": "allocations familiales en Wallonie"
+        },
+        {
+          "nom": "Groeipakket (Flandre)",
+          "lien": "https://www.groeipakket.be/",
+          "pour": "Groeipakket en Flandre"
+        },
+        {
+          "nom": "FAMIRIS (Bruxelles)",
+          "lien": "https://www.famiris.brussels/",
+          "pour": "allocations familiales à Bruxelles"
+        },
+        {
+          "nom": "Ministère de la Communauté germanophone",
+          "pour": "prestations familiales en région de langue allemande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.famiwal.be/",
+          "intitule": "FAMIWAL — caisse publique wallonne d allocations familiales"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.groeipakket.be/",
+          "intitule": "Groeipakket — prestations familiales en Flandre"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.famiris.brussels/",
+          "intitule": "FAMIRIS — caisse publique bruxelloise"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

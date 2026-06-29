@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 490,
-    "sources_officielles": 692,
-    "faits_avec_contacts": 222,
+    "faits": 491,
+    "sources_officielles": 695,
+    "faits_avec_contacts": 223,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -135,9 +135,9 @@
       "titre": "Allocations familiales — qui, comment, combien",
       "domaine": "Allocations familiales",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 1,
+      "faits": 3,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
     },

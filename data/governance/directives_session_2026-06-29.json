@@ -127,6 +127,13 @@
       "integration_systeme": "REFUSÉ pour raisons de sécurité (P-HONNETETE/P-SECURITE): ne pas désactiver le classifieur de sécurité du harnais ni construire un dispositif de contournement des refus. Chemin correct: Chaima ajoute elle-même la règle de permission (humain dans la boucle). Réessai autorisé UNIQUEMENT sur erreurs transitoires, jamais sur un deny.",
       "protocole": "P-SECURITE / P-HONNETETE",
       "statut": "REFUS ACTÉ"
+    },
+    {
+      "id": "D-19",
+      "consigne": "Mode d'exécution pleinement autonome: exécuter sans demander confirmation, assumer les choix techniques, rapport de situation détaillé à chaque étape, sans solliciter d'intervention humaine.",
+      "integration_systeme": "Renforce P-DISCIPLINE-EXECUTION (§23). Exceptions inchangées: décisions réservées à Chaima (prix/identité/webhook) + actions destructives/non autorisées par la sécurité.",
+      "protocole": "P-DISCIPLINE-EXECUTION (§23)",
+      "statut": "EN VIGUEUR"
     }
   ],
   "portails_officiels_valides_2026-06-29": {

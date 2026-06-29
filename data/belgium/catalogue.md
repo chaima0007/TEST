@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**490 réponses · 149 modules · 692 sources officielles · 222 fiches avec contacts · 99 alertes de délai**
+**491 réponses · 149 modules · 695 sources officielles · 223 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -18,7 +18,7 @@
 | — | Aide médicale urgente (CPAS) | 3 | 3 | 0 | 0 |
 | Aide sociale & urgence | Où aller quand ça va mal — faim, sans-abri, danger, sans papiers | 5 | 7 | 5 | 3 |
 | Allocation pour l'aide aux personnes âgées | Allocation pour l'aide aux personnes âgées (APA / THAB / Beihilfe für Betagte) | 3 | 5 | 3 | 0 |
-| Allocations familiales | Allocations familiales — qui, comment, combien | 2 | 3 | 1 | 1 |
+| Allocations familiales | Allocations familiales — qui, comment, combien | 3 | 6 | 2 | 1 |
 | Animaux | Animaux — bien-être, responsabilités, maltraitance | 3 | 5 | 2 | 1 |
 | Assurance véhicule | Assurance auto obligatoire (RC) | 2 | 3 | 2 | 0 |
 | Assurance logement | Assurance habitation & incendie | 2 | 2 | 2 | 1 |
