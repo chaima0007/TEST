@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**487 réponses · 149 modules · 683 sources officielles · 219 fiches avec contacts · 99 alertes de délai**
+**488 réponses · 149 modules · 686 sources officielles · 220 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -91,7 +91,7 @@
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 6 | 9 | 6 | 5 |
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 3 | 5 | 2 | 3 |
 | Maladie & incapacité | Maladie & incapacité de travail | 2 | 4 | 2 | 1 |
-| Indépendant & activité | Devenir indépendant — démarches pour se lancer | 8 | 16 | 8 | 2 |
+| Indépendant & activité | Devenir indépendant — démarches pour se lancer | 9 | 19 | 9 | 2 |
 | — | Interruption volontaire de grossesse (IVG) | 3 | 3 | 0 | 1 |
 | Job étudiant | Job étudiant — contrat, quota d'heures, cotisations réduites | 3 | 5 | 1 | 2 |
 | Justice & citoyenneté | Juré d'assises — le devoir de juré | 4 | 5 | 0 | 0 |

@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 487,
-    "sources_officielles": 683,
-    "faits_avec_contacts": 219,
+    "faits": 488,
+    "sources_officielles": 686,
+    "faits_avec_contacts": 220,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -1011,9 +1011,9 @@
       "titre": "Devenir indépendant — démarches pour se lancer",
       "domaine": "Indépendant & activité",
       "juridiction": "BE",
-      "faits": 8,
-      "sources_officielles": 16,
-      "faits_avec_contacts": 8,
+      "faits": 9,
+      "sources_officielles": 19,
+      "faits_avec_contacts": 9,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-27"
     },

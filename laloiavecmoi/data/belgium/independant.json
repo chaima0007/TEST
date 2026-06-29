@@ -260,6 +260,47 @@
         }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "IND-AIDE-REGIONALE-001",
+      "question": "Où trouver de l'aide et de l'accompagnement pour mon activité selon ma région ?",
+      "reponse": "Attention à bien distinguer deux niveaux. Le STATUT social d'indépendant (affiliation, cotisations sociales, droits) est FÉDÉRAL : il passe par une caisse d'assurances sociales et l'INASTI. En revanche, l'AIDE, l'ACCOMPAGNEMENT et le FINANCEMENT à l'entrepreneuriat sont RÉGIONAUX, avec un guichet d'information par région : en WALLONIE, Le 1890 (1890.be) ; en FLANDRE, VLAIO — Agentschap Innoveren & Ondernemen (vlaio.be, n° gratuit 0800 20 555) ; à BRUXELLES, le 1819 (1819.brussels). Ces guichets orientent vers les subsides, le financement, le conseil et l'accompagnement à la création et au développement.",
+      "reference_legale": "Statut social des indépendants : arrêté royal n° 38 du 27 juillet 1967 organisant le statut social des travailleurs indépendants (fédéral, INASTI) ; aides à l'économie : compétence régionale (décret wallon, décret flamand, ordonnance bruxelloise)",
+      "contacts": [
+        {
+          "nom": "Le 1890 (Wallonie)",
+          "lien": "https://www.1890.be/",
+          "pour": "information et orientation entrepreneuriale en Wallonie"
+        },
+        {
+          "nom": "VLAIO (Flandre)",
+          "lien": "https://www.vlaio.be/nl",
+          "pour": "accompagnement et aides aux entreprises en Flandre"
+        },
+        {
+          "nom": "1819 (Bruxelles)",
+          "lien": "https://1819.brussels/fr",
+          "pour": "information aux entrepreneurs à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.1890.be/",
+          "intitule": "Le 1890 — entreprendre en Wallonie"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaio.be/nl",
+          "intitule": "VLAIO — Agentschap Innoveren en Ondernemen (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://1819.brussels/fr",
+          "intitule": "1819 — information aux entrepreneurs (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }
