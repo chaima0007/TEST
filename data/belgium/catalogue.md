@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**495 réponses · 150 modules · 706 sources officielles · 227 fiches avec contacts · 100 alertes de délai**
+**497 réponses · 151 modules · 709 sources officielles · 229 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -82,6 +82,7 @@
 | Fin de vie | Fin de vie — déclarations anticipées & droits | 2 | 4 | 2 | 0 |
 | Fonction publique | Travailler dans le secteur public | 2 | 4 | 2 | 0 |
 | Fonds social chauffage | Fonds social chauffage (Fonds social mazout) — allocation de chauffage | 4 | 4 | 4 | 1 |
+| Formation en alternance | Formation en alternance / apprentissage (apprendre un métier) | 2 | 3 | 2 | 0 |
 | Fraude & sécurité numérique | Arnaques & fraude en ligne — réagir vite | 2 | 4 | 2 | 1 |
 | Décès & démarches | Funérailles, sépulture & dernières volontés (Wallonie) | 4 | 4 | 1 | 0 |
 | Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 3 | 5 | 3 | 0 |

@@ -1,0 +1,77 @@
+{
+  "module": "formation_alternance",
+  "titre": "Formation en alternance / apprentissage (apprendre un métier)",
+  "domaine": "Formation en alternance",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Formation en alternance et apprentissage (compétence régionale/communautaire) : apprendre un métier en combinant pratique en entreprise et cours en centre de formation",
+    "portee": "Jeunes dès 15 ans et adultes souhaitant apprendre un métier en alternance",
+    "source_officielle": "https://www.ifapme.be/"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "L'opérateur compétent dépend de votre région/communauté. Conditions d'âge, statut et indemnités varient : renseignez-vous auprès de l'opérateur de votre région avant de vous engager.",
+  "faits": [
+    {
+      "id": "ALT-PRINCIPE-001",
+      "question": "Qu'est-ce que la formation en alternance et qui peut s'y inscrire ?",
+      "reponse": "La formation en alternance permet d'apprendre un métier en combinant un apprentissage en entreprise et des cours en centre de formation. Elle s'adresse aux jeunes (souvent dès 15 ans) comme aux adultes (formations de chef d'entreprise, création d'activité). On y conclut un contrat/convention avec une entreprise et l'opérateur de formation, généralement assorti d'une indemnité. C'est une compétence régionale/communautaire : l'opérateur dépend de votre lieu de résidence.",
+      "reference_legale": "Compétence régionale/communautaire de la formation en alternance : décret wallon relatif à la formation en alternance (IFAPME) ; décret de la Communauté flamande relatif à l'apprentissage dual (duaal leren) ; décret de la Communauté germanophone relatif à la formation en alternance (IAWM)",
+      "contacts": [
+        {
+          "nom": "IFAPME (Wallonie)",
+          "lien": "https://www.ifapme.be/",
+          "pour": "alternance et formation de chef d entreprise en Wallonie"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ifapme.be/",
+          "intitule": "IFAPME — formation en alternance (Wallonie)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ALT-REGIONAL-001",
+      "question": "À quel opérateur m'adresser selon ma région ?",
+      "reponse": "En WALLONIE : l'IFAPME (apprentissage des jeunes et formation de chef d'entreprise). À BRUXELLES (francophone) : l'efp (et le SFPME) pour l'alternance ; côté néerlandophone, l'offre flamande s'applique. En FLANDRE : l'apprentissage dual (duaal leren), organisé via l'enseignement flamand et Syntra Vlaanderen. En COMMUNAUTÉ GERMANOPHONE (Ostbelgien) : l'IAWM (Institut pour la formation et la formation continue dans les classes moyennes et les PME). Adressez-vous à l'opérateur de votre région pour les conditions exactes.",
+      "reference_legale": "Compétence régionale/communautaire : décret wallon (IFAPME) ; réglementation de la Commission communautaire française (efp/SFPME) ; décret flamand (duaal leren / Syntra) ; décret de la Communauté germanophone (IAWM)",
+      "contacts": [
+        {
+          "nom": "IFAPME (Wallonie)",
+          "lien": "https://www.ifapme.be/",
+          "pour": "Wallonie"
+        },
+        {
+          "nom": "efp (Bruxelles francophone)",
+          "lien": "https://www.efp.be/",
+          "pour": "alternance à Bruxelles (FR)"
+        },
+        {
+          "nom": "Syntra Vlaanderen / duaal leren (Flandre)",
+          "pour": "apprentissage dual en Flandre"
+        },
+        {
+          "nom": "IAWM (Communauté germanophone)",
+          "pour": "alternance en région de langue allemande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ifapme.be/",
+          "intitule": "IFAPME — alternance (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.efp.be/",
+          "intitule": "efp — centre de formation en alternance (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
