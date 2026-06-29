@@ -1,9 +1,9 @@
 {
-  "genere_le": "2026-06-29T09:51:41.883398+00:00",
-  "total": 3,
+  "genere_le": "2026-06-29T09:54:58.415913+00:00",
+  "total": 4,
   "par_priorite": {
     "haute": 0,
-    "moyenne": 2,
+    "moyenne": 3,
     "basse": 1
   },
   "taches": [
@@ -27,6 +27,15 @@
     },
     {
       "id": "T03",
+      "titre": "Croissance · Corpus",
+      "categorie": "état",
+      "priorite": "moyenne",
+      "action_suggeree": "Ajouter de nouveaux domaines juridiques vérifiés (loi en vigueur + source officielle).",
+      "humain": true,
+      "organe": "scénario"
+    },
+    {
+      "id": "T04",
       "titre": "Fragilité : Sources · Panne large",
       "categorie": "résilience",
       "priorite": "basse",

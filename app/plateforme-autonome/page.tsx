@@ -17,7 +17,8 @@ type Scenario = { scenario: string; type?: string; verdict: string; mitigation?:
   p95_ms?: number; p99_ms?: number; pct_sous_200ms?: number; pct_corpus?: number;
   urls_impactees_moy?: number; pages_estimees?: number;
   urls_testees?: number; vivantes_pct?: number; mortes?: number;
-  modules?: number; frais?: number; a_reverifier?: number; prioritaire?: number; sources_modifiees?: number };
+  modules?: number; frais?: number; a_reverifier?: number; prioritaire?: number; sources_modifiees?: number;
+  reponses?: number; depuis_naissance?: number; battements_sans_croissance?: number };
 
 function lire(rel: string): Record<string, unknown> {
   try {
@@ -141,6 +142,9 @@ export default function PlateformeAutonome() {
                 )}
                 {typeof s.frais === "number" && (
                   <p className="text-xs text-slate-300 mt-1">🟢 {s.frais} frais · 🟠 {s.a_reverifier} à revérifier · 🔴 {s.prioritaire} prioritaire{s.sources_modifiees ? ` · ${s.sources_modifiees} sources modifiées` : ""}</p>
+                )}
+                {typeof s.depuis_naissance === "number" && (
+                  <p className="text-xs text-slate-300 mt-1">📈 +{s.depuis_naissance} réponses depuis la naissance · {s.battements_sans_croissance} battement(s) sans croissance</p>
                 )}
                 {s.mitigation && <p className="text-xs text-slate-400 mt-1.5">🛡️ {s.mitigation}</p>}
               </div>

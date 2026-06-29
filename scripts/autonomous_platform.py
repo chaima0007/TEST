@@ -265,6 +265,39 @@ def scn_securite(n: int) -> list:
     }]
 
 
+def scn_croissance(corpus: dict) -> list:
+    """Croissance : la plateforme grandit-elle ? Lit sa mémoire (historique des battements
+    AVANT le battement courant) et détecte la stagnation pour réclamer de nouveaux domaines."""
+    SEUIL = 5  # battements sans croissance avant alerte
+    try:
+        vit = json.load(open(VITALS, encoding="utf-8"))
+        hist = vit.get("historique", [])
+    except Exception:
+        hist = []
+    rep = corpus["reponses"]
+    if len(hist) < 2:
+        return [{
+            "scenario": "Croissance · Corpus", "type": "etat", "verdict": OK,
+            "reponses": rep, "modules": corpus["modules"], "depuis_naissance": 0,
+            "battements_sans_croissance": 0, "mitigation": "jeune pousse — historique en constitution"
+        }]
+    naissance_rep = hist[0].get("reponses", rep)
+    # battements consécutifs (depuis la fin) au même nombre de réponses que maintenant
+    stagn = 0
+    for h in reversed(hist):
+        if h.get("reponses", -1) == rep:
+            stagn += 1
+        else:
+            break
+    verdict = ALERTE if stagn >= SEUIL else OK
+    return [{
+        "scenario": "Croissance · Corpus", "type": "etat", "verdict": verdict,
+        "reponses": rep, "modules": corpus["modules"],
+        "depuis_naissance": rep - naissance_rep, "battements_sans_croissance": stagn,
+        "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
+    }]
+
+
 def scn_veille() -> list:
     """Veille juridique : fraîcheur des fiches + changements de sources (organe réel)."""
     try:
@@ -299,6 +332,7 @@ def moteur_scenarios(n: int, corpus: dict) -> list:
     scenarios += scn_donnees(corpus)
     scenarios += scn_securite(n)
     scenarios += scn_veille()
+    scenarios += scn_croissance(corpus)
     scenarios += scn_langues()
     return scenarios
 
@@ -423,6 +457,7 @@ ACTIONS = {
     "Webhook leads": ("Configurer la variable d'env LEADS_WEBHOOK_URL (réception des leads).", True),
     "Identité légale": ("Compléter data/identite.ts (dénomination, BCE, TVA, forme juridique).", True),
     "Panne large": ("Exécuter le capteur en réseau ouvert + planifier source_change_detector (cron).", False),
+    "Croissance": ("Ajouter de nouveaux domaines juridiques vérifiés (loi en vigueur + source officielle).", True),
 }
 
 
