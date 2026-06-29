@@ -47,7 +47,7 @@ if [ -f scripts/autonomous_platform.py ]; then
   echo "🫀 Battement de la plateforme autonome…"
   if python3 scripts/autonomous_platform.py --fast --n 20000 >/tmp/_heart.log 2>&1; then
     grep "🗣️" /tmp/_heart.log | tail -1
-    git add data/platform_vitals.json data/autonomous_platform_report.json 2>/dev/null || true
+    git add data/platform_vitals.json data/autonomous_platform_report.json data/platform_todo.json data/certification_report.json 2>/dev/null || true
   else
     grep "🗣️" /tmp/_heart.log | tail -1
     echo "🛑 Plateforme en état CRITIQUE :"; tail -6 /tmp/_heart.log; fail=1

@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T17:25:53.669909+00:00",
+  "genere_le": "2026-06-29T17:26:49.862599+00:00",
   "monte_carlo_n": 20000,
   "corpus": {
     "reponses": 489,
@@ -54,7 +54,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 102,
+      "p99_ms": 101,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -69,8 +69,8 @@
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
-      "urls_impactees_moy": 9,
-      "pct_corpus": 1.14,
+      "urls_impactees_moy": 7,
+      "pct_corpus": 0.82,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -78,8 +78,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 37,
-      "pct_corpus": 4.51,
+      "urls_impactees_moy": 35,
+      "pct_corpus": 4.33,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -87,8 +87,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 127,
-      "pct_corpus": 15.56,
+      "urls_impactees_moy": 121,
+      "pct_corpus": 14.81,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -165,11 +165,11 @@
     {
       "scenario": "Croissance · Corpus",
       "type": "etat",
-      "verdict": "OK",
+      "verdict": "ALERTE",
       "reponses": 489,
       "modules": 149,
       "depuis_naissance": 61,
-      "battements_sans_croissance": 4,
+      "battements_sans_croissance": 5,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -189,7 +189,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 37,
+      "battements_sans_progres": 38,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -225,13 +225,13 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629172553",
+    "seal_id": "AUTO-20260629172649",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 72.0,
-    "verts": 18,
+    "score_resilience": 68.0,
+    "verts": 17,
     "total": 25,
-    "autonomie_systeme_pct": 93.3,
+    "autonomie_systeme_pct": 86.7,
     "decisions_humaines_en_attente": [
       "Déploiement · Webhook leads non configuré",
       "Données · Identité légale Caelum"
@@ -242,6 +242,7 @@
     "alertes_etat_a_corriger": [
       "Déploiement · Webhook leads non configuré",
       "Données · Identité légale Caelum",
+      "Croissance · Corpus",
       "Plan stratégique · Avancement",
       "Anomalies doc · Obsolescence",
       "Veille marché · Opportunités"
@@ -250,15 +251,15 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 60,
+    "battements": 61,
     "age_jours": 0.33,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
-    "total": 6,
+    "total": 7,
     "par_priorite": {
       "haute": 0,
-      "moyenne": 5,
+      "moyenne": 6,
       "basse": 1
     }
   },
