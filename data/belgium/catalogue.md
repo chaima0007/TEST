@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**477 réponses · 147 modules · 650 sources officielles · 209 fiches avec contacts · 98 alertes de délai**
+**477 réponses · 147 modules · 651 sources officielles · 209 fiches avec contacts · 98 alertes de délai**
 
 ## Modules en ligne
 
@@ -85,7 +85,7 @@
 | Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 2 | 3 | 2 | 0 |
 | Gouvernement & institutions | Gouvernement & institutions — comment la Belgique est gouvernée | 5 | 10 | 0 | 0 |
 | — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
-| Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 5 | 9 | 5 | 0 |
+| Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 5 | 10 | 5 | 0 |
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 6 | 9 | 6 | 5 |
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 3 | 5 | 2 | 3 |
 | Maladie & incapacité | Maladie & incapacité de travail | 2 | 4 | 2 | 1 |

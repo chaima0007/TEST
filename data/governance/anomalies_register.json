@@ -42,6 +42,16 @@
       "source_canonique": "EUR-Lex CELEX:32024L1233 (in force)",
       "action": "RÉSOLU : la fiche permis_unique cite désormais la Directive (UE) 2024/1233 (en vigueur) comme base ; la directive périmée 2011/98 n'est citée nulle part. Watchlist temporel armée (PERMIS-UNIQUE-DIR) pour bloquer toute citation future de 2011/98 comme en vigueur.",
       "statut": "resolu"
+    },
+    {
+      "id": "ANO-005",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "phare.irisnet.be — ancien site du Service PHARE (Bruxelles)",
+      "nature": "obsolescence (site fermé/migré)",
+      "ecart": "Le site phare.irisnet.be est FERMÉ et redirige: l'information handicap RBC est désormais sur handicap.brussels (aides/services) et sur le site de la COCOF (compétences PHARE, formulaires). Ne pas citer phare.irisnet.be comme source vive.",
+      "source_canonique": "handicap.brussels + site COCOF",
+      "action": "à planifier (MAJ auto ou humaine)",
+      "statut": "ouvert"
     }
   ]
 }
