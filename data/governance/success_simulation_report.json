@@ -1,0 +1,17 @@
+{
+  "N": 1000000000,
+  "pct_par_front": {
+    "caelum_mrr": 99.7411827,
+    "llam_audience": 86.6679798,
+    "llam_financement": 59.9988775,
+    "technique": 84.134177,
+    "contenu": 97.7254478
+  },
+  "pct_tous_les_fronts": 42.643471,
+  "mrr_moyen_eur_mois": 40801.850822875356,
+  "mrr_par_seuil_pct": {
+    "5000": 99.7411827,
+    "10000": 96.373389,
+    "20000": 79.5047471
+  }
+}

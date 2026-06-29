@@ -1,0 +1,29 @@
+{
+  "but": "Synthèse chiffrée des études de marché, APPLIQUÉE aux projets et utilisée comme paramètres de la simulation de réussite (success_simulation.py). Sources : voir les fichiers ETUDE_*.md.",
+  "date": "2026-06-29",
+  "caelum": {
+    "tam_pme_be": 1186099,
+    "tam_source": "Statbel / SPF Economie, 31/12/2024",
+    "penetration_pct": { "min": 0.01, "mode": 0.05, "max": 0.30, "note": "scénarios prudent/réaliste/ambitieux de l'étude" },
+    "arpu_eur_mois": { "min": 19, "mode": 28, "max": 39, "note": "offre Essentiel, benchmark e-facturation 5-50€/mois" },
+    "seuils_mrr_eur_mois": [5000, 10000, 20000],
+    "canal_cle": "fiduciaires (ITAA ~3728 cabinets, ~15000 membres) — B2B2B"
+  },
+  "laloiavecmoi": {
+    "modele": "gratuit (info) + soutenabilité éthique (subsides/dons)",
+    "reference_concurrent": "Droits Quotidiens (2598 fiches, 39€/consult, 89€/an) — freemium viable",
+    "visites_mensuelles_maturite": { "min": 2000, "mode": 12000, "max": 50000, "note": "objectif via SEO longue traîne" },
+    "objectif_visites": 10000,
+    "proba_financement": { "min": 0.40, "max": 0.80, "note": "subsides/appels à projets accès au droit" }
+  },
+  "technique": {
+    "p95_ms": { "moyenne": 90, "ecart_type": 25, "source": "tests de charge internes, p95<111ms" },
+    "uptime_pct": { "moyenne": 99.8, "ecart_type": 0.3 },
+    "seuil_p95_ms": 200,
+    "seuil_uptime_pct": 99.5
+  },
+  "contenu": {
+    "viabilite_pct": { "moyenne": 100, "ecart_type": 0.5, "source": "content_controller 100%/100%" },
+    "seuil_viabilite_pct": 99
+  }
+}
