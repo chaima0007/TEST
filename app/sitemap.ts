@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ai-act",
     "/peppol",
     "/calculateur-aide-nette",
+    "/mon-registre",
     "/offres-conformite",
     "/fiduciaires",
     "/confiance",

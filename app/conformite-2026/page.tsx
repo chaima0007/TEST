@@ -365,6 +365,11 @@ export default function Conformite2026Page() {
   <button class="btn noprint" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
 </body></html>`;
 
+    enregistrerAuRegistre({
+      type: "attestation", ref, raison_sociale: raisonSociale.trim() || null,
+      pct_global: pctGlobal, normes: res.directs.map((n) => n.nom),
+    });
+
     const w = window.open("", "_blank");
     if (!w) return;
     w.document.write(html);
@@ -414,6 +419,16 @@ export default function Conformite2026Page() {
       a.href = url; a.download = "badge-conformite-caelum.png"; a.click();
       URL.revokeObjectURL(url);
     }, "image/png");
+  }
+
+  // Registre de conformité LOCAL (navigateur, aucun envoi serveur). Switching-cost honnête.
+  function enregistrerAuRegistre(entry: Record<string, unknown>) {
+    try {
+      const cle = "caelum_registre";
+      const arr = JSON.parse(localStorage.getItem(cle) || "[]");
+      arr.push({ date: new Date().toISOString(), ...entry });
+      localStorage.setItem(cle, JSON.stringify(arr.slice(-100)));
+    } catch {}
   }
 
   function partagerLinkedIn() {

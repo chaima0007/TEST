@@ -410,6 +410,7 @@ export default function Home() {
             <Link href="/echeances-2026" className="hover:text-slate-900">Échéances 2026</Link>
             <Link href="/calculateur-aide-nette" className="hover:text-slate-900">Calculateur d&apos;aide</Link>
             <Link href="/confiance" className="hover:text-slate-900">Sécurité & Confiance</Link>
+            <Link href="/mon-registre" className="hover:text-slate-900">Mon registre</Link>
             <Link href="/faq" className="hover:text-slate-900">FAQ</Link>
             <Link href="/assistant-reglementaire" className="hover:text-slate-900">Assistant réglementaire</Link>
             <Link href="/appels-projets" className="hover:text-slate-900">Appels à projets</Link>
