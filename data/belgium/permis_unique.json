@@ -1,0 +1,104 @@
+{
+  "module": "permis_unique",
+  "titre": "Permis unique / autorisation de travail (travailleur non-EEE)",
+  "domaine": "Permis unique (travailleur étranger)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Directive (UE) 2024/1233 établissant la procédure de permis unique (refonte, en vigueur — remplace la directive 2011/98/UE) ; en Wallonie, l'autorisation de travail est délivrée par le Service public de Wallonie, l'autorisation de séjour par l'Office des étrangers",
+    "portee": "Ressortissants de pays tiers (hors UE, Norvège, Islande, Liechtenstein, Suisse) venant travailler comme salariés en Belgique",
+    "source_officielle": "https://emploi.wallonie.be/home/travailleurs-etrangers/permis-de-travail.html"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information vérifiée pour la WALLONIE (Service public de Wallonie). Le permis de travail est une compétence RÉGIONALE : Bruxelles-Capitale, la Région flamande et la Communauté germanophone ont leurs propres services et règles — vérifiez la procédure de votre région de travail. Ne remplace pas un conseil individualisé.",
+  "faits": [
+    {
+      "id": "PU-PRINCIPE-001",
+      "question": "Je viens d'un pays hors UE : de quoi ai-je besoin pour travailler comme salarié en Belgique ?",
+      "reponse": "Si vous êtes originaire d'un pays hors Espace économique européen (UE, Norvège, Islande, Liechtenstein, Suisse), vous devez être à la fois autorisé à SÉJOURNER et autorisé à TRAVAILLER en Belgique. L'autorisation de séjour est délivrée par l'Office des étrangers ; l'autorisation de travail, en Wallonie, par le Service public de Wallonie. Le permis unique réunit ces deux volets (séjour + travail) au sein d'une seule procédure de demande. Dans certains cas, aucune autorisation de travail n'est requise (dispenses).",
+      "reference_legale": "Directive (UE) 2024/1233 établissant la procédure de permis unique (refonte) ; autorisation de travail délivrée par le Service public de Wallonie",
+      "contacts": [
+        {
+          "nom": "Service public de Wallonie — Emploi",
+          "lien": "https://emploi.wallonie.be/home/travailleurs-etrangers/permis-de-travail.html",
+          "pour": "autorisation de travail (Wallonie)"
+        },
+        {
+          "nom": "Office des étrangers",
+          "lien": "https://dofi.ibz.be/fr",
+          "pour": "autorisation de séjour"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.wallonie.be/home/travailleurs-etrangers/permis-de-travail/vous-etes-travailleur.html",
+          "intitule": "SPW Emploi — Travailleur étranger : permis de travail"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1233",
+          "intitule": "EUR-Lex — Directive (UE) 2024/1233 (permis unique, refonte, in force)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PU-DEMANDE-001",
+      "question": "Qui introduit la demande, et où dois-je me trouver à ce moment-là ?",
+      "reponse": "C'est votre EMPLOYEUR qui introduit la demande d'autorisation de travail pour vous : il fournit les informations sur la fonction à occuper, et vous fournissez les informations sur votre identité. En principe, sauf pour certaines fonctions, vous devez séjourner dans votre pays d'origine au moment de la demande. Vous pouvez toutefois faire la demande en étant déjà en Belgique si vous y résidez déjà légalement (par exemple comme étudiant·e ou comme personne hautement qualifiée), ou si vous disposez déjà d'une autorisation de travail dans une autre région (Bruxelles-Capitale, Région flamande, Communauté germanophone).",
+      "reference_legale": "Directive (UE) 2024/1233 (permis unique, refonte) ; procédure d'autorisation de travail du Service public de Wallonie",
+      "contacts": [
+        {
+          "nom": "Votre (futur) employeur",
+          "pour": "introduction de la demande d'autorisation de travail"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.wallonie.be/home/travailleurs-etrangers/permis-de-travail/vous-etes-travailleur.html",
+          "intitule": "SPW Emploi — Qui doit faire la demande et quand"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PU-TYPES-001",
+      "question": "Quels types de permis existent et combien de temps sont-ils valables ?",
+      "reponse": "Il existe différents types d'autorisations selon la fonction et la durée du contrat : le permis B, le permis unique de durée limitée et le permis unique de durée illimitée. Après un certain temps sous autorisation de durée limitée, vous pouvez introduire une demande de permis illimité. Important : le permis est délivré pour un travailleur, chez un employeur donné et dans une fonction donnée — tout changement de l'un de ces éléments entraîne une nouvelle demande. La validité dépend de la durée fixée dans le contrat de travail et du type d'autorisation reçue.",
+      "reference_legale": "Directive (UE) 2024/1233 (permis unique, refonte) ; types d'autorisations délivrés par le Service public de Wallonie",
+      "alerte_delai": "Le permis est lié à un employeur et à une fonction précis : tout changement (employeur ou fonction) impose une nouvelle demande — anticipez-la avant le changement.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.wallonie.be/home/travailleurs-etrangers/permis-de-travail/vous-etes-travailleur.html",
+          "intitule": "SPW Emploi — Types d'autorisations et validité"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PU-COMPETENCE-001",
+      "question": "Que délivre exactement la Wallonie, et que faire si je travaille dans une autre région ?",
+      "reponse": "La Wallonie délivre UNIQUEMENT l'autorisation de travail : elle ne délivre ni numéro national, ni autorisation de séjour, ni ordre de quitter le territoire (ces aspects relèvent de l'Office des étrangers et de la commune). Le permis de travail étant une compétence régionale, si vous travaillez à Bruxelles, en Flandre ou en Communauté germanophone, adressez-vous au service compétent de cette région. Une fois l'autorisation accordée : si vous résidez à l'étranger, votre employeur vous transmet les documents et vous obtenez un visa via le poste diplomatique ; si vous êtes déjà en Belgique, votre employeur vous transmet les documents adéquats. En tant que travailleur sous permis, vous bénéficiez des mêmes droits qu'un travailleur belge (dont un salaire au minimum légal).",
+      "reference_legale": "Directive (UE) 2024/1233 (permis unique, refonte) ; compétence régionale d'autorisation de travail du Service public de Wallonie",
+      "contacts": [
+        {
+          "nom": "Office des étrangers",
+          "lien": "https://dofi.ibz.be/fr",
+          "pour": "séjour, numéro national, visa"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.wallonie.be/home/travailleurs-etrangers/permis-de-travail/vous-etes-travailleur.html",
+          "intitule": "SPW Emploi — Compétence wallonne et étapes après octroi"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 146,
-    "faits": 471,
-    "sources_officielles": 642,
-    "faits_avec_contacts": 204,
-    "faits_avec_alerte_delai": 97
+    "modules": 147,
+    "faits": 475,
+    "sources_officielles": 647,
+    "faits_avec_contacts": 207,
+    "faits_avec_alerte_delai": 98
   },
   "modules": [
     {
@@ -1266,6 +1266,18 @@
       "faits": 4,
       "sources_officielles": 6,
       "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "permis_unique.json",
+      "module": "permis_unique",
+      "titre": "Permis unique / autorisation de travail (travailleur non-EEE)",
+      "domaine": "Permis unique (travailleur étranger)",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-29"
     },

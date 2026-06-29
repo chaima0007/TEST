@@ -40,8 +40,8 @@
       "nature": "obsolescence temporelle (abrogation)",
       "ecart": "Directive 2011/98/UE n'est PLUS en vigueur (fin validité 21/05/2026, abrogée par 32024L1233). Base UE actuelle = Directive (UE) 2024/1233 du 24/04/2024 (refonte, in force). Piégé via canal de résilience EUR-Lex AVANT toute publication.",
       "source_canonique": "EUR-Lex CELEX:32024L1233 (in force)",
-      "action": "à planifier (MAJ auto ou humaine)",
-      "statut": "ouvert"
+      "action": "RÉSOLU : la fiche permis_unique cite désormais la Directive (UE) 2024/1233 (en vigueur) comme base ; la directive périmée 2011/98 n'est citée nulle part. Watchlist temporel armée (PERMIS-UNIQUE-DIR) pour bloquer toute citation future de 2011/98 comme en vigueur.",
+      "statut": "resolu"
     }
   ]
 }
