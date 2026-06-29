@@ -32,6 +32,16 @@
       "source_canonique": "EUR-Lex + portails .fgov.be / régionaux + Moniteur belge",
       "action": "Canal de secours canonique validé le 2026-06-29 (P-RESILIENCE-RESEAU) : re-vérification possible par FETCH DIRECT des URL canoniques (EUR-Lex/.fgov.be/régionaux), sans moteur généraliste de découverte. Planifier la re-vérification fiche par fiche sur leurs URL officielles.",
       "statut": "ouvert"
+    },
+    {
+      "id": "ANO-004",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "EUR-Lex CELEX:32011L0098 (directive permis unique) — citée comme base alors que périmée",
+      "nature": "obsolescence temporelle (abrogation)",
+      "ecart": "Directive 2011/98/UE n'est PLUS en vigueur (fin validité 21/05/2026, abrogée par 32024L1233). Base UE actuelle = Directive (UE) 2024/1233 du 24/04/2024 (refonte, in force). Piégé via canal de résilience EUR-Lex AVANT toute publication.",
+      "source_canonique": "EUR-Lex CELEX:32024L1233 (in force)",
+      "action": "à planifier (MAJ auto ou humaine)",
+      "statut": "ouvert"
     }
   ]
 }
