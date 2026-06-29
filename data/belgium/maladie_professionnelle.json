@@ -1,0 +1,58 @@
+{
+  "module": "maladie_professionnelle",
+  "titre": "Maladie professionnelle",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Lois relatives à la prévention des maladies professionnelles et à la réparation des dommages résultant de celles-ci, coordonnées le 3 juin 1970",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Pour votre dossier, contactez Fedris ou votre médecin.",
+  "faits": [
+    {
+      "id": "MALPRO-001",
+      "question": "Qu'est-ce qu'une maladie professionnelle et qui l'indemnise ?",
+      "reponse": "Une maladie professionnelle est une maladie causée par l'exercice de votre travail (exposition à un risque professionnel). En Belgique, c'est Fedris (Agence fédérale des risques professionnels) qui examine la demande et indemnise les victimes du secteur privé et des administrations provinciales et locales.",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande",
+          "intitule": "Fedris — Maladies professionnelles"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MALPRO-002",
+      "question": "Comment introduire une demande de reconnaissance ?",
+      "reponse": "Vous (ou vos ayants droit) introduisez une demande auprès de Fedris, de préférence par voie électronique. Pour le secteur privé : le formulaire 501 (demande d'indemnisation) que vous complétez, et le formulaire 503 (certificat médical) à faire compléter par votre médecin. Joignez les pièces médicales justificatives.",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — procédure de demande auprès de Fedris",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande",
+          "intitule": "Fedris — Introduire une demande"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MALPRO-003",
+      "question": "Que couvre l'indemnisation ?",
+      "reponse": "Selon le dossier, Fedris peut indemniser l'incapacité de travail (temporaire ou permanente), intervenir dans les frais de soins de santé liés à la maladie, et indemniser les ayants droit en cas de décès. Les indemnités sont liées à l'index (adaptées à l'évolution des prix).",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — réparation des dommages",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande",
+          "intitule": "Fedris — Indemnisation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 99,
-    "faits": 317,
-    "sources_officielles": 467,
+    "modules": 105,
+    "faits": 335,
+    "sources_officielles": 485,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 86
+    "faits_avec_alerte_delai": 87
   },
   "modules": [
     {
@@ -166,6 +166,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "bail_a_ferme.json",
+      "module": "bail_a_ferme",
+      "titre": "Bail à ferme (location de biens agricoles)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "bail_bruxelles.json",
       "module": "bail_residence_principale_bruxelles",
       "titre": "Bail de résidence principale — Région de Bruxelles-Capitale",
@@ -281,6 +293,18 @@
       "juridiction": "BE",
       "faits": 4,
       "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "changement_nom_prenom.json",
+      "module": "changement_nom_prenom",
+      "titre": "Changement de nom ou de prénom",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
@@ -634,6 +658,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "filiation_reconnaissance.json",
+      "module": "filiation_reconnaissance",
+      "titre": "Filiation & reconnaissance d'un enfant",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "fin_de_vie.json",
       "module": "fin_de_vie",
       "titre": "Fin de vie — déclarations anticipées & droits",
@@ -814,6 +850,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "maladie_professionnelle.json",
+      "module": "maladie_professionnelle",
+      "titre": "Maladie professionnelle",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "malfacons_travaux.json",
       "module": "malfacons_travaux",
       "titre": "Malfaçons & garantie décennale (travaux)",
@@ -883,6 +931,18 @@
       "sources_officielles": 4,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "occupation_sans_titre.json",
+      "module": "occupation_sans_titre",
+      "titre": "Occupation sans titre d'un bien (squat)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-29"
     },
     {
@@ -1112,6 +1172,18 @@
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 5,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "tutelle_mineurs.json",
+      "module": "tutelle_mineurs",
+      "titre": "Tutelle d'un enfant mineur",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "vie_privee_rgpd.json",

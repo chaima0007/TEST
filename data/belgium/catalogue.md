@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**317 réponses · 99 modules · 467 sources officielles · 187 fiches avec contacts · 86 alertes de délai**
+**335 réponses · 105 modules · 485 sources officielles · 187 fiches avec contacts · 87 alertes de délai**
 
 ## Modules en ligne
 
@@ -21,6 +21,7 @@
 | Assurance logement | Assurance habitation & incendie | 2 | 2 | 2 | 1 |
 | — | Assurance maladie & mutualité | 4 | 7 | 0 | 0 |
 | Assurances | Assurances — auto obligatoire, RC familiale, litiges | 3 | 4 | 2 | 1 |
+| — | Bail à ferme (location de biens agricoles) | 3 | 3 | 0 | 0 |
 | — | Bail de résidence principale — Région de Bruxelles-Capitale | 9 | 11 | 0 | 0 |
 | — | Bail commercial | 4 | 4 | 0 | 1 |
 | Logement étudiant | Logement étudiant (kot) — bail & droits | 2 | 2 | 2 | 1 |
@@ -31,6 +32,7 @@
 | Allocation d'études | Bourse / allocation d'études | 2 | 2 | 2 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 3 | 6 | 3 | 0 |
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
+| — | Changement de nom ou de prénom | 3 | 3 | 0 | 0 |
 | Chômage & emploi | Chômage — droits, démarches et sanctions | 2 | 2 | 2 | 0 |
 | — | Chômage temporaire | 4 | 4 | 0 | 1 |
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
@@ -60,6 +62,7 @@
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 3 | 4 | 3 | 1 |
 | Logement — expulsion | Expulsion du logement — vos droits | 2 | 2 | 2 | 1 |
 | Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
+| — | Filiation & reconnaissance d'un enfant | 3 | 3 | 0 | 0 |
 | Fin de vie | Fin de vie — déclarations anticipées & droits | 2 | 4 | 2 | 0 |
 | Fonction publique | Travailler dans le secteur public | 2 | 4 | 2 | 0 |
 | Fraude & sécurité numérique | Arnaques & fraude en ligne — réagir vite | 2 | 4 | 2 | 1 |
@@ -75,12 +78,14 @@
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
 | Logement social | Logement social — conditions, inscription, attribution | 3 | 5 | 1 | 1 |
+| — | Maladie professionnelle | 3 | 3 | 0 | 0 |
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 2 | 2 | 2 | 1 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 2 | 4 | 2 | 1 |
 | Règlement des conflits | Médiation & règlement amiable des conflits | 2 | 4 | 2 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 3 | 3 | 3 | 0 |
 | Naissance & filiation | Naissance & filiation | 3 | 6 | 3 | 1 |
 | — | Nationalité belge | 4 | 4 | 0 | 0 |
+| — | Occupation sans titre d'un bien (squat) | 3 | 3 | 0 | 1 |
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
 | — | Permis de conduire | 4 | 6 | 0 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 2 | 3 | 2 | 1 |
@@ -100,6 +105,7 @@
 | Testament & donations | Testament & planifier sa succession | 2 | 4 | 2 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 2 | 4 | 2 | 1 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
+| — | Tutelle d'un enfant mineur | 3 | 3 | 0 | 0 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
 | Violences conjugales | Violences conjugales & familiales — se protéger | 3 | 6 | 3 | 1 |
 | Voisinage | Voisinage — bien s'entendre et régler les conflits | 4 | 4 | 3 | 0 |

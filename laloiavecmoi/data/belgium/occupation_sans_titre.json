@@ -1,0 +1,59 @@
+{
+  "module": "occupation_sans_titre",
+  "titre": "Occupation sans titre d'un bien (squat)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 18 octobre 2017 relative à la pénétration, à l'occupation ou au séjour illégitimes dans le bien d'autrui",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2017/10/18/2018011328/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. La procédure diffère selon qu'il s'agit d'un domicile ou d'un autre bien : faites-vous conseiller.",
+  "faits": [
+    {
+      "id": "OCCUP-001",
+      "question": "Mon bien est occupé sans mon accord : que puis-je faire ?",
+      "reponse": "La loi du 18 octobre 2017 organise une procédure pour faire évacuer un occupant sans droit ni titre. Le propriétaire (ou le titulaire d'un droit sur le bien) peut saisir le juge de paix. Lorsqu'il s'agit du domicile d'autrui occupé illégitimement, le procureur du Roi peut aussi ordonner l'évacuation, dans des conditions précises.",
+      "reference_legale": "Loi du 18 octobre 2017 (procédure d'évacuation des occupants sans titre)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/10/18/2018011328/justel",
+          "intitule": "Justel — Loi du 18 octobre 2017"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "OCCUP-002",
+      "question": "L'occupant peut-il contester l'évacuation, et dans quel délai ?",
+      "reponse": "Oui. La personne qui s'estime lésée par l'ordonnance d'évacuation du procureur du Roi peut former un recours devant le juge de paix du canton où se situe le bien, par requête, dans un délai de 8 jours à compter de la notification (affichage sur le bien ou remise d'une copie), à peine de déchéance. Ce recours est en principe suspensif.",
+      "reference_legale": "Loi du 18 octobre 2017 (recours devant le juge de paix dans les 8 jours)",
+      "alerte_delai": "Recours contre l'ordonnance d'évacuation dans les 8 jours de la notification.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/10/18/2018011328/justel",
+          "intitule": "Justel — Loi du 18 octobre 2017 (recours)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "OCCUP-003",
+      "question": "L'occupation illégitime est-elle aussi une infraction ?",
+      "reponse": "Oui. Pénétrer ou occuper sans droit le bien d'autrui peut constituer une infraction pénale, passible de sanctions. La procédure civile d'évacuation et la voie pénale peuvent coexister selon les situations.",
+      "reference_legale": "Code pénal, art. 442/1 (occupation illégitime du bien d'autrui)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/10/18/2018011328/justel",
+          "intitule": "Justel — Loi du 18 octobre 2017 (volet pénal)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
