@@ -107,10 +107,10 @@ export default function PlateformeAutonome() {
       {/* Signes vitaux */}
       <section className="max-w-5xl mx-auto px-6 grid sm:grid-cols-4 gap-4">
         {[
+          { label: "Autonomie système", val: `${sceau.autonomie_systeme_pct ?? "—"}%`, sub: "ce que la plateforme contrôle" },
           { label: "Résilience", val: `${resilience}%`, sub: "scénarios verts" },
           { label: "Sceau", val: String(sceau.statut || "—"), sub: "protocole" },
-          { label: "Réponses", val: String(corpus.reponses ?? "—"), sub: `${corpus.modules ?? "—"} domaines` },
-          { label: "Sources", val: String(corpus.sources ?? "—"), sub: `${corpus.sources_officielles ?? "—"} officielles` },
+          { label: "Corpus", val: String(corpus.reponses ?? "—"), sub: `${corpus.modules ?? "—"} domaines + ${(corpus as Record<string, Record<string, number>>).caelum?.normes ?? 0} normes Caelum` },
         ].map((c) => (
           <div key={c.label} className="rounded-2xl border border-white/10 bg-white/5 p-5">
             <p className="text-xs uppercase tracking-wide text-slate-400">{c.label}</p>

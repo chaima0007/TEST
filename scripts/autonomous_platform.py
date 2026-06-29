@@ -443,10 +443,26 @@ def sceller(sante: list, scenarios: list) -> dict:
 
     fragilites = [s["scenario"] for s in stress if s.get("verdict") == CRITIQUE]
     a_corriger = [p["scenario"] for p in scenarios if p.get("type") == "etat" and p.get("verdict") == ALERTE]
+
+    # Autonomie : ce que la plateforme CONTRÔLE seule (hors décisions humaines de Chaima).
+    HUMAIN = ("Webhook", "Identité", "Plan stratégique")
+    sys_etat = [p.get("verdict", OK) for p in sante] + [
+        s.get("verdict", OK) for s in scenarios
+        if s.get("type") == "etat" and not any(h in s["scenario"] for h in HUMAIN)
+    ]
+    sys_ok = sum(1 for v in sys_etat if v == OK)
+    autonomie_pct = round(100 * sys_ok / len(sys_etat), 1) if sys_etat else 100.0
+    decisions_humaines = [
+        s["scenario"] for s in scenarios
+        if s.get("type") == "etat" and s.get("verdict") != OK and any(h in s["scenario"] for h in HUMAIN)
+    ]
+
     seal_id = "AUTO-" + datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
     return {
         "seal_id": seal_id, "statut": statut, "pire_verdict_etat": pire_etat,
         "score_resilience": score, "verts": n_ok, "total": len(tous),
+        "autonomie_systeme_pct": autonomie_pct,
+        "decisions_humaines_en_attente": decisions_humaines,
         "fragilites_stress": fragilites,
         "alertes_etat_a_corriger": a_corriger,
         "regle": "BLOQUÉ seulement si l'ÉTAT ACTUEL (santé + scénarios 'etat') a un CRITIQUE ; "
@@ -670,6 +686,8 @@ def main() -> int:
     print("\n  ── Sceau de protocole ──")
     print(f"    {sceau['seal_id']} · {sceau['statut']} · résilience {sceau['score_resilience']}% "
           f"({sceau['verts']}/{sceau['total']} verts) · pire état={sceau['pire_verdict_etat']}")
+    print(f"    🤖 Autonomie système : {sceau['autonomie_systeme_pct']}% "
+          f"(ce que la plateforme contrôle seule) · décisions humaines en attente : {len(sceau['decisions_humaines_en_attente'])}")
     if sceau["alertes_etat_a_corriger"]:
         print(f"    ⚠️  À corriger : {', '.join(sceau['alertes_etat_a_corriger'])}")
     if sceau["fragilites_stress"]:
