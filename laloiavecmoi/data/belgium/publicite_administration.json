@@ -1,0 +1,63 @@
+{
+  "module": "publicite_administration",
+  "titre": "Accès aux documents administratifs",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 11 avril 1994 relative à la publicité de l'administration",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1994/04/11/1994000357/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Des règles propres existent au niveau des Régions et Communautés (publicité de leur propre administration).",
+  "faits": [
+    {
+      "id": "PUBADM-001",
+      "question": "Ai-je le droit de consulter des documents de l'administration ?",
+      "reponse": "Oui. La publicité de l'administration vous donne le droit de consulter sur place un document administratif, d'en recevoir une copie et d'obtenir des explications à son sujet, sauf si un motif d'exception légal s'applique. Pour un document à caractère personnel, vous devez justifier d'un intérêt.",
+      "reference_legale": "Loi du 11 avril 1994 relative à la publicité de l'administration (droit d'accès)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1994/04/11/1994000357/justel",
+          "intitule": "Justel — Loi du 11 avril 1994"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ibz.rrn.fgov.be/en/node/3656",
+          "intitule": "IBZ — Exercice du droit d'accès"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PUBADM-002",
+      "question": "Comment introduire une demande ?",
+      "reponse": "La demande doit être écrite (courrier, fax ou e-mail — pas par téléphone) et adressée à l'instance administrative qui détient le document. Identifiez autant que possible le document concerné et précisez comment vous voulez y accéder (consultation, explication ou copie). Aucun envoi recommandé n'est exigé.",
+      "reference_legale": "Loi du 11 avril 1994 (modalités de la demande)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ibz.rrn.fgov.be/en/node/3656",
+          "intitule": "IBZ — Comment exercer le droit d'accès"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PUBADM-003",
+      "question": "Que faire en cas de refus ?",
+      "reponse": "L'administration ne peut refuser que pour des motifs légaux (par ex. vie privée, ordre public, recherche de faits punissables, secret d'affaires). En cas de refus ou d'absence de réponse, vous pouvez demander un avis à la Commission d'accès aux documents administratifs et, si nécessaire, introduire un recours en annulation au Conseil d'État.",
+      "reference_legale": "Loi du 11 avril 1994, art. 6 (motifs d'exception) et voies de recours",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ibz.rrn.fgov.be/en/node/3656",
+          "intitule": "IBZ — Motifs d'exception et recours"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

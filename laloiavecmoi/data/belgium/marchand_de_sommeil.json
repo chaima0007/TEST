@@ -1,0 +1,58 @@
+{
+  "module": "marchand_de_sommeil",
+  "titre": "Marchand de sommeil (logement indigne)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code pénal, art. 433decies (exploitation du logement de personnes vulnérables)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2013/04/29/2013009350/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. En danger immédiat : 112. Pour être aidé : CPAS, service d'aide aux victimes ou avocat.",
+  "faits": [
+    {
+      "id": "MARCHSOM-001",
+      "question": "Qu'est-ce qu'un « marchand de sommeil » ?",
+      "reponse": "C'est une personne qui abuse de la situation particulièrement vulnérable d'autrui en vendant, louant ou mettant à disposition un logement indigne ou insalubre, en vue d'un profit anormal. Cette exploitation est une infraction pénale, distincte du simple litige locatif.",
+      "reference_legale": "Code pénal, art. 433decies (marchand de sommeil)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2013/04/29/2013009350/justel",
+          "intitule": "Justel — Code pénal, art. 433decies (loi du 29 avril 2013)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MARCHSOM-002",
+      "question": "Quelles sanctions encourt un marchand de sommeil ?",
+      "reponse": "Les peines comprennent l'emprisonnement et de fortes amendes, alourdies selon les circonstances. Le juge peut en outre prononcer la confiscation des biens immobiliers concernés et des avantages patrimoniaux tirés de l'infraction.",
+      "reference_legale": "Code pénal, art. 433decies et suivants (peines et confiscation)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2006/02/09/2006009138/justel",
+          "intitule": "Justel — Renforcement de la lutte contre les marchands de sommeil (loi du 9 février 2006)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MARCHSOM-003",
+      "question": "Je suis victime : que puis-je faire ?",
+      "reponse": "Vous pouvez signaler la situation et porter plainte auprès de la police ou du parquet ; votre vulnérabilité est prise en compte par la loi. La commune et la Région disposent aussi de services « logement »/salubrité qui peuvent constater l'insalubrité. Faites-vous aider (CPAS, service d'aide aux victimes, avocat).",
+      "reference_legale": "Code pénal, art. 433decies (protection de la victime) ; Code d'instruction criminelle (plainte)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2013/04/29/2013009350/justel",
+          "intitule": "Justel — Situation vulnérable de la victime (art. 433decies)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

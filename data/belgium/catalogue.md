@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**383 réponses · 121 modules · 539 sources officielles · 187 fiches avec contacts · 91 alertes de délai**
+**395 réponses · 125 modules · 552 sources officielles · 187 fiches avec contacts · 92 alertes de délai**
 
 ## Modules en ligne
 
@@ -90,6 +90,7 @@
 | — | Maladie professionnelle | 3 | 3 | 0 | 0 |
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 2 | 2 | 2 | 1 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 2 | 4 | 2 | 1 |
+| — | Marchand de sommeil (logement indigne) | 3 | 3 | 0 | 0 |
 | Règlement des conflits | Médiation & règlement amiable des conflits | 2 | 4 | 2 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 3 | 3 | 3 | 0 |
 | Naissance & filiation | Naissance & filiation | 3 | 6 | 3 | 1 |
@@ -99,15 +100,18 @@
 | — | Pension complémentaire (2e pilier) | 3 | 3 | 0 | 0 |
 | — | Permis de conduire | 4 | 6 | 0 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 2 | 3 | 2 | 1 |
+| — | Plainte contre la police (Comité P) | 3 | 3 | 0 | 0 |
 | — | Précompte immobilier | 3 | 4 | 0 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 2 | 3 | 2 | 1 |
+| — | Accès aux documents administratifs | 3 | 4 | 0 | 0 |
 | Recours administratifs | Recours contre l'administration — médiateur & Conseil d'État | 2 | 4 | 2 | 1 |
 | Recours dans l'Union européenne | Recours européens — SOLVIT, médiateur, pétition | 2 | 4 | 2 | 0 |
 | Recouvrement de dettes | Recouvrement amiable — sociétés de recouvrement | 2 | 3 | 2 | 0 |
 | — | Revenu d'intégration & aide du CPAS | 5 | 10 | 0 | 1 |
 | — | Saisie immobilière (vente forcée d'un immeuble) | 3 | 4 | 0 | 0 |
 | Saisies & recouvrement | Saisies & huissier — ce qui peut être pris (ou non) | 2 | 2 | 2 | 0 |
+| — | Sanctions administratives communales (SAC) | 3 | 3 | 0 | 1 |
 | Santé mentale | Santé mentale — aide psychologique, remboursement, écoute | 2 | 4 | 2 | 1 |
 | Santé & patient | Santé — droits du patient | 4 | 6 | 1 | 1 |
 | — | Service bancaire de base (droit au compte) | 3 | 3 | 0 | 0 |

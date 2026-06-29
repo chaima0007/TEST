@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 121,
-    "faits": 383,
-    "sources_officielles": 539,
+    "modules": 125,
+    "faits": 395,
+    "sources_officielles": 552,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 91
+    "faits_avec_alerte_delai": 92
   },
   "modules": [
     {
@@ -994,6 +994,18 @@
       "derniere_revue": "2026-06-28"
     },
     {
+      "fichier": "marchand_de_sommeil.json",
+      "module": "marchand_de_sommeil",
+      "titre": "Marchand de sommeil (logement indigne)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "mediation_conflits.json",
       "module": "mediation_conflits",
       "titre": "Médiation & règlement amiable des conflits",
@@ -1102,6 +1114,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "plaintes_police_comite_p.json",
+      "module": "plaintes_police_comite_p",
+      "titre": "Plainte contre la police (Comité P)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "precompte_immobilier.json",
       "module": "precompte_immobilier",
       "titre": "Précompte immobilier",
@@ -1136,6 +1160,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "publicite_administration.json",
+      "module": "publicite_administration",
+      "titre": "Accès aux documents administratifs",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "recours_administration.json",
@@ -1208,6 +1244,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "sanctions_administratives_communales.json",
+      "module": "sanctions_administratives_communales",
+      "titre": "Sanctions administratives communales (SAC)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "sante_mentale.json",
