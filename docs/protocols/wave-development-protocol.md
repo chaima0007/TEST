@@ -461,6 +461,24 @@ python3 scripts/branch_guard.py --check --quiet
 - **Autorisé** : s'**inspirer des retours d'expérience** (veille des préoccupations utilisateurs) pour **identifier les problématiques** — **jamais** pour servir de **référence légale**, et jamais pour écrire une fiche de la base.
 - **⚠️ Inaccessibilité canonique** : si les portails officiels sont injoignables (politique réseau du sandbox — refus 403 du proxy), l'**enrichissement externe est SUSPENDU** et **déclaré honnêtement**. On ne **fabrique jamais** une donnée ni une provenance « officielle » non vérifiée. Voir registre : `P-NO-MOTEUR-GENERALISTE`.
 
+### §16-bis — Résilience réseau (canal de secours vers portails canoniques, P-RESILIENCE-RESEAU)
+
+**Extension (Chaima, 2026-06-29)** : en cas d'impossibilité d'accéder aux sources officielles depuis le réseau restreint, l'agent peut basculer **de façon autonome** vers un **canal de secours** pour maintenir la **continuité de la veille canonique** (EUR-Lex, Moniteur belge, `.fgov.be`, régionaux) — **sans transiger sur la vérification**.
+
+**Distinction décisive :**
+| Action | Statut |
+|--------|--------|
+| Laisser un **moteur généraliste découvrir** la source faisant foi | ❌ INTERDIT (P-NO-MOTEUR-GENERALISTE) |
+| **Récupérer directement** le texte d'une **URL canonique connue** (fetch ciblé EUR-Lex/Moniteur/`.fgov.be`) | ✅ Veille canonique autorisée |
+
+**Limites non négociables du canal de secours :**
+1. **JAMAIS** contourner les contrôles de sécurité de l'environnement : interdiction de désactiver TLS, de retirer/contourner le proxy HTTPS, ou d'ouvrir une sortie réseau parallèle non sanctionnée (cf. `/root/.ccr/README.md`).
+2. Le canal de secours = **récupération directe d'URL canonique** via outil approuvé, pointé **uniquement** sur le portail officiel.
+3. **Provenance tracée honnêtement** : « donnée issue du portail canonique `<URL>`, relayée par `<canal de secours>` ».
+4. Échec du canal de secours / texte canonique indisponible → **SUSPENDRE + déclarer**, jamais fabriquer.
+
+*Vérifié opérationnel le 2026-06-29 : fetch direct `eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1760` → texte officiel CSDDD, version consolidée 18/03/2026 (cohérent avec plafond 3 % Omnibus I).*
+
 **Vérification :**
 ```bash
 python3 scripts/source_trust_protocol.py   # les sources 'officiel' doivent être tier1

@@ -30,7 +30,7 @@
       "nature": "provenance non conforme P-NO-MOTEUR-GENERALISTE",
       "ecart": "Données localisées via moteur généraliste Exa; les références légales pointent vers des instruments officiels (AR, lois) mais la consultation directe du portail canonique n'a pas pu être faite (proxy 403). À re-vérifier sur EUR-Lex/fgov.be/régional dès canal sanctionné.",
       "source_canonique": "EUR-Lex + portails .fgov.be / régionaux + Moniteur belge",
-      "action": "à planifier (MAJ auto ou humaine)",
+      "action": "Canal de secours canonique validé le 2026-06-29 (P-RESILIENCE-RESEAU) : re-vérification possible par FETCH DIRECT des URL canoniques (EUR-Lex/.fgov.be/régionaux), sans moteur généraliste de découverte. Planifier la re-vérification fiche par fiche sur leurs URL officielles.",
       "statut": "ouvert"
     }
   ]
