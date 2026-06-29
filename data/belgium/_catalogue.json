@@ -1,12 +1,12 @@
 {
   "catalogue": "Base unique — La Loi Avec Moi",
-  "genere_le": "2026-06-28",
+  "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 85,
-    "faits": 266,
-    "sources_officielles": 403,
-    "faits_avec_contacts": 181,
-    "faits_avec_alerte_delai": 79
+    "modules": 92,
+    "faits": 289,
+    "sources_officielles": 440,
+    "faits_avec_contacts": 187,
+    "faits_avec_alerte_delai": 81
   },
   "modules": [
     {
@@ -142,6 +142,18 @@
       "derniere_revue": "2026-06-28"
     },
     {
+      "fichier": "assurance_maladie_mutuelle.json",
+      "module": "assurance_maladie_mutuelle",
+      "titre": "Assurance maladie & mutualité",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "assurances.json",
       "module": "assurances",
       "titre": "Assurances — auto obligatoire, RC familiale, litiges",
@@ -250,6 +262,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "casier_judiciaire.json",
+      "module": "casier_judiciaire",
+      "titre": "Extrait de casier judiciaire",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "chomage.json",
       "module": "chomage",
       "titre": "Chômage — droits, démarches et sanctions",
@@ -284,6 +308,18 @@
       "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "citoyen_europeen.json",
+      "module": "citoyen_europeen",
+      "titre": "Citoyen européen — vivre, travailler, étudier dans l'UE",
+      "domaine": "Droits dans l'Union européenne",
+      "juridiction": "UE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
     },
     {
       "fichier": "colocation.json",
@@ -682,6 +718,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "litiges_transfrontaliers.json",
+      "module": "litiges_transfrontaliers",
+      "titre": "Litiges transfrontaliers (achats dans l'UE)",
+      "domaine": "Consommation transfrontalière (UE)",
+      "juridiction": "UE",
+      "faits": 2,
+      "sources_officielles": 2,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "logement_social.json",
       "module": "logement_social",
       "titre": "Logement social — conditions, inscription, attribution",
@@ -766,6 +814,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "permis_conduire.json",
+      "module": "permis_conduire",
+      "titre": "Permis de conduire",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "permis_urbanisme.json",
       "module": "permis_urbanisme",
       "titre": "Permis d'urbanisme — travaux & rénovation",
@@ -814,6 +874,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "recours_europeens.json",
+      "module": "recours_europeens",
+      "titre": "Recours européens — SOLVIT, médiateur, pétition",
+      "domaine": "Recours dans l'Union européenne",
+      "juridiction": "UE",
+      "faits": 2,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-28"
+    },
+    {
       "fichier": "recouvrement_amiable.json",
       "module": "recouvrement_amiable",
       "titre": "Recouvrement amiable — sociétés de recouvrement",
@@ -824,6 +896,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-28"
+    },
+    {
+      "fichier": "revenu_integration_cpas.json",
+      "module": "revenu_integration_cpas",
+      "titre": "Revenu d'intégration & aide du CPAS",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 5,
+      "sources_officielles": 10,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "saisies_huissier.json",
@@ -1761,6 +1845,33 @@
         "testament"
       ],
       "priorite": "moyenne"
+    },
+    {
+      "cle": "citoyen_europeen",
+      "nom": "Droits dans l Union européenne",
+      "statut": "couvert",
+      "modules": [
+        "citoyen_europeen"
+      ],
+      "priorite": "haute"
+    },
+    {
+      "cle": "litiges_transfrontaliers",
+      "nom": "Consommation transfrontalière (UE)",
+      "statut": "couvert",
+      "modules": [
+        "litiges_transfrontaliers"
+      ],
+      "priorite": "moyenne"
+    },
+    {
+      "cle": "recours_europeens",
+      "nom": "Recours dans l Union européenne",
+      "statut": "couvert",
+      "modules": [
+        "recours_europeens"
+      ],
+      "priorite": "haute"
     }
   ]
 }

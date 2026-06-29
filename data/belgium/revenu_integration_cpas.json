@@ -1,0 +1,112 @@
+{
+  "module": "revenu_integration_cpas",
+  "titre": "Revenu d'intégration & aide du CPAS",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 26 mai 2002 concernant le droit à l'intégration sociale (revenu d'intégration, CPAS)",
+    "portee": "Personnes résidant en Belgique disposant de ressources insuffisantes (compétence fédérale, mise en œuvre par les CPAS)",
+    "source_officielle": "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?cn=2002052647&la=F&language=fr&table_name=loi"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil juridique individualisé. Pour une demande, adressez-vous au CPAS de votre commune.",
+  "faits": [
+    {
+      "id": "RIS-001",
+      "question": "Qu'est-ce que le revenu d'intégration et où le demander ?",
+      "reponse": "Le revenu d'intégration est une aide financière destinée aux personnes qui n'ont pas de ressources suffisantes pour vivre. Toute personne a droit à l'intégration sociale, qui peut prendre la forme d'un emploi et/ou d'un revenu d'intégration. La demande se fait auprès du CPAS (Centre public d'action sociale) de la commune où vous résidez.",
+      "reference_legale": "Loi du 26 mai 2002, art. 2 (droit à l'intégration sociale)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale — Le revenu d'intégration"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?cn=2002052647&la=F&language=fr&table_name=loi",
+          "intitule": "Justel — Loi du 26 mai 2002"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RIS-002",
+      "question": "Quelles sont les conditions pour avoir droit au revenu d'intégration ?",
+      "reponse": "Il faut notamment : avoir sa résidence effective en Belgique ; être majeur (ou assimilé) ; posséder la nationalité belge ou un droit de séjour équivalent (ou être inscrit comme étranger au registre de la population, réfugié, etc.) ; ne pas disposer de ressources suffisantes ; être disposé à travailler, sauf si des raisons de santé ou d'équité l'en empêchent ; et faire valoir ses droits aux autres prestations sociales auxquelles on peut prétendre.",
+      "reference_legale": "Loi du 26 mai 2002, art. 3 (conditions d'octroi)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?cn=2002052647&la=F&language=fr&table_name=loi",
+          "intitule": "Justel — Loi du 26 mai 2002, art. 3"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RIS-003",
+      "question": "Comment le montant du revenu d'intégration est-il fixé ?",
+      "reponse": "Le montant dépend de votre situation familiale. La loi distingue plusieurs catégories (personne cohabitant avec d'autres, personne isolée, personne vivant avec une famille à charge). Le CPAS détermine la catégorie au moyen d'une enquête sociale basée sur votre situation réelle. Le montant est indexé et les ressources éventuelles dont vous disposez en sont déduites.",
+      "reference_legale": "Loi du 26 mai 2002, art. 14 (montant, catégories) — montants indexés",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?cn=2002052647&la=F&language=fr&table_name=loi",
+          "intitule": "Justel — Loi du 26 mai 2002, art. 14"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale — Montants du revenu d'intégration"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RIS-004",
+      "question": "Qu'est-ce que le projet individualisé d'intégration sociale (PIIS) ?",
+      "reponse": "Le PIIS est un contrat conclu entre vous et le CPAS, qui fixe des objectifs d'intégration (emploi, formation, études) et les engagements de chacun. Il est notamment obligatoire pour les personnes de moins de 25 ans et pour les projets de mise à l'emploi ou d'études. Il vise à favoriser votre autonomie et votre participation à la vie sociale.",
+      "reference_legale": "Loi du 26 mai 2002, art. 11 et 13 (projet individualisé d'intégration sociale)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?cn=2002052647&la=F&language=fr&table_name=loi",
+          "intitule": "Justel — Loi du 26 mai 2002, art. 11 et 13"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale — PIIS"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RIS-005",
+      "question": "Le CPAS a refusé ma demande : puis-je contester ?",
+      "reponse": "Oui. Vous pouvez introduire un recours contre la décision du CPAS devant le tribunal du travail. Le recours doit être introduit dans les trois mois de la notification de la décision (ou de l'absence de décision dans le délai légal). La procédure devant le tribunal du travail est gratuite et vous pouvez vous faire assister.",
+      "reference_legale": "Loi du 26 mai 2002, art. 47 (recours devant le tribunal du travail)",
+      "alerte_delai": "Recours dans les 3 mois de la notification de la décision du CPAS.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?cn=2002052647&la=F&language=fr&table_name=loi",
+          "intitule": "Justel — Loi du 26 mai 2002, art. 47"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr",
+          "intitule": "SPP Intégration sociale"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

@@ -19,11 +19,11 @@ _Dernière mise à jour : 2026-06-28_
 ## La Loi Avec Moi (citoyens) — 71%
 `██████████████░░░░░░` 71%
 
-> **Point de sortie :** 84 domaines / 272 réponses (couche UE renforcée), 100% lois + sources. Build OK, 1200 simulations OK.
+> **Point de sortie :** 92 modules / 289 réponses (couche UE + nouveaux domaines sociaux), 100% lois + sources. Build OK (168 pages), audits verts.
 
 | Tâche | Avancement | Statut |
 |---|---|---|
-| Base juridique sourcée (domaines + réponses) | `███████████░` 90% | en cours |
+| Base juridique sourcée (domaines + réponses) | `███████████░` 92% | en cours |
 | Page « Base juridique » (rendu serveur) | `████████████` 100% | terminé |
 | Modèles de documents prêts à l'emploi | `███████████░` 95% | en cours |
 | Espace enfants & jeunes / mineurs | `███████████░` 90% | en cours |
@@ -33,7 +33,7 @@ _Dernière mise à jour : 2026-06-28_
 | Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
 | Pages légales (mentions, confidentialité, accessibilité) | `███████████░` 90% | en cours |
 
-- **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
+- **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Continuer les domaines citoyens manquants (sécurité sociale détaillée, baux commerciaux, etc.)
 - **Modèles de documents prêts à l'emploi** → prochaines étapes : (option) export PDF mis en page
 - **Espace enfants & jeunes / mineurs** → prochaines étapes : Pictos illustrés / version lecture facile
 - **Versions multilingues (NL en premier)** → prochaines étapes : Poursuivre la traduction NL (familie approfondie) selon le trafic

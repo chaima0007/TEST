@@ -1,8 +1,8 @@
 # Base unique — catalogue central
 
-*Généré le 2026-06-28. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
+*Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**266 réponses · 85 modules · 403 sources officielles · 181 fiches avec contacts · 79 alertes de délai**
+**289 réponses · 92 modules · 440 sources officielles · 187 fiches avec contacts · 81 alertes de délai**
 
 ## Modules en ligne
 
@@ -19,6 +19,7 @@
 | Animaux | Animaux — bien-être, responsabilités, maltraitance | 3 | 5 | 2 | 1 |
 | Assurance véhicule | Assurance auto obligatoire (RC) | 2 | 3 | 2 | 0 |
 | Assurance logement | Assurance habitation & incendie | 2 | 2 | 2 | 1 |
+| — | Assurance maladie & mutualité | 4 | 7 | 0 | 0 |
 | Assurances | Assurances — auto obligatoire, RC familiale, litiges | 3 | 4 | 2 | 1 |
 | — | Bail de résidence principale — Région de Bruxelles-Capitale | 9 | 11 | 0 | 0 |
 | Logement étudiant | Logement étudiant (kot) — bail & droits | 2 | 2 | 2 | 1 |
@@ -28,9 +29,11 @@
 | Volontariat | Bénévolat & volontariat — vos droits | 2 | 2 | 2 | 0 |
 | Allocation d'études | Bourse / allocation d'études | 2 | 2 | 2 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 3 | 6 | 3 | 0 |
+| — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
 | Chômage & emploi | Chômage — droits, démarches et sanctions | 2 | 2 | 2 | 0 |
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
 | Citoyenneté | Droits et devoirs du citoyen | 4 | 7 | 3 | 2 |
+| Droits dans l'Union européenne | Citoyen européen — vivre, travailler, étudier dans l'UE | 2 | 4 | 2 | 0 |
 | Colocation | Colocation — bail commun & règles | 2 | 2 | 2 | 1 |
 | Consommation | Consommation — garanties, achats, arnaques | 3 | 5 | 1 | 1 |
 | Copropriété | Copropriété — vivre en appartement | 2 | 2 | 2 | 1 |
@@ -64,6 +67,7 @@
 | Indépendant & activité | Devenir indépendant — démarches pour se lancer | 8 | 16 | 8 | 2 |
 | Job étudiant | Job étudiant — contrat, quota d'heures, cotisations réduites | 3 | 5 | 1 | 2 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
+| Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
 | Logement social | Logement social — conditions, inscription, attribution | 3 | 5 | 1 | 1 |
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 2 | 2 | 2 | 1 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 2 | 4 | 2 | 1 |
@@ -71,11 +75,14 @@
 | Mobilité douce | Vélo & trottinette — règles et assurance | 3 | 3 | 3 | 0 |
 | Naissance & filiation | Naissance & filiation | 3 | 6 | 3 | 1 |
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
+| — | Permis de conduire | 4 | 6 | 0 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 2 | 3 | 2 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 2 | 3 | 2 | 1 |
 | Recours administratifs | Recours contre l'administration — médiateur & Conseil d'État | 2 | 4 | 2 | 1 |
+| Recours dans l'Union européenne | Recours européens — SOLVIT, médiateur, pétition | 2 | 4 | 2 | 0 |
 | Recouvrement de dettes | Recouvrement amiable — sociétés de recouvrement | 2 | 3 | 2 | 0 |
+| — | Revenu d'intégration & aide du CPAS | 5 | 10 | 0 | 1 |
 | Saisies & recouvrement | Saisies & huissier — ce qui peut être pris (ou non) | 2 | 2 | 2 | 0 |
 | Santé mentale | Santé mentale — aide psychologique, remboursement, écoute | 2 | 4 | 2 | 1 |
 | Santé & patient | Santé — droits du patient | 4 | 6 | 1 | 1 |
@@ -179,3 +186,6 @@
 | Protection des aînés | couvert | haute |
 | Sans-abri & domiciliation | couvert | haute |
 | Testament & donations | couvert | moyenne |
+| Droits dans l Union européenne | couvert | haute |
+| Consommation transfrontalière (UE) | couvert | moyenne |
+| Recours dans l Union européenne | couvert | haute |
