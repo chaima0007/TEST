@@ -4,7 +4,7 @@
   "totaux": {
     "modules": 148,
     "faits": 481,
-    "sources_officielles": 660,
+    "sources_officielles": 661,
     "faits_avec_contacts": 213,
     "faits_avec_alerte_delai": 99
   },
@@ -592,7 +592,7 @@
       "domaine": "Demandeur d'emploi",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 9,
+      "sources_officielles": 10,
       "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-29"

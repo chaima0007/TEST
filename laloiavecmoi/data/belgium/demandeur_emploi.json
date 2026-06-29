@@ -35,8 +35,9 @@
           "pour": "inscription / réinscription et accompagnement à Bruxelles"
         },
         {
-          "nom": "ADG (Communauté germanophone)",
-          "pour": "inscription et accompagnement en région de langue allemande"
+          "nom": "ADG — Arbeitsamt der Deutschsprachigen Gemeinschaft (Communauté germanophone)",
+          "lien": "https://www.adg.be/desktopdefault.aspx",
+          "pour": "inscription (Eintragung) et accompagnement en région de langue allemande (Ostbelgien)"
         }
       ],
       "sources": [
@@ -54,6 +55,11 @@
           "type": "officiel",
           "url": "https://www.actiris.brussels/fr/citoyens/",
           "intitule": "Actiris — Citoyens : s'inscrire / se réinscrire (Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.adg.be/desktopdefault.aspx",
+          "intitule": "ADG — Arbeitsamt der Deutschsprachigen Gemeinschaft (Communauté germanophone)"
         }
       ],
       "date_verification": "2026-06-29"
