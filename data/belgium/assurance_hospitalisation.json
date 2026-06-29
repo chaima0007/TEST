@@ -1,0 +1,64 @@
+{
+  "module": "assurance_hospitalisation",
+  "titre": "Assurance hospitalisation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 4 avril 2014 relative aux assurances (assurance hospitalisation complémentaire)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.fsma.be/fr/assurance-hospitalisation"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Comparez les contrats (garanties, exclusions, franchise) avant de souscrire.",
+  "faits": [
+    {
+      "id": "HOSP-001",
+      "question": "Qu'est-ce qu'une assurance hospitalisation ?",
+      "reponse": "C'est une assurance facultative qui complète l'assurance maladie obligatoire (la mutuelle). Elle couvre, dans les limites du contrat, des frais liés à une hospitalisation (maladie, accident ou accouchement) que la mutuelle ne rembourse pas, ainsi que certains soins pré- et post-hospitaliers. Une franchise est souvent prévue.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (assurance hospitalisation)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/assurance-hospitalisation",
+          "intitule": "FSMA — Assurance hospitalisation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "HOSP-002",
+      "question": "Quelles protections la loi me garantit-elle ?",
+      "reponse": "L'assureur ne peut pas résilier le contrat sans raison, et il ne peut modifier la prime, les prestations ou la franchise qu'en des circonstances exceptionnelles (hors indexation légale). La prime tient compte de votre situation (âge, état de santé). Avant de souscrire, vérifiez les exclusions (par ex. maladies préexistantes) et les éventuels plafonds d'indemnisation.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (protection du preneur)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/assurance-hospitalisation",
+          "intitule": "FSMA — Protections de l'assuré"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/sassurer/sante/lassurance-hospitalisation/comment-souscrire-une",
+          "intitule": "Wikifin — Assurance hospitalisation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "HOSP-003",
+      "question": "Je quitte mon employeur : que devient l'assurance collective ?",
+      "reponse": "Si vous étiez couvert par l'assurance hospitalisation collective de votre employeur pendant au moins 2 ans, vous pouvez demander à poursuivre cette assurance à titre individuel, sans nouvel examen ni questionnaire médical. L'employeur doit vous informer de ce droit dans les 30 jours suivant la fin du contrat de travail ; la prime individuelle tiendra compte de votre âge.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (droit à la poursuite individuelle)",
+      "alerte_delai": "L'employeur informe du droit de poursuite dans les 30 jours suivant la fin du contrat ; agissez sans tarder.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/sassurer/sante/lassurance-hospitalisation/comment-souscrire-une",
+          "intitule": "Wikifin — Poursuite individuelle de l'assurance collective"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

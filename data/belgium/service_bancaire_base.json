@@ -1,0 +1,58 @@
+{
+  "module": "service_bancaire_base",
+  "titre": "Service bancaire de base (droit au compte)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique, livre VII, art. VII.57 et suivants (service bancaire de base)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. En cas de refus abusif, adressez-vous au SPF Economie ou au médiateur (Ombudsfin).",
+  "faits": [
+    {
+      "id": "SBB-001",
+      "question": "Ai-je droit à un compte bancaire si une banque me refuse ?",
+      "reponse": "Oui. Le service bancaire de base garantit à tout consommateur résidant légalement dans l'Union européenne le droit à un compte de paiement et aux opérations essentielles qui y sont associées, pour éviter l'exclusion bancaire. Toutes les banques qui offrent des comptes à vue aux particuliers doivent proposer ce service.",
+      "reference_legale": "Code de droit économique, livre VII, art. VII.57 et suivants (service bancaire de base)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base/service-bancaire-de-base-pour-0",
+          "intitule": "SPF Economie — Service bancaire de base pour particuliers"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SBB-002",
+      "question": "Quelles sont les conditions ?",
+      "reponse": "Il faut notamment : ne pas déjà disposer d'un compte à vue (ou du service bancaire de base) en Belgique, ne pas détenir au total plus de 10.239,43 € d'avoirs ni de crédits pour ce montant, et ne pas avoir enfreint la loi anti-blanchiment. Le compte ne peut pas être à découvert. Attention : le service bancaire de base ne donne pas droit à un crédit et n'est pas nécessairement gratuit.",
+      "reference_legale": "Code de droit économique, livre VII (conditions d'accès au service bancaire de base)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base/service-bancaire-de-base-pour-0",
+          "intitule": "SPF Economie — Conditions du service bancaire de base"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SBB-003",
+      "question": "La banque peut-elle refuser ou supprimer ce service ?",
+      "reponse": "La banque ne peut refuser que pour des motifs prévus par la loi et peut résilier le service bancaire de base dans certains cas légaux (par exemple si les conditions ne sont plus remplies). En cas de difficulté, vous pouvez vous adresser au service de médiation compétent (Ombudsfin) et au SPF Economie.",
+      "reference_legale": "Code de droit économique, livre VII (refus et résiliation du service bancaire de base)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base",
+          "intitule": "SPF Economie — Service bancaire de base"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 109,
-    "faits": 347,
-    "sources_officielles": 499,
+    "modules": 113,
+    "faits": 359,
+    "sources_officielles": 512,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 88
+    "faits_avec_alerte_delai": 90
   },
   "modules": [
     {
@@ -20,6 +20,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "accidents_route_indemnisation.json",
+      "module": "accidents_route_indemnisation",
+      "titre": "Accident de la route — indemnisation",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "achat_logement.json",
@@ -152,6 +164,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-28"
+    },
+    {
+      "fichier": "assurance_hospitalisation.json",
+      "module": "assurance_hospitalisation",
+      "titre": "Assurance hospitalisation",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "assurance_maladie_mutuelle.json",
@@ -1138,6 +1162,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "service_bancaire_base.json",
+      "module": "service_bancaire_base",
+      "titre": "Service bancaire de base (droit au compte)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "sexisme_espace_public.json",
       "module": "sexisme_espace_public",
       "titre": "Sexisme & harcèlement dans l'espace public",
@@ -1160,6 +1196,18 @@
       "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "successions_internationales.json",
+      "module": "successions_internationales",
+      "titre": "Succession internationale",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "surendettement.json",

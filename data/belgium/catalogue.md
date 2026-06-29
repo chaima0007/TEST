@@ -2,13 +2,14 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**347 réponses · 109 modules · 499 sources officielles · 187 fiches avec contacts · 88 alertes de délai**
+**359 réponses · 113 modules · 512 sources officielles · 187 fiches avec contacts · 90 alertes de délai**
 
 ## Modules en ligne
 
 | Domaine | Module | Réponses | Sources off. | Contacts | Délais |
 |---|---|---|---|---|---|
 | Risques professionnels | Accident du travail & maladie professionnelle | 2 | 4 | 2 | 1 |
+| — | Accident de la route — indemnisation | 3 | 3 | 0 | 1 |
 | Achat immobilier | Acheter un logement — compromis & notaire | 2 | 3 | 2 | 1 |
 | Adoption | Adoption — formes et procédure | 2 | 4 | 2 | 0 |
 | Sans-abri & domiciliation | Adresse de référence (sans logement) | 2 | 2 | 2 | 0 |
@@ -20,6 +21,7 @@
 | Animaux | Animaux — bien-être, responsabilités, maltraitance | 3 | 5 | 2 | 1 |
 | Assurance véhicule | Assurance auto obligatoire (RC) | 2 | 3 | 2 | 0 |
 | Assurance logement | Assurance habitation & incendie | 2 | 2 | 2 | 1 |
+| — | Assurance hospitalisation | 3 | 4 | 0 | 1 |
 | — | Assurance maladie & mutualité | 4 | 7 | 0 | 0 |
 | Assurances | Assurances — auto obligatoire, RC familiale, litiges | 3 | 4 | 2 | 1 |
 | — | Bail à ferme (location de biens agricoles) | 3 | 3 | 0 | 0 |
@@ -102,8 +104,10 @@
 | Saisies & recouvrement | Saisies & huissier — ce qui peut être pris (ou non) | 2 | 2 | 2 | 0 |
 | Santé mentale | Santé mentale — aide psychologique, remboursement, écoute | 2 | 4 | 2 | 1 |
 | Santé & patient | Santé — droits du patient | 4 | 6 | 1 | 1 |
+| — | Service bancaire de base (droit au compte) | 3 | 3 | 0 | 0 |
 | Sexisme & espace public | Sexisme & harcèlement dans l'espace public | 2 | 4 | 2 | 0 |
 | Successions | Successions & héritage — accepter, renoncer, délais | 4 | 4 | 3 | 2 |
+| — | Succession internationale | 3 | 3 | 0 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 2 | 3 | 2 | 1 |
 | Testament & donations | Testament & planifier sa succession | 2 | 4 | 2 | 0 |

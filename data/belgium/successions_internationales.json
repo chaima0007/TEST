@@ -1,0 +1,58 @@
+{
+  "module": "successions_internationales",
+  "titre": "Succession internationale",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Règlement (UE) n° 650/2012 du 4 juillet 2012 sur les successions internationales",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://e-justice.europa.eu/478/FR/european_certificate_of_succession"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les successions internationales sont complexes : consultez un notaire.",
+  "faits": [
+    {
+      "id": "SUCCINT-001",
+      "question": "Quelle loi s'applique à une succession avec un élément étranger ?",
+      "reponse": "Le règlement européen sur les successions pose le principe d'unicité : une seule loi régit l'ensemble de la succession. En principe, c'est la loi de la résidence habituelle du défunt au moment du décès. Vous pouvez toutefois choisir, par testament, que ce soit la loi de votre nationalité qui s'applique.",
+      "reference_legale": "Règlement (UE) n° 650/2012 du 4 juillet 2012 (loi applicable à la succession)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://e-justice.europa.eu/478/FR/european_certificate_of_succession",
+          "intitule": "Portail e-Justice (UE) — Successions internationales"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SUCCINT-002",
+      "question": "Qu'est-ce que le certificat successoral européen (CSE) ?",
+      "reponse": "Le certificat successoral européen est un document qui prouve votre qualité d'héritier, de légataire, d'exécuteur testamentaire ou d'administrateur, et vous permet d'exercer vos droits dans les autres États membres. Une fois délivré, il est reconnu dans tous les États membres sans procédure spéciale.",
+      "reference_legale": "Règlement (UE) n° 650/2012 (certificat successoral européen)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://e-justice.europa.eu/478/FR/european_certificate_of_succession",
+          "intitule": "Portail e-Justice (UE) — Certificat successoral européen"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SUCCINT-003",
+      "question": "Ce règlement s'applique-t-il partout ?",
+      "reponse": "Le règlement s'applique dans tous les États membres de l'Union européenne, sauf le Danemark et l'Irlande. Pour des biens situés en dehors de l'UE, des règles de droit international privé propres peuvent s'appliquer. Un notaire peut vous aider à organiser une succession transfrontalière.",
+      "reference_legale": "Règlement (UE) n° 650/2012 (champ d'application)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://e-justice.europa.eu/478/FR/european_certificate_of_succession",
+          "intitule": "Portail e-Justice (UE) — Champ d'application"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
