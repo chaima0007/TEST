@@ -56,12 +56,12 @@
     {
       "id": "ANO-006",
       "date_constat": "2026-06-29",
-      "source_litigieuse": "Fiches changement_regime_matrimonial & emancipation — notaire.be typé 'officiel'",
+      "source_litigieuse": "notaire.be typé 'officiel' dans 8 fiches (achat_logement, changement_regime_matrimonial, divorce, donation, emancipation, saisie_immobiliere, testament, tutelle_mineurs)",
       "nature": "qualification de source (fédération pro vs législateur)",
       "ecart": "notaire.be (Fédération du Notariat) n'est pas le législateur: au sens du §16, la source officielle doit être le texte canonique (Code civil sur ejustice / SPF Justice). Requalifier notaire.be en 'secondaire' et ajouter la source canonique (à vérifier sur ejustice: régimes matrimoniaux loi 22/07/2018; émancipation Code civil) avant de retirer notaire.be de tier1.",
       "source_canonique": "ejustice.just.fgov.be (Code civil) + justice.belgium.be",
-      "action": "à planifier (MAJ auto ou humaine)",
-      "statut": "ouvert"
+      "action": "RÉSOLU : notaire.be requalifié 'officiel'->'secondaire' dans TOUTES les fiches et RETIRÉ de tier1. Bases légales repointées vers sources officielles réelles (SPF Justice, belgium.be, finances). Pour changement_regime_matrimonial/emancipation/tutelle_mineurs (sans autre source officielle), ajout de justice.belgium.be (SPF Justice, autorité compétente). Reste à enrichir: articles précis du Code civil sur ejustice quand vérifiables (non bloquant).",
+      "statut": "resolu"
     }
   ]
 }

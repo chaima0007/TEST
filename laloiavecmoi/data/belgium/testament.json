@@ -7,7 +7,7 @@
   "base_legale_principale": {
     "intitule": "Code civil — testaments (art. 967 et suivants), réserve héréditaire et donations",
     "portee": "Organiser de son vivant la transmission de ses biens, dans les limites de la loi",
-    "source_officielle": "https://www.notaire.be/donations-successions"
+    "source_officielle": "https://www.belgium.be/fr/famille/deces/heritage"
   },
   "derniere_revue": "2026-06-28",
   "statut_fiabilite": "verifie",
@@ -19,11 +19,23 @@
       "reponse": "Plusieurs formes existent : le testament olographe (entièrement écrit, daté et signé de votre main), le testament authentique (devant notaire, le plus sûr) et le testament international. Attention : vous ne pouvez pas tout léguer librement. La loi protège une « réserve héréditaire » pour vos enfants (ils ont droit à une part minimale) ; le reste, la « quotité disponible », peut aller à qui vous voulez. Faire enregistrer le testament chez un notaire évite qu'il soit perdu ou contesté.",
       "reference_legale": "Code civil — testaments (art. 967 et suivants) et réserve héréditaire des descendants",
       "contacts": [
-        {"nom": "Notaire", "lien": "https://www.notaire.be", "pour": "testament authentique, conseil, enregistrement"}
+        {
+          "nom": "Notaire",
+          "lien": "https://www.notaire.be",
+          "pour": "testament authentique, conseil, enregistrement"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.notaire.be/donations-successions/preparer-sa-succession/le-testament", "intitule": "Notaire.be — Le testament"},
-        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage"}
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/donations-successions/preparer-sa-succession/le-testament",
+          "intitule": "Notaire.be — Le testament"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/deces/heritage",
+          "intitule": "Belgium.be — Héritage"
+        }
       ],
       "date_verification": "2026-06-28"
     },
@@ -33,11 +45,22 @@
       "reponse": "Les deux sont possibles et souvent combinés. La donation transmet un bien de votre vivant (souvent pour anticiper et, selon les cas, réduire les droits) ; le testament n'a d'effet qu'au décès et reste modifiable tant que vous vivez. Les droits (de donation ou de succession) varient selon la Région et le lien de parenté. Comme les règles fiscales évoluent et que chaque famille est différente, faites le calcul avec un notaire avant de décider — une erreur de planification peut coûter cher aux héritiers.",
       "reference_legale": "Code civil — donations et testaments ; droits de succession/donation (régionaux)",
       "contacts": [
-        {"nom": "Notaire", "pour": "stratégie donation/testament, simulation des droits"}
+        {
+          "nom": "Notaire",
+          "pour": "stratégie donation/testament, simulation des droits"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.notaire.be/donations-successions", "intitule": "Notaire.be — Donations & successions"},
-        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage"}
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/donations-successions",
+          "intitule": "Notaire.be — Donations & successions"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/deces/heritage",
+          "intitule": "Belgium.be — Héritage"
+        }
       ],
       "date_verification": "2026-06-28"
     }

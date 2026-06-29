@@ -7,7 +7,7 @@
   "base_legale_principale": {
     "intitule": "Code civil — émancipation du mineur (art. 476 à 488)",
     "portee": "Conditions et effets de l'émancipation (par mariage ou par décision du tribunal de la famille)",
-    "source_officielle": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1"
+    "source_officielle": "https://justice.belgium.be/fr"
   },
   "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
@@ -19,7 +19,16 @@
       "reponse": "L'émancipation autorise un mineur à poser les actes de la vie civile normalement réservés aux majeurs : il n'est plus soumis à l'autorité parentale (ou à la tutelle). Ce n'est toutefois pas total : pour certains actes importants (par ex. recevoir un capital, intenter une action immobilière), il doit être assisté d'un « curateur ». C'est une mesure exceptionnelle, accordée dans l'intérêt du mineur, pas pour « échapper » à ses parents.",
       "reference_legale": "Code civil — émancipation (art. 476 à 488)",
       "sources": [
-        {"type": "officiel", "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1", "intitule": "Notaire.be — L'émancipation d'un mineur"}
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr",
+          "intitule": "SPF Justice — autorite competente (droit civil et de la famille)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
+          "intitule": "Notaire.be — L'émancipation d'un mineur"
+        }
       ],
       "date_verification": "2026-06-29"
     },
@@ -29,10 +38,17 @@
       "reponse": "Deux voies. Par le mariage : en principe interdit avant 18 ans, mais le tribunal de la famille peut, pour motifs graves, lever cette interdiction ; le mariage émancipe alors automatiquement. Par décision judiciaire : dès l'âge de 15 ans accomplis, le tribunal de la famille peut émanciper un mineur si c'est utile et dans son intérêt.",
       "reference_legale": "Code civil — émancipation par mariage et par le tribunal de la famille (art. 476-477)",
       "contacts": [
-        {"nom": "Tribunal de la famille", "pour": "demande d'émancipation"}
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "demande d'émancipation"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1", "intitule": "Notaire.be — Les deux voies d'émancipation"}
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
+          "intitule": "Notaire.be — Les deux voies d'émancipation"
+        }
       ],
       "date_verification": "2026-06-29"
     },
@@ -42,7 +58,11 @@
       "reponse": "La demande est introduite par les parents (ou l'un d'eux, l'autre étant entendu en cas de désaccord), par le tuteur, ou par le procureur du Roi (qui peut agir à la demande de tiers). Le mineur ne peut donc pas la demander seul. Il faut prouver l'utilité de l'émancipation au juge, qui examine la maturité, l'autonomie et l'intérêt du mineur, et peut ordonner enquêtes et auditions.",
       "reference_legale": "Code civil — procédure d'émancipation (art. 477 et suivants)",
       "sources": [
-        {"type": "officiel", "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1", "intitule": "Notaire.be — Conditions et procédure"}
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
+          "intitule": "Notaire.be — Conditions et procédure"
+        }
       ],
       "date_verification": "2026-06-29"
     },
@@ -52,7 +72,11 @@
       "reponse": "Le mineur émancipé est assimilé à un majeur pour ses droits civils : il peut par exemple changer de domicile, conclure un contrat de travail ou de bail, percevoir ses revenus. Mais certains actes nécessitent encore l'assistance d'un curateur ou l'accord du juge de paix (emprunt, vente d'immeuble, action en justice…). Sur le plan pénal, il reste mineur (tribunal de la jeunesse). En cas d'immaturité, l'émancipation peut être révoquée et le mineur replacé sous tutelle jusqu'à 18 ans.",
       "reference_legale": "Code civil — effets de l'émancipation et assistance du curateur (art. 481-484)",
       "sources": [
-        {"type": "officiel", "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1", "intitule": "Notaire.be — Effets et limites"}
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/faq/heritage/en-quoi-consiste-l-emancipation-d-un-mineur-et-comment-peut-elle-etre-obtenue-1",
+          "intitule": "Notaire.be — Effets et limites"
+        }
       ],
       "date_verification": "2026-06-29"
     }
