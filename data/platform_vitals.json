@@ -1,6 +1,6 @@
 {
   "naissance": "2026-06-29T09:31:18.850752+00:00",
-  "battements": 70,
+  "battements": 71,
   "historique": [
     {
       "ts": "2026-06-29T09:31:18.850752+00:00",
@@ -618,12 +618,21 @@
       "reponses": 499,
       "modules": 151,
       "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:07:15.271839+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 500,
+      "modules": 151,
+      "plan_pct": 46
     }
   ],
-  "derniere_pulsation": "2026-06-29T18:05:06.673287+00:00",
+  "derniere_pulsation": "2026-06-29T18:07:15.271839+00:00",
   "etat_vie": "🟠 Vigilance",
   "resilience": 72.0,
   "statut": "APPROUVÉ",
   "age_jours": 0.36,
-  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 72.0%, 70ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum, Avancement, Obsolescence, Opportunités. Ma fragilité au pire scénario : Panne large. Plan à 46%. Prochaine étape : Valider la grille de prix grands comptes (proposition prête : A/B/C)."
+  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 72.0%, 71ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum, Avancement, Obsolescence, Opportunités. Ma fragilité au pire scénario : Panne large. Plan à 46%. Prochaine étape : Valider la grille de prix grands comptes (proposition prête : A/B/C)."
 }

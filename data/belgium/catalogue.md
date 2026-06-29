@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**499 réponses · 151 modules · 715 sources officielles · 231 fiches avec contacts · 100 alertes de délai**
+**500 réponses · 151 modules · 718 sources officielles · 232 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -76,7 +76,7 @@
 | — | Équivalence d'un diplôme étranger | 3 | 3 | 0 | 0 |
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 3 | 4 | 3 | 1 |
 | — | Expropriation pour cause d'utilité publique | 3 | 3 | 0 | 0 |
-| Logement — expulsion | Expulsion du logement — vos droits | 2 | 2 | 2 | 1 |
+| Logement — expulsion | Expulsion du logement — vos droits | 3 | 5 | 3 | 1 |
 | Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
 | — | Filiation & reconnaissance d'un enfant | 3 | 3 | 0 | 0 |
 | Fin de vie | Fin de vie — déclarations anticipées & droits | 2 | 4 | 2 | 0 |

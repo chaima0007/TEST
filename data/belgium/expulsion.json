@@ -20,13 +20,30 @@
       "reference_legale": "Code judiciaire — procédure devant le juge de paix (art. 1344bis et suivants)",
       "alerte_delai": "Vous avez en principe 30 jours après la notification du jugement pour le contester. Réagissez dès la convocation au juge de paix.",
       "contacts": [
-        {"nom": "Juge de paix", "pour": "audience, défense, demande de délai"},
-        {"nom": "CPAS", "pour": "aide, relogement, défense du locataire"},
-        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo selon revenus"}
+        {
+          "nom": "Juge de paix",
+          "pour": "audience, défense, demande de délai"
+        },
+        {
+          "nom": "CPAS",
+          "pour": "aide, relogement, défense du locataire"
+        },
+        {
+          "nom": "Bureau d'aide juridique (BAJ)",
+          "pour": "avocat gratuit/pro deo selon revenus"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/procedure-expulsion", "intitule": "Wallonie — La procédure d'expulsion"},
-        {"type": "secondaire", "url": "https://www.huissiersdejustice.be/expulsion", "intitule": "Huissiers de justice — Expulsion"}
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/fr/bail/procedure-expulsion",
+          "intitule": "Wallonie — La procédure d'expulsion"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.huissiersdejustice.be/expulsion",
+          "intitule": "Huissiers de justice — Expulsion"
+        }
       ],
       "date_verification": "2026-06-27"
     },
@@ -36,14 +53,69 @@
       "reponse": "Cela dépend de la Région. À Bruxelles, les expulsions de logement sont interdites durant la période hivernale (en principe du 1er novembre au 15 mars). En Wallonie, une protection hivernale existe notamment pour le logement social. Le juge de paix peut aussi reporter ou suspendre une expulsion si votre situation sociale est difficile. Dans tous les cas, contactez vite le CPAS : il peut aider à la défense, à trouver un nouveau logement et parfois à une aide financière.",
       "reference_legale": "Code judiciaire (pouvoir du juge de paix de surseoir) et réglementations régionales du logement",
       "contacts": [
-        {"nom": "CPAS", "pour": "relogement, aide, défense"},
-        {"nom": "Service logement de votre Région", "pour": "règles d'expulsion et trêve hivernale"}
+        {
+          "nom": "CPAS",
+          "pour": "relogement, aide, défense"
+        },
+        {
+          "nom": "Service logement de votre Région",
+          "pour": "règles d'expulsion et trêve hivernale"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://be.brussels/en/housing/rental/eviction-and-lease-termination/eviction-procedures-understanding-eviction-process", "intitule": "Bruxelles — Procédure d'expulsion"},
-        {"type": "secondaire", "url": "https://www.mc.be/en-marche/vos-droits/familles/lexpulsion-dun-logement-est-elle-interdite-en-hiver", "intitule": "Mutualité chrétienne — Expulsion en hiver"}
+        {
+          "type": "officiel",
+          "url": "https://be.brussels/en/housing/rental/eviction-and-lease-termination/eviction-procedures-understanding-eviction-process",
+          "intitule": "Bruxelles — Procédure d'expulsion"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.mc.be/en-marche/vos-droits/familles/lexpulsion-dun-logement-est-elle-interdite-en-hiver",
+          "intitule": "Mutualité chrétienne — Expulsion en hiver"
+        }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "EXPUL-REGIONAL-001",
+      "question": "Qui décide d'une expulsion, et quelles règles selon ma région ?",
+      "reponse": "Deux niveaux se combinent. La PROCÉDURE JUDICIAIRE d'expulsion est FÉDÉRALE : seul le juge de paix peut autoriser une expulsion, selon le Code judiciaire, avec des délais et la signification par huissier. En revanche, le BAIL d'habitation et certaines PROTECTIONS (préavis, motifs, trêve hivernale, accompagnement social) sont RÉGIONAUX : en WALLONIE (logement.wallonie.be, Code wallon de l'Habitation durable), à BRUXELLES (be.brussels, Code bruxellois du Logement) et en FLANDRE (Vlaams Woninghuurdecreet, info via vlaanderen.be). Ne quittez jamais le logement sans décision de justice : renseignez-vous auprès du service logement de votre région et, au besoin, de l'aide juridique.",
+      "reference_legale": "Procédure d'expulsion : Code judiciaire (compétence fédérale, juge de paix) ; bail et protections régionales : Code wallon de l'Habitation durable, Code bruxellois du Logement, décret flamand sur le bail d'habitation (Vlaams Woninghuurdecreet)",
+      "contacts": [
+        {
+          "nom": "Logement Wallonie",
+          "lien": "https://logement.wallonie.be/",
+          "pour": "bail et protections en Wallonie"
+        },
+        {
+          "nom": "be.brussels — Logement",
+          "lien": "https://be.brussels/",
+          "pour": "bail et protections à Bruxelles"
+        },
+        {
+          "nom": "Vlaanderen — Wonen",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "huurwetgeving en Flandre"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://logement.wallonie.be/",
+          "intitule": "Logement Wallonie — bail et expulsion (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://be.brussels/",
+          "intitule": "be.brussels — logement (Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaanderen — Vlaams Woninghuurdecreet (Flandre)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

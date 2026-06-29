@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 151,
-    "faits": 499,
-    "sources_officielles": 715,
-    "faits_avec_contacts": 231,
+    "faits": 500,
+    "sources_officielles": 718,
+    "faits_avec_contacts": 232,
     "faits_avec_alerte_delai": 100
   },
   "modules": [
@@ -831,9 +831,9 @@
       "titre": "Expulsion du logement — vos droits",
       "domaine": "Logement — expulsion",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
     },
