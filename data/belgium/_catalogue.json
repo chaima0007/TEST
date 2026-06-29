@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 117,
-    "faits": 371,
-    "sources_officielles": 527,
+    "modules": 121,
+    "faits": 383,
+    "sources_officielles": 539,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 90
+    "faits_avec_alerte_delai": 91
   },
   "modules": [
     {
@@ -694,6 +694,18 @@
       "derniere_revue": "2026-06-29"
     },
     {
+      "fichier": "equivalence_diplomes.json",
+      "module": "equivalence_diplomes",
+      "titre": "Équivalence d'un diplôme étranger",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "etrangers.json",
       "module": "etrangers_sejour",
       "titre": "Étrangers & séjour — titres, regroupement familial, asile",
@@ -884,6 +896,18 @@
       "faits_avec_contacts": 8,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "ivg.json",
+      "module": "ivg",
+      "titre": "Interruption volontaire de grossesse (IVG)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "job_etudiant.json",
@@ -1294,6 +1318,18 @@
       "derniere_revue": "2026-06-28"
     },
     {
+      "fichier": "titres_services.json",
+      "module": "titres_services",
+      "titre": "Titres-services (aide à domicile)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "transport_passagers.json",
       "module": "transport_passagers",
       "titre": "Voyageurs — train & avion (retard, annulation)",
@@ -1352,6 +1388,18 @@
       "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "violences_sexuelles_cpvs.json",
+      "module": "violences_sexuelles_cpvs",
+      "titre": "Violences sexuelles — aide et CPVS",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "voisinage.json",

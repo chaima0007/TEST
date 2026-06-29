@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**371 réponses · 117 modules · 527 sources officielles · 187 fiches avec contacts · 90 alertes de délai**
+**383 réponses · 121 modules · 539 sources officielles · 187 fiches avec contacts · 91 alertes de délai**
 
 ## Modules en ligne
 
@@ -65,6 +65,7 @@
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
 | Enseignement | École & enseignement — inscription, gratuité, obligation scolaire | 4 | 7 | 2 | 2 |
 | — | Épargne-pension (3e pilier) | 3 | 5 | 0 | 0 |
+| — | Équivalence d'un diplôme étranger | 3 | 3 | 0 | 0 |
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 3 | 4 | 3 | 1 |
 | — | Expropriation pour cause d'utilité publique | 3 | 3 | 0 | 0 |
 | Logement — expulsion | Expulsion du logement — vos droits | 2 | 2 | 2 | 1 |
@@ -81,6 +82,7 @@
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 3 | 5 | 2 | 3 |
 | Maladie & incapacité | Maladie & incapacité de travail | 2 | 4 | 2 | 1 |
 | Indépendant & activité | Devenir indépendant — démarches pour se lancer | 8 | 16 | 8 | 2 |
+| — | Interruption volontaire de grossesse (IVG) | 3 | 3 | 0 | 1 |
 | Job étudiant | Job étudiant — contrat, quota d'heures, cotisations réduites | 3 | 5 | 1 | 2 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
@@ -115,11 +117,13 @@
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 2 | 3 | 2 | 1 |
 | Testament & donations | Testament & planifier sa succession | 2 | 4 | 2 | 0 |
+| — | Titres-services (aide à domicile) | 3 | 3 | 0 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 2 | 4 | 2 | 1 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | — | Tutelle d'un enfant mineur | 3 | 3 | 0 | 0 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
 | Violences conjugales | Violences conjugales & familiales — se protéger | 3 | 6 | 3 | 1 |
+| — | Violences sexuelles — aide et CPVS | 3 | 3 | 0 | 0 |
 | Voisinage | Voisinage — bien s'entendre et régler les conflits | 4 | 4 | 3 | 0 |
 | Achat véhicule d'occasion | Acheter une voiture d'occasion | 2 | 2 | 2 | 1 |
 | Vote & démocratie | Vote électoral — pour qui et pourquoi on vote | 4 | 8 | 1 | 0 |

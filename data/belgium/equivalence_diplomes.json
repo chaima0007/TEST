@@ -1,0 +1,58 @@
+{
+  "module": "equivalence_diplomes",
+  "titre": "Équivalence d'un diplôme étranger",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret de la Communauté française relatif à l'équivalence des diplômes étrangers (matière communautaire) ; centres NARIC pour l'enseignement supérieur",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.belgium.be/fr/formation/international/diplomes/equivalence"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La matière est communautaire : suivez les indications du service des équivalences ou du centre NARIC compétent.",
+  "faits": [
+    {
+      "id": "EQUIV-001",
+      "question": "Quand ai-je besoin d'une équivalence de diplôme ?",
+      "reponse": "L'équivalence est un document qui détermine la valeur en Belgique d'études suivies à l'étranger. Elle est généralement requise pour poursuivre des études (secondaires ou supérieures), suivre une formation, travailler ou s'installer comme indépendant. Les diplômes délivrés par les trois Communautés belges sont automatiquement reconnus équivalents entre eux.",
+      "reference_legale": "Décret de la Communauté française sur l'équivalence des diplômes (matière communautaire)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/formation/international/diplomes/equivalence",
+          "intitule": "Belgium.be — Équivalence des diplômes"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EQUIV-002",
+      "question": "À qui dois-je m'adresser ?",
+      "reponse": "La compétence est communautaire. Pour un diplôme du primaire ou du secondaire, adressez-vous au service des équivalences de la Communauté concernée (française, flamande ou germanophone). Pour un diplôme de l'enseignement supérieur, ce sont les centres NARIC qui traitent la reconnaissance.",
+      "reference_legale": "Décret de la Communauté française sur l'équivalence des diplômes (services des équivalences ; centres NARIC pour le supérieur)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/formation/international/diplomes/equivalence",
+          "intitule": "Belgium.be — Services compétents (équivalences, NARIC)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EQUIV-003",
+      "question": "Quelques points d'attention",
+      "reponse": "Aucune équivalence n'est nécessaire pour un diplôme délivré par une école dispensant un programme belge à l'étranger. Anticipez : la procédure peut prendre du temps et demande souvent des pièces (traductions officielles, légalisations). Renseignez-vous tôt, surtout avant une inscription scolaire ou une candidature.",
+      "reference_legale": "Décret de la Communauté française sur l'équivalence des diplômes (procédure et pièces à fournir)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/formation/international/diplomes/equivalence",
+          "intitule": "Belgium.be — Procédure d'équivalence"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
