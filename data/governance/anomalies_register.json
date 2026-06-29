@@ -22,6 +22,16 @@
       "source_canonique": "EUR-Lex (Règlement (UE) 2024/1689) + Commission / Office européen pour l'IA (digital-strategy.ec.europa.eu)",
       "action": "/ai-act corrigée (échéances 02/08/2026, 02/12/2026, 02/02/2027).",
       "statut": "resolu"
+    },
+    {
+      "id": "ANO-003",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "Fiches citoyennes ajoutées cette session via Exa (localisation de sources officielles)",
+      "nature": "provenance non conforme P-NO-MOTEUR-GENERALISTE",
+      "ecart": "Données localisées via moteur généraliste Exa; les références légales pointent vers des instruments officiels (AR, lois) mais la consultation directe du portail canonique n'a pas pu être faite (proxy 403). À re-vérifier sur EUR-Lex/fgov.be/régional dès canal sanctionné.",
+      "source_canonique": "EUR-Lex + portails .fgov.be / régionaux + Moniteur belge",
+      "action": "à planifier (MAJ auto ou humaine)",
+      "statut": "ouvert"
     }
   ]
 }

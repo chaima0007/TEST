@@ -457,7 +457,9 @@ python3 scripts/branch_guard.py --check --quiet
   - la **Commission européenne** (`commission.europa.eu`),
   - l'**Office européen pour l'IA** (`digital-strategy.ec.europa.eu`).
 - **Interdits comme source** : forums, blogs, sites tiers non autorisés (cabinets, presse, agrégateurs) — ils ne « font pas foi ».
-- **Autorisé** : s'**inspirer des retours d'expérience** (veille, autres prompts, Reddit) pour **identifier les problématiques et préoccupations** des utilisateurs — **jamais** pour servir de **référence légale**.
+- **🚫 INTERDICTION FORMELLE (Chaima, 2026-06-29) — moteurs généralistes** : il est **strictement interdit** de recourir à un **moteur de recherche généraliste** (Exa, recherche web ouverte, agrégateurs) pour **alimenter la base de connaissances**. Tout signalement d'un tel usage = **violation grave de gouvernance**. Les agents s'appuient **exclusivement** sur les sources officielles/canoniques (EUR-Lex, Commission, AI Office, portails `.fgov.be`/`.belgium.be`, portails régionaux, Moniteur belge).
+- **Autorisé** : s'**inspirer des retours d'expérience** (veille des préoccupations utilisateurs) pour **identifier les problématiques** — **jamais** pour servir de **référence légale**, et jamais pour écrire une fiche de la base.
+- **⚠️ Inaccessibilité canonique** : si les portails officiels sont injoignables (politique réseau du sandbox — refus 403 du proxy), l'**enrichissement externe est SUSPENDU** et **déclaré honnêtement**. On ne **fabrique jamais** une donnée ni une provenance « officielle » non vérifiée. Voir registre : `P-NO-MOTEUR-GENERALISTE`.
 
 **Vérification :**
 ```bash

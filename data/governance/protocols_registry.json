@@ -327,6 +327,12 @@
       "nom": "Gestion des documentations obsolètes/contradictoires",
       "regle": "INTERDICTION d'ignorer une page ou de stopper la mission face à une donnée obsolète/contradictoire. Appliquer : (1) IDENTIFIER & MARQUER — isoler l'item, créer une alerte au registre des anomalies (URL, date, nature). (2) SOURCE CANONIQUE — court-circuiter la source douteuse, se référer EXCLUSIVEMENT aux bases officielles validées (EUR-Lex/Commission/AI Office ; portails fédéraux/régionaux). (3) RAPPORT D'ÉCART — consigner l'écart obsolète vs réalité officielle, planifier la MAJ, puis POURSUIVRE immédiatement. Règle d'or : une donnée obsolète ne stoppe jamais l'agent ; seule la SORTIE affectée est gelée (cf. P-HIERARCHIE-NORMES).",
       "verif": "python3 scripts/anomaly_register.py (NON bloquant ; ALERTE si anomalies ouvertes)"
+    },
+    {
+      "id": "P-NO-MOTEUR-GENERALISTE",
+      "nom": "Interdiction des moteurs de recherche généralistes (Exa & assimilés)",
+      "regle": "AVERTISSEMENT FORMEL (Chaima, 2026-06-29) : il est STRICTEMENT INTERDIT de recourir à un moteur de recherche généraliste (Exa, recherche web ouverte, agrégateurs) pour ALIMENTER la base de connaissances juridique. Toute donnée légale doit provenir EXCLUSIVEMENT des sources officielles et canoniques (EUR-Lex, Commission européenne, AI Office, portails fédéraux .fgov.be / .belgium.be, portails régionaux wallonie.be / brussels / vlaanderen.be, Moniteur belge). Signaler l'usage d'un moteur généraliste pour la base = VIOLATION GRAVE de gouvernance. Toléré HORS base de connaissances uniquement : veille des préoccupations utilisateurs (jamais comme référence légale). Si les sources canoniques sont injoignables (politique réseau du sandbox), l'enrichissement externe est SUSPENDU et signalé honnêtement — on ne fabrique JAMAIS une donnée ni une provenance officielle non vérifiée.",
+      "verif": "python3 scripts/source_trust_protocol.py (les 'officiel' doivent être tier1) ; revue manuelle : aucune entrée ne doit reposer sur un moteur généraliste ; en cas d'inaccessibilité canonique → suspendre + déclarer"
     }
   ]
 }
