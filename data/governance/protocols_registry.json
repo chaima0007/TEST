@@ -375,6 +375,12 @@
       "nom": "Contrôle d'intégrité de l'environnement (anti-désync conteneur)",
       "regle": "Suite à l'incident du 2026-06-29 (conteneur désynchronisé sur le dépôt partagé, checkout positionné sur un autre projet) : OBLIGATION de vérifier l'intégrité de l'espace de travail AU DÉBUT de chaque cycle de travail, AVANT toute écriture/commit. Contrôle : branche courante == branche de travail ; présence des répertoires/fichiers clés (scripts/, data/governance/, corpus >= 100 fiches). En cas d'anomalie : NE PAS écrire ; git fetch ; réaligner (git reset --hard origin/<branche>) sur autorisation explicite (action destructive). Ne jamais commiter depuis un checkout étranger.",
       "verif": "python3 scripts/env_integrity_check.py (sortie 0 = sain ; sortie 1 = désync, réaligner avant toute écriture)"
+    },
+    {
+      "id": "P-CHARTE-FLOTTE",
+      "nom": "Charte de la flotte multi-agents",
+      "regle": "La flotte (orchestrateur + 6 divisions ~50 agents + intelligence + gouvernance) obéit à la charte: objectif principal (2 projets séparés: La Loi Avec Moi citoyen / Caelum B2B), responsabilités fixes et non modifiables par division (gouvernance=couche gouvernance+D5; assets commerciaux=D4 alimentée par D2/D3, tracée D6; architecture=orchestrator->divisions->intelligence->exporters->gouvernance), protocole strict (validation avant écriture/commit, sécurité, gestion d'erreurs immédiate, aucune action destructive/non autorisée). Réf: docs/protocols/CHARTE-FLOTTE-MULTI-AGENTS.md + data/governance/fleet_charter.json.",
+      "verif": "revue de conformité à la charte; rôles de division non modifiés sans décision de Chaima"
     }
   ]
 }

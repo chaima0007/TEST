@@ -99,6 +99,13 @@
       "integration_systeme": "scripts/env_integrity_check.py (contrôle début de cycle) ; environnement restauré (HEAD 79684e77) ; crm-sales intact.",
       "protocole": "P-INTEGRITE-ENVIRONNEMENT (§24)",
       "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-15",
+      "consigne": "Définir la charte de la flotte: objectif principal (précision chirurgicale), responsabilités strictes non modifiables par agent, protocole strict de validation/sécurité/gestion d'erreurs interdisant toute action destructive ou non autorisée.",
+      "integration_systeme": "docs/protocols/CHARTE-FLOTTE-MULTI-AGENTS.md + data/governance/fleet_charter.json + P-CHARTE-FLOTTE",
+      "protocole": "P-CHARTE-FLOTTE",
+      "statut": "EN VIGUEUR"
     }
   ],
   "portails_officiels_valides_2026-06-29": {

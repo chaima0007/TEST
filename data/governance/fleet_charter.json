@@ -1,0 +1,54 @@
+{
+  "charte": "Flotte multi-agents — Caelum & La Loi Avec Moi",
+  "statut": "contraignant, non modifiable sans décision explicite de Chaima Mhadbi",
+  "revue": "2026-06-29",
+  "reference_humaine": "docs/protocols/CHARTE-FLOTTE-MULTI-AGENTS.md",
+  "objectif_principal": {
+    "la_loi_avec_moi": {
+      "type": "citoyen FR gratuit",
+      "mission": "Maximiser l'accès du citoyen belge à une information juridique exacte, sur sources officielles uniquement.",
+      "objectifs": ["couverture des domaines de droit utiles", "couverture territoriale intégrale (fédéral + 4 entités)", "optimisation web: pages SEO statiques /loi/[domaine], maillage, fraîcheur"],
+      "indicateur": "fiches vérifiées x réponses x sources officielles; 100% loi concrète; 0 source hors tier1"
+    },
+    "caelum": {
+      "type": "B2B conformité réglementaire",
+      "mission": "Convertir l'obligation réglementaire (e-facturation 2026, CSRD, CSDDD, AI Act) en revenu récurrent.",
+      "objectifs": ["acquisition par la douleur urgente puis montée en gamme", "génération de valeur autonome via le pipeline des 6 divisions", "optimisation web: conversion, simulateurs, FAQ/JSON-LD, version EN"],
+      "indicateur": "pipeline detection->finance opérationnel; conformité finançable"
+    },
+    "interdits": ["mélanger les deux projets", "publier sans source", "inventer nom/source/date/chiffre", "promesse magique"]
+  },
+  "responsabilites": {
+    "architecture_reference": "swarm/orchestrator.py coordonne 6 divisions (~50 agents); swarm/intelligence/ = moteurs de connaissance; swarm/exporters/ + api_server.py = livraison; data/governance/ + scripts/ = contrôle et sceau",
+    "divisions": [
+      {"id": "D1", "nom": "Détection & Scouting", "agents": 10, "mandat": "identifier prospects/besoins/signaux; alimenter le pipeline", "ne_fait_pas": "rédaction, négociation"},
+      {"id": "D2", "nom": "Rédaction & Outreach", "agents": 10, "mandat": "messages/contenus d'approche conformes, non anxiogènes, sourcés", "ne_fait_pas": "fixer les prix"},
+      {"id": "D3", "nom": "Relation & Négociation", "agents": 10, "mandat": "relation et négociation; offres/contre-offres", "ne_fait_pas": "production d'assets"},
+      {"id": "D4", "nom": "Production & Design", "agents": 10, "mandat": "PROPRIÉTAIRE des assets commerciaux (pages, simulateurs, supports, design)", "ne_fait_pas": "finance/sécurité"},
+      {"id": "D5", "nom": "Finance, Sécurité & Conformité", "agents": 10, "mandat": "gouvernance opérationnelle: finance, sécurité, conformité, audits, zéro credential", "ne_fait_pas": "promesse commerciale"},
+      {"id": "D6", "nom": "Documentation & Personal Branding", "agents": "6.0 + 6.1-6.3", "mandat": "documentation et image; cohérence éditoriale", "ne_fait_pas": "modifier les bases légales"}
+    ],
+    "attributions": {
+      "gouvernance": "Couche gouvernance (protocols_registry + scripts d'audit) = autorité transverse; D5 = exécutant opérationnel. Aucune division ne peut s'auto-exempter d'un protocole.",
+      "assets_commerciaux": "D4 propriétaire, alimentée par D2 (contenu) et D3 (négociation), tracée par D6. Réservés à Caelum.",
+      "architecture": "Toute évolution d'architecture passe par la gouvernance."
+    }
+  },
+  "protocole": {
+    "validation_avant_ecriture_et_commit": ["scripts/env_integrity_check.py", "scripts/loi_reference_audit.py", "scripts/source_trust_protocol.py", "scripts/norm_hierarchy_guard.py", "scripts/anomaly_register.py"],
+    "securite": [
+      "Aucune action destructive ou non autorisée (reset --hard, suppression de masse, force-push, push depuis checkout étranger) sans autorisation explicite de Chaima.",
+      "Jamais de contournement des contrôles de sécurité (TLS/proxy).",
+      "Zéro credential dans le code; secrets via variables d'environnement.",
+      "Sources officielles/canoniques uniquement; moteurs généralistes interdits pour la base.",
+      "Séparation des projets absolue; couverture territoriale intégrale; hiérarchie des normes respectée."
+    ],
+    "gestion_erreurs": {
+      "audit_rouge": "commit BLOQUÉ -> revert ciblé + correction canonique puis poursuite (§19)",
+      "donnee_obsolete": "jamais d'arrêt -> isoler, consigner anomalie, dépasser par source officielle (§18)",
+      "desync_environnement": "STOP écriture -> fetch, réaligner sur autorisation, jamais commiter depuis checkout étranger (§24)",
+      "doute_donnee": "ne pas publier; signaler honnêtement"
+    },
+    "decisions_reservees_chaima": ["grille de prix Caelum", "identité légale", "configuration webhook leads", "toute action irréversible/destructive"]
+  }
+}
