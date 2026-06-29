@@ -38,6 +38,18 @@ const fiches = [
     ref: "Consumentenombudsdienst",
     url: "https://consumentenombudsdienst.be/nl",
   },
+  {
+    title: "Een consumentenkrediet getekend? U heeft 14 dagen bedenktijd",
+    text: "Heeft u een consumentenkrediet (lening op afbetaling, kredietopening…) afgesloten, dan kan u zich binnen 14 kalenderdagen bedenken en de overeenkomst herroepen, zonder boete. U betaalt enkel het opgenomen kapitaal terug, vermeerderd met de intrest voor de gebruikte periode.",
+    ref: "Wetboek van economisch recht, boek VII, art. VII.83 — herroepingsrecht consumentenkrediet",
+    url: "https://economie.fgov.be/nl/themas/financiele-diensten/krediet/consumentenkrediet",
+  },
+  {
+    title: "Te dure lening? Er zijn wettelijke maximumrentevoeten",
+    text: "Vergelijk altijd het JKP (jaarlijks kostenpercentage): dat omvat alle kosten van het krediet. Voor consumentenkrediet gelden bovendien wettelijk vastgelegde maximale JKP's; een aanbod erboven is verboden.",
+    ref: "Wetboek van economisch recht, boek VII — JKP en maximale rentevoeten",
+    url: "https://economie.fgov.be/nl/themas/financiele-diensten/krediet/consumentenkrediet",
+  },
 ];
 
 const readText = `Uw rechten als consument. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;

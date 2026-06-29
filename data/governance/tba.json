@@ -62,18 +62,20 @@
         },
         {
           "nom": "Versions multilingues (NL en premier)",
-          "pct": 55,
+          "pct": 62,
           "statut": "en cours",
           "actions_faites": [
             "Bannière multilingue (14 langues, slogan)",
             "Aide à la traduction auto sur la base juridique",
             "Espace NL /de-wet-met-mij (11 thèmes prioritaires)",
             "Fiches NL sourcées : wonen, werk, juridische-hulp, consumentenrecht, familie, administratie, schulden, geweld, gezondheid, energie, ouderen",
+            "Enrichissement Wonen (Vlaams Woninghuurdecreet, 8 fiches) — correction waarborg 2→3 mois, ajout durée/indexation/qualité/EPC",
+            "Enrichissement Consumentenrecht (+crédit conso) et Juridische-hulp (+rechtsbijstand/documents)",
             "Énergie NL = règles FLAMANDES (VREG/Fluvius/LAC), pas les règles wallonnes (régionalisation respectée)",
-            "Sources officielles NL vérifiées (FOD Volksgezondheid, eJustice, FOD Economie, FOD Financiën, 1712, Vlaanderen.be, Vlaamse Nutsregulator, VLOCO)"
+            "Sources officielles NL vérifiées (codex.vlaanderen.be, FOD Volksgezondheid, eJustice, FOD Economie, FOD Financiën, 1712, Vlaanderen.be, Vlaamse Nutsregulator, VLOCO, advocaat.be)"
           ],
           "prochaines_etapes": [
-            "Poursuivre la traduction NL (logement/huur détaillé, famille approfondie) selon le trafic"
+            "Poursuivre la traduction NL (familie approfondie) selon le trafic"
           ]
         },
         {

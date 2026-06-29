@@ -5,19 +5,19 @@ _Dernière mise à jour : 2026-06-28_
 ## 🚀 Avancement global de la flotte : **87%**
 `█████████████████░░░` 87%
 
-- **La Loi Avec Moi (citoyens)** — `██████████░░░░` 69%
+- **La Loi Avec Moi (citoyens)** — `██████████░░░░` 70%
 - **Caelum (entreprises B2B)** — `█████████████░` 96%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
 ## 🔔 Actions qui t'attendent (Chaima)
-- **Activer la capture de leads** — Créer un webhook (Zapier "Catch Hook" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.
-- **Fixer les prix des offres conformité** — Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.
-- **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).
-- **Déployer les 2 sites séparément** — EN ATTENTE : valider d abord la stratégie A→Z (STRATEGIE_LANCEMENT_AZ.md) + cocher la checklist GO/NO-GO. Pas de lancement avant.
-- **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.
+- **Activer la capture de leads** — Créer un webhook (Zapier "Catch Hook" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner. _(en attente depuis 1 j)_
+- **Fixer les prix des offres conformité** — Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite. _(en attente depuis 1 j)_
+- **Renseigner les vrais coûts** — Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.). _(en attente depuis 1 j)_
+- **Déployer les 2 sites séparément** — EN ATTENTE : valider d abord la stratégie A→Z (STRATEGIE_LANCEMENT_AZ.md) + cocher la checklist GO/NO-GO. Pas de lancement avant. _(en attente depuis 1 j)_
+- **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel. _(en attente depuis 1 j)_
 
-## La Loi Avec Moi (citoyens) — 69%
-`██████████████░░░░░░` 69%
+## La Loi Avec Moi (citoyens) — 70%
+`██████████████░░░░░░` 70%
 
 > **Point de sortie :** 84 domaines / 272 réponses (couche UE renforcée), 100% lois + sources. Build OK, 1200 simulations OK.
 
@@ -27,7 +27,7 @@ _Dernière mise à jour : 2026-06-28_
 | Page « Base juridique » (rendu serveur) | `████████████` 100% | terminé |
 | Modèles de documents prêts à l'emploi | `███████████░` 95% | en cours |
 | Espace enfants & jeunes / mineurs | `███████████░` 90% | en cours |
-| Versions multilingues (NL en premier) | `███████░░░░░` 55% | en cours |
+| Versions multilingues (NL en premier) | `███████░░░░░` 62% | en cours |
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
 | Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
@@ -36,7 +36,7 @@ _Dernière mise à jour : 2026-06-28_
 - **Base juridique sourcée (domaines + réponses)** → prochaines étapes : Compléter les derniers domaines citoyens (recours administration, premier emploi jeunes, médiation de quartier)
 - **Modèles de documents prêts à l'emploi** → prochaines étapes : (option) export PDF mis en page
 - **Espace enfants & jeunes / mineurs** → prochaines étapes : Pictos illustrés / version lecture facile
-- **Versions multilingues (NL en premier)** → prochaines étapes : Poursuivre la traduction NL (logement/huur détaillé, famille approfondie) selon le trafic
+- **Versions multilingues (NL en premier)** → prochaines étapes : Poursuivre la traduction NL (familie approfondie) selon le trafic
 - **Déploiement & hébergement** → prochaines étapes : Hébergeur + domaine + NEXT_PUBLIC_SITE_URL
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
 - **Pages légales (mentions, confidentialité, accessibilité)** → prochaines étapes : Compléter l identité légale de l éditeur (BCE/TVA/adresse)

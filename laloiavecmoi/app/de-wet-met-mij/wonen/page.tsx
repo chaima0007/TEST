@@ -3,46 +3,59 @@
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
 
-// Wonen & huur (België) — Nederlandstalige fiche.
-// Belgische huurregels (gewestelijk). Feiten gespiegeld op de reeds geverifieerde
-// Franstalige fiche, met officiële Nederlandstalige bronnen.
+// Wonen & huur (Vlaanderen) — Nederlandstalige fiche.
+// LET OP: huur is een gewestelijke materie. Deze fiche gebruikt het VLAAMS WONINGHUURDECREET
+// (decreet van 9 november 2018, voor contracten vanaf 1 januari 2019) — NIET de Waalse of
+// Brusselse regels, die verschillen. Officiële bronnen: Vlaanderen.be en codex.vlaanderen.be.
 
 const fiches = [
   {
-    title: "De huurwaarborg is geplafonneerd",
-    text: "Op een geblokkeerde rekening op uw naam mag de waarborg niet meer dan 2 maanden huur bedragen (in alle gewesten). Onder de vorm van een bankwaarborg kan dat oplopen tot 3 maanden.",
-    ref: "Vlaanderen.be — huren en verhuren",
-    url: "https://www.vlaanderen.be/wonen-en-energie/huren-en-verhuren",
+    title: "De huurwaarborg bedraagt maximaal 3 maanden huur",
+    text: "Voor een woninghuurcontract gesloten vanaf 1 januari 2019 mag de huurwaarborg niet meer bedragen dan 3 maanden huur, ongeacht de vorm. U kan kiezen voor een geïndividualiseerde rekening op uw naam, een zakelijke zekerheidstelling of een bankwaarborg via het OCMW.",
+    ref: "Vlaams Woninghuurdecreet, art. 37 — huurwaarborg (max. 3 maanden)",
+    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/huurprijs-en-huurwaarborg/huurwaarborg",
   },
   {
-    title: "De waarborg moet u terugbetaald worden",
-    text: "Op het einde van de huur moet de verhuurder uw waarborg vrijgeven. Gebeurt dat niet, dan kan u dit opeisen; laattijdige terugbetaling kan een vergoeding meebrengen.",
-    ref: "Belgium.be — huisvesting",
-    url: "https://www.belgium.be/nl/huisvesting",
+    title: "Een woninghuurcontract duurt in principe 9 jaar",
+    text: "De standaardduur is 9 jaar. Wordt het niet tijdig opgezegd (minstens 6 maanden vóór de vervaldag), dan wordt het telkens met 3 jaar verlengd. Een kort contract (3 jaar of minder) is mogelijk, met eigen opzegregels.",
+    ref: "Vlaams Woninghuurdecreet, art. 16 — duur van de overeenkomst",
+    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/einde-en-opzegging-van-het-huurcontract",
   },
   {
-    title: "Een plaatsbeschrijving beschermt u",
-    text: "De plaatsbeschrijving bij intrede (en bij uittrede) legt de staat van de woning vast. Zonder plaatsbeschrijving is het voor de verhuurder zeer moeilijk om u schade aan te rekenen.",
-    ref: "Vlaanderen.be — plaatsbeschrijving",
-    url: "https://www.vlaanderen.be/wonen-en-energie/huren-en-verhuren",
+    title: "Een omstandige plaatsbeschrijving beschermt u",
+    text: "Een tegensprekelijke, gedetailleerde plaatsbeschrijving (bij intrede en uittrede) legt de staat van de woning vast. Ze moet samen met het huurcontract geregistreerd worden. Zonder plaatsbeschrijving is het voor de verhuurder zeer moeilijk om u schade aan te rekenen.",
+    ref: "Vlaams Woninghuurdecreet — plaatsbeschrijving; registratie: FOD Financiën",
+    url: "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
   },
   {
-    title: "U kan opzeggen met een opzegtermijn",
-    text: "Bij een huurovereenkomst van 9 jaar kan de huurder op elk moment opzeggen met een opzegtermijn van 3 maanden (de eerste jaren kan een vergoeding verschuldigd zijn).",
-    ref: "Vlaanderen.be — opzeg van de huur",
-    url: "https://www.vlaanderen.be/wonen-en-energie/huren-en-verhuren",
+    title: "U kan altijd opzeggen — let op de vergoeding de eerste 3 jaar",
+    text: "Bij een 9-jarig contract kan de huurder op elk moment opzeggen met een opzegtermijn van 3 maanden. Beëindigt u tijdens de eerste 3 jaar, dan is een opzegvergoeding verschuldigd: 3 maanden huur (jaar 1), 2 maanden (jaar 2) of 1 maand (jaar 3). Vanaf het 4de jaar is er geen vergoeding meer.",
+    ref: "Vlaams Woninghuurdecreet, art. 20 — opzegging door de huurder",
+    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/einde-en-opzegging-van-het-huurcontract",
   },
   {
     title: "De huur wordt maar één keer per jaar geïndexeerd",
-    text: "De verhuurder mag de huurprijs maximaal één keer per jaar indexeren, op de verjaardag van de overeenkomst, en alleen als het contract dat schriftelijk voorziet.",
-    ref: "Belgium.be — huisvesting",
-    url: "https://www.belgium.be/nl/huisvesting",
+    text: "De verhuurder mag de huurprijs maximaal één keer per jaar indexeren, ten vroegste op de verjaardag van de inwerkingtreding van het contract, en alleen als het contract schriftelijk is. De indexering volgt de gezondheidsindex.",
+    ref: "Vlaams Woninghuurdecreet — indexering van de huurprijs",
+    url: "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
   },
   {
     title: "Grote herstellingen zijn voor de verhuurder",
-    text: "Het gewone onderhoud is voor u; de grote herstellingen (dak, verwarming, ouderdom) zijn voor rekening van de verhuurder.",
-    ref: "Vlaanderen.be — huren en verhuren",
-    url: "https://www.vlaanderen.be/wonen-en-energie/huren-en-verhuren",
+    text: "Het gewone onderhoud en de kleine herstellingen zijn voor de huurder; de grote herstellingen (dak, verwarmingsketel, slijtage door ouderdom of overmacht) zijn voor de verhuurder. Een officiële lijst verduidelijkt wie wat betaalt.",
+    ref: "Vlaams Woninghuurdecreet + lijst van herstellingen (B.S. 19/12/2018)",
+    url: "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+  },
+  {
+    title: "Uw huurwoning moet aan kwaliteitsnormen voldoen",
+    text: "Een gehuurde woning moet voldoen aan elementaire normen van veiligheid, gezondheid en woningkwaliteit (Vlaamse Codex Wonen). Voldoet de woning niet, dan kan u dit melden bij uw gemeente of Wonen in Vlaanderen.",
+    ref: "Vlaamse Codex Wonen / Vlaams Woninghuurdecreet — woningkwaliteitsnormen",
+    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/woningkwaliteit",
+  },
+  {
+    title: "Bij verhuur is een EPC verplicht",
+    text: "Wie een woning verhuurt, moet beschikken over een geldig energieprestatiecertificaat (EPC) en het energielabel vermelden in de advertentie. Zo weet u vooraf hoe energiezuinig de woning is.",
+    ref: "Vlaams Energiedecreet / Energiebesluit (EPC) — Energiesparen (VEKA)",
+    url: "https://www.energiesparen.be/epc-wonen",
   },
 ];
 
@@ -71,8 +84,8 @@ export default function WonenPage() {
           </span>
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Uw rechten als huurder</h1>
           <p className="text-lg text-slate-300 mt-5 leading-relaxed">
-            Waarborg, plaatsbeschrijving, opzeg, herstellingen: wat de wet voorziet, eenvoudig uitgelegd —
-            met de officiële bron om indien nodig te tonen.
+            Waarborg, duur, plaatsbeschrijving, opzeg, indexering, herstellingen en woningkwaliteit:
+            wat het Vlaams Woninghuurdecreet voorziet, eenvoudig uitgelegd — met de officiële bron erbij.
           </p>
           <div className="mt-7 flex justify-center">
             <ReadAloud text={readText} label="Alles voorlezen" lang="nl-BE" />
@@ -101,9 +114,10 @@ export default function WonenPage() {
       <section className="pb-12 px-6 max-w-3xl mx-auto">
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
           <p className="text-amber-800 text-sm leading-relaxed">
-            ⚖️ De huurwetgeving is <strong>geregionaliseerd</strong> in België: de regels verschillen lichtjes
-            tussen Brussel, Wallonië en Vlaanderen. Deze fiches geven de grote principes. Laat u bij een
-            geschil bijstaan (advocaat, juridische bijstand of een woondienst van uw gewest).
+            ⚖️ De huurwetgeving is <strong>geregionaliseerd</strong>: deze fiche beschrijft de <strong>Vlaamse</strong>
+            regels (Vlaams Woninghuurdecreet, vanaf 1 januari 2019). In Brussel en Wallonië gelden andere regels.
+            Deze fiches geven de grote principes; laat u bij een geschil bijstaan (vrederechter, advocaat,
+            juridische bijstand of Wonen in Vlaanderen).
           </p>
         </div>
       </section>

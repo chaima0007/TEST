@@ -33,6 +33,18 @@ const fiches = [
     ref: "Belgium.be — justitie",
     url: "https://www.belgium.be/nl/justitie",
   },
+  {
+    title: "Rechtsbijstand: vrijstelling van de gerechtskosten",
+    text: "Naast een gratis advocaat bestaat de « rechtsbijstand »: een gehele of gedeeltelijke vrijstelling van de gerechtskosten (rolrechten, kosten van de gerechtsdeurwaarder, deskundige…). Ze wordt aangevraagd bij het bureau voor rechtsbijstand of bij de rechter die de zaak behandelt.",
+    ref: "Gerechtelijk Wetboek, art. 664 en volgende — rechtsbijstand",
+    url: "https://justitie.belgium.be/nl",
+  },
+  {
+    title: "Welke documenten meebrengen?",
+    text: "Voor het Bureau voor Juridische Bijstand brengt u uw identiteitskaart mee, een bewijs van uw inkomsten (loonfiche, uitkering, laatste aanslagbiljet) en, indien van toepassing, een attest van gezinssamenstelling. Bepaalde uitkeringsgerechtigden worden vermoed in aanmerking te komen.",
+    ref: "Gerechtelijk Wetboek, art. 508/1 e.v. — juridische bijstand (toekenningsvoorwaarden)",
+    url: "https://www.advocaat.be/nl/een-advocaat-nodig/pro-deo-juridische-bijstand",
+  },
 ];
 
 const readText = `Juridische hulp. ${fiches.map((f) => f.title + ". " + f.text).join(" ")} Als uw inkomen bescheiden is, kan de juridische bijstand geheel of gedeeltelijk gratis zijn via het Bureau voor Juridische Bijstand. Het eerste advies van de eerste lijn is gratis voor iedereen.`;
