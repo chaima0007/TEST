@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**491 réponses · 149 modules · 695 sources officielles · 223 fiches avec contacts · 99 alertes de délai**
+**492 réponses · 149 modules · 698 sources officielles · 224 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -116,7 +116,7 @@
 | — | Pension complémentaire (2e pilier) | 3 | 3 | 0 | 0 |
 | — | Permis de conduire | 4 | 6 | 0 | 1 |
 | Permis unique (travailleur étranger) | Permis unique / autorisation de travail (travailleur non-EEE) | 4 | 5 | 3 | 1 |
-| Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 2 | 3 | 2 | 1 |
+| Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 3 | 6 | 3 | 1 |
 | — | Plainte contre la police (Comité P) | 3 | 3 | 0 | 0 |
 | — | Précompte immobilier | 3 | 4 | 0 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |

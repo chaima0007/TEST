@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 491,
-    "sources_officielles": 695,
-    "faits_avec_contacts": 223,
+    "faits": 492,
+    "sources_officielles": 698,
+    "faits_avec_contacts": 224,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -1311,9 +1311,9 @@
       "titre": "Permis d'urbanisme — travaux & rénovation",
       "domaine": "Urbanisme & travaux",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 3,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
     },
