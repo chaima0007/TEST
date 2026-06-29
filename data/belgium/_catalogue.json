@@ -3,10 +3,10 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 151,
-    "faits": 502,
-    "sources_officielles": 724,
-    "faits_avec_contacts": 234,
-    "faits_avec_alerte_delai": 100
+    "faits": 503,
+    "sources_officielles": 727,
+    "faits_avec_contacts": 235,
+    "faits_avec_alerte_delai": 101
   },
   "modules": [
     {
@@ -39,10 +39,10 @@
       "titre": "Acheter un logement — compromis & notaire",
       "domaine": "Achat immobilier",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-27"
     },
     {

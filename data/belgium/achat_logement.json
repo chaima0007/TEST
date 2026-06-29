@@ -59,6 +59,48 @@
         }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ACHAT-DROITS-REGIONAL-001",
+      "question": "Quels droits d'enregistrement vais-je payer à l'achat, selon ma région ?",
+      "reponse": "À l'achat d'un bien existant, vous payez des DROITS D'ENREGISTREMENT — un impôt RÉGIONAL, perçu via le notaire, dont le taux et les avantages (abattement, taux réduit pour l'habitation propre et unique) varient fortement selon la région où se situe le bien. En WALLONIE : SPW Fiscalité. En FLANDRE : Vlaamse Belastingdienst (registratiebelasting, taux réduit pour l'habitation propre et unique). À BRUXELLES : Bruxelles Fiscalité (avec un abattement sur une première habitation). Pour un logement neuf vendu sous TVA, c'est la TVA (fédérale) qui s'applique à la place. Renseignez-vous tôt : ces droits pèsent lourd dans le budget d'achat.",
+      "reference_legale": "Compétence régionale des droits d'enregistrement : Code des droits d'enregistrement (régionalisé) en Wallonie et à Bruxelles ; Vlaamse Codex Fiscaliteit (registratiebelasting) en Flandre ; TVA sur le neuf relevant du Code de la TVA (fédéral)",
+      "alerte_delai": "Anticipez : abattements et taux réduits sont soumis à conditions (habitation propre et unique, domiciliation, délais). Vérifiez auprès de l'administration fiscale de votre région et de votre notaire AVANT l'achat.",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "droits d enregistrement en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "registratiebelasting en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "droits d enregistrement à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité — droits d enregistrement (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaamse Belastingdienst — registratiebelasting (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité — droits d enregistrement (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

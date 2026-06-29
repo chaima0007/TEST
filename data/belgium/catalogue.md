@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**502 réponses · 151 modules · 724 sources officielles · 234 fiches avec contacts · 100 alertes de délai**
+**503 réponses · 151 modules · 727 sources officielles · 235 fiches avec contacts · 101 alertes de délai**
 
 ## Modules en ligne
 
@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|
 | Risques professionnels | Accident du travail & maladie professionnelle | 2 | 4 | 2 | 1 |
 | — | Accident de la route — indemnisation | 3 | 3 | 0 | 1 |
-| Achat immobilier | Acheter un logement — compromis & notaire | 2 | 2 | 2 | 1 |
+| Achat immobilier | Acheter un logement — compromis & notaire | 3 | 5 | 3 | 2 |
 | Adoption | Adoption — formes et procédure | 2 | 4 | 2 | 0 |
 | Sans-abri & domiciliation | Adresse de référence (sans logement) | 2 | 2 | 2 | 0 |
 | Aidants proches | Aidants proches — reconnaissance, congé, droits | 2 | 2 | 2 | 1 |
