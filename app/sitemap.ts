@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const statiques = [
     "",
+    "/en",
     "/conformite",
     "/conformite-2026",
     "/offres-conformite",

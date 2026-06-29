@@ -73,6 +73,33 @@ const steps = [
   { n: "3", title: "On livre vite", desc: "Vous recevez un résultat fonctionnel en quelques jours, et on reste disponible après la livraison." },
 ];
 
+const unique = [
+  {
+    title: "Conformité + financement, au même endroit",
+    desc: "Là où d'autres s'arrêtent au diagnostic, nous relions chaque obligation aux aides publiques régionales réelles qui peuvent la financer (Wallonie, Flandre). Le coût net baisse souvent fortement.",
+  },
+  {
+    title: "Tout est sourcé et traçable",
+    desc: "Chaque réponse renvoie à un texte légal officiel ou une donnée publique vérifiable — jamais à une opinion. Vous savez toujours d'où vient l'information.",
+  },
+  {
+    title: "Un auto-diagnostic gratuit qui aide vraiment",
+    desc: "En 1 minute, notre simulateur dit quelles règles 2026 vous concernent, donne un score « suis-je en règle ? » en direct, et génère une attestation d'auto-évaluation horodatée. Sans engagement.",
+  },
+  {
+    title: "Ancré en Belgique, multilingue",
+    desc: "Construit sur le droit belge et européen, région par région (Wallonie, Bruxelles, Flandre), et disponible en français, néerlandais et anglais — avec traduction à la volée pour le reste de l'Europe.",
+  },
+  {
+    title: "Vitesse de l'IA, fiabilité humaine",
+    desc: "On automatise pour aller vite, mais chaque livrable est validé par un humain avant de vous parvenir. La rapidité, sans l'à-peu-près.",
+  },
+  {
+    title: "Honnêteté radicale",
+    desc: "On vous dit ce qui vous concerne vraiment — pas de prestation inutile, pas de promesse en l'air. Si une aide exige un prestataire labellisé que nous ne sommes pas encore, on le dit.",
+  },
+];
+
 const values = [
   { title: "Sur-mesure, jamais de modèle générique", desc: "Chaque projet est conçu pour VOTRE activité, pas copié-collé." },
   { title: "Rapidité de livraison", desc: "On travaille vite et bien. Vous voyez un résultat concret en quelques jours." },
@@ -111,10 +138,16 @@ export default function Home() {
             ))}
           </div>
 
-          <Link href="/contact"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors shadow-sm">
-            Demander un devis
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="/en"
+              className={`text-sm font-semibold px-3 py-2 rounded-lg border transition-colors ${scrolled ? "border-slate-300 text-slate-700 hover:bg-slate-100" : "border-white/30 text-white hover:bg-white/10"}`}>
+              EN
+            </Link>
+            <Link href="/contact"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors shadow-sm">
+              Demander un devis
+            </Link>
+          </div>
         </div>
       </nav>
 
@@ -187,6 +220,31 @@ export default function Home() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Ce qui nous rend uniques ── */}
+      <section id="unique" className="py-24 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wide">Pourquoi Caelum</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3">Ce qui nous rend uniques sur le marché</h2>
+            <p className="text-slate-500 mt-4">Pas des slogans — des choses qu&apos;on a réellement construites et qu&apos;on peut prouver.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {unique.map((u, i) => (
+              <div key={u.title} className="rounded-2xl border border-slate-200 bg-white p-7 hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white font-bold flex items-center justify-center mb-4">{i + 1}</div>
+                <h3 className="text-lg font-bold tracking-tight">{u.title}</h3>
+                <p className="text-slate-600 mt-2 text-sm leading-relaxed">{u.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/conformite-2026" className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/20">
+              Faire le test gratuit en 1 minute
+            </Link>
+          </div>
         </div>
       </section>
 
