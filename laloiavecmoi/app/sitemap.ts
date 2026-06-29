@@ -48,6 +48,7 @@ const routes = [
   "/loi-avec-moi/urgences",
   "/loi-avec-moi/contacts",
   "/base-juridique",
+  "/lettres",
   "/transparence",
   "/mentions-legales",
   "/confidentialite",

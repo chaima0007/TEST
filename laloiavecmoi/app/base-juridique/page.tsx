@@ -93,6 +93,9 @@ export default function BaseJuridiquePage() {
             {totalFaits} réponses sur {index.length} domaines — chacune sourcée et datée. Cherchez votre question
             ou choisissez un domaine.
           </p>
+          <Link href="/lettres" className="inline-block mt-4 bg-white/10 border border-white/20 hover:bg-white/20 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors">
+            ✍️ Générer une lettre type (gratuit)
+          </Link>
         </div>
       </section>
 
