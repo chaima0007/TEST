@@ -1,9 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const DEMO_EMAIL = process.env.DEMO_EMAIL ?? "demo@caelum.be";
-const DEMO_PASSWORD = process.env.DEMO_PASSWORD ?? "demo123";
+// Aucun identifiant en dur : les valeurs viennent UNIQUEMENT des variables d'environnement.
+// Si elles ne sont pas configurées, la connexion est désactivée (pas de mot de passe par défaut).
+const DEMO_EMAIL = process.env.DEMO_EMAIL;
+const DEMO_PASSWORD = process.env.DEMO_PASSWORD;
 
 export async function POST(req: NextRequest) {
+  if (!DEMO_EMAIL || !DEMO_PASSWORD) {
+    return NextResponse.json(
+      { error: "Connexion non configurée (DEMO_EMAIL / DEMO_PASSWORD absents)" },
+      { status: 503 },
+    );
+  }
+
   const body = await req.json().catch(() => ({})) as { email?: string; password?: string };
   const { email, password } = body;
 

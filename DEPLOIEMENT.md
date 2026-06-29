@@ -42,5 +42,9 @@
 | `NEXT_PUBLIC_SITE_URL` | les 2 apps | URL de base (sitemap/robots) |
 | `LEADS_WEBHOOK_URL` | Caelum | destination des leads (webhook) |
 | `DATABASE_URL` | Caelum (si base) | base de données (Prisma) |
+| `DEMO_EMAIL` + `DEMO_PASSWORD` | Caelum (espace démo) | **activent** la connexion démo ; si vides, connexion désactivée (aucun identifiant par défaut en code) |
+
+## G. À compléter avant la mise en ligne (obligation légale)
+- **Identité légale de l'éditeur** dans les pages « Mentions légales » des 2 sites : nom/société, forme juridique, adresse, **n° d'entreprise (BCE)** et **TVA**. Les pages sont prêtes avec des emplacements `[à compléter]` — il suffit de remplacer ces champs (item GO/NO-GO).
 
 > Tout le reste est déjà prêt : build vérifié, pages SEO générées, sécurité (zéro credential en dur), séparation des projets. Dis « go déploiement » quand tu veux : je te guide écran par écran.
