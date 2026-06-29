@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 489,
-    "sources_officielles": 688,
-    "faits_avec_contacts": 221,
+    "faits": 490,
+    "sources_officielles": 692,
+    "faits_avec_contacts": 222,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -40,7 +40,7 @@
       "domaine": "Achat immobilier",
       "juridiction": "BE",
       "faits": 2,
-      "sources_officielles": 1,
+      "sources_officielles": 2,
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
@@ -723,9 +723,9 @@
       "titre": "Eau — facture, impayés et coupure",
       "domaine": "Eau & distribution",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 5,
-      "faits_avec_contacts": 3,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
     },

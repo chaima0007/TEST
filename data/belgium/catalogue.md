@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**489 réponses · 149 modules · 688 sources officielles · 221 fiches avec contacts · 99 alertes de délai**
+**490 réponses · 149 modules · 692 sources officielles · 222 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|
 | Risques professionnels | Accident du travail & maladie professionnelle | 2 | 4 | 2 | 1 |
 | — | Accident de la route — indemnisation | 3 | 3 | 0 | 1 |
-| Achat immobilier | Acheter un logement — compromis & notaire | 2 | 1 | 2 | 1 |
+| Achat immobilier | Acheter un logement — compromis & notaire | 2 | 2 | 2 | 1 |
 | Adoption | Adoption — formes et procédure | 2 | 4 | 2 | 0 |
 | Sans-abri & domiciliation | Adresse de référence (sans logement) | 2 | 2 | 2 | 0 |
 | Aidants proches | Aidants proches — reconnaissance, congé, droits | 2 | 2 | 2 | 1 |
@@ -67,7 +67,7 @@
 | — | Dossier médical global (DMG) | 3 | 3 | 0 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |
-| Eau & distribution | Eau — facture, impayés et coupure | 3 | 5 | 3 | 0 |
+| Eau & distribution | Eau — facture, impayés et coupure | 4 | 8 | 4 | 0 |
 | Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 4 | 8 | 3 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
