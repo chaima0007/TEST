@@ -1,9 +1,9 @@
 {
-  "genere_le": "2026-06-29T18:20:13.064938+00:00",
-  "total": 6,
+  "genere_le": "2026-06-29T18:24:06.114355+00:00",
+  "total": 4,
   "par_priorite": {
     "haute": 0,
-    "moyenne": 5,
+    "moyenne": 3,
     "basse": 1
   },
   "taches": [
@@ -36,24 +36,6 @@
     },
     {
       "id": "T04",
-      "titre": "Anomalies doc · Obsolescence",
-      "categorie": "état",
-      "priorite": "moyenne",
-      "action_suggeree": "capturer + source canonique + rapport d'écart, sans jamais stopper la mission",
-      "humain": false,
-      "organe": "scénario"
-    },
-    {
-      "id": "T05",
-      "titre": "Veille marché · Opportunités",
-      "categorie": "état",
-      "priorite": "moyenne",
-      "action_suggeree": "instruire les opportunités 'nouveau' (radar market_opportunities.json)",
-      "humain": false,
-      "organe": "scénario"
-    },
-    {
-      "id": "T06",
       "titre": "Fragilité : Sources · Panne large",
       "categorie": "résilience",
       "priorite": "basse",

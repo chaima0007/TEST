@@ -50,8 +50,8 @@
       "nature": "obsolescence (site fermé/migré)",
       "ecart": "Le site phare.irisnet.be est FERMÉ et redirige: l'information handicap RBC est désormais sur handicap.brussels (aides/services) et sur le site de la COCOF (compétences PHARE, formulaires). Ne pas citer phare.irisnet.be comme source officielle en vigueur.",
       "source_canonique": "handicap.brussels + site COCOF",
-      "action": "à planifier (MAJ auto ou humaine)",
-      "statut": "ouvert"
+      "action": "RÉSOLU : la fiche handicap (HAND-REGIONAL-001) cite handicap.brussels (source actuelle) et le Service PHARE/COCOF ; phare.irisnet.be n est plus cité comme source en vigueur (uniquement domaine officiel en tier1). Migration prise en compte.",
+      "statut": "resolu"
     },
     {
       "id": "ANO-006",
