@@ -10,7 +10,9 @@
       "douleur": "Besoin de CLARTÉ (suis-je concerné ? qu'est-ce qui est urgent ?), pas d'un outil cher.",
       "projet": "Caelum",
       "opportunite": "Outil honnête 'AI Act : suis-je concerné ?' (transparence chatbot/contenu IA dès août 2026) — on a déjà la norme AI-ACT.",
-      "effort": "moyen", "priorite": "haute", "statut": "traite",
+      "effort": "moyen",
+      "priorite": "haute",
+      "statut": "traite",
       "livre": "Page /ai-act (clarté dates + 4 catégories + sanctions + porte de sortie honnête) — 2026-06-29"
     },
     {
@@ -20,7 +22,10 @@
       "douleur": "Choisir l'outil/access point adapté à sa taille, sans devenir expert.",
       "projet": "Caelum",
       "opportunite": "Comparateur NEUTRE des solutions/access points Peppol + check-list 'prêt en émission ET réception'.",
-      "effort": "moyen", "priorite": "haute", "statut": "nouveau"
+      "effort": "moyen",
+      "priorite": "haute",
+      "statut": "traite",
+      "livre": "Page /peppol (guide neutre de choix + check-list) — 2026-06-29"
     },
     {
       "id": "OPP-ADMIN-WALLON",
@@ -29,7 +34,9 @@
       "douleur": "Traduire/rendre lisible la complexité administrative ; prévisibilité.",
       "projet": "Caelum + La Loi Avec Moi",
       "opportunite": "Positionnement 'on rend la loi lisible' ; côté citoyen : démarches expliquées ; côté pro : décodeur d'obligations.",
-      "effort": "faible", "priorite": "moyenne", "statut": "nouveau"
+      "effort": "faible",
+      "priorite": "moyenne",
+      "statut": "nouveau"
     },
     {
       "id": "OPP-FRACTURE-NUMERIQUE",
@@ -38,7 +45,9 @@
       "douleur": "Accessibilité réelle pour les non-technophiles et allophones.",
       "projet": "La Loi Avec Moi",
       "opportunite": "Accessibilité radicale (audio déjà livré) + langage clair ; côté Caelum : accompagnement humain.",
-      "effort": "faible", "priorite": "moyenne", "statut": "en_cours"
+      "effort": "faible",
+      "priorite": "moyenne",
+      "statut": "en_cours"
     },
     {
       "id": "OPP-GRC-OVERLAP",
@@ -47,7 +56,9 @@
       "douleur": "Trop d'outils qui se chevauchent, registre fournisseurs lourd.",
       "projet": "Caelum",
       "opportunite": "Position 'porte d'entrée unique' (diagnostic+veille) ; ne pas refaire le GRC, orienter.",
-      "effort": "faible", "priorite": "basse", "statut": "suivi"
+      "effort": "faible",
+      "priorite": "basse",
+      "statut": "suivi"
     },
     {
       "id": "OPP-FEAR-PRICING",
@@ -56,7 +67,9 @@
       "douleur": "Rejet de la peur commerciale et des prix opaques.",
       "projet": "Caelum",
       "opportunite": "Honnêteté radicale + conformité finançable + 'pourquoi agir' non anxiogène.",
-      "effort": "faible", "priorite": "basse", "statut": "traite"
+      "effort": "faible",
+      "priorite": "basse",
+      "statut": "traite"
     }
   ]
 }
