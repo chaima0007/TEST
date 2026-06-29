@@ -1,0 +1,192 @@
+{
+  "genere_le": "2026-06-29T09:27:41.676439+00:00",
+  "monte_carlo_n": 100000,
+  "corpus": {
+    "reponses": 428,
+    "sources": 736,
+    "modules": 135,
+    "sources_officielles": 593,
+    "caelum_normes": 17
+  },
+  "sante": [
+    {
+      "protocole": "loi_reference_audit",
+      "cmd": "python3 scripts/loi_reference_audit.py",
+      "returncode": 0,
+      "ms": 38,
+      "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
+      "verdict": "OK"
+    },
+    {
+      "protocole": "source_trust_protocol",
+      "cmd": "python3 scripts/source_trust_protocol.py",
+      "returncode": 0,
+      "ms": 53,
+      "sortie": "  → data/governance/source_trust_report.md",
+      "verdict": "OK"
+    },
+    {
+      "protocole": "branch_guard",
+      "cmd": "python3 scripts/branch_guard.py --check --quiet",
+      "returncode": 0,
+      "ms": 394,
+      "sortie": "✅ SYNC — local == origin — écriture sûre",
+      "verdict": "OK"
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "Trafic · Trafic normal",
+      "type": "etat",
+      "rps": 5,
+      "cache_pct": 60,
+      "p95_ms": 45,
+      "p99_ms": 49,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Trafic · Pic quotidien",
+      "type": "etat",
+      "rps": 50,
+      "cache_pct": 75,
+      "p95_ms": 47,
+      "p99_ms": 51,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Trafic · Buzz presse",
+      "type": "stress",
+      "rps": 300,
+      "cache_pct": 85,
+      "p95_ms": 55,
+      "p99_ms": 59,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Trafic · Viral / spike",
+      "type": "stress",
+      "rps": 1500,
+      "cache_pct": 92,
+      "p95_ms": 97,
+      "p99_ms": 101,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Sources · Rotation normale",
+      "type": "etat",
+      "taux_casse_pct": 1.0,
+      "urls_impactees_moy": 7,
+      "pct_corpus": 0.93,
+      "verdict": "OK",
+      "mitigation": "détecteur de changement + 2e source de secours"
+    },
+    {
+      "scenario": "Sources · Refonte d'un portail",
+      "type": "stress",
+      "taux_casse_pct": 5.0,
+      "urls_impactees_moy": 38,
+      "pct_corpus": 5.11,
+      "verdict": "ALERTE",
+      "mitigation": "détecteur de changement + 2e source de secours"
+    },
+    {
+      "scenario": "Sources · Panne large",
+      "type": "stress",
+      "taux_casse_pct": 15.0,
+      "urls_impactees_moy": 109,
+      "pct_corpus": 14.8,
+      "verdict": "CRITIQUE",
+      "mitigation": "détecteur de changement + 2e source de secours"
+    },
+    {
+      "scenario": "Build · Aujourd'hui",
+      "type": "etat",
+      "pages_estimees": 182,
+      "verdict": "OK",
+      "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
+    },
+    {
+      "scenario": "Build · +1 an (x2)",
+      "type": "stress",
+      "pages_estimees": 364,
+      "verdict": "OK",
+      "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
+    },
+    {
+      "scenario": "Build · +3 ans (x4)",
+      "type": "stress",
+      "pages_estimees": 728,
+      "verdict": "OK",
+      "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
+    },
+    {
+      "scenario": "Déploiement · SWARM_API_URL absente",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "console.warn + mode hors-ligne"
+    },
+    {
+      "scenario": "Déploiement · Upstream swarm en panne",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "fallback HTTP 502 (jamais 503)"
+    },
+    {
+      "scenario": "Déploiement · Webhook leads non configuré",
+      "type": "etat",
+      "verdict": "ALERTE",
+      "mitigation": "lead non perdu si guard présent ; sinon ALERTE"
+    },
+    {
+      "scenario": "Données · Identité légale Caelum",
+      "type": "etat",
+      "verdict": "ALERTE",
+      "mitigation": "garde identité + avertissement affiché tant que placeholder"
+    },
+    {
+      "scenario": "Données · Couverture sources officielles",
+      "type": "etat",
+      "pct_officiel": 80.6,
+      "verdict": "OK",
+      "mitigation": "protocole de confiance des sources (tier1)"
+    },
+    {
+      "scenario": "Sécurité · Abus formulaire (payload/email)",
+      "type": "etat",
+      "pct_bloque_attendu": 68.5,
+      "verdict": "OK",
+      "mitigation": "limites taille/longueur + 413"
+    },
+    {
+      "scenario": "Langues · Visiteur non francophone",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "FR/NL natifs, /en Caelum, traduction à la volée (mention 'FR/NL fait foi')"
+    }
+  ],
+  "sceau": {
+    "seal_id": "AUTO-20260629092741",
+    "statut": "APPROUVÉ",
+    "pire_verdict_etat": "ALERTE",
+    "score_resilience": 80.0,
+    "verts": 16,
+    "total": 20,
+    "fragilites_stress": [
+      "Sources · Panne large"
+    ],
+    "alertes_etat_a_corriger": [
+      "Déploiement · Webhook leads non configuré",
+      "Données · Identité légale Caelum"
+    ],
+    "regle": "BLOQUÉ seulement si l'ÉTAT ACTUEL (santé + scénarios 'etat') a un CRITIQUE ; les scénarios extrêmes 'stress' alimentent la résilience et la liste des fragilités."
+  },
+  "avertissement": "Simulations = modèles probabilistes/déterministes locaux, pas des appels réseau réels."
+}
