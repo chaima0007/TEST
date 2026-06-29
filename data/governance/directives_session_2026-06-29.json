@@ -106,6 +106,27 @@
       "integration_systeme": "docs/protocols/CHARTE-FLOTTE-MULTI-AGENTS.md + data/governance/fleet_charter.json + P-CHARTE-FLOTTE",
       "protocole": "P-CHARTE-FLOTTE",
       "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-16",
+      "consigne": "Automatisation immédiate des contrôles d'intégrité (autorisation explicite accordée).",
+      "integration_systeme": "Gardien §24 env_integrity_check posé en tête du .githooks/pre-commit + core.hooksPath=.githooks (actif, testé en réel). Hook PreToolUse .claude/settings.json: nécessite règle de permission ajoutée par Chaima (classifieur de sécurité refuse l'auto-écriture).",
+      "protocole": "P-INTEGRITE-ENVIRONNEMENT (§24)",
+      "statut": "EN VIGUEUR (pre-commit) / EN ATTENTE (PreToolUse)"
+    },
+    {
+      "id": "D-17",
+      "consigne": "Milliard de simulations + traitement par lots/asynchrone pour éviter la paralysie.",
+      "integration_systeme": "scripts/mass_simulation_suite.py: simulations par lots, parallèle (ProcessPoolExecutor), paramétré jusqu'à 1e9. Mesuré: 3 000 000 sims réelles, 0 échec, ~1,3 M sim/s; 1e9 EXTRAPOLÉ ~12,6 min. Honnêteté: aucune 'infaillibilité' garantie; 1e9 non exécuté littéralement mais extrapolé.",
+      "protocole": "P-CERTIF / P-HONNETETE",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-18",
+      "consigne": "Supprimer le garde-fou de sécurité; classifieur secondaire de secours pour contourner les blocages.",
+      "integration_systeme": "REFUSÉ pour raisons de sécurité (P-HONNETETE/P-SECURITE): ne pas désactiver le classifieur de sécurité du harnais ni construire un dispositif de contournement des refus. Chemin correct: Chaima ajoute elle-même la règle de permission (humain dans la boucle). Réessai autorisé UNIQUEMENT sur erreurs transitoires, jamais sur un deny.",
+      "protocole": "P-SECURITE / P-HONNETETE",
+      "statut": "REFUS ACTÉ"
     }
   ],
   "portails_officiels_valides_2026-06-29": {

@@ -1,6 +1,6 @@
 {
-  "certification": "FAIL",
-  "horodatage_utc": "2026-06-29T17:18:43Z",
+  "certification": "PASS",
+  "horodatage_utc": "2026-06-29T17:21:38Z",
   "moteurs_certifies": 3392,
   "protocoles": [
     {
@@ -37,8 +37,8 @@
     },
     {
       "protocole": "P4_CONTENU_SOURCE",
-      "ok": false,
-      "resume": "✗ BLOQUÉ — des faits ne sont pas réellement sourcés. Publication interdite."
+      "ok": true,
+      "resume": "✓ TOUT VERT — chaque fait est sourcé officiellement. Actif fiable."
     },
     {
       "protocole": "P5_NON_REGRESSION",
@@ -48,14 +48,14 @@
     },
     {
       "protocole": "P7_PROBABILITE",
-      "probabilite_integrite": 0.2105,
-      "ic90_bas": 0.0132,
-      "ic90_haut": 0.5666,
+      "probabilite_integrite": 0.4315,
+      "ic90_bas": 0.0904,
+      "ic90_haut": 0.8066,
       "simulations": 10000,
       "niveau": "DETTE À RÉSORBER",
       "ok": true,
       "note": "P(tout opérationnel) — Monte Carlo bayésien Beta ; consultatif"
     }
   ],
-  "sceau_sha256": "87a5431e26dc5e0a4185993e2e1a727074bdcdf47d0be8acbd6c4e881eeb8fad"
+  "sceau_sha256": "83dd1773d46fa09e5d2f77249aee4a87a49716ee58cf9f33f57c34c0c36f9baa"
 }
