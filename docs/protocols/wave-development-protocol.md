@@ -526,3 +526,24 @@ Branché dans la plateforme autonome (organe « Hiérarchie des normes » : un c
 python3 scripts/anomaly_register.py                                  # rapport d'écart (non bloquant)
 python3 scripts/anomaly_register.py --add "url|nature|ecart|source_canonique"   # capture immédiate
 ```
+
+---
+
+## 19. Pérennité de la gouvernance (§19, P-PERENNITE-GOUVERNANCE) — boucle de contrôle, pas menace
+
+**Directive exécutive (Chaima, 2026-06-29)** : vigilance permanente, respect absolu des protocoles d'audit et de non-affectation en cas d'obsolescence ; **zéro approximation** — la crédibilité de la plateforme ne tolère aucune.
+
+**Principe d'ingénierie (honnêteté technique)** : une IA ne répond pas à la *sanction* (ni peur, ni mémoire de punition entre sessions) — elle répond à la **structure**. La discipline anti-hallucination vit donc dans les **garde-fous exécutables**, pas dans la dissuasion symbolique. Tout relâchement / hallucination / tentative de contournement des bases officielles déclenche cette **boucle de contrôle** :
+
+| Terme directive | Mécanisme réel & vérifiable |
+|-----------------|------------------------------|
+| **Audit immédiat** | scripts bloquants avant commit : `loi_reference_audit`, `source_trust_protocol`, `norm_hierarchy_guard` |
+| **Réinitialisation** | `git revert` ciblé de la **seule sortie affectée** + fallback exact — jamais d'arrêt de mission (cf. §18) |
+| **Correction immédiate** | capture au registre des anomalies → rectification sur **source canonique** → poursuite |
+| **Non-contournement** | bases officielles uniquement (§16 P-NO-MOTEUR-GENERALISTE) ; secours = URL canonique (§16-bis P-RESILIENCE-RESEAU) |
+
+```bash
+# Boucle de contrôle complète — tout échec = commit BLOQUÉ + revert ciblé + correction canonique
+python3 scripts/loi_reference_audit.py && python3 scripts/source_trust_protocol.py && \
+python3 scripts/norm_hierarchy_guard.py && python3 scripts/anomaly_register.py
+```
