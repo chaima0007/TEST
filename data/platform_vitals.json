@@ -1,6 +1,6 @@
 {
   "naissance": "2026-06-29T09:31:18.850752+00:00",
-  "battements": 21,
+  "battements": 22,
   "historique": [
     {
       "ts": "2026-06-29T09:31:18.850752+00:00",
@@ -177,12 +177,21 @@
       "reponses": 451,
       "modules": 141,
       "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:46:22.594077+00:00",
+      "resilience": 76.9,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 42
     }
   ],
-  "derniere_pulsation": "2026-06-29T10:41:54.021543+00:00",
+  "derniere_pulsation": "2026-06-29T10:46:22.594077+00:00",
   "etat_vie": "🟠 Vigilance",
-  "resilience": 80.8,
+  "resilience": 76.9,
   "statut": "APPROUVÉ",
   "age_jours": 0.05,
-  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 80.8%, 21ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum, Avancement. Ma fragilité au pire scénario : Panne large. Plan à 42%. Prochaine étape : Compléter l'identité légale (mentions légales)."
+  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 76.9%, 22ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum, Corpus, Avancement. Ma fragilité au pire scénario : Panne large. Plan à 42%. Prochaine étape : Compléter l'identité légale (mentions légales)."
 }
