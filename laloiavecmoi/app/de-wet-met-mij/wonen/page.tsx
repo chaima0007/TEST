@@ -2,62 +2,14 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Wonen & huur (Vlaanderen) — Nederlandstalige fiche.
 // LET OP: huur is een gewestelijke materie. Deze fiche gebruikt het VLAAMS WONINGHUURDECREET
 // (decreet van 9 november 2018, voor contracten vanaf 1 januari 2019) — NIET de Waalse of
 // Brusselse regels, die verschillen. Officiële bronnen: Vlaanderen.be en codex.vlaanderen.be.
 
-const fiches = [
-  {
-    title: "De huurwaarborg bedraagt maximaal 3 maanden huur",
-    text: "Voor een woninghuurcontract gesloten vanaf 1 januari 2019 mag de huurwaarborg niet meer bedragen dan 3 maanden huur, ongeacht de vorm. U kan kiezen voor een geïndividualiseerde rekening op uw naam, een zakelijke zekerheidstelling of een bankwaarborg via het OCMW.",
-    ref: "Vlaams Woninghuurdecreet, art. 37 — huurwaarborg (max. 3 maanden)",
-    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/huurprijs-en-huurwaarborg/huurwaarborg",
-  },
-  {
-    title: "Een woninghuurcontract duurt in principe 9 jaar",
-    text: "De standaardduur is 9 jaar. Wordt het niet tijdig opgezegd (minstens 6 maanden vóór de vervaldag), dan wordt het telkens met 3 jaar verlengd. Een kort contract (3 jaar of minder) is mogelijk, met eigen opzegregels.",
-    ref: "Vlaams Woninghuurdecreet, art. 16 — duur van de overeenkomst",
-    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/einde-en-opzegging-van-het-huurcontract",
-  },
-  {
-    title: "Een omstandige plaatsbeschrijving beschermt u",
-    text: "Een tegensprekelijke, gedetailleerde plaatsbeschrijving (bij intrede en uittrede) legt de staat van de woning vast. Ze moet samen met het huurcontract geregistreerd worden. Zonder plaatsbeschrijving is het voor de verhuurder zeer moeilijk om u schade aan te rekenen.",
-    ref: "Vlaams Woninghuurdecreet — plaatsbeschrijving; registratie: FOD Financiën",
-    url: "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
-  },
-  {
-    title: "U kan altijd opzeggen — let op de vergoeding de eerste 3 jaar",
-    text: "Bij een 9-jarig contract kan de huurder op elk moment opzeggen met een opzegtermijn van 3 maanden. Beëindigt u tijdens de eerste 3 jaar, dan is een opzegvergoeding verschuldigd: 3 maanden huur (jaar 1), 2 maanden (jaar 2) of 1 maand (jaar 3). Vanaf het 4de jaar is er geen vergoeding meer.",
-    ref: "Vlaams Woninghuurdecreet, art. 20 — opzegging door de huurder",
-    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/huren-en-verhuren/einde-en-opzegging-van-het-huurcontract",
-  },
-  {
-    title: "De huur wordt maar één keer per jaar geïndexeerd",
-    text: "De verhuurder mag de huurprijs maximaal één keer per jaar indexeren, ten vroegste op de verjaardag van de inwerkingtreding van het contract, en alleen als het contract schriftelijk is. De indexering volgt de gezondheidsindex.",
-    ref: "Vlaams Woninghuurdecreet — indexering van de huurprijs",
-    url: "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
-  },
-  {
-    title: "Grote herstellingen zijn voor de verhuurder",
-    text: "Het gewone onderhoud en de kleine herstellingen zijn voor de huurder; de grote herstellingen (dak, verwarmingsketel, slijtage door ouderdom of overmacht) zijn voor de verhuurder. Een officiële lijst verduidelijkt wie wat betaalt.",
-    ref: "Vlaams Woninghuurdecreet + lijst van herstellingen (B.S. 19/12/2018)",
-    url: "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
-  },
-  {
-    title: "Uw huurwoning moet aan kwaliteitsnormen voldoen",
-    text: "Een gehuurde woning moet voldoen aan elementaire normen van veiligheid, gezondheid en woningkwaliteit (Vlaamse Codex Wonen). Voldoet de woning niet, dan kan u dit melden bij uw gemeente of Wonen in Vlaanderen.",
-    ref: "Vlaamse Codex Wonen / Vlaams Woninghuurdecreet — woningkwaliteitsnormen",
-    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/woningkwaliteit",
-  },
-  {
-    title: "Bij verhuur is een EPC verplicht",
-    text: "Wie een woning verhuurt, moet beschikken over een geldig energieprestatiecertificaat (EPC) en het energielabel vermelden in de advertentie. Zo weet u vooraf hoe energiezuinig de woning is.",
-    ref: "Vlaams Energiedecreet / Energiebesluit (EPC) — Energiesparen (VEKA)",
-    url: "https://www.energiesparen.be/epc-wonen",
-  },
-];
+const fiches = NL_FICHES["wonen"];
 
 const readText = `Uw rechten als huurder. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

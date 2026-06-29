@@ -2,43 +2,13 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Administratieve stappen (België) — Nederlandstalige fiche.
 // Feiten gespiegeld op de geverifieerde Franstalige fiche (wet 29 juli 1991, Raad van State).
 // Bronnen in het NL: Belgium.be, Federale Ombudsman, Raad van State, BOSA.
 
-const fiches = [
-  {
-    title: "Een beslissing van de administratie moet gemotiveerd zijn",
-    text: "Sinds de wet van 29 juli 1991 moet elke individuele administratieve handeling « formeel gemotiveerd » worden: de beslissing moet de feitelijke en juridische redenen vermelden. Legt een beslissing niets uit, dan is dat al een argument in uw voordeel.",
-    ref: "BOSA — wet van 29 juli 1991",
-    url: "https://bosa.belgium.be/nl",
-  },
-  {
-    title: "De brief moet zeggen hoe en binnen welke termijn u kan reageren",
-    text: "Wanneer de administratie u een beslissing betekent waartegen beroep mogelijk is, moet ze de beroepsmogelijkheid, de termijn en de vorm vermelden. Lees steeds de onderkant van de brief: daar staan vaak uw beroepsmogelijkheden. Ontbreken die vermeldingen, dan is de termijn mogelijk niet tegenstelbaar.",
-    ref: "Belgium.be — administratie",
-    url: "https://www.belgium.be/nl",
-  },
-  {
-    title: "De termijnen zijn kort: noteer de datum van kennisgeving",
-    text: "In administratieve zaken lopen de termijnen meestal vanaf de dag na de kennisgeving. Voor een annulatieberoep bij de Raad van State bedraagt de termijn 60 dagen. Noteer onmiddellijk de ontvangstdatum en wacht niet: een overschreden termijn sluit de deur vaak definitief.",
-    ref: "Raad van State — procedure",
-    url: "https://www.raadvst-consetat.be/",
-  },
-  {
-    title: "Het administratief beroep (gratis) vóór de rechter",
-    text: "Vóór u naar een rechtbank stapt, kunnen veel beslissingen worden aangevochten via een administratief beroep: u vraagt de administratie (of een hogere instantie) haar beslissing te herzien. Dat is gratis, schriftelijk, en lost het probleem vaak op zonder proces. Respecteer de vorm en de termijn vermeld op de beslissing.",
-    ref: "Belgium.be — administratie",
-    url: "https://www.belgium.be/nl",
-  },
-  {
-    title: "De federale Ombudsman: gratis, en hij « bevriest » uw termijn",
-    text: "Bij een geschil met een federale administratie kan u zich gratis tot de federale Ombudsman wenden. Groot voordeel: zijn tussenkomst schorst de beroepstermijn bij de Raad van State voor maximaal 4 maanden. Mislukt de bemiddeling, dan rest u dus nog tijd. (Gewesten en gemeenten hebben ook hun ombudsmannen.)",
-    ref: "Federale Ombudsman",
-    url: "https://www.federaalombudsman.be/nl",
-  },
-];
+const fiches = NL_FICHES["administratie"];
 
 const readText = `Administratieve stappen. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

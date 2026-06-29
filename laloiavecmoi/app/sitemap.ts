@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import fs from "node:fs";
 import path from "node:path";
+import { NL_THEMES } from "@/data/nl/fiches";
 
 // À adapter avec ton domaine définitif (ex. https://laloiavecmoi.be).
 const BASE = "https://laloiavecmoi.be";
@@ -51,14 +52,10 @@ const routes = [
   "/mentions-legales",
   "/confidentialite",
   "/accessibilite",
-  // Belgique NL
+  // Belgique NL — dérivé de la source unique (data/nl/fiches) pour rester synchronisé
   "/de-wet-met-mij",
-  "/de-wet-met-mij/wonen",
-  "/de-wet-met-mij/werk",
-  "/de-wet-met-mij/juridische-hulp",
-  "/de-wet-met-mij/consumentenrecht",
-  "/de-wet-met-mij/familie",
-  "/de-wet-met-mij/administratie",
+  "/de-wet-met-mij/zoeken",
+  ...NL_THEMES.map((t) => `/de-wet-met-mij/${t.slug}`),
   // France
   "/la-loi-avec-moi-france",
   "/la-loi-avec-moi-france/bienvenue",

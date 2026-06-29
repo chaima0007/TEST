@@ -2,38 +2,14 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Gezondheid & patiëntenrechten (België) — Nederlandstalige fiche.
 // Feiten gespiegeld op de reeds geverifieerde Franstalige fiche (sante_patient.json),
 // met officiële Nederlandstalige bronnen (FOD Volksgezondheid, eJustice).
 // De wet Patiëntenrechten is federaal en geldt in heel België.
 
-const fiches = [
-  {
-    title: "U heeft zeven wettelijke patiëntenrechten",
-    text: "Elke patiënt heeft recht op: kwaliteitsvolle zorg; vrije keuze van zorgverlener; informatie over zijn gezondheidstoestand; vrije en geïnformeerde toestemming; een zorgvuldig bijgehouden dossier (met inzage en afschrift); respect voor privacy; en het neerleggen van een klacht bij een ombudsfunctie.",
-    ref: "Wet van 22 augustus 2002 betreffende de rechten van de patiënt (gewijzigd op 6 februari 2024)",
-    url: "https://www.health.belgium.be/nl/professionals/gezondheidsprofessionals/menselijke-gezondheid/kwaliteit-veiligheid-gezondheidszorg/rechten-patient/rechten-patient",
-  },
-  {
-    title: "Geen behandeling zonder uw toestemming",
-    text: "Een zorgverlener mag in principe niet ingrijpen zonder uw vrije en geïnformeerde toestemming. U moet vooraf duidelijke informatie krijgen over het doel, de risico's en de alternatieven, en u mag een behandeling weigeren of stopzetten.",
-    ref: "Wet van 22 augustus 2002 — vrije en geïnformeerde toestemming",
-    url: "https://www.ejustice.just.fgov.be/eli/wet/2002/08/22/2002022737/justel",
-  },
-  {
-    title: "U mag uw patiëntendossier inkijken",
-    text: "U heeft recht op inzage in uw patiëntendossier en op een afschrift ervan. De zorgverlener moet hier binnen een redelijke termijn gevolg aan geven; bepaalde persoonlijke notities en gegevens over derden kunnen worden uitgesloten.",
-    ref: "Wet van 22 augustus 2002 — inzage in en afschrift van het patiëntendossier",
-    url: "https://www.ejustice.just.fgov.be/eli/wet/2002/08/22/2002022737/justel",
-  },
-  {
-    title: "Een recht werd niet gerespecteerd? Er is een ombudsdienst",
-    text: "Als een van uw patiëntenrechten niet werd nageleefd, kunt u een klacht neerleggen bij een ombudsfunctie. Voor zorg buiten het ziekenhuis bestaat de federale ombudsdienst « Rechten van de patiënt ». De bemiddeling is gratis.",
-    ref: "Wet van 22 augustus 2002 — recht op klacht bij de ombudsfunctie",
-    url: "https://www.health.belgium.be/nl/professionals/gezondheidsprofessionals/menselijke-gezondheid/kwaliteit-veiligheid-gezondheidszorg/rechten-patient",
-  },
-];
+const fiches = NL_FICHES["gezondheid"];
 
 const readText = `Gezondheid en patiëntenrechten. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

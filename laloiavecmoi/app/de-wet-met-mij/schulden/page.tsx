@@ -2,49 +2,13 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Schulden & collectieve schuldenregeling (België) — Nederlandstalige fiche.
 // Feiten gespiegeld op de reeds geverifieerde Franstalige fiche (surendettement.json),
 // met officiële Nederlandstalige bronnen (FOD Economie, FOD Financiën).
 
-const fiches = [
-  {
-    title: "De collectieve schuldenregeling: een uitweg onder gerechtelijk toezicht",
-    text: "Wie structureel niet meer in staat is zijn schulden te betalen, kan een collectieve schuldenregeling (CSR) aanvragen bij de arbeidsrechtbank. Alle schuldeisers worden samengebracht en dragen, onder toezicht van een rechter, bij tot een oplossing.",
-    ref: "Wet van 5 juli 1998 betreffende de collectieve schuldenregeling; Gerechtelijk Wetboek, art. 1675/2 en volgende",
-    url: "https://economie.fgov.be/nl/themas/financiele-diensten/schuldenlast/collectieve-schuldenregeling",
-  },
-  {
-    title: "Voorwaarden om toegelaten te worden",
-    text: "De CSR staat open voor een natuurlijke persoon die duurzaam niet in staat is zijn opeisbare schulden te betalen en die zijn onvermogen niet kennelijk zelf heeft georganiseerd. De aanvraag gebeurt via een verzoekschrift bij de arbeidsrechtbank.",
-    ref: "Gerechtelijk Wetboek — toelaatbaarheidsvoorwaarden voor de CSR",
-    url: "https://economie.fgov.be/nl/themas/financiele-diensten/schuldenlast/collectieve-schuldenregeling",
-  },
-  {
-    title: "De schuldbemiddelaar en uw leefgeld",
-    text: "De rechtbank stelt een schuldbemiddelaar aan die uw inkomsten beheert en de schuldeisers terugbetaalt. U behoudt een leefgeld: een bedrag om menswaardig te leven (huisvesting, voeding, gezin).",
-    ref: "Gerechtelijk Wetboek — schuldbemiddeling en leefgeld",
-    url: "https://economie.fgov.be/nl/themas/financiele-diensten/schuldenlast/collectieve-schuldenregeling",
-  },
-  {
-    title: "Gevolgen en duur",
-    text: "Zodra de regeling toelaatbaar is, worden de invorderingen en beslagen in principe opgeschort. Op het einde van een aanzuiveringsregeling kan de rechter het saldo van bepaalde schulden kwijtschelden, zodat u opnieuw kunt starten.",
-    ref: "Gerechtelijk Wetboek — gevolgen van de CSR en kwijtschelding van het saldo",
-    url: "https://economie.fgov.be/nl/themas/financiele-diensten/schuldenlast/collectieve-schuldenregeling",
-  },
-  {
-    title: "Niet heel uw loon kan in beslag worden genomen",
-    text: "Een deel van uw loon is wettelijk beschermd en kan niet in beslag genomen worden. De voor beslag vatbare gedeelten en de drempels worden jaarlijks op 1 januari geïndexeerd en zijn hoger beschermd als u kinderen ten laste heeft.",
-    ref: "Gerechtelijk Wetboek, art. 1409 en volgende (voor beslag vatbare gedeelten); jaarlijkse indexering op 1 januari",
-    url: "https://werk.belgie.be/nl/themas/loon",
-  },
-  {
-    title: "Eerst proberen: minnelijke schuldbemiddeling",
-    text: "Vóór een gerechtelijke procedure kan een minnelijke schuldbemiddeling helpen om met de schuldeisers een afbetalingsplan af te spreken. De FOD Financiën voorziet bovendien eigen oplossingen (zoals een afbetalingsplan) voor schulden bij de fiscus.",
-    ref: "FOD Financiën — wettelijke alternatieven bij betalingsmoeilijkheden",
-    url: "https://fin.belgium.be/nl/particulieren/betalen-terugkrijgen/moeilijkheden-betalen/alternatieve-mogelijkheden",
-  },
-];
+const fiches = NL_FICHES["schulden"];
 
 const readText = `Schulden en collectieve schuldenregeling. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

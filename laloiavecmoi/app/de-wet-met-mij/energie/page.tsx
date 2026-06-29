@@ -2,38 +2,14 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Energie (Vlaanderen) — Nederlandstalige fiche.
 // LET OP: energie is een gewestelijke materie. Deze fiche gebruikt de VLAAMSE regels
 // (Vlaamse Nutsregulator, Fluvius, LAC) — NIET de Waalse (CWaPE), die anders zijn.
 // Officiële bronnen: Vlaanderen.be en Vlaamse Nutsregulator.
 
-const fiches = [
-  {
-    title: "U kunt uw energiefactuur niet betalen: u wordt niet zomaar afgesloten",
-    text: "Bij niet-betaling volgt een vaste procedure: eerst een betalingsherinnering (u heeft 15 dagen), dan een ingebrekestelling. Zegt de leverancier daarna uw contract op, dan moet hij nog minstens 45 kalenderdagen energie blijven leveren. Vindt u geen nieuwe leverancier, dan levert netbeheerder Fluvius verder als sociale leverancier.",
-    ref: "Vlaanderen.be — wat als u uw factuur voor elektriciteit en aardgas niet betaalt",
-    url: "https://www.vlaanderen.be/wat-als-u-uw-factuur-voor-elektriciteit-en-aardgas-niet-betaalt",
-  },
-  {
-    title: "Beschermde afnemers en het sociaal tarief",
-    text: "Wie bepaalde uitkeringen of tegemoetkomingen geniet, is « beschermde afnemer » en heeft recht op het sociaal tarief (sociale maximumprijs) — doorgaans zo'n 30 % goedkoper. Het wordt automatisch toegekend: de FOD Economie geeft de rechthebbenden door aan de leveranciers, u hoeft geen attest meer te bezorgen.",
-    ref: "Vlaanderen.be — sociaal tarief voor energie (elektriciteit, aardgas, warmte)",
-    url: "https://www.vlaanderen.be/sociaal-tarief-voor-energie-elektriciteit-aardgas-warmte",
-  },
-  {
-    title: "Afsluiten kan enkel via de Lokale Adviescommissie (LAC)",
-    text: "De netbeheerder mag u niet zomaar afsluiten: een afsluiting vereist in principe de toestemming van de Lokale Adviescommissie (LAC). Beschermde afnemers genieten bovendien extra waarborgen, zoals een gratis betalingsherinnering en ingebrekestelling.",
-    ref: "Vlaamse Nutsregulator — sociaal energiebeleid",
-    url: "https://www.vlaamsenutsregulator.be/elektriciteit-en-aardgas/energieprijzen-en-facturen/sociaal-energiebeleid",
-  },
-  {
-    title: "Van energieleverancier veranderen is gratis",
-    text: "U mag op elk moment van leverancier veranderen. U tekent gewoon een contract bij een nieuwe leverancier; die regelt de overstap en u hoeft uw oude contract niet zelf op te zeggen. Houd rekening met een opzegtermijn van minstens 3 weken. Met de V-test® van de Vlaamse Nutsregulator vergelijkt u de prijzen.",
-    ref: "Vlaanderen.be — energieleveranciers en energiecontracten",
-    url: "https://www.vlaanderen.be/bouwen-wonen-en-energie/elektriciteit-en-aardgas/energieleveranciers-en-energiecontracten",
-  },
-];
+const fiches = NL_FICHES["energie"];
 
 const readText = `Energie in Vlaanderen. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

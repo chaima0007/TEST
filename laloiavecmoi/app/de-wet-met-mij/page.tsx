@@ -1,30 +1,18 @@
 import Link from "next/link";
+import { NL_THEMES } from "@/data/nl/fiches";
 
 // Nederlandstalige ruimte (België) — « De wet met mij ».
 // Volwaardige, aparte ruimte (niet vermengd met de Franstalige/Franse versie),
 // volgens het principe « rien ne soit mélangé ». Zelfde rigueur, Belgische bronnen in het NL.
 // Slogan : « Het recht, toegankelijk voor iedereen » = « Le droit accessible pour tous ».
+// De themalijst komt uit één bron (data/nl/fiches.ts) — geen duplicatie.
 
-type Thema = {
-  titel: string;
-  beschrijving: string;
-  href?: string;
-  emoji: string;
-};
-
-const themas: Thema[] = [
-  { titel: "Wonen & huur", beschrijving: "Huurwaarborg, plaatsbeschrijving, opzeg, herstellingen.", href: "/de-wet-met-mij/wonen", emoji: "🏠" },
-  { titel: "Werk", beschrijving: "Opzeg, ontslag, C4, minimumloon, verlof.", href: "/de-wet-met-mij/werk", emoji: "💼" },
-  { titel: "Juridische hulp", beschrijving: "Gratis eerste advies en pro-Deo-advocaat volgens inkomen.", href: "/de-wet-met-mij/juridische-hulp", emoji: "⚖️" },
-  { titel: "Consumentenrecht", beschrijving: "Herroepingsrecht, garantie, aankopen.", href: "/de-wet-met-mij/consumentenrecht", emoji: "🛒" },
-  { titel: "Familie & privacy", beschrijving: "Samenwonen, scheiding, GDPR-rechten.", href: "/de-wet-met-mij/familie", emoji: "👪" },
-  { titel: "Administratieve stappen", beschrijving: "Beroep, termijnen, ombudsman.", href: "/de-wet-met-mij/administratie", emoji: "📄" },
-  { titel: "Schulden", beschrijving: "Collectieve schuldenregeling, schuldbemiddelaar, bescherming van uw loon.", href: "/de-wet-met-mij/schulden", emoji: "💶" },
-  { titel: "Geweld & slachtofferhulp", beschrijving: "1712, tijdelijk huisverbod, klacht, gratis slachtofferhulp.", href: "/de-wet-met-mij/geweld", emoji: "🆘" },
-  { titel: "Gezondheid & patiëntenrechten", beschrijving: "Toestemming, inzage in uw dossier, klachtrecht en ombudsfunctie.", href: "/de-wet-met-mij/gezondheid", emoji: "🩺" },
-  { titel: "Energie", beschrijving: "Betalingsmoeilijkheden, sociaal tarief, afsluiting, van leverancier veranderen.", href: "/de-wet-met-mij/energie", emoji: "⚡" },
-  { titel: "Bescherming van ouderen", beschrijving: "Ouderenmis(be)handeling herkennen, 1712, Woonzorglijn, VLOCO.", href: "/de-wet-met-mij/ouderen", emoji: "🧓" },
-];
+const themas = NL_THEMES.map((t) => ({
+  titel: t.titel,
+  beschrijving: t.beschrijving,
+  href: `/de-wet-met-mij/${t.slug}`,
+  emoji: t.emoji,
+}));
 
 export default function DeWetMetMijPage() {
   return (
@@ -64,6 +52,14 @@ export default function DeWetMetMijPage() {
             Wij leggen uw rechten uit in <strong className="text-white">klare taal</strong>, op basis van
             officiële bronnen — gratis.
           </p>
+          <div className="mt-8">
+            <Link
+              href="/de-wet-met-mij/zoeken"
+              className="inline-flex items-center gap-2 rounded-xl bg-white text-slate-900 px-5 py-3 text-sm font-semibold shadow-lg hover:bg-emerald-50 transition-colors"
+            >
+              🔎 Zoek in al uw rechten
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -2,67 +2,13 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Familie & privacy (België) — Nederlandstalige fiche.
 // Feiten gespiegeld op de geverifieerde Franstalige fiche.
 // Bronnen in het NL: Belgium.be, Justitie, Notaris.be, Gegevensbeschermingsautoriteit.
 
-const fiches = [
-  {
-    title: "Huwelijk, wettelijke en feitelijke samenwoning: drie heel verschillende statuten",
-    text: "Feitelijke samenwoning schept geen juridische band: bij overlijden erft de partner niets automatisch. Wettelijke samenwoning (aangifte bij de gemeente) geeft bescherming van de gezinswoning en vruchtgebruik daarvan. Het huwelijk biedt de breedste bescherming: solidariteit, gewaarborgd reservatair deel en vruchtgebruik op de hele nalatenschap.",
-    ref: "Belgium.be — koppel en scheiding",
-    url: "https://www.belgium.be/nl/familie",
-  },
-  {
-    title: "Een overeenkomst bij de notaris beschermt uw koppel",
-    text: "Zonder huwelijkscontract valt u automatisch onder het wettelijk stelsel. Een huwelijkscontract, of een samenlevingscontract bij notariële akte, laat toe inkomsten, gezinskosten, woning en bescherming bij scheiding te regelen. Het beste moment om te beslissen is vóór een conflict.",
-    ref: "Notaris.be — relaties en samenleven",
-    url: "https://www.notaris.be/",
-  },
-  {
-    title: "Echtscheiding: twee wegen, naargelang u akkoord bent of niet",
-    text: "De echtscheiding met onderlinge toestemming veronderstelt een volledig akkoord (goederen, woning, kinderen, onderhoudsgeld) dat bij de familierechtbank wordt neergelegd — dit is het snelst. Zonder akkoord geldt de echtscheiding wegens onherstelbare ontwrichting: gezamenlijk na 6 maanden scheiding, of eenzijdig na 1 jaar.",
-    ref: "Justitie — echtscheiding",
-    url: "https://justitie.belgium.be/nl",
-  },
-  {
-    title: "Scheiding en kinderen: het ouderlijk gezag blijft gezamenlijk",
-    text: "Of u nu samenwoont of niet, het wettelijk principe is dat beide ouders samen het ouderlijk gezag uitoefenen (belangrijke beslissingen: gezondheid, school, religie). Voor het verblijf onderzoekt de familierechtbank bij onenigheid bij voorrang de gelijkmatig verdeelde huisvesting. Bemiddeling wordt aangemoedigd vóór de procedure.",
-    ref: "Belgium.be — ouderlijk gezag",
-    url: "https://www.belgium.be/nl/familie",
-  },
-  {
-    title: "Erfenis: uw naasten kunnen niet volledig onterfd worden",
-    text: "De Belgische wet beschermt bepaalde erfgenamen via een « reservatair deel »: kinderen (en bij huwelijk de langstlevende echtgenoot) kunnen niet volledig uit de erfenis worden gesloten, zelfs niet bij testament. Over een ander deel beschikt u vrij. De notaris is de sleutelfiguur voor een geldig testament of schenking.",
-    ref: "Notaris.be",
-    url: "https://www.notaris.be/",
-  },
-  {
-    title: "Onderhoudsbijdrage voor de kinderen: beide ouders dragen bij",
-    text: "Beide ouders moeten bijdragen in de kosten van hun kinderen, in verhouding tot hun draagkracht — ook na een scheiding en ongeacht of ze gehuwd waren. Het bedrag wordt vastgelegd in een akkoord of door de familierechtbank en is doorgaans jaarlijks indexeerbaar.",
-    ref: "Burgerlijk Wetboek — onderhoudsplicht van de ouders (onderhoudsbijdrage), met indexering",
-    url: "https://www.belgium.be/nl/familie",
-  },
-  {
-    title: "Onderhoudsgeld niet betaald? DAVO kan helpen",
-    text: "De Dienst voor Alimentatievorderingen (DAVO) bij de FOD Financiën int niet-betaald onderhoudsgeld bij de onderhoudsplichtige en kan, onder voorwaarden, een voorschot betalen op het onderhoudsgeld voor de kinderen (momenteel maximaal € 175 per kind per maand). De aanvraag is gratis.",
-    ref: "FOD Financiën — Dienst voor Alimentatievorderingen (DAVO)",
-    url: "https://fin.belgium.be/nl/particulieren/meer-diensten/onderhoudsgeld-davo",
-  },
-  {
-    title: "Een conflict oplossen zonder proces: familiale bemiddeling",
-    text: "In plaats van (of vóór) een procedure kan u een beroep doen op een erkende bemiddelaar in familiezaken. Samen zoekt u een akkoord (kinderen, woning, onderhoudsgeld); een akkoord kan daarna door de familierechtbank worden bekrachtigd. Bij sommige geschillen wijst de rechter zelf op de mogelijkheid van bemiddeling.",
-    ref: "Gerechtelijk Wetboek, art. 1723 en volgende — bemiddeling",
-    url: "https://justitie.belgium.be/nl",
-  },
-  {
-    title: "Uw privacy: u heeft GDPR-rechten",
-    text: "U kan toegang vragen tot uw gegevens, ze laten verbeteren of wissen, en zich verzetten tegen bepaald gebruik. Een organisatie moet in principe binnen één maand antwoorden. Bij problemen kan u klacht indienen bij de Gegevensbeschermingsautoriteit (GBA).",
-    ref: "Gegevensbeschermingsautoriteit (GBA)",
-    url: "https://www.gegevensbeschermingsautoriteit.be/burger",
-  },
-];
+const fiches = NL_FICHES["familie"];
 
 const readText = `Familie en privacy. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

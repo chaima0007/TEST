@@ -2,37 +2,13 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Bescherming van ouderen — ouderenmis(be)handeling (Vlaanderen) — Nederlandstalige fiche.
 // Feiten gespiegeld op de reeds geverifieerde Franstalige fiche (maltraitance_aines.json),
 // met officiële Vlaamse bronnen (Vlaanderen.be, hulplijn 1712, VLOCO).
 
-const fiches = [
-  {
-    title: "Wat is ouderenmis(be)handeling?",
-    text: "Het gaat om elke vorm van geweld of verwaarlozing tegenover een oudere persoon: lichamelijk, psychisch, seksueel, maar ook financieel geweld of verwaarlozing (verkeerde medicatie, geen schone kleren, onvoldoende verzorging). Misbruik van iemands kwetsbare toestand is strafbaar.",
-    ref: "Strafwetboek — misbruik van de zwakke toestand (art. 442quater) en geweldsmisdrijven",
-    url: "https://www.vlaanderen.be/gezondheid-en-welzijn/conflicten-en-misdrijven/hulp-en-melding/geweld-en-misbruik-bij-ouderen",
-  },
-  {
-    title: "U bent (of ziet) een mishandelde oudere: wie bellen?",
-    text: "Bij mishandeling thuis kunt u — net als familie of vrienden — gratis bellen naar 1712, de hulplijn voor geweld, misbruik en kindermishandeling. Gaat het om mishandeling in een woonzorgcentrum, dan kunt u terecht bij de Woonzorglijn. De hulp is gratis en anoniem.",
-    ref: "Vlaanderen.be — geweld en misbruik bij ouderen (hulplijn 1712, Woonzorglijn)",
-    url: "https://www.vlaanderen.be/gezondheid-en-welzijn/conflicten-en-misdrijven/hulp-en-melding/geweld-en-misbruik-bij-ouderen",
-  },
-  {
-    title: "Financieel misbruik telt ook mee",
-    text: "Een veelvoorkomende vorm bij ouderen is financieel misbruik: geld of bezittingen afnemen, misbruik van een volmacht of bankkaart, druk uitoefenen om documenten te tekenen. Ook daarvoor kunt u terecht bij 1712 om uw situatie te bespreken.",
-    ref: "Hulplijn 1712 — ouderenmis(be)handeling (incl. financieel geweld)",
-    url: "https://www.1712.be/nl/soorten-geweld/ouderenmisbehandeling",
-  },
-  {
-    title: "Professionals: contacteer VLOCO",
-    text: "Komt u beroepsmatig in contact met ouderen en vermoedt u mis(be)handeling, dan kunt u terecht bij het Vlaams Ondersteuningscentrum Ouderenmis(be)handeling (VLOCO), het aanspreekpunt voor professionals. Iedereen — buur, familie, zorgverlener — kan een verschil maken door het gesprek aan te durven gaan.",
-    ref: "Hulplijn 1712 — doorverwijzing naar VLOCO (vloco.be)",
-    url: "https://www.1712.be/nl/soorten-geweld/ouderenmisbehandeling",
-  },
-];
+const fiches = NL_FICHES["ouderen"];
 
 const readText = `Bescherming van ouderen. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

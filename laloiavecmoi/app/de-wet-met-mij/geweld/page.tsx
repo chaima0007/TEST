@@ -2,37 +2,13 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Geweld & slachtofferhulp (België) — Nederlandstalige fiche.
 // Feiten gespiegeld op de reeds geverifieerde Franstalige fiche (violences_conjugales.json),
 // met officiële Nederlandstalige bronnen (hulplijn 1712, Vlaanderen.be).
 
-const fiches = [
-  {
-    title: "U ondervindt geweld: bel 1712 (gratis en anoniem)",
-    text: "1712 is de hulplijn voor elke vraag over geweld, misbruik en kindermishandeling. Het nummer is gratis, verschijnt niet op de telefoonrekening en u hoeft niet te zeggen wie u bent. In een levensbedreigende situatie belt u de politie op 101 of de noodcentrale 112.",
-    ref: "Hulplijn 1712 (officieel) — gratis en anoniem",
-    url: "https://www.1712.be/nl",
-  },
-  {
-    title: "De pleger kan tijdelijk uit de woning worden gezet",
-    text: "Bij huiselijk geweld kan een tijdelijk huisverbod worden opgelegd: de persoon die een ernstige bedreiging vormt, mag de gezamenlijke woning gedurende een bepaalde periode niet betreden. Zo kan het slachtoffer in veiligheid blijven.",
-    ref: "Wet van 15 mei 2012 betreffende het tijdelijk huisverbod in geval van huiselijk geweld",
-    url: "https://www.vlaanderen.be/hulplijn-geweld-misbruik-en-kindermishandeling-1712",
-  },
-  {
-    title: "Uzelf beschermen en een dossier opbouwen",
-    text: "Opzettelijke slagen en verwondingen en bedreigingen zijn strafbaar. U kunt klacht indienen bij de politie. Bewaar bewijzen (medische attesten, foto's, berichten, getuigenissen): ze versterken uw dossier.",
-    ref: "Strafwetboek — opzettelijke slagen en verwondingen, bedreigingen; klacht bij de politie",
-    url: "https://www.1712.be/nl",
-  },
-  {
-    title: "Gratis slachtofferhulp bestaat",
-    text: "De Centra voor Algemeen Welzijnswerk (CAW) bieden gratis slachtofferhulp: een luisterend oor, psychosociale ondersteuning en hulp bij administratieve en juridische stappen. 1712 verwijst u door naar de dienst die het best bij u past.",
-    ref: "Vlaanderen.be — hulplijn 1712 en slachtofferhulp (CAW)",
-    url: "https://www.vlaanderen.be/hulplijn-geweld-misbruik-en-kindermishandeling-1712",
-  },
-];
+const fiches = NL_FICHES["geweld"];
 
 const readText = `Geweld en slachtofferhulp. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

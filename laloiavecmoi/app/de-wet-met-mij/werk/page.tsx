@@ -2,49 +2,13 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Werk (België) — Nederlandstalige fiche.
 // Belgisch arbeidsrecht. Feiten gespiegeld op de reeds geverifieerde Franstalige fiche,
 // met officiële Nederlandstalige bronnen (FOD Werkgelegenheid, RVA).
 
-const fiches = [
-  {
-    title: "Een ontslag volgt strikte regels",
-    text: "De werkgever moet het ontslag betekenen per aangetekende brief of via een deurwaarder. Een mondeling ontslag of een ontslag via een gewoon bericht respecteert de wettelijke vorm niet.",
-    ref: "FOD Werkgelegenheid — einde van de arbeidsovereenkomst",
-    url: "https://werk.belgie.be/nl/themas/arbeidsovereenkomsten/einde-van-de-arbeidsovereenkomst",
-  },
-  {
-    title: "U heeft recht op een opzegtermijn (of een vergoeding)",
-    text: "De duur van de opzegtermijn hangt af van uw anciënniteit. Respecteert de werkgever die niet, dan is hij u een overeenkomstige opzeggingsvergoeding verschuldigd.",
-    ref: "FOD Werkgelegenheid — ontslag met opzegtermijn",
-    url: "https://werk.belgie.be/nl/themas/arbeidsovereenkomsten/einde-van-de-arbeidsovereenkomst",
-  },
-  {
-    title: "Het document C4 is u verschuldigd op het einde",
-    text: "Op het einde van elke overeenkomst moet de werkgever u het C4 bezorgen. Dat dient om uw rechten op werkloosheidsuitkering bij de RVA te doen gelden.",
-    ref: "RVA (officieel)",
-    url: "https://www.rva.be/nl",
-  },
-  {
-    title: "Een minimumloon is gegarandeerd",
-    text: "In België bestaat een gewaarborgd gemiddeld minimum maandinkomen (GGMMI). Hogere minima kunnen gelden afhankelijk van uw sector (paritair comité).",
-    ref: "FOD Werkgelegenheid — loon",
-    url: "https://werk.belgie.be/nl/themas/loon",
-  },
-  {
-    title: "U heeft recht op betaald verlof",
-    text: "Een voltijdse werknemer (vijfdagenweek) heeft recht op minstens 20 wettelijke verlofdagen per jaar, als hij het voorgaande jaar gewerkt heeft.",
-    ref: "FOD Werkgelegenheid — jaarlijkse vakantie",
-    url: "https://werk.belgie.be/nl/themas/jaarlijkse-vakantie",
-  },
-  {
-    title: "Het arbeidsreglement moet voor u toegankelijk zijn",
-    text: "Uw onderneming moet een arbeidsreglement hebben en u een kopie bezorgen. Het legt de uurroosters, sancties en uw interne rechten vast.",
-    ref: "FOD Werkgelegenheid — arbeidsreglement",
-    url: "https://werk.belgie.be/nl/themas/arbeidsreglementering/arbeidsreglement",
-  },
-];
+const fiches = NL_FICHES["werk"];
 
 const readText = `Uw rechten op het werk. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

@@ -2,50 +2,14 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Juridische hulp (België) — Nederlandstalige fiche.
 // Toegang tot het recht: gratis eerstelijnsbijstand voor iedereen, en tweedelijnsbijstand
 // (« pro Deo ») volgens inkomen via het Bureau voor Juridische Bijstand (BJB).
 // Bronnen: advocaat.be (Orde van Vlaamse Balies) en justitie.belgium.be.
 
-const fiches = [
-  {
-    title: "Eerstelijnsbijstand is gratis voor iedereen",
-    text: "Een eerste, kort juridisch advies is gratis en zonder inkomensvoorwaarde: men informeert u en oriënteert u. Beschikbaar via de Commissie voor Juridische Bijstand, justitiehuizen en wetswinkels.",
-    ref: "Advocaat.be — juridische bijstand",
-    url: "https://www.advocaat.be/nl/een-advocaat-nodig/pro-deo-juridische-bijstand",
-  },
-  {
-    title: "Tweedelijnsbijstand (« pro Deo ») volgens uw inkomen",
-    text: "Om bijgestaan of vertegenwoordigd te worden door een advocaat, geheel of gedeeltelijk gratis, afhankelijk van uw inkomen. Het Bureau voor Juridische Bijstand (BJB) controleert uw voorwaarden en wijst een advocaat aan.",
-    ref: "Advocaat.be — pro Deo",
-    url: "https://www.advocaat.be/nl/een-advocaat-nodig/pro-deo-juridische-bijstand",
-  },
-  {
-    title: "Een ereloonovereenkomst beschermt u",
-    text: "Vraag aan uw advocaat een duidelijke afspraak over de erelonen en kosten, liefst schriftelijk. Zo vermijdt u verrassingen en weet u vooraf waar u aan toe bent.",
-    ref: "Advocaat.be — erelonen",
-    url: "https://www.advocaat.be/nl/een-advocaat-nodig",
-  },
-  {
-    title: "Een rechtsbijstandsverzekering kan de kosten dekken",
-    text: "Een rechtsbijstandsverzekering (soms gekoppeld aan uw familiale of autoverzekering) kan advocaat- en procedurekosten geheel of gedeeltelijk dekken. Controleer uw polissen.",
-    ref: "Belgium.be — justitie",
-    url: "https://www.belgium.be/nl/justitie",
-  },
-  {
-    title: "Rechtsbijstand: vrijstelling van de gerechtskosten",
-    text: "Naast een gratis advocaat bestaat de « rechtsbijstand »: een gehele of gedeeltelijke vrijstelling van de gerechtskosten (rolrechten, kosten van de gerechtsdeurwaarder, deskundige…). Ze wordt aangevraagd bij het bureau voor rechtsbijstand of bij de rechter die de zaak behandelt.",
-    ref: "Gerechtelijk Wetboek, art. 664 en volgende — rechtsbijstand",
-    url: "https://justitie.belgium.be/nl",
-  },
-  {
-    title: "Welke documenten meebrengen?",
-    text: "Voor het Bureau voor Juridische Bijstand brengt u uw identiteitskaart mee, een bewijs van uw inkomsten (loonfiche, uitkering, laatste aanslagbiljet) en, indien van toepassing, een attest van gezinssamenstelling. Bepaalde uitkeringsgerechtigden worden vermoed in aanmerking te komen.",
-    ref: "Gerechtelijk Wetboek, art. 508/1 e.v. — juridische bijstand (toekenningsvoorwaarden)",
-    url: "https://www.advocaat.be/nl/een-advocaat-nodig/pro-deo-juridische-bijstand",
-  },
-];
+const fiches = NL_FICHES["juridische-hulp"];
 
 const readText = `Juridische hulp. ${fiches.map((f) => f.title + ". " + f.text).join(" ")} Als uw inkomen bescheiden is, kan de juridische bijstand geheel of gedeeltelijk gratis zijn via het Bureau voor Juridische Bijstand. Het eerste advies van de eerste lijn is gratis voor iedereen.`;
 

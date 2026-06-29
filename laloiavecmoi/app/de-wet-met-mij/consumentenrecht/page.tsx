@@ -2,55 +2,13 @@
 
 import Link from "next/link";
 import ReadAloud from "@/components/ReadAloud";
+import { NL_FICHES } from "@/data/nl/fiches";
 
 // Consumentenrecht (België) — Nederlandstalige fiche.
 // Feiten gespiegeld op de geverifieerde Franstalige fiche (Wetboek economisch recht, Boek VI).
 // Bronnen in het NL: FOD Economie, Belgium.be, Consumentenombudsdienst.
 
-const fiches = [
-  {
-    title: "Afstandsverkoop: 14 dagen bedenktijd",
-    text: "Bij een online aankoop of aankoop op afstand (telefoon, verkoop aan de deur) heeft u 14 dagen om zich te bedenken, zonder reden op te geven. De termijn loopt vanaf de ontvangst van het pakket.",
-    ref: "FOD Economie — herroepingsrecht",
-    url: "https://economie.fgov.be/nl/themas/consumentenbescherming",
-  },
-  {
-    title: "Wettelijke garantie van 2 jaar",
-    text: "Voor elke aankoop door een consument bij een onderneming geldt een wettelijke garantie van 2 jaar op een nieuw product, vanaf de levering. Ze dekt gebreken aan overeenstemming en komt bovenop elke commerciële garantie van de winkel.",
-    ref: "FOD Economie — de garantie",
-    url: "https://economie.fgov.be/nl/themas/consumentenbescherming",
-  },
-  {
-    title: "Volledige terugbetaling binnen 14 dagen",
-    text: "Nadat u uw herroeping heeft gemeld, moet de verkoper u binnen 14 dagen terugbetalen — inclusief de standaard leveringskosten. Hij mag wachten tot hij het goed (of het verzendbewijs) terug heeft.",
-    ref: "Belgium.be — consumentenbescherming",
-    url: "https://www.belgium.be/nl/economie",
-  },
-  {
-    title: "Niet elke aankoop heeft een herroepingsrecht",
-    text: "De termijn van 14 dagen geldt niet voor alles: producten op maat of gepersonaliseerd, bederfbare goederen, gedownloade digitale inhoud (met uw akkoord), kranten, gedateerde tickets (concerten, reizen)… Controleer steeds de uitzonderingen vóór u koopt.",
-    ref: "FOD Economie — uitzonderingen",
-    url: "https://economie.fgov.be/nl/themas/consumentenbescherming",
-  },
-  {
-    title: "Geschil? De Consumentenombudsdienst helpt gratis",
-    text: "Reageert de verkoper niet, dan kan deze federale openbare dienst gratis bemiddelen om een minnelijke oplossing te vinden, of u doorverwijzen. Klaag eerst schriftelijk (e-mail of aangetekend) en bewaar een kopie.",
-    ref: "Consumentenombudsdienst",
-    url: "https://consumentenombudsdienst.be/nl",
-  },
-  {
-    title: "Een consumentenkrediet getekend? U heeft 14 dagen bedenktijd",
-    text: "Heeft u een consumentenkrediet (lening op afbetaling, kredietopening…) afgesloten, dan kan u zich binnen 14 kalenderdagen bedenken en de overeenkomst herroepen, zonder boete. U betaalt enkel het opgenomen kapitaal terug, vermeerderd met de intrest voor de gebruikte periode.",
-    ref: "Wetboek van economisch recht, boek VII, art. VII.83 — herroepingsrecht consumentenkrediet",
-    url: "https://economie.fgov.be/nl/themas/financiele-diensten/krediet/consumentenkrediet",
-  },
-  {
-    title: "Te dure lening? Er zijn wettelijke maximumrentevoeten",
-    text: "Vergelijk altijd het JKP (jaarlijks kostenpercentage): dat omvat alle kosten van het krediet. Voor consumentenkrediet gelden bovendien wettelijk vastgelegde maximale JKP's; een aanbod erboven is verboden.",
-    ref: "Wetboek van economisch recht, boek VII — JKP en maximale rentevoeten",
-    url: "https://economie.fgov.be/nl/themas/financiele-diensten/krediet/consumentenkrediet",
-  },
-];
+const fiches = NL_FICHES["consumentenrecht"];
 
 const readText = `Uw rechten als consument. ${fiches.map((f) => f.title + ". " + f.text).join(" ")}`;
 

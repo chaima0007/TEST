@@ -62,7 +62,7 @@
         },
         {
           "nom": "Versions multilingues (NL en premier)",
-          "pct": 68,
+          "pct": 75,
           "statut": "en cours",
           "actions_faites": [
             "Bannière multilingue (14 langues, slogan)",
@@ -72,6 +72,8 @@
             "Enrichissement Wonen (Vlaams Woninghuurdecreet, 8 fiches) — correction waarborg 2→3 mois, ajout durée/indexation/qualité/EPC",
             "Enrichissement Consumentenrecht (+crédit conso) et Juridische-hulp (+rechtsbijstand/documents)",
             "Enrichissement Familie (+onderhoudsbijdrage, DAVO voorschot max €175/kind vérifié, familiale bemiddeling) — 6→9 fiches",
+            "Centralisation des fiches NL dans data/nl/fiches.ts (source unique, ZÉRO duplication) — 11 pages refactorées pour s'y brancher",
+            "Page de recherche /de-wet-met-mij/zoeken (recherche tolérante aux accents sur toutes les fiches) + CTA dans le hub + sitemap dérivé de la source",
             "Énergie NL = règles FLAMANDES (VREG/Fluvius/LAC), pas les règles wallonnes (régionalisation respectée)",
             "Sources officielles NL vérifiées (codex.vlaanderen.be, FOD Volksgezondheid, eJustice, FOD Economie, FOD Financiën, 1712, Vlaanderen.be, Vlaamse Nutsregulator, VLOCO, advocaat.be)"
           ],

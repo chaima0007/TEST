@@ -2,10 +2,10 @@
 
 _Dernière mise à jour : 2026-06-28_
 
-## 🚀 Avancement global de la flotte : **87%**
-`█████████████████░░░` 87%
+## 🚀 Avancement global de la flotte : **88%**
+`██████████████████░░` 88%
 
-- **La Loi Avec Moi (citoyens)** — `██████████░░░░` 70%
+- **La Loi Avec Moi (citoyens)** — `██████████░░░░` 71%
 - **Caelum (entreprises B2B)** — `█████████████░` 96%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
@@ -16,8 +16,8 @@ _Dernière mise à jour : 2026-06-28_
 - **Déployer les 2 sites séparément** — EN ATTENTE : valider d abord la stratégie A→Z (STRATEGIE_LANCEMENT_AZ.md) + cocher la checklist GO/NO-GO. Pas de lancement avant. _(en attente depuis 1 j)_
 - **Calibrer les fournisseurs d API** — Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel. _(en attente depuis 1 j)_
 
-## La Loi Avec Moi (citoyens) — 70%
-`██████████████░░░░░░` 70%
+## La Loi Avec Moi (citoyens) — 71%
+`██████████████░░░░░░` 71%
 
 > **Point de sortie :** 84 domaines / 272 réponses (couche UE renforcée), 100% lois + sources. Build OK, 1200 simulations OK.
 
@@ -27,7 +27,7 @@ _Dernière mise à jour : 2026-06-28_
 | Page « Base juridique » (rendu serveur) | `████████████` 100% | terminé |
 | Modèles de documents prêts à l'emploi | `███████████░` 95% | en cours |
 | Espace enfants & jeunes / mineurs | `███████████░` 90% | en cours |
-| Versions multilingues (NL en premier) | `████████░░░░` 68% | en cours |
+| Versions multilingues (NL en premier) | `█████████░░░` 75% | en cours |
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
 | Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
