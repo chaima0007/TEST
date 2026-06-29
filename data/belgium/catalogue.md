@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**486 réponses · 149 modules · 680 sources officielles · 218 fiches avec contacts · 99 alertes de délai**
+**487 réponses · 149 modules · 683 sources officielles · 219 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -69,7 +69,7 @@
 | Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 3 | 5 | 3 | 0 |
 | Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
-| Énergie | Énergie — factures, fournisseur, difficultés de paiement | 3 | 5 | 2 | 2 |
+| Énergie | Énergie — factures, fournisseur, difficultés de paiement | 4 | 8 | 3 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
 | Enseignement | École & enseignement — inscription, gratuité, obligation scolaire | 4 | 7 | 2 | 2 |
 | — | Épargne-pension (3e pilier) | 3 | 5 | 0 | 0 |

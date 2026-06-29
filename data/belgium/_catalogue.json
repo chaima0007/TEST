@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 486,
-    "sources_officielles": 680,
-    "faits_avec_contacts": 218,
+    "faits": 487,
+    "sources_officielles": 683,
+    "faits_avec_contacts": 219,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -747,9 +747,9 @@
       "titre": "Énergie — factures, fournisseur, difficultés de paiement",
       "domaine": "Énergie",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 5,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
     },

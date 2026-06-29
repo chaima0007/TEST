@@ -88,6 +88,47 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ENER-REGIONAL-001",
+      "question": "Qui régule l'énergie et où comparer les prix selon ma région ?",
+      "reponse": "Les marchés de l'électricité et du gaz sont régulés au niveau RÉGIONAL, avec un régulateur et un comparateur de prix officiel par région. En WALLONIE : la CWaPE (Commission wallonne pour l'Énergie), avec le comparateur CompaCWaPE. En FLANDRE : la VREG (Vlaamse Regulator van de Elektriciteits- en Gasmarkt), avec sa V-test. À BRUXELLES : BRUGEL, avec le comparateur Brusim. Ces régulateurs informent les consommateurs, traitent certaines questions de marché et publient les comparateurs officiels. Pour un litige avec un fournisseur, vous pouvez aussi saisir le Service de médiation fédéral de l'énergie.",
+      "reference_legale": "Compétence régionale des marchés de l'énergie : décret wallon relatif au marché de l'électricité/du gaz (CWaPE) ; Energiedecreet flamand (VREG) ; ordonnance bruxelloise électricité/gaz (BRUGEL)",
+      "contacts": [
+        {
+          "nom": "CWaPE (Wallonie)",
+          "lien": "https://www.cwape.be/",
+          "pour": "régulateur wallon + comparateur CompaCWaPE"
+        },
+        {
+          "nom": "VREG (Flandre)",
+          "lien": "https://www.vreg.be/nl",
+          "pour": "régulateur flamand + V-test"
+        },
+        {
+          "nom": "BRUGEL (Bruxelles)",
+          "lien": "https://www.brugel.brussels/",
+          "pour": "régulateur bruxellois + comparateur Brusim"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.cwape.be/",
+          "intitule": "CWaPE — régulateur wallon de l'énergie"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vreg.be/nl",
+          "intitule": "VREG — Vlaamse regulator elektriciteit en gas"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.brugel.brussels/",
+          "intitule": "BRUGEL — régulateur bruxellois de l'énergie"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }
