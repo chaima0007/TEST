@@ -1,0 +1,108 @@
+{
+  "genere_le": "2026-06-29T10:09:57.347536+00:00",
+  "monte_carlo_n": 100000,
+  "devise": "EUR",
+  "hypotheses": {
+    "marche_adressable": {
+      "grands_comptes": 3000,
+      "mid_market": 15000,
+      "via_fiduciaires": 3728
+    },
+    "acv_eur": {
+      "grands_comptes": [
+        18000,
+        60000
+      ],
+      "mid_market": [
+        3000,
+        12000
+      ],
+      "via_fiduciaires": [
+        5000,
+        30000
+      ]
+    },
+    "penetration_par_scenario": {
+      "Prudent": {
+        "1": 0.001,
+        "2": 0.005,
+        "3": 0.012
+      },
+      "Base": {
+        "1": 0.002,
+        "2": 0.01,
+        "3": 0.025
+      },
+      "Ambitieux": {
+        "1": 0.004,
+        "2": 0.018,
+        "3": 0.045
+      }
+    },
+    "churn_annuel": 0.1,
+    "marge_brute": 0.8
+  },
+  "projections_arr": {
+    "Prudent": {
+      "1": {
+        "p10": 208421,
+        "median": 292146,
+        "p90": 384903,
+        "marge_brute_median": 233717
+      },
+      "2": {
+        "p10": 1005643,
+        "median": 1420623,
+        "p90": 1868273,
+        "marge_brute_median": 1136499
+      },
+      "3": {
+        "p10": 2337689,
+        "median": 3296003,
+        "p90": 4343691,
+        "marge_brute_median": 2636803
+      }
+    },
+    "Base": {
+      "1": {
+        "p10": 415525,
+        "median": 583397,
+        "p90": 772007,
+        "marge_brute_median": 466717
+      },
+      "2": {
+        "p10": 2032136,
+        "median": 2831588,
+        "p90": 3724189,
+        "marge_brute_median": 2265270
+      },
+      "3": {
+        "p10": 4889185,
+        "median": 6877016,
+        "p90": 9042984,
+        "marge_brute_median": 5501613
+      }
+    },
+    "Ambitieux": {
+      "1": {
+        "p10": 836055,
+        "median": 1166987,
+        "p90": 1539568,
+        "marge_brute_median": 933589
+      },
+      "2": {
+        "p10": 3628988,
+        "median": 5100608,
+        "p90": 6716629,
+        "marge_brute_median": 4080487
+      },
+      "3": {
+        "p10": 8818234,
+        "median": 12353323,
+        "p90": 16273844,
+        "marge_brute_median": 9882659
+      }
+    }
+  },
+  "avertissement": "PROJECTIONS sous hypothèses explicites — pas des résultats garantis. À réviser avec les vrais coûts, prix et taux de conversion observés."
+}

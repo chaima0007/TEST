@@ -1,0 +1,62 @@
+{
+  "module": "changement_regime_matrimonial",
+  "titre": "Changer de régime matrimonial",
+  "domaine": "Couple & patrimoine",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — modification du régime matrimonial par acte notarié (art. 1392 et suivants) ; Loi du 23 mars 2019 (suppression du délai d'attente)",
+    "portee": "Adapter ou changer entièrement de régime matrimonial pendant le mariage",
+    "source_officielle": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le changement de régime matrimonial passe obligatoirement par un notaire, qui vous conseillera selon votre situation patrimoniale et familiale.",
+  "faits": [
+    {
+      "id": "REGM-001",
+      "question": "Peut-on changer de régime matrimonial pendant le mariage ?",
+      "reponse": "Oui. Quel que soit votre régime actuel, et que vous soyez mariés avec ou sans contrat de mariage, vous pouvez à tout moment, d'un commun accord, changer de régime matrimonial ou modifier votre contrat de mariage. Cela nécessite toujours un acte notarié (l'acte modificatif). Depuis la loi du 23 mars 2019, il n'y a plus de délai minimum à respecter après le mariage.",
+      "reference_legale": "Code civil, art. 1392 et suivants ; Loi du 23 mars 2019",
+      "contacts": [
+        {"nom": "Notaire", "pour": "acte modificatif du régime matrimonial"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage", "intitule": "Notaire.be — Changer de régime matrimonial"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "REGM-002",
+      "question": "Quelles sont les deux possibilités de changement ?",
+      "reponse": "Deux options : soit adapter votre régime ou votre contrat (par ex. prévoir une attribution de communauté, une clause de préciput, une donation entre époux, ou faire entrer un bien personnel dans la communauté) ; soit changer complètement de régime (par ex. passer d'un régime de communauté à un régime de séparation de biens, ou l'inverse). Dans tous les cas, l'acte notarié est obligatoire.",
+      "reference_legale": "Code civil, art. 1392 et suivants (modification du régime matrimonial)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage", "intitule": "Notaire.be — Les deux possibilités"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "REGM-003",
+      "question": "Un inventaire des biens est-il obligatoire ?",
+      "reponse": "Pas toujours. Pour une modification simple (rester sous le même régime mais ajouter une clause), aucun inventaire n'est nécessaire. En revanche, un inventaire notarié de tous les biens et dettes est obligatoire si l'un des époux le demande, ou lorsque le changement entraîne la liquidation du régime préexistant (par ex. passage d'un régime de communauté à une séparation de biens).",
+      "reference_legale": "Code civil, art. 1394 (inventaire en cas de modification du régime matrimonial)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage", "intitule": "Notaire.be — Inventaire avec ou sans"},
+        {"type": "secondaire", "url": "https://www.notariesofeurope.eu/fr/faq5/couples-en-europe/belgique/", "intitule": "CNUE — régimes matrimoniaux en Belgique"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "REGM-004",
+      "question": "Quand le changement prend-il effet et combien ça coûte ?",
+      "reponse": "Entre les époux, le changement produit ses effets dès la signature de l'acte notarié. À l'égard des tiers, il devient opposable après son inscription au Registre central des contrats de mariage. Le coût varie selon la complexité et le patrimoine (frais d'acte ; en cas de liquidation, un droit de partage peut s'appliquer). À titre indicatif, comptez souvent plusieurs centaines à quelques milliers d'euros : demandez un devis à votre notaire avant de commencer.",
+      "reference_legale": "Code civil, art. 1395 (effets et opposabilité du changement de régime matrimonial)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.notaire.be/relations-et-vivre-ensemble/le-mariage/comment-changer-de-regime-matrimonial-ou-modifier-son-contrat-de-mariage", "intitule": "Notaire.be — Effets du changement"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/peut-modifier-le-contrat-de-mariage-pendant-le-mariage", "intitule": "Droits Quotidiens — coût indicatif"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
