@@ -15,8 +15,10 @@ export const metadata = {
 const dates = [
   { d: "2 février 2025", t: "Pratiques interdites + obligation de littératie IA (Art. 4)", etat: "en vigueur" },
   { d: "2 août 2025", t: "Obligations des modèles d'IA à usage général (GPAI)", etat: "en vigueur" },
-  { d: "2 août 2026", t: "Transparence des contenus/chatbots IA (Art. 50) — applicable même aux PME", etat: "imminent" },
-  { d: "2027-2028", t: "Obligations des systèmes à haut risque (reportées par le Digital Omnibus de mai 2026)", etat: "à venir" },
+  { d: "2 août 2026", t: "Transparence GÉNÉRALE (Art. 50) — information « vous parlez à une IA » (50(1)) + étiquetage des deepfakes (50(4)), côté déployeurs. NON reportée, même pour les PME.", etat: "imminent" },
+  { d: "2 décembre 2026", t: "Marquage MACHINE-READABLE des contenus générés par IA (Art. 50(2), FOURNISSEURS) — uniquement pour les systèmes déjà sur le marché avant le 02/08/2026 (période transitoire de 4 mois). Les systèmes lancés après le 02/08/2026 : tout dès le 02/08/2026.", etat: "imminent" },
+  { d: "2 février 2027", t: "Interopérabilité de la détection des marquages (Code de pratique sur la transparence)", etat: "à venir" },
+  { d: "2027-2028", t: "Obligations des systèmes à haut risque (reportées par le Digital Omnibus)", etat: "à venir" },
 ];
 
 const buckets = [
@@ -69,9 +71,11 @@ export default function AiActPage() {
           ))}
         </div>
         <p className="text-sm text-slate-500 mt-3">
-          ⚠️ Le « Digital Omnibus » (accord politique de mai 2026) a <strong>reporté les obligations haut risque</strong>,
-          mais la <strong>transparence (2 août 2026)</strong>, la littératie, les pratiques interdites et les règles GPAI
-          <strong> ne sont pas reportées</strong>. Ne pas confondre « report » et « exemption ».
+          ⚠️ Ne pas confondre deux échéances distinctes : les obligations <strong>générales</strong> de transparence
+          (Art. 50 — chatbot, deepfakes) s'appliquent dès le <strong>2 août 2026</strong> ; le <strong>marquage
+          machine-readable</strong> des contenus générés par IA (<strong>Art. 50(2), fournisseurs</strong>) bénéficie
+          d'un délai au <strong>2 décembre 2026</strong> pour les systèmes déjà sur le marché. Le Digital Omnibus a
+          reporté le <strong>haut risque</strong> (2027-2028) mais <strong>pas</strong> la transparence. « Report » ≠ « exemption ».
         </p>
 
         {/* Les 4 niveaux */}
