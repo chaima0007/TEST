@@ -1,0 +1,52 @@
+{
+  "module": "carte_stationnement_handicap",
+  "titre": "Carte de stationnement pour personnes handicapées",
+  "domaine": "Handicap & mobilité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté ministériel du 7 mai 1999 relatif à la carte de stationnement pour personnes handicapées",
+    "portee": "Conditions, droits et demande de la carte de stationnement (SPF Sécurité sociale — DG Personnes handicapées)",
+    "source_officielle": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. L'évaluation médicale est faite par la DG Personnes handicapées ; les avantages exacts (gratuité) varient selon les communes.",
+  "faits": [
+    {
+      "id": "STAT-001",
+      "question": "À quoi sert la carte de stationnement et qui peut l'utiliser ?",
+      "reponse": "La carte de stationnement vous donne le droit, en Belgique, de stationner sur les emplacements réservés aux personnes handicapées, comme conducteur ou comme passager. Dans certaines villes et communes, elle permet aussi de stationner gratuitement (à vérifier auprès de la commune). La carte est strictement personnelle : personne ne peut l'utiliser si vous n'êtes pas à bord du véhicule.",
+      "reference_legale": "Arrêté ministériel du 7 mai 1999 relatif à la carte de stationnement pour personnes handicapées",
+      "sources": [
+        {"type": "officiel", "url": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement", "intitule": "DG Personnes handicapées — Carte de stationnement"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "STAT-002",
+      "question": "Quelles sont les conditions pour avoir droit à la carte ?",
+      "reponse": "Vous y avez droit si vous remplissez l'une de ces conditions : le médecin de la DG Personnes handicapées vous a accordé au moins 12 points pour la réduction de l'« autonomie », ou au moins 2 points à la rubrique « déplacements » ; ou vous avez une invalidité permanente d'au moins 50 % due directement aux jambes ; ou vous êtes entièrement paralysé(e) des bras / amputé(e) des deux bras ; ou vous aviez une reconnaissance de 80 % ou plus dans l'ancien système ; ou vous êtes invalide de guerre (civil ou militaire) à 50 % ou plus.",
+      "reference_legale": "Arrêté ministériel du 7 mai 1999 (conditions d'octroi)",
+      "sources": [
+        {"type": "officiel", "url": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement", "intitule": "DG Personnes handicapées — Conditions"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "STAT-003",
+      "question": "Comment demander la carte de stationnement ?",
+      "reponse": "La demande se fait en ligne via My Handicap, en vous identifiant avec votre carte d'identité électronique (eID) et votre code PIN, dans l'onglet « Mon dossier ». Si vous ne pouvez pas le faire seul, votre commune, votre CPAS ou un assistant social de la DG Personnes handicapées peuvent introduire la demande pour vous. Une évaluation médicale peut être organisée si nécessaire ; la décision vous est ensuite communiquée par courrier.",
+      "reference_legale": "Arrêté ministériel du 7 mai 1999 (procédure devant la DG Personnes handicapées)",
+      "contacts": [
+        {"nom": "DG Personnes handicapées (SPF Sécurité sociale)", "numero": "0800 987 99", "pour": "demande de carte de stationnement (My Handicap)"},
+        {"nom": "Commune ou CPAS", "pour": "aide à introduire la demande"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement", "intitule": "DG Personnes handicapées — Introduire une demande"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/static/applics/myhandicap/index.htm", "intitule": "My Handicap — guichet électronique"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

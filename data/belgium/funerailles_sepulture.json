@@ -1,0 +1,60 @@
+{
+  "module": "funerailles_sepulture",
+  "titre": "Funérailles, sépulture & dernières volontés (Wallonie)",
+  "domaine": "Décès & démarches",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décret wallon du 6 mars 2009 relatif aux funérailles et sépultures (Code de la démocratie locale et de la décentralisation, art. L1232-1 et suivants)",
+    "portee": "Modes de sépulture, dernières volontés, crémation et inhumation en Région wallonne",
+    "source_officielle": "https://interieur.wallonie.be/files/img/document_portail_pl/decret_modifiant_le_chapitre_ii_du_titre_iii_du_livre_ii_de_la_premiere_partie_du_code_de_la_democra/files/4de_funerailles_annexe1.pdf"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Ce module couvre la Région wallonne ; Bruxelles et la Flandre ont leurs propres règles. Pour une situation précise, adressez-vous à l'état civil de la commune.",
+  "faits": [
+    {
+      "id": "FUN-001",
+      "question": "Quels sont les modes de sépulture possibles ?",
+      "reponse": "En Région wallonne, les modes de sépulture sont : l'inhumation (placement du cercueil ou d'une urne en terre, en caveau ou en columbarium), et la crémation suivie de la dispersion ou de la conservation des cendres. Le Gouvernement wallon peut fixer d'autres modes. Vous pouvez choisir à l'avance, notamment via vos dernières volontés.",
+      "reference_legale": "Décret du 6 mars 2009 (CDLD, art. L1232-17, modes de sépulture)",
+      "sources": [
+        {"type": "officiel", "url": "https://interieur.wallonie.be/files/img/document_portail_pl/decret_modifiant_le_chapitre_ii_du_titre_iii_du_livre_ii_de_la_premiere_partie_du_code_de_la_democra/files/4de_funerailles_annexe1.pdf", "intitule": "Décret wallon du 6 mars 2009 (funérailles et sépultures)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FUN-002",
+      "question": "Comment exprimer mes dernières volontés de mon vivant ?",
+      "reponse": "Toute personne peut, de son vivant, informer par écrit l'officier de l'état civil de sa commune de ses dernières volontés. Cet acte peut porter sur le mode de sépulture, la destination des cendres après crémation, le rite confessionnel ou non confessionnel pour les obsèques, ainsi que la mention de l'existence d'un contrat obsèques. La déclaration peut être retirée ou modifiée à tout moment, et elle suit votre domicile si vous déménagez.",
+      "reference_legale": "Décret du 6 mars 2009 (CDLD, art. L1232-17, §2 — dernières volontés)",
+      "contacts": [
+        {"nom": "Administration communale (état civil)", "pour": "déclaration de dernières volontés"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://wallex.wallonie.be/files/pdfs/12/8994_D%c3%a9cret_modifiant_le_Chapitre_II_du_Titre_III_du_Livre_II_de_la_premi%c3%a8re_partie_du_Code_de_la_d%c3%a9mocratie_locale_et_de_la_d%c3%a9centralisation_relatif_aux_fun%c3%a9railles_et_s%c3%a9pultures_01-02-2010-.pdf", "intitule": "Wallex (Wallonie) — Décret funérailles et sépultures"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FUN-003",
+      "question": "Faut-il une autorisation pour une crémation ou une inhumation ?",
+      "reponse": "Oui. La crémation est subordonnée à une autorisation délivrée par l'officier de l'état civil qui a constaté le décès (ou par le procureur du Roi dans certains cas, par ex. décès à l'étranger). L'inhumation d'une personne décédée en région de langue française fait l'objet d'une autorisation gratuite de l'officier de l'état civil. Les inhumations ont en principe lieu dans les cimetières communaux ou intercommunaux.",
+      "reference_legale": "Décret du 6 mars 2009 (CDLD, art. L1232-22 crémation ; art. L1232-17bis inhumation)",
+      "sources": [
+        {"type": "officiel", "url": "https://interieur.wallonie.be/files/img/document_portail_pl/decret_modifiant_le_chapitre_ii_du_titre_iii_du_livre_ii_de_la_premiere_partie_du_code_de_la_democra/files/4de_funerailles_annexe1.pdf", "intitule": "Décret wallon du 6 mars 2009 — crémation et inhumation"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FUN-004",
+      "question": "Que peut contenir précisément l'acte de dernières volontés ?",
+      "reponse": "L'arrêté d'exécution permet d'y inscrire une option claire parmi plusieurs : inhumation des restes ; crémation suivie de l'inhumation des cendres au cimetière ; de leur dispersion sur la parcelle prévue ; de leur placement au columbarium ; de leur dispersion en mer territoriale belge ; ou encore de la conservation/dispersion des cendres ailleurs. Vous pouvez aussi y mentionner le numéro et la date de votre contrat obsèques.",
+      "reference_legale": "Arrêté du Gouvernement wallon du 29 octobre 2009 (exécution du décret du 6 mars 2009)",
+      "sources": [
+        {"type": "officiel", "url": "https://interieur.wallonie.be/files/img/document_portail_pl/agw_portant_execution_du_decret_du_6_mars_2009_modifiant_le_chapitre_ii_du_titre_iii_du_livre_ii_de_/files/4de_funerailles_annexe2.pdf", "intitule": "Arrêté du Gouvernement wallon du 29 octobre 2009 (exécution)"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

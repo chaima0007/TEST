@@ -1,11 +1,11 @@
 {
-  "genere_le": "2026-06-29T09:54:58.416933+00:00",
+  "genere_le": "2026-06-29T10:00:32.202527+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
-    "reponses": 428,
-    "sources": 736,
-    "modules": 135,
-    "sources_officielles": 593,
+    "reponses": 439,
+    "sources": 749,
+    "modules": 138,
+    "sources_officielles": 606,
     "caelum_normes": 17
   },
   "sante": [
@@ -13,7 +13,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 40,
+      "ms": 39,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -21,7 +21,7 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 52,
+      "ms": 49,
       "sortie": "  → data/governance/source_trust_report.md",
       "verdict": "OK"
     },
@@ -29,7 +29,7 @@
       "protocole": "legal_change_sensor",
       "cmd": "python3 scripts/legal_change_sensor.py",
       "returncode": 0,
-      "ms": 80,
+      "ms": 74,
       "sortie": "  → data/legal_change.json",
       "verdict": "OK"
     },
@@ -37,7 +37,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 397,
+      "ms": 390,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -60,7 +60,7 @@
       "rps": 50,
       "cache_pct": 75,
       "p95_ms": 47,
-      "p99_ms": 52,
+      "p99_ms": 51,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -98,7 +98,7 @@
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 7,
-      "pct_corpus": 0.89,
+      "pct_corpus": 0.97,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -106,7 +106,7 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 37,
+      "urls_impactees_moy": 38,
       "pct_corpus": 5.02,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
@@ -115,29 +115,29 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 110,
-      "pct_corpus": 14.93,
+      "urls_impactees_moy": 116,
+      "pct_corpus": 15.48,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
     {
       "scenario": "Build · Aujourd'hui",
       "type": "etat",
-      "pages_estimees": 182,
+      "pages_estimees": 185,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +1 an (x2)",
       "type": "stress",
-      "pages_estimees": 364,
+      "pages_estimees": 370,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +3 ans (x4)",
       "type": "stress",
-      "pages_estimees": 728,
+      "pages_estimees": 740,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
@@ -168,7 +168,7 @@
     {
       "scenario": "Données · Couverture sources officielles",
       "type": "etat",
-      "pct_officiel": 80.6,
+      "pct_officiel": 80.9,
       "verdict": "OK",
       "mitigation": "protocole de confiance des sources (tier1)"
     },
@@ -182,8 +182,8 @@
     {
       "scenario": "Veille juridique · Fraîcheur des fiches",
       "type": "etat",
-      "modules": 135,
-      "frais": 135,
+      "modules": 138,
+      "frais": 138,
       "a_reverifier": 0,
       "prioritaire": 0,
       "sources_modifiees": 0,
@@ -193,11 +193,11 @@
     {
       "scenario": "Croissance · Corpus",
       "type": "etat",
-      "verdict": "ALERTE",
-      "reponses": 428,
-      "modules": 135,
-      "depuis_naissance": 0,
-      "battements_sans_croissance": 10,
+      "verdict": "OK",
+      "reponses": 439,
+      "modules": 138,
+      "depuis_naissance": 11,
+      "battements_sans_croissance": 0,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -208,33 +208,32 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629095458",
+    "seal_id": "AUTO-20260629100032",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 79.2,
-    "verts": 19,
+    "score_resilience": 83.3,
+    "verts": 20,
     "total": 24,
     "fragilites_stress": [
       "Sources · Panne large"
     ],
     "alertes_etat_a_corriger": [
       "Déploiement · Webhook leads non configuré",
-      "Données · Identité légale Caelum",
-      "Croissance · Corpus"
+      "Données · Identité légale Caelum"
     ],
     "regle": "BLOQUÉ seulement si l'ÉTAT ACTUEL (santé + scénarios 'etat') a un CRITIQUE ; les scénarios extrêmes 'stress' alimentent la résilience et la liste des fragilités."
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 11,
+    "battements": 12,
     "age_jours": 0.02,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
-    "total": 4,
+    "total": 3,
     "par_priorite": {
       "haute": 0,
-      "moyenne": 3,
+      "moyenne": 2,
       "basse": 1
     }
   },
