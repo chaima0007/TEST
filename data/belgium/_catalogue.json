@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 150,
-    "faits": 494,
-    "sources_officielles": 704,
-    "faits_avec_contacts": 226,
+    "faits": 495,
+    "sources_officielles": 706,
+    "faits_avec_contacts": 227,
     "faits_avec_alerte_delai": 100
   },
   "modules": [
@@ -927,9 +927,9 @@
       "titre": "Garde d'enfants — crèche & milieux d'accueil",
       "domaine": "Petite enfance & accueil",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-28"
     },

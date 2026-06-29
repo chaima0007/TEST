@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**494 réponses · 150 modules · 704 sources officielles · 226 fiches avec contacts · 100 alertes de délai**
+**495 réponses · 150 modules · 706 sources officielles · 227 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -84,7 +84,7 @@
 | Fonds social chauffage | Fonds social chauffage (Fonds social mazout) — allocation de chauffage | 4 | 4 | 4 | 1 |
 | Fraude & sécurité numérique | Arnaques & fraude en ligne — réagir vite | 2 | 4 | 2 | 1 |
 | Décès & démarches | Funérailles, sépulture & dernières volontés (Wallonie) | 4 | 4 | 1 | 0 |
-| Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 2 | 3 | 2 | 0 |
+| Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 3 | 5 | 3 | 0 |
 | Gouvernement & institutions | Gouvernement & institutions — comment la Belgique est gouvernée | 5 | 10 | 0 | 0 |
 | — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
 | Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 5 | 12 | 5 | 0 |

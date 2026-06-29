@@ -19,12 +19,28 @@
       "reponse": "Le plus tôt possible : les places sont rares. Côté francophone, vous pouvez créer une demande de pré-inscription dès le début de la grossesse (et au plus tard vers le 4e mois) via la plateforme de l'ONE (my.one.be). Il existe plusieurs formes d'accueil agréées : crèches, accueillant(e)s conventionné(e)s ou autonomes, co-accueillant(e)s — toutes encadrées et contrôlées par l'ONE (ou Kind en Gezin en Flandre). Multipliez les demandes pour augmenter vos chances.",
       "reference_legale": "Décret de la Communauté française du 21 février 2019 relatif à la qualité de l'accueil de la petite enfance",
       "contacts": [
-        {"nom": "ONE (Office de la naissance et de l'enfance)", "lien": "https://my.one.be", "pour": "pré-inscription, trouver une place (francophone)"},
-        {"nom": "Kind en Gezin / Opgroeien", "lien": "https://www.kindengezin.be", "pour": "accueil en Flandre"}
+        {
+          "nom": "ONE (Office de la naissance et de l'enfance)",
+          "lien": "https://my.one.be",
+          "pour": "pré-inscription, trouver une place (francophone)"
+        },
+        {
+          "nom": "Kind en Gezin / Opgroeien",
+          "lien": "https://www.kindengezin.be",
+          "pour": "accueil en Flandre"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.one.be/public/grossesse/creche-accueillante/trouver-une-creche/", "intitule": "ONE — Trouver une crèche"},
-        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/choisir-un-milieu-daccueil-pour-mon-enfant", "intitule": "Wallonie — Choisir un milieu d'accueil"}
+        {
+          "type": "officiel",
+          "url": "https://www.one.be/public/grossesse/creche-accueillante/trouver-une-creche/",
+          "intitule": "ONE — Trouver une crèche"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/demarches/choisir-un-milieu-daccueil-pour-mon-enfant",
+          "intitule": "Wallonie — Choisir un milieu d'accueil"
+        }
       ],
       "date_verification": "2026-06-28"
     },
@@ -34,14 +50,64 @@
       "reponse": "Dans les milieux d'accueil subventionnés par l'ONE, le tarif est en principe calculé selon vos revenus (barème progressif et obligatoire) : plus les revenus du ménage sont modestes, moins vous payez. Dans les milieux non subventionnés, le prix est libre. Avant de signer, lisez le projet d'accueil et le contrat d'accueil (jours, congés, préavis, frais) que le milieu doit vous remettre. Des aides et déductions fiscales pour frais de garde existent aussi.",
       "reference_legale": "Décret de la Communauté française du 21 février 2019 (participation financière des parents) ; Code des impôts sur les revenus (déduction frais de garde)",
       "contacts": [
-        {"nom": "Le milieu d'accueil", "pour": "contrat d'accueil, tarif, projet d'accueil"},
-        {"nom": "ONE", "lien": "https://www.one.be", "pour": "barème et milieux subventionnés"}
+        {
+          "nom": "Le milieu d'accueil",
+          "pour": "contrat d'accueil, tarif, projet d'accueil"
+        },
+        {
+          "nom": "ONE",
+          "lien": "https://www.one.be",
+          "pour": "barème et milieux subventionnés"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://my.one.be/information/milieux-accueil/", "intitule": "ONE — Crèches, accueillantes et accueillants"},
-        {"type": "secondaire", "url": "https://www.parentia.be/fr/administration-familiale/combien-coute-une-creche-ou-un-milieu-daccueil-un-apercu-complet", "intitule": "Parentia — Combien coûte une crèche ?"}
+        {
+          "type": "officiel",
+          "url": "https://my.one.be/information/milieux-accueil/",
+          "intitule": "ONE — Crèches, accueillantes et accueillants"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.parentia.be/fr/administration-familiale/combien-coute-une-creche-ou-un-milieu-daccueil-un-apercu-complet",
+          "intitule": "Parentia — Combien coûte une crèche ?"
+        }
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "GARDE-COMMUNAUTE-001",
+      "question": "Quel organisme gère l'accueil de la petite enfance selon la communauté ?",
+      "reponse": "L'accueil de la petite enfance (crèches, milieux d'accueil) est une compétence COMMUNAUTAIRE. Côté francophone (Wallonie et Bruxelles francophone) : l'ONE (Office de la Naissance et de l'Enfance) agrée et subventionne les milieux d'accueil. Côté néerlandophone (Flandre et Bruxelles néerlandophone) : Opgroeien (anciennement Kind en Gezin), qui pilote la kinderopvang. En région de langue allemande (Ostbelgien) : la Communauté germanophone (via son ministère / service compétent). À Bruxelles, l'offre est bicommunautaire : selon la langue du milieu d'accueil, c'est l'ONE ou Opgroeien. Renseignez-vous auprès de l'organisme de votre communauté.",
+      "reference_legale": "Compétence communautaire de l'accueil de la petite enfance : décret de la Communauté française relatif aux milieux d'accueil (ONE) ; décret flamand relatif à l'accueil de la petite enfance (Opgroeien) ; décret de la Communauté germanophone relatif à l'accueil de l'enfance",
+      "contacts": [
+        {
+          "nom": "ONE (francophone)",
+          "lien": "https://www.one.be/",
+          "pour": "milieux d accueil en Wallonie et Bruxelles FR"
+        },
+        {
+          "nom": "Opgroeien (néerlandophone)",
+          "lien": "https://www.opgroeien.be/",
+          "pour": "kinderopvang en Flandre et Bruxelles NL"
+        },
+        {
+          "nom": "Communauté germanophone",
+          "pour": "accueil de l enfance en région de langue allemande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.one.be/",
+          "intitule": "ONE — Office de la Naissance et de l Enfance (francophone)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.opgroeien.be/",
+          "intitule": "Opgroeien — kinderopvang (Flandre et Bruxelles NL)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }
