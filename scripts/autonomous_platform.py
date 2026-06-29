@@ -415,6 +415,78 @@ def battre_le_coeur(sceau: dict, corpus: dict) -> dict:
     return vit
 
 
+# ───────────────────────────── 3e ORGANE : AUTOGUÉRISON (soins) ──────────────
+TODO = os.path.join(ROOT, "data", "platform_todo.json")
+
+# Actions concrètes connues par scénario (sinon : on réutilise la mitigation).
+ACTIONS = {
+    "Webhook leads": ("Configurer la variable d'env LEADS_WEBHOOK_URL (réception des leads).", True),
+    "Identité légale": ("Compléter data/identite.ts (dénomination, BCE, TVA, forme juridique).", True),
+    "Panne large": ("Exécuter le capteur en réseau ouvert + planifier source_change_detector (cron).", False),
+}
+
+
+def generer_taches(sceau: dict, scenarios: list, corpus: dict) -> dict:
+    """Transforme les signaux rouges/oranges en tâches de réparation priorisées."""
+    taches = []
+
+    def ajouter(titre, categorie, priorite, action, humain, organe):
+        taches.append({
+            "id": f"T{len(taches)+1:02d}", "titre": titre, "categorie": categorie,
+            "priorite": priorite, "action_suggeree": action, "humain": humain, "organe": organe,
+        })
+
+    # 1) Scénarios d'ÉTAT en ALERTE/CRITIQUE → soins prioritaires
+    for s in scenarios:
+        if s.get("type") != "etat" or s.get("verdict") == OK:
+            continue
+        prio = "haute" if s["verdict"] == CRITIQUE else "moyenne"
+        action, humain = next(((a, h) for k, (a, h) in ACTIONS.items() if k in s["scenario"]),
+                              (s.get("mitigation", "À examiner."), False))
+        ajouter(s["scenario"], "état", prio, action, humain, "scénario")
+
+    # 2) Fragilités stress CRITIQUE → à surveiller (priorité basse, non bloquant)
+    for s in scenarios:
+        if s.get("type") == "stress" and s.get("verdict") == CRITIQUE:
+            action, humain = next(((a, h) for k, (a, h) in ACTIONS.items() if k in s["scenario"]),
+                                  ("Renforcer la mitigation avant que le risque ne devienne réel.", False))
+            ajouter(f"Fragilité : {s['scenario']}", "résilience", "basse", action, humain, "stress")
+
+    # 3) Sources mortes détectées (capteur réel) → réparation ciblée
+    try:
+        sh = json.load(open(os.path.join(ROOT, "data", "source_health.json"), encoding="utf-8"))
+        for m in (sh.get("urls_mortes") or [])[:15]:
+            ajouter(f"Source morte ({m.get('code')}) : {m.get('url')}", "source", "haute",
+                    "Remplacer l'URL officielle par une source tier1 valide.", False, "capteur sources")
+    except Exception:
+        pass
+
+    # 4) Fiches à revérifier / lois modifiées (capteur juridique)
+    try:
+        lc = json.load(open(os.path.join(ROOT, "data", "legal_change.json"), encoding="utf-8"))
+        for m in lc.get("sources_modifiees", [])[:15]:
+            ajouter(f"Loi peut-être modifiée : {m.get('module')}", "veille", "haute",
+                    "Relire la source officielle et mettre à jour la fiche + date_verification.", False, "capteur juridique")
+        for m in (lc.get("modules_a_reverifier") or [])[:15]:
+            ajouter(f"Fiche à revérifier : {m.get('titre')} ({m.get('age_jours')} j)", "veille", "basse",
+                    "Revérifier les sources et rafraîchir date_verification.", False, "capteur juridique")
+    except Exception:
+        pass
+
+    ordre = {"haute": 0, "moyenne": 1, "basse": 2}
+    taches.sort(key=lambda t: ordre.get(t["priorite"], 9))
+    par_prio = {p: sum(1 for t in taches if t["priorite"] == p) for p in ("haute", "moyenne", "basse")}
+
+    rapport = {
+        "genere_le": datetime.now(timezone.utc).isoformat(),
+        "total": len(taches), "par_priorite": par_prio, "taches": taches,
+        "note": "Soins auto-générés à partir des organes. La plateforme propose ; l'humain décide et exécute.",
+    }
+    os.makedirs(os.path.dirname(TODO), exist_ok=True)
+    json.dump(rapport, open(TODO, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    return rapport
+
+
 # ───────────────────────────── orchestration ─────────────────────────────────
 def main() -> int:
     args = sys.argv[1:]
@@ -462,6 +534,14 @@ def main() -> int:
     if sceau["fragilites_stress"]:
         print(f"    🛡️  Fragilités (scénarios extrêmes) : {', '.join(sceau['fragilites_stress'])}")
 
+    todo = generer_taches(sceau, scenarios, corpus)
+    print("\n  ── Autoguérison (soins proposés) ──")
+    print(f"    {todo['total']} tâche(s) · haute {todo['par_priorite']['haute']} · "
+          f"moyenne {todo['par_priorite']['moyenne']} · basse {todo['par_priorite']['basse']}")
+    for t in todo["taches"][:5]:
+        marque = "🧑 humain" if t["humain"] else "🤖 auto"
+        print(f"      [{t['priorite']:<7}] {t['titre'][:48]} — {marque}")
+
     vitals = battre_le_coeur(sceau, corpus)
     print("\n  ── Forme de vie ──")
     print(f"    {vitals['etat_vie']} · pouls {vitals['battements']} battement(s) · "
@@ -479,6 +559,7 @@ def main() -> int:
             "etat_vie": vitals["etat_vie"], "battements": vitals["battements"],
             "age_jours": vitals["age_jours"], "naissance": vitals["naissance"],
         },
+        "todo": {"total": todo["total"], "par_priorite": todo["par_priorite"]},
         "avertissement": "Simulations = modèles probabilistes/déterministes locaux, pas des appels réseau réels.",
     }
     os.makedirs(os.path.dirname(REPORT), exist_ok=True)

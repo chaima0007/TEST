@@ -1,0 +1,39 @@
+{
+  "genere_le": "2026-06-29T09:51:41.883398+00:00",
+  "total": 3,
+  "par_priorite": {
+    "haute": 0,
+    "moyenne": 2,
+    "basse": 1
+  },
+  "taches": [
+    {
+      "id": "T01",
+      "titre": "Déploiement · Webhook leads non configuré",
+      "categorie": "état",
+      "priorite": "moyenne",
+      "action_suggeree": "Configurer la variable d'env LEADS_WEBHOOK_URL (réception des leads).",
+      "humain": true,
+      "organe": "scénario"
+    },
+    {
+      "id": "T02",
+      "titre": "Données · Identité légale Caelum",
+      "categorie": "état",
+      "priorite": "moyenne",
+      "action_suggeree": "Compléter data/identite.ts (dénomination, BCE, TVA, forme juridique).",
+      "humain": true,
+      "organe": "scénario"
+    },
+    {
+      "id": "T03",
+      "titre": "Fragilité : Sources · Panne large",
+      "categorie": "résilience",
+      "priorite": "basse",
+      "action_suggeree": "Exécuter le capteur en réseau ouvert + planifier source_change_detector (cron).",
+      "humain": false,
+      "organe": "stress"
+    }
+  ],
+  "note": "Soins auto-générés à partir des organes. La plateforme propose ; l'humain décide et exécute."
+}

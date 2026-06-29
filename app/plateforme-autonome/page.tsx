@@ -38,6 +38,10 @@ export default function PlateformeAutonome() {
     corpus?: Record<string, number>; scenarios?: Scenario[]; sante?: { protocole: string; verdict: string; sortie?: string }[];
     sceau?: Record<string, unknown>; vie?: Record<string, unknown>; genere_le?: string; monte_carlo_n?: number;
   };
+  const todo = lire("data/platform_todo.json") as {
+    total?: number; par_priorite?: Record<string, number>;
+    taches?: { id: string; titre: string; categorie: string; priorite: string; action_suggeree: string; humain: boolean; organe: string }[];
+  };
   const vitals = lire("data/platform_vitals.json") as {
     etat_vie?: string; battements?: number; age_jours?: number; resilience?: number; naissance?: string;
     voix?: string; historique?: { ts: string; resilience: number; etat_vie: string }[];
@@ -172,6 +176,35 @@ export default function PlateformeAutonome() {
             <ul className="mt-2 list-disc list-inside text-sm text-amber-100/90">
               {(sceau.alertes_etat_a_corriger as string[]).map((a) => <li key={a}>{a}</li>)}
             </ul>
+          </div>
+        </section>
+      )}
+
+      {/* Autoguérison — soins proposés */}
+      {Array.isArray(todo.taches) && todo.taches.length > 0 && (
+        <section className="max-w-5xl mx-auto px-6 mt-10">
+          <h2 className="text-xl font-bold">🩺 Soins proposés (autoguérison)</h2>
+          <p className="text-slate-400 text-sm mt-1">
+            La plateforme propose, l&apos;humain décide. {todo.par_priorite?.haute ?? 0} haute ·
+            {" "}{todo.par_priorite?.moyenne ?? 0} moyenne · {todo.par_priorite?.basse ?? 0} basse.
+          </p>
+          <div className="mt-4 grid gap-3">
+            {todo.taches.map((t) => {
+              const c = t.priorite === "haute" ? "border-rose-400/40 bg-rose-500/10"
+                : t.priorite === "moyenne" ? "border-amber-400/40 bg-amber-500/10" : "border-white/10 bg-white/5";
+              return (
+                <div key={t.id} className={`rounded-xl border p-4 ${c}`}>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-semibold text-sm text-slate-100">{t.titre}</span>
+                    <span className="text-[11px] whitespace-nowrap px-2 py-0.5 rounded-full bg-white/10 text-slate-200">
+                      {t.priorite} · {t.humain ? "🧑 humain" : "🤖 auto"}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 mt-1.5">→ {t.action_suggeree}</p>
+                  <p className="text-[11px] text-slate-500 mt-1">{t.categorie} · via {t.organe}</p>
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
