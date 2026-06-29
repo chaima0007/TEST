@@ -480,6 +480,8 @@ python3 scripts/branch_guard.py --check --quiet
 
 *Vérifié opérationnel le 2026-06-29 : fetch direct `eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1760` → texte officiel CSDDD, version consolidée 18/03/2026 (cohérent avec plafond 3 % Omnibus I).*
 
+**Vocabulaire normalisé (acté 2026-06-29, exigence de rigueur juridique) :** employer **« source officielle »** ou **« document canonique »**. Sont **proscrits** les termes flous/non techniques (« source vive », « source fiable maison », etc.) qui décrédibilisent l'exactitude des analyses. Pour une source remplacée/fermée : parler de **source « antérieure / abrogée / migrée »**, jamais d'opposition floue.
+
 **Vérification :**
 ```bash
 python3 scripts/source_trust_protocol.py   # les sources 'officiel' doivent être tier1
