@@ -1,6 +1,6 @@
 {
   "naissance": "2026-06-29T09:31:18.850752+00:00",
-  "battements": 46,
+  "battements": 47,
   "historique": [
     {
       "ts": "2026-06-29T09:31:18.850752+00:00",
@@ -402,12 +402,21 @@
       "reponses": 467,
       "modules": 145,
       "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:36:39.492419+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 471,
+      "modules": 146,
+      "plan_pct": 46
     }
   ],
-  "derniere_pulsation": "2026-06-29T12:18:27.933887+00:00",
+  "derniere_pulsation": "2026-06-29T12:36:39.492419+00:00",
   "etat_vie": "🟠 Vigilance",
-  "resilience": 80.0,
+  "resilience": 76.7,
   "statut": "APPROUVÉ",
-  "age_jours": 0.12,
-  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 80.0%, 46ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum, Avancement, Opportunités. Ma fragilité au pire scénario : Panne large. Plan à 46%. Prochaine étape : Valider la grille de prix grands comptes (proposition prête : A/B/C)."
+  "age_jours": 0.13,
+  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 76.7%, 47ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum, Avancement, Obsolescence, Opportunités. Ma fragilité au pire scénario : Panne large. Plan à 46%. Prochaine étape : Valider la grille de prix grands comptes (proposition prête : A/B/C)."
 }

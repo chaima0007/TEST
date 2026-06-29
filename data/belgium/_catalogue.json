@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 132,
-    "faits": 416,
-    "sources_officielles": 576,
-    "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 96
+    "modules": 146,
+    "faits": 471,
+    "sources_officielles": 642,
+    "faits_avec_contacts": 204,
+    "faits_avec_alerte_delai": 97
   },
   "modules": [
     {
@@ -322,6 +322,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "carte_stationnement_handicap.json",
+      "module": "carte_stationnement_handicap",
+      "titre": "Carte de stationnement pour personnes handicapées",
+      "domaine": "Handicap & mobilité",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "casier_judiciaire.json",
       "module": "casier_judiciaire",
       "titre": "Extrait de casier judiciaire",
@@ -334,6 +346,18 @@
       "derniere_revue": "2026-06-29"
     },
     {
+      "fichier": "changement_mention_sexe.json",
+      "module": "changement_mention_sexe",
+      "titre": "Changer la mention de sexe à l'état civil",
+      "domaine": "État civil & identité",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "changement_nom_prenom.json",
       "module": "changement_nom_prenom",
       "titre": "Changement de nom ou de prénom",
@@ -342,6 +366,18 @@
       "faits": 3,
       "sources_officielles": 3,
       "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "changement_regime_matrimonial.json",
+      "module": "changement_regime_matrimonial",
+      "titre": "Changer de régime matrimonial",
+      "domaine": "Couple & patrimoine",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
     },
@@ -416,6 +452,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-28"
+    },
+    {
+      "fichier": "conge_deuil.json",
+      "module": "conge_deuil",
+      "titre": "Congé de deuil (petit chômage pour décès)",
+      "domaine": "Travail & deuil",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "conge_maternite_naissance.json",
@@ -658,6 +706,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "emancipation.json",
+      "module": "emancipation",
+      "titre": "Émancipation d'un mineur",
+      "domaine": "Famille & jeunesse",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "energie.json",
       "module": "energie",
       "titre": "Énergie — factures, fournisseur, difficultés de paiement",
@@ -802,6 +862,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "fonds_social_chauffage.json",
+      "module": "fonds_social_chauffage",
+      "titre": "Fonds social chauffage (Fonds social mazout) — allocation de chauffage",
+      "domaine": "Fonds social chauffage",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "fraude_arnaques.json",
       "module": "fraude_arnaques",
       "titre": "Arnaques & fraude en ligne — réagir vite",
@@ -812,6 +884,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "funerailles_sepulture.json",
+      "module": "funerailles_sepulture",
+      "titre": "Funérailles, sépulture & dernières volontés (Wallonie)",
+      "domaine": "Décès & démarches",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "garde_enfants.json",
@@ -934,6 +1018,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "jury_assises.json",
+      "module": "jury_assises",
+      "titre": "Juré d'assises — le devoir de juré",
+      "domaine": "Justice & citoyenneté",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "justice_penal.json",
       "module": "justice_penal_acces",
       "titre": "Accès à la justice — droits, avocat, casier judiciaire",
@@ -1042,6 +1138,18 @@
       "derniere_revue": "2026-06-29"
     },
     {
+      "fichier": "medecine_travail.json",
+      "module": "medecine_travail",
+      "titre": "Médecine du travail & surveillance de la santé",
+      "domaine": "Travail & santé",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "mediation_conflits.json",
       "module": "mediation_conflits",
       "titre": "Médiation & règlement amiable des conflits",
@@ -1102,6 +1210,18 @@
       "derniere_revue": "2026-06-29"
     },
     {
+      "fichier": "pacte_successoral.json",
+      "module": "pacte_successoral",
+      "titre": "Pacte successoral",
+      "domaine": "Succession & patrimoine",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "pension.json",
       "module": "pension",
       "titre": "Pension & retraite — âge, demande, calcul",
@@ -1112,6 +1232,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "pension_alimentaire_secal.json",
+      "module": "pension_alimentaire_secal",
+      "titre": "Pension alimentaire impayée — le SECAL",
+      "domaine": "Famille & argent",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "pension_complementaire.json",
@@ -1186,6 +1318,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "procreation_medicalement_assistee.json",
+      "module": "procreation_medicalement_assistee",
+      "titre": "PMA — procréation médicalement assistée",
+      "domaine": "Santé & famille",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "produits_defectueux.json",
       "module": "produits_defectueux",
       "titre": "Produits défectueux (responsabilité)",
@@ -1218,6 +1362,18 @@
       "faits": 3,
       "sources_officielles": 4,
       "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "reclassement_professionnel.json",
+      "module": "reclassement_professionnel",
+      "titre": "Reclassement professionnel (outplacement)",
+      "domaine": "Travail & licenciement",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
     },
@@ -1256,6 +1412,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-28"
+    },
+    {
+      "fichier": "regroupement_familial.json",
+      "module": "regroupement_familial",
+      "titre": "Regroupement familial",
+      "domaine": "Étrangers & séjour",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 2,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "revenu_integration_cpas.json",

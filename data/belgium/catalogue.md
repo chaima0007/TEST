@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**416 réponses · 132 modules · 576 sources officielles · 187 fiches avec contacts · 96 alertes de délai**
+**471 réponses · 146 modules · 642 sources officielles · 204 fiches avec contacts · 97 alertes de délai**
 
 ## Modules en ligne
 
@@ -34,14 +34,18 @@
 | Volontariat | Bénévolat & volontariat — vos droits | 2 | 2 | 2 | 0 |
 | Allocation d'études | Bourse / allocation d'études | 2 | 2 | 2 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 3 | 6 | 3 | 0 |
+| Handicap & mobilité | Carte de stationnement pour personnes handicapées | 3 | 4 | 1 | 0 |
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
+| État civil & identité | Changer la mention de sexe à l'état civil | 4 | 7 | 1 | 0 |
 | — | Changement de nom ou de prénom | 3 | 3 | 0 | 0 |
+| Couple & patrimoine | Changer de régime matrimonial | 4 | 4 | 1 | 0 |
 | Chômage & emploi | Chômage — droits, démarches et sanctions | 2 | 2 | 2 | 0 |
 | — | Chômage temporaire | 4 | 4 | 0 | 1 |
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
 | Citoyenneté | Droits et devoirs du citoyen | 4 | 7 | 3 | 2 |
 | Droits dans l'Union européenne | Citoyen européen — vivre, travailler, étudier dans l'UE | 2 | 4 | 2 | 0 |
 | Colocation | Colocation — bail commun & règles | 2 | 2 | 2 | 1 |
+| Travail & deuil | Congé de deuil (petit chômage pour décès) | 4 | 5 | 0 | 0 |
 | — | Congé de maternité & congé de naissance | 4 | 4 | 0 | 1 |
 | — | Congés thématiques & crédit-temps | 4 | 4 | 0 | 1 |
 | Consommation | Consommation — garanties, achats, arnaques | 3 | 5 | 1 | 1 |
@@ -62,6 +66,7 @@
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 3 | 5 | 3 | 0 |
+| Famille & jeunesse | Émancipation d'un mineur | 4 | 4 | 1 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 3 | 5 | 2 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
 | Enseignement | École & enseignement — inscription, gratuité, obligation scolaire | 4 | 7 | 2 | 2 |
@@ -74,7 +79,9 @@
 | — | Filiation & reconnaissance d'un enfant | 3 | 3 | 0 | 0 |
 | Fin de vie | Fin de vie — déclarations anticipées & droits | 2 | 4 | 2 | 0 |
 | Fonction publique | Travailler dans le secteur public | 2 | 4 | 2 | 0 |
+| Fonds social chauffage | Fonds social chauffage (Fonds social mazout) — allocation de chauffage | 4 | 4 | 4 | 1 |
 | Fraude & sécurité numérique | Arnaques & fraude en ligne — réagir vite | 2 | 4 | 2 | 1 |
+| Décès & démarches | Funérailles, sépulture & dernières volontés (Wallonie) | 4 | 4 | 1 | 0 |
 | Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 2 | 3 | 2 | 0 |
 | Gouvernement & institutions | Gouvernement & institutions — comment la Belgique est gouvernée | 5 | 10 | 0 | 0 |
 | — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
@@ -85,6 +92,7 @@
 | Indépendant & activité | Devenir indépendant — démarches pour se lancer | 8 | 16 | 8 | 2 |
 | — | Interruption volontaire de grossesse (IVG) | 3 | 3 | 0 | 1 |
 | Job étudiant | Job étudiant — contrat, quota d'heures, cotisations réduites | 3 | 5 | 1 | 2 |
+| Justice & citoyenneté | Juré d'assises — le devoir de juré | 4 | 5 | 0 | 0 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | — | Légalisation & apostille de documents | 3 | 4 | 0 | 0 |
 | Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
@@ -94,24 +102,30 @@
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 2 | 2 | 2 | 1 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 2 | 4 | 2 | 1 |
 | — | Marchand de sommeil (logement indigne) | 3 | 3 | 0 | 0 |
+| Travail & santé | Médecine du travail & surveillance de la santé | 4 | 5 | 1 | 0 |
 | Règlement des conflits | Médiation & règlement amiable des conflits | 2 | 4 | 2 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 3 | 3 | 3 | 0 |
 | Naissance & filiation | Naissance & filiation | 3 | 6 | 3 | 1 |
 | — | Nationalité belge | 4 | 4 | 0 | 0 |
 | — | Occupation sans titre d'un bien (squat) | 3 | 3 | 0 | 1 |
+| Succession & patrimoine | Pacte successoral | 4 | 5 | 1 | 0 |
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
+| Famille & argent | Pension alimentaire impayée — le SECAL | 4 | 5 | 2 | 0 |
 | — | Pension complémentaire (2e pilier) | 3 | 3 | 0 | 0 |
 | — | Permis de conduire | 4 | 6 | 0 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 2 | 3 | 2 | 1 |
 | — | Plainte contre la police (Comité P) | 3 | 3 | 0 | 0 |
 | — | Précompte immobilier | 3 | 4 | 0 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |
+| Santé & famille | PMA — procréation médicalement assistée | 4 | 5 | 1 | 0 |
 | — | Produits défectueux (responsabilité) | 3 | 3 | 0 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 2 | 3 | 2 | 1 |
 | — | Accès aux documents administratifs | 3 | 4 | 0 | 0 |
+| Travail & licenciement | Reclassement professionnel (outplacement) | 4 | 4 | 1 | 0 |
 | Recours administratifs | Recours contre l'administration — médiateur & Conseil d'État | 2 | 4 | 2 | 1 |
 | Recours dans l'Union européenne | Recours européens — SOLVIT, médiateur, pétition | 2 | 4 | 2 | 0 |
 | Recouvrement de dettes | Recouvrement amiable — sociétés de recouvrement | 2 | 3 | 2 | 0 |
+| Étrangers & séjour | Regroupement familial | 4 | 5 | 2 | 0 |
 | — | Revenu d'intégration & aide du CPAS | 5 | 10 | 0 | 1 |
 | — | Saisie immobilière (vente forcée d'un immeuble) | 3 | 4 | 0 | 0 |
 | Saisies & recouvrement | Saisies & huissier — ce qui peut être pris (ou non) | 2 | 2 | 2 | 0 |

@@ -1,0 +1,98 @@
+{
+  "module": "fonds_social_chauffage",
+  "titre": "Fonds social chauffage (Fonds social mazout) — allocation de chauffage",
+  "domaine": "Fonds social chauffage",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi-programme instituant le Fonds social chauffage (Fonds social mazout) et son arrêté royal d'exécution relatif à l'allocation de chauffage octroyée par les CPAS (compétence fédérale, SPP Intégration Sociale)",
+    "portee": "Ménages à revenus modestes se chauffant au gasoil de chauffage, au pétrole lampant (type c) ou au gaz propane en vrac",
+    "source_officielle": "https://www.mi-is.be/fr/fonds-social-mazout"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les montants exacts et les limites de revenus sont fixés par circulaires indexées (section « Montants ») : ils ne sont pas reproduits ici pour éviter toute donnée périmée — demandez-les à votre CPAS. Ne remplace pas un conseil individualisé.",
+  "faits": [
+    {
+      "id": "FSC-DROIT-001",
+      "question": "Qu'est-ce que le Fonds social chauffage et qui peut en bénéficier ?",
+      "reponse": "Le Fonds social chauffage (aussi appelé Fonds social mazout) octroie une allocation de chauffage aux ménages à revenus modestes qui se chauffent avec un combustible domestique payant. Le bénéfice dépend de votre appartenance à l'une des catégories du groupe-cible (notamment selon vos revenus et votre situation sociale) : c'est le CPAS qui vérifie si vous remplissez les conditions, y compris les limites de revenus. Les données de revenus du ménage sont demandées directement au SPF Finances par voie électronique.",
+      "reference_legale": "Loi-programme instituant le Fonds social chauffage (Fonds social mazout) et son arrêté royal d'exécution relatif à l'allocation de chauffage",
+      "contacts": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "vérifier votre éligibilité et introduire la demande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr/fonds-social-mazout",
+          "intitule": "SPP Intégration Sociale — Fonds social mazout"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FSC-COMBUSTIBLES-001",
+      "question": "Quels combustibles donnent droit à l'allocation, et dans quel délai dois-je agir ?",
+      "reponse": "L'allocation concerne le gasoil de chauffage, le pétrole lampant (type c) et le gaz propane en vrac. Le délai est strict : vous devez contacter le CPAS de votre commune dans les 60 jours qui suivent la livraison du combustible. Au-delà, le droit à l'allocation pour cette livraison peut être perdu — anticipez dès réception de la facture ou du bon de livraison.",
+      "reference_legale": "Arrêté royal d'exécution relatif à l'allocation de chauffage du Fonds social chauffage (Fonds social mazout)",
+      "alerte_delai": "Délai de 60 jours après la livraison pour saisir le CPAS. Ne tardez pas : passé ce délai, l'allocation pour cette livraison peut ne plus être octroyée.",
+      "contacts": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "introduire la demande dans les 60 jours après livraison"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr/fonds-social-mazout",
+          "intitule": "SPP Intégration Sociale — Fonds social mazout (délai et combustibles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FSC-DOCUMENTS-001",
+      "question": "Quels documents dois-je fournir au CPAS ?",
+      "reponse": "Dans tous les cas : une copie de la facture ou du bon de livraison. Si vous habitez un immeuble à plusieurs appartements, demandez au propriétaire ou à l'administrateur une copie de la facture et une attestation indiquant le nombre d'appartements concernés. Joignez aussi votre carte d'identité. Sur demande du CPAS, fournissez la preuve des revenus du ménage (avertissement-extrait de rôle le plus récent, fiche de paie récente, attestation d'allocation sociale, etc.).",
+      "reference_legale": "Arrêté royal d'exécution relatif à l'allocation de chauffage du Fonds social chauffage (Fonds social mazout)",
+      "contacts": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "dépôt des documents et instruction du dossier"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr/fonds-social-mazout",
+          "intitule": "SPP Intégration Sociale — documents à fournir"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FSC-MONTANT-001",
+      "question": "Combien vais-je recevoir et comment le montant est-il fixé ?",
+      "reponse": "L'allocation dépend du combustible et du mode d'achat : pour les livraisons en grande quantité (cuve), elle est calculée par litre, dans une limite annuelle par ménage ; pour les petites quantités achetées à la pompe, un montant forfaitaire est prévu. Les montants précis et les plafonds sont fixés par circulaires officielles indexées chaque année — ils évoluent, c'est pourquoi nous ne les reproduisons pas ici : demandez le montant en vigueur à votre CPAS, qui applique le barème indexé du moment.",
+      "reference_legale": "Arrêté royal d'exécution relatif à l'allocation de chauffage du Fonds social chauffage, montants fixés par circulaires indexées",
+      "contacts": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "connaître le montant indexé en vigueur et le plafond annuel"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr/fonds-social-mazout",
+          "intitule": "SPP Intégration Sociale — montants de l'allocation de chauffage"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
