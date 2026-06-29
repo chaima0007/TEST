@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**395 réponses · 125 modules · 552 sources officielles · 187 fiches avec contacts · 92 alertes de délai**
+**404 réponses · 128 modules · 562 sources officielles · 187 fiches avec contacts · 95 alertes de délai**
 
 ## Modules en ligne
 
@@ -55,6 +55,7 @@
 | Discrimination & égalité | Discrimination — reconnaître, signaler, agir | 3 | 5 | 2 | 1 |
 | Divorce & séparation | Divorce & séparation | 2 | 4 | 2 | 0 |
 | Documents d'identité | Documents d'identité — carte, passeport, permis | 2 | 4 | 2 | 1 |
+| — | Domiciliation & changement d'adresse | 3 | 3 | 0 | 2 |
 | — | Don d'organes | 3 | 3 | 0 | 0 |
 | — | Donations | 4 | 4 | 0 | 0 |
 | — | Dossier médical global (DMG) | 3 | 3 | 0 | 0 |
@@ -87,6 +88,7 @@
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
 | Logement social | Logement social — conditions, inscription, attribution | 3 | 5 | 1 | 1 |
+| — | Achat sur plan / clé-sur-porte (loi Breyne) | 3 | 4 | 0 | 0 |
 | — | Maladie professionnelle | 3 | 3 | 0 | 0 |
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 2 | 2 | 2 | 1 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 2 | 4 | 2 | 1 |
@@ -125,6 +127,7 @@
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 2 | 4 | 2 | 1 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | — | Tutelle d'un enfant mineur | 3 | 3 | 0 | 0 |
+| — | Vices cachés (garantie de l'acheteur) | 3 | 3 | 0 | 1 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
 | Violences conjugales | Violences conjugales & familiales — se protéger | 3 | 6 | 3 | 1 |
 | — | Violences sexuelles — aide et CPVS | 3 | 3 | 0 | 0 |

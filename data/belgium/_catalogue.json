@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 125,
-    "faits": 395,
-    "sources_officielles": 552,
+    "modules": 128,
+    "faits": 404,
+    "sources_officielles": 562,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 92
+    "faits_avec_alerte_delai": 95
   },
   "modules": [
     {
@@ -574,6 +574,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "domiciliation.json",
+      "module": "domiciliation",
+      "titre": "Domiciliation & changement d'adresse",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "don_organes.json",
       "module": "don_organes",
       "titre": "Don d'organes",
@@ -956,6 +968,18 @@
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "loi_breyne.json",
+      "module": "loi_breyne",
+      "titre": "Achat sur plan / clé-sur-porte (loi Breyne)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "maladie_professionnelle.json",
@@ -1411,6 +1435,18 @@
       "sources_officielles": 3,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "vices_caches.json",
+      "module": "vices_caches",
+      "titre": "Vices cachés (garantie de l'acheteur)",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-29"
     },
     {

@@ -1,0 +1,59 @@
+{
+  "module": "vices_caches",
+  "titre": "Vices cachés (garantie de l'acheteur)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — garantie des vices cachés dans la vente (art. 1641 à 1649 de l'ancien Code civil)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=1804032154"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Faites constater le vice (expert) et réclamez par écrit ; consultez un avocat pour respecter le « bref délai ».",
+  "faits": [
+    {
+      "id": "VICES-001",
+      "question": "Qu'est-ce qu'un vice caché ?",
+      "reponse": "Un vice caché est un défaut qui rend le bien impropre à son usage (ou en diminue fortement l'utilité), qui existait déjà au moment de la vente et qu'un acheteur normalement prudent ne pouvait pas remarquer lors de sa visite. Exemples : moisissures, fuite invisible de toiture, chauffage défectueux. Un défaut apparu après la vente n'est pas un vice caché.",
+      "reference_legale": "Code civil (ancien), art. 1641 à 1649 (garantie des vices cachés)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=1804032154",
+          "intitule": "Justel — Code civil, garantie des vices cachés"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VICES-002",
+      "question": "Le vendeur est-il responsable même s'il ignorait le défaut ?",
+      "reponse": "Oui. La loi instaure une responsabilité objective : le vendeur doit la garantie des vices cachés qu'il en ait eu connaissance ou non. Vous pouvez demander la résolution de la vente (rendre le bien et récupérer le prix) ou une réduction du prix ; si le vendeur était de mauvaise foi (ou vendeur professionnel), des dommages et intérêts sont aussi dus. Attention aux clauses « vendu en l'état ».",
+      "reference_legale": "Code civil (ancien), art. 1641 à 1645 (effets de la garantie)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=1804032154",
+          "intitule": "Justel — Code civil, effets de la garantie des vices cachés"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VICES-003",
+      "question": "Dans quel délai agir ?",
+      "reponse": "L'acheteur doit agir « à bref délai » : c'est-à-dire le plus tôt possible après la découverte du vice (ou le moment où il aurait dû le découvrir). Ne tardez pas à réclamer par écrit et à introduire l'action, sous peine de perdre votre droit à la garantie.",
+      "reference_legale": "Code civil (ancien), art. 1648 (action à bref délai)",
+      "alerte_delai": "Agir « à bref délai » dès la découverte du vice caché (réclamation écrite puis action).",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=1804032154",
+          "intitule": "Justel — Code civil, art. 1648 (bref délai)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
