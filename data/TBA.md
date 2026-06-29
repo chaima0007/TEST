@@ -27,7 +27,7 @@ _Dernière mise à jour : 2026-06-28_
 | Page « Base juridique » (rendu serveur) | `████████████` 100% | terminé |
 | Modèles de documents prêts à l'emploi | `███████████░` 95% | en cours |
 | Espace enfants & jeunes / mineurs | `███████████░` 90% | en cours |
-| Versions multilingues (NL en premier) | `███████░░░░░` 62% | en cours |
+| Versions multilingues (NL en premier) | `████████░░░░` 68% | en cours |
 | Déploiement & hébergement | `░░░░░░░░░░░░` 0% | bloqué (décision Chaima) |
 | Cartographie d'adresses officielles par ville | `░░░░░░░░░░░░` 0% | à faire |
 | Pages SEO par domaine (acquisition) | `████████████` 100% | terminé |
