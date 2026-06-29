@@ -194,6 +194,7 @@ export default function Conformite2026Page() {
   const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "", secteur_financier: "", plateforme: "", emballages: "", import_produits: "" });
   const [res, setRes] = useState<{ directs: Norme[]; cascade: Norme[] } | null>(null);
   const [coches, setCoches] = useState<Record<string, boolean>>({});
+  const [raisonSociale, setRaisonSociale] = useState("");
   const [email, setEmail] = useState("");
   const [envoi, setEnvoi] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
@@ -276,6 +277,97 @@ export default function Conformite2026Page() {
     a.download = "echeances-conformite-caelum.ics";
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  // Attestation / registre d'auto-évaluation — déclaration sur l'honneur, horodatée.
+  // Honnêteté : ce n'est PAS une certification officielle (mention explicite sur le document).
+  // Pas de dépendance : on ouvre une fenêtre imprimable → l'utilisateur « Enregistre en PDF ».
+  function genererAttestation() {
+    if (!res || res.directs.length === 0) return;
+    const esc = (s: string) =>
+      s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    const d = new Date();
+    const dateFr = d.toLocaleDateString("fr-BE", { day: "2-digit", month: "long", year: "numeric" });
+    const ref = "CAELUM-" + d.getFullYear() + String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0") + "-" + String(d.getHours()).padStart(2, "0") + String(d.getMinutes()).padStart(2, "0");
+
+    let totalAll = 0;
+    let faitsAll = 0;
+    const lignes = res.directs
+      .map((n) => {
+        const checks = CHECKS[n.id] || [];
+        if (checks.length === 0) {
+          return `<tr><td>${esc(n.nom)}</td><td>${esc(n.echeance)}</td><td class="na">—</td></tr>`;
+        }
+        const faits = checks.filter((_, i) => coches[`${n.id}:${i}`]).length;
+        totalAll += checks.length;
+        faitsAll += faits;
+        const pctN = Math.round((faits / checks.length) * 100);
+        const cls = pctN >= 80 ? "ok" : pctN >= 40 ? "mid" : "low";
+        const detail = checks
+          .map((c, i) => `<li class="${coches[`${n.id}:${i}`] ? "done" : "todo"}">${coches[`${n.id}:${i}`] ? "☑" : "☐"} ${esc(c)}</li>`)
+          .join("");
+        return `<tr><td>${esc(n.nom)}<ul class="detail">${detail}</ul></td><td>${esc(n.echeance)}</td><td class="${cls}">${pctN}%</td></tr>`;
+      })
+      .join("");
+    const pctGlobal = totalAll ? Math.round((faitsAll / totalAll) * 100) : 0;
+    const titre = raisonSociale.trim()
+      ? `Auto-évaluation de conformité — ${esc(raisonSociale.trim())}`
+      : "Auto-évaluation de conformité réglementaire";
+
+    const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>${titre}</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; color: #1e293b; max-width: 760px; margin: 0 auto; padding: 40px 32px; line-height: 1.5; }
+  .head { display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #4f46e5; padding-bottom: 14px; }
+  .logo { width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg,#6366f1,#4338ca); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  h1 { font-size: 20px; margin: 22px 0 4px; }
+  .meta { color: #64748b; font-size: 12px; }
+  .score { margin: 20px 0; padding: 16px; border: 1px solid #e2e8f0; border-radius: 12px; background:#f8fafc; }
+  .big { font-size: 34px; font-weight: 800; }
+  .ok { color: #059669; } .mid { color: #d97706; } .low { color: #e11d48; } .na { color:#94a3b8; }
+  table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 13px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+  th { background:#f1f5f9; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color:#475569; }
+  td:last-child, th:last-child { text-align: right; white-space: nowrap; font-weight: 700; }
+  ul.detail { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 12px; color:#475569; }
+  ul.detail li { margin: 2px 0; }
+  li.done { color:#059669; } li.todo { color:#64748b; }
+  .disclaimer { margin-top: 24px; padding: 12px 14px; border-left: 3px solid #f59e0b; background:#fffbeb; font-size: 12px; color:#92400e; border-radius: 0 8px 8px 0; }
+  .foot { margin-top: 22px; font-size: 11px; color:#94a3b8; border-top: 1px solid #e2e8f0; padding-top: 12px; }
+  @media print { body { padding: 0; } .noprint { display: none; } }
+  .btn { display:inline-block; margin-top:18px; padding:10px 18px; background:#4f46e5; color:#fff; border:none; border-radius:8px; font-weight:600; cursor:pointer; font-size:14px; }
+</style></head><body>
+  <div class="head"><div class="logo">C</div><strong style="font-size:18px">Caelum</strong></div>
+  <h1>${titre}</h1>
+  <p class="meta">Référence ${ref} · Établie le ${dateFr} · Basée sur l'auto-déclaration du répondant</p>
+
+  <div class="score">
+    <div style="color:#64748b;font-size:13px">Niveau de conformité auto-déclaré</div>
+    <div class="big ${pctGlobal >= 80 ? "ok" : pctGlobal >= 40 ? "mid" : "low"}">${pctGlobal}%</div>
+    <div style="color:#64748b;font-size:12px">${faitsAll}/${totalAll} actions de conformité déclarées réalisées</div>
+  </div>
+
+  <table>
+    <thead><tr><th>Norme applicable</th><th>Échéance</th><th>État</th></tr></thead>
+    <tbody>${lignes}</tbody>
+  </table>
+
+  <div class="disclaimer">
+    <strong>Nature du document.</strong> Cette attestation est une <strong>auto-évaluation déclarative</strong> établie
+    par le répondant à partir de ses propres réponses. Elle ne constitue ni une certification officielle, ni un
+    audit indépendant, ni un conseil juridique. Elle reflète une situation déclarée à la date indiquée et peut évoluer.
+    Pour une validation formelle, faites appel à un professionnel (juriste, expert-comptable, auditeur agréé).
+  </div>
+
+  <div class="foot">Document généré via le simulateur de conformité Caelum — caelum. Conserver dans votre registre de conformité interne.</div>
+
+  <button class="btn noprint" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+</body></html>`;
+
+    const w = window.open("", "_blank");
+    if (!w) return;
+    w.document.write(html);
+    w.document.close();
   }
 
   function Choix({
@@ -538,6 +630,30 @@ export default function Conformite2026Page() {
                     ) : (
                       <p className="mt-3 text-sm font-medium text-emerald-700">🎉 Bravo : sur ces points, vous semblez en règle ! Une veille reste utile pour le rester.</p>
                     )}
+                  </div>
+
+                  {/* Attestation / registre de conformité (déclaration sur l'honneur, horodatée) */}
+                  <div className="mt-5 rounded-xl border border-indigo-200 bg-indigo-50/60 p-4">
+                    <p className="text-sm font-semibold text-slate-800">📄 Attestation d&apos;auto-évaluation</p>
+                    <p className="text-xs text-slate-600 mt-1">
+                      Générez un document horodaté à conserver dans votre registre de conformité interne (PDF via
+                      l&apos;impression). C&apos;est une auto-déclaration, pas une certification officielle.
+                    </p>
+                    <input
+                      type="text"
+                      value={raisonSociale}
+                      onChange={(e) => setRaisonSociale(e.target.value)}
+                      placeholder="Raison sociale (facultatif)"
+                      maxLength={120}
+                      className="mt-3 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      onClick={genererAttestation}
+                      className="mt-3 inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
+                    >
+                      📄 Générer l&apos;attestation
+                    </button>
                   </div>
                 </div>
               );
