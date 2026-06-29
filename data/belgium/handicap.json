@@ -9,7 +9,7 @@
     "portee": "Personnes en situation de handicap : reconnaissance, aides, mobilité",
     "source_officielle": "https://handicap.belgium.be/fr/reconnaissance-de-votre-handicap/procedure-reconnaissance"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les démarches passent par la DG Personnes handicapées (plateforme My Handicap) et, souvent, votre commune ou mutualité.",
   "faits": [
@@ -94,6 +94,27 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "HAND-CONTACT-001",
+      "question": "Comment contacter la DG Personnes handicapées et suivre mon dossier ?",
+      "reponse": "La DG Personnes handicapées (DG HAN, SPF Sécurité sociale) évalue les demandes de reconnaissance, octroie les allocations et fournit conseils et réponses sur mesure. Vous pouvez suivre votre dossier et introduire vos demandes en ligne via la plateforme « My Handicap ». Pour les questions, un formulaire de contact et des permanences existent, et depuis le 15 avril 2026 un nouveau numéro de téléphone est en service : 02/202 02 02. Si vous recevez votre allocation par chèque circulaire, une foire aux questions dédiée est disponible sur le portail.",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (missions de la DG Personnes handicapées)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées (DG HAN)",
+          "lien": "https://handicap.belgium.be/fr",
+          "pour": "contact, suivi de dossier, permanences — tél. 02/202 02 02 (depuis le 15/04/2026)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr",
+          "intitule": "Handicap Belgium — DG Personnes handicapées (accueil, contact, My Handicap)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }
