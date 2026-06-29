@@ -1,9 +1,9 @@
 {
-  "genere_le": "2026-06-29T12:01:22.851234+00:00",
-  "total": 6,
+  "genere_le": "2026-06-29T12:06:04.432757+00:00",
+  "total": 5,
   "par_priorite": {
     "haute": 0,
-    "moyenne": 5,
+    "moyenne": 4,
     "basse": 1
   },
   "taches": [
@@ -27,15 +27,6 @@
     },
     {
       "id": "T03",
-      "titre": "Croissance · Corpus",
-      "categorie": "état",
-      "priorite": "moyenne",
-      "action_suggeree": "Ajouter de nouveaux domaines juridiques vérifiés (loi en vigueur + source officielle).",
-      "humain": true,
-      "organe": "scénario"
-    },
-    {
-      "id": "T04",
       "titre": "Plan stratégique · Avancement",
       "categorie": "état",
       "priorite": "moyenne",
@@ -44,7 +35,7 @@
       "organe": "scénario"
     },
     {
-      "id": "T05",
+      "id": "T04",
       "titre": "Veille marché · Opportunités",
       "categorie": "état",
       "priorite": "moyenne",
@@ -53,7 +44,7 @@
       "organe": "scénario"
     },
     {
-      "id": "T06",
+      "id": "T05",
       "titre": "Fragilité : Sources · Panne large",
       "categorie": "résilience",
       "priorite": "basse",

@@ -1,0 +1,79 @@
+{
+  "module": "reclassement_professionnel",
+  "titre": "Reclassement professionnel (outplacement)",
+  "domaine": "Travail & licenciement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 5 septembre 2001 visant à améliorer le taux d'emploi des travailleurs ; Convention collective de travail n° 82 (reclassement professionnel pour les 45 ans et plus)",
+    "portee": "Droit du travailleur licencié à un accompagnement pour retrouver un emploi, à charge de l'employeur",
+    "source_officielle": "https://emploi.belgique.be/fr/themes/contrats-de-travail/outplacement"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le régime applicable dépend de votre situation : adressez-vous au SPF Emploi ou à l'ONEM pour votre cas.",
+  "faits": [
+    {
+      "id": "RECL-001",
+      "question": "C'est quoi le reclassement professionnel (outplacement) ?",
+      "reponse": "C'est un ensemble de services et de conseils fournis par un prestataire spécialisé, payés par l'employeur, pour aider un travailleur licencié à retrouver un emploi le plus vite possible. Il peut être imposé par la loi ou proposé volontairement par l'employeur. La loi prévoit plusieurs régimes (général, particulier pour les 45 ans et plus, restructuration, force majeure médicale).",
+      "reference_legale": "Loi du 5 septembre 2001 ; CCT n° 82 (reclassement professionnel)",
+      "contacts": [
+        {
+          "nom": "SPF Emploi, Travail et Concertation sociale",
+          "pour": "questions sur les régimes de reclassement"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/outplacement",
+          "intitule": "SPF Emploi — Outplacement (reclassement professionnel)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RECL-002",
+      "question": "Qui a droit au régime « particulier » (45 ans et plus) ?",
+      "reponse": "Ce régime s'applique si, au moment du licenciement : votre employeur relève du secteur privé ; vous n'êtes pas licencié pour motif grave ; vous avez droit à un préavis (ou indemnité) de moins de 30 semaines ; vous avez au moins 45 ans ; et au moins 1 an d'ancienneté ininterrompue dans l'entreprise. L'employeur doit vous faire spontanément une offre valable d'outplacement.",
+      "reference_legale": "Convention collective de travail n° 82 (régime particulier de reclassement professionnel, 45 ans et plus)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/emploi---formation/outplacement",
+          "intitule": "ONEM — Vos droits en matière d'outplacement"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RECL-003",
+      "question": "Et si mon préavis est plus long (régime général) ?",
+      "reponse": "Le régime général concerne les travailleurs dont le préavis (ou l'indemnité) est d'au moins 30 semaines. Il existe aussi des régimes spécifiques (gestion active des restructurations, force majeure médicale). Selon votre situation, c'est l'un ou l'autre régime qui s'applique ; le SPF Emploi peut vous indiquer lequel.",
+      "reference_legale": "Loi du 5 septembre 2001 (régimes de reclassement professionnel)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/outplacement",
+          "intitule": "SPF Emploi — Régimes de reclassement"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RECL-004",
+      "question": "Puis-je refuser l'offre, et jusqu'à quand y ai-je droit ?",
+      "reponse": "Si l'employeur fait spontanément une offre valable, vous pouvez la refuser sans incidence sur vos allocations (dans le régime particulier). Vous perdez le droit à l'outplacement à partir du moment où vous pouvez demander votre pension de retraite. Pour les délais et la procédure exacts, référez-vous à la CCT n° 82.",
+      "reference_legale": "Convention collective de travail n° 82 (procédure, délais, fin du droit à l'outplacement)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/emploi---formation/outplacement",
+          "intitule": "ONEM — Refus et fin du droit"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
