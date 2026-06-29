@@ -92,6 +92,13 @@
       "integration_systeme": "Comportement: décision opérationnelle directe; questions réservées aux seules décisions de Chaima et aux actions destructives.",
       "protocole": "P-DISCIPLINE-EXECUTION (§23)",
       "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-14",
+      "consigne": "Suite incident désync conteneur : isoler, vérifier l'intégrité distante, restaurer sans compromettre la gouvernance ; prévenir la récurrence.",
+      "integration_systeme": "scripts/env_integrity_check.py (contrôle début de cycle) ; environnement restauré (HEAD 79684e77) ; crm-sales intact.",
+      "protocole": "P-INTEGRITE-ENVIRONNEMENT (§24)",
+      "statut": "EN VIGUEUR"
     }
   ],
   "portails_officiels_valides_2026-06-29": {

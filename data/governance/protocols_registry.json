@@ -369,6 +369,12 @@
       "nom": "Discipline d'exécution — ordres directs, pas d'options",
       "regle": "DIRECTIVE (Chaima, 2026-06-29) : exécution directe et disciplinée. NE PAS proposer de menus d'options, NE PAS demander l'avis sur la manière de procéder, NE PAS étiqueter une proposition « recommandée » en attendant un choix. Prendre la décision opérationnelle, l'exécuter, puis rendre compte du RÉSULTAT. Seules exceptions où une question est permise : (1) décisions strictement réservées à Chaima (prix, identité légale, webhook) ; (2) action irréversible/destructive nécessitant une autorisation explicite. Hors ces cas : décider et faire. Toute déviation (laxisme, hésitation, options superflues) est une faiblesse à proscrire.",
       "verif": "revue comportementale : une réponse se termine par un résultat livré, pas par une question ni un menu d'options (sauf décisions réservées à Chaima ou action destructive)"
+    },
+    {
+      "id": "P-INTEGRITE-ENVIRONNEMENT",
+      "nom": "Contrôle d'intégrité de l'environnement (anti-désync conteneur)",
+      "regle": "Suite à l'incident du 2026-06-29 (conteneur désynchronisé sur le dépôt partagé, checkout positionné sur un autre projet) : OBLIGATION de vérifier l'intégrité de l'espace de travail AU DÉBUT de chaque cycle de travail, AVANT toute écriture/commit. Contrôle : branche courante == branche de travail ; présence des répertoires/fichiers clés (scripts/, data/governance/, corpus >= 100 fiches). En cas d'anomalie : NE PAS écrire ; git fetch ; réaligner (git reset --hard origin/<branche>) sur autorisation explicite (action destructive). Ne jamais commiter depuis un checkout étranger.",
+      "verif": "python3 scripts/env_integrity_check.py (sortie 0 = sain ; sortie 1 = désync, réaligner avant toute écriture)"
     }
   ]
 }

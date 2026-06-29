@@ -613,3 +613,18 @@ Pour le droit belge, la **base légale** d'une fiche pointe vers le **texte cano
 - **Règle** : prendre la décision opérationnelle, l'**exécuter**, puis rendre compte du **résultat**.
 - **Seules questions permises** : (1) décisions strictement réservées à Chaima (**prix, identité légale, webhook**) ; (2) action **irréversible/destructive** nécessitant une autorisation explicite.
 - Toute déviation (laxisme, hésitation, options superflues) est une faiblesse à proscrire.
+
+---
+
+## 24. Intégrité de l'environnement — anti-désync conteneur (§24, P-INTEGRITE-ENVIRONNEMENT)
+
+**Incident du 2026-06-29** : le dépôt partagé `chaima0007/TEST` étant utilisé par plusieurs sessions/projets, le conteneur a été ré-provisionné et le checkout local s'est retrouvé sur l'historique d'un autre projet (crm-sales). Données distantes intactes ; restauration par réalignement autorisé.
+
+**Règle permanente** : au DÉBUT de chaque cycle de travail, AVANT toute écriture/commit, exécuter le contrôle d'intégrité :
+
+```bash
+python3 scripts/env_integrity_check.py   # 0 = sain ; 1 = désync -> réaligner avant d'écrire
+```
+
+- Vérifie : branche courante == branche de travail ; présence des dossiers/fichiers clés ; corpus ≥ 100 fiches.
+- En cas d'anomalie : **NE PAS écrire** ; `git fetch` ; réaligner (`git reset --hard origin/<branche>`) **sur autorisation explicite** (action destructive) ; **ne jamais commiter depuis un checkout étranger**.
