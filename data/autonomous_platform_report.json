@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T10:14:38.084906+00:00",
+  "genere_le": "2026-06-29T10:17:55.970249+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
     "reponses": 443,
@@ -26,7 +26,7 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 61,
+      "ms": 50,
       "sortie": "  → data/governance/source_trust_report.md",
       "verdict": "OK"
     },
@@ -34,7 +34,7 @@
       "protocole": "legal_change_sensor",
       "cmd": "python3 scripts/legal_change_sensor.py",
       "returncode": 0,
-      "ms": 80,
+      "ms": 74,
       "sortie": "  → data/legal_change.json",
       "verdict": "OK"
     },
@@ -42,7 +42,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 347,
+      "ms": 322,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -86,8 +86,8 @@
       "type": "stress",
       "rps": 1500,
       "cache_pct": 92,
-      "p95_ms": 98,
-      "p99_ms": 102,
+      "p95_ms": 97,
+      "p99_ms": 101,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -103,7 +103,7 @@
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 8,
-      "pct_corpus": 1.0,
+      "pct_corpus": 1.05,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -111,8 +111,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 37,
-      "pct_corpus": 4.94,
+      "urls_impactees_moy": 39,
+      "pct_corpus": 5.18,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -120,8 +120,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 115,
-      "pct_corpus": 15.18,
+      "urls_impactees_moy": 113,
+      "pct_corpus": 14.92,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -202,7 +202,7 @@
       "reponses": 443,
       "modules": 139,
       "depuis_naissance": 15,
-      "battements_sans_croissance": 2,
+      "battements_sans_croissance": 3,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -222,7 +222,7 @@
       "plan_faits": 5,
       "plan_total": 12,
       "prochaine_etape": "Compléter l'identité légale (mentions légales)",
-      "battements_sans_progres": 1,
+      "battements_sans_progres": 2,
       "mitigation": "avancer le plan (PLAN_MARKETING_GRANDS_COMPTES_CAELUM.md) — ne pas stagner"
     },
     {
@@ -233,7 +233,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629101438",
+    "seal_id": "AUTO-20260629101755",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 80.8,
@@ -251,7 +251,7 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 15,
+    "battements": 16,
     "age_jours": 0.03,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
