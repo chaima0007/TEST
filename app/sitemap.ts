@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/conformite-2026",
     "/offres-conformite",
     "/fiduciaires",
+    "/plateforme-autonome",
     "/veille",
     "/tarifs",
     "/notre-force",

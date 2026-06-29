@@ -1,0 +1,35 @@
+{
+  "naissance": "2026-06-29T09:31:18.850752+00:00",
+  "battements": 3,
+  "historique": [
+    {
+      "ts": "2026-06-29T09:31:18.850752+00:00",
+      "resilience": 76.5,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:31:18.996486+00:00",
+      "resilience": 76.5,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:32:21.999856+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    }
+  ],
+  "derniere_pulsation": "2026-06-29T09:32:21.999856+00:00",
+  "etat_vie": "🟠 Vigilance",
+  "resilience": 80.0,
+  "statut": "APPROUVÉ",
+  "age_jours": 0.0
+}

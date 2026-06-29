@@ -289,6 +289,69 @@ def sceller(sante: list, scenarios: list) -> dict:
     }
 
 
+# ───────────────────────────── FORME DE VIE (cœur battant) ───────────────────
+# La plateforme est présentée comme un organisme vivant (métaphore assumée, pas une
+# prétention de conscience) : elle a une naissance, un pouls (chaque run = un battement),
+# une mémoire (historique de ses signes vitaux) et un état de vie qui évolue.
+VITALS = os.path.join(ROOT, "data", "platform_vitals.json")
+ETATS_VIE = {
+    "naissance": "🐣 Naissance",
+    "forme": "🟢 En pleine forme",
+    "veille": "🟢 En vie · veille active",
+    "vigilance": "🟠 Vigilance",
+    "soin": "🔴 Soin requis",
+}
+
+
+def battre_le_coeur(sceau: dict, corpus: dict) -> dict:
+    """Met à jour les signes vitaux persistants (la 'vie' de la plateforme)."""
+    now = datetime.now(timezone.utc).isoformat()
+    try:
+        vit = json.load(open(VITALS, encoding="utf-8"))
+    except Exception:
+        vit = {}
+
+    premiere = "naissance" not in vit
+    if premiere:
+        vit["naissance"] = now
+        vit["battements"] = 0
+        vit["historique"] = []
+
+    # État de vie déduit de la santé courante
+    if sceau["statut"] == "BLOQUÉ":
+        etat = "soin"
+    elif sceau["alertes_etat_a_corriger"]:
+        etat = "vigilance"
+    elif premiere:
+        etat = "naissance"
+    else:
+        etat = "veille"
+
+    vit["battements"] = vit.get("battements", 0) + 1
+    vit["derniere_pulsation"] = now
+    vit["etat_vie"] = ETATS_VIE[etat]
+    vit["resilience"] = sceau["score_resilience"]
+    vit["statut"] = sceau["statut"]
+    # âge en jours depuis la naissance
+    try:
+        naiss = datetime.fromisoformat(vit["naissance"])
+        vit["age_jours"] = round((datetime.now(timezone.utc) - naiss).total_seconds() / 86400, 2)
+    except Exception:
+        vit["age_jours"] = 0
+
+    # mémoire : on garde les 200 dernières pulsations
+    vit["historique"].append({
+        "ts": now, "resilience": sceau["score_resilience"],
+        "statut": sceau["statut"], "etat_vie": ETATS_VIE[etat],
+        "reponses": corpus["reponses"], "modules": corpus["modules"],
+    })
+    vit["historique"] = vit["historique"][-200:]
+
+    os.makedirs(os.path.dirname(VITALS), exist_ok=True)
+    json.dump(vit, open(VITALS, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    return vit
+
+
 # ───────────────────────────── orchestration ─────────────────────────────────
 def main() -> int:
     args = sys.argv[1:]
@@ -336,6 +399,11 @@ def main() -> int:
     if sceau["fragilites_stress"]:
         print(f"    🛡️  Fragilités (scénarios extrêmes) : {', '.join(sceau['fragilites_stress'])}")
 
+    vitals = battre_le_coeur(sceau, corpus)
+    print("\n  ── Forme de vie ──")
+    print(f"    {vitals['etat_vie']} · pouls {vitals['battements']} battement(s) · "
+          f"âge {vitals['age_jours']} j · résilience {vitals['resilience']}%")
+
     rapport = {
         "genere_le": datetime.now(timezone.utc).isoformat(),
         "monte_carlo_n": n,
@@ -343,11 +411,15 @@ def main() -> int:
         "sante": sante,
         "scenarios": scenarios,
         "sceau": sceau,
+        "vie": {
+            "etat_vie": vitals["etat_vie"], "battements": vitals["battements"],
+            "age_jours": vitals["age_jours"], "naissance": vitals["naissance"],
+        },
         "avertissement": "Simulations = modèles probabilistes/déterministes locaux, pas des appels réseau réels.",
     }
     os.makedirs(os.path.dirname(REPORT), exist_ok=True)
     json.dump(rapport, open(REPORT, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-    print(f"\n  → Rapport : {os.path.relpath(REPORT, ROOT)}")
+    print(f"\n  → Rapport : {os.path.relpath(REPORT, ROOT)}  ·  Vie : {os.path.relpath(VITALS, ROOT)}")
     print("═" * 64)
 
     # code retour non-zéro si BLOQUÉ (utilisable en CI / pre-commit)
