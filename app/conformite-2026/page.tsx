@@ -371,6 +371,57 @@ export default function Conformite2026Page() {
     w.document.close();
   }
 
+  // Badge de conformité partageable (image PNG via canvas, sans dépendance).
+  // Honnête : c'est une auto-évaluation datée, pas une certification. Chaque badge posté
+  // = preuve sociale + curiosité des pairs → ambassadeur organique.
+  function genererBadge(pct: number) {
+    const W = 1200, H = 630;
+    const c = document.createElement("canvas");
+    c.width = W; c.height = H;
+    const g = c.getContext("2d");
+    if (!g) return;
+    // Fond dégradé indigo/ardoise
+    const grad = g.createLinearGradient(0, 0, W, H);
+    grad.addColorStop(0, "#0f172a"); grad.addColorStop(1, "#312e81");
+    g.fillStyle = grad; g.fillRect(0, 0, W, H);
+    // Logo C
+    g.fillStyle = "#6366f1"; g.beginPath();
+    if (g.roundRect) g.roundRect(80, 70, 70, 70, 16); else g.rect(80, 70, 70, 70);
+    g.fill();
+    g.fillStyle = "#fff"; g.font = "bold 44px sans-serif"; g.textBaseline = "middle";
+    g.fillText("C", 100, 107);
+    g.font = "bold 38px sans-serif"; g.fillText("Caelum", 168, 107);
+    // Titre
+    g.fillStyle = "#cbd5e1"; g.font = "500 30px sans-serif";
+    g.fillText("Auto-évaluation de conformité 2026", 80, 210);
+    // Score
+    const col = pct >= 80 ? "#34d399" : pct >= 40 ? "#fbbf24" : "#fb7185";
+    g.fillStyle = col; g.font = "bold 180px sans-serif"; g.fillText(`${pct}%`, 76, 330);
+    g.fillStyle = "#e2e8f0"; g.font = "500 34px sans-serif"; g.fillText("en règle (auto-déclaré)", 80, 440);
+    // Raison sociale + date
+    g.fillStyle = "#94a3b8"; g.font = "500 26px sans-serif";
+    const d = new Date().toLocaleDateString("fr-BE", { day: "2-digit", month: "long", year: "numeric" });
+    const rs = raisonSociale.trim();
+    g.fillText((rs ? rs + " · " : "") + "réalisée le " + d, 80, 500);
+    // Bandeau honnêteté
+    g.fillStyle = "#64748b"; g.font = "400 22px sans-serif";
+    g.fillText("Auto-déclaration, pas une certification · caelum", 80, 560);
+
+    c.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = "badge-conformite-caelum.png"; a.click();
+      URL.revokeObjectURL(url);
+    }, "image/png");
+  }
+
+  function partagerLinkedIn() {
+    const base = typeof window !== "undefined" ? window.location.origin : "";
+    const url = encodeURIComponent(base + "/conformite-2026");
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank", "noopener,noreferrer");
+  }
+
   function Choix({
     titre,
     cle,
@@ -648,13 +699,32 @@ export default function Conformite2026Page() {
                       maxLength={120}
                       className="mt-3 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
                     />
-                    <button
-                      type="button"
-                      onClick={genererAttestation}
-                      className="mt-3 inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
-                    >
-                      📄 Générer l&apos;attestation
-                    </button>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={genererAttestation}
+                        className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
+                      >
+                        📄 Générer l&apos;attestation
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => genererBadge(pct)}
+                        className="inline-flex items-center gap-2 rounded-lg border border-indigo-300 bg-white px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50"
+                      >
+                        🏅 Mon badge (image)
+                      </button>
+                      <button
+                        type="button"
+                        onClick={partagerLinkedIn}
+                        className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                      >
+                        in Partager sur LinkedIn
+                      </button>
+                    </div>
+                    <p className="mt-2 text-[11px] text-slate-500">
+                      Le badge affiche votre score d&apos;auto-évaluation (daté). Partagez-le pour montrer votre démarche — c&apos;est une auto-déclaration, pas un label officiel.
+                    </p>
                   </div>
                 </div>
               );
