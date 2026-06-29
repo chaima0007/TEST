@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "objet": "Aides publiques belges mobilisables pour financer une partie de l'accompagnement à la conformité (conseil/formation).",
+    "langue": "fr",
+    "statut_fiabilite": "verifie",
+    "derniere_revue": "2026-06-29",
+    "avertissement": "Ces dispositifs financent du CONSEIL ou de la FORMATION réalisés par un PRESTATAIRE LABELLISÉ / ENREGISTRÉ auprès de la Région. Caelum n'est pas (encore) prestataire labellisé : ces aides sont présentées comme existantes et mobilisables, jamais comme une éligibilité acquise de Caelum. Montants, taux et conditions évoluent — vérifier la source officielle avant toute démarche.",
+    "separation_projets": "Donnée Caelum (B2B). Aucun lien avec La Loi Avec Moi."
+  },
+  "aides": [
+    {
+      "id": "WAL-CHEQUE-CYBER",
+      "region": "Wallonie",
+      "intitule": "Chèque-entreprises « Cybersécurité »",
+      "objet": "Audit/diagnostic et conseil en cybersécurité par un expert labellisé.",
+      "type_prestation": "conseil",
+      "taux_intervention": "75 % des coûts HTVA (25 % à charge de l'entreprise)",
+      "plafond": "50 000 € HTVA / bénéficiaire / 3 ans (70 000 € pour la thématique Numérique, 100 000 €/an toutes thématiques)",
+      "condition_cle": "Prestataire labellisé Chèques-entreprises obligatoire ; TVA et frais non éligibles à charge de l'entreprise.",
+      "normes_liees": ["nis2", "dora", "rgpd"],
+      "source_officielle": {
+        "intitule": "Wallonie — Chèque « cybersécurité »",
+        "url": "https://www.wallonie.be/fr/demarches/etre-accompagne-par-un-expert-pour-securiser-les-donnees-de-mon-entreprise-cheque-cybersecurite"
+      }
+    },
+    {
+      "id": "WAL-CHEQUE-MATNUM",
+      "region": "Wallonie",
+      "intitule": "Chèque-entreprises « Maturité numérique »",
+      "objet": "Diagnostic de maturité numérique, plan d'actions, cahier des charges et suivi de mise en œuvre.",
+      "type_prestation": "conseil",
+      "taux_intervention": "50 % des coûts HTVA (50 % à charge de l'entreprise)",
+      "plafond": "50 000 € HTVA / bénéficiaire / 3 ans (70 000 € pour la thématique Numérique, 100 000 €/an toutes thématiques)",
+      "condition_cle": "Prestataire labellisé Chèques-entreprises obligatoire ; TVA et frais non éligibles à charge de l'entreprise.",
+      "normes_liees": ["efacture"],
+      "source_officielle": {
+        "intitule": "Wallonie — Chèque « maturité numérique »",
+        "url": "https://www.wallonie.be/fr/demarches/etre-accompagne-par-un-expert-pour-digitaliser-les-processus-internes-de-mon-entreprise-cheque-maturite-numerique"
+      }
+    },
+    {
+      "id": "VLA-KMO-PORTEFEUILLE",
+      "region": "Flandre",
+      "intitule": "kmo-portefeuille (VLAIO)",
+      "objet": "Soutien à la formation (large) et au conseil. Depuis le 1ᵉʳ février 2026, le volet « conseil » est limité à la cybersécurité ; la formation reste ouverte à de nombreux thèmes.",
+      "type_prestation": "formation et conseil (conseil = cybersécurité uniquement depuis 01/02/2026)",
+      "taux_intervention": "30 % (petites) / 20 % (moyennes) ; 45 % (petites) / 35 % (moyennes) pour « durabilité – efficacité énergétique » et « numérique – cybersécurité »",
+      "plafond": "7 500 € de subvention / an",
+      "condition_cle": "Siège en Région flamande ; prestataire enregistré (geregistreerde dienstverlener) obligatoire.",
+      "normes_liees": ["nis2", "dora"],
+      "source_officielle": {
+        "intitule": "VLAIO — kmo-portefeuille",
+        "url": "https://www.vlaio.be/nl/subsidies-financiering/kmo-portefeuille"
+      }
+    }
+  ]
+}

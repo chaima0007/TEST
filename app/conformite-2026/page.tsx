@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import aidesData from "@/data/caelum/aides_publiques.json";
 
 // Page « Conformité 2026 » + simulateur « Suis-je concerné ? » — Caelum (ENTREPRISES, séparé de La Loi Avec Moi).
 // Données alignées sur data/caelum/conformite_entreprises.json (chiffres vérifiés, post-Omnibus 2026).
@@ -655,6 +656,42 @@ export default function Conformite2026Page() {
                       📄 Générer l&apos;attestation
                     </button>
                   </div>
+                </div>
+              );
+            })()}
+
+            {/* Conformité finançable — aides publiques régionales sourcées */}
+            {(() => {
+              const ids = new Set(res.directs.map((n) => n.id));
+              const aides = aidesData.aides.filter((a) => a.normes_liees.some((nid) => ids.has(nid)));
+              if (aides.length === 0) return null;
+              return (
+                <div className="mt-10 rounded-2xl border border-emerald-200 bg-emerald-50/60 p-6">
+                  <h3 className="text-xl font-bold text-slate-900">💶 Conformité (partiellement) finançable</h3>
+                  <p className="text-slate-600 text-sm mt-1">
+                    Des aides publiques régionales peuvent prendre en charge une partie d&apos;un accompagnement
+                    conseil/formation lié à vos obligations — surtout en cybersécurité et numérique.
+                  </p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {aides.map((a) => (
+                      <article key={a.id} className="rounded-xl border border-emerald-200 bg-white p-4">
+                        <div className="flex items-center justify-between gap-2">
+                          <h4 className="font-semibold text-slate-900 text-sm">{a.intitule}</h4>
+                          <span className="text-[11px] font-medium text-emerald-700 bg-emerald-100 rounded-full px-2 py-0.5 whitespace-nowrap">{a.region}</span>
+                        </div>
+                        <p className="text-xs text-slate-600 mt-1.5">{a.objet}</p>
+                        <p className="text-sm font-semibold text-emerald-700 mt-2">Prise en charge : {a.taux_intervention}</p>
+                        <p className="text-[11px] text-slate-500 mt-1">Plafond : {a.plafond}</p>
+                        <p className="text-[11px] text-slate-500 mt-1">⚠️ {a.condition_cle}</p>
+                        <a href={a.source_officielle.url} target="_blank" rel="noopener noreferrer" className="text-xs text-indigo-600 hover:underline mt-2 inline-block">
+                          Source officielle ↗
+                        </a>
+                      </article>
+                    ))}
+                  </div>
+                  <p className="text-[11px] text-slate-500 mt-4 leading-snug">
+                    {aidesData._meta.avertissement}
+                  </p>
                 </div>
               );
             })()}
