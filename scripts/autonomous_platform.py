@@ -105,6 +105,7 @@ PROTOCOLES = [
     ("loi_reference_audit", ["python3", "scripts/loi_reference_audit.py"]),
     ("source_trust_protocol", ["python3", "scripts/source_trust_protocol.py"]),
     ("legal_change_sensor", ["python3", "scripts/legal_change_sensor.py"]),
+    ("norm_hierarchy_guard", ["python3", "scripts/norm_hierarchy_guard.py"]),
     ("branch_guard", ["python3", "scripts/branch_guard.py", "--check", "--quiet"]),
 ]
 
@@ -421,6 +422,21 @@ def scn_veille() -> list:
     }]
 
 
+def scn_hierarchie_normes() -> list:
+    """Organe Hiérarchie des normes : GEL (CRITIQUE bloquant) si conflit temporel/territorial."""
+    try:
+        r = json.load(open(os.path.join(ROOT, "data", "governance", "norm_hierarchy_report.json"), encoding="utf-8"))
+    except Exception:
+        return []
+    n = len(r.get("conflits", []))
+    return [{
+        "scenario": "Hiérarchie des normes · Conflits", "type": "etat",
+        "verdict": CRITIQUE if n else OK,
+        "conflits": n,
+        "mitigation": "GEL des décisions + audit croisé sources officielles (UE>fédéral>régional) si conflit"
+    }]
+
+
 def scn_veille_marche() -> list:
     """Organe Veille marché : opportunités émergentes non encore traitées (adapter vite)."""
     try:
@@ -459,6 +475,7 @@ def moteur_scenarios(n: int, corpus: dict) -> list:
     scenarios += scn_croissance(corpus)
     scenarios += scn_caelum(corpus)
     scenarios += scn_plan()
+    scenarios += scn_hierarchie_normes()
     scenarios += scn_veille_marche()
     scenarios += scn_langues()
     return scenarios

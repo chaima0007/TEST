@@ -466,3 +466,26 @@ python3 scripts/source_trust_protocol.py   # les sources 'officiel' doivent êtr
 ```
 Domaines tier1 UE : `eur-lex.europa.eu`, `commission.europa.eu`, `digital-strategy.ec.europa.eu`, `ec.europa.eu`, `europa.eu`.
 Inscrit au registre : `data/governance/protocols_registry.json` → `P-SOURCES-OFFICIELLES-UE`.
+
+---
+
+## 17. Hiérarchie des normes (§17, P-HIERARCHIE-NORMES) — règle implacable
+
+**Chaque agent DOIT vérifier la hiérarchie des normes avant toute décision :**
+1. **Droit de l'Union européenne** (primauté ; règlements directement applicables, directives à transposer — EUR-Lex).
+2. **Législation fédérale belge** (Constitution, lois, AR) pour les compétences fédérales.
+3. **Réglementations régionales/communautaires** (Wallonie, Bruxelles, Flandre) pour les compétences régionalisées.
+
+**Conflits déclenchant un GEL immédiat des décisions + audit croisé (sources officielles) :**
+- **Temporel** : un texte/une valeur **périmé** cité comme en vigueur (ex. CSDDD « 5 % » alors que l'Omnibus I a fixé 3 %).
+- **Territorial** : une compétence **fédérale** présentée comme **régionale** ou inversement (ex. TVA/comptabilité = fédérales, PAS régionales ; droits de succession/enregistrement, précompte immobilier, aides = régionales).
+
+**Repères de compétence** (voir `data/governance/norm_hierarchy.json`) :
+- Fédéral : TVA, ISoc/IPP, droit comptable, RGPD, droit du travail, sécurité sociale, état civil, séjour des étrangers.
+- Régional : droits d'enregistrement/succession/donation, précompte immobilier, taxe de circulation, aides aux entreprises, permis, bail.
+
+**Vérification (bloquante) :**
+```bash
+python3 scripts/norm_hierarchy_guard.py   # verdict GEL => conflit => décisions gelées
+```
+Branché dans la plateforme autonome (organe « Hiérarchie des normes » : un conflit = CRITIQUE => sceau BLOQUÉ = gel).

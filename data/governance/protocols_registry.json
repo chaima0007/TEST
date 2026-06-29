@@ -315,6 +315,12 @@
       "nom": "Sources officielles — droit de l'UE",
       "regle": "Pour TOUTE législation européenne : se référer EXCLUSIVEMENT aux textes d'EUR-Lex (eur-lex.europa.eu). Pour la CSDDD et l'AI Act spécifiquement : fonder l'analyse UNIQUEMENT sur les portails officiels de la Commission européenne (commission.europa.eu) et de l'Office européen pour l'IA (digital-strategy.ec.europa.eu). Forums et sources tierces non autorisées : STRICTEMENT INTERDITS comme source. On PEUT s'inspirer des retours d'expérience (veille) pour identifier les problématiques/préoccupations des utilisateurs, mais JAMAIS citer une source non fiable comme référence.",
       "verif": "python3 scripts/source_trust_protocol.py (les 'officiel' doivent être tier1) + revue manuelle : droit UE = EUR-Lex ; CSDDD/AI Act = Commission/AI Office"
+    },
+    {
+      "id": "P-HIERARCHIE-NORMES",
+      "nom": "Hiérarchie des normes (UE > fédéral > régional)",
+      "regle": "Chaque agent DOIT vérifier la hiérarchie des normes : droit UE (primauté) > législation fédérale belge > réglementations régionales. Tout CONFLIT temporel (texte périmé vs en vigueur) ou TERRITORIAL (compétence fédérale traitée comme régionale, ou l'inverse) déclenche un GEL IMMÉDIAT des décisions + un audit croisé sur sources officielles AVANT toute poursuite des opérations.",
+      "verif": "python3 scripts/norm_hierarchy_guard.py (verdict GEL = bloquant)"
     }
   ]
 }
