@@ -6,7 +6,7 @@
   "juridiction": "BE/UE",
   "langue": "fr",
   "separation": "Projet ENTREPRISES (B2B). Ne pas mélanger avec La Loi Avec Moi (citoyens).",
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-29",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale à but commercial/pédagogique, à jour à la date de revue. Les seuils et montants évoluent ; toute décision importante est validée avec notre réseau d'experts (avocats, comptables). Sources officielles citées pour chaque norme.",
   "normes": [
@@ -225,6 +225,49 @@
         }
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "DORA-2025",
+      "norme": "DORA — résilience opérationnelle numérique du secteur financier",
+      "changement": "Depuis le 17 janvier 2025, les entités financières doivent disposer d'un cadre robuste de gestion du risque informatique (TIC) : gouvernance du risque, tests de résilience, notification des incidents majeurs et maîtrise du risque lié aux prestataires informatiques tiers.",
+      "concernes": "Les entités du secteur financier (banques, assurances, entreprises d'investissement, sociétés de gestion, établissements de paiement, prestataires de services sur crypto-actifs, etc.) ainsi que leurs prestataires TIC critiques.",
+      "sanction": "Mesures et sanctions administratives des autorités de contrôle financières (BNB/FSMA) selon la gravité ; obligation de remédiation.",
+      "echeance": "En application depuis le 17/01/2025.",
+      "reference_legale": "Règlement (UE) 2022/2554 du 14 décembre 2022 (DORA)",
+      "solution_caelum": "Cartographie du risque TIC, registre des prestataires, procédure de notification d'incident et plan de tests de résilience prêts à l'emploi pour les entités financières et leurs sous-traitants.",
+      "automatisation": "MOYENNE — modèles de registre et d'incident automatisés, veille réglementaire ; l'évaluation du risque reste accompagnée par un expert.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+          "intitule": "EUR-Lex — Règlement (UE) 2022/2554 (DORA)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/dora",
+          "intitule": "FSMA — DORA"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PAYEQUITY-2026",
+      "norme": "Transparence salariale (égalité de rémunération F/H)",
+      "changement": "La directive européenne sur la transparence salariale impose, dès le recrutement, d'indiquer la rémunération ou une fourchette et interdit de demander l'historique salarial du candidat. En interne : critères de rémunération objectifs, droit à l'information sur les écarts, et renversement de la charge de la preuve en cas de litige. Les employeurs d'au moins 100 travailleurs devront publier régulièrement leur écart de rémunération F/H.",
+      "concernes": "Tous les employeurs pour la transparence à l'embauche ; les obligations de reporting de l'écart salarial visent les employeurs d'au moins 100 travailleurs (échéances échelonnées).",
+      "sanction": "Sanctions prévues par la transposition nationale ; un écart injustifié de plus de 5 % impose une évaluation conjointe avec les représentants des travailleurs.",
+      "echeance": "Transposition par les États membres au plus tard le 07/06/2026 ; premiers reportings (≥150 travailleurs) au plus tard le 07/06/2027.",
+      "reference_legale": "Directive (UE) 2023/970 du 10 mai 2023 (transparence des rémunérations)",
+      "solution_caelum": "Audit des écarts de rémunération, grilles et critères objectifs, modèles d'offres d'emploi conformes et tableau de reporting prêt pour l'échéance.",
+      "automatisation": "MOYENNE — calcul automatisé de l'écart salarial et alertes de seuil ; le plan d'action reste accompagné.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32023L0970",
+          "intitule": "EUR-Lex — Directive (UE) 2023/970"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

@@ -6,7 +6,7 @@ _Dernière mise à jour : 2026-06-28_
 `██████████████████░░` 88%
 
 - **La Loi Avec Moi (citoyens)** — `██████████░░░░` 71%
-- **Caelum (entreprises B2B)** — `█████████████░` 96%
+- **Caelum (entreprises B2B)** — `██████████████` 97%
 - **Infrastructure & Gouvernance (flotte d'agents)** — `█████████████░` 96%
 
 ## 🔔 Actions qui t'attendent (Chaima)
@@ -41,14 +41,14 @@ _Dernière mise à jour : 2026-06-28_
 - **Cartographie d'adresses officielles par ville** → prochaines étapes : Trouver une source open-data officielle (jamais d'adresse inventée)
 - **Pages légales (mentions, confidentialité, accessibilité)** → prochaines étapes : Compléter l identité légale de l éditeur (BCE/TVA/adresse)
 
-## Caelum (entreprises B2B) — 96%
-`███████████████████░` 96%
+## Caelum (entreprises B2B) — 97%
+`███████████████████░` 97%
 
 > **Point de sortie :** Veille conformité 2026 (6 normes sourcées + chiffres), agent « Appels & Financements » et simulateur /appels-projets en ligne. Séparé de La Loi Avec Moi.
 
 | Tâche | Avancement | Statut |
 |---|---|---|
-| Veille conformité 2026 (normes entreprises) | `██████████░░` 80% | en cours |
+| Veille conformité 2026 (normes entreprises) | `███████████░` 90% | en cours |
 | Simulateur « Appels à projets » | `████████████` 100% | terminé |
 | Agent « Appels & Financements » | `████████████` 100% | terminé |
 | Page « Conformité 2026 » + simulateur « Suis-je concerné ? » | `████████████` 100% | terminé |
@@ -58,7 +58,7 @@ _Dernière mise à jour : 2026-06-28_
 | Newsletter de veille (canal possédé) | `███████████░` 90% | en cours |
 | Kit de contenu de lancement (posts + e-mails + FAQ) | `████████████` 100% | terminé |
 
-- **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Ajouter UBO, AML, autres obligations sectorielles
+- **Veille conformité 2026 (normes entreprises)** → prochaines étapes : Ajouter d'autres obligations sectorielles (DAC7, PPWR emballages) selon la demande
 - **Positionnement commercial & business plan** → prochaines étapes : Fixer les prix (décision Chaima)
 - **Pages SEO programmatiques (acquisition)** → prochaines étapes : Pages par secteur (longue traîne) quand le trafic le justifiera
 - **Capture de leads (simulateur)** → prochaines étapes : Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima

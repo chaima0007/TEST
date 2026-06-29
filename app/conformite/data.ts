@@ -28,6 +28,8 @@ const SLUGS: Record<string, string> = {
   "AI-ACT": "ai-act",
   EAA: "accessibilite-numerique",
   UBO: "registre-ubo",
+  "DORA-2025": "dora-resilience-numerique",
+  "PAYEQUITY-2026": "transparence-salariale",
 };
 
 export function loadNormes(): Norme[] {

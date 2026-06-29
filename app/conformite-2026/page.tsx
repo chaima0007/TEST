@@ -15,7 +15,7 @@ type Norme = {
   concerne: (p: Profil) => "oui" | "cascade" | "non";
 };
 
-type Profil = { tva: string; taille: string; secteur: string; donnees: string; ia: string; numerique_public: string };
+type Profil = { tva: string; taille: string; secteur: string; donnees: string; ia: string; numerique_public: string; secteur_financier: string };
 
 // taille en nombre d'employés (seuils simplifiés, croisés avec le CA dans les libellés)
 const TAILLES = [
@@ -103,15 +103,31 @@ const NORMES: Norme[] = [
     echeance: "Depuis le 28/06/2025",
     concerne: (p) => (p.numerique_public === "oui" ? "oui" : "non"),
   },
+  {
+    id: "dora",
+    nom: "DORA — résilience numérique (secteur financier)",
+    change: "Cadre de gestion du risque informatique (TIC), tests de résilience, notification des incidents majeurs et maîtrise des prestataires informatiques tiers.",
+    sanction: "Mesures et sanctions administratives (BNB/FSMA)",
+    echeance: "En application (17/01/2025)",
+    concerne: (p) => (p.secteur_financier === "oui" ? "oui" : "non"),
+  },
+  {
+    id: "transparence-salariale",
+    nom: "Transparence salariale (égalité F/H)",
+    change: "Fourchette de rémunération dès l'offre d'emploi, critères objectifs, droit à l'information ; reporting de l'écart salarial dès 100 travailleurs.",
+    sanction: "Selon transposition + évaluation conjointe si écart injustifié > 5 %",
+    echeance: "Transposition au plus tard le 07/06/2026",
+    concerne: (p) => (nEmp(p.taille) >= 100 ? "oui" : nEmp(p.taille) >= 1 ? "cascade" : "non"),
+  },
 ];
 
 export default function Conformite2026Page() {
-  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "" });
+  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "", secteur_financier: "" });
   const [res, setRes] = useState<{ directs: Norme[]; cascade: Norme[] } | null>(null);
   const [email, setEmail] = useState("");
   const [envoi, setEnvoi] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
-  const pret = p.tva && p.taille && p.secteur && p.donnees && p.ia && p.numerique_public;
+  const pret = p.tva && p.taille && p.secteur && p.donnees && p.ia && p.numerique_public && p.secteur_financier;
 
   async function envoyerLead() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
@@ -222,7 +238,7 @@ export default function Conformite2026Page() {
       {/* Simulateur */}
       <section className="py-16 px-6 max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold text-center">Suis-je concerné ?</h2>
-        <p className="text-slate-500 text-center mt-2 mb-8">4 questions, et vous savez exactement où vous en êtes.</p>
+        <p className="text-slate-500 text-center mt-2 mb-8">Quelques questions, et vous savez exactement où vous en êtes.</p>
 
         <div className="bg-white rounded-2xl border border-slate-200 p-7 space-y-7 shadow-sm">
           <Choix
@@ -249,6 +265,11 @@ export default function Conformite2026Page() {
           <Choix
             titre="6. Proposez-vous un site/service numérique au grand public (e-commerce, app) ?"
             cle="numerique_public"
+            options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
+          />
+          <Choix
+            titre="7. Êtes-vous une entité du secteur financier (banque, assurance, investissement, paiement, crypto) ?"
+            cle="secteur_financier"
             options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
           />
 
