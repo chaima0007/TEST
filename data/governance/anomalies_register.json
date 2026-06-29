@@ -30,8 +30,8 @@
       "nature": "provenance non conforme P-NO-MOTEUR-GENERALISTE",
       "ecart": "Données localisées via moteur généraliste Exa; les références légales pointent vers des instruments officiels (AR, lois) mais la consultation directe du portail canonique n'a pas pu être faite (proxy 403). À re-vérifier sur EUR-Lex/fgov.be/régional dès canal sanctionné.",
       "source_canonique": "EUR-Lex + portails .fgov.be / régionaux + Moniteur belge",
-      "action": "Canal de secours canonique validé le 2026-06-29 (P-RESILIENCE-RESEAU) : re-vérification possible par FETCH DIRECT des URL canoniques (EUR-Lex/.fgov.be/régionaux), sans moteur généraliste de découverte. Planifier la re-vérification fiche par fiche sur leurs URL officielles.",
-      "statut": "ouvert"
+      "action": "RÉSOLU (partiel) : 8 fiches re-vérifiées canoniquement par fetch d URL officielles le 2026-06-29 (pension_alimentaire_secal, changement_mention_sexe, regroupement_familial, procreation_medicalement_assistee, jury_assises, conge_deuil, reclassement_professionnel, medecine_travail). Sous-issue notaire.be -> ANO-006. funerailles_sepulture = domaine wallon officiel (PDF non re-lu en profondeur).",
+      "statut": "resolu"
     },
     {
       "id": "ANO-004",
@@ -50,6 +50,16 @@
       "nature": "obsolescence (site fermé/migré)",
       "ecart": "Le site phare.irisnet.be est FERMÉ et redirige: l'information handicap RBC est désormais sur handicap.brussels (aides/services) et sur le site de la COCOF (compétences PHARE, formulaires). Ne pas citer phare.irisnet.be comme source officielle en vigueur.",
       "source_canonique": "handicap.brussels + site COCOF",
+      "action": "à planifier (MAJ auto ou humaine)",
+      "statut": "ouvert"
+    },
+    {
+      "id": "ANO-006",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "Fiches changement_regime_matrimonial & emancipation — notaire.be typé 'officiel'",
+      "nature": "qualification de source (fédération pro vs législateur)",
+      "ecart": "notaire.be (Fédération du Notariat) n'est pas le législateur: au sens du §16, la source officielle doit être le texte canonique (Code civil sur ejustice / SPF Justice). Requalifier notaire.be en 'secondaire' et ajouter la source canonique (à vérifier sur ejustice: régimes matrimoniaux loi 22/07/2018; émancipation Code civil) avant de retirer notaire.be de tier1.",
+      "source_canonique": "ejustice.just.fgov.be (Code civil) + justice.belgium.be",
       "action": "à planifier (MAJ auto ou humaine)",
       "statut": "ouvert"
     }
