@@ -8,7 +8,30 @@ import BaseJuridiqueClient from "./BaseJuridiqueClient";
 // (domaine + questions) ; les réponses complètes vivent sur /loi/[domaine] (rapides).
 
 type FaitLeger = { id: string; question: string };
-type ModuleLeger = { module: string; titre: string; faits: FaitLeger[] };
+type ModuleLeger = { module: string; titre: string; theme: string; faits: FaitLeger[] };
+
+// Classement en grands thèmes (premier mot-clé trouvé dans le slug l'emporte).
+// Permet un filtre par thème côté client sans surcharger l'interface.
+const THEMES: [string, string[]][] = [
+  ["Logement & cadre de vie", ["bail", "logement", "colocation", "copropriete", "expulsion", "breyne", "marchand_de_sommeil", "occupation_sans_titre", "saisie_immobiliere", "urbanisme", "malfacons", "expropriation", "precompte", "achat_logement", "voisinage", "eau", "energie", "dechets"]],
+  ["Famille, couple & enfants", ["couple", "divorce", "filiation", "naissance", "adoption", "garde_enfants", "conge_maternite", "pension_alimentaire", "tutelle", "voyage_mineur", "enfants_places", "maltraitance", "violences_conjugales", "violences_sexuelles", "procreation", "famille", "aidant"]],
+  ["Décès, succession & fin de vie", ["deces", "succession", "testament", "donation", "fin_de_vie", "don_organes"]],
+  ["Travail & emploi", ["travail", "chomage", "licenciement", "premier_emploi", "job_etudiant", "conges_thematiques", "burnout", "accident_travail", "maladie_professionnelle", "incapacite", "statut_social_artiste", "fonction_publique", "independant", "harcelement", "discrimination", "sexisme", "benevolat", "titres_services"]],
+  ["Argent, impôts & dettes", ["banque", "credit", "surendettement", "saisies", "recouvrement", "impots", "epargne", "pension", "grapa", "revenu_integration", "allocations", "bourse", "service_bancaire", "aide_urgence"]],
+  ["Santé & handicap", ["sante", "assurance_maladie", "assurance_hospitalisation", "mutuelle", "dossier_medical", "drogues", "handicap", "soins", "aide_medicale", "ivg"]],
+  ["Justice & recours", ["justice", "aide_juridique", "casier", "mediation", "recours", "plaintes", "sanctions", "litiges", "legalisation", "protection_personne"]],
+  ["Mobilité & véhicule", ["permis_conduire", "voiture", "assurance_auto", "circulation", "transport", "mobilite", "accidents_route"]],
+  ["Consommation & arnaques", ["consommation", "produits_defectueux", "vices_caches", "telecom", "publicite", "voyage", "occasion", "fraude", "assurance"]],
+  ["Papiers, citoyenneté & Europe", ["etrangers", "nationalite", "citoyen", "vote", "equivalence", "transfrontalier", "europeen", "documents_identite", "changement_nom", "changement_mention_sexe", "adresse", "domiciliation", "gouvernement", "enseignement", "enfant"]],
+  ["Vie privée & numérique", ["vie_privee", "droit_image", "rgpd"]],
+];
+
+function themePour(slug: string): string {
+  for (const [nom, kws] of THEMES) {
+    for (const k of kws) if (slug.includes(k)) return nom;
+  }
+  return "Autres";
+}
 
 function chargerIndex(): ModuleLeger[] {
   const dir = path.join(process.cwd(), "data", "belgium");
@@ -26,6 +49,7 @@ function chargerIndex(): ModuleLeger[] {
         mods.push({
           module: d.module,
           titre: d.titre,
+          theme: themePour(d.module),
           faits: d.faits.map((x: { id: string; question: string }) => ({ id: x.id, question: x.question })),
         });
       }

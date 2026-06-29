@@ -7,7 +7,7 @@ import Link from "next/link";
 // Quand on tape une recherche : liste des questions correspondantes → lien vers /loi/[domaine]#id.
 
 type FaitLeger = { id: string; question: string };
-type ModuleLeger = { module: string; titre: string; faits: FaitLeger[] };
+type ModuleLeger = { module: string; titre: string; theme: string; faits: FaitLeger[] };
 
 function normaliser(s: string) {
   return s
@@ -18,12 +18,23 @@ function normaliser(s: string) {
 
 export default function BaseJuridiqueClient({ index }: { index: ModuleLeger[] }) {
   const [query, setQuery] = useState("");
+  const [theme, setTheme] = useState<string>("");
   const q = normaliser(query.trim());
+
+  // Liste des thèmes présents, avec leur nombre de domaines (ordre stable par fréquence).
+  const themes = (() => {
+    const compte = new Map<string, number>();
+    for (const m of index) compte.set(m.theme, (compte.get(m.theme) || 0) + 1);
+    return [...compte.entries()].sort((a, b) => b[1] - a[1]);
+  })();
+
+  // Filtrage par thème (appliqué aux deux vues).
+  const indexFiltre = theme ? index.filter((m) => m.theme === theme) : index;
 
   // Résultats de recherche (questions correspondantes) — plafonnés pour rester légers.
   const resultats: { module: string; titre: string; id: string; question: string }[] = [];
   if (q) {
-    for (const m of index) {
+    for (const m of indexFiltre) {
       for (const f of m.faits) {
         if (normaliser(f.question).includes(q)) {
           resultats.push({ module: m.module, titre: m.titre, id: f.id, question: f.question });
@@ -48,12 +59,45 @@ export default function BaseJuridiqueClient({ index }: { index: ModuleLeger[] })
           placeholder="Rechercher : « bail », « licenciement », « amende », « garde »…"
           className="w-full rounded-xl border border-slate-300 px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
-        {q && (
+
+        {/* Filtre par thème (chips) */}
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setTheme("")}
+            className={
+              "px-3 py-1.5 rounded-full text-sm font-medium border transition-colors " +
+              (theme === "" ? "bg-indigo-600 border-indigo-600 text-white" : "bg-white border-slate-300 text-slate-600 hover:border-indigo-400")
+            }
+          >
+            Tous les thèmes
+          </button>
+          {themes.map(([nom, n]) => (
+            <button
+              key={nom}
+              type="button"
+              onClick={() => setTheme(nom === theme ? "" : nom)}
+              className={
+                "px-3 py-1.5 rounded-full text-sm font-medium border transition-colors " +
+                (theme === nom ? "bg-indigo-600 border-indigo-600 text-white" : "bg-white border-slate-300 text-slate-600 hover:border-indigo-400")
+              }
+            >
+              {nom} <span className={theme === nom ? "text-indigo-100" : "text-slate-400"}>({n})</span>
+            </button>
+          ))}
+        </div>
+
+        {q ? (
           <p className="mt-2 text-sm text-slate-500" aria-live="polite">
             {resultats.length} question{resultats.length > 1 ? "s" : ""} pour « {query} »
+            {theme ? ` dans « ${theme} »` : ""}
             {resultats.length > MAX ? ` (les ${MAX} premières affichées)` : ""}.
           </p>
-        )}
+        ) : theme ? (
+          <p className="mt-2 text-sm text-slate-500" aria-live="polite">
+            {indexFiltre.length} domaine{indexFiltre.length > 1 ? "s" : ""} dans « {theme} ».
+          </p>
+        ) : null}
       </div>
 
       {/* Résultats de recherche */}
@@ -78,15 +122,16 @@ export default function BaseJuridiqueClient({ index }: { index: ModuleLeger[] })
           </p>
         )
       ) : (
-        /* Vue par défaut : grille des domaines (légère) */
+        /* Vue par défaut : grille des domaines (légère), filtrée par thème si choisi */
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {index.map((m) => (
+          {indexFiltre.map((m) => (
             <Link
               key={m.module}
               href={`/loi/${m.module}`}
               className="rounded-2xl border border-slate-200 p-5 hover:border-indigo-400 hover:shadow-sm transition-all"
             >
-              <h2 className="font-semibold text-slate-900">{m.titre}</h2>
+              <span className="text-xs font-medium text-indigo-600">{m.theme}</span>
+              <h2 className="font-semibold text-slate-900 mt-1">{m.titre}</h2>
               <p className="text-sm text-slate-500 mt-1">
                 {m.faits.length} réponse{m.faits.length > 1 ? "s" : ""} →
               </p>
