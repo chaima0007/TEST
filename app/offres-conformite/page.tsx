@@ -163,8 +163,8 @@ export default function OffresConformitePage() {
             Proposez Caelum à vos clients et offrez-leur une conformité suivie, sans charge supplémentaire pour votre
             cabinet. Programme partenaire dédié.
           </p>
-          <Link href="/contact" className="inline-block mt-4 text-sm font-semibold text-indigo-700 hover:text-indigo-900">
-            Devenir partenaire →
+          <Link href="/fiduciaires" className="inline-block mt-4 text-sm font-semibold text-indigo-700 hover:text-indigo-900">
+            Découvrir le programme partenaire →
           </Link>
         </div>
       </section>
