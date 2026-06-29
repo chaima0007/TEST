@@ -119,7 +119,7 @@
     {
       "id": "HAND-REGIONAL-001",
       "question": "Fédéral ou régional : à qui m'adresser selon le type d'aide liée au handicap ?",
-      "reponse": "Les compétences sont partagées entre le fédéral et les trois Régions. Au niveau FÉDÉRAL, la DG Personnes handicapées (handicap.belgium.be) gère la reconnaissance du handicap, les allocations de revenus (allocation de remplacement de revenus et allocation d'intégration), la carte de stationnement et divers avantages sociaux et fiscaux. Pour l'AIDE, l'ACCOMPAGNEMENT et les BUDGETS de soutien (aide matérielle, aménagements, services, budget personnel), c'est RÉGIONAL : en WALLONIE, l'AVIQ — Agence pour une Vie de Qualité (aviq.be) ; en FLANDRE, le VAPH — Vlaams Agentschap voor Personen met een Handicap (vaph.be), qui octroie des budgets et interventions et une aide directement accessible (RTH) ; à BRUXELLES, l'information sur l'offre d'aides et de services est centralisée sur handicap.brussels, le Service PHARE (COCOF) gérant notamment les aides à l'emploi, l'accès aux entreprises de travail adapté, aux centres de jour et aux logements adaptés (Iriscare intervient aussi) ; en COMMUNAUTÉ GERMANOPHONE (Ostbelgien), c'est la Dienststelle für selbstbestimmtes Leben (DSL) qui est compétente. Adressez-vous à l'organisme de votre région ou communauté de résidence.",
+      "reponse": "Les compétences sont partagées entre le fédéral et les trois Régions. Au niveau FÉDÉRAL, la DG Personnes handicapées (handicap.belgium.be) gère la reconnaissance du handicap, les allocations de revenus (allocation de remplacement de revenus et allocation d'intégration), la carte de stationnement et divers avantages sociaux et fiscaux. Pour l'AIDE, l'ACCOMPAGNEMENT et les BUDGETS de soutien (aide matérielle, aménagements, services, budget personnel), c'est RÉGIONAL : en WALLONIE, l'AVIQ — Agence pour une Vie de Qualité (aviq.be) ; en FLANDRE, le VAPH — Vlaams Agentschap voor Personen met een Handicap (vaph.be), qui octroie des budgets et interventions et une aide directement accessible (RTH) ; à BRUXELLES, l'information sur l'offre d'aides et de services est centralisée sur handicap.brussels, le Service PHARE (COCOF) gérant notamment les aides à l'emploi, l'accès aux entreprises de travail adapté, aux centres de jour et aux logements adaptés (Iriscare intervient aussi) ; en COMMUNAUTÉ GERMANOPHONE (Ostbelgien), la Dienststelle für selbstbestimmtes Leben (DSL) est l'organisme compétent pour l'aide et l'accompagnement au handicap, tandis que l'Arbeitsamt der Deutschsprachigen Gemeinschaft (ADG, www.adg.be) accompagne spécifiquement l'emploi des personnes en situation de handicap (conseil aux demandeurs d'emploi ayant un besoin de soutien et à leurs employeurs). Adressez-vous à l'organisme de votre région ou communauté de résidence.",
       "reference_legale": "Répartition des compétences : loi du 27 février 1987 relative aux allocations aux personnes handicapées (fédéral) ; décret de la Communauté flamande relatif au VAPH, Code wallon de l'action sociale et de la santé et décret de la Commission communautaire française (COCOF) relatif au Service PHARE (aides régionales)",
       "contacts": [
         {
@@ -153,6 +153,11 @@
           "type": "officiel",
           "url": "https://handicap.brussels/fr/",
           "intitule": "handicap.brussels — aides et services handicap en Région bruxelloise (Service PHARE / COCOF)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.adg.be/desktopdefault.aspx",
+          "intitule": "ADG (Arbeitsamt der Deutschsprachigen Gemeinschaft) — accompagnement à l'emploi des personnes en situation de handicap (Communauté germanophone)"
         }
       ],
       "date_verification": "2026-06-29"
