@@ -19,7 +19,7 @@ _Dernière mise à jour : 2026-06-28_
 ## La Loi Avec Moi (citoyens) — 71%
 `██████████████░░░░░░` 71%
 
-> **Point de sortie :** 96 modules / 305 réponses (couche UE + domaines sociaux/civils étendus), 100% lois + sources. Build OK (172 pages), audits verts.
+> **Point de sortie :** 99 modules / 317 réponses (couche UE + domaines sociaux/civils étendus), 100% lois + sources. Build OK (175 pages), audits verts.
 
 | Tâche | Avancement | Statut |
 |---|---|---|

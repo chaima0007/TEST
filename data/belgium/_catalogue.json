@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 96,
-    "faits": 305,
-    "sources_officielles": 455,
+    "modules": 99,
+    "faits": 317,
+    "sources_officielles": 467,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 83
+    "faits_avec_alerte_delai": 86
   },
   "modules": [
     {
@@ -298,6 +298,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "chomage_temporaire.json",
+      "module": "chomage_temporaire",
+      "titre": "Chômage temporaire",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "circulation.json",
       "module": "circulation",
       "titre": "Circulation routière — accident, constat, permis",
@@ -344,6 +356,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-28"
+    },
+    {
+      "fichier": "conge_maternite_naissance.json",
+      "module": "conge_maternite_naissance",
+      "titre": "Congé de maternité & congé de naissance",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "conges_thematiques.json",
@@ -668,6 +692,18 @@
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "grapa.json",
+      "module": "grapa",
+      "titre": "GRAPA — garantie de revenus aux personnes âgées",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "handicap.json",

@@ -1,0 +1,73 @@
+{
+  "module": "chomage_temporaire",
+  "titre": "Chômage temporaire",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage temporaire) ; loi du 3 juillet 1978 relative aux contrats de travail (suspension de l'exécution du contrat)",
+    "portee": "Travailleurs salariés dont le contrat est temporairement suspendu par l'employeur (force majeure ou raisons économiques)",
+    "source_officielle": "https://www.onem.be/employeurs/chomage-temporaire"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les modalités exactes dépendent du type de chômage temporaire ; voir l'ONEM et votre organisme de paiement.",
+  "faits": [
+    {
+      "id": "CHOMTEMP-001",
+      "question": "Qu'est-ce que le chômage temporaire ?",
+      "reponse": "Le chômage temporaire est une suspension provisoire (totale ou partielle) de l'exécution du contrat de travail par l'employeur, sans rupture du contrat. Pendant cette période, le travailleur peut en principe bénéficier d'une allocation de l'ONEM. Les deux cas principaux sont la force majeure et le manque de travail pour raisons économiques.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage temporaire)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/employeurs/chomage-temporaire",
+          "intitule": "ONEM — Chômage temporaire"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CHOMTEMP-002",
+      "question": "Chômage temporaire pour force majeure : c'est quoi ?",
+      "reponse": "La force majeure vise un événement soudain et imprévisible, indépendant de la volonté des parties, qui empêche temporairement la poursuite du travail. L'employeur doit en informer l'ONEM, qui contrôle si les conditions sont réunies. Le contrat n'est pas rompu : il reprend dès que la cause disparaît.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 (chômage temporaire pour force majeure) ; loi du 3 juillet 1978 (suspension du contrat)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/employeurs/chomage-temporaire/chomage-temporaire---force-majeure",
+          "intitule": "ONEM — Chômage temporaire pour force majeure"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CHOMTEMP-003",
+      "question": "Chômage temporaire pour raisons économiques : comment ça marche ?",
+      "reponse": "En cas de baisse temporaire d'activité due à des causes économiques, l'employeur peut suspendre totalement ou réduire le régime de travail. Il doit adresser une communication préalable à l'ONEM et notifier les travailleurs. Le manque de travail doit être réellement économique et temporaire ; il ne peut pas résulter d'une mauvaise gestion.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (suspension pour raisons économiques) ; arrêté royal du 25 novembre 1991",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/employeurs/chomage-temporaire/chomage-temporaire---procedure",
+          "intitule": "ONEM — Chômage temporaire (procédure)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CHOMTEMP-004",
+      "question": "Quelles démarches pour toucher l'allocation, et dans quel délai ?",
+      "reponse": "L'employeur effectue une déclaration électronique (DRS) à la sécurité sociale. Le travailleur introduit sa demande d'allocations via son organisme de paiement (CAPAC ou son syndicat) à l'aide de la carte C3.2. La demande doit parvenir au bureau du chômage au plus tard à la fin du deuxième mois qui suit celui de la mise en chômage temporaire.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 (demande d'allocations de chômage temporaire)",
+      "alerte_delai": "Demande d'allocations au plus tard à la fin du 2e mois suivant la mise en chômage temporaire.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/employeurs/chomage-temporaire/chomage-temporaire---procedure",
+          "intitule": "ONEM — Procédure et demande d'allocations"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

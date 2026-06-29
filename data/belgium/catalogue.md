@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**305 réponses · 96 modules · 455 sources officielles · 187 fiches avec contacts · 83 alertes de délai**
+**317 réponses · 99 modules · 467 sources officielles · 187 fiches avec contacts · 86 alertes de délai**
 
 ## Modules en ligne
 
@@ -32,10 +32,12 @@
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 3 | 6 | 3 | 0 |
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
 | Chômage & emploi | Chômage — droits, démarches et sanctions | 2 | 2 | 2 | 0 |
+| — | Chômage temporaire | 4 | 4 | 0 | 1 |
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
 | Citoyenneté | Droits et devoirs du citoyen | 4 | 7 | 3 | 2 |
 | Droits dans l'Union européenne | Citoyen européen — vivre, travailler, étudier dans l'UE | 2 | 4 | 2 | 0 |
 | Colocation | Colocation — bail commun & règles | 2 | 2 | 2 | 1 |
+| — | Congé de maternité & congé de naissance | 4 | 4 | 0 | 1 |
 | — | Congés thématiques & crédit-temps | 4 | 4 | 0 | 1 |
 | Consommation | Consommation — garanties, achats, arnaques | 3 | 5 | 1 | 1 |
 | Copropriété | Copropriété — vivre en appartement | 2 | 2 | 2 | 1 |
@@ -63,6 +65,7 @@
 | Fraude & sécurité numérique | Arnaques & fraude en ligne — réagir vite | 2 | 4 | 2 | 1 |
 | Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 2 | 3 | 2 | 0 |
 | Gouvernement & institutions | Gouvernement & institutions — comment la Belgique est gouvernée | 5 | 10 | 0 | 0 |
+| — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
 | Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 3 | 6 | 3 | 0 |
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 6 | 9 | 6 | 5 |
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 3 | 5 | 2 | 3 |
