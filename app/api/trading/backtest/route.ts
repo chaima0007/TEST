@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchMarketData } from "@/lib/trading/yahoo";
+import { getMarketData } from "@/lib/trading/datasource";
 import { backtest } from "@/lib/trading/backtest";
 import { DEFAULT_RISK } from "@/lib/trading/strategy";
 import type { Interval, Range } from "@/lib/trading/types";
@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const market = await fetchMarketData(symbol, interval, range);
+    const market = await getMarketData(symbol, interval, range);
     const result = backtest(symbol, market.candles, undefined, { ...DEFAULT_RISK, feePct });
     // On allège la réponse : pas besoin de toute la courbe d'equity côté liste.
     return NextResponse.json({

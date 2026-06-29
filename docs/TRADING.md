@@ -65,6 +65,8 @@ lib/trading/
   types.ts        Types partagés
   indicators.ts   SMA, EMA, RSI, ATR, VWAP, MACD, Bollinger, ADX, Stochastique, volume relatif
   yahoo.ts        Bougies OHLCV (API chart Yahoo Finance)
+  alpaca-data.ts  Source alternative : Alpaca Market Data
+  datasource.ts   Sélecteur de source (yahoo/alpaca) + repli automatique
   options.ts      Chaîne d'options + sélection du contrat
   strategy.ts     Indicateurs, signal multi-confluences, sizing, params de risque
   backtest.ts     Backtest avec gestion de position (TP1 partiel, break-even, trailing, garde-fous)
@@ -134,10 +136,24 @@ Exemple de cron (toutes les 5 min en séance US, lun-ven) :
 Sans clés, tout fonctionne en **dry-run** : le signal et le contrat sont calculés, l'ordre
 est simulé mais jamais envoyé.
 
+## Sources de données
+
+Le module sait lire deux fournisseurs, sélectionnés par `MARKET_DATA_PROVIDER` :
+
+- **`yahoo`** (défaut) — API publique Yahoo Finance, sans clé.
+- **`alpaca`** — Alpaca Market Data, avec les mêmes clés que l'exécution (flux IEX
+  gratuit par défaut, `sip` si abonnement).
+
+En mode `yahoo`, si l'appel échoue (par ex. hôte bloqué par une politique réseau)
+et que des clés Alpaca sont présentes, le module **bascule automatiquement** sur
+Alpaca. Pour forcer Alpaca : `MARKET_DATA_PROVIDER=alpaca`.
+
 ## Limites connues
 
 - **Réseau** : l'accès à `query1.finance.yahoo.com` doit être autorisé par votre
-  environnement. Certains réseaux (proxys d'entreprise, CI) le bloquent.
+  environnement. Certains réseaux (proxys d'entreprise, CI) le bloquent — utilisez
+  alors `MARKET_DATA_PROVIDER=alpaca`. Ne contournez pas une politique réseau via un
+  proxy public ou un VPN : vos clés API transiteraient par un tiers non fiable.
 - Le backtest est réalisé sur le **sous-jacent**. Le P&L réel d'une option dépend du delta,
   de la volatilité implicite et du theta, non modélisés ici — les résultats du backtest ne
   reflètent donc pas exactement le rendement d'une position en options.

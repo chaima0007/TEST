@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchMarketData } from "@/lib/trading/yahoo";
+import { getMarketData } from "@/lib/trading/datasource";
 import { generateSignal } from "@/lib/trading/strategy";
 import type { Interval, Range } from "@/lib/trading/types";
 
@@ -15,12 +15,13 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const market = await fetchMarketData(symbol, interval, range);
+    const market = await getMarketData(symbol, interval, range);
     const signal = generateSignal(symbol, market.candles);
     return NextResponse.json({
       symbol: market.symbol,
       currency: market.currency,
       exchange: market.exchange,
+      provider: market.provider,
       lastPrice: market.lastPrice,
       candleCount: market.candles.length,
       signal,

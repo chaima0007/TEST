@@ -9,7 +9,7 @@
 //   5. Envoie l'ordre au courtier (paper par défaut, dry-run sans clés).
 
 import type { Interval, Range, Signal } from "./types";
-import { fetchMarketData } from "./yahoo";
+import { getMarketData } from "./datasource";
 import { fetchOptionsChain, selectContract, type ContractSelection } from "./options";
 import { generateSignal, DEFAULT_PARAMS } from "./strategy";
 import { submitOrder, loadConfig, type OrderResult, type BrokerConfig } from "./broker";
@@ -59,7 +59,7 @@ export async function runBot(opts: BotOptions, cfg: BrokerConfig = loadConfig())
   const notes: string[] = [];
 
   // 1 + 2 — données et signal sur le sous-jacent.
-  const market = await fetchMarketData(symbol, interval, range);
+  const market = await getMarketData(symbol, interval, range);
   if (market.candles.length < DEFAULT_PARAMS.emaSlow + 2) {
     throw new Error(`Pas assez de bougies pour ${symbol} (${market.candles.length}).`);
   }
