@@ -59,6 +59,47 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PRECI-REGIONAL-001",
+      "question": "Quelle administration gère mon précompte immobilier selon ma région ?",
+      "reponse": "Le précompte immobilier est un impôt RÉGIONAL : l'administration compétente, les taux additionnels et les réductions (revenus modestes, enfants à charge, handicap…) dépendent de la région où se trouve le bien. En WALLONIE : le SPW Fiscalité (finances.wallonie.be). En FLANDRE : le Vlaamse Belastingdienst (onroerende voorheffing, via vlaanderen.be). À BRUXELLES : Bruxelles Fiscalité (fiscalite.brussels). Adressez vos questions, réclamations et demandes de réduction à l'administration fiscale de votre région.",
+      "reference_legale": "Compétence régionale du précompte immobilier : Code des impôts sur les revenus (régionalisé) et décret wallon (SPW Fiscalité) ; Vlaamse Codex Fiscaliteit (Vlaamse Belastingdienst) ; ordonnance bruxelloise relative à la fiscalité (Bruxelles Fiscalité)",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "précompte immobilier en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "onroerende voorheffing en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "précompte immobilier à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité — précompte immobilier (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaanderen — onroerende voorheffing (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité — précompte immobilier (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

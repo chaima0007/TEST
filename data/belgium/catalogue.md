@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**498 réponses · 151 modules · 712 sources officielles · 230 fiches avec contacts · 100 alertes de délai**
+**499 réponses · 151 modules · 715 sources officielles · 231 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -119,7 +119,7 @@
 | Permis unique (travailleur étranger) | Permis unique / autorisation de travail (travailleur non-EEE) | 4 | 5 | 3 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 3 | 6 | 3 | 1 |
 | — | Plainte contre la police (Comité P) | 3 | 3 | 0 | 0 |
-| — | Précompte immobilier | 3 | 4 | 0 | 1 |
+| — | Précompte immobilier | 4 | 7 | 1 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 2 | 3 | 2 | 0 |
 | Primes rénovation | Primes à la rénovation et à l'énergie (logement) | 1 | 3 | 1 | 1 |
 | Santé & famille | PMA — procréation médicalement assistée | 4 | 5 | 1 | 0 |
