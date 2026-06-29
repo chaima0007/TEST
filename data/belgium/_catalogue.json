@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 151,
-    "faits": 500,
-    "sources_officielles": 718,
-    "faits_avec_contacts": 232,
+    "faits": 502,
+    "sources_officielles": 724,
+    "faits_avec_contacts": 234,
     "faits_avec_alerte_delai": 100
   },
   "modules": [
@@ -675,9 +675,9 @@
       "titre": "Donations",
       "domaine": "—",
       "juridiction": "BE",
-      "faits": 4,
-      "sources_officielles": 6,
-      "faits_avec_contacts": 0,
+      "faits": 5,
+      "sources_officielles": 9,
+      "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
     },
@@ -1611,9 +1611,9 @@
       "titre": "Successions & héritage — accepter, renoncer, délais",
       "domaine": "Successions",
       "juridiction": "BE",
-      "faits": 4,
-      "sources_officielles": 8,
-      "faits_avec_contacts": 3,
+      "faits": 5,
+      "sources_officielles": 11,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
     },

@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**500 réponses · 151 modules · 718 sources officielles · 232 fiches avec contacts · 100 alertes de délai**
+**502 réponses · 151 modules · 724 sources officielles · 234 fiches avec contacts · 100 alertes de délai**
 
 ## Modules en ligne
 
@@ -63,7 +63,7 @@
 | Documents d'identité | Documents d'identité — carte, passeport, permis | 2 | 4 | 2 | 1 |
 | — | Domiciliation & changement d'adresse | 3 | 3 | 0 | 2 |
 | — | Don d'organes | 3 | 3 | 0 | 0 |
-| — | Donations | 4 | 6 | 0 | 0 |
+| — | Donations | 5 | 9 | 1 | 0 |
 | — | Dossier médical global (DMG) | 3 | 3 | 0 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |
@@ -141,7 +141,7 @@
 | Sexisme & espace public | Sexisme & harcèlement dans l'espace public | 2 | 4 | 2 | 0 |
 | — | Soins de santé à l'étranger (remboursement) | 3 | 3 | 0 | 1 |
 | — | Statut social de l'artiste (travail des arts) | 3 | 4 | 0 | 0 |
-| Successions | Successions & héritage — accepter, renoncer, délais | 4 | 8 | 3 | 2 |
+| Successions | Successions & héritage — accepter, renoncer, délais | 5 | 11 | 4 | 2 |
 | — | Succession internationale | 3 | 3 | 0 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 2 | 3 | 2 | 1 |

@@ -77,6 +77,47 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DON-DROITS-REGIONAL-001",
+      "question": "Quels droits de donation selon ma région ?",
+      "reponse": "Les DROITS DE DONATION sont un impôt RÉGIONAL : les tarifs (souvent réduits pour l'immobilier, parfois nuls pour certains dons mobiliers enregistrés) dépendent de la région de résidence fiscale du donateur. Administrations compétentes : SPW Fiscalité en WALLONIE, Vlaamse Belastingdienst (schenkbelasting) en FLANDRE, Bruxelles Fiscalité à BRUXELLES. L'enregistrement d'une donation (notamment immobilière) déclenche ces droits ; les règles civiles de la donation restent fédérales (Code civil).",
+      "reference_legale": "Compétence régionale : Code des droits d'enregistrement (donations, régionalisé) en Wallonie et à Bruxelles ; Vlaamse Codex Fiscaliteit (schenkbelasting) en Flandre — distinct du droit civil de la donation (Code civil, fédéral)",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "droits régionaux en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "erfbelasting / schenkbelasting en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "droits régionaux à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaamse Belastingdienst (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

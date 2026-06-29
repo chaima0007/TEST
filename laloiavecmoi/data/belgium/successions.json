@@ -108,6 +108,47 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "SUCC-DROITS-REGIONAL-001",
+      "question": "Qui fixe les droits de succession et combien vais-je payer ?",
+      "reponse": "Les DROITS DE SUCCESSION sont un impôt RÉGIONAL : les tarifs (selon le lien de parenté et la valeur) et les réductions varient fortement d'une région à l'autre. La région compétente est celle où le défunt a eu son domicile fiscal le plus longtemps durant les 5 dernières années. Administrations : SPW Fiscalité en WALLONIE, Vlaamse Belastingdienst (erfbelasting) en FLANDRE, Bruxelles Fiscalité à BRUXELLES. Une déclaration de succession doit être déposée dans les délais légaux. Le droit civil de l'héritage (qui hérite, réserve…) est lui FÉDÉRAL (Code civil).",
+      "reference_legale": "Compétence régionale : Code des droits de succession (régionalisé) en Wallonie et à Bruxelles ; Vlaamse Codex Fiscaliteit (erfbelasting) en Flandre — distinct du droit civil successoral (Code civil, fédéral)",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "droits régionaux en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "erfbelasting / schenkbelasting en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "droits régionaux à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaamse Belastingdienst (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }
