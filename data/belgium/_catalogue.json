@@ -2,10 +2,10 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 148,
-    "faits": 481,
-    "sources_officielles": 661,
-    "faits_avec_contacts": 213,
+    "modules": 149,
+    "faits": 484,
+    "sources_officielles": 668,
+    "faits_avec_contacts": 216,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -116,6 +116,18 @@
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 3,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "allocation_aide_personnes_agees.json",
+      "module": "allocation_aide_personnes_agees",
+      "titre": "Allocation pour l'aide aux personnes âgées (APA / THAB / Beihilfe für Betagte)",
+      "domaine": "Allocation pour l'aide aux personnes âgées",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "allocations_familiales.json",
@@ -952,7 +964,7 @@
       "domaine": "Handicap",
       "juridiction": "BE",
       "faits": 5,
-      "sources_officielles": 10,
+      "sources_officielles": 12,
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"

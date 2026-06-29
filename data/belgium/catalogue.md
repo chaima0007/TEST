@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**481 réponses · 148 modules · 661 sources officielles · 213 fiches avec contacts · 99 alertes de délai**
+**484 réponses · 149 modules · 668 sources officielles · 216 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -17,6 +17,7 @@
 | Accès à la justice | Aide juridique — un avocat (presque) gratuit | 2 | 3 | 2 | 1 |
 | — | Aide médicale urgente (CPAS) | 3 | 3 | 0 | 0 |
 | Aide sociale & urgence | Où aller quand ça va mal — faim, sans-abri, danger, sans papiers | 5 | 7 | 5 | 3 |
+| Allocation pour l'aide aux personnes âgées | Allocation pour l'aide aux personnes âgées (APA / THAB / Beihilfe für Betagte) | 3 | 5 | 3 | 0 |
 | Allocations familiales | Allocations familiales — qui, comment, combien | 2 | 3 | 1 | 1 |
 | Animaux | Animaux — bien-être, responsabilités, maltraitance | 3 | 5 | 2 | 1 |
 | Assurance véhicule | Assurance auto obligatoire (RC) | 2 | 3 | 2 | 0 |
@@ -86,7 +87,7 @@
 | Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 2 | 3 | 2 | 0 |
 | Gouvernement & institutions | Gouvernement & institutions — comment la Belgique est gouvernée | 5 | 10 | 0 | 0 |
 | — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
-| Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 5 | 10 | 5 | 0 |
+| Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 5 | 12 | 5 | 0 |
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 6 | 9 | 6 | 5 |
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 3 | 5 | 2 | 3 |
 | Maladie & incapacité | Maladie & incapacité de travail | 2 | 4 | 2 | 1 |
