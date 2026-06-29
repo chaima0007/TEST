@@ -115,6 +115,37 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "HAND-REGIONAL-001",
+      "question": "Fédéral ou régional : à qui m'adresser selon le type d'aide liée au handicap ?",
+      "reponse": "Les compétences sont partagées. Au niveau FÉDÉRAL, la DG Personnes handicapées (handicap.belgium.be) gère la reconnaissance du handicap, les allocations de revenus (allocation de remplacement de revenus et allocation d'intégration), la carte de stationnement et divers avantages sociaux et fiscaux. Pour l'AIDE, l'ACCOMPAGNEMENT et les BUDGETS de soutien (aide matérielle, aménagements, services, budget personnel), c'est RÉGIONAL : en Wallonie, l'AVIQ — Agence pour une Vie de Qualité (aviq.be) ; en Flandre, le VAPH — Vlaams Agentschap voor Personen met een Handicap (vaph.be), qui octroie des budgets et interventions et une aide directement accessible (RTH). À Bruxelles, d'autres organismes sont compétents (par ex. PHARE / service francophone). Adressez-vous à l'organisme de votre région de résidence.",
+      "reference_legale": "Répartition des compétences : loi du 27 février 1987 relative aux allocations aux personnes handicapées (fédéral) ; décret de la Communauté flamande relatif au VAPH et Code wallon de l'action sociale et de la santé (aides régionales)",
+      "contacts": [
+        {
+          "nom": "AVIQ (Wallonie)",
+          "lien": "https://www.aviq.be/fr",
+          "pour": "aide, accompagnement et budgets handicap en Wallonie"
+        },
+        {
+          "nom": "VAPH (Flandre)",
+          "lien": "https://www.vaph.be",
+          "pour": "budgets, interventions et aide directement accessible (RTH) en Flandre"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr",
+          "intitule": "AVIQ — Agence pour une Vie de Qualité (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vaph.be",
+          "intitule": "VAPH — Vlaams Agentschap voor Personen met een Handicap (Flandre)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

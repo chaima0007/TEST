@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 147,
-    "faits": 476,
-    "sources_officielles": 648,
-    "faits_avec_contacts": 208,
+    "faits": 477,
+    "sources_officielles": 650,
+    "faits_avec_contacts": 209,
     "faits_avec_alerte_delai": 98
   },
   "modules": [
@@ -939,9 +939,9 @@
       "titre": "Handicap — reconnaissance, allocations, carte de stationnement",
       "domaine": "Handicap",
       "juridiction": "BE",
-      "faits": 4,
-      "sources_officielles": 7,
-      "faits_avec_contacts": 4,
+      "faits": 5,
+      "sources_officielles": 9,
+      "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
     },
