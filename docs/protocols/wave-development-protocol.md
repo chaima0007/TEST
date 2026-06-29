@@ -476,6 +476,7 @@ python3 scripts/branch_guard.py --check --quiet
 2. Le canal de secours = **récupération directe d'URL canonique** via outil approuvé, pointé **uniquement** sur le portail officiel.
 3. **Provenance tracée honnêtement** : « donnée issue du portail canonique `<URL>`, relayée par `<canal de secours>` ».
 4. Échec du canal de secours / texte canonique indisponible → **SUSPENDRE + déclarer**, jamais fabriquer.
+5. **Vérification d'indisponibilité (acté 2026-06-29)** : un `NOT_FOUND`/`timeout` sur une **URL profonde devinée** ne vaut **PAS** « portail indisponible ». Tester la **racine du domaine** avant toute conclusion ; n'attribuer l'échec qu'au **chemin précis**, jamais au portail. *(Ex. : `handicap.belgium.be` vérifié ACTIF le 2026-06-29 — un sous-chemin erroné avait renvoyé NOT_FOUND ; le portail, lui, est opérationnel.)*
 
 *Vérifié opérationnel le 2026-06-29 : fetch direct `eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1760` → texte officiel CSDDD, version consolidée 18/03/2026 (cohérent avec plafond 3 % Omnibus I).*
 
