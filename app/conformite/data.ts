@@ -32,6 +32,10 @@ const SLUGS: Record<string, string> = {
   "PAYEQUITY-2026": "transparence-salariale",
   "DAC7-2024": "dac7-plateformes-numeriques",
   "PPWR-2026": "emballages-ppwr",
+  "DELAIS-PAIEMENT": "delais-paiement-b2b",
+  "CBAM-2026": "cbam-carbone",
+  "EUDR": "eudr-deforestation",
+  "AML-LBC": "anti-blanchiment",
 };
 
 export function loadNormes(): Norme[] {

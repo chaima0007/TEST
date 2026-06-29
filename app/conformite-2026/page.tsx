@@ -15,7 +15,7 @@ type Norme = {
   concerne: (p: Profil) => "oui" | "cascade" | "non";
 };
 
-type Profil = { tva: string; taille: string; secteur: string; donnees: string; ia: string; numerique_public: string; secteur_financier: string; plateforme: string; emballages: string };
+type Profil = { tva: string; taille: string; secteur: string; donnees: string; ia: string; numerique_public: string; secteur_financier: string; plateforme: string; emballages: string; import_produits: string };
 
 // taille en nombre d'employés (seuils simplifiés, croisés avec le CA dans les libellés)
 const TAILLES = [
@@ -135,15 +135,47 @@ const NORMES: Norme[] = [
     echeance: "À partir du 12/08/2026",
     concerne: (p) => (p.emballages === "oui" ? "oui" : "non"),
   },
+  {
+    id: "delais-paiement",
+    nom: "Délais de paiement B2B",
+    change: "Délai de paiement légal de 30 jours entre entreprises ; au-delà de 60 jours = en principe abusif.",
+    sanction: "Intérêts de retard + indemnité forfaitaire ; clause abusive écartée",
+    echeance: "En vigueur (01/02/2022)",
+    concerne: (p) => (p.tva === "oui" ? "oui" : "non"),
+  },
+  {
+    id: "cbam",
+    nom: "CBAM — ajustement carbone aux frontières",
+    change: "Importer acier, ciment, aluminium, engrais, électricité ou hydrogène = statut de déclarant MACF + déclaration des émissions.",
+    sanction: "Sanctions + blocage possible à l'importation",
+    echeance: "Régime définitif (01/01/2026)",
+    concerne: (p) => (p.import_produits === "oui" ? "oui" : "non"),
+  },
+  {
+    id: "eudr",
+    nom: "EUDR — déforestation importée",
+    change: "Mettre sur le marché bois, cacao, café, soja, caoutchouc, huile de palme, bovins = diligence raisonnée « zéro déforestation ».",
+    sanction: "Sanctions + interdiction de mise sur le marché",
+    echeance: "Application échelonnée",
+    concerne: (p) => (p.import_produits === "oui" ? "oui" : "non"),
+  },
+  {
+    id: "aml",
+    nom: "Anti-blanchiment (LBC/FT)",
+    change: "Vigilance client (KYC), conservation des données et déclaration des opérations suspectes à la CTIF.",
+    sanction: "Sanctions administratives (BNB/FSMA) et pénales",
+    echeance: "En vigueur",
+    concerne: (p) => (p.secteur_financier === "oui" ? "oui" : "non"),
+  },
 ];
 
 export default function Conformite2026Page() {
-  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "", secteur_financier: "", plateforme: "", emballages: "" });
+  const [p, setP] = useState<Profil>({ tva: "", taille: "", secteur: "", donnees: "", ia: "", numerique_public: "", secteur_financier: "", plateforme: "", emballages: "", import_produits: "" });
   const [res, setRes] = useState<{ directs: Norme[]; cascade: Norme[] } | null>(null);
   const [email, setEmail] = useState("");
   const [envoi, setEnvoi] = useState<"idle" | "envoi" | "ok" | "erreur">("idle");
 
-  const pret = p.tva && p.taille && p.secteur && p.donnees && p.ia && p.numerique_public && p.secteur_financier && p.plateforme && p.emballages;
+  const pret = p.tva && p.taille && p.secteur && p.donnees && p.ia && p.numerique_public && p.secteur_financier && p.plateforme && p.emballages && p.import_produits;
 
   async function envoyerLead() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
@@ -297,6 +329,11 @@ export default function Conformite2026Page() {
             titre="9. Mettez-vous sur le marché des produits emballés ou des emballages ?"
             cle="emballages"
             options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non" }]}
+          />
+          <Choix
+            titre="10. Importez-vous des marchandises carbone (acier, ciment, aluminium, engrais…) ou commercialisez-vous des produits à risque de déforestation (bois, cacao, café, soja…) ?"
+            cle="import_produits"
+            options={[{ id: "oui", label: "Oui" }, { id: "non", label: "Non / je ne sais pas" }]}
           />
 
           <button

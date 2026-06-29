@@ -311,6 +311,87 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DELAIS-PAIEMENT",
+      "norme": "Délais de paiement B2B (lutte contre le retard de paiement)",
+      "changement": "Entre entreprises, le délai de paiement légal est de 30 jours ; un délai plus long peut être convenu mais ne peut en principe pas dépasser 60 jours calendrier (durcissement depuis le 1er février 2022). Les clauses abusives peuvent être écartées par le juge.",
+      "concernes": "Toutes les entreprises qui facturent ou paient des fournisseurs (B2B). Impacte la trésorerie et les conditions générales de vente.",
+      "sanction": "Intérêts de retard légaux + indemnité forfaitaire de recouvrement ; clause de délai abusive réputée non écrite.",
+      "echeance": "En vigueur depuis le 01/02/2022.",
+      "reference_legale": "Loi du 14 août 2021 (retard de paiement dans les transactions commerciales) modifiant la loi du 2 août 2002",
+      "solution_caelum": "Audit des conditions générales et des contrats fournisseurs/clients, mise en conformité des délais (≤ 60 jours) et clauses d'intérêts/indemnité.",
+      "automatisation": "MOYENNE — modèles de CGV conformes + alertes sur les contrats à délai > 60 jours.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2021/08/14/2021032597/justel",
+          "intitule": "Justel — Loi du 14 août 2021"
+        },
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/nouvelles/communiques_de_presse/lutte_contre_le_retard_de_paiement_dans_les_transactions_0",
+          "intitule": "SPF Justice — Retard de paiement"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CBAM-2026",
+      "norme": "CBAM / MACF — mécanisme d'ajustement carbone aux frontières",
+      "changement": "Depuis le 1er janvier 2026, l'importation dans l'UE de certaines marchandises à forte intensité carbone (fer/acier, ciment, aluminium, engrais, électricité, hydrogène) est conditionnée au statut de « déclarant MACF autorisé », avec déclaration des émissions et restitution de certificats. La phase de simple rapportage trimestriel s'est terminée fin 2025.",
+      "concernes": "Les importateurs (dans l'UE) des marchandises listées à l'annexe I du règlement, au-delà d'un seuil de valeur par envoi.",
+      "sanction": "Sanctions en cas de défaut de déclaration ou de certificats ; blocage possible à l'importation (statut requis comme une licence).",
+      "echeance": "Régime définitif depuis le 01/01/2026 ; 1re déclaration annuelle (année 2026) au plus tard le 31/05/2027.",
+      "reference_legale": "Règlement (UE) 2023/956 du 10 mai 2023 (mécanisme d'ajustement carbone aux frontières, MACF/CBAM)",
+      "solution_caelum": "Identification des marchandises concernées, demande du statut de déclarant autorisé, mise en place du suivi des émissions et du calendrier déclaratif.",
+      "automatisation": "MOYENNE — détection des codes douaniers concernés + rappels d'échéances déclaratives.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=CELEX%3A32023R0956",
+          "intitule": "EUR-Lex — Règlement (UE) 2023/956 (CBAM)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EUDR",
+      "norme": "EUDR — règlement contre la déforestation importée",
+      "changement": "Les opérateurs et commerçants qui mettent sur le marché de l'UE (ou exportent) certains produits — bovins, cacao, café, palmier à huile, caoutchouc, soja et bois (et produits dérivés) — doivent exercer une diligence raisonnée « zéro déforestation » : informations de traçabilité (géolocalisation), évaluation/atténuation du risque et déclaration de diligence raisonnée.",
+      "concernes": "Importateurs, producteurs et commerçants de bois, cacao, café, soja, caoutchouc, huile de palme, bovins et produits dérivés. Allègements prévus pour les micro/petits opérateurs.",
+      "sanction": "Sanctions des autorités compétentes ; impossibilité de mettre le produit sur le marché si le risque n'est pas négligeable.",
+      "echeance": "Application échelonnée (règlement modifié par le règlement (UE) 2025/2650 — simplifications et calendrier).",
+      "reference_legale": "Règlement (UE) 2023/1115 (déforestation) — produits concernés à l'annexe I",
+      "solution_caelum": "Cartographie des produits concernés, mise en place du système de diligence raisonnée (traçabilité, évaluation du risque) et des déclarations.",
+      "automatisation": "MOYENNE — check-list de diligence + suivi documentaire ; l'analyse fournisseurs reste accompagnée.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX%3A32023R1115",
+          "intitule": "EUR-Lex — Règlement (UE) 2023/1115 (EUDR)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AML-LBC",
+      "norme": "Anti-blanchiment (LBC/FT)",
+      "changement": "Les « entités assujetties » doivent appliquer une vigilance à l'égard de leurs clients et opérations (identification, conservation des données), et déclarer les opérations suspectes à la CTIF. Au-delà du secteur financier, sont aussi visés notaires, experts-comptables, agents immobiliers et certains commerçants (paiements en espèces).",
+      "concernes": "Entités assujetties au sens de l'article 5 de la loi : banques, assurances, mais aussi professions non financières désignées (comptables, notaires, immobilier, etc.).",
+      "sanction": "Sanctions administratives des autorités de contrôle (BNB, FSMA…) ; sanctions pénales pour manquements graves.",
+      "echeance": "En vigueur.",
+      "reference_legale": "Loi du 18 septembre 2017 relative à la prévention du blanchiment de capitaux (LBC/FT)",
+      "solution_caelum": "Mise en place du dispositif de vigilance (KYC), des procédures internes, de la conservation des données et du canal de déclaration CTIF.",
+      "automatisation": "MOYENNE — modèles de procédures KYC + registre ; l'évaluation des risques reste accompagnée.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme",
+          "intitule": "FSMA — LBC/FT (loi du 18 septembre 2017)"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

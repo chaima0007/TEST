@@ -14,6 +14,10 @@
     "DORA-2025": "dora",
     "PAYEQUITY-2026": "transparence-salariale",
     "DAC7-2024": "dac7",
-    "PPWR-2026": "ppwr"
+    "PPWR-2026": "ppwr",
+    "DELAIS-PAIEMENT": "delais-paiement",
+    "CBAM-2026": "cbam",
+    "EUDR": "eudr",
+    "AML-LBC": "aml"
   }
 }
