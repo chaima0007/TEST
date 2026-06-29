@@ -75,9 +75,36 @@
           "type": "officiel",
           "url": "https://mobilite.wallonie.be/home/je-suis/un-citoyen/en-voiture/services-et-solutions/permis-de-conduire.html",
           "intitule": "Mobilité Wallonie — Permis de conduire"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaanderen — rijbewijs/examens (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://be.brussels/",
+          "intitule": "be.brussels — permis et examens (Bruxelles)"
         }
       ],
-      "date_verification": "2026-06-29"
+      "date_verification": "2026-06-29",
+      "contacts": [
+        {
+          "nom": "Mobilité Wallonie",
+          "lien": "https://mobilite.wallonie.be/",
+          "pour": "examens et auto-écoles en Wallonie"
+        },
+        {
+          "nom": "Vlaanderen — Mobiliteit (rijbewijs)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "examens et rijopleiding en Flandre"
+        },
+        {
+          "nom": "Région de Bruxelles-Capitale (mobilité)",
+          "lien": "https://be.brussels/",
+          "pour": "examens et auto-écoles à Bruxelles"
+        }
+      ]
     }
   ]
 }

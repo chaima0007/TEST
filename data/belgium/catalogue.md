@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**505 réponses · 151 modules · 733 sources officielles · 237 fiches avec contacts · 101 alertes de délai**
+**505 réponses · 151 modules · 735 sources officielles · 238 fiches avec contacts · 101 alertes de délai**
 
 ## Modules en ligne
 
@@ -115,7 +115,7 @@
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
 | Famille & argent | Pension alimentaire impayée — le SECAL | 4 | 5 | 2 | 0 |
 | — | Pension complémentaire (2e pilier) | 3 | 3 | 0 | 0 |
-| — | Permis de conduire | 4 | 6 | 0 | 1 |
+| — | Permis de conduire | 4 | 8 | 1 | 1 |
 | Permis unique (travailleur étranger) | Permis unique / autorisation de travail (travailleur non-EEE) | 4 | 5 | 3 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 3 | 6 | 3 | 1 |
 | — | Plainte contre la police (Comité P) | 3 | 3 | 0 | 0 |

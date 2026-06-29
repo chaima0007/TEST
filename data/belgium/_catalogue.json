@@ -4,8 +4,8 @@
   "totaux": {
     "modules": 151,
     "faits": 505,
-    "sources_officielles": 733,
-    "faits_avec_contacts": 237,
+    "sources_officielles": 735,
+    "faits_avec_contacts": 238,
     "faits_avec_alerte_delai": 101
   },
   "modules": [
@@ -1300,8 +1300,8 @@
       "domaine": "—",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 6,
-      "faits_avec_contacts": 0,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-29"
     },
