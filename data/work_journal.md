@@ -1,11 +1,27 @@
 # 🗂️ Mon carnet de bord — le travail réalisé
 
 *Généré depuis l'historique git (uniquement le travail concret, daté — aucun bavardage). Preuve fiable de ce qui a été mis en place et du temps pris.*
-### 📌 Total : 3083 réalisations concrètes enregistrées
+### 📌 Total : 3105 réalisations concrètes enregistrées
 
+
+## 2026-06-29
+**12 réalisations** · de **00:18** à **02:14** (fenêtre de travail : 1h56)
+
+- 🕒 00:18 — enrichissement fiches néerlandaises — Wonen aligné sur le Vlaams Woninghuurdecreet (waarborg 3 mois, durée 9 ans, indexation, qualité, EPC), Consumentenrecht (+crédit conso) et Juridische-hulp (+rechtsbijstand/documents); sources officielles vérifiées; build OK; TBA à jour
+- 🕒 00:24 — enrichissement fiche Familie — onderhoudsbijdrage (obligation d'entretien), DAVO (recouvrement + voorschot max €175/kind, source FOD Financiën vérifiée) et familiale bemiddeling (art. 1723 GerW); 6→9 fiches; build OK; TBA à jour
+- 🕒 00:34 — index de recherche /de-wet-met-mij/zoeken + centralisation des fiches (data/nl/fiches.ts = source unique, zéro duplication); 11 pages + hub + sitemap branchés dessus; build OK (164 pages); TBA à jour
+- 🕒 01:05 — +4 domaines citoyens sourcés — revenu d'intégration (CPAS, loi 26/05/2002), assurance maladie/mutualité (INAMI, loi coord. 14/07/1994), casier judiciaire (CIC art. 595-596), permis de conduire (AR 23/03/1998); 289 réponses, audits verts (0 vague, 0 source non-officielle); build OK (168 pages); catalogue + TBA à jour
+- 🕒 01:23 — +4 domaines citoyens — bail commercial (loi 30/04/1951), nationalité belge (Code 28/06/1984), donations (droits régionaux), congés thématiques & crédit-temps (ONEM); 305 réponses, audits verts; build OK (172 pages); catalogue + TBA à jour
+- 🕒 01:30 — +2 normes conformité — DORA (Règl. UE 2022/2554, secteur financier) et Transparence salariale (Dir. UE 2023/970); câblées base+map+simulateur (nouvelle Q secteur financier)+SEO; P-SYNC-NORMES vert; build OK (562 pages); TBA à jour
+- 🕒 01:39 — +3 domaines citoyens — GRAPA (loi 22/03/2001), congé maternité/naissance (loi 16/03/1971 + loi 03/07/1978), chômage temporaire (AR 25/11/1991); 317 réponses, audits verts; build OK (175 pages); catalogue + TBA à jour
+- 🕒 01:48 — +2 normes — DAC7 (Dir. UE 2021/514, plateformes) et PPWR (Règl. UE 2025/40, emballages); câblées base+map+simulateur (Q plateforme + Q emballages)+SEO; P-SYNC-NORMES vert (13 normes); build OK (564 pages); TBA à jour
+- 🕒 02:01 — +6 domaines citoyens — maladie professionnelle (Fedris, loi 3/06/1970), bail à ferme (loi 4/11/1969 + décret wallon), changement nom/prénom, occupation sans titre/squat (loi 18/10/2017), filiation/reconnaissance, tutelle des mineurs; 335 réponses, audits verts; build OK (181 pages); catalogue + TBA à jour
+- 🕒 02:06 — +4 domaines citoyens — aide médicale urgente (CPAS, AR 12/12/1996), expropriation (Const. art.16 + décret wallon), saisie immobilière (Code judiciaire 1560s.), précompte immobilier (CIR 1992, régional); 347 réponses, audits verts; build OK (185 pages); catalogue + TBA à jour
+- 🕒 02:09 — +4 domaines citoyens — accident de la route/usagers faibles (loi 21/11/1989 art.29bis), assurance hospitalisation (loi 4/04/2014), succession internationale (Règl. UE 650/2012), service bancaire de base (CDE livre VII); 359 réponses, audits verts; build OK (189 pages); catalogue + TBA à jour
+- 🕒 02:14 — +4 domaines citoyens — don d'organes (loi 13/06/1986), pension complémentaire 2e pilier (loi 28/04/2003), dossier médical global (INAMI), épargne-pension 3e pilier (CIR 1992); anti-doublon respecté (handicap/etrangers non dupliqués); 371 réponses, audits verts; build OK (193 pages)
 
 ## 2026-06-28
-**36 réalisations** · de **10:56** à **15:14** (fenêtre de travail : 4h18)
+**46 réalisations** · de **10:56** à **16:10** (fenêtre de travail : 5h14)
 
 - 🕒 10:56 — page « Conformité 2026 » + simulateur « Suis-je concerné ? » (6 normes post-Omnibus, effet cascade) + lien nav; TBA actualisé
 - 🕒 10:59 — recherche plein texte + filtre par domaine sur la base juridique (composant client) — UX 238 réponses; TBA actualisé
@@ -43,6 +59,16 @@
 - 🕒 15:08 — validation croisée base↔simulateur↔pages SEO — bloque toute désynchronisation des normes (corrige la cause racine signalée)
 - 🕒 15:11 — bouton Télécharger (.txt) sur chaque modèle de document — build vérifié; TBA modèles 85->95%
 - 🕒 15:14 — page 'Qui contacter' (/loi-avec-moi/contacts) — annuaire des services/numéros agrégé depuis la base + nav + sitemap; build vérifié
+- 🕒 15:17 — champ 'separation' sur normes_simulateur_map.json (garde incrémental) — flotte 51 protocoles 100% verte; rapports régénérés
+- 🕒 15:23 — couche internationale UE (+2 domaines: citoyen européen, litiges transfrontaliers) — 83 domaines/270 rép.; vérif sources approfondie (0 conflit/0 preuve faible) + cycle 1200 simulations (p95<111ms, 0% erreur)
+- 🕒 15:28 — renforcement UE (+module Recours européens SOLVIT/médiateur/pétition) — 84 domaines/272 rép.; + aide à la traduction accessible sur la base juridique (anti-doublon: bannière 14 langues déjà présente)
+- 🕒 15:29 — référence SOLVIT en directive concrète (2006/123/CE) — 100% lois concrètes rétabli
+- 🕒 15:31 — stratégie de lancement A→Z unifiée (consolide tout) — inventaire prêt/manquant + qui fait quoi + marketing + phases + checklist GO/NO-GO; déploiement gelé jusqu'à validation
+- 🕒 15:37 — pages légales (mentions, confidentialité RGPD, accessibilité) — placeholders pour l'identité éditeur (aucun nom personnel); sitemap + build vérifiés
+- 🕒 15:49 — La Loi Avec Moi utilise sa propre adresse (contact@laloiavecmoi.be) — l'e-mail Caelum reste exclusif à Caelum (jamais mélanger les projets)
+- 🕒 16:00 — kit de contenu prêt-à-poster (5 posts LinkedIn + 3 e-mails + FAQ) — faits sourcés, projets séparés, aucun prix inventé; TBA à jour
+- 🕒 16:05 — fiches néerlandaises Schulden + Geweld (collectieve schuldenregeling, slachtofferhulp 1712) — faits miroir des modules FR vérifiés, sources officielles NL; hub /de-wet-met-mij à 8 thèmes; build OK; TBA à jour
+- 🕒 16:10 — fiches néerlandaises Gezondheid (patiëntenrechten), Energie (règles flamandes VREG/Fluvius/LAC) et Ouderen (ouderenmis(be)handeling) — faits sourcés, régionalisation respectée; hub /de-wet-met-mij à 11 thèmes; build OK; TBA à jour
 
 ## 2026-06-27
 **99 réalisations** · de **00:28** à **23:20** (fenêtre de travail : 22h52)

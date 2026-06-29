@@ -1,8 +1,8 @@
 # Veille juridique — quoi revoir, et quand
 
-*Généré le 2026-06-28. Cadence de revue : 180 jours. L'agent signale ; la mise à jour se fait après vérification de la source officielle.*
+*Généré le 2026-06-29. Cadence de revue : 180 jours. L'agent signale ; la mise à jour se fait après vérification de la source officielle.*
 
-**Signaux suivis : 5 · fiches à revérifier (cadence dépassée) : 0/266**
+**Signaux suivis : 5 · fiches à revérifier (cadence dépassée) : 0/371**
 
 ## Signaux de changement à surveiller
 

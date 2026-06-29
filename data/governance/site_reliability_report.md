@@ -1,6 +1,6 @@
 # Audit de fiabilité — grand site (app/)
 
-*Généré le 2026-06-28. Mesure la présence et la qualité des sources citées dans les pages.*
+*Généré le 2026-06-29. Mesure la présence et la qualité des sources citées dans les pages.*
 
 **Liens sources : 9 · officiels : 5 (56%) · institutionnels : 0 · hors liste : 4**
 **Pages de contenu sans aucune source : 315**

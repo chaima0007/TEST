@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**371 réponses · 117 modules · 526 sources officielles · 187 fiches avec contacts · 90 alertes de délai**
+**371 réponses · 117 modules · 527 sources officielles · 187 fiches avec contacts · 90 alertes de délai**
 
 ## Modules en ligne
 
@@ -56,7 +56,7 @@
 | Divorce & séparation | Divorce & séparation | 2 | 4 | 2 | 0 |
 | Documents d'identité | Documents d'identité — carte, passeport, permis | 2 | 4 | 2 | 1 |
 | — | Don d'organes | 3 | 3 | 0 | 0 |
-| — | Donations | 4 | 3 | 0 | 0 |
+| — | Donations | 4 | 4 | 0 | 0 |
 | — | Dossier médical global (DMG) | 3 | 3 | 0 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |

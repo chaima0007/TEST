@@ -3,15 +3,21 @@
 _Généré le 2026-06-26 — registre contrôlé et auditable._
 
 ## ✅ Contrôles qualité
-- Savoirs enregistrés : **270**
+- Savoirs enregistrés : **375**
 - Sourcés : **100.0%** · Validés (source + réf + date) : **100.0%** · À jour (<365j) : **100.0%**
-- Certification système : **PASS** (sceau `474dcddec085941c…`)
+- Certification système : **PASS** (sceau `e7166dc562a806a4…`)
 
 ## ⚖️ Savoir juridique belge (sourcé officiellement)
 - ✅ **J'ai eu un accident au travail (ou sur le chemin) : que faire ?**  
   Réf : Loi du 10 avril 1971 sur les accidents du travail · sources off. : 2 · revu : 2026-06-27
 - ✅ **Ma maladie est liée à mon travail : ai-je droit à une indemnité ?**  
   Réf : Loi du 3 juin 1970 (lois coordonnées) relative à la prévention et à la réparation des maladies professionnelles · sources off. : 2 · revu : 2026-06-27
+- ✅ **Suis-je indemnisé si je suis renversé en tant que piéton ou cycliste ?**  
+  Réf : Loi du 21 novembre 1989, art. 29bis (indemnisation automatique des usagers faibles) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Et si le véhicule n'est pas assuré, pas identifié ou volé ?**  
+  Réf : Loi du 21 novembre 1989 (intervention du Fonds Commun de Garantie) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Dans quel délai dois-je agir ?**  
+  Réf : Loi du 21 novembre 1989 (délai d'introduction de la demande au Fonds) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Le compromis de vente, est-ce déjà un engagement définitif ?**  
   Réf : Code civil — formation et effets de la vente (le compromis lie les parties) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Que fait le notaire et dans quel délai signe-t-on l'acte ?**  
@@ -32,6 +38,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire — aide juridique de deuxième ligne (art. 508/1 et suivants) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment obtenir cet avocat, et quels documents apporter ?**  
   Réf : Code judiciaire — aide juridique (art. 508/1 et s.) et assistance judiciaire (art. 664 et s.) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Qu'est-ce que l'aide médicale urgente et qui y a droit ?**  
+  Réf : Loi du 8 juillet 1976 organique des CPAS, art. 57, §2 ; arrêté royal du 12 décembre 1996 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Que couvre-t-elle et qu'est-ce qui est exclu ?**  
+  Réf : Arrêté royal du 12 décembre 1996 (aide à caractère exclusivement médical) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment la demander ?**  
+  Réf : Loi du 8 juillet 1976 organique des CPAS, art. 57, §2 (procédure devant le CPAS) · sources off. : 1 · revu : 2026-06-29
 - ✅ **J'ai faim / je n'ai plus de quoi manger : où aller ?**  
   Réf : Loi organique des CPAS du 8 juillet 1976 — droit à l'aide sociale · sources off. : 1 · revu : 2026-06-26
 - ✅ **Je n'ai pas (ou plus) de logement : où aller ?**  
@@ -60,12 +72,32 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Décret wallon du 15 mars 2018 sur le bail d'habitation ; ordonnance bruxelloise relative au bail d'habitation ; Code flamand du logement · sources off. : 1 · revu : 2026-06-28
 - ✅ **J'ai un dégât des eaux ou un incendie : que faire ?**  
   Réf : Loi du 4 avril 2014 relative aux assurances (déclaration de sinistre et obligations) ; Code civil (responsabilité) · sources off. : 1 · revu : 2026-06-28
+- ✅ **Qu'est-ce qu'une assurance hospitalisation ?**  
+  Réf : Loi du 4 avril 2014 relative aux assurances (assurance hospitalisation) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles protections la loi me garantit-elle ?**  
+  Réf : Loi du 4 avril 2014 relative aux assurances (protection du preneur) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Je quitte mon employeur : que devient l'assurance collective ?**  
+  Réf : Loi du 4 avril 2014 relative aux assurances (droit à la poursuite individuelle) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Pourquoi dois-je m'affilier à une mutualité ?**  
+  Réf : Loi coordonnée du 14 juillet 1994 (assurance obligatoire soins de santé et indemnités) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Que rembourse l'assurance soins de santé ?**  
+  Réf : Loi coordonnée du 14 juillet 1994 (nomenclature des prestations de santé) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce que l'intervention majorée (BIM) ?**  
+  Réf : Loi coordonnée du 14 juillet 1994 (intervention majorée de l'assurance) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Je ne peux plus travailler pour raison médicale : ai-je droit à des indemnités ?**  
+  Réf : Loi coordonnée du 14 juillet 1994 (assurance indemnités) · sources off. : 2 · revu : 2026-06-29
 - ✅ **Quelle assurance est obligatoire pour un véhicule ?**  
   Réf : Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs · sources off. : 2 · revu : 2026-06-26
 - ✅ **L'assurance RC familiale est-elle obligatoire, et à quoi sert-elle ?**  
   Réf : Loi du 4 avril 2014 relative aux assurances (assurance RC vie privée — facultative) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Litige avec mon assureur : que faire ?**  
   Réf : Loi du 4 avril 2014 relative aux assurances ; règlement extrajudiciaire des litiges · sources off. : 1 · revu : 2026-06-26
+- ✅ **Qu'est-ce qu'un bail à ferme et combien de temps dure-t-il ?**  
+  Réf : Loi du 4 novembre 1969 sur le bail à ferme, art. 4 (durée) ; décret wallon du 2 mai 2019 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Le fermage (le loyer) est-il plafonné ?**  
+  Réf : Décret wallon du 20 octobre 2016 limitant les fermages · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment le preneur (l'exploitant) est-il protégé ?**  
+  Réf : Loi du 4 novembre 1969 sur le bail à ferme (renouvellement, congé et droit de préemption) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Quelle est la durée par défaut d'un bail de résidence principale à Bruxelles ?**  
   Réf : Code bruxellois du Logement, titre XI · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quel est le montant maximum de la garantie locative à Bruxelles ?**  
@@ -84,6 +116,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code judiciaire (juge de paix) + Code bruxellois du Logement — expulsion ; trêve hivernale · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les obligations PEB (énergie) pour louer à Bruxelles ?**  
   Réf : Ordonnance bruxelloise (COBRACE) relative à la performance énergétique des bâtiments (Bruxelles Environnement) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Qu'est-ce qu'un bail commercial et quelle est sa durée minimale ?**  
+  Réf : Loi du 30 avril 1951 sur les baux commerciaux, art. 3 (durée minimale de 9 ans) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Ai-je droit au renouvellement de mon bail commercial ?**  
+  Réf : Loi du 30 avril 1951 sur les baux commerciaux, art. 14 (demande de renouvellement) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Le bailleur peut-il refuser le renouvellement, et ai-je droit à une indemnité ?**  
+  Réf : Loi du 30 avril 1951 sur les baux commerciaux, art. 25 (indemnité d'éviction) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Le loyer commercial peut-il être révisé en cours de bail ?**  
+  Réf : Loi du 30 avril 1951 sur les baux commerciaux, art. 6 (révision triennale du loyer) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Combien de temps dure un bail étudiant et quelle garantie peut-on me demander ?**  
   Réf : Décret wallon du 15 mars 2018 relatif au bail d'habitation (bail étudiant) ; ordonnance bruxelloise du 27 juillet 2017 · sources off. : 1 · revu : 2026-06-27
 - ✅ **Puis-je quitter mon kot avant la fin du bail ?**  
@@ -142,10 +182,32 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 4 août 1996 relative au bien-être des travailleurs — protection contre le harcèlement et les risques psychosociaux · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment mettre un frein avant de craquer, et où trouver du soutien ?**  
   Réf : Loi du 4 août 1996 relative au bien-être des travailleurs ; convention INAMI relative à l'accompagnement psychologique de première ligne · sources off. : 2 · revu : 2026-06-27
+- ✅ **Qu'est-ce que l'extrait de casier judiciaire et où le demander ?**  
+  Réf : Code d'instruction criminelle, art. 595 ; AR du 21 novembre 2016 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quels sont les différents modèles d'extrait (595, 596-1, 596-2) ?**  
+  Réf : Code d'instruction criminelle, art. 595 et 596, alinéas 1er et 2 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Je ne suis plus inscrit dans une commune belge : comment obtenir un extrait ?**  
+  Réf : AR du 21 novembre 2016 ; Code d'instruction criminelle, art. 595-596 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Une ancienne condamnation reste-t-elle toujours sur mon extrait ?**  
+  Réf : Code d'instruction criminelle (effacement) ; Code d'instruction criminelle, art. 621 et suivants (réhabilitation) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment changer de prénom ?**  
+  Réf : Loi du 18 juin 2018 (changement de prénom décentralisé vers les communes) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment changer de nom de famille ?**  
+  Réf : Loi du 15 mai 1987 relative aux noms et prénoms (changement de nom) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quels sont les effets du changement ?**  
+  Réf : Loi du 15 mai 1987 relative aux noms et prénoms (effets de la décision) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment demander mes allocations de chômage ?**  
   Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage · sources off. : 1 · revu : 2026-06-27
 - ✅ **Si je démissionne, ai-je quand même droit au chômage ?**  
   Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage volontaire et sanctions) · sources off. : 1 · revu : 2026-06-27
+- ✅ **Qu'est-ce que le chômage temporaire ?**  
+  Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage temporaire) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Chômage temporaire pour force majeure : c'est quoi ?**  
+  Réf : Arrêté royal du 25 novembre 1991 (chômage temporaire pour force majeure) ; loi du 3 juillet 1978 (suspension du contrat) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Chômage temporaire pour raisons économiques : comment ça marche ?**  
+  Réf : Loi du 3 juillet 1978 relative aux contrats de travail (suspension pour raisons économiques) ; arrêté royal du 25 novembre 1991 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles démarches pour toucher l'allocation, et dans quel délai ?**  
+  Réf : Arrêté royal du 25 novembre 1991 (demande d'allocations de chômage temporaire) · sources off. : 1 · revu : 2026-06-29
 - ✅ **J'ai un accident de la route : que dois-je faire ?**  
   Réf : Arrêté royal du 1er décembre 1975 portant règlement général sur la police de la circulation routière (code de la route) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Le constat à l'amiable, comment ça marche ?**  
@@ -162,10 +224,30 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles obligations administratives de base (domicile, déménagement) ?**  
   Réf : Loi du 19 juillet 1991 relative aux registres de la population (déclaration de changement de résidence) · sources off. : 2 · revu : 2026-06-26
+- ✅ **Puis-je aller vivre, travailler ou étudier dans un autre pays de l'UE ?**  
+  Réf : Directive 2004/38/CE relative au droit des citoyens de l'Union de circuler et séjourner librement · sources off. : 2 · revu : 2026-06-28
+- ✅ **Et ma santé et mes diplômes quand je bouge en Europe ?**  
+  Réf : Règlement (CE) 883/2004 (coordination de la sécurité sociale) ; Directive 2005/36/CE (reconnaissance des qualifications professionnelles) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Comment fonctionne un bail de colocation et la clause de solidarité ?**  
   Réf : Décret wallon du 15 mars 2018 (colocation) ; ordonnance bruxelloise relative au bail d'habitation · sources off. : 1 · revu : 2026-06-28
 - ✅ **Je veux quitter la colocation : quel préavis et quelles obligations ?**  
   Réf : Décret wallon du 15 mars 2018 (colocation — préavis et solidarité) ; ordonnance bruxelloise relative au bail d'habitation · sources off. : 1 · revu : 2026-06-28
+- ✅ **Combien de temps dure le repos de maternité ?**  
+  Réf : Loi du 16 mars 1971 sur le travail (protection de la maternité, repos de maternité) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Suis-je payée pendant mon repos de maternité ?**  
+  Réf : Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (assurance indemnités) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce que le congé de naissance (ex-congé de paternité) ?**  
+  Réf : Loi du 3 juillet 1978 relative aux contrats de travail, art. 30, §2 (congé de naissance) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Le congé de naissance est-il rémunéré ?**  
+  Réf : Loi du 3 juillet 1978 relative aux contrats de travail, art. 30, §2 ; indemnités selon la loi coordonnée du 14 juillet 1994 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce qu'un congé thématique ?**  
+  Réf : Loi de redressement du 22 janvier 1985 (interruption de carrière) et arrêtés d'exécution · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment fonctionne le congé parental ?**  
+  Réf : Arrêté royal du 29 octobre 1997 relatif à l'introduction d'un droit au congé parental · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment et quand demander l'allocation à l'ONEM ?**  
+  Réf : Arrêtés d'exécution de la loi de redressement du 22 janvier 1985 (procédure de demande des allocations d'interruption) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelle différence avec le crédit-temps ?**  
+  Réf : Convention collective de travail n° 103 du Conseil national du travail (crédit-temps) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Combien de temps suis-je couvert par la garantie ?**  
   Réf : Code de droit économique — garantie légale de conformité (2 ans) · sources off. : 2 · revu : 2026-06-26
 - ✅ **J'ai acheté en ligne et je regrette : puis-je annuler ?**  
@@ -220,6 +302,26 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment déclarer la perte de mon permis de conduire ou demander un passeport ?**  
   Réf : Arrêté royal du 23 mars 1998 relatif au permis de conduire ; réglementation sur les passeports (SPF Affaires étrangères) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Suis-je automatiquement donneur d'organes en Belgique ?**  
+  Réf : Loi du 13 juin 1986 (consentement présumé au prélèvement d'organes) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment exprimer mon choix (opposition ou accord) ?**  
+  Réf : Loi du 13 juin 1986 (enregistrement de la volonté) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles sont les garanties éthiques ?**  
+  Réf : Loi du 13 juin 1986 (gratuité, anonymat, respect du corps) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce qu'une donation et faut-il passer chez le notaire ?**  
+  Réf : Code civil — donations (forme de la donation) ; Code des droits d'enregistrement (enregistrement de la donation) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qui fixe les droits de donation et combien ?**  
+  Réf : Code des droits d'enregistrement, d'hypothèque et de greffe (droit de donation, compétence régionale) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Un don d'argent non enregistré est-il vraiment sans risque ?**  
+  Réf : Code des droits de succession (réintégration des donations non enregistrées dans la succession — période suspecte régionale) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles précautions prévoir lors d'une donation ?**  
+  Réf : Code civil — donations (modalités et conditions de la donation) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce que le dossier médical global (DMG) ?**  
+  Réf : Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (dossier médical global) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quels avantages financiers procure le DMG ?**  
+  Réf : Arrêté royal du 23 mars 1982 (réduction du ticket modérateur liée au DMG) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment l'ouvrir et combien de temps dure-t-il ?**  
+  Réf : Loi coordonnée du 14 juillet 1994 (gestion et prolongation du DMG) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Les drogues sont-elles interdites en Belgique, et que risque-t-on ?**  
   Réf : Loi du 24 février 1921 sur les stupéfiants ; législation et directives relatives au cannabis · sources off. : 1 · revu : 2026-06-26
 - ✅ **Et pour les mineurs ?**  
@@ -264,12 +366,24 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Article 24 de la Constitution ; décret 'Inscriptions' de la Fédération Wallonie-Bruxelles · sources off. : 1 · revu : 2026-06-26
 - ✅ **Un professeur (ou un adulte de l'école) a un comportement déplacé : comment réagir et signaler sans que ça se retourne contre moi/mon enfant ?**  
   Réf : Code pénal (infractions contre les mineurs) ; Code de l'Aide à la jeunesse (FW-B) ; missions du Délégué général aux droits de l'enfant ; Convention internationale des droits de l'enfant · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qu'est-ce que l'épargne-pension (3e pilier) ?**  
+  Réf : Code des impôts sur les revenus 1992 (réduction d'impôt pour épargne-pension) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Combien puis-je épargner et quel est l'avantage fiscal ?**  
+  Réf : Code des impôts sur les revenus 1992 (plafonds et taux de la réduction épargne-pension) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles conditions pour avoir droit à la réduction ?**  
+  Réf : Code des impôts sur les revenus 1992 (conditions de la réduction pour épargne-pension) · sources off. : 2 · revu : 2026-06-29
 - ✅ **Comment fonctionne un titre de séjour, et c'est quoi une « annexe » ?**  
   Réf : Loi du 15 décembre 1980 sur les étrangers ; arrêtés d'exécution · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment demander un regroupement familial ?**  
   Réf : Loi du 15 décembre 1980 — regroupement familial · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment demander l'asile (protection internationale) ?**  
   Réf : Loi du 15 décembre 1980 — protection internationale ; compétence du CGRA · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qu'est-ce que l'expropriation et comment suis-je protégé ?**  
+  Réf : Constitution, art. 16 (juste et préalable indemnité) ; Premier Protocole additionnel à la CEDH, art. 1er · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment se déroule la procédure ?**  
+  Réf : Décret wallon du 22 novembre 2018 relatif à la procédure d'expropriation (et équivalents régionaux) · sources off. : 1 · revu : 2026-06-29
+- ✅ **À quelle indemnité ai-je droit comme exproprié ?**  
+  Réf : Constitution, art. 16 (juste et préalable indemnité) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Mon propriétaire peut-il m'expulser du jour au lendemain ?**  
   Réf : Code judiciaire — procédure devant le juge de paix (art. 1344bis et suivants) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Peut-on m'expulser en plein hiver ?**  
@@ -284,6 +398,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — pension alimentaire après divorce (état de besoin) ; obligation d'entretien des enfants · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les grandes voies de divorce en Belgique ?**  
   Réf : Code civil — divorce par consentement mutuel et pour désunion irrémédiable ; Code judiciaire (tribunal de la famille) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Qu'est-ce que la reconnaissance d'un enfant ?**  
+  Réf : Code civil — établissement de la filiation par reconnaissance · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quand peut-on reconnaître un enfant ?**  
+  Réf : Code civil — conditions et consentements à la reconnaissance · sources off. : 1 · revu : 2026-06-29
+- ✅ **Que faire en l'absence d'accord sur la filiation ?**  
+  Réf : Code civil, art. 312 et suivants (établissement et contestation judiciaires de la filiation) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment exprimer à l'avance mes volontés de fin de vie ?**  
   Réf : Loi du 28 mai 2002 relative à l'euthanasie (déclaration anticipée) ; loi du 22 août 2002 relative aux droits du patient · sources off. : 2 · revu : 2026-06-27
 - ✅ **Puis-je refuser un traitement, et ai-je droit aux soins palliatifs ?**  
@@ -310,6 +430,14 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Constitution belge (art. 96 et 101 — nomination du gouvernement et confiance de la Chambre) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Quels sont les partis politiques, et pourquoi y en a-t-il autant ?**  
   Réf : Liberté d'association politique (Constitution) ; financement et reconnaissance des partis · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qu'est-ce que la GRAPA ?**  
+  Réf : Loi du 22 mars 2001 instituant la garantie de revenus aux personnes âgées · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles sont les conditions pour bénéficier de la GRAPA ?**  
+  Réf : Loi du 22 mars 2001, art. 3 et 4 (conditions d'âge, de résidence et examen des ressources) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Puis-je partir à l'étranger en touchant la GRAPA ?**  
+  Réf : Loi du 22 mars 2001 (condition de résidence effective) et son arrêté d'exécution · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment demander la GRAPA ?**  
+  Réf : Loi du 22 mars 2001 (procédure de demande et d'octroi) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Comment faire reconnaître mon handicap ?**  
   Réf : Loi du 27 février 1987 relative aux allocations aux personnes handicapées (reconnaissance et octroi de droits) · sources off. : 2 · revu : 2026-06-26
 - ✅ **À quelles allocations puis-je avoir droit ?**  
@@ -374,12 +502,22 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code d'instruction criminelle — accès au dossier / droits de la défense · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne une amende routière : perception immédiate, transaction, ordre de paiement ?**  
   Réf : Loi relative à la police de la circulation routière (perception immédiate, transaction, ordre de paiement) ; Code d'instruction criminelle · sources off. : 2 · revu : 2026-06-26
+- ✅ **J'ai un problème avec un vendeur d'un autre pays de l'UE : qui peut m'aider ?**  
+  Réf : Directive 2011/83/UE (droits des consommateurs) ; Directive 2013/11/UE (règlement extrajudiciaire des litiges) · sources off. : 1 · revu : 2026-06-28
+- ✅ **Comment régler un petit litige transfrontalier sans gros frais ?**  
+  Réf : Règlement (CE) 861/2007 instituant une procédure européenne de règlement des petits litiges · sources off. : 1 · revu : 2026-06-28
 - ✅ **Qui peut demander un logement social ?**  
   Réf : Réglementation régionale du logement social (Code wallon de l'Habitation durable ; Code bruxellois du Logement) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Comment s'inscrire pour un logement social ?**  
   Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — inscription auprès des sociétés de logement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?**  
   Réf : Code wallon de l'Habitation durable ; Code bruxellois du Logement — attribution et renouvellement des candidatures · sources off. : 2 · revu : 2026-06-26
+- ✅ **Qu'est-ce qu'une maladie professionnelle et qui l'indemnise ?**  
+  Réf : Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Comment introduire une demande de reconnaissance ?**  
+  Réf : Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — procédure de demande auprès de Fedris · sources off. : 1 · revu : 2026-06-29
+- ✅ **Que couvre l'indemnisation ?**  
+  Réf : Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — réparation des dommages · sources off. : 1 · revu : 2026-06-29
 - ✅ **Des défauts après mes travaux : que faire selon le moment ?**  
   Réf : Code civil — réception des travaux et vices ; responsabilité décennale (art. 1792 et 2270) · sources off. : 1 · revu : 2026-06-28
 - ✅ **L'entrepreneur doit-il être assuré, et est-ce utile pour moi ?**  
@@ -404,16 +542,50 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code civil — établissement de la filiation par reconnaissance · sources off. : 2 · revu : 2026-06-27
 - ✅ **Ai-je droit à un congé à la naissance de mon enfant ?**  
   Réf : Loi du 3 juillet 1978 relative aux contrats de travail — congé de naissance ; réglementation de l'assurance indemnités (INAMI/mutualité) · sources off. : 2 · revu : 2026-06-27
+- ✅ **Comment peut-on devenir belge sur demande ?**  
+  Réf : Code de la nationalité belge du 28 juin 1984 · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles conditions pour la déclaration d'acquisition de nationalité ?**  
+  Réf : Code de la nationalité belge du 28 juin 1984, art. 12bis (déclaration d'acquisition) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce que la naturalisation ?**  
+  Réf : Code de la nationalité belge du 28 juin 1984, art. 19 (naturalisation) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Combien coûte une demande de nationalité ?**  
+  Réf : Code des droits d'enregistrement, d'hypothèque et de greffe, art. 238 (droit d'enregistrement, montant indexé) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Mon bien est occupé sans mon accord : que puis-je faire ?**  
+  Réf : Loi du 18 octobre 2017 (procédure d'évacuation des occupants sans titre) · sources off. : 1 · revu : 2026-06-29
+- ✅ **L'occupant peut-il contester l'évacuation, et dans quel délai ?**  
+  Réf : Loi du 18 octobre 2017 (recours devant le juge de paix dans les 8 jours) · sources off. : 1 · revu : 2026-06-29
+- ✅ **L'occupation illégitime est-elle aussi une infraction ?**  
+  Réf : Code pénal, art. 442/1 (occupation illégitime du bien d'autrui) · sources off. : 1 · revu : 2026-06-29
 - ✅ **À quel âge puis-je prendre ma pension ?**  
   Réf : Arrêté royal n° 50 du 24 octobre 1967 relatif à la pension de retraite et de survie des travailleurs salariés ; législation sur l'âge légal de la pension · sources off. : 2 · revu : 2026-06-26
 - ✅ **Dois-je demander ma pension, et comment ?**  
   Réf : Arrêté royal du 21 décembre 1967 portant règlement général du régime de pension de retraite et de survie des travailleurs salariés (demande, examen du droit) · sources off. : 2 · revu : 2026-06-26
 - ✅ **Puis-je continuer à travailler une fois pensionné ?**  
   Réf : Arrêté royal relatif au cumul d'une pension avec une activité professionnelle (revenus autorisés) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Qu'est-ce que la pension complémentaire (2e pilier) ?**  
+  Réf : Loi du 28 avril 2003 relative aux pensions complémentaires (LPC) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Où puis-je voir ma pension complémentaire ?**  
+  Réf : Loi du 28 avril 2003 (information de l'affilié) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Que deviennent mes droits si je change d'employeur ?**  
+  Réf : Loi du 28 avril 2003 (réserves acquises et sortie) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qui peut obtenir un permis de conduire belge et où le demander ?**  
+  Réf : Arrêté royal du 23 mars 1998 relatif au permis de conduire, art. 3 · sources off. : 2 · revu : 2026-06-29
+- ✅ **Qu'est-ce que le permis de conduire provisoire (catégorie B) ?**  
+  Réf : Arrêté royal du 10 juillet 2006 relatif au permis de conduire pour les véhicules de catégorie B · sources off. : 1 · revu : 2026-06-29
+- ✅ **Combien de temps mon examen théorique reste-t-il valable ?**  
+  Réf : Arrêté royal du 23 mars 1998 relatif au permis de conduire (validité de l'examen théorique) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Les règles du permis sont-elles les mêmes dans toute la Belgique ?**  
+  Réf : Arrêté royal du 23 mars 1998 (cadre fédéral) ; compétences régionales en matière d'examens et d'auto-écoles · sources off. : 2 · revu : 2026-06-29
 - ✅ **Pour quels travaux ai-je besoin d'un permis d'urbanisme ?**  
   Réf : Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment demander un permis et que risque-t-on sans permis ?**  
   Réf : Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — procédure de demande et sanctions des infractions urbanistiques · sources off. : 1 · revu : 2026-06-27
+- ✅ **Qu'est-ce que le précompte immobilier ?**  
+  Réf : Code des impôts sur les revenus 1992 (précompte immobilier, compétence régionale) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Comment est-il calculé ?**  
+  Réf : Code des impôts sur les revenus 1992 (base = revenu cadastral indexé ; taux régional + additionnels) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Existe-t-il des réductions, et comment contester ?**  
+  Réf : Code des impôts sur les revenus 1992 (réductions du précompte immobilier et procédure de réclamation) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Je viens de finir mes études : quelle est la première chose à faire ?**  
   Réf : Arrêté royal du 25 novembre 1991 portant réglementation du chômage (stage d'insertion) · sources off. : 2 · revu : 2026-06-27
 - ✅ **Ai-je droit à une allocation après mes études ?**  
@@ -426,10 +598,30 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 22 mars 1995 instaurant des médiateurs fédéraux · sources off. : 2 · revu : 2026-06-27
 - ✅ **Comment faire annuler une décision administrative illégale ?**  
   Réf : Loi du 12 janvier 1973 (lois coordonnées) sur le Conseil d'État — recours en annulation · sources off. : 2 · revu : 2026-06-27
+- ✅ **Une administration d'un autre pays de l'UE ne respecte pas mes droits européens : que faire ?**  
+  Réf : Recommandation 2013/461/UE (réseau SOLVIT), fondée sur le droit du marché intérieur (notamment la directive 2006/123/CE relative aux services) · sources off. : 2 · revu : 2026-06-28
+- ✅ **Puis-je me plaindre des institutions européennes ou pétitionner ?**  
+  Réf : Règlement (UE, Euratom) 2021/1163 fixant le statut du Médiateur européen ; droit de pétition au Parlement européen (art. 227 TFUE) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Une société de recouvrement me réclame de l'argent : quels sont mes droits ?**  
   Réf : Loi du 4 mai 2023 (livre XIX « Dettes du consommateur » du Code de droit économique) · sources off. : 2 · revu : 2026-06-28
 - ✅ **Une société de recouvrement a-t-elle le droit de me harceler ?**  
   Réf : Loi du 4 mai 2023 (livre XIX du Code de droit économique) — pratiques interdites de recouvrement · sources off. : 1 · revu : 2026-06-28
+- ✅ **Qu'est-ce que le revenu d'intégration et où le demander ?**  
+  Réf : Loi du 26 mai 2002, art. 2 (droit à l'intégration sociale) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Quelles sont les conditions pour avoir droit au revenu d'intégration ?**  
+  Réf : Loi du 26 mai 2002, art. 3 (conditions d'octroi) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Comment le montant du revenu d'intégration est-il fixé ?**  
+  Réf : Loi du 26 mai 2002, art. 14 (montant, catégories) — montants indexés · sources off. : 2 · revu : 2026-06-29
+- ✅ **Qu'est-ce que le projet individualisé d'intégration sociale (PIIS) ?**  
+  Réf : Loi du 26 mai 2002, art. 11 et 13 (projet individualisé d'intégration sociale) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Le CPAS a refusé ma demande : puis-je contester ?**  
+  Réf : Loi du 26 mai 2002, art. 47 (recours devant le tribunal du travail) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Qu'est-ce qu'une saisie immobilière ?**  
+  Réf : Code judiciaire, art. 1494 (titre exécutoire) et art. 1560 et suivants (saisie-exécution immobilière) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles sont les grandes étapes ?**  
+  Réf : Code judiciaire, art. 1564 et suivants (commandement, saisie, nomination du notaire) · sources off. : 2 · revu : 2026-06-29
+- ✅ **Comment le débiteur saisi est-il protégé ?**  
+  Réf : Code judiciaire, art. 1580 et suivants (cahier des charges, contestations, ordre de répartition) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Un huissier peut-il prendre tout mon salaire ?**  
   Réf : Code judiciaire — quotité saisissable (art. 1409 et s.) et sommes insaisissables (art. 1410) · sources off. : 1 · revu : 2026-06-27
 - ✅ **Et l'argent sur mon compte en banque, est-il protégé ?**  
@@ -446,6 +638,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 22 août 2002 — accès au dossier du patient · sources off. : 2 · revu : 2026-06-26
 - ✅ **Un de mes droits de patient n'a pas été respecté : que faire ?**  
   Réf : Loi du 22 août 2002 — droit à la médiation (service de médiation Droits du patient) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Ai-je droit à un compte bancaire si une banque me refuse ?**  
+  Réf : Code de droit économique, livre VII, art. VII.57 et suivants (service bancaire de base) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quelles sont les conditions ?**  
+  Réf : Code de droit économique, livre VII (conditions d'accès au service bancaire de base) · sources off. : 1 · revu : 2026-06-29
+- ✅ **La banque peut-elle refuser ou supprimer ce service ?**  
+  Réf : Code de droit économique, livre VII (refus et résiliation du service bancaire de base) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Le harcèlement de rue / sexisme est-il puni par la loi ?**  
   Réf : Loi du 22 mai 2014 tendant à lutter contre le sexisme dans l'espace public · sources off. : 2 · revu : 2026-06-28
 - ✅ **Que faire si je subis (ou je vois) du harcèlement sexiste ?**  
@@ -458,6 +656,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Code des droits de succession (régionalisé) ; délais de déclaration et de paiement · sources off. : 1 · revu : 2026-06-26
 - ✅ **Comment renoncer concrètement à une succession ?**  
   Réf : Code civil — acte de renonciation à succession · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quelle loi s'applique à une succession avec un élément étranger ?**  
+  Réf : Règlement (UE) n° 650/2012 du 4 juillet 2012 (loi applicable à la succession) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qu'est-ce que le certificat successoral européen (CSE) ?**  
+  Réf : Règlement (UE) n° 650/2012 (certificat successoral européen) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Ce règlement s'applique-t-il partout ?**  
+  Réf : Règlement (UE) n° 650/2012 (champ d'application) · sources off. : 1 · revu : 2026-06-29
 - ✅ **Qu'est-ce que le règlement collectif de dettes et où le demander ?**  
   Réf : Code judiciaire, art. 1675/2 et suivants · sources off. : 1 · revu : 2026-06-26
 - ✅ **Quelles sont les conditions pour accéder au RCD ?**  
@@ -498,6 +702,12 @@ _Généré le 2026-06-26 — registre contrôlé et auditable._
   Réf : Loi du 12 avril 1965 concernant la protection de la rémunération des travailleurs ; loi du 3 juillet 1978 (contrats de travail) · sources off. : 1 · revu : 2026-06-26
 - ✅ **Je veux démissionner : quel préavis dois-je respecter ?**  
   Réf : Loi du 3 juillet 1978 relative aux contrats de travail (préavis du travailleur, contre-préavis) · sources off. : 1 · revu : 2026-06-26
+- ✅ **Quand un enfant mineur est-il mis sous tutelle ?**  
+  Réf : Code civil — ouverture de la tutelle des mineurs (art. 389 et suivants) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Qui désigne le tuteur ?**  
+  Réf : Code civil — désignation du tuteur (testament ou juge de paix) · sources off. : 1 · revu : 2026-06-29
+- ✅ **Quel est le rôle du tuteur et comment est-il contrôlé ?**  
+  Réf : Code civil — pouvoirs du tuteur et autorisations du juge de paix · sources off. : 1 · revu : 2026-06-29
 - ✅ **Quels sont mes droits sur mes données personnelles ?**  
   Réf : RGPD (règlement UE 2016/679) ; loi du 30 juillet 2018 · sources off. : 2 · revu : 2026-06-26
 - ✅ **Puis-je obtenir une copie des données qu'une organisation détient sur moi ?**  

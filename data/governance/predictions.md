@@ -1,6 +1,6 @@
 # 🔮 Agent prédictif — anticiper, pas subir
 
-*Généré le 2026-06-28. Anticipation par règles et signaux (pas de divination).*
+*Généré le 2026-06-29. Anticipation par règles et signaux (pas de divination).*
 
 ## 1. Maintenance prédictive — 0 fait(s) à revoir dans les 60 prochains jours
 - Aucun fait n'arrive à échéance bientôt ✅

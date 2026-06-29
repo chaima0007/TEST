@@ -1,6 +1,6 @@
 # Rapport de résilience — simulation des incidents
 
-*Généré le 2026-06-28. On rejoue chaque problème connu et on vérifie que la défense tient.*
+*Généré le 2026-06-29. On rejoue chaque problème connu et on vérifie que la défense tient.*
 
 **Incidents enregistrés : 3 · testés automatiquement : 3 · défenses tenues : 3/3**
 
@@ -18,7 +18,7 @@
 - **Solution :** Utiliser l'horloge réelle (date.today()) + une tolérance de 2 jours absorbant tout décalage de fuseau/horloge.
 - **Protocole :** P-SOURCES : la date de vérification suit l'horloge réelle, jamais une constante.
 - **Limite honnête :** Aucune ; entièrement sous contrôle.
-- **Simulation :** _today()=2026-06-28 (horloge réelle) ; un fait daté du jour passe — défense OK.
+- **Simulation :** _today()=2026-06-29 (horloge réelle) ; un fait daté du jour passe — défense OK.
 
 ## INC-003 — Domaine officiel hors liste blanche  ✅ défense OK
 - **Symptôme :** À chaque nouvelle niche, un domaine officiel réel (emploi.belgique.be, mobilit.belgium.be…) était signalé « officiel hors tier1 » et bloquait.

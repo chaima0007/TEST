@@ -1,7 +1,7 @@
 {
   "derniere_revue": "2026-06-26",
   "controles": {
-    "total_savoirs": 270,
+    "total_savoirs": 375,
     "pct_source": 100.0,
     "pct_valide": 100.0,
     "pct_frais": 100.0
@@ -27,6 +27,39 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "accidents_route_indemnisation",
+      "id": "ACCROUTE-001",
+      "sujet": "Suis-je indemnisé si je suis renversé en tant que piéton ou cycliste ?",
+      "reference_legale": "Loi du 21 novembre 1989, art. 29bis (indemnisation automatique des usagers faibles)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "accidents_route_indemnisation",
+      "id": "ACCROUTE-002",
+      "sujet": "Et si le véhicule n'est pas assuré, pas identifié ou volé ?",
+      "reference_legale": "Loi du 21 novembre 1989 (intervention du Fonds Commun de Garantie)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "accidents_route_indemnisation",
+      "id": "ACCROUTE-003",
+      "sujet": "Dans quel délai dois-je agir ?",
+      "reference_legale": "Loi du 21 novembre 1989 (délai d'introduction de la demande au Fonds)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -137,6 +170,39 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "aide_medicale_urgente",
+      "id": "AMU-001",
+      "sujet": "Qu'est-ce que l'aide médicale urgente et qui y a droit ?",
+      "reference_legale": "Loi du 8 juillet 1976 organique des CPAS, art. 57, §2 ; arrêté royal du 12 décembre 1996",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "aide_medicale_urgente",
+      "id": "AMU-002",
+      "sujet": "Que couvre-t-elle et qu'est-ce qui est exclu ?",
+      "reference_legale": "Arrêté royal du 12 décembre 1996 (aide à caractère exclusivement médical)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "aide_medicale_urgente",
+      "id": "AMU-003",
+      "sujet": "Comment la demander ?",
+      "reference_legale": "Loi du 8 juillet 1976 organique des CPAS, art. 57, §2 (procédure devant le CPAS)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -295,6 +361,83 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "assurance_hospitalisation",
+      "id": "HOSP-001",
+      "sujet": "Qu'est-ce qu'une assurance hospitalisation ?",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (assurance hospitalisation)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_hospitalisation",
+      "id": "HOSP-002",
+      "sujet": "Quelles protections la loi me garantit-elle ?",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (protection du preneur)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_hospitalisation",
+      "id": "HOSP-003",
+      "sujet": "Je quitte mon employeur : que devient l'assurance collective ?",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (droit à la poursuite individuelle)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_maladie_mutuelle",
+      "id": "AMM-001",
+      "sujet": "Pourquoi dois-je m'affilier à une mutualité ?",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (assurance obligatoire soins de santé et indemnités)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_maladie_mutuelle",
+      "id": "AMM-002",
+      "sujet": "Que rembourse l'assurance soins de santé ?",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (nomenclature des prestations de santé)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_maladie_mutuelle",
+      "id": "AMM-003",
+      "sujet": "Qu'est-ce que l'intervention majorée (BIM) ?",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (intervention majorée de l'assurance)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "assurance_maladie_mutuelle",
+      "id": "AMM-004",
+      "sujet": "Je ne peux plus travailler pour raison médicale : ai-je droit à des indemnités ?",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (assurance indemnités)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "assurances",
       "id": "ASSU-AUTO-001",
       "sujet": "Quelle assurance est obligatoire pour un véhicule ?",
@@ -324,6 +467,39 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_a_ferme",
+      "id": "FERME-001",
+      "sujet": "Qu'est-ce qu'un bail à ferme et combien de temps dure-t-il ?",
+      "reference_legale": "Loi du 4 novembre 1969 sur le bail à ferme, art. 4 (durée) ; décret wallon du 2 mai 2019",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_a_ferme",
+      "id": "FERME-002",
+      "sujet": "Le fermage (le loyer) est-il plafonné ?",
+      "reference_legale": "Décret wallon du 20 octobre 2016 limitant les fermages",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_a_ferme",
+      "id": "FERME-003",
+      "sujet": "Comment le preneur (l'exploitant) est-il protégé ?",
+      "reference_legale": "Loi du 4 novembre 1969 sur le bail à ferme (renouvellement, congé et droit de préemption)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -423,6 +599,50 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_commercial",
+      "id": "BAILCOM-001",
+      "sujet": "Qu'est-ce qu'un bail commercial et quelle est sa durée minimale ?",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 3 (durée minimale de 9 ans)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_commercial",
+      "id": "BAILCOM-002",
+      "sujet": "Ai-je droit au renouvellement de mon bail commercial ?",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 14 (demande de renouvellement)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_commercial",
+      "id": "BAILCOM-003",
+      "sujet": "Le bailleur peut-il refuser le renouvellement, et ai-je droit à une indemnité ?",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 25 (indemnité d'éviction)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "bail_commercial",
+      "id": "BAILCOM-004",
+      "sujet": "Le loyer commercial peut-il être révisé en cours de bail ?",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 6 (révision triennale du loyer)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -746,6 +966,83 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "casier_judiciaire",
+      "id": "CASIER-001",
+      "sujet": "Qu'est-ce que l'extrait de casier judiciaire et où le demander ?",
+      "reference_legale": "Code d'instruction criminelle, art. 595 ; AR du 21 novembre 2016",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "casier_judiciaire",
+      "id": "CASIER-002",
+      "sujet": "Quels sont les différents modèles d'extrait (595, 596-1, 596-2) ?",
+      "reference_legale": "Code d'instruction criminelle, art. 595 et 596, alinéas 1er et 2",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "casier_judiciaire",
+      "id": "CASIER-003",
+      "sujet": "Je ne suis plus inscrit dans une commune belge : comment obtenir un extrait ?",
+      "reference_legale": "AR du 21 novembre 2016 ; Code d'instruction criminelle, art. 595-596",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "casier_judiciaire",
+      "id": "CASIER-004",
+      "sujet": "Une ancienne condamnation reste-t-elle toujours sur mon extrait ?",
+      "reference_legale": "Code d'instruction criminelle (effacement) ; Code d'instruction criminelle, art. 621 et suivants (réhabilitation)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "changement_nom_prenom",
+      "id": "NOMPRE-001",
+      "sujet": "Comment changer de prénom ?",
+      "reference_legale": "Loi du 18 juin 2018 (changement de prénom décentralisé vers les communes)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "changement_nom_prenom",
+      "id": "NOMPRE-002",
+      "sujet": "Comment changer de nom de famille ?",
+      "reference_legale": "Loi du 15 mai 1987 relative aux noms et prénoms (changement de nom)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "changement_nom_prenom",
+      "id": "NOMPRE-003",
+      "sujet": "Quels sont les effets du changement ?",
+      "reference_legale": "Loi du 15 mai 1987 relative aux noms et prénoms (effets de la décision)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "chomage",
       "id": "CHOM-DEMANDE-001",
       "sujet": "Comment demander mes allocations de chômage ?",
@@ -764,6 +1061,50 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "chomage_temporaire",
+      "id": "CHOMTEMP-001",
+      "sujet": "Qu'est-ce que le chômage temporaire ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage temporaire)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "chomage_temporaire",
+      "id": "CHOMTEMP-002",
+      "sujet": "Chômage temporaire pour force majeure : c'est quoi ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 (chômage temporaire pour force majeure) ; loi du 3 juillet 1978 (suspension du contrat)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "chomage_temporaire",
+      "id": "CHOMTEMP-003",
+      "sujet": "Chômage temporaire pour raisons économiques : comment ça marche ?",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (suspension pour raisons économiques) ; arrêté royal du 25 novembre 1991",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "chomage_temporaire",
+      "id": "CHOMTEMP-004",
+      "sujet": "Quelles démarches pour toucher l'allocation, et dans quel délai ?",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 (demande d'allocations de chômage temporaire)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -856,6 +1197,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "citoyen_europeen",
+      "id": "UE-CIRCULATION-001",
+      "sujet": "Puis-je aller vivre, travailler ou étudier dans un autre pays de l'UE ?",
+      "reference_legale": "Directive 2004/38/CE relative au droit des citoyens de l'Union de circuler et séjourner librement",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "citoyen_europeen",
+      "id": "UE-SANTE-DIPLOMES-001",
+      "sujet": "Et ma santé et mes diplômes quand je bouge en Europe ?",
+      "reference_legale": "Règlement (CE) 883/2004 (coordination de la sécurité sociale) ; Directive 2005/36/CE (reconnaissance des qualifications professionnelles)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "colocation",
       "id": "COLOC-BAIL-001",
       "sujet": "Comment fonctionne un bail de colocation et la clause de solidarité ?",
@@ -874,6 +1237,94 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conge_maternite_naissance",
+      "id": "MATNAIS-001",
+      "sujet": "Combien de temps dure le repos de maternité ?",
+      "reference_legale": "Loi du 16 mars 1971 sur le travail (protection de la maternité, repos de maternité)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conge_maternite_naissance",
+      "id": "MATNAIS-002",
+      "sujet": "Suis-je payée pendant mon repos de maternité ?",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (assurance indemnités)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conge_maternite_naissance",
+      "id": "MATNAIS-003",
+      "sujet": "Qu'est-ce que le congé de naissance (ex-congé de paternité) ?",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail, art. 30, §2 (congé de naissance)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conge_maternite_naissance",
+      "id": "MATNAIS-004",
+      "sujet": "Le congé de naissance est-il rémunéré ?",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail, art. 30, §2 ; indemnités selon la loi coordonnée du 14 juillet 1994",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conges_thematiques",
+      "id": "CONGE-001",
+      "sujet": "Qu'est-ce qu'un congé thématique ?",
+      "reference_legale": "Loi de redressement du 22 janvier 1985 (interruption de carrière) et arrêtés d'exécution",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conges_thematiques",
+      "id": "CONGE-002",
+      "sujet": "Comment fonctionne le congé parental ?",
+      "reference_legale": "Arrêté royal du 29 octobre 1997 relatif à l'introduction d'un droit au congé parental",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conges_thematiques",
+      "id": "CONGE-003",
+      "sujet": "Comment et quand demander l'allocation à l'ONEM ?",
+      "reference_legale": "Arrêtés d'exécution de la loi de redressement du 22 janvier 1985 (procédure de demande des allocations d'interruption)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "conges_thematiques",
+      "id": "CONGE-004",
+      "sujet": "Quelle différence avec le crédit-temps ?",
+      "reference_legale": "Convention collective de travail n° 103 du Conseil national du travail (crédit-temps)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -1175,6 +1626,116 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "don_organes",
+      "id": "DONORG-001",
+      "sujet": "Suis-je automatiquement donneur d'organes en Belgique ?",
+      "reference_legale": "Loi du 13 juin 1986 (consentement présumé au prélèvement d'organes)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "don_organes",
+      "id": "DONORG-002",
+      "sujet": "Comment exprimer mon choix (opposition ou accord) ?",
+      "reference_legale": "Loi du 13 juin 1986 (enregistrement de la volonté)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "don_organes",
+      "id": "DONORG-003",
+      "sujet": "Quelles sont les garanties éthiques ?",
+      "reference_legale": "Loi du 13 juin 1986 (gratuité, anonymat, respect du corps)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "donation",
+      "id": "DON-001",
+      "sujet": "Qu'est-ce qu'une donation et faut-il passer chez le notaire ?",
+      "reference_legale": "Code civil — donations (forme de la donation) ; Code des droits d'enregistrement (enregistrement de la donation)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "donation",
+      "id": "DON-002",
+      "sujet": "Qui fixe les droits de donation et combien ?",
+      "reference_legale": "Code des droits d'enregistrement, d'hypothèque et de greffe (droit de donation, compétence régionale)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "donation",
+      "id": "DON-003",
+      "sujet": "Un don d'argent non enregistré est-il vraiment sans risque ?",
+      "reference_legale": "Code des droits de succession (réintégration des donations non enregistrées dans la succession — période suspecte régionale)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "donation",
+      "id": "DON-004",
+      "sujet": "Quelles précautions prévoir lors d'une donation ?",
+      "reference_legale": "Code civil — donations (modalités et conditions de la donation)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "dossier_medical_global",
+      "id": "DMG-001",
+      "sujet": "Qu'est-ce que le dossier médical global (DMG) ?",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (dossier médical global)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "dossier_medical_global",
+      "id": "DMG-002",
+      "sujet": "Quels avantages financiers procure le DMG ?",
+      "reference_legale": "Arrêté royal du 23 mars 1982 (réduction du ticket modérateur liée au DMG)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "dossier_medical_global",
+      "id": "DMG-003",
+      "sujet": "Comment l'ouvrir et combien de temps dure-t-il ?",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (gestion et prolongation du DMG)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "drogues_prevention",
       "id": "DROG-LOI-001",
       "sujet": "Les drogues sont-elles interdites en Belgique, et que risque-t-on ?",
@@ -1417,6 +1978,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "epargne_pension",
+      "id": "EPARGNE-001",
+      "sujet": "Qu'est-ce que l'épargne-pension (3e pilier) ?",
+      "reference_legale": "Code des impôts sur les revenus 1992 (réduction d'impôt pour épargne-pension)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "epargne_pension",
+      "id": "EPARGNE-002",
+      "sujet": "Combien puis-je épargner et quel est l'avantage fiscal ?",
+      "reference_legale": "Code des impôts sur les revenus 1992 (plafonds et taux de la réduction épargne-pension)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "epargne_pension",
+      "id": "EPARGNE-003",
+      "sujet": "Quelles conditions pour avoir droit à la réduction ?",
+      "reference_legale": "Code des impôts sur les revenus 1992 (conditions de la réduction pour épargne-pension)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "etrangers_sejour",
       "id": "ETR-TITRE-001",
       "sujet": "Comment fonctionne un titre de séjour, et c'est quoi une « annexe » ?",
@@ -1446,6 +2040,39 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "expropriation",
+      "id": "EXPRO-001",
+      "sujet": "Qu'est-ce que l'expropriation et comment suis-je protégé ?",
+      "reference_legale": "Constitution, art. 16 (juste et préalable indemnité) ; Premier Protocole additionnel à la CEDH, art. 1er",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "expropriation",
+      "id": "EXPRO-002",
+      "sujet": "Comment se déroule la procédure ?",
+      "reference_legale": "Décret wallon du 22 novembre 2018 relatif à la procédure d'expropriation (et équivalents régionaux)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "expropriation",
+      "id": "EXPRO-003",
+      "sujet": "À quelle indemnité ai-je droit comme exproprié ?",
+      "reference_legale": "Constitution, art. 16 (juste et préalable indemnité)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -1523,6 +2150,39 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "filiation_reconnaissance",
+      "id": "FILIA-001",
+      "sujet": "Qu'est-ce que la reconnaissance d'un enfant ?",
+      "reference_legale": "Code civil — établissement de la filiation par reconnaissance",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "filiation_reconnaissance",
+      "id": "FILIA-002",
+      "sujet": "Quand peut-on reconnaître un enfant ?",
+      "reference_legale": "Code civil — conditions et consentements à la reconnaissance",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "filiation_reconnaissance",
+      "id": "FILIA-003",
+      "sujet": "Que faire en l'absence d'accord sur la filiation ?",
+      "reference_legale": "Code civil, art. 312 et suivants (établissement et contestation judiciaires de la filiation)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -1666,6 +2326,50 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "grapa",
+      "id": "GRAPA-001",
+      "sujet": "Qu'est-ce que la GRAPA ?",
+      "reference_legale": "Loi du 22 mars 2001 instituant la garantie de revenus aux personnes âgées",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "grapa",
+      "id": "GRAPA-002",
+      "sujet": "Quelles sont les conditions pour bénéficier de la GRAPA ?",
+      "reference_legale": "Loi du 22 mars 2001, art. 3 et 4 (conditions d'âge, de résidence et examen des ressources)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "grapa",
+      "id": "GRAPA-003",
+      "sujet": "Puis-je partir à l'étranger en touchant la GRAPA ?",
+      "reference_legale": "Loi du 22 mars 2001 (condition de résidence effective) et son arrêté d'exécution",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "grapa",
+      "id": "GRAPA-004",
+      "sujet": "Comment demander la GRAPA ?",
+      "reference_legale": "Loi du 22 mars 2001 (procédure de demande et d'octroi)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -2022,6 +2726,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "litiges_transfrontaliers",
+      "id": "TRANSF-LITIGE-001",
+      "sujet": "J'ai un problème avec un vendeur d'un autre pays de l'UE : qui peut m'aider ?",
+      "reference_legale": "Directive 2011/83/UE (droits des consommateurs) ; Directive 2013/11/UE (règlement extrajudiciaire des litiges)",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "litiges_transfrontaliers",
+      "id": "TRANSF-PETITS-LITIGES-001",
+      "sujet": "Comment régler un petit litige transfrontalier sans gros frais ?",
+      "reference_legale": "Règlement (CE) 861/2007 instituant une procédure européenne de règlement des petits litiges",
+      "sources": 2,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "logement_social",
       "id": "LOGSOC-CONDITIONS-001",
       "sujet": "Qui peut demander un logement social ?",
@@ -2051,6 +2777,39 @@
       "sources": 2,
       "sources_officielles": 2,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "maladie_professionnelle",
+      "id": "MALPRO-001",
+      "sujet": "Qu'est-ce qu'une maladie professionnelle et qui l'indemnise ?",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "maladie_professionnelle",
+      "id": "MALPRO-002",
+      "sujet": "Comment introduire une demande de reconnaissance ?",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — procédure de demande auprès de Fedris",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "maladie_professionnelle",
+      "id": "MALPRO-003",
+      "sujet": "Que couvre l'indemnisation ?",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — réparation des dommages",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -2187,6 +2946,83 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "nationalite_belge",
+      "id": "NAT-001",
+      "sujet": "Comment peut-on devenir belge sur demande ?",
+      "reference_legale": "Code de la nationalité belge du 28 juin 1984",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "nationalite_belge",
+      "id": "NAT-002",
+      "sujet": "Quelles conditions pour la déclaration d'acquisition de nationalité ?",
+      "reference_legale": "Code de la nationalité belge du 28 juin 1984, art. 12bis (déclaration d'acquisition)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "nationalite_belge",
+      "id": "NAT-003",
+      "sujet": "Qu'est-ce que la naturalisation ?",
+      "reference_legale": "Code de la nationalité belge du 28 juin 1984, art. 19 (naturalisation)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "nationalite_belge",
+      "id": "NAT-004",
+      "sujet": "Combien coûte une demande de nationalité ?",
+      "reference_legale": "Code des droits d'enregistrement, d'hypothèque et de greffe, art. 238 (droit d'enregistrement, montant indexé)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "occupation_sans_titre",
+      "id": "OCCUP-001",
+      "sujet": "Mon bien est occupé sans mon accord : que puis-je faire ?",
+      "reference_legale": "Loi du 18 octobre 2017 (procédure d'évacuation des occupants sans titre)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "occupation_sans_titre",
+      "id": "OCCUP-002",
+      "sujet": "L'occupant peut-il contester l'évacuation, et dans quel délai ?",
+      "reference_legale": "Loi du 18 octobre 2017 (recours devant le juge de paix dans les 8 jours)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "occupation_sans_titre",
+      "id": "OCCUP-003",
+      "sujet": "L'occupation illégitime est-elle aussi une infraction ?",
+      "reference_legale": "Code pénal, art. 442/1 (occupation illégitime du bien d'autrui)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "pension",
       "id": "PEN-AGE-001",
       "sujet": "À quel âge puis-je prendre ma pension ?",
@@ -2220,6 +3056,83 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "pension_complementaire",
+      "id": "PENCOMP-001",
+      "sujet": "Qu'est-ce que la pension complémentaire (2e pilier) ?",
+      "reference_legale": "Loi du 28 avril 2003 relative aux pensions complémentaires (LPC)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "pension_complementaire",
+      "id": "PENCOMP-002",
+      "sujet": "Où puis-je voir ma pension complémentaire ?",
+      "reference_legale": "Loi du 28 avril 2003 (information de l'affilié)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "pension_complementaire",
+      "id": "PENCOMP-003",
+      "sujet": "Que deviennent mes droits si je change d'employeur ?",
+      "reference_legale": "Loi du 28 avril 2003 (réserves acquises et sortie)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "permis_conduire",
+      "id": "PERMIS-001",
+      "sujet": "Qui peut obtenir un permis de conduire belge et où le demander ?",
+      "reference_legale": "Arrêté royal du 23 mars 1998 relatif au permis de conduire, art. 3",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "permis_conduire",
+      "id": "PERMIS-002",
+      "sujet": "Qu'est-ce que le permis de conduire provisoire (catégorie B) ?",
+      "reference_legale": "Arrêté royal du 10 juillet 2006 relatif au permis de conduire pour les véhicules de catégorie B",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "permis_conduire",
+      "id": "PERMIS-003",
+      "sujet": "Combien de temps mon examen théorique reste-t-il valable ?",
+      "reference_legale": "Arrêté royal du 23 mars 1998 relatif au permis de conduire (validité de l'examen théorique)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "permis_conduire",
+      "id": "PERMIS-004",
+      "sujet": "Les règles du permis sont-elles les mêmes dans toute la Belgique ?",
+      "reference_legale": "Arrêté royal du 23 mars 1998 (cadre fédéral) ; compétences régionales en matière d'examens et d'auto-écoles",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "permis_urbanisme",
       "id": "URBA-PERMIS-001",
       "sujet": "Pour quels travaux ai-je besoin d'un permis d'urbanisme ?",
@@ -2238,6 +3151,39 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-27",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "precompte_immobilier",
+      "id": "PRECI-001",
+      "sujet": "Qu'est-ce que le précompte immobilier ?",
+      "reference_legale": "Code des impôts sur les revenus 1992 (précompte immobilier, compétence régionale)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "precompte_immobilier",
+      "id": "PRECI-002",
+      "sujet": "Comment est-il calculé ?",
+      "reference_legale": "Code des impôts sur les revenus 1992 (base = revenu cadastral indexé ; taux régional + additionnels)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "precompte_immobilier",
+      "id": "PRECI-003",
+      "sujet": "Existe-t-il des réductions, et comment contester ?",
+      "reference_legale": "Code des impôts sur les revenus 1992 (réductions du précompte immobilier et procédure de réclamation)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -2308,6 +3254,28 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "recours_europeens",
+      "id": "UEREC-SOLVIT-001",
+      "sujet": "Une administration d'un autre pays de l'UE ne respecte pas mes droits européens : que faire ?",
+      "reference_legale": "Recommandation 2013/461/UE (réseau SOLVIT), fondée sur le droit du marché intérieur (notamment la directive 2006/123/CE relative aux services)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "recours_europeens",
+      "id": "UEREC-MEDIATEUR-001",
+      "sujet": "Puis-je me plaindre des institutions européennes ou pétitionner ?",
+      "reference_legale": "Règlement (UE, Euratom) 2021/1163 fixant le statut du Médiateur européen ; droit de pétition au Parlement européen (art. 227 TFUE)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "recouvrement_amiable",
       "id": "RECOUV-DROITS-001",
       "sujet": "Une société de recouvrement me réclame de l'argent : quels sont mes droits ?",
@@ -2326,6 +3294,94 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-28",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "revenu_integration_cpas",
+      "id": "RIS-001",
+      "sujet": "Qu'est-ce que le revenu d'intégration et où le demander ?",
+      "reference_legale": "Loi du 26 mai 2002, art. 2 (droit à l'intégration sociale)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "revenu_integration_cpas",
+      "id": "RIS-002",
+      "sujet": "Quelles sont les conditions pour avoir droit au revenu d'intégration ?",
+      "reference_legale": "Loi du 26 mai 2002, art. 3 (conditions d'octroi)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "revenu_integration_cpas",
+      "id": "RIS-003",
+      "sujet": "Comment le montant du revenu d'intégration est-il fixé ?",
+      "reference_legale": "Loi du 26 mai 2002, art. 14 (montant, catégories) — montants indexés",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "revenu_integration_cpas",
+      "id": "RIS-004",
+      "sujet": "Qu'est-ce que le projet individualisé d'intégration sociale (PIIS) ?",
+      "reference_legale": "Loi du 26 mai 2002, art. 11 et 13 (projet individualisé d'intégration sociale)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "revenu_integration_cpas",
+      "id": "RIS-005",
+      "sujet": "Le CPAS a refusé ma demande : puis-je contester ?",
+      "reference_legale": "Loi du 26 mai 2002, art. 47 (recours devant le tribunal du travail)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "saisie_immobiliere",
+      "id": "SAISIM-001",
+      "sujet": "Qu'est-ce qu'une saisie immobilière ?",
+      "reference_legale": "Code judiciaire, art. 1494 (titre exécutoire) et art. 1560 et suivants (saisie-exécution immobilière)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "saisie_immobiliere",
+      "id": "SAISIM-002",
+      "sujet": "Quelles sont les grandes étapes ?",
+      "reference_legale": "Code judiciaire, art. 1564 et suivants (commandement, saisie, nomination du notaire)",
+      "sources": 2,
+      "sources_officielles": 2,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "saisie_immobiliere",
+      "id": "SAISIM-003",
+      "sujet": "Comment le débiteur saisi est-il protégé ?",
+      "reference_legale": "Code judiciaire, art. 1580 et suivants (cahier des charges, contestations, ordre de répartition)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -2418,6 +3474,39 @@
     },
     {
       "categorie": "droit_belge",
+      "module": "service_bancaire_base",
+      "id": "SBB-001",
+      "sujet": "Ai-je droit à un compte bancaire si une banque me refuse ?",
+      "reference_legale": "Code de droit économique, livre VII, art. VII.57 et suivants (service bancaire de base)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "service_bancaire_base",
+      "id": "SBB-002",
+      "sujet": "Quelles sont les conditions ?",
+      "reference_legale": "Code de droit économique, livre VII (conditions d'accès au service bancaire de base)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "service_bancaire_base",
+      "id": "SBB-003",
+      "sujet": "La banque peut-elle refuser ou supprimer ce service ?",
+      "reference_legale": "Code de droit économique, livre VII (refus et résiliation du service bancaire de base)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
       "module": "sexisme_espace_public",
       "id": "SEX-LOI-001",
       "sujet": "Le harcèlement de rue / sexisme est-il puni par la loi ?",
@@ -2480,6 +3569,39 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "successions_internationales",
+      "id": "SUCCINT-001",
+      "sujet": "Quelle loi s'applique à une succession avec un élément étranger ?",
+      "reference_legale": "Règlement (UE) n° 650/2012 du 4 juillet 2012 (loi applicable à la succession)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "successions_internationales",
+      "id": "SUCCINT-002",
+      "sujet": "Qu'est-ce que le certificat successoral européen (CSE) ?",
+      "reference_legale": "Règlement (UE) n° 650/2012 (certificat successoral européen)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "successions_internationales",
+      "id": "SUCCINT-003",
+      "sujet": "Ce règlement s'applique-t-il partout ?",
+      "reference_legale": "Règlement (UE) n° 650/2012 (champ d'application)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {
@@ -2700,6 +3822,39 @@
       "sources": 2,
       "sources_officielles": 1,
       "date_verification": "2026-06-26",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "tutelle_mineurs",
+      "id": "TUT-001",
+      "sujet": "Quand un enfant mineur est-il mis sous tutelle ?",
+      "reference_legale": "Code civil — ouverture de la tutelle des mineurs (art. 389 et suivants)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "tutelle_mineurs",
+      "id": "TUT-002",
+      "sujet": "Qui désigne le tuteur ?",
+      "reference_legale": "Code civil — désignation du tuteur (testament ou juge de paix)",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
+      "valide": true
+    },
+    {
+      "categorie": "droit_belge",
+      "module": "tutelle_mineurs",
+      "id": "TUT-003",
+      "sujet": "Quel est le rôle du tuteur et comment est-il contrôlé ?",
+      "reference_legale": "Code civil — pouvoirs du tuteur et autorisations du juge de paix",
+      "sources": 1,
+      "sources_officielles": 1,
+      "date_verification": "2026-06-29",
       "valide": true
     },
     {

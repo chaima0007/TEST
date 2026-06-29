@@ -367,5 +367,94 @@
     ],
     "violations": [],
     "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T02:14:13+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/accidents_route_indemnisation.json",
+      "la_loi_avec_moi/aide_medicale_urgente.json",
+      "la_loi_avec_moi/assurance_hospitalisation.json",
+      "la_loi_avec_moi/assurance_maladie_mutuelle.json",
+      "la_loi_avec_moi/bail_a_ferme.json",
+      "la_loi_avec_moi/bail_commercial.json",
+      "la_loi_avec_moi/casier_judiciaire.json",
+      "la_loi_avec_moi/changement_nom_prenom.json",
+      "la_loi_avec_moi/chomage_temporaire.json",
+      "la_loi_avec_moi/conge_maternite_naissance.json",
+      "la_loi_avec_moi/conges_thematiques.json",
+      "la_loi_avec_moi/don_organes.json",
+      "la_loi_avec_moi/donation.json",
+      "la_loi_avec_moi/dossier_medical_global.json",
+      "la_loi_avec_moi/epargne_pension.json",
+      "la_loi_avec_moi/expropriation.json",
+      "la_loi_avec_moi/filiation_reconnaissance.json",
+      "la_loi_avec_moi/grapa.json",
+      "la_loi_avec_moi/maladie_professionnelle.json",
+      "la_loi_avec_moi/nationalite_belge.json",
+      "la_loi_avec_moi/occupation_sans_titre.json",
+      "la_loi_avec_moi/pension_complementaire.json",
+      "la_loi_avec_moi/permis_conduire.json",
+      "la_loi_avec_moi/precompte_immobilier.json",
+      "la_loi_avec_moi/revenu_integration_cpas.json",
+      "la_loi_avec_moi/saisie_immobiliere.json",
+      "la_loi_avec_moi/service_bancaire_base.json",
+      "la_loi_avec_moi/successions_internationales.json",
+      "la_loi_avec_moi/tutelle_mineurs.json"
+    ],
+    "modifies": [
+      "caelum/conformite_entreprises.json",
+      "caelum/normes_simulateur_map.json"
+    ],
+    "violations": [
+      "[la_loi_avec_moi/donation.json] DON-004: aucune source officielle"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-29T02:14:13+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/accidents_route_indemnisation.json",
+      "la_loi_avec_moi/aide_medicale_urgente.json",
+      "la_loi_avec_moi/assurance_hospitalisation.json",
+      "la_loi_avec_moi/assurance_maladie_mutuelle.json",
+      "la_loi_avec_moi/bail_a_ferme.json",
+      "la_loi_avec_moi/bail_commercial.json",
+      "la_loi_avec_moi/casier_judiciaire.json",
+      "la_loi_avec_moi/changement_nom_prenom.json",
+      "la_loi_avec_moi/chomage_temporaire.json",
+      "la_loi_avec_moi/conge_maternite_naissance.json",
+      "la_loi_avec_moi/conges_thematiques.json",
+      "la_loi_avec_moi/don_organes.json",
+      "la_loi_avec_moi/donation.json",
+      "la_loi_avec_moi/dossier_medical_global.json",
+      "la_loi_avec_moi/epargne_pension.json",
+      "la_loi_avec_moi/expropriation.json",
+      "la_loi_avec_moi/filiation_reconnaissance.json",
+      "la_loi_avec_moi/grapa.json",
+      "la_loi_avec_moi/maladie_professionnelle.json",
+      "la_loi_avec_moi/nationalite_belge.json",
+      "la_loi_avec_moi/occupation_sans_titre.json",
+      "la_loi_avec_moi/pension_complementaire.json",
+      "la_loi_avec_moi/permis_conduire.json",
+      "la_loi_avec_moi/precompte_immobilier.json",
+      "la_loi_avec_moi/revenu_integration_cpas.json",
+      "la_loi_avec_moi/saisie_immobiliere.json",
+      "la_loi_avec_moi/service_bancaire_base.json",
+      "la_loi_avec_moi/successions_internationales.json",
+      "la_loi_avec_moi/tutelle_mineurs.json"
+    ],
+    "modifies": [
+      "caelum/conformite_entreprises.json",
+      "caelum/normes_simulateur_map.json"
+    ],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T02:14:13+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
   }
 ]

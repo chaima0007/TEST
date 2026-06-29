@@ -14,10 +14,10 @@
     {
       "plateforme": "La Loi Avec Moi",
       "dimension": "Modules juridiques",
-      "valeur": 85,
+      "valeur": 117,
       "seuil_alerte": 400,
       "seuil_critique": 600,
-      "pct_du_critique": 14.2,
+      "pct_du_critique": 19.5,
       "statut": "OK"
     },
     {
@@ -76,7 +76,7 @@
     {
       "plateforme": "Données",
       "proxy": "Plus gros JSON (coût de parse/SSR, lignes)",
-      "valeur": 265,
+      "valeur": 316,
       "statut": "OK"
     }
   ],
@@ -108,7 +108,7 @@
     "postes_a_completer": 10
   },
   "prevision": {
-    "note": "rythme observé : 3.1 nouveau(x) module(s)/passage sur 30 passages",
-    "runway_passages_avant_saturation_modules": 167
+    "note": "rythme observé : 4.4 nouveau(x) module(s)/passage sur 35 passages",
+    "runway_passages_avant_saturation_modules": 110
   }
 }

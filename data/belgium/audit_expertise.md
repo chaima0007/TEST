@@ -2,9 +2,9 @@
 
 *Auto-critique honnête de notre base de savoir, pour trouver nos faiblesses avant les autres. Revu le 2026-06-26.*
 
-## Note de qualité : 100/100 — EXCELLENT
+## Note de qualité : 93/100 — EXCELLENT
 - Couverture : 27/27 cases (100%)
-- Faits faiblement sourcés (<2 sources) : 0
+- Faits faiblement sourcés (<2 sources) : 7
 - Faits SANS source officielle : 0 ✓
 - Faits périmés (>365 j) : 0
 

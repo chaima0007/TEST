@@ -1,6 +1,6 @@
 # 🔎 Transparence des sources & décharge
 
-*Page de transparence honnête sur la fiabilité de nos sources. Total : 29 faits.*
+*Page de transparence honnête sur la fiabilité de nos sources. Total : 36 faits.*
 
 ## ⚖️ Décharge (avertissement légal)
 Les informations fournies sont d'ordre GÉNÉRAL et à but informatif. Elles sont basées sur des sources officielles à la date de revue indiquée, mais les lois et règlements évoluent. Elles ne constituent PAS un conseil juridique individualisé et n'engagent pas la responsabilité de l'éditeur. Pour toute décision, vérifiez la version en vigueur auprès des sources officielles et, si nécessaire, consultez un professionnel du droit (avocat, notaire) ou un service agréé.

@@ -4,7 +4,7 @@
   "totaux": {
     "modules": 117,
     "faits": 371,
-    "sources_officielles": 526,
+    "sources_officielles": 527,
     "faits_avec_contacts": 187,
     "faits_avec_alerte_delai": 90
   },
@@ -592,7 +592,7 @@
       "domaine": "—",
       "juridiction": "BE",
       "faits": 4,
-      "sources_officielles": 3,
+      "sources_officielles": 4,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"

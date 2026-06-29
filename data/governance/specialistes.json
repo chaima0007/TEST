@@ -1,7 +1,7 @@
 {
   "registre": "Spécialistes par catégorie",
   "but": "Un assistant guidé par domaine pour aider chacun à faire valoir ses droits.",
-  "genere_le": "2026-06-28",
+  "genere_le": "2026-06-29",
   "principe_honnete": "Assistants guidés (contenu vérifié + contacts), pas des avocats.",
   "specialistes": [
     {
@@ -35,6 +35,21 @@
         }
       ],
       "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ACCIDENTS-ROUTE-INDEMNISATION",
+      "titre": "Spécialiste — Accident de la route — indemnisation",
+      "domaine": "Accident de la route — indemnisation",
+      "module": "accidents_route_indemnisation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « accident de la route — indemnisation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Suis-je indemnisé si je suis renversé en tant que piéton ou cycliste ?",
+        "Et si le véhicule n'est pas assuré, pas identifié ou volé ?",
+        "Dans quel délai dois-je agir ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -171,6 +186,21 @@
         }
       ],
       "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-AIDE-MEDICALE-URGENTE",
+      "titre": "Spécialiste — Aide médicale urgente (CPAS)",
+      "domaine": "Aide médicale urgente (CPAS)",
+      "module": "aide_medicale_urgente",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « aide médicale urgente (cpas) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que l'aide médicale urgente et qui y a droit ?",
+        "Que couvre-t-elle et qu'est-ce qui est exclu ?",
+        "Comment la demander ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -335,6 +365,37 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-ASSURANCE-HOSPITALISATION",
+      "titre": "Spécialiste — Assurance hospitalisation",
+      "domaine": "Assurance hospitalisation",
+      "module": "assurance_hospitalisation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « assurance hospitalisation », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'une assurance hospitalisation ?",
+        "Quelles protections la loi me garantit-elle ?",
+        "Je quitte mon employeur : que devient l'assurance collective ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-ASSURANCE-MALADIE-MUTUELLE",
+      "titre": "Spécialiste — Assurance maladie & mutualité",
+      "domaine": "Assurance maladie & mutualité",
+      "module": "assurance_maladie_mutuelle",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « assurance maladie & mutualité », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Pourquoi dois-je m'affilier à une mutualité ?",
+        "Que rembourse l'assurance soins de santé ?",
+        "Qu'est-ce que l'intervention majorée (BIM) ?",
+        "Je ne peux plus travailler pour raison médicale : ai-je droit à des indemnités ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-ASSURANCES",
       "titre": "Spécialiste — Assurances",
       "domaine": "Assurances",
@@ -361,6 +422,21 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-BAIL-A-FERME",
+      "titre": "Spécialiste — Bail à ferme (location de biens agricoles)",
+      "domaine": "Bail à ferme (location de biens agricoles)",
+      "module": "bail_a_ferme",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « bail à ferme (location de biens agricoles) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'un bail à ferme et combien de temps dure-t-il ?",
+        "Le fermage (le loyer) est-il plafonné ?",
+        "Comment le preneur (l'exploitant) est-il protégé ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-BAIL-RESIDENCE-PRINCIPALE-BRUXELLES",
       "titre": "Spécialiste — Bail de résidence principale — Région de Bruxelles-Capitale",
       "domaine": "Bail de résidence principale — Région de Bruxelles-Capitale",
@@ -379,6 +455,22 @@
       ],
       "contacts_cles": [],
       "nb_reponses": 9,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-BAIL-COMMERCIAL",
+      "titre": "Spécialiste — Bail commercial",
+      "domaine": "Bail commercial",
+      "module": "bail_commercial",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « bail commercial », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'un bail commercial et quelle est sa durée minimale ?",
+        "Ai-je droit au renouvellement de mon bail commercial ?",
+        "Le bailleur peut-il refuser le renouvellement, et ai-je droit à une indemnité ?",
+        "Le loyer commercial peut-il être révisé en cours de bail ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -575,6 +667,37 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-CASIER-JUDICIAIRE",
+      "titre": "Spécialiste — Extrait de casier judiciaire",
+      "domaine": "Extrait de casier judiciaire",
+      "module": "casier_judiciaire",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « extrait de casier judiciaire », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que l'extrait de casier judiciaire et où le demander ?",
+        "Quels sont les différents modèles d'extrait (595, 596-1, 596-2) ?",
+        "Je ne suis plus inscrit dans une commune belge : comment obtenir un extrait ?",
+        "Une ancienne condamnation reste-t-elle toujours sur mon extrait ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CHANGEMENT-NOM-PRENOM",
+      "titre": "Spécialiste — Changement de nom ou de prénom",
+      "domaine": "Changement de nom ou de prénom",
+      "module": "changement_nom_prenom",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « changement de nom ou de prénom », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment changer de prénom ?",
+        "Comment changer de nom de famille ?",
+        "Quels sont les effets du changement ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-CHOMAGE",
       "titre": "Spécialiste — Chômage & emploi",
       "domaine": "Chômage & emploi",
@@ -605,6 +728,22 @@
         }
       ],
       "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CHOMAGE-TEMPORAIRE",
+      "titre": "Spécialiste — Chômage temporaire",
+      "domaine": "Chômage temporaire",
+      "module": "chomage_temporaire",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « chômage temporaire », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que le chômage temporaire ?",
+        "Chômage temporaire pour force majeure : c'est quoi ?",
+        "Chômage temporaire pour raisons économiques : comment ça marche ?",
+        "Quelles démarches pour toucher l'allocation, et dans quel délai ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -666,6 +805,40 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-CITOYEN-EUROPEEN",
+      "titre": "Spécialiste — Droits dans l'Union européenne",
+      "domaine": "Droits dans l'Union européenne",
+      "module": "citoyen_europeen",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « droits dans l'union européenne », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Puis-je aller vivre, travailler ou étudier dans un autre pays de l'UE ?",
+        "Et ma santé et mes diplômes quand je bouge en Europe ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Your Europe (Commission européenne)",
+          "lien": "https://europa.eu/youreurope/citizens/",
+          "pour": "droits de séjour, formalités par pays"
+        },
+        {
+          "nom": "Europe Direct",
+          "lien": "https://european-union.europa.eu/contact-eu_fr",
+          "pour": "questions sur vos droits dans l'UE"
+        },
+        {
+          "nom": "Votre mutualité",
+          "pour": "Carte européenne d'assurance maladie (CEAM)"
+        },
+        {
+          "nom": "Your Europe",
+          "lien": "https://europa.eu/youreurope/citizens/",
+          "pour": "reconnaissance des diplômes, sécurité sociale"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-COLOCATION",
       "titre": "Spécialiste — Colocation",
       "domaine": "Colocation",
@@ -694,6 +867,38 @@
         }
       ],
       "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CONGE-MATERNITE-NAISSANCE",
+      "titre": "Spécialiste — Congé de maternité & congé de naissance",
+      "domaine": "Congé de maternité & congé de naissance",
+      "module": "conge_maternite_naissance",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « congé de maternité & congé de naissance », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Combien de temps dure le repos de maternité ?",
+        "Suis-je payée pendant mon repos de maternité ?",
+        "Qu'est-ce que le congé de naissance (ex-congé de paternité) ?",
+        "Le congé de naissance est-il rémunéré ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-CONGES-THEMATIQUES",
+      "titre": "Spécialiste — Congés thématiques & crédit-temps",
+      "domaine": "Congés thématiques & crédit-temps",
+      "module": "conges_thematiques",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « congés thématiques & crédit-temps », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'un congé thématique ?",
+        "Comment fonctionne le congé parental ?",
+        "Comment et quand demander l'allocation à l'ONEM ?",
+        "Quelle différence avec le crédit-temps ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -984,6 +1189,52 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-DON-ORGANES",
+      "titre": "Spécialiste — Don d'organes",
+      "domaine": "Don d'organes",
+      "module": "don_organes",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « don d'organes », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Suis-je automatiquement donneur d'organes en Belgique ?",
+        "Comment exprimer mon choix (opposition ou accord) ?",
+        "Quelles sont les garanties éthiques ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-DONATION",
+      "titre": "Spécialiste — Donations",
+      "domaine": "Donations",
+      "module": "donation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « donations », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'une donation et faut-il passer chez le notaire ?",
+        "Qui fixe les droits de donation et combien ?",
+        "Un don d'argent non enregistré est-il vraiment sans risque ?",
+        "Quelles précautions prévoir lors d'une donation ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-DOSSIER-MEDICAL-GLOBAL",
+      "titre": "Spécialiste — Dossier médical global (DMG)",
+      "domaine": "Dossier médical global (DMG)",
+      "module": "dossier_medical_global",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « dossier médical global (dmg) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que le dossier médical global (DMG) ?",
+        "Quels avantages financiers procure le DMG ?",
+        "Comment l'ouvrir et combien de temps dure-t-il ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-DROGUES-PREVENTION",
       "titre": "Spécialiste — Drogues & prévention",
       "domaine": "Drogues & prévention",
@@ -1194,6 +1445,21 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-EPARGNE-PENSION",
+      "titre": "Spécialiste — Épargne-pension (3e pilier)",
+      "domaine": "Épargne-pension (3e pilier)",
+      "module": "epargne_pension",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « épargne-pension (3e pilier) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que l'épargne-pension (3e pilier) ?",
+        "Combien puis-je épargner et quel est l'avantage fiscal ?",
+        "Quelles conditions pour avoir droit à la réduction ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-ETRANGERS-SEJOUR",
       "titre": "Spécialiste — Étrangers & séjour",
       "domaine": "Étrangers & séjour",
@@ -1232,6 +1498,21 @@
           "pour": "accompagnement"
         }
       ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-EXPROPRIATION",
+      "titre": "Spécialiste — Expropriation pour cause d'utilité publique",
+      "domaine": "Expropriation pour cause d'utilité publique",
+      "module": "expropriation",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « expropriation pour cause d'utilité publique », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que l'expropriation et comment suis-je protégé ?",
+        "Comment se déroule la procédure ?",
+        "À quelle indemnité ai-je droit comme exproprié ?"
+      ],
+      "contacts_cles": [],
       "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
@@ -1312,6 +1593,21 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-FILIATION-RECONNAISSANCE",
+      "titre": "Spécialiste — Filiation & reconnaissance d'un enfant",
+      "domaine": "Filiation & reconnaissance d'un enfant",
+      "module": "filiation_reconnaissance",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « filiation & reconnaissance d'un enfant », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que la reconnaissance d'un enfant ?",
+        "Quand peut-on reconnaître un enfant ?",
+        "Que faire en l'absence d'accord sur la filiation ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -1457,6 +1753,22 @@
       ],
       "contacts_cles": [],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-GRAPA",
+      "titre": "Spécialiste — GRAPA — garantie de revenus aux personnes âgées",
+      "domaine": "GRAPA — garantie de revenus aux personnes âgées",
+      "module": "grapa",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « grapa — garantie de revenus aux personnes âgées », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que la GRAPA ?",
+        "Quelles sont les conditions pour bénéficier de la GRAPA ?",
+        "Puis-je partir à l'étranger en touchant la GRAPA ?",
+        "Comment demander la GRAPA ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -1722,6 +2034,31 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-LITIGES-TRANSFRONTALIERS",
+      "titre": "Spécialiste — Consommation transfrontalière (UE)",
+      "domaine": "Consommation transfrontalière (UE)",
+      "module": "litiges_transfrontaliers",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « consommation transfrontalière (ue) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "J'ai un problème avec un vendeur d'un autre pays de l'UE : qui peut m'aider ?",
+        "Comment régler un petit litige transfrontalier sans gros frais ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "Centre Européen des Consommateurs (CEC) Belgique",
+          "lien": "https://www.cecbelgique.be",
+          "pour": "litige avec un vendeur d'un autre pays de l'UE (gratuit)"
+        },
+        {
+          "nom": "Your Europe",
+          "lien": "https://europa.eu/youreurope/citizens/",
+          "pour": "procédure européenne des petits litiges"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-LOGEMENT-SOCIAL",
       "titre": "Spécialiste — Logement social",
       "domaine": "Logement social",
@@ -1739,6 +2076,21 @@
           "pour": "s'inscrire (gratuit)"
         }
       ],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-MALADIE-PROFESSIONNELLE",
+      "titre": "Spécialiste — Maladie professionnelle",
+      "domaine": "Maladie professionnelle",
+      "module": "maladie_professionnelle",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « maladie professionnelle », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'une maladie professionnelle et qui l'indemnise ?",
+        "Comment introduire une demande de reconnaissance ?",
+        "Que couvre l'indemnisation ?"
+      ],
+      "contacts_cles": [],
       "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
@@ -1908,6 +2260,37 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-NATIONALITE-BELGE",
+      "titre": "Spécialiste — Nationalité belge",
+      "domaine": "Nationalité belge",
+      "module": "nationalite_belge",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « nationalité belge », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Comment peut-on devenir belge sur demande ?",
+        "Quelles conditions pour la déclaration d'acquisition de nationalité ?",
+        "Qu'est-ce que la naturalisation ?",
+        "Combien coûte une demande de nationalité ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-OCCUPATION-SANS-TITRE",
+      "titre": "Spécialiste — Occupation sans titre d'un bien (squat)",
+      "domaine": "Occupation sans titre d'un bien (squat)",
+      "module": "occupation_sans_titre",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « occupation sans titre d'un bien (squat) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Mon bien est occupé sans mon accord : que puis-je faire ?",
+        "L'occupant peut-il contester l'évacuation, et dans quel délai ?",
+        "L'occupation illégitime est-elle aussi une infraction ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-PENSION",
       "titre": "Spécialiste — Pension & retraite",
       "domaine": "Pension & retraite",
@@ -1931,6 +2314,37 @@
         }
       ],
       "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-PENSION-COMPLEMENTAIRE",
+      "titre": "Spécialiste — Pension complémentaire (2e pilier)",
+      "domaine": "Pension complémentaire (2e pilier)",
+      "module": "pension_complementaire",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « pension complémentaire (2e pilier) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que la pension complémentaire (2e pilier) ?",
+        "Où puis-je voir ma pension complémentaire ?",
+        "Que deviennent mes droits si je change d'employeur ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-PERMIS-CONDUIRE",
+      "titre": "Spécialiste — Permis de conduire",
+      "domaine": "Permis de conduire",
+      "module": "permis_conduire",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « permis de conduire », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qui peut obtenir un permis de conduire belge et où le demander ?",
+        "Qu'est-ce que le permis de conduire provisoire (catégorie B) ?",
+        "Combien de temps mon examen théorique reste-t-il valable ?",
+        "Les règles du permis sont-elles les mêmes dans toute la Belgique ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 4,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -1958,6 +2372,21 @@
         }
       ],
       "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-PRECOMPTE-IMMOBILIER",
+      "titre": "Spécialiste — Précompte immobilier",
+      "domaine": "Précompte immobilier",
+      "module": "precompte_immobilier",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « précompte immobilier », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que le précompte immobilier ?",
+        "Comment est-il calculé ?",
+        "Existe-t-il des réductions, et comment contester ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -2058,6 +2487,41 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-RECOURS-EUROPEENS",
+      "titre": "Spécialiste — Recours dans l'Union européenne",
+      "domaine": "Recours dans l'Union européenne",
+      "module": "recours_europeens",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « recours dans l'union européenne », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Une administration d'un autre pays de l'UE ne respecte pas mes droits européens : que faire ?",
+        "Puis-je me plaindre des institutions européennes ou pétitionner ?"
+      ],
+      "contacts_cles": [
+        {
+          "nom": "SOLVIT",
+          "lien": "https://europa.eu/youreurope/citizens/national-contact-points/index_fr.htm",
+          "pour": "problème avec une administration d'un autre pays de l'UE (gratuit)"
+        },
+        {
+          "nom": "Your Europe",
+          "lien": "https://europa.eu/youreurope/citizens/",
+          "pour": "orientation sur vos droits européens"
+        },
+        {
+          "nom": "Médiateur européen",
+          "lien": "https://www.ombudsman.europa.eu/fr/home",
+          "pour": "mauvaise administration des institutions UE"
+        },
+        {
+          "nom": "Parlement européen — Pétitions",
+          "lien": "https://www.europarl.europa.eu/petitions/fr/home",
+          "pour": "déposer une pétition"
+        }
+      ],
+      "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-RECOUVREMENT-AMIABLE",
       "titre": "Spécialiste — Recouvrement de dettes",
       "domaine": "Recouvrement de dettes",
@@ -2084,6 +2548,38 @@
         }
       ],
       "nb_reponses": 2,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-REVENU-INTEGRATION-CPAS",
+      "titre": "Spécialiste — Revenu d'intégration & aide du CPAS",
+      "domaine": "Revenu d'intégration & aide du CPAS",
+      "module": "revenu_integration_cpas",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « revenu d'intégration & aide du cpas », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce que le revenu d'intégration et où le demander ?",
+        "Quelles sont les conditions pour avoir droit au revenu d'intégration ?",
+        "Comment le montant du revenu d'intégration est-il fixé ?",
+        "Qu'est-ce que le projet individualisé d'intégration sociale (PIIS) ?",
+        "Le CPAS a refusé ma demande : puis-je contester ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-SAISIE-IMMOBILIERE",
+      "titre": "Spécialiste — Saisie immobilière (vente forcée d'un immeuble)",
+      "domaine": "Saisie immobilière (vente forcée d'un immeuble)",
+      "module": "saisie_immobiliere",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « saisie immobilière (vente forcée d'un immeuble) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Qu'est-ce qu'une saisie immobilière ?",
+        "Quelles sont les grandes étapes ?",
+        "Comment le débiteur saisi est-il protégé ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -2185,6 +2681,21 @@
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
+      "id": "SPE-SERVICE-BANCAIRE-BASE",
+      "titre": "Spécialiste — Service bancaire de base (droit au compte)",
+      "domaine": "Service bancaire de base (droit au compte)",
+      "module": "service_bancaire_base",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « service bancaire de base (droit au compte) », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Ai-je droit à un compte bancaire si une banque me refuse ?",
+        "Quelles sont les conditions ?",
+        "La banque peut-elle refuser ou supprimer ce service ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
       "id": "SPE-SEXISME-ESPACE-PUBLIC",
       "titre": "Spécialiste — Sexisme & espace public",
       "domaine": "Sexisme & espace public",
@@ -2233,6 +2744,21 @@
         }
       ],
       "nb_reponses": 4,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-SUCCESSIONS-INTERNATIONALES",
+      "titre": "Spécialiste — Succession internationale",
+      "domaine": "Succession internationale",
+      "module": "successions_internationales",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « succession internationale », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quelle loi s'applique à une succession avec un élément étranger ?",
+        "Qu'est-ce que le certificat successoral européen (CSE) ?",
+        "Ce règlement s'applique-t-il partout ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
@@ -2386,6 +2912,21 @@
         }
       ],
       "nb_reponses": 5,
+      "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
+    },
+    {
+      "id": "SPE-TUTELLE-MINEURS",
+      "titre": "Spécialiste — Tutelle d'un enfant mineur",
+      "domaine": "Tutelle d'un enfant mineur",
+      "module": "tutelle_mineurs",
+      "mission": "Vous aider à comprendre et à faire valoir vos droits en matière de « tutelle d'un enfant mineur », à partir de sources officielles, et vous orienter vers le bon interlocuteur.",
+      "peut_vous_aider_a": [
+        "Quand un enfant mineur est-il mis sous tutelle ?",
+        "Qui désigne le tuteur ?",
+        "Quel est le rôle du tuteur et comment est-il contrôlé ?"
+      ],
+      "contacts_cles": [],
+      "nb_reponses": 3,
       "gouvernance": "Soumis à tous les protocoles (sources officielles, date de vérification, pas d'invention). Ne remplace pas un avocat ; renvoie vers la source et, si besoin, un professionnel."
     },
     {
