@@ -2,6 +2,7 @@ import Link from "next/link";
 import fs from "node:fs";
 import path from "node:path";
 import { notFound } from "next/navigation";
+import EcouterFiche from "./EcouterFiche";
 
 // Page SEO par domaine juridique — La Loi Avec Moi. Une URL indexable par domaine,
 // générée au build depuis data/belgium (base vérifiée). Moteur d'acquisition organique.
@@ -81,6 +82,10 @@ export default async function DomainePage({ params }: { params: Promise<{ domain
           <p className="mt-3 text-blue-100">
             {m.faits.length} réponses claires — chacune avec sa référence légale et sa source officielle.
           </p>
+          <EcouterFiche
+            texte={`${m.titre}. ${m.faits.map((f) => `${f.question} ${f.reponse}`).join(" ")}`}
+          />
+          <p className="mt-2 text-xs text-blue-200/80">🔊 Lecture audio par votre navigateur — pour écouter cette fiche.</p>
         </div>
       </section>
 
