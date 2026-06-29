@@ -1,0 +1,82 @@
+{
+  "module": "donation",
+  "titre": "Donations",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code des droits d'enregistrement, d'hypothèque et de greffe (droits de donation — compétence régionale)",
+    "portee": "Personnes souhaitant donner un bien de leur vivant. L'impôt (droit de donation) est régional",
+    "source_officielle": "https://fin.belgium.be/fr/particuliers/autres-services/donations"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les tarifs et délais des droits de donation varient selon la Région : vérifiez auprès du SPF Finances ou de votre notaire.",
+  "faits": [
+    {
+      "id": "DON-001",
+      "question": "Qu'est-ce qu'une donation et faut-il passer chez le notaire ?",
+      "reponse": "Une donation transmet un bien de votre vivant, de manière irrévocable. Pour un bien immobilier (maison, terrain), un acte notarié est obligatoire et l'enregistrement aussi. Pour un bien mobilier (somme d'argent, bijoux), un don manuel ou un don bancaire est possible sans notaire ; l'enregistrement y est alors facultatif.",
+      "reference_legale": "Code civil — donations (forme de la donation) ; Code des droits d'enregistrement (enregistrement de la donation)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/autres-services/donations",
+          "intitule": "SPF Finances — Donations"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/heritage-et-donations/donations/donation-mobiliere",
+          "intitule": "Notaire.be — Donation mobilière"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DON-002",
+      "question": "Qui fixe les droits de donation et combien ?",
+      "reponse": "Le droit de donation est un impôt régional : c'est la Région du domicile fiscal du donateur qui détermine le tarif (et le lien de parenté influence le taux). La Région flamande perçoit elle-même ce droit (Vlabel) ; pour Bruxelles et la Wallonie, c'est actuellement le SPF Finances qui le perçoit. Les biens immobiliers sont taxés à des taux progressifs, les biens mobiliers à des taux forfaitaires.",
+      "reference_legale": "Code des droits d'enregistrement, d'hypothèque et de greffe (droit de donation, compétence régionale)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/autres-services/donations",
+          "intitule": "SPF Finances — Droits de donation régionaux"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DON-003",
+      "question": "Un don d'argent non enregistré est-il vraiment sans risque ?",
+      "reponse": "Un don manuel ou bancaire non enregistré n'entraîne pas de droit de donation. Mais attention à la « période suspecte » : si le donateur décède dans un certain délai après la donation (délai qui varie selon la Région, généralement de 3 à 5 ans), les biens donnés sont réintégrés dans la succession et soumis aux droits de succession, souvent plus élevés. Enregistrer le don (et payer le droit de donation) supprime ce risque.",
+      "reference_legale": "Code des droits de succession (réintégration des donations non enregistrées dans la succession — période suspecte régionale)",
+      "sources": [
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/heritage-et-donations/donations/donation-mobiliere",
+          "intitule": "Notaire.be — Donation mobilière et période suspecte"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/autres-services/donations",
+          "intitule": "SPF Finances — Donations"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DON-004",
+      "question": "Quelles précautions prévoir lors d'une donation ?",
+      "reponse": "Passer par un notaire permet d'assortir la donation de conditions protectrices : réserve d'usufruit (vous continuez à percevoir les revenus ou à habiter le bien), droit de retour (le bien vous revient si le donataire décède avant vous), charge (versement d'une rente), ou interdiction d'aliéner. Le notaire vous conseille aussi pour optimiser entre droits de donation et droits de succession.",
+      "reference_legale": "Code civil — donations (modalités et conditions de la donation)",
+      "sources": [
+        {
+          "type": "secondaire",
+          "url": "https://www.notaire.be/heritage-et-donations/donations/donation-immobiliere",
+          "intitule": "Notaire.be — Donation immobilière"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

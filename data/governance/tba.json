@@ -5,17 +5,17 @@
   "projets": [
     {
       "nom": "La Loi Avec Moi (citoyens)",
-      "point_de_sortie": "92 modules / 289 réponses (couche UE + nouveaux domaines sociaux), 100% lois + sources. Build OK (168 pages), audits verts.",
+      "point_de_sortie": "96 modules / 305 réponses (couche UE + domaines sociaux/civils étendus), 100% lois + sources. Build OK (172 pages), audits verts.",
       "taches": [
         {
           "nom": "Base juridique sourcée (domaines + réponses)",
           "pct": 92,
           "statut": "en cours",
           "actions_faites": [
-            "92 modules (dont droits UE/transfrontaliers)",
-            "289 réponses, 100% loi concrète (audit loi_reference: 0 vague)",
+            "96 modules (dont droits UE/transfrontaliers)",
+            "305 réponses, 100% loi concrète (audit loi_reference: 0 vague)",
             "100% sources officielles (source_trust: 0 hors-tier1 en 'officiel')",
-            "Nouveaux domaines: revenu d'intégration (CPAS), assurance maladie/mutualité (INAMI), casier judiciaire, permis de conduire — sources vérifiées",
+            "Domaines récents: revenu d'intégration (CPAS), assurance maladie (INAMI), casier judiciaire, permis de conduire, bail commercial, nationalité belge, donations, congés thématiques/crédit-temps — sources vérifiées",
             "vérif approfondie + 1200 simulations OK"
           ],
           "prochaines_etapes": [

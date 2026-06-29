@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-29",
   "totaux": {
-    "modules": 92,
-    "faits": 289,
-    "sources_officielles": 440,
+    "modules": 96,
+    "faits": 305,
+    "sources_officielles": 455,
     "faits_avec_contacts": 187,
-    "faits_avec_alerte_delai": 81
+    "faits_avec_alerte_delai": 83
   },
   "modules": [
     {
@@ -178,6 +178,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "bail_commercial.json",
+      "module": "bail_commercial",
+      "titre": "Bail commercial",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "bail_etudiant.json",
       "module": "bail_etudiant",
       "titre": "Logement étudiant (kot) — bail & droits",
@@ -334,6 +346,18 @@
       "derniere_revue": "2026-06-28"
     },
     {
+      "fichier": "conges_thematiques.json",
+      "module": "conges_thematiques",
+      "titre": "Congés thématiques & crédit-temps",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-29"
+    },
+    {
       "fichier": "consommation.json",
       "module": "consommation",
       "titre": "Consommation — garanties, achats, arnaques",
@@ -464,6 +488,18 @@
       "faits_avec_contacts": 2,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "donation.json",
+      "module": "donation",
+      "titre": "Donations",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "drogues.json",
@@ -800,6 +836,18 @@
       "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "nationalite_belge.json",
+      "module": "nationalite_belge",
+      "titre": "Nationalité belge",
+      "domaine": "—",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 0,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-29"
     },
     {
       "fichier": "pension.json",

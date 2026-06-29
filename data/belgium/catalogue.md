@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**289 réponses · 92 modules · 440 sources officielles · 187 fiches avec contacts · 81 alertes de délai**
+**305 réponses · 96 modules · 455 sources officielles · 187 fiches avec contacts · 83 alertes de délai**
 
 ## Modules en ligne
 
@@ -22,6 +22,7 @@
 | — | Assurance maladie & mutualité | 4 | 7 | 0 | 0 |
 | Assurances | Assurances — auto obligatoire, RC familiale, litiges | 3 | 4 | 2 | 1 |
 | — | Bail de résidence principale — Région de Bruxelles-Capitale | 9 | 11 | 0 | 0 |
+| — | Bail commercial | 4 | 4 | 0 | 1 |
 | Logement étudiant | Logement étudiant (kot) — bail & droits | 2 | 2 | 2 | 1 |
 | — | Bail de résidence principale — Région flamande | 9 | 10 | 0 | 0 |
 | — | Bail de résidence principale — Région wallonne | 9 | 15 | 0 | 0 |
@@ -35,6 +36,7 @@
 | Citoyenneté | Droits et devoirs du citoyen | 4 | 7 | 3 | 2 |
 | Droits dans l'Union européenne | Citoyen européen — vivre, travailler, étudier dans l'UE | 2 | 4 | 2 | 0 |
 | Colocation | Colocation — bail commun & règles | 2 | 2 | 2 | 1 |
+| — | Congés thématiques & crédit-temps | 4 | 4 | 0 | 1 |
 | Consommation | Consommation — garanties, achats, arnaques | 3 | 5 | 1 | 1 |
 | Copropriété | Copropriété — vivre en appartement | 2 | 2 | 2 | 1 |
 | Couple & vie commune | Couple — mariage, cohabitation légale, union libre | 3 | 3 | 2 | 0 |
@@ -46,6 +48,7 @@
 | Discrimination & égalité | Discrimination — reconnaître, signaler, agir | 3 | 5 | 2 | 1 |
 | Divorce & séparation | Divorce & séparation | 2 | 4 | 2 | 0 |
 | Documents d'identité | Documents d'identité — carte, passeport, permis | 2 | 4 | 2 | 1 |
+| — | Donations | 4 | 3 | 0 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 2 | 4 | 2 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 3 | 5 | 3 | 0 |
@@ -74,6 +77,7 @@
 | Règlement des conflits | Médiation & règlement amiable des conflits | 2 | 4 | 2 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 3 | 3 | 3 | 0 |
 | Naissance & filiation | Naissance & filiation | 3 | 6 | 3 | 1 |
+| — | Nationalité belge | 4 | 4 | 0 | 0 |
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
 | — | Permis de conduire | 4 | 6 | 0 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 2 | 3 | 2 | 1 |

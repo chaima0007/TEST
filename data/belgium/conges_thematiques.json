@@ -1,0 +1,73 @@
+{
+  "module": "conges_thematiques",
+  "titre": "Congés thématiques & crédit-temps",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi de redressement du 22 janvier 1985 (interruption de carrière) et ses arrêtés d'exécution ; congés thématiques et crédit-temps gérés par l'ONEM",
+    "portee": "Travailleurs salariés (secteur privé et public) souhaitant suspendre ou réduire leurs prestations pour un motif déterminé",
+    "source_officielle": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les durées et montants d'allocations évoluent : vérifiez les barèmes et conditions sur le site de l'ONEM.",
+  "faits": [
+    {
+      "id": "CONGE-001",
+      "question": "Qu'est-ce qu'un congé thématique ?",
+      "reponse": "Un congé thématique est une forme spécifique d'interruption de carrière qui permet de suspendre ou de réduire temporairement votre travail pour une raison précise : congé parental, congé pour assistance médicale, congé pour soins palliatifs ou congé pour aidant proche. Pendant ce congé, l'ONEM peut vous verser une allocation d'interruption mensuelle.",
+      "reference_legale": "Loi de redressement du 22 janvier 1985 (interruption de carrière) et arrêtés d'exécution",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques",
+          "intitule": "ONEM — Interruption de carrière, crédit-temps et congés thématiques"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CONGE-002",
+      "question": "Comment fonctionne le congé parental ?",
+      "reponse": "Le congé parental permet de vous occuper de votre enfant de moins de 12 ans (moins de 21 ans en cas de handicap). Il peut être pris sous quatre formes : interruption complète, à mi-temps, d'un cinquième ou d'un dixième. Une allocation d'interruption de l'ONEM est prévue si les conditions sont remplies.",
+      "reference_legale": "Arrêté royal du 29 octobre 1997 relatif à l'introduction d'un droit au congé parental",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/conges-thematiques-tous-secteurs/conge-parental",
+          "intitule": "ONEM — Congé parental"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CONGE-003",
+      "question": "Comment et quand demander l'allocation à l'ONEM ?",
+      "reponse": "Une fois le congé accordé par l'employeur, vous introduisez la demande d'allocation auprès de l'ONEM, en principe via la plateforme Break@work. Pour que l'allocation soit payée depuis le début de l'interruption, la demande doit parvenir à l'ONEM au plus tard 2 mois après la date de prise de cours ; au-delà, l'allocation ne court qu'à partir de la date de la demande complète.",
+      "reference_legale": "Arrêtés d'exécution de la loi de redressement du 22 janvier 1985 (procédure de demande des allocations d'interruption)",
+      "alerte_delai": "Introduire la demande d'allocation à l'ONEM dans les 2 mois suivant la prise de cours du congé.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/index.php/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/conges-thematiques-tous-secteurs/procedure-de-demande-des-conges-thematiques",
+          "intitule": "ONEM — Procédure de demande des congés thématiques"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CONGE-004",
+      "question": "Quelle différence avec le crédit-temps ?",
+      "reponse": "Dans le secteur privé, en plus des congés thématiques, vous pouvez demander un crédit-temps pour un motif prévu (soins à son enfant de moins de 8 ans, soins à un membre de la famille, formation, etc.). Le crédit-temps avec motif requiert souvent une convention collective de travail (CCT) et obéit à des conditions d'accès, des durées et des allocations différentes de celles du congé parental.",
+      "reference_legale": "Convention collective de travail n° 103 du Conseil national du travail (crédit-temps)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques",
+          "intitule": "ONEM — Crédit-temps"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

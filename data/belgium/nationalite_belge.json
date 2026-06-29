@@ -1,0 +1,72 @@
+{
+  "module": "nationalite_belge",
+  "titre": "Nationalité belge",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de la nationalité belge du 28 juin 1984",
+    "portee": "Personnes souhaitant acquérir ou se voir attribuer la nationalité belge (compétence fédérale)",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/nationalite"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les conditions exactes dépendent de votre situation : renseignez-vous auprès de votre commune de résidence.",
+  "faits": [
+    {
+      "id": "NAT-001",
+      "question": "Comment peut-on devenir belge sur demande ?",
+      "reponse": "Il existe trois voies pour devenir belge sur demande : l'attribution (pour les moins de 18 ans, via une déclaration faite par les parents) ; la déclaration d'acquisition (à partir de 18 ans) ; et la naturalisation (mesure de faveur exceptionnelle accordée par la Chambre des représentants). La demande se fait en principe auprès de l'officier de l'état civil de votre commune de résidence.",
+      "reference_legale": "Code de la nationalité belge du 28 juin 1984",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/nationalite",
+          "intitule": "SPF Justice — Nationalité"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "NAT-002",
+      "question": "Quelles conditions pour la déclaration d'acquisition de nationalité ?",
+      "reponse": "Vous devez avoir fixé votre résidence principale en Belgique sur la base d'un séjour légal : être admis ou autorisé au séjour illimité au moment de la déclaration, et avoir séjourné légalement avant celle-ci. S'y ajoutent, selon le cas, des conditions d'intégration sociale, de participation économique et/ou de connaissance d'une des langues nationales.",
+      "reference_legale": "Code de la nationalité belge du 28 juin 1984, art. 12bis (déclaration d'acquisition)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/nationalite/devenir_belge/declaration_dacquisition",
+          "intitule": "SPF Justice — Déclaration d'acquisition"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "NAT-003",
+      "question": "Qu'est-ce que la naturalisation ?",
+      "reponse": "La naturalisation est une mesure de faveur, et non un droit. Elle s'adresse aux personnes de 18 ans au moins qui séjournent légalement en Belgique et qui peuvent témoigner de mérites exceptionnels dans les domaines scientifique, sportif ou socioculturel. C'est la Chambre des représentants qui décide ; en cas de refus, aucun recours juridictionnel n'est possible.",
+      "reference_legale": "Code de la nationalité belge du 28 juin 1984, art. 19 (naturalisation)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/nationalite/devenir_belge/naturalisation",
+          "intitule": "SPF Justice — Naturalisation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "NAT-004",
+      "question": "Combien coûte une demande de nationalité ?",
+      "reponse": "Un droit d'enregistrement est dû pour l'introduction de la procédure, à payer avant l'introduction de la demande. Son montant a été fixé à 1000 euros le 29 juillet 2025 et est indexé chaque année au 1er janvier ; consultez le SPF Finances pour le montant indexé de l'année en cours. Des frais de traduction et de copies peuvent s'ajouter.",
+      "reference_legale": "Code des droits d'enregistrement, d'hypothèque et de greffe, art. 238 (droit d'enregistrement, montant indexé)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/nationalite/devenir_belge/naturalisation",
+          "intitule": "SPF Justice — Coût de la procédure"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}
