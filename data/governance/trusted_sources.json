@@ -100,7 +100,11 @@
     "european-union.europa.eu",
     "ombudsman.europa.eu",
     "europarl.europa.eu",
-    "om-mp.be"
+    "om-mp.be",
+    "eur-lex.europa.eu",
+    "commission.europa.eu",
+    "digital-strategy.ec.europa.eu",
+    "ec.europa.eu"
   ],
   "tier2_institutionnel": [
     "uvcw.be",
@@ -160,6 +164,9 @@
     "R1 — Un fait publié doit avoir au moins UNE source de tier1 (officiel).",
     "R2 — Une source marquée 'officiel' DOIT provenir d'un domaine tier1 (sinon = fraude de source).",
     "R3 — Un signal de marché n'est 'confirmé' que s'il est corroboré par ≥2 sources de confiance (tier1/tier2).",
-    "R4 — Tout domaine hors liste = 'non fiable' : utilisable au mieux comme indice, jamais comme preuve."
+    "R4 — Tout domaine hors liste = 'non fiable' : utilisable au mieux comme indice, jamais comme preuve.",
+    "Droit de l'UE : EUR-Lex (eur-lex.europa.eu) est la source canonique exclusive.",
+    "CSDDD & AI Act : analyser UNIQUEMENT via Commission (commission.europa.eu) et AI Office (digital-strategy.ec.europa.eu).",
+    "Forums et sources tierces non autorisées : interdits comme source 'officiel'. La veille (retours d'expérience) sert à identifier les problématiques, jamais de référence faisant foi."
   ]
 }

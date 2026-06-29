@@ -99,14 +99,9 @@
           "intitule": "Commission européenne — Due diligence durabilité"
         },
         {
-          "type": "secondaire",
-          "url": "https://www.business-humanrights.org/en/latest-news/csddd-omnibus/",
-          "intitule": "BHRRC — CSDDD : amendements Omnibus entrés en vigueur"
-        },
-        {
-          "type": "secondaire",
-          "url": "https://www.noerr.com/en/insights/csddd-amending-directive-published-in-the-official-journal-of-the-european-union",
-          "intitule": "Noerr — Directive (UE) 2026/470 : plafond des sanctions ramené de 5 % à 3 %"
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1760",
+          "intitule": "EUR-Lex — Directive (UE) 2024/1760 (CSDDD), art. 27 (sanctions)"
         }
       ],
       "date_verification": "2026-06-27"

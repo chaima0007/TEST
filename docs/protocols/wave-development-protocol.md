@@ -446,3 +446,23 @@ python3 scripts/branch_guard.py --check --quiet
 - Si `branch_guard` renvoie BEHIND/DIVERGED/SWAPPED → **STOP**, ne jamais forcer le push.
 - Sauvegarder toute lignée concurrente sur sa propre branche avant de réaligner.
 - Logs : `data/branch_guard_log.json` (300 max, FIFO).
+
+---
+
+## 16. Sources officielles — Droit de l'Union européenne (§16, P-SOURCES-OFFICIELLES-UE)
+
+**Règle obligatoire (rigueur & conformité absolue de la base de connaissances) :**
+- **Toute législation européenne** → se référer **EXCLUSIVEMENT** aux textes d'**EUR-Lex** (`eur-lex.europa.eu`). C'est la source canonique.
+- **CSDDD & AI Act** spécifiquement → fonder l'analyse **UNIQUEMENT** sur :
+  - la **Commission européenne** (`commission.europa.eu`),
+  - l'**Office européen pour l'IA** (`digital-strategy.ec.europa.eu`).
+- **Interdits comme source** : forums, blogs, sites tiers non autorisés (cabinets, presse, agrégateurs) — ils ne « font pas foi ».
+- **Autorisé** : s'**inspirer des retours d'expérience** (veille, autres prompts, Reddit) pour **identifier les problématiques et préoccupations** des utilisateurs — **jamais** pour servir de **référence légale**.
+
+**Vérification :**
+```bash
+python3 scripts/source_trust_protocol.py   # les sources 'officiel' doivent être tier1
+# + revue manuelle : droit UE = EUR-Lex ; CSDDD/AI Act = Commission / AI Office
+```
+Domaines tier1 UE : `eur-lex.europa.eu`, `commission.europa.eu`, `digital-strategy.ec.europa.eu`, `ec.europa.eu`, `europa.eu`.
+Inscrit au registre : `data/governance/protocols_registry.json` → `P-SOURCES-OFFICIELLES-UE`.

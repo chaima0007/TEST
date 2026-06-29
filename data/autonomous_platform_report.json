@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-06-29T11:57:01.171173+00:00",
+  "genere_le": "2026-06-29T12:01:22.852400+00:00",
   "monte_carlo_n": 100000,
   "corpus": {
     "reponses": 459,
@@ -9,7 +9,7 @@
     "caelum_normes": 17,
     "caelum": {
       "normes": 17,
-      "sources": 30,
+      "sources": 29,
       "aides": 3
     }
   },
@@ -18,7 +18,7 @@
       "protocole": "loi_reference_audit",
       "cmd": "python3 scripts/loi_reference_audit.py",
       "returncode": 0,
-      "ms": 43,
+      "ms": 39,
       "sortie": "  → /home/user/TEST/data/governance/loi_reference_report.md",
       "verdict": "OK"
     },
@@ -26,7 +26,7 @@
       "protocole": "source_trust_protocol",
       "cmd": "python3 scripts/source_trust_protocol.py",
       "returncode": 0,
-      "ms": 48,
+      "ms": 56,
       "sortie": "  → data/governance/source_trust_report.md",
       "verdict": "OK"
     },
@@ -42,7 +42,7 @@
       "protocole": "branch_guard",
       "cmd": "python3 scripts/branch_guard.py --check --quiet",
       "returncode": 0,
-      "ms": 349,
+      "ms": 447,
       "sortie": "✅ SYNC — local == origin — écriture sûre",
       "verdict": "OK"
     }
@@ -87,7 +87,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 101,
+      "p99_ms": 102,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -102,8 +102,8 @@
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
-      "urls_impactees_moy": 8,
-      "pct_corpus": 1.01,
+      "urls_impactees_moy": 7,
+      "pct_corpus": 0.95,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -112,7 +112,7 @@
       "type": "stress",
       "taux_casse_pct": 5.0,
       "urls_impactees_moy": 39,
-      "pct_corpus": 5.05,
+      "pct_corpus": 5.1,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -121,7 +121,7 @@
       "type": "stress",
       "taux_casse_pct": 15.0,
       "urls_impactees_moy": 113,
-      "pct_corpus": 14.55,
+      "pct_corpus": 14.65,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -202,7 +202,7 @@
       "reponses": 459,
       "modules": 143,
       "depuis_naissance": 31,
-      "battements_sans_croissance": 16,
+      "battements_sans_croissance": 17,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -210,7 +210,7 @@
       "type": "etat",
       "verdict": "OK",
       "caelum_normes": 17,
-      "caelum_sources": 30,
+      "caelum_sources": 29,
       "caelum_aides": 3,
       "mitigation": "base de normes vérifiées + aides publiques sourcées"
     },
@@ -222,7 +222,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 17,
+      "battements_sans_progres": 18,
       "en_retard": 0,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -243,7 +243,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629115701",
+    "seal_id": "AUTO-20260629120122",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 74.1,
@@ -268,7 +268,7 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 40,
+    "battements": 41,
     "age_jours": 0.1,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },

@@ -1,7 +1,7 @@
 {
   "registre": "PROTOCOLES EN VIGUEUR — à appliquer à CHAQUE décision/action",
   "but": "Chaima ne doit jamais avoir à répéter ces règles. Elles sont permanentes et vérifiées.",
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-29",
   "regle_maitresse": "Avant toute décision, action ou envoi : passer en revue ce registre et appliquer chaque protocole concerné. Honnêteté absolue, toujours.",
   "protocoles": [
     {
@@ -309,6 +309,12 @@
       "nom": "Validation croisée des normes (anti-désync)",
       "regle": "Toute norme de data/caelum doit être câblée PARTOUT : correspondance déclarée (normes_simulateur_map.json), présente dans le simulateur (conformite-2026) et en page SEO (slug data.ts). Bloque si une norme est ajoutée sans être répercutée dans tout le système.",
       "verif": "python3 scripts/sync_normes_protocol.py"
+    },
+    {
+      "id": "P-SOURCES-OFFICIELLES-UE",
+      "nom": "Sources officielles — droit de l'UE",
+      "regle": "Pour TOUTE législation européenne : se référer EXCLUSIVEMENT aux textes d'EUR-Lex (eur-lex.europa.eu). Pour la CSDDD et l'AI Act spécifiquement : fonder l'analyse UNIQUEMENT sur les portails officiels de la Commission européenne (commission.europa.eu) et de l'Office européen pour l'IA (digital-strategy.ec.europa.eu). Forums et sources tierces non autorisées : STRICTEMENT INTERDITS comme source. On PEUT s'inspirer des retours d'expérience (veille) pour identifier les problématiques/préoccupations des utilisateurs, mais JAMAIS citer une source non fiable comme référence.",
+      "verif": "python3 scripts/source_trust_protocol.py (les 'officiel' doivent être tier1) + revue manuelle : droit UE = EUR-Lex ; CSDDD/AI Act = Commission/AI Office"
     }
   ]
 }

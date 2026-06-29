@@ -113,7 +113,8 @@ export default function AiActPage() {
         </div>
 
         <p className="text-center text-xs text-slate-400 mt-6">
-          Source : Règlement (UE) 2024/1689 (AI Act), Art. 4, 50, 51, 99 ; Digital Omnibus (accord mai 2026).
+          Sources officielles : EUR-Lex — Règlement (UE) 2024/1689 (AI Act, art. 4, 50, 51, 99) ; Commission européenne &
+          Office européen pour l'IA (digital-strategy.ec.europa.eu) — Code de pratique sur la transparence + Digital Omnibus.
           Information générale, pas un conseil juridique individualisé.
         </p>
       </section>
