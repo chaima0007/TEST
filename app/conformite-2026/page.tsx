@@ -208,6 +208,54 @@ export default function Conformite2026Page() {
     setRes({ directs, cascade });
   }
 
+  // Échéances concrètes connues (sinon : rappel personnel à 14 jours). Dates vérifiées (sources Caelum).
+  const ECHEANCES_ISO: Record<string, string> = {
+    csrd: "2027-01-01",
+    csddd: "2029-07-26",
+    "transparence-salariale": "2027-06-07",
+    ppwr: "2026-08-12",
+    cbam: "2027-05-31",
+  };
+
+  function genererICS() {
+    if (!res) return;
+    const normes = [...res.directs, ...res.cascade];
+    if (normes.length === 0) return;
+    const today = new Date();
+    const fmt = (d: Date) =>
+      `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
+    const stamp = fmt(today) + "T090000Z";
+    const lignes: string[] = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Caelum//Conformite//FR", "CALSCALE:GREGORIAN"];
+    normes.forEach((n, i) => {
+      let dateStr = ECHEANCES_ISO[n.id];
+      let titre = `Conformité : ${n.nom}`;
+      if (!dateStr) {
+        const r = new Date(today);
+        r.setDate(r.getDate() + 14);
+        dateStr = `${r.getFullYear()}-${String(r.getMonth() + 1).padStart(2, "0")}-${String(r.getDate()).padStart(2, "0")}`;
+        titre = `Rappel conformité : ${n.nom}`;
+      }
+      const dt = dateStr.replace(/-/g, "");
+      lignes.push(
+        "BEGIN:VEVENT",
+        `UID:caelum-${n.id}-${i}@caelum`,
+        `DTSTAMP:${stamp}`,
+        `DTSTART;VALUE=DATE:${dt}`,
+        `SUMMARY:${titre}`,
+        `DESCRIPTION:${(n.change || "").replace(/\n/g, " ").slice(0, 250)} — via Caelum`,
+        "END:VEVENT",
+      );
+    });
+    lignes.push("END:VCALENDAR");
+    const blob = new Blob([lignes.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "echeances-conformite-caelum.ics";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   function Choix({
     titre,
     cle,
@@ -353,6 +401,37 @@ export default function Conformite2026Page() {
 
         {res && (
           <div className="mt-10">
+            {/* Score de conformité visuel */}
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 mb-6">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div>
+                  <p className="text-sm text-slate-500">Votre diagnostic de conformité</p>
+                  <p className="text-2xl font-bold text-slate-900">
+                    {res.directs.length} obligation{res.directs.length > 1 ? "s" : ""} directe{res.directs.length > 1 ? "s" : ""}
+                    {res.cascade.length > 0 && <span className="text-slate-500 text-lg font-semibold"> · {res.cascade.length} en cascade</span>}
+                  </p>
+                  <p className="text-xs text-slate-400 mt-1">sur {NORMES.length} normes analysées</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={genererICS}
+                  className="rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2.5 shadow-sm"
+                >
+                  📅 Ajouter mes échéances à mon agenda (.ics)
+                </button>
+              </div>
+              {/* Barre : part des normes à traiter */}
+              <div className="mt-4 h-2.5 w-full rounded-full bg-slate-200 overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-indigo-500 to-rose-500"
+                  style={{ width: `${Math.min(100, Math.round(((res.directs.length + res.cascade.length) / NORMES.length) * 100))}%` }}
+                />
+              </div>
+              <p className="text-xs text-slate-500 mt-2">
+                Caelum peut prendre en charge ces obligations pour vous — automatiquement quand c&apos;est possible.
+              </p>
+            </div>
+
             <h3 className="text-xl font-bold">
               {res.directs.length} norme{res.directs.length > 1 ? "s" : ""} vous concerne
               {res.directs.length > 1 ? "nt" : ""} directement
