@@ -3,9 +3,9 @@
   "genere_le": "2026-06-29",
   "totaux": {
     "modules": 149,
-    "faits": 485,
-    "sources_officielles": 677,
-    "faits_avec_contacts": 217,
+    "faits": 486,
+    "sources_officielles": 680,
+    "faits_avec_contacts": 218,
     "faits_avec_alerte_delai": 99
   },
   "modules": [
@@ -315,9 +315,9 @@
       "titre": "Bourse / allocation d'études",
       "domaine": "Allocation d'études",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
+      "faits": 3,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-28"
     },

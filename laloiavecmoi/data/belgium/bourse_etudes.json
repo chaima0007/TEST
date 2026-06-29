@@ -19,12 +19,28 @@
       "reponse": "En Fédération Wallonie-Bruxelles, une allocation d'études (bourse) est accordée aux familles à revenus modestes, pour le secondaire comme pour le supérieur. Le montant dépend des revenus du ménage, du nombre de personnes à charge, du niveau d'études et de votre situation de logement (kot ou non). À titre indicatif, les montants vont de quelques dizaines d'euros à plusieurs milliers selon les cas — vérifiez le barème de l'année en cours. Posséder certains biens immobiliers (hors logement familial) au-delà d'un seuil peut exclure le droit.",
       "reference_legale": "Décret de la Communauté française du 7 novembre 1983 relatif aux allocations et prêts d'études",
       "contacts": [
-        {"nom": "Allocations d'études (FWB)", "lien": "https://allocations-etudes.cfwb.be/", "pour": "conditions, barèmes, demande"},
-        {"nom": "Infor Jeunes", "lien": "https://www.jeminforme.be", "pour": "aide pour constituer le dossier"}
+        {
+          "nom": "Allocations d'études (FWB)",
+          "lien": "https://allocations-etudes.cfwb.be/",
+          "pour": "conditions, barèmes, demande"
+        },
+        {
+          "nom": "Infor Jeunes",
+          "lien": "https://www.jeminforme.be",
+          "pour": "aide pour constituer le dossier"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://allocations-etudes.cfwb.be/", "intitule": "Fédération Wallonie-Bruxelles — Allocations d'études"},
-        {"type": "secondaire", "url": "https://www.bruxelles-j.be/etudier-se-former/enseignement-superieur/obtenir-une-allocation-detude-dans-lenseignement-superieur/", "intitule": "Bruxelles-J — Obtenir une allocation d'études"}
+        {
+          "type": "officiel",
+          "url": "https://allocations-etudes.cfwb.be/",
+          "intitule": "Fédération Wallonie-Bruxelles — Allocations d'études"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.bruxelles-j.be/etudier-se-former/enseignement-superieur/obtenir-une-allocation-detude-dans-lenseignement-superieur/",
+          "intitule": "Bruxelles-J — Obtenir une allocation d'études"
+        }
       ],
       "date_verification": "2026-06-28"
     },
@@ -35,13 +51,66 @@
       "reference_legale": "Décret de la Communauté française du 7 novembre 1983 (procédure de demande des allocations d'études)",
       "alerte_delai": "La demande doit être introduite dans le délai annuel (en général jusqu'au 31 octobre) — au-delà, elle est refusée.",
       "contacts": [
-        {"nom": "Allocations d'études (FWB) — Mon Espace", "lien": "https://allocations-etudes.cfwb.be/", "pour": "introduire et suivre la demande"}
+        {
+          "nom": "Allocations d'études (FWB) — Mon Espace",
+          "lien": "https://allocations-etudes.cfwb.be/",
+          "pour": "introduire et suivre la demande"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://allocations-etudes.cfwb.be/", "intitule": "FWB — Allocations d'études (demande)"},
-        {"type": "secondaire", "url": "https://www.jeminforme.be/allocation-detudes-dans-lenseignement-superieur-conditions-montants-et-minerval/", "intitule": "Infor Jeunes — Allocation d'études (supérieur)"}
+        {
+          "type": "officiel",
+          "url": "https://allocations-etudes.cfwb.be/",
+          "intitule": "FWB — Allocations d'études (demande)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.jeminforme.be/allocation-detudes-dans-lenseignement-superieur-conditions-montants-et-minerval/",
+          "intitule": "Infor Jeunes — Allocation d'études (supérieur)"
+        }
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "BOURSE-COMMUNAUTE-001",
+      "question": "À quel service m'adresser selon ma communauté (langue/région) ?",
+      "reponse": "Les allocations d'études relèvent des COMMUNAUTÉS, pas des Régions. Si vous étudiez en français (Wallonie et Bruxelles francophone) : la Fédération Wallonie-Bruxelles via le service des allocations d'études (allocations-etudes.cfwb.be). Si vous étudiez en néerlandais (Flandre et Bruxelles néerlandophone) : la Communauté flamande, via la studietoelage pour l'enseignement supérieur (studietoelagen.be). Si vous relevez de la Communauté germanophone (Ostbelgien) : le Ministère de la Communauté germanophone (ostbelgienbildung.be). Les conditions (revenus, nationalité, établissement reconnu) et les montants varient selon la communauté : adressez-vous au service compétent.",
+      "reference_legale": "Compétence communautaire des allocations d'études : décret de la Communauté française relatif aux allocations d'études ; décret de la Communauté flamande relatif aux allocations d'études (studietoelagen) ; décret de la Communauté germanophone relatif aux aides aux études",
+      "contacts": [
+        {
+          "nom": "FWB — Allocations d'études",
+          "lien": "https://allocations-etudes.cfwb.be/",
+          "pour": "études en français (Wallonie + Bruxelles)"
+        },
+        {
+          "nom": "Vlaamse Gemeenschap — Studietoelagen",
+          "lien": "https://www.studietoelagen.be/",
+          "pour": "études en néerlandais (Flandre + Bruxelles)"
+        },
+        {
+          "nom": "Communauté germanophone — Ostbelgien Bildung",
+          "lien": "https://ostbelgienbildung.be/",
+          "pour": "études en région de langue allemande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://allocations-etudes.cfwb.be/",
+          "intitule": "FWB — Allocations d'études"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.studietoelagen.be/",
+          "intitule": "Vlaanderen — Study grant for higher education (studietoelage)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://ostbelgienbildung.be/",
+          "intitule": "Ostbelgien Bildung — Communauté germanophone"
+        }
+      ],
+      "date_verification": "2026-06-29"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-29. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**485 réponses · 149 modules · 677 sources officielles · 217 fiches avec contacts · 99 alertes de délai**
+**486 réponses · 149 modules · 680 sources officielles · 218 fiches avec contacts · 99 alertes de délai**
 
 ## Modules en ligne
 
@@ -33,7 +33,7 @@
 | — | Bail de résidence principale — Région wallonne | 9 | 15 | 0 | 0 |
 | Services bancaires | Banque & compte de base | 2 | 3 | 2 | 0 |
 | Volontariat | Bénévolat & volontariat — vos droits | 2 | 2 | 2 | 0 |
-| Allocation d'études | Bourse / allocation d'études | 2 | 2 | 2 | 1 |
+| Allocation d'études | Bourse / allocation d'études | 3 | 5 | 3 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 3 | 6 | 3 | 0 |
 | Handicap & mobilité | Carte de stationnement pour personnes handicapées | 3 | 4 | 1 | 0 |
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
