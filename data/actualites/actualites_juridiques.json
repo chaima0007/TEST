@@ -1,0 +1,241 @@
+{
+  "registre": "Actualités juridiques — fil officiel",
+  "principe": "Aucune actualité fabriquée. Items externes = sources canoniques uniquement (EUR-Lex, Moniteur belge, .fgov.be, régionaux). Items internes = faits réels (re-sourçage de fiches).",
+  "genere_le": "2026-06-30T19:54:30.042472+00:00",
+  "enrichissement_externe": "SUSPENDU — réseau restreint : aucune actualité externe inventée (déclaré honnêtement).",
+  "total_items": 20,
+  "items": [
+    {
+      "id": "ACTU-VEIL-VEIL-PEB",
+      "type": "veille",
+      "titre": "Calendrier PEB/exigences énergétiques (bail)",
+      "regions": [
+        "Wallonie",
+        "Bruxelles",
+        "Flandre"
+      ],
+      "priorite": "haute",
+      "detail": "",
+      "source_officielle": null,
+      "statut": "à surveiller",
+      "origine": "veille_juridique"
+    },
+    {
+      "id": "ACTU-VEIL-VEIL-BXL-LOGEMENT",
+      "type": "veille",
+      "titre": "Réforme du Code bruxellois du Logement (en vigueur 01/11/2024)",
+      "regions": [
+        "Bruxelles"
+      ],
+      "priorite": "moyenne",
+      "detail": "",
+      "source_officielle": null,
+      "statut": "à surveiller",
+      "origine": "veille_juridique"
+    },
+    {
+      "id": "ACTU-VEIL-VEIL-INDEX",
+      "type": "veille",
+      "titre": "Indexations annuelles (1er janvier)",
+      "regions": [
+        "Belgique"
+      ],
+      "priorite": "haute",
+      "detail": "",
+      "source_officielle": null,
+      "statut": "à surveiller",
+      "origine": "veille_juridique"
+    },
+    {
+      "id": "ACTU-VEIL-VEIL-MEDIATION-2024",
+      "type": "veille",
+      "titre": "Médiation de dettes amiable (loi du 3 mai 2024)",
+      "regions": [
+        "Belgique"
+      ],
+      "priorite": "moyenne",
+      "detail": "",
+      "source_officielle": null,
+      "statut": "à surveiller",
+      "origine": "veille_juridique"
+    },
+    {
+      "id": "ACTU-VEIL-VEIL-STATUT-UNIQUE",
+      "type": "veille",
+      "titre": "Délais de préavis (statut unique, évolutions)",
+      "regions": [
+        "Belgique"
+      ],
+      "priorite": "moyenne",
+      "detail": "",
+      "source_officielle": null,
+      "statut": "à surveiller",
+      "origine": "veille_juridique"
+    },
+    {
+      "id": "ACTU-MAJ-voyages",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Voyages à forfait — annulation & remboursement",
+      "domaine": "Voyages",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/voyages",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-voyage_mineur",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Voyage d'un mineur — Kids-ID & autorisation parentale",
+      "domaine": "Voyage d'un enfant",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/voyage_mineur",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-voiture_occasion",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Acheter une voiture d'occasion",
+      "domaine": "Achat véhicule d'occasion",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/voiture_occasion",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-violences_sexuelles_cpvs",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Violences sexuelles — aide et CPVS",
+      "domaine": null,
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/violences_sexuelles_cpvs",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-violences_conjugales",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Violences conjugales & familiales — se protéger",
+      "domaine": "Violences conjugales",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/violences_conjugales",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-vices_caches",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Vices cachés (garantie de l'acheteur)",
+      "domaine": null,
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/vices_caches",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-vacances_annuelles",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Vacances annuelles & pécule de vacances",
+      "domaine": "Travail & congés",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/vacances_annuelles",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-tva_renovation_6",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : TVA réduite à 6 % pour la rénovation",
+      "domaine": "Logement & fiscalité",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/tva_renovation_6",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-tutelle_mineurs",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Tutelle d'un enfant mineur",
+      "domaine": null,
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/tutelle_mineurs",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-travail_temps_partiel",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Travail à temps partiel & allocation de garantie de revenus",
+      "domaine": "Travail & revenus",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/travail_temps_partiel",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-travail_interimaire",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Travail intérimaire — contrat et droits",
+      "domaine": "Travail & contrats",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/travail_interimaire",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-transport_passagers",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Voyageurs — train & avion (retard, annulation)",
+      "domaine": "Droits des passagers",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/transport_passagers",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-transport_medical",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Frais de transport pour raison médicale",
+      "domaine": "Santé & remboursements",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/transport_medical",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-tiers_payant",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Tiers payant — ne payer que sa part chez le soignant",
+      "domaine": "Santé & remboursements",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/tiers_payant",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "ACTU-MAJ-testament",
+      "type": "mise_a_jour_fiche",
+      "titre": "Fiche vérifiée : Testament & planifier sa succession",
+      "domaine": "Testament & donations",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "date": "2026-06-30",
+      "lien_fiche": "/fiche/testament",
+      "statut": "à jour",
+      "origine": "corpus_officiel"
+    }
+  ]
+}
