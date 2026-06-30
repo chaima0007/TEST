@@ -9,7 +9,7 @@
     "portee": "Protection des victimes, éloignement de l'auteur, aide et recours",
     "source_officielle": "https://www.1712.be"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. En danger immédiat, appelez le 112. Vous n'êtes pas responsable des violences subies et vous n'êtes pas seul·e : des services gratuits et confidentiels existent.",
   "faits": [
@@ -60,6 +60,21 @@
         {"type": "officiel", "url": "https://igvm-iefh.belgium.be/sites/default/files/138_-_manuel_code_de_signalement_violences_conjugales.pdf", "intitule": "Institut pour l'égalité des femmes et des hommes — Signalement des violences conjugales"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "VIOL-DROITS-VICTIME-001",
+      "question": "Quels sont mes droits et mes soutiens dans la procédure ?",
+      "reponse": "En tant que victime, vous avez des droits : être informé·e du suivi de votre plainte, être accompagné·e, et demander réparation de votre préjudice en vous constituant partie civile (au pénal) ou via une action civile. Si vos revenus sont modestes, l'aide juridique de deuxième ligne vous donne droit à un avocat gratuit ou peu coûteux (pro deo). Des services spécialisés et gratuits vous épaulent : les services d'accueil des victimes (au sein des parquets et tribunaux) et les services d'aide aux victimes (soutien psychologique et social). À côté de la voie pénale, le juge de la famille peut aussi prendre des mesures urgentes (résidence séparée, hébergement des enfants) en cas de séparation.",
+      "reference_legale": "Code d'instruction criminelle (constitution de partie civile et droits de la victime) ; Code judiciaire — aide juridique de deuxième ligne",
+      "contacts": [
+        {"nom": "Service d'aide aux victimes / accueil des victimes (parquet)", "pour": "soutien psychologique, social et suivi du dossier"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo selon les revenus"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Victime : vos droits et aides"},
+        {"type": "officiel", "url": "https://www.1712.be", "intitule": "1712 — Où trouver de l'aide"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

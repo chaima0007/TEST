@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://cpvs.belgium.be/fr"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Vous n'êtes jamais responsable des violences subies. En danger : 112. Pour un accompagnement : un CPVS ou une ligne d'écoute.",
   "faits": [
@@ -53,6 +53,17 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VSEX-CONSENTEMENT-001",
+      "question": "Qu'a changé la réforme du droit pénal sexuel sur le consentement ?",
+      "reponse": "La réforme du droit pénal sexuel (loi du 21 mars 2022) place le consentement au cœur de la définition des infractions sexuelles. Le principe : tout acte à caractère sexuel suppose le consentement libre de chaque personne. Ce consentement doit être donné librement, il s'apprécie selon les circonstances, il ne peut pas être déduit de la simple absence de résistance ou du silence, et il peut être retiré à tout moment. Il n'y a pas de consentement valable lorsque la personne est, par exemple, sans connaissance, endormie, sous l'effet de la peur ou de la contrainte. La protection des mineurs est renforcée (seuils d'âge précis). Concrètement : sans consentement, il y a infraction — la responsabilité pèse sur l'auteur, jamais sur la victime.",
+      "reference_legale": "Code pénal — droit pénal sexuel fondé sur le consentement (réforme par la loi du 21 mars 2022)",
+      "sources": [
+        {"type": "officiel", "url": "https://cpvs.belgium.be/fr", "intitule": "CPVS — Violences sexuelles et consentement"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Victime : vos droits"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

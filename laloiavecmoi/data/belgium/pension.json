@@ -9,7 +9,7 @@
     "portee": "Droits à la pension de retraite en Belgique",
     "source_officielle": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. L'âge légal de la pension évolue (réformes). Pour VOTRE date exacte et votre montant, consultez mypension.be (le plus fiable, basé sur votre carrière réelle).",
   "faits": [
@@ -84,6 +84,21 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PEN-MINIMUM-SURVIE-001",
+      "question": "Et si ma pension est trop faible, ou si mon conjoint décède ?",
+      "reponse": "Deux protections importantes existent. Si vous avez l'âge de la pension mais des revenus insuffisants, vous pouvez prétendre à la GRAPA (Garantie de revenus aux personnes âgées) : une aide qui complète vos ressources jusqu'à un montant minimum, après examen de votre situation et de vos revenus. En cas de décès de votre conjoint, vous pouvez avoir droit à une pension de survie (sous conditions, notamment d'âge et de durée de mariage) ou, si vous êtes plus jeune, à une allocation de transition versée pendant une période limitée. Ces droits ne sont pas toujours automatiques : renseignez-vous auprès du Service fédéral des Pensions et consultez mypension.be.",
+      "reference_legale": "Loi du 22 mars 2001 instituant la garantie de revenus aux personnes âgées (GRAPA) ; arrêté royal n° 50 du 24 octobre 1967 (pension de survie et allocation de transition)",
+      "contacts": [
+        {"nom": "Service fédéral des Pensions", "lien": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/", "pour": "GRAPA, pension de survie, allocation de transition"},
+        {"nom": "mypension.be", "pour": "consulter vos droits personnels"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/", "intitule": "Service fédéral des Pensions — GRAPA et pension de survie"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/aide_financiere", "intitule": "Belgium.be — Aides financières"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
