@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 160,
-    "faits": 687,
-    "sources_officielles": 1041,
-    "faits_avec_contacts": 418,
-    "faits_avec_alerte_delai": 143
+    "modules": 163,
+    "faits": 696,
+    "sources_officielles": 1054,
+    "faits_avec_contacts": 427,
+    "faits_avec_alerte_delai": 144
   },
   "modules": [
     {
@@ -319,6 +319,18 @@
       "sources_officielles": 6,
       "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "budget_assistance_personnelle.json",
+      "module": "budget_assistance_personnelle",
+      "titre": "Budget d'assistance personnelle (handicap)",
+      "domaine": "Handicap & autonomie",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-30"
     },
     {
@@ -726,6 +738,18 @@
       "faits": 4,
       "sources_officielles": 8,
       "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "droits_resident_maison_repos.json",
+      "module": "droits_resident_maison_repos",
+      "titre": "Droits du résident en maison de repos (MR/MRS)",
+      "domaine": "Aînés & hébergement",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-30"
     },
@@ -1772,6 +1796,18 @@
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "transport_medical.json",
+      "module": "transport_medical",
+      "titre": "Frais de transport pour raison médicale",
+      "domaine": "Santé & remboursements",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "transport_passagers.json",

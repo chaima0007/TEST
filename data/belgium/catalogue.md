@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-30. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**687 réponses · 160 modules · 1041 sources officielles · 418 fiches avec contacts · 143 alertes de délai**
+**696 réponses · 163 modules · 1054 sources officielles · 427 fiches avec contacts · 144 alertes de délai**
 
 ## Modules en ligne
 
@@ -34,6 +34,7 @@
 | Services bancaires | Banque & compte de base | 4 | 5 | 4 | 0 |
 | Volontariat | Bénévolat & volontariat — vos droits | 4 | 5 | 4 | 1 |
 | Allocation d'études | Bourse / allocation d'études | 4 | 6 | 4 | 2 |
+| Handicap & autonomie | Budget d'assistance personnelle (handicap) | 3 | 3 | 3 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 4 | 8 | 4 | 0 |
 | Handicap & mobilité | Carte de stationnement pour personnes handicapées | 4 | 5 | 2 | 1 |
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
@@ -68,6 +69,7 @@
 | — | Dossier médical global (DMG) | 4 | 5 | 1 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 4 | 8 | 4 | 0 |
+| Aînés & hébergement | Droits du résident en maison de repos (MR/MRS) | 3 | 6 | 3 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 4 | 8 | 4 | 0 |
 | Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 4 | 8 | 3 | 2 |
@@ -155,6 +157,7 @@
 | Testament & donations | Testament & planifier sa succession | 4 | 7 | 4 | 0 |
 | Santé & remboursements | Tiers payant — ne payer que sa part chez le soignant | 4 | 4 | 4 | 0 |
 | — | Titres-services (aide à domicile) | 4 | 6 | 1 | 0 |
+| Santé & remboursements | Frais de transport pour raison médicale | 3 | 4 | 3 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 4 | 8 | 4 | 2 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | — | Tutelle d'un enfant mineur | 4 | 6 | 1 | 0 |

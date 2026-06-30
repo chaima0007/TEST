@@ -1,0 +1,59 @@
+{
+  "module": "budget_assistance_personnelle",
+  "titre": "Budget d'assistance personnelle (handicap)",
+  "domaine": "Handicap & autonomie",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Compétence régionale du handicap : Code wallon de l'action sociale et de la santé (budget d'assistance personnelle - AViQ) ; dispositifs équivalents en Flandre (persoonsvolgend budget) et à Bruxelles (PHARE/personne handicapée autonomie)",
+    "portee": "Financement d'une aide à domicile pour les personnes en situation de handicap, selon la région",
+    "source_officielle": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le handicap est une compétence régionale : le dispositif, son nom et ses conditions dépendent de votre région de résidence. Renseignez-vous auprès de l'organisme régional.",
+  "faits": [
+    {
+      "id": "BAP-PRINCIPE-001",
+      "question": "Qu'est-ce qu'un budget d'assistance personnelle (BAP) ?",
+      "reponse": "Le budget d'assistance personnelle est une enveloppe financière accordée à une personne en situation de handicap pour organiser et payer l'aide dont elle a besoin au quotidien (aide à domicile, aux déplacements, à la vie sociale, etc.). L'idée est de donner à la personne le contrôle : c'est elle (ou son représentant) qui choisit et engage les assistants, dans le cadre fixé par la réglementation. Le but est de favoriser l'autonomie et le maintien à domicile plutôt qu'un accueil en institution. Selon votre région, le dispositif porte un nom différent (BAP en Wallonie, budget « personne-suivante » en Flandre, aides via le PHARE à Bruxelles).",
+      "reference_legale": "Code wallon de l'action sociale et de la santé (budget d'assistance personnelle - AViQ) et dispositifs régionaux équivalents",
+      "contacts": [
+        {"nom": "AViQ (Wallonie)", "lien": "https://www.aviq.be", "pour": "budget d'assistance personnelle en Wallonie"},
+        {"nom": "PHARE (Bruxelles) / VAPH (Flandre)", "pour": "aides à l'autonomie selon la région"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap", "intitule": "AViQ — Budget d'assistance personnelle (BAP)"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BAP-QUI-001",
+      "question": "Qui peut en bénéficier et à quoi sert l'argent ?",
+      "reponse": "Le budget s'adresse aux personnes reconnues en situation de handicap qui ont besoin d'une aide importante pour les actes de la vie quotidienne. Une évaluation des besoins est réalisée par l'organisme régional. Le budget peut financer l'aide d'assistants personnels pour des tâches comme se lever, se laver, s'habiller, se déplacer, faire les courses, participer à la vie sociale ou professionnelle. Il s'accompagne d'obligations : utiliser les fonds conformément à leur objet, conserver les justificatifs et rendre compte de l'utilisation. Les montants et conditions précises varient selon la région.",
+      "reference_legale": "Code wallon de l'action sociale et de la santé (conditions et utilisation du BAP) ; réglementations régionales équivalentes",
+      "contacts": [
+        {"nom": "Organisme régional du handicap (AViQ, PHARE, VAPH)", "pour": "évaluation des besoins et octroi"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap", "intitule": "AViQ — Conditions et usage du BAP"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BAP-DEMANDE-001",
+      "question": "Comment introduire une demande, et que faire en cas de liste d'attente ?",
+      "reponse": "La demande s'introduit auprès de l'organisme régional compétent (en Wallonie, l'AViQ), généralement après ouverture d'un dossier « handicap » et une évaluation de vos besoins. Soyez attentif : ces budgets sont souvent soumis à des moyens limités et à des listes d'attente, avec des priorités selon l'urgence et la gravité de la situation. N'attendez donc pas pour déposer votre demande, et faites-vous accompagner (service social, association spécialisée). En attendant un budget, d'autres aides peuvent être mobilisées (services d'aide aux familles, allocations, aménagements).",
+      "reference_legale": "Code wallon de l'action sociale et de la santé (procédure d'octroi du BAP par l'AViQ) ; réglementations régionales équivalentes",
+      "alerte_delai": "Déposez la demande tôt : ces budgets sont contingentés et soumis à des listes d'attente.",
+      "contacts": [
+        {"nom": "AViQ / PHARE / VAPH", "pour": "introduction de la demande et suivi"},
+        {"nom": "Service social / association spécialisée", "pour": "aide à la constitution du dossier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap", "intitule": "AViQ — Demande de BAP"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}
