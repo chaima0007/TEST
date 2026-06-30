@@ -125,7 +125,7 @@
       arch:{ "ambiance:Lumière douce":"L'Esthète","ambiance:Néon":"Le Nocturne","ambiance:Extérieur":"Le Naturaliste","ambiance:Nuit":"Le Nocturne" },
       archDefault:"Le Connaisseur",
       resTitle:"Ton Diapason",resPhrase:t=>`Ton style : ${t}.`,
-      seeSel:"Voir ma sélection dans l'Explorateur",seeCreators:"Voir les créateurs",
+      seeSel:"Voir ma sélection dans l'Explorateur",seeCreators:"Voir les créateurs",cardCta:"🎴 Ma carte à partager",
       share:"Astuce : « Quel est ton Diapason ? » — un partage parfait sur tes réseaux.",
       welcomeBack:n=>`Bon retour, ${n}.`
     },
@@ -163,7 +163,7 @@
       arch:{ "ambiance:Lumière douce":"The Aesthete","ambiance:Néon":"The Nocturne","ambiance:Extérieur":"The Naturalist","ambiance:Nuit":"The Nocturne" },
       archDefault:"The Connoisseur",
       resTitle:"Your Diapason",resPhrase:t=>`Your style: ${t}.`,
-      seeSel:"See my selection in the Explorer",seeCreators:"See creators",
+      seeSel:"See my selection in the Explorer",seeCreators:"See creators",cardCta:"🎴 My shareable card",
       share:"Tip: “What's your Diapason?” — a perfect share for your socials.",
       welcomeBack:n=>`Welcome back, ${n}.`
     }
@@ -221,6 +221,7 @@
       <div class="tags">${labels.map(l=>`<span class="tag">${l}</span>`).join('')}</div>
       <div class="ctas">
         <a class="btn btn-rose" href="explorer.html#fromDiapason">${t.seeSel}</a>
+        <a class="btn btn-ghost" href="empreinte.html">${t.cardCta}</a>
         <a class="btn btn-ghost" href="${AFF.search(labels.join(','),'diapason')}" target="_blank" rel="noopener nofollow sponsored">${t.seeCreators}</a>
       </div>
       <div class="share">${t.share}</div>

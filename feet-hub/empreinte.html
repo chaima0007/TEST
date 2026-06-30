@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOLEA — Ton Empreinte</title>
+<meta name="description" content="Ta carte de goût SOLEA, à partager. 18+." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,500;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--noir:#140910;--noir-2:#1f0e18;--rose:#FF3D6E;--rose-clair:#FF7FA0;--or:#E8B583;--creme:#F6E9EC;--gris:#B79AA4;--carte:#1c0f18;--ligne:rgba(255,61,110,.20);--glow:rgba(255,61,110,.35)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;min-height:100vh}
+  h1,h2,.serif{font-family:"Playfair Display",serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .hidden{display:none !important}
+  .btn{display:inline-block;cursor:pointer;border:none;border-radius:999px;font-weight:600;font-size:15px;padding:13px 26px;transition:.2s;font-family:"Inter",sans-serif}
+  .btn-rose{background:linear-gradient(135deg,var(--rose),#C81E54);color:#fff;box-shadow:0 6px 24px -6px var(--glow)}
+  .btn-rose:hover{transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--creme);border:1px solid var(--ligne)}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose-clair)}
+
+  #agegate{position:fixed;inset:0;z-index:1000;background:rgba(10,4,8,.97);display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(7px)}
+  #agegate .box{max-width:440px;text-align:center;border:1px solid var(--ligne);background:var(--noir-2);border-radius:22px;padding:42px 32px}
+  #agegate h2{font-size:26px;margin:10px 0}#agegate p{color:var(--gris);font-size:14px;margin-bottom:24px}
+  #agegate small{display:block;margin-top:18px;color:#6e5560;font-size:11px}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(20,9,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--ligne)}
+  nav .inner{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Playfair Display",serif;font-weight:800;font-size:22px;letter-spacing:1px}.logo span{color:var(--rose)}
+  .lang{display:flex;border:1px solid var(--ligne);border-radius:999px;overflow:hidden}
+  .lang button{background:transparent;color:var(--gris);border:none;cursor:pointer;font-size:12px;font-weight:600;padding:6px 11px;font-family:"Inter",sans-serif}
+  .lang button.on{background:var(--rose);color:#fff}
+
+  header.hero{text-align:center;padding:48px 0 18px}
+  .kicker{color:var(--rose);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+  header.hero h1{font-size:clamp(28px,4.6vw,44px);margin:10px 0 6px}
+  header.hero p{color:var(--gris);font-weight:300;max-width:520px;margin:0 auto}
+
+  .stage{text-align:center;padding:14px 0 60px}
+  #card{width:100%;max-width:420px;border-radius:20px;box-shadow:0 24px 60px -24px var(--glow);border:1px solid var(--ligne)}
+  .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .empty{border:1px solid var(--ligne);border-radius:18px;background:var(--noir-2);padding:34px;max-width:480px;margin:10px auto 0}
+  .empty p{color:var(--gris);font-weight:300;margin-bottom:18px}
+  .share-hint{color:#8d7681;font-size:13px;margin-top:16px}
+  footer{border-top:1px solid var(--ligne);padding:30px 0;text-align:center;color:#6e5560;font-size:12px}
+  .age-pill{display:inline-block;border:1px solid var(--rose);color:var(--rose);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div id="agegate"><div class="box">
+  <div style="font-size:34px">🔞</div>
+  <h2 class="serif" id="ag_t">Contenu réservé aux adultes</h2>
+  <p id="ag_p">En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-rose" onclick="enterSite()" id="ag_enter">J'ai 18 ans ou plus — Entrer</button>
+    <a class="btn btn-ghost" href="https://www.google.com" id="ag_leave">Quitter</a>
+  </div>
+  <small id="ag_law">L'accès est interdit aux mineurs.</small>
+</div></div>
+
+<div id="site" class="hidden">
+  <nav><div class="inner">
+    <a class="logo" href="index.html">SO<span>LEA</span></a>
+    <div class="lang">
+      <button id="langFr" class="on" onclick="setLang('fr')">FR</button>
+      <button id="langEn" onclick="setLang('en')">EN</button>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap">
+    <div class="kicker" id="h_k">Ton Empreinte</div>
+    <h1 id="h_h">Ta carte de goût</h1>
+    <p id="h_p">Une carte élégante et anonyme à télécharger et partager. Montre ton style — pas ton visage.</p>
+  </div></header>
+
+  <div class="stage"><div class="wrap">
+    <canvas id="card" width="1080" height="1080" class="hidden"></canvas>
+    <div class="empty hidden" id="empty">
+      <p id="emptyTxt">Tu n'as pas encore d'Empreinte. Réponds au Diapason (5 questions) et reviens ici.</p>
+      <a class="btn btn-rose" href="diapason.html" id="emptyCta">Passer le Diapason →</a>
+    </div>
+    <div class="actions hidden" id="actions">
+      <button class="btn btn-rose" onclick="downloadCard()" id="dlBtn">⬇️ Télécharger ma carte</button>
+      <a class="btn btn-ghost" href="diapason.html" id="redoBtn">↻ Refaire le Diapason</a>
+    </div>
+    <div class="share-hint hidden" id="shareHint"></div>
+  </div></div>
+
+  <footer><div class="wrap">
+    <div class="age-pill">18+</div>
+    <p id="footTxt">© 2026 SOLEA — Annuaire. Aucun contenu hébergé.</p>
+  </div></footer>
+</div>
+
+<script>
+  function enterSite(){try{localStorage.setItem('solea_age_ok','1')}catch(e){}document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden');init();}
+  try{if(localStorage.getItem('solea_age_ok')==='1'){document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}}catch(e){}
+
+  const T={
+    fr:{ag_t:"Contenu réservé aux adultes",ag_p:"En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.",ag_enter:"J'ai 18 ans ou plus — Entrer",ag_leave:"Quitter",ag_law:"L'accès est interdit aux mineurs.",
+      h_k:"Ton Empreinte",h_h:"Ta carte de goût",h_p:"Une carte élégante et anonyme à télécharger et partager. Montre ton style — pas ton visage.",
+      emptyTxt:"Tu n'as pas encore d'Empreinte. Réponds au Diapason (5 questions) et reviens ici.",emptyCta:"Passer le Diapason →",
+      dlBtn:"⬇️ Télécharger ma carte",redoBtn:"↻ Refaire le Diapason",
+      shareHint:"Partage-la avec « Quel est ton Diapason ? » — sans rien montrer d'explicite.",
+      footTxt:"© 2026 SOLEA — Annuaire. Aucun contenu hébergé.",
+      cardKicker:"MON EMPREINTE SOLEA",cardTag:"L'art du détail · 18+"},
+    en:{ag_t:"Adults only",ag_p:"By entering, you confirm you are <strong>18 or older</strong>.",ag_enter:"I'm 18 or older — Enter",ag_leave:"Leave",ag_law:"Access is forbidden to minors.",
+      h_k:"Your Imprint",h_h:"Your taste card",h_p:"An elegant, anonymous card to download and share. Show your style — not your face.",
+      emptyTxt:"You don't have an Imprint yet. Take the Diapason (5 questions) and come back.",emptyCta:"Take the Diapason →",
+      dlBtn:"⬇️ Download my card",redoBtn:"↻ Retake the Diapason",
+      shareHint:"Share it with “What's your Diapason?” — nothing explicit to show.",
+      footTxt:"© 2026 SOLEA — Directory. No content hosted.",
+      cardKicker:"MY SOLEA IMPRINT",cardTag:"The art of detail · 18+"}
+  };
+  let LANG='fr'; try{const s=localStorage.getItem('solea_lang');if(s)LANG=s}catch(e){}
+
+  function setLang(l){LANG=l;try{localStorage.setItem('solea_lang',l)}catch(e){}render();}
+
+  function getEmpreinte(){
+    try{ return JSON.parse(localStorage.getItem('solea_empreinte')||'null'); }catch(e){ return null; }
+  }
+
+  // ===== Dessin de la carte sur canvas (1080x1080, SFW) =====
+  function drawCard(emp){
+    const c=document.getElementById('card'), x=c.getContext('2d'), W=1080,H=1080;
+    // fond dégradé prune
+    const g=x.createLinearGradient(0,0,W,H);
+    g.addColorStop(0,'#1c0a14'); g.addColorStop(.55,'#140910'); g.addColorStop(1,'#24121c');
+    x.fillStyle=g; x.fillRect(0,0,W,H);
+    // halo rose
+    const r=x.createRadialGradient(W/2,180,40,W/2,180,520);
+    r.addColorStop(0,'rgba(255,61,110,.28)'); r.addColorStop(1,'rgba(255,61,110,0)');
+    x.fillStyle=r; x.fillRect(0,0,W,H);
+    // cadre
+    x.strokeStyle='rgba(255,61,110,.35)'; x.lineWidth=3; roundRect(x,40,40,W-80,H-80,32); x.stroke();
+
+    // logo
+    x.textAlign='center';
+    x.font='800 60px "Playfair Display", Georgia, serif';
+    x.fillStyle='#F6E9EC'; x.fillText('SO', W/2-44, 150);
+    x.fillStyle='#FF3D6E'; x.fillText('LEA', W/2+60, 150);
+
+    // kicker
+    x.font='600 22px Inter, sans-serif'; x.fillStyle='#FF7FA0';
+    x.fillText(T[LANG].cardKicker, W/2, 215);
+
+    // archétype (dégradé rose→or)
+    const grad=x.createLinearGradient(W/2-260,0,W/2+260,0);
+    grad.addColorStop(0,'#FF3D6E'); grad.addColorStop(1,'#E8B583');
+    x.font='italic 800 92px "Playfair Display", Georgia, serif'; x.fillStyle=grad;
+    wrapText(x, emp.nom||'Le Connaisseur', W/2, 360, 900, 96);
+
+    // phrase
+    x.font='300 30px Inter, sans-serif'; x.fillStyle='#F6E9EC';
+    wrapText(x, emp.phrase||'', W/2, 470, 820, 42);
+
+    // tags en pastilles
+    const labels=(emp.tags||[]).map(t=>String(t).split(':').pop()).slice(0,6);
+    let py=600;
+    x.font='500 26px Inter, sans-serif';
+    // disposer les pastilles centrées sur des lignes
+    let line=[], lines=[];
+    labels.forEach(l=>{ line.push(l); if(line.length===2){lines.push(line);line=[];} });
+    if(line.length) lines.push(line);
+    lines.forEach(row=>{
+      // largeur totale
+      const widths=row.map(l=>x.measureText(l).width+56);
+      const total=widths.reduce((a,b)=>a+b,0)+(row.length-1)*16;
+      let sx=W/2-total/2;
+      row.forEach((l,i)=>{
+        const w=widths[i];
+        x.fillStyle='rgba(255,61,110,.12)'; x.strokeStyle='rgba(255,61,110,.4)'; x.lineWidth=2;
+        roundRect(x,sx,py-34,w,52,26); x.fill(); x.stroke();
+        x.fillStyle='#FFE'; x.textAlign='center'; x.fillText(l, sx+w/2, py);
+        sx+=w+16;
+      });
+      py+=72;
+    });
+
+    // tagline bas
+    x.font='500 24px Inter, sans-serif'; x.fillStyle='#B79AA4'; x.textAlign='center';
+    x.fillText(T[LANG].cardTag, W/2, H-90);
+    x.font='400 20px Inter, sans-serif'; x.fillStyle='#6e5560';
+    x.fillText('solea — '+ (LANG==='fr'?'fais le tien':'make yours'), W/2, H-58);
+  }
+  function roundRect(x,X,Y,W,H,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+W,Y,X+W,Y+H,r);x.arcTo(X+W,Y+H,X,Y+H,r);x.arcTo(X,Y+H,X,Y,r);x.arcTo(X,Y,X+W,Y,r);x.closePath();}
+  function wrapText(x,text,cx,cy,maxW,lh){
+    const words=String(text).split(' '); let line='', y=cy;
+    for(const w of words){
+      const test=line?line+' '+w:w;
+      if(x.measureText(test).width>maxW && line){ x.fillText(line,cx,y); line=w; y+=lh; }
+      else line=test;
+    }
+    x.fillText(line,cx,y);
+  }
+
+  function render(){
+    const t=T[LANG]; document.documentElement.lang=LANG;
+    const set=(id,v)=>{const el=document.getElementById(id);if(el)el.innerHTML=v;};
+    ['ag_t','ag_p','ag_enter','ag_leave','ag_law','h_k','h_h','h_p','emptyTxt','emptyCta','dlBtn','redoBtn','footTxt'].forEach(id=>set(id,t[id]));
+    document.getElementById('shareHint').textContent=t.shareHint;
+    document.getElementById('langFr').classList.toggle('on',LANG==='fr');
+    document.getElementById('langEn').classList.toggle('on',LANG==='en');
+    init();
+  }
+
+  function init(){
+    const emp=getEmpreinte();
+    const card=document.getElementById('card'), empty=document.getElementById('empty'),
+          actions=document.getElementById('actions'), hint=document.getElementById('shareHint');
+    if(!emp || !emp.nom){
+      card.classList.add('hidden'); actions.classList.add('hidden'); hint.classList.add('hidden');
+      empty.classList.remove('hidden'); return;
+    }
+    empty.classList.add('hidden');
+    card.classList.remove('hidden'); actions.classList.remove('hidden'); hint.classList.remove('hidden');
+    // attendre les polices pour un rendu net
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(()=>drawCard(emp)); }
+    else { drawCard(emp); }
+  }
+
+  function downloadCard(){
+    const c=document.getElementById('card');
+    const a=document.createElement('a');
+    a.download='mon-empreinte-solea.png';
+    a.href=c.toDataURL('image/png');
+    a.click();
+  }
+
+  // init chrome
+  document.getElementById('langFr').classList.toggle('on',LANG==='fr');
+  document.getElementById('langEn').classList.toggle('on',LANG==='en');
+  ['ag_t','ag_p','ag_enter','ag_leave','ag_law'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=T[LANG][id]});
+  render();
+</script>
+</body>
+</html>
