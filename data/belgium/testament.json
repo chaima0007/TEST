@@ -9,7 +9,7 @@
     "portee": "Organiser de son vivant la transmission de ses biens, dans les limites de la loi",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. La planification successorale a des effets juridiques et fiscaux importants ; un notaire vous conseille selon votre situation.",
   "faits": [
@@ -63,6 +63,34 @@
         }
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "TEST-MODIFIER-001",
+      "question": "Puis-je modifier ou annuler mon testament plus tard ?",
+      "reponse": "Oui, à tout moment, tant que vous êtes en vie et capable d'exprimer votre volonté. Un testament n'est jamais définitif : vous pouvez le modifier ou le révoquer librement. La révocation peut être expresse (un nouveau testament qui annule le précédent) ou tacite (un testament postérieur dont les dispositions sont incompatibles avec l'ancien l'emporte). Vous pouvez aussi détruire un testament olographe. En cas de testaments successifs, c'est en principe le plus récent qui prime pour les points contradictoires : pour éviter toute confusion, mieux vaut rédiger un nouveau testament clair et révoquer expressément les précédents, idéalement avec un notaire.",
+      "reference_legale": "Code civil — révocation des testaments (art. 1035 et suivants)",
+      "contacts": [
+        {"nom": "Notaire", "pour": "rédiger un nouveau testament et révoquer les précédents"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032152/justel", "intitule": "Ancien Code civil — Livre III, Titre II (testaments et révocation)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TEST-REGISTRE-001",
+      "question": "Comment être sûr que mon testament sera retrouvé après mon décès ?",
+      "reponse": "Le risque d'un testament olographe gardé chez soi, c'est qu'il soit perdu, détruit ou jamais retrouvé. Pour l'éviter, il existe le Registre central des testaments, tenu par le notariat : un testament authentique (passé devant notaire) y est inscrit automatiquement, et un testament olographe peut y être enregistré en le déposant chez un notaire. Au moment du décès, le notaire chargé de la succession consulte ce registre pour savoir s'il existe un testament et où il se trouve. Le contenu du testament n'est pas dévoilé du vivant : seul le fait qu'il existe est enregistré.",
+      "reference_legale": "Code civil — testaments (art. 967 et suivants) et inscription au Registre central des testaments",
+      "contacts": [
+        {"nom": "Notaire", "pour": "dépôt et inscription au Registre central des testaments"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage et testament"},
+        {"type": "secondaire", "url": "https://www.notaire.be", "intitule": "Notaire.be — Registre central des testaments"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
