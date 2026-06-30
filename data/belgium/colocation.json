@@ -9,7 +9,7 @@
     "portee": "Bail de colocation, solidarité, pacte entre colocataires, départ",
     "source_officielle": "https://logement.wallonie.be/fr/bail/colocation"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les règles dépendent de la Région ; vérifiez votre bail et le service logement régional.",
   "faits": [
@@ -43,6 +43,35 @@
         {"type": "secondaire", "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/louer-un-logement/contrat-de-bail/la-colocation-me-tente-y-t-il", "intitule": "Wikifin (FSMA) — La colocation"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "COLOC-PACTE-001",
+      "question": "Que doit contenir le pacte de colocation ?",
+      "reponse": "Le pacte de colocation est l'accord entre colocataires (distinct du bail signé avec le bailleur). Il organise concrètement la vie commune : la répartition du loyer et des charges entre colocataires, la part de chacun dans la garantie locative, un inventaire des meubles et espaces communs, la répartition de l'entretien et des tâches ménagères, les règles en cas de dégâts, et surtout les modalités d'arrivée et de départ d'un colocataire (préavis interne, recherche d'un remplaçant). En Wallonie, ce pacte est obligatoire ; à Bruxelles, il est vivement recommandé. Bien rédigé, il évite la plupart des conflits : prenez le temps de le faire ensemble, par écrit et signé par tous.",
+      "reference_legale": "Décret wallon du 15 mars 2018 (colocation — pacte de colocation) ; ordonnance bruxelloise relative au bail d'habitation",
+      "contacts": [
+        {"nom": "Tous les colocataires", "pour": "rédiger et signer le pacte de colocation"},
+        {"nom": "Service logement de votre Région", "pour": "modèle de pacte de colocation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/colocation", "intitule": "Wallonie — La colocation et le pacte de colocation"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/te-loger/la-co-location-quel-impact-sur-le-bail-et-sur-les-responsabilites/", "intitule": "Bruxelles-J — Colocation"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "COLOC-FLANDRE-001",
+      "question": "Et en Flandre, la colocation est-elle aussi encadrée ?",
+      "reponse": "Oui. En Région flamande, le décret flamand relatif au bail d'habitation (Vlaams Woninghuurdecreet) règle également la colocation, avec un pacte de colocation entre colocataires et des règles propres, notamment pour l'arrivée et le départ d'un colocataire et son remplacement. Comme dans les autres Régions, soyez attentif à la clause de solidarité du bail (qui peut vous rendre responsable de la totalité du loyer) et formalisez tout par écrit. Pour les détails et modèles, consultez le portail logement de l'autorité flamande.",
+      "reference_legale": "Décret flamand relatif au bail d'habitation (Vlaams Woninghuurdecreet) — dispositions sur la colocation",
+      "contacts": [
+        {"nom": "Autorité flamande — Logement", "lien": "https://www.vlaanderen.be", "pour": "règles de colocation en Flandre"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.vlaanderen.be", "intitule": "Vlaanderen.be — Bail d'habitation et colocation (Woninghuurdecreet)"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/louer-un-logement/contrat-de-bail/la-colocation-me-tente-y-t-il", "intitule": "Wikifin (FSMA) — La colocation"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

@@ -9,7 +9,7 @@
     "portee": "Résoudre un litige à l'amiable, sans procès long et coûteux",
     "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/mediation"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. La médiation est volontaire ; un médiateur agréé ou le juge de paix peut vous accompagner.",
   "faits": [
@@ -41,6 +41,35 @@
         {"type": "officiel", "url": "https://www.tribunaux-rechtbanken.be/fr/le-systeme-judiciaire-belge/justice-de-paix", "intitule": "Cours & Tribunaux — Justice de paix"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "MED-TYPES-001",
+      "question": "Quelle différence entre médiation volontaire et médiation judiciaire ?",
+      "reponse": "La médiation volontaire est décidée par les parties elles-mêmes, avant ou en dehors de tout procès : vous choisissez librement un médiateur et le moment. La médiation judiciaire intervient pendant une procédure : le juge peut la proposer (ou l'ordonner) avec l'accord des parties, et la procédure est alors suspendue le temps de la médiation. Dans les deux cas, pour que l'accord puisse être homologué par le juge et obtenir la force d'un jugement, le médiateur doit être agréé par la Commission fédérale de médiation. Le recours à la médiation reste fondamentalement basé sur la volonté des parties de trouver une solution.",
+      "reference_legale": "Code judiciaire — médiation volontaire et judiciaire (art. 1730 et 1734)",
+      "contacts": [
+        {"nom": "Médiateur agréé", "lien": "https://www.cfm-fbc.be", "pour": "médiation volontaire"},
+        {"nom": "Tribunal saisi du litige", "pour": "médiation judiciaire en cours de procédure"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/mediation", "intitule": "SPF Justice — Médiation (volontaire et judiciaire)"},
+        {"type": "officiel", "url": "https://www.cfm-fbc.be", "intitule": "Commission fédérale de médiation — Agrément des médiateurs"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MED-CONFIDENTIALITE-001",
+      "question": "Ce que je dis en médiation peut-il être utilisé contre moi au tribunal ?",
+      "reponse": "Non, en principe. La médiation est couverte par la confidentialité : les documents établis et les communications faites au cours d'une médiation sont confidentiels et ne peuvent pas être utilisés ensuite dans une procédure judiciaire, arbitrale ou autre, sauf exceptions prévues par la loi (par exemple si toutes les parties marquent leur accord). Le médiateur lui-même est tenu au secret. Cette protection est essentielle : elle permet de discuter et de faire des propositions librement, sans craindre qu'elles servent contre vous en cas d'échec de la médiation.",
+      "reference_legale": "Code judiciaire — confidentialité de la médiation (art. 1728)",
+      "contacts": [
+        {"nom": "Médiateur agréé", "pour": "explication du cadre de confidentialité"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/mediation", "intitule": "SPF Justice — Médiation (confidentialité)"},
+        {"type": "officiel", "url": "https://www.cfm-fbc.be", "intitule": "Commission fédérale de médiation"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

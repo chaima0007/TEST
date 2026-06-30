@@ -9,7 +9,7 @@
     "portee": "Obtenir, renouveler, déclarer la perte ou le vol de ses documents",
     "source_officielle": "https://www.belgium.be/fr/famille/identite"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les délais et procédures peuvent varier selon votre commune ; vérifiez auprès d'elle ou de l'IBZ.",
   "faits": [
@@ -44,6 +44,35 @@
         {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/documents-didentite/eid/faq/", "intitule": "IBZ — eID, questions fréquentes"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "DOC-EID-AGE-001",
+      "question": "À partir de quel âge faut-il une carte d'identité, et quoi pour les enfants ?",
+      "reponse": "La carte d'identité électronique (eID) est délivrée à tout Belge à partir de 12 ans, et son port devient obligatoire à partir de 15 ans (vous devez pouvoir présenter votre carte à un contrôle). Pour les enfants belges de moins de 12 ans, il existe la Kids-ID : c'est un document d'identité facultatif, mais souvent indispensable pour voyager avec l'enfant à l'étranger. La Kids-ID se demande à l'administration communale et nécessite un délai de fabrication : anticipez avant un voyage. Pour un enfant étranger résidant en Belgique, d'autres documents s'appliquent : renseignez-vous auprès de la commune.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité",
+      "alerte_delai": "La Kids-ID a un délai de fabrication : demandez-la bien avant un voyage avec votre enfant.",
+      "contacts": [
+        {"nom": "Service population de votre commune", "pour": "eID dès 12 ans et Kids-ID pour les moins de 12 ans"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/identite", "intitule": "Belgium.be — Documents d'identité (eID, Kids-ID)"},
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/documents-didentite/eid/faq/", "intitule": "IBZ — eID et Kids-ID"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "DOC-EID-CODES-001",
+      "question": "À quoi servent les codes PIN et PUK de ma carte d'identité ?",
+      "reponse": "Votre eID n'est pas qu'une preuve d'identité « papier » : c'est aussi une clé électronique. Lors de la fabrication de la carte, vous recevez des codes PIN et PUK. Le code PIN sert à vous identifier en ligne sur les services publics (impôts, commune, mutuelle…) et à signer électroniquement des documents avec la même valeur qu'une signature manuscrite. Le code PUK permet de débloquer la carte si le PIN a été mal saisi plusieurs fois. Gardez ces codes en lieu sûr et séparés de la carte. Si vous perdez vos codes, vous pouvez en demander de nouveaux à votre commune.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité (fonctions électroniques de l'eID)",
+      "contacts": [
+        {"nom": "Service population de votre commune", "pour": "obtenir de nouveaux codes PIN/PUK"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/documents-didentite/eid/faq/", "intitule": "IBZ — eID : codes PIN et PUK"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/identite", "intitule": "Belgium.be — Identité électronique"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
