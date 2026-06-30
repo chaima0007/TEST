@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOLEA — Créatrices : publiez vos contenus et gagnez · Creators: publish & earn</title>
+<meta name="description" content="Transformez vos contenus pieds en revenu, en toute discrétion. SOLEA vous guide vers une plateforme partenaire vérifiée. 18+." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--noir:#140910;--noir-2:#1f0e18;--rose:#FF3D6E;--rose-clair:#FF7FA0;--or:#E8B583;--creme:#F6E9EC;--gris:#B79AA4;--carte:#1c0f18;--ligne:rgba(255,61,110,.20);--glow:rgba(255,61,110,.35)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:"Playfair Display",serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+  .hidden{display:none !important}
+  .btn{display:inline-block;cursor:pointer;border:none;border-radius:999px;font-weight:600;font-size:15px;padding:14px 30px;transition:.2s;font-family:"Inter",sans-serif}
+  .btn-rose{background:linear-gradient(135deg,var(--rose),#C81E54);color:#fff;box-shadow:0 6px 24px -6px var(--glow)}
+  .btn-rose:hover{transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--creme);border:1px solid var(--ligne)}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose-clair)}
+
+  #agegate{position:fixed;inset:0;z-index:1000;background:rgba(10,4,8,.97);display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(7px)}
+  #agegate .box{max-width:440px;text-align:center;border:1px solid var(--ligne);background:var(--noir-2);border-radius:22px;padding:42px 32px}
+  #agegate h2{font-size:26px;margin:10px 0}
+  #agegate p{color:var(--gris);font-size:14px;margin-bottom:24px}
+  #agegate small{display:block;margin-top:18px;color:#6e5560;font-size:11px}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(20,9,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--ligne)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1180px}
+  .logo{font-family:"Playfair Display",serif;font-weight:800;font-size:22px;letter-spacing:1px}
+  .logo span{color:var(--rose)}
+  .navlinks{display:flex;gap:24px}
+  .navlinks a{color:var(--gris);font-size:14px;font-weight:500}
+  .navlinks a:hover{color:var(--rose-clair)}
+  .navright{display:flex;align-items:center;gap:14px}
+  .lang{display:flex;border:1px solid var(--ligne);border-radius:999px;overflow:hidden}
+  .lang button{background:transparent;color:var(--gris);border:none;cursor:pointer;font-size:12px;font-weight:600;padding:6px 11px;font-family:"Inter",sans-serif}
+  .lang button.on{background:var(--rose);color:#fff}
+  @media(max-width:760px){.navlinks{display:none}}
+
+  header.hero{text-align:center;padding:84px 0 60px;background:radial-gradient(ellipse at 50% -10%,rgba(255,61,110,.20),transparent 58%),var(--noir)}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--rose-clair);border:1px solid var(--ligne);border-radius:999px;padding:7px 16px;margin-bottom:24px;letter-spacing:.5px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 10px var(--rose)}
+  header.hero h1{font-size:clamp(36px,5.6vw,62px);line-height:1.06;margin-bottom:18px}
+  header.hero h1 .grad{background:linear-gradient(120deg,var(--rose),var(--or));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+  header.hero p{max-width:580px;margin:0 auto 30px;color:var(--gris);font-size:18px;font-weight:300}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .reassure{margin-top:18px;color:#8d7681;font-size:13px}
+
+  section{padding:54px 0}
+  .sec-head{text-align:center;margin-bottom:40px}
+  .sec-head .kicker{color:var(--rose);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+  .sec-head h2{font-size:clamp(26px,4vw,40px);margin-top:10px}
+  .sec-head p{color:var(--gris);margin-top:10px;font-weight:300}
+
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .why{border:1px solid var(--ligne);border-radius:16px;padding:24px;background:linear-gradient(160deg,var(--carte),transparent)}
+  .why .ic{font-size:26px;margin-bottom:10px}
+  .why h3{font-size:18px;margin-bottom:6px}
+  .why p{color:var(--gris);font-size:14px;font-weight:300}
+
+  .steps{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .step{border-left:2px solid var(--rose);padding:6px 0 6px 20px}
+  .step .n{color:var(--rose);font-family:"Playfair Display",serif;font-size:30px;font-style:italic}
+  .step h3{margin:6px 0;font-size:18px}
+  .step p{color:var(--gris);font-size:14px;font-weight:300}
+
+  .earn{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  .tier{border:1px solid var(--ligne);border-radius:16px;padding:24px;text-align:center;background:var(--carte)}
+  .tier b{font-family:"Playfair Display",serif;font-size:28px;color:var(--rose-clair);display:block}
+  .tier span{color:var(--gris);font-size:13px}
+  .tier small{display:block;color:#8d7681;font-size:12px;margin-top:6px}
+  .disc{color:#8d7681;font-size:13px;text-align:center;max-width:620px;margin:18px auto 0;font-weight:300}
+
+  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .qa{border:1px solid var(--ligne);border-radius:14px;background:var(--noir-2);padding:18px 20px}
+  .qa h3{font-size:16px;margin-bottom:6px;color:var(--creme)}
+  .qa p{color:var(--gris);font-size:14px;font-weight:300}
+
+  .cta-final{border:1px solid var(--ligne);border-radius:24px;padding:50px 28px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(255,61,110,.16),var(--noir-2))}
+  .cta-final h2{font-size:clamp(26px,4vw,40px);margin-bottom:12px}
+  .cta-final p{color:var(--gris);max-width:520px;margin:0 auto 24px;font-weight:300}
+
+  footer{border-top:1px solid var(--ligne);padding:36px 0;text-align:center;color:#6e5560;font-size:12px;margin-top:20px}
+  footer .disc2{max-width:760px;margin:0 auto 12px;font-weight:300}
+  .age-pill{display:inline-block;border:1px solid var(--rose);color:var(--rose);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div id="agegate">
+  <div class="box">
+    <div style="font-size:34px">🔞</div>
+    <h2 class="serif" id="ag_t">Contenu réservé aux adultes</h2>
+    <p id="ag_p">En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-rose" onclick="enterSite()" id="ag_enter">J'ai 18 ans ou plus — Entrer</button>
+      <a class="btn btn-ghost" href="https://www.google.com" id="ag_leave">Quitter</a>
+    </div>
+    <small id="ag_law">L'accès est interdit aux mineurs.</small>
+  </div>
+</div>
+
+<div id="site" class="hidden">
+  <nav><div class="wrap">
+    <a class="logo" href="index.html">SO<span>LEA</span></a>
+    <div class="navlinks">
+      <a href="index.html" id="n_home">Accueil</a>
+      <a href="explorer.html" id="n_explore">Explorateur</a>
+      <a href="creators.html" id="n_creators">Créatrices</a>
+    </div>
+    <div class="navright">
+      <div class="lang">
+        <button id="langFr" class="on" onclick="setLang('fr')">FR</button>
+        <button id="langEn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="btn btn-rose" style="padding:9px 20px;font-size:14px" href="#start" id="n_cta">Commencer</a>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap">
+    <div class="badge"><span class="dot"></span> <span id="h_badge">Créatrices · revenu discret</span></div>
+    <h1><span id="h_t1">Tes pieds. Ton revenu.</span><br><span class="grad" id="h_t2">Ton anonymat.</span></h1>
+    <p id="h_p">Transforme tes photos et vidéos de pieds en revenu régulier — sans montrer ton visage. SOLEA te guide vers une plateforme partenaire vérifiée et sécurisée, et t'accompagne pas à pas.</p>
+    <div class="cta-row">
+      <a class="btn btn-rose" href="#start" id="h_cta1">Commencer à gagner</a>
+      <a class="btn btn-ghost" href="#how" id="h_cta2">Comment ça marche</a>
+    </div>
+    <div class="reassure" id="h_reassure">100 % anonyme · Tu gardes le contrôle · Sans engagement</div>
+  </div></header>
+
+  <section id="why"><div class="wrap">
+    <div class="sec-head"><div class="kicker" id="w_k">Pourquoi se lancer</div><h2 id="w_h">Pensé pour ta liberté</h2></div>
+    <div class="grid" id="whyGrid"></div>
+  </div></section>
+
+  <section id="how"><div class="wrap">
+    <div class="sec-head"><div class="kicker" id="s_k">Le parcours</div><h2 id="s_h">Comment ça marche</h2><p id="s_p">Trois étapes, et tu gardes la main à chaque instant.</p></div>
+    <div class="steps" id="stepsGrid"></div>
+  </div></section>
+
+  <section id="earn"><div class="wrap">
+    <div class="sec-head"><div class="kicker" id="e_k">Le potentiel</div><h2 id="e_h">Combien tu peux gagner</h2></div>
+    <div class="earn" id="earnGrid"></div>
+    <p class="disc" id="e_disc"></p>
+  </div></section>
+
+  <section id="faq"><div class="wrap">
+    <div class="sec-head"><div class="kicker" id="f_k">Tes questions</div><h2 id="f_h">Tout est clair</h2></div>
+    <div class="faq" id="faqList"></div>
+  </div></section>
+
+  <section id="start"><div class="wrap"><div class="cta-final">
+    <h2 class="serif" id="cf_h">Prête à transformer tes pieds en revenu ?</h2>
+    <p id="cf_p">Inscription gratuite sur la plateforme partenaire vérifiée. Tu restes anonyme, tu publies à ton rythme, tu es payée.</p>
+    <a class="btn btn-rose" id="cf_cta" href="#" target="_blank" rel="noopener nofollow sponsored">Créer mon profil créatrice</a>
+    <div style="margin-top:14px"><a href="index.html" style="color:#8d7681;font-size:13px" id="cf_back">← Retour à l'accueil</a></div>
+  </div></div></section>
+
+  <footer><div class="wrap">
+    <div class="age-pill">18+</div>
+    <p class="disc2" id="footDisc"></p>
+    <p id="footTxt">© 2026 SOLEA — Annuaire. Aucun contenu hébergé.</p>
+  </div></footer>
+</div>
+
+<script>
+  function enterSite(){try{localStorage.setItem('solea_age_ok','1')}catch(e){}document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}
+  try{if(localStorage.getItem('solea_age_ok')==='1'){document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}}catch(e){}
+
+  // ===== AFFILIATION (⚠️ remplace SOLEA_CODE par ton vrai code d'affilié FeetFinder) =====
+  const AFF = {
+    base:"https://feetfinder.com", ref:"SOLEA_CODE",
+    sell(c){return `${this.base}/sell?ref=${this.ref}&utm_source=solea&utm_medium=affiliate&utm_campaign=${c}`}
+  };
+
+  const T = {
+    fr:{
+      home:"Accueil",explore:"Explorateur",creators:"Créatrices",cta:"Commencer",
+      ag_t:"Contenu réservé aux adultes",ag_p:"En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.",ag_enter:"J'ai 18 ans ou plus — Entrer",ag_leave:"Quitter",ag_law:"L'accès est interdit aux mineurs.",
+      h_badge:"Créatrices · revenu discret",h_t1:"Tes pieds. Ton revenu.",h_t2:"Ton anonymat.",
+      h_p:"Transforme tes photos et vidéos de pieds en revenu régulier — sans montrer ton visage. SOLEA te guide vers une plateforme partenaire vérifiée et sécurisée, et t'accompagne pas à pas.",
+      h_cta1:"Commencer à gagner",h_cta2:"Comment ça marche",h_reassure:"100 % anonyme · Tu gardes le contrôle · Sans engagement",
+      w_k:"Pourquoi se lancer",w_h:"Pensé pour ta liberté",
+      why:[["🕶️","100 % anonyme","Jamais de visage. Pseudonyme, identité protégée — tu décides de tout ce qui est publié."],["⏰","Horaires libres","Tu publies quand tu veux, d'où tu veux. Idéal en complément des études."],["🔒","Plateforme sécurisée","La plateforme partenaire gère la vérification d'âge, les paiements et la sécurité."],["💸","Revenu récurrent","Abonnements, packs et demandes sur-mesure : un revenu qui peut devenir régulier."]],
+      s_k:"Le parcours",s_h:"Comment ça marche",s_p:"Trois étapes, et tu gardes la main à chaque instant.",
+      steps:[["01","Crée ton profil","Inscris-toi gratuitement sur la plateforme partenaire via SOLEA. Vérification d'âge requise (sécurité)."],["02","Publie tes contenus","Tu mets en ligne tes photos/vidéos de pieds sur la plateforme — anonymement, à ton rythme."],["03","Sois payée","Tu fixes tes prix, tu vends, tu es payée par la plateforme. SOLEA t'a juste ouvert la porte."]],
+      e_k:"Le potentiel",e_h:"Combien tu peux gagner",
+      earn:[["50–200 €","Débutante","1er mois, quelques heures/sem."],["300–900 €","Régulière","Publication suivie, plusieurs mois"],["1 000 €+","Confirmée","Audience fidèle + sur-mesure"]],
+      e_disc:"Fourchettes indicatives basées sur des données publiques du secteur — ce ne sont pas des promesses de gains. Les revenus dépendent de ta régularité, de ton marketing et de la rétention de tes clients.",
+      f_k:"Tes questions",f_h:"Tout est clair",
+      faq:[["Je reste vraiment anonyme ?","Oui. Tu ne montres jamais ton visage. Tu utilises un pseudonyme. La plateforme connaît ton identité (obligation légale de vérification d'âge), mais le public, non."],["C'est légal ?","Oui, si tu es majeure. Pense à déclarer tes revenus (statut auto-entrepreneur en France, simple et rapide)."],["Est-ce que SOLEA héberge mes contenus ?","Non. SOLEA est un annuaire : on te guide vers la plateforme partenaire qui, elle, héberge, vérifie et te paie en toute sécurité."],["Combien ça coûte ?","L'inscription créatrice se fait sur la plateforme partenaire (petit abonnement vendeur selon la plateforme). SOLEA ne te facture rien."]],
+      cf_h:"Prête à transformer tes pieds en revenu ?",cf_p:"Inscription gratuite sur la plateforme partenaire vérifiée. Tu restes anonyme, tu publies à ton rythme, tu es payée.",cf_cta:"Créer mon profil créatrice",cf_back:"← Retour à l'accueil",
+      footDisc:"Divulgation : SOLEA oriente les créatrices vers une plateforme partenaire via un lien d'affiliation et peut percevoir une commission, sans coût supplémentaire pour vous. SOLEA n'héberge aucun contenu et ne gère ni paiements ni vérifications.",
+      footTxt:"© 2026 SOLEA — Annuaire. Aucun contenu hébergé."},
+    en:{
+      home:"Home",explore:"Explorer",creators:"Creators",cta:"Start",
+      ag_t:"Adults only",ag_p:"By entering, you confirm you are <strong>18 or older</strong>.",ag_enter:"I'm 18 or older — Enter",ag_leave:"Leave",ag_law:"Access is forbidden to minors.",
+      h_badge:"Creators · discreet income",h_t1:"Your feet. Your income.",h_t2:"Your anonymity.",
+      h_p:"Turn your feet photos and videos into steady income — without showing your face. SOLEA guides you to a verified, secure partner platform and walks you through every step.",
+      h_cta1:"Start earning",h_cta2:"How it works",h_reassure:"100% anonymous · You stay in control · No commitment",
+      w_k:"Why start",w_h:"Built for your freedom",
+      why:[["🕶️","100% anonymous","No face, ever. Pseudonym, protected identity — you decide everything that gets published."],["⏰","Flexible hours","Post whenever you want, from anywhere. Perfect alongside studies."],["🔒","Secure platform","The partner platform handles age verification, payments and security."],["💸","Recurring income","Subscriptions, bundles and custom requests: income that can become steady."]],
+      s_k:"The journey",s_h:"How it works",s_p:"Three steps, and you stay in control throughout.",
+      steps:[["01","Create your profile","Sign up free on the partner platform via SOLEA. Age verification required (safety)."],["02","Publish your content","Upload your feet photos/videos on the platform — anonymously, at your pace."],["03","Get paid","Set your prices, sell, get paid by the platform. SOLEA just opened the door."]],
+      e_k:"The potential",e_h:"How much you can earn",
+      earn:[["€50–200","Beginner","1st month, a few hours/week"],["€300–900","Regular","Consistent posting, several months"],["€1,000+","Established","Loyal audience + custom work"]],
+      e_disc:"Indicative ranges based on public industry data — not income promises. Earnings depend on your consistency, marketing and customer retention.",
+      f_k:"Your questions",f_h:"All clear",
+      faq:[["Am I really anonymous?","Yes. You never show your face. You use a pseudonym. The platform knows your identity (legal age-verification requirement), but the public doesn't."],["Is it legal?","Yes, if you're an adult. Remember to declare your income (simple self-employed status)."],["Does SOLEA host my content?","No. SOLEA is a directory: we guide you to the partner platform, which hosts, verifies and pays you securely."],["What does it cost?","Creator signup is on the partner platform (small seller fee depending on the platform). SOLEA charges you nothing."]],
+      cf_h:"Ready to turn your feet into income?",cf_p:"Free signup on the verified partner platform. Stay anonymous, post at your pace, get paid.",cf_cta:"Create my creator profile",cf_back:"← Back to home",
+      footDisc:"Disclosure: SOLEA refers creators to a partner platform via an affiliate link and may earn a commission at no extra cost to you. SOLEA hosts no content and handles neither payments nor verification.",
+      footTxt:"© 2026 SOLEA — Directory. No content hosted."},
+  };
+
+  let LANG='fr'; try{const s=localStorage.getItem('solea_lang');if(s)LANG=s}catch(e){}
+
+  function render(){
+    const t=T[LANG]; document.documentElement.lang=LANG;
+    const set=(id,v)=>{const el=document.getElementById(id);if(el)el.innerHTML=v;};
+    ['ag_t','ag_p','ag_enter','ag_leave','ag_law','h_badge','h_t1','h_t2','h_p','h_cta1','h_cta2','h_reassure',
+     'w_k','w_h','s_k','s_h','s_p','e_k','e_h','e_disc','f_k','f_h','cf_h','cf_p','cf_cta','cf_back','footDisc','footTxt'
+    ].forEach(id=>set(id,t[id]));
+    set('n_home',t.home);set('n_explore',t.explore);set('n_creators',t.creators);set('n_cta',t.cta);
+
+    document.getElementById('whyGrid').innerHTML=t.why.map(w=>`<div class="why"><div class="ic">${w[0]}</div><h3>${w[1]}</h3><p>${w[2]}</p></div>`).join('');
+    document.getElementById('stepsGrid').innerHTML=t.steps.map(s=>`<div class="step"><div class="n">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+    document.getElementById('earnGrid').innerHTML=t.earn.map(e=>`<div class="tier"><b>${e[0]}</b><span>${e[1]}</span><small>${e[2]}</small></div>`).join('');
+    document.getElementById('faqList').innerHTML=t.faq.map(q=>`<div class="qa"><h3>${q[0]}</h3><p>${q[1]}</p></div>`).join('');
+
+    // CTA affiliés (inscription créatrice)
+    document.getElementById('cf_cta').href = AFF.sell('creators_cta');
+    document.getElementById('h_cta1').href = '#start';
+
+    document.getElementById('langFr').classList.toggle('on',LANG==='fr');
+    document.getElementById('langEn').classList.toggle('on',LANG==='en');
+  }
+  function setLang(l){LANG=l;try{localStorage.setItem('solea_lang',l)}catch(e){}render()}
+  render();
+</script>
+</body>
+</html>
