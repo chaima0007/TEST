@@ -9,7 +9,7 @@
     "portee": "Déclaration, indemnisation et droits de la victime",
     "source_officielle": "https://www.fedris.be/fr"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les démarches passent par l'assureur de l'employeur et/ou Fedris ; vérifiez votre situation auprès d'eux.",
   "faits": [
@@ -43,6 +43,36 @@
         {"type": "officiel", "url": "https://www.fedris.be/fr", "intitule": "Fedris — Risques professionnels"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ACCT-COUVERTURE-001",
+      "question": "Qu'est-ce que l'assurance accidents du travail couvre concrètement ?",
+      "reponse": "Tout employeur a l'obligation légale de souscrire une assurance accidents du travail pour son personnel. Cette assurance prend en charge : les frais médicaux liés à l'accident, une indemnité pendant l'incapacité temporaire de travail (un pourcentage de votre rémunération), une indemnité ou rente en cas d'incapacité permanente (selon le taux d'invalidité reconnu), et, en cas de décès, une rente aux ayants droit ainsi que les frais funéraires. Si votre employeur n'a pas souscrit cette assurance, vous n'êtes pas perdu : Fedris peut intervenir et se retourner ensuite contre l'employeur. La victime n'a, en principe, rien à payer pour les soins liés à l'accident reconnu.",
+      "reference_legale": "Loi du 10 avril 1971 sur les accidents du travail (obligation d'assurance et indemnisation)",
+      "contacts": [
+        {"nom": "Assurance accidents du travail de l'employeur", "pour": "prise en charge des frais et indemnités"},
+        {"nom": "Fedris", "lien": "https://www.fedris.be/fr", "pour": "employeur non assuré ou litige"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fedris.be/fr", "intitule": "Fedris — Indemnisation des accidents du travail"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/maladie-professionnelle", "intitule": "Sécurité sociale — Accidents du travail"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ACCT-CHEMIN-001",
+      "question": "Un accident sur le chemin du travail est-il aussi couvert ?",
+      "reponse": "Oui. L'accident survenu sur le chemin du travail — c'est-à-dire sur le trajet normal entre votre domicile et votre lieu de travail (et inversement) — est assimilé à un accident du travail et donc indemnisé de la même façon. Certains détours « raisonnables » restent couverts (par exemple déposer ses enfants à l'école, faire un crochet justifié). En cas d'accident de roulage sur ce trajet, déclarez-le aussi à l'assurance accidents du travail, en plus des démarches habituelles liées à l'accident de la route. Conservez les preuves du trajet et de l'heure (témoins, constat).",
+      "reference_legale": "Loi du 10 avril 1971 sur les accidents du travail (accident sur le chemin du travail)",
+      "alerte_delai": "Déclarez aussi à l'assurance accidents du travail, même s'il s'agit d'un accident de la route sur le trajet domicile-travail.",
+      "contacts": [
+        {"nom": "Employeur / son assurance accidents du travail", "pour": "déclaration de l'accident sur le chemin du travail"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fedris.be/fr", "intitule": "Fedris — Accident sur le chemin du travail"},
+        {"type": "officiel", "url": "https://www.fedris.be/fr/employeur/secteur-prive/declaration.html", "intitule": "Fedris — Déclaration d'accident"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

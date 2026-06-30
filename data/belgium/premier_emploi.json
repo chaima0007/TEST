@@ -9,7 +9,7 @@
     "portee": "Démarches après les études, stage d'insertion et allocations d'insertion",
     "source_officielle": "https://www.onem.be/citoyens"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les règles d'insertion (durées, âge, conditions) ont été réformées récemment ; vérifiez les modalités en vigueur auprès de l'ONEM et de votre service régional de l'emploi.",
   "faits": [
@@ -42,6 +42,36 @@
         {"type": "secondaire", "url": "https://www.jeminforme.be/allocations-d-insertion-professionnelle/", "intitule": "Infor Jeunes — Allocations d'insertion"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "JEUNE-CONTRAT-001",
+      "question": "Je signe mon premier contrat de travail : que dois-je vérifier ?",
+      "reponse": "Vérifiez plusieurs points. Le type de contrat (à durée indéterminée, déterminée, intérim) : un contrat à durée déterminée ou à temps partiel doit être écrit. La commission paritaire dont vous dépendez : elle fixe le salaire minimum et de nombreuses conditions du secteur. La déclaration DIMONA : votre employeur doit vous déclarer à la sécurité sociale dès le premier jour (c'est un signe que vous êtes en règle). Bon à savoir : depuis 2014, la période d'essai a été supprimée pour la plupart des contrats (elle subsiste surtout pour l'intérim et le travail étudiant). Lisez le contrat avant de signer et gardez-en une copie, ainsi que vos fiches de paie.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail",
+      "contacts": [
+        {"nom": "Syndicat / SPF Emploi", "lien": "https://emploi.belgique.be", "pour": "vérifier vos droits et la commission paritaire"},
+        {"nom": "Votre employeur / secrétariat social", "pour": "contrat écrit, DIMONA, fiche de paie"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail", "intitule": "SPF Emploi — Contrats de travail"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be", "intitule": "Infor Jeunes — Premier emploi"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "JEUNE-MUTUELLE-FAMILLE-001",
+      "question": "Après mes études, dois-je m'inscrire à une mutuelle, et garde-t-on les allocations familiales ?",
+      "reponse": "Mutualité : à la fin des études, vous devez régulariser votre situation auprès d'une mutualité (vous y étiez jusque-là souvent couvert via vos parents). Dès que vous travaillez, vous cotisez et êtes couvert pour les soins de santé ; si vous êtes en stage d'insertion sans emploi, renseignez-vous sur votre statut auprès de la mutualité. Allocations familiales : elles peuvent continuer un certain temps après la fin des études, notamment pendant la période où vous êtes inscrit comme demandeur d'emploi, à condition de ne pas dépasser un plafond de revenus si vous travaillez. Comme les allocations familiales sont régionales, vérifiez les conditions exactes auprès de votre caisse.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 ; réglementation régionale des allocations familiales",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "régulariser votre couverture soins de santé"},
+        {"nom": "Votre caisse d'allocations familiales", "pour": "maintien des allocations après les études"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr", "intitule": "Sécurité sociale — Citoyens (mutualité)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/aide_financiere/allocations_familiales", "intitule": "Belgium.be — Allocations familiales"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

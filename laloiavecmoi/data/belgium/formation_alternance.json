@@ -9,7 +9,7 @@
     "portee": "Jeunes dès 15 ans et adultes souhaitant apprendre un métier en alternance",
     "source_officielle": "https://www.ifapme.be/"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "L'opérateur compétent dépend de votre région/communauté. Conditions d'âge, statut et indemnités varient : renseignez-vous auprès de l'opérateur de votre région avant de vous engager.",
   "faits": [
@@ -72,6 +72,35 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ALT-CONTRAT-REVENU-001",
+      "question": "Suis-je payé pendant ma formation en alternance, et quel est mon statut ?",
+      "reponse": "Oui, l'alternance est rémunérée. L'apprenant signe un contrat (ou convention) d'alternance avec une entreprise et l'opérateur de formation. Il perçoit une rétribution mensuelle, dont le montant augmente généralement au fur et à mesure de la progression dans la formation. L'apprenant bénéficie aussi d'une protection : il est notamment couvert pour les accidents du travail, et les allocations familiales peuvent être maintenues sous certaines conditions (montant de la rétribution, situation). Les montants exacts et les règles dépendent de l'opérateur de votre région : demandez-lui une simulation avant de signer.",
+      "reference_legale": "Décret relatif à la formation en alternance (compétence régionale/communautaire) ; accord de coopération-cadre relatif à la formation en alternance",
+      "contacts": [
+        {"nom": "Opérateur de votre région (IFAPME, efp, Syntra, IAWM)", "pour": "montant de la rétribution et statut"},
+        {"nom": "Votre caisse d'allocations familiales", "pour": "maintien des allocations pendant l'alternance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ifapme.be/", "intitule": "IFAPME — contrat et rétribution en alternance"},
+        {"type": "officiel", "url": "https://www.efp.be/", "intitule": "efp — alternance à Bruxelles"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ALT-CERTIFICATION-001",
+      "question": "La formation en alternance débouche-t-elle sur un vrai diplôme ?",
+      "reponse": "Oui. La formation en alternance mène à une certification reconnue (diplôme, certificat de qualification ou titre, selon le métier et l'opérateur), qui atteste que vous maîtrisez le métier et qui est valorisée sur le marché du travail. Selon le parcours, elle peut aussi donner accès à des études supérieures ou à la formation de chef d'entreprise (pour lancer sa propre activité). L'alternance combine un véritable apprentissage du métier en entreprise et des cours, ce qui constitue à la fois une qualification et une première expérience professionnelle concrète. Renseignez-vous auprès de l'opérateur sur la certification précise délivrée pour le métier visé.",
+      "reference_legale": "Décret relatif à la formation en alternance et à la certification (compétence régionale/communautaire)",
+      "contacts": [
+        {"nom": "Opérateur de votre région (IFAPME, efp, Syntra, IAWM)", "pour": "certification délivrée et débouchés"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ifapme.be/", "intitule": "IFAPME — certifications et débouchés"},
+        {"type": "officiel", "url": "https://www.efp.be/", "intitule": "efp — diplômes et qualifications"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

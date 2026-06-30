@@ -9,7 +9,7 @@
     "portee": "Que faire en cas de maladie, salaire garanti et indemnités de la mutualité",
     "source_officielle": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les délais et montants peuvent varier (statut, ancienneté) ; vérifiez auprès de votre mutualité ou de l'INAMI.",
   "faits": [
@@ -43,6 +43,38 @@
         {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/independants/declarer-son-incapacite-de-travail", "intitule": "INAMI — Incapacité de travail des indépendants"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "INCAP-MEDECIN-CONSEIL-001",
+      "question": "Qui décide si je suis (encore) en incapacité de travail ?",
+      "reponse": "C'est le médecin-conseil de votre mutualité qui reconnaît et contrôle votre incapacité. On distingue deux périodes : l'incapacité primaire (en principe la première année) puis, au-delà, l'invalidité. Le médecin-conseil peut vous convoquer pour évaluer l'évolution de votre état et votre capacité à reprendre une activité. Si vous n'êtes pas d'accord avec une décision (fin d'incapacité, refus), vous pouvez introduire un recours devant le tribunal du travail dans le délai indiqué. Respectez les convocations : ne pas s'y présenter sans justification peut entraîner la suspension des indemnités.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (reconnaissance de l'incapacité, invalidité)",
+      "alerte_delai": "Respectez les convocations du médecin-conseil ; un recours contre une décision se fait devant le tribunal du travail dans un délai limité.",
+      "contacts": [
+        {"nom": "Médecin-conseil de votre mutualité", "pour": "reconnaissance et contrôle de l'incapacité"},
+        {"nom": "Tribunal du travail", "pour": "contester une décision du médecin-conseil"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail", "intitule": "Sécurité sociale — Reconnaissance de l'incapacité"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/declarer-son-incapacite-de-travail", "intitule": "INAMI — Incapacité et invalidité"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "INCAP-REPRISE-001",
+      "question": "Puis-je reprendre le travail à temps partiel sans perdre mes indemnités ?",
+      "reponse": "Oui, c'est la reprise progressive (ou reprise de travail autorisée). Si vous êtes reconnu en incapacité, vous pouvez reprendre une activité adaptée — par exemple à temps partiel — à condition d'obtenir l'autorisation PRÉALABLE du médecin-conseil de votre mutualité. Vous conservez alors une partie de vos indemnités, en complément de votre rémunération, selon des règles de cumul. Il existe aussi des trajets de réintégration pour aider au retour au travail. Important : ne reprenez jamais une activité, même bénévole, sans l'accord du médecin-conseil, sous peine de devoir rembourser des indemnités.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (reprise autorisée du travail)",
+      "alerte_delai": "Demandez l'autorisation du médecin-conseil AVANT toute reprise, même partielle.",
+      "contacts": [
+        {"nom": "Médecin-conseil de votre mutualité", "pour": "autorisation de reprise progressive"},
+        {"nom": "Conseiller en prévention-médecin du travail", "pour": "trajet de réintégration"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/calculer-votre-indemnite", "intitule": "INAMI — Reprise du travail et cumul"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail", "intitule": "Sécurité sociale — Reprise du travail"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
