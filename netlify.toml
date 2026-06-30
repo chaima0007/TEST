@@ -1,0 +1,10 @@
+# Déploiement Netlify — sert le site statique SOLEA (dossier feet-hub),
+# sans builder l'app Next.js du dépôt.
+[build]
+  publish = "feet-hub"
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
