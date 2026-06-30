@@ -9,7 +9,7 @@
     "portee": "Conditions, droits et demande de la carte de stationnement (SPF Sécurité sociale — DG Personnes handicapées)",
     "source_officielle": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. L'évaluation médicale est faite par la DG Personnes handicapées ; les avantages exacts (gratuité) varient selon les communes.",
   "faits": [
@@ -47,6 +47,20 @@
         {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/static/applics/myhandicap/index.htm", "intitule": "My Handicap — guichet électronique"}
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "STAT-VALIDITE-PERTE-001",
+      "question": "Combien de temps la carte est-elle valable, et que faire en cas de perte, de vol ou de décès ?",
+      "reponse": "La durée de validité dépend de votre situation : la carte peut être délivrée de manière définitive (handicap permanent) ou pour une durée limitée (handicap susceptible d'évoluer), auquel cas elle doit être renouvelée avant son expiration. En cas de perte, de vol ou de détérioration, vous pouvez demander un duplicata à la DG Personnes handicapées (en cas de vol, une déclaration à la police est utile). Important : la carte est strictement personnelle ; en cas de décès du titulaire, elle n'est plus valable et doit être renvoyée à la DG Personnes handicapées. L'utiliser indûment (par exemple par un proche, sans la personne à bord) constitue une fraude sanctionnable.",
+      "reference_legale": "Arrêté ministériel du 7 mai 1999 relatif à la carte de stationnement pour personnes handicapées (validité, duplicata et restitution)",
+      "alerte_delai": "Si votre carte a une date d'expiration, demandez son renouvellement avant celle-ci pour éviter toute interruption.",
+      "contacts": [
+        {"nom": "DG Personnes handicapées (SPF Sécurité sociale)", "numero": "0800 987 99", "pour": "duplicata, renouvellement, restitution"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement", "intitule": "DG Personnes handicapées — Carte de stationnement (validité et duplicata)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

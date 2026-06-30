@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://agriculture.wallonie.be/home/ruralite-et-foncier/foncier/foncier-agricole/louer/bail-a-ferme/legislation-et-documentation.html"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Le bail à ferme est régionalisé : vérifiez les règles de votre Région.",
   "faits": [
@@ -53,6 +53,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FERME-PREEMPTION-001",
+      "question": "Le propriétaire veut vendre la terre que j'exploite : ai-je une priorité d'achat ?",
+      "reponse": "Oui. Le preneur (l'exploitant) bénéficie d'un droit de préemption : si le propriétaire veut vendre le bien loué, il doit d'abord vous l'offrir, en priorité et aux mêmes conditions qu'à un tiers. Concrètement, le notaire vous notifie le contenu de la vente projetée (prix et conditions) et vous disposez d'un délai pour répondre et exercer votre droit. Si la vente a lieu sans respecter votre droit de préemption, vous pouvez, dans un délai légal, demander en justice d'être subrogé à l'acheteur (reprendre l'achat à sa place) ou réclamer des dommages et intérêts. C'est une protection forte du métier d'agriculteur : ne laissez pas passer les délais de réponse.",
+      "reference_legale": "Loi du 4 novembre 1969 sur le bail à ferme (droit de préemption du preneur) ; décret wallon du 2 mai 2019",
+      "alerte_delai": "Répondez dans le délai indiqué par la notification du notaire : passé ce délai, le droit de préemption est perdu.",
+      "contacts": [
+        {"nom": "Notaire", "pour": "notification de la vente et exercice du droit de préemption"},
+        {"nom": "SPW Agriculture", "lien": "https://agriculture.wallonie.be", "pour": "information sur le bail à ferme"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://agriculture.wallonie.be/home/ruralite-et-foncier/foncier/foncier-agricole/louer/bail-a-ferme/legislation-et-documentation.html", "intitule": "SPW Agriculture — Bail à ferme et droit de préemption"},
+        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2019/05/02/2019015073/2020/01/01", "intitule": "Wallex — Bail à ferme (décret du 2 mai 2019)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

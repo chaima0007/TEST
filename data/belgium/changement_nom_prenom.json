@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/changement_de_nom"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Les modalités et coûts (prénom) varient selon la commune.",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "NOMPRE-TRANS-001",
+      "question": "Existe-t-il des règles particulières pour les personnes transgenres ?",
+      "reponse": "Oui. Pour les personnes transgenres, le changement de prénom bénéficie d'une procédure simplifiée et d'un coût fortement réduit (souvent quasi gratuit), à la commune, afin que le prénom corresponde à l'identité de genre vécue. Parallèlement, il existe une procédure spécifique, distincte, pour modifier l'enregistrement du sexe (la « mention du sexe ») à l'état civil, également auprès de la commune, fondée sur une déclaration de la personne (sans condition médicale ou chirurgicale). Ces démarches sont personnelles ; pour un mineur, des règles particulières et un accompagnement sont prévus. Renseignez-vous auprès de votre commune et, au besoin, d'une association spécialisée.",
+      "reference_legale": "Loi du 15 mai 1987 relative aux noms et prénoms ; dispositions spécifiques relatives au changement de prénom et à l'enregistrement du sexe des personnes transgenres",
+      "contacts": [
+        {"nom": "Administration communale (état civil)", "pour": "changement de prénom et de mention du sexe"},
+        {"nom": "Association spécialisée (accompagnement des personnes trans)", "pour": "information et soutien"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/changement_de_nom", "intitule": "SPF Justice — Changement de prénom (personnes transgenres)"},
+        {"type": "officiel", "url": "https://igvm-iefh.belgium.be/fr", "intitule": "Institut pour l'égalité des femmes et des hommes — Transgenres"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

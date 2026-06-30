@@ -9,7 +9,7 @@
     "portee": "Aide financière aux études (secondaire et supérieur) selon les revenus",
     "source_officielle": "https://allocations-etudes.cfwb.be/"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Montants et plafonds sont fixés chaque année ; vérifiez sur le site officiel des allocations d'études. En Flandre, l'organisme compétent est différent.",
   "faits": [
@@ -111,6 +111,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "BOURSE-REFUS-AVANTAGES-001",
+      "question": "Que faire en cas de refus, et quels avantages donne le statut de boursier ?",
+      "reponse": "Si votre demande d'allocation d'études est refusée ou si le montant vous semble incorrect, vous pouvez introduire un recours : d'abord une réclamation auprès du service des allocations d'études, puis, en dernier ressort, un recours devant le Conseil d'État dans le délai indiqué sur la décision. Conservez la décision écrite et les justificatifs de revenus. Par ailleurs, être reconnu « étudiant boursier » ouvre des avantages au-delà de la bourse elle-même : dans le supérieur, le minerva (droits d'inscription) est fortement réduit ou gratuit, et de nombreuses réductions existent (transports, activités, parfois logement). N'hésitez donc pas à faire valoir ce statut auprès de votre établissement.",
+      "reference_legale": "Décret de la Communauté française du 7 novembre 1983 relatif aux allocations et prêts d'études (recours et effets du statut de boursier)",
+      "alerte_delai": "Le recours contre un refus doit être introduit dans le délai mentionné sur la décision : ne tardez pas.",
+      "contacts": [
+        {"nom": "Service des allocations d'études (FWB)", "lien": "https://allocations-etudes.cfwb.be/", "pour": "réclamation et recours"},
+        {"nom": "Service social de votre établissement", "pour": "avantages liés au statut de boursier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://allocations-etudes.cfwb.be/", "intitule": "FWB — Allocations d'études (recours et avantages)"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be/allocation-detudes-dans-lenseignement-superieur-conditions-montants-et-minerval/", "intitule": "Infor Jeunes — Boursier et minerval"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

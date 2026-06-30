@@ -9,7 +9,7 @@
     "portee": "Assurances du quotidien : véhicule, vie privée, litiges",
     "source_officielle": "https://www.belgium.be/fr/mobilite/vehicules/taxe_de_circulation_et_assurance/assurance"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Comparez les offres (outil gratuit Wikifin/FSMA) et lisez bien les conditions avant de signer.",
   "faits": [
@@ -52,6 +52,21 @@
         {"type": "officiel", "url": "https://www.fsma.be/fr", "intitule": "FSMA"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ASSU-PROTECTION-JURIDIQUE-001",
+      "question": "À quoi sert une assurance protection juridique ?",
+      "reponse": "L'assurance protection juridique prend en charge les frais liés à la défense de vos droits : honoraires d'avocat, frais d'expertise, frais de procédure, que vous soyez en demande ou en défense (litige de voisinage, de consommation, avec un employeur, après un accident…). Elle est facultative, mais très utile car les frais de justice peuvent être élevés. Vous gardez en principe le libre choix de votre avocat. Bon à savoir : un contrat de protection juridique répondant aux conditions légales peut ouvrir droit à un avantage fiscal. Vérifiez l'étendue exacte (domaines couverts, plafonds d'intervention, délais d'attente) avant de souscrire et comparez les offres.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (assurance protection juridique)",
+      "contacts": [
+        {"nom": "Votre assureur / courtier", "pour": "souscrire une protection juridique adaptée"},
+        {"nom": "Wikifin (FSMA)", "lien": "https://www.wikifin.be", "pour": "comparer les contrats"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fsma.be/fr", "intitule": "FSMA — Assurances"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr", "intitule": "Wikifin (FSMA) — Protection juridique"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

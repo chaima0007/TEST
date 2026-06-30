@@ -9,7 +9,7 @@
     "portee": "Droits des consommateurs face aux entreprises en Belgique",
     "source_officielle": "https://economie.fgov.be/fr/themes/protection-des-consommateurs"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Pour un litige, tentez d'abord un accord écrit avec le vendeur, puis le Service de médiation pour le consommateur.",
   "faits": [
@@ -82,6 +82,20 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CONSO-PRATIQUES-DELOYALES-001",
+      "question": "Une promotion ou une publicité m'a trompé : est-ce permis ?",
+      "reponse": "Non. Le Code de droit économique interdit les pratiques commerciales déloyales, et en particulier les pratiques trompeuses ou agressives à l'égard des consommateurs. Sont notamment interdits : les fausses réductions (prix « barré » qui n'a jamais été pratiqué), les faux avis de clients, l'annonce d'un produit en stock pour en vendre un autre (vente d'appât), la vente forcée (réclamer le paiement d'un bien non commandé), les abonnements aux conditions de résiliation cachées, et toute information mensongère sur le prix, les caractéristiques ou la disponibilité. Vous avez droit à une information claire et exacte avant d'acheter. En cas de pratique trompeuse, gardez les preuves (captures, publicités) et signalez-la au SPF Économie ; selon les cas, le contrat peut être annulé.",
+      "reference_legale": "Code de droit économique — livre VI, pratiques du marché et protection du consommateur (pratiques commerciales déloyales, trompeuses et agressives)",
+      "contacts": [
+        {"nom": "SPF Économie — Point de contact", "lien": "https://economie.fgov.be", "pour": "signaler une pratique trompeuse"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs", "intitule": "SPF Économie — Pratiques commerciales déloyales"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/economie/commerce_et_consommation/protection_du_consommateur", "intitule": "Belgium.be — Protection du consommateur"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

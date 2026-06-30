@@ -9,7 +9,7 @@
     "portee": "Droit à un travail qui ne nuit pas à la santé, recours et accompagnement",
     "source_officielle": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Votre santé passe avant tout : ces lignes ne remplacent pas un avis médical. Si vous allez très mal ou avez des pensées noires, parlez-en maintenant — Centre de Prévention du Suicide 0800 32 123 (24h/24), ou 112 en urgence.",
   "faits": [
@@ -58,6 +58,21 @@
         {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/risques-psychosociaux-au-travail", "intitule": "SPF Emploi — Risques psychosociaux"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BIEN-REINTEGRATION-001",
+      "question": "Après un arrêt long, comment reprendre le travail en douceur ?",
+      "reponse": "Vous n'êtes pas obligé·e de reprendre du jour au lendemain à 100 %. Deux outils existent. D'abord, la reprise progressive (travail autorisé) : avec l'accord PRÉALABLE du médecin-conseil de votre mutualité, vous pouvez reprendre à temps partiel tout en conservant une partie de vos indemnités. Ensuite, le trajet de réintégration : le médecin du travail (conseiller en prévention-médecin du travail) examine, en toute confidentialité, comment adapter votre poste ou en trouver un autre compatible avec votre état de santé. Vous pouvez demander vous-même à démarrer ce trajet. L'objectif est un retour durable, pas un retour précipité qui mènerait à une rechute.",
+      "reference_legale": "Loi du 4 août 1996 relative au bien-être des travailleurs (trajet de réintégration) ; loi coordonnée du 14 juillet 1994 (reprise du travail autorisée)",
+      "contacts": [
+        {"nom": "Médecin du travail (conseiller en prévention)", "pour": "trajet de réintégration et adaptation du poste"},
+        {"nom": "Médecin-conseil de la mutualité", "pour": "autorisation de reprise progressive"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/la-reintegration-des-travailleurs-en-incapacite-de-travail", "intitule": "SPF Emploi — Réintégration des travailleurs en incapacité"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/calculer-votre-indemnite", "intitule": "INAMI — Reprise du travail autorisée"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
