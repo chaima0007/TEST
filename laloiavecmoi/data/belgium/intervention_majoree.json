@@ -1,0 +1,72 @@
+{
+  "module": "intervention_majoree",
+  "titre": "Intervention majorée (statut BIM) — mieux remboursé",
+  "domaine": "Santé & remboursements",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (art. 37 §19) ; arrêté royal du 15 janvier 2014 relatif à l'intervention majorée",
+    "portee": "Statut donnant un meilleur remboursement des soins et de nombreux droits dérivés",
+    "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/intervention-majoree"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. L'octroi dépend de votre statut ou de vos revenus ; adressez-vous à votre mutualité pour vérifier votre droit.",
+  "faits": [
+    {
+      "id": "BIM-PRINCIPE-001",
+      "question": "Qu'est-ce que l'intervention majorée (BIM) ?",
+      "reponse": "L'intervention majorée (statut « BIM ») donne droit à un meilleur remboursement de vos soins de santé : vous payez une part personnelle (ticket modérateur) réduite chez le médecin, le dentiste, le kiné, à la pharmacie ou à l'hôpital. C'est un statut social destiné aux personnes aux revenus modestes, qui allège fortement le coût des soins. Au-delà du remboursement, il ouvre une série d'avantages dérivés (voir plus loin), ce qui en fait l'un des statuts les plus utiles à connaître.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (art. 37 §19) ; arrêté royal du 15 janvier 2014 relatif à l'intervention majorée",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "demander ou vérifier le statut BIM"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/intervention-majoree", "intitule": "INAMI — Intervention majorée (BIM)"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BIM-QUI-001",
+      "question": "Qui a droit à l'intervention majorée ?",
+      "reponse": "Deux voies. 1) L'octroi automatique : certains statuts donnent droit au BIM sans examen des revenus, par exemple les bénéficiaires du revenu d'intégration (RIS) ou de l'aide du CPAS, de la GRAPA, d'une allocation pour personnes handicapées, ou les enfants reconnus handicapés. 2) L'octroi après examen des revenus : si vos revenus de ménage sont sous un plafond, vous pouvez demander le BIM à votre mutualité, qui vérifie votre situation. Beaucoup de personnes y ont droit sans le savoir : en cas de doute (faibles revenus, pension modeste, chômage de longue durée…), demandez à votre mutualité de vérifier.",
+      "reference_legale": "Arrêté royal du 15 janvier 2014 relatif à l'intervention majorée (octroi automatique et examen des revenus)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "examen des revenus et octroi du BIM"},
+        {"nom": "CPAS", "pour": "statuts ouvrant droit automatiquement au BIM"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/intervention-majoree", "intitule": "INAMI — BIM : conditions d'octroi"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BIM-AVANTAGES-001",
+      "question": "Quels avantages le statut BIM ouvre-t-il en plus du remboursement ?",
+      "reponse": "Le BIM déclenche de nombreux « droits dérivés » très concrets : l'application obligatoire du tiers payant chez le médecin généraliste (vous n'avancez que votre part), un plafond de maximum à facturer plus favorable, le tarif social pour l'énergie (sous conditions), des réductions sur les transports publics, et divers avantages communaux ou culturels. C'est pourquoi vérifier votre droit au BIM peut avoir un impact financier important bien au-delà des seuls soins de santé. Si vous obtenez le statut, signalez-le pour activer ces avantages.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 et réglementations sectorielles liant des droits dérivés au statut d'intervention majorée",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "attestation BIM pour activer les droits dérivés"},
+        {"nom": "Fournisseur d'énergie / société de transport", "pour": "tarif social et réductions"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/intervention-majoree", "intitule": "INAMI — BIM et droits dérivés"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BIM-TIERS-PAYANT-001",
+      "question": "Avec le BIM, dois-je encore avancer l'argent chez le médecin ?",
+      "reponse": "Non, en principe : depuis le 1er octobre 2015, le tiers payant est OBLIGATOIRE pour les bénéficiaires de l'intervention majorée chez le médecin généraliste. Cela signifie que vous ne payez sur place que votre (petite) part personnelle, le reste étant réglé directement entre le médecin et votre mutualité. C'est une aide précieuse pour ne pas renoncer aux soins faute de pouvoir avancer la totalité. Présentez votre carte d'identité électronique (eID) : le médecin voit votre statut et applique le tiers payant.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (art. 53 — tiers payant obligatoire pour les bénéficiaires de l'intervention majorée)",
+      "contacts": [
+        {"nom": "Votre médecin généraliste", "pour": "application du tiers payant (BIM)"},
+        {"nom": "Votre mutualité", "pour": "vérifier que votre statut BIM est actif"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/tiers-payant", "intitule": "INAMI — Tiers payant et intervention majorée"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

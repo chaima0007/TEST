@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-30. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**671 réponses · 156 modules · 1025 sources officielles · 402 fiches avec contacts · 143 alertes de délai**
+**687 réponses · 160 modules · 1041 sources officielles · 418 fiches avec contacts · 143 alertes de délai**
 
 ## Modules en ligne
 
@@ -95,6 +95,7 @@
 | Maladie & incapacité | Maladie & incapacité de travail | 4 | 8 | 4 | 3 |
 | Indépendant & activité | Devenir indépendant — démarches pour se lancer | 9 | 19 | 9 | 2 |
 | Circulation & sanctions | Infractions routières — vitesse, alcool, amendes | 4 | 8 | 4 | 2 |
+| Santé & remboursements | Intervention majorée (statut BIM) — mieux remboursé | 4 | 4 | 4 | 0 |
 | — | Interruption volontaire de grossesse (IVG) | 4 | 5 | 1 | 1 |
 | Job étudiant | Job étudiant — contrat, quota d'heures, cotisations réduites | 4 | 7 | 2 | 2 |
 | Justice & citoyenneté | Juré d'assises — le devoir de juré | 4 | 5 | 0 | 0 |
@@ -107,6 +108,7 @@
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 4 | 5 | 4 | 2 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 4 | 8 | 4 | 1 |
 | — | Marchand de sommeil (logement indigne) | 4 | 5 | 1 | 0 |
+| Santé & remboursements | Maximum à facturer (MàF) — plafond des frais de santé | 4 | 4 | 4 | 0 |
 | Travail & santé | Médecine du travail & surveillance de la santé | 4 | 5 | 1 | 0 |
 | Règlement des conflits | Médiation & règlement amiable des conflits | 4 | 8 | 4 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 4 | 5 | 4 | 0 |
@@ -143,6 +145,7 @@
 | — | Service bancaire de base (droit au compte) | 4 | 5 | 1 | 0 |
 | Sexisme & espace public | Sexisme & harcèlement dans l'espace public | 4 | 8 | 4 | 0 |
 | — | Soins de santé à l'étranger (remboursement) | 4 | 5 | 1 | 2 |
+| Santé & remboursements | Statut affection chronique — frais de santé allégés | 4 | 4 | 4 | 0 |
 | — | Statut social de l'artiste (travail des arts) | 4 | 6 | 1 | 0 |
 | Successions | Successions & héritage — accepter, renoncer, délais | 5 | 11 | 4 | 2 |
 | — | Succession internationale | 4 | 5 | 1 | 0 |
@@ -150,6 +153,7 @@
 | Télécommunications | Télécom — internet, téléphone, litiges | 4 | 7 | 4 | 2 |
 | Travail & organisation | Télétravail — droits, frais et déconnexion | 4 | 8 | 4 | 0 |
 | Testament & donations | Testament & planifier sa succession | 4 | 7 | 4 | 0 |
+| Santé & remboursements | Tiers payant — ne payer que sa part chez le soignant | 4 | 4 | 4 | 0 |
 | — | Titres-services (aide à domicile) | 4 | 6 | 1 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 4 | 8 | 4 | 2 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |

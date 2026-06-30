@@ -1,0 +1,69 @@
+{
+  "module": "maximum_a_facturer",
+  "titre": "Maximum à facturer (MàF) — plafond des frais de santé",
+  "domaine": "Santé & remboursements",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 ; arrêté royal du 15 juillet 2002 (maximum à facturer)",
+    "portee": "Plafonnement annuel des frais de santé d'un ménage et remboursement automatique au-delà du seuil",
+    "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/maximum-a-facturer-maf"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les plafonds varient selon les revenus du ménage et sont indexés ; vérifiez les montants en vigueur auprès de votre mutualité.",
+  "faits": [
+    {
+      "id": "MAF-PRINCIPE-001",
+      "question": "Qu'est-ce que le maximum à facturer (MàF) ?",
+      "reponse": "Le maximum à facturer est un mécanisme de protection qui limite ce que votre ménage doit payer de sa poche pour les soins de santé sur une année. Concrètement, la mutualité additionne vos « tickets modérateurs » (la part personnelle qui reste à votre charge après remboursement) ; dès que le total dépasse un plafond annuel fixé pour votre ménage, les soins suivants de l'année vous sont remboursés intégralement (plus de ticket modérateur). C'est un filet de sécurité essentiel contre les grosses dépenses de santé, surtout en cas de maladie lourde.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (maximum à facturer)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "compteur du MàF et remboursements"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/maximum-a-facturer-maf", "intitule": "INAMI — Maximum à facturer"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MAF-PLAFOND-001",
+      "question": "À partir de quel montant suis-je protégé ?",
+      "reponse": "Le plafond dépend des REVENUS de votre ménage : plus les revenus sont modestes, plus le plafond est bas (donc plus la protection joue tôt). Il existe ainsi plusieurs tranches (MàF « revenus » et MàF « social » pour certains statuts). Les enfants bénéficient aussi d'une protection renforcée, et le statut d'affection chronique abaisse encore le plafond. Les montants exacts sont indexés chaque année : votre mutualité applique automatiquement le bon plafond selon votre situation. Vous n'avez pas à le calculer vous-même.",
+      "reference_legale": "Arrêté royal du 15 juillet 2002 (plafonds du maximum à facturer selon les revenus du ménage)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "plafond applicable à votre ménage"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/maximum-a-facturer-maf", "intitule": "INAMI — MàF : plafonds selon les revenus"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MAF-AUTOMATIQUE-001",
+      "question": "Dois-je faire une demande pour bénéficier du MàF ?",
+      "reponse": "Non, et c'est un point important : le maximum à facturer est appliqué AUTOMATIQUEMENT par votre mutualité, sans aucune démarche de votre part. C'est elle qui tient le compteur de vos tickets modérateurs et qui vous rembourse dès que le plafond est atteint (souvent assez vite après le dépassement). Veillez simplement à bien remettre vos attestations de soins et tickets à votre mutualité pour que tout soit comptabilisé. En cas de doute sur votre compteur, demandez un décompte à votre mutualité.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (application automatique du maximum à facturer par les organismes assureurs)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "décompte des tickets modérateurs et remboursement MàF"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/maximum-a-facturer-maf", "intitule": "INAMI — MàF appliqué automatiquement"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MAF-COMPTE-001",
+      "question": "Quels frais sont comptabilisés dans le MàF ?",
+      "reponse": "Le MàF additionne surtout les tickets modérateurs des soins remboursés par l'assurance obligatoire : consultations chez le médecin, médicaments remboursables, soins infirmiers, kinésithérapie, hospitalisation, etc. En revanche, certains frais n'entrent pas en compte (par exemple les suppléments d'honoraires en chambre individuelle, le confort hôtelier, ou des produits non remboursés). C'est pourquoi le MàF protège fortement contre les soins « de base » lourds, mais pas contre tous les suppléments — d'où l'intérêt, en complément, d'une assurance hospitalisation. Gardez vos justificatifs.",
+      "reference_legale": "Arrêté royal du 15 juillet 2002 (frais pris en compte dans le maximum à facturer)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "savoir quels frais comptent pour votre MàF"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/maximum-a-facturer-maf", "intitule": "INAMI — Frais comptabilisés dans le MàF"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

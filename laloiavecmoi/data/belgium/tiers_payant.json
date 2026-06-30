@@ -1,0 +1,69 @@
+{
+  "module": "tiers_payant",
+  "titre": "Tiers payant — ne payer que sa part chez le soignant",
+  "domaine": "Santé & remboursements",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (art. 53 — régime du tiers payant)",
+    "portee": "Mécanisme permettant de ne pas avancer la totalité des frais de soins",
+    "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/tiers-payant"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. L'application du tiers payant dépend du type de soin et de votre statut ; renseignez-vous auprès du soignant ou de votre mutualité.",
+  "faits": [
+    {
+      "id": "TP-PRINCIPE-001",
+      "question": "Qu'est-ce que le tiers payant ?",
+      "reponse": "Le tiers payant est un système de paiement où vous ne payez au soignant que VOTRE part personnelle (le ticket modérateur), tandis que la mutualité paie directement au prestataire la partie qu'elle rembourse. Sans tiers payant, vous devez avancer toute la facture, puis vous faire rembourser ensuite par votre mutualité. Le tiers payant évite donc d'avancer de grosses sommes — c'est essentiel pour ne pas renoncer aux soins faute de trésorerie. Il est déjà la règle à la pharmacie et à l'hôpital.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (art. 53 — régime du tiers payant)",
+      "contacts": [
+        {"nom": "Votre soignant / pharmacie / hôpital", "pour": "application du tiers payant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/tiers-payant", "intitule": "INAMI — Tiers payant"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TP-OBLIGATOIRE-001",
+      "question": "Dans quels cas le tiers payant est-il obligatoire ou possible ?",
+      "reponse": "Le tiers payant est systématique pour les médicaments remboursables (pharmacie) et lors d'une hospitalisation. Chez le médecin généraliste, il est OBLIGATOIRE pour les bénéficiaires de l'intervention majorée (BIM) depuis le 1er octobre 2015. Pour les autres patients, le médecin généraliste PEUT l'appliquer (notamment en cas de situation financière difficile), et c'est de plus en plus simple grâce à la facturation électronique. N'hésitez pas à le demander à votre médecin si avancer les frais vous pose problème.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (art. 53) ; obligation du tiers payant pour les bénéficiaires de l'intervention majorée depuis le 1er octobre 2015",
+      "contacts": [
+        {"nom": "Votre médecin généraliste", "pour": "demander le tiers payant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/tiers-payant", "intitule": "INAMI — Tiers payant : quand s'applique-t-il ?"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TP-COMMENT-001",
+      "question": "Comment en bénéficier concrètement ?",
+      "reponse": "Le plus souvent, il suffit de présenter votre carte d'identité électronique (eID) : le soignant lit vos données d'assurance et applique le tiers payant si vous y avez droit. À la pharmacie, présentez votre eID (ou la carte de votre mutualité). À l'hôpital, vos données sont vérifiées à l'admission. Pour que tout fonctionne, soyez en règle de mutualité (cotisations à jour) ; en cas de doute, contactez votre mutualité. Si un soignant refuse le tiers payant alors qu'il est obligatoire pour votre statut, signalez-le à votre mutualité.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (modalités d'application du tiers payant)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "droits au tiers payant et situations de refus"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/tiers-payant", "intitule": "INAMI — Bénéficier du tiers payant"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TP-RENONCEMENT-001",
+      "question": "Pourquoi le tiers payant est-il important contre le renoncement aux soins ?",
+      "reponse": "De nombreuses personnes reportent ou renoncent à des soins parce qu'elles ne peuvent pas avancer la facture, même si elle leur sera remboursée plus tard. Le tiers payant supprime cet obstacle : vous ne déboursez que votre part. C'est donc un levier d'accès aux soins, en particulier pour les personnes à revenus modestes (souvent aussi bénéficiaires du BIM, pour qui il est obligatoire chez le généraliste). Si vous hésitez à consulter pour des raisons financières, parlez-en franchement à votre médecin ou à votre mutualité : des solutions existent (tiers payant, BIM, MàF, aide du CPAS).",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (accessibilité financière des soins ; tiers payant)",
+      "contacts": [
+        {"nom": "Médecin / mutualité / CPAS", "pour": "éviter le renoncement aux soins pour raisons financières"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/tiers-payant", "intitule": "INAMI — Tiers payant et accès aux soins"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

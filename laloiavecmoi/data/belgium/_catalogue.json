@@ -2,10 +2,10 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 156,
-    "faits": 671,
-    "sources_officielles": 1025,
-    "faits_avec_contacts": 402,
+    "modules": 160,
+    "faits": 687,
+    "sources_officielles": 1041,
+    "faits_avec_contacts": 418,
     "faits_avec_alerte_delai": 143
   },
   "modules": [
@@ -1054,6 +1054,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "intervention_majoree.json",
+      "module": "intervention_majoree",
+      "titre": "Intervention majorée (statut BIM) — mieux remboursé",
+      "domaine": "Santé & remboursements",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "ivg.json",
       "module": "ivg",
       "titre": "Interruption volontaire de grossesse (IVG)",
@@ -1194,6 +1206,18 @@
       "faits": 4,
       "sources_officielles": 5,
       "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "maximum_a_facturer.json",
+      "module": "maximum_a_facturer",
+      "titre": "Maximum à facturer (MàF) — plafond des frais de santé",
+      "domaine": "Santé & remboursements",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-30"
     },
@@ -1630,6 +1654,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "statut_affection_chronique.json",
+      "module": "statut_affection_chronique",
+      "titre": "Statut affection chronique — frais de santé allégés",
+      "domaine": "Santé & remboursements",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "statut_social_artiste.json",
       "module": "statut_social_artiste",
       "titre": "Statut social de l'artiste (travail des arts)",
@@ -1709,6 +1745,18 @@
       "juridiction": "BE",
       "faits": 4,
       "sources_officielles": 7,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "tiers_payant.json",
+      "module": "tiers_payant",
+      "titre": "Tiers payant — ne payer que sa part chez le soignant",
+      "domaine": "Santé & remboursements",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 4,
       "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-30"
