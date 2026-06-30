@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.wallonie.be/fr/demarches/solliciter-un-arrete-dexpropriation-pour-cause-dutilite-publique"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. L'expropriation est régionalisée : faites-vous assister (avocat, géomètre-expert) pour défendre votre indemnité.",
   "faits": [
@@ -53,6 +53,20 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EXPRO-INDEMNITE-COMPLETE-001",
+      "question": "L'indemnité couvre-t-elle seulement la valeur du bien ?",
+      "reponse": "Non : l'indemnité doit réparer l'INTÉGRALITÉ du préjudice que l'expropriation vous cause, pas seulement la valeur vénale du bien. Selon votre situation, elle peut donc inclure des indemnités complémentaires : frais de déménagement, frais de remploi (pour racheter un bien équivalent, y compris les droits d'enregistrement), indemnité de remploi, et, pour un commerce ou une activité, le trouble commercial (perte d'activité). Faites-vous assister par un géomètre-expert et/ou un avocat pour chiffrer l'ensemble : l'expropriant propose souvent un montant en deçà du préjudice réel. Bon à savoir : si le bien n'est finalement pas affecté à l'utilité publique annoncée, un droit de rétrocession (rachat) peut exister.",
+      "reference_legale": "Constitution, art. 16 (juste indemnité réparant l'intégralité du préjudice) ; décret régional sur la procédure d'expropriation",
+      "contacts": [
+        {"nom": "Géomètre-expert / avocat en expropriation", "pour": "évaluer et défendre l'indemnité complète"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/solliciter-un-arrete-dexpropriation-pour-cause-dutilite-publique", "intitule": "Wallonie.be — Indemnité d'expropriation"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 16 (juste indemnité)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

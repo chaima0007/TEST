@@ -9,7 +9,7 @@
     "portee": "Séjour des personnes étrangères en Belgique : titres, regroupement familial, protection internationale",
     "source_officielle": "https://dofi.ibz.be/fr"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Domaine complexe et à fort enjeu. Information générale uniquement. Faites-vous accompagner par un service spécialisé (ex. service social, association d'aide aux étrangers) ou un avocat en droit des étrangers. Les procédures et délais évoluent.",
   "faits": [
@@ -58,6 +58,22 @@
         {"type": "officiel", "url": "https://dofi.ibz.be/fr", "intitule": "Office des étrangers"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ETR-RECOURS-001",
+      "question": "Ma demande de séjour est refusée ou je reçois un ordre de quitter le territoire : quel recours ?",
+      "reponse": "Vous pouvez contester. La plupart des décisions de l'Office des étrangers (refus de séjour, ordre de quitter le territoire) peuvent faire l'objet d'un recours devant le Conseil du contentieux des étrangers (CCE), une juridiction spécialisée. Attention : le délai est court (souvent 30 jours, parfois beaucoup moins en cas de détention ou d'extrême urgence) et la procédure est technique. Il est vivement conseillé de consulter immédiatement un avocat en droit des étrangers (l'aide juridique gratuite est possible selon vos revenus) et un service spécialisé. N'attendez pas : un recours hors délai est irrecevable. Gardez précieusement la décision et l'enveloppe datée.",
+      "reference_legale": "Loi du 15 décembre 1980 sur les étrangers (recours devant le Conseil du contentieux des étrangers)",
+      "alerte_delai": "Le délai de recours au CCE est souvent de 30 jours (parfois bien moins) : consultez un avocat sans délai dès réception de la décision.",
+      "contacts": [
+        {"nom": "Conseil du contentieux des étrangers (CCE)", "pour": "recours contre une décision de séjour"},
+        {"nom": "Avocat en droit des étrangers / Bureau d'aide juridique", "pour": "recours et aide juridique gratuite"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr", "intitule": "Office des étrangers — Décisions et recours"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr", "intitule": "Droits Quotidiens — Recours en droit des étrangers"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

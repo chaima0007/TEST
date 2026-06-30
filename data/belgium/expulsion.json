@@ -9,7 +9,7 @@
     "portee": "Procédure d'expulsion, délais, protections et aide",
     "source_officielle": "https://logement.wallonie.be/fr/bail/procedure-expulsion"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les règles de bail et d'expulsion dépendent de votre Région ; vérifiez auprès du service logement régional ou d'un service d'aide juridique.",
   "faits": [
@@ -116,6 +116,23 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EXPUL-AIDE-DELAIS-001",
+      "question": "Quelles aides et quels délais puis-je obtenir face à une expulsion ?",
+      "reponse": "Plusieurs leviers existent. Devant le juge de paix, vous pouvez demander des termes et délais (un échéancier pour payer l'arriéré) et, en cas de difficulté sociale, un report ou un sursis de l'expulsion : présentez votre situation et vos efforts de paiement. Le CPAS est un allié essentiel : il peut accorder une aide (garantie locative, aide au déménagement, parfois une aide financière), vous orienter vers un logement (social, AIS) et soutenir votre défense. Selon la région, des aides au relogement existent. Enfin, l'aide juridique (avocat pro deo) est gratuite selon vos revenus. Le maître-mot : réagir dès la première difficulté, ne pas attendre la convocation.",
+      "reference_legale": "Code judiciaire — termes et délais et pouvoir du juge de surseoir à l'expulsion ; loi organique des CPAS du 8 juillet 1976 (aide sociale)",
+      "alerte_delai": "Demandez des termes et délais ou un report DÈS l'audience chez le juge de paix ; contactez le CPAS sans attendre.",
+      "contacts": [
+        {"nom": "CPAS", "pour": "aide au relogement, garantie locative, accompagnement"},
+        {"nom": "Juge de paix", "pour": "termes et délais, report de l'expulsion"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/procedure-expulsion", "intitule": "Wallonie — Expulsion et aides"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Aide juridique"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

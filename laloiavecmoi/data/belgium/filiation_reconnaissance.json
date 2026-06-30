@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.belgium.be/fr/famille/enfants/naissance/reconnaissance"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. La filiation est une matière sensible : faites-vous accompagner (officier de l'état civil, notaire, avocat).",
   "faits": [
@@ -53,6 +53,20 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FILIA-EFFETS-001",
+      "question": "Quels sont les effets juridiques de la filiation pour l'enfant ?",
+      "reponse": "Établir la filiation crée un lien de droit complet entre le parent et l'enfant, avec des effets importants : le nom de l'enfant (les parents peuvent, dans le cadre légal, choisir le nom), l'exercice de l'autorité parentale (en principe conjointe entre les deux parents), une obligation réciproque d'entretien et d'éducation (le parent doit contribuer aux besoins de l'enfant, même séparé), et des droits successoraux (l'enfant hérite de son parent, et inversement). La filiation peut aussi avoir un effet sur la nationalité dans certains cas. C'est donc bien plus qu'une formalité : elle fonde les droits et devoirs entre parent et enfant.",
+      "reference_legale": "Code civil — effets de la filiation (nom, autorité parentale, obligation d'entretien, droits successoraux)",
+      "contacts": [
+        {"nom": "Officier de l'état civil / notaire", "pour": "nom de l'enfant et effets de la filiation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/naissance/reconnaissance", "intitule": "Belgium.be — Filiation et ses effets"},
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles", "intitule": "SPF Justice — Personnes et familles"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

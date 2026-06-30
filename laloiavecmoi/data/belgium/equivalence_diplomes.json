@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.belgium.be/fr/formation/international/diplomes/equivalence"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. La matière est communautaire : suivez les indications du service des équivalences ou du centre NARIC compétent.",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EQUIV-PROFESSION-001",
+      "question": "Faut-il une équivalence pour exercer mon métier, ou est-ce différent ?",
+      "reponse": "Il faut distinguer deux choses. L'équivalence « académique » détermine la valeur de votre diplôme en Belgique (pour étudier, en général). Mais pour EXERCER une profession réglementée (médecin, infirmier, avocat, architecte, électricien, etc.), c'est une autre démarche : la reconnaissance des qualifications professionnelles, qui vérifie que vous remplissez les conditions pour pratiquer ce métier. Pour un diplôme obtenu dans l'Union européenne, cette reconnaissance est facilitée par une directive européenne. L'autorité compétente dépend de la profession et de la région/communauté. En résumé : équivalence de diplôme ≠ droit d'exercer — renseignez-vous sur la profession précise visée.",
+      "reference_legale": "Décret de la Communauté française sur l'équivalence des diplômes ; directive 2005/36/CE relative à la reconnaissance des qualifications professionnelles",
+      "contacts": [
+        {"nom": "Autorité compétente pour la profession réglementée", "pour": "reconnaissance des qualifications professionnelles"},
+        {"nom": "Your Europe", "lien": "https://europa.eu/youreurope/citizens/", "pour": "reconnaissance d'un diplôme UE"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/formation/international/diplomes/equivalence", "intitule": "Belgium.be — Équivalence et reconnaissance professionnelle"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/work/professional-qualifications/recognition-of-professional-qualifications/index_fr.htm", "intitule": "Your Europe — Reconnaissance des qualifications"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

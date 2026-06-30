@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/epargne-pension"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Les plafonds sont fixés annuellement : vérifiez les montants de l'année en cours auprès du SPF Finances.",
   "faits": [
@@ -63,6 +63,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EPARGNE-FISCALITE-SORTIE-001",
+      "question": "Serai-je taxé quand je récupérerai mon épargne-pension ?",
+      "reponse": "Oui, mais une seule fois et de façon plafonnée. Une taxe (dite « taxe sur l'épargne à long terme ») est prélevée automatiquement, en principe à vos 60 ans (ou, pour les contrats commencés à partir de 55 ans, au 10e anniversaire du contrat). Bonne nouvelle : une fois cette taxe prélevée, les versements que vous continuez à faire après 60 ans donnent encore droit à la réduction d'impôt mais ne sont plus taxés à la sortie. Ne clôturez donc pas votre contrat juste après la taxation : continuer à épargner reste avantageux. Pour le détail de votre situation, consultez votre organisme et le SPF Finances.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (taxe sur l'épargne à long terme — épargne-pension)",
+      "contacts": [
+        {"nom": "SPF Finances", "lien": "https://fin.belgium.be", "pour": "fiscalité de l'épargne-pension à la sortie"},
+        {"nom": "Votre banque / assureur", "pour": "date et montant de la taxation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/epargne-pension", "intitule": "SPF Finances — Épargne-pension (taxation)"},
+        {"type": "officiel", "url": "https://www.wikifin.be/fr/impots-emploi-et-revenus/declaration-dimpots/reductions-fiscales/lepargne-pension", "intitule": "Wikifin — Épargne-pension et taxe"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

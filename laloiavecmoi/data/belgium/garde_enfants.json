@@ -9,7 +9,7 @@
     "portee": "Trouver une place d'accueil agréée, inscription et coût",
     "source_officielle": "https://www.one.be/public/grossesse/creche-accueillante/trouver-une-creche/"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. L'organisme compétent dépend de votre Communauté : ONE (francophone) ou Kind en Gezin / Opgroeien (néerlandophone).",
   "faits": [
@@ -108,6 +108,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "GARDE-ALTERNATIVES-001",
+      "question": "Quelles alternatives si je ne trouve pas de place en crèche ?",
+      "reponse": "Plusieurs options existent. Au-delà des crèches, il y a les accueillant(e)s d'enfants (à domicile, conventionné(e)s ou autonomes), les co-accueils, et les haltes-accueil (accueil occasionnel/flexible) — tous agréés et contrôlés. Pensez aussi à l'accueil par un proche, ou à des solutions privées. Et surtout : en Belgique francophone, l'école maternelle est accessible dès 2 ans et demi et elle est gratuite — c'est souvent un relais après la crèche. N'hésitez pas à demander conseil à l'ONE (ou Opgroeien en Flandre) pour trouver la solution adaptée et à vous inscrire sur plusieurs listes d'attente en parallèle.",
+      "reference_legale": "Décret de la Communauté française du 21 février 2019 relatif à la qualité de l'accueil de la petite enfance ; décret de la Communauté française relatif à l'enseignement maternel",
+      "contacts": [
+        {"nom": "ONE / Opgroeien", "lien": "https://www.one.be", "pour": "trouver une solution d'accueil"},
+        {"nom": "École maternelle de votre commune", "pour": "inscription dès 2 ans et demi (gratuit)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.one.be/public/grossesse/creche-accueillante/trouver-une-creche/", "intitule": "ONE — Milieux d'accueil et alternatives"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/choisir-un-milieu-daccueil-pour-mon-enfant", "intitule": "Wallonie — Choisir un milieu d'accueil"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
