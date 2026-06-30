@@ -1,12 +1,12 @@
 {
   "catalogue": "Base unique — La Loi Avec Moi",
-  "genere_le": "2026-06-29",
+  "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 151,
-    "faits": 505,
-    "sources_officielles": 735,
-    "faits_avec_contacts": 238,
-    "faits_avec_alerte_delai": 101
+    "modules": 152,
+    "faits": 588,
+    "sources_officielles": 871,
+    "faits_avec_contacts": 320,
+    "faits_avec_alerte_delai": 120
   },
   "modules": [
     {
@@ -15,11 +15,11 @@
       "titre": "Accident du travail & maladie professionnelle",
       "domaine": "Risques professionnels",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "accidents_route_indemnisation.json",
@@ -51,11 +51,11 @@
       "titre": "Adoption — formes et procédure",
       "domaine": "Adoption",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "adresse_reference.json",
@@ -63,11 +63,11 @@
       "titre": "Adresse de référence (sans logement)",
       "domaine": "Sans-abri & domiciliation",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "aidants_proches.json",
@@ -75,11 +75,11 @@
       "titre": "Aidants proches — reconnaissance, congé, droits",
       "domaine": "Aidants proches",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-26"
+      "faits": 4,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "aide_juridique.json",
@@ -87,11 +87,11 @@
       "titre": "Aide juridique — un avocat (presque) gratuit",
       "domaine": "Accès à la justice",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "aide_medicale_urgente.json",
@@ -159,11 +159,11 @@
       "titre": "Assurance auto obligatoire (RC)",
       "domaine": "Assurance véhicule",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "assurance_habitation.json",
@@ -171,11 +171,11 @@
       "titre": "Assurance habitation & incendie",
       "domaine": "Assurance logement",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "assurance_hospitalisation.json",
@@ -255,11 +255,11 @@
       "titre": "Logement étudiant (kot) — bail & droits",
       "domaine": "Logement étudiant",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "bail_flandre.json",
@@ -291,11 +291,11 @@
       "titre": "Banque & compte de base",
       "domaine": "Services bancaires",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "benevolat.json",
@@ -303,11 +303,11 @@
       "titre": "Bénévolat & volontariat — vos droits",
       "domaine": "Volontariat",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "bourse_etudes.json",
@@ -399,11 +399,11 @@
       "titre": "Chômage — droits, démarches et sanctions",
       "domaine": "Chômage & emploi",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "chomage_temporaire.json",
@@ -447,11 +447,11 @@
       "titre": "Citoyen européen — vivre, travailler, étudier dans l'UE",
       "domaine": "Droits dans l'Union européenne",
       "juridiction": "UE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "colocation.json",
@@ -459,11 +459,11 @@
       "titre": "Colocation — bail commun & règles",
       "domaine": "Colocation",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "conge_deuil.json",
@@ -514,16 +514,28 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "constitution_droits_fondamentaux.json",
+      "module": "constitution_droits_fondamentaux",
+      "titre": "Constitution belge — vos droits fondamentaux",
+      "domaine": "Droits fondamentaux & Constitution",
+      "juridiction": "BE",
+      "faits": 8,
+      "sources_officielles": 16,
+      "faits_avec_contacts": 8,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "copropriete.json",
       "module": "copropriete",
       "titre": "Copropriété — vivre en appartement",
       "domaine": "Copropriété",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "couple.json",
@@ -555,11 +567,11 @@
       "titre": "Crédit à la consommation (prêt à tempérament)",
       "domaine": "Crédit à la consommation",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-28"
+      "faits": 4,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "credit_hypothecaire.json",
@@ -567,11 +579,11 @@
       "titre": "Crédit hypothécaire — emprunter pour un logement",
       "domaine": "Crédit hypothécaire",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "deces.json",
@@ -627,11 +639,11 @@
       "titre": "Divorce & séparation",
       "domaine": "Divorce & séparation",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "documents_identite.json",
@@ -639,11 +651,11 @@
       "titre": "Documents d'identité — carte, passeport, permis",
       "domaine": "Documents d'identité",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "domiciliation.json",
@@ -711,11 +723,11 @@
       "titre": "Droit à l'image — photos & vidéos",
       "domaine": "Droit à l'image",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "eau.json",
@@ -867,11 +879,11 @@
       "titre": "Fin de vie — déclarations anticipées & droits",
       "domaine": "Fin de vie",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "fonction_publique.json",
@@ -879,11 +891,11 @@
       "titre": "Travailler dans le secteur public",
       "domaine": "Fonction publique",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "fonds_social_chauffage.json",
@@ -903,11 +915,11 @@
       "titre": "Formation en alternance / apprentissage (apprendre un métier)",
       "domaine": "Formation en alternance",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-29"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "fraude_arnaques.json",
@@ -915,11 +927,11 @@
       "titre": "Arnaques & fraude en ligne — réagir vite",
       "domaine": "Fraude & sécurité numérique",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "funerailles_sepulture.json",
@@ -1011,11 +1023,11 @@
       "titre": "Maladie & incapacité de travail",
       "domaine": "Maladie & incapacité",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "independant.json",
@@ -1143,11 +1155,11 @@
       "titre": "Malfaçons & garantie décennale (travaux)",
       "domaine": "Construction & travaux",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-28"
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "maltraitance_aines.json",
@@ -1155,11 +1167,11 @@
       "titre": "Maltraitance des aînés — réagir & protéger",
       "domaine": "Protection des aînés",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "marchand_de_sommeil.json",
@@ -1191,11 +1203,11 @@
       "titre": "Médiation & règlement amiable des conflits",
       "domaine": "Règlement des conflits",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "mobilite_douce.json",
@@ -1359,11 +1371,11 @@
       "titre": "Jeunes — premier emploi & stage d'insertion",
       "domaine": "Jeunes & premier emploi",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 6,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "primes_renovation.json",
@@ -1371,11 +1383,11 @@
       "titre": "Primes à la rénovation et à l'énergie (logement)",
       "domaine": "Primes rénovation",
       "juridiction": "BE",
-      "faits": 1,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 1,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-29"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "procreation_medicalement_assistee.json",
@@ -1407,11 +1419,11 @@
       "titre": "Personnes vulnérables — administration de biens & protection",
       "domaine": "Protection des personnes vulnérables",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 5,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-26"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "publicite_administration.json",
@@ -1443,11 +1455,11 @@
       "titre": "Recours contre l'administration — médiateur & Conseil d'État",
       "domaine": "Recours administratifs",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "recours_europeens.json",
@@ -1467,11 +1479,11 @@
       "titre": "Recouvrement amiable — sociétés de recouvrement",
       "domaine": "Recouvrement de dettes",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "regroupement_familial.json",
@@ -1515,11 +1527,11 @@
       "titre": "Saisies & huissier — ce qui peut être pris (ou non)",
       "domaine": "Saisies & recouvrement",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "sanctions_administratives_communales.json",
@@ -1539,11 +1551,11 @@
       "titre": "Santé mentale — aide psychologique, remboursement, écoute",
       "domaine": "Santé mentale",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-26"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "sante_patient.json",
@@ -1575,11 +1587,11 @@
       "titre": "Sexisme & harcèlement dans l'espace public",
       "domaine": "Sexisme & espace public",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "soins_sante_transfrontaliers.json",
@@ -1647,11 +1659,11 @@
       "titre": "Télécom — internet, téléphone, litiges",
       "domaine": "Télécommunications",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 3,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-26"
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "testament.json",
@@ -1659,11 +1671,11 @@
       "titre": "Testament & planifier sa succession",
       "domaine": "Testament & donations",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "titres_services.json",

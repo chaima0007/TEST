@@ -1,0 +1,135 @@
+{
+  "module": "constitution_droits_fondamentaux",
+  "titre": "Constitution belge — vos droits fondamentaux",
+  "domaine": "Droits fondamentaux & Constitution",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Constitution coordonnée du 17 février 1994 — Titre II « Des Belges et de leurs droits » (art. 8 à 32)",
+    "portee": "Les droits et libertés fondamentaux garantis à toute personne, et comment les faire respecter",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La Constitution énonce des principes ; leur application concrète dépend des lois et de la jurisprudence. En cas d'atteinte à vos droits, un avocat ou une institution compétente peut vous aider.",
+  "faits": [
+    {
+      "id": "CONST-PRESENTATION-001",
+      "question": "C'est quoi la Constitution, et en quoi me protège-t-elle ?",
+      "reponse": "La Constitution est la loi suprême de la Belgique : toutes les autres règles (lois, décrets, arrêtés) doivent la respecter. Son Titre II, « Des Belges et de leurs droits » (articles 8 à 32), énumère vos droits et libertés fondamentaux : égalité, liberté individuelle, vie privée, liberté d'expression, de culte, de réunion, d'association, droit à l'enseignement, droit à une vie conforme à la dignité humaine, etc. Ces droits valent en principe pour toute personne sur le territoire, pas seulement les citoyens belges. Les connaître, c'est pouvoir les invoquer : si une autorité ou une loi y porte atteinte, vous disposez de recours. La Constitution n'est pas un texte abstrait : c'est votre bouclier juridique de base.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — Titre II « Des Belges et de leurs droits » (art. 8 à 32)",
+      "contacts": [
+        {"nom": "Texte officiel de la Constitution (Justel)", "lien": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "pour": "lire la Constitution coordonnée à jour"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution coordonnée du 17 février 1994 (Justel)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/la_belgique_federale/competences/constitution", "intitule": "Belgium.be — La Constitution"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CONST-EGALITE-001",
+      "question": "La Constitution garantit-elle l'égalité et la non-discrimination ?",
+      "reponse": "Oui, c'est l'un de ses piliers. L'article 10 proclame que tous les Belges sont égaux devant la loi, et l'article 11 garantit que la jouissance des droits et libertés doit être assurée sans discrimination. L'article 11bis vise l'égalité des femmes et des hommes. Concrètement, l'État ne peut pas vous traiter différemment sans justification raisonnable et objective. Ce principe d'égalité est l'un des plus invoqués devant les juges et la Cour constitutionnelle. Au-delà de la Constitution, des lois spécifiques (loi anti-discrimination, loi genre) précisent et sanctionnent les discriminations dans l'emploi, le logement ou l'accès aux services.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — égalité et non-discrimination (art. 10, 11 et 11bis)",
+      "contacts": [
+        {"nom": "Unia (discriminations)", "pour": "signaler une discrimination (hors sexe)"},
+        {"nom": "Institut pour l'égalité des femmes et des hommes", "lien": "https://igvm-iefh.belgium.be", "pour": "discrimination fondée sur le sexe"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 10, 11, 11bis (égalité)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/la_belgique_federale/competences/constitution", "intitule": "Belgium.be — La Constitution"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CONST-LIBERTE-VIE-PRIVEE-001",
+      "question": "Quels droits protègent ma liberté, ma vie privée et mon domicile ?",
+      "reponse": "Plusieurs articles vous protègent. L'article 12 garantit la liberté individuelle : hors flagrant délit, nul ne peut être arrêté que sur ordonnance motivée d'un juge, qui doit être signifiée dans les 48 heures. L'article 22 protège votre vie privée et familiale. L'article 15 rend votre domicile inviolable : une perquisition ne peut avoir lieu que dans les cas et formes prévus par la loi (en principe avec mandat). L'article 29 protège le secret des lettres (et, par extension, de vos communications). Ces garanties limitent ce que l'État peut faire sans base légale : si on viole votre domicile ou votre vie privée sans respecter la loi, c'est illégal et contestable.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — liberté individuelle (art. 12), vie privée (art. 22), inviolabilité du domicile (art. 15), secret des lettres (art. 29)",
+      "contacts": [
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "atteinte à la liberté, au domicile ou à la vie privée"},
+        {"nom": "Autorité de protection des données", "lien": "https://www.autoriteprotectiondonnees.be", "pour": "vie privée et données personnelles"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 12, 15, 22, 29"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee", "intitule": "Belgium.be — Respect de la vie privée"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CONST-EXPRESSION-CULTE-001",
+      "question": "Ai-je le droit de m'exprimer, de manifester, de croire et de m'associer ?",
+      "reponse": "Oui, ce sont des libertés constitutionnelles. L'article 19 garantit la liberté des cultes, leur exercice public et la liberté de manifester ses opinions en toute matière (sauf la répression des délits commis à l'occasion de l'usage de ces libertés). L'article 25 consacre la liberté de la presse (la censure ne peut jamais être établie). L'article 26 reconnaît le droit de se réunir paisiblement et sans armes. L'article 27 garantit la liberté d'association. Ces libertés ne sont pas absolues : elles s'exercent dans le respect de la loi (par exemple, on ne peut pas inciter à la haine ou à la violence), mais elles protègent fortement votre droit de penser, dire, croire et vous rassembler.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — liberté d'expression et des cultes (art. 19), liberté de la presse (art. 25), droit de réunion (art. 26), liberté d'association (art. 27)",
+      "contacts": [
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "atteinte à une liberté fondamentale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 19, 25, 26, 27"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/la_belgique_federale/competences/constitution", "intitule": "Belgium.be — La Constitution"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CONST-DIGNITE-SOCIAL-001",
+      "question": "La Constitution garantit-elle des droits sociaux (vie digne, enseignement) ?",
+      "reponse": "Oui. L'article 23 reconnaît à chacun le droit de mener une vie conforme à la dignité humaine, ce qui comprend notamment : le droit au travail et au libre choix d'une activité professionnelle, le droit à la sécurité sociale, à la protection de la santé et à l'aide sociale, médicale et juridique, le droit à un logement décent, à la protection d'un environnement sain, et le droit à l'épanouissement culturel et social. L'article 24 garantit la liberté d'enseignement et le droit à l'enseignement (l'accès à l'enseignement est gratuit jusqu'à la fin de l'obligation scolaire). Ces droits guident l'action des pouvoirs publics ; ils se concrétisent par les lois, décrets et dispositifs régionaux (CPAS, mutualités, aides au logement, etc.).",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — vie conforme à la dignité humaine et droits économiques, sociaux et culturels (art. 23), enseignement (art. 24)",
+      "contacts": [
+        {"nom": "CPAS de votre commune", "pour": "aide sociale et droit à une vie digne"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 23 et 24"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/la_belgique_federale/competences/constitution", "intitule": "Belgium.be — La Constitution"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CONST-JUSTICE-001",
+      "question": "Quelles garanties la Constitution me donne face à la justice et à l'État ?",
+      "reponse": "Plusieurs garanties protègent contre l'arbitraire. L'article 13 prévoit que nul ne peut être distrait, contre son gré, du juge que la loi lui assigne (le « juge naturel »). L'article 14 pose le principe de légalité : aucune peine ne peut être établie ni appliquée qu'en vertu de la loi (pas de peine sans loi). L'article 12 protège contre les arrestations arbitraires. L'article 16 protège la propriété : nul ne peut être privé de sa propriété que pour cause d'utilité publique, dans les formes légales et moyennant une juste indemnité (expropriation). L'article 32 vous donne le droit d'accès aux documents administratifs (transparence de l'administration). Ces principes vous permettent d'exiger que l'État agisse dans un cadre légal et prévisible.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — juge naturel (art. 13), légalité des peines (art. 14), liberté individuelle (art. 12), propriété (art. 16), accès aux documents administratifs (art. 32)",
+      "contacts": [
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "défense de vos droits face à l'État"},
+        {"nom": "Médiateur (ombudsman) compétent", "pour": "mauvais fonctionnement d'un service public"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 12, 13, 14, 16, 32"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Justice et droits des victimes"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CONST-DEFENDRE-001",
+      "question": "Concrètement, comment défendre mes droits fondamentaux s'ils sont violés ?",
+      "reponse": "Plusieurs voies existent, selon la situation. Contre une décision administrative illégale : recours au Conseil d'État (en principe dans les 60 jours). Contre une loi, un décret ou une ordonnance que vous estimez contraire aux droits fondamentaux : la Cour constitutionnelle peut être saisie (recours en annulation par une personne justifiant d'un intérêt, ou question préjudicielle posée par un juge dans le cadre d'un procès) — c'est elle qui contrôle la conformité des normes aux articles 8 à 32 de la Constitution. Devant un juge ordinaire, vous pouvez invoquer directement vos droits fondamentaux. Vous disposez aussi du droit de pétition (article 28) pour adresser une demande aux autorités. Pour les discriminations, Unia et l'Institut pour l'égalité des femmes et des hommes accompagnent les victimes. En cas de moyens limités, l'aide juridique (avocat pro deo) est accessible.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — Cour constitutionnelle (art. 142), droit de pétition (art. 28) ; lois coordonnées du 12 janvier 1973 sur le Conseil d'État",
+      "contacts": [
+        {"nom": "Cour constitutionnelle", "pour": "contrôle d'une loi/décret/ordonnance au regard des droits fondamentaux"},
+        {"nom": "Conseil d'État", "lien": "https://www.conseildetat.be", "pour": "annulation d'une décision administrative illégale"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo selon les revenus"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 28 et 142"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Faire valoir ses droits"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CONST-OBLIGATIONS-001",
+      "question": "À côté de mes droits, quelles sont mes obligations de citoyen ?",
+      "reponse": "Les droits vont de pair avec des devoirs. Vous devez respecter la Constitution et les lois du pays. Vous devez contribuer aux charges publiques : aucun impôt ne peut être établi que par une loi, un décret ou une ordonnance (principe de légalité de l'impôt), mais une fois établi, l'impôt est dû. Le vote est obligatoire en Belgique : tout électeur inscrit doit se présenter au bureau de vote (ou voter par procuration) pour les scrutins concernés. S'y ajoutent des obligations administratives de base (être inscrit au registre de la population, déclarer un changement d'adresse, posséder une carte d'identité dès 12 ans et la porter dès 15 ans). Respecter ces obligations, c'est ce qui permet à l'État de droit — et donc à vos propres droits — de fonctionner.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 — légalité de l'impôt (art. 170 et 172) ; Code électoral (vote obligatoire) ; loi du 19 juillet 1991 relative aux registres de la population",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "registre de la population, carte d'identité, élections"},
+        {"nom": "SPF Finances", "lien": "https://finances.belgium.be", "pour": "obligations fiscales"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution — art. 170, 172 (impôt)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/la_belgique/pouvoirs_publics/elections", "intitule": "Belgium.be — Élections et vote obligatoire"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}
