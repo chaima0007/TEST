@@ -9,7 +9,7 @@
     "portee": "Protection d'un revenu minimum face aux saisies, rôle de l'huissier",
     "source_officielle": "https://emploi.belgique.be/fr/themes/remuneration/protection-de-la-remuneration/saisie-et-cession-sur-salaires"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les seuils de revenus saisissables sont indexés chaque année ; vérifiez les montants en vigueur auprès du SPF Emploi ou d'un service de médiation de dettes.",
   "faits": [
@@ -42,6 +42,36 @@
         {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/quel-montant-peut-saisir-sur-mes-revenus", "intitule": "Droits Quotidiens — Quel montant peut-on saisir ?"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "SAIS-TITRE-001",
+      "question": "Un huissier peut-il saisir sans jugement ?",
+      "reponse": "Pour une saisie-exécution (vendre vos biens pour payer la dette), l'huissier doit disposer d'un titre exécutoire : le plus souvent un jugement, mais aussi par exemple un acte notarié. La saisie-exécution est en principe précédée d'un commandement de payer, qui vous laisse un délai pour réagir. À côté de cela existe la saisie conservatoire, qui ne vend rien mais gèle des biens en attendant : elle nécessite l'autorisation du juge des saisies (sauf cas où la loi la permet d'office). Si une saisie vous paraît irrégulière, vous pouvez saisir le juge des saisies.",
+      "reference_legale": "Code judiciaire — saisie-exécution et titre exécutoire (art. 1494 et suivants), saisie conservatoire (art. 1413 et suivants)",
+      "alerte_delai": "Un commandement de payer ouvre un délai pour réagir : ne l'ignorez pas, contactez un service de médiation de dettes dès réception.",
+      "contacts": [
+        {"nom": "Juge des saisies (tribunal)", "pour": "contester une saisie irrégulière"},
+        {"nom": "Service de médiation de dettes", "pour": "réagir à un commandement de payer"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Saisies et exécution"},
+        {"type": "secondaire", "url": "https://www.huissiersdejustice.be", "intitule": "Chambre nationale des huissiers de justice"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "SAIS-MEUBLES-001",
+      "question": "L'huissier peut-il emporter tous mes meubles ?",
+      "reponse": "Non. La loi protège les biens indispensables à la vie quotidienne et au travail : ils sont insaisissables. Sont notamment protégés le lit et la literie, les vêtements et le linge, les meubles nécessaires pour ranger ceux-ci, les appareils nécessaires au chauffage et à la cuisson des repas, ceux permettant de conserver les aliments, l'électroménager de base, les objets nécessaires aux enfants vivant sous le même toit, ainsi que les biens et instruments indispensables à l'exercice de votre profession. L'huissier dresse un inventaire ; vous pouvez signaler les biens que vous estimez insaisissables et, en cas de litige, saisir le juge des saisies.",
+      "reference_legale": "Code judiciaire — biens meubles insaisissables (art. 1408)",
+      "contacts": [
+        {"nom": "Juge des saisies (tribunal)", "pour": "litige sur le caractère insaisissable d'un bien"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Saisie mobilière"},
+        {"type": "secondaire", "url": "https://www.huissiersdejustice.be", "intitule": "Chambre nationale des huissiers de justice"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
