@@ -61,10 +61,10 @@
   header.hero{position:relative;text-align:center;padding:96px 0 76px;overflow:hidden;
     background:radial-gradient(ellipse at 50% -10%,rgba(255,61,110,.20),transparent 58%),
                radial-gradient(ellipse at 85% 30%,rgba(232,181,131,.10),transparent 50%),var(--noir)}
-  header.hero .hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.20;
+  header.hero .hero-bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.28;
     background-image:url("https://images.unsplash.com/photo-1724606854879-9321f9340a89?w=1600&q=70&auto=format&fit=crop")}
-  header.hero .hero-bg::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(20,9,16,.55),rgba(20,9,16,.88))}
+  header.hero .hero-vid{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:.30}
+  header.hero .hero-veil{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(20,9,16,.55),rgba(20,9,16,.88))}
   header.hero .wrap{position:relative;z-index:1}
   .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--rose-clair);border:1px solid var(--ligne);border-radius:999px;padding:7px 16px;margin-bottom:26px;letter-spacing:.5px}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 10px var(--rose)}
@@ -238,7 +238,7 @@
   <div id="empreinte" class="empreinte hidden"></div>
 
   <!-- HERO -->
-  <header class="hero"><div class="hero-bg"></div><div class="wrap">
+  <header class="hero"><div class="hero-bg"></div><video class="hero-vid" autoplay muted loop playsinline><source src="assets/hero.mp4" type="video/mp4"></video><div class="hero-veil"></div><div class="wrap">
     <div class="badge"><span class="dot"></span> <span data-i18n="hero_badge">La destination des amateurs de pieds</span></div>
     <h1><span data-i18n="hero_h1a">Tout l'univers du pied,</span><br><span class="grad" data-i18n="hero_h1b">à portée de regard.</span></h1>
     <p data-i18n="hero_p">Élégant, troublant, soigneusement choisi. SOLEA réunit les plus beaux créateurs et styles — vous regardez, on a déjà tout trié.</p>
