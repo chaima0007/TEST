@@ -9,7 +9,7 @@
     "portee": "Vos recours en cas de défauts après des travaux de construction/rénovation",
     "source_officielle": "https://www.belgium.be/fr/logement/construire_et_renover"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. En cas de litige important, un avocat en droit de la construction ou un expert peut vous aider.",
   "faits": [
@@ -43,6 +43,37 @@
         {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover", "intitule": "Belgium.be — Construire et rénover"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "MALF-DECENNALE-PORTEE-001",
+      "question": "Que couvre exactement la garantie décennale, et qui est responsable ?",
+      "reponse": "La responsabilité décennale couvre les vices GRAVES : ceux qui affectent la solidité ou la stabilité du bâtiment, ou qui le rendent impropre à sa destination (par exemple de gros problèmes de structure, d'étanchéité majeure, de fondations). Elle ne concerne pas les petits défauts esthétiques. Elle pèse, en principe solidairement, sur l'entrepreneur ET l'architecte, chacun pour sa part de responsabilité. Le délai est de 10 ans à compter de la réception (agréation) des travaux. Point important : cette garantie est d'ordre public, on ne peut donc pas y renoncer ni la réduire par une clause du contrat. Pour les défauts moins graves, ce sont les règles des vices cachés véniels ou des vices apparents qui s'appliquent.",
+      "reference_legale": "Code civil — responsabilité décennale de l'entrepreneur et de l'architecte (art. 1792 et 2270)",
+      "contacts": [
+        {"nom": "Entrepreneur et architecte", "pour": "mise en cause de la responsabilité décennale"},
+        {"nom": "Expert / avocat en droit de la construction", "pour": "évaluer si le vice est de nature décennale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover", "intitule": "Belgium.be — Construire et rénover (responsabilité décennale)"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032154/justel", "intitule": "Ancien Code civil — responsabilité de l'entrepreneur (art. 1792)"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MALF-RECOURS-001",
+      "question": "Mon entrepreneur refuse de réparer : quelles étapes suivre ?",
+      "reponse": "Procédez par étapes, en gardant des traces écrites. 1) Envoyez une mise en demeure par courrier recommandé décrivant précisément les défauts et demandant la réparation dans un délai raisonnable, photos à l'appui. 2) En l'absence de réaction, faites constater les défauts par un expert (expertise amiable, ou expertise judiciaire demandée au juge). 3) Si nécessaire, engagez une action en justice devant le tribunal compétent. Avant d'en arriver là, pensez aux solutions amiables : conciliation gratuite devant le juge de paix ou médiation. Surveillez les délais (notamment les 10 ans de la décennale) et, si l'entrepreneur est assuré ou en faillite, sollicitez son assureur décennale.",
+      "reference_legale": "Code civil — responsabilité contractuelle et décennale de l'entrepreneur (art. 1792 et 2270)",
+      "alerte_delai": "Agissez sans tarder : la responsabilité décennale est limitée à 10 ans après la réception, et les vices cachés véniels doivent être invoqués dans un délai raisonnable après leur découverte.",
+      "contacts": [
+        {"nom": "Entrepreneur / architecte (et leur assureur)", "pour": "mise en demeure de réparer"},
+        {"nom": "Juge de paix", "pour": "conciliation gratuite ou litige selon le montant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover", "intitule": "Belgium.be — Construire et rénover (recours)"},
+        {"type": "secondaire", "url": "https://www.droitbelge.be/fiches_detail.asp?idcat=9&id=680", "intitule": "Droitbelge.be — Responsabilité de l'entrepreneur"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

@@ -9,7 +9,7 @@
     "portee": "Reconnaître la maltraitance d'une personne âgée et savoir comment agir",
     "source_officielle": "https://www.respectseniors.be/"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Sujet sensible. En cas de danger immédiat, appelez le 112. La maltraitance peut être physique, psychologique, financière ou par négligence — vous avez le droit d'agir, en tant que victime OU témoin.",
   "faits": [
@@ -44,6 +44,38 @@
         {"type": "officiel", "url": "https://www.1712.be", "intitule": "1712 — Écoute violences et maltraitance"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "AINE-FINANCIERE-001",
+      "question": "Comment protéger un aîné contre les abus financiers ?",
+      "reponse": "L'abus financier est l'une des formes les plus fréquentes de maltraitance des aînés : retraits ou virements non autorisés, pression pour faire signer une procuration, une donation ou un testament, détournement de pension, factures gonflées. La loi le sanctionne : abuser de la situation de faiblesse d'une personne vulnérable pour l'amener à un acte gravement préjudiciable à son patrimoine est une infraction. Pour protéger : surveillez les signes (disparitions d'argent inexpliquées, nouveaux « amis » très intéressés), parlez-en à la personne, et envisagez une mesure de protection — l'administration de biens ordonnée par le juge de paix, ou un mandat de protection extrajudiciaire choisi à l'avance. En cas d'abus avéré, signalez à la banque et portez plainte.",
+      "reference_legale": "Code pénal — abus de la situation de faiblesse (art. 442quater) ; Code civil — protection judiciaire (administration de biens)",
+      "contacts": [
+        {"nom": "Respect Seniors (Wallonie)", "numero": "0800 30 330", "pour": "écoute et accompagnement"},
+        {"nom": "Juge de paix", "pour": "administration de biens pour protéger le patrimoine"},
+        {"nom": "Banque de la personne", "pour": "signaler des opérations suspectes"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.respectseniors.be/maltraitance-des-aines/", "intitule": "Respect Seniors — Formes de maltraitance (dont financière)"},
+        {"type": "officiel", "url": "https://www.iriscare.brussels/fr/citoyens/aines/maltraitance/", "intitule": "Iriscare (Bruxelles) — Maltraitance des aînés"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AINE-CONTACTS-REGIONS-001",
+      "question": "Quel service d'écoute selon ma région ?",
+      "reponse": "Chaque région a son service spécialisé, gratuit et confidentiel, qui écoute, conseille et accompagne sans rien imposer : en WALLONIE, Respect Seniors (Agence wallonne de lutte contre la maltraitance des aînés) au 0800 30 330, du lundi au vendredi ; à BRUXELLES, Écoute Seniors (Infor-Homes) au 02 223 13 43 ; en FLANDRE, le 1712 (point d'écoute violences et maltraitance). Ces services ne sont pas des services d'urgence : en cas de danger immédiat, composez le 112. Vous pouvez les appeler que vous soyez la personne concernée, un proche, un voisin ou un professionnel.",
+      "reference_legale": "Code wallon de l'Action sociale et de la Santé (dispositif de lutte contre la maltraitance des aînés, art. 382) ; dispositifs régionaux bruxellois et flamand",
+      "contacts": [
+        {"nom": "Respect Seniors (Wallonie)", "numero": "0800 30 330", "lien": "https://www.respectseniors.be", "pour": "écoute et accompagnement"},
+        {"nom": "Écoute Seniors / Infor-Homes (Bruxelles)", "numero": "02 223 13 43", "pour": "écoute et aide sur le bien-être des aînés"},
+        {"nom": "1712 (Flandre)", "numero": "1712", "lien": "https://www.1712.be", "pour": "violences et maltraitance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.respectseniors.be/", "intitule": "Respect Seniors — Agence wallonne (0800 30 330)"},
+        {"type": "officiel", "url": "https://www.iriscare.brussels/fr/citoyens/aines/maltraitance/", "intitule": "Iriscare (Bruxelles) — Maltraitance des aînés"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
