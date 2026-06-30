@@ -9,7 +9,7 @@
     "portee": "Étapes de l'achat, valeur du compromis, rôle du notaire et délais",
     "source_officielle": "https://www.belgium.be/fr/logement/achat_d_un_logement"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les droits d'enregistrement et abattements varient selon la Région ; faites-vous accompagner par un notaire avant de signer.",
   "faits": [
@@ -101,6 +101,20 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ACHAT-FRAIS-001",
+      "question": "À quoi correspondent les « frais de notaire » en plus du prix ?",
+      "reponse": "Ce qu'on appelle communément les « frais de notaire » ne va pas dans la poche du notaire : il s'agit surtout d'impôts et de frais que le notaire perçoit et reverse. On y trouve : les droits d'enregistrement (impôt régional, la part la plus importante pour un bien existant) ou la TVA pour un logement neuf, les honoraires du notaire (fixés par un tarif légal, donc identiques d'un notaire à l'autre), et divers frais administratifs et hypothécaires (recherches, inscription de l'hypothèque…). Prévoyez ces frais EN PLUS du prix d'achat dans votre budget. Le notaire peut vous remettre un décompte estimatif détaillé avant la signature : demandez-le.",
+      "reference_legale": "Code des droits d'enregistrement (droits d'enregistrement) ; loi de ventôse sur le notariat (honoraires tarifés)",
+      "contacts": [
+        {"nom": "Notaire", "pour": "décompte estimatif des frais avant la signature"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/achat_d_un_logement", "intitule": "Belgium.be — Achat d'un logement (frais)"},
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/achat-vente", "intitule": "SPF Finances — Achat d'une habitation"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

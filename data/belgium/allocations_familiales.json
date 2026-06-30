@@ -9,7 +9,7 @@
     "portee": "Droit aux allocations familiales pour les enfants en Belgique",
     "source_officielle": "https://www.belgium.be/fr/famille/enfants/allocations_familiales"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les allocations familiales sont RÉGIONALES : les montants et règles dépendent de la Région de l'enfant. Adressez-vous à la caisse de votre région.",
   "faits": [
@@ -103,6 +103,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ALLOC-NAISSANCE-001",
+      "question": "Existe-t-il une prime à la naissance ou à l'adoption ?",
+      "reponse": "Oui. En plus des allocations mensuelles, un montant unique est versé à l'arrivée d'un enfant : la prime de naissance (aussi appelée « prime de départ » ou, en Flandre, « startbedrag » du Groeipakket) et un montant équivalent en cas d'adoption. Bonne nouvelle : vous pouvez en faire la demande AVANT la naissance (généralement à partir d'un certain stade de la grossesse), de sorte qu'elle puisse être payée peu avant la date prévue de l'accouchement. Le montant et les modalités dépendent de votre région : adressez-vous à votre caisse d'allocations familiales pour introduire la demande à temps.",
+      "reference_legale": "Décret régional sur les prestations familiales (prime de naissance/de départ et prime d'adoption) — Code wallon / ordonnance bruxelloise / décret flamand Groeipakket",
+      "alerte_delai": "La prime de naissance peut être demandée avant l'accouchement : ne tardez pas pour qu'elle soit versée à temps.",
+      "contacts": [
+        {"nom": "Caisse d'allocations familiales de votre région", "pour": "demande de prime de naissance/adoption"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/allocations_familiales", "intitule": "Belgium.be — Allocations familiales et prime de naissance"},
+        {"type": "officiel", "url": "https://famiris.brussels/fr/calculer-mes-allocations-familiales/", "intitule": "Famiris — Prime de naissance (Bruxelles)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

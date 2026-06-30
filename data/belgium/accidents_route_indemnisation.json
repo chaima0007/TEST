@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1989/11/21/1989011371/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Pour un dommage corporel important, faites-vous assister (avocat, médecin-conseil).",
   "faits": [
@@ -64,6 +64,20 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ACCROUTE-MATERIEL-001",
+      "question": "Et les dégâts à ma voiture ou mon dommage si je suis le conducteur responsable ?",
+      "reponse": "L'indemnisation automatique des usagers faibles (art. 29bis) ne couvre que les dommages CORPORELS. Pour les dégâts MATÉRIELS (votre véhicule, vos biens), c'est le droit commun qui s'applique : ils sont pris en charge par l'assurance RC de la personne responsable de l'accident, ou par votre propre assurance omnium si vous en avez une. Le conducteur reconnu responsable n'est, lui, pas indemnisé de son propre dommage corporel par l'art. 29bis (sauf via une assurance « conducteur » facultative). Pour faire valoir vos droits : remplissez un constat amiable, conservez les preuves, et déclarez le sinistre à votre assureur dans les délais.",
+      "reference_legale": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs ; Code civil (responsabilité pour les dégâts matériels)",
+      "contacts": [
+        {"nom": "Votre assureur (RC / omnium)", "pour": "dégâts matériels et constat amiable"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1989/11/21/1989011371/justel", "intitule": "Justel — Loi du 21 novembre 1989"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/auto/rc-auto", "intitule": "SPF Économie — RC auto et dégâts matériels"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

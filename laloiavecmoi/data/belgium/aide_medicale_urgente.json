@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.mi-is.be/fr"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Adressez-vous au CPAS de votre commune ; en urgence vitale, appelez le 112.",
   "faits": [
@@ -68,6 +68,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AMU-RECOURS-001",
+      "question": "Le CPAS refuse l'aide médicale urgente : ai-je un recours ?",
+      "reponse": "Oui. Comme pour toute décision du CPAS, un refus (ou une absence de décision dans le délai) peut être contesté devant le tribunal du travail. Vous disposez en principe de 3 mois à compter de la notification de la décision pour introduire le recours. La procédure devant le tribunal du travail est gratuite (pas de frais de rôle pour ce type d'affaires) et vous pouvez bénéficier de l'aide juridique (avocat pro deo). N'attendez pas : conservez la décision écrite du CPAS et le certificat médical attestant l'urgence des soins, qui sont les pièces essentielles de votre dossier.",
+      "reference_legale": "Loi du 8 juillet 1976 organique des CPAS (recours devant le tribunal du travail) ; Code judiciaire (aide juridique)",
+      "alerte_delai": "Le recours devant le tribunal du travail doit en principe être introduit dans les 3 mois de la décision du CPAS.",
+      "contacts": [
+        {"nom": "Tribunal du travail", "pour": "contester le refus du CPAS"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.mi-is.be/fr", "intitule": "SPP Intégration sociale — Recours contre une décision du CPAS"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Recours et aide juridique"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

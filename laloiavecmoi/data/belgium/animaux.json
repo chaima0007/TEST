@@ -9,7 +9,7 @@
     "portee": "Devoirs des propriétaires d'animaux et protection contre la maltraitance",
     "source_officielle": "https://www.wallonie.be/fr/vivre-en-wallonie/environnement-et-agriculture/bien-etre-animal"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Le bien-être animal est une compétence régionale : les règles précises dépendent de votre Région (Wallonie, Bruxelles, Flandre).",
   "faits": [
@@ -88,6 +88,20 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ANI-RESPONSABILITE-001",
+      "question": "Mon animal cause un dommage à quelqu'un : qui est responsable ?",
+      "reponse": "Le propriétaire (ou la personne qui en a la garde) d'un animal est civilement responsable du dommage que celui-ci cause à autrui — morsure, accident provoqué, dégâts — même si l'animal s'était échappé ou égaré. C'est une responsabilité de plein droit prévue par le Code civil : la victime n'a pas à prouver une faute du propriétaire. D'où l'intérêt d'une bonne assurance responsabilité civile (la RC familiale couvre généralement les dommages causés par vos animaux domestiques). Par ailleurs, dans certaines régions, la détention d'un animal suppose un « permis » présumé, qui peut être retiré en cas de condamnation pour maltraitance.",
+      "reference_legale": "Code civil — responsabilité du fait des animaux (art. 1385) ; codes régionaux du bien-être animal (permis de détention)",
+      "contacts": [
+        {"nom": "Votre assureur (RC familiale)", "pour": "couverture des dommages causés par l'animal"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel", "intitule": "Ancien Code civil — responsabilité du fait des animaux (art. 1385)"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/vivre-en-wallonie/environnement-et-agriculture/bien-etre-animal", "intitule": "Wallonie — Bien-être animal (permis de détention)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

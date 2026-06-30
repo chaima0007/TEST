@@ -9,7 +9,7 @@
     "portee": "Personnes âgées (en principe 65 ans et plus) en perte d'autonomie et disposant de revenus limités",
     "source_officielle": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. L'APA est régionalisée : l'organisme compétent et certains paramètres (âge d'accès, montants) dépendent de votre RÉGION/COMMUNAUTÉ de résidence. À ne pas confondre avec la GRAPA (revenu garanti). Ne remplace pas un conseil individualisé.",
   "faits": [
@@ -99,6 +99,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "APA-DEMANDE-001",
+      "question": "Comment introduire une demande d'APA et comment est évaluée ma perte d'autonomie ?",
+      "reponse": "La demande s'introduit auprès de l'organisme compétent de votre région (souvent avec l'aide de votre commune, de votre mutualité ou du CPAS). L'évaluation repose sur deux volets : un examen de la PERTE D'AUTONOMIE (capacité à se déplacer, se laver, s'habiller, préparer les repas, faire le ménage, etc.), traduite en « points » par un médecin ou un évaluateur, et un examen des REVENUS (les revenus du demandeur, et selon les cas du ménage, sont pris en compte). Plus la perte d'autonomie est élevée et les revenus faibles, plus l'allocation est importante. Conservez vos documents médicaux et fiscaux : ils accélèrent le traitement. En cas de refus, un recours devant le tribunal du travail est possible.",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (évaluation de la réduction d'autonomie, compétence régionalisée)",
+      "contacts": [
+        {"nom": "Organisme régional (AViQ, Iriscare, zorgkas, DSL)", "pour": "introduction et suivi de la demande"},
+        {"nom": "Mutualité / commune / CPAS", "pour": "aide au dossier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood", "intitule": "Vlaamse Sociale Bescherming — demande et évaluation"},
+        {"type": "officiel", "url": "https://www.aviq.be/fr", "intitule": "AViQ — Allocation pour l'aide aux personnes âgées"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

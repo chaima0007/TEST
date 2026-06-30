@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.fsma.be/fr/assurance-hospitalisation"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Comparez les contrats (garanties, exclusions, franchise) avant de souscrire.",
   "faits": [
@@ -59,6 +59,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "HOSP-SINISTRE-001",
+      "question": "Je dois être hospitalisé : comment activer mon assurance et éviter d'avancer les frais ?",
+      "reponse": "Prévenez votre assureur (ou l'organisme qui gère votre contrat) le plus tôt possible, idéalement AVANT une hospitalisation programmée, et conservez tous les documents (admission, factures, attestations de soins). De nombreuses assurances hospitalisation proposent un système de tiers payant via une « carte d'hospitalisation » (par exemple présentée à l'admission) : la facture de l'hôpital est alors réglée directement entre l'hôpital et l'assureur, ce qui vous évite d'avancer de grosses sommes. En cas d'urgence, prévenez dès que possible après l'admission. Vérifiez les délais de déclaration prévus par votre contrat : un retard peut compliquer le remboursement.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (déclaration de sinistre et exécution du contrat)",
+      "alerte_delai": "Déclarez l'hospitalisation dans le délai prévu au contrat (avant l'admission si elle est programmée).",
+      "contacts": [
+        {"nom": "Votre assureur / mutualité (carte d'hospitalisation)", "pour": "tiers payant et remboursement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fsma.be/fr/assurance-hospitalisation", "intitule": "FSMA — Assurance hospitalisation"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr", "intitule": "INAMI — Hospitalisation et remboursements"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
