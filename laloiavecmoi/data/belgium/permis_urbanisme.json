@@ -9,7 +9,7 @@
     "portee": "Quand un permis est requis pour construire, transformer ou rénover",
     "source_officielle": "https://www.belgium.be/fr/logement/construire_et_renover/permis_d_urbanisme"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les règles d'urbanisme dépendent fortement de la Région ET de la commune (zones protégées) ; vérifiez TOUJOURS auprès du service urbanisme communal avant de commencer.",
   "faits": [
@@ -111,6 +111,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "URBA-ACHAT-INFRACTION-001",
+      "question": "J'achète un bien : comment éviter une mauvaise surprise d'urbanisme ?",
+      "reponse": "Avant d'acheter, faites vérifier la situation urbanistique du bien. La commune délivre des renseignements urbanistiques qui indiquent notamment les permis délivrés, l'affectation de la zone et l'existence éventuelle d'infractions (travaux réalisés sans permis par un précédent propriétaire). C'est crucial : une infraction urbanistique non régularisée « suit » le bien, et l'acheteur risque de devoir régulariser, remettre en état, voire démolir. Le notaire est tenu de mentionner les informations urbanistiques dans le compromis et l'acte : lisez-les attentivement et, en cas de doute, demandez une condition suspensive ou des garanties au vendeur. Mieux vaut tout vérifier avant de signer qu'hériter d'un problème.",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — information urbanistique et infractions",
+      "contacts": [
+        {"nom": "Service urbanisme de la commune", "pour": "renseignements urbanistiques du bien"},
+        {"nom": "Notaire", "pour": "mentions urbanistiques et garanties dans l'acte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover/permis_d_urbanisme", "intitule": "Belgium.be — Permis et renseignements urbanistiques"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/demander-un-permis-durbanisme", "intitule": "Wallonie — Urbanisme (CoDT)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

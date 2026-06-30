@@ -9,7 +9,7 @@
     "portee": "Déclarer une naissance, reconnaître un enfant, établir la filiation et prendre son congé",
     "source_officielle": "https://www.belgium.be/fr/famille/enfants/declaration_de_naissance"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les démarches se font à la commune de naissance ou de résidence ; renseignez-vous auprès d'elle pour les documents exacts et les délais.",
   "faits": [
@@ -57,6 +57,20 @@
         {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/famille/conges-thematiques", "intitule": "Sécurité sociale — Congés liés à la famille"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "NAIS-NOM-001",
+      "question": "Quel nom de famille portera mon enfant ?",
+      "reponse": "Les parents choisissent le nom de famille de leur enfant : ils peuvent lui donner le nom du père, celui de la mère (ou de la coparente), ou les deux noms accolés dans l'ordre qu'ils décident. Ce choix se fait au moment de l'établissement de la filiation (souvent à la déclaration de naissance) et, en principe, le même nom s'applique ensuite aux enfants suivants du même couple. En l'absence d'accord entre les parents, la loi prévoit une règle par défaut (généralement les deux noms dans l'ordre alphabétique). Réfléchissez-y avant la déclaration : le changement ultérieur de nom est une démarche distincte et plus lourde.",
+      "reference_legale": "Code civil — attribution du nom de l'enfant (réforme par la loi du 8 mai 2014)",
+      "contacts": [
+        {"nom": "Administration communale (état civil)", "pour": "choix du nom à la déclaration de naissance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/declaration_de_naissance", "intitule": "Belgium.be — Nom de l'enfant"},
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles", "intitule": "SPF Justice — Nom et filiation"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

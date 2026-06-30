@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. En danger immédiat : 112. Pour un fait pénal : un service de police ou le procureur du Roi.",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PLAINPOL-DROITS-AUDITION-001",
+      "question": "Quels sont mes droits lors d'un contrôle ou d'une audition par la police ?",
+      "reponse": "Vous avez des droits, et les connaître aide aussi à constituer une plainte si besoin. Lors d'une audition, vous avez le droit d'être informé brièvement des faits, le droit de garder le silence et de ne pas vous accuser vous-même, et le droit de signaler une erreur dans le procès-verbal (qu'on doit vous laisser relire). Pour des faits punissables, vous avez en principe droit à la consultation et à l'assistance d'un avocat avant et pendant l'audition (droits dits « Salduz ») ; si vous êtes privé de liberté, ce droit est renforcé. Vous pouvez aussi demander qu'un fait à votre décharge soit acté. Notez la date, l'heure et, si possible, le numéro/service des agents : ces éléments sont utiles pour une éventuelle plainte au Comité P.",
+      "reference_legale": "Code d'instruction criminelle — droits de la personne auditionnée et assistance de l'avocat (loi « Salduz » du 13 août 2011)",
+      "contacts": [
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "assistance lors d'une audition (gratuite selon revenus)"},
+        {"nom": "Comité P", "lien": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte", "pour": "plainte sur le déroulement d'une intervention"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Droits dans la procédure pénale"},
+        {"type": "officiel", "url": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte", "intitule": "Police — Plainte et contrôle des services"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

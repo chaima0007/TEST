@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2017/10/18/2018011328/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. La procédure diffère selon qu'il s'agit d'un domicile ou d'un autre bien : faites-vous conseiller.",
   "faits": [
@@ -54,6 +54,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "OCCUP-LOCATAIRE-001",
+      "question": "Cette procédure rapide vaut-elle aussi contre un locataire qui ne paie plus ?",
+      "reponse": "Non, et c'est une distinction essentielle. La procédure rapide d'évacuation des occupants « sans titre » vise les personnes qui occupent un bien sans aucun droit (squat). Elle ne s'applique PAS à un locataire en place, même s'il ne paie plus son loyer : un locataire dispose d'un bail, donc d'un titre. Pour mettre fin à une location et obtenir une expulsion, le propriétaire doit suivre la procédure d'expulsion ordinaire devant le juge de paix (avec mise en demeure, audience, jugement et délais). Dans tous les cas, un propriétaire ne peut jamais expulser lui-même (changer les serrures, jeter les affaires, couper l'eau ou l'électricité) : ce serait une voie de fait, sanctionnée. La justice est le seul chemin légal.",
+      "reference_legale": "Code judiciaire — procédure d'expulsion du locataire devant le juge de paix (distincte de la loi du 18 octobre 2017 sur l'occupation sans titre)",
+      "contacts": [
+        {"nom": "Juge de paix", "pour": "procédure d'expulsion d'un locataire"},
+        {"nom": "Service logement de votre Région", "pour": "règles du bail et de l'expulsion"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2017/10/18/2018011328/justel", "intitule": "Justel — Loi du 18 octobre 2017 (champ d'application)"},
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/procedure-expulsion", "intitule": "Wallonie — Procédure d'expulsion du locataire"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

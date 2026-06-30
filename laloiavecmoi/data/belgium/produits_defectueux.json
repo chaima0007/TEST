@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2024/02/27/2024A01600/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Conservez le produit, la preuve d'achat et tout élément médical ; consultez un avocat pour les délais applicables à votre cas.",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PRODDEF-RECOURS-001",
+      "question": "Un produit m'a blessé ou a causé des dégâts : comment agir concrètement ?",
+      "reponse": "Distinguez deux choses. Si le produit est simplement défectueux/non conforme, la garantie légale (2 ans, à faire valoir auprès du VENDEUR) s'applique pour la réparation, le remplacement ou le remboursement. Si le produit défectueux vous a causé un DOMMAGE (blessure, dégât à un autre bien), vous pouvez en plus engager la responsabilité du producteur. Dans tous les cas : conservez le produit en cause, la preuve d'achat, et toutes les preuves du dommage (photos, certificats médicaux, devis). Adressez une réclamation écrite, et pour un dommage important, consultez un avocat (l'aide juridique est possible). Vérifiez aussi si le produit fait l'objet d'un rappel via le portail européen Safety Gate / le SPF Économie : un rappel facilite la preuve du défaut.",
+      "reference_legale": "Code civil, livre 6 — responsabilité du fait des produits défectueux (art. 6.41 et suivants) ; Code de droit économique (garantie légale de conformité)",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "rappels de produits et information consommateur"},
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "action en réparation d'un dommage"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2024/02/27/2024A01600/justel", "intitule": "Justel — Code civil, livre 6 (produits défectueux)"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs", "intitule": "SPF Économie — Sécurité des produits et rappels"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

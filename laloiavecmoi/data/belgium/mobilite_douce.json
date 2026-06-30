@@ -9,7 +9,7 @@
     "portee": "Règles d'usage du vélo et de la trottinette électrique, âge, assurance",
     "source_officielle": "https://mobilit.belgium.be/fr"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Le Code de la route évolue régulièrement pour les engins de déplacement (âge, casque, vitesse) ; vérifiez la règle en vigueur auprès du SPF Mobilité ou de votre commune avant de circuler.",
   "faits": [
@@ -54,6 +54,21 @@
         {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité et Transports"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "MOB-CYCLISTE-PROTECTION-001",
+      "question": "Comme cycliste ou en trottinette, suis-je protégé en cas d'accident ?",
+      "reponse": "Oui, fortement. Le cycliste et l'utilisateur de trottinette sont des « usagers faibles » : en cas d'accident impliquant un véhicule à moteur, leurs dommages corporels sont indemnisés automatiquement par l'assureur RC du véhicule, même s'ils n'ont commis aucune faute (sauf faute intentionnelle). Côté équipement, certains éléments sont obligatoires (éclairage avant et arrière la nuit ou par mauvaise visibilité, sonnette, freins) et le gilet rétroréfléchissant est conseillé. La voirie prévoit des aménagements qui vous protègent (pistes cyclables, rues cyclables où l'auto ne peut pas dépasser le vélo, sas vélo aux feux, sens uniques limités ouverts aux cyclistes). En cas d'accident, faites un constat et, s'il y a des blessés, appelez la police.",
+      "reference_legale": "Loi du 21 novembre 1989, art. 29bis (indemnisation des usagers faibles) ; arrêté royal du 1er décembre 1975 (Code de la route — équipement et aménagements cyclables)",
+      "contacts": [
+        {"nom": "Votre assureur", "pour": "indemnisation après un accident"},
+        {"nom": "Police", "numero": "101", "pour": "constat en cas de blessés (urgence : 112)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Cyclistes et usagers faibles"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1989/11/21/1989011371/justel", "intitule": "Justel — Loi du 21 novembre 1989 (art. 29bis)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

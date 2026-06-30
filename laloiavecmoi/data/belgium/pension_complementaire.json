@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2003/04/28/2003022481/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Consultez mypension.be et, au besoin, votre organisme de pension.",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PENCOMP-VERSEMENT-001",
+      "question": "Quand et comment vais-je toucher ma pension complémentaire ?",
+      "reponse": "En principe, votre pension complémentaire vous est versée au moment où vous prenez votre pension légale (la loi décourage les sorties anticipées). Elle est le plus souvent payée en une fois, sous forme de capital, parfois en rente. Ce capital est taxé séparément, à un taux distinct et généralement avantageux par rapport à l'impôt sur les revenus ordinaires (des cotisations sociales s'appliquent aussi). Un avantage existe souvent si vous restez actif jusqu'à l'âge légal de la pension. Le détail dépend de votre plan : consultez le règlement de pension et votre situation personnelle sur mypension.be avant toute décision (par exemple si on vous propose une sortie anticipée).",
+      "reference_legale": "Loi du 28 avril 2003 relative aux pensions complémentaires (versement de la prestation) ; Code des impôts sur les revenus 1992 (taxation du capital)",
+      "contacts": [
+        {"nom": "mypension.be", "lien": "https://www.socialsecurity.be/citizen/fr/static/applics/mypension/index.htm", "pour": "montant et modalités de votre 2e pilier"},
+        {"nom": "Votre organisme de pension", "pour": "règlement du plan et fiscalité à la sortie"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/static/applics/mypension/index.htm", "intitule": "Sécurité sociale — mypension.be (pension complémentaire)"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2003/04/28/2003022481/justel", "intitule": "Justel — Loi du 28 avril 2003 (LPC)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
