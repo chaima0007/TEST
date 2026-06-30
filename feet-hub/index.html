@@ -74,6 +74,13 @@
   #intro .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 35%,rgba(0,0,0,.85) 100%);z-index:3;pointer-events:none}
   #intro .grain{position:absolute;inset:0;z-index:4;opacity:.06;pointer-events:none;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  #intro .scene{position:absolute;inset:0;z-index:1;opacity:0;animation:sin 2.2s ease .3s forwards;
+    background:linear-gradient(180deg,#1c0a14 0%,#3f1428 34%,#7a2540 52%,#c24d5a 64%,#e8975f 73%,#160810 100%)}
+  #intro .sun{position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);width:170px;height:170px;border-radius:50%;
+    background:radial-gradient(circle,#ffe2bd,#ff7a6e 58%,transparent 72%);z-index:1;opacity:0;filter:blur(2px);animation:sin 2.6s ease .5s forwards}
+  #intro .horizon{position:absolute;left:0;right:0;top:63%;height:1px;z-index:1;opacity:0;animation:sin 2.2s ease .8s forwards;
+    background:linear-gradient(90deg,transparent,rgba(255,205,165,.55),transparent)}
+  @keyframes sin{to{opacity:.6}}
   #intro .lb{position:absolute;left:0;right:0;height:0;background:#000;z-index:5;animation:lb 1.1s ease forwards}
   #intro .lb.top{top:0}#intro .lb.bot{bottom:0}
   @keyframes lb{to{height:11vh}}
@@ -169,6 +176,7 @@
 
   <!-- ===== Intro cinématique (gouttes rouges + effet ciné) ===== -->
   <div id="intro">
+    <div class="scene"></div><div class="sun"></div><div class="horizon"></div>
     <div class="lb top"></div><div class="lb bot"></div>
     <div class="vig"></div><div class="grain"></div>
     <div class="stage">
