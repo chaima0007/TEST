@@ -9,7 +9,7 @@
     "portee": "Obligation d'assurance, sanctions et Fonds commun de garantie",
     "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/assurances/auto/rc-auto"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Pour votre contrat et vos garanties, vérifiez auprès de votre assureur.",
   "faits": [
@@ -42,6 +42,36 @@
         {"type": "secondaire", "url": "https://www.assuralia.be/fr/infos-secteur/contexte-juridique/contexte-juridique-de-lassurance-automobile", "intitule": "Assuralia — Contexte juridique assurance auto"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "AUTO-GARANTIES-001",
+      "question": "Quelles garanties en plus de la RC obligatoire ?",
+      "reponse": "La RC ne couvre QUE les dommages causés aux autres, pas votre propre véhicule. Vous pouvez ajouter des garanties facultatives : l'omnium complète (dégâts à votre voiture, même en tort, plus vol, incendie, bris de vitrage, catastrophes naturelles), la mini-omnium ou omnium partielle (vol, incendie, bris de vitrage, forces de la nature, mais pas vos propres dégâts en cas de collision en tort), l'assistance (dépannage), la protection juridique (frais de défense de vos droits) et l'assurance du conducteur (vos blessures à vous, qui ne sont pas couvertes par la RC). Le prix tient compte du bonus-malus, qui reflète votre historique de sinistres. Comparez les offres selon l'âge et la valeur de la voiture.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (garanties facultatives) ; loi du 21 novembre 1989 (RC obligatoire)",
+      "contacts": [
+        {"nom": "Votre assureur / courtier", "pour": "choisir les garanties facultatives adaptées"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/auto/rc-auto", "intitule": "SPF Économie — Assurance auto"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr", "intitule": "Wikifin (FSMA) — Assurance auto"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AUTO-CONSTAT-001",
+      "question": "Que faire concrètement juste après un accident de voiture ?",
+      "reponse": "Sécurisez les lieux (gilet, triangle) et, s'il y a des blessés ou un désaccord grave, appelez la police (101, ou 112 en urgence). Pour les dégâts matériels, remplissez un constat amiable européen avec l'autre conducteur : il décrit les circonstances et est signé par les deux parties. Ne reconnaissez pas trop vite votre responsabilité : c'est le constat et les assureurs qui l'établissent. Notez les plaques, prenez des photos, relevez les coordonnées d'éventuels témoins. Transmettez ensuite le constat à votre assureur dans le délai prévu par votre contrat. En cas de délit de fuite ou de conducteur non assuré, le Fonds commun de garantie belge peut intervenir.",
+      "reference_legale": "Loi du 21 novembre 1989 relative à l'assurance obligatoire de la responsabilité en matière de véhicules automoteurs",
+      "alerte_delai": "Envoyez le constat amiable à votre assureur dans le délai prévu au contrat (souvent quelques jours).",
+      "contacts": [
+        {"nom": "Police", "numero": "101", "pour": "blessés, désaccord, délit de fuite (urgence : 112)"},
+        {"nom": "Votre assureur", "pour": "transmission du constat amiable"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/auto/rc-auto", "intitule": "SPF Économie — RC auto et sinistre"},
+        {"type": "secondaire", "url": "https://www.assuralia.be/fr/infos-secteur/contexte-juridique/contexte-juridique-de-lassurance-automobile", "intitule": "Assuralia — Assurance automobile"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

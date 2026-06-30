@@ -9,7 +9,7 @@
     "portee": "Règles propres au bail étudiant : durée, garantie, résiliation",
     "source_officielle": "https://logement.wallonie.be/fr/bail/le-bail-etudiant"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les règles de bail dépendent de la Région où se trouve le kot (Wallonie, Bruxelles, Flandre) ; vérifiez la règle locale.",
   "faits": [
@@ -42,6 +42,36 @@
         {"type": "secondaire", "url": "https://www.jeminforme.be/louer-un-kot-etudiant-a-bruxelles/", "intitule": "Infor Jeunes — Louer un kot à Bruxelles"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "KOT-CESSION-001",
+      "question": "Puis-je céder mon kot à un autre étudiant si je pars ?",
+      "reponse": "Souvent oui : le bail étudiant prévoit en général la possibilité de céder le bail (ou de sous-louer) à un autre étudiant, ce qui est très utile pour quitter le kot sans devoir payer jusqu'à la fin. La cession nécessite en principe l'accord écrit du propriétaire (qui ne peut pas le refuser sans motif raisonnable selon les règles régionales). En cas de cession acceptée, c'est le nouvel étudiant qui reprend le bail et la garantie ; veillez à faire un état des lieux et à formaliser le transfert par écrit pour ne pas rester responsable. Les modalités exactes dépendent de la Région : vérifiez auprès du service logement.",
+      "reference_legale": "Décret wallon du 15 mars 2018 (bail étudiant — cession et sous-location) ; ordonnance bruxelloise du 27 juillet 2017",
+      "contacts": [
+        {"nom": "Propriétaire", "pour": "accord écrit de cession / sous-location"},
+        {"nom": "Service logement de votre Région", "pour": "conditions de cession du bail étudiant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/le-bail-etudiant", "intitule": "Wallonie — Le bail étudiant (cession)"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/te-loger/kots-et-bail-etudiant-des-regles-specifiques/", "intitule": "Bruxelles-J — Kots et bail étudiant"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "KOT-ETAT-LIEUX-001",
+      "question": "L'état des lieux et l'enregistrement sont-ils obligatoires pour un kot ?",
+      "reponse": "Oui. Un état des lieux d'entrée détaillé et contradictoire (établi ensemble, ou par un expert) doit être dressé et annexé au bail : c'est lui qui protège votre garantie locative, en évitant qu'on vous impute à la sortie des dégâts qui existaient déjà. À la fin du bail, un état des lieux de sortie est comparé à celui d'entrée. Le bail doit aussi être enregistré (gratuitement) ; cette formalité incombe en principe au propriétaire et protège le locataire. Prenez des photos datées à l'entrée et à la sortie, et n'acceptez jamais un kot « sans état des lieux ».",
+      "reference_legale": "Décret wallon du 15 mars 2018 (état des lieux et enregistrement) ; ordonnance bruxelloise du 27 juillet 2017 ; Code civil",
+      "contacts": [
+        {"nom": "Propriétaire", "pour": "état des lieux contradictoire et enregistrement du bail"},
+        {"nom": "Service logement de votre Région", "pour": "modèle d'état des lieux"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://logement.wallonie.be/fr/bail/le-bail-etudiant", "intitule": "Wallonie — Le bail étudiant (état des lieux)"},
+        {"type": "secondaire", "url": "https://www.jeminforme.be/louer-un-kot-etudiant-a-bruxelles/", "intitule": "Infor Jeunes — Louer un kot"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

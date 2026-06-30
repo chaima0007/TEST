@@ -9,7 +9,7 @@
     "portee": "Garder une adresse officielle et ses droits sociaux quand on n'a pas de logement",
     "source_officielle": "https://www.droitsquotidiens.be/fr/question/quelles-conditions-pour-avoir-une-adresse-de-reference-au-cpas"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. La demande passe par le CPAS de la commune où vous passez le plus de temps ; il réalise une enquête sociale.",
   "faits": [
@@ -42,6 +42,35 @@
         {"type": "secondaire", "url": "https://aide-sociale.be/adresse-reference-personnes-sans-domicile/", "intitule": "Aide-sociale.be — Adresse de référence"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "ADRREF-PARTICULIER-001",
+      "question": "Puis-je avoir une adresse de référence chez un ami ou un proche ?",
+      "reponse": "Oui, l'adresse de référence peut aussi être prise chez une personne physique (un ami, un proche) qui accepte de vous y inscrire, et pas seulement au CPAS. Attention à ne pas confondre avec une domiciliation classique : l'adresse de référence sert uniquement à recevoir le courrier officiel et à conserver vos droits, elle ne signifie pas que vous cohabitez réellement. En principe, elle ne crée pas de charges pour la personne qui vous héberge à ce titre, mais la commune vérifie la réalité de la situation. La personne qui vous accueille doit marquer son accord.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (adresse de référence chez un particulier)",
+      "contacts": [
+        {"nom": "Service population de la commune", "pour": "inscription d'une adresse de référence chez un particulier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/registre-national/", "intitule": "IBZ — Registre national / population"},
+        {"type": "secondaire", "url": "https://aide-sociale.be/adresse-reference-personnes-sans-domicile/", "intitule": "Aide-sociale.be — Adresse de référence"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ADRREF-MAINTIEN-001",
+      "question": "L'adresse de référence est-elle définitive ?",
+      "reponse": "Non, elle est temporaire : elle correspond à une situation de transition et est régulièrement réexaminée. Pour la conserver, vous devez rester joignable : passez régulièrement relever votre courrier (notamment les convocations du CPAS, de la mutuelle ou de l'administration) et signalez tout changement de situation. Si vous ne donnez plus de nouvelles ou ne réagissez pas aux courriers, vous risquez d'être radié du registre, ce qui peut faire perdre vos droits sociaux. Dès que vous retrouvez un logement, faites-vous domicilier à votre nouvelle adresse réelle.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (radiation et tenue des registres)",
+      "alerte_delai": "Relevez régulièrement votre courrier et répondez aux convocations : l'absence de réaction peut entraîner une radiation et la perte de vos droits.",
+      "contacts": [
+        {"nom": "CPAS / commune", "pour": "maintien de l'adresse de référence et changement de situation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/registre-national/", "intitule": "IBZ — Registre national / population"},
+        {"type": "secondaire", "url": "https://aide-sociale.be/adresse-reference-personnes-sans-domicile/", "intitule": "Aide-sociale.be — Adresse de référence"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

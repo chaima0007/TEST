@@ -9,7 +9,7 @@
     "portee": "Qui doit assurer le logement, contre quoi, et que se passe-t-il en cas de sinistre",
     "source_officielle": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/sassurer/habiter/qui-doit-souscrire-une-assurance-habitation"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les obligations dépendent de la Région et de la date du bail ; vérifiez votre situation et votre contrat.",
   "faits": [
@@ -44,6 +44,35 @@
         {"type": "secondaire", "url": "https://www.assuralia.be/fr/theme/habitation/assurance-responsabilite-civile-locataire", "intitule": "Assuralia — RC locataire"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "ASSHAB-CONTENU-001",
+      "question": "Que couvre réellement une assurance « incendie » du logement ?",
+      "reponse": "Malgré son nom, l'assurance incendie (ou « habitation ») couvre bien plus que le feu. Elle inclut en général : l'incendie, les dégâts des eaux, la tempête et la grêle, le bris de vitrage, les dégâts électriques, et les catastrophes naturelles. Elle couvre aussi votre responsabilité (si le sinistre s'étend aux voisins) et, selon la formule, le contenu (mobilier, électroménager, effets personnels). Le vol est souvent une option à ajouter. Lisez les plafonds, les exclusions et les franchises : c'est là que se jouent les différences entre contrats. Évaluez correctement la valeur de votre contenu pour éviter d'être sous-assuré.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (contenu et étendue de la garantie)",
+      "contacts": [
+        {"nom": "Votre assureur / courtier", "pour": "étendue des garanties, plafonds et options (vol)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/assurances-de-dommages/lassurance-incendie", "intitule": "SPF Économie — L'assurance incendie"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr", "intitule": "Wikifin (FSMA) — Assurance habitation"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ASSHAB-QUI-ASSURE-001",
+      "question": "Locataire ou propriétaire : qui assure quoi ?",
+      "reponse": "En principe, le propriétaire assure le bâtiment lui-même et sa propre responsabilité, tandis que le locataire assure sa responsabilité locative (les dégâts qu'il pourrait causer au bien loué) ainsi que son contenu (ses meubles). Il existe une solution pratique : le bailleur souscrit une assurance pour l'immeuble avec une clause d'« abandon de recours » envers le locataire, ce qui dispense ce dernier d'assurer sa responsabilité locative (le coût est souvent répercuté dans le loyer). En copropriété, l'immeuble est généralement assuré collectivement via le syndic. Vérifiez votre bail et votre contrat pour savoir exactement ce qui est couvert et par qui.",
+      "reference_legale": "Code civil (responsabilité locative) ; décrets et ordonnances régionaux sur le bail d'habitation (obligation d'assurance)",
+      "contacts": [
+        {"nom": "Votre assureur", "pour": "responsabilité locative et contenu"},
+        {"nom": "Propriétaire / syndic", "pour": "assurance de l'immeuble et abandon de recours"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.assuralia.be/fr/theme/habitation/assurance-responsabilite-civile-locataire", "intitule": "Assuralia — RC locataire"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances", "intitule": "SPF Économie — Assurances"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
