@@ -9,7 +9,7 @@
     "portee": "Propriétaires et locataires réalisant des travaux de rénovation/énergie",
     "source_officielle": "https://www.mijnverbouwpremie.be/"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Les dispositifs, conditions et montants des primes changent souvent et varient par région : vérifiez le portail officiel de votre région avant tout engagement de travaux. Ne remplace pas un conseil individualisé.",
   "faits": [
@@ -53,7 +53,75 @@
           "intitule": "Énergie Wallonie — primes habitation/énergie"
         }
       ],
-      "date_verification": "2026-06-29"
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PRIME-FLANDRE-001",
+      "question": "En Flandre, comment fonctionne Mijn VerbouwPremie et qu'est-ce que Mijn VerbouwLening ?",
+      "reponse": "En Région flamande, Mijn VerbouwPremie est la prime unique de la Région pour la rénovation et les investissements économiseurs d'énergie des logements, appartements et autres bâtiments ; la demande se fait en ligne via Mijn VerbouwLoket. Une réforme s'applique à partir du 1er mars 2026 : elle concerne surtout les propriétaires-occupants des deux catégories de revenus les plus élevées, les autres investisseurs et la prime pour bâtiments non résidentiels (vérifiez les nouvelles conditions sur le portail officiel). La rénovation peut aussi être financée par le prêt Mijn VerbouwLening, jusqu'à 60 000 €. Un simulateur officiel permet d'estimer les primes auxquelles vous avez droit.",
+      "reference_legale": "Arrêté du Gouvernement flamand relatif à Mijn VerbouwPremie (compétence régionale énergie/logement)",
+      "alerte_delai": "Réforme de Mijn VerbouwPremie applicable à partir du 1er mars 2026 : vérifiez les conditions en vigueur avant d'introduire votre demande.",
+      "contacts": [
+        {
+          "nom": "Mijn VerbouwLoket (Flandre)",
+          "lien": "https://www.mijnverbouwpremie.be/",
+          "pour": "demande de Mijn VerbouwPremie et simulateur"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mijnverbouwpremie.be/",
+          "intitule": "Mijn VerbouwPremie — Vlaanderen.be (prime et prêt rénovation/énergie)"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PRIME-BRUXELLES-001",
+      "question": "À Bruxelles, quelles aides puis-je obtenir via RENOLUTION pour rénover ?",
+      "reponse": "RENOLUTION est le portail officiel de la rénovation en Région de Bruxelles-Capitale. À ce jour, il n'y a pas de décision gouvernementale concernant d'éventuelles nouvelles formes de soutien financier à la rénovation (les informations seront communiquées sur le portail dès qu'elles seront disponibles). Le portail reste utile : il propose des conseils et accompagnements gratuits, des informations sur le certificat PEB, les étapes d'une rénovation, des listes de professionnels agréés et le rappel des obligations applicables aux bâtiments bruxellois.",
+      "reference_legale": "Arrêté du Gouvernement de la Région de Bruxelles-Capitale en matière de performance énergétique des bâtiments (PEB) et de rénovation (compétence régionale)",
+      "contacts": [
+        {
+          "nom": "RENOLUTION (Bruxelles)",
+          "lien": "https://renolution.brussels/fr",
+          "pour": "conseils gratuits, certificat PEB, étapes et obligations de rénovation"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://renolution.brussels/fr",
+          "intitule": "RENOLUTION — portail officiel de la rénovation (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PRIME-PROCEDURE-001",
+      "question": "Faut-il demander la prime avant de commencer les travaux ?",
+      "reponse": "Les règles de calendrier varient d'une région à l'autre, mais le principe de prudence est partout le même : vérifiez la procédure de votre région AVANT de commencer les travaux. Certains dispositifs imposent une demande préalable, un audit du logement ou un certificat (par ex. PEB) avant l'engagement des travaux, et le non-respect de ces étapes peut faire perdre le droit à la prime. Conservez tous les justificatifs (devis, factures, attestations d'entrepreneur) demandés par votre région.",
+      "reference_legale": "Conditions de procédure fixées par l'arrêté régional applicable (énergie/logement) propre à chaque région",
+      "alerte_delai": "Vérifiez si votre région exige une demande, un audit ou un certificat AVANT le début des travaux — sous peine de perdre le bénéfice de la prime.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mijnverbouwpremie.be/",
+          "intitule": "Mijn VerbouwPremie — étapes et conditions de demande (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://renolution.brussels/fr",
+          "intitule": "RENOLUTION — étapes d'une rénovation (Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://energie.wallonie.be/",
+          "intitule": "Énergie Wallonie — procédure des primes habitation/énergie"
+        }
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
