@@ -1,0 +1,32 @@
+<svg width="520" height="160" viewBox="0 0 520 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SOLEA">
+  <defs>
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF3D6E"/>
+      <stop offset="1" stop-color="#E8B583"/>
+    </linearGradient>
+    <linearGradient id="roseSoft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF7FA0"/>
+      <stop offset="1" stop-color="#E8B583"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Emblème : un arc/voûte élégant dans un cercle (évoque le cou-de-pied, sans être littéral) -->
+  <g transform="translate(80,80)">
+    <circle r="58" fill="none" stroke="url(#rose)" stroke-width="2.5" opacity="0.55"/>
+    <!-- courbe d'arche -->
+    <path d="M -34 26 C -22 -30, 22 -30, 34 26" fill="none" stroke="url(#rose)" stroke-width="6" stroke-linecap="round"/>
+    <!-- point / talon -->
+    <circle cx="34" cy="26" r="5.5" fill="#FF3D6E"/>
+    <circle cx="-34" cy="26" r="3.5" fill="#E8B583"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="168" y="92"
+        font-family="'Playfair Display', Georgia, serif"
+        font-size="62" font-weight="800" letter-spacing="6" fill="#F6E9EC">SOL<tspan fill="url(#roseSoft)">EA</tspan></text>
+
+  <!-- Tagline -->
+  <text x="170" y="122"
+        font-family="'Inter', Arial, sans-serif"
+        font-size="13" letter-spacing="5" fill="#B79AA4">L ' A R T   D U   D É T A I L</text>
+</svg>
