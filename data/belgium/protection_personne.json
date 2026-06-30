@@ -9,7 +9,7 @@
     "portee": "Protéger une personne majeure devenue incapable de gérer ses affaires",
     "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/protection_judiciaire"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Pour une situation concrète, le juge de paix et un notaire/avocat peuvent vous guider.",
   "faits": [
@@ -43,6 +43,35 @@
         {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/ou-et-comment-introduire-la-demande-de-mise-sous-administration-de-biens-etou-de-la", "intitule": "Droits Quotidiens — Introduire la demande"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PROT-MANDAT-EXTRA-001",
+      "question": "Puis-je choisir à l'avance qui gérera mes affaires si je perds mes capacités ?",
+      "reponse": "Oui, grâce au mandat de protection extrajudiciaire : tant que vous êtes capable, vous désignez vous-même une ou plusieurs personnes de confiance qui pourront gérer vos biens (et, dans une certaine mesure, des aspects personnels) le jour où vous ne pourrez plus le faire. C'est une alternative souple à l'administration judiciaire : si un mandat valable existe et suffit, le juge de paix n'impose pas forcément de mesure judiciaire. Le mandat doit être enregistré dans un registre central tenu par le notariat pour produire ses effets ; un notaire est nécessaire si le mandat porte sur des actes pour lesquels la loi l'exige. Vous pouvez en fixer l'étendue et les limites.",
+      "reference_legale": "Code civil — mandat de protection extrajudiciaire (art. 489 et suivants), introduit par la loi du 17 mars 2013 réformant les régimes d'incapacité",
+      "contacts": [
+        {"nom": "Notaire", "pour": "rédaction et enregistrement du mandat extrajudiciaire"},
+        {"nom": "Juge de paix", "pour": "contrôle si le mandat devient insuffisant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs", "intitule": "SPF Justice — Protection des majeurs (mandat extrajudiciaire)"},
+        {"type": "secondaire", "url": "https://www.notaire.be", "intitule": "Notaire.be — Mandat de protection extrajudiciaire"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PROT-CONTROLE-001",
+      "question": "Comment éviter qu'un administrateur abuse de son pouvoir ?",
+      "reponse": "L'administrateur est contrôlé par le juge de paix. Il doit lui remettre un rapport de sa gestion (notamment un rapport initial et un rapport annuel) et agir dans le seul intérêt de la personne protégée. Pour les actes les plus importants — par exemple vendre un bien immobilier, faire une donation, contracter un emprunt ou renoncer à une succession — il doit obtenir une autorisation spéciale préalable du juge de paix. La personne protégée, un membre de sa famille ou la personne de confiance peuvent signaler tout problème au juge, qui peut adapter la mesure ou remplacer l'administrateur.",
+      "reference_legale": "Code civil — mission et contrôle de l'administrateur, actes soumis à autorisation du juge de paix (art. 499 et suivants)",
+      "contacts": [
+        {"nom": "Juge de paix", "pour": "signaler un problème, demander le remplacement de l'administrateur"},
+        {"nom": "Personne de confiance", "pour": "relayer la voix de la personne protégée"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/mission_de_l_administrateur", "intitule": "SPF Justice — Mission et contrôle de l'administrateur"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
