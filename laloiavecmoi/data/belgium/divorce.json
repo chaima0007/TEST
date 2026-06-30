@@ -9,7 +9,7 @@
     "portee": "Formes de divorce, enfants, pension et contribution alimentaire",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Le divorce a des conséquences importantes (biens, enfants, pension) ; un avocat ou un notaire vous conseille selon votre situation.",
   "faits": [
@@ -71,6 +71,36 @@
         }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "DIV-BIENS-001",
+      "question": "Comment sont partagés les biens en cas de divorce ?",
+      "reponse": "Le partage dépend de votre régime matrimonial. Sans contrat de mariage, vous êtes sous le régime légal de la communauté : les revenus et les biens acquis pendant le mariage sont communs et se partagent en principe par moitié, tandis que les biens propres (possédés avant le mariage, reçus par héritage ou donation) restent à chacun. Si vous avez un contrat de séparation de biens, chacun garde ce qui lui appartient. La liquidation-partage (évaluation et répartition des biens, sort du logement, comptes entre époux) se règle généralement devant notaire ; en cas de désaccord, le tribunal de la famille tranche.",
+      "reference_legale": "Code civil — régimes matrimoniaux et liquidation-partage de la communauté",
+      "contacts": [
+        {"nom": "Notaire", "pour": "liquidation-partage des biens et du logement"},
+        {"nom": "Tribunal de la famille", "pour": "désaccord sur le partage"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Famille et régimes matrimoniaux"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel", "intitule": "Ancien Code civil (dispositions sur les personnes et la famille)"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "DIV-CONVENTION-001",
+      "question": "Que doit contenir la convention d'un divorce par consentement mutuel ?",
+      "reponse": "Dans un divorce par consentement mutuel, les époux règlent tout à l'avance dans une convention écrite. Elle organise notamment : le partage des biens et le sort du logement, la résidence de chacun pendant la procédure, et — s'il y a des enfants — l'hébergement, le domicile, la gestion de l'autorité parentale et la contribution alimentaire pour les enfants. Elle peut aussi prévoir une éventuelle pension alimentaire entre époux. La convention est déposée au tribunal de la famille, qui vérifie surtout que l'accord respecte l'intérêt des enfants. Un notaire ou un avocat aide à la rédiger pour qu'elle soit complète et équilibrée.",
+      "reference_legale": "Code civil — divorce par consentement mutuel (art. 229 et suivants) et Code judiciaire (procédure devant le tribunal de la famille)",
+      "contacts": [
+        {"nom": "Notaire / Avocat", "pour": "rédaction de la convention"},
+        {"nom": "Tribunal de la famille", "pour": "dépôt et homologation de la convention"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel", "intitule": "Ancien Code civil — divorce par consentement mutuel"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Divorce par consentement mutuel"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
