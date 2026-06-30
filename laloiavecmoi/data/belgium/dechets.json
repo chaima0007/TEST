@@ -9,7 +9,7 @@
     "portee": "Obligations de tri, dépôt sauvage, amendes et propreté publique",
     "source_officielle": "https://www.belgium.be/fr/environnement/consommation_durable/dechets/delits"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les règles de tri, les jours de collecte et les montants d'amende dépendent de votre Région et surtout de votre commune ou intercommunale ; vérifiez le règlement local.",
   "faits": [
@@ -97,6 +97,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DECH-SPECIAUX-001",
+      "question": "Où déposer les déchets spéciaux (encombrants, électro, piles, médicaments) ?",
+      "reponse": "Certains déchets ne peuvent jamais aller dans le sac ordinaire. Les déchets dangereux (peintures, solvants, huiles), les déchets d'équipements électriques et électroniques (DEEE), les ampoules, les piles et les déchets encombrants se déposent au parc à conteneurs / recyparc (Recypark à Bruxelles). Pour l'électroménager, le vendeur a en principe une obligation de reprise de l'ancien appareil lors de l'achat d'un neuf équivalent (système Recupel). Les médicaments périmés se rapportent à la pharmacie. L'amiante et certains déchets dangereux suivent des filières spécifiques : renseignez-vous auprès de votre intercommunale. Jeter ces déchets n'importe où est un dépôt sauvage, sanctionné par une amende.",
+      "reference_legale": "Décret wallon relatif aux déchets ; décret flamand sur les matériaux (OVAM) ; ordonnance bruxelloise relative aux déchets (obligations de reprise et filières spécifiques)",
+      "contacts": [
+        {"nom": "Votre intercommunale / recyparc", "pour": "déchets spéciaux, encombrants, DEEE"},
+        {"nom": "Pharmacie", "pour": "médicaments périmés"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/environnement/consommation_durable/dechets", "intitule": "Belgium.be — Déchets spéciaux"},
+        {"type": "officiel", "url": "https://ovam.vlaanderen.be/", "intitule": "OVAM — Tri et filières (Flandre)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

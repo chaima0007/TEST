@@ -9,7 +9,7 @@
     "portee": "Crédits des particuliers, fichage en cas de défaut, droit de consultation",
     "source_officielle": "https://www.nbb.be/fr/centrales-des-credits/centrale-des-credits-aux-particuliers"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. En cas de difficulté à rembourser un crédit, réagissez vite (médiateur de dettes, CPAS) — voir aussi la catégorie Surendettement.",
   "faits": [
@@ -49,6 +49,22 @@
         {"type": "officiel", "url": "https://www.nbb.be/fr/centrales-des-credits", "intitule": "Banque nationale — Centrales des crédits"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "CRED-MEDIATION-DETTES-001",
+      "question": "Je suis surendetté : quelles solutions pour m'en sortir ?",
+      "reponse": "N'attendez pas que les dettes s'accumulent. Première étape : un service de médiation de dettes (au CPAS ou dans une association agréée), gratuit, qui fait le point sur votre budget et négocie avec vos créanciers un plan de remboursement réaliste. Si la situation est durablement bloquée, vous pouvez demander un règlement collectif de dettes : une procédure devant le tribunal du travail qui regroupe toutes vos dettes, suspend les saisies et les intérêts, et fixe un plan sous le contrôle d'un médiateur de dettes désigné par le juge, tout en vous garantissant de quoi vivre dignement. C'est une vraie seconde chance, mais elle implique une gestion stricte de votre budget pendant la durée du plan.",
+      "reference_legale": "Code judiciaire — règlement collectif de dettes (art. 1675/2 et suivants) ; médiation de dettes agréée",
+      "alerte_delai": "Agissez dès les premières difficultés : plus tôt vous consultez un médiateur de dettes, plus de solutions restent possibles.",
+      "contacts": [
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "bilan budgétaire et négociation"},
+        {"nom": "Tribunal du travail", "pour": "règlement collectif de dettes"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Règlement collectif de dettes"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr", "intitule": "Droits Quotidiens — Surendettement"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

@@ -9,7 +9,7 @@
     "portee": "Formalités concrètes à accomplir après un décès en Belgique",
     "source_officielle": "https://www.belgium.be/fr/famille/deces"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les pompes funèbres et le notaire peuvent vous accompagner dans ces démarches, dans un moment difficile.",
   "faits": [
@@ -76,6 +76,20 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DECES-OPTION-SUCCESSION-001",
+      "question": "Suis-je obligé d'accepter l'héritage (et les dettes) d'un proche ?",
+      "reponse": "Non. Face à une succession, l'héritier a trois choix. 1) Accepter purement et simplement : vous recevez l'actif mais aussi les dettes, même au-delà de ce que vous héritez. 2) Accepter sous bénéfice d'inventaire (acceptation à concurrence de l'actif net) : vous n'êtes tenu des dettes que jusqu'à hauteur de ce que vous recevez — c'est la prudence recommandée si vous ignorez l'état réel du patrimoine. 3) Renoncer : vous ne recevez rien et ne payez aucune dette. La renonciation et l'acceptation sous bénéfice d'inventaire se font par déclaration (via le notaire ou le tribunal). Prenez le temps de vous renseigner sur l'actif et le passif avant de décider : c'est une protection essentielle contre les dettes d'un héritage.",
+      "reference_legale": "Code civil — option successorale : acceptation, acceptation sous bénéfice d'inventaire, renonciation",
+      "contacts": [
+        {"nom": "Notaire", "pour": "déclaration d'acceptation sous bénéfice d'inventaire ou de renonciation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage et option successorale"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel", "intitule": "Ancien Code civil — successions (option de l'héritier)"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

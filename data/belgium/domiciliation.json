@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://ibz.be/fr/single-digital-gateway/enregistrement-dun-changement-dadresse"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Si vous quittez le pays, faites une déclaration de départ avant votre départ.",
   "faits": [
@@ -55,6 +55,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DOMIC-DEPART-ETRANGER-001",
+      "question": "Je pars vivre à l'étranger : que dois-je faire ?",
+      "reponse": "Avant votre départ, faites une déclaration de départ auprès de l'administration communale de votre domicile actuel : vous serez rayé des registres de la population belges à la date de votre départ effectif. C'est important, car cela a des conséquences (fin de l'inscription, impact sur la mutuelle, les impôts, les allocations). Une fois installé à l'étranger, vous pouvez vous faire inscrire auprès du poste consulaire belge (ambassade ou consulat) de votre pays de résidence : cela facilite vos démarches (documents d'identité, vote, assistance). Conservez la preuve de votre déclaration de départ. Si vous revenez ensuite en Belgique, vous devrez vous réinscrire dans votre commune.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (déclaration de départ et radiation)",
+      "alerte_delai": "Faites la déclaration de départ AVANT de quitter le pays, à la date de votre départ effectif.",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "déclaration de départ à l'étranger"},
+        {"nom": "Poste consulaire belge du pays de résidence", "lien": "https://diplomatie.belgium.be", "pour": "inscription consulaire"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://ibz.be/fr/single-digital-gateway/enregistrement-dun-changement-dadresse", "intitule": "IBZ — Changement d'adresse et départ"},
+        {"type": "officiel", "url": "https://diplomatie.belgium.be", "intitule": "SPF Affaires étrangères — Belges à l'étranger"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

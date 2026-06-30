@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/dossier-medical-global"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Les montants sont indexés : voir l'INAMI ou votre mutualité.",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DMG-ACCES-PARTAGE-001",
+      "question": "Puis-je accéder à mon dossier médical, et qui peut le consulter ?",
+      "reponse": "Oui. La loi sur les droits du patient vous donne le droit d'accéder à votre dossier médical et d'en obtenir une copie : adressez la demande à votre médecin ou à l'hôpital, qui doit y répondre rapidement. Vos données peuvent par ailleurs être partagées entre vos soignants via les réseaux de santé sécurisés (coffre-fort électronique), mais uniquement avec votre consentement éclairé et entre professionnels qui ont une relation de soins avec vous. Vous gardez le contrôle : vous pouvez consulter qui a accès, exclure un soignant, et retirer votre consentement. Ce partage améliore la continuité et la sécurité des soins (éviter les examens en double, connaître vos allergies et traitements).",
+      "reference_legale": "Loi du 22 août 2002 relative aux droits du patient (accès au dossier et consentement au partage des données de santé)",
+      "contacts": [
+        {"nom": "Votre médecin / l'hôpital", "pour": "accès et copie de votre dossier médical"},
+        {"nom": "Votre mutualité", "pour": "consentement éclairé au partage des données de santé"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/sante/organisation-des-soins-de-sante/droits-des-patients", "intitule": "SPF Santé publique — Droits du patient (accès au dossier)"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/dossier-medical-global", "intitule": "INAMI — Dossier médical global"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

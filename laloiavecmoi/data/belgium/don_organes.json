@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.health.belgium.be/fr/themes/sante/votre-sante/don-dorganes"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Parlez-en à vos proches et enregistrez votre volonté pour qu'elle soit respectée.",
   "faits": [
@@ -53,6 +53,20 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DONORG-VIVANT-001",
+      "question": "Peut-on donner un organe de son vivant ?",
+      "reponse": "Oui, c'est possible et encadré par la loi. Un donneur vivant peut donner un organe ou une partie d'organe régénérable (par exemple un rein, ou une partie du foie), le plus souvent au profit d'un proche, mais aussi parfois de manière altruiste (don anonyme). Conditions strictes : le don doit être libre, gratuit (toute rémunération est interdite) et précédé d'une information complète et d'un consentement éclairé, après une évaluation médicale et psychologique du donneur pour s'assurer que sa santé le permet. Le donneur peut revenir sur sa décision jusqu'au dernier moment. Renseignez-vous auprès d'un centre de transplantation.",
+      "reference_legale": "Loi du 13 juin 1986 sur le prélèvement et la transplantation d'organes (don entre personnes vivantes)",
+      "contacts": [
+        {"nom": "Centre de transplantation (hôpital)", "pour": "information et évaluation d'un don du vivant"},
+        {"nom": "Votre médecin", "pour": "première information"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/don-dorganes", "intitule": "SPF Santé publique — Don d'organes entre vivants"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
