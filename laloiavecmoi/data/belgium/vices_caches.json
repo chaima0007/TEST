@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=1804032154"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Faites constater le vice (expert) et réclamez par écrit ; consultez un avocat pour respecter le « bref délai ».",
   "faits": [
@@ -54,6 +54,20 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VICES-CLAUSE-001",
+      "question": "Une clause « vendu sans garantie » ou « en l'état » me prive-t-elle de tout recours ?",
+      "reponse": "Pas toujours. Entre particuliers de bonne foi, une clause excluant la garantie des vices cachés est en principe valable : c'est pourquoi on la voit souvent dans les ventes entre privés. MAIS cette clause ne joue PAS si le vendeur connaissait le vice et vous l'a caché (mauvaise foi) : il reste alors responsable malgré la clause. De plus, un vendeur PROFESSIONNEL est présumé connaître les vices de ce qu'il vend : il ne peut pas s'exonérer face à un consommateur (une telle clause est sans effet). Donc, même avec un « vendu en l'état », gardez vos preuves : si vous démontrez que le vendeur connaissait le défaut, ou s'il s'agit d'un professionnel, vous pouvez agir.",
+      "reference_legale": "Code civil (ancien), art. 1643 et 1645 (clause d'exonération inopérante en cas de mauvaise foi du vendeur)",
+      "contacts": [
+        {"nom": "Avocat / juge de paix", "pour": "apprécier la validité d'une clause d'exonération"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=1804032154", "intitule": "Justel — Code civil, art. 1643 et 1645"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/garantie", "intitule": "SPF Économie — Garantie et clauses"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

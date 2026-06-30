@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Pour une situation concrète, consultez le juge de paix ou un notaire.",
   "faits": [
@@ -58,6 +58,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "TUT-MAJORITE-COMPTES-001",
+      "question": "Que deviennent les biens du mineur, et que se passe-t-il à ses 18 ans ?",
+      "reponse": "Pendant la tutelle, le tuteur gère les biens du mineur dans son seul intérêt et doit en rendre compte : il établit un inventaire au début, tient une comptabilité et présente un rapport (en principe annuel) au juge de paix ; le subrogé tuteur veille à cette bonne gestion. Les actes importants (vendre un immeuble, faire une donation, accepter ou renoncer à une succession, placer des capitaux) nécessitent l'autorisation préalable du juge de paix. À 18 ans, la tutelle prend fin automatiquement : le jeune devient pleinement capable, et le tuteur doit lui remettre les comptes de sa gestion ainsi que les biens. Un jeune sans soutien familial peut être accompagné par les services d'aide à la jeunesse.",
+      "reference_legale": "Code civil — gestion des biens du mineur, comptes de tutelle et autorisations du juge de paix ; fin de la tutelle à la majorité",
+      "contacts": [
+        {"nom": "Juge de paix", "pour": "contrôle des comptes et autorisations"},
+        {"nom": "Subrogé tuteur", "pour": "surveillance de la gestion du tuteur"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel", "intitule": "Ancien Code civil — Tutelle (gestion et comptes)"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Tutelle des mineurs"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

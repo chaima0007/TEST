@@ -9,7 +9,7 @@
     "portee": "Garantie, vices cachés et documents obligatoires lors de l'achat d'une occasion",
     "source_officielle": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/achat-et-financement-dune-voiture"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Vos droits diffèrent selon que le vendeur est un professionnel ou un particulier.",
   "faits": [
@@ -118,6 +118,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VOIT-VERIFS-001",
+      "question": "Que vérifier AVANT d'acheter une voiture d'occasion ?",
+      "reponse": "Quelques contrôles évitent bien des ennuis. Exigez le Car-Pass : ce document officiel et obligatoire certifie le kilométrage réel (un compteur trafiqué est une fraude). Demandez un contrôle technique valable « en vue de la vente » (ou faites passer le véhicule au contrôle). Vérifiez les documents : certificat d'immatriculation, certificat de conformité, carnet et factures d'entretien. Faites un essai et, idéalement, un examen par un garage de confiance. Méfiez-vous d'un prix anormalement bas, d'un vendeur pressé ou sans documents. Mettez par écrit ce qui est convenu (état, équipements, garantie) : en cas de litige ultérieur, ces éléments font la différence.",
+      "reference_legale": "Loi du 11 juin 2004 réprimant la fraude au compteur kilométrique des véhicules (Car-Pass) ; réglementation du contrôle technique automobile",
+      "contacts": [
+        {"nom": "Car-Pass", "lien": "https://www.car-pass.be", "pour": "kilométrage certifié"},
+        {"nom": "Centre de contrôle technique", "pour": "contrôle en vue de la vente"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Contrôle technique et documents du véhicule"},
+        {"type": "officiel", "url": "https://www.car-pass.be", "intitule": "Car-Pass — Kilométrage certifié"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
