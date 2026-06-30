@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOLEA — Catégorie</title>
+<meta name="description" content="Découvrez les créateurs par catégorie sur SOLEA. 18+." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --noir:#140910;--noir-2:#1f0e18;--rose:#FF3D6E;--rose-clair:#FF7FA0;
+    --or:#E8B583;--creme:#F6E9EC;--gris:#B79AA4;--carte:#1c0f18;
+    --ligne:rgba(255,61,110,.20);--glow:rgba(255,61,110,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:"Playfair Display",serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  .hidden{display:none !important}
+  .btn{display:inline-block;cursor:pointer;border:none;border-radius:999px;font-weight:600;font-size:15px;padding:13px 26px;transition:.2s;font-family:"Inter",sans-serif}
+  .btn-rose{background:linear-gradient(135deg,var(--rose),#C81E54);color:#fff;box-shadow:0 6px 24px -6px var(--glow)}
+  .btn-rose:hover{transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--creme);border:1px solid var(--ligne)}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose-clair)}
+
+  #agegate{position:fixed;inset:0;z-index:1000;background:rgba(10,4,8,.97);display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(7px)}
+  #agegate .box{max-width:440px;text-align:center;border:1px solid var(--ligne);background:var(--noir-2);border-radius:22px;padding:42px 32px}
+  #agegate h2{font-size:26px;margin:10px 0}
+  #agegate p{color:var(--gris);font-size:14px;margin-bottom:24px}
+  #agegate small{display:block;margin-top:18px;color:#6e5560;font-size:11px}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(20,9,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--ligne)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Playfair Display",serif;font-weight:800;font-size:22px;letter-spacing:1px}
+  .logo span{color:var(--rose)}
+  .navlinks{display:flex;gap:24px}
+  .navlinks a{color:var(--gris);font-size:14px;font-weight:500}
+  .navlinks a:hover{color:var(--rose-clair)}
+  .navright{display:flex;align-items:center;gap:14px}
+  .lang{display:flex;border:1px solid var(--ligne);border-radius:999px;overflow:hidden}
+  .lang button{background:transparent;color:var(--gris);border:none;cursor:pointer;font-size:12px;font-weight:600;padding:6px 11px;font-family:"Inter",sans-serif}
+  .lang button.on{background:var(--rose);color:#fff}
+  @media(max-width:760px){.navlinks{display:none}}
+
+  .crumb{padding:22px 0 4px;color:var(--gris);font-size:13px}
+  .crumb a:hover{color:var(--rose-clair)}
+  .crumb span{color:var(--rose)}
+
+  header.hero{padding:30px 0 40px;background:radial-gradient(ellipse at 30% -20%,rgba(255,61,110,.18),transparent 60%),var(--noir)}
+  .hero-ic{font-size:42px;margin-bottom:10px}
+  header.hero .fam{color:var(--rose);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+  header.hero h1{font-size:clamp(34px,5.4vw,58px);margin:8px 0 14px;font-style:italic}
+  header.hero p{max-width:640px;color:var(--gris);font-size:17px;font-weight:300;margin-bottom:22px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .stats{display:flex;gap:26px;margin-top:24px;flex-wrap:wrap}
+  .stat b{font-family:"Playfair Display",serif;font-size:26px;color:var(--creme);display:block}
+  .stat span{color:var(--gris);font-size:12px;text-transform:uppercase;letter-spacing:1px}
+
+  section{padding:42px 0}
+  .sec-head{margin-bottom:26px}
+  .sec-head h2{font-size:clamp(22px,3.4vw,32px)}
+  .sec-head p{color:var(--gris);font-weight:300;margin-top:6px}
+
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+  .card{border:1px solid var(--ligne);border-radius:18px;overflow:hidden;background:var(--carte);transition:.25s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-4px);border-color:var(--rose);box-shadow:0 16px 36px -16px var(--glow)}
+  .card .thumb{aspect-ratio:4/3;background:linear-gradient(135deg,rgba(255,61,110,.28),rgba(28,15,24,.9));display:flex;align-items:center;justify-content:center;color:var(--rose-clair);font-family:"Playfair Display",serif;font-size:40px;font-style:italic;position:relative}
+  .card .thumb .tag{position:absolute;top:12px;left:12px;font-size:11px;background:rgba(10,4,8,.6);border:1px solid var(--ligne);color:var(--rose-clair);padding:4px 10px;border-radius:999px}
+  .card .body{padding:16px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .card h3{font-size:18px}
+  .card .meta{color:var(--gris);font-size:13px;flex:1}
+  .card .aff{margin-top:auto;text-align:center;background:linear-gradient(135deg,var(--rose),#C81E54);color:#fff;font-weight:600;font-size:14px;padding:10px;border-radius:10px}
+  .card .aff:hover{filter:brightness(1.1)}
+
+  .related{display:flex;flex-wrap:wrap;gap:9px}
+  .pill{border:1px solid var(--ligne);border-radius:999px;padding:8px 15px;font-size:13.5px;color:var(--creme);transition:.18s}
+  .pill:hover{border-color:var(--rose);color:var(--rose-clair)}
+
+  .seo{border:1px solid var(--ligne);border-radius:18px;background:var(--noir-2);padding:26px;color:var(--gris);font-weight:300}
+  .seo h2{color:var(--creme);font-size:22px;margin-bottom:10px}
+  .subcat{border:1px solid var(--ligne);border-radius:18px;background:radial-gradient(ellipse at 50% 0%,rgba(255,61,110,.14),var(--noir-2));padding:32px;text-align:center}
+  .subcat h2{font-size:24px;margin-bottom:8px}
+  .subcat p{color:var(--gris);font-weight:300;margin-bottom:18px}
+  .subcat form{display:flex;gap:10px;max-width:420px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+  .subcat input{flex:1;min-width:200px;background:var(--noir);border:1px solid var(--ligne);border-radius:999px;padding:13px 20px;color:var(--creme);font-family:"Inter",sans-serif}
+  .subcat input:focus{outline:none;border-color:var(--rose)}
+  .ok{color:var(--rose-clair);margin-top:14px;font-size:14px}
+
+  footer{border-top:1px solid var(--ligne);padding:34px 0;text-align:center;color:#6e5560;font-size:12px;margin-top:20px}
+  .age-pill{display:inline-block;border:1px solid var(--rose);color:var(--rose);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div id="agegate">
+  <div class="box">
+    <div style="font-size:34px">🔞</div>
+    <h2 class="serif" id="ag_t">Contenu réservé aux adultes</h2>
+    <p id="ag_p">En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-rose" onclick="enterSite()" id="ag_enter">J'ai 18 ans ou plus — Entrer</button>
+      <a class="btn btn-ghost" href="https://www.google.com" id="ag_leave">Quitter</a>
+    </div>
+    <small id="ag_law">L'accès est interdit aux mineurs.</small>
+  </div>
+</div>
+
+<div id="site" class="hidden">
+  <nav><div class="wrap">
+    <a class="logo" href="index.html">SO<span>LEA</span></a>
+    <div class="navlinks">
+      <a href="index.html" id="n_home">Accueil</a>
+      <a href="explorer.html" id="n_explore">Explorateur</a>
+      <a href="index.html#decouvrir" id="n_disc">Découvrir</a>
+    </div>
+    <div class="navright">
+      <div class="lang">
+        <button id="langFr" class="on" onclick="setLang('fr')">FR</button>
+        <button id="langEn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="btn btn-rose" style="padding:9px 20px;font-size:14px" href="explorer.html" id="n_cta">Explorer</a>
+    </div>
+  </div></nav>
+
+  <div class="wrap crumb" id="crumb"></div>
+
+  <header class="hero"><div class="wrap">
+    <div class="hero-ic" id="hIc">✨</div>
+    <div class="fam" id="hFam"></div>
+    <h1 id="hTitle"></h1>
+    <p id="hDesc"></p>
+    <div class="hero-cta">
+      <a class="btn btn-rose" href="#creators" id="hCta1">Voir les créateurs</a>
+      <a class="btn btn-ghost" href="explorer.html" id="hCta2">Composer ma sélection</a>
+    </div>
+    <div class="stats" id="hStats"></div>
+  </div></header>
+
+  <section><div class="wrap">
+    <div class="sec-head"><h2 id="cTitle">Créateurs dans cette catégorie</h2><p id="cSub"></p></div>
+    <div class="grid" id="creators"></div>
+    <p style="color:#6e5560;font-size:13px;margin-top:18px" id="cNote">SOLEA est un annuaire : chaque lien renvoie au créateur sur sa plateforme officielle.</p>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="subcat" id="subcat">
+      <h2 id="subT"></h2>
+      <p id="subP"></p>
+      <form onsubmit="return subCat(event)">
+        <input type="email" id="subEmail" required />
+        <button class="btn btn-rose" type="submit" id="subBtn"></button>
+      </form>
+      <div class="ok hidden" id="subOk"></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="seo" id="seoBlock"></div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head"><h2 id="relTitle">Catégories liées</h2></div>
+    <div class="related" id="related"></div>
+  </div></section>
+
+  <footer><div class="wrap">
+    <div class="age-pill">18+</div>
+    <p id="footTxt">© 2026 SOLEA — Annuaire. Aucun contenu hébergé.</p>
+  </div></footer>
+</div>
+
+<script>
+  function enterSite(){try{localStorage.setItem('solea_age_ok','1')}catch(e){}document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}
+  try{if(localStorage.getItem('solea_age_ok')==='1'){document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}}catch(e){}
+
+  // ===== AFFILIATION (⚠️ remplace SOLEA_CODE par ton vrai code FeetFinder) =====
+  const AFF = {
+    base:"https://feetfinder.com", ref:"SOLEA_CODE",
+    search(tags,c){return `${this.base}/search?ref=${this.ref}&tags=${encodeURIComponent(tags)}&utm_source=solea&utm_medium=affiliate&utm_campaign=${c}`}
+  };
+
+  // ===== Taxonomie (familles) — identique à l'Explorateur =====
+  const FAM = {
+    etat:{ic:"💧",fr:"État du pied",en:"Foot state",items:["Propres","Au naturel","Frais lavés","Légèrement sales","Très sales","Boueux","Poussiéreux","Mouillés","Sous la douche","Savonnés","Huilés","Crémés","Poudrés","Pleins de sable","Après le sport","Pieds chauds","Pieds froids"]},
+    scene:{ic:"🍓",fr:"Mise en scène / accessoires",en:"Staging / props",items:["Avec nourriture","Chocolat","Fruits","Fraises","Glace / crème","Miel","Chantilly","Boissons","Vin","Café","Bougies","Cire","Fleurs","Pétales","Eau / piscine","Bain de pieds","Jacuzzi","Sable / plage","Herbe","Boue","Soie / draps","Fourrure","Marbre","Cuir","Verre","Miroir","Chaînes","Cordes","Plumes"]},
+    soin:{ic:"💅",fr:"Soin & ongles",en:"Care & nails",items:["Pédicure soignée","Vernis rouge","Vernis noir","Vernis nude","Vernis pastel","Vernis pailleté","French manucure","Nail art","Ongles longs","Ongles courts","Sans vernis","Bagues d'orteil","Bracelet de cheville","Henné","Tatouages","Paillettes","Strass"]},
+    tenue:{ic:"🧦",fr:"Tenue & pieds",en:"Outfit & feet",items:["Pieds nus","Chaussettes blanches","Chaussettes noires","Chaussettes de sport","Chaussettes hautes","Chaussettes à motifs","Chaussettes portées","Chaussettes sales","Chaussettes de sport portées","Chaussettes humides","Chaussettes trouées","Bas nylon","Bas portés","Bas autofixants","Collants","Collants déchirés","Résille","Voile transparent","Talons hauts","Talons aiguilles","Sandales","Tongs","Mules","Ballerines","Baskets portées","Bottes","Cuissardes","Chaussons"]},
+    angle:{ic:"📐",fr:"Angle & pose",en:"Angle & pose",items:["Semelles (plantes)","Dessus du pied","Cambrure (arches)","Orteils en éventail","Orteils serrés","Talons","Chevilles","Pieds croisés","Pieds joints","Sur la pointe","Pieds en l'air","Vue de dessous","Gros plan macro","Plan large","Pieds qui pendent"]},
+    morpho:{ic:"📏",fr:"Morphologie",en:"Morphology",items:["Petits pieds","Grands pieds","Pieds fins","Pieds larges","Cambrure haute","Cambrure plate","Longs orteils","Orteils ronds","Pieds athlétiques","Pieds soignés","Peau douce"]},
+    ambiance:{ic:"✨",fr:"Ambiance",en:"Mood",items:["Luxe / glamour","Romantique","Naturel / raw","Vintage / Y2K","Cosplay","Sportif","Domestique / cozy","Studio pro","Extérieur","Nuit","Lumière douce","Néon","Noir & blanc","Sensuel chic","Mystérieux"]},
+    format:{ic:"🎬",fr:"Format",en:"Format",items:["Photos","Sets photo","Vidéos courtes","Vidéos longues","Boucles GIF","Sur-mesure","Demande personnalisée","En direct / live","Appel privé","Abonnement mensuel","Pack découverte"]},
+    theme:{ic:"🗓️",fr:"Thème & saison",en:"Theme & season",items:["Été / plage","Hiver / chaussettes","Pluie","Halloween","Noël","Saint-Valentin","Nouvel An","Anniversaire","Cosplay manga","Princesse","Gothique","Pin-up","Boho"]},
+  };
+
+  const T = {
+    fr:{home:"Accueil",explore:"Explorateur",disc:"Découvrir",cta:"Explorer",cats:"Catégories",
+      ag_t:"Contenu réservé aux adultes",ag_p:"En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.",ag_enter:"J'ai 18 ans ou plus — Entrer",ag_leave:"Quitter",ag_law:"L'accès est interdit aux mineurs.",
+      hCta1:"Voir les créateurs",hCta2:"Composer ma sélection",
+      cTitle:"Créateurs dans cette catégorie",cSub:"Sélection mise à jour régulièrement — du nouveau chaque semaine.",
+      cNote:"SOLEA est un annuaire : chaque lien renvoie au créateur sur sa plateforme officielle.",
+      relTitle:"Catégories liées",aff:"Voir le profil →",
+      stats:[["120+","Créateurs"],["Hebdo","Mises à jour"],["18+","Vérifié"]],
+      desc:(n,f)=>`Bienvenue dans la catégorie « ${n} ». Une sélection soignée de créateurs autour de « ${f.toLowerCase()} », pensée pour les connaisseurs. Parcourez, choisissez, accédez — en quelques clics.`,
+      seoT:n=>`À propos de « ${n} »`,
+      seo:(n,f)=>`La catégorie « ${n} » fait partie de notre univers « ${f.toLowerCase()} ». SOLEA réunit et organise les meilleurs créateurs pour vous éviter de chercher : chaque profil est rangé, étiqueté et accessible directement. Vous gardez la main — nous, on s'occupe de la curation.`,
+      subT:n=>`S'abonner à la catégorie « ${n} »`,
+      subP:"Sois prévenu·e dès qu'un nouveau créateur rejoint cette catégorie. Une sélection ciblée, rien d'autre. Désinscription en un clic.",
+      subBtn:"M'abonner à cette catégorie",
+      subOk:n=>`✓ Abonné·e à « ${n} ». Tu recevras les nouveautés de cette catégorie.`,
+      footTxt:"© 2026 SOLEA — Annuaire. Aucun contenu hébergé."},
+    en:{home:"Home",explore:"Explorer",disc:"Discover",cta:"Explore",cats:"Categories",
+      ag_t:"Adults only",ag_p:"By entering, you confirm you are <strong>18 or older</strong>.",ag_enter:"I'm 18 or older — Enter",ag_leave:"Leave",ag_law:"Access is forbidden to minors.",
+      hCta1:"See creators",hCta2:"Build my selection",
+      cTitle:"Creators in this category",cSub:"Updated regularly — something new every week.",
+      cNote:"SOLEA is a directory: each link leads to the creator on their official platform.",
+      relTitle:"Related categories",aff:"View profile →",
+      stats:[["120+","Creators"],["Weekly","Updates"],["18+","Verified"]],
+      desc:(n,f)=>`Welcome to the “${n}” category. A curated selection of creators around “${f.toLowerCase()}”, made for connoisseurs. Browse, choose, access — in a few clicks.`,
+      seoT:n=>`About “${n}”`,
+      seo:(n,f)=>`The “${n}” category is part of our “${f.toLowerCase()}” world. SOLEA gathers and organizes the best creators so you never have to dig: every profile is sorted, tagged and directly accessible. You stay in control — we handle the curation.`,
+      subT:n=>`Subscribe to “${n}”`,
+      subP:"Get notified as soon as a new creator joins this category. A targeted selection, nothing else. Unsubscribe in one click.",
+      subBtn:"Subscribe to this category",
+      subOk:n=>`✓ Subscribed to “${n}”. You'll get this category's updates.`,
+      footTxt:"© 2026 SOLEA — Directory. No content hosted."},
+  };
+
+  let LANG='fr'; let CURITEM=''; try{const s=localStorage.getItem('solea_lang');if(s)LANG=s}catch(e){}
+
+  function qp(k){return new URLSearchParams(location.search).get(k)}
+  function enc(f,i){return `category.html?f=${encodeURIComponent(f)}&i=${encodeURIComponent(i)}`}
+
+  function render(){
+    const t=T[LANG]; document.documentElement.lang=LANG;
+    // chrome
+    document.getElementById('n_home').textContent=t.home;
+    document.getElementById('n_explore').textContent=t.explore;
+    document.getElementById('n_disc').textContent=t.disc;
+    document.getElementById('n_cta').textContent=t.cta;
+    document.getElementById('ag_t').textContent=t.ag_t;
+    document.getElementById('ag_p').innerHTML=t.ag_p;
+    document.getElementById('ag_enter').textContent=t.ag_enter;
+    document.getElementById('ag_leave').textContent=t.ag_leave;
+    document.getElementById('ag_law').textContent=t.ag_law;
+    document.getElementById('hCta1').textContent=t.hCta1;
+    document.getElementById('hCta2').textContent=t.hCta2;
+    document.getElementById('cTitle').textContent=t.cTitle;
+    document.getElementById('cSub').textContent=t.cSub;
+    document.getElementById('cNote').textContent=t.cNote;
+    document.getElementById('relTitle').textContent=t.relTitle;
+    document.getElementById('footTxt').textContent=t.footTxt;
+    document.getElementById('langFr').classList.toggle('on',LANG==='fr');
+    document.getElementById('langEn').classList.toggle('on',LANG==='en');
+
+    // resolve category
+    let fk=qp('f'), item=qp('i');
+    if(!fk||!FAM[fk]){fk='ambiance';}
+    const fam=FAM[fk];
+    if(!item||!fam.items.includes(item)) item=fam.items[0];
+    const famName = LANG==='fr'?fam.fr:fam.en;
+
+    document.title = `SOLEA — ${item}`;
+    document.getElementById('hIc').textContent=fam.ic;
+    document.getElementById('hFam').textContent=famName;
+    document.getElementById('hTitle').textContent=item;
+    document.getElementById('hDesc').textContent=t.desc(item,famName);
+
+    // crumb
+    document.getElementById('crumb').innerHTML =
+      `<a href="index.html">${t.home}</a> › <a href="explorer.html">${t.cats}</a> › ${famName} › <span>${item}</span>`;
+
+    // stats
+    document.getElementById('hStats').innerHTML = t.stats.map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+
+    // creators (placeholders ; url = TON lien affilié + tag)
+    const names=["Aurélie","Lina","Sienna","Noé","Maya","Elsa","Iris","Camille","Jade","Théa"];
+    const tags=["Nouveau","Populaire","","Tendance","","VIP","","",""," "];
+    document.getElementById('creators').innerHTML = names.slice(0,8).map((n,k)=>`
+      <a class="card" href="${AFF.search(item,'category_'+fk)}" target="_blank" rel="noopener nofollow sponsored">
+        <div class="thumb">${n[0]}${tags[k]&&tags[k].trim()?`<span class="tag">${tags[k]}</span>`:''}</div>
+        <div class="body"><h3>${n}</h3><div class="meta">${item}</div>
+        <span class="aff">${t.aff}</span></div></a>`).join('');
+
+    // seo
+    document.getElementById('seoBlock').innerHTML = `<h2>${t.seoT(item)}</h2><p>${t.seo(item,famName)}</p>`;
+
+    // abonnement par catégorie
+    CURITEM=item;
+    document.getElementById('subT').textContent=t.subT(item);
+    document.getElementById('subP').textContent=t.subP;
+    document.getElementById('subBtn').textContent=t.subBtn;
+    document.getElementById('subEmail').placeholder = LANG==='fr'?'votre@email.com':'your@email.com';
+    document.getElementById('subOk').classList.add('hidden');
+
+    // related (siblings)
+    const rel = fam.items.filter(x=>x!==item).slice(0,16);
+    document.getElementById('related').innerHTML = rel.map(x=>`<a class="pill" href="${enc(fk,x)}">${x}</a>`).join('')
+      + ` <a class="pill" href="explorer.html" style="border-color:var(--rose);color:var(--rose-clair)">${t.explore} →</a>`;
+  }
+  function setLang(l){LANG=l;try{localStorage.setItem('solea_lang',l)}catch(e){}render()}
+  function subCat(e){e.preventDefault();const ok=document.getElementById('subOk');ok.textContent=T[LANG].subOk(CURITEM);ok.classList.remove('hidden');e.target.reset();return false}
+  render();
+</script>
+</body>
+</html>

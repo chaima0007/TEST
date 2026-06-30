@@ -247,6 +247,12 @@
   function enterSite(){try{localStorage.setItem('solea_age_ok','1')}catch(e){}document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}
   try{if(localStorage.getItem('solea_age_ok')==='1'){document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}}catch(e){}
 
+  // ====== AFFILIATION (⚠️ remplace SOLEA_CODE par ton vrai code FeetFinder) ======
+  const AFF = {
+    base:"https://feetfinder.com", ref:"SOLEA_CODE",
+    link(slug,c){return `${this.base}/${slug}?ref=${this.ref}&utm_source=solea&utm_medium=affiliate&utm_campaign=${c}`}
+  };
+
   // ====== i18n ======
   const I18N = {
     fr:{
@@ -272,8 +278,8 @@
       foot_cgu:"Conditions d'utilisation", foot_priv:"Politique de confidentialité", foot_dmca:"DMCA / Signalement", foot_legalm:"Mentions légales",
       foot_listed:"Être référencé", foot_partner:"Programme partenaire", foot_contact:"Contact",
       foot_copy:"© 2026 SOLEA — Réservé aux personnes majeures (18+). SOLEA est un annuaire et n'héberge aucun contenu. Tous les contenus appartiennent à leurs créateurs respectifs.",
-      cats:[["🤍","Épuré & sensuel","Marbre, lumière douce"],["💅","Ongles & soin","Manucure, détails"],["✨","Luxe & bijoux","Or, chaînes fines"],["🧦","Bas & collants","Soie, résille, coton"],["💧","Au naturel & brut","Clean ou raw"],["🍓","Food & créatif","Mises en scène"],["🎬","Vidéos","Contenu animé"],["🎯","Sur-mesure","Vos demandes"]],
-      creators:[["Aurélie","Épuré & marbre","Nouveau"],["Lina","Luxe & bijoux","Populaire"],["Sienna","Bas & collants",""],["Noé","Au naturel",""],["Maya","Ongles & soin","Tendance"],["Elsa","Vidéos",""],["Iris","Posture & cambrure",""],["Camille","Sur-mesure","VIP"]],
+      cats:[["🤍","Épuré & sensuel","Marbre, lumière douce","ambiance|Sensuel chic"],["💅","Ongles & soin","Manucure, détails","soin|Pédicure soignée"],["✨","Luxe & bijoux","Or, chaînes fines","ambiance|Luxe / glamour"],["🧦","Bas & collants","Soie, résille, coton","tenue|Bas nylon"],["💧","Au naturel & brut","Clean ou raw","etat|Au naturel"],["🍓","Food & créatif","Mises en scène","scene|Avec nourriture"],["🎬","Vidéos","Contenu animé","format|Vidéos courtes"],["🎯","Sur-mesure","Vos demandes","format|Sur-mesure"]],
+      creators:[["Aurélie","Épuré & marbre","Nouveau","aurelie"],["Lina","Luxe & bijoux","Populaire","lina"],["Sienna","Bas & collants","","sienna"],["Noé","Au naturel","","noe"],["Maya","Ongles & soin","Tendance","maya"],["Elsa","Vidéos","","elsa"],["Iris","Posture & cambrure","","iris"],["Camille","Sur-mesure","VIP","camille"]],
       steps:[["01","Choisissez un style","Parcourez les catégories selon vos envies."],["02","Composez votre sélection","L'Explorateur affine exactement ce que vous cherchez."],["03","Accédez au contenu","Un clic vous mène au créateur sur sa plateforme."]],
       aff:"Voir le profil →"
     },
@@ -300,8 +306,8 @@
       foot_cgu:"Terms of use", foot_priv:"Privacy policy", foot_dmca:"DMCA / Report", foot_legalm:"Legal notice",
       foot_listed:"Get listed", foot_partner:"Partner program", foot_contact:"Contact",
       foot_copy:"© 2026 SOLEA — Adults only (18+). SOLEA is a directory and hosts no content. All content belongs to its respective creators.",
-      cats:[["🤍","Refined & sensual","Marble, soft light"],["💅","Nails & care","Manicure, details"],["✨","Luxe & jewelry","Gold, fine chains"],["🧦","Socks & stockings","Silk, fishnet, cotton"],["💧","Natural & raw","Clean or raw"],["🍓","Food & creative","Styled scenes"],["🎬","Videos","Moving content"],["🎯","Custom","Your requests"]],
-      creators:[["Aurélie","Refined & marble","New"],["Lina","Luxe & jewelry","Popular"],["Sienna","Socks & stockings",""],["Noé","Natural",""],["Maya","Nails & care","Trending"],["Elsa","Videos",""],["Iris","Posture & arches",""],["Camille","Custom","VIP"]],
+      cats:[["🤍","Refined & sensual","Marble, soft light","ambiance|Sensuel chic"],["💅","Nails & care","Manicure, details","soin|Pédicure soignée"],["✨","Luxe & jewelry","Gold, fine chains","ambiance|Luxe / glamour"],["🧦","Socks & stockings","Silk, fishnet, cotton","tenue|Bas nylon"],["💧","Natural & raw","Clean or raw","etat|Au naturel"],["🍓","Food & creative","Styled scenes","scene|Avec nourriture"],["🎬","Videos","Moving content","format|Vidéos courtes"],["🎯","Custom","Your requests","format|Sur-mesure"]],
+      creators:[["Aurélie","Refined & marble","New","aurelie"],["Lina","Luxe & jewelry","Popular","lina"],["Sienna","Socks & stockings","","sienna"],["Noé","Natural","","noe"],["Maya","Nails & care","Trending","maya"],["Elsa","Videos","","elsa"],["Iris","Posture & arches","","iris"],["Camille","Custom","VIP","camille"]],
       steps:[["01","Pick a style","Browse categories by your desires."],["02","Build your selection","The Explorer narrows exactly what you're after."],["03","Access the content","One click takes you to the creator on their platform."]],
       aff:"View profile →"
     }
@@ -317,13 +323,18 @@
       const k=el.getAttribute('data-i18n'); if(t[k]!=null) el.innerHTML=t[k];
     });
     document.getElementById('newsEmail').placeholder = LANG==='fr'?'votre@email.com':'your@email.com';
-    // categories
-    document.getElementById('catGrid').innerHTML = t.cats.map(c=>`<div class="cat"><div class="ic">${c[0]}</div><h3>${c[1]}</h3><span>${c[2]}</span></div>`).join('');
-    // creators (url = TON lien affilié)
+    // categories → pages de catégorie dédiées
+    document.getElementById('catGrid').innerHTML = t.cats.map(c=>{
+      const tg=(c[3]||'ambiance|Sensuel chic').split('|');
+      const href=`category.html?f=${encodeURIComponent(tg[0])}&i=${encodeURIComponent(tg[1])}`;
+      return `<a class="cat" href="${href}"><div class="ic">${c[0]}</div><h3>${c[1]}</h3><span>${c[2]}</span></a>`;
+    }).join('');
+    // creators (toute la carte = lien affilié ; remplace SOLEA_CODE par ton code)
     document.getElementById('creatorGrid').innerHTML = t.creators.map(c=>`
-      <div class="card"><div class="thumb">${c[0][0]}${c[2]?`<span class="tag">${c[2]}</span>`:''}</div>
+      <a class="card" href="${AFF.link(c[3],'card_home')}" target="_blank" rel="noopener nofollow sponsored">
+        <div class="thumb">${c[0][0]}${c[2]?`<span class="tag">${c[2]}</span>`:''}</div>
         <div class="body"><h3>${c[0]}</h3><div class="meta">${c[1]}</div>
-        <a class="aff" href="#" target="_blank" rel="noopener nofollow sponsored">${t.aff}</a></div></div>`).join('');
+        <span class="aff">${t.aff}</span></div></a>`).join('');
     // steps
     document.getElementById('stepsGrid').innerHTML = t.steps.map(s=>`<div class="step"><div class="n">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
     // lang buttons
