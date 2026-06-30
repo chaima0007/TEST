@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -35,17 +36,17 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/abtesting/report`, {
-        next: { revalidate: 60 },
+        next: { revalidate: 30 },
       });
       if (res.ok) {
         const data = await res.json();
-        return NextResponse.json({ source: "live", ...data });
+        return NextResponse.json(sealResponse({ source: "live", ...data }));
       }
     } catch {
       // fall through to mock
     }
   }
-  return NextResponse.json(MOCK_REPORT);
+  return NextResponse.json(sealResponse(MOCK_REPORT));
 }
 
 export async function POST(req: Request) {
@@ -53,7 +54,7 @@ export async function POST(req: Request) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ error: "Corps de requête invalide" }, { status: 400 });
+    return NextResponse.json(sealResponse({ error: "Corps de requête invalide" }), { status: 400 });
   }
   const { agent_id, opened, replied, paid } = body;
   if (SWARM_API_URL) {
@@ -69,5 +70,5 @@ export async function POST(req: Request) {
       // ignore
     }
   }
-  return NextResponse.json({ status: "recorded", agent_id });
+  return NextResponse.json(sealResponse({ status: "recorded", agent_id }));
 }

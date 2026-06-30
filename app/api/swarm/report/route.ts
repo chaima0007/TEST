@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -6,17 +7,17 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/finance/report`, {
-        next: { revalidate: 60 },
+        next: { revalidate: 30 },
       });
       if (res.ok) {
         const data = await res.json();
-        return NextResponse.json(data);
+        return NextResponse.json(sealResponse(data));
       }
     } catch {}
   }
 
   // Mock last cycle report
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     cycle_id: "cycle_20260617_demo",
     generated_at: new Date().toISOString(),
     revenue_eur: 2237,
@@ -33,5 +34,5 @@ export async function GET() {
     },
     errors: [],
     source: "mock",
-  });
+  }));
 }

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 import { DIVISIONS, SWARM_METRICS, LIVE_JOBS, SIMULATION_DIALOGUE } from "@/lib/swarm-data";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
@@ -7,7 +8,7 @@ async function fetchFromPythonAPI() {
   if (!SWARM_API_URL) return null;
   try {
     const res = await fetch(`${SWARM_API_URL}/swarm/status`, {
-      next: { revalidate: 10 },
+      next: { revalidate: 30 },
     });
     if (!res.ok) return null;
     return res.json();
@@ -20,7 +21,7 @@ export async function GET() {
   const live = await fetchFromPythonAPI();
 
   if (live) {
-    return NextResponse.json({
+    return NextResponse.json(sealResponse({
       metrics: {
         totalRevenue: live.revenue_today ?? 0,
         prospectsToday: 847,
@@ -38,22 +39,22 @@ export async function GET() {
       simulation: SIMULATION_DIALOGUE,
       lastUpdated: live.timestamp ?? new Date().toISOString(),
       source: "live",
-    });
+    }));
   }
 
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     metrics: SWARM_METRICS,
     divisions: DIVISIONS,
     jobs: LIVE_JOBS,
     simulation: SIMULATION_DIALOGUE,
     lastUpdated: new Date().toISOString(),
     source: "mock",
-  });
+  }));
 }
 
 export async function POST(request: Request) {
   if (!SWARM_API_URL) {
-    return NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 503 });
+    return NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" }), { status: 502 });
   }
 
   const body = await request.json();
@@ -68,8 +69,8 @@ export async function POST(request: Request) {
       body: JSON.stringify(body),
     });
     const data = await res.json();
-    return NextResponse.json(data, { status: res.status });
+    return NextResponse.json(sealResponse(data), { status: res.status });
   } catch (err) {
-    return NextResponse.json({ error: "Swarm API unreachable" }, { status: 503 });
+    return NextResponse.json(sealResponse({ error: "Swarm API unreachable" }), { status: 502 });
   }
 }

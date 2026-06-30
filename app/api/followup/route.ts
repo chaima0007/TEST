@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -180,7 +181,7 @@ export async function GET(request: Request) {
       const url = new URL(`${SWARM_API_URL}/followup`);
       searchParams.forEach((v, k) => url.searchParams.set(k, v));
       const res = await fetch(url.toString(), { cache: "no-store" });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return NextResponse.json(sealResponse(await res.json()));
     } catch {
       // fall through to mock
     }
@@ -199,7 +200,7 @@ export async function GET(request: Request) {
 
   const summary = buildSummary(TASKS_SORTED);
 
-  return NextResponse.json({ tasks, summary });
+  return NextResponse.json(sealResponse({ tasks, summary }));
 }
 
 export async function POST(request: Request) {
@@ -212,12 +213,12 @@ export async function POST(request: Request) {
         body: JSON.stringify(body),
         cache: "no-store",
       });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return NextResponse.json(sealResponse(await res.json()));
     } catch {
       // fall through
     }
   }
-  return NextResponse.json({ error: "SWARM_API_URL not configured" }, { status: 501 });
+  return NextResponse.json(sealResponse({ error: "SWARM_API_URL not configured" }), { status: 501 });
 }
 
 export async function DELETE() {
@@ -227,10 +228,10 @@ export async function DELETE() {
         method: "DELETE",
         cache: "no-store",
       });
-      if (res.ok) return NextResponse.json(await res.json());
+      if (res.ok) return NextResponse.json(sealResponse(await res.json()));
     } catch {
       // fall through
     }
   }
-  return NextResponse.json({ reset: true });
+  return NextResponse.json(sealResponse({ reset: true }));
 }

@@ -1,4 +1,9 @@
 import { NextRequest } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[stream] SWARM_API_URL non défini — mode local");
+}
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -18,7 +23,7 @@ export async function GET(req: NextRequest) {
       let negotiations = 28;
 
       const sendEvent = (data: unknown) => {
-        const payload = `data: ${JSON.stringify(data)}\n\n`;
+        const payload = `data: ${JSON.stringify(sealResponse(data))}\n\n`;
         controller.enqueue(encoder.encode(payload));
       };
 

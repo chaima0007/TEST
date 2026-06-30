@@ -142,11 +142,16 @@ def agent_check_route_security():
             skipped_auth += 1
             continue
         content = rf.read_text()
-        has_upstream_fetch = "fetch(" in content  # revalidate:30 seulement si fetch réel
+        has_upstream_fetch = "fetch(" in content  # politique de cache exigée seulement si fetch réel
+        # Politique de cache explicite acceptée : soit revalidate:30 (GET en cache),
+        # soit cache:"no-store" (proxy live / POST / webhook — ne JAMAIS mettre en cache).
+        # Les deux sont des choix de cache assumés ; n'exiger que revalidate:30 produisait
+        # un faux positif sur les routes volontairement non-cachées.
+        has_cache_policy = ("revalidate: 30" in content) or ('cache: "no-store"' in content)
         checks = {
             "sealResponse": "sealResponse" in content,
             "SWARM_API_URL": "SWARM_API_URL" in content,
-            "revalidate_30": ("revalidate: 30" in content) if has_upstream_fetch else True,
+            "revalidate_30": has_cache_policy if has_upstream_fetch else True,
             "no_503": "503" not in content,
         }
         missing = [k for k, v in checks.items() if not v]

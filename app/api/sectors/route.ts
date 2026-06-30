@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -33,14 +34,14 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const res = await fetch(`${SWARM_API_URL}/sectors/report`, {
-        next: { revalidate: 300 },
+        next: { revalidate: 30 },
       });
       if (res.ok) {
-        return NextResponse.json({ source: "live", ...(await res.json()) });
+        return NextResponse.json(sealResponse({ source: "live", ...(await res.json()) }));
       }
     } catch {
       // fall through to mock
     }
   }
-  return NextResponse.json(MOCK_SECTORS);
+  return NextResponse.json(sealResponse(MOCK_SECTORS));
 }

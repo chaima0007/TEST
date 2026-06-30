@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 
 const SWARM_API_URL = process.env.SWARM_API_URL;
 
@@ -209,17 +210,17 @@ export async function GET() {
   if (SWARM_API_URL) {
     try {
       const [seqRes, sumRes] = await Promise.all([
-        fetch(`${SWARM_API_URL}/sequences`, { next: { revalidate: 15 } }),
-        fetch(`${SWARM_API_URL}/sequences/summary`, { next: { revalidate: 15 } }),
+        fetch(`${SWARM_API_URL}/sequences`, { next: { revalidate: 30 } }),
+        fetch(`${SWARM_API_URL}/sequences/summary`, { next: { revalidate: 30 } }),
       ]);
       if (seqRes.ok && sumRes.ok) {
-        return NextResponse.json({
+        return NextResponse.json(sealResponse({
           source: "live",
           sequences: await seqRes.json(),
           summary: await sumRes.json(),
-        });
+        }));
       }
     } catch { /* fall through */ }
   }
-  return NextResponse.json(buildMockData());
+  return NextResponse.json(sealResponse(buildMockData()));
 }

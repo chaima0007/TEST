@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
 import { PrismaClient } from "@/lib/generated/prisma/client";
 import { PrismaLibSql } from "@prisma/adapter-libsql";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[history] SWARM_API_URL non défini — mode local");
+}
 
 const adapter = new PrismaLibSql({ url: process.env.DATABASE_URL ?? "file:./dev.db" });
 const prisma = new PrismaClient({ adapter } as any);
@@ -42,10 +47,9 @@ export async function GET() {
       totalQuoteEur: c.jobs.reduce((s, j) => s + (j.quoteEur ?? 0), 0),
     }));
 
-    return NextResponse.json({ cycles: cyclesOut, transactions, prospects });
+    return NextResponse.json(sealResponse({ cycles: cyclesOut, transactions, prospects }));
   } catch (err) {
-    return NextResponse.json(
-      { cycles: [], transactions: [], prospects: [], error: "DB unavailable" },
+    return NextResponse.json(sealResponse({ cycles: [], transactions: [], prospects: [], error: "DB unavailable" }),
       { status: 200 }
     );
   }

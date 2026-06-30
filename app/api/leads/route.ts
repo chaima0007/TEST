@@ -1,3 +1,8 @@
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[leads] SWARM_API_URL non défini — mode local");
+}
 // Route Handler — capture de leads (Caelum). AUCUN credential dans le code.
 // La donnée est transmise au webhook défini par la variable d'environnement LEADS_WEBHOOK_URL
 // (Zapier, Make, CRM, Google Form, etc.). Sans webhook configuré, la requête est acceptée
@@ -29,6 +34,7 @@ export async function POST(request: Request) {
     try {
       await fetch(webhook, {
         method: "POST",
+        cache: "no-store", // webhook POST : ne jamais mettre en cache
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
@@ -40,11 +46,11 @@ export async function POST(request: Request) {
       });
     } catch {
       // On n'expose pas l'échec côté client : le lead reste « accepté », à reprendre côté webhook.
-      return Response.json({ ok: true, stored: false });
+      return Response.json(sealResponse({ ok: true, stored: false }));
     }
-    return Response.json({ ok: true, stored: true });
+    return Response.json(sealResponse({ ok: true, stored: true }));
   }
 
   // Pas de webhook configuré : on accepte sans stocker de données personnelles.
-  return Response.json({ ok: true, stored: false });
+  return Response.json(sealResponse({ ok: true, stored: false }));
 }

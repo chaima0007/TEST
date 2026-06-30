@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { sealResponse } from "@/lib/digital-seal";
+
+if (!process.env.SWARM_API_URL) {
+  console.warn("[waitlist] SWARM_API_URL non défini — mode local");
+}
 
 // Réception et lecture des demandes clients (liste d'attente / contact).
 //
@@ -28,8 +33,7 @@ export async function POST(req: Request) {
     const email = String(body.email ?? "").trim();
 
     if (!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      return NextResponse.json(
-        { ok: false, error: "Nom et email valides requis." },
+      return NextResponse.json(sealResponse({ ok: false, error: "Nom et email valides requis." }),
         { status: 400 },
       );
     }
@@ -50,15 +54,15 @@ export async function POST(req: Request) {
     // RGPD : ne jamais logger de données personnelles. On journalise un événement neutre.
     console.log("[waitlist] nouvelle demande enregistrée");
 
-    return NextResponse.json({ ok: true, message: "Demande reçue. Merci !" });
+    return NextResponse.json(sealResponse({ ok: true, message: "Demande reçue. Merci !" }));
   } catch {
-    return NextResponse.json({ ok: false, error: "Requête invalide." }, { status: 400 });
+    return NextResponse.json(sealResponse({ ok: false, error: "Requête invalide." }), { status: 400 });
   }
 }
 
 // Lecture pour l'espace de gestion
 export async function GET() {
-  return NextResponse.json({
+  return NextResponse.json(sealResponse({
     ok: true,
     leads,
     counts: {
@@ -67,5 +71,5 @@ export async function GET() {
       en_cours: leads.filter((l) => l.status === "en_cours").length,
       termine: leads.filter((l) => l.status === "termine").length,
     },
-  });
+  }));
 }
