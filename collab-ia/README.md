@@ -49,9 +49,19 @@ collab-ia/
 4. Si approuvé, l'orchestrateur peut déclencher une **action** (GitHub, Drive...).
 5. Chaque étape est **journalisée** (audit).
 
+## Lancement automatique (planificateur)
+
+Pour exécuter les tâches en boucle à intervalle régulier :
+
+```bash
+python scheduler.py
+```
+
+L'intervalle se règle via `INTERVAL_MINUTES` (défaut : 60). Arrêt avec `Ctrl + C`.
+
 ## Prochaines étapes
 
-- [ ] Ajouter une file de tâches + planificateur (APScheduler) pour le 24/7
+- [x] Planificateur local (`scheduler.py`)
 - [ ] Implémenter le connecteur GitHub (PyGithub)
 - [ ] Implémenter le connecteur Google Workspace
 - [ ] Déployer sur Railway / Render pour un fonctionnement permanent
