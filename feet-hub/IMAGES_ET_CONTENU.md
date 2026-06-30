@@ -52,6 +52,35 @@ URL directe = lien CDN utilisable en `background-image`. Page = pour vérifier/t
 
 ---
 
+## 🎥 Vidéos d'AMBIANCE libres de droits (tasteful, usage commercial)
+
+Pour un **fond de site** élégant (hero), voici des clips gratuits et utilisables commercialement
+(pieds/jambes/pédicure, non explicites). ⚠️ Comme les images : **déco uniquement**, pas d'usage
+fétichiste/explicite (les licences l'interdisent).
+
+| # | Clip | Source / Licence | Lien |
+|---|---|---|---|
+| 1 | Pieds dans les vagues au coucher de soleil | **Pexels** (gratuit, commercial, sans attribution) | pexels.com/video/the-feet-of-a-person-in-the-water-20549084/ |
+| 2 | Pieds dans l'océan (femme, plage) | **Mixkit** (free license, commercial OK) | `https://assets.mixkit.co/videos/2057/2057-1080.mp4` |
+| 3 | Pieds qui marchent sur la plage | **Mixkit** (free license, commercial OK) | `https://assets.mixkit.co/videos/1013/1013-1080.mp4` |
+| 4 | Pieds barefoot sur sable mouillé (slow-mo) | **Vecteezy** (free, parfois attribution requise) | vecteezy.com/free-videos/feet-in-shore |
+
+> Autres banques **vidéo gratuites** à fouiller : `pexels.com/videos/`, `pixabay.com/videos/`,
+> `mixkit.co/free-stock-video/`, `coverr.co`, `vecteezy.com` (vérifie la licence de chaque clip ;
+> évite Getty/PIXTA/iStock = **payants**). ⚠️ Mixkit a aussi des clips « Restricted » (perso
+> seulement) — prends ceux marqués **Free license / commercial**.
+
+### Comment l'utiliser en fond du site (hero)
+1. **Télécharge** le `.mp4` et place-le dans `feet-hub/assets/hero.mp4` (héberge-le toi-même, plus fiable que le hotlink).
+2. Ajoute un fond vidéo discret dans le hero (exemple) :
+```html
+<video autoplay muted loop playsinline
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;z-index:0">
+  <source src="assets/hero.mp4" type="video/mp4">
+</video>
+```
+(Le dégradé existant reste visible par-dessus → ambiance cinématique.)
+
 ## 🎬 Et les VIDÉOS fétichistes (clean / sale / food / etc.) ?
 
 **Il n'existe pas de banque de vidéos fétichistes libres de droits.** Donc :
