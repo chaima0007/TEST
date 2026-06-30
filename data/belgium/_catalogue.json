@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 171,
-    "faits": 720,
-    "sources_officielles": 1080,
-    "faits_avec_contacts": 451,
-    "faits_avec_alerte_delai": 145
+    "modules": 178,
+    "faits": 741,
+    "sources_officielles": 1104,
+    "faits_avec_contacts": 472,
+    "faits_avec_alerte_delai": 149
   },
   "modules": [
     {
@@ -127,6 +127,18 @@
       "sources_officielles": 7,
       "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "allocation_handicap_arr_ai.json",
+      "module": "allocation_handicap_arr_ai",
+      "titre": "Allocations handicap — ARR et AI (18-65 ans)",
+      "domaine": "Handicap & revenus",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-30"
     },
     {
@@ -550,6 +562,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "cotisations_sociales_independant.json",
+      "module": "cotisations_sociales_independant",
+      "titre": "Cotisations sociales de l'indépendant",
+      "domaine": "Indépendants & sécurité sociale",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "couple.json",
       "module": "couple",
       "titre": "Couple — mariage, cohabitation légale, union libre",
@@ -595,6 +619,18 @@
       "sources_officielles": 4,
       "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "credit_temps.json",
+      "module": "credit_temps",
+      "titre": "Crédit-temps & interruption de carrière",
+      "domaine": "Travail & congés",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-30"
     },
     {
@@ -742,6 +778,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "droit_passerelle.json",
+      "module": "droit_passerelle",
+      "titre": "Droit passerelle (indépendant en difficulté)",
+      "domaine": "Indépendants & sécurité sociale",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "droits_resident_maison_repos.json",
       "module": "droits_resident_maison_repos",
       "titre": "Droits du résident en maison de repos (MR/MRS)",
@@ -764,6 +812,18 @@
       "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-27"
+    },
+    {
+      "fichier": "ecartement_femme_enceinte.json",
+      "module": "ecartement_femme_enceinte",
+      "titre": "Protection et écartement de la travailleuse enceinte",
+      "domaine": "Travail & santé",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "emancipation.json",
@@ -1928,6 +1988,30 @@
       "faits_avec_contacts": 5,
       "faits_avec_alerte_delai": 5,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "travail_interimaire.json",
+      "module": "travail_interimaire",
+      "titre": "Travail intérimaire — contrat et droits",
+      "domaine": "Travail & contrats",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "travail_temps_partiel.json",
+      "module": "travail_temps_partiel",
+      "titre": "Travail à temps partiel & allocation de garantie de revenus",
+      "domaine": "Travail & revenus",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "tutelle_mineurs.json",

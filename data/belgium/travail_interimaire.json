@@ -1,0 +1,59 @@
+{
+  "module": "travail_interimaire",
+  "titre": "Travail intérimaire — contrat et droits",
+  "domaine": "Travail & contrats",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 24 juillet 1987 sur le travail temporaire, le travail intérimaire et la mise de travailleurs à la disposition d'utilisateurs",
+    "portee": "Droits de l'intérimaire dans la relation triangulaire agence / utilisateur / travailleur",
+    "source_officielle": "https://emploi.belgique.be/fr/themes/contrats-de-travail/travail-interimaire"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En cas de problème, contactez le Contrôle des lois sociales ou un syndicat.",
+  "faits": [
+    {
+      "id": "INTERIM-PRINCIPE-001",
+      "question": "Comment fonctionne le travail intérimaire ?",
+      "reponse": "Le travail intérimaire repose sur une relation à trois : l'agence d'intérim (votre employeur juridique, qui vous paie), l'entreprise utilisatrice (où vous travaillez réellement) et vous, le travailleur intérimaire. Vous signez un contrat de travail intérimaire avec l'agence, pas avec l'utilisateur. Ce recours n'est autorisé que pour des motifs précis prévus par la loi (remplacer un travailleur absent, faire face à un surcroît temporaire de travail, un travail exceptionnel, ou en vue d'un engagement « intérim-insertion »). En dehors de ces motifs, le recours à l'intérim n'est pas permis.",
+      "reference_legale": "Loi du 24 juillet 1987 sur le travail temporaire et intérimaire (motifs autorisés)",
+      "contacts": [
+        {"nom": "Agence d'intérim", "pour": "contrat et fiches de paie"},
+        {"nom": "Contrôle des lois sociales (SPF Emploi)", "lien": "https://emploi.belgique.be", "pour": "recours abusif à l'intérim"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/travail-interimaire", "intitule": "SPF Emploi — Travail intérimaire"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "INTERIM-CONTRAT-001",
+      "question": "Quelles règles pour mon contrat d'intérimaire ?",
+      "reponse": "Le contrat de travail intérimaire doit être établi par écrit, au plus tard dans un bref délai après le début de la mission (la signature électronique est admise). Il mentionne notamment le motif et la durée. Bon à savoir : la succession de très nombreux contrats journaliers successifs chez le même utilisateur est encadrée (pour éviter les abus). Lisez votre contrat (fonction, durée, horaire) et conservez-le. Si l'utilisateur vous garde sans contrat écrit valable, ou au-delà de ce que la loi permet, vous pouvez, dans certains cas, être considéré comme lié par un contrat à durée indéterminée : faites vérifier votre situation.",
+      "reference_legale": "Loi du 24 juillet 1987 (forme et mentions du contrat de travail intérimaire)",
+      "contacts": [
+        {"nom": "Agence d'intérim", "pour": "remise du contrat écrit"},
+        {"nom": "Syndicat", "pour": "vérifier la régularité des contrats"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/travail-interimaire/contrat-de-travail-pour-travailleurs-interimaires", "intitule": "SPF Emploi — Contrat de travail intérimaire"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "INTERIM-EGALITE-001",
+      "question": "Ai-je les mêmes droits que les travailleurs fixes de l'entreprise ?",
+      "reponse": "Oui, en grande partie. Le principe d'égalité de traitement s'applique : pour une même fonction, vous avez droit au même salaire et aux mêmes avantages que les travailleurs de l'entreprise utilisatrice (barème, primes, etc.), ainsi qu'à la sécurité (l'utilisateur veille à votre santé et à votre sécurité sur le lieu de travail comme pour ses propres travailleurs). Vous cotisez et êtes couvert par la sécurité sociale (chômage, maladie, accidents du travail). Vous accumulez aussi des droits (pécule de vacances, etc.). En cas d'inégalité ou d'abus, adressez-vous à l'agence, à un syndicat ou au Contrôle des lois sociales.",
+      "reference_legale": "Loi du 24 juillet 1987 (égalité de traitement des intérimaires) ; loi du 4 août 1996 sur le bien-être au travail",
+      "contacts": [
+        {"nom": "Contrôle des lois sociales (SPF Emploi)", "lien": "https://emploi.belgique.be", "pour": "inégalité de traitement"},
+        {"nom": "Syndicat", "pour": "défense des droits de l'intérimaire"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/travail-interimaire", "intitule": "SPF Emploi — Droits de l'intérimaire"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}
