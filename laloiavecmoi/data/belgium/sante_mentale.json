@@ -9,7 +9,7 @@
     "portee": "Accès à l'aide psychologique et à l'écoute en Belgique",
     "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "AVERTISSEMENT — En cas de détresse ou de pensées suicidaires, vous n'êtes pas seul·e : appelez le 112 (urgence) ou une ligne d'écoute. Demander de l'aide est un acte de courage, pas une faiblesse.",
   "faits": [
@@ -84,6 +84,36 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PSY-GENERALISTE-001",
+      "question": "Par où commencer si je ne sais pas vers qui me tourner ?",
+      "reponse": "Votre médecin généraliste est souvent la meilleure première porte : il écoute sans juger, peut poser un premier diagnostic, prescrire un traitement si nécessaire, assurer un suivi et vous orienter vers un psychologue, un psychiatre ou un service spécialisé. Si vous avez un dossier médical global (DMG) chez lui, votre suivi est mieux coordonné et certains soins sont mieux remboursés. Vous pouvez aussi vous adresser directement à un psychologue de première ligne conventionné (sans prescription). L'important est de ne pas rester seul·e : une première démarche, même petite, aide à enclencher la suite.",
+      "reference_legale": "Convention INAMI relative aux soins de santé mentale ; assurance obligatoire soins de santé (dossier médical global)",
+      "contacts": [
+        {"nom": "Votre médecin généraliste", "pour": "première écoute, orientation, DMG"},
+        {"nom": "Votre mutualité", "pour": "remboursement et réseau de soins"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale", "intitule": "INAMI — Soins de santé mentale"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/sante/aide_et_assistance", "intitule": "Belgium.be — Aide et assistance"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PSY-JEUNES-001",
+      "question": "Existe-t-il une aide spécifique pour les enfants et les jeunes ?",
+      "reponse": "Oui. Les soins psychologiques de première ligne remboursés existent aussi pour les enfants et les adolescents, via les réseaux de santé mentale dédiés aux jeunes. À l'école, les centres PMS (centres psycho-médico-sociaux) offrent une écoute et une orientation gratuites. Les plannings familiaux accueillent aussi les jeunes pour des questions de bien-être, de relations ou de santé. Pour parler en confiance et gratuitement, les jeunes peuvent appeler le 103 (Écoute-Enfants). En cas de danger immédiat, c'est toujours le 112.",
+      "reference_legale": "Convention INAMI relative aux soins de santé mentale (soins psychologiques pour enfants et adolescents)",
+      "contacts": [
+        {"nom": "Centre PMS de l'école", "pour": "écoute et orientation gratuites"},
+        {"nom": "Écoute-Enfants", "numero": "103", "pour": "écoute des enfants et des jeunes"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite/soins-de-sante-mentale", "intitule": "INAMI — Soins psychologiques (enfants et jeunes)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/sante/aide_et_assistance", "intitule": "Belgium.be — Aide et assistance"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

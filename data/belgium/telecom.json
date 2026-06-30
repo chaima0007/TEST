@@ -9,7 +9,7 @@
     "portee": "Droits des clients des opérateurs internet/téléphone/mobile",
     "source_officielle": "https://www.bipt.be/consommateurs"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Avant la médiation, contactez d'abord le service client de votre opérateur et gardez une trace écrite.",
   "faits": [
@@ -42,6 +42,37 @@
         {"type": "officiel", "url": "https://www.bipt.be/consommateurs", "intitule": "IBPT — Consommateurs"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "TEL-FACTURE-ROAMING-001",
+      "question": "Comment éviter les mauvaises surprises sur ma facture (data, étranger) ?",
+      "reponse": "Plusieurs protections existent. À l'intérieur de l'Union européenne, le principe « roam like at home » s'applique : vous utilisez votre forfait mobile (appels, SMS, data) dans les autres pays de l'UE sans surcoût d'itinérance, comme chez vous (sous réserve d'un usage raisonnable). Pour la data, des mécanismes d'alerte et de plafonnement de la consommation permettent d'éviter les factures qui s'envolent. En dehors de l'UE, en revanche, les tarifs d'itinérance peuvent être élevés : désactivez les données mobiles ou prévoyez une option voyage. Surveillez votre consommation via l'app de votre opérateur et activez les alertes.",
+      "reference_legale": "Règlement (UE) sur l'itinérance (roaming) ; Code de droit économique — communications électroniques",
+      "contacts": [
+        {"nom": "Votre opérateur", "pour": "alertes de consommation, options voyage hors UE"},
+        {"nom": "IBPT", "lien": "https://www.bipt.be/consommateurs", "pour": "droits du consommateur télécom"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.bipt.be/consommateurs", "intitule": "IBPT — Itinérance et consommation"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_fr.htm", "intitule": "Your Europe — Frais d'itinérance mobile"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TEL-MODIF-CONTRAT-001",
+      "question": "Mon opérateur peut-il modifier mon contrat ou ses prix ?",
+      "reponse": "Un opérateur peut adapter ses conditions ou ses tarifs, mais il doit vous en informer à l'avance. En cas de modification à votre désavantage (par exemple une hausse de prix), vous avez le droit de résilier votre contrat sans frais ni indemnité dans un délai après la notification, même si vous étiez encore engagé. C'est une protection importante : lisez bien les courriers et e-mails de votre opérateur. Vous conservez aussi votre numéro lorsque vous changez d'opérateur (portabilité). En cas de litige sur une modification ou des frais de résiliation réclamés à tort, le Service de médiation pour les télécommunications peut intervenir gratuitement.",
+      "reference_legale": "Code de droit économique — communications électroniques (modification du contrat et résiliation sans frais)",
+      "alerte_delai": "En cas de modification défavorable, vous pouvez résilier sans frais dans le délai indiqué après la notification de l'opérateur.",
+      "contacts": [
+        {"nom": "Service de médiation pour les télécommunications", "lien": "https://www.mediateurtelecom.be", "pour": "frais de résiliation réclamés à tort"},
+        {"nom": "IBPT", "lien": "https://www.bipt.be/consommateurs", "pour": "droits en cas de modification du contrat"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.bipt.be/operateurs/telecoms/protection-des-consommateurs/transparence", "intitule": "IBPT — Modification des contrats"},
+        {"type": "officiel", "url": "https://www.bipt.be/consommateurs", "intitule": "IBPT — Consommateurs"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

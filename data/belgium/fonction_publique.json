@@ -9,7 +9,7 @@
     "portee": "Recrutement statutaire et contractuel dans la fonction publique",
     "source_officielle": "https://www.travaillerpour.be"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les procédures varient selon le niveau (fédéral, régional, communal) ; consultez l'offre concernée.",
   "faits": [
@@ -41,6 +41,34 @@
         {"type": "officiel", "url": "https://www.federation-wallonie-bruxelles.be/index.php?id=187", "intitule": "Fédération Wallonie-Bruxelles — Emploi"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "FONCT-STAGE-NOMINATION-001",
+      "question": "Une fois la sélection réussie, suis-je tout de suite nommé ?",
+      "reponse": "Pas immédiatement pour un emploi statutaire. Après la réussite de la sélection, vous effectuez généralement une période de stage (essai encadré) durant laquelle votre travail est évalué. Ce n'est qu'au terme du stage, s'il est concluant, que vous êtes nommé à titre définitif comme agent statutaire — c'est ce qui ouvre la stabilité d'emploi propre à ce statut. Pour un poste contractuel, vous êtes engagé par contrat de travail, sans nomination statutaire. Renseignez-vous, avant de postuler, sur la nature exacte du poste (statutaire ou contractuel) et sur le déroulement du stage.",
+      "reference_legale": "Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État (stage et nomination définitive)",
+      "contacts": [
+        {"nom": "Service du personnel de l'administration", "pour": "déroulement du stage et de la nomination"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.travaillerpour.be", "intitule": "Travaillerpour.be — Sélection et stage"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/postuler-un-emploi-statutaire-au-sein-de-la-fonction-publique-de-wallonie", "intitule": "Wallonie — Emploi statutaire"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "FONCT-NIVEAUX-001",
+      "question": "Il y a-t-il un seul « employeur public » ou plusieurs ?",
+      "reponse": "Il y en a plusieurs, et chacun a son statut et son portail de recrutement. On distingue notamment : l'État fédéral (via Travaillerpour.be, ex-Selor), les Régions et Communautés (Wallonie, Bruxelles, Fédération Wallonie-Bruxelles, autorité flamande, Communauté germanophone), les provinces et les communes/CPAS, ainsi que des secteurs à statut propre (enseignement, police, justice, Défense, soins). Les conditions, barèmes et procédures varient d'un employeur à l'autre. Identifiez d'abord le niveau de pouvoir qui vous intéresse, puis consultez son portail d'emploi : postuler au bon endroit est la première étape.",
+      "reference_legale": "Arrêté royal du 2 octobre 1937 portant le statut des agents de l'État ; statuts régionaux, communautaires, provinciaux et communaux",
+      "contacts": [
+        {"nom": "Portail emploi de l'employeur visé (fédéral, régional, communal…)", "pour": "offres et conditions propres"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.travaillerpour.be", "intitule": "Travaillerpour.be — Emplois publics fédéraux"},
+        {"type": "officiel", "url": "https://be.brussels/en/employment/job-brussels/what-work-are-you-looking/working-public-sector", "intitule": "Bruxelles — Travailler dans le secteur public"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
