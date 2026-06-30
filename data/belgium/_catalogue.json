@@ -2,10 +2,10 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 152,
-    "faits": 598,
-    "sources_officielles": 887,
-    "faits_avec_contacts": 330,
+    "modules": 153,
+    "faits": 607,
+    "sources_officielles": 905,
+    "faits_avec_contacts": 338,
     "faits_avec_alerte_delai": 125
   },
   "modules": [
@@ -1275,11 +1275,11 @@
       "titre": "Pension & retraite — âge, demande, calcul",
       "domaine": "Pension & retraite",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 5,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 7,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-26"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "pension_alimentaire_secal.json",
@@ -1570,6 +1570,18 @@
       "derniere_revue": "2026-06-26"
     },
     {
+      "fichier": "se_proteger_citoyen.json",
+      "module": "se_proteger_citoyen",
+      "titre": "Se protéger en tant que citoyen — vos recours et les textes-clés",
+      "domaine": "Droits fondamentaux & recours",
+      "juridiction": "BE",
+      "faits": 6,
+      "sources_officielles": 12,
+      "faits_avec_contacts": 6,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "service_bancaire_base.json",
       "module": "service_bancaire_base",
       "titre": "Service bancaire de base (droit au compte)",
@@ -1755,11 +1767,11 @@
       "titre": "Violences conjugales & familiales — se protéger",
       "domaine": "Violences conjugales",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 6,
-      "faits_avec_contacts": 3,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "violences_sexuelles_cpvs.json",
@@ -1767,11 +1779,11 @@
       "titre": "Violences sexuelles — aide et CPVS",
       "domaine": "—",
       "juridiction": "BE",
-      "faits": 3,
-      "sources_officielles": 3,
+      "faits": 4,
+      "sources_officielles": 5,
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-29"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "voisinage.json",

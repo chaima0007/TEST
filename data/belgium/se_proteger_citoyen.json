@@ -1,0 +1,107 @@
+{
+  "module": "se_proteger_citoyen",
+  "titre": "Se protéger en tant que citoyen — vos recours et les textes-clés",
+  "domaine": "Droits fondamentaux & recours",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Panorama des protections du citoyen : Constitution (Titre II), lois anti-discrimination, Code de droit économique (consommateur), RGPD, droits des victimes et voies de recours",
+    "portee": "Connaître, domaine par domaine, le texte qui vous protège et l'organisme à qui vous adresser",
+    "source_officielle": "https://www.belgium.be/fr/justice"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Cette fiche est une carte d'orientation : pour un cas précis, adressez-vous à l'organisme compétent ou à un avocat (aide juridique gratuite possible selon vos revenus).",
+  "faits": [
+    {
+      "id": "PROTEGER-PANORAMA-001",
+      "question": "Quels sont les grands textes qui me protègent comme citoyen ?",
+      "reponse": "Vos protections sont réparties par domaine. 1) Vos libertés de base : la Constitution (Titre II, art. 8 à 32). 2) Contre les discriminations : la loi anti-discrimination, la loi genre et la loi contre le racisme. 3) Comme consommateur : le Code de droit économique (livres VI, VII et XIX). 4) Pour vos données et votre vie privée : le RGPD et la loi du 30 juillet 2018. 5) Comme victime d'infraction : le Code d'instruction criminelle et les services d'aide aux victimes. 6) Comme travailleur ou locataire : le droit du travail et les décrets régionaux sur le bail. Pour chacun, il existe un organisme à qui s'adresser (voir les autres faits de cette fiche). La règle d'or : gardez toujours des preuves écrites et agissez dans les délais.",
+      "reference_legale": "Constitution coordonnée du 17 février 1994 (Titre II) ; lois anti-discrimination ; Code de droit économique ; RGPD",
+      "contacts": [
+        {"nom": "Belgium.be — Justice", "lien": "https://www.belgium.be/fr/justice", "pour": "orientation générale sur vos droits"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo selon les revenus"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Justice et droits"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel", "intitule": "Constitution coordonnée du 17 février 1994"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PROTEGER-DISCRIMINATION-001",
+      "question": "Quels textes me protègent contre la discrimination, et qui contacter ?",
+      "reponse": "Trois lois fédérales de 2007 et 1981 forment le socle anti-discrimination : la loi du 10 mai 2007 tendant à lutter contre certaines formes de discrimination (handicap, âge, conviction, orientation sexuelle, fortune, état de santé…), la loi du 10 mai 2007 tendant à lutter contre la discrimination entre les femmes et les hommes (loi genre), et la loi du 30 juillet 1981 tendant à réprimer certains actes inspirés par le racisme ou la xénophobie. Elles interdisent la discrimination dans l'emploi, le logement, l'accès aux biens et services, etc. Où s'adresser : Unia pour la plupart des critères (handicap, âge, origine, conviction, orientation sexuelle…), et l'Institut pour l'égalité des femmes et des hommes pour la discrimination fondée sur le sexe. Ces organismes informent, accompagnent et peuvent agir en justice — gratuitement.",
+      "reference_legale": "Loi du 10 mai 2007 (discrimination) ; loi du 10 mai 2007 (égalité femmes-hommes) ; loi du 30 juillet 1981 (racisme et xénophobie)",
+      "contacts": [
+        {"nom": "Unia", "lien": "https://www.unia.be/fr", "pour": "discrimination (hors sexe) — signalement gratuit"},
+        {"nom": "Institut pour l'égalité des femmes et des hommes", "lien": "https://igvm-iefh.belgium.be", "pour": "discrimination fondée sur le sexe"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Lutte contre les discriminations"},
+        {"type": "officiel", "url": "https://igvm-iefh.belgium.be/fr", "intitule": "Institut pour l'égalité des femmes et des hommes"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PROTEGER-CONSOMMATEUR-001",
+      "question": "Comme consommateur, quels textes et quels recours ?",
+      "reponse": "Le Code de droit économique est votre principal bouclier : le livre VI (pratiques du marché et protection du consommateur : information, garanties, pratiques déloyales), le livre VII (services financiers et crédit) et le livre XIX (dettes du consommateur : premier rappel gratuit, frais plafonnés). Vous bénéficiez notamment du droit de rétractation de 14 jours pour les achats à distance et d'une garantie légale de 2 ans sur les biens. Où s'adresser : le SPF Économie (information et signalement via le Point de contact), les médiateurs sectoriels (Ombudsfin pour la banque, médiateur télécom, médiateur de l'énergie…) et, pour un achat dans un autre pays de l'UE, le Centre Européen des Consommateurs. Pour un litige, une procédure de règlement extrajudiciaire (médiation de consommation) existe avant le tribunal.",
+      "reference_legale": "Code de droit économique — livres VI (consommateur), VII (services financiers) et XIX (dettes du consommateur)",
+      "contacts": [
+        {"nom": "SPF Économie — Point de contact", "lien": "https://economie.fgov.be", "pour": "information et signalement consommateur"},
+        {"nom": "Centre Européen des Consommateurs (CEC)", "lien": "https://www.cecbelgique.be", "pour": "litige avec un vendeur d'un autre pays de l'UE"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs", "intitule": "SPF Économie — Protection des consommateurs"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/economie/commerce_et_consommation/protection_du_consommateur", "intitule": "Belgium.be — Protection du consommateur"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PROTEGER-DONNEES-001",
+      "question": "Comment protéger ma vie privée et mes données personnelles ?",
+      "reponse": "Deux textes vous protègent : le Règlement général sur la protection des données (RGPD) et la loi du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel. Ils vous donnent des droits concrets sur vos données : être informé, y accéder, les faire rectifier, les faire effacer (« droit à l'oubli »), vous opposer à certains traitements et limiter leur usage. Toute organisation qui traite vos données doit avoir une base légale et les sécuriser. Où s'adresser : exercez d'abord vos droits auprès de l'organisation concernée ; en cas de refus ou d'abus, saisissez gratuitement l'Autorité de protection des données (APD), qui peut instruire une plainte et sanctionner.",
+      "reference_legale": "Règlement général sur la protection des données (RGPD) ; loi du 30 juillet 2018 relative à la protection des données à caractère personnel",
+      "contacts": [
+        {"nom": "Autorité de protection des données (APD)", "lien": "https://www.autoriteprotectiondonnees.be", "pour": "plainte vie privée / données personnelles"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen", "intitule": "Autorité de protection des données — Citoyen"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee", "intitule": "Belgium.be — Respect de la vie privée"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PROTEGER-VICTIME-001",
+      "question": "Je suis victime d'une infraction : quels droits et quels soutiens ?",
+      "reponse": "La loi reconnaît des droits à la victime : être traitée avec respect, être informée du suivi de la procédure, demander réparation en se constituant partie civile, et être accompagnée. Des services gratuits existent : l'accueil des victimes (au sein des parquets et tribunaux) et les services d'aide aux victimes (soutien psychologique et social). Si l'auteur est inconnu ou insolvable, la Commission pour l'aide financière aux victimes d'actes intentionnels de violence (au SPF Justice) peut, sous conditions, octroyer une aide financière. Pour les frais d'avocat, pensez à l'aide juridique de deuxième ligne (pro deo) selon vos revenus. Conservez toutes les preuves et déposez plainte à la police.",
+      "reference_legale": "Code d'instruction criminelle (droits de la victime et constitution de partie civile) ; loi du 1er août 1985 relative à l'aide financière aux victimes d'actes intentionnels de violence",
+      "contacts": [
+        {"nom": "Service d'aide aux victimes / accueil des victimes (parquet)", "pour": "soutien et information sur le dossier"},
+        {"nom": "Commission pour l'aide financière aux victimes (SPF Justice)", "lien": "https://www.belgium.be/fr/justice/victime", "pour": "aide financière si l'auteur est inconnu/insolvable"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Victime : vos droits"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Aide aux victimes"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PROTEGER-RECOURS-001",
+      "question": "À quelles portes frapper selon mon problème ?",
+      "reponse": "Voici la carte des recours. Contre un service public qui dysfonctionne : le médiateur (ombudsman) fédéral, régional ou communal. Contre une décision administrative illégale : le Conseil d'État (recours en annulation, en principe 60 jours). Contre une loi ou un décret contraire aux droits fondamentaux : la Cour constitutionnelle. Pour un conflit du quotidien (voisinage, petites sommes, location) : la conciliation gratuite devant le juge de paix, ou la médiation. Pour une discrimination : Unia ou l'Institut pour l'égalité des femmes et des hommes. Pour la consommation : le SPF Économie et les médiateurs sectoriels. Pour la vie privée : l'Autorité de protection des données. Et dans tous les cas, si vos moyens sont limités : l'aide juridique (avocat pro deo) via le Bureau d'aide juridique.",
+      "reference_legale": "Lois coordonnées du 12 janvier 1973 sur le Conseil d'État ; loi du 22 mars 1995 instaurant des médiateurs fédéraux ; Code judiciaire (conciliation, médiation et aide juridique)",
+      "contacts": [
+        {"nom": "Médiateur fédéral", "lien": "https://www.mediateurfederal.be", "pour": "litige avec un service public fédéral"},
+        {"nom": "Conseil d'État", "lien": "https://www.conseildetat.be", "pour": "annulation d'une décision administrative"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat gratuit/pro deo selon les revenus"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime/plaintes_et_declarations/ombudsman", "intitule": "Belgium.be — Ombudsman et recours"},
+        {"type": "officiel", "url": "https://www.conseildetat.be", "intitule": "Conseil d'État"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

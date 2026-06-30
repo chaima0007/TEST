@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-30. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**598 réponses · 152 modules · 887 sources officielles · 330 fiches avec contacts · 125 alertes de délai**
+**607 réponses · 153 modules · 905 sources officielles · 338 fiches avec contacts · 125 alertes de délai**
 
 ## Modules en ligne
 
@@ -113,7 +113,7 @@
 | — | Nationalité belge | 4 | 4 | 0 | 0 |
 | — | Occupation sans titre d'un bien (squat) | 3 | 3 | 0 | 1 |
 | Succession & patrimoine | Pacte successoral | 4 | 4 | 1 | 0 |
-| Pension & retraite | Pension & retraite — âge, demande, calcul | 3 | 5 | 2 | 1 |
+| Pension & retraite | Pension & retraite — âge, demande, calcul | 4 | 7 | 3 | 1 |
 | Famille & argent | Pension alimentaire impayée — le SECAL | 4 | 5 | 2 | 0 |
 | — | Pension complémentaire (2e pilier) | 3 | 3 | 0 | 0 |
 | — | Permis de conduire | 4 | 8 | 1 | 1 |
@@ -138,6 +138,7 @@
 | — | Sanctions administratives communales (SAC) | 3 | 3 | 0 | 1 |
 | Santé mentale | Santé mentale — aide psychologique, remboursement, écoute | 4 | 8 | 4 | 1 |
 | Santé & patient | Santé — droits du patient | 4 | 6 | 1 | 1 |
+| Droits fondamentaux & recours | Se protéger en tant que citoyen — vos recours et les textes-clés | 6 | 12 | 6 | 0 |
 | — | Service bancaire de base (droit au compte) | 3 | 3 | 0 | 0 |
 | Sexisme & espace public | Sexisme & harcèlement dans l'espace public | 4 | 8 | 4 | 0 |
 | — | Soins de santé à l'étranger (remboursement) | 3 | 3 | 0 | 1 |
@@ -153,8 +154,8 @@
 | — | Tutelle d'un enfant mineur | 3 | 4 | 0 | 0 |
 | — | Vices cachés (garantie de l'acheteur) | 3 | 3 | 0 | 1 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
-| Violences conjugales | Violences conjugales & familiales — se protéger | 3 | 6 | 3 | 1 |
-| — | Violences sexuelles — aide et CPVS | 3 | 3 | 0 | 0 |
+| Violences conjugales | Violences conjugales & familiales — se protéger | 4 | 8 | 4 | 1 |
+| — | Violences sexuelles — aide et CPVS | 4 | 5 | 0 | 0 |
 | Voisinage | Voisinage — bien s'entendre et régler les conflits | 4 | 4 | 3 | 0 |
 | Achat véhicule d'occasion | Acheter une voiture d'occasion | 3 | 5 | 3 | 1 |
 | Vote & démocratie | Vote électoral — pour qui et pourquoi on vote | 4 | 8 | 1 | 0 |
