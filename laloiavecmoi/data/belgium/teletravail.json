@@ -1,0 +1,76 @@
+{
+  "module": "teletravail",
+  "titre": "Télétravail — droits, frais et déconnexion",
+  "domaine": "Travail & organisation",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Convention collective de travail n° 85 relative au télétravail ; loi du 3 octobre 2022 portant des dispositions diverses relatives au travail (droit à la déconnexion)",
+    "portee": "Cadre du télétravail salarié : accord, frais, équipement et droit à la déconnexion",
+    "source_officielle": "https://emploi.belgique.be/fr/themes/contrats-de-travail/teletravail"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les modalités concrètes (indemnités, jours de télétravail) sont fixées par convention collective, accord d'entreprise ou avenant individuel : vérifiez ce qui s'applique chez vous.",
+  "faits": [
+    {
+      "id": "TT-CADRE-001",
+      "question": "Mon employeur peut-il m'imposer (ou me refuser) le télétravail ?",
+      "reponse": "Le télétravail repose sur le volontariat des deux parties : il ne peut, en principe, pas vous être imposé, ni être exigé comme un droit absolu (sauf circonstances particulières). On distingue deux régimes. Le télétravail structurel (régulier) est encadré par la convention collective de travail n° 85 et formalisé par un accord écrit (souvent un avenant au contrat) qui précise les jours, les plages de disponibilité, l'équipement et les frais. Le télétravail occasionnel (raisons personnelles ou force majeure, par exemple une grève des transports) peut être demandé ponctuellement. Dans tous les cas, mettez l'accord par écrit : c'est ce qui fixe vos droits et évite les malentendus.",
+      "reference_legale": "Convention collective de travail n° 85 relative au télétravail (télétravail structurel) ; loi du 5 mars 2017 (télétravail occasionnel)",
+      "contacts": [
+        {"nom": "Votre employeur / délégation syndicale", "pour": "accord de télétravail (jours, plages, frais)"},
+        {"nom": "SPF Emploi", "lien": "https://emploi.belgique.be", "pour": "cadre légal du télétravail"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/teletravail", "intitule": "SPF Emploi — Télétravail"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/emploi", "intitule": "Belgium.be — Emploi"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TT-FRAIS-EQUIPEMENT-001",
+      "question": "Qui paie l'équipement et les frais quand je télétravaille ?",
+      "reponse": "En télétravail structurel, l'employeur doit en principe fournir et entretenir l'équipement nécessaire (ou prendre en charge les coûts si vous utilisez le vôtre, selon l'accord), et intervenir dans les frais liés au télétravail (par exemple une indemnité forfaitaire de bureau couvrant l'électricité, le chauffage, l'usage d'un espace, et éventuellement une indemnité pour la connexion internet/le PC). Les montants concrets sont fixés par convention ou accord, dans les limites admises par la sécurité sociale et le fisc. Vérifiez votre accord de télétravail : il doit préciser ce qui est pris en charge. Si rien n'est prévu alors que vous télétravaillez régulièrement, demandez à le formaliser.",
+      "reference_legale": "Convention collective de travail n° 85 relative au télétravail (équipement et frais à charge de l'employeur)",
+      "contacts": [
+        {"nom": "Votre employeur / secrétariat social", "pour": "indemnité de bureau et de connexion, équipement"},
+        {"nom": "Syndicat", "pour": "négociation des frais de télétravail"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/teletravail", "intitule": "SPF Emploi — Télétravail (frais et équipement)"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr", "intitule": "Sécurité sociale — Indemnités de télétravail"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TT-DECONNEXION-001",
+      "question": "Ai-je le droit de me déconnecter en dehors des heures de travail ?",
+      "reponse": "Oui. Le « droit à la déconnexion » a été instauré pour protéger l'équilibre vie privée / vie professionnelle. Depuis la loi du 3 octobre 2022, les entreprises d'au moins 20 travailleurs doivent fixer des modalités concrètes (par convention collective ou via le règlement de travail) : pas d'obligation de répondre aux e-mails ou appels professionnels en dehors des heures de travail, recommandations d'usage des outils numériques, actions de sensibilisation. Concrètement, vous n'êtes pas tenu d'être joignable en permanence, et le fait de ne pas répondre en dehors de vos heures ne peut pas vous être reproché. Consultez les règles en vigueur dans votre entreprise.",
+      "reference_legale": "Loi du 3 octobre 2022 portant des dispositions diverses relatives au travail (droit à la déconnexion)",
+      "contacts": [
+        {"nom": "Votre employeur / délégation syndicale", "pour": "modalités de déconnexion dans l'entreprise"},
+        {"nom": "SPF Emploi", "lien": "https://emploi.belgique.be", "pour": "droit à la déconnexion"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/teletravail", "intitule": "SPF Emploi — Droit à la déconnexion"},
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr", "intitule": "SPF Emploi — Bien-être et temps de travail"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TT-DROITS-001",
+      "question": "En télétravail, ai-je les mêmes droits qu'au bureau ?",
+      "reponse": "Oui. Le télétravailleur a les mêmes droits que les autres travailleurs de l'entreprise : même rémunération, même charge de travail et mêmes critères d'évaluation, accès à la formation et aux avantages collectifs, et respect de sa vie privée (l'employeur ne peut pas vous surveiller de manière disproportionnée à domicile). Point important : un accident survenu pendant l'exécution du télétravail, au lieu et pendant les heures convenus, est en principe couvert par l'assurance accidents du travail, comme au bureau. L'employeur reste aussi responsable de votre bien-être (ergonomie, charge psychosociale). Si vos droits ne sont pas respectés, parlez-en à la délégation syndicale ou au Contrôle des lois sociales.",
+      "reference_legale": "Convention collective de travail n° 85 relative au télétravail (égalité de traitement) ; loi du 10 avril 1971 sur les accidents du travail (couverture en télétravail)",
+      "contacts": [
+        {"nom": "Délégation syndicale / Contrôle des lois sociales (SPF Emploi)", "lien": "https://emploi.belgique.be", "pour": "égalité de traitement et conditions de télétravail"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/teletravail", "intitule": "SPF Emploi — Droits du télétravailleur"},
+        {"type": "officiel", "url": "https://www.fedris.be/fr", "intitule": "Fedris — Accident du travail en télétravail"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

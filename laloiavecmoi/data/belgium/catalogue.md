@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-30. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**659 réponses · 153 modules · 1001 sources officielles · 390 fiches avec contacts · 141 alertes de délai**
+**671 réponses · 156 modules · 1025 sources officielles · 402 fiches avec contacts · 143 alertes de délai**
 
 ## Modules en ligne
 
@@ -94,6 +94,7 @@
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 4 | 7 | 3 | 4 |
 | Maladie & incapacité | Maladie & incapacité de travail | 4 | 8 | 4 | 3 |
 | Indépendant & activité | Devenir indépendant — démarches pour se lancer | 9 | 19 | 9 | 2 |
+| Circulation & sanctions | Infractions routières — vitesse, alcool, amendes | 4 | 8 | 4 | 2 |
 | — | Interruption volontaire de grossesse (IVG) | 4 | 5 | 1 | 1 |
 | Job étudiant | Job étudiant — contrat, quota d'heures, cotisations réduites | 4 | 7 | 2 | 2 |
 | Justice & citoyenneté | Juré d'assises — le devoir de juré | 4 | 5 | 0 | 0 |
@@ -147,11 +148,13 @@
 | — | Succession internationale | 4 | 5 | 1 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 4 | 7 | 4 | 2 |
+| Travail & organisation | Télétravail — droits, frais et déconnexion | 4 | 8 | 4 | 0 |
 | Testament & donations | Testament & planifier sa succession | 4 | 7 | 4 | 0 |
 | — | Titres-services (aide à domicile) | 4 | 6 | 1 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 4 | 8 | 4 | 2 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | — | Tutelle d'un enfant mineur | 4 | 6 | 1 | 0 |
+| Travail & congés | Vacances annuelles & pécule de vacances | 4 | 8 | 4 | 0 |
 | — | Vices cachés (garantie de l'acheteur) | 4 | 5 | 1 | 1 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |
 | Violences conjugales | Violences conjugales & familiales — se protéger | 4 | 8 | 4 | 1 |

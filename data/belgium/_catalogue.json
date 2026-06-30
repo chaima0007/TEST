@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 153,
-    "faits": 659,
-    "sources_officielles": 1001,
-    "faits_avec_contacts": 390,
-    "faits_avec_alerte_delai": 141
+    "modules": 156,
+    "faits": 671,
+    "sources_officielles": 1025,
+    "faits_avec_contacts": 402,
+    "faits_avec_alerte_delai": 143
   },
   "modules": [
     {
@@ -1042,6 +1042,18 @@
       "derniere_revue": "2026-06-27"
     },
     {
+      "fichier": "infractions_routieres.json",
+      "module": "infractions_routieres",
+      "titre": "Infractions routières — vitesse, alcool, amendes",
+      "domaine": "Circulation & sanctions",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "ivg.json",
       "module": "ivg",
       "titre": "Interruption volontaire de grossesse (IVG)",
@@ -1678,6 +1690,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "teletravail.json",
+      "module": "teletravail",
+      "titre": "Télétravail — droits, frais et déconnexion",
+      "domaine": "Travail & organisation",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "testament.json",
       "module": "testament",
       "titre": "Testament & planifier sa succession",
@@ -1734,6 +1758,18 @@
       "faits": 4,
       "sources_officielles": 6,
       "faits_avec_contacts": 1,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "vacances_annuelles.json",
+      "module": "vacances_annuelles",
+      "titre": "Vacances annuelles & pécule de vacances",
+      "domaine": "Travail & congés",
+      "juridiction": "BE",
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-30"
     },
