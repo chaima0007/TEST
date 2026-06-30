@@ -9,7 +9,7 @@
     "portee": "Droits du voyageur : annulation, remboursement, faillite de l'organisateur",
     "source_officielle": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/voyages"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Ces règles visent les « voyages à forfait » (au moins deux prestations combinées) ; un simple billet seul suit d'autres règles. Vérifiez votre contrat.",
   "faits": [
@@ -43,6 +43,38 @@
         {"type": "secondaire", "url": "https://www.cecbelgique.be/themes/voyages/voyages-a-forfait/resilier-un-voyage-a-forfait", "intitule": "CEC Belgique — Voyages à forfait"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "VOY-MODIFICATION-001",
+      "question": "L'organisateur modifie mon voyage avant le départ : que puis-je faire ?",
+      "reponse": "L'organisateur ne peut pas modifier unilatéralement les éléments essentiels du voyage sans conséquences. S'il augmente le prix de plus de 8 % ou modifie de façon importante une caractéristique principale (par exemple l'hébergement, les dates, l'itinéraire), il doit vous en informer et vous laisser le choix : accepter la modification, ou résilier le contrat sans payer de frais et obtenir le remboursement de ce que vous avez versé. Les hausses de prix sont par ailleurs strictement encadrées (elles ne sont possibles que pour des raisons précises prévues au contrat, comme le coût du carburant, et jamais dans les 20 derniers jours avant le départ). Répondez dans le délai raisonnable indiqué par l'organisateur.",
+      "reference_legale": "Loi du 21 novembre 2017 relative à la vente de voyages à forfait (modification du contrat et révision du prix)",
+      "alerte_delai": "En cas de modification importante ou de hausse de prix supérieure à 8 %, vous pouvez résilier sans frais : répondez dans le délai fixé par l'organisateur.",
+      "contacts": [
+        {"nom": "Organisateur du voyage", "pour": "accepter la modification ou résilier sans frais"},
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "litige sur une modification ou une hausse de prix"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/voyages", "intitule": "SPF Économie — Voyages à forfait (modification)"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/themes/voyages/voyages-a-forfait/resilier-un-voyage-a-forfait", "intitule": "CEC Belgique — Voyages à forfait"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "VOY-NON-CONFORME-001",
+      "question": "Sur place, le voyage ne correspond pas à ce qui était promis : quels recours ?",
+      "reponse": "Si une prestation prévue n'est pas fournie ou n'est pas conforme (hôtel inférieur à celui réservé, services manquants), signalez-le SANS DÉLAI à l'organisateur ou à son représentant sur place, pour lui donner la possibilité d'y remédier. S'il ne corrige pas le problème alors qu'il le pouvait, vous avez droit à une réduction de prix proportionnelle, et, le cas échéant, à des dommages et intérêts pour le préjudice subi (par exemple des vacances gâchées). Conservez toutes les preuves : photos, courriers, factures, attestations. Au retour, adressez une réclamation écrite à l'organisateur ; en cas de blocage, le SPF Économie ou le Centre Européen des Consommateurs peuvent vous aider.",
+      "reference_legale": "Loi du 21 novembre 2017 relative à la vente de voyages à forfait (non-conformité, réduction de prix et dédommagement)",
+      "alerte_delai": "Signalez la non-conformité immédiatement sur place : c'est une condition pour faire valoir pleinement vos droits.",
+      "contacts": [
+        {"nom": "Organisateur / son représentant sur place", "pour": "remédier au problème sans délai"},
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "réclamation après le voyage"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/voyages", "intitule": "SPF Économie — Voyages à forfait (non-conformité)"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/themes/voyages/voyages-a-forfait/resilier-un-voyage-a-forfait", "intitule": "CEC Belgique — Voyages à forfait"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

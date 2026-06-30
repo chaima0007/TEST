@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-30. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**588 réponses · 152 modules · 871 sources officielles · 320 fiches avec contacts · 120 alertes de délai**
+**598 réponses · 152 modules · 887 sources officielles · 330 fiches avec contacts · 125 alertes de délai**
 
 ## Modules en ligne
 
@@ -99,7 +99,7 @@
 | Justice & citoyenneté | Juré d'assises — le devoir de juré | 4 | 5 | 0 | 0 |
 | Justice & pénal (accès au droit) | Accès à la justice — droits, avocat, casier judiciaire | 7 | 8 | 0 | 3 |
 | — | Légalisation & apostille de documents | 3 | 4 | 0 | 0 |
-| Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 2 | 2 | 2 | 0 |
+| Consommation transfrontalière (UE) | Litiges transfrontaliers (achats dans l'UE) | 4 | 4 | 4 | 1 |
 | Logement social | Logement social — conditions, inscription, attribution | 4 | 8 | 2 | 1 |
 | — | Achat sur plan / clé-sur-porte (loi Breyne) | 3 | 4 | 0 | 0 |
 | — | Maladie professionnelle | 3 | 3 | 0 | 0 |
@@ -129,7 +129,7 @@
 | — | Accès aux documents administratifs | 3 | 4 | 0 | 0 |
 | Travail & licenciement | Reclassement professionnel (outplacement) | 4 | 4 | 1 | 0 |
 | Recours administratifs | Recours contre l'administration — médiateur & Conseil d'État | 4 | 8 | 4 | 2 |
-| Recours dans l'Union européenne | Recours européens — SOLVIT, médiateur, pétition | 2 | 4 | 2 | 0 |
+| Recours dans l'Union européenne | Recours européens — SOLVIT, médiateur, pétition | 4 | 8 | 4 | 0 |
 | Recouvrement de dettes | Recouvrement amiable — sociétés de recouvrement | 4 | 7 | 4 | 1 |
 | Étrangers & séjour | Regroupement familial | 4 | 5 | 2 | 0 |
 | — | Revenu d'intégration & aide du CPAS | 5 | 10 | 0 | 1 |
@@ -148,7 +148,7 @@
 | Télécommunications | Télécom — internet, téléphone, litiges | 4 | 7 | 4 | 2 |
 | Testament & donations | Testament & planifier sa succession | 4 | 7 | 4 | 0 |
 | — | Titres-services (aide à domicile) | 4 | 6 | 1 | 0 |
-| Droits des passagers | Voyageurs — train & avion (retard, annulation) | 2 | 4 | 2 | 1 |
+| Droits des passagers | Voyageurs — train & avion (retard, annulation) | 4 | 8 | 4 | 2 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | — | Tutelle d'un enfant mineur | 3 | 4 | 0 | 0 |
 | — | Vices cachés (garantie de l'acheteur) | 3 | 3 | 0 | 1 |
@@ -158,8 +158,8 @@
 | Voisinage | Voisinage — bien s'entendre et régler les conflits | 4 | 4 | 3 | 0 |
 | Achat véhicule d'occasion | Acheter une voiture d'occasion | 3 | 5 | 3 | 1 |
 | Vote & démocratie | Vote électoral — pour qui et pourquoi on vote | 4 | 8 | 1 | 0 |
-| Voyage d'un enfant | Voyage d'un mineur — Kids-ID & autorisation parentale | 2 | 4 | 2 | 1 |
-| Voyages | Voyages à forfait — annulation & remboursement | 2 | 2 | 2 | 1 |
+| Voyage d'un enfant | Voyage d'un mineur — Kids-ID & autorisation parentale | 4 | 8 | 4 | 2 |
+| Voyages | Voyages à forfait — annulation & remboursement | 4 | 4 | 4 | 3 |
 
 ## Couverture des domaines du droit belge
 

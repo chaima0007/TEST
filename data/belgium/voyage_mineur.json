@@ -9,7 +9,7 @@
     "portee": "Documents et autorisations pour qu'un enfant voyage",
     "source_officielle": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les exigences varient selon le pays de destination ; vérifiez auprès du SPF Affaires étrangères et de l'ambassade du pays visité.",
   "faits": [
@@ -43,6 +43,37 @@
         {"type": "officiel", "url": "https://www.bruxelles.be/autorisation-parentale", "intitule": "Ville de Bruxelles — Autorisation parentale"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "VOYMIN-DESACCORD-001",
+      "question": "Que faire en cas de désaccord entre parents ou de risque d'enlèvement à l'étranger ?",
+      "reponse": "L'autorité parentale s'exerce en principe conjointement : un parent ne devrait pas emmener durablement l'enfant à l'étranger contre l'avis de l'autre. En cas de désaccord, c'est le tribunal de la famille qui tranche dans l'intérêt de l'enfant. Si vous craignez qu'un parent emmène l'enfant à l'étranger sans retour (enlèvement parental), réagissez vite : signalez-le aux autorités et, si l'enfant a déjà été emmené dans un pays signataire, la Convention de La Haye de 1980 permet de demander son retour via l'autorité centrale (SPF Justice). En cas d'urgence (départ imminent), contactez la police et un avocat sans attendre.",
+      "reference_legale": "Code civil — exercice conjoint de l'autorité parentale (art. 371 et suivants) ; Convention de La Haye du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+      "alerte_delai": "En cas de risque de départ imminent sans retour, contactez immédiatement la police et un avocat ; le tribunal de la famille peut être saisi en urgence.",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "désaccord sur un voyage / mesure urgente"},
+        {"nom": "SPF Justice — Autorité centrale (enlèvement international)", "lien": "https://justice.belgium.be/fr", "pour": "demande de retour (Convention de La Haye 1980)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Enlèvement parental international"},
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "VOYMIN-SEUL-001",
+      "question": "Mon enfant voyage seul (sans adulte) : comment ça se passe ?",
+      "reponse": "Un enfant peut voyager seul, mais les règles dépendent du transporteur. Beaucoup de compagnies aériennes proposent (ou imposent, en dessous d'un certain âge) un service « mineur non accompagné » (UM) : un membre du personnel prend l'enfant en charge de l'enregistrement jusqu'à la personne désignée à l'arrivée, moyennant un supplément. Renseignez-vous tôt sur l'âge minimum, le coût et les documents exigés. Prévoyez : le document d'identité de l'enfant (et passeport si nécessaire), une autorisation parentale (signature légalisée à la commune), et les coordonnées complètes de la personne qui accueille l'enfant à destination. Vérifiez aussi les exigences du pays d'arrivée auprès du SPF Affaires étrangères.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux cartes d'identité (documents de l'enfant) ; Code civil — autorité parentale (art. 371 et suivants)",
+      "contacts": [
+        {"nom": "Compagnie de transport (service mineur non accompagné)", "pour": "conditions, âge minimum, supplément"},
+        {"nom": "Administration communale", "pour": "légalisation de l'autorisation parentale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"},
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/citoyen/documents-didentite/kids-id", "intitule": "IBZ — Kids-ID"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

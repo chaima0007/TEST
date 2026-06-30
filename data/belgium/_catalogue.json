@@ -3,10 +3,10 @@
   "genere_le": "2026-06-30",
   "totaux": {
     "modules": 152,
-    "faits": 588,
-    "sources_officielles": 871,
-    "faits_avec_contacts": 320,
-    "faits_avec_alerte_delai": 120
+    "faits": 598,
+    "sources_officielles": 887,
+    "faits_avec_contacts": 330,
+    "faits_avec_alerte_delai": 125
   },
   "modules": [
     {
@@ -1107,11 +1107,11 @@
       "titre": "Litiges transfrontaliers (achats dans l'UE)",
       "domaine": "Consommation transfrontalière (UE)",
       "juridiction": "UE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "logement_social.json",
@@ -1467,11 +1467,11 @@
       "titre": "Recours européens — SOLVIT, médiateur, pétition",
       "domaine": "Recours dans l'Union européenne",
       "juridiction": "UE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
       "faits_avec_alerte_delai": 0,
-      "derniere_revue": "2026-06-28"
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "recouvrement_amiable.json",
@@ -1695,11 +1695,11 @@
       "titre": "Voyageurs — train & avion (retard, annulation)",
       "domaine": "Droits des passagers",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "travail.json",
@@ -1815,11 +1815,11 @@
       "titre": "Voyage d'un mineur — Kids-ID & autorisation parentale",
       "domaine": "Voyage d'un enfant",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 4,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-28"
+      "faits": 4,
+      "sources_officielles": 8,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "voyages.json",
@@ -1827,11 +1827,11 @@
       "titre": "Voyages à forfait — annulation & remboursement",
       "domaine": "Voyages",
       "juridiction": "BE",
-      "faits": 2,
-      "sources_officielles": 2,
-      "faits_avec_contacts": 2,
-      "faits_avec_alerte_delai": 1,
-      "derniere_revue": "2026-06-27"
+      "faits": 4,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-30"
     }
   ],
   "domaines": [

@@ -9,7 +9,7 @@
     "portee": "Faire valoir ses droits de consommateur lors d'un achat dans un autre pays de l'UE",
     "source_officielle": "https://www.cecbelgique.be/"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale (niveau UE), à jour à la date de revue. Pour un litige précis, le Centre Européen des Consommateurs vous aide gratuitement.",
   "faits": [
@@ -41,6 +41,35 @@
         {"type": "secondaire", "url": "https://www.cecbelgique.be/", "intitule": "CEC Belgique"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "TRANSF-GARANTIE-001",
+      "question": "Mon achat dans un autre pays de l'UE est défectueux : quelle garantie ?",
+      "reponse": "Partout dans l'Union européenne, vous bénéficiez d'une garantie légale de conformité d'au moins 2 ans sur les biens achetés auprès d'un professionnel. Si le produit présente un défaut (il ne fonctionne pas, n'est pas conforme à la description), le vendeur doit d'abord le réparer ou le remplacer gratuitement ; si ce n'est pas possible ou pas fait dans un délai raisonnable, vous avez droit à une réduction de prix ou au remboursement. Cette garantie est due par le VENDEUR (pas seulement le fabricant) et s'ajoute à toute garantie commerciale. Pour un litige avec un vendeur d'un autre pays de l'UE, le Centre Européen des Consommateurs vous aide gratuitement.",
+      "reference_legale": "Directive (UE) 2019/771 relative à la garantie légale de conformité des biens",
+      "contacts": [
+        {"nom": "Centre Européen des Consommateurs (CEC) Belgique", "lien": "https://www.cecbelgique.be", "pour": "défaut d'un produit acheté dans l'UE"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_fr.htm", "intitule": "Your Europe — Garanties et retours"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/", "intitule": "CEC Belgique — Garantie légale"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TRANSF-RETRACTATION-001",
+      "question": "J'ai acheté en ligne dans l'UE : puis-je me rétracter ?",
+      "reponse": "Oui. Pour un achat à distance (en ligne, par téléphone) auprès d'un professionnel établi dans l'UE, vous disposez d'un droit de rétractation de 14 jours à compter de la réception du bien, sans devoir vous justifier ni payer de pénalité. Vous renvoyez le produit (les frais de retour peuvent rester à votre charge si le vendeur l'a indiqué) et le vendeur vous rembourse, en principe dans les 14 jours. Certaines exceptions existent (produits sur mesure, biens périssables, contenus numériques téléchargés avec votre accord, etc.). Gardez les preuves d'envoi du retour et de votre demande de rétractation.",
+      "reference_legale": "Directive 2011/83/UE relative aux droits des consommateurs (droit de rétractation des contrats à distance)",
+      "alerte_delai": "Droit de rétractation : 14 jours après réception du bien, par une déclaration claire au vendeur.",
+      "contacts": [
+        {"nom": "Centre Européen des Consommateurs (CEC) Belgique", "lien": "https://www.cecbelgique.be", "pour": "litige sur une rétractation/un remboursement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/consumers/shopping/cancellation-rights/index_fr.htm", "intitule": "Your Europe — Droit de rétractation"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/", "intitule": "CEC Belgique — Achats en ligne"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

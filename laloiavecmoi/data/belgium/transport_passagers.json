@@ -9,7 +9,7 @@
     "portee": "Indemnisation et assistance en cas de retard ou d'annulation",
     "source_officielle": "https://www.belgium.be/fr/mobilite/en_avion_et_en_bateau/droits_des_passagers/droits_des_passagers_aeriens"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les seuils et montants d'indemnisation et les délais de réclamation peuvent changer ; vérifiez auprès du transporteur, du SPF Mobilité ou de l'Ombudsman avant d'agir.",
   "faits": [
@@ -42,6 +42,37 @@
         {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/travel/passenger-rights/rail/index_fr.htm", "intitule": "Your Europe — Droits des passagers"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "TRANS-BUS-001",
+      "question": "Et pour le bus ou l'autocar, ai-je des droits en cas de retard ?",
+      "reponse": "Oui. Les passagers de bus et d'autocar sont protégés par un règlement européen, surtout pour les trajets longue distance (en principe à partir de 250 km). En cas d'annulation ou de retard important au départ, vous avez droit à une information, et selon les cas au choix entre la poursuite du voyage, un réacheminement ou le remboursement, ainsi qu'à une assistance (collation, et hébergement si une nuit s'impose). Adressez d'abord votre réclamation au transporteur. Pour les trajets plus courts (services réguliers urbains/régionaux), ce sont surtout les conditions du transporteur et les règles régionales (TEC, STIB, De Lijn) qui s'appliquent.",
+      "reference_legale": "Règlement (UE) 181/2011 concernant les droits des passagers dans le transport par autobus et autocar",
+      "contacts": [
+        {"nom": "Transporteur (compagnie de bus/autocar)", "pour": "réclamation retard/annulation"},
+        {"nom": "SPF Mobilité", "lien": "https://mobilit.belgium.be/fr", "pour": "droits des passagers de bus/autocar"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/travel/passenger-rights/bus-and-coach/index_fr.htm", "intitule": "Your Europe — Droits des passagers de bus et d'autocar"},
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TRANS-PMR-001",
+      "question": "Je suis en situation de handicap ou à mobilité réduite : ai-je droit à une assistance ?",
+      "reponse": "Oui. Les personnes handicapées ou à mobilité réduite ont droit, sans surcoût, à une assistance pour voyager en train, en avion, en bus/autocar et en bateau, ainsi qu'à une protection contre la discrimination (on ne peut pas vous refuser une réservation ou l'embarquement en raison de votre handicap, sauf exigences de sécurité justifiées). Le réflexe essentiel : annoncez votre besoin d'assistance à l'avance (souvent au moins 24 à 48 heures avant le départ, selon le mode de transport) auprès du transporteur, de la gare ou de l'aéroport. En cas de refus ou de problème, vous pouvez saisir l'organisme de contrôle compétent (SPF Mobilité, Ombudsrail pour le train).",
+      "reference_legale": "Règlement (UE) 2021/782 (ferroviaire), Règlement (CE) 1107/2006 (passagers aériens handicapés ou à mobilité réduite) et Règlement (UE) 181/2011 (bus/autocar)",
+      "alerte_delai": "Annoncez votre besoin d'assistance à l'avance (souvent 24 à 48 h avant le départ selon le transport).",
+      "contacts": [
+        {"nom": "Transporteur / gare / aéroport", "pour": "demande d'assistance PMR (à l'avance)"},
+        {"nom": "SPF Mobilité", "lien": "https://mobilit.belgium.be/fr", "pour": "droits des passagers à mobilité réduite"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/travel/transport-disability/index_fr.htm", "intitule": "Your Europe — Voyager avec un handicap ou une mobilité réduite"},
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Droits des passagers"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
