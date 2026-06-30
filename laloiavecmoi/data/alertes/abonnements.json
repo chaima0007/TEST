@@ -1,0 +1,33 @@
+{
+  "registre": "Abonnements — suivi personnalisé de dossiers",
+  "principe": "Un abonnement = identifiant opaque + dossiers suivis + canal. Aucune donnée personnelle. Le canal d'envoi (e-mail/push) sera branché via webhook (décision réservée à Chaima).",
+  "schema_abonnement": {
+    "id": "opaque (uuid)",
+    "suit_modules": [
+      "module..."
+    ],
+    "suit_domaines": [
+      "domaine..."
+    ],
+    "canal": "in_app|email|push",
+    "actif": true,
+    "cree_le": "YYYY-MM-DD"
+  },
+  "exemples_non_reels": [
+    {
+      "id": "EXEMPLE-001",
+      "suit_modules": [
+        "garantie_locative",
+        "bail_*"
+      ],
+      "suit_domaines": [
+        "Logement & location"
+      ],
+      "canal": "in_app",
+      "actif": true,
+      "cree_le": "2026-06-30",
+      "_note": "EXEMPLE de démonstration — PAS un utilisateur réel."
+    }
+  ],
+  "abonnements": []
+}

@@ -1,0 +1,9 @@
+{
+  "genere_le": "2026-06-30",
+  "abonnements_reels": 0,
+  "exemples_demo": 1,
+  "evenements_a_reverifier": 0,
+  "alertes_a_envoyer": [],
+  "canal_envoi": "NON CONNECTÉ — webhook e-mail/push réservé à une décision de Chaima.",
+  "note": "Aucune alerte fabriquée ; seuls les vrais abonnements génèrent des envois."
+}

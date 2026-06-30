@@ -234,6 +234,39 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "Questions de la communauté",
+    d: "Découvrez les questions juridiques que se posent les autres citoyens, regroupées par domaine. Chacune renvoie à une réponse sourcée et vérifiée.",
+    href: "/loi-avec-moi/communaute",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M21 11.5a8.38 8.38 0 01-9 8.3L3 21l1.2-3.6A8.38 8.38 0 1121 11.5z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9.5 9.5a2.5 2.5 0 113.5 2.3c-.6.3-1 .8-1 1.5M12 16v.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    t: "Actualités juridiques",
+    d: "Les évolutions du droit qui vous concernent : changements de loi attendus et fiches récemment re-sourcées. Sources officielles uniquement.",
+    href: "/loi-avec-moi/actualites",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M4 5h11v14H6a2 2 0 01-2-2V5z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M15 8h3a2 2 0 012 2v7a2 2 0 01-2 2M7 9h5M7 12h5M7 15h3" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    t: "Suivre mes dossiers",
+    d: "Choisissez les domaines qui vous concernent et gardez un œil sur leurs évolutions. Suivi privé sur votre appareil, sans compte.",
+    href: "/loi-avec-moi/alertes",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13.7 21a2 2 0 01-3.4 0" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 const sources = [

@@ -20,11 +20,21 @@ Usage  : python3 scripts/alertes_personnalisees_agent.py
 """
 import json
 import os
+import shutil
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 OUT_DIR = os.path.join(DATA, "alertes")
+MIRROR_DIR = os.path.join(ROOT, "laloiavecmoi", "data", "alertes")
+
+
+def mirror():
+    if os.path.isdir(os.path.dirname(MIRROR_DIR)):
+        os.makedirs(MIRROR_DIR, exist_ok=True)
+        for f in os.listdir(OUT_DIR):
+            if f.endswith(".json"):
+                shutil.copy(os.path.join(OUT_DIR, f), os.path.join(MIRROR_DIR, f))
 
 
 def load(p, default=None):
@@ -116,6 +126,7 @@ def build():
 
 if __name__ == "__main__":
     abos, p = build()
+    mirror()
     print("═══ ALERTES PERSONNALISÉES (suivi de dossiers) ═══")
     print(f"  Abonnements réels : {p['abonnements_reels']} | exemples démo : {p['exemples_demo']}")
     print(f"  Événements 'à re-vérifier' disponibles : {p['evenements_a_reverifier']}")

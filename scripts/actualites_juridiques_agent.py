@@ -18,11 +18,21 @@ Usage  : python3 scripts/actualites_juridiques_agent.py
 import json
 import glob
 import os
+import shutil
 from datetime import date, datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 OUT_DIR = os.path.join(DATA, "actualites")
+MIRROR_DIR = os.path.join(ROOT, "laloiavecmoi", "data", "actualites")
+
+
+def mirror():
+    if os.path.isdir(os.path.dirname(MIRROR_DIR)):
+        os.makedirs(MIRROR_DIR, exist_ok=True)
+        for f in os.listdir(OUT_DIR):
+            if f.endswith(".json"):
+                shutil.copy(os.path.join(OUT_DIR, f), os.path.join(MIRROR_DIR, f))
 
 
 def load(p, default=None):
@@ -107,6 +117,7 @@ def build():
 
 if __name__ == "__main__":
     p = build()
+    mirror()
     print("═══ ACTUALITÉS JURIDIQUES (fil officiel) ═══")
     print(f"  Items : {p['total_items']} | enrichissement externe : {p['enrichissement_externe'][:48]}")
     by = {}

@@ -21,11 +21,22 @@ import json
 import glob
 import os
 import re
+import shutil
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "data", "belgium")
 OUT_DIR = os.path.join(ROOT, "data", "community")
+MIRROR_DIR = os.path.join(ROOT, "laloiavecmoi", "data", "community")
+
+
+def mirror():
+    # Double miroir : l'app laloiavecmoi/ lit data/ relativement à son cwd.
+    if os.path.isdir(os.path.dirname(MIRROR_DIR)):
+        os.makedirs(MIRROR_DIR, exist_ok=True)
+        for f in os.listdir(OUT_DIR):
+            if f.endswith(".json"):
+                shutil.copy(os.path.join(OUT_DIR, f), os.path.join(MIRROR_DIR, f))
 
 
 def slug(s):
@@ -106,6 +117,7 @@ def build():
 
 if __name__ == "__main__":
     p = build()
+    mirror()
     print("═══ Q&R PUBLIQUES (communauté) ═══")
     print(f"  Questions publiées : {p['total_questions']} | catégories : {len(p['categories'])}")
     top = list(p["categories"].items())[:5]
