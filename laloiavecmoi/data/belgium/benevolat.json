@@ -9,7 +9,7 @@
     "portee": "Droits du volontaire, défraiement, assurance et information",
     "source_officielle": "https://conseilsuperieurvolontaires.belgium.be/fr/legislation/loi-030705.htm"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les plafonds de défraiement sont indexés chaque année ; vérifiez le montant en vigueur avant d'accepter un défraiement.",
   "faits": [
@@ -41,6 +41,36 @@
         {"type": "secondaire", "url": "https://www.levolontariat.be/ce-que-dit-la-loi", "intitule": "Plateforme du Volontariat — Ce que dit la loi"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BENE-STATUT-001",
+      "question": "Puis-je faire du bénévolat si je suis au chômage, pensionné ou en incapacité ?",
+      "reponse": "Oui, c'est possible, mais des règles particulières s'appliquent selon votre statut. Si vous êtes au chômage, vous devez déclarer préalablement votre activité de volontariat à l'ONEM (via votre organisme de paiement) ; l'ONEM peut, dans un délai, s'y opposer ou la limiter, mais à défaut d'opposition vous pouvez continuer à percevoir vos allocations. Si vous êtes en incapacité de travail, demandez l'accord du médecin-conseil de votre mutualité avant de commencer. Les pensionnés peuvent en principe faire du bénévolat librement. Dans tous les cas, le bénévolat doit rester non rémunéré (au-delà du défraiement légal).",
+      "reference_legale": "Loi du 3 juillet 2005 relative aux droits des volontaires (volontariat et statut social)",
+      "alerte_delai": "Au chômage : déclarez le volontariat à l'ONEM AVANT de commencer, pour éviter tout problème avec vos allocations.",
+      "contacts": [
+        {"nom": "ONEM / organisme de paiement", "lien": "https://www.onem.be", "pour": "déclaration de volontariat (chômeurs)"},
+        {"nom": "Médecin-conseil de la mutualité", "pour": "accord en cas d'incapacité de travail"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://conseilsuperieurvolontaires.belgium.be/fr/legislation/loi-030705.htm", "intitule": "Conseil supérieur des Volontaires — Loi du 3 juillet 2005"},
+        {"type": "officiel", "url": "https://www.onem.be/citoyens", "intitule": "ONEM — Volontariat et allocations"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BENE-ORGANISATION-001",
+      "question": "Quelles obligations a l'organisation envers ses bénévoles ?",
+      "reponse": "Avant le début de l'activité, l'organisation doit informer chaque volontaire (par une note d'information ou tout autre moyen) sur : son but et son statut juridique, le régime de responsabilité et l'assurance, l'éventuel défraiement, et l'obligation de confidentialité éventuelle. Elle doit aussi souscrire au minimum une assurance couvrant la responsabilité civile des volontaires (hors leur responsabilité personnelle pour faute grave ou dol). Une organisation qui ne respecte pas l'obligation d'information ou d'assurance manque à ses obligations légales : en cas de doute, demandez à voir l'attestation d'assurance.",
+      "reference_legale": "Loi du 3 juillet 2005 relative aux droits des volontaires (obligation d'information et d'assurance)",
+      "contacts": [
+        {"nom": "L'organisation qui vous accueille", "pour": "note d'information et attestation d'assurance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://conseilsuperieurvolontaires.belgium.be/fr/legislation/loi-030705.htm", "intitule": "Conseil supérieur des Volontaires — Loi du 3 juillet 2005"},
+        {"type": "secondaire", "url": "https://www.levolontariat.be/la-loi-relative-aux-droits-des-volontaires", "intitule": "Plateforme du Volontariat — La loi"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

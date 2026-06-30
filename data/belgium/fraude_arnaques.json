@@ -9,7 +9,7 @@
     "portee": "Reconnaître, signaler et limiter les dégâts d'une arnaque ou d'un phishing",
     "source_officielle": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/stop-arnaques"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. En cas de fraude bancaire, chaque minute compte : bloquez vos cartes d'abord, signalez ensuite.",
   "faits": [
@@ -43,6 +43,37 @@
         {"type": "officiel", "url": "https://ccb.belgium.be", "intitule": "Centre pour la Cybersécurité Belgique (CCB)"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "FRAUDE-REMBOURSEMENT-001",
+      "question": "En cas de paiement frauduleux, ma banque doit-elle me rembourser ?",
+      "reponse": "En principe oui. Pour une opération de paiement non autorisée (carte ou virement effectué par un fraudeur), la banque doit en règle vous rembourser et remettre votre compte dans l'état où il serait sans la fraude. Deux nuances importantes : si vous avez agi avec une négligence grave (par exemple avoir communiqué volontairement vos codes) ou frauduleusement, la banque peut refuser ; et avant que vous ne bloquiez la carte, votre responsabilité en cas de perte/vol est limitée à un faible montant maximum (sauf négligence grave ou fraude). Dès que vous avez signalé la perte/le vol ou la fraude (Card Stop, banque), vous n'êtes en principe plus responsable des opérations suivantes. D'où l'importance de bloquer et signaler immédiatement.",
+      "reference_legale": "Code de droit économique — livre VII (services de paiement, opérations non autorisées), transposant la directive (UE) 2015/2366 sur les services de paiement",
+      "alerte_delai": "Signalez la fraude à votre banque sans tarder : après notification, vous n'êtes en principe plus responsable des opérations frauduleuses.",
+      "contacts": [
+        {"nom": "Card Stop", "numero": "078 170 170", "pour": "bloquer la carte (24h/24)"},
+        {"nom": "Votre banque", "pour": "contester l'opération et demander le remboursement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/moyens-de-paiement", "intitule": "SPF Économie — Moyens de paiement et opérations non autorisées"},
+        {"type": "officiel", "url": "https://www.wikifin.be/fr", "intitule": "Wikifin (FSMA) — Fraude aux paiements"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "FRAUDE-RECONNAITRE-001",
+      "question": "Comment reconnaître une arnaque avant de me faire piéger ?",
+      "reponse": "Plusieurs signaux doivent vous alerter : un sentiment d'urgence ou de menace (« agissez dans l'heure », « votre compte sera bloqué »), une offre trop belle pour être vraie, une demande de codes, de mots de passe ou de données bancaires, ou un paiement réclamé par un moyen inhabituel (cartes-cadeaux, cryptomonnaie, virement vers un compte à l'étranger). Méfiez-vous aussi des adresses d'expéditeur douteuses, des fautes de langue et de l'impossibilité de joindre un contact officiel. Réflexes : ne cliquez pas dans la précipitation, vérifiez l'identité de l'entreprise (numéro d'entreprise à la Banque-Carrefour des Entreprises) et contactez l'organisme par son canal officiel. Dans le doute, abstenez-vous et signalez.",
+      "reference_legale": "Code de droit économique — pratiques commerciales déloyales (livre VI) ; Code pénal — escroquerie (art. 496)",
+      "contacts": [
+        {"nom": "SPF Économie — Stop arnaques", "lien": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/stop-arnaques", "pour": "reconnaître et signaler une arnaque"},
+        {"nom": "Safeonweb", "lien": "https://safeonweb.be/fr", "pour": "conseils sécurité et alertes"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/stop-arnaques", "intitule": "SPF Économie — Stop arnaques"},
+        {"type": "officiel", "url": "https://safeonweb.be/fr", "intitule": "Safeonweb — Reconnaître les arnaques"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

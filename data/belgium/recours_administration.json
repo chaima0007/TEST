@@ -9,7 +9,7 @@
     "portee": "Contester une décision ou un mauvais fonctionnement d'un service public",
     "source_officielle": "https://www.mediateurfederal.be"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Le médiateur compétent dépend du niveau de pouvoir (fédéral, régional, communal) ; vérifiez l'ombudsman concerné.",
   "faits": [
@@ -43,6 +43,37 @@
         {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime/plaintes_et_declarations/ombudsman", "intitule": "Belgium.be — Plaintes et recours"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ADM-MOTIVATION-001",
+      "question": "Une administration doit-elle me dire pourquoi elle refuse ma demande ?",
+      "reponse": "Oui. La loi impose la motivation formelle des actes administratifs : toute décision individuelle d'une autorité (refus d'une aide, sanction, autorisation refusée…) doit indiquer, dans la décision elle-même, les motifs de droit et de fait qui la justifient. Ces motifs doivent être clairs, exacts et suffisants pour que vous compreniez pourquoi la décision a été prise. Une décision sans motivation, ou avec une motivation insuffisante ou stéréotypée, est irrégulière et peut être annulée. Si une décision vous paraît injustifiée, vérifiez d'abord si elle est correctement motivée : c'est souvent un argument décisif pour la contester.",
+      "reference_legale": "Loi du 29 juillet 1991 relative à la motivation formelle des actes administratifs",
+      "contacts": [
+        {"nom": "Médiateur (ombudsman) compétent", "pour": "signaler une décision non motivée"},
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "avocat selon revenus pour contester"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime/plaintes_et_declarations/ombudsman", "intitule": "Belgium.be — Décisions administratives et recours"},
+        {"type": "officiel", "url": "https://www.conseildetat.be", "intitule": "Conseil d'État — Motivation et légalité des actes administratifs"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ADM-RECOURS-INTERNE-001",
+      "question": "Faut-il d'abord réclamer auprès de l'administration avant d'aller devant un juge ?",
+      "reponse": "Souvent, oui. Il existe deux types de recours préalables. Le recours gracieux : vous demandez par écrit à l'autorité de revoir sa décision ; il est toujours possible, mais il n'interrompt pas, en principe, le délai pour saisir le Conseil d'État. Le recours administratif organisé : prévu par une réglementation spécifique (ex. recours auprès d'une commission ou d'un ministre), il doit être exercé dans un délai précis et constitue parfois un passage obligé avant tout recours devant un juge. Lisez attentivement les voies de recours indiquées au bas de la décision (elles précisent à qui, comment et dans quel délai réagir), et agissez par écrit recommandé dans les délais.",
+      "reference_legale": "Loi du 12 janvier 1973 (lois coordonnées) sur le Conseil d'État — recours administratif préalable et recours en annulation (art. 14)",
+      "alerte_delai": "Un recours gracieux ne prolonge pas forcément le délai de 60 jours du Conseil d'État : surveillez les deux délais en parallèle.",
+      "contacts": [
+        {"nom": "L'autorité qui a pris la décision", "pour": "recours gracieux ou organisé"},
+        {"nom": "Conseil d'État", "lien": "https://www.conseildetat.be", "pour": "recours juridictionnel en annulation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.conseildetat.be", "intitule": "Conseil d'État — Voies de recours"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime/plaintes_et_declarations/ombudsman", "intitule": "Belgium.be — Recours contre l'administration"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
