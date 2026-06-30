@@ -9,7 +9,7 @@
     "portee": "Droits de l'emprunteur lors d'un prêt logement",
     "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/credit-hypothecaire"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les taux et conditions varient selon les banques et votre profil ; comparez les offres et faites-vous conseiller avant de signer.",
   "faits": [
@@ -63,6 +63,36 @@
         }
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "HYPO-TAUX-001",
+      "question": "Taux fixe ou taux variable : quelle différence et quels risques ?",
+      "reponse": "Avec un taux fixe, votre taux et votre mensualité restent identiques pendant toute la durée du prêt : c'est la sécurité, sans surprise. Avec un taux variable, le taux est revu périodiquement (par exemple tous les ans, 3 ou 5 ans) en fonction d'un indice : la mensualité peut baisser, mais aussi augmenter. La loi belge encadre fortement le taux variable : la hausse comme la baisse sont plafonnées, et surtout le taux ne peut jamais plus que doubler par rapport au taux de départ (règle dite « du tunnel »). Choisissez selon votre tolérance au risque et votre budget : à mensualité égale, comparez toujours plusieurs banques.",
+      "reference_legale": "Code de droit économique, livre VII — variation du taux d'intérêt du crédit hypothécaire (plafonnement de la variation)",
+      "contacts": [
+        {"nom": "Plusieurs banques / courtier", "pour": "comparer taux fixe et variable"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/credit-hypothecaire", "intitule": "SPF Économie — Crédit hypothécaire (taux)"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/emprunter/le-credit-hypothecaire", "intitule": "Wikifin (FSMA) — Le crédit hypothécaire"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "HYPO-DEFAUT-001",
+      "question": "Que se passe-t-il si je ne parviens plus à payer mon prêt logement ?",
+      "reponse": "En cas de retards, la banque peut, après mise en demeure, exiger le remboursement et, en dernier recours, faire saisir et vendre le bien hypothéqué pour se rembourser. Mais la procédure est encadrée et prend du temps : vous avez des occasions de réagir. Le bon réflexe est de contacter la banque dès les premières difficultés pour demander un report ou un aménagement des mensualités, et de solliciter un service de médiation de dettes. Selon votre situation, le règlement collectif de dettes peut aussi offrir une protection. Plus vous agissez tôt, plus vous avez de marge pour éviter la vente forcée.",
+      "reference_legale": "Code de droit économique, livre VII ; Code judiciaire — saisie immobilière et règlement collectif de dettes",
+      "alerte_delai": "Contactez la banque et un médiateur de dettes dès le premier retard : agir tôt évite la procédure de saisie.",
+      "contacts": [
+        {"nom": "Votre banque", "pour": "report ou aménagement des mensualités"},
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "négociation et plan de remboursement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/credit-hypothecaire", "intitule": "SPF Économie — Crédit hypothécaire"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/que-se-passe-t-il-si-je-ne-paie-pas-mon-credit-hypothecaire", "intitule": "Droits Quotidiens — Crédit hypothécaire impayé"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

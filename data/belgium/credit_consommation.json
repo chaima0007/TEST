@@ -9,7 +9,7 @@
     "portee": "Droits de l'emprunteur : information, rétractation, TAEG plafonné",
     "source_officielle": "https://economie.fgov.be/fr/themes/ventes/reglementation/delais-de-retractation/credit-la-consommation"
   },
-  "derniere_revue": "2026-06-28",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Un crédit vous engage et doit être remboursé. Les taux et plafonds évoluent ; comparez et ne signez jamais sous pression.",
   "faits": [
@@ -42,6 +42,36 @@
         {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/emprunter/le-credit-la-consommation", "intitule": "Wikifin (FSMA) — Le crédit à la consommation"}
       ],
       "date_verification": "2026-06-28"
+    },
+    {
+      "id": "CREDITCONSO-FICHIER-001",
+      "question": "Mes crédits sont-ils enregistrés quelque part ?",
+      "reponse": "Oui. Tous les crédits à la consommation et hypothécaires sont enregistrés à la Centrale des crédits aux particuliers, tenue par la Banque nationale de Belgique. Avant de vous accorder un crédit, le prêteur est obligé de la consulter pour vérifier votre situation : c'est une protection contre le surendettement. Si vous accumulez des retards de paiement, vous pouvez être enregistré comme « défaillant », ce qui rend très difficile l'obtention d'un nouveau crédit pendant un certain temps. Vous avez le droit de consulter gratuitement vos propres données auprès de la Banque nationale et de demander la correction d'une erreur.",
+      "reference_legale": "Code de droit économique, livre VII (consultation de la Centrale des crédits aux particuliers avant l'octroi)",
+      "contacts": [
+        {"nom": "Banque nationale de Belgique — Centrale des crédits aux particuliers", "lien": "https://www.nbb.be", "pour": "consulter ses données de crédit"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/credit-la-consommation", "intitule": "SPF Économie — Crédit à la consommation"},
+        {"type": "officiel", "url": "https://www.nbb.be/fr/centrales-des-credits/centrale-des-credits-aux-particuliers", "intitule": "Banque nationale — Centrale des crédits aux particuliers"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CREDITCONSO-DEFAUT-001",
+      "question": "Je n'arrive plus à rembourser mon crédit : que faire ?",
+      "reponse": "Réagissez vite, ne laissez pas la dette grossir. Contactez d'abord le prêteur pour demander un aménagement (délai, réduction temporaire des mensualités). Si la situation est plus lourde, un service de médiation de dettes (CPAS ou association agréée) peut vous aider à négocier et à établir un plan. En dernier recours, le règlement collectif de dettes (procédure devant le tribunal du travail) permet de regrouper vos dettes et d'obtenir un plan de remboursement encadré, avec protection contre les saisies. Surtout, ne prenez jamais un nouveau crédit pour rembourser l'ancien : c'est la spirale du surendettement.",
+      "reference_legale": "Code de droit économique, livre VII ; Code judiciaire — règlement collectif de dettes (art. 1675/2 et suivants)",
+      "alerte_delai": "Contactez le prêteur et un service de médiation de dettes dès les premières difficultés, avant l'accumulation des retards.",
+      "contacts": [
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "négocier, plan de remboursement"},
+        {"nom": "Tribunal du travail", "pour": "règlement collectif de dettes"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/credit-la-consommation", "intitule": "SPF Économie — Crédit à la consommation"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/emprunter/le-credit-la-consommation", "intitule": "Wikifin (FSMA) — Difficultés de remboursement"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
