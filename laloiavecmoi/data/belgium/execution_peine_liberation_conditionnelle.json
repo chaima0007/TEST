@@ -1,0 +1,58 @@
+{
+  "module": "execution_peine_liberation_conditionnelle",
+  "titre": "Exécution de la peine & libération conditionnelle",
+  "domaine": "Justice pénale",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 17 mai 2006 relative au statut juridique externe des personnes condamnées à une peine privative de liberté",
+    "portee": "Comment se déroule l'exécution d'une peine de prison et les modalités de sortie",
+    "source_officielle": "https://justice.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les conditions précises (seuils de temps, modalités) sont complexes ; un avocat spécialisé accompagne le détenu et ses proches.",
+  "faits": [
+    {
+      "id": "EXEC-MODALITES-001",
+      "question": "Une peine de prison se purge-t-elle toujours entièrement derrière les barreaux ?",
+      "reponse": "Non. La loi prévoit des modalités d'exécution de la peine qui permettent, sous conditions, de purger une partie autrement qu'en détention fermée : la surveillance électronique (bracelet), la détention limitée (sortir pour travailler ou se former et rentrer le soir), la permission de sortie et le congé pénitentiaire (sorties temporaires), et enfin la libération conditionnelle. L'objectif est de préparer une réinsertion progressive et d'éviter une sortie « sèche ». Chaque modalité est soumise à des conditions de temps et de comportement et fait l'objet d'une décision encadrée.",
+      "reference_legale": "Loi du 17 mai 2006 relative au statut juridique externe des personnes condamnées (modalités d'exécution de la peine)",
+      "contacts": [
+        {"nom": "Avocat (droit pénitentiaire)", "pour": "demander une modalité d'exécution"},
+        {"nom": "Maison de justice", "pour": "suivi et conditions"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Exécution des peines"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "EXEC-TAP-001",
+      "question": "Qui décide de la libération conditionnelle ?",
+      "reponse": "C'est le tribunal de l'application des peines (TAP), une juridiction spécialisée, qui décide de la libération conditionnelle et des principales modalités d'exécution, après avoir entendu le condamné, le ministère public et tenu compte de la situation (notamment des victimes). La libération conditionnelle n'est pas automatique : le condamné doit avoir purgé une certaine partie de sa peine et présenter un plan de réinsertion (logement, travail, suivi), et le tribunal apprécie le risque de récidive. La décision peut être assortie de conditions strictes pendant un délai d'épreuve.",
+      "reference_legale": "Loi du 17 mai 2006 (tribunal de l'application des peines et libération conditionnelle)",
+      "contacts": [
+        {"nom": "Tribunal de l'application des peines (TAP)", "pour": "décision sur la libération conditionnelle"},
+        {"nom": "Avocat", "pour": "préparer le dossier de réinsertion"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Tribunal de l'application des peines"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "EXEC-VICTIME-001",
+      "question": "Comme victime, ai-je un mot à dire sur la sortie du condamné ?",
+      "reponse": "Oui, dans une certaine mesure. La victime peut demander à être informée des décisions relatives à l'exécution de la peine (par exemple une libération conditionnelle ou une permission de sortie) et à formuler des conditions dans son intérêt (par exemple une interdiction pour le condamné de l'approcher ou de la contacter). Pour cela, il faut en faire la demande, souvent via une « déclaration de victime ». Le tribunal de l'application des peines tient compte de ces conditions. Le service d'accueil des victimes peut vous aider à faire valoir ces droits.",
+      "reference_legale": "Loi du 17 mai 2006 (droits de la victime dans l'exécution de la peine)",
+      "contacts": [
+        {"nom": "Service d'accueil des victimes (Maison de justice)", "pour": "déclaration de victime et conditions"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Victimes et exécution des peines"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

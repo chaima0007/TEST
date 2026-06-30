@@ -1,0 +1,60 @@
+{
+  "module": "procedure_asile_protection",
+  "titre": "Procédure d'asile — protection internationale",
+  "domaine": "Étrangers & séjour",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 15 décembre 1980 sur les étrangers — statut de réfugié (art. 48/3) et protection subsidiaire (art. 48/4) ; compétence du CGRA",
+    "portee": "Demander une protection internationale et comprendre la procédure et les recours",
+    "source_officielle": "https://www.cgra.be/fr"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Domaine complexe et à fort enjeu. Information générale. Faites-vous accompagner sans délai par un avocat en droit des étrangers (aide juridique gratuite possible) et un service spécialisé.",
+  "faits": [
+    {
+      "id": "ASILE-DEMANDE-001",
+      "question": "Comment demander une protection internationale (asile) ?",
+      "reponse": "La demande de protection internationale s'introduit auprès de l'Office des étrangers ; vous êtes ensuite enregistré et reçu, et un accueil (hébergement, accompagnement) est en principe organisé pendant la procédure. Votre dossier est examiné sur le fond par le CGRA (Commissariat général aux réfugiés et aux apatrides), une instance indépendante, lors d'un entretien personnel où vous exposez les raisons pour lesquelles vous ne pouvez pas retourner dans votre pays. Préparez votre récit et vos preuves, et faites-vous assister par un avocat dès le début : c'est déterminant.",
+      "reference_legale": "Loi du 15 décembre 1980 sur les étrangers (introduction de la demande de protection internationale)",
+      "contacts": [
+        {"nom": "CGRA", "lien": "https://www.cgra.be/fr", "pour": "examen de la demande d'asile"},
+        {"nom": "Avocat en droit des étrangers / service spécialisé", "pour": "accompagnement (gratuit selon revenus)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.cgra.be/fr/asile/procedure-standard", "intitule": "CGRA — Procédure d'asile"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ASILE-STATUTS-001",
+      "question": "Quelle différence entre statut de réfugié et protection subsidiaire ?",
+      "reponse": "Ce sont deux formes de protection internationale. Le statut de réfugié est accordé à la personne qui craint avec raison d'être persécutée dans son pays en raison de sa race, sa religion, sa nationalité, ses opinions politiques ou son appartenance à un groupe social (au sens de la Convention de Genève). La protection subsidiaire s'applique à la personne qui ne remplit pas ces critères mais qui encourrait, en cas de retour, un risque réel d'atteintes graves (peine de mort, torture, traitements inhumains, ou menace grave contre sa vie en raison d'une violence aveugle dans un conflit armé). Les deux statuts donnent droit à un séjour et à une protection, avec des modalités propres.",
+      "reference_legale": "Loi du 15 décembre 1980 sur les étrangers — réfugié (art. 48/3) et protection subsidiaire (art. 48/4)",
+      "contacts": [
+        {"nom": "CGRA", "lien": "https://www.cgra.be/fr", "pour": "détermination du statut"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.cgra.be/fr", "intitule": "CGRA — Réfugié et protection subsidiaire"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ASILE-RECOURS-001",
+      "question": "Que faire en cas de décision négative ?",
+      "reponse": "Une décision de refus du CGRA peut être contestée devant le Conseil du contentieux des étrangers (CCE), une juridiction administrative spécialisée. Le délai de recours est court (souvent 30 jours, parfois beaucoup moins selon la procédure, par exemple en cas de demande considérée comme manifestement infondée ou en détention) : il est donc essentiel de réagir immédiatement avec votre avocat. Le recours peut, selon les cas, suspendre l'exécution d'un ordre de quitter le territoire. Ne laissez jamais passer les délais : un recours tardif est irrecevable. L'aide juridique gratuite est accessible selon vos revenus.",
+      "reference_legale": "Loi du 15 décembre 1980 sur les étrangers (recours devant le Conseil du contentieux des étrangers)",
+      "alerte_delai": "Le délai de recours au CCE est court (souvent 30 jours, parfois moins) : consultez un avocat dès réception de la décision.",
+      "contacts": [
+        {"nom": "Conseil du contentieux des étrangers (CCE)", "pour": "recours contre une décision du CGRA"},
+        {"nom": "Avocat en droit des étrangers / Bureau d'aide juridique", "pour": "introduire le recours (aide gratuite possible)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.cgra.be/fr", "intitule": "CGRA — Décision et recours"},
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr", "intitule": "Office des étrangers — Séjour et recours"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 *Généré le 2026-06-30. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**696 réponses · 163 modules · 1054 sources officielles · 427 fiches avec contacts · 144 alertes de délai**
+**720 réponses · 171 modules · 1080 sources officielles · 451 fiches avec contacts · 145 alertes de délai**
 
 ## Modules en ligne
 
@@ -78,6 +78,7 @@
 | — | Épargne-pension (3e pilier) | 4 | 7 | 1 | 0 |
 | — | Équivalence d'un diplôme étranger | 4 | 5 | 1 | 0 |
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 4 | 5 | 4 | 2 |
+| Justice pénale | Exécution de la peine & libération conditionnelle | 3 | 3 | 3 | 0 |
 | — | Expropriation pour cause d'utilité publique | 4 | 5 | 1 | 0 |
 | Logement — expulsion | Expulsion du logement — vos droits | 4 | 7 | 4 | 2 |
 | Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
@@ -93,6 +94,7 @@
 | — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
 | Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 5 | 12 | 5 | 0 |
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 6 | 9 | 6 | 5 |
+| Famille & enfants | Hébergement des enfants après séparation | 3 | 3 | 3 | 0 |
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 4 | 7 | 3 | 4 |
 | Maladie & incapacité | Maladie & incapacité de travail | 4 | 8 | 4 | 3 |
 | Indépendant & activité | Devenir indépendant — démarches pour se lancer | 9 | 19 | 9 | 2 |
@@ -110,24 +112,29 @@
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 4 | 5 | 4 | 2 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 4 | 8 | 4 | 1 |
 | — | Marchand de sommeil (logement indigne) | 4 | 5 | 1 | 0 |
+| Famille & protection | Mariage forcé & cohabitation légale forcée | 3 | 4 | 3 | 0 |
 | Santé & remboursements | Maximum à facturer (MàF) — plafond des frais de santé | 4 | 4 | 4 | 0 |
 | Travail & santé | Médecine du travail & surveillance de la santé | 4 | 5 | 1 | 0 |
 | Règlement des conflits | Médiation & règlement amiable des conflits | 4 | 8 | 4 | 0 |
+| Justice pénale | Médiation pénale & transaction (alternatives aux poursuites) | 3 | 3 | 3 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 4 | 5 | 4 | 0 |
 | Naissance & filiation | Naissance & filiation | 4 | 8 | 4 | 1 |
 | — | Nationalité belge | 4 | 4 | 0 | 0 |
 | — | Occupation sans titre d'un bien (squat) | 4 | 5 | 1 | 1 |
 | Succession & patrimoine | Pacte successoral | 4 | 4 | 1 | 0 |
+| Justice pénale | Peines alternatives à la prison | 3 | 3 | 3 | 0 |
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 4 | 7 | 3 | 1 |
 | Famille & argent | Pension alimentaire impayée — le SECAL | 4 | 5 | 2 | 0 |
 | — | Pension complémentaire (2e pilier) | 4 | 5 | 1 | 0 |
 | — | Permis de conduire | 4 | 8 | 1 | 1 |
 | Permis unique (travailleur étranger) | Permis unique / autorisation de travail (travailleur non-EEE) | 4 | 5 | 3 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 4 | 8 | 4 | 1 |
+| Justice pénale | Porter plainte, classement sans suite & partie civile | 3 | 3 | 3 | 0 |
 | — | Plainte contre la police (Comité P) | 4 | 5 | 1 | 0 |
 | — | Précompte immobilier | 4 | 7 | 1 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 4 | 6 | 4 | 0 |
 | Primes rénovation | Primes à la rénovation et à l'énergie (logement) | 4 | 8 | 3 | 3 |
+| Étrangers & séjour | Procédure d'asile — protection internationale | 3 | 4 | 3 | 1 |
 | Santé & famille | PMA — procréation médicalement assistée | 4 | 5 | 1 | 0 |
 | — | Produits défectueux (responsabilité) | 4 | 5 | 1 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 4 | 5 | 4 | 1 |
@@ -152,6 +159,7 @@
 | Successions | Successions & héritage — accepter, renoncer, délais | 5 | 11 | 4 | 2 |
 | — | Succession internationale | 4 | 5 | 1 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
+| Justice pénale | Sursis & suspension du prononcé | 3 | 3 | 3 | 0 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 4 | 7 | 4 | 2 |
 | Travail & organisation | Télétravail — droits, frais et déconnexion | 4 | 8 | 4 | 0 |
 | Testament & donations | Testament & planifier sa succession | 4 | 7 | 4 | 0 |

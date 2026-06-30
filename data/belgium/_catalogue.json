@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 163,
-    "faits": 696,
-    "sources_officielles": 1054,
-    "faits_avec_contacts": 427,
-    "faits_avec_alerte_delai": 144
+    "modules": 171,
+    "faits": 720,
+    "sources_officielles": 1080,
+    "faits_avec_contacts": 451,
+    "faits_avec_alerte_delai": 145
   },
   "modules": [
     {
@@ -850,6 +850,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "execution_peine_liberation_conditionnelle.json",
+      "module": "execution_peine_liberation_conditionnelle",
+      "titre": "Exécution de la peine & libération conditionnelle",
+      "domaine": "Justice pénale",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "expropriation.json",
       "module": "expropriation",
       "titre": "Expropriation pour cause d'utilité publique",
@@ -1028,6 +1040,18 @@
       "faits_avec_contacts": 6,
       "faits_avec_alerte_delai": 5,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "hebergement_enfants_separation.json",
+      "module": "hebergement_enfants_separation",
+      "titre": "Hébergement des enfants après séparation",
+      "domaine": "Famille & enfants",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "impots.json",
@@ -1234,6 +1258,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "mariage_force.json",
+      "module": "mariage_force",
+      "titre": "Mariage forcé & cohabitation légale forcée",
+      "domaine": "Famille & protection",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "maximum_a_facturer.json",
       "module": "maximum_a_facturer",
       "titre": "Maximum à facturer (MàF) — plafond des frais de santé",
@@ -1266,6 +1302,18 @@
       "faits": 4,
       "sources_officielles": 8,
       "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "mesures_alternatives_poursuites.json",
+      "module": "mesures_alternatives_poursuites",
+      "titre": "Médiation pénale & transaction (alternatives aux poursuites)",
+      "domaine": "Justice pénale",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-30"
     },
@@ -1328,6 +1376,18 @@
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "peines_alternatives_prison.json",
+      "module": "peines_alternatives_prison",
+      "titre": "Peines alternatives à la prison",
+      "domaine": "Justice pénale",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "pension.json",
@@ -1402,6 +1462,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "plainte_partie_civile.json",
+      "module": "plainte_partie_civile",
+      "titre": "Porter plainte, classement sans suite & partie civile",
+      "domaine": "Justice pénale",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "plaintes_police_comite_p.json",
       "module": "plaintes_police_comite_p",
       "titre": "Plainte contre la police (Comité P)",
@@ -1447,6 +1519,18 @@
       "sources_officielles": 8,
       "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 3,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "procedure_asile_protection.json",
+      "module": "procedure_asile_protection",
+      "titre": "Procédure d'asile — protection internationale",
+      "domaine": "Étrangers & séjour",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-30"
     },
     {
@@ -1736,6 +1820,18 @@
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 2,
       "derniere_revue": "2026-06-26"
+    },
+    {
+      "fichier": "sursis_condamnation.json",
+      "module": "sursis_condamnation",
+      "titre": "Sursis & suspension du prononcé",
+      "domaine": "Justice pénale",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "telecom.json",

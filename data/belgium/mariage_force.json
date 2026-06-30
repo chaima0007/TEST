@@ -1,0 +1,61 @@
+{
+  "module": "mariage_force",
+  "titre": "Mariage forcé & cohabitation légale forcée",
+  "domaine": "Famille & protection",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code pénal — mariage forcé (art. 391sexies) et cohabitation légale forcée (art. 391septies) ; Code civil — nullité du mariage forcé (art. 146ter)",
+    "portee": "Protection contre un mariage ou une cohabitation imposés sans consentement libre",
+    "source_officielle": "https://www.justice.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Sujet sensible. En danger immédiat : 112. Des services d'aide confidentiels existent (voir contacts). Tu n'es jamais responsable de ce que d'autres t'imposent.",
+  "faits": [
+    {
+      "id": "MARFORCE-PRINCIPE-001",
+      "question": "Le mariage forcé est-il interdit en Belgique ?",
+      "reponse": "Oui, fermement. Un mariage suppose le consentement LIBRE des deux personnes. Forcer quelqu'un à se marier — par la violence, les menaces, le chantage ou de fortes pressions — est une infraction pénale, de même que forcer une cohabitation légale. La tentative est également punissable. La loi vise à protéger toute personne, quel que soit son âge ou son origine. Personne n'a le droit de décider de votre mariage à votre place : refuser n'est pas une faute, c'est un droit.",
+      "reference_legale": "Code pénal — mariage forcé (art. 391sexies) et cohabitation légale forcée (art. 391septies)",
+      "contacts": [
+        {"nom": "Police", "numero": "101", "pour": "danger ou contrainte (urgence : 112)"},
+        {"nom": "Service d'aide aux victimes / planning familial", "pour": "écoute et accompagnement confidentiels"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Mariage forcé"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MARFORCE-NULLITE-001",
+      "question": "Un mariage conclu sous la contrainte peut-il être annulé ?",
+      "reponse": "Oui. Un mariage (ou une cohabitation légale) conclu sans consentement libre, sous la contrainte ou la violence, peut être annulé par le tribunal de la famille : juridiquement, il est considéré comme n'ayant jamais existé valablement. L'action en nullité peut être introduite par la personne forcée, mais aussi par le ministère public. C'est une protection importante : si vous avez été contraint(e), vous pouvez agir pour faire reconnaître que ce mariage n'était pas valable. Un avocat (aide juridique possible) vous accompagne dans cette démarche.",
+      "reference_legale": "Code civil — nullité du mariage conclu sans consentement libre (art. 146ter)",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "action en nullité du mariage"},
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "introduire la procédure"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Nullité du mariage forcé"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MARFORCE-PROTECTION-001",
+      "question": "Comment me protéger si je crains d'être marié(e) de force (y compris à l'étranger) ?",
+      "reponse": "Plusieurs protections existent. L'officier de l'état civil peut refuser ou reporter un mariage s'il soupçonne une absence de consentement libre. Si vous craignez un départ forcé à l'étranger en vue d'un mariage, signalez-le sans tarder : la police, un service d'aide, ou le SPF Affaires étrangères (pour une situation à l'étranger) peuvent intervenir. Mettez vos documents en lieu sûr, gardez des contacts de confiance, et n'hésitez pas à demander de l'aide de façon confidentielle. En cas de danger imminent, composez le 112.",
+      "reference_legale": "Code civil — opposition/refus du mariage par l'officier de l'état civil ; Code pénal — mariage forcé (art. 391sexies)",
+      "contacts": [
+        {"nom": "Police / 112", "pour": "danger imminent"},
+        {"nom": "SPF Affaires étrangères", "lien": "https://diplomatie.belgium.be", "pour": "risque de mariage forcé à l'étranger"},
+        {"nom": "1712 / planning familial", "pour": "écoute confidentielle"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Protection contre le mariage forcé"},
+        {"type": "officiel", "url": "https://diplomatie.belgium.be", "intitule": "SPF Affaires étrangères — Mariage forcé à l'étranger"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}
