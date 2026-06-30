@@ -271,6 +271,20 @@
       g.style.display=any?'':'none';
     });
   }
+
+  // ===== Pré-remplissage depuis le Diapason =====
+  try{
+    const dt=JSON.parse(localStorage.getItem('solea_diapason_tags')||'null');
+    if(dt && dt.length && location.hash==='#fromDiapason'){
+      dt.forEach(v=>{
+        selected.add(v);
+        document.querySelectorAll('.chip').forEach(c=>{ if(c.dataset.v===v) c.classList.add('sel'); });
+      });
+      renderSel();
+      document.querySelector('.step') && document.querySelector('.step').classList.add('open');
+      setTimeout(()=>document.getElementById('builder').scrollIntoView({behavior:'smooth'}),200);
+    }
+  }catch(e){}
 </script>
 </body>
 </html>

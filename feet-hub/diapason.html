@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOLEA — Le Diapason · Trouve ton style</title>
+<meta name="description" content="Réponds à 5 questions, SOLEA compose ta sélection idéale. 18+." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--noir:#140910;--noir-2:#1f0e18;--rose:#FF3D6E;--rose-clair:#FF7FA0;--or:#E8B583;--creme:#F6E9EC;--gris:#B79AA4;--carte:#1c0f18;--ligne:rgba(255,61,110,.20);--glow:rgba(255,61,110,.35)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;min-height:100vh}
+  h1,h2,h3,.serif{font-family:"Playfair Display",serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .hidden{display:none !important}
+  .btn{display:inline-block;cursor:pointer;border:none;border-radius:999px;font-weight:600;font-size:15px;padding:14px 30px;transition:.2s;font-family:"Inter",sans-serif}
+  .btn-rose{background:linear-gradient(135deg,var(--rose),#C81E54);color:#fff;box-shadow:0 6px 24px -6px var(--glow)}
+  .btn-rose:hover{transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--creme);border:1px solid var(--ligne)}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose-clair)}
+
+  #agegate{position:fixed;inset:0;z-index:1000;background:rgba(10,4,8,.97);display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(7px)}
+  #agegate .box{max-width:440px;text-align:center;border:1px solid var(--ligne);background:var(--noir-2);border-radius:22px;padding:42px 32px}
+  #agegate h2{font-size:26px;margin:10px 0}#agegate p{color:var(--gris);font-size:14px;margin-bottom:24px}
+  #agegate small{display:block;margin-top:18px;color:#6e5560;font-size:11px}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(20,9,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--ligne)}
+  nav .inner{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Playfair Display",serif;font-weight:800;font-size:22px;letter-spacing:1px}.logo span{color:var(--rose)}
+  .lang{display:flex;border:1px solid var(--ligne);border-radius:999px;overflow:hidden}
+  .lang button{background:transparent;color:var(--gris);border:none;cursor:pointer;font-size:12px;font-weight:600;padding:6px 11px;font-family:"Inter",sans-serif}
+  .lang button.on{background:var(--rose);color:#fff}
+
+  .stage{padding:54px 0 70px;text-align:center}
+  .prog{height:5px;background:var(--carte);border-radius:999px;overflow:hidden;margin-bottom:34px}
+  .prog div{height:100%;background:linear-gradient(90deg,var(--rose),var(--or));transition:width .3s;width:0}
+  .kicker{color:var(--rose);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+  .q{font-size:clamp(26px,4.5vw,40px);margin:12px 0 28px}
+  .choices{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .choice{border:1px solid var(--ligne);border-radius:16px;padding:26px 18px;cursor:pointer;background:linear-gradient(160deg,var(--carte),transparent);transition:.2s}
+  .choice:hover{transform:translateY(-3px);border-color:var(--rose);box-shadow:0 12px 30px -14px var(--glow)}
+  .choice .ic{font-size:30px;margin-bottom:10px}
+  .choice h3{font-size:18px}
+  .back{margin-top:26px;color:#8d7681;font-size:14px;cursor:pointer;background:none;border:none;font-family:"Inter",sans-serif}
+  .back:hover{color:var(--rose-clair)}
+
+  .result{border:1px solid var(--ligne);border-radius:24px;padding:44px 28px;background:radial-gradient(ellipse at 50% 0%,rgba(255,61,110,.16),var(--noir-2))}
+  .result .arch{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(30px,5vw,48px);background:linear-gradient(120deg,var(--rose),var(--or));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:6px 0 8px}
+  .result .phrase{color:var(--creme);font-size:18px;margin-bottom:20px;font-weight:300}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+  .tag{background:rgba(201,168,106,.0);border:1px solid var(--ligne);color:var(--rose-clair);border-radius:999px;padding:6px 14px;font-size:13.5px}
+  .result .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .share{margin-top:18px;color:#8d7681;font-size:13px}
+</style>
+</head>
+<body>
+
+<div id="agegate"><div class="box">
+  <div style="font-size:34px">🔞</div>
+  <h2 class="serif" id="ag_t">Contenu réservé aux adultes</h2>
+  <p id="ag_p">En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-rose" onclick="enterSite()" id="ag_enter">J'ai 18 ans ou plus — Entrer</button>
+    <a class="btn btn-ghost" href="https://www.google.com" id="ag_leave">Quitter</a>
+  </div>
+  <small id="ag_law">L'accès est interdit aux mineurs.</small>
+</div></div>
+
+<div id="site" class="hidden">
+  <nav><div class="inner">
+    <a class="logo" href="index.html">SO<span>LEA</span></a>
+    <div class="lang">
+      <button id="langFr" class="on" onclick="setLang('fr')">FR</button>
+      <button id="langEn" onclick="setLang('en')">EN</button>
+    </div>
+  </div></nav>
+
+  <div class="stage"><div class="wrap">
+    <div class="prog"><div id="bar"></div></div>
+    <div id="quiz"></div>
+    <div id="result" class="result hidden"></div>
+  </div></div>
+</div>
+
+<script>
+  function enterSite(){try{localStorage.setItem('solea_age_ok','1')}catch(e){}document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}
+  try{if(localStorage.getItem('solea_age_ok')==='1'){document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}}catch(e){}
+
+  const AFF={base:"https://feetfinder.com",ref:"SOLEA_CODE",search(tags,c){return `${this.base}/search?ref=${this.ref}&tags=${encodeURIComponent(tags)}&utm_source=solea&utm_medium=affiliate&utm_campaign=${c}`}};
+
+  const T={
+    fr:{
+      ag_t:"Contenu réservé aux adultes",ag_p:"En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.",ag_enter:"J'ai 18 ans ou plus — Entrer",ag_leave:"Quitter",ag_law:"L'accès est interdit aux mineurs.",
+      kicker:n=>`Le Diapason · question ${n}/5`,
+      back:"← Précédent", restart:"↻ Recommencer",
+      questions:[
+        {q:"Ce soir, l'ambiance…",choix:[
+          {ic:"🕯️",label:"Lumière douce",tags:["ambiance:Lumière douce"]},
+          {ic:"💡",label:"Néon",tags:["ambiance:Néon"]},
+          {ic:"☀️",label:"Plein jour",tags:["ambiance:Extérieur"]},
+          {ic:"🌙",label:"Nuit",tags:["ambiance:Nuit"]}]},
+        {q:"La matière qui t'attire…",choix:[
+          {ic:"🧣",label:"Soie",tags:["scene:Soie / draps"]},
+          {ic:"🏖️",label:"Sable",tags:["scene:Sable / plage"]},
+          {ic:"🧥",label:"Cuir",tags:["scene:Cuir"]},
+          {ic:"💧",label:"Eau",tags:["scene:Eau / piscine"]}]},
+        {q:"L'état que tu préfères…",choix:[
+          {ic:"🤍",label:"Impeccables",tags:["etat:Propres"]},
+          {ic:"🌿",label:"Au naturel",tags:["etat:Au naturel"]},
+          {ic:"😈",label:"Brut",tags:["etat:Très sales"]},
+          {ic:"🧦",label:"Chaussettes portées",tags:["tenue:Chaussettes portées"]}]},
+        {q:"Tu regardes plutôt…",choix:[
+          {ic:"🔍",label:"Le détail (macro)",tags:["angle:Gros plan macro"]},
+          {ic:"🩰",label:"La cambrure",tags:["angle:Cambrure (arches)"]},
+          {ic:"👣",label:"Les semelles",tags:["angle:Semelles (plantes)"]},
+          {ic:"💅",label:"Les orteils",tags:["angle:Orteils en éventail"]}]},
+        {q:"Le format idéal…",choix:[
+          {ic:"📷",label:"Photo",tags:["format:Photos"]},
+          {ic:"🎬",label:"Vidéo",tags:["format:Vidéos courtes"]},
+          {ic:"🎯",label:"Sur-mesure",tags:["format:Sur-mesure"]},
+          {ic:"🔁",label:"Abonnement",tags:["format:Abonnement mensuel"]}]},
+      ],
+      arch:{ "ambiance:Lumière douce":"L'Esthète","ambiance:Néon":"Le Nocturne","ambiance:Extérieur":"Le Naturaliste","ambiance:Nuit":"Le Nocturne" },
+      archDefault:"Le Connaisseur",
+      resTitle:"Ton Diapason",resPhrase:t=>`Ton style : ${t}.`,
+      seeSel:"Voir ma sélection dans l'Explorateur",seeCreators:"Voir les créateurs",
+      share:"Astuce : « Quel est ton Diapason ? » — un partage parfait sur tes réseaux.",
+      welcomeBack:n=>`Bon retour, ${n}.`
+    },
+    en:{
+      ag_t:"Adults only",ag_p:"By entering, you confirm you are <strong>18 or older</strong>.",ag_enter:"I'm 18 or older — Enter",ag_leave:"Leave",ag_law:"Access is forbidden to minors.",
+      kicker:n=>`The Diapason · question ${n}/5`,
+      back:"← Back", restart:"↻ Restart",
+      questions:[
+        {q:"Tonight, the mood…",choix:[
+          {ic:"🕯️",label:"Soft light",tags:["ambiance:Lumière douce"]},
+          {ic:"💡",label:"Neon",tags:["ambiance:Néon"]},
+          {ic:"☀️",label:"Daylight",tags:["ambiance:Extérieur"]},
+          {ic:"🌙",label:"Night",tags:["ambiance:Nuit"]}]},
+        {q:"The material that draws you…",choix:[
+          {ic:"🧣",label:"Silk",tags:["scene:Soie / draps"]},
+          {ic:"🏖️",label:"Sand",tags:["scene:Sable / plage"]},
+          {ic:"🧥",label:"Leather",tags:["scene:Cuir"]},
+          {ic:"💧",label:"Water",tags:["scene:Eau / piscine"]}]},
+        {q:"The state you prefer…",choix:[
+          {ic:"🤍",label:"Flawless",tags:["etat:Propres"]},
+          {ic:"🌿",label:"Natural",tags:["etat:Au naturel"]},
+          {ic:"😈",label:"Raw",tags:["etat:Très sales"]},
+          {ic:"🧦",label:"Worn socks",tags:["tenue:Chaussettes portées"]}]},
+        {q:"You look mostly at…",choix:[
+          {ic:"🔍",label:"The detail (macro)",tags:["angle:Gros plan macro"]},
+          {ic:"🩰",label:"The arch",tags:["angle:Cambrure (arches)"]},
+          {ic:"👣",label:"The soles",tags:["angle:Semelles (plantes)"]},
+          {ic:"💅",label:"The toes",tags:["angle:Orteils en éventail"]}]},
+        {q:"The ideal format…",choix:[
+          {ic:"📷",label:"Photo",tags:["format:Photos"]},
+          {ic:"🎬",label:"Video",tags:["format:Vidéos courtes"]},
+          {ic:"🎯",label:"Custom",tags:["format:Sur-mesure"]},
+          {ic:"🔁",label:"Subscription",tags:["format:Abonnement mensuel"]}]},
+      ],
+      arch:{ "ambiance:Lumière douce":"The Aesthete","ambiance:Néon":"The Nocturne","ambiance:Extérieur":"The Naturalist","ambiance:Nuit":"The Nocturne" },
+      archDefault:"The Connoisseur",
+      resTitle:"Your Diapason",resPhrase:t=>`Your style: ${t}.`,
+      seeSel:"See my selection in the Explorer",seeCreators:"See creators",
+      share:"Tip: “What's your Diapason?” — a perfect share for your socials.",
+      welcomeBack:n=>`Welcome back, ${n}.`
+    }
+  };
+
+  let LANG='fr'; try{const s=localStorage.getItem('solea_lang');if(s)LANG=s}catch(e){}
+  let step=0; const answers=[];
+
+  function setLang(l){LANG=l;try{localStorage.setItem('solea_lang',l)}catch(e){}document.getElementById('langFr').classList.toggle('on',l==='fr');document.getElementById('langEn').classList.toggle('on',l==='en');document.documentElement.lang=l;
+    ['ag_t','ag_p','ag_enter','ag_leave','ag_law'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=T[l][id]});
+    if(document.getElementById('result').classList.contains('hidden')) renderQ(); else renderResult();}
+
+  function renderQ(){
+    const t=T[LANG], Q=t.questions[step];
+    document.getElementById('result').classList.add('hidden');
+    document.getElementById('bar').style.width=`${(step/t.questions.length)*100}%`;
+    document.getElementById('quiz').innerHTML=`
+      <div class="kicker">${t.kicker(step+1)}</div>
+      <h1 class="q">${Q.q}</h1>
+      <div class="choices">
+        ${Q.choix.map((c,i)=>`<div class="choice" onclick="pick(${i})"><div class="ic">${c.ic}</div><h3>${c.label}</h3></div>`).join('')}
+      </div>
+      ${step>0?`<button class="back" onclick="goBack()">${t.back}</button>`:''}`;
+  }
+
+  function pick(i){
+    answers[step]=T[LANG].questions[step].choix[i].tags;
+    if(step<T[LANG].questions.length-1){step++;renderQ();}
+    else finish();
+  }
+  function goBack(){if(step>0){step--;renderQ();}}
+
+  function finish(){
+    const t=T[LANG];
+    const tags=answers.flat();
+    // archétype d'après l'ambiance (Q1)
+    const arch = t.arch[answers[0][0]] || t.archDefault;
+    const labels = tags.map(x=>x.split(':')[1]);
+    const phrase = t.resPhrase(labels.slice(0,4).join(' · '));
+    // Empreinte (100% locale, sans compte)
+    try{ localStorage.setItem('solea_empreinte', JSON.stringify({nom:arch, tags, phrase})); }catch(e){}
+    renderResult(arch, tags, labels, phrase);
+  }
+
+  function renderResult(arch, tags, labels, phrase){
+    const t=T[LANG];
+    if(!arch){ try{const e=JSON.parse(localStorage.getItem('solea_empreinte'));arch=e.nom;tags=e.tags;labels=tags.map(x=>x.split(':')[1]);phrase=e.phrase;}catch(e){renderQ();return;} }
+    document.getElementById('bar').style.width='100%';
+    document.getElementById('quiz').innerHTML='';
+    const r=document.getElementById('result'); r.classList.remove('hidden');
+    r.innerHTML=`
+      <div class="kicker">${t.resTitle}</div>
+      <div class="arch">${arch}</div>
+      <div class="phrase">${phrase}</div>
+      <div class="tags">${labels.map(l=>`<span class="tag">${l}</span>`).join('')}</div>
+      <div class="ctas">
+        <a class="btn btn-rose" href="explorer.html#fromDiapason">${t.seeSel}</a>
+        <a class="btn btn-ghost" href="${AFF.search(labels.join(','),'diapason')}" target="_blank" rel="noopener nofollow sponsored">${t.seeCreators}</a>
+      </div>
+      <div class="share">${t.share}</div>
+      <button class="back" onclick="restart()">${t.restart}</button>`;
+    // passe la sélection à l'Explorateur
+    try{ localStorage.setItem('solea_diapason_tags', JSON.stringify(tags)); }catch(e){}
+  }
+  function restart(){step=0;answers.length=0;renderQ();}
+
+  document.documentElement.lang=LANG;
+  document.getElementById('langFr').classList.toggle('on',LANG==='fr');
+  document.getElementById('langEn').classList.toggle('on',LANG==='en');
+  ['ag_t','ag_p','ag_enter','ag_leave','ag_law'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=T[LANG][id]});
+  renderQ();
+</script>
+</body>
+</html>

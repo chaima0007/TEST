@@ -62,6 +62,10 @@
   .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
   .ad-slot{max-width:1180px;margin:34px auto;border:1px dashed var(--ligne);border-radius:14px;min-height:90px;display:flex;align-items:center;justify-content:center;color:#6e5560;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+  .empreinte{max-width:1180px;margin:16px auto 0;padding:14px 20px;border:1px solid var(--ligne);border-radius:14px;background:linear-gradient(160deg,var(--carte),transparent);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .empreinte b{color:var(--rose-clair);font-family:"Playfair Display",serif;font-style:italic}
+  .empreinte .e-txt{flex:1;color:var(--gris);font-size:14px;min-width:200px}
+  .empreinte a{color:var(--rose-clair);font-weight:600;font-size:14px}
 
   section{padding:64px 0}
   .sec-head{text-align:center;margin-bottom:46px}
@@ -134,9 +138,9 @@
   <nav><div class="wrap">
     <div class="logo">SO<span>LEA</span></div>
     <div class="navlinks">
-      <a href="#categories" data-i18n="nav_cat">Catégories</a>
       <a href="explorer.html" data-i18n="nav_explore">Explorateur</a>
-      <a href="#decouvrir" data-i18n="nav_discover">Découvrir</a>
+      <a href="diapason.html" data-i18n="nav_dia">Le Diapason</a>
+      <a href="collections.html" data-i18n="nav_col">Collections</a>
       <a href="creators.html" data-i18n="nav_creators">Créatrices</a>
     </div>
     <div class="navright">
@@ -147,6 +151,8 @@
       <a class="btn btn-rose" style="padding:9px 20px;font-size:14px" href="explorer.html" data-i18n="nav_cta">Explorer</a>
     </div>
   </div></nav>
+
+  <div id="empreinte" class="empreinte hidden"></div>
 
   <!-- HERO -->
   <header class="hero"><div class="wrap">
@@ -260,7 +266,7 @@
       age_text:"Ce site référence des contenus réservés à un public majeur. En entrant, vous confirmez avoir <strong>18 ans ou plus</strong> et accepter les conditions d'utilisation.",
       age_enter:"J'ai 18 ans ou plus — Entrer", age_leave:"J'ai moins de 18 ans",
       age_law:"Conformément à la loi, l'accès est interdit aux mineurs.",
-      nav_cat:"Catégories", nav_explore:"Explorateur", nav_discover:"Découvrir", nav_news:"Newsletter", nav_creators:"Créatrices", nav_cta:"Explorer",
+      nav_cat:"Catégories", nav_explore:"Explorateur", nav_discover:"Découvrir", nav_dia:"Le Diapason", nav_col:"Collections", nav_news:"Newsletter", nav_creators:"Créatrices", nav_cta:"Explorer",
       hero_badge:"La destination des amateurs de pieds",
       hero_h1a:"Tout l'univers du pied,", hero_h1b:"à portée de regard.",
       hero_p:"Élégant, troublant, soigneusement choisi. SOLEA réunit les plus beaux créateurs et styles — vous regardez, on a déjà tout trié.",
@@ -288,7 +294,7 @@
       age_text:"This site lists content intended for an adult audience. By entering, you confirm you are <strong>18 or older</strong> and accept the terms of use.",
       age_enter:"I'm 18 or older — Enter", age_leave:"I'm under 18",
       age_law:"By law, access is forbidden to minors.",
-      nav_cat:"Categories", nav_explore:"Explorer", nav_discover:"Discover", nav_news:"Newsletter", nav_creators:"Creators", nav_cta:"Explore",
+      nav_cat:"Categories", nav_explore:"Explorer", nav_discover:"Discover", nav_dia:"The Diapason", nav_col:"Collections", nav_news:"Newsletter", nav_creators:"Creators", nav_cta:"Explore",
       hero_badge:"The destination for feet lovers",
       hero_h1a:"The whole world of feet,", hero_h1b:"a glance away.",
       hero_p:"Elegant, alluring, carefully curated. SOLEA brings together the finest creators and styles — you watch, we've already sorted it all.",
@@ -337,6 +343,18 @@
         <span class="aff">${t.aff}</span></div></a>`).join('');
     // steps
     document.getElementById('stepsGrid').innerHTML = t.steps.map(s=>`<div class="step"><div class="n">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+    // Empreinte (retour personnalisé, 100% local)
+    try{
+      const e=JSON.parse(localStorage.getItem('solea_empreinte')||'null');
+      const box=document.getElementById('empreinte');
+      if(e&&e.nom){
+        const back = LANG==='fr'?`Bon retour, <b>${e.nom}</b>. Ta sélection t'attend.`:`Welcome back, <b>${e.nom}</b>. Your selection awaits.`;
+        const cta = LANG==='fr'?'Reprendre mon Diapason →':'Resume my Diapason →';
+        box.innerHTML=`<span class="e-txt">${back}</span><a href="explorer.html#fromDiapason">${cta}</a>`;
+        box.classList.remove('hidden');
+      } else { box.classList.add('hidden'); }
+    }catch(err){}
+
     // lang buttons
     document.getElementById('langFr').classList.toggle('on',LANG==='fr');
     document.getElementById('langEn').classList.toggle('on',LANG==='en');

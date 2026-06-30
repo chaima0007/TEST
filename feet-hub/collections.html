@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SOLEA — Les Collections · Curation numérotée</title>
+<meta name="description" content="Chaque semaine, une collection éditoriale numérotée de créateurs, choisie avec goût. 18+." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--noir:#140910;--noir-2:#1f0e18;--rose:#FF3D6E;--rose-clair:#FF7FA0;--or:#E8B583;--creme:#F6E9EC;--gris:#B79AA4;--carte:#1c0f18;--ligne:rgba(255,61,110,.20);--glow:rgba(255,61,110,.35)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--noir);color:var(--creme);font-family:"Inter",system-ui,sans-serif;line-height:1.6;min-height:100vh}
+  h1,h2,h3,.serif{font-family:"Playfair Display",serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+  .hidden{display:none !important}
+  .btn{display:inline-block;cursor:pointer;border:none;border-radius:999px;font-weight:600;font-size:15px;padding:13px 26px;transition:.2s;font-family:"Inter",sans-serif}
+  .btn-rose{background:linear-gradient(135deg,var(--rose),#C81E54);color:#fff;box-shadow:0 6px 24px -6px var(--glow)}
+  .btn-rose:hover{transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--creme);border:1px solid var(--ligne)}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose-clair)}
+
+  #agegate{position:fixed;inset:0;z-index:1000;background:rgba(10,4,8,.97);display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(7px)}
+  #agegate .box{max-width:440px;text-align:center;border:1px solid var(--ligne);background:var(--noir-2);border-radius:22px;padding:42px 32px}
+  #agegate h2{font-size:26px;margin:10px 0}#agegate p{color:var(--gris);font-size:14px;margin-bottom:24px}
+  #agegate small{display:block;margin-top:18px;color:#6e5560;font-size:11px}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(20,9,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--ligne)}
+  nav .inner{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Playfair Display",serif;font-weight:800;font-size:22px;letter-spacing:1px}.logo span{color:var(--rose)}
+  .navlinks{display:flex;gap:24px}.navlinks a{color:var(--gris);font-size:14px;font-weight:500}.navlinks a:hover{color:var(--rose-clair)}
+  .navright{display:flex;align-items:center;gap:14px}
+  .lang{display:flex;border:1px solid var(--ligne);border-radius:999px;overflow:hidden}
+  .lang button{background:transparent;color:var(--gris);border:none;cursor:pointer;font-size:12px;font-weight:600;padding:6px 11px;font-family:"Inter",sans-serif}
+  .lang button.on{background:var(--rose);color:#fff}
+  @media(max-width:760px){.navlinks{display:none}}
+
+  header.hero{text-align:center;padding:64px 0 30px;background:radial-gradient(ellipse at 50% -10%,rgba(255,61,110,.18),transparent 58%),var(--noir)}
+  .kicker{color:var(--rose);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+  header.hero h1{font-size:clamp(32px,5vw,54px);margin:10px 0 12px}
+  header.hero p{max-width:560px;margin:0 auto;color:var(--gris);font-weight:300}
+
+  .featured{border:1px solid var(--ligne);border-radius:24px;overflow:hidden;background:linear-gradient(160deg,var(--carte),transparent);margin:30px 0}
+  .featured .top{padding:30px 30px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .num{font-family:"Playfair Display",serif;font-style:italic;font-size:44px;background:linear-gradient(120deg,var(--rose),var(--or));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .badge-new{background:var(--rose);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:1px}
+  .featured h2{font-size:30px;padding:6px 30px 4px}
+  .featured .date{color:#8d7681;font-size:13px;padding:0 30px}
+  .featured .intro{color:var(--gris);font-weight:300;padding:12px 30px 0;max-width:680px}
+  .ctile{display:flex;gap:10px;flex-wrap:wrap;padding:18px 30px 30px}
+  .ctile a{border:1px solid var(--ligne);border-radius:12px;padding:10px 14px;font-size:14px;color:var(--creme);transition:.2s;display:flex;gap:8px;align-items:center}
+  .ctile a:hover{border-color:var(--rose);color:var(--rose-clair)}
+  .ctile a b{color:var(--rose-clair);font-weight:600}
+
+  section{padding:36px 0 64px}
+  .sec-head{margin-bottom:22px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  .sec-head h2{font-size:26px}.sec-head span{color:var(--gris);font-size:13px}
+  .arch{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .col{border:1px solid var(--ligne);border-radius:16px;padding:22px;background:var(--carte);transition:.2s;display:flex;flex-direction:column;gap:8px}
+  .col:hover{transform:translateY(-3px);border-color:var(--rose);box-shadow:0 14px 32px -16px var(--glow)}
+  .col .n{font-family:"Playfair Display",serif;font-style:italic;font-size:22px;color:var(--rose-clair)}
+  .col h3{font-size:19px}.col .date{color:#8d7681;font-size:12px}
+  .col .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .col .tags span{border:1px solid var(--ligne);border-radius:999px;padding:3px 10px;font-size:12px;color:var(--gris)}
+  .col .go{margin-top:auto;color:var(--rose-clair);font-size:14px;font-weight:600}
+
+  footer{border-top:1px solid var(--ligne);padding:34px 0;text-align:center;color:#6e5560;font-size:12px}
+  .age-pill{display:inline-block;border:1px solid var(--rose);color:var(--rose);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:600;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div id="agegate"><div class="box">
+  <div style="font-size:34px">🔞</div>
+  <h2 class="serif" id="ag_t">Contenu réservé aux adultes</h2>
+  <p id="ag_p">En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-rose" onclick="enterSite()" id="ag_enter">J'ai 18 ans ou plus — Entrer</button>
+    <a class="btn btn-ghost" href="https://www.google.com" id="ag_leave">Quitter</a>
+  </div>
+  <small id="ag_law">L'accès est interdit aux mineurs.</small>
+</div></div>
+
+<div id="site" class="hidden">
+  <nav><div class="inner">
+    <a class="logo" href="index.html">SO<span>LEA</span></a>
+    <div class="navlinks">
+      <a href="index.html" id="n_home">Accueil</a>
+      <a href="explorer.html" id="n_explore">Explorateur</a>
+      <a href="diapason.html" id="n_dia">Le Diapason</a>
+    </div>
+    <div class="navright">
+      <div class="lang">
+        <button id="langFr" class="on" onclick="setLang('fr')">FR</button>
+        <button id="langEn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div></nav>
+
+  <header class="hero"><div class="wrap">
+    <div class="kicker" id="h_k">Le Cabinet</div>
+    <h1 id="h_h">Les Collections</h1>
+    <p id="h_p">Chaque semaine, une sélection éditoriale numérotée et finie. Choisie avec goût, jamais au hasard.</p>
+  </div></header>
+
+  <div class="wrap"><div class="featured" id="featured"></div></div>
+
+  <section><div class="wrap">
+    <div class="sec-head"><h2 id="arch_h">L'archive</h2><span id="arch_c"></span></div>
+    <div class="arch" id="archGrid"></div>
+  </div></section>
+
+  <footer><div class="wrap">
+    <div class="age-pill">18+</div>
+    <p id="footTxt">© 2026 SOLEA — Annuaire. Aucun contenu hébergé. Chaque lien renvoie aux plateformes officielles des créateurs.</p>
+  </div></footer>
+</div>
+
+<script>
+  function enterSite(){try{localStorage.setItem('solea_age_ok','1')}catch(e){}document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}
+  try{if(localStorage.getItem('solea_age_ok')==='1'){document.getElementById('agegate').classList.add('hidden');document.getElementById('site').classList.remove('hidden')}}catch(e){}
+
+  const AFF={base:"https://feetfinder.com",ref:"SOLEA_CODE",search(tags,c){return `${this.base}/search?ref=${this.ref}&tags=${encodeURIComponent(tags)}&utm_source=solea&utm_medium=affiliate&utm_campaign=${c}`}};
+
+  // ===== LES COLLECTIONS — pour en ajouter une, copie un objet en HAUT de la liste =====
+  const COLLECTIONS = [
+    {num:14, titre_fr:"Pluie & Néon", titre_en:"Rain & Neon", date:"2026-06-26",
+     intro_fr:"Reflets mouillés et lumières électriques. Une collection nocturne, urbaine, magnétique.",
+     intro_en:"Wet reflections and electric light. A nocturnal, urban, magnetic collection.",
+     tags:["Pluie","Néon","Mouillés","Nuit"]},
+    {num:13, titre_fr:"Soie & Marbre", titre_en:"Silk & Marble", date:"2026-06-19",
+     intro_fr:"Le luxe à l'état pur : matières nobles, lumière douce, épure absolue.",
+     intro_en:"Pure luxury: noble materials, soft light, absolute minimalism.",
+     tags:["Soie / draps","Marbre","Sensuel chic","Pédicure soignée"]},
+    {num:12, titre_fr:"Été & Sable", titre_en:"Summer & Sand", date:"2026-06-12",
+     intro_fr:"Pieds nus sur le sable, vernis solaires, ambiance vacances.",
+     intro_en:"Bare feet on sand, sunlit polish, holiday mood.",
+     tags:["Sable / plage","Pieds nus","Vernis rouge","Extérieur"]},
+    {num:11, titre_fr:"Bas & Résille", titre_en:"Stockings & Fishnet", date:"2026-06-05",
+     intro_fr:"Le jeu des transparences. Élégance rétro et tension graphique.",
+     intro_en:"The play of sheer fabrics. Retro elegance and graphic tension.",
+     tags:["Bas nylon","Résille","Talons hauts","Vintage / Y2K"]},
+    {num:10, titre_fr:"Brut & Naturel", titre_en:"Raw & Natural", date:"2026-05-29",
+     intro_fr:"Sans artifice, sans filtre. L'authenticité que ce public recherche de plus en plus.",
+     intro_en:"No artifice, no filter. The authenticity this audience increasingly seeks.",
+     tags:["Au naturel","Naturel / raw","Semelles (plantes)"]},
+    {num:9, titre_fr:"Sur-Mesure", titre_en:"Made to Order", date:"2026-05-22",
+     intro_fr:"La marge la plus forte : le contenu personnalisé, sur demande.",
+     intro_en:"The highest margin: personalized, on-request content.",
+     tags:["Sur-mesure","Demande personnalisée","Vidéos courtes"]},
+  ];
+
+  const T={
+    fr:{home:"Accueil",explore:"Explorateur",dia:"Le Diapason",
+      ag_t:"Contenu réservé aux adultes",ag_p:"En entrant, vous confirmez avoir <strong>18 ans ou plus</strong>.",ag_enter:"J'ai 18 ans ou plus — Entrer",ag_leave:"Quitter",ag_law:"L'accès est interdit aux mineurs.",
+      h_k:"Le Cabinet",h_h:"Les Collections",h_p:"Chaque semaine, une sélection éditoriale numérotée et finie. Choisie avec goût, jamais au hasard.",
+      arch_h:"L'archive",archC:n=>`${n} collections publiées`,
+      colN:"Collection",neuf:"NOUVEAU",discover:"Découvrir la collection →",explore_tag:"Explorer",footTxt:"© 2026 SOLEA — Annuaire. Aucun contenu hébergé."},
+    en:{home:"Home",explore:"Explorer",dia:"The Diapason",
+      ag_t:"Adults only",ag_p:"By entering, you confirm you are <strong>18 or older</strong>.",ag_enter:"I'm 18 or older — Enter",ag_leave:"Leave",ag_law:"Access is forbidden to minors.",
+      h_k:"The Cabinet",h_h:"The Collections",h_p:"Every week, a finished, numbered editorial selection. Chosen with taste, never at random.",
+      arch_h:"The archive",archC:n=>`${n} collections published`,
+      colN:"Collection",neuf:"NEW",discover:"Discover the collection →",explore_tag:"Explore",footTxt:"© 2026 SOLEA — Directory. No content hosted."}
+  };
+
+  let LANG='fr'; try{const s=localStorage.getItem('solea_lang');if(s)LANG=s}catch(e){}
+  // date de référence (statique, pas de Date.now pour rester déterministe) : la + récente = "NOUVEAU"
+  const NEWEST = COLLECTIONS.reduce((a,c)=>c.num>a?c.num:a,0);
+
+  function render(){
+    const t=T[LANG]; document.documentElement.lang=LANG;
+    const set=(id,v)=>{const el=document.getElementById(id);if(el)el.innerHTML=v;};
+    ['ag_t','ag_p','ag_enter','ag_leave','ag_law','h_k','h_h','h_p','arch_h','footTxt'].forEach(id=>set(id,t[id]));
+    set('n_home',t.home);set('n_explore',t.explore);set('n_dia',t.dia);
+    document.getElementById('arch_c').textContent=t.archC(COLLECTIONS.length);
+
+    const feat=COLLECTIONS[0];
+    const titre = LANG==='fr'?feat.titre_fr:feat.titre_en;
+    const intro = LANG==='fr'?feat.intro_fr:feat.intro_en;
+    document.getElementById('featured').innerHTML=`
+      <div class="top"><div class="num">№${String(feat.num).padStart(3,'0')}</div>
+        ${feat.num===NEWEST?`<span class="badge-new">${t.neuf}</span>`:''}</div>
+      <h2>${titre}</h2>
+      <div class="date">${feat.date}</div>
+      <div class="intro">${intro}</div>
+      <div class="ctile">
+        ${feat.tags.map(tag=>`<a href="${AFF.search(tag,'collection_'+feat.num)}" target="_blank" rel="noopener nofollow sponsored"><b>#</b>${tag}</a>`).join('')}
+        <a href="${AFF.search(feat.tags.join(','),'collection_'+feat.num)}" target="_blank" rel="noopener nofollow sponsored" style="border-color:var(--rose);color:var(--rose-clair)">${t.discover}</a>
+      </div>`;
+
+    document.getElementById('archGrid').innerHTML=COLLECTIONS.slice(1).map(c=>{
+      const tt=LANG==='fr'?c.titre_fr:c.titre_en;
+      return `<a class="col" href="${AFF.search(c.tags.join(','),'collection_'+c.num)}" target="_blank" rel="noopener nofollow sponsored">
+        <div class="n">№${String(c.num).padStart(3,'0')}</div>
+        <h3>${tt}</h3><div class="date">${c.date}</div>
+        <div class="tags">${c.tags.slice(0,4).map(x=>`<span>${x}</span>`).join('')}</div>
+        <div class="go">${t.discover}</div></a>`;
+    }).join('');
+
+    document.getElementById('langFr').classList.toggle('on',LANG==='fr');
+    document.getElementById('langEn').classList.toggle('on',LANG==='en');
+  }
+  function setLang(l){LANG=l;try{localStorage.setItem('solea_lang',l)}catch(e){}render()}
+  render();
+</script>
+</body>
+</html>
