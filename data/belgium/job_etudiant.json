@@ -9,7 +9,7 @@
     "portee": "Travail des étudiants en Belgique",
     "source_officielle": "https://www.belgium.be/fr/emploi/recherche_d_emploi/job_etudiant"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Le quota d'heures est indexé/modifié dans le temps : vérifiez le nombre exact et votre solde sur student@work.",
   "faits": [
@@ -78,6 +78,21 @@
         }
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "ETU-DROITS-001",
+      "question": "Quels sont mes droits comme étudiant qui travaille ?",
+      "reponse": "Vous avez les mêmes protections de base qu'un autre travailleur. Vous avez droit au salaire prévu par le secteur (commission paritaire), qui ne peut pas être inférieur au minimum applicable, au respect des horaires convenus et au paiement de votre travail (y compris le pécule de vacances). Votre employeur doit vous déclarer (Dimona) et vous couvrir par une assurance accidents du travail. La durée du travail des jeunes est encadrée (limites d'heures, repos, travail de nuit en principe interdit pour les mineurs). En cas d'abus (heures non payées, pas de contrat, accident non déclaré), vous pouvez contacter le Contrôle des lois sociales (SPF Emploi) ou un syndicat. Travailler comme étudiant ne veut pas dire accepter n'importe quoi.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (contrat d'occupation d'étudiant) ; loi du 16 mars 1971 sur le travail (protection des jeunes travailleurs)",
+      "contacts": [
+        {"nom": "Contrôle des lois sociales (SPF Emploi)", "lien": "https://emploi.belgique.be", "pour": "salaire impayé, abus, accident non déclaré"},
+        {"nom": "Syndicat", "pour": "défense de vos droits d'étudiant jobiste"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/contrats-de-travail/contrats-de-travail-particuliers/contrat-doccupation-detudiants", "intitule": "SPF Emploi — Droits de l'étudiant jobiste"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/emploi/recherche_d_emploi/job_etudiant", "intitule": "Belgium.be — Job étudiant"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

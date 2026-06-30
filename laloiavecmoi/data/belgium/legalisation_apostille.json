@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://diplomatie.belgium.be/fr/legalisation-de-documents"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Vérifiez toujours la formalité (apostille ou légalisation) selon le pays concerné avant de payer ou de vous déplacer.",
   "faits": [
@@ -58,6 +58,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "LEGAL-TRADUCTION-001",
+      "question": "Quand faut-il une traduction « jurée », et est-elle aussi à légaliser ?",
+      "reponse": "Si votre document n'est pas rédigé dans la langue exigée par l'autorité destinataire (en Belgique : français, néerlandais ou allemand ; à l'étranger : la langue du pays), il faut généralement une traduction par un traducteur juré, c'est-à-dire un traducteur officiellement inscrit au registre national des experts judiciaires et traducteurs/interprètes jurés. Attention : pour un usage à l'étranger, la signature du traducteur juré (et parfois le document d'origine) doit elle-même être légalisée ou apostillée. L'ordre des formalités (légaliser l'original, traduire, légaliser la traduction) dépend du pays : vérifiez-le auprès du SPF Affaires étrangères ou de l'ambassade concernée avant de lancer les démarches, pour éviter de tout recommencer.",
+      "reference_legale": "Convention de La Haye du 5 octobre 1961 (apostille) ; registre national des traducteurs et interprètes jurés (loi du 10 avril 2014)",
+      "contacts": [
+        {"nom": "Traducteur juré (registre national)", "pour": "traduction officielle d'un document"},
+        {"nom": "SPF Affaires étrangères — Légalisation", "lien": "https://diplomatie.belgium.be/fr/legalisation-de-documents", "pour": "ordre des formalités selon le pays"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/legalisation-de-documents", "intitule": "SPF Affaires étrangères — Traduction et légalisation"},
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr/themes/personnes_et_familles/legalisation", "intitule": "SPF Justice — Traducteurs jurés et légalisation"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

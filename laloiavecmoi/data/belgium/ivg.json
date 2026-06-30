@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.health.belgium.be/fr/themes/sante/votre-sante/pendant-apres-grossesse/interruption-volontaire-grossesse"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale et factuelle, à jour à la date de revue. Pour un accompagnement confidentiel, adressez-vous à un centre de planning familial ou à un hôpital.",
   "faits": [
@@ -54,6 +54,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "IVG-REMBOURSEMENT-CONFIDENTIALITE-001",
+      "question": "Combien coûte une IVG et est-ce confidentiel ?",
+      "reponse": "Le coût est pris en charge par l'assurance maladie : concrètement, une IVG réalisée dans le cadre légal ne vous coûte qu'un montant très faible (de l'ordre du ticket modérateur d'une consultation), grâce à un forfait remboursé par l'INAMI. La confidentialité est garantie : le secret médical s'applique. Pour une personne mineure, l'accompagnement est possible de façon confidentielle ; selon sa maturité, elle peut consentir aux soins, et le personnel du centre l'aide à prendre sa décision sans jugement. Un centre de planning familial vous informe gratuitement, que vous soyez décidée ou encore hésitante.",
+      "reference_legale": "Loi du 15 octobre 2018 relative à l'interruption volontaire de grossesse ; assurance obligatoire soins de santé (remboursement INAMI)",
+      "contacts": [
+        {"nom": "Centre de planning familial", "pour": "information, accompagnement confidentiel et gratuit"},
+        {"nom": "Hôpital pratiquant l'IVG", "pour": "intervention et prise en charge"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/pendant-apres-grossesse/interruption-volontaire-grossesse", "intitule": "SPF Santé publique — IVG (prise en charge)"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr", "intitule": "INAMI — Remboursement des soins"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

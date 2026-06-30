@@ -9,7 +9,7 @@
     "portee": "Déclaration et obligations fiscales du citoyen",
     "source_officielle": "https://www.belgium.be/fr/impots/impot_sur_les_revenus/particuliers_et_independants/declaration"
   },
-  "derniere_revue": "2026-06-26",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. ATTENTION : les dates limites de déclaration changent CHAQUE ANNÉE — vérifiez toujours la date exacte de l'année en cours sur le SPF Finances (fin.belgium.be).",
   "faits": [
@@ -54,6 +54,21 @@
         {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/que-se-passe-t-il-si-je-ne-rentre-pas-ma-declaration-fiscale", "intitule": "Droits Quotidiens — Pas de déclaration"}
       ],
       "date_verification": "2026-06-26"
+    },
+    {
+      "id": "IMP-CONTESTER-001",
+      "question": "Je ne suis pas d'accord avec mon impôt : comment le contester ?",
+      "reponse": "Vous pouvez introduire une réclamation, gratuitement, auprès du conseiller général de l'administration (le centre indiqué sur votre avertissement-extrait de rôle). Le délai est important : en principe 1 an à compter du 3e jour ouvrable qui suit l'envoi de l'avertissement-extrait de rôle. Motivez votre réclamation et joignez les preuves. Si la décision ne vous satisfait pas, vous pouvez ensuite saisir le tribunal de première instance. Par ailleurs, si vous ne pouvez pas payer dans les temps, demandez un plan de paiement au SPF Finances plutôt que de laisser la dette s'aggraver. Payer l'impôt contesté n'empêche pas la réclamation.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (réclamation administrative et délais) ; Code judiciaire (recours devant le tribunal de première instance)",
+      "alerte_delai": "Réclamation : en principe dans l'année qui suit l'envoi de l'avertissement-extrait de rôle — ne dépassez pas ce délai.",
+      "contacts": [
+        {"nom": "SPF Finances (conseiller général / centre)", "lien": "https://fin.belgium.be", "pour": "réclamation et plan de paiement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/declaration-impot/que-faire-apres/contestation", "intitule": "SPF Finances — Contester un impôt"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/impots/impot_sur_les_revenus", "intitule": "Belgium.be — Impôt sur les revenus"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

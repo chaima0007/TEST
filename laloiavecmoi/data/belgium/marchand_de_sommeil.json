@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2013/04/29/2013009350/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. En danger immédiat : 112. Pour être aidé : CPAS, service d'aide aux victimes ou avocat.",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MARCHSOM-RELOGEMENT-001",
+      "question": "Mon logement est insalubre : ai-je droit à une protection et à un relogement ?",
+      "reponse": "Oui. À côté des poursuites pénales contre le marchand de sommeil, des protections existent côté logement. Vous (ou la commune) pouvez signaler l'insalubrité : le bourgmestre peut prendre un arrêté d'inhabitabilité/insalubrité, et la Région dispose de services de contrôle de la salubrité des logements. En cas d'arrêté qui vous oblige à quitter les lieux, un droit au relogement et un accompagnement (commune, CPAS, services régionaux du logement) sont en principe prévus. Selon les cas, vous pouvez aussi récupérer en justice des loyers indûment payés pour un logement indigne. Ne restez pas dans un logement dangereux : faites-vous aider rapidement (CPAS, service d'aide aux victimes, avocat).",
+      "reference_legale": "Code pénal, art. 433decies (marchand de sommeil) ; Code wallon de l'Habitation durable / Code bruxellois du Logement / Code flamand du logement (salubrité et relogement)",
+      "contacts": [
+        {"nom": "Commune (service logement/salubrité)", "pour": "signaler l'insalubrité, arrêté d'inhabitabilité"},
+        {"nom": "CPAS", "pour": "relogement et aide d'urgence"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2013/04/29/2013009350/justel", "intitule": "Justel — Code pénal, art. 433decies"},
+        {"type": "officiel", "url": "https://logement.wallonie.be/", "intitule": "Logement Wallonie — Salubrité et relogement"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

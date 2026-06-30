@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Pour votre dossier, contactez Fedris ou votre médecin.",
   "faits": [
@@ -53,6 +53,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MALPRO-RECONNAISSANCE-RECOURS-001",
+      "question": "Comment une maladie est-elle reconnue, et que faire si Fedris refuse ?",
+      "reponse": "Il existe deux voies de reconnaissance. Le « système de liste » : si votre maladie figure sur la liste officielle des maladies professionnelles et que vous avez été exposé au risque correspondant, le lien avec le travail est présumé (c'est plus simple à faire reconnaître). Le « système ouvert » : pour une maladie hors liste, vous pouvez quand même être indemnisé, mais vous devez prouver le lien direct entre la maladie et votre exposition professionnelle. Si Fedris refuse votre demande ou fixe un taux d'incapacité que vous contestez, vous pouvez introduire un recours devant le tribunal du travail (la procédure est gratuite en frais de rôle, et l'aide juridique est possible). Conservez tous les éléments médicaux et la preuve de votre exposition.",
+      "reference_legale": "Loi du 3 juin 1970 (lois coordonnées) relative à la réparation des maladies professionnelles (système de liste et système ouvert ; recours devant le tribunal du travail)",
+      "alerte_delai": "Un recours contre une décision de Fedris se fait devant le tribunal du travail dans le délai indiqué : ne tardez pas.",
+      "contacts": [
+        {"nom": "Fedris", "lien": "https://www.fedris.be/fr", "pour": "demande et reconnaissance"},
+        {"nom": "Tribunal du travail / Bureau d'aide juridique", "pour": "contester un refus ou un taux"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande", "intitule": "Fedris — Reconnaissance et procédure"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Recours et aide juridique"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
