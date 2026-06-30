@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. En cas de refus abusif, adressez-vous au SPF Economie ou au médiateur (Ombudsfin).",
   "faits": [
@@ -53,6 +53,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SBB-OPERATIONS-001",
+      "question": "Que permet concrètement le service bancaire de base ?",
+      "reponse": "Le service bancaire de base donne accès aux opérations essentielles de la vie courante : ouvrir et tenir un compte à vue, y déposer et retirer de l'argent, recevoir des versements (salaire, allocations), effectuer des virements et des ordres permanents, payer des domiciliations, et disposer d'une carte de débit pour payer et retirer. La loi prévoit un nombre minimum d'opérations à un coût plafonné. En revanche, il n'inclut PAS de crédit ni de découvert autorisé (le compte ne peut pas être négatif) et n'ouvre pas droit à une carte de crédit. C'est un socle pour éviter l'exclusion bancaire, pas une offre bancaire complète. Si on vous le refuse ou le retire sans motif légal, saisissez le SPF Économie ou Ombudsfin.",
+      "reference_legale": "Code de droit économique, livre VII, art. VII.57 et suivants (contenu du service bancaire de base)",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "refus ou retrait du service bancaire de base"},
+        {"nom": "Ombudsfin", "lien": "https://www.ombudsfin.be", "pour": "litige avec la banque"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base", "intitule": "SPF Économie — Service bancaire de base (opérations)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/economie/commerce_et_consommation/protection_du_consommateur/services_financiers/service_bancaire_de_base", "intitule": "Belgium.be — Service bancaire de base"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

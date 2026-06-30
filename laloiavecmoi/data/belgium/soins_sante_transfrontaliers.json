@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.health.belgium.be/fr/themes/sante/votre-sante/soins-sante-transfrontaliers/soins-sante-letranger/remboursement-frais-medicaux-selon-reglementation-europeenne"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Demandez conseil à votre mutualité avant des soins planifiés à l'étranger.",
   "faits": [
@@ -54,6 +54,21 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SSTRANS-CEAM-001",
+      "question": "Qu'est-ce que la Carte européenne d'assurance maladie (CEAM) et que couvre-t-elle ?",
+      "reponse": "La CEAM est une carte gratuite que vous demandez à votre mutualité (souvent disponible en ligne ou au dos de votre carte d'identité de mutuelle, selon la mutualité). Elle vous couvre pour les soins de santé médicalement nécessaires lors d'un séjour temporaire (vacances, voyage d'affaires, études) dans un autre pays de l'UE ainsi qu'en Islande, au Liechtenstein, en Norvège et en Suisse. Vous êtes alors soigné aux mêmes conditions et tarifs que les assurés du pays visité (vous payez parfois une part personnelle locale). Attention : la CEAM ne couvre PAS le rapatriement ni les soins dans le privé hors convention — pour cela, une assurance voyage/assistance est recommandée. Demandez-la avant de partir : sans elle, vous risquez d'avancer des frais importants.",
+      "reference_legale": "Règlement (CE) 883/2004 et règlement (CE) 987/2009 portant coordination de la sécurité sociale (Carte européenne d'assurance maladie)",
+      "alerte_delai": "Demandez la CEAM à votre mutualité AVANT votre départ (elle est gratuite).",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "obtenir la Carte européenne d'assurance maladie (CEAM)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/soins-sante-transfrontaliers/soins-sante-letranger/remboursement-frais-medicaux-selon-reglementation-europeenne", "intitule": "SPF Santé publique — Soins à l'étranger et CEAM"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/health/unplanned-healthcare/temporary-stays/index_fr.htm", "intitule": "Your Europe — Carte européenne d'assurance maladie"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=2013000441"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Les incivilités sanctionnables figurent dans le règlement de police de votre commune.",
   "faits": [
@@ -59,6 +59,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SAC-PROCEDURE-DROITS-001",
+      "question": "Comment se déroule la procédure, et puis-je me défendre avant d'être sanctionné ?",
+      "reponse": "Tout part d'un constat dressé par un agent constatateur, transmis au fonctionnaire sanctionnateur de la commune. Celui-ci vous notifie les faits par écrit. Avant toute décision, vous avez le droit de présenter votre défense : par écrit dans le délai indiqué, et — lorsque l'amende envisagée dépasse un certain montant — vous pouvez demander à être entendu oralement. Vous pouvez vous faire assister par un avocat. Ce n'est qu'ensuite que le fonctionnaire décide de l'amende (ou d'une alternative). Pour un mineur (à partir de 14 ans), les parents sont informés et impliqués, et une médiation est proposée en priorité. Si vous n'êtes pas d'accord avec la décision finale, vous pouvez la contester devant le tribunal (de police, ou de la jeunesse pour un mineur) dans le mois.",
+      "reference_legale": "Loi du 24 juin 2013 relative aux sanctions administratives communales (procédure, droit d'être entendu et recours)",
+      "alerte_delai": "Répondez dans le délai de la notification pour présenter votre défense ; recours contre la décision dans le mois.",
+      "contacts": [
+        {"nom": "Fonctionnaire sanctionnateur de la commune", "pour": "présenter sa défense avant la décision"},
+        {"nom": "Tribunal de police (ou de la jeunesse)", "pour": "contester l'amende"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=2013000441", "intitule": "Justel — Loi du 24 juin 2013 (procédure et défense)"},
+        {"type": "secondaire", "url": "https://www.besafe.be/fr/sanctions-administratives-communales-sac/legislation-sac", "intitule": "BeSafe — Procédure SAC"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

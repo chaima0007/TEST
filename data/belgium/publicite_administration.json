@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1994/04/11/1994000357/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Des règles propres existent au niveau des Régions et Communautés (publicité de leur propre administration).",
   "faits": [
@@ -58,6 +58,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PUBADM-DELAI-001",
+      "question": "Dans quel délai l'administration doit-elle répondre à ma demande ?",
+      "reponse": "L'administration doit en principe répondre dans les 30 jours (ce délai peut être prolongé une fois, par exemple si la demande est complexe, en vous en informant). Si elle refuse l'accès, elle doit motiver sa décision en invoquant un motif d'exception légal. En cas de refus, de silence ou de réponse jugée insuffisante, vous pouvez demander un avis à la Commission d'accès aux documents administratifs (CADA) puis, si nécessaire, introduire un recours en annulation devant le Conseil d'État. Bon à savoir : l'administration doit aussi pratiquer une « publicité active », c'est-à-dire publier d'office certaines informations utiles au public.",
+      "reference_legale": "Loi du 11 avril 1994 relative à la publicité de l'administration (délai de réponse, motivation et recours)",
+      "alerte_delai": "Réponse en principe dans les 30 jours ; en cas de refus ou de silence, saisissez la CADA puis, au besoin, le Conseil d'État.",
+      "contacts": [
+        {"nom": "Commission d'accès aux documents administratifs (CADA)", "pour": "avis en cas de refus"},
+        {"nom": "Conseil d'État", "lien": "https://www.conseildetat.be", "pour": "recours en annulation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1994/04/11/1994000357/justel", "intitule": "Justel — Loi du 11 avril 1994 (délais et recours)"},
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/en/node/3656", "intitule": "IBZ — Délais et recours"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }

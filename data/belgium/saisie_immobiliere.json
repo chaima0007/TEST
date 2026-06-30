@@ -8,7 +8,7 @@
     "portee": "Citoyens en Belgique",
     "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1967/10/10/1967101052/justel"
   },
-  "derniere_revue": "2026-06-29",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information juridique générale, à jour à la date de revue. Face à une saisie, consultez rapidement un avocat ou un médiateur de dettes : des solutions existent souvent avant la vente.",
   "faits": [
@@ -58,6 +58,22 @@
         }
       ],
       "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SAISIM-EVITER-001",
+      "question": "Puis-je encore éviter la vente forcée de mon bien ?",
+      "reponse": "Souvent oui, surtout si vous réagissez tôt. Dès le commandement de payer, prenez contact avec le créancier pour négocier un échéancier (termes et délais) ou un accord. Un service de médiation de dettes peut négocier à votre place. Si la situation est globale, le règlement collectif de dettes (devant le tribunal du travail) suspend les saisies et organise un plan. Autre piste : avec l'accord du juge des saisies, l'immeuble peut être vendu de gré à gré (vente amiable) plutôt qu'en vente publique — cela rapporte généralement un meilleur prix, donc réduit la dette restante. Ne restez pas passif : chaque étape de la procédure offre des occasions d'agir, mais les délais sont stricts.",
+      "reference_legale": "Code judiciaire — saisie-exécution immobilière (vente de gré à gré autorisée par le juge des saisies) ; règlement collectif de dettes (art. 1675/2 et suivants)",
+      "alerte_delai": "Agissez dès le commandement de payer : plus tôt vous négociez, plus la vente forcée est évitable.",
+      "contacts": [
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "négocier un plan, éviter la vente"},
+        {"nom": "Avocat / juge des saisies", "pour": "vente de gré à gré, contestations"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1967/10/10/1967101052/justel", "intitule": "Code judiciaire — saisie immobilière et vente de gré à gré"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Règlement collectif de dettes"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
