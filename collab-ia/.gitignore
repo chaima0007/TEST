@@ -1,0 +1,14 @@
+# Secrets : ne JAMAIS committer
+.env
+*.key
+service-account*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Logs
+*.log

@@ -1,0 +1,13 @@
+# Le coeur du systeme (clients LLM + double controle + logs + retry)
+# n'utilise QUE la bibliotheque standard de Python : rien a installer.
+#
+# Dependances OPTIONNELLES, a decommenter quand vous activez les integrations :
+#
+# PyGithub>=2.0                    # connecteur GitHub
+# google-api-python-client>=2.0   # connecteur Google Workspace
+# google-auth>=2.0                # authentification Google
+#
+# Pour la version "production" (file de taches, API, planificateur) :
+# fastapi>=0.110
+# uvicorn>=0.29
+# apscheduler>=3.10
