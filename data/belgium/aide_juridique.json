@@ -9,7 +9,7 @@
     "portee": "Obtenir un avocat gratuit ou peu coûteux selon ses revenus, et la prise en charge des frais de justice",
     "source_officielle": "https://justice.belgium.be/fr"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. Les plafonds de revenus sont réindexés chaque année ; vérifiez les montants en vigueur auprès du Bureau d'aide juridique (BAJ) ou sur justice.belgium.be.",
   "faits": [
@@ -42,6 +42,35 @@
         {"type": "secondaire", "url": "https://www.mc.be/en-marche/vos-droits/familles/beneficier-dune-aide-juridique-partiellement-gratuite", "intitule": "Mutualité chrétienne — Aide juridique (partiellement) gratuite"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "AJ-PREMIERE-LIGNE-001",
+      "question": "Existe-t-il une aide gratuite même si je ne suis pas pauvre ?",
+      "reponse": "Oui : l'aide juridique de PREMIÈRE ligne est accessible à tout le monde, SANS condition de revenus. Il s'agit d'une première information ou d'un premier avis juridique : on vous écoute, on vous explique vos droits, on vous oriente vers la bonne procédure ou le bon service. Elle est assurée lors de permanences (souvent gratuites) organisées notamment par les commissions d'aide juridique, des maisons de justice, des CPAS ou des associations. C'est le bon premier réflexe avant d'engager des frais : cela ne remplace pas la prise en charge complète d'un dossier (qui relève de la deuxième ligne), mais cela permet d'y voir clair.",
+      "reference_legale": "Code judiciaire — aide juridique de première ligne (art. 508/1 et suivants)",
+      "contacts": [
+        {"nom": "Commission d'aide juridique / Maison de justice", "pour": "permanence de première information juridique"},
+        {"nom": "CPAS de votre commune", "pour": "orientation et permanences juridiques"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Aide juridique de première ligne"},
+        {"type": "secondaire", "url": "https://www.avocats.be/fr/laide-juridique", "intitule": "Avocats.be — L'aide juridique"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AJ-CHOIX-AVOCAT-001",
+      "question": "Puis-je choisir mon avocat pro deo, ou en changer ?",
+      "reponse": "Vous pouvez indiquer au Bureau d'aide juridique (BAJ) le nom d'un avocat que vous souhaitez, à condition qu'il accepte d'intervenir dans le cadre de l'aide juridique de deuxième ligne. Si vous n'avez pas de préférence, le BAJ désigne lui-même un avocat inscrit sur la liste. En cours de procédure, vous pouvez demander à changer d'avocat pour un motif valable : la demande motivée s'adresse au BAJ, qui décide. L'avocat désigné est tenu aux mêmes obligations professionnelles et de qualité qu'un avocat payant.",
+      "reference_legale": "Code judiciaire — désignation de l'avocat dans l'aide juridique de deuxième ligne (art. 508/1 et suivants)",
+      "contacts": [
+        {"nom": "Bureau d'aide juridique (BAJ)", "pour": "choix ou changement de l'avocat désigné"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.rechtbanken-tribunaux.be/fr/node/2078", "intitule": "Cours & Tribunaux — Avocat pro deo (désignation)"},
+        {"type": "secondaire", "url": "https://www.avocats.be/fr/laide-juridique", "intitule": "Avocats.be — L'aide juridique"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
