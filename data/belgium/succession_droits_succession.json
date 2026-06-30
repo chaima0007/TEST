@@ -1,0 +1,62 @@
+{
+  "module": "succession_droits_succession",
+  "titre": "Déclaration et droits de succession",
+  "domaine": "Succession & fiscalité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code des droits de succession (régionalisé : Code wallon, Code bruxellois, Vlaamse Codex Fiscaliteit)",
+    "portee": "Obligation de déclarer une succession et de payer les droits de succession",
+    "source_officielle": "https://finances.belgium.be/fr/particuliers/deces/declaration-succession"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les taux, abattements et délais varient selon la RÉGION du défunt ; un notaire vous accompagne pour la déclaration et le calcul.",
+  "faits": [
+    {
+      "id": "SUCCDR-DECLARATION-001",
+      "question": "Dois-je déposer une déclaration de succession, et dans quel délai ?",
+      "reponse": "Oui, dans la plupart des cas : après un décès, les héritiers (ou légataires) doivent en principe déposer une déclaration de succession, qui sert de base au calcul des droits de succession. Le délai est important : en règle générale 4 mois si le décès a eu lieu en Belgique (plus long si le décès est survenu à l'étranger). Ce délai peut être prolongé sur demande. La déclaration recense l'actif (biens, comptes, immeubles) et le passif (dettes, frais funéraires) de la succession. Un notaire est vivement recommandé pour l'établir correctement et éviter des erreurs coûteuses.",
+      "reference_legale": "Code des droits de succession (obligation de déclaration et délais — compétence régionale)",
+      "alerte_delai": "Déclaration de succession : en principe 4 mois après un décès en Belgique (prolongation possible sur demande).",
+      "contacts": [
+        {"nom": "Notaire", "pour": "établir la déclaration de succession"},
+        {"nom": "SPF Finances", "lien": "https://finances.belgium.be", "pour": "information et dépôt"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/deces/declaration-succession", "intitule": "SPF Finances — Déclaration de succession"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "SUCCDR-CALCUL-001",
+      "question": "Comment sont calculés les droits de succession ?",
+      "reponse": "Les droits de succession sont un impôt RÉGIONAL : leur taux dépend de la région où le défunt avait son domicile fiscal et, surtout, du LIEN DE PARENTÉ entre le défunt et l'héritier. En règle générale, plus le lien est proche (conjoint, enfants), plus les taux sont bas et les abattements importants ; plus le lien est éloigné (ou entre personnes sans lien), plus les taux sont élevés. Les taux sont progressifs (par tranches de valeur). Chaque région (Wallonie, Bruxelles, Flandre) a ses propres barèmes, réductions et régimes de faveur (par ex. pour le logement familial entre conjoints). Faites simuler le coût par un notaire avant toute planification.",
+      "reference_legale": "Code des droits de succession régionalisé (Code wallon, Code bruxellois, Vlaamse Codex Fiscaliteit) — taux selon le lien de parenté",
+      "contacts": [
+        {"nom": "Notaire", "pour": "calcul et planification des droits de succession"},
+        {"nom": "Administration fiscale régionale", "pour": "barèmes applicables"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/deces/declaration-succession", "intitule": "SPF Finances — Droits de succession"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/impots/succession", "intitule": "Belgium.be — Droits de succession"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "SUCCDR-PAIEMENT-001",
+      "question": "Comment et quand payer les droits, et que se passe-t-il en cas de retard ?",
+      "reponse": "Une fois la déclaration déposée et les droits calculés, l'administration fiscale régionale vous notifie le montant à payer, dans un délai déterminé après le dépôt. En cas de difficulté pour réunir les fonds (par exemple si l'essentiel de l'héritage est un bien immobilier difficile à mobiliser rapidement), il est possible, sous conditions, de demander un étalement/plan de paiement. Attention : un dépôt tardif de la déclaration ou un retard de paiement entraîne des amendes et des intérêts. Anticipez avec le notaire, surtout si la succession comprend des biens peu liquides.",
+      "reference_legale": "Code des droits de succession régionalisé (paiement, intérêts et amendes en cas de retard)",
+      "alerte_delai": "Le retard de déclaration ou de paiement entraîne amendes et intérêts : respectez les délais ou demandez une prolongation/un plan.",
+      "contacts": [
+        {"nom": "Administration fiscale régionale / SPF Finances", "pour": "paiement et plan d'étalement"},
+        {"nom": "Notaire", "pour": "gestion des liquidités de la succession"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/deces/declaration-succession", "intitule": "SPF Finances — Paiement des droits de succession"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

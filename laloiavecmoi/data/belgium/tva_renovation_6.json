@@ -1,0 +1,58 @@
+{
+  "module": "tva_renovation_6",
+  "titre": "TVA réduite à 6 % pour la rénovation",
+  "domaine": "Logement & fiscalité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de la TVA et arrêté royal n° 20 (taux de TVA — taux réduit pour la rénovation d'habitations)",
+    "portee": "Conditions du taux de TVA réduit à 6 % sur les travaux de rénovation de logements",
+    "source_officielle": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les conditions et l'âge minimal du logement peuvent évoluer ; vérifiez sur le SPF Finances et faites établir une attestation par l'entrepreneur.",
+  "faits": [
+    {
+      "id": "TVA6-PRINCIPE-001",
+      "question": "Quels travaux peuvent bénéficier de la TVA à 6 % ?",
+      "reponse": "Le taux normal de TVA est de 21 %, mais les travaux de RÉNOVATION d'un logement privé peuvent bénéficier d'un taux réduit à 6 % à plusieurs conditions cumulatives : le logement doit être suffisamment ancien (en principe depuis un certain nombre d'années, vérifiez le seuil en vigueur), il doit être affecté, après les travaux, principalement à l'habitation privée, et les travaux doivent être réalisés et facturés par un entrepreneur enregistré (la TVA réduite ne s'applique pas si vous achetez vous-même les matériaux). Le taux réduit porte sur les travaux immobiliers (main-d'œuvre et matériaux fournis par l'entrepreneur), pas sur certains équipements exclus.",
+      "reference_legale": "Code de la TVA et arrêté royal n° 20 (taux réduit pour la rénovation d'habitations)",
+      "contacts": [
+        {"nom": "SPF Finances", "lien": "https://finances.belgium.be", "pour": "conditions du taux de TVA réduit"},
+        {"nom": "Votre entrepreneur", "pour": "facturation à 6 % et attestation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva", "intitule": "SPF Finances — TVA réduite rénovation"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TVA6-ATTESTATION-001",
+      "question": "Quelles formalités pour appliquer le 6 % ?",
+      "reponse": "C'est l'entrepreneur qui applique le taux de 6 % sur sa facture, mais il doit pouvoir justifier que les conditions sont remplies. En pratique, les éléments attestant que le bien est un logement privé suffisamment ancien sont mentionnés/justifiés (selon la procédure en vigueur, par une mention sur la facture ou une attestation du client). La facture doit être conforme (détail des travaux). Conservez précieusement vos factures : en cas de contrôle, c'est ce qui prouve que le taux réduit était justifié. Si l'entrepreneur applique 21 % alors que vous remplissez les conditions, discutez-en avant la facturation.",
+      "reference_legale": "Arrêté royal n° 20 (conditions et justificatifs du taux réduit de TVA pour la rénovation)",
+      "contacts": [
+        {"nom": "Votre entrepreneur enregistré", "pour": "application et justification du 6 %"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva", "intitule": "SPF Finances — Formalités TVA rénovation"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TVA6-DEMOLITION-001",
+      "question": "Et pour la démolition-reconstruction ?",
+      "reponse": "Il existe un régime de TVA réduite spécifique pour la démolition d'un bâtiment suivie de la reconstruction d'un logement, distinct de la simple rénovation. Ce régime est soumis à ses propres conditions (notamment liées à l'usage du logement comme habitation propre et unique, à la surface, et au respect d'engagements pendant une certaine durée) et son champ a évolué dans le temps. Comme les règles changent régulièrement, vérifiez impérativement les conditions en vigueur AVANT de lancer le projet, auprès du SPF Finances et de votre architecte/entrepreneur, pour savoir si vous pouvez en bénéficier.",
+      "reference_legale": "Code de la TVA et arrêté royal n° 20 (régime de TVA réduite pour la démolition-reconstruction de logements)",
+      "alerte_delai": "Vérifiez les conditions AVANT le début des travaux : le régime démolition-reconstruction est conditionnel et a évolué.",
+      "contacts": [
+        {"nom": "SPF Finances", "lien": "https://finances.belgium.be", "pour": "régime démolition-reconstruction"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover", "intitule": "SPF Finances — Construire et rénover (TVA)"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

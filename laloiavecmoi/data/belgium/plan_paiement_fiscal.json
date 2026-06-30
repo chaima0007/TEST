@@ -1,0 +1,59 @@
+{
+  "module": "plan_paiement_fiscal",
+  "titre": "Plan de paiement pour dettes fiscales",
+  "domaine": "Impôts & difficultés de paiement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code des impôts sur les revenus 1992 et réglementation du recouvrement (facilités de paiement) ; service du recouvrement du SPF Finances",
+    "portee": "Étaler le paiement d'un impôt qu'on ne peut pas payer en une fois",
+    "source_officielle": "https://finances.belgium.be/fr/particuliers/paiements-remboursements/difficultes-de-paiement/plan-de-paiement"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les modalités peuvent évoluer ; introduisez la demande tôt via MyMinfin ou le service recouvrement.",
+  "faits": [
+    {
+      "id": "PLANFISC-PRINCIPE-001",
+      "question": "Je ne peux pas payer mon impôt en une fois : ai-je une solution ?",
+      "reponse": "Oui. Si vous ne pouvez pas payer un impôt (impôt des personnes physiques, TVA, précompte…) à l'échéance, vous pouvez demander un plan de paiement au SPF Finances : il vous permet d'étaler la dette en mensualités. Une demande simple peut souvent être introduite en ligne via MyMinfin, et un étalement « standard » sur quelques mois est accordé assez facilement ; pour des durées plus longues ou des situations difficiles, la demande est examinée au cas par cas. Le réflexe essentiel : demander AVANT que la dette ne s'aggrave et ne déclenche des poursuites de recouvrement.",
+      "reference_legale": "Code des impôts sur les revenus 1992 et réglementation du recouvrement (facilités de paiement)",
+      "alerte_delai": "Demandez le plan dès réception de l'avis ou dès que vous savez que vous ne pourrez pas payer à temps.",
+      "contacts": [
+        {"nom": "MyMinfin (SPF Finances)", "lien": "https://finances.belgium.be", "pour": "demander un plan de paiement en ligne"},
+        {"nom": "Centre de recouvrement compétent", "pour": "étalement et situations difficiles"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/paiements-remboursements/difficultes-de-paiement/plan-de-paiement", "intitule": "SPF Finances — Plan de paiement"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PLANFISC-DEMANDE-001",
+      "question": "Comment introduire la demande et que se passe-t-il ensuite ?",
+      "reponse": "La demande s'introduit de préférence via MyMinfin (rubrique paiements / difficultés de paiement) ou par contact avec le service recouvrement indiqué sur votre avertissement-extrait de rôle ; exposez votre situation et la durée d'étalement souhaitée. Si le plan est accepté, vous recevez un échéancier à respecter scrupuleusement : un retard ou un défaut peut entraîner l'annulation du plan et la reprise des poursuites. Pendant le plan, des intérêts de retard peuvent continuer à courir, mais vous évitez les mesures plus lourdes (saisie). Respecter l'échéancier est donc essentiel.",
+      "reference_legale": "Code des impôts sur les revenus 1992 — facilités de paiement (octroi et conditions des plans de paiement par le SPF Finances)",
+      "contacts": [
+        {"nom": "SPF Finances — recouvrement", "lien": "https://finances.belgium.be", "pour": "introduction et suivi du plan"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/paiements-remboursements/difficultes-de-paiement/plan-de-paiement", "intitule": "SPF Finances — Demander un plan de paiement"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PLANFISC-DIFFICULTES-001",
+      "question": "Et si même un plan ne suffit pas ?",
+      "reponse": "Si votre situation financière est gravement compromise, d'autres dispositifs existent au-delà du simple étalement. Dans certains cas, vous pouvez solliciter une surséance indéfinie au recouvrement ou un règlement administratif/judiciaire de la dette fiscale (remises ou réductions exceptionnelles, conditions strictes). Si vos dettes dépassent le seul cadre fiscal, le règlement collectif de dettes (devant le tribunal du travail) peut englober vos dettes, y compris fiscales, et suspendre les poursuites. Faites-vous accompagner par un service de médiation de dettes ou un avocat pour choisir la voie adaptée.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (surséance au recouvrement) ; Code judiciaire — règlement collectif de dettes (art. 1675/2 et suivants)",
+      "contacts": [
+        {"nom": "Service de médiation de dettes / CPAS", "pour": "situation de surendettement global"},
+        {"nom": "SPF Finances — recouvrement", "pour": "surséance ou règlement de la dette fiscale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/paiements-remboursements/difficultes-de-paiement", "intitule": "SPF Finances — Difficultés de paiement"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

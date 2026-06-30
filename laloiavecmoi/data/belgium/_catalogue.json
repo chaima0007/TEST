@@ -2,11 +2,11 @@
   "catalogue": "Base unique — La Loi Avec Moi",
   "genere_le": "2026-06-30",
   "totaux": {
-    "modules": 178,
-    "faits": 741,
-    "sources_officielles": 1104,
-    "faits_avec_contacts": 472,
-    "faits_avec_alerte_delai": 149
+    "modules": 184,
+    "faits": 759,
+    "sources_officielles": 1124,
+    "faits_avec_contacts": 490,
+    "faits_avec_alerte_delai": 153
   },
   "modules": [
     {
@@ -212,6 +212,18 @@
       "faits_avec_contacts": 0,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-29"
+    },
+    {
+      "fichier": "assurance_vie_branche_21_23.json",
+      "module": "assurance_vie_branche_21_23",
+      "titre": "Assurance-vie (épargne/placement) — branche 21 et 23",
+      "domaine": "Épargne & placements",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
     },
     {
       "fichier": "assurances.json",
@@ -474,6 +486,18 @@
       "faits": 4,
       "sources_officielles": 8,
       "faits_avec_contacts": 4,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "clauses_abusives.json",
+      "module": "clauses_abusives",
+      "titre": "Clauses abusives dans les contrats de consommation",
+      "domaine": "Consommation & contrats",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
       "faits_avec_alerte_delai": 0,
       "derniere_revue": "2026-06-30"
     },
@@ -1042,6 +1066,18 @@
       "derniere_revue": "2026-06-29"
     },
     {
+      "fichier": "garantie_locative.json",
+      "module": "garantie_locative",
+      "titre": "Garantie locative & compte bloqué",
+      "domaine": "Logement & location",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "garde_enfants.json",
       "module": "garde_enfants",
       "titre": "Garde d'enfants — crèche & milieux d'accueil",
@@ -1546,6 +1582,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "plan_paiement_fiscal.json",
+      "module": "plan_paiement_fiscal",
+      "titre": "Plan de paiement pour dettes fiscales",
+      "domaine": "Impôts & difficultés de paiement",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "precompte_immobilier.json",
       "module": "precompte_immobilier",
       "titre": "Précompte immobilier",
@@ -1846,6 +1894,18 @@
       "derniere_revue": "2026-06-30"
     },
     {
+      "fichier": "succession_droits_succession.json",
+      "module": "succession_droits_succession",
+      "titre": "Déclaration et droits de succession",
+      "domaine": "Succession & fiscalité",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 4,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 2,
+      "derniere_revue": "2026-06-30"
+    },
+    {
       "fichier": "successions.json",
       "module": "successions",
       "titre": "Successions & héritage — accepter, renoncer, délais",
@@ -2023,6 +2083,18 @@
       "sources_officielles": 6,
       "faits_avec_contacts": 1,
       "faits_avec_alerte_delai": 0,
+      "derniere_revue": "2026-06-30"
+    },
+    {
+      "fichier": "tva_renovation_6.json",
+      "module": "tva_renovation_6",
+      "titre": "TVA réduite à 6 % pour la rénovation",
+      "domaine": "Logement & fiscalité",
+      "juridiction": "BE",
+      "faits": 3,
+      "sources_officielles": 3,
+      "faits_avec_contacts": 3,
+      "faits_avec_alerte_delai": 1,
       "derniere_revue": "2026-06-30"
     },
     {
