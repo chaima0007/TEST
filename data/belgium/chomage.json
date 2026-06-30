@@ -9,7 +9,7 @@
     "portee": "Conditions, demande et maintien des allocations de chômage",
     "source_officielle": "https://www.onem.be/citoyens"
   },
-  "derniere_revue": "2026-06-27",
+  "derniere_revue": "2026-06-30",
   "statut_fiabilite": "verifie",
   "avertissement": "Information générale, à jour à la date de revue. La réglementation du chômage fait l'objet de réformes ; vérifiez votre situation auprès de l'ONEM ou de votre organisme de paiement.",
   "faits": [
@@ -42,6 +42,34 @@
         {"type": "secondaire", "url": "https://www.bruxelles-j.be/droits-sociaux/tes-droits-au-chomage/quelles-sont-les-sanctions-de-lonem/", "intitule": "Bruxelles-J — Les sanctions de l'ONEM"}
       ],
       "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CHOM-LIMITE-TEMPS-001",
+      "question": "Mes allocations de chômage sont-elles limitées dans le temps ?",
+      "reponse": "Oui : la réglementation du chômage a été réformée pour instaurer une limitation du droit aux allocations dans le temps, avec des mesures transitoires. Les personnes qui bénéficiaient déjà d'allocations avant le 1er mars 2026 font l'objet de règles transitoires spécifiques, et les allocations d'insertion (après les études) sont également réformées. Comme les modalités précises (durée, exceptions, calendrier) dépendent de votre situation et continuent d'évoluer, vérifiez impérativement votre cas sur le site de l'ONEM ou auprès de votre organisme de paiement avant toute décision.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (réforme — limitation du droit dans le temps et mesures transitoires)",
+      "alerte_delai": "Réforme en cours avec mesures transitoires liées à la date du 1er mars 2026 : faites vérifier votre situation personnelle par l'ONEM ou votre organisme de paiement.",
+      "contacts": [
+        {"nom": "ONEM", "lien": "https://www.onem.be/citoyens/chomage-complet", "pour": "réforme et limitation du droit dans le temps"},
+        {"nom": "Votre organisme de paiement (syndicat ou CAPAC)", "pour": "impact concret sur votre dossier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens/chomage-complet", "intitule": "ONEM — Chômage complet (réforme : limitation du droit dans le temps)"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CHOM-OBLIGATIONS-001",
+      "question": "Quelles sont mes obligations pour garder mes allocations de chômage ?",
+      "reponse": "Comme chômeur complet indemnisé, vous devez notamment rester disponible sur le marché de l'emploi, chercher activement du travail, répondre aux convocations du service régional de l'emploi (Forem, Actiris, VDAB, ADG) et accepter un emploi convenable. Certaines situations peuvent donner lieu à une dispense (études, formation, rôle d'aidant proche). Le non-respect de ces obligations peut entraîner une sanction de l'ONEM. Si vous contestez une décision de l'ONEM, vous pouvez introduire un recours devant le tribunal du travail.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (obligations du chômeur indemnisé)",
+      "contacts": [
+        {"nom": "ONEM", "lien": "https://www.onem.be/citoyens/chomage-complet", "pour": "obligations pendant le chômage et dispenses"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens/chomage-complet", "intitule": "ONEM — Obligations comme chômeur complet indemnisé"}
+      ],
+      "date_verification": "2026-06-30"
     }
   ]
 }
