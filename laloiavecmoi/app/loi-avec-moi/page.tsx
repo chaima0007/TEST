@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import BanniereLangues from "@/components/BanniereLangues";
+import reperes from "@/data/accueil_reperes.json";
 
 const themes = [
   {
@@ -322,6 +323,74 @@ export default function LoiAvecMoiPage() {
           <Link href="/contact" className="inline-block mt-8 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/30">
             Poser une question
           </Link>
+        </div>
+      </section>
+
+      {/* Repères de confiance : chiffres vérifiés + dernières actus + questions fréquentes */}
+      <section className="px-6 py-14 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-5xl mx-auto">
+          {/* Chiffres vérifiables (pas de promesse creuse) */}
+          <div className="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <div className="text-3xl font-bold text-indigo-700">{reperes.stats.fiches}</div>
+              <div className="text-sm text-slate-500">fiches juridiques</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-indigo-700">{reperes.stats.reponses}</div>
+              <div className="text-sm text-slate-500">réponses claires</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-indigo-700">100&nbsp;%</div>
+              <div className="text-sm text-slate-500">sources officielles</div>
+            </div>
+          </div>
+
+          <div className="mt-10 grid md:grid-cols-2 gap-8">
+            {/* Dernières actualités */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-lg font-bold">Actualités juridiques</h2>
+                <Link href="/loi-avec-moi/actualites" className="text-sm text-indigo-700 hover:text-indigo-900 font-medium">Tout voir →</Link>
+              </div>
+              <ul className="space-y-2">
+                {reperes.actus.map((a, i) => (
+                  <li key={i}>
+                    <Link
+                      href={a.module ? `/loi/${a.module}` : "/loi-avec-moi/actualites"}
+                      className="block rounded-xl border border-slate-200 bg-white p-3 hover:border-indigo-300 transition"
+                    >
+                      <p className="font-medium text-slate-900 text-sm">{a.titre}</p>
+                      {a.detail && <p className="text-xs text-slate-500 mt-0.5">{a.detail}</p>}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Questions fréquentes */}
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-lg font-bold">Questions fréquentes</h2>
+                <Link href="/loi-avec-moi/communaute" className="text-sm text-indigo-700 hover:text-indigo-900 font-medium">La communauté →</Link>
+              </div>
+              <ul className="space-y-2">
+                {reperes.questions.slice(0, 6).map((q, i) => (
+                  <li key={i}>
+                    <Link
+                      href={`/loi/${q.module}${q.fait_id ? `#${q.fait_id}` : ""}`}
+                      className="block rounded-xl border border-slate-200 bg-white px-3 py-2 hover:border-indigo-300 transition text-sm text-slate-800"
+                    >
+                      {q.question}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="mt-8 text-center text-xs text-slate-400">
+            Chaque réponse est datée et renvoie à sa source officielle. Aucune donnée personnelle requise.
+          </p>
         </div>
       </section>
 

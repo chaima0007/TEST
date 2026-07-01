@@ -1,0 +1,75 @@
+{
+  "stats": {
+    "fiches": 184,
+    "reponses": 759,
+    "sources_officielles": 1124
+  },
+  "actus": [
+    {
+      "titre": "Fiche vérifiée : Voyages à forfait — annulation & remboursement",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "module": "voyages"
+    },
+    {
+      "titre": "Fiche vérifiée : Voyage d'un mineur — Kids-ID & autorisation parentale",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "module": "voyage_mineur"
+    },
+    {
+      "titre": "Fiche vérifiée : Acheter une voiture d'occasion",
+      "detail": "Fiche re-sourcée et vérifiée le 2026-06-30 (sources officielles).",
+      "module": "voiture_occasion"
+    }
+  ],
+  "questions": [
+    {
+      "question": "J'ai eu un accident au travail (ou sur le chemin) : que faire ?",
+      "domaine": "Risques professionnels",
+      "module": "accident_travail",
+      "fait_id": "ACCT-DECLARER-001"
+    },
+    {
+      "question": "Le compromis de vente, est-ce déjà un engagement définitif ?",
+      "domaine": "Achat immobilier",
+      "module": "achat_logement",
+      "fait_id": "ACHAT-COMPROMIS-001"
+    },
+    {
+      "question": "Quelle différence entre adoption simple et adoption plénière ?",
+      "domaine": "Adoption",
+      "module": "adoption",
+      "fait_id": "ADOPT-FORMES-001"
+    },
+    {
+      "question": "Je n'ai plus de logement : à quoi sert une adresse de référence ?",
+      "domaine": "Sans-abri & domiciliation",
+      "module": "adresse_reference",
+      "fait_id": "ADRREF-DROIT-001"
+    },
+    {
+      "question": "Qu'est-ce qu'un aidant proche et comment être reconnu ?",
+      "domaine": "Aidants proches",
+      "module": "aidants_proches",
+      "fait_id": "AID-RECONNAISSANCE-001"
+    },
+    {
+      "question": "Je n'ai pas les moyens de payer un avocat. Puis-je en avoir un gratuitement ?",
+      "domaine": "Accès à la justice",
+      "module": "aide_juridique",
+      "fait_id": "AJ-PRODEO-001"
+    },
+    {
+      "question": "J'ai faim / je n'ai plus de quoi manger : où aller ?",
+      "domaine": "Aide sociale & urgence",
+      "module": "aide_urgence",
+      "fait_id": "URG-FAIM-001"
+    },
+    {
+      "question": "Qu'est-ce que l'allocation pour l'aide aux personnes âgées (APA) et qui peut l'obtenir ?",
+      "domaine": "Allocation pour l'aide aux personnes âgées",
+      "module": "allocation_aide_personnes_agees",
+      "fait_id": "APA-PRINCIPE-001"
+    }
+  ],
+  "note": "Repères générés depuis le corpus réel (chiffres vérifiés, 100 % sources officielles)."
+}
