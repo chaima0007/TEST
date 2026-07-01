@@ -121,6 +121,105 @@ const MODELES: Modele[] = [
       `d'une date d'état des lieux de sortie.\n\n` +
       `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
   },
+  {
+    id: "mise_en_demeure",
+    titre: "Mise en demeure (réclamer une somme due)",
+    intro: "Pour réclamer formellement, par écrit, une somme qui vous est due, avant toute action.",
+    base_legale: "Code civil — obligations (mise en demeure préalable du débiteur)",
+    fiche: "recouvrement_amiable",
+    champs: [
+      { key: "nom", label: "Votre nom" },
+      { key: "adresse", label: "Votre adresse" },
+      { key: "destinataire", label: "Nom du débiteur" },
+      { key: "adresse_dest", label: "Adresse du débiteur" },
+      { key: "date", label: "Date" },
+      { key: "montant", label: "Montant dû (€)" },
+      { key: "motif", label: "Motif de la créance", aire: true },
+      { key: "delai", label: "Délai accordé (ex. 15 jours)" },
+    ],
+    corps: (v) =>
+      exp(v) + dest(v) +
+      `Objet : Mise en demeure de payer\n\nMadame, Monsieur,\n\n` +
+      `Sauf erreur de ma part, vous restez me devoir la somme de ${v.montant || "[montant]"} €, au titre de : ` +
+      `${v.motif || "[motif de la créance]"}.\n\n` +
+      `Par la présente, je vous mets en demeure de me régler cette somme dans un délai de ${v.delai || "[délai]"} ` +
+      `à compter de la réception de ce courrier.\n\n` +
+      `À défaut de paiement dans ce délai, je me réserve le droit de recouvrer ma créance par toutes voies de droit, ` +
+      `des intérêts de retard pouvant en outre être réclamés.\n\n` +
+      `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
+  },
+  {
+    id: "contestation_amende",
+    titre: "Contester une amende de circulation",
+    intro: "Pour contester par écrit une amende de roulage que vous estimez injustifiée.",
+    base_legale: "Loi relative à la police de la circulation routière (contestation d'une infraction / perception immédiate)",
+    fiche: "infractions_routieres",
+    champs: [
+      { key: "nom", label: "Votre nom" },
+      { key: "adresse", label: "Votre adresse" },
+      { key: "destinataire", label: "Autorité destinataire (parquet / service)" },
+      { key: "adresse_dest", label: "Adresse de l'autorité" },
+      { key: "date", label: "Date" },
+      { key: "reference", label: "Référence du PV / dossier" },
+      { key: "motif", label: "Motif de la contestation", aire: true },
+    ],
+    corps: (v) =>
+      exp(v) + dest(v) +
+      `Objet : Contestation — dossier / PV n° ${v.reference || "[référence]"}\n\nMadame, Monsieur,\n\n` +
+      `Je conteste l'infraction qui m'est reprochée dans le dossier référencé ci-dessus, pour le motif suivant :\n` +
+      `${v.motif || "[expliquez précisément : erreur d'identification, circonstances, preuves…]"}\n\n` +
+      `Je joins les éléments justificatifs utiles et vous demande de réexaminer ma situation. Je reste à votre disposition ` +
+      `pour tout complément.\n\n` +
+      `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
+  },
+  {
+    id: "plan_paiement",
+    titre: "Demande de plan de paiement (SPF Finances)",
+    intro: "Pour demander à étaler le paiement d'un impôt que vous ne pouvez pas régler en une fois.",
+    base_legale: "Code des impôts sur les revenus 1992 — facilités de paiement (SPF Finances)",
+    fiche: "plan_paiement_fiscal",
+    champs: [
+      { key: "nom", label: "Votre nom" },
+      { key: "adresse", label: "Votre adresse" },
+      { key: "date", label: "Date" },
+      { key: "reference", label: "Référence de l'avertissement-extrait de rôle" },
+      { key: "montant", label: "Montant dû (€)" },
+      { key: "proposition", label: "Étalement souhaité (ex. 6 mensualités)" },
+    ],
+    corps: (v) =>
+      exp(v) +
+      `Au Service de recouvrement du SPF Finances\n\nLe ${v.date || "[date]"}\n\n` +
+      `Objet : Demande de plan de paiement — dossier ${v.reference || "[référence]"}\n\nMadame, Monsieur,\n\n` +
+      `Je ne suis pas en mesure de m'acquitter en une fois de la somme de ${v.montant || "[montant]"} € figurant sur ` +
+      `l'avertissement-extrait de rôle référencé ci-dessus.\n\n` +
+      `Je sollicite un plan de paiement me permettant d'étaler cette dette, selon la proposition suivante : ` +
+      `${v.proposition || "[ex. 6 mensualités égales]"}.\n\n` +
+      `Je m'engage à respecter scrupuleusement l'échéancier accordé. Je vous remercie de l'attention portée à ma demande.\n\n` +
+      `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
+  },
+  {
+    id: "rgpd_acces",
+    titre: "Demande d'accès et de rectification (RGPD)",
+    intro: "Pour savoir quelles données une organisation détient sur vous, et les faire corriger.",
+    base_legale: "Règlement (UE) 2016/679 (RGPD) — droit d'accès (art. 15) et de rectification (art. 16)",
+    fiche: "vie_privee_rgpd",
+    champs: [
+      { key: "nom", label: "Votre nom" },
+      { key: "adresse", label: "Votre adresse" },
+      { key: "destinataire", label: "Organisation destinataire" },
+      { key: "adresse_dest", label: "Adresse de l'organisation" },
+      { key: "date", label: "Date" },
+    ],
+    corps: (v) =>
+      exp(v) + dest(v) +
+      `Objet : Demande d'accès et de rectification de mes données personnelles (RGPD)\n\nMadame, Monsieur,\n\n` +
+      `Sur la base des articles 15 et 16 du RGPD, je vous demande :\n` +
+      `- de me communiquer les données personnelles que vous détenez à mon sujet, les finalités du traitement et ` +
+      `les destinataires de ces données ;\n` +
+      `- de rectifier toute donnée inexacte ou incomplète me concernant.\n\n` +
+      `Vous disposez en principe d'un délai d'un mois pour répondre. À défaut, je pourrai saisir l'Autorité de protection des données.\n\n` +
+      `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
+  },
 ];
 
 export default function LettresPage() {
