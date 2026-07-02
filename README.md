@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Module Prospection
+
+CompeteIQ embarque un pipeline d'agents (Orchestrateur → Scout → Qualifier →
+Copywriter → Sequencer → Mailer) qui détecte via Google Places des entreprises
+locales sans site internet et leur propose la création d'un site par email
+(séquence 4 étapes, quota quotidien, dry-run par défaut). Dashboard :
+`/dashboard/outreach` — CLI : `npm run outreach:discover|run|send`.
+
+Documentation complète : [OUTREACH.md](./OUTREACH.md)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

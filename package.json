@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "db:seed": "npx tsx prisma/seed.ts",
-    "db:push": "npx prisma db push"
+    "db:push": "npx prisma db push",
+    "outreach:discover": "tsx scripts/outreach.ts discover",
+    "outreach:run": "tsx scripts/outreach.ts run",
+    "outreach:send": "tsx scripts/outreach.ts run --live"
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",
