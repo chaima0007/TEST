@@ -31,15 +31,8 @@ const editions = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-blue-950 to-slate-900 text-white">
-        <div
-          className="absolute inset-0 opacity-40"
-          style={{
-            background:
-              "radial-gradient(60% 60% at 50% 0%, rgba(30,58,138,0.45) 0%, rgba(15,23,42,0) 70%)",
-          }}
-        />
+      {/* Hero « encre et lampe » */}
+      <section className="relative overflow-hidden hero-encre text-white">
         <div className="relative max-w-3xl mx-auto px-6 py-24 text-center">
           {/* Logo */}
           <div className="flex justify-center mb-8">
@@ -50,20 +43,22 @@ export default function Home() {
               height={84}
             />
           </div>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight">
+          <p className="eyebrow text-[#d6b87c]">Information juridique · gratuite · sourcée</p>
+          <h1 className="mt-4 text-4xl sm:text-6xl tracking-tight leading-tight">
             La Loi Avec Moi
           </h1>
-          <p className="mt-4 text-lg sm:text-xl font-semibold tracking-wide text-blue-200">
-            Le droit accessible pour tous.
+          <div className="filet-or mx-auto mt-6" />
+          <p className="mt-6 text-lg sm:text-xl text-slate-200">
+            Le droit accessible <em className="text-[#e7c56e]">pour tous</em>.
           </p>
-          <p className="mt-6 text-lg text-slate-300 leading-relaxed">
+          <p className="mt-5 text-lg text-slate-300 leading-relaxed">
             Comprenez vos droits en langage clair, <strong className="text-white">gratuitement</strong>,
             à partir des sources officielles. Choisissez votre espace ci-dessous.
           </p>
           <div className="mt-8">
             <Link
               href="/loi-avec-moi/bienvenue"
-              className="inline-flex items-center gap-2 bg-white text-blue-900 hover:bg-slate-100 font-semibold px-6 py-3.5 rounded-xl transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 bg-white text-[#1b2432] hover:bg-[#fbf8f2] font-semibold px-6 py-3.5 rounded-lg transition-colors shadow-lg"
             >
               🌍 Accueil multilingue — Welcome · مرحبا →
             </Link>

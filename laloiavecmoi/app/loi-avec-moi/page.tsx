@@ -312,26 +312,26 @@ export default function LoiAvecMoiPage() {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900 text-white py-24 px-6">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(79,70,229,0.25),transparent_60%)]" />
+      <section className="relative overflow-hidden hero-encre text-white py-24 px-6">
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 text-sm font-medium mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-[#d6b87c]/30 text-slate-200 text-sm font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            La Loi Avec Moi · gratuit
+            Gratuit · indépendant · sans publicité
           </span>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl tracking-tight leading-tight">
             Vos droits et obligations,
-            <span className="block bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">enfin expliqués simplement</span>
+            <span className="block"><em className="text-[#e7c56e]">enfin</em> expliqués simplement</span>
           </h1>
-          <p className="mt-4 text-base sm:text-lg font-semibold tracking-wide text-indigo-200">
+          <div className="filet-or mx-auto mt-6" />
+          <p className="mt-6 text-base sm:text-lg tracking-wide text-slate-200">
             Le droit accessible pour tous.
           </p>
-          <p className="text-lg text-slate-300 mt-6 leading-relaxed">
+          <p className="text-lg text-slate-300 mt-4 leading-relaxed">
             Comprendre la loi belge ne devrait pas demander un avocat à chaque question.
             On vous explique vos droits <strong className="text-white">en langage clair</strong>, à partir des
             sources officielles — gratuitement.
           </p>
-          <Link href="/contact" className="inline-block mt-8 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/30">
+          <Link href="/contact" className="inline-block mt-8 bg-[#b08d3e] hover:bg-[#9a7a33] text-white font-semibold px-8 py-3.5 rounded-lg transition-colors shadow-lg shadow-black/30">
             Poser une question
           </Link>
         </div>
