@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T21:18:12.403874",
+  "timestamp": "2026-07-02T08:53:02.327601",
   "overall": "OK",
   "agents": [
     {
@@ -40,8 +40,8 @@
   ],
   "monte_carlo": {
     "simulations": 100000,
-    "failures": 4955,
-    "risk_pct": 4.96,
-    "confidence": 95.05
+    "failures": 4996,
+    "risk_pct": 5.0,
+    "confidence": 95.0
   }
 }

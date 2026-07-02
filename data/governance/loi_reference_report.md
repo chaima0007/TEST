@@ -1,6 +1,6 @@
 # ⚖️ Audit des références légales
 
-*Généré le 2026-06-30. Chaque réponse doit citer une loi écrite et en vigueur.*
+*Généré le 2026-07-02. Chaque réponse doit citer une loi écrite et en vigueur.*
 
 **759 réponses · 759 citent un instrument légal concret (100%) · 556 avec article/année.**
 
