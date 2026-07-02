@@ -220,6 +220,83 @@ const MODELES: Modele[] = [
       `Vous disposez en principe d'un délai d'un mois pour répondre. À défaut, je pourrai saisir l'Autorité de protection des données.\n\n` +
       `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
   },
+  {
+    id: "harcelement_ecole",
+    titre: "Signaler un harcèlement scolaire à l'école",
+    intro: "Pour signaler officiellement à la direction que votre enfant est harcelé, et demander des mesures.",
+    base_legale: "Code pénal, art. 442bis (harcèlement) — signalement à l'école et demande de mesures de protection",
+    fiche: "harcelement_violences",
+    champs: [
+      { key: "nom", label: "Votre nom (parent)" },
+      { key: "adresse", label: "Votre adresse" },
+      { key: "destinataire", label: "Direction de l'école" },
+      { key: "adresse_dest", label: "Adresse de l'école" },
+      { key: "date", label: "Date" },
+      { key: "enfant", label: "Nom et classe de l'enfant" },
+      { key: "faits", label: "Les faits (dates, lieux, auteurs si connus)", aire: true },
+    ],
+    corps: (v) =>
+      exp(v) + dest(v) +
+      `Objet : Signalement de faits de harcèlement — ${v.enfant || "[nom et classe de l'enfant]"}\n\nMadame, Monsieur,\n\n` +
+      `Je vous informe officiellement que mon enfant, ${v.enfant || "[nom et classe]"}, subit des faits de harcèlement :\n` +
+      `${v.faits || "[décrivez précisément : dates, lieux, faits, auteurs si connus]"}\n\n` +
+      `Je vous rappelle que le harcèlement est une infraction (article 442bis du Code pénal) et je vous demande :\n` +
+      `- de mettre en place sans délai des mesures pour protéger mon enfant ;\n` +
+      `- d'associer le centre PMS au suivi ;\n` +
+      `- de me recevoir rapidement pour convenir ensemble d'un plan d'action.\n\n` +
+      `Je conserve une copie de ce courrier. Sans réaction de l'école, je me réserve le droit de saisir les services compétents.\n\n` +
+      `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
+  },
+  {
+    id: "harcelement_travail",
+    titre: "Harcèlement au travail — demande d'intervention psychosociale",
+    intro: "Pour saisir, en toute confidentialité, la personne de confiance ou le conseiller en prévention.",
+    base_legale: "Loi du 4 août 1996 relative au bien-être des travailleurs — demande d'intervention psychosociale",
+    fiche: "harcelement_violences",
+    champs: [
+      { key: "nom", label: "Votre nom" },
+      { key: "adresse", label: "Votre adresse" },
+      { key: "destinataire", label: "Personne de confiance / conseiller en prévention" },
+      { key: "adresse_dest", label: "Adresse (service de prévention)" },
+      { key: "date", label: "Date" },
+      { key: "faits", label: "Les faits (dates, comportements, témoins éventuels)", aire: true },
+    ],
+    corps: (v) =>
+      exp(v) + dest(v) +
+      `Objet : Demande d'intervention psychosociale (risques psychosociaux au travail)\n\nMadame, Monsieur,\n\n` +
+      `Sur la base de la loi du 4 août 1996 relative au bien-être des travailleurs, je sollicite une intervention ` +
+      `psychosociale concernant les faits suivants, que je subis dans le cadre de mon travail :\n` +
+      `${v.faits || "[décrivez : dates, comportements, personnes concernées, témoins éventuels]"}\n\n` +
+      `Je vous demande de me recevoir en entretien confidentiel afin d'examiner ensemble la suite à donner ` +
+      `(intervention informelle ou formelle).\n\n` +
+      `Je vous remercie de la confidentialité réservée à cette demande.\n\n` +
+      `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
+  },
+  {
+    id: "cyberharcelement",
+    titre: "Cyberharcèlement — signalement et demande de retrait",
+    intro: "Pour exiger d'une plateforme le retrait de contenus de harcèlement, en gardant les preuves.",
+    base_legale: "Code pénal, art. 442bis (harcèlement, y compris en ligne) — signalement et conservation des preuves",
+    fiche: "harcelement_violences",
+    champs: [
+      { key: "nom", label: "Votre nom" },
+      { key: "date", label: "Date" },
+      { key: "plateforme", label: "Plateforme / site concerné" },
+      { key: "liens", label: "Liens (URL) des contenus concernés", aire: true },
+      { key: "faits", label: "Description des faits", aire: true },
+    ],
+    corps: (v) =>
+      exp(v) +
+      `À : ${v.plateforme || "[plateforme / site]"} — service de signalement\n\nLe ${v.date || "[date]"}\n\n` +
+      `Objet : Signalement de cyberharcèlement et demande de retrait de contenus\n\nMadame, Monsieur,\n\n` +
+      `Je vous signale des contenus constitutifs de harcèlement à mon encontre (infraction visée à l'article 442bis ` +
+      `du Code pénal belge) :\n${v.faits || "[décrivez les faits]"}\n\n` +
+      `Contenus concernés :\n${v.liens || "[collez les liens exacts]"}\n\n` +
+      `Je vous demande le retrait de ces contenus et la conservation des données utiles à l'identification de leur auteur, ` +
+      `dans la perspective d'une plainte.\n\n` +
+      `J'ai conservé des captures d'écran datées de l'ensemble de ces contenus.\n\n` +
+      `Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.\n\n${v.nom || "[Votre nom]"}`,
+  },
 ];
 
 export default function LettresPage() {

@@ -4,6 +4,22 @@
   "date": "2026-06-26",
   "textes": [
     {
+      "cle": "constitution",
+      "nom": "La Constitution belge",
+      "niveau": "Fédéral",
+      "url": "https://www.ejustice.just.fgov.be/eli/constitution/1994/02/17/1994021048/justel",
+      "articles_cles": [
+        "8-32 — Titre II : les droits et libertés des Belges",
+        "10-11 — égalité et non-discrimination",
+        "19 — liberté d'expression",
+        "22 — respect de la vie privée",
+        "23 — droit à une vie conforme à la dignité humaine",
+        "24 — liberté d'enseignement"
+      ],
+      "annee": 1994,
+      "contexte": "Texte fondateur de l'État belge (1831, coordonnée en 1994) : c'est la norme suprême — toutes les autres lois doivent la respecter. Son Titre II liste les droits fondamentaux avec lesquels chaque citoyen peut se défendre."
+    },
+    {
       "cle": "code_penal",
       "nom": "Code pénal",
       "niveau": "Fédéral",
@@ -84,6 +100,19 @@
       ],
       "annee": 2018,
       "contexte": "Décret flamand de 2018 : la Flandre fixe ses propres règles de bail après la régionalisation de la matière."
+    },
+    {
+      "cle": "rgpd",
+      "nom": "Règlement (UE) 2016/679 — RGPD",
+      "niveau": "Union européenne",
+      "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016R0679",
+      "articles_cles": [
+        "15 — droit d'accès à ses données",
+        "16 — droit de rectification",
+        "17 — droit à l'effacement (« droit à l'oubli »)"
+      ],
+      "annee": 2016,
+      "contexte": "Adopté en 2016 pour protéger les données personnelles à l'ère du numérique et unifier les règles dans toute l'Union européenne. Il donne à chacun le contrôle sur ses propres données."
     }
   ]
 }

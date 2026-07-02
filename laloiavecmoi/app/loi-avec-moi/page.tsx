@@ -268,6 +268,17 @@ const themes = [
       </svg>
     ),
   },
+  {
+    t: "Les textes de loi officiels",
+    d: "La Constitution, les codes, les décrets : lisez les textes originaux à la source, avec leur année, leur histoire et leurs articles clés.",
+    href: "/loi-avec-moi/textes-de-loi",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path d="M5 4h9a3 3 0 013 3v13H8a3 3 0 01-3-3V4z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M17 20a2 2 0 002-2V7M8 8h5M8 11.5h5M8 15h3" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 const sources = [

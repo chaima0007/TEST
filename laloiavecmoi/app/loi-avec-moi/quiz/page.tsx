@@ -3,11 +3,26 @@
 import Link from "next/link";
 import { useState } from "react";
 import AgentAvocat from "@/components/AgentAvocat";
+import textesData from "@/data/belgium/_textes_legaux.json";
 
 // Quiz « Connais-tu tes droits ? » (Belgique).
 // Chaque question est adossée à une fiche du site, elle-même sourcée
-// sur des références officielles. But : éducatif, honnête, et qui
-// renvoie vers la bonne page pour approfondir.
+// sur des références officielles. En plus : le TEXTE DE LOI derrière chaque
+// droit (année, pourquoi il a été créé, lien vers le texte officiel original),
+// tiré du registre vérifié data/belgium/_textes_legaux.json.
+
+type TexteLoi = {
+  cle: string;
+  nom: string;
+  niveau: string;
+  url: string;
+  annee: number;
+  contexte: string;
+};
+
+const TEXTES: Record<string, TexteLoi> = Object.fromEntries(
+  (textesData.textes as TexteLoi[]).map((t) => [t.cle, t]),
+);
 
 type Question = {
   q: string;
@@ -15,6 +30,7 @@ type Question = {
   correct: number;
   explication: string;
   fiche: { href: string; label: string };
+  texte?: string; // clé du texte de loi dans le registre
 };
 
 const questions: Question[] = [
@@ -25,6 +41,7 @@ const questions: Question[] = [
     explication:
       "Pour un achat à distance, vous disposez en principe de 14 jours pour vous rétracter sans devoir vous justifier. Attention : certains achats (sur mesure, contenus numériques téléchargés…) en sont exclus.",
     fiche: { href: "/loi-avec-moi/consommation", label: "Fiche Consommation & achats" },
+    texte: "code_droit_economique",
   },
   {
     q: "Un appareil neuf acheté en magasin tombe en panne après 8 mois. Êtes-vous couvert·e ?",
@@ -37,6 +54,7 @@ const questions: Question[] = [
     explication:
       "Une garantie légale de 2 ans s'applique sur un produit neuf acheté par un consommateur auprès d'une entreprise dans l'UE. C'est un droit gratuit, qui s'ajoute à toute garantie commerciale payante.",
     fiche: { href: "/loi-avec-moi/consommation", label: "Fiche Consommation & achats" },
+    texte: "code_droit_economique",
   },
   {
     q: "Conflit avec un voisin. Quelle démarche est GRATUITE et peut donner un accord ayant la valeur d'un jugement ?",
@@ -49,6 +67,7 @@ const questions: Question[] = [
     explication:
       "La conciliation devant le juge de paix est gratuite et facultative. Si un accord est trouvé, le procès-verbal a la valeur d'un jugement. C'est souvent la meilleure première étape pour un conflit de voisinage.",
     fiche: { href: "/loi-avec-moi/voisinage", label: "Fiche Conflits de voisinage" },
+    texte: "code_judiciaire",
   },
   {
     q: "Vous êtes au chômage et on vous propose un petit boulot ponctuel. Que devez-vous faire ?",
@@ -109,6 +128,90 @@ const questions: Question[] = [
     explication:
       "Le RGPD vous donne le droit d'accéder à vos données, de les corriger, et souvent de les faire effacer. En cas de blocage, vous pouvez porter plainte gratuitement auprès de l'Autorité de protection des données (APD).",
     fiche: { href: "/loi-avec-moi/famille", label: "Fiche Famille & vie privée (RGPD)" },
+    texte: "rgpd",
+  },
+  {
+    q: "Quel texte est « au-dessus » de toutes les autres lois belges ?",
+    options: ["Le Code civil", "La Constitution", "Le Code pénal"],
+    correct: 1,
+    explication:
+      "La Constitution est la norme suprême de la Belgique : toutes les autres lois doivent la respecter. Son Titre II (articles 8 à 32) liste vos droits fondamentaux — égalité, vie privée, liberté d'expression…",
+    fiche: { href: "/loi/constitution_droits_fondamentaux", label: "Fiche Constitution & droits fondamentaux" },
+    texte: "constitution",
+  },
+  {
+    q: "L'accès à l'école peut-il être payant pour un enfant en obligation scolaire ?",
+    options: [
+      "Oui, chaque école fixe son prix",
+      "Non : la Constitution garantit l'accès gratuit jusqu'à la fin de l'obligation scolaire",
+      "Seulement dans l'enseignement communal",
+    ],
+    correct: 1,
+    explication:
+      "L'article 24 de la Constitution garantit que l'accès à l'enseignement est gratuit jusqu'à la fin de l'obligation scolaire. Certains frais limités existent, mais l'accès lui-même ne peut pas se vendre.",
+    fiche: { href: "/loi/constitution_droits_fondamentaux", label: "Fiche Constitution & droits fondamentaux" },
+    texte: "constitution",
+  },
+  {
+    q: "Harceler quelqu'un (en vrai ou en ligne), est-ce puni par la loi ?",
+    options: [
+      "Non, sauf s'il y a des coups",
+      "Oui : le harcèlement est une infraction pénale",
+      "Seulement entre adultes",
+    ],
+    correct: 1,
+    explication:
+      "Oui. Le harcèlement est une infraction (article 442bis du Code pénal) — y compris le cyberharcèlement. On peut porter plainte, et les mineurs ont des aides dédiées (103 Écoute-Enfants, Child Focus 116 000).",
+    fiche: { href: "/loi/harcelement_violences", label: "Fiche Harcèlement & violences" },
+    texte: "code_penal",
+  },
+  {
+    q: "Vous êtes harcelé·e au travail. Quelle personne est spécialement prévue, en interne, pour vous aider en confiance ?",
+    options: [
+      "Le comptable de l'entreprise",
+      "La personne de confiance ou le conseiller en prévention",
+      "Personne : il faut aller directement au tribunal",
+    ],
+    correct: 1,
+    explication:
+      "La loi sur le bien-être au travail impose un dispositif contre les risques psychosociaux : vous pouvez saisir, en toute confidentialité, la personne de confiance ou le conseiller en prévention aspects psychosociaux — sans passer d'abord par un tribunal.",
+    fiche: { href: "/loi/harcelement_violences", label: "Fiche Harcèlement & violences" },
+    texte: "bien_etre_travail",
+  },
+  {
+    q: "Vos dettes sont devenues impossibles à rembourser. Existe-t-il une procédure pour repartir ?",
+    options: [
+      "Non, les dettes durent toute la vie",
+      "Oui : le règlement collectif de dettes, devant le tribunal du travail",
+      "Oui, mais uniquement pour les entreprises",
+    ],
+    correct: 1,
+    explication:
+      "Le règlement collectif de dettes (Code judiciaire, art. 1675/2 et suivants) permet à une personne surendettée d'obtenir un plan encadré par un médiateur de dettes — et de repartir sur des bases saines. Les poursuites sont suspendues pendant la procédure.",
+    fiche: { href: "/loi/surendettement_reglement_collectif_dettes", label: "Fiche Surendettement" },
+    texte: "code_judiciaire",
+  },
+  {
+    q: "Vous n'avez pas les moyens de payer un avocat. Que prévoit la loi ?",
+    options: [
+      "Rien : pas d'argent, pas d'avocat",
+      "L'aide juridique (« pro deo ») : un avocat gratuit ou presque, selon vos revenus",
+      "Un avocat gratuit, mais uniquement au pénal",
+    ],
+    correct: 1,
+    explication:
+      "L'aide juridique de deuxième ligne (Code judiciaire, art. 508/1 et suivants) donne droit à un avocat entièrement ou partiellement gratuit selon vos revenus — dans toutes les matières, pas seulement au pénal.",
+    fiche: { href: "/loi-avec-moi/trouver-un-avocat", label: "Trouver le bon avocat (et le pro deo)" },
+    texte: "code_judiciaire",
+  },
+  {
+    q: "Votre bailleur demande une garantie locative sur un compte bloqué. Quel est le maximum légal ?",
+    options: ["1 mois de loyer", "2 mois de loyer", "6 mois de loyer"],
+    correct: 1,
+    explication:
+      "Pour une garantie versée sur un compte individualisé bloqué à votre nom, le plafond est de 2 mois de loyer. L'argent reste à votre nom : le bailleur ne peut pas le garder « en liquide ».",
+    fiche: { href: "/loi/garantie_locative", label: "Fiche Garantie locative" },
+    texte: "decret_wallon_bail",
   },
 ];
 
@@ -191,11 +294,12 @@ export default function QuizPage() {
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 text-sm font-medium mb-6">
             🧠 Quiz · Connais-tu tes droits ?
           </span>
-          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Testez vos droits en 8 questions</h1>
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">Testez vos droits en {questions.length} questions</h1>
           <p className="text-lg text-slate-300 mt-5 leading-relaxed">
-            Des situations de tous les jours en Belgique. Chaque réponse est expliquée et renvoie vers une fiche
-            <strong className="text-white"> sourcée officiellement</strong>. Aucun piège méchant — juste de quoi
-            apprendre.
+            Des situations de tous les jours en Belgique. Chaque réponse est expliquée, renvoie vers une fiche
+            <strong className="text-white"> sourcée officiellement</strong> — et vous montre le
+            <strong className="text-white"> texte de loi</strong> derrière : son année, pourquoi il a été créé,
+            et le lien pour le lire en version originale.
           </p>
         </div>
       </section>
@@ -258,6 +362,30 @@ export default function QuizPage() {
                 >
                   📄 {question.fiche.label} →
                 </Link>
+
+                {/* Le texte de loi derrière ce droit : année, pourquoi, accès à l'original */}
+                {question.texte && TEXTES[question.texte] && (
+                  <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-4">
+                    <p className="text-xs font-bold uppercase tracking-wide text-amber-800">
+                      📜 Le texte de loi derrière ce droit
+                    </p>
+                    <p className="mt-1.5 text-sm font-semibold text-amber-900">
+                      {TEXTES[question.texte].nom}{" "}
+                      <span className="font-normal text-amber-700">· depuis {TEXTES[question.texte].annee}</span>
+                    </p>
+                    <p className="mt-1 text-xs text-amber-800 leading-relaxed">
+                      {TEXTES[question.texte].contexte}
+                    </p>
+                    <a
+                      href={TEXTES[question.texte].url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-amber-900 underline hover:text-amber-700"
+                    >
+                      Lire le texte officiel original ↗
+                    </a>
+                  </div>
+                )}
               </div>
             )}
 
