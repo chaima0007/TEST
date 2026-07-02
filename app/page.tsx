@@ -162,33 +162,59 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl anim-fade-up">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 text-sm font-medium mb-8">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            Studio web &amp; data — Bruxelles
+            Conformité des entreprises — Belgique
           </span>
 
           <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.1]">
-            Des outils digitaux
+            Votre entreprise est-elle
             <span className="block bg-gradient-to-r from-indigo-300 to-sky-300 bg-clip-text text-transparent">
-              qui font avancer votre activité
+              aux normes 2026&nbsp;?
             </span>
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-300 mt-6 max-w-2xl mx-auto leading-relaxed">
-            Sites web, tableaux de bord et automatisations sur-mesure.
-            <span className="block mt-2 text-white font-medium">La qualité d&apos;une agence, au prix d&apos;un freelance bruxellois.</span>
+            Facturation électronique, NIS2, RGPD, lanceurs d&apos;alerte… 17 obligations arrivent, avec de vraies sanctions.
+            <span className="block mt-2 text-white font-medium">En 3 minutes, découvrez celles qui vous concernent — et exactement quoi faire.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-            <Link href="/contact"
+            <Link href="/conformite-2026"
               className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-indigo-600/20">
-              Démarrer un projet
+              ✓ Diagnostic gratuit — 3 questions
             </Link>
-            <a href="#services"
+            <Link href="/tarifs"
               className="w-full sm:w-auto bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors">
-              Voir nos services
-            </a>
+              Voir les offres
+            </Link>
           </div>
 
-          <p className="text-slate-400 text-sm mt-6">Réponse sous 24h · Premier échange sans engagement</p>
+          <p className="text-slate-400 text-sm mt-6">Diagnostic sans inscription · Réponse sous 24h · Premier échange sans engagement</p>
+        </div>
+      </section>
+
+      {/* ── Parcours simple en 3 étapes ── */}
+      <section className="py-14 px-6 bg-white border-b border-slate-100">
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-6 stagger">
+          <div className="rounded-xl border border-slate-200 p-6 carte-vive">
+            <div className="text-2xl font-black text-indigo-600">1</div>
+            <h3 className="font-bold mt-2">Répondez à 3 questions</h3>
+            <p className="text-sm text-slate-600 mt-1">Secteur, taille, activité. Sans inscription, sans e-mail.</p>
+          </div>
+          <div className="rounded-xl border border-slate-200 p-6 carte-vive">
+            <div className="text-2xl font-black text-indigo-600">2</div>
+            <h3 className="font-bold mt-2">Voyez ce qui vous concerne</h3>
+            <p className="text-sm text-slate-600 mt-1">Les normes applicables, leurs échéances réelles et les sanctions encourues.</p>
+          </div>
+          <div className="rounded-xl border border-slate-200 p-6 carte-vive">
+            <div className="text-2xl font-black text-indigo-600">3</div>
+            <h3 className="font-bold mt-2">Sachez exactement quoi faire</h3>
+            <p className="text-sm text-slate-600 mt-1">Documents à préparer, étapes à suivre — et notre aide si vous la voulez.</p>
+          </div>
+        </div>
+        <div className="text-center mt-8">
+          <Link href="/conformite-2026" className="inline-block bg-slate-900 hover:bg-slate-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors">
+            Commencer le diagnostic gratuit →
+          </Link>
         </div>
       </section>
 
