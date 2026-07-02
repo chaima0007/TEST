@@ -159,7 +159,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px)", backgroundSize: "80px 80px" }} />
 
-        <div className="relative z-10 max-w-4xl">
+        <div className="relative z-10 max-w-4xl anim-fade-up">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 text-sm font-medium mb-8">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
             Studio web &amp; data — Bruxelles

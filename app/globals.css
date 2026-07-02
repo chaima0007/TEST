@@ -40,3 +40,46 @@ body {
   background: rgba(99,102,241,0.2);
   color: #a5b4fc;
 }
+
+/* ── Kit d'animation « UI-Animation » (Caelum) ────────────────
+   transform/opacity uniquement, 200-300 ms micro / 600 ms entrées,
+   courbes naturelles, prefers-reduced-motion respecté. ────────── */
+
+@keyframes anim-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes anim-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+.anim-fade-up { animation: anim-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.stagger > * { animation: anim-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.stagger > *:nth-child(1)  { animation-delay: 0.04s; }
+.stagger > *:nth-child(2)  { animation-delay: 0.08s; }
+.stagger > *:nth-child(3)  { animation-delay: 0.12s; }
+.stagger > *:nth-child(4)  { animation-delay: 0.16s; }
+.stagger > *:nth-child(5)  { animation-delay: 0.20s; }
+.stagger > *:nth-child(6)  { animation-delay: 0.24s; }
+.stagger > *:nth-child(n+7) { animation-delay: 0.28s; }
+
+.carte-vive {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.carte-vive:hover { transform: translateY(-2px); }
+
+/* Squelette de chargement pour les dashboards (tons slate) */
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 37%, #e2e8f0 63%);
+  background-size: 200% 100%;
+  animation: anim-shimmer 1.4s linear infinite;
+  border-radius: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up, .stagger > *, .skeleton { animation: none !important; }
+  .carte-vive, .carte-vive:hover { transition: none; transform: none; }
+}

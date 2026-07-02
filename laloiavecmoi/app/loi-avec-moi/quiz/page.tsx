@@ -474,7 +474,7 @@ export default function QuizPage() {
         </div>
       </header>
 
-      <section className="hero-encre text-white py-16 px-6">
+      <section className="hero-encre text-white py-16 px-6 anim-fade">
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <span className="eyebrow inline-block text-[#d6b87c] mb-5">Quiz · Connais-tu tes droits ?</span>
           <h1 className="text-3xl sm:text-5xl tracking-tight leading-tight">
@@ -494,7 +494,7 @@ export default function QuizPage() {
           <>
             {/* Écran de choix de catégorie */}
             <h2 className="text-2xl tracking-tight text-center">Choisissez votre terrain</h2>
-            <div className="mt-8 grid sm:grid-cols-2 gap-3">
+            <div className="mt-8 grid sm:grid-cols-2 gap-3 stagger">
               {CATEGORIES.map((c) => {
                 const n = questions.filter((q) => q.cat === c.id).length;
                 return (

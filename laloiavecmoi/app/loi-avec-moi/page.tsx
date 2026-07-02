@@ -313,7 +313,7 @@ export default function LoiAvecMoiPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden hero-encre text-white py-24 px-6">
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
+        <div className="relative z-10 max-w-3xl mx-auto text-center anim-fade-up">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-[#d6b87c]/30 text-slate-200 text-sm font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
             Gratuit · indépendant · sans publicité
@@ -447,7 +447,7 @@ export default function LoiAvecMoiPage() {
           <h2 className="text-3xl sm:text-4xl font-bold mt-3 tracking-tight">Les sujets du quotidien</h2>
           <p className="text-slate-500 mt-4">Les questions que tout le monde se pose un jour — sans savoir où chercher.</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
           {themes.map((th) =>
             th.href ? (
               <Link key={th.t} href={th.href} className="group rounded-2xl border border-slate-200 p-7 hover:shadow-lg hover:-translate-y-1 hover:border-indigo-300 transition-all">

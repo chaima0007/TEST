@@ -33,7 +33,7 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-900">
       {/* Hero « encre et lampe » */}
       <section className="relative overflow-hidden hero-encre text-white">
-        <div className="relative max-w-3xl mx-auto px-6 py-24 text-center">
+        <div className="relative max-w-3xl mx-auto px-6 py-24 text-center anim-fade-up">
           {/* Logo */}
           <div className="flex justify-center mb-8">
             <img
