@@ -29,7 +29,7 @@ const MODELES: Modele[] = [
     titre: "Demande de restitution de la garantie locative",
     intro: "Pour réclamer votre garantie locative après la fin du bail.",
     base_legale: "Code civil — bail de résidence principale (libération de la garantie locative en fin de bail)",
-    fiche: "bail_wallonie",
+    fiche: "garantie_locative",
     champs: [
       { key: "nom", label: "Votre nom" },
       { key: "adresse", label: "Votre adresse" },
@@ -103,7 +103,7 @@ const MODELES: Modele[] = [
     titre: "Résiliation de bail par le locataire (préavis)",
     intro: "Pour donner congé de votre logement en respectant le préavis.",
     base_legale: "Code civil — bail de résidence principale (congé et délai de préavis du locataire)",
-    fiche: "bail_wallonie",
+    fiche: "bail_residence_principale_wallonie",
     champs: [
       { key: "nom", label: "Votre nom" },
       { key: "adresse", label: "Votre adresse" },
