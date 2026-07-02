@@ -65,6 +65,18 @@ function IconReports({ className }: { className?: string }) {
   );
 }
 
+function IconOutreach({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        d="M17.447 2.553a1 1 0 0 1 .215 1.09l-6 14a1 1 0 0 1-1.85.04L7.6 12.4l-5.283-2.212a1 1 0 0 1 .04-1.85l14-6a1 1 0 0 1 1.09.215zM9.05 11.657l1.507 3.616 4.34-10.126-10.126 4.34 3.616 1.507 3.32-3.32a.75.75 0 0 1 1.06 1.06l-3.717 3.717z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
 function IconSettings({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -143,6 +155,12 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitors", label: "Concurrents", icon: IconCompetitors },
       { href: "/dashboard/alerts", label: "Alertes", icon: IconAlerts, badge: 3 },
       { href: "/dashboard/reports", label: "Rapports", icon: IconReports },
+    ],
+  },
+  {
+    title: "PROSPECTION",
+    items: [
+      { href: "/dashboard/outreach", label: "Prospection", icon: IconOutreach },
     ],
   },
   {
