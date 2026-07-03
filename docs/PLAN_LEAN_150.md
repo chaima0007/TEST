@@ -10,7 +10,7 @@ Date : 2026-07-03.
 | Budget | **< 150 €** | Confirmé propriétaire |
 | Stratégie | **Organique d'abord, mono-produit, montée lente** | Imposé par la trésorerie (cf. RAPPORT_SIMULATION §4) |
 | Produit unique | **Fontaine à eau chat inox** (PV 44,90 €) | Démo vidéo naturelle + fournisseur UE fiable |
-| Nom provisoire | **Patchou** | Aucun conflit de marque animalerie trouvé (1ʳᵉ passe web) ; **domaine .fr + INPI à confirmer** avant verrouillage |
+| Nom | **Patchou** ✅ confirmé | name-checker : le plus dégagé (aucun concurrent animalerie direct, `patchou.fr` semble libre). Secours : Ronjou/Purroo. **Reste au propriétaire** : recherche INPI + réservation registrar (seule preuve officielle) |
 | Marché | France | BE/CH plus tard (pas prêts, cf. simulation §6) |
 
 ## Pourquoi lean/organique (et pas pub)
