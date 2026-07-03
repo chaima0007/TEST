@@ -18,6 +18,11 @@ Shopify de juillet 2026).
 | `security-guardian` | Transverse | Sécurité défensive : secrets, auth, CSP, scopes — peut bloquer |
 | `agent-auditor` | Transverse | Surveille les agents : vérifie chaque affirmation par la preuve |
 | `scenario-simulator` | Transverse | Simule les scénarios extrêmes (succès brutal, attaque, panne) et produit un plan de préparation |
+| `dropship-ops` | Opérations | Sourcing fiable, traitement commandes, marge réelle, ruptures, retours |
+| `marketing-ads` | Acquisition | Créas UGC, campagnes Meta/TikTok, funnel, e-mails (ancré méthodes documentées des entrepreneurs) |
+| `brand-designer` | Design | Identité visuelle, typographie/police, cohérence graphique |
+| `copy-editor` | Qualité | Relecture FR : orthographe, grammaire, typographie, ton |
+| `ops-doctor` | Infra | Diagnostic/réparation connecteurs, tokens, build, dépréciations |
 
 ## Comment ça se concerte
 

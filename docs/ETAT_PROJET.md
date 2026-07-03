@@ -46,6 +46,10 @@ s'exécute ou se prépare sans lui.
 | **agent-auditor** | — | Audit complet de l'état final (après thème) |
 | **scenario-simulator** | Créé | Simuler succès + attaque sur le build complet (après thème) |
 | **ops-doctor** | Diagnostic connexion Shopify | Rediagnostiquer si un connecteur retombe |
+| **marketing-ads** | Créé (ancré benchmark) | Scripts créas + funnel + e-mails dès les fiches prêtes |
+| **brand-designer** | Créé (ancré benchmark) | Système de design/typo, en coordination avec theme-designer |
+| **copy-editor** | Créé | Relecture FR de tous les textes clients (thème, fiches, e-mails) |
+| **dropship-ops** | Créé | Sourcing fiable, traitement commandes, marge réelle, retours |
 
 ---
 
