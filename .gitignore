@@ -43,3 +43,6 @@ next-env.d.ts
 /lib/generated/prisma
 dev.db
 prisma/dev.db
+
+# Shopify AI Toolkit skills (reinstall: npx skills add Shopify/shopify-ai-toolkit)
+/.agents/
