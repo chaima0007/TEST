@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { randomUUID } from "node:crypto";
 import { prisma } from "@/lib/shopify/db";
 import { isValidShopDomain } from "@/lib/shopify/config";
 import { verifyWebhookHmac } from "@/lib/shopify/webhooks";
@@ -17,9 +18,7 @@ interface FulfillmentWebhookPayload {
 // Enregistre l'avancement d'une commande à partir d'un webhook fulfillment.
 // Toutes les entrées viennent d'un payload signé (HMAC déjà vérifié) mais
 // restent validées avant d'alimenter Prisma (défense en profondeur).
-async function recordFulfillment(shop: string, rawBody: string): Promise<void> {
-  const payload = JSON.parse(rawBody) as FulfillmentWebhookPayload;
-
+async function recordFulfillment(shop: string, payload: FulfillmentWebhookPayload): Promise<void> {
   const orderId = payload.order_id != null ? String(payload.order_id) : "";
   // order_id Shopify est un entier positif ; on rejette tout le reste.
   if (!/^\d{1,20}$/.test(orderId)) return;
@@ -44,9 +43,16 @@ async function recordFulfillment(shop: string, rawBody: string): Promise<void> {
     if (!Number.isNaN(d.getTime())) estimatedDelivery = d;
   }
 
+  // Jeton d'accès de la page publique. Généré UNE SEULE FOIS à la création :
+  // le bloc `update` ne le touche pas, afin que les liens de suivi déjà
+  // envoyés (…/suivi/<orderId>?k=<token>) restent valides à chaque mise à jour
+  // de fulfillment. Le lien complet — avec ?k=<token> — sera intégré au futur
+  // e-mail de confirmation d'expédition.
+  const token = randomUUID();
+
   await prisma().orderTracking.upsert({
     where: { shop_orderId: { shop, orderId } },
-    create: { shop, orderId, status, trackingUrl, estimatedDelivery },
+    create: { shop, orderId, status, trackingUrl, estimatedDelivery, token },
     update: { status, trackingUrl, estimatedDelivery },
   });
 }
@@ -83,11 +89,22 @@ export async function POST(request: NextRequest) {
     // page publique /suivi/[orderId] (docs/ARCHITECTURE_BOUTIQUE.md §2).
     case "fulfillments/create":
     case "fulfillments/update": {
-      await recordFulfillment(shop, rawBody);
+      let payload: FulfillmentWebhookPayload;
+      try {
+        payload = JSON.parse(rawBody) as FulfillmentWebhookPayload;
+      } catch {
+        return NextResponse.json({ error: "Malformed body" }, { status: 400 });
+      }
+      await recordFulfillment(shop, payload);
       break;
     }
     case "app/scopes_update": {
-      const payload = JSON.parse(rawBody) as { current?: string[] };
+      let payload: { current?: string[] };
+      try {
+        payload = JSON.parse(rawBody) as { current?: string[] };
+      } catch {
+        return NextResponse.json({ error: "Malformed body" }, { status: 400 });
+      }
       await prisma().shopifyShop.updateMany({
         where: { shop },
         data: { scope: payload.current?.join(",") ?? null },
@@ -97,10 +114,18 @@ export async function POST(request: NextRequest) {
     // GDPR compliance topics: CompeteIQ stores no customer data, so there is
     // nothing to export or redact — acknowledging with a 200 is sufficient.
     case "customers/data_request":
+      break;
     case "customers/redact":
+      // OrderTracking n'est PAS purgé ici : ce modèle ne contient aucune PII
+      // client (uniquement orderId, statut de livraison, URL transporteur et un
+      // token d'accès aléatoire) — rien à redacter au niveau d'un client. Choix
+      // assumé. La purge RGPD complète se fait sur shop/redact ci-dessous.
       break;
     case "shop/redact": {
       await prisma().shopifyShop.deleteMany({ where: { shop } });
+      // RGPD : la boutique disparaît, on purge aussi tout le suivi logistique
+      // rattaché à ce shop (aucune donnée résiduelle conservée).
+      await prisma().orderTracking.deleteMany({ where: { shop } });
       break;
     }
     default:

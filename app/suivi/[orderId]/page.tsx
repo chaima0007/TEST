@@ -108,8 +108,10 @@ function TrackingTimeline({ view }: { view: OrderTrackingView }) {
   );
 }
 
-async function TrackingContent({ orderId }: { orderId: string }) {
-  const view = await getOrderTrackingView(orderId);
+async function TrackingContent({ orderId, trackingKey }: { orderId: string; trackingKey?: string }) {
+  // `trackingKey` = paramètre `k` de l'URL (token de suivi partagé). Requis dès
+  // qu'une vraie boutique est connectée ; ignoré en mode démo.
+  const view = await getOrderTrackingView(orderId, trackingKey);
   if (!view) notFound();
 
   return (
@@ -200,9 +202,13 @@ async function TrackingContent({ orderId }: { orderId: string }) {
 
 export default async function SuiviPage(props: PageProps<"/suivi/[orderId]">) {
   const { orderId } = await props.params;
+  const { k } = await props.searchParams;
+  // `k` peut être string | string[] | undefined : on ne retient qu'une valeur
+  // scalaire, sinon le token est considéré absent (→ notFound côté boutique réelle).
+  const trackingKey = typeof k === "string" ? k : undefined;
   return (
     <main className="min-h-screen bg-slate-50">
-      <TrackingContent orderId={orderId} />
+      <TrackingContent orderId={orderId} trackingKey={trackingKey} />
     </main>
   );
 }

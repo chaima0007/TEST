@@ -28,6 +28,11 @@ model OrderTracking {
   orderId           String
   shop              String
   status            String
+  // Jeton d'accès non devinable pour la page publique /suivi/[orderId]?k=<token>.
+  // Généré une seule fois à la création (webhook fulfillments/create) puis
+  // conservé tel quel : c'est le secret partagé qui autorise l'affichage du
+  // suivi (défense anti-IDOR / anti-énumération). Aucune PII ici.
+  token             String
   trackingUrl       String?
   estimatedDelivery DateTime?
   createdAt         DateTime  @default(now())

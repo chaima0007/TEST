@@ -38,6 +38,18 @@ Points notables :
   API, query `order` → `fulfillments`) et, tant qu'aucune boutique n'est reliée,
   sert des données de démonstration typées (bannière « aperçu »). Les webhooks
   `fulfillments/create|update` mettent à jour le modèle `OrderTracking`.
+- **Accès par token (anti-IDOR)** : dès qu'une vraie boutique est connectée, la
+  page exige un token de suivi non devinable passé en query string :
+  `/suivi/<orderId>?k=<token>`. Le token est généré une seule fois par
+  `fulfillments/create` (champ `OrderTracking.token`), conservé sur les updates
+  suivants, et comparé en temps constant (`crypto.timingSafeEqual`). Sans token
+  valide → `notFound()`, et aucun appel Admin API n'est émis (pas d'oracle
+  d'énumération). Le lien complet — avec `?k=<token>` — devra être intégré au
+  futur e-mail de confirmation d'expédition. Le mode démo reste accessible sans
+  token (données fictives).
+- **RGPD** : `shop/redact` purge `ShopifyShop` puis `OrderTracking` du shop.
+  `customers/redact` ne purge pas `OrderTracking` : ce modèle ne contient aucune
+  PII client (orderId, statut, URL transporteur, token aléatoire) — choix assumé.
 
 ## Réglages ajoutés
 

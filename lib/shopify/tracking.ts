@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "node:crypto";
 import { adminGraphql } from "./admin";
 import { isValidShopDomain } from "./config";
 import { prisma } from "./db";
@@ -244,9 +245,40 @@ function demoTrackingView(orderGid: string): OrderTrackingView {
   };
 }
 
-// Point d'entrée de la page publique. Renvoie null uniquement si l'orderId est
-// invalide ou introuvable côté Admin API (→ état « commande introuvable »).
-export async function getOrderTrackingView(rawOrderId: string): Promise<OrderTrackingView | null> {
+// Comparaison de jetons en temps constant. `timingSafeEqual` exige des Buffers
+// de même longueur (il jette sinon) : on gère explicitement le cas des tailles
+// différentes AVANT l'appel, sans divulguer d'information de timing.
+function tokensMatch(expected: string, provided: string): boolean {
+  const a = Buffer.from(expected, "utf8");
+  const b = Buffer.from(provided, "utf8");
+  if (a.length !== b.length) return false;
+  return timingSafeEqual(a, b);
+}
+
+// Récupère le token de suivi stocké pour (shop, orderId). Renvoie null si la
+// ligne n'existe pas ou si la base est inaccessible.
+async function lookupTrackingToken(shop: string, orderId: string): Promise<string | null> {
+  try {
+    const record = await prisma().orderTracking.findUnique({
+      where: { shop_orderId: { shop, orderId } },
+      select: { token: true },
+    });
+    return record?.token ?? null;
+  } catch {
+    return null;
+  }
+}
+
+// Point d'entrée de la page publique : /suivi/[orderId]?k=<token>.
+// `key` est le paramètre de requête `k` (le token partagé, présent dans le lien
+// envoyé au client). En mode démo (aucune boutique connectée) il est ignoré ;
+// dès qu'une vraie boutique est résolue, un token valide est OBLIGATOIRE.
+// Renvoie null si l'orderId est invalide, si aucun suivi n'existe, si le token
+// est absent/invalide, ou si la commande est introuvable côté Admin API.
+export async function getOrderTrackingView(
+  rawOrderId: string,
+  key?: string | null,
+): Promise<OrderTrackingView | null> {
   const orderGid = parseOrderGid(rawOrderId);
   if (!orderGid) return null;
 
@@ -254,8 +286,17 @@ export async function getOrderTrackingView(rawOrderId: string): Promise<OrderTra
   if (!connected) {
     // Aucune boutique connectée : on sert la démo typée (jamais null, pour
     // qu'un lien de suivi reste présentable pendant la phase de construction).
+    // Ce sont des données fictives → aucun token requis.
     return demoTrackingView(orderGid);
   }
+
+  // Boutique réelle : on valide le token AVANT tout appel Admin API, pour ne
+  // pas créer d'oracle d'énumération (une réponse identique — notFound — que la
+  // commande existe ou non tant que le token n'est pas prouvé).
+  const numericOrderId = orderGid.split("/").pop() ?? "";
+  const expectedToken = await lookupTrackingToken(connected.shop, numericOrderId);
+  if (!expectedToken) return null;
+  if (!key || !tokensMatch(expectedToken, key)) return null;
 
   return fetchOrderTrackingFromAdmin(connected.shop, connected.accessToken, orderGid);
 }
