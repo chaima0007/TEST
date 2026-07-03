@@ -1,0 +1,317 @@
+{% comment %}
+  Page produit orientée conversion : galerie, bénéfices avant caractéristiques,
+  prix (barré + prix unitaire), checkout accéléré, Shop Pay Installments,
+  transparence livraison, retrait en boutique et réassurance paiement.
+
+  https://shopify.dev/docs/storefronts/themes/architecture/templates/product
+{% endcomment %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="product">
+  <div class="product__gallery">
+    {% if product.featured_media != blank %}
+      {% render 'image',
+        class: 'product__image product__image--featured',
+        image: product.featured_media.preview_image
+      %}
+    {% endif %}
+
+    {% if product.images.size > 1 %}
+      <div class="product__thumbs">
+        {% for image in product.images %}
+          {% unless image == product.featured_media.preview_image %}
+            {% render 'image', class: 'product__thumb', image: image %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="product__info">
+    {% if product.compare_at_price > product.price %}
+      <p class="product__badge">{{ 'product.on_sale' | t }}</p>
+    {% endif %}
+
+    <h1 class="product__title">{{ product.title }}</h1>
+
+    <div class="product__price">
+      {% if product.price_varies %}
+        <span class="product__price-from">{{ 'product.from_price' | t }}</span>
+      {% endif %}
+      <span class="product__price-current">{{ current_variant.price | money }}</span>
+
+      {% if current_variant.compare_at_price > current_variant.price %}
+        <s class="product__price-compare">{{ current_variant.compare_at_price | money }}</s>
+        {% assign saved = current_variant.compare_at_price | minus: current_variant.price | money %}
+        <span class="product__price-save">{{ 'product.save_html' | t: amount: saved }}</span>
+      {% endif %}
+    </div>
+
+    {% if current_variant.unit_price_measurement %}
+      <p class="product__unit-price">
+        {{ current_variant.unit_price | money }}
+        <span aria-hidden="true">/</span>
+        {% if current_variant.unit_price_measurement.reference_value != 1 %}
+          {{ current_variant.unit_price_measurement.reference_value }}
+        {% endif %}
+        {{ current_variant.unit_price_measurement.reference_unit }}
+      </p>
+    {% endif %}
+
+    {% if section.settings.benefits != blank %}
+      <div class="product__benefits">
+        <h2 class="product__subtitle">{{ 'product.benefits_title' | t }}</h2>
+        <div class="product__benefits-content">{{ section.settings.benefits }}</div>
+      </div>
+    {% endif %}
+
+    <div class="product__form">
+      {% form 'product', product %}
+        {% if product.has_only_default_variant == false %}
+          <label class="product__variant-label" for="product-variant">
+            {{ 'product.variant_label' | t }}
+          </label>
+          <select id="product-variant" class="product__variant-select" name="id">
+            {% for variant in product.variants %}
+              <option
+                value="{{ variant.id }}"
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled{% endunless %}
+              >
+                {{ variant.title }} — {{ variant.price | money }}
+              </option>
+            {% endfor %}
+          </select>
+        {% else %}
+          <input type="hidden" name="id" value="{{ current_variant.id }}">
+        {% endif %}
+
+        <label class="product__quantity-label" for="product-quantity">
+          {{ 'product.quantity' | t }}
+        </label>
+        <input
+          id="product-quantity"
+          class="product__quantity"
+          type="number"
+          name="quantity"
+          min="1"
+          value="1"
+          inputmode="numeric"
+        >
+
+        <button
+          type="submit"
+          name="add"
+          class="button button--primary button--full product__submit"
+          {% unless current_variant.available %}disabled{% endunless %}
+        >
+          {% if current_variant.available %}
+            {{ 'product.add_to_cart' | t }}
+          {% else %}
+            {{ 'product.sold_out' | t }}
+          {% endif %}
+        </button>
+
+        {% if current_variant.available %}
+          {{ form | payment_button }}
+          {{ form | payment_terms }}
+        {% endif %}
+      {% endform %}
+    </div>
+
+    {% if section.settings.show_delivery_promise %}
+      {% render 'delivery-promise', layout: 'banner' %}
+    {% endif %}
+
+    {% assign pickup_variant = current_variant %}
+    {% if pickup_variant.store_availabilities.size > 0 %}
+      <div class="product__pickup">
+        <h2 class="product__subtitle">{{ 'product.pickup_title' | t }}</h2>
+        <ul class="product__pickup-list" role="list">
+          {% for availability in pickup_variant.store_availabilities %}
+            {% if availability.available %}
+              <li>
+                <strong>{{ availability.location.name }}</strong> —
+                {{ 'product.pickup_available' | t }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+    {% if section.settings.show_pci_badge %}
+      {% render 'pci-badge' %}
+    {% endif %}
+
+    {% if product.description != blank %}
+      <div class="product__features">
+        <h2 class="product__subtitle">{{ 'product.features_title' | t }}</h2>
+        <div class="rte">{{ product.description }}</div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .product {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .product__image--featured {
+    border-radius: var(--style-border-radius-buttons);
+    overflow: hidden;
+  }
+
+  .product__thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .product__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .product__badge {
+    align-self: flex-start;
+    margin: 0;
+    background-color: var(--color-price);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+  }
+
+  .product__title {
+    margin: 0;
+  }
+
+  .product__price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-price);
+  }
+
+  .product__price-from {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  .product__price-compare {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-muted);
+  }
+
+  .product__price-save {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .product__unit-price {
+    margin: -0.75rem 0 0;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+
+  .product__subtitle {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .product__benefits-content ul {
+    padding-left: 1.1rem;
+    margin: 0;
+  }
+
+  .product__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--style-border-radius-buttons);
+    background-color: var(--color-background);
+  }
+
+  .product__variant-label,
+  .product__quantity-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .product__variant-select,
+  .product__quantity {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+  }
+
+  .product__quantity {
+    max-width: 6rem;
+  }
+
+  .product__submit {
+    margin-top: 0.5rem;
+  }
+
+  .product__pickup-list {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 900px) {
+    .product {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Produit",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "benefits",
+      "label": "Bénéfices (affichés avant les caractéristiques)",
+      "info": "Listez les bénéfices concrets pour l'animal et son maître.",
+      "default": "<ul><li>Pensé pour le bien-être de votre animal</li><li>Facile à utiliser et à entretenir</li><li>Expédié d'Europe, livré en 2-4 jours ouvrés</li></ul>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_delivery_promise",
+      "label": "Afficher le bandeau de livraison",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pci_badge",
+      "label": "Afficher la réassurance paiement (badge PCI)",
+      "default": true
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,92 @@
+{
+  "404": {
+    "title": "Page introuvable",
+    "not_found": "Cette page n'existe pas ou a été déplacée.",
+    "back_to_shopping": "Retour à la boutique"
+  },
+  "blog": {
+    "article_comments": "Commentaires",
+    "article_metadata_html": "{{ date }} par {{ author }}",
+    "comment_form_body": "Commentaire",
+    "comment_form_email": "E-mail",
+    "comment_form_name": "Nom",
+    "comment_form_submit": "Publier",
+    "comment_form_title": "Ajouter un commentaire"
+  },
+  "cart": {
+    "checkout": "Passer la commande",
+    "product": "Produit",
+    "title": "Votre panier",
+    "update": "Mettre à jour",
+    "remove": "Retirer",
+    "empty": "Votre panier est vide.",
+    "continue_shopping": "Continuer mes achats",
+    "subtotal": "Sous-total",
+    "taxes_and_shipping": "Taxes et livraison calculées au paiement.",
+    "quantity": "Quantité"
+  },
+  "customers": {
+    "login": {
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "title": "Connexion"
+    }
+  },
+  "collections": {
+    "title": "Collections"
+  },
+  "gift_card": {
+    "add_to_apple_wallet": "Ajouter à Apple Wallet",
+    "card": "Carte cadeau",
+    "expired": "Cette carte cadeau a expiré",
+    "expires_on": "Expire le {{ expires_on }}",
+    "use_at_checkout": "Utilisez cette carte cadeau au paiement"
+  },
+  "password": {
+    "title": "Cette boutique est privée",
+    "password": "Mot de passe",
+    "enter": "Entrer"
+  },
+  "search": {
+    "title": "Recherche",
+    "placeholder": "Rechercher un produit, une page ou un article",
+    "submit": "Rechercher",
+    "no_results_html": "Aucun résultat pour {{ terms }}",
+    "results_for_html": "{{ count }} résultats pour {{ terms }}"
+  },
+  "localization": {
+    "country": "Pays / région",
+    "language": "Langue",
+    "update": "Valider"
+  },
+  "delivery": {
+    "promise": "📦 Expédié d'Europe · Livré en 2-4 jours ouvrés",
+    "track": "Suivre ma commande",
+    "region_aria": "Informations de livraison",
+    "returns": "Retours gratuits sous 30 jours",
+    "support": "SAV en français, réponse sous 24 h"
+  },
+  "newsletter": {
+    "email_label": "Adresse e-mail",
+    "email_placeholder": "vous@exemple.fr",
+    "submit": "Je m'inscris",
+    "success": "Merci ! Surveillez votre boîte mail pour confirmer votre inscription."
+  },
+  "product": {
+    "add_to_cart": "Ajouter au panier",
+    "sold_out": "Épuisé",
+    "unavailable": "Indisponible",
+    "quantity": "Quantité",
+    "benefits_title": "Pourquoi vous allez l'adopter",
+    "features_title": "Caractéristiques détaillées",
+    "pickup_title": "Retrait en boutique",
+    "pickup_available": "Disponible pour le retrait",
+    "secure_checkout": "Paiement 100 % sécurisé — vos données sont chiffrées",
+    "from_price": "À partir de",
+    "save_html": "Vous économisez {{ amount }}",
+    "on_sale": "Promo",
+    "variant_label": "Choisissez une option",
+    "reviews_title": "Avis de nos clients"
+  }
+}

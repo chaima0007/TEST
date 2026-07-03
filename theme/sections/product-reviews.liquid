@@ -1,0 +1,151 @@
+{% comment %}
+  Section avis clients pour la page produit. Les avis sont saisis en blocs
+  (compatible avec une modération manuelle) et peuvent être remplacés par une
+  application d'avis. Aucun avis n'est affiché tant qu'aucun bloc n'est ajouté.
+{% endcomment %}
+
+<div class="reviews">
+  <div class="reviews__header">
+    <h2 class="reviews__heading">{{ section.settings.heading }}</h2>
+    {% if section.settings.rating != blank %}
+      <p class="reviews__rating">
+        <span aria-hidden="true">★</span>
+        {{ section.settings.rating }}
+      </p>
+    {% endif %}
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    <ul class="reviews__list" role="list">
+      {% for block in section.blocks %}
+        <li class="reviews__item" {{ block.shopify_attributes }}>
+          <p class="reviews__stars" aria-label="{{ block.settings.stars }} / 5">
+            <span aria-hidden="true">
+              {%- for i in (1..block.settings.stars) -%}★{%- endfor -%}
+            </span>
+          </p>
+          <blockquote class="reviews__quote">{{ block.settings.text }}</blockquote>
+          <p class="reviews__author">— {{ block.settings.author }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="reviews__empty">{{ section.settings.empty_text }}</p>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .reviews__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .reviews__rating {
+    margin: 0;
+    font-weight: 700;
+    color: var(--color-price);
+  }
+
+  .reviews__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .reviews__item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--style-border-radius-buttons);
+    padding: 1.25rem;
+  }
+
+  .reviews__stars {
+    margin: 0 0 0.5rem;
+    color: var(--color-price);
+    letter-spacing: 0.1em;
+  }
+
+  .reviews__quote {
+    margin: 0 0 0.75rem;
+    font-style: italic;
+  }
+
+  .reviews__author {
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  .reviews__empty {
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 750px) {
+    .reviews__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Avis clients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Avis de nos clients"
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Note globale affichée",
+      "default": "4,8 / 5"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "Texte si aucun avis",
+      "default": "Soyez le premier à donner votre avis sur ce produit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Note (étoiles)",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Avis"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Auteur",
+          "default": "Client vérifié"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}

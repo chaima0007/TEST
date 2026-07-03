@@ -1,0 +1,190 @@
+{% comment %}
+  Trois collections mises en avant sur la page d'accueil. Chaque bloc pointe
+  vers une collection ; on vend un usage, pas un type d'objet.
+{% endcomment %}
+
+<div class="featured-collections">
+  {% if section.settings.heading != blank %}
+    <h2 class="featured-collections__heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <ul class="featured-collections__grid" role="list">
+    {% for block in section.blocks %}
+      {% assign collection = block.settings.collection %}
+      <li class="featured-collections__item" {{ block.shopify_attributes }}>
+        <a class="collection-card" href="{{ collection.url | default: routes.all_products_collection_url }}">
+          <div class="collection-card__media">
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 800
+                | image_tag:
+                  widths: '400, 600, 800',
+                  sizes: '(min-width: 750px) 33vw, 90vw',
+                  loading: 'lazy',
+                  alt: collection.title
+              }}
+            {% elsif collection.featured_image != blank %}
+              {{
+                collection.featured_image
+                | image_url: width: 800
+                | image_tag:
+                  widths: '400, 600, 800',
+                  sizes: '(min-width: 750px) 33vw, 90vw',
+                  loading: 'lazy',
+                  alt: collection.title
+              }}
+            {% else %}
+              {{ 'collection-1' | placeholder_svg_tag: 'collection-card__placeholder' }}
+            {% endif %}
+          </div>
+          <div class="collection-card__body">
+            <h3 class="collection-card__title">
+              {{ block.settings.custom_title | default: collection.title | default: 'Collection' }}
+            </h3>
+            {% if block.settings.description != blank %}
+              <p class="collection-card__description">{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% stylesheet %}
+  .featured-collections__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .featured-collections__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .collection-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--style-border-radius-buttons);
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .collection-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -16px rgba(0, 0, 0, 0.35);
+  }
+
+  .collection-card__media {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--color-secondary);
+  }
+
+  .collection-card__media img,
+  .collection-card__placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .collection-card__body {
+    padding: 1.25rem;
+  }
+
+  .collection-card__title {
+    margin: 0 0 0.35rem;
+  }
+
+  .collection-card__description {
+    margin: 0;
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 750px) {
+    .featured-collections__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Collections en avant",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Trouvez ce qu'il faut pour lui"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Titre personnalisé (optionnel)"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description courte"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image personnalisée (optionnelle)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Collections en avant",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Hydratation & santé",
+            "description": "Fontaines, gamelles et le nécessaire pour un animal en forme."
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Balade & sécurité",
+            "description": "Harnais, laisses et accessoires pour des sorties sereines."
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Toilettage & maison",
+            "description": "Brosses et indispensables pour une maison sans poils."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,64 @@
+{% doc %}
+  Bandeau de transparence logistique — notre différenciant n°1.
+
+  Affiche la promesse de livraison honnête (stock entrepôt UE) et, si une page
+  de suivi est configurée dans les réglages du thème, un lien vers celle-ci.
+  Réutilisable sur la fiche produit, le panier et ailleurs.
+
+  @param {string} [layout] - Style d'affichage : 'banner' (défaut) ou 'inline'.
+  @param {string} [link_url] - URL de suivi. Par défaut : settings.delivery_tracking_page.
+
+  @example
+  {% render 'delivery-promise' %}
+  {% render 'delivery-promise', layout: 'inline' %}
+{% enddoc %}
+
+{% liquid
+  assign promise_layout = layout | default: 'banner'
+  assign tracking_url = link_url | default: settings.delivery_tracking_page
+%}
+
+<aside
+  class="delivery-promise delivery-promise--{{ promise_layout }}"
+  role="note"
+  aria-label="{{ 'delivery.region_aria' | t }}"
+>
+  <p class="delivery-promise__text">{{ 'delivery.promise' | t }}</p>
+
+  {% if tracking_url != blank %}
+    <a class="delivery-promise__link" href="{{ tracking_url }}">
+      {{ 'delivery.track' | t }}
+    </a>
+  {% endif %}
+</aside>
+
+{% stylesheet %}
+  .delivery-promise {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    background-color: var(--color-secondary);
+    color: var(--color-foreground);
+    border-radius: var(--style-border-radius-inputs);
+    padding: 0.75rem 1rem;
+    line-height: 1.4;
+  }
+
+  .delivery-promise--inline {
+    background-color: transparent;
+    padding: 0.5rem 0;
+  }
+
+  .delivery-promise__text {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .delivery-promise__link {
+    color: var(--color-price);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+{% endstylesheet %}

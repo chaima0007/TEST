@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "settings": {
+        "show_delivery_promise": true,
+        "show_pci_badge": true
+      }
+    },
+    "reviews": {
+      "type": "product-reviews",
+      "settings": {
+        "heading": "Avis de nos clients",
+        "rating": "4,8 / 5",
+        "empty_text": "Soyez le premier à donner votre avis sur ce produit."
+      }
+    }
+  },
+  "order": ["main", "reviews"]
+}

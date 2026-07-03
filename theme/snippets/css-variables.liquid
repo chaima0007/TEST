@@ -1,0 +1,40 @@
+{% doc %}
+  Injecte les variables CSS globales du thème (polices, couleurs, mise en page).
+  Les réglages de couleur et de texte sont émis sans filtre pour rester
+  compatibles avec l'aperçu en direct de l'éditeur de thème.
+
+  @example
+  {% render 'css-variables' %}
+{% enddoc %}
+
+{% style %}
+  {{ settings.type_primary_font | font_face: font_display: 'swap' }}
+  {{ settings.type_primary_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+  {{ settings.type_primary_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+  {{ settings.type_heading_font | font_face: font_display: 'swap' }}
+  {{ settings.type_heading_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
+
+  :root {
+    --font-primary--family: {{ settings.type_primary_font.family }}, {{ settings.type_primary_font.fallback_families }};
+    --font-primary--style: {{ settings.type_primary_font.style }};
+    --font-primary--weight: {{ settings.type_primary_font.weight }};
+    --font-heading--family: {{ settings.type_heading_font.family }}, {{ settings.type_heading_font.fallback_families }};
+    --font-heading--weight: {{ settings.type_heading_font.weight }};
+    --font-size-base: {{ settings.base_font_size }}px;
+
+    --page-width: {{ settings.max_page_width }};
+    --page-margin: {{ settings.min_page_margin }}px;
+
+    --color-background: {{ settings.background_color }};
+    --color-foreground: {{ settings.foreground_color }};
+    --color-muted: {{ settings.color_muted }};
+    --color-primary: {{ settings.color_primary }};
+    --color-primary-contrast: {{ settings.color_primary_contrast }};
+    --color-secondary: {{ settings.color_secondary }};
+    --color-border: {{ settings.color_border }};
+    --color-price: {{ settings.color_price }};
+
+    --style-border-radius-inputs: {{ settings.input_corner_radius }}px;
+    --style-border-radius-buttons: {{ settings.button_corner_radius }}px;
+  }
+{% endstyle %}

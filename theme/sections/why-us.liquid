@@ -1,0 +1,166 @@
+{% comment %}
+  Bloc « pourquoi nous » axé sur notre différenciant : livraison honnête,
+  SAV réactif, retours simples, paiement sécurisé. Chaque atout est un bloc.
+{% endcomment %}
+
+<div class="why-us">
+  <div class="why-us__header measure">
+    <h2 class="why-us__heading">{{ section.settings.heading }}</h2>
+    {% if section.settings.subheading != blank %}
+      <p class="why-us__subheading">{{ section.settings.subheading }}</p>
+    {% endif %}
+  </div>
+
+  <ul class="why-us__grid" role="list">
+    {% for block in section.blocks %}
+      <li class="why-us__item" {{ block.shopify_attributes }}>
+        {% if block.settings.emoji != blank %}
+          <span class="why-us__icon" aria-hidden="true">{{ block.settings.emoji }}</span>
+        {% endif %}
+        <h3 class="why-us__title">{{ block.settings.title }}</h3>
+        <p class="why-us__text">{{ block.settings.text }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% stylesheet %}
+  .why-us {
+    padding-block: 1rem;
+  }
+
+  .why-us__header {
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .why-us__subheading {
+    color: var(--color-muted);
+    margin-top: 0.75rem;
+  }
+
+  .why-us__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .why-us__item {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--style-border-radius-buttons);
+    padding: 1.5rem;
+  }
+
+  .why-us__icon {
+    font-size: 2rem;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-us__title {
+    margin: 0 0 0.5rem;
+  }
+
+  .why-us__text {
+    margin: 0;
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 750px) {
+    .why-us__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Pourquoi nous",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "La livraison n'est pas notre point faible, c'est notre promesse"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "Nos fournisseurs expédient depuis des entrepôts européens. Vous savez à l'avance quand votre commande arrive — et nous vous tenons informé à chaque étape."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Atout",
+      "settings": [
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Emoji / icône",
+          "default": "📦"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titre",
+          "default": "Expédié d'Europe"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Stock en entrepôt UE : livraison en 2 à 4 jours ouvrés, suivi inclus."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Pourquoi nous",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "📦",
+            "title": "Expédié d'Europe",
+            "text": "Stock en entrepôt UE : livraison en 2 à 4 jours ouvrés, suivi inclus."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "💬",
+            "title": "SAV en français",
+            "text": "Une question, un souci ? Nous répondons en moins de 24 heures."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "↩️",
+            "title": "Retours 30 jours",
+            "text": "Pas convaincu ? Retour gratuit sous 30 jours, sans discuter."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "emoji": "🔒",
+            "title": "Paiement sécurisé",
+            "text": "Vos paiements sont chiffrés et conformes aux standards PCI."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

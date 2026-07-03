@@ -1,0 +1,163 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Patoune — Accessoires chiens & chats",
+    "theme_version": "1.0.0",
+    "theme_author": "CompeteIQ Commerce",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "Typographie",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Polices"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_primary_font",
+        "default": "work_sans_n4",
+        "label": "Police du corps de texte"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_heading_font",
+        "default": "work_sans_n4",
+        "label": "Police des titres"
+      },
+      {
+        "type": "range",
+        "id": "base_font_size",
+        "min": 14,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Taille de texte de base",
+        "default": 17
+      }
+    ]
+  },
+  {
+    "name": "Mise en page",
+    "settings": [
+      {
+        "type": "select",
+        "id": "max_page_width",
+        "label": "Largeur maximale",
+        "options": [
+          { "value": "80rem", "label": "Étroite" },
+          { "value": "90rem", "label": "Moyenne" },
+          { "value": "110rem", "label": "Large" }
+        ],
+        "default": "90rem"
+      },
+      {
+        "type": "range",
+        "id": "min_page_margin",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Marge latérale",
+        "default": 20
+      }
+    ]
+  },
+  {
+    "name": "Palette de couleurs",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Tons doux, naturels et rassurants pensés pour une marque animalière de confiance."
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "default": "#FBF9F5",
+        "label": "Fond (crème chaleureux)"
+      },
+      {
+        "type": "color",
+        "id": "foreground_color",
+        "default": "#2E2A26",
+        "label": "Texte principal"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "default": "#6B6459",
+        "label": "Texte secondaire"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "default": "#6E8B6A",
+        "label": "Couleur d'accent (vert sauge)"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_contrast",
+        "default": "#FFFFFF",
+        "label": "Texte sur accent"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "default": "#E8DFD2",
+        "label": "Accent doux (sable)"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "default": "#E3DCCF",
+        "label": "Bordures"
+      },
+      {
+        "type": "color",
+        "id": "color_price",
+        "default": "#B5643C",
+        "label": "Prix et promotions (terracotta)"
+      }
+    ]
+  },
+  {
+    "name": "Boutons et champs",
+    "settings": [
+      {
+        "type": "range",
+        "id": "input_corner_radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Arrondi des champs",
+        "default": 8
+      },
+      {
+        "type": "range",
+        "id": "button_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Arrondi des boutons",
+        "default": 12
+      }
+    ]
+  },
+  {
+    "name": "Livraison et transparence",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Notre différenciant : afficher la vérité logistique et la tenir."
+      },
+      {
+        "type": "url",
+        "id": "delivery_tracking_page",
+        "label": "Page de suivi de commande (lien du bandeau livraison)"
+      }
+    ]
+  }
+]

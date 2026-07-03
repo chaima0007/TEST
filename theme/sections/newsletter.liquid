@@ -1,0 +1,120 @@
+{% comment %}
+  Inscription à la newsletter via {% form 'customer' %} (contact[email]).
+  hCaptcha est ajouté automatiquement par Shopify sur ce type de formulaire.
+{% endcomment %}
+
+<div class="newsletter full-width">
+  <div class="newsletter__inner measure">
+    <h2 class="newsletter__heading">{{ section.settings.heading }}</h2>
+
+    {% if section.settings.text != blank %}
+      <p class="newsletter__text">{{ section.settings.text }}</p>
+    {% endif %}
+
+    {% form 'customer', class: 'newsletter__form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+
+      {% if form.posted_successfully? %}
+        <p class="newsletter__success" role="status">{{ 'newsletter.success' | t }}</p>
+      {% else %}
+        {{ form.errors | default_errors }}
+
+        <label class="newsletter__label" for="newsletter-email">
+          {{ 'newsletter.email_label' | t }}
+        </label>
+
+        <div class="newsletter__row">
+          <input
+            id="newsletter-email"
+            class="newsletter__input"
+            type="email"
+            name="contact[email]"
+            placeholder="{{ 'newsletter.email_placeholder' | t }}"
+            autocomplete="email"
+            required
+          >
+          <button type="submit" class="button button--primary">
+            {{ 'newsletter.submit' | t }}
+          </button>
+        </div>
+      {% endif %}
+    {% endform %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .newsletter {
+    background-color: var(--color-secondary);
+  }
+
+  .newsletter__inner {
+    margin-inline: auto;
+    text-align: center;
+    padding-block: clamp(2.5rem, 7vw, 4rem);
+  }
+
+  .newsletter__text {
+    color: var(--color-muted);
+    margin-top: 0.5rem;
+  }
+
+  .newsletter__form {
+    margin-top: 1.5rem;
+  }
+
+  .newsletter__label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .newsletter__row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .newsletter__input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+  }
+
+  .newsletter__success {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  @media (min-width: 600px) {
+    .newsletter__row {
+      flex-direction: row;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "-10 % sur votre première commande"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Texte",
+      "default": "Inscrivez-vous pour recevoir nos conseils et nos meilleures offres. Désinscription en un clic, on déteste le spam autant que vous."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

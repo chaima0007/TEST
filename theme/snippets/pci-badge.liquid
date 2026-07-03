@@ -1,0 +1,57 @@
+{% doc %}
+  Bloc de réassurance paiement : cadenas « Paiement 100 % sécurisé » suivi des
+  icônes des moyens de paiement PCI activés sur la boutique (SVG officiels).
+
+  @example
+  {% render 'pci-badge' %}
+{% enddoc %}
+
+<div class="pci-badge">
+  <p class="pci-badge__text">
+    {{ 'icon-secure.svg' | inline_asset_content }}
+    <span>{{ 'product.secure_checkout' | t }}</span>
+  </p>
+
+  {% if shop.enabled_payment_types.size > 0 %}
+    <div class="pci-badge__icons">
+      {% for type in shop.enabled_payment_types %}
+        {{ type | payment_type_svg_tag: class: 'pci-badge__icon' }}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+{% stylesheet %}
+  .pci-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .pci-badge__text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .pci-badge__text svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .pci-badge__icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .pci-badge__icon {
+    width: 2.4rem;
+    height: auto;
+  }
+{% endstylesheet %}

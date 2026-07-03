@@ -1,0 +1,126 @@
+{% comment %}
+  Preuve sociale : bandeau de statistiques et de réassurance sous le héros.
+  Chaque élément est un bloc éditable (chiffre + libellé).
+{% endcomment %}
+
+<div class="social-proof">
+  {% if section.settings.heading != blank %}
+    <h2 class="social-proof__heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <ul class="social-proof__grid" role="list">
+    {% for block in section.blocks %}
+      <li class="social-proof__item" {{ block.shopify_attributes }}>
+        <span class="social-proof__value">{{ block.settings.value }}</span>
+        <span class="social-proof__label">{{ block.settings.label }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% stylesheet %}
+  .social-proof {
+    padding-block: 1rem;
+  }
+
+  .social-proof__heading {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-proof__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .social-proof__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    padding: 1.25rem 1rem;
+    background-color: var(--color-secondary);
+    border-radius: var(--style-border-radius-buttons);
+  }
+
+  .social-proof__value {
+    font-family: var(--font-heading--family);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .social-proof__label {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  @media (min-width: 750px) {
+    .social-proof__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Preuve sociale",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Ils nous font déjà confiance"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistique",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Chiffre",
+          "default": "★ 4,8/5"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Libellé",
+          "default": "Note moyenne clients"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Preuve sociale",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": { "value": "★ 4,8/5", "label": "Note moyenne clients" }
+        },
+        {
+          "type": "stat",
+          "settings": { "value": "2-4 j", "label": "Livraison depuis l'Europe" }
+        },
+        {
+          "type": "stat",
+          "settings": { "value": "30 j", "label": "Retours gratuits" }
+        },
+        {
+          "type": "stat",
+          "settings": { "value": "< 24 h", "label": "Réponse du SAV" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

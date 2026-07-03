@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Accessoires chiens & chats",
+        "heading": "Le meilleur pour votre animal, livré vite et pour de vrai.",
+        "subheading": "<p>Des accessoires malins sélectionnés pour le bien-être de votre compagnon. Expédiés depuis l'Europe, livrés en 2 à 4 jours ouvrés, avec un SAV en français.</p>",
+        "button_label": "Découvrir les best-sellers",
+        "show_delivery_promise": true,
+        "image_alt": "Chien et chat heureux avec leurs accessoires"
+      }
+    },
+    "social_proof": {
+      "type": "social-proof",
+      "settings": {
+        "heading": "Ils nous font déjà confiance"
+      },
+      "blocks": {
+        "s1": { "type": "stat", "settings": { "value": "★ 4,8/5", "label": "Note moyenne clients" } },
+        "s2": { "type": "stat", "settings": { "value": "2-4 j", "label": "Livraison depuis l'Europe" } },
+        "s3": { "type": "stat", "settings": { "value": "30 j", "label": "Retours gratuits" } },
+        "s4": { "type": "stat", "settings": { "value": "< 24 h", "label": "Réponse du SAV" } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"]
+    },
+    "featured_collections": {
+      "type": "featured-collections",
+      "settings": {
+        "heading": "Trouvez ce qu'il faut pour lui"
+      },
+      "blocks": {
+        "c1": { "type": "collection", "settings": { "custom_title": "Hydratation & santé", "description": "Fontaines, gamelles et le nécessaire pour un animal en forme." } },
+        "c2": { "type": "collection", "settings": { "custom_title": "Balade & sécurité", "description": "Harnais, laisses et accessoires pour des sorties sereines." } },
+        "c3": { "type": "collection", "settings": { "custom_title": "Toilettage & maison", "description": "Brosses et indispensables pour une maison sans poils." } }
+      },
+      "block_order": ["c1", "c2", "c3"]
+    },
+    "why_us": {
+      "type": "why-us",
+      "settings": {
+        "heading": "La livraison n'est pas notre point faible, c'est notre promesse",
+        "subheading": "Nos fournisseurs expédient depuis des entrepôts européens. Vous savez à l'avance quand votre commande arrive — et nous vous tenons informé à chaque étape."
+      },
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "emoji": "📦", "title": "Expédié d'Europe", "text": "Stock en entrepôt UE : livraison en 2 à 4 jours ouvrés, suivi inclus." } },
+        "f2": { "type": "feature", "settings": { "emoji": "💬", "title": "SAV en français", "text": "Une question, un souci ? Nous répondons en moins de 24 heures." } },
+        "f3": { "type": "feature", "settings": { "emoji": "↩️", "title": "Retours 30 jours", "text": "Pas convaincu ? Retour gratuit sous 30 jours, sans discuter." } },
+        "f4": { "type": "feature", "settings": { "emoji": "🔒", "title": "Paiement sécurisé", "text": "Vos paiements sont chiffrés et conformes aux standards PCI." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4"]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "-10 % sur votre première commande",
+        "text": "Inscrivez-vous pour recevoir nos conseils et nos meilleures offres. Désinscription en un clic, on déteste le spam autant que vous."
+      }
+    }
+  },
+  "order": ["hero", "social_proof", "featured_collections", "why_us", "newsletter"]
+}
