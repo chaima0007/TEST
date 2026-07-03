@@ -12,8 +12,9 @@ iframe App Home), construite sur la stack Next.js existante du projet — le che
 | UI intégrée (App Home) | `app/shopify/` | Pages Polaris web components + App Bridge, rendues dans l'iframe admin |
 | Authentification | `lib/shopify/` | Vérification des session tokens App Bridge + token exchange (installation gérée par Shopify, sans redirection OAuth) |
 | API authentifiées | `app/api/shopify/competitors` | Données CompeteIQ pour la surface intégrée (Bearer session token) |
-| Webhooks | `app/api/shopify/webhooks` | `app/uninstalled`, `app/scopes_update` + topics de conformité RGPD (HMAC vérifié) |
-| Persistance | `prisma/schema.prisma` → `ShopifyShop` | Access tokens offline par boutique |
+| Webhooks | `app/api/shopify/webhooks` | `app/uninstalled`, `app/scopes_update`, `fulfillments/create`, `fulfillments/update` + topics de conformité RGPD (HMAC vérifié) |
+| Suivi de commande | `app/suivi/[orderId]` + `lib/shopify/tracking.ts` | Page publique de transparence logistique (statut + date estimée), hors admin et hors `/shopify` |
+| Persistance | `prisma/schema.prisma` → `ShopifyShop`, `OrderTracking` | Access tokens offline par boutique ; dernier état de suivi par commande |
 
 Points notables :
 
@@ -31,6 +32,24 @@ Points notables :
 - **Navigation** : le menu latéral de l'app (`ui-nav-menu`) est déclaré dans
   `app/shopify/layout.tsx` (Accueil, Concurrents, Paramètres), conformément aux
   directives de conception d'applications.
+- **Transparence logistique** : la page publique `/suivi/[orderId]` affiche la
+  progression d'une commande (confirmée → expédiée → en livraison → livrée) et la
+  date estimée. `lib/shopify/tracking.ts` lit d'abord la boutique connectée (Admin
+  API, query `order` → `fulfillments`) et, tant qu'aucune boutique n'est reliée,
+  sert des données de démonstration typées (bannière « aperçu »). Les webhooks
+  `fulfillments/create|update` mettent à jour le modèle `OrderTracking`.
+
+## Réglages ajoutés
+
+- **Scope `read_orders`** (`shopify.app.toml`) : requis pour lire les fulfillments
+  d'une commande et recevoir les webhooks `fulfillments/*`. À faire valider par
+  security-guardian (changement de scope). L'app demande toujours le minimum :
+  `read_products,read_orders`.
+- **`SHOPIFY_STORE_DOMAIN`** (optionnel, `.env.local`) : domaine
+  `xxx.myshopify.com` de la boutique servie par la page publique de suivi. Non
+  secret. S'il est absent, `lib/shopify/tracking.ts` prend la seule boutique
+  installée en base ; s'il n'y en a aucune, la page bascule en mode démo. Ne jamais
+  mettre d'identifiant/secret ici.
 
 ## Prérequis
 

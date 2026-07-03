@@ -17,8 +17,11 @@ include_config_on_deploy = true
 dev_store_url = ""
 
 [access_scopes]
-# CompeteIQ only reads catalog data to enrich competitive benchmarks.
-scopes = "read_products"
+# read_products : enrichissement des benchmarks concurrentiels (CompeteIQ).
+# read_orders   : suivi de commande transparent — lecture des fulfillments pour
+#                 la page /suivi/[orderId] et réception des webhooks fulfillments/*
+#                 (docs/ARCHITECTURE_BOUTIQUE.md §2).
+scopes = "read_products,read_orders"
 
 [access.admin]
 # Lets the embedded UI call the Admin GraphQL API from the browser via
@@ -38,6 +41,11 @@ api_version = "2026-07"
 
   [[webhooks.subscriptions]]
   topics = ["app/scopes_update"]
+  uri = "/api/shopify/webhooks"
+
+  # Suivi de commande transparent : avancement des livraisons.
+  [[webhooks.subscriptions]]
+  topics = ["fulfillments/create", "fulfillments/update"]
   uri = "/api/shopify/webhooks"
 
   [[webhooks.subscriptions]]

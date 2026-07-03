@@ -2,6 +2,54 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/shopify/db";
 import { isValidShopDomain } from "@/lib/shopify/config";
 import { verifyWebhookHmac } from "@/lib/shopify/webhooks";
+import { mapFulfillmentToStatus } from "@/lib/shopify/tracking";
+
+// Charge utile d'un webhook fulfillments/create|update (sous-ensemble utilisé).
+interface FulfillmentWebhookPayload {
+  order_id?: number | string;
+  status?: string | null;
+  shipment_status?: string | null;
+  tracking_url?: string | null;
+  tracking_urls?: string[] | null;
+  estimated_delivery_at?: string | null;
+}
+
+// Enregistre l'avancement d'une commande à partir d'un webhook fulfillment.
+// Toutes les entrées viennent d'un payload signé (HMAC déjà vérifié) mais
+// restent validées avant d'alimenter Prisma (défense en profondeur).
+async function recordFulfillment(shop: string, rawBody: string): Promise<void> {
+  const payload = JSON.parse(rawBody) as FulfillmentWebhookPayload;
+
+  const orderId = payload.order_id != null ? String(payload.order_id) : "";
+  // order_id Shopify est un entier positif ; on rejette tout le reste.
+  if (!/^\d{1,20}$/.test(orderId)) return;
+
+  const status = mapFulfillmentToStatus(payload.status, payload.shipment_status);
+
+  const trackingUrlRaw = payload.tracking_url ?? payload.tracking_urls?.[0] ?? null;
+  // N'accepte qu'une URL http(s) bien formée pour le lien transporteur.
+  let trackingUrl: string | null = null;
+  if (trackingUrlRaw) {
+    try {
+      const parsed = new URL(trackingUrlRaw);
+      if (parsed.protocol === "http:" || parsed.protocol === "https:") trackingUrl = parsed.toString();
+    } catch {
+      trackingUrl = null;
+    }
+  }
+
+  let estimatedDelivery: Date | null = null;
+  if (payload.estimated_delivery_at) {
+    const d = new Date(payload.estimated_delivery_at);
+    if (!Number.isNaN(d.getTime())) estimatedDelivery = d;
+  }
+
+  await prisma().orderTracking.upsert({
+    where: { shop_orderId: { shop, orderId } },
+    create: { shop, orderId, status, trackingUrl, estimatedDelivery },
+    update: { status, trackingUrl, estimatedDelivery },
+  });
+}
 
 // Receives the webhooks declared in shopify.app.toml. Shopify requires a 200
 // within 5 seconds and a 401 on invalid HMAC.
@@ -29,6 +77,13 @@ export async function POST(request: NextRequest) {
         where: { shop },
         data: { uninstalledAt: new Date() },
       });
+      break;
+    }
+    // Transparence logistique : on suit l'avancement des livraisons pour la
+    // page publique /suivi/[orderId] (docs/ARCHITECTURE_BOUTIQUE.md §2).
+    case "fulfillments/create":
+    case "fulfillments/update": {
+      await recordFulfillment(shop, rawBody);
       break;
     }
     case "app/scopes_update": {

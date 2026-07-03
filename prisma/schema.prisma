@@ -19,6 +19,24 @@ model ShopifyShop {
   uninstalledAt DateTime?
 }
 
+// Transparence logistique (docs/ARCHITECTURE_BOUTIQUE.md §2) : dernier état de
+// suivi connu pour une commande, alimenté par les webhooks fulfillments/*.
+// Sert de source rapide pour la page publique /suivi/[orderId] sans rappeler
+// l'Admin API à chaque affichage.
+model OrderTracking {
+  id                String    @id @default(cuid())
+  orderId           String
+  shop              String
+  status            String
+  trackingUrl       String?
+  estimatedDelivery DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@unique([shop, orderId])
+  @@index([shop])
+}
+
 model User {
   id          String       @id @default(cuid())
   email       String       @unique
