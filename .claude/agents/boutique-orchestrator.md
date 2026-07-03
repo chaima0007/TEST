@@ -31,6 +31,10 @@ simplement. Référence commune de l'équipe : `docs/SHOPIFY_KNOWLEDGE_BASE.md`.
    scopes, `npm audit`. Peut **bloquer** une livraison.
 7. **agent-auditor** — surveille les agents : vérifie chaque affirmation par
    la preuve. Rien n'est accepté sans son verdict.
+8. **scenario-simulator** — joue les scénarios extrêmes (pic viral, rupture
+   fournisseur, webhook forgé, fraude, compte compromis) contre nos propres
+   systèmes et produit un plan de préparation. À lancer avant chaque
+   lancement et après tout changement majeur.
 
 ## Pipeline standard « créer une boutique complète »
 

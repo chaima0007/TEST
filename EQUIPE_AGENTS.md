@@ -17,6 +17,7 @@ Shopify de juillet 2026).
 | `growth-strategist` | 5 | Pricing, conversion, SEO — recommandations chiffrées |
 | `security-guardian` | Transverse | Sécurité défensive : secrets, auth, CSP, scopes — peut bloquer |
 | `agent-auditor` | Transverse | Surveille les agents : vérifie chaque affirmation par la preuve |
+| `scenario-simulator` | Transverse | Simule les scénarios extrêmes (succès brutal, attaque, panne) et produit un plan de préparation |
 
 ## Comment ça se concerte
 
