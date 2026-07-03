@@ -9,6 +9,16 @@ datasource db {
   provider = "sqlite"
 }
 
+model ShopifyShop {
+  id            String    @id @default(cuid())
+  shop          String    @unique
+  accessToken   String
+  scope         String?
+  installedAt   DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  uninstalledAt DateTime?
+}
+
 model User {
   id          String       @id @default(cuid())
   email       String       @unique

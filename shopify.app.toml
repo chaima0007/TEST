@@ -1,0 +1,45 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+#
+# Run `shopify app config link` once to attach this file to an app created in
+# the Dev Dashboard — the CLI fills in `client_id` for you. During
+# `shopify app dev`, the CLI tunnels this Next.js server and rewrites the URLs
+# below for your chosen dev store only.
+
+client_id = ""
+name = "CompeteIQ"
+handle = "competeiq"
+application_url = "https://localhost:3000"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
+dev_store_url = ""
+
+[access_scopes]
+# CompeteIQ only reads catalog data to enrich competitive benchmarks.
+scopes = "read_products"
+
+[access.admin]
+# Lets the embedded UI call the Admin GraphQL API from the browser via
+# fetch("shopify:admin/api/graphql.json") — see app/shopify/page.tsx.
+embedded_app_direct_api_access = true
+direct_api_mode = "online"
+
+[auth]
+redirect_urls = ["https://localhost:3000/api/shopify/auth/callback"]
+
+[webhooks]
+api_version = "2026-07"
+
+  [[webhooks.subscriptions]]
+  topics = ["app/uninstalled"]
+  uri = "/api/shopify/webhooks"
+
+  [[webhooks.subscriptions]]
+  topics = ["app/scopes_update"]
+  uri = "/api/shopify/webhooks"
+
+  [[webhooks.subscriptions]]
+  compliance_topics = ["customers/data_request", "customers/redact", "shop/redact"]
+  uri = "/api/shopify/webhooks"

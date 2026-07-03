@@ -19,6 +19,26 @@ const securityHeaders = [
   },
 ];
 
+// The /shopify segment renders inside the Shopify admin iframe: it must allow
+// admin frame-ancestors, load App Bridge/Polaris from cdn.shopify.com, and
+// must NOT send X-Frame-Options.
+const shopifyEmbeddedHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  {
+    key: "Content-Security-Policy",
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://cdn.shopify.com",
+      "style-src 'self' 'unsafe-inline' https://cdn.shopify.com",
+      "img-src 'self' data: https:",
+      "font-src 'self' https://cdn.shopify.com",
+      "connect-src 'self' https://cdn.shopify.com https://*.shopify.com https://*.myshopify.com",
+      "frame-ancestors https://*.myshopify.com https://admin.shopify.com",
+    ].join("; "),
+  },
+];
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -29,8 +49,16 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: "/((?!shopify).*)",
         headers: securityHeaders,
+      },
+      {
+        source: "/shopify/:path*",
+        headers: shopifyEmbeddedHeaders,
+      },
+      {
+        source: "/shopify",
+        headers: shopifyEmbeddedHeaders,
       },
     ];
   },
