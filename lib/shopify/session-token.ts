@@ -49,6 +49,16 @@ export function verifySessionToken(token: string): SessionTokenPayload {
   const shop = new URL(payload.dest).hostname;
   if (!isValidShopDomain(shop)) throw new SessionTokenError("Invalid shop in session token");
 
+  // Shopify recommends confirming that `iss` and `dest` designate the same shop.
+  // `iss` looks like https://{shop}.myshopify.com/admin — its hostname must match.
+  let issHostname: string;
+  try {
+    issHostname = new URL(payload.iss).hostname;
+  } catch {
+    throw new SessionTokenError("Invalid issuer in session token");
+  }
+  if (issHostname !== shop) throw new SessionTokenError("Session token issuer/destination mismatch");
+
   return payload;
 }
 

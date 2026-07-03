@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/shopify/db";
+import { isValidShopDomain } from "@/lib/shopify/config";
 import { verifyWebhookHmac } from "@/lib/shopify/webhooks";
 
 // Receives the webhooks declared in shopify.app.toml. Shopify requires a 200
@@ -13,6 +14,12 @@ export async function POST(request: NextRequest) {
 
   const topic = request.headers.get("x-shopify-topic") ?? "";
   const shop = request.headers.get("x-shopify-shop-domain") ?? "";
+
+  // Defense in depth: the shop domain feeds Prisma queries below. Even though
+  // HMAC has already passed, reject a malformed domain before using it.
+  if (!isValidShopDomain(shop)) {
+    return NextResponse.json({ error: "Invalid shop domain" }, { status: 400 });
+  }
 
   switch (topic) {
     case "app/uninstalled": {
