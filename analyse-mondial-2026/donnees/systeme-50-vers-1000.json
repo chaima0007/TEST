@@ -1,0 +1,420 @@
+{
+  "solutions": [
+    {
+      "famille": "Achat-revente (flipping)",
+      "solutions": [
+        {
+          "nom": "Flip vêtements de marque sur Vinted (streetwear vintage, jeans Levi's, chaussures)",
+          "etapes": [
+            "Semaine 1 : avec 50€, acheter 8-12 pièces à 1-5€ en brocante/vide-grenier (Belgique : quefaire.be, brocabrac.fr) en ciblant UNIQUEMENT : Carhartt, Nike années 90-2000, The North Face, Ralph Lauren, Levi's 501/505, Dr. Martens, New Balance. Vérifier les prix VENDUS sur Vinted avant chaque achat (filtre 'vendus').",
+            "Semaine 1-2 : laver, défroisser, photographier à la lumière du jour (5-8 photos par pièce, étiquettes et défauts visibles), lister sur Vinted avec marque + taille + époque dans le titre.",
+            "Semaines 2-4 : viser 15-25€ par pièce (marge réelle constatée 100-300 % sur ces marques). Objectif cycle 1 : 50€ → 120-150€.",
+            "Mois 2 : réinvestir tout. 150€ = 20-30 pièces mieux ciblées, ou 2-3 pièces 'grail' (veste Carhartt vintage 10€ → 45-60€). Objectif : 150€ → 350€.",
+            "Mois 3-4 : réinvestir encore, monter à 40-60 annonces actives en permanence, ajouter les lots (acheter un lot 30€, revendre à l'unité). Objectif : 350€ → 700€ → 1000€.",
+            "Tenir un tableau simple achat/vente : en Belgique, l'achat pour revente est un 'revenu divers' à déclarer (cadre XV, code 1200/2200) — les marges restent largement positives après ça."
+          ],
+          "delai_realiste": "3 à 4 mois pour atteindre 1000€ de capital (soit ~950€ de gain), avec des ventes dès la 2e semaine",
+          "proba_succes_pct": 55,
+          "effort": "8-12 h/semaine (sourcing le week-end, photos et envois en semaine)",
+          "risques": "Pièces qui ne partent pas (immobilisation du capital, prévoir de baisser les prix après 3 semaines), contrefaçons en brocante, saisonnalité (manteaux l'été se vendent mal), lassitude — la majorité des gens abandonnent au mois 2 alors que la boule de neige commence au mois 3.",
+          "premier_pas_aujourdhui": "Aujourd'hui même : créer/optimiser ton profil Vinted, repérer sur quefaire.be la brocante la plus proche ce week-end, et passer 45 min sur Vinted à noter les prix de vente RÉELS (articles vendus) de Carhartt, Levi's 501 et Nike vintage dans les tailles courantes — c'est ta grille d'achat pour dimanche. Garde les 50€ en cash pour la brocante."
+        },
+        {
+          "nom": "Flip tech d'occasion : smartphones, consoles et petit électronique (Leboncoin / Facebook Marketplace / 2ememain.be)",
+          "etapes": [
+            "Jours 1-3 : avec 50€, chercher sur Marketplace/2ememain les annonces mal rédigées ou sous-cotées : vieux smartphone 'pour pièces' qui marche en fait, enceinte Bluetooth, console avec 'écran noir' (souvent juste un câble). Vérifier chaque prix de revente sur les annonces vendues avant d'acheter.",
+            "Premier cycle : acheter 1-2 objets à 20-40€, tester, nettoyer, réinitialiser (retirer les comptes iCloud/Google !), reprendre de vraies photos, relister à 50-90€. Marge constatée +30 à +80 % sur le reconditionné simple, jusqu'à x3 sur les annonces mal décrites.",
+            "Mois 1-2 : réinvestir. À 150-200€ de capital, viser les smartphones milieu de gamme (achetés 100-150€, revendus 180-250€) et les manettes/accessoires de console (très liquides, se vendent en 48h).",
+            "Mois 2-4 : 2 à 4 flips par semaine à 25-60€ de marge nette chacun. Privilégier la remise en main propre (0 % commission, 0 frais d'envoi, tu vérifies le paiement).",
+            "Toujours tester devant le vendeur à l'achat et devant l'acheteur à la vente ; exiger IMEI propre pour les téléphones."
+          ],
+          "delai_realiste": "2 à 4 mois — plus rapide que le textile car paniers plus gros, mais démarrage plus lent car 50€ n'achète qu'un ou deux objets",
+          "proba_succes_pct": 45,
+          "effort": "6-10 h/semaine (veille d'annonces quotidienne 30 min + rendez-vous d'achat/vente)",
+          "risques": "Objet réellement en panne (perte sèche possible de 30-40€ au début, d'où l'importance de tester sur place), objets volés (exiger facture ou IMEI vérifiable), arnaques au paiement en main propre, capital bloqué si un téléphone ne part pas. Risque plus concentré que le textile : une erreur coûte cher au départ.",
+          "premier_pas_aujourdhui": "Aujourd'hui même : installer les alertes Leboncoin/2ememain/Marketplace sur 'enceinte Bluetooth', 'manette PS4/PS5', 'iPhone pour pièces' dans un rayon de 15 km, triées par plus récentes. Passer 1 h à noter les prix vendus de 5 objets cibles. Répondre le premier aux annonces sous-cotées : dans la tech, le premier arrivé gagne."
+        },
+        {
+          "nom": "Meubles et déco vintage : sourcing brocante/donneries, revente locale en main propre",
+          "etapes": [
+            "Semaine 1 : avec 50€, acheter en brocante ou fin de vide-grenier (les vendeurs bradent à partir de 13h) 1-2 pièces : chaise ou petit meuble style scandinave/formica années 50-70, miroir, lampe, vaisselle de marque (Boch, Villeroy). Consulter aussi les groupes 'donne' Facebook (coût zéro).",
+            "Semaine 1-2 : remise en état simple sans compétence rare : nettoyage, huile de lin, resserrage de vis, cire. Photos soignées dans un intérieur rangé, en lumière naturelle.",
+            "Semaines 2-5 : lister sur Marketplace/2ememain/Leboncoin avec les bons mots-clés ('vintage', 'mid-century', 'formica', 'scandinave'). Un meuble acheté 30-50€ se revend couramment 150-400€ en zone urbaine (Bruxelles, Liège, Lille...). Vente en main propre = 0 commission.",
+            "Mois 2-3 : réinvestir dans 3-5 pièces à la fois. Deux bons meubles par mois à 100-150€ de marge suffisent pour la trajectoire 50€ → 1000€.",
+            "Contrainte logistique à régler dès le départ : un coffre de voiture ou une remorque, et un coin de garage/cave pour stocker."
+          ],
+          "delai_realiste": "3 à 5 mois — moins de transactions que le textile mais marges unitaires bien plus grosses (100-350€ par pièce)",
+          "proba_succes_pct": 40,
+          "effort": "5-8 h/semaine, concentrées le week-end (chine, transport, petite remise en état)",
+          "risques": "Nécessite véhicule et espace de stockage (bloquant sinon), rotation lente (un meuble peut mettre 3-6 semaines à partir), erreurs de goût au début (acheter ce qui TE plaît au lieu de ce qui se vend), transport = temps et essence à déduire de la marge.",
+          "premier_pas_aujourdhui": "Aujourd'hui même : passer 1 h sur Marketplace à identifier les 5 types de meubles vintage qui se vendent le mieux dans TA zone (regarder ce qui est marqué 'vendu' ou disparaît vite), rejoindre 2-3 groupes Facebook 'donne'/'brocante' locaux, et noter les brocantes du week-end sur quefaire.be. N'achète rien avant d'avoir cette liste de 5 cibles."
+        },
+        {
+          "nom": "Rétro-gaming et jouets vintage : consoles, jeux, Lego au kilo",
+          "etapes": [
+            "Semaine 1 : avec 50€, cibler en brocante/vide-grenier : consoles anciennes (PS1, PS2, N64, GameCube, Game Boy) à 5-20€, jeux en boîte à 1-5€, vrac Lego au kilo (5-10€/kg), Dinky Toys. Le rétro-gaming se revend couramment 300-500 % au-dessus du prix brocante.",
+            "Semaine 1-2 : tester les consoles, nettoyer les contacts (coton-tige + alcool isopropylique — aucune compétence rare), trier le Lego, chercher les minifigurines rares (certaines valent 10-50€ pièce).",
+            "Semaines 2-6 : revendre sur Leboncoin/2ememain (consoles complètes avec câbles + manette = premium) et eBay pour les jeux recherchés. Une console achetée 10-15€ part à 40-80€ ; premier cycle : 50€ → 130-180€.",
+            "Mois 2-4 : réinvestir, se spécialiser sur 2-3 consoles dont tu connais la cote par cœur, acheter des lots ('carton de vieux jeux') dont la valeur unitaire dépasse toujours le prix du lot.",
+            "Utiliser les ventes terminées eBay comme argus avant CHAQUE achat — c'est ce qui sépare les rentables des autres."
+          ],
+          "delai_realiste": "3 à 5 mois — niche très rentable à l'unité mais le sourcing est plus aléatoire (on ne trouve pas une PS1 à chaque brocante)",
+          "proba_succes_pct": 40,
+          "effort": "6-10 h/semaine (chine le week-end + tests/tri/annonces en semaine)",
+          "risques": "Sourcing irrégulier (des week-ends bredouilles), consoles HS non réparables sans compétences (acheter uniquement testable ou très bon marché), niche de connaisseurs — les 3 premières semaines servent à apprendre les cotes, et on paie parfois trop cher au début.",
+          "premier_pas_aujourdhui": "Aujourd'hui même : passer 1 h sur eBay (filtre 'ventes terminées') pour construire ta grille de cotes : PS1/PS2/N64/Game Boy complètes vs en loose, top 20 des jeux qui dépassent 20€, prix du kilo de Lego trié vs vrac. Enregistrer cette grille dans ton téléphone : c'est ton outil de négociation en brocante dès ce week-end."
+        }
+      ]
+    },
+    {
+      "famille": "Services locaux (services de proximité, moins de 50€ de matériel de départ, Belgique/France)",
+      "solutions": [
+        {
+          "nom": "Nettoyage auto à domicile (intérieur + extérieur sans eau)",
+          "etapes": [
+            "Jour 1 : investir ~45€ : produit lavage sans eau (~15€), lot de 10 microfibres (~12€), brosse et pinceaux détail (~8€), nettoyant vitres/plastiques (~10€). Aspirateur : emprunter le sien ou utiliser celui du client.",
+            "Jour 1-3 : se mettre en règle. France : micro-entreprise gratuite en ligne (autoentrepreneur.urssaf.fr). Belgique : passer par une plateforme agréée économie collaborative ou déclarer une activité complémentaire.",
+            "Jour 2-4 : nettoyer gratuitement 2 voitures (famille, voisins) et prendre des photos avant/après pour se constituer un portfolio.",
+            "Jour 3-7 : créer un profil sur Yoojo et AlloVoisins + poster dans 3-5 groupes Facebook locaux avec les photos. Tarif d'appel : 45€ l'intérieur complet, 70-90€ le complet — le marché 2026 est à 80-200€ pour un nettoyage complet, donc vous êtes très compétitif.",
+            "Semaines 2-10 : viser 2-3 voitures par week-end à 50-70€ net en moyenne. Demander un avis après chaque prestation, proposer une formule entretien mensuel aux clients satisfaits.",
+            "1000€ ≈ 15-18 prestations. Réinvestir 30-40€ dans un aspirateur d'occasion dès les premiers gains pour accélérer."
+          ],
+          "delai_realiste": "2 à 3 mois (6-10 week-ends actifs)",
+          "proba_succes_pct": 55,
+          "effort": "8-12 h/semaine (surtout le week-end)",
+          "risques": "Météo pour l'extérieur, saturation dans les grandes villes, fatigue physique, clients qui négocient. Risque de dommage sur un véhicule : rester sur des produits doux et refuser les cas extrêmes au début.",
+          "premier_pas_aujourdhui": "Acheter le kit de base (~45€) en magasin auto ou en ligne, puis envoyer un message à 3 proches pour proposer un nettoyage gratuit ce week-end contre photos avant/après et un avis."
+        },
+        {
+          "nom": "Pet-sitting et promenade de chiens (Pawshake, Rover, AlloVoisins)",
+          "etapes": [
+            "Jour 1 : créer un profil complet sur Pawshake (gratuit, très présent en Belgique) et/ou Rover (France). Photos avec des animaux, description sérieuse, réponses rapides.",
+            "Jour 1-2 : dépenser 20-30€ max : laisse de secours, sacs à déjections, jouets, friandises. Le reste du budget sert de réserve.",
+            "Jour 2-7 : fixer des tarifs d'entrée légèrement sous le marché pour obtenir les 3 premiers avis : visite chat 12-15€, promenade chien 12-15€, garde à domicile 18-22€/nuit (marché belge : ~20€/nuit en moyenne, France 22-45€/jour selon la ville).",
+            "Semaine 1-2 : demander à 2 proches ayant un animal de réserver via la plateforme pour amorcer les avis (prestation réelle, avis honnête).",
+            "Semaines 2-12 : monter les tarifs au niveau du marché après 5 avis. Combiner : 3 promenades/semaine + 1 garde de week-end ≈ 80-120€/semaine net après commission (15-19%).",
+            "Gros levier : les vacances scolaires et l'été (majoration 15-30%) — une seule garde de 10 jours peut rapporter 200-350€."
+          ],
+          "delai_realiste": "2,5 à 4 mois (plus vite si période de vacances)",
+          "proba_succes_pct": 60,
+          "effort": "6-10 h/semaine, pics le week-end et pendant les vacances",
+          "risques": "Démarrage lent sans avis (les 3 premières semaines sont les plus dures), commission de plateforme 15-19%, responsabilité en cas d'accident (les plateformes incluent une assurance — vérifier la couverture), revenus irréguliers hors vacances.",
+          "premier_pas_aujourdhui": "Créer aujourd'hui même un profil Pawshake ou Rover complet à 100% (photos, description, dispos) et demander à un proche avec un chien de réserver une première promenade cette semaine."
+        },
+        {
+          "nom": "Aide numérique aux seniors à domicile (smartphone, ordinateur, démarches en ligne)",
+          "etapes": [
+            "Jour 1 : imprimer 100 flyers simples (~15€ en imprimerie en ligne ou 5€ chez un imprimeur local) : « J'aide les seniors avec smartphone, ordinateur, démarches en ligne — 20€/h, à domicile, patient et pédagogue ».",
+            "Jour 1-2 : déposer les flyers en pharmacies, boulangeries, maisons de quartier, clubs de seniors, paroisses. Prévenir sa propre famille et ses voisins âgés.",
+            "Jour 2-3 : créer un profil sur Yoojo et AlloVoisins catégorie informatique/aide aux seniors. Le tarif moyen du dépannage informatique à domicile en 2026 est de 19€/h (16-20€ en province), donc facturer 18-20€/h est crédible.",
+            "Semaine 1-3 : accepter toutes les petites missions (installer WhatsApp, trier les photos, sécuriser les mots de passe, prendre un rendez-vous médical en ligne). Objectif : 3-5 clients réguliers.",
+            "Semaines 3-14 : le cœur du modèle est la récurrence : un senior satisfait reprend souvent 2-4 h/mois et vous recommande à son entourage. 12-15 h facturées/mois ≈ 240-300€/mois.",
+            "France : le statut micro-entrepreneur permet en plus l'avance immédiate de crédit d'impôt services à la personne (le client ne paie que 50%), un énorme argument de vente une fois déclaré."
+          ],
+          "delai_realiste": "3 à 4 mois",
+          "proba_succes_pct": 50,
+          "effort": "5-8 h/semaine, horaires en journée (idéal si vous êtes libre en semaine)",
+          "risques": "Démarrage lent (le bouche-à-oreille senior prend des semaines), demande beaucoup de patience, séances parfois chronophages pour peu facturé au début, nécessité d'inspirer confiance (public prudent, à juste titre, face aux arnaques).",
+          "premier_pas_aujourdhui": "Rédiger et commander le flyer aujourd'hui (Canva gratuit + imprimeur en ligne ~15€), et proposer dès ce soir une heure d'aide gratuite à une personne âgée de votre entourage pour obtenir votre premier témoignage."
+        },
+        {
+          "nom": "Montage de meubles en kit et petit bricolage (IKEA & co)",
+          "etapes": [
+            "Jour 1 : investir ~40€ : jeu de tournevis et clés Allen de qualité (~20€), mètre, niveau à bulle (~10€), visseuse d'occasion si trouvable (~10-25€, sinon commencer sans).",
+            "Jour 1-2 : s'inscrire sur AlloVoisins, Yoojo et TaskRabbit (partenaire IKEA en France — les demandes de montage y arrivent directement après achat).",
+            "Jour 2-5 : premiers prix d'appel : 25-30€ pour un meuble simple (étagère, table), 50-80€ pour une armoire type PAX (le marché jobbing 2026 est à 15-50€/h). Filmer/photographier les montages réussis.",
+            "Semaines 2-4 : après 5 avis positifs, passer à 35-40€/h effectif. Ajouter les prestations connexes : fixation d'étagères, tringles, accrochage de TV (avec prudence sur les murs fragiles).",
+            "Semaines 4-12 : 3-4 missions/semaine à 30-50€ ≈ 100-160€/semaine. 1000€ ≈ 25-30 missions.",
+            "Astuce volume : se poster sur les groupes Facebook locaux le week-end (jour des achats IKEA) avec une annonce « montage sous 48h »."
+          ],
+          "delai_realiste": "2 à 3 mois",
+          "proba_succes_pct": 50,
+          "effort": "8-12 h/semaine (soirs et week-ends)",
+          "risques": "Concurrence de bricoleurs équipés, meubles endommagés = remboursement (lire la notice AVANT de commencer, refuser les meubles déjà entamés par le client), déplacements non payés si mal organisé, TaskRabbit exige parfois des vérifications qui prennent 1-2 semaines.",
+          "premier_pas_aujourdhui": "S'inscrire sur AlloVoisins et Yoojo maintenant (15 min), puis acheter le kit d'outillage de base (~40€) et monter/démonter un meuble chez soi pour se chronométrer et fixer des prix réalistes."
+        },
+        {
+          "nom": "Cours particuliers / soutien scolaire (maths collège, français, langues de base)",
+          "etapes": [
+            "Jour 1 : créer une annonce gratuite sur Superprof et sur AlloVoisins/Yoojo (catégorie cours particuliers). Budget quasi nul : garder les 50€ pour des flyers (~15€) à déposer aux abords des collèges, bibliothèques et commerces.",
+            "Jour 1-3 : positionnement honnête sans compétence rare : soutien scolaire niveau primaire/collège (méthodologie, devoirs, remise à niveau), conversation en français pour non-francophones, ou initiation informatique. Tarif de départ : 15-18€/h, marché à 20-25€/h une fois les avis obtenus.",
+            "Semaine 1-2 : proposer la première séance à moitié prix pour décrocher 2-3 élèves. Un élève = revenu récurrent hebdomadaire jusqu'à la fin de l'année scolaire.",
+            "Semaines 2-16 : 4 élèves à 1,5 h/semaine à 18€/h ≈ 108€/semaine. Les parents satisfaits recommandent : c'est le service local à plus forte récurrence.",
+            "France : déclaré en micro-entreprise + agrément services à la personne, le crédit d'impôt de 50% rend votre tarif deux fois plus attractif pour les parents.",
+            "1000€ ≈ 55-65 heures de cours, très faisable sur un trimestre scolaire."
+          ],
+          "delai_realiste": "3 à 4 mois (rythme scolaire ; attention : l'été est creux, la rentrée de septembre est le pic de demande)",
+          "proba_succes_pct": 55,
+          "effort": "5-8 h/semaine (cours + déplacements + préparation légère)",
+          "risques": "Saisonnalité forte (juillet-août calmes — en plein été, privilégier les stages de remise à niveau d'août), annulations de dernière minute (imposer une règle 24 h), concurrence des étudiants, revenus plafonnés par le nombre d'heures disponibles.",
+          "premier_pas_aujourdhui": "Publier aujourd'hui une annonce complète sur Superprof et AlloVoisins (matière, niveau, prix, photo souriante) et envoyer un message aux parents de votre entourage : « je prends 3 élèves pour la rentrée, première séance -50% »."
+        }
+      ]
+    },
+    {
+      "famille": "Freelance numérique",
+      "solutions": [
+        {
+          "nom": "Transcription et sous-titrage en ligne (GoTranscript, Happy Scribe, Scribie)",
+          "etapes": [
+            "Jour 1-3 (0€ dépensé) : s'inscrire sur GoTranscript et Happy Scribe, qui recrutent des débutants sans diplôme, et passer leurs tests d'entrée gratuits en français (et en anglais si possible). S'entraîner 2h sur des vidéos YouTube avant le test car le taux d'échec au premier essai est élevé.",
+            "Semaine 1 (dépense ~30€ des 50€) : acheter un casque filaire correct avec micro (~30€), installer les outils gratuits (oTranscribe, Express Scribe). Garder 20€ de marge.",
+            "Semaines 2-4 : accepter toutes les missions courtes, viser la note qualité maximale — les plateformes classent les transcripteurs et les mieux notés reçoivent plus de fichiers. Objectif réaliste : 80-150€ le premier mois, car un débutant met 3-4h pour transcrire 1h d'audio.",
+            "Mois 2-3 : la vitesse double avec la pratique. Cumuler 2 plateformes pour lisser les creux et ajouter le sous-titrage, mieux payé que la transcription brute. Un sous-titreur type sur Happy Scribe gagne ~450€/mois, un débutant plutôt 200-400€/mois.",
+            "Mois 3-4 : atteindre le cumul de 1000€ (250-350€/mois pendant 3-4 mois). Déclarer l'activité en micro-entreprise (création gratuite en France) dès les premiers revenus."
+          ],
+          "delai_realiste": "3 à 4 mois pour cumuler 1000€",
+          "proba_succes_pct": 55,
+          "effort": "10-15 h/semaine",
+          "risques": "Tests d'entrée ratés (repasser après entraînement), volume de missions irrégulier selon la langue, rémunération faible au début tant que la vitesse de frappe n'est pas là, plateformes qui peuvent baisser leurs tarifs. Revenus à déclarer (micro-entreprise).",
+          "premier_pas_aujourdhui": "Créer un compte sur gotranscript.com et happyscribe.com, puis s'entraîner 1h à transcrire une vidéo YouTube de 5 minutes avant de tenter le test d'admission gratuit ce soir."
+        },
+        {
+          "nom": "Gestion des réseaux sociaux de commerces locaux (mini-forfait mensuel)",
+          "etapes": [
+            "Semaine 1 (0€) : choisir une niche locale (restaurants, coiffeurs, fleuristes), se former gratuitement 5-6h (tutos Meta Business Suite, Canva gratuit), créer 3 exemples de posts fictifs comme portfolio.",
+            "Semaine 2 (dépense ~15€) : passer Canva Pro 1 mois (~12€) pour des visuels propres. Démarcher en personne 15-20 commerces de son quartier dont la page Instagram/Facebook est à l'abandon, avec une offre d'appel simple : 8 posts/mois + réponses aux messages pour 150-250€/mois (un commerce indépendant paie couramment 300-800€/mois pour ce service, donc l'offre débutante est très compétitive).",
+            "Semaines 3-4 : signer 1 à 2 premiers clients (taux de conversion réaliste en porte-à-porte : 5-10%). Publier avec Meta Business Suite (programmation gratuite). Premier revenu : 150-400€.",
+            "Mois 2 : demander un témoignage et des photos avant/après aux premiers clients, créer un profil ComeUp et Malt en parallèle pour capter des clients en ligne. Passer à 3 clients = 450-700€/mois.",
+            "Mois 2-3 : avec 3-4 clients à 150-250€/mois, le seuil de 1000€ cumulés est franchi entre le 2e et le 3e mois. Déclaration micro-entreprise obligatoire dès le premier contrat."
+          ],
+          "delai_realiste": "2 à 3 mois pour cumuler 1000€",
+          "proba_succes_pct": 45,
+          "effort": "10-12 h/semaine (dont démarchage intensif les 3 premières semaines)",
+          "risques": "Le démarchage est la vraie barrière : il faut oser aller voir les commerçants et essuyer beaucoup de refus. Risque de clients qui paient en retard (facturer d'avance le premier mois). Résultats visibles lents pour le client, donc churn possible. Concurrence des outils IA — se différencier par le contact humain local et les photos prises sur place.",
+          "premier_pas_aujourdhui": "Lister 20 commerces de son quartier avec une page Instagram inactive (dernier post > 1 mois), et préparer un message de prospection de 3 phrases + 1 exemple de post refait pour l'un d'eux dans Canva gratuit."
+        },
+        {
+          "nom": "Création de fiches produits e-commerce (ComeUp, Malt, boutiques Shopify locales)",
+          "etapes": [
+            "Jours 1-2 (0€) : apprendre la structure d'une bonne fiche produit (titre SEO, bénéfices, caractéristiques, FAQ) via les guides gratuits de Shopify et d'ahrefs. Rédiger 3 fiches d'exemple sur des produits fictifs variés (mode, high-tech, maison).",
+            "Jours 3-5 (0€) : créer un service sur ComeUp : « Je rédige 5 fiches produits optimisées SEO pour 30€ » (prix d'appel volontairement bas pour obtenir les 5 premières évaluations). Créer aussi un profil Malt.",
+            "Semaines 2-4 (dépense optionnelle ~20€) : booster la visibilité du service avec les options de mise en avant ComeUp si les commandes tardent. Livrer vite et bien, viser 5 étoiles systématiques. Objectif : 5-8 commandes = 150-250€ le premier mois.",
+            "Mois 2 : monter les prix (10-12€/fiche, packs de 10 fiches à 100€) une fois 10+ avis positifs obtenus. Démarcher directement des petites boutiques en ligne françaises (Shopify, Etsy) par email avec un audit gratuit d'une de leurs fiches.",
+            "Mois 3-4 : avec 300-400€/mois en régime de croisière débutant, le cumul de 1000€ est atteint vers le mois 3 ou 4."
+          ],
+          "delai_realiste": "3 à 4 mois pour cumuler 1000€",
+          "proba_succes_pct": 40,
+          "effort": "8-12 h/semaine",
+          "risques": "Forte concurrence de l'IA générative : les clients paient désormais pour la connaissance produit et le SEO, pas pour du texte brut — il faut se positionner sur l'optimisation et la conversion, pas la simple rédaction. Démarrage lent sans avis sur les plateformes (les 3 premières semaines peuvent être à 0€). Commissions des plateformes (~20% sur ComeUp).",
+          "premier_pas_aujourdhui": "Rédiger aujourd'hui 3 fiches produits d'exemple (1h30 de travail) et ouvrir un compte vendeur sur ComeUp avec un service à 30€ pour 5 fiches."
+        },
+        {
+          "nom": "Tests utilisateurs rémunérés en complément (UserTesting, Ferpection, TestingTime)",
+          "etapes": [
+            "Jour 1 (0€) : s'inscrire sur UserTesting (10$ par test de 20 min, 30-120$ pour les entretiens live), Ferpection (plateforme française, 4,2/5 sur Trustpilot) et TestingTime. Éviter de compter uniquement sur Testapic (avis récents négatifs sur les délais de paiement).",
+            "Jour 1-2 (0€ si on a déjà un smartphone et un micro ; sinon ~15€ pour un micro-cravate) : passer le test d'admission UserTesting en soignant la diction et la verbalisation à voix haute.",
+            "Semaines 1-4 : activer les notifications et répondre vite aux screeners — le taux d'acceptation typique est de 15-25%, donc il faut postuler à beaucoup de tests pour en décrocher quelques-uns. Gain réaliste : 150-400$/mois pour 2-3h de tests effectifs par semaine.",
+            "Mois 2+ : viser les entretiens live (30-120$ l'unité), bien mieux payés. Compléter avec les plateformes françaises quand des tests en français apparaissent.",
+            "Mois 3-6 : à 150-250€/mois en moyenne, cette activité seule atteint 1000€ en 4-6 mois ; combinée à une des autres solutions, elle accélère nettement l'objectif."
+          ],
+          "delai_realiste": "4 à 6 mois seule ; idéale en complément d'une autre solution",
+          "proba_succes_pct": 50,
+          "effort": "3-5 h/semaine (dont beaucoup de temps de screening non payé)",
+          "risques": "Revenus plafonnés et irréguliers : on est disqualifié de la majorité des tests par les questionnaires de sélection. Nombre de tests en français limité (l'anglais oral aide beaucoup). Ce n'est pas scalable : c'est un complément fiable, pas une activité principale. Paiements via PayPal (vérifier les frais).",
+          "premier_pas_aujourdhui": "S'inscrire sur usertesting.com et ferpection.com, puis enregistrer le test d'admission UserTesting aujourd'hui en pensant à verbaliser chaque action à voix haute."
+        },
+        {
+          "nom": "Combo recommandé : tests utilisateurs (cash rapide) + gestion réseaux sociaux (revenu récurrent)",
+          "etapes": [
+            "Semaine 1 : lancer les tests utilisateurs (solution 4, 0€ de mise) pour générer les premiers 30-60€ dès les 2 premières semaines — motivation immédiate et zéro risque financier.",
+            "Semaines 1-2 en parallèle : préparer l'offre réseaux sociaux (solution 2) avec les 50€ : ~12€ Canva Pro, ~30€ d'impressions de flyers/cartes simples pour le démarchage local, ~8€ de marge.",
+            "Semaines 2-4 : démarcher 20 commerces locaux, signer 1-2 clients à 150-250€/mois. Les tests utilisateurs continuent en fond (2-3h/semaine).",
+            "Mois 2 : 2-3 clients récurrents (400-600€/mois) + 100-200€ de tests = 500-800€ ce mois-là.",
+            "Mois 2-3 : le cumul dépasse 1000€ entre la fin du mois 2 et le mois 3, avec en prime un revenu récurrent qui continue après les vacances."
+          ],
+          "delai_realiste": "2 à 3 mois pour cumuler 1000€",
+          "proba_succes_pct": 55,
+          "effort": "12-15 h/semaine",
+          "risques": "Cumule les risques des deux activités (démarchage difficile, screeners de tests frustrants), et demande de la discipline pour mener deux fronts. Mais la diversification réduit le risque global : si l'une des deux sources déçoit, l'autre compense. Ne pas oublier la déclaration micro-entreprise pour la partie clients.",
+          "premier_pas_aujourdhui": "Ce soir : 1) inscription UserTesting + test d'admission (45 min), 2) liste de 20 commerces du quartier avec réseaux sociaux à l'abandon (30 min). Ne rien dépenser des 50€ avant d'avoir validé l'admission UserTesting."
+        }
+      ]
+    },
+    {
+      "famille": "Compétence express",
+      "solutions": [
+        {
+          "nom": "PSC1 + baby-sitting premium (la voie la plus fiable)",
+          "etapes": [
+            "Investir les 50€ dans la formation PSC1 (Premiers Secours Civiques niveau 1) : 7h de formation, ~55-65€ chez la Croix-Rouge ou la Protection Civile, sessions chaque semaine dans toutes les villes. C'est LE badge qui rassure les parents et justifie un tarif au-dessus du marché.",
+            "Semaine 1 : créer un profil complet sur Yoopies, Babysits et Yoojo (gratuit) en mettant en avant le PSC1. Tarif moyen 2026 : ~13€ brut/h, +23% en soirée, +29% le week-end (source Yoojo 2026). Viser 12-14€/h net via CESU déclaré.",
+            "Semaines 1-2 : activer le bouche-à-oreille local (groupes Facebook de quartier, voisins, école du coin) — c'est là que viennent 50% des premières missions.",
+            "Semaines 2-10 : viser 2-3 gardes/semaine (soirées + week-ends = mieux payés). 80 heures à 12,50€/h = 1000€.",
+            "Fidéliser 2-3 familles régulières : une garde récurrente du vendredi soir vaut mieux que 10 annonces."
+          ],
+          "delai_realiste": "2,5 à 3 mois pour 1000€ nets (80 heures de garde environ). En zone urbaine avec soirées/week-ends, parfois 2 mois.",
+          "proba_succes_pct": 65,
+          "effort": "8-12 h/semaine (surtout soirées et week-ends)",
+          "premier_pas_aujourdhui": "Réserver aujourd'hui une session PSC1 sur croix-rouge.fr ou protection-civile.org (55-65€, souvent une place sous 7 jours) ET créer son profil Yoopies dans la foulée — les deux prennent 30 minutes.",
+          "risques": "Demande saisonnière (creux en juillet-août, justement maintenant : viser les gardes vacances/périscolaires de la rentrée de septembre). Revenus à déclarer (CESU simplifie tout). Concurrence étudiante en ville — le PSC1 est précisément le différenciateur."
+        },
+        {
+          "nom": "Lavage/detailing auto intérieur à domicile",
+          "etapes": [
+            "Investir les 50€ en matériel de base : nettoyant multi-surfaces auto, shampoing textile, 10 microfibres, brosses, pshit vitres (~45€ chez Action/Amazon). Aspirateur : celui du foyer ou emprunté au début.",
+            "Semaine 1 : se former gratuitement — 5-6 heures de tutos YouTube de detailers français (process intérieur complet), puis s'entraîner sur 2 voitures de proches gratuitement et prendre des photos avant/après.",
+            "Semaine 1-2 : publier une annonce 'nettoyage intérieur complet à domicile 45-60€' sur Leboncoin, groupes Facebook locaux, et flyers chez les commerçants. Se déclarer micro-entrepreneur (gratuit, en ligne sur le guichet INPI en 20 min).",
+            "Semaines 2-10 : viser 2-3 voitures/semaine à 50€ de moyenne. 20-22 prestations = 1000€. Réinvestir les 100 premiers euros dans un aspirateur eau/poussière d'occasion pour monter en gamme.",
+            "Proposer des formules récurrentes (entretien mensuel) et cibler familles avec enfants/animaux : intérieurs les plus sales, clients les plus fidèles."
+          ],
+          "delai_realiste": "2 à 3 mois pour 1000€ (20-22 voitures). L'été est une bonne saison de lancement.",
+          "proba_succes_pct": 45,
+          "effort": "8-10 h/semaine (une prestation = 2-3h avec déplacement)",
+          "premier_pas_aujourdhui": "Acheter le kit de base (45€) et proposer dès ce soir à un proche de nettoyer sa voiture gratuitement demain pour créer les premières photos avant/après.",
+          "risques": "Effort physique réel ; météo peu impactante (intérieur) mais dépendance à un point d'eau/électricité chez le client ; il faut oser prospecter localement — c'est ce qui élimine la moitié des candidats. Obligation de se déclarer (micro-entreprise, gratuit)."
+        },
+        {
+          "nom": "Montage vidéo courts formats (Reels/TikTok) pour commerçants et créateurs",
+          "etapes": [
+            "Investir les 50€ dans 2 mois de CapCut Pro (~24€/mois en 2026, export sans filigrane + sous-titres auto IA) — ou commencer avec CapCut gratuit + DaVinci Resolve (gratuit) et garder les 50€ pour 4 mois de Canva Pro en complément.",
+            "Semaines 1-2 : formation intensive gratuite (YouTube : montage courts formats, hooks, sous-titres dynamiques) — 15-20h de pratique. Monter 5 vidéos démo à partir de contenus libres ou pour un commerce local gratuitement.",
+            "Semaine 2 : créer une offre sur ComeUp (plateforme 100% francophone) : '3 Reels montés et sous-titrés' à 30-40€ au début pour obtenir les 5 premiers avis, puis monter à 25-40€/vidéo.",
+            "Semaines 3-4 : démarcher en direct 20 commerçants/artisans locaux (restaurants, coiffeurs, coachs sportifs) qui postent mal sur Instagram : offre 'pack 4 vidéos/mois à 150€'. Un seul client récurrent change tout.",
+            "Mois 2-4 : viser 2 clients récurrents à 150€/mois + commandes ComeUp = 1000€ cumulés atteints entre le mois 3 et 4. Statut micro-entrepreneur obligatoire dès les premiers euros."
+          ],
+          "delai_realiste": "3 à 4 mois pour 1000€ cumulés — pas 2 mois, soyons honnêtes : les 4-6 premières semaines servent à apprendre et à décrocher les premiers avis.",
+          "proba_succes_pct": 25,
+          "effort": "10-15 h/semaine",
+          "premier_pas_aujourdhui": "Télécharger CapCut (version gratuite pour commencer, garder les 50€ pour le Pro quand le filigrane devient bloquant) et monter aujourd'hui sa première vidéo de 30 secondes en suivant un tuto 'montage Reels débutant'.",
+          "risques": "Marché encombré de débutants : les premiers clients sont durs à obtenir sans avis. Il faut accepter de sous-facturer au départ. La demande est réelle (tout commerce veut des courts formats en 2026) mais elle récompense la régularité et le démarchage local, pas juste un profil en ligne."
+        },
+        {
+          "nom": "Visuels Canva pour commerces locaux (menus, flyers, posts réseaux sociaux)",
+          "etapes": [
+            "Investir les 50€ dans 4 mois de Canva Pro (~12€/mois : accès aux templates premium, suppression d'arrière-plan, kit de marque).",
+            "Semaine 1 : se former gratuitement (Canva Design School + tutos YouTube en français, ~10h) et créer un mini-portfolio : refaire gratuitement le menu d'un restaurant du quartier et 3 posts Instagram fictifs pour des commerces réels.",
+            "Semaine 2 : démarcher physiquement 15-20 commerces (restaurants avec menus Word imprimés, instituts sans Instagram propre) : offre 'menu redesigné + 8 posts' à 80-120€, ou forfait 60€/mois pour 4 posts.",
+            "Semaines 2-4 : en parallèle, publier une offre sur ComeUp ('je crée vos visuels Instagram', 20-30€ le pack) pour les premiers avis.",
+            "Mois 2-4 : 3-4 clients locaux en forfait mensuel (60-80€/mois chacun) + missions ponctuelles = 1000€ cumulés vers le mois 3-4. Déclaration micro-entrepreneur dès le premier client payant."
+          ],
+          "delai_realiste": "3 à 4 mois pour 1000€ cumulés. Le blocage n'est pas la compétence (Canva s'apprend en 2 semaines) mais la vente en porte-à-porte local.",
+          "proba_succes_pct": 30,
+          "effort": "8-12 h/semaine (dont 3-4h de démarchage, la partie que personne n'aime mais qui fait tout)",
+          "premier_pas_aujourdhui": "Prendre l'abonnement Canva Pro (essai gratuit 30 jours d'abord — garder les 50€ intacts ce mois-ci) et refaire aujourd'hui gratuitement le menu ou le flyer d'un commerçant qu'on connaît, pour avoir un avant/après à montrer dès cette semaine.",
+          "risques": "Concurrence forte en ligne (IA + débutants), d'où l'importance du local en face-à-face où la concurrence est quasi nulle. Revenus irréguliers au début. Risque principal : abandonner après 10 'non' de commerçants — il en faut souvent 20 pour 2 'oui'."
+        },
+        {
+          "nom": "Achat-revente vêtements de marque (compétence 'sourcing' + les 50€ comme stock de départ)",
+          "etapes": [
+            "Semaine 1 : la compétence à acquérir (gratuite, 10h) : apprendre à identifier 10 marques qui se revendent bien sur Vinted (Ralph Lauren, Levi's, The North Face, Sézane...) et à vérifier les prix de vente réels via les articles 'vendus'. C'est un vrai savoir-faire, pas de la chance.",
+            "Week-end 1 : investir les 50€ en brocante/vide-greniers (pleine saison en juillet) ou friperie au kilo : 10-15 pièces de marque à 2-5€ pièce.",
+            "Semaines 1-3 : photos soignées (lumière naturelle, fond neutre), descriptions précises avec mensurations, mise en ligne sur Vinted et Leboncoin. Prix de revente visé : 15-25€/pièce (panier moyen constaté ~25€, multiple réaliste x3-x5 sur un lot, invendus compris — source Friptadium 2026).",
+            "Réinvestir systématiquement : 50€ → ~150-200€ (cycle 1, ~4 semaines) → ~450-600€ (cycle 2) → 1000€+ (cycle 3). Chaque cycle affine l'œil : c'est la compétence qui s'accumule.",
+            "Attention fiscale : l'achat pour revendre est une activité imposable dès le 1er euro (micro-entreprise), et Vinted transmet les données au fisc dès 30 ventes ou 2000€/an. Se déclarer dès le cycle 2."
+          ],
+          "delai_realiste": "3 mois pour 1000€ de chiffre cumulé (3 cycles de réinvestissement de ~4 semaines). Certains y arrivent en 2 mois, la médiane honnête est 3.",
+          "proba_succes_pct": 40,
+          "effort": "6-10 h/semaine (sourcing le week-end, photos et envois en semaine)",
+          "premier_pas_aujourdhui": "Repérer ce soir les vide-greniers de ce week-end sur vide-greniers.org, et passer 1h sur Vinted à noter les prix de vente RÉELS (filtres 'vendus') de 10 marques courantes — sans dépenser un centime aujourd'hui.",
+          "risques": "Invendus inévitables (20-30% du stock), trésorerie qui dort 2-4 semaines par cycle, temps sous-estimé (photos + envois). Ce n'est PAS du dropshipping : marchandise réelle, marge réelle, mais croissance lente et plafonnée sans volume. Obligation de déclaration fiscale dès qu'on achète pour revendre."
+        }
+      ]
+    },
+    {
+      "famille": "Optimisation / cashback / vente",
+      "solutions": [
+        {
+          "nom": "Grand désencombrement : vendre ce qu'on possède déjà (Vinted + Leboncoin)",
+          "etapes": [
+            "Semaine 1 : inventaire complet du logement — vêtements, chaussures, électronique, jeux vidéo, livres, meubles, matériel de sport, jouets. Objectif : 40 à 80 objets vendables. Les 50€ ne servent qu'aux fournitures d'emballage (15-20€ de cartons et papier bulle).",
+            "Semaine 1-2 : photographier chaque objet en lumière naturelle (5-6 photos), rédiger des annonces avec marque + taille + état + mots-clés. Mode sur Vinted (0% de commission vendeur), électronique/meubles/volumineux sur Leboncoin.",
+            "Semaines 2-8 : publier 5-10 annonces par jour plutôt que tout d'un coup, répondre vite aux messages, accepter les offres raisonnables (-15/-20%), reposter les invendus avec baisse de prix après 3 semaines.",
+            "Mois 2-3 : élargir aux objets des proches (vendre pour eux contre 20-30% du prix de vente) et aux objets dormants de valeur : vieux smartphones (30-150€ pièce en rachat), consoles, sacs de marque.",
+            "Connaître les seuils 2026 : au-delà de 30 transactions OU 2 000€/an, la plateforme transmet vos données au fisc (DAC7), mais la vente de biens personnels d'occasion reste NON imposable en France comme en Belgique — rien à payer, juste une donnée transmise."
+          ],
+          "delai_realiste": "2 à 4 mois pour atteindre 1000€ (un vendeur occasionnel qui vide son logement fait 50-150€ en quelques semaines ; il faut un stock personnel conséquent ou celui des proches pour atteindre 1000€)",
+          "proba_succes_pct": 55,
+          "effort": "5-8 h/semaine (photos, annonces, messages, envois)",
+          "premier_pas_aujourdhui": "Aujourd'hui même : créer les comptes Vinted et Leboncoin, faire le tour d'une seule pièce (la chambre), sortir 15 objets, photographier et publier les 5 premiers avant ce soir. Ne rien dépenser des 50€ pour l'instant.",
+          "risques": "Principal risque : ne pas avoir assez de stock personnel pour atteindre 1000€ (ménage moyen : 300-600€ récupérables). Arnaques classiques (faux paiements hors plateforme — toujours rester dans l'app), objets invendus, temps sous-estimé. Aucun risque de perte financière."
+        },
+        {
+          "nom": "Cumul des primes de bienvenue et parrainages bancaires légitimes",
+          "etapes": [
+            "Jour 1 : lister les offres actives sur un comparateur à jour (comparabanques.fr, selectra.info). En 2026 les montants réels constatés : Hello bank! jusqu'à 280€ pour le filleul (10€ ouverture + 70€ si 10 paiements carte en 3 mois + 200€ en bons d'achat avec mobilité Hello Start+), Fortuneo 160€ filleul, Monabanq jusqu'à 280€. En Belgique, vérifier les offres ponctuelles de KBC, Belfius et les néobanques (N26, montants plus faibles, 10-30€).",
+            "Semaine 1 : ouvrir un premier compte via un lien de parrainage (demander à un proche déjà client ou via forums de parrainage). Utiliser les 50€ comme dépôt initial minimum souvent exigé.",
+            "Mois 1-3 : remplir les conditions (10 paiements carte, domiciliation partielle éventuelle), encaisser la prime, puis enchaîner sur une 2e et 3e banque en réutilisant le même dépôt de 50€ déplacé de compte en compte.",
+            "Mois 2-4 : devenir parrain à son tour : proposer son code à son entourage réel (le parrain touche 50-120€ par filleul, souvent 10 filleuls/an autorisés). 3-4 filleuls réels dans l'entourage = 150-400€ supplémentaires.",
+            "Total réaliste en cumulant 3 banques comme filleul (300-500€) + 3-5 parrainages comme parrain (150-500€) : 500 à 1000€. Fermer ensuite les comptes inutiles (gratuit dans les banques en ligne, respecter la durée minimale de détention exigée pour ne pas perdre la prime)."
+          ],
+          "delai_realiste": "3 à 6 mois (les primes sont versées 1 à 3 mois après ouverture et conditions remplies ; le volet parrain dépend du rythme de l'entourage)",
+          "proba_succes_pct": 40,
+          "effort": "2-3 h/semaine (dossiers d'ouverture, suivi des conditions, relances entourage)",
+          "premier_pas_aujourdhui": "Aujourd'hui : consulter la page parrainage/offre de bienvenue de Hello bank! et Fortuneo, préparer les justificatifs (pièce d'identité, justificatif de domicile, RIB), et demander dans son entourage qui est déjà client pour obtenir un code parrain (ça double presque la prime).",
+          "risques": "Conditions parfois strictes (revenus minimums pour certaines offres, nombre de paiements carte, durée de détention) : prime perdue si non respectées. Le volet parrain plafonne vite si l'entourage n'est pas intéressé. Multiplier les ouvertures de comptes laisse des traces (fichiers bancaires) mais est parfaitement légal. Atteindre 1000€ par ce seul levier exige de cumuler plusieurs banques ET plusieurs filleuls."
+        },
+        {
+          "nom": "Achat-revente d'opportunité avec les 50€ comme capital de départ (flipping local)",
+          "etapes": [
+            "Semaine 1 : se former gratuitement en observant les prix : sur Leboncoin/2ememain (Belgique), repérer 2-3 niches simples que tout le monde peut évaluer — vélos d'occasion, meubles en bois massif, jeux vidéo rétro, petit électroménager de marque. Noter les prix de revente réels (annonces VENDUES, pas affichées).",
+            "Semaine 2 : premier achat avec 30-40€ des 50€ : chiner en brocante, vide-grenier, dons Geev/annonces 'à donner', ou lot sous-évalué sur Leboncoin. Règle : n'acheter que si la revente estimée fait au moins x2,5.",
+            "Semaines 3-6 : nettoyer/réparer légèrement (un vélo dégonflé racheté 20€ et revendu 60€ propre et gonflé), photographier bien, revendre. Réinvestir TOUT : 50€ -> 110€ -> 240€ -> 500€ en 4-5 cycles.",
+            "Mois 2-4 : monter en panier moyen (meubles vintage, smartphones testés) et viser 300-500€/mois de marge, ce que font les vendeurs réguliers avec stratégie de flip selon les retours 2026.",
+            "Attention fiscale : l'achat-revente répété est une activité imposable (contrairement à la vente de ses biens personnels). Au-delà d'une pratique régulière, il faut déclarer (micro-BIC en France, revenus divers en Belgique). Pour un objectif one-shot de 1000€ sur 3 mois, rester modeste en volume et déclarer si les seuils sont franchis."
+          ],
+          "delai_realiste": "3 à 5 mois pour transformer 50€ en 1000€ de marge cumulée (4-6 cycles d'achat-revente)",
+          "proba_succes_pct": 35,
+          "effort": "6-10 h/semaine (chine, remise en état, annonces, remises en main propre)",
+          "premier_pas_aujourdhui": "Aujourd'hui : passer 1 heure sur Leboncoin/2ememain à comparer prix demandés vs prix des annonces qui disparaissent vite dans UNE niche (ex. vélos adulte 20-80€), et repérer le vide-grenier ou la brocante le plus proche ce week-end. Ne pas encore dépenser.",
+          "risques": "C'est la solution la plus risquée de la famille : on peut acheter un objet invendable ou défectueux (perte de 20-40€ par erreur), la marge dépend du flair qui s'acquiert en quelques semaines. Requiert des déplacements. Risque fiscal si activité répétée non déclarée. Ce n'est PAS du dropshipping ni un système miracle : c'est du commerce local classique, lent et artisanal."
+        },
+        {
+          "nom": "Chasse aux remboursements et à l'argent oublié (comptes dormants, trop-perçus, résiliations)",
+          "etapes": [
+            "Jour 1 : vérifier l'argent dormant à son nom : en France sur Ciclade.fr (comptes bancaires et assurances-vie oubliés transférés à la Caisse des Dépôts, gratuit, montant moyen retrouvé de plusieurs centaines d'euros quand il y a un avoir) ; en Belgique sur checkdoc/e-DEPO du SPF Finances (comptes dormants). Vérifier aussi pour ses parents/grands-parents décédés.",
+            "Semaine 1 : audit des abonnements : relever 3 mois de relevés bancaires, résilier tout abonnement non utilisé (salle, streaming, applis, assurances doublons — l'assurance moyens de paiement à 25-30€/an est presque toujours inutile). Gain typique : 20-60€/mois soit 240-720€/an réorientés vers la cagnotte vacances.",
+            "Semaine 2 : réclamer les trop-perçus : régularisation électricité/gaz (les acomptes sont souvent surévalués — demander une révision de la mensualité et le remboursement du solde créditeur), mutuelle (remboursements santé non réclamés, délai de 2 ans), indemnités de retard train/avion des 3 dernières années (25-50% du billet SNCF dès 30 min de retard, 250-600€ par vol éligible en UE via règlement CE 261/2004 — réclamation directe gratuite auprès de la compagnie, sans passer par les intermédiaires qui prennent 25-35%).",
+            "Semaine 3 : activer les garanties oubliées : garantie légale de conformité de 2 ans sur tout appareil en panne acheté neuf (réparation/remplacement gratuit), extensions de garantie fabricant, remboursements 'satisfait ou remboursé'.",
+            "Mois 1-3 : cumuler dans un compte épargne séparé (livret) chaque euro récupéré : le total typique d'un premier grand audit se situe entre 200 et 700€, plus dans les foyers qui n'ont jamais fait l'exercice."
+          ],
+          "delai_realiste": "1 à 3 mois pour le gros du gain (certains remboursements comme le CE 261 aérien peuvent prendre 2-3 mois de traitement)",
+          "proba_succes_pct": 50,
+          "effort": "2-4 h/semaine pendant un mois, puis quasi rien",
+          "premier_pas_aujourdhui": "Aujourd'hui même, 30 minutes et 0€ dépensés : 1) recherche à son nom sur Ciclade.fr (France) ou e-DEPO (Belgique), 2) exporter les 3 derniers relevés bancaires et surligner tous les prélèvements récurrents, 3) résilier le premier abonnement inutile identifié.",
+          "risques": "Aucun risque financier — tout est gratuit et légal. Le seul aléa : le montant récupérable dépend totalement de la situation (quelqu'un de déjà très organisé récupérera 100-200€, un foyer qui n'a jamais audité peut dépasser 1000€ à lui seul). Ne jamais payer un intermédiaire pour retrouver de l'argent que Ciclade/SPF Finances rendent gratuitement."
+        },
+        {
+          "nom": "Cashback systématique sur les dépenses déjà prévues (complément, pas moteur principal)",
+          "etapes": [
+            "Jour 1 : s'inscrire sur 2 plateformes complémentaires — iGraal (la plus fiable, bonus de bienvenue ~10€) et Widilo (meilleur taux dans ~67% des cas selon les comparatifs 2026). En Belgique, utiliser la section marchands belges des mêmes sites. Installer les extensions navigateur pour ne jamais oublier d'activer.",
+            "Semaine 1 : ajouter Joko (cashback automatique lié à la carte bancaire) pour les achats en magasin physique, et les apps de drive/courses (coupons Shopmium/Coupon Network sur les courses alimentaires : 5-15€/mois de produits remboursés).",
+            "En continu : ne JAMAIS acheter quelque chose pour le cashback — uniquement activer le cashback sur les achats déjà prévus (courses, vêtements des enfants, billets de train, réservation des vacances elles-mêmes : les voyages sont la catégorie où le cashback rapporte le plus, 3-8% sur Booking et autres via les plateformes).",
+            "Mois 2 : gros levier ponctuel : réserver les vacances (hébergement, location voiture, billets) en passant par le cashback = 30-80€ récupérés d'un coup sur un budget vacances de 1000-1500€.",
+            "Retirer dès le seuil atteint (20€ iGraal, plus bas chez d'autres) et virer sur le livret vacances. Réalité 2026 documentée : 120€/an en usage régulier, 200-450€/an pour un foyer qui optimise avec 2-3 apps."
+          ],
+          "delai_realiste": "12 à 18 mois pour 1000€ par le cashback SEUL — c'est trop lent isolément ; en pratique c'est le complément qui apporte 150-400€ en 6-12 mois pendant que les solutions 1, 2 et 4 font le reste",
+          "proba_succes_pct": 90,
+          "effort": "moins d'1 h/semaine une fois les extensions installées",
+          "premier_pas_aujourdhui": "Aujourd'hui : créer le compte iGraal avec le bonus de bienvenue, installer l'extension navigateur, et vérifier si le prochain achat déjà prévu (courses en drive, cadeau, billet) est éligible au cashback. 15 minutes, 0€ dépensé.",
+          "risques": "Quasi nul financièrement (plateformes établies qui paient réellement, avis Trustpilot vérifiés). Vrais risques : cashback refusé si cookies/adblock mal configurés (10-20% des transactions à réclamer manuellement), tentation d'acheter davantage 'parce qu'il y a du cashback' (effet inverse du but recherché), et lenteur de validation (30-90 jours). À traiter comme un complément, jamais comme la solution principale."
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "top5": [
+      "1. PSC1 + baby-sitting premium — Délai: 2,5-3 mois. Proba corrigée: 60% (le 65% annoncé est légèrement optimiste vu le creux de juillet, mais le calcul 80h x 12,50€ = 1000€ est exact et le tarif Yoojo 2026 vérifiable). Premier pas: réserver aujourd'hui une session PSC1 (croix-rouge.fr / protection-civile.org, 55-65€) + créer le profil Yoopies dans la foulée (30 min). Meilleur ratio proba x rapidité / effort: revenu horaire garanti dès la 1re mission, zéro capital à risque, différenciateur réel (PSC1).",
+      "2. Pet-sitting / promenade de chiens (Pawshake, Rover) — Délai: 2-3 mois (avantage saisonnier MAJEUR: nous sommes le 5 juillet, pic des gardes de vacances, une seule garde de 10 jours = 200-350€). Proba corrigée: 55% (le 60% annoncé est correct en été, il serait de 45% hors vacances). Premier pas: profil Pawshake complet à 100% aujourd'hui + faire réserver un proche cette semaine pour amorcer les avis. Effort le plus faible du top (6-10h/sem) pour un revenu récurrent.",
+      "3. Grand désencombrement: vendre ses biens + ceux des proches (Vinted/Leboncoin) — Délai: 2-4 mois. Proba corrigée: 50% pour les 1000€ complets (le 55% annoncé suppose d'élargir aux objets des proches, car un foyer moyen ne récupère que 300-600€ seul), mais proba ~95% de générer les premiers 200-400€ en 3 semaines. Premier pas: aujourd'hui, vider une seule pièce, photographier 15 objets, publier les 5 premiers avant ce soir, 0€ dépensé. Rôle stratégique: c'est le carburant qui finance et sécurise les autres solutions (cash rapide, risque financier nul).",
+      "4. Flip vêtements de marque sur Vinted (sourcing brocante) — Délai: 3-4 mois. Proba corrigée: 45% (le 55% annoncé sous-pondère le taux d'abandon au mois 2 et les 20-30% d'invendus admis par l'autre agent; les marges 100-300% sur Carhartt/Levi's/Nike vintage sont, elles, réalistes et vérifiables via le filtre 'vendus'). Premier pas: 45 min ce soir sur Vinted à noter les prix VENDUS de Carhartt, Levi's 501 et Nike vintage = grille d'achat pour la brocante de dimanche (pleine saison en juillet). Seule voie du top qui 'transforme' vraiment les 50€ en capital croissant par réinvestissement.",
+      "5. Nettoyage auto intérieur à domicile — Délai: 2-3 mois (15-20 prestations à 50-70€). Proba corrigée: 50% (moyenne des deux agents qui l'ont proposée à 55% et 45%; l'été est effectivement la bonne saison de lancement). Premier pas: acheter le kit ~45€ (microfibres, produits, brosses) et proposer ce soir 2 nettoyages gratuits à des proches pour les photos avant/après. Ticket moyen élevé (50-90€/prestation), demande constante, mais effort physique réel et il faut oser prospecter."
+    ],
+    "illusions_ecartees": [
+      "Cashback (iGraal/Widilo) comme voie principale — le '90% de proba' est trompeur: c'est 90% de gagner QUELQUE CHOSE, pas 1000€. L'agent lui-même chiffre 120-450€/an et 12-18 mois pour 1000€ seul. Verdict: complément honnête (150-300€/an), mais présenter cela comme une transformation de 50€ en 1000€ serait une illusion. Écarté du classement principal, conservé en appoint.",
+      "Primes de bienvenue bancaires — proba annoncée 40% pour 1000€: corrigée à ~15-20%. Les montants max (280€ Hello bank!) exigent des conditions de revenus/domiciliation que beaucoup ne remplissent pas, et le volet parrainage plafonne vite (il faut 3-5 filleuls RÉELS dans son entourage). Réaliste: 200-400€ en 3-6 mois. Légal et sans risque, mais insuffisant seul et non reproductible.",
+      "Chasse à l'argent oublié (Ciclade, trop-perçus, CE 261) — ce n'est pas une méthode reproductible mais une loterie personnelle: quelqu'un d'organisé récupère 100-200€, et on ne 'transforme' rien (les 50€ ne servent à rien ici). One-shot, non scalable. À faire une fois (2-4h, 0 risque) mais ne compte pas comme voie vers 1000€.",
+      "Montage vidéo Reels/TikTok — proba 25% honnêtement annoncée par l'agent lui-même, la plus faible de toutes les solutions actives: 4-6 semaines d'apprentissage non payées, marché saturé de débutants et d'outils IA, 10-15h/sem. Ratio proba x rapidité / effort le pire du panel. Idem pour les visuels Canva (30%): le blocage n'est pas la compétence mais le porte-à-porte, que la plupart abandonnent après 10 refus.",
+      "Transcription en ligne — proba annoncée 55%: corrigée à ~40%. Taux d'échec élevé aux tests d'entrée (admis par l'agent), volume de missions en français limité et irrégulier, rémunération horaire effective très faible au début (3-4h de travail pour 1h d'audio). Faisable mais surestimée.",
+      "Point notable: AUCUN agent n'a proposé de véritable arnaque (pas de dropshipping miracle, crypto, MLM, trading). Les 5 agents ont produit des activités économiques réelles à espérance positive — les 'illusions' ci-dessus sont des solutions légitimes mais survendues comme voie principale, pas des escroqueries."
+    ],
+    "comparaison_paris": "Voie paris sportifs: plafond mathématique de 4,7% de réussite (Dubins-Savage, marge bookmaker -5%), espérance NÉGATIVE (~-47,50€ sur les 50€ en jouant de façon optimale 'bold play'), et en cas d'échec (95,3% des cas): 0€, perte totale. Meilleure solution réelle (PSC1 + baby-sitting, 60%): 60/4,7 = x12,8 les chances de succès. Top 5 moyen (~52%): x11. Même la solution la plus faible retenue (flip Vinted, 45%) fait x9,6. Différence encore plus brutale en espérance: paris = -47€ attendus; baby-sitting = +900 à +1000€ attendus (revenu horaire quasi certain, seule l'atteinte du plafond dans le délai est incertaine). Et l'asymétrie d'échec: un flip Vinted qui 'échoue' laisse typiquement 300-600€ et une compétence; un pari qui échoue laisse 0€. Enfin, en combinant 2 solutions du top (ex: désencombrement + baby-sitting), la proba d'atteindre 1000€ monte à ~80% (1-0,4x0,5), soit x17 la voie paris — pour un risque financier maximal de 50€ contre une perte quasi certaine côté paris.",
+    "doublons_supprimes": [
+      "'Achat-revente vêtements de marque' (famille Compétence express) — doublon quasi intégral du 'Flip vêtements de marque sur Vinted' (famille Flipping): mêmes marques cibles, mêmes cycles de réinvestissement, mêmes canaux. Fusionnés; les deux probas (55% et 40%) ont été moyennées et corrigées à 45%.",
+      "'Lavage/detailing auto intérieur à domicile' (famille Compétence express) — doublon du 'Nettoyage auto à domicile' (famille Services locaux): même kit à ~45€, mêmes tarifs 45-90€, même stratégie de photos avant/après. Fusionnés à 50% de proba.",
+      "'Achat-revente d'opportunité avec les 50€' (famille Optimisation) — version générique qui recouvre les 4 solutions spécialisées de la famille Flipping (vêtements, tech, meubles, rétro-gaming). Supprimée au profit des versions spécialisées, mieux détaillées.",
+      "'Combo tests utilisateurs + gestion réseaux sociaux' (famille Freelance) — pas une solution nouvelle mais l'assemblage de deux solutions déjà listées individuellement dans la même famille. Le principe du combo (cash rapide + récurrent) est retenu dans la synthèse, la fiche doublon est supprimée."
+    ],
+    "synthese": "Après déduplication (24 solutions -> 20 uniques) et correction des probabilités trop optimistes (-5 à -15 points sur la moitié des fiches), le constat est net: les meilleures voies réelles offrent 45 à 60% de chances d'atteindre 1000€ en 2 à 4 mois, soit 10 à 13 fois mieux que le plafond mathématique des paris sportifs (4,7%) — avec en prime une espérance positive là où les paris garantissent une perte moyenne. Le classement récompense trois profils gagnants: les services à revenu horaire quasi certain (baby-sitting PSC1, pet-sitting — d'autant que nous sommes en juillet, pic des gardes de vacances), la liquidation sans risque (désencombrement: premiers 200-400€ en 3 semaines) et le flipping à réinvestissement (Vinted), seule voie qui multiplie réellement le capital. Les illusions écartées ne sont pas des arnaques (aucun agent n'en a proposé) mais des compléments survendus: cashback, primes bancaires et argent oublié rapportent 150-400€ chacun, jamais 1000€ seuls. Stratégie optimale recommandée: lancer AUJOURD'HUI le désencombrement (0€, cash immédiat) + réserver le PSC1 avec les 50€, puis ajouter le pet-sitting ou le flip Vinted au mois 2 — cette combinaison porte la probabilité de succès à ~80%, soit x17 la voie paris, pour un risque maximal de 50€."
+  }
+}
