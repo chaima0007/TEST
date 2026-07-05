@@ -1,0 +1,1116 @@
+{
+  "analyses": [
+    {
+      "equipe": "Brésil",
+      "matchs_joues": [
+        {
+          "adversaire": "Maroc (phase de groupes, Groupe C)",
+          "date": "13 juin 2026, New York/New Jersey Stadium (MetLife)",
+          "score": "1-1",
+          "buteurs": "Saibari 21' (Maroc); Vinícius Júnior 32' (Brésil)",
+          "resume_tactique": "Brésil d'Ancelotti étouffé en début de match par le pressing haut marocain: 12 tirs concédés dans les 30 premières minutes, plus que sur n'importe lequel de ses 6 derniers matchs complets de Coupe du Monde. Casemiro, dépassé, est sorti à la mi-temps, ce qui a légèrement rééquilibré le milieu; la baisse de menace marocaine tenait aussi à l'essoufflement de leur pressing. Vinícius a égalisé d'une frappe du droit après un une-deux avec Bruno Guimarães côté gauche. Alisson a préservé le nul par un double arrêt en fin de match.",
+          "points_forts_montres": "Éclair individuel de Vinícius Júnior (but superbe), connexion Vinícius–Guimarães côté gauche, Alisson décisif dans le money-time.",
+          "failles_exposees": "Milieu massivement exposé; relance courte fautive (Paquetá perd le contrôle d'une passe d'Ibañez) menant directement au but; ligne défensive coupée par une passe verticale entre Gabriel Magalhães et Marquinhos; Alisson lent à sortir sur le but lobé de Saibari; grande vulnérabilité au pressing haut et entame de match ratée; occasions nettes concédées jusqu'au bout (double arrêt d'Alisson)."
+        },
+        {
+          "adversaire": "Haïti (phase de groupes, Groupe C)",
+          "date": "19 juin 2026, Philadelphie (Lincoln Financial Field)",
+          "score": "3-0",
+          "buteurs": "Cunha 23' et 36', Vinícius Júnior 45+3'",
+          "resume_tactique": "Victoire maîtrisée contre le plus faible du groupe: domination territoriale, tout plié avant la mi-temps. Cunha a repris un tir de Vinícius repoussé (23') puis fusillé le premier poteau du gauche (36'); Vinícius a conclu une passe lobée de Paquetá dans la profondeur juste avant la pause. Victoire qui a placé le Brésil en tête du Groupe C à la différence de buts.",
+          "points_forts_montres": "Efficacité offensive du duo Cunha–Vinícius, jeu dans la profondeur (passe lobée de Paquetá), clean sheet, match réglé en 45 minutes.",
+          "failles_exposees": "Peu de failles visibles face à un adversaire très faible et déjà condamné; aucune occasion majeure concédée documentée dans les comptes-rendus (détails défensifs précis: non trouvé). Match peu probant comme test."
+        },
+        {
+          "adversaire": "Écosse (phase de groupes, Groupe C)",
+          "date": "24 juin 2026, Miami (Hard Rock Stadium)",
+          "score": "3-0 (Écosse 0-3 Brésil)",
+          "buteurs": "Vinícius Júnior x2 (7', tête juste avant la pause), Cunha",
+          "resume_tactique": "Démonstration: 4,46 xG contre 1,13 pour l'Écosse. Pressing et punition immédiate des erreurs adverses: Vinícius profite d'une horrible erreur de McKenna dès la 7e; un autre but lui est refusé par VAR après hésitation de Hendry; il marque de la tête avant la pause. Cunha conclut après un décalage de Guimarães. Première place du Groupe C assurée (7 pts).",
+          "points_forts_montres": "Vinícius injouable (2 buts, dont un de la tête), pressing qui force et punit les erreurs de relance adverses, énorme volume offensif (4,46 xG), Guimarães créateur, deuxième clean sheet.",
+          "failles_exposees": "Relâchement en fin de match: l'Écosse s'est procuré des situations dans le dernier quart d'heure (1,13 xG au total), trop tard pour peser mais signe d'une baisse d'intensité une fois le match plié. Rien de structurel exposé par un adversaire limité."
+        },
+        {
+          "adversaire": "Japon (16e de finale / Round of 32)",
+          "date": "29 juin 2026, Houston Stadium",
+          "score": "2-1",
+          "buteurs": "Sano 29' (Japon); Casemiro 56' (tête au second poteau), Martinelli 90+5' (frappe enroulée sur passe de Guimarães)",
+          "resume_tactique": "Première mi-temps très inquiétante: possession stérile contre le bloc bas 5-4 japonais, Vinícius (23 touches), Cunha (21) et Rayan (17) les moins servis des joueurs de champ; but concédé sur une passe négligée et une mauvaise intervention de Casemiro (déjà averti). Bascule en seconde période: entrée d'Endrick à la pause (Paquetá blessé), doublement du volume de centres (8 en 1re MT, 15 en 2e), contre-pressing devenu agressif et continu qui a enfermé le Japon près de sa surface. Casemiro égalise de la tête, Suzuki détourne un exploit de Vinícius sur le poteau, puis Martinelli, entré en jeu, arrache la qualification à la 90+5'.",
+          "points_forts_montres": "Ressort mental et capacité de réaction en seconde période, contre-pressing haut après la pause, profondeur du banc décisive (Endrick change la structure, Martinelli marque), Guimarães encore passeur décisif, danger aérien (tête de Casemiro).",
+          "failles_exposees": "Milieu de nouveau massivement exposé (comme contre le Maroc): Casemiro lent, averti tôt, fautif sur le but; Paquetá transparent puis blessé. Équipe vieillissante (2e équipe la plus âgée alignée par le Brésil en Coupe du Monde depuis 1966: Casemiro, Alisson 33 ans, Danilo 34, Marquinhos 32, Douglas Santos 32) débordée par la vitesse et le mouvement japonais. Attaque neutralisée 45 minutes par un bloc bas discipliné. Cunha confirmé comme faux problème de n°9. Entame de match encore ratée — menés à la pause."
+        }
+      ],
+      "style_de_jeu": "Sous Carlo Ancelotti, un Brésil à base de possession et de domination territoriale en 4-3-3/4-2-3-1, dont toute la création passe par le couloir gauche Vinícius Júnior–Bruno Guimarães (avec Douglas Santos derrière). Bloc médian plutôt qu'un pressing haut permanent, mais capable de basculer vers un contre-pressing très agressif en seconde période (net contre le Japon). Contre les blocs bas, recours croissant au jeu de centres (volume de centres doublé après la pause face au Japon) et au danger aérien (têtes de Vinícius et Casemiro). Pas de n°9 de référence: Cunha joue en pointe sans en avoir le profil. Marque de fabrique négative: entames de match lentes, avec des premières mi-temps subies contre les adversaires sérieux.",
+      "forces_recurrentes": [
+        "Vinícius Júnior en état de grâce: décisif dans 3 des 4 matchs (4 buts, dont frappes lointaines et jeu de tête), injouable contre l'Écosse",
+        "Bruno Guimarães, plaque tournante et passeur décisif récurrent (but de Vinícius vs Maroc, but de Cunha vs Écosse, but de Martinelli vs Japon)",
+        "Capacité de réaction et force mentale en seconde période: revenus ou passés devant après avoir été dominés contre le Maroc et le Japon",
+        "Profondeur de banc décisive: Endrick et Martinelli ont changé le match contre le Japon; Alisson toujours capable d'arrêts décisifs (double arrêt vs Maroc)",
+        "Efficacité clinique quand l'adversaire se découvre ou se trompe: erreurs écossaises punies immédiatement, 4,46 xG à Miami, 3-0 expéditifs contre Haïti et l'Écosse"
+      ],
+      "failles_recurrentes": [
+        "Milieu de terrain massivement exposé sur PLUSIEURS matchs (Maroc et Japon): Casemiro trop lent, dépassé dans les transitions, sorti à la mi-temps contre le Maroc, averti tôt et fautif sur le but japonais",
+        "Entames de match ratées: 12 tirs concédés en 30 minutes contre le Maroc, menés à la pause contre le Japon — les bons adversaires frappent le Brésil dans la première demi-heure",
+        "Vulnérabilité au pressing haut et erreurs de relance courte: pertes de balle Paquetá/Ibañez menant au but de Saibari, passe négligée à l'origine du but de Sano",
+        "Charnière et axe perçables par les passes verticales/dans la profondeur (ligne coupée entre Gabriel Magalhães et Marquinhos vs Maroc), aggravé par l'âge et le manque de mobilité du bloc (Casemiro, Danilo 34 ans, Marquinhos 32, Alisson 33) face aux attaquants rapides — un profil que la Norvège possède",
+        "Absence de vrai n°9 (Cunha peu convaincant en pointe) et attaque neutralisable par un bloc bas discipliné, ce qui laisse le Brésil dépendant des exploits de Vinícius et des centres"
+      ],
+      "evolution": "Trajectoire en dents de scie plutôt que montée en puissance linéaire. Après un nul poussif contre le Maroc (dominé 30 minutes), le Brésil a enchaîné deux 3-0 convaincants — mais contre Haïti et une Écosse limitée. Le vrai test suivant, le Japon en 16e, a rejoué le scénario marocain: milieu débordé, but concédé, qualification arrachée à la 90+5'. Le positif: la gestion des secondes périodes s'améliore nettement (ajustements d'Ancelotti, contre-pressing, impact du banc) et l'équipe n'a jamais perdu. Le négatif: les failles structurelles (entames lentes, milieu vieillissant, relances risquées) sont toujours là au moment d'aborder la Norvège, et la blessure de Paquetá contre le Japon fragilise encore le milieu. Une équipe qui grandit dans la douleur, pas encore une machine.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_C",
+        "https://www.skysports.com/football/news/12098/13552632/world-cup-2026-brazil-1-1-morocco-vinicius-junior-scores-beauty-but-carlo-ancelottis-side-held-in-new-york",
+        "https://theanalyst.com/articles/brazil-vs-morocco-stats-world-cup-2026",
+        "https://www.espn.com/soccer/report/_/gameId/760419",
+        "https://www.skysports.com/football/news/12309/13553624/world-cup-2026-brazil-3-0-haiti-matheus-cunha-nets-twice-as-vinicius-junior-strikes-again-to-earn-much-needed-victory",
+        "https://www.aljazeera.com/sports/2026/6/20/cunha-hits-brazil-double-against-haiti-to-seal-first-world-cup-2026-win",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/scotland-brazil-match-report-highlights",
+        "https://www.skysports.com/football/scotland-vs-brazil/report/549819",
+        "https://www.skysports.com/football/news/12098/13558811/world-cup-2026-brazil-2-1-japan-gabriel-martinelli-scores-dramatic-winner-as-carlo-ancelottis-side-advance-with-comeback-win",
+        "https://www.olympics.com/en/news/fifa-world-cup-2026-round-of-32-brazil-vs-japan-live-updates",
+        "https://news.northeastern.edu/2026/06/30/brazil-japan-world-cup-analysis/",
+        "https://www.espn.com/soccer/story/_/id/49216717/brazil-avoid-world-cup-shock-late-win-vs-japan-reach-round-16",
+        "https://coupedumonde2026.net/equipe/bresil/"
+      ]
+    },
+    {
+      "equipe": "Norvège",
+      "matchs_joues": [
+        {
+          "adversaire": "Irak (phase de groupes, Groupe I)",
+          "date": "16 juin 2026 (Boston)",
+          "score": "Norvège 4-1 Irak",
+          "buteurs": "Haaland x2 (29e, 43e), Østigård (76e), Hussein c.s.c. (90+6e) — pour l'Irak: Aymen Hussein (39e, tête)",
+          "resume_tactique": "Entrée en matière maîtrisée mais pas écrasante: ouverture du score sur un centre bas de Møller Wolfe repris au second poteau par Haaland; 2-1 juste avant la pause quand Haaland a pressé et intercepté une passe en retrait molle vers le gardien irakien; 3-1 sur corner d'Ødegaard repris de la tête par Østigård, totalement seul; 4-1 en fin de match sur une déviation de Thorstvedt détournée dans son but par Hussein. Norvège: 12 tirs, 5 cadrés, xG 2,59. Jeu vertical, exploitation des coups de pied arrêtés et du pressing sur les relances adverses.",
+          "points_forts_montres": "Efficacité de Haaland dans la surface (2 buts), pressing opportuniste sur les erreurs de relance, danger sur corners (connexion Ødegaard-Østigård), solidité du résultat.",
+          "failles_exposees": "Égalisation concédée sur un simple centre de Al-Ammari repris de la tête par Hussein (faiblesse aérienne/marquage sur centres). L'Irak a tout de même produit 11 tirs (xG 0,77) — beaucoup pour un adversaire de ce niveau, signe d'un bloc perméable dans les temps faibles."
+        },
+        {
+          "adversaire": "Sénégal (phase de groupes, Groupe I)",
+          "date": "22/23 juin 2026 (New York, sources divergentes sur la date exacte)",
+          "score": "Norvège 3-2 Sénégal",
+          "buteurs": "Marcus Holmgren Pedersen (43e), Haaland x2 (48e, 58e) — pour le Sénégal: Ismaïla Sarr x2 (dont un dans le temps additionnel)",
+          "resume_tactique": "Victoire qui a qualifié la Norvège pour les 16es. Pedersen (entré pour Ryerson, blessé) ouvre le score juste avant la pause. Après le repos, la Norvège découpe le Sénégal en contre-attaque: Ødegaard porte le ballon et sert Haaland en profondeur pour le 2e but; 3-1 à la 58e. Le duo Aursnes-Berge au milieu a fermé l'axe et forcé le Sénégal à des centres désespérés depuis les côtés. xG: 2,1 contre 1,7. Mais fin de match subie: Sarr marque son deuxième dans le temps additionnel et la Norvège tremble jusqu'au bout.",
+          "points_forts_montres": "Transitions offensives létales (contre Ødegaard->Haaland), milieu Aursnes-Berge qui verrouille l'axe, Haaland en série (58e et 59e buts en 52 sélections), capacité à tenir un résultat.",
+          "failles_exposees": "Deux buts concédés à Ismaïla Sarr — vulnérabilité face aux ailiers rapides et percutants. Relâchement en fin de match (but encaissé dans le temps additionnel, 'late flurry' sénégalaise). L'écart xG (2,1 vs 1,7) montre un match bien plus disputé que confortable défensivement."
+        },
+        {
+          "adversaire": "France (phase de groupes, Groupe I — 1re place en jeu)",
+          "date": "26 juin 2026 (Boston)",
+          "score": "Norvège 1-4 France",
+          "buteurs": "Pour la Norvège: non trouvé avec certitude (Strand Larsen a vu son penalty repoussé par Maignan) — pour la France: Dembélé x3 (7e, 20e, 32e), Doué (90+)",
+          "resume_tactique": "ATTENTION contexte: qualification déjà acquise, Solbakken a fait 10 changements et laissé Haaland et Ødegaard sur le banc. Naufrage défensif de l'équipe B: Mbappé touche la barre après 22 secondes, Dembélé signe un triplé en première période (le premier triplé en 1re mi-temps en Coupe du monde depuis Salenko en 1994), notamment lancé dans l'espace par Mbappé pour frapper du droit devant Selvik. Strand Larsen manque un penalty. Doué scelle le 4-1 dans le temps additionnel. La France prend la 1re place du groupe, la Norvège finit 2e.",
+          "points_forts_montres": "Peu de choses: rotation assumée qui a préservé les cadres. Obtention d'un penalty (raté).",
+          "failles_exposees": "Défense pulvérisée par la vitesse et les courses en profondeur (Mbappé sur la barre à la 22e seconde, 'dismal Norway defending' selon la presse); Dembélé trouvé libre dans les espaces entre les lignes trois fois en 32 minutes. Le manque criant de profondeur d'effectif défensif: sans les titulaires, la Norvège n'a aucun plan B. Faiblesse structurelle face aux attaquants d'élite lancés en transition — exactement le profil de Vinicius/Rodrygo."
+        },
+        {
+          "adversaire": "Côte d'Ivoire (16e de finale)",
+          "date": "30 juin 2026",
+          "score": "Norvège 2-1 Côte d'Ivoire",
+          "buteurs": "Nusa (39e, frappe enroulée), Haaland (86e, reprise sur centre de Berge) — pour la Côte d'Ivoire: Amad Diallo (74e, exploit solo)",
+          "resume_tactique": "Première victoire de l'histoire de la Norvège en match à élimination directe de Coupe du monde. Match fermé et tendu: Nusa débloque la rencontre à la 39e d'une frappe enroulée imparable devant Fofana. La Côte d'Ivoire égalise à la 74e sur un but solo remarquable d'Amad Diallo. Alors que le match filait vers la prolongation, Haaland surgit à la 86e pour reprendre le centre de Sander Berge (5e but en 3 matchs joués, 3e joueur de l'histoire à marquer lors de ses 3 premiers matchs de Coupe du monde).",
+          "points_forts_montres": "Sang-froid dans le money-time et clutch factor de Haaland; Nusa capable de débloquer un match fermé par un exploit individuel; Berge précieux dans les deux sens (centre décisif).",
+          "failles_exposees": "But encaissé sur une action individuelle d'un ailier dribbleur (Amad Diallo) — troisième match de suite où un joueur de couloir percutant fait la différence contre eux. Incapacité à tuer le match malgré l'avantage: l'équipe a laissé l'adversaire revenir et a dû être sauvée à la 86e. Aucun clean sheet dans le tournoi."
+        }
+      ],
+      "style_de_jeu": "Sous Ståle Solbakken: base compacte type 4-4-2/4-2-3-1 fluide (pouvant glisser vers un 4-3-3 en possession ou un 4-5-1 en bloc bas). Hors possession, bloc médian 4-4-2/4-1-4-1 avec ailiers resserrés et pressing situationnel (PPDA ~9-11 en qualifications) qui s'intensifie sur les passes en retrait et les touches ratées des défenseurs adverses. En possession: relance en structure 2-3 (latéraux étagés, sentinelle qui décroche) qui se transforme en 2-3-5 dans le dernier tiers — Haaland fixe la dernière ligne, l'ailier opposé attaque le second poteau, Ødegaard opère dans le demi-espace droit pour les passes en profondeur et les centres en retrait. Signature: football vertical et direct, transitions offensives rapides, grosse menace sur coups de pied arrêtés (corner Ødegaard->Østigård vs Irak). Ødegaard est le pivot entre la structure et Haaland: s'il a le temps de se retourner, la Norvège est dangereuse.",
+      "forces_recurrentes": [
+        "Haaland en état de grâce: 5 buts en 3 matchs joués (2 vs Irak, 2 vs Sénégal, 1 décisif vs Côte d'Ivoire), 3e joueur de l'histoire à marquer lors de ses 3 premiers matchs de Coupe du monde, à 1 but de Messi au classement du Soulier d'or",
+        "Transitions offensives verticales létales, avec Ødegaard comme rampe de lancement (contre décisif Ødegaard->Haaland vs Sénégal)",
+        "Danger sur coups de pied arrêtés et centres: but sur corner vs Irak (Ødegaard->Østigård), but sur centre de Berge vs Côte d'Ivoire",
+        "Milieu Aursnes-Berge qui verrouille l'axe et force l'adversaire à jouer par les côtés (vs Sénégal); Berge aussi passeur décisif",
+        "Mentalité clutch et solidité mentale en fin de match: victoire arrachée à la 86e vs Côte d'Ivoire, résultat tenu vs Sénégal — première victoire à élimination directe de l'histoire du pays"
+      ],
+      "failles_recurrentes": [
+        "Défense globalement perméable: environ 5,5 xG concédés, parmi les pires des équipes encore en lice; aucun clean sheet en 4 matchs (8 buts encaissés au total)",
+        "Vulnérabilité chronique face aux ailiers rapides et dribbleurs: Ismaïla Sarr (2 buts), Amad Diallo (but solo), Dembélé (triplé) — profil exact de Vinicius Jr, Rodrygo et Estêvão",
+        "Transitions défensives désorganisées: bloc mal structuré lors des récupérations adverses médianes/hautes, exposé aux courses en profondeur (Mbappé sur la barre après 22 secondes, Dembélé trouvé libre 3 fois entre les lignes)",
+        "Buts concédés sur centres et dans les temps faibles: tête de Hussein sur centre vs Irak, but de Sarr dans le temps additionnel vs Sénégal — relâchements en fin de mi-temps/match",
+        "Manque criant de profondeur d'effectif défensif: l'équipe B a sombré 1-4 face à la France; Solbakken n'a pas d'options d'élite derrière, et la blessure de Ryerson vs Sénégal a fragilisé le couloir"
+      ],
+      "evolution": "Trajectoire en dents de scie plutôt que montée en puissance linéaire. Départ convaincant (4-1 vs Irak, qualification assurée dès le 2e match vs Sénégal), puis lourde défaite 1-4 contre la France — à fortement relativiser car Solbakken avait fait 10 changements avec Haaland et Ødegaard au repos, mais qui a exposé le gouffre entre le onze type et les remplaçants. Le 16e vs Côte d'Ivoire (2-1, but à la 86e) montre une équipe qui gagne des matchs couperets serrés — un cap historique franchi (première victoire à élimination directe du pays) et un vrai capital confiance/mental. L'attaque reste constante (Haaland marque à chaque match qu'il joue), mais la fragilité défensive ne s'est jamais résorbée: chaque adversaire a marqué. Verdict: momentum psychologique en hausse, niveau défensif stagnant à un seuil dangereux face au Brésil.",
+      "sources": [
+        "https://www.skysports.com/football/news/12098/13552715/world-cup-2026-iraq-1-4-norway-erling-haaland-scores-twice-on-tournament-debut-as-stale-solbakkens-side-make-winning-start",
+        "https://www.espn.com/soccer/report/_/gameId/760430",
+        "https://www.skysports.com/football/news/11095/13556811/world-cup-2026-norway-3-2-senegal-erling-haaland-double-sees-stale-solbakkens-side-through-to-last-32",
+        "https://www.aljazeera.com/sports/2026/6/23/haaland-scores-two-as-norway-beat-senegal-3-2-enter-world-cup-knockouts",
+        "https://www.skysports.com/football/norway-vs-france/549831",
+        "https://www.olympics.com/en/news/fifa-world-cup-2026-france-v-norway-mbappe-haaland-battle-golden-boot-live",
+        "https://www.skysports.com/football/news/12098/13558812/world-cup-2026-ivory-coast-1-2-norway-erling-haaland-scores-dramatic-winner-to-set-up-last-16-clash-with-brazil",
+        "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32",
+        "https://www.eurosport.fr/football/coupe-du-monde/2026/coupe-du-monde-2026-grace-a-erling-haaland-la-norvege-ecarte-la-cote-divoire-pour-defier-le-bresil_sto23314845/story.shtml",
+        "https://tacticalfootballanalysis.com/norway-tactics-fifa-world-cup-2026-tactical-analysis/",
+        "https://www.racingpost.com/sport/football-tips/world-cup-2026/brazil-vs-norway-betting-tips-predictions-team-news-odds-bet-builder-avJjw2l4sMxs/",
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_I"
+      ]
+    },
+    {
+      "equipe": "Mexique",
+      "matchs_joues": [
+        {
+          "adversaire": "Afrique du Sud (match d'ouverture, groupe A)",
+          "date": "2026-06-11",
+          "score": "2-0",
+          "buteurs": "Julián Quiñones (9e), Raúl Jiménez (67e, de la tête sur centre d'Alvarado)",
+          "resume_tactique": "À l'Estadio Azteca, le Mexique a dominé de bout en bout (1,41 xG contre 0,07). Ouverture rapide sur un pressing haut réussi: Sithole perd le ballon à l'entrée de sa surface, Quiñones fusille le gardien Williams entre les jambes. Match facilité par deux expulsions sud-africaines (Sithole dernier défenseur sur Gutiérrez, puis Zwane après VAR pour un geste d'humeur). Jiménez conclut de la tête en seconde période. Ombre au tableau: carton rouge de César Montes dans le temps additionnel.",
+          "points_forts_montres": "Pressing haut efficace provoquant des pertes de balle adverses dangereuses, réalisme offensif (Quiñones/Jiménez), domination totale et clean sheet, danger sur les centres (but de Jiménez de la tête).",
+          "failles_exposees": "Presque rien concédé (0,07 xG adverse) contre un adversaire réduit à 9, donc test défensif limité. Vraie faille: l'indiscipline — expulsion de César Montes en fin de match (suspension pour le match suivant), signe de nervosité défensive sous tension."
+        },
+        {
+          "adversaire": "Corée du Sud (groupe A)",
+          "date": "2026-06-18",
+          "score": "1-0",
+          "buteurs": "Luis Romo (50e, sur un ballon relâché par le gardien Kim Seung-gyu après collision avec son défenseur)",
+          "resume_tactique": "Au stade de Guadalajara, match fermé et laborieux. Première mi-temps terne: seulement 3 tirs mexicains, incapacité à déstabiliser le bloc coréen. Le but vient d'un cadeau du gardien adverse, pas d'une construction. En fin de match, le Mexique subit: double arrêt décisif de Raúl Rangel à la 87e (tête à bout portant de Cho Gue-sung puis reprise de Yang Hyun-jun). Qualification en poche (première équipe qualifiée pour les phases éliminatoires), 3e victoire consécutive en Coupe du Monde, une première historique.",
+          "points_forts_montres": "Solidité défensive et capacité à gagner 'moche', gardien Rangel décisif dans le money-time, gestion du résultat.",
+          "failles_exposees": "Grosse difficulté à créer contre un bloc bas organisé: 3 tirs en première mi-temps, but obtenu uniquement sur erreur du gardien adverse. Manque de créativité centrale flagrant. Et surtout: occasions nettes concédées en fin de match (double occasion coréenne à la 87e) — baisse d'intensité dans le dernier quart d'heure."
+        },
+        {
+          "adversaire": "Tchéquie (groupe A)",
+          "date": "2026-06-24",
+          "score": "3-0",
+          "buteurs": "Mateo Chávez (55e), Julián Quiñones (61e), Álvaro Fidalgo (90e+4)",
+          "resume_tactique": "Au Mexico City Stadium, victoire confiante qui élimine la Tchéquie et assure la 1re place du groupe A avec 9 points et 0 but encaissé (premier sans-faute en phase de groupes de l'histoire du Mexique). Match débloqué en début de seconde période avec deux buts en six minutes (Chávez 55e, Quiñones 61e), puis but de Fidalgo dans le temps additionnel. Entrée historique de Guillermo Ochoa (rotation/gestion d'effectif). Détail première mi-temps sans but: la difficulté à marquer avant la pause se confirme.",
+          "points_forts_montres": "Profondeur de banc et rotation efficace, variété des buteurs (jeune latéral Chávez, Quiñones en série, Fidalgo), montée en régime en seconde période, 3e clean sheet consécutif.",
+          "failles_exposees": "Encore une première mi-temps sans but — le Mexique met du temps à faire sauter le verrou. Détails précis des occasions tchèques concédées: non trouvé dans les sources consultées (adversaire déjà dominé, peu de danger signalé)."
+        },
+        {
+          "adversaire": "Équateur (16e de finale / Round of 32)",
+          "date": "2026-06-30",
+          "score": "2-0",
+          "buteurs": "Julián Quiñones (22e, frappe en lucarne), Raúl Jiménez (31e, frappe enroulée, passe décisive de Quiñones)",
+          "resume_tactique": "À l'Azteca (coup d'envoi retardé d'1h pour intempéries), départ en trombe: pressing agressif, mouvement et intensité que l'Équateur n'a pas supportés, 2-0 en 31 minutes. Ensuite gestion pragmatique: le Mexique a ralenti le tempo, laissé la possession (Équateur 57%) et contrôlé le match. xG: 1,02 - 0,73. Première victoire du Mexique en match à élimination directe depuis 1986. Rouge pour l'Équatorien Hincapié dans le temps additionnel.",
+          "points_forts_montres": "Entames de match foudroyantes portées par le pressing et le public de l'Azteca, duo Quiñones-Jiménez létal, capacité à basculer en mode gestion, Rangel encore décisif (arrêts devant Yeboah), 4e clean sheet.",
+          "failles_exposees": "Après le 2-0, le Mexique abandonne le ballon (57% de possession équatorienne) et concède des occasions réelles: Rangel doit sortir deux arrêts face à Yeboah, dont un arrêt en extension avant la mi-temps. xG équatorien de 0,73 — le plus élevé concédé du tournoi. Le bloc recule et s'expose quand l'intensité initiale retombe."
+        }
+      ],
+      "style_de_jeu": "Sous Javier Aguirre, 4-3-3 pragmatique avec Edson Álvarez en pivot unique (protection de la défense, gestion du tempo). Flexibilité en possession: bascule entre 3-2-5 et 4-2-1-3 selon les situations. Défensivement, structure solide plutôt que pressing haut à outrance: pressing agressif dans le tiers médian, récupération rapide, puis transitions verticales punies par la vitesse et les appels de Quiñones et Alvarado; capacité à passer en bloc bas compact 5-3-2/5-4-1 pour verrouiller, en forçant l'adversaire au jeu long et en gagnant les seconds ballons. Signature du tournoi: entames de match très intenses portées par l'Azteca et l'altitude (2 200 m), puis gestion en cédant la possession. Sur coups de pied arrêtés: pas de but marqué ni concédé sur CPA identifié dans les sources — détail non trouvé.",
+      "forces_recurrentes": [
+        "Herméticité défensive exceptionnelle: 4 clean sheets en 4 matchs, seulement 6 tirs cadrés concédés au total et 0,56 xG adverse par match; aucun but encaissé en 1re mi-temps sur les 15 derniers matchs de Coupe du Monde",
+        "Duo offensif Quiñones (3 buts + 1 passe décisive) - Jiménez (2 buts) efficace sur plusieurs matchs, alimenté par les transitions rapides et les centres d'Alvarado",
+        "Gardien Raúl Rangel décisif de façon répétée (double arrêt à la 87e vs Corée du Sud, arrêts face à Yeboah vs Équateur)",
+        "Forteresse Azteca + altitude de 2 200 m: jamais battu en Coupe du Monde à Mexico (8 victoires, 2 nuls en 10 matchs), entames de match asphyxiantes portées par le public",
+        "Pragmatisme et gestion: capacité à gagner des matchs fermés (1-0 vs Corée), à faire tourner l'effectif (Tchéquie) et à contrôler le tempo une fois devant (Équateur)"
+      ],
+      "failles_recurrentes": [
+        "Manque de créativité centrale contre un bloc bas: milieu sans vrai lien défense-attaque, dépendance aux ailiers (Alvarado) qui rentrent intérieur; 3 tirs en 1re mi-temps vs Corée, but obtenu sur erreur du gardien — une équipe qui défend bas peut les frustrer",
+        "Lenteur à débloquer les matchs: 3 des 4 matchs sans but avant la pause côté score décisif (Corée 50e, Tchéquie 55e) — le Mexique met du temps à convertir sa domination, ce qui maintient l'adversaire en vie",
+        "Baisses d'intensité et occasions concédées quand le bloc recule: double occasion coréenne à la 87e, 57% de possession et 0,73 xG laissés à l'Équateur après le 2-0 — le pressing énergivore semble difficile à soutenir 90 minutes, même en altitude qu'ils maîtrisent",
+        "Indiscipline sous pression: carton rouge de César Montes vs Afrique du Sud — une défense qui peut craquer nerveusement face à des attaquants provocateurs",
+        "Niveau d'opposition faible jusqu'ici (Afrique du Sud réduite à 9, Corée du Sud, Tchéquie, Équateur): la défense n'a jamais été testée par des attaquants d'élite du calibre de Kane (5 buts en 4 matchs) — leur bloc médian n'a pas encore affronté une équipe capable d'absorber le pressing et de punir individuellement"
+      ],
+      "evolution": "Montée en puissance nette. Trajectoire: victoire d'ouverture maîtrisée mais facilitée par les expulsions (2-0 vs Afrique du Sud), puis un 1-0 laborieux vs Corée du Sud (creux du tournoi, but chanceux), avant une accélération: 3-0 confiant vs Tchéquie avec rotation de l'effectif, puis le match référence vs Équateur (2-0) — entame foudroyante, victoire en phase éliminatoire qui brise 40 ans de malédiction (aucune victoire à élimination directe depuis 1986). Premier sans-faute historique en phase de groupes (3/3, 0 but encaissé), 4 clean sheets consécutifs, confiance et ferveur populaire au sommet. Le bémol: la courbe ascendante s'est construite contre des adversaires modestes, et le match poussif contre la Corée rappelle que la création reste fragile quand l'adversaire résiste au premier quart d'heure.",
+      "sources": [
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-south-africa-highlights-match-report",
+        "https://www.aljazeera.com/sports/liveblog/2026/6/11/live-mexico-vs-south-africa-world-cup-2026",
+        "https://www.fifa.com/en/articles/mexico-korea-republic-highlights-match-report",
+        "https://www.nbcsports.com/soccer/live/mexico-vs-south-korea-live-updates-score-goals-highlights-stats-2026-fifa-world-cup-june-x",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/czechia-mexico-match-report-highlights",
+        "https://www.skysports.com/football/czech-rep-vs-mexico/report/549815",
+        "https://www.aljazeera.com/sports/2026/6/25/mexico-win-3-0-to-eliminate-czechia-and-win-all-three-world-cup",
+        "https://www.foxsports.com/stories/soccer/mexico-sweeps-group-stage-first-time-world-cup-history-i-dreamed-this",
+        "https://www.aljazeera.com/news/2026/7/1/mexico-ecuador-fifa-world-cup-2026-score-jimenez-quinones-hincapie",
+        "https://www.skysports.com/football/news/11095/13558814/world-cup-2026-mexico-2-0-ecuador-electric-hosts-storm-into-last-16-as-piero-hincapie-sees-red",
+        "https://theanalyst.com/articles/mexico-vs-ecuador-world-cup-round-of-32-stats",
+        "https://bleacherreport.com/articles/25448623-mexico-eliminates-ecuador-final-match-stats-highlights-updated-world-cup-2026-bracket",
+        "https://theanalyst.com/articles/mexico-vs-england-analysis-preview-world-cup-2026-last-16",
+        "https://www.rotowire.com/soccer/article/mexico-vs-england-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-round-of-16-121007",
+        "https://mundialanalytics.com/mexico-national-team-analysis",
+        "https://www.mykhel.com/cricket/mexico-fifa-world-cup-2026-tactics-how-javier-aguirre-s-4-3-3-shapes-el-tri-s-identity-430709.html",
+        "https://www.unibet.fr/paris-sportifs/8e-de-finale-coupe-du-monde-mexique-angleterre"
+      ]
+    },
+    {
+      "equipe": "Angleterre",
+      "matchs_joues": [
+        {
+          "adversaire": "Croatie (phase de groupes, Groupe L)",
+          "date": "2026-06-15 (Dallas, USA)",
+          "score": "4-2",
+          "buteurs": "Kane x2 (12' pén., 42'), Bellingham (47'), Rashford (85') — buteurs croates non trouvés",
+          "resume_tactique": "4-2-3-1 de Tuchel: Pickford; James et O'Reilly latéraux, Konsa-Stones dans l'axe; Rice-Anderson en double pivot; Bellingham en 10, Gordon et Madueke sur les ailes, Kane en pointe. Première mi-temps nerveuse (l'adjoint Anthony Barry a parlé de 'fearful patterns' et d'énergie nerveuse), puis bascule après la causerie de Tuchel: approche 'full gas', 55% de possession en seconde période, 5 grosses occasions créées. Kane utilisé dans son rôle 'à la Bayern' (décrochages), avec des rotations positionnelles pour isoler les attaquants en 1v1 contre la défense croate. Coups de pied arrêtés décisifs (but de Kane sur corner).",
+          "points_forts_montres": "Puissance offensive (4 buts), efficacité de Kane, Bellingham influent en 10, coups de pied arrêtés dangereux, capacité à hausser le rythme en seconde période, rotations offensives bien huilées.",
+          "failles_exposees": "2 buts encaissés dès le match d'ouverture; première mi-temps crispée et hésitante ('fearful patterns'), défense pas hermétique face à une équipe qui joue."
+        },
+        {
+          "adversaire": "Ghana (phase de groupes, Groupe L)",
+          "date": "2026-06-23 (Boston, USA)",
+          "score": "0-0",
+          "buteurs": "Aucun",
+          "resume_tactique": "Domination stérile face au bloc bas ultra-défensif de Carlos Queiroz: 78,8% de possession (record absolu de l'Angleterre en Coupe du monde depuis 1966, et record pour une équipe qui ne marque pas), 19 tirs, xG 1,28. Vagues de pression sans solution: tête d'O'Reilly sur la barre (centre de James), Kane rate l'immanquable à 6 mètres sur le rebond, tête de Rice au-dessus. Grosse frayeur en fin de match: le remplaçant ghanéen Prince Adu lancé dans le dos de la défense, fauché par un tacle non maîtrisé de Konsa — penalty et rouge possibles non sifflés (ni arbitre ni VAR), Queiroz ironisant que le VAR 'était parti prendre un café'.",
+          "points_forts_montres": "Contrôle total du ballon, volume de jeu et de tirs, patience dans la circulation.",
+          "failles_exposees": "Incapacité à convertir la domination contre un bloc bas (0 but malgré 19 tirs); manque de finition (Kane à 6 mètres); vulnérabilité aux ballons dans le dos de la défense (action Adu/Konsa qui aurait pu coûter penalty + expulsion); schéma récurrent d'un 2e match de groupe laborieux (comme 2021, 2022, 2024)."
+        },
+        {
+          "adversaire": "Panama (phase de groupes, Groupe L)",
+          "date": "2026-06-27 (MetLife Stadium, New Jersey, USA)",
+          "score": "2-0 (Panama 0-2 Angleterre)",
+          "buteurs": "Bellingham (62'), Kane (67')",
+          "resume_tactique": "Sous la pluie, première mi-temps fermée et sans occasion nette de part et d'autre; l'Angleterre a 'défendu de manière discutable par moments' selon les comptes-rendus. Déblocage sur coup de pied arrêté: Bellingham reprend du gauche un corner de Saka (62'), puis centre du côté gauche cinq minutes plus tard pour la tête de Kane, qui prend le dessus sur Andrade (67'). Kane devient le meilleur buteur anglais de l'histoire en Coupe du monde (11e but, devant Lineker). L'Angleterre termine 1re du Groupe L.",
+          "points_forts_montres": "Coups de pied arrêtés encore décisifs (corner de Saka), duo Bellingham-Kane létal, capacité à faire le travail sans briller, jeu aérien de Kane.",
+          "failles_exposees": "Encore une première mi-temps sans tranchant face à un bloc bas; défense par moments approximative même contre un adversaire modeste; dépendance aux coups de pied arrêtés et au duo Kane-Bellingham pour débloquer les matchs fermés."
+        },
+        {
+          "adversaire": "RD Congo (16e de finale / Round of 32)",
+          "date": "2026-07-01 (Atlanta, USA)",
+          "score": "2-1",
+          "buteurs": "Kane x2 (75', ~86'); Cipenga (7') pour la RD Congo",
+          "resume_tactique": "Grosse frayeur face au bloc bas à cinq défenseurs de Desabre. Menée dès la 7e minute: Brian Cipenga fusille Pickford d'une frappe basse à son premier poteau. L'Angleterre décrite comme 'paralysée par la peur', sans inspiration offensive ni cohérence défensive; à la 42e, Wissa surprend les centraux endormis sur un centre dévié de Wan-Bissaka et touche le poteau à bout portant. La RD Congo a misé sur le bloc bas discipliné et les transitions Wissa-Bakambu. Renversement tardif: Rice trouve Gordon dont le centre piqué est repris par Kane (75'), puis Kane fusille la lucarne de l'entrée de surface à 4 minutes de la fin. Kane dépasse Pelé avec 13 buts en Coupe du monde.",
+          "points_forts_montres": "Résilience mentale et capacité à renverser un match mal embarqué; Kane décisif dans le money-time (doublé); apport de Gordon et Rice dans l'action de l'égalisation.",
+          "failles_exposees": "But encaissé au premier poteau dès la 7e minute; centraux pris de vitesse sur les transitions (poteau de Wissa); manque total de solutions pendant 75 minutes contre un bloc bas; jeu 'paralysé par la peur'; l'ex-international Nicky Butt a fustigé une prestation 'inquiétante' et une construction d'effectif 'arrogante' de Tuchel."
+        }
+      ],
+      "style_de_jeu": "4-2-3-1 de Thomas Tuchel avec Pickford dans les buts, Rice en double pivot, Bellingham en 10 et Kane en pointe utilisé 'à la Bayern' (décrochages + rotations positionnelles pour créer des 1v1). Équipe de possession et de domination territoriale (jusqu'à 78,8% de possession contre le Ghana, record anglais en Coupe du monde), pressing haut 'full gas' revendiqué par le staff quand l'équipe se libère. Arme majeure: les coups de pied arrêtés (but de Kane sur corner vs Croatie, but de Bellingham sur corner de Saka vs Panama), livrés par Rice, Saka et Madueke. Tendance marquée aux entames de match crispées suivies de secondes périodes beaucoup plus fortes.",
+      "forces_recurrentes": [
+        "Harry Kane en état de grâce: 5 buts en 4 matchs, décisif dans les moments chauds (doublé pour renverser la RD Congo), désormais meilleur buteur anglais de l'histoire en Coupe du monde (13 buts, devant Pelé)",
+        "Coups de pied arrêtés redoutables sur plusieurs matchs (corner → Kane vs Croatie; corner de Saka → Bellingham vs Panama), avec Rice, Saka et Madueke à la livraison",
+        "Jude Bellingham très influent en numéro 10: buts contre la Croatie et le Panama, passe décisive pour Kane contre le Panama",
+        "Domination et contrôle de la possession contre quasiment tous les adversaires (record de 78,8% vs Ghana)",
+        "Résilience mentale et force en seconde période: bascule 'full gas' après la pause vs Croatie, renversement 0-1 → 2-1 en fin de match vs RD Congo"
+      ],
+      "failles_recurrentes": [
+        "Incapacité chronique à percer les blocs bas: 0-0 vs Ghana (19 tirs sans marquer), 0-0 à la pause vs Panama, 75 minutes stériles vs le bloc à cinq de la RD Congo — l'Angleterre ne débloque ces matchs que sur coups de pied arrêtés ou exploit individuel de Kane",
+        "Défense fallible sur les transitions rapides et les ballons dans le dos: Adu lancé en profondeur derrière Konsa vs Ghana (penalty/rouge évités), centraux 'endormis' sur le poteau de Wissa vs RD Congo, but de Cipenga au premier poteau dès la 7e minute — Sky Sports note que le back four 'a déjà montré dans ce tournoi qu'il est faillible'",
+        "Crise au poste d'arrière droit avant le match contre le Mexique: Livramento sorti sur blessure, Reece James indisponible pour une durée indéterminée, Quansah incertain (n'a pas repris l'entraînement)",
+        "Entames de match crispées et premières mi-temps faibles quasi systématiques: 'fearful patterns' vs Croatie, mi-temps vierge vs Ghana et Panama, menée dès la 7e minute et 'paralysée par la peur' vs RD Congo",
+        "Banc offensif déséquilibré: ailiers (Gordon, Madueke, Rashford) jugés trop monocordes — profils de contre-attaque taillés pour les espaces, peu adaptés pour déséquilibrer les blocs bas quand Saka ne joue pas (critique CBS Sports, relayée aussi par Nicky Butt sur la construction de l'effectif)"
+      ],
+      "evolution": "Trajectoire de résultats parfaite (4 matchs, 3 victoires, 1 nul, 1re place du Groupe L) mais courbe de performance déclinante: éclatante contre la Croatie (4-2, seconde période 'full gas'), l'Angleterre a ensuite enchaîné trois prestations de plus en plus laborieuses — domination stérile record contre le Ghana (0-0), victoire fonctionnelle mais poussive contre le Panama, puis quasi-humiliation contre la RD Congo (menée 75 minutes, sauvée par un doublé tardif de Kane). Les critiques montent (Nicky Butt qualifiant la prestation de 'concerning' et l'effectif de mal construit), et l'équipe aborde le Mexique à l'Azteca — où les Mexicains n'ont perdu que 2 fois en 89 matchs — avec une crise à l'arrière droit et une défense déjà exposée. Ce n'est pas une montée en puissance: c'est une équipe qui survit sur Kane, les coups de pied arrêtés et sa résilience mentale, plutôt qu'elle ne domine.",
+      "sources": [
+        "https://www.espn.com/soccer/story/_/id/48701061/england-world-cup-2026-schedule-fixtures-results-scores-group-l-how-watch-uk-news-analysis-injuries",
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_L",
+        "https://tacticalfootballanalysis.com/england-croatia-tactics-world-cup-2026-tactical-analysis/",
+        "https://www.squawka.com/en/features/tactical-analysis-thomas-tuchel-england-world-cup/",
+        "https://www.skysports.com/football/news/11095/13555102/england-4-2-croatia-thomas-tuchels-team-talk-reveals-the-template-for-world-cup-glory-must-be-the-full-gas-approach",
+        "https://www.skysports.com/football/news/11065/13554961/world-cup-2026-england-0-0-ghana-harry-kane-goes-closest-late-on-as-three-lions-frustrated-in-boston",
+        "https://theanalyst.com/articles/england-vs-ghana-stats-world-cup-2026",
+        "https://www.skysports.com/football/news/12098/13556701/world-cup-2026-panama-0-2-england-jude-bellingham-stars-as-three-lions-secure-top-spot-in-group-l",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-england-match-report-highlights",
+        "https://www.skysports.com/football/england-vs-dr-congo/report/549847",
+        "https://www.espn.com/soccer/report/_/gameId/760495",
+        "https://www.goal.com/en/lists/nicky-butt-thomas-tuchel-england-dr-congo-world-cup/blt7a6f79f31adce0b3",
+        "https://www.cbssports.com/soccer/news/thomas-tuchel-england-squad-construction-world-cup-chances-2026/",
+        "https://www.skysports.com/football/news/12016/13560378/mexico-vs-england-world-cup-last-16-thomas-tuchel-faces-another-right-back-dilemma-as-azteca-awaits",
+        "https://www.skysports.com/football/news/12098/13558773/world-cup-2026-why-england-and-thomas-tuchel-should-be-worried-about-dr-congo-ahead-of-their-last-32-clash"
+      ]
+    },
+    {
+      "equipe": "Portugal",
+      "matchs_joues": [
+        {
+          "adversaire": "RD Congo (phase de groupes, Groupe K)",
+          "date": "2026-06-17 (Houston)",
+          "score": "1-1",
+          "buteurs": "João Neves (6e, tête sur centre de Pedro Neto) pour le Portugal; Wissa (45e, servi par Masuaku) pour la RD Congo",
+          "resume_tactique": "Monopole du ballon écrasant (80% de possession en 1re mi-temps) mais jeu de position stérile après l'ouverture précoce de Neves. Le Portugal a encaissé juste avant la pause sur une des rares sorties congolaises. En 2e mi-temps, seulement 0,69 xG généré; but refusé à Cancelo (retourné, hors-jeu), occasions vendangées par Ronaldo, tentatives tardives de Cancelo et Fernandes.",
+          "points_forts_montres": "Efficacité sur centre/jeu aérien (tête de Neves dès la 6e), contrôle territorial et de la possession, capacité à pousser jusqu'au bout.",
+          "failles_exposees": "Possession stérile contre un bloc bas: incapacité à créer des occasions nettes après le 1-0 (0,69 xG en 2e MT). Vulnérabilité aux transitions: la RD Congo a cadré/tenté 6 tirs avant la pause, soit le triple du Portugal, et a égalisé sur le fil de la mi-temps. Manque de concentration en fin de période."
+        },
+        {
+          "adversaire": "Ouzbékistan (phase de groupes, Groupe K)",
+          "date": "2026-06-23 (Houston)",
+          "score": "5-0",
+          "buteurs": "Ronaldo (6e et 39e), Nuno Mendes (17e, combinaison sur coup franc), Nematov (60e, csc), Rafael Leão (87e, entré en jeu)",
+          "resume_tactique": "Démonstration offensive: pressing et occupation hautes, but rapide de Ronaldo (premier joueur à marquer dans 6 Coupes du monde), coup de pied arrêté travaillé converti par Nuno Mendes, domination totale sous le toit du stade de Houston. Le banc a pesé (Leão buteur à la 87e).",
+          "points_forts_montres": "Puissance offensive quand les espaces existent, coups de pied arrêtés travaillés, Ronaldo clinique dans la surface, latéral gauche Nuno Mendes très offensif, profondeur de banc (Leão).",
+          "failles_exposees": "Peu de failles visibles face à un adversaire faible; le clean sheet est le seul du tournoi. Détail des occasions ouzbèkes concédées: non trouvé."
+        },
+        {
+          "adversaire": "Colombie (phase de groupes, Groupe K)",
+          "date": "2026-06-27 (Miami)",
+          "score": "0-0",
+          "buteurs": "Aucun (but colombien de Davinson Sánchez refusé pour hors-jeu par la VAR dans le temps additionnel)",
+          "resume_tactique": "Match ouvert (36 tentatives cumulées) mais Portugal dominé au tableau des occasions: xG de 1,63 pour la Colombie contre 0,69 pour le Portugal. Alerte dès la 1re minute (tête de Córdoba au-dessus après frappe déviée de Luis Díaz); Bruno Fernandes stoppé par Vargas. Le Portugal termine 2e du groupe, sauvé en toute fin de match par un hors-jeu millimétrique de Sánchez sur corner joué à deux.",
+          "points_forts_montres": "Solidité minimale pour tenir le 0-0, Bruno Fernandes seul créateur dangereux, qualification assurée avant le match.",
+          "failles_exposees": "Grosse faiblesse défensive sur transitions et coups de pied arrêtés: 1,63 xG concédé, but évité par la VAR sur corner à la dernière seconde. Attaque émoussée face à une vraie équipe (0,69 xG, encore). Le milieu Vitinha–Neves–Fernandes n'a pas contrôlé le match."
+        },
+        {
+          "adversaire": "Croatie (16e de finale / Round of 32)",
+          "date": "2026-07-02",
+          "score": "2-1",
+          "buteurs": "Perišić (53e) pour la Croatie; Ronaldo (68e, penalty) et Gonçalo Ramos (90+4e, tête, entré en jeu) pour le Portugal; égalisation de Gvardiol (90+13e) refusée pour hors-jeu après VAR (toucher de Matanović détecté par les capteurs du ballon)",
+          "resume_tactique": "Portugal dominateur en 1re mi-temps: étirement du terrain, Leão isolé en 1v1 sur l'aile gauche avec surcharges des latéraux; Fernandes deux fois proche dès la 4e. Croatie transformée en 2e MT par l'entrée du physique Matanović: but de Perišić (53e, frappe entre les jambes de Costa sur centre dévié de Stanišić). Après le 0-1, Martínez a basculé en 4-4-2 (Ramos + Ronaldo devant) en sortant Fernandes, Vitinha, Neto et Cancelo; le pari du banc a payé au bout du temps additionnel.",
+          "points_forts_montres": "Flexibilité tactique de Martínez et banc décisif (Ramos buteur, bascule en 4-4-2), Ronaldo solide sur penalty, Leão dangereux en 1v1, capacité mentale à renverser un match mal embarqué.",
+          "failles_exposees": "Effondrement en début de 2e mi-temps face à un attaquant physique frais (Matanović); but concédé sur centre dévié avec frappe passée entre les jambes du gardien Costa; Kovačić a touché le poteau à la 75e puis forcé une parade de Costa: le 2e but croate était tout proche. Qualification arrachée grâce à un hors-jeu détecté à la 90+13e — marges infimes."
+        }
+      ],
+      "style_de_jeu": "Sous Roberto Martínez: équipe de possession à bloc haut qui cherche à dominer territorialement (80% de possession en 1re MT contre la RD Congo), avec étirement du jeu par les ailes — Rafael Leão isolé en 1v1 à gauche, latéraux très offensifs (Nuno Mendes en runs surgissants, Cancelo) créant des surcharges. Danger réel sur coups de pied arrêtés travaillés (coup franc combiné conclu par Mendes vs Ouzbékistan, têtes de Neves et Ramos sur centres). Grande flexibilité en cours de match: bascule en 4-4-2 avec deux pointes (Ramos + Ronaldo) quand il faut courir après le score, banc utilisé comme arme (Leão et Ramos buteurs en sortie de banc). Dilemme d'attaque assumé: finition de surface de Ronaldo vs mobilité et pressing de Ramos.",
+      "forces_recurrentes": [
+        "Profondeur de banc décisive sur plusieurs matchs: Leão buteur en sortie de banc vs Ouzbékistan, Ramos buteur vainqueur à la 90+4 vs Croatie — l'équipe finit les matchs plus fort qu'elle ne les commence",
+        "Ronaldo toujours clinique dans la surface: 3 buts dans le tournoi (doublé vs Ouzbékistan, penalty vs Croatie), premier joueur à marquer dans 6 Coupes du monde",
+        "Danger constant sur centres et coups de pied arrêtés: tête de Neves vs RD Congo, coup franc travaillé de Mendes vs Ouzbékistan, tête de Ramos vs Croatie",
+        "Contrôle de la possession et domination territoriale en 1re mi-temps de presque chaque match (RD Congo, Croatie)",
+        "Flexibilité tactique de Martínez en cours de match (passage en 4-4-2 vs Croatie) et couloir gauche Nuno Mendes–Leão très dangereux en 1v1"
+      ],
+      "failles_recurrentes": [
+        "Possession stérile face aux blocs organisés: seulement 0,69 xG en 2e MT contre la RD Congo ET 0,69 xG sur tout le match contre la Colombie — l'équipe domine le ballon sans créer d'occasions nettes",
+        "Vulnérabilité aux transitions rapides et contres: 6 tirs congolais avant la pause, 1,63 xG concédé à la Colombie, but de Perišić et poteau de Kovačić pour la Croatie — le bloc haut laisse des espaces dans le dos",
+        "Fragilité en 2e mi-temps face à des attaquants physiques et frais: la Croatie a renversé la dynamique après l'entrée de Matanović; le milieu Vitinha–Neves–Fernandes perd le contrôle et n'a pas été à son meilleur niveau du tournoi",
+        "Défense sauvée deux fois par la VAR pour des hors-jeu millimétriques dans le temps additionnel (Sánchez vs Colombie à 90+, Gvardiol vs Croatie à 90+13): les marges sont infimes, notamment sur coups de pied arrêtés et centres défensifs",
+        "Gardien Diogo Costa pas irréprochable: but de Perišić passé entre ses jambes; un seul clean sheet en 4 matchs (contre le plus faible adversaire)"
+      ],
+      "evolution": "Trajectoire en dents de scie plutôt que montée en puissance linéaire: départ raté (1-1 contre la RD Congo, 137e mondiale environ), démonstration trompeuse contre le plus faible du groupe (5-0 vs Ouzbékistan), puis deux prestations laborieuses contre des adversaires de calibre (0-0 dominé aux xG par la Colombie, victoire arrachée à la 90+4 et sauvée par la VAR contre la Croatie). Le point positif dans la durée: l'équipe finit les matchs de mieux en mieux grâce au banc (Leão, Ramos) et à la réactivité tactique de Martínez, et le caractère est réel. Mais le niveau du onze de départ stagne, le milieu n'a jamais dominé un gros match, et la défense n'a pas encore livré une prestation aboutie contre une attaque de haut niveau — inquiétant avant d'affronter une Espagne invaincue qui n'a pas encaissé un but en 4 matchs (record de Unai Simón: 519 minutes sans but concédé).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_K",
+        "https://www.espn.com/soccer/story/_/id/49096146/portugal-dr-congo-live-world-cup-2026-latest-updates-commentary-score-result",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-congo-dr-highlights-match-report",
+        "https://bleacherreport.com/articles/25441794-ronaldo-portugal-draw-congo-final-match-stats-highlights-world-cup-group-k-scenarios",
+        "https://www.espn.com/soccer/story/_/id/49153993/portugal-uzbekistan-live-world-cup-2026-latest-updates-commentary-score-result-cristiano-ronaldo",
+        "https://www.aljazeera.com/sports/2026/6/23/ronaldo-scores-twice-as-portugal-thrash-uzbekistan-5-0-at-world-cup-2026",
+        "https://www.espn.com/soccer/report/_/gameId/760481",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-portugal-match-report-highlights",
+        "https://www.espn.com/soccer/story/_/id/49251703/portugal-croatia-live-world-cup-2026-latest-updates-commentary-score-result",
+        "https://theanalyst.com/articles/portugal-vs-croatia-stats-world-cup-2026",
+        "https://www.skysports.com/football/portugal-vs-croatia/report/549850",
+        "https://www.npr.org/2026/07/03/nx-s1-5880386/croatia-portugal-chaotic-minutes",
+        "https://www.sportsmole.co.uk/football/portugal/world-cup-2026/feature/how-can-portugal-breach-spains-record-breaking-world-cup-defence_600704.html",
+        "https://sports.yahoo.com/articles/spain-portugal-eye-world-cup-104045360.html",
+        "https://www.espn.com/espn/story/_/id/49202106/2026-fifa-world-cup-recap-portugal-colombia-argentina-jordan-england-panama-croatia-ghana-uzbekistan-congo-dr-algeria-austria"
+      ]
+    },
+    {
+      "equipe": "Espagne",
+      "matchs_joues": [
+        {
+          "adversaire": "Cap-Vert (phase de groupes, Groupe H)",
+          "date": "2026-06-15 (Atlanta)",
+          "score": "0-0",
+          "buteurs": "Aucun",
+          "resume_tactique": "Domination totale mais stérile: 27 tirs à 6, 7 cadrés, face au bloc bas cap-verdien. Ferran Torres touche la barre après une remise de Cucurella; le gardien Vozinha (40 ans, 7 arrêts, homme du match) repousse tout, notamment Oyarzabal, Laporte et Torres en fin de première période. L'une des plus grosses surprises de l'histoire du tournoi pour les débutants cap-verdiens.",
+          "points_forts_montres": "Volume offensif énorme, monopolisation du ballon, capacité à enfermer un adversaire dans son camp.",
+          "failles_exposees": "Manque criant de tranchant et de fraîcheur devant le but (aveu de De la Fuente lui-même); Oyarzabal a passé les 30 premières minutes sans toucher le ballon (premier cas recensé depuis 1966). Occasion concédée sur corner en fin de match: tête de Diney directement sur Unai Simón — signe d'une vulnérabilité ponctuelle sur coups de pied arrêtés défensifs."
+        },
+        {
+          "adversaire": "Arabie saoudite (phase de groupes, Groupe H)",
+          "date": "2026-06-21 (Atlanta)",
+          "score": "4-0",
+          "buteurs": "Lamine Yamal (10e), Oyarzabal (21e, 24e), Altambakti (49e, csc, après arrêt d'Alowais sur volée de Cucurella)",
+          "resume_tactique": "Espagne immédiatement portée vers l'avant, adversaire cloué dans son dernier tiers. Yamal marque à la 10e pour sa première titularisation en Coupe du Monde (2e plus jeune buteur espagnol en CdM après Gavi). Oyarzabal: 2 buts + 1 passe décisive dans les 25 premières minutes (premier joueur recensé depuis 1966). Yamal et Oyarzabal sortis à la mi-temps (gestion). But de Ferran Torres refusé pour hors-jeu en fin de match.",
+          "points_forts_montres": "Pressing haut étouffant, démarrage foudroyant, efficacité retrouvée, profondeur de banc permettant de faire tourner dès la mi-temps.",
+          "failles_exposees": "Très peu: adversaire faible qui n'a quasiment rien créé. Match peu instructif sur les vulnérabilités — aucune faille notable documentée (non trouvé dans les comptes-rendus)."
+        },
+        {
+          "adversaire": "Uruguay (phase de groupes, Groupe H)",
+          "date": "2026-06-26 (lieu: sources contradictoires — Guadalajara selon un compte-rendu, Estadio BBVA Monterrey selon l'analyse tactique)",
+          "score": "1-0 (Uruguay 0-1 Espagne)",
+          "buteurs": "Álex Baena (42e), frappe dans la surface mal repoussée par Muslera (3e bourde du gardien de 40 ans dans le tournoi, remplacé à la mi-temps par Bielsa)",
+          "resume_tactique": "Bielsa a renoncé à son pressing homme-à-homme signature pour un 4-1-4-1 très bas, ligne défensive au bord de sa surface pour supprimer la profondeur derrière les latéraux espagnols, avec une compacité horizontale stricte (moins de 8 m entre les centraux). Le match est devenu un siège structurel lent et cérébral plutôt qu'un duel ouvert. L'Espagne l'emporte grâce à une erreur du gardien plutôt que par une percée créée. Canobbio (Uruguay) expulsé dans le temps additionnel. L'Espagne finit 1re du groupe avec 7 points.",
+          "points_forts_montres": "Patience, contrôle du tempo, solidité défensive (clean sheet face à une nation double championne du monde), capacité à gagner un match fermé.",
+          "failles_exposees": "Confirmation de la difficulté à créer des occasions nettes contre un bloc bas ultra-compact: le seul but vient d'une bourde adverse. Sans erreur du gardien, le siège espagnol restait stérile — la circulation patiente devient inoffensive quand personne ne crée de décalage."
+        },
+        {
+          "adversaire": "Autriche (16e de finale / Round of 32)",
+          "date": "2026-07-02 (Los Angeles Stadium, Inglewood)",
+          "score": "3-0",
+          "buteurs": "Oyarzabal (36e, 89e), Pedro Porro (1er but en sélection)",
+          "resume_tactique": "Victoire maîtrisée: Oyarzabal ouvre le score en fin de première période, Porro fait le break, Oyarzabal scelle le match à la 89e. But de Cucurella refusé de manière controversée pour faute sur le gardien. Première victoire espagnole en match à élimination directe de Coupe du Monde depuis le sacre de 2010 — barrière psychologique levée.",
+          "points_forts_montres": "Efficacité en match couperet, Oyarzabal en pleine confiance (4 buts dans le tournoi), contribution offensive des latéraux (Porro), 4e clean sheet en 4 matchs.",
+          "failles_exposees": "Peu documentées dans les comptes-rendus disponibles — l'Autriche n'a pas cadré d'occasion notable rapportée (non trouvé). Le score net masque toutefois que l'ouverture n'est venue qu'à la 36e minute."
+        }
+      ],
+      "style_de_jeu": "Jeu de position classique modernisé par De la Fuente: construction en 4-3-3 (variante 4-2-3-1) avec un milieu sentinelle (Rodri, capitaine) comme pivot de circulation, rotations permanentes, occupation des demi-espaces, triangles et contrôle du tempo — mais avec plus de verticalité et de largeur que l'Espagne traditionnelle (Yamal et Nico Williams écartés). Bloc haut et pressing agressif à la perte: les trois attaquants sautent sur le porteur, les ailiers coupent la ligne de passe vers les latéraux, un milieu monte. Sur coups de pied arrêtés offensifs: rien de signature documenté dans ce tournoi (non trouvé); les buts viennent surtout du jeu (centres au second poteau, frappes dans la surface). Bilan chiffré: 8 buts marqués, 0 encaissé en 4 matchs.",
+      "forces_recurrentes": [
+        "Solidité défensive exceptionnelle: 4 clean sheets en 4 matchs (0 but encaissé dans tout le tournoi), y compris contre l'Uruguay de Bielsa",
+        "Mikel Oyarzabal en état de grâce: 4 buts + 1 passe décisive (doublés contre l'Arabie saoudite et l'Autriche), finisseur principal de l'équipe",
+        "Domination territoriale et de possession systématique: l'adversaire est enfermé dans son camp à chaque match (27 tirs contre le Cap-Vert, siège contre l'Uruguay)",
+        "Lamine Yamal décisif quand il est titularisé (but et influence contre l'Arabie saoudite), déséquilibre constant côté droit",
+        "Profondeur de banc et gestion des organismes: rotations à la mi-temps sans perte de niveau, montée en régime au fil du tournoi"
+      ],
+      "failles_recurrentes": [
+        "Manque d'efficacité contre les blocs bas compacts — la vraie faille structurelle: 0 but en 90 min contre le Cap-Vert malgré 27 tirs, et un seul but contre l'Uruguay obtenu sur bourde du gardien Muslera. Sans erreur adverse, la possession patiente devient stérile",
+        "Absence d'un avant-centre finisseur de classe mondiale pour débloquer les matchs fermés (pointé par les analyses d'avant Portugal): Oyarzabal compense mais l'équipe manque de tueur de surface",
+        "Dépendance à Rodri: le pressing haut ne fonctionne qu'avec sa couverture; ses remplaçants (Zubimendi, Merino) sacrifient l'intensité du pressing pour la stabilité — un point de défaillance unique",
+        "Espace derrière les latéraux quand le pressing haut est battu: les analyses tactiques identifient les couloirs derrière Cucurella/Porro comme la zone à attaquer en transition rapide avant que le bloc ne se replace — exactement le profil des ailiers portugais",
+        "Dépendance créative à Lamine Yamal (soulignée avant le match contre le Portugal): quand il est neutralisé ou absent, l'animation offensive perd son principal facteur X"
+      ],
+      "evolution": "Montée en puissance nette. Départ poussif et alarmant (0-0 contre le Cap-Vert, l'une des plus grosses surprises de l'histoire du Mondial, avec un aveu de manque de fraîcheur de De la Fuente), puis trajectoire ascendante: 4-0 contre l'Arabie saoudite, 1-0 maîtrisé contre l'Uruguay pour finir 1er du groupe avec 7 points, et 3-0 contre l'Autriche — première victoire espagnole en match couperet de Coupe du Monde depuis 2010, ce qui lève un blocage psychologique. Quatre matchs, huit buts marqués, zéro encaissé: l'Espagne arrive contre le Portugal comme l'une des équipes les plus convaincantes du tournoi. Réserve importante: la montée en puissance s'est faite contre des adversaires qui ne l'ont pas pressée haut; les deux matchs contre des blocs bas organisés (Cap-Vert, Uruguay) n'ont produit qu'un seul but, venu d'une erreur adverse — le problème de finition contre une défense regroupée n'est pas résolu, seulement contourné.",
+      "sources": [
+        "https://www.skysports.com/football/news/12024/13552711/world-cup-2026-spain-0-0-cape-verde-african-islands-with-population-less-than-500-000-produce-one-of-tournaments-biggest-shocks",
+        "https://www.skysports.com/football/news/12098/13553799/world-cup-2026-spain-4-0-saudi-arabia-lamine-yamal-and-mikel-oyarzabal-star-as-la-roja-earn-first-group-h-win",
+        "https://www.espn.com/soccer/match/_/gameId/760479/spain-uruguay",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/uruguay-spain-match-report-highlights",
+        "https://www.skysports.com/football/spain-vs-austria/report/549849",
+        "https://www.fifa.com/en/articles/spain-austria-match-report-highlights",
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_H",
+        "https://tacticalfootballanalysis.com/luis-de-la-fuente-tactics-spain-2026-world-cup-analysis/",
+        "https://tacticalfootballanalysis.com/uruguay-spain-world-cup-2026-tactical-analysis-tactics/",
+        "https://www.squawka.com/us/news/world-cup/match-preview-portugal-vs-spain-07-06-26-world-cup-2026-round-of-16/",
+        "https://worldsoccertalk.com/world-cup/2026-world-cup-luis-de-la-fuente-defends-spains-performance-after-0-0-draw-against-cape-verde/",
+        "https://www.olympics.com/en/news/fifa-world-cup-2026-spain-vs-austria-round-32-score-lineups-live-updates"
+      ]
+    },
+    {
+      "equipe": "États-Unis",
+      "matchs_joues": [
+        {
+          "adversaire": "Paraguay (groupe D, 1re journée)",
+          "date": "2026-06-12",
+          "score": "4-1",
+          "buteurs": "CSC Bobadilla 7', Balogun 30' et 45'+ (doublé), Reyna 90'+8; Maurício 73' pour le Paraguay",
+          "resume_tactique": "À Los Angeles, agression totale dès le coup d'envoi: pressing haut et domination écrasante en 1re mi-temps (26-2 touches dans la surface adverse, 293-91 passes réussies, 15-3 dribbles réussis). Système fluide type 3-4-2-1 en possession avec latéraux très hauts, bascule en 4-2-3-1 sans ballon. Balogun, Pulisic et Tillman ont porté l'attaque; Balogun premier joueur US auteur d'un doublé en Coupe du monde depuis 1930.",
+          "points_forts_montres": "Intensité et pressing d'entrée de match, but précoce (7'), efficacité clinique de Balogun, capacité à percer une défense paraguayenne réputée hermétique (10 buts concédés en qualifications sud-américaines).",
+          "failles_exposees": "Net relâchement en 2e mi-temps: but de Maurício (73', frappe basse imparable pour Freese), grosse perte de balle d'Alex Freeman offrant une occasion dangereuse, et seulement trois joueurs derrière en phase de relance — structure qui invite la pression et exige une précision constante. Carton jaune de Tyler Adams."
+        },
+        {
+          "adversaire": "Australie (groupe D, 2e journée)",
+          "date": "2026-06-19",
+          "score": "2-0",
+          "buteurs": "CSC Burgess 11' (sur centre consécutif au travail de Balogun), Alex Freeman 43' (tête sur coup de pied arrêté, tir dévié de Dest)",
+          "resume_tactique": "À Seattle (66 925 spectateurs), sans Pulisic blessé: Pochettino a modifié la formation avec un dispositif à deux attaquants. Contrôle total: 70% de possession, 90% de précision de passes. Les deux buts viennent d'un centre provoqué (CSC) et d'un coup de pied arrêté. Qualification pour la phase à élimination directe assurée dès le 2e match — une première pour les USA à l'ère moderne.",
+          "points_forts_montres": "Domination de la possession, encore un but précoce (11'), danger sur coups de pied arrêtés, capacité à gagner sans Pulisic (profondeur d'effectif), clean sheet.",
+          "failles_exposees": "Peu de failles visibles face à un adversaire limité; à noter que les deux buts viennent d'un CSC et d'un coup de pied arrêté, pas d'action construite dans le jeu — détail précis sur les occasions concédées par les USA dans ce match: non trouvé."
+        },
+        {
+          "adversaire": "Türkiye (groupe D, 3e journée)",
+          "date": "2026-06-25",
+          "score": "2-3 (défaite)",
+          "buteurs": "Trusty 3' (corner de Sebastian Berhalter), Berhalter (frappe lointaine, 2-2); pour la Türkiye: Arda Güler 10' puis 2-1 vers la 30e (combinaison avec Yilmaz), Kaan Ayhan sur le dernier ballon du match (90'+)",
+          "resume_tactique": "À Los Angeles, équipe très remaniée (rotation type « USMNT B ») car la 1re place était quasi acquise. Départ idéal sur corner (3'), mais la Türkiye renverse le match par le mouvement et les combinaisons de Güler-Yilmaz. Berhalter égalise d'une frappe exceptionnelle (1er joueur US à but+passe décisive dans un Mondial à l'ère moderne), avant le but turc sur l'ultime action. Les USA finissent quand même 1ers du groupe D avec 6 points, meilleur parcours de groupes de leur histoire.",
+          "points_forts_montres": "Coups de pied arrêtés (but de Trusty sur corner), frappe de loin (Berhalter), profondeur de banc, but précoce à nouveau (3').",
+          "failles_exposees": "Vraie alerte défensive: défense en difficulté sur les deux premiers buts turcs, l'attaquant turc a posé d'énormes problèmes aux trois centraux avec très peu de coordination entre défenseurs et gardien pour marquer un seul homme; mauvaise gestion de la pression; espaces laissés par les pistons exploités par une équipe techniquement sûre; but encaissé sur le tout dernier ballon des arrêts de jeu (fragilité en fin de match)."
+        },
+        {
+          "adversaire": "Bosnie-Herzégovine (16e de finale / Round of 32)",
+          "date": "2026-07-01",
+          "score": "2-0",
+          "buteurs": "Balogun 45' (après turnover provoqué par Ream, déviation d'Adams et passe de Tillman), Tillman 82' (coup franc à l'entrée de la surface, via la main du gardien Vasilj)",
+          "resume_tactique": "Dans la baie de San Francisco, la Bosnie de Barbarez passe en 5-3-2 et s'installe en bloc très bas. Tempo lent, match haché: les USA n'ont pas pu imposer leur rythme habituel et ont mis du temps à trouver des solutions, avant de faire craquer la relance bosnienne par le pressing (turnover menant au but de Balogun juste avant la pause). Balogun expulsé à la 64e (semelle sur la cheville de Muharemović, rouge direct de Rafael Claus); à 10, les USA scellent le match sur coup franc de Tillman. 1re victoire à élimination directe depuis 2002 et 1re victoire en Mondial contre une équipe européenne depuis le Portugal 2002.",
+          "points_forts_montres": "Pressing qui force les turnovers même contre un bloc bas, coups de pied arrêtés encore décisifs (coup franc de Tillman), solidité et gestion à 10 contre 11, clean sheet.",
+          "failles_exposees": "Difficulté manifeste à créer dans le jeu face à un bloc bas compact à tempo lent (déblocage tardif et sur un rebond heureux); indiscipline coûteuse: le rouge de Balogun prive les USA de leur meilleur buteur (3 buts) contre la Belgique — la dépendance offensive à Balogun devient une faille directe pour le 8e de finale."
+        }
+      ],
+      "style_de_jeu": "Sous Pochettino: 3-4-2-1 fluide en possession (pistons/latéraux très hauts pour donner la largeur autour d'un avant-centre, Balogun), bascule en 4-2-3-1 structuré sans ballon. Pressing parmi les plus agressifs du tournoi — seules l'Espagne et l'Allemagne ont pressé plus fort en phase de groupes (récupération toutes les 8,1 passes adverses selon Opta) — avec transitions rapides après récupération haute. Départs de match foudroyants (buts à la 7e, 11e et 3e minute) et arme majeure sur coups de pied arrêtés (corner de Trusty, tête de Freeman, coup franc de Tillman). Bloc haut assumé qui laisse volontairement de l'espace dans le dos.",
+      "forces_recurrentes": [
+        "Pressing haut étouffant et récupérations hautes qui créent des buts (turnover→but vs Bosnie, asphyxie du Paraguay en 1re mi-temps) — top 3 du tournoi en intensité de pressing",
+        "Coups de pied arrêtés décisifs sur 3 matchs consécutifs: corner (Trusty vs Türkiye), CPA dévié (Freeman vs Australie), coup franc direct (Tillman vs Bosnie)",
+        "Entames de match tonitruantes: buts marqués aux 7e, 11e et 3e minutes — les USA prennent presque toujours les devants tôt",
+        "Efficacité de Folarin Balogun (3 buts en 4 matchs) et profondeur d'effectif (victoire sans Pulisic vs Australie, Tillman et Berhalter décisifs)",
+        "Solidité mentale et gestion des scénarios adverses: victoire à 10 contre 11, adaptation progressive au bloc bas bosnien"
+      ],
+      "failles_recurrentes": [
+        "Espaces dans le dos de la défense à 3 et des pistons hauts: exploités par le Paraguay en 2e mi-temps (but de Maurício) et surtout par la Türkiye (mouvements de Güler-Yilmaz entre les lignes) — les équipes techniquement sûres punissent cette structure",
+        "Baisses de régime et fragilité en fin de match/2e mi-temps: but concédé à la 73e vs Paraguay après relâchement, but encaissé sur le dernier ballon des arrêts de jeu vs Türkiye",
+        "Marquage défaillant dans la surface face à un avant-centre mobile: vs Türkiye, quasi aucune coordination entre les trois centraux et le gardien pour tenir un seul attaquant",
+        "Difficulté à créer dans le jeu face à un bloc bas compact (Bosnie en 5-3-2): tempo cassé, déblocage tardif et chanceux — un scénario que la Belgique pourrait reproduire puis punir en transition",
+        "Indiscipline et absences: rouge de Balogun (meilleur buteur, suspendu vs Belgique), relances risquées à trois derrière (turnover de Freeman vs Paraguay), jaune d'Adams — l'attaque devra se réinventer sans son point d'ancrage"
+      ],
+      "evolution": "Montée en puissance globale: 1ers du groupe D avec 6 points (meilleur parcours de groupes de l'histoire du programme), deux victoires consécutives en Mondial pour la première fois depuis 1930, puis première victoire à élimination directe depuis 2002 et première victoire contre une équipe européenne en Coupe du monde depuis 2002. L'équipe type n'a jamais perdu (la défaite 2-3 vs Türkiye est venue d'un onze largement remanié) et le projet de Pochettino s'affirme match après match. Deux bémols réels avant la Belgique: les failles défensives exposées par la Türkiye n'ont été que partiellement retestées (la Bosnie n'a pas attaqué), et la suspension de Balogun ampute l'attaque de son buteur au pire moment — la dynamique est ascendante mais l'obstacle belge arrive avec un handicap offensif.",
+      "sources": [
+        "https://www.espn.com/soccer/match/_/gameId/760417/paraguay-united-states",
+        "https://www.cbssports.com/soccer/news/usa-paraguay-live-updates-world-cup-2026-score-result/live/",
+        "http://americansoccernow.com/articles/analysis-usmnt-overwhelms-paraguay-in-stunning-first-half-to-secure-4-1-win-in-world-cup-opener",
+        "https://www.foxsports.com/stories/soccer/usmnt-paraguay-world-cup-4-takeaways-balogun-pulisic",
+        "https://www.espn.com/soccer/match/_/gameId/760442/australia-united-states",
+        "https://www.nbcnews.com/sports/soccer/live-blog/usa-australia-world-cup-2026-june-19-live-updates-rcna350750",
+        "https://www.cbssports.com/soccer/news/usmnt-vs-australia-live-updates-world-cup-2026-score-result/live/",
+        "https://www.espn.com/soccer/match/_/gameId/760470/united-states-turkiye",
+        "https://www.cbssports.com/soccer/news/usmnt-vs-turkiye-live-updates-world-cup-2026-score-results/live/",
+        "https://sports.yahoo.com/soccer/article/usa-vs-turkiye-takeaways-the-usmnt-can-shrug-off-the-loss-but-not-the-mistakes-073156462.html",
+        "https://sports.yahoo.com/articles/usmnts-loss-turkey-delivered-clear-043000248.html",
+        "https://www.espn.com/soccer/report/_/gameId/760494",
+        "https://www.espn.com/soccer/story/_/id/49243502/usa-bosnia-herzegovina-2026-fifa-world-cup-knockout-round-32",
+        "https://www.cbsnews.com/news/world-cup-us-bosnia-herzegovina-round-of-32/",
+        "https://www.espn.com/soccer/story/_/id/49243703/usa-folarin-balogun-red-card-bosnia-herzegovina-world-cup-2026",
+        "https://www.foxsports.com/stories/soccer/folarin-balogun-suspension-red-card-belgium",
+        "https://mundialanalytics.com/usa-national-team-analysis",
+        "https://www.si.com/soccer/mauricio-pochettino-has-usmnt-reading-script-world-cup",
+        "https://www.espn.com/soccer/story/_/id/49269414/usa-vs-belgium-fifa-world-cup-2026-tv-channel-how-watch-kick-live-stream-injury-predicted-line-ups"
+      ]
+    },
+    {
+      "equipe": "Belgique",
+      "matchs_joues": [
+        {
+          "adversaire": "Égypte (phase de groupes, Groupe G)",
+          "date": "2026-06-15 (Seattle)",
+          "score": "1-1",
+          "buteurs": "Belgique: Hany (csc, 66e, provoqué par Lukaku et un centre de Meunier); Égypte: Emam Ashour (19e)",
+          "resume_tactique": "Sous Rudi Garcia, Belgique en 4-2-3-1 offensif. Première mi-temps apathique sous la chaleur de Seattle: peu d'urgence, menée au repos après une frappe de 20 mètres d'Ashour (servie par Salah, repositionné en n°10). Réaction seulement après la pause: De Bruyne touche l'extérieur du poteau sur coup franc, puis l'entrée de Lukaku change le match — 22 secondes après son entrée, sa présence dans la surface force le csc de Hany (66e) sur centre de Meunier.",
+          "points_forts_montres": "Impact des remplaçants (Lukaku décisif dès son entrée), danger de De Bruyne sur coups de pied arrêtés, capacité de réaction en seconde période.",
+          "failles_exposees": "Entame de match lente et sans intensité; but concédé sur une frappe de loin non contestée (bloc pas assez agressif sur le porteur); difficulté à gérer un meneur adverse entre les lignes (Salah en n°10 a créé le but); dépendance aux changements pour débloquer le match; gestion de la chaleur problématique."
+        },
+        {
+          "adversaire": "Iran (phase de groupes, Groupe G)",
+          "date": "2026-06-21 (Los Angeles)",
+          "score": "0-0",
+          "buteurs": "Aucun",
+          "resume_tactique": "Domination stérile: 70% de possession, 622 passes, xG 1,82, mais zéro but face au bloc bas iranien. Beiranvand (7 arrêts) écœure les Belges, dont deux occasions de De Cuyper (dont une énorme à la 86e). Tournant à la 66e: carton rouge de Nathan Ngoy pour avoir annihilé une occasion nette de Taremi — Belgique à 10 pendant 25 minutes. Iran (xG 0,63) s'est quand même créé des situations dangereuses, dont un but de Taremi refusé pour hors-jeu après VAR, et a dominé la bataille des coups de pied arrêtés; Courtois a dû intervenir.",
+          "points_forts_montres": "Contrôle de la possession et volume de jeu; Courtois toujours décisif; De Cuyper menaçant côté gauche.",
+          "failles_exposees": "Inefficacité chronique face à un bloc bas (0 but pour 1,82 xG); vulnérabilité sur coups de pied arrêtés défensifs (bataille perdue face à l'Iran); exposition aux transitions rapides dans le dos de la défense (rouge de Ngoy en dernier défenseur face à Taremi); indiscipline défensive coûteuse."
+        },
+        {
+          "adversaire": "Nouvelle-Zélande (phase de groupes, Groupe G)",
+          "date": "2026-06-26 (Vancouver)",
+          "score": "5-1",
+          "buteurs": "Belgique: Trossard (28e, 50e), De Bruyne (66e), Lukaku (86e), Saelemaekers (90e+4); Nouvelle-Zélande: Just (84e)",
+          "resume_tactique": "Démonstration offensive face à l'équipe la plus faible du tournoi: 35 tirs, domination totale. Ouverture du score sur corner de De Bruyne (Trossard de près, 28e), doublé de Trossard sur un rebond (50e), frappe rasante de De Bruyne hors surface (66e, plus vieux buteur belge en Coupe du monde à 34 ans et 363 jours), puis Lukaku et Saelemaekers en fin de match. Trossard homme du match. Première place du Groupe G assurée devant l'Égypte.",
+          "points_forts_montres": "Puissance offensive collective (5 buteurs différents impliqués), coups de pied arrêtés offensifs efficaces (corner de De Bruyne), profondeur du banc, frappes de loin de De Bruyne.",
+          "failles_exposees": "Même en dominant outrageusement, but encaissé (Just, 84e) — incapacité à garder sa cage inviolée face au dernier du classement FIFA; relâchement défensif en fin de match. Adversaire trop faible pour un vrai test défensif."
+        },
+        {
+          "adversaire": "Sénégal (16e de finale)",
+          "date": "2026-07-01",
+          "score": "3-2 a.p.",
+          "buteurs": "Belgique: Lukaku (86e), Tielemans (tête, fin du temps réglementaire; puis penalty 125e — but le plus tardif de l'histoire de la Coupe du monde); Sénégal: Diarra (25e), Sarr (51e)",
+          "resume_tactique": "Belgique dominée tactiquement pendant 85 minutes: les rotations positionnelles et la structure défensive du Sénégal exposent ses failles organisationnelles. Menée 0-2 (Diarra sur rebond après tête de Sarr sur le poteau, 25e; Sarr contrôle poitrine sur un long ballon qui coupe la défense belge et frappe, 51e). Garcia sort De Bruyne et Doku dès la 56e (choix controversé, échange houleux Trossard-Tielemans à la pause fraîcheur). Remontada folle: Lukaku marque sur le PREMIER tir cadré belge (86e), Tielemans égalise d'une tête lobée sur une erreur de Diaw (combinaison avec Trossard), puis penalty polémique (faute de Camara sur Tielemans à la 117e, 7 minutes de VAR) transformé par Tielemans à la 125e.",
+          "points_forts_montres": "Mental et caractère exceptionnels (remontée de 0-2 après la 85e), Lukaku encore décisif, Tielemans leader en fin de match, capacité à punir la moindre erreur adverse en fin de rencontre.",
+          "failles_exposees": "Défense coupée en deux par un simple long ballon (2e but de Sarr) — vulnérabilité criante au jeu direct dans la profondeur; fragilité sur les secondes balles/rebonds dans la surface (1er but de Diarra); un seul tir cadré en 85 minutes face à un bloc organisé; tensions internes visibles (Trossard-Tielemans); infériorité tactique face aux rotations sénégalaises; qualification arrachée grâce à un penalty contesté (Keane et Neville en désaccord avec la décision)."
+        }
+      ],
+      "style_de_jeu": "Sous Rudi Garcia, un 4-2-3-1 fluide (avec variantes 3-4-2-1 en préparation) orienté possession et jeu offensif à haut tempo: supériorité technique, milieu créateur autour de De Bruyne, attaquants libres de recevoir entre les lignes (Doku, Trossard) ou d'isoler les défenseurs côté large, Lukaku en point d'ancrage (souvent décisif en sortie de banc). Gros volume de possession face aux blocs bas (70% contre l'Iran), danger réel sur coups de pied arrêtés offensifs (corners/coups francs de De Bruyne), mais structure défensive légère assumée: le bloc protège mal la profondeur et les frappes de loin. Équipe de « moments »: entames lentes, fins de match tonitruantes.",
+      "forces_recurrentes": [
+        "Profondeur de banc et impact des remplaçants: Lukaku a pesé sur 3 des 4 matchs (csc provoqué vs Égypte, but vs Nouvelle-Zélande, but du 1-2 vs Sénégal)",
+        "Coups de pied arrêtés et frappes de De Bruyne: coup franc sur le poteau vs Égypte, corner décisif et but de loin vs Nouvelle-Zélande",
+        "Force mentale en fin de match: buts après la 84e minute dans 3 matchs (csc 66e vs Égypte, 86e/90e+4 vs NZ, 86e/90e+/125e vs Sénégal)",
+        "Contrôle de la possession et volume offensif (70% et xG 1,82 vs Iran, 35 tirs vs Nouvelle-Zélande)",
+        "Courtois, dernier rempart fiable dans les moments chauds (décisif vs Iran)"
+      ],
+      "failles_recurrentes": [
+        "Vulnérabilité au jeu direct et aux transitions dans la profondeur: rouge de Ngoy en dernier défenseur face à Taremi (Iran), défense coupée en deux par un long ballon sur le 2-0 de Sarr (Sénégal) — LA faille que la vitesse américaine (contres, verticalité) peut exploiter",
+        "Entames de match lentes et passivité en première mi-temps: menée à la pause vs Égypte et vs Sénégal, 0 but avant la 28e sur tout le tournoi",
+        "Inefficacité face aux blocs organisés: 0 but sur 1,82 xG vs Iran, 1 seul tir cadré en 85 minutes vs Sénégal, aucun but dans le jeu par un attaquant vs Égypte",
+        "Fragilité défensive globale: aucun clean sheet contre une équipe ayant marqué chez elle sauf l'Iran (et encore, à 10 et sauvée par la VAR), but concédé même contre la Nouvelle-Zélande, faiblesse sur coups de pied arrêtés défensifs et secondes balles dans la surface (bataille des CPA perdue vs Iran, rebond de Diarra vs Sénégal)",
+        "Fébrilité collective et tensions internes: carton rouge coûteux (Ngoy), sorties controversées de De Bruyne et Doku à la 56e, altercation Trossard-Tielemans — une équipe qui craque sous pression avant de réagir"
+      ],
+      "evolution": "Trajectoire en dents de scie plutôt que montée en puissance linéaire: départ poussif (2 nuls sans victoire, 1-1 vs Égypte et 0-0 vs Iran, seulement 2e/à égalité avant la 3e journée), explosion offensive contre le maillon faible (5-1 vs Nouvelle-Zélande) qui offre la 1re place du groupe, puis retour à la fragilité contre le premier adversaire sérieux: dominée 85 minutes par le Sénégal avant une remontada 3-2 a.p. arrachée par un penalty contesté à la 125e. Le mental et le banc montent en puissance (les fins de match belges sont redoutables), mais le niveau de jeu de fond ne progresse pas: contre chaque adversaire structuré, la Belgique a été bousculée. Elle arrive contre les États-Unis avec une confiance dopée par la remontada mais des jambes lourdes (120 minutes le 1er juillet, seulement 5 jours de récupération) et des failles défensives non corrigées.",
+      "sources": [
+        "https://www.skysports.com/football/news/11095/13552709/world-cup-2026-belgium-1-1-egypt-pharaohs-denied-first-world-cup-win-after-romelu-lukakus-instant-impact",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-egypt-highlights-match-report",
+        "https://www.skysports.com/football/belgium-vs-iran/report/549802",
+        "https://www.espn.com/soccer/report/_/gameId/760451",
+        "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021477",
+        "https://www.skysports.com/football/news/29908/13556698/world-cup-2026-new-zealand-1-5-belgium-leandro-trossards-double-helps-red-devils-reach-knockout-stages",
+        "https://www.aljazeera.com/news/2026/6/27/belgium-new-zealand-fifa-world-cup-2026-trossard-lukaku-de-bruyne-saelemaekers",
+        "https://www.skysports.com/football/news/29908/13558804/world-cup-2026-belgium-3-2-senegal-aet-youri-tielemans-extra-time-penalty-winner-wins-last-32-clash",
+        "https://theanalyst.com/articles/belgium-vs-senegal-stats-world-cup-2026",
+        "https://www.aljazeera.com/sports/2026/7/2/belgium-stage-3-2-comeback-win-over-senegal-to-enter-world-cup-last",
+        "https://www.mozzartsport.co.ke/football/news/tactical-analysis-belgiums-late-comeback-masks-senegals-tactical-superiority-in-dramatic-3-2-world-cup-classic/66866",
+        "https://tacticalfootballanalysis.com/rudi-garcia-tactics-belgium-2026-world-cup-tactical-analysis/",
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_G",
+        "https://www.espn.com/soccer/story/_/id/49072841/group-g-2026-world-cup-teams-records-stats-know-belgium-iran-new-zealand-egypt"
+      ]
+    },
+    {
+      "equipe": "Argentine (championne du monde en titre, 1re du Groupe J, qualifiée pour le huitième de finale vs Égypte le 7 juillet 2026)",
+      "matchs_joues": [
+        {
+          "adversaire": "Algérie (1re journée, Groupe J)",
+          "date": "2026-06-16/17, Arrowhead Stadium, Kansas City",
+          "score": "3-0",
+          "buteurs": "Messi x3 (17e frappe de 20 m en lucarne après combinaison avec De Paul; 2e but sur rebond après tir de Lautaro Martinez; 76e frappe croisée au sol sur passe de Nicolas Gonzalez)",
+          "resume_tactique": "Messi aligné côté droit mais totalement libre: il a balayé toute la ligne d'attaque et décroché bas pour construire. L'Algérie a renoncé à un marquage individuel serré sur lui et l'a payé. Domination argentine décrite comme un 'masterclass' complet, combinaisons courtes De Paul-Messi-Lautaro dans l'axe.",
+          "points_forts_montres": "Messi intenable (triplé historique, plus vieux auteur d'un triplé en Coupe du monde), qualité de la connexion Messi-De Paul, finition clinique sur peu d'occasions nettes, clean sheet.",
+          "failles_exposees": "Peu de failles documentées dans les comptes-rendus (clean sheet, contrôle total). Détail des occasions concédées à l'Algérie: non trouvé. La principale leçon pour un adversaire: laisser Messi sans marquage rapproché est suicidaire — a contrario, un marquage serré reste à tester."
+        },
+        {
+          "adversaire": "Autriche (2e journée, Groupe J)",
+          "date": "2026-06-22, AT&T Stadium, Dallas",
+          "score": "2-0",
+          "buteurs": "Messi x2 (1er but du pied gauche après une passe de Facundo Medina laissée filer par Thiago Almada — 17e but de Messi en CdM, record absolu devant Klose; 2e but dans le temps additionnel)",
+          "resume_tactique": "Match beaucoup plus fermé: l'Argentine n'a fait le break que dans le temps additionnel. Jeu de position patient contre un bloc autrichien organisé, décalages créés par les décrochages d'Almada et les passes verticales de la défense.",
+          "points_forts_montres": "Capacité à gagner un match serré sans encaisser, patience contre un bloc bas, Messi encore décisif, 2e clean sheet consécutif, qualification assurée dès la 2e journée.",
+          "failles_exposees": "Penalty manqué par Messi dès la 9e minute (à côté à droite) — inefficacité aux tirs au but potentiellement exploitable. Score resté à 1-0 jusqu'au bout: l'Argentine a du mal à tuer les matchs, laissant l'adversaire en vie jusqu'au temps additionnel. Détail des occasions autrichiennes: non trouvé."
+        },
+        {
+          "adversaire": "Jordanie (3e journée, Groupe J)",
+          "date": "2026-06-27, AT&T Stadium, Dallas",
+          "score": "3-1 (Jordanie 1-3 Argentine)",
+          "buteurs": "Lo Celso (19e, coup franc enroulé), Lautaro Martinez (31e, penalty), Messi (80e, coup franc — 7e match de CdM consécutif avec un but, record; 6e but du tournoi). Contre: Al-Tamari (Jordanie)",
+          "resume_tactique": "Scaloni a fait NEUF changements, la 1re place étant déjà acquise. Première mi-temps dominante de l'équipe remaniée (2-0 à la pause, un coup franc et un penalty), gestion en seconde période avec entrée des cadres.",
+          "points_forts_montres": "Profondeur d'effectif exceptionnelle (l'équipe B gagne nettement), arme majeure sur coups de pied arrêtés (2 buts directs sur coup franc + 1 penalty), Messi décisif même en entrant en cours de match. 9 points sur 9, +7 de différence de buts.",
+          "failles_exposees": "Premier but encaissé du tournoi: Al-Tamari conclut un beau mouvement collectif jordanien en seconde période — l'équipe remaniée s'est fait transpercer sur une attaque construite. Baisse de concentration une fois le match plié."
+        },
+        {
+          "adversaire": "Cap-Vert (16e de finale / round of 32)",
+          "date": "2026-07-03, Miami",
+          "score": "3-2 après prolongation",
+          "buteurs": "Messi (29e, lob sur l'ouverture longue de Lisandro Martinez), Lisandro Martinez (91e, frappe en lucarne), csc de Diney Borges (111e, sur corner de Messi). Contre: Duarte (59e) et Lopes Cabral (103e)",
+          "resume_tactique": "Énorme frayeur: menée au tableau d'affichage jamais, mais rejointe DEUX fois par la nation la moins bien classée jamais qualifiée pour les phases finales. Ouverture sur un long ballon de Lisandro Martinez, puis incapacité à faire le break; égalisation de Duarte (frappe au ras du second poteau, 59e), but de Lisandro Martinez en début de prolongation, nouvelle égalisation sur une frappe enroulée exceptionnelle de Lopes Cabral (103e), avant un but contre son camp cap-verdien sur corner de Messi (111e). À quelques centimètres des tirs au but; d'abord attribué à Romero, le but vainqueur a été requalifié csc. Sans cela, plus grand upset de l'histoire des phases à élimination directe depuis au moins 1994 selon le classement FIFA.",
+          "points_forts_montres": "Résilience mentale (deux fois rejoints, jamais menés, victoire arrachée), les longs ballons de Lisandro Martinez comme arme de rupture, danger permanent sur coups de pied arrêtés (le but vainqueur vient d'un corner de Messi).",
+          "failles_exposees": "FAILLES MAJEURES: incapacité à tuer le match malgré la domination; deux égalisations concédées, les deux sur des frappes venues de l'extérieur de la surface / du second rideau (Duarte au second poteau, enroulé de Lopes Cabral) — la défense laisse frapper de loin; relâchement après avoir marqué (égalisation cap-verdienne 12 min après le 2-1); fatigue visible d'un effectif vieillissant poussé en prolongation 4 jours seulement avant le huitième; un bloc bas compact et courageux suffit à neutraliser l'attaque argentine pendant de longues séquences."
+        }
+      ],
+      "style_de_jeu": "4-3-3 flexible pouvant basculer en 4-4-2 (Scaloni), avec rotations positionnelles en phase de construction basse (milieux dans les demi-espaces, ailiers rentrants) pour casser le pressing adverse. Pressing agressif mais SÉLECTIF, par séquences, plutôt que permanent. Équipe capable de contrôler par la possession comme de frapper en transition rapide (vitesse d'Alvarez, finition de Lautaro). Messi part officiellement de la droite mais est totalement libre, décrochant très bas pour construire. Arme signature de ce Mondial: les coups de pied arrêtés (2 coups francs directs, 1 penalty marqué, le but qualificatif en 16e sur corner). Défensivement disciplinée sur le papier (10 buts encaissés en 18 matchs de qualifications), mais bloc mis en difficulté par les frappes lointaines dans ce tournoi.",
+      "forces_recurrentes": [
+        "Messi impliqué de façon décisive dans les 4 matchs: 7 buts + le corner du but vainqueur en 16e — record absolu de buts en CdM (19), a marqué dans chaque match du tournoi",
+        "Coups de pied arrêtés redoutables sur plusieurs matchs: coups francs de Lo Celso et Messi vs Jordanie, penalty de Lautaro, corner de Messi décisif vs Cap-Vert",
+        "Solidité défensive en phase de groupes: 2 clean sheets consécutifs (Algérie, Autriche), 1 seul but concédé en 3 matchs de poule",
+        "Profondeur d'effectif: victoire 3-1 avec 9 changements contre la Jordanie",
+        "Résilience mentale de champion: jamais menés au score du tournoi, victoire arrachée en prolongation contre le Cap-Vert"
+      ],
+      "failles_recurrentes": [
+        "Incapacité récurrente à tuer les matchs: 1-0 jusqu'au temps additionnel vs Autriche, break jamais fait vs Cap-Vert (deux fois rejoints) — un adversaire qui reste compact garde sa chance jusqu'au bout",
+        "Vulnérabilité aux frappes de loin / du second rideau: les deux buts cap-verdiens (Duarte au second poteau 59e, enroulé de Lopes Cabral 103e) sont des frappes extérieures que le bloc argentin a laissées partir",
+        "Relâchements après avoir marqué ou une fois le match 'plié': but jordanien concédé sur mouvement collectif en 2e période, égalisation cap-verdienne 12 minutes après le 2-1 en prolongation",
+        "Endurance d'un effectif vieillissant (Messi 39 ans le 24 juin): 120 minutes disputées le 3 juillet, seulement 4 jours de récupération avant l'Égypte — cible évidente pour un match long et un bloc bas qui étire le temps",
+        "Fébrilité potentielle dans un scénario tirs au but: penalty manqué par Messi vs Autriche; le Cap-Vert est passé à quelques centimètres de les y emmener"
+      ],
+      "evolution": "Trajectoire en deux temps: montée en puissance apparente en phase de groupes (9/9 points, +7, Messi record) suivie d'un net coup d'arrêt en 16e de finale. Le 3-2 a.p. contre le Cap-Vert — 68e nation FIFA environ, plus faible qualifié de l'histoire en phase finale — est un signal d'alarme plus qu'un accident: domination stérile, deux égalisations concédées, prolongation subie. L'équipe ne décline pas dans les résultats (4 victoires sur 4) mais décline dans la maîtrise: la marge sur les adversaires modestes se réduit et la fraîcheur physique (120 min dans les jambes, 4 jours de repos) est le point le plus dégradé à l'approche du match contre l'Égypte. L'Égypte a intérêt à faire durer le match, défendre bas et tenter sa chance de loin.",
+      "sources": [
+        "https://www.aljazeera.com/sports/2026/6/17/messi-fires-argentina-to-win-against-algeria-in-world-cup-defence-opener",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-v-algeria-highlights-match-report",
+        "https://www.espn.com/soccer/report/_/gameId/760433 (Argentina 3-0 Algeria, ESPN Game Analysis)",
+        "https://www.skysports.com/football/news/11095/13554960/world-cup-2026-argentina-2-0-austria-lionel-messi-breaks-scoring-record-with-two-goals-to-send-holders-through",
+        "https://www.espn.com/soccer/report/_/gameId/760456 (Argentina 2-0 Austria, ESPN)",
+        "https://www.skysports.com/football/news/12098/13556713/world-cup-2026-jordan-1-3-argentina-lionel-messi-breaks-world-cup-record-by-scoring-in-seventh-game-in-a-row",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/jordan-argentina-match-report-highlights",
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_J",
+        "https://www.skysports.com/football/news/12026/13558801/world-cup-2026-argentina-3-2-cape-verde-reigning-champions-avoid-biggest-upset-in-tournament-history-after-extra-time-winner",
+        "https://www.espn.com/soccer/story/_/id/49262637/messi-argentina-nearly-suffered-historic-world-cup-upset-cape-verde",
+        "https://www.cnn.com/2026/07/03/sport/round-of-32-world-cup-friday",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-cabo-verde-match-report-highlights",
+        "https://tacticalfootballanalysis.com/lionel-scaloni-tactics-argentina-2026-world-cup-tactical-analysis/",
+        "https://mundialanalytics.com/argentina-national-team-analysis"
+      ]
+    },
+    {
+      "equipe": "Égypte",
+      "matchs_joues": [
+        {
+          "adversaire": "Belgique (phase de groupes, Groupe G)",
+          "date": "2026-06-15 (Seattle)",
+          "score": "1-1",
+          "buteurs": "Égypte: Emam Ashour (19e, frappe de loin). Belgique: contre-son-camp de Mohamed Hany (66e), provoqué par Romelu Lukaku sur un centre de Meunier, 22 secondes après l'entrée de Lukaku.",
+          "resume_tactique": "Sous une forte chaleur, l'Égypte a mené à la mi-temps pour la première fois de son histoire en Coupe du Monde. Salah recentré dans un rôle intérieur (meilleur de son équipe pour occasions créées, précision de passes et fautes obtenues), Mostafa Zico apportant l'énergie sur le flanc droit. Bloc compact, Belgique muselée: 7 tirs belges en 1re mi-temps mais aucun cadré. L'entrée de Lukaku a immédiatement fait basculer le rapport de force physique.",
+          "points_forts_montres": "Discipline défensive face à une nation du top 10; danger constant en transition; Salah décisif comme créateur (passe pour l'action du but d'Ashour); capacité à frapper de loin.",
+          "failles_exposees": "But encaissé quelques secondes après l'entrée d'un avant-centre physique (Lukaku): fragilité aérienne face aux centres dans la surface, concrétisée par le contre-son-camp de Mohamed Hany. Incapacité à tenir un avantage jusqu'au bout."
+        },
+        {
+          "adversaire": "Nouvelle-Zélande (phase de groupes, Groupe G)",
+          "date": "2026-06-21 (BC Place, Vancouver)",
+          "score": "3-1",
+          "buteurs": "Nouvelle-Zélande: Surman (15e, tête sur corner). Égypte: Zico (58e, tête à bout portant), Salah (67e, servi par Zico), Trezeguet (82e, tête plongeante).",
+          "resume_tactique": "Première mi-temps terne, menés au score sur un corner. Réaction furieuse après la pause: pressing intensifié et déferlante offensive, 2 buts en 8 minutes autour de l'heure de jeu, puis un 3e. 1,96 xG au total. Première victoire de l'Égypte en Coupe du Monde (à sa 9e tentative).",
+          "points_forts_montres": "Capacité de réaction et de remontée au score; puissance offensive sur les ailes (centres, jeu de tête offensif: 2 des 3 buts de la tête); combinaisons Zico-Salah; profondeur du banc offensif (Trezeguet).",
+          "failles_exposees": "But encaissé de la tête sur corner (Surman, 15e): nouvelle vulnérabilité sur coup de pied arrêté défensif. Entame de match apathique, 45 premières minutes sans rythme face à un adversaire modeste."
+        },
+        {
+          "adversaire": "Iran (phase de groupes, Groupe G)",
+          "date": "2026-06-26 (Seattle)",
+          "score": "1-1",
+          "buteurs": "Égypte: Saber (5e, après une frappe de Salah relâchée par Beiranvand). Iran: Rezaeian (14e, en deux temps après un double arrêt de Shobeir devant Mohammadi).",
+          "resume_tactique": "Match frénétique. Départ éclair (but à la 5e), mais penalty concédé dans la foulée par Abdelmonem sur Taremi (tir arrêté par Shobeir), puis égalisation iranienne dès la 14e sur une action où Shobeir fait l'arrêt mais est battu sur le rebond. L'Égypte a ensuite gelé le match pour assurer la qualification. Frayeur finale: but iranien de Khalilzadeh à la 90+3 annulé pour hors-jeu.",
+          "points_forts_montres": "Entame tranchante; Shobeir décisif (penalty de Taremi arrêté + parade sur Mohammadi); gestion pragmatique pour assurer la 2e place et une première qualification historique en phase à élimination directe.",
+          "failles_exposees": "Dix premières minutes après le but complètement fébriles: penalty concédé (faute d'Abdelmonem) puis égalisation dès la 14e. Seconds ballons mal gérés dans sa surface (but sur rebond). A failli perdre dans le temps additionnel (but annulé pour un hors-jeu marginal). Production offensive quasi nulle après l'ouverture du score."
+        },
+        {
+          "adversaire": "Australie (16e de finale / Round of 32)",
+          "date": "2026-07-03 (Dallas Stadium)",
+          "score": "1-1 a.p., 4-2 aux tirs au but",
+          "buteurs": "Égypte: Emam Ashour (20e, seul au second poteau sur un centre de Karim Hafez après un coup de pied arrêté joué en deux temps). Australie: contre-son-camp de Mohamed Hany (55e, déviation de la tête sur coup franc d'Aiden O'Neill). Tirs au but: 4/4 pour l'Égypte (dont Salah), Abdelmaguid convertit le tir décisif.",
+          "resume_tactique": "Domination de la possession et meilleure équipe en 1re mi-temps, but sur coup de pied arrêté. Marmoush manque le break au début de la 2e période, puis l'Égypte recule et se fait punir sur coup franc (csc de Hany). Long passage à vide: aucun tir cadré entre son but (20e) et la tête de Rabia à la 90+5 (détournée par Beach). Prolongation stérile, puis sang-froid total aux tirs au but (4/4) pendant que Souttar et Herrington échouent. Première victoire égyptienne en match à élimination directe de Coupe du Monde.",
+          "points_forts_montres": "Force sur coups de pied arrêtés offensifs; solidité mentale exceptionnelle (aucun raté aux tirs au but); capacité à souffrir jusqu'au bout (tête de Rabia à la 90+5).",
+          "failles_exposees": "Encore un but encaissé de la tête sur coup de pied arrêté (coup franc → 2e contre-son-camp de Hany du tournoi). Incapacité chronique à tuer le match après avoir mené (occasion Marmoush gâchée). Environ 70 minutes sans tir cadré: l'attaque s'éteint quand l'adversaire se replie. Salah diminué (gêne aux ischio-jambiers signalée avant le match)."
+        }
+      ],
+      "style_de_jeu": "Sous Hossam Hassan, l'Égypte joue en 4-2-3-1 compact (variantes 3-4-1-2 pour plus de solidité, bloc défensif installé en 4-4-2 médian resserré entre les lignes). Double registre hors possession: bloc médian compact fermant les couloirs intérieurs, mais pressing haut agressif orienté sur l'homme dès que l'adversaire relance court, avec ligne défensive proche du rond central et piège du hors-jeu, en surchargeant le côté du ballon pour forcer des pertes hautes. En possession, équipe de transition avant tout: verticalité immédiate après récupération, jeu direct vers les couloirs pour lancer Salah, Marmoush, Zico et Trezeguet en profondeur, beaucoup de buts en moins de trois passes. Très dangereuse sur coups de pied arrêtés offensifs et centres (Ashour vs Belgique et Australie, 3 buts de la tête vs Nouvelle-Zélande). Salah, 34 ans, recentré en meneur intérieur: moins de courses à haute intensité, mais premier créateur d'occasions de l'équipe.",
+      "forces_recurrentes": [
+        "Résilience et solidité: invaincue en 4 matchs, jamais battue dans le temps réglementaire face à la Belgique, l'Iran et l'Australie",
+        "Transitions verticales foudroyantes: buts en peu de passes, profondeur exploitée par Zico, Marmoush et Trezeguet autour de Salah créateur",
+        "Coups de pied arrêtés et centres offensifs redoutables: buts d'Ashour vs Belgique et Australie, 2 buts de la tête vs Nouvelle-Zélande, tête de Rabia à la 90+5 vs Australie",
+        "Force mentale exceptionnelle: remontée vs Nouvelle-Zélande, 4/4 aux tirs au but vs Australie, série de premières historiques enchaînées",
+        "Gardien Mostafa Shobeir décisif dans les moments chauds (penalty de Taremi arrêté, parades vs Iran)"
+      ],
+      "failles_recurrentes": [
+        "Vulnérabilité aérienne majeure sur coups de pied arrêtés et centres défensifs: 4 buts encaissés sur 4 viennent de la tête sur centre, corner ou coup franc (csc Hany vs Belgique, tête de Surman sur corner vs NZ, csc Hany sur coup franc vs Australie, rebond concédé vs Iran)",
+        "Mohamed Hany est un point faible identifié: 2 contre-son-camp de la tête dans le tournoi (vs Belgique et vs Australie), tous deux sur ballons aériens dans la surface",
+        "Incapacité chronique à tuer les matchs et à tenir un avantage: avantage perdu vs Belgique (66e), vs Iran (14e) et vs Australie (55e); longues extinctions offensives (~70 min sans tir cadré vs Australie, quasi rien après la 5e vs Iran)",
+        "Espaces dans le dos des latéraux qui montent haut, exploitables par des ailiers rapides en transition (canal ciblé par l'Australie via Irankunda); risque de pertes dangereuses quand la relance 3-1/2-2 est pressée, avec recours à de longs ballons spéculatifs",
+        "Fébrilité dans les moments de flottement: penalty concédé à la 8e vs Iran, buts encaissés juste après un changement adverse (Lukaku) ou en début de seconde période; Salah diminué physiquement (ischio-jambiers), 34 ans, moins capable de répéter les efforts"
+      ],
+      "evolution": "Trajectoire de montée en puissance mentale mais de déclin offensif. Mentalement, l'équipe franchit un palier à chaque match: première mi-temps menée en tête de son histoire en CdM (Belgique), première victoire (NZ), première qualification en phase finale à élimination directe (Iran), première victoire en match couperet avec un 4/4 aux tirs au but (Australie). Sportivement en revanche, la production décline: 3 buts et 1,96 xG contre la Nouvelle-Zélande, puis 1 seul but contre l'Iran (à la 5e) et 1 seul contre l'Australie (à la 20e), suivis de très longues périodes sans tir cadré. L'équipe recule de plus en plus tôt pour protéger son avantage et le perd systématiquement. La gêne aux ischio-jambiers de Salah accentue le risque: sans lui à 100%, le poids créatif bascule sur Marmoush. Contre l'Argentine (6 victoires en 6 matchs en 2026, meilleure attaque du tournoi), le plan sera clairement de subir en bloc compact et de frapper en transition ou sur coup de pied arrêté — mais les failles aériennes sur CPA défensifs et l'incapacité à tenir un score sont exactement le profil de faiblesses qu'une équipe comme l'Argentine sait exploiter.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_G",
+        "https://www.skysports.com/football/news/11095/13552709/world-cup-2026-belgium-1-1-egypt-pharaohs-denied-first-world-cup-win-after-romelu-lukakus-instant-impact",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-egypt-highlights-match-report",
+        "https://www.espn.com/soccer/report/_/gameId/760426",
+        "https://www.aljazeera.com/sports/2026/6/22/salah-scores-as-egypt-beat-new-zealand-3-1-for-first-world-cup-win",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/new-zealand-egypt-match-report-highlights",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/egypt-ir-iran-match-report-highlights",
+        "https://www.aljazeera.com/sports/liveblog/2026/6/26/live-egypt-vs-iran-world-cup-2026",
+        "https://sports.yahoo.com/soccer/article/world-cup-2026-egypt-wins-first-ever-knockout-round-match-after-penalty-shootout-with-australia-210308799.html",
+        "https://www.skysports.com/football/news/12098/13558810/world-cup-2026-australia-1-1-egypt-2-4-on-penalties-shoot-out-drama-sends-mohamed-salah-and-co-into-last-16",
+        "https://theanalyst.com/articles/australia-vs-egypt-stats-world-cup-2026",
+        "https://www.rotowire.com/soccer/article/australia-vs-egypt-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-round-of-32-120684",
+        "https://tacticalfootballanalysis.com/hossam-hassan-tactics-egypt-2026-world-cup-tactical-analysis/",
+        "https://tips.gg/article/argentina-vs-egypt-07-07-2026/",
+        "https://www.espn.com/soccer/story/_/id/49261233/egypt-beat-australia-pks-first-ever-knockout-win"
+      ]
+    },
+    {
+      "equipe": "Suisse",
+      "matchs_joues": [
+        {
+          "adversaire": "Qatar (Groupe B)",
+          "date": "13 juin 2026, San Francisco Bay Area Stadium (Santa Clara)",
+          "score": "1-1",
+          "buteurs": "Suisse: Embolo (17e, pen., faute d'Abunada sur Freuler). Qatar: égalisation à la 90+4 sur une tête de Khoukhi, officiellement comptabilisée csc de Muheim.",
+          "resume_tactique": "Domination suisse quasi totale: xG de 3,24 contre 0,76 pour le Qatar. Ouverture rapide sur penalty, puis multiplication d'occasions non converties, seconde période plus calme où la Suisse a géré au lieu de tuer le match. Égalisation encaissée dans le temps additionnel sur un ballon aérien (tête du capitaine Khoukhi montant plus haut que la défense).",
+          "points_forts_montres": "Création d'occasions en volume (xG 3,24), maîtrise du ballon, capacité à provoquer des penalties (Freuler), contrôle global du match pendant 90 minutes.",
+          "failles_exposees": "Manque criant de réalisme devant le but (1 but pour 3,24 xG); relâchement fatal dans le temps additionnel; vulnérabilité aérienne sur coup de pied arrêté en fin de match (tête de Khoukhi à la 90+4); incapacité à tuer un match dominé."
+        },
+        {
+          "adversaire": "Bosnie-Herzégovine (Groupe B)",
+          "date": "18 juin 2026, Los Angeles Stadium",
+          "score": "4-1",
+          "buteurs": "Suisse: Manzambi (74e, 90e), Vargas (84e), Xhaka (90+7, pen.). Bosnie: Mahmic (90+3).",
+          "resume_tactique": "Match longtemps bloqué: la Bosnie a défendu en bloc très bas autour de sa surface et la Suisse a dominé sans marquer pendant plus de 70 minutes (0-0 à la pause). Le match a basculé grâce aux remplaçants: Manzambi entré en jeu débloque d'une volée surpuissante (74e), puis expulsion de Muharemovic (80e, faute sur Embolo en position de dernier défenseur) et la Suisse déroule à 11 contre 10. Manzambi, à 20 ans, devient le plus jeune Suisse à marquer un doublé en Coupe du Monde.",
+          "points_forts_montres": "Impact énorme du banc (Manzambi et Vargas, tous deux remplaçants, marquent 3 des 4 buts); patience face au bloc bas; capacité à écraser une équipe réduite à 10; sang-froid de Xhaka sur penalty.",
+          "failles_exposees": "Plus de 70 minutes d'impuissance face à un bloc bas compact — le déblocage est venu du banc et d'un carton rouge adverse, pas du plan initial; but encaissé à la 90+3 alors qu'ils jouaient à 11 contre 10 (déconcentration en fin de match, récurrente)."
+        },
+        {
+          "adversaire": "Canada (Groupe B)",
+          "date": "24 juin 2026, BC Place, Vancouver",
+          "score": "2-1",
+          "buteurs": "Suisse: Vargas (46e, 39 secondes après la reprise, passe de Manzambi), Manzambi (57e). Canada: Promise David (76e, volée, entré en jeu).",
+          "resume_tactique": "Première mi-temps fermée (Embolo raté en un-contre-un). Coup de griffe éclair au retour des vestiaires: Vargas marque après 39 secondes, puis Manzambi double la mise. Mais la Suisse a été dominée aux occasions: 6 tirs (4 cadrés) contre 13 tirs (7 cadrés) pour le Canada, xG de 1,06 contre 1,34 — Opta suggère qu'un nul aurait été équitable. Après la volée de Promise David (76e), le Canada a poussé et eu des occasions d'égaliser en fin de match. Victoire = 1ère place du Groupe B.",
+          "points_forts_montres": "Efficacité clinique (2 buts sur 6 tirs); démarrages de seconde période foudroyants; duo Manzambi-Vargas encore décisif; capacité à gagner un match sans le dominer.",
+          "failles_exposees": "Dominés aux tirs et à l'xG par le Canada; but concédé sur une volée d'un remplaçant adverse (76e); dernier quart d'heure subi avec de vraies occasions d'égalisation concédées; gestion passive de l'avance qui invite la pression adverse."
+        },
+        {
+          "adversaire": "Algérie (16e de finale / phase à 32)",
+          "date": "2 juillet 2026, BC Place, Vancouver",
+          "score": "2-0",
+          "buteurs": "Suisse: Embolo (10e, servi en retrait par Manzambi depuis la ligne de but), Ndoye (46e, 48 secondes après la reprise, sur un dégagement raté après centre de Zakaria).",
+          "resume_tactique": "Chef-d'œuvre tactique de Murat Yakin: la Suisse a volontairement cédé la possession (56% pour l'Algérie), absorbé la pression et frappé en contre-attaque éclair. Ouverture dès la 10e minute sur une percée de Manzambi, puis 2e but 48 secondes après la reprise. Une fois devant, passage à un milieu à cinq hors possession pour étouffer les espaces. xG écrasant: 2,52 contre 0,73 malgré la possession adverse. Première victoire suisse en match à élimination directe d'une Coupe du Monde depuis 88 ans.",
+          "points_forts_montres": "Flexibilité tactique totale (changements de système en cours de match); contre-attaques létales; solidité du bloc défensif (clean sheet, 0,73 xG concédé); Manzambi encore décisif; discipline collective orchestrée par Xhaka.",
+          "failles_exposees": "Très peu de failles exposées sur ce match: l'Algérie a eu la possession mais n'a rien créé (0,73 xG). Détail d'occasions algériennes concédées: non trouvé. C'est le match le plus abouti du tournoi suisse."
+        }
+      ],
+      "style_de_jeu": "Sous Murat Yakin, la Suisse est un caméléon tactique: capable de monopoliser le ballon face aux blocs bas (Qatar, Bosnie) comme de céder volontairement la possession pour frapper en transition éclair (56% de possession laissée à l'Algérie, xG 2,52-0,73). Bloc médian-bas très organisé autour de Xhaka, milieu à cinq hors possession pour verrouiller une avance, contre-attaques verticales via Ndoye, Vargas et le jeune Manzambi. Signature frappante: les buts juste après la reprise (Vargas à 46e/39 secondes vs Canada, Ndoye à 46e/48 secondes vs Algérie) — des sorties de vestiaire préparées. Efficacité sur penalties (Embolo, Xhaka) et usage massif du banc comme arme offensive. Philosophie Yakin confirmée: équipe très difficile à percer (20 clean sheets sur ses 57 premiers matchs, 2 buts concédés en qualifications).",
+      "forces_recurrentes": [
+        "L'impact des remplaçants comme arme décisive: Manzambi et Vargas, entrés en jeu vs la Bosnie, marquent 3 des 4 buts; le banc a pesé sur chaque victoire",
+        "Les sorties de vestiaire foudroyantes: but dans la première minute de la seconde période lors de deux matchs consécutifs (Vargas 39 sec vs Canada, Ndoye 48 sec vs Algérie)",
+        "Johan Manzambi (20 ans), révélation du tournoi: doublé vs Bosnie, but + passe décisive vs Canada, passe décisive sur l'ouverture vs Algérie — impliqué dans un but sur chacun des 3 derniers matchs",
+        "Flexibilité tactique de Yakin: capable de dominer (xG 3,24 vs Qatar) comme de contre-attaquer en cédant la possession (masterclass vs Algérie), avec changements de système en cours de match",
+        "Efficacité clinique en transition et sur penalty: 2 penalties convertis (Embolo, Xhaka), victoire vs Canada avec seulement 6 tirs"
+      ],
+      "failles_recurrentes": [
+        "Fins de match systématiquement à risque: but encaissé à la 90+4 vs Qatar (coûtant la victoire), à la 90+3 vs Bosnie (à 11 contre 10), et dernier quart d'heure subi vs Canada avec occasions d'égalisation concédées après le but de David (76e) — 3 matchs sur 4",
+        "Vulnérabilité aérienne et sur coups de pied arrêtés en fin de match: l'égalisation qatarie vient d'une tête de Khoukhi qui domine la défense dans le temps additionnel",
+        "Manque de réalisme face aux blocs bas: 1 but pour 3,24 xG vs Qatar, 0-0 pendant 73 minutes vs la Bosnie regroupée — le déblocage a nécessité le banc et un carton rouge adverse; pas de buteur d'élite garanti",
+        "Gestion passive de l'avance: une fois devant, l'équipe recule et invite la pression — le Canada a fini avec plus de tirs (13-6) et un xG supérieur (1,34-1,06) malgré la défaite",
+        "Dépendance croissante à un joueur de 20 ans (Manzambi) pour la créativité décisive: si la Colombie le neutralise, la production offensive du plan A reste incertaine"
+      ],
+      "evolution": "Montée en puissance nette et continue. Le tournoi a commencé par une frustration (1-1 vs Qatar: domination stérile et égalisation encaissée à la 90+4), puis trois victoires de suite avec un contenu croissant: déblocage tardif mais net vs la Bosnie (4-1), victoire efficace mais dominée aux occasions vs le Canada (2-1) pour la 1ère place du groupe, et enfin le match référence vs l'Algérie (2-0): masterclass tactique de Yakin, clean sheet, xG 2,52-0,73, et première victoire suisse en phase à élimination directe d'un Mondial depuis 88 ans. L'équipe arrive face à la Colombie en pleine confiance, portée par l'éclosion de Manzambi — mais ses failles de fin de match et son réalisme intermittent face aux blocs organisés n'ont pas encore été punies par un adversaire du calibre colombien.",
+      "sources": [
+        "https://theanalyst.com/articles/qatar-vs-switzerland-stats-world-cup-2026",
+        "https://www.espn.com/soccer/report/_/gameId/760420",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-bosnia-herzegovina-match-report-highlights",
+        "https://theanalyst.com/articles/switzerland-vs-bosnia-herzegovina-stats-world-cup-2026-live",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-canada-match-report-highlights",
+        "https://theanalyst.com/articles/switzerland-vs-canada-stats-world-cup-2026",
+        "https://theanalyst.com/articles/switzerland-vs-algeria-stats-world-cup-2026",
+        "https://www.espn.com/soccer/report/_/gameId/760498",
+        "https://www.aljazeera.com/sports/2026/7/3/switzerland-algeria-fifa-world-cup-2026-score-embolo-ndoye",
+        "https://www.skysports.com/football/switzerland-vs-algeria/report/549848",
+        "https://www.aljazeera.com/sports/2026/6/18/switzerland-beat-bosnia-and-herzegovina-4-1-top-group-b-in-world-cup",
+        "https://worldsoccertalk.com/world-cup/switzerland-2026-world-cup-preview-squad-breakdown-key-player-and-tactical-analysis/"
+      ]
+    },
+    {
+      "equipe": "Colombie",
+      "matchs_joues": [
+        {
+          "adversaire": "Ouzbékistan (phase de groupes, Groupe K)",
+          "date": "2026-06-17",
+          "score": "3-1",
+          "buteurs": "Colombie: D. Muñoz (40e), L. Díaz (65e), J. Campaz (90e+9). Ouzbékistan: A. Fayzullaev (60e).",
+          "resume_tactique": "Au stade Azteca (Mexico). Domination nette en première mi-temps, but de Muñoz (latéral droit) au bout d'un beau mouvement collectif lancé par une passe déchirante de Luis Díaz. En seconde période, l'Ouzbékistan est sorti de son bloc défensif et a gêné la Colombie, égalisant à l'heure de jeu par Fayzullaev, avant que Díaz (but + passe décisive, homme du match) ne redonne l'avantage et que Campaz ne scelle le score dans le temps additionnel.",
+          "points_forts_montres": "Créativité de Luis Díaz (but + passe décisive, 'a fait le show'), apport offensif du latéral Muñoz, capacité à répondre après l'égalisation, banc décisif (Campaz).",
+          "failles_exposees": "Relâchement en début de seconde période: l'Ouzbékistan (débutant en Coupe du Monde) a réussi à sortir de son bloc, à mettre la Colombie en difficulté et à égaliser à la 60e. Seul but concédé du tournoi à ce jour."
+        },
+        {
+          "adversaire": "RD Congo (phase de groupes, Groupe K)",
+          "date": "2026-06-23",
+          "score": "1-0",
+          "buteurs": "Colombie: D. Muñoz (76e, frappe déviée entrée au premier poteau).",
+          "resume_tactique": "Au stade Akron (Guadalajara). Match de siège face à un bloc bas: la Colombie a dominé une première mi-temps 'électrique' et cumulé 20 tirs, mais a buté sur le gardien Lionel Mpasi (arrêts devant Arias notamment, Muñoz mettant le rebond à côté). Délivrance seulement à 14 minutes de la fin sur une frappe déviée de Muñoz. Deux buts de Díaz refusés en fin de match (faute dans la construction, puis hors-jeu).",
+          "points_forts_montres": "Domination territoriale totale, gros volume offensif (20 tirs), patience face au bloc bas, encore Muñoz décisif depuis le poste de latéral droit, clean sheet.",
+          "failles_exposees": "Inefficacité criante devant le but face à un bloc bas: 20 tirs pour un seul but (dévié), 76 minutes sans marquer. Peu concédé (un tir lointain de Kayembe), mais a besoin d'un exploit ou d'une déviation pour débloquer un match fermé."
+        },
+        {
+          "adversaire": "Portugal (phase de groupes, Groupe K)",
+          "date": "2026-06-27",
+          "score": "0-0",
+          "buteurs": "Aucun.",
+          "resume_tactique": "Au Hard Rock Stadium (Miami), devant 64 478 spectateurs, les deux équipes étant déjà qualifiées. Match ouvert et haletant: 36 tirs cumulés sans but. Diogo Costa a dû faire 6 arrêts (plus que sur ses deux premiers matchs réunis), signe d'une Colombie très entreprenante; en face, Camilo Vargas a sauvé les siens devant Bruno Fernandes. La Colombie termine 1re du groupe (7 pts) devant le Portugal (5 pts).",
+          "points_forts_montres": "Capacité à rivaliser avec un favori européen, gros volume d'occasions créées (6 arrêts de Diogo Costa), Vargas fiable dans le but, 1re place du groupe arrachée avec un seul but concédé en trois matchs.",
+          "failles_exposees": "Encore zéro but malgré les occasions (finition défaillante face à un gardien de haut niveau). A concédé de vraies occasions à une attaque européenne d'élite (Bruno Fernandes proche d'ouvrir le score), confirmant la difficulté historique récente face aux grandes équipes européennes."
+        },
+        {
+          "adversaire": "Ghana (16es de finale / Round of 32)",
+          "date": "2026-07-03",
+          "score": "1-0",
+          "buteurs": "Colombie: J. Arias (14e, reprise au second poteau sur centre de L. Suárez).",
+          "resume_tactique": "À Kansas City. Scénario bousculé d'entrée: Jhon Córdoba (avant-centre) blessé à l'aine et remplacé dès la 7e-8e minute par Luis Suárez, qui délivre immédiatement la passe décisive pour Arias (14e) — la contribution la plus précoce d'un remplaçant de l'histoire de la Coupe du Monde. Ensuite, victoire contrôlée: domination spatiale, étouffement du bloc bas ghanéen, défense disciplinée jamais réellement inquiétée. Díaz privé du break par un hors-jeu puis par un arrêt d'Ati Zigi.",
+          "points_forts_montres": "Contrôle total du match ('suffocation tactique' du Ghana), défense disciplinée quasi jamais menacée, profondeur du banc (Suárez décisif d'entrée), démarrage fort (but dans le premier quart d'heure), série d'invincibilité prolongée.",
+          "failles_exposees": "Incapacité à tuer le match: plusieurs grosses occasions manquées pour faire 2-0 (Díaz notamment), victoire à un seul but qui laisse l'adversaire en vie. Blessure de l'avant-centre titulaire Jhon Córdoba (aine), incertitude pour la suite. Statut exact de Córdoba pour le match contre la Suisse: non trouvé."
+        }
+      ],
+      "style_de_jeu": "Sous Néstor Lorenzo, la Colombie alterne entre un 4-2-3-1 et un 4-3-3 flexibles, avec un pressing de haute intensité et des transitions verticales rapides. En possession, James Rodríguez dicte le tempo depuis l'axe, alimentant la vitesse des ailiers Luis Díaz et Luis Suárez/Arias; les latéraux, surtout Daniel Muñoz à droite, montent très haut et pèsent directement au score (2 buts). L'équipe domine territorialement, génère un gros volume de tirs (20 vs RDC, 6 arrêts imposés à Diogo Costa), et s'appuie sur un bloc défensif discipliné devant Camilo Vargas (1 seul but encaissé en 4 matchs, 3 clean sheets consécutifs). Jeu sur coups de pied arrêtés: rien de spécifique trouvé dans les sources consultées (non trouvé).",
+      "forces_recurrentes": [
+        "Solidité défensive exceptionnelle: 1 seul but concédé en 4 matchs et 3 clean sheets consécutifs (RDC, Portugal, Ghana), avec un Camilo Vargas décisif (arrêt clé devant Bruno Fernandes)",
+        "Luis Díaz, menace constante sur chaque match: but + passe décisive vs Ouzbékistan, buts refusés vs RDC, encore le plus dangereux vs Ghana",
+        "Daniel Muñoz, latéral droit à l'apport offensif décisif: buteur sur les 2 premiers matchs, danger permanent côté droit",
+        "Gros volume offensif et domination territoriale récurrente (20 tirs vs RDC, 36 tirs cumulés vs Portugal, contrôle total vs Ghana)",
+        "Profondeur du banc décisive: Campaz buteur en sortie de banc vs Ouzbékistan, Suárez passeur décisif 6 minutes après son entrée vs Ghana"
+      ],
+      "failles_recurrentes": [
+        "Inefficacité chronique devant le but: sur les 3 derniers matchs, 1 but marqué au total en plus de 200 tirs/occasions cumulés (20 tirs pour 1 but dévié vs RDC, 0/6+ grosses occasions vs Portugal, break jamais fait vs Ghana) — toutes les victoires à élimination directe potentielles se jouent sur un seul but",
+        "Victoires à marge minimale qui laissent l'adversaire en vie jusqu'au bout: 1-0, 0-0, 1-0 — une Suisse disciplinée et efficace en transition peut punir ce manque de réalisme",
+        "Vulnérabilité en début de seconde période face à une équipe qui hausse son bloc: l'Ouzbékistan est sorti de sa coquille et a égalisé à la 60e; c'est le seul moment du tournoi où la Colombie a été réellement dépassée",
+        "Difficultés récurrentes face aux défenses regroupées: 76 minutes pour percer la RDC (grâce à une déviation), incapacité à convertir la domination contre le bloc ghanéen — le mid-block structuré de Yakin est exactement ce profil",
+        "Incertitude à la pointe de l'attaque: Jhon Córdoba sorti sur blessure à l'aine dès la 7e minute contre le Ghana; sa disponibilité contre la Suisse est non trouvée dans les sources"
+      ],
+      "evolution": "Montée en puissance sur le plan défensif et du contrôle, déclin sur le plan offensif. Défensivement, la courbe est ascendante: 1 but concédé au premier match, puis 3 clean sheets consécutifs, une première place de groupe arrachée devant le Portugal et un match à élimination directe géré avec une maîtrise quasi totale ('suffocation tactique' du Ghana) — l'équipe est invaincue et présentée comme un outsider crédible ('dark horse'). Offensivement en revanche, la production chute: 3 buts, puis 1, 0, 1 — l'équipe crée toujours beaucoup mais ne convertit plus, et la blessure de Córdoba fragilise le poste d'avant-centre. En résumé: une équipe de plus en plus solide et gestionnaire, mais qui avance sur un fil à cause de sa finition.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_K",
+        "https://www.skysports.com/football/news/11095/13552728/world-cup-2026-uzbekistan-1-3-colombia-luis-diaz-steals-the-show-with-goal-and-assist",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/uzbekistan-colombia-match-report-highlights",
+        "https://www.espn.com/soccer/report/_/gameId/760436",
+        "https://www.skysports.com/football/news/11095/13554944/world-cup-2026-colombia-1-0-dr-congo-daniel-munoz-strike-sends-south-americans-into-last-32",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-congo-dr-match-report-highlights",
+        "https://www.aljazeera.com/sports/2026/6/28/colombia-wins-world-cup-2026-group-after-breathless-0-0-draw-with-portugal",
+        "https://www.espn.com/soccer/report/_/gameId/760481",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-portugal-match-report-highlights",
+        "https://www.skysports.com/football/colombia-vs-ghana/report/549853",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-ghana-match-report-highlights",
+        "https://theanalyst.com/articles/colombia-vs-ghana-stats-world-cup-2026",
+        "https://www.aljazeera.com/news/2026/7/4/arias-sends-colombia-into-world-cup-last-16-with-1-0-win-over-ghana",
+        "https://khelnow.com/football/jhon-cordoba-injured-during-colombia-vs-ghana-fifa-world-cup-2026",
+        "https://coupedumonde2026.net/equipe/colombie/",
+        "https://mundialanalytics.com/colombia-national-team-analysis"
+      ]
+    },
+    {
+      "equipe": "France",
+      "matchs_joues": [
+        {
+          "adversaire": "Sénégal (Groupe I)",
+          "date": "2026-06-16 (East Rutherford / MetLife Stadium)",
+          "score": "3-1",
+          "buteurs": "Mbappé x2 (dont un servi par Olise et une frappe lointaine), Barcola (servi par Rabiot); pour le Sénégal: Mbaye (temps additionnel)",
+          "resume_tactique": "Première mi-temps laborieuse, nette amélioration après la pause. Pressing haut en 4-4-2, mais distance trop grande entre le duo de pointe et le double pivot — le Sénégal a joué à répétition dans cet intervalle. xG final: 1,89 pour la France contre 0,5 pour le Sénégal. Mbappé s'est vu refuser un penalty (faute de Mané) avant de débloquer le match; Barcola, entré en jeu, a scellé la victoire en transition.",
+          "points_forts_montres": "Capacité à hausser le ton après une entame poussive; Mbappé décisif (devenu meilleur buteur de l'histoire des Bleus, 58 buts); impact des remplaçants (Barcola); efficacité clinique.",
+          "failles_exposees": "Espace exploitable entre les lignes du pressing (front two / milieu) — le Sénégal a joué à travers ce couloir plusieurs fois; occasions concédées: Jackson a touché le poteau, Sarr a tiré à côté; relâchement en fin de match avec le but de Mbaye dans le temps additionnel."
+        },
+        {
+          "adversaire": "Irak (Groupe I)",
+          "date": "2026-06-22 (Philadelphie)",
+          "score": "3-0",
+          "buteurs": "Mbappé x2 (14e frappe enroulée du gauche hors surface servie par Olise; 54e sur relance ratée irakienne exploitée par Dembélé), Dembélé (66e)",
+          "resume_tactique": "Match maîtrisé malgré une interruption de 2 heures pour orage. Ouverture rapide du score sur combinaison Olise-Mbappé côté droit, puis pressing haut qui a forcé l'erreur de relance de Tahseen pour le 2-0. Qualification pour les 16es assurée avec un match d'avance. 100e sélection de Mbappé.",
+          "points_forts_montres": "Pressing haut productif (but venu d'une relance adverse forcée); connexion Olise-Mbappé côté droit; premier clean sheet; profondeur offensive avec Dembélé.",
+          "failles_exposees": "Peu de failles visibles contre un adversaire faible; le match n'a pas constitué un vrai test défensif — détails d'occasions irakiennes concédées: non trouvé."
+        },
+        {
+          "adversaire": "Norvège (Groupe I)",
+          "date": "2026-06-26 (Boston / Gillette Stadium)",
+          "score": "4-1 (Norvège 1-4 France)",
+          "buteurs": "Dembélé x3 (7e, 20e, 32e — triplé en première mi-temps), Doué (90+4); pour la Norvège: Aasgaard (21e)",
+          "resume_tactique": "Match pour la 1re place du groupe, les deux équipes déjà qualifiées. La Norvège a fait tourner (10 changements, Haaland et Ødegaard sur le banc). Démarrage foudroyant de la France avec un triplé de Dembélé avant la 35e minute. 3 victoires sur 3 en poules, une première pour la France depuis 1998.",
+          "points_forts_montres": "Puissance offensive même sans dépendre de Mbappé (Dembélé au sommet); entames de match tranchantes; profondeur de banc (but de Doué); 10 buts marqués en 3 matchs de groupe.",
+          "failles_exposees": "But encaissé par Aasgaard (21e) juste après le 2-0 — relâchement immédiat après avoir pris l'avantage, contre une équipe norvégienne bis; la défense a de nouveau concédé (2 buts encaissés sur la phase de groupes)."
+        },
+        {
+          "adversaire": "Suède (16e de finale / Round of 32)",
+          "date": "2026-06-30 (New York New Jersey Stadium, 80 663 spectateurs)",
+          "score": "3-0",
+          "buteurs": "Mbappé x2 (les deux sur passes d'Olise, dont une frappe surpuissante juste avant la mi-temps), Barcola (53e, servi par Olise)",
+          "resume_tactique": "Démonstration offensive: 15 tirs en première mi-temps, un but de Mbappé refusé pour hors-jeu et un poteau. Le quatuor offensif (Mbappé-Dembélé-Olise-Barcola) a été injouable. Olise impliqué sur les 3 buts. Mbappé bat le record de buts en matchs à élimination directe de Coupe du monde.",
+          "points_forts_montres": "Domination totale d'un adversaire européen organisé; Olise passeur décisif x3 — le vrai créateur de cette équipe; clean sheet; montée en régime collective au moment des matchs couperets.",
+          "failles_exposees": "Quasiment aucune exposée sur ce match; gaspillage relatif (15 tirs en 1re période pour 1 but) qui aurait pu coûter cher contre plus fort — occasions suédoises notables: non trouvé."
+        },
+        {
+          "adversaire": "Paraguay (8e de finale / Round of 16)",
+          "date": "2026-07-04 (Philadelphie, 39°C)",
+          "score": "1-0 (Paraguay 0-1 France)",
+          "buteurs": "Mbappé (69e, penalty obtenu par Doué après intervention du VAR)",
+          "resume_tactique": "Match fermé et haché contre un bloc bas paraguayen (tombeur de l'Allemagne au tour précédent) qui a défendu avec acharnement sous une chaleur de 39°C, cassé le rythme et limité la France à des frappes lointaines. Le Paraguay n'a réussi que 54% de ses passes (99/183), record de imprécision en match à élimination directe depuis 1966 — preuve d'un anti-jeu assumé. Délivrance sur penalty après faute sur Doué (VAR).",
+          "points_forts_montres": "Patience et solidité face au bourbier tactique; clean sheet; sang-froid de Mbappé sur penalty; capacité à gagner 'moche' un match couperet.",
+          "failles_exposees": "Difficulté manifeste à créer dans le jeu contre un bloc bas compact et une équipe qui casse le rythme — réduite aux tirs de loin, il a fallu un penalty (VAR) pour marquer; gestion de la chaleur extrême; sans coup de pouce arbitral, risque réel de prolongation/tirs au but."
+        }
+      ],
+      "style_de_jeu": "Sous Deschamps, structure pragmatique de type 4-2-3-1/4-3-3 avec un quatuor offensif Mbappé-Dembélé-Olise-Barcola (Doué en joker de luxe). Pressing haut organisé en 4-4-2 à la perte, capable de forcer des erreurs de relance (2e but vs Irak), mais avec un intervalle parfois trop grand entre la première ligne de pressing et le double pivot. Équipe redoutable en transition et dans les entames/fins de mi-temps, servie par Olise devenu le créateur principal (implications sur la majorité des buts, 3 passes décisives vs Suède). Jeu direct vers Mbappé plutôt que possession stérile; Deschamps ajuste match par match — équipe de plus en plus menaçante devant et stable derrière au fil du tournoi. Coups de pied arrêtés: seul le penalty vs Paraguay notable — production sur corners/coups francs: non trouvé.",
+      "forces_recurrentes": [
+        "Mbappé décisif dans CHAQUE match (7 buts en 5 matchs, buteur vs Sénégal, Irak, Suède, Paraguay): la menace n°1, y compris sur penalty dans les matchs fermés",
+        "Olise créateur récurrent: passes décisives vs Sénégal, Irak et un triplé de passes vs Suède — la connexion Olise-Mbappé côté droit est le circuit offensif signature",
+        "Profondeur offensive exceptionnelle: Dembélé (4 buts dont triplé vs Norvège), Barcola (2 buts en sortie de banc puis titulaire), Doué — la France marque même quand Mbappé est muet",
+        "Montée en régime au fil des matchs: 14 buts marqués en 5 matchs, entames tranchantes (3-0 à la 32e vs Norvège, 15 tirs en 1re mi-temps vs Suède)",
+        "Solidité croissante en éliminatoires: 2 clean sheets consécutifs (Suède, Paraguay) et capacité à gagner un match fermé"
+      ],
+      "failles_recurrentes": [
+        "Espace entre les lignes du pressing 4-4-2: le Sénégal a joué à répétition entre le duo de pointe et le double pivot — un bloc technique comme le Maroc (Amrabat, El Khannouss) peut ressortir par ce couloir",
+        "Occasions concédées en trop grand nombre, reconnu par Deschamps lui-même: poteau de Jackson et tir de Sarr vs Sénégal, but d'Aasgaard vs Norvège — la défense n'a pas encore été punie par un adversaire clinique",
+        "Relâchements aux moments chauds: but encaissé dans le temps additionnel vs Sénégal, but concédé 1 minute après le 2-0 vs Norvège — vulnérabilité de concentration juste après avoir marqué et en fin de match",
+        "Difficulté contre les blocs bas qui cassent le rythme: vs Paraguay, réduite aux frappes lointaines, il a fallu un penalty (VAR, 69e) pour gagner — exactement le plan de jeu type du Maroc (bloc bas + transitions), déjà éprouvé contre la France en 2022",
+        "Entames poussives contre les adversaires physiques africains (1re mi-temps laborieuse vs Sénégal) et gestion de la chaleur (39°C vs Paraguay) — conditions similaires attendues à Boston le 9 juillet"
+      ],
+      "evolution": "Montée en puissance nette: 5 victoires en 5 matchs (première fois 3/3 en poules depuis 1998), 14 buts marqués pour 2 encaissés, aucun but concédé en éliminatoires. La trajectoire défensive s'améliore (2 buts concédés en poules, puis 2 clean sheets vs Suède et Paraguay) pendant que l'attaque a atteint son pic vs Norvège et Suède. Bémol: le dernier match (Paraguay) a montré que la machine offensive peut être neutralisée par un bloc bas discipliné — la victoire 1-0 sur penalty est la moins convaincante du tournoi dans le jeu, juste avant d'affronter le Maroc qui pratique exactement ce style. Statut: équipe désignée comme 'la plus impressionnante du tournoi', arrivant en quart en pleine confiance mais avec un plan anti-bloc bas encore non démontré.",
+      "sources": [
+        "https://www.espn.com/soccer/match/_/gameId/760432/senegal-france (France 3-1 Sénégal, ESPN)",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/france-senegal-highlights-match-report (FIFA, rapport France-Sénégal)",
+        "https://www.skysports.com/football/news/11095/13554964/world-cup-2026-france-3-0-iraq-kylian-mbappe-double-sends-france-into-last-32-after-weather-hit-win (Sky Sports, France 3-0 Irak)",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/norway-france-match-highlights-report (FIFA, Norvège 1-4 France)",
+        "https://www.aljazeera.com/sports/2026/6/26/dembele-scores-hat-trick-as-france-beat-norway-4-1-at-world-cup-2026 (Al Jazeera, triplé de Dembélé)",
+        "https://www.skysports.com/football/news/11095/13558813/world-cup-2026-france-3-0-sweden-kylian-mbappe-and-michael-olise-star-in-dominant-win-to-set-up-paraguay-tie (Sky Sports, France 3-0 Suède)",
+        "https://www.skysports.com/football/news/12098/13560169/world-cup-2026-paraguay-0-1-france-kylian-mbappe-moves-level-with-lionel-messi-on-seven-goals-as-les-bleus-reach-last-eight (Sky Sports, Paraguay 0-1 France)",
+        "https://www.espn.com/soccer/story/_/id/49227768/france-sweden-live-world-cup-2026-latest-updates-commentary-score-result (ESPN, France-Suède)",
+        "https://tacticalfootballanalysis.com/didier-deschamps-tactics-france-2026-world-cup-tactical-analysis/ (analyse tactique du pressing 4-4-2 et de la faille entre les lignes)",
+        "https://sports.yahoo.com/soccer/article/2026-world-cup-results-standings-and-schedule-live-scores-group-stage-updates-and-how-to-watch-050724193.html (Yahoo Sports, résultats et tableau)"
+      ]
+    },
+    {
+      "equipe": "Maroc",
+      "matchs_joues": [
+        {
+          "adversaire": "Brésil (Groupe C)",
+          "date": "2026-06-13 (MetLife Stadium, New Jersey)",
+          "score": "1-1",
+          "buteurs": "Saibari 21e (Maroc) ; Vinícius Júnior 32e (Brésil)",
+          "resume_tactique": "Entame tonitruante du Maroc: pressing agressif et domination totale de la première demi-heure (12 tirs en 30 minutes selon ESPN). Ouverture du score sur l'arme signature: passe en profondeur de Brahim Díaz pour Ismael Saibari, qui lobe Alisson. Hakimi très actif offensivement (deux frappes non cadrées juste après le but). Le Brésil, étouffé, égalise pourtant contre le cours du jeu par Vinícius Jr. Plusieurs observateurs (ESPN, mundialanalytics) jugent le Maroc supérieur au Brésil sur l'ensemble du match.",
+          "points_forts_montres": "Capacité à dominer une grande nation sans le ballon comme avec; combinaison Díaz-Saibari en profondeur; volume offensif énorme (12 tirs/30 min); Hakimi menace constante côté droit.",
+          "failles_exposees": "Manque de réalisme criant (1 but pour 12 tirs en 30 min); égalisation encaissée contre le cours du jeu — Vinícius Jr reçoit le ballon DANS la surface, repique dans l'axe et frappe: un ailier de classe mondiale a trouvé de l'espace entre latéral et central. Incapacité à convertir la domination en avance au score."
+        },
+        {
+          "adversaire": "Écosse (Groupe C)",
+          "date": "2026-06-19 (Boston Stadium, Foxborough)",
+          "score": "1-0",
+          "buteurs": "Saibari 2e minute (71 secondes, but le plus rapide du Mondial 2026 à ce stade)",
+          "resume_tactique": "Scénario inverse du match Brésil: but éclair (71 secondes) sur exactement le même schéma — ballon de Brahim Díaz par-dessus la défense pour Saibari, qui se glisse entre deux défenseurs et fulmine sous la barre (hors de portée de Gunn). Ensuite, le Maroc gère et verrouille en bloc bas/médian, mais subit une fin de match intense: l'Écosse attaque par vagues (McGinn, Gannon-Doak, McTominay) et le Maroc \"s'accroche\" (Al Jazeera) jusqu'au bout pour préserver le 1-0.",
+          "points_forts_montres": "Entame foudroyante; encore le circuit Díaz→Saibari dans la profondeur; solidité défensive et discipline du bloc pour conserver un avantage étriqué (clean sheet).",
+          "failles_exposees": "Incapacité à tuer le match: un seul but malgré la maîtrise, ce qui a laissé l'Écosse en vie; fin de match totalement subie sous les vagues écossaises — le bloc recule et concède du volume offensif quand l'adversaire jette ses forces (centres, deuxième ballons)."
+        },
+        {
+          "adversaire": "Haïti (Groupe C)",
+          "date": "2026-06-24 (Atlanta Stadium)",
+          "score": "4-2",
+          "buteurs": "Hakimi 39e, Saibari 45+1e, Rahimi 78e, Yassine 89e (Maroc) ; csc Bounou 10e, Isidor 43e (Haïti)",
+          "resume_tactique": "Grosse frayeur: le Maroc est mené DEUX FOIS par l'outsider du groupe (csc de Bounou à la 10e, puis Isidor à la 43e après l'égalisation de Hakimi). Saibari égalise à 2-2 juste avant la pause (45+1). Le sélectionneur Ouahbi renverse le match par son banc: Rahimi (78e) et Yassine (89e), tous deux entrés en jeu, scellent la remontada 4-2. Le Maroc termine 2e du groupe C derrière le Brésil (à la différence de buts, 7 pts chacun).",
+          "points_forts_montres": "Ressort mental (remontada après avoir été mené 2 fois); profondeur de banc décisive (Rahimi et Yassine buteurs en sortie de banc); Hakimi buteur; Saibari encore décisif — 3 buts en 3 matchs de groupe.",
+          "failles_exposees": "La plus grosse alerte défensive du tournoi: 2 buts encaissés contre le plus faible adversaire du groupe; csc de Bounou dès la 10e (fébrilité du gardien); but d'Isidor à la 43e montrant un axe défensif prenable quand l'adversaire joue crânement; entame de match ratée et flottements sur les temps faibles."
+        },
+        {
+          "adversaire": "Pays-Bas (32e de finale)",
+          "date": "2026-06-29 (Monterrey, Mexique)",
+          "score": "1-1 a.p., 3-2 aux tirs au but",
+          "buteurs": "Gakpo 72e (Pays-Bas) ; Diop 90+1e (Maroc). TAB: arrêt de Bounou devant Summerville, tir au but victorieux de Saibari",
+          "resume_tactique": "Face au bloc bas à 5 défenseurs de Koeman, le Maroc a dominé la possession et le jeu (Sky Sports/ESPN: les Pays-Bas ont \"abandonné le ballon\"). Mais il se fait crucifier en contre à la 72e: échappée de Summerville, but de Gakpo. Le Maroc arrache la prolongation à la 90+1 sur un centre repris de la tête par le défenseur Issa Diop. En prolongation, Rahimi vendange un face-à-face (arrêt exceptionnel de Verbruggen). Aux tirs au but, Bounou stoppe le 4e tir néerlandais (Summerville) et Saibari transforme le tir décisif (3-2).",
+          "points_forts_montres": "Domination assumée d'une nation majeure repliée en bloc bas; force mentale dans le money-time (égalisation 90+1); Bounou décisif dans l'exercice des tirs au but (comme en 2022); sang-froid de Saibari.",
+          "failles_exposes_note": "voir champ failles_exposees",
+          "failles_exposees": "Vulnérabilité flagrante aux contres rapides: un seul break néerlandais (Summerville) suffit à créer le but de Gakpo, dans le dos d'une équipe portée vers l'avant; stérilité offensive face à un bloc bas (aucun but dans le jeu construit avant la 90+1, but venu d'un centre pour un défenseur); occasion nette gâchée par Rahimi en prolongation — la qualification a tenu à un fil."
+        },
+        {
+          "adversaire": "Canada (8e de finale)",
+          "date": "2026-07-04 (Houston)",
+          "score": "3-0",
+          "buteurs": "Ounahi 50e et 82e, Rahimi 90+8e",
+          "resume_tactique": "Première mi-temps compliquée: le Canada prend le jeu à son compte, Oluwaseyi très remuant, et les Canadiens prennent PLUSIEURS FOIS la défense marocaine à revers (Eurosport) — 0-0 à la pause. Accélération marocaine au retour des vestiaires: ouverture du score sur coup franc combiné travaillé (Hakimi en retrait pour Ounahi, 50e), puis Ounahi de nouveau servi par Brahim Díaz (82e), et Rahimi scelle le 3-0 dans les arrêts de jeu (90+8, passe de Díaz). Le Maroc devient la première nation africaine à atteindre deux quarts de finale consécutifs.",
+          "points_forts_montres": "Capacité d'ajustement à la mi-temps; coups de pied arrêtés travaillés et létaux; montée en régime d'Ounahi (doublé); Brahim Díaz encore double passeur; clean sheet et gestion sereine de la fin de match.",
+          "failles_exposees": "Encore une première mi-temps subie: la défense marocaine a été prise à revers à plusieurs reprises par les courses canadiennes dans la profondeur (Oluwaseyi) — le score de 0-0 à la pause a masqué de vraies occasions concédées dans le dos de la ligne défensive."
+        }
+      ],
+      "style_de_jeu": "Sous Mohamed Ouahbi (arrivé seulement 3 mois avant le tournoi en remplacement de Walid Regragui), le Maroc a évolué du bloc bas héroïque de 2022 vers une équipe hybride: base défensive compacte en 4-1-4-1/4-3-3 qui oriente l'adversaire vers les côtés, mais désormais capable de dominer la possession même contre des grandes nations (Brésil, Pays-Bas). Arme signature: la passe verticale de Brahim Díaz dans la profondeur pour les courses d'Ismael Saibari (buts vs Brésil et Écosse sur le même schéma). Transitions rapides, coups de pied arrêtés offensifs très travaillés (coup franc combiné Hakimi-Ounahi vs Canada, tête de Diop sur centre vs Pays-Bas), pressing haut par séquences, et utilisation agressive du banc en seconde période (Rahimi, Yassine). Équipe de money-time: 4 buts marqués à la 89e minute ou après sur l'ensemble du tournoi.",
+      "forces_recurrentes": [
+        "Le circuit Brahim Díaz → Saibari dans la profondeur: buts sur ce schéma exact vs Brésil (21e) et Écosse (71 secondes), Díaz encore double passeur décisif vs Canada — 4 buts de Saibari + tir au but décisif vs Pays-Bas",
+        "Force mentale et fins de match assassines: remontada vs Haïti (buts 78e, 89e), égalisation à la 90+1 vs Pays-Bas, but à la 90+8 vs Canada — l'équipe ne meurt jamais",
+        "Profondeur de banc décisive: Rahimi et Yassine buteurs en sortie de banc vs Haïti, Rahimi encore buteur vs Canada — les remplaçants font basculer les secondes périodes",
+        "Coups de pied arrêtés et centres: coup franc combiné (Hakimi-Ounahi) pour débloquer le 8e vs Canada, tête du défenseur Diop sur centre pour l'égalisation vs Pays-Bas",
+        "Bounou décisif aux tirs au but (arrêt sur Summerville vs Pays-Bas, comme en 2022) et solidité collective quand le match est verrouillé: 3 clean sheets sur 5 matchs (Écosse, Pays-Bas dans le jeu à 1 but près, Canada)"
+      ],
+      "failles_recurrentes": [
+        "VULNÉRABILITÉ AUX TRANSITIONS RAPIDES ET AUX BALLONS DANS LE DOS DE LA DÉFENSE — la faille numéro 1, exposée sur 3 matchs: Vinícius Jr égalise contre le cours du jeu (Brésil), l'unique break de Summerville amène le but de Gakpo (Pays-Bas), le Canada prend la défense à revers à plusieurs reprises en 1re mi-temps via Oluwaseyi. Quand le Maroc domine et monte son bloc, l'espace derrière les latéraux (Hakimi projeté haut) est exploitable par des ailiers rapides — exactement le profil de Mbappé/Dembélé",
+        "Entames et premières mi-temps laborieuses: mené 2 fois par Haïti (csc 10e, 43e), 1re mi-temps subie vs Canada (0-0 flatteur), égalisation brésilienne dès la 32e — l'équipe démarre souvent en dessous de son niveau et se règle après la pause",
+        "Manque de réalisme face aux blocs regroupés et gâchis offensif: 12 tirs en 30 min pour 1 seul but vs Brésil, aucun but dans le jeu avant la 90+1 vs le bloc bas néerlandais, face-à-face vendangé par Rahimi en prolongation — la domination ne se convertit pas assez vite en buts",
+        "Fébrilité de Bounou ballon au sol / sur les situations chaudes: but contre son camp dès la 10e minute vs Haïti — un pressing haut sur la relance marocaine peut provoquer l'erreur",
+        "Difficulté à tuer les matchs et gestion des scores étriqués: fin de match totalement subie vs Écosse (vagues McGinn/McTominay), qualification vs Pays-Bas arrachée au bout du suspense — face à une équipe française capable d'accélérer, laisser le match ouvert se paiera plus cher"
+      ],
+      "evolution": "Montée en puissance nette au fil du tournoi, malgré des alertes. Trajectoire: nul frustrant mais dominateur vs Brésil (1-1), victoire courte et gérée vs Écosse (1-0), grosse frayeur puis remontada vs Haïti (4-2), qualification au forceps aux tirs au but vs Pays-Bas (1-1, 3-2 tab), puis démonstration la plus aboutie du tournoi vs Canada (3-0) avec doublé d'Ounahi et clean sheet. Les sources de buts se diversifient (Saibari seul buteur au début, puis Hakimi, Rahimi, Yassine, Diop, Ounahi), le banc pèse de plus en plus, et l'équipe vient d'enchaîner son match référence en 8e. Réserves: la dépendance aux fins de match et les premières mi-temps poussives persistent jusqu'au dernier match (ESPN notait après Haïti qu'il était 'temps de passer un cap' — le match vs Canada y a partiellement répondu). L'équipe arrive en quart en pleine confiance, première nation africaine à atteindre deux quarts consécutifs, mais n'a toujours pas su plier un match en première période.",
+      "sources": [
+        "https://www.espn.com/soccer/match/_/gameId/760419/morocco-brazil",
+        "https://www.aljazeera.com/sports/liveblog/2026/6/13/live-brazil-vs-morocco-fifa-world-cup-2026-group-c-match",
+        "https://www.espn.com/soccer/story/_/id/49052932/brazil-vs-morocco-live-latest-updates-biggest-match-2026-world-cup-far",
+        "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/scotland-morocco-match-report-highlights",
+        "https://www.aljazeera.com/sports/2026/6/20/morocco-beat-scotland-1-0-as-saibari-scores-fastest-world-cup-2026",
+        "https://www.fifa.com/en/articles/morocco-haiti-match-report-highlights",
+        "https://www.skysports.com/football/morocco-vs-haiti/549818",
+        "https://theanalyst.com/articles/morocco-vs-haiti-stats-world-cup-2026",
+        "https://www.skysports.com/football/netherlands-vs-morocco/report/549841",
+        "https://www.aljazeera.com/sports/2026/6/30/morocco-netherlands-world-cup-knockout-penalty-shootout-saibari-diop-gakpo",
+        "https://theanalyst.com/articles/netherlands-vs-morocco-stats-world-cup-2026",
+        "https://www.fifa.com/fr/tournaments/mens/worldcup/canadamexicousa2026/articles/resume-temps-forts-canada-maroc-huitiemes",
+        "https://www.eurosport.fr/football/coupe-du-monde/2026/coupe-du-monde-le-maroc-brise-le-reve-du-canada-en-huitiemes-de-finale-3-0-et-pourrait-retrouver-la-france-en-quarts_sto23316282/story.shtml",
+        "https://www.espn.com/soccer/story/_/id/49171009/morocco-haiti-world-cup-analysis-reaction",
+        "https://mundialanalytics.com/morocco-national-team-analysis",
+        "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_C"
+      ]
+    }
+  ],
+  "audit": {
+    "plans_de_match": [
+      {
+        "match": "Brésil - Norvège (8e de finale, ce soir)",
+        "analyse_croisee": "Failles brésiliennes vs forces norvégiennes: le milieu massivement exposé (Casemiro lent, sorti vs Maroc, fautif vs Japon) et les entames ratées (12 tirs concédés en 30 min vs Maroc, menés à la pause vs Japon) alimentent exactement l'arme n°1 norvégienne — les transitions verticales Ødegaard→Haaland et le pressing opportuniste sur les relances courtes fautives (Paquetá/Ibañez vs Maroc, passe négligée vs Japon). La charnière vieillissante coupée par les passes verticales (Gabriel-Marquinhos vs Maroc) est une proie idéale pour Haaland (5 buts en 3 matchs), et le danger norvégien sur CPA vise un bloc âgé. Inversement, failles norvégiennes vs forces brésiliennes: la vulnérabilité chronique aux ailiers dribbleurs (Sarr x2, Amad Diallo, Dembélé x3 — trois matchs de suite) rencontre frontalement Vinícius Júnior en état de grâce (4 buts, décisif dans 3 matchs sur 4) et le couloir gauche Vinícius-Guimarães; les transitions défensives désorganisées (Mbappé sur la barre après 22 s) s'exposent au contre-pressing brésilien de 2e période; aucun clean sheet norvégien (~5,5 xG concédés, 8 buts) face à la punition clinique des erreurs (4,46 xG vs Écosse). Duel asymétrique: la Norvège doit frapper dans la première demi-heure, zone de fragilité brésilienne; le Brésil dispose de 90 minutes, d'un banc décisif (Endrick, Martinelli) et d'ajustements d'Ancelotti éprouvés.",
+        "avantage_tactique": "Brésil, 60% — la faille norvégienne (ailiers rapides, défense perméable sans plan B) est structurelle et sans remède, tandis que la faille brésilienne (entame + milieu) est une fenêtre de 30-45 minutes que la Norvège doit convertir sans se découvrir face à Vinícius."
+      },
+      {
+        "match": "Mexique - Angleterre (8e de finale, Azteca)",
+        "analyse_croisee": "Failles anglaises vs forces mexicaines: l'incapacité chronique à percer les blocs organisés (0-0 vs Ghana malgré 19 tirs, 75 min stériles vs RD Congo), les entames crispées quasi systématiques ('fearful patterns', menés dès la 7e vs RD Congo) et la crise à l'arrière droit (Livramento blessé, James indisponible) tombent sur l'adversaire le pire possible: entames foudroyantes de l'Azteca (2-0 en 31 min vs Équateur), altitude 2 200 m, herméticité record (4 clean sheets, 0,56 xG concédé/match, invaincu en CdM à Mexico) et transitions Quiñones-Alvarado ciblant précisément les ballons dans le dos où Konsa et Stones ont déjà été pris (Adu, Wissa). Inversement, failles mexicaines vs forces anglaises: le manque de créativité contre un bloc — peu pertinent car l'Angleterre ne défendra pas bas; en revanche, les baisses d'intensité en fin de match (double occasion coréenne 87e, 0,73 xG laissé à l'Équateur) croisent la force anglaise des fins de match (doublé de Kane 75e/86e vs RD Congo) et surtout les CPA (Rice/Saka) face à une défense jamais testée par un attaquant d'élite — Kane (5 buts, 13 en CdM) est d'un calibre que ni la Corée ni l'Équateur n'approchaient. L'indiscipline mexicaine (rouge Montes) face aux décrochages provocateurs de Kane est un risque additionnel.",
+        "avantage_tactique": "Mexique, 55% — le scénario probable (entame mexicaine intense vs première mi-temps anglaise faible, sur un flanc droit anglais improvisé) favorise l'hôte, mais Kane + CPA contre une défense non éprouvée maintient l'Angleterre à portée, surtout après l'heure de jeu."
+      },
+      {
+        "match": "Portugal - Espagne (8e de finale)",
+        "analyse_croisee": "Failles portugaises vs forces espagnoles: le milieu Vitinha-Neves-Fernandes qui n'a dominé aucun gros match affronte le pressing haut coordonné autour de Rodri; la défense sauvée deux fois par la VAR à la 90+ (Sánchez, Gvardiol), fragile en 2e mi-temps face aux attaquants frais, et un Diogo Costa pas irréprochable rencontrent une Espagne à 8 buts marqués / 0 encaissé, avec Oyarzabal (4 buts) et le banc le plus profond du tournoi; la possession stérile portugaise (0,69 xG vs Colombie ET en 2e MT vs RD Congo) se heurte à la seule défense parfaite du tournoi (record de Simón, 519 min). Inversement, failles espagnoles vs forces portugaises: l'espace derrière Cucurella/Porro quand le pressing est battu — identifié par les analyses comme LA zone à attaquer — correspond exactement au couloir gauche Nuno Mendes-Leão et aux 1v1 de Leão, et le Portugal a déjà puni en transition; la dépendance à Rodri (point de défaillance unique) et à Yamal offre deux cibles de neutralisation; l'inefficacité espagnole contre les blocs (1 but en 180 min vs Cap-Vert/Uruguay, sur bourde adverse) donnerait au Portugal un scénario de match fermé où son banc (Ramos, Leão buteurs en sortie de banc) et ses CPA pèsent. Mais le Portugal concède énormément en transition (1,63 xG à la Colombie) — s'exposer au pressing espagnol est son pire scénario.",
+        "avantage_tactique": "Espagne, 65% — supériorité structurelle (milieu, défense intacte, banc) et montée en puissance; le chemin portugais existe (transitions Leão dans le dos des latéraux + match fermé + moments Ronaldo/Ramos) mais exige une perfection défensive que ce Portugal n'a montrée dans aucun gros match."
+      },
+      {
+        "match": "États-Unis - Belgique (8e de finale)",
+        "analyse_croisee": "Failles belges vs forces américaines: les entames lentes chroniques (menée à la pause vs Égypte et Sénégal, 0 but avant la 28e sur tout le tournoi) percutent l'arme signature des USA — buts aux 3e, 7e et 11e minutes et pressing top 3 du tournoi (récupération toutes les 8,1 passes) qui ciblera une relance belge déjà fébrile; la faiblesse belge sur CPA défensifs et secondes balles (bataille perdue vs Iran, rebond de Diarra) croise des USA décisifs sur coups de pied arrêtés trois matchs de suite (Trusty, Freeman, Tillman); les jambes lourdes (120 min le 1er juillet, 5 jours de récupération) aggravent tout. Inversement, failles américaines vs forces belges: les espaces dans le dos de la défense à 3 et des pistons hauts (punis par Güler-Yilmaz, but de Maurício) nourrissent le jeu belge entre les lignes (De Bruyne, Doku, Trossard) et le point d'ancrage Lukaku — précisément le profil d'avant-centre mobile que les trois centraux US n'ont pas su marquer vs Türkiye; les baisses de régime US en fin de match (but sur le dernier ballon vs Türkiye) rencontrent la spécialité belge des buts après la 84e (3 matchs sur 4). Et la suspension de Balogun (3 buts) ampute l'attaque US contre un bloc que les USA peinent déjà à percer dans le jeu (Bosnie).",
+        "avantage_tactique": "États-Unis, 55% — fraîcheur, pressing et CPA contre une Belgique cuite physiquement et structurellement friable en entame; mais l'avantage est mince car le duo faille US en fin de match / force belge du money-time (Lukaku, Tielemans) rend tout scénario serré dangereux jusqu'à la dernière seconde."
+      },
+      {
+        "match": "Argentine - Égypte (8e de finale, 7 juillet)",
+        "analyse_croisee": "Failles égyptiennes vs forces argentines: alignement quasi parfait — les 4 buts encaissés par l'Égypte viennent TOUS de ballons aériens sur centre, corner ou coup franc (2 csc de Hany de la tête inclus), or les CPA sont l'arme signature de cette Argentine (coups francs de Lo Celso et Messi vs Jordanie, corner de Messi décisif vs Cap-Vert): la livraison de Messi sur le point faible identifié (Hany, marquage aérien) est le croisement le plus meurtrier du tour; l'incapacité chronique égyptienne à tenir un avantage (perdu vs Belgique, Iran, Australie) et ses extinctions offensives (~70 min sans tir cadré) face à une équipe jamais menée du tournoi et dotée du meilleur buteur (Messi, 7 buts, décisif dans les 4 matchs). Salah diminué (ischio-jambiers) affaiblit la seule rampe de transition. Inversement, failles argentines vs forces égyptiennes: la fatigue (120 min le 3 juillet, 4 jours de repos, effectif vieillissant, Messi 39 ans), l'incapacité à tuer les matchs et la vulnérabilité aux frappes de loin (les deux buts cap-verdiens) donnent à l'Égypte un plan lisible: bloc compact, étirer le temps, frapper de loin (Ashour l'a fait vs Belgique) ou sur CPA offensif (Ashour vs Belgique et Australie), et viser les tirs au but où l'Égypte sort d'un 4/4 avec Shobeir décisif, tandis que Messi a manqué un penalty vs Autriche.",
+        "avantage_tactique": "Argentine, 75% — l'arme n°1 argentine (CPA) frappe la faille n°1 égyptienne (aérien défensif sur CPA); le seul chemin égyptien passe par un match de 120+ minutes et une loterie que l'Argentine a précisément failli subir contre le Cap-Vert."
+      },
+      {
+        "match": "Suisse - Colombie (8e de finale)",
+        "analyse_croisee": "Failles colombiennes vs forces suisses: croisement remarquable — la Colombie a vécu son seul moment de vraie détresse en début de seconde période (égalisation ouzbèke à la 60e après la sortie du bloc adverse), or la signature suisse est le but dans la première minute de la reprise deux matchs de suite (Vargas 46e/39 s vs Canada, Ndoye 46e/48 s vs Algérie); l'inefficacité chronique colombienne (1 but sur ses 3 derniers matchs malgré 20 tirs vs RDC et 6 arrêts imposés à Costa) face au caméléon de Yakin — mid-block exactement du profil qui frustre la Colombie, capable de céder volontairement la possession et de punir en contre (xG 2,52-0,73 vs Algérie avec 44% de possession) — plus la blessure de Córdoba qui prive l'attaque de son point de fixation. Inversement, failles suisses vs forces colombiennes: les fins de match systématiquement à risque (90+4 vs Qatar, 90+3 vs Bosnie, dernier quart d'heure subi vs Canada) et la gestion passive de l'avance rencontrent une Colombie au gros volume offensif constant, au banc décisif (Suárez passeur 6 min après son entrée, Campaz) et portée par Díaz, menace sur chaque match; le manque de réalisme suisse face aux blocs (1 but pour 3,24 xG vs Qatar) contre la meilleure défense restante hors Espagne/Mexique (1 but concédé, 3 clean sheets, Vargas) promet un match à très faible marge.",
+        "avantage_tactique": "Suisse, 55% — le duel des failles est symétrique (deux attaques peu réalistes, deux défenses solides) mais la Suisse possède les deux armes de bascule spécifiques à ce match: la sortie de vestiaire préparée sur la fenêtre de fragilité colombienne, et la flexibilité de Yakin face à une Colombie qui ne convertit plus."
+      },
+      {
+        "match": "France - Maroc (quart de finale, 9 juillet, Boston)",
+        "analyse_croisee": "Failles marocaines vs forces françaises: la faille n°1 du Maroc — vulnérabilité aux transitions rapides et aux ballons dans le dos, exposée sur 3 matchs (Vinícius, break unique de Summerville→Gakpo, défense prise à revers par Oluwaseyi), avec l'espace derrière Hakimi projeté haut — correspond littéralement au profil Mbappé (7 buts, décisif chaque match) / Dembélé (4 buts) servi par Olise, le circuit signature français; les entames marocaines laborieuses (mené 2x par Haïti, 1re MT subie vs Canada) face à une France aux entames tranchantes (3-0 à la 32e vs Norvège, 15 tirs en 1re MT vs Suède); la fébrilité de Bounou sur la relance (csc provoqué dès la 10e vs Haïti) face à un pressing 4-4-2 qui a déjà forcé un but sur relance adverse (vs Irak). Inversement, failles françaises vs forces marocaines: la difficulté avérée contre les blocs bas qui cassent le rythme — vs Paraguay, réduite aux frappes lointaines et sauvée par un penalty VAR — est exactement le plan marocain 2022, désormais enrichi; l'espace entre le duo de pointe et le double pivot (exploité par le Sénégal) est le couloir où Amrabat/El Khannouss/Brahim Díaz peuvent ressortir pour lancer le circuit Díaz→Saibari (buts vs Brésil et Écosse sur ce schéma exact); les relâchements français aux moments chauds (buts concédés dans le temps additionnel vs Sénégal, juste après le 2-0 vs Norvège) face à l'équipe du money-time (4 buts à la 89e ou après, égalisation 90+1 vs Pays-Bas) et à Bounou aux tirs au but; chaleur de Boston similaire aux 39°C subis vs Paraguay.",
+        "avantage_tactique": "France, 62% — la faille structurelle marocaine (transitions dans le dos) rencontre la meilleure arme du tournoi (Mbappé-Olise-Dembélé), mais c'est le quart le plus équilibré: si le Maroc évite l'erreur d'entame et emmène la France au-delà de la 75e à 0-0, la logique des fins de match et des tirs au but bascule en sa faveur."
+      }
+    ],
+    "equipes_en_forme_ascendante": [
+      "Espagne — montée en puissance la plus nette du tournoi: 0-0 alarmant vs Cap-Vert puis 4-0, 1-0, 3-0, 8 buts marqués / 0 encaissé, blocage psychologique des matchs couperets levé (première victoire à élimination directe depuis 2010)",
+      "France — 5/5, 14 buts pour 2 encaissés, 2 clean sheets en éliminatoires, quatuor offensif au sommet (réserve: le 1-0 laborieux vs Paraguay est la prestation la moins convaincante, juste avant un adversaire du même profil)",
+      "Mexique — sans-faute historique en poules (0 but encaissé), 4 clean sheets, malédiction des éliminatoires brisée (première victoire depuis 1986), courbe ascendante mais construite contre des adversaires modestes",
+      "Maroc — du nul frustrant vs Brésil au match référence vs Canada (3-0, doublé d'Ounahi): sources de buts diversifiées, banc de plus en plus pesant, première nation africaine en quarts deux éditions de suite",
+      "Suisse — trois victoires de suite à contenu croissant, masterclass tactique vs Algérie (première victoire en éliminatoires depuis 88 ans), éclosion de Manzambi",
+      "États-Unis — meilleur parcours de groupes de l'histoire du programme, première victoire à élimination directe depuis 2002 (bémol: suspension de Balogun au pire moment)",
+      "Égypte — ascendante MENTALEMENT uniquement (série de premières historiques, 4/4 aux tirs au but) mais production offensive en déclin net (3 buts, puis 1, puis 1)",
+      "— En déclin ou en dents de scie: Angleterre (résultats parfaits, courbe de performance déclinante depuis le match Croatie), Argentine (coup d'arrêt net vs Cap-Vert: maîtrise et fraîcheur en baisse), Colombie (défense ascendante, attaque en chute: 3-1-0-1 buts), Brésil, Norvège, Portugal et Belgique (trajectoires en dents de scie, failles structurelles non corrigées)"
+    ],
+    "doublons_supprimes": [
+      "Brésil-Maroc 1-1 (13 juin, MetLife): match intégralement raconté dans les deux dossiers avec les mêmes détails (12 tirs marocains en 30 min, but de Saibari sur passe en profondeur de Brahim Díaz, égalisation de Vinícius 32e, Casemiro sorti à la mi-temps) — fusionné en une seule fiche",
+      "Norvège-France 1-4 (26 juin, Boston): triplé de Dembélé (7e, 20e, 32e), 10 changements norvégiens avec Haaland/Ødegaard au repos, but de Doué au 90+ — décrit dans les deux dossiers, dédupliqué",
+      "Belgique-Égypte 1-1 (15 juin, Seattle): but d'Ashour (19e, frappe de loin, Salah en n°10), csc de Hany provoqué par Lukaku 22 secondes après son entrée sur centre de Meunier — récit identique des deux côtés, dédupliqué",
+      "Portugal-Colombie 0-0 (27 juin, Miami): 36 tirs cumulés, but de Davinson Sánchez refusé par la VAR au 90+, 6 arrêts de Diogo Costa, Vargas décisif devant Bruno Fernandes — décrit deux fois, dédupliqué",
+      "Adversaires communs recoupés en fiche unique: Sénégal (Ismaïla Sarr buteur récurrent vs Norvège x2 et Belgique — profil d'ailier percutant confirmé par 3 dossiers), Cap-Vert (Diney: tête vs Espagne et csc décisif vs Argentine; gardien Vozinha), Croatie (battue 2-4 par l'Angleterre en poules puis 1-2 par le Portugal en 16e), RD Congo (bloc bas + transitions Wissa-Bakambu décrits à l'identique dans les dossiers Portugal, Colombie et Angleterre), Bosnie (5-3-2 de Barbarez et Muharemović cités dans les dossiers Suisse et USA)",
+      "Motifs tactiques répétés quasi mot pour mot entre dossiers, conservés une seule fois: 'trajectoire en dents de scie plutôt que montée en puissance linéaire' (formulation identique dans les dossiers Brésil, Norvège, Portugal, Belgique); 'profondeur de banc décisive' et 'entames de match lentes/ratées' (Brésil, Belgique, Angleterre, Égypte, Maroc)"
+    ],
+    "incoherences": [
+      "Norvège-France (26 juin): le dossier Norvège déclare le buteur norvégien 'non trouvé avec certitude' alors que le dossier France l'identifie clairement — Aasgaard (21e). Les dossiers sont complémentaires mais non synchronisés; le reste du match (1-4, triplé Dembélé 7'/20'/32', Doué 90+) concorde",
+      "Norvège-Sénégal: date incertaine signalée dans le dossier lui-même ('22/23 juin 2026, sources divergentes sur la date exacte')",
+      "Espagne-Uruguay (26 juin): lieu contradictoire au sein même du dossier Espagne — Guadalajara selon un compte-rendu, Estadio BBVA Monterrey selon l'analyse tactique",
+      "Argentine-Algérie: date ambiguë '2026-06-16/17' dans le dossier Argentine",
+      "Angleterre-Croatie (4-2): les buteurs croates ne sont identifiés dans aucun dossier ('non trouvés') — lacune, pas contradiction",
+      "Dossier Maroc: champ parasite 'failles_exposes_note' dans la fiche du match Pays-Bas (artefact de saisie, doublon du champ failles_exposees)",
+      "Vérifications positives (aucune contradiction): Brésil-Maroc 1-1 identique des deux côtés; Belgique-Égypte 1-1 identique (y compris le détail des 22 secondes de Lukaku); Portugal-Colombie 0-0 identique; classements de groupes arithmétiquement cohérents (Groupe C: Brésil et Maroc 7 pts départagés à la différence de buts; Groupe K: Colombie 7 / Portugal 5; Groupe G: Belgique et Égypte 5 pts départagés à la différence de buts; Groupe I: France 9 / Norvège 6); les 2 csc de Mohamed Hany (vs Belgique et vs Australie) sont cohérents entre eux dans le dossier Égypte"
+    ],
+    "synthese": "Audit tactique des 7 confrontations: les données des 14 dossiers sont globalement cohérentes (les 4 matchs racontés en double concordent parfaitement et ont été dédupliqués), avec 4 incohérences mineures de dates/lieux/buteurs et aucune contradiction de score. Les croisements les plus déséquilibrés: Argentine-Égypte (75% Argentine — l'arme CPA argentine frappe exactement la faille aérienne égyptienne, 4 buts encaissés sur 4 sur ballons aériens) et Portugal-Espagne (65% Espagne — milieu et défense structurellement supérieurs). Les plus serrés: Mexique-Angleterre (55% Mexique — entames de l'Azteca contre les premières mi-temps anglaises crispées, mais Kane face à une défense jamais testée), États-Unis-Belgique (55% USA — fraîcheur et pressing contre une Belgique cuite mais reine du money-time) et Suisse-Colombie (55% Suisse — le but signature de la 46e minute vise la seule fenêtre de fragilité colombienne). Brésil-Norvège (60% Brésil) oppose deux équipes dont les failles se répondent: la Norvège doit marquer dans la demi-heure de faiblesse brésilienne avant que Vinícius n'exploite sa faille chronique face aux ailiers. Le quart France-Maroc (62% France) est le duel le plus riche: la meilleure transition du tournoi (Mbappé-Olise) contre la faille n°1 marocaine (dos de la défense), mais le plan bloc bas marocain a déjà neutralisé cette France vs Paraguay. Formes ascendantes nettes: Espagne, France, Mexique, Maroc, Suisse, USA; l'Argentine et l'Angleterre gagnent en déclinant dans le contenu; Brésil, Norvège, Portugal, Belgique avancent en dents de scie sans corriger leurs failles structurelles."
+  }
+}
