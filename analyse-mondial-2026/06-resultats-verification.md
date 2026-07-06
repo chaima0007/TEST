@@ -26,5 +26,29 @@
 3. Les signaux minoritaires avaient été identifiés : historique Norvège invaincue contre le Brésil, dépendance mortelle du Brésil aux exploits individuels, bootstrap donnant la Norvège à 29 % (le plus haut de tous les modèles), et le public qui penchait Norvège.
 4. La couverture (BTTS) a limité la casse — c'est précisément son rôle.
 
-## Mexique – Angleterre : coup d'envoi 20h ET — vérification au prochain rappel
-Prédiction en jeu : Angleterre 55 %, scénario 1-1 puis prolongation/TAB, over 4,5 cartons (arbitre Faghani).
+## Mexique – Angleterre (8e de finale, 5 juillet 2026)
+
+**Résultat réel : Mexique 2-3 Angleterre** — doublé de Bellingham puis penalty décisif de Kane. Première défaite du Mexique à l'Azteca en Coupe du Monde de l'histoire. Décrit comme « peut-être le meilleur match du tournoi ».
+
+### Prédiction vs réalité
+| Élément prédit | Prédiction | Réalité | Verdict |
+|---|---|---|---|
+| Vainqueur | **Angleterre (55 %)** — tranché par le juge contre notre propre simulation | **Angleterre** | ✅ **JUSTE** (et la correction du « quadruple comptage altitude » est validée) |
+| Scénario | 1-1 puis prolongation/TAB | 3-2 dans le temps réglementaire, match ouvert | ❌ (l'under 2,5 recommandé perdait) |
+| Over 4,5 cartons (pari validé à 1,85+, profil Faghani) | +5-8 pts vs base | Au moins 5 cartons identifiés (Rice 1re minute, Sánchez, Kane, Henderson, Vásquez) | ✅ **PARI GAGNANT** |
+
+### Bilan cumulé après 2 matchs vérifiés
+| Mesure | Score |
+|---|---|
+| Vainqueurs prédits | **1/2** (Angleterre ✅, Brésil ❌) |
+| Paris validés par l'auditeur | **2/3 gagnants** (BTTS Brésil-Norvège ✅, Over 4,5 cartons Mex-Ang ✅, Brésil 90 min ❌) |
+| Paris déconseillés | Under 2,5 Mex-Ang aurait perdu — signalé « seulement si 1,85+, sinon passer » |
+
+Leçon : la valeur du système est dans les paris *dérivés* (BTTS, cartons) où l'analyse trouve des angles que le marché côte mal — pas dans les vainqueurs, où le marché est déjà efficace.
+
+## Prochaines vérifications
+- Portugal – Espagne (6 juillet) : prédiction Espagne 61 %, 1-0
+- USA – Belgique (6 juillet) : prédiction USA 53 %, serré
+- Argentine – Égypte (7 juillet) : Argentine 78 %, 2-0
+- Suisse – Colombie (7 juillet) : Colombie 53-55 %
+- France – Maroc (9 juillet, quart) : France 69 %, 1-0
