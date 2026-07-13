@@ -84,8 +84,8 @@ réussite en local, avant toute intégration.
 4. **Intégration progressive** : les agents sont intégrés un par un dans
    l'orchestrateur central.
 
-> Exemple de test de simulation : voir
-> [`exemples/test_agent_nutrition.py`](./exemples/test_agent_nutrition.py).
+> Scaffolding exécutable (agent + base de connaissances + tests) : voir
+> [`scaffolding/python/`](./scaffolding/python/) et [`scaffolding/nodejs/`](./scaffolding/nodejs/).
 
 **Résultats attendus :**
 

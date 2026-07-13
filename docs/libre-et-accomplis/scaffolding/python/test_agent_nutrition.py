@@ -1,8 +1,7 @@
-# =============================================================================
-# Libre & Accomplis — Exemple de test de simulation pour un agent IA
-# Chaque agent doit atteindre 100 % de réussite aux tests unitaires locaux
-# et 95 % de réussite en simulation avant intégration.
-# =============================================================================
+"""Libre & Accomplis — Tests de l'Agent Nutrition (100 % de réussite exigée).
+
+Exécution : python3 -m unittest discover docs/libre-et-accomplis/scaffolding/python
+"""
 import unittest
 
 from agent_nutrition import AgentNutrition
@@ -33,6 +32,22 @@ class TestAgentNutrition(unittest.TestCase):
 
         self.assertIn("proteines", recette["tags"])
         self.assertEqual(recette["success"], True)
+
+    def test_aucune_recette_compatible(self):
+        # Si toutes les recettes contiennent un allergène, l'agent refuse (success=False)
+        # plutôt que de proposer une recette à risque.
+        allergies = ["quinoa", "poulet", "avoine", "oeuf"]
+        utilisateur = {"id": 789, "allergies": allergies, "objectifs": []}
+        self.base.ajouter_utilisateur(utilisateur)
+
+        reponse = self.agent.proposer_recette(utilisateur["id"])
+
+        self.assertEqual(reponse["success"], False)
+        self.assertEqual(reponse["raison"], "aucune_recette_compatible")
+
+    def test_utilisateur_inconnu(self):
+        with self.assertRaises(KeyError):
+            self.agent.proposer_recette(999)
 
 
 if __name__ == "__main__":
