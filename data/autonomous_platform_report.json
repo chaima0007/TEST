@@ -1,11 +1,11 @@
 {
-  "genere_le": "2026-06-29T19:38:57.570973+00:00",
+  "genere_le": "2026-07-13T15:31:52.363803+00:00",
   "monte_carlo_n": 20000,
   "corpus": {
-    "reponses": 505,
-    "sources": 862,
-    "modules": 151,
-    "sources_officielles": 735,
+    "reponses": 767,
+    "sources": 1294,
+    "modules": 184,
+    "sources_officielles": 1132,
     "caelum_normes": 17,
     "caelum": {
       "normes": 17,
@@ -21,7 +21,7 @@
       "rps": 5,
       "cache_pct": 60,
       "p95_ms": 45,
-      "p99_ms": 49,
+      "p99_ms": 50,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -54,7 +54,7 @@
       "rps": 1500,
       "cache_pct": 92,
       "p95_ms": 97,
-      "p99_ms": 102,
+      "p99_ms": 101,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -69,8 +69,8 @@
       "scenario": "Sources · Rotation normale",
       "type": "etat",
       "taux_casse_pct": 1.0,
-      "urls_impactees_moy": 8,
-      "pct_corpus": 0.89,
+      "urls_impactees_moy": 16,
+      "pct_corpus": 1.21,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -78,8 +78,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 42,
-      "pct_corpus": 4.81,
+      "urls_impactees_moy": 56,
+      "pct_corpus": 4.35,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -87,29 +87,29 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 129,
-      "pct_corpus": 14.93,
+      "urls_impactees_moy": 204,
+      "pct_corpus": 15.74,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
     {
       "scenario": "Build · Aujourd'hui",
       "type": "etat",
-      "pages_estimees": 198,
+      "pages_estimees": 231,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +1 an (x2)",
       "type": "stress",
-      "pages_estimees": 396,
+      "pages_estimees": 462,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
     {
       "scenario": "Build · +3 ans (x4)",
       "type": "stress",
-      "pages_estimees": 792,
+      "pages_estimees": 924,
       "verdict": "OK",
       "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
     },
@@ -140,7 +140,7 @@
     {
       "scenario": "Données · Couverture sources officielles",
       "type": "etat",
-      "pct_officiel": 85.3,
+      "pct_officiel": 87.5,
       "verdict": "OK",
       "mitigation": "protocole de confiance des sources (tier1)"
     },
@@ -165,11 +165,11 @@
     {
       "scenario": "Croissance · Corpus",
       "type": "etat",
-      "verdict": "ALERTE",
-      "reponses": 505,
-      "modules": 151,
-      "depuis_naissance": 77,
-      "battements_sans_croissance": 11,
+      "verdict": "OK",
+      "reponses": 767,
+      "modules": 184,
+      "depuis_naissance": 339,
+      "battements_sans_croissance": 0,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -189,8 +189,8 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 63,
-      "en_retard": 0,
+      "battements_sans_progres": 64,
+      "en_retard": 3,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
     {
@@ -225,13 +225,13 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260629193857",
+    "seal_id": "AUTO-20260713153152",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
-    "score_resilience": 76.0,
-    "verts": 19,
+    "score_resilience": 80.0,
+    "verts": 20,
     "total": 25,
-    "autonomie_systeme_pct": 93.3,
+    "autonomie_systeme_pct": 100.0,
     "decisions_humaines_en_attente": [
       "Déploiement · Webhook leads non configuré",
       "Données · Identité légale Caelum"
@@ -242,22 +242,21 @@
     "alertes_etat_a_corriger": [
       "Déploiement · Webhook leads non configuré",
       "Données · Identité légale Caelum",
-      "Croissance · Corpus",
       "Plan stratégique · Avancement"
     ],
     "regle": "BLOQUÉ seulement si l'ÉTAT ACTUEL (santé + scénarios 'etat') a un CRITIQUE ; les scénarios extrêmes 'stress' alimentent la résilience et la liste des fragilités."
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 86,
-    "age_jours": 0.42,
+    "battements": 87,
+    "age_jours": 14.25,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {
-    "total": 5,
+    "total": 4,
     "par_priorite": {
       "haute": 0,
-      "moyenne": 4,
+      "moyenne": 3,
       "basse": 1
     }
   },

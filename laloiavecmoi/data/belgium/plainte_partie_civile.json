@@ -19,11 +19,22 @@
       "reponse": "Vous pouvez porter plainte auprès de la police (qui dresse un procès-verbal) ou directement auprès du procureur du Roi. La plainte est transmise au parquet, qui décide de la suite : ouvrir une enquête, proposer une médiation/transaction, poursuivre devant le tribunal, ou classer sans suite. En tant que victime, demandez à être tenu informé et conservez une copie/le numéro de votre dépôt. Gardez toutes les preuves (photos, messages, certificats médicaux, témoins) : elles renforcent votre dossier. Le service d'accueil des victimes du parquet peut vous accompagner.",
       "reference_legale": "Code d'instruction criminelle — dépôt de plainte et rôle du ministère public",
       "contacts": [
-        {"nom": "Police", "numero": "101", "pour": "déposer plainte (urgence : 112)"},
-        {"nom": "Service d'accueil des victimes (parquet)", "pour": "information et accompagnement"}
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "déposer plainte (urgence : 112)"
+        },
+        {
+          "nom": "Service d'accueil des victimes (parquet)",
+          "pour": "information et accompagnement"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Porter plainte"}
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Porter plainte"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,11 +44,21 @@
       "reponse": "Non, pas nécessairement. Un classement sans suite est une décision du parquet de ne pas poursuivre (par manque de preuves, faible gravité, priorités…), mais ce n'est PAS un acquittement et ce n'est pas définitif tant que les faits ne sont pas prescrits : le dossier peut être rouvert si de nouveaux éléments apparaissent. Surtout, comme victime, vous disposez de voies pour relancer l'affaire malgré le classement (voir le fait suivant). Demandez les motifs du classement ; cela vous aide à décider de la suite.",
       "reference_legale": "Code d'instruction criminelle — classement sans suite (art. 28quater)",
       "contacts": [
-        {"nom": "Parquet", "pour": "motifs du classement sans suite"},
-        {"nom": "Avocat", "pour": "options après un classement"}
+        {
+          "nom": "Parquet",
+          "pour": "motifs du classement sans suite"
+        },
+        {
+          "nom": "Avocat",
+          "pour": "options après un classement"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Classement sans suite"}
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Classement sans suite"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,11 +68,45 @@
       "reponse": "Deux voies permettent de forcer l'examen de l'affaire malgré un classement. 1) La constitution de partie civile entre les mains du juge d'instruction : en déposant plainte avec constitution de partie civile (souvent moyennant une consignation de frais), vous obligez l'ouverture d'une instruction. 2) La citation directe : vous citez vous-même l'auteur devant le tribunal (utile pour certaines infractions). Se constituer partie civile permet aussi de réclamer la réparation de votre préjudice (dommages et intérêts) dans le cadre pénal. Ces démarches sont techniques : faites-vous assister par un avocat (l'aide juridique gratuite est possible selon vos revenus).",
       "reference_legale": "Code d'instruction criminelle — constitution de partie civile (art. 63) et citation directe",
       "contacts": [
-        {"nom": "Juge d'instruction (via plainte avec constitution de partie civile)", "pour": "forcer l'ouverture d'une instruction"},
-        {"nom": "Avocat / Bureau d'aide juridique", "pour": "partie civile et demande de dommages et intérêts"}
+        {
+          "nom": "Juge d'instruction (via plainte avec constitution de partie civile)",
+          "pour": "forcer l'ouverture d'une instruction"
+        },
+        {
+          "nom": "Avocat / Bureau d'aide juridique",
+          "pour": "partie civile et demande de dommages et intérêts"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Se constituer partie civile"}
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Se constituer partie civile"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PLAINTE-FRAIS-AIDE-001",
+      "question": "Combien ça coûte, et quelles aides existent pour la victime ?",
+      "reponse": "Porter plainte est gratuit. La constitution de partie civile entre les mains du juge d'instruction peut, elle, donner lieu à une consignation (somme fixée par le juge, destinée à couvrir des frais). Bonne nouvelle : l'aide juridique de deuxième ligne (avocat « pro deo », selon vos revenus) et votre assurance protection juridique peuvent prendre en charge la défense de vos intérêts. Et si l'auteur d'un acte intentionnel de violence est insolvable ou inconnu, une aide financière peut être demandée à la Commission instituée auprès du SPF Justice.",
+      "reference_legale": "Loi du 1er août 1985 (aide financière de l'État aux victimes d'actes intentionnels de violence) ; Code d'instruction criminelle (constitution de partie civile)",
+      "contacts": [
+        {
+          "nom": "Bureau d'aide juridique",
+          "pour": "avocat pro deo"
+        },
+        {
+          "nom": "Commission d'aide financière aux victimes (SPF Justice)",
+          "pour": "indemnisation si l'auteur est insolvable"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Porter plainte"
+        }
       ],
       "date_verification": "2026-06-30"
     }

@@ -19,10 +19,17 @@
       "reponse": "La transaction pénale est une proposition du procureur du Roi : si l'auteur d'une infraction paie une somme d'argent (et, le cas échéant, indemnise la victime et restitue les avantages obtenus), l'action publique s'éteint — il n'y a donc pas de procès ni de condamnation. Elle vise surtout des infractions qui ne sont pas les plus graves. Accepter et payer met fin aux poursuites, mais cela suppose de reconnaître les faits : prenez conseil avant d'accepter. Si vous refusez, l'affaire peut être portée devant le tribunal.",
       "reference_legale": "Code d'instruction criminelle — transaction (art. 216bis)",
       "contacts": [
-        {"nom": "Avocat / Bureau d'aide juridique", "pour": "évaluer une proposition de transaction"}
+        {
+          "nom": "Avocat / Bureau d'aide juridique",
+          "pour": "évaluer une proposition de transaction"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Transaction pénale"}
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Transaction pénale"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -32,11 +39,21 @@
       "reponse": "La médiation pénale (à ne pas confondre avec la médiation civile entre particuliers) est proposée par le parquet : l'auteur s'engage à réparer le dommage causé à la victime (indemnisation, excuses, restitution) et, selon les cas, à suivre une formation ou un traitement ou à effectuer un travail. Si l'auteur respecte ses engagements, l'action publique s'éteint. C'est une réponse qui met la réparation de la victime au centre, tout en évitant un procès. La victime est associée à la démarche pour la partie qui la concerne.",
       "reference_legale": "Code d'instruction criminelle — médiation pénale (art. 216ter) ; loi du 22 juin 2005",
       "contacts": [
-        {"nom": "Assistant de justice / parquet", "pour": "déroulement de la médiation pénale"},
-        {"nom": "Service d'aide aux victimes", "pour": "accompagnement de la victime"}
+        {
+          "nom": "Assistant de justice / parquet",
+          "pour": "déroulement de la médiation pénale"
+        },
+        {
+          "nom": "Service d'aide aux victimes",
+          "pour": "accompagnement de la victime"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Médiation pénale"}
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Médiation pénale"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -46,10 +63,41 @@
       "reponse": "Le grand avantage est d'éviter un procès et, en cas de respect des conditions, d'éteindre l'action publique (pas de condamnation inscrite comme telle). Mais il y a des limites : ces mesures supposent une forme de reconnaissance des faits et le respect d'engagements (payer, réparer, se soigner…) ; en cas de non-respect, les poursuites reprennent. Pour la victime, l'intérêt est d'obtenir réparation plus vite. Que vous soyez auteur ou victime, demandez conseil (avocat, service d'aide aux victimes) avant d'accepter, pour bien comprendre les conséquences sur vos droits.",
       "reference_legale": "Code d'instruction criminelle — extinction de l'action publique (art. 216bis et 216ter)",
       "contacts": [
-        {"nom": "Avocat / Bureau d'aide juridique", "pour": "conséquences d'une transaction ou médiation"}
+        {
+          "nom": "Avocat / Bureau d'aide juridique",
+          "pour": "conséquences d'une transaction ou médiation"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.justice.belgium.be/fr", "intitule": "SPF Justice — Alternatives aux poursuites"}
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Alternatives aux poursuites"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ALTPOUR-VOLONTAIRE-001",
+      "question": "Suis-je obligé(e) d'accepter la proposition du parquet ?",
+      "reponse": "Non. La transaction comme la médiation pénale reposent sur votre accord : vous pouvez refuser, et vous avez le droit de consulter un avocat avant de vous décider. Si vous refusez, le parquet reprend simplement le cours normal du dossier (classement, ou poursuites devant le tribunal). Si vous acceptez et exécutez complètement la mesure (paiement, réparation, formation…), l'action publique s'éteint : vous ne serez plus poursuivi(e) pour ces faits. Réfléchissez donc aux conséquences dans les deux sens — accepter n'est pas anodin, refuser non plus.",
+      "reference_legale": "Code d'instruction criminelle, art. 216bis et 216ter (caractère volontaire de la transaction et de la médiation pénale)",
+      "contacts": [
+        {
+          "nom": "Votre avocat (ou aide juridique de 2e ligne)",
+          "pour": "évaluer la proposition avant de répondre"
+        },
+        {
+          "nom": "Maisons de justice",
+          "pour": "encadrement des médiations"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Transaction pénale"
+        }
       ],
       "date_verification": "2026-06-30"
     }

@@ -19,11 +19,22 @@
       "reponse": "La demande de protection internationale s'introduit auprès de l'Office des étrangers ; vous êtes ensuite enregistré et reçu, et un accueil (hébergement, accompagnement) est en principe organisé pendant la procédure. Votre dossier est examiné sur le fond par le CGRA (Commissariat général aux réfugiés et aux apatrides), une instance indépendante, lors d'un entretien personnel où vous exposez les raisons pour lesquelles vous ne pouvez pas retourner dans votre pays. Préparez votre récit et vos preuves, et faites-vous assister par un avocat dès le début : c'est déterminant.",
       "reference_legale": "Loi du 15 décembre 1980 sur les étrangers (introduction de la demande de protection internationale)",
       "contacts": [
-        {"nom": "CGRA", "lien": "https://www.cgra.be/fr", "pour": "examen de la demande d'asile"},
-        {"nom": "Avocat en droit des étrangers / service spécialisé", "pour": "accompagnement (gratuit selon revenus)"}
+        {
+          "nom": "CGRA",
+          "lien": "https://www.cgra.be/fr",
+          "pour": "examen de la demande d'asile"
+        },
+        {
+          "nom": "Avocat en droit des étrangers / service spécialisé",
+          "pour": "accompagnement (gratuit selon revenus)"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.cgra.be/fr/asile/procedure-standard", "intitule": "CGRA — Procédure d'asile"}
+        {
+          "type": "officiel",
+          "url": "https://www.cgra.be/fr/asile/procedure-standard",
+          "intitule": "CGRA — Procédure d'asile"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,10 +44,18 @@
       "reponse": "Ce sont deux formes de protection internationale. Le statut de réfugié est accordé à la personne qui craint avec raison d'être persécutée dans son pays en raison de sa race, sa religion, sa nationalité, ses opinions politiques ou son appartenance à un groupe social (au sens de la Convention de Genève). La protection subsidiaire s'applique à la personne qui ne remplit pas ces critères mais qui encourrait, en cas de retour, un risque réel d'atteintes graves (peine de mort, torture, traitements inhumains, ou menace grave contre sa vie en raison d'une violence aveugle dans un conflit armé). Les deux statuts donnent droit à un séjour et à une protection, avec des modalités propres.",
       "reference_legale": "Loi du 15 décembre 1980 sur les étrangers — réfugié (art. 48/3) et protection subsidiaire (art. 48/4)",
       "contacts": [
-        {"nom": "CGRA", "lien": "https://www.cgra.be/fr", "pour": "détermination du statut"}
+        {
+          "nom": "CGRA",
+          "lien": "https://www.cgra.be/fr",
+          "pour": "détermination du statut"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.cgra.be/fr", "intitule": "CGRA — Réfugié et protection subsidiaire"}
+        {
+          "type": "officiel",
+          "url": "https://www.cgra.be/fr",
+          "intitule": "CGRA — Réfugié et protection subsidiaire"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,12 +66,50 @@
       "reference_legale": "Loi du 15 décembre 1980 sur les étrangers (recours devant le Conseil du contentieux des étrangers)",
       "alerte_delai": "Le délai de recours au CCE est court (souvent 30 jours, parfois moins) : consultez un avocat dès réception de la décision.",
       "contacts": [
-        {"nom": "Conseil du contentieux des étrangers (CCE)", "pour": "recours contre une décision du CGRA"},
-        {"nom": "Avocat en droit des étrangers / Bureau d'aide juridique", "pour": "introduire le recours (aide gratuite possible)"}
+        {
+          "nom": "Conseil du contentieux des étrangers (CCE)",
+          "pour": "recours contre une décision du CGRA"
+        },
+        {
+          "nom": "Avocat en droit des étrangers / Bureau d'aide juridique",
+          "pour": "introduire le recours (aide gratuite possible)"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.cgra.be/fr", "intitule": "CGRA — Décision et recours"},
-        {"type": "officiel", "url": "https://dofi.ibz.be/fr", "intitule": "Office des étrangers — Séjour et recours"}
+        {
+          "type": "officiel",
+          "url": "https://www.cgra.be/fr",
+          "intitule": "CGRA — Décision et recours"
+        },
+        {
+          "type": "officiel",
+          "url": "https://dofi.ibz.be/fr",
+          "intitule": "Office des étrangers — Séjour et recours"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ASILE-ACCUEIL-001",
+      "question": "Pendant la procédure, ai-je droit à un accueil et à une aide ?",
+      "reponse": "Oui. Pendant l'examen de la demande de protection internationale, le demandeur a droit à un accueil dit « matériel » : un hébergement dans une structure d'accueil, les repas, un accompagnement social, l'accès à l'aide médicale, et l'accompagnement scolaire des enfants (l'obligation scolaire s'applique). Vous avez également droit à un avocat — gratuitement via l'aide juridique si vos moyens sont insuffisants — et à un interprète durant les auditions. Signaler tout changement d'adresse est essentiel pour ne manquer aucune convocation.",
+      "reference_legale": "Loi du 12 janvier 2007 sur l'accueil des demandeurs d'asile et de certaines autres catégories d'étrangers",
+      "contacts": [
+        {
+          "nom": "Fedasil (structures d'accueil)",
+          "pour": "hébergement et accompagnement"
+        },
+        {
+          "nom": "Bureau d'aide juridique",
+          "pour": "avocat gratuit (pro deo)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.cgra.be/fr/asile/procedure-standard",
+          "intitule": "CGRA — Procédure d'asile"
+        }
       ],
       "date_verification": "2026-06-30"
     }
