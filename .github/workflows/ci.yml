@@ -1,0 +1,50 @@
+# =============================================================================
+# CI — competeiq + système Libre & Accomplis
+# Règle d'or : pas de fusion si un seul test échoue.
+#
+# Durcissement progressif prévu (voir docs/libre-et-accomplis/exemples/
+# ci-cd-pipeline.yml pour la version cible) : seuil de couverture 95 %,
+# tests E2E, scans de sécurité, backup et déploiement conditionnel —
+# à activer quand les secrets (SLACK_WEBHOOK, AWS, etc.) seront configurés.
+# =============================================================================
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  competeiq:
+    name: competeiq (lint + tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Unit tests (API routes, middleware, data)
+        run: npm test
+
+  libre-accomplis:
+    name: Libre & Accomplis (agents + orchestrateur + traductions)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tests Python (agents + orchestrateur)
+        run: python3 -m unittest discover docs/libre-et-accomplis/scaffolding/python -v
+      - name: Tests Node.js (agents)
+        run: node --test docs/libre-et-accomplis/scaffolding/nodejs/*.test.mjs
+      - name: Validation multilingue
+        run: python3 docs/libre-et-accomplis/scripts/verifier_traductions.py
