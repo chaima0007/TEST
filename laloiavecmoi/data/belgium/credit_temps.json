@@ -19,11 +19,22 @@
       "reponse": "Le crédit-temps permet à un travailleur du secteur privé de suspendre complètement ou de réduire (à mi-temps ou d'1/5e) son temps de travail pendant une période, tout en gardant son contrat et en bénéficiant, sous conditions, d'une allocation de l'ONEM. Dans le secteur public et l'enseignement, un système équivalent existe sous le nom d'« interruption de carrière ». C'est différent des congés thématiques (parental, assistance médicale, aidant proche) qui répondent à des motifs spécifiques. Le crédit-temps suppose en général une ancienneté et l'accord de l'employeur, et il est aujourd'hui surtout ouvert pour des motifs précis (s'occuper d'un enfant, d'un proche, suivre une formation).",
       "reference_legale": "Convention collective de travail n° 103 relative au crédit-temps (secteur privé)",
       "contacts": [
-        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "allocation d'interruption (crédit-temps)"},
-        {"nom": "Votre employeur / secrétariat social", "pour": "conditions et demande"}
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "allocation d'interruption (crédit-temps)"
+        },
+        {
+          "nom": "Votre employeur / secrétariat social",
+          "pour": "conditions et demande"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive", "intitule": "ONEM — Crédit-temps (secteur privé)"}
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive",
+          "intitule": "ONEM — Crédit-temps (secteur privé)"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,10 +44,17 @@
       "reponse": "Le crédit-temps « avec motif » est ouvert notamment pour : prendre soin de son enfant (jusqu'à un certain âge), assister un membre du ménage ou de la famille gravement malade, donner des soins palliatifs, s'occuper d'un enfant handicapé, ou suivre une formation reconnue. Pendant ce crédit-temps, vous pouvez percevoir une allocation d'interruption de l'ONEM (le montant dépend de la formule — temps plein, mi-temps, 1/5e — et de votre situation). Les durées maximales et les conditions d'ancienneté varient selon le motif. Vérifiez les règles en vigueur, car elles ont été resserrées ces dernières années.",
       "reference_legale": "Convention collective de travail n° 103 (crédit-temps avec motif) ; arrêté royal du 12 décembre 2001 (allocations d'interruption)",
       "contacts": [
-        {"nom": "ONEM / organisme compétent", "pour": "motifs admis et montant de l'allocation"}
+        {
+          "nom": "ONEM / organisme compétent",
+          "pour": "motifs admis et montant de l'allocation"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive", "intitule": "ONEM — Crédit-temps : motifs et allocations"}
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive",
+          "intitule": "ONEM — Crédit-temps : motifs et allocations"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,11 +65,47 @@
       "reference_legale": "Convention collective de travail n° 103 (procédure et protection) ; arrêté royal du 12 décembre 2001",
       "alerte_delai": "Prévenez l'employeur dans les délais (souvent plusieurs mois avant) et introduisez la demande d'allocation à l'ONEM à temps.",
       "contacts": [
-        {"nom": "Votre employeur", "pour": "avertissement préalable et accord"},
-        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "demande d'allocation d'interruption"}
+        {
+          "nom": "Votre employeur",
+          "pour": "avertissement préalable et accord"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "demande d'allocation d'interruption"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive", "intitule": "ONEM — Demander un crédit-temps"}
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive",
+          "intitule": "ONEM — Demander un crédit-temps"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CT-CONDITIONS-001",
+      "question": "Ai-je automatiquement droit au crédit-temps, et mon employeur peut-il refuser ?",
+      "reponse": "Non, ce n'est pas automatique. Il faut remplir des conditions d'ancienneté chez votre employeur (et, selon la formule, de carrière) fixées par la CCT n° 103. Dans les petites entreprises (10 travailleurs ou moins au 30 juin de l'année précédente), l'accord de l'employeur est indispensable pour un crédit-temps à temps plein ou à mi-temps. Dans les autres, le droit existe mais l'organisation du travail est protégée : quand trop de travailleurs sont absents en même temps (seuil fixé dans l'entreprise, par défaut 5 %), l'employeur peut appliquer un mécanisme de préférence et reporter le début de certains crédits-temps. Il peut aussi reporter la prise pour des raisons internes sérieuses, mais pas la refuser définitivement quand les conditions sont réunies.",
+      "reference_legale": "Convention collective de travail n° 103 (conditions d'accès, seuil de 5 % et mécanisme de préférence et de report)",
+      "contacts": [
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "allocation d'interruption (crédit-temps)"
+        },
+        {
+          "nom": "Votre employeur / secrétariat social",
+          "pour": "conditions et demande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive",
+          "intitule": "ONEM — Crédit-temps (secteur privé)"
+        }
       ],
       "date_verification": "2026-06-30"
     }

@@ -2,7 +2,7 @@
 
 *Généré le 2026-07-13. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**767 réponses · 184 modules · 1132 sources officielles · 498 fiches avec contacts · 153 alertes de délai**
+**775 réponses · 184 modules · 1141 sources officielles · 506 fiches avec contacts · 153 alertes de délai**
 
 ## Modules en ligne
 
@@ -18,7 +18,7 @@
 | — | Aide médicale urgente (CPAS) | 4 | 5 | 1 | 1 |
 | Aide sociale & urgence | Où aller quand ça va mal — faim, sans-abri, danger, sans papiers | 5 | 7 | 5 | 3 |
 | Allocation pour l'aide aux personnes âgées | Allocation pour l'aide aux personnes âgées (APA / THAB / Beihilfe für Betagte) | 4 | 7 | 4 | 0 |
-| Handicap & revenus | Allocations handicap — ARR et AI (18-65 ans) | 3 | 4 | 3 | 1 |
+| Handicap & revenus | Allocations handicap — ARR et AI (18-65 ans) | 4 | 6 | 4 | 1 |
 | Allocations familiales | Allocations familiales — qui, comment, combien | 4 | 8 | 3 | 2 |
 | Animaux | Animaux — bien-être, responsabilités, maltraitance | 4 | 7 | 3 | 1 |
 | Assurance véhicule | Assurance auto obligatoire (RC) | 4 | 5 | 4 | 1 |
@@ -36,7 +36,7 @@
 | Services bancaires | Banque & compte de base | 4 | 5 | 4 | 0 |
 | Volontariat | Bénévolat & volontariat — vos droits | 4 | 5 | 4 | 1 |
 | Allocation d'études | Bourse / allocation d'études | 4 | 6 | 4 | 2 |
-| Handicap & autonomie | Budget d'assistance personnelle (handicap) | 3 | 3 | 3 | 1 |
+| Handicap & autonomie | Budget d'assistance personnelle (handicap) | 4 | 4 | 4 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 4 | 8 | 4 | 0 |
 | Handicap & mobilité | Carte de stationnement pour personnes handicapées | 4 | 5 | 2 | 1 |
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
@@ -56,12 +56,12 @@
 | Consommation | Consommation — garanties, achats, arnaques | 4 | 7 | 2 | 1 |
 | Droits fondamentaux & Constitution | Constitution belge — vos droits fondamentaux | 8 | 16 | 8 | 0 |
 | Copropriété | Copropriété — vivre en appartement | 4 | 4 | 4 | 1 |
-| Indépendants & sécurité sociale | Cotisations sociales de l'indépendant | 3 | 3 | 3 | 1 |
+| Indépendants & sécurité sociale | Cotisations sociales de l'indépendant | 4 | 4 | 4 | 1 |
 | Couple & vie commune | Couple — mariage, cohabitation légale, union libre | 4 | 4 | 3 | 0 |
 | Crédit & fichage | Crédit & fichage — emprunts, défaut de paiement, Centrale des crédits | 4 | 6 | 2 | 2 |
 | Crédit à la consommation | Crédit à la consommation (prêt à tempérament) | 4 | 6 | 4 | 2 |
 | Crédit hypothécaire | Crédit hypothécaire — emprunter pour un logement | 4 | 4 | 4 | 2 |
-| Travail & congés | Crédit-temps & interruption de carrière | 3 | 3 | 3 | 1 |
+| Travail & congés | Crédit-temps & interruption de carrière | 4 | 4 | 4 | 1 |
 | Décès & démarches | Décès — démarches pratiques après le décès d'un proche | 4 | 5 | 3 | 2 |
 | Déchets & environnement | Déchets, tri & propreté | 4 | 7 | 4 | 0 |
 | Demandeur d'emploi | Demandeur d'emploi — inscription et accompagnement (Forem / VDAB / Actiris / ADG) | 4 | 10 | 4 | 1 |
@@ -74,10 +74,10 @@
 | — | Dossier médical global (DMG) | 4 | 5 | 1 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 4 | 8 | 4 | 0 |
-| Indépendants & sécurité sociale | Droit passerelle (indépendant en difficulté) | 3 | 3 | 3 | 1 |
+| Indépendants & sécurité sociale | Droit passerelle (indépendant en difficulté) | 4 | 4 | 4 | 1 |
 | Aînés & hébergement | Droits du résident en maison de repos (MR/MRS) | 3 | 6 | 3 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 4 | 8 | 4 | 0 |
-| Travail & santé | Protection et écartement de la travailleuse enceinte | 3 | 4 | 3 | 0 |
+| Travail & santé | Protection et écartement de la travailleuse enceinte | 4 | 5 | 4 | 0 |
 | Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 4 | 8 | 3 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
@@ -178,8 +178,8 @@
 | Santé & remboursements | Frais de transport pour raison médicale | 3 | 4 | 3 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 4 | 8 | 4 | 2 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
-| Travail & contrats | Travail intérimaire — contrat et droits | 3 | 3 | 3 | 0 |
-| Travail & revenus | Travail à temps partiel & allocation de garantie de revenus | 3 | 4 | 3 | 0 |
+| Travail & contrats | Travail intérimaire — contrat et droits | 4 | 4 | 4 | 0 |
+| Travail & revenus | Travail à temps partiel & allocation de garantie de revenus | 4 | 5 | 4 | 0 |
 | — | Tutelle d'un enfant mineur | 4 | 6 | 1 | 0 |
 | Logement & fiscalité | TVA réduite à 6 % pour la rénovation | 3 | 3 | 3 | 1 |
 | Travail & congés | Vacances annuelles & pécule de vacances | 4 | 8 | 4 | 0 |

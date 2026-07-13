@@ -1,8 +1,8 @@
 # Base unique — catalogue central
 
-*Généré le 2026-06-30. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
+*Généré le 2026-07-13. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**759 réponses · 184 modules · 1124 sources officielles · 490 fiches avec contacts · 153 alertes de délai**
+**775 réponses · 184 modules · 1141 sources officielles · 506 fiches avec contacts · 153 alertes de délai**
 
 ## Modules en ligne
 
@@ -18,7 +18,7 @@
 | — | Aide médicale urgente (CPAS) | 4 | 5 | 1 | 1 |
 | Aide sociale & urgence | Où aller quand ça va mal — faim, sans-abri, danger, sans papiers | 5 | 7 | 5 | 3 |
 | Allocation pour l'aide aux personnes âgées | Allocation pour l'aide aux personnes âgées (APA / THAB / Beihilfe für Betagte) | 4 | 7 | 4 | 0 |
-| Handicap & revenus | Allocations handicap — ARR et AI (18-65 ans) | 3 | 4 | 3 | 1 |
+| Handicap & revenus | Allocations handicap — ARR et AI (18-65 ans) | 4 | 6 | 4 | 1 |
 | Allocations familiales | Allocations familiales — qui, comment, combien | 4 | 8 | 3 | 2 |
 | Animaux | Animaux — bien-être, responsabilités, maltraitance | 4 | 7 | 3 | 1 |
 | Assurance véhicule | Assurance auto obligatoire (RC) | 4 | 5 | 4 | 1 |
@@ -36,7 +36,7 @@
 | Services bancaires | Banque & compte de base | 4 | 5 | 4 | 0 |
 | Volontariat | Bénévolat & volontariat — vos droits | 4 | 5 | 4 | 1 |
 | Allocation d'études | Bourse / allocation d'études | 4 | 6 | 4 | 2 |
-| Handicap & autonomie | Budget d'assistance personnelle (handicap) | 3 | 3 | 3 | 1 |
+| Handicap & autonomie | Budget d'assistance personnelle (handicap) | 4 | 4 | 4 | 1 |
 | Bien-être & burnout | Santé d'abord — burnout, fatigue & mettre des limites | 4 | 8 | 4 | 0 |
 | Handicap & mobilité | Carte de stationnement pour personnes handicapées | 4 | 5 | 2 | 1 |
 | — | Extrait de casier judiciaire | 4 | 4 | 0 | 0 |
@@ -56,12 +56,12 @@
 | Consommation | Consommation — garanties, achats, arnaques | 4 | 7 | 2 | 1 |
 | Droits fondamentaux & Constitution | Constitution belge — vos droits fondamentaux | 8 | 16 | 8 | 0 |
 | Copropriété | Copropriété — vivre en appartement | 4 | 4 | 4 | 1 |
-| Indépendants & sécurité sociale | Cotisations sociales de l'indépendant | 3 | 3 | 3 | 1 |
+| Indépendants & sécurité sociale | Cotisations sociales de l'indépendant | 4 | 4 | 4 | 1 |
 | Couple & vie commune | Couple — mariage, cohabitation légale, union libre | 4 | 4 | 3 | 0 |
 | Crédit & fichage | Crédit & fichage — emprunts, défaut de paiement, Centrale des crédits | 4 | 6 | 2 | 2 |
 | Crédit à la consommation | Crédit à la consommation (prêt à tempérament) | 4 | 6 | 4 | 2 |
 | Crédit hypothécaire | Crédit hypothécaire — emprunter pour un logement | 4 | 4 | 4 | 2 |
-| Travail & congés | Crédit-temps & interruption de carrière | 3 | 3 | 3 | 1 |
+| Travail & congés | Crédit-temps & interruption de carrière | 4 | 4 | 4 | 1 |
 | Décès & démarches | Décès — démarches pratiques après le décès d'un proche | 4 | 5 | 3 | 2 |
 | Déchets & environnement | Déchets, tri & propreté | 4 | 7 | 4 | 0 |
 | Demandeur d'emploi | Demandeur d'emploi — inscription et accompagnement (Forem / VDAB / Actiris / ADG) | 4 | 10 | 4 | 1 |
@@ -74,10 +74,10 @@
 | — | Dossier médical global (DMG) | 4 | 5 | 1 | 0 |
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 4 | 8 | 4 | 0 |
-| Indépendants & sécurité sociale | Droit passerelle (indépendant en difficulté) | 3 | 3 | 3 | 1 |
+| Indépendants & sécurité sociale | Droit passerelle (indépendant en difficulté) | 4 | 4 | 4 | 1 |
 | Aînés & hébergement | Droits du résident en maison de repos (MR/MRS) | 3 | 6 | 3 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 4 | 8 | 4 | 0 |
-| Travail & santé | Protection et écartement de la travailleuse enceinte | 3 | 4 | 3 | 0 |
+| Travail & santé | Protection et écartement de la travailleuse enceinte | 4 | 5 | 4 | 0 |
 | Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
 | Énergie | Énergie — factures, fournisseur, difficultés de paiement | 4 | 8 | 3 | 2 |
 | Enfants placés & aide à la jeunesse | Enfants placés — tes droits, tes devoirs, ta parole | 5 | 10 | 4 | 1 |
@@ -85,7 +85,7 @@
 | — | Épargne-pension (3e pilier) | 4 | 7 | 1 | 0 |
 | — | Équivalence d'un diplôme étranger | 4 | 5 | 1 | 0 |
 | Étrangers & séjour | Étrangers & séjour — titres, regroupement familial, asile | 4 | 5 | 4 | 2 |
-| Justice pénale | Exécution de la peine & libération conditionnelle | 3 | 3 | 3 | 0 |
+| Justice pénale | Exécution de la peine & libération conditionnelle | 4 | 4 | 4 | 0 |
 | — | Expropriation pour cause d'utilité publique | 4 | 5 | 1 | 0 |
 | Logement — expulsion | Expulsion du logement — vos droits | 4 | 7 | 4 | 2 |
 | Famille | Famille — séparation, enfants, pensions alimentaires | 5 | 5 | 5 | 1 |
@@ -102,7 +102,7 @@
 | — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
 | Handicap | Handicap — reconnaissance, allocations, carte de stationnement | 5 | 12 | 5 | 0 |
 | Harcèlement & violences | Harcèlement & violences — qui contacter, quels recours | 6 | 9 | 6 | 5 |
-| Famille & enfants | Hébergement des enfants après séparation | 3 | 3 | 3 | 0 |
+| Famille & enfants | Hébergement des enfants après séparation | 4 | 4 | 4 | 0 |
 | Impôts & fiscalité | Impôts — déclaration des personnes physiques | 4 | 7 | 3 | 4 |
 | Maladie & incapacité | Maladie & incapacité de travail | 4 | 8 | 4 | 3 |
 | Indépendant & activité | Devenir indépendant — démarches pour se lancer | 9 | 19 | 9 | 2 |
@@ -120,30 +120,30 @@
 | Construction & travaux | Malfaçons & garantie décennale (travaux) | 4 | 5 | 4 | 2 |
 | Protection des aînés | Maltraitance des aînés — réagir & protéger | 4 | 8 | 4 | 1 |
 | — | Marchand de sommeil (logement indigne) | 4 | 5 | 1 | 0 |
-| Famille & protection | Mariage forcé & cohabitation légale forcée | 3 | 4 | 3 | 0 |
+| Famille & protection | Mariage forcé & cohabitation légale forcée | 4 | 5 | 4 | 0 |
 | Santé & remboursements | Maximum à facturer (MàF) — plafond des frais de santé | 4 | 4 | 4 | 0 |
 | Travail & santé | Médecine du travail & surveillance de la santé | 4 | 5 | 1 | 0 |
 | Règlement des conflits | Médiation & règlement amiable des conflits | 4 | 8 | 4 | 0 |
-| Justice pénale | Médiation pénale & transaction (alternatives aux poursuites) | 3 | 3 | 3 | 0 |
+| Justice pénale | Médiation pénale & transaction (alternatives aux poursuites) | 4 | 4 | 4 | 0 |
 | Mobilité douce | Vélo & trottinette — règles et assurance | 4 | 5 | 4 | 0 |
 | Naissance & filiation | Naissance & filiation | 4 | 8 | 4 | 1 |
 | — | Nationalité belge | 4 | 4 | 0 | 0 |
 | — | Occupation sans titre d'un bien (squat) | 4 | 5 | 1 | 1 |
 | Succession & patrimoine | Pacte successoral | 4 | 4 | 1 | 0 |
-| Justice pénale | Peines alternatives à la prison | 3 | 3 | 3 | 0 |
+| Justice pénale | Peines alternatives à la prison | 4 | 4 | 4 | 0 |
 | Pension & retraite | Pension & retraite — âge, demande, calcul | 4 | 7 | 3 | 1 |
 | Famille & argent | Pension alimentaire impayée — le SECAL | 4 | 5 | 2 | 0 |
 | — | Pension complémentaire (2e pilier) | 4 | 5 | 1 | 0 |
 | — | Permis de conduire | 4 | 8 | 1 | 1 |
 | Permis unique (travailleur étranger) | Permis unique / autorisation de travail (travailleur non-EEE) | 4 | 5 | 3 | 1 |
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 4 | 8 | 4 | 1 |
-| Justice pénale | Porter plainte, classement sans suite & partie civile | 3 | 3 | 3 | 0 |
+| Justice pénale | Porter plainte, classement sans suite & partie civile | 4 | 4 | 4 | 0 |
 | — | Plainte contre la police (Comité P) | 4 | 5 | 1 | 0 |
 | Impôts & difficultés de paiement | Plan de paiement pour dettes fiscales | 3 | 3 | 3 | 1 |
 | — | Précompte immobilier | 4 | 7 | 1 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 4 | 6 | 4 | 0 |
 | Primes rénovation | Primes à la rénovation et à l'énergie (logement) | 4 | 8 | 3 | 3 |
-| Étrangers & séjour | Procédure d'asile — protection internationale | 3 | 4 | 3 | 1 |
+| Étrangers & séjour | Procédure d'asile — protection internationale | 4 | 5 | 4 | 1 |
 | Santé & famille | PMA — procréation médicalement assistée | 4 | 5 | 1 | 0 |
 | — | Produits défectueux (responsabilité) | 4 | 5 | 1 | 0 |
 | Protection des personnes vulnérables | Personnes vulnérables — administration de biens & protection | 4 | 5 | 4 | 1 |
@@ -169,7 +169,7 @@
 | Successions | Successions & héritage — accepter, renoncer, délais | 5 | 11 | 4 | 2 |
 | — | Succession internationale | 4 | 5 | 1 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
-| Justice pénale | Sursis & suspension du prononcé | 3 | 3 | 3 | 0 |
+| Justice pénale | Sursis & suspension du prononcé | 4 | 4 | 4 | 0 |
 | Télécommunications | Télécom — internet, téléphone, litiges | 4 | 7 | 4 | 2 |
 | Travail & organisation | Télétravail — droits, frais et déconnexion | 4 | 8 | 4 | 0 |
 | Testament & donations | Testament & planifier sa succession | 4 | 7 | 4 | 0 |
@@ -178,8 +178,8 @@
 | Santé & remboursements | Frais de transport pour raison médicale | 3 | 4 | 3 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 4 | 8 | 4 | 2 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
-| Travail & contrats | Travail intérimaire — contrat et droits | 3 | 3 | 3 | 0 |
-| Travail & revenus | Travail à temps partiel & allocation de garantie de revenus | 3 | 4 | 3 | 0 |
+| Travail & contrats | Travail intérimaire — contrat et droits | 4 | 4 | 4 | 0 |
+| Travail & revenus | Travail à temps partiel & allocation de garantie de revenus | 4 | 5 | 4 | 0 |
 | — | Tutelle d'un enfant mineur | 4 | 6 | 1 | 0 |
 | Logement & fiscalité | TVA réduite à 6 % pour la rénovation | 3 | 3 | 3 | 1 |
 | Travail & congés | Vacances annuelles & pécule de vacances | 4 | 8 | 4 | 0 |

@@ -19,11 +19,22 @@
       "reponse": "Le contrat de travail à temps partiel doit être écrit et préciser le régime de travail et l'horaire (fixe ou variable). Quand l'horaire est variable, les horaires concrets doivent vous être communiqués à l'avance, dans le délai prévu. Le travailleur à temps partiel a, proportionnellement, les mêmes droits qu'un temps plein (salaire au prorata, pécule de vacances, ancienneté). Vous avez aussi une priorité légale pour obtenir un emploi à temps plein ou un poste à temps partiel supplémentaire qui se libère dans l'entreprise, si vous en faites la demande. Conservez votre contrat et vos horaires communiqués.",
       "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (travail à temps partiel)",
       "contacts": [
-        {"nom": "Votre employeur / secrétariat social", "pour": "contrat et horaires"},
-        {"nom": "Contrôle des lois sociales (SPF Emploi)", "lien": "https://emploi.belgique.be", "pour": "horaires non communiqués, irrégularités"}
+        {
+          "nom": "Votre employeur / secrétariat social",
+          "pour": "contrat et horaires"
+        },
+        {
+          "nom": "Contrôle des lois sociales (SPF Emploi)",
+          "lien": "https://emploi.belgique.be",
+          "pour": "horaires non communiqués, irrégularités"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://emploi.belgique.be/fr", "intitule": "SPF Emploi — Travail à temps partiel"}
+        {
+          "type": "officiel",
+          "url": "https://emploi.belgique.be/fr",
+          "intitule": "SPF Emploi — Travail à temps partiel"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,11 +44,22 @@
       "reponse": "Si vous êtes au chômage et que vous acceptez un emploi à temps partiel (vous devenez « travailleur à temps partiel avec maintien des droits »), vous pouvez recevoir un complément de l'ONEM appelé allocation de garantie de revenus (AGR). Objectif : garantir qu'accepter un temps partiel reste financièrement plus avantageux que de rester sans emploi. L'AGR complète votre salaire à temps partiel. Pour y avoir droit, il faut notamment avoir conservé le statut adéquat et introduire la demande. Le montant dépend de votre salaire, de votre temps de travail et de votre situation familiale.",
       "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (allocation de garantie de revenus)",
       "contacts": [
-        {"nom": "Organisme de paiement (syndicat ou CAPAC)", "pour": "demande d'AGR"},
-        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "conditions de l'AGR"}
+        {
+          "nom": "Organisme de paiement (syndicat ou CAPAC)",
+          "pour": "demande d'AGR"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "conditions de l'AGR"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.onem.be/citoyens/travail-a-temps-partiel/avez-vous-droit-a-l-allocation-de-garantie-de-revenus-", "intitule": "ONEM — Allocation de garantie de revenus (AGR)"}
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/travail-a-temps-partiel/avez-vous-droit-a-l-allocation-de-garantie-de-revenus-",
+          "intitule": "ONEM — Allocation de garantie de revenus (AGR)"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,12 +69,51 @@
       "reponse": "Travailler à temps partiel a des conséquences à connaître. Vos droits (chômage, maladie, pension) se calculent en tenant compte de votre temps de travail et de votre salaire : un temps partiel de longue durée peut réduire certains droits futurs, notamment la pension. Toutefois, des mécanismes de protection existent (par exemple le maintien de droits pour les anciens chômeurs qui acceptent un temps partiel, certaines périodes assimilées). Avant de choisir ou d'accepter un temps partiel durable, renseignez-vous sur l'impact à long terme (consultez mypension.be pour la pension) afin de décider en connaissance de cause.",
       "reference_legale": "Loi du 3 juillet 1978 (temps partiel) ; réglementations de la sécurité sociale (calcul des droits selon le temps de travail)",
       "contacts": [
-        {"nom": "mypension.be / votre mutualité", "pour": "impact du temps partiel sur pension et droits"},
-        {"nom": "Syndicat", "pour": "conseil sur les conséquences du temps partiel"}
+        {
+          "nom": "mypension.be / votre mutualité",
+          "pour": "impact du temps partiel sur pension et droits"
+        },
+        {
+          "nom": "Syndicat",
+          "pour": "conseil sur les conséquences du temps partiel"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.onem.be/citoyens/travail-a-temps-partiel/avez-vous-droit-a-l-allocation-de-garantie-de-revenus-", "intitule": "ONEM — Temps partiel et droits"},
-        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr", "intitule": "Sécurité sociale — Travail à temps partiel"}
+        {
+          "type": "officiel",
+          "url": "https://www.onem.be/citoyens/travail-a-temps-partiel/avez-vous-droit-a-l-allocation-de-garantie-de-revenus-",
+          "intitule": "ONEM — Temps partiel et droits"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.socialsecurity.be/citizen/fr",
+          "intitule": "Sécurité sociale — Travail à temps partiel"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TP-HEURES-001",
+      "question": "Puis-je devoir prester des heures complémentaires, et sont-elles payées en plus ?",
+      "reponse": "Les heures complémentaires sont les heures prestées au-delà de votre horaire contractuel, sans dépasser un temps plein. Elles ne sont possibles que dans les limites prévues (accord, horaires publiés, enregistrement des dérogations). Un crédit d'heures complémentaires peut être presté sans supplément ; au-delà de ce crédit, un sursalaire est dû. Vos horaires doivent être portés à votre connaissance à l'avance et tout écart doit être consigné dans un document de contrôle — c'est votre preuve en cas de litige. Enfin, si vous souhaitez travailler plus, vous bénéficiez d'une priorité légale pour obtenir un emploi vacant à temps plein (ou à temps partiel plus étendu) chez votre employeur, à condition d'en avoir fait la demande par écrit.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (heures complémentaires) ; loi-programme du 22 décembre 1989 (contrôle des horaires et priorité pour les emplois vacants)",
+      "contacts": [
+        {
+          "nom": "Votre employeur / secrétariat social",
+          "pour": "contrat et horaires"
+        },
+        {
+          "nom": "Contrôle des lois sociales (SPF Emploi)",
+          "lien": "https://emploi.belgique.be",
+          "pour": "horaires non communiqués, irrégularités"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.belgique.be/fr",
+          "intitule": "SPF Emploi — Travail à temps partiel"
+        }
       ],
       "date_verification": "2026-06-30"
     }

@@ -19,11 +19,22 @@
       "reponse": "L'indépendant paie des cotisations sociales trimestrielles à une caisse d'assurances sociales, calculées sur ses revenus professionnels NETS (après frais), via un pourcentage fixé par la loi. Particularité : pendant les premières années, comme le revenu réel n'est pas encore connu, vous payez des cotisations PROVISOIRES (sur une base estimée ou un minimum) ; elles sont ensuite RÉGULARISÉES une fois le revenu réel communiqué par le fisc, ce qui peut donner lieu à un supplément ou à un remboursement. Ces cotisations financent vos droits sociaux (pension, soins de santé, incapacité, allocations familiales, droit passerelle).",
       "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (statut social des indépendants — cotisations)",
       "contacts": [
-        {"nom": "Votre caisse d'assurances sociales", "pour": "calcul et paiement des cotisations"},
-        {"nom": "INASTI", "lien": "https://www.inasti.be/fr", "pour": "information sur le statut social"}
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "calcul et paiement des cotisations"
+        },
+        {
+          "nom": "INASTI",
+          "lien": "https://www.inasti.be/fr",
+          "pour": "information sur le statut social"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inasti.be/fr/faq/combien-de-cotisations-sociales-dois-je-payer", "intitule": "INASTI — Combien de cotisations dois-je payer ?"}
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr/faq/combien-de-cotisations-sociales-dois-je-payer",
+          "intitule": "INASTI — Combien de cotisations dois-je payer ?"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,10 +44,17 @@
       "reponse": "Non. Le montant dépend de votre catégorie d'indépendant : à titre PRINCIPAL (activité indépendante comme activité principale), à titre COMPLÉMENTAIRE (en plus d'un emploi salarié suffisant, avec des cotisations réduites), ou des statuts particuliers (conjoint aidant, étudiant-indépendant, pensionné qui continue une activité). Des cotisations minimales s'appliquent aux indépendants à titre principal même en cas de revenus faibles, et un plafond limite les cotisations sur les revenus très élevés. Choisir la bonne catégorie est important : signalez tout changement de situation à votre caisse.",
       "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (catégories d'assujettissement et cotisations minimales)",
       "contacts": [
-        {"nom": "Votre caisse d'assurances sociales", "pour": "catégorie applicable et minima"}
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "catégorie applicable et minima"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inasti.be/fr", "intitule": "INASTI — Catégories d'indépendants et cotisations"}
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Catégories d'indépendants et cotisations"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,11 +65,47 @@
       "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (réduction, plan de paiement et dispense de cotisations)",
       "alerte_delai": "Contactez votre caisse dès les premières difficultés : des majorations s'appliquent en cas de retard de paiement.",
       "contacts": [
-        {"nom": "Votre caisse d'assurances sociales", "pour": "plan de paiement, réduction ou dispense"},
-        {"nom": "INASTI", "lien": "https://www.inasti.be/fr", "pour": "information sur les dispenses"}
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "plan de paiement, réduction ou dispense"
+        },
+        {
+          "nom": "INASTI",
+          "lien": "https://www.inasti.be/fr",
+          "pour": "information sur les dispenses"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inasti.be/fr", "intitule": "INASTI — Difficultés de paiement des cotisations"}
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Difficultés de paiement des cotisations"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "COTIND-REGUL-001",
+      "question": "Pourquoi est-ce que je reçois une régularisation de cotisations deux ou trois ans plus tard ?",
+      "reponse": "Parce que vos cotisations sont d'abord calculées provisoirement : votre caisse d'assurances sociales se base sur vos revenus d'il y a trois ans (ou sur une base forfaitaire si vous débutez), faute de connaître vos revenus actuels. Quand l'administration fiscale communique vos revenus réels de l'année, la caisse recalcule définitivement les cotisations : vous recevez alors un remboursement ou un supplément à payer — c'est la régularisation. Pour éviter une mauvaise surprise, vous pouvez demander à votre caisse d'adapter vos cotisations provisoires : les augmenter si vos revenus montent (le supplément payé est déductible), ou demander une réduction si vos revenus baissent en dessous des seuils légaux, sur la base d'éléments objectifs.",
+      "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (calcul provisoire, régularisation et adaptation des cotisations)",
+      "contacts": [
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "calcul et paiement des cotisations"
+        },
+        {
+          "nom": "INASTI",
+          "lien": "https://www.inasti.be/fr",
+          "pour": "information sur le statut social"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr/faq/combien-de-cotisations-sociales-dois-je-payer",
+          "intitule": "INASTI — Combien de cotisations dois-je payer ?"
+        }
       ],
       "date_verification": "2026-06-30"
     }

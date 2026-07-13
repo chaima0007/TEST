@@ -19,11 +19,22 @@
       "reponse": "Le budget d'assistance personnelle est une enveloppe financière accordée à une personne en situation de handicap pour organiser et payer l'aide dont elle a besoin au quotidien (aide à domicile, aux déplacements, à la vie sociale, etc.). L'idée est de donner à la personne le contrôle : c'est elle (ou son représentant) qui choisit et engage les assistants, dans le cadre fixé par la réglementation. Le but est de favoriser l'autonomie et le maintien à domicile plutôt qu'un accueil en institution. Selon votre région, le dispositif porte un nom différent (BAP en Wallonie, budget « personne-suivante » en Flandre, aides via le PHARE à Bruxelles).",
       "reference_legale": "Code wallon de l'action sociale et de la santé (budget d'assistance personnelle - AViQ) et dispositifs régionaux équivalents",
       "contacts": [
-        {"nom": "AViQ (Wallonie)", "lien": "https://www.aviq.be", "pour": "budget d'assistance personnelle en Wallonie"},
-        {"nom": "PHARE (Bruxelles) / VAPH (Flandre)", "pour": "aides à l'autonomie selon la région"}
+        {
+          "nom": "AViQ (Wallonie)",
+          "lien": "https://www.aviq.be",
+          "pour": "budget d'assistance personnelle en Wallonie"
+        },
+        {
+          "nom": "PHARE (Bruxelles) / VAPH (Flandre)",
+          "pour": "aides à l'autonomie selon la région"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap", "intitule": "AViQ — Budget d'assistance personnelle (BAP)"}
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap",
+          "intitule": "AViQ — Budget d'assistance personnelle (BAP)"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,10 +44,17 @@
       "reponse": "Le budget s'adresse aux personnes reconnues en situation de handicap qui ont besoin d'une aide importante pour les actes de la vie quotidienne. Une évaluation des besoins est réalisée par l'organisme régional. Le budget peut financer l'aide d'assistants personnels pour des tâches comme se lever, se laver, s'habiller, se déplacer, faire les courses, participer à la vie sociale ou professionnelle. Il s'accompagne d'obligations : utiliser les fonds conformément à leur objet, conserver les justificatifs et rendre compte de l'utilisation. Les montants et conditions précises varient selon la région.",
       "reference_legale": "Code wallon de l'action sociale et de la santé (conditions et utilisation du BAP) ; réglementations régionales équivalentes",
       "contacts": [
-        {"nom": "Organisme régional du handicap (AViQ, PHARE, VAPH)", "pour": "évaluation des besoins et octroi"}
+        {
+          "nom": "Organisme régional du handicap (AViQ, PHARE, VAPH)",
+          "pour": "évaluation des besoins et octroi"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap", "intitule": "AViQ — Conditions et usage du BAP"}
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap",
+          "intitule": "AViQ — Conditions et usage du BAP"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,11 +65,46 @@
       "reference_legale": "Code wallon de l'action sociale et de la santé (procédure d'octroi du BAP par l'AViQ) ; réglementations régionales équivalentes",
       "alerte_delai": "Déposez la demande tôt : ces budgets sont contingentés et soumis à des listes d'attente.",
       "contacts": [
-        {"nom": "AViQ / PHARE / VAPH", "pour": "introduction de la demande et suivi"},
-        {"nom": "Service social / association spécialisée", "pour": "aide à la constitution du dossier"}
+        {
+          "nom": "AViQ / PHARE / VAPH",
+          "pour": "introduction de la demande et suivi"
+        },
+        {
+          "nom": "Service social / association spécialisée",
+          "pour": "aide à la constitution du dossier"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap", "intitule": "AViQ — Demande de BAP"}
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap",
+          "intitule": "AViQ — Demande de BAP"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BAP-USAGE-001",
+      "question": "Comment le budget doit-il être utilisé, et quels justificatifs fournir ?",
+      "reponse": "Le BAP sert exclusivement à financer l'assistance personnelle prévue dans la convention conclue avec l'AViQ : aide pour les actes de la vie journalière, les déplacements, la participation à la vie sociale, selon le plan convenu. Concrètement, vous engagez un ou plusieurs assistants (via un contrat de travail, un service agréé ou un prestataire indépendant) et vous justifiez les dépenses : contrats, fiches de paie ou factures. Les montants qui ne sont pas utilisés ou pas justifiés conformément à la convention doivent être restitués, et l'AViQ contrôle l'utilisation du budget. Conservez soigneusement tous les documents ; en cas de doute sur une dépense admissible, demandez l'accord de l'AViQ avant d'engager les frais.",
+      "reference_legale": "Code wallon de l'action sociale et de la santé (utilisation, justification et contrôle du budget d'assistance personnelle)",
+      "contacts": [
+        {
+          "nom": "AViQ (Wallonie)",
+          "lien": "https://www.aviq.be",
+          "pour": "budget d'assistance personnelle en Wallonie"
+        },
+        {
+          "nom": "PHARE (Bruxelles) / VAPH (Flandre)",
+          "pour": "aides à l'autonomie selon la région"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap",
+          "intitule": "AViQ — Budget d'assistance personnelle (BAP)"
+        }
       ],
       "date_verification": "2026-06-30"
     }

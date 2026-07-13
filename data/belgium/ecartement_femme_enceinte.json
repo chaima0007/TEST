@@ -19,11 +19,21 @@
       "reponse": "La loi protège la santé de la travailleuse enceinte ou allaitante et celle de l'enfant. Dès que votre employeur est informé de la grossesse, il doit faire évaluer les risques de votre poste (substances dangereuses, port de charges, travail de nuit, station debout prolongée, etc.). Si un risque est identifié, des mesures s'imposent dans l'ordre : adapter le poste ou les horaires, puis vous affecter à un autre poste sans risque, et seulement si rien d'autre n'est possible, vous écarter du travail. C'est une protection d'ordre public : votre santé prime.",
       "reference_legale": "Loi du 16 mars 1971 sur le travail (protection de la maternité) ; arrêté royal du 2 mai 1995",
       "contacts": [
-        {"nom": "Médecin du travail (conseiller en prévention)", "pour": "évaluation des risques et écartement"},
-        {"nom": "Votre employeur", "pour": "adaptation ou changement de poste"}
+        {
+          "nom": "Médecin du travail (conseiller en prévention)",
+          "pour": "évaluation des risques et écartement"
+        },
+        {
+          "nom": "Votre employeur",
+          "pour": "adaptation ou changement de poste"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection", "intitule": "Fedris — Protection des travailleuses enceintes"}
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection",
+          "intitule": "Fedris — Protection des travailleuses enceintes"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,11 +43,22 @@
       "reponse": "Oui. En cas d'écartement complet du travail pour raison de protection de la maternité, vous percevez une indemnité (vous n'êtes pas sans revenu). Selon la cause de l'écartement, l'indemnisation passe par votre mutualité (assurance maladie-invalidité) ou, lorsque l'écartement est dû à un risque professionnel reconnu, par Fedris (Agence fédérale des risques professionnels). En cas d'écartement partiel (par exemple passage à temps partiel sans risque), une indemnité peut compenser la perte de revenu. Faites établir les attestations nécessaires par le médecin du travail et adressez-vous à votre mutualité pour la prise en charge.",
       "reference_legale": "Loi coordonnée du 14 juillet 1994 (indemnités de la mutualité) ; loi du 3 juin 1970 (lois coordonnées) sur les maladies professionnelles (intervention de Fedris en cas de risque professionnel)",
       "contacts": [
-        {"nom": "Votre mutualité", "pour": "indemnité d'écartement"},
-        {"nom": "Fedris", "lien": "https://www.fedris.be/fr", "pour": "écartement lié à un risque professionnel"}
+        {
+          "nom": "Votre mutualité",
+          "pour": "indemnité d'écartement"
+        },
+        {
+          "nom": "Fedris",
+          "lien": "https://www.fedris.be/fr",
+          "pour": "écartement lié à un risque professionnel"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection", "intitule": "Fedris — Indemnisation de l'écartement"}
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection",
+          "intitule": "Fedris — Indemnisation de l'écartement"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,12 +68,50 @@
       "reponse": "Non : la travailleuse enceinte est protégée contre le licenciement. À partir du moment où l'employeur est informé de la grossesse et jusqu'à la fin d'une période suivant le congé de maternité, l'employeur ne peut pas vous licencier pour un motif lié à votre état (grossesse, maternité). Un licenciement reste possible uniquement pour un motif totalement étranger à la grossesse, que l'employeur doit pouvoir prouver. Si vous êtes licenciée en violation de cette protection, une indemnité forfaitaire spéciale (en plus des indemnités normales) est due. Conservez la preuve de la communication de votre grossesse (certificat médical remis à l'employeur).",
       "reference_legale": "Loi du 16 mars 1971 sur le travail (protection contre le licenciement de la travailleuse enceinte)",
       "contacts": [
-        {"nom": "Syndicat / Contrôle des lois sociales (SPF Emploi)", "pour": "licenciement lié à la grossesse"},
-        {"nom": "Avocat / Bureau d'aide juridique", "pour": "faire valoir l'indemnité de protection"}
+        {
+          "nom": "Syndicat / Contrôle des lois sociales (SPF Emploi)",
+          "pour": "licenciement lié à la grossesse"
+        },
+        {
+          "nom": "Avocat / Bureau d'aide juridique",
+          "pour": "faire valoir l'indemnité de protection"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://emploi.belgique.be/fr", "intitule": "SPF Emploi — Protection de la maternité"},
-        {"type": "officiel", "url": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection", "intitule": "Fedris — Travailleuses enceintes"}
+        {
+          "type": "officiel",
+          "url": "https://emploi.belgique.be/fr",
+          "intitule": "SPF Emploi — Protection de la maternité"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection",
+          "intitule": "Fedris — Travailleuses enceintes"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ECART-FIN-001",
+      "question": "Quand l'écartement prend-il fin et vais-je retrouver mon poste ?",
+      "reponse": "L'écartement dure aussi longtemps que le risque existe : il prend fin quand le danger disparaît (adaptation du poste, changement de fonction possible) et, au plus tard, au début de votre congé de maternité. Une mesure de protection peut aussi s'appliquer après l'accouchement pendant l'allaitement, si le poste présente un risque pour la mère ou l'enfant (l'évaluation est faite par le médecin du travail). À la fin de l'écartement ou du congé de maternité, vous retrouvez votre fonction ou une fonction équivalente, aux mêmes conditions de travail et de rémunération : l'écartement est une mesure de protection, pas une sanction, et il ne peut pas servir de prétexte pour vous rétrograder.",
+      "reference_legale": "Loi du 16 mars 1971 sur le travail (protection de la maternité — durée de l'écartement et retour au poste) ; arrêté royal du 2 mai 1995 (protection de la maternité)",
+      "contacts": [
+        {
+          "nom": "Médecin du travail (conseiller en prévention)",
+          "pour": "évaluation des risques et écartement"
+        },
+        {
+          "nom": "Votre employeur",
+          "pour": "adaptation ou changement de poste"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection",
+          "intitule": "Fedris — Protection des travailleuses enceintes"
+        }
       ],
       "date_verification": "2026-06-30"
     }

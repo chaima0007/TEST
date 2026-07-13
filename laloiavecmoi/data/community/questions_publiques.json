@@ -1,19 +1,19 @@
 {
   "registre": "Questions de la communauté — index public navigable",
   "principe": "Questions issues du corpus officiel vérifié ; réponse complète dans la fiche liée. Les futures questions d'utilisateurs seront anonymisées et modérées avant publication.",
-  "genere_le": "2026-06-30",
-  "total_questions": 759,
+  "genere_le": "2026-07-13",
+  "total_questions": 775,
   "categories": {
     "Autres": 221,
+    "Justice pénale": 20,
     "Santé & remboursements": 19,
-    "Justice pénale": 15,
-    "Étrangers & séjour": 11,
+    "Étrangers & séjour": 12,
     "Indépendant & activité": 9,
     "Droits fondamentaux & Constitution": 8,
+    "Indépendants & sécurité sociale": 8,
+    "Travail & congés": 8,
     "Décès & démarches": 8,
-    "Travail & congés": 7,
-    "Travail & santé": 7,
-    "Indépendants & sécurité sociale": 6,
+    "Travail & santé": 8,
     "Harcèlement & violences": 6,
     "Droits fondamentaux & recours": 6,
     "Aide sociale & urgence": 5,
@@ -32,6 +32,7 @@
     "Aidants proches": 4,
     "Accès à la justice": 4,
     "Allocation pour l'aide aux personnes âgées": 4,
+    "Handicap & revenus": 4,
     "Allocations familiales": 4,
     "Animaux": 4,
     "Assurance véhicule": 4,
@@ -41,6 +42,7 @@
     "Services bancaires": 4,
     "Volontariat": 4,
     "Allocation d'études": 4,
+    "Handicap & autonomie": 4,
     "Bien-être & burnout": 4,
     "Handicap & mobilité": 4,
     "État civil & identité": 4,
@@ -73,6 +75,7 @@
     "Formation en alternance": 4,
     "Fraude & sécurité numérique": 4,
     "Petite enfance & accueil": 4,
+    "Famille & enfants": 4,
     "Impôts & fiscalité": 4,
     "Maladie & incapacité": 4,
     "Circulation & sanctions": 4,
@@ -82,6 +85,7 @@
     "Logement social": 4,
     "Construction & travaux": 4,
     "Protection des aînés": 4,
+    "Famille & protection": 4,
     "Règlement des conflits": 4,
     "Mobilité douce": 4,
     "Naissance & filiation": 4,
@@ -106,6 +110,8 @@
     "Travail & organisation": 4,
     "Testament & donations": 4,
     "Droits des passagers": 4,
+    "Travail & contrats": 4,
+    "Travail & revenus": 4,
     "Vie privée & données": 4,
     "Violences conjugales": 4,
     "Voisinage": 4,
@@ -113,18 +119,12 @@
     "Vote & démocratie": 4,
     "Voyage d'un enfant": 4,
     "Voyages": 4,
-    "Handicap & revenus": 3,
     "Épargne & placements": 3,
-    "Handicap & autonomie": 3,
     "Consommation & contrats": 3,
     "Aînés & hébergement": 3,
     "Logement & location": 3,
-    "Famille & enfants": 3,
-    "Famille & protection": 3,
     "Impôts & difficultés de paiement": 3,
     "Succession & fiscalité": 3,
-    "Travail & contrats": 3,
-    "Travail & revenus": 3,
     "Logement & fiscalité": 3
   },
   "questions": [
@@ -696,6 +696,19 @@
       "reponse_resume": "La demande s'introduit en ligne via le guichet My Handicap (avec votre carte d'identité électronique), ou avec l'aide de votre commune, de votre mutualité ou d'un assistant social. Une évaluation médicale peut être organisée ; la décision…",
       "reference_legale": "Loi du 27 février 1987 (procédure de demande et recours devant le tribunal du travail)",
       "lien_fiche": "/fiche/allocation_handicap_arr_ai#ARRAI-DEMANDE-001",
+      "source_officielle": "https://handicap.belgium.be/fr/allocations/allocation-de-remplacement-de-revenus",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-allocation-handicap-arr-ai-ARRAI-MENAGE-001",
+      "question": "Les revenus de mon partenaire ou un changement de situation familiale changent-ils mon allocation ?",
+      "domaine": "Handicap & revenus",
+      "module": "allocation_handicap_arr_ai",
+      "titre_fiche": "Allocations handicap — ARR et AI (18-65 ans)",
+      "reponse_resume": "Oui, pour l'allocation de remplacement de revenus (ARR) : son montant dépend de votre catégorie familiale (personne isolée, cohabitante ou avec charge de famille) et des revenus du ménage, avec des abattements qui neutralisent une partie…",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (catégories familiales, abattements et prise en compte des revenus du ménage)",
+      "lien_fiche": "/fiche/allocation_handicap_arr_ai#ARRAI-MENAGE-001",
       "source_officielle": "https://handicap.belgium.be/fr/allocations/allocation-de-remplacement-de-revenus",
       "popularite": null,
       "origine": "corpus_officiel"
@@ -1806,6 +1819,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-budget-assistance-personnelle-BAP-USAGE-001",
+      "question": "Comment le budget doit-il être utilisé, et quels justificatifs fournir ?",
+      "domaine": "Handicap & autonomie",
+      "module": "budget_assistance_personnelle",
+      "titre_fiche": "Budget d'assistance personnelle (handicap)",
+      "reponse_resume": "Le BAP sert exclusivement à financer l'assistance personnelle prévue dans la convention conclue avec l'AViQ : aide pour les actes de la vie journalière, les déplacements, la participation à la vie sociale, selon le plan convenu.…",
+      "reference_legale": "Code wallon de l'action sociale et de la santé (utilisation, justification et contrôle du budget d'assistance personnelle)",
+      "lien_fiche": "/fiche/budget_assistance_personnelle#BAP-USAGE-001",
+      "source_officielle": "https://www.aviq.be/fr/vie-quotidienne/aides-la-vie-quotidienne/budget-dassistance-personnelle-bap",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-burnout-bienetre-BIEN-SANTE-DABORD-001",
       "question": "Je suis épuisé·e mais je n'ose pas en parler. Est-ce que j'ai le droit de m'arrêter ?",
       "domaine": "Bien-être & burnout",
@@ -2872,6 +2898,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-cotisations-sociales-independant-COTIND-REGUL-001",
+      "question": "Pourquoi est-ce que je reçois une régularisation de cotisations deux ou trois ans plus tard ?",
+      "domaine": "Indépendants & sécurité sociale",
+      "module": "cotisations_sociales_independant",
+      "titre_fiche": "Cotisations sociales de l'indépendant",
+      "reponse_resume": "Parce que vos cotisations sont d'abord calculées provisoirement : votre caisse d'assurances sociales se base sur vos revenus d'il y a trois ans (ou sur une base forfaitaire si vous débutez), faute de connaître vos revenus actuels. Quand…",
+      "reference_legale": "Arrêté royal n° 38 du 27 juillet 1967 (calcul provisoire, régularisation et adaptation des cotisations)",
+      "lien_fiche": "/fiche/cotisations_sociales_independant#COTIND-REGUL-001",
+      "source_officielle": "https://www.inasti.be/fr/faq/combien-de-cotisations-sociales-dois-je-payer",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-couple-COUP-COHAB-001",
       "question": "C'est quoi la cohabitation légale et comment la faire ?",
       "domaine": "Couple & vie commune",
@@ -3114,6 +3153,19 @@
       "reponse_resume": "La demande se fait en deux temps : d'abord auprès de votre employeur, en respectant un délai de préavis (avertissement préalable, souvent plusieurs mois à l'avance, par écrit), puis auprès de l'ONEM pour l'allocation d'interruption.…",
       "reference_legale": "Convention collective de travail n° 103 (procédure et protection) ; arrêté royal du 12 décembre 2001",
       "lien_fiche": "/fiche/credit_temps#CT-DEMANDE-001",
+      "source_officielle": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-credit-temps-CT-CONDITIONS-001",
+      "question": "Ai-je automatiquement droit au crédit-temps, et mon employeur peut-il refuser ?",
+      "domaine": "Travail & congés",
+      "module": "credit_temps",
+      "titre_fiche": "Crédit-temps & interruption de carrière",
+      "reponse_resume": "Non, ce n'est pas automatique. Il faut remplir des conditions d'ancienneté chez votre employeur (et, selon la formule, de carrière) fixées par la CCT n° 103. Dans les petites entreprises (10 travailleurs ou moins au 30 juin de l'année…",
+      "reference_legale": "Convention collective de travail n° 103 (conditions d'accès, seuil de 5 % et mécanisme de préférence et de report)",
+      "lien_fiche": "/fiche/credit_temps#CT-CONDITIONS-001",
       "source_officielle": "https://www.onem.be/citoyens/interruption-de-carriere-credit-temps-et-conges-thematiques/credit-temps-secteur-prive",
       "popularite": null,
       "origine": "corpus_officiel"
@@ -3808,6 +3860,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-droit-passerelle-PASS-EFFETS-001",
+      "question": "Que couvre concrètement le droit passerelle, et pendant combien de temps ?",
+      "domaine": "Indépendants & sécurité sociale",
+      "module": "droit_passerelle",
+      "titre_fiche": "Droit passerelle (indépendant en difficulté)",
+      "reponse_resume": "Le droit passerelle comporte deux volets : une prestation financière mensuelle (dont le montant diffère selon que vous avez ou non charge de famille) et le maintien de certains droits sociaux — notamment le remboursement des soins de…",
+      "reference_legale": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants (prestation financière et maintien des droits sociaux)",
+      "lien_fiche": "/fiche/droit_passerelle#PASS-EFFETS-001",
+      "source_officielle": "https://www.inasti.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-droits-resident-maison-repos-MR-CONTRAT-001",
       "question": "Quels documents la maison de repos doit-elle me remettre ?",
       "domaine": "Aînés & hébergement",
@@ -3934,6 +3999,19 @@
       "reference_legale": "Loi du 16 mars 1971 sur le travail (protection contre le licenciement de la travailleuse enceinte)",
       "lien_fiche": "/fiche/ecartement_femme_enceinte#ECART-LICENCIEMENT-001",
       "source_officielle": "https://emploi.belgique.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-ecartement-femme-enceinte-ECART-FIN-001",
+      "question": "Quand l'écartement prend-il fin et vais-je retrouver mon poste ?",
+      "domaine": "Travail & santé",
+      "module": "ecartement_femme_enceinte",
+      "titre_fiche": "Protection et écartement de la travailleuse enceinte",
+      "reponse_resume": "L'écartement dure aussi longtemps que le risque existe : il prend fin quand le danger disparaît (adaptation du poste, changement de fonction possible) et, au plus tard, au début de votre congé de maternité. Une mesure de protection peut…",
+      "reference_legale": "Loi du 16 mars 1971 sur le travail (protection de la maternité — durée de l'écartement et retour au poste) ; arrêté royal du 2 mai 1995 (protection de la maternité)",
+      "lien_fiche": "/fiche/ecartement_femme_enceinte#ECART-FIN-001",
+      "source_officielle": "https://www.fedris.be/fr/themes/travailleuses-enceintes/analyse-des-risques-et-mesures-de-protection",
       "popularite": null,
       "origine": "corpus_officiel"
     },
@@ -4363,6 +4441,19 @@
       "reference_legale": "Loi du 17 mai 2006 (droits de la victime dans l'exécution de la peine)",
       "lien_fiche": "/fiche/execution_peine_liberation_conditionnelle#EXEC-VICTIME-001",
       "source_officielle": "https://www.justice.belgium.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-execution-peine-liberation-conditionnelle-EXEC-CONDITIONS-001",
+      "question": "Une fois la libération conditionnelle accordée, que doit respecter la personne ?",
+      "domaine": "Justice pénale",
+      "module": "execution_peine_liberation_conditionnelle",
+      "titre_fiche": "Exécution de la peine & libération conditionnelle",
+      "reponse_resume": "La libération conditionnelle n'est pas une libération pure et simple : elle s'accompagne de conditions individualisées (interdiction d'entrer en contact avec les victimes, suivi psychologique, travail ou formation, interdiction de…",
+      "reference_legale": "Loi du 17 mai 2006 relative au statut juridique externe des personnes condamnées (conditions et délai d'épreuve)",
+      "lien_fiche": "/fiche/execution_peine_liberation_conditionnelle#EXEC-CONDITIONS-001",
+      "source_officielle": "https://justice.belgium.be/fr",
       "popularite": null,
       "origine": "corpus_officiel"
     },
@@ -5285,6 +5376,19 @@
       "reponse_resume": "L'enfant a le droit d'être entendu : à partir d'un certain âge (en pratique autour de 12 ans, mais possible avant selon sa maturité), le juge de la famille peut l'inviter à exprimer son avis sur les questions qui le concernent (sans que…",
       "reference_legale": "Code civil — audition de l'enfant et exécution des décisions relatives à l'hébergement ; loi du 18 juillet 2006",
       "lien_fiche": "/fiche/hebergement_enfants_separation#HEBERG-ENFANT-VOIX-001",
+      "source_officielle": "https://www.justice.belgium.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-hebergement-enfants-separation-HEBERG-REVISION-001",
+      "question": "Peut-on changer l'organisation de l'hébergement plus tard ?",
+      "domaine": "Famille & enfants",
+      "module": "hebergement_enfants_separation",
+      "titre_fiche": "Hébergement des enfants après séparation",
+      "reponse_resume": "Oui. L'hébergement n'est jamais figé pour toujours : si la situation évolue (déménagement, nouveaux horaires de travail, besoins de l'enfant qui grandit…), les parents peuvent convenir d'une nouvelle organisation — idéalement homologuée —…",
+      "reference_legale": "Code civil — autorité parentale et hébergement (adaptation des modalités par le tribunal de la famille)",
+      "lien_fiche": "/fiche/hebergement_enfants_separation#HEBERG-REVISION-001",
       "source_officielle": "https://www.justice.belgium.be/fr",
       "popularite": null,
       "origine": "corpus_officiel"
@@ -6317,6 +6421,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-mariage-force-MARFORCE-SANCTIONS-001",
+      "question": "Que risquent ceux qui contraignent quelqu'un au mariage ?",
+      "domaine": "Famille & protection",
+      "module": "mariage_force",
+      "titre_fiche": "Mariage forcé & cohabitation légale forcée",
+      "reponse_resume": "Contraindre quelqu'un à se marier est une infraction pénale : l'auteur encourt un emprisonnement et/ou une amende, et la TENTATIVE est elle aussi punissable — il n'est pas nécessaire que le mariage ait eu lieu pour porter plainte. La même…",
+      "reference_legale": "Code pénal, art. 391sexies (mariage forcé) et 391septies (cohabitation légale forcée)",
+      "lien_fiche": "/fiche/mariage_force#MARFORCE-SANCTIONS-001",
+      "source_officielle": "https://www.justice.belgium.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-maximum-a-facturer-MAF-PRINCIPE-001",
       "question": "Qu'est-ce que le maximum à facturer (MàF) ?",
       "domaine": "Santé & remboursements",
@@ -6507,6 +6624,19 @@
       "reponse_resume": "Le grand avantage est d'éviter un procès et, en cas de respect des conditions, d'éteindre l'action publique (pas de condamnation inscrite comme telle). Mais il y a des limites : ces mesures supposent une forme de reconnaissance des faits…",
       "reference_legale": "Code d'instruction criminelle — extinction de l'action publique (art. 216bis et 216ter)",
       "lien_fiche": "/fiche/mesures_alternatives_poursuites#ALTPOUR-EFFETS-001",
+      "source_officielle": "https://www.justice.belgium.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-mesures-alternatives-poursuites-ALTPOUR-VOLONTAIRE-001",
+      "question": "Suis-je obligé(e) d'accepter la proposition du parquet ?",
+      "domaine": "Justice pénale",
+      "module": "mesures_alternatives_poursuites",
+      "titre_fiche": "Médiation pénale & transaction (alternatives aux poursuites)",
+      "reponse_resume": "Non. La transaction comme la médiation pénale reposent sur votre accord : vous pouvez refuser, et vous avez le droit de consulter un avocat avant de vous décider. Si vous refusez, le parquet reprend simplement le cours normal du dossier…",
+      "reference_legale": "Code d'instruction criminelle, art. 216bis et 216ter (caractère volontaire de la transaction et de la médiation pénale)",
+      "lien_fiche": "/fiche/mesures_alternatives_poursuites#ALTPOUR-VOLONTAIRE-001",
       "source_officielle": "https://www.justice.belgium.be/fr",
       "popularite": null,
       "origine": "corpus_officiel"
@@ -6806,6 +6936,19 @@
       "reponse_resume": "Elle peut l'être. La surveillance électronique existe sous deux formes : comme peine autonome prononcée par le juge du fond (le condamné exécute sa peine à domicile sous bracelet électronique, avec des plages horaires de présence…",
       "reference_legale": "Code pénal — surveillance électronique comme peine autonome (loi du 7 février 2014)",
       "lien_fiche": "/fiche/peines_alternatives_prison#PEINEALT-SURVEILLANCE-001",
+      "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/peine_de_travail",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-peines-alternatives-prison-PEINEALT-INEXECUTION-001",
+      "question": "Que se passe-t-il si la peine alternative n'est pas respectée ?",
+      "domaine": "Justice pénale",
+      "module": "peines_alternatives_prison",
+      "titre_fiche": "Peines alternatives à la prison",
+      "reponse_resume": "Le jugement qui prononce une peine de travail prévoit toujours une peine « subsidiaire » (emprisonnement ou amende). Si la peine de travail n'est pas exécutée dans les délais, ou si les conditions de la probation ne sont pas respectées,…",
+      "reference_legale": "Loi du 17 avril 2002 instaurant la peine de travail (peine subsidiaire en cas d'inexécution)",
+      "lien_fiche": "/fiche/peines_alternatives_prison#PEINEALT-INEXECUTION-001",
       "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/peine_de_travail",
       "popularite": null,
       "origine": "corpus_officiel"
@@ -7162,6 +7305,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-plainte-partie-civile-PLAINTE-FRAIS-AIDE-001",
+      "question": "Combien ça coûte, et quelles aides existent pour la victime ?",
+      "domaine": "Justice pénale",
+      "module": "plainte_partie_civile",
+      "titre_fiche": "Porter plainte, classement sans suite & partie civile",
+      "reponse_resume": "Porter plainte est gratuit. La constitution de partie civile entre les mains du juge d'instruction peut, elle, donner lieu à une consignation (somme fixée par le juge, destinée à couvrir des frais). Bonne nouvelle : l'aide juridique de…",
+      "reference_legale": "Loi du 1er août 1985 (aide financière de l'État aux victimes d'actes intentionnels de violence) ; Code d'instruction criminelle (constitution de partie civile)",
+      "lien_fiche": "/fiche/plainte_partie_civile#PLAINTE-FRAIS-AIDE-001",
+      "source_officielle": "https://www.justice.belgium.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-plaintes-police-comite-p-PLAINPOL-001",
       "question": "Je suis mécontent d'une intervention policière : que faire ?",
       "domaine": "Autres",
@@ -7444,6 +7600,19 @@
       "reference_legale": "Loi du 15 décembre 1980 sur les étrangers (recours devant le Conseil du contentieux des étrangers)",
       "lien_fiche": "/fiche/procedure_asile_protection#ASILE-RECOURS-001",
       "source_officielle": "https://www.cgra.be/fr",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-procedure-asile-protection-ASILE-ACCUEIL-001",
+      "question": "Pendant la procédure, ai-je droit à un accueil et à une aide ?",
+      "domaine": "Étrangers & séjour",
+      "module": "procedure_asile_protection",
+      "titre_fiche": "Procédure d'asile — protection internationale",
+      "reponse_resume": "Oui. Pendant l'examen de la demande de protection internationale, le demandeur a droit à un accueil dit « matériel » : un hébergement dans une structure d'accueil, les repas, un accompagnement social, l'accès à l'aide médicale, et…",
+      "reference_legale": "Loi du 12 janvier 2007 sur l'accueil des demandeurs d'asile et de certaines autres catégories d'étrangers",
+      "lien_fiche": "/fiche/procedure_asile_protection#ASILE-ACCUEIL-001",
+      "source_officielle": "https://www.cgra.be/fr/asile/procedure-standard",
       "popularite": null,
       "origine": "corpus_officiel"
     },
@@ -8891,6 +9060,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-sursis-condamnation-SURSIS-REVOCATION-001",
+      "question": "Le sursis peut-il être perdu (révoqué) ?",
+      "domaine": "Justice pénale",
+      "module": "sursis_condamnation",
+      "titre_fiche": "Sursis & suspension du prononcé",
+      "reponse_resume": "Oui. Le sursis est une confiance sous condition : si vous commettez une nouvelle infraction pendant le délai d'épreuve et qu'elle entraîne une condamnation d'une certaine gravité, le sursis peut être révoqué — la peine initialement…",
+      "reference_legale": "Loi du 29 juin 1964 concernant la suspension, le sursis et la probation (révocation)",
+      "lien_fiche": "/fiche/sursis_condamnation#SURSIS-REVOCATION-001",
+      "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/sursis",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-telecom-TEL-LITIGE-001",
       "question": "J'ai un litige avec mon opérateur (facture, coupure) : que faire ?",
       "domaine": "Télécommunications",
@@ -9346,6 +9528,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-travail-interimaire-INTERIM-FIN-001",
+      "question": "Ma mission se termine : y a-t-il un préavis, et l'entreprise peut-elle m'embaucher directement ?",
+      "domaine": "Travail & contrats",
+      "module": "travail_interimaire",
+      "titre_fiche": "Travail intérimaire — contrat et droits",
+      "reponse_resume": "Le contrat intérimaire prend fin automatiquement à la date ou à l'événement prévu (fin de la mission), sans préavis à donner ni à recevoir. Si l'agence ou l'utilisateur rompt le contrat avant son terme sans motif grave, une indemnité…",
+      "reference_legale": "Loi du 24 juillet 1987 sur le travail temporaire et intérimaire (fin du contrat et liberté d'embauche par l'utilisateur) ; loi du 3 juillet 1978 (rupture avant terme)",
+      "lien_fiche": "/fiche/travail_interimaire#INTERIM-FIN-001",
+      "source_officielle": "https://emploi.belgique.be/fr/themes/contrats-de-travail/travail-interimaire",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-travail-temps-partiel-TP-CONTRAT-001",
       "question": "Quelles règles pour un contrat à temps partiel ?",
       "domaine": "Travail & revenus",
@@ -9381,6 +9576,19 @@
       "reference_legale": "Loi du 3 juillet 1978 (temps partiel) ; réglementations de la sécurité sociale (calcul des droits selon le temps de travail)",
       "lien_fiche": "/fiche/travail_temps_partiel#TP-DROITS-001",
       "source_officielle": "https://www.onem.be/citoyens/travail-a-temps-partiel/avez-vous-droit-a-l-allocation-de-garantie-de-revenus-",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-travail-temps-partiel-TP-HEURES-001",
+      "question": "Puis-je devoir prester des heures complémentaires, et sont-elles payées en plus ?",
+      "domaine": "Travail & revenus",
+      "module": "travail_temps_partiel",
+      "titre_fiche": "Travail à temps partiel & allocation de garantie de revenus",
+      "reponse_resume": "Les heures complémentaires sont les heures prestées au-delà de votre horaire contractuel, sans dépasser un temps plein. Elles ne sont possibles que dans les limites prévues (accord, horaires publiés, enregistrement des dérogations). Un…",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail (heures complémentaires) ; loi-programme du 22 décembre 1989 (contrôle des horaires et priorité pour les emplois vacants)",
+      "lien_fiche": "/fiche/travail_temps_partiel#TP-HEURES-001",
+      "source_officielle": "https://emploi.belgique.be/fr",
       "popularite": null,
       "origine": "corpus_officiel"
     },

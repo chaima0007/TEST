@@ -19,11 +19,22 @@
       "reponse": "Le droit passerelle est une forme de « filet social » propre aux indépendants : il accorde, sous conditions, une prestation financière mensuelle (revenu de remplacement) et le maintien de certains droits sociaux (notamment les soins de santé) pendant une période limitée, à l'indépendant qui doit cesser ou interrompre son activité. Il ne s'agit pas du chômage (réservé aux salariés) : c'est un dispositif spécifique géré via les caisses d'assurances sociales et l'INASTI. C'est une protection importante en cas de coup dur, à connaître quand on est indépendant.",
       "reference_legale": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants",
       "contacts": [
-        {"nom": "Votre caisse d'assurances sociales", "pour": "demande de droit passerelle"},
-        {"nom": "INASTI", "lien": "https://www.inasti.be/fr", "pour": "information sur le droit passerelle"}
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "demande de droit passerelle"
+        },
+        {
+          "nom": "INASTI",
+          "lien": "https://www.inasti.be/fr",
+          "pour": "information sur le droit passerelle"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inasti.be/fr", "intitule": "INASTI — Droit passerelle"}
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Droit passerelle"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,10 +44,17 @@
       "reponse": "Le droit passerelle vise plusieurs situations, notamment : la faillite ou le règlement collectif de dettes, la cessation forcée de l'activité (par exemple un sinistre, une décision d'un tiers, une catastrophe), ou des difficultés économiques sérieuses menant à interrompre l'activité. Des conditions s'appliquent : être en règle de cotisations sociales sur une période de référence, ne pas exercer d'autre activité ou bénéficier d'un autre revenu de remplacement incompatible, etc. La durée du bénéfice est plafonnée (en nombre de mois) sur la carrière. Vérifiez quelle situation correspond à la vôtre auprès de votre caisse.",
       "reference_legale": "Loi du 22 décembre 2016 (situations ouvrant le droit passerelle)",
       "contacts": [
-        {"nom": "Votre caisse d'assurances sociales", "pour": "vérifier votre éligibilité"}
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "vérifier votre éligibilité"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inasti.be/fr", "intitule": "INASTI — Conditions du droit passerelle"}
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Conditions du droit passerelle"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,10 +65,42 @@
       "reference_legale": "Loi du 22 décembre 2016 (procédure et délais de demande du droit passerelle)",
       "alerte_delai": "Introduisez la demande dans le délai prévu après la cessation : un retard peut faire perdre des mensualités.",
       "contacts": [
-        {"nom": "Votre caisse d'assurances sociales", "pour": "introduction et suivi de la demande"}
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "introduction et suivi de la demande"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inasti.be/fr", "intitule": "INASTI — Demander le droit passerelle"}
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Demander le droit passerelle"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PASS-EFFETS-001",
+      "question": "Que couvre concrètement le droit passerelle, et pendant combien de temps ?",
+      "reponse": "Le droit passerelle comporte deux volets : une prestation financière mensuelle (dont le montant diffère selon que vous avez ou non charge de famille) et le maintien de certains droits sociaux — notamment le remboursement des soins de santé — pendant plusieurs trimestres sans devoir payer de cotisations. Il s'agit d'un filet de sécurité temporaire : la durée de chaque octroi est limitée et la durée totale dont vous pouvez bénéficier sur l'ensemble de votre carrière est plafonnée (elle peut être plus longue si vous avez une longue carrière de cotisations). Le droit passerelle ne crée pas de droits à la pension pour la période couverte, sauf exceptions prévues par la loi : renseignez-vous auprès de votre caisse d'assurances sociales avant de compter dessus.",
+      "reference_legale": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants (prestation financière et maintien des droits sociaux)",
+      "contacts": [
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "demande de droit passerelle"
+        },
+        {
+          "nom": "INASTI",
+          "lien": "https://www.inasti.be/fr",
+          "pour": "information sur le droit passerelle"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Droit passerelle"
+        }
       ],
       "date_verification": "2026-06-30"
     }
