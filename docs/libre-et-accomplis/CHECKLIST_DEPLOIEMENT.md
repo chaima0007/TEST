@@ -13,6 +13,7 @@
 | ✅ Documentation mise à jour | Développeurs/Experts | Toutes les modifications documentées | Confluence, Notion |
 | ✅ Tests de performance | Analyste QA | Temps de réponse < 200 ms sous charge | k6, JMeter |
 | ✅ Validation multilingue | Experts en Langues | Toutes les traductions validées | DeepL, Trados |
+| ✅ Journal d'audit Drive à jour | Session en cours | Actions horodatées, problèmes inter-sessions consultés | Google Drive ([protocole](./PROTOCOLE_AUDIT_DRIVE.md)) |
 | ✅ Approbation finale | CTO/Chef de Projet | Tout est prêt pour le déploiement | Slack, Trello |
 
 ## Checklist rapide (copiable dans une PR ou un ticket)
@@ -27,5 +28,6 @@
 - [ ] Documentation mise à jour.
 - [ ] Tests de performance (temps de réponse < 200 ms).
 - [ ] Validation multilingue.
+- [ ] Journal d'audit Drive à jour (protocole règle d'or n°9).
 - [ ] Approbation finale (CTO/Chef de Projet).
 ```

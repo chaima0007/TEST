@@ -327,6 +327,10 @@ LibreEtAccomplis/
 6. 📝 **Toute action doit être documentée (Notion/Confluence).**
 7. 🔒 **Les données sensibles doivent être chiffrées (AES-256).**
 8. 📊 **Les performances doivent être monitorées (Prometheus + Grafana).**
+9. 📓 **Chaque session tient un journal d'audit sur le Drive** — au fur et à
+   mesure, horodaté à la minute, lisible, sans redondance ni doublons, et en
+   tenant compte des problèmes signalés par les sessions précédentes
+   (voir [`PROTOCOLE_AUDIT_DRIVE.md`](./PROTOCOLE_AUDIT_DRIVE.md)).
 
 ---
 

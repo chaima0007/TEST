@@ -9,6 +9,7 @@ déployée uniquement après 100 % de tests réussis.
 | Fichier | Description |
 |---------|-------------|
 | [`SYSTEME_ULTIME.md`](./SYSTEME_ULTIME.md) | Document maître : vision, équipes, rôles, processus, architecture, règles d'or. |
+| [`PROTOCOLE_AUDIT_DRIVE.md`](./PROTOCOLE_AUDIT_DRIVE.md) | Règle d'or n°9 : journal d'audit horodaté sur le Drive, arborescence unique, zéro doublon, prise en compte des problèmes inter-sessions. |
 | [`CHECKLIST_DEPLOIEMENT.md`](./CHECKLIST_DEPLOIEMENT.md) | Checklist à cocher avant chaque déploiement. |
 | [`scripts/backup.sh`](./scripts/backup.sh) | Script de sauvegarde automatique (local + Drive + Cloud), avec contrôle d'espace disque, vérification d'intégrité et alertes Slack. |
 | [`scripts/verifier_traductions.py`](./scripts/verifier_traductions.py) | Vérifie que toutes les clés sont traduites dans chaque langue (utilisable en CI). |
@@ -48,3 +49,4 @@ python3 docs/libre-et-accomplis/scripts/verifier_traductions.py
 6. 📝 Toute action doit être documentée.
 7. 🔒 Données sensibles chiffrées (AES-256).
 8. 📊 Performances monitorées (Prometheus + Grafana).
+9. 📓 Journal d'audit horodaté sur le Drive à chaque session, sans doublons.
